@@ -3,9 +3,9 @@ A curated list of annual cyber security reports - Centralized cybersecurity info
 
 **Definition:** The state of being secure has a temporal dimension which security vendors utilize to stay relevant. CIO, CISO, and security leaders are faced with the challenge of sifting the valuable information from marketing material. Most, if not all, of this information sits behind a marketing wall that requires your business email address, which will promptly be inundated with communication requests.
 
-**Disclaimer:** The reports in this collection are limited to content which does not require a paid subscription, membership, or service contract. There are a variety of different business models and drivers that would cause information to be put behind a paywall, I would like to respect those companies and individuals. All content in the reports are licensed by original authors.
+**Disclaimer:** The reports in this collection are limited to content which does not require a paid subscription, membership, or service contract. There are a variety of different business models and drivers that would cause information to be put behind a paywall, I would like to respect those companies and individuals. Consult the original authors for licensing of any report content.
 
-**Limitations:** This is **not** a collection of project based information such as white papers, intelligence reports, technical specifications, or standards. I welcome all user submitted uploads or report requests, but we should draw a box around what content is applicable.
+**Limitations:** This is **not** a collection of project based information such as white papers, intelligence reports, technical specifications, or standards. I welcome all user submitted uploads or report requests, but we should draw a box around what content is applicable. All reports will be sourced from the original author when possible and [Hybrid Analysis](https://www.hybrid-analysis.com/) scan results will be provided in commit details for an additional level of confidence.
 
 **Acknowledgement:** I would like to give recognition for other works that inspired this collection. [Richard Stiennon](https://twitter.com/stiennon) and the comprehensive annual analysis of the cybersecurity industry is much more comprehensive than this repository. [Rick Howard](https://twitter.com/raceBannon99) and his cyber cannon list of must read books is a tremendous resource, both leadership and practitioner.
 
@@ -43,4 +43,4 @@ Annual reports are composed by a combination of paid and non-profit research bot
 
 ## Contributing
 
-[Please refer the guidelines at contributing.md for details](Contributing.md).
+[Please refer the guidelines at contributing.md for details](CONTRIBUTING.md).
