@@ -8,4 +8,4 @@ Please ensure your pull request follow to the below guidelines:
 - If available indicate the 'Data Type' 'Data Type'
 - Feel free to suggeset new categories and/or improvements to the existing structure.
  
-Appreciate your contributions and thank you for the suggestions!
+We appreciate your contributions and thank you for the suggestions!
