@@ -22,7 +22,7 @@ A curated list of annual cyber security reports - Centralized cybersecurity info
 ### Surveys
 ### Analysis
 ## Resources
-Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of non-profit research include professional societies and standards organizations are listed as working groups. Both of these types of resources for research rely on sponsorship that’s often commercial.
+Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of sponsored and non-profit research include professional societies and standards organizations and listed as working groups. Both of these types of research resource types rely on sponsorship that’s often commercial.
 ### Research Consulting
 - [Forrester Research](https://www.forrester.com/) is an advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
 - [Gartner](https://www.gartner.com/) is a technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
