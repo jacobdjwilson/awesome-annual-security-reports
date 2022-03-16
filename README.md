@@ -22,6 +22,7 @@ A curated list of annual cyber security reports - Centralized cybersecurity info
 ### Surveys
 ### Analysis
 ## Resources
+Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of non-profit research include professional societies and standards organizations are listed as working groups. Both of these types of resources for research rely on sponsorship that’s often commercial.
 ### Research Consulting
 - [Forrester Research](https://www.forrester.com/) is an advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
 - [Gartner](https://www.gartner.com/) is a technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
@@ -31,4 +32,3 @@ A curated list of annual cyber security reports - Centralized cybersecurity info
 - [ISACA](https://www.isaca.org/) is an international professional association focused on IT governance, which conducts research for and on behalf of it's members.
 - [OWASP](https://owasp.org/) is an professional community that produces reseach concerning web application security, made freely available to it's online community.
 - [ISO](https://www.iso.org/) is an international organizational body composed of representatives which conduct closed research for creation of standards.
-- 
