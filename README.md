@@ -28,6 +28,8 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [Gartner](https://www.gartner.com/) is a technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
 - [MITRE Corporation](https://www.mitre.org/) is an American not-for-profit organization which conducts research and development supporting various U.S. government agencies.
 - [Ponemon Institute](https://www.ponemon.org/) is considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
+- [SANS Institute](https://www.sans.org/) is a private U.S. for-profit companny which conducts research for consumers of their cybersecurity training and certifications.
+- [(ISC)²](https://www.isc2.org/) is a non-profit organization which conducts research for consumers of their cybersecurity training and certifications.
 ### Working Groups
 - [ISACA](https://www.isaca.org/) is an international professional association focused on IT governance, which conducts research for and on behalf of it's members.
 - [OWASP](https://owasp.org/) is an professional community that produces reseach concerning web application security, made freely available to it's online community.
