@@ -11,16 +11,21 @@ A curated list of annual cyber security reports - Centralized cybersecurity info
 
 ## Contents
 - [Reports](#reports)
-  - [Surveys](#surveys)
   - [Analysis](#analysis)
+  - [Surveys](#surveys)
 - [Resources](#resources)
   - [Research Consulting](#researchconsulting)
   - [Working Groups](#workinggroups)
-
 ---
 ## Reports
-### Surveys
+Reports have been classified into two categories by the source of data.
+1. **Analysis:** Reports generated from quantifying intelligence from sensor networks or services.
+2. **Survey:** Reports generated from observations and feedback from surveys or consulting.
+
 ### Analysis
+
+### Surveys
+
 ## Resources
 Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of sponsored and non-profit research include professional societies and standards organizations and listed as working groups. Both of these types of research resource types rely on sponsorship that’s often commercial.
 ### Research Consulting
