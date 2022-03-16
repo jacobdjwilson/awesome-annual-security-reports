@@ -23,12 +23,12 @@ A curated list of annual cyber security reports - Centralized cybersecurity info
 ### Analysis
 ## Resources
 ### Research Consulting
-- Forrester Research is an advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
-- Gartner is a technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
-- Mitre is an American not-for-profit organization which conducts research and development supporting various U.S. government agencies.
-- Ponemon Institute is considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
+- [Forrester Research](https://www.forrester.com/) is an advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
+- [Gartner](https://www.gartner.com/) is a technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
+- [MITRE Corporation](https://www.mitre.org/) is an American not-for-profit organization which conducts research and development supporting various U.S. government agencies.
+- [Ponemon Institute](https://www.ponemon.org/) is considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
 ### Working Groups
-- ISACA is an international professional association focused on IT governance, which conducts research for and on behalf of it's members.
-- OWASP is an professional community that produces reseach concerning web application security, made freely available to it's online community.
-- ISO is an international organizational body composed of representatives which conduct closed research for creation of standards.
+- [ISACA](https://www.isaca.org/) is an international professional association focused on IT governance, which conducts research for and on behalf of it's members.
+- [OWASP](https://owasp.org/) is an professional community that produces reseach concerning web application security, made freely available to it's online community.
+- [ISO](https://www.iso.org/) is an international organizational body composed of representatives which conduct closed research for creation of standards.
 - 
