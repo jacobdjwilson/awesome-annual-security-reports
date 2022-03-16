@@ -16,6 +16,7 @@ A curated list of annual cyber security reports - Centralized cybersecurity info
 - [Resources](#resources)
   - [Research Consulting](#researchconsulting)
   - [Working Groups](#workinggroups)
+- [Contributing](#contributing)
 ---
 ## Reports
 Reports have been classified into two categories by the source of data.
@@ -39,3 +40,7 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [ISACA](https://www.isaca.org/) is an international professional association focused on IT governance, which conducts research for and on behalf of it's members.
 - [OWASP](https://owasp.org/) is an professional community that produces reseach concerning web application security, made freely available to it's online community.
 - [ISO](https://www.iso.org/) is an international organizational body composed of representatives which conduct closed research for creation of standards.
+
+## Contributing
+
+[Please refer the guidelines at contributing.md for details](Contributing.md).
