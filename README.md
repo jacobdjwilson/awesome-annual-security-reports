@@ -73,10 +73,10 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [SANS Institute](https://www.sans.org/) is a private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
 - [(ISC)²](https://www.isc2.org/) is a non-profit organization which conducts research for consumers of their cybersecurity training and certifications.
 ### Working Groups
-- [ISACA](https://www.isaca.org/) is an international professional association focused on IT governance, which conducts research for and on behalf of it's members.
+- [ISACA](https://www.isaca.org/) is an international professional association focused on IT governance, which conducts research for and on behalf of the members.
 - [OWASP](https://owasp.org/) is a professional community that produces research concerning web application security, made freely available to the online community.
 - [ISO](https://www.iso.org/) is an international organizational body composed of representatives which conduct closed research for creation of standards.
 
 ## Contributing
 
-[Please refer the guidelines at contributing.md for details](CONTRIBUTING.md).
+[Please refer to the guidelines at CONTRIBUTING.md for details](CONTRIBUTING.md).
