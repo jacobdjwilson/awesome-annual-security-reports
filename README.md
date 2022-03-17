@@ -42,7 +42,7 @@ Reports have been classified into two categories by the source of data.
 |[IBM](https://www.ibm.com/security/data-breach)|Cost of a Data Breach Report|2021|Breaches|
 |[Mandiant](https://www.mandiant.com/resources/m-trends-2021)|MTrends Cyber Security Insights|2021|Attacks|
 |[Microsoft](https://www.microsoft.com/en-us/security/business/microsoft-digital-defense-report)|Digital Defense Report|2021|Attacks|
-|[NCCGroup](https://research.nccgroup.com/2022/01/10/2021-annual-research-report/)|Annual Research Report|2021|Industry|
+|[NCC Group](https://research.nccgroup.com/2022/01/10/2021-annual-research-report/)|Annual Research Report|2021|Industry|
 |[PaloAlto](https://start.paloaltonetworks.com/unit-42-iot-threat-report)|Unit 42 IoT Threat Report |2021|Attacks|
 |[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/state-of-phish)|State of the Phish|2022|Attacks|
 |[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/cost-of-insider-threats)|Cost of Insider Threats Global Report|2022|Industry|
@@ -62,9 +62,38 @@ Reports have been classified into two categories by the source of data.
 |[WhiteSource](https://www.whitesourcesoftware.com/resources/research-reports/the-state-of-open-source-vulnerabilities/)|State of Open Source Vulnerabilities|2021|Attacks|
 
 ### Surveys
+|Provider|Report Name|Year|Data Type|
+|:---|:---|:---|:---|
+|[Accenture](https://www.accenture.com/us-en/insights/security/invest-cyber-resilience)|State of Cybersecurity Report|2021|Industry|
+|[Checkmarx](https://checkmarx.com/resources/reports/2021-state-of-devsecops-report)|State of DevSecOps Report|2021|Industry|
+|[Checkmarx](https://checkmarx.com/resources/appsec-training-for-developers/global-secure-coding-education-survey)|Global Secure Coding Education Survey|2021|Industry|
+|[Cisco](https://www.cisco.com/c/en/us/products/security/security-outcomes-study.html)|Security Outcomes Study Volume 1|2021|Industry|
+|[Cisco](https://www.cisco.com/c/en/us/products/security/security-outcomes-study-vol-2.html)|Security Outcomes Study Volume 2|2021|Industry|
+|[Cobalt](https://go.cobalt.io/the-state-of-pentesting-2021/)|State of Pentesting|2021|Industry|
+|[CoreSecurity](https://www.coresecurity.com/resources/guides/2020-pen-testing-survey-report-1)|Penetration Testing Report|2020|Industry|
+|[CrowdStrike](https://www.crowdstrike.com/resources/reports/global-security-attitude-survey-2021/)|Global Security Attitude Survey|2021|Attacks|
+|[Deloitte](https://www2.deloitte.com/us/en/pages/advisory/articles/future-of-cyber-survey.html)|Future of Cyber Survey|2021|Industry|
+|[Fidelis](https://fidelissecurity.com/resource/report/aws-cloud-security-report/)|AWS Cloud Security Report|2021|Industry|
+|[FireEye](https://www.fireeye.com/offers/rpt-cyber-trendscape.html)|Cyber Trendscape Report|2020|Industry|
+|[Fortinet](https://www.fortinet.com/blog/industry-trends/cloud-security-2021-latest-trends-and-insights)|Cloud Security Report|2021|Industry|
+|[ISC2](https://www.isc2.org/Landing/cloud-security-report)|Cloud Security Report|2021|Industry|
+|[ISC2](https://www.isc2.org/landing/Cyberthreat-Defense-Report)|Cyberthreat Defense Report|2021|Industry|
+|[KnowBe4](https://www.knowbe4.com/organizational-cyber-security-culture-research-report)|Cybersecurity Culture Report|2021|Industry|
+|[Norton](https://www.nortonlifelock.com/us/en/newsroom/press-kits/2021-norton-cyber-safety-insights-report/)|Cyber Safety Insights Report|2021|Industry|
+|[PaloAlto](https://www.paloaltonetworks.com/state-of-cloud-native-security)|State of Cloud Native Security Report|2022|Industry|
+|[PwC](https://www.pwc.com/us/en/services/consulting/cybersecurity-risk-regulatory/library/global-digital-trust-insights.html)|Global Digital Trust Insights|2022|Industry|
+|[RecordedFuture](https://go.recordedfuture.com/sans-cyber-threat-intelligence-survey-2020)|SANS Cyber Threat Intelligence Survey|2020|Industry|
+|[Snyk](https://go.snyk.io/2021-state-of-cnas-report)|State of Cloud Native Application Security|2021|Industry|
+|[Sonatype](https://resources.fugue.co/state-of-cloud-security-2021-report)|The State of Cloud Security 2020 Report|2021|Industry|
+|[Sophos](https://secure2.sophos.com/en-us/content/state-of-cloud-security)|State of Cloud Security Report|2020|Industry|
+|[Splunk](https://www.splunk.com/en_us/campaigns/state-of-security.html)|State of Security|2021|Industry|
+|[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/devsecops-practices-open-source-management.html)|DevSecOps Practices and Open Source Management|2020|Industry|
+|[USTelecom](https://www.ustelecom.org/research/2021-cybersecurity-survey-critical-infrastructure-small-and-medium-sized-businesses/)|Cybersecurity Survey|2021|Attacks|
+|[Cisco](https://www.cisco.com/c/en/us/about/trust-center/data-privacy-benchmark-study.html)|Data Privacy Benchmark Study|2022|Breaches|
 
 ## Resources
 Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of sponsored and non-profit research include professional societies and standards organizations and listed as working groups. Both of these types of research resource types rely on sponsorship that’s often commercial.
+
 ### Research Consulting
 - [Forrester Research](https://www.forrester.com/) is an advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
 - [Gartner](https://www.gartner.com/) is a technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
@@ -72,11 +101,11 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [Ponemon Institute](https://www.ponemon.org/) is considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
 - [SANS Institute](https://www.sans.org/) is a private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
 - [(ISC)²](https://www.isc2.org/) is a non-profit organization which conducts research for consumers of their cybersecurity training and certifications.
+- 
 ### Working Groups
 - [ISACA](https://www.isaca.org/) is an international professional association focused on IT governance, which conducts research for and on behalf of the members.
 - [OWASP](https://owasp.org/) is a professional community that produces research concerning web application security, made freely available to the online community.
 - [ISO](https://www.iso.org/) is an international organizational body composed of representatives which conduct closed research for creation of standards.
 
 ## Contributing
-
 [Please refer to the guidelines at CONTRIBUTING.md for details](CONTRIBUTING.md).
