@@ -26,7 +26,7 @@ Reports have been classified into two categories by the source of data.
 ### Analysis
 |Provider|Report Name|Year|Data Type|
 |:---|:---|:---|:---|
-|[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021)|Cyber Threat Intelligence Report|2021|Attacks|
+|[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021)|[Cyber Threat Intelligence Report]()|2021|Attacks|
 |[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021-vol-2)|Cyber Threat Intelligence Report Volume 2|2022|Attacks|
 |[Aon](https://insights.aon.com/2021-cyber-risk-report/home/)|Cybersecurity Risk Report|2021|Industry|
 |[CheckPoint](https://pages.checkpoint.com/cyber-security-report-2022.html)|Cybersecurity Report|2022|Attacks|
