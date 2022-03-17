@@ -1,33 +1,7 @@
-# Awesome Annual Security Reports [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-A curated list of annual cyber security reports - Centralized cybersecurity information free from marketing nuisance.
-
-**Definition:** The state of being secure has a temporal dimension which security vendors utilize to stay relevant. CIO, CISO, and security leaders are faced with the challenge of sifting the valuable information from marketing material. Most, if not all, of this information sits behind a marketing wall that requires your business email address, which will promptly be inundated with communication requests.
-
-**Disclaimer:** The reports in this collection are limited to content which does not require a paid subscription, membership, or service contract. There are a variety of different business models and drivers that would cause information to be put behind a paywall, I would like to respect those companies and individuals. Consult the original authors for licensing of any report content.
-
-**Limitations:** This is **not** a collection of project based information such as white papers, intelligence reports, technical specifications, or standards. I welcome all user submitted uploads or report requests, but we should draw a box around what content is applicable. All reports will be sourced from the original author when possible and [Hybrid Analysis](https://www.hybrid-analysis.com/) scan results will be provided in commit details for an additional level of confidence.
-
-**Acknowledgement:** I would like to give recognition for other works that inspired this collection. [Richard Stiennon](https://twitter.com/stiennon) and the comprehensive annual analysis of the cybersecurity industry is much more comprehensive than this repository. [Rick Howard](https://twitter.com/raceBannon99) and his cyber cannon list of must read books is a tremendous resource, both leadership and practitioner.
-
-## Contents
-- [Reports](#reports)
-  - [Analysis](#analysis)
-  - [Surveys](#surveys)
-- [Resources](#resources)
-  - [Research Consulting](#researchconsulting)
-  - [Working Groups](#workinggroups)
-- [Contributing](#contributing)
----
-## Reports
-Reports have been classified into two categories by the source of data.
-1. **Analysis:** Reports generated from quantifying and qualifying intelligence from sensor networks or services.
-2. **Survey:** Reports generated from observations and feedback from surveys or consulting.
-
-### Analysis
 |Provider|Report Name|Year|Data Type|
 |:---|:---|:---|:---|
-|[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021)|Cyber Threat Intelligence Report|2021|Attacks|
-|[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021-vol-2)|Cyber Threat Intelligence Report Volume 2|2022|Attacks|
+|[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021)|[Cyber Threat Intelligence Report](Annual%20Security%20Reports/2021/Accenture-Cyber-Threat-Intelligence-Report-2021.pdf)|2021|Attacks|
+|[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021-vol-2)|[Cyber Threat Intelligence Report Volume 2](Annual%20Security%20Reports/2021/Accenture-Cyber-Threat-Intelligence-Report-Vol2-2022.pdf)|2022|Attacks|
 |[Aon](https://insights.aon.com/2021-cyber-risk-report/home/)|Cybersecurity Risk Report|2021|Industry|
 |[CheckPoint](https://pages.checkpoint.com/cyber-security-report-2022.html)|Cybersecurity Report|2022|Attacks|
 |[Cofense](https://cofense.com/annualreport)|Annual State of Phishing|2021|Attacks|
@@ -42,7 +16,7 @@ Reports have been classified into two categories by the source of data.
 |[IBM](https://www.ibm.com/security/data-breach)|Cost of a Data Breach Report|2021|Breaches|
 |[Mandiant](https://www.mandiant.com/resources/m-trends-2021)|MTrends Cyber Security Insights|2021|Attacks|
 |[Microsoft](https://www.microsoft.com/en-us/security/business/microsoft-digital-defense-report)|Digital Defense Report|2021|Attacks|
-|[NCCGroup](https://research.nccgroup.com/2022/01/10/2021-annual-research-report/)|Annual Research Report|2021|Industry|
+|[NCC Group](https://research.nccgroup.com/2022/01/10/2021-annual-research-report/)|Annual Research Report|2021|Industry|
 |[PaloAlto](https://start.paloaltonetworks.com/unit-42-iot-threat-report)|Unit 42 IoT Threat Report |2021|Attacks|
 |[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/state-of-phish)|State of the Phish|2022|Attacks|
 |[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/cost-of-insider-threats)|Cost of Insider Threats Global Report|2022|Industry|
@@ -60,23 +34,3 @@ Reports have been classified into two categories by the source of data.
 |[Verizon](https://www.verizon.com/business/resources/reports/cyber-espionage-report/)|Cyber Espionage Report|2020|Attacks|
 |[Verizon](https://www.verizon.com/business/resources/reports/dbir/)|Data Breach Investigations Report|2021|Breaches|
 |[WhiteSource](https://www.whitesourcesoftware.com/resources/research-reports/the-state-of-open-source-vulnerabilities/)|State of Open Source Vulnerabilities|2021|Attacks|
-
-### Surveys
-
-## Resources
-Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of sponsored and non-profit research include professional societies and standards organizations and listed as working groups. Both of these types of research resource types rely on sponsorship that’s often commercial.
-### Research Consulting
-- [Forrester Research](https://www.forrester.com/) is an advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
-- [Gartner](https://www.gartner.com/) is a technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
-- [MITRE Corporation](https://www.mitre.org/) is an American not-for-profit organization which conducts research and development supporting various U.S. government agencies.
-- [Ponemon Institute](https://www.ponemon.org/) is considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
-- [SANS Institute](https://www.sans.org/) is a private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
-- [(ISC)²](https://www.isc2.org/) is a non-profit organization which conducts research for consumers of their cybersecurity training and certifications.
-### Working Groups
-- [ISACA](https://www.isaca.org/) is an international professional association focused on IT governance, which conducts research for and on behalf of the members.
-- [OWASP](https://owasp.org/) is a professional community that produces research concerning web application security, made freely available to the online community.
-- [ISO](https://www.iso.org/) is an international organizational body composed of representatives which conduct closed research for creation of standards.
-
-## Contributing
-
-[Please refer to the guidelines at CONTRIBUTING.md for details](CONTRIBUTING.md).
