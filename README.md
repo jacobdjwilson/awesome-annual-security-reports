@@ -69,6 +69,7 @@ Reports have been classified into two categories by the source of data.
 |[Checkmarx](https://checkmarx.com/resources/appsec-training-for-developers/global-secure-coding-education-survey)|Global Secure Coding Education Survey|2021|Industry|
 |[Cisco](https://www.cisco.com/c/en/us/products/security/security-outcomes-study.html)|Security Outcomes Study Volume 1|2021|Industry|
 |[Cisco](https://www.cisco.com/c/en/us/products/security/security-outcomes-study-vol-2.html)|Security Outcomes Study Volume 2|2021|Industry|
+|[Cisco](https://www.cisco.com/c/en/us/about/trust-center/data-privacy-benchmark-study.html)|Data Privacy Benchmark Study|2022|Breaches|
 |[Cobalt](https://go.cobalt.io/the-state-of-pentesting-2021/)|State of Pentesting|2021|Industry|
 |[CoreSecurity](https://www.coresecurity.com/resources/guides/2020-pen-testing-survey-report-1)|Penetration Testing Report|2020|Industry|
 |[CrowdStrike](https://www.crowdstrike.com/resources/reports/global-security-attitude-survey-2021/)|Global Security Attitude Survey|2021|Attacks|
@@ -89,7 +90,6 @@ Reports have been classified into two categories by the source of data.
 |[Splunk](https://www.splunk.com/en_us/campaigns/state-of-security.html)|State of Security|2021|Industry|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/devsecops-practices-open-source-management.html)|DevSecOps Practices and Open Source Management|2020|Industry|
 |[USTelecom](https://www.ustelecom.org/research/2021-cybersecurity-survey-critical-infrastructure-small-and-medium-sized-businesses/)|Cybersecurity Survey|2021|Attacks|
-|[Cisco](https://www.cisco.com/c/en/us/about/trust-center/data-privacy-benchmark-study.html)|Data Privacy Benchmark Study|2022|Breaches|
 
 ## Resources
 Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of sponsored and non-profit research include professional societies and standards organizations and listed as working groups. Both of these types of research resource types rely on sponsorship that’s often commercial.
