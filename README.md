@@ -14,8 +14,8 @@
   - [Analysis](#analysis)
   - [Surveys](#surveys)
 - [Resources](#resources)
-  - [Research Consulting](#researchconsulting)
-  - [Working Groups](#workinggroups)
+  - [Research Consulting](#research-consulting)
+  - [Working Groups](#working-groups)
 - [Contributing](#contributing)
 ---
 ## Reports
