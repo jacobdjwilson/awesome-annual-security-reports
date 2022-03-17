@@ -1,5 +1,5 @@
 # Awesome Annual Security Reports [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-A curated list of annual cyber security reports - Centralized cybersecurity information free from marketing nuisance.
+> A curated list of annual cyber security reports - Centralized cybersecurity information free from marketing nuisance.
 
 **Definition:** The state of being secure has a temporal dimension which security vendors utilize to stay relevant. CIO, CISO, and security leaders are faced with the challenge of sifting the valuable information from marketing material. Most, if not all, of this information sits behind a marketing wall that requires your business email address, which will promptly be inundated with communication requests.
 
