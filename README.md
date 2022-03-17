@@ -26,7 +26,7 @@ Reports have been classified into two categories by the source of data.
 ### Analysis
 |Provider|Report Name|Year|Data Type|
 |:---|:---|:---|:---|
-|[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021)|[Cyber Threat Intelligence Report]()|2021|Attacks|
+|[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021)|[Cyber Threat Intelligence Report](Annual%20Security%20Reports/2021/Accenture-Cyber-Threat-Intelligence-Report-2021.pdf)|2021|Attacks|
 |[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021-vol-2)|Cyber Threat Intelligence Report Volume 2|2022|Attacks|
 |[Aon](https://insights.aon.com/2021-cyber-risk-report/home/)|Cybersecurity Risk Report|2021|Industry|
 |[CheckPoint](https://pages.checkpoint.com/cyber-security-report-2022.html)|Cybersecurity Report|2022|Attacks|
@@ -101,7 +101,7 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [Ponemon Institute](https://www.ponemon.org/) is considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
 - [SANS Institute](https://www.sans.org/) is a private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
 - [(ISC)²](https://www.isc2.org/) is a non-profit organization which conducts research for consumers of their cybersecurity training and certifications.
-- 
+
 ### Working Groups
 - [ISACA](https://www.isaca.org/) is an international professional association focused on IT governance, which conducts research for and on behalf of the members.
 - [OWASP](https://owasp.org/) is a professional community that produces research concerning web application security, made freely available to the online community.
