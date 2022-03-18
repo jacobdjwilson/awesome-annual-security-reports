@@ -5,7 +5,7 @@
 
 **Disclaimer:** The reports in this collection are limited to content which does not require a paid subscription, membership, or service contract. There are a variety of different business models and drivers that would cause information to be put behind a paywall, I would like to respect those companies and individuals. Consult the original authors for licensing of any report content.
 
-**Limitations:** This is **not** a collection of project based information such as white papers, intelligence reports, technical specifications, or standards. I welcome all user submitted uploads or report requests, but we should draw a box around this _awesome_ list. All reports will be sourced from the original author when possible and uploaded to [Hybrid Analysis](https://www.hybrid-analysis.com/) for an additional level of confidence.
+**Limitations:** This is **not** a collection of project based information such as white papers, intelligence reports, technical specifications, or standards. I welcome all user submitted uploads or report requests, but we should draw a box around this _awesome_ list. All reports will be sourced from the original author when possible and uploaded to [Hybrid Analysis](https://www.hybrid-analysis.com/) for an additional level of confidence, result link will be included in the readme.md commit notes.
 
 **Acknowledgement:** I would like to give recognition for other works that inspired this collection. [Richard Stiennon](https://twitter.com/stiennon) and the comprehensive annual analysis of the cybersecurity industry is much more comprehensive than this repository. [Rick Howard](https://twitter.com/raceBannon99) and his cyber cannon list of must read books is a tremendous resource, both leadership and practitioner.
 
