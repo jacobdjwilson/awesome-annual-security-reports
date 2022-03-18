@@ -92,7 +92,7 @@ Reports have been classified into two categories by the source of data.
 |[USTelecom](https://www.ustelecom.org/research/2021-cybersecurity-survey-critical-infrastructure-small-and-medium-sized-businesses/)|[Cybersecurity Survey](Annual%20Security%20Reports/2021/USTelecom-Cyber-Survey-2021.pdf)|2021|Attacks|
 
 ## Resources
-Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of sponsored and non-profit research include professional societies and standards organizations and listed as working groups. Both of these types of research resource types rely on sponsorship that’s often commercial.
+Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of sponsored and non-profit research include professional societies and standards organizations which are listed as working groups. Both of these research resource types rely on sponsorship that’s often commercial.
 
 ### Research Consulting
 - [Forrester Research](https://www.forrester.com/) is an advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
