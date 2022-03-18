@@ -1,5 +1,5 @@
 # Awesome Annual Security Reports [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-> A curated list of annual cyber security reports - Centralized cybersecurity information free from marketing nuisance.
+> A curated list of annual cyber security reports - Centralized cybersecurity information free from sales nuisance.
 
 **Definition:** The state of being secure has a temporal dimension which security vendors utilize to stay relevant. CIO, CISO, and security leaders are faced with the challenge of sifting the valuable information from marketing material. Most, if not all, of this information sits behind a marketing wall that requires your business email address, which will promptly be inundated with communication requests.
 
@@ -7,7 +7,7 @@
 
 **Limitations:** This is **not** a collection of project based information such as white papers, intelligence reports, technical specifications, or standards. I welcome all user submitted uploads or report requests, but we should draw a box around this _awesome_ list. All reports will be sourced from the original author when possible and uploaded to [Hybrid Analysis](https://www.hybrid-analysis.com/) for an additional level of confidence, result link will be included in the readme.md commit notes.
 
-**Acknowledgement:** I would like to give recognition for other works that inspired this collection. [Richard Stiennon](https://twitter.com/stiennon) and the comprehensive annual analysis of the cybersecurity industry is much more comprehensive than this repository. [Rick Howard](https://twitter.com/raceBannon99) and his cyber cannon list of must read books is a tremendous resource, both leadership and practitioner.
+**Acknowledgement:** I would like to give recognition for other works that inspired this collection. [Richard Stiennon](https://twitter.com/stiennon) and his annual analysis of the cybersecurity industry is much more comprehensive than this repository. [Rick Howard](https://twitter.com/raceBannon99) and his cyber cannon list of must read books is a tremendous resource, at both leadership and practitioner levels.
 
 ## Contents
 - [Reports](#reports)
