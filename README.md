@@ -57,9 +57,10 @@ Reports have been classified into two categories by the source of data.
 |[Tenable](https://www.tenable.com/cyber-exposure/2021-threat-landscape-retrospective)|[Threat Landscape Retrospective](Annual%20Security%20Reports/2021/Tenable-Threat-Landscape-Retrospective-2021.pdf)|2021|Attacks|
 |[Trellix](https://www.trellix.com/en-us/threat-center/threat-reports/jan-2022.html)|[Advanced Threat Research Report](Annual%20Security%20Reports/2022/Trelllix-Advanced-Threat-Research-Report-2022.pdf)|2022|Attacks|
 |[TrendMicro](https://www.trendmicro.com/vinfo/us/security/research-and-analysis/threat-reports/roundup/attacks-from-all-angles-2021-midyear-security-roundup)|[Attacks From All Angles](Annual%20Security%20Reports/2021/TrendMicro-Attacks-From-All-Angles-2021.pdf)|2021|Attacks|
-|[Veracode](https://www.veracode.com/state-of-software-security-report)|[State of Software Security v12](Annual%20Security%20Reports/2021/Veracode-State-of-Software-Security-V12-2021.pdf)|2021|Attacks|
+|[TrendMicro]([https://www.trendmicro.com/vinfo/us/security/research-and-analysis/threat-reports/roundup/attacks-from-all-angles-2021-midyear-security-roundup](https://www.trendmicro.com/vinfo/us/security/research-and-analysis/threat-reports/roundup/defending-the-expanding-attack-surface-trend-micro-2022-midyear-cybersecurity-report))|[Defending The Expanding Attack Surface](Annual%20Security%20Reports/2022/TrendMicro-Defending-The-Expanding-Attack-Surface-2022.pdf)|2021|Attacks|
+|[Veracode](https://www.veracode.com/state-of-software-security-report)|[State of Software Security v12](Annual%20Security%20Reports/2021/Veracode-State-of-Software-Security-V12-2021.pdf)|2022|Attacks|
 |[Verizon](https://www.verizon.com/business/resources/reports/cyber-espionage-report/)|[Cyber Espionage Report](Annual%20Security%20Reports/2020/Verizon-Cyber-Espionage-Report-2020.pdf)|2020|Attacks|
-|[Verizon](https://www.verizon.com/business/resources/reports/dbir/)|[Data Breach Investigations Report](Annual%20Security%20Reports/2021/Verizon-Data-Breach-Investigations-Report-2021.pdf)|2021|Breaches|
+|[Verizon](https://www.verizon.com/business/resources/reports/dbir/)|[Data Breach Investigations Report](Annual%20Security%20Reports/2022/Verizon-Data-Breach-Investigations-Report-2022.pdf)|2022|Breaches|
 |[WhiteSource](https://www.whitesourcesoftware.com/resources/research-reports/the-state-of-open-source-vulnerabilities/)|[State of Open Source Vulnerabilities](Annual%20Security%20Reports/2021/WhiteSource-State-of-Open-Source-Vulnerabilities-2021.pdf)|2021|Attacks|
 
 ### Surveys
