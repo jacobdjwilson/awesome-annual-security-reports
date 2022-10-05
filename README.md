@@ -89,7 +89,7 @@ Reports have been classified into two categories by the source of data.
 |[Snyk](https://go.snyk.io/2021-state-of-cnas-report)|[State of Cloud Native Application Security](Annual%20Security%20Reports/2021/Snyk-Infrastructure-as-Code-Report-2021.pdf)|2021|Industry|
 |[Sonatype](https://resources.fugue.co/state-of-cloud-security-2021-report)|[The State of Cloud Security 2020 Report](Annual%20Security%20Reports/2021/Sonatype-State-of-Cloud-Security-2021.pdf)|2021|Industry|
 |[Sophos](https://secure2.sophos.com/en-us/content/state-of-cloud-security)|[State of Cloud Security Report](Annual%20Security%20Reports/2020/Sophos-State-of-Cloud-Security-2020.pdf)|2020|Industry|
-|[Splunk](https://www.splunk.com/en_us/campaigns/state-of-security.html)|[State of Security](Annual%20Security%20Reports/2021/Splunk-State-of-Security-2021.pdf)|2021|Industry|
+|[Splunk](https://www.splunk.com/en_us/campaigns/state-of-security.html)|[State of Security](Annual%20Security%20Reports/2022/Splunk-State-of-Security-2022.pdf)|2022|Industry|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/devsecops-practices-open-source-management.html)|[DevSecOps Practices and Open Source Management](Annual%20Security%20Reports/2020/Synopsys-DevSecOps-Practices-and-Open-Source-Management-2020.pdf)|2020|Industry|
 |[USTelecom](https://www.ustelecom.org/research/2021-cybersecurity-survey-critical-infrastructure-small-and-medium-sized-businesses/)|[Cybersecurity Survey](Annual%20Security%20Reports/2021/USTelecom-Cyber-Survey-2021.pdf)|2021|Attacks|
 
