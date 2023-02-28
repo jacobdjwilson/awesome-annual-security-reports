@@ -51,7 +51,7 @@ Reports have been classified into two categories by the source of data.
 |[Secureworks](https://www.secureworks.com/resources/rp-state-of-the-threat-2022)|[State of the Threat](Annual%20Security%20Reports/2022/Secureworks-State-of-the-Threat-Report-2022.pdf)|2022|Attacks|
 |[Snyk](https://go.snyk.io/IaC-Report-2021.html)|[Infrastructure as Code Report](Annual%20Security%20Reports/2021/Snyk-Infrastructure-as-Code-Report-2021.pdf)|2021|Industry|
 |[SonicWall](https://www.sonicwall.com/2023-cyber-threat-report/)|[Cyber Threat Report](Annual%20Security%20Reports/2023/SonicWall-Cyber-Threat-Report-2023.pdf)|2022|Attacks|
-|[Sophos](https://www.sophos.com/en-us/labs/security-threat-report)|[Threat Report](Annual%20Security%20Reports/2022/Sophos-Threat-Report-2022.pdf)|2022|Attacks|
+|[Sophos](https://www.sophos.com/en-us/labs/security-threat-report)|[Threat Report](Annual%20Security%20Reports/2023/Sophos-Threat-Report-2023.pdf)|2023|Attacks|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/open-source-security-risk-analysis.html)|[Open Source Risk Analysis Report](Annual%20Security%20Reports/2022/Synopsys-Open-Source-Risk-Analysis-Report-2022.pdf)|2022|Attacks|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/software-vulnerability-trends.html)|[Software Vulnerability Snapshot](Annual%20Security%20Reports/2021/Synopsys-Software-Vulnerability-Snapshot-2021.pdf)|2021|Attacks|
 |[Tenable](https://www.tenable.com/cyber-exposure/2021-threat-landscape-retrospective)|[Threat Landscape Retrospective](Annual%20Security%20Reports/2021/Tenable-Threat-Landscape-Retrospective-2021.pdf)|2021|Attacks|
