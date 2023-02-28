@@ -44,7 +44,7 @@ Reports have been classified into two categories by the source of data.
 |[Microsoft](https://www.microsoft.com/en-us/security/business/microsoft-digital-defense-report-2022)|[Digital Defense Report](Annual%20Security%20Reports/2022/Microsoft-Digital-Defense-Report-2022.pdf)|2022|Attacks|
 |[NCC Group](https://research.nccgroup.com/2022/01/10/2021-annual-research-report/)|[Annual Research Report](Annual%20Security%20Reports/2021/NCCGroup-Annual-Research-Report-2021.pdf)|2021|Industry|
 |[PaloAlto](https://start.paloaltonetworks.com/unit-42-iot-threat-report)|[Unit 42 IoT Threat Report](Annual%20Security%20Reports/2021/PaloAlto-Unit-42-IoT-Threat-Report-2021.pdf)|2021|Attacks|
-|[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/state-of-phish)|[State of the Phish](Annual%20Security%20Reports/2022/Proofpoint-State-of-the-Phish-2022.pdf)|2022|Attacks|
+|[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/state-of-phish)|[State of the Phish](Annual%20Security%20Reports/2023/Proofpoint-State-of-the-Phish-2023.pdf)|2023|Attacks|
 |[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/cost-of-insider-threats)|[Cost of Insider Threats Global Report](Annual%20Security%20Reports/2022/Proofpoint-Ponemon-Cost-of-Insider-Threats-Global-Report-2022.pdf)|2022|Industry|
 |[Rapid7](https://www.rapid7.com/research/report/2021-industry-cyber-exposure-report/)|[Industry Cyber Exposure Report](Annual%20Security%20Reports/2021/Rapid7-Industry-Cyber-Exposure-Report-2021.pdf)|2021|Attacks|
 |[RedCanary](https://redcanary.com/threat-detection-report/)|[Threat Detection Report](Annual%20Security%20Reports/2022/RedCanary-Threat-Detection-Report-2022.pdf)|2022|Attacks|
