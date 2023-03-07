@@ -37,7 +37,7 @@ Reports have been classified into two categories by the source of data.
 |[DeepInstinct](https://www.deepinstinct.com/blog/2022-cyber-threat-landscape-report)|[Threat Landscape Report](Deep-Instinct-Cyber-Threat-Landscape-Report-2022.pdf)|2022|Attacks|
 |[Flashpoint](https://www.riskbasedsecurity.com/download-year-end-vulnerability-report/)|[Year End Vulnerability QuickView Report](RiskBasedSecurity-Year-End-Vulnerability-QuickView-Report-2021.pdf)|2021|Attacks|
 |[Flashpoint](https://www.riskbasedsecurity.com/download-year-end-data-breach-report)|[Year End Data Breach QuickView Report](RiskBasedSecurity-Year-End-Data-Breach-QuickView-Report-2021.pdf)|2021|Breaches|
-|[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2021/IBM-X-Force-Cloud-Threat-Landscape-Report-2021.pdf)|2021|Attacks|
+|[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2022/IBM-X-Force-Cloud-Threat-Landscape-Report-2022.pdf)|2022|Attacks|
 |[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Threat Intelligence Index](Annual%20Security%20Reports/2023/IBM-X-Force-Threat-Intelligence-Index-2023.pdf)|2023|Attacks|
 |[IBM](https://www.ibm.com/security/data-breach)|[Cost of a Data Breach Report](Annual%20Security%20Reports/2022/IBM-Cost-of-a-Data-Breach-Report-2022.pdf)|2022|Breaches|
 |[Mandiant](https://www.mandiant.com/resources/m-trends-2022)|[MTrends Cyber Security Insights](Annual%20Security%20Reports/2022/Mandiant-MTrends-Cybersecurity-Insights-Report-2022.pdf)|2022|Attacks|
