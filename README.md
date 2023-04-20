@@ -31,7 +31,7 @@ Reports have been classified into two categories by the source of data.
 |[Aon](https://insights.aon.com/2021-cyber-risk-report/home/)|[Cybersecurity Risk Report](Annual%20Security%20Reports/2020/Aon-Cyber-Security-Risk-Report-2020.pdf)|2020|Industry|
 |[CheckPoint](https://pages.checkpoint.com/cyber-security-report-2022.html)|[Cybersecurity Report](Annual%20Security%20Reports/2023/CheckPoint-Cybersecurity-Report-2023.pdf)|2023|Attacks|
 |[Cisco](https://learn-cloudsecurity.cisco.com/umbrella-resources/umbrella/2022-dns-discoveries#page=1)|[DNS Discoveries](Annual%20Security%20Reports/2022/Cisco-DNS-Discoveries-2022.pdf)|2022|Attacks|
-|[Cofense](https://cofense.com/annualreport)|[Annual State of Phishing](Annual%20Security%20Reports/2022/Cofense-Annual-State-of-Phishing-Report-2022.pdf)|2022|Attacks|
+|[Cofense](https://cofense.com/annualreport)|[Annual State of Email Security](Annual%20Security%20Reports/2023/Cofense-Annual-State-of-Email-Security-Report-2023.pdf)|2023|Attacks|
 |[CrowdStrike](https://www.crowdstrike.com/resources/reports/overwatch-threat-hunting-report/)|[Threat Hunting Report](Annual%20Security%20Reports/2022/Crowdstrike-Threat-Hunting-Report-2022.pdf)|2021|Attacks|
 |[CrowdStrike](https://www.crowdstrike.com/resources/reports/global-threat-report/)|[Global Threat Report](Annual%20Security%20Reports/2023/Crowdstrike-Global-Threat-Report-2023.pdf)|2023|Attacks|
 |[DarkTrace](https://www.darktrace.com/en/request-resources/?pp=research-cybersecurity-insiders)|[Insider Threat Report](Annual%20Security%20Reports/2020/DarkTrace-Insider-Threat-Report-2020.pdf)|2020|Attacks|
