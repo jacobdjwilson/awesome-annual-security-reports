@@ -98,7 +98,8 @@ Reports have been classified into two categories by the source of data.
 |[Sonatype](https://www.sonatype.com/resources/state-of-the-software-supply-chain-2021)|[The State of Software Supply Chain Report](Annual%20Security%20Reports/2021/Sonatype-State%20of-the-Software-Supplychain-2021.pdf)|2021|Industry|
 |[Sophos](https://secure2.sophos.com/en-us/content/state-of-cloud-security)|[State of Cloud Security Report](Annual%20Security%20Reports/2020/Sophos-State-of-Cloud-Security-2020.pdf)|2020|Industry|
 |[Splunk](https://www.splunk.com/en_us/campaigns/state-of-security.html)|[State of Security](Annual%20Security%20Reports/2022/Splunk-State-of-Security-2022.pdf)|2022|Industry|
-|[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/devsecops-practices-open-source-management.html)|[DevSecOps Practices and Open Source Management](Annual%20Security%20Reports/2020/Synopsys-DevSecOps-Practices-and-Open-Source-Management-2020.pdf)|2020|Industry|
+|[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/sans-devsecops-survey.html)|[SANS 2023 DevSecOps Survey](Annual%20Security%20Reports/2023/SANS-DevSecOps-Survey-2023.pdf)|2023|Industry|
+|[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/state-of-devsecops.html)|[Global State of DevSecOps 2023](Annual%20Security%20Reports/2023/Synopsys-Global-State-of-DevSecOps-2023.pdf)|2023|Industry|
 |[USTelecom](https://www.ustelecom.org/research/2021-cybersecurity-survey-critical-infrastructure-small-and-medium-sized-businesses/)|[Cybersecurity Survey](Annual%20Security%20Reports/2021/USTelecom-Cyber-Survey-2021.pdf)|2021|Attacks|
 
 ## Resources
