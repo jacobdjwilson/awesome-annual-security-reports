@@ -84,7 +84,7 @@ Reports have been classified into two categories by the source of data.
 |[Deloitte](https://www2.deloitte.com/us/en/pages/advisory/articles/future-of-cyber-survey.html)|[Future of Cyber Survey](Annual%20Security%20Reports/2021/Deloitte-Future-of-Cyber-Survey-2021.pdf)|2021|Industry|
 |[Fidelis](https://fidelissecurity.com/resource/report/2022-aws-cloud-security-report/)|[AWS Cloud Security Report](Annual%20Security%20Reports/2022/Fidelis-AWS-Cloud-Security-Report-2022.pdf)|2022|Industry|
 |[FireEye](https://www.fireeye.com/offers/rpt-cyber-trendscape.html)|[Cyber Trendscape Report](Annual%20Security%20Reports/2020/FireEye-Cyber-Trendscape-Report-2020.pdf)|2020|Industry|
-|[Fortinet](https://www.fortinet.com/blog/industry-trends/cloud-security-2021-latest-trends-and-insights)|[Cloud Security Report](Annual%20Security%20Reports/2021/Fortinet-Cloud-Security-Report-2021.pdf)|2021|Industry|
+|[Fortinet](https://www.fortinet.com/blog/industry-trends/cloud-security-report-key-insights-2023)|[Cloud Security Report](Annual%20Security%20Reports/2023/Fortinet-Cloud-Security-Report-2023.pdf)|2023|Industry|
 |[Fortra](https://www.fortra.com/services/consulting/cybersecurity/penetration-testing)|[Penetration Testing Report](Annual%20Security%20Reports/2022/Fortra-Pentesting-Report-2022.pdf)|2022|Industry|
 |[ISC2](https://www.isc2.org/Landing/cloud-security-report)|[Cloud Security Report](Annual%20Security%20Reports/2022/ISC2-Cloud-Security-Report-2022.pdf)|2022|Industry|
 |[ISC2](https://www.isc2.org/landing/Cyberthreat-Defense-Report)|[Cyberthreat Defense Report](Annual%20Security%20Reports/2022/ISC2-Cyberthreat-Defense-Report-2022.pdf)|2022|Industry|
