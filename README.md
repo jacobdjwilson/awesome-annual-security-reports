@@ -77,7 +77,7 @@ Reports have been classified into two categories by the source of data.
 |[Cisco](https://www.cisco.com/c/en/us/products/security/security-outcomes-study-vol-2.html)|[Security Outcomes Study Volume 2](Annual%20Security%20Reports/2021/Cisco-Security-Outcomes-Study-Vol2-2021.pdf)|2021|Industry|
 |[Cisco](https://www.cisco.com/c/en/us/products/security/security-outcomes-study-vol-3.html)|[Security Outcomes Study Volume 3](Annual%20Security%20Reports/2022/Cisco-Security-Outcomes-Study-Vol3-2022.pdf)|2022|Industry|
 |[Cisco](https://www.cisco.com/c/en/us/about/trust-center/data-privacy-benchmark-study.html)|[Data Privacy Benchmark Study](Annual%20Security%20Reports/2023/Cisco-Data-Privacy-Benchmark-Study-2023.pdf)|2023|Breaches|
-|[Cobalt](https://www.cobalt.io/state-of-pentesting-2022)|[State of Pentesting](Annual%20Security%20Reports/2022/Cobalt-State-of-Pentesting-2022.pdf)|2022|Industry|
+|[Cobalt](https://resource.cobalt.io/state-of-pentesting-2023)|[State of Pentesting](Annual%20Security%20Reports/2023/Cobalt-State-of-Pentesting-2023.pdf)|2023|Industry|
 |[CoreSecurity](https://www.coresecurity.com/resources/guides/2020-pen-testing-survey-report-1)|[Penetration Testing Report](Annual%20Security%20Reports/2020/CoreSecurity-Penetration-Testing-Report-2020.pdf)|2020|Industry|
 |[CrowdStrike](https://www.crowdstrike.com/resources/reports/global-security-attitude-survey-2021/)|[Global Security Attitude Survey](Annual%20Security%20Reports/2021/Crowdstrike-Global-Security-Attitude-Survey-2021.pdf)|2021|Attacks|
 |[Deloitte](https://www2.deloitte.com/us/en/pages/advisory/articles/future-of-cyber-survey.html)|[Future of Cyber Survey](Annual%20Security%20Reports/2021/Deloitte-Future-of-Cyber-Survey-2021.pdf)|2021|Industry|
