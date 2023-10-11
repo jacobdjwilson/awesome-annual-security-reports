@@ -42,7 +42,7 @@ Reports have been classified into two categories by the source of data.
 |[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Threat Intelligence Index](Annual%20Security%20Reports/2023/IBM-X-Force-Threat-Intelligence-Index-2023.pdf)|2023|Attacks|
 |[IBM](https://www.ibm.com/security/data-breach)|[Cost of a Data Breach Report](Annual%20Security%20Reports/2023/IBM-Cost-of-a-Data-Breach-Report-2023.pdf)|2023|Breaches|
 |[Mandiant](https://www.mandiant.com/m-trends)|[MTrends Cyber Security Insights](Annual%20Security%20Reports/2023/Mandiant-MTrends-Cybersecurity-Insights-Report-2023.pdf)|2023|Attacks|
-|[Microsoft](https://www.microsoft.com/en-us/security/business/microsoft-digital-defense-report-2022)|[Digital Defense Report](Annual%20Security%20Reports/2022/Microsoft-Digital-Defense-Report-2022.pdf)|2022|Attacks|
+|[Microsoft](https://www.microsoft.com/en-us/security/security-insider/microsoft-digital-defense-report-2023)|[Digital Defense Report](Annual%20Security%20Reports/2023/Microsoft-Digital-Defense-Report-2023.pdf)|2023|Attacks|
 |[NCC Group](https://research.nccgroup.com/2022/01/10/2021-annual-research-report/)|[Annual Research Report](Annual%20Security%20Reports/2021/NCCGroup-Annual-Research-Report-2021.pdf)|2021|Industry|
 |[PaloAlto](https://start.paloaltonetworks.com/unit-42-iot-threat-report)|[Unit 42 IoT Threat Report](Annual%20Security%20Reports/2021/PaloAlto-Unit-42-IoT-Threat-Report-2021.pdf)|2023|Attacks|
 |[PaloAlto](https://start.paloaltonetworks.com/2023-unit42-ransomware-extortion-report)|[Unit 42 Ransomware Extortion Report](Annual%20Security%20Reports/2023/PaloAlto-Unit-42-Ransomeware-Extortion-Report-2023.pdf)|2023|Attacks|
