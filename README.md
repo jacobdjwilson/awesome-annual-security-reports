@@ -71,6 +71,7 @@ Reports have been classified into two categories by the source of data.
 |Provider|Report Name|Year|Data Type|
 |:---|:---|:---|:---|
 |[Accenture](https://www.accenture.com/us-en/insights/security/invest-cyber-resilience)|[State of Cybersecurity Resilience](Annual%20Security%20Reports/2023/Accenture-State-of-Cybersecurity-2023.pdf)|2023|Industry|
+|[Checkmarx](https://checkmarx.com/resources/reports/appsec-the-view-from-security-and-software-development-experts/)|[Annual Appsec Report](Annual%20Security%20Reports/2022/Checkmarx-Annual-Appsec-Report-2022.pdf)|2022|Industry|
 |[Checkmarx](https://checkmarx.com/resources/reports/2021-state-of-devsecops-report)|[State of DevSecOps Report](Annual%20Security%20Reports/2021/Checkmarx-State-of-Devsecops-Report-2021.pdf)|2021|Industry|
 |[Checkmarx](https://checkmarx.com/resources/appsec-training-for-developers/global-secure-coding-education-survey)|[Global Secure Coding Education Survey](Annual%20Security%20Reports/2021/Checkmarx-Global-Secure-Coding-Education-Survey-2021.pdf)|2021|Industry|
 |[Cisco](https://www.cisco.com/c/en/us/products/security/security-outcomes-study.html)|[Security Outcomes Study Volume 1](Annual%20Security%20Reports/2021/Cisco-Security-Outcomes-Study-Vol1-2021.pdf)|2021|Industry|
