@@ -96,7 +96,7 @@ Reports have been classified into two categories by the source of data.
 |[RecordedFuture](https://go.recordedfuture.com/sans-cyber-threat-intelligence-survey-2020)|[SANS Cyber Threat Intelligence Survey](Annual%20Security%20Reports/2020/RecordedFuture-SANS-Cyber-Threat-Intelligence-Survey-2020.pdf)|2020|Industry|
 |[Snyk](https://go.snyk.io/state-of-open-source-security-report-2023-dwn-typ.html)|[State of Open Source Security](Annual%20Security%20Reports/2023/Snyk-State-of-Open-Source-Security-2023.pdf)|2023|Industry|
 |[Sonatype](https://www.sonatype.com/state-of-the-software-supply-chain/introduction)|[The State of Cloud Security Report](Annual%20Security%20Reports/2023/Sonatype-State-of-Cloud-Security-2023.pdf)|2023|Industry|
-|[Sophos](https://secure2.sophos.com/en-us/content/state-of-cloud-security)|[State of Cloud Security Report](Annual%20Security%20Reports/2020/Sophos-State-of-Cloud-Security-2020.pdf)|2020|Industry|
+|[Sophos](https://www.sophos.com/en-us/whitepaper/state-of-cybersecurity)|[State of Cloud Security Report](Annual%20Security%20Reports/2023/Sophos-State-of-Cybersecurity-2023.pdf)|2023|Industry|
 |[Splunk](https://www.splunk.com/en_us/campaigns/state-of-security.html)|[State of Security](Annual%20Security%20Reports/2022/Splunk-State-of-Security-2022.pdf)|2022|Industry|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/sans-devsecops-survey.html)|[SANS 2023 DevSecOps Survey](Annual%20Security%20Reports/2023/SANS-DevSecOps-Survey-2023.pdf)|2023|Industry|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/state-of-devsecops.html)|[Global State of DevSecOps 2023](Annual%20Security%20Reports/2023/Synopsys-Global-State-of-DevSecOps-2023.pdf)|2023|Industry|
