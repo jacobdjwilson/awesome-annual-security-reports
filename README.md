@@ -29,7 +29,7 @@ Reports have been classified into two categories by the source of data.
 |:---|:---|:---|:---|
 |[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021)|[Cyber Threat Intelligence Report](Annual%20Security%20Reports/2021/Accenture-Cyber-Threat-Intelligence-Report-2021.pdf)|2021|Attacks|
 |[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021-vol-2)|[Cyber Threat Intelligence Report Volume 2](Annual%20Security%20Reports/2022/Accenture-Cyber-Threat-Intelligence-Report-Vol2-2022.pdf)|2022|Attacks|
-|[Aon](https://insights.aon.com/2021-cyber-risk-report/home/)|[Cybersecurity Risk Report](Annual%20Security%20Reports/2020/Aon-Cyber-Security-Risk-Report-2020.pdf)|2020|Industry|
+|[Aon](https://insights.aon.com/2021-cyber-risk-report/home/)|[Cybersecurity Risk Report](https://insights.aon.com/2021-cyber-risk-report/foreword/)|2021|Industry|
 |[CheckPoint](https://pages.checkpoint.com/cyber-security-report-2022.html)|[Cybersecurity Report](Annual%20Security%20Reports/2023/CheckPoint-Cybersecurity-Report-2023.pdf)|2023|Attacks|
 |[CISA](https://www.cisa.gov/resources-tools/services/vulnerability-disclosure-policy-vdp-platform)|[Vulnerability Disclosure Policy Platform Annual Report](Annual%20Security%20Reports/2022/CISA-Vulnerability-Disclosure-Policy-Platform-Annual-Report-2022.pdf)|2022|Vulnerabilities|
 |[Cisco](https://learn-cloudsecurity.cisco.com/umbrella-resources/umbrella/2022-dns-discoveries#page=1)|[DNS Discoveries](Annual%20Security%20Reports/2022/Cisco-DNS-Discoveries-2022.pdf)|2022|Attacks|
@@ -89,6 +89,7 @@ Reports have been classified into two categories by the source of data.
 |[FireEye](https://www.fireeye.com/offers/rpt-cyber-trendscape.html)|[Cyber Trendscape Report](Annual%20Security%20Reports/2020/FireEye-Cyber-Trendscape-Report-2020.pdf)|2020|Industry|
 |[Fortinet](https://www.fortinet.com/blog/industry-trends/cloud-security-report-key-insights-2023)|[Cloud Security Report](Annual%20Security%20Reports/2023/Fortinet-Cloud-Security-Report-2023.pdf)|2023|Industry|
 |[Fortra](https://www.fortra.com/services/consulting/cybersecurity/penetration-testing)|[Penetration Testing Report](Annual%20Security%20Reports/2022/Fortra-Pentesting-Report-2022.pdf)|2022|Industry|
+|[Forrester](https://www.forrester.com/report/the-state-of-vulnerability-risk-management-2023/RES179028)|[The State Of Vulnerability Risk Management](https://reprints2.forrester.com/#/assets/2/1730/RES179028/report)|2023|Vulnerabilities|
 |[ISC2](https://www.isc2.org/Landing/cloud-security-report)|[Cloud Security Report](Annual%20Security%20Reports/2022/ISC2-Cloud-Security-Report-2022.pdf)|2022|Industry|
 |[ISC2](https://www.isc2.org/landing/Cyberthreat-Defense-Report)|[Cyberthreat Defense Report](Annual%20Security%20Reports/2022/ISC2-Cyberthreat-Defense-Report-2022.pdf)|2022|Industry|
 |[KnowBe4](https://www.knowbe4.com/organizational-cyber-security-culture-research-report)|[Cybersecurity Culture Report](Annual%20Security%20Reports/2022/KnowBe4-Cybersecurity-Culture-Report-2022.pdf)|2022|Industry|
