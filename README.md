@@ -41,6 +41,7 @@ Reports have been classified into two categories by the source of data.
 |[Dragos](https://www.dragos.com/year-in-review/#section-report)|[ICS/OT Cybersecurity Year In Review Report](Annual%20Security%20Reports/2022/Dragos-Year-In-Review-Report-2022.pdf)|2022|Attacks|
 |[Flashpoint](https://www.riskbasedsecurity.com/download-year-end-vulnerability-report/)|[Year End Vulnerability QuickView Report](Annual%20Security%20Reports/2021/RiskBasedSecurity-Year-End-Vulnerability-QuickView-Report-2021.pdf)|2021|Attacks|
 |[Flashpoint](https://www.riskbasedsecurity.com/download-year-end-data-breach-report)|[Year End Data Breach QuickView Report](Annual%20Security%20Reports/2021/RiskBasedSecurity-Year-End-Data-Breach-QuickView-Report-2021.pdf)|2021|Breaches|
+|[Guidepoint](https://www.guidepointsecurity.com/thank-you-grit-ransomeware-report-annual-2022/)|[GRIT Ransomware Annual Report](Annual%20Security%20Reports/2022/Guidepoint-Ransomware-Annual_Report-2022.pdf)|2022|Ransomware|
 |[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2022/IBM-X-Force-Cloud-Threat-Landscape-Report-2022.pdf)|2022|Attacks|
 |[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Threat Intelligence Index](Annual%20Security%20Reports/2023/IBM-X-Force-Threat-Intelligence-Index-2023.pdf)|2023|Attacks|
 |[IBM](https://www.ibm.com/security/data-breach)|[Cost of a Data Breach Report](Annual%20Security%20Reports/2023/IBM-Cost-of-a-Data-Breach-Report-2023.pdf)|2023|Breaches|
@@ -49,7 +50,7 @@ Reports have been classified into two categories by the source of data.
 |[NCC Group](https://research.nccgroup.com/2022/01/10/2021-annual-research-report/)|[Annual Research Report](Annual%20Security%20Reports/2021/NCCGroup-Annual-Research-Report-2021.pdf)|2021|Industry|
 |[Nucleus](https://nucleussec.com/chapter-one-state-of-vulnerability-management-ebook/)|[State of Vulnerability Management](Annual%20Security%20Reports/2023/Nucleus-State-of-Vuln-Management-2023.pdf)|2023|Vulnerabilities|
 |[PaloAlto](https://start.paloaltonetworks.com/unit-42-iot-threat-report)|[Unit 42 IoT Threat Report](Annual%20Security%20Reports/2021/PaloAlto-Unit-42-IoT-Threat-Report-2021.pdf)|2023|Attacks|
-|[PaloAlto](https://start.paloaltonetworks.com/2023-unit42-ransomware-extortion-report)|[Unit 42 Ransomware Extortion Report](Annual%20Security%20Reports/2023/PaloAlto-Unit-42-Ransomeware-Extortion-Report-2023.pdf)|2023|Attacks|
+|[PaloAlto](https://start.paloaltonetworks.com/2023-unit42-ransomware-extortion-report)|[Unit 42 Ransomware Extortion Report](Annual%20Security%20Reports/2023/PaloAlto-Unit-42-Ransomeware-Extortion-Report-2023.pdf)|2023|Ransomware|
 |[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/state-of-phish)|[State of the Phish](Annual%20Security%20Reports/2023/Proofpoint-State-of-the-Phish-2023.pdf)|2023|Attacks|
 |[Proofpoint](https://go.proofpoint.com/Human-Factor-Report-2022-TY.html)|[Human Factor Report](Annual%20Security%20Reports/2023/Proofpoint-Human-Factor-Report-2023.pdf)|2023|Attacks|
 |[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/cost-of-insider-threats)|[Cost of Insider Threats Global Report](Annual%20Security%20Reports/2022/Proofpoint-Ponemon-Cost-of-Insider-Threats-Global-Report-2022.pdf)|2022|Industry|
@@ -66,11 +67,12 @@ Reports have been classified into two categories by the source of data.
 |[Trellix](https://www.trellix.com/en-us/threat-center/threat-reports/jan-2022.html)|[Advanced Threat Research Report](Annual%20Security%20Reports/2022/Trelllix-Advanced-Threat-Research-Report-2022.pdf)|2022|Attacks|
 |[TrendMicro](https://www.trendmicro.com/vinfo/us/security/research-and-analysis/threat-reports/roundup/attacks-from-all-angles-2021-midyear-security-roundup)|[Attacks From All Angles](Annual%20Security%20Reports/2021/TrendMicro-Attacks-From-All-Angles-2021.pdf)|2021|Attacks|
 |[TrendMicro](https://www.trendmicro.com/vinfo/us/security/research-and-analysis/threat-reports/roundup/defending-the-expanding-attack-surface-trend-micro-2022-midyear-cybersecurity-report)|[Defending The Expanding Attack Surface](Annual%20Security%20Reports/2022/TrendMicro-Defending-The-Expanding-Attack-Surface-2022.pdf)|2022|Attacks|
-|[Veeam](https://www.veeam.com/wp-ransomware-trends-executive-summary-na.html)|[Ransomware Trends Report Executive Summary](Annual%20Security%20Reports/2023/Veeam-Ransomware-Trends-2023.pdf)|2023|Attacks|
+|[Veeam](https://www.veeam.com/wp-ransomware-trends-executive-summary-na.html)|[Ransomware Trends Report Executive Summary](Annual%20Security%20Reports/2023/Veeam-Ransomware-Trends-2023.pdf)|2023|Ransomware|
 |[Veracode](https://www.veracode.com/state-of-software-security-report)|[State of Software Security v12](Annual%20Security%20Reports/2021/Veracode-State-of-Software-Security-V12-2021.pdf)|2022|Attacks|
 |[Verizon](https://www.verizon.com/business/resources/reports/cyber-espionage-report/)|[Cyber Espionage Report](Annual%20Security%20Reports/2020/Verizon-Cyber-Espionage-Report-2020.pdf)|2020|Attacks|
 |[Verizon](https://www.verizon.com/business/resources/reports/dbir/)|[Data Breach Investigations Report](Annual%20Security%20Reports/2023/Verizon-Data-Breach-Investigations-Report-2023.pdf)|2023|Breaches|
 |[WhiteSource](https://www.whitesourcesoftware.com/resources/research-reports/the-state-of-open-source-vulnerabilities/)|[State of Open Source Vulnerabilities](Annual%20Security%20Reports/2021/WhiteSource-State-of-Open-Source-Vulnerabilities-2021.pdf)|2021|Attacks|
+|[Zscaler](https://info.zscaler.com/resources-industry-reports-2022-threatlabz-ransomware-report)|[ThreatLabz State of Ransomware Report](Annual%20Security%20Reports/2022/Threatlabz-Ransomware-Report-2022.pdf)|2022|Ransomware|
 
 ### Surveys
 |Provider|Report Name|Year|Data Type|
@@ -86,6 +88,7 @@ Reports have been classified into two categories by the source of data.
 |[Cobalt](https://resource.cobalt.io/state-of-pentesting-2023)|[State of Pentesting](Annual%20Security%20Reports/2023/Cobalt-State-of-Pentesting-2023.pdf)|2023|Industry|
 |[CoreSecurity](https://www.coresecurity.com/resources/guides/2020-pen-testing-survey-report-1)|[Penetration Testing Report](Annual%20Security%20Reports/2020/CoreSecurity-Penetration-Testing-Report-2020.pdf)|2020|Industry|
 |[CrowdStrike](https://www.crowdstrike.com/resources/reports/global-security-attitude-survey-2021/)|[Global Security Attitude Survey](Annual%20Security%20Reports/2021/Crowdstrike-Global-Security-Attitude-Survey-2021.pdf)|2021|Attacks|
+|[Cyberreason](https://www.cybereason.com/ransomware-the-true-cost-to-business-2022)|[Ransomware The True Cost to Business](Annual%20Security%20Reports/2022/Cyberreason-Ransomware-The-True-Cost-to-Business-2022.pdf)|2022|Ransomware|
 |[Deloitte](https://www.deloitte.com/global/en/services/risk-advisory/content/future-of-cyber.html)|[Future of Cyber Survey](Annual%20Security%20Reports/2023/Deloitte-Future-of-Cyber-Survey-2023.pdf)|2023|Industry|
 |[Fidelis](https://fidelissecurity.com/resource/report/2022-aws-cloud-security-report/)|[AWS Cloud Security Report](Annual%20Security%20Reports/2022/Fidelis-AWS-Cloud-Security-Report-2022.pdf)|2022|Industry|
 |[FireEye](https://www.fireeye.com/offers/rpt-cyber-trendscape.html)|[Cyber Trendscape Report](Annual%20Security%20Reports/2020/FireEye-Cyber-Trendscape-Report-2020.pdf)|2020|Industry|
@@ -104,6 +107,7 @@ Reports have been classified into two categories by the source of data.
 |[Sonatype](https://www.sonatype.com/state-of-the-software-supply-chain/introduction)|[The State of Cloud Security Report](Annual%20Security%20Reports/2023/Sonatype-State-of-Cloud-Security-2023.pdf)|2023|Industry|
 |[Sophos](https://www.sophos.com/en-us/whitepaper/state-of-cybersecurity)|[State of Cloud Security Report](Annual%20Security%20Reports/2023/Sophos-State-of-Cybersecurity-2023.pdf)|2023|Industry|
 |[Splunk](https://www.splunk.com/en_us/campaigns/state-of-security.html)|[State of Security](Annual%20Security%20Reports/2023/Splunk-State-of-Security-2023.pdf)|2023|Industry|
+|[Spycloud](https://spycloud.com/resource/ransomware-defense-report-2022/)|[Ransomware Defense Report](Annual%20Security%20Reports/2022/Spycloud-Ransomware-Defense-Report-2022.pdf)|2022|Ransomware|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/sans-devsecops-survey.html)|[SANS 2023 DevSecOps Survey](Annual%20Security%20Reports/2023/SANS-DevSecOps-Survey-2023.pdf)|2023|Industry|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/state-of-devsecops.html)|[Global State of DevSecOps 2023](Annual%20Security%20Reports/2023/Synopsys-Global-State-of-DevSecOps-2023.pdf)|2023|Industry|
 |[USTelecom](https://www.ustelecom.org/research/2023-cybersecurity-culture-report/)|[Cybersecurity Culture](Annual%20Security%20Reports/2023/USTelecom-Cybersecurity-Culture-2023.pdf)|2023|Industry|
