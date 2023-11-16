@@ -20,8 +20,8 @@
 ---
 ## Reports
 Reports have been classified into two categories by the source of data.
-1. **Analysis:** Reports generated from quantifying and qualifying intelligence from sensor networks or services.
-2. **Survey:** Reports generated from observations and feedback from surveys or consulting engagements.
+**Analysis:** Reports generated from quantifying and qualifying intelligence from sensor networks or services.
+**Survey:** Reports generated from observations and feedback from surveys or consulting engagements.
 
 ### Analysis
 |Provider|Report Name|Year|Data Type|
