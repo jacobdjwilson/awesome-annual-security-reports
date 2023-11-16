@@ -1,5 +1,5 @@
 # Awesome Annual Security Reports [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-> A curated list of annual cyber security reports - Centralized cybersecurity information free from sales nuisance.
+> A curated list of annual cyber security reports - Centralized annual cybersecurity analysis and industry surveys
 
 **Definition:** The state of being secure has a temporal dimension which security vendors utilize to stay relevant through annual reports. CIO, CISO, and security leaders are faced with the challenge of sifting the valuable information from marketing material. In addition to filtering for type of information leaders are challenged with staying abreast of new security vendors and partnerships. This list seeks to lower the barrier for access to this information while remaining agnostic to providers.
 
