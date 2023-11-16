@@ -112,32 +112,32 @@ Reports have been classified into two categories by the source of data.
 |[USTelecom](https://www.ustelecom.org/research/2023-cybersecurity-culture-report/)|[Cybersecurity Culture](Annual%20Security%20Reports/2023/USTelecom-Cybersecurity-Culture-2023.pdf)|2023|Industry|
 
 ## Resources
-Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of sponsored and non-profit research include professional societies and standards organizations which are listed as working groups. Both of these research resource types rely on sponsorship that’s often commercial.
+Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of sponsored and non-profit research include professional societies and standards organizations which are listed as working groups. Both of these research resource types rely on sponsorship that is often commercial.
 
 ### Research Consulting
-- [Forrester Research](https://www.forrester.com/) is an advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
-- [Gartner](https://www.gartner.com/) is a technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
-- [MITRE Corporation](https://www.mitre.org/) is an American not-for-profit organization which conducts research and development supporting various U.S. government agencies.
-- [The Rand Corporation](https://www.rand.org/) is an American not-for-profit organization which conducts research and analysis on various aspects of cybersecurity and cyber policy focused on national security.
-- [Ponemon Institute](https://www.ponemon.org/) is considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
-- [SANS Institute](https://www.sans.org/) is a private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
-- [The International Information System Security Certification Consortium (ISC)²](https://www.isc2.org/) is an American not-for-profit organization which conducts research for consumers of their cybersecurity training and certifications.
-- [The Information Security Forum (ISF)](https://www.securityforum.org/) is a global, independent organization dedicated to benchmarking and sharing best practices in information security.
-- [International Data Corporation (IDC)](https://www.idc.com/) is a global provider of market intelligence and advisory services.
+- [Forrester Research](https://www.forrester.com/) - an advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
+- [Gartner](https://www.gartner.com/) - a technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
+- [MITRE Corporation](https://www.mitre.org/) - an American not-for-profit organization which conducts research and development supporting various U.S. government agencies.
+- [The Rand Corporation](https://www.rand.org/) - an American not-for-profit organization which conducts research and analysis on various aspects of cybersecurity and cyber policy focused on national security.
+- [Ponemon Institute](https://www.ponemon.org/) - considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
+- [SANS Institute](https://www.sans.org/) - a private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
+- [The International Information System Security Certification Consortium (ISC)²](https://www.isc2.org/) - an American not-for-profit organization which conducts research for consumers of their cybersecurity training and certifications.
+- [The Information Security Forum (ISF)](https://www.securityforum.org/) - a global, independent organization dedicated to benchmarking and sharing best practices in information security.
+- [International Data Corporation (IDC)](https://www.idc.com/) - a global provider of market intelligence and advisory services.
 
 ### Working Groups
-- [The Cyber Threat Alliance (CTA)](https://www.cyberthreatalliance.org/) is an industry-driven group of cybersecurity organizations that share threat intelligence and conduct collaborative research to combat cyber threats.
-- [The Information Systems Audit and Control Association (ISACA)](https://www.isaca.org/) is an international professional association focused on IT governance, which conducts research for and on behalf of the members.
-- [The Forum of Incident Response and Security Teams (FIRST)](https://www.first.org/) provides platforms, means and tools for incident responders to always find the right partner and to collaborate efficiently.
-- [The Open Web Application Security Project (OWASP)](https://owasp.org/) is a professional community that produces research concerning web application security, made freely available to the online community.
-- [The International Organization for Standardization (ISO)](https://www.iso.org/) is an international organizational body composed of representatives which conduct closed research for creation of standards.
+- [The Cyber Threat Alliance (CTA)](https://www.cyberthreatalliance.org/) - an industry-driven group of cybersecurity organizations that share threat intelligence and conduct collaborative research to combat cyber threats.
+- [The Information Systems Audit and Control Association (ISACA)](https://www.isaca.org/) - an international professional association focused on IT governance, which conducts research for and on behalf of the members.
+- [The Forum of Incident Response and Security Teams (FIRST)](https://www.first.org/) - provides platforms, means and tools for incident responders to always find the right partner and to collaborate efficiently.
+- [The Open Web Application Security Project (OWASP)](https://owasp.org/) - a professional community that produces research concerning web application security, made freely available to the online community.
+- [The International Organization for Standardization (ISO)](https://www.iso.org/) - an international organizational body composed of representatives which conduct closed research for creation of standards.
 
 ### Government and Non-profits
-- [Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov/) is a U.S. government agency responsible for enhancing the security and resilience of the nation's critical infrastructure.
-- [Europol - European Cybercrime Centre (EC3)](https://www.europol.europa.eu/activities-services-main/areas-interest/european-cybercrime-centre-ec3) is a strategic alliance focused on combating cybercrime within the European Union
-- [The Cybersecurity Forum Initiative (CSFI)](https://www.csfi.us/) is an American non-profit organization that promotes cybersecurity awareness and research.
-- [The Center for Internet Security (CIS)](https://www.cisecurity.org/) is a American non-profit organization that provides cybersecurity solutions and best practices.
-- [The Center for Strategic and International Studies (CSIS) - Technology Policy Program](https://www.csis.org/programs/technology-policy-program) is a think tank with a Technology Policy Program that conducts research and provides insights into technology and cybersecurity policies.
+- [Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov/) - a U.S. government agency responsible for enhancing the security and resilience of the nation's critical infrastructure.
+- [Europol - European Cybercrime Centre (EC3)](https://www.europol.europa.eu/activities-services-main/areas-interest/european-cybercrime-centre-ec3) - a strategic alliance focused on combating cybercrime within the European Union
+- [The Cybersecurity Forum Initiative (CSFI)](https://www.csfi.us/) - an American non-profit organization that promotes cybersecurity awareness and research.
+- [The Center for Internet Security (CIS)](https://www.cisecurity.org/) - a American non-profit organization that provides cybersecurity solutions and best practices.
+- [The Center for Strategic and International Studies (CSIS) - Technology Policy Program](https://www.csis.org/programs/technology-policy-program) - a think tank with a Technology Policy Program that conducts research and provides insights into technology and cybersecurity policies.
 
 ## Contributing
 [Please refer to the guidelines at CONTRIBUTING.md for details](CONTRIBUTING.md).
