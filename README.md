@@ -17,7 +17,6 @@
   - [Research Consulting](#research-consulting)
   - [Working Groups](#working-groups)
   - [Government and Non-profits](#government-and-non-profits)
-- [Contributing](#contributing)
 ---
 ## Reports
 Reports have been classified into two categories by the source of data.
