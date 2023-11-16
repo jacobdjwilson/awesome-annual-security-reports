@@ -19,8 +19,8 @@
   - [Government and Non-profits](#government-and-non-profits)
 ---
 ## Reports
-Reports have been classified into two categories by the source of data.
-**Analysis:** Reports generated from quantifying and qualifying intelligence from sensor networks or services.
+Reports have been classified into two categories by the source of data.\
+**Analysis:** Reports generated from quantifying and qualifying intelligence from sensor networks or services.\
 **Survey:** Reports generated from observations and feedback from surveys or consulting engagements.
 
 ### Analysis
