@@ -1,3 +1,4 @@
+<!-- lint ignore double-link -->
 # Awesome Annual Security Reports [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 > A curated list of annual cyber security reports - Centralized annual cybersecurity analysis and industry surveys
 
