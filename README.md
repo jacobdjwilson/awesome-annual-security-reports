@@ -57,7 +57,7 @@ Reports have been classified into two categories by the source of data.\
 |[PwC](https://www.pwc.com/us/en/services/consulting/cybersecurity-risk-regulatory/library/cyber-threats-year-in-retrospect.html)|[Cyber Threat Retrospect](Annual%20Security%20Reports/2022/PwC-Cyber-Threats-Retrospect-2022.pdf)|2022|Industry|
 |[Qualys](https://www.qualys.com/forms/tru-research-report/)|[TruRisk Threat Research Report](Annual%20Security%20Reports/2023/Qualys-Trurisk-Threat-Research-Report-2023.pdf)|2023|Vulnerabilities|
 |[Rapid7](https://www.rapid7.com/info/2023-mid-year-threat-review/)|[Mid-Year Threat Review](Annual%20Security%20Reports/2023/Rapid7-Mid-Year-Threat-Review-2023.pdf)|2023|Attacks|
-|[Rapid7](https://www.rapid7.com/info/vulnerability-intelligence-report-2022-edition/)|[Mid-Year Threat Review](Annual%20Security%20Reports/2022/Rapid7-Vulnerability-Intelligence-Report-2022.pdf)|2022|Vulnerabilities|
+|[Rapid7](https://www.rapid7.com/info/vulnerability-intelligence-report-2022-edition/)|[Vulnerability Intelligence Report](Annual%20Security%20Reports/2022/Rapid7-Vulnerability-Intelligence-Report-2022.pdf)|2022|Vulnerabilities|
 |[RedCanary](https://redcanary.com/threat-detection-report/)|[Threat Detection Report](Annual%20Security%20Reports/2023/RedCanary-Threat-Detection-Report-2023.pdf)|2023|Attacks|
 |[Secureworks](https://www.secureworks.com/resources/rp-state-of-the-threat-2023)|[State of the Threat](Annual%20Security%20Reports/2023/Secureworks-State-of-the-Threat-Report-2023.pdf)|2023|Attacks|
 |[Snyk](https://go.snyk.io/IaC-Report-2021.html)|[Infrastructure as Code Report](Annual%20Security%20Reports/2021/Snyk-Infrastructure-as-Code-Report-2021.pdf)|2021|Industry|
