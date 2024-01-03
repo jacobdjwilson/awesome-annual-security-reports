@@ -97,6 +97,7 @@ Reports have been classified into two categories by the source of data.\
 |[ISC2](https://www.isc2.org/Landing/cloud-security-report)|[Cloud Security Report](Annual%20Security%20Reports/2022/ISC2-Cloud-Security-Report-2022.pdf)|2022|Industry|
 |[ISC2](https://www.isc2.org/landing/Cyberthreat-Defense-Report)|[Cyberthreat Defense Report](Annual%20Security%20Reports/2022/ISC2-Cyberthreat-Defense-Report-2022.pdf)|2022|Industry|
 |[KnowBe4](https://www.knowbe4.com/organizational-cyber-security-culture-research-report)|[Cybersecurity Culture Report](Annual%20Security%20Reports/2022/KnowBe4-Cybersecurity-Culture-Report-2022.pdf)|2022|Industry|
+|[Mend](https://www.mend.io/resources/research-reports/the-state-of-supply-chain-threats/)|[State of Supply Chain Threats](Annual%20Security%20Reports/2023/Mend-State-of-Supply-Chain-Threats.pdf)|2023|Vulnerabilities|
 |[Norton](https://www.nortonlifelock.com/us/en/newsroom/press-kits/2022-norton-cyber-safety-insights-report-special-release-online-creeping/)|[Cyber Safety Insights Report](Annual%20Security%20Reports/2022/Norton-Cyber-Safety-Insights-Report-2022.pdf)|2022|Industry|
 |[PaloAlto](https://www.paloaltonetworks.com/state-of-cloud-native-security)|[State of Cloud Native Security Report](Annual%20Security%20Reports/2023/PaloAlto-State-of-Cloud-Native-Security-2023.pdf)|2023|Industry|
 |[Proofpoint](https://go.proofpoint.com/Voice-of-the-CISO-Report.html)|[Voice of the CISO Report](Annual%20Security%20Reports/2023/Proofpoint-Voice-of-the-CISO-Report-2023.pdf)|2023|Industry|
