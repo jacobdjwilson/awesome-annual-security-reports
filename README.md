@@ -55,7 +55,7 @@ Reports have been classified into two categories by the source of data.\
 |[Proofpoint](https://go.proofpoint.com/Human-Factor-Report-2022-TY.html)|[Human Factor Report](Annual%20Security%20Reports/2023/Proofpoint-Human-Factor-Report-2023.pdf)|2023|Attacks|
 |[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/cost-of-insider-threats)|[Cost of Insider Threats Global Report](Annual%20Security%20Reports/2022/Proofpoint-Ponemon-Cost-of-Insider-Threats-Global-Report-2022.pdf)|2022|Industry|
 |[PwC](https://www.pwc.com/us/en/services/consulting/cybersecurity-risk-regulatory/library/cyber-threats-year-in-retrospect.html)|[Cyber Threat Retrospect](Annual%20Security%20Reports/2022/PwC-Cyber-Threats-Retrospect-2022.pdf)|2022|Industry|
-|[Qualys](https://www.qualys.com/forms/tru-research-report/)|[TruRisk-Threat-Research-Report](Annual%20Security%20Reports/2023/Qualys-Trurisk-Threat-Research-Report-2023.pdf)|2023|Vulnerabilities|
+|[Qualys](https://www.qualys.com/forms/tru-research-report/)|[TruRisk Threat Research Report](Annual%20Security%20Reports/2023/Qualys-Trurisk-Threat-Research-Report-2023.pdf)|2023|Vulnerabilities|
 |[Rapid7](https://www.rapid7.com/info/2023-mid-year-threat-review/)|[Mid-Year Threat Review](Annual%20Security%20Reports/2023/Rapid7-Mid-Year-Threat-Review-2023.pdf)|2023|Attacks|
 |[RedCanary](https://redcanary.com/threat-detection-report/)|[Threat Detection Report](Annual%20Security%20Reports/2023/RedCanary-Threat-Detection-Report-2023.pdf)|2023|Attacks|
 |[Secureworks](https://www.secureworks.com/resources/rp-state-of-the-threat-2023)|[State of the Threat](Annual%20Security%20Reports/2023/Secureworks-State-of-the-Threat-Report-2023.pdf)|2023|Attacks|
@@ -96,6 +96,7 @@ Reports have been classified into two categories by the source of data.\
 |[Fortinet](https://www.fortinet.com/blog/industry-trends/cloud-security-report-key-insights-2023)|[Cloud Security Report](Annual%20Security%20Reports/2023/Fortinet-Cloud-Security-Report-2023.pdf)|2023|Industry|
 |[Fortra](https://www.fortra.com/services/consulting/cybersecurity/penetration-testing)|[Penetration Testing Report](Annual%20Security%20Reports/2022/Fortra-Pentesting-Report-2022.pdf)|2022|Industry|
 |[Forrester](https://www.forrester.com/report/the-state-of-vulnerability-risk-management-2023/RES179028)|[The State Of Vulnerability Risk Management](https://reprints2.forrester.com/#/assets/2/1730/RES179028/report)|2023|Vulnerabilities|
+|[HackerOne](https://www.hackerone.com/resources/reporting/7th-annual-hacker-powered-security-report-2023)|[Hacker Powered Security Report](Annual%20Security%20Reports/2023/HackerOne-Hacker-Powered-Security-Report-2023.pdf)|2023|Industry|
 |[ISC2](https://www.isc2.org/Landing/cloud-security-report)|[Cloud Security Report](Annual%20Security%20Reports/2022/ISC2-Cloud-Security-Report-2022.pdf)|2022|Industry|
 |[ISC2](https://www.isc2.org/landing/Cyberthreat-Defense-Report)|[Cyberthreat Defense Report](Annual%20Security%20Reports/2022/ISC2-Cyberthreat-Defense-Report-2022.pdf)|2022|Industry|
 |[KnowBe4](https://www.knowbe4.com/organizational-cyber-security-culture-research-report)|[Cybersecurity Culture Report](Annual%20Security%20Reports/2022/KnowBe4-Cybersecurity-Culture-Report-2022.pdf)|2022|Industry|
