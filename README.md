@@ -61,7 +61,7 @@ Reports have been classified into two categories by the source of data.\
 |[Rapid7](https://www.rapid7.com/info/vulnerability-intelligence-report-2022-edition/)|[Vulnerability Intelligence Report](Annual%20Security%20Reports/2022/Rapid7-Vulnerability-Intelligence-Report-2022.pdf)|2022|Vulnerabilities|
 |[RedCanary](https://redcanary.com/threat-detection-report/)|[Threat Detection Report](Annual%20Security%20Reports/2023/RedCanary-Threat-Detection-Report-2023.pdf)|2023|Attacks|
 |[Secureworks](https://www.secureworks.com/resources/rp-state-of-the-threat-2023)|[State of the Threat](Annual%20Security%20Reports/2023/Secureworks-State-of-the-Threat-Report-2023.pdf)|2023|Attacks|
-|[Slashnext]((https://slashnext.com/state-of-phishing-2023/))|([State of Phishing 2023](Annual%20Security%20Reports/2023/SlashNext-The-State-of-Phishing-Report-2023.pdf))|2023|Attacks|
+|[Slashnext](https://slashnext.com/state-of-phishing-2023)|[State of Phishing 2023](Annual%20Security%20Reports/2023/SlashNext-The-State-of-Phishing-Report-2023.pdf)|2023|Attacks|
 |[Snyk](https://go.snyk.io/IaC-Report-2021.html)|[Infrastructure as Code Report](Annual%20Security%20Reports/2021/Snyk-Infrastructure-as-Code-Report-2021.pdf)|2021|Industry|
 |[SonicWall](https://www.sonicwall.com/2023-cyber-threat-report/)|[Cyber Threat Report](Annual%20Security%20Reports/2023/SonicWall-Cyber-Threat-Report-2023.pdf)|2022|Attacks|
 |[Sophos](https://www.sophos.com/en-us/labs/security-threat-report)|[Threat Report](Annual%20Security%20Reports/2023/Sophos-Threat-Report-2023.pdf)|2023|Attacks|
