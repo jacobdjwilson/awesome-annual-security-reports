@@ -27,7 +27,6 @@ Reports have been classified into two categories by the source of data.\
 ### Analysis
 |Provider|Report Name|Year|Data Type|
 |:---|:---|:---|:---|
-|[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021)|[Cyber Threat Intelligence Report](Annual%20Security%20Reports/2021/Accenture-Cyber-Threat-Intelligence-Report-2021.pdf)|2021|Attacks|
 |[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021-vol-2)|[Cyber Threat Intelligence Report Volume 2](Annual%20Security%20Reports/2022/Accenture-Cyber-Threat-Intelligence-Report-Vol2-2022.pdf)|2022|Attacks|
 |[Beyond Trust](https://www.beyondtrust.com/resources/whitepapers/microsoft-vulnerability-report)|[Microsoft Vulnerability Report](Annual%20Security%20Reports/2023/BeyondTrust-Microsoft-Vulnerability-Report-2023.pdf)|2023|Vulnerabilities|
 |[CheckPoint](https://pages.checkpoint.com/cyber-security-report-2022.html)|[Cybersecurity Report](Annual%20Security%20Reports/2023/CheckPoint-Cybersecurity-Report-2023.pdf)|2023|Attacks|
