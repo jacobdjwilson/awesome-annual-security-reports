@@ -32,12 +32,14 @@ Reports have been classified into two categories by the source of data.\
 |[CheckPoint](https://pages.checkpoint.com/cyber-security-report-2022.html)|[Cybersecurity Report](Annual%20Security%20Reports/2023/CheckPoint-Cybersecurity-Report-2023.pdf)|2023|Attacks|
 |[CISA](https://www.cisa.gov/resources-tools/services/vulnerability-disclosure-policy-vdp-platform)|[Vulnerability Disclosure Policy Platform Annual Report](Annual%20Security%20Reports/2022/CISA-Vulnerability-Disclosure-Policy-Platform-Annual-Report-2022.pdf)|2022|Vulnerabilities|
 |[Cisco](https://learn-cloudsecurity.cisco.com/umbrella-resources/umbrella/2022-dns-discoveries#page=1)|[DNS Discoveries](Annual%20Security%20Reports/2022/Cisco-DNS-Discoveries-2022.pdf)|2022|Attacks|
+|[Cisco](https://blog.talosintelligence.com/cisco-talos-2023-year-in-review/)|[Talos Year In Review](Annual%20Security%20Reports/2023/Cisco-Talos-Year-In-Review-2023.pdf)|2023|Attacks|
 |[Cofense](https://cofense.com/annualreport)|[Annual State of Email Security](Annual%20Security%20Reports/2023/Cofense-Annual-State-of-Email-Security-Report-2023.pdf)|2023|Attacks|
 |[CrowdStrike](https://www.crowdstrike.com/resources/reports/overwatch-threat-hunting-report/)|[Threat Hunting Report](Annual%20Security%20Reports/2023/Crowdstrike-Threat-Hunting-Report-2023.pdf)|2023|Attacks|
 |[CrowdStrike](https://www.crowdstrike.com/resources/reports/global-threat-report/)|[Global Threat Report](Annual%20Security%20Reports/2024/Crowdstrike-Global-Threat-Report-2024.pdf)|2024|Attacks|
 |[DeepInstinct](https://www.deepinstinct.com/blog/2022-cyber-threat-landscape-report)|[Threat Landscape Report](Annual%20Security%20Reports/2023/Deep-Instinct-Cyber-Threat-Landscape-Report-2023.pdf)|2023|Attacks|
 |[DNSFilter](https://explore.dnsfilter.com/2024-annual-security-report)|[Annual Security Report](Annual%20Security%20Reports/2024/DNSFilter-Annual-Security-Report-2024.pdf)|2024|Attacks|
 |[Dragos](https://www.dragos.com/year-in-review/#section-report)|[ICS/OT Cybersecurity Year In Review Report](Annual%20Security%20Reports/2023/Dragos-Year-In-Review-Report-2023.pdf)|2023|Attacks|
+|[Duo](https://duo.com/resources/ebooks/2024-duo-trusted-access-report)|[Trusted Access Report](Annual%20Security%20Reports/2024/Duo-Trusted-Access-Report-2024.pdf)|2024|Attacks|
 |[Expel](https://expel.com/annual-threat-report/)|[Annual Threat Report](Annual%20Security%20Reports/2024/Expel-Annual-Threat-Report-2024.pdf)|2024|Attacks|
 |[Flashpoint](https://flashpoint.io/resources/report/2024-global-threat-intelligence-report/)|[Global Threat Intelligence Report](Annual%20Security%20Reports/2024/Flashpoint-Threat-Intel-Report-2024.pdf)|2024|Attacks|
 |[Flexera](https://info.flexera.com/SVM-REPORT-Annual-Vulnerability-Review)|[Annual Vulnerability Review](Annual%20Security%20Reports/2023/Flexera-Annual-Vulnerability-Review-2023.pdf)|2023|Vulnerabilities|
