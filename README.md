@@ -52,6 +52,7 @@ Reports have been classified into two categories by the source of data.\
 |[NCC Group](https://www.nccgroup.com/us/threat-monitor-report-2023/)|[Threat Monitor Report](Annual%20Security%20Reports/2023/NCCGroup-Threat-Monitor-Report-2023.pdf)|2023|Attacks|
 |[Nucleus](https://nucleussec.com/chapter-one-state-of-vulnerability-management-ebook/)|[State of Vulnerability Management](Annual%20Security%20Reports/2023/Nucleus-State-of-Vuln-Management-2023.pdf)|2023|Vulnerabilities|
 |[PaloAlto](https://start.paloaltonetworks.com/2023-unit42-ransomware-extortion-report)|[Unit 42 Ransomware Extortion Report](Annual%20Security%20Reports/2023/PaloAlto-Unit-42-Ransomeware-Extortion-Report-2023.pdf)|2023|Ransomware|
+|[PaloAlto](https://www.paloaltonetworks.com/resources/research/2023-unit-42-attack-surface-threat-report)|[Unit 42 Attack Surface Threat Report](Annual%20Security%20Reports/2023/PaloAlto-Unit42-ASM-Threat-Report-2023.pdf)|2023|Ransomware|
 |[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/state-of-phish)|[State of the Phish](Annual%20Security%20Reports/2023/Proofpoint-State-of-the-Phish-2023.pdf)|2023|Attacks|
 |[Proofpoint](https://go.proofpoint.com/Human-Factor-Report-2022-TY.html)|[Human Factor Report](Annual%20Security%20Reports/2023/Proofpoint-Human-Factor-Report-2023.pdf)|2023|Attacks|
 |[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/cost-of-insider-threats)|[Cost of Insider Threats Global Report](Annual%20Security%20Reports/2022/Proofpoint-Ponemon-Cost-of-Insider-Threats-Global-Report-2022.pdf)|2022|Industry|
