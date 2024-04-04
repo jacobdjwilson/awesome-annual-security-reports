@@ -102,7 +102,7 @@ Reports have been classified into two categories by the source of data.\
 |[PwC](https://www.pwc.com/us/en/services/consulting/cybersecurity-risk-regulatory/library/global-digital-trust-insights.html)|[Global Digital Trust Insights](Annual%20Security%20Reports/2024/PWC-Global-Digital-Trust-Insights-Report-2024.pdf)|2024|Industry|
 |[SANS](https://www.sans.org/white-papers/2023-cti-survey-keeping-up-changing-threat-landscape/)|[SANS Cyber Threat Intelligence Survey](Annual%20Security%20Reports/2023/SANS-cyber-threat-intelligence-survey-2023.pdf)|2023|Industry|
 |[Snyk](https://go.snyk.io/state-of-open-source-security-report-2023-dwn-typ.html)|[State of Open Source Security](Annual%20Security%20Reports/2023/Snyk-State-of-Open-Source-Security-2023.pdf)|2023|Industry|
-|[Snyk](https://snyk.io/reports/ai-code-security/)|[AI Generated Code Security Report](Annual%20Security%20Reports/2023/Snyk-AI-Generated-Code-Security-Report-2023.pdf)|2023|AI|
+|[Snyk](https://snyk.io/reports/ai-code-security/)|[AI Generated Code Security Report](Annual%20Security%20Reports/2023/Snyk-AI-Generated-Code-Security-Report-2023.pdf)|2023|Attacks|
 |[Sonatype](https://www.sonatype.com/state-of-the-software-supply-chain/introduction)|[The State of Cloud Security Report](Annual%20Security%20Reports/2023/Sonatype-State-of-Cloud-Security-2023.pdf)|2023|Industry|
 |[Sophos](https://www.sophos.com/en-us/whitepaper/state-of-cybersecurity)|[State of Cloud Security Report](Annual%20Security%20Reports/2023/Sophos-State-of-Cybersecurity-2023.pdf)|2023|Industry|
 |[Splunk](https://www.splunk.com/en_us/campaigns/state-of-security.html)|[State of Security](Annual%20Security%20Reports/2023/Splunk-State-of-Security-2023.pdf)|2023|Industry|
