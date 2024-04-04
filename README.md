@@ -80,14 +80,9 @@ Reports have been classified into two categories by the source of data.\
 |:---|:---|:---|:---|
 |[Accenture](https://www.accenture.com/us-en/insights/security/invest-cyber-resilience)|[State of Cybersecurity Resilience](Annual%20Security%20Reports/2023/Accenture-State-of-Cybersecurity-2023.pdf)|2023|Industry|
 |[Checkmarx](https://checkmarx.com/resources/reports/appsec-the-view-from-security-and-software-development-experts/)|[Annual Appsec Report](Annual%20Security%20Reports/2022/Checkmarx-Annual-Appsec-Report-2022.pdf)|2022|Industry|
-|[Checkmarx](https://checkmarx.com/resources/reports/2021-state-of-devsecops-report)|[State of DevSecOps Report](Annual%20Security%20Reports/2021/Checkmarx-State-of-Devsecops-Report-2021.pdf)|2021|Industry|
-|[Checkmarx](https://checkmarx.com/resources/appsec-training-for-developers/global-secure-coding-education-survey)|[Global Secure Coding Education Survey](Annual%20Security%20Reports/2021/Checkmarx-Global-Secure-Coding-Education-Survey-2021.pdf)|2021|Industry|
-|[Cisco](https://www.cisco.com/c/en/us/products/security/security-outcomes-study.html)|[Security Outcomes Study Volume 1](Annual%20Security%20Reports/2021/Cisco-Security-Outcomes-Study-Vol1-2021.pdf)|2021|Industry|
-|[Cisco](https://www.cisco.com/c/en/us/products/security/security-outcomes-study-vol-2.html)|[Security Outcomes Study Volume 2](Annual%20Security%20Reports/2021/Cisco-Security-Outcomes-Study-Vol2-2021.pdf)|2021|Industry|
 |[Cisco](https://www.cisco.com/c/en/us/products/security/security-outcomes-study-vol-3.html)|[Security Outcomes Study Volume 3](Annual%20Security%20Reports/2022/Cisco-Security-Outcomes-Study-Vol3-2022.pdf)|2022|Industry|
 |[Cisco](https://www.cisco.com/c/en/us/about/trust-center/data-privacy-benchmark-study.html)|[Data Privacy Benchmark Study](Annual%20Security%20Reports/2024/Cisco-Privacy-Benchmark-Study-2024.pdf)|2024|Breaches|
 |[Cobalt](https://resource.cobalt.io/state-of-pentesting-2023)|[State of Pentesting](Annual%20Security%20Reports/2023/Cobalt-State-of-Pentesting-2023.pdf)|2023|Industry|
-|[CrowdStrike](https://www.crowdstrike.com/resources/reports/global-security-attitude-survey-2021/)|[Global Security Attitude Survey](Annual%20Security%20Reports/2021/Crowdstrike-Global-Security-Attitude-Survey-2021.pdf)|2021|Attacks|
 |[Cyberreason](https://www.cybereason.com/ransomware-the-true-cost-to-business-2022)|[Ransomware The True Cost to Business](Annual%20Security%20Reports/2022/Cyberreason-Ransomware-The-True-Cost-to-Business-2022.pdf)|2022|Ransomware|
 |[Deloitte](https://www.deloitte.com/global/en/services/risk-advisory/content/future-of-cyber.html)|[Future of Cyber Survey](Annual%20Security%20Reports/2023/Deloitte-Future-of-Cyber-Survey-2023.pdf)|2023|Industry|
 |[Fidelis](https://fidelissecurity.com/resource/report/2022-aws-cloud-security-report/)|[AWS Cloud Security Report](Annual%20Security%20Reports/2022/Fidelis-AWS-Cloud-Security-Report-2022.pdf)|2022|Industry|
