@@ -63,7 +63,6 @@ Reports have been classified into two categories by the source of data.\
 |[RedCanary](https://redcanary.com/threat-detection-report/)|[Threat Detection Report](Annual%20Security%20Reports/2023/RedCanary-Threat-Detection-Report-2023.pdf)|2023|Attacks|
 |[Secureworks](https://www.secureworks.com/resources/rp-state-of-the-threat-2023)|[State of the Threat](Annual%20Security%20Reports/2023/Secureworks-State-of-the-Threat-Report-2023.pdf)|2023|Attacks|
 |[Slashnext](https://slashnext.com/state-of-phishing-2023)|[State of Phishing 2023](Annual%20Security%20Reports/2023/SlashNext-The-State-of-Phishing-Report-2023.pdf)|2023|Attacks|
-|[Snyk](https://go.snyk.io/IaC-Report-2021.html)|[Infrastructure as Code Report](Annual%20Security%20Reports/2021/Snyk-Infrastructure-as-Code-Report-2021.pdf)|2021|Industry|
 |[SonicWall](https://www.sonicwall.com/2023-cyber-threat-report/)|[Cyber Threat Report](Annual%20Security%20Reports/2023/SonicWall-Cyber-Threat-Report-2023.pdf)|2022|Attacks|
 |[Sophos](https://www.sophos.com/en-us/labs/security-threat-report)|[Threat Report](Annual%20Security%20Reports/2023/Sophos-Threat-Report-2023.pdf)|2023|Attacks|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/open-source-security-risk-analysis.html)|[Open Source Risk Analysis Report](Annual%20Security%20Reports/2024/Synopsys-Open-Source-Risk-Analysis-Report-2024.pdf)|2024|Attacks|
@@ -110,6 +109,7 @@ Reports have been classified into two categories by the source of data.\
 |[PwC](https://www.pwc.com/us/en/services/consulting/cybersecurity-risk-regulatory/library/global-digital-trust-insights.html)|[Global Digital Trust Insights](Annual%20Security%20Reports/2024/PWC-Global-Digital-Trust-Insights-Report-2024.pdf)|2024|Industry|
 |[SANS](https://www.sans.org/white-papers/2023-cti-survey-keeping-up-changing-threat-landscape/)|[SANS Cyber Threat Intelligence Survey](Annual%20Security%20Reports/2023/SANS-cyber-threat-intelligence-survey-2023.pdf)|2023|Industry|
 |[Snyk](https://go.snyk.io/state-of-open-source-security-report-2023-dwn-typ.html)|[State of Open Source Security](Annual%20Security%20Reports/2023/Snyk-State-of-Open-Source-Security-2023.pdf)|2023|Industry|
+|[Snyk](https://snyk.io/reports/ai-code-security/)|[AI Generated Code Security Report](Annual%20Security%20Reports/2023/Snyk-AI-Generated-Code-Security-Report-2023.pdf)|2023|AI|
 |[Sonatype](https://www.sonatype.com/state-of-the-software-supply-chain/introduction)|[The State of Cloud Security Report](Annual%20Security%20Reports/2023/Sonatype-State-of-Cloud-Security-2023.pdf)|2023|Industry|
 |[Sophos](https://www.sophos.com/en-us/whitepaper/state-of-cybersecurity)|[State of Cloud Security Report](Annual%20Security%20Reports/2023/Sophos-State-of-Cybersecurity-2023.pdf)|2023|Industry|
 |[Splunk](https://www.splunk.com/en_us/campaigns/state-of-security.html)|[State of Security](Annual%20Security%20Reports/2023/Splunk-State-of-Security-2023.pdf)|2023|Industry|
