@@ -51,7 +51,6 @@ Reports have been classified into two categories by the source of data.\
 |[NCC Group](https://research.nccgroup.com/2023/12/11/ncc-groups-2022-2023-research-report/)|[Annual Research Report](Annual%20Security%20Reports/2023/NCCGroup-Annual-Research-Report-2023.pdf)|2023|Industry|
 |[NCC Group](https://www.nccgroup.com/us/threat-monitor-report-2023/)|[Threat Monitor Report](Annual%20Security%20Reports/2023/NCCGroup-Threat-Monitor-Report-2023.pdf)|2023|Attacks|
 |[Nucleus](https://nucleussec.com/chapter-one-state-of-vulnerability-management-ebook/)|[State of Vulnerability Management](Annual%20Security%20Reports/2023/Nucleus-State-of-Vuln-Management-2023.pdf)|2023|Vulnerabilities|
-|[PaloAlto](https://start.paloaltonetworks.com/unit-42-iot-threat-report)|[Unit 42 IoT Threat Report](Annual%20Security%20Reports/2021/PaloAlto-Unit-42-IoT-Threat-Report-2021.pdf)|2023|Vulnerabilities|
 |[PaloAlto](https://start.paloaltonetworks.com/2023-unit42-ransomware-extortion-report)|[Unit 42 Ransomware Extortion Report](Annual%20Security%20Reports/2023/PaloAlto-Unit-42-Ransomeware-Extortion-Report-2023.pdf)|2023|Ransomware|
 |[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/state-of-phish)|[State of the Phish](Annual%20Security%20Reports/2023/Proofpoint-State-of-the-Phish-2023.pdf)|2023|Attacks|
 |[Proofpoint](https://go.proofpoint.com/Human-Factor-Report-2022-TY.html)|[Human Factor Report](Annual%20Security%20Reports/2023/Proofpoint-Human-Factor-Report-2023.pdf)|2023|Attacks|
@@ -67,14 +66,12 @@ Reports have been classified into two categories by the source of data.\
 |[Sophos](https://www.sophos.com/en-us/labs/security-threat-report)|[Threat Report](Annual%20Security%20Reports/2023/Sophos-Threat-Report-2023.pdf)|2023|Attacks|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/open-source-security-risk-analysis.html)|[Open Source Risk Analysis Report](Annual%20Security%20Reports/2024/Synopsys-Open-Source-Risk-Analysis-Report-2024.pdf)|2024|Attacks|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/software-vulnerability-trends.html)|[Software Vulnerability Snapshot](Annual%20Security%20Reports/2022/Synopsys-Software-Vulnerability-Snapshot-2022.pdf)|2022|Vulnerabilities|
-|[Tenable](https://www.tenable.com/cyber-exposure/2021-threat-landscape-retrospective)|[Threat Landscape Retrospective](Annual%20Security%20Reports/2021/Tenable-Threat-Landscape-Retrospective-2021.pdf)|2021|Attacks|
 |[Trellix](https://www.trellix.com/en-us/threat-center/threat-reports/jan-2022.html)|[Advanced Threat Research Report](Annual%20Security%20Reports/2022/Trelllix-Advanced-Threat-Research-Report-2022.pdf)|2022|Attacks|
 |[TrendMicro](https://www.trendmicro.com/vinfo/us/security/research-and-analysis/threat-reports/roundup/calibrating-expansion-2023-annual-cybersecurity-threat-report)|[Annual Cybersecurity Threat Report](Annual%20Security%20Reports/2023/Trendmicro-Annual-Cybersecurity-Report-2023.pdf)|2023|Attacks|
 |[TrendMicro](https://www.trendmicro.com/vinfo/us/security/research-and-analysis/threat-reports/roundup/defending-the-expanding-attack-surface-trend-micro-2022-midyear-cybersecurity-report)|[Defending The Expanding Attack Surface](Annual%20Security%20Reports/2022/TrendMicro-Defending-The-Expanding-Attack-Surface-2022.pdf)|2022|Attacks|
 |[Veeam](https://www.veeam.com/wp-ransomware-trends-executive-summary-na.html)|[Ransomware Trends Report Executive Summary](Annual%20Security%20Reports/2023/Veeam-Ransomware-Trends-2023.pdf)|2023|Ransomware|
 |[Veracode](https://www.veracode.com/state-of-software-security-report)|[State of Software Security](Annual%20Security%20Reports/2024/Veracode-State-of-Software-Security-Report-2024.pdf)|2024|Attacks|
 |[Verizon](https://www.verizon.com/business/resources/reports/dbir/)|[Data Breach Investigations Report](Annual%20Security%20Reports/2023/Verizon-Data-Breach-Investigations-Report-2023.pdf)|2023|Breaches|
-|[WhiteSource](https://www.whitesourcesoftware.com/resources/research-reports/the-state-of-open-source-vulnerabilities/)|[State of Open Source Vulnerabilities](Annual%20Security%20Reports/2021/WhiteSource-State-of-Open-Source-Vulnerabilities-2021.pdf)|2021|Vulnerabilities|
 |[Zscaler](https://info.zscaler.com/resources-industry-reports-2022-threatlabz-ransomware-report)|[ThreatLabz State of Ransomware Report](Annual%20Security%20Reports/2022/Threatlabz-Ransomware-Report-2022.pdf)|2022|Ransomware|
 
 ### Surveys
