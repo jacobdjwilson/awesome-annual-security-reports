@@ -40,8 +40,7 @@ Reports have been classified into two categories by the source of data.\
 |[DNSFilter](https://explore.dnsfilter.com/2024-annual-security-report)|[Annual Security Report](Annual%20Security%20Reports/2024/DNSFilter-Annual-Security-Report-2024.pdf)|2024|Attacks|
 |[Dragos](https://www.dragos.com/year-in-review/#section-report)|[ICS/OT Cybersecurity Year In Review Report](Annual%20Security%20Reports/2023/Dragos-Year-In-Review-Report-2023.pdf)|2023|Attacks|
 |[Expel](https://expel.com/annual-threat-report/)|[Annual Threat Report](Annual%20Security%20Reports/2024/Expel-Annual-Threat-Report-2024.pdf)|2024|Attacks|
-|[Flashpoint](https://www.riskbasedsecurity.com/download-year-end-vulnerability-report/)|[Year End Vulnerability QuickView Report](Annual%20Security%20Reports/2021/RiskBasedSecurity-Year-End-Vulnerability-QuickView-Report-2021.pdf)|2021|Vulnerabilities|
-|[Flashpoint](https://www.riskbasedsecurity.com/download-year-end-data-breach-report)|[Year End Data Breach QuickView Report](Annual%20Security%20Reports/2021/RiskBasedSecurity-Year-End-Data-Breach-QuickView-Report-2021.pdf)|2021|Breaches|
+|[Flashpoint](https://flashpoint.io/resources/report/2024-global-threat-intelligence-report/)|[Global Threat Intelligence Report](Annual%20Security%20Reports/2024/Flashpoint-Threat-Intel-Report-2024.pdf)|2024|Attacks|
 |[Flexera](https://info.flexera.com/SVM-REPORT-Annual-Vulnerability-Review)|[Annual Vulnerability Review](Annual%20Security%20Reports/2023/Flexera-Annual-Vulnerability-Review-2023.pdf)|2023|Vulnerabilities|
 |[Fortinet](https://www.fortinet.com/demand/gated/threat-report-1h-2023)|[Global Threat Landscape Report](Annual%20Security%20Reports/2023/Fortinet-Global-Threat-Report-2023.pdf)|2023|Attacks|
 |[Guidepoint](https://www.guidepointsecurity.com/resources/grit-ransomware-annual-report-2023/)|[GRIT Ransomware Annual Report](Annual%20Security%20Reports/2023/Guidepoint-Ransomware-Annual_Report-2023.pdf)|2023|Ransomware|
