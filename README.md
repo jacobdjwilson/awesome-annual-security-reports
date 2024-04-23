@@ -48,7 +48,7 @@ Reports have been classified into two categories by the source of data.\
 |[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2022/IBM-X-Force-Cloud-Threat-Landscape-Report-2022.pdf)|2022|Attacks|
 |[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Threat Intelligence Index](Annual%20Security%20Reports/2023/IBM-X-Force-Threat-Intelligence-Index-2023.pdf)|2023|Attacks|
 |[IBM](https://www.ibm.com/security/data-breach)|[Cost of a Data Breach Report](Annual%20Security%20Reports/2023/IBM-Cost-of-a-Data-Breach-Report-2023.pdf)|2023|Breaches|
-|[Mandiant](https://www.mandiant.com/m-trends)|[MTrends Cyber Security Insights](Annual%20Security%20Reports/2023/Mandiant-MTrends-Cybersecurity-Insights-Report-2023.pdf)|2023|Attacks|
+|[Mandiant](https://www.mandiant.com/m-trends)|[MTrends Special Report](Annual%20Security%20Reports/2024/Mandiant-M-Trends-2024.pdf)|2024|Attacks|
 |[Microsoft](https://www.microsoft.com/en-us/security/security-insider/microsoft-digital-defense-report-2023)|[Digital Defense Report](Annual%20Security%20Reports/2023/Microsoft-Digital-Defense-Report-2023.pdf)|2023|Attacks|
 |[NCC Group](https://research.nccgroup.com/2023/12/11/ncc-groups-2022-2023-research-report/)|[Annual Research Report](Annual%20Security%20Reports/2023/NCCGroup-Annual-Research-Report-2023.pdf)|2023|Industry|
 |[NCC Group](https://www.nccgroup.com/us/threat-monitor-report-2023/)|[Threat Monitor Report](Annual%20Security%20Reports/2023/NCCGroup-Threat-Monitor-Report-2023.pdf)|2023|Attacks|
@@ -65,7 +65,7 @@ Reports have been classified into two categories by the source of data.\
 |[RedCanary](https://redcanary.com/threat-detection-report/)|[Threat Detection Report](Annual%20Security%20Reports/2023/RedCanary-Threat-Detection-Report-2023.pdf)|2023|Attacks|
 |[Secureworks](https://www.secureworks.com/resources/rp-state-of-the-threat-2023)|[State of the Threat](Annual%20Security%20Reports/2023/Secureworks-State-of-the-Threat-Report-2023.pdf)|2023|Attacks|
 |[Slashnext](https://slashnext.com/state-of-phishing-2023)|[State of Phishing 2023](Annual%20Security%20Reports/2023/SlashNext-The-State-of-Phishing-Report-2023.pdf)|2023|Attacks|
-|[SonicWall](https://www.sonicwall.com/2023-cyber-threat-report/)|[Cyber Threat Report](Annual%20Security%20Reports/2023/SonicWall-Cyber-Threat-Report-2023.pdf)|2022|Attacks|
+|[SonicWall](https://www.sonicwall.com/threat-report/)|[Cyber Threat Report](Annual%20Security%20Reports/2024/SonicWall-Cyber-Threat-Report-2024.pdf)|2024|Attacks|
 |[Sophos](https://www.sophos.com/en-us/labs/security-threat-report)|[Threat Report](Annual%20Security%20Reports/2023/Sophos-Threat-Report-2023.pdf)|2023|Attacks|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/open-source-security-risk-analysis.html)|[Open Source Risk Analysis Report](Annual%20Security%20Reports/2024/Synopsys-Open-Source-Risk-Analysis-Report-2024.pdf)|2024|Attacks|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/software-vulnerability-trends.html)|[Software Vulnerability Snapshot](Annual%20Security%20Reports/2022/Synopsys-Software-Vulnerability-Snapshot-2022.pdf)|2022|Vulnerabilities|
