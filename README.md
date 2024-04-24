@@ -113,6 +113,7 @@ Reports have been classified into two categories by the source of data.\
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/state-of-devsecops.html)|[Global State of DevSecOps 2023](Annual%20Security%20Reports/2023/Synopsys-Global-State-of-DevSecOps-2023.pdf)|2023|Industry|
 |[USTelecom](https://www.ustelecom.org/research/2023-cybersecurity-culture-report/)|[Cybersecurity Culture](Annual%20Security%20Reports/2023/USTelecom-Cybersecurity-Culture-2023.pdf)|2023|Industry|
 
+<!--lint ignore definition-case-->
 ## Resources
 Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of sponsored and non-profit research include professional societies and standards organizations which are listed as working groups. Both of these research resource types rely on sponsorship that is often commercial.
 
@@ -136,7 +137,7 @@ Annual reports are composed by a combination of paid and non-profit research bot
 
 ### Government and Non-profits
 - [Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov/) - a U.S. government agency responsible for enhancing the security and resilience of the nation's critical infrastructure.
-- [Europol - European Cybercrime Centre (EC3)](https://www.europol.europa.eu/activities-services-main/areas-interest/european-cybercrime-centre-ec3) - a strategic alliance focused on combating cybercrime within the European Union
+- [Europol - European Cybercrime Centre (EC3)](https://www.europol.europa.eu/activities-services-main/areas-interest/european-cybercrime-centre-ec3) - a strategic alliance focused on combating cybercrime within the European Union.
 - [The Cybersecurity Forum Initiative (CSFI)](https://www.csfi.us/) - an American non-profit organization that promotes cybersecurity awareness and research.
 - [The Center for Internet Security (CIS)](https://www.cisecurity.org/) - a American non-profit organization that provides cybersecurity solutions and best practices.
 - [The Center for Strategic and International Studies (CSIS) - Technology Policy Program](https://www.csis.org/programs/technology-policy-program) - a think tank with a Technology Policy Program that conducts research and provides insights into technology and cybersecurity policies.
