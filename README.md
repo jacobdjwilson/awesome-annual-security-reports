@@ -46,7 +46,7 @@ Reports have been classified into two categories by the source of data.\
 |[Fortinet](https://www.fortinet.com/demand/gated/threat-report-1h-2023)|[Global Threat Landscape Report](Annual%20Security%20Reports/2023/Fortinet-Global-Threat-Report-2023.pdf)|2023|Attacks|
 |[Guidepoint](https://www.guidepointsecurity.com/resources/grit-ransomware-annual-report-2023/)|[GRIT Ransomware Annual Report](Annual%20Security%20Reports/2023/Guidepoint-Ransomware-Annual_Report-2023.pdf)|2023|Ransomware|
 |[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2022/IBM-X-Force-Cloud-Threat-Landscape-Report-2022.pdf)|2022|Attacks|
-|[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Threat Intelligence Index](Annual%20Security%20Reports/2023/IBM-X-Force-Threat-Intelligence-Index-2023.pdf)|2023|Attacks|
+|[IBM](https://www.ibm.com/reports/threat-intelligence)|[X-Force Threat Intelligence Index](Annual%20Security%20Reports/2024/IBM-X-Force-Threat-Intelligence-Index-2024.pdf)|2024|Attacks|
 |[IBM](https://www.ibm.com/security/data-breach)|[Cost of a Data Breach Report](Annual%20Security%20Reports/2023/IBM-Cost-of-a-Data-Breach-Report-2023.pdf)|2023|Breaches|
 |[Mandiant](https://www.mandiant.com/m-trends)|[MTrends Special Report](Annual%20Security%20Reports/2024/Mandiant-M-Trends-2024.pdf)|2024|Attacks|
 |[Microsoft](https://www.microsoft.com/en-us/security/security-insider/microsoft-digital-defense-report-2023)|[Digital Defense Report](Annual%20Security%20Reports/2023/Microsoft-Digital-Defense-Report-2023.pdf)|2023|Attacks|
