@@ -74,7 +74,7 @@ Reports have been classified into two categories by the source of data.\
 |[TrendMicro](https://www.trendmicro.com/vinfo/us/security/research-and-analysis/threat-reports/roundup/defending-the-expanding-attack-surface-trend-micro-2022-midyear-cybersecurity-report)|[Defending The Expanding Attack Surface](Annual%20Security%20Reports/2022/TrendMicro-Defending-The-Expanding-Attack-Surface-2022.pdf)|2022|Attacks|
 |[Veeam](https://www.veeam.com/wp-ransomware-trends-executive-summary-na.html)|[Ransomware Trends Report Executive Summary](Annual%20Security%20Reports/2023/Veeam-Ransomware-Trends-2023.pdf)|2023|Ransomware|
 |[Veracode](https://www.veracode.com/state-of-software-security-report)|[State of Software Security](Annual%20Security%20Reports/2024/Veracode-State-of-Software-Security-Report-2024.pdf)|2024|Attacks|
-|[Verizon](https://www.verizon.com/business/resources/reports/dbir/)|[Data Breach Investigations Report](Annual%20Security%20Reports/2023/Verizon-Data-Breach-Investigations-Report-2023.pdf)|2023|Breaches|
+|[Verizon](https://www.verizon.com/business/resources/reports/dbir/)|[Data Breach Investigations Report](Annual%20Security%20Reports/2024/Verizon-Data-Breach-Investigations-Report-2024.pdf)|2024|Breaches|
 |[Zscaler](https://info.zscaler.com/resources-industry-reports-2022-threatlabz-ransomware-report)|[ThreatLabz State of Ransomware Report](Annual%20Security%20Reports/2022/Threatlabz-Ransomware-Report-2022.pdf)|2022|Ransomware|
 
 ### Surveys
