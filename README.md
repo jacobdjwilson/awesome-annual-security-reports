@@ -62,7 +62,7 @@ Reports have been classified into two categories by the source of data.\
 |[Qualys](https://www.qualys.com/forms/tru-research-report/)|[TruRisk Threat Research Report](Annual%20Security%20Reports/2023/Qualys-Trurisk-Threat-Research-Report-2023.pdf)|2023|Vulnerabilities|
 |[Rapid7](https://www.rapid7.com/info/2023-mid-year-threat-review/)|[Mid-Year Threat Review](Annual%20Security%20Reports/2023/Rapid7-Mid-Year-Threat-Review-2023.pdf)|2023|Attacks|
 |[Rapid7](https://www.rapid7.com/info/vulnerability-intelligence-report-2022-edition/)|[Vulnerability Intelligence Report](Annual%20Security%20Reports/2022/Rapid7-Vulnerability-Intelligence-Report-2022.pdf)|2022|Vulnerabilities|
-|[RedCanary](https://redcanary.com/threat-detection-report/)|[Threat Detection Report](Annual%20Security%20Reports/2023/RedCanary-Threat-Detection-Report-2023.pdf)|2023|Attacks|
+|[RedCanary](https://redcanary.com/threat-detection-report/)|[Threat Detection Report](Annual%20Security%20Reports/2024/RedCanary-Threat-Detection-Report-2024.pdf)|2024|Attacks|
 |[Secureworks](https://www.secureworks.com/resources/rp-state-of-the-threat-2023)|[State of the Threat](Annual%20Security%20Reports/2023/Secureworks-State-of-the-Threat-Report-2023.pdf)|2023|Attacks|
 |[Slashnext](https://slashnext.com/state-of-phishing-2023)|[State of Phishing 2023](Annual%20Security%20Reports/2023/SlashNext-The-State-of-Phishing-Report-2023.pdf)|2023|Attacks|
 |[SonicWall](https://www.sonicwall.com/threat-report/)|[Cyber Threat Report](Annual%20Security%20Reports/2024/SonicWall-Cyber-Threat-Report-2024.pdf)|2024|Attacks|
