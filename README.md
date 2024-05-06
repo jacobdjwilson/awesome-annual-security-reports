@@ -68,7 +68,7 @@ Reports have been classified into two categories by the source of data.\
 |[Secureworks](https://www.secureworks.com/resources/rp-state-of-the-threat-2023)|[State of the Threat](Annual%20Security%20Reports/2023/Secureworks-State-of-the-Threat-Report-2023.pdf)|2023|Attacks|
 |[Slashnext](https://slashnext.com/state-of-phishing-2023)|[State of Phishing 2023](Annual%20Security%20Reports/2023/SlashNext-The-State-of-Phishing-Report-2023.pdf)|2023|Attacks|
 |[SonicWall](https://www.sonicwall.com/threat-report/)|[Cyber Threat Report](Annual%20Security%20Reports/2024/SonicWall-Cyber-Threat-Report-2024.pdf)|2024|Attacks|
-|[Sophos](https://www.sophos.com/en-us/labs/security-threat-report)|[Threat Report](Annual%20Security%20Reports/2023/Sophos-Threat-Report-2023.pdf)|2023|Attacks|
+|[Sophos](https://www.sophos.com/en-us/labs/security-threat-report)|[Threat Report](Annual%20Security%20Reports/2024/Sophos-Threat-Report-2024.pdf)|2024|Attacks|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/open-source-security-risk-analysis.html)|[Open Source Risk Analysis Report](Annual%20Security%20Reports/2024/Synopsys-Open-Source-Risk-Analysis-Report-2024.pdf)|2024|Attacks|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/software-vulnerability-trends.html)|[Software Vulnerability Snapshot](Annual%20Security%20Reports/2022/Synopsys-Software-Vulnerability-Snapshot-2022.pdf)|2022|Vulnerabilities|
 |[Thales](https://cpl.thalesgroup.com/data-threat-report)|[Data Threat Report](Annual%20Security%20Reports/2024/Thales-Data-Threat-Report-2024.pdf)|2024|Attacks|
