@@ -24,6 +24,10 @@ Reports have been classified into two categories by the source of data.\
 **Analysis:** Reports generated from quantifying and qualifying intelligence from sensor networks or services.\
 **Survey:** Reports generated from observations and feedback from surveys or consulting engagements.
 
+The reports listed below are the most recent iteration, while past versions are stored in their corresponding yearly folders. After three years, if a source has not updated a report it will no longer be featured in the ReadMe.md file but will still be accessible within the repository directory corresponding to its respective year.
+
+The "Data Type" field categorizes the nature or focus of each report.  This field helps to classify and organize the reports based on their primary content or emphasis.
+
 ### Analysis
 |Provider|Report Name|Year|Data Type|
 |:---|:---|:---|:---|
