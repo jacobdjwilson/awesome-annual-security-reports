@@ -8,7 +8,7 @@
 
 **Limitations:** This is **not** a collection of project based information such as white papers, intelligence reports, technical specifications, or standards. I welcome all user submitted uploads or report requests, but we should draw a box around this _awesome_ list. All reports will be sourced from the original author when possible and uploaded to [Hybrid Analysis](https://www.hybrid-analysis.com/) for an additional level of confidence, result link will be included in the readme.md commit notes.
 
-**Acknowledgement:** I would like to give recognition for other works that inspired this collection. [Richard Stiennon](https://it-harvest.com/about/) and his annual analysis of the cybersecurity industry is significantly more comprehensive than this repository and deserves recognition. Additionally,[Rick Howard](https://www.paloaltonetworks.com/blog/author/rick/)'s cyber cannon list of must-read books is an invaluable resource, catering to both leadership and practitioner levels within the field.
+**Acknowledgement:** I would like to give recognition for other works that inspired this collection. [Richard Stiennon](https://it-harvest.com/about/) and his annual analysis of the cybersecurity industry is significantly more comprehensive than this repository and deserves recognition. Additionally,[Rick Howard](https://www.linkedin.com/in/rickhoward/)'s cyber cannon list of must-read books is an invaluable resource, catering to both leadership and practitioner levels within the field.
 
 ## Contents
 - [Reports](#reports)
