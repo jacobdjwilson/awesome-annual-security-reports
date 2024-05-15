@@ -32,7 +32,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |Provider|Report Name|Year|Data Type|
 |:---|:---|:---|:---|
 |[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021-vol-2)|[Cyber Threat Intelligence Report Volume 2](Annual%20Security%20Reports/2022/Accenture-Cyber-Threat-Intelligence-Report-Vol2-2022.pdf)|2022|Attacks|
-|[Beyond Trust](https://www.beyondtrust.com/resources/whitepapers/microsoft-vulnerability-report)|[Microsoft Vulnerability Report](Annual%20Security%20Reports/2023/BeyondTrust-Microsoft-Vulnerability-Report-2023.pdf)|2023|Vulnerabilities|
+|[Beyond Trust](https://www.beyondtrust.com/resources/whitepapers/microsoft-vulnerability-report)|[Microsoft Vulnerability Report]()|2023|Vulnerabilities|
 |[BKA](https://www.bka.de/SharedDocs/Downloads/DE/Publikationen/JahresberichteUndLagebilder/Cybercrime/cybercrimeBundeslagebild2023.html)|[Bundeslagebild Cybercrime 2023](Annual%20Security%20Reports/2023/Bundeslagebild-Cybercrime-2023)|2023|Attacks
 |[Blackpoint](https://blackpointcyber.com/resources/cybersecurity-annual-threat-report-2024/)|[Annual Threat Report](Annual%20Security%20Reports/2024/Blackpoint-Cyber-Annual-Threat-Report-2024.pdf)|2024|Attacks|
 |[CheckPoint](https://pages.checkpoint.com/cyber-security-report-2022.html)|[Cybersecurity Report](Annual%20Security%20Reports/2023/CheckPoint-Cybersecurity-Report-2023.pdf)|2023|Attacks|
@@ -90,6 +90,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |Provider|Report Name|Year|Data Type|
 |:---|:---|:---|:---|
 |[Accenture](https://www.accenture.com/us-en/insights/security/invest-cyber-resilience)|[State of Cybersecurity Resilience](Annual%20Security%20Reports/2023/Accenture-State-of-Cybersecurity-2023.pdf)|2023|Industry|
+|[ArmorCode](https://www.armorcode.com/state-of-application-security-2023)|[State of Application Security](Annual%20Security%20Reports/2022/Checkmarx-Annual-Appsec-Report-2022.pdf)|2023|Industry|
 |[Checkmarx](https://checkmarx.com/resources/reports/appsec-the-view-from-security-and-software-development-experts/)|[Annual Appsec Report](Annual%20Security%20Reports/2022/Checkmarx-Annual-Appsec-Report-2022.pdf)|2022|Industry|
 |[Cisco](https://www.cisco.com/c/en/us/products/security/security-outcomes-study-vol-3.html)|[Security Outcomes Study Volume 3](Annual%20Security%20Reports/2022/Cisco-Security-Outcomes-Study-Vol3-2022.pdf)|2022|Industry|
 |[Cisco](https://www.cisco.com/c/en/us/about/trust-center/data-privacy-benchmark-study.html)|[Data Privacy Benchmark Study](Annual%20Security%20Reports/2024/Cisco-Privacy-Benchmark-Study-2024.pdf)|2024|Breaches|
