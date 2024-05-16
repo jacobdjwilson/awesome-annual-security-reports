@@ -90,6 +90,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |Provider|Report Name|Year|Data Type|
 |:---|:---|:---|:---|
 |[Accenture](https://www.accenture.com/us-en/insights/security/invest-cyber-resilience)|[State of Cybersecurity Resilience](Annual%20Security%20Reports/2023/Accenture-State-of-Cybersecurity-2023.pdf)|2023|Industry|
+|[ArmorCode](https://www.armorcode.com/state-of-application-security-2023)|[State of Application Security](/Annual%20Security%20Reports/2023/Armorcode-State-of-Application-Security-2023.pdf)|2023|Industry|
 |[Checkmarx](https://checkmarx.com/resources/reports/appsec-the-view-from-security-and-software-development-experts/)|[Annual Appsec Report](Annual%20Security%20Reports/2022/Checkmarx-Annual-Appsec-Report-2022.pdf)|2022|Industry|
 |[Cisco](https://www.cisco.com/c/en/us/products/security/security-outcomes-study-vol-3.html)|[Security Outcomes Study Volume 3](Annual%20Security%20Reports/2022/Cisco-Security-Outcomes-Study-Vol3-2022.pdf)|2022|Industry|
 |[Cisco](https://www.cisco.com/c/en/us/about/trust-center/data-privacy-benchmark-study.html)|[Data Privacy Benchmark Study](Annual%20Security%20Reports/2024/Cisco-Privacy-Benchmark-Study-2024.pdf)|2024|Breaches|
