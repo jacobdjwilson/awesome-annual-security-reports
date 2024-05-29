@@ -1,4 +1,5 @@
 <!-- lint ignore double-link -->
+<!--lint ignore definition-case-->
 # Awesome Annual Security Reports [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 > A curated list of annual cyber security reports - Centralized annual cybersecurity analysis and industry surveys
 
@@ -123,7 +124,6 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/state-of-devsecops.html)|[Global State of DevSecOps 2023](Annual%20Security%20Reports/2023/Synopsys-Global-State-of-DevSecOps-2023.pdf)|2023|Industry|
 |[USTelecom](https://www.ustelecom.org/research/2023-cybersecurity-culture-report/)|[Cybersecurity Culture](Annual%20Security%20Reports/2023/USTelecom-Cybersecurity-Culture-2023.pdf)|2023|Industry|
 
-<!--lint ignore definition-case-->
 ## Resources
 Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of sponsored and non-profit research include professional societies and standards organizations which are listed as working groups. Both of these research resource types rely on sponsorship that is often commercial.
 
