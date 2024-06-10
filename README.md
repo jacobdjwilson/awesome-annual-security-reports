@@ -40,7 +40,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |[CISA](https://www.cisa.gov/resources-tools/services/vulnerability-disclosure-policy-vdp-platform)|[Vulnerability Disclosure Policy Platform Annual Report](Annual%20Security%20Reports/2022/CISA-Vulnerability-Disclosure-Policy-Platform-Annual-Report-2022.pdf)|2022|Vulnerabilities|
 |[Cisco](https://learn-cloudsecurity.cisco.com/umbrella-resources/umbrella/2022-dns-discoveries#page=1)|[DNS Discoveries](Annual%20Security%20Reports/2022/Cisco-DNS-Discoveries-2022.pdf)|2022|Attacks|
 |[Cisco](https://blog.talosintelligence.com/cisco-talos-2023-year-in-review/)|[Talos Year In Review](Annual%20Security%20Reports/2023/Cisco-Talos-Year-In-Review-2023.pdf)|2023|Attacks|
-|[Cofense](https://cofense.com/annualreport)|[Annual State of Email Security](Annual%20Security%20Reports/2024/cofense-annual-state-of-email-security-report-2024.pdf)|2024|Attacks|
+|[Cofense](https://cofense.com/annualreport)|[Annual State of Email Security](Annual%20Security%20Reports/2024/2024-cofense-annual-state-of-email-security-report.pdf)|2024|Attacks|
 |[CrowdStrike](https://www.crowdstrike.com/resources/reports/overwatch-threat-hunting-report/)|[Threat Hunting Report](Annual%20Security%20Reports/2023/Crowdstrike-Threat-Hunting-Report-2023.pdf)|2023|Attacks|
 |[CrowdStrike](https://www.crowdstrike.com/resources/reports/global-threat-report/)|[Global Threat Report](Annual%20Security%20Reports/2024/Crowdstrike-Global-Threat-Report-2024.pdf)|2024|Attacks|
 |[DeepInstinct](https://www.deepinstinct.com/blog/2022-cyber-threat-landscape-report)|[Threat Landscape Report](Annual%20Security%20Reports/2023/Deep-Instinct-Cyber-Threat-Landscape-Report-2023.pdf)|2023|Attacks|
