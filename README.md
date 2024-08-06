@@ -123,7 +123,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/sans-devsecops-survey.html)|[SANS 2023 DevSecOps Survey](Annual%20Security%20Reports/2023/SANS-DevSecOps-Survey-2023.pdf)|2023|Industry|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/state-of-devsecops.html)|[Global State of DevSecOps 2023](Annual%20Security%20Reports/2023/Synopsys-Global-State-of-DevSecOps-2023.pdf)|2023|Industry|
 |[USTelecom](https://www.ustelecom.org/research/2023-cybersecurity-culture-report/)|[Cybersecurity Culture](Annual%20Security%20Reports/2023/USTelecom-Cybersecurity-Culture-2023.pdf)|2023|Industry|
-|[World Economic Forum](https://www.weforum.org/publications/global-cybersecurity-outlook-2024/)|[ Global Cybersecurity Outlook](https://www3.weforum.org/docs/WEF_Global_Cybersecurity_Outlook_2024.pdf)|2024|Industry|
+|[World Economic Forum](https://www.weforum.org/publications/global-cybersecurity-outlook-2024/)|[ Global Cybersecurity Outlook](Annual%20Security%20Reports/2024/WEF-Global-Cybersecurity-Outlook-2024.pdf)|2024|Industry|
 
 ## Resources
 Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Examples of paid and government sponsored research are listed as research consulting. Examples of sponsored and non-profit research include professional societies and standards organizations which are listed as working groups. Both of these research resource types rely on sponsorship that is often commercial.
