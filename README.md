@@ -123,6 +123,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/sans-devsecops-survey.html)|[SANS 2023 DevSecOps Survey](Annual%20Security%20Reports/2023/SANS-DevSecOps-Survey-2023.pdf)|2023|Industry|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/state-of-devsecops.html)|[Global State of DevSecOps 2023](Annual%20Security%20Reports/2023/Synopsys-Global-State-of-DevSecOps-2023.pdf)|2023|Industry|
 |[USTelecom](https://www.ustelecom.org/research/2023-cybersecurity-culture-report/)|[Cybersecurity Culture](Annual%20Security%20Reports/2023/USTelecom-Cybersecurity-Culture-2023.pdf)|2023|Industry|
+|[Verizon](https://www.verizon.com/business/resources/reports/mobile-security-index/)|[Mobile Security Index](Annual%20Security%20Reports/2024/Verizon-Mobile-Security-Index-2024.pdf)|2024|Industry|
 |[World Economic Forum](https://www.weforum.org/publications/global-cybersecurity-outlook-2024/)|[ Global Cybersecurity Outlook](Annual%20Security%20Reports/2024/WEF-Global-Cybersecurity-Outlook-2024.pdf)|2024|Industry|
 
 ## Resources
