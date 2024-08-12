@@ -102,7 +102,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |[ISC2](https://www.isc2.org/landing/Cyberthreat-Defense-Report)|[Cyberthreat Defense Report](Annual%20Security%20Reports/2024/ISC2-Cyberthreat-Defense-Report-2024.pdf)|2024|Industry|
 |[KnowBe4](https://www.knowbe4.com/security-culture-research-report)|[Cybersecurity Culture Report](Annual%20Security%20Reports/2024/KnowBe4-Cybersecurity-Culture-Report-2024.pdf)|2024|Industry|
 |[Mend](https://www.mend.io/resources/research-reports/the-state-of-supply-chain-threats/)|[State of Supply Chain Threats](Annual%20Security%20Reports/2023/Mend-State-of-Supply-Chain-Threats.pdf)|2023|Vulnerabilities|
-|[Norton](https://www.nortonlifelock.com/us/en/newsroom/press-kits/2022-norton-cyber-safety-insights-report-special-release-online-creeping/)|[Cyber Safety Insights Report](Annual%20Security%20Reports/2022/Norton-Cyber-Safety-Insights-Report-2022.pdf)|2022|Industry|
+|[Norton](https://www.nortonlifelock.com/us/en/newsroom/press-kits/2022-norton-cyber-safety-insights-report-special-release-online-creeping/)|[Cyber Safety Insights Report](Annual%20Security%20Reports/2023/Norton-Cyber-Safety-Insights-Report-2023.pdf)|2023|Industry|
 |[PaloAlto](https://www.paloaltonetworks.com/state-of-cloud-native-security)|[State of Cloud Native Security Report](Annual%20Security%20Reports/2023/PaloAlto-State-of-Cloud-Native-Security-2023.pdf)|2023|Industry|
 |[Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/data-loss-landscape)|[Data Loss Landscape](Annual%20Security%20Reports/2024/Proofpoint-Data-Loss-Landscape-2024.pdf)|2024|Industry|
 |[Proofpoint](https://go.proofpoint.com/Voice-of-the-CISO-Report.html)|[Voice of the CISO Report](Annual%20Security%20Reports/2024/Proofpoint-Voice-of-the-CISO-Report-2024.pdf)|2024|Industry|
@@ -113,7 +113,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |[Sonatype](https://www.sonatype.com/state-of-the-software-supply-chain/introduction)|[The State of Cloud Security Report](Annual%20Security%20Reports/2023/Sonatype-State-of-Cloud-Security-2023.pdf)|2023|Industry|
 |[Sophos](https://www.sophos.com/en-us/whitepaper/state-of-cybersecurity)|[State of Cloud Security Report](Annual%20Security%20Reports/2023/Sophos-State-of-Cybersecurity-2023.pdf)|2023|Industry|
 |[Splunk](https://www.splunk.com/en_us/campaigns/state-of-security.html)|[State of Security](Annual%20Security%20Reports/2023/Splunk-State-of-Security-2023.pdf)|2023|Industry|
-|[Spycloud](https://spycloud.com/resource/ransomware-defense-report-2022/)|[Ransomware Defense Report](Annual%20Security%20Reports/2022/Spycloud-Ransomware-Defense-Report-2022.pdf)|2022|Ransomware|
+|[Spycloud](https://spycloud.com/resource/2023-ransomware-defense-report/)|[Ransomware Defense Report](Annual%20Security%20Reports/2023/Spycloud-Ransomware-Defense-Report-2023.pdf)|2023|Ransomware|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/sans-devsecops-survey.html)|[SANS 2023 DevSecOps Survey](Annual%20Security%20Reports/2023/SANS-DevSecOps-Survey-2023.pdf)|2023|Industry|
 |[Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/state-of-devsecops.html)|[Global State of DevSecOps 2023](Annual%20Security%20Reports/2023/Synopsys-Global-State-of-DevSecOps-2023.pdf)|2023|Industry|
 |[USTelecom](https://www.ustelecom.org/research/2023-cybersecurity-culture-report/)|[Cybersecurity Culture](Annual%20Security%20Reports/2023/USTelecom-Cybersecurity-Culture-2023.pdf)|2023|Industry|
