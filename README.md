@@ -84,6 +84,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |[Veeam](https://www.veeam.com/wp-ransomware-trends-executive-summary-na.html)|[Ransomware Trends Report Executive Summary](Annual%20Security%20Reports/2023/Veeam-Ransomware-Trends-2023.pdf)|2023|Ransomware|
 |[Veracode](https://www.veracode.com/state-of-software-security-report)|[State of Software Security](Annual%20Security%20Reports/2024/Veracode-State-of-Software-Security-Report-2024.pdf)|2024|Attacks|
 |[Verizon](https://www.verizon.com/business/resources/reports/dbir/)|[Data Breach Investigations Report](Annual%20Security%20Reports/2024/Verizon-Data-Breach-Investigations-Report-2024.pdf)|2024|Breaches|
+|[WatchGuard](https://www.watchguard.com/wgrd-security-hub/internet-security-report)|[Threat Report](Annual%20Security%20Reports/2024/WatchGuard-Threat-Report-2024.pdf)|2024|Attacks|
 |[Zscaler](https://www.zscaler.com/campaign/threatlabz-ransomware-report)|[ThreatLabz State of Ransomware Report](Annual%20Security%20Reports/2024/Threatlabz-Ransomware-Report-2024.pdf)|2024|Ransomware|
 |[Zscaler](https://info.zscaler.com/resources-industry-reports-public-sector-Insights-threatlabz-ai-security-2024)|[ThreatLabz AI Security Report](Annual%20Security%20Reports/2024/Threatlabz-AI-Security-Report-2024.pdf)|2024|AI|
 
