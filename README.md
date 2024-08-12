@@ -98,8 +98,8 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |[Forrester](https://www.forrester.com/report/the-state-of-vulnerability-risk-management-2023/RES179028)|[The State Of Vulnerability Risk Management](https://reprints2.forrester.com/#/assets/2/1730/RES179028/report)|2023|Vulnerabilities|
 |[HackerOne](https://www.hackerone.com/resources/reporting/7th-annual-hacker-powered-security-report-2023)|[Hacker Powered Security Report](Annual%20Security%20Reports/2023/HackerOne-Hacker-Powered-Security-Report-2023.pdf)|2023|Industry|
 |[Immuta](https://www.immuta.com/resources/2024-trendbook/)|[State of Data Security Report](Annual%20Security%20Reports/2024/Immuta-State-of-Data-Security-Report-2024.pdf)|2024|Industry|
-|[ISC2](https://www.isc2.org/Landing/cloud-security-report)|[Cloud Security Report](Annual%20Security%20Reports/2022/ISC2-Cloud-Security-Report-2022.pdf)|2022|Industry|
-|[ISC2](https://www.isc2.org/landing/Cyberthreat-Defense-Report)|[Cyberthreat Defense Report](Annual%20Security%20Reports/2022/ISC2-Cyberthreat-Defense-Report-2022.pdf)|2022|Industry|
+|[ISC2](https://cloud.connect.isc2.org/cloud-security-report)|[Cloud Security Report](Annual%20Security%20Reports/2024/ISC2-Cloud-Security-Report-2024.pdf)|2024|Industry|
+|[ISC2](https://www.isc2.org/landing/Cyberthreat-Defense-Report)|[Cyberthreat Defense Report](Annual%20Security%20Reports/2024/ISC2-Cyberthreat-Defense-Report-2024.pdf)|2024|Industry|
 |[KnowBe4](https://www.knowbe4.com/organizational-cyber-security-culture-research-report)|[Cybersecurity Culture Report](Annual%20Security%20Reports/2022/KnowBe4-Cybersecurity-Culture-Report-2022.pdf)|2022|Industry|
 |[Mend](https://www.mend.io/resources/research-reports/the-state-of-supply-chain-threats/)|[State of Supply Chain Threats](Annual%20Security%20Reports/2023/Mend-State-of-Supply-Chain-Threats.pdf)|2023|Vulnerabilities|
 |[Norton](https://www.nortonlifelock.com/us/en/newsroom/press-kits/2022-norton-cyber-safety-insights-report-special-release-online-creeping/)|[Cyber Safety Insights Report](Annual%20Security%20Reports/2022/Norton-Cyber-Safety-Insights-Report-2022.pdf)|2022|Industry|
