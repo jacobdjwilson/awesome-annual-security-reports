@@ -32,13 +32,10 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 ### Analysis
 |Provider|Report Name|Year|Data Type|
 |:---|:---|:---|:---|
-|[Accenture](https://www.accenture.com/us-en/insights/security/cyber-threat-intelligence-report-2021-vol-2)|[Cyber Threat Intelligence Report Volume 2](Annual%20Security%20Reports/2022/Accenture-Cyber-Threat-Intelligence-Report-Vol2-2022.pdf)|2022|Attacks|
 |[Beyond Trust](https://www.beyondtrust.com/resources/whitepapers/microsoft-vulnerability-report)|[Microsoft Vulnerability Report](Annual%20Security%20Reports/2023/BeyondTrust-Microsoft-Vulnerability-Report-2023.pdf)|2023|Vulnerabilities|
 |[BKA](https://www.bka.de/SharedDocs/Downloads/DE/Publikationen/JahresberichteUndLagebilder/Cybercrime/cybercrimeBundeslagebild2023.html)|[Bundeslagebild Cybercrime 2023](Annual%20Security%20Reports/2023/Bundeslagebild-Cybercrime-2023)|2023|Attacks
 |[Blackpoint](https://blackpointcyber.com/resources/cybersecurity-annual-threat-report-2024/)|[Annual Threat Report](Annual%20Security%20Reports/2024/Blackpoint-Cyber-Annual-Threat-Report-2024.pdf)|2024|Attacks|
 |[CheckPoint](https://pages.checkpoint.com/2024-cyber-security-report)|[Cybersecurity Report](Annual%20Security%20Reports/2024/CheckPoint-Cybersecurity-Report-2024.pdf)|2024|Attacks|
-|[CISA](https://www.cisa.gov/resources-tools/services/vulnerability-disclosure-policy-vdp-platform)|[Vulnerability Disclosure Policy Platform Annual Report](Annual%20Security%20Reports/2022/CISA-Vulnerability-Disclosure-Policy-Platform-Annual-Report-2022.pdf)|2022|Vulnerabilities|
-|[Cisco](https://learn-cloudsecurity.cisco.com/umbrella-resources/umbrella/2022-dns-discoveries#page=1)|[DNS Discoveries](Annual%20Security%20Reports/2022/Cisco-DNS-Discoveries-2022.pdf)|2022|Attacks|
 |[Cisco](https://blog.talosintelligence.com/cisco-talos-2023-year-in-review/)|[Talos Year In Review](Annual%20Security%20Reports/2023/Cisco-Talos-Year-In-Review-2023.pdf)|2023|Attacks|
 |[Cofense](https://cofense.com/annualreport)|[Annual State of Email Security](Annual%20Security%20Reports/2024/Cofense-Annual-State-of-Email-Security-2024.pdf)|2024|Attacks|
 |[CrowdStrike](https://www.crowdstrike.com/resources/reports/overwatch-threat-hunting-report/)|[Threat Hunting Report](Annual%20Security%20Reports/2023/Crowdstrike-Threat-Hunting-Report-2023.pdf)|2023|Attacks|
@@ -53,7 +50,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |[Fortinet](https://www.fortinet.com/demand/gated/threat-report-1h-2023)|[Global Threat Landscape Report](Annual%20Security%20Reports/2023/Fortinet-Global-Threat-Report-2023.pdf)|2023|Attacks|
 |[Guidepoint](https://www.guidepointsecurity.com/resources/grit-ransomware-annual-report-2023/)|[GRIT Ransomware Annual Report](Annual%20Security%20Reports/2023/Guidepoint-Ransomware-Annual_Report-2023.pdf)|2023|Ransomware|
 |[Huntress](https://www.huntress.com/resources/smb-threat-report)|[Huntress SMB Threat Report](Annual%20Security%20Reports/2023/Huntress-SMB-Threat-Report-2023.pdf)|2023|Attacks|
-|[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2022/IBM-X-Force-Cloud-Threat-Landscape-Report-2022.pdf)|2022|Attacks|
+|[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2023/IBM-X-Force-Cloud-Threat-Landscape-Report-2023.pdf)|2023|Attacks|
 |[IBM](https://www.ibm.com/reports/threat-intelligence)|[X-Force Threat Intelligence Index](Annual%20Security%20Reports/2024/IBM-X-Force-Threat-Intelligence-Index-2024.pdf)|2024|Attacks|
 |[IBM](https://www.ibm.com/security/data-breach)|[Cost of a Data Breach Report](Annual%20Security%20Reports/2023/IBM-Cost-of-a-Data-Breach-Report-2023.pdf)|2023|Breaches|
 |[Mandiant](https://www.mandiant.com/m-trends)|[MTrends Special Report](Annual%20Security%20Reports/2024/Mandiant-M-Trends-2024.pdf)|2024|Attacks|
