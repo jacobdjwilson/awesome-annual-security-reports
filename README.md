@@ -87,6 +87,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |:---|:---|:---|:---|
 |[Accenture](https://www.accenture.com/us-en/insights/security/invest-cyber-resilience)|[State of Cybersecurity Resilience](Annual%20Security%20Reports/2023/Accenture-State-of-Cybersecurity-2023.pdf)|2023|Industry|
 |[ArmorCode](https://www.armorcode.com/state-of-application-security-2023)|[State of Application Security](/Annual%20Security%20Reports/2023/Armorcode-State-of-Application-Security-2023.pdf)|2023|Industry|
+|[Checkmarx](https://info.checkmarx.com/future-of-application-security-2024)|[Future of Application Security](Annual%20Security%20Reports/2024/Checkmarx-Future-of-Application-Security-2024.pdf)|2024|Industry|
 |[Checkmarx](https://info.checkmarx.com/supply-chain-survey)|[State of Software Supply Chain Security](Annual%20Security%20Reports/2024/Checkmarx-State-of-Software-Supply-Chain-Security-2024.pdf)|2024|Industry|
 |[Cisco](https://www.cisco.com/c/en/us/about/trust-center/data-privacy-benchmark-study.html)|[Data Privacy Benchmark Study](Annual%20Security%20Reports/2024/Cisco-Privacy-Benchmark-Study-2024.pdf)|2024|Breaches|
 |[Cobalt](https://www.cobalt.io/hubfs/State%20of%20Pentesting%202024/State-of-Pentesting-Report-2024_Cobalt.pdf)|[State of Pentesting](Annual%20Security%20Reports/2024/Cobalt-State-of-Pentesting-2024.pdf)|2024|Industry|
