@@ -49,6 +49,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |[Flexera](https://info.flexera.com/SVM-REPORT-Annual-Vulnerability-Review)|[Annual Vulnerability Review](Annual%20Security%20Reports/2023/Flexera-Annual-Vulnerability-Review-2023.pdf)|2023|Vulnerabilities|
 |[Fortinet](https://www.fortinet.com/demand/gated/threat-report-1h-2023)|[Global Threat Landscape Report](Annual%20Security%20Reports/2023/Fortinet-Global-Threat-Report-2023.pdf)|2023|Attacks|
 |[Guidepoint](https://www.guidepointsecurity.com/resources/grit-ransomware-annual-report-2023/)|[GRIT Ransomware Annual Report](Annual%20Security%20Reports/2023/Guidepoint-Ransomware-Annual_Report-2023.pdf)|2023|Ransomware|
+|[Horizon3.ai](https://www.horizon3.ai/downloads/research/elevate-your-cybersecurity-strategy-download-the-2023-year-in-review/)|[Proactive Cybersecurity Unleashed](Annual%20Security%20Reports/2023/Horizon3-Proactive-Cybersecurity-Unleashed-2023.pdf)|2023|Attacks|
 |[Huntress](https://www.huntress.com/resources/smb-threat-report)|[Huntress SMB Threat Report](Annual%20Security%20Reports/2023/Huntress-SMB-Threat-Report-2023.pdf)|2023|Attacks|
 |[IBM](https://www.ibm.com/security/data-breach/threat-intelligence/)|[X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2023/IBM-X-Force-Cloud-Threat-Landscape-Report-2023.pdf)|2023|Attacks|
 |[IBM](https://www.ibm.com/reports/threat-intelligence)|[X-Force Threat Intelligence Index](Annual%20Security%20Reports/2024/IBM-X-Force-Threat-Intelligence-Index-2024.pdf)|2024|Attacks|
