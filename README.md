@@ -32,6 +32,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 ### Analysis
 |Provider|Report Name|Year|Data Type|
 |:---|:---|:---|:---|
+|[Aon](https://www.aon.com/en/insights/reports/2024-intangible-versus-tangible-risks-comparison-report)|[Intangible Versus Tangible Risks Comparison](Annual%20Security%20Reports/2024/Aon-Intangible-vs-Tangible-Risk-Report-2024.pdf)|2024|Risk|
 |[Beyond Trust](https://www.beyondtrust.com/resources/whitepapers/microsoft-vulnerability-report)|[Microsoft Vulnerability Report](Annual%20Security%20Reports/2023/BeyondTrust-Microsoft-Vulnerability-Report-2023.pdf)|2023|Vulnerabilities|
 |[BKA](https://www.bka.de/SharedDocs/Downloads/DE/Publikationen/JahresberichteUndLagebilder/Cybercrime/cybercrimeBundeslagebild2023.html)|[Bundeslagebild Cybercrime 2023](Annual%20Security%20Reports/2023/Bundeslagebild-Cybercrime-2023)|2023|Attacks
 |[Blackpoint](https://blackpointcyber.com/resources/cybersecurity-annual-threat-report-2024/)|[Annual Threat Report](Annual%20Security%20Reports/2024/Blackpoint-Cyber-Annual-Threat-Report-2024.pdf)|2024|Attacks|
