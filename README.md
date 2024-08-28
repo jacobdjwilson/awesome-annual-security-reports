@@ -47,6 +47,7 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |[Duo](https://duo.com/resources/ebooks/2024-duo-trusted-access-report)|[Trusted Access Report](Annual%20Security%20Reports/2024/Duo-Trusted-Access-Report-2024.pdf)|2024|Attacks|
 |[Expel](https://expel.com/annual-threat-report/)|[Annual Threat Report](Annual%20Security%20Reports/2024/Expel-Annual-Threat-Report-2024.pdf)|2024|Attacks|
 |[Flashpoint](https://flashpoint.io/resources/report/2024-global-threat-intelligence-report/)|[Global Threat Intelligence Report](Annual%20Security%20Reports/2024/Flashpoint-Threat-Intel-Report-2024.pdf)|2024|Attacks|
+|[Flashpoint](https://flashpoint.io/resources/report/2024-cyber-threat-intelligence-index/)|[Midyear Cyber Threat Index](Annual%20Security%20Reports/2024/Flashpoint-Midyear-CTI-Index-2024.pdf)|2024|Attacks|
 |[Flexera](https://info.flexera.com/SVM-REPORT-Annual-Vulnerability-Review)|[Annual Vulnerability Review](Annual%20Security%20Reports/2023/Flexera-Annual-Vulnerability-Review-2023.pdf)|2023|Vulnerabilities|
 |[Fortinet](https://www.fortinet.com/demand/gated/threat-report-1h-2023)|[Global Threat Landscape Report](Annual%20Security%20Reports/2023/Fortinet-Global-Threat-Report-2023.pdf)|2023|Attacks|
 |[Guidepoint](https://www.guidepointsecurity.com/resources/grit-ransomware-annual-report-2023/)|[GRIT Ransomware Annual Report](Annual%20Security%20Reports/2023/Guidepoint-Ransomware-Annual_Report-2023.pdf)|2023|Ransomware|
