@@ -30,6 +30,7 @@
         - [Ransomware](#ransomware)
         - [Vulnerabilities](#vulnerabilities)
         - [AI](#ai)
+        - [Privacy](#privacy)
         - [Breaches](#breaches)
 - [Resources](#resources)
     - [Research Consulting](#research-consulting)
@@ -107,6 +108,10 @@ Reports will be classified by a header that describes their primary content or e
 #### Breaches
 - [IBM](https://www.ibm.com/security/data-breach) - [Cost of a Data Breach Report](Annual%20Security%20Reports/2023/IBM-Cost-of-a-Data-Breach-Report-2023.pdf) (2023) - The Cost of a Data Breach Report provides an in-depth analysis of the financial impact of data breaches, offering insights into breach causes, mitigation strategies, and the long-term consequences of security incidents.
 - [Verizon](https://www.verizon.com/business/resources/reports/dbir/) - [Data Breach Investigations Report](Annual%20Security%20Reports/2024/Verizon-Data-Breach-Investigations-Report-2024.pdf) (2024) - This comprehensive report analyzes global data breaches, offering insights into attack patterns, threat actor motivations, and strategies for improving organizational data security and incident response.
+
+#### Privacy
+- [DataGrail](https://www.datagrail.io/resources/reports/privacy-trends-2024/) - [Privacy Trends 2024](Annual%20Security%20Reports/2024/DataGrail-Privacy-Trends-2024.pdf) (2024) - DataGrail's report examines the current state of privacy, including emerging regulations, challenges, and best practices across different sectors.
+- [ISACA](https://www.isaca.org/resources/reports/privacy-in-practice-2024-report)- [Privacy in Practice](Annual%20Security%20Reports/2024/ISACA-Privacy-in-Practice-2024.pdf) (2024) - This report analyzes trends in privacy staffing, budgets, awareness training, breaches, and privacy by design, offering insights to help organizations improve their privacy programs.
 
 #### Industry
 - [NCC Group](https://research.nccgroup.com/2023/12/11/ncc-groups-2022-2023-research-report/) - [Annual Research Report](Annual%20Security%20Reports/2023/NCCGroup-Annual-Research-Report-2023.pdf) (2023) - The Annual Research Report provides insights into cutting-edge cybersecurity research, emerging threats, and innovative defense strategies across various industries and technologies.
