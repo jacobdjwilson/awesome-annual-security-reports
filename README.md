@@ -99,7 +99,6 @@ The "Data Type" field categorizes the nature or focus of each report.  This fiel
 |[Fortinet](https://www.fortinet.com/blog/industry-trends/key-findings-cloud-security-report-2024)|[Cloud Security Report](Annual%20Security%20Reports/2024/Fortinet-Cloud-Security-Report-2024.pdf)|2024|Industry|
 |[Fortinet](https://global.fortinet.com/lp-en-ap-2023ransomwareglobalrr)|[Global Ransomware Report](Annual%20Security%20Reports/2023/Fortinet-Global-Ransomware-Report-2023.pdf)|2023|Ransomware|
 |[Fortra](https://www.fortra.com/services/consulting/cybersecurity/penetration-testing)|[Penetration Testing Report](Annual%20Security%20Reports/2023/Fortra-Pentesting-Report-2023.pdf)|2023|Industry|
-|[Forrester](https://www.forrester.com/report/the-state-of-vulnerability-risk-management-2023/RES179028)|[The State Of Vulnerability Risk Management](https://reprints2.forrester.com/#/assets/2/1730/RES179028/report)|2023|Vulnerabilities|
 |[HackerOne](https://www.hackerone.com/resources/reporting/7th-annual-hacker-powered-security-report-2023)|[Hacker Powered Security Report](Annual%20Security%20Reports/2023/HackerOne-Hacker-Powered-Security-Report-2023.pdf)|2023|Industry|
 |[HiddenLayer](https://hiddenlayer.com/threatreport2024/)|[AI Threat Report](Annual%20Security%20Reports/2024/HiddenLayer-AI-Threat-Landscape-Report-2024.pdf)|2024|AI|
 |[Immuta](https://www.immuta.com/resources/2024-trendbook/)|[State of Data Security Report](Annual%20Security%20Reports/2024/Immuta-State-of-Data-Security-Report-2024.pdf)|2024|Industry|
