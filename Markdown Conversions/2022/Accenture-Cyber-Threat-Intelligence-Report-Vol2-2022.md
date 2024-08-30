@@ -1,0 +1,744 @@
+Threats Unmasked
+Cyber Threat 
+Intelligence ReportVolume 2 2021Accenture has been creating relevant, timely and actionable threat 
+intelligence for more than 20 years. Our cyber threat intelligence and 
+incident response team is continually investigating numerous cases 
+of financially motivated targeting and suspected cyber espionage.During these investigations, our threat intelligence and incident 
+response analysts have gained firsthand visibility into the tactics, 
+techniques and procedures (TTPs) employed by some of the
+most sophisticated cyber adversaries. This report reflects analysis 
+during the second half of calendar year 2021 (H2 2021\).2Cyber Threat Intelligence Report Volume 2 2021Key trendsFollowing analysis in H2 2021, Accenture identified five trends 
+affecting the cybersecurity landscape:Ransomware attacks 
+still prove profitableSupply chains offer
+attack footholdsInformation
+stealers boost the 
+malware marketCloud\-centricity 
+prompts new
+attack vectorsVulnerability exploits 
+see high volume 
+buying and selling312345Cyber Threat Intelligence Report Volume 2 2021Ransomware 
+attacks still
+prove profitableDespite technology enabling threat actors to become even more 
+sophisticated, there are still active and evolving risks from tried and 
+tested ransomware techniques. And there is consistency of ranking 
+for the top targeted industries throughout Q3 of calendar year 2021, 
+with ransomware threat actors proving most successful against the 
+manufacturing industry, followed by financial services, healthcare, 
+technology and construction.4Cyber Threat Intelligence Report Volume 2 2021Ransomware attacks continued to 
+beprofitable;amongthemostactive
+ransomwaregroupsin2021wereLockBit
+andConti,buttrackingindividualgroups
+remainschallengingduetocontinuous
+retirementsandrebrandingintonew
+groupsduetolawenforcementpressure
+orinternalgroupdynamics.Conflictbetweenransomwareaffiliates
+andtheiroperatorsledtoinformation
+leaks.Argumentsbetweeninvolvedparties
+serveasoneexampleoftheunintended
+consequencesofransom\-affiliatepayment
+schemes.Despitetheseproblems,ransomware
+operationsremainhighlyprofitable.Whatismore,increasingly,ransomware
+operatorsabusedcloudinfrastructureand
+introducednewencryptiontechniquesto
+betterevadedetectionandincreaseimpact.Based on data collection from Accenture 
+incident response engagements, ransomware 
+and extortion operations made up almost
+35% of intrusion volume in 2021 and represented 
+a 107% year\-over\-year increase from 2020\.In addition, the United States was again the
+top region impacted by ransomware and 
+extortion threats, representing approximately 
+45% of intrusion volume in 2021 (Figure 1\).Figure1\.Ransomwarebygeography(Incidentresponse)All Others25%Germany6%6%Brazil8%Australia10%Italy45%USA5Cyber Threat Intelligence Report Volume 2 2021Whats happening?Top four industry targets remain the sameNew RAMP forum creates rampageAffiliate disputes are on the riseThenumberofransomwareattacks
+decreasedslightlyinQ3comparedtoQ2
+ofcalendaryear2021,withmanufacturing,
+financialservices,healthcareandtechnology
+remainingthemosttargetedindustries.
+Targetingagainsttheconstructionsector
+increased,makingitthefifth\-most\-targeted
+industryduringQ3(seeFigure2\).Figure2\.Top15industriestargetedbyransomwareinQ32021FollowingtheDarkSidegroups
+dissolutionaftertheColonialPipeline 
+attack,1theGrooveransomwarecollective
+emergedinSeptember2021andcreated
+theRAMPforum,whichconnectsorphaned
+affiliateswithransomware\-as\-a\-service 
+(RaaS)operators.Thisforumsemergence
+couldmeanthereiscontinuedgrowth 
+forRaaSactivityandposesasignificant 
+andcontinuingthreattobusinesses.Manufacturing
+Other
+Financial Services
+Healthcare
+Technology
+Construction
+Government
+Legal
+Retail
+Education
+Professional Services
+Transportation
+Energy
+Food and Beverage
+Automotive
+Real Estate2%
+2%3%3%19%4%4%4%5%5%5%6%9%7%7%Media reporting increases impactActivemediareportingreflects 
+ascoop\-and\-scandal\-drivenculture 
+inthecybersecuritycommunity 
+andunintentionallyincreasescyber 
+threatactorsinfluence.Cybercriminals 
+usedthispublicityinQ3calendar 
+year2021tocriticizerivalsandincrease 
+pressureonvictims.14%Theresagrowingnumberofdisputes
+betweenransomwareaffiliates 
+andransomwaregroupoperators. 
+Formeraffiliatesofransomware 
+groupsdisclosedsensitiveinformation,
+leadingtoaproliferationofpotent
+ransomwaretoolsandtechniques.Attack playbook isnt the whole storyTheContiPlaybookanattackplaybook
+disclosedbyaformermemberofthe
+Contiransomwarethreatgroupsuggests
+Contiaffiliatestendtouseoptionslike 
+well\-establishedcybercrimebotnets,
+maliciousspamandspearphishing.Cloud plays into ransomwares handsCloudenvironmentswereandcontinue 
+tobeattractivetargets,perhapsdue 
+tolowermonitoringlevelsthanon\-premise
+environments.Inthisway,cloud\-related
+malwarehasevolvedfasterthanmore6Cyber Threat Intelligence Report Volume 2 2021traditional malware in 2021 based on
+analysisoftherateofcodechanges 
+betweencryptominers(aprimarymalware
+maliciousactorsdeployincompromised
+cloudenvironments)comparedtocode
+changesinbotnetsandransomware.
+Thiscomparisonoftherateofcode 
+changehighlightssignificantthreat 
+actorinvestmentincloud\-focusedtools
+particularlyinmodifyingpre\-existingtools.2Duringmultipleincidentresponse
+engagementsin2021,Accentureobserved
+ransomwareandextortionoperators
+targetingcloudinfrastructureandhosted
+backups in attempts to increase operational 
+impact.Thisincludedexploitationof 
+SAML(SecurityAssertionMarkupLanguage
+2\.0\)identityfederationinusetoaccess
+AmazonWebServices(AWS)viaMicrosoft
+AzureActiveDirectory(AzureAD),using
+previouslycompromisedcredentialsto
+enableunauthorizedconsoleaccesstoseveralAWSresourcesandsupportfurther
+objectives.3Atleastoneransomwaregroup
+usedanoffensivecloudtoolsetthatvx\-
+undergroundresearchersleakedfromthreat
+groupTeamTNTinOctober2021;thistoolset
+specializesincryptojackingoperations. 
+Thisuseindicatesatrendofransomware
+groupscustomtooldevelopmentfor
+increasedcloudinfrastructuretargeting.4Underground forum members
+are trading in endpoint accessesUndergroundforumsareshowingincreased
+interestinaccessingcompromisedvirtual
+privatenetworks(VPNs)viastolencredentials
+andtheuseofpublicandzero\-dayexploits.Forexample,AccentureanalysisofSeptember
+toNovember2021networkaccessseller 
+datashowsmaliciousactorssellingvictim
+networkaccessesonundergroundforums
+gainedalmostallthoseaccessesviaVPNs
+whosecredentialswerecompromisedand
+usedbythreatactorstoauthenticate.5Data extortion is rising without 
+ransomware deploymentInthesecondhalfof2021,Accentureobserved 
+new threat groups establishinginfrastructure 
+andrampingupattackssolelyfocusedon 
+dataexfiltrationandextortionratherthan 
+moredestructiveransomwaredeployments. 
+Weexpecttoseethistrendcontinuetorise 
+inQ1CY2022,asthissimplifiedapproach 
+enablestheexecutionofattacksandsubsequent 
+extortionattemptsmorequicklyandatscale.Actors infer insidious insidersAlongwithanunsubstantiatedclaimof
+insideraccessatAccenture,actorsusing 
+LockBitimpliedinNovember2021theyhave
+aninsideratanothermajorcorporation.6
+Robustinsiderthreatprogramscanhelpto
+quicklyconfirmorrefutethreatactorclaims
+whichmaybeintendedtodeceiveresponders.
+Thiscanbackfireonthreatactorsasitcan 
+lowertheircredibilityandthereforetheir 
+chancesofobtainingransompayments.7Cyber Threat Intelligence Report Volume 2 2021Where next?Herearesomewaystodefendagainstransomwareattacks:Buildzerotrustprinciplesintothe
+organizationssecuritystrategyto
+securecustomerandcorporatedata.Establishandexerciseabusinesscontinuityofoperations(COOP)plan
+whichbuildsresiliencyintothecorporate
+responseandincludespublicmessaging,
+internalcommunications,andenforce
+apolicyofrobustoffsitebackups.Implementameasurablesecuritytrainingandawarenessprogramwhich
+focusesoneducatinguserstothink 
+twicebeforeclickingonlinksandto
+identifyandsafelyreportemailsthat 
+couldbepartofaphishingcampaign.Establishanassetmanagementprogramthatincludesaninventoryofremote
+desktopprotocol(RDP)solutionsandtheimplementationofsecureand
+monitoredVDIsolutions.Limitthe
+useofRDP,closeunusedRDPports,
+applytwo\-factorauthentication,
+andlogRDPlogonattempts.Managecloudassetsbymonitoringend
+pointsandensuringprocessvisibility.Regularlypatchoperatingsystems,softwareandfirmware.Incorporateresponseplansformalware 
+orwiperattacksintotheorganizations 
+COOPplan.Incorporateintelligenceintotheorganizationscyberdefensestrategy 
+tomonitordynamicswithinthreat 
+groups,undergroundforums,and 
+evolvingTTPstoupdatedetection 
+andresponsecountermeasures.RejectransomdemandstheUnitedStatesgovernmentencouragesransomware
+victimstorefuseransomdemands,
+asransompaymentsonlyencourage
+threatactorstoattackagain.Organizations
+thatchoosetopayaransomshould: \- ImmediatelyreporttheincidenttolawenforcementandtheCybersecurityand
+InfrastructureSecurityAgency(CISA). \- Cooperatewithlawenforcementthroughouttheincidentrecoveryprocess \- Implementasanctionscomplianceprogramtoproperlyassesstherisks. 
+Iftheransomgroupisasanctioned
+entity,contacttheOfficeofForeign 
+AssetsControl(OFAC)immediately. \- Understandaransompayment 
+doesnotguaranteeregaining 
+accesstolockedmachinesordata.8Cyber Threat Intelligence Report Volume 2 2021 
+Supply chains offer 
+attack footholdSince the revelation of the SolarWinds supply chain 
+campaign in December 2020,7 increasingly, malicious 
+operators have realized the potential of supply chain 
+attacks. In addition to the complexities of asset and vendor 
+management and visibility into software bill of materials, 
+moving to the cloud has meant many organizations further 
+increased the risk and consequences of supply chain 
+insecurities. Such vulnerabilities can result from potential 
+supply chain incidents across entire on\-premise and cloud 
+environments serving one or multiple business entities.9Cyber Threat Intelligence Report Volume 2 2021Whats happening?Widely reported threat increasesDuringOctoberandNovember2021,
+numerouscybersecuritypublications
+mentionedsupplychainattackcampaigns
+referencingdeveloperlibraryand 
+softwareplatformcompromises.Backdoor threats are more prevalentInthesametimeframe,Accenturenoted
+referencestoatleastninemaliciousnode
+packagemanagers(NPMs)masquerading 
+aslegitimatepackages.Therewerealso 
+twolegitimateNPMpackageswithbackdoors
+builtintothemthatenableathreatactorto
+bypassnormalauthenticationchannelsand
+interactivelyissuecommandstoasystem.8 
+NPMisacenterforJavaScriptcode\-sharing 
+inwideusebysoftwaredevelopers.SomeNPMcodepackagesaredownloaded
+millionsoftimeseveryweek.Apackage
+withabackdoorandadownloadcadence 
+thathighcouldprovideinitialattacker 
+footholdsonthousandsofvictimnetworks
+orcloudtenants.Maliciousactorscan
+usesuchfootholdsforawidevariety 
+ofpurposes,includingcryptojacking,9
+espionage,10ransomwaredeployment
+anddestructivewiperattacks.11BasedonintrusiondataAccenturecollected
+fromincidentresponseengagements,30%of
+themalwarethreatsAccentureobservedin
+2021werebackdoorthreats,makingthem
+thesecond\-most\-prevalenttypeofmalware,
+behindransomware(33%).10Cyber Threat Intelligence Report Volume 2 2021Where next?Herearesomewaystocounterthethreatofsupplychainattacks:Integrate audits:Update security frameworks:Mature software supply chain programs:Administratorsshouldintegrateaudits
+intoDevOpscycles.Theneedtoweave
+securityintobothDevOpsandapplication
+onboardinghascatalyzedtheintegration
+ofplatformsforautomatedcodescanning.
+Theseincludeintelligentandintegrated
+platformsthathelporganizations
+developcodemorequicklywithlower
+remediationcosts,highersecurityand
+fewerstaff. Forexample,theAccenture 
+Intelligent Application Security Platform 
+enablesdevelopersandteamleadsto
+buildsecurityintofullapplicationlife
+cycles,fromdevelopmenttotesting
+anddeployment,aswellastoremediate
+codebasevulnerabilitiesautomatically.12Administratorsshouldeitheradopt
+standardsandusemonitoringtoolsto
+meet compliance demands or enroll in 
+applicationsecurityas\-a\-serviceofferings
+toblockmaliciousactorsdirectaccessto
+sensitiveenvironmentsandrepositories,
+suchasdevelopermachinesandsource\-code
+repositories.IntheSolarWindssupplychain
+attack, malicious actors used a position on 
+developermachinestoinjectmaliciouscode
+intotheSolarWindsOrionplatformbefore
+Oriondeveloperscompiledanddigitally
+signedtheOrionsoftware.13Suchincidents
+underlinetheimportanceofapplication
+securityandtheseverepenaltiesoffailure.Threat\-modeling suppliers:Administratorsandsecuritypersonnel 
+shouldlookbeyondsoftwareand
+examinetheirorganizationsbroader
+third\-partydependencies.Toreducerisksassociatedwithsoftwaresupply
+chains,considerthefollowingguidance: \- Refer to the Best Practices in CyberSupply Chain Risk Management document 
+fromtheNationalInstituteofStandards
+andTechnologyforinformationon
+mappingsupplychains,identifyingcritical
+suppliersandreviewingcybersecurity
+practicesforsupplierspersonnel. \- Reviewtheprivilegeandaccesslevels
+ofexternallydevelopedsoftwareatan
+organizationallevel.Althoughvettingall
+softwaremaynotbearealisticobjective,
+basicimprovementscandrastically 
+improveanorganizationssecurityposture. \- Reviewservice\-levelagreementswithsoftwaresupplierstoactivelylocateandfix
+vulnerablesoftwarepriortodeployment.11Cyber Threat Intelligence Report Volume 2 2021Infostealers boost 
+the malware marketThe increased popularity of underground endpoint marketplaces 
+that sell packages of compromised login data continues to 
+pose a substantial threat to organizations across industries 
+and geographies. Endpoint marketplaces offer an abundance 
+of inexpensive gateways into corporate networks.12Cyber Threat Intelligence Report Volume 2 2021Compromisedendpointswhich 
+undergroundactorshavebundledandsold
+asso\-calledbotscontainlogincredentials,
+sensitivesysteminformationandcookie
+sessions.Actorssiphonthisinformationfrom
+victimsmachinesusingcredential\-stealing
+malwareandsellitonDarkWebmarketplaces
+foraslittleasUS$10toUS$200\.Accentureresearchshowsthatmarketplaces
+forendpointaccessthreatenthemajority
+ofmedium\-to\-largecorporationsacross
+industriesandgeographicregions,whichface
+exposuredirectlythroughacorporationsown
+networksorthroughthirdpartycompromises.Informationstealers(malicioussoftware
+knownasinfostealers)aretypicallydesigned
+toobtain(thatis,accessorcopy)credentials
+withfunctionalitybeyondbasickeylogging.
+Thiscouldincludeusernames,passwords, 
+keys,tokens,cookiesessionsandsoon.Based on intrusion data Accenture 
+collected from incident response 
+engagements, the combined infostealer 
+and credential stealer category made up 
+approximately 10% of malware observed 
+during intrusions in 2021 (Figure 3\).Figure3\.Malwarebycategory(Incidentresponse)10%RansomwareBackdoor12%33%OtherDroppers \& LaunchersInfostealer and 
+Credential Stealer15%30%13Cyber Threat Intelligence Report Volume 2 2021Whats happening?Infostealers are highly activeAsofNovember2021,basedonavailable
+data,themostutilizedinfostealersproviding
+undergroundmarketplaceinventoryare
+Redline(53%),Vidar(35%),Taurus(4%),
+Racoon(4%)andAzorult(2%)(seeFigure4\).However,Accenturealsofoundinformation\-
+stealingcampaignsactiveinJuneto
+November2021usingQakbotandNanoCore
+mostoften(seeFigure5\).Figure4\.InfostealersfeedingdatatoendpointFigure5\.InfostealersusedbymaliciousactorsinmarketplacesthreatcampaignsInfostealer popularity variesDatacollectionbiasespartiallyexplainthe
+discrepancybetweentheinfostealeractors
+usedinthen\-activecampaignsandthosethey
+usedtofeedmarketplaceswithinventory.
+Yet,thisinconsistencyalsoshowcases
+undergroundmarketplacesrelianceon
+newerinfostealers,whileestablished
+groupsrelyontriedandtestedinfostealers.18%2%4%
+4%35%RedlineVidarTaurusRacoonAzorult53%Azorult 
+(Genesis Modified)18%3%4%7%1%
+1%
+1%41\.5%24\.5%QakbotNanoCoreTrickbotFormbook
+(AKAXloader)RedlineLokiBotDiscord StealerAzorultVidarAndwhileRedlineonlymakesup4%of
+themarketshare,theuseofthisinfostealer
+isgrowingatafasterratethantheothers.
+Redlinehasgainedpopularityfollowingits
+involvementintheJuly2021TokyoOlympic
+ticketdatabreach.14Redlineinfectssystems
+throughaloaderinstalledbymalicious
+MicrosoftWordorExceldocumentsin
+phishingemailsorsocialmediamessages.1514Cyber Threat Intelligence Report Volume 2 2021Where next?Herearesomewaysyourorganizationcanpositionitselftoaddressmalicioussoftware:Protect corporate environments:Be aware of the growing bots business:Accentureresearchshowsthatwhile
+marketplaceinfostealershaveinfected 
+bothcorporateandprivatemachines,
+thelattercreatesgreaterexposureforboth
+ifitisabletosynchronizewithcorporate
+infrastructure.Thissynchronization
+enablesinfostealerstoincreasinglyavoid
+securitymeasuresthatstrictcorporate
+environmentsprovideandenables
+infostealerstoremaininvictimssystems
+longer,updatingscrapedinformation 
+asthatinformationchangesovertime.Thenumberofso\-calledbots
+(toolsthatincorporatethefunctionality
+oflogincredentials,cookiesessions
+andplugswhichenabletheeasyuse
+ofstolendataviaabrowserplug\-in)for
+saleonundergroundmarketplaceshas
+increasedsteadilysince2017from
+approximately76,000botsforsale
+betweenDecember2017andDecember
+2019tomorethan11millionbots
+forsalebetweenDecember2019and
+November2021\.Accentureattributes
+thisrapidrisetotheremoteworking
+environment,acceleratedbytheCOVID\-19
+pandemicandgreateruseofmulti\-factor
+authentication(MFA),whichhasincreased
+theutilityandvalueofthesebots.Dependingonacorporationssecurity
+posture,thesebotscangrantdirect
+accesstoaffectedsystemsorprovide
+skilledactorsaneasierwayinto 
+networks.Stealinganactivecookie 
+sessionmakesbotssignificantly 
+moreeffectivethanusingcompromised
+logincredentialsalone.Asaresult,
+ransomwaregroups,businessemail
+compromiseringsanddataextortionists
+commonlyuseendpointmarketplaces,
+withAccentureandothercybersecurity
+organizationsattributingmultiple 
+recentattackstotheendpointmarket.1615Cyber Threat Intelligence Report Volume 2 2021Cloud\-centricity 
+prompts new 
+attack vectorsIncreasingly, threat actors are exploiting public\-facing cloud 
+infrastructure to deploy offensive toolsets and use internal
+access points to organizations cloud environments. This threat 
+is growing as organizations accelerate cloud adoption and open 
+up new attack vectors using, for example, toolsets originally 
+designed for cryptojacking, which an actor can repurpose
+for other malicious activity. Cryptojacking, also known as 
+cryptomining, hides on a computer or mobile device and uses
+the machines resources to mine forms of cryptocurrencies.16Cyber Threat Intelligence Report Volume 2 2021Whats happening?Rapid cloud growth feeds 
+attack opportunitiesTheCOVID\-19pandemichasaccelerated 
+thealreadyongoingtrendofcloud 
+adoptiontoenableremoteworking, 
+online education, business resilience
+andenvironmentalsustainability,opening 
+upnewattacksurfacesandincreasing 
+thevalueofcloudinfrastructureattacks 
+formaliciousactors.17Forecastsofglobal
+end\-userspendingonpubliccloudservices
+showitreachingUS$482Bin2022a21\.7%
+increasefrom2021sexpectedUS$396B.18Expanding infrastructure opens
+the door to new vulnerabilitiesSomeorganizationsdonotmonitor 
+cloudplatformsascloselyastheydo
+theirownon\-premiseservers,whichmay
+exacerbateexistingdeficienciesincloud
+assetandconfigurationmanagement.Instead,theyareplacingtheirtrustin 
+athirdpartycloudprovider.Asaresult, 
+threatactorsarehijackingcloudservices 
+toexploitcloudinfrastructuresbenefits, 
+collectsensitivedataanddeployransomware.Expandingcloudinfrastructurealso 
+createshighlyscalableandreliable
+command\-and\-controlinfrastructure 
+andbotnets.Additionally,public\-facing
+cloudenvironmentsserveasinitialentry
+vectorsthroughwhichthreatactorscan 
+gainaccesstoindividualendpointdevices.Cloud\-centric toolset threats are escalatingAccenturehasobservedahighly 
+evolvedandactivecloud\-centric 
+toolsetfromTeamTNT,athreatgroup 
+prolificatminingcryptocurrency 
+throughcloudresourceexploitation 
+otherwiseknownascryptojacking.OnOctober29,2021,securityresearchers 
+leakedTeamTNTstoolsetforattacking 
+public\-facingcloudplatforms.19 
+AccentureanalyzedtheleakedTeamTNT
+scriptsandassessedthegrouplikely
+deployedthistoolsetaspartofnumerous
+cloud\-focusedcryptojackingoperations.20 
+Thesecryptojackingoperationsinclude
+theChimaeracampaign,thatTeamTNT
+reportedlyoversawfromatleastJuly
+2021andwhichcausedthousandsof
+infectionsglobally.21Beyondcryptojackingactivities,TeamTNTs
+toolset installed a bot named Tsunami 
+ontocompromisedsystems.Thisbots
+codebaseissimilartothatoftheinfamous
+Miraimalwareandcanabusepublic\-facing
+infrastructuretoexecutebrute\-forceattacks,
+runglobalIPscansandlaunchdistributed
+denial\-of\-serviceattacks.17Cyber Threat Intelligence Report Volume 2 2021OncetheTsunamibotinfectssystems,
+TeamTNTstoolsetcanenumerateinternal
+infrastructureanddeploymalicious
+executables,exploitingcloudplatforms
+suchasGoogleCloud,AmazonAWS,
+KubernetesandDockerswithinLinuxUnix 
+andWindowsenvironments.Researchersclaimtheransomwareextortion
+groupsContiandDarkMatterareactively
+usingTeamTNTsleakedarchive.AlthoughAccenturehasnotobserved
+evidenceofransomwareaffiliatesdeploying
+TeamTNTstoolset,Accentureassesses
+withhighconfidencethatmoderately
+skilledthreatactorscaneasilydeploy
+thetoolsetsscriptstocompromise
+privatecloudentrypointsandtailorthe
+codesminingfunctionalitiestoencryptdata
+post\-compromise.Suchadaptationwould
+markanaturalevolutionofransomware
+campaignsasransomwaregroupsinterests
+incloudinfrastructuregrows.Where next?Herearesomesuggestedwaystomitigate
+theimpactofcloudplatformthreats:Audit and test for cloud misconfigurationsalongsideorganizationaloperation
+digitalizationefforts.Adopt an identity and access managementframework to monitor and control 
+clouduseraccesspermissions.Establish MFA across cloud access 
+pointsandmonitorvirtualization
+infrastructureaccess.18Cyber Threat Intelligence Report Volume 2 2021Vulnerability 
+exploits see high 
+volume buying 
+and sellingAccenture has observed a huge growth in the underground market 
+for vulnerability exploits, especially for those that enable adversaries 
+to gain unauthorized access to a corporate network. The ransomware 
+and unauthorized network access markets almost certainly significantly 
+affect exploit markets, as unauthorized network access is fundamental 
+to successful ransomware operations.19Cyber Threat Intelligence Report Volume 2 2021Whats happening?Actors are busy selling or buying CVE exploitsFigure6\.InstancesofactorsbuyingorsellingexploitsforCVEs(AugustOctober2021\)Accentureanalyzed45instancesof
+undergroundactorswantingtosellor
+buyexploitsforCommonVulnerabilities
+andExposures(CVEs)betweenAugust2021
+andOctober2021(Figure6\).Weidentified:24actorsbuyingorselling
+exploitsfor16CVEsacross
+fourforumsormarketplaces.16actorswantingtobuy
+exploitsforsevenCVEs.Nineactorssellingexploitsfor12CVEs.Selling exploitWants to buy exploitCombined totalNumber of Instances98
+81344552333CVE202134473 
+Microsoft Exchange Server Input Validation Remote Code Execution VulnerabilityCVE202120016
+SonicWall SSLVPN SMA100 Input Validation SQL Injection VulnerabilityCVE202131206 
+Microsoft Exchange Server Unspecified Remote Code Execution VulnerabilityCVE202140444 
+Microsoft Windows Input Validation Code Execution VulnerabilityCVE202126084 
+Atlassian Confluence Server and Data Center Input Validation Code Execution VulnerabilityCVE202130860 
+Apple Multiple Products Use After Free Code Execution VulnerabilityCVE202130858 
+Apple Multiple Products Use After Free Code Execution VulnerabilityCVE202128480 
+Microsoft Exchange Server Unspecified Remote Code Execution VulnerabilityCVE202134523 
+Microsoft Exchange Server Design Error Privilege Escalation VulnerabilityCVE202126855 
+Microsoft Exchange Server Input Validation SSRF VulnerabilityCVE202120090 
+Multiple Vendors Multiple Products Path Traversal Security Bypass VulnerabilityCVE202128482
+Microsoft Exchange Server Unspecified Remote Code Execution VulnerabilityCVE202128481 
+Microsoft Exchange Server Unspecified Remote Code Execution VulnerabilityCVE20213156 
+Multiple Vendor Sudo Heapbased Buffer Overflow Privilege Escalation VulnerabilityCVE202121703 
+PHP Group PHP Design Error Privilege Escalation VulnerabilityCVE202120028 
+SonicWall Secure Remote Access SRA Design Error SQL Injection Vulnerability111111111111111111
+11
+11
+120Cyber Threat Intelligence Report Volume 2 2021Actors have top three 
+vulnerabilities they buy and sellDuringtheperiodAugustOctober2021,
+thethreemostpopularCVEexploits
+onthemarketareforCVE\-2021\-34473, 
+CVE\-2021\-20016andCVE\-2021\-31206\.
+Accentureanalyzedthesevulnerabilities
+inthecontextofthepotentialimpactof
+successfulexploitationandtheassessed
+intentionsoftheactorsseekingto
+purchaserelatedexploits.Accenturefoundthatsuccessfulexploitation
+ofeachofthenotedvulnerabilitiesenables
+aremoteadversaryunauthorizedaccessto
+avictimnetworkandexecutionofarbitrary
+codeonavictimhost.Analysisofpast
+activitiesofactorswhosoughttopurchase
+exploitsindicatestheactorsarefinancially
+motivatedandthatitislikelytheyintendto
+usetheexploitstofacilitateunauthorized
+networkaccessschemes.HereisfurtherdetailonthemostpopularCVEexploits:CVE\-2021\-34473:Accentureidentified
+twoactorssellingthesameexploitand
+eightfinanciallymotivatedactorswanting
+tobuyanexploitforCVE\-2021\-34473 
+intheperiodofAugustOctober2021\.
+CVE\-2021\-34473(alsoknownasProxyShell)
+isanimproperinputvalidationvulnerability
+(CWE\-20\)inMicrosoftExchangeServer
+2013\-2019\.AnactorchainingCVE\-2021\-
+34473withCVE\-2021\-34523andCVE\-2021\-
+31207couldexecutearbitrarycodewith
+SYSTEM\-levelprivilegesonavictimhost.CVE\-2021\-20016:Accentureidentifiedfourfinanciallymotivatedactorswanting
+tobuyaCVE\-2021\-20016exploit,butdid
+notidentifyanyactorswantingtosell
+any.CVE\-2021\-34473isaSQLinjection
+vulnerability(CWE\-89\)inSonicWallSSLVPN
+SMA100thatanattackercouldexploittogainaccesstoandmodifyavictimhosts
+backenddatabase,facilitatingattacker
+access to administrator credentials 
+whichcanbeusedtoremotelyexecute
+arbitrarycodeonavictimshost.CVE\-2021\-31206:Accentureidentified
+oneactorsellingandfourfinancially
+motivatedactorswantingtobuya
+CVE\-2021\-31206exploit.CVE\-2021\-
+31206isadata\-processingerror
+vulnerability(CWE\-19\)inMicrosoft
+ExchangeServer2013\-2019anactor
+couldexploittoenabletheexecution
+ofarbitrarycodeonavictimshost.21Cyber Threat Intelligence Report Volume 2 2021Actors begin to capitalize on
+Log4j vulnerabilityOnDecember9,2021,Log4jmaintainers
+reporteddetailssurroundingaremote 
+codeexecutionvulnerability,22identified 
+asbothCVE\-2021\-44228andLog4Shell, 
+thatcouldallowattackerstoexecute
+arbitrarycodeonavulnerablehost.
+Successfulexploitationwouldallowattackers
+toexecutecodewithoutauthentication.
+Becauseexploitationoccursbylogging
+input,theattacksurfaceforthisvulnerability
+isextremelylarge.Thefirstreported 
+majorexploitationoccurredinapopular
+onlinevideogame.Anotherobserved 
+usageofthevulnerabilityinvolvedauser 
+changingtheirphonesdevicenameand
+usingthatdevicenametoinjectcodeinto
+thephonemanufacturerscloudservice.InlateDecember2021therewerefirst
+reportsofawormleveragingLog4j 
+inthewild,moreevidenceofthreatactors
+interestinexploitingLog4j,andanew 
+Log4jattackvectorviaWebSockets. 
+CISAestimatesthereare100million 
+affectedsoftwareandtechnology 
+instancesacrossawiderangeof 
+technologyproductsandvendors.InDecember2021,Accentureidentified
+undergroundactorscapitalizingonthenews 
+oftheLog4jvulnerability.Threatactorsbegan 
+identifyingwaystoincorporatethevulnerability 
+intoattackingvulnerablecompaniesand
+leveragingtheaccessinbotnetoperations.
+InJanuary2022,actorsbegantoresearch
+networksandIPaddressesvulnerabletothe
+Log4shellweaknessandstartedsellingtheir
+analysistofellowundergroundactors.23Figure7\.Log4jExploitationTrendsandVolume,December2021This timeline of telemetry data on log4j vulnerability exploitation attempts reveals malicious actor targeting trends by industry and region.s
+t
+p
+m
+e
+t
+t
+A
+n
+o
+i
+t
+a
+t
+i
+o
+p
+x
+El12,00010,0008,0006,0004,0002,000010 Dec12 DEC14 Dec16 Dec18 Dec20 Dec22 Dec24 Dec26 Dec28 Dec30 Dec11,153
+Unique Attacker 
+Source IP119,514
+UniqueExploitation 
+Attempts26
+Targeted Industries
+Majority: 
+Manufacturing
+Financial Services
+Healthcare6
+Targeted Regions
+Majority:
+North America
+Asia Pacific, Japan
+Europe, Middle East, AfricaSource: Accenture Managed Extended Detection and Response Security Incidents Telemetry Data, December 9\-31, 202122Cyber Threat Intelligence Report Volume 2 2021Where next?Herearesomewaystohandlevulnerabilityexploits:Robustly defend network access:Themostefficientavenuesanadversary
+maytaketomonetizecorporateaccess
+issellingaccesstoavictimsnetworkor
+extortingavictimthroughransomware,
+datadisclosurethreats,orboth.Measures
+tohelpdefendanorganizationsnetwork
+includetheimplementationofzerotrust
+principles,networksecuritymonitoring,
+suchasdeployingdetectionsignatures 
+tocatchexploitationattemptsagainst 
+aspecifiedenvironmentandalerting 
+onprocessesthatexecutefromaspecified
+systemorwebapplicationlogdirectory,
+strict access controls and endpoint 
+controls.Blockconnectionsfromthe
+domains,IPaddresses,andURLs,which
+haveactivelyscannedandexploited 
+knownvulnerabilities.Blockegress 
+andrecursiveDNSonservers.Actorsmayattempttoleverageweb
+andapplicationserverstoresolvecalls
+topublicwebsitesholdingmalicious
+code.Alsohardenoutboundfirewall
+andWAFrulestoblockthesetypes
+ofcallsfromyourenvironment.Get back to security basics:Often,organizationscanpreventsuccessful
+attacksbyexercisingregularlyscheduled
+patchmanagementprograms,conducting
+aninventoryofitsenvironmentssystems
+andsoftware,andproactivelytesting
+existingtechnologiesforweaknesses.
+Pairingpatchmanagementprogramswith
+cyberthreatintelligencemonitoringof
+theDarkNetmarketplacescanprovide
+contextaswellasinformdefensepostures
+astacticswhennewvulnerabilities
+emergesuchasLog4jinDecember2021\.23Cyber Threat Intelligence Report Volume 2 2021Update Log4j versions:Log4jversions
+2\.0\-beta9to2\.14\.1arevulnerabletothis
+vulnerability.Tomitigatethisvulnerability 
+inthoseLog4jversions,Accenture 
+suggestsupdatingLog4jtoversion2\.17\.0 
+forJava8(orlater).Usersshouldupgrade
+Log4jrunningonJava7torelease2\.12\.2\. 
+Apache,Accenture,andothercybersecurity
+outletspreviouslyrecommendedusing
+version2\.15\.0asafixforthisvulnerability;
+however,thefixwasincomplete.Version
+2\.15\.0allowedcodeexecutionincertain
+configurationsandneitherApache 
+norAccenturestillconsideritanofficialfix. 
+Thevulnerabilitycausedbytheincomplete
+fixinversion2\.15\.0isCVE\-2021\-45046\. 
+OnDecember18,2021,MITREpublished
+CVE\-2021\-45105;thisvulnerabilityaffects
+Log4jversions2\.0\-beta9to2\.16\.0\.CVE\-2021\-45105allowsremoteattackers
+tocauseadenialofserviceviainfinite
+recursionwhentheapplicationencounters
+inputswithrecursivelookups.Apache
+resolvedthisvulnerabilityinversion2\.17\.0\.Apachehasprovidedtheofficialpatch 
+changeloghere:https:logging.apache.org
+log4j2\.xsecurity.htmlIfitisnotpossibletoupdatetoversion
+2\.17\.0,usersofLog4jversions2\.10 
+andlatercanmitigatethisvulnerability 
+byremovingtheJndiLookupclass 
+fromthefollowingclasspath:zip\-q\-dlog4j\-corejarorgapache
+logginglog4jcorelookupJndiLookup.classLongerterm,organizationsshould
+inventorytheirenvironmentssystems 
+andsoftware.Useapplicationdependency
+mappingsoftwaretoidentifyanysoftware
+dependenciesontheLog4jlibrary.
+SCAtoolslikeVeracode,Blackduck,
+andSonatype,haveplug\-instoidentify
+thisissue.Othervulnerabilityscanners
+likeQualys,Tenable,andRapid7,have
+releasedplug\-instodetectthisissue
+andadministratorsshouldupdate
+themregularlyaslongasthissituation
+regardingCVE\-2021\-44228exploitation
+continuestodevelop.Assoonaspossible,patchinternaland
+Internet\-facingsoftwarethatuseLog4j.2424Cyber Threat Intelligence Report Volume 2 2021References1\. AccentureCyberThreatIntelligence,ColonialPipeline9\. Ibid.19\. vx\-undergroundTwitterpost,October28,2021\.Ransomware,May92021\.IntelGraphreporting.2\. AccentureCyberThreatIntelligence,RansomwareTrendsQ32021,November11,2021\.IntelGraphReporting; 
+2021IBMSecurityX\-ForceCloudThreatLandscapeReport.3\. AccentureCyberInvestigationsandForensicResponseresearch.4\. vx\-undergroundTwitterpost,October28,2021\.5\. AccentureCyberThreatIntelligence,AViewfromthe 
+DarkWeb:AreRansomwareGangsShiftingTheirFocus
+towardsEurope?November15,2021\.IntelGraphreporting.6\. @darktracer Twitter account,November17,20217\. HighlyEvasiveAttackerLeveragesSolarWindsSupply
+ChaintoCompromiseMultipleGlobalVictimswith
+SUNBURSTBackdoor.Mandiant.December13,2020\.8\. TwoNPMPackagesWith22MillionWeeklyDownloadsFoundBackdoored,TheHackerNews.November7,2021\. 
+NewlyFoundnpmMalwareMinesCryptocurrency 
+onWindows,Linux,macOSDevices,October20,2021\. 
+Theinsidestoryofransomwarerepeatedly
+masqueradingasapopularJSlibraryforRoblox
+gamers,November16,2021\.10\.APTtrendsreportQ32021,Kaspersky,October26,2021\.20\.AccentureCyberThreatIntelligence,11\. TeleBotsareback:Supply\-chainattacksagainstUkraine,ESET.June30,2017\.12\. AccentureApplicationSecurity13\. SUNSPOT:AnImplantintheBuildProcess,CrowdStrike,January11,2021\.14\.JapanesegovernmentofficialsaysOlympicticketdataleaked,ZDNet,July21,2021\.15\. AccentureCyberThreatIntelligence,TechnicalAnalysisofREDLINEStealer,April19,2021\.IntelGraphReporting.16\.HackersleakfullEAdataafterfailedextortionattempt,TheRecord,July31,2021\.17\. Aggarwal,Gaurav,Howthepandemichasacceleratedcloud adoption,Forbes,January15,2021\.18\. GartnerPressRelease,GartnersaysFourTrendsareShapingtheFutureofPublicCloud,August2,2021\.
+GARTNERistheregisteredtrademarkandservice 
+markofGartnerIncandoritsaffiliatesintheU.S. 
+andinternationallyandhasbeenusedhereinwith
+permission.Allrightsreserved.TeamTNTOperationsShowtheCloudIstheNew
+Battleground,January14,2022,Intelgraphreporting.21\. TeamTNTwithnewcampaignakaChimaera,AT\&T.September8,2021\.22\.AccentureCyberThreatIntelligence,Log4jUnauthenticatedRCECVE\-2021\-44228Vulnerability,
+January4,2022,Intelgraphreporting.23\.AccentureCyberThreatIntelligence,Accountleopoldo787AdvertisesListof500,000IP
+AddressesPotentiallyVulnerabletoLog4jExploitation,
+January2,2022,IntelGraphreporting.24\.AccentureCyberThreatIntelligence,Log4jUnauthenticatedRCECVE\-2021\-44228Vulnerability,
+January4,2022,Intelgraphreporting.25Cyber Threat Intelligence Report Volume 2 2021ContactsJoshua Ray 
+ManagingDirector 
+AccentureSecurity 
+joshua.a.ray@accenture.comHoward Marshall 
+ManagingDirector 
+AccentureSecurity 
+howard.marshall@accenture.comRobert Boyce 
+ManagingDirector 
+AccentureSecurity 
+GlobalCyberInvestigations, 
+Forensics\&Response(CIFR)Lead 
+r.boyce@accenture.comChristopher Foster 
+SeniorPrincipalSecurityInnovation
+AccentureCyberThreatIntelligence
+ProductStrategyLead 
+c.foster@accenture.comValentino De Sousa 
+SeniorPrincipalSecurityInnovation
+EuropeandLatinAmerica 
+CyberThreatIntelligenceLead 
+valentino.de.sousa@accenture.comContributorsOmarAl\-Shahery,HassanAlsaffar,GianLuca
+Giuliani,RandallR.Griffith,PaulMansfield, 
+HannaireMekaouar,AkihiroNishumura, 
+NellieOhr,MaxSmith,ThomasWillkan 
+andtheCyberInvestigations,Forensics 
+\&Response(CIFR)andManagedDetection
+andResponse(MxDR)teams.26Cyber Threat Intelligence Report Volume 2 2021About AccentureAbout Accenture SecurityAccentureisaglobalprofessionalservicescompanywith 
+leadingcapabilitiesindigital,cloudandsecurity.Combining
+unmatchedexperienceandspecializedskillsacrossmorethan
+40industries,weofferStrategyandConsulting,Interactive,
+TechnologyandOperationsservicesallpoweredbythe
+worldslargestnetworkofAdvancedTechnologyandIntelligent
+Operationscenters.Our674,000peopledeliveronthepromiseof
+technologyandhumaningenuityeveryday,servingclientsinmore
+than120countries.Weembracethepowerofchangetocreate
+valueandsharedsuccessforourclients,people,shareholders,
+partnersandcommunities.Visitusat accenture.com.AccentureSecurityisaleadingproviderofend\-to\-endcybersecurity
+services,includingadvancedcyberdefense,appliedcybersecurity
+solutionsandmanagedsecurityoperations.Webringsecurity
+innovation,coupledwithglobalscaleandaworldwidedelivery
+capabilitythroughournetworkofAdvancedTechnologyand
+IntelligentOperationscenters.Helpedbyourteamofhighlyskilled
+professionals,weenableclientstoinnovatesafely,buildcyber
+resilienceandgrowwithconfidence.Followus@AccentureSecure 
+on Twitter, LinkedInorvisitusataccenture.comsecurity.Thisdocumentreferstomarksownedbythirdparties.Allsuchthird\-partymarksarethepropertyoftheirrespectiveowners. 
+Nosponsorship,endorsementorapprovalofthiscontentbytheownersofsuchmarksisintended,expressedorimplied.Thiscontentisprovidedforgeneralinformationpurposesandisnotintendedtobeusedinplaceofconsultationwithourprofessionaladvisors.Giventheinherentnatureofthreatintelligence,thecontentcontainedinthisreportisbasedoninformationgatheredandunderstoodatthetimeofits
+creation.TheinformationinthisreportisgeneralinnatureanddoesnottakeintoaccountthespecificneedsofyourITecosystemandnetwork,which
+mayvaryandrequireuniqueaction.Assuch,Accentureprovidestheinformationandcontentonanas\-isbasiswithoutrepresentationorwarrantyand
+acceptsnoliabilityforanyactionorfailuretoacttakeninresponsetotheinformationcontainedorreferencedinthisreport.Thereaderisresponsiblefor
+determiningwhetherornottofollowanyofthesuggestions,recommendationsorpotentialmitigationssetoutinthisreport,entirelyattheirowndiscretion.Copyright2022Accenture.Allrightsreserved. 
+AccentureanditslogoareregisteredtrademarksofAccenture.210863
