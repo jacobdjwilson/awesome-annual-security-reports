@@ -144,7 +144,7 @@ Reports will be classified by a header that describes their primary content or e
 ### Ransomware
 - [Cyberreason](https://www.cybereason.com/ransomware-the-true-cost-to-business-2024) - [Ransomware The True Cost to Business](Annual%20Security%20Reports/2024/Cyberreason-Ransomware-The-True-Cost-to-Business-2024.pdf) (2024) - This report examines the true cost of ransomware attacks on businesses across different sectors.
 - [Fortinet](https://global.fortinet.com/lp-en-ap-2023ransomwareglobalrr) - [Global Ransomware Report](Annual%20Security%20Reports/2023/Fortinet-Global-Ransomware-Report-2023.pdf) (2023) - Fortinet's report provides a global overview of ransomware trends and impacts across various industries.
-- [Spycloud](https://spycloud.com/resource/2023-ransomware-defense-report/) - [Ransomware Defense Report](Annual%20Security%20Reports/2023/Spycloud-Ransomware-Defense-Report-2023.pdf) (2023) - This report examines ransomware defense strategies and trends across different sectors.
+- [Spycloud](https://spycloud.com/resource/2024-malware-ransomware-defense-report/) - [Ransomware Defense Report](Annual%20Security%20Reports/2024/Spycloud-Ransomware-Defense-Report-2024.pdf) (2024) - This report examines malware and ransomware defense strategies and trends across different sectors.
 
 ### Privacy and Data Protection
 - [Cisco](https://www.cisco.com/c/en/us/about/trust-center/data-privacy-benchmark-study.html) - [Data Privacy Benchmark Study](Annual%20Security%20Reports/2024/Cisco-Privacy-Benchmark-Study-2024.pdf) (2024) - Cisco's benchmark study provides insights into data privacy trends, challenges, and breaches across various industries.
