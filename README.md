@@ -101,7 +101,7 @@ Reports will be classified by a header that describes their primary content or e
 
 ## AI and Emerging Technologies
 - [Zscaler](https://info.zscaler.com/resources-industry-reports-public-sector-Insights-threatlabz-ai-security-2024) - [ThreatLabz AI Security Report](Annual%20Security%20Reports/2024/Threatlabz-AI-Security-Report-2024.pdf) (2024) - This report examines the intersection of artificial intelligence and cybersecurity, offering insights into AI-powered threats, defensive applications of AI, and strategies for securing AI systems and models.
-- [IBM](https://www.ibm.com/security/data-breach/threat-intelligence/) - [X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2023/IBM-X-Force-Cloud-Threat-Landscape-Report-2023.pdf) (2023) - This report focuses on threats specific to cloud environments, offering insights into cloud security challenges and strategies for securing cloud infrastructure.
+- [IBM](https://www.ibm.com/security/data-breach/threat-intelligence/) - [X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2024/IBM-X-Force-Cloud-Threat-Landscape-Report-2024.pdf) (2024) - This report focuses on threats specific to cloud environments, offering insights into cloud security challenges and strategies for securing cloud infrastructure.
 
 ## Surveys
 
