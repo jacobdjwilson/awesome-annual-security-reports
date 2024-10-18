@@ -165,13 +165,18 @@ Annual reports are composed by a combination of paid and non-profit research bot
 **Government and Non-profits:** This category includes government agencies and non-profit organizations dedicated to cybersecurity research, policy development, and public awareness.
 
 ### Research Consulting
+- [451 Research](https://www.451research.com/) - a technology research and advisory firm specializing in emerging technology segments including cybersecurity market analysis and trends.
+- [ABI Research](https://www.abiresearch.com/) - a technology market intelligence company providing strategic guidance on transformative technologies, including cybersecurity and digital security.
 - [Forrester Research](https://www.forrester.com/) - an advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
+- [Frost & Sullivan](https://www.frost.com/) - a consulting firm offering market research and analysis in cybersecurity, with particular focus on emerging technologies and market opportunities.
 - [Gartner](https://www.gartner.com/) - a technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
 - [GigaOm](https://gigaom.com/) - a research firm offering practical, hands-on, practitioner-driven research for businesses.
 - [International Data Corporation (IDC)](https://www.idc.com/) - a global provider of market intelligence and advisory services.
 - [The Information Security Forum (ISF)](https://www.securityforum.org/) - a global, independent organization dedicated to benchmarking and sharing best practices in information security.
-- [The Rand Corporation](https://www.rand.org/) - an American not-for-profit organization which conducts research and analysis on various aspects of cybersecurity and cyber policy focused on national security.
+- [KuppingerCole](https://www.kuppingercole.com/) - a global analyst company specializing in information security, identity & access management, and risk management.
+- [Omdia](https://omdia.tech.informa.com/) - a global technology research powerhouse focusing on cybersecurity market analysis and digital transformation.
 - [Ponemon Institute](https://www.ponemon.org/) - considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
+- [The Rand Corporation](https://www.rand.org/) - an American not-for-profit organization which conducts research and analysis on various aspects of cybersecurity and cyber policy focused on national security.
 - [SANS Institute](https://www.sans.org/) - a private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
 
 ### Working Groups
