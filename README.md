@@ -210,9 +210,16 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [Electronic Frontier Foundation (EFF)](https://www.eff.org/) - A non-profit organization defending civil liberties in the digital world, including privacy and cybersecurity issues.
 - [European Union Agency for Cybersecurity (ENISA)](https://www.enisa.europa.eu/) - A European Union agency that contributes to EU cybersecurity policy, enhances trust in digital services, and supports incident response capabilities across Europe.
 - [Europol - European Cybercrime Centre (EC3)](https://www.europol.europa.eu/activities-services-main/areas-interest/european-cybercrime-centre-ec3) - A strategic alliance focused on combating cybercrime within the European Union.
+- [German Federal Office for Information Security (BSI)](https://www.bsi.bund.de/) - Germany's national cyber security authority providing IT security services and guidance.
+- [Internet Security Research Group (ISRG)](https://www.abetterinternet.org/) - A non-profit organization focused on reducing financial, technological, and educational barriers to secure communication over the Internet.
+- [Japan National Center of Incident Readiness and Strategy for Cybersecurity (NISC)](https://www.nisc.go.jp/eng/) - Japan's central organization for national cybersecurity strategy and incident response.
+- [Korean Internet & Security Agency (KISA)](https://www.kisa.or.kr/eng/) - South Korea's government agency dedicated to promoting cybersecurity and a safer internet environment.
 - [MITRE Corporation](https://www.mitre.org/) - an American not-for-profit organization which conducts research and development supporting various U.S. government agencies.
 - [National Cyber Security Centre (NCSC)](https://www.ncsc.gov.uk/) - The UK's technical authority for cyber incidents.
+- [National Cyber Security Centre - Netherlands (NCSC-NL)](https://www.ncsc.nl/english) - The Dutch national cyber security center providing guidance and incident response.
 - [National Institute of Standards and Technology (NIST)](https://www.nist.gov/cybersecurity) - A U.S. agency that develops cybersecurity standards and guidelines.
+- [Norwegian National Security Authority (NSM)](https://nsm.no/en/) - Norway's expert body for information and object security, providing guidance and incident response capabilities.
+- [Singapore Cyber Security Agency (CSA)](https://www.csa.gov.sg/) - Singapore's national agency overseeing cybersecurity strategy and development.
 
 ## Contributing
 [Please refer to the guidelines at CONTRIBUTING.md for details](CONTRIBUTING.md).
