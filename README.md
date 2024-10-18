@@ -180,7 +180,6 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [SANS Institute](https://www.sans.org/) - a private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
 
 ### Working Groups
-
 - [The Anti-Phishing Working Group (APWG)](https://apwg.org/) - A global coalition focused on unifying the global response to cybercrime.
 - [The Cloud Security Alliance (CSA)](https://cloudsecurityalliance.org/) - Promotes best practices for providing security assurance within cloud computing.
 - [The Cyber Threat Alliance (CTA)](https://www.cyberthreatalliance.org/) - An industry-driven group of cybersecurity organizations that share threat intelligence and conduct collaborative research to combat cyber threats.
@@ -192,6 +191,12 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [The International Information System Security Certification Consortium (ISC)²](https://www.isc2.org/) - an American not-for-profit organization which conducts research for consumers of their cybersecurity training and certifications.
 - [The Messaging, Malware and Mobile Anti-Abuse Working Group (M3AAWG)](https://www.m3aawg.org/) - Focuses on operational issues of Internet abuse including botnets, malware, spam, viruses, and mobile messaging abuse.
 - [The Open Web Application Security Project (OWASP)](https://owasp.org/) - A professional community that produces research concerning web application security, made freely available to the online community.
+- [The Forum of Incident Response and Security Teams (FIRST)](https://www.first.org/) - An international confederation of trusted computer incident response teams.
+- [Industrial Control Systems Joint Working Group (ICSJWG)](https://www.cisa.gov/icsjwg) - Facilitates information sharing and collaboration for cybersecurity in industrial control systems.
+- [The Internet Security Alliance (ISA)](https://isalliance.org/) - A multi-sector trade association focused on thought leadership, policy advocacy, and standards development for cybersecurity.
+- [The Open Source Security Foundation (OpenSSF)](https://openssf.org/) - A cross-industry collaboration to improve the security of open source software.
+- [Trusted Computing Group (TCG)](https://trustedcomputinggroup.org/) - Develops and promotes open standards for hardware-enabled security.
+- [Web Application Security Consortium (WASC)](http://www.webappsec.org/) - An international group of experts, industry practitioners, and organizational representatives who produce security standards and research.
 - [World Economic Forum (Centre for Cybersecurity)](https://www.weforum.org/centre-for-cybersecurity) - A global initiative that brings together stakeholders from industry, government, and academia to improve cybersecurity globally and secure the digital economy.
 
 ### Government and Non-profits
