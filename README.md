@@ -138,7 +138,7 @@ Reports will be classified by a header that describes their primary content or e
 
 ### Penetration Testing
 - [Cobalt](https://resource.cobalt.io/state-of-pentesting-2024) - [State of Pentesting](Annual%20Security%20Reports/2024/Cobalt-State-of-Pentesting-2024.pdf) (2024) - This report offers an overview of the current state of penetration testing, including trends, challenges, and best practices across various industries.
-- [Fortra](https://www.fortra.com/services/consulting/cybersecurity/penetration-testing) - [Penetration Testing Report](Annual%20Security%20Reports/2023/Fortra-Pentesting-Report-2023.pdf) (2023) - Fortra's report provides insights into the current landscape of penetration testing, including common vulnerabilities and industry-specific challenges.
+- [Fortra](https://www.fortra.com/services/consulting/cybersecurity/penetration-testing) - [Penetration Testing Report](Annual%20Security%20Reports/2024/Fortra-Pentesting-Report-2024.pdf) (2024) - Fortra's report provides insights into the current landscape of penetration testing, including common vulnerabilities and industry-specific challenges.
 - [HackerOne](https://www.hackerone.com/resources/reporting/7th-annual-hacker-powered-security-report-2023) - [Hacker Powered Security Report](Annual%20Security%20Reports/2023/HackerOne-Hacker-Powered-Security-Report-2023.pdf) (2023) - This annual report explores the state of hacker-powered security, including trends in bug bounty programs and vulnerability disclosure across industries.
 
 ### Ransomware
