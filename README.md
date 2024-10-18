@@ -32,6 +32,9 @@
         - [AI and Emerging Technologies](#ai-and-emerging-technologies-1)        
 - [Resources](#resources)
     - [Research Consulting](#research-consulting)
+    - [Standards and Certifications](#standards-and-certifications)
+    - [Threat Intelligence and Incident Response](#threat-intelligence-and-incident-response)
+    - [Policy and Advocacy](#policy-and-advocacy)
     - [Working Groups](#working-groups)
     - [Government and Non-profits](#government-and-non-profits)
 - [Contributing](#contributing)
@@ -156,13 +159,19 @@ Reports will be classified by a header that describes their primary content or e
 - [Snyk](https://snyk.io/reports/ai-code-security/) - [AI Generated Code Security Report](Annual%20Security%20Reports/2023/Snyk-AI-Generated-Code-Security-Report-2023.pdf) (2023) - This report examines the security implications of AI-generated code across different sectors.
 
 ## Resources
-Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Below you will find various organizations involved in cybersecurity research, consulting, and policy-making. It's divided into three main categories:
+Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Below you will find various organizations involved in cybersecurity research, consulting, and policy-making. It's divided into six main categories:
 
-**Research Consulting:** These are organizations that offer paid research services, market analysis, and consulting in the field of information technology and cybersecurity.
+**[Research Consulting](#research-consulting):** These are organizations that offer paid research services, market analysis, and consulting in the field of information technology and cybersecurity.
 
-**Working Groups:** These are collaborative organizations or professional associations that conduct research, share information, and develop best practices in cybersecurity.
+**[Standards and Certifications](#standards-and-certifications):** Organizations involved in setting cybersecurity standards, providing certifications, and creating frameworks for best practices.
 
-**Government and Non-profits:** This category includes government agencies and non-profit organizations dedicated to cybersecurity research, policy development, and public awareness.
+**[Threat Intelligence and Incident Response](#threat-intelligence-and-incident-response):** Organizations focused on sharing threat intelligence, coordinating cyber incident responses, and combating cyber threats.
+
+**[Policy and Advocacy](#policy-and-advocacy):** Institutions shaping cybersecurity policies, regulations, and public awareness on a national or international scale.
+
+**[Working Groups](#working-groups):** These are collaborative organizations or professional associations that conduct research, share information, and develop best practices in cybersecurity.
+
+**[Government and Non-profits](#government-and-non-profits):** This category includes government agencies and non-profit organizations dedicated to cybersecurity research, policy development, and public awareness.
 
 ### Research Consulting
 - [451 Research](https://www.451research.com/) - a technology research and advisory firm specializing in emerging technology segments including cybersecurity market analysis and trends.
@@ -172,42 +181,47 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [Gartner](https://www.gartner.com/) - a technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
 - [GigaOm](https://gigaom.com/) - a research firm offering practical, hands-on, practitioner-driven research for businesses.
 - [International Data Corporation (IDC)](https://www.idc.com/) - a global provider of market intelligence and advisory services.
-- [The Information Security Forum (ISF)](https://www.securityforum.org/) - a global, independent organization dedicated to benchmarking and sharing best practices in information security.
 - [KuppingerCole](https://www.kuppingercole.com/) - a global analyst company specializing in information security, identity & access management, and risk management.
 - [Omdia](https://omdia.tech.informa.com/) - a global technology research powerhouse focusing on cybersecurity market analysis and digital transformation.
-- [Ponemon Institute](https://www.ponemon.org/) - considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
-- [The Rand Corporation](https://www.rand.org/) - an American not-for-profit organization which conducts research and analysis on various aspects of cybersecurity and cyber policy focused on national security.
-- [SANS Institute](https://www.sans.org/) - a private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
 
-### Working Groups
+### Standards and Certifications
+- [The Information Security Forum (ISF)](https://www.securityforum.org/) - a global, independent organization dedicated to benchmarking and sharing best practices in information security.
+- [The International Organization for Standardization (ISO)](https://www.iso.org/) - An international organizational body composed of representatives which conduct closed research for creation of standards.
+- [The Information Systems Audit and Control Association (ISACA)](https://www.isaca.org/) - An international professional association focused on IT governance, which conducts research for and on behalf of the members.
+- [The International Information System Security Certification Consortium (ISC)²](https://www.isc2.org/) - an American not-for-profit organization which conducts research for consumers of their cybersecurity training and certifications.
+- [SANS Institute](https://www.sans.org/) - a private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
+- [Trusted Computing Group (TCG)](https://trustedcomputinggroup.org/) - Develops and promotes open standards for hardware-enabled security.
+
+### Threat Intelligence and Incident Response
 - [The Anti-Phishing Working Group (APWG)](https://apwg.org/) - A global coalition focused on unifying the global response to cybercrime.
-- [The Cloud Security Alliance (CSA)](https://cloudsecurityalliance.org/) - Promotes best practices for providing security assurance within cloud computing.
 - [The Cyber Threat Alliance (CTA)](https://www.cyberthreatalliance.org/) - An industry-driven group of cybersecurity organizations that share threat intelligence and conduct collaborative research to combat cyber threats.
 - [The Forum of Incident Response and Security Teams (FIRST)](https://www.first.org/) - Provides platforms, means and tools for incident responders to always find the right partner and to collaborate efficiently.
 - [The Global Cyber Alliance (GCA)](https://globalcyberalliance.org/) - An international, cross-sector effort dedicated to reducing cyber risk.
-- [The Information Systems Audit and Control Association (ISACA)](https://www.isaca.org/) - An international professional association focused on IT governance, which conducts research for and on behalf of the members.
-- [The International Organization for Standardization (ISO)](https://www.iso.org/) - An international organizational body composed of representatives which conduct closed research for creation of standards.
-- [The Internet Engineering Task Force (IETF)](https://www.ietf.org/) - Develops and promotes internet standards, including those related to security.
-- [The International Information System Security Certification Consortium (ISC)²](https://www.isc2.org/) - an American not-for-profit organization which conducts research for consumers of their cybersecurity training and certifications.
 - [The Messaging, Malware and Mobile Anti-Abuse Working Group (M3AAWG)](https://www.m3aawg.org/) - Focuses on operational issues of Internet abuse including botnets, malware, spam, viruses, and mobile messaging abuse.
-- [The Open Web Application Security Project (OWASP)](https://owasp.org/) - A professional community that produces research concerning web application security, made freely available to the online community.
-- [The Forum of Incident Response and Security Teams (FIRST)](https://www.first.org/) - An international confederation of trusted computer incident response teams.
-- [Industrial Control Systems Joint Working Group (ICSJWG)](https://www.cisa.gov/icsjwg) - Facilitates information sharing and collaboration for cybersecurity in industrial control systems.
+- [Ponemon Institute](https://www.ponemon.org/) - considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
+
+### Policy and Advocacy
+- [The Rand Corporation](https://www.rand.org/) - an American not-for-profit organization which conducts research and analysis on various aspects of cybersecurity and cyber policy focused on national security.
+- [Center for Strategic and International Studies (CSIS) - Technology Policy Program](https://www.csis.org/programs/technology-policy-program) - A think tank with a Technology Policy Program that conducts research and provides insights into technology and cybersecurity policies.
+- [Electronic Frontier Foundation (EFF)](https://www.eff.org/) - A non-profit organization defending civil liberties in the digital world, including privacy and cybersecurity issues.
 - [The Internet Security Alliance (ISA)](https://isalliance.org/) - A multi-sector trade association focused on thought leadership, policy advocacy, and standards development for cybersecurity.
-- [The Open Source Security Foundation (OpenSSF)](https://openssf.org/) - A cross-industry collaboration to improve the security of open source software.
-- [Trusted Computing Group (TCG)](https://trustedcomputinggroup.org/) - Develops and promotes open standards for hardware-enabled security.
-- [Web Application Security Consortium (WASC)](http://www.webappsec.org/) - An international group of experts, industry practitioners, and organizational representatives who produce security standards and research.
 - [World Economic Forum (Centre for Cybersecurity)](https://www.weforum.org/centre-for-cybersecurity) - A global initiative that brings together stakeholders from industry, government, and academia to improve cybersecurity globally and secure the digital economy.
+
+### Working Groups
+- [The Cloud Security Alliance (CSA)](https://cloudsecurityalliance.org/) - Promotes best practices for providing security assurance within cloud computing.
+- [The Internet Engineering Task Force (IETF)](https://www.ietf.org/) - Develops and promotes internet standards, including those related to security.
+- [The Open Web Application Security Project (OWASP)](https://owasp.org/) - A professional community that produces research concerning web application security, made freely available to the online community.
+- [Industrial Control Systems Joint Working Group (ICSJWG)](https://www.cisa.gov/icsjwg) - Facilitates information sharing and collaboration for cybersecurity in industrial control systems.
+- [The Open Source Security Foundation (OpenSSF)](https://openssf.org/) - A cross-industry collaboration to improve the security of open source software.
+- [Web Application Security Consortium (WASC)](http://www.webappsec.org/) - An international group of experts, industry practitioners, and organizational representatives who produce security standards and research.
 
 ### Government and Non-profits
 - [Australian Cyber Security Centre (ACSC)](https://www.cyber.gov.au/) - Provides cyber security advice and support to Australian businesses and individuals.
 - [Canadian Centre for Cyber Security](https://cyber.gc.ca/en/) - Canada's national authority on cybersecurity.
 - [Center for Internet Security (CIS)](https://www.cisecurity.org/) - An American non-profit organization that provides cybersecurity solutions and best practices.
-- [Center for Strategic and International Studies (CSIS) - Technology Policy Program](https://www.csis.org/programs/technology-policy-program) - A think tank with a Technology Policy Program that conducts research and provides insights into technology and cybersecurity policies.
 - [Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov/) - A U.S. government agency responsible for enhancing the security and resilience of the nation's critical infrastructure.
 - [Cybersecurity Forum Initiative (CSFI)](https://www.csfi.us/) - An American non-profit organization that promotes cybersecurity awareness and research.
 - [Cyber Peace Institute](https://cyberpeaceinstitute.org/) - A non-profit organization focused on reducing the impact of cyberattacks on civilians and promoting peace in cyberspace by supporting international cooperation and collective action.
-- [Electronic Frontier Foundation (EFF)](https://www.eff.org/) - A non-profit organization defending civil liberties in the digital world, including privacy and cybersecurity issues.
 - [European Union Agency for Cybersecurity (ENISA)](https://www.enisa.europa.eu/) - A European Union agency that contributes to EU cybersecurity policy, enhances trust in digital services, and supports incident response capabilities across Europe.
 - [Europol - European Cybercrime Centre (EC3)](https://www.europol.europa.eu/activities-services-main/areas-interest/european-cybercrime-centre-ec3) - A strategic alliance focused on combating cybercrime within the European Union.
 - [German Federal Office for Information Security (BSI)](https://www.bsi.bund.de/) - Germany's national cyber security authority providing IT security services and guidance.
