@@ -1,11 +1,13 @@
 Threats Unmasked
 2021 Cyber Threat 
-Intelligence ReportForewordAccenture Cyber Threat Intelligence (Accenture CTI) has been creating 
+Intelligence Report
+Accenture Cyber Threat Intelligence (Accenture CTI) has been creating 
 relevant, actionable threat intelligence for more than 20 years. But the 
 rapid pace of cyber threat evolution means that intelligence needs to 
 be timely to be relevant. As a result, we are changing our annual Cyber 
 Threatscape report to a more frequent review, to help decision makers 
-plan and act faster.In this inaugural issue we highlight early
+plan and act faster.
+In this inaugural issue we highlight early
 2021 cyber threat trends and expert 
 perspectives on threats to the operational 
 technology (OT) landscape. In an era 
@@ -13,13 +15,18 @@ of unprecedented uncertainty, with so
 many devices scattered throughout 
 enterprise networks, its challenging 
 for security professionals to keep pace 
-with security demands.The SolarWinds and Colonial Pipeline 
+with security demands.
+The SolarWinds and Colonial Pipeline 
 incidents and the large\-scale disruptions and 
 cost of ransomware operations, illustrate the 
 growing impact of cyber threat activity on 
 enterprise risk across all industry segments. 
 This risk is increasingly difficult to control and 
-mitigate across both IT and OT environments.22021 Cyber Threat Intelligence Report While running industrial
+mitigate across both IT and OT environments.
+Foreword
+2
+2021 Cyber Threat Intelligence Report 
+While running industrial
 systems is eased by 
 virtualization in the
 cloud and the advance of 
@@ -27,7 +34,8 @@ Internet\-connected devices,
 these technologies are also 
 introducing operational 
 environments to new 
-vulnerabilities and risks.The global ransomware crisis has
+vulnerabilities and risks.
+The global ransomware crisis has
 entered a new phase, as threat actors
 adopt stronger pressure tactics and new 
 targetsin particular, manufacturing and 
@@ -41,59 +49,75 @@ a ransom will restore data or prevent
 leaks2 and it seems they recognize that
 median ransom payments have fallen
 from US$110,532 in September 2020
-to US$$78,398 in March 2021\.3As we have seen with the SolarWinds 
+to US$$78,398 in March 2021\.3
+As we have seen with the SolarWinds 
 compromise, software supply chain
 security and third\-party compromise 
 vectors are in the spotlight. More generally, 
 ransomware deployment is faster and more 
 diverse, making pre\-infection defense 
-extremely difficult.Enterprise risk management is a team
+extremely difficult. 
+Enterprise risk management is a team
 sport that requires a variety of capabilities,
 a cohesive team, excellent execution
 of the basics and a willingness to adapt
-to changing conditions.Security leaders must demonstrate to the 
+to changing conditions. 
+Security leaders must demonstrate to the 
 C\-suite and the board not only that they 
 understand the criticality of the continuity 
 of operations, but also the importance 
 of working in partnership with the whole 
-business to effectively manage risk.For more, take a look at our larger security 
+business to effectively manage risk.
+For more, take a look at our larger security 
 library through our Threat Intelligence,
 Cyber Defense, and OT Security blogs
 and our recent Operation: Next 
-OT security summit.Howard MarshallHoward Marshall 
-Managing Director, Accenture Security32021 Cyber Threat Intelligence Report Key trendsFollowing analysis in the first half of 2021, Accenture CTI 
-identified four trends that are affecting the IT and OT landscape:Ransomware actors test 
-new extortion methodsCobalt Strike is on the riseCommodity malware can 
-invade OT from IT spaceDark Web actors challenge 
-IT and OT networks412342021 Cyber Threat Intelligence Report Ransomware 
+OT security summit. 
+Howard Marshall
+Howard Marshall 
+Managing Director, Accenture Security
+3
+2021 Cyber Threat Intelligence Report 
+Key trends
+Following analysis in the first half of 2021, Accenture CTI 
+identified four trends that are affecting the IT and OT landscape:
+Ransomware actors test 
+new extortion methods
+Cobalt Strike is on the rise
+Commodity malware can 
+invade OT from IT space
+Dark Web actors challenge 
+IT and OT networks
+1
+2
+3
+4
+4
+2021 Cyber Threat Intelligence Report 
+Ransomware 
 actors test new 
-extortion methodsRansomware actors are expanding data leak extortion, 
+extortion methods
+Ransomware actors are expanding data leak extortion, 
 devising new methods to pressure victims.4 Their creative 
 approaches are hitting home as they place operational 
 resiliencealready tested by the disruptive forces of
-the pandemicunder increased pressure.2021 Cyber Threat Intelligence Report5Threat actors are targeting new 
-industries, using higher\-pressure
-tactics to escalate infection 
-consequences and deploying 
-payloads faster to render 
-trusted detection methods
-too slow. Response options are 
-becoming more complicated.Organizations should focus
-on preparation, prevention
-and pre\-encryption defenses.Whats happening?Targets are shifting 
+the pandemicunder increased pressure. 
+5
+2021 Cyber Threat Intelligence Report 
+Whats happening?
+Targets are shifting 
 Small manufacturers remain typical targets,5 
 but cases in the first months of 2021 targeted
 critical infrastructurethe May 2021 Colonial
-Pipeline ransomware paralyzed fuel distribution
-in much of the southeastern United States
+Pipeline ransomware paralyzed fuel distributionin much of the southeastern United States
 and upstream providers, such as data\-rich
-insurance companies.6 Ransomware operators
-disrupt production in organizations that 
+insurance companies.6 Ransomware operatorsdisrupt production in organizations that 
 cannot afford downtime and feel pressure 
 to pay ransoms. One group exploited 
 a cloud providers product to breach 
 legal, transportation, geophysical and 
-logistics entities.7Tactics are toughening 
+logistics entities.7
+Tactics are toughening 
 Ransomware actors generally promise
 to decrypt their victims systems and
 destroy stolen data after receiving 
@@ -106,7 +130,21 @@ payment.9 But, one group extorted their
 victims and posted stolen data without
 even deploying ransomwareapparently 
 viewing exposure as more intimidating
-to its victim than bricking machines.102021 Cyber Threat Intelligence Report6Extortion is becoming personal 
+to its victim than bricking machines.10
+Threat actors are targeting new 
+industries, using higher\-pressure
+tactics to escalate infection 
+consequences and deploying 
+payloads faster to render 
+trusted detection methods
+too slow. Response options are 
+becoming more complicated. 
+Organizations should focus
+on preparation, prevention
+and pre\-encryption defenses. 
+6
+2021 Cyber Threat Intelligence Report 
+Extortion is becoming personal 
 New exposure tactics, pioneered in 2020, 
 have gathered speed, compounding data leak 
 extortion damage, adding reputation damage 
@@ -114,7 +152,7 @@ to victim liability lists. In what one report
 has dubbed quadruple extortion, groups
 are not only encrypting files and threatening to
 leak data, but also threatening non\-payers with 
-distributed denial\-of\-service (DDoS) attacks11 12 13
+distributed denial\-of\-service (DDoS) attacks11 12 13 
 or contacting victims customers or business 
 partners, urging them to pressure victims
 to pay ransoms.14 15 16 17 DarkSide, the group
@@ -125,13 +163,15 @@ of its affiliate service.19 Clop actors focused
 on top executives information, seeking 
 blackmail material.20 Babuk ransomware 
 operators have joined Clop and Snatch
-actors in gaining broader exposure for theirstolen victim data with anti\-establishment 
+actors in gaining broader exposure for their 
+stolen victim data with anti\-establishment 
 activist communities.21 After the fallout
 from the Colonial Pipeline hack led major 
 underground forum administrators to
 ban talk of ransomware, Babuk announced
 a new platform where anyone can publish 
-their stolen data.22Tactics, Techniques, and Procedures 
+their stolen data.22
+Tactics, Techniques, and Procedures 
 (TTPs) are more advanced 
 Ransomware actors are developing new 
 tools and exploits rapidly. Actors exploit 
@@ -141,19 +181,29 @@ hosting;23 Accenture CTI identified notable
 defense evasion tactics with Hades 
 ransomware operators using tooling
 and hands\-on\-keyboard actions to
-disable endpoint defenses.24Where next?To help tackle the impact of ransomware:Nip attacks in the bud: Organizations 
+disable endpoint defenses.24
+Where next?
+To help tackle the impact of ransomware:
+Nip attacks in the bud: Organizations 
 focusing on preparation, prevention, 
 and pre\-encryption defense can more 
-effectively face the ransomware crisis.25 26
-Segregation and zero\-trust measures
+effectively face the ransomware crisis.25 26Segregation and zero\-trust measures
 can limit threat actor movements
-if breaches occur.Collaborate and report:Collaborate with industry partners, 
+if breaches occur.
+Collaborate and report: 
+Collaborate with industry partners, 
 consortiums and law enforcement 
-for greater threat awareness.Update risk and mitigation plans:Apply an appropriate risk mitigation 
+for greater threat awareness.
+Update risk and mitigation plans: 
+Apply an appropriate risk mitigation 
 strategy that includes aspects such 
 as controls deployment or secure 
-data transmission mechanisms.72021 Cyber Threat Intelligence Report Cobalt Strike 
-is on the riseTesting services have proven themselves as 
+data transmission mechanisms.
+7
+2021 Cyber Threat Intelligence Report 
+Cobalt Strike 
+is on the rise
+Testing services have proven themselves as 
 an effective way to assess systems, enabling 
 organizations to address and mitigate risk to 
 their critical production environment. So, it is 
@@ -161,24 +211,31 @@ unsurprising that threat actors continuously
 seek cost\-efficient ways to evade detection 
 and complicate attribution. One of these ways 
 is to integrate open source and commercial 
-tools into their arsenal.2021 Cyber Threat Intelligence Report8Since at least December 2020, Accenture 
+tools into their arsenal. 
+8
+2021 Cyber Threat Intelligence Report 
+Since at least December 2020, Accenture 
 CTI has observed, from internal research 
 and public reporting,27 a notable increase
 in threat actors adopting pirated versions
 of the commercial penetration testing 
-framework Cobalt Strike.The frameworks Beacon backdoor
+framework Cobalt Strike. 
+This pirated software has enabled
+highly impactful campaigns, including
+the recently discovered SolarWinds\-based 
+compromises, as well as prolific
+name\-and\-shame ransomware attacks. 
+Accenture CTI invests significant 
+resources in tooling that identifies, 
+decrypts and tracks Cobalt Strike 
+configurations in the wild.28
+The frameworks Beacon backdoor
 contains commercial watermarks, 
 which enable analysts to monitor 
 campaigns and target trends about 
 locations of cracked or pirated Cobalt 
-Strike deployments.This pirated software has enabled
-highly impactful campaigns, including
-the recently discovered SolarWinds\-based 
-compromises, as well as prolific
-name\-and\-shame ransomware attacks.Accenture CTI invests significant 
-resources in tooling that identifies, 
-decrypts and tracks Cobalt Strike 
-configurations in the wild.28Public discussions around the prolific 
+Strike deployments. 
+Public discussions around the prolific 
 success of a malicious tool can often 
 result in the development of new 
 security detection techniques, leading 
@@ -188,15 +245,17 @@ customization, the current high profile
 success of Cobalt Strike abuse means 
 the pirated tools popularity is actually 
 growinga trend that will almost 
-certainly continue through 2021\.Organizations need to adopt new defensive
-tools that can counter this growing threat.Whats happening?Cobalt Strike is proliferating 
+certainly continue through 2021\. 
+Whats happening?
+Cobalt Strike is proliferating 
 Although in use for more than a decade,
 the number of Cobalt Strike\-enabled
 attacks reportedly increased by 163%
 between 2019 and 2020\.29 The emergence
 of pirated Cobalt Strike being abused
 as a preeminent commodity alternative to 
-malware has occurred for numerous reasons.In addition to being increasingly
+malware has occurred for numerous reasons. 
+In addition to being increasingly
 accessible, recent Cobalt Strike versions
 are more customizable than previous 
 versions. As Accenture CTI observed
@@ -204,27 +263,35 @@ in the recent SolarWinds breach,30 threat
 actors are exploiting Cobalt Strikes malleable 
 command\-and\-control features to customize 
 default settings of the frameworks Beacon 
-backdoor and defeat detection.2021 Cyber Threat Intelligence Report9Attack tools are evolving 
+backdoor and defeat detection. 
+Organizations need to adopt new defensive
+tools that can counter this growing threat.
+9
+2021 Cyber Threat Intelligence Report 
+Attack tools are evolving 
 Threat actors are evolving their own
 custom loaders to deliver Cobalt Strike. 
 Notably, attackers developed several
 custom Cobalt Strike loaders to facilitate
 the SolarWinds campaign.31 Accenture CTI 
 has seen the popularity of the tool surge
-in the first three months of 2021\.Beyond the intensifying use of Cobalt Strike by 
+in the first three months of 2021\.
+Beyond the intensifying use of Cobalt Strike by 
 opportunistic name and shame ransomware 
-groups such as REvil (also known as Sodinokibi)
-and Egregor, Hades ransomware operators 
+groups such as REvil (also known as Sodinokibi)and Egregor, Hades ransomware operators 
 have also abused the tool to deploy their 
 ransomware.32 These ransomware attacks 
 affected multiple victims between
-December 2020 and March 2021\.Accenture CTI also observed a Cobalt Strike 
+December 2020 and March 2021\.
+Accenture CTI also observed a Cobalt Strike 
 Beacon\-type payload in malware hosted
-on infrastructure, likely associated withthe newly identified cyber espionage
+on infrastructure, likely associated with
+the newly identified cyber espionage
 group HAFNIUM.33 HAFNIUM reportedly
 used zero\-day exploits against critical 
 Microsoft Exchange vulnerabilities, which 
-Microsoft publicly disclosed in March 2021\.34Malware is merging 
+Microsoft publicly disclosed in March 2021\.34
+Malware is merging 
 Accenture CTI has identified overlaps 
 between the infrastructure of the 
 information\-stealing malware EvilGrab and 
@@ -234,21 +301,34 @@ overlaps between EvilGrab and Cobalt Strike
 are precursors for sophisticated groups that 
 have used EvilGrab in the past adopting 
 Cobalt Strike against new target sets in
-the remainder of 2021\.Where next?To help tackle the impact of threats
-to testing frameworks:Undertake network analysis: Monitor for 
+the remainder of 2021\. 
+Where next?
+To help tackle the impact of threats
+to testing frameworks:
+Undertake network analysis: Monitor for 
 discovered Beacon watermarks in Cobalt 
 Strike samples to find and understand 
 emerging Cobalt Strike campaigns and 
-better defend against trending TTPs.Get familiar with Cobalt Strikeactivity: Learn how past experiences 
-can help to tackle the threat.Strengthen your defense posture: 
+better defend against trending TTPs.
+Get familiar with Cobalt Strike 
+activity: Learn how past experiences 
+can help to tackle the threat.
+Strengthen your defense posture: 
 Employ new defense tools to keep 
-pace with evolving challenges.102021 Cyber Threat Intelligence Report Commodity 
+pace with evolving challenges.
+10
+2021 Cyber Threat Intelligence Report 
+Commodity 
 malware can invade 
-OT from IT spaceCommodity malware, perhaps better termed high\-volume 
+OT from IT space
+Commodity malware, perhaps better termed high\-volume 
 crimeware, presents a unique and universal challenge due to 
 its availability and scale. It is a danger at the endpoint, enabling 
 further intrusions within a victim network and can threaten 
-both IT and OT systems.112021 Cyber Threat Intelligence Report QakBot, IcedID, DoppelDridex, and
+both IT and OT systems. 
+11
+2021 Cyber Threat Intelligence Report 
+QakBot, IcedID, DoppelDridex, and
 Hancitor are examples of commodity 
 malware threats active in February 
 and March 2021\. Accenture CTIs 
@@ -258,11 +338,14 @@ actors sell these malware types on
 the Dark Web because relevant threat 
 actors hold onto the malware closely, 
 reducing opportunities to identify 
-spam campaigns early.Organizations need to 
+spam campaigns early. 
+Organizations need to 
 consider prevention, rather 
 than response, as the most 
 effective defense against 
-commodity malware threats.Whats happening?First\-stage commodity malware is
+commodity malware threats.
+Whats happening?
+First\-stage commodity malware is
 a notable threat because it enables the 
 deployment of further malware at the 
 endpoint. Threat actors use of follow\-on
@@ -270,12 +353,15 @@ commodity malware or tools, such as
 pirated and abused Cobalt Strike instances, 
 increases the risk of an infection spreading 
 throughout an organizations infrastructure 
-and even to OT assets.Here are some of the active malware 
-campaigns observed by Accenture CTI:Qakbot and IcedID 
+and even to OT assets. 
+Here are some of the active malware 
+campaigns observed by Accenture CTI:
+Qakbot and IcedID 
 According to Accenture CTI research,
 in March 2021, threat actors used
 large\-volume spam campaigns to deliver 
-crimeware via compressed Excel documents.The embedded malicious macros from
+crimeware via compressed Excel documents. 
+The embedded malicious macros from
 the Excel documents download crimeware 
 from URLs with paths that end with \[0\-9]
 {5},\[0\-9]{9,10}.dat. In a sample activity set, 
@@ -291,7 +377,10 @@ cookie parameters gads and \_gat,
 and the C2 server sends back the IcedID
 main payload, which is a banking Trojan
 that also acts as a downloader to deploy 
-follow\-on malware.362021 Cyber Threat Intelligence Report12DoppelDridex 
+follow\-on malware.36 
+12
+2021 Cyber Threat Intelligence Report 
+DoppelDridex 
 A noteworthy spam campaign in March 2021 
 lured users with an e\-mail that appeared
 to be from intuit\[.]com. E\-mails from this 
@@ -300,8 +389,7 @@ InvoiceSales Receipt and Purchase Order
 Receipt and attachments with names like
 Payment\_Receipt \[number].xls. The malicious 
 Excel attachment contains two hidden sheets
-with invisible strings in cell A15\. Upon execution,
-a macro decodes multiple URLs, downloads 
+with invisible strings in cell A15\. Upon execution,a macro decodes multiple URLs, downloads 
 the DoppelDridex loader from the URLs 
 and executes it via the Windows regsvr32 
 process; then the loader drops the embedded 
@@ -309,7 +397,8 @@ DoppelDridex malware into memory and
 executes it.37 Threat actors that split from
 the group responsible for Bitpaymer 
 and Dridex allegedly originated the 
-DoppelDridex malware.38Hancitor 
+DoppelDridex malware.38
+Hancitor 
 In February and March 2021, spam campaigns 
 delivered the commodity malware Hancitor. 
 Actors spread Hancitor via e\-mails with
@@ -317,8 +406,7 @@ a DocuSign order theme and links to Google
 Docs URLs hosting malicious Microsoft Word 
 documents. The Word documents dropped 
 an embedded Hancitor DLL to victim systems. 
-Hancitor contacts the C2 domain api.ipify\[.]org
-to report the target machines external IP 
+Hancitor contacts the C2 domain api.ipify\[.]orgto report the target machines external IP 
 address, contact its C2 at URLs using the
 path 8forum.php, and download Ficker 
 Stealer from .ru domains. Hancitor may
@@ -327,33 +415,53 @@ the victim system has a Microsoft Active
 Directory environment.39 Hancitor activity
 is connected to the threat group MAN1,
 a criminal enterprise that Accenture CTI
-has linked to the Dyre banking malware.40Where next?To help tackle the impact of commodity 
-malware in OT environments:Patch endpoint systems, firewallpotential infection vectors, update anti\-
+has linked to the Dyre banking malware.40
+Where next?
+To help tackle the impact of commodity 
+malware in OT environments:
+Patch endpoint systems, firewall 
+potential infection vectors, update anti\-
 virus software, keep offline or air\-gapped 
-backups and use application whitelists.Conduct regular phishing awarenessprograms for all staff, segment 
+backups and use application whitelists.
+Conduct regular phishing awareness 
+programs for all staff, segment 
 Active Directory domains by 
 function or criticality and maintain 
 a principle of least privilege for 
-each user group and account.Remove or disable commonly abusedand non\-essential services, if appropriate.132021 Cyber Threat Intelligence Report Dark Web actors 
+each user group and account.
+Remove or disable commonly abused 
+and non\-essential services, if appropriate.
+13
+2021 Cyber Threat Intelligence Report 
+Dark Web actors 
 challenge IT and 
-OT networksDark Web activities, including enablement of CLOP 
+OT networks
+Dark Web activities, including enablement of CLOP 
 and Hades ransomware actors, information stealers 
 and digital fingerprints in the underground Genesis 
 Market, reflected noteworthy challenges to both IT 
-and OT networks in early 2021\.142021 Cyber Threat Intelligence Report Dark Web activities, including 
+and OT networks in early 2021\. 
+14
+2021 Cyber Threat Intelligence Report 
+Dark Web activities, including 
 enablement of CLOP and Hades 
 ransomware, information stealers and 
 fingerprints in the underground Genesis 
 Market, reflected noteworthy challenges 
-to both IT and OT networks in early 2021\.As threat actors congregate in Dark Web 
+to both IT and OT networks in early 2021\.
+As threat actors congregate in Dark Web 
 forums to share and trade tools, TTPs 
 and victim data, they are increasing 
 their pressure tactics, learning how to 
 bypass security protections and finding 
-new ways to monetize malware logs.Organizations need to share 
+new ways to monetize malware logs. 
+Organizations need to share 
 information among defenders
 to understand, prevent, identify
-and respond to threat activity.Whats happening?CLOP and Hades ransomware actors are changing the gamePublic reporting in early 2021 tied CLOP 
+and respond to threat activity. 
+Whats happening?
+CLOP and Hades ransomware actors are changing the game
+Public reporting in early 2021 tied CLOP 
 ransomware actors to a series of global data 
 breaches exploiting a recently discovered 
 vulnerability in the widely used Accellion File 
@@ -364,22 +472,25 @@ victim disclosures and insights from Accenture
 incident response efforts, Accenture CTI 
 agrees that CLOP ransomware actors likely 
 teamed up with the actors responsible for 
-exploiting the Accellion FTA vulnerability.42 43 44 45
+exploiting the Accellion FTA vulnerability.42 43 44 45 
 Profitability and managing victims at scale 
 could result in escalation and copycats over 
-the course of the year.Hades ransomware actors also gained traction 
+the course of the year.
+Hades ransomware actors also gained traction 
 in early 2021 and demonstrated their ability 
 to bypass Endpoint Detection and Response 
 (EDR) tools46 and reach edge devices.47
 Hades actors manually disabled or used 
-custom tools to evade defenses andthis skillset could threaten OT networks.48
+custom tools to evade defenses and
+this skillset could threaten OT networks.48
 Given the EDR bypass, Accenture CTI 
 considers Hades ransomware actors the
 latest gang threatening both IT and OT 
 networks. Operators schemes now 
 encompass capturing and encrypting 
 company data and traversing IT 
-networks to OT networks.Ransomware operators rarely succeed
+networks to OT networks.
+Ransomware operators rarely succeed
 when they try to compromise OT networks, 
 but may not even need to do so to achieve 
 their objectives. In both a February 2021 
@@ -390,15 +501,27 @@ forced preventive OT shutdowns and
 short\-term effects comparable to an OT 
 infection. OT shutdowns, even if preventive, 
 may become more common in future attacks 
-against OT\-dependent organizations.49 502021 Cyber Threat Intelligence Report15Information is easy to buy and even easier to useSince the beginning of 2021, Accenture CTI 
+against OT\-dependent organizations.49 50
+15
+2021 Cyber Threat Intelligence Report 
+Information is easy to buy and even easier to use 
+Since the beginning of 2021, Accenture CTI 
 observed a slight but noticeable increase 
 in threat actors selling malware logs, which 
 constitute data derived from information 
 stealer malware.51 Information stealers
 can collect and log a wide range of sensitive 
 system, user and business information, 
-such as the following:System informationWeb browser bookmarksWeb session cookiesLogin credentials (websites,Remote Desktop Protocol (RDP), 
-Secure Shell Protocol (SSH))Payment card dataCryptocurrency wallet addressesA threat actor can use malware logs to 
+such as the following: 
+System information
+Web browser bookmarks
+Web session cookies
+Login credentials (websites, 
+Remote Desktop Protocol (RDP), 
+Secure Shell Protocol (SSH))
+Payment card data
+Cryptocurrency wallet addresses
+A threat actor can use malware logs to 
 masquerade as a legitimate network user
 and avoid detection, gaining initial access
 to a victim system by using valid credentials. 
@@ -412,7 +535,8 @@ or SSH. A common alternative action is for
 threat actors to sell malware logs directly
 to hackers, or to sell them in bulk to
 malware log Dark Web marketplaces,
-such as Genesis Market or Russian Market.Accenture CTI considers the malware logs that 
+such as Genesis Market or Russian Market.
+Accenture CTI considers the malware logs that 
 Dark Web actors sell in Genesis Market to pose 
 a particularly serious threat to organizations IT 
 and OT assets. Genesis Market has drastically 
@@ -421,7 +545,13 @@ exploitation by compiling and selling malware
 logs in a format Genesis ads dub bots
 or a plug\-ins. Even less technically savvy 
 threat actors can intuitively use a plug\-in
-with Genesis freely available Web browser.162021 Cyber Threat Intelligence Report Where next?To help tackle the impact of the Dark Web on OT networks:Undertake responsible monitoring:Seek early warning of potential 
+with Genesis freely available Web browser.
+16
+2021 Cyber Threat Intelligence Report 
+Where next?
+To help tackle the impact of the Dark Web on OT networks:
+Undertake responsible monitoring:
+Seek early warning of potential 
 unauthorized access through
 responsible Dark Web monitoring,
 whether directly or through a cyber
@@ -440,20 +570,26 @@ and physical shutdowns (either as
 preventive or reactive measures), 
 to prepare network and business 
 operations for the future occurrence 
-of a ransomware or similar event.172021 Cyber Threat Intelligence ReportSpotlight: On the edge of securityEdge devices such as Internet of Things (IoT) objects, switches and routers operate at the 
+of a ransomware or similar event. 
+17
+2021 Cyber Threat Intelligence Report 
+Edge devices such as Internet of Things (IoT) objects, switches and routers operate at the 
 boundary of a network to control data flowing in and out of the organization. At the border 
 between IT and OT environments, they are critical to OT securitybreaches can mean 
-direct access into OT environments, completely bypassing IT networks.But low rates of network monitoring52
+direct access into OT environments, completely bypassing IT networks.
+But low rates of network monitoring52
 make it difficult for OT incident responders 
 to identify attack vectors and causes of 
 intrusionand unable to advise on how
 to secure OT systems. As a result, securing 
 edge devices has become as important
-as securing ICS themselves.Policy matters. On December 4, 2020,
+as securing ICS themselves. 
+Policy matters. On December 4, 2020,
 former President Trump signed the Internet 
 of Things Cybersecurity Improvement Act 
 of 2020\.53 The act encourages government 
-agencies to work collaboratively so that IoTsecurity policies are consistent with
+agencies to work collaboratively so that IoT 
+security policies are consistent with
 National Institute for Standards and 
 Technology (NIST) recommendations.54 
 The law promises greater security for edge 
@@ -464,21 +600,28 @@ the Nations Cybersecurity which includes
 direction to create pilot cybersecurity 
 labelling programs to educate the public
 on security capabilities of IoT devices
-and software development practices.55Stringent edge device policies may 
+and software development practices.55
+Stringent edge device policies may 
 encourage organizations to allocate
 funds from many parts of the business
 to bolster security efforts. With investment 
 in the right places, security leads can 
 secure edge devices in OT environments 
 through a combination of monitoring, 
-response and intelligence.182021 Cyber Threat Intelligence Report Targeting edge devicesIn February 2021, Accenture CTI discovered
+response and intelligence.
+Spotlight: On the edge of security
+18
+2021 Cyber Threat Intelligence Report 
+Targeting edge devices
+In February 2021, Accenture CTI discovered
 a threat actor advertising Citrix VPN access to 
 a large resources corporation on a reputable 
 Russian\-language forum specializing in 
 malware and ransomware.56 Citrix is a VPN 
 gateway commonly placed at OT boundaries 
 to connect and correlate various Internet 
-protocols from different networks.Threat actors often access vulnerable 
+protocols from different networks. 
+Threat actors often access vulnerable 
 networks and systems such as Citrix by 
 exploiting known vulnerabilities that are 
 unpatched or that vendors are in the process 
@@ -486,21 +629,28 @@ of patching. In late 2019, the still\-active threat
 campaign known as Fox Kitten (also known 
 as UNC757\)57 accessed companies in various 
 industries, including the energy industry,
-via VPN n\-day exploits.58Financially motivated cyber criminals have 
+via VPN n\-day exploits.58
+Financially motivated cyber criminals have 
 used VPN access to launch a ransomware 
 attack and may target OT systemsthey
 know manufacturers and other users of ICS 
 are especially vulnerable to downtime and 
 may be more likely to pay ransoms to get
-their systems back online.Meanwhile, cyber espionage threat actors 
+their systems back online. 
+Meanwhile, cyber espionage threat actors 
 may use VPN access to get onto OT networks 
 to steal data or hide with the intention of 
 issuing a destructive attack later. Both 
 threat actor types can access edge devices, 
 which could lead to the disruption of critical 
-business operations and loss of revenue.192021 Cyber Threat Intelligence Report Defend the edgeHere are some familiar security capabilities 
+business operations and loss of revenue.
+19
+2021 Cyber Threat Intelligence Report 
+Defend the edge
+Here are some familiar security capabilities 
 organizations can use to increase their 
-edge device security:OT Security Operations Center (SOC) 
+edge device security: 
+OT Security Operations Center (SOC) 
 Unlike a traditional SOC that focuses primarily 
 on IT assets, an OT SOC monitors security 
 events in both the IT and OT environments 
@@ -510,11 +660,13 @@ environment is a key component of overall
 cybersecurity and cyber resiliency. An OT 
 SOC coupled with managed detection and 
 response (MDR) can help defend against 
-cyber threats and reduce exposure to them.59OT Incident Response (IR) 
+cyber threats and reduce exposure to them.59
+OT Incident Response (IR) 
 OT IR is essential in uncovering how threat 
 actors access OT environments via edge 
 devices if a breach occurs. Insight into
-how threat actors access edge devicesand traverse into an OT environment
+how threat actors access edge devices
+and traverse into an OT environment
 enables an entity to secure its IT and OT 
 boundaries. Data from OT IR engagements 
 can also help inform red teaming exercises
@@ -522,7 +674,8 @@ to identify edge vulnerabilities before
 an edge breach occurs. OT IR is a key 
 component of security in the context
 of OT and IT convergence, as well as 
-operational security as a whole.Cyber Threat Intelligence (CTI) 
+operational security as a whole. 
+Cyber Threat Intelligence (CTI) 
 Traditional cyber threat intelligence provides 
 information on threat actors targeting IT or 
 OT, but often only addresses edge device 
@@ -532,84 +685,187 @@ security a step further with key vulnerability
 intelligence and monitors major edge 
 devices, their vendors and their version 
 numbers to make clients aware of threats
-to IT, OT and cloud environments.Cyber threat intelligence offers improved 
+to IT, OT and cloud environments. 
+Cyber threat intelligence offers improved 
 visibility into overall network threats and 
 informs decision makers how to prioritize 
-security around potential targets and threats.As edge device vulnerabilities and targeting 
+security around potential targets and threats.
+As edge device vulnerabilities and targeting 
 are on the rise, it is critical for organizations 
 to start changing their security cultures 
 from being reactive to adopting a proactive 
-approach to security on the edge.202021 Cyber Threat Intelligence Report References1\.Eaton, Collin and Volz, Dustin, Colonial Pipeline CEO Tells 
+approach to security on the edge.
+20
+2021 Cyber Threat Intelligence Report 
+References
+1\.Eaton, Collin and Volz, Dustin, Colonial Pipeline CEO Tells 
 Why He Paid Hackers a $4\.4 Million Ransom, Wall Street 
-Journal, May 19, 2021\.2\.Ransomware Payments Fall as Fewer Companies Pay DataExfiltration Extortion Demands, Coveware, February 1, 2021\.3\.Ransomware Attack Vectors Shift as New SoftwareVulnerability Exploits Abound, Coveware, April 26, 2021\.4\.2020 Cyber Threatscape Report, Accenture,October 19, 2020\. Mansfield, Paul, Tracking and 
+Journal, May 19, 2021\. 
+2\.Ransomware Payments Fall as Fewer Companies Pay Data 
+Exfiltration Extortion Demands, Coveware, February 1, 2021\. 
+3\.Ransomware Attack Vectors Shift as New Software 
+Vulnerability Exploits Abound, Coveware, April 26, 2021\. 
+4\.2020 Cyber Threatscape Report, Accenture, 
+October 19, 2020\. Mansfield, Paul, Tracking and 
 combatting an evolving danger: Ransomware extortion, 
-Accenture, December 15, 2020\.5\.Accenture Cyber Threat Intelligence, Ransomware Roundup 
-from iDefense Analysis, April 8, 2021\. IntelGraph reporting.6\.Accenture Cyber Threat Intelligence, Ransomware Attackon Cyber Insurer Highlights Risks to Cyber Insurance Sector 
-and its Customers, April 8, 2021\. IntelGraph reporting.7\.Accenture Cyber Threat Intelligence, CLOP Ransomware 
+Accenture, December 15, 2020\. 
+5\.Accenture Cyber Threat Intelligence, Ransomware Roundup 
+from iDefense Analysis, April 8, 2021\. IntelGraph reporting. 
+6\.Accenture Cyber Threat Intelligence, Ransomware Attack 
+on Cyber Insurer Highlights Risks to Cyber Insurance Sector 
+and its Customers, April 8, 2021\. IntelGraph reporting. 
+7\.Accenture Cyber Threat Intelligence, CLOP Ransomware 
 Operators Leak CGG Data on Name\-and\-Shame Site 
 on 1 March 2021, March 10, 2021\. IntelGraph reporting; 
 Accenture Cyber Threat Intelligence, CLOP Ransomware 
 Operators Leak CSX Documents on Name\-and\-Shame Site 
-on 2 March 2021, March 10, 2021\. IntelGraph reporting.8\.Mansfield, Paul, Tracking and combatting an evolving 
+on 2 March 2021, March 10, 2021\. IntelGraph reporting. 
+8\.Mansfield, Paul, Tracking and combatting an evolving 
 danger: Ransomware extortion, December 15, 2020, 
 Khodzhibaev, Azim et al, Interview with a Lockbit 
-Ransomware Operator, Talos, January 4, 2021\.9\.Ransomware Payments Fall as Fewer Companies Pay Data18\.FBI Statement on Compromise of ColonialExfiltration Extortion Demands, Coveware, February 1, 2021\.
+Ransomware Operator, Talos, January 4, 2021\.9\.Ransomware Payments Fall as Fewer Companies Pay Data 
+Exfiltration Extortion Demands, Coveware, February 1, 2021\.
 The average paid ransom declined 34%, from US$233,817 in 
 Q3 to US$154,108 in Q4\. Ransomware Attack Vectors Shift 
-as New Software Vulnerability Exploits Abound.10\. Moore, Andrew et al, Cyber Criminals Exploit Accellion FTA 
+as New Software Vulnerability Exploits Abound. 
+1\. Moore, Andrew et al, Cyber Criminals Exploit Accellion FTA 
 for Data Theft and Extortion, February 22, 2021\. FireEye; 
 Accenture Cyber Threat Intelligence, SITREP: Accellion 
-FTA, February 20, 2021\. IntelGraph reporting.11\.Accenture Cyber Threat Intelligence, Ransomware GangExtortion Techniques Evolve in 2020 to Devastating Effect, 
-November 6, 2020\. IntelGraph reporting.12\.Mansfield, Paul, Tracking and combatting an evolving 
-danger: Ransomware extortion, December 15, 2020\.13\.What We Know About the DarkSide Ransomware and
-the US Pipeline Attack, TrendMicro, May 12, 2021\.14\.Accenture Cyber Threat Intelligence, Ransomware GangExtortion Techniques Evolve in 2020 to Devastating Effect, 
-November 6, 2020\. IntelGraph reporting.15\.Mansfield, Paul. Tracking and combatting an evolving 
-danger: Ransomware extortion. December 15, 2020\.16\.Accenture Cyber Threat Intelligence, iDefense GlobalResearch Intelligence Digest for 31 March 2021,
-March 31, 2021\. IntelGraph reporting.17\.Abrams, Lawrence, Ransomware gang plans to callvictims business partners about attacks, March 6, 2021\. 
+FTA, February 20, 2021\. IntelGraph reporting. 
+11\.Accenture Cyber Threat Intelligence, Ransomware Gang 
+Extortion Techniques Evolve in 2020 to Devastating Effect, 
+November 6, 2020\. IntelGraph reporting.
+12\.Mansfield, Paul, Tracking and combatting an evolving 
+danger: Ransomware extortion, December 15, 2020\. 
+1\. What We Know About the DarkSide Ransomware and
+the US Pipeline Attack, TrendMicro, May 12, 2021\. 
+1\. Accenture Cyber Threat Intelligence, Ransomware Gang 
+Extortion Techniques Evolve in 2020 to Devastating Effect, 
+November 6, 2020\. IntelGraph reporting.
+15\.Mansfield, Paul. Tracking and combatting an evolving 
+danger: Ransomware extortion. December 15, 2020\. 
+1\. Accenture Cyber Threat Intelligence, iDefense Global 
+Research Intelligence Digest for 31 March 2021,
+March 31, 2021\. IntelGraph reporting. 
+17\.Abrams, Lawrence, Ransomware gang plans to call 
+victims business partners about attacks, March 6, 2021\. 
 Smilianets, Dmitry, I scrounged through the trash 
 heaps now Im a millionaire: An interview with REvils 
-Unknown, March 16, 2021\.Pipeline Networks, FBI, May 10, 2021\.19\.What We Know About the DarkSide Ransomwareand the US Pipeline Attack, Trend Micro, May 14, 2021\.20\. Cimpanu, Catalin, Some ransomware gangs are going aftertop execs to pressure companies into paying, January 9, 2021\.21\.Accenture Cyber Threat Intelligence, TransparencyActivists Publicize Ransomware Victims Data in a New 
+Unknown, March 16, 2021\. 
+18\.FBI Statement on Compromise of Colonial
+Pipeline Networks, FBI, May 10, 2021\. 
+19\.What We Know About the DarkSide Ransomware
+and the US Pipeline Attack, Trend Micro, May 14, 2021\. 
+1\. Cimpanu, Catalin, Some ransomware gangs are going after 
+top execs to pressure companies into paying, January 9, 2021\. 
+21\.Accenture Cyber Threat Intelligence, Transparency 
+Activists Publicize Ransomware Victims Data in a New 
 Twist on Hybrid Financial\-Political Threat, January 8, 2021\. 
-IntelGraph reporting.22\. Accenture Cyber Threat Intelligence, Colonial Pipeline 
+IntelGraph reporting.
+1\. Accenture Cyber Threat Intelligence, Colonial Pipeline 
 Attack Impacts Ransomware Groups Operating on the
-Dark Web, May 17, 2021\. IntelGraph reporting.23\. Ilascu, Ionut, Hackers use black hat SEO to push ransomware,trojans via Google, Bleeping Computer, March 1, 2021\.24\. Welling, Eric, Its getting hot in here! Unknown threat
+Dark Web, May 17, 2021\. IntelGraph reporting.
+1\. Ilascu, Ionut, Hackers use black hat SEO to push ransomware, 
+trojans via Google, Bleeping Computer, March 1, 2021\. 
+1\. Welling, Eric, Its getting hot in here! Unknown threat
 group using Hades ransomware to turn up the heat on
-their victims, Accenture, March 26, 2021\.25\. Michael, Melissa, Episode 49\| Ransomware 2\.0,with Mikko Hypponen, F\-Secure, January 19, 2021\.26\. Toby L, The rise of ransomware, National Cyber SecurityCentre, January 29, 2021\.27\.Adversary Infrastructure Report 2020: A Defenders View,Recorded Future, January 7 2021\.28\. Cunliffe, Amy, The development of Mimir (Amy Cunliffe,Accenture), CREST Videos, April 9, 2021\.212021 Cyber Threat Intelligence Report29\. Threat Landscape Trends Q3 2020,Symantec, December 18, 2020\.30\. Highly Evasive Attacker Leverages SolarWinds Supply Chain 
+their victims, Accenture, March 26, 2021\. 
+1\. Michael, Melissa, Episode 49\| Ransomware 2\.0,
+with Mikko Hypponen, F\-Secure, January 19, 2021\. 
+1\. Toby L, The rise of ransomware, National Cyber Security 
+Centre, January 29, 2021\. 
+1\. Adversary Infrastructure Report 2020: A Defenders View, 
+Recorded Future, January 7 2021\. 
+1\. Cunliffe, Amy, The development of Mimir (Amy Cunliffe, 
+Accenture), CREST Videos, April 9, 2021\.
+21
+2021 Cyber Threat Intelligence Report 
+1\. Threat Landscape Trends Q3 2020, 
+Symantec, December 18, 2020\. 
+1\. Highly Evasive Attacker Leverages SolarWinds Supply Chain 
 to Compromise Multiple Global Victims With SUNBURST 
-Backdoor, FireEye, December 13, 2020\.31\.Deep dive into the Solorigate second\-stage activation:From SUNBURST to TEARDROP and Raindrop, 
-Microsoft, January 20, 2021\.32\. Welling, Eric, Its getting hot in here! Unknown threat
+Backdoor, FireEye, December 13, 2020\. 
+1\. Deep dive into the Solorigate second\-stage activation: 
+From SUNBURST to TEARDROP and Raindrop, 
+Microsoft, January 20, 2021\. 
+1\. Welling, Eric, Its getting hot in here! Unknown threat
 group using Hades ransomware to turn up the heat on
-their victims, Accenture, March 26, 2021\.33\. Accenture Cyber Threat Intelligence, Microsoft Exchange 
+their victims, Accenture, March 26, 2021\. 
+1\. Accenture Cyber Threat Intelligence, Microsoft Exchange 
 On\-Premise Zero\-Day Vulnerabilities Related Malware 
-Activity in March 2021, March 10, 2021\. IntelGraph reporting.34\. HAFNIUM targeting Exchange Servers with 0\-day exploits,Microsoft, March 2, 2021\.35\. Accenture Cyber Threat Intelligence, EvilGrab and Cobalt 
+Activity in March 2021, March 10, 2021\. IntelGraph reporting.
+1\. HAFNIUM targeting Exchange Servers with 0\-day exploits, 
+Microsoft, March 2, 2021\. 
+1\. Accenture Cyber Threat Intelligence, EvilGrab and Cobalt 
 Strike Beacon Observed having Shared Infrastructure and 
-Communicating, February 3, 2021\. IntelGraph reporting.36\. Accenture Cyber Threat Intelligence, Spam Campaign 
+Communicating, February 3, 2021\. IntelGraph reporting. 
+1\. Accenture Cyber Threat Intelligence, Spam Campaign 
 Distributes Gziploader to Deploy IcedID (a.k.a. BokBot) 
-Malware in March 2021, April 14, 2020\. IntelGraph reporting.37\.Accenture Cyber Threat Intelligence, Technical Analysis ofDoppelDridex, April 27, 2021\. IntelGraph reporting.39\. Accenture Cyber Threat Intelligence, iDefense Global49\. Arghire, Ionut, Boat Building Giant Beneteau SaysResearch Intelligence Digest for 6 April 2021, April 6, 2021\. 
-IntelGraph reporting.Cyberattack Disrupted Production, Security Week,
-March 1, 2021\.40\. Accenture Cyber Threat Intelligence, MAN1, July 16, 2016\.50\. Bertrand, Natasha et al, Colonial Pipeline did payIntelGraph reporting.ransom to hackers, sources now say, CNN, May 13, 2021\.41\.Seals, Tara, Accellion FTA Zero\-Day Attacks Show Ties to 
-Clop Ransomware, FIN11, Threatpost, February 22, 2021\.51\.Accenture Cyber Threat Intelligence,Monthly Reconnaissance Report, April 1, 2021\.42\. Accenture Cyber Threat Intelligence, SITREP: Accellion52\. Filkins, Barbara, Wylie, Doug, SANS 2019 Sate of OTICSFTA, March 5, 2021\. IntelGraph reporting.43\. Accenture Cyber Threat Intelligence, CLOP RansomwareOperators Leak Qualys Documents on Name\-and\-Shame Site 
-on 3 and 4 March 2021, March 4, 2021\. IntelGraph reporting.Cybersecurity Survey, SANS, June 2019\. Slightly over 50% 
+Malware in March 2021, April 14, 2020\. IntelGraph reporting.
+1\. Accenture Cyber Threat Intelligence, Technical Analysis of 
+DoppelDridex, April 27, 2021\. IntelGraph reporting.
+1\. Stone\-Gross, Brett; Frankoff, Sergei; and Hartley, Bex, 
+BitPaymer Source Code Fork: Meet DoppelPaymer 
+Ransomware and Dridex 2\.0, July 12, 2019\. 
+1\. Accenture Cyber Threat Intelligence, iDefense Global 
+Research Intelligence Digest for 6 April 2021, April 6, 2021\. 
+IntelGraph reporting.
+1\. Accenture Cyber Threat Intelligence, MAN1, July 16, 2016\. 
+IntelGraph reporting.
+1\. Seals, Tara, Accellion FTA Zero\-Day Attacks Show Ties to 
+Clop Ransomware, FIN11, Threatpost, February 22, 2021\. 
+1\. Accenture Cyber Threat Intelligence, SITREP: Accellion 
+FTA, March 5, 2021\. IntelGraph reporting.
+1\. Accenture Cyber Threat Intelligence, CLOP Ransomware 
+Operators Leak Qualys Documents on Name\-and\-Shame Site 
+on 3 and 4 March 2021, March 4, 2021\. IntelGraph reporting.
+1\. Accenture Cyber Threat Intelligence, CLOP Ransomware 
+Operators Leak CGG Data on Name\-and\-Shame Site on
+1 March 2021, March 10, 2021\. IntelGraph reporting.
+1\. Accenture Cyber Threat Intelligence, CLOP Ransomware 
+Operators Leak CSX Documents on Name\-and\-Shame Site 
+on 2 March 2021, March 10, 2021\. IntelGraph reporting.
+1\. Welling, Eric, Its getting hot in here! Unknown threat
+group using Hades ransomware to turn up the heat on
+their victims, Accenture, March 26, 2021\. 
+1\. Accenture Cyber Threat Intelligence, Hades Ransomware 
+Affects Large Corporate Networks from December 2020 to 
+March 2021, April 9, 2021\. IntelGraph reporting.
+1\. Accenture Cyber Threat Intelligence, Hades Ransomware 
+Affects Large Corporate Networks from December 2020 to 
+March 2021, April 9, 2021\. IntelGraph reporting.
+1\. Arghire, Ionut, Boat Building Giant Beneteau Says 
+Cyberattack Disrupted Production, Security Week,
+March 1, 2021\. 
+1\. Bertrand, Natasha et al, Colonial Pipeline did pay
+ransom to hackers, sources now say, CNN, May 13, 2021\. 
+1\. Accenture Cyber Threat Intelligence,
+Monthly Reconnaissance Report, April 1, 2021\. 
+1\. Filkins, Barbara, Wylie, Doug, SANS 2019 Sate of OTICS 
+Cybersecurity Survey, SANS, June 2019\. Slightly over 50% 
 of survey respondents reported continuous monitoring 
 to detect vulnerabilities, and only 13 of 25 surveyed 
 OTICS security monitoring technologies were in use 
-across all respondents.44\. Accenture Cyber Threat Intelligence, CLOP Ransomware 
-Operators Leak CGG Data on Name\-and\-Shame Site on
-1 March 2021, March 10, 2021\. IntelGraph reporting.45\. Accenture Cyber Threat Intelligence, CLOP Ransomware 
-Operators Leak CSX Documents on Name\-and\-Shame Site 
-on 2 March 2021, March 10, 2021\. IntelGraph reporting.46\. Welling, Eric, Its getting hot in here! Unknown threat
-group using Hades ransomware to turn up the heat on
-their victims, Accenture, March 26, 2021\.47\. Accenture Cyber Threat Intelligence, Hades Ransomware 
-Affects Large Corporate Networks from December 2020 to 
-March 2021, April 9, 2021\. IntelGraph reporting.53\. United States Congress, PUBLIC LAW 116207DEC. 4,2020, December 4, 2020\.54\. United States Congress, PUBLIC LAW 116207DEC. 4,2020, December 4, 2020\.55\. The White House, Executive Order on Improving theNations Cybersecurity, May 12, 2021,56\. Accenture Cyber Threat Intelligence, Threat Actor 
+across all respondents.
+1\. United States Congress, PUBLIC LAW 116207DEC. 4, 
+2020, December 4, 2020\. 
+1\. United States Congress, PUBLIC LAW 116207DEC. 4, 
+2020, December 4, 2020\. 
+1\. The White House, Executive Order on Improving the 
+Nations Cybersecurity, May 12, 2021, 
+1\. Accenture Cyber Threat Intelligence, Threat Actor 
 Advertise Compromised Citrix Access to Three Large 
-Corporations, February 26, 2021, IntelGraph reporting.57\.Groups, MITRE, accessed May 27, 2021\.58\. Fox Kitten Campaign, Clearsky Cyber Security,February 16, 2020\.59\. Managed Security, Accenture, accessed April 4, 2020\.2238\. Stone\-Gross, Brett; Frankoff, Sergei; and Hartley, Bex, 
-BitPaymer Source Code Fork: Meet DoppelPaymer 
-Ransomware and Dridex 2\.0, July 12, 2019\.48\. Accenture Cyber Threat Intelligence, Hades Ransomware 
-Affects Large Corporate Networks from December 2020 to 
-March 2021, April 9, 2021\. IntelGraph reporting.2021 Cyber Threat Intelligence Report ContactsJoshua Ray 
+Corporations, February 26, 2021, IntelGraph reporting. 
+1\. Groups, MITRE, accessed May 27, 2021\. 
+1\. Fox Kitten Campaign, Clearsky Cyber Security,
+February 16, 2020\. 
+1\. Managed Security, Accenture, accessed April 4, 2020\. 
+22
+2021 Cyber Threat Intelligence Report 
+Joshua Ray 
 Managing Director
-Accenture SecurityJosh Ray is Managing Director for Cyber Defense across 
+Accenture Security
+Josh Ray is Managing Director for Cyber Defense across 
 Accenture globally. Josh has more than 20 years of combined 
 commercial, government and military experience in the 
 field of cyber intelligence, threat operations and information 
@@ -617,33 +873,36 @@ security. He holds a Bachelor of Science degree in information
 technology from George Mason University, an Executive 
 Certificate in strategy and innovation from MIT Sloan School 
 of Management and served honorably as a member of 
-the United States Navy.Howard Marshall 
-Managing Director 
-Accenture SecurityJayson Jean 
-Senior Manager 
-Accenture SecurityHoward Marshall is Managing Director for Accenture Cyber 
-Threat Intelligence (CTI) and leads the business globally.
-Prior to joining, Howard was FBI Deputy Assistant Director
-of the Cyber Readiness, Outreach and Intelligence Branch.
-He holds a Bachelor of Arts degree in Political Science and
-a Juris Doctorate from the University of Arkansas.Jayson Jean is Director of Business Operations for
-Accenture CTI in North America and the Asia Pacific 
-region, with responsibility for business development of 
-the Cyber Threat Intelligence portfolio. Prior to this role, 
-Jayson has 14 years of experience building the strategic 
-direction and leading product development for vulnerability 
-management at Accenture CTI.Christopher Foster 
+the United States Navy.
+Contacts
+Contributors
+Patton Adams, Will Archer, Adam Bumgarner,
+Bianca Forbes, Roya Gordon, Hannaire Mekaouar,
+Nellie Ohr, Max Smith, Nancy Strutt.
+Christopher Foster 
 Senior Principal 
-Security InnovationValentino De Sousa 
-Senior Principal 
-Security InnovationChris Foster is Director of Product Strategy for Accenture
+Security Innovation
+Chris Foster is Director of Product Strategy for Accenture
 Cyber Threat Intelligence. Chris has more than 18 years of 
 combined experience in the field of threat intelligence serving 
 public and private sector organizations to include Booz Allen 
 Hamilton, Chevron, United States Department of Defense and 
 United States Department of Homeland Security. He holds 
 a Bachelors from Vanderbilt University and an MBA from the 
-McCombs School of Business, University of Texas at Austin.Valentino De Sousa leads Accenture Cyber Threat Intelligence 
+McCombs School of Business, University of Texas at Austin.
+Howard Marshall 
+Managing Director 
+Accenture Security
+Howard Marshall is Managing Director for Accenture Cyber 
+Threat Intelligence (CTI) and leads the business globally.
+Prior to joining, Howard was FBI Deputy Assistant Director
+of the Cyber Readiness, Outreach and Intelligence Branch.
+He holds a Bachelor of Arts degree in Political Science and
+a Juris Doctorate from the University of Arkansas.
+Valentino De Sousa 
+Senior Principal 
+Security Innovation
+Valentino De Sousa leads Accenture Cyber Threat Intelligence 
 in Europe. He is a member of the ENISA Ad\-Hoc Working Group 
 on Cyber Threat Landscapes. Previous roles include leading 
 different threat intelligence teams responsible for malware 
@@ -651,19 +910,33 @@ analysis, research and development, analysis of adversaries,
 active campaigns and leading indicators of impeding attacks. 
 He holds a Bachelor of Science in business administration
 from the American University of Rome and a Master of Science 
-in terrorism studies from the University of East London.ContributorsPatton Adams, Will Archer, Adam Bumgarner,
-Bianca Forbes, Roya Gordon, Hannaire Mekaouar,
-Nellie Ohr, Max Smith, Nancy Strutt.232021 Cyber Threat Intelligence Report About AccentureAbout Accenture SecurityAccenture is a global professional services company with leading 
+in terrorism studies from the University of East London.
+Jayson Jean 
+Senior Manager 
+Accenture Security
+Jayson Jean is Director of Business Operations for
+Accenture CTI in North America and the Asia Pacific 
+region, with responsibility for business development of 
+the Cyber Threat Intelligence portfolio. Prior to this role, 
+Jayson has 14 years of experience building the strategic 
+direction and leading product development for vulnerability 
+management at Accenture CTI. 
+23
+2021 Cyber Threat Intelligence Report 
+210353
+About Accenture
+Accenture is a global professional services company with leading 
 capabilities in digital, cloud and security. Combining unmatched 
 experience and specialized skills across more than 40 industries, 
 we offer Strategy and Consulting, Interactive, Technology and 
 Operations servicesall powered by the worlds largest network
 of Advanced Technology and Intelligent Operations centers.
 Our 569,000 people deliver on the promise of technology and
-human ingenuity every day, serving clients in more than 120 countries.
-We embrace the power of change to create value and shared success 
+human ingenuity every day, serving clients in more than 120 countries.We embrace the power of change to create value and shared success 
 for our clients, people, shareholders, partners and communities.
-Visit us at www.accenture.comAccenture Security is a leading provider of end\-to\-end cybersecurity 
+Visit us at www.accenture.com
+About Accenture Security
+Accenture Security is a leading provider of end\-to\-end cybersecurity 
 services, including advanced cyber defense, applied cybersecurity 
 solutions and managed security operations. We bring security 
 innovation, coupled with global scale and a worldwide delivery 
@@ -671,10 +944,14 @@ capability through our network of Advanced Technology and
 Intelligent Operations centers. Helped by our team of highly skilled 
 professionals, we enable clients to innovate safely, build cyber 
 resilience and grow with confidence. Follow us @AccentureSecure 
-on Twitter or visit us at www.accenture.comsecurityThis document refers to marks owned by third parties. All such third\-party marks are the property of their respective owners.
-No sponsorship, endorsement or approval of this content by the owners of such marks is intended, expressed or implied.This content is provided for general information purposes and is not intended to be used in place of consultation with our professional advisors.Given the inherent nature of threat intelligence, the content contained in this report is based on information gathered and understood at the time of its creation.
+on Twitter or visit us at www.accenture.comsecurity 
+This document refers to marks owned by third parties. All such third\-party marks are the property of their respective owners.
+No sponsorship, endorsement or approval of this content by the owners of such marks is intended, expressed or implied.
+This content is provided for general information purposes and is not intended to be used in place of consultation with our professional advisors.
+Given the inherent nature of threat intelligence, the content contained in this report is based on information gathered and understood at the time of its creation.
 The information in this report is general in nature and does not take into account the specific needs of your IT ecosystem and network, which may vary and require unique 
 action. As such, Accenture provides the information and content on an as\-is basis without representation or warranty and accepts no liability for any action or failure to 
 act taken in response to the information contained or referenced in this report. The reader is responsible for determining whether or not to follow any of the suggestions, 
-recommendations or potential mitigations set out in this report, entirely at their own discretion.Copyright 2021 Accenture. All rights reserved.
-Accenture and its logo are registered trademarks of Accenture.210353
+recommendations or potential mitigations set out in this report, entirely at their own discretion.
+Copyright 2021 Accenture. All rights reserved.
+Accenture and its logo are registered trademarks of Accenture.

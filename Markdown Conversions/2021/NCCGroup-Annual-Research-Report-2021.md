@@ -1,7 +1,58 @@
-2021 NCC Group
-Annual Research ReportWritten by Jennifer Fernick
-SVP \& Global Head of Research, NCC Groupresearch.nccgroup.com12021 NCC Group Annual Research ReportAcknowledgementsAbout Research at NCC GroupContact Us373839Table of ContentsExecutive Summary: Research at NCC Group (2021\)Message from the Global Head of ResearchOpen Source Security Tool \& Code ReleasesPublicly Reported Security AuditsApplied CryptographyAttacking (\& Attacking with) Machine Learning SystemsMisinformation, Deepfakes, \& Synthetic MediaReducing Vulnerabilities at Scale
-\& Improving Open Source SecurityVirtualization, Emulation, \& ContainerizationHardware \& Embedded Systems5G Security \& Smart EnvironmentsPublic Interest TechnologyCloud \& CICD Pipeline SecurityRIFT, Threat intelligence, CIRT, \& HoneypotsManaged Detection \& ResponseExploit Development GroupOther Research \& Speaking3468912141519212224272831323422021 NCC Group Annual Research ReportExecutive Summary: Research at NCC Group (2021\)In 2021, NCC Group researchers hacked 
+2021 NCC Group Annual Research Report
+1
+research.nccgroup.com
+2021 NCC Group 
+Annual Research Report 
+Written by Jennifer Fernick
+SVP \& Global Head of Research, NCC Group
+2021 NCC Group Annual Research Report
+2
+Table of Contents
+Executive Summary: Research at NCC Group (2021\)
+3 
+Message from the Global Head of Research
+4
+Open Source Security Tool \& Code Releases
+6
+Publicly Reported Security Audits
+8
+Applied Cryptography
+9
+Attacking (\& Attacking with) Machine Learning Systems
+12
+Misinformation, Deepfakes, \& Synthetic Media
+14
+Reducing Vulnerabilities at Scale 
+\& Improving Open Source Security
+15
+Virtualization, Emulation, \& Containerization
+19
+Hardware \& Embedded Systems
+21
+5G Security \& Smart Environments
+22
+Public Interest Technology
+24
+Cloud \& CICD Pipeline Security
+27
+RIFT, Threat intelligence, CIRT, \& Honeypots
+28
+Managed Detection \& Response
+31
+Exploit Development Group
+32
+Other Research \& Speaking
+34
+Acknowledgements
+37
+About Research at NCC Group
+38
+Contact Us
+39
+2021 NCC Group Annual Research Report
+3
+Executive Summary: Research at NCC Group (2021\)
+In 2021, NCC Group researchers hacked 
 drones out of the sky; attacked real\-world 
 machine learning systems; ironically gained 
 RCE against Metasploit; released user\-centric 
@@ -13,11 +64,12 @@ Intels proprietary binary translator which runs
 ARM binaries on x86 to write targeted malware 
 that bypasses existing platform analysis 
 for platforms used by hundreds of millions; 
-shared our expertise in Kubernetes security
+shared our expertise in Kubernetes security 
 to help improve recommendations made 
 by the NSA and CISA; discovered new 
 vulnerability classes, and found many critical 
-vulnerabilities in high\-impact systems.We also delivered thousands of dedicated research
+vulnerabilities in high\-impact systems. 
+We also delivered thousands of dedicated research 
 days and over 237 research publications and conference 
 presentations, pursuing research in areas including applied 
 cryptography, hardware \& embedded systems security, 
@@ -25,16 +77,17 @@ artificial intelligence, programming languages, operating
 systems, cloud \& container security, exploit development, 
 threat intelligence, vulnerability research against a range 
 of high\-impact targets, and beyond. We delivered 139 
-research papers, whitepapers, and technical blog posts
+research papers, whitepapers, and technical blog posts 
 and advisories, at least 30 new open source tools, as well 
 as at least 68 conference presentations, in venues including 
 Black Hat USA, Toorcon, the Linux Foundation Member 
-Summit, Ekoparty, Black Hat Europe, Hardwear.io,
+Summit, Ekoparty, Black Hat Europe, Hardwear.io, 
 the ACMSIGAPP Symposium on Applied Computing, the 
-Symposium on Usable Privacy and Security (SOUPS),
-an IETF Internet Architecture Board Workshop, POC
-2021, the International Cryptographic Module
-Conference (ICMC), DEF CON, and many more.This year, we also began to see our efforts to create 9 
+Symposium on Usable Privacy and Security (SOUPS), 
+an IETF Internet Architecture Board Workshop, POC 
+2021, the International Cryptographic Module 
+Conference (ICMC), DEF CON, and many more.
+This year, we also began to see our efforts to create 9 
 internal Research Working Groups begin to bear fruit, 
 through dozens of publications, advisories, and conference 
 presentations that well share throughout this report, as well 
@@ -53,7 +106,8 @@ security research and the development and release of open\-
 source tools, setting it apart on this dimension in a crowded 
 field. NCC excels in its testing work and its research 
 capabilities have made demonstrable improvements in 
-security beyond its direct work on client projects.In 2021, we continued our long\-running industry partnership 
+security beyond its direct work on client projects.
+In 2021, we continued our long\-running industry partnership 
 with the Centre for Doctoral Training in Data Intensive 
 Science at University College London (UCL), where we 
 conducted collaborative research in artificial intelligence with 
@@ -71,19 +125,21 @@ Board for Internet of Things Security Foundation (IoTSF),
 the UKs National Cyber Security Centre (NCSC) Research 
 Advisory Panel, among others. We have also had members 
 appointed to the Science Advisory Council for the United 
-Kingdoms Home Office.From a Commercial Research perspective, 2021 saw 
+Kingdoms Home Office. 
+From a Commercial Research perspective, 2021 saw 
 us deliver thousands of person\-days of paid research 
 for clients. Besides our Public Reports, that research is 
 not covered in this Annual Research Report, aside from 
 its mention here. Those engagements included horizon 
-scanning on future technologies and their impacts for
-our clients, and research of various defensive techniques
-to help our clients in their risk reduction endeavours.
+scanning on future technologies and their impacts for 
+our clients, and research of various defensive techniques 
+to help our clients in their risk reduction endeavours. 
 We were also part of a winning research consortium for 
 UKRI funding (11\.6m) on the topic of the Quantum Data 
 Centre of the Future. Over the next 3 years we will provide 
 security advice and guidance to the project as it sets out to 
-define a blueprint for future secure Quantum Data Centres.NCC Group researchers Ross Bradley, Eva Esteban 
+define a blueprint for future secure Quantum Data Centres. 
+NCC Group researchers Ross Bradley, Eva Esteban 
 Molina, Philip Marsden, \& Mark Tedman came in First 
 Place at the global 5G Cyber Security Hack competition 
 this summer, hosted by by the Finnish Transport and 
@@ -101,68 +157,94 @@ Speakers for events like the Linux Foundation Member
 Summit, and the SANS Pentest Hack Fest, as well as 
 serving on the program committees of influential security 
 research venues including the USENIX Workshop on 
-Offensive Technologies (WOOT), Toorcon, and Black
-Hat USA, among others.3
-32021 NCC Group Annual Research Report2021 NCC Group Annual Research ReportMessage from the Global Head of ResearchAs our world undergoes rapid social change 
+Offensive Technologies (WOOT), Toorcon, and Black 
+Hat USA, among others. 
+3
+2021 NCC Group Annual Research Report
+4
+2021 NCC Group Annual Research Report
+Message from the Global Head of Research
+As our world undergoes rapid social change 
 and new norms for our relationship with 
 information and with emerging technologies 
 are set, I believe it is essential that as 
 technologists, we connect with \- and 
 communicate about \- our values, intentions, 
-and the big questions that inspire us. It is
+and the big questions that inspire us. It is 
 my hope that through this report, readers 
 can begin to see and interrogate themes that 
 emerged across our wider security research 
 program, reflective of the things that matter 
-most to individuals across NCC Group.Jennifer Fernick
-SVP \& Global Head of Research at NCC GroupFrom my own view, in the past year,
-weve seen a number of themes:Time to exploitation of vulnerabilities in the wildhas rapidly decreased. Industry research aligns with 
+most to individuals across NCC Group. 
+From my own view, in the past year, 
+weve seen a number of themes:
+
+Time to exploitation of vulnerabilities in the wild 
+has rapidly decreased. Industry research aligns with 
 what were seeing in practice \- time to exploitation of a 
 vulnerability in the wild after a patch has been released 
 has dropped from several weeks as of a few years ago, 
 to only a few days now. This is challenging because it 
 requires a seriously retooled approach to vulnerability 
-management, and because it puts tremendous pressure 
+management, and because it puts tremendous pressure
 to patch on key intermediaries in the software supply 
-chain \- many of whom are open\-source maintainers.Misinformation kills. Much in the way that 2020 taught
-us that election security was hardly about the hardware
+chain \- many of whom are open\-source maintainers. 
+
+Misinformation kills. Much in the way that 2020 taught 
+us that election security was hardly about the hardware 
 at all, 2021 showed that the health of populations 
 depends at least as much on a populations scientific 
 and media literacy as it does on the core scientific 
 advancements themselves, and that social media 
-companies may be playing potentially even more of
+companies may be playing potentially even more of 
 a role in the health and safety of citizens than those 
-individuals own democratically\-elected leaders.Software supply chain security matters. It is no longer
+individuals own democratically\-elected leaders.
+
+Software supply chain security matters. It is no longer 
 in the realm of the unusually paranoid to care not only 
 about the security of our own code, but also about its 
 upstream dependencies and its downstream deployment 
 pipeline. Numerous high profile incidents in late 2020 
-through 2021 emphasized this point \- so much so,
+through 2021 emphasized this point \- so much so, 
 that U.S. President Biden issued an Executive Order 
-largely aimed at remediating it.Ransomware remains an unsolved problem.Despite it being a relatively uninteresting topic for most 
+largely aimed at remediating it.
+
+Ransomware remains an unsolved problem. 
+Despite it being a relatively uninteresting topic for most 
 security researchers, ransomware is one of the greatest 
 threats to digital security as perceived by both the general 
 public and countless CISOs alike. Why then, is something 
 this impactful being largely overlooked by the research 
 community outside of threat intelligence teams? It seems 
 like the best advice we have is for IT teams to patch 
-everything, faster \- but perfection is not a strategy.
+everything, faster \- but perfection is not a strategy. 
 I would like to understand: In a world of limited resources, 
 which interventions are the most effective at preventing 
 ransomware infections? Sanctions against ransomware 
 operators are likely the greatest tool we have, but that 
-doesnt erase the question of what technical solutions
-to this problem look like.Geopolitical power increasingly depends oninformation access, and can swing faster than
-ever before. What does it mean when we put
-internet\-enabled sensors into the things that keep
-us alive? What does it mean to put internet\-enabled
-sensors into all of the things that make life worth living?
+doesnt erase the question of what technical solutions 
+to this problem look like. 
+
+Geopolitical power increasingly depends on 
+information access, and can swing faster than 
+ever before. What does it mean when we put 
+internet\-enabled sensors into the things that keep 
+us alive? What does it mean to put internet\-enabled 
+sensors into all of the things that make life worth living? 
 Does our acceptance of that risk change when we 
-imagine highly\-skilled foreign adversaries a few
-keystrokes away?4
-42021 NCC Group Annual Research ReportIn 2022 and beyond, were going to face 
-a number of challenges, new and old.
-These include:Affective computing, brain\-computer interfaces,and the broader question of where we draw the line 
+imagine highly\-skilled foreign adversaries a few 
+keystrokes away?
+4
+Jennifer Fernick
+SVP \& Global Head of Research at NCC Group
+5
+2021 NCC Group Annual Research Report
+In 2022 and beyond, were going to face
+a number of challenges, new and old. 
+These include:
+
+Affective computing, brain\-computer interfaces, 
+and the broader question of where we draw the line 
 as the physical distance between computers and 
 human bodies grows increasingly small. With the 
 increasing adoption of smart cities, smart buildings, and 
@@ -175,8 +257,10 @@ entertainment, and the metaverse \- not to mention
 the active commercial development of brain\-computer 
 interfaces \- computers keep getting closer and closer to 
 our bodies, behaviours, and emotions. I often worry that 
-the last bastion of human freedom \- ones own mind \-
-is being eroded quickly and quietly in irreparable ways.Full\-stack security auditing and defense of real\-world 
+the last bastion of human freedom \- ones own mind \- 
+is being eroded quickly and quietly in irreparable ways. 
+
+Full\-stack security auditing and defense of real\-world 
 machine learning systems.The ubiquitous deployment 
 of machine learning systems represents a significant 
 and poorly\-understood real\-world attack surface. This is 
@@ -192,12 +276,16 @@ to unjustified machine learning decisions that are often
 trusted implicitly \- even if the machine that computed them 
 is not trustworthy at all. Developing rigorous, full\-stack 
 threat models and testing frameworks is critical and 
-urgent work.The rapid advancement of large language modelsin artificial intelligence. Large\-scale natural language 
+urgent work.
+
+The rapid advancement of large language models 
+in artificial intelligence. Large\-scale natural language 
 models such as GPT\-3 and others have been scaling at 
 1\-2 orders of magnitude per year, and the generalizable 
 performance of transformer models seems to improve 
 \* even over domain\-specific models \- with increasing 
-scale. While this may not necessarily mean that artificialgeneral intelligence is imminent, we would be unwise 
+scale. While this may not necessarily mean that artificial 
+general intelligence is imminent, we would be unwise 
 to underestimate the impact that the weaponization of 
 large natural language processing models trained on 
 a corpus of the worlds source code and vulnerability 
@@ -207,8 +295,11 @@ language models like GPT\-3 or its successors generate
 exploits of software vulnerabilities? Can low\-code A.I. 
 pair\-programming tools create or propagate unsafe code? 
 To answer these questions completely requires further 
-research, but there are compelling reasons to believe
-that the answer is yes.The relative monoculture of the public cloudsattack surface making the exploitation of singular 
+research, but there are compelling reasons to believe 
+that the answer is yes.
+
+The relative monoculture of the public clouds 
+attack surface making the exploitation of singular 
 vulnerabilities more socially and economically 
 catastrophic. The public cloud made incredible 
 computing possible at scale \- but with software 
@@ -217,14 +308,17 @@ vulnerability exploitation possible at scale, raising
 the intrinsic cost or risk of the existence of individual 
 vulnerabilities in these high\-value targets. The question 
 then becomes: what does this mean for the value of 
-vulnerabilities in the global marketplace, and how
+vulnerabilities in the global marketplace, and how 
 might that change how vendors (and researchers) 
-approach the security of these systems?Decentralized finance (DeFi) coupling code andmoney more tightly than ever before, forcing those 
+approach the security of these systems?
+
+Decentralized finance (DeFi) coupling code and 
+money more tightly than ever before, forcing those 
 who believe code is law to reckon with the fact that 
-all software has flaws. Large financial institutions
-each spend hundreds of millions \- sometimes even
-billions \- per year on cybersecurity, because they
-know that failing to do so may cost them even more.
+all software has flaws. Large financial institutions 
+each spend hundreds of millions \- sometimes even 
+billions \- per year on cybersecurity, because they 
+know that failing to do so may cost them even more. 
 Are proportional investments being made in decentralized 
 finance applications and cryptocurrencies? Not usually. 
 While improvements in cyber resilience today are largely 
@@ -236,9 +330,12 @@ company through attacking the underlying infrastructure,
 protocols, or cryptographic implementations. One leaked 
 cryptographic key or a single software flaw could lead to 
 the collapse of entire organizations.Time will tell whether 
-we will see a bottom\-up, market\-driven push for higherassurance systems for serious decentralized finance 
+we will see a bottom\-up, market\-driven push for higher 
+assurance systems for serious decentralized finance 
 companies, or whether they will become the highest\-risk 
-value stores on the planet.As the COVID\-19 pandemic rages on, how do 
+value stores on the planet.
+
+As the COVID\-19 pandemic rages on, how do 
 we maintain privacy in a world in which we are 
 accountable to one another?In our research this 
 year, we conducted wide\-ranging research into the 
@@ -249,23 +346,26 @@ genomic and health testing, and mobile passports \-
 remain under\-studied by the security research community. 
 Furthermore, the pandemic has breathed new life 
 into large tech companies VR and augmented reality 
-ambitions (the metaverse) which will affect not only
-the security and privacy of our devices and homes,
+ambitions (the metaverse) which will affect not only 
+the security and privacy of our devices and homes, 
 but invites new kinds of sensors and interfaces (perhaps 
 even brain\-computer interfaces) which will be perhaps 
-more intrinsically connected to our bodies, minds,
-and behaviour that anything weve seen before.Finally, we must ask ourselves, what are the grandchallenges for cybersecurity? What are the problems 
+more intrinsically connected to our bodies, minds, 
+and behaviour that anything weve seen before. 
+
+Finally, we must ask ourselves, what are the grand 
+challenges for cybersecurity? What are the problems 
 that matter the most to the security \& privacy of 
 individuals, organizations, and the internet? As an 
-industry, we face a reckoning in which I believe that
+industry, we face a reckoning in which I believe that 
 we need to elevate ourselves toward taking a more 
 scientific and rigorous approach to the study of 
 information security cause and effect, and let go of the 
 unspoken agreements, copycat risk\-mitigations, hearsay 
-best practices, and other unacceptable industry norms.
+best practices, and other unacceptable industry norms. 
 While the development of obscure and complex 
 exploit chains will always have its place to enable us to 
-understand the true frontiers of what were up against,
+understand the true frontiers of what were up against, 
 it is time to prioritize the problems that most meaningfully 
 affect the world in which we live. It is my intent that we 
 become more methodical in our study of the mitigations 
@@ -276,39 +376,57 @@ incomplete or misconfigured security products as their
 peers, without a real understanding of their effectiveness, 
 and instead to a world where they are empowered 
 through an understanding of the actual costs of both 
-attack and defense.5
-52021 NCC Group Annual Research ReportOpen Source Security Tool \& Code ReleasesIn 2021, we released around 30 open source security tools, major tool updates, implementations,
-or other open\-source repositories. Among the security tools released by NCC Group this year are:Covenant v0\.7: Covenant is an open source .NETcommand and control framework that supports Red Team 
+attack and defense.
+5
+6
+2021 NCC Group Annual Research Report
+Open Source Security Tool \& Code Releases
+In 2021, we released around 30 open source security tools, major tool updates, implementations, 
+or other open\-source repositories. Among the security tools released by NCC Group this year are:
+
+Covenant v0\.7: Covenant is an open source .NET 
+command and control framework that supports Red Team 
 operations, similar in many ways to the well\-known Cobalt 
 Strike threat emulation software. NCC Groups Simone 
 Salucci and Daniel Lopez Jimenez contributed a number 
 of features to the project that they desired while using it. 
 Some of those features include: Disabling ETW, Dumping 
 Snapshot Processes, Process Injection Tasks, Payload 
-Execution Guardrails and Other Pull RequestsGTFOBLookup: An offline command line lookup utility
-for GTFOBins, LOLBAS, and WADComs, created
-by James ConlanKilledProcessCanary: A prototyped a Windows
-Service Canary in order to target parts of the
+Execution Guardrails and Other Pull Requests
+
+GTFOBLookup: An offline command line lookup utility 
+for GTFOBins, LOLBAS, and WADComs, created 
+by James Conlan
+
+KilledProcessCanary: A prototyped a Windows 
+Service Canary in order to target parts of the 
 ransomware kill chain to minimize impact and overall 
 success of operations, created by Ollie Whitehouse. 
 The tool was described in his blog post, Deception 
 Engineering: exploring the use of Windows Service 
-Canaries against ransomware.Libptmalloc: Heap analysis tooling for ptmalloc(pthreads malloc), and is interesting to those seeking to 
-exploit glibc, created by Cedric Halbronn. This was part
+Canaries against ransomware.
+
+Libptmalloc: Heap analysis tooling for ptmalloc 
+(pthreads malloc), and is interesting to those seeking to 
+exploit glibc, created by Cedric Halbronn. This was part 
 of the work discussed in the blog post, Exploiting the 
-Sudo Baron Samedit vulnerability (CVE\-2021\-3156\)
-on VMWare vCenter Server 7\.0\.Log4j\-jndi\-be\-gone: A simple mitigation for CVE\-2021\-
+Sudo Baron Samedit vulnerability (CVE\-2021\-3156\) 
+on VMWare vCenter Server 7\.0\.
+
+Log4j\-jndi\-be\-gone: A simple mitigation for CVE\-2021\-
 44228 (Log4Shell), created to help mitigate the log4j 
 vulnerabilities which saw widespread exploitation in 
 December 2021, by Jeff Dileo. This tool uses the Byte 
 Buddy bytecode manipulation library to modify the at\-issue 
 log4j classs method code and short circuit the JNDI 
 interpolation handler. It works by effectively hooking the 
-at\-issue JndiLookup class lookup() method thatLog4Shell exploits to load remote code, and forces it to 
+at\-issue JndiLookup class lookup() method that 
+Log4Shell exploits to load remote code, and forces it to 
 stop early without actually loading the Log4Shell payload 
-URL.organizations, then provides options to query, visualize, 
-and analyze that data. The library is written in Python
-and was created by Erik Steringer.ML\-for\-RNGs: The Jupyter notebooks underlyingRaccoon: is a tool that aims to identify potentialresearch exploring the utility of deep learning to predict 
+URL.
+
+ML\-for\-RNGs: The Jupyter notebooks underlying 
+research exploring the utility of deep learning to predict 
 the sequence of the (presumably) random output 
 numbers using previously generated numbers without the 
 knowledge of the seed for (non\-cryptographic) PRNGs 
@@ -319,58 +437,73 @@ how deep learning\-based approaches to finding latent
 patterns within functions presumed to be generating 
 random output could work, as a prerequisite to attempting 
 to use deep learning to detect previously\-unknown 
-patterns in cryptographic (P)RNGs.Ndsp\-discover: An Nmap script to identify NetgearSwitch Discovery Protocol (NSDP) on UDP ports 63322 
+patterns in cryptographic (P)RNGs. 
+
+Ndsp\-discover: An Nmap script to identify Netgear 
+Switch Discovery Protocol (NSDP) on UDP ports 63322 
 and 63324, by Manuel Gins Rodrguez. This tool was 
 created in support of Manuels extensive vulnerability 
-research on the Netgear ProSAFE Plus switches.NLAhoney:Source code to deploy honeypots thatcan capture RDP handshakes, then crack them offline 
+research on the Netgear ProSAFE Plus switches.
+
+NLAhoney:Source code to deploy honeypots that 
+can capture RDP handshakes, then crack them offline 
 in an effort to understand which passwords are being 
-sprayed at RDP honeypots we deploy, created by
-Ollie Whitehouse and Ray Lai, as a part of their
-project, Cracking RDP NLA Supplied Credentials
-for Threat Intelligence.Principal Mapper (v1\.1\.0 Update; v1\.1\.4 Update):
+sprayed at RDP honeypots we deploy, created by 
+Ollie Whitehouse and Ray Lai, as a part of their 
+project, Cracking RDP NLA Supplied Credentials 
+for Threat Intelligence. 
+
+Principal Mapper (v1\.1\.0 Update; v1\.1\.4 Update):
 Principal Mapper, or PMapper, is a tool and library 
 for in\-depth analysis with AWS Identity and Access 
-Management, as well as AWS Organizations.
-PMapper stores data about AWS accounts andmisconfigurations that could expose sensitive data within 
+Management, as well as AWS Organizations. 
+PMapper stores data about AWS accounts and 
+organizations, then provides options to query, visualize, 
+and analyze that data. The library is written in Python 
+and was created by Erik Steringer. 
+
+Raccoon: is a tool that aims to identify potential 
+misconfigurations that could expose sensitive data within 
 Salesforce. Specifically, it reveals where access has been 
-granted to all records for particular objects of interest,
-by Jerome Smith.Reliably\-checked String Library Binding: is a librarybinding that uses static array extents to improve 
+granted to all records for particular objects of interest, 
+by Jerome Smith.
+
+Reliably\-checked String Library Binding: is a library 
+binding that uses static array extents to improve 
 diagnostics that can help identify memory safety flaws, 
-created by Robert Seacord.Ruby\-trace: A Low\-Level Tracer for Ruby, created byJeff Dileo and originally released to coincide with his DEF 
+created by Robert Seacord. 
+
+Ruby\-trace: A Low\-Level Tracer for Ruby, created by 
+Jeff Dileo and originally released to coincide with his DEF 
 CON 29 talk on it and parasitic tracing in general. Version 
 1\.1\.0 adds support for the newly released Ruby 3\.1 and 
 includes a number of improvements, including alternate 
-enabledisable hooks.Shouganaiyo\-loader: A cross\-platform Frida\-basedNode.js command\-line tool that forces Java processes
+enabledisable hooks. 
+
+Shouganaiyo\-loader: A cross\-platform Frida\-based 
+Node.js command\-line tool that forces Java processes 
 to load a JavaJVMTI agent regardless of whether or not 
 the JVM has disabled the agent attach API, created by 
-Jeff Dileo.Sigwhatever: For automated exploitation of netntlm hash 
+Jeff Dileo.
+
+Sigwhatever: For automated exploitation of netntlm hash 
 capture via image tags in emails signatures. The tool was 
 described in their blog post, Sign over Your Hashes 
-Stealing NetNTLM Hashes via Outlook Signatures
-created by David Cash, Rich Warren, Julian Storr.SocksOverRDP:This tool adds the capability of aSOCKS proxy to Terminal Services (or Remote Desktop 
-Services) and Citrix (XenAppXenDesktop). It uses62021 NCC Group Annual Research ReportDynamic Virtual Channel that enables us to communicate 
+Stealing NetNTLM Hashes via Outlook Signatures 
+created by David Cash, Rich Warren, Julian Storr.
+
+SocksOverRDP:This tool adds the capability of a 
+SOCKS proxy to Terminal Services (or Remote Desktop 
+Services) and Citrix (XenAppXenDesktop). It uses 
+2021 NCC Group Annual Research Report
+7
+Dynamic Virtual Channel that enables us to communicate 
 over an open RDPCitrix connection without the need to 
-open a new socket, connection or a port on a firewall.
+open a new socket, connection or a port on a firewall. 
 The author, Balazs Bucsay, presented the tool at the 
-Cyber Security Global Summit by Geekle.We also released source code for a variety
-of cryptographic implementations, exploit
-proofs\-of\-concept, and obfuscation
-reverse\-engineering techniques:optimizations found in pairing\-based cryptography, 
-foundational to the BLS Signatures central to Ethereum 
-2\.0, zero\-knowledge arguments central to Zcash, Filecoin, 
-and other blockchaincryptocurrency projects relying
-upon zk\-proofs.In October 2021, Thomas Pornin implemented a 
-mathematically\-impossible lossless compression 
-algorithm, alongside a blog post titled Paradoxical 
-Compression with Verifiable Delay Functions, and 
-released a paper on the IACR ePrint archive.In October 2021, Nicolas Guigo released tools and 
-methods for reversing real\-world binary obfuscation, 
-through a blog post titled A Look At Some Real\-World 
-Obfuscation Techniques.Outside of research, in late 2021 our Strategic Threat 
-Intelligence team created a public github repository, 
-Threat\-Intelligence\-Alerts, where they publish alerts
-about major vulnerabilities, exploits, and mitigations
-on an ongoing basis.Solitude: Solitude is an open source privacy analysis 
+Cyber Security Global Summit by Geekle.
+
+Solitude: Solitude is an open source privacy analysis 
 tool that enables you to conduct your own privacy 
 investigations into where your private data goes once it 
 leaves your web browser or mobile device. Whether a 
@@ -378,13 +511,18 @@ curious novice or a more advanced researcher, Solitude
 makes the process of evaluating an apps privacy 
 accessible for everyone, created by Dan Hastings. 
 Solitude was featured in media outlets including KitPloit, 
-Hacking Land, and Hacking Reviews.Squeak: The tool was described in their blog post, 
+Hacking Land, and Hacking Reviews.
+
+Squeak: The tool was described in their blog post, 
 MSSQL Lateral Movement, created by David Cash. 
 This tool supports the work outlined within the blogpost: 
 namely, the automation of lateral movement via MSSQL 
 CLR without touching disk (besides a DLL being 
-temporarily written to disk by the SQL Server process)
-or requiring XP\_CMDSHELL.UninstalledAppCanary: This project deploys a numberof canary apps which fire when uninstalled, motivated by 
+temporarily written to disk by the SQL Server process) 
+or requiring XP\_CMDSHELL.
+
+UninstalledAppCanary: This project deploys a number 
+of canary apps which fire when uninstalled, motivated by 
 the idea that certain threat actors uninstall a number of 
 products prior to dropping later stages, and was created 
 by Ollie Whitehouse. The tool was described in his 
@@ -392,7 +530,10 @@ blog post, Deception Engineering: exploring the use of
 Windows Installer Packages against first stage payloads, 
 and builds upon prior work discussed in the blog post 
 Deception Engineering: exploring the use of Windows 
-Service Canaries against ransomware.Wubes: is like Qubes (a security\-focused operatingsystem that aims to provide security through virtualization) 
+Service Canaries against ransomware.
+
+Wubes: is like Qubes (a security\-focused operating 
+system that aims to provide security through virtualization) 
 but for Microsoft Windows. The purpose is to leverage 
 the Windows Sandbox technology to spawn applications 
 in isolation, so that if you browse a malicious site using 
@@ -400,13 +541,23 @@ Wubes, it wont be able to infect your Windows host
 without additional chained exploits. Currently it supports 
 spawning a Windows Sandbox for the Firefox browser but 
 other applications can easily be added, and was created 
-by Cedric Halbronn.In January 2021, Jeff Dileo released proof\-of\-conceptexploit code for his vulnerability, CVE\-2020\-15257, found 
+by Cedric Halbronn.
+We also released source code for a variety 
+of cryptographic implementations, exploit 
+proofs\-of\-concept, and obfuscation 
+reverse\-engineering techniques:
+
+In January 2021, Jeff Dileo released proof\-of\-concept 
+exploit code for his vulnerability, CVE\-2020\-15257, found 
 in containerd \- a container runtime underpinning Docker 
 and common Kubernetes configurations \- which resulted 
 in full root container escape for a common container 
 configuration. This was discussed in depth in his blog 
-post titled,ABSTRACT SHIMMER (CVE\-2020\-15257\): 
-Host Networking is root\-Equivalent, Again.In January 2021, Thomas Pornin published a blog post 
+post titled, 
+ABSTRACT SHIMMER (CVE\-2020\-15257\): 
+Host Networking is root\-Equivalent, Again. 
+
+In January 2021, Thomas Pornin published a blog post 
 on Double\-odd Elliptic Curves, which discussed some 
 new elliptic curves he had created for cryptographic 
 protocols. These were published on a dedicated 
@@ -414,7 +565,10 @@ website, doubleodd.group. He also released a
 complete whitepaper on the IACR ePrint archive, full of 
 mathematical demonstrations, and several cryptographic 
 implementations of double\-odd elliptic curves in Python, 
-Go, C, and Assembly.In June 2021, Cedric Halbronn published Exploitmitigations: Keeping up with evolving and complex 
+Go, C, and Assembly. 
+
+In June 2021, Cedric Halbronn published Exploit 
+mitigations: Keeping up with evolving and complex 
 softwarehardware, seeking to address how it has 
 become challenging to follow when certain exploit 
 mitigations are added in an update andor backported to 
@@ -424,26 +578,73 @@ exploit mitigations available across numerous operating
 systems (Windows, Linux, Android, iOS, OpenBSD, 
 FreeBSD), architectures (ARM) and applications and 
 versions, including the glibc library, Mozilla Firefox, 
-Microsoft Edge, Google Chrome, and Microsoft Office.In September 2021, Eric Schorn released hisimplementations of montgomery multiplication in 
+Microsoft Edge, Google Chrome, and Microsoft Office.
+
+In September 2021, Eric Schorn released his 
+implementations of montgomery multiplication in 
 assembly, alongside a blog post titled Optimizing Pairing\-
 Based Cryptography: Montgomery Multiplication in 
-Assembly, which discussed and demonstrated selected72021 NCC Group Annual Research ReportPublicly Reported Security AuditsFor many years, NCC Group has published 
+Assembly, which discussed and demonstrated selected 
+optimizations found in pairing\-based cryptography, 
+foundational to the BLS Signatures central to Ethereum 
+2\.0, zero\-knowledge arguments central to Zcash, Filecoin, 
+and other blockchaincryptocurrency projects relying 
+upon zk\-proofs.
+
+In October 2021, Thomas Pornin implemented a 
+mathematically\-impossible lossless compression 
+algorithm, alongside a blog post titled Paradoxical 
+Compression with Verifiable Delay Functions, and 
+released a paper on the IACR ePrint archive. 
+
+In October 2021, Nicolas Guigo released tools and 
+methods for reversing real\-world binary obfuscation, 
+through a blog post titled A Look At Some Real\-World 
+Obfuscation Techniques.
+
+Outside of research, in late 2021 our Strategic Threat 
+Intelligence team created a public github repository, 
+Threat\-Intelligence\-Alerts, where they publish alerts 
+about major vulnerabilities, exploits, and mitigations 
+on an ongoing basis.
+2021 NCC Group Annual Research Report
+8
+Publicly Reported Security Audits
+For many years, NCC Group has published 
 publicly\-reported security audits of critical 
 components of open source software as well 
-as select proprietary systems, including in
+as select proprietary systems, including in 
 past years for components of important 
 systems including OpenSSL, SecureDrop, 
-TrueCrypt, Tor, Docker, Keybase, Zcash,
+TrueCrypt, Tor, Docker, Keybase, Zcash, 
 and many others.Of these reports, those labelled Public 
 Report were developed as a part of a paid 
 engagement with an NCC Group client for 
 NCC Group to conduct and publish the 
 findings of a security audit on in\-scope 
-components. In 2021, NCC Group delivered
+components. In 2021, NCC Group delivered 
 8 Public Reports across a number of different 
 cryptographic implementations, as well as for 
 the Google One VPN and WhatsApp End\-to\-
-End Encrypted Backups, among othersOur 2021 Public Reports include:Public Report BLST Cryptographic Implementation Review (January 2021\)Public Report VPN by Google One: Technical Security \& Privacy Assessment (April 2021\)Public Report Dell Secured Component Verification (May 2021\)Public Report Protocol Labs Groth16 Proof Aggregation: Cryptography and ImplementationReview (June 2021\)Public Report WhatsApp End\-to\-End Encrypted Backups Security Assessment (October 2021\)Public Report Zcash NU5 Cryptography Review (November 2021\)Public Report Zendoo Proof Verifier Cryptography Review (November 2021\)Public Report \- Whatsapp opaque\-ke Cryptographic Implementation Review (December 2021\)82021 NCC Group Annual Research ReportApplied CryptographyIn January 2021, Thomas Pornin published a blog post about his 
+End Encrypted Backups, among others
+Our 2021 Public Reports include:
+Public Report BLST Cryptographic Implementation Review (January 2021\)
+Public Report VPN by Google One: Technical Security \& Privacy Assessment (April 2021\)
+Public Report Dell Secured Component Verification (May 2021\)
+
+Public Report Protocol Labs Groth16 Proof Aggregation: Cryptography and Implementation 
+Review (June 2021\)
+
+
+Public Report WhatsApp End\-to\-End Encrypted Backups Security Assessment (October 2021\)
+Public Report Zcash NU5 Cryptography Review (November 2021\)
+Public Report Zendoo Proof Verifier Cryptography Review (November 2021\)
+
+Public Report \- Whatsapp opaque\-ke Cryptographic Implementation Review (December 2021\)
+2021 NCC Group Annual Research Report
+9
+Applied Cryptography
+In January 2021, Thomas Pornin published a blog post about his 
 recent work on Double\-odd Elliptic Curves. Double\-odd curves 
 are the elliptic curves whose order (number of points on the 
 curve) is the double of an odd integer. About 14th of all curves 
@@ -463,22 +664,26 @@ cryptographic functionalities (key pair generation, key exchange,
 signature, and hash\-to\-curve). Thomas has also released 
 several cryptographic implementations, as well as a geometric 
 introduction which helps build mathematical intuition related to 
-double\-odd curves.In January 2021, our Cryptography Services team (virtually)attended the Real\-World Cryptography conference, and published
-a blog post in which they shared summaries and insights from
-some of our favourite talks from RWC 2021\.In January 2021, we published the NCC Group CryptographyServices Public Report on the BLST Cryptographic
+double\-odd curves. 
+In January 2021, our Cryptography Services team (virtually) 
+attended the Real\-World Cryptography conference, and publisheda blog post in which they shared summaries and insights from 
+some of our favourite talks from RWC 2021\.
+In January 2021, we published the NCC Group Cryptography 
+Services Public Report on the BLST Cryptographic 
 Implementation Review. This involved a cryptographic 
 implementation review of the BLST library, which implements 
 support for the draft IETF specifications on Hashing to Elliptic 
-Curves and BLS Signatures. The latter specification uses
+Curves and BLS Signatures. The latter specification uses 
 advanced cryptographic\-pairing operations to feature aggregation 
-properties for secret keys, public keys and signatures, which
-is central to the emerging Ethereum 2\.0 Proof\-of\-Stake
-block\-validation mechanism. This report was commissioned
-by Supranational, Protocol Labs and the Ethereum Foundation.In January 2021, Grald Doussot published Software Verification 
+properties for secret keys, public keys and signatures, which 
+is central to the emerging Ethereum 2\.0 Proof\-of\-Stake 
+block\-validation mechanism. This report was commissioned 
+by Supranational, Protocol Labs and the Ethereum Foundation. 
+In January 2021, Grald Doussot published Software Verification 
 and Analysis Using Z3\. This post provided a technical introduction 
 on how to leverage the Z3 Theorem Prover to reason about the 
-correctness of cryptographic software, protocols and otherwise,
-and to identify potential security vulnerabilities. In this post,
+correctness of cryptographic software, protocols and otherwise, 
+and to identify potential security vulnerabilities. In this post, 
 he covered both: (1\) Modeling and analysis of an algorithm 
 documented in an old version of the QUIC Transport protocol 
 IETF draft, as well as (2\) Modeling of specific finite field 
@@ -490,23 +695,29 @@ published a blog post, Cryptol as an SMT Frontend, referencing
 Gralds research, in which they checked the implementation of 
 part of the QUIC protocol, and built upon this work in June 2021, 
 Cryptographic Assurance with Cryptol, which they explore an 
-optimized implementation of field arithmetic.In February 2021, Eli Sohl published Cryptopals: Exploiting CBC 
+optimized implementation of field arithmetic.
+In February 2021, Eli Sohl published Cryptopals: Exploiting CBC 
 Padding Oracles. This post \- which was the first in a new series 
 by Eli which offers educational walkthroughs of the beloved 
 Cryptopals cryptography challenges \- explored the classic 
 padding oracle attack on CBC\-mode block ciphers, through the 
-lens of Cryptopals challenge \#17\.In June 2021 we published the NCC Group CryptographyServices Public Report on the cryptography and implementation 
+lens of Cryptopals challenge \#17\. 
+In June 2021 we published the NCC Group Cryptography 
+Services Public Report on the cryptography and implementation 
 review of Protocol Labs Groth16 Proof Aggregation. This was 
 a cryptography and implementation review of the Groth16 proof 
 aggregation functionality in the bellperson and two other related 
-GitHub repositories. This code utilizes inner product arguments to
-efficiently aggregate existing Groth16 proofs while reusing
+GitHub repositories. This code utilizes inner product arguments toefficiently aggregate existing Groth16 proofs while reusing 
 existing powers of tau ceremony transcripts. This report was 
-commissioned by Protocol Labs.In June 2021, NCC Groups Thomas Pornin \- alongside external 
+commissioned by Protocol Labs. 
+In June 2021, NCC Groups Thomas Pornin \- alongside external 
 peers Liz Steininger, isis agora lovecruft, JP Aumasson, and 
 Taylor Hornby \- spoke on a panel on Auditing Cryptography at the 
-Zcash Foundations conference, Zcon2lite.92021 NCC Group Annual Research ReportIn June 2021, Parnian Alimi published On the Use of 
-Pedersen Commitments for Confidential Payments.
+Zcash Foundations conference, Zcon2lite.
+10
+2021 NCC Group Annual Research Report
+In June 2021, Parnian Alimi published On the Use of 
+Pedersen Commitments for Confidential Payments. 
 This blog post looked at the Zether protocol, which 
 uses ElGamal public key encryption to hide transaction 
 amounts and utilizes zero\-knowledge proofs to 
@@ -523,15 +734,16 @@ Commitment, ElGamal Encryption, and Zero\-Knowledge
 Proofs, and also discusses a number of implementation 
 considerations including privacy (vs confidentiality), the 
 front\-running problem, side\-channel attacks, forward 
-secrecy, and integrated signing \& encryption.In June 2021, Eric Schorn published his first post in a 
+secrecy, and integrated signing \& encryption. 
+In June 2021, Eric Schorn published his first post in a 
 two\-part code\-centric blog post series about selected 
-optimizations found in pairing\-based cryptography.
+optimizations found in pairing\-based cryptography. 
 For his first post, Optimizing Pairing\-Based Cryptography: 
 Montgomery Arithmetic in Rust, he discussed selected 
 optimizations found in pairing\-based cryptography, 
-foundational to the BLS Signatures central to Ethereum
+foundational to the BLS Signatures central to Ethereum 
 2\.0, zero\-knowledge arguments central to Zcash, Filecoin, 
-and other blockchaincryptocurrency projects relying upon 
+and other blockchaincryptocurrency projects relying upon
 zk\-proofs. This post covered modular Montgomery 
 arithmetic from start to finish, including context, 
 alternatives, theory, and practical working code in 
@@ -545,43 +757,178 @@ maximum performance a modern x86\-64 machine can
 deliver from an implementation hand\-written in assembly 
 language, resulting in a Montgomery multiplication routine 
 running more than 15X faster than a generic Big Integer 
-implementation, due to several specialized instructions 
+implementation, due to several specialized instructions
 and advanced micro\-architectural features enabling 
-increased parallelism.128 Entry
-ITLB32 KB Instruction Cache
-(8 way)Instruction
-Fetch Unit128 Bit32 Byte Pre\-Decode,
-Fetch Buffer6 Instructions18 Entry
-Instruction QueueMicro
-codeComplex
-DecoderSimple
-DecoderSimple
-DecoderSimple
-Decoder4 ops1 op1 op1 op7\+ Entry op Buffer4 opsRegister Alias Table
-and Allocator4 ops4 opsShared Bus
-Interface
-UnitShared
-L2 Cache
-(16 way)96 Entry Reorder Buffer (ROB)Retirement Register File
-(Program Visible State)256 Entry
-L2 DTLB4 ops32 Entry Reservation StationPort 0Port 1Port 5Port 3Port 4Port 2ALUSSE
+increased parallelism. 
+128 Bit
+128 Entry
+ITLB
+32 KB Instruction Cache
+(8 way)
+Instruction
+Fetch Unit
+Micro
+code
+Complex
+Decoder
+Simple
+Decoder
+Simple
+Decoder
+Simple
+Decoder
+32 Byte Pre\-Decode,
+Fetch Buffer
+7\+ Entry op Buffer
+96 Entry Reorder Buffer (ROB)
+Retirement Register File
+(Program Visible State)
+32 Entry Reservation Station
+Port 0
+128 Bit
+Store
+128 Bit
+Load
+256
+Bit
+Internal Results Bus
+Intel Core 2 Architecture
+ALU
+Store
+Address
+Memory Ordering Buffer
+(MOB)
+32 KB Dual Ported Data Cache
+(8 way)
+16 Entry
+DTLB
+Store
+Data
+Load
+Address
+SSE
 Shuffle
-ALUALUSSE
-Shuffle
-MULALU
-BranchSSE
-ALUStore
-AddressStore
-DataLoad
-Address128 Bit
+ALU
+128 Bit
 FMUL
-FCIV128 Bit
-FADDInternal Results BusMemory Ordering Buffer
-(MOB)Store
-128 BitLoad128 Bit256
-Bit32 KB Dual Ported Data Cache
-(8 way)16 Entry
-DTLBIntel Core 2 Architecture102021 NCC Group Annual Research ReportIn December 2021, Jennifer Fernick presented Financial 
+FCIV
+Port 1
+ALU
+SSE
+Shuffle
+MUL
+128 Bit
+FADD
+Port 5
+Port 3
+Port 4
+Port 2
+ALU
+Branch
+SSE
+ALU
+Shared Bus
+Interface
+Unit
+Shared
+L2 Cache
+(16 way)
+256 Entry
+L2 DTLB
+Register Alias Table
+and Allocator
+18 Entry
+Instruction Queue
+6 Instructions
+4 ops
+1 op
+1 op
+4 ops
+4 ops
+4 ops
+4 ops
+1 op
+11
+2021 NCC Group Annual Research Report
+In September 2021, Javel Samuel presented an 
+Overview of Open Source Cryptography Vulnerabilities 
+at the International Cryptographic Module Conference, 
+ICMC21\. This presentation reviewed the foundations 
+of cryptographic vulnerabilities as applicable to open\-
+source software from a penetration testers perspective 
+over multiple public cryptography audit reports. 
+This presentation also discussed what attacks in the 
+past took advantage of these cryptography vulnerabilities 
+and what the consequences were, as well as the success 
+rate of various mitigations, as well as some thoughts 
+on suggested focus areas for the future of open source 
+cryptography. 
+In October 2021, Thomas Pornin published Paradoxical 
+Compression with Verifiable Delay Functions, which 
+described (and implemented!) a mathematically\-
+impossible compression algorithm, known as paradoxical 
+compression, despite the mathematical impossibility 
+of upholding three qualities (described in the paper
+blog post) simultaneously. This is a good illustration of 
+a fundamental concept of cryptography: namely that 
+there is a great difference between knowing that some 
+mathematical object exists, and being able to build it in 
+practice.
+In October 2021, we published the NCC Group 
+Cryptography Services Public Report on their WhatsApp 
+End\-to\-End Encrypted Backups Security Assessment. 
+This report is the result of a security assessment we 
+performed of its End\-to\-End Encrypted Backups project. 
+End\-to\-End Encrypted Backups is an hardware security 
+module (HSM) based key vault solution that aims to 
+primarily support encrypted backup of WhatsApp 
+user data. This report was commissioned by WhatsApp.
+In November 2021, we published the Public Report 
+Zcash NU5 Cryptography Review. This report is the result 
+of our review of the upcoming network protocol upgrade 
+NU5 to the Zcash protocol (codenamed Orchard), and 
+was commissioned by the Electric Coin Company.
+In November 2021, Paul Bottinelli published Technical 
+Advisory Arbitrary Signature Forgery in Stark Bank 
+ECDSA Libraries (CVE\-2021\-43572, CVE\-2021\-43570, 
+CVE\-2021\-43569, CVE\-2021\-43568, CVE\-2021\-43571\). 
+These critical vulnerabilities allowed arbitrary signature 
+forgery by an attacker, and existed in several open\-source 
+cryptography libraries \- one with over 7\.3M downloads in 
+the previous 90 days on PyPI, and over 16,000 weekly 
+downloads on npm.
+In November 2021, Paul Bottinelli published An Illustrated 
+Guide to Elliptic Curve Cryptography Validation. This blog 
+post offered an illustrated description of the typical failures 
+related to elliptic curve validation and how to avoid them ina clear and accessible way. This is important because 
+Elliptic Curve Cryptography (ECC) is widely used to 
+perform asymmetric cryptography operations, such as 
+to establish shared secrets or for digital signatures, but 
+insufficient validation of public keys and parameters is 
+still a frequent cause of confusion, leading to serious 
+vulnerabilities, such as leakage of secret keys, signature 
+malleability or interoperability issues.
+In November 2021, Frans van Dorsselaer of Fox IT (a part 
+of NCC Group) presented at CWI Symposium on Post\-
+Quantum Cryptography.
+Based on the popularity of Eli Sohls original February 
+2021 blog post on the Matasano Cryptopals challenges, 
+in December 2021 he began a blog series in which he 
+offers walkthrough tutorial videos explaining the solutions 
+to the Cryptopals challenges, with the post Announcing 
+NCC Groups Cryptopals Guided Tour.
+In December 2021, we published the NCC Group 
+Cryptography Services Public Report WhatsApp 
+opaque\-ke Cryptographic Implementation Review.
+In this work, we conducted a security assessment of the 
+opaque\-ke library, an open source Rust implementation 
+of the OPAQUE password authenticated key exchange 
+protocol. The protocol is designed to allow password\-
+based authentication in such a way that a server does not 
+actually learn the plaintext value of the clients password, 
+only a blinded version of the password computed using a 
+verifiable oblivious pseudorandom function. This report 
+was commissioned by WhatsApp.In December 2021, Jennifer Fernick presented Financial 
 Post\-Quantum Cryptography in Production: A CISOs 
 Guide for the Financial Services Information Sharing and 
 Analysis Center, FS\-ISAC. In this talk, starting from the 
@@ -603,74 +950,13 @@ have in the quantum\-resistance of those ciphers, and
 what this may mean for cryptography standards over time, 
 and designing extensible cryptographic architectures and 
 deciding when to begin integrating PQC in a world of 
-competing technology standards.In September 2021, Javel Samuel presented anOverview of Open Source Cryptography Vulnerabilities 
-at the International Cryptographic Module Conference, 
-ICMC21\. This presentation reviewed the foundations
-of cryptographic vulnerabilities as applicable to open\-
-source software from a penetration testers perspective 
-over multiple public cryptography audit reports.
-This presentation also discussed what attacks in the
-past took advantage of these cryptography vulnerabilities 
-and what the consequences were, as well as the success 
-rate of various mitigations, as well as some thoughts 
-on suggested focus areas for the future of open source 
-cryptography.In October 2021, Thomas Pornin published Paradoxical 
-Compression with Verifiable Delay Functions, which 
-described (and implemented!) a mathematically\-
-impossible compression algorithm, known as paradoxical 
-compression, despite the mathematical impossibility 
-of upholding three qualities (described in the paper
-blog post) simultaneously. This is a good illustration of 
-a fundamental concept of cryptography: namely that 
-there is a great difference between knowing that some 
-mathematical object exists, and being able to build it in 
-practice.In October 2021, we published the NCC GroupCryptography Services Public Report on their WhatsApp 
-End\-to\-End Encrypted Backups Security Assessment.
-This report is the result of a security assessment we 
-performed of its End\-to\-End Encrypted Backups project. 
-End\-to\-End Encrypted Backups is an hardware security 
-module (HSM) based key vault solution that aims to
-primarily support encrypted backup of WhatsApp
-user data. This report was commissioned by WhatsApp.In November 2021, we published the Public Report Zcash NU5 Cryptography Review. This report is the result 
-of our review of the upcoming network protocol upgrade 
-NU5 to the Zcash protocol (codenamed Orchard), and 
-was commissioned by the Electric Coin Company.In November 2021, Paul Bottinelli published Technical 
-Advisory Arbitrary Signature Forgery in Stark Bank 
-ECDSA Libraries (CVE\-2021\-43572, CVE\-2021\-43570,CVE\-2021\-43569, CVE\-2021\-43568, CVE\-2021\-43571\). 
-These critical vulnerabilities allowed arbitrary signature 
-forgery by an attacker, and existed in several open\-source 
-cryptography libraries \- one with over 7\.3M downloads in 
-the previous 90 days on PyPI, and over 16,000 weekly 
-downloads on npm.In November 2021, Paul Bottinelli published An Illustrated 
-Guide to Elliptic Curve Cryptography Validation. This blog 
-post offered an illustrated description of the typical failures 
-related to elliptic curve validation and how to avoid them in
-a clear and accessible way. This is important because 
-Elliptic Curve Cryptography (ECC) is widely used to 
-perform asymmetric cryptography operations, such as 
-to establish shared secrets or for digital signatures, but 
-insufficient validation of public keys and parameters is 
-still a frequent cause of confusion, leading to serious 
-vulnerabilities, such as leakage of secret keys, signature 
-malleability or interoperability issues.In November 2021, Frans van Dorsselaer of Fox IT (a part 
-of NCC Group) presented at CWI Symposium on Post\-
-Quantum Cryptography.Based on the popularity of Eli Sohls original February2021 blog post on the Matasano Cryptopals challenges,
-in December 2021 he began a blog series in which he 
-offers walkthrough tutorial videos explaining the solutions 
-to the Cryptopals challenges, with the post Announcing 
-NCC Groups Cryptopals Guided Tour.In December 2021, we published the NCC Group 
-Cryptography Services Public Report WhatsApp
-opaque\-ke Cryptographic Implementation Review. 
-In this work, we conducted a security assessment of the 
-opaque\-ke library, an open source Rust implementation 
-of the OPAQUE password authenticated key exchange 
-protocol. The protocol is designed to allow password\-
-based authentication in such a way that a server does not 
-actually learn the plaintext value of the clients password, 
-only a blinded version of the password computed using a
-verifiable oblivious pseudorandom function. This report
-was commissioned by WhatsApp.112021 NCC Group Annual Research ReportAttacking (\& Attacking with) Machine 
-Learning SystemsIn June 2021, Jennifer Fernick published a blog postAs a part of an August 2021 presentation at Black Hattitled Machine Learning for Static Malware Analysis, with 
+competing technology standards.
+12
+2021 NCC Group Annual Research Report
+Attacking (\& Attacking with) Machine 
+Learning Systems
+In June 2021, Jennifer Fernick published a blog post 
+titled Machine Learning for Static Malware Analysis, with 
 University College London. For this project, we sought 
 to determine the efficacy of various individual machine 
 learning primitives \- as well as ensemble methods 
@@ -689,9 +975,11 @@ accuracy of 98\.9%, suggesting that the particular
 featureset and ensemble model used (multi\-modal late 
 fusion) is effective for the detection of malware binaries at 
 scale. Media coverage on this work, asking Can machine 
-learning help detect zero day malware? was published
+learning help detect zero day malware? was published 
 by The Cyber Post, SC Media, thisweekin4n6, and 
-RedPacket Security.In June 2021, the NCC Group Data Science Teampublished Incremental Machine Learning by Example: 
+RedPacket Security. 
+In June 2021, the NCC Group Data Science Team 
+published Incremental Machine Learning by Example: 
 Detecting Suspicious Activity with Zeek Data Streams, 
 River, and JA3 Hashes. This post, which explores the 
 incremental learning machine learning paradigm in a real\-
@@ -701,14 +989,17 @@ that enable incremental learning techniques can be
 applied to novelty detection (the first time something has 
 happened) and outlier detection (rare events) on data 
 streams derived from Zeek. This was also discussed in 
-thisweekin4n6\.USA on open source security, Jennifer Fernick discussed 
+thisweekin4n6\.
+As a part of an August 2021 presentation at Black Hat 
+USA on open source security, Jennifer Fernick discussed 
 the impact that scalable, machine\-learning driven 
 vulnerability detection, triage, and potential exploitation 
 methods could have on open\-source targets in the coming 
 years, arguing that scalable vulnerability finding methods 
 are dual use, in that they can benefit either defenders or 
 attackers, and the growth of these tools may exacerbate 
-asymmetries between attack and defense.In October 2021, Mostafa Hassan published a blog post 
+asymmetries between attack and defense.
+In October 2021, Mostafa Hassan published a blog post 
 series on Cracking Number Generators Using Machine 
 Learning. In Part 1 of this series, he explored using deep 
 learning to predict the sequence of the (presumably) 
@@ -728,13 +1019,9 @@ unknown patterns in cryptographic (P)RNGs, as this
 could potentially serve as an interesting supplementary 
 method for cryptanalysis of these functions. In these blog 
 posts, we show our work in beginning to explore this 
-space. This work was also discussed by hackaday.122021 NCC Group Annual Research ReportInto 2022, we will be continuing research on 
-several A.I. security related projects including:Real\-world, practical attacks on machine learningsystems, including both a whitepaper as well as new 
-findings and attacksMachine learning techniques for vulnerability finding in 
-C source code, studying the comparative performance 
-between graph\-based methods and NLP (natural 
-language processing)\-based methodsNew work in the use of Generative Adversarial Networks(GANs) to improve fuzzer performanceStudying the security and privacy implications underlyingchatbots, and studying an attack model that treats 
-chatbots as an oracle for private or sensitive training dataIn December 2021, Margit Hazenbroek published 
+space. This work was also discussed by hackaday.13
+2021 NCC Group Annual Research Report
+In December 2021, Margit Hazenbroek published 
 Encryption Does Not Equal Invisibility Detecting 
 Anomalous TLS Certificates with the Half\-Space\-Trees 
 Algorithm. This blog post outlined an approach to 
@@ -744,19 +1031,43 @@ the Half\-Space\-Trees algorithm and provides NCC
 Groups Managed Detection and Response Security 
 Operations Center (SOC) with the opportunity to detect 
 suspicious behavior, in real\-time, even when network 
-traffic is encrypted.In December 2021, NCC Group commenced our annual 
+traffic is encrypted. 
+In December 2021, NCC Group commenced our annual 
 research project with theCentre for Doctoral Training in 
 Data Intensive Science (CDT in DIS) at University College 
-London (UCL), where we will in 2022 be studying the use
-of Generative Adversarial Networks (GANs) for fuzzing.In December 2021, Jennifer Fernick published On the 
+London (UCL), where we will in 2022 be studying the useof Generative Adversarial Networks (GANs) for fuzzing.
+In December 2021, Jennifer Fernick published On the 
 malicious use of large language models like GPT\-3, in 
 which she asked,Can large language models generate 
 exploits? This blogpost explored the question of whether 
 (and how) large language models like GPT\-3 or their 
 successors may be useful for exploit generation, and 
 proposed an offensive security research agenda for large 
-language models.132021 NCC Group Annual Research ReportMisinformation, Deepfakes,
-and Synthetic MediaIn October 2021, Jennifer Fernick discussed the problemof deepfake detection in the Threatscape 2023 and 
+language models.
+Into 2022, we will be continuing research on 
+several A.I. security related projects including:
+
+Real\-world, practical attacks on machine learning 
+systems, including both a whitepaper as well as new 
+findings and attacks 
+
+Machine learning techniques for vulnerability finding in 
+C source code, studying the comparative performance 
+between graph\-based methods and NLP (natural 
+language processing)\-based methods
+
+New work in the use of Generative Adversarial Networks 
+(GANs) to improve fuzzer performance
+
+Studying the security and privacy implications underlying 
+chatbots, and studying an attack model that treats 
+chatbots as an oracle for private or sensitive training data
+14
+2021 NCC Group Annual Research Report
+Misinformation, Deepfakes, 
+and Synthetic Media
+In October 2021, Jennifer Fernick discussed the problem 
+of deepfake detection in the Threatscape 2023 and 
 Beyond panel at MapleSec, also covered by IT World 
 Canada. In this presentation, she challenged the idea that 
 deepfakes could ever be reliably detected, warning that 
@@ -764,19 +1075,39 @@ the use of machine learning to both generate and detect
 deepfakes would result in a cyclical competition in which 
 deepfake generation algorithms improve their outputs 
 evasive capability against a given detection model, while 
-detectors hone feature\-detection, in a never\-ending cycle.In November 2021, Swathi Nagarajan published Vaccine 
+detectors hone feature\-detection, in a never\-ending cycle. 
+In November 2021, Swathi Nagarajan published Vaccine 
 Misinformation Part 1: Misinformation Attacks as a Cyber 
 Kill Chain. In this work, she used the Cyber Kill Chain 
 model to describe vaccine misinformation attacks online, 
 as well as to describe interventions against vaccine 
-misinformation at each state of the killchain.Into 2022, we will be continuing research 
+misinformation at each state of the killchain. 
+Into 2022, we will be continuing research 
 that takes a security researchers toolkit and 
 applies it to the problems of misinformation, 
 deepfakes, and synthetic media, through 
-ongoing projects including:Subverting facial recognition systems, includingbroadly\-applicable, generic, skeleton key attacks
-on facial recognition systems (or as were calling
-them \- Eigenfaces)Authenticating against deepfakesUnderstanding the offensive use of audiodeepfakes in fraud, abuse, and account takeoverExperimental tooling for the automateddebunking of misinformationFurther security research and digital forensicsmethods for combating misinformation142021 NCC Group Annual Research ReportReducing Vulnerabilities at Scale
-\& Improving Open Source SecuritySoftware Supply Chain Security \& Securing the Open Source EcosystemIn February 2021, Jennifer Fernick of NCC GroupIn May 2021, the OpenSSFs Identifying Security Threats(alongside colleagues from across OpenSSF) presented 
+ongoing projects including:
+
+Subverting facial recognition systems, including 
+broadly\-applicable, generic, skeleton key attacks 
+on facial recognition systems (or as were calling 
+them \- Eigenfaces) 
+Authenticating against deepfakes
+
+Understanding the offensive use of audio 
+deepfakes in fraud, abuse, and account takeover
+
+Experimental tooling for the automated 
+debunking of misinformation 
+
+Further security research and digital forensics 
+methods for combating misinformation 
+15
+2021 NCC Group Annual Research Report
+Reducing Vulnerabilities at Scale 
+\& Improving Open Source Security
+In February 2021, Jennifer Fernick of NCC Group 
+(alongside colleagues from across OpenSSF) presented 
 a panel at FOSS Backstage, titled Frontiers in Securing 
 the Open Source Ecosystem. In this panel, the panelists 
 explored challenges and opportunities in securing the 
@@ -787,19 +1118,12 @@ brief overview of the mission, priorities, and current work
 within the Open Source Security Foundation (openssf.
 org), including an end\-to\-end threat model of the open 
 source ecosystem, and a discussion of some of the most 
-pressing issues in the security of open source software.In February 2021, Jennifer Fernick was interviewed
-by the GitHub README Project for an article about
-How InfoSec pros keep open source safeand how
-you can help.I think we have yet to see the true potential of 
-techniques for finding vulnerabilities at scale, 
-Fernick says. Large\-scale fuzzing projects, 
-vulnerability discovery query languages such as 
-GitHubs CodeQL, innovations in program analysis, 
-applications of machine learning to identifying 
-examples of particular bug classes, and recent 
-research in automated exploit generation (AEG) 
-have yet to, in my opinion, become fully realized, 
-and are likely to shift the security landscape.Working Group announced their Security Metrics 
+pressing issues in the security of open source software.
+In February 2021, Jennifer Fernick was interviewed 
+by the GitHub README Project for an article about 
+How InfoSec pros keep open source safeand how 
+you can help.In May 2021, the OpenSSFs Identifying Security Threats 
+Working Group announced their Security Metrics 
 initiative. This working group, which began in mid\-2020, 
 was initially led by Jennifer Fernick of NCC Group 
 and Michael Scovetta of Microsoft, aimed to create 
@@ -810,8 +1134,9 @@ by providing both a graphical and API dashboard which
 summarizes key security metrics about a repo. Work 
 in this group has also inspired and led to things like 
 Googles Security Scorecards this year, as well as the 
-excellent Security Metrics project currently
-led by Scovetta.In August 2021, Jennifer Fernick of NCC Group and 
+excellent Security Metrics project currently 
+led by Scovetta.
+In August 2021, Jennifer Fernick of NCC Group and 
 Christopher Robinson of Intel presented Securing 
 Open Source Software \- End\-to\-End, at Massive Scale, 
 Together at Black Hat USA. In this presentation, we 
@@ -832,16 +1157,29 @@ community can get involved and contribute meaningfully
 to improving the security of OSS \- especially through 
 coordinated industry\-wide efforts. This work wascovered by media outlets including Security Boulevard, 
 the Veracode blog, Linux Today, SiliconANGLE, 
-eSecurityPlanet, and Dark Reading.In September 2021, the Open Source SecurityFoundation published their Guide to implementing a 
+eSecurityPlanet, and Dark Reading.
+In September 2021, the Open Source Security 
+Foundation published their Guide to implementing a 
 coordinated vulnerability disclosure process for open 
 source projects, available here on GitHub, and described 
 here in a blog post. Jennifer Fernick of NCC Group 
 contributed to this guide, as well as to the broader, 
 ongoing work of the OpenSSF Vulnerability Disclosure 
 Working Group, which will be disseminated through 
-conference presentations and other developer outreach
-in 2022\.Since prior to OpenSSFs founding in August 2020,
-Jennifer has been a founding member of the prior
+conference presentations and other developer outreach 
+in 2022\.Software Supply Chain Security \& Securing the Open Source Ecosystem
+I think we have yet to see the true potential of 
+techniques for finding vulnerabilities at scale, 
+Fernick says. Large\-scale fuzzing projects, 
+vulnerability discovery query languages such as 
+GitHubs CodeQL, innovations in program analysis, 
+applications of machine learning to identifying 
+examples of particular bug classes, and recent 
+research in automated exploit generation (AEG) 
+have yet to, in my opinion, become fully realized, 
+and are likely to shift the security landscape.
+Since prior to OpenSSFs founding in August 2020, 
+Jennifer has been a founding member of the prior 
 Governing Board as well as the Technical Advisory 
 Committee, and made considerable contributions in 
 the first several months of 2021 to help drive improved 
@@ -849,10 +1187,28 @@ decision\-making and governance within OpenSSF, to
 help advise senior US Congressional staffers on supply 
 chain security, and to contribute to the technical vision 
 for OpenSSF. She has also begun to advocate for the 
-creation of a security incident response helpline for
-under\-resourced open source projects who believe
+creation of a security incident response helpline for 
+under\-resourced open source projects who believe 
 their project to be under active attack and require 
-emergency intervention.152021 NCC Group Annual Research ReportIn the wake of the Log4Shell vulnerability (CVE\-2021\-
+emergency intervention.
+In November 2021, Jennifer Fernick was an invited 
+Keynote Speaker at the Linux Foundation Member 
+Summit, where in her presentation, Securing Open 
+Source Software, she made a case for why coordinated 
+efforts to secure the open source ecosystem are urgently 
+needed to strengthen software supply chain security. 
+She and her co\-speaker, David Wheeler of the Linux 
+Foundation, also highlighted progress made since 
+OpenSSFs founding in August 2020\. A recording of this 
+presentation is available here.Later that month, Jennifer was also voted onto the 
+new Governing Board of the Open Source Security 
+Foundation as the new General Member Representative, 
+where joins senior technical executives from major 
+technology companies including AWS, Cisco, Dell, 
+GitHub, Google, Facebook, IBM, Intel, Microsoft, Oracle, 
+Red Hat, VMWare, and more to help lead an industry\-
+wide effort to help secure the open source ecosystem. 
+This was discussed in detail in this press release.In the wake of the Log4Shell vulnerability (CVE\-2021\-
 44228, as well as CVE\-2021\-45046 and CVE\-2021\-
 1\. affecting the open\-source project, Log4J, we 
 responded in a number of ways: Firstly, by publishing our 
@@ -875,48 +1231,55 @@ unfolding events of Log4J, discussing advice, detection,
 response and remediation. Our hot patch, as well as our 
 threat intelligence were cited in the US Cybersecurity 
 \& Infrastructure Security Agencys Alert, Mitigating 
-Log4Shell and Other Log4j\-Related Vulnerabilities
-on December 22 2021\.In November 2021, Jennifer Fernick was an invited 
-Keynote Speaker at the Linux Foundation Member 
-Summit, where in her presentation, Securing Open 
-Source Software, she made a case for why coordinated 
-efforts to secure the open source ecosystem are urgently 
-needed to strengthen software supply chain security. 
-She and her co\-speaker, David Wheeler of the Linux 
-Foundation, also highlighted progress made since 
-OpenSSFs founding in August 2020\. A recording of this 
-presentation is available here.Later that month, Jennifer was also voted onto thenew Governing Board of the Open Source Security 
-Foundation as the new General Member Representative, 
-where joins senior technical executives from major 
-technology companies including AWS, Cisco, Dell, 
-GitHub, Google, Facebook, IBM, Intel, Microsoft, Oracle, 
-Red Hat, VMWare, and more to help lead an industry\-
-wide effort to help secure the open source ecosystem. 
-This was discussed in detail in this press release.162021 NCC Group Annual Research ReportSecure ProgrammingIn March 2021, Robert Seacord (in collaboration with Jens Gustedt 
+Log4Shell and Other Log4j\-Related Vulnerabilities 
+on December 22 2021\. 
+2021 NCC Group Annual Research Report
+16
+2021 NCC Group Annual Research Report
+17
+Secure Programming
+In March 2021, Robert Seacord (in collaboration with Jens Gustedt 
 of INRIA) presented their paper on C language mechanism for error 
 handling and deferred cleanup at the ACMSIGAPP Symposium on 
-Applied Computing. This paper introduces the implementation of a
+Applied Computing. This paper introduces the implementation of a 
 C language mechanism for error handling and deferred cleanup 
-adapted from similar features in the Go programming language,
+adapted from similar features in the Go programming language, 
 which improves the proximity, visibility, maintainability, robustness, 
 \& security of cleanup and error handling over existing language 
 features. This feature is currently under consideration for inclusion for 
-forthcoming versions of the C programming language standard.
+forthcoming versions of the C programming language standard. 
 A reference implementation of the features described by this paper 
 is also available under an open source (BSD) license. This paper 
 was also published in the conferences proceedings, SAC 21: 
-Proceedings of the 36th Annual ACM Symposium on
-Applied Computing.In March 2021, Robert Seacord published a recording of his internal 
+Proceedings of the 36th Annual ACM Symposium on 
+Applied Computing. 
+In March 2021, Robert Seacord published a recording of his internal 
 conference presentation, The Future of C Code Review, in which 
 he discussed optimizations resulting from pointer provenance\-based 
 alias analysis in the C programming language that can modify the 
 behavior of code with undefined behaviors, ultimately explaining what 
 pointer provenance is, how it can introduce security flaws into your C 
-program, and how to spot the problem and repair it.
+program, and how to spot the problem and repair it. 
 This presentation was based upon his Draft Technical Specification, 
 A Provenance\-aware Memory Object Model for C, submitted to 
-ISO TC 1SC22WG14, the C Standards Committee, in
-September 2020\.In September 2021, Robert Seacord presented Why Cant Johnny 
+ISO TC 1SC22WG14, the C Standards Committee, in 
+September 2020\.
+In May 2021, Robert Seacord published a blog post in which 
+he argues that supply chain security begins with secure 
+software development.
+In July 2021, Robert Seacord released Reliably\-checked String 
+Library Binding, a library binding that uses static array extents to 
+improve diagnostics that can help identify memory safety flaws. This 
+tool is part of his work on broader initiatives in the C Standards 
+Committee to improve bounds checking for array types. 
+In August 2021, Robert Seacord presented his training, Secure 
+Coding in C, at Black Hat USA, which offered detailed explanation 
+of common programming errors in C and C\+\+ and describes how 
+these errors can lead to code that is vulnerable to exploitation, and 
+demonstrates specific remediation techniques as well as general 
+secure coding practices that help prevent the introduction of 
+vulnerabilities in C and C\+\+ codebases. 
+In September 2021, Robert Seacord presented Why Cant Johnny 
 Code Securely? at CyberEd 2021\. This presentation discussed 
 how software developer demand continues to increase faster than 
 universities can produce qualified graduates, increasing the software 
@@ -927,29 +1290,32 @@ until they find a combination that appears to work but produces code
 that works only under optimal conditions but is insecure. This talk 
 explored this problem and offered solutions toward developing a 
 more efficient, effective, and skilled software developer workforce, 
-more capable of writing secure code.In September 2021, Robert Seacord presented Secure Coding atAuto\-ISAC Analysts.In October 2021, Robert Seacord submitted 5 papers to the CStandards Committee (ISOIEC WG14\), including: ISOIEC WG14 \- Identifier Syntax using Unicode Standard Annex 31 ISOIEC WG14 \- Clarifying integer terms ISOIEC WG14 \- Clarifying integer terms v2 ISOIEC WG14 \- calloc overflow handling ISOIEC WG14 \- Annex K RepairsIn May 2021, Robert Seacord published a blog post in whichhe argues that supply chain security begins with secure
-software development.He explained what each of these meant for the future security of the 
+more capable of writing secure code. 
+In September 2021, Robert Seacord presented Secure Coding at 
+Auto\-ISAC Analysts.
+In October 2021, Robert Seacord submitted 5 papers to the C 
+Standards Committee (ISOIEC WG14\), including: 
+ISOIEC WG14 \- Identifier Syntax using Unicode Standard Annex 31 ISOIEC WG14 \- Clarifying integer terms ISOIEC WG14 \- Clarifying integer terms v2 ISOIEC WG14 \- calloc overflow handling ISOIEC WG14 \- Annex K Repairs
+He explained what each of these meant for the future security of the 
 C programming language in his blog post, The Next C Language 
-Standard, C23\.In July 2021, Robert Seacord released Reliably\-checked String 
-Library Binding, a library binding that uses static array extents to 
-improve diagnostics that can help identify memory safety flaws. This 
-tool is part of his work on broader initiatives in the C Standards 
-Committee to improve bounds checking for array types.In August 2021, Robert Seacord presented his training, SecureCoding in C, at Black Hat USA, which offered detailed explanation 
-of common programming errors in C and C\+\+ and describes how 
-these errors can lead to code that is vulnerable to exploitation, and 
-demonstrates specific remediation techniques as well as general 
-secure coding practices that help prevent the introduction of 
-vulnerabilities in C and C\+\+ codebases.In October 2021, Robert Seacord presented Volatility Ahead at 
+Standard, C23\. 
+In October 2021, Robert Seacord presented Volatility Ahead at 
 NDC TechTown 2021, which explained \- in the context of the C 
 programming language \- where volatile is useful, what the C and 
 C\+\+ standards say and how they got there, and finally suggest how 
 the standards might be revised in the future. He also presented 
 Secure Coding in C and C\+\+, a two day training course that 
-provides a detailed explanation of common programming errors in
-C and C\+\+ and describes how these errors can lead to code
-that is vulnerable to exploitation.172021 NCC Group Annual Research ReportStandardization \& VerificationIn addition to the C Standards work outlined 
+provides a detailed explanation of common programming errors in 
+C and C\+\+ and describes how these errors can lead to code 
+that is vulnerable to exploitation.
+2021 NCC Group Annual Research Report
+18
+Standardization \& Verification
+In addition to the C Standards work outlined 
 above, NCC Group made standards\-related 
-contributions in the following ways:In February 2021, Matt Lewis released his paper,Investigating Potential Security Vulnerability Manifestation 
+contributions in the following ways: 
+In February 2021, Matt Lewis released his paper, 
+Investigating Potential Security Vulnerability Manifestation 
 through Various Analyses \& Inferences Regarding Internet 
 RFCs (and how RFC Security might be Improved), to 
 help understand how and why security vulnerabilities 
@@ -967,7 +1333,9 @@ value of mining large volumes of data for the purpose of
 gaining useful insights, and the value of techniques such 
 as graph databases to help cut through the complexities 
 involved with processing and interpreting large volumes 
-of data.In July 2021, Ollie Whitehouse (alongside externalcollaborators Kirsty Paine of the UK National Cyber 
+of data.
+In July 2021, Ollie Whitehouse (alongside external 
+collaborators Kirsty Paine of the UK National Cyber 
 Security Centre and James Sellwood of Twilio) published 
 the IETF Draft, Indicators of Compromise (IoCs) and 
 Their Role in Attack Defence. This draft reviews the 
@@ -980,14 +1348,16 @@ protocols, tools, and technologies \- both for the IoCs
 initial discovery and their use in detection \- and provides a 
 foundation for new approaches to operational challenges 
 in network security. This work was presented at IETF 
-111, the presentation for which can be viewed here.In September 2021, Matt Lewis presented at the Safety, 
-Security \& Verification in Critical Systems Conference
-in Manchester.In November 2021, Matt Lewis of NCC Group alongside 
-Mark McFadden of Internet Policy Advisors LTD (an
+111, the presentation for which can be viewed here. 
+In September 2021, Matt Lewis presented at the Safety, 
+Security \& Verification in Critical Systems Conference 
+in Manchester. 
+In November 2021, Matt Lewis of NCC Group alongside 
+Mark McFadden of Internet Policy Advisors LTD (an 
 expert on the development of global internet addressing 
 standards and policies, and an active contributor to work 
 in the IETF and ICANN), presented at the IETF Internet 
-Architecture Board Workshop on Analyzing IETF Data.
+Architecture Board Workshop on Analyzing IETF Data. 
 In this presentation, they sought to baseline how RFC 
 Security Considerations \- including RFC3552 (Guidelines 
 for Writing RC Text on Security Considerations) \- should 
@@ -995,19 +1365,35 @@ be expressed and improved, seeking to use improvements
 to the RFC process itself to improve the security of the 
 resulting standards.Into 2022, we will be continuing research 
 on reducing vulnerabilities at scale through 
-ongoing yet\-unpublished projects such as:Rewriting BSD kernel modules in memory\-safe languagesContinued contributions to the work of theOpen Source Security Foundation, both technically
+ongoing yet\-unpublished projects such as:
+Rewriting BSD kernel modules in memory\-safe languages
+Continued contributions to the work of the 
+Open Source Security Foundation, both technically 
 and from a leadership perspective, including toward 
-improving coordinated vulnerability disclosure and
-incident response for open source projectsNew contributions to programming language 
-standards and internet architecture specsCreating an entomology of security bug typesobserved in RustContinued experimentation with vulnerability\-findingquery languages, including CodeQLA whitepaper on Automated Exploit Generation (AEG)182021 NCC Group Annual Research ReportVirtualization, Emulation,
-and ContainerizationIn January 2021, Jeff Dileo released proof\-of\-conceptexploit code for his vulnerability, CVE\-2020\-15257, found 
+improving coordinated vulnerability disclosure and 
+incident response for open source projects
+New contributions to programming language
+standards and internet architecture specs
+Creating an entomology of security bug types 
+observed in Rust
+Continued experimentation with vulnerability\-finding 
+query languages, including CodeQL
+A whitepaper on Automated Exploit Generation (AEG)
+19
+2021 NCC Group Annual Research Report
+Virtualization, Emulation, 
+and Containerization
+In January 2021, Jeff Dileo released proof\-of\-concept 
+exploit code for his vulnerability, CVE\-2020\-15257, found 
 in containerd \- a container runtime underpinning Docker 
 and common Kubernetes configurations \- which resulted 
 in full root container escape for a common container 
 configuration. This was a flaw we disclosed in late 2020 
 for which a technical deep\-dive is available in a blog post 
 entitled ABSTRACT SHIMMER (CVE\-2020\-15257\): Host 
-Networking is root\-Equivalent, Again.In May 2021, Jeff Dileo and ex\-NCC Group colleagueAddison Amiri presented their research on dRuby Security 
+Networking is root\-Equivalent, Again. 
+In May 2021, Jeff Dileo and ex\-NCC Group colleague 
+Addison Amiri presented their research on dRuby Security 
 Internals at NorthSec. This presentation discussed how 
 dRuby (a distributed object system built into Ruby \- think 
 CORBA or Javas RMI) works, where its insecurities 
@@ -1031,13 +1417,16 @@ dRuby and how it fails to guard against dRubys inherent
 issues, as well as the researchers own efforts to harden 
 dRuby, including the kinds of protocol, logic, and API 
 changes needed to negate its issues. This presentation 
-closed with a discussion of the insecurity of existingdRuby exploits, and showed how you can penalize your 
+closed with a discussion of the insecurity of existing 
+dRuby exploits, and showed how you can penalize your 
 pentesters for using off\-the\-shelf exploits, including that 
 Metasploits exploit for dRuby used the standard dRuby 
 library to exploit dRuby, thus making it vulnerable to both 
 standard and novel dRuby exploitation itself. A recording 
-of this presentation is also available here.Also at NorthSec, Jeff Dileo joined a number of other 
-researchers on a panel on Vulnerability Research.Throughout the year, Brian Hong presented Sleight 
+of this presentation is also available here. 
+Also at NorthSec, Jeff Dileo joined a number of other 
+researchers on a panel on Vulnerability Research. 
+Throughout the year, Brian Hong presented Sleight 
 of ARM: Demystifying Intel Houdini at a variety of 
 conferences including Ekoparty, DEF CON 29 (Main 
 Track), ToorCon and the Black Hat USA Briefings. This 
@@ -1052,7 +1441,8 @@ model, including several security weaknesses it introduces
 into processes using it. Brian concluded by discussing 
 methods to escape the Houdini environment, execute 
 arbitrary ARM and x86, and write Houdini\-targeted 
-malware that bypasses existing platform analysis.Iain Smart also taught the training Mastering Container 
+malware that bypasses existing platform analysis.
+Iain Smart also taught the training Mastering Container 
 Security V5 \- Black Hat edition at Black Hat USA. The 
 course covered Docker and how Linux containers work, 
 fundamental Linux security concepts, and container 
@@ -1061,11 +1451,10 @@ works and the security pitfalls that can leave the clusters
 and cloud\-based environments which use containers 
 exposed to attack, as well as practical examples of 
 configuring key Kubernetes security controls such as 
-RBAC, PodSecurityPolicies and Network Policies.192021 NCC Group Annual Research ReportInto 2022, we will be continuing research 
-on virtualization, emulation, and container 
-security, including but not limited to:Container tracing and other research pertaining to
-container runtimesTransient execution vulnerabilitiesSecurity audits and associated research related to
-key open source projects in this spaceAt DEF CON 29, Jeff Dileo presented Instrument and 
+RBAC, PodSecurityPolicies and Network Policies.
+2021 NCC Group Annual Research Report
+20
+At DEF CON 29, Jeff Dileo presented Instrument and 
 Find Out: Writing Parasitic Tracers for High(\-Level) 
 Languages. This presentation discussed the process for 
 developing generalized parasitic tracers targeting specific 
@@ -1075,12 +1464,15 @@ tracers targeting a language and its runtime, challenging
 the notion (and quality) of the performance monitoring and 
 introspectability features of (some) modern programming 
 languages by writing his own implementation and 
-instrumenting them into the language dynamically.In August 2021, Jeff Dileo also published Some Musingson Common (eBPF) Linux Tracing Bugs, which discussed 
+instrumenting them into the language dynamically.
+In August 2021, Jeff Dileo also published Some Musings 
+on Common (eBPF) Linux Tracing Bugs, which discussed 
 an insecure coding pattern commonly used in system 
 observability and program analysis tools, and several 
 techniques that can enable one to evade observation from 
 such tools using that pattern, especially when they are 
-being used for security event analysis.In August 2021, Iain Smart was interviewed on how 
+being used for security event analysis. 
+In August 2021, Iain Smart was interviewed on how 
 container vulnerabilities can put the software supply 
 chain at risk, discussing how compromised external 
 dependencies can enable an attacker to access and even 
@@ -1100,7 +1492,10 @@ complex use cases not covered by the CTR guidance,
 including useful audit configurations that wont require 
 excessive levels of compute power or storage, advice on 
 handling external dependencies, and some notes around 
-the complex mechanisms of Kubernetes RBAC.In October 2021, Jeff Dileo discussed container securityon the Cyberwire podcast.In November 2021, Ben Lister and Kane Ryans published 
+the complex mechanisms of Kubernetes RBAC.
+In October 2021, Jeff Dileo discussed container security 
+on the Cyberwire podcast. 
+In November 2021, Ben Lister and Kane Ryans published 
 Detection Engineering for Kubernetes clusters. This blog 
 post detailed the collaboration between NCC Groups 
 Detection Engineering team and Containerization \& 
@@ -1114,7 +1509,17 @@ detailing the novel detection rules they have created
 around how privilege escalation is achieved within a 
 Kubernetes cluster, to better enable security operations 
 teams to monitor security\-related events on Kubernetes 
-clusters and thus to help defend them in real\-world use.202021 NCC Group Annual Research ReportHardware \& Embedded SystemsIn March 2021, Eric Evenchick offered the training
+clusters and thus to help defend them in real\-world use.Into 2022, we will be continuing research 
+on virtualization, emulation, and container 
+security, including but not limited to:
+Container tracing and other research pertaining tocontainer runtimes 
+Transient execution vulnerabilities
+Security audits and associated research related to 
+key open source projects in this space
+21
+2021 NCC Group Annual Research Report
+Hardware \& Embedded Systems
+In March 2021, Eric Evenchick offered the training 
 Reverse Engineering Firmware with Ghidra at Black 
 Hat Spring Trainings. This hands\-on course taught the 
 concepts, tools, and techniques required to reverse 
@@ -1129,11 +1534,27 @@ device vector tables, peripheral memory, and system calls
 to find exploitable vulnerabilities in a bare\-metal device, 
 and identified remotely exploitable vulnerabilities in a 
 Bluetooth Low Energy device. In July 2021, this training 
-was also offered at Hardwear.io USA.In May 2021, we published our Public Report \-Dell Secured Component Verification, which was 
+was also offered at Hardwear.io USA. 
+In May 2021, we published our Public Report \- 
+Dell Secured Component Verification, which was 
 commissioned by Dell to explore supply chain security 
 functionality and related and supportive foundational 
-security functionality on 14th and 15th generation
-Dell servers.Approaches for Fault Injection Countermeasures. In 
+security functionality on 14th and 15th generation 
+Dell servers.
+In May 2021, Eric Evenchick presented Building CANtact 
+Pro: An Open Source CAN Bus Tool at NorthSec.
+In this talk, he discussed the design and release process 
+for the CANtact Pro device, to help would\-be tool 
+creators interested in launching their own hardware 
+product to understand the many things that go into 
+bringing a hardware idea to market, from PCB design to 
+driver development. He also discussed open source tools 
+for designing PCBs, writing cross\-platform drivers using 
+Rust, the economics of releasing a device, and logistical 
+challenges one can expect when building hardware. 
+In July 2021, Sultan Qasim Khan and Jeremy Boone 
+published a three\-part blog series on Alternative 
+Approaches for Fault Injection Countermeasures. In 
 Part 1 of this series, they covered the basic principles of 
 fault injection types of glitches, their effects, and how 
 an attacker can characterize hardware and firmware to 
@@ -1145,23 +1566,18 @@ enumerated the drawbacks of common software\-based
 glitching countermeasures, and outlined alternative 
 countermeasures to fault injection, including instruction 
 duplication, memory store verification, and some forms of 
-control flow integrity intended to provide fault detection.In July 2021, Rob Wood published PracticalConsiderations of Right\-to\-Repair Legislation. In this
+control flow integrity intended to provide fault detection. 
+In July 2021, Rob Wood published Practical 
+Considerations of Right\-to\-Repair Legislation. In this 
 blog post, he offered OEM, device owner, and US 
 Federal legislators perspectives on right\-to\-repair, and 
 discussed how device security requires trade\-offs and 
 compromises with usability, performance, cost, and 
 repairability, and outlined specific implications of the 
 proposed US legislation and how an OEM might alter 
-their designs to comply.In May 2021, Eric Evenchick presented Building CANtactIn August 2021, Jon Szymaniak presentedPro: An Open Source CAN Bus Tool at NorthSec.
-In this talk, he discussed the design and release process 
-for the CANtact Pro device, to help would\-be tool 
-creators interested in launching their own hardware 
-product to understand the many things that go into 
-bringing a hardware idea to market, from PCB design to 
-driver development. He also discussed open source tools 
-for designing PCBs, writing cross\-platform drivers using 
-Rust, the economics of releasing a device, and logistical 
-challenges one can expect when building hardware.Depthcharge: A Framework for U\-Boot Hacking at
+their designs to comply.
+In August 2021, Jon Szymaniak presented 
+Depthcharge: A Framework for U\-Boot Hacking at 
 DEF CON 29 Demo Labs. Depthcharge is an extensible 
 Python 3 toolkit designed to aid security researchers 
 when analyzing a customized, product\-specific build of 
@@ -1169,35 +1585,45 @@ the U\-Boot bootloader. Depthcharge was first released
 at a Hardwear.io session in 2020, and also presented at 
 the Open Source Firmware Conference, in a talk titled, 
 Guiding Engineering Teams Toward a More Secure 
-Usage of U\-Boot.In July 2021, Sultan Qasim Khan and Jeremy Boone 
-published a three\-part blog series on AlternativeIn August 2021, Diana Dragusin published, The ABCs of 
-NFC chip security, which explored how the complexityof the NFC technology and standardization ecosystem is 
+Usage of U\-Boot.
+In August 2021, Diana Dragusin published, The ABCs of 
+NFC chip security, which explored how the complexity 
+of the NFC technology and standardization ecosystem is 
 contributing to security weaknesses. She also surveyed a 
 range of NFC chips by a wide and representative range of 
 vendors,and published findings in terms of things like user 
 memory protections and system configuration protections, 
 and demonstrating the importance of product threat\-
 modelling when selecting which NFC chips to use in new 
-hardware products.In December 2021, Catalin Visinescu published, Why IoT 
+hardware products.
+In December 2021, Catalin Visinescu published, Why IoT 
 Security Matters, in which he makes a case for why IoT 
 security matters, and walks us through a threat modelling 
 exercise to understand the different ways internet\-
-connected devices can be attacked.Later that month, Catalin Visinescu also published 
-Choosing the Right MCU for Your Embedded
-Device Desired Security Features of Microcontrollers.
-This article illuminated important security criteria that
+connected devices can be attacked. 
+Later that month, Catalin Visinescu also published 
+Choosing the Right MCU for Your Embedded 
+Device Desired Security Features of Microcontrollers. 
+This article illuminated important security criteria that 
 must be evaluated when choosing the right MCU 
-component for an embedded systems project, helping
+component for an embedded systems project, helping 
 to establish the questions engineers should ask chip 
 vendors before deciding what is the best microcontroller 
-for their new product.In December 2021, Simon Watson published FPGAs:Security Through Obscurity which discussed 
+for their new product.
+In December 2021, Simon Watson published FPGAs: 
+Security Through Obscurity which discussed 
 emerging use cases of FPGAs, the changing FPGA 
 technology landscape \& how it affects security, recent 
 FPGA vulnerabilities (including Starbleed, Thangrycat, 
-JackHammer, \& others), as well as attacks \& defenses
-for FPGAs.212021 NCC Group Annual Research Report5G Security 
+JackHammer, \& others), as well as attacks \& defenses 
+for FPGAs.
+2021 NCC Group Annual Research Report
+22
+5G Security 
 \& Smart 
-EnvironmentsIn June 2021, Traficom the Finnish transport andcommunications agency along with the Aalto University, 
+Environments
+In June 2021, Traficom the Finnish transport and 
+communications agency along with the Aalto University, 
 Cisco, Ericsson, Nokia, and PwC, organized the 5G 
 Cyber Security Hack competition, and annual hackathon\-
 style event in which around 130 security experts from 
@@ -1205,39 +1631,42 @@ around the world participated in hacking challenges
 relating to 5G technology and its use cases. For the 
 2021 competition, NCC Group won first\-place in their 
 challenge, through the talented efforts of Ross Bradley, 
-Eva Esteban Molina, Phil Marsden and Mark Tedman.In October 2021, Mark Tedman published TheChallenges of Fuzzing 5G Protocols. In this post, he 
+Eva Esteban Molina, Phil Marsden and Mark Tedman. 
+In October 2021, Mark Tedman published The 
+Challenges of Fuzzing 5G Protocols. In this post, he 
 discusses the specific challenges unique to fuzzing 5G 
 telecommunications protocols using both proprietary and 
-open source fuzzers (including Fuzzowski 5GC, Frizzer,
+open source fuzzers (including Fuzzowski 5GC, Frizzer, 
 and AFLNet), as well as the relative strengths and 
 weaknesses of the fuzzers studied for their efficacy at 
 5G protocol fuzzing of the NGAP, GTPU, PFCP, and 
-DIAMETER protocols. It also discussed details of the
+DIAMETER protocols. It also discussed details of the 
 testing environment, a sample of the vulnerabilities found, 
-the comparative performance of the tested fuzzers, as
-well as lessons learned for telecommunications protocol
-fuzzing in general.222021 NCC Group Annual Research ReportIn October 2021, Mark Tedman also published TechnicalAdvisory Open5GS Stack Buffer Overflow During 
+the comparative performance of the tested fuzzers, as 
+well as lessons learned for telecommunications protocol 
+fuzzing in general. 
+2021 NCC Group Annual Research Report
+23
+In October 2021, Mark Tedman also published Technical 
+Advisory Open5GS Stack Buffer Overflow During 
 PFCP Session Establishment on UPF (CVE\-2021\-41794\). 
 This denial of service vulnerability was found in the 
 open\-source implementation of 5G protocols, Open5GS, 
 as a part of a larger research effort into protocol\-level 
-vulnerabilities in 5G communications networks.In November 2021, Mark Tedman published Exploit the
+vulnerabilities in 5G communications networks. 
+In November 2021, Mark Tedman published Exploit the 
 Fuzz Exploiting Vulnerabilities in 5G Core Networks, 
 in which he exploited his previously\-disclosed PFCP 
 bug (CVE\-2021\-41794\) found in earlier 5G core fuzzing 
-efforts, using Fuzzowski 5GC against Open5GS.Into 2022, we will be continuing research on 
-various aspect of 4GLTE and 5G security, 
-as well as protocols including LoRaWAN, 
-and a range of research projects on smart 
-environments, including:Continued work on LoRaWAN tooling \& security testing, 
-including collaborative work with the University of SurreyVulnerability assessments of IoT components of smart 
-environments, including smart locks and smart alarm 
-systems, as well as smart buildings as a wholeContinued 4GLTE control plane research5G Baseband SoC ResearchIn November 2021, Philip Marsden presented atCyber Senate Control Systems Cybersecurity Europe 
-Conference on the 5G Threat Landscape, in which
-he discussed a range of threats to 5G security,
-including those relating to systems architecture,
-policy, standards, and the security of the hardware
-and software supply chain.Throughout 2021 and into 2022, Daniel Romero and 
+efforts, using Fuzzowski 5GC against Open5GS. 
+In November 2021, Philip Marsden presented at 
+Cyber Senate Control Systems Cybersecurity Europe 
+Conference on the 5G Threat Landscape, in which 
+he discussed a range of threats to 5G security, 
+including those relating to systems architecture, 
+policy, standards, and the security of the hardware 
+and software supply chain. 
+Throughout 2021 and into 2022, Daniel Romero and 
 colleagues have been studying implementations of 
 the LoRaWAN protocol, initially with the intention to 
 understand \& improve the security testing of LoRaWAN 
@@ -1253,18 +1682,36 @@ allows testing of the security of full LoRaWAN network
 implementations, and that has recently been updated 
 with novel protocol vulnerabilities identified during a 
 joint research with an academic research partner, to be 
-published in 2022\.Another ongoing project involves research into the
+published in 2022\. 
+Another ongoing project involves research into the 
 security of the 4GLTE Control Plane. During this 
 research, several vulnerabilities that affect the LTE 
-protocol and its implementation are being studied,
-as is the impact of their exploitation.232021 NCC Group Annual Research ReportPublic Interest TechnologyIn NCC Groups Research division, we have a dedicated 
+protocol and its implementation are being studied, 
+as is the impact of their exploitation. 
+Into 2022, we will be continuing research on 
+various aspect of 4GLTE and 5G security, 
+as well as protocols including LoRaWAN, 
+and a range of research projects on smart 
+environments, including:
+Continued work on LoRaWAN tooling \& security testing, 
+including collaborative work with the University of Surrey
+Vulnerability assessments of IoT components of smart 
+environments, including smart locks and smart alarm 
+systems, as well as smart buildings as a whole
+Continued 4GLTE control plane research
+5G Baseband SoC Research
+2021 NCC Group Annual Research Report
+24
+Public Interest Technology
+In NCC Groups Research division, we have a dedicated 
 research working group which offers paid research time 
 and other resources to research projects conducted in 
 the public interest, in an effort to support security and 
 privacy research for the greater good of society which 
 might not otherwise have resources available to support 
 it. It is my hope that this group will continue to grow with 
-each passing year.This year, our researchers focussed on a deep and broad 
+each passing year.
+This year, our researchers focussed on a deep and broad 
 analysis of the security \& privacy implications of different 
 vaccine passport apps around the world, the important 
 topic of racial injustice in algorithmic decision\-making, 
@@ -1278,23 +1725,28 @@ research partnership with independent UK consumer
 body Which where we studied a number of consumer 
 IoT devices and reported on their security and privacy 
 flaws to help consumers make informed choices about 
-the devices they allow into their lives.Vaccine Passport SecurityIn October 2021, Sid Adukia published Assessing the 
+the devices they allow into their lives.Vaccine Passport Security
+In October 2021, Sid Adukia published Assessing the 
 security and privacy of Vaccine Passports. In this blog 
 post, he offered a framework of security and privacy 
 considerations for vaccine credential systems, through 
 threat modelling the different ways that they could be 
-subverted, especially in ways that are harmful to users.This work was also complemented by Sids publication 
+subverted, especially in ways that are harmful to users. 
+This work was also complemented by Sids publication 
 of Technical Advisory New York State Excelsior Pass 
 Vaccine Passport Credential Forgery which showed that 
 an individual would be able to to create and store fake 
 vaccine credentials in their NYS Excelsior Pass Wallet 
 that might allow them to gain access to physical spaces 
-(such as businesses and event venues) where they wouldnot be allowed without a vaccine credential, even when 
+(such as businesses and event venues) where they would 
+not be allowed without a vaccine credential, even when 
 they have not received a COVID\-19 vaccine. The impact 
 of this was vast, affecting all whose safety in physical 
 event spaces in New York State depended upon the 
-validity of peoples proof\-of\-vaccination, in a state with
-a population of over 20 million people.Around the same time, Dan Hastings published TechnicalAdvisory New York State Excelsior Pass Vaccine 
+validity of peoples proof\-of\-vaccination, in a state with 
+a population of over 20 million people.
+Around the same time, Dan Hastings published Technical 
+Advisory New York State Excelsior Pass Vaccine 
 Passport Scanner App Sends Data to a Third Party not 
 Specified in Privacy Policy. The New York State (NYS) 
 Excelsior Scanner App is used by businesses or event 
@@ -1304,14 +1756,16 @@ negative COVID\-19 test or their vaccination status. In this
 work, Dan showed that some data about the businesses
 event venues using the app to scan QR codes is also sent 
 to a third\-party analytics domain, but that this was not 
-specified in the apps privacy policy.Combined, Sid and Dans work on the security \& privacy 
+specified in the apps privacy policy.
+Combined, Sid and Dans work on the security \& privacy 
 impacts of some of the early vaccine credential systems 
 received ample media coverage, including in a podcast 
 interview with Security Ledger, as part of a story on Vox 
 Recode and in POLITICO, and the forged credential 
 vulnerabilities were covered in 18\+ global publications 
 including ZDNet, InfoRiskToday, Fuentitech, and 
-DataBreachToday Europe.In December 2021, Drew Wade, Emily Liu, and Sid 
+DataBreachToday Europe.
+In December 2021, Drew Wade, Emily Liu, and Sid 
 Adukia published Exploring the Security \& Privacy of 
 Canadas Digital Proof of Vaccination Programs. In 
 this work, they studied a range of Canadian provinces 
@@ -1321,20 +1775,10 @@ deep\-dive exploration of the Verify Ontario app in depth
 to understand its ability to correctly reject forged and 
 malformed vaccine credentials, to avoid collecting 
 unnecessary private data, and to manage data using 
-security best\-practices.242021 NCC Group Annual Research ReportDefending Good\-Faith Security ResearchIn June 2021, NCC Group also co\-signed the Electronic 
-Frontier Foundations Statement on DMCA Use Against 
-Security Researchers, alongside over a dozen other 
-security firms. This statement voiced opposition to the use 
-of Section 1201 of the Digital Millennium Copyright Act 
-against security researchers performing research in good 
-faith, including when using third\-party security testing 
-tools, where we stated, We believe that the security of 
-the internet and our digital world is strengthened by the 
-work of independent security researchers who seek to 
-discover and remediate existing security vulnerabilities 
-before those vulnerabilities can be uncovered and 
-exploited by threat actors, and we urge reconsideration
-of policy which may inhibit this important work.Algorithmic Bias \& Racial InjusticeIn August 2021, Tennisha Martin presented How Bias and 
+security best\-practices.
+25
+Algorithmic Bias \& Racial Injustice 
+In August 2021, Tennisha Martin presented How Bias and 
 Discrimination will have members of the Black community 
 Incarcerated or Dead at the DEF CON 29 Blacks In 
 Cyber Village. This presentation focussed on the use 
@@ -1354,7 +1798,9 @@ in many application areas of artificial intelligence will
 have members of the Black community incarcerated or 
 dead, and that these systems must be interrogated and 
 improved to create a more just and equitable world for all. 
-The video recording of this presentation is available here.Mobile Privacy for Every UserIn March 2021, Dan Hastings and Emanuel Flores 
+The video recording of this presentation is available here. 
+Mobile Privacy for Every User 
+In March 2021, Dan Hastings and Emanuel Flores 
 officially released Solitude, an open\-source privacy 
 analysis tool. Solitude aims to help people inspect where 
 their private data goes once it leaves their favorite mobile 
@@ -1366,8 +1812,9 @@ understand when trying to identify how your private data
 is being shared and whom its being shared with \- and 
 privacy policies dont always tell the complete truth of 
 what an apps actual data collection practices are \- 
-Solitude was built to help give more transparency to
-users of where their private data goes. Solitude makesthe process of proxying HTTP traffic and searching 
+Solitude was built to help give more transparency to 
+users of where their private data goes. Solitude makes 
+the process of proxying HTTP traffic and searching 
 through HTTP traffic more straightforward. Solitude can 
 be configured to look for any type of data that you input in 
 a mobile or web application and reveal where that data is 
@@ -1383,7 +1830,13 @@ coverage by Hackin9, as well as been used in journalistic
 investigations conducted by reporters from a major 
 U.S. daily paper. This work also resulted thus far in two 
 technical advisories associated with pasteboard data 
-leakage vulnerabilities:Technical Advisory Shop app sends pasteboard datato Shopifys serversTechnical Advisory ParcelTrack sends all pasteboarddata to ParcelTracks servers on startupIn June 2021, Nick Galloway published iOS UserEnrollment and Trusted Certificates. This research 
+leakage vulnerabilities:
+Technical Advisory Shop app sends pasteboard data 
+to Shopifys servers
+Technical Advisory ParcelTrack sends all pasteboard 
+data to ParcelTracks servers on startup
+In June 2021, Nick Galloway published iOS User 
+Enrollment and Trusted Certificates. This research 
 involved a study of MDM (mobile device management) 
 on iOS 13, specifically finding that the User Enrollment 
 MDM option added with iOS 13 does not restrict MDM\-
@@ -1396,29 +1849,34 @@ organizations Wi\-Fi, it is possible for a corporate Intrusion
 Detection System to collect personal data by monitoring 
 intercepted traffic, seriously compromising an individuals 
 privacy on their own devices by virtue of trusting their 
-employers certificates for all activity on the device.252021 NCC Group Annual Research ReportIn their recent research into e\-Scooters, Guy and 
-Dale looked at the security and safety of 10 popular 
-brands s\-Scooters, and found a number of safety 
-issues in relation to electronic brakes and the ability 
-to remotely tamper with the devices via Bluetooth\-
-based attacks. They also found that a number of them 
-could be modified quite easily to push them beyond 
-legal speed limits. At time of writing, this work is 
-undergoing coordinated disclosure with the affected 
-manufacturers, for publication of findings set for
-early 2022\.For the aforementioned research with independent
-UK consumer body Which? investigating the safety
-and security of a range of IoT devices, Dale Pavey
-and Guy Morley were named the winners of the Best 
-Ethical HackerPentester Award at the 2021 Security 
-Serious Unsung Heroes Awards, covered here in 
-Infosecurity Magazine.Consumer IoT Device SecurityThroughout the year, in an ongoing campaign toimprove the security of consumer\-oriented IoT devices 
+employers certificates for all activity on the device.Defending Good\-Faith Security Research
+In June 2021, NCC Group also co\-signed the Electronic 
+Frontier Foundations Statement on DMCA Use Against 
+Security Researchers, alongside over a dozen other 
+security firms. This statement voiced opposition to the use 
+of Section 1201 of the Digital Millennium Copyright Act 
+against security researchers performing research in good 
+faith, including when using third\-party security testing 
+tools, where we stated, We believe that the security of 
+the internet and our digital world is strengthened by the 
+work of independent security researchers who seek to 
+discover and remediate existing security vulnerabilities 
+before those vulnerabilities can be uncovered and 
+exploited by threat actors, and we urge reconsideration 
+of policy which may inhibit this important work.
+2021 NCC Group Annual Research Report
+2021 NCC Group Annual Research Report
+26
+Consumer IoT Device Security
+Throughout the year, in an ongoing campaign to 
+improve the security of consumer\-oriented IoT devices 
 in collaboration with independent UK consumer body 
 Which Guy Morley and Dale Pavey conducted four 
 research projects related to vulnerabilities and risks 
 associated with different classes of IoT devices including 
 a range of smart home devices, connected dash cams, 
-and e\-Scooters:In their research into the security of smart homes, 
+and e\-Scooters:
+In their research into the security of smart homes, 
 conducted in May 2021 in collaboration with the 
 Global Cyber Alliance (GCA) and reported on by 
 Which? in July 2021, How a smart home could be 
@@ -1439,7 +1897,8 @@ desire to use the compromised devices themselves
 to construct botnets to perform wider, more powerful 
 hacking attempts, helping general users of smart home 
 devices to better understand this well\-understood 
-phenomenon.In their research into broad, ecosystem\-wide 
+phenomenon. 
+In their research into broad, ecosystem\-wide 
 vulnerabilities in the IoT and app ecosystem 
 reported on by Which? in November 2021, Online 
 marketplaces flooded with insecure smart products, 
@@ -1448,7 +1907,8 @@ products listed on UK online marketplaces including
 Amazon, eBay and AliExpress, including smart 
 doorbells, wireless cameras and tablets. To conduct 
 this research, they look at a range of generic and 
-clone smart products and trawled online marketplacesfor key words associated with these products. 
+clone smart products and trawled online marketplaces 
+for key words associated with these products. 
 Interestingly, 1,727 of the products found used just 
 four apps Aiwit, CamHi, CloudEdge and Smart Life 
 \* where a number of security issues were identified. 
@@ -1461,13 +1921,16 @@ low\-hanging fruit, either: The identified devices had
 37,129 reviews on Amazon at an average 4\.1 star 
 rating, and 15 of them featured Amazon Choice labels. 
 This work was further discussed in their blog post, 
-Home is where the hack is.Based on the research findings above, Whichalso produced a video, Its this EASY to hack your 
+Home is where the hack is.
+Based on the research findings above, Which 
+also produced a video, Its this EASY to hack your 
 smart home, in which Guy Morley joins Which? to 
 demonstrate attacks on a smart doorbell, connected 
 camera, printer, smart lock, and more, demonstrating 
 how one compromised device can be used to more 
 easily compromise other devices \- in this case, 
-unlocking the homes door via its insecure smart lock.In their dashcam research reported on by Which? in 
+unlocking the homes door via its insecure smart lock.
+In their dashcam research reported on by Which? in 
 July 2021, How secure is the data on your dash cam? 
 Guy and Dale studied the security of 9 dash cams 
 from BlackVue, Garmin, Halfords, Kitvision, MiVue, 
@@ -1482,7 +1945,29 @@ incriminating from your recordings. This was further
 discussed in their blog post, Are dash cam users 
 en\-route to security risks which also explored the 
 ongoing debate about whether GPS and dash camdata 
-should be considered personal data.262021 NCC Group Annual Research ReportCloud \& CICD Pipeline SecurityThis year, Viktor Gazdag joined to the Center for
+should be considered personal data. 
+In their recent research into e\-Scooters, Guy and 
+Dale looked at the security and safety of 10 popular 
+brands s\-Scooters, and found a number of safety 
+issues in relation to electronic brakes and the ability 
+to remotely tamper with the devices via Bluetooth\-
+based attacks. They also found that a number of them 
+could be modified quite easily to push them beyond 
+legal speed limits. At time of writing, this work is 
+undergoing coordinated disclosure with the affected 
+manufacturers, for publication of findings set for 
+early 2022\.
+For the aforementioned research with independent 
+UK consumer body Which? investigating the safety 
+and security of a range of IoT devices, Dale Pavey 
+and Guy Morley were named the winners of the Best 
+Ethical HackerPentester Award at the 2021 Security 
+Serious Unsung Heroes Awards, covered here in 
+Infosecurity Magazine.
+27
+2021 NCC Group Annual Research Report
+Cloud \& CICD Pipeline Security
+This year, Viktor Gazdag joined to the Center for 
 Internet Security community and made technical 
 contributions to the CIS Benchmarks for Securing 
 Microsoft 365\. The benchmark has two levels of 
@@ -1490,9 +1975,12 @@ checks and recommendations that provides guidance
 for creating and configuring a baseline security in 
 their Microsoft 365 tenant. At time of writing, the CIS 
 Microsoft 365 Foundations Benchmark was in version 
-1\.3\.0, to which Viktor has contibuted.In March 2021, Erik Steringer published version 1\.1\.0 
+1\.3\.0, to which Viktor has contibuted.
+In March 2021, Erik Steringer published version 1\.1\.0 
 of his tool, Principal Mapper (PMapper), a tool for 
-quickly evaluating IAM permissions in AWS.In May 2021, Xavier Garceau\-Aranda gave a trainingat NorthSec (which was offered again by NCC Group 
+quickly evaluating IAM permissions in AWS. 
+In May 2021, Xavier Garceau\-Aranda gave a training 
+at NorthSec (which was offered again by NCC Group 
 in August at Black Hat USA 2021\) titled Offensive 
 Cloud Security. This training allowed attendees to 
 experience first\-hand how security vectors that exist in 
@@ -1511,7 +1999,9 @@ mechanisms and pitfalls, and more. Ultimately, while
 this training took an offensive perspective on cloud 
 security, it aimed to show how to defend and mitigate 
 against a range of attacks against public and hybrid 
-cloud systems.In June 2021, Jerome Smith published a blog postIn September 2021, Erik Steringer presentedtitled Are you oversharing (in Salesforce)? Our new 
+cloud systems. 
+In June 2021, Jerome Smith published a blog post 
+titled Are you oversharing (in Salesforce)? Our new 
 tool could sniff it out! This post introduces Jeromes 
 new open\-source tool, Raccoon, which aims to identify 
 potential misconfigurations that could expose sensitive 
@@ -1523,19 +2013,23 @@ rules, and exceptions for certain situations within
 Salesforce, helping to mitigate the common concern 
 about potential unauthorized access to data among 
 clients who commission security assessments on their 
-instancesof Salesforce.In August 2021, Tim Rawlins discussed the technicaldebt incurred by a rapid shift to cloud to support
-remote working during the COVID\-19 pandemic
-with Communications of the ACM.In August 2021,Erik Steringer presented his open 
-source tool, Principal Mapper (PMapper), at Black
-Hat USA Arsenal and DEF CON 29 Demo Labs.
+instancesof Salesforce. 
+In August 2021, Tim Rawlins discussed the technical 
+debt incurred by a rapid shift to cloud to support 
+remote working during the COVID\-19 pandemic 
+with Communications of the ACM. 
+In August 2021,Erik Steringer presented his open 
+source tool, Principal Mapper (PMapper), at Black 
+Hat USA Arsenal and DEF CON 29 Demo Labs. 
 Principal Mapper is a script and library for identifying 
 risks in the configuration of AWS Identity and Access 
-Management (IAM) for an AWS account or an
-AWS organization. It models the different IAM Users
+Management (IAM) for an AWS account or an 
+AWS organization. It models the different IAM Users 
 and Roles in an account as a directed graph, which 
 enables checks for privilege escalation and for alternate 
 paths an attacker could take to gain access to a 
-resource or action in AWS.Automating AWS Privilege Escalation Risk Detection 
+resource or action in AWS.In September 2021, Erik Steringer presented 
+Automating AWS Privilege Escalation Risk Detection 
 With Principal Mapper at fwd:cloudsec at the Marriott 
 City Center in Salt Lake City, in which he discussed 
 how to use his open source tool, Principal Mapper 
@@ -1543,7 +2037,8 @@ how to use his open source tool, Principal Mapper
 Authorization Risks, as well as how to extend it to 
 automate finding risks (continuous monitoring) and test 
 for resource isolation. The video of this presentation is 
-available here.In September 2021, Dirk\-Jan Mollema presented 
+available here. 
+In September 2021, Dirk\-Jan Mollema presented 
 Breaking Azure AD joined endpoints in zero\-trust 
 environments at RomHack 2021\. In this presentation, 
 he asked, how much trust is zero trust anyway? 
@@ -1560,19 +2055,25 @@ year of research to break a number of security
 controls pertaining to Azure AD device security, and 
 demonstrated in his presentation both how this can be 
 done, as well as what the consequences are of those 
-attacks. The video for this presentation is available here.272021 NCC Group Annual Research ReportRIFT, Threat Intelligence, CIRT \& HoneypotsNCC Groups Research \& Intelligence Fusion Team
+attacks. The video for this presentation is available here.
+2021 NCC Group Annual Research Report
+28
+RIFT, Threat Intelligence, CIRT \& Honeypots
+NCC Groups Research \& Intelligence Fusion Team 
 (RIFT) leverages our strategic analysis, data science, and 
 threat hunting capabilities to create actionable threat 
 intelligence, ranging from indicators of compromise and 
 detection capabilities to strategic reports on tomorrows 
 threat landscape. To ensure that our managed services 
 remain effective against the latest threats, NCC Group 
-operates a Global Fusion Center \- a multidisciplinary
-team that converts our cyber threat intelligence into
-powerful detection strategies. The work described in
-this section includes the work of RIFT, as well as
-complementary research and insights from NCC
-Groups Global Incident ResponseCIRT teams.In January 2021, Ollie Whitehouse wanted to build amechanism to capture all the passwords used (successful 
+operates a Global Fusion Center \- a multidisciplinary 
+team that converts our cyber threat intelligence into 
+powerful detection strategies. The work described in 
+this section includes the work of RIFT, as well as 
+complementary research and insights from NCC 
+Groups Global Incident ResponseCIRT teams.
+In January 2021, Ollie Whitehouse wanted to build a 
+mechanism to capture all the passwords used (successful 
 or not) against RDP in order to provide blue teams with 
 a source of high\-signal intelligence around potential 
 credential compromises. His blog post, Building an RDP 
@@ -1593,21 +2094,20 @@ Cracking RDP NLA Supplied Credentials for Threat
 Intelligence. In that second post, they discuss their work 
 in capturing and cracking the hashed passwords being 
 sent over NLA connections to ascertain those supplied by 
-threat actors, and release the associated source code.intelligence, and historic datathat can be used to hunt 
+threat actors, and release the associated source code. 
+In January 2021, Wouter Jansen published Abusing 
+cloud services to fly under the radar, to provide the 
+wider defensive infosec community with information, 
+intelligence, and historic datathat can be used to hunt 
 for the threat actor threat in historic data and improve 
 detections for intrusions by this intrusion set. The APT 
 group, known as Chimera, has been best known for 
 abusing cloud services from Google and Microsoft to 
 seek everything from intellectual property (IP) from victims 
 in the semiconductor industry, through to data from the 
-airline industry.was that by releasing these statistics, RIFT could help to 
-highlight the risk to enterprises around outdated versions 
-of Pulse Connect Secure, which are being actively 
-exploited by state\-level threat actors. This message 
-further amplifies the concerns shared in this joint advisory 
-from CISA, the NSA, and the FBI from April 15th, which 
-discussed CVE\-2019\-11510, in addition to subsequently\-
-disclosed vulnerabilities including CVE\-2021\-22893\.On January 23rd 2021, NCC Groups Research andIn April 2021, Michael Gough presented IncidentIntelligence Fusion Team (RIFT) published a blog post 
+airline industry. 
+On January 23rd 2021, NCC Groups Research and 
+Intelligence Fusion Team (RIFT) published a blog post 
 titled Analysing a Lazarus Shellcode Execution Method. 
 This post begins with a discussion of techniques used 
 by Lazarus Group used to execute shellcode from 
@@ -1625,18 +2125,34 @@ used to execute shellcode from VBA without the use
 of common suspicious APIs, whereby they abuse 
 (otherwise\-presumed) benign features of the Windows 
 API to achieve code execution. This work was covered by 
-Hacki9\.In March 2021, Rich Warren and Sander Laarhovenpublished a blog post titled RIFT: Detection capabilities 
+Hacki9\. 
+In March 2021, Rich Warren and Sander Laarhoven 
+published a blog post titled RIFT: Detection capabilities 
 for recent F5 BIG\-IPBIG\-IQ iControl REST API 
 vulnerabilities CVE\-2021\-22986\. In this post, they discuss 
 the wild exploitation attempts and detection logic for the 
 F5 BIG\-IPBIG\-IQ iControl REST API vulnerabilities CVE\-
-2021\-22986\.Response Fails What we see with our clients, and their 
+2021\-22986\.
+On April 23rd 2021, our Research and Intelligence Fusion 
+Team (RIFT) published some statistics around deployment 
+of Pulse Connect Secure versions in the wild. The hope 
+was that by releasing these statistics, RIFT could help to 
+highlight the risk to enterprises around outdated versions 
+of Pulse Connect Secure, which are being actively 
+exploited by state\-level threat actors. This message 
+further amplifies the concerns shared in this joint advisory 
+from CISA, the NSA, and the FBI from April 15th, which 
+discussed CVE\-2019\-11510, in addition to subsequently\-
+disclosed vulnerabilities including CVE\-2021\-22893\. 
+In April 2021, Michael Gough presented Incident 
+Response Fails What we see with our clients, and their 
 fails, preparation will save you a ton of $$$, heartache, 
 maybe your sanity and job, and Aaron Crawford 
 presented, Exploring the Hacker Mentality for Positive 
 Solutions, both at BSides Oklahoma. In June 2021, 
 Michael Gough also presented his Incident Response 
-Fails talk at BSides SATX.In May 2021, our Research and Intelligence Fusion Team 
+Fails talk at BSides SATX.
+In May 2021, our Research and Intelligence Fusion Team 
 (including fumik0\_) published RM3 Curiosities of the 
 wildest banking malware \- a blog post resulting from 
 over 2 years of their work tracking the Gozi malware 
@@ -1646,7 +2162,8 @@ of banking malware targeting Oceania, the UK, Germany
 and Italy, giving an overview of Gozis origins and current 
 operations, and then offering a deep dive technical 
 analysis of the RM3 variant, which RIFT has observed to 
-have targeted at least 130 financial institutions.In May 2021, Aaron Greetham published Detecting 
+have targeted at least 130 financial institutions.
+In May 2021, Aaron Greetham published Detecting 
 Rclone An Effective Tool for Exfiltration. This post 
 discusses NCC Groups Cyber Incident Response 
 Teams (CIRT) experience responding to a large number 
@@ -1655,11 +2172,51 @@ is being used for data exfiltration by threat actors. In this
 post, he builds on the defensive and threat intelligence 
 work by others and provides additional methods of 
 detection, including Sigma rules to assist with hunting in 
-your own environment.In January 2021, Wouter Jansen published Abusing 
-cloud services to fly under the radar, to provide the 
-wider defensive infosec community with information,On April 23rd 2021, our Research and Intelligence Fusion 
-Team (RIFT) published some statistics around deployment 
-of Pulse Connect Secure versions in the wild. The hope282021 NCC Group Annual Research ReportNTLM Relay Attack. This post discussed the proof of 
+your own environment. 
+2021 NCC Group Annual Research Report
+29
+In June 2021, Michael Matthews and William Backhouse 
+published a blog post, Handy guide to a new Fivehands 
+ransomware variant, describing their observation of a 
+new variant of the FiveHands ransomware, deployed 
+by a threat actor matching several characteristics 
+shown through the campaign which suggested a link 
+to UNC2447\. This blog post aims to help defenders 
+through offering a description of the developments in the 
+ransomware variant as well as the techniques and attack 
+toolkit used by the ransomware operator. This research 
+was covered by ITPro Today and ThisWeekin4n6\.
+In July 2021, Michael Gough published a blog 
+post titled Detecting and Hunting for the Malicious 
+NetFilter Driver. This work discussed recent allegations 
+by security researchers from G Data that a driver for 
+Microsoft Windows named netfilter.sys had a backdoor 
+added by a 3rd party that was subsequently signed by 
+Microsoft as a part of the Microsoft OEM program. 
+This post offered details (including IoCs) about the 
+malicious driver, the attack, and the post\-exploitation 
+process to help defenders with threat hunting 
+and detection. It was covered by ThisWeekIn4n6\. 
+In August 2021, Sanne Maasakkers presented Phish like 
+an APT: Phenomenal pretexting for persuasive phishing 
+at the DEF CON Adversary Village and later in the year, 
+at Ekoparty. In this talk, Sanne presented an analysis 
+of hundreds of phishing emails that were used in real 
+campaigns. All characteristics of an email, like the method 
+of influence, tone of speech and used technologies are 
+classified. By comparing and measuring the state of these 
+phishing emails, she shared how we can learn more about 
+how certain groups operate, and critically, how real\-world 
+APT phishing strategies differ from red team exercises. 
+You can watch a recording of her DEF CON version of 
+the presentation here.
+In August 2021, Michael Gough wrote a blog post 
+on the importance of disabling office macros, where 
+he offers methods for detection and prevention of 
+malicious macros.
+In September 2021, Michael Gough published a blog 
+post titled Detecting and Hunting for the PetitPotam 
+NTLM Relay Attack. This post discussed the proof of 
 concept tool named PetitPotam released by security 
 researchers a few weeks earlier, which exploits a flaw in 
 Microsoft Windows Active Directory Certificate Servers 
@@ -1668,7 +2225,9 @@ to gain administrative privileges of an Active Directory
 Certificate Server once on the network with another 
 exploit or malware infecting a system. This post provided 
 details to assist organizations in detecting and threat 
-hunting for this and other similar types of threats.In October 2021, the Research and Intelligence FusionTeam published SnapMC skips ransomware, steals data, 
+hunting for this and other similar types of threats.
+In October 2021, the Research and Intelligence Fusion 
+Team published SnapMC skips ransomware, steals data, 
 which discussed NCC Groups observation in late 2021 
 of an increase in so\-called data breach extortion cases, 
 whereby an attacker steals data and threatens to publish 
@@ -1680,48 +2239,58 @@ the speed of the actors attacks, which are generally
 completed in under 30 minutes, as well as the exfiltration 
 tool mc.exe it uses. This adversary has not yet been linked 
 to any known threat actors. This post details both the 
-psychological tactics used on victims of SnapMC,
-as well as techniques used and potential mitigations.In October 2021, Michael Gough published Detectingand Protecting when Remote Desktop Protocol (RDP) is 
+psychological tactics used on victims of SnapMC, 
+as well as techniques used and potential mitigations. 
+In October 2021, Michael Gough published Detecting 
+and Protecting when Remote Desktop Protocol (RDP) is 
 open to the Internet, in which he explains the dangers of 
 exposing RDP to the internet (including that 42 percent 
 of ransomware cases in Q2 2021 leveraged RDP 
 compromise as an attack vector), and provides details 
 to assist organizations in detecting, threat hunting, and 
-reducing malicious RDP attempts.In June 2021, Michael Matthews and William Backhouse 
-published a blog post, Handy guide to a new Fivehands 
-ransomware variant, describing their observation of a 
-new variant of the FiveHands ransomware, deployed 
-by a threat actor matching several characteristics 
-shown through the campaign which suggested a link 
-to UNC2447\. This blog post aims to help defenders 
-through offering a description of the developments in the 
-ransomware variant as well as the techniques and attack 
-toolkit used by the ransomware operator. This research 
-was covered by ITPro Today and ThisWeekin4n6\.In July 2021, Michael Gough published a blogpost titled Detecting and Hunting for the Malicious
-NetFilter Driver. This work discussed recent allegations
-by security researchers from G Data that a driver for 
-Microsoft Windows named netfilter.sys had a backdoor 
-added by a 3rd party that was subsequently signed by 
-Microsoft as a part of the Microsoft OEM program.
-This post offered details (including IoCs) about the
-malicious driver, the attack, and the post\-exploitation 
-process to help defenders with threat hunting
-and detection. It was covered by ThisWeekIn4n6\.In August 2021, Sanne Maasakkers presented Phish like 
-an APT: Phenomenal pretexting for persuasive phishing 
-at the DEF CON Adversary Village and later in the year, 
-at Ekoparty. In this talk, Sanne presented an analysis 
-of hundreds of phishing emails that were used in real 
-campaigns. All characteristics of an email, like the method 
-of influence, tone of speech and used technologies are 
-classified. By comparing and measuring the state of these 
-phishing emails, she shared how we can learn more about 
-how certain groups operate, and critically, how real\-world 
-APT phishing strategies differ from red team exercises.
-You can watch a recording of her DEF CON version of
-the presentation here.In August 2021, Michael Gough wrote a blog poston the importance of disabling office macros, where
-he offers methods for detection and prevention of
-malicious macros.In September 2021, Michael Gough published a blog
-post titled Detecting and Hunting for the PetitPotam292021 NCC Group Annual Research ReportForensics Conference. In this talk Michael discussed 
+reducing malicious RDP attempts.2021 NCC Group Annual Research Report
+30
+In November 2021, RIFT published TA505 exploits 
+SolarWinds Serv\-U vulnerability (CVE\-2021\-35211\) for 
+initial access, in which they discuss how an observed 
+increase in Clop ransomware victims enabled them to 
+trace the surge back to a vulnerability in SolarWinds 
+Serv\-U that is being abused by the TA505 threat actor, 
+known for extortion attacks using the Clop ransomware. 
+RIFT believes that exploiting such vulnerabilities is a 
+recent initial access technique for TA505, deviating from 
+the actors usual phishing\-based approach, and published 
+this information both as a call to action for organisations 
+using SolarWinds Serv\-U software, as well as to 
+inform incident responders currently dealing with 
+Clop ransomware. 
+In November 2021, Pepijn Hack \& Zong\-Yu Wu 
+presented We Wait, Because We Know You \- Inside 
+the Ransomware Negotiation Economics at Black Hat 
+Europe 2021\. This session explored three main topics. 
+First, can we explain how adversaries use economic 
+models to maximize their profits? Second, what does 
+this tell us about the position of the victim during the 
+negotiation phase? And third, what strategies can 
+ransomware victims leverage to even the playing field? 
+To answer these questions, the researchers analyzed over 
+seven hundred attacker\-victim negotiations between 2019 
+and 2020\. Also at BHEU, Pepjin Hack (NCC Group), 
+Kelly Jackson Higgins (Dark Reading), \& Rik Turner 
+(Omdia) hosted a panel titled Ransomware as the New 
+Normal, in which they discuss why ransomware actors are 
+hard to stop, and what organizations can do to improve 
+their defenses against these debilitating attacks. Later 
+that month, they published, We wait, because we know 
+you. Inside the ransomware negotiation economics, 
+which complemented their BHEU presentation, covering 
+both the economics of ransomware attacks, as well as 
+negotiation strategies to use with threat actors when a 
+ransom is being demanded.
+In December 2021, Michael Gough presented a talk 
+titled ARTHIR: ATT\&CK Remote Threat Hunting Incident 
+Response Windows Tool at the Open Source Digital 
+Forensics Conference. In this talk Michael discussed 
 ArTHIR, a modular framework that can be used remotely 
 against one, or many target systems to perform threat 
 hunting, incident response, compromise assessments, 
@@ -1729,7 +2298,8 @@ configuration, containment, and any other activities one
 can conjure up utilizing built\-in PowerShell (any version) 
 and Windows Remote Management (WinRM), and 
 enables you to map your threat hunting and incident 
-response modules to the MITRE ATT\&CK Framework.In December 2021, RIFT continued their exposition 
+response modules to the MITRE ATT\&CK Framework.
+In December 2021, RIFT continued their exposition 
 on threat actor TA505 in the blog post, Tracking a 
 P2P network related to TA505, written by Nikolaos 
 Pantazopoulos and Michael Sandee. As outlined in 
@@ -1750,41 +2320,11 @@ is a connection to the developer(s) of Grace and the
 identified binaries. In this post, they offered a history of 
 TA505 beginning as early as 2014, and offered technical 
 analysis of the downloader, signed driver, and node tool 
-aspects of the execution chain.In November 2021, RIFT published TA505 exploitsSolarWinds Serv\-U vulnerability (CVE\-2021\-35211\) for 
-initial access, in which they discuss how an observed 
-increase in Clop ransomware victims enabled them to 
-trace the surge back to a vulnerability in SolarWinds 
-Serv\-U that is being abused by the TA505 threat actor, 
-known for extortion attacks using the Clop ransomware. 
-RIFT believes that exploiting such vulnerabilities is a 
-recent initial access technique for TA505, deviating from 
-the actors usual phishing\-based approach, and published 
-this information both as a call to action for organisations 
-using SolarWinds Serv\-U software, as well as to
-inform incident responders currently dealing with
-Clop ransomware.In November 2021, Pepijn Hack \& Zong\-Yu Wupresented We Wait, Because We Know You \- Inside
-the Ransomware Negotiation Economics at Black Hat
-Europe 2021\. This session explored three main topics.
-First, can we explain how adversaries use economic 
-models to maximize their profits? Second, what does 
-this tell us about the position of the victim during the 
-negotiation phase? And third, what strategies can 
-ransomware victims leverage to even the playing field?
-To answer these questions, the researchers analyzed over 
-seven hundred attacker\-victim negotiations between 2019 
-and 2020\. Also at BHEU, Pepjin Hack (NCC Group), 
-Kelly Jackson Higgins (Dark Reading), \& Rik Turner 
-(Omdia) hosted a panel titled Ransomware as the New 
-Normal, in which they discuss why ransomware actors are 
-hard to stop, and what organizations can do to improve 
-their defenses against these debilitating attacks. Later 
-that month, they published, We wait, because we know 
-you. Inside the ransomware negotiation economics, 
-which complemented their BHEU presentation, covering 
-both the economics of ransomware attacks, as well as 
-negotiation strategies to use with threat actors when a 
-ransom is being demanded.In December 2021, Michael Gough presented a talktitled ARTHIR: ATT\&CK Remote Threat Hunting Incident 
-Response Windows Tool at the Open Source Digital302021 NCC Group Annual Research ReportManaged Detection \& Response (MDR)In January 2021, Liam Stevenson published Using AWS 
+aspects of the execution chain.
+2021 NCC Group Annual Research Report
+31
+Managed Detection \& Response (MDR)
+In January 2021, Liam Stevenson published Using AWS 
 and Azure for Cost Effective Log Ingestion with Data 
 Processing Pipelines for SIEMs. In this post, he showed 
 how to use smart log ingestion via data pre\-processing 
@@ -1792,7 +2332,8 @@ pipelines and modern cloud services to enable SOCs to
 only store what they really need, ultimately enabling SOCs 
 to reduce data volumes to the SIEM (and associated cost) 
 without losing the residual value and accessibility of the 
-underlying data.In March 2021, Group CTO Ollie Whitehouse published 
+underlying data.
+In March 2021, Group CTO Ollie Whitehouse published 
 a two\-part series on Deception Engineering. In part 1, 
 Deception Engineering: exploring the use of Windows 
 Service Canaries against ransomware, in which he 
@@ -1820,8 +2361,10 @@ are uninstalled as a part of infection, there exists the
 opportunity for detection of malicious actors with a very 
 high signal. To do this, we can deploy a number of Canary 
 Windows Installation Packages with various names that 
-are likely to be targeted. If these packages are uninstalledwe can use custom actions to fire a canary token to 
-provide the alert.In June 2021, the NCC Group \& Fox\-IT Data Science 
+are likely to be targeted. If these packages are uninstalled 
+we can use custom actions to fire a canary token to 
+provide the alert.
+In June 2021, the NCC Group \& Fox\-IT Data Science 
 Team published Incremental Machine Learning by 
 Example: Detecting Suspicious Activity with Zeek Data 
 Streams, River, and JA3 Hashes. This post, which 
@@ -1831,9 +2374,13 @@ example involving JA3 hashes showing how some of the
 foundational algorithms that enable incremental learning 
 techniques can be applied to novelty detection (the first 
 time something has happened) and outlier detection (rare 
-events) on data streams derived from Zeek.In September 2021, Peter Scopes blogged aboutCertPortal which allows users to create and manage S
+events) on data streams derived from Zeek.
+In September 2021, Peter Scopes blogged about 
+CertPortal which allows users to create and manage S
 MIME certificates, automating certificate registration and 
-renewal to allow enterprise scale deployment.In October 2021, Philipp Schaefer published a blogpost describing some of NCC Groups new Managed 
+renewal to allow enterprise scale deployment.
+In October 2021, Philipp Schaefer published a blog 
+post describing some of NCC Groups new Managed 
 Detection and Response services in Azure, titled 
 Enterprise\-scale seamless onboarding and deployment 
 of Azure Sentinel using Lighthouse for multi\-tenant 
@@ -1843,20 +2390,23 @@ the automated processes involved in setting up new Azure
 Sentinel environments and managing custom analytics 
 for each customer, including details about our scripting 
 and automated build and release pipelines, which are 
-deployed as infrastructure\-as\-code.In November 2021, Ben Lister and Kane Ryans published 
+deployed as infrastructure\-as\-code. 
+In November 2021, Ben Lister and Kane Ryans published 
 Detection Engineering for Kubernetes clusters. This blog 
 post detailed the collaboration between NCC Groups 
 Detection Engineering team and Containerization \& 
 Orchestration practice in tackling detection engineering 
 for Kubernetes, including both a description of the 
-detection engineering teams more generic methodologyaround detection engineering for newemerging 
+detection engineering teams more generic methodology 
+around detection engineering for newemerging 
 technologies and how it was used when developing 
 detections for Kubernetes\-based attacks, as well as 
 detailing the novel detection rules they have created 
 around how privilege escalation is achieved within a 
 Kubernetes cluster, to better enable security operations 
 teams to monitor security\-related events on Kubernetes 
-clusters and thus to help defend them in real\-world use.In December 2021, Margit Hazenbroek published 
+clusters and thus to help defend them in real\-world use.
+In December 2021, Margit Hazenbroek published 
 Encryption Does Not Equal Invisibility Detecting 
 Anomalous TLS Certificates with the Half\-Space\-Trees 
 Algorithm. This blog post outlined an approach to 
@@ -1866,24 +2416,25 @@ the Half\-Space\-Trees algorithm and provides NCC
 Groups Managed Detection and Response Security 
 Operations Center (SOC) with the opportunity to detect 
 suspicious behavior, in real\-time, even when network 
-traffic is encrypted.312021 NCC Group Annual Research Report31955 information disclosure, enabling better exploit 
-primitives through PreviousMode, and some thoughts 
-on detection.In November 2021, Alex Plaskett presented Pwning theWindows 10 Kernel with NTFS and WNF at POC (Power 
-of Community) 2021, based on his earlier blog posts. His 
-slides for that presentation are available here.Exploit Development GroupNCC Groups Exploit Development Group (EDG) is a 
+traffic is encrypted.
+32
+2021 NCC Group Annual Research Report
+Exploit Development Group
+NCC Groups Exploit Development Group (EDG) is a 
 small team of full\-time exploit developers who write custom 
 exploits exclusively for the purpose of helping our clients 
 test their own infrastructure and systems against real\-world 
 attacks of contemporary vulnerabilities and exploits in the 
-wild, to better understand their risk and resilience.
+wild, to better understand their risk and resilience. 
 This team reports directly into Group CTO, Ollie 
 Whitehouse. Sometimes, this team presents some of their 
 research externally, and occasionally will speak publicly 
-about consensual, proof\-of\-concept exploitation
-of vulnerabilities on our clients infrastructure, such as in
-our previous discussion of how in 2017, we unleashed
-our version of NotPetya on global commodities trading
-firm, Trafigura.In March 2021, Cedric Halbronn published Wubes: 
+about consensual, proof\-of\-concept exploitation 
+of vulnerabilities on our clients infrastructure, such as in 
+our previous discussion of how in 2017, we unleashed 
+our version of NotPetya on global commodities trading 
+firm, Trafigura.
+In March 2021, Cedric Halbronn published Wubes: 
 Leveraging the Windows 10 Sandbox for Arbitrary 
 Processes. Through this post, he released his new 
 Wubes, which offers Qubes\-like containerization but for 
@@ -1896,12 +2447,20 @@ creating Wubes was that if you browse a malicious site
 using Wubes, it wont be able to infect your Windows 
 host without additional chained exploits. Specifically, this 
 means attackers need 1, 2, 3 and 4 below instead of just 
-1 and 2 in the case of Firefox:1\.Browser remote code execution (RCE) exploit2\.Local privilege exploit (LPE)3\.Bypass of Code Integrity (CI)4\.HyperV (HV) elevation of privilege (EoP)In June 2021, Cedric Halbronn published Exploitmitigations: Keeping up with evolving and complex 
+1 and 2 in the case of Firefox:
+1\. Browser remote code execution (RCE) exploit
+1\. Local privilege exploit (LPE)
+1\. Bypass of Code Integrity (CI)
+1\. HyperV (HV) elevation of privilege (EoP)
+In June 2021, Cedric Halbronn published Exploit 
+mitigations: Keeping up with evolving and complex 
 softwarehardware, a knowledge base of exploit 
-mitigations available across numerous operating systems(Windows, Linux, Android, iOS, OpenBSD, FreeBSD), 
+mitigations available across numerous operating systems 
+(Windows, Linux, Android, iOS, OpenBSD, FreeBSD), 
 architectures (ARM) and applications and versions, 
 including the glibc library, Mozilla Firefox, Microsoft Edge, 
-Google Chrome, and Microsoft Office.In June 2021, Cedric Halbronn published Exploiting the 
+Google Chrome, and Microsoft Office. 
+In June 2021, Cedric Halbronn published Exploiting the 
 Sudo Baron Samedit vulnerability (CVE\-2021\-3156\) 
 on VMWare vCenter Server 7\.0\. This post detailed the 
 technique of abusing defaults structures to exploit 
@@ -1913,7 +2472,8 @@ new version of the libptmalloc tool, which is heap analysis
 tooling for ptmalloc (pthreads malloc), and is interesting 
 to those seeking to exploit glibc. In this post he also 
 made public an updated version of the exploit that is more 
-robust and works on vCenter Server.Beginning in July 2021, Alex Plaskett published a series of 
+robust and works on vCenter Server.
+Beginning in July 2021, Alex Plaskett published a series of 
 blog posts on CVE\-2021\-31956, Exploiting the Windows 
 Kernel (NTFS with WNF). These posts looked at CVE\-
 2021\-31956 (NTFS Paged Pool Memory corruption), a 
@@ -1932,18 +2492,36 @@ The second blog post in the series, CVE\-2021\-31956
 Exploiting the Windows Kernel (NTFS with WNF) 
 Part 2, described improvements which can be made to 
 an exploit to enhance reliability, stability and clean\-up 
-afterwards, including exploitation without the CVE\-2021\-322021 NCC Group Annual Research ReportIn November 2021, NCC Groups Exploit DevelopmentGroup (Aaron Adams, Cedric Halbronn, and Alex 
+afterwards, including exploitation without the CVE\-2021\-
+31955 information disclosure, enabling better exploit 
+primitives through PreviousMode, and some thoughts 
+on detection.
+In November 2021, Alex Plaskett presented Pwning the 
+Windows 10 Kernel with NTFS and WNF at POC (Power 
+of Community) 2021, based on his earlier blog posts. His 
+slides for that presentation are available here. 
+33
+2021 NCC Group Annual Research Report
+In November 2021, NCC Groups Exploit Development 
+Group (Aaron Adams, Cedric Halbronn, and Alex 
 Plaskett) participated in Pwn2Own Austin 2021, where 
 they successfully exploited the Lexmark MC3224i printer 
 with a file write bug, as well as gaining code execution 
 on the Western Digital PR4100 NAS. This work was 
 supported by Catalin Visinescu to retrieve firmware from 
 one of the devices and Matt Lewis and Matt Trueman with 
-equipment procurement and logistics support.332021 NCC Group Annual Research ReportOther Research \& SpeakingIn January 2021, Manuel Gins Rodrguez \& DiegoGmez Maran published Technical Advisory Linksys 
+equipment procurement and logistics support.
+34
+2021 NCC Group Annual Research Report
+Other Research \& Speaking
+In January 2021, Manuel Gins Rodrguez \& Diego 
+Gmez Maran published Technical Advisory Linksys 
 WRT160NL Authenticated Command Injection (CVE\-
 2021\-25310\). Successful exploitation of this vulnerability 
 on the Linksys WRT160NL switch can lead to remote 
-code execution on the affected device.In February 2021, Manuel Gins Rodrguez publishedTechnical Advisory \- Administrative Passcode Recovery 
+code execution on the affected device. 
+In February 2021, Manuel Gins Rodrguez published 
+Technical Advisory \- Administrative Passcode Recovery 
 and Authenticated Remote Buffer Overflow Vulnerabilities 
 in Gigaset DX600A Handset (CVE\-2021\-25309, CVE\-
 2021\-25306\), where he shared that there were two 
@@ -1954,20 +2532,25 @@ authentication mechanism or compromise its availability
 through low traffic Denial of Service attacks, which could 
 result in as dramatic an impact as the attacker being 
 able to route the devices traffic through an attackers 
-controlled machine.In March 2021, Adam Roberts published a blog postdescribing SAML XML Injection. The blog post described 
+controlled machine.
+In March 2021, Adam Roberts published a blog post 
+describing SAML XML Injection. The blog post described 
 a novel class of vulnerability that was detected in several 
 SSO services assessed by NCC Group, specifically 
 affecting Security Assertion Markup Language (SAML) 
 implementations. The flaw could allow an attacker 
 to modify SAML responses generated by an Identity 
 Provider, and thereby gain unauthorized access to 
-arbitrary user accounts, or to escalate privileges within
-an application.In March 2021, Manuel Gins Rodrguez publishedadvisories, Technical Advisory Multiple Vulnerabilities 
+arbitrary user accounts, or to escalate privileges within 
+an application. 
+In March 2021, Manuel Gins Rodrguez published 
+advisories, Technical Advisory Multiple Vulnerabilities 
 in Netgear ProSAFE Plus JGS516PE GS116Ev2 
 Switches, for 15 vulnerabilities that he found in the 
 Netgear ProSAFE Plus JGS516PE GS116Ev2 switches, 
 the most critical of which could allow unauthenticated 
-users to gain arbitrary code execution.In March 2021, Richard Warren published a Technical 
+users to gain arbitrary code execution. 
+In March 2021, Richard Warren published a Technical 
 Advisory \- Dell SupportAssist Local Privilege Escalation 
 (CVE\-2021\-21518\) to disclose a vulnerability he 
 found that when running PC\-Doctor modules, the Dell 
@@ -1976,8 +2559,11 @@ world\-writable directory. Furthermore, it did not validate
 the signature of libraries loaded from this directory, 
 leading to a DLL Hijacking vulnerability, which would 
 allow a low privileged user to execute arbitrary code with 
-system privileges.In May 2021, Tanner Prynn discussed how usingUUIDs for authorization is dangerous, even if theyre 
-cryptographically random.In June 2021, Dirk\-jan Mollema presented Walking 
+system privileges. 
+In May 2021, Tanner Prynn discussed how using 
+UUIDs for authorization is dangerous, even if theyre 
+cryptographically random.
+In June 2021, Dirk\-jan Mollema presented Walking 
 Your Dog In Multiple Forests \- Breaking AD Trust 
 Boundaries Through Kerberos Vulnerabilities as a Black 
 Hat Webcast. This presentation began with Dirk\-Jan 
@@ -1988,35 +2574,47 @@ how AD forest trusts operate, which can be combined
 with a vulnerability in the Windows implementation of 
 Kerberos to take over systems in a different forest (from a 
 compromised trusted forest), demonstrated as a proof\-of\-
-concept as a part of the talk.In June 2021, aschmitz published Testing Two\-FactorAuthentication, in which they provided a whirlwind tour
-of common 2FA mechanisms, as well as detailed
-information on performing effective security testing
-against those systems.In July 2021, Liam Glanfield published Technical Advisory Sunhillo SureLine Unauthenticated OS Command 
+concept as a part of the talk. 
+In June 2021, aschmitz published Testing Two\-Factor 
+Authentication, in which they provided a whirlwind tour 
+of common 2FA mechanisms, as well as detailed 
+information on performing effective security testing 
+against those systems.
+In July 2021, Liam Glanfield published Technical Advisory 
+ Sunhillo SureLine Unauthenticated OS Command 
 Injection (CVE\-2021\-36380\), in which he shared his 
 discovery that the Sunhillo SureLine application contained 
 an unauthenticated operating system (OS) command 
 injection vulnerability that allowed an attacker to execute 
-arbitrary commands with root privileges.342021 NCC Group Annual Research ReportIn July 2021, Stephen Tomkinson published TechnicalAdvisory Arbitrary File Read in Dell Wyse Management 
+arbitrary commands with root privileges.
+35
+2021 NCC Group Annual Research Report
+In July 2021, Stephen Tomkinson published Technical 
+Advisory Arbitrary File Read in Dell Wyse Management 
 Suite (CVE\-2021\-21586, CVE\-2021\-21587\). This 
 disclosed his finding that an attacker with physical access 
 to Dells Wyse thin client and its network connection can 
 exploit a Arbitrary File Read vulnerability to gain access to 
-the management interface of the whole thin client estate.
+the management interface of the whole thin client estate. 
 The management interface includes features such as 
-resetting BIOS passwords and remotely shadowing
-terminal screens via VNC.In July 2021, Liew Hock Lai published Technical Advisory 
+resetting BIOS passwords and remotely shadowing 
+terminal screens via VNC. 
+In July 2021, Liew Hock Lai published Technical Advisory 
 \* Stored and Reflected XSS Vulnerability in Nagios Log 
-Server (CVE\-2021\-35478,CVE\-2021\-35479\), which
+Server (CVE\-2021\-35478,CVE\-2021\-35479\), which 
 could facilitate attackers in executing malicious JavaScript 
-on victim machines such as stealing cookies or
-redirecting users.In July 2021, Derek Stoeckenius published TechnicalAdvisory ICTFAX 7\-4 Indirect Object Reference, in 
+on victim machines such as stealing cookies or 
+redirecting users.
+In July 2021, Derek Stoeckenius published Technical 
+Advisory ICTFAX 7\-4 Indirect Object Reference, in 
 which he describes an IDOR vulnerability in the internet\-
 based fax program ICTFAX that can allow allows a user 
 of any privilege level to change the password of any other 
 user within the application including administrators, 
 enabling a low\-privilege user to access both administrative 
-functions and user data from arbitrary users within
-the application.On August 8 2021, Richard Warren published Technical 
+functions and user data from arbitrary users within 
+the application.
+On August 8 2021, Richard Warren published Technical 
 Advisory: Pulse Connect Secure RCE via Uncontrolled 
 Archive Extraction CVE\-2021\-22937 (Patch Bypass), 
 disclosing his finding that the Pulse Connect Secure VPN 
@@ -2027,30 +2625,39 @@ is a bypass of the patch for CVE\-2020\-8260\. This was
 covered in a variety of media outlets including The Hacker 
 News, SecurityWeek, VM Virtual Machine, Security 
 Affairs, TechNadu, TimesNewsExpress, Hackaday, and 
-others.In the summer of 2021, NCC Group researchers gave 10 
+others. 
+In the summer of 2021, NCC Group researchers gave 10 
 technical presentations at Black Hat USA, and 7 technical 
 presentations at DEF CON 29\. This included 2 Black 
-Hat Briefings, 2 Black Hat Arsenal tools, and 6 BlackHat Training sessions, as well as 2 main track DEF CON 
+Hat Briefings, 2 Black Hat Arsenal tools, and 6 Black 
+Hat Training sessions, as well as 2 main track DEF CON 
 talks, 3 DEF CON Demo Labs presentations, and 2 DEF 
 CON Village talks. Many of those have been discussed 
 elsewhere in this report, but the remaining ones will be 
-outlined here.Among those presentations was a Black Hat USA Trainingtitled Bad Active Directory (BAD) created by Dhruv 
-Verma, Michael Roberts, and Xiang Wen Kuan. BAD
-is a beginner\-to\-intermediate level training for hacking
-Windows Active Directory.On August 12th 2021, Richard Warren observed
+outlined here. 
+Among those presentations was a Black Hat USA Training 
+titled Bad Active Directory (BAD) created by Dhruv 
+Verma, Michael Roberts, and Xiang Wen Kuan. BAD 
+is a beginner\-to\-intermediate level training for hacking 
+Windows Active Directory.
+On August 12th 2021, Richard Warren observed 
 threat actors active attempts to exploit Exchange 
 ProxyShell vulnerabilities, which was picked 
 up by thehackernews, Bleeping Computer, 
 NationalCybersecurity, Theultramods, Archyde, 
-Threatpost, and Redmond Magazine.In September 2021, Richard Warren released Yararules that detect a remote code execution vulnerability 
+Threatpost, and Redmond Magazine.
+In September 2021, Richard Warren released Yara 
+rules that detect a remote code execution vulnerability 
 in MSHTML (CVE\-2021\-40444\), which depends 
 upon carefully\-crafted Microsoft Office documents as 
 an exploitation vector. It was covered in the media by 
 Hurricane Labs Blog and Security Boulevard. Richard 
 also developed a technique for exploiting CVE\-
 2021\-40444, which he demoed on Twitter and was 
-subsequently written about 
-on Decipher.In September 2021, Ian Robertson \& Javed Samuelpresented Castles Built on Sand \- a pen\-testers view 
+subsequently written about
+on Decipher. 
+In September 2021, Ian Robertson \& Javed Samuel 
+presented Castles Built on Sand \- a pen\-testers view 
 on integrations at CornCon. This talk reviewed the 
 foundations of cryptographic vulnerabilities as applicable 
 to open\-source software from a penetration testers 
@@ -2060,11 +2667,16 @@ of these cryptographic vulnerabilities, and what the
 consequences were. The talk also examines ways that 
 open\-source software has been updated over time to 
 mitigate these cryptography flaws and how successful 
-these mitigations may have been.In September 2021, Jesus Olmos published Technical 
+these mitigations may have been. 
+In September 2021, Jesus Olmos published Technical 
 Advisory Garuda Linux Insecure User Creation (CVE\-
-2021\-3784\), on a vulnerability he uncovered in Garuda352021 NCC Group Annual Research ReportLinux that would allow local attacker to impersonate a user 
+2021\-3784\), on a vulnerability he uncovered in Garuda 
+2021 NCC Group Annual Research Report
+36
+Linux that would allow local attacker to impersonate a user 
 account while it is being created, installing a backdoor to 
-access that user account at any moment in the future.In September 2021, Liyun Li published Technical Advisory \- 
+access that user account at any moment in the future. 
+In September 2021, Liyun Li published Technical Advisory \- 
 PDFTron JavaScript URLs Allowed in WebViewer UI (CVE\-
 2021\-39307\), where he shared his finding that the PDFTron 
 WebViewer renders dangerous URLs as hyperlinks in 
@@ -2072,48 +2684,67 @@ supported documents, including JavaScript URLs, allowing the
 execution of arbitrary JavaScript code, which could be used 
 to steal a victims session tokens, log their keystrokes, steal 
 private data, or perform privileged actions in the context of a 
-victims session.In September 2021, Duane Reeves presented Telephony: The 
-Forgotten Network Threat at GSX: Global Security Exchange.In October 2021, Jelle Vergeer published Reverse engineeringand decrypting CyberArk vault credential files, discussing 
+victims session.
+In September 2021, Duane Reeves presented Telephony: The 
+Forgotten Network Threat at GSX: Global Security Exchange. 
+In October 2021, Jelle Vergeer published Reverse engineering 
+and decrypting CyberArk vault credential files, discussing 
 his discovery that it was possible to reverse engineer the 
 encryption and key generation algorithms and decrypt the 
-encrypted vault password for CyberArkss vault encryption.In October 2021, Balaz Bucsay published Technical Advisory NULL Pointer Derefence in McAfee Drive Encryption
-(CVE\-2021\-23893\), which demonstrated a privilege
-escalation vulnerability in a Windows system driver for 
-McAfee Drive EncryptionIn October 2021, Nicolas Guigo published A Look At
-Some Real\-World Obfuscation Techniques, whereby
-he shared tools and methods for reversing real\-world
-binary obfuscation.In the Fall of 2021, Damon Small presented Beyond theScan: The Value Proposition of Vulnerability Assessment at 
+encrypted vault password for CyberArkss vault encryption. 
+In October 2021, Balaz Bucsay published Technical Advisory 
+NULL Pointer Derefence in McAfee Drive Encryption 
+(CVE\-2021\-23893\), which demonstrated a privilege 
+escalation vulnerability in a Windows system driver for
+McAfee Drive Encryption 
+In October 2021, Nicolas Guigo published A Look At 
+Some Real\-World Obfuscation Techniques, whereby 
+he shared tools and methods for reversing real\-world 
+binary obfuscation. 
+In the Fall of 2021, Damon Small presented Beyond the 
+Scan: The Value Proposition of Vulnerability Assessment at 
 UTINFOSEC. This talk explored how vulnerability assessment 
 can be leveraged beyond the scan to provide tangible value 
-to not only the security team, but to the entire business that
-it supports.Throughout 2021, Sourya Biswas presented Security from 
+to not only the security team, but to the entire business that 
+it supports. 
+Throughout 2021, Sourya Biswas presented Security from 
 Scratch: Reminiscing Being the 2nd Security Employee at a 
 Startup at both InfoSec World and BSides Oklahoma. He 
 also presented Cybersecurity is War: Lessons from Historical 
 Conflicts at Secure360, and Psychology of the Phish: 
-Leveraging the Seven Principles of Influence at both ISACAConference North America as well as at the Great Lakes 
-Security Conference.In October 2021, Richard Warren published Technical 
+Leveraging the Seven Principles of Influence at both ISACA 
+Conference North America as well as at the Great Lakes 
+Security Conference. 
+In October 2021, Richard Warren published Technical 
 Advisory Apple XAR Arbitrary File Write (CVE\-2021\-
 30833\), which disclosed a new bug in MacOS that would 
 allow an attacker to create a malicious .xar file, which when 
 extracted by the user would result in files being written to a 
 location of the attackers choosing, which could be abused 
 to gain Remote Code Execution. It was covered by The Mac 
-Observer.In November 2021, Tennisha Martin gave a keynote titledThe Hackers Guide to Mentorship: Fostering the Diverse 
-Workforce of the Future at SANS Pentest HackFest.In November 2021, Nicolas Bidron found 3 new vulnerabilities 
+Observer.
+In November 2021, Tennisha Martin gave a keynote titled 
+The Hackers Guide to Mentorship: Fostering the Diverse 
+Workforce of the Future at SANS Pentest HackFest.
+In November 2021, Nicolas Bidron found 3 new vulnerabilities 
 in Victure WR1200 WiFi router, one of which resulted in OS 
 command injection, published in Technical Advisory Multiple 
 Vulnerabilities in Victure WR1200 WiFi Router (CVE\-2021\-
-43282, CVE\-2021\-43283, CVE\-2021\-43284\).In December 2021, Anthony Ferrillo published TechnicalAdvisory Authenticated SQL Injection in SOAP Request in 
+43282, CVE\-2021\-43283, CVE\-2021\-43284\). 
+In December 2021, Anthony Ferrillo published Technical 
+Advisory Authenticated SQL Injection in SOAP Request in 
 Broadcom CA Network Flow Analysis (CVE\-2021\-44050\), 
 disclosing a vulnerability which would allow an authenticated 
 user to inject SQL into a SOAP request leading to enumeration 
-of the back end database of the Network Flow Analysis
-web application.In December 2021, Rick Veldhoven published TechnicalAdvisory Lenovo ImController Local Privilege Escalation 
+of the back end database of the Network Flow Analysis 
+web application. 
+In December 2021, Rick Veldhoven published Technical 
+Advisory Lenovo ImController Local Privilege Escalation 
 (CVE\-2021\-3922, CVE\-2021\-3969\). Among the vulnerabilities 
 found was a bug that could allow an attacker to elevate their 
 privileges to that of the system user from a user that is able to 
-write files to the filesystem.In early December, Richard Warren published 6 Technical 
+write files to the filesystem.
+In early December, Richard Warren published 6 Technical 
 Advisories for the SonicWall SMA 100 Series applications, 
 including Unauthenticated Arbitrary File Deletion, 
 Unauthenticated Stored XSS, Multiple Unauthenticated Heap\-
@@ -2121,7 +2752,12 @@ based and Stack\-based Buffer Overflows (CVE\-2021\-20045\),
 Post\-Authentication Remote Command Execution (CVE\-2021\-
 20044\), Heap\-Based Buffer Overflow (CVE\-2021\-20043\), 
 and Unauthenticated File Upload Path Traversal (CVE\-2021\-
-20040\).362021 NCC Group Annual Research Report2021 NCC Group Annual Research ReportAcknowledgementsResearch is an intrinsic part of many of our technical 
+20040\). 
+2021 NCC Group Annual Research Report
+2021 NCC Group Annual Research Report
+37
+Acknowledgements
+Research is an intrinsic part of many of our technical 
 security consultants daily lives, and almost all of the 
 research that you see in this report was delivered by dozens 
 of consultants from NCC Group offices around the world, 
@@ -2135,51 +2771,40 @@ can take part and grow as a researcher, and also because
 we are a lean team that accomplishes a tremendous amount 
 of meaningful things and wastes nothing.My first acknowledgement goes out to all of our consultants 
 who spent part of their time in the Research division this 
-year, without whose talent, curiosity, time, and courage
+year, without whose talent, curiosity, time, and courage 
 our research simply would not exist.I would also like to thank Aaron Haymore, our Research 
 Program Coordinator, for his contributions this year to our 
 research program, including help with countless coordinated 
 vulnerability disclosures, administrative and program 
-management support, his assistance in compiling some
-of this information for this report, and the joy he brings
+management support, his assistance in compiling some 
+of this information for this report, and the joy he brings 
 to everything we do.I am also grateful to our Research Working Group Leads 
 and RDs \- each a talented researcher and consultant in 
 their own right \- who generously share their time to mentor 
 others, lead technical discussions in our monthly research 
 working group meetings, and even inspire new projects. 
 These leaders include Daniel Romero, Jeff Dileo, Jeremy 
-Boone, Nick Dunn, Richard Appleby, Robert Seacord,
-Timur Duehr, Viktor Gazdag, and William Groesbeck.Finally, I would like to thank our US CTO, Dave Goldsmith, 
+Boone, Nick Dunn, Richard Appleby, Robert Seacord, 
+Timur Duehr, Viktor Gazdag, and William Groesbeck.
+Finally, I would like to thank our US CTO, Dave Goldsmith, 
 our Group CTO, Ollie Whitehouse, and our Commercial 
 Research Director, Matt Lewis, for their friendship and for all 
 of the many ways in which they help to support and advance 
 Research at NCC Group, as well as to thank the artists at 
-MC2 Manchester for the graphic design of this report.372021 NCC Group Annual Research Report
-2021 NCC Group Annual Research ReportAppSec Cali, Neural Information Processing Systems 
-(NeurIPS), USENIX Enigma, USENIX CSET, the USENIX 
-Workshop on Offensive Technologies (WOOT) and multiple 
-DEF CON villages. Our work is regularly covered by 
-publications including Wired, Forbes, The New York Times, 
-Politico, DarkReading, Techcrunch, Fast Company, the 
-Wall Street Journal, The Register, SC Magazine, and other 
-mainstream and trade publications globally.research.nccgroup.com
-@nccgroupinfosecAbout Research at NCC GroupNCC Group employs some of the most talented 
+MC2 Manchester for the graphic design of this report.
+2021 NCC Group Annual Research Report
+2021 NCC Group Annual Research Report
+38
+About Research at NCC Group 
+NCC Group employs some of the most talented 
 security consultants and researchers on the 
 planet, serving 15,000 clients worldwide and 
 uncovering countless vulnerabilities per year 
 through both client work and independent 
 vulnerability research. We are a research\-driven 
 firm where every researcher on our team is also 
-an active consultant.leading universities, as evidenced across several of our 
-research publications. In 2020, NCC Group was the 
-only security company which co\-founded and sit on the 
-Governing Board and Technical Advisory Committee of 
-the Open Source Security Foundation, an industry\-wide 
-coalition within the Linux Foundation dedicated to improving 
-the security of the open source ecosystem through a range 
-of strategic projects. NCC Group also regularly conducts 
-publicly\-reported security audits across a range of high 
-impact and security\-critical technologies.With hundreds of specialized consultants, our technical 
+an active consultant. 
+With hundreds of specialized consultants, our technical 
 security research areas extend into almost every area of 
 security, as well as global standards bodies including 
 the C Standards Committee and CIS Benchmarks. We 
@@ -2195,19 +2820,32 @@ security and privacy, application security, privacy enhancing
 technologies, distributed systems, network and protocol 
 security, cloud, containerization, and virtualization, and both 
 offensive attacks on and defensive uses of machine 
-learning and artificial intelligence systems.You can find samples of some of our recent public\-facing 
+learning and artificial intelligence systems. 
+You can find samples of some of our recent public\-facing 
 work, including blog posts, whitepapers, conference talk 
 listings, and technical advisories on our Research Blog, 
 alongside our technical Twitter account and our public 
 Github which hosts over 200 open source tools and 
 datasets authored by NCC Group researchers. We also 
-have deep academic research partnerships with severalOur technical capabilities extend beyond our public\-facing 
+have deep academic research partnerships with several 
+leading universities, as evidenced across several of our 
+research publications. In 2020, NCC Group was the 
+only security company which co\-founded and sit on the 
+Governing Board and Technical Advisory Committee of 
+the Open Source Security Foundation, an industry\-wide 
+coalition within the Linux Foundation dedicated to improving 
+the security of the open source ecosystem through a range 
+of strategic projects. NCC Group also regularly conducts 
+publicly\-reported security audits across a range of high 
+impact and security\-critical technologies. 
+Our technical capabilities extend beyond our public\-facing 
 work, to include our internal\-only groups and resources, 
 including our world\-class Exploit Development Group, 
-Threat Intelligence Fusion Center, and Full Spectrum
+Threat Intelligence Fusion Center, and Full Spectrum 
 Attack Simulation group, as well as a number of technical 
 specialty practices and hundreds of pieces of unpublished 
-proprietary tooling.Our research program delivers thousands of research 
+proprietary tooling. 
+Our research program delivers thousands of research 
 days annually, by researchers at all levels from across our 
 global business. We support our researchers through a 
 full\-time technical research leadership team, mentorship and 
@@ -2219,9 +2857,26 @@ USA, Toorcon, Oracle Code One, BSidesLV, OReilly
 Artificial Intelligence, Chaos Communication Congress, 
 Microsoft BlueHat, HITB Amsterdam, RSA Conference, 
 CanSecWest, USENIX Enigma, the Linux Foundation 
-Member Summit, DEF CON, and countless others.
+Member Summit, DEF CON, and countless others. 
 In recent years, we have served on the review boards of 
 conferences such as IACR Cryptographic Hardware and 
-Embedded Systems (CHES), Black Hat USA, BSidesLV,382021 NCC Group Annual Research ReportContactJennifer FernickSVP \& Global Head of Research 
-jennifer.fernick@nccgroup.comMatt LewisDirector of Commercial Research 
-matt.lewis@nccgroup.com392021 NCC Group Annual Research Report
+Embedded Systems (CHES), Black Hat USA, BSidesLV, 
+AppSec Cali, Neural Information Processing Systems 
+(NeurIPS), USENIX Enigma, USENIX CSET, the USENIX 
+Workshop on Offensive Technologies (WOOT) and multiple 
+DEF CON villages. Our work is regularly covered by 
+publications including Wired, Forbes, The New York Times, 
+Politico, DarkReading, Techcrunch, Fast Company, the 
+Wall Street Journal, The Register, SC Magazine, and other 
+mainstream and trade publications globally.
+research.nccgroup.com
+@nccgroupinfosec
+2021 NCC Group Annual Research Report
+39
+Contact
+Jennifer Fernick
+SVP \& Global Head of Research 
+jennifer.fernick@nccgroup.com
+Matt Lewis 
+Director of Commercial Research
+matt.lewis@nccgroup.com

