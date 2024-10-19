@@ -12,6 +12,15 @@
 
 **Acknowledgement:** I would like to give recognition for other works that inspired this collection. [Richard Stiennon](https://it-harvest.com/about/) and his annual analysis of the cybersecurity industry is significantly more comprehensive than this repository and deserves recognition. Additionally, [Rick Howard](https://www.linkedin.com/in/rickhoward/)'s cyber cannon list of must-read books is an invaluable resource, catering to both leadership and practitioner levels within the field.
 
+**Current Report Counts:** 
+
+![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2020?type=file&style=flat-square&label=2020%20Reports)
+![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2021?type=file&style=flat-square&label=2021%20Reports)
+![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2022?type=file&style=flat-square&label=2022%20Reports)
+![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2023?type=file&style=flat-square&label=2023%20Reports)
+![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2024?type=file&style=flat-square&label=2024%20Reports)
+
+
 ## Contents
 <!-- TOC -->
 - [Reports](#reports)
