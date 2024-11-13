@@ -190,22 +190,22 @@ Annual reports are composed by a combination of paid and non-profit research bot
 **[Government and Non-profits](#government-and-non-profits):** This category includes government agencies and non-profit organizations dedicated to cybersecurity research, policy development, and public awareness.
 
 ### Research Consulting
-- [451 Research](https://www.451research.com/) - a technology research and advisory firm specializing in emerging technology segments including cybersecurity market analysis and trends.
-- [ABI Research](https://www.abiresearch.com/) - a technology market intelligence company providing strategic guidance on transformative technologies, including cybersecurity and digital security.
-- [Forrester Research](https://www.forrester.com/) - an advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
-- [Frost & Sullivan](https://www.frost.com/) - a consulting firm offering market research and analysis in cybersecurity, with particular focus on emerging technologies and market opportunities.
-- [Gartner](https://www.gartner.com/) - a technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
-- [GigaOm](https://gigaom.com/) - a research firm offering practical, hands-on, practitioner-driven research for businesses.
-- [International Data Corporation (IDC)](https://www.idc.com/) - a global provider of market intelligence and advisory services.
-- [KuppingerCole](https://www.kuppingercole.com/) - a global analyst company specializing in information security, identity & access management, and risk management.
-- [Omdia](https://omdia.tech.informa.com/) - a global technology research powerhouse focusing on cybersecurity market analysis and digital transformation.
+- [451 Research](https://www.451research.com/) - A technology research and advisory firm specializing in emerging technology segments including cybersecurity market analysis and trends.
+- [ABI Research](https://www.abiresearch.com/) - A technology market intelligence company providing strategic guidance on transformative technologies, including cybersecurity and digital security.
+- [Forrester Research](https://www.forrester.com/) - An advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
+- [Frost & Sullivan](https://www.frost.com/) - A consulting firm offering market research and analysis in cybersecurity, with particular focus on emerging technologies and market opportunities.
+- [Gartner](https://www.gartner.com/) - A technology research and consulting firm which offers private paid consulting as well as executive programs and conferences.
+- [GigaOm](https://gigaom.com/) - A research firm offering practical, hands-on, practitioner-driven research for businesses.
+- [International Data Corporation (IDC)](https://www.idc.com/) - A global provider of market intelligence and advisory services.
+- [KuppingerCole](https://www.kuppingercole.com/) - A global analyst company specializing in information security, identity & access management, and risk management.
+- [Omdia](https://omdia.tech.informa.com/) - A global technology research powerhouse focusing on cybersecurity market analysis and digital transformation.
 
 ### Standards and Certifications
-- [The Information Security Forum (ISF)](https://www.securityforum.org/) - a global, independent organization dedicated to benchmarking and sharing best practices in information security.
+- [The Information Security Forum (ISF)](https://www.securityforum.org/) - A global, independent organization dedicated to benchmarking and sharing best practices in information security.
 - [The International Organization for Standardization (ISO)](https://www.iso.org/) - An international organizational body composed of representatives which conduct closed research for creation of standards.
 - [The Information Systems Audit and Control Association (ISACA)](https://www.isaca.org/) - An international professional association focused on IT governance, which conducts research for and on behalf of the members.
-- [The International Information System Security Certification Consortium (ISC)²](https://www.isc2.org/) - an American not-for-profit organization which conducts research for consumers of their cybersecurity training and certifications.
-- [SANS Institute](https://www.sans.org/) - a private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
+- [The International Information System Security Certification Consortium (ISC)²](https://www.isc2.org/) - An American not-for-profit organization which conducts research for consumers of their cybersecurity training and certifications.
+- [SANS Institute](https://www.sans.org/) - A private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
 - [Trusted Computing Group (TCG)](https://trustedcomputinggroup.org/) - Develops and promotes open standards for hardware-enabled security.
 
 ### Threat Intelligence and Incident Response
@@ -217,7 +217,7 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [Ponemon Institute](https://www.ponemon.org/) - considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
 
 ### Policy and Advocacy
-- [The Rand Corporation](https://www.rand.org/) - an American not-for-profit organization which conducts research and analysis on various aspects of cybersecurity and cyber policy focused on national security.
+- [The Rand Corporation](https://www.rand.org/) - An American not-for-profit organization which conducts research and analysis on various aspects of cybersecurity and cyber policy focused on national security.
 - [Center for Strategic and International Studies (CSIS) - Technology Policy Program](https://www.csis.org/programs/technology-policy-program) - A think tank with a Technology Policy Program that conducts research and provides insights into technology and cybersecurity policies.
 - [Electronic Frontier Foundation (EFF)](https://www.eff.org/) - A non-profit organization defending civil liberties in the digital world, including privacy and cybersecurity issues.
 - [The Internet Security Alliance (ISA)](https://isalliance.org/) - A multi-sector trade association focused on thought leadership, policy advocacy, and standards development for cybersecurity.
@@ -244,7 +244,7 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [Internet Security Research Group (ISRG)](https://www.abetterinternet.org/) - A non-profit organization focused on reducing financial, technological, and educational barriers to secure communication over the Internet.
 - [Japan National Center of Incident Readiness and Strategy for Cybersecurity (NISC)](https://www.nisc.go.jp/eng/) - Japan's central organization for national cybersecurity strategy and incident response.
 - [Korean Internet & Security Agency (KISA)](https://www.kisa.or.kr/eng/) - South Korea's government agency dedicated to promoting cybersecurity and a safer internet environment.
-- [MITRE Corporation](https://www.mitre.org/) - an American not-for-profit organization which conducts research and development supporting various U.S. government agencies.
+- [MITRE Corporation](https://www.mitre.org/) - An American not-for-profit organization which conducts research and development supporting various U.S. government agencies.
 - [National Cyber Security Centre (NCSC)](https://www.ncsc.gov.uk/) - The UK's technical authority for cyber incidents.
 - [National Cyber Security Centre - Netherlands (NCSC-NL)](https://www.ncsc.nl/english) - The Dutch national cyber security center providing guidance and incident response.
 - [National Institute of Standards and Technology (NIST)](https://www.nist.gov/cybersecurity) - A U.S. agency that develops cybersecurity standards and guidelines.
