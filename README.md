@@ -26,22 +26,22 @@
 
 ## Contents
 <!-- TOC -->
-- [Reports](#reports)
-    - [Analysis](#analysis)
-        - [Threat Intelligence](#threat-intelligence)
-        - [Ransomware](#ransomware)
-        - [Vulnerabilities](#vulnerabilities)
-        - [Data Breaches](#data-breaches)
-        - [Application Security](#application-security)
-        - [AI and Emerging Technologies](#ai-and-emerging-technologies)
-    - [Surveys](#surveys)
-        - [Industry Trends](#industry-trends)
-        - [Application Security](#application-security-1)
-        - [Cloud Security](#cloud-security)
-        - [Penetration Testing](#penetration-testing)
-        - [Ransomware](#ransomware-1)
-        - [Privacy and Data Protection](#privacy-and-data-protection)
-        - [AI and Emerging Technologies](#ai-and-emerging-technologies-1)        
+- [Overview](#overview)
+- [Analysis Reports](#analysis-reports)
+    - [Threat Intelligence](#threat-intelligence)
+    - [Ransomware](#ransomware)
+    - [Vulnerabilities](#vulnerabilities)
+    - [Data Breaches](#data-breaches)
+    - [Application Security](#application-security)
+    - [AI and Emerging Technologies](#ai-and-emerging-technologies)
+- [Survey Reports](#survey-reports)
+    - [Industry Trends](#industry-trends)
+    - [Application Security](#application-security-1)
+    - [Cloud Security](#cloud-security)
+    - [Penetration Testing](#penetration-testing)
+    - [Ransomware](#ransomware-1)
+    - [Privacy and Data Protection](#privacy-and-data-protection)
+    - [AI and Emerging Technologies](#ai-and-emerging-technologies-1)        
 - [Resources](#resources)
     - [Research Consulting](#research-consulting)
     - [Standards and Certifications](#standards-and-certifications)
@@ -52,7 +52,7 @@
 - [Contributing](#contributing)
 <!-- /TOC -->
 
-## Reports
+## Overview
 
 Reports have been classified into two categories by the source of data:
 - **Analysis:** Reports generated from quantifying and qualifying intelligence from sensor networks or services.
@@ -62,9 +62,9 @@ The reports listed below are the most recent iteration, while past versions are 
 
 Reports will be classified by a header that describes their primary content or emphasis. While each report may discuss multiple topics, this categorization will help organize them. Under this header they will be sorted alphabetically.
 
-### Analysis
+# Analysis Reports
 
-#### Threat Intelligence
+## Threat Intelligence
 - [BD](https://news.bd.com/2024-06-13-BD-Issues-Annual-Product-Security-Report,-Highlighting-Transparency-and-Collaboration) - [Product Security Annual Report](Annual%20Security%20Reports/2023/BD-Product-Security-Annual-Report-2023.pdf) (2023) - This report highlights cybersecurity threats in healthcare, addressing the growing sophistication and frequency of cyberattacks through transparency, collaboration, and adherence to high security standards.
 - [Blackpoint](https://blackpointcyber.com/resources/cybersecurity-annual-threat-report-2024/) - [Annual Threat Report](Annual%20Security%20Reports/2024/Blackpoint-Cyber-Annual-Threat-Report-2024.pdf) (2024) - The Annual Threat Report analyzes current cyber threats, attack techniques, and emerging trends, providing actionable intelligence for organizations to enhance their security posture.
 - [CheckPoint](https://pages.checkpoint.com/2024-cyber-security-report) - [Cybersecurity Report](Annual%20Security%20Reports/2024/CheckPoint-Cybersecurity-Report-2024.pdf) (2024) - This comprehensive report examines global cybersecurity trends, offering insights into attack vectors, threat actor tactics, and strategies for improving organizational cyber resilience.
@@ -124,9 +124,9 @@ Reports will be classified by a header that describes their primary content or e
 - [Zscaler](https://info.zscaler.com/resources-industry-reports-public-sector-Insights-threatlabz-ai-security-2024) - [ThreatLabz AI Security Report](Annual%20Security%20Reports/2024/Threatlabz-AI-Security-Report-2024.pdf) (2024) - This report examines the intersection of artificial intelligence and cybersecurity, offering insights into AI-powered threats, defensive applications of AI, and strategies for securing AI systems and models.
 - [IBM](https://www.ibm.com/security/data-breach/threat-intelligence/) - [X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2024/IBM-X-Force-Cloud-Threat-Landscape-Report-2024.pdf) (2024) - This report focuses on threats specific to cloud environments, offering insights into cloud security challenges and strategies for securing cloud infrastructure.
 
-## Surveys
+## Survey Reports
 
-### Industry Trends
+## Industry Trends
 - [Accenture](https://www.accenture.com/us-en/insights/security/invest-cyber-resilience) - [State of Cybersecurity Resilience](Annual%20Security%20Reports/2023/Accenture-State-of-Cybersecurity-2023.pdf) (2023) - This report provides insights into the state of cybersecurity resilience across various industries, highlighting key trends and challenges faced by organizations.
 - [Aon](https://www.aon.com/en/insights/reports/2024-intangible-versus-tangible-risks-comparison-report) - [Intangible vs. Tangible Risk Report](Annual%20Security%20Reports/2024/Aon-Intangible-vs-Tangible-Risk-Report-2024.pdf) (2024) - This report analyzes cyber and enterprise risk management trends from a survey of over 2,300 respondents across global regions, providing insights into the evolving landscape of tangible and intangible risks.
 - [Astrix](https://astrix.security/learn/whitepapers/the-state-of-non-human-identity-security/) - [State of Non Human Identity](Annual%20Security%20Reports/2024/Astrix-The-State-of-Non-Human-Identity-Security-2024.pdf) (2024) - This report highlights growing concerns over non-human identities as attack vectors, limited automation and visibility into API and third-party connections, and an increasing investment in NHI security.
@@ -142,7 +142,7 @@ Reports will be classified by a header that describes their primary content or e
 - [Verizon](https://www.verizon.com/business/resources/reports/mobile-security-index/) - [Mobile Security Index](Annual%20Security%20Reports/2024/Verizon-Mobile-Security-Index-2024.pdf) (2024) - This report provides insights into mobile security trends and challenges across various industries.
 - [World Economic Forum](https://www.weforum.org/publications/global-cybersecurity-outlook-2024/) - [Global Cybersecurity Outlook](Annual%20Security%20Reports/2024/WEF-Global-Cybersecurity-Outlook-2024.pdf) (2024) - The World Economic Forum's report offers a global perspective on cybersecurity trends and challenges across different sectors.
 
-### Application Security
+## Application Security
 - [ArmorCode](https://www.armorcode.com/state-of-application-security-2023) - [State of Application Security](/Annual%20Security%20Reports/2023/Armorcode-State-of-Application-Security-2023.pdf) (2023) - The report examines the current landscape of application security, including emerging threats, best practices, and industry-wide trends.
 - [Checkmarx](https://info.checkmarx.com/future-of-application-security-2024) - [Future of Application Security](Annual%20Security%20Reports/2024/Checkmarx-Future-of-Application-Security-2024.pdf) (2024) - The Future of Application Security survey reveals how key stakeholders are responding to the challenges in Application Security from a broad range of industries globally.
 - [Checkmarx](https://info.checkmarx.com/supply-chain-survey) - [State of Software Supply Chain Security](Annual%20Security%20Reports/2024/Checkmarx-State-of-Software-Supply-Chain-Security-2024.pdf) (2024) - The State of Software Supply Chain Security survey provides insights into current trends in supply chain threats across industries such as banking and finance, insurance, software, technology, engineering, manufacturing, industrial, and public sector.
@@ -150,7 +150,7 @@ Reports will be classified by a header that describes their primary content or e
 - [BlackDuck](https://www.blackduck.com/resources/analyst-reports/state-of-devsecops.html) - [Global State of DevSecOps](Annual%20Security%20Reports/2023/BlackDuck-Global-State-of-DevSecOps-2023.pdf) (2024) - This report provides insights into the global state of DevSecOps practices and trends across different sectors.
 - [Snyk](https://go.snyk.io/state-of-open-source-security-report-2023-dwn-typ.html) - [State of Open Source Security](Annual%20Security%20Reports/2023/Snyk-State-of-Open-Source-Security-2023.pdf) (2023) - Snyk's report examines the current state of open source security, including trends and challenges across various industries.
 
-### Cloud Security
+## Cloud Security
 - [Fortinet](https://www.fortinet.com/blog/industry-trends/key-findings-cloud-security-report-2024) - [Cloud Security Report](Annual%20Security%20Reports/2024/Fortinet-Cloud-Security-Report-2024.pdf) (2024) - This report examines the state of cloud security, highlighting key challenges, trends, and best practices for organizations across various industries.
 - [ISC2](https://cloud.connect.isc2.org/cloud-security-report) - [Cloud Security Report](Annual%20Security%20Reports/2024/ISC2-Cloud-Security-Report-2024.pdf) (2024) - This report provides insights into cloud security challenges, trends, and strategies across different sectors.
 - [Mend](https://www.mend.io/resources/research-reports/the-state-of-supply-chain-threats/) - [State of Supply Chain Threats](Annual%20Security%20Reports/2023/Mend-State-of-Supply-Chain-Threats.pdf) (2023) - This report examines the current state of supply chain threats and vulnerabilities across different sectors.
@@ -158,22 +158,22 @@ Reports will be classified by a header that describes their primary content or e
 - [Sonatype](https://www.sonatype.com/state-of-the-software-supply-chain/introduction) - [State of Cloud Security Report](Annual%20Security%20Reports/2024/Sonatype-State-of-Cloud-Security-2024.pdf) (2024) - This report provides insights into the state of cloud security and software supply chain management across different sectors.
 - [Sophos](https://www.sophos.com/en-us/whitepaper/state-of-cybersecurity) - [State of Cloud Security Report](Annual%20Security%20Reports/2023/Sophos-State-of-Cybersecurity-2023.pdf) (2023) - Sophos' report examines the current state of cybersecurity, including trends and challenges faced by organizations across various industries.
 
-### Penetration Testing
+## Penetration Testing
 - [Cobalt](https://resource.cobalt.io/state-of-pentesting-2024) - [State of Pentesting](Annual%20Security%20Reports/2024/Cobalt-State-of-Pentesting-2024.pdf) (2024) - This report offers an overview of the current state of penetration testing, including trends, challenges, and best practices across various industries.
 - [Fortra](https://www.fortra.com/services/consulting/cybersecurity/penetration-testing) - [Penetration Testing Report](Annual%20Security%20Reports/2024/Fortra-Pentesting-Report-2024.pdf) (2024) - Fortra's report provides insights into the current landscape of penetration testing, including common vulnerabilities and industry-specific challenges.
 - [HackerOne](https://www.hackerone.com/resources/reporting/7th-annual-hacker-powered-security-report-2023) - [Hacker Powered Security Report](Annual%20Security%20Reports/2023/HackerOne-Hacker-Powered-Security-Report-2023.pdf) (2023) - This annual report explores the state of hacker-powered security, including trends in bug bounty programs and vulnerability disclosure across industries.
 
-### Ransomware
+## Ransomware
 - [Cyberreason](https://www.cybereason.com/ransomware-the-true-cost-to-business-2024) - [Ransomware The True Cost to Business](Annual%20Security%20Reports/2024/Cyberreason-Ransomware-The-True-Cost-to-Business-2024.pdf) (2024) - This report examines the true cost of ransomware attacks on businesses across different sectors.
 - [Fortinet](https://global.fortinet.com/lp-en-ap-2023ransomwareglobalrr) - [Global Ransomware Report](Annual%20Security%20Reports/2023/Fortinet-Global-Ransomware-Report-2023.pdf) (2023) - Fortinet's report provides a global overview of ransomware trends and impacts across various industries.
 - [Spycloud](https://spycloud.com/resource/2024-malware-ransomware-defense-report/) - [Ransomware Defense Report](Annual%20Security%20Reports/2024/Spycloud-Ransomware-Defense-Report-2024.pdf) (2024) - This report examines malware and ransomware defense strategies and trends across different sectors.
 
-### Privacy and Data Protection
+## Privacy and Data Protection
 - [Cisco](https://www.cisco.com/c/en/us/about/trust-center/data-privacy-benchmark-study.html) - [Data Privacy Benchmark Study](Annual%20Security%20Reports/2024/Cisco-Privacy-Benchmark-Study-2024.pdf) (2024) - Cisco's benchmark study provides insights into data privacy trends, challenges, and breaches across various industries.
 - [Immuta](https://www.immuta.com/resources/2024-trendbook/) - [State of Data Security Report](Annual%20Security%20Reports/2024/Immuta-State-of-Data-Security-Report-2024.pdf) (2024) - Immuta's report examines the current state of data security, including challenges, trends, and best practices across various industries.
 - [Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/data-loss-landscape) - [Data Loss Landscape](Annual%20Security%20Reports/2024/Proofpoint-Data-Loss-Landscape-2024.pdf) (2024) - Proofpoint's report provides an overview of the data loss landscape, including trends and challenges faced by organizations across various industries.
 
-### AI and Emerging Technologies
+## AI and Emerging Technologies
 - [HiddenLayer](https://hiddenlayer.com/threatreport2024/) - [AI Threat Report](Annual%20Security%20Reports/2024/HiddenLayer-AI-Threat-Landscape-Report-2024.pdf) (2024) - HiddenLayer's report provides insights into the AI threat landscape across various industries.
 - [Snyk](https://snyk.io/reports/ai-code-security/) - [AI Generated Code Security Report](Annual%20Security%20Reports/2023/Snyk-AI-Generated-Code-Security-Report-2023.pdf) (2023) - This report examines the security implications of AI-generated code across different sectors.
 
@@ -192,7 +192,7 @@ Annual reports are composed by a combination of paid and non-profit research bot
 
 **[Government and Non-profits](#government-and-non-profits):** This category includes government agencies and non-profit organizations dedicated to cybersecurity research, policy development, and public awareness.
 
-### Research Consulting
+## Research Consulting
 - [451 Research](https://www.451research.com/) - A technology research and advisory firm specializing in emerging technology segments including cybersecurity market analysis and trends.
 - [ABI Research](https://www.abiresearch.com/) - A technology market intelligence company providing strategic guidance on transformative technologies, including cybersecurity and digital security.
 - [Forrester Research](https://www.forrester.com/) - An advisory company that offers paid research, consulting, and event services specialized in market research for information technology.
@@ -203,7 +203,7 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [KuppingerCole](https://www.kuppingercole.com/) - A global analyst company specializing in information security, identity & access management, and risk management.
 - [Omdia](https://omdia.tech.informa.com/) - A global technology research powerhouse focusing on cybersecurity market analysis and digital transformation.
 
-### Standards and Certifications
+## Standards and Certifications
 - [The Information Security Forum (ISF)](https://www.securityforum.org/) - A global, independent organization dedicated to benchmarking and sharing best practices in information security.
 - [The International Organization for Standardization (ISO)](https://www.iso.org/) - An international organizational body composed of representatives which conduct closed research for creation of standards.
 - [The Information Systems Audit and Control Association (ISACA)](https://www.isaca.org/) - An international professional association focused on IT governance, which conducts research for and on behalf of the members.
@@ -211,7 +211,7 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [SANS Institute](https://www.sans.org/) - A private U.S. for-profit company which conducts research for consumers of their cybersecurity training and certifications.
 - [Trusted Computing Group (TCG)](https://trustedcomputinggroup.org/) - Develops and promotes open standards for hardware-enabled security.
 
-### Threat Intelligence and Incident Response
+## Threat Intelligence and Incident Response
 - [The Anti-Phishing Working Group (APWG)](https://apwg.org/) - A global coalition focused on unifying the global response to cybercrime.
 - [The Cyber Threat Alliance (CTA)](https://www.cyberthreatalliance.org/) - An industry-driven group of cybersecurity organizations that share threat intelligence and conduct collaborative research to combat cyber threats.
 - [The Forum of Incident Response and Security Teams (FIRST)](https://www.first.org/) - Provides platforms, means and tools for incident responders to always find the right partner and to collaborate efficiently.
@@ -219,14 +219,14 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [The Messaging, Malware and Mobile Anti-Abuse Working Group (M3AAWG)](https://www.m3aawg.org/) - Focuses on operational issues of Internet abuse including botnets, malware, spam, viruses, and mobile messaging abuse.
 - [Ponemon Institute](https://www.ponemon.org/) - Considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
 
-### Policy and Advocacy
+## Policy and Advocacy
 - [The Rand Corporation](https://www.rand.org/) - An American not-for-profit organization which conducts research and analysis on various aspects of cybersecurity and cyber policy focused on national security.
 - [Center for Strategic and International Studies (CSIS) - Technology Policy Program](https://www.csis.org/programs/technology-policy-program) - A think tank with a Technology Policy Program that conducts research and provides insights into technology and cybersecurity policies.
 - [Electronic Frontier Foundation (EFF)](https://www.eff.org/) - A non-profit organization defending civil liberties in the digital world, including privacy and cybersecurity issues.
 - [The Internet Security Alliance (ISA)](https://isalliance.org/) - A multi-sector trade association focused on thought leadership, policy advocacy, and standards development for cybersecurity.
 - [World Economic Forum (Centre for Cybersecurity)](https://www.weforum.org/centre-for-cybersecurity) - A global initiative that brings together stakeholders from industry, government, and academia to improve cybersecurity globally and secure the digital economy.
 
-### Working Groups
+## Working Groups
 - [The Cloud Security Alliance (CSA)](https://cloudsecurityalliance.org/) - Promotes best practices for providing security assurance within cloud computing.
 - [The Internet Engineering Task Force (IETF)](https://www.ietf.org/) - Develops and promotes internet standards, including those related to security.
 - [The Open Web Application Security Project (OWASP)](https://owasp.org/) - A professional community that produces research concerning web application security, made freely available to the online community.
@@ -234,7 +234,7 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [The Open Source Security Foundation (OpenSSF)](https://openssf.org/) - A cross-industry collaboration to improve the security of open source software.
 - [Web Application Security Consortium (WASC)](http://www.webappsec.org/) - An international group of experts, industry practitioners, and organizational representatives who produce security standards and research.
 
-### Government and Non-profits
+## Government and Non-profits
 - [Australian Cyber Security Centre (ACSC)](https://www.cyber.gov.au/) - Provides cyber security advice and support to Australian businesses and individuals.
 - [Canadian Centre for Cyber Security](https://cyber.gc.ca/en/) - Canada's national authority on cybersecurity.
 - [Center for Internet Security (CIS)](https://www.cisecurity.org/) - An American non-profit organization that provides cybersecurity solutions and best practices.
