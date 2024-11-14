@@ -52,7 +52,7 @@
 - [Contributing](#contributing)
 <!-- /TOC -->
 
-## Overview
+# Overview
 
 Reports have been classified into two categories by the source of data:
 - **Analysis:** Reports generated from quantifying and qualifying intelligence from sensor networks or services.
@@ -124,7 +124,7 @@ Reports will be classified by a header that describes their primary content or e
 - [Zscaler](https://info.zscaler.com/resources-industry-reports-public-sector-Insights-threatlabz-ai-security-2024) - [ThreatLabz AI Security Report](Annual%20Security%20Reports/2024/Threatlabz-AI-Security-Report-2024.pdf) (2024) - This report examines the intersection of artificial intelligence and cybersecurity, offering insights into AI-powered threats, defensive applications of AI, and strategies for securing AI systems and models.
 - [IBM](https://www.ibm.com/security/data-breach/threat-intelligence/) - [X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2024/IBM-X-Force-Cloud-Threat-Landscape-Report-2024.pdf) (2024) - This report focuses on threats specific to cloud environments, offering insights into cloud security challenges and strategies for securing cloud infrastructure.
 
-## Survey Reports
+# Survey Reports
 
 ## Industry Trends
 - [Accenture](https://www.accenture.com/us-en/insights/security/invest-cyber-resilience) - [State of Cybersecurity Resilience](Annual%20Security%20Reports/2023/Accenture-State-of-Cybersecurity-2023.pdf) (2023) - This report provides insights into the state of cybersecurity resilience across various industries, highlighting key trends and challenges faced by organizations.
@@ -177,7 +177,7 @@ Reports will be classified by a header that describes their primary content or e
 - [HiddenLayer](https://hiddenlayer.com/threatreport2024/) - [AI Threat Report](Annual%20Security%20Reports/2024/HiddenLayer-AI-Threat-Landscape-Report-2024.pdf) (2024) - HiddenLayer's report provides insights into the AI threat landscape across various industries.
 - [Snyk](https://snyk.io/reports/ai-code-security/) - [AI Generated Code Security Report](Annual%20Security%20Reports/2023/Snyk-AI-Generated-Code-Security-Report-2023.pdf) (2023) - This report examines the security implications of AI-generated code across different sectors.
 
-## Resources
+# Resources
 Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Below you will find various organizations involved in cybersecurity research, consulting, and policy-making. It's divided into six main categories:
 
 **[Research Consulting](#research-consulting):** These are organizations that offer paid research services, market analysis, and consulting in the field of information technology and cybersecurity.
@@ -254,5 +254,5 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [Norwegian National Security Authority (NSM)](https://nsm.no/en/) - Norway's expert body for information and object security, providing guidance and incident response capabilities.
 - [Singapore Cyber Security Agency (CSA)](https://www.csa.gov.sg/) - Singapore's national agency overseeing cybersecurity strategy and development.
 
-## Contributing
+# Contributing
 [Please refer to the guidelines at CONTRIBUTING.md for details](CONTRIBUTING.md).
