@@ -1,5 +1,8 @@
 <!-- lint ignore double-link -->
 <!--lint ignore definition-case-->
+<!--lint disable awesome-toc-->
+<!--lint disable no-emphasis-as-heading-->
+<!--lint disable awesome-list-item-->
 
 # Awesome Annual Security Reports [![Awesome](https://awesome.re/badge-flat2.svg)](https://awesome.re)
 > A curated list of annual cyber security reports - Centralized annual cybersecurity analysis and industry surveys
@@ -214,7 +217,7 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [The Forum of Incident Response and Security Teams (FIRST)](https://www.first.org/) - Provides platforms, means and tools for incident responders to always find the right partner and to collaborate efficiently.
 - [The Global Cyber Alliance (GCA)](https://globalcyberalliance.org/) - An international, cross-sector effort dedicated to reducing cyber risk.
 - [The Messaging, Malware and Mobile Anti-Abuse Working Group (M3AAWG)](https://www.m3aawg.org/) - Focuses on operational issues of Internet abuse including botnets, malware, spam, viruses, and mobile messaging abuse.
-- [Ponemon Institute](https://www.ponemon.org/) - considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
+- [Ponemon Institute](https://www.ponemon.org/) - Considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
 
 ### Policy and Advocacy
 - [The Rand Corporation](https://www.rand.org/) - An American not-for-profit organization which conducts research and analysis on various aspects of cybersecurity and cyber policy focused on national security.
