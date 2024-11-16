@@ -22,6 +22,7 @@
 ![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2022?type=file&style=flat-square&label=2022%20Reports)
 ![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2023?type=file&style=flat-square&label=2023%20Reports)
 ![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2024?type=file&style=flat-square&label=2024%20Reports)
+![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2025?type=file&style=flat-square&label=2025%20Reports)
 
 
 ## Contents
@@ -157,6 +158,7 @@ Reports will be classified by a header that describes their primary content or e
 - [PaloAlto](https://www.paloaltonetworks.com/state-of-cloud-native-security) - [State of Cloud Native Security Report](Annual%20Security%20Reports/2024/PaloAlto-State-of-Cloud-Native-Security-2024.pdf) (2024) - This report examines the current state of cloud-native security, including trends, challenges, and best practices across different sectors.
 - [Sonatype](https://www.sonatype.com/state-of-the-software-supply-chain/introduction) - [State of Cloud Security Report](Annual%20Security%20Reports/2024/Sonatype-State-of-Cloud-Security-2024.pdf) (2024) - This report provides insights into the state of cloud security and software supply chain management across different sectors.
 - [Sophos](https://www.sophos.com/en-us/whitepaper/state-of-cybersecurity) - [State of Cloud Security Report](Annual%20Security%20Reports/2023/Sophos-State-of-Cybersecurity-2023.pdf) (2023) - Sophos' report examines the current state of cybersecurity, including trends and challenges faced by organizations across various industries.
+- [Google](https://cloud.google.com/security/resources/cybersecurity-forecast) - [Cybersecurity Forecast 2025](Annual%20Security%20Reports/2025/Google-Cybersecurity-Forecast-2025.pdf) (2025) - Insights from Google Cloud leaders on emerging cybersecurity trends.
 
 ## Penetration Testing
 - [Cobalt](https://resource.cobalt.io/state-of-pentesting-2024) - [State of Pentesting](Annual%20Security%20Reports/2024/Cobalt-State-of-Pentesting-2024.pdf) (2024) - This report offers an overview of the current state of penetration testing, including trends, challenges, and best practices across various industries.
