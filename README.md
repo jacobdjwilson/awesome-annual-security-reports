@@ -220,6 +220,7 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [The Global Cyber Alliance (GCA)](https://globalcyberalliance.org/) - An international, cross-sector effort dedicated to reducing cyber risk.
 - [The Messaging, Malware and Mobile Anti-Abuse Working Group (M3AAWG)](https://www.m3aawg.org/) - Focuses on operational issues of Internet abuse including botnets, malware, spam, viruses, and mobile messaging abuse.
 - [Ponemon Institute](https://www.ponemon.org/) - Considered the pre-eminent research center dedicated to privacy, data protection and information security policy.
+- [Infostealers by Hudson Rock](https://www.infostealers.com/) - The all-around hub with news and publications about Infostealers.
 
 ## Policy and Advocacy
 - [The Rand Corporation](https://www.rand.org/) - An American not-for-profit organization which conducts research and analysis on various aspects of cybersecurity and cyber policy focused on national security.
