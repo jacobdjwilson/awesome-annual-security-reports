@@ -42,6 +42,7 @@
     - [Penetration Testing](#penetration-testing)
     - [Ransomware](#ransomware-1)
     - [Privacy and Data Protection](#privacy-and-data-protection)
+    - [Identity Security](#identity-security)
     - [AI and Emerging Technologies](#ai-and-emerging-technologies-1)        
 - [Resources](#resources)
     - [Research Consulting](#research-consulting)
@@ -183,6 +184,8 @@ Reports will be classified by a header that describes their primary content or e
 
 ## Identity Security
 - [Astrix](https://astrix.security/learn/whitepapers/the-state-of-non-human-identity-security/) - [State of Non Human Identity](Annual%20Security%20Reports/2024/Astrix-The-State-of-Non-Human-Identity-Security-2024.pdf) (2024) - Highlights growing concerns over non-human identities as attack vectors, limited automation and visibility into API and third-party connections, and an increasing investment in NHI security.
+- [CyberArk](https://www.cyberark.com/threat-landscape/) - [Identity Security Threat Landscape Report](Annual%20Security%20Reports/2024/CyberArk-Identity-Security-Threat-Landscape-2024.pdf) (2024)  
+  Examines the impact of cyberattacks on identity, including cyber debt, GenAI, machine identities, and third- and fourth-party risks.
 - [IDS Alliance](https://www.idsalliance.org/white-paper/2024-trends-in-securing-digital-identities/) - [2024 Trends in Securing Digital Identities](Annual%20Security%20Reports/2024/AICD-Directors-Introduction-to-AI-2024.pdf) (2024) - Provides insights into current plans, historical trends, and approaches to cybersecurity and identity management.
 
 ## AI and Emerging Technologies
