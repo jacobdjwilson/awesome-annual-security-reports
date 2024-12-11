@@ -189,6 +189,8 @@ Reports will be classified by a header that describes their primary content or e
 - [CyberArk](https://www.cyberark.com/threat-landscape/) - [Identity Security Threat Landscape Report](Annual%20Security%20Reports/2024/CyberArk-Identity-Security-Threat-Landscape-2024.pdf) (2024)  
   Examines the impact of cyberattacks on identity, including cyber debt, GenAI, machine identities, and third- and fourth-party risks.
 - [IDS Alliance](https://www.idsalliance.org/white-paper/2024-trends-in-securing-digital-identities/) - [2024 Trends in Securing Digital Identities](Annual%20Security%20Reports/2024/AICD-Directors-Introduction-to-AI-2024.pdf) (2024) - Provides insights into current plans, historical trends, and approaches to cybersecurity and identity management.
+- [ManageEngine](https://www.manageengine.com/privileged-access-management/identity-threat-and-security-report-2024.html) - [Identity Security Survey](Annual%20Security%20Reports/2024/ManageEngine-Identity-Security-Insights-2024.pdf) (2024)  
+  Explores global identity security readiness across industries and roles, examining the rising tide of AI-driven phishing, social engineering, and credential theft.
 
 ## AI and Emerging Technologies
 - [HiddenLayer](https://hiddenlayer.com/threatreport2024/) - [AI Threat Report](Annual%20Security%20Reports/2024/HiddenLayer-AI-Threat-Landscape-Report-2024.pdf) (2024) - Provides insights into the AI threat landscape across various industries.
