@@ -114,6 +114,8 @@ Reports will be classified by a header that describes their primary content or e
 - [Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/software-vulnerability-trends.html) - [Software Vulnerability Snapshot](Annual%20Security%20Reports/2023/Synopsys-Software-Vulnerability-Snapshot-2023.pdf) (2023) - A snapshot of software vulnerability trends, highlighting common weaknesses, emerging threats, and strategies for improving software security.
 
 ## Application Security
+- [Escape](https://escape.tech/the-api-secret-sprawl-2024) - [State of API Exposure](Annual%20Security%20Reports/2024/Escape-State-of-API-Exposure-2024.pdf) (2024)  
+  Analyzes API security across Fortune 1000 and CAC 40 companies, uncovering 30,000 exposed APIs and 100,000 API issues, emphasizing risks in large organizations.
 - [RunZero](https://www.runzero.com/research-report/) - [RunZero Research Report](Annual%20Security%20Reports/2024/RunZero-Research-Report-Vol1-2024.pdf) (2024) - Examines a broad range of organizational and network security issues through an innovative asset-centric approach, with a focus on "dark matter" in networks, segmentation issues, and unusual asset detection.
 - [Sonatype](https://www.sonatype.com/resources/whitepapers/2024-open-source-malware-threat-report) - [2024 in Open Source Malware Threat Report](Annual%20Security%20Reports/2024/Sonatype-2024-in-Open-Source-Malware-Report-2024.pdf) (2024)  
   Reports a 156% year-over-year increase in malicious open source packages, highlighting the growing threat of intentionally crafted malware in software supply chain attacks.
