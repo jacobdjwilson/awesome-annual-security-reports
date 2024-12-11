@@ -32,8 +32,8 @@
     - [Threat Intelligence](#threat-intelligence)
     - [Ransomware](#ransomware)
     - [Vulnerabilities](#vulnerabilities)
-    - [Data Breaches](#data-breaches)
     - [Application Security](#application-security)
+    - [Data Breaches](#data-breaches)
     - [AI and Emerging Technologies](#ai-and-emerging-technologies)
 - [Survey Reports](#survey-reports)
     - [Industry Trends](#industry-trends)
@@ -113,15 +113,17 @@ Reports will be classified by a header that describes their primary content or e
 - [Qualys](https://www.qualys.com/forms/tru-research-report/) - [TruRisk Threat Research Report](Annual%20Security%20Reports/2023/Qualys-Trurisk-Threat-Research-Report-2023.pdf) (2023) - Provides an in-depth analysis of vulnerabilities and threats, offering insights into risk assessment and prioritization strategies.
 - [Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/software-vulnerability-trends.html) - [Software Vulnerability Snapshot](Annual%20Security%20Reports/2023/Synopsys-Software-Vulnerability-Snapshot-2023.pdf) (2023) - A snapshot of software vulnerability trends, highlighting common weaknesses, emerging threats, and strategies for improving software security.
 
+## Application Security
+- [RunZero](https://www.runzero.com/research-report/) - [RunZero Research Report](Annual%20Security%20Reports/2024/RunZero-Research-Report-Vol1-2024.pdf) (2024) - Examines a broad range of organizational and network security issues through an innovative asset-centric approach, with a focus on "dark matter" in networks, segmentation issues, and unusual asset detection.
+- [Sonatype](https://www.sonatype.com/resources/whitepapers/2024-open-source-malware-threat-report) - [2024 Open Source Malware Threat Report](Annual%20Security%20Reports/2024/Sonatype-2024-in-Open-Source-Malware-Report-2024.pdf) (2024)  
+  Reports a 156% year-over-year increase in malicious open source packages, highlighting the growing threat of intentionally crafted malware in software supply chain attacks.
+- [Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/open-source-security-risk-analysis.html) - [Open Source Risk Analysis Report](Annual%20Security%20Reports/2024/Synopsys-Open-Source-Risk-Analysis-Report-2024.pdf) (2024) - Examines security risks associated with open-source software components, offering insights into vulnerability trends and mitigation strategies.
+- [Veracode](https://www.veracode.com/state-of-software-security-report) - [State of Software Security](Annual%20Security%20Reports/2024/Veracode-State-of-Software-Security-Report-2024.pdf) (2024) - Examines trends in application security, offering insights into common vulnerabilities, secure development practices, and strategies for improving software security throughout the development lifecycle.
+
 ## Data Breaches
 - [IBM](https://www.ibm.com/security/data-breach) - [Cost of a Data Breach Report](Annual%20Security%20Reports/2024/IBM-Cost-of-a-Data-Breach-Report-2024.pdf) (2024) - Provides IT, risk management and security leaders with timely, quantifiable evidence to guide them in their strategic decision-making. This research studied 604 organizations impacted by data breaches between March 2023 and February 2024.
 - [Verizon](https://www.verizon.com/business/resources/reports/dbir/) - [Data Breach Investigations Report](Annual%20Security%20Reports/2024/Verizon-Data-Breach-Investigations-Report-2024.pdf) (2024) - Analyzes global data breaches, offering insights into attack patterns, threat actor motivations, and strategies for improving organizational data security and incident response.
 - [Identity Theft Resource Center](https://www.idtheftcenter.org/publication/2023-data-breach-report/) - [Annual Data Breach Report](Annual%20Security%20Reports/2023/ITRC-Annual-Data-Breach-Report-2023.pdf) (2023) - A review of 18,800+ data breaches since 2005, impacting 12 billion victims and exposing 19.8 billion records, focusing on root causes and compromised data types.
-
-## Application Security
-- [RunZero](https://www.runzero.com/research-report/) - [RunZero Research Report](Annual%20Security%20Reports/2024/RunZero-Research-Report-Vol1-2024.pdf) (2024) - Examines a broad range of organizational and network security issues through an innovative asset-centric approach, with a focus on "dark matter" in networks, segmentation issues, and unusual asset detection.
-- [Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/open-source-security-risk-analysis.html) - [Open Source Risk Analysis Report](Annual%20Security%20Reports/2024/Synopsys-Open-Source-Risk-Analysis-Report-2024.pdf) (2024) - Examines security risks associated with open-source software components, offering insights into vulnerability trends and mitigation strategies.
-- [Veracode](https://www.veracode.com/state-of-software-security-report) - [State of Software Security](Annual%20Security%20Reports/2024/Veracode-State-of-Software-Security-Report-2024.pdf) (2024) - Examines trends in application security, offering insights into common vulnerabilities, secure development practices, and strategies for improving software security throughout the development lifecycle.
 
 ## AI and Emerging Technologies
 - [AICD](https://www.aicd.com.au/innovative-technology/digital-business/artificial-intelligence/governance-of-ai.html) - [Directors Introduction to AI](Annual%20Security%20Reports/2024/AICD-Directors-Introduction-to-AI-2024.pdf) (2024) - Provides an overview of artificial intelligence tailored for directors, highlighting its strategic implications, governance considerations, and best practices for AI implementation in organizations.
