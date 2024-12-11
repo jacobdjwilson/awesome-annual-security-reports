@@ -124,8 +124,9 @@ Reports will be classified by a header that describes their primary content or e
 
 ## AI and Emerging Technologies
 - [AICD](https://www.aicd.com.au/innovative-technology/digital-business/artificial-intelligence/governance-of-ai.html) - [Directors Introduction to AI](Annual%20Security%20Reports/2024/AICD-Directors-Introduction-to-AI-2024.pdf) (2024) - Provides an overview of artificial intelligence tailored for directors, highlighting its strategic implications, governance considerations, and best practices for AI implementation in organizations.
-- [Zscaler](https://info.zscaler.com/resources-industry-reports-public-sector-Insights-threatlabz-ai-security-2024) - [ThreatLabz AI Security Report](Annual%20Security%20Reports/2024/Threatlabz-AI-Security-Report-2024.pdf) (2024) - Examines the intersection of artificial intelligence and cybersecurity, offering insights into AI-powered threats, defensive applications of AI, and strategies for securing AI systems and models.
 - [IBM](https://www.ibm.com/security/data-breach/threat-intelligence/) - [X-Force Cloud Threat Landscape Report](Annual%20Security%20Reports/2024/IBM-X-Force-Cloud-Threat-Landscape-Report-2024.pdf) (2024) - Focuses on threats specific to cloud environments, offering insights into cloud security challenges and strategies for securing cloud infrastructure.
+- [Okta](https://www.okta.com/resources/whitepaper-the-state-of-secure-identity-report/) - [The State of Secure Identity](Annual%20Security%20Reports/2023/Okta-The-State-of-Secure-Identity-2023.pdf) (2023) - Drawing on billions of authentications, this report explores trends and methods of common identity attacks, the role of AI in identity security, and unique attack patterns across industries, regions, and company sizes.
+- [Zscaler](https://info.zscaler.com/resources-industry-reports-public-sector-Insights-threatlabz-ai-security-2024) - [ThreatLabz AI Security Report](Annual%20Security%20Reports/2024/Threatlabz-AI-Security-Report-2024.pdf) (2024) - Examines the intersection of artificial intelligence and cybersecurity, offering insights into AI-powered threats, defensive applications of AI, and strategies for securing AI systems and models.
 
 ## Survey Reports
 
@@ -170,16 +171,16 @@ Reports will be classified by a header that describes their primary content or e
 - [Fortra](https://www.fortra.com/services/consulting/cybersecurity/penetration-testing) - [Penetration Testing Report](Annual%20Security%20Reports/2024/Fortra-Pentesting-Report-2024.pdf) (2024) - Provides insights into the current landscape of penetration testing, including common vulnerabilities and industry-specific challenges.
 - [HackerOne](https://www.hackerone.com/resources/reporting/8th-hacker-powered-security-report) - [Hacker Powered Security Report](Annual%20Security%20Reports/2024/HackerOne-Hacker-Powered-Security-Report-2024.pdf) (2024) - Explores the state of hacker-powered security, including trends in bug bounty programs and vulnerability disclosure across industries.
 
-## Ransomware
-- [Cyberreason](https://www.cybereason.com/ransomware-the-true-cost-to-business-2024) - [Ransomware The True Cost to Business](Annual%20Security%20Reports/2024/Cyberreason-Ransomware-The-True-Cost-to-Business-2024.pdf) (2024) - Examines the true cost of ransomware attacks on businesses across different sectors.
-- [Fortinet](https://global.fortinet.com/lp-en-ap-2023ransomwareglobalrr) - [Global Ransomware Report](Annual%20Security%20Reports/2023/Fortinet-Global-Ransomware-Report-2023.pdf) (2023) - Provides a global overview of ransomware trends and impacts across various industries.
-- [Spycloud](https://spycloud.com/resource/2024-malware-ransomware-defense-report/) - [Ransomware Defense Report](Annual%20Security%20Reports/2024/Spycloud-Ransomware-Defense-Report-2024.pdf) (2024) - Examines malware and ransomware defense strategies and trends across different sectors.
-
 ## Privacy and Data Protection
 - [Cisco](https://www.cisco.com/c/en/us/about/trust-center/data-privacy-benchmark-study.html) - [Data Privacy Benchmark Study](Annual%20Security%20Reports/2024/Cisco-Privacy-Benchmark-Study-2024.pdf) (2024) - Provides insights into data privacy trends, challenges, and breaches across various industries.
 - [Immuta](https://www.immuta.com/resources/2024-trendbook/) - [State of Data Security Report](Annual%20Security%20Reports/2024/Immuta-State-of-Data-Security-Report-2024.pdf) (2024) - Examines the current state of data security, including challenges, trends, and best practices across various industries.
 - [Proofpoint](https://www.proofpoint.com/us/resources/threat-reports/data-loss-landscape) - [Data Loss Landscape](Annual%20Security%20Reports/2024/Proofpoint-Data-Loss-Landscape-2024.pdf) (2024) - Provides an overview of the data loss landscape, including trends and challenges faced by organizations across various industries.
 - [Proofpoint](https://go.proofpoint.com/2024-Frost-Radar-for-Email-Security.html) - [Global Email Security Market Report](Annual%20Security%20Reports/2024/Proofpoint-Global-Email-Security-Market-Report-2024.pdf) (2024) - Benchmarks 21 top email security vendors, highlighting growth opportunities and market trends.
+
+## Ransomware
+- [Cyberreason](https://www.cybereason.com/ransomware-the-true-cost-to-business-2024) - [Ransomware The True Cost to Business](Annual%20Security%20Reports/2024/Cyberreason-Ransomware-The-True-Cost-to-Business-2024.pdf) (2024) - Examines the true cost of ransomware attacks on businesses across different sectors.
+- [Fortinet](https://global.fortinet.com/lp-en-ap-2023ransomwareglobalrr) - [Global Ransomware Report](Annual%20Security%20Reports/2023/Fortinet-Global-Ransomware-Report-2023.pdf) (2023) - Provides a global overview of ransomware trends and impacts across various industries.
+- [Spycloud](https://spycloud.com/resource/2024-malware-ransomware-defense-report/) - [Ransomware Defense Report](Annual%20Security%20Reports/2024/Spycloud-Ransomware-Defense-Report-2024.pdf) (2024) - Examines malware and ransomware defense strategies and trends across different sectors.
 
 ## AI and Emerging Technologies
 - [HiddenLayer](https://hiddenlayer.com/threatreport2024/) - [AI Threat Report](Annual%20Security%20Reports/2024/HiddenLayer-AI-Threat-Landscape-Report-2024.pdf) (2024) - Provides insights into the AI threat landscape across various industries.
