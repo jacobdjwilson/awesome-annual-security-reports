@@ -1,259 +1,420 @@
-Sponsored by
+August 2023
+
+The State of Supply Chain Threats
+
 Widely exploited vulnerabilities in open source software and malicious components 
 being loaded in trusted public repositories have highlighted issues in the software 
-supply chain. Heres what organizations are doing to mitigate their risk.
-The State of Supply Chain Threats
-August 2023
-The State of Supply Chain Threats
-August 2023 2
-Dark Reading Reports
-CONTENTS
-TABLE OF
- 3 Mend Perspectives
+supply chain. Here’s what organizations are doing to mitigate their risk.
+
+Sponsored by
+
+ 3 Mend Perspectives
+
  5 About the Author
+
  6 Executive Summary
+
  8 Research Synopsis
+
  9 High Concerns Over Supply Chain Risk
- 11 Work in Progress: Software Supply Chain Security
+
+ 11 Work in Progress: Software Supply 
+
+ Chain Security
+
  13 Profound Impact on Supply Chain Practices
+
  14 Conclusion 
+
  16 Appendix
+
+The State of Supply Chain Threats
+
 Figures
-Figure 1:
-Priority Level of SupplyChain Security
-Figure 2: 
-Top Supply Chain Issues 
+
+Figure 1: Priority Level of Supply 
+Chain Security
+
+Figure 2: Top Supply Chain Issues 
+
 Figure 3: 
+
 Importance of Supply Chain Risks
-Figure 4: 
-Response to a Supply Chain Attack
-Figure 5: 
-Time to Mitigate SupplyChain Issues
-Figure 6: 
-State of Software Supply Chain
-Figure 7: 
-Concerns About SoftwareSupply Chain
-Figure 8: 
-Managing Software Supply Chain
-Figure 9: 
-Vendor Scorecards 
+
+Figure 4: Response to a Supply Chain Attack
+
+Figure 5: Time to Mitigate Supply 
+Chain Issues
+
+Figure 6: State of Software Supply Chain
+
+Figure 7: Concerns About Software 
+Supply Chain
+
+Figure 8: Managing Software Supply Chain
+
+Figure 9: Vendor Scorecards 
+
 Figure 10: Software Bills of Materials
-Figure 11: Build Practices to Prevent SoftwareSupply Chain Attacks
+
+Figure 11: Build Practices to Prevent Software 
+
+Supply Chain Attacks
+
 Figure 12: Software Supply Chain Statements
-Figure 13: Effect of Recent Attacks onOrganizations Approach toSupply Chain Security
+
+Figure 13: Effect of Recent Attacks on 
+Organizations’ Approach to 
+Supply Chain Security
+
 Figure 14: Minimizing Third\-Party Risk
-Figure 15: Types of Information for SupplyChain Assessment
+
+Figure 15: Types of Information for Supply 
+Chain Assessment
+
 Figure 16: Securing the Supply Chain
+
 Figure 17: Supply Chain Attack 
+
 Figure 18: Types of Attacks 
-Figure 19: Current Protection AgainstSoftware Supply Chain Threats
-Figure 20: Insurance Partner for ReducingThird\-Party Risk
+
+Figure 19: Current Protection Against 
+
+Software Supply Chain Threats
+
+Figure 20: 
+
+Insurance Partner for Reducing 
+Third\-Party Risk
+
 Figure 21: Respondent Region of Residence
+
 Figure 22: Respondent Job Title 
+
 Figure 23: Respondent Company Size
+
 Figure 24: Respondent Industry
+
+S
+T
+N
+E
+T
+N
+O
+C
+
+TABLE OF
+
 Dark Reading Reports
-Table of Contents
-August 2023 3
+
+August 2023 2
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Table of Contents
+
+The Rising Threat of Malicious Packages 
+
+Sponsored Content
+MEND 
+PERSPECTIVES
+
+By Carol Hildebrand
+
+Malware has entered the software supply chain. Are you prepared? 
+
 Open source code package repositories, such 
 as npm and RubyGems, allow anyone to store 
 or publish packages, and unfortunately, even 
 those containing malware. These are known 
-as malicious packages the malware of the 
+as malicious packages — the malware of the 
 software supply chain. 
-Malicious packages arent new, but theyre 
-proliferating at an alarming pace. In our Special 
-Report: Software Supply Chain Malware, 
+
+Malicious packages aren’t new, but they’re 
+proliferating at an alarming pace. In our “Special 
+Report: Software Supply Chain Malware,” 
 Mend.io identified a 315% increase in malicious 
 packages published to npm and RubyGems 
 from 2021 to 2022, and expects that trend to 
 continue.
-Anatomy of a Malicious
+
+Anatomy of a Malicious 
 Package Attack
-Malicious 
-packages 
-are 
-used 
-to 
-steal 
+
+Malicious packages are used 
+to steal 
 credentials, exfiltrate data, turn applications 
 into botnets, or erase data. But first, attackers 
 need to trick someone or something into 
 downloading the package.
+
 It can be as simple as hiding a malware payload 
 in open source code and tricking a careless 
 developer into using it, or elevating bugs in 
 package manager systems and then benefiting 
+
 from the opportunities afforded by the scale of 
 a corrupted software supply chain. Make no 
 mistake: Like any malware, malicious packages 
 can inflict significant damage. 
+
 Organizational Impact: Malicious 
 Packages Are More Dangerous 
 Than Vulnerabilities
+
 Once a developer downloads a malicious 
 package, how much damage it does will 
 depend on the following factors:
+
 1\. Intent: When threat actors infiltrate using 
 a malicious package, their intent substantially 
 determines the impact. A threat actor trying 
 to inform people about a war or protest action 
 with annoying messages has a lower overall 
 impact than one trying to steal information or 
-turn developers machines into cryptocurrency 
+turn developers’ machines into cryptocurrency 
 miners.
-1\. Organization type: Attacks designed to 
+
+2\. Organization type: Attacks designed to 
 exfiltrate personal information will have a larger, 
 potentially long\-term impact on companies 
 trusted with sensitive data. Ransomware 
 attacks that disable systems can have an 
 outsize impact in organizations like hospitals, 
+
 where lives depend on uptime.
-1\. Duration: When malicious packages are 
+
+3\. Duration: When malicious packages are 
 discovered quickly and removed completely, 
 the damage they cause can be limited. The 
 greatest damage can be caused by packages 
 that remain undetected for months or years 
 while quietly delivering their payloads.
-1\. Spread: Some of the most dangerous 
+
+4\. Spread: Some of the most dangerous 
 malicious packages are designed to provide 
 initial access to a network, at which point the 
 threat actor can move laterally through systems 
 to steal passwords or protected information to 
 gain even more access.
+
 Unlike vulnerabilities, which can and do often 
 exist for months or years in application code 
 without being exploited, a malicious package 
-represents an immediate threat to your 
+represents an 
+to your 
+immediate 
 organization.
-Malicious Package
+
+threat 
+
+Malicious Package 
 Attack Vectors
+
 To deliver a malicious payload via an open 
 source package, attackers must find a way 
 to get the package downloaded. The four 
-Malware has entered the software supply chain. Are you prepared? 
-The Rising Threat of Malicious Packages 
-Sponsored Content
-MEND 
-PERSPECTIVES
-By Carol Hildebrand
+
 Dark Reading Reports
-Table of Contents
-August 2023 4
+
+August 2023 3
+
+Table of Contents
+
 basic attack vectors for malicious packages 
 are brandjacking, typosquatting, dependency 
 hijacking, and dependency confusion.
-Brandjacking: 
-An 
-attacker 
-acquires 
-or 
-otherwise assumes the online identity of 
+
+Brandjacking: An attacker acquires or 
+otherwise assumes the online 
+identity of 
 another company or an owner of a package 
-and then inserts a malicious code. It doesnt 
+and then inserts a malicious code. It doesn’t 
 necessarily mean he actively steals something, 
 but just takes advantage of an opportunity to 
 take ownership related to the brand name.
+
 Typosquatting: An attacker publishes a 
 malicious package with a similar name to a 
 popular package, in the hope that a developer 
 will misspell a package name and unintention\-
 ally fetch the malicious version.
+
 Dependency hijacking: An attacker obtains 
 control of a public repository in order to upload 
 a new, malicious version.
+
 Dependency confusion attacks: Here, the 
 threat actor creates a public repository package 
 with the identical name of an internal package 
+
 within the intended target system. The intention 
-is to trick the targets dependency management 
+is to trick the target’s dependency management 
 tools into downloading the malicious public 
 package instead of the safe internal one.
+
 The best defense against the growing threat 
 of malicious packages is a knowledgeable and 
 alert developer community in and around open 
 source registries, combined with automated 
 detection and response solutions.
-Read Mend.ios Special Report: Software 
-Supply Chain Malware for the latest research 
+
+Read Mend.io’s “Special Report: Software 
+Supply Chain Malware” for the latest research 
 on the malware of the supply chain.
+
 About the Author: A veteran of Computer\-
 world and CIO magazine, Carol Hildebrand 
 is an award\-winning technology writer who 
 focuses on cybersecurity and how it impacts 
 business innovation.
-The State of Supply Chain Threats
-August 2023 5
+
 Dark Reading Reports
-Table of Contents
+
+August 2023 4
+
+Table of Contents
+
+The State of Supply Chain Threats
+
 About the Author
+
 Fahmida Y. Rashid 
 Dark Reading
-Fahmida Y. Rashid is Dark Readings managing editor for features. She has spent over a decade analyzing news 
+
+Fahmida Y. Rashid is Dark Reading’s managing editor for features. She has spent over a decade analyzing news 
 events and demystifying security technology for IT professionals and business managers. Her work has appeared in 
 various business and tech trade publications, including VentureBeat, CSO Online, InfoWorld, eWEEK, and CRN.
-August 2023 6
-Table of Contents
-The State of Supply Chain Threats
+
 Dark Reading Reports
-SUMMARY
+
+August 2023 5
+
+Table of Contents
+
+The State of Supply Chain Threats
+
+Y
+R
+A
+M
+M
+U
+S
+
 EXECUTIVE
-Many organizations changed or started making signicant changes to their supply chain security practices two years 
+
+Many organizations changed — or started making signiﬁcant changes to — their supply chain security practices two years 
 ago to address growing risks from vulnerable third\-party software and open source components. On the open source front, 
-the growing number of malicious components being pushed into public code registries such as npm, PyPI, and Maven 
- highlights the necessity of these changes. More concerning for organizations is the fact that attackers have exploited zero\-
+the growing number of malicious components being pushed into public code registries — such as npm, PyPI, and Maven 
+— highlights the necessity of these changes. More concerning for organizations is the fact that attackers have exploited zero\-
 day vulnerabilities in multiple, widely used software products, including Microsoft Exchange, Kaseya, and Accellion, to breach 
 numerous government and private entities worldwide. 
-Dark Readings 2023 Supply Chain Threat Survey of 242 IT and cybersecurity professionals shows that a lot has stayed the 
+
+Dark Reading’s 2023 Supply Chain Threat Survey of 242 IT and cybersecurity professionals shows that a lot has stayed the 
 same in regard to supply chain risk. A relatively high percentage of organizations have implemented processes for mitigating 
 risk from vulnerabilities in the partner ecosystem, and there is strong awareness of what needs to be done to strengthen the 
 security of the software supply chain. Most organizations, for instance, maintain a software bill of materials repository, and 
 more than one\-third of respondents expect their organizations to increase their use of SBOMs in the coming year. 
-More than half the organizations in Dark Readings survey require their software suppliers to adhere to stipulated security stan\-
+
+More than half the organizations in Dark Reading’s survey require their software suppliers to adhere to stipulated security stan\-
 dards, and nearly one in four want their vendors to submit independent audits or assessments indicating they meet security 
-requirements. Others request ad hoc, point\-in\-time assessments of their suppliers security posture.
+requirements. Others request ad hoc, point\-in\-time assessments of their suppliers’ security posture.
+
 What is striking about this report is that different occurrences have affected responses this year versus last. The attacks 
-against Kaseya and Accellion were fresh in the minds of the respondents last year; this years respondents were asked to 
+against Kaseya and Accellion were fresh in the minds of the respondents last year; this year’s respondents were asked to 
 assess their ability to detect and mitigate supply chain attacks while being confronted with the attacks that exploited multiple 
-vulnerabilities in the MOVEit le transfer utility.
+vulnerabilities in the MOVEit ﬁle transfer utility.
+
 While many organizations have implemented multiple processes for managing supply chain risks, a sizable percentage of 
-organizations have not done so and remain at heightened exposure to attacks via the supply chain. Even so, most IT andcybersecurity professionals in the survey appear condent in their organizations ability to defend against a supply chain attack 
+organizations have not done so and remain at heightened exposure to attacks via the supply chain. Even so, most IT and 
+cybersecurity professionals in the survey appear conﬁdent in their organizations’ ability to defend against a supply chain attack 
 and to detect and respond to any incidents that might get past their defenses.
-August 2023 7
-Table of Contents
-The State of Supply Chain Threats
+
 Dark Reading Reports
+
+August 2023 6
+
+Table of Contents
+
 The following are some of the key takeaways from the survey:
- 71% of respondents describe third\-party risk and supply chain security as one of their top ve security initiatives for the coming year.
- 71% of organizations in the survey say their current security programs cover software supply chain threats, but only 28% explicitly state that 
-their program covers the software supply chain.
- Just 24% of organizations consider their software supply chain secure. For 55% of organizations, software supply chain security is still a work 
-in progress.
- 50% maintain a software bill of materials repository, but just 36% claim to create complete SBOMs for all their software. Just 41% regularly 
-request SBOMs from vendors and suppliers.
- 40% say vulnerabilities in open source software components is their biggest supply chain\-related worry; 24% point to developers beingtricked into malicious components, via methods such as typosquatting and dependency confusion.
- 34% of respondents who had experienced a supply chain attack over the past year say developers accidentally downloaded maliciouscomponents from public code registries, such as PyPI and npm. 
- 49% of IT and cybersecurity professionals in the survey say they are most concerned about attackers targeting their organizations viavulnerabilities in widely used commercial platforms.
-August 2023 8
-Table of Contents
+
 The State of Supply Chain Threats
+
+• 71% of respondents describe third\-party risk and supply chain security as one of their top ﬁve security initiatives for the coming year.
+
+• 71% of organizations in the survey say their current security programs cover software supply chain threats, but only 28% explicitly state that 
+
+their program covers the software supply chain.
+
+• Just 24% of organizations consider their software supply chain secure. For 55% of organizations, software supply chain security is still a work 
+
+in progress.
+
+• 50% maintain a software bill of materials repository, but just 36% claim to create complete SBOMs for all their software. Just 41% regularly 
+
+request SBOMs from vendors and suppliers.
+
+• 40% say vulnerabilities in open source software components is their biggest supply chain\-related worry; 24% point to developers being 
+
+tricked into malicious components, via methods such as typosquatting and dependency confusion.
+
+• 34% of respondents who had experienced a supply chain attack over the past year say developers accidentally downloaded malicious 
+
+components from public code registries, such as PyPI and npm. 
+
+• 49% of IT and cybersecurity professionals in the survey say they are most concerned about attackers targeting their organizations via 
+
+vulnerabilities in widely used commercial platforms.
+
 Dark Reading Reports
-SYNOPSIS
-RESEARCH
+
+August 2023 7
+
+The State of Supply Chain Threats
+
 Survey Name: Dark Reading 2023 Supply Chain Threat Survey
+
 Survey Date: June 2023 
-Number of Respondents: 242 IT and cybersecurity professionals at companies of all sizes, based primarily in NorthAmerica. The margin of error for the total respondent base (N\=242\) is \+\-6\.3 percentage points.
+
+Number of Respondents: 242 IT and cybersecurity professionals at companies of all sizes, based primarily in North 
+America. The margin of error for the total respondent base (N\=242\) is \+/\-6\.3 percentage points.
+
 Purpose: Dark Reading surveyed information technology and cybersecurity professionals on the supply chain threat land\-
 scape; their biggest current concerns; the practices they have implemented to manage supply chain risk; and their capabilities 
 for preventing, detecting, and responding to supply chain\-related security issues.
+
 Methodology: The survey queried decision\-makers with job titles that involved IT or IT security (cybersecurity) at organiza\-
 tions across more than a dozen industry sectors. It asked them about a wide range of supply chain threats and risk mitigation 
 practices. The survey was conducted online. Respondents were recruited via an email invitation containing an embedded link 
-to the survey. The email invitation was sent to a select group of Informa Techs qualied database; Informa is the parent com\-
+to the survey. The email invitation was sent to a select group of Informa Tech’s qualiﬁed database; Informa is the parent com\-
 pany of Dark Reading. Informa Tech was responsible for all survey design, administration, data collection, and data analysis. 
 These procedures were carried out in strict accordance with standard market research practices and existing US privacy laws. 
+
+Table of Contents
+
 ABOUT US
-Dark Reading Reports
+
+Dark Reading Reports 
 offer original data and insights on 
 the latest trends and practices in 
 IT security. Compiled and written 
@@ -263,17 +424,35 @@ of the cybersecurity community
 and provide advice on the steps 
 enterprises can take to protect their 
 most critical data.
+
 Dark Reading Reports
-August 2023 9
-Table of Contents
+
+I
+
+S
+S
+P
+O
+N
+Y
+S
+
+RESEARCH
+
+Dark Reading Reports
+
+August 2023 8
+
+Table of Contents
+
 The State of Supply Chain Threats
-Dark Reading Reports
+
 High Concerns Over Supply 
 Chain Risk
 Supply chain security was in the headlines for 
-most of 2022 as well as the first half of 2023 
- and it became increasingly clear that supply 
-chain risk does not mean the same thing 
+most of 2022 — as well as the first half of 2023 
+— and it became increasingly clear that “supply 
+chain risk” does not mean the same thing 
 to everyone. Supply chain is one item under 
 application security as organizations worry 
 about the security and provenance of software 
@@ -286,93 +465,230 @@ ers. Supply chain is also top of mind for
 organizations that are seeing their data stolen 
 and networks compromised because a business 
 application they rely on has been compromised.
+
 These varied incidents highlight the damage 
 supply chain attacks could cause and height\-
 ened concerns about enterprise exposure to 
 different types of supply chain risks. But there 
 are also signs to be optimistic about, such as 
 industrywide efforts to strengthen the security 
-of the software supply chain. Last years 
+of the software supply chain. Last year’s 
 executive order from the Biden administration 
 requiring federal agencies to adopt a number 
-of software security best practices such 
+of software security best practices — such 
 as maintaining a software bill of materials for 
+
+Figure 1\.
+
+Priority Level of Supply Chain Security
+Compared with all of your organization’s security initiatives for the coming year, how high a priority is 
+third\-party risk and supply chain security?
+
+1%
+
+5%
+
+12%
+
+10%
+
+1%3%
+
+9%
+
+12%
+
+13%
+
+17%
+
+34%
+
+25%
+
+2023
+
+30%
+
+2022
+
+It’s our top priority
+
+It’s among our top 3 priorities 
+
+It’s among our top 5 priorities
+
+28%
+
+It’s among our top 10 priorities 
+
+It’s important, but not part of our top 10 
+
+It’s not a priority at this time
+
+Don’t know 
+
+Data: Dark Reading survey of 242 
+cybersecurity and IT professionals in 
+June 2023 and 115 in June 2022
+
 all software in use, implementing controls to 
 protect build environments, and documenting 
-all software dependencies in use has pushed 
+all software dependencies in use — has pushed 
 organizations to include those conversations 
 as they make their security plans. 
-Dark Readings 2023 Supply Chain Security 
+
+Dark Reading’s 2023 Supply Chain Security 
 Survey reflects this heightened sense of 
 awareness. Supply chain security remains a 
 major concern for IT and security professionals, 
 with 71% of all organizations listing supply chain 
 security among their top five security priorities 
 for 2023\. It tops the list of security priorities for 
-12% of organizations. Whats noteworthy is 
-that priorities dont seem to have shifted at all 
+12% of organizations. What’s noteworthy is 
+
+that priorities don’t seem to have shifted at all 
 since last year, when 70% listed supply chain 
 security among their top five (Figure 1\).
+
 There is no clear consensus among security 
 and IT decision\-makers on which supply chain 
 security issue concerns them most. Almost 
 half (49%) of respondents cite attacks targeting 
 vulnerabilities in commercial platforms as their 
-biggest supply chain security issue, which isa significant increase from last year (36%) 
+biggest supply chain security issue, which is 
+a significant increase from last year (36%) 
 (Figure 2\). Some of the jump could be directly 
 related to the fact that the survey was conducted 
 around the time when researchers warned that 
-Figure 1\.
-Priority Level of Supply Chain Security
-Compared with all of your organizations security initiatives for the coming year, how high a priority is 
-third\-party risk and supply chain security?
-Data: Dark Reading survey of 242 
-cybersecurity and IT professionals in
-June 2023 and 115 in June 2022
-5%
-1%
-10%
-13%
-25%
-34%
-12%
-2023
-1%
-3%
-9%
-17%
-30%
-28%
-12%
-Its our top priority
-Its among our top 3 priorities 
-Its among our top 5 priorities
-Its among our top 10 priorities 
-Its important, but not part of our top 10 
-Its not a priority at this time
-Dont know 
-2022
-August 2023 10
-Table of Contents
-The State of Supply Chain Threats
+
 Dark Reading Reports
+
+August 2023 9
+
+Table of Contents
+
+Figure 2\.
+
+Top Supply Chain Issues
+When it comes to the supply chain, which of these issues worries you the most? 
+
+ 2023 
+
+ 2022 
+
+Attacks targeting vulnerabilities in commercial platforms 
+
+Attackers targeting my organization after compromising my 
+suppliers and partners 
+
+Ransomware attacks that originated from a supply chain 
+compromise 
+
+ ............................................ 49% 
+ ........................................................ 36%
+
+ .................................................. 42% 
+ ................................................. 44%
+
+ ....................................................41% 
+ .................................................... 40%
+
+Vulnerabilities in open source software components that are 
+used by commercial applications 
+
+ .................................................... 40% 
+ ............................................51%
+
+Business processes being disrupted because the supplier is 
+offline after a cyberattack 
+
+ ...................................................... 38% 
+ ..................................................................... 20%
+
+Vulnerabilities in frameworks and other developer tools used to 
+create applications 
+
+ ......................................................... 34% 
+ ............................................ 49%
+
+Being tricked into downloading malicious components
+
+ ...................................................................24% 
+ ............................................................... 27%
+
+Adversaries steal secrets, such as tokens, and gain 
+unauthorized access to our systems 
+
+ ...................................................................24% 
+ ..........................................................................16%
+
+Scanning and remediating vulnerabilities in containers 
+
+ .................................................................... 22%
+........................................................................................ N/A
+
+Downstream attacks after adversaries compromised a code 
+repository and inserted malicious packages 
+
+ .....................................................................21% 
+ ................................................................. 25%
+
+Firmware\-based attacks 
+
+ ............................................................................13% 
+ ..................................................................... 20%
+
+Backdoored hardware components incorporated in devices 
+used by my organization 
+
+ ............................................................................13% 
+ ................................................................. 25%
+
+Securing open source software in containers 
+
+ .............................................................................12%
+........................................................................................ N/A
+
+I do not have visibility over my supply chain to accurately 
+assess risk 
+
+ .............................................................................12% 
+ ...............................................................................10%
+
+Attackers intercept my digital keys and certificates to sign 
+malicious code
+
+ .............................................................................. 11% 
+ ...............................................................................10%
+
+Note: Maximum of ﬁve responses allowed
+Data: Dark Reading survey of 242 cybersecurity and IT professionals in June 2023 and 115 in June 2022
+
+The State of Supply Chain Threats
+
 attack groups were actively exploiting a critical 
-zero\-day vulnerability in Progress Softwares 
+zero\-day vulnerability in Progress Software’s 
 MOVEit Transfer managed file transfer utility 
-to steal data from organizations. Recent 
+from organizations. Recent 
+to steal data 
 analysis from Brett Callow, a threat analyst 
 at Emsisoft, suggests that 347 organizations 
 have been affected and more than 18\.6 million 
-individuals had their data compromised.
+their data compromised.
+individuals had 
+
 Perhaps influenced by the attacks targeting 
 MOVEit, respondents to the Dark Reading 
 survey also list concerns that attackers would 
 target their organizations after compromising 
 suppliers and partners (42%), ransomware 
-attacks originating from a supply chain 
+attacks originating 
+from a supply chain 
 compromise (41%), and disruptions to business 
 processes because the supplier was hit by a 
 cyberattack (38%).
+
 Respondents are also concerned about their 
 exposure to insecure open source components, 
 tools, and frameworks. Forty percent of the 
@@ -384,60 +700,15 @@ other tools developers use to create applications.
 About a quarter of respondents (24%) are 
 concerned about their developers being tricked 
 into downloading malicious components.
-Attacks targeting vulnerabilities in commercial platforms 
-Attackers targeting my organization after compromising my 
-suppliers and partners 
-Ransomware attacks that originated from a supply chain 
-compromise 
-Vulnerabilities in open source software components that are 
-used by commercial applications 
-Business processes being disrupted because the supplier is 
-offine after a cyberattack 
-Vulnerabilities in frameworks and other developer tools used to 
-create applications 
-Being tricked into downloading malicious components
-Adversaries steal secrets, such as tokens, and gain 
-unauthorized access to our systems 
-Scanning and remediating vulnerabilities in containers 
-Downstream attacks after adversaries compromised a code 
-repository and inserted malicious packages 
-Firmware\-based attacks 
-Backdoored hardware components incorporated in devices 
-used by my organization 
-Securing open source software in containers 
-I do not have visibility over my supply chain to accurately 
-assess risk 
-Attackers intercept my digital keys and certifcates to sign 
-malicious code
-Figure 2\.
-Note: Maximum of ve responses allowed
-Data: Dark Reading survey of 242 cybersecurity and IT professionals in June 2023 and 115 in June 2022
-Top Supply Chain Issues
-When it comes to the supply chain, which of these issues worries you the most?20232022 
- 41% 
- 40%
- 34% 
- 49%24%16%
- 11%10%24% 
- 27%
- 21% 
- 25% 22%
- NA
- 13% 
- 20%
- 13% 
- 25%
- 12%
- NA
- 12%10% 38% 
- 20%
- 40%51%
- 49% 36%
- 42% 44%
-August 2023 11
-Table of Contents
-The State of Supply Chain Threats
+
 Dark Reading Reports
+
+August 2023 10
+
+Table of Contents
+
+The State of Supply Chain Threats
+
 Typosquatting names and dependency poison\-
 ing are types of attacks in which a threat actor 
 introduces malicious components into widely 
@@ -445,11 +716,13 @@ used public software repositories, such as npm,
 and then tries to trick users into downloading it 
 by, for instance, using the local phone number 
 from a legitimate package.
+
 Enterprise supply chain security also goes 
 beyond software: 13% cite firmware\-based 
 attacks as a major concern, and an equal 
 number worry about backdoored hardware 
 components used in devices.
+
 From a risk prioritization standpoint, IT and 
 security leaders are less focused on attacks 
 targeting the partner ecosystem and more 
@@ -461,31 +734,23 @@ Survey respondents rank risks associated with
 third\-party vendors and contractors third, and 
 other risks associated with open source software 
 fourth, in order of importance (Figure 3\). 
+
 Third\-party libraries are widely used in software 
 development because they give developers a 
 way to quickly add specific functionality to their 
 code. But because the components can nest 
+
 several layers in the code, sometimes it can be 
 hard to find vulnerabilities in applications. 
+
 Work in Progress: Software 
 Supply Chain Security
-Dark Readings survey shows most respondents 
-are 
-confident 
-about 
-the 
-controls 
-they 
-have 
-in 
-place 
+
+Dark Reading’s survey shows most respondents 
+are confident about the controls they have in place 
 to mitigate supply chain security risks. Survey 
 respondents express some level of confidence 
-in how their organization would respond to a 
-supply chain attack. Seventy percent indicate 
-their organizations have designated staff to 
-respond to supply chain issues or know whom 
-to call in case of a supply chain attack, and 67% 
+
 say their organizations have clear processes 
 on how to respond (Figure 4\). Respondents 
 also suggest they have all the pieces in place 
@@ -495,62 +760,176 @@ are roughly equal numbers of respondents with
 the confidence in their processes to be able to 
 handle an incident in less than 24 hours (22%) 
 and those requiring four days to approximately 
-a week (19%) (Figure 5\). This suggests some 
-variability remains in the kind of controls in place. 
-The confidence these results reflect did not 
-carry over into the respondents perception of 
-the overall state of their organizations software 
+
 Figure 3\.
-Overall Rank
-Score
-Software 
-1
-1,101
-Digital supply chain 
-2
-1,020
-Third\-party vendors and contractors
-3
-993
-Open source software
-4
-943
-Firmware
-5
-665
-Container security
-6
-596
-Hardware components
-7
-580
-Note: Rank is based on a weighted score. Responses are weighted, and scores represent the sum of all weighted counts.
-Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023 
+
 Importance of Supply Chain Risks
 Rank the following types of third\-party and supplier risk to your organization in order of importance.
-August 2023 12
-Table of Contents
-The State of Supply Chain Threats
+
+Software 
+
+Digital supply chain 
+
+Third\-party vendors and contractors
+
+Open source software
+
+Firmware
+
+Container security
+
+Hardware components
+
+Overall Rank
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+Score
+
+1,101
+
+1,020
+
+993
+
+943
+
+665
+
+596
+
+580
+
+Note: Rank is based on a weighted score. Responses are weighted, and scores represent the sum of all weighted counts.
+Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023 
+
+in how their organization would respond to a 
+supply chain attack. Seventy percent indicate 
+their organizations have designated staff to 
+respond to supply chain issues or know whom 
+to call in case of a supply chain attack, and 67% 
+
+a week (19%) (Figure 5\). This suggests some 
+variability remains in the kind of controls in place. 
+
+The confidence these results reflect did not 
+carry over into the respondents’ perception of 
+the overall state of their organizations’ software 
+
 Dark Reading Reports
+
+August 2023 11
+
+Table of Contents
+
+Figure 4\.
+
+Response to a Supply Chain Attack
+Please tell us how much you agree or disagree as to how your organization would respond to a supply 
+chain attack.
+
+Strongly 
+agree     
+
+Somewhat 
+agree     
+
+Neither 
+agree nor 
+disagree 
+
+Somewhat 
+disagree 
+
+Strongly 
+disagree 
+
+My organization has clear processes for how to handle 
+a supply chain incident
+
+28%
+
+39%
+
+24%
+
+We have designated staff to respond to supply chain 
+issues, or we know whom to call in case of a supply 
+chain attack
+
+My organization will need to hire an outside team or 
+consultant to deal with a supply chain incident
+
+My organization will need to shut down operations/
+business processes to deal with an attack
+
+31%
+
+39%
+
+20%
+
+16%
+
+10%
+
+27%
+
+20%
+
+31%
+
+32%
+
+ 7%
+
+ 8%
+
+16%
+
+24%
+
+ 2%
+
+2%
+
+10%
+
+14%
+
+Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023 
+
 supply chain security. Less than a quarter (24%) 
 perceive their software supply chain to be fully 
 secure, and almost an equal number (23%) say 
-they have a ways to go to secure the software 
+they have “a ways to go” to secure the software 
 supply chain (Figure 6\). A third (33%) describe 
 their efforts as a work in progress, either almost 
 or halfway finished.
+
 When asked to rank issues in software supply 
 chain security, respondents say they are 
-worried about vulnerabilities in third\-party 
+worried about vulnerabilities 
+in third\-party 
 libraries, followed by developers downloading 
-and 
-importing 
-malicious 
-packages 
+importing malicious packages and 
 and 
 components, and attackers tampering with 
 existing libraries and repositories to include 
-malicious code (Figure 7\). Whats troubling is 
+malicious code (Figure 7\). What’s troubling is 
+
 that despite these concerns, many organiza\-
 tions have not implemented controls to protect 
 their software supply chain and to limit damage. 
@@ -560,12 +939,17 @@ and registries, and just 36% regularly check
 container images for vulnerabilities as part of 
 their processes for managing supply chain risk 
 (Figure 8\). Security analysts consider such 
-scanning before a container is deployed into 
-production a fundamental practice for early 
+scanning — before a container is deployed into 
+production — a fundamental practice for early 
 risk detection and remediation.
+
 The use of vendor scorecards or rating scores 
-from industry consortiums to assess the 
+from 
+industry consortiums to assess the 
 security of open source components remains 
+
+The State of Supply Chain Threats
+
 an open question. While a plurality, 47%, say 
 they do use some kind of scorecard system to 
 assess software components, the fact that 20% 
@@ -573,7 +957,8 @@ are unsure if their organizations rely on vendor
 scorecards or rating scores to determine the 
 security of open source components suggests 
 the idea is still in the early stages (Figure 9\).
-On the other hand, Dark Readings 2023 Supply 
+
+On the other hand, Dark Reading’s 2023 Supply 
 Chain Threats Survey reveals relatively high 
 awareness and adoption of one supply chain 
 best practice: the software bill of materials. 
@@ -586,7 +971,7 @@ piece of software, typically includes information
 such as the license of the software component, 
 its version, and list of known vulnerabilities 
 that may be present. Security experts see 
-SBOMs as key to an organizations ability to 
+SBOMs as key to an organization’s ability to 
 quickly identify and remediate vulnerabilities 
 in open source components in their software. 
 However, the use of SBOMs still seems limited, 
@@ -594,59 +979,22 @@ as only 41% regularly request SBOMs from
 their vendors and suppliers, and the same 
 percentage of respondents uses SBOMs as 
 part of their vulnerability management efforts.
-Figure 4\.Strongly
-agree 
-Somewhat 
-agree 
-Neither 
-agree nor 
-disagree 
-Somewhat 
-disagree 
-Strongly 
-disagree 
-My organization has clear processes for how to handle 
-a supply chain incident
-28%
-39%
-24%
- 7%
- 2%
-We have designated staff to respond to supply chain 
-issues, or we know whom to call in case of a supply 
-chain attack
-31%
-39%
-20%
- 8%
-2%
-My organization will need to hire an outside team or 
-consultant to deal with a supply chain incident
-16%
-27%
-31%
-16%
-10%
-My organization will need to shut down operations
-business processes to deal with an attack
-10%
-20%
-32%
-24%
-14%
-Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023 
-Response to a Supply Chain Attack
-Please tell us how much you agree or disagree as to how your organization would respond to a supply 
-chain attack.
-August 2023 13
-Table of Contents
-The State of Supply Chain Threats
+
 Dark Reading Reports
+
+August 2023 12
+
+ 
+Table of Contents
+
+The State of Supply Chain Threats
+
 Just a third (33%) have deployed automated 
 tools to minimize human input and reduce the 
 attack surface, and another third (32%) accept 
 only signed components and verify signatures 
-before deployment. Other processes for 
+before deployment. Other processes 
+for 
 managing the software supply chain include 
 verifying the changelog and commit history for a 
 particular code component or software project 
@@ -654,6 +1002,7 @@ before downloading it (26%), and signature
 verification before deployment and executing 
 application builds in ephemeral, sealed, or 
 isolated environments (25%).
+
 Respondents were also asked to share their 
 perceptions of how difficult it is to implement 
 build practices and methods for preventing, 
@@ -661,105 +1010,208 @@ mitigating, and remediating software supply
 chain security attacks. The results suggest there 
 is some work left to do. While the respondents 
 tend to be neutral (rating three on a five\-point 
-scale), a significant numberconsider the 
-practicesdifficult. Forty\-three percent say 
+scale), a significant number consider the 
+practices difficult. Forty\-three percent say 
 using a hermetic build with all inputs declared 
 with immutable references is difficult (Figure 
-11\). Making provenance information when, 
-where, and how the software was produced 
+11\). Making provenance information — when, 
+where, and how the software was produced — 
 available is one way to ensure the application 
-hasnt been tampered with, but 32% report 
+hasn’t been tampered with, but 32% report 
 that this action is difficult to implement. While 
 respondents agree that shifting left is necessary 
 to secure the software supply chain (55%), the 
+
+Figure 5\.
+
+Time to Mitigate Supply Chain Issues
+About how long would it take your organization to address and mitigate a supply chain issue?
+
+14%
+
+22%
+
+10%
+
+15%
+
+4%
+
+6%
+
+19%
+
+8%
+
+12%
+
+35%
+
+24%
+
+Less than a 24 hours 
+
+1 to 3 days 
+
+4 days to approximately 1 week 
+
+31%
+
+2 to 3 weeks 
+
+More than a month 
+
+Don’t know 
+
+2023
+
+2022
+
+Data: Dark Reading survey of 242 
+cybersecurity and IT professionals in 
+June 2023 and 115 in June 2022
+
 mechanism for doing so remains a daunting 
 process for many of them (Figure 12\). 
+
 Profound Impact on Supply 
 Chain Practices
+
 Breaches resulting from recent vulnerabilities 
 in widely used third\-party software and open 
 source components are having a profound 
 effect on enterprise supply chain security 
 practices. The incidents have pushed many 
-organizations over the past year to change 
-or start making changes to their approach to 
+organizations over the past year to change — 
+or start making changes to — their approach to 
 managing supply chain risks. Fifty\-six percent 
 of organizations surveyed have made some 
+
 kind of changes to address risks from third\-
 party suppliers and partners; 17% are in the 
 process of making major changes (Figure 13\). 
 Last year, 65% made changes of some sort 
-(including major ones). Whats more, supply 
+(including major ones). What’s more, supply 
 chain concerns in the wake of the attacks 
 against MOVEit would likely push organizations 
-to revamp their practices again on howthey handle third\-party software and open 
+to revamp their practices again on how 
+they handle third\-party software and open 
 source risk.
+
 More than half (51%) of responding organiza\-
 tions have stipulated security practices that 
 vendors must adhere to as part of their 
-Figure 5\.
-Time to Mitigate Supply Chain Issues
-About how long would it take your organization to address and mitigate a supply chain issue?
-Data: Dark Reading survey of 242 
-cybersecurity and IT professionals in
-June 2023 and 115 in June 2022
-14%
-4%
-6%
-19%
-35%
-22%
-2023
-10%
-8%
-12%
-24%
-31%
-15%
-Less than a 24 hours 
-1 to 3 days 
-4 days to approximately 1 week 
-2 to 3 weeks 
-More than a month 
-Dont know 
-2022
-August 2023 14
-Table of Contents
-The State of Supply Chain Threats
+
 Dark Reading Reports
+
+August 2023 13
+
+Table of Contents
+
+Figure 6\.
+
+State of Software Supply Chain
+What is the state of your organization’s software supply chain security?
+
+3%
+
+10%
+
+24%
+
+1%
+
+11%
+
+6%
+
+19%
+
+8%
+
+23%
+
+11%
+
+21%
+
+22%
+
+21%
+
+2023
+
+20%
+
+2022
+
+Data: Dark Reading survey of 242 cybersecurity and IT professionals in 
+June 2023 and 115 in June 2022
+
+Our software supply chain is secure 
+
+We are almost ﬁnished securing our 
+software supply chain 
+
+We are about halfway ﬁnished with 
+the process of securing our software 
+supply chain 
+
+We have a ways to go to secure our 
+software supply chain
+
+We have not started to secure our 
+software supply chain, but we plan 
+to do so
+
+We have no plans to secure our 
+software supply chain
+
+Don’t know 
+
 contract, and 39% require vendor security self\-
 assessments (Figure 14\). When organizations 
 ask vendors to conduct self\-assessments, they 
 are looking for information such as vulnerability 
 management information (68%), data security 
 controls being used (60%), documentation 
-on the vendors design and testing process 
-(44%), and the vendors asset inventory and 
+on the vendor’s design and testing process 
+(44%), and the vendor’s asset inventory and 
 user management practices (41%) (Figure 
-15\). About a third of respondents (35%)want 
-answers to questions pertaining to the vendors 
+15\). About a third of respondents (35%) want 
+answers to questions pertaining to the vendor’s 
 supply chain levels for software artifacts (SLSA), 
 and 38% want a list of vulnerable packages.
+
 The use of vendor security risk assessment 
 questionnaires has become more widespread, 
 and numerous standardized questionnaires 
 are readily available for organizations to adapt 
 for their use. Among the most widely used are 
-the Shared Assessment Groups Standardized 
+the Shared Assessment Group’s Standardized 
 Information Gathering (SIG) questionnaire, the 
 National Institute of Standards and Technology 
 (NIST) vendor questionnaire, and the Vendor 
 Security Alliance questionnaire. 
+
 Nearly three\-quarters, or 74%, of organizations 
 require multifactor authentication for third\-
 party access to secure environments, and 
-57% enforce least\-privilege access rules 
+
+The State of Supply Chain Threats
+
+least\-privilege access 
+
+rules 
+57% enforce 
 (Figure 16\). Nearly half (49%) of organizations 
 have segmented their networks to limit lateral 
 movement; 34% require vulnerability scanning 
 of vendor systems; and 22% rely on code 
 analysis, including binary analysis.
-The survey shows that concerns about 
+
+that concerns about 
+The survey shows 
 supply chain attacks may be theoretical for 
 many enterprises. Just a quarter (24%) of 
 respondents say they have experienced supply 
@@ -768,7 +1220,8 @@ they have not (Figure 17\). Among the victims,
 the two most common types of attacks 
 were those targeting the partner ecosystem 
 (43%) and those exploiting vulnerabilities in 
-software components (41%) (Figure 18\). 
+(41%) (Figure 18\). 
+software components 
 Despite concerns about typosquatting and 
 dependency confusion, only about a third 
 (34%) of respondents who had experienced 
@@ -776,619 +1229,1091 @@ a supply chain attack say their developers
 had accidentally downloaded malicious com\-
 ponents from public repositories, such as npm, 
 PyPI, and Maven. 
+
 Conclusion
+
 Many companies have worked to overhaul their 
 supply chain management practices to address 
 risk from vulnerable open source components 
 and third\-party commercial software over the 
-Figure 6\.
-State of Software Supply Chain
-What is the state of your organizations software supply chain security?
-Data: Dark Reading survey of 242 cybersecurity and IT professionals inJune 2023 and 115 in June 2022
-10%
-3%
-8%
-23%
-21%
-11%
-24%
-2023
-11%
-1%
-6%
-21%
-20%
-22%
-19%
-Our software supply chain is secure 
-We are almost nished securing our 
-software supply chain 
-We are about halfway nished with 
-the process of securing our software 
-supply chain 
-We have a ways to go to secure our 
-software supply chain
-We have not started to secure our 
-software supply chain, but we plan 
-todo so
-We have no plans to secure our 
-software supply chain
-Dont know 
-2022
-August 2023 15
-Table of Contents
-The State of Supply Chain Threats
+
 Dark Reading Reports
+
+August 2023 14
+
+Table of Contents
+
+The State of Supply Chain Threats
+
+Figure 7\.
+
+Concerns About Software Supply Chain
+Thinking specifically about the software supply chain, please rank the following issues that cause you the 
+most worry from high to low. 
+
+Overall rank
+
+Score
+
+Vulnerabilities in third\-party libraries affecting the security of our 
+application
+
+Developers downloading and importing malicious packages and 
+components
+
+Attackers tampering with libraries and code repositories to include 
+malicious code
+
+Software components used in our code, which is no longer being 
+maintained
+
+Vulnerabilities in build tools and development frameworks used in 
+software development
+
+1
+
+2
+
+3
+
+4
+
+5
+
+Note: Rank is based on a weighted score. Responses are weighted, and scores represent the sum of all weighted counts. 
+Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023 
+
+800
+
+724
+
+602
+
+590
+
+552
+
 past two years. Recent vulnerabilities in widely 
 used software products and open source 
 components appear to be fueling a lot of the 
 change. 
+
 A substantial number of organizations in Dark 
-Readings 2023 Supply Chain Threats Survey 
+Reading’s 2023 Supply Chain Threats Survey 
 have implemented comprehensive controls 
-and recommended best practices such as 
+and recommended best practices — such as 
 maintaining SBOMs and conducting vendor 
-questionnaires for mitigating supply chain 
+questionnaires — for mitigating supply chain 
 risk. But many more have not implemented 
 these practices and, by their own admission, 
 are a long way from securing their software 
 supply chain. Even so, most IT and security 
 leaders view their organizations as ready to 
 prevent, detect, and respond to supply chain 
-breaches suggesting a potential disconnect 
+breaches – suggesting a potential disconnect 
 between perception and reality. 
-Overall rank
-Score
-Vulnerabilities in third\-party libraries affecting the security of our 
-application
-1
-800
-Developers downloading and importing malicious packages and 
-components
-2
-724
-Attackers tampering with libraries and code repositories to include 
-malicious code
-3
-602
-Software components used in our code, which is no longer being 
-maintained
-4
-590
-Vulnerabilities in build tools and development frameworks used in 
-software development
-5
-552
-Note: Rank is based on a weighted score. Responses are weighted, and scores represent the sum of all weighted counts. 
-Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023
-Figure 7\.
-Concerns About Software Supply Chain
-Thinking specifcally about the software supply chain, please rank the following issues that cause you the 
-most worry from high to low. 
-August 2023 16
-Table of Contents
-The State of Supply Chain Threats
+
 Dark Reading Reports
+
+August 2023 15
+
+Table of Contents
+
 Figure 8\.
-Managing Software Supply Chain
-How does your organization manage the software supply chain?20232022 
-We use dependencies that come from only trusted repositoriesand registries 
-We regularly check container images for high or critical 
-vulnerabilities 
-We rely on third\-party tools to manage dependencies and 
-vulnerabilities
-We rely on automation to minimize inputs and reduce theattack surface 
-We accept signed components and verify signaturesbefore deployment
-We require administrator access for build processes and tools 
-We verify code components and build binaries from source code 
-before importing
-We require all code to be reviewed by at least one other person
-We verify the changelog and commit history for the code 
-component and project before importing
-For application builds, we execute the steps in ephemeral, isolated, 
-or hermetically sealed environments
-We are currently defning and developing our process
-We only accept commits signed with a developers GPG key
-We verify provenance attestation of source code
- 40% 37%
- 32% 
- 27% 36% 
- 40%
- 28%24% 36% 
- 32%
- 26%
- NA
- 20%
- NA
- 33% 
- 39%
- 26% 
- 28%15% 9%
- 32% 
- 27%
- 25% 
- 25%
- 14%
- NA
-Note: Multiple responses allowed
-Data: Dark Reading survey of 242 cybersecurity and IT professionals in June 2023 and 115 in June 2022
+
+I
+
+X
+D
+N
+E
+P
+P
+A
+
+The State of Supply Chain Threats
+
 Figure 9\.
+
 Vendor Scorecards
 Does your organization rely on vendor 
 scorecards or rating scores to assess the 
 security of open source components?
+
+Managing Software Supply Chain
+How does your organization manage the software supply chain? 
+
+ 2023 
+
+ 2022 
+
+We use dependencies that come from only trusted repositories 
+and registries 
+
+ .................................................... 40% 
+ ....................................................... 37%
+
+We regularly check container images for high or critical 
+vulnerabilities 
+
+ ........................................................ 36% 
+ .................................................... 40%
+
+20%
+
+We rely on third\-party tools to manage dependencies and 
+vulnerabilities
+
+ ........................................................ 36% 
+ ........................................................... 32%
+
+We rely on automation to minimize inputs and reduce the 
+attack surface 
+
+ .......................................................... 33% 
+ ..................................................... 39%
+
+47%
+
+Yes 
+
+No 
+
+Don’t know 
+
+We accept signed components and verify signatures 
+before deployment
+
+ ........................................................... 32% 
+ ............................................................... 27%
+
+33%
+
+We require administrator access for build processes and tools 
+
+ ........................................................... 32% 
+ ............................................................... 27%
+
+We verify code components and build binaries from source code 
+before importing
+
+ .............................................................. 28% 
+ ...................................................................24%
+
+We require all code to be reviewed by at least one other person
+
+ ................................................................ 26%
+........................................................................................ N/A
+
+We verify the changelog and commit history for the code 
+component and project before importing
+
+ ................................................................ 26% 
+ .............................................................. 28%
+
+For application builds, we execute the steps in ephemeral, isolated, 
+or hermetically sealed environments
+
+ ................................................................. 25% 
+ ................................................................. 25%
+
+We are currently defining and developing our process
+
+ ..................................................................... 20%
+........................................................................................ N/A
+
+We only accept commits signed with a developer’s GPG key
+
+ ...........................................................................15% 
+ ................................................................................. 9%
+
+We verify provenance attestation of source code
+
+ ...........................................................................14%
+........................................................................................ N/A
+
+Note: Multiple responses allowed
+Data: Dark Reading survey of 242 cybersecurity and IT professionals in June 2023 and 115 in June 2022
+
 Data: Dark Reading survey of 242 cybersecurity and IT professionals, 
 June 2023 
-20%
-33%
-47%
-Yes 
-No 
-Dont know 
-APPENDIX
-August 2023 17
-Table of Contents
-The State of Supply Chain Threats
-Dark Reading ReportsStrongly 
-agree 
-Somewhat 
-agree 
-Neither 
-agree nor 
-disagree 
-Somewhat 
-disagree 
-Strongly 
-disagree 
-My organization maintains a software bill of materials 
-(SBOM) repository
-16%
-34%
-33%
-9%
-8%
-I believe my organization will increase the use of SBOMs 
-in the next 12 months
-18%
-30%
-41%
-8% 
-3%
-My organization uses the SBOM for vulnerability 
-management
-13%
-28%
-37%
-12%
-10%
-My organization regularly requests SBOMs from vendors 
-and suppliers
-12%
-29%
-34%
-15%
-10%
-My organization creates complete SBOMs for all software 
-we build
-14%
-22%
-40%
-13%
-11%
-Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023 
+
+Dark Reading Reports
+
+August 2023 16
+
+Table of Contents
+
 Figure 10\.
+
+The State of Supply Chain Threats
+
 Software Bills of Materials
 Please tell us how strongly you agree or disagree with the following statements about the software bill of 
-materials.
-1 \- Not 
-difcult 
-at all
-2
-3
-4
-5 \- 
-Extremely 
-difcult
-Using a hermetic build with all inputs declared with
-immutable references
-2%
-10%
-45%
-27%
-16%
-Making provenance information (whenwherehow the 
-software was produced) available
-3%
-19%
-46%
-19%
-13%
-All build steps must be run on a build service not locally on 
-a developers workstation
-8%
-14%
-51%
-20%
-7%
-Re\-running builds with the same input artifacts must result in 
-bit\-by\-bit identical output
-6%
-15%
-52%
-19%
-8%
-Running builds in an ephemeral environment, such as a 
-container or virtual machine, or in an isolated environment
-6%
-23%
-47%
-14%
-10%
-Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023 
-Figure 11\.
-Build Practices to Prevent Software Supply Chain Attacks
-How diffcult is it to implement the following build practices and methods for preventing, mitigating, andor 
-remediating software supply chain security attacks?
-August 2023 18
-Table of Contents
-The State of Supply Chain Threats
-Dark Reading ReportsStrongly 
-agree 
+materials. 
+
+Strongly 
+agree     
+
 Somewhat 
-agree 
+agree     
+
 Neither 
 agree nor 
 disagree 
+
 Somewhat 
 disagree 
+
 Strongly 
 disagree 
+
+My organization maintains a software bill of materials 
+(SBOM) repository
+
+I believe my organization will increase the use of SBOMs 
+in the next 12 months
+
+My organization uses the SBOM for vulnerability 
+management
+
+My organization regularly requests SBOMs from vendors 
+and suppliers
+
+My organization creates complete SBOMs for all software 
+we build
+
+16%
+
+18%
+
+13%
+
+12%
+
+14%
+
+Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023 
+
+34%
+
+30%
+
+28%
+
+29%
+
+22%
+
+33%
+
+41%
+
+37%
+
+34%
+
+40%
+
+ 9%
+
+ 8% 
+
+12%
+
+15%
+
+13%
+
+ 8%
+
+ 3%
+
+10%
+
+10%
+
+11%
+
+Figure 11\.
+
+Build Practices to Prevent Software Supply Chain Attacks
+How difficult is it to implement the following build practices and methods for preventing, mitigating, and/or 
+remediating software supply chain security attacks? 
+
+Using a hermetic build with all inputs declared with 
+immutable references
+
+Making provenance information (when/where/how the 
+software was produced) available
+
+All build steps must be run on a build service — not locally on 
+a developer’s workstation
+
+Re\-running builds with the same input artifacts must result in 
+bit\-by\-bit identical output
+
+Running builds in an ephemeral environment, such as a 
+container or virtual machine, or in an isolated environment
+
+Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023 
+
+1 \- Not 
+difﬁcult 
+at all
+
+2%
+
+3%
+
+8%
+
+6%
+
+6%
+
+2
+
+3
+
+4
+
+5 \- 
+Extremely 
+difﬁcult
+
+45%
+
+27%
+
+46%
+
+19%
+
+16%
+
+13%
+
+51%
+
+20%
+
+ 7%
+
+10%
+
+19%
+
+14%
+
+15%
+
+52%
+
+23%
+
+47%
+
+19%
+
+14%
+
+ 8%
+
+10%
+
+Dark Reading Reports
+
+August 2023 17
+
+ 
+Table of Contents
+
+Figure 12\.
+
+The State of Supply Chain Threats
+
+Software Supply Chain Statements 
+Please tell us how strongly you agree or disagree with the following statements about the software 
+supply chain.
+
 My organization will be able to detect and respond to a 
 software supply chain compromise
-18%
-46%
-27%
-8%
-1%
-Shifting left is necessary to secure the software
+
+“Shifting left” is necessary to secure the software 
 supply chain
-20%
-35%
-40%
-4%
-1%
+
 I believe our architects and developers have the 
 necessary knowledge and expertise to ensure a secure 
 software supply chain
-23%
-30%
-31%
-13%
-3%
+
 My organization has a way to detect software tampering 
 across the software supply chain
-19%
-32%
-31%
-12%
-6%
+
 Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023 
-Figure 12\.
-Software Supply Chain StatementsPlease tell us how strongly you agree or disagree with the following statements about the software 
-supply chain.
-Figure 13\.
-Effect of Recent Attacks on Organizations Approach to Supply Chain Security
-How have attacks against trusted third\-party software such as Microsoft Exchange, Kaseya, and 
-Accellion changed your organizations approach to supply chain security?
-Data: Dark Reading survey of 242 cybersecurity and IT professionals inJune 2023 and 115 in June 2022
-10%
-10%
-24%
-39%
-17%
-2023
-7%
+
+Strongly 
+agree 
+
+Somewhat 
+agree 
+
+Neither 
+agree nor 
+disagree 
+
+Somewhat 
+disagree 
+
+Strongly 
+disagree 
+
+18%
+
+20%
+
+46%
+
+35%
+
+27%
+
+40%
+
+ 8%
+
+ 4%
+
+23%
+
+30%
+
+31%
+
+13%
+
+19%
+
+32%
+
+31%
+
+12%
+
+ 1%
+
+ 1%
+
+3%
+
 6%
-22%
-44%
+
+Figure 13\.
+
+Effect of Recent Attacks on Organizations’ Approach to Supply Chain Security
+How have attacks against trusted third\-party software — such as Microsoft Exchange, Kaseya, and 
+Accellion — changed your organization’s approach to supply chain security?
+
+10%
+
+17%
+
+7%
+
+6%
+
 21%
+
+10%
+
+24%
+
+22%
+
+39%
+
+44%
+
+2023
+
+2022
+
+Data: Dark Reading survey of 242 cybersecurity and IT professionals in 
+June 2023 and 115 in June 2022
+
 We are making major changes to 
 address supply chain threats from 
 third\-party suppliers and partners 
+
 We have made a few changes to 
 address supply chain threats from 
 third\-party suppliers and partners 
+
 We have not made any changes, 
 but we plan to do so this year
+
 We have not made any changes, 
 and we have no plans to look at 
 supply chain this year
-Dont know
-2022
-August 2023 19
-Table of Contents
-The State of Supply Chain Threats
+
+Don’t know
+
 Dark Reading Reports
+
+August 2023 18
+
+ 
+ 
+ 
+ 
+ 
+Table of Contents
+
 Figure 14\.
+
+The State of Supply Chain Threats
+
 Minimizing Third\-Party Risk
-Thinking about supplier risk, which of the following do you do to establish or validate trust in your suppliers and minimize third\-party risk?20232022 
+Thinking about supplier risk, which of the following do you do to establish or validate trust in your suppliers and minimize third\-party risk? 
+
+ 2023 
+
+ 2022 
+
 We stipulate security standards that suppliers must adhere to as part of the contract
-We regularly monitor and assess suppliers security practices
+
+We regularly monitor and assess suppliers’ security practices
+
 We ask suppliers to complete self\-assessments describing their security controls 
+
 Our suppliers have to submit independent audits or assessments indicating they meet security 
 requirements 
-We generate our own supply chain information about our security processes and providethem to our partners 
-We request point\-in time assessments to understand the suppliers security posture 
+
+ ............................................51% 
+ ....................................... 55%
+
+ ................................................. 44% 
+ ....................................................... 37%
+
+ ..................................................... 39% 
+............................................ 50%
+
+ ........................................................... 32% 
+ ..................................................... 39%
+
+We generate our own supply chain information about our security processes and provide 
+them to our partners 
+
+ ........................................................................18% 
+ ..........................................................................16%
+
+We request point\-in time assessments to understand the supplier’s security posture 
+
 We require continuous validation to ensure suppliers have the necessary security controls 
-We verify the results of the suppliers risk assessment 
-We currently do not validate trust in suppliers or do anything to minimize third\-party risk51% 
- 55%
- 20% 29% 44% 37%
- 35% 
- 33%
- 39% 
- 50% 29% 23%
- 32% 
- 39%
- 18%16% 9% 
- 6%
+
+We verify the results of the supplier’s risk assessment 
+
+ ..................................................................... 20% 
+ .............................................................. 29%
+
+ ........................................................ 35% 
+ .......................................................... 33%
+
+ .............................................................. 29% 
+ ................................................................... 23%
+
+We currently do not validate trust in suppliers or do anything to minimize third\-party risk
+
+ ................................................................................. 9% 
+ ................................................................................... 6%
+
 Note: Multiple responses allowed
 Data: Dark Reading survey of 242 cybersecurity and IT professionals in June 2023 and 115 in June 2022
-August 2023 20
-Table of Contents
-The State of Supply Chain Threats
+
 Dark Reading Reports
+
+August 2023 19
+
+Table of Contents
+
 Figure 15\.
+
 Types of Information for Supply Chain Assessment
-When you ask for a supply chain assessment, what types of information are you looking for?20232022 
-Vulnerability management information 
-Data security controls being used 
-Documenting the design and testing process 
-Asset inventory and user management information 
-List of vulnerable packages 
-Supply chain levels for software artifacts (SLSA) 
-Description of process fows 
-Other
- 68% 
- 61%
- 35% 45% 60% 
- 47%31% 
- 32% 44% 
- 50%
- 7% 2%
- 41% 
- 54% 38% 
- 40%
-Note: Multiple responses allowed
-Data: Dark Reading survey of 242 cybersecurity and IT professionals in June 2023 and 115 in June 2022
-Figure 16\.
-Securing the Supply Chain
-What security controls and processes do you rely on to secure the supply chain?20232022 
-We use multifactor authentication to secure accounts 
-We require using least\-privilege access control 
-We require data to be encrypted 
-We segment the network to prevent lateral movement 
-We rely on zero trust to manage authentication and access control 
-We conduct penetration testing engagements involving our suppliers 
-We require vulnerability scanning for our suppliers systems
-We are automating as much as possible and moving away from manual processes 
-We rely on code analysis, including binary analysis
-We currently do not have any security controls or processes to secure the supply chain74% 
- 62%
- 35% 29% 22% 30%
- 57% 
- 48%
- 34% 
- 34%
- 54%51%
- 34% 38%
- 4% 3%
- 49% 38% 45% 
- 39%
-Note: Multiple responses allowed
-Data: Dark Reading survey of 242 cybersecurity and IT professionals in June 2023 and 115 in June 2022
-August 2023 21
-Table of Contents
+When you ask for a supply chain assessment, what types of information are you looking for? 
+
+ 2023 
+
+ 2022 
+
 The State of Supply Chain Threats
+
+Vulnerability management information 
+
+Data security controls being used 
+
+Documenting the design and testing process 
+
+Asset inventory and user management information 
+
+List of vulnerable packages 
+
+Supply chain levels for software artifacts (SLSA) 
+
+Description of process flows 
+
+Other
+
+ ............................ 68% 
+ ...................................61%
+ ................................... 60% 
+ ...............................................47%
+
+ ................................................. 44% 
+............................................ 50%
+
+ ....................................................41% 
+ ........................................ 54%
+
+ ...................................................... 38% 
+ .................................................... 40%
+ ........................................................ 35% 
+ ................................................ 45%
+
+ .............................................................31% 
+ ........................................................... 32%
+ .................................................................................. 7% 
+ ....................................................................................... 2%
+
+Note: Multiple responses allowed
+Data: Dark Reading survey of 242 cybersecurity and IT professionals in June 2023 and 115 in June 2022
+
+Figure 16\.
+
+Securing the Supply Chain
+What security controls and processes do you rely on to secure the supply chain? 
+
+ 2023 
+
+ 2022 
+
+We use multifactor authentication to secure accounts 
+
+We require using least\-privilege access control 
+
+We require data to be encrypted 
+
+We segment the network to prevent lateral movement 
+
+We rely on zero trust to manage authentication and access control 
+
+We conduct penetration testing engagements involving our suppliers 
+
+We require vulnerability scanning for our suppliers’ systems
+
+We are automating as much as possible and moving away from manual processes 
+
+We rely on code analysis, including binary analysis
+
+We currently do not have any security controls or processes to secure the supply chain
+
+Note: Multiple responses allowed
+Data: Dark Reading survey of 242 cybersecurity and IT professionals in June 2023 and 115 in June 2022
+
+ ........................74% 
+ ................................. 62%
+...................................... 57% 
+ ............................................. 48%
+ ........................................ 54% 
+ ............................................51%
+ ............................................ 49% 
+ ...................................................... 38%
+ ................................................ 45% 
+ ..................................................... 39%
+ ........................................................ 35% 
+ .............................................................. 29%
+ ......................................................... 34% 
+ ......................................................... 34%
+ ......................................................... 34% 
+ ...................................................... 38%
+ .................................................................... 22% 
+ ............................................................. 30%
+ ......................................................................................4% 
+ ...................................................................................... 3%
+
 Dark Reading Reports
+
+August 2023 20
+
+Table of Contents
+
+Figure 17\.
+
+The State of Supply Chain Threats
+
+Supply Chain Attack
+Has your organization experienced any kind of supply chain attacks over the past year?
+
+6%
+
+16%
+
+11%
+
+9%
+
+18%
+
+48%
+
+2022
+
+60%
+
+2023
+
 Figure 18\.
+
+Yes, we have experienced 
+many supply chain attacks 
+
+Yes, we have experienced 
+some such attacks 
+
+32%
+
+No, we have not experienced 
+such attacks 
+
+Don’t know
+
+Data: Dark Reading survey of 242 cybersecurity and 
+IT professionals in June 2023 and 115 in June 2022
+
 Types of Attacks
-Which types of supply chain attacks did your organization experience over the past year?
+Which types of supply chain attacks did your organization experience over the past year? 
+
 Attackers targeted my organization after compromising a 
 third\-party partner 
+
 Attackers exploited a software vulnerability in a component 
 used by an application 
+
+ .................................................. 43% 
+
+ ....................................................41% 
+
 An attack on our supplier disrupted our business processes 
+
+ ..................................................... 39% 
+
 Our developers accidentally downloaded malicious 
 components from npm, PyPI, Maven, or other code registries
+
 Attackers exploited vulnerabilities in frameworks and other 
 developer tools used to create applications 
+
 There was a backdoored component in hardware devices 
 used by my organization
+
 Attackers stole secrets, such as credentials and tokens, from 
 one source and used them to gain unauthorized access to my 
-organizations systems 
-Other 43% 
- 39% 
- 27% 
- 20% 
- 41% 
- 34% 
- 20% 
- 7% 
+organization’s systems 
+
 Note: Multiple responses allowed
 Base: 58 respondents who have experienced supply chain attacks 
 Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023 
-Figure 17\.
-Supply Chain Attack
-Has your organization experienced any kind of supply chain attacks over the past year?
-Data: Dark Reading survey of 242 cybersecurity and 
-IT professionals in June 2023 and 115 in June 2022
-16%
-60%
-18%
-6%
-2023
-11%
-48%
-32%
-9%
-Yes, we have experienced 
-many supply chain attacks 
-Yes, we have experienced 
-some such attacks 
-No, we have not experienced 
-such attacks 
-Dont know
-2022
-August 2023 22
-Table of Contents
-The State of Supply Chain Threats
+
+Other
+
+ ......................................................... 34% 
+
+ ............................................................... 27% 
+
+ ..................................................................... 20% 
+
+ ..................................................................... 20% 
+
+ .................................................................................. 7% 
+
 Dark Reading Reports
+
+August 2023 21
+
+Table of Contents
+
 Figure 19\.
+
+Figure 21\.
+
+The State of Supply Chain Threats
+
 Current Protection Against Software Supply Chain Threats
-Does your organizations current security program cover software supply 
+Does your organization’s current security program cover software supply 
 chain threats?
-Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023
-10%
+
 3%
+
+10%
+
 16%
-43%
+
 28%
+
 Our security program covers 
 software supply chain threats 
+
 Our security program covers 
 supply chain threats but 
-doesnt explicitly specify 
+doesn’t explicitly specify 
 software supply chain 
+
 No, our security program does 
 not cover any kind of supply 
 chain threats 
+
 We do not have a security 
 program
-Dont know 
-Figure 21\.
+
+43%
+
+Don’t know 
+
 Respondent Region of Residence
 In what region do you live?
-Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023
-3%
-3%
+3%3%
+
 4%
+
 4%
+
 6%
+
 11%
-69%
+
 North America 
-East Asia or Pacic 
+
+East Asia or Paciﬁc 
+
 Latin America, South America, 
 or Caraibbean (including 
 Mexico) 
+
 Europe or Central Asia 
+
+69%
+
 South Asia 
+
 Middle East or North Africa 
+
 Sub\-Saharan Africa 
+
+Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023
+
+Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023
+
 Figure 20\.
+
 Insurance Partner for Reducing Third\-Party Risk
 Do you consider your insurance carrier an effective partner in reducing third\-party risk?
+
+26%
+
+37%
+
+26%
+
+44%
+
+Yes 
+
+No 
+
+Don’t know 
+
+30%
+
+2023
+
 Data: Dark Reading survey of 242 cybersecurity and 
 IT professionals in June 2023 and 115 in June 2022
+
 37%
-37%
-26%
+
 2022
-Yes 
-No 
-Dont know 
-26%
-30%
-44%
-2023
-August 2023 23
-The State of Supply Chain Threats
+
 Dark Reading Reports
-Table of Contents
+
+August 2023 22
+
+Table of Contents
+
 Figure 22\.
+
+Figure 23\.
+
 Respondent Job Title
 Which of the following best describes your job title?
-Data: Dark Reading survey of 242 cybersecurity 
-and IT professionals, June 2023
-7%
-2%
-7%
-6%
-3%
-4%
-10%
-7%
-8%
-7%
-5%
-8%
-3%
-1%
-9%
-13%
-IT executive (CIO, CTO) 
-Cybersecurity executive (CSOCISO) 
-Chief privacy ofcer 
-VP of ITVP of security 
-IT directorhead 
-Cybersecurity directorhead 
-IT manager 
-Cybersecurity manager 
-IT staff 
-Cybersecurity staff 
-Engineer 
-SoftwareWeb developer 
-Networksystem administrator 
-Corporate executive (CEOPresidentCOO)
-Architect
-Other 
-Figure 23\.
+
 Respondent Company Size
 How many employees are in your company in total?
-Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023
-22%
-32%
-19%
-27%
-5,000 or more
-1,000 to 4,999
-100 to 999
-Fewer than 100 
-Figure 24\.
-Respondent Industry
-What is your organizations primary industry?
-13%
-3%
-3%
-3%
-3%
-3%
-3%
-3%
-5%
-6%
-6%
+
+The State of Supply Chain Threats
+
+2%
+
 7%
-8%
+
+13%
+
+7%
+
+IT executive (CIO, CTO) 
+
+Cybersecurity executive (CSO/CISO) 
+
+Chief privacy ofﬁcer 
+
+VP of IT/VP of security 
+
+IT director/head 
+
+3%
+
+6%
+
+4%
+
+10%
+
 9%
-11%
-14%
-Computer or technology manufacturertech vendor 
-Bankingnancial servicesVCaccounting 
-Consultingbusiness services 
-Healthcarepharmaceuticalbiotechbiomedical 
-Government 
-Manufacturing, industrial, process (noncomputer) 
-Solutions providervalue\-added reseller (VAR) 
-Education 
-Communications carrierservice provider 
-InsuranceHMOs 
-Aerospace 
-Constructionarchitectureengineering 
-Mediamarketingadvertising 
-Utilities 
-Wholesaletradedistributionretail 
+
+Cybersecurity director/head 
+
+1%
+
+3%
+
+IT manager 
+
+Cybersecurity manager 
+
+8%
+
+5%
+
+IT staff 
+
+Cybersecurity staff 
+
+Engineer 
+
+7%
+
+8%
+
+7%
+
+Software/Web developer 
+
+Network/system administrator 
+
+Corporate executive (CEO/President/COO)
+
+Data: Dark Reading survey of 242 cybersecurity 
+and IT professionals, June 2023
+
+Architect 
+
 Other 
+
+Figure 24\.
+
+Respondent Industry
+What is your organization’s primary industry?
+
+22%
+
+27%
+
+32%
+
+19%
+
+5,000 or more
+
+1,000 to 4,999
+
+100 to 999
+
+Fewer than 100 
+
 Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023
+
+3%
+
+13%
+
+14%
+
+Computer or technology manufacturer/tech vendor 
+
+Communications carrier/service provider 
+
+3%
+
+3%
+
+3%
+
+3%
+
+3%
+
+3%
+
+11%
+
+Banking/ﬁnancial services/VC/accounting 
+
+Consulting/business services 
+
+Insurance/HMOs 
+
+Aerospace 
+
+Healthcare/pharmaceutical/biotech/biomedical 
+
+Construction/architecture/engineering 
+
+Government 
+
+Media/marketing/advertising 
+
+9%
+
+Manufacturing, industrial, process (noncomputer) 
+
+Utilities 
+
+Solutions provider/value\-added reseller (VAR) 
+
+Wholesale/trade/distribution/retail 
+
+5%
+
+6%
+
+8%
+
+Education 
+
+Other 
+
+6% 7%
+
+Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023
+
+Dark Reading Reports
+
+August 2023 23

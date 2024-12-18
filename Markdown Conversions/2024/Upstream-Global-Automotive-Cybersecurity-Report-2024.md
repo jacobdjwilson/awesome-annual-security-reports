@@ -1,4 +1,4 @@
-2023 Upstream Security Ltd. All Rights 
+© 2023 Upstream Security Ltd. All Rights 
 GLOBAL 
 AUTOMOTIVE 
 2023
@@ -8,49 +8,49 @@ smart mobility ecosystem,
 introducing new levels of
 cyber sophistication and
 attack vectors
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 GLOBAL AUTOMOTIVE 
 CYBERSECURITY REPORT
 The automotive cybersecurity inflection point: 
-From experimental hacking to large\-scale automotive attacks
+From experimental hacking to large\-scale automotive attacks—
 the focus shifts to impact.
 2024
 2
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 2
 TABLE OF CONTENTS
 Opening letter from our CEO 
 Methodology 
 Executive summary 
-Chapter 1: The automotive cybersecurity inflection point
+Chapter 1: The automotive cybersecurity inflection point 
 Analyzing the potential scale of automotive cyber risks 
-Threat actors motivation has also shifted towards scale and massive impact
-The financial perspective: the rising cost of cyber attacks on the Automotive
+Threat actors motivation has also shifted towards scale and massive impact 
+The financial perspective: the rising cost of cyber attacks on the Automotive 
 and Smart Mobility ecosystem 
 The internal impact: the dynamic SBOM 
 Spotlight: social media has become a breeding ground for automotive cyber activities 
-The Automotive and Smart Mobility ecosystem is entering a new era of GenAI,
+The Automotive and Smart Mobility ecosystem is entering a new era of GenAI, 
 democratizing attacks but also cyber defense 
 Chapter 2: Automotive cybersecurity trends 
-Review of incidents
-Overview of 2023 CVEs
-The EV charging ecosystem is rapidly expanding
+Review of incidents 
+Overview of 2023 CVEs 
+The EV charging ecosystem is rapidly expanding 
 Commercial fleets 
 Smart mobility IoT devices \& services 
-Insurance
+Insurance 
 Autonomous vehicles 
 The impact of Right to Repair on agriculture vehicles 
-Chapter 3: 2023s diverse attack vectors 
-Increasingly sophisticated attacks open the door for large\-scale impact
+Chapter 3: 2023’s diverse attack vectors 
+Increasingly sophisticated attacks open the door for large\-scale impact 
 across the entire ecosystem 
 Telematics and application servers 
 Remote keyless entry systems 
 ECUs 
 APIs 
-Mobile applications
-Infotainment systems
-EV charging infrastructure
-Bluetooth
+Mobile applications 
+Infotainment systems 
+EV charging infrastructure 
+Bluetooth 
 OTA updates 
 V2X attacks 
 4
@@ -85,19 +85,19 @@ V2X attacks
 64
 65
 3
- 2024 Upstream Security Ltd. All Rights Reserved
-Chapter 4: The regulatory reality
-Generative AI is reshaping the Automotive and Smart Mobility ecosystem,
-but regulations are still evolving
-Cybersecurity regulations make headway worldwide
+© 2024 Upstream Security Ltd. All Rights Reserved
+Chapter 4: The regulatory reality 
+Generative AI is reshaping the Automotive and Smart Mobility ecosystem, 
+but regulations are still evolving 
+Cybersecurity regulations make headway worldwide 
 The expansion of UNECE WP
-.29 R155 and ISOSAE 21434
-The EU Cyber Resilience Act promotes extended cybersecurity resilience
+.29 R155 and ISO/SAE 21434 
+The EU Cyber Resilience Act promotes extended cybersecurity resilience 
 ISO 15118 secures vehicle\-to\-grid communications 
-The SEC echoes the increasing focus on cybersecurity incidents
-NHTSA updates cybersecurity best practices
+The SEC echoes the increasing focus on cybersecurity incidents 
+NHTSA updates cybersecurity best practices 
 EV charging infrastructure cybersecurity regulations continue to expand and deepen 
-Vehicle data and privacy regulations are inevitable
+Vehicle data and privacy regulations are inevitable 
 Chapter 5: Threats from the deep and dark web 
 What is the deep and dark web? 
 Gray hats blurring the line between black hats and white hats 
@@ -109,11 +109,11 @@ Security by design
 Multi\-layered cybersecurity stack 
 Developing an effective vSOC 
 Automotive\-specific threat intelligence offers a proactive approach to risk 
-Upstreams cloud approach to automotive cybersecurity 
+Upstream’s cloud approach to automotive cybersecurity 
 The Upstream Platform 
-Upstream Managed vSOC
+Upstream Managed vSOC 
 Enhancing vSOC investigations with GenAI 
-Upstream AutoThreat PRO Cyber Threat Intelligence 
+Upstream AutoThreat® PRO Cyber Threat Intelligence 
 Chapter 7: Predictions for 2024 
 References 
 TABLE OF CONTENTS
@@ -148,9 +148,9 @@ TABLE OF CONTENTS
 It is my pleasure to present you with the 2024 Global Automotive Cybersecurity Report.
 Connectivity and software\-defined architectures have been at the forefront of monumental 
 changes in the Automotive and Smart Mobility ecosystem over the past several years, but as more 
-functionality is being exposed, cybersecurity risks 
+functionality is being exposed, cybersecurity risks ‌
 are growing dramatically.
-This report, which marks Upstreams sixth annual report, analyzes how Automotive and Mobility 
+This report, which marks Upstream’s sixth annual report, analyzes how Automotive and Mobility 
 cybersecurity risks have evolved from experimental hacks to large\-scale attacks, shifting the 
 industry's focus to impact.
 As predicted last year, automotive cybersecurity is reaching an inflection point. Cyber incidents have 
@@ -159,7 +159,7 @@ threat actor motivation shifting towards large\-scale impact on mobility assets,
 the ecosystem must also evaluate the potential financial implications of cybersecurity incidents.
 Over the last year, the Automotive and Smart Mobility ecosystem adopted new standards and 
 collaborated with regulators around the world on how to adapt future regulations to keep connected 
-and software\-defined assets secure. Weve also been busy preparing for the upcoming second 
+and software\-defined assets secure. We’ve also been busy preparing for the upcoming second 
 milestone of UNECE WP
 .29 R155, scheduled to take effect in July 2024, increasing its scope to all 
 new vehicles.
@@ -173,8 +173,8 @@ mobility experiences.
 Upstream has led the effort to secure connected vehicles and mobility assets since 2017, when we 
 first introduced the Upstream Platform, which proved to be a fundamental, innovative pillar in the 
 automotive cybersecurity technology stack.
-We've been helping some of the world's leading Automotive and Smart Mobility organizations
-OEMs, suppliers, mobility IoT vendors, fleets and mobility service providerscomply with 
+We've been helping some of the world's leading Automotive and Smart Mobility organizations—
+OEMs, suppliers, mobility IoT vendors, fleets and mobility service providers—comply with 
 cybersecurity regulations and protect millions of vehicles and mobility assets. 
 With advanced cybersecurity tools and knowledge at our disposal, we are well\-equipped to 
 overcome the challenges in 2024 and ahead.
@@ -184,7 +184,7 @@ Co\-Founder \& CEO
 OPENING LETTER 
 FROM OUR CEO
 5
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 METHODOLOGY
 The Automotive industry relies on Upstream's continuously updated database of 
 cybersecurity incidents.
@@ -195,20 +195,20 @@ navigate the year ahead.
 Upstream monitors and analyzes worldwide automotive cyber incidents to learn, 
 understand, and help protect the entire Smart Mobility ecosystem from existing and 
 emerging threats.
-Upstreams AutoThreat1 cyber threat intelligence platform uses advanced technology 
+Upstream’s AutoThreat®1 cyber threat intelligence platform uses advanced technology 
 and automation tools to constantly search all layers of the web for new cyber incidents 
-in the automotive ecosystem and index them to the AutoThreat platform. 
+in the automotive ecosystem and index them to the AutoThreat® platform. 
 Our researchers and analysts carefully categorize and analyze the data we collect to 
 gain a deeper understanding of cyber threats, adversaries' motivation and activities, 
 and their impact on mobility assets.
-Each incident and relevant contextual datasuch as the attack's geolocation, impact, 
-attack vector, company type, and required proximity of the attacker to its targetare 
+Each incident and relevant contextual data—such as the attack's geolocation, impact, 
+attack vector, company type, and required proximity of the attacker to its target—are 
 added to the platform to create an accurate and actionable repository. 
 Incidents examined in this report were sourced from the media, academic research, 
 bug bounty programs, verified social media accounts of government law enforcement 
 agencies worldwide, the Common Vulnerabilities \& Exposures database, as well as 
 other publicly\-available online sources. 
-In addition to publicly reported cyber incidents, Upstreams analysts monitor the deep 
+In addition to publicly reported cyber incidents, Upstream’s analysts monitor the deep 
 and dark web for threat actors that operate behind the scenes of automotive\-focused 
 cyber attacks. These incidents are discussed in a separate chapter of this report titled 
 "Threats from the Deep and Dark Web", and are excluded from statistics and charts in 
@@ -216,10 +216,12 @@ other chapters, unless indicated otherwise.
 While every effort has been made to identify and analyze every reported automotive 
 and smart mobility cyber incident, there may be additional attacks that have not been 
 publicly reported, and therefore, have not been included in this report.
-Select details of the publicly reported incidents are available in the AutoThreat 
+Select details of the publicly reported incidents are available in the AutoThreat® 
 Intelligence Cyber Incident Repository. Additionally, a comprehensive analysis is 
-available to AutoThreat PRO2 customers.6
- 2024 Upstream Security Ltd. All Rights Reserved
+available to AutoThreat® PRO2 customers.
+ 
+6
+© 2024 Upstream Security Ltd. All Rights Reserved
 EXECUTIVE SUMMARY
 Connectivity is continuing to transform the Automotive and Smart Mobility ecosystem, 
 increasing cybersecurity risks as more functionality is exposed. 2023 marked the beginning 
@@ -233,11 +235,13 @@ a dramatic shift toward large\-scale incidents
 Threat actors motivation has also shifted 
 towards scale and massive impact
 OEMs take a multifaceted approach to protecting connected 
-and software\-defined vehicles, as well as IoTOT assets
+and software\-defined vehicles, as well as IoT/OT assets
 of deep and dark web cyber 
 activities had the potential to 
 impact multiple stakeholders, 
-on a global scale.GenAI has the potential 
+on a global scale.
+ 
+GenAI has the potential 
 to transform automotive 
 cybersecurity solutions and 
 operations, enabling agile 
@@ -254,7 +258,7 @@ were remote
 95%
 64%
 The proportion of incidents 
-with a High or Massive 
+with a “High” or “Massive” 
 impact dramatically 
 doubled from 2022 to 2023, 
 accounting for nearly
@@ -262,13 +266,17 @@ of all
 incidents
 of attacks were 
 executed by 
-black hat actorsWith frequent OTA 
+black hat actors
+ 
+With frequent OTA 
 updates, the SBOM is 
-no longer staticbut rather 
+no longer static—but rather 
 constantly evolving, long 
 after a vehicle leaves the 
-factoryand risk profiles 
-continuously change.The growing reliance 
+factory—and risk profiles 
+continuously change.
+ 
+The growing reliance 
 on backend systems 
 highlights the urgent need for 
 OEMs to safeguard both the 
@@ -279,7 +287,7 @@ activities had the potential to
 impact thousands to millions 
 of mobility assets.
 7
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 01
 02
 03
@@ -300,18 +308,19 @@ regulations emerging worldwide, mainly in China.
 OEMs and Charging Point Operators (CPOs) continue to deepen 
 cybersecurity risk assessments, and deploy cybersecurity 
 solutions to protect strategic EV charging infrastructure.
-1\. THE AUTOMOTIVE 
+01\.
+THE AUTOMOTIVE 
 CYBERSECURITY 
 INFLECTION POINT
 From experimental hacking to 
 large\-scale automotive attacks, 
 the focus shifts to impact
 9
- 2024 Upstream Security Ltd. All Rights Reserved
-2023 MARKS THE BEGINNING OF A NEW
+© 2024 Upstream Security Ltd. All Rights Reserved
+2023 MARKS THE BEGINNING OF A NEW 
 ERA IN AUTOMOTIVE CYBERSECURITY
 Connectivity has been at the forefront of monumental changes in the 
-Automotive and Smart Mobility ecosystem over the past several years
+Automotive and Smart Mobility ecosystem over the past several years—
 enabling over\-the\-air (OTA) updates, software\-oriented architectures, advanced 
 digital experience, and a wide array of value\-added applications and services.
 In modern software\-defined vehicles (SDVs), connectivity is used to improve 
@@ -322,37 +331,37 @@ In connected vehicles, OEMs use OTA updates to fix quality and usability
 issues, tune core functional capabilities, and patch cybersecurity vulnerabilities 
 quickly and cost\-effectively, reducing warranty costs and recalls.
 But connectivity has also posed growing cybersecurity challenges for OEMs 
-and their supply chainswith cyber attacks becoming more sophisticated, 
+and their supply chains—with cyber attacks becoming more sophisticated, 
 frequent, and severe. As the attack landscape changed over the last few years, 
 and new attack methods emerged, the industry became acutely aware that any 
 point of connectivity can be attacked.
 The first decade of automotive cybersecurity was marked by a rise in cyber 
 incidents and attacks against OEMs and the ecosystem, continuously 
 introducing new attack vectors and methods, even as OEMs invested in 
-improving cybersecurity protections. According to Upstreams research, between 
+improving cybersecurity protections. According to Upstream’s research, between 
 2019\-2023, incidents disclosed in the clear web (media) have increased by over 
-50%, reaching 295 reported incidents in 2023\.In 2023 alone, 95% of attacks 
+50%, reaching 295 reported incidents in 2023\. In 2023 alone, 95% of attacks 
 were remote, and 64% of attacks were executed by black hat actors.3 
 Application programming interfaces (APIs) have been playing a key role in 
 exposing vehicle functionality to drivers and enterprise applications, as well as 
 delivering a data\-driven experience. As more functionality has been exposed 
 through APIs, cybersecurity risks have also increased dramatically, while at 
-the same time, the cost of attacking and attack thresholds have decreased
+the same time, the cost of attacking and attack thresholds have decreased—
 opening the door for exponential growth in the scale and impact of attacks.
-In this years report, we chose to zoom
-in on the impact of automotive and
+In this year’s report, we chose to zoom 
+in on the impact of automotive and 
 mobility cybersecurity risks. 
 10
- 2024 Upstream Security Ltd. All Rights Reserved
-Well focus on both external impact, which is visible to the ecosystem, and 
+© 2024 Upstream Security Ltd. All Rights Reserved
+We’ll focus on both external impact, which is visible to the ecosystem, and 
 internal impact which refers to organizational efficiencies and processes. 
 Both internal and external impacts are assessed by different stakeholders in 
-different waysin this report well offer a framework which can be customized for 
-each stakeholders strategic goals, target market, relevant mobility assets, etc.
+different ways—in this report we’ll offer a framework which can be customized for 
+each stakeholder’s strategic goals, target market, relevant mobility assets, etc.
 External impact can be objectively 
-measured in two dimensions:
+measured in two dimensions: 
 scale and cost. 
-Well showcase how advanced connectivity and software\-defined architectures 
+We’ll showcase how advanced connectivity and software\-defined architectures 
 continuously introduce new cybersecurity risks, attracting executives' attention 
 across the entire ecosystem due to the potential impact on the safety of 
 drivers, passengers and the integrity of data at massive scale, leading to 
@@ -364,12 +373,12 @@ on its viral potential, social media has become one of the top distribution
 channels for malicious activities, both criminal and fraudulent, and should be 
 considered when analyzing external impact and scale. 
 As vehicles continue to evolve well after they leave the manufacturing 
-floor based on continuous over\-the\-air updates (OTAs), well also discuss 
+floor based on continuous over\-the\-air updates (OTAs), we’ll also discuss 
 the internal impact of cybersecurity risks on internal processes and risk 
 evaluations that drive automotive stakeholders to adopt new frameworks and 
 remediation processes.
 11
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 MILLIONS 
 OF VEHICLES
 1 
@@ -379,7 +388,7 @@ VEHICLE
 2023
 Analyzing the potential scale of automotive cyber risks
 Automotive cybersecurity threats have evolved rapidly in a very short span 
-of time. In 2015, Charlie Miller spent three yearsfrom research to exploit
+of time. In 2015, Charlie Miller spent three years—from research to exploit—
 to hack the safety\-critical in\-vehicle network of a single vehicle.4 In 2023, 
 a team of security researchers spent a mere few months hacking over a 
 dozen different car makers. The team hacked telematic systems, automotive 
@@ -387,33 +396,33 @@ APIs, and the infrastructure that supports them. They discovered numerous
 vulnerabilities that allowed them to remotely impact the command \& control 
 of vehicles and access sensitive OEM and consumer data.5
 In 2023, automotive cybersecurity 
-witnessed a dramatic shift
+witnessed a dramatic shift 
 toward large\-scale incidents.
 12
- 2024 Upstream Security Ltd. All Rights Reserved
-Its important to note that when analyzing scale, the focus is on potential 
+© 2024 Upstream Security Ltd. All Rights Reserved
+It’s important to note that when analyzing scale, the focus is on potential 
 impact. It is impossible to assess the exact impact of each incident based on 
 publicly reported information. 
 Upstream analyzed publicly disclosed automotive cybersecurity incidents 
 between 2021 and 2023 according to the potential scale of impacted mobility 
-assets, including vehicles, users, mobility devices and more. Upstreams 
-analysis categorized incidents according to four levels of impactstarting 
-from Low, which includes incidents that have the potential to impact under 
-10 assets, up to Massive, which includes incidents that have the potential to 
+assets, including vehicles, users, mobility devices and more. Upstream’s 
+analysis categorized incidents according to four levels of impact—starting 
+from “Low”, which includes incidents that have the potential to impact under 
+10 assets, up to “Massive”, which includes incidents that have the potential to 
 impact millions of mobility assets.
 IN 2023 THE 
 PROPORTION 
 OF INCIDENTS 
-WITH A HIGH OR 
-MASSIVE IMPACT 
+WITH A “HIGH” OR 
+“MASSIVE” IMPACT 
 DRAMATICALLY 
-DOUBLED TO
+DOUBLED TO 
 NEARLY 50%
 Source: Upstream Security
-Breakdown of publicly disclosed cybersecurity incidents
+Breakdown of publicly disclosed cybersecurity incidents 
 by potential scale, 2021\-2023
- 2024 Upstream Security Ltd. All Rights Reserved
-Number of
+© 2024 Upstream Security Ltd. All Rights Reserved
+Number of 
 Mobility Assets 
 Potentially 
 Impacted
@@ -446,10 +455,10 @@ massive
 scale 
 incidents
 13
- 2024 Upstream Security Ltd. All Rights Reserved
-During both 2021 and 2022, High or Massive (potential to impact thousands\-
+© 2024 Upstream Security Ltd. All Rights Reserved
+During both 2021 and 2022, “High” or “Massive” (potential to impact thousands\-
 million of mobility assets) incidents accounted for approximately 20% of total 
-incidents. But, in 2023, the proportion of incidents with a High or Massive 
+incidents. But, in 2023, the proportion of incidents with a “High” or “Massive” 
 impact dramatically doubled to nearly 50%.
 Overall, the number of "Medium" scale attacks, which have the potential to 
 impact up to 1,000 vehicles and mobility assets, has remained constant over 
@@ -461,11 +470,11 @@ To illustrate the operational disruption impact of cyber attacks on mobility
 service providers consider an attack which occurred in September 2023\. 
 A leading US\-based trucking and fleet management solutions provider 
 experienced a ransomware attack that resulted in customers being unable to 
-electronically log their on\-road hoursas required by federal regulationsor 
+electronically log their on\-road hours—as required by federal regulations—or 
 track their transported inventory.6
 In response, the company hired external cybersecurity experts to investigate 
 the attack and applied for a waiver from the US Federal Motor Carrier Safety 
-Administration to allow truckers to use paper logs until 
+Administration to allow truckers to use paper logs until ‌
 service was restored.7 
 Almost three weeks passed before the 
 company was able to resolve the issue, 
@@ -473,14 +482,14 @@ causing serious operational disruption for
 thousands of truck drivers, fleet operators, 
 and inventory management teams. 
 14
- 2024 Upstream Security Ltd. All Rights Reserved
-THREAT ACTORS MOTIVATION
-HAS ALSO SHIFTED TOWARDS
+© 2024 Upstream Security Ltd. All Rights Reserved
+THREAT ACTORS MOTIVATION 
+HAS ALSO SHIFTED TOWARDS 
 SCALE AND MASSIVE IMPACT
 In addition to incidents disclosed in the media (clear web), 
-its critical to assess the impact of deep and dark cyber 
+it’s critical to assess the impact of deep and dark cyber 
 activities and the incentives driving threat actors. Based 
-on Upstreams analysis of deep and dark web automotive 
+on Upstream’s analysis of deep and dark web automotive 
 cybersecurity activities, analyzing the 300 most active threat 
 actors, nearly half of the activities (48%) were targeting 
 more than one OEM or automotive supplier, and 37% 
@@ -491,7 +500,7 @@ dark web cyber activities had the
 potential to impact thousands to 
 millions of mobility assets.
 Breakdown of deep and dark web threat actor targets, 2023
-Several OEMs 
+Several OEMs / 
 Stakeholders
 10\.7%
 37\.3%
@@ -511,18 +520,18 @@ Low
 10\.7%
 Source: Upstream Security
 Source: Upstream Security
-Single OEMs 
+Single OEMs / 
 Stakeholder
-Single OEMs 
+Single OEMs / 
 Stakeholder
 15
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 When zooming in on black hat and fraud activities 
 in the deep and dark web, the potential scale and 
 areas of interest also indicate a rapidly growing 
 risk. Currently, 67% of malicious activities (threat 
 actors categorized as black hats and fraud 
-operators) have a High or Massive impact 
+operators) have a “High” or “Massive” impact 
 (compared to 45% across all actors) and 58% of 
 activities involve multiple OEMs or have a global 
 reach (compared to 48% across all threat actors). 
@@ -534,7 +543,7 @@ continues to deepen.
 13% of activities are focused on vehicle 
 manipulation tools, 12% of activities are focused 
 on gaining access to sensitive data and PII, and 
-nearly 50% are relatedto vulnerability exploits.8
+nearly 50% are related to vulnerability exploits.8
 Diagnostic 
 Software
 19\.3%
@@ -557,15 +566,16 @@ activities targets, 2023
 Source: Upstream Security
 Source: Upstream Security
 10\.4%
-1\. 1
+48\.
+1
 41\.5%
 Black hat and fraud 
 operators activities by 
 potential scale, 2023
-Several OEM's 
+Several OEM's / 
 Stakeholders
 Global 
-Single OEMs 
+Single OEMs / 
 Stakeholder
 8\.1%
 Massive
@@ -577,7 +587,7 @@ Low
 8\.9%
 %
 16
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 THE RISING COST OF CYBER ATTACKS ON THE 
 AUTOMOTIVE AND SMART MOBILITY ECOSYSTEM 
 Automotive and Smart Mobility cyber attacks have severe financial 
@@ -585,17 +595,17 @@ repercussions leading to recalls or OTAs, production shutdowns, ransomware
 payments, and vehicle thefts. Additional repercussions include data and 
 privacy breaches, which can damage a brand's reputation and customer trust 
 and can eventually lead to large regulatory fines and diminishing revenue. 
-Given the shift toward large\-scale cybersecurity incidentswith nearly 50% 
-of incidents in 2023 impacting thousands\-millions of mobility assets9its 
+Given the shift toward large\-scale cybersecurity incidents—with nearly 50% 
+of incidents in 2023 impacting thousands\-millions of mobility assets9—it’s 
 crucial for vehicle security operations center (vSOC) teams to analyze the 
 financial impact of these incidents.
 In June 2023, a leading Taiwan\-based semiconductor manufacturer 
 disclosed a cybersecurity incident involving a ransomware group and one of 
-its IT hardware suppliers, which 
+its IT hardware suppliers, which ‌
 led to the leakage of information pertinent to 
 initial setup and configuration of the system.10 The attackers claimed to gain 
 access to internal documents with confidential information, demanding a $70 
-million ransom to decrypt the data and prevent its release onlinemaking it 
+million ransom to decrypt the data and prevent its release online—making it 
 the largest known ransom demand in history. While the breach could affect 
 multiple automotive stakeholders, the company reported that neither its 
 business operations nor customer information were affected by the cyber 
@@ -610,16 +620,16 @@ data, registration paperwork, and employee driver and motor vehicle sales
 licenses. The stolen files were published at the end of November, after the 
 ransom deadline had expired.11 
 IN JUNE 2023, 
-A TIER\-2 WAS
-HIT BY A
-$70
+A TIER\-2 WAS 
+HIT BY A 
+$70 
 MILLION 
 RANSOM DEMAND, 
-THE LARGEST
+THE LARGEST 
 IN HISTORY.
 THE FINANCIAL PERSPECTIVE
 17
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 Analyzing the financial impact of a cybersecurity incident
 Trying to quantify the safety, privacy, and financial risks of automotive 
 cybersecurity incidents is no small feat. The potential impact of automotive 
@@ -628,21 +638,21 @@ passengers, disrupt business operations, compromise data privacy, and
 result in financial losses for OEMs as well as the entire supply chain. 
 In the next two illustrations we will analyze two incidents that occurred in 2023 
 and suggest a financial impact model, based on publicly available information. 
-The goal of this framework is to
-highlight the massive financial
+The goal of this framework is to 
+highlight the massive financial 
 impact of cybersecurity risks. 
-This analysis doesnt intend to be definitive, but rather a framework for 
+This analysis doesn’t intend to be definitive, but rather a framework for 
 estimating a range of potential financial risks.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 18
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 Key Financial Implications of Automotive Cyber Threats
 Vehicle Safety, 
 Operations, 
 \& Recall
 Remote or local manipulations that can modify 
 the normal behavior of a vehicle, endangering 
-driver safety and leading to a recall.
+driver safety and leading to a recall. 
 Cybersecurity vulnerabilities in a vehicle's 
 software components may require 
 manufacturers to issue recalls to update and 
@@ -658,21 +668,21 @@ Data \& Privacy
 Breaches
 Disclosure of information such as customer PII, 
 vehicle performance data, or any Intellectual 
-property (IP) data, compromising individuals
+property (IP) data, compromising individuals 
 or organizations.
 Data breach; Data 
 leakage; Ransomware; 
-Injection attacks
-Vehicle Theft
+Injection attacks 
+Vehicle Theft 
 \& Break\-Ins
 Unauthorized entry or theft of a vehicle, often 
 through the exploitation of vulnerabilities in the 
 vehicle's security systems or remote services.
-Keyless entry
+Keyless entry/
 start engine attack; 
 Relay attack; Signal 
-jamming attack;
-API attacks
+jamming attack; 
+API attacks 
 Service \& 
 Business 
 Disruption
@@ -681,10 +691,10 @@ ability to provide goods or services as a result
 of a cyber incident. This impact can range from 
 partial system outages to complete shutdowns, 
 leading to a loss of productivity, revenue, and 
-customer trust.
+customer trust. 
 Production line 
 shutdown due to 
-ransomware
+ransomware 
 on production 
 systems
 Legal \& 
@@ -696,10 +706,10 @@ regulations, or industry standards.
 Lawsuits; Penalties
 Fraud
 Deceptive actions by an individual or entity, 
-carried out with malicious intent for personal
+carried out with malicious intent for personal 
 or financial gain, such as identity theft, odometer 
 tampering, and account hacking.
-Odometer tampering;
+Odometer tampering; 
 Mobile companion 
 app (user) identity 
 theft
@@ -726,14 +736,14 @@ Impact
 Description
 Methods
 19
- 2024 Upstream Security Ltd. All Rights Reserved
-\# 1
+© 2024 Upstream Security Ltd. All Rights Reserved
+\#1
  ILLUSTRATION \#1
 Financial impact of an EV fleet\-wide vulnerability 
 In March 2023, a team of French security researchers participating in a hacking contest demonstrated 
 an exploit that involved executing what is known as a time\-of\-check\-to\-time\-of\-use (TOCTTOU) attack 
-on an EV OEMs gateway energy management system that allowed them to remotely perform actions 
-(e.g open the front trunk or door) while the car was in motion.12
+on an EV OEM’s gateway energy management system that allowed them to remotely perform actions 
+(e.g., open the front trunk or door) while the car was in motion.12
 Despite the OEM's claims that this was not possible, the researchers claimed they could have 
 remotely gained access to vehicle controls. The researchers were rewarded by the OEM with an EV 
 and $100,000 in cash, and reported that the OEM is working on making software patches for the 
@@ -741,13 +751,13 @@ vulnerability and the updates should be pushed to cars soon.
  INCIDENT SEVERITY 
 High
  THREAT ACTOR TYPE
-White hat 
+ White hat 
  INCIDENT IMPACT
-Potential fleet\-wide implications
+ Potential fleet\-wide implications
  FLEET SIZE
-3\+ million electric vehicles
+ 3\+ million electric vehicles
 Impact
-Description
+ Description
 Baseline
  Financial Impact
 $17,500,000 \- 
@@ -756,13 +766,13 @@ Total Potential Financial Impact
 Vehicle Safety, 
 Operations 
 \& Recall
-Aurora Labs cost per 
-OTA update
+Aurora Labs’ cost per ‌
+OTA update 
 per vehicle by type.13
 Estimations used to calculate the 
 OTA cost: 5 large ECUs @ 500MB; 10 
 small ECUs @ 0\.42MB.
-$0\.39 for
+$0\.39 for 
 Line\-of\-Code 
 Update
 $1,250,000 \- 
@@ -771,11 +781,11 @@ Vehicle Safety,
 Operations 
 \& Recall
 The cost of battery replacement 
- for vehicles with permanent
+ for vehicles with permanent 
 battery damage.14
-0\.01% \- 0\.05%
+0\.01% \- 0\.05% 
 of fleet impacted; 
-$15,000
+$15,000 
 per vehicle 
 $5,250,000 \- 
 $26,250,000
@@ -783,7 +793,7 @@ Legal \&
 Regulatory 
 Compliance 
 Issues
-Class\-action lawsuit litigation
+Class\-action lawsuit litigation 
 and settlement costs for vehicles 
 with temporary battery damage.15
 0\.5%\-1% of fleet 
@@ -796,9 +806,9 @@ Vehicle Safety, Operations,\& Recall
 Vehicle Safety, Operations,\& Recall
 Legal \& Regulatory Compliance Issues
 20
- 2024 Upstream Security Ltd. All Rights Reserved
-Data \&
-Privacy
+© 2024 Upstream Security Ltd. All Rights Reserved
+Data \& 
+Privacy 
 Breach
 IBM offers a detailed framework 
 for cyber\-based data breach cost 
@@ -809,7 +819,7 @@ by number of records lost.17
 The costs analysis includes direct 
 and indirect costs associated with 
 data breach detection, escalation, 
-notification, post\-breach response,
+notification, post\-breach response, 
 and lost business.
 Average loss of 
 $36,000,000 for 
@@ -818,17 +828,17 @@ involve 1 million \-
 10 million records
 $30,000,000 \- 
 $40,000,000
-\# 2
+\#2
 Financial impact of an EV charging network data breach
-In June 2023, a security researcher discovered an online database containing millions
+In June 2023, a security researcher discovered an online database containing millions 
 of logs (nearly a terabyte) of a global network of hundreds of thousands of electric 
 vehicle charging stations.14
 The internal database, hosted on one of the most popular public cloud platforms, 
 required no password to access it and contained sensitive data of customers who used 
 the EV charging network. Data contained names, email addresses, phone numbers of 
-fleet customers, names of fleet operators with vehicles that recharge using the network,
-and vehicle identification numbers (VINs), and locations of EV public and private
-(e.g residential) charging points.
+fleet customers, names of fleet operators with vehicles that recharge using the network, 
+and vehicle identification numbers (VINs), and locations of EV public and private 
+(e.g., residential) charging points.
 Impact
  Description
 Baseline
@@ -844,35 +854,35 @@ Unintended disclosure
  BREACH SIZE 
 1TB of data with millions of records
  CHARGING NETWOR SCALE ESTIMATION 
-Hundreds of thousands of charging 
+ Hundreds of thousands of charging 
  stations in 30\+ countries
 Legal \& 
 Regulatory 
 Compliance 
 Issues
 GDPR Enforcement Tracker Report 
-average fines for transportation \&
-energy sectors, and insufficient
+average fines for transportation \& 
+energy sectors, and insufficient 
 technical and organizational measures 
 to ensure information security.18
 Expected range 
 based on average 
 fines in the 
 transportation sector 
-(864,776\) and 
+(€864,776\) and 
 insufficient measures 
-(1,346,050\)
+(€1,346,050\)
 $1,000,000 \- 
-$2,000,000
+$2,000,000 
  ILLUSTRATION \#2
 Total Potential Financial Impact
 Data \& Privacy Breaches
 Legal \& Regulatory Compliance Issues
 21
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 OEMS TAKE A MULTIFACETED APPROACH TO 
 PROTECTING CONNECTED AND SOFTWARE\-
-DEFINED VEHICLES, AS WELL AS IOTOT ASSETS
+DEFINED VEHICLES, AS WELL AS IOT/OT ASSETS
 In this era of high\-impact cyber risks, OEMs have had to adopt new internal 
 frameworks, shifting to a multifaceted approach to protecting connected and 
 software\-defined vehicles. Connected vehicle digital experience and data\-
@@ -883,8 +893,8 @@ of the dynamic Software Bill of Materials (SBOM). As the SBOM continuously
 changes, it constantly requires risk and vulnerability analysis, directly impacting 
 OEM and the supply chain cybersecurity frameworks and processes.
 The internal impact: the dynamic SBOM 
-The convergence of technologies known collectively as ACESAutonomous 
-Driving, Connectivity, Electrification, and Shared Mobilityhas forced 
+The convergence of technologies known collectively as ACES—Autonomous 
+Driving, Connectivity, Electrification, and Shared Mobility—has forced 
 stakeholders to move from the traditional hardware\-defined architecture to a 
 software\-oriented architecture.
 The Automotive and Smart Mobility ecosystem acknowledges that connected 
@@ -898,11 +908,11 @@ and electronics will grow nearly three\-fold between now and 2030, from $87
 billion to $248 billion, according to a BCG analysis of SDV growth.19
 While connectivity and SDVs present significant benefits, they also presents 
 growing cybersecurity challenges for OEMs and the entire supply chain.
-The distinction between 
+The distinction between ‌
 hardware and software product development has 
 become blurred, as more in\-vehicle components are enabled and managed by 
 software\-oriented architectures. The decoupling of the vehicle development 
-process from a vehicles hardware and software integration creates a very 
+process from a vehicle’s hardware and software integration creates a very 
 complex and decentralized supply chain with the OEM at the center of 
 system integration.
 OEM REVENUES 
@@ -918,31 +928,31 @@ BILLION, ACCORDING
 TO A BCG ANALYSIS 
 OF SDV GROWTH.
 22
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 The Hardware Bill of Materials (HBOM) is a product development technical 
-document that details the hardware components used to build a vehicle
+document that details the hardware components used to build a vehicle—
 such as ECUs, TCUs, infotainment systems, gauge clusters, CAN bus, and IoT 
-controllerseach from different suppliers and supply chains with their own 
+controllers—each from different suppliers and supply chains with their own 
 software and software supply chains. 
 The SBOM is a dynamic software development technical document that details 
 the software components, libraries, and dependencies that are installed on a 
-hardware component and the vehicle
+hardware component and the vehicle‌
 . Together, the HBOM and SBOM provide 
 a comprehensive view of the supply chains, facilitating transparency and 
 traceability to address hardware and software vulnerabilities. 
-With frequent OTA updates, the SBOM is no longer staticbut rather 
-constantly evolving long after a vehicle leaves the factoryand risk profiles 
-continuously change, but they can be remediated in real time as well.
+With frequent OTA updates, the SBOM is no longer static—but rather 
+constantly evolving long after a vehicle leaves the factory—and risk profiles 
+continuously change, but they can be remediated in real time as well. 
 Furthermore, modern SDV HBOMs and SBOMs go beyond in\-vehicle 
 components to include charging points and networks, as well as 3rd\-party 
 applications for smart mobility, OEM services, telematics devices, and electric 
-vehicle (EV) chargingadding even more complexity.
-Recent regulatory efforts, including UNECE WP.29 R15520 and R15621, ISO
+vehicle (EV) charging—adding even more complexity.
+Recent regulatory efforts, including UNECE WP.29 R15520 and R15621, ISO/
 SAE 2143422, the US National Highway Traffic Administration (NHTSA) 
 guidelines23, and recent regulations in China24, have mandated SBOM 
 adoption in the Automotive industry. These regulations broaden the scope 
 of SBOM to encompass not only OEM\-developed software, but also Tier\-1 
-and Tier\-2 components and librariesgiving OEMs the ability to identify and 
+and Tier\-2 components and libraries—giving OEMs the ability to identify and 
 manage software\-related vulnerabilities and risks.
 The ability to manipulate software components and exploit vulnerabilities 
 poses a significant threat to the cybersecurity posture of fleet\-wide control 
@@ -951,7 +961,7 @@ unauthorized access to critical functions and control mechanisms across
 entire fleets of vehicles. 
 Furthermore, the vast amounts of data generated by software components, 
 and stored in backend systems, presents an additional risk. Backend systems 
-(e.g telematics servers) play a crucial role in delivering advanced connected 
+(e.g., telematics servers) play a crucial role in delivering advanced connected 
 vehicle functions and services, as well as collecting and managing huge 
 amounts of sensitive data related to vehicle state, location, usage patterns, 
 and driver behavior. 
@@ -961,15 +971,15 @@ threat of cyber attacks on backend servers is particularly high because of
 the ability of malicious threat actors to impact entire fleets, both in terms of 
 control and data access. 
 23
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 The growing reliance on these backend 
-systems highlights the urgent need for
+systems highlights the urgent need for 
 OEMs to safeguard both the software 
-components and the sensitive data stored
+components and the sensitive data stored 
 in their backend systems.
 An ever\-changing SBOM makes it extremely challenging to manage Threat 
 Analysis and Risk Assessment (TARA) for modern vehicles. As a part of the 
-organizations broad Risk Management efforts, TARA is a specific framework 
+organization’s broad Risk Management efforts, TARA is a specific framework 
 which has been developed as an in\-depth yet static process. But, TARA is 
 rapidly evolving into a dynamic framework. The impact of this mindset shift is 
 dramatic, as stakeholders must adopt new tooling and platforms, and ensure 
@@ -978,28 +988,28 @@ The internal impact expands with the need to add deep and dark web
 analysis into TARA frameworks. By integrating deep and dark web monitoring 
 and real\-time threat intelligence into the SBOM framework, OEMs can:
 Automotive threat intelligence is now a key element in product\-driven TARA, 
-enabling proactive risk identification, prioritization, and mitigation.
+enabling proactive risk identification, prioritization, and mitigation. 
 A dynamic TARA framework with real\-time threat intelligence based on an 
 expanded SBOM framework is essential for OEM software development 
 teams to enable long\-term risk mitigation. 
-Proactively identify
+Proactively identify 
 and address 
-vulnerabilities
-in software and
+vulnerabilities 
+in software and 
 hardware components.
 Continuously assess 
 and manage supply 
 chain risks to ensure 
 integrity and security of 
-components used
+components used 
 in vehicles.
 Rapidly detect 
-cybersecurity risks
+cybersecurity risks 
 and attacks, and provide 
-effective response
+effective response 
 and mitigation.
 24
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 OPERATION
 VERIFICATION
 System
@@ -1042,40 +1052,40 @@ TARA analysis, to enterprise security, orchestration, automation, and
 response (SOAR) platforms to ensure cross\-organizational visibility, timely 
 remediation, and long\-term risk mitigation via focused R\&D efforts.
 25
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 External APIs pose a prime attack vector for massive\-scale attacks
 APIs are the engine that supports automotive digital transformation, and play 
 a crucial role in securing connected vehicles. 
-Cybersecurity risks increase as
-more apps are added to support
-connected vehicle experiences
+Cybersecurity risks increase as 
+more apps are added to support 
+connected vehicle experiences 
 and enable data\-driven features.
 Connected vehicles and smart mobility services rely on diverse APIs, 
 resulting in billions of transactions every month. Everything from OEM mobile 
 companion apps, third party apps, infotainment systems, internal OEM and 
 Tier\-1 management systems, dealership systems, after\-market mobility IoT 
 devices, to EV charging management and billing apps rely heavily on APIs to 
-achieve core functionalities.
+achieve core functionalities. 
 APIs also present significant and fleet\-wide attack vectors and are 
 susceptible to a wide range of cyber attacks, such as the theft of sensitive or 
 personal identifiable information (PII), or malicious remote vehicle control. 
 In March 2023, a security researcher disclosed gaining access to a 
-Japanese OEMs CRM database. The attacker modified the dev app to use 
+Japanese OEM’s CRM database. The attacker modified the dev app to use 
 the production API, which was unintentionally exposed through the loading 
 spinner settings. This incident was a direct result of misconfigured APIs and 
 a lack of proper authentication and verification. As a result, the researcher 
 could access names, addresses, phone numbers, email addresses, tax IDs, 
-and vehicle service ownership history of the OEMs customers.25
+and vehicle / service / ownership history of the OEM’s customers.25
 26
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 Fleets
 OEMs
  Manufacturing
 Facility
-MobileTablet
+Mobile/Tablet
 Applications
  Web Applications
-ERPCRMBilling
+ERP/CRM/Billing
 Charging
 Stations
 Internal
@@ -1090,21 +1100,21 @@ Smart mobility vendors, fleet operators, and mobility IoT devices are
 also threatened by API\-based cyber risks that can result in large\-scale 
 operational disruption and sensitive data leakage. 
 In June 2023, a popular ride\-hailing service in Pakistan with over 10 
-million users was attacked when a third\-party communication API was
+million users was attacked when a third\-party communication API was 
 compromised. This led to customers receiving abusive messages and 
 notifications.26 
 Source: Upstream Security
 API attack surfaces
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 27
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 SPOTLIGHT
 Social Media Has Become 
 A Breeding Ground For 
 Automotive Cyber Activities
-Thanks to social media, auto
-enthusiasts and hackers can now
-easily share their automotive hacking
+Thanks to social media, auto 
+enthusiasts and hackers can now 
+easily share their automotive hacking 
 discoveries with a global audience. 
 The impact of social media on cybersecurity cannot be overstated. With its 
 massive reach and influence, social media has become a breeding ground for 
@@ -1112,9 +1122,9 @@ cyber activities, often blurring the lines between pop culture and malicious
 intent. What was once hidden in the depths of the deep and dark web is now 
 easily exposed and accessible to a wide audience.
 27
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 28
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 In recent years, Facebook, TikTok, YouTube, and Instagram have become 
 popular platforms for sharing automotive hacking tools and manuals, 
 jailbreaks, and hacking demos \- moving discussions on how to hack vehicles 
@@ -1122,46 +1132,46 @@ from the depths of the deep and dark web to the open internet.
 Some automotive hacking discoveries are created and shared by 
 cybersecurity experts and white hat hackers with the intent to raise 
 awareness and encourage addressing risks. Other automotive hacking ploys 
-are created and shared over social media with malicious intent.
+are created and shared over social media with malicious intent. 
 Regardless of initial intent, information shared on social media may 
 encourage additional threat actors, offering easy access to tools and 
 jailbreaks. 
 The viral nature of social media amplifies the speed and reach of exploits, 
 leading to reputational damage, financial losses, and operational disruption 
-making it crucial for OEMs to stay vigilant and adopt robust cybersecurity 
+—making it crucial for OEMs to stay vigilant and adopt robust cybersecurity 
 strategies to mitigate the risks posed by this new frontier of cyber threats.
-A prime example of this is the so\-called TikTok Challenge which went viral in 
+A prime example of this is the so\-called “TikTok Challenge” which went viral in 
 October 2022, leading to the nationwide theft of tens of thousands of vehicles 
-manufactured by one Korean OEM.
+manufactured by one Korean OEM. 
 A year earlier, Milwaukee, Wisconsin, saw a significant increase in car thefts, 
 mainly from one Korean OEM, with many of the suspected thieves being 
 too young to drive. On social media, videos emerged showing young people 
-joyriding in these carsspeeding and swerving, sometimes hanging out of 
-windows. The aim of these thieves wasnt to strip and sell parts from cars, but 
+joyriding in these cars—speeding and swerving, sometimes hanging out of 
+windows. The aim of these thieves wasn’t to strip and sell parts from cars, but 
 rather to gain social media clout and views.27 As videos showing how to steal 
 the vehicles spread, thefts of the Korean OEM spiked across the country the 
-following year.28
-In January 2023, it was reported that two of Americas largest auto insurers 
+following year.28 
+In January 2023, it was reported that two of America’s largest auto insurers 
 refused to write policies in certain cities for the affected vehicles as they were 
 found to be easy to steal.29
 In a February 2023 press release, NHTSA called out TikTok by name, stating 
-that a TikTok social media challenge has spread nationwide and has resulted 
-in at least 14 reported crashes and eight fatalities,30 and advised consumers 
+that “a TikTok social media challenge has spread nationwide and has resulted 
+in at least 14 reported crashes and eight fatalities,”30 and advised consumers 
 that the Korean OEM offered a free dealer\-installed anti\-theft software update 
-that attempted to reduce the risk in over 8\.3 million US vehicles.31
+that attempted to reduce the risk in over 8\.3 million US vehicles.31 
 In May 2023, the Korean OEM also agreed to pay up to $200 million to settle 
 one class\-action lawsuit, but it still faces lawsuits from insurers and cities, 
-with
+with‌
  more to follow, as thefts of the affected vehicles continue to rise.
 SPOTLIGHT
 28
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 29
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 Jailbreaking infotainment systems is also trending on social media. In 
 September 2023, unauthorized firmware updates and custom software 
 impacting various infotainment systems of EVs from multiple OEMs were 
-offered for sale on Facebook by a high\-profile automotive threat actor.
+offered for sale on Facebook by a high\-profile automotive threat actor. 
 The threat actor has a large Facebook community with 44,000 followers, 
 indicating significant exposure of the products sold, and is also highly active 
 on other social media platforms, such as Youtube, where he publishes services 
@@ -1170,27 +1180,27 @@ In November 2023, a jailbreak that allowed unauthorized content to be
 installed within the head units of various OEMs was published on a popular 
 Russian automotive social networking site, describing all the steps required 
 for implementing the jailbreak and adding unauthorized apps to the head 
-unitincluding files for download.
+unit—including files for download. 
 As jailbreaks spread on social media platforms, the potential negative 
 effects on vehicle cybersecurity posture, safety, consumer trust, and 
 the Automotive industry's reputation increase.
 Jailbreak incidents can have multiple consequences:
 Jailbreaking infotainment head units can lead to stability and 
 performance issues resulting in system failures, or compatibility 
-problems with other features.
+problems with other features. 
 Unauthorized vehicle software modification can introduce cybersecurity 
 vulnerabilities, opening the door to hacking, which could result in theft, 
 data breaches, or unauthorized control of the vehicle.
 Unofficial firmware updates may erode the value of official firmware 
 updates provided by affected OEMs, making it harder to encourage 
-customers to adopt official, tested firmware updates.
-Modifying the vehicles firmware without authorization 
+customers to adopt official, tested firmware updates. 
+Modifying the vehicle’s firmware without authorization 
 could void the warranty.
 SPOTLIGHT
 29
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 30
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 Post on how to 
 implement a head 
 unit jailbreak on a 
@@ -1205,29 +1215,29 @@ In May 2023, a relay attack keyless repeater promising the ability to unlock and
 start vehicles manufactured between 2008\-2023 from multiple OEMs was offered 
 for sale on TikTok by a threat actor promoting a Polish automotive cybersecurity 
 and hacking ecommerce website offering a wide selection of vehicle\-hacking 
-tools.32Relay attack keyless repeaters make it possible for malicious actors to 
+tools.32 Relay attack keyless repeaters make it possible for malicious actors to 
 gain unauthorized access to a vehicle and steal it without the physical key fob.
 Vehicle hacking tools are gaining widespread attention on social media 
 platforms, resulting in immediate and severe consequences to an already 
 massive spike in keyless vehicle theft incidents, increasing public fear and 
 posing greater challenges for law enforcement.
 Screenshot 
-of the sellers 
+of the seller’s 
 TikTok page33
 Addressing the impact of cyber activities in social 
 media requires a coordinated effort by the Automotive 
 industry, regulators, and social media platforms to 
-increase 
+increase ‌
 public awareness and ensure that automotive 
 technology remains safe and secure.
 SPOTLIGHT
 30
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 31
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 THE AUTOMOTIVE AND SMART MOBILITY 
-ECOSYSTEM IS ENTERING A NEW ERA OF
-GENERATIVE AI, DEMOCRATIZING ATTACKS
+ECOSYSTEM IS ENTERING A NEW ERA OF 
+GENERATIVE AI, DEMOCRATIZING ATTACKS 
 BUT ALSO CYBER DEFENSE 
 The era of Generative AI (GenAI) is well underway in the Automotive industry, 
 as OEMs rush to adopt GenAI capabilities to enhance customer experience 
@@ -1245,7 +1255,7 @@ methods, and processes.
 APIs are specifically susceptible since 
 attackers can use GenAI to explore API 
 documentation, which may be publicly 
-available, accidentally self\-disclosed,
+available, accidentally self\-disclosed, 
 or leaked on the dark web.
 GenAI can be used to map endpoints, target APIs, and identify potential 
 vulnerabilities, as well as provide step\-by\-step guidance on exploiting 
@@ -1253,12 +1263,12 @@ those vulnerabilities. LLMs can also be used to generate malicious code or
 scripts by assimilating information from public vulnerability databases and 
 cybersecurity research.
 32
- 2024 Upstream Security Ltd. All Rights Reserved
-Threat actors can use GenAI as a tool
-to carry out and automate complex
-phishing attacks, generate convincing
-fake content (social engineering),
-and create malware that can adapt
+© 2024 Upstream Security Ltd. All Rights Reserved
+Threat actors can use GenAI as a tool 
+to carry out and automate complex 
+phishing attacks, generate convincing 
+fake content (social engineering), 
+and create malware that can adapt 
 and evade detection systems. 
 The adaptability and efficiency allow for the execution of large\-scale attacks 
 that may bypass traditional cybersecurity measures. 
@@ -1267,7 +1277,7 @@ offensive strategies and execute sophisticated attacks with automated
 processes and significant scale. By analyzing vulnerabilities and attack 
 patterns, they can generate strains of malware that self\-evolve, creating 
 variations to attack a specific target with a unique technique, payload, and 
-polymorphic code thats undetectable by existing security measures.
+polymorphic code that’s undetectable by existing security measures.
 For example, threat actors can use LLMs to automate the discovery of 
 vulnerabilities, increasing efficiency and allowing them to shift resources 
 to exploiting vulnerabilities rather than identifying them. GenAI also allows 
@@ -1288,32 +1298,32 @@ BAIN \& COMPANY,
 MENTIONS OF GENAI 
 ON THE DARK WEB 
 PROLIFERATED IN 
-2023, INCREASING
+2023, INCREASING 
 BY SEVERAL ORDERS 
 OF MAGNITUDE.
 33
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 Automotive cybersecurity leaders must embrace GenAI's 
 transformative capabilities
-On the defensive
+On the defensive‌
 , GenAI has the potential to transform automotive 
-cybersecurity solutions and operations, enabling a range of use casesfrom 
+cybersecurity solutions and operations, enabling a range of use cases—from 
 agile investigations, to automating vSOC workflows, and even generating 
 complex insights based on deep and dark web data and in\-depth TARA.
 GenAI introduces unparalleled efficiencies, enabling cybersecurity teams to 
 quickly analyze massive amounts of connected vehicle and mobility data 
 across multiple sources, detect patterns, filter incident alerts, and automate 
 investigations.
-According to a recent report by Gartner,
+According to a recent report by Gartner, 
 by 2026, more than 80% of enterprises will 
 be using generative AI APIs and models 
-andor will be deploying GenAI\-enabled 
-applications in production environments,
+and/or will be deploying GenAI\-enabled 
+applications in production environments, 
 up from less than 5% in 2023\.36
 In 2023, Upstream launched its own GenAI\-enabled application (alpha 
 release) that helps automotive stakeholders transform the vSOC through 
 improved investigations, automation, data insights, and detailed analytics. 
-With todays vSOC absorbing massive amounts of data from multiple 
+With today’s vSOC absorbing massive amounts of data from multiple 
 sources, GenAI helps draw insights by querying the data with simple NLP 
 questions. Upstream's GenAI\-powered solution continuously monitors trends, 
 providing context and analysis of impact. 
@@ -1327,25 +1337,25 @@ face new challenges as
 cybersecurity attacks grow 
 in scale and impact
 35
- 2024 Upstream Security Ltd. All Rights Reserved
-Researchers reported a 
+© 2024 Upstream Security Ltd. All Rights Reserved
+ Researchers reported a 
 critical CAN bus vulnerability 
 that allowed proximate 
 attackers to steal Japanese 
 OEM vehicles.45
-Security researchers 
+ Security researchers 
 discovered critical 
 vulnerabilities impacting 
-a South Korean OEMs 
+a South Korean OEM’s 
 in\-vehicle infotainment 
 system.46
 MARCH
 INCIDENTS
-2023 saw an increase in the scale and 
+2023 saw an increase in the scale and ‌
 impact of cybersecurity attacks, creating new 
 challenges for the automotive and smart mobility industries.
-During 2023, Upstreams AutoThreat researchers analyzed 295 automotive and smart 
-mobility cybersecurity incidentsan average of 25 incidents per month.
+During 2023, Upstream’s AutoThreat® researchers analyzed 295 automotive and smart 
+mobility cybersecurity incidents—an average of 25 incidents per month.
 The top incidents in 2023:
 Researchers discovered 
 critical vulnerabilities that 
@@ -1356,114 +1366,114 @@ sensitive consumer PII.37
 A head unit installed in several 
 South Korean OEM vehicles 
 was compromised.38
-Japanese OEM affected by 
+ Japanese OEM affected by 
 data breach in its Global 
 Supplier Preparation 
 Information System.39
-Global OEMs released 
+ Global OEMs released 
 an emergency patch for 
 an actively exploited 
 vulnerability that triggered 
 a sharp rise in car theft 
 incidents.40
-New destructive car theft 
+ New destructive car theft 
 methods using a CAN bus 
 manipulation reported to 
 be on the rise.41
 FEBRUARY
 JANUARY
  APRIL
-US OEM vehicles hacked 
+ US OEM vehicles hacked 
 within two minutes by 
 researchers participating in 
 a hacking contest.42
-Japanese OEM's Customer 
+ Japanese OEM's Customer 
 Relationship Management 
 (CRM) system was hacked 
 by a security researcher.43
-German, South Korean, 
+ German, South Korean, 
 and Japanese OEMs were 
 targeted as part of a supply 
 chain attack on a VoIP 
 software vendor.44
 MAY
-Attack against a Japanese 
+ Attack against a Japanese 
 OEM exposed 10 years of 
 customer data, including 
 vehicle geolocation, in a 
 data breach.47
-Swiss multinational 
+ Swiss multinational 
 automotive supplier hit by 
 large\-scale ransomware 
 attack impacting business 
 operations.48
-German automotive service 
+ German automotive service 
 provider hit by cyber attack, 
 impacting accessibility to 
 several systems.49
 JUNE
-A security researcher 
+ A security researcher 
 discovered multiple 
 vulnerabilities in a popular 
 network messaging protocol 
 that enabled fleet\-wide 
-manipulation of 
+manipulation of ‌
 telemetry 
 data.50
-South Korean OEM's 
+ South Korean OEM's 
 infotainment unit hacked 
 despite security fixes.51
-A US EV charging station 
+ A US EV charging station 
 network suffered a major 
 data breach that exposed 
 sensitive company data 
 and customer PII.52
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 36
- 2024 Upstream Security Ltd. All Rights Reserved
-A large US moving 
+© 2024 Upstream Security Ltd. All Rights Reserved
+ A large US moving 
 and storage rental 
 company experienced 
 a cyber attack, resulting 
 in alleged leakage of 
 13GB of employee and 
 operational data.62
-Brazilian dealership 
+ Brazilian dealership 
 of a German OEM 
-was hit with 
+was hit with ‌
 a 
 ransomware attack.63
 SEPTEMBER
-US EV charging company's 
+ US EV charging company's 
 chargers hacked to display 
 unauthorized content and 
 images.53
-Ransomware attacks 
+ Ransomware attacks 
 disrupted Japanese port 
 operations, impacting 
 the availability of major 
 Japanese OEM auto parts.54
-API vulnerabilities in a 
-German OEMs website 
+ API vulnerabilities in a 
+German OEM’s website 
 enabled malicious data 
 exfiltration.55
-Security researchers 
+ Security researchers 
 jailbreaked the infotainment 
 system of a US\-based EV 
 OEM.56
-Security researchers 
+ Security researchers 
 discovered vulnerabilities 
 in a popular mobility 
 provider, enabling account 
 hijacking and illegal financial 
 transactions.57
-US EV OEM suffered data 
+ US EV OEM suffered data 
 breach impacting over 
 75,000 employees.58
 AUGUST
 JULY
 OCTOBER
-US trucking and fleet 
+ US trucking and fleet 
 management solutions 
 provider experienced a 
 ransomware attack that 
@@ -1471,42 +1481,42 @@ resulted in customers being
 unable to electronically log 
 their on\-road hours or track 
 their transported inventory.59 
-Mass transit company in 
+ Mass transit company in 
 Germany affected by cyber 
 attack on service provider.60
-One of the UK's largest 
+ One of the UK's largest 
 logistics groups declared 
 insolvency following 
 ransomware attack.61
 NOVEMBER
-A major US auto parts 
-distributor suffered 
+ A major US auto parts 
+distributor suffered ‌
 a data 
 breach affecting over 
 180,000 employees 
 and clients.64
-Major Chinese automotive 
+ Major Chinese automotive 
 supplier for global OEMs 
 impacted by ransomware 
 attack.65
-A US state transportation 
+ A US state transportation 
 department impacted by 
 a cyberattack, resulting in 
 significant disruptions to 
 its services.66
 DECEMBER
-Researchers discovered 
+ Researchers discovered 
 a critical vulnerability in 
 fleet management software 
 affecting multiple 
 vehicle fleets.67
-Japanese OEM impacted 
+ Japanese OEM impacted 
 by a cyberattack in Australia 
 and New Zealand, leading to 
 a data breach posing risk to 
 customer PII.68
 37
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 White Hat
 In contrast, white hat hackers, 
 often researchers without 
@@ -1534,7 +1544,7 @@ cybercriminals worldwide,
 capable of coordinated 
 simultaneous attacks against 
 multiple companies.
-Most attacks in 2023 64% of incidents were carried out by black hat actors 
+Most attacks in 2023 — 64% of incidents — were carried out by black hat actors 
 WHITE HAT
 BLACK HAT
 64 %
@@ -1567,34 +1577,34 @@ legal questions regarding their
 work without explicit authorization.
 Source: Upstream Security
 38
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 There is a major difference between automotive black hat attacks and IT 
 black hat attacks, regarding the consequences and impact of their actions. 
-Automotive black hat attackswhich are closely aligned with cyber attacks 
+Automotive black hat attacks—which are closely aligned with cyber attacks 
 on critical OT infrastructure, such as health, energy, and governmental 
-facilitiesresult in not only disruption of services and financial losses, but 
+facilities—result in not only disruption of services and financial losses, but 
 also potential for safety hazards and loss of lives. 
 In September 2023, a leading US\-based trucking and fleet management 
 solutions provider experienced a ransomware attack that resulted in 
-customers being unable to electronically log their on\-road hoursas required 
-by federal regulationsor track their transported inventory.69 In response, the 
+customers being unable to electronically log their on\-road hours—as required 
+by federal regulations—or track their transported inventory.69 In response, the 
 company hired external cybersecurity experts to investigate and applied for 
 a waiver from the US Federal Motor Carrier Safety Administration to allow 
-truckers to use paper logs until 
+truckers to use paper logs until ‌
 service was restored.70
 In June 2023, a Korean OEM's in\-vehicle infotainment system was hacked after 
 it issued a security update.71 In a previous attack, the same hacker gained root 
 access to the Linux\-based system via the engineering menu and firmware 
-image manipulationenabling him to run custom applications. The OEM 
+image manipulation—enabling him to run custom applications. The OEM 
 responded by releasing a new firmware image and removing the old firmware 
 images. The OEM engineers also used a private key to sign firmware images, 
 but didn't ensure the updater always verified the signature, which allowed the 
-attacker to gain root access and install unsigned codeagain.72
+attacker to gain root access and install unsigned code—again.72
 In December 2023, researchers reported that a fleet management software 
-vendor ignored a dangerous telematics gateway vulnerability that had been
+vendor ignored a dangerous telematics gateway vulnerability that had been 
 reported in April 2023\. This vulnerability poses a significant risk, since 
 hackers may be able to target the backend infrastructure to manipulate and 
-shut down entire fleetsimpacting tens of thousands of vehicles. It is unclear 
+shut down entire fleets—impacting tens of thousands of vehicles. It is unclear 
 to what extent these gateways were used, but the vendor is tracking over 
 119,000 vehicles in over 49 countries. There have been no known exploits of 
 the vulnerability.73
@@ -1605,23 +1615,23 @@ own applications or gain free access to paid services. Moreover, the
 vulnerabilities they expose, and often discuss in forums on the deep and 
 dark web, can be exploited by black hat actors.
 39
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 The vast majority of remote incidents in 2023 were long\-range
 long\-range
 short\-range
 NEARLY ALL ATTACKS CONTINUE 
 TO BE EXECUTED REMOTELY
 Most automotive cyber attacks can be divided into two main categories: 
-remote attackswhich can be short\-range (e.g man\-in\-the middle attack) 
-or long\-range (e.g API\-based attack)and physical attacks, which require a 
-physical connection to the vehicle (e.g OBD port). 
+remote attacks—which can be short\-range (e.g., man\-in\-the middle attack) 
+or long\-range (e.g., API\-based attack)—and physical attacks, which require a 
+physical connection to the vehicle (e.g., OBD port). 
 Remote attacks rely on network 
-connectivity (e.g Wi\-Fi, Bluetooth, 
-345G networks), and have the 
+connectivity (e.g., Wi\-Fi, Bluetooth, 
+3/4/5G networks), and have the 
 potential to impact numerous 
 vehicles simultaneously. 
 Remote attacks have consistently outnumbered physical attacks since 2010, 
-and they continue to growaccounting for 89% of all attacks between 2010 
+and they continue to grow—accounting for 89% of all attacks between 2010 
 and 2023, and 95% in 2023\. The vast majority of remote attacks in 2023 
 were long\-range attacks (85%). The percentage of long\-range attacks has 
 increased, rising from 70% in 2022, as a result of the adoption of connectivity 
@@ -1636,7 +1646,7 @@ Source: Upstream Security
 remote
 physical
 40
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 ATTACKS ARE BECOMING MORE IMPACTFUL
 The Automotive and Smart Mobility ecosystem is increasingly impacted by 
 cyber attacks. Attacks on vehicles often compromise sensitive data, but can 
@@ -1646,13 +1656,13 @@ Operational service and business disruption is continuously on the rise,
 accounting for 42% of incidents, up from 40% in 2022\. We have also 
 witnessed a dramatic increase in fraud\-related incidents, accounting for 20% 
 of 2023 incidents and up from 4% in 2022\.
-Service 
+Service / 
 Business disruption
 Disruption to normal business operations, such as delays or halts 
 in production, caused by a cyber attack (e.g. OEM or Tier\-1 supplier 
 ransomware attack, operational fleet disruption caused by a cyber attack 
 on systems or devices).
-Data 
+Data / 
 Privacy breach
 A data breach occurs when a threat actor gains unauthorized access 
 to proprietary, confidential data, such as intellectual property (IP), trade 
@@ -1660,7 +1670,7 @@ secrets, financial information, or personally identifiable information (PII).
 Cybersecurity incidents involving data breaches are the most common 
 and most expensive.
 Fraud
-Illegal use of vehicle data andor vehicle consumer data by threat actors 
+Illegal use of vehicle data and/or vehicle consumer data by threat actors 
 for financial gain.
 Vehicle theft
 Vehicle thefts involving long\-range, short\-range, and physical attacks by 
@@ -1670,7 +1680,7 @@ manipulation
 Threat actor activities targeted at tampering with various in\-vehicle 
 systems, changing their expected operational behavior and potentially 
 creating safety risks.
-Policyviolation
+Policy violation
 Threat actors' actions that violate established rules, regulations, 
 or policies regarding the use, operation, or management of vehicles.
 Location tracking
@@ -1681,15 +1691,15 @@ vehicle systems
 Threat actors can take full or partial control of a vehicle from long 
 distances by overriding its systems through connected components.
 41
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
  2023 impact breakdown, based on 295 automotive\-related cyber incidents
 Source: Upstream Security
 Control vehicle systems 
 2%
-Service Business
+Service / Business
 disruption
 42%
-Data Privacy breach
+Data / Privacy breach
 22%
 Fraud
 20%
@@ -1702,12 +1712,12 @@ Policy violation
 Location tracking
 3%
 42
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 CVES MUST BE CLOSELY MONITORED 
 The Common Vulnerability Scoring System (CVSS) was designed to provide 
-an open and standardized method for rating CVEs. 
+an open and standardized method for rating CVEs. ‌
 CVSS helps organizations 
-prioritize and coordinate joint responses based on the vulnerabilitys base, 
+prioritize and coordinate joint responses based on the vulnerability’s base, 
 temporal, and environmental properties.74 Vulnerabilities are also graded 
 from Critical, High, Medium to Low, or None, based on their CVSS score.75
 In our analysis of CVEs, we focus only on CVEs that directly affect the 
@@ -1724,8 +1734,8 @@ Security teams, developers, and researchers use CVSS together with several
 other methods to assess risks. CVSS scores have practical applications across 
 the product's supply chain, such as determining whether vulnerabilities have 
 already been exploited and prioritizing patching efforts, and allocating time and 
-resources more efficiently. CVSS is also used by ISOSAE 21434 as part of the 
-standards risk assessment process to determine attack feasibility.
+resources more efficiently. CVSS is also used by ISO/SAE 21434 as part of the 
+standard’s risk assessment process to determine attack feasibility.
 CVEs should also be closely monitored by fleet managers and operators. 
 In addition to affecting risk assessments across the fleet, CVEs can also be 
 considered when strategically designing the fleet composition. 
@@ -1742,14 +1752,14 @@ Source: Upstream Security
 2023
 378
 43
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 OVERVIEW OF 2023 CVES
 CVEs are acknowledged and cataloged cybersecurity risks that can be 
 quickly referenced across the Automotive and Smart Mobility ecosystem. It is 
 common to find these threats on OEM products, but they can also appear in 
 the products of OEM supply chain companies.
 OEMs assemble vehicles from hundreds of software and hardware modules 
-produced by Tier\-1 and Tier\-2 suppliers. Each components quality and safety 
+produced by Tier\-1 and Tier\-2 suppliers. Each component’s quality and safety 
 rests with the company that produces it. Consequently, each company involved 
 in the supply chain has the responsibility to oversee and ensure the quality 
 and safety of each automotive\-related product. Because vulnerabilities are 
@@ -1764,11 +1774,11 @@ CVEs
 Source: Upstream Security
 OEM \- Vehicle manufacturer
 Tier\-1 \- Components supplier
-Tier\-2 \-Software and hardware providers (including chipsets for the Automotive industry,
+Tier\-2 \- Software and hardware providers (including chipsets for the Automotive industry, 
 mobility management systems and aftermarket devices)
 124
 527
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 44
 CRITICAL 
 VULNERABILITIES
@@ -1783,33 +1793,33 @@ LOW
 VULNERABILITIES
 12
 IN 2023, THE CVSS\-SCORED VULNERABILITIES 
-ANALYZED BY UPSTREAMS ANALYSTS HAD:
+ANALYZED BY UPSTREAM’S ANALYSTS HAD:
 Together with the sharp increase in automotive\-related CVEs in 2023, we also 
 witnessed a rise in severity. In 2023, critical and high vulnerabilities accounted 
 for nearly 80% of total CVES, up from 71% in 2022\. This trend amplifies the 
 importance of closely monitoring automotive\-specific CVEs by all stakeholders 
 and proactively detecting exploits, as well as prioritizing mitigation. 
 Source: Upstream Security
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 45
-OEMs
-Tier\-1s
-Tier\-2s
-Electric Vehicles
-EV Charging Infrastructure Local Grids
-Autonomous Vehicles
-Agriculture Equipment
-Mobility IoT
-TSP Fleet Management
-Car Dealerships
-Car, Commercial, and Delivery Fleets
-Public Transportation
-Government Fleets Emergency Services
-Car and Bike Sharing
-Car Rental
-Ride Sharing and Hailing
-Smart Cities
-Insurance
+OEMs 
+Tier\-1s 
+Tier\-2s 
+Electric Vehicles 
+EV Charging Infrastructure / Local Grids 
+Autonomous Vehicles 
+Agriculture Equipment 
+Mobility IoT 
+TSP / Fleet Management 
+Car Dealerships 
+Car, Commercial, and Delivery Fleets 
+Public Transportation 
+Government Fleets / Emergency Services 
+Car and Bike Sharing 
+Car Rental 
+Ride Sharing and Hailing 
+Smart Cities 
+Insurance 
 Source: Upstream Security
 THE IMPACT IS FELT ACROSS THE
 SMART MOBILITY ECOSYSTEM 
@@ -1822,16 +1832,16 @@ Cyber attacks threaten every segment of the
 Automotive, Smart Mobility, and Mobility\-as\-a\-Service 
 (MaaS) ecosystem.
 45
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 46
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 OEMS AND SUPPLIERS SHARE RESPONSIBILITY 
 Besides costly recalls, brand damage, and loss of data, cyber attacks against 
 OEMs and their component suppliers have led to production shutdowns. 
 In June 2023, a US\-based Tier\-1 supplier of high\-performance alloys for 
 the Automotive industry began experiencing a network outage indicative 
 of a cybersecurity incident.76 For the next 11 days, many aspects of the 
-companys production were substantially disruptedincluding administrative, 
+company’s production were substantially disrupted—including administrative, 
 sales, financial, and customer service functions. The company reported that 
 the lost production time impacted net revenues by roughly $18\-20 million, 
 and diluted earnings per share by approximately $0\.40\-$0\.45\.77
@@ -1846,11 +1856,11 @@ such as double\-extortion, initial access broker affiliates, and advertising
 on hacker forums. In response, the company hired leading third\-party 
 cybersecurity experts and activated its response protocol, including its 
 business continuity plan.78
-The EV charging ecosystem is rapidly expanding
+The EV charging ecosystem is rapidly expanding 
 Concerns over grid cybersecurity and charging infrastructure 
 increase as the number of EVs grows. The fast adoption 
 of EVs has resulted in the relatively rapid development and 
-deployment of charging infrastructureoften overlooking cybersecurity best 
+deployment of charging infrastructure—often overlooking cybersecurity best 
 practices and vulnerabilities. 
 Chargers are vulnerable to physical and remote manipulation that can 
 manipulate their functionality, and expose EV users to fraud, data breaches, 
@@ -1862,7 +1872,7 @@ program to gain access to the underlying Operating System (OS) of a new
 350\-kW charger from a US EV charging company. The researcher could access 
 the OS menu, open the web browser, and navigate to a competitor's website 
 47
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 while the charger app remained running in the background.79 An earlier incident 
 occurred in which another hacker gained access to the charger's critical 
 settings and could view functions such as overheat protection.80
@@ -1872,23 +1882,23 @@ Management System (CSMS) of a Switzerland\-based provider, allowing
 adversaries to access files uploaded by other users, bypass the required 
 provisioning PIN code (authentication), and hijack a charger's OCPP 
 connection.81 The researchers demonstrated attack vectors that expose 
-drivers data and impact service availability of the vendors provisioning 
+drivers’ data and impact service availability of the vendor’s provisioning 
 process, management, and operations of charging stations.82
 In May 2023, security researchers reported a vulnerability, known as CVE\-
 2023\-29857,83 in a popular 3rd\-party application used by owners of US EV 
 OEM. The vulnerability allows attackers to obtain sensitive information via 
 directly accessing the application link.84
 Commercial fleets
-As commercial fleet operatorssuch as car rental, logistics, and 
-delivery companiesincreasingly rely on connectivity and software 
+As commercial fleet operators—such as car rental, logistics, and 
+delivery companies—increasingly rely on connectivity and software 
 for vehicle management, their cybersecurity risks multiply.
 In September 2023, a leading US\-based trucking and fleet management 
 solutions provider experienced a ransomware attack that resulted in 
-customers being unable to electronically log their on\-road hoursas required 
-by federal regulationsor track their transported inventory.85 In response, the 
+customers being unable to electronically log their on\-road hours—as required 
+by federal regulations—or track their transported inventory.85 In response, the 
 company hired external cybersecurity experts to investigate and applied for 
 a waiver from the US Federal Motor Carrier Safety Administration to allow 
-truckers to use paper logs until 
+truckers to use paper logs until ‌
 service was restored.86
 Smart mobility IoT devices \& services
 As smart mobility IoT devices and services continue to grow in 
@@ -1899,10 +1909,10 @@ thousands of unique users.
 In July 2023, a cyberattack targeted the servers of a Polish city's Transport 
 Authority, halting smart transportation systems. The attack impacted the 
 city's public transportation ticketing system, traffic lights management, and 
-electronic information boards at public transportation stopscausing city\-
+electronic information boards at public transportation stops—causing city\-
 wide traffic jams.87
 48
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 Insurance
 Insurance companies are realizing that the cyber\-threat 
 landscape directly impacts premiums on connected vehicles. 
@@ -1921,8 +1931,8 @@ pace by many stakeholders, including OEMs, smart mobility
 and ride\-sharing services providers, and large technology 
 enterprises. Other manufacturers are not far behind. Autonomous fleets are 
 gaining momentum, delivering unprecedented efficiencies and customer 
-experiencesbut not without safety concerns and public distrust.
-In October 2023, California ordered a US OEMs AV to remove its driverless 
+experiences—but not without safety concerns and public distrust.
+In October 2023, California ordered a US OEM’s AV to remove its driverless 
 cars from state roads, after a pedestrian in San Francisco was struck by a 
 human\-driven vehicle and then run over by a robotaxi.88 In November 2023, 
 the same OEM recalled its entire US fleet of 950 driverless cars, but is 
@@ -1932,24 +1942,24 @@ Despite this, other AV companies are forging ahead with their own
 deployments and trials, acknowledging the above problems as the result of 
 scaling too quickly before the technology was ready.90 
 49
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 On the technical side, new sensor types, software and hardware 
 functionalities, services, and communication types expose potential 
 vulnerabilities, increasing the likelihood of a future attack. Autonomous 
-vehicles are equipped with and rely upon navigator sensors (e.g GPS, LIDAR, 
+vehicles are equipped with and rely upon navigator sensors (e.g., GPS, LIDAR, 
 cameras, millimeter wave radar, IMU) that receive data and directions from 
 multiple sources, including the internet and satellites.
 It is therefore possible for attackers to prevent the sensor from retrieving 
 useful data, cause it to retrieve incorrect data, or manipulate the sensor's 
 function through crafted data.97
-In July 2023, Waymos co\-CEOs announced that given the tremendous 
-momentum and substantial commercial opportunity theyre seeing on 
-the ride\-hailing front, theyve made the decision to focus efforts and 
-investment in ride\-hailingpushing back the timeline on technical, 
+In July 2023, Waymo’s co\-CEOs announced that given the tremendous 
+momentum and substantial commercial opportunity they’re seeing on 
+the ride\-hailing front, they’ve made the decision to focus efforts and 
+investment in ride\-hailing—pushing back the timeline on technical, 
 commercial, and operational efforts on trucking.91
 In August 2023, Axios reported on several autonomous trucking 
-companies that conducting testing in the Dallas\-Fort Worth area
-including Aurora, Gatik, Torc Robotics, and Kodiak Roboticswhich 
+companies that conducting testing in the Dallas\-Fort Worth area—
+including Aurora, Gatik, Torc Robotics, and Kodiak Robotics—which 
 expect to deploy driverless trucks in the next couple years.92
 In October 2023, Waymo announced a partnership with Uber to offer a 
 fully autonomous, all\-electric Waymo ride in the 225\+ square miles of 
@@ -1965,7 +1975,7 @@ In December 2023, Japan decided to assign an exclusive
 bandwidth for Level 4 self\-driving vehicles.96
 This was demonstrated by the many announcements made in 2023:
 50
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 The impact of Right to Repair on agriculture vehicles
 Conflicts over the US Right to Repair of agricultural vehicles 
 continued to make big headlines in 2023\. 
@@ -1986,7 +1996,7 @@ introduced across the US. It is their goal to require equipment manufacturers
 to provide software, codes, and tools to farmers and independent technicians 
 so they can repair equipment themselves.
 In April 2023, Colorado became the first state to pass a right to repair 
-law for farmerswhich will go into effect at the start of 2024\.98
+law for farmers—which will go into effect at the start of 2024\.98
 In June 2023, the American Farm Bureau Federation signed a 
 memorandum of understanding (MOU) with CLAAS of America, 
 providing even more farmers and ranchers with the right to repair 
@@ -1994,28 +2004,28 @@ their own farm equipment.99 In 2023, AFBF entered into similar MOUs
 with John Deere, CNH Industrial Brands (which includes Case IH and 
 New Holland), AGCO, and Kubota. In total, the five MOUs cover almost 
 three\-quarters of the agricultural machinery sold in the US.
-In November 2023, a US judge rejected Deeres efforts to dismiss 
+In November 2023, a US judge rejected Deere’s efforts to dismiss 
 consolidated lawsuits and said Deere must face claims from crop 
 farms and farmers that the agricultural machinery maker has 
 unlawfully conspired to restrict services for maintenance and repair.100
 51
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 Regulators worldwide are shifting focus to the growing cyber risks caused 
-by the Right to Repair Act before they reach a tipping point. In June 
+by the Right to Repair Act before they reach a “tipping point”. In June 
 2023, NHTSA notified dozens of OEMs about safety concerns arising 
 from the Massachusetts Right to Repair Act.101 The NHTSA reiterated that 
 manufacturers must comply with all federal safety requirements. These 
 recent developments and clear indications by NHTSA serve as important 
 guidelines for OEMs and provide a path for future resolution of this conflict. 
 03
-2023S DIVERSE 
+2023’S DIVERSE 
 ATTACK VECTORS
 Smart Mobility and 
 Automotive stakeholders 
 must be aware of emerging 
 threats and the impact they 
 post of cyber resilience
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 53
 INCREASINGLY SOPHISTICATED ATTACKS 
 OPEN THE DOOR FOR LARGE\-SCALE IMPACT 
@@ -2046,7 +2056,7 @@ connected components (servers, infotainment systems). It is also a result
 of the established maturity of the automotive cybersecurity landscape 
 and the attempt of threat actors to gain access to sensitive data and 
 potentially vehicle control across a large scale of mobility assets. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 54
 35%
 14%
@@ -2057,12 +2067,14 @@ Telematics and
 application servers 
 Infotainment system 
 API 
-ECUs (includingTCU, GW, etc.) 
+ECUs (including 
+ 
+TCU, GW, etc.) 
 Remote keyless 
  entry system
 EV charging 
 Database 
-GPSGNSS 
+GPS/GNSS 
  navigation system
 Mobile applications 
 Bluetooth 
@@ -2080,12 +2092,12 @@ CAN bus
 1%
 Source: Upstream Security
 Incidents by attack vector
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 55
-A series of vulnerabilities, collectively known as CVE\-2023\-3028,103were identified:
+A series of vulnerabilities, collectively known as CVE\-2023\-3028,103 were identified:
 MQTT backend does not require authentication, allowing unauthorized 
 connections from an attacker. 
-Vehicles publish their telemetry data (e.g GPS location, speed, odometer, 
+Vehicles publish their telemetry data (e.g., GPS location, speed, odometer, 
 fuel, etc.) as messages in public topics. The backend also sends 
 commands to the vehicles as MQTT posts in public topics. As a result, an 
 attacker can access the confidential data of the entire fleet.
@@ -2103,7 +2115,7 @@ Throughout a vehicle's life, connected vehicles collect, transmit, and
 receive information from OEM backend servers and vehicle owners. This 
 is accomplished by using two types of servers: telematics servers, which 
 communicate with the vehicle, and application servers, which communicate 
-with the vehicles companion applications.
+with the vehicle’s companion applications.
 Additionally, some vehicles have backend servers that communicate with 
 third parties, such as insurance companies, fleets, car rental and leasing 
 companies, EV charging networks, and more. 
@@ -2115,23 +2127,23 @@ a widely adopted network messaging protocol used in connected
 vehicles, that allows an attacker to access and even manipulate 
 the telemetry data of the entire fleet of vehicles using a popular 
 telematics unit.102
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 56
 REMOTE KEYLESS ENTRY SYSTEMS
 Modern vehicles are protected against theft by using remote keyless entry 
 systems that include smart key fobs with very strong cryptography and 
-immobilizers. But remote keyless entry systems 
+immobilizers. But remote keyless entry systems ‌
 may accomplish the opposite, 
 as vehicle theft and vehicle break\-ins continue to increase.
 Wireless key fob manipulation is used by black hat actors to carry out their 
 attacks freely. Publicly available hacking tutorials and devices sold online 
 without registration have made these attacks popular.
-Whenever a wireless key fobwhich is equipped with a short\-range radio 
-transmitteris within close proximity to the vehicle, it transmits a coded radio 
+Whenever a wireless key fob—which is equipped with a short\-range radio 
+transmitter—is within close proximity to the vehicle, it transmits a coded radio 
 signal to the receiver unit. Communication between the fob and vehicle can be 
 manipulated using devices that can intercept and relay, replay, or jam the radio 
 signal all together. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 57
 04
 05
@@ -2155,11 +2167,11 @@ the wireless key
 fob ECU with 
 CAN injection
 The communication between the key fob mechanism and the vehicle can be 
-attacked in a few different ways:
+attacked in a few different ways: 
 A more sophisticated and expensive device can be used to reprogram the 
 key fob system, rendering the original key useless. The reprogramming 
-devicewhich connects to the OBD port, making it relatively easy for car 
-thieves to gain full control over vehiclescan be legally obtained 
+device—which connects to the OBD port, making it relatively easy for car 
+thieves to gain full control over vehicles—can be legally obtained ‌
 online and 
 is used by authorized mechanics and service centers.
 Reprogramming 
@@ -2172,18 +2184,18 @@ Replay attacks
 using a stored 
 signal
 In relay attacks, hackers intercept the normal communication between the 
-key fob and the vehicleeven when the key fobs signal is out of range. 
+key fob and the vehicle—even when the key fob’s signal is out of range. 
 Hackers can amplify the radio signal using a transmitter or repeater that is 
 placed near the car, which amplifies and relays a message to unlock and 
 start the vehicle's engine. Thieves increasingly use this type of attack to 
-intercept the signal from a key fob located inside a vehicle owners house. 
+intercept the signal from a key fob located inside a vehicle owner’s house. 
 Relay attacks 
-using a live 
+using a “live” 
 signal
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 58
 In January 2023, a security researcher discovered a vulnerability, 
-described in CVE\-2022\-38766,that impacts the remote keyless 
+described in CVE\-2022\-38766, that impacts the remote keyless 
 system on a French OEM vehicle model. This vulnerability is based on 
 the Rolling Code sets, a series of changing codes that is supposed 
 to prevent replay attacks. In this case the researcher discovered that 
@@ -2206,15 +2218,15 @@ method, called CAN injection, which bypasses the entire smart key
 system by using a CAN injector device.111 The device can be connected 
 to the control CAN bus from the headlight connector, the taillight 
 connector, or even by punching a hole in a panel where the twisted pair 
-of CAN wires go right pastto impersonate the smart key ECU. The 
+of CAN wires go right past—to impersonate the smart key ECU. The 
 researcher discovered the method after conducting a lengthy digital 
 forensic investigation into the July 2022 theft of his Japanese OEM 
 vehicle, following two previous failed attempts.112
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 59
 ECUs
-Electronic Control Units (ECUs)responsible for engine, steering, braking, 
-windows, keyless entry, and various critical systemscan be interfered with 
+Electronic Control Units (ECUs)—responsible for engine, steering, braking, 
+windows, keyless entry, and various critical systems—can be interfered with 
 or manipulated. Hackers try to manipulate ECUs and take control of their 
 functions by running multiple sophisticated systems at the same time.
 In February 2023, the National Highway Traffic Safety Administration 
@@ -2222,7 +2234,7 @@ In February 2023, the National Highway Traffic Safety Administration
 between November 2019 and June 2021\. Software in the Hybrid 
 Vehicle Control ECU, which is used to calculate the hybrid battery 
 output, may not limit battery output as required, causing the hybrid 
-system to shut down completely in certain conditions113\. Its unclear 
+system to shut down completely in certain conditions113\. It’s unclear 
 what is the reason for the issue, but it could certainly evolve into a 
 significant cyber risk. 
 In November 2023, a hacker used a device with a microcontroller to 
@@ -2230,7 +2242,7 @@ read the CAN bus of a Japanese OEM vehicle, allowing him to keep the
 vehicle's ACC (accessory) relay energized when the engine is turned off, 
 maintaining power to the stereo and infotainment system.114 This type 
 of attack can lead to privacy violations, as well as potential exploitation 
-of other vehicle systems.
+of other vehicle systems. 
 APIs 
 Connected vehicles as well as smart mobility IoT and services use a wide range 
 of external and internal APIs, resulting in billions of transactions per month. OTA 
@@ -2242,10 +2254,10 @@ resulting in a wide range of cyber
 attacks, such as the theft of sensitive PII, 
 backend system manipulation, 
 or malicious remote vehicle control. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 60
 In contrast to hacking other types of systems, API hacking is relatively cost\-
-effective and offers the ability to execute large\-scale attacksit requires 
+effective and offers the ability to execute large\-scale attacks—it requires 
 relatively low technical expertise, uses standard techniques, and can be carried 
 out remotely without special hardware.
 In the last two years, the Automotive industry and supply chains, as well as 
@@ -2258,12 +2270,12 @@ They discovered multiple vulnerabilities across 19 major global OEMs
 and suppliers that allowed them to remotely control vehicles and 
 access sensitive OEM and consumer data.115 
 In March 2023, a security researcher disclosed that he gained access 
-to a Japanese OEMs CRM database by modifying the dev app to use 
-the production APIwhich was unintentionally exposed through the 
+to a Japanese OEM’s CRM database by modifying the dev app to use 
+the production API—which was unintentionally exposed through the 
 loading spinner settings. A misconfigured API and a lack of proper 
 authentication and verification resulted in the researcher being able to 
 access names, addresses, phone numbers, email addresses, tax IDs, 
-and vehicle service ownership history of the OEMs customers.116
+and vehicle / service / ownership history of the OEM’s customers.116
 In July 2023, security researchers reported three critical vulnerabilities 
 found in the API interfaces of a Charging Station Management System 
 (CSMS) platform from a Switzerland\-based provider, allowing attackers 
@@ -2277,7 +2289,7 @@ The same month, a Tier\-2 supplier of a popular automotive platform chip
 disclosed a multi\-mode call processor memory corruption vulnerability, 
 described in CVE\-2023\-22388,120 that occurs while processing the bit 
 mask API, causing unexpected behavior and crashing the system.121
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 61
 MOBILE APPLICATIONS
 Increasingly connected and software\-defined vehicles allow OEMs to provide 
@@ -2288,7 +2300,7 @@ open their doors, start their engines, turn on auxiliary devices, and more.
 The same apps that provide drivers with a digital experience can also 
 be exploited by hackers to access the vehicle and backend servers. 
 Companion applications may also have common software vulnerabilities, 
-including open\-source vulnerabilities, hard\-coded credentials, and API
+including open\-source vulnerabilities, hard\-coded credentials, and API/
 backend server weaknesses.
 OEM companion and smart mobility apps can also be used to commit 
 identity theft. Black hat actors can exploit vulnerabilities in mobile devices 
@@ -2302,7 +2314,7 @@ In June 2023, a popular ride\-hailing service in Pakistan with over 10
 million users was hacked, resulting in consumers receiving abusive 
 messages and notifications. A third\-party communication API had 
 been compromised, according to the company.124
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 62
 INFOTAINMENT SYSTEMS
 The in\-vehicle infotainment system (IVI) is one of the most common attack 
@@ -2311,7 +2323,7 @@ and short\-range communications with mobile phones and bluetooth devices.
 As a result, it has access to PII.
 Additionally, IVI systems often connect to a vehicle's internal networks, 
 posing a serious risk to the vehicle. IVI systems can be the path of least 
-resistance for malicious software to penetrate 
+resistance for malicious software to penetrate ‌
 internal systems.
 In May 2023, a hacker and advocate for open\-source implementation 
 in the Automotive industry, successfully hacked a Japanese OEM's 
@@ -2321,17 +2333,17 @@ applications via a USB drive, including a file manager and a third\-
 party app over the Transmission Control Protocol.125
 In August 2023, researchers from Germany successfully executed 
 a jailbreak of a US EV OEM's IVI system using a voltage fault 
-injection attack on the chip\-makers processor that gave them nearly 
+injection attack on the chip\-maker’s processor that gave them nearly 
 irrevocable root access. The attack allowed the researchers to run 
 arbitrary software on the infotainment system and unlock paid 
 features such as faster acceleration and heated seats. Additionally, 
 the exploit facilitated the extraction of a vehicle\-unique key 
 (cryptosystem public key) used for authentication and authorization 
-on the OEMs internal service network. With the root permissions 
+on the OEM’s internal service network. With the root permissions 
 gained through the exploit, a malicious actor could access private 
 user data, decrypt encrypted NVMe (Non\-Volatile Memory Express) 
 storage, and manipulate the car's identity.126
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 63
 EV CHARGING INFRASTRUCTURE
 Providing a reliable and safe charging infrastructure is essential to accelerating 
@@ -2349,9 +2361,9 @@ background.127 An earlier incident occurred in which another hacker
 gained access to the charger's critical settings and could view things 
 such as overheat protection.128 In both cases, the incidents aimed to 
 raise awareness for electric vehicle charging security concerns.
-In June 2023, security researchers discovered an internal database
+In June 2023, security researchers discovered an internal database—
 hosted on one of the most popular public cloud platforms, with 
-no password, that contained millions of logsnearly a terabyte of 
+no password, that contained millions of logs—nearly a terabyte of 
 logging data belonging to a global EV charging service provider 
 with a worldwide network of hundreds of thousands of EV charging 
 stations. The database contained sensitive information about 
@@ -2360,7 +2372,7 @@ names, email addresses, phone numbers of fleet customers, names
 of fleet operators with vehicles that recharge the network, and 
 vehicle identification numbers (VINs), and locations of EV public and 
 residential charging points.129
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 64
 BLUETOOTH
 Bluetooth is a wireless communication technology that uses radio frequencies 
@@ -2385,31 +2397,31 @@ their Tier\-1 and Tier\-2 suppliers to continuously update the SBOM to improve
 vehicle quality, safety, functionality and introduce new features.
 Remote updates, however, are riskier than physical ones because wireless 
 communications opens the door to numerous cyber attacks that can affect 
-multiple vehiclesand even entire fleets, at once. 
+multiple vehicles—and even entire fleets, at once. 
 Additionally, updates could be crucial to the vehicle's functionality. The failure 
 of an OTA update could cause a severe vehicle malfunction, as it did in 
 November 2023 for a US\-based EV OEM. The OEM released and then abruptly 
 canceled an OTA update that offered bug fixes and improvements to a specific 
 feature. As a result of the failed update, the infotainment systems, which are 
 used to operate critical vehicle functions, of two vehicle models were bricked. 
-The OEM stated that the issue was caused by a human errorthe wrong build 
-was sent out with the wrong security certificateand that an OTA update 
+The OEM stated that the issue was caused by a human error—the wrong build 
+was sent out with the wrong security certificate—and that an OTA update 
 would be made available to fix the issue and restore full functionality.132
 As OTAs are used more frequently and leveraged by an increasing number of 
-OEMs, Upstreams AutoThreat researchers continuously monitor OTA\-related 
+OEMs, Upstream’s AutoThreat® researchers continuously monitor OTA\-related 
 activities in the deep and dark web. Our researchers have identified a growing 
 interest by adversaries in exploiting OTA updates to execute cyber attacks. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 65
 V2X ATTACKS ARE AT THEIR INFANCY, BUT ARE EXPECTED 
 TO BECOME MUCH MORE FREQUENT IN THE COMING YEARS
-Telematics, smart mobility, in\-vehiclemobility IoT, and other services require connected vehicles to 
+Telematics, smart mobility, in\-vehicle/mobility IoT, and other services require connected vehicles to 
 share data with servers, apps, and various vehicle components.
 Connected vehicle\-to\-everything (V2X), is the collective term for the technology enabling vehicles, 
 infrastructure, and other active road users to be in constant communication by leveraging existing 
 cellular network infrastructure. There are seven primary modes of vehicle connectivity:
 Within a few years, vehicles will constantly communicate and interact with their 
-surroundings through APIs, sensors, cameras, radars, mobility IoT modules, and more
+surroundings through APIs, sensors, cameras, radars, mobility IoT modules, and more—
 enhancing vehicle operation by processing various inputs from the environment.
 The most profound addition will be the capability of a vehicle to communicate 
 with other vehicles or devices on the road, and receive data from external sources 
@@ -2449,9 +2461,9 @@ devices that directly connect with them.
 V2G
 Vehicle
 to Grid
-Two\-way power flow between vehicles and power grid,which can create 
-major problems across a city or nations transportation grid if exploited.
- 2024 Upstream Security Ltd. All Rights Reserved
+Two\-way power flow between vehicles and power grid, which can create 
+major problems across a city or nation’s transportation grid if exploited.
+© 2024 Upstream Security Ltd. All Rights Reserved
 66
 V2V 
 Vehicle\-to\-
@@ -2478,10 +2490,10 @@ such as DSRC and Cellular V2X (C\-V2X), which have been in testing for the
 past few years. C\-V2X uses 3GPP standardized 4G LTE or 5G mobile cellular 
 connectivity to exchange messages between vehicles, pedestrians, and 
 wayside traffic control devices such as traffic signals.133 Though both DSRC 
-and C\-V2X enable the future of V2X, C\-V2Xs use of Long\-Term Evolution 
-(LTE) is considered 
+and C\-V2X enable the future of V2X, C\-V2X’s use of Long\-Term Evolution 
+(LTE) is considered ‌
 a potential game\-changer for the connected vehicles 
-ecosystem. The ability to use existing cellular infrastructure will
+ecosystem. The ability to use existing cellular infrastructure will‌
  reduce 
 the efforts required to accelerate adoption, while guaranteeing high\-speed 
 communication in high\-density locations.134 
@@ -2493,7 +2505,7 @@ Bureau granted a joint request submitted by automotive manufacturers,
 equipment manufacturers, and state departments of transportation seeking 
 a nationwide waiver of several FCC rules to permit deployment of C\-V2X 
 technology in the upper 30 MHz of spectrum in the 5\.895\-5\.925 GHz band.135
-
+​
 While the order is an important step toward the deployment of C\-V2X, many 
 challenges still need to be resolved by the final rules, because the current 
 FCC rules are based on the DSRC standard, which is not compatible with the 
@@ -2505,7 +2517,7 @@ Preparing for regulatory
 expansion and adopting new 
 standards to keep connected 
 mobility assets secure
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 68
 GENERATIVE AI IS RESHAPING THE AUTOMOTIVE 
 AND SMART MOBILITY ECOSYSTEM, 
@@ -2552,13 +2564,13 @@ REACHING
 AS HIGH AS
 $1\.7 
 BILLION BY 2030\.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 69
 CYBERSECURITY REGULATIONS MAKE 
 HEADWAY WORLDWIDE
 Evolving regulations worldwide reflect a concerted effort by governments 
 and regulators to adapt to technological advancements, promote safety, 
-and address environmental concernsshowcasing a global commitment to 
+and address environmental concerns—showcasing a global commitment to 
 shaping the future of the Automotive industry.
 China
 China has recently initiated various regulations and guidelines, 
@@ -2582,7 +2594,7 @@ services, and AVs should be clearly labeled for road awareness. Additionally,
 the guidelines make a singular reference to software, emphasizing that 
 over\-the\-air upgrades must adhere to safety regulations from the Ministry of 
 Industry and Information.140
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 70
 The Chinese Ministry of Industry and Information Technology has issued 
 a call for public opinions on four mandatory national standards, including 
@@ -2611,10 +2623,10 @@ structure, and complete functions.142
 Japan \& EU
 In Japan and the EU, UN regulations (UN\-R157\-01 series) allow 
 for approval of Level 3 autonomous driving devices with a speed 
-limit of 130 kmh on highways and the ability to change lanes as 
+limit of 130 km/h on highways and the ability to change lanes as 
 of January 2023\. Future regulations will focus on unmanned (driverless) 
 vehicles at Levels 4 and 5\.143
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 71
 India
 In April 2023, India implemented Real Driving Emissions (RDE) 
@@ -2634,7 +2646,7 @@ engine performance, and driving patterns. Cybersecurity measures are
 necessary to protect this sensitive data from unauthorized access and 
 potential misuse of the data.
 In November 2023, following global standards, India proposed a mandatory 
-security framework for vehicle manufacturers called CyberShield. The 
+security framework for vehicle manufacturers called “CyberShield”. The 
 plan, backed by the Minister of Road Transport, aims to fortify vehicle 
 systems against cyber vulnerabilities, extending protection to electric vehicle 
 charging stations. The initiative recognizes the importance of preemptive 
@@ -2644,18 +2656,18 @@ set for expert scrutiny before parliamentary approval.145
 United States
 In August 2023, the California Privacy Protection Agency (CPPA) 
 launched an enforcement initiative to examine the extensive data collected 
-by connected vehiclesthrough built\-in apps, sensors, and cameras. The 
+by connected vehicles—through built\-in apps, sensors, and cameras. The 
 move reflects a growing focus on privacy within the Automotive industry. The 
 CPPA aims to ensure OEM transparency and compliance with consumer data 
 rights, such as knowing what data is collected, preventing its dissemination, 
-and requiring its deletion.The initiative highlights concerns about data 
+and requiring its deletion. The initiative highlights concerns about data 
 management and may also impact industries beyond automotive, such as 
 supply chain, logistics, and construction.146
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 72
 THE EXPANSION OF UNECE WP
 .29 R155 
-AND ISOSAE 21434 
+AND ISO/SAE 21434 
 In 2023, many automotive OEMs and their suppliers continued implementing 
 R155 for Cyber Security Management System (CSMS) and Type Approval,147 
 and WP.29 R156 for Software Update Management System (SUMS).148 
@@ -2663,14 +2675,14 @@ Based on the second milestone of R155, its scope will become mandatory
 for all new vehicles in production starting in July 2024\. In the past several 
 months, some OEMs discontinued specific models based on expected R155 
 compliance challenges and the upcoming second milestone.149 
-Together with ISOSAE 21434,150 these regulations are a part of the global 
+Together with ISO/SAE 21434,150 these regulations are a part of the global 
 effort to create a unified approach to protecting against cyber threats.
 Due to regulatory changes, developments in industry standards, and research 
 learnings, several organizations updated their guidelines and best practices, 
 including the US National Highway Traffic Safety Administration (NHTSA),151 
 the European Union Agency for Cybersecurity (ENISA),152 and member trade 
 association Auto\-ISAC.153
-It is important to note that both R155 and ISOSAE 21434 avoid outlining 
+It is important to note that both R155 and ISO/SAE 21434 avoid outlining 
 specific solutions and exact processes, instead stressing the importance 
 of implementing a high standard of cybersecurity analysis. The guidelines 
 outline the process and specify risk analysis and response targets, 
@@ -2688,10 +2700,10 @@ The primary components of regulation WP
 .29
 UNECE WP
 .29 OVERVIEW
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 73
 Vehicles are regulated under R155154, R156155, or both, depending on category classification. 
-Vehicle
+Vehicle 
 Category
 Definition
 Applicable
@@ -2699,7 +2711,7 @@ Regulation
 L6 
 Vehicle with four wheels weighing under 350kg (\~770lb.)
 whose engine does not exceed 50 cubic cm. and whose 
-maximum speed is designed for 45 kmh (\~28mph)
+maximum speed is designed for 45 km/h (\~28mph)
 R155 if equipped with 
 level\-3 functionalities 
 and above
@@ -2710,7 +2722,8 @@ and whose continuous rated power does not exceed
 R155 if equipped with 
 level\-3 functionalities 
 and above
-MA vehicle with at least four wheels and 
+M
+A vehicle with at least four wheels and 
 meant to carry passengers
 R155 \& R156
 N
@@ -2727,13 +2740,15 @@ S
 Interchangeable towed agricultural or forestry equipment
 R156
 T
-Any motorized, wheeled, or tacked agricultural equipmentthat has two axles and is meant to travel at speeds 
-greater than 6kmh (\~3\.5mph)
+Any motorized, wheeled, or tacked agricultural equipment 
+
+that has two axles and is meant to travel at speeds 
+greater than 6km/h (\~3\.5mph)
 R156
 Vehicles regulated under WP
 .29
 Source: UNECE
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 74
 Backend servers related to 
 vehicles in production
@@ -2746,25 +2761,25 @@ human actions facilitating a
 cyber attack
 Vehicles regarding their 
 external connectivity
-Vehicle datacode
+Vehicle data/code
 REGULATORY IMPACT ON 
 THE AUTOMOTIVE INDUSTRY
 Together, the new regulations, standards, and guidelines are designed to 
-ensure a high level of cybersecurityresulting in better safety and security 
+ensure a high level of cybersecurity—resulting in better safety and security 
 for customers, while establishing uniform terminology, guidelines, targets, 
 and scope across the industry. Manufacturers need this flexibility to 
 implement innovative cybersecurity approaches and continuously improve. 
-ISOSAE 21434, builds on ISO 26262 Road vehicles Functional Safety 
+ISO/SAE 21434, builds on ISO 26262 Road vehicles – Functional Safety 
 standard, and requires automotive OEMs and suppliers to implement 
 cybersecurity throughout the entire vehicle lifecycle. It focuses on adopting 
-a security from the group up mindset, and establishing engineering 
+a ‘security from the group up’ mindset, and establishing engineering 
 requirements for each step of product development and production, as well 
 as the post\-production phase.
 R155 requires OEMs to implement and maintain threat analysis and 
 risk assessment (TARA) throughout all stages of the vehicle lifecycle.
  The complexity of performing effective TARA has changed dramatically 
 as vehicles become more software\-defined and software components are 
-continuously updated throughout the vehicle's life cycle.OEMs must also 
+continuously updated throughout the vehicle's life cycle. OEMs must also 
 create processes to address and mitigate future attacks together with their 
 Tier\-1 and Tier\-2 suppliers. Though the regulation applies to OEMs, the 
 requirement to demonstrate that the CSMS includes the entire value chain 
@@ -2775,7 +2790,7 @@ With R155, OEMs and suppliers are better able to identify and respond to
 security risks associated with new and emerging vehicle architectures, 
 mobility services, and the connected vehicle ecosystem. These include 
 threats to:
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 75
 The R155 regulation is unique both in its practical approach to automotive 
 cybersecurity, with concrete examples of threats and specified mitigations. But 
@@ -2787,28 +2802,28 @@ technical specifications. Today's automotive cyber environment is diverse and
 dynamic, making rigid technical measures counterproductive. The regulation 
 was intentionally drafted in a technology\-neutral way, giving some flexibility to 
 OEMs to decide how to ensure the cybersecurity of their vehicles.
-The UNECE regulations and the ISOSAE 21434 standard have reached critical 
+The UNECE regulations and the ISO/SAE 21434 standard have reached critical 
 mass and are changing the operations around the world. With the upcoming 
 expansion in July 2024, all new vehicles will be governed under R155\.
 OEMs work closely with suppliers, and cybersecurity companies to support 
 industry\-wide compliance and certification efforts, and establish robust 
 cybersecurity governance structures and testing processes.
 To boost collaboration among OEMs and suppliers, the European Automobile 
-Manufacturers Association (ACEA) and the European Association of Automotive 
+Manufacturers’ Association (ACEA) and the European Association of Automotive 
 Suppliers (CLEPA) joined forces with Auto\-ISAC in October 2022, to create a 
 central European hub for information sharing on motor vehicle cybersecurity.156
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 76
 ESTABLISHING LONG\-TERM TRUST 
-WITH ISOSAE 21434
-A key differentiator between ISOSAE 21434 and R155 is that the ISOSAE 
+WITH ISO/SAE 21434
+A key differentiator between ISO/SAE 21434 and R155 is that the ISO/SAE 
 standard provides OEMs and their suppliers with a comprehensive process 
 for calculating asset risk, and suggests methods for calculating scores and 
 prioritizing vulnerability urgency. 
 The standard provides a structured cybersecurity framework, establishing 
 cybersecurity as an integral element of engineering throughout the lifecycle 
 of a vehicle, from the conceptual phase until decommissioning.
-Additionally, to follow the ISOSAE 21434 standard and R155 CSMS 
+Additionally, to follow the ISO/SAE 21434 standard and R155 CSMS 
 requirements, OEMs are encouraged to maintain a vSOC to enforce continuous 
 monitoring for over a decade after vehicles roll off the assembly line.
 With 378 new CVEs discovered in 2023 
@@ -2818,7 +2833,7 @@ stakeholders continuously review and
 implement mitigation techniques to protect 
 their products against both existing and 
 future vulnerabilities and undiscovered 
-vulnerabilities that may arise in the future.
+vulnerabilities that may arise in the future. 
 R155
 Cybersecurity 
 Management System
@@ -2826,7 +2841,7 @@ Cybersecurity
 monitoring 
 throughout 
 vehicle lifecycle
-ISOSAE 
+ISO/SAE 
 21434
 Security by design
 Engineering 
@@ -2842,7 +2857,7 @@ and risk score for
 vulnerabilities
 R155 
 Monitoring
-Early detection
+Early detection 
 based on vehicle 
 logs, and rapid 
 response to 
@@ -2854,13 +2869,13 @@ Continuous
 safe updates 
 throughout the 
 vehicle lifecycle 
-ISOSAE 21434 and WP
+ISO/SAE 21434 and WP
 .29 work together to 
 protect vehicles on a global scale
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 77
 DOES R155 ALIGN WITH IN\-FIELD THREATS?
-Upstreams research team analyzed publicly reported automotive cyber 
+Upstream’s research team analyzed publicly reported automotive cyber 
 incidents that occurred in 2023, and correlated them to the seven threat 
 categories presented in Annex 5 of R155\. 
 4\.3\.7 Potential vulnerabilities that could be exploited if not sufficiently protected or hardened
@@ -2868,7 +2883,7 @@ categories presented in Annex 5 of R155\.
 4\.3\.4 Threats to vehicles regarding unintended human actions facilitating a cyber attack
 4\.3\.3\. Threats to vehicles regarding their update procedures
 4\.3\.5 Threats to vehicles regarding their external connectivity and connections
-4\.3\.6 Threats to vehicle datacode
+4\.3\.6 Threats to vehicle data/code
 4\.3\.2 Threats to vehicles regarding their communication channels 
 2023 cyber incidents categorized by R155 
 threats \& vulnerabilities
@@ -2880,8 +2895,12 @@ threats \& vulnerabilities
 6%
 4%
 Source: Upstream Security
- 2024 Upstream Security Ltd. All Rights Reserved
-78THE REGULATORY LANDSCAPE 
+© 2024 Upstream Security Ltd. All Rights Reserved
+78
+
+
+
+THE REGULATORY LANDSCAPE 
 CONTINUES TO MATURE
 As the Automotive and Smart Mobility ecosystem evolves and new 
 applications, devices, and services are introduced, policymakers are 
@@ -2890,7 +2909,7 @@ the scope to all new vehicles as of July 2024, around the world, legislators
 are becoming more aware of cybersecurity risks to vehicles, infrastructure, 
 and consumer privacy. New laws, including those for autonomous vehicles, 
 are being drafted to address these risks. 
-The scope of R155 is expected to expand to
+The scope of R155 is expected to expand to 
 include motorcycles and agricultural equipment
 Modern two\- and three\-wheeled vehicles are becoming much more 
 connected and designed to include multiple software\-components, sensors, 
@@ -2909,31 +2928,31 @@ the scope of R155\.158 Amid a lack of consensus on this expansion, a decision
 is expected during 2024\. 
 The EU Cyber Resilience Act promotes 
 extended cybersecurity resilience 
-Updated in December 2023, the European Cyber Resilience Act (CRA)
+Updated in December 2023, the European Cyber Resilience Act (CRA) 
 is a horizontal legislation, covering all products with digital components 
 (both hardware and software).159 The focal point for the CRA is consumers, 
 safeguarding their usage of modern connected devices, from smart watches 
 to vehicles. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 79
 The CRA covers the entire lifecycle of products, offering a framework 
 for cybersecurity governing the planning, design, development, and 
 maintenance of products. The CRA also requires manufacturers to report 
 actively exploited vulnerabilities and incidents, and mitigate risks effectively 
-through the support period of the product.160
+through the support period of the product.160 
 The CRA is expected to enter into force in May 2024, with manufacturers 
 obligated to comply within 36 months.161 
 Determining the scope of the CRA is critical for OEMs and other mobility 
 stakeholders. The CRA specifically excludes products covered by the General 
-Safety Regulation (EU) 20192144,162 which also includes R155\. Therefore, 
+Safety Regulation (EU) 2019/2144,162 which also includes R155\. Therefore, 
 vehicles under categories M, N, and some in category O, will be governed by 
-R155\. Other vehicles will be subject to the CRA.163As R155 expands its scope, 
+R155\. Other vehicles will be subject to the CRA.163 As R155 expands its scope, 
 it will also have a direct impact on the requirements to comply with the CRA.
 ISO 15118 secures vehicle\-to\-grid communications
-ISO 15118 Road vehicles Vehicle to grid communication interface164 is 
+ISO 15118 “Road vehicles – Vehicle to grid communication interface”164 is 
 the leading communications standard, covering also cybersecurity features 
 and requirements and ensuring encrypted, secure communication between 
-the electric vehicle (EV) and the electric vehicle supply equipment (EVSE).165
+the electric vehicle (EV) and the electric vehicle supply equipment (EVSE).165 
 It applies to category M and N vehicles, but encourages other OEMs to 
 also adopt its framework. It also serves as the foundation for the high\-level 
 communication protocol (HLC) for the Combined Charging System (CCS) 
@@ -2941,7 +2960,7 @@ standard for charging EVs.
 Based on the need to establish trust in the EV charging process, the 
 standard was designed to protect the grid and support the charging of 
 multiple vehicles at once while preventing the grid from overloading.
-The ISO 15118 standard governs a Plug and Charge operation involving three 
+The ISO 15118 standard governs a “Plug and Charge” operation involving three 
 fundamental stages:166 
 Confidentiality
 Transport Layer Security 
@@ -2961,20 +2980,20 @@ and the integrity of the message
 are both verified using an Elliptic 
 Curve Digital Signature Algorithm 
 (ECDSA). 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 80
 ISO 15118 applies to all entities involved in the charging process, including 
 EVSE manufacturers, EV OEMs, charging point operators (CPOs); cloud service 
-providers (CSPs, e.g edge computing \& data storage); and electricity grids 
-(e.g utilities, building management systems, etc.).
+providers (CSPs, e.g., edge computing \& data storage); and electricity grids 
+(e.g., utilities, building management systems, etc.).
 The SEC echoes the increasing focus on cybersecurity incidents
 In July 2023, the US Securities and Exchange Commission (SEC) adopted final 
-rules on cybersecurity disclosure for publicly listed companies.167
+rules on cybersecurity disclosure for publicly listed companies.167 
 The final rules, which took effect on December 15, 2023, have two 
 components: a requirement to disclose material cybersecurity incidents (using 
 Form 8\-K) four business days after a public company determines the incident 
 is material; and a requirement to disclose annually information (using Form 10\-
-K) regarding cybersecurity risk management, strategy, and governance.168
+K) regarding cybersecurity risk management, strategy, and governance.168 
 Under the new rule, public companies traded under the SEC regulations 
 must disclose the occurrence of a material cybersecurity incident and 
 describe the material aspects of the nature, scope, and timing of the 
@@ -2983,8 +3002,8 @@ of the incident on the company, including its financial condition and results
 of operations. This disclosure is focused on the material impacts of a 
 material cybersecurity incident.
 The rules also allow the delayed reporting of cybersecurity incidents that pose 
-a substantial risk to national security or public safetycontingent on written 
-notification by the Attorney Generalas well as 180\-day extensions for Smaller 
+a substantial risk to national security or public safety—contingent on written 
+notification by the Attorney General—as well as 180\-day extensions for Smaller 
 Reporting Companies.169 
 In November 2023, a ransomware group, not knowing the effective date, tried 
 to file an SEC complaint against a publicly listed company it attacked. This 
@@ -2998,7 +3017,7 @@ With these rules, the SEC emphasizes the importance of transparency and
 accountability in cybersecurity incidents and data breaches, which now must 
 be reported to shareholders and the SEC as material events based on the well\-
 established materiality standard. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 81
 NHTSA updates cybersecurity best practices 
 In 2023, NHTSA released updated cybersecurity best practices for new 
@@ -3006,7 +3025,7 @@ vehicles.171 While these guidelines are non\-binding, their objective is to refl
 evolving attack methods and the sense of urgency in mitigating cybersecurity 
 risks across the entire ecosystem.
 The standardization of cybersecurity practices across the Automotive industry, 
-such as R155, and the release of NHTSAs Cybersecurity Best Practices for 
+such as R155, and the release of NHTSA’s Cybersecurity Best Practices for 
 Modern Vehicles172 signals that governments and regulators around the world 
 understand the importance of protecting vehicles as they become more 
 vulnerable to hacking. 
@@ -3030,7 +3049,7 @@ are expected to drive a wave of
 filings by automotive and mobility 
 stakeholders as they are challenged 
 with cybersecurity attacks. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 82
 The updated guidelines emphasize 
 the connection between cybersecurity 
@@ -3039,46 +3058,46 @@ Automotive industry becomes more
 connected, safety engineers and security 
 stakeholders should also consider the 
 ability of adversaries to manipulate signals. 
-The latest recommendation from NHTSA is inspired by ISOSAE 21434 in 
+The latest recommendation from NHTSA is inspired by ISO/SAE 21434 in 
 structure and process, but is also affected by R155 as it includes the protection 
 from remote attacks.
 NHTSA guidelines emphasize the importance of collaboration to ensure 
 security and safety, suggesting participation in Auto\-ISAC as a means of 
-effective information sharing across the industry.Upstream is a proponent 
+effective information sharing across the industry. Upstream is a proponent 
 of this; as collaborative community members, we maintain the Upstream 
-AutoThreat Intelligence Cyber Incident Repository173 and share insights in our 
-annual report. Upstream is also a proud partner and sponsor of Auto\-ISAC174
+AutoThreat® Intelligence Cyber Incident Repository173 and share insights in our 
+annual report. Upstream is also a proud partner and sponsor of Auto\-ISAC174 
 and ASRG,175 where industry knowledge sharing occurs and cybersecurity best 
 practices take shape.
 Updated approach to ADS and ADAS
 Automation is constantly evolving, and NHTSA is developing regulations for 
 Automated Driving Systems (ADS) and Advanced Driver Assistance Systems 
-(ADAS). In April 2023, NHTSA issued the Second Amended SGO 2021\-01 
+(ADAS). In April 2023, NHTSA issued the Second Amended SGO 2021\-01 – 
 Incident Reporting for Automated Driving Systems and Level 2 Advanced Driver 
-Assistance Systems.176
+Assistance Systems.176 
 The updated SGO went into effect May 15, 2023 for 3 years, and includes 
 updates to reporting requirements established in the original SGO, which 
 was issued in 2021\. It enables NHTSA to receive standardized, timely, and 
-transparent data of actual accidents involving ADS and Level 2 ADAS vehicles
+transparent data of actual accidents involving ADS and Level 2 ADAS vehicles—
 which is essential to identifying potential safety concerns with automated 
-technologies that are rapidly evolving and being tested on public roads.
+technologies that are rapidly evolving and being tested on public roads. 
 In July 2023, NHTSA also created the Office of Automation Safety, and the 
 Automation Exemptions Division under NHTSA's existing Office of Rulemaking 
 to focus internal resources on this sector.177
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 83
 NHTSA favors safety and cybersecurity over the Right to Repair 
 The Right to Repair refers to the ability of vehicle owners and independent 
 repair shops to access the information, tools, and software necessary to 
 diagnose, service, and repair vehicles. In the context of modern vehicles, which 
 are equipped with advanced technologies and complex systems, the Right to 
-Repair has become a significant issuemaking big headlines in 2023\.
+Repair has become a significant issue—making big headlines in 2023\.
 In June 2023, in a dramatic move, 
 NHTSA sent a letter to dozens of 
 OEMs stating safety concerns related 
 to the Massachusetts Right to Repair
 Act,178 warning them to ignore the 
-law amid cybersecurity concerns.
+law amid cybersecurity concerns. 
 NHTSA further clarified that it expects vehicle manufacturers to fully comply 
 with federal safety obligations.
 A few more NHTSA updates for 2023
@@ -3097,13 +3116,13 @@ Once published on deep or dark web forums and marketplaces, these
 manipulations may be also used by other malicious actors. These potential 
 manipulations, regardless of the motivation, not only compromise safety, but 
 may also void warranty. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 84
 EV CHARGING INFRASTRUCTURE 
 CYBERSECURITY REGULATIONS 
 CONTINUE TO EXPAND
 EVs currently make up approximately 15% of global new car sales181, with an 
-expectation to reach the majority market share of new car sales by 2040\.182
+expectation to reach the majority market share of new car sales by 2040\.182 
 With the number of electric vehicle charging stations (EVCS) growing rapidly, 
 the market has been challenged by attempts of threat actors to compromise 
 and manipulate EVCS all over the world. 
@@ -3115,12 +3134,12 @@ ecosystem, but can be attacked on a wide scale by hacking the
 backend Command and Control (C\&C) servers. CPOs can be 
 attacked remotely by targeting multiple charging stations or by 
 creating extensive charging demand, causing a widespread denial 
-of service.Additionally, attackers can gain unauthorized access 
+of service. Additionally, attackers can gain unauthorized access 
 to private consumer data, including personal information (PII) and 
 charging patterns.
 API\-based attacks often require a lower threshold of cyber and technical 
 skills. This attack vector leads to a simpler yet sufficient attack 
-surface with potential fleet\-wide impact.API attacks can target and 
+surface with potential fleet\-wide impact. API attacks can target and 
 impact backend servers, resulting in potential data theft or a denial 
 of service. API attacks can emerge from any entity in the ecosystem 
 communicating with it and vice versa, including vehicles themselves, 
@@ -3131,7 +3150,7 @@ EV charging standards will focus on
 providing safe, reliable, and accessible 
 chargers, as well as managing increased 
 electricity demand on the grid. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 85
 02
 Regulations protecting EVCS can be divided into two major categories:
@@ -3201,7 +3220,7 @@ Safety Framework
 IoT
 November 2020
 Mandatory
-Region 
+Region / 
 Country
 Regulation 
 Focus
@@ -3217,7 +3236,7 @@ US
 EU
 UK
 Japan
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 86
 United States
 In March 2023, the National Electric Vehicle Infrastructure 
@@ -3233,7 +3252,7 @@ station conformance to ISO 15118 and Plug and Charge capability by one
 year after the date of publication of the Final Rule in the Federal Register. 
 This legislation highlights the value in adopting a national standard for 
 compliance, even though many chargers on the market are not currently 
-using ISO 15118\.184
+using ISO 15118\.184 
 The rule mandates the implementation of appropriate physical strategies 
 for the location of the charging station and cybersecurity strategies that 
 protect consumer data and ensure the safety of charging infrastructure 
@@ -3241,20 +3260,22 @@ and power grids.
 In October 2023, the US Department of Commerce's National Institute 
 of Standards and Technology (NIST) finalized its guidance for managing 
 cybersecurity risks for EV extreme fast charging infrastructure with NIST IR 
-8473 Cybersecurity Framework Profile for Electric Vehicle Extreme Fast 
+8473 – Cybersecurity Framework Profile for Electric Vehicle Extreme Fast 
 Charging Infrastructure.185 EV charging stations and charging infrastructure 
 are vulnerable to a wide range of cybersecurity threats since they rely on 
 complex infrastructure, interconnectivity, and multiple data networks. NIST IR 
-8473 offers a holistic framework, covering the entire EV charging landscape.The guidelines include:
+8473 offers a holistic framework, covering the entire EV charging landscape. 
+ 
+The guidelines include:
 Electric vehicles
 Extreme fast charging (XFC)
 XFC cloud or third\-party operations
 Utility and building networks
 Furthermore, NIST IR 8473 has a well\-established section for data protection, 
 based on the ISO 21434 standard.186 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 87
-The framework suggested by NIST is voluntary, but its designed to help 
+The framework suggested by NIST is voluntary, but it’s designed to help 
 EV charging stakeholders to develop specific processes to understand, 
 assess, and communicate their cybersecurity posture as a part of their risk 
 management process. 
@@ -3275,19 +3296,19 @@ cyber threats.189 The framework will become mandatory on October 17, 2024\.
 The EU Cyber Resilience Act covers digitally connected devices including IoT 
 devices. The Act is expected to be implemented by the beginning of 2024\.190 
 Also, ISO 15118 is partially and voluntarily implemented in Europe under the 
-project name Plug \& Charge Europe. Although accepted by notable OEMs 
+project name “Plug \& Charge Europe”. Although accepted by notable OEMs 
 and EVCS operators throughout the region, there is no planned timeline 
 for a full\-scale implementation of the standard in the EU.191 192 The relevant 
 regulations are set to be implemented during 2024\-2025, and the region has 
 already started voluntarily accepting ISO 15118\.
 UK
 In December 2021, a proposition was made to include EVCS under 
-the British Standard Institutes (BSI) regulation for smart appliances (ESA) 
-with smart energy.193
+the British Standard Institutes’ (BSI) regulation for smart appliances (ESA) 
+with smart energy.193 
 The UK is at the forefront of EVCS regulations, introducing the Electric 
 Vehicles (Smart Charge Points) Regulations 2021, which came into force in 
-June 2022 and applies to private charge points (domestic or workplace).194
- 2024 Upstream Security Ltd. All Rights Reserved
+June 2022 and applies to private charge points (domestic or workplace).194 
+© 2024 Upstream Security Ltd. All Rights Reserved
 88
 The UK regulation specifies that chargers must meet the following 
 requirements: smart functionality such as demand\-side response services; 
@@ -3311,24 +3332,24 @@ regulations covering IoT devices such as METI (Ministry of Economy,
 Trade and Industry) IoT Security and Safety Framework from November 
 2020197 and MIC (Ministry of Internal Affairs and Communications) IoT 5G 
 Comprehensive Security Measures from June 2019\.198 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 89
 OPERATIONAL EV CHARGING 
 STANDARDS WORLDWIDE
 ISO 15118
 ISO 15518 is the leading global cybersecurity standard to ensure encrypted, 
-secure communication between the EVs and charging stations (EVSE
+secure communication between the EVs and charging stations (EVSE/
 EVCS) while charging,199 and is considered as the high\-level communication 
 protocol, functioning as the security standard for the Combined Charging 
 System (CCS).200 
-The ISO 15118 standard governs a Plug and Charge operation involving 
+The ISO 15118 standard governs a “Plug and Charge” operation involving 
 three fundamental stages:
 ISO 15118 covers Vehicle to Grid (V2G) cybersecurity aspects and applies to 
 all entities involved in the charging process:
 EVs 
 CPOs
 Cloud operators in charge of data processing and storage
-Power grids (also referred to as Utility Building Management Systems)
+Power grids (also referred to as Utility / Building Management Systems)
 Authenticity 
 sender and received 
 messages are ensured 
@@ -3343,7 +3364,7 @@ and public keys.
 Confidentiality
 messages are encrypted 
 using TLS protocol.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 90
 Combined Charging System (CCS)
 One of the most prominent charging protocols, supported by multiple OEMs 
@@ -3354,16 +3375,16 @@ on the theoretical principles of an initial, unpublished version of ISO 15118\.
 DIN SPEC 70121 does not include any of the updated features of ISO 15118, 
 such as smart charging and secure TLS communication.
 CHAdeMO
-A Japanese standard (stands for Charge de Move) that was created by OEMs 
+A Japanese standard (stands for “Charge de Move”) that was created by OEMs 
 including Nissan, Mitsubishi, and Toyota. CHAdeMO was first introduced in 
 2009 and aims to provide an alternative to the ISO 15118 standard.203 Similar 
 to ISO 15118, CHAdeMO covers V2G security aspects. The charging process is 
-enabled by matching the users VIN (Vehicle Identification Number) along with 
+enabled by matching the user’s VIN (Vehicle Identification Number) along with 
 IPv6 security measures and contract key encryption.
 In September 2023, CHAdeMO released the Design Guideline for External 
 Charging ver.2\.0\.1, adding technical and operational requirements for safely 
 integrating or retrofitting the Automated Connection Devices \- Underbody 
-(ACD\-U) charging systems to CHAdeMO chargersV2X equipment, EVs and 
+(ACD\-U) charging systems to CHAdeMO chargers/V2X equipment, EVs and 
 plug\-in hybrid EVs (PHEVs).204 
 OCPP 2\.0\.1
 Open Charge Point Protocol (OCPP) was created by the Open Charge Alliance 
@@ -3378,8 +3399,8 @@ support for ISO 15118\.205
 While ISO 15118 secures the communication between the vehicle to the 
 charging station, OCCP covers the security aspects between the charging 
 stations themselves and the backend servers. This includes the CPO, 
-telecommunications, and electricity management.206
- 2024 Upstream Security Ltd. All Rights Reserved
+telecommunications, and electricity management.206 
+© 2024 Upstream Security Ltd. All Rights Reserved
 91
 VEHICLE DATA AND PRIVACY REGULATIONS 
 ARE INEVITABLE
@@ -3400,7 +3421,7 @@ Poor cybersecurity track record
 In the US, the Federal Trade Commission (FTC), the regulatory agency 
 governing data privacy, and NHTSA currently advocate for industry self\-
 regulation,209 but individual states are adopting vastly different approaches, 
-and many havent started at all. So far, only a handful of states have enacted 
+and many haven’t started at all. So far, only a handful of states have enacted 
 data privacy laws that specifically address connected vehicles, although 
 several more are pending in legislatures across the US. Additionally, states 
 can opt to cover connected vehicle data via comprehensive privacy bills. 
@@ -3413,26 +3434,26 @@ The EU Data Act, agreed upon in June 2023, establishes principles for data
 access, user rights, fair contractual terms, public sector data access, and 
 cloud service provider flexibility. These legislative developments aim to strike 
 a balance between regulation and innovation in the evolving AI and data\-
-driven Automotive industry.212
- 2024 Upstream Security Ltd. All Rights Reserved
+driven Automotive industry.212 
+© 2024 Upstream Security Ltd. All Rights Reserved
 92
 The Data Act will ensure fairness in the digital environment, stimulate a 
 competitive data market, and open opportunities for data\-driven innovation 
 by allowing users of connected devices to access their data and share that 
 data with third parties to provide aftermarket or other data\-driven innovative 
-services.213
-In November 2023, the EU Council adopted the Data Act.214Despite the broad 
+services.213 
+In November 2023, the EU Council adopted the Data Act.214 Despite the broad 
 scope of the legislation, sector\-specific laws are being negotiated, including 
 for the Automotive industry, where issues like vehicle data access and data 
-modification pose challenges.
+modification pose challenges. 
 Using Artificial Intelligence (AI) 
 in vehicles presents challenges 
 for legislators, particularly concerning 
 software updates and access to 
 in\-vehicle data.
-In December 2023, the European institutionsEU Commission, Council, 
-and Parliamentreached a provisional political agreement on the world's 
-first comprehensive law on AIthe new AI Act, intending to create a broad 
+In December 2023, the European institutions—EU Commission, Council, 
+and Parliament—reached a provisional political agreement on the world's 
+first comprehensive law on AI—the new AI Act, intending to create a broad 
 regulatory framework, indirectly impacting autonomous vehicles. 
 Work is ongoing to refine the drafting, and formal adoption by both 
 Parliament and Council is anticipated in early 2024\.215 The UNECE also 
@@ -3453,18 +3474,18 @@ smart mobility stakeholders
 actionable and proactive risk 
 mitigation, amid the growing 
 impact of cyber risk
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 94
 Clear Web
-The first layer of the internet is the clearsurface webit is 
+The first layer of the internet is the clear/surface web—it is 
 the smallest yet most familiar part of the internet, requiring 
 only a web browser to access.216 In this part of the web, 
 information is indexed by popular search engines, making 
 it highly accessible and relied on by people every day.
-The second layer of the internet is the deep webwhich 
+The second layer of the internet is the deep web—which 
 accounts for 96% of all web pages on the internet.217 Data 
 on this part of the web is not indexed by search engines, 
-either because it is behind a sign\-in (e.g paywall), or its 
+either because it is behind a sign\-in (e.g., paywall), or its 
 owners have blocked web crawlers from indexing. For 
 the average person, the deep web includes paid content, 
 subscription websites, private groups, and private business 
@@ -3472,10 +3493,10 @@ websites. For hackers, the deep web also includes
 imageboards, which host anonymous, provocative, 
 borderline illegal content.
 The third and final layer of the internet is the dark 
-weba fairly hidden part of the web where malicious 
+web—a fairly hidden part of the web where malicious 
 activities, crime, and stolen data are available. To 
 access dark web forums, users must use a special 
-browser (e.g Tor), know the site url (i.e no domain 
+browser (e.g., Tor), know the site url (i.e., no domain 
 names on the dark web), and often demonstrate 
 familiarity with specific topics to the site admin to 
 gain access. Forums or pages are often managed by 
@@ -3485,57 +3506,57 @@ information in forums.
 The internet has a depth with multiple layers, some of which are not indexed. 
 There are three main layers of the internet: clear, deep, and dark. Access to each 
 layer requires different know\-how and tools. On dark web forums, for instance, 
-users must know the unique resource location address (i.e no domain 
+users must know the unique resource location address (i.e., no domain 
 names exist on the dark web), use a special browser, and often demonstrate 
 familiarity with specific topics to the site admin to gain access.
- Malicious paste sites
- Illegal marketplaces
- Image boards
- Closed hacking forums
- Illegal services for hire
- Legitimate platforms 
+• Malicious paste sites
+• Illegal marketplaces
+• Image boards
+• Closed hacking forums
+• Illegal services for hire
+• Legitimate platforms 
 with malicious actors 
-(e.g Tor, Telegram, etc.)
+(e.g., Tor, Telegram, etc.)
 Dark Web
- Automotive and cyber public 
+• Automotive and cyber public 
 media coverage and news
- Verified researchers public 
+• Verified researcher’s public 
 blogs and reports
- Academic or research papers
- Car enthusiasts and forums
- Social media
- Code\-sharing websites
- File\-sharing websites
+• Academic or research papers
+• Car enthusiasts and forums
+• Social media
+• Code\-sharing websites
+• File\-sharing websites
 WHAT IS THE DEEP AND DARK WEB?
 Clear Web
 Deep Web
- Private social media groups
- Private messaging apps
- Paste sites
- Private car\-tuning forums 
+• Private social media groups
+• Private messaging apps
+• Paste sites
+• Private car\-tuning forums 
 or hacking forums
 94
- 2024 Upstream Security Ltd. All Rights Reserved
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 95
 Almost all dark web hackers use proxy servers along with a Tor browser to 
 maintain their anonymity. A tool called proxychain is used to chain several 
 (usually 3\-5\) proxy servers. In this case, packets from the attacker go through 
 multiple proxy servers. Proxy servers are intentionally used in rival countries 
-so that one country cant share security information (e.g proxy logs) with 
-another countrymaking it more difficult to identify hackers. 
-During 2023, Upstreams AutoThreat researchers detected a 156% increase 
+so that one country can’t share security information (e.g., proxy logs) with 
+another country—making it more difficult to identify hackers. 
+During 2023, Upstream’s AutoThreat® researchers detected a 156% increase 
 in deep and dark web findings compared to 2022, targeting OEMs, Tier\-1 
 suppliers, Tier\-2 suppliers for the automotive industry, mobility IoT devices, and 
 platforms. 
- This data, together with the fact that in 2023nearly 65% of deep and dark 
+ This data, together with the fact that in 2023—nearly 65% of deep and dark 
 web cyber activities had the potential to impact thousands to millions of 
-mobility assets218 show thatautomotive and mobility stakeholders must 
+mobility assets218 — show that automotive and mobility stakeholders must 
 have deep access and visibility into cyber threat intelligence to proactively 
 protect themselves. 
 DURING 2023, 
-UPSTREAMS 
-AUTOTHREAT 
+UPSTREAM’S 
+AUTOTHREAT® 
 RESEARCHERS 
 DETECTED A 
 156% 
@@ -3548,9 +3569,9 @@ BLACK HATS AND WHITE HATS
 Traditionally, the term black hats denotes malicious actors seeking to exploit 
 vulnerabilities, while the term white hats represents cybersecurity experts 
 working to enhance defenses. Nevertheless, the distinction is progressively 
-fading in the Automotive industrywhos becoming more connected and 
-software\-definedgiving rise to "gray hat" involvement that now includes 
-consumers who modify their vehicles or jailbreak componentsfeatures for 
+fading in the Automotive industry—who’s becoming more connected and 
+software\-defined—giving rise to "gray hat" involvement that now includes 
+consumers who modify their vehicles or jailbreak components/features for 
 customization purposes.
 In October 2023, Upstream found that guidelines for jailbreaking the in\-
 vehicle infotainment (IVI) system were published on deep web automotive 
@@ -3561,7 +3582,7 @@ unauthorized apps can expose consumers to cybersecurity vulnerabilities
 and void their warranties. Untrustworthy software may contain malware, 
 spyware, and ransomware, as well as cause system stability issues resulting 
 in crashes, failures, or incompatibilities. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 96
 THEFT
 TOOLS
@@ -3572,7 +3593,7 @@ NETWORK
 ACCESS
 HACKED
 ACCOUNTS
-ECUCHIP
+ECU/CHIP
 TUNING
 FORGED
 DOCUMENTS
@@ -3593,10 +3614,10 @@ the internet, which makes most of it private.219 A wide range of automotive\-
 related content can be found on deep and dark web forums, marketplaces, 
 mobile messaging applications, and paste sites. 
 Often, consumers rely on web forums to find information that OEMs are 
-reluctant to share with themspecifically information that can help them 
+reluctant to share with them—specifically information that can help them 
 pirate\-fix their vehicles or manipulate systems. Additionally, marketplaces 
 are known to offer auto parts, components, chips, software, and other items 
-for sale in violation of manufacturers terms and agreements. Many vehicle 
+for sale in violation of manufacturers’ terms and agreements. Many vehicle 
 owners engage in these activities without realizing the dangers of tampering 
 with highly sophisticated automotive technology.
 These activities can have an impact on automotive stakeholders as well as 
@@ -3606,17 +3627,17 @@ gain access to OEM or insurance company servers by reverse engineering
 data that's already used to grant authorization to vehicles.
 Most common deep and dark web discussions:
 Source: Upstream Security
- 2024 Upstream Security Ltd. All Rights Reserved
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 97
 THREAT ACTORS MAY DISRUPT NEW AUTOMOTIVE 
 AND MOBILITY IOT REVENUE STREAMS
 Threat actors are increasingly exploiting opportunities for bypassing 
 premium features by jailbreaking systems, posing considerable risks to both 
-vehicledevice cybersecurity and data\-driven commercialization.
+vehicle/device cybersecurity and data\-driven commercialization.
 Upstream has been tracking a popular middle\-eastern threat actor, with over 
 38,000 followers on social media, who openly provides jailbreak services and 
-custom software for IVI systems of various OEMsincluding features such 
+custom software for IVI systems of various OEMs—including features such 
 as Apple CarPlay, Android Auto, diagnostic services, and firmware upgrades. 
 According to the threat actor, it offers unique features not available through 
 conventional dealerships.
@@ -3643,13 +3664,13 @@ web forum, enabling the activation of hidden features. The threat actor
 indicated that the head unit could be jailbroken to accept unofficial files and 
 modifications, enabling the user to browse folders, install apps, play videos 
 while driving, and even tamper with the navigation system.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 98
 Forums
 In the deep and dark web, there are automotive\-related forums dealing with 
 sharing or selling automotive software, chip and engine tuning, infotainment 
 cracking, reverse engineering, key\-fob modifications, immobilizer hacking, 
-and automotive softwarealthough general hacking forums also contain 
+and automotive software—although general hacking forums also contain 
 automotive\-related hacks. 
 In these forums, information, insights, hacks, and software manipulations 
 are constantly traded. Tuning ECUs is a common topic of discussion, along 
@@ -3659,7 +3680,7 @@ It is not uncommon for people to ask about self\-programming their vehicles
 for a variety of reasons, such as saving money or claiming the Right to 
 Repair. Additionally, ECU remapping lessons, guides, software, and tuned file 
 demos are readily available.
-In September 2023, Upstreams AutoThreat PRO team uncovered a threat 
+In September 2023, Upstream’s AutoThreat® PRO team uncovered a threat 
 actor operating in a popular deep web automotive forum selling remote 
 jailbreak solutions for IVI systems of a European OEM. The jailbreak consists 
 of a CAN patch that enables all features except subscription\-based ones, 
@@ -3669,16 +3690,16 @@ Example of
 a deep web 
 automotive 
 forum
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 99
 Marketplaces
 Dark web marketplaces are commercial websites that require specialized 
 browsers, like Tor or I2P, and registration to access. They function primarily 
-as black marketsbrokering transactions involving drugs, weapons, cyber\-
-arms, stolen data, forged documents, and other illicit goods.220
+as black markets—brokering transactions involving drugs, weapons, cyber\-
+arms, stolen data, forged documents, and other illicit goods.220 
 Some automotive\-related dark web marketplace listings offer vehicle\-related 
-products and services like forged documents, and user credentials for 
-automotive applications and smart mobility services (e.g OEM connected 
+“products” and services like forged documents, and user credentials for 
+automotive applications and smart mobility services (e.g., OEM connected 
 car services, shared mobility services). 
 There are many automotive\-related discussions and offerings in deep and 
 dark web marketplaces:
@@ -3702,15 +3723,15 @@ database
 for sales on 
 a dark web 
 marketplace
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 100
 Messaging applications
 As online activities shift to mobile devices, mobile messaging applications 
 have become increasingly popular for illicit activities.
-Popular messaging applicationssuch as Telegram, Discord, Signal, and 
-WhatsAppare actively being used to share hacking methods, and trade 
+Popular messaging applications—such as Telegram, Discord, Signal, and 
+WhatsApp—are actively being used to share hacking methods, and trade 
 in stolen credit cards, account credentials, exploitations of vulnerabilities, 
-leaked source codes, and malware.
+leaked source codes, and malware. 
 Applications like these have replaced the secretive, hard\-to\-navigate dark 
 web forums.
 In June 2023, Upstream discovered a post on a ransomware Telegram 
@@ -3721,7 +3742,7 @@ a Telegram
 message related 
 to stolen OEM 
 data
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 101
 In August 2023, Upstream uncovered information about a Linux kernel 
 exploit impacting many large OEMs, known as CVE\-2023\-3269, posted on a 
@@ -3741,7 +3762,7 @@ keyless
 repeater 
 for sale on 
 Telegram
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 102
 THREAT ACTORS IN THE DEEP AND DARK WEB
 Security researchers
@@ -3749,43 +3770,43 @@ Researchers use their technical expertise to identify cybersecurity
 vulnerabilities within organizations and across industries. To be effective, 
 researchers need to stay up to date on the latest attack vectors, trends, 
 and new enabling technologies. Many security researchers publish their 
-findingswhich include vulnerability exploits and vehicle toolkitsin public 
+findings—which include vulnerability exploits and vehicle toolkits—in public 
 code repositories hosting services like GitHub. The knowledge that security 
 researchers share is usually public, making it accessible to anyone, including 
 malicious threat actors. 
 In January 2023, a security researcher hacked the head unit of a South 
 Korean OEM vehicle model. The researcher was able to root the unit, enabling 
 him to add and delete features, by reverse\-engineering the head unit's 
-firmwarewhich is also used across a wide range of other vehicle models, 
+firmware—which is also used across a wide range of other vehicle models, 
 putting many more head units at risk.221 
 In October 2023, a security researcher exposed risks caused by 
 misconfigured third\-party self\-hosted data loggers used by US EV OEM 
-consumers.222Using open\-source intelligence techniques (OSINT), the 
+consumers.222 Using open\-source intelligence techniques (OSINT), the 
 researcher was able to find data loggers configured without authentication, 
-and access their dashboardsallowing them to track live location, check if 
-driver is present in car or not, take the car offline (e.g sleep mode), check 
+and access their dashboards—allowing them to track live location, check if 
+driver is present in car or not, take the car offline (e.g., sleep mode), check 
 if the trunk of the car is open or not, and more. The researcher highlighted 
 the potential risks, including the possibility of physical harm, outlined steps 
 owners can take to protect themselves, and shared the OEM's response to his 
 disclosure and suggestions.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 103
 Fraud operators
 Fraud operators typically use the deep web to buy and sell diagnostic tools, 
 software, chip tuning services, and mileage fix services. 
 One of the most popular fraud services on the deep web is mileage fix, 
 formally known as odometer fraud, which involves disconnecting, resetting, 
-or altering a vehicle's odometer to change the number of miles shown.
+or altering a vehicle's odometer to change the number of miles shown. 
 Every year, over 450,000 vehicles are sold with false odometer readings, 
-costing American buyers over $1 billion, according to the NHTSA.223
+costing American buyers over $1 billion, according to the NHTSA.223 
 In September 2023, Upstream discovered a threat actor selling mileage 
-blockers and odometer programming tools (e.g used for mileage correction) 
+blockers and odometer programming tools (e.g., used for mileage correction) 
 for specific vehicles made by Western European OEMs on a deep web 
 automotive marketplace.
 The fraud 
-operators 
+operators’ 
 website
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 104
 Black hat hackers
 Black hat hackers, operating in different deep and dark web forums and 
@@ -3803,8 +3824,8 @@ Exploiting this vulnerability could cause a denial of service on the affected
 vehicles, leading their systems to crash. Moreover, exploiting the vulnerability 
 could enable attackers to run commands on affected vehicles remotely.
 Car enthusiasts
-Many car enthusiastspeople with a passion for vehicles and how they 
-operateare active in different automotive forums on the deep web. They offer 
+Many car enthusiasts—people with a passion for vehicles and how they 
+operate—are active in different automotive forums on the deep web. They offer 
 advice, ask questions, discuss problems and bugs found in their vehicles, and 
 even share automotive files or links to unofficial software updates.
 The information posted in forums by car enthusiasts can be problematic for 
@@ -3817,29 +3838,29 @@ systems was available for download on a German car enthusiast blog. The
 blog included detailed guidelines, steps, and a video tutorial on hacking the 
 IVI system, as well as examples for possible modifications that can be done 
 once jailbroken.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 105
 RANSOMWARE ACTORS INCREASINGLY 
 TARGET AUTOMOTIVE SUPPLIERS 
 Malicious actors are increasingly targeting a wide range of automotive and 
-mobility stakeholdersincluding OEMs, suppliers and even EV charging 
-infrastructurewith ransomware attacks. Any part of the supply chain can 
+mobility stakeholders—including OEMs, suppliers and even EV charging 
+infrastructure—with ransomware attacks. Any part of the supply chain can 
 pose a risk to OEMs, service providers, or mobility IoT devices. Automotive 
 suppliers are highly specialized, meaning switching costs are very high and 
 replacement isn't straightforward. 
 Operational availability and production 
 could be severely affected by ransom 
 attacks across the supply chain. 
-To extort money, attackers typically maintain a leak site on the dark web, 
+To extort money, attackers typically maintain a ‘leak site’ on the dark web, 
 where they reveal stolen data and sensitive information about organizations, 
 and publish posts about their victims. In 2023, ransomware attacks and leak 
 sites made the headlines often. The following are just a few notable attacks. 
 In June 2023, a leading Taiwan\-based semiconductor manufacturer 
 disclosed a cybersecurity incident involving a ransomware group and one 
 of its IT hardware suppliers, which led to the leak of information pertinent to 
-server initial setup and configuration.224The attackers claim to have access 
+server initial setup and configuration.224 The attackers claim to have access 
 to internal documents with confidential information, demanding a $70 million 
-ransom to decrypt the data and prevent its release online making it the 
+ransom to decrypt the data and prevent its release online —making it the 
 largest known ransom demand in history. While the breach could affect 
 multiple automotive stakeholders, the company reported that neither its 
 business operations nor customer information were affected by the cyber 
@@ -3857,7 +3878,7 @@ HIT BY $70 MILLION
 RANSOM DEMAND, 
 THE LARGEST 
 IN HISTORY
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 106
 Also in August 2023, a Thailand\-based battery manufacturer partnering with 
 a German OEM suffered a ransomware attack that resulted in data theft. 
@@ -3867,8 +3888,8 @@ information if it wasn't paid.226
 Ransom attacks pose a significant risk for fleets, telematics systems, and 
 IoT devices. In September 2023, a leading US\-based trucking and fleet 
 management solutions provider experienced a ransomware attack that 
-resulted in customers being unable to electronically log their on\-road hours
-as required by federal regulationsor track their transported inventory.227
+resulted in customers being unable to electronically log their on\-road hours—
+as required by federal regulations—or track their transported inventory.227
 Also in September, one of the UK's largest logistics groups declared 
 insolvency following a ransomware attack.228 
 THE AUTOMOTIVE AND MOBILITY ECOSYSTEM 
@@ -3877,21 +3898,21 @@ DEEP AND DARK WEB ACTIVITIES
 Data sharing on the deep and dark web has continued to dramatically 
 increase during 2023, with automotive\-related security vulnerabilities, 
 data breaches of sensitive information, and other cyber threats regularly 
-published and discussed. Upstreams AutoThreat PRO analysts discovered 
+published and discussed. Upstream’s AutoThreat® PRO analysts discovered 
 a greater amount of automotive information on deep and dark websites. It 
 is necessary to monitor and mitigate these risks regularly to stay ahead of 
-threat actors on the deep and dark webproduct intelligence and automotive 
+threat actors on the deep and dark web—product intelligence and automotive 
 expertise are essential for this process. 
 These areas of the internet must be monitored by stakeholders to avoid 
 serious security gaps. To achieve effective cybersecurity protections, 
 organizations and products must know when and in what context they are 
 mentioned, both publicly and secretively. The UNECE WP
 .29 R155 regulations 
-and the ISOSAE 21434 standard, as well as NHTSA guidelines and the 
+and the ISO/SAE 21434 standard, as well as NHTSA guidelines and the 
 regulations in China, require cyber threat intelligence and vulnerability 
-monitoringthe deep and dark web must be considered an integral part of 
+monitoring—the deep and dark web must be considered an integral part of 
 those requirements. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 107
 Organizations can improve detection and reduce the mitigation time between 
 a discovered vulnerability or security breach, and the time this information 
@@ -3906,16 +3927,16 @@ lack domain expertise in connected vehicles,
 which presents many challenges for OEMs, 
 Tier\-1s and 2s, as well as other mobility 
 stakeholders. 
-Upstreams AutoThreat PRO solutionpurpose\-built to overcome these 
-challengescollects, analyzes, and publishes cyber threat intelligence 
+Upstream’s AutoThreat® PRO solution—purpose\-built to overcome these 
+challenges—collects, analyzes, and publishes cyber threat intelligence 
 specific to the automotive and smart mobility ecosystem, covering the entire 
 supply chain, and is tailored to various automotive segments, including 
 OEMs, Tier\-1 and 2 suppliers, mobility IoT, connected vehicle service 
 providers, insurance companies, and other mobility stakeholders.
 Upstream proactively monitors the deep and dark web to uncover emerging 
 automotive\-related cyber trends and threat actors. As a result, Upstream 
-can identify and mitigate new threatsvulnerabilities, exploits, and fraud 
-operationsbefore they become widely known and spread across the deep 
+can identify and mitigate new threats—vulnerabilities, exploits, and fraud 
+operations—before they become widely known and spread across the deep 
 and dark web.
 Armed with the right cyber threat intelligence, automotive and mobility 
 stakeholders can proactively implement the necessary cybersecurity 
@@ -3929,7 +3950,7 @@ tools and insights it needs
 to effectively mitigate the 
 increasing impact and scale 
 of cybersecurity threats 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 109
 CYBERSECURITY SOLUTIONS 
 CONTINUE TO EVOLVE
@@ -3939,10 +3960,10 @@ frequent, and large\-scale, cybersecurity solutions have to provide effective
 and rapid remediation across a massive scale of mobility assets and 
 ever\-changing SBOM. Vehicle cybersecurity teams and Vehicle Security 
 Operations Centers (vSOCs) must also investigate threats that go beyond 
-direct attacks on vehiclestargeting fleets, companion applications, mobility 
+direct attacks on vehicles—targeting fleets, companion applications, mobility 
 services, mobility IoT devices, EV charging infrastructure, and more.
 The increased connectivity in modern vehicles has opened the door to 
-exponential growth in the scale and impact of cyber attacksposing growing 
+exponential growth in the scale and impact of cyber attacks—posing growing 
 cybersecurity challenges for OEMs and their supply chains, and putting trust, 
 safety, and operational availability at risk.
 Smart mobility stakeholders, OEMs, Tier\-1s, and Tier\-2s will continue to 
@@ -3954,9 +3975,9 @@ across a complex supply chain and dynamic SBOM
 Passenger cars typically last 12 years, commercial trucks 20 years, and 
 agricultural vehicles 30 years. OEMs must therefore develop long\-term 
 strategies to secure products operating on decades\-old technology. 
-UNECE WP.29 R155 and ISOSAE 21434 establish the requirement 
+UNECE WP.29 R155 and ISO/SAE 21434 establish the requirement 
 to consider life\-long cybersecurity threats and vulnerabilities during 
-development, production, and post\-production phases of the vehicles 
+development, production, and post\-production phases of the vehicle’s 
 lifecycle. OEMs and their suppliers came under regulation and 
 standardization for the first time in 2022\. In 2023, OEMs continued to focus 
 on two key areas: preparing for the expected growth in scope of monitored 
@@ -3965,7 +3986,7 @@ vehicles across complex supply chains with dynamic SBOMs.
 2023 marked the second year OEMs have required Tier\-1 and Tier\-2 suppliers 
 to disclose their cybersecurity practices, easing concerns about production 
 disruptions beyond supply chain bottlenecks. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 110
 By doing so, they have been able to reduce the risk of carrying cybersecurity 
 vulnerabilities directly from third\-party vendors onto their vehicles, and 
@@ -3975,14 +3996,14 @@ R155 requires OEMs to implement and maintain threat analysis and risk
 assessment (TARA) throughout all stages of the vehicle lifecycle. They 
 must also create processes to address and mitigate against future attacks 
 together with their Tier\-1 and Tier\-2 suppliers.
-ISOSAE 21434 can be used as guidance on how to carry out the R155 
+ISO/SAE 21434 can be used as guidance on how to carry out the R155 
 requirement together with suppliers. 
 Regardless of the method OEMs and suppliers agree on, the OEM bears the 
 responsibility to follow R155 \& R156 and implement practices that follow 
-ISOSAE 21434 requirements.
+ISO/SAE 21434 requirements.
 Security by design
 One of the four measures explicitly specified by the R155 regulation for 
-vehicle cybersecurity is securing vehicles by design to mitigate risks along 
+vehicle cybersecurity is securing vehicles “by design” to mitigate risks along 
 the value chain.
 Security by design requires evaluating the cybersecurity risks of a component 
 or software as early as the development phase. This is done by making 
@@ -3993,7 +4014,7 @@ While OEMs are ultimately responsible for the security of their vehicle,
 all suppliers in the supply chain need to adopt security\-by\-design practices 
 as well.
 OEMs are responsible for 
-checking suppliers cyber 
+checking suppliers’ cyber 
 histories and making sure 
 suppliers conduct ongoing risk 
 and vulnerability management 
@@ -4012,7 +4033,7 @@ Cyber record
 of capability
 Define shared 
 responsibilities
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 111
 Multi\-layered cybersecurity stack
 Multi\-layered security has already become a standard in IT and enterprise 
@@ -4022,8 +4043,8 @@ sources of data to detect threats and respond effectively. Enterprises use multi
 security solutions, including end\-point solutions, network security solutions, cloud 
 security, API security, internal segmentation technology, and more. 
 In 2019, Gartner standardized the practice by introducing the network\-centric 
-concept of the Security Operations Center (SOC) Visibility Triad.229According to 
-Gartners research, a modern SOC must rely on three well\-known core security 
+concept of the Security Operations Center (SOC) Visibility Triad.229 According to 
+Gartner’s research, a modern SOC must rely on three well\-known core security 
 elements for increased threat visibility, detection, response, investigation, and 
 remediation:
 SIEM
@@ -4036,7 +4057,7 @@ Detection and
 Response 
 (NDR)
  Visual representation of a multi\-layered SOC approach, based 
-on Gartners SOC visibility triad229
+on Gartner’s SOC visibility triad229
 SOC visibility triad
 SOC 
 Visibility 
@@ -4049,17 +4070,17 @@ alerts generated by the IT
 infrastructure, applications, and 
 other security tools.
 Network\-centric 
-detection and response
+detection and response 
 Monitors network traffic and 
 correlates detected threats with 
 network activity.
 Endpoint detection 
-and response
+and response 
 Captures endpoint (server, 
 desktop, laptop) operations 
 to identify signs of attacks as 
 early as possible.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 112
 With the expansion of the Automotive industry into the Smart Mobility 
 ecosystem, vehicles are not the sole mobility assets that challenge cyber 
@@ -4089,7 +4110,7 @@ Monitor and protect internal vehicle components,
 including ECUs, diagnostics, DTC data streams, OS logs, 
 CAN events, etc.
  Three layers of automotive cybersecurity
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 113
 DEVELOPING AN EFFECTIVE VSOC
 SOCs are routinely used to monitor IT systems, infrastructure, and assets 
@@ -4099,7 +4120,7 @@ under the control of OEMs, and interact with external systems and applications
 thousands of times a minute. 
 As the number and sophistication of cyber attacks targeting vehicles, mobility 
 applications, OT and IoT mobility devices increase, OEMs must develop integrated 
-vSOCs, also known as mobility SOCs or automotive SOCs, to protect their 
+vSOCs, also known as “mobility SOCs” or “automotive SOCs”, to protect their 
 vehicles, infrastructure, and customers during the post\-production phase.
 An effective vSOC is essential for the security of connected vehicles and Smart 
 Mobility ecosystems. It allows OEMs to monitor their entire infrastructure and 
@@ -4108,11 +4129,11 @@ However, with the constant expansion and digital transformation of the Smart
 Mobility ecosystem, more stakeholders are expected to require a vSOC. Mobility 
 IoT vendors, fleet systems, and other smart mobility service providers will shift 
 to monitoring and protecting their assets via a vSOC. 
-When implemented properly, an effective vSOC has a clear frameworkdetailing 
-capabilities, components, and operating modelsand a well\-defined strategy 
-and scopeincluding a vision, mission, and charter.
+When implemented properly, an effective vSOC has a clear framework—detailing 
+capabilities, components, and operating models—and a well\-defined strategy 
+and scope—including a vision, mission, and charter.
 An effective vSOC should also:
-Operate 247
+Operate 24/7
 Ingest data from various automotive\-related feeds and 
 correlate between those various feeds
 Detect threats and anomalies in near or real\-time using 
@@ -4127,7 +4148,7 @@ Build and implement end\-to\-end playbooks to structure and
 automate response activities
 Integrate with SIEM and SOAR platforms to ensure 
 cross\-organizational visibility and effective remediation
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 114
 COMBINE
 CREATE
@@ -4158,20 +4179,20 @@ are adjusted accordingly.
 The next generation of vSOCs
 OEMs are continuously working on solidifying vSOCs and positioning them 
 internally. They are defining vSOC scope, deciding where it belongs in the 
-organizational structure, and evaluating sourcing (e.g in\-house, hybrid 
-or managed vSOC) and operating models (e.g one global vSOC, multiple 
+organizational structure, and evaluating sourcing (e.g., in\-house, hybrid 
+or managed vSOC) and operating models (e.g., one global vSOC, multiple 
 geographies presence, etc.).
 OEMs must establish vSOCs as soon as possible to comply with R155\. There 
 are several options for vSOC implementation:
-Mostly pure standalone vSOCs
+Mostly “pure” / standalone vSOCs
 Focused strictly on post\-production connected vehicles 
 and driven by regulatory requirements and compliance
 Part of the IT organization; reporting to the CISO; 
 sometimes part of after\-sales or global operations
 Sometimes also focused on IT aspects of the connected 
-vehicles infrastructurethe automotive cloud
+vehicles infrastructure—the automotive cloud
 vSOCs can be built in three ways:
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 115
 Some OEMs, however, have already reached a higher level of vSOC maturity. 
 Two new types of vSOCs are emerging in response to the growth in scale and 
@@ -4186,8 +4207,8 @@ business objectives than those run by OEMs.
 that combines the IT SOC and the vSOC 
 into a single entity that manages a broad 
 security operations center, covering security 
-elements of the entire vehicle lifecycle
-from design to manufacturing (e.g OT 
+elements of the entire vehicle lifecycle—
+from design to manufacturing (e.g., OT 
 monitoring of vehicle production) and 
 operations.
 within a broader connected vehicle 
@@ -4203,7 +4224,7 @@ to detect and effectively mitigate complex
 attack vectors.
 Fusion vSOC
 IT\-OT vSOC
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 116
 AUTOMOTIVE\-SPECIFIC THREAT INTELLIGENCE 
 OFFERS A PROACTIVE APPROACH TO RISK
@@ -4269,7 +4290,7 @@ by monitoring
 threat feeds for 
 vulnerabilities and 
 mitigating them
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 117
 Benefits to CISOs 
 Develop steps to 
@@ -4282,7 +4303,7 @@ cloud services and
 corporate networks
 Monitor for leaked 
 intellectual properties 
-such as products bill 
+such as products’ bill 
 of materials
 Monitor and analyze 
 attacks on other 
@@ -4336,7 +4357,7 @@ threats as early as
 possible
 Find new threats 
 that could disrupt 
-the organizations 
+the organization’s 
 networks, resources, 
 or business
 Track automotive\-
@@ -4359,20 +4380,20 @@ connected vehicle
 cyber attacks 
 by disabling 
 compromised 
-accounts andor 
+accounts and/or 
 notifying their owners
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 118
-Benefits to smart mobility applications and services
+Benefits to smart mobility applications and services 
 Benefits to the insurance ecosystem 
 Detect the sale 
 of fraudulent car 
-sharingride hailing 
+sharing/ride hailing 
 user and driver 
 accounts
 Spot malicious 
 vendors selling car 
-sharingride hailing or 
+sharing/ride hailing or 
 rental user data 
 Identify fraud 
 related to 
@@ -4390,7 +4411,7 @@ connected vehicle
 dashcams
 Identify and 
 prevent warranty 
-andor insurance 
+and/or insurance 
 policy violations, 
 such as odometer 
 manipulation
@@ -4409,20 +4430,20 @@ areas in local markets
 and assets subsets
 Threat actors are increasingly targeting telematics and other connected vehicle 
 data as OEMs strive for greater connectivity in their vehicles. Only automotive\-
-specific threat intelligence products can understand a vehicles context to 
+specific threat intelligence products can understand a vehicle’s context to 
 quickly identify anomalies and remove false alarms that may desensitize 
 cybersecurity teams. Product cybersecurity executives and CISOs must 
 address the growing threat of automotive hacking with a unique approach that 
 fits their organization's needs.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 119
 OEM \& SMART MOBILITY APPLICATIONS 
-REQUIRE EXPANDED FUSION DETECTION
+REQUIRE EXPANDED FUSION DETECTION—
 EXTENDING COVERAGE BEYOND OWASP TOP 10
 In practice, API hacking at the entry level is relatively standardized, requires 
 lower technical expertise, and can be done remotely without special 
-hardwaremaking it more cost\-effective to hack than other types of systems.
-The Open Web Application Security Project (OWASP) API Security Top 10230
+hardware—making it more cost\-effective to hack than other types of systems.
+The Open Web Application Security Project (OWASP) API Security Top 10230 
 serves as an IT industry standard to help developers and security teams 
 understand API risks and is updated as threats evolve. 
 Updated in 2023, the top 10 list includes:
@@ -4461,11 +4482,11 @@ of APIs
 05
 Broken Function
 Level Authorization
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 120
 But in the context of Automotive and Smart Mobility ecosystems, IT\-based 
 API security like OWASP, is not enough. IT\-based security solutions focus on 
-transactions, permissions, volumes, values, and payload correctnessoften 
+transactions, permissions, volumes, values, and payload correctness—often 
 ignoring the contextual state of mobility assets, their physical behavior on 
 the road and safety impact. 
 In addition to API traffic, extended detection should consider additional 
@@ -4484,9 +4505,9 @@ Charging station protocols
 Mobility stakeholders are evaluating the responsibilities related to monitoring 
 and detecting API\-based cybersecurity risks. Such risks can either be 
 analyzed under the enterprise SOC, the vSOC, or a new IT\-OT SOC. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 121
-UPSTREAMS CLOUD APPROACH 
+UPSTREAM’S CLOUD APPROACH 
 TO AUTOMOTIVE CYBERSECURITY
 Upstream provides a cloud\-based cybersecurity and data management 
 platform purpose\-built for connected vehicles, delivering unparalleled 
@@ -4499,19 +4520,19 @@ sophisticated fleet\-wide anomalies and attacks.
 The Upstream Platform unlocks the value of vehicle data, empowering 
 customers to build connected vehicle and mobility applications by 
 transforming highly distributed vehicle data into centralized, structured, 
-contextualized data lakes. Coupled with AutoThreat PRO, the first mobility 
+contextualized data lakes. Coupled with AutoThreat® PRO, the first mobility 
 cybersecurity threat intelligence solution, Upstream provides industry\-leading 
 cyber threat protection and actionable insights, seamlessly integrated into 
-the customers environment and vSOCs. 
+the customer’s environment and vSOCs. 
 With attack surfaces expanding and adversaries developing complex 
 methods to gain control of connected vehicles, the strong combination 
-of the Upstream Platform and AutoThreat PRO has become critical in 
+of the Upstream Platform and AutoThreat® PRO has become critical in 
 securing the automotive industry. 
-The data gathered and analyzed by the AutoThreat team is continuously 
+The data gathered and analyzed by the AutoThreat® team is continuously 
 used to create detectors and solutions for vulnerabilities and flaws seen in 
 the field. This puts Upstream in front of future threats that are not yet known 
 to the industry.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 122
 THE UPSTREAM PLATFORM
 Back in 2017, Upstream introduced a fundamental innovative shift in 
@@ -4541,7 +4562,7 @@ applications
 Telematics and 
 fleet applications
 Mobility IoT devices
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 123
 DATA SOURCES
 PLATFORM
@@ -4558,7 +4579,7 @@ GCP
 , OpenShift)
 Data
 Normalization
-Vehicle ECU
+Vehicle / ECU
 Digital Twins
 Cybersecurity
 API Security
@@ -4577,7 +4598,7 @@ Response (V\-XDR)
 INTEGRATED SYSTEMS
 The
 Platform
-Upstreams ability to handle numerous data streams and to develop advanced 
+Upstream’s ability to handle numerous data streams and to develop advanced 
 data analytics and ML applications has encouraged OEMs to extend their 
 use of Upstream beyond cybersecurity, including fraud detection, predictive 
 analytics, vehicle quality, insurance, and other data\-driven use cases. 
@@ -4598,7 +4619,7 @@ maintenance costs.
 Predictive Maintenance 
 Predict failure in critical modules to ensure operational 
 availability and safety, and lower maintenance costs.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 124
 EXTENDING DETECTION AND RESPONSE 
 TO ACCOMMODATE EVOLVING 
@@ -4609,9 +4630,9 @@ stakeholders now face the challenge of monitoring billions of API transactions
 every month. 
 Upstream's API Security solution correlates between API transactions and the 
 robust digital twin of the Upstream Platform, which offers a contextual and 
-comprehensive view of all assets impactedfrom the consumer application to 
+comprehensive view of all assets impacted—from the consumer application to 
 IoT devices, and vehicles. 
-With Upstreams API security solution, mobility stakeholders can benefit from:
+With Upstream’s API security solution, mobility stakeholders can benefit from:
 API discovery 
 get a complete catalog 
 of all documented, 
@@ -4630,7 +4651,7 @@ potential vulnerabilities
 in your API landscape 
 introduced by updates.
 Fusion detection 
-apply advanced AIML 
+apply advanced AI/ML 
 models to effectively 
 detect unknown threats 
 and attacks, including 
@@ -4644,11 +4665,11 @@ use cases and new
 business logic without 
 coding or development 
 resources.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 125
 vSOC analysts can monitor and detect API cyber threats in near\-real\-time, 
 find the information they need for effective mitigation, and trigger workflows 
-in response to alertsensuring uninterrupted operations.
+in response to alerts—ensuring uninterrupted operations.
 Integrating In\-Vehicle Security Data Stream
 Upstream offers pre\-built data ingestion and alerts for detecting in\-vehicle 
 security events triggered by Intrusion Detection and Prevention Systems 
@@ -4660,26 +4681,26 @@ In\-vehicle data source integrations include: Intrusion Detection System
 Manager (IDSM), various secured loggers, and IDPS data sources that 
 support both Central Gateways and Telematics Control Units (TCUs).
 Built\-in Threat Hunting 
-Working closely with Upstreams AutoThreat PRO, vSOC teams can leverage 
+Working closely with Upstream’s AutoThreat® PRO, vSOC teams can leverage 
 threat hunting to explore historical connected vehicle data and use cases to 
 help analysts identify abnormal patterns and potential malicious activities. 
 Upstream Managed vSOC
 Using the Upstream Platform, Upstream also offers a unique Managed 
 vSOC service that provides deep and advanced detection, investigation, 
-and mitigation capabilitiesfrom the single ECU to the individual vehicle or 
+and mitigation capabilities—from the single ECU to the individual vehicle or 
 device, and fleet\-wide perspectives. With this holistic view, OEMs and smart 
 mobility vendors can mitigate known and unknown cybersecurity threats 
 against vehicles, applications, services, charging infrastructure, IoT devices, 
 and entire fleets.
-Upstreams Managed vSOC service leverages Upstreams robust technology 
-stack as well as AutoThreat PRO to deliver the highest possible impact. 
+Upstream’s Managed vSOC service leverages Upstream’s robust technology 
+stack as well as AutoThreat® PRO to deliver the highest possible impact. 
 Equipped with extensive experience monitoring millions of vehicles worldwide 
 and proven methodologies, Upstream offers a turnkey solution with minimal 
-ramp\-up time. Upstreams Managed vSOC integrates seamlessly with the 
-OEMs existing processes and workflows, offering custom\-built playbooks. 
+ramp\-up time. Upstream’s Managed vSOC integrates seamlessly with the 
+OEM’s existing processes and workflows, offering custom\-built playbooks. 
 Additionally, the service collaborates with many global MSSP partners to 
 protect vehicles, devices and applications worldwide. 
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 126
 An experienced team of analysts and researchers with deep expertise in 
 cybersecurity, mobility and IoT protocols, regulations and compliance, fraud, 
@@ -4690,15 +4711,15 @@ operational vSOC service that applies tried\-and\-true methodologies for
 threat detection and response, with the ability to expand coverage across 
 geographies and scale up as needed.
 OEMs can leverage a proven build\-operate\-transfer (BOT) model to ensure 
-optimal flexibility and eliminate lock\-in. Upstreams vSOC service trains OEM 
+optimal flexibility and eliminate lock\-in. Upstream’s vSOC service trains OEM 
 teams on implemented models, methodologies, and playbooks to ensure a 
 smooth hand\-over when needed.
 The service is delivered from secure advanced facilities, in the US and Israel, 
 and uses compartmentalized Role\-Based Access Control (RBAC) data access 
 permissions. The service is fully compliant with regulations, including the 
 European GDPR adequacy requirements, and can be remotely audited with ease.
-Upstreams vSOC 
- 2024 Upstream Security Ltd. All Rights Reserved
+Upstream’s vSOC 
+© 2024 Upstream Security Ltd. All Rights Reserved
 127
 During 2023, Upstream has enhanced detection and investigation capabilities 
 by extending vSOC visibility in several key areas showcased below, and 
@@ -4706,20 +4727,20 @@ integrated numerous in\-vehicle data streams directly into the Upstream
 Platform to provide endpoint management\-like functionality.
 On the response side, Upstream has been focused on expanding our 
 capabilities by building end\-to\-end response processes and documentation 
-such as playbooks and cross\-functional collaborations. In 2023, Upstreams 
+such as playbooks and cross\-functional collaborations. In 2023, Upstream’s 
 vSOC expanded its cross\-functional impact by deepening integration with 
 SIEM and SOAR partners to ensure wide organizational visibility and effective 
 shift\-left remediation. 
-Upstreams vSOC 
- 2024 Upstream Security Ltd. All Rights Reserved
+Upstream’s vSOC 
+© 2024 Upstream Security Ltd. All Rights Reserved
 128
 ENHANCING VSOC INVESTIGATIONS WITH GENAI
 In 2023, Upstream introduced an advanced GenAI\-powered query layer into 
 the Upstream V\-XDR platform. These new capabilities support vSOC teams 
-and enable them to think outside of the box and effectively analyze massive 
+and enable them to think “outside of the box” and effectively analyze massive 
 amounts of data across multiple sources, detect patterns, filter incident 
 alerts, and automate investigations.
-With todays vSOC challenged to handle large\-scale risks, GenAI helps draw 
+With today’s vSOC challenged to handle large\-scale risks, GenAI helps draw 
 insights by querying the data with simple natural language Processing (NLP) 
 questions. 
 GenAI transforms vSOC investigations and operations, enabling a number of 
@@ -4739,29 +4760,29 @@ chat, saving time and resources.
 Enhanced TARA 
 generate complex insights based on deep and dark web 
 data and in\-depth TARA.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 129
-Upstreams AutoThreat PRO is the first and only cyber threat intelligence 
+Upstream’s AutoThreat® PRO is the first and only cyber threat intelligence 
 (CTI) solution, purpose\-built for the Automotive and Smart Mobility 
 ecosystem. It provides customized CTI, deep and dark web research, and 
-analyzes client\-dedicated assets (e.g SBOM), automotive and mobility threat 
-actors, and specific automotive cyber risks. Upstreams CTI is tailor\-made to 
+analyzes client\-dedicated assets (e.g., SBOM), automotive and mobility threat 
+actors, and specific automotive cyber risks. Upstream’s CTI is tailor\-made to 
 identify vulnerabilities, exploits, fraud, and counterfeits within the automotive 
 and mobility threat ecosystem.
-Upstreams unique perspective on automotive CTI is focused on uncovering 
+Upstream’s unique perspective on automotive CTI is focused on uncovering 
 the unknown pieces of the product cybersecurity puzzle. By analyzing 
 products and components, from a single ECU and up to a complete vehicle 
 model or connected device, mobility stakeholders can boost vulnerability 
-management, threat awareness, and product intelligence and ensure 
+management, threat awareness, and product intelligence — and ensure 
 regulatory compliance. 
-Upstreams AutoThreat team includes cybersecurity researchers and analysts 
+Upstream’s AutoThreat® team includes cybersecurity researchers and analysts 
 with deep automotive and mobility expertise, as well as extensive product 
 cybersecurity experience. The service includes periodic and urgent CTI deep 
-and dark web research reports and customized queries. AutoThreat PRO also 
+and dark web research reports and customized queries. AutoThreat® PRO also 
 offers an easy\-to\-use online platform, as well as access to a clear\-web cyber 
-incident portal, vulnerability management via Upstreams automated CVE feed, 
+incident portal, vulnerability management via Upstream’s automated CVE feed, 
 and a dedicated automotive threat actor repository.
-UPSTREAM AUTOTHREAT PRO 
+UPSTREAM AUTOTHREAT® PRO 
 CYBER THREAT INTELLIGENCE
 07
 PREDICTIONS 
@@ -4771,7 +4792,7 @@ Generative AI, as well as the
 growing reliance on APIs and 
 IoT devices, will present new 
 opportunities and challenges.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 131
 01
 The automotive 
@@ -4800,7 +4821,7 @@ GenAI will have a profound impact on automotive and smart mobility
 stakeholders, introducing new large\-scale attack methods. GenAI is 
 expected to become a critical tool for threat actors, enabling them to 
 quickly identify vulnerabilities, learn how to exploit them, and perform 
-fleet\-wide attacksstandardizing their tactics, methods, and workflows. 
+fleet\-wide attacks—standardizing their tactics, methods, and workflows. 
 However, GenAI also offers stakeholders the ability to transform 
 automotive cybersecurity, enabling a range of use cases from agile 
 investigations, to automating vSOC workflows, and even generating 
@@ -4811,7 +4832,7 @@ constantly introduced. With the upcoming second milestone
 of UNECE WP
 .29 R155, the potential inclusion of new 
 regulations for 2\- and 3\-wheelers and agricultural vehicles, 
-new regulations in China and other countriesstakeholders 
+new regulations in China and other countries–stakeholders 
 are facing an extremely complex regulatory landscape. 
 OEMs and EV charge point operators (CPOs) continue to deepen 
 cybersecurity risks assessments, expanding processes to 
@@ -4823,304 +4844,403 @@ and UK. China is also enacting regulations for EVSE, AVs, and
 Automotive Information Security.
 Looking into 2024, here are our top predictions:
 Seeking a competitive advantage will continue to drive 
-the industrys digital transformation, based on the rapid 
+the industry’s digital transformation, based on the rapid 
 introduction of mobility applications, in\-vehicle subscriptions, 
 data\-driven services, etc. As vehicles become more software\-
 defined, enabling remote access to critical vehicle functions, 
 the attention must shift to securing APIs and expanding vSOCs 
 coverage to monitor API\-related threats.
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 132
-1\. https:upstream.autoresearchautomotive\-cybersecurity 
-1\. https:upstream.autoautothreat\-intelligence 
-1\. Upstream Security
-1\. https:www.wired.com201507hackers\-remotely\-kill\-jeep\-highway
-1\. https:samcurry.netweb\-hackers\-vs\-the\-auto\-industry
-1\. https:therecord.mediaorbcomm\-trucking\-software\-ransomware, https:www.bleepingcomputer.comnewssecurityorbcomm\-ransomware\-attack\-
-causes\-trucking\-fleet\-management\-outage , https:www.marketscreener.comquotestockHAYNES\-INTERNATIONAL\-INC\-46351newsHaynes\-
-International\-Inc\-Begins\-Network\-Outlet\-of\-Cybersecurity\-Incident\-44109194 
-1\. https:www.bleepingcomputer.comnewssecurityorbcomm\-ransomware\-attack\-causes\-trucking\-fleet\-management\-outage
-1\. Upstream Security
-1\. Upstream Security
-1\. https:voonze.comtsmc\-supplier\-suffers\-ransomware\-attack\-and\-has\-data\-leaked\-by\-hacker\-group , https:finance.yahoo.comnewschipmaker\-
+1\. 
+https://upstream.auto/research/automotive\-cybersecurity/ 
+2\. 
+https://upstream.auto/autothreat\-intelligence/ 
+3\. 
+Upstream Security
+4\. 
+https://www.wired.com/2015/07/hackers\-remotely\-kill\-jeep\-highway/
+5\. 
+https://samcurry.net/web\-hackers\-vs\-the\-auto\-industry/
+6\. 
+https://therecord.media/orbcomm\-trucking\-software\-ransomware, https://www.bleepingcomputer.com/news/security/orbcomm\-ransomware\-attack\-
+causes\-trucking\-fleet\-management\-outage/ , https://www.marketscreener.com/quote/stock/HAYNES\-INTERNATIONAL\-INC\-46351/news/Haynes\-
+International\-Inc\-Begins\-Network\-Outlet\-of\-Cybersecurity\-Incident\-44109194/ 
+7\. 
+https://www.bleepingcomputer.com/news/security/orbcomm\-ransomware\-attack\-causes\-trucking\-fleet\-management\-outage/
+8\. 
+Upstream Security
+9\. 
+Upstream Security
+10\. 
+https://voonze.com/tsmc\-supplier\-suffers\-ransomware\-attack\-and\-has\-data\-leaked\-by\-hacker\-group/ , https://finance.yahoo.com/news/chipmaker\-
 tsmc\-confirms\-data\-leak\-151811628\.html 
-1\. https:www.cyberdaily.ausecurity9879\-lockbit\-ransomware\-gang\-claims\-hack\-on\-queensland\-based\-q\-automotive\-group 
-1\. https:techcrunch.com20230328hackers\-could\-remotely\-turn\-off\-lights\-honk\-mess\-with\-teslas\-infotainment\-system, https:insideevs.com
-news659185tesla\-model\-3\-compromised\-in\-under\-two\-minutes\-at\-hacking\-contest 
-1\. https:www.auroralabs.comota\-ccg\-lp\-1
-1\. https:www.reuters.comlegaltesla\-owners\-sue\-over\-impact\-software\-update\-ev\-batteries\-2023\-05\-12
-1\. https:www.reuters.comlegaltesla\-owners\-sue\-over\-impact\-software\-update\-ev\-batteries\-2023\-05\-12
-1\. https:techcrunch.com20230609shell\-recharge\-security\-lapse\-exposed\-drivers\-data
-1\. https:www.ibm.comreportsdata\-breach 
-1\. https:cms.lawendeupublicationgdpr\-enforcement\-tracker\-reportnumbers\-and\-figures
-1\. https:www.bcg.compublications2023rewriting\-rules\-of\-software\-defined\-vehicles
-1\. https:unece.orgsitesdefaultfiles2021\-03R155e.pdf
-1\. https:unece.orgsitesdefaultfiles2021\-03R156e.pdf
-1\. https:www.iso.orgstandard70918\.html
-1\. https:www.nhtsa.govsitesnhtsa.govfiles2022\-09cybersecurity\-best\-practices\-safety\-modern\-vehicles\-2022\-tag.pdf 
-1\. https:www.asiafinancial.comchina\-plans\-rules\-to\-regulate\-data\-flows\-from\-smart\-cars
-1\. https:eaton\-works.com20230306toyota\-c360\-hack 
-1\. https:www.latestly.comsociallyworldbykea\-app\-hacked\-pakistans\-ride\-hailing\-application\-gets\-hacked\-users\-receive\-abusive\-messages\-see\-
+11\. 
+https://www.cyberdaily.au/security/9879\-lockbit\-ransomware\-gang\-claims\-hack\-on\-queensland\-based\-q\-automotive\-group 
+12\. 
+https://techcrunch.com/2023/03/28/hackers\-could\-remotely\-turn\-off\-lights\-honk\-mess\-with\-teslas\-infotainment\-system/, https://insideevs.com/
+news/659185/tesla\-model\-3\-compromised\-in\-under\-two\-minutes\-at\-hacking\-contest/ 
+13\. 
+https://www.auroralabs.com/ota\-ccg\-lp\-1/
+14\. 
+https://www.reuters.com/legal/tesla\-owners\-sue\-over\-impact\-software\-update\-ev\-batteries\-2023\-05\-12/
+15\. 
+https://www.reuters.com/legal/tesla\-owners\-sue\-over\-impact\-software\-update\-ev\-batteries\-2023\-05\-12/
+16\. 
+https://techcrunch.com/2023/06/09/shell\-recharge\-security\-lapse\-exposed\-drivers\-data/
+17\. 
+https://www.ibm.com/reports/data\-breach 
+18\. 
+https://cms.law/en/deu/publication/gdpr\-enforcement\-tracker\-report/numbers\-and\-figures
+19\. 
+https://www.bcg.com/publications/2023/rewriting\-rules\-of\-software\-defined\-vehicles
+20\. 
+https://unece.org/sites/default/files/2021\-03/R155e.pdf
+21\. 
+https://unece.org/sites/default/files/2021\-03/R156e.pdf
+22\. 
+https://www.iso.org/standard/70918\.html
+23\. 
+https://www.nhtsa.gov/sites/nhtsa.gov/files/2022\-09/cybersecurity\-best\-practices\-safety\-modern\-vehicles\-2022\-tag.pdf 
+24\. 
+https://www.asiafinancial.com/china\-plans\-rules\-to\-regulate\-data\-flows\-from\-smart\-cars
+25\. 
+https://eaton\-works.com/2023/03/06/toyota\-c360\-hack/ 
+26\. 
+https://www.latestly.com/socially/world/bykea\-app\-hacked\-pakistans\-ride\-hailing\-application\-gets\-hacked\-users\-receive\-abusive\-messages\-see\-
 pics\-5197926\.html 
-1\. https:www.thedrive.comnews43454why\-milwaukee\-might\-sue\-hyundai\-kia\-over\-stolen\-car\-epidemic
-1\. https:urbanmilwaukee.com20220817kia\-hyundai\-thefts\-now\-national\-problem
-1\. https:edition.cnn.com20230127businessprogressive\-state\-farm\-hyundai\-kiaindex.html
-1\. https:www.nhtsa.govpress\-releaseshyundai\-kia\-campaign\-prevent\-vehicle\-theft
-1\. https:www.techradar.comnewshyundai\-and\-kia\-cars\-could\-be\-stolen\-with\-just\-a\-usb\-cable, https:www.malwarebytes.comblognews202302
+27\. 
+https://www.thedrive.com/news/43454/why\-milwaukee\-might\-sue\-hyundai\-kia\-over\-stolen\-car\-epidemic
+28\. 
+https://urbanmilwaukee.com/2022/08/17/kia\-hyundai\-thefts\-now\-national\-problem/
+29\. 
+https://edition.cnn.com/2023/01/27/business/progressive\-state\-farm\-hyundai\-kia/index.html
+30\. 
+https://www.nhtsa.gov/press\-releases/hyundai\-kia\-campaign\-prevent\-vehicle\-theft
+31\. 
+https://www.techradar.com/news/hyundai\-and\-kia\-cars\-could\-be\-stolen\-with\-just\-a\-usb\-cable, https://www.malwarebytes.com/blog/news/2023/02/
 tiktok\-car\-theft\-challenge\-hyundai\-kia\-fix\-flaw
-1\. https:hackingtoolscar.plshop
-1\. https:www.tiktok.com@keyless\_go
-1\. https:www.mckinsey.comfeaturesmckinsey\-center\-for\-future\-mobilityour\-insightsdrivers\-of\-disruptiongen\-ai\-in\-high\-gear\-mercedes\-benz\-
+32\. 
+https://hackingtoolscar.pl/shop/
+33\. 
+https://www.tiktok.com/@keyless\_go
+34\. 
+https://www.mckinsey.com/features/mckinsey\-center\-for\-future\-mobility/our\-insights/drivers\-of\-disruption/gen\-ai\-in\-high\-gear\-mercedes\-benz\-
 leverages\-the\-power\-of\-chatgpt
-1\. https:www.bain.cominsightsgenerative\-ai\-and\-cybersecurity\-strengthening\-both\-defenses\-and\-threats\-tech\-report\-2023
-1\. https:www.gartner.comennewsroompress\-releases2023\-10\-11\-gartner\-says\-more\-than\-80\-percent\-of\-enterprises\-will\-have\-used\-generative\-ai\-
+35\. 
+https://www.bain.com/insights/generative\-ai\-and\-cybersecurity\-strengthening\-both\-defenses\-and\-threats\-tech\-report\-2023
+36\. 
+https://www.gartner.com/en/newsroom/press\-releases/2023\-10\-11\-gartner\-says\-more\-than\-80\-percent\-of\-enterprises\-will\-have\-used\-generative\-ai\-
 apis\-or\-deployed\-generative\-ai\-enabled\-applications\-by\-2026
-1\. https:samcurry.netweb\-hackers\-vs\-the\-auto\-industry 
-1\. https:xakcop.composthyundai\-hack\-2 
-1\. https:www.bleepingcomputer.comnewssecurityresearcher\-breaches\-toyota\-supplier\-portal\-with\-info\-on\-14\-000\-partnersamp 
-1\. https:www.malwarebytes.comblognews202302tiktok\-car\-theft\-challenge\-hyundai\-kia\-fix\-flaw 
-1\. https:www.motor1\.comnews654686car\-thieves\-destructive\-can\-bus\-hack\-steal 
-1\. https:insideevs.comnews659185tesla\-model\-3\-compromised\-in\-under\-two\-minutes\-at\-hacking\-contest 
+37\. 
+ https://samcurry.net/web\-hackers\-vs\-the\-auto\-industry/ 
+38\. 
+ https://xakcop.com/post/hyundai\-hack\-2/ 
+39\. 
+ https://www.bleepingcomputer.com/news/security/researcher\-breaches\-toyota\-supplier\-portal\-with\-info\-on\-14\-000\-partners/amp/ 
+40\. 
+ https://www.malwarebytes.com/blog/news/2023/02/tiktok\-car\-theft\-challenge\-hyundai\-kia\-fix\-flaw 
+41\. 
+ https://www.motor1\.com/news/654686/car\-thieves\-destructive\-can\-bus\-hack\-steal/ 
+42\. 
+ https://insideevs.com/news/659185/tesla\-model\-3\-compromised\-in\-under\-two\-minutes\-at\-hacking\-contest/ 
 REFERENCES
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 133
-1\. https:eaton\-works.com20230306toyota\-c360\-hack 
-1\. https:www.bleepingcomputer.comnewssecurityhackers\-compromise\-3cx\-desktop\-app\-in\-a\-supply\-chain\-attack 
-1\. https:nvd.nist.govvulndetailCVE\-2023\-29389 
-1\. https:nvd.nist.govvulndetailCVE\-2023\-26244 
-1\. https:www.cybersecurityconnect.com.auindustry9052\-toyota\-data\-breach\-exposes\-10\-years\-worth\-of\-data\-for\-over\-2m\-customers 
-1\. https:www.bleepingcomputer.comnewssecuritymultinational\-tech\-firm\-abb\-hit\-by\-black\-basta\-ransomware\-attack 
-1\. https:www.stern.degesellschaftregionalbayerninterneteinschraenkungen\-bei\-werkstattkette\-atu\-nach\-cyberangriff\-33482946\.html 
-1\. https:garage.asrg.iocve\-2023\-3028\-improper\-backend\-communications\-allow\-access\-and\-manipulation\-of\-the\-telemetry\-data 
-1\. https:hackaday.com20230608hacking\-a\-hyundai\-ioniqs\-infotainment\-system\-again\-after\-security\-fixes 
-1\. https:www.globalvillagespace.comtechshell\-recharge\-data\-breach\-exposes\-ev\-drivers\-information 
-1\. https:grist.orgtechnologyhackers\-already\-infiltrate\-ev\-chargers\-it\-could\-only\-get\-worse 
-1\. https:therecord.mediamajor\-japanese\-port\-suspends\-operations\-following\-lockbit\-attack 
-1\. https:thehackernews.com202307a\-data\-exfiltration\-attack\-scenario.html 
-1\. https:www.blackhat.comus\-23briefingsscheduleindex.html\#jailbreaking\-an\-electric\-vehicle\-inor\-what\-it\-means\-to\-hotwire\-teslas\-x\-based\-seat\-
-heater\-33049; https:www.darkreading.comapplication\-securitytesla\-jailbreak\-unlocks\-theft\-in\-car\-paid\-features 
-1\. https:therecord.mediamoovit\-vulnerabilities\-allow\-free\-subway\-rides 
-1\. https:www.foxbusiness.comtechnologytesla\-data\-breach\-affects\-75735\-people\-state\-attorney\-general\-announces 
-1\. https:therecord.mediaorbcomm\-trucking\-software\-ransomware; https:www.bleepingcomputer.comnewssecurityorbcomm\-ransomware\-attack\-
-causes\-trucking\-fleet\-management\-outage 
-1\. https:www.nw.delokalbielefeldmitte23661084\_Mobiel\-nach\-dem\-Cyberangriff\-Displays\-konnten\-Pendlern\-keine\-korrekten\-Zeiten\-anzeigen.
-html; https:www.radiobielefeld.denachrichtenlokalnachrichtendetailansichtcyberangriff\-bei\-mobiel\-partner\-keine\-aktuellen\-fahrplan\-anzeigen\-in\-
+43\. 
+ https://eaton\-works.com/2023/03/06/toyota\-c360\-hack/ 
+44\. 
+ https://www.bleepingcomputer.com/news/security/hackers\-compromise\-3cx\-desktop\-app\-in\-a\-supply\-chain\-attack/ 
+45\. 
+https://nvd.nist.gov/vuln/detail/CVE\-2023\-29389 
+46\. 
+https://nvd.nist.gov/vuln/detail/CVE\-2023\-26244 
+47\. 
+https://www.cybersecurityconnect.com.au/industry/9052\-toyota\-data\-breach\-exposes\-10\-years\-worth\-of\-data\-for\-over\-2m\-customers 
+48\. 
+https://www.bleepingcomputer.com/news/security/multinational\-tech\-firm\-abb\-hit\-by\-black\-basta\-ransomware\-attack/ 
+49\. 
+ https://www.stern.de/gesellschaft/regional/bayern/internet\-\-einschraenkungen\-bei\-werkstattkette\-atu\-nach\-cyberangriff\-33482946\.html 
+50\. 
+https://garage.asrg.io/cve\-2023\-3028\-improper\-backend\-communications\-allow\-access\-and\-manipulation\-of\-the\-telemetry\-data/ 
+51\. 
+https://hackaday.com/2023/06/08/hacking\-a\-hyundai\-ioniqs\-infotainment\-system\-again\-after\-security\-fixes/ 
+52\. 
+https://www.globalvillagespace.com/tech/shell\-recharge\-data\-breach\-exposes\-ev\-drivers\-information/ 
+53\. 
+https://grist.org/technology/hackers\-already\-infiltrate\-ev\-chargers\-it\-could\-only\-get\-worse/ 
+54\. 
+https://therecord.media/major\-japanese\-port\-suspends\-operations\-following\-lockbit\-attack 
+55\. 
+https://thehackernews.com/2023/07/a\-data\-exfiltration\-attack\-scenario.html 
+56\. 
+https://www.blackhat.com/us\-23/briefings/schedule/index.html\#jailbreaking\-an\-electric\-vehicle\-in\-\-or\-what\-it\-means\-to\-hotwire\-teslas\-x\-based\-seat\-
+heater\-33049; https://www.darkreading.com/application\-security/tesla\-jailbreak\-unlocks\-theft\-in\-car\-paid\-features 
+57\. 
+https://therecord.media/moovit\-vulnerabilities\-allow\-free\-subway\-rides 
+58\. 
+https://www.foxbusiness.com/technology/tesla\-data\-breach\-affects\-75735\-people\-state\-attorney\-general\-announces 
+59\. 
+https://therecord.media/orbcomm\-trucking\-software\-ransomware; https://www.bleepingcomputer.com/news/security/orbcomm\-ransomware\-attack\-
+causes\-trucking\-fleet\-management\-outage/ 
+60\. 
+https://www.nw.de/lokal/bielefeld/mitte/23661084\_Mobiel\-nach\-dem\-Cyberangriff\-Displays\-konnten\-Pendlern\-keine\-korrekten\-Zeiten\-anzeigen.
+html; https://www.radiobielefeld.de/nachrichten/lokalnachrichten/detailansicht/cyberangriff\-bei\-mobiel\-partner\-keine\-aktuellen\-fahrplan\-anzeigen\-in\-
 bielefeld.html 
-1\. https:therecord.mediaknp\-logistics\-ransomware\-insolvency\-uk 
-1\. https:restoreprivacy.comthreat\-actor\-claims\-data\-breach\-on\-american\-moving\-firm\-u\-haul 
-1\. https:thecyberexpress.comcyberattack\-on\-bmw\-munique\-motors 
-1\. https:www.bleepingcomputer.comnewssecurityauto\-parts\-giant\-autozone\-warns\-of\-moveit\-data\-breach 
-1\. https:www.bleepingcomputer.comnewssecurityqilin\-ransomware\-claims\-attack\-on\-automotive\-giant\-yanfeng 
-1\. https:www.seattletimes.comseattle\-newstransportationcyberattack\-shuts\-down\-wa\-transportation\-website\-causing\-havoc\-for\-ferry\-passengers\-
-others
-1\. https:cyberscoop.comfleet\-management\-vulnerability\-digitial\-communications\-technologies
-1\. https:www.bleepingcomputer.comnewssecuritynissan\-is\-investigating\-cyberattack\-and\-potential\-data\-breachamp 
-1\. https:www.bleepingcomputer.comnewssecurityorbcomm\-ransomware\-attack\-causes\-trucking\-fleet\-management\-outage 
-1\. https:www.bleepingcomputer.comnewssecurityorbcomm\-ransomware\-attack\-causes\-trucking\-fleet\-management\-outage
-1\. https:hackaday.com20230608hacking\-a\-hyundai\-ioniqs\-infotainment\-system\-again\-after\-security\-fixes 
-1\. https:hackaday.com20230608hacking\-a\-hyundai\-ioniqs\-infotainment\-system\-again\-after\-security\-fixes
-1\. https:cyberscoop.comfleet\-management\-vulnerability\-digitial\-communications\-technologies 
-1\. https:www.cvedetails.comcvss\-score\-distribution.php
-1\. https:nvd.nist.govvuln\-metricscvss
-1\. https:www.wjhl.combusinesspress\-releasesglobenewswire8856072haynes\-international\-announces\-network\-outage 
-1\. https:www.globenewswire.comennews\-release2023071927075859124enHaynes\-International\-Provides\-Cybersecurity\-Update\-and\-
+61\. 
+https://therecord.media/knp\-logistics\-ransomware\-insolvency\-uk 
+62\. 
+https://restoreprivacy.com/threat\-actor\-claims\-data\-breach\-on\-american\-moving\-firm\-u\-haul/ 
+63\. 
+https://thecyberexpress.com/cyberattack\-on\-bmw\-munique\-motors/ 
+64\. 
+https://www.bleepingcomputer.com/news/security/auto\-parts\-giant\-autozone\-warns\-of\-moveit\-data\-breach/ 
+65\. 
+https://www.bleepingcomputer.com/news/security/qilin\-ransomware\-claims\-attack\-on\-automotive\-giant\-yanfeng/ 
+66\. 
+https://www.seattletimes.com/seattle\-news/transportation/cyberattack\-shuts\-down\-wa\-transportation\-website\-causing\-havoc\-for\-ferry\-passengers\-
+others/
+67\. 
+https://cyberscoop.com/fleet\-management\-vulnerability\-digitial\-communications\-technologies/
+68\. 
+https://www.bleepingcomputer.com/news/security/nissan\-is\-investigating\-cyberattack\-and\-potential\-data\-breach/amp/ 
+69\. 
+ https://www.bleepingcomputer.com/news/security/orbcomm\-ransomware\-attack\-causes\-trucking\-fleet\-management\-outage/ 
+70\. 
+ https://www.bleepingcomputer.com/news/security/orbcomm\-ransomware\-attack\-causes\-trucking\-fleet\-management\-outage/
+71\. 
+ https://hackaday.com/2023/06/08/hacking\-a\-hyundai\-ioniqs\-infotainment\-system\-again\-after\-security\-fixes/ 
+72\. 
+https://hackaday.com/2023/06/08/hacking\-a\-hyundai\-ioniqs\-infotainment\-system\-again\-after\-security\-fixes/
+73\. 
+https://cyberscoop.com/fleet\-management\-vulnerability\-digitial\-communications\-technologies/ 
+74\. 
+https://www.cvedetails.com/cvss\-score\-distribution.php
+75\. 
+https://nvd.nist.gov/vuln\-metrics/cvss
+76\. 
+ https://www.wjhl.com/business/press\-releases/globenewswire/8856072/haynes\-international\-announces\-network\-outage/ 
+77\. 
+ https://www.globenewswire.com/en/news\-release/2023/07/19/2707585/9124/en/Haynes\-International\-Provides\-Cybersecurity\-Update\-and\-
 Estimated\-Third\-Quarter\-Financial\-Impact.html
-1\. https:www.kendrion.comennews\-eventsnewsnews\-detailkendrion\-experiences\-cyber\-security\-incident 
-1\. https:www.autoevolution.comnewsnew\-electrify\-america\-charger\-gets\-hacked\-displays\-tesla\-s\-supercharging\-network\-209367\.html 
-1\. https:twitter.comMichaelMunistatus1617272328626360321
-1\. https:c2a\-sec.coma\-case\-study\-on\-the\-importance\-of\-security\-validation\-done\-right\-abb\-chargersync\-platform
-1\. https:c2a\-sec.coma\-case\-study\-on\-the\-importance\-of\-security\-validation\-done\-right\-abb\-chargersync\-platform 
-1\. https:nvd.nist.govvulndetailCVE\-2023\-29857
-1\. https:nvd.nist.govvulndetailCVE\-2023\-29857
-1\. https:therecord.mediaorbcomm\-trucking\-software\-ransomware
-1\. https:www.bleepingcomputer.comnewssecurityorbcomm\-ransomware\-attack\-causes\-trucking\-fleet\-management\-outage
+78\. 
+ https://www.kendrion.com/en/news\-events/news/news\-detail/kendrion\-experiences\-cyber\-security\-incident 
+79\. 
+ https://www.autoevolution.com/news/new\-electrify\-america\-charger\-gets\-hacked\-displays\-tesla\-s\-supercharging\-network\-209367\.html 
+80\. 
+https://twitter.com/MichaelMuni/status/1617272328626360321
+81\. 
+ https://c2a\-sec.com/a\-case\-study\-on\-the\-importance\-of\-security\-validation\-done\-right\-abb\-chargersync\-platform/
+82\. 
+ https://c2a\-sec.com/a\-case\-study\-on\-the\-importance\-of\-security\-validation\-done\-right\-abb\-chargersync\-platform/ 
+83\. 
+https://nvd.nist.gov/vuln/detail/CVE\-2023\-29857
+84\. 
+ https://nvd.nist.gov/vuln/detail/CVE\-2023\-29857
+85\. 
+ https://therecord.media/orbcomm\-trucking\-software\-ransomware
+86\. 
+https://www.bleepingcomputer.com/news/security/orbcomm\-ransomware\-attack\-causes\-trucking\-fleet\-management\-outage/
 REFERENCES
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 134
-1\. https:www.rmf24\.plregionyolsztynnews\-atak\-hakerski\-sparalizowal\-olsztyn\-ustalenia\-rmf\-fm,nId,6866990\#crp\_state\=1; https:cyberdefence24\.
-plcyberbezpieczenstwoatak\-hakerski\-w\-olsztynie\-sparalizowal\-miasto 
-1\. https:www.reuters.combusinessautos\-transportationcalifornia\-suspends\-gm\-cruises\-driverless\-autonomous\-vehicle\-permits\-2023\-10\-24
-1\. https:www.reuters.combusinessautos\-transportationgms\-cruise\-recall\-950\-driverless\-cars\-after\-accident\-involving\-pedestrian\-2023\-11\-08
-1\. https:www.axios.com20231127self\-driving\-cars\-robotaxis\-trust
-1\. https:waymo.comblog202307doubling\-down\-on\-waymo\-one.html
-1\. https:www.axios.com20230807dallas\-autonomous\-trucks
-1\. https:waymo.comblog202310the\-waymo\-driver\-now\-available\-on\-uber.html
-1\. https:www.prnewswire.comnews\-releasesmay\-mobility\-announces\-105\-million\-series\-d\-investment\-round\-led\-by\-ntt\-to\-scale\-autonomous\-transit\-
+87\. 
+https://www.rmf24\.pl/regiony/olsztyn/news\-atak\-hakerski\-sparalizowal\-olsztyn\-ustalenia\-rmf\-fm,nId,6866990\#crp\_state\=1; https://cyberdefence24\.
+pl/cyberbezpieczenstwo/atak\-hakerski\-w\-olsztynie\-sparalizowal\-miasto 
+88\. 
+https://www.reuters.com/business/autos\-transportation/california\-suspends\-gm\-cruises\-driverless\-autonomous\-vehicle\-permits\-2023\-10\-24/
+89\. 
+https://www.reuters.com/business/autos\-transportation/gms\-cruise\-recall\-950\-driverless\-cars\-after\-accident\-involving\-pedestrian\-2023\-11\-08/
+90\. 
+https://www.axios.com/2023/11/27/self\-driving\-cars\-robotaxis\-trust
+91\. 
+https://waymo.com/blog/2023/07/doubling\-down\-on\-waymo\-one.html
+92\. 
+https://www.axios.com/2023/08/07/dallas\-autonomous\-trucks
+93\. 
+https://waymo.com/blog/2023/10/the\-waymo\-driver\-now\-available\-on\-uber.html
+94\. 
+https://www.prnewswire.com/news\-releases/may\-mobility\-announces\-105\-million\-series\-d\-investment\-round\-led\-by\-ntt\-to\-scale\-autonomous\-transit\-
 services\-301979363\.html
-1\. https:www.hyundai.comworldwideencompanynewsroomdetailmotional\-ioniq\-5\-robotaxi\-to\-be\-manufactured\-at\-new\-hyundai\-motor\-group\-
+95\. 
+https://www.hyundai.com/worldwide/en/company/newsroom/detail/motional\-ioniq\-5\-robotaxi\-to\-be\-manufactured\-at\-new\-hyundai\-motor\-group\-
 innovation\-center\-singapore\-0000000360
-1\. https:asia.nikkei.comBusinessTechnologyJapan\-to\-assign\-bandwidth\-for\-Level\-4\-self\-driving\-vehicles
-1\. https:drivingpress.comthe\-risks\-of\-autonomous\-vehicles
-1\. https:apnews.comarticlecolorado\-right\-to\-repair\-farming\-equipment\-1da00ea957fd1057bf522cb4725e62d4
-1\. https:www.fb.orgnews\-releasefarm\-bureau\-continues\-to\-advance\-farmers\-right\-to\-repair
-100\.https:www.reuters.comlegallitigationdeere\-must\-face\-us\-farmers\-right\-to\-repair\-lawsuits\-judge\-rules\-2023\-11\-27
-101\.https:www.vice.comenarticlem7bbkvbiden\-administration\-tells\-car\-companies\-to\-ignore\-right\-to\-repair\-law\-people\-overwhelmingly\-voted\-for
-102\.https:web.nvd.nist.govviewvulndetail?vulnId\=CVE\-2023\-3028 
-103\.https:nvd.nist.govvulndetailCVE\-2023\-3028
-104\.https:nvd.nist.govvulndetailCVE\-2022\-38766
-105\.https:news.stv.tvwest\-centralsurge\-in\-keyless\-car\-thefts\-sees\-28\-vehicles\-stolen\-in\-glasgow\-in\-january\-2023 
-106\.https:www.suffolk.police.uknewslatest\-newsvehicle\-owners\-urged\-be\-vigilant\-following\-number\-thefts 
-107\.https:kitchener.ctvnews.capolice\-say\-relay\-and\-reprogramming\-thefts\-are\-on\-the\-rise\-in\-waterloo\-region\-here\-are\-the\-most\-targeted\-
+96\. 
+https://asia.nikkei.com/Business/Technology/Japan\-to\-assign\-bandwidth\-for\-Level\-4\-self\-driving\-vehicles
+97\. 
+https://drivingpress.com/the\-risks\-of\-autonomous\-vehicles/
+98\. 
+https://apnews.com/article/colorado\-right\-to\-repair\-farming\-equipment\-1da00ea957fd1057bf522cb4725e62d4
+99\. 
+https://www.fb.org/news\-release/farm\-bureau\-continues\-to\-advance\-farmers\-right\-to\-repair
+100\. https://www.reuters.com/legal/litigation/deere\-must\-face\-us\-farmers\-right\-to\-repair\-lawsuits\-judge\-rules\-2023\-11\-27/
+101\. https://www.vice.com/en/article/m7bbkv/biden\-administration\-tells\-car\-companies\-to\-ignore\-right\-to\-repair\-law\-people\-overwhelmingly\-voted\-for
+102\. https://web.nvd.nist.gov/view/vuln/detail?vulnId\=CVE\-2023\-3028 
+103\. https://nvd.nist.gov/vuln/detail/CVE\-2023\-3028
+104\. https://nvd.nist.gov/vuln/detail/CVE\-2022\-38766
+105\. https://news.stv.tv/west\-central/surge\-in\-keyless\-car\-thefts\-sees\-28\-vehicles\-stolen\-in\-glasgow\-in\-january\-2023 
+106\. https://www.suffolk.police.uk/news/latest\-news/vehicle\-owners\-urged\-be\-vigilant\-following\-number\-thefts 
+107\. https://kitchener.ctvnews.ca/police\-say\-relay\-and\-reprogramming\-thefts\-are\-on\-the\-rise\-in\-waterloo\-region\-here\-are\-the\-most\-targeted\-
 vehicles\-1\.6308378 
-108\.https:www.worcesternews.co.uknews23493583\.keyless\-theft\-land\-rovers\-rise\-warn\-police 
-109\.https:www.infranken.delkforchheimblaulichtheroldsbach\-erneuter\-autodiebstahl\-wegen\-keyless\-go\-funktion\-taeter\-stoeren\-schluessel\-signal\-
+108\. https://www.worcesternews.co.uk/news/23493583\.keyless\-theft\-land\-rovers\-rise\-warn\-police/ 
+109\. https://www.infranken.de/lk/forchheim/blaulicht/heroldsbach\-erneuter\-autodiebstahl\-wegen\-keyless\-go\-funktion\-taeter\-stoeren\-schluessel\-signal\-
 art\-5691576 
-110\.https:www.telegraph.co.uknews20230829keyless\-car\-hacking\-equipment\-ban\-to\-cut\-car\-thefts 
-111\.https:nvd.nist.govvulndetailCVE\-2023\-29389, https:kentindell.github.io20230403can\-injection 
-112\.https:kentindell.github.io20230403can\-injection
-113\.https:www.carscoops.com202302toyota\-rav4\-prime\-ecu\-software\-could\-shut\-down\-the\-hybrid\-system 
-114\.https:hackaday.com20231122keeping\-a\-mazdas\-radio\-on\-after\-the\-engine\-shuts\-off 
-115\.https:samcurry.netweb\-hackers\-vs\-the\-auto\-industry 
-116\.https:eaton\-works.com20230306toyota\-c360\-hack 
-117\.https:c2a\-sec.coma\-case\-study\-on\-the\-importance\-of\-security\-validation\-done\-right\-abb\-chargersync\-platform
-118\.https:nvd.nist.govvulndetailCVE\-2023\-6073 
-119\.https:nvd.nist.govvulndetailCVE\-2023\-6073 
-120\.https:nvd.nist.govvulndetailCVE\-2023\-22388
-121\.https:nvd.nist.govvulndetailCVE\-2023\-22388 
-122\.https:nvd.nist.govvulndetailCVE\-2023\-29857
-123\.https:nvd.nist.govvulndetailCVE\-2023\-29857 
-124\.https:www.latestly.comsociallyworldbykea\-app\-hacked\-pakistans\-ride\-hailing\-application\-gets\-hacked\-users\-receive\-abusive\-messages\-see\-
+110\. https://www.telegraph.co.uk/news/2023/08/29/keyless\-car\-hacking\-equipment\-ban\-to\-cut\-car\-thefts/ 
+111\. https://nvd.nist.gov/vuln/detail/CVE\-2023\-29389, https://kentindell.github.io/2023/04/03/can\-injection/ 
+112\. https://kentindell.github.io/2023/04/03/can\-injection/
+113\. https://www.carscoops.com/2023/02/toyota\-rav4\-prime\-ecu\-software\-could\-shut\-down\-the\-hybrid\-system/ 
+114\. https://hackaday.com/2023/11/22/keeping\-a\-mazdas\-radio\-on\-after\-the\-engine\-shuts\-off/ 
+115\. https://samcurry.net/web\-hackers\-vs\-the\-auto\-industry/ 
+116\. https://eaton\-works.com/2023/03/06/toyota\-c360\-hack/ 
+117\. https://c2a\-sec.com/a\-case\-study\-on\-the\-importance\-of\-security\-validation\-done\-right\-abb\-chargersync\-platform/
+118\. https://nvd.nist.gov/vuln/detail/CVE\-2023\-6073 
+119\. https://nvd.nist.gov/vuln/detail/CVE\-2023\-6073 
+120\. https://nvd.nist.gov/vuln/detail/CVE\-2023\-22388
+121\. https://nvd.nist.gov/vuln/detail/CVE\-2023\-22388 
+122\. https://nvd.nist.gov/vuln/detail/CVE\-2023\-29857
+123\. https://nvd.nist.gov/vuln/detail/CVE\-2023\-29857 
+124\. https://www.latestly.com/socially/world/bykea\-app\-hacked\-pakistans\-ride\-hailing\-application\-gets\-hacked\-users\-receive\-abusive\-messages\-see\-
 pics\-5197926\.html 
-125\.https:juniperspring.xyzpostshonda\-reverse\-engineering 
-126\.https:www.blackhat.comus\-23briefingsscheduleindex.html\#jailbreaking\-an\-electric\-vehicle\-inor\-what\-it\-means\-to\-hotwire\-teslas\-x\-based\-seat\-
-heater\-33049 , https:www.darkreading.comapplication\-securitytesla\-jailbreak\-unlocks\-theft\-in\-car\-paid\-features 
-127\.https:www.autoevolution.comnewsnew\-electrify\-america\-charger\-gets\-hacked\-displays\-tesla\-s\-supercharging\-network\-209367\.html 
-128\.https:twitter.comMichaelMunistatus1617272328626360321
-129\.https:www.globalvillagespace.comtechshell\-recharge\-data\-breach\-exposes\-ev\-drivers\-information
+125\. \\https://juniperspring.xyz/posts/honda\-reverse\-engineering/ 
+126\. https://www.blackhat.com/us\-23/briefings/schedule/index.html\#jailbreaking\-an\-electric\-vehicle\-in\-\-or\-what\-it\-means\-to\-hotwire\-teslas\-x\-based\-seat\-
+heater\-33049 , https://www.darkreading.com/application\-security/tesla\-jailbreak\-unlocks\-theft\-in\-car\-paid\-features 
+127\. https://www.autoevolution.com/news/new\-electrify\-america\-charger\-gets\-hacked\-displays\-tesla\-s\-supercharging\-network\-209367\.html 
+128\. https://twitter.com/MichaelMuni/status/1617272328626360321
+129\. https://www.globalvillagespace.com/tech/shell\-recharge\-data\-breach\-exposes\-ev\-drivers\-information/
 REFERENCES
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 135
-130\.https:insideevs.comnews659185tesla\-model\-3\-compromised\-in\-under\-two\-minutes\-at\-hacking\-contest 
-131\.https:insideevs.comnews659185tesla\-model\-3\-compromised\-in\-under\-two\-minutes\-at\-hacking\-contest
-132\.https:techcrunch.com20231114a\-software\-update\-bricked\-rivian\-infotainment\-systems
-133\.https:en.wikipedia.orgwikiCellular\_V2X
-134\.https:gttwireless.comdsrc\-vs\-c\-v2x\-comparing\-the\-connected\-vehicles\-technologies
-135\.https:www.dwt.comblogsbroadband\-advisor202305fcc\-connected\-vehicles\-c\-v2x
-136\.https:www.leewayhertz.comgenerative\-ai\-in\-automotive\-industry
-137\.https:hbr.org202311navigating\-the\-new\-risks\-and\-regulatory\-challenges\-of\-genai
-138\.https:www.thebanker.comThe\-world\-s\-first\-GenAI\-guidelines\-for\-banks\-1702900543
-139\.https:www.europarl.europa.eunewsenpress\-room20231206IPR15699artificial\-intelligence\-act\-deal\-on\-comprehensive\-rules\-for\-trustworthy\-ai 
-140\.https:techcrunch.com20231213china\-autonomous\-vehicle\-driving\-regulation , https:xxgk.mot.gov.cn2020jigouysfws202312
+130\. https://insideevs.com/news/659185/tesla\-model\-3\-compromised\-in\-under\-two\-minutes\-at\-hacking\-contest/ 
+131\. https://insideevs.com/news/659185/tesla\-model\-3\-compromised\-in\-under\-two\-minutes\-at\-hacking\-contest/
+132\. https://techcrunch.com/2023/11/14/a\-software\-update\-bricked\-rivian\-infotainment\-systems/
+133\. https://en.wikipedia.org/wiki/Cellular\_V2X
+134\. https://gttwireless.com/dsrc\-vs\-c\-v2x\-comparing\-the\-connected\-vehicles\-technologies/
+135\. https://www.dwt.com/blogs/broadband\-advisor/2023/05/fcc\-connected\-vehicles\-c\-v2x
+136\. https://www.leewayhertz.com/generative\-ai\-in\-automotive\-industry/
+137\. https://hbr.org/2023/11/navigating\-the\-new\-risks\-and\-regulatory\-challenges\-of\-genai
+138\. https://www.thebanker.com/The\-world\-s\-first\-GenAI\-guidelines\-for\-banks\-1702900543
+139\. https://www.europarl.europa.eu/news/en/press\-room/20231206IPR15699/artificial\-intelligence\-act\-deal\-on\-comprehensive\-rules\-for\-trustworthy\-ai 
+140\. https://techcrunch.com/2023/12/13/china\-autonomous\-vehicle\-driving\-regulation/ , https://xxgk.mot.gov.cn/2020/jigou/ysfws/202312/
 t20231205\_3962490\.html 
-141\.https:www.miit.gov.cnjgsjzbysqcgyart2023art\_439d600cba254bd5b426d4dadc6d82b5\.html; https:unece.orgsitesdefaultfiles2021\-03
-R155e.pdf; https:en.wikipedia.orgwikiWorld\_Forum\_for\_Harmonization\_of\_Vehicle\_Regulations
-142\.https:www.gov.cnzhengcezhengceku202306content\_6887168\.htm
-143\.https:www.marklines.comenreportrep2457\_202303 
-144\.https:theicct.orgpv\-india\-rde\-testing\-apr23 
-145\.https:www.cybersecurity\-insiders.comindia\-to\-make\-cybershield\-mandatory\-for\-vehicles; https:timesofindia.indiatimes.combusiness
-dontgetscammednewscybershield\-mandate\-for\-vehicles\-govt\-takes\-preemptive\-action\-against\-cyber\-threats\-to\-cars\-trucksarticleshow105208966\.
+141\. https://www.miit.gov.cn/jgsj/zbys/qcgy/art/2023/art\_439d600cba254bd5b426d4dadc6d82b5\.html; https://unece.org/sites/default/files/2021\-03/
+R155e.pdf; https://en.wikipedia.org/wiki/World\_Forum\_for\_Harmonization\_of\_Vehicle\_Regulations
+142\. https://www.gov.cn/zhengce/zhengceku/202306/content\_6887168\.htm
+143\. https://www.marklines.com/en/report/rep2457\_202303 
+144\. https://theicct.org/pv\-india\-rde\-testing\-apr23/ 
+145\. https://www.cybersecurity\-insiders.com/india\-to\-make\-cybershield\-mandatory\-for\-vehicles/; https://timesofindia.indiatimes.com/business/
+dontgetscammed/news/cybershield\-mandate\-for\-vehicles\-govt\-takes\-preemptive\-action\-against\-cyber\-threats\-to\-cars\-trucks/articleshow/105208966\.
 cms
-146\.https:www.jdsupra.comlegalnewscalifornia\-takes\-the\-wheel\-a\-closer\-9580097 
-147\.https:unece.orgsitesdefaultfiles2021\-03R155e.pdf
-148\.https:unece.orgsitesdefaultfiles2021\-03R156e.pdf
-149\.https:www.linkedin.compulseautomotive\-cybersecurity\-2023\-horizontal\-europe\-sight\-tschersich\-hesre?utm\_source\=share\&utm\_
+146\. https://www.jdsupra.com/legalnews/california\-takes\-the\-wheel\-a\-closer\-9580097/ 
+147\. https://unece.org/sites/default/files/2021\-03/R155e.pdf
+148\. https://unece.org/sites/default/files/2021\-03/R156e.pdf
+149\. https://www.linkedin.com/pulse/automotive\-cybersecurity\-2023\-horizontal\-europe\-sight\-tschersich\-hesre/?utm\_source\=share\&utm\_
 medium\=member\_ios\&utm\_campaign\=share\_via 
-150\.https:www.iso.orgstandard70918\.html
-151\.https:www.nhtsa.govsitesnhtsa.govfiles2022\-09cybersecurity\-best\-practices\-safety\-modern\-vehicles\-2022\-tag.pdf
-152\.https:www.enisa.europa.eupublicationssmart\-cars, https:www.enisa.europa.eupublicationsrecommendations\-for\-the\-security\-of\-cam 
-153\.https:automotiveisac.combest\-practices
-154\.https:unece.orgfileadminDAMtransdoc2020wp29grvaECE\-TRANS\-WP29\-2020\-079\-Revised.pdf
-155\.https:unece.orgfileadminDAMtransdoc2020wp29ECE\-TRANS\-WP29\-2020\-080e.pdf
-156\.https:clepa.eumediaroomclepa\-and\-acea\-join\-with\-auto\-isac\-on\-motor\-vehicle\-cybersecurity
-157\.https:unece.orgsitesdefaultfiles2023\-07ECE\-TRANS\-WP
+150\. https://www.iso.org/standard/70918\.html
+151\. https://www.nhtsa.gov/sites/nhtsa.gov/files/2022\-09/cybersecurity\-best\-practices\-safety\-modern\-vehicles\-2022\-tag.pdf
+152\. https://www.enisa.europa.eu/publications/smart\-cars, https://www.enisa.europa.eu/publications/recommendations\-for\-the\-security\-of\-cam/ 
+153\. https://automotiveisac.com/best\-practices
+154\. https://unece.org/fileadmin/DAM/trans/doc/2020/wp29grva/ECE\-TRANS\-WP29\-2020\-079\-Revised.pdf
+155\. https://unece.org/fileadmin/DAM/trans/doc/2020/wp29/ECE\-TRANS\-WP29\-2020\-080e.pdf
+156\. https://clepa.eu/mediaroom/clepa\-and\-acea\-join\-with\-auto\-isac\-on\-motor\-vehicle\-cybersecurity/
+157\. https://unece.org/sites/default/files/2023\-07/ECE\-TRANS\-WP
 .29\-GRVA\-16e.pdf 
-158\.https:www.linkedin.compulseautomotive\-cybersecurity\-2023\-horizontal\-europe\-sight\-tschersich\-hesre?utm\_source\=share\&utm\_
+158\. https://www.linkedin.com/pulse/automotive\-cybersecurity\-2023\-horizontal\-europe\-sight\-tschersich\-hesre/?utm\_source\=share\&utm\_
 medium\=member\_ios\&utm\_campaign\=share\_via 
-159\.https:digital\-strategy.ec.europa.euenpoliciescyber\-resilience\-act\#:\~:text\=Less%20apparent%20to%20many%20users,software%20with%20a%20
+159\. https://digital\-strategy.ec.europa.eu/en/policies/cyber\-resilience\-act\#:\~:text\=Less%20apparent%20to%20many%20users,software%20with%20a%20
 digital%20component 
-160\.https:digital\-strategy.ec.europa.euenlibrarycyber\-resilience\-act\-factsheet 
-161\.https:digital\-strategy.ec.europa.euenlibrarycyber\-resilience\-act\-factsheet 
-162\.https:eur\-lex.europa.eulegal\-contentDETXT?uri\=celex%3A32019R2144 
-163\.https:www.linkedin.compulseautomotive\-cybersecurity\-2023\-horizontal\-europe\-sight\-tschersich\-hesre?utm\_source\=share\&utm\_
+160\. https://digital\-strategy.ec.europa.eu/en/library/cyber\-resilience\-act\-factsheet 
+161\. https://digital\-strategy.ec.europa.eu/en/library/cyber\-resilience\-act\-factsheet 
+162\. https://eur\-lex.europa.eu/legal\-content/DE/TXT/?uri\=celex%3A32019R2144 
+163\. https://www.linkedin.com/pulse/automotive\-cybersecurity\-2023\-horizontal\-europe\-sight\-tschersich\-hesre/?utm\_source\=share\&utm\_
 medium\=member\_ios\&utm\_campaign\=share\_via 
-164\.https:www.iso.orgstandard69113\.html 
-165\.https:www.switch\-ev.comblogwhat\-is\-iso\-15118
-166\.https:www.switch\-ev.comblogbasics\-of\-plug\-and\-charge
-167\.https:www.sec.govnewspress\-release2023\-139
-168\.https:www.sec.govnewsstatementgerding\-cybersecurity\-disclosure\-20231214
-169\.https:www.sec.goveducationsmallbusinessgoingpublicSRC
-170\.https:www.databreaches.netalphv\-files\-an\-sec\-complaint\-against\-meridianlink\-for\-not\-disclosing\-a\-breach\-to\-the\-sec
-171\.https:www.nhtsa.govsitesnhtsa.govfiles2022\-09cybersecurity\-best\-practices\-safety\-modern\-vehicles\-2022\-tag.pdf
+164\. https://www.iso.org/standard/69113\.html 
+165\. https://www.switch\-ev.com/blog/what\-is\-iso\-15118
+166\. https://www.switch\-ev.com/blog/basics\-of\-plug\-and\-charge
+167\. https://www.sec.gov/news/press\-release/2023\-139
+168\. https://www.sec.gov/news/statement/gerding\-cybersecurity\-disclosure\-20231214
+169\. https://www.sec.gov/education/smallbusiness/goingpublic/SRC
+170\. https://www.databreaches.net/alphv\-files\-an\-sec\-complaint\-against\-meridianlink\-for\-not\-disclosing\-a\-breach\-to\-the\-sec/
+171\. https://www.nhtsa.gov/sites/nhtsa.gov/files/2022\-09/cybersecurity\-best\-practices\-safety\-modern\-vehicles\-2022\-tag.pdf
 REFERENCES
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 136
-172\.https:www.govinfo.govcontentpkgFR\-2022\-09\-09pdf2022\-19507\.pdf
-173\.https:upstream.autoresearchautomotive\-cybersecurity
-174\.https:automotiveisac.compress\-newsauto\-isac\-partners\-with\-upstream\-security\-to\-enhance\-automotive\-threat\-landscape\-visibility
-175\.https:www.telematicswire.netasrg\-partners\-with\-upstream\-to\-enhance\-automotive\-cyber\-threat\-intelligence
-176\.https:www.nhtsa.govlaws\-regulationsstanding\-general\-order\-crash\-reporting
-177\.https:www.nhtsa.govspeeches\-presentationsautomated\-road\-transportation\-symposium\-arts23\-keynote\-address
-178\.https:www.vice.comenarticlem7bbkvbiden\-administration\-tells\-car\-companies\-to\-ignore\-right\-to\-repair\-law\-people\-overwhelmingly\-voted\-for
-179\.https:www.nhtsa.govpress\-releasesnhtsa\-proposes\-seat\-belt\-warning\-system\-expansion 
-180\.https:www.nhtsa.govsitesnhtsa.govfiles2023\-09NTSB\-Response\_September\-2023\_Speeding\_Rear\-Impact\-Guards\_ADB\-Headlamps\-v2\.pdf
-181\.https:www.iea.orgreportsglobal\-ev\-outlook\-2023executive\-summary
-182\.https:www.progressive.comlifelaneson\-the\-roadfuture\-of\-electric\-cars
-183\.https:www.federalregister.govdocuments202302282023\-03500national\-electric\-vehicle\-infrastructure\-standards\-and\-requirements
-184\.https:www.foley.cominsightspublications202304us\-dot\-finalizes\-ev\-charging\-infrastructure\-rules
-185\.https:www.nccoe.nist.govprojectscybersecurity\-framework\-profile\-electric\-vehicle\-extreme\-fast\-charging\-infrastructure
-186\.https:nvlpubs.nist.govnistpubsir2023NIST.IR.8473\.ipd.pdf
-187\.https:www.nemko.comblogcybersecurity\-requirements\-ce\-marking\-postponed\-till\-1\-august\-2025
-188\.https:data.consilium.europa.eudocdocumentST\-12041\-2023\-INITenpdf
-189\.https:www.consilium.europa.eumedia69093st16996\-en23\.pdf
-190\.https:digital\-strategy.ec.europa.euenpoliciescyber\-resilience\-act
-191\.https:www.electrive.com20210421partners\-pledge\-to\-implement\-plugcharge\-across\-europe
-192\.https:www.charin.globaltechnologyplug\-charge
-193\.https:www.gov.ukgovernmentconsultationselectric\-vehicle\-smart\-chargingpublic\-feedbackelectric\-vehicle\-smart\-charging\-consultation\-
+172\. https://www.govinfo.gov/content/pkg/FR\-2022\-09\-09/pdf/2022\-19507\.pdf
+173\. https://upstream.auto/research/automotive\-cybersecurity/
+174\. https://automotiveisac.com/press\-news/auto\-isac\-partners\-with\-upstream\-security\-to\-enhance\-automotive\-threat\-landscape\-visibility
+175\. https://www.telematicswire.net/asrg\-partners\-with\-upstream\-to\-enhance\-automotive\-cyber\-threat\-intelligence/
+176\. https://www.nhtsa.gov/laws\-regulations/standing\-general\-order\-crash\-reporting
+177\. https://www.nhtsa.gov/speeches\-presentations/automated\-road\-transportation\-symposium\-arts23\-keynote\-address
+178\. https://www.vice.com/en/article/m7bbkv/biden\-administration\-tells\-car\-companies\-to\-ignore\-right\-to\-repair\-law\-people\-overwhelmingly\-voted\-for
+179\. https://www.nhtsa.gov/press\-releases/nhtsa\-proposes\-seat\-belt\-warning\-system\-expansion 
+180\. https://www.nhtsa.gov/sites/nhtsa.gov/files/2023\-09/NTSB\-Response\_September\-2023\_Speeding\_Rear\-Impact\-Guards\_ADB\-Headlamps\-v2\.pdf
+181\. https://www.iea.org/reports/global\-ev\-outlook\-2023/executive\-summary
+182\. https://www.progressive.com/lifelanes/on\-the\-road/future\-of\-electric\-cars
+183\. https://www.federalregister.gov/documents/2023/02/28/2023\-03500/national\-electric\-vehicle\-infrastructure\-standards\-and\-requirements
+184\. https://www.foley.com/insights/publications/2023/04/us\-dot\-finalizes\-ev\-charging\-infrastructure\-rules/
+185\. https://www.nccoe.nist.gov/projects/cybersecurity\-framework\-profile\-electric\-vehicle\-extreme\-fast\-charging\-infrastructure
+186\. https://nvlpubs.nist.gov/nistpubs/ir/2023/NIST.IR.8473\.ipd.pdf
+187\. https://www.nemko.com/blog/cybersecurity\-requirements\-ce\-marking\-postponed\-till\-1\-august\-2025
+188\. https://data.consilium.europa.eu/doc/document/ST\-12041\-2023\-INIT/en/pdf
+189\. https://www.consilium.europa.eu/media/69093/st16996\-en23\.pdf
+190\. https://digital\-strategy.ec.europa.eu/en/policies/cyber\-resilience\-act
+191\. https://www.electrive.com/2021/04/21/partners\-pledge\-to\-implement\-plugcharge\-across\-europe/
+192\. https://www.charin.global/technology/plug\-charge
+193\. https://www.gov.uk/government/consultations/electric\-vehicle\-smart\-charging/public\-feedback/electric\-vehicle\-smart\-charging\-consultation\-
 summary\-of\-responses
-194\.https:www.legislation.gov.ukuksi20211467made
-195\.https:www.legislation.gov.ukuksi20211467made
-196\.https:assets.publishing.service.gov.ukmedia628ce214e90e071f653a494aGuide\-to\-evscp\-regulations\-2021\-V2\.1\.pdf
-197\.https:www.meti.go.jppress2020112020110500320201105003\-1\.pdf , https:www.dataguidance.comnewsjapan\-meti\-releases\-iot\-security\-
+194\. https://www.legislation.gov.uk/uksi/2021/1467/made
+195\. https://www.legislation.gov.uk/uksi/2021/1467/made
+196\. https://assets.publishing.service.gov.uk/media/628ce214e90e071f653a494a/Guide\-to\-evscp\-regulations\-2021\-V2\.1\.pdf
+197\. https://www.meti.go.jp/press/2020/11/20201105003/20201105003\-1\.pdf , https://www.dataguidance.com/news/japan\-meti\-releases\-iot\-security\-
 and\-safety\-framework 
-198\.https:www.dataguidance.comnewsjapan\-mic\-announces\-publication\-iot\-5g\-security , https:www.soumu.go.jpmenu\_newss\-
-news01cyber01\_02000001\_00036\.html 
-199\.https:www.switch\-ev.comblogwhat\-is\-iso\-15118
-200\.https:en.wikipedia.orgwikiCombined\_Charging\_System
-201\.https:www.switch\-ev.comblogbasics\-of\-plug\-and\-charge
-202\.https:www.charin.globaltechnologyiso15118
-203\.https:www.cinch.co.ukguideselectric\-carswhat\-is\-chademo\-ev\-charging
-204\.https:www.chademo.comdesign\-guideline\-for\-external\-charging\-updated
-205\.https:www.openchargealliance.orgprotocolsocpp\-201
-206\.https:www.linkedin.compulsehow\-does\-ocpp\-201\-iso\-11518\-work\-together\-why\-do\-matter\-beckmann
-207\.https:edpb.europa.eusitesdefaultfilesconsultationedpb\_guidelines\_202001\_connectedvehicles.pdf
-208\.https:foundation.mozilla.orgenprivacynotincludedarticlesits\-official\-cars\-are\-the\-worst\-product\-category\-we\-have\-ever\-reviewed\-for\-privacy
-209\.https:www.nhtsa.govtechnology\-innovationvehicle\-data\-privacy
-210\.https:www.forbes.comsitesstevetengler20220517privacy\-battle\-over\-connected\-cars\-takes\-an\-interesting\-turn\-in\-california
-211\.https:europe.autonews.comguest\-columnistconnected\-cars\-evolving\-eu\-regulatory\-landscape
-212\.https:ec.europa.eucommissionpresscornerdetailenip\_23\_3491, https:www.europarl.europa.eunewsenpress\-room20230609IPR96212
+198\. https://www.dataguidance.com/news/japan\-mic\-announces\-publication\-iot\-5g\-security , https://www.soumu.go.jp/menu\_news/s\-
+news/01cyber01\_02000001\_00036\.html 
+199\. https://www.switch\-ev.com/blog/what\-is\-iso\-15118
+200\. https://en.wikipedia.org/wiki/Combined\_Charging\_System
+201\. https://www.switch\-ev.com/blog/basics\-of\-plug\-and\-charge
+202\. https://www.charin.global/technology/iso15118/
+203\. https://www.cinch.co.uk/guides/electric\-cars/what\-is\-chademo\-ev\-charging
+204\. https://www.chademo.com/design\-guideline\-for\-external\-charging\-updated
+205\. https://www.openchargealliance.org/protocols/ocpp\-201/
+206\. https://www.linkedin.com/pulse/how\-does\-ocpp\-201\-iso\-11518\-work\-together\-why\-do\-matter\-beckmann/
+207\. https://edpb.europa.eu/sites/default/files/consultation/edpb\_guidelines\_202001\_connectedvehicles.pdf
+208\. https://foundation.mozilla.org/en/privacynotincluded/articles/its\-official\-cars\-are\-the\-worst\-product\-category\-we\-have\-ever\-reviewed\-for\-privacy/
+209\. https://www.nhtsa.gov/technology\-innovation/vehicle\-data\-privacy
+210\. https://www.forbes.com/sites/stevetengler/2022/05/17/privacy\-battle\-over\-connected\-cars\-takes\-an\-interesting\-turn\-in\-california/
+211\. https://europe.autonews.com/guest\-columnist/connected\-cars\-evolving\-eu\-regulatory\-landscape
+212\. https://ec.europa.eu/commission/presscorner/detail/en/ip\_23\_3491, https://www.europarl.europa.eu/news/en/press\-room/20230609IPR96212/
 meps\-ready\-to\-negotiate\-first\-ever\-rules\-for\-safe\-and\-transparent\-ai 
-213\.https:ec.europa.eucommissionpresscornerdetailenip\_22\_1113
-214\.https:www.consilium.europa.euenpresspress\-releases20231127data\-act\-council\-adopts\-new\-law\-on\-fair\-access\-to\-and\-use\-of\-data
-215\.https:www.dentons.comeninsightsarticles2023december14the\-new\-eu\-ai\-act\-the\-10\-key\-things\-you\-need\-to\-know\-now 
-216\.https:www.cyberghostvpn.comen\_USprivacyhubdark\-web\-vs\-deep\-web
-217\.https:www.cyberghostvpn.comen\_USprivacyhubdark\-web\-vs\-deep\-web
+213\. https://ec.europa.eu/commission/presscorner/detail/en/ip\_22\_1113
+214\. https://www.consilium.europa.eu/en/press/press\-releases/2023/11/27/data\-act\-council\-adopts\-new\-law\-on\-fair\-access\-to\-and\-use\-of\-data/
+215\. https://www.dentons.com/en/insights/articles/2023/december/14/the\-new\-eu\-ai\-act\-the\-10\-key\-things\-you\-need\-to\-know\-now 
+216\. https://www.cyberghostvpn.com/en\_US/privacyhub/dark\-web\-vs\-deep\-web/
+217\. https://www.cyberghostvpn.com/en\_US/privacyhub/dark\-web\-vs\-deep\-web/
 REFERENCES
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved
 137
-218\.For more details, see Chapter 1
-219\.https:www.csoonline.comarticle3249765what\-is\-the\-dark\-web\-how\-to\-access\-it\-and\-what\-youll\-find.html
-220\.https:en.wikipedia.orgwikiDarknet\_market 
-221\.https:xakcop.composthyundai\-hack\-2 
-222\.https:infosecwriteups.comhow\-i\-hacked\-1000\-tesla\-cars\-using\-osint\-4cd837b8c530; https:www.ctfiot.com142013\.html 
-223\.https:www.nhtsa.govequipmentodometer\-fraud
-224\.https:voonze.comtsmc\-supplier\-suffers\-ransomware\-attack\-and\-has\-data\-leaked\-by\-hacker\-group
-225\.https:www.kendrion.comennews\-eventsnewsnews\-detailkendrion\-experiences\-cyber\-security\-incident 
-226\.https:thecyberexpress.comqilin\-leaks\-data\-from\-the\-tesm\-cyber\-attack 
-227\.https:therecord.mediaorbcomm\-trucking\-software\-ransomware
-228\.https:therecord.mediaknp\-logistics\-ransomware\-insolvency\-uk 
-229\.https:www.gartner.comendocuments3904768
-230\.https:owasp.orgAPI\-Securityeditions2023en0x11\-t10
+218\. For more details, see Chapter 1
+219\. https://www.csoonline.com/article/3249765/what\-is\-the\-dark\-web\-how\-to\-access\-it\-and\-what\-youll\-find.html
+220\. https://en.wikipedia.org/wiki/Darknet\_market 
+221\. https://xakcop.com/post/hyundai\-hack\-2/ 
+222\. https://infosecwriteups.com/how\-i\-hacked\-1000\-tesla\-cars\-using\-osint\-4cd837b8c530; https://www.ctfiot.com/142013\.html 
+223\. https://www.nhtsa.gov/equipment/odometer\-fraud
+224\. https://voonze.com/tsmc\-supplier\-suffers\-ransomware\-attack\-and\-has\-data\-leaked\-by\-hacker\-group/
+225\. https://www.kendrion.com/en/news\-events/news/news\-detail/kendrion\-experiences\-cyber\-security\-incident 
+226\. https://thecyberexpress.com/qilin\-leaks\-data\-from\-the\-tesm\-cyber\-attack/ 
+227\. https://therecord.media/orbcomm\-trucking\-software\-ransomware
+228\. https://therecord.media/knp\-logistics\-ransomware\-insolvency\-uk 
+229\. https://www.gartner.com/en/documents/3904768
+230\. https://owasp.org/API\-Security/editions/2023/en/0x11\-t10/
 REFERENCES
 ABOUT UPSTREAM
 Upstream Security offers a cloud\-based automotive cybersecurity 
 and data management platform purpose\-built for connected vehicles 
-and smart mobility services. Upstreams platform fuses machine 
+and smart mobility services. Upstream’s platform fuses machine 
 learning, data normalization, and digital twin profiling technologies 
 to detect anomalies in real\-time using existing automotive data 
-feeds. Coupled with AutoThreat Intelligence, the first automotive 
+feeds. Coupled with AutoThreat® Intelligence, the first automotive 
 cybersecurity threat intelligence feed, Upstream provides unparalleled 
 cybersecurity and data\-driven insights, seamlessly integrated into the 
-customers environment.
+customer’s environment.
 Upstream is privately funded by Alliance Ventures (Renault, Nissan, 
 Mitsubishi), Volvo Group, BMW, Hyundai, MSI Insurance, Nationwide 
 Insurance, Salesforce Ventures, CRV, Glilot Capital Partners, and 
@@ -5131,4 +5251,4 @@ www.upstream.auto
 CONTACT US:
 hello@upstream.auto
 FOLLOW US:
- 2024 Upstream Security Ltd. All Rights Reserved
+© 2024 Upstream Security Ltd. All Rights Reserved

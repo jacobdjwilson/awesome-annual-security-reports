@@ -1,74 +1,103 @@
-DataGrails Data Privacy Trends Report
 REPORT
+
 2024 Data 
 Privacy Trends 
-Executive Summary
+
+DataGrail’s Data Privacy Trends Report
+
+Executive Summary
+
 Consumers are more aware of the risks related to sharing personal 
 information online. Data privacy laws are getting stricter. And data 
 privacy is more important than ever, especially as GenAI becomes the 
-new standard. DataGrails 2024 Data Privacy Trends Report shows how 
+new standard. DataGrail’s 2024 Data Privacy Trends Report shows how 
 these factors are playing out on the ground and provides a benchmark 
 for businesses to see how they are tracking.
+
 Businesses are receiving more privacy requests, also known as Data 
 Subject Requests (DSRs) every year; we saw a 246% increase in 
 requests from 2021 to 2023\. For every one million consumer identities, 
 manually processing DSRs costs about $800K. Consumers are taking 
 more control over their personal data by, among other things, accessing 
 it, deleting it, or requesting businesses not to sell or share it.
+
 With this report, we hope to provide insights into how many DSRs 
-businesses are getting (spoiler: its a lot more than last year), reveal 
+businesses are getting (spoiler: it’s a lot more than last year), reveal 
 which types of DSRs are most common, uncover the costs of dealing 
 with privacy requests, and reveal one important area in which 
 businesses risk violating the law. Legal and cultural trends mean every 
 company should be taking privacy seriously, and this report can help 
 you navigate this fast\-developing landscape.
-2
+
 datagrail.io
-Highlights
-40%
+
+2
+
+Highlights
+
+An overview of key privacy trends to watch
+
+ 246%
+
+Increase in total DSR volume per 1M identities from 
+2021 to 2023
+
+\~
+
+ 38%
+
+YoY cost increase for DSR 
+management from 2022
+
+ 40%
+
 Of DSRs are deletion 
 requests, far outpacing 
 access requests 
-3
-datagrail.io
-An overview of key privacy trends to watch
-246%
-$881K
-Per year cost of processing Deletion \& 
-Access requests per 1M identities in 2023
-859
+
+ 859
+
 Average number of DSRs 
 per 1M identities in 2023
-75%
-Of organizations re 3 or more cookie 
+
+ $881K
+
+Per year cost of processing Deletion \& 
+Access requests per 1M identities in 2023
+
+ 75%
+
+Of organizations ﬁre 3 or more cookie 
 trackers despite not consenting to 
 tracking; discovered after auditing 
 5000 websites 
-38%
-YoY cost increase for DSR 
-management from 2022
-80%
-DSRs come from the global communityfrom regions not protected by privacy laws 
-Requests come from every state and every country not just those with privacy laws 
+
+ 80%
+
+DSRs come from the global community—from regions not protected by privacy laws 
+Requests come from every state and every country — not just those with privacy laws 
 protecting its citizens. 34% of requests in the U.S. are made by people in states that 
-didnt have privacy laws in effect. 
-Increase in total DSR volume per 1M identities from 
-2021 to 2023
-Methodology
-4
+didn’t have privacy laws in effect. 
+
 datagrail.io
+
+3
+
+Methodology
+
 DataGrail analyzed the Data Subject Requests 
 (DSRs) it helped process on behalf of 
 customers from January 1 \- December 31, 
-1\. The customer set has more than 700 
-million records, where a record is dened as a 
+2023\. The customer set has more than 700 
+million records, where a record is deﬁned as a 
 single, individual record associated with a 
-unique identier within a customer's database. 
+unique identiﬁer within a customer's database. 
 To determine the cost of processing requests, 
-we used Gartners manual processing estimate 
+we used Gartner’s manual processing estimate 
 of $1,524 per DSR. This statistic comes from 
-Gartners 2023 report, Market Guide for 
+Gartner’s 2023 report, Market Guide for 
 Subject Rights Request Automation. 
+
 The dataset includes information from 
 companies of all sizes, from startups to 
 publicly traded household names. To normalize 
@@ -80,12 +109,15 @@ requests per 1M identities per year. Using 578
 as a benchmark, an organization with 3M 
 identities can expect 1,734 Access and 
 Deletion requests per year.
-If we include California\-specic Do Not Sell 
+
+If we include California\-speciﬁc Do Not Sell 
 requests, the numbers rise to 859 requests 
+
 per 1M identities per year. Following the 
 example above, if the organization holds 3M 
 identities, the industry benchmark would be 
 2,577 DSRs per year.
+
 We found the number of DSRs a business 
 receives varies greatly due to multiple factors, 
 including whether the company is B2B or B2C, 
@@ -96,42 +128,60 @@ calculation to determine our benchmarks. A
 10% trim mean calculation excludes the 10% 
 largest and 10% smallest values and takes the 
 mean of the remaining 80%.
+
 The dataset includes DSRs submitted under 
 CCPA and GDPR, along with DSRs received in 
-the US and globally that dont fall under those 
+the US and globally that don’t fall under those 
 regulatory umbrellas. As a United 
 States\-based company, with primarily 
 US\-based customers, our dataset may skew 
 toward DSRs from the US.
+
 To calculate the percentage of organizations 
 not complying with the GPC standard, we 
 audited more that 5,000 websites. 
-Whats a DSR?
+
+What’s a DSR?
 A Data Subject Request (DSR) allows an individual to request that an organization takes 
-certain action over the individuals personal data. There are several types of DSRs, but this 
+certain action over the individual’s personal data. There are several types of DSRs, but this 
 report focuses on requests to access personal data, requests to delete personal data, and 
-requests that a company does not sell or share personal data (Do Not Sell requests).
+requests that a company does not sell or share personal data (“Do Not Sell” requests).
+
 What do we mean by identity?
-Mentions of an identity refer to information associated with a unique record of a single 
-customer or employee at a company. A single identity accounts for one customers 
+Mentions of an “identity” refer to information associated with a unique record of a single 
+customer or employee at a company. A single “identity” accounts for one customer’s 
 personal data within multiple systems across an organization.
-The 2024 State 
+
+datagrail.io
+
+4
+
+The 2024 State 
 of Data Privacy: US \& Europe
+
 Since our 2023 report, privacy has continued to become one of the 
 most important focuses for businesses across the world. This year 
 has seen even more privacy legislation, data\-related legal activity, 
 and awareness of privacy rights among consumers.
-5
-datagrail.io
+
 United States
 
+European Union \& United Kingdom
+
+●
+
+●
+
+●
+
+●
+
 State privacy laws: By the
-end of 2023, 12 states passed comprehensive 
+end of 2023, 12 states passed “comprehensive” 
 privacy laws. So far in 2024, New Jersey, New 
 Hampshire, and Kentucky have joined the 
 privacy club, and Maryland and Nebraska should 
 be enacting such laws soon.
-
 California privacy enforcement: In February, 
 Attorney General Rob Bonta settled a California 
 Consumer Privacy Act (CCPA) complaint 
@@ -140,14 +190,12 @@ information. That same month, California Privacy
 Protection Agency (CPPA) also gained its 
 enforcement powers, so expect more California 
 action soon.
-
 Federal privacy enforcement: Following an 
 extremely busy 2023, the Federal Trade 
 Commission (FTC) continues to push hard 
 against unlawful tracking, issuing an average
 of one privacy enforcement order per month 
-throughout the rst quarter of 2024\.
-
+throughout the ﬁrst quarter of 2024\.
 Federal privacy bill: In early April, the US House 
 of Representatives unexpectedly revealed a 
 draft federal privacy law with strict rules on data 
@@ -155,7 +203,14 @@ minimization, transparency, and data sharing.
 Whether or not the American Privacy Rights Act 
 (APRA) passes, the bill shows how privacy is 
 becoming an increasingly crucial issue in the US.
-European Union \& United Kingdom
+
+●
+
+●
+
+●
+
+●
 
 EU court rulings: After countless GDPR 
 judgments throughout 2023, the Court of 
@@ -163,24 +218,30 @@ Justice of the European Union (CJEU) began
 2024 with further important data protection 
 rulings, including on:
 
-Digital advertising (Case C60422 
+○
+
+○
+
+○
+
+Digital advertising (Case C‑604/22 
 involving the Interactive Advertising 
 Bureau, IAB) 
-
 The wide scope of the GDPR (Case 
-C\-74022, Endemol Shine)
+C\-740/22, “Endemol Shine”)
+The broad deﬁnition of “personal data” 
+(Case C‑479/22 P, “OC”)
 
-The broad denition of personal data 
-(Case C47922 P, OC)
-
-GDPR nes: Penalties under the GDPR continue 
-to bite, with signicant regulatory decisions 
+GDPR ﬁnes: Penalties under the GDPR continue 
+to bite, with signiﬁcant regulatory decisions 
 issued:
 
+○
+○
+○
+
 Meta: $1\.3 billion (data transfers)
-
 TikTok: $415 million (privacy by design)
-
 Criteo: $42 million (failure to obtain 
 consent)
 
@@ -188,248 +249,345 @@ UK reforms advance: UK lawmakers are debating
 plans to reform data protection and privacy law, 
 which could complicate compliance for UK 
 businesses.
-
-AI Act nalized: The EUs institutions agreed 
-landmark rules regulating articial intelligence, 
+AI Act ﬁnalized: The EU’s institutions agreed 
+landmark rules regulating artiﬁcial intelligence, 
 adding to a barrage of complex digital 
 regulations passed in recent years.
-Privacy Requests Increased 
+
+datagrail.io
+
+5
+
+Privacy Requests Increased 
 246% in Two Years
+
 Businesses received nearly one\-third more Data 
 Subject Requests (DSRs) in 2023 compared to 2022\. 
-Requests of all typesaccess, delete, or sale 
-opt\-outs increased.
-6
-datagrail.io
+Requests of all types—access, delete, or sale 
+opt\-outs— increased.
+
+DSRs per Million Users 2021\-2023
+
+27
+
 Why are the number of DSRs continuing to climb?
-Across the US, ve new state laws took effect last year that give consumers 
-new rights over their personal data.Many similar laws passed in other states 
+
+Across the US, ﬁve new state laws took effect last year that give consumers 
+new rights over their personal data. Many similar laws passed in other states 
 that will take effect over the next few years. This trend suggests a growing 
 privacy awareness among consumers, partly due to these new laws passing, 
 frequent privacy enforcement action from the FTC, and increased media 
 attention on privacy.
+
 On average, 
 businesses 
 received 859 DSRs 
 per one million 
 identities in 2023 
-DSRs per Million Users 2021\-2023
-27
-Deletion Is the Most 
-Common Type of Request
-Privacy Requests to delete personal data exceed access 
-and do not sell requests for the third year running
-7
+
 datagrail.io
-We focus on three main types of DSR: Requests to access personal data, delete personal 
-data, and requests opt out of the sale and sharing of personal data (Do Not Sell 
-requests)as these are the most popular requests.Every comprehensive privacy law in the 
-US includes the right to delete personal data under certain conditions.We also saw 
-requests to correct inaccurate personal data and requests under the right to data 
-portability, but not enough to establish any trends.
+
+6
+
+Deletion Is the Most 
+Common Type of Request
+
+Privacy Requests to delete personal data exceed access 
+and ‘do not sell’ requests for the third year running
+
 Consumers continue to ask businesses to delete their personal data, making it the most 
 common type of DSR, accounting for more than 40% of requests on average across 
 businesses. While deletion requests remain most common, access requests have increased 
-most signicantly, booming by around 50% since the previous year.
+most signiﬁcantly, booming by around 50% since the previous year.
+
 2023 Breakdown By DSR Type
-The Cost of Data Privacy 
-Continues to Rise
-Manual processing of DSRs can cost $1M per year, or more.
-8
+
+We focus on three main types of DSR: Requests to access personal data, delete personal 
+data, and requests opt out of the sale and sharing of personal data (“Do Not Sell” 
+requests)—as these are the most popular requests. Every comprehensive privacy law in the 
+US includes the right to delete personal data under certain conditions. We also saw 
+requests to correct inaccurate personal data and requests under the “right to data 
+portability,” but not enough to establish any trends.
+
 datagrail.io
-Total cost of DSR 
-management 
-increased by 38% 
-year over year
+
+7
+
+The Cost of Data Privacy 
+Continues to Rise
+
+Manual processing of DSRs can cost $1M per year, or more.
+
 Businesses manually processing DSRs face high costs as the number of 
-requests increases.According to Gartner, a single access or deletion request 
+requests increases. According to Gartner, a single access or deletion request 
 costs around $1,524 to complete. Our data suggests that a company handling 
 one million identities receives 578 access and deletion requests in an 
-average year. Based on Gartners estimate, manually processing DSRs could 
+average year. Based on Gartner’s estimate, manually processing DSRs could 
 cost around $811,305 per every million identities.
+
+2023 Cost of DSR Management Over Time
+
+$41,148\.00
+
 As businesses collect more data and privacy requests increase, handling 
-DSRs becomes difcult and expensive.Companies can struggle to locate 
+DSRs becomes difﬁcult and expensive. Companies can struggle to locate 
 data stored in different formats across different systems, all while ensuring 
 they do not violate the rights of other consumers. Businesses face a huge rise 
 in costs unless they automate parts of the DSR process. These costs 
 estimates do not include requests relating to other rights, such as requests 
 to opt out of the sale and sharing of personal data.
+
 DSR Management 
 can cost $811K Year 
 per 1M Identities
-2023 Cost of DSR Management Over Time
-$41,148\.00
-Opting\-Out Is Becoming 
-Mainstream
-Consumers are automating Do Not Sell requests; 
-around 75% of businesses are not honoring them.
-9
+
+Total cost of DSR 
+management 
+increased by 38% 
+year over year
+
 datagrail.io
+
+8
+
+Opting\-Out Is Becoming 
+Mainstream
+
+Consumers are automating “Do Not Sell” requests; 
+around 75% of businesses are not honoring them.
+
 Universal Opt Out Mechanisms (UOOMs) enable consumers to automatically tell businesses 
 not to sell or share their personal data for advertising. Until recently, honoring UOOM signals 
-has been optional in the US. This is changing.California already requires CCPA\-covered 
+has been optional in the US. This is changing. California already requires CCPA\-covered 
 businesses to detect and honor requests made via Global Privacy Control (GPC) and other 
 common UOOMs. A similar rule takes effect in Colorado from July 2024, and many other 
 states will follow over the next few years. DataGrail analyzed over 5,000 websites to check 
 how businesses respond to GPC signals. We found that 75% of websites did not honor
-Do Not Sell requests via GPC.
-GPC is a way users can universally express, to 
+“Do Not Sell” requests via GPC.
+
+75%
+
+Our research suggests that 75% of 
+websites do not comply with GPC 
+requests. This means most businesses
+are not honorings people’s do\-not\-sell 
+privacy requests. Some could be violating 
+current law or be unprepared for 
+upcoming legal changes.
+
+”GPC is a way users can universally express, to 
 all sites, their preference not to be tracked on 
 the web. It is a browser\-level signal, 
 maintained either by a browser or browser 
 extension, that a user or privacy\-focused 
 technology can set. The easiest way to think of 
 GPC is as a robot that selects the Do Not Sell 
-preference on a site on behalf of a user.
-UOOMs automate requests under Californias 
-Do Not Sell Or Share My Personal Information 
-rules and similar laws. Such requests are rising 
-and will likely increase signicantly as new laws 
-take effect.
-Additional Resources:
-What is GPC
-Do\-Not\-Sell or Share Guide
-Navigating Privacy: Understanding Consent and 
-Universal Opt\-Out Methods
-75%
+preference on a site on behalf of a user.”
+
 2023 Volume of Do\-Not\-Sell 
 Requests per 1M Identities
-Our research suggests that 75% of 
-websites do not comply with GPC 
-requests. This means most businesses
-are not honorings peoples do\-not\-sell 
-privacy requests. Some could be violating 
-current law or be unprepared for 
-upcoming legal changes.
-Privacy Requests Across 
+
+UOOMs automate requests under California’s 
+“Do Not Sell Or Share My Personal Information” 
+rules and similar laws. Such requests are rising 
+and will likely increase signiﬁcantly as new laws 
+take effect.
+
+Additional Resources:
+
+What is GPC
+
+Do\-Not\-Sell or Share Guide
+
+Navigating Privacy: Understanding Consent and 
+Universal Opt\-Out Methods
+
+datagrail.io
+
+9
+
+Privacy Requests Across 
 Industries
+
 Industries with a lot of online communications see the 
 most requests
-10
-datagrail.io
-Lots of personal 
-data collected
-\+ 
-Online 
-communicationsMore DSRs
+
 Our data shows how many DSRs consumers make to businesses across 
-different industries. Ecommerceor brands that have a direct to consumer 
-(D2C) online relationship typically receive the most DSRs. They receive
+different industries. Ecommerce—or brands that have a direct to consumer 
+(D2C) online relationship —typically receive the most DSRs. They receive 
 nearly double the overall average number of DSRs. Marketing tech (MarTech) 
 companies come second. Both these types of companies operate mainly 
 online and can engage in intensive marketing campaigns, meaning they 
 collect a lot of personal data.
+
+2023 Volume of DSRs by Industry
+
+Lots of personal 
+data collected
+\+ 
+Online 
+communications
+
+More DSRs
+
 Industry descriptions:
 
-Retail:We distinguished retail brands from ecommerce brands as those who typically sell in a brick \& mortar 
+●
+
+●
+
+●
+
+●
+
+Retail: We distinguished retail brands from ecommerce brands as those who typically sell in a “brick \& mortar” 
 setting, vs. online. 
-
 Ecommerce: This includes brands whose primary go\-to\-market model is selling directly online to consumers. This 
-also includes the growing Wellness market, MLM companies, consumer marketplaces, and or consumer health 
-companies that may hold a lot of sensitive data.
-
+also includes the growing “Wellness” market, MLM companies, consumer marketplaces, and or consumer health 
+companies that may hold a lot of sensitive data. 
 B2B Technology: This includes several enterprise technology companies. Companies that provide software ranging 
 from database software and APIs to HR system software.
-
-Marketing Tech:Because marketing \& sales technology includes email, CRM, surveys, and communications 
-technology, we pulled Marketing Technology out into its own category.Typically this bucket represents businesses 
+Marketing Tech: Because marketing \& sales technology includes email, CRM, surveys, and communications 
+technology, we pulled Marketing Technology out into its own category. Typically this bucket represents businesses 
 who market in a B2B setting.
-2023 Volume of DSRs by Industry
-Privacy Requests Can 
+
+datagrail.io
+
+10
+
+ 
+Privacy Requests Can 
 Come From Practically 
 Anywhere
+
 Consumers worldwide want control over their data 
-even if theyre not protected by privacy law; and 
+even if they’re not protected by privacy law; and 
 businesses are honoring their requests.
-11
-datagrail.io
-Note: As a United States\-based company with a larger regional footprint in the US, our data skews toward privacy 
-requests coming from the US and may not be an accurate reection of total global requests. Many DataGrail 
-customers apply GDPR\-grade DSR processes across the board, which helps to ensure good customer relations
-and improves the efciency of their privacy programs.
+
 46% of DSRs arrived from IP addresses located outside the US, Canada, China, 
 Brazile the UK, or the EU (regions with privacy laws). As such, people making 
 these requests might not be covered by strong privacy laws. Around 12\.5% of 
 US\-based DSRs came from states with laws already on the books (CA, CO, \& CT), 
-yet 34% are coming from states without privacy protections, suggestingpeople 
+yet 34% are coming from states without privacy protections, suggesting people 
 from across the US are submitting requests regardless of their level of legal 
-protection. Consumers want more control over their data even if they dont have 
-legally\-protected privacy rights.
+protection. Consumers want more control over their data even if they don’t have 
+legally\-protected privacy rights. 
+
 DSRs By Policy in 2023
+
 80%
+
 of DSRs in 2023 came from 
-jurisdictions that didnt have 
+jurisdictions that didn’t have 
 strong privacy laws, 
 evidence that people around 
 the world want more control 
 over their personal data. 
-Data Privacy has arrived:
-Its time to adapt
+
+Note: As a United States\-based company with a larger regional footprint in the US, our data skews toward privacy 
+requests coming from the US and may not be an accurate reﬂection of total global requests. Many DataGrail 
+customers apply GDPR\-grade DSR processes across the board, which helps to ensure good customer relations
+and improves the efﬁciency of their privacy programs.
+
+datagrail.io
+
+11
+
+Data Privacy has arrived:
+It’s time to adapt
+
 Privacy laws are proliferating, awareness of rights is increasing, and 
 the costs could spiral if organizations fail to act
-12
-datagrail.io
+
 When the EU passed the GDPR in 2016, many 
 countries strengthened their data protection 
 and privacy laws. It took a few years for this 
 legal trend to hit the US, but now around 
 one\-third of states have passed 
 comprehensive privacy laws.
-Before our next report in 2025, privacy laws 
-will start to take effect in states like Delaware, 
-Florida, Iowa, Montana, Oregon, and Texas. Well 
-continue to see enforcement of existing laws 
-in the US, the EU, and elsewhere.
-We also expect more consumers to use 
-Universal Opt\-Out Mechanisms (UOOMs) to 
-automate Do Not Sell requests. In more and 
-more states, honoring these requests will 
-become mandatorybut our research 
-suggests that most companies are not ready 
-for this new landscape.
+
 Against this backdrop, consumers are waking 
 up to how their data is collected, used, and 
 shared online. Privacy requests are booming 
 year on year, with businesses facing on 
 average 859 DSRs per one million identities in 
 2023 compared to 377 in 2021\.
+
+Before our next report in 2025, privacy laws 
+will start to take effect in states like Delaware, 
+Florida, Iowa, Montana, Oregon, and Texas. We’ll 
+continue to see enforcement of existing laws 
+in the US, the EU, and elsewhere.
+
+We also expect more consumers to use 
+Universal Opt\-Out Mechanisms (UOOMs) to 
+automate “Do Not Sell” requests. In more and 
+more states, honoring these requests will 
+become mandatory—but our research 
+suggests that most companies are not ready 
+for this new landscape.
+
 But as our data shows, DSRs can come from 
-anywhere. Whether or not theyre covered by a 
+anywhere. Whether or not they’re covered by a 
 privacy law, consumers want more control 
 over how businesses use their personal data. 
-This trend isnt going away. For unprepared 
+This “trend” isn’t going away. For unprepared 
 businesses, the costs could be eye\-watering.
+
 As legal demands and consumer expectations 
 increase, take control of your privacy program 
-with an automated platform that efciently 
+with an automated platform that efﬁciently 
 handles all types of privacy requests.
-Learn More About DataGrail
-13
+
 datagrail.io
-Learn how DataGrail supports Do Not Sell or 
-Share with GPC opt\-out signals through a 
-no\-code, bannerless solution. Download the 
-Guide. 
-Sign up for our Grail Mail newsletter and 
-explore our library of on\-demand resources to 
-stay on top of data privacy and business risk.
-DataGrail is the Privacy Control Center modern brands rely on to build customer trust and 
+
+12
+
+Learn More About DataGrail
+
+DataGrail is the Privacy Control Center™ modern brands rely on to build customer trust and 
 outsmart business risk. 
-Security, legal, and executive teams use DataGrail to automate privacy workows and support 
+
+Security, legal, and executive teams use DataGrail to automate privacy workﬂows and support 
 compliance with regulations like GDPR, CCPA, and CPRA. With 2,000\+ pre\-built connections for 
 popular apps and infrastructure, DataGrail offers continuous system detection, responsible data 
-discovery, guided privacy assessments, and automated data subject request (DSR) fulllment to 
+discovery, guided privacy assessments, and automated data subject request (DSR) fulﬁllment to 
 power the world's most trusted businesses.
+
 DataGrail services millions of consumers through companies like Amazon, Salesforce, Overstock, 
 Instacart, and New Balance, and is a G2 leader. DataGrail is backed by leading VCs and strategic 
 investors, including Third Point Ventures, Felicis Ventures, Next47, Cloud Apps Capital Partners, 
 Operator Collective, HubSpot, Okta Ventures, and American Express Ventures. 
+
 Visit www.datagrail.io or follow DataGrail on LinkedIn and Twitter to learn more.
+
 How to Get Started
+
+Learn how DataGrail supports Do Not Sell or 
+
+Sign up for our Grail Mail newsletter and 
+
+Share with GPC opt\-out signals through a 
+
+explore our library of on\-demand resources to 
+
+no\-code, bannerless solution. Download the 
+Guide. 
+
+stay on top of data privacy and business risk.
+
 Connect with other pros to discuss which 
+
 privacy management models work for them.
 Join the Community.
+
 Check out a demo of DataGrail to see how it 
-can help you automate DSRs, nd Shadow IT 
-and AI,manage consent, or develop privacy 
-risk assessments
+can help you automate DSRs, ﬁnd Shadow IT 
+
+and AI, manage consent, or develop privacy 
+
+risk assessments 
+
+datagrail.io
+
+13

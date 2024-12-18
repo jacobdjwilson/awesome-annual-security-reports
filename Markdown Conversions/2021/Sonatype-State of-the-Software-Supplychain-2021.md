@@ -1,4 +1,4 @@
-The 7th Annual Report on Global
+The 7th Annual Report on Global 
 Open Source Software Development
 State
 of 
@@ -9,71 +9,77 @@ Supply Chain
 PRESENTED BY
 Contents
 Introduction.
-3
+............................................................3
 CHAPTER 1
 Open Source Supply, Demand, and 
-Security5
+Security....................................................................5
 Open Source Supply.
-6
+....................................................6
 Open Source Demand.
-8
-Open Source Security9
-Software Supply Chain
-Attacks Increase 650%10
+................................................8
+Open Source Security..................................................9
+Software Supply Chain 
+Attacks Increase 650%...............................................10
 Front Page News.
-11
+...........................................................11
 CHAPTER 2
 Understanding Exemplary and Non\-
 Exemplary Open Source Projects.
-15
-Open Source Project Quality Metrics16
+...............15
+Open Source Project Quality Metrics....................16
 Quality Metric Comparison.
-18
-Research Findings19
+.......................................18
+Research Findings........................................................19
 Guidance for Open Source P 
-roject Owners and Contributors20
-Guidance for Enterprise
+roject Owners and Contributors............................20
+Guidance for Enterprise 
 Development Teams.
-20
+.................................................20
 CHAPTER 3
 Peer Practices Associated With Micro and 
-Macro Dependency Management21
-To Update or Not:
-An Empirical View of Micro
-Dependency Management 22
-Selecting the Best Projects:
-Reflections on Macro
-Architectural Decisions 29
-Conclusions and
-Practical Recommendations 29
+Macro Dependency Management..............21
+To Update or Not: 
+An Empirical View of Micro 
+Dependency Management..................................... 22
+Selecting the Best Projects: 
+Reflections on Macro 
+Architectural Decisions............................................. 29
+Conclusions and 
+Practical Recommendations................................... 29
 CHAPTER 4
- Software Supply Chain Maturity 30
-How Mature are Todays
+ Software Supply Chain Maturity ...............30
+How Mature are Today’s 
 Software Supply Chains? .
-32
-Reality vs. Perception on
-Software Supply Chain Maturity 32CHAPTER 5
+.........................................32
+Reality vs. Perception on 
+Software Supply Chain Maturity ............................32
+ 
+ 
+ 
+ 
+ 
+CHAPTER 5
 Emergence of Software Supply Chain 
-Regulation and Standards33
-Whats Happening in the United States? .
-34
-Whats Happening
+Regulation and Standards.............................33
+What’s Happening in the United States? .
+...........34
+What’s Happening 
 in the United Kingdom? .
-35
-Whats Happening
-in Germany? 36
-Whats Happening
-in the European Union? 36
-Whats Happening Globally
-37
-About the Analysis38
-Acknowledgments39
+............................................35
+What’s Happening 
+in Germany? ..................................................................36
+What’s Happening 
+in the European Union? ............................................36
+What’s Happening Globally?.
+...................................37
+About the Analysis............................................38
+Acknowledgments............................................39
 2
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
 Introduction
 In 1849, French writer Jean\-Baptiste Alphonse Karr 
-famously said, the more things change, the more 
-they stay the same. While he obviously wasnt 
+famously said, “the more things change, the more 
+they stay the same.” While he obviously wasn’t 
 talking about open source software (OSS), digital 
 supply chains, or application innovation during 
 a global pandemic, he might as well have been. 
@@ -91,20 +97,20 @@ pandemic, so too did the number of cyber\-attacks
 aimed at exploiting software supply chains.
 And yet, much has stayed the same. Top\-
 performing companies like Apple, Goldman Sachs, 
-and Amazon and more recently, Zoom, Peloton, 
+and Amazon — and more recently, Zoom, Peloton, 
 and Wayfair have mastered three key competitive 
 advantages: knowing how to use open source and 
 third\-party innovation at scale, integrating security 
 and risk controls into multiple phases of the 
 software supply chain, and releasing higher quality 
 code faster than their competitors.
-Now in its seventh year, Sonatypes 2021 State 
+Now in its seventh year, Sonatype’s 2021 State 
 of the Software Supply Chain Report blends a 
 broad set of public and proprietary data to reveal 
 important findings.
 Together with our partners, we are proud to share 
 this research. We hope that you find it valuable.
-Open source
+Open source 
 supply is accelerating. 
 The top four open source 
 ecosystems released a 
@@ -120,7 +126,7 @@ representing a 20% year
 over year (YoY) growth 
 in global supply of open 
 source. 
-Open source
+Open source 
 demand is exploding. 
 In 2021 developers around the 
 world will request more than 2\.2 
@@ -144,15 +150,15 @@ suggests that the vast majority of security research (blackhat and
 whitehat) is focused on finding and reporting vulnerabilities in projects 
 that are most commonly utilized. 
 37 Million
-OSS component
+OSS component 
 versions now 
 available
 6 Million
 new versions 
-introduced in
+introduced in 
 past year
 73% 
-YoY growth
+YoY growth 
 of component downloads
 29% 
 6\.5% 
@@ -186,11 +192,11 @@ neering teams actively update only 25% of components
 utilized. Such efforts 
 are highly variable and 
 frequently suboptimal, 
-yet there is wisdom in
-the crowd that can be
+yet there is wisdom in 
+the crowd that can be 
 distilled. Newer 
-versions of projects
-are generally better,
+versions of projects 
+are generally better, 
 but not always best.
 Standardizing 
 architectural guidance 
@@ -221,17 +227,17 @@ YoY increase in cyber\-
 attacks aimed at open 
 source suppliers
 Only 25% 
-of utilized components
+of utilized components 
 are updated actively
-1 100,000 anonymized, validated applications scanned by publicly available and commercial vulnerability analysis tools.
+1  100,000 anonymized, validated applications scanned by publicly available and commercial vulnerability analysis tools.
 Intelligent automation 
 could save companies 
 $192,000
  per year
 702
-IT professionals
+IT professionals 
 surveyed
-There is a disconnect between subjective survey
+There is a disconnect between subjective survey 
 feedback and objective data. 
 People believe they are doing a good job remediating defective components 
 and indicate that they understand where risk resides. Objectively, research 
@@ -273,7 +279,7 @@ and by the creation of altogether new projects.
 Currently, the top four open source ecosystems 
 contain a combined 37,451,682 components and 
 packages. These same communities released a 
-combined 6,302,733 new versions of components 
+combined 6,302,733 new versions of components / 
 packages over the past year and have introduced 
 723,570 brand new projects in support of 27 million 
 developers worldwide.
@@ -288,20 +294,20 @@ from, up 19% from last year.
 In the past year alone, project owners released 
 more than 1\.1 million new versions of existing 
 components, and introduced 136,000 brand new 
-projects to service and support approximately
+projects to service and support approximately 
 eight million Java developers.
 FIGURE 1\.1
 2021 SOFTWARE SUPPLY CHAIN STATISTICS
 ECOSYSTEM 
-TOTAL
+TOTAL 
 PROJECTS
-TOTAL
+TOTAL 
 PROJECT VERSIONS 
-ANNUAL
+ANNUAL 
 DOWNLOAD VOLUME
-YOY
+YOY 
 DOWNLOAD GROWTH
-ECOSYSTEM
+ECOSYSTEM 
 PROJECT UTILIZATION
 VULN DENSITY FOR 
 UTILIZED VERSIONS
@@ -341,7 +347,7 @@ Python
 2%
 15%
 6%
-Totals 
+Totals/ 
 Averages
 3M
 37M
@@ -350,15 +356,15 @@ Averages
 6%
 29%
 6\.5%
-A minefield of
+A minefield of 
 known (and unknown) 
 security risks lurk within 
 the 37 million available 
 project versions. 
-2 YoY growth estimated based on known PyPi downloads from March to August 2021 as queried from pypistats.org.
+2  YoY growth estimated based on known PyPi downloads from March to August 2021 as queried from pypistats.org.
 6
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R1 :OPE NS OURC ES UPP LY,DEMAND,AN DS ECURITY
+C H A P T E R 1 : O P E N S O U R C E S U P P LY, D E M A N D, A N D S E C U R I T Y
 JavaScript
 As of July 31, 2021 there were 1,864,696 JavaScript 
 packages available in the npm repository, up 16% 
@@ -390,7 +396,7 @@ FIGURE 1\.2
 AVAILABLE SUPPLY OF OPEN SOURCE, 2021
 7
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R1 :OPE NS OURC ES UPP LY,DEMAND,AN DS ECURITY
+C H A P T E R 1 : O P E N S O U R C E S U P P LY, D E M A N D, A N D S E C U R I T Y
 Open Source Demand
 In 2021, developers around the world will borrow 
 more than 2\.2 trillion open source packages 
@@ -402,13 +408,13 @@ Java
 Through the first seven months of 2021, 267 billion 
 Java components were downloaded from the 
 Maven Central Repository. At this rate, the volume 
-3 pypistats.org
-for 2021 is projected to be over 457 billion,
+3  pypistats.org
+for 2021 is projected to be over 457 billion, 
 a 71% YoY increase.
 JavaScript
 In 2020, JavaScript developers requested more 
 than one trillion packages from npmjs. The 
-volume for 2021 is expected to reach 1\.5 trillion,
+volume for 2021 is expected to reach 1\.5 trillion, 
 a 50% YoY increase.
 Python
 In 2020, Python developers downloaded 66 billion3 
@@ -424,12 +430,12 @@ In 2021 developers will download more than 78
 billion packages, representing a 78% YoY growth.
 FIGURE 1\.3
 INCREASE IN DOWNLOADS
-Year Over Year 2020 2021 
+Year Over Year 2020 – 2021 
 FIGURE 1\.4
 ANNUAL DOWNLOAD VOLUMES, 2021
 8
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R1 :OPE NS OURC ES UPP LY,DEMAND,AN DS ECURITY
+C H A P T E R 1 : O P E N S O U R C E S U P P LY, D E M A N D, A N D S E C U R I T Y
 FIGURE 1\.5
 VULNERABLE RELEASE DENSITY VS. POPULARITY
 Open Source Security
@@ -438,7 +444,7 @@ software supply chains is massive. But is it secure?
 Are certain open source ecosystems more or less 
 risky? Are certain projects safer than others? Are 
 popular projects more or less likely to have known 
-vulnerabilities? Heres what the data reveals.
+vulnerabilities? Here’s what the data reveals.
 When examining the top 10% of the most popular 
 Java, JavaScript, Python, and .NET projects, 29% of 
 them contain at least one known security vulnera\-
@@ -454,7 +460,7 @@ bility density between popular and non popular
 open source projects, we also present below the 
 9
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R1 :OPE NS OURC ES UPP LY,DEMAND,AN DS ECURITY
+C H A P T E R 1 : O P E N S O U R C E S U P P LY, D E M A N D, A N D S E C U R I T Y
 aggregate vulnerability density for each of the 
 four ecosystems.
 Java (Maven)
@@ -464,7 +470,13 @@ least one known security vulnerability. To exclude
 low level security issues, we determined severity 
 based on the Common Vulnerability Scoring 
 System (CVSS), for medium (5\), high (7\), and critical 
-(9\), Of the issues identified:356,808 (4\.9%) had a CVSS of 9 or higher488,826 (6\.7%) had a CVSS of 7 or higher598,364 (8\.2%) had a CVSS of 5 or higher
+(9\), Of the issues identified:
+ 
+⊲356,808 (4\.9%) had a CVSS of 9 or higher
+ 
+⊲488,826 (6\.7%) had a CVSS of 7 or higher
+ 
+⊲598,364 (8\.2%) had a CVSS of 5 or higher
 For the past eight years, Sonatype has also 
 analyzed the patterns and practices associated 
 with Java components being downloaded from 
@@ -474,33 +486,51 @@ one known vulnerability.
 JavaScript (npm)
 As of July 31, 2021, 459,576 (2\.2%) project versions 
 housed in npm contain at least one known security 
-vulnerability. Of the issues identified:250,002 (1\.2%) had a CVSS of 9 or higher350,737 (1\.6%) had a CVSS of 7 or higher450,734 (2\.1%) had a CVSS of 5 or higher
+vulnerability. Of the issues identified:
+ 
+⊲250,002 (1\.2%) had a CVSS of 9 or higher
+ 
+⊲350,737 (1\.6%) had a CVSS of 7 or higher
+ 
+⊲450,734 (2\.1%) had a CVSS of 5 or higher
 Notably, however, of the nearly 1\.9 million 
 JavaScript top level projects available, only 2% of 
 those are being used with any regularity.
 Python (pypi)
 As of July 31, 2021, 147,994 (0\.5%) package versions 
 housed in the PyPI repository contained at least one 
-known security vulnerability. Of the issues identified:81,731 (.4%) had a CVSS of 9 or higher111,970 (.4%) had a CVSS of 7 or higher143,902 (.5%) had a CVSS of 5 or higher
+known security vulnerability. Of the issues identified:
+ 
+⊲81,731 (.4%) had a CVSS of 9 or higher
+ 
+⊲111,970 (.4%) had a CVSS of 7 or higher
+ 
+⊲143,902 (.5%) had a CVSS of 5 or higher
 .NET (Nuget)
 As of July 31, 2021, 112,031 (2%) of package 
 versions housed in the NuGet Gallery contained 
 at least one known security vulnerability. Of the 
-issues identified:27,288 (.5%) had a CVSS of 9 or higher99,096 (1\.7%) had a CVSS of 7 or higher110,764 (1\.9%) had a CVSS of 5 or higher
+issues identified:
+ 
+⊲27,288 (.5%) had a CVSS of 9 or higher
+ 
+⊲99,096 (1\.7%) had a CVSS of 7 or higher
+ 
+⊲110,764 (1\.9%) had a CVSS of 5 or higher
 Software Supply Chain 
 Attacks Increase 650%
-Members of the worlds open source community 
+Members of the world’s open source community 
 are facing a novel and rapidly expanding threat 
 that has nothing to do with passive adversaries 
-exploiting known vulnerabilities in the wild and 
+exploiting known vulnerabilities in the wild — and 
 everything to do with aggressive attackers implant\-
 ing malware directly into open source projects to 
 infiltrate the commercial supply chain.
-Legacy software supply chain exploits," such as 
+Legacy software supply chain “exploits," such as 
 the now infamous 2017 Struts incident at Equifax, 
 prey on publicly disclosed open source vulnera\-
 bilities that are left unpatched in the wild. Next\-
-generation software supply chain attacks are far 
+generation software supply chain “attacks” are far 
 more sinister, however, because bad actors are no 
 longer waiting for public vulnerability disclosures 
 to pursue an exploit. Instead, they are taking the 
@@ -509,19 +539,19 @@ open source projects that feed the global supply
 chain, and then exploiting those vulnerabilities 
 FIGURE 1\.6
 NEXT GENERATION SOFTWARE SUPPLY 
-CHAIN ATTACKS (2015 2021\)
+CHAIN ATTACKS (2015 – 2021\)
 Dependency Confusion, Typosquatting, and Malicious Code Injection
 10
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R1 :OPE NS OURC ES UPP LY,DEMAND,AN DS ECURITY
+C H A P T E R 1 : O P E N S O U R C E S U P P LY, D E M A N D, A N D S E C U R I T Y
 before they are discovered. By shifting their attacks 
-upstream," bad actors can gain leverage and the 
+“upstream," bad actors can gain leverage and the 
 crucial benefit of time that that enables malware to 
 propagate throughout the supply chain, enabling 
-far more scalable attacks on downstream users.
+far more scalable attacks on “downstream” users.
 According to security researchers at the University 
 of Bonn, SAP Labs France, and Fraunhofer FKIE, 
-From an attackers point of view, \[large scale, 
+“From an attacker’s point of view, \[large scale, 
 public internet\-based] package repositories 
 represent a reliable and scalable malware distribu\-
 tion channel. Thus far, Node.js (npm) and Python 
@@ -544,9 +574,9 @@ downstream automatically, without relying on
 typosquatting or brandjacking techniques. The 
 technique involves a bad actor determining the 
 names of proprietary (inner source) packages 
-utilized by a companys production application. 
-4 arxiv.orgpdf2005\.09535\.pdf
-5 12,000 statistic counts PyPI and npm 5k package flood as a single attack; not multiple attacks.
+utilized by a company’s production application. 
+4  arxiv.org/pdf/2005\.09535\.pdf
+5  12,000 statistic counts PyPI and npm 5k package flood as a single attack; not multiple attacks.
 Equipped with this information, the bad actor then 
 publishes a malicious package using the exact 
 same name, and a newer semantic version, to a 
@@ -558,14 +588,14 @@ namespace confusion has alone accounted for
 instances of attempted or confirmed supply chain 
 attacks.5 This attack vector relies on the long estab\-
 lished convention in some programming languages 
-to fetch the LATEST version of any package.
+to fetch the “LATEST” version of any package.
 Typosquatting
 Typosquatting was the second most common tech\-
 nique over the past year. This indirect attack vector 
 preys on developers making otherwise innocent 
 typos when searching for popular components. For 
-example, if a developer accidentally types electorn 
-when their intention is to source electron," they 
+example, if a developer accidentally types “electorn” 
+when their intention is to source “electron," they 
 might accidentally install a malicious component of a 
 similar name (see electorn, September 2020\).
 Malicious Source Code Injections
@@ -573,17 +603,25 @@ Malicious Source Code Injections are another type
 of attack that have been less prevalent in the past 
 year compared to previous years. Such attacks 
 involve injecting malicious source code directly into 
-an open source projects repository, and have been 
-conducted in various ways, including:stealing credentials from a project maintainer (see 
-rest\-client, 819\)releasing new versions of a project to a public 
-repository (see bootstrap\-sass, 419\)contributing pull requests to a project that 
-includes malicious code (see event\-stream, 1118\)tampering with open source developer tools that 
+an open source project’s repository, and have been 
+conducted in various ways, including:
+ 
+⊲stealing credentials from a project maintainer (see 
+rest\-client, 8/19\)
+ 
+⊲releasing new versions of a project to a public 
+repository (see bootstrap\-sass, 4/19\)
+ 
+⊲contributing pull requests to a project that 
+includes malicious code (see event\-stream, 11/18\)
+ 
+⊲tampering with open source developer tools that 
 inject malicious code into downstream applica\-
-tions (see Octopus Scanner, 520\). 
+tions (see Octopus Scanner, 5/20\). 
 With code injections, it is likely that no one knows 
 the malware is there, except for the person that 
 planted it. This approach allows adversaries to 
-surreptitiously set traps upstream, and then carry 
+surreptitiously “set traps” upstream, and then carry 
 out attacks downstream once the vulnerability has 
 moved through the supply chain and into the code 
 bases of thousands of companies. 
@@ -592,29 +630,29 @@ In the past year, numerous high\-profile and
 prominent attacks demonstrated how supply chain 
 threats affect not only third\-party application level 
 libraries and tools, but also first\-party source code. 
-The European Unions Cybersecurity Agency 
+The European Union’s Cybersecurity Agency 
 (ENISA) predicts these types of supply chain attacks 
 are expected to increase 4x in 2021\. 
-SolarWinds December 2020
+SolarWinds — December 2020
 The massive SolarWinds Orion attack publicized in 
 December 2020 marked the most notable supply 
 chain attack of the past year. The attack started 
-with threat actors gaining access to SolarWinds 
+with threat actors gaining access to SolarWinds’ 
 internal development tools to inject malicious 
-code into SolarWinds Orion update binaries. 
+code into SolarWinds’ Orion update binaries. 
 These trojanized updates delivered a backdoor 
 known as SUNBURST and Solorigate, to systems 
 running Orion platform versions. The impact? 
 11
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R1 :OPE NS OURC ES UPP LY,DEMAND,AN DS ECURITY
+C H A P T E R 1 : O P E N S O U R C E S U P P LY, D E M A N D, A N D S E C U R I T Y
 FIGURE 1\.7
 NEXT GENERATION SOFTWARE SUPPLY 
 CHAIN ATTACKS
-July 2019 July 2021
+July 2019 – July 2021
 12
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R1 :OPE NS OURC ES UPP LY,DEMAND,AN DS ECURITY
+C H A P T E R 1 : O P E N S O U R C E S U P P LY, D E M A N D, A N D S E C U R I T Y
 Roughly, 18,000 customers automatically pulled 
 these malicious updates, exposing the networks 
 of large companies and government entities like 
@@ -625,12 +663,12 @@ By attacking the SolarWinds software supply chain
 and mingling their malicious code with the legitimate, 
 trusted code that was delivered to their clients, 
 attackers were able to plant backdoors on the sys\-
-tems of tens of thousands of SolarWinds customers.
-Namespace Confusion February 2021
+tems of tens of thousands of SolarWinds’ customers.
+Namespace Confusion — February 2021
 In February 2021, news broke of a researcher, 
 Alex Birsan, hacking over 35 big tech firms in a 
-novel supply chain attack dubbed dependency 
-confusion. The name of this attack refers to the 
+novel supply chain attack dubbed “dependency 
+confusion.” The name of this attack refers to the 
 inability of your development environment to 
 distinguish between a private, internally\-created 
 dependency in your software build, and a package 
@@ -640,7 +678,7 @@ In other words, should an attacker register the
 name of your private, internally\-used dependency 
 on a public repository, such as npmjs, your software 
 development tool may inadvertently pull in the 
-attackers malicious dependency as opposed to 
+attacker’s malicious dependency as opposed to 
 your legitimate one.
 Within 72 hours after news of the namespace attack 
 vector became public, automated malware detec\-
@@ -648,49 +686,49 @@ tion services observed 300\+ copycats emerging
 from other researchers interested in earning a bug 
 bounty. One week later, the number of copycat 
 attacks increased to 575\. The following week, it 
-was 750\. By March 15, 2021, Sonatypes automated 
+was 750\. By March 15, 2021, Sonatype’s automated 
 malware detection service had observed more than 
 10,000 dependency confusion copycats having 
 infiltrated npm and other ecosystems.
 Not all copycats were benign proof of concepts. 
 In search of bug bounty payouts, thousands were 
 published by bad actors with malicious intent. 
-Some of the copycats were even aimed as vigi\-
-lante vandalism on the open source repositories. 
-The fact that so much of the npm ecosystem is 
+Some of the copycats were even aimed as “vigi\-
+lante vandalism” on the open source repositories. 
+“The fact that so much of the npm ecosystem is 
 not namespaced has actually created potential 
 build time malware injection possibilities. If I know 
 FIGURE 1\.8
 A TIMELINE OF DEPENDENCY CONFUSION
-July 2020 March 2021
+July 2020 – March 2021
 13
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R1 :OPE NS OURC ES UPP LY,DEMAND,AN DS ECURITY
+C H A P T E R 1 : O P E N S O U R C E S U P P LY, D E M A N D, A N D S E C U R I T Y
 the name of a package in use by a company, I 
 could go publish a malicious package using the 
 exact same name with a new version number 
-and know that its very likely that it would be 
+and know that it’s very likely that it would be 
 ingested over the intended, internally developed 
 package," said Sonatype CTO Brian Fox in 2017\.
 Public repositories that do not strictly enforce 
 namespace rules, including npm, PyPI, RubyGems, 
 and NuGet, are susceptible to namespace confu\-
-sion. In contrast, the Maven Central and Golangs 
+sion. In contrast, the Maven Central and Golang’s 
 pkg.go.dev repositories enforce strict namespacing 
 and verify namespace ownership before artifacts 
 can be published.
-Codecov April 2021
+Codecov — April 2021
 The Codecov supply chain attack publicized in April 
 2021 was similar to the SolarWinds attack. In this 
 case, bad actors compromised a Codecov server 
 to inject their malicious code into a Bash Uploader 
-script that was then downloaded by Codecovs 
+script that was then downloaded by Codecov’s 
 customers over the course of two months.
 Using the Bash uploader script used by Codecov 
 customers, the attackers exfiltrated sensitive 
 information including keys, tokens, and credentials 
-from those customers' Continuous Integration
-Continuous Delivery (CICD) environments. Using 
+from those customers' Continuous Integration/
+Continuous Delivery (CI/CD) environments. Using 
 these harvested credentials, Codecov attackers 
 reportedly breached hundreds of customer 
 networks, including HashiCorp, Twilio, Rapid7, 
@@ -701,15 +739,15 @@ to modify the script were originally obtained by
 the attackers from a flawed Docker image creation 
 process, according to Codecov. In aggregate, the 
 incident highlighted the importance of securing 
-CICD pipelines, including scrutinizing the secrets 
+CI/CD pipelines, including scrutinizing the secrets 
 filed in these environments, and stepping up 
 container security.
-Microsofts Winget May 2021
+Microsoft’s Winget — May 2021
 In May 2021, Microsoft released the first stable ver\-
 sion of its Windows 10 package manager, Winget, 
 which enabled users to manage apps via the 
 command\-line. Users were able to propose or add 
-new packages to Winget on the projects GitHub 
+new packages to Winget on the project’s GitHub 
 repository. But, over the weekend after its launch, 
 many flooded Winget's software registry with pull 
 requests for apps that were either duplicates or 
@@ -719,19 +757,19 @@ up overwriting the existing packages. Over 60 such
 instances were seen. The incident raised serious 
 concerns among developers about the integrity of 
 the Winget ecosystem.
-Kaseya July 2021
+Kaseya — July 2021
 In July 2021, the world witnessed another form 
 of upstream software supply\-chain attack. In this 
 case, the REvil ransomware group aka Sodinokibi 
 discovered and exploited a zero\-day vulnerability 
-in Kaseyas Virtual System Administrator (VSA). The 
+in Kaseya’s Virtual System Administrator (VSA). The 
 VSA tool is a remote monitoring and management 
 software platform used by dozens of managed 
 security service providers who in turn service 
 thousands of downstream customers.
-It didnt take long for the threat actors to follow 
+It didn’t take long for the threat actors to follow 
 up with a $70 million ransom demand to decrypt 
-files for more than 1,500 victims. This episode 
+files for more than 1,500 victims. “This episode 
 represents yet another incident in a long trend 
 observed over many years: in order to scale 
 exploitation of downstream victims, bad actors 
@@ -740,7 +778,7 @@ providers that live upstream within the digital value
 stream. This includes open source libraries, IDEs, 
 build servers, update servers, and, most recently 
 in the case of Kaseya, Managed Service Providers 
-(MSPs), Sonatypes Matt Howard said in a blog 
+(MSPs),” Sonatype’s Matt Howard said in a blog 
 post following the incident.
 Although there are many tools designed to protect 
 the perimeter of downstream technology assets, 
@@ -760,7 +798,7 @@ supply chain with the same energy and vigor that
 has long focused on the downstream portion.
 14
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R1 :OPE NS OURC ES UPP LY,DEMAND,AN DS ECURITY
+C H A P T E R 1 : O P E N S O U R C E S U P P LY, D E M A N D, A N D S E C U R I T Y
 CHAPTER 2
 Understanding Exemplary 
 and Non\-Exemplary 
@@ -780,7 +818,7 @@ ecosystem and compare them with recent quality
 metrics proposed by the Open Source Security 
 Foundation (OpenSSF) and Libraries.io.
 Our analysis reveals that MTTU, a measure of a 
-projects dependency update velocity, is strongly 
+project’s dependency update velocity, is strongly 
 associated with improved project security. We 
 did not find OpenSSF Criticality or Libraries.
 io Sourcerank to be associated with improved 
@@ -802,12 +840,12 @@ release a new version (1\.3\) and some time later
 A releases a new version that bumps the version 
 of B and C to 1\.3\. The time between the release 
 of B version 1\.3 and the release of A version 1\.3 
-is the Time To Upgrade (TTU) for As migration to 
-B version 1\.3 (and similarly for As adoption of C 
+is the Time To Upgrade (TTU) for A’s migration to 
+B version 1\.3 (and similarly for A’s adoption of C 
 version 1\.3\). The average of all these upgrade times 
 is then the MTTU. 
 MTTU provides visibility into an open source proj\-
-ects dependency management practices Lower 
+ects’ dependency management practices — Lower 
 is better. Projects that consistently react quickly to 
 dependency upgrades in their downstream depen\-
 dency chain will have low MTTU. Projects that either 
@@ -817,7 +855,7 @@ Figure 2\.2 shows which percentage of components
 achieve various MTTU performance based on 
 update data from 2020\. Note that while the percent\-
 ages climb quickly (26% upgrade within 20 days, 
-44% within 40, and 57% within 60\), there is a long
+44% within 40, and 57% within 60\), there is a long 
 tail of slow\-to\-upgrade components, with 9% of 
 components taking more than 180 days to upgrade.
 FIGURE 2\.1
@@ -832,8 +870,8 @@ impact as dependency chains grow. If a transitive
 dependency N levels deep releases an important 
 security update, and each component on the 
 dependency path takes D days to upgrade, then 
-the top level application doesnt benefit from this 
-fix for ND days. Thus, even a chain of exemplary 
+the top level application doesn’t benefit from this 
+fix for N × D days. Thus, even a chain of exemplary 
 components that each upgrade within 20 days 
 would result in a lag time of 100 days for a depen\-
 dency five levels deep.
@@ -846,8 +884,16 @@ MTTU values by year for every year since 2011\.
 We can see that in addition to the number of 
  projects growing over the years, there has been a 
 clear trend toward faster MTTUs as shown below.
-6 Since 2021 has not yet ended, it is possible this number will change.
-7 2019 State of the Software Supply Chain2011 average MTTU \= 371 days2014 average MTTU \= 302 days2018 average MTTU \= 158 days2021 average MTTU (as of Aug 1\) \= 28 days6
+6  Since 2021 has not yet ended, it is possible this number will change.
+7  2019 State of the Software Supply Chain
+ 
+⊲2011 average MTTU \= 371 days
+ 
+⊲2014 average MTTU \= 302 days
+ 
+⊲2018 average MTTU \= 158 days
+ 
+⊲2021 average MTTU (as of Aug 1\) \= 28 days6
 MTTU AND SECURITY
 While MTTU does not directly measure respon\-
 siveness to security issues, our analysis in previous 
@@ -866,7 +912,7 @@ scrutinized projects. Many projects fall below the
 level of usage required for security researchers to 
 FIGURE 2\.3
 MTTU DISTRIBUTION BY YEAR
-Projects on Maven Central 2011 2021
+Projects on Maven Central 2011 – 2021
 FIGURE 2\.4
 CALCULATING MTTR
 17
@@ -885,29 +931,29 @@ Libraries.io Sourcerank
 This metric aims to measure the quality of software, 
 mostly focusing on project documentation, maturity, 
 and community. It is computed by evaluating a 
-number of yes no responses to questions such 
-as Is the project more than six months old? and 
-a set of numerical questions, such as How many 
-stars does the project have? These are distilled 
-into a single score, with yes no questions adding 
-or subtracting a fixed number of points." Numerical 
+number of yes / no responses to questions such 
+as “Is the project more than six months old?” and 
+a set of numerical questions, such as “How many 
+‘stars’ does the project have?” These are distilled 
+into a single score, with yes / no questions adding 
+or subtracting a fixed number of “points." Numerical 
 values are then converted into points using a for\-
-mula, e.g. log(num\_stars)2\." The current maximum 
+mula, e.g. “log(num\_stars)/2\." The current maximum 
 number of points is approximately 30\.
 OpenSSF Criticality Score
 OpenSSF has a set of analyses that combine into 
-a metric called criticality." Criticality measures a 
+a metric called “criticality." Criticality measures a 
 project's community, usage, and activity. This is dis\-
 tilled into a score that is intended to measure how 
 crucial the project is in the open source ecosystem.
 OpenSSF Scorecard
 OpenSSF also has a more extensive evaluation of 
-project quality called the Scorecard project. This 
+project quality called the “Scorecard” project. This 
 project provides support for automatically monitoring 
 development practices, tooling use, and other project 
 quality and maturity attributes, then reporting which 
 checks succeed and which fail. OpenSSF does not 
-provide a mechanism for distilling this Scorecard 
+provide a mechanism for distilling this “Scorecard” 
 into a single metric and so we did not include it in the 
 quantitative analysis we describe below.
 Quality Metric Comparison
@@ -919,26 +965,26 @@ management, and development practices.
 Popularity
 Libraries.IO includes project popularity metrics 
 (stars, subscribers, and usage) as part of their 
-Sourcerank metric. OpenSSFs criticality metric 
+Sourcerank metric. OpenSSF’s criticality metric 
 includes usage (the number of projects that use 
-the library) but not stars or subscribers. OpenSSFs 
+the library) but not stars or subscribers. OpenSSF’s 
 Scorecard system and MTTU do not include any 
 factors that are related to popularity.
 Activity
 All four quality frameworks include some aspect of 
-activity analysis. Sonatypes MTTU metric is lightly 
+activity analysis. Sonatype’s MTTU metric is lightly 
 correlated with activity because fast MTTU requires 
 frequent releases. Libraries.IO Sourcerank tracks 
 whether a project has been updated in the last 
 six months, another weak correlation with activity. 
-OpenSSFs Scorecard metric includes a check 
+OpenSSF’s Scorecard metric includes a check 
 (whether there has been a commit in the last 90 
 days) that is also weakly correlated with activity. 
 The OpenSSF Criticality metric includes a robust 
 set of activity measures such as commit frequency 
 and release count.
 Dependencies
-Sonatypes MTTU provides the most robust measure 
+Sonatype’s MTTU provides the most robust measure 
 of dependency update practices, as it measures how 
 quickly a project updates its dependencies once 
 new versions are released. Libraries.IO Sourcerank 
@@ -976,20 +1022,20 @@ POPULARITY
 More Popular
 Vulnerable
 1\.8x less likely
-
+–
 2\.9x more likely
 2\.8x more likely
 No Path Forward
- (no NPF in top 25%)
+∞ (no NPF in top 25%)
 6x less likely
-
+–
 3x more likely
 Breaking Changes
 3\.2x less likely
 8x less likely
 3\.3x less likely
 12x less likely 
-XX component is less likely to contain defectsXX component is more likely to contain defects
+XX component is less likely to contain defects XX component is more likely to contain defects
 similar versioning and documentation checks, as well 
 as checks regarding how the project is packaged 
 and distributed. The OpenSSF Criticality metric 
@@ -1012,7 +1058,7 @@ number of outcomes that developers would rather
 avoid. Components can contain vulnerabilities, 
 which their applications then inherit. Worse, 
 components can be vulnerable without having an 
-available remediation path (e.g. no path forward, 
+available remediation path (e.g. “no path forward,” 
 described later in this chapter), requiring significant 
 effort to refactor or deprecate the component. 
 Component upgrades can also break application 
@@ -1030,10 +1076,14 @@ data for 52% of components, Sourcerank scores for
 of these components.
 The data set contained 233,569 component 
 versions. For each version, we evaluated whether it 
-was subject to any of the following conditions:Vulnerable: A component is vulnerable if it or 
+was subject to any of the following conditions:
+ 
+⊲Vulnerable: A component is vulnerable if it or 
 any of its transitive dependencies contain a 
 known security issue. Overall, 5,175 vulnerable 
-component versions were found.No Path Forward: A component has no path 
+component versions were found.
+ 
+⊲No Path Forward: A component has no path 
 forward (NPF) if the latest version of that 
 component is vulnerable. This means the 
 vulnerability cannot be remediated by upgrading 
@@ -1045,7 +1095,9 @@ slow to update its own vulnerable dependencies
 (or these dependencies are slow to fix issues 
 and update their dependencies, etc.). Overall, 
 788 component versions had no path forward 
-at the time they were found to be vulnerable.Breaking Changes: A component has breaking 
+at the time they were found to be vulnerable.
+ 
+⊲Breaking Changes: A component has breaking 
 changes if an update to that component changes 
 public APIs in a manner that would cause either 
 builds to break or runtime errors. Overall, 1,116 
@@ -1070,7 +1122,7 @@ statistically significant difference in the likelihood
 of negative outcomes, and the factor difference 
 observed. Bolded entries are statistically significant 
 at a level of p \< 0\.005, while non\-bolded entries 
-have p \< 0\.05\. That is: our confidence that were 
+have p \< 0\.05\. That is: our confidence that we’re 
 seeing a true effect is higher for the bolded entries. 
 19
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
@@ -1090,7 +1142,7 @@ SECURITY
 As in previous studies, we see a strong correlation 
 between better update hygiene, as measured by 
 MTTU, and security, as measured by lower rates of 
-vulnerabilities and No Path Forward conditions. 
+“vulnerabilities” and “No Path Forward” conditions. 
 Components with faster MTTU were 1\.8 times less 
 likely to have vulnerabilities when compared to the 
 bottom 25% and much less likely to be stuck in a 
@@ -1118,7 +1170,7 @@ dependency management quality. This year, we
 examined popularity as measured by the number 
 of times a component occurs in application scans. 
 We again found the same results: popularity is not 
-a good predictor of security. In fact, in this years 
+a good predictor of security. In fact, in this year’s 
 result, popularity was misleading, with more pop\-
 ular projects more likely to contain vulnerabilities 
 and be stuck in no path forward states. Libraries.IO 
@@ -1134,7 +1186,7 @@ here, there is strong evidence that these practices
 lead directly to improved security and quality 
 outcomes. We therefore recommend that project 
 maintainers strive to adopt the best practices 
-measured by Sonatypes MTTU and OpenSSFs 
+measured by Sonatype’s MTTU and OpenSSF’s 
 Criticality metrics. 
 While the factors in the OpenSSF Scorecard may 
 also improve project quality, we were not able to 
@@ -1154,7 +1206,7 @@ development efficiency of projects using these
 components. Therefore, we recommend choosing 
 components with low MTTU values and high 
 Criticality scores. 
-While Libraries.IO Sourcerank wasnt associated 
+While Libraries.IO Sourcerank wasn’t associated 
 with higher performance in the outcomes we 
 considered, it may well promote other desirable 
 effects and does contain sensible practices. There 
@@ -1164,11 +1216,11 @@ scores and low MTTU.
 Just as traditional manufacturing supply chains 
 intentionally select parts from approved suppliers 
 and rely upon formalized procurement practices 
- enterprise development teams should adopt 
+— enterprise development teams should adopt 
 similar criteria for their selection of open source 
 components. This practice ensures the highest 
 quality parts are selected from the best and fewest 
-suppliers a practice W. Edwards Deming recom\-
+suppliers — a practice W. Edwards Deming recom\-
 mended for decades to manufacturers of physical 
 goods. Implementing selection criteria and update 
 practices will not only improve code quality, but 
@@ -1181,7 +1233,7 @@ CHAPTER 3
 Peer Practices Associated 
 With Micro and Macro 
 Dependency Management
-In todays world, a wide variety of bits are flowing 
+In today’s world, a wide variety of bits are flowing 
 rapidly through our software supply chains. 
 Because of this, an equally wide variety of decisions 
 must be made by engineering team members 
@@ -1193,18 +1245,26 @@ third\-party dependencies.
 In particular, there are two types of decisions that 
 have become increasingly critical to maintaining 
 healthy software supply chains:
-1\.Micro dependency decisions: frequent tactical 
+1\. Micro dependency decisions: frequent tactical 
 decisions that developers must make on a daily 
 basis to determine whether or not to update 
 existing dependencies when newer versions 
 become available.
-1\. Macro architectural decisions: strategic decisions 
+2\. Macro architectural decisions: strategic decisions 
 that software architects and engineering leaders 
 must make when deciding which open source 
 projects are optimal for their products and why.
-8 2019 State of the Software Supply Chain
-But how should these decisions be made at scale?Should companies expect software developers to 
-intuitively know the right action to take?What are the benefits of making good decisions?What are the costs of making bad decisions?Do engineering leaders have a responsibility to 
+8  2019 State of the Software Supply Chain
+But how should these decisions be made at scale?
+ 
+⊲Should companies expect software developers to 
+intuitively know the right action to take?
+ 
+⊲What are the benefits of making good decisions?
+ 
+⊲What are the costs of making bad decisions?
+ 
+⊲Do engineering leaders have a responsibility to 
 equip developers with information designed to 
 automate better decision making?
 These are a few of the questions that we attempt to 
@@ -1214,11 +1274,11 @@ of Micro Dependency Management
 There are three reasons why dependency manage\-
 ment is rapidly becoming an increasingly important 
 practice for software engineering teams:
-1\.The enormous volume of open source depen\-
+1\. The enormous volume of open source depen\-
 dencies present in production applications.
-1\. The incredible velocity at which new versions of 
+2\. The incredible velocity at which new versions of 
 dependencies are being released.
-1\. The fact that open source dependencies age like 
+3\. The fact that open source dependencies age like 
 milk, and not like wine.
 The average modern application contains 128 open 
 source dependencies, and the average open source 
@@ -1228,9 +1288,9 @@ release more than 8,000 times per year, creates a
 situation in which developers must constantly decide 
 FIGURE 3\.1
 MACRO ARCHITECTURAL VS. MICRO DEPENDENCY DECISIONS
-Software
-developers make
-suboptimal choices
+Software 
+developers make 
+suboptimal choices 
 69% of the time 
 with respect to 
 updating third\-party 
@@ -1238,31 +1298,31 @@ dependencies.
 22
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
 CHAPTER 3: PEER PRACTICES ASSOCIATED WITH MICRO AND MACRO DEPENDENCY MANAGEMENT
-when (and when not to) update third\-party
+when (and when not to) update third\-party 
 dependencies inside of their applications. 
 But, ask most developers about dependency 
-management, and theyll tell you the same 
+management, and they’ll tell you the same 
 thing: keeping open source libraries fresh and 
 optimally up to date is a good idea that requires 
 terribly mundane work. In other words, in the 
 eyes of most software engineers, dependency 
 management is seen as a thankless maintenance 
-task thats easy to get wrong, hard to get right, 
+task that’s easy to get wrong, hard to get right, 
 and generally detracts from time spent innovating. 
-Developers know that its important, but they 
-frequently dont have the time or patience to 
+Developers know that it’s important, but they 
+frequently don’t have the time or patience to 
 make it a priority and lack the tooling to do it 
-optimally. Its no wonder that many developers 
-describe this situation as dependency hell.
+optimally. It’s no wonder that many developers 
+describe this situation as “dependency hell.”
 The result is that dependencies in applications can 
 easily grow old and stale (vulnerable) despite the 
 possibility that newer and fresher (more secure) 
 versions are readily available.
 In light of these circumstances, Sonatype 
-researchers set out to answer the question:
+researchers set out to answer the question: 
 are developers making efficient dependency 
 management decisions?
-9 100,000 anonymized, validated applications scanned by publicly available and commercial vulnerability analysis tools.
+9  100,000 anonymized, validated applications scanned by publicly available and commercial vulnerability analysis tools.
 To understand the relative quality of current depen\-
 dency management decisions, Sonatype research\-
 ers spent the past year studying 100,000 Java 
@@ -1272,17 +1332,17 @@ any number of potential newer versions).
 In support of our research, we developed a scoring 
 algorithm (Figure 3\.3\) designed to measure the 
 relative quality of component migration decisions. 
-The component choice algorithm is derived 
+The “component choice” algorithm is derived 
 from eight common\-sense rules distilled from the 
 insights in the previous chapter.
 Research results:
-1\.10% of the projects in the Maven Central ecosys\-
-tem are being used in production apps and 
+1\. 10% of the projects in the Maven Central ecosys\-
+tem are being used in production apps — and 
 only 25% of those are actively being updated, 
 which itself is a massive and complex effort.
-1\. Upgrade decisions are highly variable and fre\-
-quently suboptimal, yet herd behavior doesnt lie.
-1\. Newer versions are generally better, but not 
+2\. Upgrade decisions are highly variable and fre\-
+quently suboptimal, yet herd behavior doesn’t lie.
+3\. Newer versions are generally better, but not 
 always best.
 FIGURE 3\.2
 DATA ANALYZED
@@ -1291,12 +1351,12 @@ FIGURE 3\.3
 23
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
 CHAPTER 3: PEER PRACTICES ASSOCIATED WITH MICRO AND MACRO DEPENDENCY MANAGEMENT
-FINDING \#1:
+FINDING \#1: 
 Dependency management is a 
 massive effort practiced on only 
 25% of libraries in production apps.
 With 430,000 projects to choose from in Maven 
-Central, its remarkable that 100,000 Enterprise 
+Central, it’s remarkable that 100,000 Enterprise 
 Java applications are leveraging only 40,000 (10%) 
 of available projects. Furthermore, of the 40,000 
 projects being leveraged, only 10,000 (25%) are 
@@ -1349,7 +1409,7 @@ CHAPTER 3: PEER PRACTICES ASSOCIATED WITH MICRO AND MACRO DEPENDENCY MANAGEMENT
 support them, and with so many versions to choose 
 from, it is inevitable that developers will guess 
 incorrectly which version is best.
-Understanding imperfect choices.
+Understanding “imperfect choices”.
 To understand the definition of an imperfect 
 upgrade choice, consider the following scenario:
 Component foo was upgraded four times over the 
@@ -1359,8 +1419,8 @@ versions and take into account multiple dimensions
 of data including: security, quality, popularity, and 
 licensing, as set out in Chapter 2\.
 In Figure 3\.6, upgrades 1 and 2 occurred when the 
-optimal version was 1\.9 according to the compo\-
-nent choice rules, as described on page 23\.
+optimal version was 1\.9 according to the “compo\-
+nent choice” rules, as described on page 23\.
 Upgrades 3 and 4 occurred after a new component 
 version became available which made 1\.11 the new 
 optimal version.
@@ -1382,9 +1442,9 @@ teams would save a total of 160 developer days
 (1,280 hours) and $192,000 per year at a fully 
 loaded cost of $150 per hour. This would give each 
 development team almost two weeks of extra 
-productivity time each year.
+productivity time — each year.
 FIGURE 3\.6
-UNDERSTANDING IMPERFECT
+UNDERSTANDING IMPERFECT 
 UPGRADE CHOICE
 FIGURE 3\.7
 TIME SAVED WITH INTELLIGENT AUTOMATION
@@ -1393,11 +1453,11 @@ TIME SAVED WITH INTELLIGENT AUTOMATION
 CHAPTER 3: PEER PRACTICES ASSOCIATED WITH MICRO AND MACRO DEPENDENCY MANAGEMENT
 FIGURE 3\.8
 HERD MIGRATION BEHAVIOR OF ORG.SPRINGFRAMEWORK:SPRING\-CORE
-August 9, 2020August 1, 2021
+August 9, 2020–August 1, 2021
 26
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
 CHAPTER 3: PEER PRACTICES ASSOCIATED WITH MICRO AND MACRO DEPENDENCY MANAGEMENT
-Herd behavior doesnt lie.
+Herd behavior doesn’t lie.
 By examining 100,000 applications and four million 
 migration decisions made by the developer herd, it 
 is easy to visualize patterns and practices associ\-
@@ -1426,12 +1486,12 @@ fresh, many tools myopically submit pull requests
 for every new release. While such updates happen 
 automatically, they can also have unintended 
 consequences like the introduction of unplanned 
-work and unnecessary security risk e.g. malware 
+work and unnecessary security risk – e.g. malware 
 injection and namespace confusion (Dependabot, 
 Renabot, etc.). This type of naive dependency 
 update strategy can lead to frustration and distrac\-
 tion for project maintainers, as described by Dan 
-Abranovs recent blog.
+Abranov’s recent blog.
 To contextually automate dependency manage\-
 ment, more intelligent tools are emerging that 
 minimize both upgrade risk and upgrade events, 
@@ -1441,8 +1501,8 @@ is a correlation between optimal choice and the
 latest version. Score 9 is assigned to the optimal 
 FIGURE 3\.9
 MIGRATION DECISIONS MADE BY PROACTIVE TEAMS
-org.springframework:spring\-core,
-August 9, 2020August 1, 2021 
+org.springframework:spring\-core, 
+August 9, 2020–August 1, 2021 
 27
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
 CHAPTER 3: PEER PRACTICES ASSOCIATED WITH MICRO AND MACRO DEPENDENCY MANAGEMENT
@@ -1451,7 +1511,7 @@ versions from the LATEST version, demonstrating
 that the most recent release is not the best 
 choice, and highlighting why simplistic update 
 policies are insufficient.
-FINDING \#4:
+FINDING \#4: 
 Three distinct patterns of 
 dependency management behavior.
 Our analysis reveals that development teams 
@@ -1505,17 +1565,17 @@ acceptable (optimal exemplars), and which ones
 are unacceptable (suboptimal non\-exemplars).
 Establishing and enforcing intelligent architectural 
 policy is important for several reasons:
-1\.Save time and money by standardizing which 
+1\. Save time and money by standardizing which 
 projects are best for you, and eliminating 
 inconsistent diligence efforts associated with 
 component selection.
-1\. Improve application security and quality by 
+2\. Improve application security and quality by 
 standardizing on projects that are most likely 
 to provide reliable access to new versions of 
 non\-vulnerable dependencies. This aids with 
 micro dependency decisions and helps with 
-never getting stuck with no path forward traps.
-1\. Reduce technology bloat associated with 
+never getting stuck with “no path forward” traps.
+3\. Reduce technology bloat associated with 
 non\-standard decision making.
 If developers made dependency update decisions 
 based on a structured system of guidance, we 
@@ -1527,16 +1587,22 @@ EXIST, reveals a clear opportunity for engineering
 leaders to benefit by standardizing open source 
 architectural guidance at scale.
 Conclusions and Practical 
-RecommendationsBased on the research, its clear that material 
+Recommendations
+ 
+⊲Based on the research, it’s clear that material 
 inefficiencies exist along with significant 
 avoidable risk. Software engineering teams 
 have considerable room for improvement with 
-respect to dependency management practices.To improve efficiencies, save money, and 
+respect to dependency management practices.
+ 
+⊲To improve efficiencies, save money, and 
 optimize dependency management at scale, 
 engineering leaders should embrace intelligent 
 automation. Chosen tools should remove the 
 current error\-prone micro decision making 
-from day\-to\-day developer workflows.Engineering leaders should also embrace 
+from day\-to\-day developer workflows.
+ 
+⊲Engineering leaders should also embrace 
 tools to guide macro decisions made by 
 architects and developers with respect 
 to initial technology selection.
@@ -1552,7 +1618,7 @@ This first stage is referred to as the
 Unmanaged stage because organi\-
 zations are often operating with an 
 "anything goes" mindset, are often 
-reactive, and have minimal process
+reactive, and have minimal process/
 oversight related to the themes.
 EXPLORATION
 A realization of some sort is usually the 
@@ -1560,11 +1626,11 @@ impetus for thrusting an organization
 into the Exploration stage. This is often 
 triggered by an "event" that causes an 
 "all hands on deck" reaction to uncover 
-necessary informationsolutions, or 
+necessary information/solutions, or 
 a champion of some sort leading an 
 improvement effort. This stage is often 
 focused on identifying the perceived 
-probleminefficiency, learning about 
+problem/inefficiency, learning about 
 current implementations, and starting 
 to explore potential solutions.
 AD HOC 
@@ -1572,8 +1638,8 @@ In the midst of starting to define
 processes and implement tooling 
 to improve the identified problem, 
 Ad Hoc solutions reign as the teams 
-work toward institutionalization
-and socialization of new tooling
+work toward institutionalization 
+and socialization of new tooling 
 and processes.
 CONTROL
 In the Control stage, ad hoc solutions 
@@ -1595,7 +1661,7 @@ address OSS component risk. In
 addition, a healthy amount of ROI 
 is realized, and measurements to 
 demonstrate success are available.
-For this years report, we surveyed 702 engi\-
+For this year’s report, we surveyed 702 engi\-
 neering professionals about their software 
 supply chain management practices, including 
 approaches and philosophies to utilizing open 
@@ -1607,42 +1673,48 @@ neering productivity, and job satisfaction. The
 responses came from IT professionals represent\-
 ing a variety of roles and industries.
 The objective of the survey was twofold: 
-1\.Determine if certain software supply
-chain practices correlate to successful
+1\. Determine if certain software supply 
+chain practices correlate to successful 
 engineering outcomes.
-1\. Develop a benchmark and maturity model 
+2\. Develop a benchmark and maturity model 
 so organizations can evaluate themselves in 
 comparison to their peers.
-The survey itself consisted of 41 questions:Ten questions were focused on understanding 
+The survey itself consisted of 41 questions:
+ 
+⊲Ten questions were focused on understanding 
 the relative quality of software outcomes 
-(dependent variables).24 questions were focused on understanding 
+(dependent variables).
+ 
+⊲24 questions were focused on understanding 
 patterns and practices embraced by engineering 
-teams (independent variables).Seven questions were focused on understanding 
+teams (independent variables).
+ 
+⊲Seven questions were focused on understanding 
 job satisfaction.
 Responses to all 41 questions were assessed 
 against the following eight elements of software 
 supply chain management practices:
-1\.Application inventory (Inventory) Do you know 
+1\. Application inventory (Inventory) – Do you know 
 all the applications your organization has in 
-developmentproduction, and who the stake\-
-holdersowners are? Do you know the details 
+development/production, and who the stake\-
+holders/owners are? Do you know the details 
 about them, including how they are built, and 
 the Software Bill of Materials (SBOM) for the OSS 
 components they include?
-1\. Supplier hygiene (Suppliers) Do you know 
+2\. Supplier hygiene (Suppliers) – Do you know 
 if your OSS components come from a trusted, 
 quality supplier?
-1\. Build \& release Do you understand how your 
+3\. Build \& release – Do you understand how your 
 software "parts" and processes come together to 
 build and release applications into production?
-1\. Project consumption (Consumption) Do you 
+4\. Project consumption (Consumption) – Do you 
 govern OSS component selection?
-1\. Giving back (Contribution) Do you contribute 
+5\. Giving back (Contribution) – Do you contribute 
 to the OSS community?
-1\. Policy control (Risk Management) What is 
+6\. Policy control (Risk Management) – What is 
 your tolerance for risk? Do you have automated 
 policy enforcement?
-7\.Digital transformation (Execution Plan) What 
+7\. Digital transformation (Execution Plan) – What 
 plans, resources, and training do you have to 
 help institutionalize new processes and tools?
 FIGURE 4\.1
@@ -1650,38 +1722,38 @@ FIVE STAGES OF SOFTWARE SUPPLY CHAIN MANAGEMENT MATURITY
 CHAPTER 4: SOFTWARE SUPPLY CHAIN MATURITY
 31
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-1\. Remediation How do you implement fixes to 
+8\. Remediation – How do you implement fixes to 
 address identified OSS component risk?
 Aggregate responses were then scored and 
 mapped into five different stages of software supply 
-chain management maturity, as defined
+chain management maturity, as defined 
 in Figure 4\.1\.
-How Mature are Todays 
+How Mature are Today’s 
 Software Supply Chains? 
-Based on the survey results, its a bit of a mixed 
+Based on the survey results, it’s a bit of a mixed 
 bag. Let us explain. 
-In Figure 4\.2, weve plotted the 702 responses 
+In Figure 4\.2, we’ve plotted the 702 responses 
 against the five different stages of maturity. We 
 see that, across the various themes, the majority of 
-respondents were graded less than the Control 
+respondents were graded less than the “Control” 
 level of maturity. Further, based on the definitions 
-above, we can assert that the Control level of 
+above, we can assert that the “Control” level of 
 maturity is the point at which an organization 
-transitions from figuring it out to a minimal level of 
+transitions from “figuring it out” to a minimal level of 
 maturity that will enable high\-quality outcomes. The 
 three levels of maturity (Unmanaged, Exploration, 
-Ad Hoc) prior to the Control level of maturity are 
+Ad Hoc) prior to the “Control” level of maturity are 
 suboptimal; this is where most of survey responses 
 were scored. 
 Reality vs. Perception on Software 
 Supply Chain Maturity 
-The majority of respondents demonstrate an Ad 
-Hoc approach to software supply chain manage\-
+The majority of respondents demonstrate an “Ad 
+Hoc” approach to software supply chain manage\-
 ment for all themes except two: Remediation and 
 Inventory. Respondents indicate they are remediat\-
 ing risky components and they understand where 
 the risk resides. This is true even though they have 
-an Ad Hoc approach to Build \& Release and Risk 
+an “Ad Hoc” approach to Build \& Release and Risk 
 Management processes. 
 We also compared the objective analysis done in 
 chapters 2 and 3, which analyzed 100,000 applica\-
@@ -1689,10 +1761,10 @@ tions, to the subjective survey responses. The data
 shows a clear disconnect between what is actually 
 happening, and what people think is happening: 
 70% of remediations are suboptimal, which aligns 
-with the Ad Hoc maturity rating for both Risk 
+with the “Ad Hoc” maturity rating for both Risk 
 Management and Execution practices.
 In summary, the survey suggests that respondents 
-have talked themselves into believing that theyre 
+have talked themselves into believing that they’re 
 doing a good job, leading at the least to a false 
 sense of security and at worst to huge inefficiencies 
 in the engineering process. Objectively, however, the 
@@ -1711,7 +1783,7 @@ CHAPTER 4: SOFTWARE SUPPLY CHAIN MATURITY
 The survey suggests that 
 respondents have talked 
 themselves into believing 
-that theyre doing a good 
+that they’re doing a good 
 job, leading at the least to 
 a false sense of security 
 and at worst to huge 
@@ -1722,13 +1794,13 @@ engineering process.
 CHAPTER 5
 Emergence of Software Supply 
 Chain Regulation and Standards
-Whats Happening in 
+What’s Happening in 
 the United States? 
 Following the multitude of attacks in 2020 aimed at 
 software supply chains, the United States Federal 
 Government took notice and began to take action.
 February
-Starting in February 2021 President Biden 
+Starting in February 2021 — President Biden 
 issued an Executive Order (EO) laying out changes 
 to secure all supply chains, including software. The 
 order called upon the Secretaries of Commerce 
@@ -1771,34 +1843,44 @@ In April 2021, the United States saw the formaliza\-
 tion of software supply chain standards begin to 
 take shape when the CISA and National Institute 
 of Standards and Technology (NIST) released 
-their paper Defending Against Software Supply 
-Chain Attacks 
+their paper “Defending Against Software Supply 
+Chain Attacks” 
 In it, the two agencies highlighted that software 
 compromised in supply chain attacks could have 
-widespread consequences for government, 
+“widespread consequences for government, 
 critical infrastructure, and private sector software 
-customers. They also noted how these types of 
+customers.” They also noted how these types of 
 attacks can easily allow bad actors to get around 
 other cyber defenses to carry out cyber espionage. 
 The document provides in\-depth guidance for 
 both governments and companies to implement 
 reasonable safeguards to secure their software 
 supply chains. 
-Suggestions include:Developing a written program to address 
-software supply chain risk.Inventorying organizational reliance on
-external software and code across all
-operational departments.Assessing risk from these vendors and adopting 
-appropriate contractual and other safeguards.Coordinating efforts across management, IT, 
+Suggestions include:
+ 
+⊲Developing a written program to address 
+software supply chain risk.
+ 
+⊲Inventorying organizational reliance on 
+external software and code across all 
+operational departments.
+ 
+⊲Assessing risk from these vendors and adopting 
+appropriate contractual and other safeguards.
+ 
+⊲Coordinating efforts across management, IT, 
 personnel, compliance, product development 
-and operational departments.Monitoring the threats and vulnerabilities to the 
+and operational departments.
+ 
+⊲Monitoring the threats and vulnerabilities to the 
 software supply chain, including through techni\-
 cal measures and threat analysis, on an ongoing 
 basis.
 May
 In May 2021, Biden signed a second Executive 
 Order for software supply chains, this time, as part of 
-a critical look at the nations cybersecurity posture. 
-The EO on Improving the Nations Cybersecurity is 
+a critical look at the nation’s cybersecurity posture. 
+The EO “on Improving the Nation’s Cybersecurity” is 
 a milestone for the U.S. government.
 The EO prescribed a number of technologies, 
 including multi\-factor encryption and endpoint 
@@ -1806,13 +1888,13 @@ detection as critical to protecting the nation's cyber
 assets. Further, the EO established a detailed plan 
 for taking steps to secure the federal software 
 The Executive Order 
-on Improving the 
-Nations Cybersecurity 
+“on Improving the 
+Nation’s Cybersecurity” 
 is a milestone for the 
 U.S. government.
 34
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R5 :EMERGENC EO FS OFT WA R ES UPP LYC HAI NR EGUL AT IO NA N DS TA N DA RDS
+C H A P T E R 5 : E M E R G E N C E O F S O F T WA R E S U P P LY C H A I N R E G U L AT I O N A N D S TA N DA R D S
 supply chain. The order called for NIST to publish 
 guidelines for establishing best practices to detect 
 vulnerabilities, and requirements that all critical 
@@ -1822,16 +1904,26 @@ that agencies must meet to demonstrate progress
 toward the goals.
 June
 In June 2021, as directed by the EO, NIST released 
-their definition of critical software defining it as: 
-\[] any software that has, or has direct 
+their definition of “critical software” defining it as: 
+\[...] any software that has, or has direct 
 software dependencies upon, one or more 
 components with at least one of these 
-attributes:is designed to run with elevated privilege or 
-manage privileges;has direct or privileged access to networking 
-or computing resources;is designed to control access to data or 
-operational technology;performs a function critical to trust; or,operates outside of normal trust boundaries 
+attributes:
+ 
+⊲is designed to run with elevated privilege or 
+manage privileges;
+ 
+⊲has direct or privileged access to networking 
+or computing resources;
+ 
+⊲is designed to control access to data or 
+operational technology;
+ 
+⊲performs a function critical to trust; or,
+ 
+⊲operates outside of normal trust boundaries 
 with privileged access.
-The definition applies to software of all forms (e.g 
+The definition applies to software of all forms (e.g., 
 standalone software, software integral to specific 
 devices or hardware components, cloud\-based 
 software) purchased for, or deployed in, production 
@@ -1839,7 +1931,7 @@ systems and used for operational purposes.
 July
 In July 2021, NIST published guidance for outlining 
 security measures for critical software use and 
-minimum standards for vendors testing of their 
+minimum standards for vendors’ testing of their 
 software source code. 
 Also in July, the National Telecommunications 
 and Information Administration (NTIA) released a 
@@ -1847,7 +1939,7 @@ minimum definition of an SBOM. This was a critical
 step toward improving transparency for software 
 supply chains for both technology vendors and 
 government customers.
-The NTIA describes an SBOM as effectively a 
+The NTIA describes an SBOM as “effectively a 
 nested inventory, a list of ingredients that make 
 up software components, and provides those who 
 produce, purchase, and operate software with infor\-
@@ -1858,49 +1950,49 @@ dependencies. SBOMs contain information
 about those components, and their hierarchical 
 relationships. SBOMs may include open source or 
 proprietary software and can be widely available or 
-access\-restricted.
+access\-restricted.”
 Further, NTIA defined the minimum elements for a 
 SBOM as three broad, interrelated areas:
-1\.Data Fields: Documenting baseline information 
+1\. Data Fields: Documenting baseline information 
 about each component that should be tracked.
-1\. Automation Support: Allowing for scaling across 
+2\. Automation Support: Allowing for scaling across 
 the software ecosystem through automatic 
 generation and machine\-readability.
-1\. Practices and Processes: Defining the opera\-
+3\. Practices and Processes: Defining the opera\-
 tions of SBOM requests, generation, and use.
 Furthermore in July, both the House of 
 Representatives and the Senate began drafting 
 legislation in two separate committees.
-The Houses Homeland Security Committee intro\-
+The House’s Homeland Security Committee intro\-
 duced seven bipartisan bills, five of which focused 
 strictly on strengthening cybersecurity, including 
-a Pipeline Security Act, and Cybersecurity 
-Vulnerability Remediation Act.
-The Senates Homeland Security and Governmental 
+a “Pipeline Security Act,” and “Cybersecurity 
+Vulnerability Remediation Act.”
+The Senate’s Homeland Security and Governmental 
 Affairs Committee introduced The Supply Chain 
-Security Training Act, calling it, bipartisan legisla\-
+Security Training Act, calling it, “bipartisan legisla\-
 tion to help protect against cybersecurity threats and 
 other technological supply chain security vulner\-
 abilities that arise when the federal government 
 purchases services, equipment or products.
-Whats Happening in the 
+What’s Happening in the 
 United Kingdom? 
 In May 2021, the U.K. government announced that 
 it was seeking advice on defending against digital 
 supply chain attacks from organizations that either 
 consume IT services, or MSPs that provide software 
 and services. 
-As supply chains 
+“As supply chains 
 become interconnected, 
-vulnerabilities in suppliers 
-products and services 
+vulnerabilities in suppliers’ 
+products and services ... 
 become more attractive 
-targets for attackers.
- U.K. governments request for advice on
-defending against digital supply chain attacks 
+targets for attackers.”
+— U.K. government’s request for advice on 
+ defending against digital supply chain attacks ­
 35
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R5 :EMERGENC EO FS OFT WA R ES UPP LYC HAI NR EGUL AT IO NA N DS TA N DA RDS
+C H A P T E R 5 : E M E R G E N C E O F S O F T WA R E S U P P LY C H A I N R E G U L AT I O N A N D S TA N DA R D S
 The request noted: 
 "As supply chains become interconnected, 
 vulnerabilities in suppliers' products and 
@@ -1920,7 +2012,7 @@ Media, and Sport (DCMS) opened up a survey that
 closed in early July, and invited comments from 
 industry experts and tech organizations on step\-
 ping up supply chain security across the UK.
-The initiative is a part of the U.K.s nationwide 
+The initiative is a part of the U.K.’s nationwide 
 "cyber resilience" efforts set out in its National 
 Cyber Security Strategy to safeguard businesses 
 and organizations that increasingly rely on technol\-
@@ -1934,65 +2026,81 @@ guidelines and frameworks to strengthen specific
 areas of digital supply chain security. It could also 
 mean the introduction of new, country\-wide legisla\-
 tion for software firms and IT service providers. 
-Whats Happening in Germany? 
+What’s Happening in Germany? 
 In May 2021, Germany passed the Information 
 Technology Security Act 2\.0 as an update to the 
-First Act to increase cyber and information security 
+First Act to “increase cyber and information security 
 against the backdrop of increasingly frequent and 
 complex cyber\-attacks and the continued digital\-
-isation of everyday life. While this Act influences 
+isation of everyday life.” While this Act influences 
 many areas of the IT industry in Germany, it spe\-
 cifically states that suppliers, i.e. manufacturers of 
 critical components, will also be subject to certain 
 obligations to safeguard the entire supply chain. 
 Critical components are defined as IT products:
-1\.that are used in critical infrastructures; 
-1\. for which disruptions to availability, integrity, 
+1\. that are used in critical infrastructures; 
+2\. for which disruptions to availability, integrity, 
 authenticity, and confidentiality may lead to a 
 failure or a significant impairment of the func\-
 tionality of critical infrastructures or to threats to 
 public safety; and 
-1\. that on the basis of a law regarding this provision 
+3\. that on the basis of a law regarding this provision 
 are designated as a critical component, or 
 realize a function designated as critical on the 
 basis of a law.
-Whats Happening in the 
+What’s Happening in the 
 European Union? 
 In July 2021, the ENISA issued a report titled 
-Understanding the increase in Supply Chain 
-Security Attacks that reviewed 24 different 
+“Understanding the increase in Supply Chain 
+Security Attacks” that reviewed 24 different 
 software supply chain attacks and how they came 
 to fruition. 
-It found that:In order to compromise the targeted customers, 
-attackers focused on the suppliers code in about 
-66% of the reported incidents.For 58% of the supply chain incidents analysed, 
+It found that: 
+ 
+⊲“In order to compromise the targeted customers, 
+attackers focused on the suppliers’ code in about 
+66% of the reported incidents.” 
+ 
+⊲“For 58% of the supply chain incidents analysed, 
 the customer assets targeted were predominantly 
 customer data, including Personally Identifiable 
-Information (PII) data and intellectual property.For 66% of the supply chain attacks analysed, 
+Information (PII) data and intellectual property.” 
+ 
+⊲“For 66% of the supply chain attacks analysed, 
 suppliers did not know, or failed to report on how 
 they were compromised. However, less than 9% of 
 the customers compromised through supply chain 
-attacks did not know how the attacks occurred. 
+attacks did not know how the attacks occurred.” 
 More importantly, the report shared recommen\-
 dations that organizations should put in place. 
 While more guidance than regulation, it does 
 foreshadow what could come down the road. 
-Suggestions include:identifying and documenting suppliers and 
-service providers;defining risk criteria for different types of suppli\-
+Suggestions include: 
+ 
+⊲identifying and documenting suppliers and 
+service providers;
+ 
+⊲defining risk criteria for different types of suppli\-
 ers and services such as supplier and customer 
 dependencies, critical software dependencies, 
 single points of failure;
-Attackers focused
-on the suppliers code 
+“Attackers focused 
+on the suppliers’ code 
 in about 66% of the 
-reported incidents.
- ENOSA report, Understanding the Increase
-in Supply Chain Security Attacks
+reported incidents.”
+— ENOSA report, “Understanding the Increase 
+ in Supply Chain Security Attacks”
 36
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R5 :EMERGENC EO FS OFT WA R ES UPP LYC HAI NR EGUL AT IO NA N DS TA N DA RD Smonitoring of supply chain risks and threats;managing suppliers over the whole lifecycle of 
+C H A P T E R 5 : E M E R G E N C E O F S O F T WA R E S U P P LY C H A I N R E G U L AT I O N A N D S TA N DA R D S
+ 
+⊲monitoring of supply chain risks and threats;
+ 
+⊲managing suppliers over the whole lifecycle of 
 a product or service, including procedures to 
-handle end\-of\-life products or components;classifying of assets and information shared with 
+handle end\-of\-life products or components;
+ 
+⊲classifying of assets and information shared with 
 or accessible to suppliers, and defining relevant 
 procedures for accessing and handling them.
 The report also suggests possible actions to assure 
@@ -2000,28 +2108,36 @@ that the development of products and services
 comply with security practices. Suppliers are 
 advised to implement better policies for vulnerabil\-
 ity and patch management. 
-Recommendations for suppliers include:ensuring that the infrastructure used to design, 
+Recommendations for suppliers include:
+ 
+⊲ensuring that the infrastructure used to design, 
 develop, manufacture, and deliver products, compo\-
-nents and services follows cybersecurity practices;implementing a product development, maintenance, 
+nents and services follows cybersecurity practices;
+ 
+⊲implementing a product development, maintenance, 
 and support process that is consistent with com\-
-monly accepted product development processes;monitoring of security vulnerabilities reported by 
+monly accepted product development processes;
+ 
+⊲monitoring of security vulnerabilities reported by 
 internal and external sources that includes used 
-third\-party components;maintaining an inventory of assets that includes 
+third\-party components;
+ 
+⊲maintaining an inventory of assets that includes 
 patch\-relevant information.
-Whats Happening Globally?
+What’s Happening Globally?
 May 
 In May 2021, the United Nations released a 
-report two years in the making from the Group of 
+report two years in the making from “the Group of 
 Governmental Experts on Advancing responsible 
 State behaviour in cyberspace in the context of 
-international security. 
+international security.” 
 Similar to actions at the national and regional 
 levels, the report touches on several areas of 
 cybersecurity, and provides guidance on the 
-reasonable steps States should take to ensure the 
+“reasonable steps States should take to ensure the 
 integrity of the supply chain so that end users can 
 have confidence in the security of information and 
-communication technology (ICT) products. 
+communication technology (ICT) products.” 
 The report notes: 
 Ensuring the integrity of the ICT supply 
 chain and the security of ICT products, and 
@@ -2040,7 +2156,7 @@ security of the supply chain can include:
 comprehensive, transparent, objective and 
 impartial frameworks and mechanisms for 
 supply chain risk management, consistent 
-with a States international obligations. 
+with a State’s international obligations. 
 (b) Establishing policies and programmes to 
 objectively promote the adoption of good 
 practices by suppliers and vendors of ICT 
@@ -2066,20 +2182,20 @@ Union formed a Trade and Technology Council
 (TTC). This was in part developed to work together 
 on the fight to secure critical technology and 
 software supply chains. According to the White 
-House, the TTC will be composed of working 
+House, the TTC “will be composed of working 
 groups focused on advancing cooperation on tech 
 standards on artificial intelligence, the internet 
 of things and other emerging technologies, ICT 
 security, data governance, investment screening 
-and semiconductors. 
+and semiconductors.” 
 37
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
-CHAPTE R5 :EMERGENC EO FS OFT WA R ES UPP LYC HAI NR EGUL AT IO NA N DS TA N DA RDS
+C H A P T E R 5 : E M E R G E N C E O F S O F T WA R E S U P P LY C H A I N R E G U L AT I O N A N D S TA N DA R D S
 About the Analysis
-The authors have taken great care to present statistically significant sample sizes with regard to
-component versions, downloads, vulnerability counts, and other data surfaced in this years report.
-While Sonatype has direct access to primary data for Java, JavaScript, Python, .NET and other
-component formats, we also reference third\-party data sources as documented. Further, Sonatypes 
+The authors have taken great care to present statistically significant sample sizes with regard to 
+component versions, downloads, vulnerability counts, and other data surfaced in this year’s report. 
+While Sonatype has direct access to primary data for Java, JavaScript, Python, .NET and other 
+component formats, we also reference third\-party data sources as documented. Further, Sonatype’s 
 research analyzed scan data from 100,000 anonymized, validated applications. 
 38
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
@@ -2088,18 +2204,18 @@ Each year, the State of the Software Supply Chain report is a labor of love. It 
 the patterns and practices associated with OSS development and the evolution of software supply chain 
 management practices.
 The report is made possible thanks to a tremendous effort put forth by many team members at Sonatype, 
-including: Bruce Mayhew, Dr. Stephen Magill, Matt Howard, Ax Sharma, Sal Kimmich, Elissa Walters,
+including: Bruce Mayhew, Dr. Stephen Magill, Matt Howard, Ax Sharma, Sal Kimmich, Elissa Walters, 
 Alli VanKanegan, Juan Morales, Moncef Ben\-Soula, Cody Nash, Andrew Yorra, Brian Fox, Mike Hansen, 
 Joel Orlina, Melissa Schmidt, Ember DeBoer, Ilkka Turunen, Luke Mcbride.
 We would also like to offer thanks for contributions big and small and for sharing perspective to our many 
 colleagues across the DevOps and open source development community.
-A very special thanks goes out to Alli VanKanegan who created the incredible design for this years report.
+A very special thanks goes out to Alli VanKanegan who created the incredible design for this year’s report.
 39
 2021 STATE OF THE SOFTWARE SUPPLY CHAIN REPORT
 Headquarters
 8161 Maple Lawn Blvd, Suite 250
 Fulton, MD 20759
-USA 1\.877\.866\.2836
+USA • 1\.877\.866\.2836
 European Office
 199 Bishopsgate
 London EC2M 3TY
@@ -2115,6 +2231,6 @@ All Rights Reserved.
 Sonatype is the leader in developer\-friendly, full\-spectrum software supply chain management providing organizations total control of their 
 cloud\-native development life cycles, including third\-party open source code, first\-party source code, infrastructure as code, and containerized 
 code. The company supports 70% of the Fortune 100 and its commercial and open source tools are trusted by 15 million developers around the 
-world. With a vision to transform the way the world innovates, Sonatype helps organizations of all sizes build higher quality software thats more 
+world. With a vision to transform the way the world innovates, Sonatype helps organizations of all sizes build higher quality software that’s more 
 aligned with business needs, more maintainable, and more secure. For more information, please visit Sonatype.com, or connect with us on 
 Facebook, Twitter, or LinkedIn.

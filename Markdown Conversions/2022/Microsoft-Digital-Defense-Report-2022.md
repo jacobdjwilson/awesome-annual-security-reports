@@ -1,74 +1,143 @@
 Microsoft 
 Digital Defense 
-Report 2022Illuminating the threat landscape 
-and empowering a digital defense. Contents 
+Report 2022 
+ 
+Illuminating the threat landscape 
+and empowering a digital defense.
+ 
+ 
+ Contents 
 The data, insights, and events in this report are 
 from July 2021 through June 2022 (Microsoft 
-fiscal year 2022\), unless otherwise noted.Report Introduction 
+fiscal year 2022\), unless otherwise noted.
+ 
+ 
+Report Introduction 
 02
 The State of Cybercrime 
-06An overview of The State of Cybercrime 
+06
+ 
+An overview of The State of Cybercrime 
 07
-Introduction
+Introduction 
 08
 Ransomware and extortion: 
-A nation\-level threat
-09Ransomware insights from 
+A nation\-level threat 
+09
+ 
+Ransomware insights from 
 front\-line responders 
-14Cybercrime as a service 
-18The evolving phishing threat landscape
+14
+ 
+Cybercrime as a service 
+18
+ 
+The evolving phishing threat landscape 
 21
 A timeline of botnet disruption from 
-Microsofts early days of collaboration 
-25Cybercriminal abuse of infrastructure 
-26Is hacktivism here to stay? 
-28Nation State Threats 
-30An overview of Nation State Threats 
+Microsoft’s early days of collaboration 
+25
+ 
+Cybercriminal abuse of infrastructure 
+26
+ 
+Is hacktivism here to stay? 
+28
+ 
+Nation State Threats 
+30
+ 
+An overview of Nation State Threats 
 31
 Introduction 
-32Background on nation state data 
-33Sample of nation state actors and 
+32
+ 
+Background on nation state data 
+33
+ 
+Sample of nation state actors and 
 their activities 
-34The evolving threat landscape 
-35The IT supply chain as a gateway 
+34
+ 
+The evolving threat landscape 
+35
+ 
+The IT supply chain as a gateway 
 to the digital ecosystem 
-37Rapid vulnerability exploitation 
-39Russian state actors wartime cyber 
+37
+ 
+ 
+Rapid vulnerability exploitation 
+39
+ 
+Russian state actors’ wartime cyber 
 tactics threaten Ukraine and beyond 
-41China expanding global targeting 
+41
+ 
+ 
+China expanding global targeting 
 for competitive advantage 
 44
 Iran growing increasingly aggressive 
 following power transition 
-46North Korean cyber capabilities employed 
-to achieve regimes three main goals
-49Cyber mercenaries threaten 
-the stability of cyberspace
-52Operationalizing cybersecurity norms 
+46
+ 
+North Korean cyber capabilities employed 
+to achieve regime’s three main goals 
+49
+ 
+Cyber mercenaries threaten 
+the stability of cyberspace 
+52
+ 
+Operationalizing cybersecurity norms 
 for peace and security in cyberspace 
-53Devices and Infrastructure 
+53
+ 
+ 
+Devices and Infrastructure 
 56 
 An overview of Devices and Infrastructure 
 57
 Introduction 
-58Governments acting to improve critical 
-infrastructure security and resilience
+58
+ 
+Governments acting to improve critical 
+infrastructure security and resilience 
 59
 IoT and OT exposed: Trends and attacks 
-62Supply chain and firmware hacking 
-65Spotlight on firmware vulnerabilities 
+62
+ 
+Supply chain and firmware hacking 
+65
+ 
+Spotlight on firmware vulnerabilities 
 66
 Reconnaissance\-based OT attacks 
-68Cyber Influence Operations 
-71An overview of Cyber Influence Operations 
+68
+ 
+Cyber Influence Operations 
+71
+ 
+An overview of Cyber Influence Operations 
 72
 Introduction 
-73Trends in cyber influence operations 
-74Influence operations during the COVID\-19 
-pandemic and Russias invasion of Ukraine 
-76Tracking the Russian Propaganda Index 
-78Synthetic media 
-80A holistic approach to protect 
+73
+ 
+Trends in cyber influence operations 
+74
+ 
+Influence operations during the COVID\-19 
+pandemic and Russia’s invasion of Ukraine 
+76
+ 
+Tracking the Russian Propaganda Index 
+78
+ 
+Synthetic media 
+80
+ 
+A holistic approach to protect 
 against cyber influence operations 
 83
 Cyber Resilience 
@@ -76,94 +145,154 @@ Cyber Resilience
 An overview of Cyber Resilience 
 87
 Introduction 
-88Cyber resiliency: A crucial 
+88
+ 
+Cyber resiliency: A crucial 
 foundation of a connected society 
-89The importance of modernizing 
+89
+ 
+ 
+The importance of modernizing 
 systems and architecture 
-90Basic security posture is a determining 
+90
+ 
+ 
+Basic security posture is a determining 
 factor in advanced solution effectiveness 
-92Maintaining identity health is fundamental 
+92
+ 
+ 
+Maintaining identity health is fundamental 
 to organizational well\-being 
-93Operating system default security settings 
-96Software supply chain centrality 
-97Building resilience to emerging DDoS, 
+93
+ 
+ 
+Operating system default security settings 
+96
+ 
+Software supply chain centrality 
+97
+ 
+Building resilience to emerging DDoS, 
 web application, and network attacks 
-98Developing a balanced approach 
+98
+ 
+ 
+Developing a balanced approach 
 to data security and cyber resiliency 
-101Resilience to cyber influence operations: 
+101
+ 
+ 
+Resilience to cyber influence operations: 
 The human dimension 
-102Fortifying the human factor with skilling 
-103Insights from our ransomware 
+102
+ 
+Fortifying the human factor with skilling 
+103
+ 
+Insights from our ransomware 
 elimination program 
-104Act now on quantum security implications 
-105Integrating business, security, and IT for 
+104
+ 
+ 
+Act now on quantum security implications 
+105
+ 
+Integrating business, security, and IT for 
 greater resilience 
-106The cyber resilience bell curve 
-108Contributing Teams 
+106
+ 
+ 
+The cyber resilience bell curve 
+108
+ 
+Contributing Teams 
 110
 For the best experience viewing and 
 navigating this report, we recommend 
 using Adobe Reader, available as a free 
-download from the Adobe website.01
+download from the Adobe website.
+ 
+ 
+ 
+01
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
-Teams02
+Teams
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+02
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
 Introduction by Tom Burt 
 Corporate Vice President, Customer Security \& Trust 
-The trillions of signals we analyze 
+“The trillions of signals we analyze 
 from our worldwide ecosystem 
 of products and services reveal the 
 ferocity, scope, and scale of digital 
-threats across the globeA snapshot of our landscape 
+threats across the globe” 
+ 
+A snapshot of our landscape… 
 Scope and scale of 
 threat landscape 
 The volume of password 
 attacks has risen to an 
 estimated 921 attacks 
-every second a 74% 
+every second – a 74% 
 increase in just one year.
 Dismantling 
 cybercrime 
@@ -182,7 +311,7 @@ insufficient controls
 on privilege access and 
 lateral movement.
 On February 23, 2022, the cybersecurity world 
-entered a new age, the age of the hybrid war.
+entered a new age, the age of the hybrid war. 
 On that day, hours before missiles were launched 
 and tanks rolled across borders, Russian actors 
 launched a massive destructive cyberattack 
@@ -197,10 +326,10 @@ physical and logical security against cyberattacks
 and enables advances in threat intelligence and 
 end point protection that have proven their value 
 in Ukraine. 
-While any survey of the years developments in 
-cybersecurity must begin there, this years report 
+While any survey of the year’s developments in 
+cybersecurity must begin there, this year’s report 
 provides a deep dive into much more. In the 
-reports first chapter, we focus on activities of 
+report’s first chapter, we focus on activities of 
 cybercriminals, followed by nation state threats in 
 chapter two. Both groups have greatly increased 
 the sophistication of their attacks which has 
@@ -221,7 +350,7 @@ operations in regions around the globe, as
 covered in the third chapter. For example, 
 Russia has worked hard to convince its citizens, 
 and the citizens of many other countries, that 
-its invasion of Ukraine was justified while 
+its invasion of Ukraine was justified – while 
 also sowing propaganda discrediting COVID 
 vaccines in the West and simultaneously 
 promoting their effectiveness at home. 
@@ -233,10 +362,10 @@ is discussed in chapter four. Finally, in the last
 chapter, we provide the insights and lessons 
 we have learned from over the past year 
 defending against attacks directed at Microsoft 
-and our customers as we review the years 
+and our customers as we review the year’s 
 developments in cyber resilience. 
 Each chapter provides the key lessons learned 
-and insights based on Microsofts unique 
+and insights based on Microsoft’s unique 
 vantage point. The trillions of signals we analyze 
 from our worldwide ecosystem of products and 
 services reveal the ferocity, scope, and scale 
@@ -249,31 +378,47 @@ attempts, identity thefts, and other threats to
 our customers.
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
-ResilienceIntroduction by Tom Burt
-Continued03
+Cyber 
+Resilience
+ 
+ 
+ 
+Introduction by Tom Burt  
+Continued 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+03
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
@@ -283,7 +428,7 @@ cybercriminals and nation state actors and notify
 customers when they are being threatened 
 or attacked by a nation state actor. We work 
 to develop increasingly effective features 
-and services that use AIML technology to 
+and services that use AI/ML technology to 
 identify and block cyber threats and security 
 professionals defend against and identify 
 cyber\-intrusions more rapidly and effectively. 
@@ -307,13 +452,13 @@ compromising business networks and devices to
 host phishing campaigns, malware, or even use 
 their computing power to mine cryptocurrency. 
 Find out more on p6 
-The advent of 
+“The advent of 
 cyberweapon 
 deployment in 
 the hybrid war 
 in Ukraine is the 
-dawn of a new
-age of conflict. 
+dawn of a new 
+age of conflict.” 
 Nation state threats 
 Nation state actors are launching increasingly 
 sophisticated cyberattacks designed to evade 
@@ -358,36 +503,42 @@ IoT and OT devices security has not kept pace.
 Threat actors are exploiting these devices to 
 establish access on networks and enable lateral 
 movement, to establish a foothold in a supply 
-chain, or to disrupt the target organizations 
+chain, or to disrupt the target organization’s 
 OT operations. 
 Find out more on p56 
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
-Resilience
-Contributing 
-TeamsIntroduction by Tom Burt
-Continued04
-Microsoft Digital Defense Report 2022 
-Report 
-Introduction
-Nation State
-Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+ 
+ 
+ 
+Introduction by Tom Burt 
+Continued 
+ 
+04
+Microsoft Digital Defense Report 2022 
+Report 
+Introduction
+Nation State 
+Threats
+Cyber 
+Resilience
+Contributing 
+Teams
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
@@ -404,7 +555,7 @@ increase the scope, scale, and efficiency of their
 campaigns, and the outsized impact they are 
 having in the global information ecosystem. 
 In the past year, we have seen these operations 
-used as part of Russias hybrid war in Ukraine, 
+used as part of Russia’s hybrid war in Ukraine, 
 but have also seen Russia and other nations, 
 including China and Iran, increasingly deploy 
 propaganda operations powered by social media 
@@ -443,10 +594,10 @@ cybersecurity experts, threat hunters,
 geopolitical analysts, investigators, and 
 frontline responders across 77 countries.
 15,000\+ 
-partners in our security ecosystem who
+partners in our security ecosystem who 
 increase cyber resilience for our customers.
 37bn 
-email threats
+email threats 
 blocked
 34\.7bn 
 identity threats 
@@ -459,7 +610,7 @@ July 1, 2021 through June 30, 2022
 identity threats 
 blocked
 37bn
-email threats
+email threats 
 blocked
 2\.5bn
 endpoint signals 
@@ -475,7 +626,7 @@ cybersecurity experts, threat hunters,
 geopolitical analysts, investigators, and 
 frontline responders across 77 countries.
 15,000\+ 
-partners in our security ecosystem who
+partners in our security ecosystem who 
 increase cyber resilience for our customers.
 Cyber resilience
 Security is a key enabler of technological success. 
@@ -493,13 +644,15 @@ Since then, our principal challenge has been
 managing the prevalence and complexity of 
 various attack methods and increased nation 
 state activity. In this chapter, we detail the 
-challenges we have faced, and the defenses
+challenges we have faced, and the defenses 
 we have mobilized in response with our more 
 than 15,000 partners. 
- Find out more on p86
-Our unique vantage pointJuly 1, 2021 through June 30, 2022
-Introduction by Tom Burt
-Continued
+  Find out more on p86
+ Our unique vantage point 
+ 
+July 1, 2021 through June 30, 2022
+Introduction by Tom Burt 
+Continued 
 Cyber influence operations
 Nation states are increasingly using sophisticated 
 influence operations to distribute propaganda 
@@ -513,74 +666,93 @@ increase the scope, scale, and efficiency of their
 campaigns, and the outsized impact they are 
 having in the global information ecosystem. 
 In the past year, we have seen these operations 
-used as part of Russias hybrid war in Ukraine, 
+used as part of Russia’s hybrid war in Ukraine, 
 but have also seen Russia and other nations, 
 including China and Iran, increasingly deploy 
 propaganda operations powered by social media 
 to extend their global influence on a range 
 of issues. 
- Find out more on p71
+  Find out more on p71
 04
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
-Introduction by Tom Burt
-Continued 
- 
+Introduction by Tom Burt 
+Continued 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
 05
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
-We believe Microsoftindependently and 
+We believe Microsoft—independently and 
 through close partnerships with others in 
 private industry, government, and civil society
-has a responsibility to protect the digital 
+—has a responsibility to protect the digital 
 systems that underpin the social fabric of our 
 society and promote safe, secure computing 
 environments for every person, wherever they 
 are located. This responsibility is the reason we 
 have published the MDDR each year since 2020\. 
-The report is the culmination of Microsofts 
+The report is the culmination of Microsoft’s 
 vast data and comprehensive research. It shares 
 our unique insights on how the digital threat 
 landscape is evolving and the crucial actions that 
@@ -591,27 +763,29 @@ take immediate action based on the data and
 insights we present both here and in our many 
 cybersecurity publications throughout the year. 
 As we consider the gravity of the threat to the 
-digital landscapeand its translation into the 
-physical worldit is important to remember that 
+digital landscape—and its translation into the 
+physical world—it is important to remember that 
 we are all empowered to take action to protect 
 ourselves, our organizations, and enterprises 
 against digital threats.
 Thank you for taking 
-the time to review
-this years Microsoft 
+the time to review 
+this year’s Microsoft 
 Digital Defense 
-Report. We hope
-you will find that
+Report. We hope 
+you will find that 
 it provides valuable 
 insight and 
 recommendations 
-to help us collectively
+to help us collectively 
 defend the digital 
 ecosystem. 
-Tom Burt
+Tom Burt 
 Corporate Vice President, 
 Customer Security \& Trust 
-Our objective with this report is twofold:1
+Our objective with this report is twofold:
+ 
+1
 To illuminate the evolving digital threat landscape for our customers, 
 partners, and stakeholders spanning the broader ecosystem, shining 
 a light on both new cyberattacks and evolving trends in historically 
@@ -621,34 +795,40 @@ To empower our customers and partners to improve their
 cyber resiliency and respond to these threats.
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
-
+
+ 
+
+ 
+
 
 06
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureThe State of 
+Devices and 
+Infrastructure
+ 
+The State of 
 Cybercrime
 The State of 
 Cybercrime
@@ -670,7 +850,7 @@ Cybercrime as a service
 The evolving phishing threat landscape 
 21
 A timeline of botnet disruption from 
-Microsofts early days of collaboration 
+Microsoft’s early days of collaboration 
 25
 Cybercriminal abuse of infrastructure 
 26
@@ -678,16 +858,24 @@ Is hacktivism here to stay?
 28
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
-TeamsThe RaaS operator develops and maintains the tools to 
+Teams
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The RaaS operator develops and maintains the tools to 
 power the ransomware operations, including the builders 
 that produce the ransomware payloads and payment portals 
 for communicating with victims. 
@@ -701,7 +889,7 @@ extortion support offerings, including leak site hosting and
 integration into ransom notes, as well as decryption 
 negotiation, payment pressure, and cryptocurrency 
 transaction services. 
-Affiliates are generally small groups of people affiliated 
+Affiliates are generally small groups of people “affiliated” 
 with one or more RaaS programs. Their role is to deploy the 
 RaaS program payloads. Affiliates move laterally in the 
 network 
@@ -713,11 +901,11 @@ or gain access themselves via malware campaigns, brute
 force, or vulnerability exploitation. Access broker entities 
 can range from large to small. Top tier access brokers 
 specialize in high\-value network access, while lower tier 
-brokers on the dark web might have just 12 usable stolen 
+brokers on the dark web might have just 1–2 usable stolen 
 credentials for sale.
 Organizations and individuals with weak cybersecurity 
 hygiene practices are at greater risk of having their network 
-credentials stolen.
+credentials stolen. 
 Operators
 Access brokers
 Understanding the ransomware economy
@@ -733,7 +921,10 @@ BlackCat
 20
 60
 2,500
-p15Ransomware
+p15
+ 
+ 
+Ransomware
 Pre\-ransomware
 2022
 BEC Themes (January\-June 202
@@ -752,18 +943,20 @@ information
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureThe State of 
+Devices and 
+Infrastructure
+ 
+The State of 
 Cybercrime
  An overview of 
 The State of Cybercrime 
@@ -839,29 +1032,33 @@ Contributing
 Teams
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
-Resilience08
+Cyber 
+Resilience
+ 
+08
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureThe State of 
+Devices and 
+Infrastructure
+ 
+The State of 
 Cybercrime
 Introduction 
 Cybercrime continues 
@@ -874,15 +1071,15 @@ approach to prevention, we see attackers using
 two strategies to gain access required to facilitate 
 cybercrime. One approach is a campaign with 
 broad targets that relies on volume. The other 
-uses surveillance and more selective targeting
+uses surveillance and more selective targeting 
 to increase the rate of return. Even when revenue 
-generation is not the objectivesuch as nation 
-state activity for geopolitical purposesboth 
+generation is not the objective—such as nation 
+state activity for geopolitical purposes—both 
 random and targeted attacks are used. This past 
 year, cybercriminals continued to rely on social 
-engineering and exploitation of topical issues
+engineering and exploitation of topical issues 
 to maximize the success of campaigns. 
-For example, while COVID\-themed phishing
+For example, while COVID\-themed phishing 
 lures were used less frequently, we observed 
 lures soliciting donations to support the 
 citizens of Ukraine increasing. 
@@ -911,7 +1108,7 @@ Organizations must regularly review and
 strengthen access controls and implement 
 security strategies to defend against 
 cyberattacks. However, that is not all they 
-can do. We explain how our Digital Crimes
+can do. We explain how our Digital Crimes 
 Unit (DCU) has used civil cases to seize malicious 
 infrastructure used by cybercriminals and nation 
 state actors. We must fight this threat together 
@@ -928,29 +1125,34 @@ Contributing
 Teams
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Factors
 Low barrier to entry
-p1509
+p15
+ 
+ 
+ 
+ 
+09
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 The State of 
 Cybercrime
@@ -964,28 +1166,28 @@ and state and local governments are
 targeted by criminals leveraging a 
 growing cybercriminal ecosystem.
 Over the past two years, high profile ransomware 
-incidentssuch as those involving critical 
+incidents—such as those involving critical 
 infrastructure, healthcare, and IT service 
-providershave drawn considerable public 
+providers—have drawn considerable public 
 attention. As ransomware attacks have become 
 more audacious in scope, their effects have 
 become more wide ranging. The following are 
-examples of attacks weve seen already in 2022:
- In February, an attack on two companies 
+examples of attacks we’ve seen already in 2022:
+• In February, an attack on two companies 
 affected the payment processing 
 systems of hundreds of gas stations 
 in northern Germany. Note 1
- In March, an attack against Greeces 
+• In March, an attack against Greece’s 
 postal service temporarily disrupted mail 
 delivery and impacted the processing of 
 financial transactions. Note 2 
- In late May, a ransomware attack against 
+• In late May, a ransomware attack against 
 Costa Rican government agencies forced 
 a national emergency to be declared after 
-hospitals were shut down and customs
+hospitals were shut down and customs 
 and tax collection disrupted. Note 3 
- Also in May, an attack caused flight delays and 
-cancellations for one of Indias largest airlines, 
+• Also in May, an attack caused flight delays and 
+cancellations for one of India’s largest airlines, 
 leaving hundreds of passengers stranded. Note 4 
 The success of these attacks and the extent 
 of their real\-world impacts are the result of 
@@ -994,26 +1196,26 @@ enabling access to tooling and infrastructure and
 expanding cybercriminal capabilities by lowering 
 their skill barrier to entry. 
 In recent years, ransomware has moved 
-from a model where a single gang would 
+from a model where a single “gang” would 
 both develop and distribute a ransomware 
 payload to the ransomware as a service (RaaS) 
 model. RaaS allows one group to manage the 
 development of the ransomware payload and 
 provide services for payment and extortion via 
-data leakage to other cybercriminalsthe ones 
-who actually launch the ransomware attacks
-referred to as affiliates for a cut of the profits. 
+data leakage to other cybercriminals—the ones 
+who actually launch the ransomware attacks—
+referred to as “affiliates” for a cut of the profits. 
 This franchising of the cybercrime economy has 
 expanded the attacker pool. The industrialization 
 of cybercriminal tooling has made it easier for 
 attackers to perform intrusions, exfiltrate data, 
 and deploy ransomware. 
-Human operated ransomware Note 5a term coined 
+Human operated ransomware Note 5—a term coined 
 by Microsoft researchers to describe threats 
 driven by humans who make decisions at every 
 stage of the attacks based on what they discover 
-in their targets network and delineate the threat 
-from commodity ransomware attacksremains 
+in their target’s network and delineate the threat 
+from commodity ransomware attacks—remains 
 a significant threat to organizations.
 Human operated ransomware 
 targeting and rate of success model
@@ -1024,7 +1226,9 @@ to compromised networks
 to ransomware\-as\-a\-service 
 affiliates, who run the 
 ransomware attack
-60encounter activity 
+60
+ 
+encounter activity 
 associated with known 
 ransomware attackers
 RaaS affiliates 
@@ -1038,43 +1242,47 @@ Attackers take advantage
 of any security weakness 
 they find in the network, 
 so attacks vary
-1falls victim 
+1
+ 
+falls victim 
 to a successful 
 ransomware event
 The ransomware payload 
 is the culmination of a 
 chain of malicious activity
-Model based on Microsoft Defender for Endpoint (EDR) data (JanuaryJune 2022\).Contributing 
+Model based on Microsoft Defender for Endpoint (EDR) data (January–June 2022\). 
+ 
+Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
- Ransomware
- and extortion:
+ Ransomware 
+ and extortion: 
  A nation\-level threat 
 Continued
 10
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-The State of
+The State of 
 Cybercrime
 Ransomware attacks have become even more 
 impactful as the adoption of a double extortion 
@@ -1088,12 +1296,12 @@ Although most ransomware attackers
 opportunistically deploy ransomware to 
 whatever network they get access, some 
 purchase access from other cybercriminals, 
-leveraging connections between access
+leveraging connections between access 
 brokers and ransomware operators.
 Our unique breadth of signal 
 intelligence is gathered from multiple 
-sourcesidentity, email, endpoints, 
-and cloudand provides insight into 
+sources—identity, email, endpoints, 
+and cloud—and provides insight into 
 the growing ransomware economy, 
 complete with an affiliate system 
 which includes tools designed for 
@@ -1126,21 +1334,21 @@ this threat will require a whole\-of\-government
 strategy to be executed in close partnership with 
 the private sector.
 Digital threat activity 
-is at an all\-time
-high and the level
+is at an all\-time 
+high and the level 
 of sophistication 
 increases every day.
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Operators
 Access brokers
@@ -1156,15 +1364,15 @@ BlackCat
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 The State of 
 Cybercrime
@@ -1183,60 +1391,64 @@ extortion support offerings, including leak site hosting
 and integration into ransom notes, as well as decryption 
 negotiation, payment pressure, and cryptocurrency 
 transaction services. 
-Affiliates are generally small groups of people affiliated 
+Affiliates are generally small groups of people “affiliated” 
 with one or more RaaS programs. Their role is to deploy the 
 RaaS program payloads. Affiliates move laterally in the 
 network, persist on systems, and exfiltrate data. Each affiliate 
 has unique characteristics, such as different ways of doing 
-data exfiltration.Access brokers sell network access to other cybercriminals, 
+data exfiltration.
+ 
+Access brokers sell network access to other cybercriminals, 
 or gain access themselves via malware campaigns, brute 
 force, or vulnerability exploitation. Access broker entities 
 can range from large to small. Top tier access brokers 
 specialize in high\-value network access, while lower tier 
-brokers on the dark web might have just 12 usable stolen 
+brokers on the dark web might have just 1–2 usable stolen 
 credentials for sale.
 Organizations and individuals with weak cybersecurity 
 hygiene practices are at greater risk of having their network 
-credentials stolen.
+credentials stolen. 
 Contrary to how ransomware is sometimes 
 portrayed in the media, it is rare for a single 
 ransomware variant to be managed by one end\-
-to\-end ransomware gang. Instead, there are 
+to\-end “ransomware gang.” Instead, there are 
 separate entities that build malware, gain access 
 to victims, deploy ransomware, and handle 
 extortion negotiations. The industrialization 
 of the criminal ecosystem has led to: 
- Access brokers that break in and hand 
+• Access brokers that break in and hand 
 off access (access as a service).
- Malware developers that sell tooling.
- Criminal operators and affiliates that 
+• Malware developers that sell tooling.
+• Criminal operators and affiliates that 
 conduct intrusions. 
- Encryption and extortion service 
+• Encryption and extortion service 
 providers that take over monetization 
 from affiliates (RaaS).
 All human\-operated ransomware campaigns 
 share common dependencies on security 
 weaknesses. Specifically, attackers usually 
-take advantage of an organizations poor 
+take advantage of an organization’s poor 
 cyber hygiene, which often includes infrequent 
 patching and failure to implement multifactor 
-authentication (MFA).Contributing 
+authentication (MFA).
+ 
+Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Jan
-Ryuk 2020Jun 2021
-Hive Oct 2021present
-BlackCat Mar 2022present
-Nokoyawa May 2022present
+Ryuk 2020–Jun 2021
+Hive Oct 2021–present
+BlackCat Mar 2022–present
+Nokoyawa May 2022–present
 Agenda etc. June 2022 (experimenting)
 2021
 2022
@@ -1257,19 +1469,26 @@ Mar
 Apr
 May
 Jun
-Conti JulOct 202112
+Conti Jul–Oct 2021
+ 
+ 
+ 
+ 
+ 
+ 
+12
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 The State of 
 Cybercrime
@@ -1282,7 +1501,7 @@ a significant decrease in activity in late March
 and early April. We observed the last Conti 
 ransomware deployments in mid\-April. 
 However, much like the shuttering of other 
-ransomware operations, Contis dissolution did 
+ransomware operations, Conti’s dissolution did 
 not have a significant impact on ransomware 
 deployments, as MSTIC observed Conti affiliates 
 pivoting to deploy other ransomware payloads, 
@@ -1296,18 +1515,18 @@ Our Microsoft threat intelligence teams track
 ransomware threat actors as individual groups 
 (labeled as DEVs) based on their specific tools, 
 rather than tracking them by the malware they 
-use. This meant that when Contis affiliates 
+use. This meant that when Conti’s affiliates 
 dispersed, we were able to continue tracking 
 these DEVs through their use of other tools or 
 RaaS kits. For example: 
- DEV\-0230, which is affiliated with Trickbot, 
+• DEV\-0230, which is affiliated with Trickbot, 
 had been a prolific user of Conti. In late April, 
 MSTIC observed it using QuantumLocker. 
- DEV\-0237 shifted from Contis ransomware 
+• DEV\-0237 shifted from Conti’s ransomware 
 kit to HIVE and Nokoyawa, including using 
 HIVE in the May 31 attack against Costa 
 Rican government agencies.
- DEV\-0506, another prolific user of the 
+• DEV\-0506, another prolific user of the 
 Conti ransomware kit, was observed 
 using BlackBasta.
 Example of an affiliate (DEV\-0237\) quickly shifting between RaaS programs
@@ -1342,58 +1561,64 @@ using that particular ransomware payload, and
 all incidents associated with it share common 
 techniques and infrastructure. To support 
 network defenders, it is important to learn more 
-about the stages that precede different affiliates 
-attackssuch as data exfiltration and additional 
-persistence mechanismsand the detection and 
+about the stages that precede different affiliates’ 
+attacks—such as data exfiltration and additional 
+persistence mechanisms—and the detection and 
 protection opportunities that might exist.
 More so than malware, attackers 
 need credentials to succeed in their 
 operations. The successful human 
 operated ransomware infection of 
 an entire organization relies on access 
-to a highly privileged account.Contributing 
+to a highly privileged account.
+ 
+Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 13
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
-TeamsCyber Influence 
+Teams
+ 
+Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 The State of 
 Cybercrime
 Spotlight on human\-operated 
 ransomware attacks
-Over the past year, Microsofts 
+Over the past year, Microsoft’s 
 ransomware experts conducted deep 
 investigations into more than 100 human\-
 operated ransomware incidents to track 
-attackers techniques and understand 
+attackers’ techniques and understand 
 how to better protect our customers. 
 It is important to note that the analysis we 
 share here is possible only for onboarded, 
 managed, devices. Non\-onboarded, unmanaged 
 devices represent the least secure part of an 
-organizations hardware assets.
+organization’s hardware assets.
 Most prevalent ransomware 
 phase techniques:
-75%Use admin tools.
+75%
+ 
+Use admin tools.
 75% 
 Use acquired elevated compromised 
 user account to spread malicious 
@@ -1408,7 +1633,7 @@ categorized into the pre\-ransomware phase
 and the ransomware deployment phase. 
 During the pre\-ransomware phase, attackers 
 prepare to infiltrate the network by learning 
-about the organizations typology and 
+about the organization’s typology and 
 security infrastructure. 
 Stop the attackers before 
 they reach the ransomware 
@@ -1439,7 +1664,7 @@ advantage of similar security weaknesses and
 share common attack patterns and techniques. 
 A durable security strategy
 Combating and preventing attacks of this nature 
-requires a shift in an organizations mindset to 
+requires a shift in an organization’s mindset to 
 focus on the comprehensive protection required 
 to slow and stop attackers before they can 
 move from the pre\-ransomware phase to the 
@@ -1470,7 +1695,14 @@ Actionable insights
 Ransomware attackers are motivated by 
 easy profits, so adding to their cost via 
 security hardening is key in disrupting the 
-cybercriminal economy.1 
+cybercriminal economy.
+ 
+ 
+ 
+ 
+ 
+ 
+1 
 Build credential hygiene. More so than 
 malware, attackers need credentials to 
 succeed in their operations. The successful 
@@ -1485,10 +1717,12 @@ Prioritize deployment of Active
 Directory updates.
 4 
 Prioritize cloud hardening.
-5Reduce the attack surface.
+5 Reduce the attack surface.
 6 
 Harden internet\-facing assets and 
-understand your perimeter.7 
+understand your perimeter.
+ 
+7 
 Reduce SOC alert fatigue by hardening your 
 network to reduce volume and preserve 
 bandwidth for high priority incidents.
@@ -1498,25 +1732,37 @@ economy and how to protect yourself \|
 Microsoft Security Blog
 Human\-operated ransomware attacks: 
 A preventable disaster \| Microsoft 
-Security BlogContributing 
+Security Blog
+ 
+Contributing 
 Teams
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
-ResilienceManufacturing 28%
+Cyber 
+Resilience
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Manufacturing 28%
 IT 4%
 Finance 8%
 Government 8%
 Health 20%
 Energy 8%
 Education 8%
-Consumer retail 16%Low maturity 
+Consumer retail 16%
+ 
+Low maturity 
 security operations
 Insufficient application 
 security practices
@@ -1540,16 +1786,18 @@ protection control
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
-InfrastructureThe State of 
+Devices and 
+Infrastructure
+ 
+The State of 
 Cybercrime
 Ransomware insights 
 from front\-line 
@@ -1561,7 +1809,7 @@ However, law enforcement operations
 and geopolitical events in the last 
 year had a significant impact on 
 cybercriminal organizations.
-Microsofts Security Service Line supports 
+Microsoft’s Security Service Line supports 
 customers through an entire cyberattack, from 
 investigation to successful containment and 
 recovery activities. The response and recovery 
@@ -1571,9 +1819,11 @@ groundwork for recovery and the second one on
 containment and recovery. This section presents 
 a summary of findings based on ransomware 
 engagements over the past year.
-93%of Microsoft investigations 
+93%
+ 
+of Microsoft investigations 
 during ransomware recovery 
-engagements revealed
+engagements revealed 
 insufficient privilege access 
 and lateral movement controls.
 Ransomware incident and recovery 
@@ -1593,8 +1843,8 @@ most commonly observed contributing factors to
 weak protection against ransomware, grouped 
 into three categories of findings: 
 1\. Weak identity controls
-1\. Ineffective security operations
-1\. Limited data protection
+2\. Ineffective security operations
+3\. Limited data protection
 Summary of most common findings in ransomware response engagements 
 The most common finding among ransomware incident response engagements was insufficient privilege access 
 and lateral movement controls.
@@ -1602,55 +1852,64 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
- Ransomware insights
- from front\-line
+ Ransomware insights 
+ from front\-line 
  responders 
-Continued15
+Continued
+ 
+ 
+15
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
-TeamsCyber Influence 
+Teams
+ 
+Cyber Influence 
 Operations
-Devices and
-InfrastructureThe State of 
+Devices and 
+Infrastructure
+ 
+The State of 
 Cybercrime
 The three main contributing 
 factors seen in our onsite 
 response engagements:
-1Weak identity controls: 
+1 Weak identity controls: 
 Credential theft attacks remain 
 one of the top contributing factors
-2Ineffective security 
+2 Ineffective security 
 operations processes do not just 
 present a window of opportunity 
 for attackers but significantly 
 impact the time to recover
 3 Eventually it boils down to 
-dataorganizations struggle 
+data—organizations struggle 
 to implement an effective data 
 protection strategy which aligns 
 with their business needs
-1Weak identity controls
+1 Weak identity controls
 Human\-operated ransomware continues to evolve and employ credential theft and lateral 
 movement methods traditionally associated with targeted attacks. Successful attacks are often 
 the result of long\-running campaigns involving compromise of identity systems, like Active 
 Directory (AD), that allow human operators to steal credentials, access systems, and remain 
 persistent in the network.
 Active Directory (AD) and Azure AD security
-88%of impacted customers did not employ AD 
+88%
+ 
+of impacted customers did not employ AD 
 and Azure AD security best practices. This has 
 become a common attack vector as attackers 
 exploit misconfigurations and weaker security 
@@ -1672,7 +1931,9 @@ sensitive and high privileged accounts, leaving
 a security gap for attackers to compromise 
 credentials and pivot further attacks using 
 legitimate credentials.
-84%Administrators across 84 percent of 
+84%
+ 
+Administrators across 84 percent of 
 organizations did not use privilege identity 
 controls such as just\-in\-time access to prevent 
 further nefarious use of compromised 
@@ -1681,41 +1942,45 @@ Contributing
 Teams
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
- Ransomware insights
- from front\-line
+ Ransomware insights 
+ from front\-line 
  responders 
 Continued
 16
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureThe State of
+Devices and 
+Infrastructure
+ 
+The State of 
 Cybercrime
-2Ineffective security operations
+2 Ineffective security operations
 Our data shows organizations which suffered ransomware attacks have significant gaps in their 
 security operations, tooling, and information technology asset lifecycle management. Based on 
 the available data, the following gaps were most observed:
 Patching:
-68%of impacted organizations did not have an 
+68%
+ 
+of impacted organizations did not have an 
 effective vulnerability and patch management 
 process, and a high dependence on manual 
 processes versus automated patching led to 
@@ -1728,7 +1993,9 @@ Most organizations reported a lack of end\-
 to\-end security visibility due to a lack or 
 misconfiguration of security tools, leading to a 
 decrease in detect and response effectiveness. 
-60%of organizations reported no use of an EDR6 
+60%
+ 
+of organizations reported no use of an EDR6 
 tool, a fundamental technology for detection 
 and response. 
 60% 
@@ -1751,7 +2018,7 @@ area observed in 76 percent of impacted
 organizations, preventing proper organizational 
 crisis readiness and negatively impacting time 
 to respond and recover. 
-3Limited data protection
+3 Limited data protection
 Many compromised organizations lacked 
 proper data protection processes leading 
 to a severe impact on recovery times 
@@ -1759,7 +2026,9 @@ and the capability to return to business
 operations. The most common gaps 
 encountered include:
 Immutable backup:
-44%of organizations did not have immutable 
+44%
+ 
+of organizations did not have immutable 
 backups for the impacted systems. Data also 
 shows administrators did not have backups and 
 recovery plans for critical assets such as AD.
@@ -1769,19 +2038,21 @@ systems via exploiting vulnerabilities in
 the organization, exfiltrating critical data 
 for extortion, intellectual property theft, 
 or monetization. 
-92%of impacted organizations did not implement 
+92%
+ 
+of impacted organizations did not implement 
 effective data loss prevention controls 
 to mitigate these risks, leading to critical 
 data loss.
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -1789,17 +2060,17 @@ Teams
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-The State of
+The State of 
 Cybercrime
 Ransomware declined in some 
 regions and increased in others 
@@ -1832,7 +2103,7 @@ One of the most prevalent RaaS operations
 belongs to a Russian\-speaking criminal group 
 known as REvil (also known as Sodinokibi) that 
 has been active since 2019\. In October 2021, 
-REvils servers were taken offline as part of 
+REvil’s servers were taken offline as part of 
 the international law enforcement Operation 
 GoldDust. Note 7 In January 2022, Russia arrested 14 
 alleged REvil members and raided 25 locations 
@@ -1847,9 +2118,9 @@ While law enforcement activities likely slowed
 the frequency of attacks in 2022, threat actors 
 might well develop new strategies to avoid being 
 caught in the future. Moreover, tension between 
-Russia and the United States over Russias 
+Russia and the United States over Russia’s 
 invasion of Ukraine appears to have put an end 
-to Russias nascent cooperation in the global 
+to Russia’s nascent cooperation in the global 
 fight against ransomware. After a brief period of 
 uncertainty following the REvil arrests, the United 
 States and Russia ceased cooperation in pursuing 
@@ -1862,20 +2133,24 @@ outcome of some key questions:
 ransomware criminals from operating within 
 their borders, or seek to disrupt actors 
 operating from foreign soil? 
-1\. Will ransomware groups change tactics to 
+2\. Will ransomware groups change tactics to 
 remove the need for ransomware and resort 
 to extortion style attacks?
-1\. Will organizations be able to modernize and 
+3\. Will organizations be able to modernize and 
 transform their IT operations faster than 
 criminals can exploit vulnerabilities?
-1\. Will advancements in tracking and tracing 
-ransom payments force ransom recipients
+4\. Will advancements in tracking and tracing 
+ransom payments force ransom recipients 
 to change tactics and negotiations?
-Actionable insights1 
+Actionable insights
+ 
+1 
 Focus on holistic security strategies, as all 
 of the ransomware families take advantage 
 of the same security weaknesses to impact 
-a network.2 
+a network.
+ 
+2 
 Update and maintain security basics to 
 increase defense\-in\-depth base level 
 of protection and modernize security 
@@ -1898,27 +2173,34 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
 Report 
 Introduction
-Cyber
-Resilience18
+Cyber 
+Resilience
+ 
+ 
+ 
+ 
+18
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
-InfrastructureThe State of
+Devices and 
+Infrastructure
+ 
+The State of 
 Cybercrime
 Cybercrime 
 as a service 
@@ -1931,7 +2213,7 @@ number of online services facilitating
 various cybercrimes, including BEC 
 and human\-operated ransomware. 
 Phishing continues to be a preferred 
-attack method as cybercriminals
+attack method as cybercriminals 
 can acquire significant value from 
 successfully stealing and selling 
 access to stolen accounts. 
@@ -1977,8 +2259,8 @@ designated online service providers, and
 specifically targeted individuals, professions, 
 and industries. Frequently ordered accounts 
 focus on professionals or departments that 
-process invoicing, such as CFOs or Accounts 
-Receivable. Similarly, industries participating in 
+process invoicing, such as CFOs or “Accounts 
+Receivable.” Similarly, industries participating in 
 public contracting are often targeted due to the 
 quantity of information that is made available 
 through the public bidding process. 
@@ -2005,14 +2287,14 @@ We also observed an increase in anonymization
 services available as part of the CaaS ecosystem 
 as well as offers for virtual private networks 
 (VPN) and virtual private server (VPS) accounts. 
-In most instances, the VPNVPS offered were 
+In most instances, the VPN/VPS offered were 
 initially procured through stolen credit cards. 
 CaaS websites also offered a larger number of 
 remote desktop protocol (RDP), secure shell 
 (SSH), and cPanels for use as a platform to 
 orchestrate cybercrime attacks. CaaS merchants 
 configure the RDP, SSH, and cPanels with 
-appropriate tools and scripts to facilitate
+appropriate tools and scripts to facilitate 
 various types of cyberattacks. 
 Homoglyph domain creation services 
 are increasingly requiring payment 
@@ -2036,42 +2318,44 @@ service is almost exclusively in cryptocurrency.
 site registrations successfully 
 blocked by DCU this year to get 
 ahead of criminal actors that 
-planned to use them to engage
+planned to use them to engage 
 in global cybercrime.
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Attackers aim 
 to encrypt as 
 much data as 
 possible 
 
- Cybercrime
+ Cybercrime 
  as a service 
 Continued
 19
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
-InfrastructureThe State of
+Devices and 
+Infrastructure
+ 
+The State of 
 Cybercrime
 CaaS sellers increasingly offer 
 compromised credentials for purchase.
@@ -2133,7 +2417,7 @@ the creation and maintenance of the botnet
 necessary to carry out attacks to the CaaS 
 merchant. Each DDoS subscription customer 
 receives an encrypted service to enhance 
-operational security and one year of 247 
+operational security and one year of 24/7 
 support. The DDoS subscription service offers 
 different architectures and attack methods, so 
 a purchaser simply selects a resource to attack 
@@ -2141,7 +2425,7 @@ and the seller provides access to an array of
 compromised devices on their botnet to conduct 
 the attack. The cost for the DDoS subscription is a 
 mere $500 USD. 
-DCUs work to develop tools and techniques 
+DCU’s work to develop tools and techniques 
 which identify and disrupt CaaS cybercriminals is 
 ongoing. The evolution of CaaS services presents 
 significant challenges, particularly in disrupting 
@@ -2149,50 +2433,58 @@ cryptocurrency payments.
 PhaaS, cybercriminals offer multiple services within 
 a single subscription. In general, a purchaser needs 
 to take only three actions: 
-1Select a 
+1
+ 
+Select a 
 phishing site 
-templatedesign 
+template/design 
 from among the 
 hundreds offered.
-2Provide an email 
+2
+ 
+Provide an email 
 address to receive 
 credentials 
 obtained from 
 phishing victims.
-3Pay the PhaaS 
+3
+ 
+Pay the PhaaS 
 merchant in 
 cryptocurrency.
 Once these steps are completed, the PhaaS merchant creates services with three or four layers of redirect and 
 hosting resources to target specific users. The campaign is subsequently launched, and victim credentials are 
 harvested, verified, and sent to the email address provided by the purchaser. For a premium, many PhaaS 
 merchants offer to host phishing sites on the public blockchain so they can be accessed by any browser and 
-redirects can point users toaresource on the distributed ledger.
+redirects can point users to a resource on the distributed ledger.
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 20
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
-InfrastructureThe State of
+Devices and 
+Infrastructure
+ 
+The State of 
 Cybercrime
 Criminal use of 
 cryptocurrencies 
@@ -2211,14 +2503,14 @@ by around 270 percent. There are more than
 83 million unique wallets globally, and the total 
 market capitalization of all cryptocurrencies was 
 approximately $1\.1 trillion USD as of July 28, 2022\. Note 10
-Source: Twitter.com@PeckShieldAlert (PeckShield
+Source: Twitter.com—@PeckShieldAlert (PeckShield 
 is a China\-based blockchain security company).
 Tracking ransomware payments
 Ransomware is one of the largest sources of 
 illicitly gained cryptocurrency. In an effort to 
 disrupt malicious technical infrastructure used in 
-ransomware attacksfor example, the disruption 
-of Zloader in April 2022 Note 11Microsofts DCU 
+ransomware attacks—for example, the disruption 
+of Zloader in April 2022 Note 11—Microsoft’s DCU 
 tracks criminal wallets to enable cryptocurrency 
 tracking and recovery capabilities.
 DCU investigators have observed ransomware 
@@ -2233,9 +2525,9 @@ or links to chat websites to communicate ransom
 payment addresses to victims. Some actors 
 even created unique webpages and logins for 
 each victim to prevent security researchers and 
-law enforcement from obtaining the criminals 
+law enforcement from obtaining the criminals’ 
 wallet addresses by pretending to be victims. 
-Despite criminals efforts to hide their tracks, 
+Despite criminals’ efforts to hide their tracks, 
 some ransom payments can still be recovered 
 by working with law enforcement and crypto 
 analysis companies that can track movement 
@@ -2264,7 +2556,7 @@ ETH
 ETH
 46\.77
 Tracking illicitly gained cryptocurrency
-Using the cryptocurrency investigative tool Chainalysis, Microsofts Digital Crimes Unit discovered the AcendEX 
+Using the cryptocurrency investigative tool Chainalysis, Microsoft’s Digital Crimes Unit discovered the AcendEX 
 hackers swapped their stolen funds at a smaller DEX called Curve in addition to Uniswap. This diagram illustrates 
 the laundering routes the team uncovered. Each circle represents a cluster of wallets and the numbers on each line 
 represent the total amount of Ethereum transmitted for laundering purposes. 
@@ -2280,7 +2572,7 @@ labeled as such on the Ethereum blockchain
 explorer Etherscan. Note 13 In order to circumvent 
 the alerting and blacklisting, the hackers sent 
 $1\.5 million USD in Ethereum to Uniswap, one of 
-the worlds largest DEXs, on February 18, 2022\. Note 14
+the world’s largest DEXs, on February 18, 2022\. Note 14
 The adoption of stronger AML measures by DEXs 
 could blunt laundering activity on their platforms 
 and force cybercriminals to use other obfuscation 
@@ -2296,7 +2588,7 @@ paid the criminal using cryptocurrency,
 contact local law enforcement who might 
 be able to help track and recover lost funds.
 2
-Become familiar with the ALM measures
+Become familiar with the ALM measures 
 in place when selecting a DEX.
 Links to further information
 Hardware\-based threat defense against 
@@ -2304,20 +2596,24 @@ increasingly complex cryptojackers \|
 Microsoft 365 Defender Research Team
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
-Teams21
+Teams
+ 
+ 
+ 
+21
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Cyber 
 Resilience
@@ -2325,7 +2621,7 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 The State of 
 Cybercrime 
@@ -2394,7 +2690,9 @@ campaign operation infrastructure. This means
 organizations must regularly reassess their 
 strategy for implementing security solutions to 
 block malicious emails and strengthen access 
-control for individual user accounts.531,000 
+control for individual user accounts.
+ 
+531,000 
 In addition to the URLs blocked 
 by Defender for Office, our Digital 
 Crimes Unit directed the takedown 
@@ -2424,27 +2722,30 @@ Mar 2022
 Apr 2022
 May 2022
 Jun 2022
-The number of phish detections per week continue to rise. The decrease in DecemberJanuary is an expected 
-seasonal drop, also reported in last years report. Source: Exchange Online Protection signals.
+The number of phish detections per week continue to rise. The decrease in December–January is an expected 
+seasonal drop, also reported in last year’s report. Source: Exchange Online Protection signals.
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
  The evolving phishing 
-threat landscapeContinued
+threat landscape 
+ 
+ 
+Continued
 22
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Cyber 
 Resilience
@@ -2452,7 +2753,7 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 The State of 
 Cybercrime 
@@ -2502,7 +2803,7 @@ created accounts and domains. In some more
 advanced phishing campaigns, we observed 
 attackers preferring to send and spoof from 
 domains which have DMARC Note 19 incorrectly set up 
-with a no action policy, opening the door for 
+with a “no action” policy, opening the door for 
 email spoofing. 
 Large phish operations tend to use cloud 
 services and cloud virtual machines (VMs) to 
@@ -2526,11 +2827,11 @@ by generating a unique URL customized to
 the recipient. This URL points to a malicious 
 webpage developed to harvest credentials, but 
 a parameter in the URL will contain the specific 
-recipients email address. Once the target 
+recipient’s email address. Once the target 
 navigates to the page, the phish kit will pre\-
 populate user login data and a corporate logo 
 customized to the email recipient, mirroring the 
-appearance of the targeted companys custom 
+appearance of the targeted company’s custom 
 Microsoft 365 login page. 
 Phishing page impersonating a Microsoft 
 login with dynamic content
@@ -2556,28 +2857,52 @@ May 2022
 Jun 2022
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
-Teams23
+Teams
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+23
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
-TeamsCyber Influence 
+Teams
+ 
+Cyber Influence 
 Operations
-Devices and
-InfrastructureThe State of 
+Devices and 
+Infrastructure
+ 
+The State of 
 Cybercrime 
 Spotlight on business 
 email compromise 
@@ -2587,7 +2912,7 @@ techniques to defeat security settings
 and target individuals, businesses, 
 and organizations. We are investing 
 significant resources to further 
-enhance our BEC enforcement
+enhance our BEC enforcement 
 program in response. 
 BEC is the costliest financial cybercrime, with an 
 estimated $2\.4 billion USD in adjusted losses 
@@ -2595,9 +2920,9 @@ in 2021, representing more than 59 percent of
 the top five internet crime losses globally. Note 20 To 
 understand the scope of the problem and how 
 best to protect users against BEC, Microsoft 
-security researchers have been tracking the
+security researchers have been tracking the 
 most common themes used in attacks. 
-BEC themes (JanuaryJune 2022\) 
+BEC themes (January–June 2022\) 
 BEC themes by percentage of occurrence 
 BEC trends 
 As a point of entry, BEC attackers normally 
@@ -2610,67 +2935,87 @@ which we track as a BEC lure, represents close to
 80 percent of detected BEC emails. Other trends 
 identified by Microsoft security researchers over 
 the past year include: 
- The most frequently used techniques in BEC 
+• The most frequently used techniques in BEC 
 attacks observed in 2022 were spoofing Note 21 
 and impersonation. Note 22
- The BEC subtype causing the most financial 
+• The BEC subtype causing the most financial 
 damage to victims was invoice fraud (based on 
 volume and requested dollar amounts seen in 
 our BEC campaign investigations). 
- Business information theft such as accounts 
+• Business information theft such as accounts 
 payable reports and customer contacts enable 
 attackers to craft convincing invoice fraud. 
- Most payroll redirection requests were sent 
+• Most payroll redirection requests were sent 
 from free email services and seldom from 
 compromised accounts. Email volume from 
 these sources spiked around the first and 
 fifteenth of each month, the most common 
 pay dates. 
- Despite being well\-known avenues for fraud, 
+• Despite being well\-known avenues for fraud, 
 gift card scams comprised only 1\.9 percent of 
 the BEC attacks detected. 
 Actionable insights 
 Defending against phish 
-To reduce your organizations exposure to phish, IT administrators 
-are encouraged to implement the following policies and features:1Require the use of MFA across all accounts 
-to limit unauthorized access.2 
+To reduce your organization’s exposure to phish, IT administrators 
+are encouraged to implement the following policies and features:
+ 
+1 Require the use of MFA across all accounts 
+to limit unauthorized access. 
+ 
+2 
 Enable conditional access features for 
 highly privileged accounts to block 
 access from countries, regions, and IPs 
 that do not typically generate traffic at 
-your organization.3 
+your organization. 
+ 
+3 
 Consider using physical security keys 
 for executives, employees involved in 
 payment or purchase activities, and other 
-privileged accounts.4 
+privileged accounts.
+ 
+4 
 Enforce the use of browsers which support 
 services such as Microsoft SmartScreen 
 to analyze URLs for suspicious behaviors 
 and blocks access to known malicious 
-websites. Note 235 
+websites. Note 23
+ 
+5 
 Use a machine\-learning based security 
 solution that quarantines high probability 
 phish and detonates URLs and 
 attachments in a sandbox before email 
 reaches the inbox, such as Microsoft 
-Defender for Office 365\. Note 246 
+Defender for Office 365\. Note 24
+ 
+6 
 Enable impersonation and 
 spoofing protection features across 
-your organization.7 
+your organization.
+ 
+7 
 Configure DomainKeys Identified Mail 
 (DKIM) and Domain\-based Message 
 Authentication Reporting \& Conformance 
 (DMARC) action policies to prevent 
 delivery of non\-authenticated emails that 
-might be spoofing reputable senders.8Audit tenant and user created allow 
+might be spoofing reputable senders.
+ 
+8 Audit tenant and user created allow 
 rules and remove broad domain and 
 IP based exceptions. These rules often 
 take precedence and can allow known 
-malicious emails through email filtering.9Regularly run phishing simulators to 
+malicious emails through email filtering.
+ 
+9 Regularly run phishing simulators to 
 gauge the potential risk across your 
 organization and to identify and educate 
 vulnerable users. 
-Links to further informationFrom cookie theft to BEC: Attackers use 
+Links to further information 
+ 
+From cookie theft to BEC: Attackers use 
 AiTM phishing sites as entry point to 
 further financial fraud \| Microsoft 365 
 Defender Research Team, Microsoft 
@@ -2682,13 +3027,13 @@ Business information 4\.3%
 Gift card scam 1\.9%
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -2696,7 +3041,7 @@ Teams
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Cyber 
 Resilience
@@ -2704,7 +3049,7 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 The State of 
 Cybercrime 
@@ -2712,7 +3057,7 @@ Homoglyph deception
 BEC and phishing are common social 
 engineering tactics. Social engineering 
 plays a significant role in crime, 
-persuading a target to interact
+persuading a target to interact 
 with the criminal by gaining trust. 
 In physical commerce, trademarks are used 
 to secure trust in the origin of a product or 
@@ -2732,9 +3077,9 @@ involves compromise of credentials. These types
 of credential leaks can be a result of phishing 
 attacks or large data breaches. The credentials 
 are then sold or traded on the dark web. 
-The second phase is the fraud phase,
-where attackers use compromised credentials
-to engage in sophisticated social engineering
+The second phase is the fraud phase, 
+where attackers use compromised credentials 
+to engage in sophisticated social engineering 
 using homoglyph email domains. 
 Progression of a BEC attack 
 Account compromised 
@@ -2785,7 +3130,7 @@ sub ll for I, sub l for i
 sub o for u
 1% 
 Analysis of over 1,700 homoglyph domains between 
-JanuaryJuly 2022\. While 170 homoglyph techniques 
+January–July 2022\. While 170 homoglyph techniques 
 were used, 75% of domains used just 14 techniques. 
 A homoglyph in action 
 A homoglyph domain that looks identical to a 
@@ -2810,31 +3155,39 @@ homoglyph impersonation email to the target.
 Because the context makes sense and the email 
 looks genuine, often the target follows the 
 fraudulent instructions. 
-Actionable insights1 
+Actionable insights
+ 
+1 
 Enforce the use of browsers that support 
 services to analyze URLs for suspicious 
 behaviors and blocks access to known 
-malicious websites such as Safe Links
-and SmartScreen. Note 252 
+malicious websites such as Safe Links 
+and SmartScreen. Note 25 
+ 
+2 
 Use a machine\-learning based security 
 solution that quarantines high probability 
 phish and detonates URLs and attachments 
 in a sandbox before email reaches the inbox. 
 Links to further information 
 Internet Crime Complaint Center (IC3\) \| 
-Business Email Compromise:
+Business Email Compromise: 
 The $43 Billion Scam 
-Spoof intelligence insight
-Office 365 \| Microsoft DocsImpersonation insight
-Office 365 \| Microsoft DocsReport 
+Spoof intelligence insight—
+Office 365 \| Microsoft Docs 
+ 
+Impersonation insight—
+Office 365 \| Microsoft Docs
+ 
+Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -2842,22 +3195,22 @@ Teams
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-The State of
+The State of 
 Cybercrime 
 A timeline of botnet disruption from 
-Microsofts early days of collaboration 
+Microsoft’s early days of collaboration 
 For more than a decade, DCU has worked to 
 proactively stop cybercrime resulting in 26 malware 
 and nation state disruptions. As the DCU team 
@@ -2902,7 +3255,7 @@ of C2 and surprised bad actors
 by seizing US\-based domains 
 without notice. Note 28Microsoft granted 
 temporary ownership of nearly 280 
-domains used by Waledacs servers. 
+domains used by Waledac’s servers. 
 2011 
 Microsoft Digital Crimes Unit 
 is formed 
@@ -2914,7 +3267,7 @@ lawyers, and engineers.
 Microsoft approach: The goal is 
 to better understand the technical 
 aspects of various malware and 
-provide these insights to Microsofts 
+provide these insights to Microsoft’s 
 legal team to develop an effective 
 disruption strategy. 
 Rustock botnet 
@@ -2936,7 +3289,7 @@ country. Registered and blocked
 all future domain generator 
 algorithms (DGAs). 
 2013 
-SirefefZero Access botnet 
+Sirefef/Zero Access botnet 
 Description: An advertising botnet 
 designed to direct people to dangerous 
 websites that would install malware or 
@@ -2946,7 +3299,7 @@ cost advertisers more than $2\.7 million
 USD per month; primarily in US and 
 Western Europe. 
 Collaboration: Worked closely with 
-the FBI and Europols Cybercrime 
+the FBI and Europol’s Cybercrime 
 Center to bring down the peer\-to\-
 peer infrastructure. 
 Microsoft response: Joined the Zero 
@@ -2978,7 +3331,7 @@ the infrastructure of seven
 threat actors over the past year, 
 preventing them from distributing 
 additional malware, controlling 
-victims computers, and targeting 
+victims’ computers, and targeting 
 additional victims. 
 Collaboration: In partnership 
 with internet service providers, 
@@ -3001,20 +3354,23 @@ legal theories, and public
 and private partnerships.
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
-Teams26
+Teams
+ 
+ 
+26
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Cyber 
 Resilience
@@ -3022,8 +3378,11 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
-InfrastructureThe State of 
+Devices and 
+Infrastructure
+ 
+ 
+The State of 
 Cybercrime 
 Cybercriminal abuse 
 of infrastructure 
@@ -3128,22 +3487,29 @@ that are impacted as well. Note 32 This is a strong
 indication that IoT devices are becoming active 
 components of nation state coordinated attacks 
 and a popular target for cybercriminals using 
-widespread botnets
-\* Report 
+widespread botnets.
+ 
+ 
+\-
+\-
+Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
-TeamsMicrosoft Digital Defense Report 2022 
+Teams
+ 
+ 
+Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Cyber 
 Resilience
@@ -3151,13 +3517,13 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Miner
 Miners
 Cryptocurrency
 DNS Poisoning
-Criminals pool
+Criminal’s pool
 Pool
 ASIC
 Miners
@@ -3195,7 +3561,7 @@ to their associated IP addresses with DNS
 poisoning attacks, which alters the DNS settings 
 of targeted devices. Affected routers register 
 the wrong IP address to a given domain name, 
-sending their mining resourcesor hashesto 
+sending their mining resources—or hashes—to 
 pools used by threat actors. These pools might 
 mine anonymous coins associated with criminal 
 activities or use legitimate hashes generated by 
@@ -3231,7 +3597,7 @@ set up their malicious infrastructures
 on cloud\-based virtual machines (VMs), 
 containers, and microservices. 
 Once the cybercriminal has access, a sequence of 
-events can occur to set up infrastructuresuch 
+events can occur to set up infrastructure—such 
 as a series of virtual machines through scripting 
 and automated processes. These scripted, 
 automated processes are used to launch 
@@ -3251,8 +3617,8 @@ compromised accounts ahead of time and
 monitoring their environments. As soon as an 
 account (set up using hundreds of thousands of 
 virtual machines) is detected, they traverse to 
-the next accountalready prepared by scripts to 
-be immediately activatedand their malicious 
+the next account—already prepared by scripts to 
+be immediately activated—and their malicious 
 activity continues with little to no interruption. 
 Like cloud infrastructure, on\-premises 
 infrastructure can be used in attacks with 
@@ -3264,32 +3630,41 @@ abused by cybercriminals to initiate an onward
 chain of cloud infrastructure, set up to obfuscate 
 their origin to avoid suspicious infrastructure 
 creation detection. 
-Actionable insights1 
+Actionable insights
+ 
+1 
 Implement good cyber hygiene and 
 provide cybersecurity training for 
 employees with guidance for avoiding 
-being socially engineered.2 
+being socially engineered. 
+ 
+2 
 Conduct regular automated user activity 
 anomaly checks through detections at 
-scale to help reduce these types of attacks.3 
+scale to help reduce these types of attacks.
+ 
+3 
 Update and secure routers on corporate 
 and private networks.
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
-Teams28
+Teams
+ 
+ 
+28
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Cyber 
 Resilience
@@ -3297,7 +3672,7 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 The State of 
 Cybercrime 
@@ -3313,17 +3688,17 @@ organizations, and even nation states.
 In February 2022, the Ukrainian government 
 called on private civilians around the world 
 to conduct cyberattacks on Russia as part of 
-its 300,000 strong IT Army. Note 33 At the same 
+its 300,000 strong “IT Army.” Note 33 At the same 
 time, established hacktivist groups such as 
 Anonymous, Ghostsec, Against the West, 
 Belarusian Cyber Partisans, and RaidForum2 
 began conducting attacks in support of Ukraine. 
 Other groups, including some of the Conti 
 ransomware gang, sided with Russia. Note 34
-In the months that followed, Anonymouss 
+In the months that followed, Anonymous’s 
 activities were highly visible. Hackers acting 
-in the groups nameor in that of one of its 
-affiliatestemporarily disabled thousands of 
+in the group’s name—or in that of one of its 
+affiliates—temporarily disabled thousands of 
 Russian and Belarusian websites, leaked hundreds 
 of gigabytes of stolen data, hacked Russian TV 
 channels to play pro\-Ukrainian content, and 
@@ -3363,11 +3738,11 @@ as a feeder for recruitment into their state
 hacking groups. For example, in April 2022, the 
 pro\-Russian hacking group Killnet launched 
 DDoS attacks against Czech railroads, regional 
-airports, and Czechias civil service server, even 
+airports, and Czechia’s civil service server, even 
 though Czechia is not directly involved in the 
 war. Note 35 At the same time, some governments 
 might use hacktivism as a cover for traditional 
-cyberespionage or sabotage operationsfor 
+cyberespionage or sabotage operations—for 
 example, Iranian activities against Israel. 
 In an environment of increased DDoS attacks 
 linked to hacktivism, the technology industry is 
@@ -3376,7 +3751,7 @@ between normal and abnormal traffic flow
 to a website. Microsoft and its partners have 
 developed a collection of tools which distinguish 
 malicious DDoS traffic and trace it back to its 
-origin. In addition, Microsofts Azure platform can 
+origin. In addition, Microsoft’s Azure platform can 
 identify machines on the platform that produce 
 extraordinarily high levels of outbound traffic 
 and shut them down. 
@@ -3407,26 +3782,32 @@ thousands of would\-be citizen hackers,
 who were provided directions for 
 conducting easily executable attacks 
 such as DDoS attacks. 
-Actionable insights1 
+Actionable insights
+ 
+1 
 The technology industry must come 
 together to design a comprehensive 
-response to this new threat.2 
+response to this new threat. 
+ 
+2 
 Leading technology companies, including 
 Microsoft, have tools to identify malicious 
 traffic associated with DDoS attacks and 
-disable the responsible machines.3 
+disable the responsible machines. 
+ 
+3 
 Open source users should keep a 
 heightened watch during times of 
 geopolitical strife. 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -3434,100 +3815,100 @@ Teams
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 The State of 
 Cybercrime 
 Endnotes 
 Note 1
-https:www.reuters.combusinessenergyshell\-re\-routes\-oil\-supplies\-after\-cyberattack\-
-german\-logistics\-firm\-2022\-02\-01 
+https://www.reuters.com/business/energy/shell\-re\-routes\-oil\-supplies\-after\-cyberattack\-
+german\-logistics\-firm\-2022\-02\-01/ 
 Note 2
-https:www.bleepingcomputer.comnewssecuritygreeces\-public\-postal\-service\-offline\-due\-to\-
-ransomware\-attack 
+https://www.bleepingcomputer.com/news/security/greeces\-public\-postal\-service\-offline\-due\-to\-
+ransomware\-attack/ 
 Note 3
-https:www.bleepingcomputer.comnewssecuritycosta\-rica\-s\-public\-health\-agency\-hit\-by\-
-hive\-ransomware; https:www.reuters.comworldamericascyber\-attack\-costa\-rica\-grows\-
-more\-agencies\-hit\-president\-says\-2022\-05\-16 
+https://www.bleepingcomputer.com/news/security/costa\-rica\-s\-public\-health\-agency\-hit\-by\-
+hive\-ransomware/; https://www.reuters.com/world/americas/cyber\-attack\-costa\-rica\-grows\-
+more\-agencies\-hit\-president\-says\-2022\-05\-16/ 
 Note 4
-https:www.bleepingcomputer.comnewssecurityspicejet\-airline\-passengers\-stranded\-after\-
-ransomware\-attack 
+https://www.bleepingcomputer.com/news/security/spicejet\-airline\-passengers\-stranded\-after\-
+ransomware\-attack/ 
 Note 5
-https:www.microsoft.comsecurityblog20200305human\-operated\-ransomware\-attacks\-a\-
-preventable\-disaster 
+https://www.microsoft.com/security/blog/2020/03/05/human\-operated\-ransomware\-attacks\-a\-
+preventable\-disaster/ 
 Note 6
-Endpoint detection and response. https:www.microsoft.comen\-ussecuritybusinessthreat\-protection 
+Endpoint detection and response. https://www.microsoft.com/en\-us/security/business/threat\-protection/ 
 Note 7
-https:www.washingtonpost.comnational\-securitycyber\-command\-revil\-
-ransomware20211103528e03e6\-3517\-11ec\-9bc4\-86107e7b0ab1\_story.html 
+https://www.washingtonpost.com/national\-security/cyber\-command\-revil\-
+ransomware/2021/11/03/528e03e6\-3517\-11ec\-9bc4\-86107e7b0ab1\_story.html 
 Note 8
-https:www.bbc.comnewstechnology\-59998925 
+https://www.bbc.com/news/technology\-59998925 
 Note 9
 A Vetted Forum is an online discussion forum that requires an existing member to vouch for the 
 addition of a new member. 
-Note 10 https:www.statista.comstatistics800426worldwide\-blockchain\-solutions\-spending; 
-https:www.blockchain.comchartsmy\-wallet\-n\-users; https:coinmarketcap.com 
-Note 11 https:blogs.microsoft.comon\-the\-issues20220413zloader\-botnet\-disrupted\-malware\-ukraine 
-Note 12 https:www.coindesk.combusiness20211213crypto\-exchange\-ascendex\-hacked\-losses\-
-estimated\-at\-77m ; https:www.zdnet.comarticleafter\-77\-million\-hack\-crypto\-platform\-
-ascendex\-to\-reimburse\-customers 
-Note 13 https:etherscan.ioaddress0x73326b6764187b7176ed3c00109ddc1e6264eb8b 
-Note 14 https:finance.yahoo.comnewsethereum\-worth\-over\-1\-5m\-160249300\.html 
-Note 15 https:news.bitcoin.comdecentralized\-finance\-crypto\-exchange\-uniswap\-starts\-blocking\-
-addresses\-linked\-to\-blocked\-activities 
-Note 16 Data source: Defender for Office (malicious emailcompromised identity activity), Azure Active 
-Directory Identity Protection (compromised identity eventsalerts), Defender for Cloud Apps 
+Note 10 https://www.statista.com/statistics/800426/worldwide\-blockchain\-solutions\-spending/; 
+https://www.blockchain.com/charts/my\-wallet\-n\-users; https://coinmarketcap.com 
+Note 11 https://blogs.microsoft.com/on\-the\-issues/2022/04/13/zloader\-botnet\-disrupted\-malware\-ukraine/ 
+Note 12 https://www.coindesk.com/business/2021/12/13/crypto\-exchange\-ascendex\-hacked\-losses\-
+estimated\-at\-77m/ ; https://www.zdnet.com/article/after\-77\-million\-hack\-crypto\-platform\-
+ascendex\-to\-reimburse\-customers/ 
+Note 13 https://etherscan.io/address/0x73326b6764187b7176ed3c00109ddc1e6264eb8b 
+Note 14 https://finance.yahoo.com/news/ethereum\-worth\-over\-1\-5m\-160249300\.html 
+Note 15 https://news.bitcoin.com/decentralized\-finance\-crypto\-exchange\-uniswap\-starts\-blocking\-
+addresses\-linked\-to\-blocked\-activities/ 
+Note 16 Data source: Defender for Office (malicious email/compromised identity activity), Azure Active 
+Directory Identity Protection (compromised identity events/alerts), Defender for Cloud Apps 
 (compromised identity data access events), and M365D (cross product correlation). 
-Note 17
+Note 17 
 
-Note 18 https:www.ic3\.govMediaY2022PSA220504 
+Note 18 https://www.ic3\.gov/Media/Y2022/PSA220504 
 Note 19 Domain\-based Message Authentication, Reporting and Conformance: An email authentication, 
 policy, and reporting protocol designed to give email domain owners the ability to protect their 
 domain from unauthorized use. 
-Note 20 https:www.ic3\.govMediaPDFAnnualReport2021\_IC3Report.pdf 
-Note 21 https:docs.microsoft.comen\-usmicrosoft\-365securityoffice\-365\-securitylearn\-about\-spoof\-
+Note 20 https://www.ic3\.gov/Media/PDF/AnnualReport/2021\_IC3Report.pdf 
+Note 21 https://docs.microsoft.com/en\-us/microsoft\-365/security/office\-365\-security/learn\-about\-spoof\-
 intelligence?view\=o365\-worldwide 
-Note 22 https:docs.microsoft.comen\-usmicrosoft\-365securityoffice\-365\-securityimpersonation\-
+Note 22 https://docs.microsoft.com/en\-us/microsoft\-365/security/office\-365\-security/impersonation\-
 insight?view\=o365\-worldwide 
-Note 23 https:docs.microsoft.comen\-uswindowssecuritythreat\-protectionmicrosoft\-defender\-
-smartscreenmicrosoft\-defender\-smartscreen\-overview 
-Note 24 https:www.microsoft.comen\-ussecuritybusinesssiem\-and\-xdrmicrosoft\-defender\-office\-365 
-Note 25 https:docs.microsoft.comen\-uswindowssecuritythreat\-protectionmicrosoft\-defender\-
-smartscreenmicrosoft\-defender\-smartscreen\-overview 
-Note 26 Microsoft Corporation v. John Does 1\-27, et. al No. 1:10CV156, (E.D.Va. Feb 22, 2010\). 
-Note 27 See Bowden, Mark. Worm: The First Digital World War. GroveAtlantic, Inc Sep 27, 2011\. 
+Note 23 https://docs.microsoft.com/en\-us/windows/security/threat\-protection/microsoft\-defender\-
+smartscreen/microsoft\-defender\-smartscreen\-overview 
+Note 24 https://www.microsoft.com/en\-us/security/business/siem\-and\-xdr/microsoft\-defender\-office\-365 
+Note 25 https://docs.microsoft.com/en\-us/windows/security/threat\-protection/microsoft\-defender\-
+smartscreen/microsoft\-defender\-smartscreen\-overview 
+Note 26 Microsoft Corporation v. John Does 1\-27, et. al., No. 1:10CV156, (E.D.Va. Feb 22, 2010\). 
+Note 27 See Bowden, Mark. Worm: The First Digital World War. Grove/Atlantic, Inc., Sep 27, 2011\. 
 Note 28 Specifically, Rule 65 of the Federal Rules of Civil Procedure allows a party to seek such remedy if: 1\) the 
 party will suffer immediate and irreparable harm if the relief is not granted, and 2\) the party attempts 
 to provide the other side notice in a timely manner. Moreover, the law requires that a balancing test be 
-applied, one which balances the defendants right to notice against the quantum of harm to the public. 
-Note 29 Microsoft Corporation v. John Does 1\-11, et. al No. 2:11cv222, (W.D. Wa. Feb 9, 2011\). 
-Note 30 Microsoft Corp. v. Does, No. 1:20\-cv\-01171 (AJTIDD), 2021 U.S. Dist. LEXIS 258143, at \*1
+applied, one which balances the defendant’s right to notice against the quantum of harm to the public. 
+Note 29 Microsoft Corporation v. John Does 1\-11, et. al., No. 2:11cv222, (W.D. Wa. Feb 9, 2011\). 
+Note 30 Microsoft Corp. v. Does, No. 1:20\-cv\-01171 (AJT/IDD), 2021 U.S. Dist. LEXIS 258143, at \*1 
 (E.D. Va. Aug. 12, 2021\). 
-Note 31 https:github.commicrosoftrouteros\-scanner 
+Note 31 https://github.com/microsoft/routeros\-scanner 
 Note 32 RiskIQ: Ubiquiti Devices Compromised and Used as Malware C2 Reverse Proxies \| RiskIQ 
 Community Edition 
-Note 33 https:www.theguardian.comworld2022mar18amateur\-hackers\-warned\-against\-joining\-
+Note 33 https://www.theguardian.com/world/2022/mar/18/amateur\-hackers\-warned\-against\-joining\-
 ukraines\-it\-army 
-Note 34 https:therecord.mediarussia\-or\-ukraine\-hacking\-groups\-take\-sides 
-Note 35 https:www.expats.czczech\-newsarticlepro\-russian\-hackers\-target\-czech\-websites\-in\-a\-
+Note 34 https://therecord.media/russia\-or\-ukraine\-hacking\-groups\-take\-sides/ 
+Note 35 https://www.expats.cz/czech\-news/article/pro\-russian\-hackers\-target\-czech\-websites\-in\-a\-
 series\-of\-attacks
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -3539,65 +3920,70 @@ Cyber
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats 
 Nation State 
 Threats 
-Nation state actors are launching increasingly
+Nation state actors are launching increasingly 
 sophisticated cyberattacks to evade detection 
 and further their strategic priorities. 
 An overview of Nation State Threats 
 31 
 Introduction
 32 
-Background on nation state data
+Background on nation state data 
 33 
 Sample of nation state actors and 
-their activities
+their activities 
 34 
-The evolving threat landscape
+The evolving threat landscape 
 35 
 The IT supply chain as a gateway 
-to the digital ecosystem
+to the digital ecosystem 
 37 
 Rapid vulnerability exploitation 
 39 
-Russian state actors wartime cyber
-tactics threaten Ukraine and beyond
+Russian state actors’ wartime cyber 
+tactics threaten Ukraine and beyond 
 41 
 China expanding global targeting 
-for competitive advantage
+for competitive advantage 
 44 
 Iran growing increasingly aggressive 
 following power transition 
 46 
 North Korean cyber capabilities employed 
-to achieve regimes three main goals 
+to achieve regime’s three main goals 
 49 
 Cyber mercenaries threaten 
-the stability of cyberspace
+the stability of cyberspace 
 52 
 Operationalizing cybersecurity norms 
 for peace and security in cyberspace 
 53
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
-TeamsPatch
+Teams
+ 
+ 
+ 
+ 
+Patch
 released
 Vulnerability 
 publicly 
@@ -3607,7 +3993,10 @@ in wild
 POC code released 
 on GitHub
 14 days
-60 days31
+60 days
+ 
+ 
+31
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
@@ -3615,23 +4004,28 @@ Cyber
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureNation State
+Devices and 
+Infrastructure
+ 
+ 
+ 
+  
+Nation State 
 Threats 
 An overview of 
 Nation State Threats 
 Nation state actors are 
 launching increasingly 
-sophisticated cyberattacks
+sophisticated cyberattacks 
 to evade detection and further 
 their strategic priorities. 
 The advent of cyberweapon 
-deployment in the hybrid
-war in Ukraine is the dawn
+deployment in the hybrid 
+war in Ukraine is the dawn 
 of a new age of conflict. 
 Russia has also supported its war with 
 information influence operations, using 
@@ -3639,8 +4033,8 @@ propaganda to impact opinions in Russia, in
 Ukraine, and globally. This first full\-scale hybrid 
 conflict has taught other important lessons. 
 First, the security of digital operations and data 
-can be best protected both in cyberspace 
-and in physical space by moving to the cloud. 
+can be best protected – both in cyberspace 
+and in physical space – by moving to the cloud. 
 Initial Russian attacks targeted on\-premises 
 services with wiper malware, and targeted 
 physical data centers with one of the first 
@@ -3674,7 +4068,7 @@ state behavior online. All nations must work to
 implement agreed upon norms and rules for 
 responsible state conduct. 
 Defending Ukraine: Early Lessons from 
-the Cyber War Microsoft On the Issues 
+the Cyber War — Microsoft On the Issues 
 Increased targeting of critical 
 infrastructure particularly IT sector, 
 financial services, transportation systems, 
@@ -3710,7 +4104,7 @@ Find out more on p39
 North Korea targeted defense and aerospace 
 companies, cryptocurrency, news outlets, 
 defectors, and aid organizations, to achieve 
-regimes goals: to build defense, bolster the 
+regime’s goals: to build defense, bolster the 
 economy, and ensure domestic stability. 
 Find out more on p49 
 Cyber mercenaries threaten the stability of cyberspace as this growing industry of 
@@ -3719,16 +4113,18 @@ to enable their clients (often governments) to break into networks and devices.
 Find out more on p52
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
-Teams32
+Teams
+ 
+32
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
@@ -3736,13 +4132,13 @@ Cyber
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats 
 Introduction 
 Following high\-profile 
@@ -3767,7 +4163,7 @@ for compromising corporate networks, and
 obfuscated their operations by using opensource 
 or legitimate software. New attack techniques 
 provided new and harder\-to\-detect vectors 
-to gain access to a targets network. Finally, 
+to gain access to a target’s network. Finally, 
 as wartime physical attacks escalated, we 
 saw cyberattacks take a prominent role in 
 military activity. 
@@ -3785,12 +4181,14 @@ war on destructive wiper malware attacks against
 critical infrastructure systems. Connecting the 
 security of these systems to the cloud resulted 
 in early detection and disruption of potentially 
-devastating attacks. Note 1For the first time in a major cyber event, 
+devastating attacks. Note 1
+ 
+For the first time in a major cyber event, 
 behavioral detections leveraging machine 
 learning used known attack patterns to 
 successfully identify and stop further attacks 
 without prior knowledge of the underlying 
-malwareeven before humans were aware 
+malware—even before humans were aware 
 of the threats. We also confirmed the value 
 of sharing threat intelligence in real\-time with 
 defenders protecting these systems, giving 
@@ -3815,7 +4213,7 @@ Nation state actors, much like ransomware and
 criminal operators, have responded to increased 
 exposure by moving toward targeting poorly 
 configured or unpatched enterprise systems 
-(VPNVPS infrastructure, on\-premises servers, 
+(VPN/VPS infrastructure, on\-premises servers, 
 third\-party software) to perform living\-off\-
 the\-land attacks. Many have increased use of 
 commodity malware and open source red team 
@@ -3823,13 +4221,13 @@ tools to obfuscate their malicious activity.
 As a result, maintaining a strong baseline of IT 
 security hygiene through prioritized patching, 
 enabling anti\-tamper features, using attack 
-surface management tools like RiskIQ to get
+surface management tools like RiskIQ to get 
 an outside\-in view of an attack surface, and 
-enabling multifactor authentication across
+enabling multifactor authentication across 
 the full enterprise have become baseline 
-fundamentals to proactively defend against
+fundamentals to proactively defend against 
 many sophisticated actors. 
-Nation state actors have also increased
+Nation state actors have also increased 
 use of ransomware as a tactic in their attacks, 
 often reusing ransom malware created by that 
 criminal ecosystem in their attacks. We have 
@@ -3851,16 +4249,22 @@ Corporate Vice President and Distinguished
 Engineer, Microsoft Threat Intelligence Center
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
-Teams33
+Teams
+ 
+ 
+ 
+ 
+ 
+33
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
@@ -3868,13 +4272,13 @@ Cyber
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats 
 Background on 
 nation state data 
@@ -3917,13 +4321,13 @@ offensive actors for hire.
 Microsoft identifies nation state groups by 
 chemical element names (such as NOBELIUM), 
 just some of which are shown on the following 
-page. We use DEV designations as a 
+page. We use DEV\-\#\#\#\# designations as a 
 temporary name given to an unknown, emerging, 
 or developing cluster of threat activity, allowing 
 us to track it as a unique set of information until 
 we reach a high degree of confidence about the 
 origin or identity of the actor behind the activity. 
-Once it meets the criteria, a DEV is converted
+Once it meets the criteria, a DEV is converted 
 to a named actor or merged with existing actors. 
 Throughout this chapter, we cite examples of 
 nation state and DEV groups to provide a deeper 
@@ -3931,17 +4335,17 @@ view into attack targets, techniques, and analysis
 of motivations. Although many of these groups 
 use the same tools as cybercriminals, they 
 present unique threats in the form of bespoke 
-malware, the ability to discover and capitalize
+malware, the ability to discover and capitalize 
 on zero\-day vulnerabilities, and legal impunity.
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -3976,16 +4380,16 @@ education
 Fancy Bear
 Sr
 STRONTIUM
-Intelligence
-Defense
+Intelligence/
+Defense 
 personnel, think 
 tanks
 Callisto Group
 Sg
 SEABORGIUM
-Critical
+Critical 
 infrastructure, 
-operational
+operational 
 technology
 Sandworm
 Ir
@@ -4003,7 +4407,7 @@ education
 SoftCell
 Ga
 GALLIUM
-Government.
+Government. 
 NGOs
 APT15 
 Vixen Panda
@@ -4017,18 +4421,18 @@ GADOLINIUM
 Cryptocurrency and 
 related technology 
 companies
-APT38,
+APT38, 
 Beagle Boyz
 Cn
 COPERNICIUM
 Think tanks, 
-academics,
+academics, 
 NGOs, government
  Konni
 Os
 OSMIUM
 Science and 
-technology,
+technology, 
 defense, industrial
 Andariel, Dark Seoul, 
 Silent Chollima 
@@ -4055,8 +4459,8 @@ Tortoiseshell
 Bh
 BOHRIUM
 North Korea
-Government,
-defense, science
+Government, 
+defense, science 
 and technology
 Lazarus 
 Zn
@@ -4065,17 +4469,17 @@ ZINC
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats 
 Sample of nation state actors and their activities 
 Key 
@@ -4088,34 +4492,39 @@ Industry
 references
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
-Resilience
-Contributing 
-Teams35
-Microsoft Digital Defense Report 2022 
-Report 
-Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+ 
+ 
+ 
+ 
+35
+Microsoft Digital Defense Report 2022 
+Report 
+Introduction
+Cyber 
+Resilience
+Contributing 
+Teams
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats 
 The evolving 
 threat landscape 
-Microsofts mission to track nation state 
+Microsoft’s mission to track nation state 
 actor activity and notify customers 
 when we see them being targeted or 
 compromised is rooted in our mission 
@@ -4150,14 +4559,14 @@ down and hawkish elements have acquired
 more control in some nations, cyber actors 
 have become more brazen and aggressive. 
 For example: 
- Russia relentlessly targeted the Ukrainian 
-government and the countrys critical 
+• Russia relentlessly targeted the Ukrainian 
+government and the country’s critical 
 infrastructure to complement its on\-the\-
 ground military action. Note 2
- Iran aggressively sought inroads into US 
+• Iran aggressively sought inroads into US 
 critical infrastructure such as port authorities. 
-
-
+• 
+• 
 Although nation state actors can be technically 
 sophisticated and employ a wide variety of 
 tactics, their attacks can often be mitigated by 
@@ -4170,7 +4579,7 @@ their objectives.
 Industry sectors targeted by nation state actors 
 22%
 Information technology
-Think tanksNGOs
+Think tanks/NGOs
 Education
 Government
 Finance
@@ -4192,7 +4601,7 @@ Other
 20%
 2%
 Nation state groups targeted a range of sectors. Russian and Iranian state actors targeted the IT industry as a 
-means to access the IT firms customers. Think tanks, nongovernmental organizations (NGOs), universities, and 
+means to access the IT firms’ customers. Think tanks, nongovernmental organizations (NGOs), universities, and 
 government agencies remained other common targets of nation state actors. 
 Nation state actors have a variety of objectives 
 that can result in targeting specific groups 
@@ -4200,7 +4609,7 @@ of organizations or individuals. In the last
 year, supply chain attacks have increased, 
 with a particular focus on IT companies. 
 By compromising IT service providers, threat 
-actors are often able to reach their original
+actors are often able to reach their original 
 target through a trusted relationship with the 
 company that manages connected systems, 
 or potentially execute attacks on a much larger 
@@ -4208,21 +4617,23 @@ scale by compromising hundreds of downstream
 customers in one attack. After the IT sector, the 
 most frequently targeted entities were think 
 tanks, academics attached to universities, and 
-government officials. These are desirable soft 
-targets for espionage to collect intelligence
+government officials. These are desirable “soft 
+targets” for espionage to collect intelligence 
 on geopolitical issues.
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
-TeamsContinued
+Teams
+ 
+Continued
 36
 Microsoft Digital Defense Report 2022 
 Report 
@@ -4231,13 +4642,13 @@ Cyber
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats 
 Critical infrastructure trends 
 40%
@@ -4263,56 +4674,70 @@ Critical infrastructure trends
 Critical infrastructure
 Noncritical infrastructure
 Percentage critical infrastructure of total NSNs
-Jul 2018Jun 2019
-Jul 2019Jun 2020
-Jul 2020Jun 2021
-Jul 2021Jun 2022
+Jul 2018–Jun 2019
+Jul 2019–Jun 2020
+Jul 2020–Jun 2021
+Jul 2021–Jun 2022
 %
 NSNs
-Nation state groups targeting of critical infrastructure Note 3 increased in the past year, with actors focusing on 
+Nation state groups’ targeting of critical infrastructure Note 3 increased in the past year, with actors’ focusing on 
 companies in the IT sector, financial services, transportation systems, and communications infrastructure. 
 The evolving threat landscape 
-Before the invasion of Ukraine, governments thought that 
+“Before the invasion of Ukraine, governments thought that 
 data needed to stay inside a country in order to be secure. 
 After the invasion, migrating data to the cloud and moving 
 outside territorial borders is now a part of resiliency 
-planning and good governance.Cristin Flynn Goodwin, 
+planning and good governance.” 
+ 
+ 
+ 
+Cristin Flynn Goodwin, 
 Associate General Counsel, Customer Security \& Trust 
-Nation state actors geographic targeting 
+Nation state actors’ geographic targeting 
 Most
 Least
-Nation state groups cyber targeting spanned the 
+Nation state groups’ cyber targeting spanned the 
 globe this past year, with a particularly heavy focus on 
 US and British enterprises. Organizations in Israel, the 
 UAE, Canada, Germany, India, Switzerland, and Japan 
 were also among some of the most frequently targeted, 
 according to our NSN data. 
-Actionable insights1 
+Actionable insights
+ 
+1 
 Identify and protect your potential high\-
 value data targets, at\-risk technologies, 
 information, and business operations 
 which might align with the strategic 
-priorities of nation state groups.2 
+priorities of nation state groups.
+ 
+2 
 Enable cloud protections to provide 
-identification and mitigation of known
+identification and mitigation of known 
 and novel threats to your network at scale.
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
-Teams 
- Path 1
+Teams
  
+ 
+ 
+ 
+ 
+– 
+ Path 1
+– 
  Path 2
 Social engineering
-Stolen credentials
+Stolen credentials 
 from on\-premises
 On\-premises access
 Remote access solutions
@@ -4322,31 +4747,31 @@ target \#1
 Government 
 target \#2
 Managed services 
-providerCloud 
+provider/Cloud 
 services provider
-IT providerCloud 
+IT provider/Cloud 
 services provider
 Cloud 
 services provider
 IT provider
-Managed services
+Managed services 
 provider
 NOBELIUM
 37
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats 
 The IT supply chain 
 as a gateway to the 
@@ -4376,8 +4801,8 @@ at cloud solutions and other managed services
 providers to attempt targeted downstream 
 access into primarily US and European 
 government and policy customers. 
-NOBELIUM demonstrated how a compromise 
-one to compromise many approach could 
+NOBELIUM demonstrated how a “compromise 
+one to compromise many” approach could 
 be directed against a perceived geopolitical 
 adversary. This past year, the threat actor pursued 
 both third\-party and direct intrusions into 
@@ -4385,7 +4810,7 @@ sensitive organizations based in member states
 of the North Atlantic Treaty Organization (NATO), 
 which the Russian government perceives as an 
 existential threat. Between July 2021 and early 
-June 2022, 48 percent of Microsofts customer 
+June 2022, 48 percent of Microsoft’s customer 
 notifications of Russian threat activity against 
 online services customers went to IT sector 
 firms based in NATO member countries, likely as 
@@ -4404,40 +4829,45 @@ chain, targeting cloud solutions and
 managed services providers to reach 
 downstream customers. 
 Approaches to compromise 
-This diagram depicts NOBELIUMs multi\-vectored approach to compromising its ultimate targets and the collateral 
+This diagram depicts NOBELIUM’s multi\-vectored approach to compromising its ultimate targets and the collateral 
 damage to other victims along the way. In addition to the actions shown above, NOBELIUM launched password 
 spray and phishing attacks against the entities involved, even targeting the personal account of at least one 
 government employee as another potential route to compromise.
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
  The IT supply chain 
 as a gateway to the
-digital ecosystemContinued
+digital ecosystem 
+ 
+ 
+ 
+ 
+Continued
 38
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats 
 Throughout the year, Microsoft Threat 
 Intelligence Center (MSTIC) detected an 
@@ -4447,19 +4877,19 @@ In many cases, actors were detected stealing
 sign\-in credentials to gain access to downstream 
 clients for a range of objectives, from intelligence 
 collection to retaliatory destructive attacks. 
- In July and August 2021, DEV\-0228 
+• In July and August 2021, DEV\-0228 
 compromised an Israeli business software 
 provider to later compromise downstream 
 customers in the Israeli defense, energy, 
 and legal sectors. Note 4 
- From August to September 2021, Microsoft 
+• From August to September 2021, Microsoft 
 detected a spike in Iranian state actors 
 targeting IT companies based in India. The lack 
 of pressing geopolitical issues that would have 
 prompted such a shift suggests this targeting 
 is for indirect access to subsidiaries and clients 
 outside India. 
- In January 2022, DEV\-0198, a group we 
+• In January 2022, DEV\-0198, a group we 
 assess is affiliated with the government of 
 Iran, compromised an Israeli cloud solutions 
 provider. Microsoft assesses the actor 
@@ -4469,7 +4899,7 @@ logistics company. MSTIC observed the same
 actor attempting to conduct a destructive 
 cyberattack against the logistics company 
 later that month. 
- In April 2022, POLONIUM, a Lebanon\-based 
+• In April 2022, POLONIUM, a Lebanon\-based 
 group we assess collaborated with Iranian 
 state groups on IT supply chain techniques, 
 compromised another Israeli IT company 
@@ -4478,16 +4908,16 @@ organizations. Note 5
 This past year of activity demonstrates that 
 threat actors like NOBELIUM and DEV\-0228 
 are getting to know the landscape of an 
-organizations trusted relationships better than 
+organization’s trusted relationships better than 
 the organizations themselves. This increased 
-threat emphasizes the need for organizations
+threat emphasizes the need for organizations 
 to understand and harden the borders and entry 
 points of their digital estates. It also underscores 
 the importance for IT service providers to 
 rigorously monitor their own cybersecurity 
 health. For example, organizations should 
 implement multifactor authentication and 
-conditional access policies that make it harder
+conditional access policies that make it harder 
 for malicious actors to capture privileged 
 accounts or spread throughout a network. 
 Conducting a thorough review and audit 
@@ -4501,25 +4931,33 @@ makes it easier to spot anomalies that could
 spark further investigation. 
 Nation state targeting of third parties 
 enables them to exploit sensitive 
-organizations by taking advantage
+organizations by taking advantage 
 of trust and access in a supply chain. 
-Actionable insights1 
+Actionable insights
+ 
+1 
 Review and audit upstream and downstream 
 service provider relationships and delegated 
 privilege accesses to minimize unnecessary 
 permissions. Remove access for any partner 
 relationships that look unfamiliar or have not 
-yet been audited. Note 62 
+yet been audited. Note 6 
+ 
+2 
 Enable logging and review all authentication 
 activity for remote access infrastructure and 
 virtual private networks (VPNs), with a focus 
 on accounts configured with single factor 
 authentication, to confirm authenticity and 
-investigate anomalous activity.3 
+investigate anomalous activity.
+ 
+3 
 Enable MFA for all accounts (including 
 service accounts) and ensure MFA is 
-enforced for all remote connectivity.4 
-Use passwordless solutions to
+enforced for all remote connectivity.
+ 
+4 
+Use passwordless solutions to 
 secure accounts. Note 7 
 Links to further information 
 NOBELIUM targeting delegated 
@@ -4535,30 +4973,34 @@ organizations \| Microsoft Threat
 Intelligence Center (MSTIC)
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
-Resilience
-Contributing 
-Teams39
-Microsoft Digital Defense Report 2022 
-Report 
-Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+ 
+ 
+ 
+39
+Microsoft Digital Defense Report 2022 
+Report 
+Introduction
+Cyber 
+Resilience
+Contributing 
+Teams
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats 
 Rapid vulnerability 
 exploitation 
@@ -4568,8 +5010,8 @@ actors respond by pursuing new and
 unique tactics to deliver attacks and 
 evade detection. The identification and 
 exploitation of previously unknown 
-vulnerabilitiesknown as zero\-day 
-vulnerabilitiesis a key tactic in this effort. 
+vulnerabilities—known as zero\-day 
+vulnerabilities—is a key tactic in this effort. 
 Zero\-day vulnerabilities are a particularly 
 effective means for initial exploitation and, once 
 publicly exposed, vulnerabilities can be rapidly 
@@ -4578,8 +5020,8 @@ The number of publicly disclosed zero\-day
 vulnerabilities over the past year is on par with 
 those from the previous year, which was the 
 highest on record. 
-As cyber threat actorsboth nation state 
-and criminalbecome more adept at 
+As cyber threat actors—both nation state 
+and criminal—become more adept at 
 leveraging these vulnerabilities, we have 
 observed a reduction in the time between 
 the announcement of a vulnerability and 
@@ -4604,11 +5046,11 @@ faster rate. Zero\-day exploits are often discovered
 by other actors and reused broadly in a short 
 period of time, leaving unpatched systems at 
 risk. Even though zero\-day exploitation can be 
-difficult to detect, actors post\-exploit actions are 
+difficult to detect, actors’ post\-exploit actions are 
 often easier to detect and, if coming from fully 
 patched software, can act as a warning sign of 
 a compromise. 
-Patches released for zero\-day
+Patches released for zero\-day 
 vulnerabilities 
 0
 50
@@ -4616,22 +5058,22 @@ vulnerabilities
 150
 200
 250
-JulDec 2014
-JanJun 2015
-JulDec 2015
-JanJun 2016
-JulDec 2016
-JanJun 2017
-JulDec 2017
-JanJun 2018
-JulDec 2018
-JanJun 2019
-JulDec 2019
-JanJun 2020
-JulDec 2020
-JanJun 2021
-JulDec 2021
-JanJun 2022
+Jul–Dec 2014
+Jan–Jun 2015
+Jul–Dec 2015
+Jan–Jun 2016
+Jul–Dec 2016
+Jan–Jun 2017
+Jul–Dec 2017
+Jan–Jun 2018
+Jul–Dec 2018
+Jan–Jun 2019
+Jul–Dec 2019
+Jan–Jun 2020
+Jul–Dec 2020
+Jan–Jun 2021
+Jul–Dec 2021
+Jan–Jun 2022
 11 10
 18 10
 15
@@ -4676,7 +5118,7 @@ While we observe many nation state actors
 developing exploits from unknown vulnerabilities, 
 China\-based nation state threat actors are 
 particularly proficient at discovering and 
-developing zero\-day exploits. Chinas vulnerability 
+developing zero\-day exploits. China’s vulnerability 
 reporting regulation went into effect September 
 2021, marking a first in the world for a government 
 to require the reporting of vulnerabilities into 
@@ -4687,7 +5129,7 @@ elements in the Chinese government to stockpile
 reported vulnerabilities toward weaponizing 
 them. The increased use of zero days over the last 
 year from China\-based actors likely reflects the 
-first full year of Chinas vulnerability disclosure 
+first full year of China’s vulnerability disclosure 
 requirements for the Chinese security community 
 and a major step in the use of zero\-day exploits as 
 a state priority. The vulnerabilities described below 
@@ -4697,13 +5139,13 @@ discovered and spread among other actors in the
 larger threat ecosystem. 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -4725,7 +5167,7 @@ available online, and often picked up by other
 actors for reuse. Similarly, organizations have 
 on average 120 days before a vulnerability is 
 available in automated vulnerability scanning 
-and exploitation tools such as Metasploit
+and exploitation tools such as Metasploit—
 which often result in the exploit being used 
 on a massive scale. This highlights that even 
 organizations that are not a target of nation state 
@@ -4736,7 +5178,7 @@ actor ecosystem.
 CVE\-2021\-35211 SolarWinds Serv\-U
 In July 2021, SolarWinds released a security 
 advisory for CVE\-2021\-35211, crediting Microsoft 
-with the notification. Note 8At the time, we discovered 
+with the notification. Note 8 At the time, we discovered 
 nation state aligned threat actor DEV\-0322 
 actively exploiting the SolarWinds Serv\-U 
 vulnerability. Our RiskIQ team observed 12,646 IP 
@@ -4751,7 +5193,7 @@ The vulnerability was publicly reported
 on September 6 as CVE\-2021\-40539 Zoho 
 ManageEngine ADSelfService Plus, which 
 organizations typically use to handle password 
-resets. Note 9DEV\-0322 exploited the vulnerability 
+resets. Note 9 DEV\-0322 exploited the vulnerability 
 later in September, using it as an initial vector 
 to gain a foothold in networks and performing 
 additional actions including credential dumping, 
@@ -4764,7 +5206,7 @@ ServiceDesk Plus
 In late October 2021, we observed DEV\-0322 
 leveraging a vulnerability (CVE\-2021\-44077\) 
 in a second Zoho ManageEngine product, 
-ServiceDesk Plusan IT help\-desk software 
+ServiceDesk Plus—an IT help\-desk software 
 with asset management. DEV\-0322 used 
 this vulnerability to target and compromise 
 entities in healthcare, information technology, 
@@ -4787,7 +5229,7 @@ Microsoft observed the exploit for the Exchange
 vulnerability used in the wild on October 21, only 
 three days after the vulnerability was revealed. 
 At the time of disclosure, RiskIQ observed 
- Rapid vulnerability
+ Rapid vulnerability 
  exploitation 
 Continued
 61,559 instances of these systems active and 
@@ -4810,7 +5252,7 @@ Actionable insights
 1 
 Prioritize patching of zero\-day 
 vulnerabilities as soon as they are 
-released; dont wait for the patch 
+released; don’t wait for the patch 
 management cycle to deploy.
 2 
 Document and inventory all 
@@ -4821,38 +5263,45 @@ determine when to act on patches.
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Nation State 
 Threats
- Russian state actors 
+ Russian state actors’ 
 wartime cyber tactics 
 threaten Ukraine 
-and beyondThis year saw Russian state actors launching 
+and beyond 
+ 
+ 
+ 
+ 
+ 
+ 
+This year saw Russian state actors launching 
 cyber operations to complement military 
-action during Russias invasion of Ukraine, 
+action during Russia’s invasion of Ukraine, 
 often using the same tactics and techniques 
 deployed against targets outside of Ukraine. 
 It is critical that organizations worldwide 
@@ -4904,7 +5353,7 @@ Outside of Ukraine, Microsoft detected
 Russian network intrusion efforts against 
 128 organizations in 42 countries between 
 late February and June. The United States was 
-Russias number one target. Poland, through 
+Russia’s number one target. Poland, through 
 which much of the international military and 
 humanitarian assistance to Ukraine transits, 
 was also a significant target during this period. 
@@ -4940,42 +5389,42 @@ sector organizations highlight the risk that these cyber operations pose to serv
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
@@ -5026,7 +5475,7 @@ to facilitate website defacements and the
 deployment of Whispergate destructive malware 
 by DEV\-0586 in January. Note 12 DEV\-0586 also 
 compromised the network of an IT firm that built 
-resource management systems for Ukraines 
+resource management systems for Ukraine’s 
 Ministry of Defense and other organizations in 
 the communications and transportation sectors, 
 indicating the group was exploring third\-party 
@@ -5035,11 +5484,11 @@ Worldwide, but especially in the United States
 and Western Europe, NOBELIUM targeted IT 
 services providers to gain access to government 
 and other sensitive networks throughout 
-20212022 (see the discussion of supply chain 
+2021–2022 (see the discussion of supply chain 
 vulnerabilities earlier in this chapter).
- Russian state actors
- wartime cyber tactics
- threaten Ukraine
+ Russian state actors’ 
+ wartime cyber tactics 
+ threaten Ukraine 
  and beyond 
 Continued
 Russia
@@ -5061,44 +5510,46 @@ Ukraine 2%
 Germany 3%
 Russia: Top targeted countries and industry sectors
 Despite an intensified focus on Ukraine\-based organizations since early 2022, enterprises based in North America 
-and Western Europe were still the online service customers Russian actors targeted most. NOBELIUMs campaign 
+and Western Europe were still the online service customers Russian actors targeted most. NOBELIUM’s campaign 
 against the IT sector made it the most targeted sector this past year.
 42
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
- Russian state actors
- wartime cyber tactics
- threaten Ukraine
+ Russian state actors’ 
+ wartime cyber tactics 
+ threaten Ukraine 
  and beyond 
 Continued
 43
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
 Exploitation of public\-facing applications 
-to gain initial access to networksSince at least late 2021, STRONTIUM worked 
+to gain initial access to networks 
+ 
+Since at least late 2021, STRONTIUM worked 
 to develop and refine its capabilities to exploit 
 public\-facing services, such as Microsoft 
 Exchange servers, to steal information. 
@@ -5142,17 +5593,17 @@ cybersecurity against digital threats
 stemming from Russian state and 
 Russia\-affiliated threat actors.
 Actionable insights
-1Minimize credential theft and account 
+1 Minimize credential theft and account 
 abuse by protecting the identities 
 of your users by implementing MFA 
 identity protection tools and enforcing 
 least privilege access to secure the 
 most sensitive and privileged accounts 
 and systems.
-2Apply updates to ensure all your systems 
+2 Apply updates to ensure all your systems 
 get the highest level of protection as soon 
 as possible and are kept up to date.
-3Deploy anti\-malware, endpoint detection, 
+3 Deploy anti\-malware, endpoint detection, 
 and identity protection solutions across 
 your organization. A combination of 
 defense\-in\-depth security solutions, paired 
@@ -5160,57 +5611,75 @@ with trained and capable personnel, can
 empower your organization to identify, 
 detect, and prevent intrusions impacting 
 your business. 
-4Enable investigations and recovery in the 
+4 Enable investigations and recovery in the 
 event you detect or receive notification of 
 a threat to your environment by backing 
 up critical systems and enabling logging. 
 Establishing an incident response plan is 
 strongly encouraged.
-Links to further informationDefending Ukraine: Early Lessons from 
-the Cyber War \| Microsoft On the IssuesThe hybrid war in Ukraine \| Microsoft On 
-the IssuesCyber threat activity in Ukraine: analysis 
+Links to further information
+ 
+Defending Ukraine: Early Lessons from 
+the Cyber War \| Microsoft On the Issues
+ 
+The hybrid war in Ukraine \| Microsoft On 
+the Issues
+ 
+Cyber threat activity in Ukraine: analysis 
 and resources \| Microsoft Security 
-Response Center (MSRC)Disrupting cyberattacks targeting 
-Ukraine \| Microsoft On the IssuesMalware attacks targeting Ukraine 
-government \| Microsoft On the IssuesMagicWeb: NOBELIUMs post\-compromise 
+Response Center (MSRC) 
+ 
+Disrupting cyberattacks targeting 
+Ukraine \| Microsoft On the Issues 
+ 
+Malware attacks targeting Ukraine 
+government \| Microsoft On the Issues
+ 
+MagicWeb: NOBELIUM’s post\-compromise 
 trick to authenticate as anyone \| Microsoft 
 Threat Intelligence Center (MSTIC), 
 Detection and Response Team (DART), 
 Microsoft 365 Defender Research Team
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
  China expanding 
 global targeting for 
-competitive advantageIn todays complex geopolitical climate, 
+competitive advantage
+ 
+ 
+ 
+ 
+ 
+In today’s complex geopolitical climate, 
 Chinese state and state\-affiliated threat 
 actors conducting cyber operations often 
-aim to further the countrys strategic military, 
+aim to further the country’s strategic military, 
 economic, and foreign relations goals as part 
-of Chinas objective to attain competitive 
+of China’s objective to attain competitive 
 advantage. In the last year, Microsoft 
 has observed widespread Chinese threat 
 activity targeting countries around the world.
@@ -5219,9 +5688,9 @@ to ensure economic and financial stability amid
 the worst COVID\-19 surge in two years. Note 13 China 
 continued to juggle their position on geopolitical 
 events, such as the struggle to balance their 
-limitless partnership with Russia, Note 14 and maintain 
+“limitless” partnership with Russia, Note 14 and maintain 
 their position on the world stage. Note 15 In addition, 
-Chinas stance against the United States and 
+China’s stance against the United States and 
 its allies over Taiwan Note 16 and the South China 
 sea continued to strain foreign relations 
 with many countries. Note 17 
@@ -5272,18 +5741,18 @@ Government agencies
 and services 9%
 Other 27%
 Other 26%
-Think tanksNGOs, media, IT, government, and education sectors were among the most targeted sectors 
+Think tanks/NGOs, media, IT, government, and education sectors were among the most targeted sectors 
 for China\-based threat groups, probably for persistent intelligence collection and reconnaissance.
 The span of targets included, but were not 
 limited to, countries in Africa, the Caribbean, 
 the Middle East, Oceania, and South Asia, with a 
 particular focus on those countries in Southeast 
 Asia, and the Pacific Islands.
-In line with Chinas BRI strategy, China\-based 
+In line with China’s BRI strategy, China\-based 
 threat groups targeted entities in Afghanistan, 
 Kazakhstan, Mauritius, Namibia, and Trinidad and 
 Tobago. Note 20 For example, Trinidad and Tobago was 
-the first Caribbean country to endorse Chinas 
+the first Caribbean country to endorse China’s 
 BRI strategy in 2018, and China considers it an 
 important partner in the region. NICKEL has 
 had persistent network operations targeting 
@@ -5295,27 +5764,27 @@ for intelligence collection purposes.
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
@@ -5324,43 +5793,43 @@ and state\-affiliated threat groups focusing their
 network operations against entities in Southeast 
 Asia and expanding to Pacific Island countries as 
 China shifted its military and economic priorities 
-to cope with the challenges of the United States 
+to cope with the challenges of the United States’ 
 renewed interest in the region. In January 2022, 
 Microsoft observed RADIUM targeting an energy 
 company and an energy\-associated government 
 agency in Vietnam, and an Indonesian 
-government agency. RADIUMs activities likely 
-aligned with Chinas strategic goals in the South 
-China Sea. Note 21In late February and early March, 
+government agency. RADIUM’s activities likely 
+aligned with China’s strategic goals in the South 
+China Sea. Note 21 In late February and early March, 
 GALLIUM compromised more than 100 accounts 
 affiliated with a prominent intergovernmental 
 organization (IGO) in the Southeast Asia region. 
-The timing of GALLIUMs targeting of the IGO in 
+The timing of GALLIUM’s targeting of the IGO in 
 the region coincided with the announcement of 
 a scheduled meeting between the United States 
 and regional leaders. GALLIUM actors were likely 
 tasked to monitor communications and collect 
 intelligence before the event.
 As China expanded its influence in Pacific Island 
-countries, Chinese threat groups activities 
+countries, Chinese threat groups’ activities 
 followed. In April, China and the Solomon 
 Islands signed a security agreement intended to 
-promote peace and security. The agreement 
+“promote peace and security.” The agreement 
 potentially allows China to deploy armed police 
 and military to the Solomon Islands. Note 22 In May, 
 China hosted the second China\-Pacific Island 
-Countries (PICs) Foreign Ministers Meeting in 
-Fiji and proposed to advance a comprehensive 
-strategic partnership to further political, cultural, 
+Countries (PICs) Foreign Ministers’ Meeting in 
+Fiji and proposed to advance a “comprehensive 
+strategic partnership” to further political, cultural, 
 social, security, and climate change interests and 
 also to fight the pandemic. Note 23 Around the same 
-time in May, Microsoft identified GADOLINIUMs 
+time in May, Microsoft identified GADOLINIUM’s 
 malware on Solomon Islands government 
 systems. RADIUM also ran malicious code on 
 systems of a telecommunications company in 
 Papua New Guinea. We assess these activities 
 were likely for intelligence collection purposes 
-to support Chinas overall regional strategy.
+to support China’s overall regional strategy.
 Microsoft disrupts NICKEL operations, but the 
 threat group shows its persistence.
 In December 2021, the Microsoft Digital Crimes 
@@ -5376,22 +5845,22 @@ operations, NICKEL achieved long\-term access to
 several entities and consistently exfiltrated data 
 from some victims since late 2019\.
 As China continues to establish bilateral 
-economic relations with more countries
-often in agreements associated with BRI
-Chinas global influence will continue to grow. 
+economic relations with more countries—
+often in agreements associated with BRI—
+China’s global influence will continue to grow. 
 We assess Chinese state and state\-affiliated 
 threat actors will pursue targets in their 
 government, diplomatic, and NGO sectors to 
 gain new insights, likely in pursuit of economic 
 espionage or traditional intelligence collection 
-objectives. Since Microsofts disruption, NICKEL 
+objectives. Since Microsoft’s disruption, NICKEL 
 has targeted several government agencies, 
 likely trying to regain lost access. Between late 
 March and May 2022, NICKEL re\-compromised 
 at least five government agencies across the 
 globe. This suggests the group had additional 
 entry points to those entities or regained access 
-through new C2 domains. NICKELs persistence in 
+through new C2 domains. NICKEL’s persistence in 
 repeatedly compromising the same government 
 agencies globally indicates the importance of the 
 task at a high level.
@@ -5401,17 +5870,28 @@ We assess cyber\-enabled economic
 espionage and intelligence collection 
 will likely continue.
 Actionable insights
-1Boost cyber defense to mitigate cyber 
+1
+ 
+ 
+Boost cyber defense to mitigate cyber 
 threats proactively. The persistence 
 of Chinese threat actors requires 
 organizations to identify, protect, detect, 
 and respond possible intrusions in a 
-timely fashion.2Threat actors abuse scheduled tasks Note 25 as 
+timely fashion.
+ 
+2
+ 
+Threat actors abuse scheduled tasks Note 25 as 
 a common method of persistence and 
 defense evasion, ensure your environment 
 employs additional security guidelines 
 to protect against this commonly used 
-technique. Note 263We continue to observe the use of web 
+technique. Note 26
+ 
+3
+ 
+We continue to observe the use of web 
 shells as an initial vector into targeted 
 networks. Note 27 Organizations should harden 
 their systems against web shells attacks 
@@ -5425,42 +5905,49 @@ Center (MSTIC), Microsoft Digital Security
 Unit (DSU)
 Protecting people from recent 
 cyberattacks \| Microsoft On the Issues
- China expanding
- global targeting for
+ China expanding 
+ global targeting for 
  competitive advantage 
 Continued
 45
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
  Iran growing 
 increasingly 
 aggressive following 
-power transitionMicrosoft has observed Iranian state 
+power transition 
+ 
+ 
+ 
+ 
+ 
+ 
+Microsoft has observed Iranian state 
 groups and affiliated actors increase the 
 pace and scope of cyberattacks against 
 Israel, expand ransomware attacks 
@@ -5468,14 +5955,14 @@ beyond regional adversaries to US and EU
 victims, and target high profile US critical 
 infrastructure to at least pre\-position for 
 potential destructive cyberattacks.
-Iranian state actors growing cyber aggression 
+Iranian state actors’ growing cyber aggression 
 has followed a transition of its presidential 
 power. In the summer of 2021, hardline President 
 Ibrahim Raisi replaced moderate President 
 Hassan Rouhani. In sharp contrast to Raisi, who 
-is a protg of the Supreme Leader and a close 
+is a protégé of the Supreme Leader and a close 
 ally of the Islamic Revolutionary Guard Corps 
-(IRGC), former President Rouhanis penchant 
+(IRGC), former President Rouhani’s penchant 
 for diplomacy often brought him at odds with 
 the Supreme Leader and IRGC senior leaders. Note 29 
 The hawkish views of the Raisi administration 
@@ -5523,15 +6010,15 @@ to retaliate against the same sectors that senior
 IRGC officials blamed the United States and Israel 
 for disrupting in Iran. Note 31 We assess this activity is 
 tied to statements in late October 2021 by IRGC 
-General Gholamreza Jalali, head of Irans Passive 
+General Gholamreza Jalali, head of Iran’s Passive 
 Defense Organization, who echoed accusations 
 from other influential figures within the regime 
 that the United States and Israel conducted 
-cyberattacks on Irans ports, railways, and fueling 
+cyberattacks on Iran’s ports, railways, and fueling 
 stations. Note 32 Jalali delivered this accusation a 
 second time in prepared remarks during a staged 
 Friday prayer speech at a podium with the image 
-of a missile striking the words USA, suggesting 
+of a missile striking the words “USA,” suggesting 
 his seniors held the same view. Note 33
 PHOSPHORUS began widespread scanning 
 of US organizations in October 2021 for 
@@ -5543,7 +6030,7 @@ the United States and other Western nations.
 These marked the first confirmed cases of Iranian 
 state affiliated ransomware attacks outside the 
 Middle East. Following the cyberattack against 
-Irans fueling stations in late October, Microsoft 
+Iran’s fueling stations in late October, Microsoft 
 observed a spike in Iranian ransomware 
 attacks against US companies, suggesting 
 possible correlation.
@@ -5581,7 +6068,7 @@ infrastructure
 Percent critical 
 infrastructure 
 of total NSNs
-Jul 18Jun 19 Jul 19Jun 20 Jul 20Jun 21 Jul 21Jun 22 0
+Jul 18–Jun 19 Jul 19–Jun 20 Jul 20–Jun 21 Jul 21–Jun 22 0
 20
 40
 60
@@ -5589,40 +6076,40 @@ Jul 18Jun 19 Jul 19Jun 20 Jul 20Jun 21 Jul 21Jun 22 0
 100
 Iranian targeting of critical infrastructure increased 
 to the highest levels observed since late 2018 to early 
-1\. We used US Presidential Policy Directive 21 
+2019\. We used US Presidential Policy Directive 21 
 (PPD\-21\) to determine whether a company fit the 
-criteria of critical infrastructure. (July 2021June 2022\).
+criteria of critical infrastructure. (July 2021–June 2022\).
 46
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
- Iran growing
- increasingly
- aggressive following
+ Iran growing 
+ increasingly 
+ aggressive following 
  power transition 
 Continued
 In Israel, DEV\-0198 targeted Israeli railways, 
@@ -5637,9 +6124,9 @@ attack. In another case, we observed the group
 attempt to access the network of a major Israeli 
 transportation provider via stolen or reused 
 credentials. Meanwhile, another Iranian actor, 
-DEV\-0343whose targeting of defense, maritime 
+DEV\-0343—whose targeting of defense, maritime 
 transportation, and satellite imagery companies 
-suggests links to the IRGCcompromised 
+suggests links to the IRGC—compromised 
 accounts at Israeli transportation and port\-
 related entities throughout early 2021\.
 Iranian threat groups are likely to remain a threat 
@@ -5670,15 +6157,19 @@ targeting high profile US and Israeli critical
 infrastructure targets.
 Actionable insights
 1 
-Improve your organizations overall 
+Improve your organization’s overall 
 cyber hygiene by enabling passwordless 
 solutions such as MFA and enforcing its 
 use for all remote connectivity to mitigate 
 any potentially compromised credentials.
-2Evaluate the authenticity of all inbound 
+2
+ 
+Evaluate the authenticity of all inbound 
 email traffic to ensure the sender address 
 is legitimate.
-3Patch early and often. Note 34
+3
+ 
+Patch early and often. Note 34
 4 
 Review and audit each one of your partner 
 relationships with service providers to 
@@ -5701,27 +6192,27 @@ Microsoft Digital Security Unit (DSU)
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
@@ -5745,33 +6236,38 @@ previously disclosed publicly. Note 36
 Microsoft uncovered a previously undocumented 
 Lebanon\-based group that we assess 
 with moderate confidence operated in 
-coordination with actors affiliated with Irans 
+coordination with actors affiliated with Iran’s 
 Ministry of Intelligence and Security (MOIS). 
 Such collaboration or direction from Tehran 
 would align with revelations since late 2020 that 
 the Government of Iran is using third parties to 
 carry out cyber operations, likely to enhance 
-Irans plausible deniability.
+Iran’s plausible deniability.
 In the observed activity, POLONIUM targeted 
 or compromised two dozen Israel\-based 
 organizations and one IGO with operations 
 in Lebanon between February and May 2022, 
-before Microsoft disrupted and publicly revealedits activity. Nearly half the Israeli organizations 
-were part of Israels defense industry or had 
+before Microsoft disrupted and publicly revealed 
+ 
+ 
+ 
+ 
+its activity. Nearly half the Israeli organizations 
+were part of Israel’s defense industry or had 
 links to Israeli defense companies, indicating 
 the group has a similar set of interests as Iran 
-in collecting intelligence on andor directly 
+in collecting intelligence on and/or directly 
 countering Israel. Note 37
-POLONIUMs assessed links to MOIS groups 
+POLONIUM’s assessed links to MOIS groups 
 are based on observed victim overlaps and 
 commonality of tools and techniques.
-
-
+• 
+• 
  Note 38
  Note 39
 POLONIUM deployed a series of custom 
 implants using cloud services for C2 and data 
-exfiltrationnotably OneDrive and DropBox. 
+exfiltration—notably OneDrive and DropBox. 
 POLONIUM often created unique OneDrive 
 applications for targets, likely to evade detection. 
 As of June 2022, Microsoft suspended more than 
@@ -5782,7 +6278,7 @@ quarantine POLONIUM\-developed tools.
 Microsoft 
 successfully 
 detected and 
-disabled POLONIUMs 
+disabled POLONIUM’s 
 abuse of OneDrive 
 as a C2\.
 Actionable insights
@@ -5815,38 +6311,45 @@ Microsoft Defender Threat Intelligence
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
  North Korean cyber 
 capabilities employed 
-to achieve regimes 
-three main goalsNorth Koreas cyber priorities over the past 
-year reflected the governments stated 
+to achieve regime’s 
+three main goals 
+ 
+ 
+ 
+ 
+ 
+ 
+North Korea’s cyber priorities over the past 
+year reflected the government’s stated 
 global priorities. Kim Jong Un emphasized 
 the three priorities of building defense 
-capacity, bolstering the countrys struggling 
+capacity, bolstering the country’s struggling 
 economy, and ensuring domestic stability 
 in several key addresses. Note 43 The actions taken 
 by North Korean state actors clearly show 
@@ -5871,7 +6374,7 @@ its adversaries made.
 We observed COPERNICIUM targeting a variety 
 of cryptocurrency\-related companies around the 
 world, often with success, to help support North 
-Koreas struggling economy. While we cannot 
+Korea’s struggling economy. While we cannot 
 confirm whether the group was able to exfiltrate 
 money after a compromise, we observed 
 COPERNICIUM infect dozens of machines by 
@@ -5918,7 +6421,7 @@ in both South Korean military academies and
 military members working in academia.
 Targeting cryptocurrency to balance losses
 Since UN sanctions were levied in 2016, North 
-Koreas economy has continued to contract, 
+Korea’s economy has continued to contract, 
 compounded by natural disasters such as floods Note 44 
 and drought Note 45 as well as a near\-total lockdown 
 of borders to imports since the onset of the 
@@ -5927,21 +6430,21 @@ North Korea opened its borders for trade with
 China briefly in early 2022, they were soon closed 
 again. Note 47 In mid\-May, North Korea reported its 
 first domestic case of COVID\-19\. Note 48 It has since 
-applied a China\-style zero COVID strategy 
+applied a China\-style “zero COVID” strategy 
 of mass lockdowns to combat the virus which 
-has negatively impacted North Koreas already 
+has negatively impacted North Korea’s already 
 fragile economy.
 The North Korean state group COPERNICIUM 
 tried to offset some of the lost revenue by 
-stealing moneytypically in the form of 
-cryptocurrencyfrom any company whose 
+stealing money—typically in the form of 
+cryptocurrency—from any company whose 
 networks it could penetrate. We saw dozens 
 of machines compromised belonging to 
 cryptocurrency\-related companies in the United 
 States, Canada, Europe, and throughout Asia. 
 COPERNICIUM even compromised machines 
 belonging to cryptocurrency\-related companies 
-within North Koreas strongest ally, China, both 
+within North Korea’s strongest ally, China, both 
 on the mainland and in Hong Kong. The group 
 relied heavily on social media for its early 
 reconnaissance and approaches to targets. 
@@ -5955,32 +6458,34 @@ built up rapport.
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
 A group related to PLUTONIUM develops 
-and deploys ransomwareA group of actors originating from North 
+and deploys ransomware
+ 
+A group of actors originating from North 
 Korea that Microsoft tracks as DEV\-0530 began 
 developing and using ransomware in attacks 
 in June 2021\. This group, which called itself 
@@ -6031,7 +6536,7 @@ The North Korean government views these
 groups as an existential threat to its survival, 
 particularly citizens inside North Korea who 
 would be viewed as traitors and spies. DEV\-0215 
-likely sought to identify these outlets sources so 
+likely sought to identify these outlets’ sources so 
 they could neutralize potential information leaks.
 North Korea: Top targeted countries and industry sectors
 North Korea
@@ -6053,42 +6558,42 @@ Other 36%
 North Korea views the United States, South Korea, and Japan as its primary enemies. While Russia is a long\-time 
 ally, North Korean threat actors target Russian think tanks, academics, and diplomatic officials to obtain intelligence 
 on Russian views of global affairs.
- North Korean cyber
- capabilities employed
- to achieve regimes
+ North Korean cyber 
+ capabilities employed 
+ to achieve regime’s 
  three main goals 
 Continued
 50
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
- North Korean cyber
- capabilities employed
- to achieve regimes
+ North Korean cyber 
+ capabilities employed 
+ to achieve regime’s 
  three main goals 
 Continued
 51
@@ -6105,7 +6610,7 @@ Korea. North Korea views them as a threat
 because, while the stream of defectors coming 
 from North Korea almost dried up during the 
 pandemic, Note 49 these Christian groups often play 
-a critical role in helping defectors escape.
+a critical role in helping defectors escape. 
 DEV\-0215 has generated fake documents about 
 Christian conferences for Korean speakers as 
 lures to target the group and discover who is 
@@ -6124,7 +6629,9 @@ North Korea may be penetrating the networks
 of aid organizations worldwide to determine 
 whether to allow such aid into their own country.
 Actionable insights
-1North Korean state actors are skilled, 
+1
+ 
+North Korean state actors are skilled, 
 relentless, and creative, but organizations 
 can defend against them. 
 2 
@@ -6132,7 +6639,9 @@ Most successful attacks can be stopped
 with basic cyber hygiene, such as two 
 factor authentication or not opening 
 attachments from unknown individuals 
-in a virtual environment.Links to further information
+in a virtual environment.
+ 
+Links to further information
 North Korean threat actor targets small 
 and midsize businesses with H0lyGh0st 
 ransomware \| Microsoft Threat Intelligence 
@@ -6143,42 +6652,47 @@ long been debate over whether the
 North Korean government is in earnest 
 with its public statements or whether it 
 is posturing for effect. The alignment 
-of cyberattacks with North Koreas 
+of cyberattacks with North Korea’s 
 announced priorities validates the belief 
 that North Korea means what it says 
 when it speaks publicly about its goals.
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
  Cyber mercenaries 
 threaten the stability 
-of cyberspaceThere is a growing industry of private 
+of cyberspace 
+ 
+ 
+ 
+ 
+There is a growing industry of private 
 companies that develop and sell tools, 
 techniques, and services that enable their 
-clientsoften governmentsto break into 
+clients—often governments—to break into 
 networks, computers, phones, and internet\-
 connected devices. An asset for nation 
 state actors, these entities often endanger 
@@ -6195,12 +6709,12 @@ in ways that are inconsistent with the norms
 and values of good governance and democracy. 
 Microsoft believes the protection of human rights 
 is a fundamental obligation, and one we take 
-seriously by curtailing surveillance as a service 
+seriously by curtailing “surveillance as a service” 
 across the globe. 
 Microsoft has assessed certain state actors 
 across democratic and authoritarian regimes 
 outsource the development or use of 
-surveillance as a service technology. This is 
+“surveillance as a service” technology. This is 
 how they avoid accountability and oversight, 
 as well as acquire capabilities that would be 
 difficult to develop natively. 
@@ -6242,8 +6756,8 @@ and difficult cycle for both software suppliers
 consumers of products (who must implement 
 the patches immediately). 
 As a founding member of the Cybersecurity 
-Tech Accord Note 53a leading alliance bringing 
-together more than 150 technology companies
+Tech Accord Note 53—a leading alliance bringing 
+together more than 150 technology companies—
 Microsoft has made a commitment not to 
 engage in offensive operations online. We stand 
 by that commitment and by our human rights 
@@ -6254,21 +6768,29 @@ services provided by cyber mercenaries and
 will continue to protect our customers when 
 we see abuse.
 Cyber mercenaries create and provide 
-surveillance as a service capabilities 
+“surveillance as a service” capabilities 
 that are technologically sophisticated 
 and broadly available, including 
 advanced malware, and a range 
 of techniques.
 Actionable insights for governments
-1Implement transparency and oversight 
+1
+ 
+Implement transparency and oversight 
 requirements for surveillance as a service, 
 particularly in procurement, including 
 the banning of these offensive actors, 
 as the US has done with the Department 
 of Commerce listing of companies on the 
 Entity List. 
-2Establish post\-employment restrictions 
-for former employees in this sector.3Aim to implement know your customer 
+2
+ 
+Establish post\-employment restrictions 
+for former employees in this sector.
+ 
+3
+ 
+Aim to implement “know your customer” 
 obligations and encourage companies to 
 uphold their human rights commitments. 
 Links to further information
@@ -6284,34 +6806,41 @@ cyberweapons \| Microsoft On the Issues
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
  Operationalizing 
 cybersecurity norms 
 for peace and security 
-in cyberspaceWe urgently need a consistent, global 
+in cyberspace 
+ 
+ 
+ 
+ 
+ 
+ 
+We urgently need a consistent, global 
 framework that prioritizes human rights 
 and protects people from reckless state 
 behavior online. Nowhere is this more 
@@ -6319,23 +6848,23 @@ clearly demonstrated than in the ongoing
 war in Ukraine. In addition to a global 
 strategic effort, governments can act now 
 to have an immediate positive impact.
-Five years ago, Microsoft called for a Digital 
-Geneva Convention to advance responsibilities 
+Five years ago, Microsoft called for a “Digital 
+Geneva Convention” to advance responsibilities 
 and obligations across sectors to defend peace 
 and security online. Cyberspace was emerging 
 as a distinct and volatile domain of conflict 
 and competition between states, with attacks 
 becoming more common, even in times of peace.
 Today, there is still a clear need for such a 
-frameworkevidenced by Russian cyberattacks 
-against Ukraine as part of Russias invasion. This war 
+framework—evidenced by Russian cyberattacks 
+against Ukraine as part of Russia’s invasion. This war 
 has created a new front line that is dramatically 
 different from any we have known before.
 Bringing stability to cyberspace will require 
 strengthening and reimagining global 
 governance institutions to make them fit\-for\-
 purpose. Cyberspace is fundamentally different 
-from other domainsit is borderless, synthetic, 
+from other domains—it is borderless, synthetic, 
 and maintained largely by private industry. 
 This means asking the technology industry to 
 take greater responsibility for both the security 
@@ -6357,7 +6886,7 @@ affirmative vision for a safe and secure online
 world. The road ahead is long, but there are 
 things governments can do now to immediately 
 improve the cybersecurity ecosystem:
- Cite norms, laws, and consequences in 
+• Cite norms, laws, and consequences in 
 attributions. One major improvement over 
 the past five years has been the speed and 
 coordination of government attributions of 
@@ -6367,7 +6896,7 @@ which international laws or norms are violated
 and what manner of consequences will be 
 imposed to help strengthen recognition of 
 international expectations.
- Clarify international law interpretation online. 
+• Clarify international law interpretation online. 
 While governments agree that international 
 law applies online, questions remain about 
 how it applies in specific instances. This is 
@@ -6377,7 +6906,7 @@ way toward setting expectations, avoiding
 misunderstandings, and building trust by 
 stating how they understand their obligations 
 under international law.
- Consult with other stakeholders. 
+• Consult with other stakeholders. 
 As international forums continue to 
 discover the best ways to facilitate robust 
 multistakeholder inclusion, governments can 
@@ -6386,14 +6915,14 @@ with multistakeholder communities, in
 particular the technology industry, to 
 ensure dialog benefits from those with 
 indispensable expertise.
- Form a standing body to support responsible 
+• Form a standing body to support responsible 
 state behavior in cyberspace. The work of 
 international diplomatic forums to advance 
 responsible state behavior online has never 
 been more important. There is a clear need 
 for a permanent UN mechanism to deal with 
 cyberspace as a domain of conflict.
- Define new norms for evolving threats. 
+• Define new norms for evolving threats. 
 Cyberspace threats are constantly evolving 
 alongside innovations in technology. 
 While international norms should be 
@@ -6408,10 +6937,13 @@ that are not currently protected, like the software
 update process. Moreover, specific areas 
 deserve additional protections. For example, 
 as we have learned amid the pandemic, norms 
-for protecting healthcare are essential.Nation state actors and attacks are 
+for protecting healthcare are essential.
+ 
+ 
+Nation state actors and attacks are 
 increasing in volume and sophistication, 
 creating a situation that is untenable.
-Immediate action is imperativethere 
+Immediate action is imperative—there 
 are things governments can do now to 
 immediately improve the cybersecurity 
 ecosystem, including implementing agreed 
@@ -6435,176 +6967,176 @@ On the Issues
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
 Endnotes
 Note 1 
-https:www.microsoft.comen\-uscybersecuritycontent\-hubcloud\-security
-Note 2
-https:blogs.microsoft.comon\-the\-issues20220427hybrid\-war\-ukraine\-russia\-cyberattacks
-Note 3
+https://www.microsoft.com/en\-us/cybersecurity/content\-hub/cloud\-security
+Note 2 
+https://blogs.microsoft.com/on\-the\-issues/2022/04/27/hybrid\-war\-ukraine\-russia\-cyberattacks/
+Note 3 
 Critical infrastructure in this chapter is defined by the Presidential Policy Directive 21 (PPD\-21\), 
 Critical Infrastructure Security and Resilience (February 2013\).
 Note 4 
-https:www.microsoft.comsecurityblog20211118iranian\-targeting\-of\-it\-sector\-on\-the\-rise
+https://www.microsoft.com/security/blog/2021/11/18/iranian\-targeting\-of\-it\-sector\-on\-the\-rise/
 Note 5 
-https:www.microsoft.comsecurityblog20220602exposing\-polonium\-activity\-and\-
-infrastructure\-targeting\-israeli\-organizations 
+https://www.microsoft.com/security/blog/2022/06/02/exposing\-polonium\-activity\-and\-
+infrastructure\-targeting\-israeli\-organizations/ 
 Note 6 
-https:www.microsoft.comsecurityblog20211025nobelium\-targeting\-delegated\-
-administrative\-privileges\-to\-facilitate\-broader\-attacks
+https://www.microsoft.com/security/blog/2021/10/25/nobelium\-targeting\-delegated\-
+administrative\-privileges\-to\-facilitate\-broader\-attacks/
 Note 7 
-https:www.microsoft.comen\-ussecuritybusinessidentity\-accessazure\-active\-directory\-
+https://www.microsoft.com/en\-us/security/business/identity\-access/azure\-active\-directory\-
 passwordless\-authentication
 Note 8 
-https:www.solarwinds.comtrust\-centersecurity\-advisoriescve\-2021\-35211
+https://www.solarwinds.com/trust\-center/security\-advisories/cve\-2021\-35211
 Note 9 
-https:pitstop.manageengine.comportalencommunitytopicadselfservice\-plus\-6114\-security\-
+https://pitstop.manageengine.com/portal/en/community/topic/adselfservice\-plus\-6114\-security\-
 fix\-release
-Note 10 https:reliefweb.intreportukraineunicef\-ukraine\-humanitarian\-situation\-report\-no\-13\-10\-17\-
+Note 10 https://reliefweb.int/report/ukraine/unicef\-ukraine\-humanitarian\-situation\-report\-no\-13\-10\-17\-
 may\-2022
-Note 11 https:news.un.orgenstory2022061119672
-Note 12 https:zetter.substack.compdozens\-of\-computers\-in\-ukraine\-wiped?s\=r ; 
-https:www.microsoft.comsecurityblog20220115destructive\-malware\-targeting\-ukrainian\-
-organizations
-Note 13https:www.cnn.com20220314economychina\-jan\-feb\-economy\-challenges\-ahead\-intl\-hnk
+Note 11 https://news.un.org/en/story/2022/06/1119672
+Note 12 https://zetter.substack.com/p/dozens\-of\-computers\-in\-ukraine\-wiped?s\=r ; 
+https://www.microsoft.com/security/blog/2022/01/15/destructive\-malware\-targeting\-ukrainian\-
+organizations/
+Note 13 https://www.cnn.com/2022/03/14/economy/china\-jan\-feb\-economy\-challenges\-ahead\-intl\-hnk/
 index.html
-Note 14 https:www.wsj.comarticlesrussias\-vladimir\-putin\-meets\-with\-chinese\-leader\-xi\-jinping\-in\-
+Note 14 https://www.wsj.com/articles/russias\-vladimir\-putin\-meets\-with\-chinese\-leader\-xi\-jinping\-in\-
 beijing\-11643966743 
-Note 15 https:www.washingtonpost.comworld20220401china\-eu\-summit
-Note 16 https:twitter.comMoNDefense
-Note 17 https:news.usni.org202201242\-u\-s\-aircraft\-carriers\-now\-in\-south\-china\-sea\-as\-chinese\-air\-
+Note 15 https://www.washingtonpost.com/world/2022/04/01/china\-eu\-summit/
+Note 16 https://twitter.com/MoNDefense
+Note 17 https://news.usni.org/2022/01/24/2\-u\-s\-aircraft\-carriers\-now\-in\-south\-china\-sea\-as\-chinese\-air\-
 force\-flies\-39\-aircraft\-near\-taiwan
-Note 18 https:ec.europa.eutradepolicyin\-focuseu\-china\-agreement; https:www.usnews.com
-newsworldarticles2022\-02\-28eu\-plans\-summit\-with\-china\-on\-april\-1\-to\-address\-tensions
-Note 19 https:www.wsj.comarticlesu\-s\-on\-sidelines\-as\-china\-and\-other\-asia\-pacific\-nations\-launch\-
+Note 18 https://ec.europa.eu/trade/policy/in\-focus/eu\-china\-agreement/; https://www.usnews.com/
+news/world/articles/2022\-02\-28/eu\-plans\-summit\-with\-china\-on\-april\-1\-to\-address\-tensions
+Note 19 https://www.wsj.com/articles/u\-s\-on\-sidelines\-as\-china\-and\-other\-asia\-pacific\-nations\-launch\-
 trade\-pact\-11641038401
-Note 20 https:greenfdc.orgchinas\-two\-sessions\-2022\-what\-it\-means\-for\-economy\-climate\-
-biodiversity\-green\-finance\-and\-the\-belt\-and\-road\-initiative\-bri
-Note 21 https:www.cfr.orgglobal\-conflict\-trackerconflictterritorial\-disputes\-south\-china\-sea 
-Note 22 https:www.theguardian.comworld2022apr30the\-china\-solomons\-security\-deal\-has\-been\-
+Note 20 https://greenfdc.org/chinas\-two\-sessions\-2022\-what\-it\-means\-for\-economy\-climate\-
+biodiversity\-green\-finance\-and\-the\-belt\-and\-road\-initiative\-bri/
+Note 21 https://www.cfr.org/global\-conflict\-tracker/conflict/territorial\-disputes\-south\-china\-sea 
+Note 22 https://www.theguardian.com/world/2022/apr/30/the\-china\-solomons\-security\-deal\-has\-been\-
 signed\-time\-to\-move\-on\-from\-megaphone\-diplomacy 
-Note 23 https:www.fmprc.gov.cnengzxxx\_662805202205t20220531\_10694928\.html 
-Note 24 https:blogs.microsoft.comon\-the\-issues20211206cyberattacks\-nickel\-dcu\-china; 
-https:www.microsoft.comsecurityblog20211206nickel\-targeting\-government\-
-organizations\-across\-latin\-america\-and\-europe 
-Note 25 https:www.microsoft.comsecurityblog20220412tarrask\-malware\-uses\-scheduled\-tasks\-
-for\-defense\-evasion
-Note 26 https:attack.mitre.orgtechniquesT1053
-Note 27 https:www.microsoft.comsecurityblog20220726malicious\-iis\-extensions\-quietly\-open\-
-persistent\-backdoors\-into\-servers
-Note 28 https:www.microsoft.comsecurityblog20210211web\-shell\-attacks\-continue\-to\-rise
-Note 29 https:www.timesofisrael.comin\-rare\-criticism\-of\-irgc\-rouhani\-slams\-anti\-israel\-slogans\-
-on\-test\-missiles; https:www.theguardian.comworld2017may05iran\-president\-hassan\-
-rouhani\-nuclear\-agreement\-sabotaged; https:d2071andvip0wj.cloudfront.net184\-iran\-
-s\-priorities\-in\-a\-turbulent\-middle\-east\_1\.pdf; https:www.aljazeera.comnews201639
-iran\-launches\-ballistic\-missiles\-during\-military\-drill; https:www.usatoday.comstorynews
-world20150425iran\-yemen\-weapons26367493; https:www.armscontrol.orgblog
-ArmsControlNow2016\-03\-14The\-Iranian\-Ballistic\-Missile\-Launches\-That\-Didnt\-Happen; 
-https:www.reuters.comworldmiddle\-eastiran\-parliament\-approves\-most\-raisi\-nominees\-
-hardline\-cabinet\-2021\-08\-25;
-Note 30 https:www.reuters.comworldmiddle\-eastiran\-parliament\-approves\-most\-raisi\-nominees\-
-hardline\-cabinet\-2021\-08\-25; https:www.france24\.comenlive\-news20210825\-iran\-s\-
+Note 23 https://www.fmprc.gov.cn/eng/zxxx\_662805/202205/t20220531\_10694928\.html 
+Note 24 https://blogs.microsoft.com/on\-the\-issues/2021/12/06/cyberattacks\-nickel\-dcu\-china/; 
+https://www.microsoft.com/security/blog/2021/12/06/nickel\-targeting\-government\-
+organizations\-across\-latin\-america\-and\-europe/ 
+Note 25 https://www.microsoft.com/security/blog/2022/04/12/tarrask\-malware\-uses\-scheduled\-tasks\-
+for\-defense\-evasion/
+Note 26 https://attack.mitre.org/techniques/T1053/
+Note 27 https://www.microsoft.com/security/blog/2022/07/26/malicious\-iis\-extensions\-quietly\-open\-
+persistent\-backdoors\-into\-servers/
+Note 28 https://www.microsoft.com/security/blog/2021/02/11/web\-shell\-attacks\-continue\-to\-rise/
+Note 29 https://www.timesofisrael.com/in\-rare\-criticism\-of\-irgc\-rouhani\-slams\-anti\-israel\-slogans\-
+on\-test\-missiles/; https://www.theguardian.com/world/2017/may/05/iran\-president\-hassan\-
+rouhani\-nuclear\-agreement\-sabotaged; https://d2071andvip0wj.cloudfront.net/184\-iran\-
+s\-priorities\-in\-a\-turbulent\-middle\-east\_1\.pdf; https://www.aljazeera.com/news/2016/3/9/
+iran\-launches\-ballistic\-missiles\-during\-military\-drill; https://www.usatoday.com/story/news/
+world/2015/04/25/iran\-yemen\-weapons/26367493/; https://www.armscontrol.org/blog/
+ArmsControlNow/2016\-03\-14/The\-Iranian\-Ballistic\-Missile\-Launches\-That\-Didnt\-Happen; 
+https://www.reuters.com/world/middle\-east/iran\-parliament\-approves\-most\-raisi\-nominees\-
+hardline\-cabinet\-2021\-08\-25/;
+Note 30 https://www.reuters.com/world/middle\-east/iran\-parliament\-approves\-most\-raisi\-nominees\-
+hardline\-cabinet\-2021\-08\-25/; https://www.france24\.com/en/live\-news/20210825\-iran\-s\-
 parliament\-approves\-president\-s\-cabinet\-choices 
 54
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Nation State 
 Threats
 Endnotes continued
-Note 31 https:www.janes.comdefence\-newsnews\-detailiranian\-irgc\-consolidates\-primacy\-
-inintelligence\-operations; https:www.proofpoint.comusblogthreat\-insightbadblood\-ta453\-
-targets\-us\-and\-israeli\-medical\-research\-personnel\-credential; https:miburo.substack.comp
+Note 31 https://www.janes.com/defence\-news/news\-detail/iranian\-irgc\-consolidates\-primacy\-
+inintelligence\-operations; https://www.proofpoint.com/us/blog/threat\-insight/badblood\-ta453\-
+targets\-us\-and\-israeli\-medical\-research\-personnel\-credential; https://miburo.substack.com/p/
 iran\-disinfo\-privatized?s\=r.
-Note 32 https:www.reuters.combusinessenergyiran\-says\-israel\-us\-likely\-behind\-cyberattack\-gas\-
-stations\-2021\-10\-30
-Note 33 https:www.tasnimnews.comennews202111052602361us\-military\-action\-off\-the\-table\-
+Note 32 https://www.reuters.com/business/energy/iran\-says\-israel\-us\-likely\-behind\-cyberattack\-gas\-
+stations\-2021\-10\-30/
+Note 33 https://www.tasnimnews.com/en/news/2021/11/05/2602361/us\-military\-action\-off\-the\-table\-
 iranian\-general 
 Note 34 In particular, patch Exchange servers for ProxyShell vulnerabilities (CVE\-2021\-26855, CVE\-2021\-
 26857, CVE\-2021\-26858, and CVE\-2021\-27065, CVE\-2021\-34473\). Also, be sure to patch Fortinet 
 FortiOS SSL VPN appliances for vulnerabilities.
-Note 35 https:docs.microsoft.comen\-usmicrosoft\-365commercemanage\-partners?view\=o365\-
+Note 35 https://docs.microsoft.com/en\-us/microsoft\-365/commerce/manage\-partners?view\=o365\-
 worldwide 
-Note 36 https:www.microsoft.comsecurityblog20220602exposing\-polonium\-activity\-and\-
-infrastructure\-targeting\-israeli\-organizations
-Note 37 https:www.microsoft.comsecurityblog20220602exposing\-polonium\-activity\-and\-
-infrastructure\-targeting\-israeli\-organizations 
-Note 38 https:www.secureworks.combloglyceum\-takes\-center\-stage\-in\-middle\-east\-campaign 
-Note 39 https:www.microsoft.comsecurityblog20211118iranian\-targeting\-of\-it\-sector\-on\-the\-rise
-Note 40 https:docs.microsoft.comen\-usmicrosoft\-365securitydefender\-endpointmanage\-updates\-
+Note 36 https://www.microsoft.com/security/blog/2022/06/02/exposing\-polonium\-activity\-and\-
+infrastructure\-targeting\-israeli\-organizations/
+Note 37 https://www.microsoft.com/security/blog/2022/06/02/exposing\-polonium\-activity\-and\-
+infrastructure\-targeting\-israeli\-organizations/ 
+Note 38 https://www.secureworks.com/blog/lyceum\-takes\-center\-stage\-in\-middle\-east\-campaign 
+Note 39 https://www.microsoft.com/security/blog/2021/11/18/iranian\-targeting\-of\-it\-sector\-on\-the\-rise/
+Note 40 https://docs.microsoft.com/en\-us/microsoft\-365/security/defender\-endpoint/manage\-updates\-
 baselines\-microsoft\-defender\-antivirus?view\=o365\-worldwide 
-Note 41 https:docs.microsoft.commicrosoft\-365securitydefender\-endpointcloud\-protection\-
+Note 41 https://docs.microsoft.com/microsoft\-365/security/defender\-endpoint/cloud\-protection\-
 microsoft\-defender\-antivirus 
-Note 42 https:docs.microsoft.commicrosoft\-365commercemanage\-partners?view\=o365\-worldwide 
-Note 43 https:www.marketwatch.comstorykim\-jong\-un\-calls\-for\-improved\-living\-conditions\-in\-north\-
+Note 42 https://docs.microsoft.com/microsoft\-365/commerce/manage\-partners?view\=o365\-worldwide 
+Note 43 https://www.marketwatch.com/story/kim\-jong\-un\-calls\-for\-improved\-living\-conditions\-in\-north\-
 korea\-01633920099 
-https:www.bbc.comnewsworld\-asia\-59845636 
-https:kcnawatch.orgnewstream1650963237\-449932111respected\-comrade\-kim\-jong\-un\-
-makes\-speech\-at\-military\-parade\-held\-in\-celebration\-of\-90th\-founding\-anniversary\-of\-kpra
-Note 44 https:www.theguardian.comworld2021aug06north\-korea\-homes\-wreckeddamaged\-and\-
+https://www.bbc.com/news/world\-asia\-59845636 
+https://kcnawatch.org/newstream/1650963237\-449932111/respected\-comrade\-kim\-jong\-un\-
+makes\-speech\-at\-military\-parade\-held\-in\-celebration\-of\-90th\-founding\-anniversary\-of\-kpra/
+Note 44 https://www.theguardian.com/world/2021/aug/06/north\-korea\-homes\-wreckeddamaged\-and\-
 and\-bridges\-washed\-away\-in\-floods
-Note 45 https:www.reuters.comworldasia\-pacificnkorea\-mobilises\-office\-workers\-fight\-drought\-
-amid\-food\-shortages\-2022\-05\-04
-Note 46 https:www.washingtonpost.comworldasia\_pacificnorth\-korea\-kim\-
-pandemic2021090831adfd74\-ff53\-11eb\-87e0\-7e07bd9ce270\_story.html
-Note 47 https:news.yahoo.comchina\-halts\-freight\-train\-traffic\-102451425\.html
-Note 48 https:www.cnn.com20220511asianorth\-korea\-covid\-omicron\-coronavirus\-intl\-hnkindex.
+Note 45 https://www.reuters.com/world/asia\-pacific/nkorea\-mobilises\-office\-workers\-fight\-drought\-
+amid\-food\-shortages\-2022\-05\-04/
+Note 46 https://www.washingtonpost.com/world/asia\_pacific/north\-korea\-kim\-
+pandemic/2021/09/08/31adfd74\-ff53\-11eb\-87e0\-7e07bd9ce270\_story.html
+Note 47 https://news.yahoo.com/china\-halts\-freight\-train\-traffic\-102451425\.html
+Note 48 https://www.cnn.com/2022/05/11/asia/north\-korea\-covid\-omicron\-coronavirus\-intl\-hnk/index.
 html
-Note 49 https:www.csis.organalysisnumber\-north\-korean\-defectors\-drops\-lowest\-level\-two\-decades
-Note 50 https:www.aljazeera.comeconomy2022520north\-korea\-shuns\-outside\-help\-as\-covid\-
+Note 49 https://www.csis.org/analysis/number\-north\-korean\-defectors\-drops\-lowest\-level\-two\-decades
+Note 50 https://www.aljazeera.com/economy/2022/5/20/north\-korea\-shuns\-outside\-help\-as\-covid\-
 catastrophe\-looms
 Note 51 Jan\-Philipp Hein, In the mystery of creepy spy software, the trail leads via Wirecard to the 
-Kremlin, FOCUS Online, (2022\), https:www.focus.depolitikvorab\-aus\-dem\-focus\-volle\-
+Kremlin, FOCUS Online, (2022\), https://www.focus.de/politik/vorab\-aus\-dem\-focus\-volle\-
 kontrolle\-ueber\-zielcomputer\-das\-raetsel\-um\-die\-spionage\-app\-fuehrt\-ueber\-wirecard\-
-zu\-putin\_id\_24442733\.html; Sugar Mizzy, We unveil the Subzero state trojan from Austria, 
-Europe\-cities (2021\), https:europe\-cities.com20211217we\-unveil\-the\-subzero\-state\-trojan\-
-from\-austria; Andre Meister, We unveil the state Trojan Subzero from Austria, Netzpolitik.
-org (2022\), https:netzpolitik.org2021dsirf\-wir\-enthuellen\-den\-staatstrojaner\-subzero\-aus\-
+zu\-putin\_id\_24442733\.html; Sugar Mizzy, We unveil the “Subzero” state trojan from Austria, 
+Europe\-cities (2021\), https://europe\-cities.com/2021/12/17/we\-unveil\-the\-subzero\-state\-trojan\-
+from\-austria/; Andre Meister, We unveil the state Trojan “Subzero” from Austria, Netzpolitik.
+org (2022\), https://netzpolitik.org/2021/dsirf\-wir\-enthuellen\-den\-staatstrojaner\-subzero\-aus\-
 oesterreich.
 Note 52 As noted in our technical blog, the identification of targets in a country does not necessarily 
 mean that a DSIRF customer resides in the same country, as international targeting is common.
@@ -6613,25 +7145,31 @@ Note 53 Home \| Cybersecurity Tech Accord (cybertechaccord.org)
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Devices and 
 Infrastructure
 Devices and 
-InfrastructureWith the acceleration of digital transformation, the security 
-of digital infrastructure is more important than ever.An overview of Devices and Insfrastructure 57
+Infrastructure
+ 
+With the acceleration of digital transformation, the security 
+of digital infrastructure is more important than ever.
+ 
+An overview of Devices and Insfrastructure 57
 Introduction 
 58
 Governments acting to improve critical 
-infrastructure security and resilience59
+infrastructure security and resilience 
+ 
+59
 IoT and OT exposed: Trends and attacks 
 62
 Supply chain and firmware hacking 
@@ -6644,27 +7182,27 @@ Reconnaissance\-based OT attacks
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -6672,7 +7210,12 @@ Devices and
 Infrastructure
  An overview of 
 Devices and 
-InfrastructureThe pandemic, coupled with 
+Infrastructure
+ 
+ 
+ 
+ 
+The pandemic, coupled with 
 rapid adoption of internet\-
 facing devices of all kinds as 
 a component of accelerating 
@@ -6688,7 +7231,7 @@ has not kept pace. Threat actors are exploiting
 these devices to establish access on networks 
 and enable lateral movement, to establish a 
 foothold in a supply chain, or to disrupt the 
-target organizations OT operations. 
+target organization’s OT operations. 
 Countries advancing 
 critical infrastructure 
 cybersecurity risk 
@@ -6710,14 +7253,16 @@ Email
 4%
 1%
 Other
-1%Governments worldwide are moving 
+1%
+ 
+Governments worldwide are moving 
 to protect critical infrastructure by 
 improving IoT and OT security.
 Find out more on p59
 Globally consistent and interoperable 
 security policies are needed to ensure 
 broad adoption.
- Find out more on p59
+  Find out more on p59
 Malware as a 
 service has moved 
 into large scale 
@@ -6726,22 +7271,22 @@ exposed IoT and OT
 in infrastructure and 
 utilities as well as 
 corporate networks. 
- Find out more on p63
+  Find out more on p63
 Attacks against remote management 
 devices are on the rise, with more 
 than 100 million attacks observed 
-in May of 2022a five\-fold increase 
+in May of 2022—a five\-fold increase 
 in the past year.
- Find out more on p62
+  Find out more on p62
 Attackers are increasingly leveraging 
 vulnerabilities in IoT device firmware 
 to infiltrate corporate networks and 
 launch devastating attacks. 
- Find out more on p65
+  Find out more on p65
 32% of firmware images analyzed 
 contained at least 10 known critical 
 vulnerabilities.
- Find out more on p66
+  Find out more on p66
 103,092
 87,479
 11,895
@@ -6768,23 +7313,23 @@ Presence of dangerous components
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 32% of firmware images analyzed 
 contained at least 10 known critical 
 vulnerabilities.
  An overview of 
- Devices and
+ Devices and 
  Infrastructure 
 The pandemic, coupled with 
 rapid adoption of internet\-
@@ -6802,14 +7347,14 @@ has not kept pace. Threat actors are exploiting
 these devices to establish access on networks 
 and enable lateral movement, to establish a 
 foothold in a supply chain, or to disrupt the 
-target organizations OT operations. 
+target organization’s OT operations. 
 Globally consistent and interoperable 
 security policies are needed to ensure 
 broad adoption.
 Attacks against remote management 
 devices are on the rise, with more 
-than 100 million attacks observed
-in May of 2022a five\-fold increase 
+than 100 million attacks observed 
+in May of 2022—a five\-fold increase 
 in the past year.
 Attackers are increasingly leveraging 
 vulnerabilities in IoT device firmware 
@@ -6848,12 +7393,12 @@ Email
 1%
 Other
 1%
- Find out more on p59
- Find out more on p65
- Find out more on p63
- Find out more on p59
- Find out more on p66
- Find out more on p62
+  Find out more on p59
+  Find out more on p65
+  Find out more on p63
+  Find out more on p59
+  Find out more on p66
+  Find out more on p62
 103,092
 87,479
 11,895
@@ -6880,27 +7425,27 @@ Presence of dangerous components
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -6922,7 +7467,7 @@ rate at which industries worldwide are adopting
 internet\-facing devices, the attack surface of the 
 digital world is increasing exponentially.
 This rapid migration has outpaced the security 
-communitys ability to keep up. Over the past 
+community’s ability to keep up. Over the past 
 year, we have observed threats exploiting devices 
 in every part of the organization, from traditional 
 IT equipment to operational technology (OT) 
@@ -6932,7 +7477,7 @@ strengthened in recent years, IoT and OT device
 security has not kept pace. Threat actors are 
 exploiting these devices to establish access on 
 networks and enable lateral movement or disrupt 
-the organizations OT operations. We have seen 
+the organization’s OT operations. We have seen 
 attacks on power grids, ransomware attacks 
 disrupting OT operations, IoT routers being 
 leveraged for increased persistency, and attacks 
@@ -6945,7 +7490,7 @@ is a powerful lever. The 2021 ransomware attack
 on the Colonial Pipeline Company demonstrated 
 how criminals can disrupt a critical service to 
 increase the likelihood of a ransom payment. 
-And Russias cyberattacks against Ukraine 
+And Russia’s cyberattacks against Ukraine 
 demonstrate that some nation states view 
 cyberattacks against critical infrastructure 
 as acceptable sabotage to achieve its 
@@ -6969,17 +7514,17 @@ scarce security resources toward compliance with
 multiple duplicative certifications.
 From a security operation standpoint network 
 defenders take multiple approaches to improving 
-their organizations IoTOT security posture. 
+their organization’s IoT/OT security posture. 
 One approach is to implement continuous 
 monitoring of IoT and OT devices. Another is to 
-shift\-leftmeaning to demand and implement 
+“shift\-left”—meaning to demand and implement 
 better cybersecurity practices for the IoT and 
 OT devices themselves. A third approach is to 
 implement a security monitoring solution which 
 spans both IT and OT networks. This holistic 
 approach has the significant added benefit of 
 contributing to critical organizational processes, 
-such as breaking the silos between OT and IT, 
+such as “breaking the silos” between OT and IT, 
 which in turn enables the organization to reach 
 an enhanced security posture while meeting 
 business objectives. 
@@ -6990,13 +7535,13 @@ Officer, Cloud and AI Security
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
@@ -7004,13 +7549,13 @@ Devices and
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -7019,7 +7564,14 @@ Infrastructure
  Governments acting 
 to improve critical 
 infrastructure security 
-and resilienceGovernments worldwide are developing 
+and resilience 
+ 
+ 
+ 
+ 
+ 
+ 
+Governments worldwide are developing 
 and evolving policies to manage critical 
 infrastructure cybersecurity risk. Many are 
 also enacting policies to improve IoT and 
@@ -7059,8 +7611,8 @@ including Australia, Chile, the European Union
 and the United States, have developed, updated, 
 or implemented cross\-sector or sector\-specific 
 cybersecurity requirements. Note 1 Many of these 
-governmentsand others such as India Note 2 and 
-Switzerland Note 3already issued or are developing 
+governments—and others such as India Note 2 and 
+Switzerland Note 3—already issued or are developing 
 cybersecurity incident reporting requirements 
 for critical infrastructure and essential service 
 providers. Note 4
@@ -7076,15 +7628,21 @@ and empower the government to intervene if it
 determines a critical infrastructure operator is 
 unwilling or unable to adequately respond to 
 an incident.
-11Countries advancing 
+11
+ 
+Countries advancing 
 critical infrastructure 
 cybersecurity risk 
 requirements
-2Countries 
+2
+ 
+Countries 
 advancing cyber 
 incident reporting 
 requirements
-9Countries 
+9
+ 
+Countries 
 advancing both
 The EU worked to update its NIS Directive 
 of 2016, which provides a framework for EU 
@@ -7102,10 +7660,10 @@ requirements for information communication
 technologies used in the financial services sector.
 In May, Indonesia issued a presidential 
 regulation on the protection of vital information 
-infrastructure (IIV), which will take effect in 
+infrastructure (“IIV”), which will take effect in 
 May 2024 and cover sectors such as energy, 
 transportation, finance, and health, among 
-others. Indonesias objective with the regulation 
+others. Indonesia’s objective with the regulation 
 is to protect the continuity of the implementation 
 of IIV, prevent cyberattacks, and increase 
 preparedness in handling cyber incidents. 
@@ -7119,13 +7677,13 @@ to report cyber incidents within 24 hours.
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
@@ -7133,17 +7691,17 @@ Devices and
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-Devices and
+Devices and 
 Infrastructure
 Devices and 
 Infrastructure
@@ -7159,11 +7717,11 @@ In 2021, TSA issued two security directives
 to hazardous liquid and natural gas pipeline 
 operators in response to the ransomware 
 attack on the Colonial Pipeline Company:
- The first directive required operators to 
+• The first directive required operators to 
 designate a cybersecurity coordinator, report 
 cyber incidents within 12 hours, and conduct 
 a vulnerability assessment of their systems.
- The second directive, which TSA revised in 
+• The second directive, which TSA revised in 
 2022, required them to implement specific 
 mitigation measures to protect against 
 ransomware attacks and other known threats 
@@ -7194,7 +7752,7 @@ technology (ICT) products and services, including
 IoT and OT devices. In the context of ICT products 
 and services, the biggest concerns are software 
 supply chain security and IoT security.
- The European Commission proposed the 
+• The European Commission proposed the 
 Cyber Resilience Act, which would establish 
 cybersecurity requirements for standalone 
 software and connected devices and ancillary 
@@ -7207,9 +7765,9 @@ devices and all manufacturers would be tasked
 with managing coordinated vulnerability 
 disclosure Note 8 processes for released products.
 Policymakers have also focused their attention 
-on the continued proliferation of IoT devices
+on the continued proliferation of IoT devices 
 and networked OT devices.
- In the UK, the draft Product Security and 
+• In the UK, the draft Product Security and 
 Telecommunications Infrastructure Bill 
 will require manufacturers of consumer 
 connectable products, such as smart TVs, 
@@ -7220,19 +7778,24 @@ receive notice of security flaws), and to provide
 transparency about the minimum length of 
 time during which they will provide security 
 updates. Note 9
- In the EU, new security standards or 
+• In the EU, new security standards or 
 requirements are being implemented via 
 multiple legislative instruments, including 
 a delegated act to the Radio Equipment 
 Directive that applies to wireless devices 
 and seeks to improve network resilience, 
-protect consumers privacy, and reduce the 
+protect consumers’ privacy, and reduce the 
 risk of monetary fraud. Note 10 In addition, use 
 of a cloud certification scheme, Note 11 currently 
 in development as a result of the 2019 EU 
-Cybersecurity Act, Note 12 might be required. Governments acting
- to improve critical
- infrastructure security
+Cybersecurity Act, Note 12 might be required.
+ 
+ 
+ 
+ 
+ Governments acting 
+ to improve critical 
+ infrastructure security 
  and resilience 
 Continued
 The need for consistency
@@ -7246,9 +7809,9 @@ leverage guidance or demonstrate compliance.
 Without a universally accepted definition of 
 IoT, scope is especially challenging for IoT and 
 OT device regulations. The examples above 
-potentially apply to connected products and 
-ancillary services, consumer connectable 
-products, and wireless devices. At the same 
+potentially apply to “connected products and 
+ancillary services,” “consumer connectable 
+products,” and “wireless devices.” At the same 
 time, many governments aim to implement 
 more robust assessment regimes to better 
 understand whether and how organizations 
@@ -7272,34 +7835,36 @@ interconnected global supply chains.
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
-OperationsReport 
+Operations
+ 
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-Devices and
+Devices and 
 Infrastructure
 Devices and 
 Infrastructure
- Governments acting
- to improve critical
- infrastructure security
+ Governments acting 
+ to improve critical 
+ infrastructure security 
  and resilience 
 Continued
 There are increasingly complex critical 
@@ -7312,9 +7877,11 @@ will be crucial to the future of digital
 transformation and ecosystem\-
 wide security.
 Accelerating ecosystem\-wide investments in software 
-supply chain security and Zero Trust architectureUS Executive Order (EO) 14028 on 
+supply chain security and Zero Trust architecture
+ 
+US Executive Order (EO) 14028 on 
 improving cybersecurity has been a 
-catalyst to expedite Microsofts ongoing 
+catalyst to expedite Microsoft’s ongoing 
 initiatives to invest in our own and 
 ecosystem\-wide supply chain security 
 and to enable our customers to meet 
@@ -7322,7 +7889,7 @@ Zero Trust objectives.
 We have long believed that enhancing the 
 software supply chain requires sharing learnings 
 and best practices, beginning with our public 
-release of Microsofts Security Development 
+release of Microsoft’s Security Development 
 Lifecycle about 15 years ago.
 In addition, we are partnering closely with the 
 National Cybersecurity Center of Excellence 
@@ -7331,29 +7898,37 @@ Architecture applied to both on\-premises and
 cloud technology and establishing new product 
 capabilities, including the ability to enforce 
 phishing\-resistant authentication for hybrid 
-and multi\-cloud environments.Today, were going beyond the EOs 
+and multi\-cloud environments.
+ 
+ 
+ 
+Today, we’re going beyond the EO’s 
 requirements to demonstrate conformance 
 with software supply chain security 
 requirements and provide Software Bill of 
 Materials (SBOM) information in two ways:
-1\. First, were sharing an open\-source version 
+1\. First, we’re sharing an open\-source version 
 of our SBOM generator tool, which we built 
-to be easily integrated with CICD pipelines 
+to be easily integrated with CI/CD pipelines 
 supporting builds on Windows, Linux, Mac, 
 iOS, and Android platforms. Note 13
-1\. Second, were contributing to the 
+2\. Second, we’re contributing to the 
 development of industry standards for 
 Supply Chain Integrity, Transparency, 
 and Trust (SCITT). This will allow for the 
 automated exchange of verifiable supply 
 chain information, including artifacts that 
 demonstrate conformance with requirements 
-such as those resulting from the EOs 
+such as those resulting from the EO’s 
 software supply chain guidance.
-Actionable insights1
+Actionable insights
+ 
+1
 Multilateral institutions must be 
 reimagined to address the pressing 
-challenge of nation state cyberattacks.2
+challenge of nation state cyberattacks.
+ 
+2
 Develop cybersecurity policies that are 
 consistent and interoperable across 
 regions, sectors, and topic areas.
@@ -7367,34 +7942,38 @@ architecture strategy and requirements \|
 Microsoft Security Blog
 CYBER EO \| Microsoft Federal
 Supply Chain Integrity, Transparency, 
-and Trust \| github.comImplementing a Zero Trust Architecture \| 
+and Trust \| github.com
+ 
+Implementing a Zero Trust Architecture \| 
 NCCoE (nist.gov)
 61
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
-OperationsReport 
+Operations
+ 
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-Devices and
+Devices and 
 Infrastructure
 Devices and 
 Infrastructure
@@ -7409,11 +7988,11 @@ opportunity for organizations and threat
 actors alike, with the business of cybercrime 
 becoming both a multi\-billion dollar 
 industry and risk.
-IoT devicesincluding everything from printers 
+IoT devices—including everything from printers 
 to web cameras, climate control devices, and 
-building accesses controlspose unique 
+building accesses controls—pose unique 
 security risks to individuals, organizations, and 
-networks. While critical to many organizations 
+networks. While critical to many organizations’ 
 operations, they can quickly become a liability 
 and security risk. The rapid adoption of IoT 
 solutions in almost every industry has increased 
@@ -7445,7 +8024,7 @@ exploit vulnerabilities in internet exposed devices
 ranging from cameras to routers to thermostats. 
 However, despite the risk, millions of devices 
 remain unpatched or exposed.
-Summary of attack types on IoTOT
+Summary of attack types on IoT/OT
 Web 30%
 Email 4%
 Industrial 
@@ -7458,7 +8037,10 @@ management 46%
 Attack types observed through MSTIC sensor 
 network. Most prevalent were attacks against remote 
 management devices, attacks via web, and attacks on 
-data bases (brute forcing or exploits).Attacks against remote management devices 
+data bases (brute forcing or exploits).
+ 
+ 
+Attacks against remote management devices 
 Jun 2021
 Jul 2021
 Aug 2021
@@ -7508,24 +8090,27 @@ connected to the web continues to drop, attackers might eventually be less likel
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
-OperationsReport 
+Operations
+ 
+ 
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -7560,7 +8145,7 @@ Inner circle
 usernames
 Outer circle
 passwords
-Devices and
+Devices and 
 Infrastructure
 Devices and 
 Infrastructure
@@ -7568,7 +8153,7 @@ Revamped malware utility
 As cybercrime groups have evolved, so has their 
 deployment of malware and choice of targets. 
 In the past year, we observed attacks against 
-common IoT protocolssuch as Telnet
+common IoT protocols—such as Telnet—
 drop significantly, in some cases as much as 
 60 percent. At the same time, botnets were 
 repurposed by cybercrime groups and nation 
@@ -7588,7 +8173,7 @@ Tsunami
 Xhide
 Top IoT malware detected 
 in the wild (July 2021\-June 2022\)
- IoT and OT exposed:
+ IoT and OT exposed: 
  Trends and attacks 
 Continued
 Mirai evolved to infect a wide range of IoT 
@@ -7611,8 +8196,8 @@ variants of existing botnets in distributed denial
 of service (DDoS) attacks on foreign adversaries.
 As revenue from attacks against IoT devices 
 declined in 2022, we observed several threat 
-actor groups abusing vulnerabilitiessuch as 
-Log4j and Spring4Shellto deliver a malicious 
+actor groups abusing vulnerabilities—such as 
+Log4j and Spring4Shell—to deliver a malicious 
 payload to devices such as servers, infecting 
 them and recruiting them into large botnets 
 carrying out DDoS attacks. The revamped 
@@ -7624,37 +8209,44 @@ and other devices on networks.
 Many industrial control system protocols 
 are unmonitored and therefore vulnerable to 
 OT\-specific attacks. This can mean increased 
-risk for critical infrastructure.Relative prevalence of user name and password pairs seen 
-among IoTOT devices in 45 days of sensor signals
+risk for critical infrastructure.
+ 
+ 
+Relative prevalence of user name and password pairs seen 
+among IoT/OT devices in 45 days of sensor signals
 Using common username and password pairs increases risk of compromise. Based on a sample size of over 
-39 million IoT and OT devices, those using identical usernames and passwords represented around 20 percent.63
+39 million IoT and OT devices, those using identical usernames and passwords represented around 20 percent.
+ 
+63
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
-OperationsReport 
+Operations
+ 
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-Devices and
+Devices and 
 Infrastructure
- IoT and OT exposed:
+ IoT and OT exposed: 
  Trends and attacks 
 Continued
 Devices and 
@@ -7671,7 +8263,9 @@ historical risk to devices are losing relevance.
 Despite this decrease in open telnet ports, we still 
 observed persistent botnets in sensor networks.
 Distribution of IoT malware by 
-CPU architectureARC Cores Tangent\-A5 \<1%
+CPU architecture
+ 
+ARC Cores Tangent\-A5 \<1%
 ARM 26%
 SPARC 3%
 ARM 
@@ -7688,7 +8282,10 @@ x86\-64 19%
 MIPS 20%
 Microsoft observed that IoT devices running on ARM 
 are most targeted by malware, followed by MIPS, 
-X86\-64, and Intel 80386 CPU.1
+X86\-64, and Intel 80386 CPU.
+ 
+ 
+1
 3
 4
 2
@@ -7714,38 +8311,47 @@ X86\-64, and Intel 80386 CPU.1
 24
 25
 Industrial control system protocol prevalence
-1\. EtherNetIP
-1\. MODBUS
-1\. BACNet
-1\. Siemens S7
-1\. Profinet 
+1\.
+EtherNet/IP
+2\.
+MODBUS
+3\.
+BACNet
+4\.
+Siemens S7
+5\.
+Profinet 
 Real\-Time
-1\. Profinet DCP
-1\. Siemens S7 Plus
-1\. CodeSys
-1\. Siemens 
+6\.
+Profinet DCP
+7\.
+Siemens S7 Plus
+8\.
+CodeSys
+9\.
+Siemens 
 WinCC Agent
-1\. EtherNetIP 
-OO
-1\. Honeywell 
+10\. EtherNet/IP 
+O/O
+11\. Honeywell 
 Control 
 Data Access
-1\. MMS
-1\. IEC\-60870
-1\. Honeywell FDA 
+12\. MMS
+13\. IEC\-60870
+14\. Honeywell FDA 
 Diagnostics
-1\. Suitelink
-1\. DeltaV
-1\. GSM
-1\. DNP3
-1\. AMS
-1\. SRTP
-1\. TwinCat
-1\. Emerson Roc
-1\. Bently Nevada
-1\. Mitsubishi 
+15\. Suitelink
+16\. DeltaV
+17\. GSM
+18\. DNP3
+19\. AMS
+20\. SRTP
+21\. TwinCat
+22\. Emerson Roc
+23\. Bently Nevada
+24\. Mitsubishi 
 MELSEC
-1\. TriStation Tricon
+25\. TriStation Tricon
 Industrial control system protocol vulnerabilities
 We looked into OT data from our cloud 
 connected sensors, revealing the most common 
@@ -7756,18 +8362,18 @@ especially relevant to the security of critical
 infrastructure. Some key learnings are:
 1\. Most of the protocols represented are 
 proprietary, so standard IT monitoring tools 
-wont have adequate security visibility across 
+won’t have adequate security visibility across 
 these devices and protocols. As a result, 
 networks are left unmonitored and therefore 
 more vulnerable to OT\-specific attacks.
-1\. There is a large variety of vendor\-specific 
+2\. There is a large variety of vendor\-specific 
 protocols. This means vendor\-specific security 
-solutions wont be able to adequately cover 
+solutions won’t be able to adequately cover 
 the whole network. Microsoft prioritizes 
 a vendor agnostic approach, to provide 
 security coverage for the broad variety of 
 different devices.
-1\. Organizations should ensure these protocols 
+3\. Organizations should ensure these protocols 
 are not exposed directly to the internet from 
 their networks. This exposure could pose a 
 major security risk due to vulnerabilities and 
@@ -7777,55 +8383,69 @@ new capabilities and is being adopted by
 cybercrime groups and nation state actors, 
 leveraging new variants of existing botnets 
 in DDoS attacks on foreign adversaries.
-Actionable insights1
+Actionable insights
+ 
+1
 Ensure devices are robust by applying 
 patches, changing default passwords, 
-and default SSH ports.2Reduce the attack surface by eliminating 
+and default SSH ports.
+ 
+2
+ 
+Reduce the attack surface by eliminating 
 unnecessary internet connections and 
 open ports, restricting remote access by 
 blocking ports, denying remote access, 
-and using VPN services.3
-Use an IoTOT\-aware network detection 
+and using VPN services.
+ 
+3
+Use an IoT/OT\-aware network detection 
 and response (NDR) solution and 
 a security information and event 
-management (SIEM)security orchestration 
+management (SIEM)/security orchestration 
 and response (SOAR) solution to monitor 
 devices for anomalous or unauthorized 
 behaviors, such as communication with 
-unfamiliar hosts.4
-Segment networks to limit an attackers 
+unfamiliar hosts.
+ 
+4
+Segment networks to limit an attacker’s 
 ability to move laterally and compromise 
 assets after initial intrusion. IoT devices 
 and OT networks should be isolated from 
-corporate IT networks through firewalls.5
+corporate IT networks through firewalls.
+ 
+5
 Ensure ICS protocols are not exposed 
 directly to the internet.
 64
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
-OperationsReport 
+Operations
+ 
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-Devices and
+Devices and 
 Infrastructure
 Devices and 
 Infrastructure
@@ -7833,14 +8453,14 @@ Infrastructure
 firmware hacking 
 Almost every internet\-connected device 
 has firmware, which is software embedded 
-in the devices hardware or circuit board. 
+in the device’s hardware or circuit board. 
 Over the past few years, we have seen 
 increased targeting of firmware to launch 
 devastating attacks. As firmware is likely to 
 continue to be a valuable target for threat 
 actors, organizations must protect against 
 firmware hacking.
-Firmware is responsible for a devices primary 
+Firmware is responsible for a device’s primary 
 functions, such as connecting to a network 
 or storing data. Firmware is found in routers, 
 cameras, televisions, and other devices used in 
@@ -7857,7 +8477,7 @@ software and hardware components from
 numerous manufacturers as well as open\-
 source libraries. In many cases device operators 
 do not have visibility into the hardware and 
-software bill of materials (HSBOM) to evaluate 
+software bill of materials (H/SBOM) to evaluate 
 the supply chain risk of devices on their 
 network. In June 2020, vulnerabilities were 
 disclosed in a networking stack used by many 
@@ -7868,7 +8488,7 @@ the network stack was rebranded by other
 vendors and there was no indication a device 
 was vulnerable. We see a growing threat of 
 malicious actors targeting this software and 
-hardware supply chain of IoTOT devices to 
+hardware supply chain of IoT/OT devices to 
 compromise organizations.
 The firmware updating process varies widely 
 across devices, and the complexity and logistical 
@@ -7894,7 +8514,11 @@ and provide a certified and provable end\-to\-end
 chain of custody for every component we ship 
 to customers. We are working with our partners 
 to bring this chip\-to\-cloud security to all devices 
-on the enterprise and OT network.ICT infrastructure suppliers are increasingly 
+on the enterprise and OT network.
+ 
+ 
+ 
+“ICT infrastructure suppliers are increasingly 
 targets as they enable widespread replication 
 of a single attack. At the same time, global 
 legislation, regulation, and customer demands 
@@ -7910,41 +8534,45 @@ to security and operational resiliency that is
 flexibly deployed across the supply chain.
 Driving firmware integrity from design 
 through to device operation is key to our 
-collective approach. Ensuring suppliers SDL 
+collective approach. Ensuring suppliers’ SDL 
 processes and deploying hardware root of 
 trust innovation are examples of how we can 
-build in supply chain integrity.
+‘build in’ supply chain integrity.
 Our community is leveraging collective 
 research and development spanning new 
 anti\-tampering techniques and cryptographic 
 mechanisms, combined with ongoing 
 monitoring and anomaly detection. Together, 
 we are progressing in minimizing the allure 
-of supply chain as an attack surface.
+of supply chain as an attack surface.”
 Edna Conway, 
 Vice President, Security \& Risk Officer, 
-Cloud Infrastructure65
+Cloud Infrastructure
+ 
+65
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
-OperationsReport 
+Operations
+ 
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -7957,16 +8585,16 @@ vulnerabilities in IoT device firmware
 to infiltrate corporate networks. 
 Unlike traditional IT endpoints that 
 use XDR agents to identify weaknesses, 
-vulnerability identification within IoTOT 
+vulnerability identification within IoT/OT 
 devices is much more elusive.
 A recent survey conducted by Microsoft and 
 the Ponemon Institute highlights both the 
-opportunity and the security challenge of IoT
+opportunity and the security challenge of IoT/
 OT devices in an enterprise. Note 15 While 68 percent 
-of respondents believe the adoption of IoTOT is 
+of respondents believe the adoption of IoT/OT is 
 critical to their strategic digital transformation, 
-60 percent recognize that IoTOT security is 
-one of the least secured aspects of the IT
+60 percent recognize that IoT/OT security is 
+one of the least secured aspects of the IT/
 OT infrastructure.
 An example of attackers using vulnerabilities 
 in IoT device firmware to infiltrate a network 
@@ -7975,7 +8603,9 @@ passwords and vulnerabilities in Mikrotik
 routers Note 16 to bypass corporate defense systems. 
 The fundamental challenge with IoT device 
 firmware is the lack of visibility into the security 
-posture and vulnerabilities of devices.While there are solutions available to build secure 
+posture and vulnerabilities of devices.
+ 
+While there are solutions available to build secure 
 devices, there are billions of devices already 
 on the market and deployed in enterprises. 
 These are known as brownfield devices. In 2021, 
@@ -7993,15 +8623,19 @@ our customers. While not every weakness
 discovered might be exploitable, they 
 underscore the fundamental challenge 
 of device firmware security.
-Note the types of weaknesses that exist in IoTOT 
+Note the types of weaknesses that exist in IoT/OT 
 devices would never be acceptable on traditional 
 Windows or Linux endpoints.
- Weak passwords: Twenty\-seven percent 
+• Weak passwords: Twenty\-seven percent 
 of the firmware images scanned contained 
 accounts with passwords encoded using 
-weak algorithms (MD5DES), which are 
-easily broken by attackers. Known vulnerabilities: Like other systems, 
-IoTOT device firmware extensively leveraged 
+weak algorithms (MD5/DES), which are 
+easily broken by attackers.
+ 
+ 
+ 
+• Known vulnerabilities: Like other systems, 
+IoT/OT device firmware extensively leveraged 
 open\-source libraries. However, devices 
 frequently ship with out\-of\-date versions of 
 these components. In our analysis, 32 percent 
@@ -8010,12 +8644,15 @@ vulnerabilities (CVEs) rated as critical (9\.0 or
 higher). Four percent contained at least 10 
 critical vulnerabilities that were more than 
 six years old.
- Expired certificates: Certificates are used to 
+• Expired certificates: Certificates are used to 
 authenticate connections and identities, as 
 well as protect sensitive data, but 13 percent 
 of the images analyzed contained at least 10 
 certificates that had expired more than three 
-years ago. Software components: Thirty\-six percent of 
+years ago.
+ 
+ 
+• Software components: Thirty\-six percent of 
 the images contain software components 
 Microsoft recommends be excluded in IoT 
 devices such as packet capture tools (tcpdump, 
@@ -8036,28 +8673,30 @@ Presence of dangerous components
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
-OperationsReport 
+Operations
+ 
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-Devices and
+Devices and 
 Infrastructure
 Devices and 
 Infrastructure
@@ -8066,7 +8705,7 @@ Viasat: Using a firmware vulnerability
 to target satellite communication
 In February 2022, a satellite network incident 
 disconnected a strategic communication network 
-with impacts felt across Europe. Viasats KA\-SAT 
+with impacts felt across Europe. Viasat’s KA\-SAT 
 system received a large amount of traffic that 
 disconnected many modems and a denial of 
 service attack was initiated against the network. 
@@ -8085,7 +8724,11 @@ attack infrastructure is a crucial component of
 success. As the need for a stable C2 infrastructure 
 has grown, routers have become a desirable 
 attack vector due to their infrequent patching 
-and lack of comprehensive security solutions.Microsoft is partnering with 
+and lack of comprehensive security solutions.
+ 
+ 
+ 
+Microsoft is partnering with 
 government and industry on firmware 
 analysis technology to bring deeper 
 visibility into device security and 
@@ -8121,7 +8764,7 @@ operators with visibility into the security posture
 of the devices on their network. This will enable 
 customers to identify and prioritize devices in 
 need of additional protections, upgrades, or 
-replacementand drive demand for device 
+replacement—and drive demand for device 
 builders to invest in device security. At the 
 same time, we are supporting builders with 
 comprehensive solutions to architect secure 
@@ -8140,16 +8783,25 @@ support a Zero Trust approach to their IoT and
 OT solutions. Note 18
 Attackers are increasingly targeting 
 vulnerabilities in IoT device firmware 
-to infiltrate corporate networks.Actionable insights1
-Gain deeper visibility into IoTOT 
+to infiltrate corporate networks.
+ 
+ 
+Actionable insights
+ 
+1
+Gain deeper visibility into IoT/OT 
 devices on your network and prioritize 
 them by risk to the enterprise if they 
-are compromised.2
+are compromised.
+ 
+2
 Use firmware scanning tools to understand 
 potential security weaknesses and work 
 with vendors to identify how to mitigate 
-the risks for high\-risk devices.3
-Positively influence the security of IoT
+the risks for high\-risk devices.
+ 
+3
+Positively influence the security of IoT/
 OT devices by requiring the adoption 
 of secure development lifecycle best 
 practices by your vendors.
@@ -8161,28 +8813,30 @@ Supporting the US Information and
 Communications Technology Industry
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
-OperationsReport 
+Operations
+ 
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-Devices and
+Devices and 
 Infrastructure
 Devices and 
 Infrastructure
@@ -8205,7 +8859,7 @@ on the enterprise side of the network (Purdue
 Model Level 4\) and crossing the IT\-OT boundary, 
 traditionally separated by firewalls and networking 
 equipment, into the operation and control levels.
-1\. Second, the network devices must be 
+2\. Second, the network devices must be 
 identified. Industrial systems use standard 
 devices and components in customized 
 architectures specifically designed for their 
@@ -8216,7 +8870,7 @@ and functions for their PLCs, which are a
 crucial component of industrial systems, and 
 these devices are further configured with 
 customized schemas specifically designed for 
-the customers environments.
+the customer’s environments.
 The unique configuration of each PLC is 
 described in the project file, which contains the 
 definition of the environment and its assets, the 
@@ -8250,37 +8904,44 @@ phases carried out by nation state cyber actors
 points to a strategy of using cyber warfare to 
 cripple infrastructure remotely to meet specific 
 strategic or operational goals in blended cyber\-
-kinetic operations and political strategy.68
+kinetic operations and political strategy.
+ 
+ 
+68
 Microsoft Digital Defense Report 2022 
 We have observed 
 a growing threat of 
 reconnaissance\-based 
 OT attacks that are highly 
 tailored to their target 
-environments.Report 
+environments.
+ 
+Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
-OperationsReport 
+Operations
+ 
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-Devices and
+Devices and 
 Infrastructure
 Devices and 
 Infrastructure
@@ -8297,8 +8958,8 @@ target. It utilized the IEC104 protocol (standard
 protocol for power system monitoring and 
 control) plugin developed for Industroyer and 
 targeted mostly PLC\-like remote terminal units 
-with model number ABB RTU540560\. The writer 
-of this malware used knowledge of the victims 
+with model number ABB RTU540/560\. The writer 
+of this malware used knowledge of the victim’s 
 environment to issue commands repeatedly 
 to predetermined outputs, ensuring they 
 could not be turned on manually. This ensured 
@@ -8333,121 +8994,144 @@ attack an environment quickly without needing
 to write new attacks for every PLC or location. 
 This allows the actor to easily interact with 
 different types of machines potentially across 
-many industries. Reconnaissance\-basedOT attacks 
-ContinuedActionable insights1
+many industries. 
+ 
+ 
+ Reconnaissance\-based 
+ 
+OT attacks 
+Continued
+ 
+Actionable insights
+ 
+1
 Avoid transferring files which contain 
 system definitions through unsecure 
-channels, or to non\-essential personnel.2
+channels, or to non\-essential personnel.
+ 
+2
 When transferring such files is unavoidable, 
 be sure to monitor activity on the network 
-and ensure assets are secure.3
+and ensure assets are secure.
+ 
+3
 Protect engineering stations by monitoring 
-with EDR solutions.4
+with EDR solutions.
+ 
+4
 Proactively conduct incident response 
-for OT networks.5
+for OT networks.
+ 
+ 
+5
 Deploy continuous monitoring, 
 like Defender for IoT.
 69
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
-OperationsReport 
+Operations
+ 
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-Devices and
+Devices and 
 Infrastructure
 Devices and 
 Infrastructure
 Endnotes
 Note 1 
-See, e.g Revised Directive on Security of Network and Information Systems (NIS2\) \| 
-Shaping Europes digital future (europa.eu); https:eur\-lex.europa.eulegal\-contentENTXT
-PDF?uri\=COM:2020:595:FIN\&rid\=1; Security Legislation Amendment (Critical Infrastructure 
+See, e.g., Revised Directive on Security of Network and Information Systems (NIS2\) \| 
+Shaping Europe’s digital future (europa.eu); https://eur\-lex.europa.eu/legal\-content/EN/TXT/
+PDF/?uri\=COM:2020:595:FIN\&rid\=1; Security Legislation Amendment (Critical Infrastructure 
 Protection) Act 2022 (homeaffairs.gov.au); Chile: Bill for cybersecurity and critical information 
 infrastructure introduced in Senate \| News post \| DataGuidance; Japan passes economic security 
 bill to guard sensitive technology \| The Japan Times; Review of the Cybersecurity Act and Update 
 to the Cybersecurity Code of Practice for CIIs (csa.gov.sg); Proposal for legislation to improve 
-the UKs cyber resilienceGOV.UK (www.gov.uk); Telecommunications (Security) Act 2021 
-(legislation.gov.uk); Updating the NIST Cybersecurity FrameworkJourney To CSF 2\.0 \| NIST
+the UK’s cyber resilience—GOV.UK (www.gov.uk); Telecommunications (Security) Act 2021 
+(legislation.gov.uk); Updating the NIST Cybersecurity Framework—Journey To CSF 2\.0 \| NIST
 Note 2 
-Cert\-InHome Page
+Cert\-In—Home Page
 Note 3 
 Initiation of consultation on introduction of cyberattack reporting obligation (admin.ch)
 Note 4 
-See, e.g untitled (house.gov)
+See, e.g., untitled (house.gov)
 Note 5 
-Cyber Resilience Act \| Shaping Europes digital future (europa.eu)
+Cyber Resilience Act \| Shaping Europe’s digital future (europa.eu)
 Note 6 
-See, e.g Microsoft Security Development Lifecycle
+See, e.g., Microsoft Security Development Lifecycle
 Note 7 
-See, e.g Generating Software Bills of Materials (SBOMs) with SPDX at MicrosoftEngineering@
-Microsoft; see also, e.g The Minimum Elements For a Software Bill of Materials (SBOM) \| 
+See, e.g., Generating Software Bills of Materials (SBOMs) with SPDX at Microsoft—Engineering@
+Microsoft; see also, e.g., The Minimum Elements For a Software Bill of Materials (SBOM) \| 
 National Telecommunications and Information Administration (ntia.gov)
 Note 8 
-See, e.g https:www.microsoft.comen\-usmsrccvd
+See, e.g., https://www.microsoft.com/en\-us/msrc/cvd
 Note 9 
-The Product Security and Telecommunications Infrastructure (PSTI) Billproduct security 
-factsheetGOV.UK (www.gov.uk)
+The Product Security and Telecommunications Infrastructure (PSTI) Bill—product security 
+factsheet—GOV.UK (www.gov.uk)
 Note 10 Commission strengthens cybersecurity of wireless devices and products (europa.eu)
-Note 11 Cloud Certification Scheme: Building Trusted Cloud Services Across Europe ENISA (europa.eu)
-Note 12 Certification ENISA (europa.eu)
-Note 13 https:github.commicrosoftsbom\-tool GitHub \- microsoftsbom\-tool: The SBOM tool is a 
+Note 11 Cloud Certification Scheme: Building Trusted Cloud Services Across Europe — ENISA (europa.eu)
+Note 12 Certification — ENISA (europa.eu)
+Note 13 https://github.com/microsoft/sbom\-tool” GitHub \- microsoft/sbom\-tool: The SBOM tool is a 
 highly scalable and enterprise ready tool to create SPDX 2\.2 compatible SBOMs for any variety 
 of artifacts.
-Note 14 https:www.zdnet.comarticleripple20\-vulnerabilities\-will\-haunt\-the\-iot\-landscape\-for\-years\-
+Note 14 https://www.zdnet.com/article/ripple20\-vulnerabilities\-will\-haunt\-the\-iot\-landscape\-for\-years\-
 to\-come
-Note 15 IoTOT Innovation Critical but Comes with Significant Risks (Dec 2021\): 
-https:www.microsoft.comsecurityblog20211208new\-research\-shows\-iot\-and\-ot\-
-innovation\-is\-critical\-to\-business\-but\-comes\-with\-significant\-risks
-Note 16 Uncovering Trickbots use of IoT devices in C2 Infrastructure (Mar 2022\): 
-https:www.microsoft.comsecurityblog20220316uncovering\-trickbots\-use\-of\-iot\-devices\-
-in\-command\-and\-control\-infrastructure
-Note 17 IoT Show on Channel 9 Episode on IoT Firmware Scanning (May 2022\): https:docs.microsoft.
-comen\-usshowsinternet\-of\-things\-showiot\-device\-firmware\-security\-scanning\-with\-azure\-
+Note 15 IoT/OT Innovation Critical but Comes with Significant Risks (Dec 2021\): 
+https://www.microsoft.com/security/blog/2021/12/08/new\-research\-shows\-iot\-and\-ot\-
+innovation\-is\-critical\-to\-business\-but\-comes\-with\-significant\-risks/
+Note 16 Uncovering Trickbot’s use of IoT devices in C2 Infrastructure (Mar 2022\): 
+https://www.microsoft.com/security/blog/2022/03/16/uncovering\-trickbots\-use\-of\-iot\-devices\-
+in\-command\-and\-control\-infrastructure/
+Note 17 IoT Show on Channel 9 Episode on IoT Firmware Scanning (May 2022\): https://docs.microsoft.
+com/en\-us/shows/internet\-of\-things\-show/iot\-device\-firmware\-security\-scanning\-with\-azure\-
 defender\-for\-iot
 Note 18 How to apply a Zero Trust approach to your IoT solutions (May 2021\): 
-https:www.microsoft.comsecurityblog20210505how\-to\-apply\-a\-zero\-trust\-approach\-to\-
-your\-iot\-solutions
+https://www.microsoft.com/security/blog/2021/05/05/how\-to\-apply\-a\-zero\-trust\-approach\-to\-
+your\-iot\-solutions/
 70
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
-OperationsReport 
+Operations
+ 
+ 
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -8455,9 +9139,16 @@ Cyber Influence
 Operations
 Cyber Influence 
 Operations
-Todays foreign influence operations utilize new 
+Today’s foreign influence operations utilize new 
 methods and technologies, making their campaigns 
-designed to erode trust more efficient and effective.71
+designed to erode trust more efficient and effective.
+ 
+ 
+ 
+ 
+ 
+ 
+71
 Microsoft Digital Defense Report 2022 
 An overview of Cyber Influence Operations 72
 Introduction 
@@ -8466,36 +9157,36 @@ Trends in cyber influence operations
 74
 Spotlight on influence operations 
 during the COVID\-19 pandemic and 
-Russias invasion of Ukraine 
+Russia’s invasion of Ukraine 
 76
 Tracking the Russian Propaganda Index 
 78
 Synthetic media 
 80
 A holistic approach to protect against 
-cyber influence operations
+cyber influence operations 
 83
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introudction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -8504,7 +9195,7 @@ Operations
  An overview of 
 Cyber Influence 
 Operations 
-Todays foreign influence 
+Today’s foreign influence 
 operations utilize new methods 
 and technologies, making 
 their campaigns designed 
@@ -8522,14 +9213,22 @@ increase the scope, scale, and efficiency of their
 campaigns, and the outsized impact they are 
 having in the global information ecosystem. 
 In the past year, we have seen these operations 
-used as part of Russias hybrid war in Ukraine, 
+used as part of Russia’s hybrid war in Ukraine, 
 but have also seen Russia and other nations, 
 including China and Iran, increasingly turning 
 to social\-media powered propaganda operations 
-to extend their global influence.Cyber influence operations are becoming increasingly 
+to extend their global influence. 
+ 
+ 
+ 
+ 
+Cyber influence operations are becoming increasingly 
 sophisticated as more governments and nation states 
 are using these operations to shape opinion, discredit 
-adversaries, and promote discord.Progression 
+adversaries, and promote discord. 
+ 
+ 
+Progression 
 of foreign 
 cyber influence 
 operations
@@ -8537,7 +9236,7 @@ Pre\-position
 Launch
 Amplification
 Find out more on p74
-Russias invasion of Ukraine demonstrates 
+Russia’s invasion of Ukraine demonstrates 
 cyber influence operations integrated with 
 more traditional cyberattacks and kinetic 
 military operations to maximize impact. 
@@ -8564,7 +9263,14 @@ Microsoft is building on its already mature cyber threat
 intelligence infrastructure to combat cyber influence 
 operations. Our strategy is to detect, disrupt, defend, 
 and deter propaganda campaigns by foreign aggressors.
-Find out more on p83Oct 2021
+Find out more on p83
+ 
+ 
+ 
+ 
+ 
+ 
+Oct 2021
 Nov 2201
 Dec 2021
 Jan 2022
@@ -8582,32 +9288,36 @@ Unprecedented spee
 Effects
 Erosion of trust
 Mitigation
-Promising solutions72
+Promising solutions
+ 
+72
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
-TeamsCyber Influence 
+Teams
+ 
+Cyber Influence 
 Operations
 Introduction 
 Democracy needs 
@@ -8627,9 +9337,9 @@ social media is the vastly increased scope, scale,
 and efficiency of campaigns, and the outsized 
 impact they can have on the health of the global 
 information ecosystem.
-The age\-old adage that a lie gets halfway 
+The age\-old adage that “a lie gets halfway 
 around the world before the truth has a chance 
-to put its shoes on, is now being borne out with 
+to put its shoes on,” is now being borne out with 
 data. A Massachusetts Institute of Technology 
 (MIT) study Note 1 found that falsehoods are 70 percent 
 more likely to be retweeted than the truth 
@@ -8639,21 +9349,25 @@ increasingly murky as propaganda campaigns
 flourish on the internet and social media and 
 undermine trust in traditional news. In a 2021 
 study, Note 2 only seven percent of US adults said they 
-have a great deal of trust and confidence in 
+have “a great deal” of trust and confidence in 
 newspapers, television, and radio news reporting, 
-while 34 percent reported none at all.
+while 34 percent reported “none at all.”
 Microsoft has been working to identify the main 
 actors, threats, and tactics in the foreign cyber 
 influence space and to share lessons learned. 
 In June this year, we published a comprehensive 
 report on the lessons learned from Ukraine, 
-which contained a detailed look at Russias 
-cyber influence operations. Note 3We are also studying how advanced technologies 
+which contained a detailed look at Russia’s 
+cyber influence operations. Note 3
+ 
+ 
+ 
+We are also studying how advanced technologies 
 such as deep fakes can be weaponized and 
 undermine the credibility of journalists. 
 And we are working with industry, government, 
 and academia to develop better ways to detect 
-synthetic media and restore trustsuch as 
+synthetic media and restore trust—such as 
 artificial intelligence (AI) systems that can 
 spot fakes.
 The rapidly changing nature of the information 
@@ -8685,32 +9399,34 @@ Corporate Responsibility
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Cyber Influence 
 Operations
 Cyber Influence 
-Operations Trends in cyber 
+Operations
+ 
+ Trends in cyber 
 influence operations 
 Cyber influence operations are becoming 
 increasingly sophisticated as technology 
@@ -8724,7 +9440,7 @@ Microsoft invested in combating foreign influence
 operations this year by the acquisition of Miburo 
 Solutions, a company specializing in analysis of foreign 
 influence operations. Combining these analysts 
-with Microsofts threat context analysts, Microsoft 
+with Microsoft’s threat context analysts, Microsoft 
 formed the Digital Threat Analysis Center (DTAC). 
 DTAC analyzes and reports on nation state threats, 
 including both cyberattacks and influence operations, 
@@ -8746,7 +9462,7 @@ These foreign cyber influence operations
 typically have three stages:
 Pre\-position
 Like the pre\-positioning of malware within 
-an organizations computer network, foreign 
+an organization’s computer network, foreign 
 cyber influence operations pre\-position false 
 narratives in the public domain on the internet. 
 The pre\-positioning tactic has long helped 
@@ -8767,7 +9483,7 @@ Amplification
 Finally, nation state\-controlled media and proxies 
 amplify narratives inside targeted audiences. 
 Often, unwitting tech enablers extend the 
-narratives reach. For example, online advertising 
+narratives’ reach. For example, online advertising 
 can help finance activities and coordinated 
 content delivery systems 
 can flood search engines.
@@ -8785,8 +9501,8 @@ tanks crossed the border, the narrative was sent
 into battle. A data analytics team at Microsoft 
 identified 10 Russian\-controlled or influenced 
 news sites that simultaneously published 
-reports on February 24 pointing back to last 
-years report and seeking to give it credence. 
+reports on February 24 pointing back to “last 
+year’s report” and seeking to give it credence. 
 In addition, Russian Ministry of Foreign Affairs 
 officials held press conferences that further 
 seeded false claims about US biolabs in the 
@@ -8802,7 +9518,7 @@ influence operations using a blend of overt, semi\-
 covert, and covert methods of dissemination 
 to target democracies and further geopolitical 
 goals (discussed further on page 76\). The three 
-regimes played on one anothers messaging and 
+regimes played on one another’s messaging and 
 information ecosystems to promote preferred 
 narratives. Much of this coverage consisted of 
 criticisms or conspiracy theories about the United 
@@ -8812,42 +9528,46 @@ vaccines and responses to COVID\-19 as superior
 to the United States and other democracies. 
 By amplifying one another, state operated media 
 outlets created an ecosystem in which negative 
-coverage of democraciesor positive coverage 
-of Russia, Iran, and Chinaproduced by one 
-state media outlet was reinforced by others.Pre\-position
+coverage of democracies—or positive coverage 
+of Russia, Iran, and China—produced by one 
+state media outlet was reinforced by others.
+ 
+ 
+ 
+Pre\-position
 Press conference
 Launch
 Russian media 
 ecosystem coverage
 Amplification
-Foreign media
+Foreign media 
 amplifies
 Progression of foreign cyber influence operations Note 5
 Illustration of how narratives about US biolabs and biological weapons spread via the three broad phases of many 
-foreign influence operationspre\-position, launch, and amplification.
+foreign influence operations—pre\-position, launch, and amplification.
 74
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -8874,7 +9594,11 @@ Cyber influence operations, including
 authoritarian propaganda, are a threat 
 to democracies worldwide as they 
 erode trust, increase polarization, 
-and threaten democratic processes. Trends in cyber
+and threaten democratic processes.
+ 
+ 
+ 
+ Trends in cyber 
  influence operations 
 Continued
 Increased coordination 
@@ -8893,32 +9617,37 @@ information is being weaponized.
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Cyber Influence 
-OperationsSpotlight on influence 
+Operations
+ 
+ 
+ 
+ 
+Spotlight on influence 
 operations during COVID\-19 
-and Russias invasion of Ukraine 
+and Russia’s invasion of Ukraine 
 Nation states seeking to control the 
 information environment throughout the 
 pandemic and during the Russian invasion 
@@ -8931,8 +9660,8 @@ and influence campaigns throughout the
 COVID\-19 pandemic. COVID\-19 featured 
 prominently in these campaigns in two 
 central ways:
-1\.Representations of the pandemic itself.
-2\.Campaigns that used COVID\-19 as a strategic 
+1\. Representations of the pandemic itself.
+2\. Campaigns that used COVID\-19 as a strategic 
 device to achieve broader political objectives.
 The broad objective of these types of campaigns 
 is two\-fold: first, to undermine democracies, 
@@ -8945,23 +9674,30 @@ messaging by known Russian accounts and
 media organizations targeting English language 
 readers versus how the Russian government 
 communicated with its own people regarding 
-the vaccine and severity of COVID\-19\.Topics covered by top 10 most\-viewed coronavirus stories on RT.com 
-(October 2021April 2022\)
-Anti\-vaccine propaganda targets non\-Russian readersRussian 
+the vaccine and severity of COVID\-19\.
+ 
+Topics covered by top 10 most\-viewed coronavirus stories on RT.com 
+(October 2021–April 2022\)
+Anti\-vaccine propaganda targets non\-Russian readers
+ 
+ 
+Russian 
 (Translated below to English)
 English 
-Lockdowns and boosters 
-prevent transmission
-Vaccinations fail to curb transmission and are 
-ineffective against new strains
-Russian public figures are testing positive
-Pfizer vaccine has dangerous side effects
-Cases and deaths are increasing in Russia
-Mass vaccination is politically motivated
-The Sputnik V vaccine is highly effective
-Pfizer and Moderna conduct 
-unregulated trials
-Vaccine proof needed on public transportRussian COVID\-19 messaging differs by language.
+“Lockdowns and boosters 
+prevent transmission”
+“Vaccinations fail to curb transmission and are 
+ineffective against new strains”
+“Russian public figures are testing positive”
+“Pfizer vaccine has dangerous side effects”
+“Cases and deaths are increasing in Russia”
+“Mass vaccination is politically motivated”
+“The Sputnik V vaccine is highly effective”
+“Pfizer and Moderna conduct 
+unregulated trials”
+“Vaccine proof needed on public transport”
+ 
+Russian COVID\-19 messaging differs by language.
 Campaigns that sought to obscure the origin 
 of the COVID\-19 virus offer another example. 
 Since the start of the pandemic, Russian, Iranian, 
@@ -8988,28 +9724,28 @@ up by state\-owned media outlets. PressTV,
 an Iranian English and French language outlet 
 sponsored by the Iranian government, Note 7 published 
 an English\-language story in February 2020 
-titled Is coronavirus a US biowarfare weapon 
-as Francis Boyle believes? The article suggested 
+titled “Is coronavirus a US biowarfare weapon 
+as Francis Boyle believes?” The article suggested 
 the United States was behind the COVID\-19 
-outbreak, writing, in all US wars, radiological, 
+outbreak, writing, “in all US wars, radiological, 
 chemical, biological and other banned weapons 
 are used, inflicting a devastating toll on people 
-in targeted areas. Note 8 Russian state media outlets 
+in targeted areas.” Note 8 Russian state media outlets 
 and Chinese government accounts echoed the 
-sentiment. Russia Today (RT)a state\-owned 
+sentiment. Russia Today (RT)—a state\-owned 
 outlet known for its role in disseminating Kremlin 
-propaganda Note 9published at least one story 
+propaganda Note 9—published at least one story 
 that promoted statements from Iranian officials 
-claiming COVID\-19 might be a product of US 
-biological attack aimed at Iran \& China Note 10 and 
+claiming COVID\-19 might be a “product of US 
+‘biological attack’ aimed at Iran \& China” Note 10 and 
 pushed out social media posts suggesting as 
 much. For example, an RT tweet from February 
-27, 2020, read: Show of hands, who isnt going 
+27, 2020, read: “Show of hands, who isn’t going 
 to be surprised if it ever gets revealed that 
-\# coronavirus is a bioweapon? Note 11
-The war in Ukrainepropaganda as a weapon 
+\#coronavirus is a bioweapon?” Note 11
+The war in Ukraine—propaganda as a weapon 
 of war
-Russias invasion of Ukraine provides a distinct 
+Russia’s invasion of Ukraine provides a distinct 
 example of how cyber influence operations can 
 be melded with more traditional cyberattacks 
 and on the ground military operations to 
@@ -9019,32 +9755,32 @@ Microsoft threat intelligence analysts saw at
 least six separate Russia\-aligned actors launch 
 more than 237 cyberattacks against Ukraine. 
 These campaigns sought to degrade services 
-and institutions, disrupt Ukrainians access to 
+and institutions, disrupt Ukrainians’ access to 
 reliable information, and sow doubts about 
-the countrys leadership.
+the country’s leadership.
 76
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -9061,7 +9797,7 @@ In another example of how cyberattacks and
 influence operations converge, a Russian threat 
 actor sent Ukrainian citizens emails purporting 
 to be from residents of Mariupol, blaming the 
-Ukrainian government for the wars escalation 
+Ukrainian government for the war’s escalation 
 and calling on their countrymen to push back 
 against the government. These emails were 
 specifically addressed (by name) to those 
@@ -9094,15 +9830,15 @@ that a maternity hospital in Mariupol, Ukraine,
 had been emptied and was being used as a 
 military site. On March 9, Russia bombed the 
 hospital. After the news of the bombing broke, 
-Russias UN representative Dmitry Polyanskiy 
-tweeted that coverage of the bombing was fake 
-news and cited Russias earlier claims about its 
+Russia’s UN representative Dmitry Polyanskiy 
+tweeted that coverage of the bombing was “fake 
+news” and cited Russia’s earlier claims about its 
 alleged use as a military site. Russia then pushed 
 this narrative broadly across Russian controlled 
 websites for two weeks following the attack on 
 the hospital. 
 Domains with traffic 
-(March 9, 2022April 30, 2022\)
+(March 9, 2022–April 30, 2022\)
 0
 100
 200
@@ -9119,27 +9855,35 @@ Apr 26
 Propaganda websites published stories about the 
 maternity hospital for about two weeks with a brief 
 revival beginning on April 1, 2022\. Source: Microsoft 
-AI for Good Lab.Satellite images of a perinatal hospital 
-in Mariupol in February and March 2022Microsofts own satellite image analysis showed 
+AI for Good Lab.
+ 
+Satellite images of a perinatal hospital 
+in Mariupol in February and March 2022
+ 
+Microsoft’s own satellite image analysis showed 
 the perinatal hospital was bombed. The first photo is 
 from February 24, 2022 and the second is from March 
-24, 2022\. Photo source: Planet Labs.Dmitry Polyanskiy
+24, 2022\. Photo source: Planet Labs.
+ 
+Dmitry Polyanskiy
 @Dpol\_un
-Thats how \#fakenews is born. We 
+That’s how \#fakenews is born. We 
 warned in our statement back on 
-7 March (russia.ruennews070322n) 
+7 March (russia.ru/en/news/070322n) 
 that this hospital has been turned 
 into a military object by radicals. 
 very disturbing that UN spreads 
 this information without verification 
-\# Mariupol \#Mariupolhospital
+\#Mariupol \#Mariupolhospital
 1
 4
 8
 Spotlight on influence 
 operations during COVID\-19 
-and Russias invasion of Ukraine 
-ContinuedRussias whitewashing of atrocities has continued 
+and Russia’s invasion of Ukraine 
+Continued
+ 
+Russia’s whitewashing of atrocities has continued 
 as the war has progressed. For instance, in late 
 June of 2022, Russian media outlets and influencers 
 portrayed the bombing of a shopping mall as 
@@ -9147,7 +9891,7 @@ justified and necessary, falsely claiming it was not
 in use as a mall, but rather in use as an armory 
 for Ukrainian territorial defense forces. Note 13 Several 
 pro\-Kremlin bloggers on Telegram posted and 
-amplified content reinforcing the false flag 
+amplified content reinforcing the “false flag” 
 narrative, with bloggers pointing to alleged 
 indicators of fabrication including the presence 
 of people in military uniform in footage from 
@@ -9160,12 +9904,12 @@ on the international stage and avoid accountability.
 Nation states like Russia understand the value 
 of using information derived from closed 
 sources to influence public perceptions, using 
-hack and leak campaigns to spread counter 
+“hack and leak” campaigns to spread counter 
 narratives and sow distrust.
 Links to further information
 Defending Ukraine: Early Lessons from 
 the Cyber War \| Microsoft On the Issues
-An overview of Russias cyberattack 
+An overview of Russia’s cyberattack 
 activity in Ukraine \| Microsoft 
 Special Report
 Disrupting cyberattacks targeting Ukraine \| 
@@ -9174,28 +9918,30 @@ Microsoft On the Issues
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
-TeamsCyber Influence 
+Teams
+ 
+Cyber Influence 
 Operations
 Cyber Influence 
 Operations
@@ -9221,7 +9967,10 @@ observe the Russian propaganda posted to
 previously identified websites. We do not have 
 insight into propaganda on other types of 
 websites, including authoritative news websites, 
-unidentified websites, and social network groups.Oct 2021
+unidentified websites, and social network groups.
+ 
+ 
+Oct 2021
 Nov 2201
 Dec 2021
 Jan 2022
@@ -9231,29 +9980,31 @@ Apr 2022
 On February 24, 2022, 
 Russia invaded Ukraine
 Russian Propaganda Index in the United States 
-(October 2021April 2022\)78
+(October 2021–April 2022\)
+ 
+78
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -9269,7 +10020,7 @@ sudden increase coincided with the invasion.
 The two graphs show how Russian propaganda 
 surged soon after the invasion began.
 RPI, Ukraine 
-(October 7, 2021April 30, 2022\)
+(October 7, 2021–April 30, 2022\)
 Russian Propaganda Index: New Zealand 
 versus Australia and the United States
 An assessment of the RPI in New Zealand showed 
@@ -9280,12 +10031,12 @@ increase in public protests in early 2022 in
 Wellington. A second spike was clearly related to 
 the Russian invasion of Ukraine and exceeded the 
 RPIs of Australia and the United States.
-RPI,
+RPI, 
 New Zealand versus Australia 
 and the United States
 Russian propaganda consumption in New Zealand is 
 similar to Australia until the first week of December 
-1\. After December, Russian propaganda 
+2021\. After December, Russian propaganda 
 consumption in New Zealand increased by over 
 30 percent relative to consumption in Australia and 
 the United States.
@@ -9303,7 +10054,9 @@ The following graph shows that the RPI for
 Spanish language news in the United States is 
 much higher than for English language news.
 Russian propaganda consumption is 2X 
-higher among Spanish speakersOn February 24, 2022, 
+higher among Spanish speakers
+ 
+On February 24, 2022, 
 Russia invaded Ukraine
 English 
 speakers
@@ -9320,7 +10073,10 @@ Feb 2022
 Mar 2022
 Apr 2022
 Russian propaganda consumption in the United States 
-is two times higher among Spanish speakers.Australia
+is two times higher among Spanish speakers.
+ 
+ 
+Australia
 New Zealand
 United States
 8 Oct 2021
@@ -9335,7 +10091,11 @@ United States
 6 Jan 2022
 16 Jan 2022
 26 Jan 2022
-5 Feb 2022On February 24, 2022, 
+5 Feb 2022
+ 
+ 
+ 
+On February 24, 2022, 
 Russia invaded Ukraine
 Oct 2021
 Nov 2021
@@ -9343,11 +10103,15 @@ Dec 2021
 Jan 2022
 Feb 2022
 Mar 2022
-Apr 2202 Tracking the Russian
+Apr 2202
+ 
+ Tracking the Russian 
  Propaganda Index 
 Continued
 Russian propaganda 
-is high in Latin AmericaRT in Spanish is the international 
+is high in Latin America
+ 
+RT in Spanish is the international 
 news outlet with the highest 
 number of page views and 
 Facebook followers. 
@@ -9356,25 +10120,25 @@ Source: Microsoft AI for Good Research Lab
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
+Devices and 
 Infrastructure
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -9382,26 +10146,197 @@ Microsoft Digital Defense Report 2022
 80 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
-InfrastructureCyber Influence 
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber Influence 
 Operations
-Synthetic mediaWe are entering a golden era for AI\-
-enabled media creation and manipulation.Microsoft analysts note this is driven by two 
-key trends: the proliferation of easy\-to\-usetools and services for artificially creatinghighly realistic synthetic images, videos,audio, and text, and the ability to quicklydisseminate content optimizedfor specific audiences.Neither of these developments is inherentlyproblematic on its own. AI\-based technologycan be used to create fun and exciting digitalcontent, whether creating purely synthetic orenhancing existing material. These tools arebeing widely used by enterprises for advertisingand communications and by individuals to createengaging content for their followers. However,synthetic media, when created and distributedwith the intent to harm, has the potential todo serious damage to individuals, companies,institutions, and society. Microsoft has been adriving force in developing technologies andpractices, both internally and across the widermedia ecosystem, to limit this harm. 
-This section explores insights from Microsoftanalysis on the current state of the art technologyfor creating damaging synthetic content, theharms that can arise if this content is widelydisseminated, and technical mitigations thatcan defend against synthetic media basedcyber threats. 
+Synthetic media 
+ 
+We are entering a golden era for AI\-
+enabled media creation and manipulation. 
+ 
+Microsoft analysts note this is driven by two 
+key trends: the proliferation of easy\-to\-use 
+ 
+tools and services for artificially creating 
+ 
+highly realistic synthetic images, videos, 
+ 
+audio, and text, and the ability to quickly 
+ 
+disseminate content optimized 
+ 
+for specific audiences. 
+ 
+Neither of these developments is inherently 
+ 
+problematic on its own. AI\-based technology 
+ 
+can be used to create fun and exciting digital 
+ 
+content, whether creating purely synthetic or 
+ 
+enhancing existing material. These tools are 
+ 
+being widely used by enterprises for advertising 
+ 
+and communications and by individuals to create 
+ 
+engaging content for their followers. However, 
+ 
+synthetic media, when created and distributed 
+ 
+with the intent to harm, has the potential to 
+ 
+do serious damage to individuals, companies, 
+ 
+institutions, and society. Microsoft has been a 
+ 
+driving force in developing technologies and 
+ 
+practices, both internally and across the wider 
+ 
+media ecosystem, to limit this harm. 
+This section explores insights from Microsoft 
+ 
+analysis on the current state of the art technology 
+ 
+for creating damaging synthetic content, the 
+ 
+harms that can arise if this content is widely 
+ 
+disseminated, and technical mitigations that 
+ 
+can defend against synthetic media based 
+ 
+cyber threats. 
 Creating synthetic media 
-The field of synthetic text and media is advancingincredibly fast as techniques that were onceonly possible with the vast computing resourcesof large movie studios are now integratedinto phone apps. At the same time, tools arebecoming easier to use and can generate contentwith a level of realism that can fool even forensicmedia specialists. We are very close to reachingthe point at which anyone can create a syntheticvideo of anyone saying or doing anything. Itsnot unreasonable to believe we are entering anera where a significant quantity of the contentwe see online is fully or partially synthetic usingAI 
+The field of synthetic text and media is advancing 
+ 
+incredibly fast as techniques that were once 
+ 
+only possible with the vast computing resources 
+ 
+of large movie studios are now integrated 
+ 
+into phone apps. At the same time, tools are 
+ 
+becoming easier to use and can generate content 
+ 
+with a level of realism that can fool even forensic 
+ 
+media specialists. We are very close to reaching 
+ 
+the point at which anyone can create a synthetic 
+ 
+video of anyone saying or doing anything. It’s 
+ 
+not unreasonable to believe we are entering an 
+ 
+era where a significant quantity of the content 
+ 
+we see online is fully or partially synthetic using 
+ 
+AI 
  techniques. 
-With the availability of moresophisticated, easy\-to\-use, and widelyavailable tools, synthetic contentcreation is on the rise and will soonbe indistinguishable from reality. 
-There are many high\-quality free and commercialimage, video, and audio editing tools. These toolscan be used to make simple but potentiallydamaging changes to digital content like addingmisleading text, face\-swapping, and removing oraltering context. Such cheap fakes are widelyused to spread nefarious content, promotepolitical ideologies, and damage reputations.A well\-known example is the 2019 Note 16 video of USSpeaker of the House, Nancy Pelosi, slurring herspeech and appearing inebriated. Although it wasquickly determined that the video was slowedto create the effect, the cheap fake spread 
+With the availability of more 
+ 
+sophisticated, easy\-to\-use, and widely 
+ 
+available tools, synthetic content 
+ 
+creation is on the rise and will soon 
+ 
+be indistinguishable from reality. 
+There are many high\-quality free and commercial 
+ 
+image, video, and audio editing tools. These tools 
+ 
+can be used to make simple but potentially 
+ 
+damaging changes to digital content like adding 
+ 
+misleading text, face\-swapping, and removing or 
+ 
+altering context. Such “cheap fakes” are widely 
+ 
+used to spread nefarious content, promote 
+ 
+political ideologies, and damage reputations. 
+ 
+A well\-known example is the 2019 Note 16 video of US 
+ 
+Speaker of the House, Nancy Pelosi, slurring her 
+ 
+speech and appearing inebriated. Although it was 
+ 
+quickly determined that the video was slowed 
+ 
+to create the effect, the “cheap fake” spread 
 far and wide before the original video and 
 context surfaced. 
 More sophisticated approaches to altering media 
@@ -9419,19 +10354,19 @@ commercial and open\-source editing tools.
 Such technologies are weaponized by bad actors 
 hoping to damage individuals and institutions. 
 Examples of deepfake techniques include: 
- Face swap (video, images)replacing a face 
+• Face swap (video, images)—replacing a face 
 in a video with another. This technique can be 
 used to attempt blackmail of an individual, 
 company, or institution, or to place individuals 
 in embarrassing locations or situations. 
- Puppeteering (video, images)using a 
+• Puppeteering (video, images)—using a 
 video to animate a still image or second video. 
 This can make it appear an individual said 
 something embarrassing or misleading. 
- Generative adversarial networks 
-(video, images)a family of techniques 
+• Generative adversarial networks 
+(video, images)—a family of techniques 
 for generating photorealistic imagery. 
- Transformer models (video, images, text) 
+• Transformer models (video, images, text)— 
 creating rich imagery from text descriptions. 
 Such advanced AI\-based techniques are not yet 
 widely used in cyber influence campaigns today, 
@@ -9457,36 +10392,58 @@ A longer\-term and more insidious threat is to our
 understanding of what is true if we can no longer 
 trust what we see and hear. Because of this, any 
 compromising image, audio, or video of a public 
-or private figure can be dismissed as fakean 
-outcome known as The Liars Dividend. Note 17Recent 
-research Note 18shows this abuse of technology 
+or private figure can be dismissed as fake—an 
+outcome known as The Liar’s Dividend. Note 17 Recent 
+research Note 18 shows this abuse of technology 
 is already being used to attack financial 
 systems, although many other abuse scenarios 
 are plausible. 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
-InfrastructureSynthetic media 
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Synthetic media 
 Cyber Influence 
 Operations
 Detecting synthetic media 
@@ -9497,7 +10454,7 @@ and restore trust. There are several promising
 paths forward, as well as barriers that 
 warrant consideration. 
 One approach is to build AI\-based systems 
-that can spot fakesessentially defensive 
+that can spot fakes—essentially “defensive” 
 AI systems to counter the offensive AI systems. 
 This is an area of active research where 
 current systems for creating synthetic audio 
@@ -9509,9 +10466,45 @@ flaws, the precise artifacts tend to be specific to
 a particular tool or algorithm. This means training 
 on known fakes does not usually generalize to 
 other algorithms as demonstrated in a 2020 
-open competition to build deepfake imagedetectors. Note 19 It is tempting to increase investmentin developing more advanced detectors, butMicrosoft is highly skeptical this will result inmeaningful improvements for two reasons: 
-First, we have excellent physical models thatreflect the real world. Current fake creators cutcorners, resulting in detectable artifacts, butnewer models will become ever more realistic.There is nothing inherently special about areal\-world scene captured by a camera thatcant be modeled by a computer. 
-Second, advanced fake\-creation algorithms use atechnique called Generative Adversarial Networks(GANs) as part of the creation process. A GANplays two AI systems against each other using agenerator to create the fake and a discriminatorto detect fake images and train the generator.Any investment in developing a better detectorwill only enable the generator to improve thequality of the fakes. 
+open competition to build deepfake image 
+ 
+detectors. Note 19 It is tempting to increase investment 
+ 
+in developing more advanced detectors, but 
+ 
+Microsoft is highly skeptical this will result in 
+ 
+meaningful improvements for two reasons: 
+First, we have excellent physical models that 
+ 
+reflect the real world. Current fake creators cut 
+ 
+corners, resulting in detectable artifacts, but 
+ 
+newer models will become ever more realistic. 
+ 
+There is nothing inherently special about a 
+ 
+real\-world scene captured by a camera that 
+ 
+can’t be modeled by a computer. 
+Second, advanced fake\-creation algorithms use a 
+ 
+technique called Generative Adversarial Networks 
+ 
+(GANs) as part of the creation process. A GAN 
+ 
+plays two AI systems against each other using a 
+ 
+generator to create the fake and a discriminator 
+ 
+to detect fake images and train the generator. 
+ 
+Any investment in developing a better detector 
+ 
+will only enable the generator to improve the 
+ 
+quality of the fakes. 
 Microsoft Digital Defense Report 2022 
 Synthetic media landscape 
 Factors 
@@ -9559,13 +10552,13 @@ efforts
 Continued 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -9574,119 +10567,550 @@ Continued
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
-InfrastructureCyber Influence 
+Devices and 
+Infrastructure
+ 
+ 
+Cyber Influence 
 Operations
 Provenance for digital assets 
-If detecting fakes is unreliable, what can be doneto protect against the harmful uses of syntheticmedia? One important emerging technology isdigital provenancea mechanism that enablesdigital media creators with the ability to certifyan asset and helps consumers identify whetheror not the digital asset has been tampered with.Digital provenance is particularly important inthe context of todays social media networksgiven the speed with which content can travelthe internet and the opportunity for bad actorsto easily manipulate content. 
+If detecting fakes is unreliable, what can be done 
+ 
+to protect against the harmful uses of synthetic 
+ 
+media? One important emerging technology is 
+ 
+digital provenance—a mechanism that enables 
+ 
+digital media creators with the ability to certify 
+ 
+an asset and helps consumers identify whether 
+ 
+or not the digital asset has been tampered with. 
+ 
+Digital provenance is particularly important in 
+ 
+the context of today’s social media networks 
+ 
+given the speed with which content can travel 
+ 
+the internet and the opportunity for bad actors 
+ 
+to easily manipulate content. 
 900% 
-year over year increasein proliferation of 
+year over year increase 
+ 
+in proliferation of 
 deepfakes since 2019\. Note 20 
-Digital Provenance Technology is a modernversion of cryptographic document signing,designed to capture the source, edit history, andmetadata of objects as they flow through todaysweb. The vision and technical methods forenabling this type of end\-to\-end tamper\-proofcertification of media was developed by a cross\-
-team of researchers and scientists at Microsoft.We co\-lead a cross\-industry partnership aimedat bringing media provenance technology to lifein Project Origin (founded by Microsoft, BBC,CBCRadio\-Canada, and the New York Times)and engage in the Content Authenticity Initiative(founded by Adobe). Microsoft also worked withpartners in technology and media services toestablish the Coalition for Content Provenanceand Authenticity (C2PA). C2PA is a standardsorganization that recently published the mostadvanced digital provenance specification toutilize with media assets including images,videos, audio, and text.A C2PA\-enabled object carries a manifestthat protects the object and metadata fromtampering, and the accompanying certificateidentifies the publisher. 
-Synthetic media was not originallydesigned to cause harm, but it isbeing weaponized by bad actorsto undermine trust in individualsand 
+Digital Provenance Technology is a modern 
+ 
+version of cryptographic document signing, 
+ 
+designed to capture the source, edit history, and 
+ 
+metadata of objects as they flow through today’s 
+ 
+web. The vision and technical methods for 
+ 
+enabling this type of end\-to\-end tamper\-proof 
+ 
+certification of media was developed by a cross\-
+team of researchers and scientists at Microsoft. 
+ 
+We co\-lead a cross\-industry partnership aimed 
+ 
+at bringing media provenance technology to life 
+ 
+in Project Origin (founded by Microsoft, BBC, 
+ 
+CBC/Radio\-Canada, and the New York Times) 
+ 
+and engage in the Content Authenticity Initiative 
+ 
+(founded by Adobe). Microsoft also worked with 
+ 
+partners in technology and media services to 
+ 
+establish the Coalition for Content Provenance 
+ 
+and Authenticity (C2PA). C2PA is a standards 
+ 
+organization that recently published the most 
+ 
+advanced digital provenance specification to 
+ 
+utilize with media assets including images, 
+ 
+videos, audio, and text. 
+ 
+A C2PA\-enabled object carries a manifest 
+ 
+that protects the object and metadata from 
+ 
+tampering, and the accompanying certificate 
+ 
+identifies the publisher. 
+Synthetic media was not originally 
+ 
+designed to cause harm, but it is 
+ 
+being weaponized by bad actors 
+ 
+to undermine trust in individuals 
+ 
+and 
  institutions. 
-Digital provenance is a promisingemerging technology that has thepotential to help restore peoples trustin online media content by certifyingthe origin of a media asset. 
-Publicly available solutions based on the C2PAspecification are surfacing either as a new featurein existing products or new standalone appsand services. We expect most of the commonlyused capture, editing, and authoring tools to beC2PA enabled in a few years. This presents anopportunity for enterprises to determine theirneeds and uses for digital provenance today, andto require this additional layer of protection inthe tools they use in existing workflows. 
-Actionable insights1 
-Take proactive steps to protect yourorganization against misinformationthreats through proactive consideration ofyour PR and communication responses.2 
-Use provenance technology to protectofficial 
+Digital provenance is a promising 
+ 
+emerging technology that has the 
+ 
+potential to help restore people’s trust 
+ 
+in online media content by certifying 
+ 
+the origin of a media asset. 
+Publicly available solutions based on the C2PA 
+ 
+specification are surfacing either as a new feature 
+ 
+in existing products or new standalone apps 
+ 
+and services. We expect most of the commonly 
+ 
+used capture, editing, and authoring tools to be 
+ 
+C2PA enabled in a few years. This presents an 
+ 
+opportunity for enterprises to determine their 
+ 
+needs and uses for digital provenance today, and 
+ 
+to require this additional layer of protection in 
+ 
+the tools they use in existing workflows. 
+Actionable insights
+ 
+1 
+Take proactive steps to protect your 
+ 
+organization against misinformation 
+ 
+threats through proactive consideration of 
+ 
+your PR and communication responses.
+ 
+2 
+Use provenance technology to protect 
+ 
+official 
  communications. 
 Links to further information 
-A promising step forward ondisinformation \| Microsoft On the Issues 
+A promising step forward on 
+ 
+disinformation \| Microsoft On the Issues 
 A Milestone Reached, January 31, 2022 
 Project Origin \| Microsoft ALT Innovation 
-Coalition for Content Provenance andAuthenticity 
+Coalition for Content Provenance and 
+ 
+Authenticity 
  (C2PA) 
-Explore technical details about thesystem Project Origin uses for mediaauthentication \| Microsoft ALT Innovation 
+Explore technical details about the 
+ 
+system Project Origin uses for media 
+ 
+authentication \| Microsoft ALT Innovation 
 82 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
-InfrastructureCyber Influence 
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+Cyber Influence 
 Operations
-A holistic approachto protect against cyber 
+A holistic approach 
+ 
+to protect against cyber 
 influence 
- operationsMicrosoft is building on its already maturecyber threat intelligence infrastructureto develop a broader, more inclusive viewof cyber influence operations. 
-We use a framework for suggested response andmitigation strategies to combat the threat posedby operations, which can be divided into fourkey pillars: detect, disrupt, defend, and deter. 
-In addition, Microsoft has adopted four principlesto anchor our work in this space. First is acommitment to respect freedom of expressionand uphold our customers ability to create,publish, and search for information via ourplatforms, products, and services. Second, weproactively work to prevent our platforms andproducts from being used to amplify foreigncyber influence sites and content. Third, we willnot willfully profit from foreign cyber influencecontent or actors. Finally, we prioritize surfacingcontent to counter foreign cyber influenceoperations by utilizing internal and trustedthird\-party data on our products. 
+ operations 
+ 
+ 
+Microsoft is building on its already mature 
+ 
+cyber threat intelligence infrastructure 
+ 
+to develop a broader, more inclusive view 
+ 
+of cyber influence operations. 
+We use a framework for suggested response and 
+ 
+mitigation strategies to combat the threat posed 
+ 
+by operations, which can be divided into four 
+ 
+key pillars: detect, disrupt, defend, and deter. 
+In addition, Microsoft has adopted four principles 
+ 
+to anchor our work in this space. First is a 
+ 
+commitment to respect freedom of expression 
+ 
+and uphold our customers’ ability to create, 
+ 
+publish, and search for information via our 
+ 
+platforms, products, and services. Second, we 
+ 
+proactively work to prevent our platforms and 
+ 
+products from being used to amplify foreign 
+ 
+cyber influence sites and content. Third, we will 
+ 
+not willfully profit from foreign cyber influence 
+ 
+content or actors. Finally, we prioritize surfacing 
+ 
+content to counter foreign cyber influence 
+ 
+operations by utilizing internal and trusted 
+ 
+third\-party data on our products. 
 Detect 
-As with cyber defense, the first step in counteringforeign cyber influence operations is developingthe capacity to detect them. No single companyor organization can hope to individually makethe progress that is needed. New, broadercollaboration across the tech sector will becrucial, with progress in analyzing and reporting 
-cyber influence operations relying heavily onthe role of civil society, including in academicinstitutions 
+As with cyber defense, the first step in countering 
+ 
+foreign cyber influence operations is developing 
+ 
+the capacity to detect them. No single company 
+ 
+or organization can hope to individually make 
+ 
+the progress that is needed. New, broader 
+ 
+collaboration across the tech sector will be 
+ 
+crucial, with progress in analyzing and reporting 
+cyber influence operations relying heavily on 
+ 
+the role of civil society, including in academic 
+ 
+institutions 
  and 
  nonprofit 
  organizations. 
-Recognizing this role, researchers Jake Shapiroand Alicia Wanless at Princeton University andthe Carnegie Endowment for InternationalPeace respectively have mapped out plans tolaunch the new Institute for Research on theInformation Environment (IRIE). With supportfrom Microsoft, the Knight Foundation, and CraigNewmark Philanthropies, the IRIE will create aninclusive multistakeholder research institutionmodeled after the European Organizationfor Nuclear Research (CERN). It will combineexpertise in data processing and analysis tospeed up and scale new discoveries in this space.Findings will be shared to inform policymakers,technology companies, and consumersmore broadly. 
+Recognizing this role, researchers Jake Shapiro 
+ 
+and Alicia Wanless at Princeton University and 
+ 
+the Carnegie Endowment for International 
+ 
+Peace respectively have mapped out plans to 
+ 
+launch the new “Institute for Research on the 
+ 
+Information Environment” (IRIE). With support 
+ 
+from Microsoft, the Knight Foundation, and Craig 
+ 
+Newmark Philanthropies, the IRIE will create an 
+ 
+inclusive multistakeholder research institution 
+ 
+modeled after the European Organization 
+ 
+for Nuclear Research (CERN). It will combine 
+ 
+expertise in data processing and analysis to 
+ 
+speed up and scale new discoveries in this space. 
+ 
+Findings will be shared to inform policymakers, 
+ 
+technology companies, and consumers 
+ 
+more broadly. 
 Defend 
-The second strategic pillar is to shore updemocratic defenses, a longstanding priority inneed of investment and innovation. It should takeaccount of the challenges technology has createdto democracy, and the opportunities technologyhas created to defend democratic societiesmore 
+The second strategic pillar is to shore up 
+ 
+democratic defenses, a longstanding priority in 
+ 
+need of investment and innovation. It should take 
+ 
+account of the challenges technology has created 
+ 
+to democracy, and the opportunities technology 
+ 
+has created to defend democratic societies 
+ 
+more 
  effectively. 
-Microsofts strategy framework isaimed at helping cross\-sectoralstakeholders detect, disrupt, defend,and deter against propaganda 
-particularly campaigns byforeign 
+Microsoft’s strategy framework is 
+ 
+aimed at helping cross\-sectoral 
+ 
+stakeholders detect, disrupt, defend, 
+ 
+and deter against propaganda— 
+particularly campaigns by 
+ 
+foreign 
  aggressors. 
-It is appropriate to start with one of the greattechnological challenges of our agetheimpact of the internet and digital advertisingon traditional journalism. Since the 1700s, a freeand independent press has played a special rolein supporting every democracy on the planet 
-uncovering corruption, documenting wars, andilluminating the largest societal challenges ofthis and every other time. However, the internethas gutted local news by devouring advertisingrevenue and luring away paid subscribers.Many local newspapers have collapsed. One ofthe many insights from our recent work is townsthat lack a newspaper are unknowingly andinevitably exposed to a greater than averagevolume of foreign propaganda. For thesereasons, one of democracys critical defensiveprongs must strengthen traditional journalismand a free press, especially at the locallevel. This requires ongoing investmentand innovation that must reflect thelocal needs of different countries andcontinents. These issues are not easy,and they require multistakeholderapproaches, which Microsoftand other tech companiesare increasingly supporting. 
-We also need new innovations in public policy,which needs to be a public priority. This caninclude laws that enable publishers to negotiateadvertising revenue collectively with technologycompanies, and legislation that provides taxcredits to relieve local newsrooms of a portionof their payroll taxes for journalists they employ.Journalists need many other tools for their craft,including the ability to separate content fromlegitimate and fraudulent sources. 
-There is also a rapidly evolving need to helpconsumers develop a more sophisticated abilityto identify nation state\-driven informationoperations. While this might seem daunting,it resembles the work the tech sector haslong pursued to combat other cyber threats.Consider the education of consumers to lookmore carefully at an email address to help spotspam or other fraudulent communications.Initiatives in the United Statessuch as the NewsLiteracy Project and the Trusted Journalism.A longer\-term andmore insidious threat is toour understanding of what istrue if we can no longer trustwhat we see and hear. 
+It is appropriate to start with one of the great 
+ 
+technological challenges of our age—the 
+ 
+impact of the internet and digital advertising 
+ 
+on traditional journalism. Since the 1700s, a free 
+ 
+and independent press has played a special role 
+ 
+in supporting every democracy on the planet— 
+uncovering corruption, documenting wars, and 
+ 
+illuminating the largest societal challenges of 
+ 
+this and every other time. However, the internet 
+ 
+has gutted local news by devouring advertising 
+ 
+revenue and luring away paid subscribers. 
+ 
+Many local newspapers have collapsed. One of 
+ 
+the many insights from our recent work is towns 
+ 
+that lack a newspaper are unknowingly and 
+ 
+inevitably exposed to a greater than average 
+ 
+volume of foreign propaganda. For these 
+ 
+reasons, one of democracy’s critical defensive 
+ 
+prongs must strengthen traditional journalism 
+ 
+and a free press, especially at the local 
+ 
+level. This requires ongoing investment 
+ 
+and innovation that must reflect the 
+ 
+local needs of different countries and 
+ 
+continents. These issues are not easy, 
+ 
+and they require multistakeholder 
+ 
+approaches, which Microsoft 
+ 
+and other tech companies 
+ 
+are increasingly supporting. 
+We also need new innovations in public policy, 
+ 
+which needs to be a public priority. This can 
+ 
+include laws that enable publishers to negotiate 
+ 
+advertising revenue collectively with technology 
+ 
+companies, and legislation that provides tax 
+ 
+credits to relieve local newsrooms of a portion 
+ 
+of their payroll taxes for journalists they employ. 
+ 
+Journalists need many other tools for their craft, 
+ 
+including the ability to separate content from 
+ 
+legitimate and fraudulent sources. 
+There is also a rapidly evolving need to help 
+ 
+consumers develop a more sophisticated ability 
+ 
+to identify nation state\-driven information 
+ 
+operations. While this might seem daunting, 
+ 
+it resembles the work the tech sector has 
+ 
+long pursued to combat other cyber threats. 
+ 
+Consider the education of consumers to look 
+ 
+more carefully at an email address to help spot 
+ 
+spam or other fraudulent communications. 
+ 
+Initiatives in the United States—such as the News 
+ 
+Literacy Project and the Trusted Journalism. 
+ 
+A longer\-term and 
+ 
+more insidious threat is to 
+ 
+our understanding of what is 
+ 
+true if we can no longer trust 
+ 
+what we see and hear. 
 83 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 84 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
-Devices and
-InfrastructureA holistic approach 
-to protect against cyber
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+A holistic approach 
+to protect against cyber 
 influence operations 
 Continued 
 Cyber Influence 
 Operations
-Programare helping to develop better 
+Program—are helping to develop better 
 informed consumers of news and information. 
 Globally, new technology like the browser plugin 
 from NewsGuard can help move this effort 
@@ -9704,7 +11128,7 @@ literacy within corporate communities. It is a
 good example of the breadth of opportunity 
 to strengthen our democratic defenses. 
 Disrupt 
-In recent years, Microsofts Digital Crimes Unit 
+In recent years, Microsoft’s Digital Crimes Unit 
 (DCU) has refined tactics and developed tools to 
 disrupt cyber threats ranging from ransomware 
 to botnets and nation state attacks. We have 
@@ -9728,12 +11152,12 @@ attribute cyberattacks carefully and with ample
 evidence. Understanding the impact of such 
 disruption is vital and can be even more helpful 
 in disrupting cyber influence. Witness the 
-US governments information\-sharing in the 
-lead\-up to Russias invasion of Ukraine that 
-put transparency into effective actionsuch 
+US government’s information\-sharing in the 
+lead\-up to Russia’s invasion of Ukraine that 
+put transparency into effective action—such 
 as exposing Russian plans including specific 
 campaigns like a plot to use a fake graphic video. 
-As shown in last summers publication from 
+As shown in last summer’s publication from 
 the CyberPeace Institute in Geneva on ongoing 
 cyberattacks inside and outside Ukraine, there 
 is an opportunity for a broad range of civil 
@@ -9768,9 +11192,9 @@ is uniquely a governmental responsibility.
 Yet increasingly, multistakeholder action is 
 playing an important role in strengthening and 
 extending international norms. More than 30 
-online platforms, advertisers, and publishers 
-including Microsoftsigned on to the recently 
-updated European Commissions Code of Practice 
+online platforms, advertisers, and publishers— 
+including Microsoft—signed on to the recently 
+updated European Commission’s Code of Practice 
 on Disinformation, agreeing to strengthened 
 commitments to tackle this growing challenge. 
 Like the recent Paris Call, Christchurch Call, 
@@ -9779,105 +11203,165 @@ multilateral and multistakeholder action can
 bring together the governments and public 
 among democratic nations. Governments can 
 then build on these norms and laws to advance 
-the accountability the worlds democracies need 
+the accountability the world’s democracies need 
 and deserve. 
-Through rapid radical transparency, democraticgovernments and societies can effectively bluntinfluence campaigns by attributing the sourceof nation state attacks, informing the public,and building trust in institutions. 
-We have increased technical capacityto detect and disrupt foreign influenceoperations and are committed totransparently reporting on theseoperations like our reportingon cyberattacks. 
-Actionable insights1 
-Implement strong digital hygienepractices across your organization.2 
-Consider ways to reduce any unintendedenabling of cyber influence campaigns byyour employees or your business practices.This includes reducing supply to knownforeign propaganda sites.3 
-Support information literacy and civicengagement campaigns as a keycomponent to help societies defendagainst propaganda and foreign influence.4 
-Engage directly with groups relevantto your industry working to addressinfluence 
+Through rapid radical transparency, democratic 
+ 
+governments and societies can effectively blunt 
+ 
+influence campaigns by attributing the source 
+ 
+of nation state attacks, informing the public, 
+ 
+and building trust in institutions. 
+We have increased technical capacity 
+ 
+to detect and disrupt foreign influence 
+ 
+operations and are committed to 
+ 
+transparently reporting on these 
+ 
+operations like our reporting 
+ 
+on cyberattacks. 
+Actionable insights
+ 
+1 
+Implement strong digital hygiene 
+ 
+practices across your organization.
+ 
+2 
+Consider ways to reduce any unintended 
+ 
+enabling of cyber influence campaigns by 
+ 
+your employees or your business practices. 
+ 
+This includes reducing supply to known 
+ 
+foreign propaganda sites.
+ 
+3 
+Support information literacy and civic 
+ 
+engagement campaigns as a key 
+ 
+component to help societies defend 
+ 
+against propaganda and foreign influence.
+ 
+4 
+Engage directly with groups relevant 
+ 
+to your industry working to address 
+ 
+influence 
  operations. 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
 85 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber Influence 
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber Influence 
 Operations
 Endnotes 
 Note 1 
-https:mitsloan.mit.eduideas\-made\-to\-mattermit\-sloan\-research\-about\-social\-media\-
+https://mitsloan.mit.edu/ideas\-made\-to\-matter/mit\-sloan\-research\-about\-social\-media\-
 misinformation\-and\-elections?msclkid\=8dc75d6abcfe11ecad9946a058d581c9 
 Note 2 
-https:news.gallup.compoll355526americans\-trust\-media\-dips\-second\-lowest\-record.aspx 
+https://news.gallup.com/poll/355526/americans\-trust\-media\-dips\-second\-lowest\-record.aspx 
 Note 3 
 Defending Ukraine: Early Lessons from the Cyber War (microsoft.com) 
 Note 4 
-https:www.edelman.comsitesgfilesaatuss191files2022\-012022 Edelman Trust Barometer\_
-FullReport.pdfNote 5 
-Russian Foreign Ministry Spokeswoman Maria Zakharova: https:tass.compolitics1401777;Lavrov: 
- https:www.cnn.com20220505opinionssergey\-lavrov\-hitler\-comments\-ukraine\-
-kaudersindex.html,Kirill 
- KudryavtsevPoolAFPGetty Images 
+https://www.edelman.com/sites/g/files/aatuss191/files/2022\-01/2022 Edelman Trust Barometer\_
+FullReport.pdf 
+ 
+Note 5 
+Russian Foreign Ministry Spokeswoman Maria Zakharova: https://tass.com/politics/1401777; 
+ 
+Lavrov: 
+ https://www.cnn.com/2022/05/05/opinions/sergey\-lavrov\-hitler\-comments\-ukraine\-
+kauders/index.html,Kirill 
+ Kudryavtsev/Pool/AFP/Getty Images 
 Note 6 
-https:apnews.comarticleconspiracy\-theories\-iran\-only\-on\-ap\-media\-misinformation\-
+https://apnews.com/article/conspiracy\-theories\-iran\-only\-on\-ap\-media\-misinformation\-
 bfca6d5b236a29d61c4dd38702495ffe 
 No
 te 7 
-https:www.justice.govopaprunited\-states\-seizes\-websites\-used\-iranian\-islamic\-radio\-and\-
+https://www.justice.gov/opa/pr/united\-states\-seizes\-websites\-used\-iranian\-islamic\-radio\-and\-
 television\-union\-and\-kata\-ib 
 No
 te 8 
-https:www.presstv.irDetail20200204617877Is\-the\-coronavirus\-a\-US\-bioweapon 
+https://www.presstv.ir/Detail/2020/02/04/617877/Is\-the\-coronavirus\-a\-US\-bioweapon 
 No
 te 9 
-https:www.state.govwp\-contentuploads202201Kremlin\-Funded\-Media\_January\_update\-19\.pdf 
+https://www.state.gov/wp\-content/uploads/2022/01/Kremlin\-Funded\-Media\_January\_update\-19\.pdf 
 Not
-e 10 https:www.rt.comnews482405\-iran\-coronavirus\-us\-biological\-weapon 
+e 10 https://www.rt.com/news/482405\-iran\-coronavirus\-us\-biological\-weapon/ 
 Not
-e 11 https:web.archive.orgweb20220319124125https:twitter.comRT\_com
-status1233187558793924608?s\=20Not
-e 12 https:query.prod.cms.rt.microsoft.comcmsapiambinaryRE4Vwwd 
+e 11 https://web.archive.org/web/20220319124125/https://twitter.com/RT\_com/
+status/1233187558793924608?s\=20 
+ 
 Not
-e 13 Russias Kremenchuk Claims Versus the Evidencebellingcat 
+e 12 https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Vwwd 
 Not
-e 14 https:t.meoddr\_info39658 
+e 13 Russia’s Kremenchuk Claims Versus the Evidence—bellingcat 
 Not
-e 15 https:t.mevoenacher23339 
+e 14 https://t.me/oddr\_info/39658 
 Not
-e 16 Fact check: Drunk Nancy Pelosi video is manipulated \| Reuters 
+e 15 https://t.me/voenacher/23339 
 Not
-e 17 https:lawcat.berkeley.edurecord1136469 
+e 16 Fact check: “Drunk” Nancy Pelosi video is manipulated \| Reuters 
 Not
-e 18 https:carnegieendowment.org20200708deepfakes\-and\-synthetic\-media\-in\-financial\-
+e 17 https://lawcat.berkeley.edu/record/1136469 
+Not
+e 18 https://carnegieendowment.org/2020/07/08/deepfakes\-and\-synthetic\-media\-in\-financial\-
 system\-assessing\-threat\-scenarios\-pub\-82237 
 Not
 e 19 Deepfake Detection Challenge Results: An open initiative to advance AI (facebook.com) 
 Not
-e 20 Deepfakes 2020: The Tipping Point, Johannes Tammeknd, John Thomas, and Kristjan Peterson, 
+e 20 Deepfakes 2020: The Tipping Point, Johannes Tammekänd, John Thomas, and Kristjan Peterson, 
 October 2020 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
@@ -9885,51 +11369,102 @@ Microsoft Digital Defense Report 2022
 86 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
-CyberResilience 
-Understanding the risks and rewards
-of modernization becomes crucial to
+Cyber 
+ 
+Resilience 
+Understanding the risks and rewards 
+of modernization becomes crucial to 
 a holistic approach to resilience. 
 An overview of Cyber Reslience 
 87 
 Introduction 
-88Cyber resiliency: A crucial foundation 
+88 
+ 
+Cyber resiliency: A crucial foundation 
 of a connected society 
 89 
-The importance of modernizingsystems and architecture 
+The importance of modernizing 
+ 
+systems and architecture 
 90 
-Basic security posture is a determiningfactor in advanced solution effectiveness 
+Basic security posture is a determining 
+ 
+factor in advanced solution effectiveness 
 92 
-Maintaining identity health is fundamentalto organizational well\-being93 
+Maintaining identity health is fundamental 
+ 
+to organizational well\-being 
+ 
+93 
 Operating system default security settings 
  96 
-Software supply chain centrality97 
-Building resilience to emerging DDoS,web application, and network attacks98 
-Developing a balanced approach to datasecurity and cyber resiliency101 
+Software supply chain centrality 
+ 
+97 
+Building resilience to emerging DDoS, 
+ 
+web application, and network attacks 
+ 
+98 
+Developing a balanced approach to data 
+ 
+security and cyber resiliency 
+ 
+101 
 Resilience to cyber influence operations: 
-The human dimension102Fortifying the human factor with skilling103 
-Insights from our ransomwareelimination program104 
+The human dimension 
+ 
+102 
+ 
+Fortifying the human factor with skilling 
+ 
+103 
+Insights from our ransomware 
+ 
+elimination program 
+ 
+104 
 Act now on quantum security implications 
  105 
 Integrating business, security, 
-and IT for greater resilience106The cyber resilience bell curve108 
+and IT for greater resilience 
+ 
+106 
+ 
+The cyber resilience bell curve 
+ 
+108 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
@@ -9938,16 +11473,65 @@ Teams
 87 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber 
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
  An overview of 
  Cyber Resilience 
@@ -9962,7 +11546,7 @@ resilient as possible against
 modern attacks. 
 The pandemic has challenged us to pivot our 
 security practices and technologies to protect 
-Microsofts employees wherever they work. 
+Microsoft’s employees wherever they work. 
 This past year, threat actors continued to take 
 advantage of vulnerabilities exposed during 
 the pandemic and the shift to a hybrid work 
@@ -10005,11 +11589,11 @@ and frequency.
 Find out more on p98 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
@@ -10019,31 +11603,186 @@ Microsoft Digital Defense Report 2022
 88 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber
+Devices and 
+Infrastructure
+ 
+Cyber 
 Resilience
-IntroductionThe pandemic challenged usto pivot our security practicesand technologies to protectMicrosofts employeeswherever they work. Thispast year, threat actorscontinued to take advantageof vulnerabilities exposedduring the pandemic andthe shift to a hybrid workenvironment. Since then, ourprincipal challenge has beenmanaging the prevalence andcomplexity of various attackmethods and increased nationstate activity.Digital threat activity and the level of cyberattacksophistication increases every day. Many oftodays complex attacks focus on compromisingidentity architectures, supply chains, and thirdparties with varying degrees of security controls.In particular, we have observed identity phishingattacks are a clear and present threat. However,these types of attacks are generally unsuccessfulwith good identity management, phishingcontrol, and endpoint management practices.As a result, we must remember the basics: ninety 
-\* eight percent of attacks can be stopped withbasic hygiene measures in place. At Microsoft,we manage identities and devices as part ofour Zero Trust approach, which includes leastprivileged access and phish resistant credentialsto effectively stop threat actors and keep ourdata protected. 
-Today, even threat actors who lack sophisticatedtechnical skills can launch incredibly destructiveattacks, as access to advanced tactics,techniques, and procedures become broadlyavailable in the cybercrime economy. The warin Ukraine demonstrated how nation stateactors have escalated their offensive cyberoperations through the increased use ofransomware. Ransomware is now a sophisticatedindustry with threat actors using double ortriple extortion tactics to extract a pay out anddevelopers offering ransomware as a service(RaaS). With RaaS, threat actors utilize an affiliatenetwork to carry out attacks, lowering the barrierto entry for less skilled cybercriminals and,ultimately, expanding the attacker pool.As a result, Microsoft designed a ransomwareelimination program. The goal of the programis to remediate gaps in controls and coverage,contribute to feature enhancements for services,and develop recovery playbooks for our securityoperations center and engineering teams in theevent of a ransomware attack.Recent supply chain and third\-party supplierattacks indicate a major inflection point in theindustry. The disruption these attacks causefor our customers, partners, governments, andMicrosoft continues to increase, illustratingthe importance of focused attention on cyberresiliency and collaboration across securitystakeholders. Adversaries are also targetingon 
-\-premises systems, reinforcing the need fororganizations to manage vulnerabilities posedwith legacy systems by modernizing and movinginfrastructure to the cloud where security ismore 
+Introduction 
+ 
+The pandemic challenged us 
+ 
+to pivot our security practices 
+ 
+and technologies to protect 
+ 
+Microsoft’s employees 
+ 
+wherever they work. This 
+ 
+past year, threat actors 
+ 
+continued to take advantage 
+ 
+of vulnerabilities exposed 
+ 
+during the pandemic and 
+ 
+the shift to a hybrid work 
+ 
+environment. Since then, our 
+ 
+principal challenge has been 
+ 
+managing the prevalence and 
+ 
+complexity of various attack 
+ 
+methods and increased nation 
+ 
+state activity. 
+ 
+Digital threat activity and the level of cyberattack 
+ 
+sophistication increases every day. Many of 
+ 
+today’s complex attacks focus on compromising 
+ 
+identity architectures, supply chains, and third 
+ 
+parties with varying degrees of security controls. 
+ 
+In particular, we have observed identity phishing 
+ 
+attacks are a clear and present threat. However, 
+ 
+these types of attacks are generally unsuccessful 
+ 
+with good identity management, phishing 
+ 
+control, and endpoint management practices. 
+ 
+As a result, we must remember the basics: ninety 
+\-
+eight percent of attacks can be stopped with 
+ 
+basic hygiene measures in place. At Microsoft, 
+ 
+we manage identities and devices as part of 
+ 
+our Zero Trust approach, which includes least 
+ 
+privileged access and phish resistant credentials 
+ 
+to effectively stop threat actors and keep our 
+ 
+data protected. 
+Today, even threat actors who lack sophisticated 
+ 
+technical skills can launch incredibly destructive 
+ 
+attacks, as access to advanced tactics, 
+ 
+techniques, and procedures become broadly 
+ 
+available in the cybercrime economy. The war 
+ 
+in Ukraine demonstrated how nation state 
+ 
+actors have escalated their offensive cyber 
+ 
+operations through the increased use of 
+ 
+ransomware. Ransomware is now a sophisticated 
+ 
+industry with threat actors using double or 
+ 
+triple extortion tactics to extract a pay out and 
+ 
+developers offering ransomware as a service 
+ 
+(RaaS). With RaaS, threat actors utilize an affiliate 
+ 
+network to carry out attacks, lowering the barrier 
+ 
+to entry for less skilled cybercriminals and, 
+ 
+ultimately, expanding the attacker pool. 
+ 
+As a result, Microsoft designed a ransomware 
+ 
+elimination program. The goal of the program 
+ 
+is to remediate gaps in controls and coverage, 
+ 
+contribute to feature enhancements for services, 
+ 
+and develop recovery playbooks for our security 
+ 
+operations center and engineering teams in the 
+ 
+event of a ransomware attack. 
+ 
+Recent supply chain and third\-party supplier 
+ 
+attacks indicate a major inflection point in the 
+ 
+industry. The disruption these attacks cause 
+ 
+for our customers, partners, governments, and 
+ 
+Microsoft continues to increase, illustrating 
+ 
+the importance of focused attention on cyber 
+ 
+resiliency and collaboration across security 
+ 
+stakeholders. Adversaries are also targeting 
+ 
+on 
+\-premises systems, reinforcing the need for 
+ 
+organizations to manage vulnerabilities posed 
+ 
+with legacy systems by modernizing and moving 
+ 
+infrastructure to the cloud where security is 
+ 
+more 
  robust. 
-We live in an era where security is a key enablerof technological success. Innovation andenhanced productivity can only be achievedby introducing security measures that makeorganizations as resilient as possible againstmodern attacks. As digital threats increase andevolve, its crucial to build cyber resilience intothe fabric of every organization. 
-Bret ArsenaultChief Information Security Officer 
+We live in an era where security is a key enabler 
+ 
+of technological success. Innovation and 
+ 
+enhanced productivity can only be achieved 
+ 
+by introducing security measures that make 
+ 
+organizations as resilient as possible against 
+ 
+modern attacks. As digital threats increase and 
+ 
+evolve, it’s crucial to build cyber resilience into 
+ 
+the fabric of every organization. 
+Bret Arsenault 
+ 
+Chief Information Security Officer 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
@@ -10052,68 +11791,298 @@ Teams
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
-Cyber resiliency:
-A crucial foundation
+Cyber resiliency: 
+A crucial foundation 
 of a connected society 
-The revolution in digital technology hasseen organizations transform to becomeever more connected in both the waythey operate and the services they offer.As threats in the cyber landscape increase,building cyber resilience into the fabric ofthe organization is as crucial as financialand operational resilience. 
-Digital transformation has forever altered theway organizations interact with customers,partners, employees, and other stakeholders.New technologies provide huge opportunitiesto engage with people, transform products, andoptimize operations. The pandemic acceleratedthe digital transformation by driving innovativetechnologies which allow people to collaboratein new ways and from any location. 
-As cyber threats become endemic, preventingthem from compromising an organizationbecomes more difficult in our always connectedworld. Cyber resiliency represents an organizationsability to continue operations and sustain growthacceleration despite the barrage of attacks.Prevention must be balanced with survival andrecovery capabilities and governments and enterprisesare developing comprehensive models that extendbeyond security and privacy to protect assets, data,and other resources as part of cyber resiliency. 
-Developing a holistic approachto cyber resiliency 
-Cyber resiliency requires a holistic, adaptive, andglobal 
+The revolution in digital technology has 
+ 
+seen organizations transform to become 
+ 
+ever more connected in both the way 
+ 
+they operate and the services they offer. 
+ 
+As threats in the cyber landscape increase, 
+ 
+building cyber resilience into the fabric of 
+ 
+the organization is as crucial as financial 
+ 
+and operational resilience. 
+Digital transformation has forever altered the 
+ 
+way organizations interact with customers, 
+ 
+partners, employees, and other stakeholders. 
+ 
+New technologies provide huge opportunities 
+ 
+to engage with people, transform products, and 
+ 
+optimize operations. The pandemic accelerated 
+ 
+the digital transformation by driving innovative 
+ 
+technologies which allow people to collaborate 
+ 
+in new ways and from any location. 
+As cyber threats become endemic, preventing 
+ 
+them from compromising an organization 
+ 
+becomes more difficult in our “always connected” 
+ 
+world. Cyber resiliency represents an organization’s 
+ 
+ability to continue operations and sustain growth 
+ 
+acceleration despite the barrage of attacks. 
+ 
+Prevention must be balanced with survival and 
+ 
+recovery capabilities and governments and enterprises 
+ 
+are developing comprehensive models that extend 
+ 
+beyond security and privacy to protect assets, data, 
+ 
+and other resources as part of cyber resiliency. 
+Developing a holistic approach 
+ 
+to cyber resiliency 
+Cyber resiliency requires a holistic, adaptive, and 
+ 
+global 
  approach 
  that 
  can 
  withstand 
  evolving 
- threatsto core services and infrastructure, including: 
- Basic cyber hygiene as described in ourcyber resilience bell 
+ threats 
+ 
+to core services and infrastructure, including: 
+• Basic cyber hygiene as described in our 
+ 
+cyber resilience bell 
  curve. 
- Understanding and managing the riskrewardtrade\-off of digital transformation. 
- Real\-time response capabilities that enableproactive detection of threats and vulnerabilities. 
- Protection against known attacks andpreventive activity against new andanticipated attack vectors, includingability to automatically remediate. 
- Reduced impact of attacks and disastersthrough fault isolation and segmentation. 
- Automated recovery and redundancy in theevent of disruption. 
- Prioritizing operational testing to find gapsand understanding shared responsibilities anddependencies on external resources such ascloud\-based 
+• Understanding and managing the risk/reward 
+ 
+trade\-off of digital transformation. 
+• Real\-time response capabilities that enable 
+ 
+proactive detection of threats and vulnerabilities. 
+• Protection against known attacks and 
+ 
+preventive activity against new and 
+ 
+anticipated attack vectors, including 
+ 
+ability to automatically remediate. 
+• Reduced impact of attacks and disasters 
+ 
+through fault isolation and segmentation. 
+• Automated recovery and redundancy in the 
+ 
+event of disruption. 
+• Prioritizing operational testing to find gaps 
+ 
+and understanding shared responsibilities and 
+ 
+dependencies on external resources such as 
+ 
+cloud\-based 
  security 
  solutions. 
-An effective cyber resiliency program begins withresource fundamentals such as understandingservices available and having a reliable catalogof resources that can be called upon in the eventof a disruption. Building on that foundation,the program must be able to assess its owneffectiveness, measure the performance of criticalservices and their dependencies, test and validatecapabilities across on\-premises and cloudservices, and feed continuous improvementacross 
+An effective cyber resiliency program begins with 
+ 
+resource fundamentals such as understanding 
+ 
+services available and having a reliable catalog 
+ 
+of resources that can be called upon in the event 
+ 
+of a disruption. Building on that foundation, 
+ 
+the program must be able to assess its own 
+ 
+effectiveness, measure the performance of critical 
+ 
+services and their dependencies, test and validate 
+ 
+capabilities across on\-premises and cloud 
+ 
+services, and feed continuous improvement 
+ 
+across 
  the 
- organizations 
+ organization’s 
  digital 
  lifecycle. 
-To deliver a holistic approach, we are partneringwith organizations to identify their most criticalon\-premises and online services, businessprocesses, dependencies, personnel, vendorsand suppliers. We also look to identify assetsand resources associated with customer andmarket expectations, regulatory and contractualobligations, and internal operations. As thesecritical resources are identified, parallel effortsshould detect and monitor threats, disruptions,potential attack vectors, and system andprocess vulnerabilities. The ability to do thisunder the current skills shortage requires rigorin prioritization based on overall risk posed tothe 
+To deliver a holistic approach, we are partnering 
+ 
+with organizations to identify their most critical 
+ 
+on\-premises and online services, business 
+ 
+processes, dependencies, personnel, vendors 
+ 
+and suppliers. We also look to identify assets 
+ 
+and resources associated with customer and 
+ 
+market expectations, regulatory and contractual 
+ 
+obligations, and internal operations. As these 
+ 
+critical resources are identified, parallel efforts 
+ 
+should detect and monitor threats, disruptions, 
+ 
+potential attack vectors, and system and 
+ 
+process vulnerabilities. The ability to do this 
+ 
+under the current skills shortage requires rigor 
+ 
+in prioritization based on overall risk posed to 
+ 
+the 
  organization. 
-This type of holistic approach needs to beadaptive against a backdrop of a continuallyevolving threat landscape, with a goal of drivingmeasurable performance enhancement, reducedtime to detect, respond and recover, and reducedradius of impact in the event of disruption.The approach must also recognize the increasingconnectedness of threats. For example, a securityincident might result in a data breach withprivacy implications, requiring many internaland external teams to work together to respondquickly and minimize impact. 
-Cyber resiliency is the ability of anenterprise to continue operations andsustain growth acceleration despitedisruptions, including cyberattacks. 
-Actionable insights1 
-Build and manage technology systemsthat limit the impact of a breach andenable them to continue to operatesecurely and effectively, even if a breachis successful. Focus on common criticalassets, support for agility, and architectfor adaptability (for example, hybrid andmulti\-
+This type of holistic approach needs to be 
+ 
+adaptive against a backdrop of a continually 
+ 
+evolving threat landscape, with a goal of driving 
+ 
+measurable performance enhancement, reduced 
+ 
+time to detect, respond and recover, and reduced 
+ 
+radius of impact in the event of disruption. 
+ 
+The approach must also recognize the increasing 
+ 
+connectedness of threats. For example, a security 
+ 
+incident might result in a data breach with 
+ 
+privacy implications, requiring many internal 
+ 
+and external teams to work together to respond 
+ 
+quickly and minimize impact. 
+Cyber resiliency is the ability of an 
+ 
+enterprise to continue operations and 
+ 
+sustain growth acceleration despite 
+ 
+disruptions, including cyberattacks. 
+Actionable insights
+ 
+1 
+Build and manage technology systems 
+ 
+that limit the impact of a breach and 
+ 
+enable them to continue to operate 
+ 
+securely and effectively, even if a breach 
+ 
+is successful. Focus on common critical 
+ 
+assets, support for agility, and architect 
+ 
+for adaptability (for example, hybrid and 
+ 
+multi\-
  cloud, multi\-
- platform), reduce attacksurfaces (for example, remove unusedapplications and over 
-\-provisioned accessrights), assume compromised resources,and expect adversaries to evolve.2 
-When planning digital projects, considerpotential threats alongside opportunities,and shared responsibilities for resilienceacross the digital technology supply chain,including cloud\-
- based security solutions.3 
-Build systems to embed security by designand take steps to anticipate, detect,withstand, adapt, and respond to futureevolving threats.4 
-Ensure business leaders consultwith security teams as necessary tounderstand the risks associated with newdevelopments. Likewise, security teamsshould consider business aims and adviseleaders on how to pursue them securely.5 
-Ensure clear operational practices andprocedures for organizational resilienceare in place for cyber incidents. 
+ platform), reduce attack 
+ 
+surfaces (for example, remove unused 
+ 
+applications and over 
+\-provisioned access 
+ 
+rights), assume compromised resources, 
+ 
+and expect adversaries to evolve.
+ 
+2 
+When planning digital projects, consider 
+ 
+potential threats alongside opportunities, 
+ 
+and shared responsibilities for resilience 
+ 
+across the digital technology supply chain, 
+ 
+including cloud\-
+ based security solutions.
+ 
+3 
+Build systems to embed security by design 
+ 
+and take steps to anticipate, detect, 
+ 
+withstand, adapt, and respond to future 
+ 
+evolving threats.
+ 
+4 
+Ensure business leaders consult 
+ 
+with security teams as necessary to 
+ 
+understand the risks associated with new 
+ 
+developments. Likewise, security teams 
+ 
+should consider business aims and advise 
+ 
+leaders on how to pursue them securely.
+ 
+5 
+Ensure clear operational practices and 
+ 
+procedures for organizational resilience 
+ 
+are in place for cyber incidents. 
 89 
-\* \* \* \* Report 
+\-
+\-
+\-
+\-
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
@@ -10169,7 +12138,7 @@ No MFA for VPN access
 No or very limited use of endpoint detection and response 
 Skill gaps across security operations 
 Gaps in security monitoring coverage and integration 
-No SIEMSOAR solution 
+No SIEM/SOAR solution 
 Ineffective SOC processes and operating model 
 No immutable or usable backups 
 Ineffective data loss prevention controls 
@@ -10187,38 +12156,124 @@ Lack of information protection control
 Limited adoption of modern security frameworks 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 The importance of 
 modernizing systems 
-and architectureAs we develop new capabilities for ahyperconnected world, we must managethe threats posed by legacy systemsand software.Legacy systemsthose developed beforemodern connectivity tools such as smartphones,tablets, and cloud services became the norm\-
-represent a risk to an organization still usingthem. This risk exposure is reinforced by thefindings of the Microsoft Security Services forIncident Response team, a group of securityprofessionals that helps customers respondto and recover from attacks. 
-Over the past year, issues found amongcustomers recovering from attacks were relatedto six categories as shown in the chart on thispage. The following page outlines actionablesteps to take for improved resilience. 
-Over 80 percent of security incidentscan be traced to a few missingelements that could be addressedthrough modern security approaches. 
+and architecture 
+ 
+ 
+As we develop new capabilities for a 
+ 
+hyperconnected world, we must manage 
+ 
+the threats posed by legacy systems 
+ 
+and software. 
+ 
+Legacy systems—those developed before 
+ 
+modern connectivity tools such as smartphones, 
+ 
+tablets, and cloud services became the norm\-
+represent a risk to an organization still using 
+ 
+them. This risk exposure is reinforced by the 
+ 
+findings of the Microsoft Security Services for 
+ 
+Incident Response team, a group of security 
+ 
+professionals that helps customers respond 
+ 
+to and recover from attacks. 
+Over the past year, issues found among 
+ 
+customers recovering from attacks were related 
+ 
+to six categories as shown in the chart on this 
+ 
+page. The following page outlines actionable 
+ 
+steps to take for improved resilience. 
+Over 80 percent of security incidents 
+ 
+can be traced to a few missing 
+ 
+elements that could be addressed 
+ 
+through modern security approaches. 
 Key issues impacting cyber resiliency 
-This chart shows the percentage of impacted customers missing basic security controls which are critical toincreasing organizational cyber resilience. Findings are based on Microsoft engagements over the past year. 
-Leaders should think about cyberresilience as a critical facet of businessresilience. They should plan for cyberdisruptions in the same way they do naturaldisasters or other unforeseen events andbring together internal stakeholders likeoperations, communications, legal, and more,to craft strategies. Doing so will help ensureorganizations bring their critical businesssystems back online as quickly as possibleto resume normal business operations. 
-But it doesnt stop there. As manyorganizations rely on third 
-\-party suppliersand service providers, leaders should extendcyber resilience planning to their end 
+This chart shows the percentage of impacted customers missing basic security controls which are critical to 
+ 
+increasing organizational cyber resilience. Findings are based on Microsoft engagements over the past year. 
+“Leaders should think about cyber 
+ 
+resilience as a critical facet of business 
+ 
+resilience. They should plan for cyber 
+ 
+disruptions in the same way they do natural 
+ 
+disasters or other unforeseen events and 
+ 
+bring together internal stakeholders like 
+ 
+operations, communications, legal, and more, 
+ 
+to craft strategies. Doing so will help ensure 
+ 
+organizations bring their critical business 
+ 
+systems back online as quickly as possible 
+ 
+to resume normal business operations. 
+But it doesn’t stop there. As many 
+ 
+organizations rely on third 
+\-party suppliers 
+ 
+and service providers, leaders should extend 
+ 
+cyber resilience planning to their end 
 \-to 
-\* end value chain to further ensure businesscontinuity and resilience. 
-Ann Johnson,Corporate Vice President of Security,Compliance, Identity, and ManagementBusiness Development 
-\* \* \* Report 
+\-
+end value chain to further ensure business 
+ 
+continuity and resilience.” 
+Ann Johnson, 
+ 
+Corporate Vice President of Security, 
+ 
+Compliance, Identity, and Management 
+ 
+Business Development 
+\-
+\-
+\-
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
@@ -10227,19 +12282,25 @@ Teams
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
-The importance of
-modernizing systems
+The importance of 
+modernizing systems 
 and architecture 
 Continued 
 91 
@@ -10247,32 +12308,90 @@ There are clear areas which organizations can address to modernize their approac
 Problem 
 Actionable steps 
 Insecure configuration of identity provider 
-Misconfiguration and exposure of identity platforms and its componentsare a common vector for gaining unauthorized high privilege access. 
-Follow security configuration baselines and best practices when deployingand maintaining identity systems such as AD and Azure AD infrastructure. 
-Implement access restrictions by enforcing segregation of privileges,least privilege access and utilizing privileged access workstations (PAW)for managing identity systems. 
+Misconfiguration and exposure of identity platforms and its components 
+ 
+are a common vector for gaining unauthorized high privilege access. 
+Follow security configuration baselines and best practices when deploying 
+ 
+and maintaining identity systems such as AD and Azure AD infrastructure. 
+Implement access restrictions by enforcing segregation of privileges, 
+ 
+least privilege access and utilizing privileged access workstations (PAW) 
+ 
+for managing identity systems. 
 Insufficient privilege access and lateral movement controls 
-Administrators have excessive permissions across the digital environmentand often expose administrative credentials on workstations subject tointernet and productivity risks. 
-Secure and limit administrative access to make the environmentmore resilient and limit the scope of an attack. Employ PrivilegeAccess Management controls such as just in time access and justenough 
+Administrators have excessive permissions across the digital environment 
+ 
+and often expose administrative credentials on workstations subject to 
+ 
+internet and productivity risks. 
+Secure and limit administrative access to make the environment 
+ 
+more resilient and limit the scope of an attack. Employ Privilege 
+ 
+Access Management controls such as just in time access and just 
+ 
+enough 
  administration. 
 No multifactor authentication (MFA) 
-Todays attackers do not break in, they log on. 
-MFA is a critical and fundamental user access control that all organizationsshould enable. Coupled with conditional access, MFA can be invaluable infighting cyber threats. 
+Today’s attackers do not break in, they log on. 
+MFA is a critical and fundamental user access control that all organizations 
+ 
+should enable. Coupled with conditional access, MFA can be invaluable in 
+ 
+fighting cyber threats. 
 Low maturity security operations 
-Most impacted organizations used traditional threat detection tools anddid not have relevant insights for timely response and remediation. 
-A comprehensive threat detection strategy requires investments inextended detection and response (XDR) and modern cloud nativetools employing machine learning to separate noise from signals.Modernize security operations tools by incorporating XDR that canprovide deep security insights across the digital landscape. 
+Most impacted organizations used traditional threat detection tools and 
+ 
+did not have relevant insights for timely response and remediation. 
+A comprehensive threat detection strategy requires investments in 
+ 
+extended detection and response (XDR) and modern cloud native 
+ 
+tools employing machine learning to separate noise from signals. 
+ 
+Modernize security operations tools by incorporating XDR that can 
+ 
+provide deep security insights across the digital landscape. 
 Lack of information protection control 
-Organizations continue to struggle to put together holistic informationprotection controls that have full coverage across data locations andremain effective throughout the information lifecycle and are alignedwith business criticality of data. 
-Identify your critical business data and where it is located.Review information lifecycle processes and enforce data protectionwhile ensuring business continuity. 
+Organizations continue to struggle to put together holistic information 
+ 
+protection controls that have full coverage across data locations and 
+ 
+remain effective throughout the information lifecycle and are aligned 
+ 
+with business criticality of data. 
+Identify your critical business data and where it is located. 
+ 
+Review information lifecycle processes and enforce data protection 
+ 
+while ensuring business continuity. 
 Limited adoption of modern security frameworks 
-Identity is the new security perimeter, enabling access to disparate digitalservices and computing environments. Integrating Zero trust principles,application security and other modern cyber frameworks enablesorganizations to proactively manage risks which otherwise organizationsmight struggle to envision. 
-Zero Trust frameworks enforce concepts of least privilege,explicit verification of all access, and always assume compromise.Organizations should also implement security controls and practicesin DevOps and application lifecycle processes for higher assurance levelsin their business systems. 
+Identity is the new security perimeter, enabling access to disparate digital 
+ 
+services and computing environments. Integrating Zero trust principles, 
+ 
+application security and other modern cyber frameworks enables 
+ 
+organizations to proactively manage risks which otherwise organizations 
+ 
+might struggle to envision. 
+Zero Trust frameworks enforce concepts of least privilege, 
+ 
+explicit verification of all access, and always assume compromise. 
+ 
+Organizations should also implement security controls and practices 
+ 
+in DevOps and application lifecycle processes for higher assurance levels 
+ 
+in their business systems. 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
@@ -10281,52 +12400,236 @@ Teams
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 Basic security posture 
 is a determining factor 
 in advanced solution 
-effectivenessThrough our analysis, we discovered aprevalence of common blind spots inorganizational defenses which enableattackers to gain initial access, establisha toehold, and implement an attack,even in the presence of advancedsecurity solutions. 
-In many cases, the outcome of a cyberattackis determined long before the attack begins.Attackers leverage vulnerable environmentsto gain initial access, conduct surveillance, andwreak havoc via lateral movement and encryptionor exfiltration. Stopping an attacker at an earlystage greatly increases the opportunity to reducethe overall impact.Microsoft studied specific configurations insecurity postures to identify the most commonshortcomings in actual practice in theseenvironments. This enabled us to see the mostcommon vulnerabilities exploited during humanoperated ransomware attacks that allowed thethreat actors to gain access and travel througha network undetected. 
+effectiveness 
+ 
+ 
+ 
+ 
+Through our analysis, we discovered a 
+ 
+prevalence of common blind spots in 
+ 
+organizational defenses which enable 
+ 
+attackers to gain initial access, establish 
+ 
+a toehold, and implement an attack, 
+ 
+even in the presence of advanced 
+ 
+security solutions. 
+In many cases, the outcome of a cyberattack 
+ 
+is determined long before the attack begins. 
+ 
+Attackers leverage vulnerable environments 
+ 
+to gain initial access, conduct surveillance, and 
+ 
+wreak havoc via lateral movement and encryption 
+ 
+or exfiltration. Stopping an attacker at an early 
+ 
+stage greatly increases the opportunity to reduce 
+ 
+the overall impact. 
+ 
+Microsoft studied specific configurations in 
+ 
+security postures to identify the most common 
+ 
+shortcomings in actual practice in these 
+ 
+environments. This enabled us to see the most 
+ 
+common vulnerabilities exploited during human 
+ 
+operated ransomware attacks that allowed the 
+ 
+threat actors to gain access and travel through 
+ 
+a network undetected. 
 Basic security configurations must be turned on 
-An organizations devices which are notonboarded or are outdated (both in relationto vulnerabilities and security agent status)serve as potential entry points and accessestablishment routes for attackers. We foundthat while ensuring organizational devices areonboarded with an updated endpoint detectionand response Note 1 (EDR) and endpoint protectionplatform Note 2 (EPP) solution is an important step,it is not guaranteed to stop ransomware. 
-Advanced solutions such as EDR and EPPare critical in detecting an attacker earlyin the attack flow and enabling automaticremediation and protection. However,since these advanced solutions rely on afundamental ability to detect an attack, theyrequire basic security configurations to beturned on. In fact, we observed a prevalenceof scenarios with advanced solutions in placethat were undermined by the absence of basicsecurity 
+An organization’s devices which are not 
+ 
+onboarded or are outdated (both in relation 
+ 
+to vulnerabilities and security agent status) 
+ 
+serve as potential entry points and access 
+ 
+establishment routes for attackers. We found 
+ 
+that while ensuring organizational devices are 
+ 
+onboarded with an updated endpoint detection 
+ 
+and response Note 1 (EDR) and endpoint protection 
+ 
+platform Note 2 (EPP) solution is an important step, 
+ 
+it is not guaranteed to stop ransomware. 
+Advanced solutions such as EDR and EPP 
+ 
+are critical in detecting an attacker early 
+ 
+in the attack flow and enabling automatic 
+ 
+remediation and protection. However, 
+ 
+since these advanced solutions rely on a 
+ 
+fundamental ability to detect an attack, they 
+ 
+require basic security configurations to be 
+ 
+turned on. In fact, we observed a prevalence 
+ 
+of scenarios with advanced solutions in place 
+ 
+that were undermined by the absence of basic 
+ 
+security 
  configurations. 
 Best practices in security configurations is a 
 greater indicator of resilience than security 
-operations center (SOC) analyst response timeWe observed a 70 percent reduction in thetime it takes a SOC analyst to view and acton a relevant alert over a six\-month periodacross our customer and partner population.This increased awareness is a good sign.However, while security configuration visibilityimproved SOC analyst performance, enablingproduct visibility by onboarding and updatingthe organizations devices was a greater predictorof successful prevention. 
+operations center (SOC) analyst response time 
+ 
+ 
+We observed a 70 percent reduction in the 
+ 
+time it takes a SOC analyst to view and act 
+ 
+on a relevant alert over a six\-month period 
+ 
+across our customer and partner population. 
+ 
+This increased awareness is a good sign. 
+ 
+However, while security configuration visibility 
+ 
+improved SOC analyst performance, enabling 
+ 
+product visibility by onboarding and updating 
+ 
+the organization’s devices was a greater predictor 
+ 
+of successful prevention. 
 Risk posed by unknown devices 
-In contrast to cloud networks, where customersknow which assets are running on whichoperating systems, on\-premises networks cancontain a wide variety of devices such as IoT,desktops, servers, and network devices that arenot monitored or managed by the organization.The average enterprise network has over 3,500connected devices that are not protectedby an EDR agent and might have access toenterprise resources or even to high value assets.Microsoft Defender for Endpoint (MDE) usesnetwork inspection to discover devices andprovide information about device classificationsfor those connected to the network such asdevice name, operating system distribution,and device type.3,500 
+In contrast to cloud networks, where customers 
+ 
+know which assets are running on which 
+ 
+operating systems, on\-premises networks can 
+ 
+contain a wide variety of devices such as IoT, 
+ 
+desktops, servers, and network devices that are 
+ 
+not monitored or managed by the organization. 
+ 
+The average enterprise network has over 3,500 
+ 
+connected devices that are not protected 
+ 
+by an EDR agent and might have access to 
+ 
+enterprise resources or even to high value assets. 
+ 
+Microsoft Defender for Endpoint (MDE) uses 
+ 
+network inspection to discover devices and 
+ 
+provide information about device classifications 
+ 
+for those connected to the network such as 
+ 
+device name, operating system distribution, 
+ 
+and device type. 
+ 
+3,500 
 average number of 
-connected devices in
-an enterprise that are
+connected devices in 
+an enterprise that are 
 not protected by an 
-endpoint detection
+endpoint detection 
 and response agent. 
-For devices not supported by an EDR agent,at least be aware of their existence and actto protect them by assessing vulnerabilities,as well as restricting network access.Actionable insights1 
-Even advanced solutions can beundermined by the absence of basicsecurity 
- configurations.2 
-Invest in best practices in security postureconfigurations to protect against futureattacks. These basic settings produce amassive return on investment in termsof an organizations ability to defendagainst attacks.3 
-Onboard all applicable devices to anEDR 
- solution.4 
-Be sure to update security agents andensure protection from tamperingto enable greater visibility and fullerprotection benefits of products. 
+For devices not supported by an EDR agent, 
+ 
+at least be aware of their existence and act 
+ 
+to protect them by assessing vulnerabilities, 
+ 
+as well as restricting network access. 
+ 
+Actionable insights
+ 
+1 
+Even advanced solutions can be 
+ 
+undermined by the absence of basic 
+ 
+security 
+ configurations.
+ 
+2 
+Invest in best practices in security posture 
+ 
+configurations to protect against future 
+ 
+attacks. These basic settings produce a 
+ 
+massive return on investment in terms 
+ 
+of an organization’s ability to defend 
+ 
+against attacks.
+ 
+3 
+Onboard all applicable devices to an 
+ 
+EDR 
+ solution.
+ 
+4 
+Be sure to update security agents and 
+ 
+ensure protection from tampering 
+ 
+to enable greater visibility and fuller 
+ 
+protection benefits of products. 
 92 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
@@ -10336,21 +12639,54 @@ Microsoft Digital Defense Report 2022
 93 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 Maintaining identity 
 health is fundamental to 
 organizational well\-being 
-Safeguarding identity is more importantthan ever. While password\-based attacksremain the main source of identitycompromise, other types of attacks areemerging. The volume of sophisticatedattacks continues to increase relativeto the previous norm of password sprayand breach replay. 
+Safeguarding identity is more important 
+ 
+than ever. While password\-based attacks 
+ 
+remain the main source of identity 
+ 
+compromise, other types of attacks are 
+ 
+emerging. The volume of sophisticated 
+ 
+attacks continues to increase relative 
+ 
+to the previous norm of password spray 
+ 
+and breach replay. 
 Password\-based attacks are still common, and 
 over 90 percent of accounts compromised via 
 these methods are not protected with strong 
@@ -10364,12 +12700,12 @@ IP addresses.
 Users compromised by attack category 
 Users compromised per month by attack category. Password spray attack volumes were highly volatile, as seen in the 
 spikes in November 2021 and March 2022\. These spikes represent thousands of users and thousands of IP addresses 
-touched. Note \* Other indicates attacks different from password spray and breach replay, including phishing, malware, 
+touched. Note \* “Other” indicates attacks different from password spray and breach replay, including phishing, malware, 
 man\-in\-the\-middle, on\-premises token issuer compromise, and others. Source: Azure AD Identity Protection. 
 4,500 
-In the time it takes
+In the time it takes 
 to read this statement, 
-weve defended against 
+we’ve defended against 
 4,500 password attacks. 
 1\.8 
 1\.6 
@@ -10412,11 +12748,11 @@ Password spray
 Other\* 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
@@ -10454,7 +12790,9 @@ Sep 2021
 Nov 2021
 Jan 2022
 Mar 2022
-May 20220 
+May 2022 
+ 
+0 
 10,000 
 20,000 
 30,000 
@@ -10462,39 +12800,118 @@ May 20220
 50,000 
 60,000 
 70,000 
-Microsoft Digital Defense Report 2022Report 
+Microsoft Digital Defense Report 2022 
+ 
+Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber 
-ResilienceStrong authentication adoptionOn a positive note, we are seeing steadygrowth in adoption of strong authenticationamongst the Azure Active Directory (Azure 
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
+Resilience
+ 
+Strong authentication adoption 
+ 
+ 
+On a positive note, we are seeing steady 
+ 
+growth in adoption of strong authentication 
+ 
+amongst the Azure Active Directory (Azure 
 AD) enterprise customer base. For Azure AD, 
-strong authentication monthly active users(MAU) grew from 19 percent to 26 percent in 
-the last year, while strong authentication MAUfor administrative accounts grew from 30 toapproximately 33 percent.This trend is positive, but significant growth is 
-still needed to reach majority coverage of strongauthentication; customers not already usingstrong authentication in their environmentsshould start the planning and deploymentof strong authentication to protect theirusers. Note 3 While designing strong authenticationdeployment, passwordless authenticationshould be considered as it offers the mostsecure usable experience, eliminating the riskof 
+strong authentication monthly active users 
+ 
+(MAU) grew from 19 percent to 26 percent in 
+the last year, while strong authentication MAU 
+ 
+for administrative accounts grew from 30 to 
+ 
+approximately 33 percent. 
+ 
+ 
+This trend is positive, but significant growth is 
+still needed to reach majority coverage of strong 
+ 
+authentication; customers not already using 
+ 
+strong authentication in their environments 
+ 
+should start the planning and deployment 
+ 
+of strong authentication to protect their 
+ 
+users. Note 3 While designing strong authentication 
+ 
+deployment, passwordless authentication 
+ 
+should be considered as it offers the most 
+ 
+secure usable experience, eliminating the risk 
+ 
+of 
  password attacks. 
 Use of strong authentication 
-(September 2019May 2022\) 
-While strong authentication usage has doubledsince 2019, just 26 percent of users and 33 percent ofadministrators are using strong authentication. Source: 
+(September 2019–May 2022\) 
+While strong authentication usage has doubled 
+ 
+since 2019, just 26 percent of users and 33 percent of 
+ 
+administrators are using strong authentication. Source: 
 Azure Active Directory. 
 Steady rise in token replay attacks 
-The share of other forms of attack increasedin 2022\. We saw a rise in targeted attacks that 
+The share of other forms of attack increased 
+ 
+in 2022\. We saw a rise in targeted attacks that 
 specifically avoid password\-based authentication 
 to reduce the chance of detection. These attacks 
 leverage browser single sign\-on (SSO) cookies or 
-refresh tokens obtained via malware, phishing,and other methods. In some cases, attackers 
-choose infrastructure in locations near thegeographic location of the targeted user tofurther reduce the chances of detection. We have 
-seen a steady rise in token replay attacks,reaching over 40,000 detections per month inAzure AD Identity Protection. Token replay is the 
-use of tokens that were issued to a legitimateuser by an attacker that has possession of saidtokens. Tokens are commonly obtained via 
+refresh tokens obtained via malware, phishing, 
+ 
+and other methods. In some cases, attackers 
+choose infrastructure in locations near the 
+ 
+geographic location of the targeted user to 
+ 
+further reduce the chances of detection. We have 
+seen a steady rise in token replay attacks, 
+ 
+reaching over 40,000 detections per month in 
+ 
+Azure AD Identity Protection. Token replay is the 
+use of tokens that were issued to a legitimate 
+ 
+user by an attacker that has possession of said 
+ 
+tokens. Tokens are commonly obtained via 
 malware, for example by exfiltrating the cookies 
-from the users browser or through advancedphishing methods.Volume of detected token replay attacks 
+from the user’s browser or through advanced 
+ 
+phishing methods. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Volume of detected token replay attacks 
 May 2021
 Jun 2021
 Jul 2021
@@ -10513,14 +12930,17 @@ Detected token replay attacks per month. Source: Azure
 AD Identity Protection, unique sessions flagged by the 
 anomalous 
  token 
- detection.94 
+ detection. 
+ 
+ 
+94 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
@@ -10554,62 +12974,196 @@ May 2022
 Jun 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
-Cyber
+Cyber 
 Resilience
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 95 
 Extracting tokens 
-More than malware, attackers need credentialsto achieve their goals. In fact, 100 percent of allhuman operated ransomware attacks includestolen credentials. Many sophisticated intrusionsinclude credentials purchased from the dark web,initially stolen from unsophisticated and broadlydistributed credential theft malware. This class ofmalware has evolved to steal tokens, includingsession information and MFA claims. This meansthat infections on home systems, where userslog in to corporate assets, can lead to seriousincidents on corporate networks. 
-Attackers can also extract tokens from victimsdevices through man\-in\-the\-middle attacks,in which the victim clicks a malicious link in aphishing email or instant message and is directedto a website that looks like the legitimate sign\-inpage of the identity provider. In reality, it is a webservice spun up by the attacker that relays andintercepts all traffic between the user and theidentity provider. The attacker is able to interceptthe username and password and also to relayMFA challenges; resulting tokens issued by theidentity provider and intercepted by the attackermight contain MFA claims that can be used bythe attacker to satisfy MFA requirements. 
-Microsoft Defender for Cloud Apps has detectedan average of 895 such attacks per month sincethe beginning of 2022\. This form of attack canbe prevented by using phish\-resistant factors ofMFA, such as Certificate Based Authentication, 
-Windows Hello for Business, or FIDO2security keys.Password\-based attacks are theprimary method by which accountsare compromised. 
+More than malware, attackers need credentials 
+ 
+to achieve their goals. In fact, 100 percent of all 
+ 
+human operated ransomware attacks include 
+ 
+stolen credentials. Many sophisticated intrusions 
+ 
+include credentials purchased from the dark web, 
+ 
+initially stolen from unsophisticated and broadly 
+ 
+distributed credential theft malware. This class of 
+ 
+malware has evolved to steal tokens, including 
+ 
+session information and MFA claims. This means 
+ 
+that infections on home systems, where users 
+ 
+log in to corporate assets, can lead to serious 
+ 
+incidents on corporate networks. 
+Attackers can also extract tokens from victims’ 
+ 
+devices through man\-in\-the\-middle attacks, 
+ 
+in which the victim clicks a malicious link in a 
+ 
+phishing email or instant message and is directed 
+ 
+to a website that looks like the legitimate sign\-in 
+ 
+page of the identity provider. In reality, it is a web 
+ 
+service spun up by the attacker that relays and 
+ 
+intercepts all traffic between the user and the 
+ 
+identity provider. The attacker is able to intercept 
+ 
+the username and password and also to relay 
+ 
+MFA challenges; resulting tokens issued by the 
+ 
+identity provider and intercepted by the attacker 
+ 
+might contain MFA claims that can be used by 
+ 
+the attacker to satisfy MFA requirements. 
+Microsoft Defender for Cloud Apps has detected 
+ 
+an average of 895 such attacks per month since 
+ 
+the beginning of 2022\. This form of attack can 
+ 
+be prevented by using phish\-resistant factors of 
+ 
+MFA, such as Certificate Based Authentication, 
+Windows Hello for Business, or FIDO2 
+ 
+security keys. 
+ 
+Password\-based attacks are the 
+ 
+primary method by which accounts 
+ 
+are compromised. 
 MFA fatigue 
-Using the concept of MFA fatigue, attackersgenerate multiple requests for MFA to thevictims device, hoping that the victim will acceptthe request either inadvertently or as a result offatigue. This attack can be prevented by usingmodern authenticator apps such as MicrosoftAuthenticator combined with features suchas number matching Note 4and enabling additionalcontext. Note 5 Azure AD Identity Protection estimatedthere are 30,000 MFA fatigue attacks per month. 
-The share of sophisticated attackscontinues to rise, underscoring theneed for phish\-resistant factors ofmultifactor authentication. 
-Estimated instances of MFA fatigue
+Using the concept of “MFA fatigue,” attackers 
+ 
+generate multiple requests for MFA to the 
+ 
+victim’s device, hoping that the victim will accept 
+ 
+the request either inadvertently or as a result of 
+ 
+fatigue. This attack can be prevented by using 
+ 
+modern authenticator apps such as Microsoft 
+ 
+Authenticator combined with features such 
+ 
+as number matching Note 4 and enabling additional 
+ 
+context. Note 5 Azure AD Identity Protection estimated 
+ 
+there are 30,000 MFA fatigue attacks per month. 
+The share of sophisticated attacks 
+ 
+continues to rise, underscoring the 
+ 
+need for phish\-resistant factors of 
+ 
+multifactor authentication. 
+Estimated instances of MFA fatigue 
 attacks 
 Maintaining identity 
 health is fundamental to 
 organizational well\-being 
 Continued 
 Source: Azure AD Identity Protection. 
-Detected instances of phishing followed byman\-in\-the\-middle attacks 
+Detected instances of phishing followed by 
+ 
+man\-in\-the\-middle attacks 
 Jan 2022
 Feb 2022
 Mar 2022
 Apr 2022
 May 2022 
 Source: Microsoft Defender for Cloud Apps. 
-Actionable insights1 
-Ensure all the accounts across yourorganization are protected by strongauthentication measures.2 
-Passwordless authentication offers themost secure and user 
-\-friendly experience,eliminating the risk of password attacks.3 
-Disable legacy authentication acrossyour entire organization.4 
-Protect high value and administrativeaccounts with phish 
-\-resistant forms ofstrong authentication.5 
+Actionable insights
+ 
+1 
+Ensure all the accounts across your 
+ 
+organization are protected by strong 
+ 
+authentication measures.
+ 
+2 
+Passwordless authentication offers the 
+ 
+most secure and user 
+\-friendly experience, 
+ 
+eliminating the risk of password attacks.
+ 
+3 
+Disable legacy authentication across 
+ 
+your entire organization.
+ 
+4 
+Protect high value and administrative 
+ 
+accounts with phish 
+\-resistant forms of 
+ 
+strong authentication.
+ 
+5 
 Modernize from an on 
-\-premises identityprovider to a cloud identity provider andconnect all your apps to the cloud 
-\-basedidentity provider for consistent userexperience and security. 
+\-premises identity 
+ 
+provider to a cloud identity provider and 
+ 
+connect all your apps to the cloud 
+\-based 
+ 
+identity provider for consistent user 
+ 
+experience and security. 
 Links to further information 
 This World Password Day consider ditching 
 passwords altogether \| Microsoft Security 
-\* \* \* \* Report 
+\-
+\-
+\-
+\-
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
@@ -10618,56 +13172,193 @@ Teams
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 Operating system 
 default security settings 
-With the continuously evolving securitythreat landscape, we see an increasing needfor computer security configured by default 
-to improve cyber resiliency. While operatingsystem security is more urgent, complex,and business critical than ever before, it canbe challenging to get right and manage.In the past, computer and device securityincluded built\-in security features that thecustomer or IT professional was expectedto configure to their own desired level. 
-This approach is no longer adequate, asattackers are using more advanced tools inautomation, cloud infrastructure, and remoteaccess technologies to achieve their aims. It has 
-become critical that all layers of security, fromthe chip to the cloud, are configured by default. 
+With the continuously evolving security 
+ 
+threat landscape, we see an increasing need 
+ 
+for computer security configured by default 
+to improve cyber resiliency. While operating 
+ 
+system security is more urgent, complex, 
+ 
+and business critical than ever before, it can 
+ 
+be challenging to get right and manage. 
+ 
+In the past, computer and device security 
+ 
+included built\-in security features that the 
+ 
+customer or IT professional was expected 
+ 
+to configure to their own desired level. 
+This approach is no longer adequate, as 
+ 
+attackers are using more advanced tools in 
+ 
+automation, cloud infrastructure, and remote 
+ 
+access technologies to achieve their aims. It has 
+become critical that all layers of security, from 
+ 
+the chip to the cloud, are configured by default. 
 Microsoft has evolved to configure Windows 
 operating system security by default. Note 6 
-Customers who embrace defensein depthincluding a layered security posture, newsecurity features, regular and consistent patchingand updates, as well as security training andawareness to report phishing and other scams can expect less malware.To simplify defense in depth, Windows 11has tightly integrated hardware and softwareprotections turned on by default, includingmemory integrity, Secure Boot, and a TrustedPlatform Module 2\.0\. Windows 10 users oncapable hardware can also turn these featureson in the Windows Settings app or in theBIOS menu.Older devices in general often do not haveas strong an alignment between hardwaresecurity and software security techniques. 
-For devices where security is not enabled bydefault, manually configure them in settings 
+Customers who embrace defense—in depth 
+ 
+including a layered security posture, new 
+ 
+security features, regular and consistent patching 
+ 
+and updates, as well as security training and 
+ 
+awareness to report phishing and other scams 
+ 
+– can expect less malware. 
+ 
+To simplify defense in depth, Windows 11 
+ 
+has tightly integrated hardware and software 
+ 
+protections turned on by default, including 
+ 
+memory integrity, Secure Boot, and a Trusted 
+ 
+Platform Module 2\.0\. Windows 10 users on 
+ 
+capable hardware can also turn these features 
+ 
+on in the Windows Settings app or in the 
+ 
+BIOS menu. 
+ 
+Older devices in general often do not have 
+ 
+as strong an alignment between hardware 
+ 
+security and software security techniques. 
+For devices where security is not enabled by 
+ 
+default, manually configure them in settings 
 where 
- possible. Note 7For devices where security isnot enabled by default, Microsoftrecommends manually configuring 
-them in settings where possible.Be proactive about applying 
-continuous operating systemupdates and security patches that 
+ possible. Note 7 
+ 
+ 
+ 
+ 
+ 
+ 
+For devices where security is 
+ 
+not enabled by default, Microsoft 
+ 
+recommends manually configuring 
+them in settings where possible. 
+ 
+Be proactive about applying 
+continuous operating system 
+ 
+updates and security patches that 
 help provide protection throughout 
 the hardware and software lifecycle. 
-Actionable insights1 
-Use a passwordless solution whichbinds sign 
-\-on credentials in the TrustedPlatform Module, specifically look fora passwordless solution that meets theFaster Identity Online (FIDO) Alliance
+Actionable insights
+ 
+1 
+Use a passwordless solution which 
+ 
+binds sign 
+\-on credentials in the Trusted 
+ 
+Platform Module, specifically look for 
+ 
+a passwordless solution that meets the 
+ 
+Faster Identity Online (FIDO) Alliance 
 industry 
  standard.
- Note 82 
-Perform timely clean up of all unused andstale executables sitting on organizationsdevices.3 
+ Note 8
+ 
+2 
+Perform timely clean up of all unused and 
+ 
+stale executables sitting on organizations’ 
+ 
+devices.
+ 
+3 
 Protect advanced firmware attacks by 
-enabling memory integrity, Secure Boot,and Trusted Platform Module 2\.0, if notenabled by default, which hardens bootusing capabilities built into modern CPUs.4 
-Turn on data encryption andcredential protection.5 
-Enable application and browsercontrols for enhanced protection fromuntrusted applications and other built\-inexploit 
- protections.6 
-Enable memory access protection to helpprotect against casual physical attackssuch as someone plugging a maliciousdevice into externally accessible ports. 
+enabling memory integrity, Secure Boot, 
+ 
+and Trusted Platform Module 2\.0, if not 
+ 
+enabled by default, which hardens boot 
+ 
+using capabilities built into modern CPUs.
+ 
+ 
+4 
+Turn on data encryption and 
+ 
+credential protection.
+ 
+5 
+Enable application and browser 
+ 
+controls for enhanced protection from 
+ 
+untrusted applications and other built\-in 
+ 
+exploit 
+ protections.
+ 
+6 
+Enable memory access protection to help 
+ 
+protect against casual physical attacks 
+ 
+such as someone plugging a malicious 
+ 
+device into externally accessible ports. 
 Links to further information 
 Windows Security Book \| Commercial 
-New security features for Windows 11will help protect hybrid work \| MicrosoftSecurity Blog96 
-\* Report 
+New security features for Windows 11 
+ 
+will help protect hybrid work \| Microsoft 
+ 
+Security Blog 
+ 
+ 
+ 
+96 
+\-
+Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
@@ -10714,60 +13405,222 @@ at risk after 9 months
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
-Software supplychain centralityAttacks on third\-party apps, plugins,and extensions can erode customer trustin suppliers that play a central role in thesupply ecosystem. Using network theoryto look at software centrality helpsilluminate the criticality of patching,especially for central apps. 
-The Windows App Network of 18 millionapplication executables is installed and usedacross five million organizations, providing a 
+Software supply 
+ 
+chain centrality 
+ 
+Attacks on third\-party apps, plugins, 
+ 
+and extensions can erode customer trust 
+ 
+in suppliers that play a central role in the 
+ 
+supply ecosystem. Using network theory 
+ 
+to look at software centrality helps 
+ 
+illuminate the criticality of patching, 
+ 
+especially for central apps. 
+The Windows App Network of 18 million 
+ 
+application executables is installed and used 
+ 
+across five million organizations, providing a 
 top\-level view of our software ecosystem. Of 
-the 100,000 most used applications, 97 percentare produced by third\-party organizations whoseupdates and security patches are maintained bythem. This illustrates two important traits of our 
+the 100,000 most used applications, 97 percent 
+ 
+are produced by third\-party organizations whose 
+ 
+updates and security patches are maintained by 
+ 
+them. This illustrates two important traits of our 
 commercial 
  application 
- ecosystem.First, there is centrality in the Windows commercialapplication ecosystem. Only the top 100,000 (of the 
+ ecosystem. 
+ 
+ 
+ 
+ 
+First, there is centrality in the Windows commercial 
+ 
+application ecosystem. Only the top 100,000 (of the 
 18 million) applications are used on 1,000 or more 
 devices. In other words, just over one half of 1 
 percent of these applications have this kind of broad\-
-reaching effect among the device ecosystem.Second, there is diversity in the manageabilityof those applications, where the top 10,000application suppliers manage the updatesand security patches of these most usedcommercial applications. This demonstrates 
-the interdependence a company has on adiverse set of software suppliers security,compliance, and management controls. 
+reaching effect among the device ecosystem. 
+ 
+ 
+ 
+ 
+Second, there is diversity in the manageability 
+ 
+of those applications, where the top 10,000 
+ 
+application suppliers manage the updates 
+ 
+and security patches of these most used 
+ 
+commercial applications. This demonstrates 
+the interdependence a company has on a 
+ 
+diverse set of software suppliers’ security, 
+ 
+compliance, and management controls. 
 Commercial penetration 
-of most\-used applicationsThe top applications are used by millions of organizationsand tens of millions of devices. Because they are nearubiquitous, adversaries are on constant lookout toexploit vulnerabilities in these top applications, whichcan impact millions of devices in the user base. 
-We observe millions of commercial devices stillusing vulnerable application versions manymonths after patch release or even years beyondthe end of product support. For example, there 
-are more than one million active Windowscommercial devices running version of a PDFreader that has not been supported since 2017\.Old versions of applications whichare unsupported remain in activeuse on millions of commercial devices. 
-As a result, organizations are at riskof carrying vulnerabilities that willnot be patched.For in\-support application versions, we see aplateauing of the speed of critical patch adoption,which is the opposite of the trend that will driveresiliency. Instead, the curve should show an 
-exponential upwards adoption of patches monthover month, to achieve the resiliency needed.Rate of critical patch deployment 
-After examining a critical vulnerability that affected 134versions of a set of browsers, we found that 78 percent,or millions of devices, still used one of the affectedversions nine months after the patch was released. 
-We used the InterpretML Note 9toolkit to identifycharacteristics correlated with organizations thatare more likely to have devices with older appversions. The most important of these predictors 
-included: low hours of engagement on devices;geographic areas such as Asia Pacific and Latin 
-America; and industries such as automotive,chemicals, telecommunications, transportand logistics, health payors (claim handlers), 
+of most\-used applications 
+ 
+The top applications are used by millions of organizations 
+ 
+and tens of millions of devices. Because they are near 
+ 
+ubiquitous, adversaries are on constant lookout to 
+ 
+exploit vulnerabilities in these top applications, which 
+ 
+can impact millions of devices in the user base. 
+We observe millions of commercial devices still 
+ 
+using vulnerable application versions many 
+ 
+months after patch release or even years beyond 
+ 
+the end of product support. For example, there 
+are more than one million active Windows 
+ 
+commercial devices running version of a PDF 
+ 
+reader that has not been supported since 2017\. 
+ 
+ 
+Old versions of applications which 
+ 
+are unsupported remain in active 
+ 
+use on millions of commercial devices. 
+As a result, organizations are at risk 
+ 
+of carrying vulnerabilities that will 
+ 
+not be patched. 
+ 
+ 
+For in\-support application versions, we see a 
+ 
+plateauing of the speed of critical patch adoption, 
+ 
+which is the opposite of the trend that will drive 
+ 
+resiliency. Instead, the curve should show an 
+exponential upwards adoption of patches month 
+ 
+over month, to achieve the resiliency needed. 
+ 
+Rate of critical patch deployment 
+After examining a critical vulnerability that affected 134 
+ 
+versions of a set of browsers, we found that 78 percent, 
+ 
+or millions of devices, still used one of the affected 
+ 
+versions nine months after the patch was released. 
+We used the InterpretML Note 9 toolkit to identify 
+ 
+characteristics correlated with organizations that 
+ 
+are more likely to have devices with older app 
+ 
+versions. The most important of these predictors 
+included: low hours of engagement on devices; 
+ 
+geographic areas such as Asia Pacific and Latin 
+America; and industries such as automotive, 
+ 
+chemicals, telecommunications, transport 
+ 
+and logistics, health payors (claim handlers), 
 and 
- insurance.Software resiliency maintenanceshould include regular disabling oruninstalling of unused applications. 
-The security and compliance of anorganization depends on its ownefforts and on the efforts of itssoftware suppliers. 
-Actionable insights1 
-Perform timely updates to all applicationsand endpoints through your organization.2 
-Perform timely cleanup of all unusedand stale executables sitting onorganizations 
+ insurance. 
+ 
+ 
+ 
+Software resiliency maintenance 
+ 
+should include regular disabling or 
+ 
+uninstalling of unused applications. 
+The security and compliance of an 
+ 
+organization depends on its own 
+ 
+efforts and on the efforts of its 
+ 
+software suppliers. 
+Actionable insights
+ 
+1 
+Perform timely updates to all applications 
+ 
+and endpoints through your organization.
+ 
+2 
+Perform timely cleanup of all unused 
+ 
+and stale executables sitting on 
+ 
+organizations’ 
  devices. 
 Links to further information 
-Microsoft Intune documentation \|Microsoft Docs 
+Microsoft Intune documentation \| 
+ 
+Microsoft Docs 
 Manage apps \| Microsoft Docs 
-Microsoft Defender for Endpoint \|Microsoft Security 
-OSS Secure Supply Chain Framework \|Microsoft Security Engineering 
-Microsoft Open Source Software SecureSupply Chain Framework \| GitHub 
+Microsoft Defender for Endpoint \| 
+ 
+Microsoft Security 
+OSS Secure Supply Chain Framework \| 
+ 
+Microsoft Security Engineering 
+Microsoft Open Source Software Secure 
+ 
+Supply Chain Framework \| GitHub 
 97 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
@@ -10798,35 +13651,103 @@ May 2022
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber 
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
-12 min 
-35 min 
-610 min 
-1120 min 
-2130 mins 
-3140 min 
-4150 min 
-5160 min 
-12 hours 
-23 hours 
-34 hours 
-410 hours 
-\>10 hours98 
-Building resilienceto emerging DDoS, 
-web application, andnetwork attacksAccelerated digital transformation hasbrought an end to the traditional networkand security perimeter model. Moving tothe cloud means enterprises must adoptcloud\-native network security to protectdigital assets. 
+1–2 min 
+3–5 min 
+6–10 min 
+11–20 min 
+21–30 mins 
+31–40 min 
+41–50 min 
+51–60 min 
+1–2 hours 
+2–3 hours 
+3–4 hours 
+4–10 hours 
+\>10 hours 
+ 
+98 
+Building resilience 
+ 
+to emerging DDoS, 
+web application, and 
+ 
+network attacks 
+ 
+ 
+Accelerated digital transformation has 
+ 
+brought an end to the traditional network 
+ 
+and security perimeter model. Moving to 
+ 
+the cloud means enterprises must adopt 
+ 
+cloud\-native network security to protect 
+ 
+digital assets. 
 Attack complexity, frequency, and 
-volume continue to grow and areno longer limited to holiday seasons,indicating a shift toward year\-roundattacks. This highlights the importance 
-of ongoing protection beyondtraditional peak traffic seasons. 
+volume continue to grow and are 
+ 
+no longer limited to holiday seasons, 
+ 
+indicating a shift toward year\-round 
+ 
+attacks. This highlights the importance 
+of ongoing protection beyond 
+ 
+traditional peak traffic seasons. 
 Distributed denial of 
 service (DDoS) attacks 
 Over the past year, the world experienced DDoS 
@@ -10840,7 +13761,7 @@ increase from the prior year. Previously, the peak
 number of attacks normally occurred during the 
 end\-of\-year holiday season. This year, however, 
 the most recorded in a day was on August 10, 
-1\. This might indicate a shift toward year\-
+2021\. This might indicate a shift toward year\-
 round attacks and highlights the importance 
 of ongoing protection beyond traditional peak 
 traffic seasons. 
@@ -10849,34 +13770,34 @@ volumetric DDoS attack with a throughput of 3\.4
 terabits per second (Tbps) from approximately 
 10,000 sources spanning multiple countries. 
 Similar high volumetric attacks above 2\+Tbps 
-were mitigated in 2022 highlighting that its not 
-just the complexity, frequency of attacks thats 
+were mitigated in 2022 highlighting that it’s not 
+just the complexity, frequency of attacks that’s 
 increasing, but also the volume (bandwidth) 
 of attack. 
 Attack duration 
 Most attacks observed over this past year were 
 short\-lived. Approximately 28 percent of the 
 attacks lasted less than 10 minutes, 26 percent 
-lasted 1030 minutes and 14 percent lasted 
-3160 minutes. Thirty\-two percent of the attacks 
+lasted 10–30 minutes and 14 percent lasted 
+31–60 minutes. Thirty\-two percent of the attacks 
 were more than an hour in duration. 
 Number of DDoS attacks and duration distribution 
-(March 2021May 2022\) 
+(March 2021–May 2022\) 
 Most attacks in the last year were short\-lived. Approximately 28 percent of the attacks lasted less than 10 minutes.
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
 Contributing 
 Teams
 Building resilience 
-to emerging DDoS,
+to emerging DDoS, 
 web application, and 
 network attacks 
 Continued 
@@ -10890,26 +13811,97 @@ Remote code execution
 Microsoft Digital Defense Report 2022 
 Report 
 Introduction
-Nation State
+Nation State 
 Threats
 Contributing 
 Teams
-The State of
+The State of 
 Cybercrime
 Cyber Influence 
 Operations
-Devices and
-InfrastructureCyber
+Devices and 
+Infrastructure
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 DDoS attack vectors 
-In the past year, the attack vectors commonlyemployed were User Datagram Protocol (UDP) 
+In the past year, the attack vectors commonly 
+ 
+employed were User Datagram Protocol (UDP) 
 reflection on port 80 using simple service 
 discovery protocol (SSDP), connectionless 
 lightweight directory access protocol (CLDAP), 
 domain name system (DNS), and network time 
 protocol (NTP) comprising one single peak. 
-We also saw an increase in application layerDDoS attacks targeting websites, with16\.3 million peak RPS (requests per second) 
-and 9\.89 Tbps peak traffic.In 2022, Microsoft mitigated nearly2,000 DDoS attacks daily and thwartedthe largest ever DDoS attack reportedin history. 
+We also saw an increase in application layer 
+ 
+DDoS attacks targeting websites, with 
+ 
+16\.3 million peak RPS (requests per second) 
+and 9\.89 Tbps peak traffic. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+In 2022, Microsoft mitigated nearly 
+ 
+2,000 DDoS attacks daily and thwarted 
+ 
+the largest ever DDoS attack reported 
+ 
+in history. 
 DDoS attack vectors 
 UDP Spoof flood attacks 55% 
 Other 20% 
@@ -10936,7 +13928,7 @@ Microsoft customers are in the United States.
 We also saw a sharp uptick in attacks against 
 India, from just 2 percent of all attacks in the 
 second half of 2021 to 23 percent in first half of 
-1\. East Asia, Hong Kong in particular, remains 
+2022\. East Asia, Hong Kong in particular, remains 
 a popular target at 8 percent. For Europe, we saw 
 concentrations of attacks against Amsterdam, 
 Vienna, Paris, and Frankfurt regions. 
@@ -10953,7 +13945,7 @@ Australia 1%
 United Arab Emirates 1% 
 India 23% 
 We attribute the high volume of attacks in Asia to the 
-regions huge gaming footprint, especially in China, 
+region’s huge gaming footprint, especially in China, 
 Japan, South Korea, and India. This footprint will continue 
 to expand as increasing smartphone penetration drives 
 the popularity of mobile gaming, suggesting this 
@@ -10967,26 +13959,68 @@ assets. Microsoft observed upwards of 300 billion
 WAF rules triggered per month via Azure WAFs. 
 Distribution most prevalent attack types 
 Header injection attacks 1% 
-Azure WAF detects billions of Open Web ApplicationSecurity Project (OWASP) Top 1010 attacks daily.According to our signals, attackers most attemptedSQL injection attacks followed by local file injection 
+Azure WAF detects billions of Open Web Application 
+ 
+Security Project (OWASP) Top 1010 attacks daily. 
+ 
+According to our signals, attackers most attempted 
+ 
+SQL injection attacks followed by local file injection 
 and remote file injection attacks. This is in line with 
-the OWASP Top Ten list showing injection attacksas the third most common type of web attacks.There has also been an increase in bot attacksagainst Azure web applications, with an averageof 1\.7 billion bot requests per month and 4\.6 
-percent of that traffic consisting of bad bots.99 
+the OWASP Top Ten list showing injection attacks 
+ 
+as the third most common type of web attacks. 
+ 
+ 
+ 
+There has also been an increase in bot attacks 
+ 
+against Azure web applications, with an average 
+ 
+of 1\.7 billion bot requests per month and 4\.6 
+percent of that traffic consisting of bad bots. 
+ 
+ 
+99 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
 Contributing 
-TeamsCyber 
+Teams
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 Report 
-The State of
-Nation State
+The State of 
+Nation State 
 Devices and 
 Cyber Influence 
 Cyber 
@@ -11000,7 +14034,7 @@ Infrastructure
 Operations 
 Teams 
 Building resilience 
-to emerging DDoS,
+to emerging DDoS, 
 web application, and 
 network attacks 
 Continued 
@@ -11015,53 +14049,119 @@ We observed a significant increase in network layer exploits, particularly
 malware, in 2022\. Azure Firewall intrusion detection and prevention system 
 (IDPS) blocked more than 150 million connections in the month of June alone. 
 IDPS Deny traffic reason 
-Lateral attacksremote 
+Lateral attacks remote 
 management 2% 
-JA3malicious 
-encrypted traffic HTTPS 38%
+JA3—malicious 
+encrypted traffic HTTPS 38% 
 Attempted user 
-User agent HTTP26% 
+User agent HTTP 26% 
 privilege gain RPC 29% 
 Malicious DNS 
-traffic DNS5% 
+traffic DNS 5% 
 IDPS traffic alert reasons 
 Malicious DNS 
-trafficNon\-DNS traffic 
-on DNS port DNS4% 
+traffic—Non\-DNS traffic 
+on DNS port DNS 4% 
 Remote execution over 
-SMB SMBSMB276% 
-JA3malicious encrypted 
-trafficHTTPS 20%
+SMB SMB/SMB2 76% 
+JA3—malicious encrypted 
+traffic HTTPS 20% 
 Analysis of IDPS alert and deny traffic shows the following approaches used by 
 attackers. In the Deny traffic, we are seeing attackers using SSL to hide their activities 
 and remote execution attacks are becoming more common. In the Alert traffic, 
-we are seeing SMBSMB2 protocols used to perform remote execution attacks. 
-Actionable insights1 
-Inspect all traffic between systems withina data center or cloud service, and trafficseeking to access them.2 
-Develop a robust all\-year\-round networksecurity response strategy.3 
-Use cloud native security services toimplement a robust zero trust networksecurity 
+we are seeing SMB/SMB2 protocols used to perform remote execution attacks. 
+Actionable insights
+ 
+1 
+Inspect all traffic between systems within 
+ 
+a data center or cloud service, and traffic 
+ 
+seeking to access them.
+ 
+2 
+Develop a robust all\-year\-round network 
+ 
+security response strategy.
+ 
+3 
+Use cloud native security services to 
+ 
+implement a robust zero trust network 
+ 
+security 
  posture. 
 Links to further information 
-Improve your security defenses forransomware attacks with Azure Firewall \|Azure Blog and Updates \| Microsoft Azure 
-Anatomy of a DDoS amplification attack \|Microsoft Security Blog 
-Intelligent application protection fromedge to cloud with Azure Web ApplicationFirewall \| Azure Blog and Updates \|Microsoft Azure 
+Improve your security defenses for 
+ 
+ransomware attacks with Azure Firewall \| 
+ 
+Azure Blog and Updates \| Microsoft Azure 
+Anatomy of a DDoS amplification attack \| 
+ 
+Microsoft Security Blog 
+Intelligent application protection from 
+ 
+edge to cloud with Azure Web Application 
+ 
+Firewall \| Azure Blog and Updates \| 
+ 
+Microsoft Azure 
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
-The State of
+The State of 
 Cybercrime
 Report 
 Introduction
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+—
 Cyber 
 Resilience
 Report 
-The State of
-Nation State
+The State of 
+Nation State 
 Devices and 
 Cyber Influence 
 Cyber 
@@ -11086,15 +14186,112 @@ and recovery capabilities and integrate
 these with specialized regulatory response 
 processes to address distinct types 
 of breaches. 
-Data breaches are not a matter of if, but when.The IBM and Ponemon Institutes Cost of a DataBreach, 2021 study reports a global average databreach cost of $4\.24 million USD (up 10 percentfrom the previous year) and $9\.05 million USD inthe United States. Compliance failures were foundto be the top cost\-amplifying factor. Conversely,breach cost reductions were associated with bestpractices such as incident response (IR) planning,Zero Trust deployment maturity, security AI andautomation, and use of encryption. 
-Data breaches are inevitable.Organizations that take a balancedresilience approach will reducethe frequency, impact, and costof 
- breaches.Data governance, security, compliance, 
+Data breaches are not a matter of if, but when. 
+ 
+The IBM and Ponemon Institute’s “Cost of a Data 
+ 
+Breach, 2021” study reports a global average data 
+ 
+breach cost of $4\.24 million USD (up 10 percent 
+ 
+from the previous year) and $9\.05 million USD in 
+ 
+the United States. Compliance failures were found 
+ 
+to be the top cost\-amplifying factor. Conversely, 
+ 
+breach cost reductions were associated with best 
+ 
+practices such as incident response (IR) planning, 
+ 
+Zero Trust deployment maturity, security AI and 
+ 
+automation, and use of encryption. 
+Data breaches are inevitable. 
+ 
+Organizations that take a balanced 
+ 
+resilience approach will reduce 
+ 
+the frequency, impact, and cost 
+ 
+of 
+ breaches. 
+ 
+ 
+Data governance, security, compliance, 
 and privacy are interdependent 
-We have seen data gain prominence in recentyears as a crucial value creation engine fororganizations. At the same time, the riseof privacy regulations requiring both datagovernance and security have blurred the linesbetween risk roles. While newer C\-level rolessuch as the Chief Data Officer (CDO) or the ChiefPrivacy Officers (CPO) have a vested interest insecurity and compliance, the implementationand operationalization of data protection oftenrelies on teams led by the Chief InformationOfficers (CIO) andor Chief Information SecurityOfficer (CISO). It is not a one\-way street, asdata governance initiatives led by CDOs alsohave security benefits. As a result of thisinterconnectedness, IT, data governance, security,compliance, and privacy teams need to workever more closely to achieve efficiency andmanage risk. 
+We have seen data gain prominence in recent 
+ 
+years as a crucial value creation engine for 
+ 
+organizations. At the same time, the rise 
+ 
+of privacy regulations requiring both data 
+ 
+governance and security have blurred the lines 
+ 
+between risk roles. While newer C\-level roles 
+ 
+such as the Chief Data Officer (CDO) or the Chief 
+ 
+Privacy Officers (CPO) have a vested interest in 
+ 
+security and compliance, the implementation 
+ 
+and operationalization of data protection often 
+ 
+relies on teams led by the Chief Information 
+ 
+Officers (CIO) and/or Chief Information Security 
+ 
+Officer (CISO). It is not a one\-way street, as 
+ 
+data governance initiatives led by CDOs also 
+ 
+have security benefits. As a result of this 
+ 
+interconnectedness, IT, data governance, security, 
+ 
+compliance, and privacy teams need to work 
+ 
+ever more closely to achieve efficiency and 
+ 
+manage risk. 
 Unified data risk management platforms 
-for the entire organizations data estate 
+for the entire organization’s data estate 
 is the future 
-Aligning IT, data governance, security,compliance, and privacy management processis difficult in an environment of bespokeapplications for each discipline and inconsistentcoverage across the typical organization hybrid,multi\-cloud data sprawl. We believe thatorganizations need a single pane of glass tolocate and know their data, protect their data,govern the access, usage, and lifecycle of data,and prevent data loss across the data estate.Working from the same data inventory andactivity information facilitates cross\-teamprocesses, yields a more comprehensive riskpicture, and allows organizations to betterprepare and streamline their response toa breach. 
+Aligning IT, data governance, security, 
+ 
+compliance, and privacy management process 
+ 
+is difficult in an environment of bespoke 
+ 
+applications for each discipline and inconsistent 
+ 
+coverage across the typical organization hybrid, 
+ 
+multi\-cloud data sprawl. We believe that 
+ 
+organizations need a single pane of glass to 
+ 
+locate and know their data, protect their data, 
+ 
+govern the access, usage, and lifecycle of data, 
+ 
+and prevent data loss across the data estate. 
+ 
+Working from the same data inventory and 
+ 
+activity information facilitates cross\-team 
+ 
+processes, yields a more comprehensive risk 
+ 
+picture, and allows organizations to better 
+ 
+prepare and streamline their response to 
+ 
+a breach. 
 Data inventory 
 and activity 
 CIO 
@@ -11104,7 +14301,7 @@ CISO
 CDO 
 CPO 
 DPO 
-The single pane of glass should act as a prism. 
+The “single pane of glass” should act as a prism. 
 Teams that have a stake in data security, compliance, 
 and privacy need different yet consistent views of 
 the same data inventory and activity to come into 
@@ -11115,35 +14312,96 @@ Effective data governance,
 security, compliance, and privacy 
 are interdependent and require 
 cross\-team collaboration. 
-Actionable insights1 
+Actionable insights
+ 
+1 
 Balance defense with recovery and 
 minimize data breach impact by investing 
 in compliance, data protection, and 
-response capabilities.2 
+response capabilities.
+ 
+2 
 Develop and adopt processes and tools 
 that cut across data risk silos and cover 
 the full data estate. 
 Links to further information 
-Microsoft PurviewData Protection 
+Microsoft Purview—Data Protection 
 Solutions \| Microsoft Security 
 The future of compliance and data 
 governance is here: Introducing Microsoft 
-Purview \| Microsoft Security BlogContributing 
+Purview \| Microsoft Security Blog 
+ 
+ 
+ 
+Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
-The State of
+The State of 
 Cybercrime
 Report 
-IntroductionCyber 
+Introduction
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 Report 
-The State of
-Nation State
+The State of 
+Nation State 
 Devices and 
 Cyber Influence 
 Cyber 
@@ -11156,9 +14414,11 @@ Threats
 Infrastructure 
 Operations 
 Teams 
-Resilience to cyber
+Resilience to cyber 
 influence 
- operations:The human dimension 
+ operations: 
+ 
+The human dimension 
 Over the last five years, advances in 
 graphics and machine learning have 
 introduced easy\-to\-use tools capable 
@@ -11178,11 +14438,11 @@ implications for democratic processes. Note 11
 Questions arise about what we can do to prepare 
 for a more resilient future against these cyber 
 influence operations. Technology is only one 
-part of the puzzle. Its going to take multiple 
+part of the puzzle. It’s going to take multiple 
 efforts, including education aimed at media 
 literacy, awareness, and vigilance, investments in 
-quality journalismwith trusted reporters on the 
-scene, locally, nationally, and internationally
+quality journalism—with trusted reporters on the 
+scene, locally, nationally, and internationally—
 networks of sharing and alerting about influence 
 operations, and new kinds of regulations that 
 penalize malevolent actors who generate or 
@@ -11195,9 +14455,9 @@ government that can solve these threats on
 its own. Our superpower as humans is our 
 ability to collaborate and cooperate. This is 
 especially important now because it will require 
-everyoneglobal governments, industries, 
+everyone—global governments, industries, 
 academia, and especially news, social, and 
-media organizationsworking together for 
+media organizations—working together for 
 the betterment and health of our society. 
 Links to further information 
 Applications for artificial intelligence in 
@@ -11215,18 +14475,56 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
-The State of
+The State of 
 Cybercrime
 Report 
-IntroductionCyber 
+Introduction
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 Report 
-The State of
-Nation State
+The State of 
+Nation State 
 Devices and 
 Cyber Influence 
 Cyber 
@@ -11244,37 +14542,123 @@ factor with skilling
 Addressing the human factor is a key 
 component of any cybersecurity skilling 
 strategy. According to a Kaspersky Human 
-Factor in IT Security study, Note 1246 percent 
+Factor in IT Security study, Note 12 46 percent 
 of cybersecurity incidents involve careless 
 or uniformed staff who inadvertently 
 facilitate the attack. 
-Microsofts Education and Awareness team inthe Digital Security and Resilience organizationis responsible for fortifying the human factorof cybersecurity by empowering employees tosecure our own and our customers systemsand data. Our goals are to: 
- Reduce risk to Microsoft and our customers 
+Microsoft’s Education and Awareness team in 
+ 
+the Digital Security and Resilience organization 
+ 
+is responsible for fortifying the human factor 
+ 
+of cybersecurity by empowering employees to 
+ 
+secure our own and our customers’ systems 
+ 
+and data. Our goals are to: 
+• Reduce risk to Microsoft and our customers 
 by building a centralized enterprise\-
 wide core security skill set across the 
 employee population. 
- Fortify employee security knowledge 
+• Fortify employee security knowledge 
 through a multi\-phased training 
 reinforcement approach to support desired 
 behavior outcomes. 
- Foster culture change by making a security 
-mindset an intrinsic part of Microsofts culture 
+• Foster culture change by making a security 
+mindset an intrinsic part of Microsoft’s culture 
 through annually required security training 
 and events. 
- Promote a one\-stop centralized web resource 
+• Promote a one\-stop centralized web resource 
 for best practices, company policy information, 
 and incident reporting for all things 
 cybersecurity related. 
-A targeted, centralized cybersecurity skillingprogram reaches every Microsoft employeeat least once each year. Training offerings areoptimized to support current cybersecurityinitiatives and deliver measurable behavioroutcomes. Microsofts Information RiskManagement Council (IRMC) plays a key rolein identifying important cybersecurity behaviorchange outcomes to be addressed by training. 
-With all of our cybersecurity skilling programs,we measure the solutions efficiency,effectiveness, and outcomes where possible.For example, our insider threat skilling offeringhas 95 percent training compliance, exceptionallearner satisfaction, and has resulted in asignificant increase in managers reportingpossible insider threat cases via the companysReport It Now tool. The program includes: 
+A targeted, centralized cybersecurity skilling 
+ 
+program reaches every Microsoft employee 
+ 
+at least once each year. Training offerings are 
+ 
+optimized to support current cybersecurity 
+ 
+initiatives and deliver measurable behavior 
+ 
+outcomes. Microsoft’s Information Risk 
+ 
+Management Council (IRMC) plays a key role 
+ 
+in identifying important cybersecurity behavior 
+ 
+change outcomes to be addressed by training. 
+With all of our cybersecurity skilling programs, 
+ 
+we measure the solution’s efficiency, 
+ 
+effectiveness, and outcomes where possible. 
+ 
+For example, our insider threat skilling offering 
+ 
+has 95 percent training compliance, exceptional 
+ 
+learner satisfaction, and has resulted in a 
+ 
+significant increase in managers reporting 
+ 
+possible insider threat cases via the company’s 
+ 
+Report It Now tool. The program includes: 
 Security 
  Foundations: Centralized, enterprise\-
-wide cybersecurity awareness and compliancetraining which addresses core security andprivacy practices. This highly anticipated trainingseries employs an edutainment model tomake learning about cybersecurity engagingand 
+wide cybersecurity awareness and compliance 
+ 
+training which addresses core security and 
+ 
+privacy practices. This highly anticipated training 
+ 
+series employs an edutainment model to 
+ 
+make learning about cybersecurity engaging 
+ 
+and 
  interesting. 
-STRIKE: Microsofts required technical trainingfor engineers who build and maintain line\-
-of\-business solutions. This by\-invitation\-onlytraining addresses timely and critical areas ofcybersecurity hygiene best practice and uses alive hybrid delivery model tailoredto audience needs. 
-Program specific: Targeted training programssupport specific cybersecurity initiatives includingShadow IT, Insider Threat, and Microsoft Federal.These offerings are tightly integrated into theoverall engagement strategy for their respectivecybersecurity initiatives through executivesponsorship and scorecard reporting to preventa check the box training approach. 
-MSProtect: Microsofts centralized web resourceprovides best practices, company policyinformation, and incident reporting for all thingscybersecurity related. This on\-demand resourceis the go\-to for employees outside of formaltraining 
+STRIKE: Microsoft’s required technical training 
+ 
+for engineers who build and maintain line\-
+of\-business solutions. This by\-invitation\-only 
+ 
+training addresses timely and critical areas of 
+ 
+cybersecurity hygiene best practice and uses a 
+ 
+live hybrid delivery model tailored 
+ 
+to audience needs. 
+Program specific: Targeted training programs 
+ 
+support specific cybersecurity initiatives including 
+ 
+Shadow IT, Insider Threat, and Microsoft Federal. 
+ 
+These offerings are tightly integrated into the 
+ 
+overall engagement strategy for their respective 
+ 
+cybersecurity initiatives through executive 
+ 
+sponsorship and scorecard reporting to prevent 
+ 
+a “check the box” training approach. 
+MSProtect: Microsoft’s centralized web resource 
+ 
+provides best practices, company policy 
+ 
+information, and incident reporting for all things 
+ 
+cybersecurity related. This on\-demand resource 
+ 
+is the go\-to for employees outside of formal 
+ 
+training 
  offerings. 
 Security skilling must not be seen as 
 a compliance, check\-the\-box activity. 
@@ -11283,11 +14667,29 @@ to allow outcomes to be monitored
 across identified target behaviors, 
 and establish listening systems to 
 determine the impact of offerings. 
-Actionable insights1 
-Provide security training and resources toemployees when and where they need it.2 
-Develop a centralized skilling strategyinformed by stakeholders from acrossthe 
- enterprise.3 
-Ensure the impact of training is trackedand analyzed for efficiency (quantity),effectiveness (quality), and outcomes(business impact). 
+Actionable insights
+ 
+1 
+Provide security training and resources to 
+ 
+employees when and where they need it.
+ 
+2 
+Develop a centralized skilling strategy 
+ 
+informed by stakeholders from across 
+ 
+the 
+ enterprise.
+ 
+3 
+Ensure the impact of training is tracked 
+ 
+and analyzed for efficiency (quantity), 
+ 
+effectiveness (quality), and outcomes 
+ 
+(business impact). 
 Links to further information 
 Microsoft launches next stage of skills 
 initiative after helping 30 million people 
@@ -11295,18 +14697,90 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
-The State of
+The State of 
 Cybercrime
 Report 
-IntroductionCyber 
+Introduction
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 Report 
-The State of
-Nation State
+The State of 
+Nation State 
 Devices and 
 Cyber Influence 
 Cyber 
@@ -11319,11 +14793,11 @@ Threats
 Infrastructure 
 Operations 
 Teams 
-Insights from
+Insights from 
 our ransomware 
 elimination program 
 Microsoft has been on its own Zero Trust 
-journey Note 13in the past five years to ensure 
+journey Note 13 in the past five years to ensure 
 identities and devices are robustly managed 
 and healthy. As the risk of ransomware 
 grows, we have developed a deep view 
@@ -11348,15 +14822,29 @@ of the bigger question as to whether we could
 effectively recover from an attack. To gain insight, 
 we evaluated the NIST 8374: Ransomware Risk 
 Management: A Cybersecurity Framework (CSF) 
-Profile, Note 14which aligns with our overall enterprise 
+Profile, Note 14 which aligns with our overall enterprise 
 policy against our known list of controls. 
 This analysis quickly identified gaps in coverage. 
-Next, we prioritized gaps across the Identify,Detect, Protect, Respond, and Recover functionsof the CSF. We found strategic alignmentto Zero Trust and other programs and alsodiscovered gaps that had no existing workstream.Having assessed the amount of work and effortneeded to remediate these gaps, we separatedthem into two pillars: 
- Protect the enterprise (PtE): Define work 
+Next, we prioritized gaps across the Identify, 
+ 
+Detect, Protect, Respond, and Recover functions 
+ 
+of the CSF. We found strategic alignment 
+ 
+to Zero Trust and other programs and also 
+ 
+discovered gaps that had no existing workstream. 
+ 
+Having assessed the amount of work and effort 
+ 
+needed to remediate these gaps, we separated 
+ 
+them into two pillars: 
+• Protect the enterprise (PtE): Define work 
 items that we need to do as an enterprise to 
 protect ourselves and be able to recover from 
 an attack, should one be successful. 
- Protect the customer (PtC): Build capabilities 
+• Protect the customer (PtC): Build capabilities 
 into our offerings to protect our customers as 
 well as our business. 
 Embedding findings into our own enterprise 
@@ -11393,14 +14881,64 @@ Scenario 5: All employees can access educational
 and training resources which describe how to 
 recognize a ransomware attack and how to notify 
 the security team and initiate the response. 
-Actionable insights1 
+Actionable insights
+ 
+1 
 Document and validate end\-to\-end 
-recovery and remediation activitiesrelated to ransomware attacks againstcritical services.2 
-Involve stakeholders in updating yourEnterprise Crisis Management playbooksto include ransomware specific activitiesand a decision process and guidance todetermine ifwhen to pay for ransomware.3 
-Improve detection and protectioncoverage by enabling capabilities availablein your deployed security products (e.g.Defender for Endpoint Attack SurfaceReduction 
- rules).4 
-Work with the security standards team todefine a baseline for protection against aransomware attack, and provide trainingand documentation to engineeringteams on how to protect against aransomware attack.5 
-Put automation in place to make thedeployment of security and operationspolicies easier on the DevOps teamsand ensure that if a system driftsfrom compliance it is quickly flaggedand remediated. 
+recovery and remediation activities 
+ 
+related to ransomware attacks against 
+ 
+critical services.
+ 
+2 
+Involve stakeholders in updating your 
+ 
+Enterprise Crisis Management playbooks 
+ 
+to include ransomware specific activities 
+ 
+and a decision process and guidance to 
+ 
+determine if/when to pay for ransomware.
+ 
+3 
+Improve detection and protection 
+ 
+coverage by enabling capabilities available 
+ 
+in your deployed security products (e.g. 
+ 
+Defender for Endpoint Attack Surface 
+ 
+Reduction 
+ rules).
+ 
+4 
+Work with the security standards team to 
+ 
+define a baseline for protection against a 
+ 
+ransomware attack, and provide training 
+ 
+and documentation to engineering 
+ 
+teams on how to protect against a 
+ 
+ransomware attack.
+ 
+5 
+Put automation in place to make the 
+ 
+deployment of security and operations 
+ 
+policies easier on the DevOps teams 
+ 
+and ensure that if a system drifts 
+ 
+from compliance it is quickly flagged 
+ 
+and remediated. 
 Links to further information 
 Sharing how Microsoft protects against 
 ransomware \| Microsoft Inside Track 
@@ -11408,18 +14946,57 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
-The State of
+The State of 
 Cybercrime
 Report 
-IntroductionCyber 
+Introduction
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 Report 
-The State of
-Nation State
+The State of 
+Nation State 
 Devices and 
 Cyber Influence 
 Cyber 
@@ -11433,15 +15010,17 @@ Infrastructure
 Operations 
 Teams 
  Act now on quantum 
- security implicationsThe pressure is on to manage the threat 
-quantum computing poses to todays 
+ security implications 
+ 
+The pressure is on to manage the threat 
+quantum computing poses to today’s 
 cryptography and everything it protects. 
 The recently issued Memorandum on 
 Improving the Cybersecurity of National 
 Security Department of Defense and 
 Intelligence Community Systems Note 15 
 builds on US Executive Order 10428 Note 16 
-for Improving the Nations Cybersecurity 
+for Improving the Nation’s Cybersecurity 
 highlights software supply chain security 
 as critical to addressing future nation\-
 state attacks. 
@@ -11455,41 +15034,185 @@ Quantum computing is already opening new
 horizons for data encryption and processing. 
 Studies predict quantum computing will become 
 a multi\-billion dollar (USD) quantum industry as 
-early as 2030\. Note 17In fact, quantum computing and 
+early as 2030\. Note 17 In fact, quantum computing and 
 quantum communication are poised to have 
 a transformative 
  effect 
  across a multitude of 
 industries, ranging from healthcare and energy 
 to finance and security. 
-Quantum computing is a threat to todays 
+Quantum computing is a threat to today’s 
 cryptography and everything it protects. 
-The threat to todays cryptography 
-With Shors 1994 algorithm and an industrial\-
-scale quantum computer of more than a fewmillion physical qubits, all our current, widelydeployed public\-key cryptographic algorithmscould be efficiently broken. It is critical toconsider, evaluate, and standardize quantum\-
-safe cryptosystems that are efficient, agile,and safe against an adversarial quantum\-basedattack. Software migration to post\-quantumcryptography, namely existing classicalalgorithms and protocols robust to quantumattack, will take yearsif not a decade or more
+The threat to today’s cryptography 
+With Shor’s 1994 algorithm and an industrial\-
+scale quantum computer of more than a few 
+ 
+million physical qubits, all our current, widely 
+ 
+deployed public\-key cryptographic algorithms 
+ 
+could be efficiently broken. It is critical to 
+ 
+consider, evaluate, and standardize “quantum\-
+safe” cryptosystems that are efficient, agile, 
+ 
+and safe against an adversarial quantum\-based 
+ 
+attack. Software migration to “post\-quantum 
+ 
+cryptography,” namely existing classical 
+ 
+algorithms and protocols robust to quantum 
+ 
+attack, will take years—if not a decade or more—
 to achieve. Note 18 
-This means the pressure is on to manage thethreat to todays cryptography and everythingit protects. Adversaries can record encrypteddata now and exploit it later once a quantumcomputer is available. Waiting for quantumcomputing to arrive before addressing itscryptographic implications will be too late. 
-As cryptography is used throughout the cyberecosystem, this means our cryptography\-
-based security services could be compromised.For example, this includes services forcommunications (TLS, IPSec), messaging(email, web conferencing), identity and accessmanagement, web browsing, code signing,payment transaction and other services that aredependent upon cryptography for protection. 
-As quantum computers become a reality,third\-party software components containingimplementations of cryptographic algorithmsand capabilities will require additional scrutinyas well. This requires all organizations along thevalue chain to do their part to ensure the chainstays secure. Industry bodies and governmentsare increasing efforts to define software supplychain security requirements and, in some cases,introducing new mandates for securing the 
+This means the pressure is on to manage the 
+ 
+threat to today’s cryptography and everything 
+ 
+it protects. Adversaries can record encrypted 
+ 
+data now and exploit it later once a quantum 
+ 
+computer is available. Waiting for quantum 
+ 
+computing to arrive before addressing its 
+ 
+cryptographic implications will be too late. 
+As cryptography is used throughout the cyber 
+ 
+ecosystem, this means our cryptography\-
+based security services could be compromised. 
+ 
+For example, this includes services for 
+ 
+communications (TLS, IPSec), messaging 
+ 
+(email, web conferencing), identity and access 
+ 
+management, web browsing, code signing, 
+ 
+payment transaction and other services that are 
+ 
+dependent upon cryptography for protection. 
+As quantum computers become a reality, 
+ 
+third\-party software components containing 
+ 
+implementations of cryptographic algorithms 
+ 
+and capabilities will require additional scrutiny 
+ 
+as well. This requires all organizations along the 
+ 
+value chain to do their part to ensure the chain 
+ 
+stays secure. Industry bodies and governments 
+ 
+are increasing efforts to define software supply 
+ 
+chain security requirements and, in some cases, 
+ 
+introducing new mandates for securing the 
 chain. National Security Memorandum NSM\-8 Note 19 
-establishes requirements and timelines forimplementing post\-quantum cryptographyin National Security Systems (NSS). It callsout timing expectations within 180 days formodernization planning, use of unsupportedencryption, approved mission unique protocols,quantum resistant protocols, and planningfor use of quantum resistant cryptographywhere 
- necessary. 
-Standardization is a long lead\-time activity inthe transition to quantum\-safe cryptography.Standards bodies that work on standards usingpublic key cryptography must begin to experimentwith and adapt to post\-quantum algorithms now. 
-New post\-quantum cryptography (PQC)algorithmsclassical algorithms thought to berobust to quantum attackare now under reviewthrough NISTs Post\-Quantum StandardizationProject. Note 20This work will influence global efforts 
-within standards bodies. Although there will besome overlap with US government algorithmselections, differing national bodyregulatorychoices for compliant algorithms could presentinternational challenges. This fragmentation will inturn complicate product and service engineering. 
-New post\-quantum cryptographyalgorithms are under review through NISTsPost\-Quantum Cryptography Standardizationprogram. This work will influence globalefforts within standards bodies. 
+establishes requirements and timelines for 
+ 
+implementing post\-quantum cryptography 
+ 
+in National Security Systems (NSS). It calls 
+ 
+out timing expectations within 180 days for 
+ 
+“modernization planning, use of unsupported 
+ 
+encryption, approved mission unique protocols, 
+ 
+quantum resistant protocols, and planning 
+ 
+for use of quantum resistant cryptography 
+ 
+where 
+ necessary.” 
+Standardization is a long lead\-time activity in 
+ 
+the transition to quantum\-safe cryptography. 
+ 
+Standards bodies that work on standards using 
+ 
+public key cryptography must begin to experiment 
+ 
+with and adapt to post\-quantum algorithms now. 
+New post\-quantum cryptography (PQC) 
+ 
+algorithms—classical algorithms thought to be 
+ 
+robust to quantum attack—are now under review 
+ 
+through NIST’s Post\-Quantum Standardization 
+ 
+Project. Note 20 This work will influence global efforts 
+within standards bodies. Although there will be 
+ 
+some overlap with US government algorithm 
+ 
+selections, differing national body/regulatory 
+ 
+choices for compliant algorithms could present 
+ 
+international challenges. This fragmentation will in 
+ 
+turn complicate product and service engineering. 
+New post\-quantum cryptography 
+ 
+algorithms are under review through NIST’s 
+ 
+Post\-Quantum Cryptography Standardization 
+ 
+program. This work will influence global 
+ 
+efforts within standards bodies. 
 Actionable insights 
-Alongside SAFECode and partnering members,immediate shorter\-term activities should betaken by industry to prepare for the PQCtransition. Note 21These include:1Take an inventory of your productscodesthat use cryptography.2 
-Implement a crypto agility strategyacross your organization that includesminimizing the code churn required whencryptography 
- changes.3 
-Pilot the use of candidate quantum\-safealgorithms in your products or servicesthat use cryptography. 
+Alongside SAFECode and partnering members, 
+ 
+immediate shorter\-term activities should be 
+ 
+taken by industry to prepare for the PQC 
+ 
+transition. Note 21 These include:
+ 
+1 
+ 
+Take an inventory of your products/codes 
+ 
+that use cryptography.
+ 
+2 
+Implement a crypto agility strategy 
+ 
+across your organization that includes 
+ 
+minimizing the code churn required when 
+ 
+cryptography 
+ changes.
+ 
+3 
+Pilot the use of candidate quantum\-safe 
+ 
+algorithms in your products or services 
+ 
+that use cryptography. 
 4 
-Be prepared to use different public keyalgorithms for encryption, key exchange,and 
+Be prepared to use different public key 
+ 
+algorithms for encryption, key exchange, 
+ 
+and 
  signatures. 
 5 
-Test your applications for the impact of verylarge key sizes, ciphers, and signatures. 
+Test your applications for the impact of very 
+ 
+large key sizes, ciphers, and signatures. 
 Links to further information 
 Microsoft has demonstrated the underlying 
 physics required to create a new kind of 
@@ -11498,18 +15221,33 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
-The State of
+The State of 
 Cybercrime
 Report 
-IntroductionCyber 
+Introduction
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 Report 
-The State of
-Nation State
+The State of 
+Nation State 
 Devices and 
 Cyber Influence 
 Cyber 
@@ -11523,54 +15261,218 @@ Infrastructure
 Operations 
 Teams 
 Integrating business, 
-security, and IT for
+security, and IT for 
 greater resilience 
-Robust cyber resiliency depends onbusiness leaders working with securityteams to implement security. In Microsoftsexperience, security leadership is achallenging discipline that requires supportfrom organizational leaders to mosteffectively protect the organization.Security leaders navigate a spectrum of dynamicchallenges spanning topics related to risk,technology, economics, organizational process,business models, culture transformation,geopolitical interests, espionage, andinternational 
+Robust cyber resiliency depends on 
+ 
+business leaders working with security 
+ 
+teams to implement security. In Microsoft’s 
+ 
+experience, security leadership is a 
+ 
+challenging discipline that requires support 
+ 
+from organizational leaders to most 
+ 
+effectively protect the organization. 
+ 
+Security leaders navigate a spectrum of dynamic 
+ 
+challenges spanning topics related to risk, 
+ 
+technology, economics, organizational process, 
+ 
+business models, culture transformation, 
+ 
+geopolitical interests, espionage, and 
+ 
+international 
  sanctions 
  compliance. 
  Each 
- ofthese carries nuances to be understood andclosely 
- managed.Security leaders are also tasked with thwartingboth intelligent, well\-funded, and highlymotivated human attackers, and low\-skilled,yet effective, cybercriminals. Their teams mustdefend complex technical estates often builtup incrementally over 30 or more years whensecurity was a low or nonexistent priority.Decisions made years ago can pose risks todayuntil we pay off the technical debt and addressthe gaps in security. 
-Organizational leaders and policymakers canhave a significant positive impact on security byactively supporting security leaders and helpingto build a bridge between integrated securityand the rest of the organization. When Microsoftworks with customers that have this alignment,we see them building a more resilientorganization and also improving their agilityto 
+ of 
+ 
+these carries nuances to be understood and 
+ 
+closely 
+ managed. 
+ 
+Security leaders are also tasked with thwarting 
+ 
+both intelligent, well\-funded, and highly 
+ 
+motivated human attackers, and low\-skilled, 
+ 
+yet effective, cybercriminals. Their teams must 
+ 
+defend complex technical estates often built 
+ 
+up incrementally over 30 or more years when 
+ 
+security was a low or nonexistent priority. 
+ 
+Decisions made years ago can pose risks today 
+ 
+until we pay off the technical debt and address 
+ 
+the gaps in security. 
+Organizational leaders and policymakers can 
+ 
+have a significant positive impact on security by 
+ 
+actively supporting security leaders and helping 
+ 
+to build a bridge between integrated security 
+ 
+and the rest of the organization. When Microsoft 
+ 
+works with customers that have this alignment, 
+ 
+we see them building a more resilient 
+ 
+organization and also improving their agility 
+ 
+to 
  adapt 
  and 
- innovate.Organizational leadership can support security 
+ innovate. 
+ 
+Organizational leadership can support security 
 leaders by focusing on three key areas: 
 1\. Build security by design 
-Security is sometimes viewed as an obstacle oran afterthought in business processes, oftenbeing considered in decisions only when it is toolate to avoid a risk or fix cheaply and easily. 
-Organizational leaders and policymakers shouldensure that they: 
-Include security early on new initiatives.New digital initiatives and cloud adoption shouldprioritize security to ensure organizational riskdoes not increase with each new applicationor digital capability. Once security is reliablyincluded, you can use those processes tomodernize legacy systems to get both securityand productivity benefits at the same time. 
-Normalize preventive maintenance forsecurity. 
- Ensure basic security maintenance
-like applying security updates and patches andsecure 
- configurationshas 
+Security is sometimes viewed as an obstacle or 
+ 
+an afterthought in business processes, often 
+ 
+being considered in decisions only when it is too 
+ 
+late to avoid a risk or fix cheaply and easily. 
+Organizational leaders and policymakers should 
+ 
+ensure that they: 
+Include security early on new initiatives. 
+ 
+New digital initiatives and cloud adoption should 
+ 
+prioritize security to ensure organizational risk 
+ 
+does not increase with each new application 
+ 
+or digital capability. Once security is reliably 
+ 
+included, you can use those processes to 
+ 
+modernize legacy systems to get both security 
+ 
+and productivity benefits at the same time. 
+Normalize preventive maintenance for 
+ 
+security. 
+ Ensure basic security maintenance—
+like applying security updates and patches and 
+ 
+secure 
+ configurations—has 
  full 
- organizationalsupport allocated (including budgets, scheduleddowntime, acquisition requirements for vendorproduct support).Unfortunately, many organizations delay, 
+ organizational 
+ 
+support allocated (including budgets, scheduled 
+ 
+downtime, acquisition requirements for vendor 
+ 
+product support). 
+ 
+Unfortunately, many organizations delay, 
 defer, or apply these common practices only 
 partially. This provides extensive opportunities 
 for attackers to exploit. The need for security 
 normalization is captured in US NIST 800\-40\. Note 22
-1\. Engage with security 
-Organizational leaders should actively participatein and sponsor key security processes to ensureprioritization of resources and preparedness forsecurity disasters. This includes engaging in: 
-Identify critical business assets.Security leaders and teams need to knowwhich assets are business\-critical to focussecurity resources on what matters most. This isoften a new exercise that includes asking andanswering new questions that have not beenpreviously addressed. 
-Cybersecurity business continuity and disasterrecovery exercises. 
- Cyberattacks can becomemajor events that disrupt or halt most or allbusiness operations. Ensuring teams throughoutthe organization are prepared to handle thesesituations will reduce the time to restore businessoperations, limit damage to the organization,and help sustain the trust and confidence ofcustomers, citizens, and constituents. This shouldbe integrated within an existing businesscontinuity and disaster recovery process. 
-Security risk decisions arebest made by business ormission owners who havefull visibility across all risksand opportunities.Contributing 
+2\. Engage with security 
+Organizational leaders should actively participate 
+ 
+in and sponsor key security processes to ensure 
+ 
+prioritization of resources and preparedness for 
+ 
+security disasters. This includes engaging in: 
+Identify critical business assets. 
+ 
+Security leaders and teams need to know 
+ 
+which assets are business\-critical to focus 
+ 
+security resources on what matters most. This is 
+ 
+often a new exercise that includes asking and 
+ 
+answering new questions that have not been 
+ 
+previously addressed. 
+Cybersecurity business continuity and disaster 
+ 
+recovery exercises. 
+ Cyberattacks can become 
+ 
+major events that disrupt or halt most or all 
+ 
+business operations. Ensuring teams throughout 
+ 
+the organization are prepared to handle these 
+ 
+situations will reduce the time to restore business 
+ 
+operations, limit damage to the organization, 
+ 
+and help sustain the trust and confidence of 
+ 
+customers, citizens, and constituents. This should 
+ 
+be integrated within an existing business 
+ 
+continuity and disaster recovery process. 
+Security risk decisions are 
+ 
+best made by business or 
+ 
+mission owners who have 
+ 
+full visibility across all risks 
+ 
+and opportunities. 
+ 
+Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
-The State of
+The State of 
 Cybercrime
 Report 
-IntroductionCyber 
+Introduction
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 Report 
-The State of
-Nation State
+The State of 
+Nation State 
 Devices and 
 Cyber Influence 
 Cyber 
@@ -11584,13 +15486,59 @@ Infrastructure
 Operations 
 Teams 
 Integrating business, 
-security, and IT for
+security, and IT for 
 greater resilience 
 Continued 
-1\. Position security correctly 
-The way organizations structure security riskaccountability often sets them up for poorsecurity risk decision making. Risk decisionsare best made by business or mission ownerswho have full visibility across all risks andopportunities, but organizations often (implicitlyor explicitly) assign security risk accountabilityto subject matter experts in the security teaminstead. This places an unhealthy burden onsecurity teams while depriving business ownersof visibility and control over a key risk to theirbusiness. Organizations can correct this by: 
-Preparing business owners: Educate businessowners about security risk overall and howthese threats can and will affect their business.Engaging security teams directly in this effortalso increases the collaborative relationship withsecurity and overall business agility. 
-Assigning security risk to business owners:As business owners become informed enoughto understand and accept security risk, theorganization should explicitly shift accountabilityfor security risk to them while still holdingsecurity teams responsible for managing that riskand providing informed expertise and guidanceto the owner. 
+3\. Position security correctly 
+The way organizations structure security risk 
+ 
+accountability often sets them up for poor 
+ 
+security risk decision making. Risk decisions 
+ 
+are best made by business or mission owners 
+ 
+who have full visibility across all risks and 
+ 
+opportunities, but organizations often (implicitly 
+ 
+or explicitly) assign security risk accountability 
+ 
+to subject matter experts in the security team 
+ 
+instead. This places an unhealthy burden on 
+ 
+security teams while depriving business owners 
+ 
+of visibility and control over a key risk to their 
+ 
+business. Organizations can correct this by: 
+Preparing business owners: Educate business 
+ 
+owners about security risk overall and how 
+ 
+these threats can and will affect their business. 
+ 
+Engaging security teams directly in this effort 
+ 
+also increases the collaborative relationship with 
+ 
+security and overall business agility. 
+Assigning security risk to business owners: 
+ 
+As business owners become informed enough 
+ 
+to understand and accept security risk, the 
+ 
+organization should explicitly shift accountability 
+ 
+for security risk to them while still holding 
+ 
+security teams responsible for managing that risk 
+ 
+and providing informed expertise and guidance 
+ 
+to the owner. 
 Reduce risk by removing silos 
 Business 
 Security 
@@ -11616,7 +15564,47 @@ Less complexity
 Lowered cost 
 Enhanced security 
 and productivity 
-Cyber resilience is on a sliding scale fromclassic business continuity and disaster recoverystarting with good data backup; progressing torecovery capabilities for processes, technology,and their dependencies (including people andthird parties); and moving to always on, selfhealing services, resilience for critical roles, andfailovers for critical third parties. The most resilientorganizations promote integration between IT,business managers, and security professionals.Great resilience includes designing for resiliencefrom the start, having safe change management,and granular fault isolation. Cyber resilience isjust one scenario in a good all\-hazards planningprogram. As cyber risks increase and theintersection between cybersecurity and resiliencebecomes more important, the connection of theChief Information Security Officer (CISO) to theenterprise resilience program grows stronger.Every year, more CISOs are taking ownershipfor company\-wide resilience. 
+“Cyber resilience is on a sliding scale from 
+ 
+classic business continuity and disaster recovery 
+ 
+starting with good data backup; progressing to 
+ 
+recovery capabilities for processes, technology, 
+ 
+and their dependencies (including people and 
+ 
+third parties); and moving to always on, self 
+ 
+healing services, resilience for critical roles, and 
+ 
+failovers for critical third parties. The most resilient 
+ 
+organizations promote integration between IT, 
+ 
+business managers, and security professionals. 
+ 
+Great resilience includes designing for resilience 
+ 
+from the start, having safe change management, 
+ 
+and granular fault isolation. Cyber resilience is 
+ 
+just one scenario in a good all\-hazards planning 
+ 
+program. As cyber risks increase and the 
+ 
+intersection between cybersecurity and resilience 
+ 
+becomes more important, the connection of the 
+ 
+Chief Information Security Officer (CISO) to the 
+ 
+enterprise resilience program grows stronger. 
+ 
+Every year, more CISOs are taking ownership 
+ 
+for company\-wide resilience.” 
 Lisa Reshaur 
 General Manager, Risk Management, Microsoft 
 Links to further information 
@@ -11631,19 +15619,70 @@ Contributing
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
-The State of
+The State of 
 Cybercrime
 Report 
-Introduction\- 
+Introduction
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+\-
+ 
+– 
+– 
+– 
 Report 
-The State of
-Nation State
+The State of 
+Nation State 
 Devices and 
 Cyber Influence 
 Cyber 
@@ -11656,7 +15695,7 @@ Threats
 Infrastructure 
 Operations 
 Teams 
-The cyber resilience
+The cyber resilience 
 bell curve 
 Resilience success factors every organization 
 should adopt 
@@ -11664,37 +15703,37 @@ As we have seen, many cyberattacks are
 successful simply because basic security hygiene 
 has not been followed. The minimum standards 
 every organization should adopt are: 
- Enable multifactor authentication (MFA): 
+• Enable multifactor authentication (MFA): 
 To protect against compromised user 
 passwords and helps to provide extra 
 resilience for identities. 
- Apply Zero Trust principles: The cornerstone 
+• Apply Zero Trust principles: The cornerstone 
 of any resilience plan limiting the impact on an 
 organization. These principles are: 
- Explicitly verifyensure users and devices 
+– Explicitly verify—ensure users and devices 
 are in a good state before allowing access 
 to resources. 
- Use least privilege accessonly allow the 
+– Use least privilege access—only allow the 
 privilege that is needed for access to a 
 resource and no more. 
- Assume breachassume system defenses 
+– Assume breach—assume system defenses 
 have been breached and systems might 
 be compromised. This means constantly 
 monitoring the environment for 
 possible attack. 
- Use extended detection and response 
+• Use extended detection and response 
 anti\-malware: Implement software to 
 detect and automatically block attacks and 
 provide insights to the security operations. 
 Monitoring insights from threat detection 
 systems is essential to being able to respond 
 to threats in a timely fashion. 
- Keep up to date: Unpatched and out of date 
+• Keep up to date: Unpatched and out of date 
 systems are a key reason many organizations 
 fall victim to an attack. Ensure all systems 
 are kept up to date including firmware, the 
 operating system and applications. 
- Protect data: Knowing your important 
+• Protect data: Knowing your important 
 data, where it is located and whether the 
 right systems are implemented is crucial to 
 implementing the appropriate protection. 
@@ -11703,29 +15742,57 @@ Basic security hygiene
 still protects against 
 98% of attacks 
 Key 
-Enable multifactorauthentication
+Enable multifactor 
+ 
+authentication
 Apply Zero Trust 
 principles 
-Use modern
+Use modern 
 anti\-malware 
-Keep upto date 
-Protectdata\-
+Keep up 
+ 
+to date 
+Protect 
+ 
+data 
+ 
+\-
 Contributing 
 Teams
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
-OperationsCyber 
+Operations
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cyber 
 Resilience
 Report 
-The State of
-Nation State
+The State of 
+Nation State 
 Devices and 
 Cyber Influence 
 Cyber 
@@ -11741,7 +15808,15 @@ Teams
 Endnotes 
 No
 te 1 
-Endpoint Detection and Response (EDR) is an enterprise endpoint security platform designedto help enterprise networks prevent, detect, investigate, and respond to advanced threats.Endpoint detection and response capabilities provide advanced attack detections that are nearreal\-time and actionable. Security analysts can prioritize alerts effectively, gain visibility into thefull scope of a breach and take response actions to remediate threats. 
+Endpoint Detection and Response (EDR) is an enterprise endpoint security platform designed 
+ 
+to help enterprise networks prevent, detect, investigate, and respond to advanced threats. 
+ 
+Endpoint detection and response capabilities provide advanced attack detections that are near 
+ 
+real\-time and actionable. Security analysts can prioritize alerts effectively, gain visibility into the 
+ 
+full scope of a breach and take response actions to remediate threats. 
 No
 te 2 
 An 
@@ -11759,14 +15834,18 @@ An
  to 
  prevent 
  file\-
-based malware, to detect and block malicious activity from trusted and untrusted applications,and to provide the investigation and remediation capabilities needed to dynamically respond tosecurity incidents and alerts. 
+based malware, to detect and block malicious activity from trusted and untrusted applications, 
+ 
+and to provide the investigation and remediation capabilities needed to dynamically respond to 
+ 
+security incidents and alerts. 
 Note 3 
-https:docs.microsoft.comen\-usazureactive\-directoryauthenticationhowto\-mfa\-getstarted 
+https://docs.microsoft.com/en\-us/azure/active\-directory/authentication/howto\-mfa\-getstarted 
 Note 4 
-https:docs.microsoft.comen\-usazureactive\-directoryauthenticationhow\-to\-mfa\-number\-
+https://docs.microsoft.com/en\-us/azure/active\-directory/authentication/how\-to\-mfa\-number\-
 match 
 Note 5 
-https:docs.microsoft.comen\-usazureactive\-directoryauthenticationhow\-to\-mfa\-additional\-
+https://docs.microsoft.com/en\-us/azure/active\-directory/authentication/how\-to\-mfa\-additional\-
 context 
 Note 6 
 Windows Security book: Commercial 
@@ -11775,49 +15854,53 @@ New security features for Windows 11 will help protect hybrid work \| Microsoft 
 Note 8 
 FIDO Alliance: Open Authentication Standards More Secure than Passwords 
 Note 9 
-https:interpret.ml 
+https://interpret.ml/ 
 Note 10 OWASP Top Ten \| OWASP Foundation 
-Note 11 https:blogs.microsoft.comon\-the\-issues20220503artificial\-intelligence\-department\-of\-
-defense\-cyber\-missions 
-Note 12 https:www.kaspersky.comblogthe\-human\-factor\-in\-it\-security 
-Note 13 https:aka.msZTatMSFT 
+Note 11 https://blogs.microsoft.com/on\-the\-issues/2022/05/03/artificial\-intelligence\-department\-of\-
+defense\-cyber\-missions/ 
+Note 12 https://www.kaspersky.com/blog/the\-human\-factor\-in\-it\-security/ 
+Note 13 https://aka.ms/ZTatMSFT 
 Not
-e 14 https:csrc.nist.govpublicationsdetailnistir8374final 
+e 14 https://csrc.nist.gov/publications/detail/nistir/8374/final 
 Not
-e 15 https:www.whitehouse.govbriefing\-roompresidential\-actions20220119memorandum\-
+e 15 https://www.whitehouse.gov/briefing\-room/presidential\-actions/2022/01/19/memorandum\-
 on\-improving\-the\-cybersecurity\-of\-national\-security\-department\-of\-defense\-and\-intelligence\-
-community\-systems 
-Note 16 Executive Order 14028 Improving the Nations Cybersecurity 
-Note 17 https:thequantumdaily.com20200218the\-quantum\-computing\-market\-size\-
+community\-systems/ 
+Note 16 Executive Order 14028 Improving the Nation’s Cybersecurity 
+Note 17 https://thequantumdaily.com/2020/02/18/the\-quantum\-computing\-market\-size\-
 superpositioned\-for\-growth 
 Not
-e 18 The Long Road Ahead to Transition to Post\-Quantum Cryptography, https:cacm.acm.org
-magazines20221257440\-the\-long\-road\-ahead\-to\-transition\-to\-post\-quantum\-cryptography
+e 18 “The Long Road Ahead to Transition to Post\-Quantum Cryptography,” https://cacm.acm.org/
+magazines/2022/1/257440\-the\-long\-road\-ahead\-to\-transition\-to\-post\-quantum\-cryptography/
 fulltext 
-Note 19 https:www.whitehouse.govbriefing\-roompresidential\-actions20220119memorandum\-
+Note 19 https://www.whitehouse.gov/briefing\-room/presidential\-actions/2022/01/19/memorandum\-
 on\-improving\-the\-cybersecurity\-of\-national\-security\-department\-of\-defense\-and\-intelligence\-
-community\-systems 
+community\-systems/ 
 Not
-e 20 https:csrc.nist.govprojectspost\-quantum\-cryptographypost\-quantum\-cryptography\-
+e 20 https://csrc.nist.gov/projects/post\-quantum\-cryptography/post\-quantum\-cryptography\-
 standardization 
 Not
-e 21 https:safecode.orgblogpreparing\-for\-post\-quantum\-cryptography\-roadmap\-initial\-guidance 
+e 21 https://safecode.org/blog/preparing\-for\-post\-quantum\-cryptography\-roadmap\-initial\-guidance/ 
 Not
-e 22 https:csrc.nist.govpublicationsdetailsp800\-40rev\-4final 
+e 22 https://csrc.nist.gov/publications/detail/sp/800\-40/rev\-4/final 
 Contributing 
 Teams
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
-The State of
+The State of 
 Cybercrime
 Report 
-IntroductionReport 
-The State of
-Nation State
+Introduction
+ 
+ 
+ 
+Report 
+The State of 
+Nation State 
 Devices and 
 Cyber 
 Contributing 
@@ -11832,22 +15915,28 @@ Resilience
 Operations 
 Contributing 
 Teams 
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
+Cyber 
 Resilience
 Report 
-introductionContributing
+introduction
+ 
+ 
+ 
+ 
+ 
+Contributing
 Teams
 Report 
-The State of
-Nation State
+The State of 
+Nation State 
 Devices and 
 Cyber 
 Contributing 
@@ -11861,51 +15950,251 @@ Infrastructure
 Resilience 
 Operations 
 Contributing Teams 
-The data and insights in this report wereprovided by a diverse group of security\-
-focused professionals, working across manydifferent Microsoft teams. Collectively, theirgoal is to protect Microsoft, its customers,and the world at large from the threat ofcyberattacks. We are proud to share theseinsights in the spirit of transparency with acommon goal of making the world a saferplace for everyone. 
-AI for Good Research Lab: Harnessing thepower of data and AI to address many of theworlds challenges. The lab collaborates withorganizations outside Microsoft, applying AI toimprove livelihoods and environments. Areas offocus include online safety (disinformation,cybersecurity, child safety), disaster response,sustainability, and AI for Health. 
-Azure Edge \& Platform, Enterprise \& OSSecurity: 
- Responsible for the core OS andplatform security across Windows, Azure, andother Microsoft products. The team buildsindustry\-leading security and hardware solutionsinto Microsoft platforms to drive down exploit,identity, and malware compromise from chipto cloud. Creators of Microsofts Secured\-
-core platform across PC, Edge and Server, theMicrosoft Pluton Security Processor, and more. 
-Azure Networking, Core: A cloud networkingteam focused on the Microsoft WAN, datacenter networks, and the software definednetworking infrastructure of Azure includingthe DDoS platform, the network edge platform,and network security products such asAzure WAF, Azure Firewall, and Azure DDoSProtection Standard. 
-Cloud Security Research team: By securingthe Microsoft cloud, building innovativesecurity features and products, and conductingresearch, this team protects and empowersMicrosoft customers to securely transformtheir 
+The data and insights in this report were 
+ 
+provided by a diverse group of security\-
+focused professionals, working across many 
+ 
+different Microsoft teams. Collectively, their 
+ 
+goal is to protect Microsoft, its customers, 
+ 
+and the world at large from the threat of 
+ 
+cyberattacks. We are proud to share these 
+ 
+insights in the spirit of transparency with a 
+ 
+common goal of making the world a safer 
+ 
+place for everyone. 
+AI for Good Research Lab: Harnessing the 
+ 
+power of data and AI to address many of the 
+ 
+world’s challenges. The lab collaborates with 
+ 
+organizations outside Microsoft, applying AI to 
+ 
+improve livelihoods and environments. Areas of 
+ 
+focus include online safety (disinformation, 
+ 
+cybersecurity, child safety), disaster response, 
+ 
+sustainability, and AI for Health. 
+Azure Edge \& Platform, Enterprise \& OS 
+ 
+Security: 
+ Responsible for the core OS and 
+ 
+platform security across Windows, Azure, and 
+ 
+other Microsoft products. The team builds 
+ 
+industry\-leading security and hardware solutions 
+ 
+into Microsoft platforms to drive down exploit, 
+ 
+identity, and malware compromise from chip 
+ 
+to cloud. Creators of Microsoft’s Secured\-
+core platform across PC, Edge and Server, the 
+ 
+Microsoft Pluton Security Processor, and more. 
+Azure Networking, Core: A cloud networking 
+ 
+team focused on the Microsoft WAN, data 
+ 
+center networks, and the software defined 
+ 
+networking infrastructure of Azure including 
+ 
+the DDoS platform, the network edge platform, 
+ 
+and network security products such as 
+ 
+Azure WAF, Azure Firewall, and Azure DDoS 
+ 
+Protection Standard. 
+Cloud Security Research team: By securing 
+ 
+the Microsoft cloud, building innovative 
+ 
+security features and products, and conducting 
+ 
+research, this team protects and empowers 
+ 
+Microsoft customers to securely transform 
+ 
+their 
  organizations. 
-Customer Security and Trust (CST): A teamdriving continuous improvement of customersecurity in Microsoft products and onlineservices. Working with engineering and securityteams across the company, CST ensurescompliance, enhances security, and providesmore transparency to protect customers andpromote global trust in Microsoft. 
+Customer Security and Trust (CST): A team 
+ 
+driving continuous improvement of customer 
+ 
+security in Microsoft products and online 
+ 
+services. Working with engineering and security 
+ 
+teams across the company, CST ensures 
+ 
+compliance, enhances security, and provides 
+ 
+more transparency to protect customers and 
+ 
+promote global trust in Microsoft. 
 Customer 
  Success: 
- Security teams in CustomerSuccess work directly with customers to sharebest practices, lessons learned, and guidanceto accelerate security transformation andmodernization. This team assembles andorganizes best practices and lessons learnedfrom Microsofts journeyas well as ourcustomersinto reference strategies, referencearchitectures, reference plans, and more.Cyber Defense Operations Center (CDOC):Microsofts cybersecurity and defense facilityis a fusion center that brings together securityprofessionals from across the company to protectour corporate infrastructure and the cloudinfrastructure to which customers have access.Incident responders sit alongside data scientistsand security engineers from across Microsoftsservices, products, and devices groups to helpprotect, detect, and respond to threats 24x7\. 
+ Security teams in Customer 
+ 
+Success work directly with customers to share 
+ 
+best practices, lessons learned, and guidance 
+ 
+to accelerate security transformation and 
+ 
+modernization. This team assembles and 
+ 
+organizes best practices and lessons learned 
+ 
+from Microsoft’s journey—as well as our 
+ 
+customers’—into reference strategies, reference 
+ 
+architectures, reference plans, and more. 
+ 
+Cyber Defense Operations Center (CDOC): 
+ 
+Microsoft’s cybersecurity and defense facility 
+ 
+is a fusion center that brings together security 
+ 
+professionals from across the company to protect 
+ 
+our corporate infrastructure and the cloud 
+ 
+infrastructure to which customers have access. 
+ 
+Incident responders sit alongside data scientists 
+ 
+and security engineers from across Microsoft’s 
+ 
+services, products, and devices groups to help 
+ 
+protect, detect, and respond to threats 24x7\. 
 Democracy Forward Initiative: A Microsoft 
-team working to preserve, protect, and advancethe fundamentals of democracy by promotinga healthy information ecosystem, safeguardingopen and secure democratic processes, andadvocating for corporate civic responsibility. 
-Digital Crimes Unit (DCU): A team of attorneys,investigators, data scientists, engineers, analysts,and business professionals dedicated to fightingcybercrime at a global scale using technology,forensics, civil actions, criminal referrals, andboth public and private partnerships. 
+team working to preserve, protect, and advance 
+ 
+the fundamentals of democracy by promoting 
+ 
+a healthy information ecosystem, safeguarding 
+ 
+open and secure democratic processes, and 
+ 
+advocating for corporate civic responsibility. 
+Digital Crimes Unit (DCU): A team of attorneys, 
+ 
+investigators, data scientists, engineers, analysts, 
+ 
+and business professionals dedicated to fighting 
+ 
+cybercrime at a global scale using technology, 
+ 
+forensics, civil actions, criminal referrals, and 
+ 
+both public and private partnerships. 
 Digital 
  Diplomacy: 
- An international teamof former diplomats, policymakers, and legalexperts working to advance a peaceful, stable,and secure cyberspace in the face of risingnation state conflict. 
-Digital Security \& Resilience (DSR): Anorganization dedicated to enabling Microsoftto build the most trusted devices and services,while keeping our company safe, and both ourcompany and customer data protected. 
-Digital Security Unit (DSU): A team ofcybersecurity attorneys and analysts who providelegal, geopolitical, and technical expertise toprotect Microsoft and its customers. DSU buildstrust in Microsofts enterprise security defensesagainst advanced cyber adversaries worldwide. 
+ An international team 
+ 
+of former diplomats, policymakers, and legal 
+ 
+experts working to advance a peaceful, stable, 
+ 
+and secure cyberspace in the face of rising 
+ 
+nation state conflict. 
+Digital Security \& Resilience (DSR): An 
+ 
+organization dedicated to enabling Microsoft 
+ 
+to build the most trusted devices and services, 
+ 
+while keeping our company safe, and both our 
+ 
+company and customer data protected. 
+Digital Security Unit (DSU): A team of 
+ 
+cybersecurity attorneys and analysts who provide 
+ 
+legal, geopolitical, and technical expertise to 
+ 
+protect Microsoft and its customers. DSU builds 
+ 
+trust in Microsoft’s enterprise security defenses 
+ 
+against advanced cyber adversaries worldwide. 
 Digital Threat Analysis Center (DTAC): A 
-team of experts who analyze and report onnation state threats, including cyberattacksand influence operations. The team combinesinformation and cyber threat intelligence withgeopolitical analysis to provide insights to ourcustomers and to Microsoft to inform effectiveresponse and protections.Enterprise and Security: A team focused onproviding a modern, secure, and manageableplatform for the intelligent cloud andintelligent 
+team of experts who analyze and report on 
+ 
+nation state threats, including cyberattacks 
+ 
+and influence operations. The team combines 
+ 
+information and cyber threat intelligence with 
+ 
+geopolitical analysis to provide insights to our 
+ 
+customers and to Microsoft to inform effective 
+ 
+response and protections. 
+ 
+Enterprise and Security: A team focused on 
+ 
+providing a modern, secure, and manageable 
+ 
+platform for the intelligent cloud and 
+ 
+intelligent 
  edge. 
 Enterprise Mobility: 
- A team that helps deliverthe modern workplace and modern management 
+ A team that helps deliver 
+ 
+the modern workplace and modern management 
 to keep data secure, in the cloud and on\-
-premises. Endpoint Manager includes theservices and tools Microsoft and customers useto manage and monitor mobile devices, desktopcomputers, virtual machines, embedded devices,and 
+premises. Endpoint Manager includes the 
+ 
+services and tools Microsoft and customers use 
+ 
+to manage and monitor mobile devices, desktop 
+ 
+computers, virtual machines, embedded devices, 
+ 
+and 
  servers. 
 Report 
 Introduction
-The State of
+The State of 
 Cybercrime
-Nation State
+Nation State 
 Threats
-Devices and
+Devices and 
 Infrastructure
 Cyber Influence 
 Operations
-Cyber
-ResilienceContributing
+Cyber 
+Resilience
+ 
+ 
+ 
+ 
+ 
+Contributing
 Teams
 Report 
-The State of
-Nation State
+The State of 
+Nation State 
 Devices and 
 Cyber 
 Contributing 
@@ -11921,49 +16210,234 @@ Operations
 Contributing Teams 
 Continued 
 Enterprise Risk Management: 
- A teamworking across business units to prioritize riskdiscussions with Microsofts senior leadership.ERM connects multiple operational riskteams, manages Microsofts enterprise riskframework, and facilitates the companysinternal security assessment using the NISTCybersecurity 
+ A team 
+ 
+working across business units to prioritize risk 
+ 
+discussions with Microsoft’s senior leadership. 
+ 
+ERM connects multiple operational risk 
+ 
+teams, manages Microsoft’s enterprise risk 
+ 
+framework, and facilitates the company’s 
+ 
+internal security assessment using the NIST 
+ 
+Cybersecurity 
  Framework. 
 Global Cybersecurity Policy: 
- A team workingwith governments, NGOs, and industrypartners to promote cybersecurity publicpolicy that empowers customers to strengthentheir security and resiliency as they adoptMicrosoft 
+ A team working 
+ 
+with governments, NGOs, and industry 
+ 
+partners to promote cybersecurity public 
+ 
+policy that empowers customers to strengthen 
+ 
+their security and resiliency as they adopt 
+ 
+Microsoft 
  technology. 
-Identity and Network Access (IDNA) Security:A team working to protect all Microsoftcustomers from unauthorized access and fraud.IDNA Security is a cross\-discipline team ofengineers, product managers, data scientists,and security investigators. 
-M365 Security: Organization that developssecurity solutions including Microsoft Defenderfor Endpoint (MDE), Microsoft Defenderfor Identity (MDI), and others, to secureenterprise 
+Identity and Network Access (IDNA) Security: 
+ 
+A team working to protect all Microsoft 
+ 
+customers from unauthorized access and fraud. 
+ 
+IDNA Security is a cross\-discipline team of 
+ 
+engineers, product managers, data scientists, 
+ 
+and security investigators. 
+M365 Security: Organization that develops 
+ 
+security solutions including Microsoft Defender 
+ 
+for Endpoint (MDE), Microsoft Defender 
+ 
+for Identity (MDI), and others, to secure 
+ 
+enterprise 
  customers. 
-Microsoft AI, Ethics and Effects in Engineeringand Research (AETHER): An advisory boardat Microsoft with the mission of ensuring newtechnologies are developed and fielded in aresponsible manner. 
-Microsoft Bing Search and Distribution:A team dedicated to providing a world\-classinternet search engine, enabling users aroundthe world to find trusted search results andinformation quickly, including tracking topicsand trending stories that matter to them, whilegiving users control of their privacy. 
-Microsoft Customer and Partner Solutions:Microsofts 
+Microsoft AI, Ethics and Effects in Engineering 
+ 
+and Research (AETHER): An advisory board 
+ 
+at Microsoft with the mission of ensuring new 
+ 
+technologies are developed and fielded in a 
+ 
+responsible manner. 
+Microsoft Bing Search and Distribution: 
+ 
+A team dedicated to providing a world\-class 
+ 
+internet search engine, enabling users around 
+ 
+the world to find trusted search results and 
+ 
+information quickly, including tracking topics 
+ 
+and trending stories that matter to them, while 
+ 
+giving users control of their privacy. 
+Microsoft Customer and Partner Solutions: 
+ 
+Microsoft’s 
  unified 
  commercial 
- go\-to\-marketorganization responsible for field roles suchas security and technical sales specialistsand advisors. 
-Microsoft Defender Experts: Microsofts 
-largest global organization of product\-focusedsecurity researchers, applied scientists, and threatintelligence analysts. Defender Experts deliversinnovative detection and response capabilities inMicrosoft 365 security products and MicrosoftDefender Experts managed services.Microsoft Defender for IoT: A team composedof domain\-expert researchers specializing inreverse\-engineering of IoTOT malware, protocolsand firmware. The team hunts for IoTOT threatsto uncover malicious trends and campaigns. 
-Microsoft Defender Threat Intelligence(RiskIQ): 
- A team that produces tacticalintelligence through analysis of Microsoftsextensive external telemetry collection, chartingthe threat landscape as it evolves to discoverpreviously unknown threat infrastructure, andadding context to threat actors and campaigns.The team regularly publishes timely anddistinctive research to deliver crucial tacticalintelligence 
+ go\-to\-market 
+ 
+organization responsible for field roles such 
+ 
+as security and technical sales specialists 
+ 
+and advisors. 
+Microsoft Defender Experts: Microsoft’s 
+largest global organization of product\-focused 
+ 
+security researchers, applied scientists, and threat 
+ 
+intelligence analysts. Defender Experts delivers 
+ 
+innovative detection and response capabilities in 
+ 
+Microsoft 365 security products and Microsoft 
+ 
+Defender Experts managed services. 
+ 
+Microsoft Defender for IoT: A team composed 
+ 
+of domain\-expert researchers specializing in 
+ 
+reverse\-engineering of IoT/OT malware, protocols 
+ 
+and firmware. The team hunts for IoT/OT threats 
+ 
+to uncover malicious trends and campaigns. 
+Microsoft Defender Threat Intelligence 
+ 
+(RiskIQ): 
+ A team that produces tactical 
+ 
+intelligence through analysis of Microsoft’s 
+ 
+extensive external telemetry collection, charting 
+ 
+the threat landscape as it evolves to discover 
+ 
+previously unknown threat infrastructure, and 
+ 
+adding context to threat actors and campaigns. 
+ 
+The team regularly publishes timely and 
+ 
+distinctive research to deliver crucial tactical 
+ 
+intelligence 
  to 
  defenders. 
-Microsoft Security Business DevelopmentTeam: 
- A team that leads Microsoftscybersecurity growth strategy, partnerships,and strategic investments.Microsoft Security Response Center (MSRC): 
+Microsoft Security Business Development 
+ 
+Team: 
+ A team that leads Microsoft’s 
+ 
+cybersecurity growth strategy, partnerships, 
+ 
+and strategic investments. 
+ 
+Microsoft Security Response Center (MSRC): 
  A 
-team engaged with security researchers workingto protect Microsofts customers and partnerecosystem. An integral part of Microsofts CyberDefense Operations Center (CDOC), MSRC bringstogether security response experts to detect andrespond to threats in real time.Microsoft Security Services for IncidentResponse: 
- A team of cybersecurity expertshelping customers through the entire cyberattackfrom investigation to successful containment andrecovery related activities. Services are offeredvia two highly integrated teams, the Detectionand Response Team (DART) with a focus on theinvestigation and groundwork for recovery, andthe Compromise Recovery Security Practice(CRSP), which focuses on the containment andrecovery aspects. 
-Microsoft Threat Intelligence Center (MSTIC):A team focused on identifying, tracking, andcollecting intelligence related to the mostsophisticated adversaries impacting Microsoftcustomers, including nation state threats,malware, and phishing. 
-One Engineering System (1ES): A team witha mission of delivering world class tools to helpMicrosoft developers be as productive andsecure as possible. The team leads the centralstrategy for securing Microsofts end\-to\-endsoftware supply chain. 
-Operational Threat Intelligence Center(OpTIC): 
- The team responsible for managingand disseminating cyber threat intelligence thatsupports the Microsoft Cyber Defense OperationCenters (CDOC) mission to protect Microsoftand our customers. 
+team engaged with security researchers working 
+ 
+to protect Microsoft’s customers and partner 
+ 
+ecosystem. An integral part of Microsoft’s Cyber 
+ 
+Defense Operations Center (CDOC), MSRC brings 
+ 
+together security response experts to detect and 
+ 
+respond to threats in real time. 
+ 
+Microsoft Security Services for Incident 
+ 
+Response: 
+ A team of cybersecurity experts 
+ 
+helping customers through the entire cyberattack 
+ 
+from investigation to successful containment and 
+ 
+recovery related activities. Services are offered 
+ 
+via two highly integrated teams, the Detection 
+ 
+and Response Team (DART) with a focus on the 
+ 
+investigation and groundwork for recovery, and 
+ 
+the Compromise Recovery Security Practice 
+ 
+(CRSP), which focuses on the containment and 
+ 
+recovery aspects. 
+Microsoft Threat Intelligence Center (MSTIC): 
+ 
+A team focused on identifying, tracking, and 
+ 
+collecting intelligence related to the most 
+ 
+sophisticated adversaries impacting Microsoft 
+ 
+customers, including nation state threats, 
+ 
+malware, and phishing. 
+One Engineering System (1ES): A team with 
+ 
+a mission of delivering world class tools to help 
+ 
+Microsoft developers be as productive and 
+ 
+secure as possible. The team leads the central 
+ 
+strategy for securing Microsoft’s end\-to\-end 
+ 
+software supply chain. 
+Operational Threat Intelligence Center 
+ 
+(OpTIC): 
+ The team responsible for managing 
+ 
+and disseminating cyber threat intelligence that 
+ 
+supports the Microsoft Cyber Defense Operation 
+ 
+Center’s (CDOC) mission to protect Microsoft 
+ 
+and our customers. 
 Cyber Influence 
 Operations
-Devices and
+Devices and 
 Infrastructure
-Nation State
+Nation State 
 Threats
-The State of
+The State of 
 Cybercrime
 Report 
 Introduction
-Cyber
-ResilienceIlluminating the threat landscape 
+Cyber 
+Resilience
+ 
+ 
+ 
+ 
+ 
+ 
+Illuminating the threat landscape 
 and empowering a digital defense. 
-Learn more: https:microsoft.commddr 
-Dive deeper: https:blogs.microsoft.comon\-the\-issues 
+Learn more: https://microsoft.com/mddr 
+Dive deeper: https://blogs.microsoft.com/on\-the\-issues/ 
 Stay connected: @msftissues and @msftsecurity 
- 2022 Microsoft. All rights reserved.
+© 2022 Microsoft. All rights reserved.

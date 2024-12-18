@@ -36,7 +36,7 @@ In the past quarter, the Huntress team witnessed a continuing shift in the natur
 against SMBs. Threat actors have largely moved away from malware\-focused tactics. Instead, 
 threat actors focus on non\-malware mechanisms and abuse of legitimate tools and system 
 commands in most incidents. Notably, 56% of recorded incidents in this time frame were, in 
-essence, malware free across multiple types of intrusions. Of particular note is the increasing 
+essence, “malware free” across multiple types of intrusions. Of particular note is the increasing 
 use of remote monitoring and management (RMM) software as an avenue of intrusion. In 65% 
 of incidents, threat actors used RMM software as a method for persistence or remote access 
 mechanisms following initial access to victim environments.
@@ -45,10 +45,10 @@ Executive Summary
 SMB Threat Report
 These trends are concerning, especially within the managed service provider (MSP) space. IT 
 administrators, who rely on the same techniques and software that are now favored by threat 
-actors, face an increasingly complex conundrumdistinguishing good from bad becomes 
+actors, face an increasingly complex conundrum—distinguishing “good” from “bad” becomes 
 a much more difficult task than it has been historically. Consequently, this may introduce an 
 immediate need to move toward more behavior\-based threat identification and a heightened 
-focus on monitoring seemingly legitimate commands and software.
+focus on monitoring seemingly “legitimate” commands and software.
 Furthermore, the migration toward cloud platforms and similar developments have placed an 
 even greater premium on securing identities. Whether leveraged as an initial access mechanism 
 through credential capture and replay, or for inbox access for information gathering, adversaries 
@@ -60,11 +60,11 @@ capture the scope of identity\-based actions and potential intrusions.
 The following research reveals that the cybersecurity landscape for SMBs in Q3 2023 calls for a 
 profound reassessment of defense strategies. The dominance of non\-malware tactics, coupled 
 with the exploitation of RMM software and identities, necessitates a nuanced approach to threat 
-detection and response and expanding ones security purview beyond conventional perimeters.
+detection and response and expanding one’s security purview beyond conventional perimeters.
 of incidents in Q3 2023 involved threat 
 actors exploiting RMM software
 of incidents in Q3 2023 
-were malware free
+were “malware free”
 65%
 56%
 4
@@ -72,32 +72,32 @@ SMB Threat Report
 Quarterly Summary
 Reported items were distributed across Huntress monitoring mechanisms: Managed Endpoint 
 Detection and Response and (increasingly) Managed Detection and Response for Microsoft 
-1\. This multi\-pronged approach to security monitoring and response enables Huntress to review 
-adversary operations across the attack lifecyclefrom initial access and exploitation, through 
+365\. This multi\-pronged approach to security monitoring and response enables Huntress to review 
+adversary operations across the attack lifecycle—from initial access and exploitation, through 
 lateral movement and persistence mechanisms, to final adversary actions in victim environments.
 Through further analysis and refinement, Huntress researchers were able to discern overall trends 
-in the threat landscape facing SMBsa sector typically overlooked or ignored in threat reporting. 
+in the threat landscape facing SMBs—a sector typically overlooked or ignored in threat reporting. 
 Huntress researchers identified several notable trends in adversary operations facing the SMB 
 space:
 In Q3 2023, 40% of incidents responded to by Huntress 
-analysts were categorized as high or critical in severity.
-Decreased reliance on custom tools and especially 
+analysts were categorized as “high” or “critical” in severity.
+• Decreased reliance on custom tools and especially 
 malicious binaries in intrusions until final actions, such 
 as ransomware deployment. As a result, many classic 
 mechanisms for identifying or mitigating threats (such 
 as pure anti\-malware solutions) are less effective for 
 countering intrusions.
-Increased reliance on malicious use of legitimate 
+• Increased reliance on malicious use of legitimate 
 commands and tools, with particular emphasis on 
 RMM software. The shift to RMM (as well as built\-in 
 system commands) means greater emphasis must be 
 placed on behavioral analysis of adversary operations 
 for detection and response.
-A highly diversified ransomware ecosystem including 
+• A highly diversified ransomware ecosystem including 
 many families and strains that do not appear to impact 
 many enterprises or similar entities, but are commonly 
 found in the SMB space. This includes a diverse 
-ecosystem of ransomware entities beyond headline 
+ecosystem of ransomware entities beyond “headline” 
 entities and many commodity strains that are often 
 dismissed in large enterprise security models.
 Increased reliance 
@@ -109,21 +109,21 @@ Quarterly Summary
 6
 SMB Threat Report
 Intrusion Trends
-Huntress focuses on defending the SMBthe organizations that are below the enterprise level 
-and represent 99% of businesses in the USand thus maintains distinct visibility from most other 
-security firms. Within this visibility, we have identified continuing trends towards living off the 
-land binaries (LOLBins) and credential compromise activity in Q3 2023\. While custom or outright 
-malicious tools still feature in events, adversaries are largely seeking to blend in to legitimate 
+Huntress focuses on defending the SMB—the organizations that are below the enterprise level 
+and represent 99% of businesses in the US—and thus maintains distinct visibility from most other 
+security firms. Within this visibility, we have identified continuing trends towards “living off the 
+land” binaries (LOLBins) and credential compromise activity in Q3 2023\. While custom or outright 
+malicious tools still feature in events, adversaries are largely seeking to “blend in” to legitimate 
 network operations through multiple mechanisms to evade detection and response.
 At the SMB level, LOLBin use is especially concerning given the state of monitoring and review for 
-many organizations. Many critical entitiesfrom local school districts to medical officesmay find 
+many organizations. Many critical entities—from local school districts to medical offices—may find 
 themselves at best leveraged for cryptomining or botnet purposes, and at worst, the victims of 
 disruptive ransomware.
-Figure 1 shows the distribution of tool types observed in Huntress\-identified incidents, 
-differentiating between compiled malware (e.g a malicious EXE file), the use of scripting 
+Figure 1 shows the distribution of tool “types” observed in Huntress\-identified incidents, 
+differentiating between compiled malware (e.g., a malicious EXE file), the use of scripting 
 frameworks (such as PowerShell) for malicious activity, and the use of LOLBins and legitimate tools 
 (including RMM software). While malware represents a significant portion of overall activity (44%), 
-the remaining 56% of incidents are effectively malware free. Huntress thus observes a majority 
+the remaining 56% of incidents are effectively “malware free.” Huntress thus observes a majority 
 of incidents featuring LOLBin or similar abuse, or leveraging built\-in scripting frameworks for 
 actions.
 Tool Usage in Intrusions
@@ -136,22 +136,22 @@ SMB Threat Report
 The weaponization of legitimate tools, such as RMM tools in particular, remains an interesting and 
 increasingly popular item in adversary arsenals. As reported by CISA and others, RMM abuse is 
 increasingly popular in intrusions for several reasons:
-56% of incidents were malware free, meaning 
+56% of incidents were “malware free,” meaning 
 adversaries opted for exploiting scripting frameworks or 
 legitimate tools in place of malicious software.
-The applications in question are legitimate software, thus evading anti\-malware solutions.
-Many organizations already run RMM software, allowing adversaries to blend in to the 
+• The applications in question are legitimate software, thus evading anti\-malware solutions.
+• Many organizations already run RMM software, allowing adversaries to “blend in” to the 
 environment.
-RMM tool use is not typically audited, especially in small organizations, allowing for multiple 
+• RMM tool use is not typically audited, especially in small organizations, allowing for multiple 
 RMM frameworks to be observed in the same environment. This diffusion of tools defeats 
-potential detections, such as identifying a new RMM framework different from an existing 
+potential detections, such as identifying a “new” RMM framework different from an existing 
 baseline.
 8
 SMB Threat Report
 From Huntress observations, RMM and remote access 
 tools are distributed among several frameworks, with 
 ConnectWise ScreenConnect figured most prominently, as 
-seen in Figure 2 below. 
+seen in Figure 2 below.¹ 
 Adversary choice of RMM tool, while interesting for trend 
 analysis, is not necessarily as significant as the fact that 
 adversaries are deploying some form of RMM in intrusions. In 
@@ -170,7 +170,7 @@ proactively locate, update,
 and monitor client endpoints.
 1 While ConnectWise ScreenConnect, AnyDesk, TeamViewer, and 
 NetSupport are not technically RMMs, for simplification we are aligning 
-with CISAs categorization of these and similar tools.
+with CISA’s categorization of these and similar tools.
 56% ConnectWise
 NetSupport 13%
 TeamViewer 3%
@@ -197,7 +197,7 @@ Identity\-Focused Security
 SMB Threat Report
 Reviewing identified incidents, as seen in Figure 3, Huntress observes an overwhelming 
 emphasis on identity\-focused malicious activity. Identity is something to be stolen, spoofed, or 
-manipulatedand adversaries increasingly focus on precisely these mechanisms. Primarily, weve 
+manipulated—and adversaries increasingly focus on precisely these mechanisms. Primarily, we’ve 
 seen a greater concentration on manipulating or compromising communication channels, such as 
 setting up malicious forwarding or other inbox rules, which make up 64% of observed Microsoft 
 365 incidents. Other activity includes attempting to compromise accounts, as seen in 24% of 
@@ -222,8 +222,8 @@ Microsoft 365 Incident Types
 Figure 3: Breakdown of Microsoft 365 Incident Types
 11
 SMB Threat Report
-Trends in adversary activityboth the specific tools leveraged in intrusions and the more 
-general behaviors that these items supportare critical in mapping the threat landscape. 
+Trends in adversary activity—both the specific tools leveraged in intrusions and the more 
+general behaviors that these items support—are critical in mapping the threat landscape. 
 Identifying commonalities in adversary tradecraft as well as the convergence of operations 
 on increasingly standard techniques can be of great value to defenders in orienting visibility 
 and threat detection.
@@ -248,9 +248,9 @@ of alternatives to compiled malicious
 binaries. 
 While representing a smaller fraction 
 of overall incidents, Huntress response 
-identifies nearly all intrusions (i.e 
+identifies nearly all intrusions (i.e., 
 multiple incidents or compromised hosts 
-can exist within a single organizations 
+can exist within a single organization’s 
 intrusion) feature credential capture 
 in some fashion or at some phase of 
 adversary operations. Operating system 
@@ -268,8 +268,8 @@ authentication (MFA) applications,
 especially for sensitive accounts such 
 as domain administrators, is a critical 
 security control to reduce attack 
-surfaces and stymie adversary
-break out.
+surfaces and stymie adversary 
+“break out.” 
 25\.3% Command and Scripting Interpreter
 20\.7% Other
 9\.1% User Execution
@@ -298,7 +298,7 @@ Q1
 150
 350
 Qakbot Instances
-As part of investigations as well as an integral feature of Huntress Managed EDR product, 
+As part of investigations as well as an integral feature of Huntress’ Managed EDR product, 
 Huntress gathers antivirus (AV) detections in addition to analyst identification of malicious 
 software or related tooling. While AV detections for the identification of specific malware 
 types can sometimes lead to incomplete or misleading results, analyzing overall trends based 
@@ -306,12 +306,12 @@ on functionality and malware type or classification can be enlightening to ident
 adversary use and activity.
 The coordinated takedown of Qakbot in Q3 2023 represents one of the more significant events 
 in the identified time period and is partially reflected in Huntress data. Of note, Huntress clients 
-have been protected against Qakbot infections since late 2022 through the use of a vaccine 
+have been protected against Qakbot infections since late 2022 through the use of a “vaccine” 
 approach to interrupt malware execution. While Qakbot has essentially been neutered from full 
 execution, Huntress still observes its delivery and attempted execution, indicating its prevalence 
 in the wild. 
 As shown in Figure 5, we have observed a declining number of Qakbot\-related incidents over 
-2023, with approximately half as many events in Q3 as in Q1\. While zombie distribution is likely 
+2023, with approximately half as many events in Q3 as in Q1\. While “zombie” distribution is likely 
 to continue for some time, Huntress anticipates this to drop even further in Q4 to the point of near 
 eradication.
 Figure 5: Trends of Incidents Involving Qakbot by Quarter
@@ -319,7 +319,7 @@ Figure 5: Trends of Incidents Involving Qakbot by Quarter
 SMB Threat Report
 Aside from specific tool deployment, Huntress focuses significant research efforts on post\-
 intrusion access tools. This perspective provides excellent insight into the tools and behaviors 
-favored by adversaries once they gain access to a victims environment. While items like Qakbot 
+favored by adversaries once they gain access to a victim’s environment. While items like Qakbot 
 may recede, it is hardly alone in the information security landscape, and will rapidly be supplanted 
 by other frameworks. Interestingly though, as seen in Figure 6 showing the identified applications 
 in incident reporting, Huntress observations of post\-intrusion tooling are heavily skewed toward 
@@ -331,8 +331,8 @@ credentials. RMM abuse is supplementing or replacing the use of other frameworks
 Cobalt Strike Beacon or Metasploit Meterpreter, in adversary operations. Additionally, RMM 
 abuse offers adversaries the benefit of blending into legitimate remote administration activity 
 and evading anti\-malware security tools. Note that this view only covers those instances where 
-applications were used to further an intrusion, while a number of incidentsnearly one third of 
-the total as previously discussedinvolve mechanisms such as LOLBins and credential capture to 
+applications were used to further an intrusion, while a number of incidents—nearly one third of 
+the total as previously discussed—involve mechanisms such as LOLBins and credential capture to 
 achieve adversary objectives.
 Post\-Intrusion Access Tools Observed
 3% Meterpreter
@@ -357,7 +357,7 @@ accounts for the majority of known\-
 variant ransomware deployments 
 observed by Huntress (25%). However, 
 a long tail of uncategorized, unknown, 
-or defunct (i.e strains assessed to no 
+or “defunct” (i.e., strains assessed to no 
 longer be actively deployed) make up 
 the majority of all identified ransomware 
 events (60%).
@@ -371,7 +371,7 @@ well\-known affiliates.
 ransomware 
 incidents were from 
 uncategorized, 
-unknown, or defunct 
+unknown, or “defunct” 
 ransomware strains.
 Figure 7: Breakdown of Ransomware Families Observed
 60% Other
@@ -392,23 +392,23 @@ SMB Threat Report
 Adversary Trends
 Adversaries continue to leverage a consistent triad of initial access techniques: user\-targeted 
 phishing activity, credential theft and replay, and external\-facing system or application 
-exploitation. Some of these can be combined together (e.g credential phishing activity to 
+exploitation. Some of these can be combined together (e.g., credential phishing activity to 
 acquire logon information, followed by replay against systems not enforcing multifactor logins), or 
-deployed independently at scale (e.g MoveIT exploitation activity earlier in 2023\).
-One of the key themes of Q3 2023 is an emphasis on hot zero day summera series of 
+deployed independently at scale (e.g., MoveIT exploitation activity earlier in 2023\).
+One of the key themes of Q3 2023 is an emphasis on “hot zero day summer”—a series of 
 vulnerabilities disclosed in external\-facing applications (such as MoveIT) or systems (such as 
 VPN concentrators, firewalls, or email security gateways) enabling adversaries to rapidly 
 establish presence in victim environments. Huntress, as a managed security vendor emphasizing 
 system endpoint visibility, is seldom directly involved in the first phases of such intrusions, as they 
 take place against dedicated appliances with custom operating systems and similar limitations. 
 However, Huntress frequently observes the follow\-on impacts of such activity, where an exploited 
-externally\-facing system becomes patient zero for subsequent lateral movement in the victim 
+externally\-facing system becomes “patient zero” for subsequent lateral movement in the victim 
 environment.
 While garnering significant attention, adversaries do not rely on vulnerabilities alone for initial 
 access. Phishing and end\-user targeting remain common and widespread tactics for threat actors 
 ranging from ransomware affiliates to BEC operators. Yet the nature of such phishing has shifted 
 significantly since Microsoft disabled macro execution by default in Microsoft Office as well 
-as earlier Mark of the Web security controls implemented for Visual Basic for Applications 
+as earlier “Mark of the Web” security controls implemented for Visual Basic for Applications 
 (VBA) scripts.
 Phishing and end\-user targeting remain common and 
 widespread tactics for threat actors ranging from 
@@ -423,7 +423,7 @@ as ZIP or ISO archives containing malicious LNK or scripting objects, requiring 
 from victims from initial delivery to execution.
 In other instances, adversaries leverage new access vectors to interact with end users. For 
 example, TrueSec published on activity leveraging Microsoft Teams for distributing phishing 
-links in early September 2023\. Huntress identified similar activity between September 68, 2023, 
+links in early September 2023\. Huntress identified similar activity between September 6–8, 2023, 
 leveraging LNK objects masquerading as PDFs to encourage user interaction, resulting in the 
 installation of DarkGate malware. Examples of payloads include the following objects:
 File Name
@@ -450,11 +450,11 @@ above payloads, along with those identified by TrueSec researchers, leveraged th
 coded command and control server: 5\.1 8 8\.8 7\[.]5 8 . Additionally, object metadata within 
 the LNK files themselves show identical records for the creating system, tying all samples back 
 to a single entity. Focusing on the C2 node, references to that IP address in various repositories 
-reveal a variety of LNK objects communicating with it from September 120, 2023\.
+reveal a variety of LNK objects communicating with it from September 1–20, 2023\.
 Overall, such activity demonstrates continued adaptability by adversaries to avoid known 
 detection and alerting mechanisms, such as email monitoring for phishing activity, while migrating 
 toward areas with little or no monitoring, such as chat applications. Along with the above, 
-adversaries will utilize these mechanismssuch as LNK files masquerading as documentsto 
+adversaries will utilize these mechanisms—such as LNK files masquerading as documents—to 
 launch what are ultimately sequences of legitimate system commands to retrieve and install 
 malicious payloads.
 20
@@ -467,7 +467,7 @@ engineering victims to download legitimate software from malicious resources.
 Notably, the malicious variants of the above software are provided as MSI files, whereas the 
 legitimate versions available on company websites are all EXEs. After coercing or convincing 
 a victim to download a malicious software package masquerading as a legitimate download, 
-execution would result in an LNK created in the users StartUp folder as a persistence mechanism 
+execution would result in an LNK created in the user’s StartUp folder as a persistence mechanism 
 to load on start a DarkGate variant. The DarkGate variants themselves are run as AutoIT3 
 payloads.
 After early September 2023, Huntress identified additional infection or distribution vectors for 
@@ -479,7 +479,7 @@ succeeded in running, resulting in an infected victim. This observation emphasiz
 organizations of all sizes to practice defense in depth, combining anti\-malware solutions with 
 endpoint visibility.
 In observed intrusions, Huntress identified a variety of legitimate 
-applications spoofed for delivering DarkGate payloads, such as:
+applications “spoofed” for delivering DarkGate payloads, such as:
 Advanced IP 
 Scanner
 ColaSoft MAC 
@@ -494,7 +494,7 @@ in multiple incidents investigated by Huntress.
 In Q3 2023, Huntress observed convoluted infection chains starting with downloaded HTML files 
 (likely delivered via phishing) leading to the download of password\-protected archives. When 
 opened, the archives would extract and launch a WSF file leading to a PowerShell command to 
-download and run 1\.t x tfrom 1 8 5\.8 1\.1 8 7\[.]2 1 9 .The TXT file, in reality, is a script that 
+download and run 1\.t x t from 1 8 5\.8 1\.1 8 7\[.]2 1 9 . The TXT file, in reality, is a script that 
 creates a BITS job on the victim host to download an additional archive, in which resides a further 
 VBScript object. This final object spawned a PowerShell command that created a Scheduled 
 Task to run every two minutes on the host, each time compiling AsyncRAT from the source and 
@@ -531,7 +531,7 @@ SMB Threat Report
 Espionage in the 
 SMB Environment
 Huntress identified and responded to intrusions at a small enterprise in the defense industrial base 
-(DIB) in Q3 2023\. The intrusion, despite penetrating deep into the victims environment and having 
+(DIB) in Q3 2023\. The intrusion, despite penetrating deep into the victim’s environment and having 
 a dwell time of several weeks, did not result in ransomware or similar monetization behaviors. 
 Instead, Huntress analysts observed systematic identification and collection of sensitive files 
 related to defense projects. While exfiltration was not directly observed, overall, the intrusion 
@@ -539,7 +539,7 @@ in question has all the hallmarks of an espionage\-focused, intellectual propert
 campaign.
 Instead of leveraging exotic malware or similar, custom tools, all actions observed by Huntress 
 aligned with credential harvesting, credential reuse, and living\-off\-the\-land behaviors, combined 
-with some script execution. Irrespective of the common nature of the adversarys tactics, 
+with some script execution. Irrespective of the “common” nature of the adversary’s tactics, 
 techniques, and procedures (TTPs), they were very effective in achieving (or nearly achieving) 
 perceived goals in information collection.
 Given the nature of the intrusion, no firm indicators of compromise exist as the adversary relied 
@@ -547,14 +547,14 @@ exclusively on built\-in system commands and ephemeral scripting activity. The l
 this activity is the necessity of performing behavior\-focused monitoring and alerting for the abuse 
 of legitimate applications for malicious purposes.
 Several lessons emerge from this activity:
-First and foremost, sensitive areas of national economies, including the DIB, extend well 
+• First and foremost, sensitive areas of national economies, including the DIB, extend well 
 into the SMB space, with many enticing targets for state\-directed or \-supporting entities to 
 pursue.
-Intrusions into such organizations need not rely on exploits or exotic tradecraft to succeed, 
+• Intrusions into such organizations need not rely on exploits or exotic tradecraft to succeed, 
 but may operate through mechanisms familiar to junior pen\-testers to achieve success.
-Increasing visibility and monitoring of such environments is necessary to identify such 
+• Increasing visibility and monitoring of such environments is necessary to identify such 
 intrusions when they take place and to counteract such events where possible.
-Implementing increasingly standard security controls, such as MFA, are not mere luxury items 
+• Implementing increasingly standard security controls, such as MFA, are not mere luxury items 
 but necessary steps in defeating intrusions of multiple types and provenance.
 23
 SMB Threat Report
@@ -566,7 +566,7 @@ environments.
 Note that visibility now extends well beyond just the systems and networks managed by MSPs 
 or owned by given organizations. Visibility now must incorporate third\-party and cloud\-based 
 services as these become tightly integrated with business operations and critical organizational 
-functions. Understanding this new, perimeterless paradigm in operations and developing 
+functions. Understanding this new, “perimeterless” paradigm in operations and developing 
 mechanisms to monitor and defend these environments is thus critical to maintaining a secure 
 posture in the cloud era.
 In line with the above trends, implementing MFA across all available systems (and especially ALL 
@@ -579,7 +579,7 @@ Visibility remains key to defense. Particularly given
 trends in adversary operations, relying more on abusing 
 legitimate applications than distributing custom code 
 and tools, the ability of organizations to identify and 
-differentiate malicious from normal and benign is 
+differentiate “malicious” from “normal” and “benign” is 
 vital to enable meaningful, useful defense.
 Response \& 
 Defensive Guidance
@@ -608,7 +608,7 @@ SMB Threat Report
 Layering defensive visibility across artifacts, such as 
 potentially malicious files, host commands and actions, 
 and even network visibility and communication, remains 
-necessary to catch even supposedly commodity 
+necessary to catch even supposedly “commodity” 
 adversaries in the current ecosystem.
 Overall, the above recommendations must not take place in isolation, but rather need to be 
 combined into an effective defense\-in\-depth posture for merely adequate security. As seen in 
@@ -616,7 +616,7 @@ examples in this report, adversaries leverage multiple techniques and strategies
 evade detections, meaning simple reliance on anti\-malware as a safeguard is no longer sufficient, 
 especially when combined with LOLBin abuse. Thus layering defensive visibility across artifacts, 
 such as potentially malicious files, host commands and actions, and even network visibility and 
-communication, remains necessary to catch even supposedly commodity adversaries in the 
+communication, remains necessary to catch even supposedly “commodity” adversaries in the 
 current ecosystem.
 Finally, a common theme across multiple examples, whether socially engineering users to run a file 
 or spoofing identities to generate a BEC attempt, is the subversion of user trust. Adversaries know 
@@ -633,19 +633,19 @@ importantly, from a Huntress perspective, the landscape remains a difficult one 
 organizations that lack the resources and expertise residing in enterprise network environments. 
 Whether for monetization purposes through ransomware or BEC, or potentially even state\-
 directed espionage activity, SMBs remain at risk from a variety of entities.
-More worryingly, these adversaries are taking advantage of holes in our visibility and 
+More worryingly, these adversaries are taking advantage of “holes” in our visibility and 
 awareness to subvert or avoid many legacy security controls. Whereas once upon a time, a small 
-organization could likely get by with a combination of a good anti\-malware solution and spam 
+organization could likely “get by” with a combination of a good anti\-malware solution and spam 
 filtering, the current threat landscape renders these simplistic (if historically reasonably effective) 
 efforts no longer satisfactory.
 In addition to learning about adversary tendencies and operations, business owners and network 
 administrators must also understand how adversaries increasingly take advantage of the very 
 nature of modern networks and distributed environments. 
-The path forward entails a dual\-pronged approach
+The path forward entails a dual\-pronged approach—
 enhancing visibility into events while simultaneously 
 reducing the available attack surface. This adaptive 
 approach is indispensable in coevolving with threat actors 
-in todays ever\-changing cybersecurity landscape.
+in today’s ever\-changing cybersecurity landscape.
 Conclusions
 29
 SMB Threat Report
@@ -653,7 +653,7 @@ About Huntress
 Huntress is the leading cybersecurity partner for small and mid\-
 sized businesses (SMBs) and the managed service providers that 
 support them. Combining the power of the Huntress Managed 
-Security Platform with a fully staffed 247 Security Operations 
+Security Platform with a fully staffed 24/7 Security Operations 
 Center (SOC), Huntress provides the technology, services, 
 education, and expertise needed to help SMBs overcome their 
 cybersecurity challenges and protect critical business assets. By 
@@ -661,6 +661,6 @@ delivering a suite of purpose\-built solutions that meet budget,
 security, and peace\-of\-mind requirements, Huntress is how SMBs 
 defend against cyberattacks.
 Start a free trial today.
- 2023 Huntress Labs Incorporated. All rights reserved. Huntress and the 
+© 2023 Huntress Labs Incorporated. All rights reserved. Huntress and the 
 Huntress logo are trademarks of Huntress Labs Incorporated.
 Learn More

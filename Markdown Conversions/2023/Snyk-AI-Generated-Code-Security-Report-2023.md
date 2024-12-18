@@ -1,10 +1,10 @@
-SNY KR EPORT
+S N Y K R E P O R T
 Must Change 
 Their Approach
 56\.4% say insecure AI suggestions are 
-common but few have changed 
+common — but few have changed 
 processes to improve AI security.
-AI Code, Security, and Trust: 
+AI Code, Security, and Trust:  
 Organizations
 In a short period of time, AI code completion tools have gained significant market penetration. In our 
 survey of 537 software engineering and security team members and leaders, 96% of teams use AI coding 
@@ -14,7 +14,9 @@ the pace of software code production and sped up new code deployment. On top of 
 are polished and convincing. Unfortunately, this polish and ease\-of\-use has generated misplaced 
 confidence in AI coding assistants and have created a herd mentality that AI coding is safe. In reality, AI 
 coding tools continue to consistently generate insecure code. Among respondents, 91\.6% said that AI 
-coding tools generated insecure code suggestions at least some of the time.The risks of AI coding tools are magnified by the resulting accelerated pace of code development. This is 
+coding tools generated insecure code suggestions at least some of the time. 
+
+The risks of AI coding tools are magnified by the resulting accelerated pace of code development. This is 
 particularly true in open source code, where keeping up with the latest security status of open source 
 libraries and packages is challenging due to new insecurities and vulnerabilities landing on a seemingly 
 daily basis. Despite these risks and challenges, our survey found that technology teams are not putting the 
@@ -25,7 +27,9 @@ not taking proper measures to ensure that their open source libraries are secure
 automated scanning tool to check the security of open source components included in AI coding 
 suggestions. The consequences of placing too much trust in AI coding tools are real. Among respondents 
 who said that AI coding tools reduced productivity, the two primary reasons for this negative result were 
-poor code quality and security problems introduced by AI.The irony is that, while adoption and trust are high, developers are clearly aware of the risks of AI and told 
+poor code quality and security problems introduced by AI.
+
+The irony is that, while adoption and trust are high, developers are clearly aware of the risks of AI and told 
 us so in the survey. These findings underscore why it's so important for development and security teams to 
 adopt a responsible approach to AI. On the process and technology side, this includes stepping up security 
 measures like automated security scans, increased code audits, and programmatic policies that prevent 
@@ -36,29 +40,35 @@ Executive Summary
 AI coding assistants have achieved widespread adoption among developers across all sectors. 
 However, many developers place far too much trust in the security of code suggestions from 
 generative AI, despite clear evidence that these systems consistently make insecure 
-suggestions. Unfortunately, security behaviors are not keeping up with AI code adoption.Technology organizations need to protect themselves against AI code completion risks by 
+suggestions. Unfortunately, security behaviors are not keeping up with AI code adoption. 
+
+Technology organizations need to protect themselves against AI code completion risks by 
 automating more security processes and inserting the right guardrails to protect not only 
 against bad AI code but also against the unproven perception that AI\-generated code is always 
 superior to novel human code.
-In December 2022, StackOverflow banned all AI\-generated submissions from ChatGPT to its coding Q\&A site, stating, The average 
+In December 2022, StackOverflow banned all AI\-generated submissions from ChatGPT to its coding Q\&A site, stating, “The average 
 rate of getting correct answers from ChatGPT is too low." Their assertion echoed findings from multiple respected academic 
 studies from New York University and Stanford University finding that AI coding completion tools consistently made insecure 
-suggestions and that coders relying heavily on the tools wrote more insecure code.In the Stanford study, which used an AI coding model tuned specifically for computer code, for coders writing an encryption 
+suggestions and that coders relying heavily on the tools wrote more insecure code. 
+
+In the Stanford study, which used an AI coding model tuned specifically for computer code, for coders writing an encryption 
 function, the AI tool consistently recommended open source libraries that explicitly stated in their own documentation they were 
 insecure and not suitable for high security use cases. Worse, in the Stanford study, developers believed AI suggestions made their 
-code more secure even if it actually wasnt.In our own internal research, we have found that AI coding tools frequently make insecure code suggestions. Despite these known 
+code more secure even if it actually wasn’t. 
+
+In our own internal research, we have found that AI coding tools frequently make insecure code suggestions. Despite these known 
 findings, many developers believe code suggestions from AI coding tools are secure. In our survey, 75\.8% of respondents said that 
 AI code is more secure than human code. This massive discrepancy is indicative of major problems with the way organizations are 
 securing their development process against AI coding tools and educating their technology teams on the known risks of AI for code 
-generation. In this report, we surveyed 537 technology and IT workers and managers to better understand this dynamic.
+generation. In this report, we surveyed 537 technology and IT workers and managers to better understand this dynamic. 
 AI Coding Tools Generate Insecure Code. Developers Ignore This Fact.
-Survey responses indicate that AI code completion continues to inject security risks into the development process. Whats more, 
+Survey responses indicate that AI code completion continues to inject security risks into the development process. What’s more, 
 developers are actively bypassing AI usage policies for coding. All of this is happening without putting in place proper guardrails, 
 such as automated code scanning. Open source code is a particular risk as AI coding tools speed up velocity and suggest open 
 source modules, but teams are not programmatically validating that suggested open source components are secure.
 Risks of Outsourcing Code 
 Security to AI
-AI Code, Security, and Trust: Organizations Must Change Their Approach
+AI Code, Security, and Trust:  Organizations Must Change Their Approach
 03
 PART ONE
 60%
@@ -88,7 +98,7 @@ Percentage of codeRs submitting secure answers to coding questions
 3% Poor
 3\.2% Not sure
 2% Not sure
-AI Code, Security, and Trust: Organizations Must Change Their Approach
+AI Code, Security, and Trust:  Organizations Must Change Their Approach
 04
 How would you rate the security of ai code fix 
 suggestions? 
@@ -97,28 +107,34 @@ CODE SUGGESTED BY AN AI TOOL?
 they also strongly believed that AI suggestions 
 were secure.
 Respondents commonly found security 
-issues with AI suggestions but
+issues with AI suggestions but...
 Despite voicing strong confidence in AI code 
 completion tools and demonstrating strong 
 adoption of the tools, respondents acknowledge 
 that AI does introduce security issues. 56\.4% 
 admit that AI introduces coding issues 
-sometimes or frequently.This indicates that AI tools require verification 
+sometimes or frequently. 
+
+This indicates that AI tools require verification 
 and auditing for all suggestions due to the high 
 rate of potentially flawed code produced. Despite 
 the fact that respondents say that security issues 
-with code suggestions are common, 75\.4% of 
+with code suggestions are common, 75\.4%  of 
 respondents rated the security of AI code fix 
 suggestions as good or excellent. This mirrors 
 the Stanford findings, where coders strongly 
 overestimated the security of code suggested by 
 AI that they had accepted in their work. This is 
 indicative of a deep cognitive bias that is 
-extremely dangerous for application security.56\.4% Commonly 
+extremely dangerous for application security.
+
+
+
+56\.4% Commonly 
 Encounter Security 
 Issues in AI Code 
 Suggestions
-AI Code, Security, and Trust: Organizations Must Change Their Approach
+AI Code, Security, and Trust:  Organizations Must Change Their Approach
 05
 What percentage of your security scanning is 
 automated?
@@ -140,18 +156,20 @@ completion tools?
 25% Some of the time 
 12\.7% Rarely 
 7\.4% Never 
-By using Snyk Codes AI static analysis and its latest innovation, 
+“By using Snyk Code’s AI static analysis and its latest innovation, 
 DeepCode AI Fix, our development and security teams can now 
-ensure were both shipping software faster as well as more 
-securely.
-Steve Pugh, CISO at ICENYSE
+ensure we’re both shipping software faster as well as more 
+securely.”
+Steve Pugh, CISO at ICE/NYSE
 While most organizations of respondents had 
 policies allowing at least some usage of AI 
 tools, the overwhelming majority reported that 
 developers bypass those policies. In other 
 words, the trust in AI to deliver code and 
 suggestions is greater than the trust placed in 
-company policy over AI.This creates tremendous risk because, even 
+company policy over AI. 
+
+This creates tremendous risk because, even 
 as companies are quickly adopting AI, they are 
 not automating security processes to protect 
 their code. Only 9\.7% of respondents said their 
@@ -166,12 +184,12 @@ their teams somewhat or much more
 productive. This lack of policy compliance 
 plus increased code velocity makes 
 automated security scanning even more 
-important than ever before.
+important than ever before. 
 79\.9% Bypass Security 
 Policies to Use AI, but 
 Only 10% Scan Most 
 Code
-AI Code, Security, and Trust: Organizations Must Change Their Approach
+AI Code, Security, and Trust:  Organizations Must Change Their Approach
 06
 DO YOU USE AI CODE COMPLETION TOOLS 
 FOR WORK ON OPEN SOURCE PROJECTS?
@@ -179,11 +197,15 @@ In the survey, 73\.2% of respondents said they contributed code to open source p
 knowledgeable about open source. Despite this understanding, few use more advanced and reliable security practices to 
 validate that code suggestions from AI coding tools are secure. Only 24\.8% used software composition analysis (SCA) to verify 
 the security of code suggestions from AI tools. Increased velocity would likely increase the speed at which unsafe open source 
-components are accepted into code.Because AI coding systems use reinforcement learning algorithms to improve and tune results, when users accept insecure 
+components are accepted into code. 
+
+Because AI coding systems use reinforcement learning algorithms to improve and tune results, when users accept insecure 
 open source components embedded in suggestions, the AI systems are more likely to label those components as secure even 
 if this is not the case. This risks the creation of a feedback loop where developers accept insecure open source suggestions 
-from AI tools and then those suggestions are not scanned, poisoning not only their organizations application code base but the 
-recommendation systems for the AI systems themselves.The potential for this dynamic was reinforced by the Stanford research which found that AI coding tools suggested insecure 
+from AI tools and then those suggestions are not scanned, poisoning not only their organization’s application code base but the 
+recommendation systems for the AI systems themselves.
+
+The potential for this dynamic was reinforced by the Stanford research which found that AI coding tools suggested insecure 
 libraries that lacked the context of the application requirements. Then developers accepted the suggestions, trusting the AI 
 tools rather than reading the documentation for the suggested components. The general, battle\-tested pattern of code auditing 
 and research appears to be breaking down in the AI coding process.
@@ -228,7 +250,7 @@ code suggestions?
 2\.8% Not applicable
 does your organization consider ai code completion 
 to be part of its software supply chain?
-AI Code, Security, and Trust: Organizations Must Change Their Approach
+AI Code, Security, and Trust:  Organizations Must Change Their Approach
 07
 55\.1% of respondents said that their organizations 
 now consider AI code completion to be part of 
@@ -239,7 +261,9 @@ the majority of respondents said their team had
 made at least one change in software security 
 practices as a result of AI code completion tools, 
 the overall percentages on this multi\-selection 
-were on the low side.This indicates that the average organization made 
+were on the low side. 
+
+This indicates that the average organization made 
 approximately one change. The highest 
 percentage change was increasing security scans 
 of 18\.4% of respondents. It is possible that 
@@ -247,14 +271,16 @@ respondents are conflating code audits with
 security scans or that the audits include (or claim 
 to include) security scans. Regardless, the relative 
 impact of AI coding tools on security practices 
-appears to be rather small.This lack of change could also be attributed to the 
+appears to be rather small. 
+
+This lack of change could also be attributed to the 
 false perception that AI code suggestions are 
 more secure than human code. Ultimately, 
 significant changes in the way we work usually 
 necessitate a review and corresponding change in 
-risk management, to address newadditional risks 
+risk management, to address new/additional risks 
 brought about by the novel way of working. Such 
-adjustments appear to be missing which is 
+adjustments appear to be missing — which is 
 reason for concern.
 AI Considered Part of 
 Software Supply Chain, 
@@ -275,7 +301,7 @@ tooling
 Implemented 
 security 
 automation 
-Added 
+Added  
 new security 
 processes
 Has not 
@@ -295,7 +321,9 @@ expressed concerns about security implications of
 using AI code completion tools. This appears to 
 contrast with the strong confidence in the ability of 
 AI coding tools to generate secure code and to 
-make code suggestions to improve security.That cognitive dissonance is potentially a result of 
+make code suggestions to improve security. 
+
+That cognitive dissonance is potentially a result of 
 herd mentality, where developers believe that 
 because everyone else is using AI coding tools, 
 they must be trustworthy and that drives their 
@@ -312,12 +340,12 @@ Even though developers perceive AI\-written code to be secure, they overwhelming
 tools will create greater insecurity and that they will become over\-reliant on the tools. In organizations that restrict 
 AI usage, problems with code quality and security are the primary reasons for restrictions. Respondents 
 acknowledge that a significant percentage of AppSec teams are struggling to keep pace with higher code velocity. 
-All of this points towards a need to prioritize process and technology utilization changes more automated 
-security scanning with continued education of development teams, so that they can be more aware of the real 
-risks of AI code suggestions.
+All of this points towards a need to prioritize process and technology utilization changes – more automated 
+security scanning – with continued education of development teams, so that they can be more aware of the real 
+risks of AI code suggestions. 
 Developers Recognize Risks of AI 
-Blindness, Reliance
-AI Code, Security, and Trust: Organizations Must Change Their Approach
+Blindness, Reliance 
+AI Code, Security, and Trust:  Organizations Must Change Their Approach
 08
 PART TWO
 37\.1% Very concerned 
@@ -326,7 +354,7 @@ PART TWO
 how concerned are you about the broader 
 security implications of using ai code 
 completion tools?
-AI Code, Security, and Trust: Organizations Must Change Their Approach
+AI Code, Security, and Trust:  Organizations Must Change Their Approach
 09
 How concerned are you that developers are 
 relying too much on ai code completion tools?
@@ -347,7 +375,7 @@ with 46% saying they were somewhat
 concerned and 40% saying they were very 
 concerned. In other words, they appear to be 
 aware of the risks of outsourcing too much of 
-their craft to AI.
+their craft to AI. 
 Developers Concerned 
 About AI Overreliance
 For the small subset of companies that restrict 
@@ -358,7 +386,7 @@ code security (57%) followed by data privacy
 major concerns for restricting AI were related to 
 security, reflecting leadership concerns about 
 potential negative or unmitigated impacts of AI 
-code completion.
+code completion. 
 Security, Data Privacy 
 Concerns Are Main 
 Reasons for AI Code 
@@ -388,14 +416,16 @@ tools, what are the reasons for the restRictions?
 There is an obvious contradiction between developer perception that AI coding suggestions are secure and overwhelming 
 research that this is often not the case. The tension is underscored by seemingly contradictory responses found in this 
 survey; most respondents (including security practitioners) believe AI code suggestions are secure while also simultaneously 
-admitting that insecure AI code suggestions are common.This is a perception and education problem, caused by groupthink, driven by the principle of social proof and humans 
+admitting that insecure AI code suggestions are common. 
+
+This is a perception and education problem, caused by groupthink, driven by the principle of social proof and humans’ 
 inherent trust in seemingly authoritative systems. Because the unfounded belief that AI coding tools are highly accurate and 
 less fallible than humans is circulating, it has become accepted as fact by many. The antidote to this dangerous false 
 perception is for organizations to double down on educating their teams about the technology they adopt, while securing 
-their AI\-generated code with industry\-approved security tools that have an established history in security.
+their AI\-generated code with industry\-approved security tools that have an established history in security. 
 To Fix the AI Infallibility Bias, 
 Educate and Automate Security
-AI Code, Security, and Trust: Organizations Must Change Their Approach
+AI Code, Security, and Trust:  Organizations Must Change Their Approach
 10
 CONCLUSION
 20\.5% Struggling 
@@ -429,15 +459,15 @@ were from the United States, 30\.9% were from the United Kingdom, and 23\.6% wer
 asked respondents to self\-identify their roles, choosing all titles that applied. The highest percentage 
 selected were developer management (42\.1%), developer (37\.6%), IT management (30\.9%), and security 
 management (30\.7%), indicating that the panel included a significant portion of respondents from 
-management. Respondents were spread broadly across various sectors. SaaSTechnology represented 
+management. Respondents were spread broadly across various sectors. SaaS/Technology represented 
 the largest pool of respondents (21%) and the only sector representing greater than 20% of responses. 
-Only two other sectors, business services (17\.1%) and financial servicefintech (11\.2%) represented more 
+Only two other sectors, business services (17\.1%) and financial service/fintech (11\.2%) represented more 
 than 10% of respondents. The survey panel was predominantly smaller companies, with 48\.6% of 
 respondents working at companies of 500 employees or less and only 12\.8% working at companies of 
 greater than 5,000 employees. Respondents also used a wide variety of coding tools. The largest 
-percentage cited ChatGPT (70\.3%) with Amazon CodeWhisperer (47\.4%), GitHub Copilot (43\.7%) 
-Microsoft Visual Studio IntelliCode (35\.8%), and Tabnine (19\.9%) ranked afterwards. 
-This was a multi\-select question and the high percentages across multiple responses 
-indicates that respondents are likely using multiple AI coding tools in their jobs, 
+percentage cited ChatGPT (70\.3%) with Amazon CodeWhisperer (47\.4%),  GitHub Copilot (43\.7%) 
+Microsoft Visual Studio IntelliCode (35\.8%), and Tabnine (19\.9%) ranked afterwards.  
+This was a multi\-select question and the high percentages across multiple responses  
+indicates that respondents are likely using multiple AI coding tools in their jobs,  
 potentially for different reasons or tasks.
 About this report

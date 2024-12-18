@@ -1,10 +1,10 @@
 Fortune 1
-000 at Risk: How we discovered 30,000 exposed APIs \& 100,000 API issues in the worlds largest organizations
+000 at Risk: How we discovered 30,000 exposed APIs \& 100,000 API issues in the world’s largest organizations
 Fortune 1000 at Risk: How we discovered 30,000
-exposed APIs \& 100,000 API issues in the worlds largest
+exposed APIs \& 100,000 API issues in the world’s largest
 organizations
 included in the Fortune 1000 and CAC 40\. 
-Heres what we found
+Here’s what we found
 30,784
 Exposed APIs
 included in the Fortune 1000 and CAC 40\. 
@@ -31,8 +31,8 @@ Exposed Secrets: The report found 1,816 highly sensitive secrets exposed within
  API environments, including access tokens, API keys, and authentication cred
 entials. These exposed secrets significantly heighten the risk of unauthorized acc
 ess and potential misuse of critical systems.
-Call to action: We recommend to start auditing all APIsparticular
-ly shadow and legacy APIsto identify and secure vulnera
+Call to action: We recommend to start auditing all APIs—particular
+ly shadow and legacy APIs—to identify and secure vulnera
 bilities, and restricting access to development APIs with produc
 tion\-level security standards. Implementing continuous monitoring
  and scanning tools is crucial to detect risks early, while ensuring that all secrets are encrypted and securely managed to prevent exposure.
@@ -68,7 +68,7 @@ number of APIs in production has
 skyrocketed.
 As we move through 2024, the exponential
 growth of APIs presents new challenges.
-According to recent Gartners market
+According to recent Gartner’s market
 guide, APIs \- especially shadow and
 dormant ones \- are causing data breaches
 among organizations that, on average,
@@ -77,7 +77,7 @@ Since 2022, at least 190M sensitive data
 records have been breached. In our
 previous research, we estimate that
 enterprise companies lost $31B due to
-breaches.
+breaches. 
 Many APIs are pushed to production too
 soon, often bypassing critical security
 testing stages or, in some cases, being
@@ -88,7 +88,7 @@ in security coverage, allowing untested or
 under\-tested endpoints to expose sensitive
 information or become vulnerable to attack.
 Another significant factor is the proliferation
-of "shadow APIs"APIs that exist outside
+of "shadow APIs"—APIs that exist outside
 the knowledge or management of security
 teams. These undocumented, unmanaged,
 or abandoned APIs often lack essential
@@ -97,7 +97,7 @@ prone to exploitation. Shadow APIs can
 emerge from development shortcuts, legacy
 applications, or third\-party integrations that
 slip through regular security oversight,
-creating hidden risks within the systems
+creating hidden risks within the system’s
 architecture.
 Given these trends, API security deserves
 greater attention. It is now widely recognized
@@ -105,23 +105,23 @@ as a critical challenge requiring stringent
 security management and thorough testing
 before APIs are released into production
 environments. By analyzing Fortune 1000
-and CAC 40 exposed API services were here
+and CAC 40 exposed API services we’re here
 to prove it.
 ARE WE IGNORING HIDDEN DANGERS?
 57%
 of organizations suffered an
 API\-related data breach in the
-past two years
+past two years\*\*
 \*according to a 2023 report from Enterprise Management Associates (EMA)
 \*according to a 2023 report from Enterprise Management Associates (EMA)
-according to Escapes A
+\*\*\*according to Escape’s A
 PI Threat Landscape Report
-according to the 2025 Global State of API Security report
+\*\*according to the 2025 Global State of API Security report
 $31B
 estimated losses due to 
-API breaches
-according to Escapes API Threat Landscape Report
-A vulnerability in Trellos API configuration
+API breaches\*\*\*
+\*\*\*according to Escape’s API Threat Landscape Report
+A vulnerability in Trello’s API configuration
 led to a massive data leak in January 2024,
 where over 15 million user records were
 exposed on a dark web forum. Trello, a
@@ -131,10 +131,10 @@ open access to sensitive user data, including
 project details, personal information, and
 task management records. Hackers were
 able to scrape this data due to
-misconfigurations in Trellos API permissions,
+misconfigurations in Trello’s API permissions,
 underscoring how quickly API flaws can
 result in serious data leaks.
-In July 2024, Twilios Authy service suffered a
+In July 2024, Twilio’s Authy service suffered a
 IN 2024, DEUTSCHE TELEKOM REPORTED APPRO
 XIMATELY 259M MOBILE CUSTOMERS WORLD
 WIDE 
@@ -232,16 +232,18 @@ extensive coverage and a highly detailed analysis. This broad scope provided a d
 into the exposure and security practices around APIs across various industries, offering
 critical insights into the current landscape of API security and vulnerability.
 Methodology
-1K
+∼1K
 unique top\-level domains
 analyzed
-
+∼
 MethodologyAPI specifications found in the wild
 Automated API Specification Generation
 API specifications programmatically generated
 Having an OpenAPI Specification (OAS) is particularly beneficial as it provides a
 standardized, machine\-readable format for documenting RESTful APIs, promoting clarity and
-consistency across services.Through our initial scan, we located 4,547 exposed API specifications, so we had to generate
+consistency across services.
+ 
+Through our initial scan, we located 4,547 exposed API specifications, so we had to generate
 most of the specifications ourselves. This process involved parsing the Abstract Syntax Tree
 (AST) from the code to create dynamically detailed and accurate API specifications.
 Luckily, Large Language Models (LLMs) have recently become extremely good at analyzing
@@ -249,9 +251,9 @@ and generating code. Moreover, they show great performance across a wide variety
 languages, frameworks, and coding styles, which is exactly what we want for framework and
 language\-agnostic OAS generation software. Finally, LLMs can also leverage information in
 code comments, which the traditional static analysis approach cannot do.
-In our current approach, integrated into Escapes platform, we focused on two key areas:
-Semantic Analysis: We identify essential code fragments using custom rules (e.g
-Semantic Analysis: We identify essential code fragments using custom rules (e.g sp
+In our current approach, integrated into Escape’s platform, we focused on two key areas:
+Semantic Analysis: We identify essential code fragments using custom rules (e.g.,
+Semantic Analysis: We identify essential code fragments using custom rules (e.g., sp
 ecific S
 emgrep patterns), optimizing the data sent to the LLM and enhancing prompt quality.
 Specification Generation: The LLM processes each identified fragment to ge
@@ -268,31 +270,35 @@ programmatically generated
 MethodologyAPI services scanned for vulnerabilities
 Final step \- API Security Scanning
 After the comprehensive specification generation process, the final step is API security
-scanning. Using Escapes Dynamic Application Security Testing (DAST) solution, we conducted
+scanning. Using Escape’s Dynamic Application Security Testing (DAST) solution, we conducted
 in\-depth analysis of each identified API endpoint to detect potential vulnerabilities and risks.
-Escapes DAST approach is specifically designed for API security. Unlike traditional web
+Escape’s DAST approach is specifically designed for API security. Unlike traditional web
 application DAST tools, which are often limited in scope and primarily test web applications at
-the surface level, Escapes DAST is purpose\-built to handle the unique requirements and
+the surface level, Escape’s DAST is purpose\-built to handle the unique requirements and
 complexities of APIs. This makes it exceptionally effective at identifying security flaws in API
 configurations, authentication, authorization, and more.
 At the core of Escape's DAST is a proprietary algorithm that combines static and dynamic
 analysis to deliver precise, high\-confidence results. The algorithm operates in multiple stages:
 Contextual Analysis: The algorithm first conducts a contextual analysis of each endpoint,
- identifying the APIs structure, parameters, and dependencies. This allows it to adapt it
+ identifying the API’s structure, parameters, and dependencies. This allows it to adapt it
 s scanning approach to each specific API, ensuring relevance and reducing false positives.
-1\. Fuzzing and Payload Injection: In the next stage, the algorithm uses fuzzing techniques to
+1\.
+Fuzzing and Payload Injection: In the next stage, the algorithm uses fuzzing techniques to
  test each endpoint by sending random, unexpected, or malformed inputs. This help
 s identify weaknesses like input validation flaws, injection vulnerabilities, a
 nd misconfigurations. The algorithm adapts these payloads based on real\-time feedba
 ck, simulating complex attacks more effectively than conventional static methods.
-1\. Behavioral Monitoring: As it interacts with each endpoint, the algorithm monitors response
+2\.
+Behavioral Monitoring: As it interacts with each endpoint, the algorithm monitors response
  patterns and behaviors to detect anomalies. By observing responses over multipl
 e interactions, it can identify issues such as data exposure, error leakage, and misconfigur
-ed permissions, providing insights into the APIs security posture.
-1\. Risk Prioritization: Escapes DAST concludes with an analysis that ranks detected
+ed permissions, providing insights into the API’s security posture.
+3\.
+Risk Prioritization: Escape’s DAST concludes with an analysis that ranks detected
  vulnerabilities based on risk and classifies them based on the metric named Escape severity.Escape
 severity.
-1\. You can find an in\-depth technical explanation of the algorithm here.
+4\.
+You can find an in\-depth technical explanation of the algorithm here. 
 30,784
 API services scanned
 for vulnerabilities
@@ -307,7 +313,7 @@ API services exposed
 development APIs exposed, 
 including 6 organizations with more than
 100 development APIs exposed per domain 
-\* 5 from Fortune 1000 and 1 from CAC40
+\- 5 from Fortune 1000 and 1 from CAC40
 1,189
 maximum exposed APIs per one domain
 Findings \- API Exposure
@@ -410,9 +416,9 @@ Retail
 Financial Services
 Real Estate
 Manufacturing
-Aerospace
-(same insurance company)
-(same insurance company)
+Aerospace…
+(same insurance company...)
+(same insurance company...)
 205
 Findings \- API Secrets
 Total secrets found
@@ -534,31 +540,31 @@ Alignment of high\-risk Fortune 1000 vulnerabilities
 with OWASP Top 10 2023 classification
 Many of these APIs lacked even the most basic access controls, allowing for unauthorized data
 access or manipulation. A staggering 19 NoSQL injection vulnerabilities and 11 SQL injection flaws
-were scattered across APIs, with 10 instances of Broken Object Level Authorization (BOLA)all
+were scattered across APIs, with 10 instances of Broken Object Level Authorization (BOLA)—all
 creating a perfect storm for potential exploitation.
-It is clear that API security practices hadnt kept up with the growing reliance on APIs across
+It is clear that API security practices hadn’t kept up with the growing reliance on APIs across
 industries, revealing a systemic gap in both development and deployment practices. To tackle this,
 companies need to close the gap with immediate action: strengthen access controls, enforce secure
 configurations, and regularly test APIs to catch issues before they become threats.
 By design, Actuator exposes diagnosti
-c and monitoring data, such as environment variables, configuration properties, and detailed mappings of application routes. However, if not properly secured, these endpoints can inadvertently expose sensitive information about an applications internal state, providing attackers with critical insights that can be leveraged to exploit vulnerabilities.
+c and monitoring data, such as environment variables, configuration properties, and detailed mappings of application routes. However, if not properly secured, these endpoints can inadvertently expose sensitive information about an application’s internal state, providing attackers with critical insights that can be leveraged to exploit vulnerabilities.
 During a security assessment of one of the exposed API endpoints o
 wned by a major American technology company, we gained unrestricted access to several Spring Boot Actuator endpoints, specifically:
-https:\[redactedcompanydomain.com]adminactuatorenv
-https:\[redactedcompanydomain.com]adminactuatormappings
-https:\[redactedcompanydomain.com]adminactuatorhttptrace.
-Each of these endpoints revealed sensitive details about the applications environment, structure, and operations, collectively presenting a substantial security risk.
-The first significant finding was with the env endpoint, which revealed critical environment variables in plain text. Upon loading the endpoints response, it became clear that sensitive informationsuch as database credentials, API keys, and service tokenswas accessible without any obfuscation. Exposure of these variables presents a substantial risk, as they can provide unauthorized actors with the means to gain elevated access, move laterally through systems, and potentially launch further targeted attacks on backend services.
-Further investigation led to the mappings endpoint, which disclosed a comprehensive ma
-p of the APIs routing structure. This included not only public endpoints but also private routes intended for restricted internal use. By detailing the APIs route mappings and configuration, the endpoint unintentionally provided a roadmap of the systems structure, revealing potential entry points and avenues for exploitation. In the hands of an attacker, this visibility into the applications internal architecture could simplify the task of identifying weak spots and exploiting vulnerabilities in a targeted manner.
-The third exposed endpoint, httptrace, offered a detailed log of recent HTTP requests, compl
+https://\[redactedcompanydomain.com]/admin/actuator/env
+https://\[redactedcompanydomain.com]/admin/actuator/mappings
+https://\[redactedcompanydomain.com]/admin/actuator/httptrace.
+Each of these endpoints revealed sensitive details about the application’s environment, structure, and operations, collectively presenting a substantial security risk.
+The first significant finding was with the /env endpoint, which revealed critical environment variables in plain text. Upon loading the endpoint’s response, it became clear that sensitive information—such as database credentials, API keys, and service tokens—was accessible without any obfuscation. Exposure of these variables presents a substantial risk, as they can provide unauthorized actors with the means to gain elevated access, move laterally through systems, and potentially launch further targeted attacks on backend services.
+Further investigation led to the /mappings endpoint, which disclosed a comprehensive ma
+p of the API’s routing structure. This included not only public endpoints but also private routes intended for restricted internal use. By detailing the API’s route mappings and configuration, the endpoint unintentionally provided a roadmap of the system’s structure, revealing potential entry points and avenues for exploitation. In the hands of an attacker, this visibility into the application’s internal architecture could simplify the task of identifying weak spots and exploiting vulnerabilities in a targeted manner.
+The third exposed endpoint, /httptrace, offered a detailed log of recent HTTP requests, compl
 ete with request headers, response statuses, and metadata. This level of trace data, includin
 g potential session cookies and internal IP addresses, can significantly aid an attac
 ker in reconstructing user behavior, mimicking legitimate requests, or even hijacking active 
 sessions. Such logs can facilitate a range of attacks, from session replay to broader reco
 nnaissance efforts, making the exposure of this endpoint particularly sensitive.
  as database credentials and API keys, to prevent accidental exposure.
-The third exposed endpoint, httptrace, offered a detailed log of recent HTTP requests,
+The third exposed endpoint, /httptrace, offered a detailed log of recent HTTP requests,
 complete with request headers, response statuses, and metadata. This level of trace data,
 including potential session cookies and internal IP addresses, can significantly aid an
 attacker in reconstructing user behavior, mimicking legitimate requests, or even hijacking
@@ -568,26 +574,30 @@ reconnaissance efforts, making the exposure of this endpoint particularly sensit
 American multinational tech company: 
 Exposed Spring Boot Actuator
 Restrict Access to Actuator Endpoints:
-Implement access control to ensure that sensitive Actuator endpoints, such as env, mappings, and httptrace, are accessible only to authorized users on the internal network or authenticated users with administrative privileges.
+Implement access control to ensure that sensitive Actuator endpoints, such as /env, /mappings, and /httptrace, are accessible only to authorized users on the internal network or authenticated users with administrative privileges.
 Disable Sensitive Actuator Endpoints in Production:
-1\. Configure the Spring Boot Actuator settings to disable endpoints like env, mappin
-gs, and httptrace in the production environment, or at least restrict them to aut
+1\.
+Configure the Spring Boot Actuator settings to disable endpoints like /env, /mappin
+gs, and /httptrace in the production environment, or at least restrict them to aut
 horized, internal users only.
-Obfuscate Sensitive Data in env:
-1\. In cases where env must be used, consider redacting or obfuscating sensitive environm
+Obfuscate Sensitive Data in /env:
+2\.
+In cases where /env must be used, consider redacting or obfuscating sensitive environm
 ent variables, such as database credentials and API keys, to prevent accidental exposu
 re.
 Monitor and Log Access Attempts to Actuator Endpoints:
-1\. Implement logging and monitoring of all access attempts to these endpoints, e
+3\.
+Implement logging and monitoring of all access attempts to these endpoints, e
 nabling detection of any unauthorized access and facilitating incident respo
 nse.
-Overall, this assessment underscores how easily operational details can become visible without proper restrictions, turning what might otherwise be routine endpoints into critical vulnerabilities. Addressing these exposures is essential to uphold the security and integrity of the companys infrastructure.
-1\. Implement logging and monitoring of all access attempts to these endpoints, enabling
+Overall, this assessment underscores how easily operational details can become visible without proper restrictions, turning what might otherwise be routine endpoints into critical vulnerabilities. Addressing these exposures is essential to uphold the security and integrity of the company’s infrastructure.
+4\.
+Implement logging and monitoring of all access attempts to these endpoints, enabling
 detection of any unauthorized access and facilitating incident response.
 Overall, this assessment underscores how easily operational details can become visible
 without proper restrictions, turning what might otherwise be routine endpoints into critical
 vulnerabilities. Addressing these exposures is essential to uphold the security and integrity
-of the companys infrastructure.
+of the company’s infrastructure.
 Standout Scenarios: 
 High\-Impact CVEs in the WildTotal High Impact CVEs Found
 This section highlights critical cases where APIs, compromised by known CVEs (Common Vulnerabilities
@@ -722,7 +732,7 @@ ing workflows.
 Educate Your Internal Teams: Ensure that all team members understand the
  importance of token security and adhere to best practices. Consider enhancing th
 e security experience through gamification or implementing a Security Champi
-on Program, following The Security Champion Program Success Guide.
+on Program, following The Security Champion Program Success Guide. 
 These measures are crucial for 
 protecting your APIs and maintaining secure and compliant applications. For more detailed information, you can use our API Security Checklist or refer to the resources provided on the Escape blog.Escape blog.
 ANY API
@@ -741,7 +751,7 @@ AUTOMATE API CATALOG
 DEACTIVATE UNUSED OR DUPLI
 CATE APIS
 REGULARLY SCAN FOR
- APIVULNERABILITIES
+ API VULNERABILITIES
 SCAN FOR EXPOSED 
 API SECRETS
 ENFORCE STRONG AUTHENTICATION AND AUTHORIZATION
@@ -763,7 +773,7 @@ ARE NO API SECRETS
 ACCESSIBLE
 HARDEN YOUR SECURITY
 POSTURE
-Securing all your APIs is hard. Its even harder when you dont know what you have to secure, want to ship (insecure) APIs too fast in the wild and have to monitor them at large scale. Your organization is now not only prone to data breach risks but also to severe financial implications.Our study reveals that over 100,000 vulnerabilities are present across Fortune 1000 and CAC 40 companies, with 1,800 classified as highly critical, directly impacting some of the largest organizations globally.
+Securing all your APIs is hard. It’s even harder when you don’t know what you have to secure, want to ship (insecure) APIs too fast in the wild and have to monitor them at large scale. Your organization is now not only prone to data breach risks but also to severe financial implications.Our study reveals that over 100,000 vulnerabilities are present across Fortune 1000 and CAC 40 companies, with 1,800 classified as highly critical, directly impacting some of the largest organizations globally.
 One of the most striking findings was the extensive exposure of vulnerable developmen
 t APIs and the high level of overall vulnerability criticality. This highlights the real an
 d present dangers for each organization and the necessity of thoroughly testing applic
@@ -790,9 +800,9 @@ Automate the discovery of all APIs at scale
 Automate API documentation generation
 Ensure comprehensive security coverage with 130\+ API security tests,
 including OWASP Top 10, business logic, and access control
-Automated security scanning by plugging Escapes modern DAST into
-your CICD systems 
+Automated security scanning by plugging Escape’s modern DAST into
+your CI/CD systems 
 Learn more
 Learn more
 Do you need help in assessing whether your APIs are exposed and at risk?
-Were here for you. With Escape you can:
+We’re here for you. With Escape you can:

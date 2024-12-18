@@ -4,21 +4,90 @@ expectations and priorities
 proofpoint.com
 REPORT
 Table of Contents
-Introduction3
-Chapter 1: Back to "Business as Usual"4
-Chapter 2: Protecting PeopleThe Cybersecurity Cornerstone7
-Chapter 3: Defending Data9
-Chapter 4: Building a Defense to Fight on Every Front12
-Chapter 5: Boards and CISOsCloser to the Same Page15
-Chapter 6: Life as a CISOIn the Crosshairs, Burned Out and Under the Microscope 
+Introduction 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3
+Chapter 1: Back to "Business as Usual" 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4
+Chapter 2: Protecting People—The Cybersecurity Cornerstone 
+ 
+ 
+ 
+7
+Chapter 3: Defending Data 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+9
+Chapter 4: Building a Defense to Fight on Every Front 
+ 
+ 
+ 
+ 
+ 
+12
+Chapter 5: Boards and CISOs—Closer to the Same Page 
+ 
+ 
+ 
+ 
+15
+Chapter 6: Life as a CISO—In the Crosshairs, Burned Out and Under the Microscope 
 18
-Conclusion21
-Methodology22
+Conclusion 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+21
+Methodology 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+22
 2
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 A Reality Check for CISOs
-Its no overstatement to say that the past year was a busy one in the world
+It’s no overstatement to say that the past year was a busy one in the world 
 of cybersecurity. 
 Ransomware continued to wreak havoc across the globe. New and increasingly 
 devastating attacks upended organizations of every size, across every industry 
@@ -28,18 +97,18 @@ rural Illinois.1 On the other end of the spectrum, a series of attacks paralyzed
 government of Costa Rica, forcing officials there to declare a national emergency.2 
 The supply chain also found itself firmly in the sights of cyber criminals. Attackers 
 doubled down on compromising third party, cloud and privileged identities to infiltrate 
-networks and exfiltrate data.3
+networks and exfiltrate data.3 
 Meanwhile, critical infrastructure hung in the balance amid a backdrop of unrelenting attacks and geopolitical unease. Russian 
-attackers targeted U.S. airports,4 and Chinese\-aligned threat actors exploited telecoms vulnerabilities.5
+attackers targeted U.S. airports,4 and Chinese\-aligned threat actors exploited telecoms’ vulnerabilities.5 
 The prior year, with most pandemic disruption overcome, CISOs for a brief time appeared to feel a sense of calm, composure and 
 confidence in their security posture. Astoundingly, that feeling has already vanished, replaced by elevated concern.
 As we look to 2023 and beyond, we can expect a return to a harsher reality. Ransomware looks set to wreak more disruption as 
 data extortion becomes the rule rather than the exception. At the same time, increasing commercialization of dark\-web exploit tools, 
-initial\-access brokers and as\-a\-service attack infrastructures threaten to make cyber crime even more open to anyone with a few 
+initial\-access brokers and “as\-a\-service” attack infrastructures threaten to make cyber crime even more open to anyone with a few 
 dollars and ill intent.
 Amid growing concerns around cyber risk and organizational preparedness, navigating this threat landscape remains a matter of 
 protecting people and defending data. Modern CISOs know that users are at the center of cybersecurity. And they understand how 
-critical it is to safeguard their organizations sensitive information, especially in light of an uncertain economy and employee churn.
+critical it is to safeguard their organization’s sensitive information, especially in light of an uncertain economy and employee churn.
 To gain deeper insight into the mind of the CISO during this pivotal time, Proofpoint surveyed 1,600 of them from around the world. 
 They graciously shared their experiences over the last year and their outlook for the years ahead.
 In this summary of our findings, we explore how the global recession is applying pressure to security budgets and how CISOs 
@@ -52,22 +121,24 @@ professionals across the globe. We offer our sincere thanks for your time and yo
 Lucia Milica Stacy, Global Resident CISO at Proofpoint
 3
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
-1Kris Hold (Engadget). A US college is shutting down for good following a ransomware attack. May 2022\. 
-2Kevin Collier (NBC News). Costa Rica declares state of emergency over ransomware attack. May 2022\. 
-3Zack Whittaker (TechCrunch). Okta says hundreds of companies impacted by security breach. March 2022\. 
-4Alyssa Blakemore (Daily Caller). Russian Hackers Take On Major US Airports In Cyberattacks: REPORT. October 2022\. 
-5CISA. Peoples Republic of China State\-Sponsored Cyber Actors Exploit Network Providers and Devices. June 2022\.
+1 Kris Hold (Engadget). “A US college is shutting down for good following a ransomware attack.” May 2022\. 
+2 Kevin Collier (NBC News). “Costa Rica declares state of emergency over ransomware attack.” May 2022\. 
+3 Zack Whittaker (TechCrunch). “Okta says hundreds of companies impacted by security breach.” March 2022\. 
+4 Alyssa Blakemore (Daily Caller). “Russian Hackers Take On Major US Airports In Cyberattacks: REPORT.” October 2022\. 
+5 CISA. “People’s Republic of China State\-Sponsored Cyber Actors Exploit Network Providers and Devices.” June 2022\.
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 4
-Chapter 1: Back to "Business as Usual"Last years report uncovered a palpable feeling among CISOs that there 
+Chapter 1: Back to "Business as Usual"
+ 
+Last year’s report uncovered a palpable feeling among CISOs that there 
 was a period of calm after a once\-in\-a\-generation crisis. With the pandemic 
 disruption finally subsiding and hybrid work setups a mainstay for most, 
 CISOs felt comfortable that the worst was behind them. At the time, just 48% 
 believed that a cyber attack was on the horizon within the coming year. 
-Thats changing. In this years survey, over two\-thirds (68%) of CISOs 
+That’s changing. In this year’s survey, over two\-thirds (68%) of CISOs 
 said they feel at risk of a material cyber attack in the next 12 months. 
 This pronounced shift suggests that security professionals see the threat 
-landscape heating up once again, and have recalibrated their level of
+landscape heating up once again, and have recalibrated their level of 
 concern to match.
 Percentage of CISOs who agree that their organization is at 
 risk of a material cyber attack in the next 12 months
@@ -144,7 +215,7 @@ Singapore (80%) are
 most concerned about 
 experiencing a material 
 cyber attack.
-Italys CISOs are the most 
+Italy’s CISOs are the most 
 optimistic, with just 49% 
 fearing an attack.
 CISOs (68%) and board 
@@ -169,11 +240,11 @@ Increased awareness among CISOs of the danger of a potential cyber attack can be
 viewed as a positive. But we found a concerning disconnect between the perceived 
 likelihood of such an event and how prepared organizations are to deal with one.
 Nearly two\-thirds (61%) agree that their organization is unprepared to cope with a 
-targeted cyber attack. Once again, this is above 2022s figure of 50% and more in line 
-with 2021s finding of 66%. This is further evidence that CISOs are returning to the 
-new normalthough its a normal that offers little comfort.
+targeted cyber attack. Once again, this is above 2022’s figure of 50% and more in line 
+with 2021’s finding of 66%. This is further evidence that CISOs are returning to the 
+“new normal”—though it’s a normal that offers little comfort.
 For their part, board members are much 
-more confident in their organizations 
+more confident in their organization’s 
 ability to deter cyber threats. In our survey 
 of board members last year, just 47% 
 believed they were unprepared for such 
@@ -199,25 +270,25 @@ unprepared to cope with
 a targeted cyber attack 
 in 2023\.
 61%
-A CISOs eye view of the threat landscape
-When it comes to the kinds of threats occupying the minds of the worlds CISOs, four major categories lead the way:
-Email fraud (33%) 
-Insider threats (30%) 
-Cloud account compromise (29%)
-DDoS attacks (29%)
+A CISO’s eye view of the threat landscape
+When it comes to the kinds of threats occupying the minds of the world’s CISOs, four major categories lead the way:
+• Email fraud (33%) 
+• Insider threats (30%) 
+• Cloud account compromise (29%) 
+• DDoS attacks (29%)
 This list is almost unchanged from the previous year (though email fraud and insider threats swapped places in the top two 
 spots.) CISOs are right to remain concerned about these threats. Their continued prominence as a top priority reflects the 
 challenge they continue to pose.
 On a more positive note, CISO concerns seem to be filtering through to the rest of the C\-suite; board members agree that email 
 fraud poses the most pressing threat.
 What, if anything, do you perceive to be the biggest cybersecurity threats 
-within your organizationindustry in the next 12 months? (Pick up to three.)
+within your organization/industry in the next 12 months? (Pick up to three.)
 29%
 Distributed
 denial\-of\-service
 (DDoS) attack
 27%
-SmishingVishing 26%
+Smishing/Vishing 26%
 Malware
 33%
 Email fraud
@@ -240,7 +311,7 @@ compromise
 (Microsoft 365
 or G Suite or
 other)
-6Board member statistics from Cybersecurity: The 2022 Board Perspective Report.
+6 Board member statistics from “Cybersecurity: The 2022 Board Perspective Report.”
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 6
 Email fraud is the top concern 
@@ -256,37 +327,46 @@ professional (39%), public sector
 and telecoms (33%) all agree that 
 email fraud will be the biggest threat 
 over the next 12 months.
-Organizations are finally back to business as usual following years of coping with the 
+Organizations are finally back to ‘business as usual’ following years of coping with the 
 pandemic and its aftermath. CISOs fully understand how critical their supply chains are 
 and the significant impact of cyber\-attacks and ransomware on those supply chains. 
 There is a need for a continuous and constantly evolving partnership between companies 
 and their suppliers on the topic of cybersecurity that results in stronger requirements and 
 cyber controls. Working collaboratively across sectors to raise the level of security yields 
-benefits for all and creates greater deterrence for the adversaries.Deborah Wheeler, SVP \& CISO,Delta Air Lines
-
-
+benefits for all and creates greater deterrence for the adversaries.
+ 
+ 
+ 
+Deborah Wheeler, SVP \& CISO, 
+ 
+ 
+Delta Air Lines
+“
+”
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 7
-Chapter 2: Protecting PeopleThe Cybersecurity CornerstoneJust as CISOs remain largely unchanged in their view of the threat landscape, they also hold their organizations employees 
+Chapter 2: Protecting People—The Cybersecurity Cornerstone
+ 
+Just as CISOs remain largely unchanged in their view of the threat landscape, they also hold their organization’s employees 
 in a similar light to previous years. 
-Almost two\-thirds (60%) consider human error to be their organizations biggest 
+Almost two\-thirds (60%) consider human error to be their organization’s biggest 
 cyber vulnerability. This is consistent with our findings in 2022 and 2021\. In those 
 studies, 56% and 58%, respectively, agreed with the statement.
 An even higher percentage of board directors (67%) shared this view. The finding 
 suggests that the C\-suite now, if belatedly, recognizes the threat that CISOs have 
 witnessed firsthand. This newfound awareness can only be good news.
 Still, CISOs have expressed similar concerns about human vulnerability for several 
-years now. Clearly, improving confidence in workers cybersecurity savviness 
+years now. Clearly, improving confidence in workers’ cybersecurity savviness 
 remains a challenge.
-Even more CISOs (63%) agree that human risk more broadlyincluding malicious and negligent employeesis a key 
+Even more CISOs (63%) agree that human risk more broadly—including malicious and negligent employees—is a key 
 cybersecurity concern in the next two years. This is most keenly felt in the UK, where 78% of CISOs agree, followed by:
-Japan (75%) 
-Brazil (72%) 
-Singapore (72%) 
-U.S. (68%) 
-Spain (68%)
+• Japan (75%) 
+• Brazil (72%) 
+• Singapore (72%) 
+• U.S. (68%) 
+• Spain (68%)
 Percentage of CISOs in agreement that human error is their 
-organizations biggest cyber vulnerability. 
+organization’s biggest cyber vulnerability. 
 UK
 France
 Brazil
@@ -356,7 +436,7 @@ Global Average
 2023 \= 60%
 of CISOs consider 
 human error to be their 
-organizations biggest 
+organization’s biggest 
 cyber vulnerability.
 60%
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
@@ -368,17 +448,17 @@ detect and deter cyber threats.
 Once again, this number is consistent with previous findings (60% in 2022 and 
 58% in 2021\). The trend suggests little progress in building a culture of security 
 awareness.
-Countries with the highest percentage of CISOs who agree that employees 
-understand their role in protecting their organization against cyber threats, include:
-France (79%) 
-Japan (75%) 
-UK (75%) 
-Spain (73%)
+Countries with the highest percentage of CISOs who agree that “employees 
+understand their role in protecting their organization against cyber threats,” include:
+• France (79%) 
+• Japan (75%) 
+• UK (75%) 
+• Spain (73%)
 In our earlier survey, board members reported a greater level of confidence. More 
-than 75% agreed that employees understand their rolea concerning disconnect 
+than 75% agreed that employees understand their role—a concerning disconnect 
 about the perceived security posture of their people. 
-This is likely because board directors can be sheltered from employees day\-to\-day actions, in many cases interacting only with 
-higher\-ranking, well\-informed and top\-performing workers. By contrast, the CISO rightly has a closer ear to the groundand a 
+This is likely because board directors can be sheltered from employees’ day\-to\-day actions, in many cases interacting only with 
+higher\-ranking, well\-informed and top\-performing workers. By contrast, the CISO rightly has a closer ear to the ground—and a 
 more realistic grasp of cybersecurity awareness and abilities throughout the organization.
 CISOs in France (79%) have the 
 most confidence that employees 
@@ -406,15 +486,24 @@ Research consistently finds that human error is one of the key contributors to s
 cyber attacks. As long as this vulnerability remains, CISOs will struggle to protect their 
 data and systems. Although human error is inevitable, having guardrails, as well as strong 
 policies and procedures in place, can go a long way in mitigating this risk and hardening 
-your people perimeter.Paige H. Adams, Global Chief InformationSecurity Officer, Zurich Insurance
-
-
+your people perimeter.
+ 
+ 
+ 
+Paige H. Adams, Global Chief Information 
+ 
+ 
+Security Officer, Zurich Insurance
+“
+”
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 9
-Chapter 3: Defending DataProtect people, defend data: these are the keys tenets of any effective 
+Chapter 3: Defending Data 
+ 
+Protect people, defend data: these are the keys tenets of any effective 
 cybersecurity strategy. But unfortunately, organizations appear to 
 struggle with both. 
-Almost two\-thirds63%of global CISOs say they have had to deal 
+Almost two\-thirds—63%—of global CISOs say they have had to deal 
 with the loss of sensitive information in the past year. Bearing the brunt 
 of data loss incidents are organizations in energy (71%), business and 
 professional services (68%) and retail (68%).
@@ -453,7 +542,7 @@ Netherlands
 42%
 41%
 2023 Global Average \= 63%
-For most, data loss came about as a result of an operating system (OS) vulnerability on endpoint, server or device (36%),
+For most, data loss came about as a result of an operating system (OS) vulnerability on endpoint, server or device (36%), 
 an external attack (35%), system misconfiguration (35%) or negligent insider (34%).
 What was the cause of the data loss event? (Pick all that apply.)
 (Respondents whose organization dealt with a material loss of 
@@ -462,16 +551,16 @@ sensitive information in the past 12 months)
 10
 20
 30
-OS vulnerability on endpointserverdeviceother
+OS vulnerability on endpoint/server/device/other
 External attack (cybercriminal)
 System misconfiguration
-Negligent insideremployee carelessness (An
+Negligent insider/employee carelessness (An
 employee that unknowingly misuses data)
 Malicious or criminal insider (An employee that
 misuses data for the purpose of harming the
 organization intentionally)
 Credential theft
-Loststolen devices
+Lost/stolen devices
 36%
 35%
 35%
@@ -503,7 +592,7 @@ legal, etc.)
 Financial loss
 Regulatory sanctions
 (fines or market
-losssanctions)
+loss/sanctions)
 Loss of critical data
 Credential theft
 Loss of customers
@@ -514,7 +603,7 @@ cause of data loss events last year, CISOs expect a reversal in the year ahead. 
 (43%) and compromised (40%) insiders are deemed more likely to cause a data breach 
 or exposure in the next 12 months. The finding suggests that CISOs increasingly believe 
 that more employees are exposing data on purpose. The continuing impact of the Great 
-Resignationand more recently, mass layoffsundoubtedly loom large in this assertion. 
+Resignation—and more recently, mass layoffs—undoubtedly loom large in this assertion. 
 Many industries saw a significant increase in post\-pandemic staff turnover. Some 82% 
 of CISOs report that employees leaving their organization has contributed to a data 
 loss event. The two sectors affected the most were retail (90%) and IT, technology and 
@@ -531,13 +620,13 @@ played a role in a
 data loss event.
 82%
 Organizations typically deploy a variety of security solutions and mitigating controls to protect 
-against the loss of sensitive data, but they often overlook one factoremployees who leave for 
-greener pastures often take the data with them. CISOs cant solve this problem with technical 
+against the loss of sensitive data, but they often overlook one factor—employees who leave for 
+greener pastures often take the data with them. CISOs can’t solve this problem with technical 
 controls alone, and this is where a strong security culture comes in. Educating employees, setting 
-the expectations, garnering senior business leadership supportand then adding procedures and 
-controls around itcan mitigate and eliminate some of the most common data leak problems.
-
-
+the expectations, garnering senior business leadership support—and then adding procedures and 
+controls around it—can mitigate and eliminate some of the most common data leak problems.
+“
+”
 Patrick Joyce, VP
 , Chief Global Security 
 Officer (CISO \& CSO), Medtronic
@@ -550,16 +639,16 @@ Board members are even more confident, with 75% believing this to be the case.
 However, this may due to CISOs sharing with them a well\-presented picture of 
 events rather than the unfiltered reality.
 Despite confidence in their current abilities, information protection and data 
-governance remain a top priority going forward for 61% of the worlds CISOs. Thats 
+governance remain a top priority going forward for 61% of the world’s CISOs. That’s 
 a slight increase from 59% last year. 
 Once again, board members feel more strongly, with 75% in agreement. Again, this 
-is likely because of their limited viewboard members focus on top\-line concerns 
+is likely because of their limited view—board members focus on top\-line concerns 
 rather than the numerous security issues CISOs deal with throughout the year. 
 When it comes to the tools and protocols making up cyber defense, most CISOs report a broad and varied arsenal.
 What protocols do you have in place to combat organizational data loss?
 87% of organizations in 
 Sweden dealt with material 
-data loss in the last year
+data loss in the last year—
 the highest rate of any 
 country surveyed. 
 Insider negligence is the 
@@ -610,22 +699,24 @@ adequately protected.
 60%
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 12
-Chapter 4: Building a Defense to Fight on Every FrontTodays CISOs face a fight on multiple fronts. They must combat external threats such as ransomware and supply chain risk to 
+Chapter 4: Building a Defense to Fight on Every Front
+ 
+Today’s CISOs face a fight on multiple fronts. They must combat external threats such as ransomware and supply chain risk to 
 malicious, negligent and compromised insiders. For the most part, CISOs feel they have adequate resources to wage such a 
 war. But many remain woefully overexposed. 
 As supply chains grow larger and more complex, protecting these increasingly opaque networks is more difficult than ever. 
 In spite of this, most CISOs say they have the issue under control. Some 64% believe they have appropriate controls in place 
-to mitigate supply chain risk. This represents a modest increase from 2022 (59%), demonstrating that the issue remains a
+to mitigate supply chain risk. This represents a modest increase from 2022 (59%), demonstrating that the issue remains a 
 top priority.
 Percentage of CISOs who agree their organization has 
 appropriate controls in place to mitigate supply chain risk. 
 When it comes to more direct attacks on their organization, CISOs are increasingly prepared to rely on insurers to limit the 
 damage. Almost two\-thirds (61%) said they would place a claim on cyber insurance policies to recover losses incurred. Retail 
 (75%) and IT, technology and telecoms (65%) are most likely to mitigate financial losses in this way. 
-The World Economic Forum reports that 71% of organizations have cyber insurance in place,7so this finding is no surprise.
+The World Economic Forum reports that 71% of organizations have cyber insurance in place,7 so this finding is no surprise. 
 But relying on such policies alone is growing more complicated. 
 For one, a recent increase in claims has led many insurers to raise premiums; some are withdrawing coverage for common 
-threats like ransomware altogether.8Whats more, while insurance can offer some financial compensation in the event of a data 
+threats like ransomware altogether.8 What’s more, while insurance can offer some financial compensation in the event of a data 
 breach, it does little to rebuild customer trust or company reputation. 
 This, along with an increase in more sophisticated and devasting ransomware attacks, may be why CISOs are increasingly 
 open to paying ransoms to cyber criminals. 
@@ -664,22 +755,22 @@ KSA
 50%
 48%
 2023 Global Average \= 64%
-7World Economic Forum. Global Cybersecurity Outlook 2022\. January 2022\. 
-8Euronews. Cybercrime: Insurance giant Axa to stop covering ransomware payments in France. July 2021\.
+7 World Economic Forum. “Global Cybersecurity Outlook 2022\.” January 2022\. 
+8 Euronews. “Cybercrime: Insurance giant Axa to stop covering ransomware payments in France.” July 2021\.
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 13
 Percentage of CISOs by industry who agree that if impacted by 
 ransomware within the next 12 months, their organization is likely to 
-pay a ransom to restore systemsprevent the release of data.
+pay a ransom to restore systems/prevent the release of data.
 Most CISOs (62%) are confident that their organization can detect and remove a threat actor using stolen or compromised 
-credentials before any material damage occurs. Just 14% disagree.
+credentials before any material damage occurs. Just 14% disagree. 
 This confidence is likely misplaced. While most organizations may have adequate endpoint detection and response technology, 
 such tools will not alert on compromised credentials.
 Spotlight on budgets and priorities
-With a look to the future, CISOs priorities for the next two years are largely unchanged from last years report. The desire to 
+With a look to the future, CISOs’ priorities for the next two years are largely unchanged from last year’s report. The desire to 
 innovate (39%), consolidate (37%) and outsource (35%) aspects of cybersecurity remain strong. The numbers underline a 
 commitment to these transformational long\-term projects.
-What are the top priorities for your organizations IT security 
+What are the top priorities for your organization’s IT security 
 department over the next two years? (Pick up to three.)
 Retail
 Public
@@ -690,7 +781,7 @@ Financial
 services
 Manufacturing
 and production
-Energy, oilgas
+Energy, oil/gas
 and utilities
 Media, leisure
 and
@@ -719,7 +810,7 @@ Transport
 Improving information protection and data
 classification, Enabling business innovation
 (example: DevSecOps, product development)
-Consolidation andor simplification
+Consolidation and/or simplification
  of security solutions and controls
 Outsourcing security controls
 Addressing insider threats
@@ -746,14 +837,14 @@ CISOs in retail (76%)
 are most confident 
 that their organization 
 has appropriate 
-controls in place
+controls in place 
 to mitigate supply 
 chain risk.
 CISOs in the UK 
 (79%), France (73%) 
 and Sweden (73%) 
 are most likely to rely 
-on cyber insurance
+on cyber insurance 
 to cover losses.
 Ransoms are most 
 likely to be paid by 
@@ -777,43 +868,45 @@ economic downturn.
 of global CISOs say the 
 current economic downturn 
 has negatively impacted 
-their organizations 
+their organization’s 
 cybersecurity budget.
 58%
 It is imperative to have alignment with leadership on the need to provide resources that 
 maintain a robust cybersecurity program, even when dealing with a difficult business 
-climate. Our adversaries do not stop in an economic downturnon the contrary, they step 
+climate. Our adversaries do not stop in an economic downturn—on the contrary, they step 
 up their efforts knowing that organizations may put fewer resources into their defenses. 
 Maintaining solid cybersecurity protections is always paramount because the threat 
 landscape will only continue to expand.
-
-
+“
+”
 Juan Gomez\-Sanchez, Global Chief Information 
 Security Officer, Whirlpool Corporation
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 15
-Chapter 5: Boards and CISOsCloser to the Same PageThe issue of CISO and board member alignment is not new. But as the CISO role takes on greater influence, board\-level 
-interactions are more frequentand relations appear to be improving as a result. 
+Chapter 5: Boards and CISOs—Closer to the Same Page
+ 
+The issue of CISO and board member alignment is not new. But as the CISO role takes on greater influence, board\-level 
+interactions are more frequent—and relations appear to be improving as a result. 
 A little under two\-thirds (62%) of CISOs agree that their board sees eye to eye with 
-them on cybersecurity issues. Thats up from 59% in 2021 and 51% in 2022\. For 
+them on cybersecurity issues. That’s up from 59% in 2021 and 51% in 2022\. For 
 their part, board members are even more positive about the relationship, with 69% 
 feeling the same way.
 As CISOs feel more at risk of a cyber attack and less prepared to cope with the 
-consequences, they are beginning to feel more in tune with their boardsan 
+consequences, they are beginning to feel more in tune with their boards—an 
 encouraging sign. Both, no doubt, hope this trend can continue. And perhaps the 
 slight drop in perceived positive relations in 2022 was little more than late\-pandemic 
 stress and strain.
 Percentage of CISOs by industry who agree their board sees 
 eye to eye with them on the issue of cybersecurity.
 Even though relations are burgeoning, a slight disconnect remains around the consequences of a cyber attack. Based on their 
-interactions, CISOs believe their boards greatest concerns to be:
-Reputational damage (36%) 
-Impact on business valuation (36%) 
-Loss of current customers (36%)
+interactions, CISOs believe their boards’ greatest concerns to be:
+• Reputational damage (36%) 
+• Impact on business valuation (36%) 
+• Loss of current customers (36%)
 While all of these concerns are valid, they are slightly out of step with the top real\-world impacts of data loss: 
-Operational downtime and data recovery (38%) 
-Financial loss (33%) 
-Regulatory sanctions (33%)
+• Operational downtime and data recovery (38%) 
+• Financial loss (33%) 
+• Regulatory sanctions (33%)
 That said, many of the concerns held by CISOs and board members are interlinked. Operational downtime leads to reputational 
 damage, impact on business valuation and loss of customers.
 Retail
@@ -832,7 +925,7 @@ services
 Healthcare
 Financial
 services
-Energy, oilgas
+Energy, oil/gas
 and utilities
 Education
 Transport
@@ -849,7 +942,7 @@ Transport
 50%
 of CISOs say their 
 board sees eye\-to\-eye 
-with them on the issue
+with them on the issue 
 of cybersecurity.
 62%
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
@@ -864,7 +957,7 @@ technical knowledge is lacking in the boardroom.
 CISOs in retail (73%), IT, technology and telecoms (69%) and education (67%) 
 believe in this view most strongly, while healthcare (50%) and transport (44%) 
 are least likely to agree.
-In the U.S 70% of CISOs share this view. Perhaps not surprisingly, the 
+In the U.S., 70% of CISOs share this view. Perhaps not surprisingly, the 
 Securities and Exchange Commission (SEC) has proposed requiring publicly 
 traded companies to disclose whether any of their board directors have 
 cybersecurity experience.
@@ -999,7 +1092,7 @@ Brazil
 41%
 37%
 Main Concern
-SecondThird Concerns
+Second/Third Concerns
 of CISOs believe that 
 cybersecurity expertise 
 should be required at 
@@ -1011,7 +1104,7 @@ Percentage of CISOs agreeing cybersecurity expertise
 should be required at the board level.
 Whether such a rule will close the knowledge gap between CISOs and other board members remains to be seen. But 
 many security professionals around the world will be keeping a close eye on it. An increased cybersecurity capability in the 
-boardroom benefits all. And if existing board members cant fulfil this role, that might mean greater career prospects for security 
+boardroom benefits all. And if existing board members can’t fulfil this role, that might mean greater career prospects for security 
 professionals who can.
 CISOs in Brazil (80%), Japan (80%) 
 and the UK (74%) are most likely to 
@@ -1063,21 +1156,30 @@ their Chief Information Security Officer (CISO) in managing the mounting demands
 governance and oversight. By forging closer partnerships and aligning with their security experts, 
 boards can effectively implement and oversee strategies that enhance their organization's 
 cybersecurity and fortitude, positioning them to overcome emerging threats, challenges and 
-ensuring shareholder value.Martin Bally, VP \& Chief InformationSecurity Officer, Campbell Soup Company
-
-
+ensuring shareholder value.
+ 
+ 
+ 
+Martin Bally, VP \& Chief Information 
+ 
+ 
+Security Officer, Campbell Soup Company
+“
+”
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 18
-Chapter 6: Life as a CISOIn the Crosshairs, Burned Out 
-and Under the MicroscopeCybersecuritys role in helping to navigate the pandemic has undoubtedly brought 
+Chapter 6: Life as a CISO—In the Crosshairs, Burned Out 
+and Under the Microscope
+ 
+Cybersecurity’s role in helping to navigate the pandemic has undoubtedly brought 
 with it some positives. CISOs now have more of a voice in the boardroom. And 
 more than ever, they have been able to demonstrate the importance of effective 
 security in driving business strategy. 
-But its not all good news. Having enabled home and hybrid working suddenly 
+But it’s not all good news. Having enabled home and hybrid working suddenly 
 and at scale in a time of crisis, many feel that the continued pressure on the role is 
 unsustainable. 
 Almost two\-thirds, 61%, of CISOs agree that they face excessive expectations. 
-Thats up from 49% in 2022 and 57% in 2021\. A return to business as usual could 
+That’s up from 49% in 2022 and 57% in 2021\. A return to business as usual could 
 be behind this growing concern. With the panic to secure home and hybrid setups behind them, many organizations are now 
 tightening cybersecurity budgets. The shift leaves CISOs with the same objectives but fewer resources to achieve them. 
 Across industries, those in retail (69%) and IT, technology and telecoms (69%) feel the heaviest expectations. Transport (48%) 
@@ -1086,27 +1188,27 @@ throughout safety\-critical industries.
 of CISOs agree that 
 there are excessive 
 expectations on the 
-CISOCSO.
+CISO/CSO.
 61%
-CISOs have always had a stressful job, but the additional pressureslike board 
+CISOs have always had a stressful job, but the additional pressures—like board 
 expectations to deliver risk reduction faster and challenges in influencing middle 
-management on delivering it, budget challenges and shortages of skilled talentare 
-creating an untenable situation for many. Thats why more CISOs are changing roles or 
+management on delivering it, budget challenges and shortages of skilled talent—are 
+creating an untenable situation for many. That’s why more CISOs are changing roles or 
 leaving the cybersecurity field altogether. Finding a better balance may sound impossible, 
-given the 247 nature of the role, but its absolutely necessary for maintaining resilience in 
+given the 24/7 nature of the role, but it’s absolutely necessary for maintaining resilience in 
 the face of burnout.
-
-
+“
+”
 Celeste Lowe, Group Director, 
 IT Security, Nine
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 19
 The burden of personal liability
-Another significant contributor to the pressure felt by the worlds CISOs is the ever\-
-present possibility of personal liability62% expressed concern about the subject. 
+Another significant contributor to the pressure felt by the world’s CISOs is the ever\-
+present possibility of personal liability––62% expressed concern about the subject. 
 Just 15% said it was not a worry in their current role.
 The increased responsibility of the CISO has brought increased scrutiny from 
-regulators. The failure of Ubers former CISO to report a data breach resulted in a 
+regulators. The failure of Uber’s former CISO to report a data breach resulted in a 
 felony conviction. CISOs are well aware of what this verdict and others like it could 
 mean for them, and they are seeking reassurance. 
 Most CISOs (61%) say they would not join an organization that does not offer 
@@ -1150,7 +1252,7 @@ IT, technology
 and telecoms
 Public
  sector
-Energy, oilgas
+Energy, oil/gas
 and utilities
 Media, leisure
 and
@@ -1210,12 +1312,12 @@ KSA
 2023 Global Average \= 62%
 Unfortunately, the result of increased pressure, scrutiny and personal liability is 
 all too inevitable. High\-stress environments, shrinking budgets and mounting 
-expectations are hurting global CISOs quality of life. A full 60% say they have 
+expectations are hurting global CISOs’ quality of life. A full 60% say they have 
 experienced burnout in the past 12 months. Just 15% disagree.
 At the end of another blockbuster year for cybersecurity professionals, this is 
 a critical finding. Once again, it underscores the need to stay grounded, both 
-professionally and personally.
-The scale of the issue cant be overstated. Forrester recently predicted that a 
+professionally and personally. 
+The scale of the issue can’t be overstated. Forrester recently predicted that a 
 Global 500 firm will be exposed for unsafe working conditions of its cybersecurity 
 employees in 2023\.9 
 The onus is on cybersecurity leaders to ensure that this does not happen on 
@@ -1225,14 +1327,16 @@ of CISOs agree that they
 have experienced burnout 
 within the past 12 months.
 60%
-9Forrester. Predictions 2023: Cybersecurity, Risk, And Privacy. October 2022\.
+9 Forrester. “Predictions 2023: Cybersecurity, Risk, And Privacy.” October 2022\.
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 21
-ConclusionAfter the chaos and disruption of the first pandemic year, CISOs found themselves in a period of transition. Confidence in remote 
+Conclusion
+ 
+After the chaos and disruption of the first pandemic year, CISOs found themselves in a period of transition. Confidence in remote 
 setups and understanding of the post\-pandemic threat landscape grew. So did belief in their ability to protect their organizations in 
-this new normal.
-But for CISOs, theres no longer anything new about what has become a normal way of working. With the initial scramble
-behind them and two more years of remote work under their belts, it is back to reality. And with that comes a familiar state of
+this “new normal.”
+But for CISOs, there’s no longer anything new about what has become a normal way of working. With the initial scramble 
+behind them and two more years of remote work under their belts, it is back to reality. And with that comes a familiar state of 
 elevated concern. 
 CISOs are under no illusions about the risks posed by their people. But some are misplacing their confidence when it comes to 
 protecting data. Insider threats are a growing problem. And as staff turnover shows no signs of slowing across many industries, it is 
@@ -1240,13 +1344,13 @@ likely to be an issue for some time.
 On top of this, security budgets are feeling the pinch of the economic downturn. Existing controls may be enough to mitigate 
 supply chain risk, detect and remove threat actors, and cover potential losses from ransomware. But how long they will remain so is 
 impossible to guess.
-This return to a harsh reality culminates in CISOs feeling the strain. Its no wonder that most are feeling the pressure of rising 
+This return to a harsh reality culminates in CISOs feeling the strain. It’s no wonder that most are feeling the pressure of rising 
 expectations, personal liability and burnout. 
 But signs of hope remain. That CISOs are voicing these concerns is a huge step in the right direction. And with most feeling more 
 aligned with board members, they have a solid foundation upon which to build and deliver change.
 The question is, with shrinking budgets and long\-term talent shortages, will CISOs have the resources they need to do so?
 CISOs are no strangers to challenges such as tight budgets, people\-driven risks and a 
-growing threat landscapemost have been there before. But the positive shift we are 
+growing threat landscape—most have been there before. But the positive shift we are 
 seeing in board\-CISO relationships means security leaders now have new allies in their 
 corner. Together, boards and CISOs have a solid opportunity to bolster their risk\-based 
 cybersecurity strategies and drive meaningful changes. CISOs and their board allies may 
@@ -1254,15 +1358,24 @@ find it necessary to lend their support and provide sponsorship for business seg
 which may be struggling to find the capacity and prioritization necessary to implement 
 these changes. In the dynamic cybersecurity environment, new challenges will always 
 arise, and it is much easier to solve them when the two sides are working together in 
-tandem toward a common goal.David McLeod, VP
-, Information Security Officer,The Walt Disney Studios
-
-
+tandem toward a common goal.
+ 
+ 
+ 
+David McLeod, VP
+, Information Security Officer, 
+ 
+ 
+The Walt Disney Studios
+“
+”
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 22
-MethodologyThe Proofpoint 2023 Voice of the CISO survey, conducted by research firm Censuswide between January 30 and February 7, 
+Methodology
+ 
+The Proofpoint 2023 Voice of the CISO survey, conducted by research firm Censuswide between January 30 and February 7, 
 2023, surveyed 1,600 chief information security officers from organizations of 200 employees or more across different industries 
-in 16 countries. One hundred CISOs were interviewed in each market, which includes the U.S Canada, the UK, France, 
+in 16 countries. One hundred CISOs were interviewed in each market, which includes the U.S., Canada, the UK, France, 
 Germany, Italy, Spain, Sweden, the Netherlands, UAE, KSA, Australia, Japan, Singapore, South Korea and Brazil.
 Industry split among respondents:
 Company size split among respondents:
@@ -1308,10 +1421,10 @@ proofpoint.com
 PROOFPOINT 2023 VOICE OF THE CISO REPORT
 24
 ABOUT PROOFPOINT
-Proofpoint, Inc. is a leading cybersecurity company that protects organizations greatest assets and biggest risks: their people. With an integrated suite of cloud\-based solutions, 
+Proofpoint, Inc. is a leading cybersecurity company that protects organizations’ greatest assets and biggest risks: their people. With an integrated suite of cloud\-based solutions, 
 Proofpoint helps companies around the world stop targeted threats, safeguard their data, and make their users more resilient against cyber attacks. Leading organizations of all 
-sizes, including more than half of the Fortune 1000, rely on Proofpoints people\-centric security and compliance solutions to mitigate their most critical risks across email, the 
+sizes, including more than half of the Fortune 1000, rely on Proofpoint’s people\-centric security and compliance solutions to mitigate their most critical risks across email, the 
 cloud, social media, and the web. More information is available at www.proofpoint.com.
 Contact us at info@proofpoint.com 
 to better protect your business.
-0400\-008\-01010523
+0400\-008\-0101 05/23

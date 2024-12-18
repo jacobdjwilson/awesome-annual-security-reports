@@ -1,16 +1,16 @@
-2023
+2023 
 Product Security 
 Annual Report
-Cybersecurity by design,
+Cybersecurity by design, 
 in use and through partnership
 2
 2023 Product Security Annual Report
 Current state
-Innovation.
+Innovation. 
 Security. Trust.
 For more than 125 years, BD has been 
 advancing the world of health
- by creating 
+™ by creating 
 new technologies. We maintain a culture 
 of transparency and continually strive to 
 improve the security of BD products to help 
@@ -76,11 +76,11 @@ protecting patient safety. At the same time, cybersecurity expectations of manuf
 increased across critical infrastructure. These changes are evident in new cybersecurity requirements 
 for manufacturers in Japan, the United Kingdom and the United States. Practices such as managing 
 cybersecurity over the full product life cycle, providing a software\-bill\-of\-materials (SBOM), and 
-communicating potential risks and vulnerabilities feature prominently in the new requirements 
+communicating potential risks and vulnerabilities feature prominently in the new requirements.\* 
 Healthcare cybersecurity trends
 Three cybersecurity trends have impacted the healthcare industry over the last year:
 These trends reinforce the need for ongoing vigilance and continuous improvement. 
-At BD, our product security strategy includes a total life cycle
+At BD, our product security strategy includes a total life cycle 
 approach to working to protect BD products and communicating 
 with our customers and patients about potential cybersecurity 
 risks and emerging threats. This report summarizes our approach 
@@ -101,21 +101,22 @@ Department of Health and Human Services (HHS) tracks large
 data breaches through its Office for Civil Rights. Between 2018 
 and 2022, large breaches in the U.S. increased 93% and large 
 breaches involving ransomware increased 278%
-1\. Geopolitical 
+2\. Geopolitical 
 events have also increased cybersecurity risks on a global basis.
-Artificial Intelligence (AI)\-enabled cyberattacks
+Artificial Intelligence (AI)\-enabled cyberattacks 
 are changing the threat landscape.
 In August 2023, HHS issued a warning about ransomware attacks being launched via 
 phishing emails
-1\. Around the same time, malicious generative artificial intelligence (GenAI) 
+3\. Around the same time, malicious generative artificial intelligence (GenAI) 
 tools like WormGPT and FraudGPT began to emerge on the dark web, making it even 
 easier for threat actors to plan and launch these types of attacks
-1\. In addition, Gartner
- 
-predicts that By 2025, the consumerization of AI\-enabled fraud will fundamentally 
+4\. In addition, Gartner
+® 
+predicts that “By 2025, the consumerization of AI\-enabled fraud will fundamentally 
 change the enterprise attack surface, driving more outsourcing of enterprise trust and 
 focus on security education and awareness
-1\. Securing BD products
+5\.” 
+Securing BD products
 Collaboration
 4
 2023 Product Security Annual Report
@@ -126,7 +127,7 @@ and adaptive. No company is immune; cyberattacks can
 impact even the most mature technology companies. 
 BD strives to meet high security standards. We also 
 recognize that new cybersecurity threats emerge daily 
-across the healthcare industrywhich is why we believe 
+across the healthcare industry—which is why we believe 
 transparency and collaboration are essential. We 
 base our strategic approach to cybersecurity on three 
 guiding principles:
@@ -137,7 +138,7 @@ including those from the International Organization
 for Standardization (ISO) and the National Institute 
 of Standards and Technology (NIST).
 Security in use
-Through collaboration,
+Through collaboration, 
 BD enables customers to 
 secure and maintain 
 BD products throughout 
@@ -150,7 +151,7 @@ and public\-private partnerships.
 Our services
 BD provides flexible servicing options for select software\-enabled products. 
 Contact your BD service representative to explore options such as patch 
-management to augment your organizations cybersecurity capabilities. 
+management to augment your organization’s cybersecurity capabilities. 
 Cybersecurity at BD
 Current state
 Collaboration
@@ -160,21 +161,21 @@ Securing BD products
 BD Cybersecurity, Product Security and 
 Regulatory teams routinely assess emerging 
 cybersecurity regulations, rules and guidance. 
-These teams work cross\-functionally to perform
+These teams work cross\-functionally to perform 
 product\-level gap assessments against our cybersecurity 
 processes, and we update the BD Cybersecurity 
 Framework accordingly as needed. For example, the 
 BD Cybersecurity Framework was updated in 2023 to:
-Place a stronger emphasis on activities that take 
+• Place a stronger emphasis on activities that take 
 place during the project ideation and planning phase, 
 including design requirements, architecture design and 
 threat modeling. 
-Clarify activities that may be carried out during 
+• Clarify activities that may be carried out during 
 the qualification phase, including verification 
 and validation, compliance against cybersecurity 
 requirements, and expanded activities as part of 
 cybersecurity testing.
-Provide a more comprehensive and complete view of 
+• Provide a more comprehensive and complete view of 
 cybersecurity risk management, including supplier risk 
 management and supply chain risk management.
 BD anticipates updating the framework to incorporate 
@@ -182,7 +183,7 @@ elements of the Medical Device and Health IT Joint
 Security Plan Version 2\.0, which was published in 
 March, 2024\.
 Cybersecurity risks
-Safetypatient risks
+Safety/patient risks
 Training and awareness
 Supplier risk management
 Supply chain risk management
@@ -191,7 +192,7 @@ planning
 Complaints
 Threat modeling
 Incident response
-End of Life (EOL)End of 
+End of Life (EOL)/End of 
 Service (EOS) management
 Decommissioning
 Logging and monitoring
@@ -202,22 +203,22 @@ compliance reporting
 Life cycle management
 Vulnerability management
 Cybersecurity bulletins
-and patch notications
+and patch notiﬁcations
 Patch management
 Compliance
-Cybersecurity requirements testing
+• Cybersecurity requirements testing
 Customer facing deliverables
-Cybersecurity white paper
-Software bill of materials
+• Cybersecurity white paper
+• Software bill of materials
 Cybersecurity management plan
 Cybersecurity testing
-Penetration testing
-Static Application Security Testing (SAST)
+• Penetration testing
+• Static Application Security Testing (SAST)
 and Static Code Analysis (SCA)
-Vulnerability scanning
-Web application scanning
-Fuzz testing
-Robustness testing
+• Vulnerability scanning
+• Web application scanning
+• Fuzz testing
+• Robustness testing
 Design
 requirements
 Voice of 
@@ -237,11 +238,11 @@ Vulnerability scanning
 Code and Software Bill of 
 Materials (SBOM) analysis
 Design and development
-Qualication
-Quality management system Change management system
-Commercializationoperationalization
+Qualiﬁcation
+Quality management system / Change management system
+Commercialization/operationalization
 Intake
-Verication and validation
+Veriﬁcation and validation
 Monitor and manage residual risk
 Cybersecurity risk analysis, evaluation and remediation
 Risk management
@@ -250,7 +251,7 @@ Our Secure Software Development Life Cycle (SSDLC) follows the BD Cybersecurity
 Framework which incorporates design requirements, including cybersecurity risk 
 assessment, threat modeling, penetration testing, vulnerability scanning, software 
 composition analysis, code analysis, system hardening and continuous vulnerability 
-management. The framework serves as a blueprint for managing cybersecurity risk
+management. The framework serves as a blueprint for managing cybersecurity risk 
 across BD products. It is aligned to multiple industry standards and work products, 
 including the Healthcare and Public Health Sector Coordinating Council (HSCC) Medical 
 Device and Health IT Joint Security Plan, the National Institute of Standards and 
@@ -265,12 +266,12 @@ Securing BD products
 Cybersecurity risk assessments
 BD regularly works with customers to respond to product\-specific cybersecurity 
 risk assessment questionnaires. We also participate in multiple commercially 
-available third\-party risk assessment programs to support our customers vendor risk 
+available third\-party risk assessment programs to support our customers’ vendor risk 
 management processes.
 Cybersecurity certifications and third\-
 party attestations provide objective 
-assurance regarding a companys 
-cybersecurity processes and controls.
+assurance regarding a company’s 
+cybersecurity processes and controls. 
 In a world where cybersecurity 
 risks and threats are increasing, the 
 perspective of an external, objective 
@@ -285,7 +286,7 @@ processing of such information. These reports are prepared by an independent thi
 assurance regarding the operational effectiveness of BD internal controls and the security of BD products. 
 UL CAP is another independently audited certification that demonstrates the cybersecurity of 
 participating BD medical devices through a rigorous program of analysis. 
-For information about all of our cybersecurity certifications and attestations,
+For information about all of our cybersecurity certifications and attestations, 
 visit the BD Cybersecurity Trust Center.
 Current state
 Collaboration
@@ -296,7 +297,7 @@ Our technology landscape continues to rapidly evolve
 as BD delivers significant innovations to patients and 
 customers as we pursue our Purpose of advancing the 
 world of health
-. At the same time, cybersecurity risks 
+™. At the same time, cybersecurity risks 
 for software and connected devices continue to grow. 
 That is why we believe managing cybersecurity over 
 the full product life cycle is a mission\-critical initiative. 
@@ -306,9 +307,9 @@ used to make medical devices. It is not enough to
 release a medical device that is secure; responsible 
 medical device manufacturers must work closely with 
 their customers and suppliers to maintain cybersecurity 
-over each products intended useful life. Here is what 
+over each product’s intended useful life. Here is what 
 that looks like at BD.
-Securing the medical
+Securing the medical 
 device ecosystem
 Legacy products
 The usability of a medical device often 
@@ -330,7 +331,7 @@ to make them aware of potential risks, mitigations and compensating controls. We
 Administration (FDA) guidance and in furtherance of our culture of transparency. To learn more about our responsible disclosure 
 processes, see Coordinated Vulnerability Disclosure Process on page 10\.
 Products in development
-BD is committed to security by design.
+BD is committed to security by design. 
 We strive to build the latest cybersecurity 
 best practices and advances into our 
 products and processes from the start 
@@ -349,8 +350,8 @@ Collaboration
 Securing BD products 
 Enabling strong cybersecurity controls
 BD
- Alaris
- Infusion System, a modular and comprehensive 
+® Alaris
+™ Infusion System, a modular and comprehensive 
 infusion system that includes large volume pumps, syringe 
 pumps, patient\-controlled analgesia (PCA) pumps, respiratory 
 monitoring, dose error reduction software and electronic 
@@ -361,11 +362,11 @@ with WPA3 for secure wireless communications, encryption with the latest TLS
 the infusion pumps, and updates that enable the latest SHA3 certificates for 
 Windows Server environments that enable SHA3 support. 
 BD
- Pyxis
- Enterprise Server (ES) 1\.7\.4, the latest 
+® Pyxis
+™ Enterprise Server (ES) 1\.7\.4, the latest 
 software release of the Pyxis
- MedStation
- ES System, 
+™ MedStation
+™ ES System, 
 enables pharmacists to maintain a single source of truth 
 for users and formulary, helping save time and reduce 
 errors from manual entry. 
@@ -373,17 +374,17 @@ Stronger encryption processes are enabled by default to secure customer
 data in transit and at rest, and software packages are digitally signed to 
 verify their authenticity. 
 BD
- Site\-Rite
- 9 Ultrasound System, a vascular
+® Site\-Rite
+™ 9 Ultrasound System, a vascular 
 access device that provides real\-time ultrasound 
 imaging to help visualize blood vessels, needle 
 trajectory and final tip location.
 In addition to the internal penetration testing BD performs as part 
 of product development, a pre\-market version of the Site\-Rite
- 9 
+™ 9 
 Ultrasound System was made available to security researchers at the 
 Biohacking Village at DEF CON 29 in 2022 for security testing purposes. 
-Participating researchers did not report any vulnerabilities to BD.
+Participating researchers did not report any vulnerabilities to BD. 
 For more on the Biohacking Village at DEF CON, please see page 12\.
 Our commitment to innovation is reflected in the products, services and solutions we develop to help advance both clinical 
 therapy for patients and clinical process for healthcare providers. The following examples highlight some of the ways we 
@@ -397,9 +398,9 @@ Securing BD products
 For more information 
 Customers are encouraged to visit the BD Cybersecurity Trust Center to request Product Security White Papers for products they maintain. 
 Each Product Security White Paper includes information about additional cybersecurity controls, how BD security and privacy practices have 
-been applied, and what customers should know about maintaining security throughout each products intended useful life.
+been applied, and what customers should know about maintaining security throughout each product’s intended useful life.
 BD FACSDiscover
- S8 Cell Sorter a novel 
+™ S8 Cell Sorter\*, a novel 
 research use cell sorter designed to help researchers 
 answer complex biological questions and discover 
 new insights into health and disease.
@@ -407,26 +408,26 @@ The workstation is pre\-installed with a third\-party anti\-malware
 solution that leverages artificial intelligence and machine learning 
 to guard against zero\-day threats. 
 BD
- Kiestra
- Total Laboratory Automation System
+® Kiestra
+™ Total Laboratory Automation System 
 (third generation), a fully automated robotic track 
 system for microbiology labs that connects different 
 Kiestra
- modules in a flexible and customizable way 
+™ modules in a flexible and customizable way 
 and automates lab specimen processing. 
 Instrument PCs are set up in kiosk mode, which helps prevent 
 unauthorized access.
 BD PreVue
- II Peripheral Vascular Access System,
+™ II Peripheral Vascular Access System, 
 a portable device that features real\-time two\-dimensional 
 ultrasound imaging for optimized IV placement, giving 
 patients the vascular access experience they deserve.
-The system offers multiple user authentication options, including
+The system offers multiple user authentication options, including 
 the use of a PIN, Active Directory and multifactor authentication. 
 Enabling strong cybersecurity controls
 \*
 BD FACSDiscover
- S8 Cell Sorter is For Research Use Only. Not for use in diagnostic 
+™ S8 Cell Sorter is For Research Use Only. Not for use in diagnostic 
 or therapeutic purposes. BD flow cytometers are Class I Laser Products.
 Current state
 Collaboration
@@ -472,13 +473,13 @@ BD participates, including the Health Information Sharing and
 Analysis Center (H\-ISAC). H\-ISAC sends hundreds of targeted 
 alerts to its members each year from their Threat Operations 
 Center
-1\. This practice helps healthcare delivery organizations 
+6\. This practice helps healthcare delivery organizations 
 of all sizes stay current with vulnerability disclosures across 
 the industry.
 Coordinated vulnerability 
 disclosure process
 BD has a mature coordinated vulnerability disclosure program to help customers manage 
-cybersecurity risks over each products intended useful life to support our culture of transparency. 
+cybersecurity risks over each product’s intended useful life to support our culture of transparency. 
 Current state
 Collaboration
 11
@@ -488,10 +489,10 @@ BD welcomes vulnerability reports from customers, security researchers and third
 multiple methods, including vulnerability scanning, threat modeling and penetration testing, to uncover potential risks 
 and vulnerabilities during the design process and throughout the software development life cycle. 
 When a vulnerability is discovered and confirmed in a BD product, we follow 
-FDA guidance to disclose the vulnerability so customers andor patients can 
+FDA guidance to disclose the vulnerability so customers and/or patients can 
 apply mitigations and compensating controls and, if a patch is available, 
 prioritize patch management in accordance with the vulnerability severity 
-and potential impact to patient safety andor privacy.
+and potential impact to patient safety and/or privacy.
 When a vulnerability exists in a third\-party component used in association 
 with a BD product, BD collaborates with our third\-party partners to better 
 understand the potential impact to BD products. If BD determines that 
@@ -500,7 +501,7 @@ BD Cybersecurity Trust Center. Additionally, when patches are made
 available by third\-party component vendors, we test and validate those 
 patches before making them available to BD customers. 
 BD is also authorized as a Common Vulnerability and Exposures (CVE
-) 
+®) 
 Numbering Authority by the CVE Program. When a vulnerability is unique 
 to a BD device, we assign a CVE number which helps customers manage 
 their internal vulnerability and patch management processes efficiently. 
@@ -514,31 +515,31 @@ they use Information Sharing and Analysis Organizations to stay up to
 date on medical device vulnerability disclosures. That is why we also share 
 our vulnerability disclosures with the Health Information Sharing and 
 Analysis Center (H\-ISAC) to maximize awareness.
-Vulnerability disclosure indicates maturity in an organizations cybersecurity 
+Vulnerability disclosure indicates maturity in an organization’s cybersecurity 
 practices. BD has led the way in this open, transparent approach and strives 
 to help customers manage cybersecurity risks properly through awareness 
 and guidance.
 More about coordinated 
 vulnerability disclosure
-Cybersecurity resources
+Cybersecurity resources 
 for BD customers
-BD makes numerous cybersecurity resources available to its customers via
+BD makes numerous cybersecurity resources available to its customers via 
 the BD Cybersecurity Trust Center, including: 
-Product Security White Papers BD makes Product Security White Papers 
+• Product Security White Papers – BD makes Product Security White Papers 
 available for all of its software\-enabled products. These documents detail how 
 BD security and privacy practices have been applied and provide information 
-to educate customers about maintaining security throughout each products 
+to educate customers about maintaining security throughout each product’s 
 intended useful life.
-Bulletins These notifications, also known as vulnerability disclosures, provide 
+• Bulletins – These notifications, also known as vulnerability disclosures, provide 
 product security information and recommendations related to newly discovered 
-vulnerabilities in BD products andor third\-party components used in association 
+vulnerabilities in BD products and/or third\-party components used in association 
 with BD products. 
-Security patches These notifications let customers know what security 
+• Security patches – These notifications let customers know what security 
 patches are available and what they address. For third\-party software 
 components, BD validates all associated patches before making them available 
 to BD customers. 
-Cybersecurity certifications and attestations BD makes several industry\-
-recognized certifications andor attestation reports for BD products available 
+• Cybersecurity certifications and attestations – BD makes several industry\-
+recognized certifications and/or attestation reports for BD products available 
 to customers. 
 Current state
 Collaboration
@@ -564,7 +565,7 @@ our routine vulnerability disclosure process, we reported the vulnerabilities to
 the FDA and CISA and shared them with customers through a coordinated 
 vulnerability disclosure. The event also served to strengthen our internal 
 cybersecurity processes. 
-https:www.villageb.io 
+https://www.villageb.io/ 
 AdvaMed Cybersecurity Working Group
 BD participates in the AdvaMed Cybersecurity Working Group, which 
 brings medical device industry professionals together for the purpose 
@@ -574,7 +575,7 @@ insights at the AdvaMed Cybersecurity Summit about implementing
 the latest FDA cybersecurity requirements. Through the Cybersecurity 
 Working Group, BD also provided comments on emerging cybersecurity 
 developments and multiple industry discussion papers.
-http:www.advamed.org 
+http://www.advamed.org/ 
 Current state
 Securing BD products
 13
@@ -595,7 +596,7 @@ In addition, in 2023, BD participated in various
 working groups and partnered to drive industry 
 best practices into the company's cybersecurity 
 and product security strategies.
-https:h\-isac.org
+https://h\-isac.org/
 Healthcare Sector Coordinating Council (HSCC) 
 Cybersecurity Working Group
 The HSCC Cybersecurity Working Group (CWG) is a coalition of more than 430 industry and 
@@ -609,7 +610,7 @@ leads the newly established Operational Technology (OT) Manufacturing task group
 developing best practices for securing OT manufacturing networks for healthcare manufacturing 
 subsectors. BD also contributed to the Health Industry Cybersecurity Strategic Plan, a five\-
 year call\-to\-action for prioritizing foundational cybersecurity practices across the sector.
-https:healthsectorcouncil.org
+https://healthsectorcouncil.org/
 International Medical Device 
 Regulators Forum 
 The International Medical Device Regulators Forum 
@@ -623,8 +624,8 @@ Principles and Practices for the Cybersecurity
 of Legacy Medical Devices and Principles and 
 Practices for Software Bill of Materials for 
 Medical Device Cybersecurity.
-https:www.imdrf.org 
-Medical Device
+https://www.imdrf.org/ 
+Medical Device 
 Innovation Consortium
 The Medical Device Innovation Consortium 
 (MDIC) seeks to improve health and save lives by 
@@ -633,10 +634,10 @@ accelerating access to medical technologies. In
 steering committee. Through this engagement, 
 we helped increase awareness of the MDIC's 
 cybersecurity benchmarking initiative and 
-contributed to the organizations three\-year 
-strategic plan. BD also participated in MDICs 
+contributed to the organization’s three\-year 
+strategic plan. BD also participated in MDIC’s 
 Penetration Testing Best Practices working group. 
-https:mdic.org 
+https://mdic.org/ 
 Current state
 Securing BD products
 14
@@ -645,7 +646,7 @@ Collaboration
 MITRE
 MITRE was established to advance national security and 
 apply systems thinking to challenges across government, 
-industry and academia. In 2023, BD participated in MITREs 
+industry and academia. In 2023, BD participated in MITRE’s 
 legacy devices working group and provided feedback on 
 the development of the Next Steps Toward Managing 
 Legacy Medical Device Cybersecurity Risks white paper, 
@@ -653,11 +654,11 @@ which the FDA asked MITRE to develop in collaboration
 with healthcare delivery organizations, medical device 
 manufacturers, federal agencies and other industry 
 stakeholders. 
-https:mitre.org 
+https://mitre.org/ 
 MedTech Europe
 MedTech Europe is the European trade association for the 
 medical technology industry. In 2023, BD participated in 
-the associations Cybersecurity Working Group leadership 
+the association’s Cybersecurity Working Group leadership 
 team. Through this engagement, BD collaborates with 
 fellow cybersecurity leaders, including representatives of the 
 European Union Agency for Cybersecurity (ENISA), to provide 
@@ -666,10 +667,10 @@ recommendations for cybersecurity\-related policies. During
 Union (EU) cybersecurity regulations impacting the MedTech 
 industry, including the Network and Information Security 
 Directive (NIS2\) and the Cyber Resilience Act. 
-https:www.medtecheurope.org 
-Continuing to advance cybersecuritytogether 
-In healthcare, upholding strong cybersecurity measures is part of honoring the trust our
-customers, patients and regulators place in BD. As we continue to mature our cybersecurity
+https://www.medtecheurope.org/ 
+Continuing to advance cybersecurity—together 
+In healthcare, upholding strong cybersecurity measures is part of honoring the trust our 
+customers, patients and regulators place in BD. As we continue to mature our cybersecurity 
 program and share best practices across the industry, we invite you to partner with us. 
 To learn more, visit the BD Cybersecurity Trust Center.
 Collaborating to strengthen 
@@ -677,24 +678,24 @@ healthcare cybersecurity
 Current state
 Securing BD products
 BD, the BD Logo, BD FACSDiscover, BD Prevue, Alaris, Kiestra, MedStation, Pyxis and Site\-Rite are trademarks of Becton, Dickinson and 
-Company or its affiliates. All other trademarks are the property of their respective owners. 2024 BD. All rights reserved. BD\-129961
+Company or its affiliates. All other trademarks are the property of their respective owners. © 2024 BD. All rights reserved. BD\-129961
 bd.com
 BD, Franklin Lakes, NJ, 07417, U.S. 
 201\.847\.6800
-1DBIR: 2023 Data Breach Investigations Report. Verizon. https:www.verizon.combusinessresourcesreportsdbir. 
+1 DBIR: 2023 Data Breach Investigations Report. Verizon. https://www.verizon.com/business/resources/reports/dbir/. 
 Published June 6, 2023\. Accessed September 28, 2023\.
-2HHS Announces Next Steps in Ongoing Work to Enhance Cybersecurity for Health Care and Public Health Sectors. U.S. 
-Department of Health and Human Services. https:www.hhs.govaboutnews20231206hhs\-announces\-next\-
+2 HHS Announces Next Steps in Ongoing Work to Enhance Cybersecurity for Health Care and Public Health Sectors. U.S. 
+Department of Health and Human Services. https://www.hhs.gov/about/news/2023/12/06/hhs\-announces\-next\-
 steps\-ongoing\-work\-enhance\-cybersecurity\-health\-care\-public\-health\-sectors.html. Published December 6, 2023\. 
 Accessed December 12, 2023\. 
-3HC3: Sector Alert Report: 202308041500\. U.S. Health and Human Services. https:www.hhs.govsitesdefaultfiles
+3 HC3: Sector Alert Report: 202308041500\. U.S. Health and Human Services. https://www.hhs.gov/sites/default/files/
 rhysida\-ransomware\-sector\-alert\-tlpclear.pdf. Published August 4, 2023\. Accessed October 22, 2023\. 
-4Burgess M. Criminals Have Created Their Own ChatGPT Clones. WIRED. https:www.wired.comstorychatgpt\-
-scams\-fraudgpt\-wormgpt\-crime. Published August 7, 2023\. Accessed October 22, 2023\.
-5Gartner Predicts 2023: Cybersecurity Industry Focuses on the Human Deal, by analysts Deepti Gopal, Leigh 
+4 Burgess M. Criminals Have Created Their Own ChatGPT Clones. WIRED. https://www.wired.com/story/chatgpt\-
+scams\-fraudgpt\-wormgpt\-crime/. Published August 7, 2023\. Accessed October 22, 2023\.
+5 Gartner Predicts 2023: Cybersecurity Industry Focuses on the Human Deal, by analysts Deepti Gopal, Leigh 
 McMullen, Andrew Walls, Richard Addiscott, Paul Furtado, Craig Porter, Oscar Isaka, Charlie Winckless, published 25 
-January 2023\. GARTNER is a registered trademark and service mark of Gartner, Inc. andor its affiliates in the U.S. 
+January 2023\. GARTNER is a registered trademark and service mark of Gartner, Inc. and/or its affiliates in the U.S. 
 and internationally, and is used herein with permission. All rights reserved.
-6Collaborating for Resilience in Healthcare: H\-ISAC Annual Report 2022\. Health Information Sharing and Analysis 
-Center. https:h\-isac.orgwp\-contentuploads2023042022\_Health\-ISAC\-Annual\-Report\-sm.pdf. Published April 
+6 Collaborating for Resilience in Healthcare: H\-ISAC Annual Report 2022\. Health Information Sharing and Analysis 
+Center. https://h\-isac.org/wp\-content/uploads/2023/04/2022\_Health\-ISAC\-Annual\-Report\-sm.pdf. Published April 
 3, 2023\. Accessed January 20, 2024\.
