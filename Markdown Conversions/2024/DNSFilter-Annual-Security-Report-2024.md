@@ -1,117 +1,41 @@
-TABLE OF CONTENTS
+# DNSFilter Annual Security Report
 
-Foreword
+## TABLE OF CONTENTS
+[Foreword](#foreword)
+[2023 Industry News in Review](#2023-industry-news-in-review)
+[The Year in Review: Reflections on Last Year’s Predictions](#the-year-in-review-reflections-on-last-years-predictions)
+  [Major Players Increase Their Stakes](#major-players-increase-their-stakes)
+  [The Death of Attribution (As a Service)](#the-death-of-attribution-as-a-service)
+  [The Threat of the Year Won’t Be From This Year](#the-threat-of-the-year-wont-be-from-this-year)
+  [Just Another Link in the Chain](#just-another-link-in-the-chain)
+  [How I Learned to Stop Worrying and Love Encryption](#how-i-learned-to-stop-worrying-and-love-encryption)
+[Trends and Analysis: Data in Motion](#trends-and-analysis-data-in-motion)
+  [The Big Picture](#the-big-picture)
+  [Comparing to the Previous Year](#comparing-to-the-previous-year)
+  [How Often is the Average Person Encountering a Threat?](#how-often-is-the-average-person-encountering-a-threat)
+  [LLMs, AI, and the Rise of ChatGPT](#llms-ai-and-the-rise-of-chatgpt)
+  [Crypto](#crypto)
+  [Threats by Region](#threats-by-region)
+  [TLD Analysis](#tld-analysis)
+[The Futurescape in Cybersecurity: Projections for the Coming Year](#the-futurescape-in-cybersecurity-projections-for-the-coming-year)
+  [Generative AI is going to make a malware mess](#generative-ai-is-going-to-make-a-malware-mess)
+  [Deepfakes will be leveraged during election season](#deepfakes-will-be-leveraged-during-election-season)
+  [Rushed GenAI Implementation as a Threat Vector](#rushed-genai-implementation-as-a-threat-vector)
+  [AI Regulation Will Come Too Late](#ai-regulation-will-come-too-late)
+[Conclusions](#conclusions)
+[Glossary](#glossary)
+[Citations/Sources](#citations-sources)
 
-2023 Industry News in Review
-
-The Year in Review: Reflections on Last Year’s Predictions
-
- Major Players Increase Their Stakes
-
- The Death of Attribution (As a Service)
-
- The Threat of the Year Won’t Be From This Year
-
- Just Another Link in the Chain
-
- How I Learned to Stop Worrying and Love Encryption
-
-Trends and Analysis: Data in Motion
-
- The Big Picture
-
- Comparing to the Previous Year
-
- How Often is the Average Person Encountering a Threat?
-
- LLMs, AI, and the Rise of ChatGPT
-
- Crypto
-
- Threats by Region 
-
-TLD Analysis
-
-The Futurescape in Cybersecurity: Projections for the Coming Year
-
- Generative AI is going to make a malware mess
-
- Deepfakes will be leveraged during election season
-
- Rushed GenAI Implementation as a Threat Vector TLDs
-
- AI Regulation Will Come Too Late
-
-Conclusions
-
-Glossary
-
-Citations/Sources
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
-
-01
-
-02
-
-03
-
-03
-
-04
-
-04
-
-05
-
-05
-
-06
-
-06
-
-10
-
-11
-
-12
-
-14
-
-16
-
-17
-
-19
-
-19
-
-19
-
-19
-
-20
-
-20
-
-21
-
-22
+---
 
 0 1
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
-FOREWORD
-
-In writing the foreword for our third annual security report, I’m reminded that
-once again our network can be seen as a microcosm of the Internet as a whole.
-What happens in the real world, from trends to politics, is captured in some
-form across our network. In 2023, we processed over one million queries every
-single second. This includes innocuous business queries—the majority of our
-network—as well as those malicious sites that the DNSFilter system is built to
-protect against.
+0 1
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
 In a split second, we can see queries that fall into a variety of different categories. Gambling,
-malware, education and self\-help, social networking, botnet—all of that traffic hits our network the
+malware, education and self-help, social networking, botnet—all of that traffic hits our network the
 same way, the only difference is what our users choose to block based on their internal, corporate
 policies.
 
@@ -135,24 +59,19 @@ As always, we will keep our ear to the ground and as new threats emerge or new p
 will act.
 
 KEN CARNESI
-
 CEO, DNSFILTER
 
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
+## FOREWORD
+In writing the foreword for our third annual security report, I’m reminded that
+once again our network can be seen as a microcosm of the Internet as a whole.
+What happens in the real world, from trends to politics, is captured in some
+form across our network. In 2023, we processed over one million queries every
+single second. This includes innocuous business queries—the majority of our
+network—as well as those malicious sites that the DNSFilter system is built to
+protect against.
 
-0 1
-
-2023 INDUSTRY NEWS IN REVIEW
-
-While it is easy for us to frame the data breaches and cybersecurity incidents that occur throughout the
-year by the organizations they impact, there has been a greater focus by news outlets to identify threats on
-their own. We can say with certainty which organizations experienced a cyberattack in 2023: Fidelity, T\-
-Mobile (thrice), 23andMe, MGM Resorts in Las Vegas, and countless others without the large name to
-make the news. 
-
-However, we can also point to the adversaries on the other side of the fence, the threat actor gangs
-responsible for attacks on organizations (of any size) in 2023\. As of this writing, arguably the top
-ransomware actors of the moment are:
+0 2
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
 Roughly 65% of attacks by these threat actors leveraged domains at some point during the attack. All of these
 ransomware actors heavily rely on phishing techniques, social engineering, and links to malicious websites.
@@ -160,24 +79,29 @@ According to CISA, 90% of all cyberattacks start with a phishing attack. This is
 to be a critical layer to secure in the modern tech stack.
 
 The FBI and Justice Department assisted in an international takedown of Qakbot malware and botnet this year,
-an information\-stealing malware focused on financial information that has existed since 2007\. 
+an information-stealing malware focused on financial information that has existed since 2007. 
 
 Meanwhile, March 2023 broke records with the high number of ransomware attacks that occurred—459 attacks,
-which was 91% more than the previous month and 62% more than March 2022\.
+which was 91% more than the previous month and 62% more than March 2022.
 
 In the end, more focus needs to be placed on the “how” as opposed to the “who” on either side. DNS can be
 leveraged as a threat vector, but also as a tool for analysis, root cause or otherwise. It can feel like a game of
-whack\-a\-mole for both threat hunters and cybersecurity vendors, but by focusing on the “how” these threats are
+whack-a-mole for both threat hunters and cybersecurity vendors, but by focusing on the “how” these threats are
 initiated, we can do a better job at protecting online users—no matter where they are.
 
-L E T ’ S D I G I N .
+## 2023 INDUSTRY NEWS IN REVIEW
+DNSFILTER ANNUAL SECURITY REPORT
+02
+MGM Resorts in Las Vegas, and countless others without the large name to
+make the news. 
+However, we can also point to the adversaries on the other side of the fence, the threat actor gangs
+responsible for attacks on organizations (of any size) in 2023. As of this writing, arguably the top
+ransomware actors of the moment are:
 
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
+LET’S DIG IN.
 
-0 2
-
-THE YEAR IN REVIEW: REFLECTIONS
-ON LAST YEAR’S PREDICTIONS
+0 3
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
 In last year’s report, we made a few projections about what we felt the next year would bring. We were
 spot on with some, we had a couple of pretty close observations, and a few that weren’t quite right, but
@@ -185,14 +109,6 @@ we felt like the spirit of the vision was preserved. The events of this year wer
 much more of the same in terms of threat actors and much of the threat landscape, but in other ways,
 particularly the ubiquity of GenAI, the playing field has changed drastically. These are our assessments
 of how we did with last year’s predictions.
-
-MAJOR PLAYERS INCREASE THEIR STAKES
-
-…Attackers are getting more efficient, and more careful as well in the wake of major
-disruption events such as the Colonial Pipeline attack and the Kaseya attack. They are
-looking to gain more success over a longer period and across broader targets with the
-hopes of staying under the radar. This will be the ideal state moving forward for the
-foreseeable future.
 
 With the exception of some unexpected major disruption activities from international law enforcement
 this year, it would have been hard to be more accurate here. There was so much “more of the same”
@@ -203,13 +119,20 @@ by Anonymous Sudan, the entire year seemed to be encapsulated by the numbers get
 the threat actors doing everything they could to stay under the radar (except stopping). Threat actors
 were able to maximize their paydays without drawing too much attention to themselves.
 
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
+### MAJOR PLAYERS INCREASE THEIR STAKES
+> …Attackers are getting more efficient, and more careful as well in the wake of major
+disruption events such as the Colonial Pipeline attack and the Kaseya attack. They are
+looking to gain more success over a longer period and across broader targets with the
+hopes of staying under the radar. This will be the ideal state moving forward for the
+foreseeable future.
 
-0 3
+## THE YEAR IN REVIEW: REFLECTIONS
+ON LAST YEAR’S PREDICTIONS
+0 4
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
-THE DEATH OF ATTRIBUTION (AS A SERVICE)
-
-Outside of targeted Nation\-State attacks, which require a certain degree of focus and
+### THE DEATH OF ATTRIBUTION (AS A SERVICE)
+> Outside of targeted Nation-State attacks, which require a certain degree of focus and
 control, the modern enterprising attacker is looking to outsource their efforts.
 Specialized services are going to be cheap, reliable ways to achieve the various stages of
 the attack lifecycle. …“Attribution” as a concept may end up pointing to several different
@@ -220,7 +143,7 @@ energy on stopping the “how.”
 
 This probably should have been a hope more than a wish—after all, the attribution of who carried out an
 attack should matter less than the remediation and the “how”. Attribution continues to get more difficult
-as attackers share more tools and resort to Living\-Off\-The\-Land techniques. However, the desire to have
+as attackers share more tools and resort to Living-Off-The-Land techniques. However, the desire to have
 that attribution will not subside. A trend that has been seen this year, presumably in order to feed that
 desire, has been to report early attribution before it’s really determined, but to hedge the risk as being
 “suspected” or “alleged” or “preliminary.” Still, as far as predictions go, this would technically be a miss. Yes,
@@ -228,9 +151,8 @@ attribution is getting harder, and the need for it arguably dwindles, but there 
 need to announce who was behind which cybersecurity event.. There’s no reason to believe it’s going to
 change any time soon.
 
-THE THREAT OF THE YEAR WON’T BE FROM THIS YEAR
-
-Some of the most memorable, troublesome, and difficult attacks of the last few years
+### THE THREAT OF THE YEAR WON’T BE FROM THIS YEAR
+> Some of the most memorable, troublesome, and difficult attacks of the last few years
 have been based in software that has been around for a long time, sometimes decades.
 Software libraries, log management systems, and ancient network protocols—that were
 perhaps created when software development was less of a rigorous engineering
@@ -240,24 +162,15 @@ are exploited, it will result in a panicked scramble to find a solution and dist
 
 This should probably count as a wash—it wasn’t really wrong, but it was right for some of the wrong
 reasons. Some of the biggest news stories (outside of the clamor for all things Generative AI), were
-centered around low\-tech attacks, and probably most notable among them being social engineering.
+centered around low-tech attacks, and probably most notable among them being social engineering.
 Ransomware and phishing still stood strong in the world of cyber threats, and plenty of new vulnerabilities
 were discovered and reported, but it seemed like every time a story started to get really scary, it was a case
 of more of the same. Social engineering, password reuse, unsecured databases—rinse and repeat.
 
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
+0 5
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
-0 4
-
-JUST ANOTHER LINK IN THE CHAIN
-
-Cascading attacks are where it’s at. If an attacker can compromise a supply chain
-provider, a Managed Service Provider (MSP), cloud provider, or other consolidated
-platform aggregator then it’s like hitting the lottery. …Supply chain businesses will
-continue to have a huge target on their backs, and the smallest gap in the armor will
-trigger a frenzy. More of these attacks are almost sure to occur. 
-
-MSP\-focused attacks are definitely a regular occurrence, but they didn’t evolve into a major watershed for the
+MSP-focused attacks are definitely a regular occurrence, but they didn’t evolve into a major watershed for the
 war against cyber attacks. Instead, they just seemed to rise in prominence just far enough to blend in with the
 greater cyber threat landscape as another aspect of the attack surface. Likewise, software supply chains, and
 specifically software libraries, similarly failed to achieve notoriety largely simply because they just get lost in
@@ -267,10 +180,16 @@ especially when we take into account some findings from Huntress in 2023 where i
 monitored, “threat actors used RMM software as a method for persistence or remote access mechanisms
 following initial access.”
 
-HOW I LEARNED TO STOP
-WORRYING AND LOVE ENCRYPTION
+### JUST ANOTHER LINK IN THE CHAIN
+> Cascading attacks are where it’s at. If an attacker can compromise a supply chain
+provider, a Managed Service Provider (MSP), cloud provider, or other consolidated
+platform aggregator then it’s like hitting the lottery. …Supply chain businesses will
+continue to have a huge target on their backs, and the smallest gap in the armor will
+trigger a frenzy. More of these attacks are almost sure to occur. 
 
-Encrypted traffic is bursting to find its stride. It looks to be poised to move as encrypted
+### HOW I LEARNED TO STOP
+WORRYING AND LOVE ENCRYPTION
+> Encrypted traffic is bursting to find its stride. It looks to be poised to move as encrypted
 browser traffic, whether over DoT, DoH, DoQ or some other standard collides with needs
 for privacy around the world at a time when blockchain technologies are continuing to
 mature and emerge in markets other than cryptocurrency. Blockchain technologies, for
@@ -285,193 +204,100 @@ growth.
 
 Both Firefox and Chrome have established that their default behavior is DoH where the model is supported,
 and have held that position for a few years now. Firefox moved to automatic DoH in 2018 and Chrome in late
-2019\. At the time, DoH traffic was around 1% of DNS traffic. Since that time, it certainly hasn’t taken over the
-world, but reports put their estimates at between 8\-10% of traffic. 
+2019. At the time, DoH traffic was around 1% of DNS traffic. Since that time, it certainly hasn’t taken over the
+world, but reports put their estimates at between 8-10% of traffic. 
 
 However, there doesn’t seem to be a lot of public engagement with the topic anymore. It’s almost like the
 outside world collectively shrugged its shoulders once the browsers embraced default encrypted DNS where
 applicable, but if there is going to be any major seismic shift, it’s going to have to be solely on the efforts of the
 security community to carry that burden.
 
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
+0 6
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
-0 5
+[Image: A line graph showing the percent of threat queries on the DNSFilter network from October 2022 to September 2023. The graph shows a significant increase in threat queries, nearly doubling by the end of Q3 2023, with spikes in January and February. The x-axis shows months from October 2022 to September 2023, and the y-axis shows the percentage of threat queries from 0 to 100.]
 
-TRENDS AND ANALYSIS:
+## TRENDS AND ANALYSIS:
 DATA IN MOTION
-
-THE BIG PICTURE
-
 The percent of threat queries on our network increased significantly in 2023—nearly doubling by the
 end of Q3 2023 with huge spikes in January and February.
 
-100
+### THE BIG PICTURE
+```
+0.00%
+0.25%
+0.50%
+0.75%
+1.00%
+```
+Figure 1. Percent of threat queries out of total queries on the DNSFilter network October 2022 - September 2023
 
-80
-1\.00%
-
-60
-0\.75%
-
-0\.50%
-40
-
-0\.25%
-20
-
-0\.00%
-0
-
-b er
-
-O cto b er
-
-N ove m
-
-D e ce m
-
-b er
-
-Ja n u ary
-
-F e bru ary
-
-M arc h
-
-A pril
-
-M ay
-
-J u n e
-
-J uly
-
-b er
-
-A u g u st
-
-S e pte m
-
-Figure 1\. Percent of threat queries out of total queries on the DNSFilter network October 2022 \- September 2023
+[Image: A line graph showing the percent of threat domains out of total domains on the DNSFilter network from October 2022 to September 2023. The graph shows a peak in December 2022, followed by a relatively consistent period through May, and then a drop in June with a steady level through September. The x-axis shows months from October 2022 to September 2023, and the y-axis shows the percentage of threat domains from 0 to 100.]
 
 As mentioned in the introduction, March was prolific in terms of the number of ransomware attacks that
 occurred during those 31 days. However, the spike in malicious traffic on the DNSFilter network occurred in that
-60\-day period before March. It’s possible that this spike shows when these campaigns were active, whereas
+60-day period before March. It’s possible that this spike shows when these campaigns were active, whereas
 March is when the ransomware was launched and the footholds were initially made known.
 
-100
-
 However, the number of domains out of the total on our network per month tells a slightly different story:
-
-80
-8\.00%
-
-60
-6\.00%
-
-4\.00%
-40
-
-2\.00%
-20
-
-0\.00%
-0
-
-b er
-
-O cto b er
-
-N ove m
-
-D e ce m
-
-b er
-
-Ja n u ary
-
-F e bru ary
-
-M arc h
-
-A pril
-
-M ay
-
-J u n e
-
-J uly
-
-b er
-
-A u g u st
-
-S e pte m
-
-Figure 2\. Percent of threat domains out of total domains on the DNSFilter network October 2022 \- September 2023
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
-
-0 6
-
-It seems that there was a greater variety of malicious domains on our network peaking in December 2022
-and remaining relatively consistent through May before dropping very low in June and holding steady
-through September 2023\.
-
-December 2022 had the highest prevalence of threat queries and it remained relatively constant through
-May 2023 until there was a massive dropoff beginning in June 2023\. This means that a fewer number of
-domains were doing more of the work in June \- September, signaling more organization by the threat
-actors launching these attacks, and matching a slightly lower total threat count as well. 
-
-Across the entire year, the breakdown of threat queries on our network looks like this:
-
-GRAND TOTAL OF THREAT QUERIES (INCLUDING PROXY CATEGORY)
-
-Figure 3
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
+```
+0.00%
+2.00%
+4.00%
+6.00%
+8.00%
+```
+Figure 2. Percent of threat domains out of total domains on the DNSFilter network October 2022 - September 2023
 
 0 7
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
-If we remove proxy \& filter avoidance, knowing it is the largest threat category and can obscure the other
-categories, the breakdown looks like this:
+It seems that there was a greater variety of malicious domains on our network peaking in December 2022
+and remaining relatively consistent through May before dropping very low in June and holding steady
+through September 2023.
 
-GRAND TOTAL OF THREAT QUERIES (EXCLUDING PROXY CATEGORY)
+December 2022 had the highest prevalence of threat queries and it remained relatively constant through
+May 2023 until there was a massive dropoff beginning in June 2023. This means that a fewer number of
+domains were doing more of the work in June - September, signaling more organization by the threat
+actors launching these attacks, and matching a slightly lower total threat count as well. 
+Across the entire year, the breakdown of threat queries on our network looks like this:
 
-Figure 4
+[Image: A pie chart showing the distribution of threat queries on the DNSFilter network for the year. The largest slice is "Proxy & Filter Avoidance" at 52.6%, followed by "Malware" at 22.4%, "Phishing & Deception" at 13.9%, "Botnet" at 8.9%, "Cryptomining" at 1.9%, and "CSAM" at 0.3%.]
 
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
+Figure 3
+GRAND TOTAL OF THREAT QUERIES (INCLUDING PROXY CATEGORY)
 
 0 8
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
-But what if we just look at the unique domain count?
+If we remove proxy & filter avoidance, knowing it is the largest threat category and can obscure the other
+categories, the breakdown looks like this:
 
-GRAND TOTAL OF DISTINCT DOMAINS (INCLUDING PROXY CATEGORY)
+[Image: A pie chart showing the distribution of threat queries on the DNSFilter network for the year, excluding "Proxy & Filter Avoidance". The largest slice is "Malware" at 47.2%, followed by "Phishing & Deception" at 29.3%, "Botnet" at 18.8%, "Cryptomining" at 3.9%, and "CSAM" at 0.7%.]
 
-Without it:
-
-Figure 5
-
-GRAND TOTAL OF DISTINCT DOMAINS (EXCLUDING PROXY CATEGORY)
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
+Figure 4
+GRAND TOTAL OF THREAT QUERIES (EXCLUDING PROXY CATEGORY)
 
 0 9
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
+
+But what if we just look at the unique domain count?
+
+[Image: A pie chart showing the distribution of distinct threat domains on the DNSFilter network for the year, including "Proxy & Filter Avoidance". The largest slice is "Proxy & Filter Avoidance" at 48.3%, followed by "Malware" at 28.5%, "Phishing & Deception" at 15.2%, "Botnet" at 7.1%, "Cryptomining" at 0.8%, and "CSAM" at 0.1%.]
+
+Figure 5
+GRAND TOTAL OF DISTINCT DOMAINS (INCLUDING PROXY CATEGORY)
+
+[Image: A pie chart showing the distribution of distinct threat domains on the DNSFilter network for the year, excluding "Proxy & Filter Avoidance". The largest slice is "Malware" at 55.1%, followed by "Phishing & Deception" at 29.4%, "Botnet" at 13.7%, "Cryptomining" at 1.6%, and "CSAM" at 0.2%.]
 
 Figure 6
+GRAND TOTAL OF DISTINCT DOMAINS (EXCLUDING PROXY CATEGORY)
 
-While the query count does not necessarily always correlate to the count of domains within a certain
-category, these charts show that a large amount of domains were responsible for the large amount of
-malware threat queries. This is indicative of threat actors leveraging unique malware domains for
-dedicated tactics, and the breadth of malware that is out there.
+1 0
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
-New threats are always emerging, but as new threats emerge and old ones disappear, they can be queried
-thousands or millions of times, infecting a myriad of networks, before transforming and relaunching under
-a new domain.
-
-COMPARING TO THE PREVIOUS YEAR
-
-A comparison between the detection rates for 2022 versus 2023 are shown below in Figure 7\. In each of our
+### COMPARING TO THE PREVIOUS YEAR
+A comparison between the detection rates for 2022 versus 2023 are shown below in Figure 7. In each of our
 primary security categories, we noted a significant increase in activity across the board, except in blocks by
 the “New Domain'' category. Botnets increased detections by 32%, Malware detections increased by 40%,
 Phishing detections increased by 106%, and blocks for Very New Domains, which are malicious domains
@@ -481,70 +307,50 @@ categories is more in line with reality. The disparity between values for the tw
 reasonably linear since they observe the same data, except one is for one day (24 hours) and the other is for
 30 days. This year, those actual values for blocks exist at almost exactly a 1:10 ratio, which would indicate
 that much of the malicious activity is detected by the block on the first day of registration, but also that the
-same threat is being carried for longer and is still active at the 30\-day mark.
+same threat is being carried for longer and is still active at the 30-day mark.
 
-Total Blocked Requests by Category Comparison By Year (by 1000s)
+While the query count does not necessarily always correlate to the count of domains within a certain
+category, these charts show that a large amount of domains were responsible for the large amount of
+malware threat queries. This is indicative of threat actors leveraging unique malware domains for
+dedicated tactics, and the breadth of malware that is out there.
 
-2022
+New threats are always emerging, but as new threats emerge and old ones disappear, they can be queried
+thousands or millions of times, infecting a myriad of networks, before transforming and relaunching under
+a new domain.
 
-2023
+[Image: A bar graph comparing the total blocked requests by category in 2022 and 2023. The categories are Botnet, Malware, Phishing, Very new domains, and New Domains. The graph shows a significant increase in blocked requests for all categories except New Domains, which decreased. The y-axis represents Total Blocked Requests in 1000s, and the x-axis represents the categories.]
 
-2,000,000,000
+Figure 7. Side-by-Side Comparison of Total Blocks in 2023 Per Security Category Versus the
+Same Categories in 2022. Vertical Scale Is Divided by 1000 For Readability.
 
-1,500,000,000
+1 1
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
-1,000,000,000
-
-500,000,000
-
-0
-
-Botnet
-
-Malware
-
-Phishing
-
-Very new domains
-
-New Domains
-
-Figure 7\. Side\-by\-Side Comparison of Total Blocks in 2023 Per Security Category Versus the
-Same Categories in 2022\. Vertical Scale Is Divided by 1000 For Readability.
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
-
-1 0
-
-HOW OFTEN IS THE AVERAGE PERSON
+### HOW OFTEN IS THE AVERAGE PERSON
 ENCOUNTERING A THREAT?
-
 Some people exhibit riskier behaviors than others, putting them at a higher threat risk. While others might
 be power users and encounter far more threats than the average person simply because they’re engaging
 with more of the Internet—a larger variety of domains means a larger likelihood of encountering threats.
 
 On average, many of our users access roughly 5,000 queries per day. In our research, we’ve found that for
-every \~1,000 queries more than one of them is likely to be malicious.
+every ~1,000 queries more than one of them is likely to be malicious.
 
 The average user is likely to encounter 5 malicious queries per day—or 1,825 every year. 
-
 Meanwhile, 2 out of every 100 domains on our network are found to be malicious in some way, proving that
 there are a large amount of malicious domains doing a small fraction of the work for threat actors.
 
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
+1 2
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
-1 1
-
-LLMS, AI, AND THE RISE OF CHATGPT
-
+### LLMS, AI, AND THE RISE OF CHATGPT
 It’s undeniable that 2023 was the year that AI caught its stride. Though the trend, largely centered around
-Large Language Models and Generative Artificial Intelligence, really began when the release of DALL\-E 2
+Large Language Models and Generative Artificial Intelligence, really began when the release of DALL-E 2
 was opened to everyone and the waitlist requirement was removed in September 2022, the explosive
 growth of the industry, including widespread adoption and the evolution of a competitive environment,
-continued throughout 2023\.
+continued throughout 2023.
 
 The chart below shows the explosive growth we have seen at DNSFilter in terms of requests to the
-common GenAI domains on our architecture for the year between September 2022 and September 2023\.
+common GenAI domains on our architecture for the year between September 2022 and September 2023.
 In the first chart, the singular growth of OpenAI’s ChatGPT platform and its related domains renders a
 distorted flattening of representation of its competitors, demonstrating its popularity and market
 dominance.
@@ -554,28 +360,32 @@ queries observed for each of the other popular GenAI domains with the results fo
 results in a more representative display of the activity of the industry. There are clearly delineated surges
 that indicate the public launch of Google’s Bard.ai and Anthropic’s Claude.ai, as well as a significant spike in
 the number of requests for Midjourney that corresponds with its launch of the alpha release of Version 5 in
-March 2023\.
+March 2023.
 
-Figure 8\. The Breakdown of Total DNS Requests for GenAI Domains for One Year
+[Image: A line graph showing the total DNS requests for GenAI domains from September 2022 to September 2023. The graph shows a massive spike in requests for OpenAI domains, dwarfing other GenAI domains. The x-axis shows months from September 2022 to September 2023, and the y-axis shows the number of DNS requests.]
 
-Figure 9\. Total DNS Requests for GenAI Domains Excluding OpenAI
+Figure 8. The Breakdown of Total DNS Requests for GenAI Domains for One Year
 
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
+[Image: A line graph showing the total DNS requests for GenAI domains, excluding OpenAI, from September 2022 to September 2023. The graph shows spikes in requests for Google Bard, Anthropic Claude, and Midjourney. The x-axis shows months from September 2022 to September 2023, and the y-axis shows the number of DNS requests.]
 
-1 2
+Figure 9. Total DNS Requests for GenAI Domains Excluding OpenAI
 
-There was a 279% increase in GenAI sites accessed on the DNSFilter network between January 2023 and
+1 3
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
+
+There was a 279% increase in GenAI sites accessed on the DNSFilter network between January 2023 and
 August 2023 when including ChatGPT. When excluding ChatGPT from that list of the top seven AI sites, the
 delta is more staggering with a 326% increase in traffic to those sites. While ChatGPT gained early
-popularity, these other sites truly took off deeper into 2023\.
+popularity, these other sites truly took off deeper into 2023.
 
-The popularity and versatility of these easy\-to\-use tools quickly evolved beyond toys and found their way
+The popularity and versatility of these easy-to-use tools quickly evolved beyond toys and found their way
 into everyday life in unexpected ways. Probably the most expected first step was that students used them
 to write their homework, which led to an arms race for teachers to be able to detect such activities. But
-then authors started using them to flood the entire market with AI\-generated works and articles, writers
-and actors went on months\-long strikes to protect their scripts and their likenesses from studios working
-to find more cost\-effective approaches. Music was being generated, even in ways that were difficult to
+then authors started using them to flood the entire market with AI-generated works and articles, writers
+and actors went on months-long strikes to protect their scripts and their likenesses from studios working
+to find more cost-effective approaches. Music was being generated, even in ways that were difficult to
 discern from original copyrighted works. And lawyers even tried to use them to draft legal briefs.
+
 Somewhere along the way with each innovative use, the world began to learn about another potential
 problem: When the AI returns unexpected and inaccurate results. The term “AI Hallucination'' began to
 enter the common vernacular.
@@ -583,7 +393,7 @@ enter the common vernacular.
 Despite the obstacles, the continuous expansion of AI into every aspect of the tech industry marched on
 unabated as companies sought to introduce an AI aspect to their products, or release an AI product of
 their own. Meta was in the latter group, announcing the release of a suite of AI tools, but withholding their
-voice\-synthesis product because it made it too easy to create realistic voice\-impressions that could be used
+voice-synthesis product because it made it too easy to create realistic voice-impressions that could be used
 in deepfakes and other malicious ways, according to their own reports. It would be impossible to list all of
 the companies who incorporated AI, but SalesForce, NVidia, Microsoft, Slack, Samsung and Accenture are
 all examples of companies who launched entire campaigns to advertise their inclusion of AI in their
@@ -593,38 +403,24 @@ Not to be left out, cyber threat actors took advantage of the opportunity as wel
 DarkBERT malicious AI tool sets were all publicly announced. Attacking vulnerabilities in AI, and even using
 AI to attack other AI, became a common topic. Phishing actors have leveraged GenAI heavily to improve
 the accuracy of their attacks, hoping that the improvements in quality result in an increase in success. And
-deepfakes as a source of dis\- and misinformation have already seen real\-world usage in what is sure to be
+deepfakes as a source of dis- and misinformation have already seen real-world usage in what is sure to be
 an increasingly problematic trend.
 
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
+1 4
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
-1 3
-
-CRYPTOCURRENCY
-
+### CRYPTOCURRENCY
 TThe news around cryptocurrencies in 2023 has been anything but comforting. By January, the flagship
-token, Bitcoin, had lost almost three quarters of its high\-water\-mark value in a matter of months, tumbling
-from $67,617\.02 per coin on November 16th to $16,540\.69 on January 1st. While some of that value has been
-recovered over the span of the year ($27,967\.51/BTC as of this writing), it’s still a bitter position, and the year
+token, Bitcoin, had lost almost three quarters of its high-water-mark value in a matter of months, tumbling
+from $67,617.02 per coin on November 16th to $16,540.69 on January 1st. While some of that value has been
+recovered over the span of the year ($27,967.51/BTC as of this writing), it’s still a bitter position, and the year
 has been fraught with setbacks and challenges along the way.
 
-1
-
-Even professional investors had difficulty with the volatility of the market with approximately 13% of crypto\-
+Even professional investors had difficulty with the volatility of the market with approximately 13% of crypto-
 based hedge funds permanently closing their doors. The FBI executed a series of cryptocurrency seizures
 throughout the year: $112M in April, they shutdown nine entire exchanges in May, grabbed almost another
 $2M over the span of June, July, and August, and had totalled 39 various seizures over the course of the
 year (through the end of September).
-
-4
-
-6
-
-2
-
-5
-
-3
 
 Reverberations are still being felt throughout the cryptocurrency world after the collapse of FTX
 cryptocurrency exchange in late 2022, as well as the sanctions against Suex, Tornado Cash, HydraMarket,
@@ -632,42 +428,36 @@ Garantex, BitRiver, and Blender.io by the US Treasury Department, but there are 
 cryptocurrency, and there are no signals that a permanent ban against using them is anywhere on the
 horizon. Still, there is cause for a healthy concern while dealing with cryptocurrency. If the issues we’ve
 mentioned already aren’t enough to warrant careful consideration, there are still major ties to malicious
-threat actors in the industry, with between 0\.12% and 1\.90% of transactions being tied to criminal activity.
-That may not seem like much, but the 0\.24% that was reported for 2022 translated to $20\.1B.
-
-8
-
-7
+threat actors in the industry, with between 0.12% and 1.90% of transactions being tied to criminal activity.
+That may not seem like much, but the 0.24% that was reported for 2022 translated to $20.1B.
 
 An interesting question presents itself when one considers where the threats are found. Obviously,
-different organizations use different criteria for attribution of malice to crypto\-related activity. What we’ve
+different organizations use different criteria for attribution of malice to crypto-related activity. What we’ve
 found when we look at our own internal data is that a very high volume of the traffic we see with
 cryptocurrency domain requests is for domains associated with malware and botnets.
 
+[1](https://ycharts.com/indicators/bitcoin_price)
+[2](https://news.bloomberglaw.com/crypto/crypto-hedge-funds-hit-by-shutdowns-lagging-returns-in-2023)
+[3](https://www.justice.gov/opa/pr/justice-department-seizes-over-112m-funds-linked-cryptocurrency-investment-schemes)
+[4](https://www.bleepingcomputer.com/news/security/fbi-seizes-9-crypto-exchanges-used-to-launder-ransomware-payments/)
+[5](https://cointelegraph.com/news/crypto-fbi-seizes-almost-2-m-in-crypto-assets-in-three-months)
+[6](https://www.cutoday.info/Fresh-Today/FBI-Increasingly-Seizing-Cryptocurrency-From-Criminal-Enterprises)
+[7](https://www.chainalysis.com/blog/2023-crypto-crime-report-introduction/)
+[8]ibid.
+
 1
+2
+3
+4
+5
+6
+7
+8
 
- https://ycharts.com/indicators/bitcoin\_price
+1 5
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
-2 https://news.bloomberglaw.com/crypto/crypto\-hedge\-funds\-hit\-by\-shutdowns\-lagging\-returns\-in\-2023
-
-3 https://www.justice.gov/opa/pr/justice\-department\-seizes\-over\-112m\-funds\-linked\-cryptocurrency\-investment\-schemes
-
-4https://www.bleepingcomputer.com/news/security/fbi\-seizes\-9\-crypto\-exchanges\-used\-to\-launder\-ransomware\-payments/
-
-5 https://cointelegraph.com/news/crypto\-fbi\-seizes\-almost\-2\-m\-in\-crypto\-assets\-in\-three\-months
-
-6https://www.cutoday.info/Fresh\-Today/FBI\-Increasingly\-Seizing\-Cryptocurrency\-From\-Criminal\-Enterprises
-
-7 https://www.chainalysis.com/blog/2023\-crypto\-crime\-report\-introduction/
-
-8 ibid.
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
-
-1 4
-
-Figure 10\. Total Cryptocurrency Domain Requests v. Cryptocurrency Domain Requests with
-Malware and Botnet Classifications (May \- Sept 2023, Source: DNSFilter Labs Research)
+[Image: A line graph showing the total cryptocurrency domain requests and the cryptocurrency domain requests with malware and botnet classifications from May to September 2023. The graph shows a close correlation between the trends of total cryptocurrency domain requests and malicious cryptocurrency domain requests. The x-axis shows months from May to September 2023, and the y-axis shows the number of domain requests.]
 
 As can be seen in the diagram above, there is a very close similarity between the trends for all
 cryptocurrency domains and malicious cryptocurrency domains. Spikes in activity occur with a very high
@@ -688,468 +478,26 @@ great deal of caution and significant due diligence. From a position of corporat
 be an unnecessary risk, and we would highly advise blocking cryptocurrency categorized domains on your
 devices unless you have a clear justification to do otherwise.
 
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
+Figure 10. Total Cryptocurrency Domain Requests v. Cryptocurrency Domain Requests with
+Malware and Botnet Classifications (May - Sept 2023, Source: DNSFilter Labs Research)
 
-1 5
+1 6
+D N S F I L T E R  A N N U A L  S E C U R I T Y  R E P O R T
 
-THREATS BY REGION
+| Total Malicious Queries | Top Threat Category |
+|---|---|
+| Santiago, Chile  4.23% | Phishing & Deception  99.24% of all threats within this region |
+| Singapore  .51% | Malware  74% of all threats within this region |
+| Frankfurt, Germany  .25% | Malware  85% of all threats within this region |
+| Vienna, Austria  .17% | Phishing & Deception  72% of all threats within this region |
 
+### THREATS BY REGION
 DNSFilter hosts a robust, worldwide anycast network which gives us unique insight into which areas have the
-most active threat activity. Here, we examine just our botnet, cryptomining, malware, and phishing \& deception
+most active threat activity. Here, we examine just our botnet, cryptomining, malware, and phishing & deception
 categories and which of our servers receive which type of traffic. The following data shows where the query was
 resolved, which may indicate close proximity to the initial origin of the threat. However, it is possible that
 threats originating on one side of the globe are resolved in a completely different hemisphere.
 
 Looking at the raw query data, Chicago and Dallas were in the top three malicious regions on our network. 53%
-of the malicious queries in Chicago were categorized as malware between Q4 2022 \- Q3 2023\. Frankfurt,
-Germany had the highest raw count of malicious queries, with the region being responsible for over 44% of all
-malicious queries on our network. Chicago was responsible for close to 10% while Dallas was responsible for
-roughly 9% of malicious queries.
-
-However when we look at the number of malicious queries on each regional network as a whole, these are the
-servers on our network that encounter the most threat domains:
-
-Total Malicious Queries
-
-Top Threat Category
-
-Santiago, Chile
-
-4\.23%
-
-Phishing \& Deception
-99\.24% of all threats within this region
-
-Singapore
-
-.51%
-
-Frankfurt, Germany
-
-.25%
-
-Vienna, Austria
-
-.17%
-
-Top region for each threat category:
-
-Botnet
-
-Cryptomining
-
-Malware
-
-Phishing \& Deception
-
-Malware
-74% of all threats
-within this region
-
-Malware
-85% of all threats
-within this region
-
-Phishing \& Deception
-72% of all threats
-within this region
-
-Copenhagen, Denmark\*
-8% of all threats within this region
-
-Milan, Italy\*
-5% of all threats within this region
-
-Frankfurt, Germany
-85% of all threats within this region
-
-Santiago, Chile
-99% of all threats within this region
-
-\*Note: Fortaleza, Brazil had the highest distribution of botnet and cryptomining threats within its region but
-the numbers were significantly lower than the other regions and removed for statistical significance. 
-
-Phishing continues to be the most popular threat on our network, with the majority of regions seeing a
-high volume of phishing queries compared to other threats with malware a close second.
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
-
-1 6
-
-TLD ANALYSIS
-
-We observed a number of very interesting trends in the focus of Top Level Domain (TLD) blocks this year.
-Across the board, our number of total DNS requests increased, but the raw number of blocked domains in
-many of them stayed near constant or even went down. Some of that can be attributed to the increases
-that we did see in other TLDs, but there is also a significant shift toward custom TLDs – a trend that we
-observed in some capacity last year.
-
-This year, in an effort to better refine the analysis of the threat landscape, we also examined the
-percentage of blocked requests with respect to the total number of requests for that TLD. For the
-purposes of this report, we are combining the blocks that are a result of a reported security threat with
-the blocks that are part of the local policy. For our internal analysis, we did review the types of block
-separately, but we don’t have room to print them all here. If you would like to review that data as well,
-please submit your request to help@dnsfilter.com. 
-
-AVERAGE TOTAL BLOCKED REQUESTS PER DAY BY CCTLD
-
-400,000
-
-300,000
-
-200,000
-
-100,000
-
-0
-
-.us
-
-.ru
-
-.cn
-
-.is
-
-.uk
-
-.au
-
-.ir
-
-.in
-
-.br
-
-.ua
-
-.su
-
-.kp
-
-Figure 11\. Histogram of the Average Number of DNS Requests
-Blocked by Major Country Code Top\-Level Domains Per Day
-
-AVERAGE DAILY PERCENTAGE OF BLOCKED REQUESTS BY CCTLD
-
-25%
-
-20%
-
-15%
-
-10%
-
-5%
-
-0%
-
-.is
-
-.ru
-
-.su
-
-.us
-
-.cn
-
-.br
-
-.ua
-
-.kp
-
-.in
-
-.au
-
-.ir
-
-.uk
-
-Figure 12\. Histogram of the Average Percentage of DNS Requests
-Blocked by Major Country Code Top\-Level Domains Per Day
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
-
-1 7
-
-AVERAGE TOTAL BLOCKED REQUESTS PER DAY BY GTLD
-
-250,000
-
-200,000
-
-150,000
-
-100,000
-
-50,000
-
-0
-
-.info
-
-.xyz
-
-.top
-
-.online
-
-.ml
-
-.icu
-
-.tk
-
-.cf
-
-.mov
-
-.zip
-
-Figure 13\. Histogram of the Average Number of DNS Requests Blocked by Major Generic Top\-
-Level Domains Per Day (Excluding .com, .org, .net, and .gov)
-
-AVERAGE DAILY PERCENTAGE OF BLOCKED REQUESTS BY GTLD
-
-60%
-
-50%
-
-40%
-
-30%
-
-20%
-
-10%
-
-0%
-
-.mov
-
-.ml
-
-.info
-
-.top
-
-.tk
-
-.icu
-
-.online
-
-.cf
-
-.xyz
-
-.zip
-
-Figure 14\. Histogram of the Average Percentage of DNS Requests Blocked by Major Generic
-Top\-Level Domains Per Day (Excluding .com, .org, .net, and .gov)
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
-
-1 8
-
-THE FUTURESCAPE IN CYBERSECURITY:
-PROJECTIONS FOR THE COMING YEAR
-
-Generative AI became a household term this year. Ask anyone on the street and they’ll be able to tell you what
-ChatGPT is. We recognize that saying artificial intelligence is going to be a major topic this year seems a bit lazy.
-It’s kind of like saying that threat actors are going to write more malware or there are going to be more
-ransomware attacks this year. But the potential uses (or misuses) of AI will continue to grow exponentially in
-new ways throughout 2024—which is precisely why our predictions are all AI\-themed.
-
-GENERATIVE AI IS GOING TO MAKE A MALWARE MESS
-
-The AI craze doesn’t show any signs of slowing down, and malware groups tend to stay on the forefront of
-major events—but they tend to do so without a lot of guardrails. This lack of attention to detail is going to
-lead to a situation where attacker AI will perform unexpectedly, and will break containment in ways that
-were not originally intended.
-
-DEEPFAKES WILL BE LEVERAGED DURING ELECTION SEASON
-
-Deepfakes and artificially generated computer content is already reaching a level where it is difficult to detect
-without a fair amount of scrutiny. In one report, the use of deepfakes grew in North America a staggering
-1740%. Deepfakes will act as a force multiplier for adversarial governments with the intent to sow chaos in the
-current political climate in the United States. With some resources already diverted to other international
-operations, it will be irresistible to capitalize on such tools to crank out effective campaigns that require very
-few personnel. While not the first to signal the possibility of the use of deepfakes during election season, we do
-think the 2024 cycle will be unlike anything we’ve seen before. 
-
-RUSHED GENAI IMPLEMENTATION AS A THREAT VECTOR
-
-There is an inherent flaw in artificial intelligence as a business tool in that it almost certainly requires
-allowances for imprecise behaviors. In other words, there are parts of the model that are working in ways
-that are not known at any specific point in time. The business world, including the cybersecurity industry, is
-in a rush to leverage the popularity of generative AI and many companies are going to implement AI in
-ways that they don’t have fine control over, and threat actors are going to take advantage of that ripe attack
-surface in every way they can find.
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
-
-1 9
-
-AI REGULATION WILL COME TOO LATE
-
-It’s commendable that governments around the world have realized the potential danger that unregulated
-artificial intelligence could pose in every industry given its meteoric rise in popularity and endless flexibility.
-Unfortunately, legislation and regulation tends to move very slowly, while technology tends to evolve at an
-ever\-accelerating pace. Further compounding the issues, slow\-moving governments are trying to catch up
-to an emergent technology that already has a great deal of inertia. Governments are going to aim their
-regulations at a target that has already moved, and will be unprepared to adapt to the genie that is already
-out of its lamp
-
-CONCLUSIONS
-
-In the spirit of 2024’s predictions, the following conclusion was written with the help of ChatGPT:
-
-In conclusion, this year's annual security report underscores the critical significance of understanding
-domain\-based threats and the pivotal role of DNS queries in safeguarding digital infrastructure. The
-escalating sophistication of cyber threats has reiterated the need for robust defense mechanisms to
-counteract malicious activities targeting domains and exploiting vulnerabilities within DNS systems.
-
-The comprehensive analysis presented in this report has highlighted the evolving landscape of domain\-
-based threats, emphasizing the importance of proactive measures and continual vigilance. From phishing
-attacks and malware propagation to DNS tunneling and domain hijacking, the spectrum of threats remains
-diverse and adaptable, posing persistent challenges to organizational security.
-
-Moreover, the correlation between increased DNS queries and potential risks demands a multifaceted
-approach, encompassing advanced monitoring, threat intelligence integration, DNS security
-enhancements, and robust incident response strategies. It's crucial for organizations to prioritize
-investment in cutting\-edge technologies, regular audits, and employee training to fortify defenses against
-emerging threats.
-
-As the digital ecosystem evolves, collaboration and information sharing among industry peers,
-cybersecurity experts, and regulatory bodies will be pivotal in fortifying global cybersecurity posture against
-domain\-based threats. By fostering a culture of awareness, resilience, and swift response, organizations can
-effectively mitigate risks and secure their domains, ensuring the integrity and confidentiality of critical data
-and systems.
-
-Moving forward, a proactive and adaptive stance will be indispensable in countering the ever\-evolving
-domain\-based threatscape. By leveraging insights gleaned from this report and embracing a
-comprehensive security approach, organizations can navigate the intricacies of DNS\-related vulnerabilities,
-fortify their defenses, and proactively mitigate risks in an increasingly complex digital environment.
-
-…We couldn’t agree more, ChatGPT.
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
-
-2 0
-
-GLOSSARY
-
-\+AI \- Artificial Intelligence
-
-\+BERT \- Bidirectional Encoder Representations from Transformers
-
-\+BTC \- Bitcoin
-
-\+ccTLD \- Country Code Top\-Level Domain
-
-\+CISA \- Cybersecurity and Infrastructure Security Agency
-
-CSAM \- Child Sexual Abuse Material
-
-\+DDoS \- Distributed Denial of Service
-
-\+Deepfake \- A computer\-generated or computer\-altered image, video, or audio file designed to falsely
-
-impersonate a real person or scene, typically for the purpose of mis\- or disinformation
-
-\+DGA \- Domain Generation Algorithm
-
-\+DNS \- Domain Name Service
-
-\+DoH \- DNS Over HTTP/S
-
-\+DoQ \- DNS Over QUIC
-
-\+DoT \- DNS Over TLS
-
-\+GenAI \- Generative Artificial Intelligence
-
-\+GPT \- Generative Pre\-Trained Transformers
-
-\+gTLD \- Generic TLD, an umbrella for a spectrum of topics. Includes .com, .net, .org, etc.
-
-\+HTTP/S \- HTTP stands for HyperText Transfer Protocol. HTTPS is HTTP Secure
-
-ICANN \- The Internet Corporation for Assigned Names and Numbers
-
-\+LLM \- Large Language Model
-
-\+MSP \- Managed Service Provider
-
-\+QUIC \- Quick UDP Internet Connections protocol
-
-\+RMM \- Remote Monitoring and Management
-
-\+TLD \- Top Level Domain
-
-\+TLS \- Transport Layer Security
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
-
-2 1
-
-CITATIONS/ SOURCES
-
-https://www.dnsfilter.com/blog/malicious\-domain\-protection
-
-https://www.jdsupra.com/legalnews/cybersecurity\-incident\-at\-fidelity\-9850811/
-
-https://www.darkreading.com/application\-security/t\-mobile\-third\-consumer\-data\-exposure\-2023
-
-https://blog.23andme.com/articles/addressing\-data\-security\-concerns
-
-https://www.cnn.com/2023/10/05/business/mgm\-100\-million\-hit\-data\-breach/index.html
-
-https://www.egress.com/blog/phishing/phishing\-statistics\-round\-up
-
-https://www.cisa.gov/stopransomware/general\-information
-
-https://www.justice.gov/usao\-cdca/pr/qakbot\-malware\-disrupted\-international\-cyber\-takedown
-
-https://malpedia.caad.fkie.fraunhofer.de/details/win.qakbot
-
-https://www.bleepingcomputer.com/news/security/march\-2023\-broke\-ransomware\-attack\-records\-with\-459\-incidents/
-
-https://www.huntress.com/hubfs/SMB\-Threat\-Report\-Huntress.pdf
-
-https://www.npr.org/2023/02/24/1159286436/ai\-chatbot\-chatgpt\-magazine\-clarkesworld\-artificial\-intelligence
-
- https://www.dnsfilter.com/blog/unreliable\-narrators\-hallucinations\-may\-be\-causing\-your\-generative\-ai\-tools\-
-
-to\-lie\-to\-you
-
- https://ycharts.com/indicators/bitcoin\_price
-
-https://news.bloomberglaw.com/crypto/crypto\-hedge\-funds\-hit\-by\-shutdowns\-lagging\-returns\-in\-2023
-
-https://www.justice.gov/opa/pr/justice\-department\-seizes\-over\-112m\-funds\-linked\-cryptocurrency\-investment\-schemes
-
-https://www.bleepingcomputer.com/news/security/fbi\-seizes\-9\-crypto\-exchanges\-used\-to\-
-launder\-ransomware\-payments/
-
-https://cointelegraph.com/news/crypto\-fbi\-seizes\-almost\-2\-m\-in\-crypto\-assets\-in\-three\-months
-
-https://www.chainalysis.com/blog/2023\-crypto\-crime\-report\-introduction/
-
-https://www.cutoday.info/Fresh\-Today/FBI\-Increasingly\-Seizing\-Cryptocurrency\-From\-Criminal\-Enterprises
-
-https://www.infosecurity\-magazine.com/news/deepfake\-identity\-fraud\-surges/
-
-https://www.wired.com/story/chatgpt\-generative\-ai\-deepfake\-2024\-us\-presidential\-election/
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
-
-2 2
-
-D N S F I L T E R A N N U A L S E C U R I T Y R E P O R T
-
-2 3
+of the malicious queries in Chicago were categorized as malware between Q4 2022 - Q3 2023. Frankfurt,
+Germany had the highest raw count of malicious queries

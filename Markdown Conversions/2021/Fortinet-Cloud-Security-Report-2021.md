@@ -1,710 +1,369 @@
-2021
+# CLOUD SECURITY REPORT 2021
 
-CLOUD 
-SECURITY 
-REPORT
+## Table of Contents
+[TOC]
 
-INTRODUCTION
+## 2021 CLOUD SECURITY REPORT
 
-Organizations continue to rapidly migrate workloads from datacenters to the cloud, and the 
-trend has been accelerating during the recent Covid pandemic.
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-However, cloud security concerns remain high as the adoption of public cloud computing 
-continues to surge in the wake of the pandemic and the resulting massive shift to remote work.
+Organizations continue to rapidly migrate workloads from datacenters to the cloud, and the trend has been accelerating during the recent Covid pandemic.
 
-The 2021 Cloud Security Report is based on a comprehensive global survey of 572 cybersecurity 
-professionals to reveal how organizations are responding to security threats in the cloud, and 
-what tools and best practices IT cybersecurity leaders are prioritizing in their move to the cloud.
+However, cloud security concerns remain high as the adoption of public cloud computing continues to surge in the wake of the pandemic and the resulting massive shift to remote work.
 
-Key survey findings include: 
+The 2021 Cloud Security Report is based on a comprehensive global survey of 572 cybersecurity professionals to reveal how organizations are responding to security threats in the cloud, and what tools and best practices IT cybersecurity leaders are prioritizing in their move to the cloud.
 
-• Most organizations are pursuing a hybrid or multi\-cloud strategy (71%). They are doing this for 
-integration of multiple services, scalability, or business continuity reasons. Few companies rely 
-on a single cloud deployment (27%) for their business needs. 
+Key survey findings include:
 
-• Seventy\-six percent of organizations are using two or more cloud providers.
+*   Most organizations are pursuing a hybrid or multi-cloud strategy (71%). They are doing this for integration of multiple services, scalability, or business continuity reasons. Few companies rely on a single cloud deployment (27%) for their business needs.
+*   Seventy-six percent of organizations are using two or more cloud providers.
+*   Among the key barriers to faster cloud adoption, survey participants mentioned lack of visibility (53%), lack of control (46%), lack of staff resources or expertise (39%), and high cost (35%) as the most significant negative factors.
+*   Misconfiguration of cloud security remains the biggest cloud security risk according to 67% of cybersecurity professionals in our survey. This is followed by exfiltration of sensitive data (59%) and tying at 49% are unauthorized access and insecure interfaces/APIs.
+*   Multi-cloud environments add complexity and security challenges. In our survey, organizations are most concerned with data protection (58%) followed by a lack of security skills (57%) and understanding how different solutions fit together (52%).
+*   Seventy-eight percent of surveyed cybersecurity professionals would find it very helpful to extremely helpful to have a single cloud security platform offering a single dashboard while allowing for configuration of policies to protect data consistently and comprehensively across the cloud.
 
-• Among the key barriers to faster cloud adoption, survey participants mentioned lack of visibility 
-(53%), lack of control (46%), lack of staff resources or expertise (39%), and high cost (35%) as 
-the most significant negative factors.
-
-• Misconfiguration of cloud security remains the biggest cloud security risk according to 67% of 
-cybersecurity professionals in our survey. This is followed by exfiltration of sensitive data (59%) 
-and tying at 49% are unauthorized access and insecure interfaces/APIs.
-
-• Multi\-cloud environments add complexity and security challenges. In our survey, organizations 
-are most concerned with data protection (58%) followed by a lack of security skills (57%) and 
-understanding how different solutions fit together (52%).
-
-• Seventy\-eight percent of surveyed cybersecurity professionals would find it very helpful to 
-extremely helpful to have a single cloud security platform offering a single dashboard while 
-allowing for configuration of policies to protect data consistently and comprehensively across 
-the cloud.
-
-We would like to thank Fortinet for supporting this important industry research project. We hope 
-you find this report informative and helpful as you continue your efforts in securing your journey to 
-the cloud.
+We would like to thank Fortinet for supporting this important industry research project. We hope you find this report informative and helpful as you continue your efforts in securing your journey to the cloud.
 
 Thank you,
 
 Holger Schulze
 
 Holger Schulze
+
 CEO and Founder
+
 Cybersecurity Insiders
 
-2
+## INTRODUCTION
 
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity InsidersPUBLIC CLOUD SECURITY
+2021 CLOUD SECURITY REPORT
 
-Cloud security continues to be a significant concern for cybersecurity professionals. Almost all 
-respondents in our survey are at least moderately concerned (96%) and a third are extremely 
-concerned (32%). 
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-How concerned are you about the security of public clouds? 
+Cloud security continues to be a significant concern for cybersecurity professionals. Almost all respondents in our survey are at least moderately concerned (96%) and a third are extremely concerned (32%).
 
-73% Of organizations are very
+### PUBLIC CLOUD SECURITY
 
-to extremely concerned
-about cloud security.
+How concerned are you about the security of public clouds?
 
-41%
+**Image Description:** A bar chart showing the level of concern about public cloud security. The categories are "Not at all concerned", "Slightly concerned", "Moderately concerned", "Very concerned", and "Extremely concerned". The corresponding percentages are 1%, 3%, 23%, 41%, and 32% respectively. The text "73% Of organizations are very to extremely concerned about cloud security." is displayed above the chart.
 
-32%
+*   **Extremely concerned:** 32%
+*   **Very concerned:** 41%
+*   **Moderately concerned:** 23%
+*   **Slightly concerned:** 3%
+*   **Not at all concerned:** 1%
 
-23%
+2021 CLOUD SECURITY REPORT
 
-3%
-1%
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-Not at all concerned
+Misconfiguration of cloud security remains the biggest cloud security risk according to 67% of cybersecurity professionals in our survey. This is followed by exfiltration of sensitive data (59%) and tying at 49% are unauthorized access and insecure interfaces/APIs.
 
-Extremely concerned
+### BIGGEST SECURITY THREATS
 
-Not at all concerned Slightly concerned Moderately concerned Very concerned Extremely concerned
+What do you see as the biggest security threats in public clouds?
 
-3
+**Image Description:** A bar chart displaying the biggest security threats in public clouds, ranked by percentage. The threats listed are: Misconfiguration of the cloud platform/wrong set-up (67%), Exfiltration of sensitive data (59%), Unauthorized access (49%), Insecure interfaces/APIs (49%), External sharing of data (40%), Hijacking of accounts, services, or traffic (37%), Malicious insiders (36%), Foreign state-sponsored cyber attacks (34%), Malware/ransomware (31%), Denial of service attacks (26%), Cloud cryptojacking (16%), Theft of service (13%), Lost mobile devices (8%), and Don’t know/other (7%).
 
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity InsidersBIGGEST SECURITY THREATS
+*   **Misconfiguration of the cloud platform/wrong set-up:** 67%
+*   **Exfiltration of sensitive data:** 59%
+*   **Unauthorized access:** 49%
+*   **Insecure interfaces/APIs:** 49%
+*   **External sharing of data:** 40%
+*   **Hijacking of accounts, services, or traffic:** 37%
+*   **Malicious insiders:** 36%
+*   **Foreign state-sponsored cyber attacks:** 34%
+*   **Malware/ransomware:** 31%
+*   **Denial of service attacks:** 26%
+*   **Cloud cryptojacking:** 16%
+*   **Theft of service:** 13%
+*   **Lost mobile devices:** 8%
+*   **Don’t know/other:** 7%
 
-Misconfiguration of cloud security remains the biggest cloud security risk according to 67% of 
-cybersecurity professionals in our survey. This is followed by exfiltration of sensitive data (59%) and 
-tying at 49% are unauthorized access and insecure interfaces/APIs.
+2021 CLOUD SECURITY REPORT
 
-What do you see as the biggest security threats in public clouds? 
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-67%
+We asked cybersecurity professionals what features they find most useful in a cloud security solution. The most requested capability is third-party security certifications (54%) followed by integration with security scanner tools (52%) and the ability to write custom rules and remediation actions (49%).
 
-Misconfiguration of the
-cloud platform/wrong set\-up
-
-59%
-
-Exfiltration of
-sensitive data
-
-49%
-
-49%
-
-40%
-
-37%
-
-36%
-
-Unauthorized
-access
-
-Insecure
-interfaces/APIs
-
-External sharing
-of data
-
-Hijacking of
-accounts,
-services, or traffic
-
-Malicious
-insiders
-
-Foreign state\-sponsored cyber attacks 34% \| Malware/ransomware 31% \| Denial of service attacks 26% \| Cloud cryptojacking 16% \| 
-Theft of service 13% \| Lost mobile devices 8% \| Don’t know/other 7%
-
-4
-
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity InsidersCLOUD SECURITY FACTORS
-
-We asked cybersecurity professionals what features they find most useful in a cloud security 
-solution. The most requested capability is third\-party security certifications (54%) followed by 
-integration with security scanner tools (52%) and the ability to write custom rules and remediation 
-actions (49%).
+### CLOUD SECURITY FACTORS
 
 What features do you find most useful in a cloud security solution?
 
-54% 52%
+**Image Description:** A bar chart showing the most useful features in a cloud security solution. The features and their corresponding percentages are: Third-party security certifications (e.g., SOC2, FedRAMP, etc.) (54%), Integration with security scanner tools (e.g., Rapid7, Qualys, Tenable) (52%), Ability to write custom rules and remediation actions (49%), Integration with change management platforms (e.g., ServiceNow, Remedy, JIRA, etc.) (46%), Integration with end-to-end vulnerability remediation tools (e.g., TrueSight Server Automation, IBM BigFix, TrueSight Vulnerability Manager, Chef, Puppet, etc.) (41%), Research-based policies (e.g., content beyond the CIS best practices) (36%), Billing model (monthly, yearly, flat) (32%), Billing by usage instead of number of accounts (31%), Integration with alerting tools (i.e., OpsGenie that support integration with phone, messaging, Slack, email, etc.) (30%), User community support (20%), and Other (2%).
 
-Third\-party security
-certifications
-(e.g., SOC2,
-FedRAMP, etc.)
+*   **Third-party security certifications (e.g., SOC2, FedRAMP, etc.):** 54%
+*   **Integration with security scanner tools (e.g., Rapid7, Qualys, Tenable):** 52%
+*   **Ability to write custom rules and remediation actions:** 49%
+*   **Integration with change management platforms (e.g., ServiceNow, Remedy, JIRA, etc.):** 46%
+*   **Integration with end-to-end vulnerability remediation tools (e.g., TrueSight Server Automation, IBM BigFix, TrueSight Vulnerability Manager, Chef, Puppet, etc.):** 41%
+*   **Research-based policies (e.g., content beyond the CIS best practices):** 36%
+*   **Billing model (monthly, yearly, flat):** 32%
+*   **Billing by usage instead of number of accounts:** 31%
+*   **Integration with alerting tools (i.e., OpsGenie that support integration with phone, messaging, Slack, email, etc.):** 30%
+*   **User community support:** 20%
+*   **Other:** 2%
 
-Integration
-with security
-scanner tools
-(e.g., Rapid7, Qualys, Tenable)
+2021 CLOUD SECURITY REPORT
 
-49%
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-Ability to write
-custom rules and
-remediation actions
+When asked what percentage of workloads organizations already have in the cloud, today 33% are running more than 50% of workloads in the cloud; in the next 12-18 months, that grows to 56%.
 
-46%
+### WORKLOADS IN THE CLOUD
 
-41%
+What percentage of your workloads are in the cloud today compared to how it will be in the next 12-18 months?
 
-36%
+**Image Description:** Two bar charts comparing the percentage of workloads in the cloud "TODAY" and "NEXT 12-18 MONTHS". The categories are "Up to 25%", "26-50%", "51-75%", and "+ 75%". For "TODAY", the percentages are 27%, 41%, 16%, and 17% respectively. For "NEXT 12-18 MONTHS", the percentages are 17%, 27%, 29%, and 27% respectively. The text "33% are running more than 50% of workloads in the cloud." is displayed above the "TODAY" chart, and "56% will be running more than 50% of workloads in the cloud." is displayed above the "NEXT 12-18 MONTHS" chart.
 
-32%
+**TODAY:**
 
-Integration with 
-change management 
-platforms 
-(e.g., ServiceNow,
-Remedy, JIRA, etc.)
+*   **Up to 25%:** 27%
+*   **26-50%:** 41%
+*   **51-75%:** 16%
+*   **+ 75%:** 17%
 
-Integration with 
-end\-to\-end 
-vulnerability 
-remediation tools
-(e.g., TrueSight Server 
-Automation, IBM BigFix, 
-TrueSight Vulnerability
-Manager, Chef, Puppet, etc.)
+**NEXT 12-18 MONTHS:**
 
-Research\-based 
-policies
-(e.g., content beyond 
-the CIS best practices)
+*   **Up to 25%:** 17%
+*   **26-50%:** 27%
+*   **51-75%:** 29%
+*   **+ 75%:** 27%
 
-Billing model 
-(monthly, yearly, flat)
+2021 CLOUD SECURITY REPORT
 
-Billing by usage instead of number of accounts 31% \| Integration with alerting tools (i.e., OpsGenie that support integration with 
-phone, messaging, Slack, email, etc. 30% \| User community support 20% \| Other 2%
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-5
+What business outcomes have you realized by moving to the cloud?
 
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity InsidersWORKLOADS IN THE CLOUD
+**Image Description:** A bar chart showing the business outcomes realized by moving to the cloud. The outcomes and their corresponding percentages are: Accelerated time to market (53%), Increased responsiveness to customer needs (51%), Saved money (41%), Expanded market reach to new markets (35%), Reduced risk and improved security (22%), Accelerated revenue growth in existing markets (20%), Gained parity with competitors (14%), and Other (7%).
 
-When asked what percentage of workloads organizations already have in the cloud, today 33% are 
-running more than 50% of workloads in the cloud; in the next 12\-18 months, that grows to 56%.
+### BUSINESS RESULTS
 
-What percentage of your workloads are in the cloud today compared to how it will be in 
-the next 12\-18 months?
+*   **Accelerated time to market:** 53%
+*   **Increased responsiveness to customer needs:** 51%
+*   **Saved money:** 41%
+*   **Expanded market reach to new markets:** 35%
+*   **Reduced risk and improved security:** 22%
+*   **Accelerated revenue growth in existing markets:** 20%
+*   **Gained parity with competitors:** 14%
+*   **Other:** 7%
 
-TODAY
+The outcomes organizations have realized from cloud computing are in line with the original promise of the cloud: faster time to market (53%), increased responsiveness (51%), and cost reductions (41%) lead the list.
 
-NEXT 12\-18 MONTHS
+2021 CLOUD SECURITY REPORT
 
-41%
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-26%
+What is your primary cloud deployment strategy?
 
-33%
+**Image Description:** A pie chart showing the primary cloud deployment strategies. The strategies and their corresponding percentages are: Hybrid (e.g., integration between private and public clouds) (36%), Multi-cloud (e.g., multiple providers without integration) (35%), Single Cloud (27%), and Other (2%).
 
-are running more than 
-50% of workloads in 
-the cloud. 
+### CLOUD DEPLOYMENT STRATEGIES
 
-17% 16%
+*   **Single Cloud:** 27%
+*   **Hybrid (e.g., integration between private and public clouds):** 36%
+*   **Multi-Cloud (e.g., multiple providers without integration):** 35%
+*   **Other:** 2%
 
-17%
+Most organizations are pursuing a hybrid or multi-cloud strategy (71%) for integration of multiple services, scalability, or business continuity reasons. Few companies rely on a single cloud deployment (27%) for their business needs. Seventy-six percent are utilizing two or more cloud providers.
 
-56%
+How many cloud providers does your organization currently use?
 
-will be running more
-than 50% of workloads 
-in the cloud. 
+**Image Description:** A bar chart showing the number of cloud providers organizations currently use. The categories are "One", "Two", "Three", "More than 3", and "None". The corresponding percentages are 21%, 35%, 3%, 24%, and 17% respectively. The text "Use two or more cloud providers. 76%" is displayed above the chart.
 
-29% 27%
+*   **One:** 21%
+*   **Two:** 35%
+*   **Three:** 3%
+*   **More than 3:** 24%
+*   **None:** 17%
 
-27%
+2021 CLOUD SECURITY REPORT
 
-Up to
-25%
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-26\-50%
+What cloud IaaS provider(s) do you currently use?
 
-51\-75%
+**Image Description:** A bar chart showing the cloud IaaS providers currently used. The providers and their corresponding percentages are: Microsoft Azure (73%), Amazon Web Services (70%), Google Cloud Platform (37%), Other (15%), IBM Cloud (12%), Oracle Cloud (7%), and Alibaba Cloud (5%).
 
-\+ 75%
+### POPULAR CLOUD PROVIDERS
 
-Up to
-25%
+*   **Microsoft Azure:** 73%
+*   **Amazon Web Services:** 70%
+*   **Google Cloud Platform:** 37%
+*   **Other:** 15%
+*   **IBM Cloud:** 12%
+*   **Oracle Cloud:** 7%
+*   **Alibaba Cloud:** 5%
 
-26\-50%
+Among the organizations surveyed, Microsoft Azure is the most popular cloud provider (73%) followed by Amazon Web Services (70%) and the Google Cloud Platform (37%).
 
-51\-75%
+2021 CLOUD SECURITY REPORT
 
-\+ 75%
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-6
+How do you source cloud security?
 
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity InsidersBUSINESS RESULTS
+**Image Description:** A bar chart showing how organizations source cloud security. The categories and their corresponding percentages are: Cloud-native security (74%), Third-party cloud security (48%), and Managed services cloud security (34%).
 
-The outcomes organizations have realized from cloud computing are in line with the original promise 
-of the cloud: faster time to market (53%), increased responsiveness (51%), and cost reductions (41%) 
-lead the list. 
+### CLOUD SECURITY PATH
 
-What business outcomes have you realized by moving to the cloud? 
+*   **Cloud-native security:** 74%
+*   **Third-party cloud security:** 48%
+*   **Managed services cloud security:** 34%
 
-53% 51%
+When asked how organizations source their cloud security, the vast majority said they prefer cloud-native security (74%). This is followed by third-party cloud security solutions (48%) and managed service providers delivering security services (34%).
 
-Accelerated time
-to market
+*Cloud-native security tools:* are defined as solutions that can ingest and make sense of the rich APIs offered by the cloud platforms
 
-Increased
-responsiveness
-to customer needs
+*Security ISV/Third Party:* vendor-supplied or outsourced software is any program or application that is not written exclusively by employees belonging to the company for which the software was created.
 
-41%
+2021 CLOUD SECURITY REPORT
 
-Saved money
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-35%
+What are the biggest barriers holding back cloud adoption in your organization and what surprises did you uncover that may slow/stop cloud adoption?
 
-22%
+**Image Description:** A bar chart showing the biggest barriers holding back cloud adoption. The barriers and their corresponding percentages are: Lack of visibility (53%), Not enough control (46%), Lack of staff resources or expertise (39%), Too expensive (35%), Data security, loss & leakage risks (34%), Legal & regulatory compliance (32%), Integration with existing IT environment (29%), General security risks (25%), Fear of vendor lock-in (24%), Loss of control (22%), Internal resistance and inertia (21%), Complexity managing cloud deployment (21%), Lack of budget (20%), Cost/lack of ROI (19%), and Not secure (16%).
 
-20%
+### CLOUD ADOPTION BARRIERS
 
-14%
+*   **Lack of visibility:** 53%
+*   **Not enough control:** 46%
+*   **Lack of staff resources or expertise:** 39%
+*   **Too expensive:** 35%
+*   **Data security, loss & leakage risks:** 34%
+*   **Legal & regulatory compliance:** 32%
+*   **Integration with existing IT environment:** 29%
+*   **General security risks:** 25%
+*   **Fear of vendor lock-in:** 24%
+*   **Loss of control:** 22%
+*   **Internal resistance and inertia:** 21%
+*   **Complexity managing cloud deployment:** 21%
+*   **Lack of budget:** 20%
+*   **Cost/lack of ROI:** 19%
+*   **Not secure:** 16%
 
-Reduced risk and
-improved security
+Among the barriers to faster cloud adoption, survey participants mentioned lack of visibility (53%), lack of control (46%), lack of staff resources or expertise (39%), and high cost (35%) as the most significant negative factors.
 
-Expanded market
-reach to new
-markets
+2021 CLOUD SECURITY REPORT
 
-Accelerated revenue
-growth in existing
-markets
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-Gained parity
-with competitors
+### CLOUD SECURITY CRITERIA
 
-Other 7%
+We asked what factors organizations prioritize when deciding between cloud security solutions offered by independent third-party providers and the cloud-native security solutions offered by the cloud platform. The most mentioned factor is cost of the security solution (60%). This is followed by low solution complexity (59%) and ease of use (52%).
 
-7
+What criteria are most important to you when deciding between cloud-native vs. independent cloud security solutions?
 
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity InsidersCLOUD DEPLOYMENT STRATEGIES
+**Image Description:** A bar chart showing the criteria most important when deciding between cloud-native and independent cloud security solutions. The criteria and their corresponding percentages are: Cost (60%), Less solution complexity and already well integrated (59%), Ease of use (52%), Quicker deployments (46%), Performance (32%), Cloud vendor security is good enough: “Why would I need anything else?” (30%), No need to manage another vendor (12%), and Other (5%).
 
-Most organizations are pursuing a hybrid or multi\-cloud strategy (71%) for integration of multiple 
-services, scalability, or business continuity reasons. Few companies rely on a single cloud deployment 
-(27%) for their business needs. Seventy\-six percent are utilizing two or more cloud providers.
+*   **Cost:** 60%
+*   **Less solution complexity and already well integrated:** 59%
+*   **Ease of use:** 52%
+*   **Quicker deployments:** 46%
+*   **Performance:** 32%
+*   **Cloud vendor security is good enough: “Why would I need anything else?”:** 30%
+*   **No need to manage another vendor:** 12%
+*   **Other:** 5%
 
-What is your primary cloud deployment strategy? 
+2021 CLOUD SECURITY REPORT
 
-36%
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-35%
+### MULTI-CLOUD SECURITY CHALLENGES
 
-27%
+Multi-cloud environments add complexity and security challenges. In our survey, organizations are most challenged with data protection (58%) followed by a lack of security skills (57%) and understanding how different solutions fit together (52%).
 
-HYBRID
-(e.g., integration between
-private and public clouds)
+What are your biggest challenges securing multi-cloud environments?
 
-MULTI\-CLOUD
-(e.g., multiple providers
-without integration)
+**Image Description:** A bar chart showing the biggest challenges securing multi-cloud environments. The challenges and their corresponding percentages are: Ensuring data protection and privacy for each environment (58%), Having the right skills to deploy and manage a complete solution across all cloud environments (57%), Understanding how different solutions fit together (52%), Loss of visibility and control (46%), Keeping up with the rate of change (44%), Understanding service integration options (42%), Selecting the right set of services (35%), Providing seamless access to users based on their credentials (28%), Managing the costs of different solutions (28%), and Other (3%).
 
-SINGLE CLOUD
+*   **Ensuring data protection and privacy for each environment:** 58%
+*   **Having the right skills to deploy and manage a complete solution across all cloud environments:** 57%
+*   **Understanding how different solutions fit together:** 52%
+*   **Loss of visibility and control:** 46%
+*   **Keeping up with the rate of change:** 44%
+*   **Understanding service integration options:** 42%
+*   **Selecting the right set of services:** 35%
+*   **Providing seamless access to users based on their credentials:** 28%
+*   **Managing the costs of different solutions:** 28%
+*   **Other:** 3%
 
-Other 2%
+2021 CLOUD SECURITY REPORT
 
-How many cloud providers does your organization currently use? 
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-76%
+How helpful would it be to have a single cloud security platform with a single dashboard where you could configure all of the policies needed to protect data consistently and comprehensively across your cloud footprint?
 
-Use two or more 
-cloud providers.
+**Image Description:** A bar chart showing the helpfulness of a single cloud security platform with a single dashboard. The categories are "Not at all", "Slightly", "Moderately", "Very", and "Extremely". The corresponding percentages are 3%, 4%, 15%, 38%, and 40% respectively. The text "78% Of professionals would consider it very to extremely helpful to have a single cloud security dashboard." is displayed above the chart.
 
-21%
+### SINGLE CLOUD SECURITY PLATFORM
 
-35%
+*   **Extremely:** 40%
+*   **Very:** 38%
+*   **Moderately:** 15%
+*   **Slightly:** 4%
+*   **Not at all:** 3%
 
-17%
+Seventy-eight percent of surveyed cybersecurity professionals would find it very helpful to extremely helpful to have a single cloud security platform offering a single dashboard while allowing for configuration of policies to protect data consistently and comprehensively across the cloud.
 
-24%
+2021 CLOUD SECURITY REPORT
 
-3%
+All Rights Reserved. ©2021 Cybersecurity Insiders
 
-One Two Three More than 3 None
+### METHODOLOGY & DEMOGRAPHICS
 
-8
+The 2021 Cloud Security Report is based on the results of a comprehensive online global survey of 572 cybersecurity professionals, conducted in April 2021, to gain deep insight into the latest trends, key challenges, and solutions for cloud security. The respondents range from technical executives to managers and IT security practitioners, representing a balanced cross-section of organizations of varying sizes across multiple industries.
 
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity InsidersPOPULAR CLOUD PROVIDERS
+**Image Description:** Three pie charts showing the demographics of the survey respondents. The charts are labeled "CAREER LEVEL", "DEPARTMENT", and "INDUSTRY". The "CAREER LEVEL" chart includes the following categories and percentages: Specialist (20%), Consultant (18%), Manager/Supervisor (17%), CTO, CIO, CISO, CMO, CFO, COO (17%), Director (14%), Vice President (4%), and Other (10%). The "DEPARTMENT" chart includes: IT Security (57%), IT Operations (15%), Engineering (7%), Operations (4%), Compliance (4%), DevOps (2%), Product Management (2%), SecOps (2%), and Other (7%). The "INDUSTRY" chart includes: Financial Services (16%), Technology, Software & Internet (30%), Government (9%), Professional Services (23%), Manufacturing (22%), Education & Research (10%), Telecommunications (7%), Transportation & Logistics (6%), Healthcare, Pharmaceuticals & Biotech (4%), and Other (4%). There is also a table showing the distribution of company sizes: Fewer than 10 (4%), 10-99 (13%), 100-499 (14%), 500-999 (20%), 1,000-4,999 (10%), 5,000-10,000 (30%), and Over 10,000 (9%).
 
-Among the organizations surveyed, Microsoft Azure is the most popular cloud provider (73%) 
-followed by Amazon Web Services (70%) and the Google Cloud Platform (37%).
+**CAREER LEVEL:**
 
-What cloud IaaS provider(s) do you currently use? 
+*   **Specialist:** 20%
+*   **Consultant:** 18%
+*   **Manager/Supervisor:** 17%
+*   **CTO, CIO, CISO, CMO, CFO, COO:** 17%
+*   **Director:** 14%
+*   **Vice President:** 4%
+*   **Other:** 10%
 
-37%
+**DEPARTMENT:**
 
-15%
+*   **IT Security:** 57%
+*   **IT Operations:** 15%
+*   **Engineering:** 7%
+*   **Operations:** 4%
+*   **Compliance:** 4%
+*   **DevOps:** 2%
+*   **Product Management:** 2%
+*   **SecOps:** 2%
+*   **Other:** 7%
 
-12%
+**INDUSTRY:**
 
-7%
+*   **Financial Services:** 16%
+*   **Technology, Software & Internet:** 30%
+*   **Government:** 9%
+*   **Professional Services:** 23%
+*   **Manufacturing:** 22%
+*   **Education & Research:** 10%
+*   **Telecommunications:** 7%
+*   **Transportation & Logistics:** 6%
+*   **Healthcare, Pharmaceuticals & Biotech:** 4%
+*   **Other:** 4%
 
-5%
+**COMPANY SIZE:**
 
-73%
+*   **Fewer than 10:** 4%
+*   **10-99:** 13%
+*   **100-499:** 14%
+*   **500-999:** 20%
+*   **1,000-4,999:** 10%
+*   **5,000-10,000:** 30%
+*   **Over 10,000:** 9%
 
-70%
+Fortinet (NASDAQ: FTNT) secures the largest enterprises, services providers, and government organizations around the world. Fortinet empowers our customers with complete visibility and control across the expanding attack surface and the power to take on ever-increasing performance requirements today and into the future. Only the Fortinet Security Fabric platform can address the most critical security challenges and protect data across the entire digital infrastructure, whether in networks, application, multi-cloud, or edge environments. Fortinet ranks #1 as the company with the most security appliances shipped worldwide and more than 500,000 customers trust Fortinet to protect their businesses.
 
-9
-
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity InsidersCLOUD SECURITY PATH
-
-When asked how organizations source their cloud security, the vast majority said they prefer cloud\-
-native security (74%). This is followed by third\-party cloud security solutions (48%) and managed 
-service providers delivering security services (34%).
-
-How do you source cloud security? 
-
-74%
-
-48%
-
-Cloud\-native
-security
-
-Third\-party
-cloud security
-
-Managed services
-cloud security
-
-Cloud\-native security tools: are defined as solutions that can ingest and make sense of the rich 
-APIs offered by the cloud platforms
-
-Security ISV/Third Party: vendor\-supplied or outsourced software is any program or application 
-that is not written exclusively by employees belonging to the company for which the software was 
-created.
-
-10
-
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity Insiders34%CLOUD ADOPTION BARRIERS
-
-Among the barriers to faster cloud adoption, survey participants mentioned lack of visibility (53%), 
-lack of control (46%), lack of staff resources or expertise (39%), and high cost (35%) as the most 
-significant negative factors.
-
-What are the biggest barriers holding back cloud adoption in your organization and what 
-surprises did you uncover that may slow/stop cloud adoption? 
-
-53% 46%
-
-Lack of
-visibility
-
-Not enough
-control
-
-39%
-
-Lack of staff
-resources or
-expertise
-
-35%
-
-Too expensive
-
-34%
-
-32%
-
-29%
-
-25%
-
-Data security,
-loss \& leakage
-risks
-
-Legal \& regulatory
-compliance
-
-Integration with
-existing IT
-environment
-
-General
-security risks
-
-Fear of vendor lock\-in 24% \| Loss of control 22% \| Internal resistance and inertia 21% \| Complexity managing cloud deployment 
-21% \| Lack of budget 20% \| Cost/lack of ROI 19% \| Not secure 16% \| 
-
-11
-
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity InsidersCLOUD SECURITY CRITERIA
-
-We asked what factors organizations prioritize when deciding between cloud security solutions 
-offered by independent third\-party providers and the cloud\-native security solutions offered by 
-the cloud platform. The most mentioned factor is cost of the security solution (60%). This is followed 
-by low solution complexity (59%) and ease of use (52%).
-
-What criteria are most important to you when deciding between cloud\-native vs. 
-independent cloud security solutions? 
-
-60% 59%
-
-Cost
-
-Less solution
-complexity and
-already well
-integrated
-
-52%
-
- Ease of use
-
-46%
-
-32%
-
-30%
-
-12%
-
-Performance
-
-Quicker
-deployments
-
-No need to
-manage another
-vendor
-
-Cloud vendor security
-is good enough:
-“Why would I need
-anything else?”
-
-Other 5%
-
-12
-
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity InsidersMULTI\-CLOUD SECURITY CHALLENGES
-
-Multi\-cloud environments add complexity and security challenges. In our survey, organizations 
-are most challenged with data protection (58%) followed by a lack of security skills (57%) and 
-understanding how different solutions fit together (52%).
-
-What are your biggest challenges securing multi\-cloud environments? 
-
-58% 57%
-
-Ensuring data
-protection and
-privacy for each
-environment
-
-Having the right skills
-to deploy and
-manage a complete
-solution across all
-cloud environments
-
-52%
-
-Understanding
-how different
-solutions fit
-together
-
-46%
-
-44%
-
-42%
-
-35%
-
-Loss of visibility 
-and control
-
-Keeping up with 
-the rate of change 
-
-Understanding 
-service integration 
-options
-
-Selecting the right 
-set of services
-
-Providing seamless access to users based on their credentials 28% \| Managing the costs of different solutions 28% \| Other 3%
-
-13
-
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity InsidersSINGLE CLOUD 
-SECURITY PLATFORM
-
-Seventy\-eight percent of surveyed cybersecurity professionals would find it very helpful to extremely 
-helpful to have a single cloud security platform offering a single dashboard while allowing for 
-configuration of policies to protect data consistently and comprehensively across the cloud. 
-
-How helpful would it be to have a single cloud security platform with a single dashboard 
-where you could configure all of the policies needed to protect data consistently and 
-comprehensively across your cloud footprint? 
-
-78% Of professionals would consider it
-
-very to extremely helpful to have
-a single cloud security dashboard.
-
-38%
-
-15%
-
-4%
-
-3%
-
-Not at all helpful
-
-40%
-
-Extremely helpful
-
-Not at all Slightly Moderately Very Extremely
-
-14
-
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity InsidersMETHODOLOGY \& DEMOGRAPHICS
-
-The 2021 Cloud Security Report is based on the results of a comprehensive online global survey of 
-
-572 cybersecurity professionals, conducted in April 2021, to gain deep insight into the latest trends, 
-
-key challenges, and solutions for cloud security. The respondents range from technical executives to 
-
-managers and IT security practitioners, representing a balanced cross\-section of organizations of varying 
-
-sizes across multiple industries.
-
-C AR EER LE VEL
-
-20%
-
-18%
-
-17%
-
-17%
-
-14%
-
-4%
-
-10%
-
-Specialist Consultant Manager/Supervisor CTO, CIO, CISO, CMO, CFO, COO Director Vice President 
-Other 
-
-D EPARTM ENT
-
-57%
-
-15%
-
-7%
-
-4% 4%
-
-2%2% 2% 7%
-
-IT Security IT Operations Engineering Operations Compliance DevOps Product Management SecOps Other 
-
-CO M PAN Y SI ZE
-
-4%
-
-13%
-
-14%
-
-9%
-
-20%
-
-10%
-
-30%
-
-Fewer than 10 10\-99 100\-499 500\-999 1,000\-4,999 5,000\-10,000 Over 10,000
-
-I N D U STR Y
-
-23%
-
-22%
-
-10%
-
-7%
-
-6%
-
-4%
-
-4%
-
-4%
-
-4%
-
-16%
-
-Financial Services Technology, Software \& Internet Government Professional Services Manufacturing Education \& Research 
-Telecommunications Transportation \& Logistics Healthcare, Pharmaceuticals \& Biotech Other
-
-15
-
-2021 CLOUD SECURITY REPORTAll Rights Reserved. ©2021 Cybersecurity Insiders 
-Fortinet (NASDAQ: FTNT) secures the largest enterprises, 
-
-services providers, and government organizations around 
-
-the world. Fortinet empowers our customers with complete 
-
-visibility and control across the expanding attack surface 
-
-and the power to take on ever\-increasing performance 
-
-requirements today and into the future. Only the Fortinet 
-
-Security Fabric platform can address the most critical 
-
-security challenges and protect data across the entire 
-
-digital infrastructure, whether in networks, application, 
-
-multi\-cloud, or edge environments. Fortinet ranks \#1 as 
-
-the company with the most security appliances shipped 
-
-worldwide and more than 500,000 customers trust 
-
-Fortinet to protect their businesses.
-
-www.fortinet.com
+[www.fortinet.com](www.fortinet.com)

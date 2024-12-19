@@ -1,2865 +1,686 @@
+# 2022 Cyber Safety Insights Report Global Results
+
 January 2022
-
-2022 Cyber Safety 
-Insights Report 
-
-Global Results
 
 Prepared By:
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
 
-1
+## Survey Method
 
-Survey Method 
+The research was conducted online by The Harris Poll on behalf of NortonLifeLock among 10,003 adults aged 18+ in 10 countries. The survey was conducted November 15 - December 7, 2021 in Australia (n=1,002), Brazil (n=1,000), France (n=1,001), Germany (n=1,000), India (n=1,000), Italy (n=1,000), Japan (n=1,000), New Zealand (n=1,000), the United Kingdom (n=1,000), and the United States (n=1,000). Data are weighted where necessary to bring them in line with their actual proportions in the population; India was weighted to the population of those who are online. Weighted variables varied by country and included one or more of the following: age, gender, race/ethnicity, region, education, marital status, internet usage, household size, household income, urbanicity, and propensity to be online. A global post weight was applied to ensure equal weight of each country in the global total.
 
-The research was conducted online by The Harris Poll on behalf of 
-NortonLifeLock among 10,003 adults aged 18\+ in 10 countries. The 
-survey was conducted November 15 \- December 7, 2021 in Australia 
-(n\=1,002\), Brazil (n\=1,000\), France (n\=1,001\), Germany (n\=1,000\), 
-India (n\=1,000\), Italy (n\=1,000\), Japan (n\=1,000\), New Zealand 
-(n\=1,000\), the United Kingdom (n\=1,000\), and the United States 
-(n\=1,000\). Data are weighted where necessary to bring them in line 
-with their actual proportions in the population; India was weighted to 
-the population of those who are online. Weighted variables varied by 
-country and included one or more of the following: age, gender, 
-race/ethnicity, region, education, marital status, internet usage, 
-household size, household income, urbanicity, and propensity to be 
-online. A global post weight was applied to ensure equal weight of 
-each country in the global total. 
+Throughout the report, references to YOY changes represent differences in results from the 2021 Global NLCSIR Study, conducted online by the Harris Poll on behalf of NortonLifeLock among 10,030 adults aged 18+ in 10 countries from February 15-28, 2021.
 
-Throughout the report, references to YOY changes represent 
-differences in results from the 2021 Global NLCSIR Study, conducted 
-online by the Harris Poll on behalf of NortonLifeLock among 10,030 
-adults aged 18\+ in 10 countries from February 15\-28, 2021\. 
+Population projection estimates cited are calculated based on adult population (age 18+) figures from the U.S. Census Bureau’s 2022 International Data Base, Pew Research Center 2017 Global Attitudes Survey and IBGE Instituto Brasileiro de Geografia e Estatística PNAD 2018 Internet Users. No estimates of theoretical sampling error can be calculated.
 
-Population projection estimates cited are calculated based on adult 
-population (age 18\+) figures from the U.S. Census Bureau’s 2022 
-International Data Base, Pew Research Center 2017 Global Attitudes 
-Survey and IBGE Instituto Brasileiro de Geografia e Estatística PNAD 
-2018 Internet Users. No estimates of theoretical sampling error can be 
-calculated. 
-
-ONLINE SURVEY
+2
 
 10,003 ADULTS
-
 10 COUNTRIES
-
-UK
-
-n\= 
-1,000
-
-France
-
-n\= 
-1,001
-
-n\= 
-1,000
-
-Germany
-
-n\= 
-1,000
-
-Italy
-
-US
-
-n\= 
-1,000
-
-Japan
-
-n\= 
-1,000
-
-India
-
-n\= 
-1,000
-
-n\= 
-1,000
-
-Brazil
+ONLINE SURVEY
 
 Australia
+n= 1,002
 
-n\= 
-1,002
+France
+n= 1,001
+
+Germany
+n= 1,000
+
+India
+n= 1,000
+
+Italy
+n= 1,000
+
+Japan
+n= 1,000
+
+Brazil
+n= 1,000
 
 New Zealand
+n= 1,000
 
-n\= 
-1,000
+UK
+n= 1,000
 
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-2
-
-Table of Contents
-
-1
-
-2
-
-3
-
-4
-
-5
-
-Pages 4\-7
-
-Pages 8\-16
-
-Pages 17\-24
-
-Pages 25\-37
-
-Pages 38\-39
-
-Cybercrime: Incidence, 
-Impact, \& Attitudes
-
-Identity Theft: 
-Incidence \& Attitudes
-
-Protecting 
-Personal Privacy
-
-Online Creeping
-
-Demographics
+US
+n= 1,000
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
 
-3
+## Table of Contents
 
-1
-
-Cybercrime: Incidence, 
-Impact \& Attitudes
-
-The continued prevalence of virtual life has provided 
-fertile ground for cybercriminals – more than 415 million 
-adults in 10 countries\* experienced cybercrime in the 
-past 12 months. These incidences have financial and 
-mental ripple effects on those who experience them. 
-Among those who experienced cybercrime in the past 
-year, a total of 4\.4 billion hours were spent trying to 
-resolve the issues created.
-
-\*Australia, Brazil, France, Germany, India, Italy, Japan, New Zealand, United Kingdom, United States
+[Cybercrime: Incidence, Impact, & Attitudes](#cybercrime-incidence-impact--attitudes) Pages 4-7
+[Identity Theft: Incidence & Attitudes](#identity-theft-incidence--attitudes) Pages 8-16
+[Protecting Personal Privacy](#protecting-personal-privacy) Pages 17-24
+[Online Creeping](#online-creeping) Pages 25-37
+[Demographics](#demographics) Pages 38-39
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
 
+# Cybercrime: Incidence, Impact & Attitudes
+
+The continued prevalence of virtual life has provided fertile ground for cybercriminals – more than 415 million adults in 10 countries* experienced cybercrime in the past 12 months. These incidences have financial and mental ripple effects on those who experience them. Among those who experienced cybercrime in the past year, a total of 4.4 billion hours were spent trying to resolve the issues created.
+
+*Australia, Brazil, France, Germany, India, Italy, Japan, New Zealand, United Kingdom, United States
+
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
 
-4
+**Image Description:** A bar chart showing the number of people who have ever experienced cybercrime and the number who have experienced it in the last year, broken down by country. The countries are Australia, Brazil, France, Germany, India, Italy, Japan, New Zealand, UK, and US. The global total is also shown. The "ever" bar is always higher than the "last yr" bar.
 
-On Average, Over 550 Million Consumers Globally Have Ever 
-Experienced a Cyber Crime; 415 Million Say They Have Been a 
-Victim in the Past 12 Months
+554.1 million ever
+415.6 million in the last year
 
-ever
-last yr
-
+155.7
+117.9
+Australia
+France
+Germany
+India
+Italy
+Japan
+New Zealand
+UK
+US
+GLOBAL 10 COUNTRY TOTAL
 MILLIONS
 
-25\.3
-15\.3
-
-UK
-
-US
-
-155\.7
-117\.9
-
-France
-
-28\.5
-19\.3
-
-30\.5
-17\.7
-
-GLOBAL 10 COUNTRY TOTAL
-
-554\.1 million ever
-415\.6 million in the last year
-
-85\.2
-71\.1
-
+25.3
+15.3
+28.5
+19.3
+30.5
+17.7
+26.3
+18.1
+157.4
+133.5
+33.6
+16.2
+9.3
+5.3
+2.3
+1.3
+ever
+last yr
 Brazil
+85.2
+71.1
 
-Germany
-
-26\.3
-18\.1
-
-Italy
-
-India
-
-157\.4
-133\.5
-
-Japan
-
-33\.6
-16\.2
-
-Australia
-
-9\.3
-5\.3
-
-New Zealand
-
-2\.3
-1\.3
+On Average, Over 550 Million Consumers Globally Have Ever Experienced a Cyber Crime; 415 Million Say They Have Been a Victim in the Past 12 Months
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
 
-5
-
-Over Half of Consumers Have Experienced a Cybercrime, and 
-More Than 1 in 3 Have Fallen Victim in the Past 12 Months Alone
-
-Experienced a 
-Cybercrime
-
-Top 3 Cybercrimes 
-Ever Experienced
-
-Ever
-
-Past 12 
-Months
+**Image Description:** A pie chart showing that 54% of consumers have experienced a cybercrime ever, and 37% have fallen victim in the past 12 months alone.
 
 54%
-
 37%
-
-1
-
-Detected malicious 
-software on a computer, 
-Wi\-Fi network, smartphone, 
-tablet, smart home, or 
-other connected device
-
-24%
-
-2
-
-Detected unauthorized 
-access on a social 
-media account
-
-3
-
-Detected unauthorized 
-access on an email 
-account
-
-14%
-
-14%
-
-% Who Have Experienced 
-Cybercrime by Country
-
-Ever
-
-46%
-
-69%
-
-53%
-
-45%
-
-76%
-
-50%
-
-32%
-
-58%
-
-48%
-
-59%
-
-Past 12 
-months
-
-P12M % Pt. 
-Change YOY
-
-26%
-
-58%
-
-36%
-
-26%
-
-65%
-
-34%
-
-15%
-
-33%
-
-29%
-
-45%
-
-\-11%
-
-N/A
-
-\+2%
-
-\-1%
-
-\+6%
-
-\-1%
-
-\-3%
-
-\-2%
-
-\+1%
-
-\+4%
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+Over Half of Consumers Have Experienced a Cybercrime, and More Than 1 in 3 Have Fallen Victim in the Past 12 Months Alone
 
 6
 
-On Average, Past Year Cybercrime Victims Spent 4\.4 Billion Hours 
-Resolving Issues; Half of Victims Were Impacted Financially 
+**Image Description:** A table showing the percentage of people who have experienced cybercrime, broken down by country, for both "ever" and "past 12 months". It also shows the percentage point change year-over-year for the "past 12 months" figure.
 
-4,384,168,797
+% Who Have Experienced Cybercrime by Country
 
-Hours lost globally
+| Country      | Ever | Past 12 Months | P12M % Pt. Change YOY |
+|--------------|------|----------------|-----------------------|
+| Australia    | 46%  | 26%            | -11%                  |
+| Brazil       | 69%  | 58%            | N/A                   |
+| France       | 53%  | 36%            | +2%                   |
+| Germany      | 45%  | 26%            | -1%                   |
+| India        | 76%  | 65%            | +6%                   |
+| Italy        | 50%  | 34%            | -1%                   |
+| Japan        | 32%  | 15%            | -3%                   |
+| New Zealand  | 58%  | 33%            | -2%                   |
+| UK           | 48%  | 29%            | +1%                   |
+| US           | 59%  | 45%            | +4%                   |
 
-7\.8
+Past 12 Months
+Ever
 
-Hours spent (on average) resolving issues caused 
+Top 3 Cybercrimes Ever Experienced
 
-51%
+1. Detected malicious software on a computer, Wi-Fi network, smartphone, tablet, smart home, or other connected device 24%
+2. Detected unauthorized access on a social media account 14%
+3. Detected unauthorized access on an email account 14%
 
-Have lost money as a result of 
-the cyber crime committed
-
-On average across all 10 countries, past 
-12 month cybercrime victims are more likely to have lost money 
-this year compared to 2021 (51% compared to 47% in 2021\)
-
-Trended Hours Spent Resolving 
-Cybercrime by Country
-(Average\*)
-
-Trended % Who Lost Money 
-From Cybercrime by Country
-
-2022
-
-5\.1
-
-11\.6
-
-6\.8
-
-6\.3
-
-13\.0
-
-8\.9
-
-2\.5
-
-4\.8
-
-8\.6
-
-10\.3
-
-YOY Change
-
-\-3\.1
-
-N/A
-
-\+1\.3
-
-\-2\.8
-
-\+2\.2
-
-\+0\.2
-
-\-3\.4
-
-\+1\.1
-
-\+4\.2
-
-\+3\.6
-
-2022
-
-47%
-
-51%
-
-51%
-
-55%
-
-70%
-
-44%
-
-13%
-
-33%
-
-52%
-
-58%
-
-YOY Change
-
-\-6%
-
-N/A
-
-\+8%
-
-\+10%
-
-\-2%
-
-\+3%
-
-\+2%
-
-\-1%
-
-\+5%
-
-\+12%
-
-\*Average has been trimmed to remove outliers
+Experienced a Cybercrime
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+**Image Description:** A section showing that past year cybercrime victims spent 4.4 billion hours resolving issues and that half of victims were impacted financially. It also shows trended hours spent resolving cybercrime by country and trended % who lost money from cybercrime by country.
+
+On Average, Past Year Cybercrime Victims Spent 4.4 Billion Hours Resolving Issues; Half of Victims Were Impacted Financially
 
 7
 
-2
+*Average has been trimmed to remove outliers
 
-Identity Theft: 
-Incidence \& Attitudes
+| Country      | 2022  | YOY Change |
+|--------------|-------|------------|
+| Australia    | 5.1   | -3.1       |
+| Brazil       | 11.6  | N/A        |
+| France       | 6.8   | +1.3       |
+| Germany      | 6.3   | -2.8       |
+| India        | 13.0  | +2.2       |
+| Italy        | 8.9   | +0.2       |
+| Japan        | 2.5   | -3.4       |
+| New Zealand  | 4.8   | +1.1       |
+| UK           | 8.6   | +4.2       |
+| US           | 10.3  | +3.6       |
 
-Globally\*, around 2 in 3 adults are very worried their identity 
-will be stolen, and many say they would have no idea what 
-to do if it were. With over 81 million people in 10 countries 
-having experienced ID theft in the past 12 months, it is no 
-surprise that close to half of consumers expect their identity 
-to be stolen at some point. 
+Trended Hours Spent Resolving Cybercrime by Country
+(Average*)
 
-\*Australia, Brazil, France, Germany, India, Italy, Japan, New Zealand, United Kingdom, United States
+| Country      | 2022  | YOY Change |
+|--------------|-------|------------|
+| Australia    | 47%   | -6%        |
+| Brazil       | 51%   | N/A        |
+| France       | 51%   | +8%        |
+| Germany      | 55%   | +10%       |
+| India        | 70%   | -2%        |
+| Italy        | 44%   | +3%        |
+| Japan        | 13%   | +2%        |
+| New Zealand  | 33%   | -1%        |
+| UK           | 52%   | +5%        |
+| US           | 58%   | +12%       |
+
+Trended % Who Lost Money From Cybercrime by Country
+
+On average across all 10 countries, past 12 month cybercrime victims are more likely to have lost money this year compared to 2021 (51% compared to 47% in 2021)
+
+4,384,168,797
+Hours lost globally
+7.8
+Hours spent (on average) resolving issues caused
+51%
+Have lost money as a result of the cyber crime committed
+
+Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+# Identity Theft: Incidence & Attitudes
+
+Globally*, around 2 in 3 adults are very worried their identity will be stolen, and many say they would have no idea what to do if it were. With over 81 million people in 10 countries having experienced ID theft in the past 12 months, it is no surprise that close to half of consumers expect their identity to be stolen at some point.
+
+*Australia, Brazil, France, Germany, India, Italy, Japan, New Zealand, United Kingdom, United States
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
 
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+**Image Description:** A bar chart showing the number of victims of identity theft in the past year, broken down by country. The global total is also shown.
 
-8
-
-Over 81 Million Consumers\* Were the Victim of Identity Theft 
-Last Year
-
-Victims of Identity Theft
-
-3\.3m
-
-UK
-
-US
-
-12\.8m
-
-France
-
-2\.9m
-
-3\.8m
-
-Germany
-
-2\.1m
-
-Italy
-
-Japan
-
-2\.9m
-
-India
-
-40\.9m
-
-Brazil
-
-11\.3m
-
-Australia
-
-1\.2m
-
-New Zealand
-
-194k
-
-GLOBAL TOTAL
-
-81\.5 million
-
-\*in 10 countries
-
-Based on an online survey of 9,285 adults in 9 countries conducted in December 2021 and an online survey of 
-5,008 adults in the US conducted in January 2022 by The Harris Poll on behalf of Norton™ LifeLock™.
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+Over 81 Million Consumers* Were the Victim of Identity Theft Last Year
 
 9
 
-Of Those Who Experienced Identity Theft, 2 in 5 Were Notified 
-About It by an External Source; Close to Half Discovered the Theft 
-Themselves
+Victims of Identity Theft
+81.5 million
+GLOBAL TOTAL
+*in 10 countries
 
-% Discovered it 
-Themselves by Country
+12.8m
+Australia
+France
+Germany
+India
+Italy
+Japan
+New Zealand
+UK
+US
+3.3m
+2.9m
+3.8m
+2.1m
+40.9m
+2.9m
+1.2m
+194k
+11.3m
+Brazil
 
-46%
-
-40%
-
-% Notified By an External 
-Source by County 
-
-2022
-
-51%
-
-46%
-
-56%
-
-41%
-
-59%
-
-45%
-
-26%
-
-43%
-
-48%
-
-44%
-
-Discovered it Themselves
-
-Notified By External Source
-
-By monitoring my financial accounts online
-
-By monitoring my paper statements from my 
-financial accounts
-
-When I reported a lost or stolen card or other 
-document to my financial institution
-
-I was denied credit or other financial services
-
-When I was turned down for credit
-
-By monitoring my credit report\*
-
-When I went to file my tax return
-
-When I applied for a mortgage
-
-14%
-
-8%
-
-6%
-
-5%
-
-5%
-
-5%
-
-3%
-
-2%
-
-\*Not shown in Japan
-
-I was notified by my bank or credit card company
-
-I was notified by a bank or credit card 
-company other than my own
-
-I was notified by my credit monitoring service
-
-I was notified by police, law enforcement, or 
-other government agency
-
-I was notified by a debt collector or creditor
-
-I was notified by my identity theft protection service 
-\[US ONLY]
-
-20%
-
-6%
-
-5%
-
-5%
-
-4%
-
-4%
-
-2022
-
-38%
-
-42%
-
-33%
-
-43%
-
-35%
-
-30%
-
-50%
-
-36%
-
-44%
-
-45%
-
-Based on an online survey of 9,285 adults in 9 countries conducted in December 2021 and an online survey of 
-5,008 adults in the US conducted in January 2022 by The Harris Poll on behalf of Norton™ LifeLock™.
+Based on an online survey of 9,285 adults in 9 countries conducted in December 2021 and an online survey of 5,008 adults in the US conducted in January 2022 by The Harris Poll on behalf of Norton™LifeLock™.
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+**Image Description:** A table showing the percentage of people who discovered identity theft themselves and the percentage who were notified by an external source, broken down by country. It also shows the various ways people discovered the theft themselves and the various ways people were notified by an external source.
+
+Of Those Who Experienced Identity Theft, 2 in 5 Were Notified About It by an External Source; Close to Half Discovered the Theft Themselves
 
 10
 
-For the 81 Million Adults Globally Who Were Victims of Identity 
-Theft in 2021, Nearly All Experienced Financial and Mental 
-Health Detriments as a Result
+| Country      | % Discovered it Themselves | % Notified By an External Source |
+|--------------|----------------------------|---------------------------------|
+| Australia    | 51%                        | 38%                             |
+| Brazil       | 46%                        | 42%                             |
+| France       | 56%                        | 33%                             |
+| Germany      | 41%                        | 43%                             |
+| India        | 59%                        | 35%                             |
+| Italy        | 45%                        | 30%                             |
+| Japan        | 26%                        | 50%                             |
+| New Zealand  | 43%                        | 36%                             |
+| UK           | 48%                        | 44%                             |
+| US           | 44%                        | 45%                             |
 
+2022
+% Discovered it Themselves by Country
+2022
+% Notified By an External Source by County
+
+Discovered it Themselves
+46%
+* By monitoring my financial accounts online 14%
+* By monitoring my credit report* 5%
+* By monitoring my paper statements from my financial accounts 8%
+* I was denied credit or other financial services 5%
+* When I went to file my tax return 3%
+* When I reported a lost or stolen card or other document to my financial institution 6%
+* When I applied for a mortgage 2%
+* When I was turned down for credit 5%
+
+Notified By External Source
 40%
+* I was notified by my bank or credit card company 20%
+* I was notified by my credit monitoring service 5%
+* I was notified by a bank or credit card company other than my own 6%
+* I was notified by a debt collector or creditor 5%
+* I was notified by police, law enforcement, or other government agency 4%
+* I was notified by my identity theft protection service [US ONLY] 4%
 
-39%
+*Not shown in Japan
 
-28%
-
-95%
-
-Of ID theft victims 
-have experienced at 
-least one of these 
-
-21%
-
-21%
-
-19%
-
-18%
-
-16%
-
-I spent time 
-resolving the 
-issue(s) created
-
-I had to 
-freeze my 
-credit card(s)
-
-I had money 
-stolen
-
-I lost access to 
-my online 
-account(s)
-
-My mental 
-health was 
-negatively 
-impacted
-
-I experienced 
-difficulty 
-sleeping
-
-I had to 
-close a bank 
-account
-
-My credit 
-score was 
-negatively 
-impacted
-
-5%
-
-5%
-
-Other
-
-Nothing
-
-% Any Detriment 
-By country
-
-97%
-
-97%
-
-97%
-
-96%
-
-96%
-
-99%
-
-83%
-
-95%
-
-96%
-
-97%
-
-Based on an online survey of 9,285 adults in 9 countries conducted in December 2021 and an online survey of 
-5,008 adults in the US conducted in January 2022 by The Harris Poll on behalf of Norton™ LifeLock™.
+Based on an online survey of 9,285 adults in 9 countries conducted in December 2021 and an online survey of 5,008 adults in the US conducted in January 2022 by The Harris Poll on behalf of Norton™LifeLock™.
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+**Image Description:** A bar chart showing the percentage of identity theft victims who experienced various detriments, broken down by country. It also shows that 95% of ID theft victims have experienced at least one of these detriments.
+
+For the 81 Million Adults Globally Who Were Victims of Identity Theft in 2021, Nearly All Experienced Financial and Mental Health Detriments as a Result
 
 11
 
-Nearly All Identity Theft Victims Felt Some Impact, Most Commonly 
-Giving up Their Time Resolving the Issue(s) Created 
+| Country      | % Any Detriment |
+|--------------|-----------------|
+| Australia    | 97%             |
+| Brazil       | 97%             |
+| France       | 97%             |
+| Germany      | 96%             |
+| India        | 96%             |
+| Italy        | 99%             |
+| Japan        | 83%             |
+| New Zealand  | 95%             |
+| UK           | 96%             |
+| US           | 97%             |
 
-Impacts Experienced 
-(Top 3 By Country)
-
-Spent time resolving the issue
-
-Had to freeze credit cards
-
-Had to freeze credit cards
-
-Spent time resolving the issue
-
-Spent time resolving the issue
-
-41%
-
-56%
-
-40%
-
-40%
-
-33%
-
-Had to freeze credit cards
-
-Spent time resolving the issue
-
-Spent time resolving the issue
-
-Had money stolen
-
-Lost access to online account
+* I spent time resolving the issue(s) created
+* I had money stolen
+* I lost access to my online account(s)
+* I had to close a bank account
+* My credit score was negatively impacted
+* I had to freeze my credit card(s)
+* My mental health was negatively impacted
+* I experienced difficulty sleeping
+* Other
+* Nothing
 
 40%
-
-Had money stolen
-
 39%
-
-52%
-
-Had money stolen
-
-34%
-
-33%
-
-Had money stolen
-
-32%
-
-26%
-
-30%
-
-Had to freeze credit cards
-
-Had money stolen
-
-25%
-
-29%
-
-Spent time resolving the issue
-
-Had to freeze credit cards
-
-Had to freeze credit cards
-
-Spent time resolving the issue
-
-Spent time resolving the issue
-
-43%
-
-41%
-
-47%
-
-30%
-
-58%
-
-Had to freeze credit cards
-
-Spent time resolving the issue
-
-Spent time resolving the issue
-
-Had to freeze credit cards
-
-Had to freeze credit cards
-
-39%
-
-37%
-
-33%
-
-Lost access to online account
-
-Mental health negatively impacted
-
-Had money stolen
-
-31%
-
+28%
+21%
+21%
 19%
+18%
+16%
+5%
+5%
 
-29%
+Of ID theft victims have experienced at least one of these 95%
 
-29%
-
-Had money stolen
-
-27%
-
-47%
-
-Had money stolen
-
-34%
-
-Based on an online survey of 9,285 adults in 9 countries conducted in December 2021 and an online survey of 
-5,008 adults in the US conducted in January 2022 by The Harris Poll on behalf of Norton™ LifeLock™.
+Based on an online survey of 9,285 adults in 9 countries conducted in December 2021 and an online survey of 5,008 adults in the US conducted in January 2022 by The Harris Poll on behalf of Norton™LifeLock™.
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+**Image Description:** A section showing the top 3 impacts experienced by identity theft victims, broken down by country. The most common impact is spending time resolving the issue.
+
+Nearly All Identity Theft Victims Felt Some Impact, Most Commonly Giving up Their Time Resolving the Issue(s) Created
 
 12
 
-More Than Half of Adults Globally Feel Well Protected Against 
-Identity Theft, Yet 2 in 3 Are Very Worried Their Identity Will 
-Be Stolen
+Impacts Experienced
+(Top 3 By Country)
 
-% Agree with Attitudes Toward Identity Theft
-(Global Total)
+*   Spent time resolving the issue 58%
+*   Had to freeze credit cards 47%
+*   Lost access to online account 34%
 
-66%
+*   Spent time resolving the issue 41%
+*   Had to freeze credit cards 40%
+*   Had money stolen 39%
 
-57%
+*   Spent time resolving the issue 43%
+*   Had to freeze credit cards 39%
+*   Had money stolen 31%
 
-54%
+*   Spent time resolving the issue 56%
+*   Mental health negatively impacted 52%
+*   Had to freeze credit cards 34%
 
-45%
+*   Spent time resolving the issue 41%
+*   Had money stolen 37%
+*   Had to freeze credit cards 19%
 
-38%
+*   Spent time resolving the issue 40%
+*   Had to freeze credit cards 33%
+*   Had money stolen 32%
 
-I am very worried that my 
-identity will be stolen
+*   Spent time resolving the issue 47%
+*   Had money stolen 33%
+*   Had to freeze credit cards 29%
 
-The steps I currently take 
-are enough to protect 
-myself from identity theft
+*   Spent time resolving the issue 40%
+*   Had money stolen 26%
+*   Had to freeze credit cards 25%
 
-I think I'm well protected 
-against identity theft
+*   Spent time resolving the issue 30%
+*   Had money stolen 29%
+*   Had to freeze credit cards 27%
 
-I expect my identity will 
-be stolen at some point
+*   Spent time resolving the issue 33%
+*   Lost access to online account 30%
+*   Had to freeze credit cards 29%
 
-I've never considered that 
-my identity could be 
-stolen
+Based on an online survey of 9,285 adults in 9 countries conducted in December 2021 and an online survey of 5,008 adults in the US conducted in January 2022 by The Harris Poll on behalf of Norton™LifeLock™.
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+**Image Description:** A list showing the percentage of people who agree with various attitudes toward identity theft.
+
+More Than Half of Adults Globally Feel Well Protected Against Identity Theft, Yet 2 in 3 Are Very Worried Their Identity Will Be Stolen
 
 13
 
-Consumers in Brazil and France Most Concerned Their Identity Will 
-Be Stolen, and Only Around Half Feel Well Protected Against It
+% Agree with Attitudes Toward Identity Theft
+(Global Total)
+
+*   I am very worried that my identity will be stolen 66%
+*   The steps I currently take are enough to protect myself from identity theft 57%
+*   I think I'm well protected against identity theft 54%
+*   I expect my identity will be stolen at some point 45%
+*   I've never considered that my identity could be stolen 38%
+
+Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+**Image Description:** A table showing the percentage of people who agree with various attitudes toward identity theft, broken down by country.
+
+Consumers in Brazil and France Most Concerned Their Identity Will Be Stolen, and Only Around Half Feel Well Protected Against It
+
+14
+
+| Country      | I am very worried that my identity will be stolen | The steps I currently take are enough to protect myself from identity theft | I think I'm well protected against identity theft | I expect my identity will be stolen at some point | I've never considered that my identity could be stolen |
+|--------------|-------------------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------|---------------------------------------------------|---------------------------------------------------|
+| Australia    | 59%                                             | 59%                                                                       | 63%                                             | 35%                                               | 34%                                               |
+| Brazil       | 86%                                             | 62%                                                                       | 54%                                             | 39%                                               | 49%                                               |
+| France       | 80%                                             | 51%                                                                       | 45%                                             | 44%                                               | 37%                                               |
+| Germany      | 55%                                             | 55%                                                                       | 54%                                             | 39%                                               | 57%                                               |
+| India        | 66%                                             | 68%                                                                       | 66%                                             | 57%                                               | 40%                                               |
+| Italy        | 67%                                             | 64%                                                                       | 58%                                             | 40%                                               | 74%                                               |
+| Japan        | 70%                                             | 36%                                                                       | 25%                                             | 36%                                               | 22%                                               |
+| New Zealand  | 51%                                             | 55%                                                                       | 55%                                             | 41%                                               | 39%                                               |
+| UK           | 60%                                             | 64%                                                                       | 62%                                             | 34%                                               | 34%                                               |
+| US           | 62%                                             | 56%                                                                       | 59%                                             | 28%                                               | 28%                                               |
 
 % Agree
 (By Country)
 
-I am very worried that my 
-identity will be stolen
-
-The steps I currently take 
-are enough to protect 
-myself from identity theft
-
-I think I'm well protected 
-against identity theft
-
-I expect my identity will 
-be stolen at some point
-
-I've never considered that 
-my identity could be stolen
-
-Australia
-
-59%
-
-Brazil
-
-France
-
-Germany
-
-55%
-
-India
-
-Italy
-
-Japan
-
-86%
-
-80%
-
-66%
-
-67%
-
-59%
-
-62%
-
-51%
-
-55%
-
-68%
-
-64%
-
-70%
-
-36%
-
-25%
-
-New Zealand
-
-51%
-
-UK
-
-US
-
-60%
-
-62%
-
-55%
-
-64%
-
-56%
-
-63%
-
-54%
-
-45%
-
-54%
-
-66%
-
-58%
-
-55%
-
-62%
-
-59%
-
-35%
-
-39%
-
-44%
-
-39%
-
-40%
-
-36%
-
-41%
-
-40%
-
-34%
-
-49%
-
-37%
-
-37%
-
-57%
-
-47%
-
-57%
-
-74%
-
-22%
-
-39%
-
-34%
-
-28%
-
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
 
-14
+**Image Description:** A list showing the percentage of people who agree with various attitudes toward identity theft.
 
-The Majority Admit They Would Have No Idea What to Do or 
-How to Check if Their Identity was Stolen
+The Majority Admit They Would Have No Idea What to Do or How to Check if Their Identity was Stolen
+
+15
 
 % Agree with Attitudes Toward Identity Theft
 (Global Total)
 
-68%
-
-59%
-
-26%
-
-I don't know how to check 
-if my identity has ever 
-been stolen
-
-I would have no idea what 
-to do if my identity was 
-stolen
-
-I don't know what identity 
-theft is
+*   I don't know how to check if my identity has ever been stolen 68%
+*   I would have no idea what to do if my identity was stolen 59%
+*   I don't know what identity theft is 26%
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
 
-15
+**Image Description:** A table showing the percentage of people who agree with various attitudes toward identity theft, broken down by country.
 
-Though Knowledge Gaps Vary by Country, Opportunities for Identity 
-Theft Prevention Education Abound 
-
-% Agree
-(By Country)
-
-I don't know how to check if my identity 
-has ever been stolen
-
-I would have no idea what to do 
-if my identity was stolen
-
-I don't know what identity 
-theft is
-
-Australia
-
-Brazil
-
-France
-
-Germany
-
-India
-
-Italy
-
-Japan
-
-New Zealand
-
-UK
-
-US
-
-71%
-
-61%
-
-77%
-
-65%
-
-60%
-
-73%
-
-81%
-
-75%
-
-59%
-
-57%
-
-59%
-
-57%
-
-58%
-
-63%
-
-64%
-
-66%
-
-48%
-
-55%
-
-43%
-
-19%
-
-25%
-
-20%
-
-19%
-
-40%
-
-47%
-
-76%
-
-33%
-
-18%
-
-22%
-
-15%
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+Though Knowledge Gaps Vary by Country, Opportunities for Identity Theft Prevention Education Abound
 
 16
 
-3
+| Country      | I don't know how to check if my identity has ever been stolen | I would have no idea what to do if my identity was stolen | I don't know what identity theft is |
+|--------------|---------------------------------------------------------------|------------------------------------------------------------|------------------------------------|
+| Australia    | 71%                                                           | 59%                                                        | 19%                                |
+| Brazil       | 61%                                                           | 57%                                                        | 25%                                |
+| France       | 77%                                                           | 59%                                                        | 20%                                |
+| Germany      | 65%                                                           | 57%                                                        | 19%                                |
+| India        | 60%                                                           | 58%                                                        | 40%                                |
+| Italy        | 73%                                                           | 63%                                                        | 47%                                |
+| Japan        | 81%                                                           | 76%                                                        | 33%                                |
+| New Zealand  | 75%                                                           | 64%                                                        | 18%                                |
+| UK           | 66%                                                           | 55%                                                        | 22%                                |
+| US           | 48%                                                           | 43%                                                        | 15%                                |
 
-Protecting 
-Personal Privacy
+% Agree
+(By Country)
 
-Despite more than 3 in 5 consumers\* saying they accept 
-certain risks to their online privacy to make their life more 
-convenient, four in five say they are concerned about their 
-data privacy and seven in ten have taken steps to protect 
-their online privacy. 
+Copyright © 2021 NortonLifeLock Inc. All rights reserved.
 
-\*Australia, Brazil, France, Germany, India, Italy, Japan, New Zealand, United Kingdom, United States
+# Protecting Personal Privacy
+
+Despite more than 3 in 5 consumers* saying they accept certain risks to their online privacy to make their life more convenient, four in five say they are concerned about their data privacy and seven in ten have taken steps to protect their online privacy.
+
+*Australia, Brazil, France, Germany, India, Italy, Japan, New Zealand, United Kingdom, United States
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
 
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+**Image Description:** A list showing the various steps people have taken to protect their online privacy, and the percentage of people who have taken each step. It also shows the percentage of people who have taken at least one step, broken down by country.
 
-17
-
-Most Adults Have Taken Steps to Protect Their Online Privacy, 
-Particularly in Brazil and India
-
-Steps Taken to Protect Online Activities and Personal Information 
-(Global Total)
-
-33%
-
-29%
-
-27%
-
-26%
-
-26%
-
-22%
-
-18%
-
-18%
-
-16%
-
-16%
-
-15%
-
-14%
-
-8%
-
-71%
-
-Have taken any 
-step to protect 
-identity
-
-29%
-
-Used online 
-parental controls on 
-children's accounts 
-or devices 
-\[PARENTS OF 
-MINORS ONLY]
-
-Changed 
-default 
-privacy 
-settings on 
-devices 
-
-Used an 
-identity theft 
-protection 
-service 
-\[US ONLY]
-
-Enabled 
-multi\-factor 
-authentication
-
-Disabled 
-third\-party 
-cookies in a 
-browser
-
-Used 
-something 
-other than 
-my full name 
-for social 
-media 
-profiles
-
-Used an 
-encrypted 
-email service 
-or messaging 
-app 
-
-Disabled 
-microphone 
-access on 
-my devices
-
-% Who Have Taken At Least One Step By Country
-
-Used a 
-virtual private 
-network 
-(VPN) to 
-encrypt 
-information 
-sent to and 
-from my 
-devices
-
-Deleted a 
-social media 
-account
-
-Used 
-anonymous 
-payment 
-methods 
-
-Used a privacy 
-monitoring service 
-to find and 
-remove/suppress 
-my personal 
-information online 
-\[US ONLY]
-
-Asked a 
-company to 
-see what 
-personal 
-information 
-they have in 
-their customer 
-records
-
-I have not 
-done 
-anything
-
-66%
-
-83%
-
-68%
-
-71%
-
-67%
-
-88%
-
-70%
-
-68%
-
-75%
-
-50%
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+Most Adults Have Taken Steps to Protect Their Online Privacy, Particularly in Brazil and India
 
 18
 
-Close to Half of Adults Have Experienced a Computer or 
-Mobile Device Virus, With a Quarter Reporting That They Have 
-Experienced This Multiple Times
-
-Scams, Viruses, and Attacks Experienced 
+Steps Taken to Protect Online Activities and Personal Information
 (Global Total)
 
-Multiple times 
+*   Used online parental controls on children's accounts or devices [PARENTS OF MINORS ONLY] 33%
+*   Changed default privacy settings on devices 29%
+*   Used an identity theft protection service [US ONLY] 27%
+*   Enabled multi-factor authentication 26%
+*   Disabled third-party cookies in a browser 26%
+*   Used something other than my full name for social media profiles 22%
+*   Used an encrypted email service or messaging app 18%
+*   Disabled microphone access on my devices 18%
+*   Used a virtual private network (VPN) to encrypt information sent to and from my devices 16%
+*   Deleted a social media account 16%
+*   Used anonymous payment methods 15%
+*   Used a privacy monitoring service to find and remove/suppress my personal information online [US ONLY] 14%
+*   Asked a company to see what personal information they have in their customer records 8%
+*   I have not done anything 29%
 
-Once
+| Country      | % Who Have Taken At Least One Step |
+|--------------|------------------------------------|
+| Australia    | 66%                                |
+| Brazil       | 88%                                |
+| France       | 68%                                |
+| Germany      | 71%                                |
+| India        | 50%                                |
+| Italy        | 70%                                |
+| Japan        | 68%                                |
+| New Zealand  | 75%                                |
+| UK           | 83%                                |
+| US           | 67%                                |
 
-16%
-
-10%
-
-8%
-
-15%
-
-8%
-
-12%
-
-6%
-
-7%
-
-24%
-
-23%
-
-Computer/mobile device virus
-
-Phishing scam
-
-Social media hacking
-
-Email hacking
-
-Ransomware attack
-
-47% (net)
-
-25% (net)
-
-23% (net)
-
-20% (net)
-
-12% (net)
+% Who Have Taken At Least One Step By Country
+Have taken any step to protect identity 71%
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+**Image Description:** A list showing the various scams, viruses, and attacks people have experienced, and the percentage of people who have experienced each.
+
+Close to Half of Adults Have Experienced a Computer or Mobile Device Virus, With a Quarter Reporting That They Have Experienced This Multiple Times
 
 19
 
-Adults in India and Brazil Most Likely to Say That They Have 
-Experienced a Computer or Mobile Device Virus 
+Scams, Viruses, and Attacks Experienced
+(Global Total)
 
-Scams, Viruses, and Attacks Experienced 
-(By Country)
-
-Computer/mobile 
-device virus
-
-38%
-
-71%
-
-43%
-
-40%
-
-68%
-
-53%
-
-23%
-
-49%
-
-37%
-
-48%
-
-Phishing scam
-
-30%
-
-16%
-
-27%
-
-14%
-
-32%
-
-19%
-
-9%
-
-39%
-
-36%
-
-34%
-
-Social media hacking
-
-18%
-
-34%
-
-21%
-
-12%
-
-32%
-
-22%
-
-5%
-
-28%
-
-22%
-
-32%
-
-Email hacking
-
-18%
-
-23%
-
-25%
-
-15%
-
-26%
-
-19%
-
-7%
-
-22%
-
-21%
-
-25%
-
-Ransomware attack
-
-10%
-
-12%
-
-11%
-
-10%
-
-25%
-
-9%
-
-5%
-
-13%
-
-12%
-
-15%
+*   Phishing scam 25% (net)
+    *   Multiple times 16%
+    *   Once 10%
+*   Computer/mobile device virus 47% (net)
+    *   Multiple times 24%
+    *   Once 23%
+*   Social media hacking 23% (net)
+    *   Multiple times 15%
+    *   Once 8%
+*   Email hacking 20% (net)
+    *   Multiple times 12%
+    *   Once 8%
+*   Ransomware attack 12% (net)
+    *   Multiple times 6%
+    *   Once 7%
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+**Image Description:** A table showing the percentage of people who have experienced various scams, viruses, and attacks, broken down by country.
+
+Adults in India and Brazil Most Likely to Say That They Have Experienced a Computer or Mobile Device Virus
 
 20
 
-1 in 4 Say They Have Fallen Victim to a Scam in the Past 12 
-Months, Most Commonly Clicking on a Fraudulent Package 
-Notification Link 
+| Country      | Phishing scam | Computer/mobile device virus | Social media hacking | Email hacking | Ransomware attack |
+|--------------|---------------|------------------------------|---------------------|---------------|-------------------|
+| Australia    | 30%           | 38%                          | 18%                 | 10%           | 18%               |
+| Brazil       | 16%           | 71%                          | 23%                 | 12%           | 34%               |
+| France       | 27%           | 43%                          | 25%                 | 11%           | 21%               |
+| Germany      | 14%           | 40%                          | 15%                 | 10%           | 12%               |
+| India        | 32%           | 68%                          | 26%                 | 25%           | 32%               |
+| Italy        | 19%           | 53%                          | 19%                 | 9%            | 22%               |
+| Japan        | 9%            | 23%                          | 7%                  | 5%            | 5%                |
+| New Zealand  | 39%           | 49%                          | 22%                 | 13%           | 28%               |
+| UK           | 36%           | 37%                          | 21%                 | 12%           | 22%               |
+| US           | 34%           | 48%                          | 25%                 | 15%           | 32%               |
 
-Scams Experienced in the Past Year 
-(Global Total)
-
-25%
-
-12%
-
-6%
-
-6%
-
-6%
-
-5%
-
-4%
-
-3%
-
-Any scam (NET)
-
-I clicked on a 
-fraudulent package 
-notification link
-
-I paid a fee to a 
-recruitment agency 
-and did not receive the 
-services/job opportunities 
-I was promised
-
-I met someone on an 
-online dating site who 
-asked me for money 
-and then disappeared 
-after I sent it to them
-
-I donated money to a 
-charity, but the money 
-was not received by 
-the people I intended 
-or it was misused
-
-I met someone on an 
-online dating site and 
-they coerced me into 
-investing in a fraudulent 
-cryptocurrency scheme
-
-I tried to apply for 
-Universal Credit/ 
-unemployment 
-benefits but someone 
-had already done so in 
-my name
-
-I tried to buy a pet 
-online or paid for a 
-pet service and didn't 
-receive what I 
-expected
-
-% Fell Victim to Scam in Past Year By Country
-
-16%
-
-26%
-
-17%
-
-39%
-
-64%
-
-18%
-
-6%
-
-18%
-
-20%
-
-27%
+Scams, Viruses, and Attacks Experienced
+(By Country)
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+**Image Description:** A list showing the various scams people have experienced in the past year, and the percentage of people who have experienced each. It also shows the percentage of people who have fallen victim to any scam in the past year, broken down by country.
+
+1 in 4 Say They Have Fallen Victim to a Scam in the Past 12 Months, Most Commonly Clicking on a Fraudulent Package Notification Link
 
 21
 
-The Vast Majority Want to Do More to Protect Their Privacy, but 
-More Than Half Don’t Know How 
+Scams Experienced in the Past Year
+(Global Total)
 
-% Agree
+*   Any scam (NET) 25%
+*   I clicked on a fraudulent package notification link 12%
+*   I paid a fee to a recruitment agency and did not receive the services/job opportunities I was promised 6%
+*   I met someone on an online dating site who asked me for money and then disappeared after I sent it to them 6%
+*   I donated money to a charity, but the money was not received by the people I intended or it was misused 6%
+*   I met someone on an online dating site and they coerced me into investing in a fraudulent cryptocurrency scheme 5%
+*   I tried to apply for Universal Credit/unemployment benefits but someone had already done so in my name 4%
+*   I tried to buy a pet online or paid for a pet service and didn't receive what I expected 3%
 
-I want to do more to 
-protect my privacy
+| Country      | % Fell Victim to Scam in Past Year |
+|--------------|------------------------------------|
+| Australia    | 16%                                |
+| Brazil       | 64%                                |
+| France       | 17%                                |
+| Germany      | 26%                                |
+| India        | 6%                                 |
+| Italy        | 18%                                |
+| Japan        | 20%                                |
+| New Zealand  | 27%                                |
+| UK           | 39%                                |
+| US           | 18%                                |
 
-I don't know how to 
-protect my privacy
-
-84%
-
-49%
-
-78%
-
-46%
-
-88%
-
-41%
-
-81%
-
-56%
-
-92%
-
-53%
-
-85%
-
-51%
-
-GLOBAL TOTAL
-
-85%
-
-54%
-
-86%
-
-46%
-
-87%
-
-63%
-
-86%
-
-45%
-
-84%
-
-52%
+% Fell Victim to Scam in Past Year By Country
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+**Image Description:** A section showing the percentage of people who agree that they don't know how to protect their privacy and the percentage who want to do more to protect their privacy, broken down by country.
+
+The Vast Majority Want to Do More to Protect Their Privacy, but More Than Half Don’t Know How
 
 22
 
-8 in 10 Consumers Say They Are Concerned About Data Privacy, 
-and for Nearly 7 in 10, They Are More Alarmed Than Ever
+| Country      | I don't know how to protect my privacy | I want to do more to protect my privacy |
+|--------------|---------------------------------------|-----------------------------------------|
+| Australia    | 41%                                   | 88%                                     |
+| Brazil       | 49%                                   | 84%                                     |
+| France       | 56%                                   | 81%                                     |
+| Germany      | 53%                                   | 92%                                     |
+| India        | 46%                                   | 78%                                     |
+| Italy        | 54%                                   | 85%                                     |
+| Japan        | 46%                                   | 86%                                     |
+| New Zealand  | 63%                                   | 87%                                     |
+| UK           | 45%                                   | 86%                                     |
+| US           | 52%                                   | 84%                                     |
 
 % Agree
 
-I am concerned about 
-data privacy
-
-I am more alarmed than 
-ever about my privacy
-
-81%
-
-67%
-
-73%
-
-54%
-
-85%
-
-68%
-
-77%
-
-53%
-
-79%
-
-81%
-
-71%
-
-74%
-
-83%
-
-82%
-
-88%
-
-76%
-
-85%
-
-70%
-
-80%
-
-69%
-
 GLOBAL TOTAL
-
-82%
-
-65%
+I don't know how to protect my privacy 51%
+I want to do more to protect my privacy 85%
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+**Image Description:** A section showing the percentage of people who agree that they are more alarmed than ever about their privacy and the percentage who are concerned about data privacy, broken down by country.
+
+8 in 10 Consumers Say They Are Concerned About Data Privacy, and for Nearly 7 in 10, They Are More Alarmed Than Ever
 
 23
 
-The Majority of Adults Admit They Make Trade\-Offs on Certain 
-Aspects of Online Safety in Return for Greater Convenience
+| Country      | I am more alarmed than ever about my privacy | I am concerned about data privacy |
+|--------------|----------------------------------------------|-----------------------------------|
+| Australia    | 68%                                          | 85%                               |
+| Brazil       | 67%                                          | 81%                               |
+| France       | 53%                                          | 77%                               |
+| Germany      | 76%                                          | 88%                               |
+| India        | 54%                                          | 73%                               |
+| Italy        | 74%                                          | 71%                               |
+| Japan        | 82%                                          | 83%                               |
+| New Zealand  | 81%                                          | 79%                               |
+| UK           | 70%                                          | 85%                               |
+| US           | 65%                                          | 82%                               |
 
 % Agree
 
-I accept certain risks to my 
-online privacy to make my 
-life more convenient
-
-It's impossible to protect 
-my privacy
-
-67%
-
-61%
-
-58%
-
-57%
-
-69%
-
-48%
-
-58%
-
-59%
-
-53%
-
-65%
-
-46%
-
-56%
-
-66%
-
-47%
-
-52%
-
-46%
-
-70%
-
-58%
-
-61%
-
-55%
-
 GLOBAL TOTAL
-
-73%
-
-58%
+I am more alarmed than ever about my privacy 69%
+I am concerned about data privacy 80%
 
 Copyright © 2021 NortonLifeLock Inc. All rights reserved.
+
+**Image Description:** A section showing the percentage of people who agree that it's impossible to protect their privacy and the percentage who accept certain risks to their online privacy to make their life more convenient, broken down by country.
+
+The Majority of Adults Admit They Make Trade-Offs on Certain Aspects of Online Safety in Return for Greater Convenience
 
 24
 
-4
-
-Online Creeping
-
-Over one\-third of adults\* who have been in a romantic 
-relationship admit to online “stalking” their current or former 
-partners. Further, 2 in 3 adults who have ever used an 
-online dating site admit to looking up a potential partner 
-online after matching with them, either through social 
-media, search engines, professional networking sites, or in 
-some cases, a paid background check. 
-
-\*Australia, Brazil, France, Germany, India, Italy, Japan, New Zealand, United Kingdom, United States
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-25
-
-One\-Third of Adults Who Have Been in a Romantic Relationship 
-Have Online Stalked an Ex or Partner Without Their Knowledge 
-or Consent
-
-% Who Have Online 
-Stalked a Partner 
-By Country
-
-37%
-
-Have online stalked an 
-ex or current partner in 
-one of these ways
-
-17%
-
-13%
-
-10%
-
-9%
-
-8%
-
-7%
-
-6%
-
-6%
-
-63%
-
-Checked their phone to view text messages, phone calls, direct messages (DMs), emails, or photos
-
-Reviewed their search history on one of their devices
-
-Used my knowledge of their passwords to access their device or online accounts
-
-Tracked their location via a location sharing app
-
-Created a fake profile to check on them on social media
-
-Used an app to monitor their text messages, phone calls, direct messages (DMs), emails, or photos
-
-Tracked their physical activity via their phone or health app
-
-Created a fake profile on a dating app to see if they have a dating profile
-
-None of these
-
-25%
-
-54%
-
-35%
-
-31%
-
-73%
-
-28%
-
-12%
-
-30%
-
-31%
-
-42%
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-26
-
-For Those Who Have Online Stalked a Romantic Partner, More Than 
-One Third Said They Did So Because They Were Simply Curious
-
-Reasons for Checking in on a Romantic Partner without Their Knowledge or Consent
-(Global Total of Those Who Online Stalked a Current or Former Partner)
-
-I was just curious
-
-I suspected they were up to no good
-
-I wanted to know what they were doing
-
-I didn't trust them
-
-I wanted to know who they were with
-
-I wanted to make sure they were safe, 
-physically and/or mentally
-
-I wanted to know where they were
-
-I found out they were checking in on me, so I 
-decided to do the same
-
-I discovered I was removed or blocked from 
-their social media account(s)
-
-Other reason
-
-5%
-
-I don't know why
-
-2%
-
-37%
-
-26%
-
-26%
-
-25%
-
-23%
-
-23%
-
-20%
-
-18%
-
-16%
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-27
-
-In All Countries, Curiosity Tops the List of Reasons for Checking in 
-on a Romantic Partner
-
-Top 3 Reasons for Checking in on a Romantic Partner by Country 
-(Of Those Who Online Stalked a Current or Former Partner)
-
-I was just curious
-30%
-
-I was just curious
-38%
-
-I was just curious
-35%
-
-Suspected they were up to no good
-
-Suspected they were up to no good
-
-Didn’t trust them
-
-38%
-
-25%
-
-29%
-
-Didn’t trust them
-27%
-
-Wanted to know who they were with
-29%
-
-Wanted to make sure they were safe
-22%
-
-Wanted to know what they were doing
-20%
-
-Wanted to know what they were doing
-36%
-
-I was just curious
-29%
-
-Didn’t trust them
-
-22%
-
-I was just curious
-40%
-
-Wanted to make sure they were safe
-
-37%
-
-I was just curious
-42%
-
-I was just curious
-36%
-
-I was just curious
-39%
-
-Wanted to know what they were doing
-
-Suspected they were up to no good
-
-Didn’t trust them
-
-20%
-
-36%
-
-30%
-
-I was just curious
-34%
-
-Didn’t trust them
-
-24%
-
-I was just curious
-36%
-
-Suspected they were up to no good
-
-29%
-
-Suspected they were up to no good
-18%
-
-Wanted to know what they were doing
-30%
-
-Suspected they were up to no good
-25%
-
-Suspected they were up to no good
-23%
-
-Wanted to know what they were doing
-28%
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-28
-
-More Than 1 in 4 Adults Say They Don’t Care About Being 
-Stalked, as Long as It’s Not in Person 
-
-Agreement with Attitudes About Online Stalking
-(Global Total)
-
-27%
-
-27%
-
-26%
-
-22%
-
-21%
-
-I don't care if I'm being 
-stalked online by a 
-current/former partner as 
-long as I'm not being 
-stalked in person
-
-Online stalking is okay if it 
-is for their current/former 
-partner's physical or 
-mental wellbeing
-
-Online stalking is okay if 
-one or both partners have 
-cheated or are suspected 
-of cheating
-
-I would be more likely to 
-stalk a current/former 
-partner online if I knew I 
-would not get caught
-
-It is harmless to stalk a 
-current/former partner 
-online
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-29
-
-Adults in Japan Least Likely to Condone Online Stalking 
-
-% Agree
-(By Country)
-
-I don't care if I'm being stalked 
-online by a current/former 
-partner as long as I'm not 
-being stalked in person
-
-Online stalking is okay if it 
-is for their current/former 
-partner's physical or 
-mental wellbeing
-
-Online stalking is okay if 
-one or both partners have 
-cheated or are suspected 
-of cheating
-
-I would be more likely to 
-stalk a current/former 
-partner online if I knew I 
-would not get caught
-
-It is harmless to stalk a 
-current/former partner 
-online
-
-Australia
-
-24%
-
-21%
-
-19%
-
-Brazil
-
-France
-
-Germany
-
-India
-
-Italy
-
-31%
-
-27%
-
-33%
-
-51%
-
-19%
-
-Japan
-
-9%
-
-9%
-
-New Zealand
-
-33%
-
-UK
-
-US
-
-24%
-
-23%
-
-37%
-
-30%
-
-21%
-
-20%
-
-29%
-
-23%
-
-23%
-
-32%
-
-28%
-
-18%
-
-18%
-
-26%
-
-18%
-
-17%
-
-16%
-
-17%
-
-17%
-
-21%
-
-59%
-
-55%
-
-48%
-
-52%
-
-19%
-
-16%
-
-23%
-
-22%
-
-24%
-
-14%
-
-11%
-
-21%
-
-20%
-
-22%
-
-16%
-
-12%
-
-22%
-
-20%
-
-20%
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-30
-
-Adults Aged 40 or Older More Likely Than Their Younger 
-Counterparts to Disapprove of Online Stalking
-
-% Agree By Age
-(Global Total)
-
-I don't care if I'm being stalked online by a 
-current/former partner as long as I'm not 
-being stalked in person
-
-Online stalking is okay if it is for their 
-current/former partner's physical or mental 
-wellbeing
-
-Online stalking is okay if one or both 
-partners have cheated or are suspected of 
-cheating
-
-I would be more likely to stalk a 
-current/former partner online if I knew I 
-would not get caught
-
-It is harmless to stalk a current/former 
-partner online
-
-Total
-
-Age 40\+
-
-Age 18\-39
-
-21%
-
-27%
-
-37%
-
-19%
-
-27%
-
-40%
-
-17%
-
-26%
-
-38%
-
-13%
-
-22%
-
-34%
-
-14%
-
-21%
-
-31%
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-31
-
-Familiarity With “Stalkerware” or “Creepware” is Low Among 
-Adults, Though Lowest in Japan and France
-
-Familiarity with “Stalkerware” or “Creepware”
-
-53%
-
-23%
-
-24%
-
-15%
-
-12%
-
-25%
-
-52%
-
-36%
-
-21%
-
-49%
-
-12%
-
-39%
-
-60%
-
-7%
-
-72%
-
-17%
-
-55%
-
-GLOBAL TOTAL
-
-34%
-
-30%
-
-36%
-
-28%
-
-Familiar (very/somewhat)
-
-Just heard name
-
-Never heard of it
-
-24%
-
-33%
-
-8%
-
-21%
-
-43%
-
-71%
-
-11%
-
-23%
-
-66%
-
-9%
-
-25%
-
-66%
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-32
-
-2 in 3 Adults Who Have Ever Used an Online Dating Site Admit to 
-Looking up a Potential Partner Online After Matching With Them
-
-Methods Used to Look Up Dating Matches
-(Global Total of Those Who Have Ever Used a Dating Website/App)
-
-Paid to run a background 
-check on them
-
-Looked up their profile on a 
-professional networking site 
-
-Looked up their social 
-media profile(s)
-
-8%
-
-22%
-
-24%
-
-28%
-
-43%
-
-66%
-
-Looked up their friends or 
-family on social media
-
-Typed their name into a 
-search engine
-
-66%
-
-Have done any 
-of these
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-33
-
-Most Commonly, People Look Up Dating Matches by Searching for 
-Social Media Profiles or Typing Their Name into a Search Engine
-
-Top 3 Methods Used to Look Up Dating Matches by Country
-(Of Those Who Have Ever Used a Dating Website/App)
-
-Looked up social media profile
-38%
-
-Looked up social media profile
-52%
-
-Looked up social media profile
-43%
-
-Looked up social media profile
-24%
-
-Looked up social media profile
-60%
-
-Typed name into search engine
-
-Typed name into search engine
-
-Typed name into search engine
-
-Typed name into search engine
-
-Looked up prof. networking profile
-
-21%
-
-27%
-
-36%
-
-23%
-
-43%
-
-Looked up prof. networking profile
-21%
-
-Looked up friends/fam on social media
-26%
-
-Looked up friends/fam on social media
-22%
-
-Looked up prof. networking profile
-15%
-
-Looked up friends/fam on social media
-40%
-
-Looked up social media profile
-33%
-
-Looked up social media profile
-13%
-
-Looked up social media profile
-51%
-
-Looked up social media profile
-36%
-
-Looked up social media profile
-49%
-
-Typed name into search engine
-
-Typed name into search engine
-
-Typed name into search engine
-
-Typed name into search engine
-
-Typed name into search engine
-
-24%
-
-10%
-
-26%
-
-25%
-
-37%
-
-Looked up prof. networking profile
-15%
-
-Looked up friends/fam on social media
-6%
-
-Looked up friends/fam on social media
-24%
-
-Looked up prof. networking profile
-22%
-
-Looked up prof. networking profile
-30%
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-34
-
-For Half, the Information They Find Causes Them to Un\-Match, 
-Particularly for Adults in India
-
-Reasons for Unmatching or Declining a Date
-(Global Total of Those Who Have Ever Used a Dating Website/App)
-
-48%
-
-Have unmatched or declined a date 
-after learning new information 
-
-20%
-
-18%
-
-14%
-
-13%
-
-9%
-
-9%
-
-8%
-
-8%
-
-Found out they lied about their personal details (e.g., age, height, location, etc.)
-
-Found pictures of them online that did not align with their dating profile pictures
-
-Found social media posts that were disturbing
-
-Found pictures of them online that were disturbing
-
-Found their job title
-
-Found disturbing information about their family
-
-Found out they had a criminal record
-
-Found their political affiliation
-
-% Who Unmatched or 
-Declined a Date After Learning 
-New Information By Country 
-
-40%
-
-59%
-
-45%
-
-39%
-
-76%
-
-33%
-
-19%
-
-37%
-
-44%
-
-51%
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-35
-
-Online Creeping Habits Lead To Slip\-ups More Frequently for 
-Younger Consumers Than Those Aged 40 or Older
-
-Methods Used to Check on Activity 
-(Global Total)
-
-Slip\-ups Resulting From Online Creeping 
-(Global Total)
-
-I have looked at the music 
-account of a romantic 
-interest (e.g., Spotify 
-account, Apple Music 
-account, etc.)
-
-I have used a payment app 
-(examples vary by country) 
-to check on someone else's 
-activity
-
-I have accidently liked an 
-old picture or post on the 
-social media profile of a 
-romantic interest
-
-I have accidently liked an old 
-picture or post of my partner's 
-ex\-significant other on their 
-social media profile 
-
-I have accidentally 
-revealed information that I 
-found online about a date to 
-that person
-
-\[EVER HAD A ROMANTIC 
-PARTNER ONLY]
-
-Total
-
-Age 40\+
-
-Age 18\-39
-
-16%
-
-9%
-
-4%
-
-1
-
-2
-
-11%
-
-6%
-
-3%
-
-1
-
-2
-
-25%
-
-14%
-
-7%
-
-1
-
-2
-
-21%
-
-12%
-
-5%
-
-10%
-
-6%
-
-2%
-
-2
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-2
-
-1
-
-1
-
-36
-
-Indian Adults Are More Likely to Have Taken Preventative Measures 
-to Protect Themselves Online
-
-Taken a Preventative Measure
-(Global Total)
-
-Have taken any preventative measure 
-to protect themselves online
-
-Have used something other than my 
-full name on a dating app or website 
-(e.g., first name only, middle name 
-only, first initial of last name, etc.)\*
-
-Have shared my location with a friend 
-or family member before meeting up in 
-person with someone I met online
-
-18%
-
-21%
-
-11%
-
-% Taken a Preventative Measure By Country
-
-13%
-
-15%
-
-14%
-
-11%
-
-5%
-
-14%
-
-13%
-
-18%
-
-34%
-
-44%
-
-\*Among those who have ever used a dating website or app
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-37
-
-Demographics
-
-5
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-38
-
-2022 Global Demographics
-
-Age
-
-Gender
-
-Gen Z (18\-24\) Millennials (25\-41\) Gen X (42\-56\)
-
-Boomers (57\-75\)
-
-Seniors (76\+)
-
-31%
-
-29%
-
-24%
-
-13%
-
-49%
-male
-
-51%
-female
-
-3%
-
-Copyright © 2021 NortonLifeLock Inc. All rights reserved.
-
-39
+| Country      | It's impossible to protect my privacy | I accept certain risks to my online privacy to make my life more convenient |
+|--------------|--------------------------------------|---------------------------------------------------------------------------|
+| Australia    | 48%                                  | 69%                                                                       |
+| Brazil       | 61%                                  | 67%                                                                       |
+| France       | 59%                                  | 58%                                                                       |
+| Germany      | 46%                                  | 52%                                                                       |
+| India        | 57%                                  | 58%                                                                       |
+| Italy        | 56%                                  | 46%                                                                       |
+| Japan        | 47%                                  | 66%                                                                       |
+| New Zealand  | 65%                                  | 53%                                                                       |
+| UK           | 58%                                  | 70
