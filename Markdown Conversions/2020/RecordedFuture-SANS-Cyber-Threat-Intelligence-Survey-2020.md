@@ -28,9 +28,10 @@ Recorded Future
 * [About the Author](#about-the-author)
 * [Sponsor](#sponsor)
 
-[1] “The Evolution of Cyber Threat Intelligence (CTI): 2019 SANS CTI Survey,” February 2019, www.sans.org/reading-room/whitepapers/analyst/evolution-cyber-threat-intelligence-cti-2019-cti-survey-38790 [Registration required.]
-[2] www.youtube.com/watch?v=RwsAiz9dBEQ&list=PLfouvuAjspTrfjl_CskRxIAsMHdWusK-j
-[3] www.sans.org/course/cyber-threat-intelligence
+[1]  "The Evolution of Cyber Threat Intelligence (CTI): 2019 SANS CTI Survey,” February 2019,   
+www.sans.org/reading-room/whitepapers/analyst/evolution-cyber-threat-intelligence-cti-2019-cti-survey-38790 [Registration required.]
+[2]  www.youtube.com/watch?v=RwsAiz9dBEQ&list=PLfouvuAjspTrfjl_CskRxIAsMHdWusK-j
+[3]  www.sans.org/course/cyber-threat-intelligence
 
 ## Executive Summary
 Cyber Threat Intelligence (CTI) is analyzed information about the capabilities, opportunities and intent of adversaries that meets a specific requirement determined by a stakeholder. Organizations with CTI programs focus on understanding the threats they face and providing specific information to help defend against those threats. In the past few years, CTI has evolved from small, ad-hoc tasks performed disparately across an organization to, in many cases, robust programs with their own staff, tools and processes that support the entire organization. 2020 was a big year for the SANS CTI Survey, with a record number of respondents and the highest ever reporting of CTI programs within organizations, with 1,006 responding to the survey in 2020 and just 505 responding in 2019.
@@ -46,9 +47,35 @@ Some areas leveled out after years of growth—such as implementation of threat 
 
 This year’s survey response pool represented a wide-ranging group of security professionals from various organizations. Figure 1 provides a snapshot of those respondents.
 
-*Figure 1. Key Demographic Information*
-
-**Image Description:** Figure 1 is a composite image containing three sections, each with a title and a visual representation of survey respondent demographics. The first section, "Top 4 Industries Represented," shows four gears, each representing 25 respondents, labeled with "Banking and finance", "Cybersecurity service provider", "Technology", and "Government". The second section, "Organizational Size," displays five buildings, each representing 25 respondents, labeled with "Small (Up to 1,000)", "Small/Medium (1,001-5,000)", "Medium (5,001-15,000)", "Medium/Large (15,001-50,000)", and "Large (More than 50,001)". The third section, "Top 4 Roles Represented," shows four figures, each representing 25 respondents, labeled with "Security operations/Security analyst", "Incident responder", "Security manager or director", and "Other". Below each section, there are additional numbers showing the split between "Ops" and "HQ" for each category.
+**Figure 1. Key Demographic Information**
+*   **Top 4 Industries Represented:**
+    *   Banking and finance
+    *   Cybersecurity service provider
+    *   Technology
+    *   Government
+    *   *Each gear represents 25 respondents.*
+*   **Organizational Size:**
+    *   Small (Up to 1,000)
+    *   Small/Medium (1,001–5,000)
+    *   Medium (5,001–15,000)
+    *   Medium/Large (15,001–50,000)
+    *   Large (More than 50,001)
+    *   *Each building represents 25 respondents.*
+*   **Top 4 Roles Represented:**
+    *   Security operations/Security analyst
+    *   Incident responder
+    *   Security manager or director
+    *   Other
+    *   *Each person represents 25 respondents.*
+*   **Operations and Headquarters:**
+    *   Small: Ops: 656, HQ: 512
+    *   Small/Medium: Ops: 273, HQ: 13
+    *   Medium: Ops: 214, HQ: 13
+    *   Medium/Large: Ops: 275, HQ: 34
+    *   Large: Ops: 290, HQ: 34
+    *   More than 50,001: Ops: 303, HQ: 50
+    *   More than 50,001: Ops: 406, HQ: 70
+    *   More than 50,001: Ops: 552, HQ: 280
 
 ## CTI Programs: The Right People and the Right Tools
 Cyber Threat Intelligence involves analyzing information about threats and producing guidance to determine what steps must be taken in response to those threats. This process, which by now seems intuitive in concept, is incredibly complex and relies on a combination of people, processes and tools to both generate, consume and act on the intelligence. All three things are critical to a successful CTI program. Without personnel to evaluate information and make analytic judgements, there would be no CTI. Likewise, without processes and tools, even the best analysts will find themselves severely limited in the amount of data they can turn into actionable intelligence compared with the volume of threats their organizations potentially face. While the 2020 CTI Survey results show some promising improvements in these critical areas, they also highlight places where the community would benefit from continued efforts.
@@ -62,15 +89,28 @@ Some respondents provided additional insight into the collaboration supporting t
 
 Now that we see the highest reported number of dedicated threat intelligence teams in respondent organizations, it is helpful to understand how these teams are structured. In the 2020 survey, respondents reported a mix of security operations center (SOC) and incident response (IR) personnel, as illustrated in Figure 3.
 
-*Figure 2. Allocation of CTI Resources*
+**Figure 2. Allocation of CTI Resources**
+*   A pie chart illustrating the allocation of CTI resources within organizations.
+    *   Yes, we have a formal dedicated team: 49.5%
+    *   Yes, it’s shared responsibility with staff pulled from other security groups: 26.2%
+    *   No responsibilities are assigned, but we plan to: 8.8%
+    *   Yes, we have a single dedicated person: 7.1%
+    *   No responsibilities are assigned, with no plans to: 5.2%
+    *   Unknown: 3.2%
 
-**Image Description:** Figure 2 is a horizontal bar chart titled "Does your organization have resources that focus on CTI?". The chart displays the percentage of respondents for different categories. The categories and their corresponding percentages are as follows: "Yes, we have a formal dedicated team" (49.5%), "Yes, it’s shared responsibility with staff pulled from other security groups" (26.2%), "No responsibilities are assigned, but we plan to" (8.8%), "Yes, we have a single dedicated person" (7.1%), "No responsibilities are assigned, with no plans to" (5.2%), and "Unknown" (3.2%).
+[4] "The Evolution of Cyber Threat Intelligence (CTI): 2019 SANS CTI Survey,” February 2019,   
+www.sans.org/reading-room/whitepapers/analyst/evolution-cyber-threat-intelligence-cti-2019-cti-survey-38790, p. 8. [Registration required.]
 
-[4] “The Evolution of Cyber Threat Intelligence (CTI): 2019 SANS CTI Survey,” February 2019, www.sans.org/reading-room/whitepapers/analyst/evolution-cyber-threat-intelligence-cti-2019-cti-survey-38790, p. 8. [Registration required.]
-
-*Figure 3. CTI Team Composition*
-
-**Image Description:** Figure 3 is a horizontal bar chart titled "Where are CTI team members drawn from within the organization? Select those that most apply." The chart shows the percentage of respondents selecting each category. The categories and their percentages are: "Security operations center (SOC)" (54.4%), "Incident response (IR) team" (48.0%), "Enterprise security team" (39.2%), "Standalone team dedicated to CTI" (31.4%), "IT operations team" (24.9%), "Vulnerability management team" (21.5%), "Business group" (7.0%), and "Other" (4.0%).
+**Figure 3. CTI Team Composition**
+*   A horizontal bar chart showing the composition of CTI teams, with multiple selections allowed.
+    *   Security operations center (SOC): 54.4%
+    *   Incident response (IR) team: 48.0%
+    *   Enterprise security team: 39.2%
+    *   Standalone team dedicated to CTI: 31.4%
+    *   IT operations team: 24.9%
+    *   Vulnerability management team: 21.5%
+    *   Business group: 7.0%
+    *   Other: 4.0%
 
 These skills are all extremely useful to an organization’s threat intelligence capabilities, as both incident triage and in-depth IR of internal events are critical to understanding the threats that an organization faces. In the past, we have seen similar numbers of SOC and IR resources as part of CTI teams; however this year’s respondents reported having a higher number of dedicated threat intelligence analysts as part of their teams. Respondents also indicated a high level of cross-functional collaboration between security teams in their organizations, writing that their CTI team is part of a “purple team” or a “fusion cell” focusing on security. In addition, some of the responses make it clear that there is not, and will likely never be, a one-size-fits-all approach to CTI teams, adding their own categories of personnel including finance, digital crimes and security strategy teams.
 
@@ -91,9 +131,20 @@ Respondents did not report a high level of change in processing capabilities bet
 ### Management Tools
 In the 2020 CTI Survey, respondents report that Security Information and Event Management (SIEM) platforms, network traffic monitoring tools and intrusion monitoring platforms are the most heavily used tools. Of this, SIEM platforms have the highest reported level of use (86.9%) as well as the highest use of automation. Most other management tools, including network traffic monitoring, intrusion analysis and forensics platforms are reported as having some automation, with the exception of spreadsheets and emails, which are mostly processed manually. Despite the lack of automated or semi-automated processes, spreadsheets and emails remain one of the top management tools for CTI analysts. See Figure 4.
 
-*Figure 4. CTI Management Tool Usage*
-
-**Image Description:** Figure 4 is a horizontal stacked bar chart titled "What type of management tools are you using to aggregate, analyze and/or present CTI information? Select all that apply, and indicate whether these are used disparately or work together under a unified GUI." The chart displays the usage of different tools, broken down into three categories: "Used Disparately", "Use Some Automation", and "Integrated GUI". The tools and their corresponding percentages across the three categories are as follows: "SIEM platform" (2.7%, 16.8%, 67.2%), "Open source CTI management platform (CRITS, MISP)" (13.2%, 18.5%, 16.8%), "Network traffic analysis tools" (10.5%, 21.2%, 39.2%), "CTI service provider" (7.6%, 22.0%, 25.6%), "Spreadsheets and/or email" (19.1%, 29.1%, 28.3%), "Homegrown system" (27.2%, 26.4%, 27.9%), "Forensics platform" (29.1%, 27.2%, 24.7%), "Third-party visualization and reporting platform" (31.5%, 27.3%, 29.3%), "Other" (37.7%, 37.1%, 4.4%), "Security analytics platform other than SIEM" (35.8%, 29.6%, 10.1%), "Commercial CTI management platform" (24.7%, 42.3%, 14.0%), and "Intrusion monitoring platform" (25.6%, 22.4%, 21.4%).
+**Figure 4. CTI Management Tool Usage**
+*   A horizontal bar chart showing the usage of various CTI management tools, with multiple selections allowed, and indicating if they are used disparately, with some automation, or with an integrated GUI.
+    *   SIEM platform: 86.9% (Integrated GUI: 39.2%, Use Some Automation: 27.2%, Used Disparately: 20.5%)
+    *   Network traffic analysis tools: 63.1% (Integrated GUI: 27.9%, Use Some Automation: 29.1%, Used Disparately: 6.1%)
+    *   Intrusion monitoring platform: 63.4% (Integrated GUI: 27.2%, Use Some Automation: 29.1%, Used Disparately: 14.0%)
+    *   Open source CTI management platform (CRITS, MISP): 37.7% (Integrated GUI: 10.5%, Use Some Automation: 16.8%, Used Disparately: 10.5%)
+    *   CTI service provider: 37.1% (Integrated GUI: 13.2%, Use Some Automation: 18.5%, Used Disparately: 5.4%)
+    *   Spreadsheets and/or email: 35.8% (Integrated GUI: 2.7%, Use Some Automation: 16.8%, Used Disparately: 16.4%)
+    *   Homegrown system: 29.6% (Integrated GUI: 19.1%, Use Some Automation: 7.6%, Used Disparately: 2.9%)
+    *   Forensics platform: 27.3% (Integrated GUI: 4.4%, Use Some Automation: 22.0%, Used Disparately: 21.4%)
+    *   Third-party visualization and reporting platform: 25.6% (Integrated GUI: 25.6%, Use Some Automation: 10.1%, Used Disparately: 2.1%)
+    *   Other: 24.7% (Integrated GUI: 21.2%, Use Some Automation: 10.1%, Used Disparately: 10.1%)
+    *   Security analytics platform other than SIEM: 22.4% (Integrated GUI: 29.3%, Use Some Automation: 28.3%, Used Disparately: 16.4%)
+    *   Commercial CTI management platform: 16.4% (Integrated GUI: 29.6%, Use Some Automation: 27.3%, Used Disparately: 21.4%)
 
 Over the years, respondents have consistently listed spreadsheets as a CTI tool for both management and processing. In addition to allowing data to be stored and shared, many spreadsheet applications have built-in functionality that supports processing such as sorting, deduplication and converting the data into various visual formats. Many dedicated CTI tool developers understand that spreadsheets are familiar and functional for analysts and have built them into their own processes. Most data in CTI tools can be exported and imported into .csv format, and some SIEM tools allow users to build automated tasks around data in spreadsheets. These additions will help overcome some of the shortcomings of working with spreadsheets, such as getting consistent data to different users within the same team, which is even more important now that there are more dedicated CTI teams as opposed to standalone analysts.
 
@@ -106,35 +157,44 @@ The intelligence cycle is a process for generating accurate, useable intelligenc
 
 This year’s survey shows that more organizations are following the steps of the intelligence cycle either intentionally or intuitively. In the 2020 survey, we covered three critical processes from the intelligence cycle: requirements, collection and dissemination.
 
-*Figure 5. CTI Production and Consumption by Type*
+**Figure 5. CTI Production and Consumption by Type**
+*   A horizontal bar chart showing the production and consumption of CTI by type.
+    *   Raw threat data: Produce: 5.0%, Consume: 40.0%, Both: 49.7%
+    *   Contextual threat alerts: Produce: 6.6%, Consume: 43.0%, Both: 48.1%
+    *   Published threat intelligence: Produce: 4.7%, Consume: 54.5%, Both: 39.3%
 
-**Image Description:** Figure 5 is a horizontal bar chart titled "Indicate whether your organization produces or consumes CTI in terms of raw data, contextual threat alerts and/or published threat intelligence reports." The chart shows the percentage of respondents in three categories: "Produce", "Consume", and "Both", for each type of CTI. For "Contextual threat alerts", the percentages are 6.6%, 43.0%, and 48.1%, respectively. For "Published threat intelligence", the percentages are 4.7%, 54.5%, and 39.3%, respectively. For "Raw threat data", the percentages are 5.0%, 40.0%, and 49.7%, respectively.
-
-> TAKEAWAYS
-> *   More organizations are investing in dedicated CTI teams versus individual analysts or fully outsourced functionalities. These teams will enable organizations to better understand and address the threats they face. Many organizations just beginning to build out their teams still need to focus not only on training of CTI skills, but also on collaboration and teamwork skills to work with internal and external partners, which are critical for a CTI team.
-> *   We see less full automation and more semi-automation in CTI processing tools. While we see more automation in the management of CTI, especially when it comes to the use of tools such as SIEMs and network management tools, respondents report less full automation and more semi-automation in CTI processing tools. While manual processes are often a hindrance to analysis, semi-automation may be the most beneficial for analysts, taking away some of the most tedious aspects of a task, but still providing analysts with a level of control and transparency that gives them confidence in their processes.
-
-*Figure 6. The Intelligence Cycle*
-
-**Image Description:** Figure 6 is a circular diagram illustrating the intelligence cycle. The cycle is divided into five stages: "Planning/Requirements", "Collection", "Processing", "Analysis", and "Dissemination", with arrows indicating the flow of the cycle.
+**Figure 6. The Intelligence Cycle**
+*   A diagram illustrating the intelligence cycle with the following steps:
+    *   Planning/Requirements
+    *   Collection
+    *   Processing
+    *   Analysis
+    *   Dissemination
 
 ### Requirements
 The 2019 CTI Survey was the first year that we looked into the development and use of requirements to drive threat intelligence programs, an area that has seen incredible growth in the past year. Requirements seek to identify what specific questions or concerns must be addressed by a threat intelligence program. The number of organizations reporting a formal process for gathering requirements increased 13% from last year to almost 44% (see Table 1).
 
 Also positive news: Those contributing to CTI requirements increased across the board, with respondents reporting more input from teams including security operations, IR and business units. In fact, security operations had more input than the CTI teams this year, indicating that operations are beginning to drive intelligence for the first time reported. See Figure 7.
 
-|                                                              | 2020    | 2019    | Trend   |
-| :----------------------------------------------------------- | :------ | :------ | :------ |
-| Yes, we have documented intelligence requirements.            | 43.8%   | 30.3%   | 13.5%   |
-| No, our requirements are ad hoc.                             | 29.7%   | 37.0%   | -7.3%   |
-| No, but we plan to define them.                              | 20.4%   | 26.0%   | -5.6%   |
-| No, we have no plans to formalize requirements.              | 6.1%    | 6.7%    | -0.6%   |
+**Table 1. Defining CTI Requirements (Year over Year)**
 
-*Table 1. Defining CTI Requirements (Year over Year)*
+|                                                       | 2020    | 2019    | Trend   |
+| ----------------------------------------------------- | ------- | ------- | ------- |
+| Yes, we have documented intelligence requirements.     | 43.8%   | 30.3%   | 13.5%   |
+| No, our requirements are ad hoc.                       | 29.7%   | 37.0%   | -7.3%   |
+| No, but we plan to define them.                        | 20.4%   | 26.0%   | -5.6%   |
+| No, we have no plans to formalize requirements.       | 6.1%    | 6.7%    | -0.6%   |
 
-*Figure 7. CTI Requirements Contributors*
-
-**Image Description:** Figure 7 is a horizontal bar chart titled "If you have CTI requirements, who contributes to them? Select all that apply." The chart displays the percentage of respondents selecting each category. The categories and their percentages are: "Security operations" (74.9%), "The CTI team/personnel" (71.6%), "Incident response team" (65.3%), "Business units" (31.6%), "Executives (C-suite, board of directors)" (20.0%), "Vulnerability management" (18.8%), "Other" (4.0%), and "Customers" (2.7%).
+**Figure 7. CTI Requirements Contributors**
+*   A horizontal bar chart showing the contributors to CTI requirements, with multiple selections allowed.
+    *   Security operations: 74.9%
+    *   The CTI team/personnel: 71.6%
+    *   Incident response team: 65.3%
+    *   Business units: 31.6%
+    *   Executives (C-suite, board of directors): 20.0%
+    *   Vulnerability management: 18.8%
+    *   Other: 42.7%
+    *   Customers: 2.7%
 
 Respondents report that requirements are primarily updated in an ad hoc manner rather than on a scheduled (yearly, monthly or weekly) basis. But the good news is that only 5% of respondents say they don’t update requirements at all (see Figure 8). While there are some consistent themes in requirements across the board, many are unique to a specific organization or are based on past incidents or upcoming significant events for the organization.
 
@@ -145,9 +205,14 @@ Examples of requirements from respondents include:
 
 While there was a huge jump in organizations reporting development of requirements, over half of respondents still do not have a process for identifying requirements, which will help organizations be successful whether they produce or consume intelligence. Not having requirements or not having a process for evaluating and prioritizing new requirements can become a serious roadblock for many teams.
 
-*Figure 8. Reviewing and Updating CTI Requirements*
-
-**Image Description:** Figure 8 is a horizontal bar chart titled "How often does your organization review and update its CTI requirements? Select the best answer." The chart displays the percentage of respondents for each frequency. The frequencies and their corresponding percentages are as follows: "Ad hoc" (28.4%), "Unknown" (26.7%), "Weekly" (17.0%), "Yearly" (11.6%), "Monthly" (11.4%), and "Never" (4.9%).
+**Figure 8. Reviewing and Updating CTI Requirements**
+*   A pie chart showing the frequency of reviewing and updating CTI requirements.
+    *   Ad hoc: 28.4%
+    *   Weekly: 17.0%
+    *   Monthly: 11.4%
+    *   Yearly: 11.6%
+    *   Never: 4.9%
+    *   Unknown: 26.7%
 
 ### Collection
 After identifying requirements, the next step is to identify how to get access to the information that will help answer the requirements. For respondents who consume intelligence, this means evaluating sources of intelligence that will be easy to operationalize. Nearly 70% of respondents gather some of their information from a commercial threat feed, from both CTI-specific and general security vendors, with over 45% consuming non-feed information from a CTI service provider (see Figure 9). When it comes to consuming intelligence, timeliness and relevance are once again at the top of the list of important factors, but more and more respondents are considering how that information will be consumed as well as the content. This year, several respondents identified standardization with the Mitre’s ATT&CK Matrix framework as a priority for information they consume.
@@ -158,35 +223,55 @@ Most respondents collect data from a variety of sources. This year we saw a sign
 
 One interesting trend in the information from respondents is an increased interest in open source threat intelligence in regard to both data and tools. There was an 8% increase in respondents reporting the use of open source threat feeds as a collection source and a 14% increase in the use of open source threat intelligence management tools such as Collaborative Research Into Threats (CRITs) and Malware Information Sharing Platform (MISP). One respondent wrote that their organization is using MISP more heavily now that there is an increased emphasis on attacker TTPs rather than just IoC aggregation. Although we did not ask specifically about Mitre’s ATT&CK Matrix framework in the 2020 survey, several respondents wrote in that their organizations have had success, particularly in adding contextual information to alerts and in prioritizing responses, by leveraging it.
 
-*Figure 9. Intelligence Types*
+**Figure 9. Intelligence Types**
+*   A horizontal bar chart showing the types of information considered part of intelligence gathering, with multiple selections allowed.
+    *   Open source or public CTI feeds (DNS, MalwareDomainList.com): 74.3%
+    *   Threat feeds from CTI-specific vendors: 68.9%
+    *   Threat feeds from general security vendors: 68.5%
+    *   Community or industry groups such as information sharing and analysis centers (ISACs) and Computer Emergency Readiness Teams (CERTs): 68.2%
+    *   Security data gathered from our IDS, firewall, endpoint and other security systems: 63.4%
+    *   External sources such as media reports and news: 63.1%
+    *   Incident response and live forensics: 63.1%
+    *   SIEM platform: 62.0%
+    *   Vulnerability data: 60.6%
+    *   Network traffic analysis (packet and flow data): 57.0%
+    *   Forensics (postmortem): 56.4%
+    *   CTI service provider: 45.9%
+    *   Application logs: 44.4%
+    *   Other formal and informal groups with a shared interest: 43.3%
+    *   Closed or dark web sources: 42.1%
+    *   Security analytics platform other than SIEM: 36.9%
+    *   User access and account information: 31.9%
+    *   Honey pot data: 29.9%
+    *   User behavior data: 29.6%
+    *   Shared spreadsheets and/or email: 21.0%
+    *   Other: 1.5%
 
-**Image Description:** Figure 9 is a horizontal bar chart titled "What type of information do you consider to be part of your intelligence gathering? Select all that apply." The chart displays the percentage of respondents selecting each category. The categories and their percentages are as follows: "Open source or public CTI feeds (DNS, MalwareDomainList.com)" (74.3%), "Threat feeds from CTI-specific vendors" (68.9%), "Threat feeds from general security vendors" (68.5%), "Community or industry groups such as information sharing and analysis centers (ISACs) and Computer Emergency Readiness Teams (CERTs)" (68.2%), "Security data gathered from our IDS, firewall, endpoint and other security systems" (63.4%), "External sources such as media reports and news" (63.1%), "Incident response and live forensics" (63.1%), "SIEM platform" (62.0%), "Vulnerability data" (60.6%), "Network traffic analysis (packet and flow data)" (57.0%), "Forensics (postmortem)" (56.4%), "CTI service provider" (45.9%), "Application logs" (44.4%), "Other formal and informal groups with a shared interest" (43.3%), "Closed or dark web sources" (42.1%), "Security analytics platform other than SIEM" (36.9%), "User access and account information" (31.9%), "Honey pot data" (29.9%), "User behavior data" (29.6%), "Shared spreadsheets and/or email" (21.0%), and "Other" (1.5%).
+**Table 2. Sources for Gathering Intelligence**
 
-|                                                                                             | 2020    | 2019    | Trend   |
-| :-------------------------------------------------------------------------------------------- | :------ | :------ | :------ |
-| Open source or public CTI feeds (DNS, MalwareDomainList.com)                                 | 74.3%   | 66.2%   | 8.1%    |
-| Threat feeds from CTI-specific vendors                                                        | 68.9%   | 59.8%   | 9.1%    |
-| Threat feeds from general security vendors                                                    | 68.5%   | 63.8%   | 4.7%    |
+|                                                                                                    | 2020    | 2019    | Trend   |
+| -------------------------------------------------------------------------------------------------- | ------- | ------- | ------- |
+| Open source or public CTI feeds (DNS, MalwareDomainList.com)                                       | 74.3%   | 66.2%   | 8.1%    |
+| Threat feeds from CTI-specific vendors                                                              | 68.9%   | 59.8%   | 9.1%    |
+| Threat feeds from general security vendors                                                          | 68.5%   | 63.8%   | 4.7%    |
 | Community or industry groups such as information sharing and analysis centers (ISACs) and Computer Emergency Readiness Teams (CERTs) | 68.2%   | 63.4%   | 4.7%    |
-| Security data gathered from our IDS, firewall, endpoint and other security systems            | 63.4%   | 62.2%   | 1.2%    |
-| External sources such as media reports and news                                               | 63.1%   | 63.4%   | -0.3%   |
-| Incident response and live forensics                                                          | 63.1%   | 55.3%   | 7.8%    |
-| SIEM platform                                                                                 | 62.0%   | 59.2%   | 2.8%    |
-| Vulnerability data                                                                            | 60.6%   | 58.6%   | 2.0%    |
-| Network traffic analysis (packet and flow data)                                               | 57.0%   | 53.2%   | 3.8%    |
-| Forensics (postmortem)                                                                        | 56.4%   | 48.3%   | 8.0%    |
-| CTI service provider                                                                          | 45.9%   | 42.6%   | 3.3%    |
-| Application logs                                                                              | 44.4%   | 43.2%   | 1.2%    |
-| Other formal and informal groups with a shared interest                                        | 43.3%   | 39.6%   | 3.8%    |
-| Closed or dark web sources                                                                    | 42.1%   | 39.9%   | 2.2%    |
-| Security analytics platform other than SIEM                                                   | 36.9%   | 36.9%   | 0.1%    |
-| User access and account information                                                           | 31.9%   | 34.1%   | -2.3%   |
-| Honey pot data                                                                                | 29.9%   | 29.3%   | 0.5%    |
-| User behavior data                                                                            | 29.6%   | 30.5%   | -1.0%   |
-| Shared spreadsheets and/or email                                                             | 21.0%   | 25.1%   | -4.1%   |
-| Other                                                                                         | 1.5%    | 1.8%    | -0.3%   |
-
-*Table 2. Sources for Gathering Intelligence*
+| Security data gathered from our IDS, firewall, endpoint and other security systems                  | 63.4%   | 62.2%   | 1.2%    |
+| External sources such as media reports and news                                                      | 63.1%   | 63.4%   | -0.3%   |
+| Incident response and live forensics                                                               | 63.1%   | 55.3%   | 7.8%    |
+| SIEM platform                                                                                      | 62.0%   | 59.2%   | 2.8%    |
+| Vulnerability data                                                                                 | 60.6%   | 58.6%   | 2.0%    |
+| Network traffic analysis (packet and flow data)                                                     | 57.0%   | 53.2%   | 3.8%    |
+| Forensics (postmortem)                                                                             | 56.4%   | 48.3%   | 8.0%    |
+| CTI service provider                                                                                | 45.9%   | 42.6%   | 3.3%    |
+| Application logs                                                                                   | 44.4%   | 43.2%   | 1.2%    |
+| Other formal and informal groups with a shared interest                                              | 43.3%   | 39.6%   | 3.8%    |
+| Closed or dark web sources                                                                         | 42.1%   | 39.9%   | 2.2%    |
+| Security analytics platform other than SIEM                                                         | 36.9%   | 36.9%   | 0.1%    |
+| User access and account information                                                                 | 31.9%   | 34.1%   | -2.3%   |
+| Honey pot data                                                                                     | 29.9%   | 29.3%   | 0.5%    |
+| User behavior data                                                                                 | 29.6%   | 30.5%   | -1.0%   |
+| Shared spreadsheets and/or email                                                                  | 21.0%   | 25.1%   | -4.1%   |
+| Other                                                                                              | 1.5%    | 1.8%    | -0.3%   |
 
 Information gathering goes hand in hand with requirements in that requirements dictate what information the organization needs to collect. Although there are far fewer examples this year of organizations gathering information they don’t need, some respondents still report their organizations spend money on data that they do not need or are unable to utilize. Just as with requirements, information should also periodically be evaluated to ensure that it is effective and usable. A data source that may have been critical in the past might no longer be needed, and new data sources might need to be identified as the organization and the threat landscape change.
 
@@ -197,6 +282,5 @@ When it comes to intelligence meant to be understood by others in the organizati
 
 Intelligence is also disseminated to tools used for alerting. Most organizations rely on a threat intelligence platform for this purpose. Respondents report a similar number of organizations using open source, vendor-created or homegrown threat intelligence platforms to disseminate intelligence to other security systems. While the percentage of respondents using vendor platforms has been consistent in the past two years, the use of open source and homegrown systems has increased.
 
-*Figure 10. Methods of Disseminating CTI Information*
-
-**Image Description:** Figure 10 is a horizontal bar chart titled "How is CTI information utilized or disseminated by your organization? Select all that apply." The chart displays the percentage of respondents selecting each category. The categories and their percentages are as follows: "Email or documents such as spreadsheets or PowerPoint" (66.3%), "Briefings" (53.0%), "Vendor-created threat intelligence platform" (
+**Figure 10. Methods of Disseminating CTI Information**
+*   A horizontal bar chart showing the methods of

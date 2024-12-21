@@ -1,61 +1,59 @@
 # REPORT | CYBER TRENDSCAPE 2020
 
 ## Contents
-
 [Executive Summary](#executive-summary)
 [Key Findings](#key-findings)
-[Cyber Environments](#cyber-environments)
-[Security Approaches](#security-approaches)
-[Plans and Preparation](#plans-and-preparation)
-[Financial and Personnel Considerations](#financial-and-personnel-considerations)
-[Views on Attacks](#views-on-attacks)
+  * [Cyber Environments](#cyber-environments)
+  * [Security Approaches](#security-approaches)
+  * [Plans and Preparation](#plans-and-preparation)
+  * [Financial and Personnel Considerations](#financial-and-personnel-considerations)
+  * [Views on Attacks](#views-on-attacks)
 [Methodology and Participants](#methodology-and-participants)
-[Line of Business and Industry Sector](#line-of-business-and-industry-sector)
-[Organizational Structure](#organizational-structure)
+  * [Line of Business and Industry Sector](#line-of-business-and-industry-sector)
+  * [Organizational Structure](#organizational-structure)
 [Assessing and Addressing Cyber Risks](#assessing-and-addressing-cyber-risks)
-[Balancing Cyber Security and Operations](#balancing-cyber-security-and-operations)
-[Cyber Security Budgets](#cyber-security-budgets)
-[Value of Cyber Security Solutions, Government and Regulatory Agencies](#value-of-cyber-security-solutions-government-and-regulatory-agencies)
-[Cyber Attacks](#cyber-attacks)
-[Source of Attacks](#source-of-attacks)
+  * [Balancing Cyber Security and Operations](#balancing-cyber-security-and-operations)
+  * [Cyber Security Budgets](#cyber-security-budgets)
+  * [Value of Cyber Security Solutions, Government and Regulatory Agencies](#value-of-cyber-security-solutions-government-and-regulatory-agencies)
+  * [Cyber Attacks](#cyber-attacks)
+  * [Source of Attacks](#source-of-attacks)
 [Organizational Maturity and Resilience to Cyber Threats](#organizational-maturity-and-resilience-to-cyber-threats)
-[Security Program Maturity](#security-program-maturity)
-[Cyber Attack and Breach Response Plans](#cyber-attack-and-breach-response-plans)
-[Organizational Readiness Against a Cyber Attack or Breach Event](#organizational-readiness-against-a-cyber-attack-or-breach-event)
-[Cyber Security Protection](#cyber-security-protection)
+  * [Security Program Maturity](#security-program-maturity)
+  * [Cyber Attack and Breach Response Plans](#cyber-attack-and-breach-response-plans)
+  * [Organizational Readiness Against a Cyber Attack or Breach Event](#organizational-readiness-against-a-cyber-attack-or-breach-event)
+  * [Cyber Security Protection](#cyber-security-protection)
 [Cloud Initiatives](#cloud-initiatives)
-[Drivers for Cloud Initiatives](#drivers-for-cloud-initiatives)
-[Maturity of Cloud Initiatives](#maturity-of-cloud-initiatives)
-[Cloud Security](#cloud-security)
+  * [Drivers for Cloud Initiatives](#drivers-for-cloud-initiatives)
+  * [Maturity of Cloud Initiatives](#maturity-of-cloud-initiatives)
+  * [Cloud Security](#cloud-security)
 [Security Operations](#security-operations)
-[Maturity and Staffing of Security Operations](#maturity-and-staffing-of-security-operations)
-[Security Operations Planning](#security-operations-planning)
-[Security Information and Event Manager (SIEM)](#security-information-and-event-manager-siem)
-[SIEM Deployments](#siem-deployments)
-[SIEM Use Cases](#siem-use-cases)
-[SIEM Challenges](#siem-challenges)
-[SIEM and SOAR integration](#siem-and-soar-integration)
+  * [Maturity and Staffing of Security Operations](#maturity-and-staffing-of-security-operations)
+  * [Security Operations Planning](#security-operations-planning)
+  * [Security Information and Event Manager (SIEM)](#security-information-and-event-manager-siem)
+  * [SIEM Deployments](#siem-deployments)
+  * [SIEM Use Cases](#siem-use-cases)
+  * [SIEM Challenges](#siem-challenges)
+  * [SIEM and SOAR integration](#siem-and-soar-integration)
 [Cyber Threat Intelligence](#cyber-threat-intelligence)
-[Adoption of Cyber Threat Intelligence Feeds](#adoption-of-cyber-threat-intelligence-feeds)
-[Perceptions of Threat Intelligence Feeds](#perceptions-of-threat-intelligence-feeds)
+  * [Adoption of Cyber Threat Intelligence Feeds](#adoption-of-cyber-threat-intelligence-feeds)
+  * [Perceptions of Threat Intelligence Feeds](#perceptions-of-threat-intelligence-feeds)
 [Email Security Solutions](#email-security-solutions)
-[Email Adoption](#email-adoption)
-[Email Management](#email-management)
-[Email Security](#email-security)
+  * [Email Adoption](#email-adoption)
+  * [Email Management](#email-management)
+  * [Email Security](#email-security)
 [Endpoint Security Solutions](#endpoint-security-solutions)
-[Endpoint Security Adoption](#endpoint-security-adoption)
-[Top Endpoint Security Solution Adoption by Country](#top-endpoint-security-solution-adoption-by-country)
+  * [Endpoint Security Adoption](#endpoint-security-adoption)
+  * [Top Endpoint Security Solution Adoption by Country](#top-endpoint-security-solution-adoption-by-country)
 [Cyber Security Insurance](#cyber-security-insurance)
-[Adoption of Cyber Security Insurance](#adoption-of-cyber-security-insurance)
-[Perceptions of Cyber Security Insurance](#perceptions-of-cyber-security-insurance)
+  * [Adoption of Cyber Security Insurance](#adoption-of-cyber-security-insurance)
+  * [Perceptions of Cyber Security Insurance](#perceptions-of-cyber-security-insurance)
 [Artificial Intelligence](#artificial-intelligence)
-[Adoption of Artificial Intelligence](#adoption-of-artificial-intelligence)
+  * [Adoption of Artificial Intelligence](#adoption-of-artificial-intelligence)
 [Blockchain](#blockchain)
-[Adoption of Blockchain](#adoption-of-blockchain)
+  * [Adoption of Blockchain](#adoption-of-blockchain)
 [Conclusions](#conclusions)
 
 ## Executive Summary
-
 Welcome to the 2020 FireEye Cyber Trendscape report.
 
 In 2019, FireEye worked with KANTAR, an independent market research organization to perform a large-scale cyber
@@ -68,7 +66,6 @@ senior executives regarding the state of the cyber threat landscape and how the 
 and regulatory agencies are responding to their needs.
 
 The study highlights five cyber security focus areas within organizations:
-
 *   The cyber threat landscape
 *   Top cyber security program initiatives and overall maturity
 *   Balancing the needs of business operations and ensuring resilience to cyber threats
@@ -80,13 +77,11 @@ points on leading issues that can be used to support critical decision making an
 senior leadership, board members and other key stakeholders.
 
 ## Key Findings
-
 While the findings include regional nuances, representatives from participating organizations were remarkably consistent
 in their views and perspectives of cyber security. Also, different attitudes appeared to influence how individuals and
 organizations approach cyber security across the world.
 
 ### Cyber Environments
-
 Over 90% of organizations believe cyber threats will
 stay the same or worsen in 2020 and the top three
 industry sectors believed to be the most likely
@@ -99,7 +94,6 @@ data, impacts to customers and business operation
 disruptions.
 
 ### Security Approaches
-
 Finding a balance between cyber security and
 operational requirements is a challenge for 63% of
 organizations.
@@ -114,7 +108,6 @@ related to the use of artificial intelligence and 86%
 have active initiatives on the use of block chain.
 
 ### Plans and Preparation
-
 Globally, 51% of organizations do not believe they are
 ready or would respond well to a cyber attack or breach
 event. Nearly 29% of organizations who have cyber
@@ -122,6 +115,18 @@ attack and breach response plans have not tested or
 updated their plans in 12 or more months. Over 40% of
 organizations do not have or have only very limited as-
 needed cyber security training for their employees.
+
+### Financial and Personnel Considerations
+Over 72% of organizations consider the cost of cyber
+security to be reasonable or inexpensive for the value
+it provides.
+
+To help better address their cyber security needs,
+76% of organizations are planning cyber security
+budget increases for 2020 with most indicating
+planned increases of 1-9% over the current 2019
+cyber security budget which, on average, is
+equivalent to 6-7% of the overall IT budget.
 
 While 91% of organization currently have or are planning
 to obtain cyber security insurance in the next 18 months,
@@ -140,21 +145,7 @@ the next 18 months. Germany has over 250% more
 organizations that do not have a SOC than the global
 average.
 
-### Financial and Personnel Considerations
-
-Over 72% of organizations consider the cost of cyber
-security to be reasonable or inexpensive for the value
-it provides.
-
-To help better address their cyber security needs,
-76% of organizations are planning cyber security
-budget increases for 2020 with most indicating
-planned increases of 1-9% over the current 2019
-cyber security budget which, on average, is
-equivalent to 6-7% of the overall IT budget.
-
 ### Views on Attacks
-
 Organizations believe the most likely attribution for the
 attacks they experienced over the past 12 months are
 hacker groups, individual hackers and criminal
@@ -164,7 +155,6 @@ Korea were they considered one of the top three most
 likely sources.
 
 ## Methodology and Participants
-
 This research study was commissioned by FireEye and delivered
 by KANTAR, an independent market research organization. The
 results were derived from an online survey fielded in July and
@@ -185,7 +175,6 @@ participants possessing university degrees and a further 34%
 indicating they had also completed graduate studies.
 
 ### Line of Business and Industry Sector
-
 Globally, 53% of participants reported into the IT organization, 20% reported to business operations, 13% to finance, 11% to
 a dedicated cyber security function and 4% to legal.
 
@@ -193,10 +182,10 @@ In the U.S. the breakdown was more pronounced with 78% reporting to IT, 10% to b
 to cyber security and 2% to legal.
 
 *Figure 1. Participant role in their organization.*
-A pie chart showing the distribution of participant roles: C-Level Executive 45%, Senior Director 38%, Vice President 17%.
+A pie chart showing the distribution of participant roles: 45% C-Level Executive, 17% Vice President, and 38% Senior Director.
 
 *Figure 2. Department of the participant.*
-A bar chart comparing the department of participants in the US and Globally. The US has a higher percentage of participants in IT (78%) compared to the global average (53%). The global average has a higher percentage of participants in Business Operations, Finance/Accounting, Cyber Security, and Legal.
+A bar chart comparing the department of participants in the US vs Global. US: 78% IT, 10% Business Operations, 6% Finance/Accounting, 4% Cyber Security, 2% Legal. Global: 53% IT, 20% Business Operations, 13% Finance/Accounting, 11% Cyber Security, 4% Legal.
 
 Participants had operational oversight, budgeting oversight and were responsible for setting the overall cyber security
 priorities with their organizations.
@@ -205,7 +194,6 @@ Nearly a dozen industry segments were represented in the study. The top three in
 manufacturing and banking and finance accounted for 71% of all participants.
 
 ### Organizational Structure
-
 Sixty-two percent of participants reported that their organizations had a formal CIO or similar role, while others reported
 a CISO/CSO role (50%), chief compliance officer (34%), chief risk officer (26%), chief privacy officer (24%) and general
 counsel (20%).
@@ -214,40 +202,37 @@ The regions with the highest presence of chief compliance officers or similar ro
 U.S. (40%) and China (38%).
 
 *Figure 3. Participant industry segment.*
-A bar chart showing the distribution of participants across different industry segments. The top three segments are Technology, Industrial and Manufacturing, and Finance and Banking.
+A bar chart showing the distribution of participants across various industry segments: Technology, Industrial and Manufacturing, Finance and Banking, Government, Healthcare, Insurance, Retail, Legal, Education, Infrastructure and Utilities, and Other.
 
 *Figure 4. Participant organization size.*
-A pie chart showing the distribution of participant organization sizes: 1,000-4,999 (52%), 500-999 (23%), 5,000-9,999 (16%), 10,000 or more (9%).
+A pie chart showing the distribution of participant organization sizes: 52% with 1,000-4,999 employees, 23% with 500-999 employees, 16% with 5,000-9,999 employees, and 9% with 10,000 or more employees.
 
-**Analyst Observation**
-
-While the reporting of industries
-and size of the participating
-organizations in Japan and
-Germany were consistent with
-global data, and thus not
-creating a bias in the survey in
-these countries towards the
-concerns, issues or operations of
-a particular type of organization,
-14% of participants from Japan
-and 12% from Germany reported
-that their organizations lacked
-any of the formal roles identified
-in the study, contrasting sharply
-with an average of less than 3%
-for similar responses from each
-of the other regions.
+> Analyst Observation
+> While the reporting of industries
+> and size of the participating
+> organizations in Japan and
+> Germany were consistent with
+> global data, and thus not
+> creating a bias in the survey in
+> these countries towards the
+> concerns, issues or operations of
+> a particular type of organization,
+> 14% of participants from Japan
+> and 12% from Germany reported
+> that their organizations lacked
+> any of the formal roles identified
+> in the study, contrasting sharply
+> with an average of less than 3%
+> for similar responses from each
+> of the other regions.
 
 *Figure 5. Presence of senior roles in organization.*
-A bar chart showing the percentage of organizations that have different senior roles. The most common roles are Chief Information Officer (62%), Chief Information Security Officer (50%), and Chief Compliance Officer (34%).
+A bar chart showing the percentage of organizations with various senior roles: Chief Compliance Officer, General Counsel, Chief Information Officer, Chief Information Security Officer, Chief Privacy Officer, and Chief Risk Officer.
 
 ## Assessing and Addressing Cyber Risks
-
 Organizations were asked to provide their assessment of the 2020
 cyber security threat landscape and their plans for addressing cyber
 risks. This included insights into:
-
 *   Their cyber security budgets and the focus of their risk
     mitigation strategies.
 *   Their assessment of the performance and value of cyber
@@ -269,7 +254,6 @@ responses globally. However, in Canada and Korea, 84% of respondents chose respo
 concerns in these countries over the evolving complexity of the cyber threat landscape.
 
 ### Balancing Cyber Security and Operations
-
 Organizations universally reported that it was more difficult to find
 a balance between cyber security and operational requirements
 with 14% reporting it to be very difficult and 49% difficult. Only 14%
@@ -290,13 +274,12 @@ indicated it was easy or easier to find a balance between security
 and operations; they corresponded closely to global results.
 
 *Figure 6. Understanding and defending against cyber threats.*
-A bar chart showing the distribution of responses on a scale of 1 to 5, where 1 is "Easier" and 5 is "More Difficult," regarding the difficulty of understanding and defending against cyber threats. The majority of responses are on the "More Difficult" side of the scale.
+A bar chart showing the distribution of responses on a scale of 1 to 5, where 1 represents "Easier" and 5 represents "More Difficult," regarding the difficulty of understanding and defending against cyber threats.
 
 *Figure 7. Ease of finding a good balance between cyber security and operational requirements.*
-A bar chart showing the distribution of responses on a scale of 1 to 5, where 1 is "Easier" and 5 is "More Difficult," regarding the ease of finding a balance between cyber security and operational requirements. The majority of responses are on the "More Difficult" side of the scale.
+A bar chart showing the distribution of responses on a scale of 1 to 5, where 1 represents "Easier" and 5 represents "More Difficult," regarding the ease of finding a good balance between cyber security and operational requirements.
 
 ### Cyber Security Budgets
-
 When planning to protect themselves against the cyber threat landscape, 78% of organizations reported security
 budgets that were over 6% of the overall IT budget. The largest concentration of responses accounted for 37% of the
 total and identified security budgets in the 6-7% range.
@@ -317,32 +300,29 @@ Globally, organizations allocated their cyber security budgets into four main ca
 Japan was the only country that changed the order slightly with an emphasis on detection being expressed by 40% of
 organizations followed by prevention (35%), containment (13%) and remediation (12%).
 
-**Analyst Observation**
-
-In the US, 25% of participants indicated
-they had security budgets representing
-a greater than a 10% share of the overall
-IT budget. The largest security budgets
-outside of the US were identified in
-China (19%) and France (16%).
-
-Japan was the most frugal in terms of
-security budgets with 22% of
-organizations reporting a spend of only
-between 1-3% of the overall IT budget.
-This is notable, considering that 72% of
-organizations in Japan perceived the
-risks from cyber threats worsening over
-the next 12 months.
+> Analyst Observation
+> In the US, 25% of participants indicated
+> they had security budgets representing
+> a greater than a 10% share of the overall
+> IT budget. The largest security budgets
+> outside of the US were identified in
+> China (19%) and France (16%).
+> Japan was the most frugal in terms of
+> security budgets with 22% of
+> organizations reporting a spend of only
+> between 1-3% of the overall IT budget.
+> This is notable, considering that 72% of
+> organizations in Japan perceived the
+> risks from cyber threats worsening over
+> the next 12 months.
 
 *Figure 8. Current size of security budget as a percentage of the overall IT budget.*
-A bar chart comparing the distribution of security budget sizes as a percentage of the overall IT budget for Global and Japan. Japan has a higher percentage of organizations with budgets in the 1-3% range, while the global average has a higher percentage of organizations with budgets in the 6-7% range.
+A bar chart comparing the distribution of security budget sizes as a percentage of the overall IT budget for Global and Japan.
 
 *Figure 9. Planned budget change for 2020.*
-A bar chart showing the distribution of planned budget changes for 2020. The majority of organizations plan to increase their budget, with a significant portion planning increases of 1-9%.
+A bar chart showing the distribution of planned budget changes for 2020, including increases, decreases, and no change.
 
 ### Value of Cyber Security Solutions, Government and Regulatory Agencies
-
 Organizations broadly (57%) believed that the cost of cyber security was reasonable for the value it provides. A further
 25% believed it was inexpensive. Countries perceiving cyber security as inexpensive for the value it provides were Canada
 (42%) and the UK (38%).
@@ -350,7 +330,7 @@ Organizations broadly (57%) believed that the cost of cyber security was reasona
 Participants in Japan (29%) and the U.S. (28%) believed cyber security was expensive for the benefits it provides.
 
 *Figure 10. Value of cyber security spend for value provided.*
-A pie chart showing the distribution of responses regarding the value of cyber security spend: Reasonable (57%), Inexpensive (25%), Expensive (18%).
+A pie chart showing the distribution of responses regarding the value of cyber security spend: 25% Inexpensive, 57% Reasonable, and 18% Expensive.
 
 Participants offered a mixed view, nearly equally positive and negative, in their
 assessment of technology providers and cyber security vendors, and how well they
@@ -369,37 +349,33 @@ a good job (42%) or a very good job (11%). A neutral rating was provided by 19% 
 global respondents. Of the remaining organizations 23% believed governments and
 regulatory agencies were doing a bad job and 4% a very bad job.
 
-**Analyst Observation**
-
-The U.S. expressed the highest
-rate of the most negative views
-of governments and regulatory
-agencies with very bad
-gathering over 15% of the
-views. The U.S. response for
-bad was in line with other
-regions (21%).
-
-China expressed the most
-negative perception overall
-with 41% reporting a bad job
-4% reporting a very bad job.
-
-The most positive perceptions
-were from Japan with 54%
-good 10% very good followed
-by the UK with 49% good and
-15% very good.
+> Analyst Observation
+> The U.S. expressed the highest
+> rate of the most negative views
+> of governments and regulatory
+> agencies with very bad
+> gathering over 15% of the
+> views. The U.S. response for
+> bad was in line with other
+> regions (21%).
+> China expressed the most
+> negative perception overall
+> with 41% reporting a bad job
+> 4% reporting a very bad job.
+> The most positive perceptions
+> were from Japan with 54%
+> good 10% very good followed
+> by the UK with 49% good and
+> 15% very good.
 
 *Figure 11. Scorecard of vendors, governments and regulatory agencies.*
-A bar chart comparing the ratings of vendors and government/regulatory agencies on a scale of 1 to 5, where 1 is "Very Bad" and 5 is "Very Good." The ratings for vendors are more evenly distributed, while the ratings for government/regulatory agencies are more skewed towards the positive side.
+A bar chart comparing the ratings of vendors and government/regulatory agencies on a scale of 1 to 5, where 1 represents "Very Bad" and 5 represents "Very Good."
 
 ### Cyber Attacks
-
 Over 90% of organizations believe cyber threats will stay the same or worsen in 2020.
 
 *Figure 12. Expected change in cyber threats for 2020.*
-A bar chart showing the distribution of responses regarding the expected change in cyber threats for 2020. The majority of organizations expect cyber threats to stay the same or increase.
+A bar chart showing the distribution of responses regarding the expected change in cyber threats for 2020: Decrease, Stay the same, and Increase.
 
 Participants believe that the top three industry sectors most likely to be targeted by cyber attacks are finance and
 banking (20%), followed by technology (16%) and government (10%).
@@ -409,7 +385,7 @@ them as to which was first and second. The exception was China, where participan
 be the most likely target, followed by industrial and manufacturing.
 
 *Figure 13. Industry sector most likely to be the target of a cyber attack.*
-A bar chart showing the distribution of responses regarding the industry sectors most likely to be targeted by a cyber attack. The top three sectors are Finance and Banking, Technology, and Government.
+A bar chart showing the percentage of respondents who believe each industry sector is most likely to be targeted by a cyber attack.
 
 Participants were asked to identify the top three components they believed to be the most likely to be targeted by cyber
 attacks and which top three components they believed were the most likely to be vulnerable to a cyber attack.
@@ -418,15 +394,14 @@ Participants were globally consistent in their belief that servers and server op
 devices and endpoints were the top three components in both categories.
 
 *Figure 14. Components most likely to be a target of or vulnerable to a cyber attack.*
-A bar chart comparing the components most likely to be a target of a cyber attack and the components most vulnerable to a cyber attack. The top components in both categories are Servers and OS, Web Servers, Medical Devices, and Endpoints.
-Notes: (1) Laptop and desktop, (2) smart phones and tablets, (3) excluding firewalls.
+A bar chart comparing the percentage of respondents who believe each component is most likely to be targeted or vulnerable to a cyber attack. The components include: Endpoints (Laptop and desktop), Firewalls, IoT non Medical, Medical Devices, Mobile Devices (smart phones and tablets), Network Equipment (excluding firewalls), Operational Technologies, Servers and OS, Server Hosted Applications, and Web Servers.
 
 Participants were asked which attack types they believed were most likely to lead to a breach. The responses globally
 were generally consistent, identifying the top three as malware (21%), targeted phishing (19%) and exploited
 vulnerability (18%).
 
 *Figure 15. Types of cyber attacks most likely to be the cause a breach.*
-A bar chart showing the distribution of responses regarding the types of cyber attacks most likely to cause a breach. The top three types are Malware, Targeted Phishing, and Exploited Vulnerability.
+A bar chart showing the percentage of respondents who believe each type of cyber attack is most likely to cause a breach.
 
 Similar findings were reported regarding the types of cyber attacks that participant organizations had experienced over
 the last 12 months.
@@ -436,25 +411,23 @@ organizations in Japan (more than double the global average of 7%) indicated tha
 cyber attack in the past 12 months.
 
 *Figure 16. Types of cyber attacks experienced in the last 12 months.*
-A bar chart showing the distribution of responses regarding the types of cyber attacks experienced in the last 12 months. The top types are Malware, Targeted Phishing, and Exploited Vulnerability.
+A bar chart showing the percentage of respondents who experienced each type of cyber attack in the last 12 months.
 
-**Analyst Observation**
-
-The participants from
-China reported that
-successful attacks
-based on exploited
-vulnerabilities occurred
-70% more often than
-the overall average.
-Canada and Korea
-reported the success of
-similar attacks occurred
-30% more often than
-the overall average.
+> Analyst Observation
+> The participants from
+> China reported that
+> successful attacks
+> based on exploited
+> vulnerabilities occurred
+> 70% more often than
+> the overall average.
+> Canada and Korea
+> reported the success of
+> similar attacks occurred
+> 30% more often than
+> the overall average.
 
 ### Source of Attacks
-
 Organizations were asked to identify the most likely source of attacks against their organizations. Globally, the results
 were highly consistent across all countries with hacker groups (31%), individual hackers (18%) and criminal organizations
 (17%) coming in as the top three suspects.
@@ -466,10 +439,9 @@ Globally, nation states were considered the least likely source of cyber attacks
 Only in South Korea did it make the top three most likely source with over 19% of responses.
 
 *Figure 17. Sources of cyber attacks experienced by organization.*
-A bar chart showing the distribution of responses regarding the sources of cyber attacks experienced by organizations. The top three sources are Hacker Groups, Individual Hacker, and Criminal Organization.
+A bar chart showing the percentage of respondents who believe each source is most likely to be the source of a cyber attack.
 
 ## Organizational Maturity and Resilience to Cyber Threats
-
 Many factors impact the maturity of an organization’s cyber security program and its ability to be resilient against
 cyber threats.
 
@@ -481,7 +453,6 @@ Participants were also asked to describe their internal challenges to maturing t
 biggest fears in the event of a breach.
 
 ### Security Program Maturity
-
 When assessing their cyber security programs, 27% of participants characterized them as semi-formal approaches where
 efforts were mostly compliance-driven and focused on addressing mandatory regulations, while 24% saw their programs
 as informal where the primary focus was addressing critical issues as they occurred.
@@ -496,10 +467,9 @@ Overall, 7% of organizations indicated they did not have a cyber security progra
 jumped to 18%.
 
 *Figure 18. Security program maturity.*
-A bar chart showing the distribution of responses regarding the maturity of security programs. The most common types are Semi-Formal and Informal.
+A bar chart showing the distribution of responses regarding the maturity of security programs: No Cyber Security Program, Informal, Semi-Formal, Intelligence Driven, and Formal.
 
 ### Cyber Attack and Breach Response Plans
-
 Cyber attack and breach event response plans are critical for ensuring organizational focus and resilience during a cyber
 security event.
 
@@ -521,54 +491,51 @@ While only 8% of organizations did not have any cyber attack and breach event re
 Canada (19%) and Japan (15%).
 
 *Figure 19. Cyber attack and breach response plans.*
-A pie chart showing the distribution of responses regarding cyber attack and breach response plans: Mature Plans (33%), Individual Plans (30%), Untested Plans (29%), No plans (8%).
+A pie chart showing the distribution of responses regarding cyber attack and breach response plans: No plans, Individual Plans, Untested Plans, and Mature Plans.
 
 Organizations universally identified the chief information officer (CIO) as the
 leading representative involved in the development or review of the cyber attack
 or breach response plan, followed by the chief compliance officer (CCO), IT
 security and finally IT operations staff (Fig. 20).
 
-**Analyst Observation**
-
-Overall, internal and external legal
-counsel were identified as among the
-roles least involved in the
-development of plans (Fig. 20). This
-is in sharp contrast to recommended
-industry best practices, given that
-the main focus of legal counsel is to
-protect the organization from and
-minimize its exposure to risks. Legal
-counsel provides guidance on the
-acceptable levels of risks and
-obligations for their organization and
-ensures that legal frameworks are
-adhered to before, during and after a
-cyber attack or breach event to
-mitigate further impact.
-
-Line of business and business
-operations were consistently and
-universally identified as the least
-involved in the development and
-review of plans. This is notable
-because these groups are considered
-critical stakeholders in plans
-presumably designed to maintain
-business operations during an event.
+> Analyst Observation
+> Overall, internal and external legal
+> counsel were identified as among the
+> roles least involved in the
+> development of plans (Fig. 20). This
+> is in sharp contrast to recommended
+> industry best practices, given that
+> the main focus of legal counsel is to
+> protect the organization from and
+> minimize its exposure to risks. Legal
+> counsel provides guidance on the
+> acceptable levels of risks and
+> obligations for their organization and
+> ensures that legal frameworks are
+> adhered to before, during and after a
+> cyber attack or breach event to
+> mitigate further impact.
+> Line of business and business
+> operations were consistently and
+> universally identified as the least
+> involved in the development and
+> review of plans. This is notable
+> because these groups are considered
+> critical stakeholders in plans
+> presumably designed to maintain
+> business operations during an event.
 
 *Figure 20. Roles involved in the development and review of cyber attack and breach response plans.*
-A bar chart showing the percentage of organizations that involve different roles in the development and review of cyber attack and breach response plans. The most involved roles are CIO, CCO, IT Security Staff, and IT Operations Staff.
+A bar chart showing the percentage of respondents who indicated each role is involved in the development and review of cyber attack and breach response plans.
 
 Organizations reported that the main challenges they faced in maturing their organization’s overall cyber security
 posture were primarily IT and security technology maturity followed by IT and security process maturity and then
 visibility into threats.
 
 *Figure 21. Challenges in maturing cyber security posture.*
-A bar chart showing the distribution of responses regarding the challenges in maturing cyber security posture. The top challenges are IT and Security Technology Maturity, IT and Security Process Maturity, and Visibility Into Threats.
+A bar chart showing the percentage of respondents who identified each challenge in maturing their cyber security posture.
 
 ### Organizational Readiness Against a Cyber Attack or Breach Event
-
 When asked how they would rate their
 organization’s readiness to address a cyber
 attack or breach event, the respondents
@@ -591,10 +558,9 @@ than the global average (just over 2%,
 excluding responses from Japan).
 
 *Figure 22. Readiness to respond to a cyber attack or breach event.*
-A pie chart showing the distribution of responses regarding readiness to respond to a cyber attack or breach event: Fully Ready (49%), Somewhat Ready (47%), Not Ready (4%).
+A pie chart showing the distribution of responses regarding readiness to respond to a cyber attack or breach event: Fully Ready, Somewhat Ready, and Not Ready.
 
 ### Cyber Security Protection
-
 Solutions deployed to protect organizations from cyber attacks range in capability, applicable scope and cost to acquire
 and maintain. Organizations were asked which solutions they currently deployed in their organization, which components
 they believed provided the best protection and where they would focus future investments if they had unlimited
@@ -606,7 +572,7 @@ had an edge over security software (both slightly above 16%). These were followe
 response plans and security hardware (both slightly above 12%).
 
 *Figure 23. Components that currently had the most positive impact on security.*
-A bar chart showing the distribution of responses regarding the components that currently have the most positive impact on security. The top components are Vulnerability Management, Security Software, and Employee Training.
+A bar chart showing the percentage of respondents who believe each component currently has the most positive impact on security.
 
 Organizations were then asked which component they believed would most positively impact
 their organization’s ability to prevent a cyber attack or breach if they had the opportunity to
@@ -618,7 +584,6 @@ would generate the most impactful results, followed by threat intelligence (13.7
 hunting (12.6%) and employee training (12%).
 
 Looking more deeply into employee cyber security awareness training (Fig. 25):
-
 *   35% of organizations had semi-formal training conducted at regular intervals that addressed compliance and
     typical cyber security awareness topics.
 *   29% of organizations had informal training programs focused on meeting core compliance requirements that are
@@ -627,21 +592,41 @@ Looking more deeply into employee cyber security awareness training (Fig. 25):
     changes through regular mandatory training and evaluation.
 *   Over 11% of organizations had no internal employee cyber security training programs.
 
-**Analyst Observation**
-
-Organizations in France
-believed employee
-training was the cyber
-security investment area
-with the highest potential
-positive impact against a
-cyber attack. Their
-response was 67% higher
-than the global average
-(excluding France).
+> Analyst Observation
+> Organizations in France
+> believed employee
+> training was the cyber
+> security investment area
+> with the highest potential
+> positive impact against a
+> cyber attack. Their
+> response was 67% higher
+> than the global average
+> (excluding France).
 
 *Figure 24. Components that could most positively impact security, assuming unlimited budget.*
-A bar chart showing the distribution of responses regarding the components that could most positively impact security, assuming unlimited budget. The top components are Vulnerability Management, Threat Intelligence, and Proactive Threat Hunting.
+A bar chart showing the percentage of respondents who believe each component could most positively impact security, assuming unlimited budget.
+
+*Figure 25. Status of employee cyber security training program.*
+A pie chart showing the distribution of responses regarding the status of employee cyber security training programs: None, Informal, Semi-Formal, and Advanced.
+
+> Analyst Observation
+> Less than 1% of organizations
+> in France indicated they did
+> not have any cyber security
+> training programs, the lowest
+> rate among all countries
+> included in this study. This
+> stands in stark contrast to the
+> responses in Germany (25%)
+> and Canada (23%) where no
+> security training program was
+> in place.
+> Significant presence of
+> advanced cyber security
+> training programs was
+> reported in the U.S. (48%), UK
+> (34%) and China (37%).
 
 Organizations consistently reported their greatest concern regarding a cyber attack or breach event as the loss of
 sensitive data, followed by customers and business operation disruption.
@@ -649,50 +634,26 @@ sensitive data, followed by customers and business operation disruption.
 In the U.S. the greatest concern was business operations disruption. U.S. organizations were least concerned by the
 possibility of physical damage to real-world infrastructure.
 
-**Analyst Observation**
-
-Less than 1% of organizations
-in France indicated they did
-not have any cyber security
-training programs, the lowest
-rate among all countries
-included in this study. This
-stands in stark contrast to the
-responses in Germany (25%)
-and Canada (23%) where no
-security training program was
-in place.
-
-Significant presence of
-advanced cyber security
-training programs was
-reported in the U.S. (48%), UK
-(34%) and China (37%).
-
-*Figure 25. Status of employee cyber security training program.*
-A pie chart showing the distribution of responses regarding the status of employee cyber security training programs: Semi-Formal (35%), Informal (29%), Advanced (25%), None (11%).
-
-**Analyst Observation**
-
-Although fines were
-highlighted as a concern,
-this option never reached
-top three status in any of
-the countries represented.
-This is notable
-considering 27% of
-organizations
-characterized their cyber
-security programs as
-being semi-formal where
-their efforts were mostly
-compliance driven and
-focused on addressing
-mandatory regulations
-(Fig. 18).
+> Analyst Observation
+> Although fines were
+> highlighted as a concern,
+> this option never reached
+> top three status in any of
+> the countries represented.
+> This is notable
+> considering 27% of
+> organizations
+> characterized their cyber
+> security programs as
+> being semi-formal where
+> their efforts were mostly
+> compliance driven and
+> focused on addressing
+> mandatory regulations
+> (Fig. 18).
 
 *Figure 26. Concerns from a cyber attack or breach.*
-A bar chart showing the distribution of responses regarding concerns from a cyber attack or breach. The top concerns are Loss of Sensitive Data, Impact to Our Customers, and Business Operation Disruption.
+A bar chart showing the percentage of respondents who indicated each concern is most significant from a cyber attack or breach.
 
 Over 56% of organizations reported that they actively
 tested their security posture with automated tools and
@@ -707,24 +668,21 @@ lowest reported use of automated tools was in
 Germany (13%) and Japan (13%).
 
 *Figure 27. Use of automated security posture testing.*
-A pie chart showing the distribution of responses regarding the use of automated security posture testing: Yes (56%), Planning (37%), No (7%).
+A pie chart showing the distribution of responses regarding the use of automated security posture testing: No, Planning, and Yes.
 
 ## Cloud Initiatives
-
 Cloud is a significant initiative for organizations globally and a hot topic of discussion. Participants were asked to provide
 insights into their overall readiness to adopt cloud technologies, their intended outcomes from cloud deployments, their
 perceptions of cloud security and how far along they had progressed toward the cloud.
 
 ### Drivers for Cloud Initiatives
-
 Participants consistently identified that the top three motivations to pursue cloud were to reduce overall IT costs (27%),
 broaden enterprise agility (25%) and reduce datacenter footprint (20%).
 
 *Figure 28. Drivers for cloud.*
-A bar chart showing the distribution of responses regarding the drivers for cloud. The top three drivers are Reduce IT costs, Broaden enterprise agility, and Reduce datacenter footprint.
+A bar chart showing the percentage of respondents who indicated each driver is most significant for cloud adoption.
 
 ### Maturity of Cloud Initiatives
-
 Only 10% of participants reported that they had not begun investigating cloud and that it
 was not a priority at this time for their organizations. Countries reporting higher than this
 average were Canada (20%) and Germany (15%).
@@ -740,7 +698,7 @@ Globally, 17% of organizations reported a strong understanding of cloud and clou
 and had established a formal approach.
 
 *Figure 29. Cloud readiness.*
-A bar chart showing the distribution of responses regarding cloud readiness. The most common responses are Initial investigations into cloud and Basic understanding of cloud and security.
+A bar chart showing the distribution of responses regarding cloud readiness: None, Initial investigations into cloud, Basic understanding of cloud and security, Moderate understanding with pilot deployments, and Strong understanding with formal approaches.
 
 Over 44% of organizations reported that they currently had transitioned some of their environment to the cloud, but they
 were being cautious and planned to monitor their experience closely. Thirty-five percent had transitioned some of their
@@ -749,4 +707,7 @@ environment and were planning to continue adoption.
 Overall, 17% of organizations identified they had a cloud-first approach and their entire environment was cloud-centric.
 The most cloud-centric organizations were in the U.S. (37%).
 
-Only 4% of
+Only 4% of organizations did not have any plans to migrate any of the existing environment to the cloud.
+
+*Figure 30. State of cloud initiatives.*
+A bar chart showing the distribution of responses regarding the state of cloud initiatives: None, Some but cautious,

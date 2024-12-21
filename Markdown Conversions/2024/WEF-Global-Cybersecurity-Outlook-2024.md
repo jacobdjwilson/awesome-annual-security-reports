@@ -30,57 +30,31 @@ Partners or other stakeholders.
 
 ## Contents
 [Foreword](#foreword)
-3
 [Executive summary](#executive-summary)
-4
 [1 Understanding global cyber inequity](#1-understanding-global-cyber-inequity)
-8
-[1.1 The state of cyber inequity](#11-the-state-of-cyber-inequity)
-9
-[1.2 Core drivers of cyber inequity](#12-core-drivers-of-cyber-inequity)
-11
+  [1.1 The state of cyber inequity](#11-the-state-of-cyber-inequity)
+  [1.2 Core drivers of cyber inequity](#12-core-drivers-of-cyber-inequity)
 [2 A world in geopolitical and technological transition](#2-a-world-in-geopolitical-and-technological-transition)
-12
-[2.1 Geopolitical tensions and cyber](#21-geopolitical-tensions-and-cyber)
-13
-[2.2 New technology, same fear](#22-new-technology-same-fear)
-14
+  [2.1 Geopolitical tensions and cyber](#21-geopolitical-tensions-and-cyber)
+  [2.2 New technology, same fear](#22-new-technology-same-fear)
 [3 In the thick of the cyber-skills shortage](#3-in-the-thick-of-the-cyber-skills-shortage)
-17
-[3.1 The skills gap](#31-the-skills-gap)
-18
+  [3.1 The skills gap](#31-the-skills-gap)
 [4 Cyber resilience for a new era](#4-cyber-resilience-for-a-new-era)
-20
-[4.1 Marrying legacy concerns with new risks](#41-marrying-legacy-concerns-with-new-risks)
-21
-[4.2 Emerging technologies and the state of resilience](#42-emerging-technologies-and-the-state-of-resilience)
-24
-[4.3 Cybercrime and the state of resilience](#43-cybercrime-and-the-state-of-resilience)
-24
-[4.4 Business leadership and the state of resilience](#44-business-leadership-and-the-state-of-resilience)
-25
-[4.5 Governance and the state of resilience](#45-governance-and-the-state-of-resilience)
-27
-[4.6 Ecosystem resilience](#46-ecosystem-resilience)
-28
+  [4.1 Marrying legacy concerns with new risks](#41-marrying-legacy-concerns-with-new-risks)
+  [4.2 Emerging technologies and the state of resilience](#42-emerging-technologies-and-the-state-of-resilience)
+  [4.3 Cybercrime and the state of resilience](#43-cybercrime-and-the-state-of-resilience)
+  [4.4 Business leadership and the state of resilience](#44-business-leadership-and-the-state-of-resilience)
+  [4.5 Governance and the state of resilience](#45-governance-and-the-state-of-resilience)
+  [4.6 Ecosystem resilience](#46-ecosystem-resilience)
 [5 Building a better cyber ecosystem](#5-building-a-better-cyber-ecosystem)
-30
-[5.1 Are cyber collaborations stalling or continuing to mature?](#51-are-cyber-collaborations-stalling-or-continuing-to-mature)
-31
-[5.2 Effective regulation lifts all boats](#52-effective-regulation-lifts-all-boats)
-31
-[5.3 The role of insurance](#53-the-role-of-insurance)
-32
-[5.4 Understanding cyber resilience in the supply chain](#54-understanding-cyber-resilience-in-the-supply-chain)
-33
+  [5.1 Are cyber collaborations stalling or continuing to mature?](#51-are-cyber-collaborations-stalling-or-continuing-to-mature)
+  [5.2 Effective regulation lifts all boats](#52-effective-regulation-lifts-all-boats)
+  [5.3 The role of insurance](#53-the-role-of-insurance)
+  [5.4 Understanding cyber resilience in the supply chain](#54-understanding-cyber-resilience-in-the-supply-chain)
 [Conclusion](#conclusion)
-34
 [Appendix: Methodology](#appendix-methodology)
-35
 [Contributors](#contributors)
-36
 [Endnotes](#endnotes)
-38
 
 Global Cybersecurity Outlook 2024
 2
@@ -181,10 +155,10 @@ These are the major findings from this year’s Global
 Cybersecurity Outlook and the key cyber trends 
 that executives will need to navigate in 2024:
 
-**There is growing cyber inequity 
-between organizations that are 
-cyber resilient and those that  
-are not.**
+**There is growing cyber inequity** 
+**between organizations that are** 
+**cyber resilient and those that**  
+**are not.** 
 
 In parallel, the population of organizations that 
 maintain a minimum level of cyber resilience is 
@@ -208,10 +182,10 @@ World Economic Forum’s Annual Meeting on
 Cybersecurity said that urgent action is required 
 to address this growing cyber inequity. 
 
-**Emerging technology will 
-exacerbate long-standing 
-challenges related to cyber 
-resilience.**
+**Emerging technology will** 
+**exacerbate long-standing** 
+**challenges related to cyber** 
+**resilience.**
 
 This will in turn accelerate the divide between the 
 most capable and the least capable organizations. 
@@ -231,9 +205,9 @@ advances in adversarial capabilities (phishing,
 malware, deepfakes) present the most 
 concerning impact of generative AI on cyber.
 
-**The cyber-skills and talent 
-shortage continues to widen  
-at an alarming rate.**
+**The cyber-skills and talent** 
+**shortage continues to widen**  
+**at an alarming rate.**
 	
 - Half of the smallest organizations by revenue 
 say they either do not have or are unsure as to 
@@ -255,9 +229,9 @@ greater public-private cooperation.
 Global Cybersecurity Outlook 2024
 4
 
-**Alignment between cyber  
-and business is becoming  
-more common.**
+**Alignment between cyber**  
+**and business is becoming**  
+**more common.**
 
 Organizations (including both business and cyber 
 leaders)<sup>4</sup> must continue to invest in and maintain an 
@@ -280,8 +254,8 @@ cyber risk. Of organizations that are not cyber
 resilient, only 23% trust their CEO’s ability to 
 speak about their cyber risk.
 
-**Cyber ecosystem risk is 
-becoming more problematic.**
+**Cyber ecosystem risk is** 
+**becoming more problematic.**
 
 For any organization, the partners in its ecosystem 
 are both the greatest asset and the biggest 
@@ -310,104 +284,17 @@ Global Cybersecurity Outlook 2024
 Global Cybersecurity Outlook 2024: key findings
 F I G U R E  1
 
-*Image: A pie chart showing the distribution of opinions on whether generative AI will provide an overall cyber advantage to attackers or defenders in the next two years. 55.9% believe it will advantage attackers, 35.1% believe it will remain balanced, and 8.9% believe it will advantage defenders.*
+*Image description: A pie chart titled "In the next two years, will generative AI provide overall cyber advantage to attackers or defenders?" shows 55.9% to attackers, 35.1% remain balanced, and 8.9% to defenders. Below it is a bar graph titled "What are you most concerned about in regards to generative AI’s impact on cyber?" with the following categories and percentages: Advance of adversarial capabilities – phishing, malware development, deepfakes (46%), Data leaks – exposure of personally identifiable information through generative AI (20%), Increased complexity of security governance (9%), Technical security of the AI systems themselves (8%), Software supply-chain and code development risk – potential backdoors (8%), Legal concerns of intellectual property and liability (8%). A text box states "90% of cyber leaders who attended the Annual Meeting on Cybersecurity believe that inequity within the cybersecurity ecosystem requires urgent action."*
 
-55.9%
-to attackers
-35.1%
-remain balanced
-8.9%
-to defenders
-In the next two years, will generative 
-AI provide overall cyber advantage 
-to attackers or defenders?
-
-*Image: A bar chart comparing the state of organizations' cyber resilience in 2022, 2023, and 2024. The chart shows the percentage of organizations that report their cyber resilience is insufficient, meets minimum requirements, or exceeds requirements. The data shows that the number of organizations reporting insufficient resilience has increased, while the number of organizations reporting resilience exceeding requirements has also increased, indicating a growing divide.*
-
-What are you most concerned about in regards to 
-generative AI’s impact on cyber?
-2022
-2023
-2024
-14%
-21%
-51%
-28%
-39%
-36%
-25%
-67%
-19%
-Our cyber resilience is insufﬁcient
-Our cyber resilience meets minimum requirements
-Our cyber resilience exceeds our requirements
-Advance of adversarial 
-capabilities – phishing, 
-malware development, 
-deepfakes
-Data leaks – exposure of 
-personally identiﬁable 
-information through 
-generative AI
-Increased complexity of 
-security governance
-Technical security of the 
-AI systems themselves
-Software supply-chain and 
-code development risk – 
-potential backdoors
-Legal concerns of intellectual 
-property and liability
-46%
-20%
-9%
-8%
-8%
-8%
-
-*Image: A text box stating that 90% of cyber leaders who attended the Annual Meeting on Cybersecurity believe that inequity within the cybersecurity ecosystem requires urgent action.*
-
-90% of cyber leaders who attended the 
-Annual Meeting on Cybersecurity believe 
-that inequity within the cybersecurity 
-ecosystem requires urgent action.
-90%
+**90%**
 
 **There is growing cyber inequity between organizations that are cyber resilient and those that are not**
 
-*Image: A bar chart showing the state of organizations' cyber resilience this year. The chart shows the percentage of organizations that report their cyber resilience is insufficient, meets minimum requirements, or exceeds requirements. The data shows that the number of organizations reporting insufficient resilience has increased, while the number of organizations reporting resilience exceeding requirements has also increased, indicating a growing divide.*
+*Image description: A bar graph titled "What is the state of your organization’s cyber resilience this year?" shows the following percentages for 2022, 2023, and 2024: Our cyber resilience is insufficient (14%, 21%, 51%), Our cyber resilience meets minimum requirements (28%, 39%, 36%), Our cyber resilience exceeds our requirements (25%, 67%, 19%).*
 
-What is the state of your organization’s cyber resilience this year? 
+**Emerging technologies will exacerbate long-standing challenges related to cyber resilience** 
 
-**Emerging technologies will exacerbate long-standing challenges related to cyber resilience**
-
-*Image: A graph showing the trend of low-revenue and high-revenue organizations' cyber resilience from 2022 to 2024. The graph shows that low-revenue organizations are losing resilience, while high-revenue organizations are maturing into leaders in cyber resilience.*
-
-0
-2022
-2024
-2022
-2024
-10%
-20%
-30%
-40%
-50%
-60%
-More low-revenue 
-organizations are losing 
-resiliency than gaining it
-More high-revenue 
-organizations are maturing 
-into leaders in cyber resilience
-15%
-13%
-18%
-51%
-37%
-29%
-26%
-5%
+*Image description: A graph shows two lines, one titled "More low-revenue organizations are losing resiliency than gaining it" and the other titled "More high-revenue organizations are maturing into leaders in cyber resilience". The x-axis is labeled 0, 10%, 20%, 30%, 40%, 50%, 60%. The low-revenue line shows 15% in 2022 and 13% in 2024, and the high-revenue line shows 18% in 2022 and 51% in 2024. Below this is a bar graph showing the following percentages for low-revenue organizations and high-revenue organizations: Our cyber resilience is insufficient (37%, 29%), Our cyber resilience meets minimum requirements (26%, 5%), Our cyber resilience exceeds our requirements (15%, 13%).*
 
 Global Cybersecurity Outlook 2024
 6
@@ -415,105 +302,31 @@ Global Cybersecurity Outlook 2024
 Global Cybersecurity Outlook 2024: key findings
 F I G U R E  2
 
-*Image: A text box stating that 93% of leaders of organizations excelling in cyber resilience trust their CEO to speak externally about their cyber risk.*
+*Image description: A text box states "93% of leaders of organizations excelling in cyber resilience trust their CEO to speak externally about their cyber risk."*
 
-93% of leaders of organizations excelling 
-in cyber resilience trust their CEO to 
-speak externally about their cyber risk.
-93%
+**93%**
 
 **The cyber skills and talent shortage continues to widen at an alarming rate**
 
-*Image: A bar chart showing the perception of cyber regulations as an effective method of reducing cyber risks. The chart shows the percentage of organizations that agree or disagree with the statement that cyber and privacy regulations effectively reduce cyber risks.*
+*Image description: A bar graph titled "Cyber regulations are perceived to be an effective method of reducing cyber risks" shows the following percentages for 2022 and 2024: Agree (39.2%, 60.4%), Disagree (88.3%, 18.8%), and a small portion of Neutral (24.1%) in 2024.*
 
-Cyber regulations are perceived to be an effective method of reducing cyber risks
-Do you believe cyber and privacy regulations effectively reduce cyber risks?
-0
-2022
-2024
-20%
-40%
-60%
-60.4%
-18.8%
-24.1%
-Does your organization have the skills needed to respond to 
-and recover from a cyberattack?
+**Cyber regulations are perceived to be an effective method of reducing cyber risks**
 
-*Image: A bar chart showing the biggest challenges for organizations when designing for cyber resilience. The chart compares the percentage of public, medium-revenue, low-revenue, and high-revenue organizations that report resources or skills gaps as their biggest challenge.*
+*Image description: A bar graph titled "For any organization, the partners in its ecosystem are both the greatest asset and the biggest hindrance to a secure, resilient and trustworthy digital future" shows the following percentages for 2022 and 2024: Have visibility (22%, 35%), Lack visibility (78%, 64%). Below it is a bar graph titled "Do you have visibility of your third-party risk?" with the following percentages: Public organizations (49.2%), Medium-revenue organizations (82.1%), Low-revenue organizations (29%), High-revenue organizations (94.7%).*
 
-Are resources or skills gaps the biggest challenge for your 
-organization when designing for cyber resilience?
-2022
-2023
-2024
-40%
-50%
-60%
-70%
-80%
-90%
-100%
-94.7%
-82.1%
-49.2%
-Low-revenue organizations
-Medium- and high-revenue organizations
-Have visibility
-Lack visibility
-Agree
-Disagree
-Public 
-organizations
-Medium-revenue 
-organizations
-Low-revenue 
-organizations
-High-revenue 
-organizations
-0%
-10%
-20%
-30%
-40%
-50%
-60%
-22%
-35%
-38%
-Our cyber resilience 
-is insufﬁcient
-Our cyber resilience meets 
-minimum requirements
-Our cyber resilience 
-exceeds our requirements
-78%
-22%
-29%
-71%
-64%
-36%
-39.2%
-88.3%
-52%
+**For any organization, the partners in its ecosystem are both the greatest asset and the biggest hindrance to a secure, resilient and trustworthy digital future**
 
-*Image: A bar chart showing the visibility of third-party risk. The chart shows the percentage of organizations that have or lack visibility of their third-party risk.*
-
-**For any organization, the partners in its ecosystem are both the greatest asset and the biggest 
-hindrance to a secure, resilient and trustworthy digital future**
-
-Do you have visibility of your third-party risk?
+*Image description: A bar graph titled "Does your organization have the skills needed to respond to and recover from a cyberattack?" shows the following percentages for 2022, 2023, and 2024: Low-revenue organizations (40%, 50%, 60%), Medium- and high-revenue organizations (70%, 80%, 90%). Below it is a bar graph titled "Are resources or skills gaps the biggest challenge for your organization when designing for cyber resilience?" with the following percentages: Public organizations (52%), Medium-revenue organizations (38%), Low-revenue organizations (22%), High-revenue organizations (29%).*
 
 Global Cybersecurity Outlook 2024
 7
 
 <a name="1-understanding-global-cyber-inequity"></a>
-## 1 Understanding global 
+# 1 Understanding global 
 cyber inequity
 A systemic solution is needed to address 
 the inequity in cyber-resilience capacity 
 across organizations and countries.
-
 Global Cybersecurity Outlook 2024
 8
 
@@ -551,7 +364,6 @@ The cost of accessing adequate cyber services,
 tools and talent, and the early adoption of cutting-
 edge technology by the largest organizations in the 
 ecosystem are two core factors driving the divide. 
-
 A few statistics further illustrate the trend towards 
 imbalance. The smallest organizations are more 
 than twice as likely as the largest to say they 
@@ -606,50 +418,16 @@ options to reduce their risk.
 
 <a name="11-the-state-of-cyber-inequity"></a>
 ### 1.1 The state of cyber inequity 
-*Image: A bar chart showing the percentage of organizations that carry cyber insurance, categorized by the number of employees. 85% of organizations with 100,000+ employees carry cyber insurance, while only 21% of organizations with <250 employees carry cyber insurance.*
+*Image description: A bar graph titled "Organizations that carry cyber insurance by number of employees" shows the following percentages: 100,000+ Employees (85%), <250 Employees (21%).*
 Organizations that carry cyber insurance by number of employees 
 F I G U R E  3
-100,000+ 
-Employees
-<250 
-Employees
-0
-10
-20
-30
-40
-50
-60
-70
-80
-90
-100
-85%
-21%
 
 Global Cybersecurity Outlook 2024
 9
 
-*Image: A bar chart showing the percentage of organizations that carry cyber insurance, categorized by revenue. 75% of organizations with >$5.5 billion per year in revenue carry cyber insurance, while only 25% of organizations with <$250 million per year in revenue carry cyber insurance.*
+*Image description: A bar graph titled "Organizations that carry cyber insurance by revenue" shows the following percentages: >$5.5 billion per year (75%), <$250 million per year (25%).*
 Organizations that carry cyber insurance by revenue
 F I G U R E  4
->$5.5 billion 
-per year
-<$250 million 
-per year
-0
-10
-20
-30
-40
-50
-60
-70
-80
-90
-100
-75%
-25%
 
 Globally, disparity across geographies is also 
 reflected in the analysis. Perhaps unsurprisingly, 
@@ -709,7 +487,7 @@ Chief Executive Officer of At-Bay, neatly summed it
 up in this way:
 
 > Security solutions are becoming too sophisticated, to the point 
-where many SMEs struggle to operate them, let alone afford them.
+> where many SMEs struggle to operate them, let alone afford them.
 
 Global Cybersecurity Outlook 2024
 10
@@ -759,14 +537,14 @@ As Abhay Raman, Senior Vice-President and Chief
 Security Officer at Sun Life, put it:
 
 > The risks associated with continuing to 
-exacerbate this technological divide between 
-organizations and nations that can and cannot 
-adequately mitigate cyber events poses both 
-a threat to the entire ecosystem and outsized 
-risks to those that are already vulnerable. The 
-imbalance in global internet access presents 
-a prescient example of the consequences of 
-sustaining an unequal digital ecosystem.
+> exacerbate this technological divide between 
+> organizations and nations that can and cannot 
+> adequately mitigate cyber events poses both 
+> a threat to the entire ecosystem and outsized 
+> risks to those that are already vulnerable. The 
+> imbalance in global internet access presents 
+> a prescient example of the consequences of 
+> sustaining an unequal digital ecosystem.
 
 Doing so requires a systemic solution, with 
 participation from everyone – SMEs, multinational 
@@ -788,25 +566,23 @@ such as internet service providers working to protect
 the entire ecosystem, including smaller players.<sup>11</sup>
 
 > Affordability is a critical determinant of cyber-resilience success. 
-We should therefore design risk-appropriate, affordable and  
-fit-for-use cyber-resilience architectures for large multinationals  
-and SMEs alike.
+> We should therefore design risk-appropriate, affordable and  
+> fit-for-use cyber-resilience architectures for large multinationals  
+> and SMEs alike.
 
 <a name="12-core-drivers-of-cyber-inequity"></a>
 ### 1.2 Core drivers of cyber inequity
-
 Global Cybersecurity Outlook 2024
 11
 
 <a name="2-a-world-in-geopolitical-and-technological-transition"></a>
-## 2 A world in geopolitical 
+# 2 A world in geopolitical 
 and technological 
 transition
 The rapid spread of generative AI and 
 other new technologies that can easily be 
 used by cyberattackers poses a serious 
 threat both for business and in public life. 
-
 Global Cybersecurity Outlook 2024
 12
 
@@ -931,16 +707,15 @@ against a diverse spectrum of cyberthreats.
 <a name="21-geopolitical-tensions-and-cyber"></a>
 ### 2.1 Geopolitical tensions and cyber
 > Geopolitics has  
-at least moderately 
-influenced
-of organizations’ 
-cybersecurity 
-strategies.
-70%
+> at least moderately 
+> influenced
+> of organizations’ 
+> cybersecurity 
+> strategies.
+**70%**
 
 <a name="21-geopolitical-tensions-and-cyber"></a>
 ### 2.1 Geopolitical tensions and cyber
-
 Global Cybersecurity Outlook 2024
 13
 
@@ -956,4 +731,33 @@ organizations will likely allow deficits in fundamental
 security, resilience and trust to be exacerbated. 
 
 The 2024 Global Cyber Outlook findings indicate 
-that organizations are paying attention and
+that organizations are paying attention and reacting 
+quickly to mitigate the risks of adopting emerging 
+technology. The meteoric rise of large language 
+models (LLMs) and generative AI over the past 
+12 months is a key example. Although quantum 
+technologies may be temporary eclipsed by the zeal 
+surrounding generative AI, it is still on the minds 
+of respondents as a matter to be addressed. In 
+one way, quantum is making its way back to the 
+forefront; in November 2023, the United States was 
+working to instate the National Quantum Initiative 
+Reauthorization Act.<sup>17</sup>
+
+In the 2022 Global Cybersecurity Outlook,<sup>18</sup> 
+approximately half of leaders said that automation 
+and machine learning would have the greatest 
+influence on cybersecurity in the following two years. 
+Nearly two years later, executives still feel the same – 
+this year, approximately half of leaders still agree that 
+generative AI will have the most significant impact on 
+cybersecurity in the next two years. Industries such 
+as cybersecurity (65%), agriculture (63%), banking 
+(56%) and insurance (56%) all had the largest 
+percentages of leaders choosing generative AI as 
+the biggest influence on cybersecurity. 
+
+<a name="22-new-technology-same-fear"></a>
+### 2.2 New technology, same fear
+*Image description: A table titled "Sectors that leaders perceive will be affected by generative AI, with percentages, and perceived resilience" has two columns: Industry and Percentage of leaders who think generative AI will most significantly affect cybersecurity in the next two years, and Percentage of leaders who think their organizations are at least minimally cyber resilient. The rows are as follows: Cybersecurity (65%, 94%), Agriculture, food and beverage (63%, 38%), Banking and capital markets (56%, 68%), Insurance and asset management (56%, 89%), Professional services (53%, 69%), Information technology and telecommunications (52%, 81%), Health and healthcare and life sciences (46%, 62%), Retail, consumer goods and lifestyle (44%, 67%), Energy technology, energy utilities and oil and gas (41%, 94%), Policy and administration (40%, 60%), Education (33%, 67%), Software and platforms (15%, 77%).*
+Sectors that leaders perceive will be affected by generative AI,
