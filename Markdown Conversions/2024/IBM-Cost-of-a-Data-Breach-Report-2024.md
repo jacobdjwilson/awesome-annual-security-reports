@@ -1,34 +1,34 @@
 # Cost of a Data Breach Report 2024
 
-## Table of contents
-[Executive summary](#executive-summary)
-[What’s new in the 2024 report](#whats-new-in-the-2024-report)
-[Key findings](#key-findings)
-[Complete findings](#complete-findings)
-[Global highlights](#global-highlights)
-[Initial attack vectors and root causes](#initial-attack-vectors-and-root-causes)
-[Data breach lifecycle](#data-breach-lifecycle)
-[Identifying the breach](#identifying-the-breach)
-[Security AI and automation](#security-ai-and-automation)
-[Raising prices post-breach](#raising-prices-post-breach)
-[Business disruption](#business-disruption)
-[Recovery time](#recovery-time)
-[Factors that increase or decrease breach costs](#factors-that-increase-or-decrease-breach-costs)
-[The cost of extortion attacks](#the-cost-of-extortion-attacks)
-[Reporting the breach and regulatory fines](#reporting-the-breach-and-regulatory-fines)
-[Data security](#data-security)
-[Mega breaches](#mega-breaches)
-[Security investments](#security-investments)
-[Recommendations to help reduce the cost of a data breach](#recommendations-to-help-reduce-the-cost-of-a-data-breach)
-[Organization demographics](#organization-demographics)
-[Geographic demographics](#geographic-demographics)
-[Industry demographics](#industry-demographics)
-[Industry definitions](#industry-definitions)
-[Research methodology](#research-methodology)
-[How we calculate the cost of a data breach](#how-we-calculate-the-cost-of-a-data-breach)
-[Data breach FAQs](#data-breach-faqs)
-[Research limitations](#research-limitations)
-[About IBM and Ponemon Institute](#about-ibm-and-ponemon-institute)
+## Table of Contents
+- [Executive summary](#executive-summary)
+- [What’s new in the 2024 report](#whats-new-in-the-2024-report)
+- [Key findings](#key-findings)
+- [Complete findings](#complete-findings)
+- [Global highlights](#global-highlights)
+- [Initial attack vectors and root causes](#initial-attack-vectors-and-root-causes)
+- [Data breach lifecycle](#data-breach-lifecycle)
+- [Identifying the breach](#identifying-the-breach)
+- [Security AI and automation](#security-ai-and-automation)
+- [Raising prices post-breach](#raising-prices-post-breach)
+- [Business disruption](#business-disruption)
+- [Recovery time](#recovery-time)
+- [Factors that increase or decrease breach costs](#factors-that-increase-or-decrease-breach-costs)
+- [The cost of extortion attacks](#the-cost-of-extortion-attacks)
+- [Reporting the breach and regulatory fines](#reporting-the-breach-and-regulatory-fines)
+- [Data security](#data-security)
+- [Mega breaches](#mega-breaches)
+- [Security investments](#security-investments)
+- [Recommendations to help reduce the cost of a data breach](#recommendations-to-help-reduce-the-cost-of-a-data-breach)
+- [Organization demographics](#organization-demographics)
+- [Geographic demographics](#geographic-demographics)
+- [Industry demographics](#industry-demographics)
+- [Industry definitions](#industry-definitions)
+- [Research methodology](#research-methodology)
+- [How we calculate the cost of a data breach](#how-we-calculate-the-cost-of-a-data-breach)
+- [Data breach FAQs](#data-breach-faqs)
+- [Research limitations](#research-limitations)
+- [About IBM and Ponemon Institute](#about-ibm-and-ponemon-institute)
 
 ## Executive summary
 IBM’s annual Cost of a Data Breach Report provides IT, risk 
@@ -95,28 +95,28 @@ Each year, we continue to evolve the Cost of a Data Breach
 Report to reflect new technologies, emerging tactics and recent 
 events. For the first time, this year’s research explores:
 	
-– Whether organizations experienced long-term operational 
+- Whether organizations experienced long-term operational 
 disruption, for example, the inability to process sales orders, 
 a complete shutdown of production facilities, ineffective 
 customer services
 	
-– Whether the breach included data stored in unmanaged data 
+- Whether the breach included data stored in unmanaged data 
 sources, otherwise known as shadow data
 	
-– To what extent organizations are using AI and automation in 
+- To what extent organizations are using AI and automation in 
 each of 4 areas of security operations: prevention, detection, 
 investigation and response
 	
-– The nature of extortion attacks, for example, extortion and 
+- The nature of extortion attacks, for example, extortion and 
 ransomware attacks or extortion and data exfiltration only
 	
-– The time it takes to restore data, systems or services to their 
+- The time it takes to restore data, systems or services to their 
 pre-breach state
 	
-– How long it took organizations to report the breach if they 
+- How long it took organizations to report the breach if they 
 were mandated to do so
 	
-– Whether organizations that involved law enforcement 
+- Whether organizations that involved law enforcement 
 following a ransomware attack paid the ransom
 
 ## Key findings
@@ -154,9 +154,9 @@ of gen AI security tools—which are expected to help close the
 gap by boosting productivity and efficiency—this skills gap 
 remains a challenge.
 
-*   **USD 4.88M**
-*   **USD 2.2M**
-*   **26.2%**
+![Image of USD 4.88M]
+![Image of USD 2.2M]
+![Image of 26.2%]
 
 ### Days to identify and contain breaches involving stolen credentials
 Breaches involving stolen or compromised credentials took the 
@@ -213,47 +213,40 @@ million, and that excludes the cost of any ransom paid. Involving
 law enforcement also helped shorten the time required to 
 identify and contain breaches from 297 days to 281 days. 
 
-*   **292**
-*   **46%**
-*   **1 in 3**
-*   **USD 830,000**
-*   **USD 4.99M**
-*   **USD 1M**
-
 ## Complete findings
 In this section, we provide the detailed findings 
 across 14 themes. Topics are presented in the 
 following order:
 	
-– Global highlights
+- Global highlights
 	
-– Initial attack vectors and root causes
+- Initial attack vectors and root causes
 	
-– Data breach lifecycle
+- Data breach lifecycle
 	
-– Identifying the breach
+- Identifying the breach
 	
-– Security AI and automation
+- Security AI and automation
 	
-– Raising prices post-breach
+- Raising prices post-breach
 	
-– Business disruption
+- Business disruption
 	
-– Recovery time
+- Recovery time
 	
-– Factors that increase or decrease  
+- Factors that increase or decrease  
 breach costs
 	
-– The cost of extortion attacks
+- The cost of extortion attacks
 	
-– Reporting the breach and  
+- Reporting the breach and  
 regulatory fines
 	
-– Data security
+- Data security
 	
-– Mega breaches
+- Mega breaches
 	
-– Security investments
+- Security investments
 
 ## Global highlights  
 Globally, security teams are doing a much better job of detecting 
@@ -273,7 +266,7 @@ one year, reaching USD 4.88 million, the biggest jump since
 the pandemic. Business disruption and post-breach response 
 activities drove most of this yearly cost increase. See Figure 1.
 
-**Figure 1.** *A bar chart showing the global average total cost of a data breach in USD millions. The bar is labeled with "USD 4.88M" and the text "The global average cost of a data breach spikes" is below the bar.*
+![Image of Figure 1. Measured in USD millions Global average total cost of a data breach USD 4.88M The global average cost of a data breach spikes]
 
 ### The United States led the world in average breach cost
 For the 14th year, the United States had the highest average 
@@ -285,9 +278,11 @@ addition this year. Notably, Canada and Japan saw average costs
 drop, while Italy and the Middle East saw significant increases. 
 See Figures 2A and 2B.
 
-**Figure 2A.** *A table showing the cost of a data breach by country or region, measured in USD millions. The table has columns for "#", "Country", "2024", and "2023". The table lists 16 countries and regions with their respective costs for 2024 and 2023.*
+Cost of a data breach by country or region
 
-**Figure 2B.** *A table showing the top 5 countries and regions with the cost change between 2024 and 2023, measured in USD millions. The table has columns for "#", "Cost change", "2024", and "2023". The table lists the top 5 countries and regions with their respective costs for 2024 and 2023.*
+![Image of Figure 2A. Measured in USD millions # Country 2024 2023 1 United States $9.36 $9.48 2 Middle East $8.75 $8.07 3 Benelux $5.90 — 4 Germany $5.31 $4.67 5 Italy $4.73 $3.86 6 Canada $4.66 $5.13 7 United Kingdom $4.53 $4.21 8 Japan $4.19 $4.52 9 France $4.17 $4.08 10 Latin America $4.16 $3.69 11 South Korea $3.62 $3.48 12 ASEAN $3.23 $3.05 13 Australia $2.78 $2.70 14 South Africa $2.78 $2.79 15 India $2.35 $2.18 16 Brazil $1.36 $1.22]
+
+![Image of Figure 2B. Measured in USD millions # Cost change 2024 2023 1 ↓ United States $9.36 United States $9.48 2 ↑ Middle East $8.75 Middle East $8.07 3 ↑ Benelux $5.90 Canada $5.13 4 ↑ Germany $5.31 Germany $4.67 5 ↑ Italy $4.73 Japan $4.52 Top 5 countries and regions 2024 vs 2023]
 
 ### Healthcare topped industry costs, again
 The average breach cost for healthcare fell 10.6%, to USD 9.77 
@@ -297,7 +292,7 @@ Healthcare remains a target for attackers since the industry often
 suffers from existing technologies and is highly vulnerable to 
 disruption, which can put patient safety at stake. See Figure 3.
 
-**Figure 3.** *A bar chart showing the cost of a data breach by industry, measured in USD millions. The chart shows the cost for various industries.*
+![Image of Figure 3. Measured in USD millions Cost of a data breach by industry]
 
 ### Average time to identify and contain a breach fell
 The mean time it took defenders to identity and contain a  
@@ -308,7 +303,7 @@ excludes Benelux because, as a new region in the study, it was
 having outsized influence and skewed results much more than 
 the average. See Figure 4.
 
-**Figure 4.** *A bar chart showing the time to identify and contain a data breach, measured in days. The chart shows the time for MTTI and MTTC.*
+![Image of Figure 4. Measured in days Time to identify and contain a data breach]
 
 ### Lost business costs and post-breach response costs soared
 Costs from lost business and post-breach response rose nearly 
@@ -319,7 +314,7 @@ reputation damage. Post-breach costs can include the expense
 of setting up call centers and credit monitoring services for 
 impacted customers, and paying regulatory fines. See Figure 5.
 
-**Figure 5.** *A stacked bar chart showing the average cost of a data breach in 4 components, measured in USD millions. The chart shows the cost for detection and escalation, notification, post-breach response, and lost business.*
+![Image of Figure 5. Measured in USD millions Average cost of a data breach in 4 components]
 
 ### Most breaches involved customer PII
 The most common type of data stolen or compromised was 
@@ -329,9 +324,12 @@ card fraud. The global average for all stolen record types rose to
 a high of USD 169, with employee PII the costliest. See Figures 
 6A and 6B.
 
-**Figure 6A.** *A bar chart showing the per-record cost of a data breach by type of record compromised, measured in USD. The chart shows the cost for customer PII, intellectual property, other corporate data, and anonymized customer data.*
+Per-record cost of a data breach by type of  
+record compromised
 
-**Figure 6B.** *A bar chart showing the type of data compromised by percentage. The chart shows the percentage for customer PII, employee PII, anonymized customer data, intellectual property, and other corporate data.*
+![Image of Figure 6A. More than 1 response permitted Customer PII 183 179 156 173 Intellectual property Other corporate data 168 171 Anonymized customer data (non-PII) 132 138]
+
+![Image of Figure 6B. Measured in USD millions Customer PII 48% 52% Employee PII 37% 40% Anonymized customer data (non-PII) 24% 26% Intellectual property 43% 34% Other corporate data 31% 21% Employee PII 181 189 01 03 05 02 04 2024 2023 2024 2023 2024 2023 2024 2023]
 
 ## Initial attack vectors and root causes
 For the 2nd year in a row, phishing and stolen or compromised 
@@ -350,9 +348,7 @@ vectors, but in the end cost more, at USD 4.88 million. Malicious
 insider attacks cost the most, at USD 4.99 million, but were only 
 7% of all breach pathways. See Figure 7.
 
-**Figure 7.** *A bar chart showing the cost and frequency of a data breach by initial attack vector, measured in USD millions and percentage of all breaches. The chart shows the cost and percentage for various attack vectors.*
-
-*   **USD 4.81M** The average cost of a breach when attackers used compromised credentials, which happened in 16% of the breach cases studied.
+![Image of Figure 7. Measured in USD millions; percentage of all breaches Cost and frequency of a data breach by initial attack vector USD 4.81M The average cost of a breach when attackers used compromised credentials, which happened in 16% of the breach cases studied.]
 
 ### Credential-based attacks took longer to identify and contain
 Whether credentials were stolen or used by malicious insiders, 
@@ -363,7 +359,7 @@ malicious user activity on the network, making threats harder to
 identify. On the other hand, attacks using zero-day vulnerabilities 
 were the most time-consuming to contain. See Figure 8.
 
-**Figure 8.** *A bar chart showing the top 5 categories in response time, measured in days. The chart shows the time for various attack vectors.*
+![Image of Figure 8. Measured in days Top 5 categories in response time]
 
 ### IT failures or human error caused nearly half of all breaches
 Malicious attacks—those committed by outside attackers or 
@@ -372,7 +368,7 @@ as these breaches are, it’s important to remember the remaining
 23% are due to IT failure and 22% are due to human error.  See 
 Figure 9.
 
-**Figure 9.** *A pie chart showing the root cause of the data breach between 3 categories. The chart shows the percentage for malicious attacks, IT failure, and human error.*
+![Image of Figure 9. Root cause of the data breach between 3 categories]
 
 ## Data breach lifecycle
 In a data breach, time means money, and breaches with longer 
@@ -393,7 +389,7 @@ lifecycles increased 10.3% this year over last year, costs for
 shorter lifecycles also increased, but by a smaller amount, 3.6%. 
 See Figure 10.
 
-**Figure 10.** *A bar chart showing the cost of a data breach based on the breach lifecycle, measured in USD millions. The chart shows the cost for lifecycles under 200 days and over 200 days.*
+![Image of Figure 10. Measured in USD millions Cost of a data breach based on the breach lifecycle]
 
 ## Identifying the breach
 To contain a data breach, it needs to be identified first. Who 
@@ -412,7 +408,7 @@ over the 2023 report when security teams discovered breaches
 only one-third of the time. The change shows security teams 
 were able to speed up detection. See Figure 11.
 
-**Figure 11.** *A bar chart showing how the breach was identified, with only 1 response permitted. The chart shows the percentage for organizations' security teams and tools, disclosure from the attacker, and benign third party.*
+![Image of Figure 11. Only 1 response permitted How was the breach identified? Organizations’ security teams and tools Disclosure from the attacker Benign third party 42% 33% 34% 40% 24% 27% 01 03 02 2024 2023 2024 2023]
 
 ### Breaches disclosed by attackers cost more
 By the time an attacker discloses a breach, they’ll likely have 
@@ -422,9 +418,7 @@ disclosed by an attacker, the average cost was USD 5.53 million.
 On the other hand, when a security team identified a breach, the 
 average cost was USD 4.55 million. See Figure 12.
 
-**Figure 12.** *A bar chart showing the cost of a data breach by how the breach was identified, measured in USD millions. The chart shows the cost for security teams and tools, disclosure from the attacker, and benign third party.*
-
-*   **USD 5.53M** The average cost of a breach when the breach was disclosed by an attacker.
+![Image of Figure 12. Measured in USD millions USD 5.53M The average cost of a breach when the breach was disclosed by an attacker. Cost of a data breach by how the breach was identified]
 
 ### Faster breach identification and containment
 The report found regardless of how a breach was discovered, 
@@ -433,7 +427,7 @@ average in 2024 than the previous year. The use of AI and
 automation likely contributed to this acceleration, as the next 
 section of this report shows. See Figure 13.
 
-**Figure 13.** *A bar chart showing the time to identify and contain a breach by how the breach was identified, measured in days. The chart shows the time for MTTI and MTTC for security teams and tools, disclosure from the attacker, and benign third party.*
+![Image of Figure 13. Measured in days Time to identify and contain a breach by how the breach was identified]
 
 ## Security AI and automation
 AI and automation are transforming the world of cybersecurity. 
@@ -451,7 +445,7 @@ it represents a 10.7% increase in use. The share of those using
 AI and automation on a limited basis also grew from 33% to 
 36%, a 9.1% increase. See Figure 14.
 
-**Figure 14.** *A bar chart showing the state of security AI and automation comparing 3 usage levels, measured in percentage of organizations per usage level. The chart shows the percentage for no use, limited use, and extensive use.*
+![Image of Figure 14. Percentage of organizations per usage level State of security AI and automation comparing 3 usage levels]
 
 ### More AI and automation meant lower breach costs
 The more organizations used AI and automation, the lower their 
@@ -461,7 +455,7 @@ automation had average costs of USD 5.72 million, while those
 making extensive use of AI and automation had average costs  
 of USD 3.84 million, a savings of USD 1.88 million. See Figure 15.
 
-**Figure 15.** *A bar chart showing the cost of a data breach by AI and automation usage level, measured in USD millions. The chart shows the cost for no use, limited use, and extensive use.*
+![Image of Figure 15. Measured in USD millions Cost of a data breach by AI and automation usage level]
 
 ### More AI equaled faster identification and containment
 Organizations extensively using security AI and automation 
@@ -469,7 +463,7 @@ identified and contained data breaches nearly 100 days faster
 on average than organizations that didn’t use these technologies 
 at all. See Figure 16.
 
-**Figure 16.** *A bar chart showing the time to identify and contain a data breach by AI and automation usage level, measured in days. The chart shows the time for MTTI and MTTC for no use, limited use, and extensive use.*
+![Image of Figure 16. Measured in days Time to identify and contain a data breach by AI and automation usage level]
 
 ### Security teams applied AI and automation evenly across functions
 Among organizations that stated they used AI and automation 
@@ -478,9 +472,7 @@ categories: prevention, detection, investigation and response.
 Roughly 40% used AI technologies at least somewhat. See 
 Figure 17.
 
-**Figure 17.** *A pie chart showing how much AI and automation was used in 4 security categories, from the respondents that reported extensive use of AI and automation. The chart shows the percentage for prevention, detection, investigation, and response.*
-
-*   **27%** Share of organizations that used AI and automation across 4 security categories.
+![Image of Figure 17. From the respondents that reported extensive use of AI and automation; reference chart 14 How much AI and automation did you use in 4 security categories? 27% Share of organizations that used AI and automation across 4 security categories.]
 
 ### Extensive use of AI and automation lowered costs
 When AI and automation were used extensively in each of the  
@@ -492,7 +484,7 @@ cost was USD 3.76 million. Meanwhile, organizations that didn’t
 use these tools in prevention saw USD 5.98 million in costs, a 
 45.6% difference. See Figure 18.
 
-**Figure 18.** *A bar chart showing the cost of a data breach based on where AI and automation are deployed in security operations, from the organizations that reported extensive use of AI and automation, measured in USD millions. The chart shows the cost for prevention, detection, investigation, and response.*
+![Image of Figure 18. From the organizations that reported extensive use of AI and automation, measured in USD millions; reference chart 14 Cost of a data breach based on where AI and automation are deployed in security operations]
 
 ### AI and automation accelerated the time to identify and contain a breach
 Wherever AI and automation were applied, they accelerated the 
@@ -502,7 +494,7 @@ investigation or response—reduced the average MTTI and MTTC
 for data breaches by 33% for response and 43% for prevention. 
 See Figure 19.
 
-**Figure 19.** *A bar chart showing the time to identify and contain a data breach based on where AI and automation are deployed in security operations, from the organizations that reported extensive use of AI and automation, measured in days. The chart shows the time for MTTI and MTTC for prevention, detection, investigation, and response.*
+![Image of Figure 19. From the organizations that reported extensive use of AI and automation, measured in days; reference chart 14 Time to identify and contain a data breach based on where AI and automation are deployed in security operations]
 
 ## Raising prices post-breach
 By their nature, data breaches are expensive. When 
@@ -519,7 +511,7 @@ customers. The share of organizations that planned to do so
 increased to 63% this year from 57% last year, representing a 
 10.5% increase. See Figure 20.
 
-**Figure 20.** *A bar chart showing the share of all organizations that increased the cost of its products and services due to a data breach. The chart shows the percentage for 2024 and 2023.*
+![Image of Figure 20. Share of all organizations Did the data breach result in your organization increasing the cost of its products and services?]
 
 ## Business disruption
 Business runs on data. When data is breached, business is 
@@ -535,9 +527,7 @@ significant or very significant disruption to business resulting
 from a breach. Only 1% described their level of disruption as low. 
 See Figure 21.
 
-**Figure 21.** *A bar chart showing the level of business disruption experienced because of the data breach, with only 1 response permitted. The chart shows the percentage for low, moderate, significant, and very significant.*
-
-*   **70%** Share of organizations that experienced a significant or very significant disruption to business as a result of a breach.
+![Image of Figure 21. Only 1 response permitted What level of business disruption did you experience because of the data breach? 70% Share of organizations that experienced a significant or very significant disruption to business as a result of a breach.]
 
 ### Average cost of a breach increased with disruption
 Average breach costs were higher when business disruption was 
@@ -546,22 +536,23 @@ incurred average data breach costs of USD 4.63 million. For
 organizations that reported very significant disruptions, average 
 costs were 7.9% higher, at USD 5.01 million. See Figure 22.
 
-**Figure 22.** *A bar chart showing the cost of a data breach based on the level of business disruption, measured in USD millions. The chart shows the cost for low, moderate, significant, and very significant.*
+![Image of Figure 22. Measured in USD millions Cost of a data breach based on the level of business disruption]
 
 ## Recovery time
 Even after a breach is contained, the work of recovery goes on. 
 In this study, recovery means:
 	
-– Business operations are back to normal in areas affected by 
+- Business operations are back to normal in areas affected by 
 the breach.
 	
-– Organizations have met compliance obligations, such as 
+- Organizations have met compliance obligations, such as 
 paying fines.
 	
-– Customer confidence and employee trust have been restored.
+- Customer confidence and employee trust have been restored.
 	
-– Organizations have put controls, technologies and expertise in 
+- Organizations have put controls, technologies and expertise in 
 place to avoid future data breaches.
+
 Much of this work, such as re-establishing customer confidence, 
 involves factors beyond technology. For most organizations, the 
 hard work of recovery can be months away.
@@ -572,7 +563,7 @@ said they had fully recovered from their data breaches. Most
 organizations said they were still working on them. See  
 Figure 23.
 
-**Figure 23.** *A bar chart showing the share of all breached organizations that have recovered from the data breach. The chart shows the percentage for yes and no.*
+![Image of Figure 23. Share of all breached organizations Has your organization recovered from the data breach?]
 
 ### Full recovery took longer than 100 days 
 Among the share of organizations that had fully recovered, 
@@ -583,7 +574,7 @@ than 150 days to do so. A small share, 3%, of fully recovered
 organizations were able to do so in less than 50 days. See  
 Figure 24.
 
-**Figure 24.** *A bar chart showing the average time to recover from a data breach, from the organizations that reported they had recovered fully from the incident, measured in days. The chart shows the percentage for various time ranges.*
+![Image of Figure 24. From the organizations that reported they had recovered fully from the incident, measured in days (reference chart 23) Average time to recover from a data breach 35% 24% 19% 14% 5% 3% > 150 days 126 to 150 days 101 to 125 days 76 to 100 days 51 to 75 days < 50 days]
 
 ## Factors that decreased or increased the average breach cost
 When analyzing costs, it’s helpful to know which technologies 
@@ -602,7 +593,7 @@ essential element in cyberdefense strategies, specifically
 for detecting and stopping phishing attacks. AI and machine 
 learning insights closely followed in second place. See Figure 25.
 
-**Figure 25.** *A bar chart showing the factors that reduced the average breach cost, measured in USD. The chart shows the cost difference from the USD 4.88M breach average for employee training, AI and machine learning insights, and incident response (IR) team testing.*
+![Image of Figure 25. Cost difference from USD 4.88M breach average; measured in USD Factors that reduced the average breach cost]
 
 ### Key factors that increased costs
 The top 3 factors that amplified breach costs in this analysis 
@@ -610,7 +601,7 @@ were security system complexity, security skills shortage and
 third-party breaches, which can include supply chain breaches. 
 See Figure 26. 
 
-**Figure 26.** *A bar chart showing the factors that increased the average breach cost, measured in USD. The chart shows the cost difference from the USD 4.88M breach average for security system complexity, security skills shortage, and third-party breaches.*
+![Image of Figure 26. Cost difference from USD 4.88M breach average; measured in USD Factors that increased the average breach cost]
 
 ### High versus low levels of key cost amplifying factors 
 When organizations suffered from a high-level shortage of 
@@ -619,9 +610,7 @@ compared to organizations with a low-level skills shortage, with
 USD 3.98 million. Similar disparities were seen across 2 other 
 key cost factor areas. See Figure 27.
 
-**Figure 27.** *A bar chart showing the cost of a data breach for organizations with a high level versus low level of 3 cost amplifying factors, measured in USD millions. The chart shows the cost for security system complexity, security skills shortage, and third-party breaches.*
-
-*   **USD 5.74M** Average breach costs for organizations experiencing a high-level shortage of security skills.
+![Image of Figure 27. Measured in USD millions Cost of a data breach for organizations with a high level versus low level of 3 cost amplifying factors USD 5.74M Average breach costs for organizations experiencing a high-level shortage of security skills.]
 
 ### High versus low levels of key cost mitigating factors
 When organizations suffered from low levels of employee 
@@ -630,7 +619,7 @@ to organizations with high levels of employee training, with USD
 4.15 million. Similar disparities were seen across 2 other key 
 cost factor areas. See Figure 28.
 
-**Figure 28.** *A bar chart showing the cost of a data breach for organizations with a high level versus low level of 3 cost mitigating factors, measured in USD millions. The chart shows the cost for employee training, AI and machine learning insights, and incident response (IR) team testing.*
+![Image of Figure 28. Measured in USD millions Cost of a data breach for organizations with a high level versus low level of 3 cost mitigating factors]
 
 ### Security skills shortage
 The number of organizations facing a critical lack of skilled 
@@ -644,4 +633,15 @@ level skills shortage jumped to USD 5.74 million from USD 5.36
 million last year, a 7.1% rise. This increase was USD 860,000 
 higher than the global average breach cost. See Figure 29.
 
-**Figure 29.** *A bar chart showing the cost of a data breach based on the level of
+![Image of Figure 29. Measured in USD millions Cost of a data breach based on the level of security skills shortage]
+
+## The cost of extortion attacks
+The amount an organization spends on extortion attacks 
+can vary based on type—ransomware, data exfiltration and 
+destructive—as well as the way the organization responds. This 
+factor is particularly true if law enforcement is called in, as this 
+year’s study shows, where costs dropped dramatically when law 
+enforcement investigators were involved. All 3 types of attacks 
+were examined, including ransomware, where data is encrypted 
+and a ransom demanded; data exfiltration, where data is stolen 
+and the organization sometimes extorted; and destructive,

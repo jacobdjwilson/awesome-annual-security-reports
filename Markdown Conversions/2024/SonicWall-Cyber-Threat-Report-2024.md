@@ -1,7 +1,7 @@
 # NAVIGATING THE RELENTLESS SURGE IN CYBERCRIME
-## 2024 SONICWALL CYBER THREAT REPORT
+2024 SONICWALL CYBER THREAT REPORT
 
-[TOC]
+## Table of Contents
 - [A NOTE FROM OUR CEO](#a-note-from-our-ceo)
 - [INTRODUCTION](#introduction)
 - [MALWARE](#malware)
@@ -11,7 +11,6 @@
 - [CRYPTOJACKING](#cryptojacking)
 - [CAPTURE LABS](#capture-labs)
 - [WHAT YOU CAN DO](#what-you-can-do)
-- [About SonicWall](#about-sonicwall)
 
 ## A NOTE FROM OUR CEO
 Almost 18 months ago, we kicked off our outside-in approach across all of SonicWall, with the focus on truly understanding the needs and pain points of our partners and customers and using that insight to drive the delivery of our products and services.
@@ -29,7 +28,7 @@ In this volatile environment, yesterday’s safeguards are no longer enough: Bus
 That’s why SonicWall continues to publish the SonicWall Cyber Threat Report: to provide threat intelligence to not only offer actionable insight, but to drive our roadmap and build solutions that help our partners. On behalf of our network of trusted partners and the entire SonicWall team, including our Capture Labs threat researchers, we’re excited to share this exclusive look at the evolving cybersecurity landscape.
 
 Bob VanKirk  
-President & CEO  
+President & CEO 
 SonicWall
 
 ## INTRODUCTION
@@ -44,7 +43,7 @@ That’s a key reason why SonicWall is so committed to researching and publishin
 ### 2023’s Top Trends
 Perhaps the biggest trend we observed in the 2023 landscape was acceleration. SonicWall Capture Labs threat researchers noted increased attack volumes nearly across the board. Malware jumped 11% year-over-year, with encrypted threats up 117% and cryptojacking up 659%. This trend bore out on a regional basis as well, with attack volume increases outpacing decreases nearly 3 to 1.
 
-Rather than the relentless push and pull of outside forces we’ve seen at work over the past several years, we saw threat actors in 2023 sticking with tried-and-true methods. While one would expect increasing malware attack volumes and persistently high phishing levels to be accompanied by high rates of new malware, we found the opposite to be true: Never-before-seen malware detections actually fell 38% year over year.
+Rather than the relentless push and pull of outside forces we’ve seen at work over the past several years, we saw threat actors in 2023 sticking with tried-and-true methods. While one would expect increasing malware attack volumes and persistently high phishing levels to be  accompanied by high rates of new malware, we found the opposite to be true: Never-before-seen malware detections actually fell 38% year over year.
 
 But this doesn’t mean threat actors weren’t refining their craft. SonicWall researchers observed the emergence of Microsoft OneNote files as an initial threat vector, as well as massive campaigns targeting vulnerabilities in WinRAR and MOVEit. Our data continued to reflect vulnerabilities as the most common ransomware vector — and this will likely remain the case as the number of vulnerabilities continues to climb. A record 28,834 CVEs were published in 2023, a 15% increase over 2022’s numbers. In December, SonicWall’s threat researchers discovered and responsibly disclosed CVE-2023-51467, a vulnerability affecting ApacheOFBiz. Large numbers of exploitation attempts have since been observed.
 
@@ -74,7 +73,7 @@ Using malicious PDFs has long been a preferred tactic of threat actors. But thei
 
 As these attacks grew, so did the innovation, leading to the creation of many notable variants. SonicWall observed several instances of PDFs containing QR codes in 2023, with one example threatening the user with the expiration of a Microsoft password if the target failed to scan the code.
 
-Another PDF featured a malicious URL created by using Google Script in an attempt to evade detection. This complex scam came complete with a fabricated Bitcoin transaction record and a fake “mining progress” bar, enticing targets to enter financial information in order to receive their fictitious funds.
+Another PDF featured a malicious URL created by using Google Script in an attempt to evade detection.  This complex scam came complete with a fabricated Bitcoin transaction record and a fake “mining progress” bar, enticing targets to enter financial information in order to receive their fictitious funds.
 
 As we’ve seen in past years, threat actors have gone to extremes in 2023 to replicate well-known and trusted brands — and they’re getting better at it all the time. Some examples include malicious PDFs masquerading as iTunes receipts, warnings about multiple login attempts to a Wells Fargo account, and even the login page for collaboration platform RingCentral.
 
@@ -96,7 +95,7 @@ A notable exception was Asia. Ransomware volumes hit a record high in 2023, risi
 ### 2023’s Top Ransomware: LockBit
 The arrest of two affiliates barely made a dent in LockBit’s numbers: It remained the leading ransomware group in 2023. This is likely due to consistent innovations, such as bug bounty programs to enhance “product” quality, marketing efforts, and the regular release of updated toolkit versions with improved capabilities. After the leak of LockBit 3.0/ “Black,” SonicWall engaged the threat actors, who then made a staggering ransom demand (You can see the details here.)
 
-### Still Top of Mind: Why it Matters Today
+### Still Top of Mind:  Why it Matters Today
 Assuming you don’t live in one of the rising ransomware hotspots, how concerned should you be about ransomware?
 
 In our 2023 SonicWall Threat Mindset Survey, we asked customers which types of cyberattack they’re most concerned about. Once again, ransomware topped the list at 83%, beating out phishing, encrypted threats, fileless malware, IoT attacks and more.
@@ -125,7 +124,7 @@ Malicious intrusion volumes were also up across every industry we studied. Moder
 These attempts set off alerts that must be reviewed by SOC analysts, or MSPs with SOC analysts, contributing to alert fatigue and taking valuable time away from other critical initiatives. And when an intrusion is successful, threat actors are free to exfiltrate data, execute malicious code, encrypt systems and more — potentially grinding operations to a halt and costing these organizations thousands or millions in remediation costs and compliance fines.
 
 ### Global Malicious Intrusions
-*A bar graph is described showing the number of malicious intrusion attempts in billions from 2019 to 2023. The graph shows a steady increase in malicious intrusion attempts over the years, with 2023 reaching 11.3 billion.*
+![Image description: A graph showing the trend of global malicious intrusions over time.]
 
 ### What is an Intrusion Attempt?
 A malicious intrusion attempt is a security event in which a threat actor tries to gain unauthorized access to a system or resource by exploiting a vulnerability. While the exploit of unpublished “zero-day” vulnerabilities make the most headlines, the most commonly exploited vulnerabilities are generally public and published as CVEs. But because not everyone patches at the same rate, attackers have an opportunity to use unpatched software or appliances as an entry point into a network.
@@ -213,13 +212,13 @@ As the rising tide of threats detailed in this report shows, you can’t avoid b
 
 For up-to-date threat intelligence and industry updates, follow the SonicWall blog.
 
-## About SonicWall
-SonicWall is a cybersecurity forerunner with more than 30 years of expertise and a relentless focus on its partners. With the ability to build, scale and manage security across the cloud, hybrid and traditional environments in real time, SonicWall can quickly and economically provide purpose-built security solutions to any organization around the world. Based on data from its own threat research center, SonicWall delivers seamless protection against the most evasive cyberattacks and supplies actionable threat intelligence to partners, customers and the cybersecurity community.
-
 SonicWall, Inc.
 1033 McCarthy Boulevard  |  Milpitas, CA 95035
 
 As a best practice, SonicWall routinely optimizes its methodologies for data collection, analysis and reporting. This includes improvements to data cleansing, changes in data sources and consolidation of threat feeds. Figures published in previous reports may have been adjusted across different time periods, regions or industries.
+
+### About SonicWall
+SonicWall is a cybersecurity forerunner with more than 30 years of expertise and a relentless focus on its partners. With the ability to build, scale and manage security across the cloud, hybrid and traditional environments in real time, SonicWall can quickly and economically provide purpose-built security solutions to any organization around the world. Based on data from its own threat research center, SonicWall delivers seamless protection against the most evasive cyberattacks and supplies actionable threat intelligence to partners, customers and the cybersecurity community.
 
 15.24 - 2024 SonicWall Cyber Threat Report
 SonicWall Inc.
@@ -230,8 +229,7 @@ www.sonicwall.com
 
 SonicWall is a trademark or registered trademark of SonicWall Inc. and/or its affiliates in the U.S.A. and/or other countries. All other trademarks and registered trademarks are property of their respective owners. The information in this document is provided in connection with SonicWall Inc. and/or its affiliates’ products. No license, express or implied, by estoppel or otherwise, to any intellectual property right is granted by this document or in connection with the sale of SonicWall products.
 
-EXCEPT AS SET FORTH IN THE TERMS AND CONDITIONS AS SPECIFIED IN THE LICENSE AGREEMENT FOR THIS PRODUCT, SONICWALL AND/OR ITS AFFILIATES ASSUME NO LIABILITY WHATSOEVER AND DISCLAIMS ANY EXPRESS, IMPLIED OR STATUTORY WARRANTY RELATING TO ITS PRODUCTS INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON- INFRINGEMENT. IN NO EVENT SHALL SONICWALL AND/ OR ITS AFFILIATES BE LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE, SPECIAL OR INCIDENTAL DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION OR LOSS OF INFORMATION)
-ARISING OUT OF THE USE OR INABILITY TO USE THIS DOCUMENT, EVEN IF SONICWALL AND/OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+EXCEPT AS SET FORTH IN THE TERMS AND CONDITIONS AS SPECIFIED IN THE LICENSE AGREEMENT FOR THIS PRODUCT, SONICWALL AND/OR ITS AFFILIATES ASSUME NO LIABILITY WHATSOEVER AND DISCLAIMS ANY EXPRESS, IMPLIED OR STATUTORY WARRANTY RELATING TO ITS PRODUCTS INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON- INFRINGEMENT. IN NO EVENT SHALL SONICWALL AND/ OR ITS AFFILIATES BE LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE, SPECIAL OR INCIDENTAL DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION OR LOSS OF INFORMATION) ARISING OUT OF THE USE OR INABILITY TO USE THIS DOCUMENT, EVEN IF SONICWALL AND/OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 SonicWall and/or its affiliates make no representations or warranties with respect to the accuracy or completeness of the contents of this document and reserves the right to make changes to specifications and product descriptions at any time without notice. SonicWall Inc. and/or its affiliates do not make any commitment to update the information contained in this document.
 

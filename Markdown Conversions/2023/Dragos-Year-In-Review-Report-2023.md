@@ -2,24 +2,24 @@
 ## THE 2023 YEAR IN REVIEW
 FEBRUARY 2024
 
-## TABLE OF CONTENTS
-[INTRODUCTION](#introduction)
-[THE RISING TIDE OF INDUSTRIAL CYBER THREAT ACTIVITY](#the-rising-tide-of-industrial-cyber-threat-activity)
-[KEY HIGHLIGHTS: INSPIRING ACTION](#key-highlights-inspiring-action)
-[LEARNING FROM ADVERSARY-OWNED ROCKWELL AUTOMATION VULNERABILITIES](#learning-from-adversary-owned-rockwell-automation-vulnerabilities)
-[KEY HIGHLIGHTS: BY THE NUMBERS](#key-highlights-by-the-numbers)
-[OT CYBER THREAT LANDSCAPE](#ot-cyber-threat-landscape)
-[CONFLICT-DRIVEN THREAT ACTIVITY](#conflict-driven-threat-activity)
-[NEW THREAT GROUP ACTIVITY](#new-threat-group-activity)
-[UPDATES ON SOME OF THE MOST ACTIVE THREAT GROUPS](#updates-on-some-of-the-most-active-threat-groups)
-[2023 INDUSTRIAL RANSOMWARE ANALYSIS](#2023-industrial-ransomware-analysis)
-[OT VULNERABILITIES](#ot-vulnerabilities)
-[VULNERABILITY ASSESSMENT OVERVIEW](#vulnerability-assessment-overview)
-[VULNERABILITY EXPLOITABILITY](#vulnerability-exploitability)
-[VULNERABILITY TRENDS](#vulnerability-trends)
-[THE RISE OF AUTHENTICATION-REQUIRED VULNERABILITIES](#the-rise-of-authentication-required-vulnerabilities)
-[TREND ANALYSIS BY VULNERABILITY TYPE](#trend-analysis-by-vulnerability-type)
-[ASSESSING CYBER READINESS](#assessing-cyber-readiness)
+## Table of Contents
+- [INTRODUCTION](#introduction)
+- [THE RISING TIDE OF INDUSTRIAL CYBER THREAT ACTIVITY](#the-rising-tide-of-industrial-cyber-threat-activity)
+- [KEY HIGHLIGHTS: INSPIRING ACTION](#key-highlights-inspiring-action)
+- [LEARNING FROM ADVERSARY-OWNED ROCKWELL AUTOMATION VULNERABILITIES](#learning-from-adversary-owned-rockwell-automation-vulnerabilities)
+- [KEY HIGHLIGHTS: BY THE NUMBERS](#key-highlights-by-the-numbers)
+- [OT CYBER THREAT LANDSCAPE](#ot-cyber-threat-landscape)
+- [CONFLICT-DRIVEN THREAT ACTIVITY](#conflict-driven-threat-activity)
+- [NEW THREAT GROUP ACTIVITY](#new-threat-group-activity)
+- [UPDATES ON SOME OF THE MOST ACTIVE THREAT GROUPS](#updates-on-some-of-the-most-active-threat-groups)
+- [2023 INDUSTRIAL RANSOMWARE ANALYSIS](#2023-industrial-ransomware-analysis)
+- [OT VULNERABILITIES](#ot-vulnerabilities)
+- [VULNERABILITY ASSESSMENT OVERVIEW](#vulnerability-assessment-overview)
+- [VULNERABILITY EXPLOITABILITY](#vulnerability-exploitability)
+- [VULNERABILITY TRENDS](#vulnerability-trends)
+- [THE RISE OF AUTHENTICATION-REQUIRED VULNERABILITIES](#the-rise-of-authentication-required-vulnerabilities)
+- [TREND ANALYSIS BY VULNERABILITY TYPE](#trend-analysis-by-vulnerability-type)
+- [ASSESSING CYBER READINESS](#assessing-cyber-readiness)
 
 2
 PAPER-PLANE  info@dragos.com   X-TWITTER  @DragosInc   linkedin  @Dragos, Inc.
@@ -36,6 +36,7 @@ attacks affected more industrial organizations, with a
 nearly 50 percent increase in reported incidents. Asset 
 owners must take necessary precautions to address 
 these threats or fall victim to them. 
+
 Among the threats that organizations must consider are 
 the capabilities developed in conflict areas. A year after 
 Russia’s invasion of Ukraine, cyber threat activity in the 
@@ -45,6 +46,7 @@ ELECTRUM conducted targeted cyber operations against
 Ukrainian critical infrastructure. The mixture of traditional 
 kinetic warfare with cyber-focused capabilities has created 
 a new testbed for increased threat capabilities worldwide.
+
 Similarly, the conflict that erupted in the Middle East 
 included cyber attacks on critical infrastructure. Pro-Israeli 
 hacktivists claimed responsibility for the attacks that 
@@ -54,6 +56,7 @@ operational technology (OT) hardware and software. The
 impact of these attacks on industrial equipment spread 
 beyond the conflict zone and affected various sectors, such 
 as water and manufacturing, around the globe.
+
 Throughout the year, Dragos continued to track threat 
 groups as they developed capabilities and gained access. 
 Mounting tensions between China and Taiwan contributed 
@@ -70,6 +73,7 @@ country’s critical infrastructure that can be exploited in the
 future with destructive or disruptive cyber attacks. Dragos 
 tracked 21 threat groups targeting industrial organizations 
 including three new threat groups. 
+
 Although threat groups and hacktivists posed significant 
 risks in 2023, ransomware was the primary concern 
 for many organizations globally. This concern is well 
@@ -82,6 +86,7 @@ States, Europe, Australia, Asia, and the Middle East required
 organizations to develop capabilities to meet reporting 
 obligations. To this end, Dragos conducted more exercises 
 with a wider range of participants and industries in 2023. 
+
 Another major focus area for organizations this year was 
 understanding what risks vulnerabilities posed and how 
 best to respond to them. 2023 saw a 14 percent increase in 
@@ -93,6 +98,7 @@ reminiscent of the zero-day that XENOTIME exploited in the
 TRISIS attack. However, this event exemplified how vendors, 
 governments, and our community leverage communication 
 and visibility to enable a unified, risk-based response. 
+
 Dragos started the Year in Review to highlight significant 
 trends in the OT cybersecurity community. This year’s 
 report aims to go further by offering practitioners and 
@@ -113,29 +119,29 @@ exercises, and incident response. Since Dragos first started gathering data for 
 remained consistent with notable milestones along the way. The data and perspectives presented in this report are 
 focused on the global industries that Dragos serves.
 
-**2022 – ENTER CHERNOVITE**    In 2022 
+2022 – ENTER CHERNOVITE    In 2022 
 Dragos discovered the CHERNOVITE Threat 
 Group, developer of the PIPEDREAM malware, 
-**2023 – EVOLVING THREAT LANDSCAPE**
+2023 – EVOLVING THREAT LANDSCAPE
 Rising tensions and financial opportunity 
 continued to spur a wide variety of actors to 
-**2017 – TRISIS**    The threat group XENOTIME 
+2017 – TRISIS    The threat group XENOTIME 
 deployed the TRISIS malware against a 
 Safety Instrumentation System (SIS) at a 
-**2020 – EKANS RANSOMWARE**    Dragos 
+2020 – EKANS RANSOMWARE    Dragos 
 analyzed EKANS malware variants with 
 capabilities to stop ICS-related Windows 
-**2021 - RANSOMWARE ATTACK IMPACTS OT**
+2021 - RANSOMWARE ATTACK IMPACTS OT
 In 2021, Colonial Pipeline was impacted 
 by ransomware, causing a precautionary 
 shutdown of OT operations. Again, 
-**2016 – CRASHOVERRIDE**    Not identified 
+2016 – CRASHOVERRIDE    Not identified 
 until months later, CRASHOVERRIDE 
 malware was used in 2016 as the first 
-**2018 – EXPANDED THREAT GROUPS** 
+2018 – EXPANDED THREAT GROUPS 
 In 2018, Dragos expanded the number of 
 Threat Groups tracked from 3 to 8. This trend 
-**2019 – INCREASED RANSOMWARE IN OT**
+2019 – INCREASED RANSOMWARE IN OT
 In 2019, Dragos tracked a 50 percent 
 uptick in ransomware within OT. The first 
 malicious code to attack electric substations – the 
@@ -170,7 +176,7 @@ the electric sector also in 2019.
 PAPER-PLANE  info@dragos.com   X-TWITTER  @DragosInc   linkedin  @Dragos, Inc.
 
 # KEY HIGHLIGHTS: INSPIRING ACTION
-👉 If you haven’t assessed your external infrastructure for critical systems yet, 2024 is 
+HAND-POINT-RIGHT If you haven’t assessed your external infrastructure for critical systems yet, 2024 is 
 the time. This includes identifying your organization’s internet routable netblocks and IP 
 space, including what contractors or vendors may have set up for you. Network scan your 
 public spaces and compare it against Shodan, Whois, and your documentation. Ensure 
@@ -178,7 +184,7 @@ critical assets or assets connected to your process environment are not discover
 the internet. Learn more about why this guidance is important from the 2023 attack on 
 Unitronics PLC devices by the CyberAv3ngers on page 11.
 
-👉 If you haven’t segmented your network yet, the best time for that was in the 2000s; the 
+HAND-POINT-RIGHT If you haven’t segmented your network yet, the best time for that was in the 2000s; the 
 second best time is now. This network segmentation includes separating devices with network 
 and host-based firewalls by function, not just systems from the internet, but systems from 
 each other and critical processes. Do not merely focus on IPv4 when your systems also use 
@@ -187,14 +193,14 @@ remote desktop protocol (RDP), or other remote access tools, they should leverag
 authentication. In 2023, increased ransomware impacts on OT environments highlight the 
 necessity of this old but still useful guidance. Read more on Ransomware on page 21.
 
-👉 Restricting and monitoring outbound communication is also important in addition to 
+HAND-POINT-RIGHT Restricting and monitoring outbound communication is also important in addition to 
 segmentation. This includes evaluating default routes, gateways, and firewall rules to external 
 networks and proxy configurations. In 2023, several adversaries, such as VOLTZITE, GANANITE, 
 and ransomware groups, leveraged communication to external networks for command and 
 control (C2) communication, allowing exfiltration of data and remote control of network assets. 
 For more on this see the OT Cyber Threat Landscape section of this report on page 9.
 
-👉 If your organization already regularly assesses standard guidance, such as auditing 
+HAND-POINT-RIGHT If your organization already regularly assesses standard guidance, such as auditing 
 segmentation rules and configuration, you still have work to do. As defensible architecture 
 continues to mature, adversary techniques shift with it. Learn which techniques our 
 penetration testers leverage in OT assessments in the Frontline Perspective section on page 
@@ -204,7 +210,7 @@ identifying adversaries within your network. Hunting for evidence of these techn
 within your monitoring system is the best way to identify unwanted operators hiding in your 
 OT environment.
 
-👉 Lastly, reduce the risk of vulnerable equipment used in OT processes, but do it in 
+HAND-POINT-RIGHT Lastly, reduce the risk of vulnerable equipment used in OT processes, but do it in 
 a systematic way. In 2023, Dragos prioritized and wrote mitigation guidance for 531 
 OT-related advisories, 2010 vulnerabilities. Read more on key insights, trends, and 
 mitigations from vulnerabilities on page 27.
@@ -222,25 +228,26 @@ Rockwell Automation organized a defensive working group comprised
 of various vendors, including Dragos. The working group’s goal: develop 
 detections for these vulnerabilities and search for evidence of exploitation.
 
-### Dragos Frontline Perspective
-**THE VULNERABILITIES** 
+Dragos Frontline Perspective
+THE VULNERABILITIES 
 Rockwell Automation and the 
 U.S. Government disclosed two 
 vulnerabilities:
-**CVE-2023-3595**  This vulnerability 
+CVE-2023-3595  This vulnerability 
 in 1756 EN2* and 1756 EN3* products 
 allows a malicious user to perform 
 remote code execution with 
 persistence on the target system 
 through maliciously crafted CIP 
 messages.
-**CVE-2023-3596**  In the 1756-EN4* 
+
+CVE-2023-3596  In the 1756-EN4* 
 products, this vulnerability allows a 
 malicious user to cause a denial of 
 service through maliciously crafted 
 CIP messages.
 
-### Dragos Frontline Perspective
+Dragos Frontline Perspective
 Dragos OT Watch customers and 
 Neighborhood Keeper participants 
 were protected by monitoring for this 
@@ -250,8 +257,7 @@ again, Dragos Community Defense
 Program members would benefit 
 via the program’s emerging threat 
 monitoring.
-
-**13%**
+13%
 of Rockwell Automation assets were 
 ControlLogix communication modules, 
 across manufacturing, paper and pulp, 
@@ -274,6 +280,7 @@ Keeper provided visibility into the number of vulnerable devices and how
 widespread their use is in different industries and regions. Dragos passed 
 this information back to the working group so that they could assess the 
 vulnerabilities’ risk and potential impact. 
+
 The collaboration between the U.S. Government and Rockwell Automation, 
 along with the formation of a working group of security vendors to ensure 
 a defensive front before public release, and the coordinated publishing of 
@@ -289,67 +296,68 @@ infrastructure.
 PAPER-PLANE  info@dragos.com   X-TWITTER  @DragosInc   linkedin  @Dragos, Inc.
 
 # KEY HIGHLIGHTS: BY THE NUMBERS
-### Threat Group Highlights – 2023
-**31%**
+Threat Group Highlights – 2023
+31%
+49%
 of advisories contained errors in 2023.
-**49%**
 Dragos provided mitigations for 
 49% of the advisories that had none.
-**3 New**
+3 New
 Threat Groups
-**21 Total**
+21 Total
 Threat Groups
-**10 Active**
+10 Active
 Threat Groups
 
-### Key Vulnerabilities Findings
-**80%**
+Key Vulnerabilities Findings
+80%
 of vulnerabilities reside deep within 
 the ICS network.
-**16%**
+16%
 of advisories were network 
 exploitable and perimeter facing 
 in 2023.
-**53%**
+53%
 of the advisories that Dragos analyzed 
 could cause both a loss of view and 
 loss of control, up from 51% last year.
 7
 PAPER-PLANE  info@dragos.com   X-TWITTER  @DragosInc   linkedin  @Dragos, Inc.
 
-### 2023 Dragos Threat Groups Summary
-* 9 threat groups demonstrate at least Stage 1 of the ICS 
+2023 Dragos Threat Groups Summary
+9 threat groups demonstrate at least Stage 1 of the ICS 
 Cyber Kill Chain:  BENTONITE, ELECTRUM, GANANITE, 
 KAMACITE, LAURIONITE, MAGNALLIUM, PETROVITE, 
 RASPITE, and VOLTZITE
-* Three new threat groups: GANANITE, 
+Three new threat groups: GANANITE, 
 LAURIONITE and VOLTZITE
-* ELECTRUM demonstrates Stage 
+ELECTRUM demonstrates Stage 
 1 & 2 aspects of the ICS Cyber Kill 
 Chain
-* Threat Group Statistics from 
+Threat Group Statistics from 
 2022 Year in Review: 
-    * 10 active threat groups: BENTONITE, ELECTRUM, 
+10 active threat groups: BENTONITE, ELECTRUM, 
 GANANITE, KAMACITE, LAURIONITE, MAGNALLIUM, 
 PETROVITE, RASPITE, TALONITE and VOLTZITE
-    * 2 threat groups, ERYTHRITE and COVELLITE, 
+2 threat groups, ERYTHRITE and COVELLITE, 
 were retired in 2023. 11 threat groups were dormant
-* 8 active threat groups: BENTONITE, CHERNOVITE, 
+8 active threat groups: BENTONITE, CHERNOVITE, 
 ELECTRUM, ERYTHRITE, KAMACITE, KOSTOVITE, 
 WASSONITE and XENOTIME
-* 2 new threat groups: BENTONITE 
+2 new threat groups: BENTONITE 
 and CHERNOVITE
 
-### Key Ransomware Findings
-**↑ 50%**
+Key Ransomware Findings
+↑
+50%
+28%
+70%
 Ransomware attacks against industrial 
 organizations increased 
 50 percent over last year. 
-**28%**
 Dragos tracked 28% more 
 ransomware groups impacting 
 ICS/OT in 2023.
-**70%**
 of all ransomware attacks targeted 638 
 manufacturing entities in 33 unique 
 manufacturing subsectors.
@@ -364,6 +372,7 @@ On one end of the spectrum, some threat groups used advanced techniques, such as
 functionality, including living off the land (LOTL) techniques, to conduct reconnaissance and intelligence 
 operations. Conversely, some adversaries targeted low-hanging fruit such as internet-accessible devices that 
 lacked proper hardening, thus making them easy to damage and cause operational disruptions. 
+
 Threat groups continued to use publicly disclosed vulnerabilities and discover and develop their own capabilities. Most of 
 the observed threat activity targeted IT-centric devices that are commonly used in OT, such as Sierra Wireless modems or 
 Citrix. In 2023, Dragos worked with one of our strategic partners, Rockwell Automation, on a community response to a set 
@@ -381,6 +390,7 @@ the same conflicts to cause panic and negatively impact public
 perception of the resilience of critical services. Geopolitical tensions 
 worldwide, including in Asia and Africa, have also driven intelligence 
 gathering and capability staging activity.
+
 The Ukraine-Russia conflict drove the activity of more mature 
 threat groups, such as ELECTRUM, which conducted targeted 
 cyber operations against Ukrainian critical infrastructure entities. 
@@ -407,7 +417,7 @@ of China. VOLTZITE heavily uses living off the land (LOTL) techniques and,
 in some cases, has been observed conducting “hands-on keyboard” post-
 compromise actions within a victim’s networks. 
 
-### Dragos Frontline Perspective
+Dragos Frontline Perspective
 Living off the land (LOTL) describes the 
 use of typically pre-existing, legitimate 
 capabilities present on a victim host and 
@@ -420,7 +430,7 @@ the OT world, this can mean using the
 native functionality of a PLC or control 
 system to issue a control command. 
 
-### Dragos Frontline Perspective
+Dragos Frontline Perspective
 Dragos has observed multiple 
 operational overlaps between the Volt 
 Typhoon and Dragos-tracked threat 
@@ -447,6 +457,7 @@ then move laterally onto the victim’s OT network. Dragos has only observed
 VOLTZITE operations achieving Stage 1 of the ICS Cyber Kill Chain. They 
 have not displayed actions or capabilities designed to disrupt, degrade, or 
 destroy ICS/OT assets or operations. 
+
 Dragos leverages its intelligence to drive hunting with our customer 
 environment and the community. This was used to track and analyze 
 indicators of compromise and behavioral tactics, techniques, and procedures 
@@ -459,6 +470,7 @@ incident response efforts and providing Dragos Intelligence with real-world beha
 VOLTZITE indicator, including activity suggesting remote desktop protocol (RDP) usage and server message block (SMB) 
 directory traversal. Another interesting finding was VOLTZITE overlaps with infrastructure associated with the Mirai 
 Botnet and another activity cluster that differs from VOLTZITE but may be operationally connected.
+
 Dragos’s analysis of VOLTZITE operations underscores the need for ongoing vigilance among organizations operating 
 in the global electric sector, as the observed activity suggests continued and specific interest in these networks. Further, 
 VOLTZITE’s actions involving prolonged surveillance and data gathering align with Volt Typhoon’s assessed objectives of 
@@ -466,30 +478,7 @@ reconnaissance and gaining geopolitical advantage in the Asia-Pacific region.
 10
 PAPER-PLANE  info@dragos.com   X-TWITTER  @DragosInc   linkedin  @Dragos, Inc.
 
-```
-60%
-50%
-40%
-30%
-20%
-10%
-PERCENT OF FINDINGS
-Chemical
-Data 
-Center
-Electric
-Manufacturing
-Metals/
-Mining
-Oil & Gas
-Pulp & 
-Paper
-Transportation
-Water
-square Informational   square Low  square Medium  square High  square Critical  - Avg. Severity
-```
-*Figure 1: Findings Severity per Vertical*
-
+![Figure 1: Findings Severity per Vertical]
 Throughout 2023, hacktivists and other unsophisticated, opportunistic 
 threat groups have conducted widespread distributed denial of 
 service (DDoS) attacks against various industrial organizations and 
@@ -505,6 +494,7 @@ Pakistan claiming disruptive attacks against Israeli Railways, an
 Israeli town’s power grid system, and an Israeli hydroelectric plant. In 
 late December 2023, the hacktivist group Predatory Sparrow allegedly 
 disrupted Iranian gas stations with an unspecified cyber attack.  
+
 These operations also included the successful compromise of public-
 facing OT devices, as was observed in late November with the attack 
 on Unitronics devices. The CyberAv3ngers successfully compromised 
@@ -516,7 +506,7 @@ into the devices using the Unitronics default password. This adversary
 appears not to possess OT capabilities; however, this attack still led to a 
 Loss of View and Control (T0829, T0827) for some of those impacted. 
 
-### Dragos Frontline Perspective
+Dragos Frontline Perspective
 Dragos identified over 1800 internet-
 exposed Unitronics devices, but only 
 0.0001 percent of Neighborhood 
@@ -533,7 +523,8 @@ are critical to stopping this activity,
 including understanding what is 
 publicly accessible.
 
-### Dragos Frontline Perspective
+Dragos Frontline 
+Perspective
 The hacktivists’ DDoS 
 attacks had minimal 
 impacts and primarily disrupted the 
@@ -550,15 +541,8 @@ geopolitical and social causes.
 11
 PAPER-PLANE  info@dragos.com   X-TWITTER  @DragosInc   linkedin  @Dragos, Inc.
 
-```
-60%
-5%
-13%
-4%
-13%
-5%
-```
-### Dragos Frontline Perspective
+![Figure 2: Findings and MITRE TTPs by Threat Groups Using Public Exploits]
+Dragos Frontline Perspective
 Dragos observed threat groups, including 
 GANANITE and LAURIONITE, targeting some of 
 these sectors with the least mature environments 
@@ -572,13 +556,12 @@ groups have been observed using certain MITRE
 ATT&CK techniques. Dragos uses these TTPs to 
 correlate threat actor behavior with field observations.
 
-### Dragos Frontline Perspective 
+Dragos Frontline Perspective 
 Exploiting public-facing devices and external services is 
 a common technique that Dragos observed four Threat 
 Groups utilizing in 2023. A defensible architecture to protect 
 against this technique includes multiple layers of defense, 
 secure remote access setup with MFA, and monitoring. 
-
 Dragos issued 
 findings related to 
 externally facing 
@@ -589,35 +572,8 @@ inadequately
 configured firewalls 
 protecting OT 
 environments in
-**20 percent** of engagement reports.
-**28 percent** of engagements in 2023.
-
-```
-20+80+S
-28+72+S
-20%
-28%
-Valid Accounts
-Explicit Public-Facing 
-Application
-External Remote 
-Services
-Domain Accounts
-Commonly Used Port
-Less Severe
-More Severe
-Standard Application 
-Layer Protocol
-BENTONITE
-FINDINGS %
-AVG. SEVERITY
-ELECTRUM
-GANANITE
-KAMACITE
-TALONITE
-VOLTZITE
-```
-*Figure 2: Findings and MITRE TTPs by Threat Groups Using Public Exploits*
+20 percent of engagement reports.
+28 percent of engagements in 2023.
 
 ## NEW THREAT GROUP ACTIVITY
 Dragos observed 10 active Threat Groups during 2023, including three new Dragos-identified Threat Groups: GANANITE, 
@@ -629,6 +585,7 @@ GANANITE, or LAURIONITE utilizing any ICS-specific
 capabilities; however, their persistent interest and 
 activities within critical infrastructure sectors warrant 
 monitoring and preparedness by ICS/OT organizations.
+
 Dragos observed all three threat groups conducting diverse 
 operations against various organizations, including 
 cybersecurity research firms, government and military 
@@ -639,6 +596,7 @@ however, VOLTZITE’s operations strongly indicate
 espionage and reconnaissance objectives in the Asia-
 Pacific region and the United States – particularly the 
 electric sector. 
+
 All three newly identified threat groups possess 
 capabilities that target and exploit public-facing 
 infrastructure used or owned by victim organizations. 
@@ -649,24 +607,8 @@ Oracle eBusiness Suite iSupplier Web Services.
 12
 PAPER-PLANE  info@dragos.com   X-TWITTER  @DragosInc   linkedin  @Dragos, Inc.
 
-```
-June 
-2023
-July
-2023
-November
-2023
-Compromise of network 
-and video surveillance 
-through Sierra Wireless 
-Airlink
-Exploitation attempts 
-against African electric 
-entity
-Enumeration of U.S. 
-Energy Organizations
-```
-### VOLTZITE
+![VOLTZITE Timeline]
+VOLTZITE
 VOLTZITE, a Dragos-tracked threat group that 
 has operational overlaps with Volt Typhoon 
 (first reported on by the U.S. Cybersecurity 
@@ -686,6 +628,7 @@ with destructive or disruptive cyber attacks.
 While VOLTZITE has traditionally targeted US 
 facilities, we also are aware of the group targeting 
 organizations in Africa and Southeast Asia.
+
 This group heavily uses living off the land 
 (LOTL) techniques, which can make detection 
 and response efforts more difficult. This strategy, 
@@ -693,35 +636,35 @@ paired with slow and steady reconnaissance,
 enables VOLTZITE to avoid detection from 
 security teams.
 
-#### Impact and Implications
+Impact and Implications
 VOLTZITE conducts enumeration against 
 victims’ internet-facing assets in a slow and 
 sustained fashion, likely to lessen the chance 
 of being detected. Once they have exploited 
 a victim’s internet-facing asset, they exhibit 
-**KEY HIGHLIGHTS**
-* Heavily utilized living off the land techniques to inhibit 
+KEY HIGHLIGHTS
+- Heavily utilized living off the land techniques to inhibit 
 the potential identification of malicious activity.
-* Conducts offensive operations with a significant focus 
+- Conducts offensive operations with a significant focus 
 on detection evasion and sophisticated operational 
 security tradecraft.
-* Conducts slow and steady reconnaissance against a 
+- Conducts slow and steady reconnaissance against a 
 target focusing on credential theft, lateral movement, 
 and long-term espionage.
-* Exploits internet accessible SOHO routers, using them 
+- Exploits internet accessible SOHO routers, using them 
 as intermediary hops back to adversary controlled 
 infrastructure.
-**NOTABLE ACTIVITY**
-* VOLTZITE exploited public internet-facing Sierra Wireless 
+NOTABLE ACTIVITY
+- VOLTZITE exploited public internet-facing Sierra Wireless 
 Airlink devices of a U.S. emergency management and 
 traffic monitoring entity in a June 2023 campaign.
-* Possible exploitation attempts in July 2023 against an 
+- Possible exploitation attempts in July 2023 against an 
 African electric transmission, distribution, and retailer 
 entity.
-* VOLTZITE conducted extensive reconnaissance of U.S. 
+- VOLTZITE conducted extensive reconnaissance of U.S. 
 energy organizations in November 2023.
-**TARGETS: UNITED STATES,
-ASIA, AFRICA**
+TARGETS: UNITED STATES,
+ASIA, AFRICA
 consistent use of living off the land techniques, making detection more difficult for defenders. VOLTZITE’s 2023 
 behavior suggested operational objectives of espionage and information gathering. Data stolen from operational 
 technology (OT) networks may result in unintended disruption to critical industrial processes or provide the adversary 
@@ -737,4 +680,22 @@ OT Watch utilizing
 the Platform, Threat 
 Intelligence and 
 Neighborhood Keeper at a 
-U
+U.S. based electric utility.
+OT Watch Threat Hunting Uncovers VOLTZITE 
+- The Dragos Intelligence team started tracking VOLTZITE’s activities at the 
+beginning of 2023.
+- A new utility customer deployed the Dragos Platform in response to a pre-existing 
+network compromise with a potential ICS/OT impact. The platform was positioned 
+to monitor the IT-OT interface (Level 3-4) and OT-OT communications (Level 2). 
+- Following deployment, Dragos OT Watch utilized the Dragos Platform to identify malicious activity within the 
+environment working with Dragos Intelligence using tactics, techniques, and procedures (TTPs) and threat hunt 
+analytics. 
+- The threat hunt confirmed adversary evidence adjacent to the OT network; and incident response analysis found 
+evidence of adversary discovery actions with a focus on SCADA related information. This was seen in the Dragos 
+Platform as server message block (SMB) traversal with the group pivoting within the environment, and likely, looking 
+for information about the environment as a further means of persistence.  
+- Consistent with OT Watch operations, findings were promptly escalated to the customer with a full summary of all 
+threat hunt findings after the full investigation. The recommendations further empowered the customer’s incident 
+response efforts in cleaning up the incident to eliminate the adversary from the environment. The environment 
+continues to be monitored via the Dragos Platform and OT Watch. 
+- Taking the success of the threat hunt and the detailed understanding on

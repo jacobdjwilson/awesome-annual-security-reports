@@ -1,41 +1,38 @@
 # 2024 Attack Intelligence Report
+## Table of Contents
+- [Executive Summary](#executive-summary)
+- [Big Picture: Threat Climate Change](#big-picture-threat-climate-change)
+- [Vulnerability Exploitation Trends](#vulnerability-exploitation-trends)
+  - [A Note on Exploitation Terminology](#a-note-on-exploitation-terminology)
+  - [2023 New Widespread Threats](#2023-new-widespread-threats)
+  - [Ground Zero: Pre-Patch Exploitation](#ground-zero-pre-patch-exploitation)
+  - [Countdown to Exfil: File Transfer Hacks](#countdown-to-exfil-file-transfer-hacks)
+  - [Silver Linings](#silver-linings)
+  - [Other 2023 Exploited Vulnerabilities](#other-2023-exploited-vulnerabilities)
+  - [State-Sponsored Threat Activity](#state-sponsored-threat-activity)
+- [Ransomware](#ransomware)
+  - [2023 Initial Access Vectors](#2023-initial-access-vectors)
+- [Life on the Edge: Network Pivots 2020 - 2024](#life-on-the-edge-network-pivots-2020---2024)
+- [Attacker Utilities](#attacker-utilities)
+- [Vulnerability Classes](#vulnerability-classes)
+  - [Programming Language Distribution: 2023 Vulnerabilities](#programming-language-distribution-2023-vulnerabilities)
+  - [Government Guidance on Eliminating Key Vulnerability Classes](#government-guidance-on-eliminating-key-vulnerability-classes)
+- [Practical Guidance for Defenders](#practical-guidance-for-defenders)
+  - [Additional Resources](#additional-resources)
+- [Appendix](#appendix)
+  - [Notes on Methodology](#notes-on-methodology)
+  - [Threat Categorization](#threat-categorization)
+  - [Ransomware Citations](#ransomware-citations)
+  - [Calculating Time to Known Exploitation (TTKE)](#calculating-time-to-known-exploitation-ttke)
+  - [Glossary of Terms](#glossary-of-terms)
+    - [Attacker Utilities](#attacker-utilities-1)
+    - [Vulnerability Classes](#vulnerability-classes-1)
+- [References](#references)
 
 ©RAPID7
-
 Caitlin Condon, Director of Vulnerability Intelligence
 Stephen Fewer, Principal Vulnerability Researcher
 Christiaan Beek, Senior Director of Threat Analytics
-
-## CONTENTS
-
-[Executive Summary](#executive-summary)	
-[Big Picture: Threat Climate Change](#big-picture-threat-climate-change)	
-[Vulnerability Exploitation Trends](#vulnerability-exploitation-trends)	
-    [A Note on Exploitation Terminology](#a-note-on-exploitation-terminology)	
-[2023 New Widespread Threats](#2023-new-widespread-threats)	
-[Ground Zero: Pre-Patch Exploitation](#ground-zero-pre-patch-exploitation)	
-[Countdown to Exfil: File Transfer Hacks](#countdown-to-exfil-file-transfer-hacks)	
-    [Silver Linings](#silver-linings)	
-[Other 2023 Exploited Vulnerabilities](#other-2023-exploited-vulnerabilities)	
-    [State-Sponsored Threat Activity](#state-sponsored-threat-activity)	
-[Ransomware](#ransomware)	
-    [2023 Initial Access Vectors](#2023-initial-access-vectors)	
-[Life on the Edge: Network Pivots 2020 - 2024](#life-on-the-edge-network-pivots-2020---2024)	
-[Attacker Utilities](#attacker-utilities)	
-[Vulnerability Classes](#vulnerability-classes)	
-    [Programming Language Distribution: 2023 Vulnerabilities](#programming-language-distribution-2023-vulnerabilities)	
-    [Government Guidance on Eliminating Key Vulnerability Classes](#government-guidance-on-eliminating-key-vulnerability-classes)	
-[Practical Guidance for Defenders](#practical-guidance-for-defenders)	
-    [Additional Resources](#additional-resources)	
-[Appendix](#appendix)	
-    [Notes on Methodology](#notes-on-methodology)	
-    [Threat Categorization](#threat-categorization)	
-    [Ransomware Citations](#ransomware-citations)	
-    [Calculating Time to Known Exploitation (TTKE)](#calculating-time-to-known-exploitation-ttke)	
-[Glossary of Terms](#glossary-of-terms)	
-    [Attacker Utilities](#attacker-utilities-1)	
-    [Vulnerability Classes](#vulnerability-classes-1)	
-[References](#references)
 
 Since 2020, Rapid7 has released an annual Vulnerability Intelligence Report 
 with curated vulnerability data and in-depth analyses of exploit trends. In an 
@@ -53,47 +50,34 @@ is based on 210+ vulnerabilities disclosed since the end of 2019, including
 60+ exploited vulnerabilities from 2023 and early 2024. See our appendix for 
 additional context on vulnerability selection.
 
-# EXECUTIVE SUMMARY
-
+## Executive Summary
 Key findings include:
+- In 2023, for the second time in three years, more mass compromise 
+events arose from zero-day vulnerabilities than from n-day vulnerabilities. 
+- 53% of new widespread threat vulnerabilities through the beginning of 
+2024 were exploited before software producers could implement fixes 
+— a return to 2021 levels of widespread zero-day exploitation (52%) 
+after a slight respite (43%) in 2022. 
+- Mass compromise events stemming from exploitation of network edge 
+devices have almost doubled since the start of 2023, with 36% of widely 
+exploited vulnerabilities occurring in network perimeter technologies. 
+- More than 60% of the vulnerabilities Rapid7 analyzed in network and 
+security appliances in 2023 were exploited as zero-days. 
+- While skilled adversaries are still fond of memory corruption exploits, 
+most of the widely exploited CVEs from the past few years have arisen 
+from simpler, more easily exploitable root causes, like command injection 
+and improper authentication issues. 
+- 41% of incidents Rapid7 MDR observed in 2023 were the result 
+of missing or unenforced multi-factor authentication (MFA) on internet-
+facing systems, particularly VPNs and virtual desktop infrastructure.
+- Rapid7 Labs tracked more than 5,600 separate ransomware incidents 
+over the course of 2023 and the first few months of 2024. The number of 
+unique ransomware families reported across 2023 incidents decreased 
+by more than half, from 95 new families in 2022 to 43 in 2023.
 
-*   In 2023, for the second time in three years, more mass compromise 
-    events arose from zero-day vulnerabilities than from n-day vulnerabilities. 
-*   53% of new widespread threat vulnerabilities through the beginning of 
-    2024 were exploited before software producers could implement fixes 
-    — a return to 2021 levels of widespread zero-day exploitation (52%) 
-    after a slight respite (43%) in 2022. 
-*   Mass compromise events stemming from exploitation of network edge 
-    devices have almost doubled since the start of 2023, with 36% of widely 
-    exploited vulnerabilities occurring in network perimeter technologies. 
-*   More than 60% of the vulnerabilities Rapid7 analyzed in network and 
-    security appliances in 2023 were exploited as zero-days. 
-*   While skilled adversaries are still fond of memory corruption exploits, 
-    most of the widely exploited CVEs from the past few years have arisen 
-    from simpler, more easily exploitable root causes, like command injection 
-    and improper authentication issues. 
-*   41% of incidents Rapid7 MDR observed in 2023 were the result 
-    of missing or unenforced multi-factor authentication (MFA) on internet-
-    facing systems, particularly VPNs and virtual desktop infrastructure.
-*   Rapid7 Labs tracked more than 5,600 separate ransomware incidents 
-    over the course of 2023 and the first few months of 2024. The number of 
-    unique ransomware families reported across 2023 incidents decreased 
-    by more than half, from 95 new families in 2022 to 43 in 2023.
+![5,600 ransomware incidents over the course of 2023 and early 2024. Rapid7 Labs tracked more than in 2023 the number of unique ransomware families decreased by more than half]
 
-5,600
-ransomware incidents 
-over the course of 2023 
-and early 2024
-
-Rapid7 Labs tracked 
-more than
-
-in 2023 the number of 
-unique ransomware families 
-decreased by more than half
-
-# Big Picture: Threat Climate Change
-
+## Big Picture: Threat Climate Change
 Over the last several years, Rapid7 researchers have regularly published in-depth 
 analyses of significant vulnerabilities and major cyber incidents, prioritizing attack 
 vectors that have threatened many organizations globally. In 2020, amid what 
@@ -164,10 +148,8 @@ practitioners to beleaguered open-source maintainers and under-appreciated
 public-sector analysts. Privatization can be a powerful tool, but it’s not a panacea. 
 When we consider it, we should also consider what we may be giving up. 
 
-# Vulnerability Exploitation Trends
-
-## A Note on Exploitation Terminology
-
+## Vulnerability Exploitation Trends
+### A Note on Exploitation Terminology
 Starting in 2023, all of the vulnerabilities we categorize as exploited in the wild 
 in our data are confirmed to have been exploited successfully by adversaries in 
 real-world production environments. This is a departure from previous years, 
@@ -204,8 +186,7 @@ can confirm code execution, payload delivery, or other high-fidelity indicators
 of successful compromise. This applies to our own honeypot data as well as 
 third-party feeds.
 
-## 2023 New Widespread Threats
-
+### 2023 New Widespread Threats
 Rapid7 vulnerability researchers prioritize CVEs that are likely to impact many 
 organizations, instead of those likely to affect only a few. We differentiate mass 
 attacks from smaller-scale exploitation; when a vulnerability is exploited to 
@@ -222,37 +203,36 @@ many of the below vulnerabilities in customer environments.
 
 Broadly exploited vulnerabilities that drove compromises across many 
 verticals and target organizations in 2023 include:
-
-*   CVE-2023-0669 Fortra GoAnywhere MFT Remote Code Execution
-*   CVE-2023-3519 Citrix NetScaler ADC/Gateway Remote Code Execution
-*   CVE-2023-2868 Barracuda Email Security Gateway Remote Command Injection
-*   CVE-2023-42793 JetBrains TeamCity CI/CD Server Authentication Bypass
-*   CVE-2023-24489 Citrix ShareFile Improper Access Control
-*   CVE-2023-29059 3CX Supply Chain Compromise
-*   CVE-2023-34362 Progress Software MOVEit Transfer SQL Injection
-*   CVE-2023-20269 Cisco ASA and FTD Unauthorized Access
-*   CVE-2023-46604 Apache ActiveMQ Remote Code Execution
-*   CVE-2023-40044 Progress Software WS_FTP Server Deserialization of Untrusted Data
-*   CVE-2023-20198 Cisco IOS XE Web UI Privilege Escalation
-*   CVE-2023-26360 Adobe ColdFusion Improper Access Control
-*   CVE-2022-47986 IBM Aspera Faspex Unauthenticated Remote Code Execution
-*   CVE-2023-20273 Cisco IOS XE Web UI Command Injection
-*   CVE-2023-22515 Atlassian Confluence Server and Data Center Broken Access Control
-*   CVE-2023-4966 Citrix NetScaler ADC/Gateway Buffer Overflow
-*   CVE-2023-46805 Ivanti Connect Secure and Policy Secure Authentication Bypass
-*   CVE-2023-22518 Atlassian Confluence Improper Authorization
-*   CVE-2023-28771 Zyxel Multiple Firewalls OS Command Injection
-*   CVE-2023-32315 Ignite Realtime Openfire Path Traversal
-*   CVE-2022-47966 Zoho ManageEngine Unauthenticated Remote Code Execution
-*   CVE-2023-27532 Veeam Backup & Replication Remote Code Execution
-*   CVE-2023-38831 RARLAB WinRAR Code Execution
-*   CVE-2022-36537 ZK Framework Information Disclosure (ConnectWise R1Soft Server Backup Manager Remote Code Execution)
-*   CVE-2023-27350 PaperCut NG Improper Access Control Vulnerability
-*   CVE-2023-24880 Microsoft SmartScreen Security Feature Bypass
-*   CVE-2022-44877 CentOS Web Panel Unauthenticated Remote Code Execution
-*   CVE-2023-3722 Avaya Aura Device Services OS Command Injection
-*   CVE-2023-22952 SugarCRM Remote Code Execution
-*   CVE-2022-46169 Cacti Command Injection
+- CVE-2023-0669 Fortra GoAnywhere MFT Remote Code Execution
+- CVE-2023-3519 Citrix NetScaler ADC/Gateway Remote Code Execution
+- CVE-2023-2868 Barracuda Email Security Gateway Remote Command Injection
+- CVE-2023-42793 JetBrains TeamCity CI/CD Server Authentication Bypass
+- CVE-2023-24489 Citrix ShareFile Improper Access Control
+- CVE-2023-29059 3CX Supply Chain Compromise
+- CVE-2023-34362 Progress Software MOVEit Transfer SQL Injection
+- CVE-2023-20269 Cisco ASA and FTD Unauthorized Access
+- CVE-2023-46604 Apache ActiveMQ Remote Code Execution
+- CVE-2023-40044 Progress Software WS_FTP Server Deserialization of Untrusted Data
+- CVE-2023-20198 Cisco IOS XE Web UI Privilege Escalation
+- CVE-2023-26360 Adobe ColdFusion Improper Access Control
+- CVE-2022-47986 IBM Aspera Faspex Unauthenticated Remote Code Execution
+- CVE-2023-20273 Cisco IOS XE Web UI Command Injection
+- CVE-2023-22515 Atlassian Confluence Server and Data Center Broken Access Control
+- CVE-2023-4966 Citrix NetScaler ADC/Gateway Buffer Overflow
+- CVE-2023-46805 Ivanti Connect Secure and Policy Secure Authentication Bypass
+- CVE-2023-22518 Atlassian Confluence Improper Authorization
+- CVE-2023-28771 Zyxel Multiple Firewalls OS Command Injection
+- CVE-2023-32315 Ignite Realtime Openfire Path Traversal
+- CVE-2022-47966 Zoho ManageEngine Unauthenticated Remote Code Execution
+- CVE-2023-27532 Veeam Backup & Replication Remote Code Execution
+- CVE-2023-38831 RARLAB WinRAR Code Execution
+- CVE-2022-36537 ZK Framework Information Disclosure (ConnectWise R1Soft Server Backup Manager Remote Code Execution)
+- CVE-2023-27350 PaperCut NG Improper Access Control Vulnerability
+- CVE-2023-24880 Microsoft SmartScreen Security Feature Bypass
+- CVE-2022-44877 CentOS Web Panel Unauthenticated Remote Code Execution
+- CVE-2023-3722 Avaya Aura Device Services OS Command Injection
+- CVE-2023-22952 SugarCRM Remote Code Execution
+- CVE-2022-46169 Cacti Command Injection
 
 Two Citrix NetScaler ADC/Gateway vulnerabilities (CVE-2023-3519 and CVE-
 2023-4966, disclosed in July and October respectively) drove incidents that 
@@ -287,43 +267,42 @@ Starting in 2023, however, we’ve seen an increase in mass compromise events
 where initial exploitation was orchestrated and executed by a single motivated 
 threat actor using complex zero-day exploit chains and/or custom implants. 
 A number of 2023’s large-scale attacks followed this pattern: 
-
-*   The Cl0p ransomware group used new zero-day exploits to target two 
-    popular file transfer solutions, MOVEit Transfer (CVE-2023-34362) and 
-    GoAnywhere MFT (CVE-2023-0669), in highly orchestrated smash-and-grab 
-    campaigns that resulted in data exfiltration and extortion for hundreds of 
-    organizations around the world, prompting breach notifications to tens of 
-    millions of consumers. Both attacks were exceedingly well-planned and 
-    executed; the MOVEit Transfer attack, which began over a holiday weekend 
-    in the U.S., may have been the culmination of nearly two years of threat 
-    actor reconnaissance and testing. 
-*   In a truly wild series of updates over the course of several weeks starting 
-    in May 2023, Barracuda Networks disclosed an incident where a single 
-    adversary used a zero-day command injection exploit (CVE-2023-2868) to 
-    compromise a large swath of Email Security Gateway (ESG) appliances with 
-    a custom backdoor so persistent that the vendor finally told customers to 
-    decommission physical devices entirely. In late December 2023, the company 
-    disclosed a second zero-day vulnerability (CVE-2023-7102) that had also 
-    been exploited by attackers.
-*   In October 2023, Cisco Talos shared information on a pair of Cisco IOS XE 
-    zero-day vulnerabilities (CVE-2023-20198, CVE-2023-20273) that had been 
-    exploited by an as-yet-unattributed threat actor to deploy a custom implant 
-    christened “BadCandy.” The implant had reportedly been deployed on tens 
-    of thousands of devices before the adversary modified it to evade industry 
-    detection — the implant is now on at least its third iteration. 
-*   Investigation into a “suspected APT” attack on Ivanti Connect Secure 
-    and Policy Secure gateways in January 2024 revealed a zero-day exploit 
-    chain (CVE-2023-46805, CVE-2024-21887) that adversaries had used to 
-    compromise vulnerable devices, after which they deployed webshells and 
-    backdoored legitimate files. Thousands of gateways remained vulnerable 
-    to follow-on CVE disclosures as of mid-February. U.S. government agencies 
-    published a joint advisory on February 29 emphasizing that threat actors 
-    were able to deceive Ivanti’s Integrity Checker Tool (ICT), resulting in a failure 
-    to detect compromise; the advisory notes that “The authoring organizations 
-    strongly urge all organizations to consider the significant risk of adversary 
-    access to, and persistence on, Ivanti Connect Secure and Ivanti Policy Secure 
-    gateways when determining whether to continue operating these devices 
-    in an enterprise environment.” 
+- The Cl0p ransomware group used new zero-day exploits to target two 
+popular file transfer solutions, MOVEit Transfer (CVE-2023-34362) and 
+GoAnywhere MFT (CVE-2023-0669), in highly orchestrated smash-and-grab 
+campaigns that resulted in data exfiltration and extortion for hundreds of 
+organizations around the world, prompting breach notifications to tens of 
+millions of consumers. Both attacks were exceedingly well-planned and 
+executed; the MOVEit Transfer attack, which began over a holiday weekend 
+in the U.S., may have been the culmination of nearly two years of threat 
+actor reconnaissance and testing. 
+- In a truly wild series of updates over the course of several weeks starting 
+in May 2023, Barracuda Networks disclosed an incident where a single 
+adversary used a zero-day command injection exploit (CVE-2023-2868) to 
+compromise a large swath of Email Security Gateway (ESG) appliances with 
+a custom backdoor so persistent that the vendor finally told customers to 
+decommission physical devices entirely. In late December 2023, the company 
+disclosed a second zero-day vulnerability (CVE-2023-7102) that had also 
+been exploited by attackers.
+- In October 2023, Cisco Talos shared information on a pair of Cisco IOS XE 
+zero-day vulnerabilities (CVE-2023-20198, CVE-2023-20273) that had been 
+exploited by an as-yet-unattributed threat actor to deploy a custom implant 
+christened “BadCandy.” The implant had reportedly been deployed on tens 
+of thousands of devices before the adversary modified it to evade industry 
+detection — the implant is now on at least its third iteration. 
+- Investigation into a “suspected APT” attack on Ivanti Connect Secure 
+and Policy Secure gateways in January 2024 revealed a zero-day exploit 
+chain (CVE-2023-46805, CVE-2024-21887) that adversaries had used to 
+compromise vulnerable devices, after which they deployed webshells and 
+backdoored legitimate files. Thousands of gateways remained vulnerable 
+to follow-on CVE disclosures as of mid-February. U.S. government agencies 
+published a joint advisory on February 29 emphasizing that threat actors 
+were able to deceive Ivanti’s Integrity Checker Tool (ICT), resulting in a failure 
+to detect compromise; the advisory notes that “The authoring organizations 
+strongly urge all organizations to consider the significant risk of adversary 
+access to, and persistence on, Ivanti Connect Secure and Ivanti Policy Secure 
+gateways when determining whether to continue operating these devices 
+in an enterprise environment.” 
 
 We’ve seen plenty of low-skill, opportunistic attacks during 2023 and early 
 2024 — so-called script kiddies haven’t magically disappeared. But overall, the 
@@ -332,10 +311,9 @@ much higher than in years past. While all the vulnerabilities above pertained to
 either network edge devices or file transfer technologies, concern over shifting 
 attacker behavioral patterns has also made its way into discussions about 
 supply chain security and insider threats — and for good reason, as key 2023 
-supply chain attack vectors and major incidents showed.  
+supply chain attack vectors and major incidents showed. 
 
-## Ground Zero: Pre-Patch Exploitation
-
+### Ground Zero: Pre-Patch Exploitation
 Between the end of 2020 and the end of 2021, large-scale incidents that 
 resulted in the compromise of many organizations more than doubled; those 
 statistics have never returned to pre-2021 levels. But even more concerning 
@@ -346,7 +324,7 @@ and have become a mainstay since then.
 mass compromise events arose from zero-day 
 vulnerabilities than from n-day vulnerabilities.
 
-![A bar chart showing the number of widespread threat CVEs from 2020 to 2023, split between zero-day and n-day exploits. In 2020, there are approximately 5 zero-day and 10 n-day. In 2021, there are approximately 15 zero-day and 5 n-day. In 2022, there are approximately 10 zero-day and 10 n-day. In 2023, there are approximately 15 zero-day and 10 n-day.]
+![Widespread Threat CVEs 2020-2024. # of Widespread Threat CVEs (n=105). Exploited as n-day. Exploited as 0-day]
 
 Since 2021, Rapid7 researchers have tracked the time between when vulnerabilities 
 become known to the public and when they are (reliably) reported as exploited 
@@ -372,7 +350,7 @@ day flaws. Since our vulnerability classification and selection methodologies
 have necessarily become stricter and more prescribed over time, the 2023 
 data below is a relatively conservative analysis of today’s exploitation trends. 
 
-![A bar chart showing the time to known exploitation for vulnerabilities from 2020 to 2024. The chart is divided into 1 day, 7 days, 14 days, 30 days, unknown, and 31+ days. The majority of vulnerabilities are exploited within 1 day, followed by 31+ days, and then unknown.]
+![Time to Known Exploitation 2020-2024. # of Vulnerabilities (n=188). 1day: 83, 7 days: 21, 14 days: 8, 30 days: 14, Unknown: 25, 31 days: 37]
 
 Our takeaway from this data is that organizations are under considerable 
 pressure not only to patch new vulnerabilities quickly and continually reduce 
@@ -386,8 +364,7 @@ require human expertise in addition to technology. More than ever, burnout and
 brain drain on security teams compound risk from well-resourced, motivated 
 adversary operations.
 
-## Countdown to Exfil: File Transfer Hacks
-
+### Countdown to Exfil: File Transfer Hacks
 Cl0p attacks on GoAnywhere MFT CVE-2023-0669 and MOVEit Transfer 
 CVE-2023-34362 have dominated news headlines for the past year, in no 
 small part because of the steady stream of breach notifications that went 
@@ -398,9 +375,7 @@ incidents were enough of a pattern in 2023 that Rapid7 researchers created a
 new “smash-and-grab” attacker utility category for half a dozen file transfer 
 CVEs (see Attacker Utilities later in this report). 
 
-![A stacked bar chart showing the attack scale and speed trends from 2020 to 2023. The chart shows the percentage of vulnerabilities that were exploited, widely exploited, zero-day (of all exploited), and zero-day (of widely exploited). The percentage of zero-day exploits has increased over the years, with 2023 having the highest percentage.]
-
-** Estimated
+![Attack Scale and Speed Trends (Cumulative). # of Vulnerabilities (n=188). Exploited: 44%, Widely Exploited: 40%, 0-day (% of all exploited): 21%, 37%, 47%, 52%, 0-day (% of widely exploited): 43%, 53%, 53%]
 
 CVE-2022-47986, a YAML deserialization issue in IBM’s Aspera Faspex data 
 transfer solution, was exploited by both ransomware and Iranian state-
@@ -420,7 +395,7 @@ threat list this year, saw a brief spike in honeypot exploitation activity in Au
 2023 that tapered off faster than expected, possibly because the vendor allegedly 
 disabled access on the vulnerable component until the patch had been applied. 
 Still, by early 2024 the vulnerability had been cited in enough ransomware 
-incident reports (public example [here](https://www.bleepingcomputer.com/news/security/citrix-sharefile-servers-exploited-in-ransomware-attacks/)) to demonstrate that unpatched controllers 
+incident reports (public example here) to demonstrate that unpatched controllers 
 remain tempting targets. The final bug we categorized as a smash-and-grab 
 opportunity appears to be unexploited at time of writing — CVE-2023-43177, 
 an unauthenticated remote code execution issue in CrushFTP for which a nifty 
@@ -443,7 +418,6 @@ cybersecurity incident may not be the best way to quantify attack impact, but
 it’s highly effective for tracking so-called “blast radius.” 
 
 ### Silver Linings
-
 File transfer vendors seem to have gotten understandably spooked by the 
 MOVEit Transfer and GoAnywhere MFT hacks perpetrated by Cl0p (and the 
 public relations nightmare that followed for many victims). But The Year of the 
@@ -465,40 +439,38 @@ These are positive indicators that may help accelerate and streamline vendor
 vulnerability responses in the future, alongside strong proactive measures that 
 seek to identify new vulnerabilities before adversaries do. 
 
-## Other 2023 Exploited Vulnerabilities
-
+### Other 2023 Exploited Vulnerabilities
 The following vulnerabilities are known to have been exploited in the wild in 
 either 2023 or 2024 but as of February 2024, did not have enough technical 
 evidence of large-scale attacks to be included in our widespread threat list. 
-
-*   CVE-2023-46747 F5 BIG-IP Configuration Utility Authentication Bypass
-*   CVE-2023-36845 Juniper Junos OS EX and SRX PHP External Variable Modification
-*   CVE-2023-38035 Ivanti Sentry Admin Portal Authentication Bypass
-*   CVE-2023-29298 Adobe ColdFusion Access Control Bypass
-*   CVE-2023-7102 Barracuda Email Security Gateway Arbitrary Code Execution
-*   CVE-2023-49103 ownCloud Graph API Critical Information Disclosure
-*   CVE-2023-38203 Adobe ColdFusion Deserialization of Untrusted Data
-*   CVE-2022-21587 Oracle E-Business Suite Remote Code Execution
-*   CVE-2023-28432 MinIO Information Disclosure
-*   CVE-2023-33246 Apache RocketMQ Remote Command Execution
-*   CVE-2023-21839 Oracle WebLogic Server Remote Code Execution
-*   CVE-2023-37580 Synacor Zimbra Collaboration Suite Cross-Site Scripting
-*   CVE-2023-41265 Qlik Sense Enterprise HTTP Tunneling Vulnerability
-*   CVE-2023-20867 Broadcom VMware Tools Authentication Bypass
-*   CVE-2023-29357 Microsoft SharePoint Server Elevation of Privilege
-*   CVE-2023-47246 SysAid Path Traversal
-*   CVE-2023-20887 Broadcom VMware Aria Operations for Networks Command Injection
-*   CVE-2023-23397 Microsoft Outlook Elevation of Privilege
-*   CVE-2023-1671 Sophos Web Appliance Command Injection
-*   CVE-2023-34048 Broadcom VMware vCenter Server Out-of-Bounds Write
-*   CVE-2023-36884 Microsoft Windows Search Remote Code Execution
-*   CVE-2023-41179 Trend Micro Apex One Arbitrary Code Execution
-*   CVE-2023-35078 Ivanti Endpoint Manager Mobile Authentication Bypass
-*   CVE-2023-28252 Microsoft Windows Common Log File System Driver Elevation of Privilege
-*   CVE-2023-27997 Fortinet FortiOS Heap-Based Buffer Overflow
-*   CVE-2023-35081 Ivanti Endpoint Manager Mobile Path Traversal
-*   CVE-2022-41328 Fortinet FortiOS Path Traversal
-*   CVE-2023-35082 Ivanti Endpoint Manager Mobile and MobileIron Core Authentication Bypass
+- CVE-2023-46747 F5 BIG-IP Configuration Utility Authentication Bypass
+- CVE-2023-36845 Juniper Junos OS EX and SRX PHP External Variable Modification
+- CVE-2023-38035 Ivanti Sentry Admin Portal Authentication Bypass
+- CVE-2023-29298 Adobe ColdFusion Access Control Bypass
+- CVE-2023-7102 Barracuda Email Security Gateway Arbitrary Code Execution
+- CVE-2023-49103 ownCloud Graph API Critical Information Disclosure
+- CVE-2023-38203 Adobe ColdFusion Deserialization of Untrusted Data
+- CVE-2022-21587 Oracle E-Business Suite Remote Code Execution
+- CVE-2023-28432 MinIO Information Disclosure
+- CVE-2023-33246 Apache RocketMQ Remote Command Execution
+- CVE-2023-21839 Oracle WebLogic Server Remote Code Execution
+- CVE-2023-37580 Synacor Zimbra Collaboration Suite Cross-Site Scripting
+- CVE-2023-41265 Qlik Sense Enterprise HTTP Tunneling Vulnerability
+- CVE-2023-20867 Broadcom VMware Tools Authentication Bypass
+- CVE-2023-29357 Microsoft SharePoint Server Elevation of Privilege
+- CVE-2023-47246 SysAid Path Traversal
+- CVE-2023-20887 Broadcom VMware Aria Operations for Networks Command Injection
+- CVE-2023-23397 Microsoft Outlook Elevation of Privilege
+- CVE-2023-1671 Sophos Web Appliance Command Injection
+- CVE-2023-34048 Broadcom VMware vCenter Server Out-of-Bounds Write
+- CVE-2023-36884 Microsoft Windows Search Remote Code Execution
+- CVE-2023-41179 Trend Micro Apex One Arbitrary Code Execution
+- CVE-2023-35078 Ivanti Endpoint Manager Mobile Authentication Bypass
+- CVE-2023-28252 Microsoft Windows Common Log File System Driver Elevation of Privilege
+- CVE-2023-27997 Fortinet FortiOS Heap-Based Buffer Overflow
+- CVE-2023-35081 Ivanti Endpoint Manager Mobile Path Traversal
+- CVE-2022-41328 Fortinet FortiOS Path Traversal
+- CVE-2023-35082 Ivanti Endpoint Manager Mobile and MobileIron Core Authentication Bypass
 
 Network edge devices, application development and delivery technologies, and 
 IT security management systems make up most of the exploited vulnerabilities 
@@ -515,8 +487,22 @@ Vulnerabilities that are exploited in targeted zero-day attacks often have some
 of the more scintillating backstories, and this crop is no exception. Of the 28 
 CVEs in the above list, 15 were exploited as zero-day vulnerabilities (54%). 
 Some of the notable inclusions:
+- CVE-2023-34048, a memory corruption issue in VMware vCenter Server that 
+according to Mandiant was exploited by UNC3886, a Chinese espionage 
+group, for more than a year before it was discovered; 
+- CVE-2023-28252, a privilege escalation vulnerability in Microsoft’s CLFS 
+drivers that was discovered during a Nokoyawa ransomware campaign;
+- CVE-2023-36884, a Windows vulnerability that Microsoft indicated was 
+used in both targeted espionage and opportunistic phishing campaigns 
+with Ukraine-related lures; 
+- CVE-2023-23397, a critical elevation of privilege (NTLM hash leak) bug in 
+Microsoft Outlook that Microsoft said was exploited by a Russia-based APT 
+for nearly a year in attacks on government entities, critical infrastructure 
+providers, and military suppliers;
+- CVE-2023-47246, a path traversal vulnerability in SysAid servers whose 
+zero-day exploitation Microsoft attributed to LaceTempest — the threat 
+actor known for distributing Cl0p ransomware. 
 
-*   CVE-2023-34048, a memory corruption issue in VMware vCenter Server that 
-    according to Mandiant was exploited by UNC3886, a Chinese espionage 
-    group, for more than a year before it was discovered; 
-*   CVE-2023-28252, a privilege escalation vulnerability
+CVE-2023-37580 was a reflected cross-site scripting (XSS) bug disclosed 
+in Zimbra Collaboration, a popular attack target, in June 2023. According to 
+Google’s Threat Analysis Group (TAG), the vulnerability was used in at least 

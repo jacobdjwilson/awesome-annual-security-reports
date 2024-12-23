@@ -1,8 +1,31 @@
-# CROWDSTRIKE 2024 GLOBAL THREAT REPORT
+# CrowdStrike 2024 Global Threat Report
+
+## Table of Contents
+- [Foreword](#foreword)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Naming Conventions](#naming-conventions)
+- [Threat Landscape Overview](#threat-landscape-overview)
+- [2023 Themes](#2023-themes)
+  - [Identity-Based and Social Engineering Attacks](#identity-based-and-social-engineering-attacks)
+  - [Adversaries Continue to Develop Cloud-Consciousness](#adversaries-continue-to-develop-cloud-consciousness)
+  - [Third-Party Relationship Exploitation](#third-party-relationship-exploitation)
+  - [Vulnerability Landscape: “Under the Radar” Exploitation](#vulnerability-landscape-under-the-radar-exploitation)
+  - [2023 Israel-Hamas Conflict: Cyber Operations Focus on Disruption and Influence](#2023-israel-hamas-conflict-cyber-operations-focus-on-disruption-and-influence)
+- [Threats on the 2024 Horizon](#threats-on-the-2024-horizon)
+  - [Generative AI Use Within the Threat Landscape](#generative-ai-use-within-the-threat-landscape)
+  - [2024 Elections](#2024-elections)
+- [eCrime Landscape](#ecrime-landscape)
+  - [Big Game Hunting](#big-game-hunting)
+  - [eCrime Enablers](#ecrime-enablers)
+  - [Targeted eCrime](#targeted-ecrime)
+- [Conclusion](#conclusion)
+- [Recommendations](#recommendations)
+- [CrowdStrike Products and Services](#crowdstrike-products-and-services)
+- [About CrowdStrike](#about-crowdstrike)
 
 ## Foreword
-
-The 2024 edition of the CrowdStrike Global Threat Report arrives at a pivotal moment for our global community of protectors. The speed and ferocity of cyberattacks continue to accelerate as adversaries compress the time between initial entry, lateral movement and breach. At the same time, the rise of generative AI has the potential to lower the barrier of entry for low-skilled adversaries, making it easier to launch attacks that are more sophisticated and state of the art.
+The 2024 edition of the CrowdStrike Global Threat Report arrives at a pivotal moment for our global community of protectors. The speed and ferocity of cyberattacks continue to accelerate as adversaries compress the time between initial entry, lateral movement and breach. At the same time, the rise of generative AI has the potential to lower the barrier of entry for low-skilled adversaries, making it easier to launch attacks that are more sophisticated and state of the art. 
 
 These trends are driving a tectonic shift in the security landscape and the world. The “good enough” approach to cybersecurity is simply no longer good enough for modern threats. As organizations increasingly move business to the cloud, adversaries are advancing their capabilities to exploit this, and abuse features unique to the cloud. We continue to see identity-based attacks take center stage, as adversaries focus on social engineering attacks that bypass multifactor authentication. The use of legitimate tools to execute an attack, an increasingly prevalent technique, impedes the ability to differentiate between normal activity and a breach.
 
@@ -10,10 +33,10 @@ We are entering an era of a cyber arms race where AI will amplify the impact for
 
 With the release of the CrowdStrike 2024 Global Threat Report, our elite Counter Adversary Operations team is delivering the actionable intelligence you need to stay ahead of today’s threats and secure your future. This year’s report provides critical insight and observations into adversary activity, including:
 
-*   The tactics and techniques that adversaries use to exploit gaps in cloud protection
-*   The continued exploitation of stolen identity credentials and increasingly sophisticated methods adversaries use to gain initial access
-*   The growing menace of supply chain attacks and exploitation of trusted software to maximize the ROI of attacks
-*   The potential for adversaries to target global elections in a year that has the potential to transform geopolitics around the world for the near future
+- The tactics and techniques that adversaries use to exploit gaps in cloud protection
+- The continued exploitation of stolen identity credentials and increasingly sophisticated methods adversaries use to gain initial access
+- The growing menace of supply chain attacks and exploitation of trusted software to maximize the ROI of attacks
+- The potential for adversaries to target global elections in a year that has the potential to transform geopolitics around the world for the near future
 
 From Day One, CrowdStrike has said, “You don’t have a malware problem, you have an adversary problem.” We pioneered the concept of adversary-focused cybersecurity because it’s the best way to protect customers and stop breaches. We know the adversary better than anyone, and we use this insight to guide our innovation, protect customers, stop breaches and increase the cost to the adversary.
 
@@ -25,28 +48,28 @@ George Kurtz
 CrowdStrike CEO/Co-Founder
 
 ## Table of Contents
-
-*   [Introduction](#introduction)
-*   [Naming Conventions](#naming-conventions)
-*   [Threat Landscape Overview](#threat-landscape-overview)
-*   [2023 Themes](#2023-themes)
-    *   [Identity-Based and Social Engineering Attacks](#identity-based-and-social-engineering-attacks)
-    *   [Adversaries Continue to Develop Cloud-Consciousness](#adversaries-continue-to-develop-cloud-consciousness)
-    *   [Third-Party Relationship Exploitation](#third-party-relationship-exploitation)
-    *   [Vulnerability Landscape: “Under the Radar” Exploitation](#vulnerability-landscape-under-the-radar-exploitation)
-    *   [2023 Israel-Hamas Conflict: Cyber Operations Focus on Disruption and Influence](#2023-israel-hamas-conflict-cyber-operations-focus-on-disruption-and-influence)
-*   [Threats on the 2024 Horizon](#threats-on-the-2024-horizon)
-*   [eCrime Landscape](#ecrime-landscape)
-    *   [Big Game Hunting](#big-game-hunting)
-    *   [eCrime Enablers](#ecrime-enablers)
-    *   [Targeted eCrime](#targeted-ecrime)
-*   [Conclusion](#conclusion)
-*   [Recommendations](#recommendations)
-*   [CrowdStrike Products and Services](#crowdstrike-products-and-services)
-*   [About CrowdStrike](#about-crowdstrike)
+- [Introduction](#introduction)
+- [Naming Conventions](#naming-conventions)
+- [Threat Landscape Overview](#threat-landscape-overview)
+- [2023 Themes](#2023-themes)
+  - [Identity-Based and Social Engineering Attacks](#identity-based-and-social-engineering-attacks)
+  - [Adversaries Continue to Develop Cloud-Consciousness](#adversaries-continue-to-develop-cloud-consciousness)
+  - [Third-Party Relationship Exploitation](#third-party-relationship-exploitation)
+  - [Vulnerability Landscape: “Under the Radar” Exploitation](#vulnerability-landscape-under-the-radar-exploitation)
+  - [2023 Israel-Hamas Conflict: Cyber Operations Focus on Disruption and Influence](#2023-israel-hamas-conflict-cyber-operations-focus-on-disruption-and-influence)
+- [Threats on the 2024 Horizon](#threats-on-the-2024-horizon)
+  - [Generative AI Use Within the Threat Landscape](#generative-ai-use-within-the-threat-landscape)
+  - [2024 Elections](#2024-elections)
+- [eCrime Landscape](#ecrime-landscape)
+  - [Big Game Hunting](#big-game-hunting)
+  - [eCrime Enablers](#ecrime-enablers)
+  - [Targeted eCrime](#targeted-ecrime)
+- [Conclusion](#conclusion)
+- [Recommendations](#recommendations)
+- [CrowdStrike Products and Services](#crowdstrike-products-and-services)
+- [About CrowdStrike](#about-crowdstrike)
 
 ## Introduction
-
 As we reflect on the 2023 cyber threat landscape, the theme of stealth prevails. Adversaries have faced a hardening attack surface thanks to advancements in threat defense technology and threat awareness, and they have responded by increasingly adopting and relying on techniques that empower them to move faster and evade detection.
 
 These techniques are evident in the consistent prevalence of eCrime, a highly attractive and lucrative business venture for many criminals. Unsurprisingly, eCrime persisted as the most pervasive threat across the 2023 threat landscape as adversaries leveraged techniques to maximize stealth, speed and impact.
@@ -79,7 +102,7 @@ CrowdStrike CAO drives unparalleled, actionable reporting coverage that captures
 
 > OVER THE COURSE OF 2023, CROWDSTRIKE CAO INTRODUCED 34 NEW ADVERSARIES — INCLUDING A NEWLY TRACKED, EGYPT-BASED ADVERSARY, WATCHFUL SPHINX — RAISING THE TOTAL NUMBER OF ACTORS TRACKED ACROSS ALL MOTIVATIONS TO 232. IN ADDITION TO NAMED ADVERSARIES, CROWDSTRIKE CAO TRACKS MORE THAN 130 ACTIVE MALICIOUS ACTIVITY CLUSTERS.
 
-### CrowdStrike CAO Innovations
+CrowdStrike CAO Innovations
 
 THE CROWDSTRIKE CAO TEAM PUTS RAPID INSIGHTS INTO THE HANDS OF FRONT-LINE TEAMS SO THEY CAN DISRUPT ADVERSARIES FASTER THAN EVER BEFORE.
 
@@ -94,33 +117,37 @@ THE NEW CROWDSTRIKE CAO MODULES — CROWDSTRIKE FALCON® ADVERSARY OVERWATCH™,
 CROWDSTRIKE CUSTOMERS ALSO BENEFIT FROM ENHANCED CONTEXT AROUND OBSERVABLES, NEW INDICATOR OF ATTACK (IOA) INTEGRATIONS TO ACCELERATE SECURITY INFORMATION AND EVENT MANAGEMENT (SIEM) DETECTION AND RESPONSE, THREAT HUNTING WORKFLOWS THAT WILL MORE EFFECTIVELY IDENTIFY ENVIRONMENTAL THREATS, AND IMPROVEMENTS TO DATA UNIFICATION AND LINKAGE ACROSS THE FALCON PLATFORM AND THIRD-PARTY APPLICATIONS.
 
 ## Naming Conventions
-
-| Adversary | Nation-State or Category |
-|---|---|
-| BEAR | RUSSIA |
-| BUFFALO | VIETNAM |
-| CHOLLIMA | DPRK (NORTH KOREA) |
-| CRANE | ROK (REPUBLIC OF KOREA) |
-| HAWK | SYRIA |
-| JACKAL | HACKTIVIST |
-| KITTEN | IRAN |
-| LEOPARD | PAKISTAN |
-| LYNX | GEORGIA |
-| OCELOT | COLOMBIA |
-| PANDA | PEOPLE’S REPUBLIC OF CHINA |
-| SPIDER | ECRIME |
-| TIGER | INDIA |
-| WOLF | TURKEY |
-| SPHINX | EGYPT |
+Adversary | Nation-State or Category
+---|---
+BEAR | RUSSIA
+BUFFALO | VIETNAM
+CHOLLIMA | DPRK (NORTH KOREA)
+CRANE | ROK (REPUBLIC OF KOREA)
+HAWK | SYRIA
+JACKAL | HACKTIVIST
+KITTEN | IRAN
+LEOPARD | PAKISTAN
+LYNX | GEORGIA
+OCELOT | COLOMBIA
+PANDA | PEOPLE’S REPUBLIC OF CHINA
+SPIDER | ECRIME
+TIGER | INDIA
+WOLF | TURKEY
+SPHINX | EGYPT
 
 ## Threat Landscape Overview
+34 new adversaries tracked by CrowdStrike, raising the total to 232
+Cloud environment intrusions increased by 75% YoY
+76% YoY increase in victims named on eCrime dedicated leak sites
+Cloud-conscious cases increased by 110% YoY
+84% of adversary-attributed cloud-conscious intrusions were focused on eCrime
 
-*   34 new adversaries tracked by CrowdStrike, raising the total to 232
-*   Cloud environment intrusions increased by 75% YoY
-*   76% YoY increase in victims named on eCrime dedicated leak sites
-*   Cloud-conscious cases increased by 110% YoY
-*   84% of adversary-attributed cloud-conscious intrusions were focused on eCrime
-
++34
+232
+75%
+76%
+110%
+84%
 year over year = (YoY)
 
 Today’s cyber threats are particularly alarming due to the widespread use of hands-on or “interactive intrusion” techniques, which involve adversaries actively executing actions on a host to accomplish their objectives. Unlike malware attacks that depend on the deployment of malicious tooling and scripts, interactive intrusions leverage the creativity and problem-solving skills of human adversaries. These individuals can mimic expected user and administrator behavior, making it difficult for defenders to differentiate between legitimate user activity and a cyberattack.
@@ -133,35 +160,17 @@ After gaining initial access to a network, adversaries seek to “break out” a
 
 This year, the average breakout time for interactive eCrime intrusion activity decreased from 84 minutes in 2022 to 62 minutes in 2023. The fastest observed breakout time was only 2 minutes and 7 seconds.
 
-**Interactive Intrusions by Industry**
+Interactive Intrusions by Industry
 
-*   23% TECHNOLOGY
-*   11% TELECOMMUNICATIONS
-*   7% FINANCIAL
-*   6% GOVERNMENT
-*   5% RETAIL
-*   5% MANUFACTURING
-*   4% HEALTHCARE
-*   4% SERVICES
-*   1% EDUCATION
-*   15% MEDIA
+![Interactive Intrusions by Industry Chart]
 
-**Interactive Intrusions by Region**
+Interactive Intrusions by Region
 
-*   13% NORTH AMERICA
-*   9% EUROPE
-*   9% SOUTH ASIA
-*   8% EAST ASIA
-*   8% SOUTH AMERICA
-*   6% MIDDLE EAST
-*   4% OCEANIA
-*   4% AFRICA
+![Interactive Intrusions by Region Chart]
 
-> 75% 71% 62% 51% 40%
-> 2023 2022 2021 2020 2019
-> MALWARE-FREE ACTIVITY
+> 75% 71% 62% 51% 40% MALWARE-FREE ACTIVITY 2023 2022 2021 2020 2019
 
-### Anatomy of an eCrime Interactive Intrusion
+Anatomy of an eCrime Interactive Intrusion
 
 In this case, the security team had the “quarantine on write” policy setting disabled, enabling the four files to be written to disk. The adversary executed a legitimate tool to obtain system information for reconnaissance and then dropped three more files, including ransomware, onto the system. They attempted to execute a network discovery and reconnaissance tool to map out lateral movement options, which was immediately blocked and quarantined by the Falcon sensor. This caused the adversary to open the control panel to understand which security tool was in use. When they identified the Falcon platform, they never attempted to execute the second discovery tool or the ransomware (which would have been prevented and quarantined) and moved to another victim. Within minutes, CrowdStrike CAO threat hunters notified the customer, took the machine offline and reset the user password.
 
@@ -171,65 +180,40 @@ To do this, they have continued to move beyond malware to faster, more effective
 
 To gain a better understanding of interactive intrusions, the following timeline illustrates the speed of a real-world hands-on attack:
 
-**Adversary Timeline:**
-
-*   **39 MINUTES:** Brute Force Attack
-*   **31 SECONDS:** Gains Legitimate Credentials
-*   **2 MINUTES 55 SECONDS:** Login Intrusion Begins
-*   **2 MINUTES 57 SECONDS:** Drops Legitimate File (QUARANTINE ON WRITE POLICY IS OFF)
-*   **4 MINUTES 38 SECONDS:** Drops Two Discovery Tools
-*   **15 MINUTES:** Drops Ransomware – Never Runs It
-*   **15 MINUTES:** Discovery Tool Run Is Blocked
-*   **15 MINUTES:** Opens Control Panel
-*   **15 MINUTES:** Adversary Exits
-
-**Attack Disrupted:**
-
-> OVERWATCH SEES POTENTIAL BRUTE FORCE
-> OVERWATCH SEES SUSPICIOUS FILES DROPPED
-> FALCON SENSOR BLOCKS AND QUARANTINES DISCOVERY TOOL
-
-**Falcon Adversary OverWatch Response:**
-
-> HOST NETWORK ISOLATED
-> PASSWORD RESET
+![Timeline of a real-world hands-on attack]
 
 This trend is partly related to the success of identity attacks, access brokers and the prolific abuse of valid credentials to facilitate access and persistence in victim environments. Access brokers are threat actors who acquire access to organizations and provide or sell this access to other actors, including ransomware operators. These adversaries continued to profit from providing initial access to a variety of eCrime threat actors in 2023, with the number of accesses advertised increasing by almost 20% compared to 2022.
 
 Today’s sophisticated cyberattacks only take minutes to succeed. Adversaries use techniques such as interactive hands-on-keyboard attacks and legitimate tools to attempt to hide from detection. To further accelerate attack tempo, adversaries can access credentials in multiple ways, including purchasing them from access brokers for a few hundred dollars. Organizations must prioritize protecting identities in 2024.
 
-**Access Broker Advertisements by Month**
+Access Broker Advertisements by Month
 
-*   **JAN:** 150
-*   **FEB:** 89
-*   **MAR:** 352
-*   **APR:** 160
-*   **MAY:** 134
-*   **JUNE:** 211
-*   **JULY:** 172
-*   **AUG:** 392
-*   **SEPT:** 194
-*   **OCT:** 449
-*   **NOV:** 450
-*   **DEC:** 239
-
-TOTAL = 2,992
+![Access Broker Advertisements by Month Chart]
 
 ## 2023 Themes
-
-### IDENTITY-BASED AND SOCIAL ENGINEERING ATTACKS
-
+### Identity-Based and Social Engineering Attacks
 Adversaries spanning multiple motivations and regions continue to use phishing techniques spoofing legitimate users to target valid accounts, as well as other authentication and identifying data, to conduct their attacks. In addition to stealing account credentials, CrowdStrike CAO observed adversaries targeting API keys and secrets, session cookies and tokens, one-time passwords (OTPs) and Kerberos tickets throughout 2023.
+
+![Identity-based attack vectors]
 
 **Figure 1. Identity-based attack vectors**
 
-*   **ACCOUNT CREDENTIALS:** Adversaries can authenticate to a system and/or user account using stolen credentials, which can either be obtained by the adversary directly (for example, using information stealers or exploiting unmanaged edge devices) or by purchasing them.
-*   **API KEYS AND SECRETS:** Access to protected resources using stolen API keys and secrets may allow an adversary to steal sensitive data. Unless the API keys and secrets are changed, the adversary could maintain indefinite access.
-*   **SESSION COOKIES AND TOKENS:** Adversaries can steal session cookies and tokens to masquerade as the legitimate user and authenticate to an application.
-*   **ONE-TIME PASSWORDS (OTPs):** OTP theft allows the adversary to bypass multifactor authentication (MFA) by SIM swapping, SS7 attacks, socially engineering the victim or email compromise.
-*   **KERBEROS AND KERBEROS TICKETS:** By stealing or forging Kerberos tickets, adversaries can gain access to encrypted credentials, which can then be cracked offline. CrowdStrike CAO recorded a 583% increase in Kerberoasting attacks in 2023.
+ACCOUNT CREDENTIALS
+Adversaries can authenticate to a system and/or user account using stolen credentials, which can either be obtained by the adversary directly (for example, using information stealers or exploiting unmanaged edge devices) or by purchasing them.
 
-#### BEAR Adversaries Conduct Credential Collection Campaigns
+API KEYS AND SECRETS
+Access to protected resources using stolen API keys and secrets may allow an adversary to steal sensitive data. Unless the API keys and secrets are changed, the adversary could maintain indefinite access.
+
+SESSION COOKIES AND TOKENS
+Adversaries can steal session cookies and tokens to masquerade as the legitimate user and authenticate to an application.
+
+ONE-TIME PASSWORDS (OTPs)
+OTP theft allows the adversary to bypass multifactor authentication (MFA) by SIM swapping, SS7 attacks, socially engineering the victim or email compromise.
+
+KERBEROS AND KERBEROS TICKETS
+By stealing or forging Kerberos tickets, adversaries can gain access to encrypted credentials, which can then be cracked offline. CrowdStrike CAO recorded a 583% increase in Kerberoasting attacks in 2023.
+
+BEAR Adversaries Conduct Credential Collection Campaigns
 
 FANCY BEAR conducted regular credential collection campaigns throughout 2023. In March 2023, Microsoft patched a zero-day elevation-of-privilege vulnerability in Microsoft Outlook (CVE-2023-23397), which FANCY BEAR had been exploiting since at least March 2022 to solicit NT LAN Manager authentication sessions from targets using specially crafted spear-phishing emails. The Polish Cyber Command reported that the adversary used this authentication data to connect to Exchange servers and change additional high-value account mailbox permissions through the Exchange Web Services protocol.[^1]
 
@@ -241,7 +225,7 @@ CrowdStrike® Services has observed COZY BEAR connecting to a compromised accoun
 
 [^1]: https://www.wojsko-polskie.pl/woc/articles/aktualnosci-w/detecting-malicious-activity-against-microsoft-exchange-servers/
 
-#### SCATTERED SPIDER Conducts Sophisticated Social Engineering Campaigns
+SCATTERED SPIDER Conducts Sophisticated Social Engineering Campaigns
 
 Identity-based techniques are also central to SCATTERED SPIDER tradecraft. Throughout 2023, this adversary conducted sophisticated social engineering campaigns to access victim accounts. SCATTERED SPIDER’s tactics included SMS phishing (smishing) and voice phishing (vishing) to harvest credentials; it also to provide password and/or MFA resets for targeted accounts. In many cases, SCATTERED SPIDER also leveraged earlier intrusions at telecom organizations to SIM swap targeted employee phone numbers, enabling the adversary to then receive SMS messages containing OTP codes.
 
@@ -249,8 +233,7 @@ SCATTERED SPIDER deliberately selects social engineering campaign targets from e
 
 Additionally, SCATTERED SPIDER often configured residential proxies to appear as though they were logging in to victim accounts from the same geographical area as the legitimate account owner. In doing so, the adversary further exhibited its understanding of identity-related security policies in enterprise organizations.
 
-### ADVERSARIES CONTINUE TO DEVELOP CLOUD-CONSCIOUSNESS
-
+### Adversaries Continue to Develop Cloud-Consciousness
 As predicted, cloud environment intrusions increased by 75% from 2022 to 2023 (Figure 2), with cloud-conscious cases increasing by 110% and cloud-agnostic cases increasing by 60%.
 
 Cloud-conscious is a term referring to threat actors who are aware of the ability to compromise cloud workloads and use this knowledge to abuse features unique to the cloud for their own purposes.
@@ -263,91 +246,90 @@ Adversaries’ preference for identity-based techniques is evident in their clou
 
 > AS PREDICTED, CLOUD ENVIRONMENT INTRUSIONS INCREASED BY 75% FROM 2022 TO 2023 (FIGURE 2), WITH CLOUD-CONSCIOUS CASES INCREASING BY 110% AND CLOUD-AGNOSTIC CASES INCREASING BY 60%.
 
+![Increases in cloud cases]
+
 **Figure 2. Increases in cloud cases**
 
-*   **INCIDENTS IN THE CLOUD**
-    *   **CLOUD-CONSCIOUS:** ACTORS ARE AWARE THEY GAINED ACCESS TO A VICTIM-OWNED CLOUD ENVIRONMENT AND USE THEIR ACCESS TO ABUSE THE VICTIM-OWNED CLOUD SERVICE
-    *   **CLOUD-AGNOSTIC:** ACTORS EITHER WERE NOT AWARE THEY HAD COMPROMISED A CLOUD ENVIRONMENT OR DID NOT TAKE ADVANTAGE OF CLOUD FEATURES
-*   **CLOUD-CONSCIOUS CASES:** 110%
-*   **CLOUD-AGNOSTIC CASES:** 60%
-*   **IN CLOUD INTRUSIONS:** 75%
-*   **2021**
-*   **2022**
-*   **2023**
+INCIDENTS IN THE CLOUD
 
-#### Initial Access
+CLOUD-CONSCIOUS
+ACTORS ARE AWARE THEY GAINED ACCESS TO A VICTIM-OWNED CLOUD ENVIRONMENT AND USE THEIR ACCESS TO ABUSE THE VICTIM-OWNED CLOUD SERVICE
+
+CLOUD-CONSCIOUS CASES 110%
+
+60% CLOUD-AGNOSTIC CASES
+
+CLOUD-AGNOSTIC
+ACTORS EITHER WERE NOT AWARE THEY HAD COMPROMISED A CLOUD ENVIRONMENT OR DID NOT TAKE ADVANTAGE OF CLOUD FEATURES
+
+2021 2022 2023
+
+75% IN CLOUD INTRUSIONS
+
+Initial Access
 
 Adversaries relied on valid credentials to achieve initial access. They obtained these credentials via accidental credential leakage, brute-force attacks, phishing/social engineering, credential stealers, access brokers, insecure self-service password-reset services and insider threats.
 
-#### Persistence
+Persistence
 
 To maintain access to Azure and Microsoft 365, adversaries commonly achieved persistence at the identity level.
+
+Privilege Escalation
+
+Adversaries escalated privileges by obtaining access to additional identities from stored credentials, social engineering campaigns or insecure password-reset portals. They also escalated privileges by modifying policies or adding identities to privileged groups or roles.
 
 > ACHIEVING PERSISTENCE AT THE IDENTITY LEVEL IS COMMONLY ACHIEVED BY REGISTERING ADDITIONAL AUTHENTICATION FACTORS IN ENTRA ID.
 
 > SCATTERED SPIDER USED AN IDENTITY PROVIDER TO ESTABLISH PERSISTENCE WITH A FEDERATED DOMAIN IN ENTRA ID, INITIALLY RELYING ON AADINTERNALS AZURE AD BACKDOOR.[^2] THIS PROVIDED THE ADVERSARY WITH PERSISTENT ACCESS TO MULTIPLE ENTRA ID IDENTITIES. LATER, SCATTERED SPIDER TRANSFERRED THE CONCEPT TO OKTA AND ADDED A FEDERATED IDENTITY PROVIDER TO A VICTIM’S OKTA TENANT.
 
-[^2]: https://aadinternals.com/post/aadbackdoor/
-
-#### Privilege Escalation
-
-Adversaries escalated privileges by obtaining access to additional identities from stored credentials, social engineering campaigns or insecure password-reset portals. They also escalated privileges by modifying policies or adding identities to privileged groups or roles.
-
-**IN THE WILD**
-
+> IN THE WILD
 > DURING AN INTRUSION TARGETING A NORTH AMERICAN SOFTWARE COMPANY, SCATTERED SPIDER ESCALATED PRIVILEGES BY ATTACHING A NEW ADMINISTRATOR ACCESS POLICY TO A PREEXISTING CLOUD USER, TO WHICH THEY ADDED A NEW ACCESS KEY.
 
-**IN THE WILD**
-
+> IN THE WILD
 > FANCY BEAR AND SCATTERED SPIDER COMMONLY TARGETED MICROSOFT 365 CREDENTIALS VIA CREDENTIAL-PHISHING ATTACKS.
 
-#### Credential Access
+[^2]: https://aadinternals.com/post/aadbackdoor/
+
+Credential Access
 
 Threat actors harvested credentials from password stores and information repositories.
 
-**IN THE WILD**
-
-> INDRIK SPIDER ACCESSED CREDENTIALS STORED IN AZURE KEY VAULT. IN A SEPARATE ATTACK, SCATTERED SPIDER ACCESSED CREDENTIALS STORED IN A CLOUD SECRETS MANAGER, AN IDENTITY-BASED SECRETS AND ENCRYPTION MANAGEMENT SYSTEM, AND SHAREPOINT.
-
-> IN ANOTHER CASE, SCATTERED SPIDER ALSO LOCATED A DOMAIN CONTROLLER INSIDE A VICTIM’S AZURE TENANT, COPIED THE DISKS AND CREATED A NEW ADVERSARY-CONTROLLED VIRTUAL MACHINE (VM) INTO WHICH THEY MOUNTED DOMAIN-CONTROLLER DISK COPIES. FROM THOSE DISK COPIES, THE ADVERSARY DUMPED ACTIVE DIRECTORY (AD) DATABASE NTDS.DIT.
-
-#### Lateral Movement
+Lateral Movement
 
 Threat actors moved back and forth between on-premises and cloud environments.
 
-**IN THE WILD**
+Exfiltration
+
+Adversaries exfiltrated data by using tooling, by directly downloading data from internet-accessible repositories — such as SharePoint Online or GitHub — or by uploading data to internet-accessible web services.
 
 > SCATTERED SPIDER OFTEN USED ACCESS TO VICTIMS’ MICROSOFT 365 ENVIRONMENTS TO SEARCH SHAREPOINT ONLINE FOR VIRTUAL PRIVATE NETWORK (VPN) SETUP INSTRUCTIONS AND THEN LOGGED ON TO THE VPN AND MOVED LATERALLY TO ON-PREMISES SERVERS.
 
 > SCATTERED SPIDER WAS ALSO OBSERVED USING AZURE RUN COMMANDS AND SIMILAR CAPABILITIES TO MOVE LATERALLY FROM THE CLOUD CONTROL PLANE TO COMPUTE INSTANCES.
 
-#### Exfiltration
-
-Adversaries exfiltrated data by using tooling, by directly downloading data from internet-accessible repositories — such as SharePoint Online or GitHub — or by uploading data to internet-accessible web services.
-
-**IN THE WILD**
-
+> IN THE WILD
 > SCATTERED SPIDER LEVERAGED THE OPEN-SOURCE S3 BROWSER TO EXFILTRATE DATA TO AN EXTERNAL, ADVERSARY-CONTROLLED CLOUD STORAGE BUCKET.
 
-#### Impact
+> IN THE WILD
+> INDRIK SPIDER ACCESSED CREDENTIALS STORED IN AZURE KEY VAULT. IN A SEPARATE ATTACK, SCATTERED SPIDER ACCESSED CREDENTIALS STORED IN A CLOUD SECRETS MANAGER, AN IDENTITY-BASED SECRETS AND ENCRYPTION MANAGEMENT SYSTEM, AND SHAREPOINT.
+
+> IN ANOTHER CASE, SCATTERED SPIDER ALSO LOCATED A DOMAIN CONTROLLER INSIDE A VICTIM’S AZURE TENANT, COPIED THE DISKS AND CREATED A NEW ADVERSARY-CONTROLLED VIRTUAL MACHINE (VM) INTO WHICH THEY MOUNTED DOMAIN-CONTROLLER DISK COPIES. FROM THOSE DISK COPIES, THE ADVERSARY DUMPED ACTIVE DIRECTORY (AD) DATABASE NTDS.DIT.
+
+Impact
 
 Some cloud-conscious BGH threat actors targeted cloud storage as part of their operations.
-
-**IN THE WILD**
 
 > CROWDSTRIKE CAO SPECIFICALLY OBSERVED SCATTERED SPIDER ADOPTING BGH TACTICS AND DEPLOYING RANSOMWARE FOR IMPACT.
 
 > IN A SEPARATE INCIDENT, AN ALPHA SPIDER AFFILIATE DEPLOYED TOOLING THAT ENABLES Alphv TO ENCRYPT AZURE STORAGE FILE SHARES. IN A LockBit INCIDENT, INDRIK SPIDER DELETED BACKUPS STORED IN AZURE BACKUPS.
 
-### THIRD-PARTY RELATIONSHIP EXPLOITATION
-
+### Third-Party Relationship Exploitation
 Throughout 2023, targeted intrusion actors consistently attempted to exploit trusted relationships to gain initial access to organizations across multiple verticals and regions. This type of attack takes advantage of vendor-client relationships to deploy malicious tooling via two key techniques: 1) compromising the software supply chain using trusted software to spread malicious tooling and 2) leveraging access to vendors supplying IT services.
 
 Threat actors targeting third-party relationships are motivated by the potential return on investment (ROI): One compromised organization can lead to hundreds or thousands of follow-on targets. These stealthy attacks can also more effectively provide an opportunity for attackers seeking to exploit a hardened end target.
 
 > FOR MORE INFORMATION ON ANY OF THE ADVERSARIES MENTIONED IN THIS REPORT AND THOSE TARGETING YOUR INDUSTRY OR REGION, CHECK OUT THE CROWDSTRIKE ADVERSARY UNIVERSE.
 
-#### Threat Highlight: Trusted-Relationship Compromises by China-Nexus Adversaries
+Threat Highlight: Trusted-Relationship Compromises by China-Nexus Adversaries
 
 In 2023, China-nexus adversaries increasingly targeted third-party relationships in efforts to deploy malicious implants and gain initial access. Two adversaries — JACKPOT PANDA and CASCADE PANDA — consistently exploited trusted relationships through supply chain compromises and actor-on-the-side or actor-in-the-middle attacks. In each case, the operations focused on Chinese-speaking victims, possibly indicating ongoing domestic surveillance.
 
@@ -365,7 +347,7 @@ A second unattributed actor was observed in late 2023 distributing ShadowPad to 
 
 In early 2023, an unattributed actor likely compromised an update server associated with iPhone i4Tools management software to deploy AvanteGarde, a malware framework associated with China-nexus activity cluster InnateSpark. Though CrowdStrike CAO was able to confirm at least 250 customers had connected to the compromised update server, only 10% received the malicious update, possibly indicating the actor down-selected high-value targets.
 
-#### Threat Highlight: North Korea’s Supply Chain Compromises
+Threat Highlight: North Korea’s Supply Chain Compromises
 
 Democratic People’s Republic of Korea (DPRK) adversaries also demonstrated an increased interest in exploiting trusted relationships in 2023. In particular, LABYRINTH CHOLLIMA abused a trusted relationship between a technology vendor and a client in three instances last year, highlighting an interest in using supply chain compromises as an intrusion vector.
 
@@ -375,4 +357,8 @@ CrowdStrike CAO also observed LABYRINTH CHOLLIMA distributing malware via a troj
 
 The motivation driving these compromises remains undefined. In one supply chain compromise, CrowdStrike CAO detected trojanized software in the environments of 62 customers; however, subsequent supply chain compromises were more limited in scope. The adversary may be using supply chain compromises to cast a wide net and deliver appropriate follow-on tooling to interesting targets.
 
-LABYRINTH CHOLLIMA is equally likely abusing trusted relationships between suppliers and product users
+LABYRINTH CHOLLIMA is equally likely abusing trusted relationships between suppliers and product users to infiltrate specific high-value targets for currency generation and espionage campaigns. CrowdStrike CAO assesses that additional LABYRINTH CHOLLIMA supply chain compromises are increasingly likely to occur in the near future. The adversary likely considers supply chain compromise a useful tactic with potential to streamline operations. This assessment is made with moderate confidence based on the volume of supply chain compromises observed in 2023.
+
+Outlook: Third-Party Relationship Exploitation
+
+Trusted-relationship compromises

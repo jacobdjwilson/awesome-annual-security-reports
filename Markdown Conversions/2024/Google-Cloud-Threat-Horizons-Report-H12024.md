@@ -1,13 +1,11 @@
 # Threat Horizons
-## H1 2024 Threat Horizons Report
-
-## Table of contents
-[Mission Statement](#mission-statement)	
-[Executive Summary](#executive-summary)	
-[Cryptomining Remains the Dominant Consequence of Weak Cloud Configurations](#cryptomining-remains-the-dominant-consequence-of-weak-cloud-configurations)  	
-[Strengthen Security to Counter Ransomware Attacks and Data Theft in the Cloud](#strengthen-security-to-counter-ransomware-attacks-and-data-theft-in-the-cloud) 
-[Don’t Get Caught in the Dark: Shining Lights with Logs](#dont-get-caught-in-the-dark-shining-lights-with-logs) 
-[Advanced Persistent Threat (APT) Actors In Cloud Architecture Spotlight: People’s Republic of China (PRC)](#advanced-persistent-threat-apt-actors-in-cloud-architecture-spotlight-peoples-republic-of-china-prc)
+## Table of Contents
+- [Mission Statement](#mission-statement)
+- [Executive Summary](#executive-summary)
+- [Cryptomining Remains the Dominant Consequence of Weak Cloud Configurations](#cryptomining-remains-the-dominant-consequence-of-weak-cloud-configurations)
+- [Strengthen Security to Counter Ransomware Attacks and Data Theft in the Cloud](#strengthen-security-to-counter-ransomware-attacks-and-data-theft-in-the-cloud)
+- [Don’t Get Caught in the Dark: Shining Lights with Logs](#dont-get-caught-in-the-dark-shining-lights-with-logs)
+- [Advanced Persistent Threat (APT) Actors In Cloud Architecture Spotlight: People’s Republic of China (PRC)](#advanced-persistent-threat-apt-actors-in-cloud-architecture-spotlight-peoples-republic-of-china-prc)
 
 ## Mission Statement
 The Google Cloud Threat Horizons Report provides 
@@ -23,10 +21,6 @@ Office of the CISO, Google’s Threat Analysis Group,
 Mandiant, and various Google Cloud product teams.
 
 ## Executive Summary
-New year, new cloud threat insights 
-create informed opportunities for 
-actionable cloud security defenses
-
 This iteration of the Google Cloud Threat Horizons 
 Report provides a forward-thinking view of cloud 
 security with intelligence on emerging threats and 
@@ -50,25 +44,25 @@ environments.
 Based on our research and analysis, the following 
 areas should inform cloud customer security 
 strategies in 2024:
-*   Credential abuse resulting in cryptomining remains 
+- Credential abuse resulting in cryptomining remains 
 a persistent issue, with threat actors continuing 
 to exploit weak or nonexistent passwords to gain 
 unauthorized access to cloud instances, while 
 some threat actors are shifting to broader threat 
 objectives.
-*   Ransomware and data theft remain a concern 
+- Ransomware and data theft remain a concern 
 in all IT environments, including on-premise and 
 cloud, as threat actors are continuously evolving 
 their methods for conducting ransomware and data 
 theft attacks—making robust data loss prevention 
 strategies more essential than ever before.
-*   Increased focus on security event logging is 
+- Increased focus on security event logging is 
 necessary to address threat actors’ evolving 
 tactics of manipulation and deleting logs. Threat 
 actors are increasingly targeting security event 
 logging software in novel ways to disrupt and evade 
 detection.
-*   People’s Republic of China (PRC)-affiliated 
+- People’s Republic of China (PRC)-affiliated 
 espionage threat actors are increasingly targeting 
 cloud services and infrastructure given the 
 enhanced adoption of cloud across industries 
@@ -128,6 +122,7 @@ overshadowing an insidious trend. Several times
 throughout 2023, we observed threat actors leverage 
 illicit cloud access in an attempt to infect third parties. 
 This less common tactic, constituting over 25% of 
+![2023 Cloud Compromises: Initial Access - Pie chart showing percentages for Weak or no password, Misconfiguration, Sensitive UI or API exposed, Vulnerable software, Other, and Leaked credentials]
 observed incidents, has significant security impacts 
 for organizations on both sides of the attack. For an 
 organization unwittingly hosting malicious activity, 
@@ -146,34 +141,33 @@ they are taking steps to protect themselves. Google
 Cloud offers a variety of security features to support 
 customers and protect their environments from 
 credential abuse, including providing the following:
-*   2FA: Google Cloud currently requires 2FA for all 
+- 2FA: Google Cloud currently requires 2FA for all 
 administrative users, which adds an additional layer 
 of security to protect accounts from unauthorized 
 access.
-*   Strong password policies: Google Cloud enforces 
+- Strong password policies: Google Cloud enforces 
 strong password policies, requiring passwords 
 to be at least 12 characters long and to include a 
 mix of letters, numbers, and symbols; additionally 
 there are other features, including passwordless 
 authentication which eliminates the need for 
 passwords altogether.
-*   IAM policies: IAM policies can be used to control 
+- IAM policies: IAM policies can be used to control 
 who has access to resources in Google Cloud, and 
 what they can do with those resources.
-*   Cloud Audit Logs: Cloud Audit Logs track all activity 
+- Cloud Audit Logs: Cloud Audit Logs track all activity 
 in Google Cloud, which can be used to monitor 
 for suspicious activity and to investigate security 
 incidents.
-*   Security Command Center: Security Command 
+- Security Command Center: Security Command 
 Center provides a centralized view of security 
 threats and vulnerabilities in Google Cloud. It can 
 be used to detect and respond to security incidents 
 quickly and efficiently.
-
-The document includes two pie charts, the first titled "2023 Cloud Compromises: Initial Access" showing the following percentages: Weak or no password (51.1%), Leaked credentials (17.3%), Other (13.7%), Vulnerable software (11.5%), Sensitive UI or API exposed (2.9%), Misconfiguration (3.6%). The second pie chart is titled "2023 Cloud Compromises: Impact" showing the following percentages: Coin mining (65.4%), Intrusion attempt (26.0%), Account leaked credentials (5.8%), DOS (2.8%), Other (0%).
+![2023 Cloud Compromises: Impact - Pie chart showing percentages for Other, DOS, Account leaked credentials, Coin mining, and Intrusion attempt]
 
 ### Mitigations
-*   Lock down SSH, RDP, and any other known remote 
+- Lock down SSH, RDP, and any other known remote 
 access software with organization-level policy 
 controls on GCP. Google Cloud’s Enterprise 
 foundations blueprint with best practices guidance 
@@ -183,20 +177,20 @@ default network with pre-populated rules which
 expose SSH and RDP among other services. Control 
 administrative access to virtual machines via 
 Identity Aware Proxy. 
-*   Use Essential Contacts to ensure every cloud 
+- Use Essential Contacts to ensure every cloud 
 service used by an organization has point of contact 
 (POC) information updated so cloud providers can 
 reach impacted clients promptly.
-*   Monitor cloud resource utilization, and establish 
+- Monitor cloud resource utilization, and establish 
 alerts for anomalous events, such as sudden spikes 
 in new virtual machines. 
-*   Consider leveraging Security Command Center to 
+- Consider leveraging Security Command Center to 
 detect CPU/memory spikes related to cryptomining 
 activity and other potential malicious outbound 
 network connections. Reimbursement for 
 undetected cryptomining attacks is available to 
 Premium customers.  
-*   Reassess your cloud incident response and 
+- Reassess your cloud incident response and 
 reconstitution plan.
 
 ## Strengthen Security to Counter Ransomware Attacks and Data Theft in the Cloud
@@ -217,33 +211,23 @@ environments, other factors, such as weak storage
 defenses, application vulnerabilities, and third-party 
 issues also led to system compromises, resulting in 
 ransomware and data theft (Figure 1).
-
-The document includes a graphic titled "Figure 1: Common Causes of Ransomware and Data Theft in the Cloud" which is a list of common causes:
-*   Misconfigurations and errors in cloud application and system security settings (E.g., Unrestricted ports, excessive user privileges)
-*   Weak storage defenses (E.g., Anticipated bucket naming conventions)
-*   Application vulnerabilities (E.g., Zero-day exploits)
-*   Third-party issues (E.g., Software supply chain risk, insufficient access management)
-*   Weak credentials (E.g., Default or lack of passwords in cloud applications and systems)
-
+![Figure 1: Common Causes of Ransomware and Data Theft in the Cloud - Diagram listing Misconfigurations and errors, Weak storage defenses, Application vulnerabilities, Third-party issues, and Weak credentials as common causes]
 Notable incidents and threat actor activity include:
-*   Suspected Rhysida ransomware actors allegedly 
+- Suspected Rhysida ransomware actors allegedly 
 breached Slovenia’s largest power provider, Holding 
 Slovenske Elektrarne, by stealing passwords 
 for systems from an unprotected cloud storage 
 instance in Nov. 2023.
-*   Threat actors conducted a ransomware attack 
+- Threat actors conducted a ransomware attack 
 resulting in lost customer data on cloud-hosting 
 firms CloudNordic and AzeroCloud in Aug. 2023 
 when the firm’s servers were misconfigured during 
 a data center migration.
-
-The document includes a graphic titled "Figure 2: Model of a Cloud Storage Bucket Naming Convention Exploited by a Threat Actor" which is a diagram showing the following steps:
-1.  Engineer creates buckets *data1 and *data2 using App and users begin storing data in them
-2.  Attacker anticipates bucket names *data3 and *data4 and creates them using App
-3.  App needs to use buckets and identifies buckets *data3 and *data4 and begins storing data in them
-4.  Attacker uses owner access to buckets *data3 and *data4 to exfiltrate data
-
-*   Google Cloud Storage (GCS) team observations 
+![Figure 2: Model of a Cloud Storage Bucket Naming Convention Exploited by a Threat Actor - Diagram showing a sequence of steps where an attacker anticipates bucket names and exfiltrates data]
+Note: This model assumes that an attacker has 
+previously established illegitimate access to the 
+depicted cloud environment.
+- Google Cloud Storage (GCS) team observations 
 indicate threat actors are probing weak cloud 
 storage bucket naming conventions to exfiltrate 
 data (Figure 2). Uncategorized threat actors have 
@@ -266,24 +250,24 @@ three server-side zero-days and other ransomware
 groups exploited server-side bugs as n-days.
 
 Notable incidents and threat actor activity include:
-*   In Nov. 2023, Cl0p actors exploited a now-patched 
+- In Nov. 2023, Cl0p actors exploited a now-patched 
 zero-day in IT asset management software, SysAid, 
 and then issued commands via SysAid to install 
 Gracewire malware on additional hosts.
-*   Mandiant observed Cl0p actors engage in 
+- Mandiant observed Cl0p actors engage in 
 widespread exploitation of a now-patched zero-day 
 in the MOVEit Transfer secure managed file transfer 
 software in June 2023. The actors deployed the 
 LEMURLOOT webshell for data theft, after which the 
 CL0P^_-LEAKS data leak site claimed responsibility 
 for attacks.
-*   In April 2023, Cl0p actors and associated initial 
+- In April 2023, Cl0p actors and associated initial 
 access brokers exploited a now-patched zero-day 
 in print management software PaperCut to drop 
 TrueBot malware. After PaperCut released a patch, 
 other groups, including the Bl00dy Ransomware 
 Gang, exploited the bug as an n-day. 
-*   In April 2023, ALPHV/Blackcat ransomware-as-a-
+- In April 2023, ALPHV/Blackcat ransomware-as-a-
 service affiliates compromised victims in cases 
 where access was obtained via an exploited n-day in 
 GoAnywhere MFT for initial access.
@@ -300,7 +284,7 @@ This could suggest that threat actors are increasingly
 seeking to profit by selling the data (or access to the 
 data) rather than expecting victims to pay the ransom 
 for decryption keys.
-*   Taiwan Semiconductor Manufacturing Company 
+- Taiwan Semiconductor Manufacturing Company 
 (TSMC) confirmed a data breach originating 
 from a partner cloud computing company, 
 Kinmax Technologies, conducted by the Lockbit 
@@ -314,19 +298,19 @@ In 2023 a number of threat actors adapted their
 tools for conducting ransomware attacks and stealing 
 data in the cloud, which we assess will likely continue 
 in 2024.
-*   Ransomware developers created Linux variants and 
+- Ransomware developers created Linux variants and 
 ransomware builds specific to VMWare ESXi. As of 
 Nov. 2023, Kinsing hackers were exploiting the Linux 
 Privilege Escalation Flaw (CVE-2023-4911) to gather 
 industry-wide cloud service provider credentials 
 and expose sensitive data in cloud environments.
-*   Mandiant Intelligence identified more than 
+- Mandiant Intelligence identified more than 
 100 tools—from backdoors, downloaders, and 
 ransomware—that are either targeted or have the 
 capability to leverage cloud-related technologies for 
 command-and-control (C2), payload hosting, and/or 
 data exfiltration.
-*   Threat actors exfiltrated stolen data from—and 
+- Threat actors exfiltrated stolen data from—and 
 sent stolen data to—public cloud storage platforms 
 when conducting ransomware attacks. In early 2023, 
 PLAYCRYPT ransomware threat actors leveraged 
@@ -341,32 +325,32 @@ and subsequently encrypted the file archives.
 We recommend multiple approaches for Google Cloud 
 customers to help prevent ransomware and data theft 
 in their cloud environments, including:
-*   Follow Google Cloud and industry best practices 
+- Follow Google Cloud and industry best practices 
 for cloud asset risk management, including Cloud 
 Asset Inventory services, Identity and Access 
 Management, and the Cloud Controls Matrix (CCM). 
-*   Establish a cloud-specific backup strategy with 
+- Establish a cloud-specific backup strategy with 
 testing that includes configurations and templates 
 of stored assets, not solely backups of data or 
 machine state. 
-*   Use technologies, such as WORM (Write Once 
+- Use technologies, such as WORM (Write Once 
 Read Many), or the Bucket Lock feature on Google 
 Cloud to provide immutable and policy compliant 
 backup storage.
-*   Implement resilient architecture, such as multi-
+- Implement resilient architecture, such as multi-
 region cloud use and backup mirroring, to reduce 
 risk of data loss or inaccessibility. 
-*   Encrypt all backups, which Google Cloud Storage 
+- Encrypt all backups, which Google Cloud Storage 
 does by default. Google Cloud customers can add 
 an additional layer of encryption by using customer-
 managed encryption keys (CMEK). Segregate key 
 access roles to help prevent attackers from being 
 able to read backups.
-*   Configure sensitive data protection with Cloud Data 
+- Configure sensitive data protection with Cloud Data 
 Loss Prevention and use Cloud Backup and Disaster 
 Recovery service to backup your cloud data for 
 recovery in the instance of an attack.
-*   Incorporate controls on known exploited 
+- Incorporate controls on known exploited 
 vulnerabilities and misconfigurations linked to 
 ransomware by leveraging Google Cloud Threat 
 Intelligence for Chronicle and VirusTotal and 
@@ -487,31 +471,34 @@ and identify potential security risks by establishing
 baseline behavior to measure against future activity.
 
 ### Mitigations
-*   Identify relevant logs to collect and monitor 
+- Identify relevant logs to collect and monitor 
 as outlined from Google Cloud’s MITRE ATT&CK 
 mapping of Google Cloud logs, NIST SP 800-92 
 (draft of new revision), NSA’s Volt Typhoon threat 
 hunting, or Mandiant’s blog post covering Cloud logs 
 with example attacker path scenarios. 
-*   Export logs to a centralized, well-governed 
+- Export logs to a centralized, well-governed 
 repository to make it easier to monitor the 
 environment as a whole but also reduce the risk of 
 losing visibility when threat actors delete logs or 
 disable user-configured cloud logs. 
-    *   Protect centralized logs by adding protections 
+	
+  - Protect centralized logs by adding protections 
 against project deletion with a Project Lien 
 and increasing the retention on logs for longer 
 visibility.
-    *   Leverage Security Command Center’s Security 
+	
+  - Leverage Security Command Center’s Security 
 Health Analytics to detect data access audit 
 logs being disabled or review IAM permissions 
 for high-sensitivity roles such to change logging 
 settings.
-    *   Securely configure IAM permissions so only 
+	
+  - Securely configure IAM permissions so only 
 key individuals have access to change logging 
 settings, which are considered a high-sensitivity 
 role.  
-*   Monitor for missing logs. Organizations should 
+- Monitor for missing logs. Organizations should 
 monitor for the lack of telemetry due to log 
 deletion or endpoint protection being disabled. 
 Leveraging a cloud-native SIEM and SOAR like 
@@ -520,18 +507,21 @@ and normalizing log data and automate alerting.
 Community Security Analytics also hosts pre-built 
 queries for organizations to manually search for 
 threats.
-*   Assure sensitive information is not available 
+- Assure sensitive information is not available 
 to threat actors with access to logs. Similar to 
 defenders, threat actors can glean insights into 
 a target’s environment from logs with sensitive 
 information.
-    *   Google Cloud’s Cloud Data Loss Prevention (DLP) 
+	
+  - Google Cloud’s Cloud Data Loss Prevention (DLP) 
 can regularly scan data and can help prevent 
 sensitive information from falling into the hands 
 of attackers.
-    *   Ensure sensitive data, such as passwords or user 
+	
+  - Ensure sensitive data, such as passwords or user 
 data, isn’t written to application logs.
-    *   Consider tools such as TruffleHog to help find 
+	
+  - Consider tools such as TruffleHog to help find 
 credentials stored in file systems, containers, and 
 cloud storage.
 
@@ -617,20 +607,20 @@ pivotal components in the actor’s penetration strategy.
 Specific characteristics of this adversary and its pat­
 terns of behaviors include the following observations 
 relevant to cloud infrastructure, including:
-*   Proxies network traffic through compromised 
+- Proxies network traffic through compromised 
 commercial and residential network edge devices. 
 These covert networks make it more difficult to 
 trace activity back to the original source.
-*   Uses custom versions of open-source tools to 
+- Uses custom versions of open-source tools to 
 establish a command and control (C2) channel over 
 proxy. This allows them to communicate with each 
 other and exfiltrate data undetected.
-*   Attempts to create installation media from domain 
+- Attempts to create installation media from domain 
 controllers, either remotely or locally. This gives the 
 threat actor access to usernames and password 
 hashes, which they can use to gain further access to 
 the network and move laterally.
-*   Living-off-The-Land binary (LOLBins) commands to 
+- Living-off-The-Land binary (LOLBins) commands to 
 find information on the system, discover additional 
 devices on the network, and exfiltrate data. This can 
 be done without the use of malware, making it even 
@@ -710,7 +700,7 @@ from actors associated with the People’s Republic of
 China, cloud service providers and their customers 
 must adopt a multifaceted and proactive approach to 
 cybersecurity. These should consist of:
-*   Security by Design; Safe by Default; Security in 
+- Security by Design; Safe by Default; Security in 
 Deployment. Security by design and secure by 
 default are approaches to building software that are 
 meant to be inherently secure. Security by design 
@@ -729,7 +719,7 @@ sustained. This allows cloud environment to operate
 with confidence that threats from ransomware, 
 account takeovers, bots, phishing, and even more 
 advanced attacks, are minimized, 
-*   Leverage Chronicle Cybershield. As part of 
+- Leverage Chronicle Cybershield. As part of 
 Chronicle CyberShield, GCP government customers 
 can leverage cyber threat intelligence from Google 
 and Mandiant to build a scalable and centralized 
@@ -741,7 +731,7 @@ allows governments to build a coordinated
 monitoring capability with Chronicle SIEM to simplify 
 threat detection, investigation, and hunting with the 
 intelligence, speed, and hyperscale of Google.
-*   Defense in Depth Approach. Defense in depth is 
+- Defense in Depth Approach. Defense in depth is 
 when you have multiple complementary controls, 
 failsafes, and redundancies, so that if one control 
 fails, operational integrity is maintained. Defense 
@@ -751,7 +741,7 @@ complex system can be dangerous. Therefore, it is
 essential to verify trust through multiple means and 
 on an ongoing basis. This strategy provides robust 
 defense against sophisticated cyberattacks. 
-*   Cloud Key Management Service. Cloud Key 
+- Cloud Key Management Service. Cloud Key 
 Management Service (Cloud KMS) lets you create 
 and manage encryption keys for use in compatible 
 Google Cloud services and in your own applications. 
@@ -759,11 +749,48 @@ It can be managed via the Cloud Console in your
 cloud environment.For information about using 
 your own encryption keys in Google Cloud, see 
 Customer-managed encryption keys (CMEK).
-*   Engage in collaboration and information sharing 
+- Engage in collaboration and information sharing 
 within the industry through various Information 
 Sharing and Analysis Centers (ISACs). Google’s 
 participation and membership in a number of ISAC 
 allows us to partner and support government and 
 industry in continuous education and training, 
 and vital engagement with cloud providers. These 
-ongoing and continuous engagements, discussions
+ongoing and continuous engagements, discussions 
+and partnerships further align with Google’s shared 
+fate approach. Through our shared fate approach, 
+we recognize that it is our responsibility as the cloud 
+provider to be active partners in cloud adoption 
+and digital transformation. Together, we can create 
+a forum to develop a shared understanding of 
+emerging threats and more effective strategies to 
+engage in comprehensive risk management. Existing 
+ISAC membership includes:
+	
+  - Bio-ISAC 
+	
+  - Health ISAC
+	
+  - Financial Services ISAC
+	
+  - Electricity ISAC
+	
+  - Multi-State ISAC 
+	
+  - Elections Infrastructure ISA
+	
+  - Space-ISAC
+	
+  - Media & Entertainment ISAC
+
+There are historical precedents for the PRC cyber-
+espionage activities, as demonstrated by the PLA 
+and MSS track records of using cyber capabilities 
+for intelligence gathering and other national security 
+objectives. This indicates that the PRC remains a 
+persistent and dynamic threat actor in the cyber 
+domain. As cloud computing adoption continues to 
+grow across the world, it is important for public and 
+private organizations to be aware of the potential APT 
+threats posed by the PRC and to take steps to protect 
+their infrastructure from these attacks.

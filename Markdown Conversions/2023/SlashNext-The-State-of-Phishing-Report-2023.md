@@ -1,16 +1,19 @@
-# The State of Phishing 2023
+# An in-depth look at cybersecurity threat trends with insights into how cybercriminals are swiftly advancing and what is required to stop them.
 
-## TABLE OF CONTENTS
-[Report data and methodology](#report-data-and-methodology)
-[EXECUTIVE SUMMARY](#executive-summary)
-[BIG TRENDS FOR 2023](#big-trends-for-2023)
-[THE EVOLUTION OF MALICIOUS AI](#the-evolution-of-malicious-ai)
-[BEC TYPES AND INSIGHTS](#bec-types-and-insights)
-[THE MOVE TO MOBILE AND THE GROWTH OF SMISHING](#the-move-to-mobile-and-the-growth-of-smishing)
-[INSIGHTS ON KEY FINDINGS](#insights-on-key-findings)
-[GENERATIVE AI SECURITY FOR THE WIN](#generative-ai-security-for-the-win)
+## Table of Contents
+- [Report data and methodology](#report-data-and-methodology)
+- [EXECUTIVE SUMMARY](#executive-summary)
+- [BIG TRENDS FOR 2023](#big-trends-for-2023)
+- [THE EVOLUTION OF MALICIOUS AI](#the-evolution-of-malicious-ai)
+- [BEC TYPES AND INSIGHTS](#bec-types-and-insights)
+- [THE MOVE TO MOBILE AND THE GROWTH OF SMISHING](#the-move-to-mobile-and-the-growth-of-smishing)
+- [INSIGHTS ON KEY FINDINGS](#insights-on-key-findings)
+- [GENERATIVE AI SECURITY FOR THE WIN](#generative-ai-security-for-the-win)
+- [Get a Customized Email Security Risk Assessment](#get-a-customized-email-security-risk-assessment)
+- [Contact Us](#contact-us)
+- [About SlashNext](#about-slashnext)
 
-### Report data and methodology:
+## Report data and methodology
 The report data represents threats detected by SlashNext security products. SlashNext analyzed billions of link-based, malicious attachments and natural language threats scanned in email, mobile, and browser channels during a 12-month period from Q4 2022 to Q3 2023. The organizations in our sample ranged in size from 500 to 200,000 users, spanning a variety of industries in North America. The survey of 300+ cybersecurity professionals from organizations with 1,000+ employees was conducted April - May 2023 in North America.
 
 ## EXECUTIVE SUMMARY
@@ -23,13 +26,12 @@ This report will highlight how phishing has changed through the lens of cybersec
 Finally, this report will dive into some of the most pervasive threats, including the shift to multi-channel phishing, sophisticated credential theft on email, and the massive increase in threats from trusted services.
 
 In this report, you’ll learn:
-* The top trends of 2023 in phishing and message-based attacks and what this likely means for the future
-* How the rise of malicious chatbots and generative AI has and will continue to change everything
-* The move to mobile - Natural language attacks on mobile kick off a new multi-channel threat trend because hackers know you’re vulnerable and not protected
-* Trends and insights into the growing BEC threat landscape
-* What’s required to stay protected in today’s threat landscape
+- The top trends of 2023 in phishing and message-based attacks and what this likely means for the future
+- How the rise of malicious chatbots and generative AI has and will continue to change everything
+- The move to mobile - Natural language attacks on mobile kick off a new multi-channel threat trend because hackers know you’re vulnerable and not protected
+- Trends and insights into the growing BEC threat landscape
+- What’s required to stay protected in today’s threat landscape
 
-## KEY FACTS
 ## BIG TRENDS FOR 2023
 The big story of 2023 is generative AI, which kicked off in late 2022 with the launch of OpenAI’s ChatGPT. From the halls of the United States Congress to deep in the Dark Web, the possibilities of generative AI are only limited by our imagination.
 
@@ -37,18 +39,14 @@ For cybercriminals, AI chatbots like ChatGPT have lowered the barriers to creati
 
 People are still the most targeted and vulnerable part of any organization. The rise in multi-stage attacks between email, mobile, and collaboration tools demonstrates how cyberattacks have grown in sophistication by targeting less protected channels, like mobile. Hackers still find phishing the most effective tool to perpetrate a breach in an organization.
 
-**Exhibit 1:** Phishing has increased by 1,265% from Q4-2022 to Q3-2023, equating to an average of 31k daily phishing attacks.
-
-*Image description: A line graph showing a dramatic increase in phishing attacks from Q4 2022 to Q3 2023. The Y-axis is labeled "Phishing Attacks" and the X-axis shows the time period from Q4 2022 to Q3 2023. The line shows a steep upward trend.*
+![Image: Phishing has increased by 1,265% from Q4-2022 to Q3-2023, equating to an average of 31k daily phishing attacks.]
 
 In 2023, cyber threats increased rapidly. We observed a 45% increase in total malicious attacks across spear-phishing, Smishing, malware, and other social engineering attacks. Sophisticated spear phishing attacks represent the vast majority of threats. SlashNext threat intelligence saw a 1,265% increase in malicious phishing emails since Q4 2022 (Exhibit 1). The launch of ChatGPT at the end of the year is not a coincidence in the exponential growth of malicious phishing emails as the use of chatbots and jailbreaks contributed to the increase as more cybercriminals were able to launch sophisticated attacks quickly.
 
 ### Credential Phishing – The Number One Access Point to Breaches
 Credential phishing continues to grow with a 967% increase (Exhibit 2), driven mostly by the demand of ransomware groups looking for access to companies in exchange for money. The volume of credential phishing campaigns spans email, mobile, social, and collaboration tools and can be broken down into three categories: Text-based BEC, linked-based, and file-based attacks. Text-based BEC attacks represent 68% of all threats found. (Exhibit 3)
 
-**Exhibit 2:** Phishing has increased by 967% from Q4 2022 to Q3 2023.
-
-*Image description: A line graph showing a significant increase in phishing attacks from Q4 2022 to Q3 2023. The Y-axis is labeled "Phishing Attacks" and the X-axis shows the time period from Q4 2022 to Q3 2023. The line shows a steep upward trend.*
+![Image: Phishing has increased by 967% from Q4 2022 to Q3 2023.]
 
 ### Continuation of Trusted Services Attacks
 Cybercriminals still favor using legitimate services to hide phishing and malware. The benefit of using trusted domains is that they are hard to detect with reputation-based and relationship graph threat detection, which organizations use widely to protect users.
@@ -57,9 +55,7 @@ Trusted domains give attackers more anonymity. It’s hard for users to identify
 
 In 2023, SlashNext detected many phishing threats hosted on legitimate infrastructure like Microsoft Sharepoint, AWS, Salesforce, and trusted services vendors. It’s important to point out that cybercriminals have increased the use of trusted services attacks because it results in successful attacks.
 
-**Exhibit 3:** Text-based BEC attacks represent 68% of all phishing in 2023.
-
-*Image description: A pie chart showing the distribution of phishing attacks in 2023. The largest slice, representing 68%, is labeled "Text-based BEC attacks". The remaining slices are not labeled.*
+![Image: Text-based BEC attacks represent 68% of all phishing in 2023.]
 
 ### The Malicious Use of QR Codes
 The threat of malicious QR codes has increased in 2023. Threats like QR code phishing (quishing) and QR code login jacking (QRLJacking) are exploiting user trust and convenience, and bypasses security filters. Cybercriminals are manipulating QR codes to redirect users to malicious sites to steal login credentials and financial information. These malicious QR codes can contain malware to gain access to the user’s mobile device and steal personal and financial information.
@@ -81,9 +77,7 @@ The investigation began when one of our researchers stumbled upon a forum thread
 
 At the same time, we noticed a rise in the number of malicious actors sharing “jailbreak prompts” specifically designed for ChatGPT. We will discuss this aspect in more detail shortly.
 
-**Image 1:** A screenshot of the ‘hacker’s guide’ to sending professional phishing emails.
-
-*Image description: A screenshot of a forum post with the title "Hacker's Guide to Sending Professional Phishing Emails". The post contains text describing a method for creating phishing emails using Google Translate and ChatGPT.*
+![Image: A screenshot of the ‘hacker’s guide’ to sending professional phishing emails.]
 
 During our investigation, we discovered WormGPT, an AI chatbot equipped with a customized large language model (LLM) that helps cybercriminals with various activities, including BEC attacks.
 
@@ -91,22 +85,16 @@ WormGPT is built on the GPTJ language model, which was developed in 2021. It has
 
 Keen to understand the capabilities of WormGPT, we obtained a license and conducted our own tests. As part of our initial experiment, we provided a prompt to WormGPT.
 
-**Image 2:** A screenshot of the WormGPT advertisement thread.
-
-*Image description: A screenshot of a forum post advertising WormGPT. The post includes text describing the features of WormGPT and how it can be used for malicious purposes.*
+![Image: A screenshot of the WormGPT advertisement thread.]
 
 The results were striking, as WormGPT generated an email that was not only highly persuasive but also strategically cunning, highlighting its potential for sophisticated phishing and BEC attacks.
 
 ### The Discovery of FraudGPT
 After the emergence of WormGPT, reports started circulating about another malicious chatbot called ‘FraudGPT.’ This bot was marketed as an “exclusive” tool tailored for fraudsters, hackers, spammers, and similar individuals, boasting an extensive list of features.
 
-**Image 3:** A screenshot of WormGPT being fed a prompt.
+![Image: A screenshot of WormGPT being fed a prompt.]
 
-*Image description: A screenshot of a chat interface showing a prompt being entered into WormGPT and the resulting output, an email.*
-
-**Image 4:** A screenshot of the FraudGPT advertisement thread.
-
-*Image description: A screenshot of a forum post advertising FraudGPT. The post includes text describing the features of FraudGPT and how it can be used for malicious purposes.*
+![Image: A screenshot of the FraudGPT advertisement thread.]
 
 Puzzlingly, we had not come across this during our ongoing monitoring efforts. Even after concluding our research, we continued to closely observe the cybercrime underground for emerging trends.
 
@@ -118,22 +106,16 @@ During our investigation, we posed as potential buyers and managed to obtain a v
 
 To this end, we asked CanadianKingpin12 about their opinion on WormGPT. The response strongly emphasized FraudGPT’s superiority, hinting at foundational similarities between the two.
 
-**Image 5:** A screenshot of CanadianKingpin12’s banned profile.
-
-*Image description: A screenshot of a forum profile showing that the user "CanadianKingpin12" has been banned.*
+![Image: A screenshot of CanadianKingpin12’s banned profile.]
 
 Although CanadianKingpin12 did not explicitly admit to being the same seller for both tools, it seemed plausible because their communication revealed the potential to facilitate the sale of both products. In addition, they revealed their work on two more chatbots named DarkBART and DarkBERT, setting the stage for the next section.
 
 ### DarkBART and DarkBERT
 During our investigation, we discovered that CanadianKingpin12 had developed two new chatbots called DarkBART and DarkBERT. According to their claims, both chatbots had internet access and could be integrated with Google Lens, which would allow text to be accompanied by images. However, our interactions with CanadianKingpin12 introduced an element of confusion, as their statements alternated between claims of involvement in bot development to assertions of mere access to them. The puzzle surrounding these contradictory statements unraveled when we investigated one of the mentioned bots, specifically DarkBERT.
 
-**Image 6:** A screenshot of CanadianKingpin12’s message revealing new bots.
+![Image: A screenshot of CanadianKingpin12’s message revealing new bots.]
 
-*Image description: A screenshot of a chat message where "CanadianKingpin12" mentions the existence of new bots named DarkBART and DarkBERT.*
-
-**Image 7:** A screenshot of CanadianKingpin12 revealing new bot’s functionality.
-
-*Image description: A screenshot of a chat message where "CanadianKingpin12" describes the functionality of the new bots, including internet access and integration with Google Lens.*
+![Image: A screenshot of CanadianKingpin12 revealing new bot’s functionality.]
 
 Our research revealed that DarkBERT is in fact a pre-trained language model developed by a company called S2W. DarkBERT underwent specialized training on a vast corpus of text from the Dark Web. It’s important to clarify that S2W’s DarkBERT primarily serves the purpose of combating cybercrime, not facilitating it.
 
@@ -143,9 +125,7 @@ S2W’s statement about access to their version of DarkBERT is contingent upon r
 
 It’s important to exercise caution here as we could not confirm this scenario with 100% accuracy. However, based on our research, it appears to be the most probable scenario.
 
-**Image 8:** A screenshot of S2W DarkBERT access requirements.
-
-*Image description: A screenshot of a website showing the requirements for accessing S2W's DarkBERT, including the need for an email from an academic institution.*
+![Image: A screenshot of S2W DarkBERT access requirements.]
 
 ### AI Jailbreaking Explored
 Chatbots like ChatGPT have filters in place to ensure that their responses align with ethical policies. If a user tries to instruct ChatGPT to perform unethical or illegal actions, it immediately notifies them that it cannot do so. However, resourceful users have found ways to bypass these filters and manipulate ChatGPT and similar chatbots using specific prompts.
@@ -154,13 +134,9 @@ Jailbreak prompts can take various forms, ranging from simple commands to creati
 
 During our exploration of these jailbreak prompts, we came across entire communities sharing various prompts to manipulate chatbots, such as ChatGPT, into compliance. We tested some of these prompts and verified their effectiveness.
 
-**Image 9:** A screenshot of a jailbroken ChatGPT session.
+![Image: A screenshot of a jailbroken ChatGPT session.]
 
-*Image description: A screenshot of a chat interface showing a ChatGPT session where the AI is responding to a prompt that bypasses its ethical filters.*
-
-**Image 10:** A screenshot of a jailbreak community.
-
-*Image description: A screenshot of a forum or online community where users are sharing and discussing jailbreak prompts for AI chatbots.*
+![Image: A screenshot of a jailbreak community.]
 
 ### The Surrounding Scams
 As we monitored cybercrime forums and markets, we noticed an interesting trend emerging in relation to the developments involving WormGPT, FraudGPT, DarkBERT, DarkBART, and AI jailbreaks.
@@ -171,25 +147,17 @@ Secondly, we noticed a multitude of different malicious AI chatbot variants surf
 
 Thirdly, we observed that a number of scam websites on the clear web began to appear, offering WormGPT for sale.
 
-**Image 11:** A screenshot of users on a forum asking where they can find WormGPT.
+![Image: A screenshot of users on a forum asking where they can find WormGPT.]
 
-*Image description: A screenshot of a forum where users are asking about the availability of WormGPT.*
-
-**Image 12:** A screenshot of the discussion surrounding malicious AI variants.
-
-*Image description: A screenshot of a forum discussion where users are talking about the various malicious AI chatbot variants that have emerged.*
+![Image: A screenshot of the discussion surrounding malicious AI variants.]
 
 Based on these trends, our conclusion was as follows: Other cybercriminals had recognized an opportunity to target users seeking WormGPT and FraudGPT, leading them to create numerous variants for sale. Many of these variants had claimed to utilize private or custom language models in their advertisements. However, it had seemed highly unlikely that all these users, including novice cybercriminals, could have developed custom chatbots and made them available for sale within a few weeks.
 
 After reviewing discussions about these variants, a common allegation had emerged, suggesting that they resembled jailbroken ChatGPT sessions. Upon conducting further research, it had become evident that these allegations had merit. The chatbot variants in question had borne striking similarities to jailbroken ChatGPT sessions. This discovery had raised intriguing questions about their true nature.
 
-**Image 13:** A screenshot of an example WormGPT scam website.
+![Image: A screenshot of an example WormGPT scam website.]
 
-*Image description: A screenshot of a website that appears to be selling WormGPT, but is likely a scam.*
-
-**Image 14:** A screenshot of EscapeGPT’s author admitting it’s a wrapper.
-
-*Image description: A screenshot of a chat message or forum post where the author of EscapeGPT admits that it is a wrapper for a jailbroken version of ChatGPT.*
+![Image: A screenshot of EscapeGPT’s author admitting it’s a wrapper.]
 
 They admitted that most of these variants are, indeed, wrappers designed to connect to jailbroken versions of ChatGPT. This revelation sheds light on the primary benefit of these variants, which is anonymity. Customers can access an anonymous, unauthenticated interface by making cryptocurrency payments, allowing them to exploit AI-generated content for malicious purposes without revealing their true identities.
 
@@ -212,40 +180,30 @@ Our 2023 survey of cybersecurity and IT professionals reinforced widespread secu
 ### Clever Payroll Diversion Attacks
 Payroll diversion attacks are a specific type of attack that involve a cybercriminal redirecting an employee’s paycheck into their own account. The payroll diversion attacks are often successful because many organizations cannot detect these types of attacks, so bad actors are reaching the human resources or payroll manager who has the authority to make the requested change. In the below example, the attacker intends to build trust by asking for additional information. The cybercriminal impersonated an employee, and the request was sent to the payroll manager. The attacker used a Gmail account to avoid domain/IP reputation filtering.
 
-**Exhibit 4:** Types of Natural Language BEC Threats.
-
-*Image description: A table listing different types of BEC threats, including Payroll Diversion, Multi-Stage Invoice Fraud, and Executive Impersonation.*
+![Image: Types of Natural Language BEC Threats.]
 
 ### Multi-Stage Invoice Fraud is Getting Creative
 A growing multi-stage trend observed by SlashNext is cybercriminals sending spear phishing attacks impersonating coworkers’ communications. Below is an example of a multi-channel attack that includes Invoice Fraud and Executive Impersonation. The attacker impersonated a vendor and the COO, and the request was sent to the accounts payable manager. The attacker used a Salesforce lookalike domain. The attacker faked instructions from the COO to pay the invoice. The accounting manager responds and requests the invoices.
 
-**Image:** Example of a BEC Payroll Diversion.
+![Image: Example of a BEC Payroll Diversion.]
 
-*Image description: An example of a BEC payroll diversion attack. The image shows a series of emails between an attacker impersonating an employee and the payroll manager.*
-
-**Image:** Example of a BEC Invoice Fraud.
-
-*Image description: An example of a BEC invoice fraud attack. The image shows a series of emails between an attacker impersonating a vendor and the COO, and the accounts payable manager.*
+![Image: Example of a BEC Invoice Fraud.]
 
 ## THE MOVE TO MOBILE AND THE GROWTH OF SMISHING
 Mobile phishing is on the rise as it’s also the most unprotected of all communication channels, with 39% of mobile threats consisting of Smishing (Exhibit 5). Most threats on mobile start with SMS text messaging. Scams and executive impersonation phishing delivered through text use familiar credential stealing, malware, and exploit tactics but are customized for mobile delivery.
 
 As the threat landscape grows, everyone is a potential target of cybercriminals. We found that 77% of infosec professionals reported being the targets of phishing attacks themselves. As the survey and SlashNext Labs intelligence confirmed, phishing still happens in email. However, our research also confirms the growth of phishing threats expanding outside of email, with 28% coming from text messages. (Exhibit 6)
 
-**Exhibit 5:** Smishing represents 39% of all mobile phishing threats in 2023.
-
-*Image description: A pie chart showing the distribution of mobile phishing threats in 2023. The largest slice, representing 39%, is labeled "Smishing". The remaining slices are not labeled.*
+![Image: Smishing represents 39% of all mobile phishing threats in 2023.]
 
 Another big trend involved mobile impersonation scams of legitimate businesses or services. It’s noteworthy that 87% of our survey respondents confirmed that they have opted in to receive text message alerts from their banks, wireless service providers, airlines, and other providers. This means they are accustomed to receiving communications from trusted service providers in this manner, providing ample opportunities for cybercriminals to execute credential phishing and scams by imitating popular brands and service providers and luring victims into clicking a link or calling a phone number.
 
 In 2023, SlashNext Labs intelligence shows mobile credential phishing made up 41% of all mobile threats, and scams were 12% of all mobile threats. Mobile is a threat vector we expect to continue to expand in the next 12 months.
 
-**Exhibit 6:** 28% of InfoSec Pros report receiving phishing via text message in 2023.
-
-*Image description: A bar graph showing that 28% of InfoSec professionals reported receiving phishing via text message in 2023.*
+![Image: 28% of InfoSec Pros report receiving phishing via text message in 2023.]
 
 ## INSIGHTS ON KEY FINDINGS
-Generative AI is already used maliciously to automate thousands of uniquely tailored phishing messages and variations of those messages, increasing the threat actor’s success rate. Such emails reflect similar emotions and urgency as the originals but with slightly altered wording, making it hard to identify bots as the senders. The results in the report highlight how much the threat landscape has changed since 2022.
+Generative AI is already used maliciously to automate thousands of uniquely tailored phishing messages and variations of those messages, increasing the threat actor’s success rate. Such emails reflect similar emotions and urgency as the originals but with slightly altered wording, making it hard to identify bots as the senders.The results in the report highlight how much the threat landscape has changed since 2022.
 
 The launch of generative AI chatbots and the quick adoption of the technology by the cybercrime community is driving the change as demonstrated in the 1,265% increase in malicious emails. With 68% of all phishing emails using text-based BEC tactics, CISOs will need to ensure their email security can detect these sophisticated zero-hour threats.
 
@@ -260,36 +218,34 @@ The availability of AI for malicious intent combined with how people work today 
 
 SlashNext’s complete generative AI messaging security solution detects, predicts, and stops spear phishing, BEC, Smishing, and other zero-hour social engineering attacks in email, mobile, and web messaging apps. SlashNext Generative AI mimics human threat researchers by combining natural language processing, computer vision, and machine learning with relationship graphs and deep contextualization to thwart sophisticated multi-channel messaging attacks. The system is purpose-built to anticipate the vast numbers of AI-generated BEC threats by using AI data augmentation and cloning technologies to assess a core threat and then spawn thousands of other versions of that same core threat, which enables the system to train itself on possible variations.
 
-**Image:** SlashNext GenAI protects users across 30K email, mobile and web messaging apps.
-
-*Image description: A diagram showing the SlashNext GenAI Messaging Security Platform, with labels for "360º GenAI User Protection" and categories for "NATURAL LANGUAGE-BASED THREATS", "LINK-BASED THREATS", and "ATTACHMENT- BASED THREATS". Each category lists different types of threats.*
+![Image: SlashNext GenAI protects users across 30K email, mobile and web messaging apps.]
 
 The SlashNext solution is patent pending and has been under development internally for over two years. SlashNext is at the forefront of multi-channel messaging security, and its threat researchers recognized that generative AI would soon change the face of BEC attacks.
 
 SlashNext CompleteTM Generative AI features include:
-*   **BEC Generative AI Augmentation** – Auto generates thousands of new BEC variants from today’s threats to stop tomorrow’s attacks.
-*   **Relationship Graphs & Contextual Analysis** – A baseline of known-good communication patterns and writing styles for each employee and supplier to detect unusual communications and conversation styles.
-*   **Natural Language Processing** – Analyzes text in email body and attachments for topic, tone emotion, intent, and manipulation triggers associated with social engineering tactics.
-*   **Computer Vision Recognition** – Leverages SlashNext’s LiveScanTM to inspect URLs in real-time for any visual deviations such as image and layouts to detect credential phishing web pages. For instance, SlashNext GenAI uses computer vision to detect extremely subtle deviations from imposter Microsoft 365 log-in page and blocks access.
-*   **File Attachment Inspection** – Analyzes social engineering traits of attachments and malicious codes to stop ransomware.
-*   **Sender Impersonation Analysis** – Evaluates headline details and email authentication results to stop impersonation attacks.
+- BEC Generative AI Augmentation – Auto generates thousands of new BEC variants from today’s threats to stop tomorrow’s attacks.
+- Relationship Graphs & Contextual Analysis – A baseline of known-good communication patterns and writing styles for each employee and supplier to detect unusual communications and conversation styles.
+- Natural Language Processing – Analyzes text in email body and attachments for topic, tone emotion, intent, and manipulation triggers associated with social engineering tactics.
+- Computer Vision Recognition – Leverages SlashNext’s LiveScanTM to inspect URLs in real-time for any visual deviations such as image and layouts to detect credential phishing web pages. For instance, SlashNext GenAI uses computer vision to detect extremely subtle deviations from imposter Microsoft 365 log-in page and blocks access.
+- File Attachment Inspection – Analyzes social engineering traits of attachments and malicious codes to stop ransomware.
+- Sender Impersonation Analysis – Evaluates headline details and email authentication results to stop impersonation attacks.
 
-### Get a Customized Email Security Risk Assessment
+## Get a Customized Email Security Risk Assessment
 See if your organization’s current email security stops the latest Business Email Compromise (BEC), malicious attachments, and malicious exploits by plugging into SlashNext Cloud Email Security in observability mode.
 
 Deploy in minutes with no impact on your existing email infrastructure or mail flow. Receive a customized report detailing the attacks missed by your current email security.
-*   **Fast and Easy:** With one click, deploy in minutes a read-only API integration with no impact on your existing email infrastructure. We will analyze your current email for security threats and deliver a customized report of attacks.
-*   **Actionable Insights:** The customized report provides a clear and insightful view of your organization’s email security. Our goal is to offer data-driven insights to make informed decisions, fortify your cybersecurity measures, and ensure your organization’s protection.
-*   **Comprehensive Summary:** Receive a summary of the impact on your organization and where your current security defenses stand today. See how you can improve security readiness and save valuable SOC time and operating expenses.
+- Fast and Easy: With one click, deploy in minutes a read-only API integration with no impact on your existing email infrastructure. We will analyze your current email for security threats and deliver a customized report of attacks.
+- Actionable Insights: The customized report provides a clear and insightful view of your organization’s email security. Our goal is to offer data-driven insights to make informed decisions, fortify your cybersecurity measures, and ensure your organization’s protection.
+- Comprehensive Summary: Receive a summary of the impact on your organization and where your current security defenses stand today. See how you can improve security readiness and save valuable SOC time and operating expenses.
 
 For more information visit https://slashnext.com/risk-assessment/
 
-### Contact Us
+## Contact Us
 6701 Koll Center Parkway, Suite 250
 Pleasanton CA 94566
 Contact Sales 1(800) 930-8643
 Request a Demo https://www.slashnext.com/request-a-demo/
 
-### About SlashNext
+## About SlashNext
 SlashNext CompleteTM AI Security for Email, Mobile and Browser
 At SlashNext, we know that the demands of a changing and growing threat landscape increase the need to protect people where they work in real time. That’s why SlashNext Complete delivers zero-hour protection for how people work today across email, mobile, and browser apps. With SlashNext’s generative AI to defend against advanced business email compromise, Smishing, spear phishing, executive impersonation, and financial fraud, your people are always protected anywhere they work. Request a demo today. slashnext.com/request-a-demo/

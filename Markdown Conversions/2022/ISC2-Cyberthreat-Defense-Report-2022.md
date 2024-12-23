@@ -1,50 +1,50 @@
 # 2022 Cyberthreat Defense Report
+## Table of Contents
+- [Introduction](#introduction)
+- [Research Highlights](#research-highlights)
+- [Section 1: Current Security Posture](#section-1-current-security-posture)
+  - [Past Frequency of Successful Cyberattacks](#past-frequency-of-successful-cyberattacks)
+  - [Future Likelihood of Successful Cyberattacks](#future-likelihood-of-successful-cyberattacks)
+  - [Security Posture by IT Domain](#security-posture-by-it-domain)
+  - [Assessing IT Security Functions](#assessing-it-security-functions)
+  - [The IT Security Skills Shortage](#the-it-security-skills-shortage)
+- [Section 2: Perceptions and Concerns](#section-2-perceptions-and-concerns)
+  - [Concern for Cyberthreats](#concern-for-cyberthreats)
+  - [Concern for Web and Mobile Attacks](#concern-for-web-and-mobile-attacks)
+  - [Responding to Ransomware](#responding-to-ransomware)
+  - [Barriers to Establishing Effective Defenses](#barriers-to-establishing-effective-defenses)
+  - [Benefits of Unified App and Data Security Defenses](#benefits-of-unified-app-and-data-security-defenses)
+  - [Hybrid Cloud Security Challenges](#hybrid-cloud-security-challenges)
+  - [Boosting Careers with Cybersecurity Certifications](#boosting-careers-with-cybersecurity-certifications)
+- [Section 3: Current and Future Investments](#section-3-current-and-future-investments)
+  - [IT Security Budget Allocation](#it-security-budget-allocation)
+  - [IT Security Budget Change](#it-security-budget-change)
+  - [Network Security Deployment Status](#network-security-deployment-status)
+  - [Endpoint Security Deployment Status](#endpoint-security-deployment-status)
+  - [Application and Data Security Deployment Status](#application-and-data-security-deployment-status)
+  - [Security Management and Operations Deployment Status](#security-management-and-operations-deployment-status)
+  - [Identity and Access Management Deployment Status](#identity-and-access-management-deployment-status)
+  - [Outsourcing to Managed Security Service Providers (MSSPs)](#outsourcing-to-managed-security-service-providers-mssps)
+- [Section 4: Practices and Strategies](#section-4-practices-and-strategies)
+  - [Security Applications Delivered via the Cloud](#security-applications-delivered-via-the-cloud)
+  - [Practices That Support Application Security](#practices-that-support-application-security)
+  - [Protecting Employees Working from Home](#protecting-employees-working-from-home)
+  - [Emerging IT Security Technologies and Architectures](#emerging-it-security-technologies-and-architectures)
+- [The Road Ahead](#the-road-ahead)
+- [Appendix 1: Survey Demographics](#appendix-1-survey-demographics)
+- [Appendix 2: Research Methodology](#appendix-2-research-methodology)
+- [Appendix 3: Research Sponsors](#appendix-3-research-sponsors)
+- [Appendix 4: About CyberEdge Group](#appendix-4-about-cyberedge-group)
 
+SILVER
+PLATINUM
+GOLD
+2022 Cyberthreat Defense Report
 <<   Research Sponsors   >>
-
 North America  |  Europe  |  Asia Pacific  |  Latin America
 Middle East  |  Africa
 
-## Table of Contents
-
-[Introduction](#introduction)
-[Research Highlights](#research-highlights)
-[Section 1: Current Security Posture](#section-1-current-security-posture)
-  * [Past Frequency of Successful Cyberattacks](#past-frequency-of-successful-cyberattacks)
-  * [Future Likelihood of Successful Cyberattacks](#future-likelihood-of-successful-cyberattacks)
-  * [Security Posture by IT Domain](#security-posture-by-it-domain)
-  * [Assessing IT Security Functions](#assessing-it-security-functions)
-  * [The IT Security Skills Shortage](#the-it-security-skills-shortage)
-[Section 2: Perceptions and Concerns](#section-2-perceptions-and-concerns)
-  * [Concern for Cyberthreats](#concern-for-cyberthreats)
-  * [Concern for Web and Mobile Attacks](#concern-for-web-and-mobile-attacks)
-  * [Responding to Ransomware](#responding-to-ransomware)
-  * [Barriers to Establishing Effective Defenses](#barriers-to-establishing-effective-defenses)
-  * [Benefits of Unified App and Data Security Defenses](#benefits-of-unified-app-and-data-security-defenses)
-  * [Hybrid Cloud Security Challenges](#hybrid-cloud-security-challenges)
-  * [Boosting Careers with Cybersecurity Certifications](#boosting-careers-with-cybersecurity-certifications)
-[Section 3: Current and Future Investments](#section-3-current-and-future-investments)
-  * [IT Security Budget Allocation](#it-security-budget-allocation)
-  * [IT Security Budget Change](#it-security-budget-change)
-  * [Network Security Deployment Status](#network-security-deployment-status)
-  * [Endpoint Security Deployment Status](#endpoint-security-deployment-status)
-  * [Application and Data Security Deployment Status](#application-and-data-security-deployment-status)
-  * [Security Management and Operations Deployment Status](#security-management-and-operations-deployment-status)
-  * [Identity and Access Management Deployment Status](#identity-and-access-management-deployment-status)
-  * [Outsourcing to Managed Security Service Providers (MSSPs)](#outsourcing-to-managed-security-service-providers-mssps)
-[Section 4: Practices and Strategies](#section-4-practices-and-strategies)
-  * [Security Applications Delivered via the Cloud](#security-applications-delivered-via-the-cloud)
-  * [Practices That Support Application Security](#practices-that-support-application-security)
-  * [Protecting Employees Working from Home](#protecting-employees-working-from-home)
-  * [Emerging IT Security Technologies and Architectures](#emerging-it-security-technologies-and-architectures)
-[The Road Ahead](#the-road-ahead)
-[Appendix 1: Survey Demographics](#appendix-1-survey-demographics)
-[Appendix 2: Research Methodology](#appendix-2-research-methodology)
-[Appendix 3: Research Sponsors](#appendix-3-research-sponsors)
-[Appendix 4: About CyberEdge Group](#appendix-4-about-cyberedge-group)
-
-## Introduction
-
+# Introduction
 CyberEdge’s annual Cyberthreat Defense Report (CDR) plays a 
 unique role in the IT security industry. Other surveys do a great 
 job of collecting statistics on cyberattacks and data breaches 
@@ -63,12 +63,10 @@ CyberEdge would like to thank our Silver, Gold, and Platinum
 research sponsors, whose continued support is essential to the 
 success of this report.
 
-### Top Five Insights for 2022
-
+## Top Five Insights for 2022
 As always, our latest CDR installment yields dozens of actionable 
 insights. But the following are the top five takeaways from this 
 year’s report:
-
 1.  There has been no let-up in pressure on security teams. 
 While the number of organizations that experienced a 
 successful cyberattack dropped a touch from 86.2% in 
@@ -78,7 +76,6 @@ of 40.7%. And the number of respondents who think it
 is somewhat or very likely that their organization will be 
 successfully attacked in the coming year reached a new 
 record of 76.1%.
-
 2.  The biggest security issues for many organizations are 
 a persistent shortfall of skilled IT security personnel 
 and low security awareness among employees. These 
@@ -88,7 +85,6 @@ from adequately defending themselves against cyberthreats
 wide range of job roles (page 15) and find user security 
 awareness to be an area where our survey respondents 
 doubt their organization’s capabilities (page 13).
-
 3.  Among cyberthreats, ransomware and account takeover 
 (ATO) attacks are poised to overtake malware as the #1 
 concern. Malware is still perceived as the most important 
@@ -96,7 +92,6 @@ threat, but ATO and credential abuse attacks moved up from
 fourth place last year to #2 this year, and ransomware is only 
 a tad behind. We think one or the other will take over the top 
 spot in the next year or two (see page 17). 
-
 4.  Pressure from ransomware rachets up once again. The 
 percentage of organizations victimized by a ransomware 
 attack in the past 12 months rose 2.5% to reach a new high 
@@ -110,7 +105,6 @@ to pay high ransoms, yet disabling them does not typically
 disrupt local economies or shut down essential infrastructure 
 and draw the attention of national governments and law 
 enforcement agencies (see page 21).
-
 5.  Security teams are getting a handle on the new norm 
 created by COVID-19. After scrambling to adapt to the 
 disruptions caused by the pandemic, they are now well 
@@ -120,20 +114,17 @@ make work from home (WFH) secure, and improve the
 security and economics of networking with cloud-based 
 resources (see pages 50, 52, and 54, respectively).
 
-### Survey Demographics
-
-*   Responses received from 1,200 qualified IT security 
+## Survey Demographics
+-   Responses received from 1,200 qualified IT security 
 decision makers and practitioners
-*   All from organizations with more than 500 employees
-*   Representing 17 countries across North America, 
+-   All from organizations with more than 500 employees
+-   Representing 17 countries across North America, 
 Europe, Asia Pacific, the Middle East, Latin America, 
 and Africa
-*   Representing 19 industries
+-   Representing 19 industries
 
-## Introduction
-
-### Cyberwar and the Russian Invasion of Ukraine
-
+# Introduction
+## Cyberwar and the Russian Invasion of Ukraine
 This report is being written during the early stages of Russia’s 
 invasion of Ukraine. Obviously, our survey results don’t reflect the 
 impact of that event. However, in “The Road Ahead” section that 
@@ -141,8 +132,7 @@ begins on page 56, we offer some predictions about how the
 invasion may affect information security and the cybersecurity 
 industry.
 
-### About This Report
-
+## About This Report
 The CDR is the most geographically comprehensive, vendor-
 agnostic study of IT security decision makers and practitioners. 
 Rather than compiling cyberthreat statistics and assessing 
@@ -151,19 +141,18 @@ perceptions of IT security professionals, gaining insights into
 how they see the world.
 
 Specifically, the CDR examines:
-
-*   The frequency of successful cyberattacks in the prior year and 
+-   The frequency of successful cyberattacks in the prior year and 
 optimism (or pessimism) about preventing further attacks in 
 the coming year
-*   The perceived impact of cyberthreats and the challenges 
+-   The perceived impact of cyberthreats and the challenges 
 faced in mitigating their risks
-*   The adequacy of organizations’ security postures and their 
+-   The adequacy of organizations’ security postures and their 
 internal security practices
-*   The organizational factors that present the most significant 
+-   The organizational factors that present the most significant 
 barriers to establishing effective cyberthreat defenses
-*   The investments in security technologies already made and 
+-   The investments in security technologies already made and 
 those planned for the coming year
-*   The health of IT security budgets and the portion of the 
+-   The health of IT security budgets and the portion of the 
 overall IT budget they consume
 
 By revealing these details, we hope to help IT security decision 
@@ -172,18 +161,17 @@ their perceptions, concerns, priorities, and defenses stack
 up against those of their peers around the world. IT security 
 teams can use the data, analyses, and findings to answer many 
 important questions, such as: 
-
-*   Where do we have gaps in our cyberthreat defenses relative 
+-   Where do we have gaps in our cyberthreat defenses relative 
 to other organizations?
-*   Have we fallen behind in our defensive strategy to the point 
+-   Have we fallen behind in our defensive strategy to the point 
 that our organization is now the “low-hanging fruit” (i.e., likely 
 to be targeted more often due to its relative weaknesses)?
-*   Are we on track with both our approach and progress in 
+-   Are we on track with both our approach and progress in 
 continuing to address traditional areas of concern, while also 
 tackling the challenges of emerging threats?
-*   How does our level of spending on IT security compare to 
+-   How does our level of spending on IT security compare to 
 that of other organizations?
-*   Do other IT security practitioners think differently from us 
+-   Do other IT security practitioners think differently from us 
 about cyberthreats and their defenses, and should we adjust 
 our perspective and plans to account for these differences?
 
@@ -198,7 +186,6 @@ defenders out there.
 The findings of the CDR are divided into four sections:
 
 ### Section 1: Current Security Posture
-
 Our journey into the world of cyberthreat defenses begins 
 with respondents’ assessments of the effectiveness of their 
 organization’s investments and strategies relative to the 
@@ -207,14 +194,12 @@ successful cyberattacks, judge their organization’s security
 posture in specific IT domains and security functions, and 
 provide details on the IT security skills shortage. The data will 
 help you begin to assess:
-
-*   Whether, to what extent, and how urgently changes are 
+-   Whether, to what extent, and how urgently changes are 
 needed in your organization
-*   Specific countermeasures that should be added to 
+-   Specific countermeasures that should be added to 
 supplement your existing defenses
 
 ### Section 2: Perceptions and Concerns
-
 In this section, our exploration of cyberthreat defenses shifts 
 from establishing baseline security postures to determining 
 the types of cyberthreats and obstacles to security that most 
@@ -228,7 +213,6 @@ appraisals will help you think about how your organization can
 best improve your cyberthreat defenses going forward.
 
 ### Section 3: Current and Future Investments
-
 Your organization can ill afford to stand still when it comes to 
 maintaining effective cyberthreat defenses. Your IT security 
 team must keep pace with changes occurring in business, 
@@ -242,7 +226,6 @@ against the broad sample and get a sense of what “hot”
 technologies your peers are deploying.
 
 ### Section 4: Practices and Strategies
-
 Mitigating today’s cyberthreat risks takes more than investing 
 in the right technologies. You must ensure those technologies 
 are deployed optimally, configured correctly, and monitored 
@@ -253,123 +236,114 @@ and using leading-edge technologies and services for tasks such
 as strengthening application security and protecting employees 
 working from home. 
 
-### Navigating This Report
-
+## Navigating This Report
 We encourage you to read the CDR from cover to cover, as it’s 
 chock full of useful information. But there are three other ways 
 to navigate through this report, if you are seeking out specific 
 topics of interest:
-
-*   **Table of Contents.** Each item in the Table of Contents 
+-   Table of Contents. Each item in the Table of Contents 
 pertains to specific survey questions. Click on any item to 
 jump to its corresponding page.
-*   **Research Highlights.** The Research Highlights page 
+-   Research Highlights. The Research Highlights page 
 showcases the most significant headlines of the report. Page 
 numbers are referenced with each highlight so you can 
 quickly learn more.
-*   **Navigation tabs.** The tabs at the top of each page are 
+-   Navigation tabs. The tabs at the top of each page are 
 clickable, enabling you to conveniently jump to different 
 sections of the report.
 
-### Contact Us
-
+## Contact Us
 Do you have an idea for a new topic that you’d like us to address 
 next year? Or would you like to learn how your organization can 
 sponsor next year’s CDR? We’d love to hear from you! Drop us an 
 email at research@cyber-edge.com.
 
-## Research Highlights
-
-### Current Security Posture
-
-*   **Six+ cyberattacks becoming common.** Last year, 85.3% of 
+# Research Highlights
+## Current Security Posture
+-   Six+ cyberattacks becoming common. Last year, 85.3% of 
 organizations experienced a successful cyberattack, while 
 those experiencing 6+ attacks rose to a new high of 40.7% 
 (page 7).
-*   **No let-up seen.** The number of respondents saying a 
+-   No let-up seen. The number of respondents saying a 
 successful attack is likely in the coming year reached a new 
 record of 76.1% (page 9).
-*   **SaaS apps well protected.** Respondents have confidence in 
+-   SaaS apps well protected. Respondents have confidence in 
 the security posture of SaaS companies, but not so much in 
 their own mobile devices or APIs (page 11).
-*   **Attack surface blues?** Respondents have doubts about their 
+-   Attack surface blues? Respondents have doubts about their 
 organization’s ability to manage attack surfaces – and about 
 user security awareness (page 13).
-*   **Ongoing talent drought.** 84.1% of organizations can’t find 
+-   Ongoing talent drought. 84.1% of organizations can’t find 
 enough skilled security people. If you are one, ask for a raise 
 (page 15)!
 
-### Perceptions and Concerns
-
-*   **New threats rising.** ATO and ransomware attacks are closing 
+## Perceptions and Concerns
+-   New threats rising. ATO and ransomware attacks are closing 
 in on malware as the cyberthreats of greatest concern (page 
 17).
-*   **PII and credentials at risk.** Among web and mobile 
+-   PII and credentials at risk. Among web and mobile 
 application attacks, PII harvesting and ATO are the most 
 prevalent and concerning (page 19).
-*   **Good and bad news on ransomware.** Damage from 
+-   Good and bad news on ransomware. Damage from 
 ransomware continues to grow, but governments and law 
 enforcement agencies are finally striking back (page 21).
-*   **People problems persist.** Yet again, the two biggest barriers 
+-   People problems persist. Yet again, the two biggest barriers 
 to effective security are a lack of skilled personnel and 
 employees’ low security awareness (page 24).
-*   **Integrated defenses are good for you.** Respondents cite 
+-   Integrated defenses are good for you. Respondents cite 
 multiple benefits of unified app and data security defenses 
 (page 26).
-*   **Hybrid cloud security challenges.** Distributing apps 
+-   Hybrid cloud security challenges. Distributing apps 
 across data centers and cloud platforms creates significant 
 challenges for security teams (page 28).
-*   **Cloud and software security education requested.** 
+-   Cloud and software security education requested. 
 Security professionals see certifications, especially in cloud 
 and software security, as career boosters (page 30).
 
-### Current and Future Investments
-
-*   **Security spending solid.** The percentage of overall IT 
+## Current and Future Investments
+-   Security spending solid. The percentage of overall IT 
 budgets allocated to security held steady at a near-record 
 12.7% (page 32).
-*   **More for most.** A strong 83.2% of organizations expect to 
+-   More for most. A strong 83.2% of organizations expect to 
 see their IT security budget grow this year (page 34).
-*   **Network security warhorses.** Five security technologies are 
+-   Network security warhorses. Five security technologies are 
 currently in use in at least 55% of organizations (page 36).
-*   **Endpoint security basics.** Basic anti-virus is ubiquitous on 
-endpoints, and EDR, DLP, and EPP are popular. Deception 
+-   Endpoint security basics. Basic anti-virus is ubiquitous on 
+endpoints, and EDR, DLP
+, and EPP are popular. Deception 
 technology is an intriguing newcomer (page 38).
-*   **Watch those APIs!** Solutions to protect APIs are the leading 
+-   Watch those APIs! Solutions to protect APIs are the leading 
 application and data security technology, adopted in almost 
 two-thirds of organizations (page 40).
-*   **Must manage risk.** In the area of security management, 
+-   Must manage risk. In the area of security management, 
 cyber risk management and reporting products are 
 becoming essential (page 42).
-*   **Identities at center stage.** Last year, organizations increased 
+-   Identities at center stage. Last year, organizations increased 
 their use of nine of the 10 identity and access management 
 technologies we follow (page 44).
-*   **MSSPs making friends.** Because of staffing shortages, 
+-   MSSPs making friends. Because of staffing shortages, 
 organizations are outsourcing more tasks to managed 
 security service providers (page 46).
 
-### Practices and Strategies
-
-*   **Cloud security edging ahead.** The percentage of security 
+## Practices and Strategies
+-   Cloud security edging ahead. The percentage of security 
 applications and services delivered via the cloud rose 0.5%, to 
 41.1% (page 48).
-*   **Baking security into the app.** Organizations are embracing 
+-   Baking security into the app. Organizations are embracing 
 a range of technologies to enhance application security (page 
 50).
-*   **Safe at home.** To protect work from home, organizations rely 
+-   Safe at home. To protect work from home, organizations rely 
 on old standbys like anti-virus solutions and VPNs and new 
 approaches like SASE and ZTNA (page 52).
-*   **Security in packets and hardware.** Organizations are rapidly 
+-   Security in packets and hardware. Organizations are rapidly 
 deploying SD-WAN technology and hardware-based security 
 (page 54).
 
-## Section 1: Current Security Posture
+# Section 1: Current Security Posture
+How many times do you estimate that your organization’s global network has been compromised 
+by a successful cyberattack within the past 12 months?
 
-### Past Frequency of Successful Cyberattacks
-
-> How many times do you estimate that your organization’s global network has been compromised 
-> by a successful cyberattack within the past 12 months?
-
+## Past Frequency of Successful Cyberattacks
 A short summary of the cybersecurity landscape over the past 
 year: gale-force winds continue. 
 
@@ -384,14 +358,18 @@ only 16.2% eight years ago (see Figures 1 and 2).
 In the course of this report, we will explore many reasons why 
 the pressure on IT security teams has remained so strong. 
 
-**Figure 1:** Frequency of successful cyberattacks in the last 12 months.
-
-*   Not once: 14.7%
-*   Between 1 and 5 times: 44.6%
-*   Between 6 and 10 times: 27.9%
-*   More than 10 times: 12.8%
-
-*Image description: A pie chart showing the distribution of successful cyberattacks in the last 12 months. The largest segment represents organizations that experienced between 1 and 5 attacks (44.6%), followed by those with 6 to 10 attacks (27.9%), more than 10 attacks (12.8%), and no attacks (14.7%).*
+![Figure 1: Frequency of successful cyberattacks in the last 12 months.]
+Not once
+More than 
+10 times
+Between 1
+ and 5 times
+Between 6 and 
+10 times
+14.7%
+44.6%
+27.9%
+12.8%
 
 It isn’t a matter of money: IT security budgets have continued 
 to grow in most places, albeit at a slightly slower rate than in 
@@ -407,14 +385,28 @@ in hybrid cloud environments (page 28), and build better security
 into web and mobile applications (page 19). At the same time, 
 security teams are facing insidious new threats. Two of the 
 
-**Figure 2:** Percentages compromised by at least one successful attack 
-and by six or more successful attacks.
-
-*Image description: A line graph showing the trend of organizations experiencing at least one successful cyberattack and six or more successful attacks from 2014 to 2022. The percentage of organizations experiencing at least one attack has increased from 61.9% in 2014 to 85.3% in 2022. The percentage of organizations experiencing six or more attacks has increased from 16.2% in 2014 to 40.7% in 2022.*
+![Figure 2: Percentages compromised by at least one successful attack 
+and by six or more successful attacks.]
+2014 2015 2016 2017 2018 2019 2020 2021 2022
+At least one successful attack
+Six or more successful attacks
+16.2%
+22.6% 23.8%
+32.9%
+27.4%
+31.5%
+35.2%
+39.7% 40.7%
+61.9%
+70.5%
+75.6%
+79.2% 77.2% 78.0%
+80.7%
+86.2% 85.3%
 
 > “A short summary of the cybersecurity 
-> landscape over the past year: gale-force 
-> winds continue.”
+landscape over the past year: gale-force 
+winds continue.”
 
 blockbuster issues of the past year have been the increasing 
 popularity (for cybercriminals) of double extortion ransomware, 
@@ -454,46 +446,63 @@ breached at least once, but only 20.9% of the organizations
 there reported six or more successful attacks, about half of the 
 international average. 
 
-**Figure 3:** Percentage compromised by at least one successful attack 
-in the past 12 months, by industry.
+![Figure 3: Percentage compromised by at least one successful attack 
+in the past 12 months, by industry.]
+Education
+Telecom & Technology
+Finance
+Manufacturing
+Retail
+Healthcare
+Government
+90.5%
+90.3%
+75.3%
+68.2%
+85.6%
+86.4%
+88.2%
 
-*   Education: 90.5%
-*   Telecom & Technology: 90.3%
-*   Finance: 88.2%
-*   Manufacturing: 86.4%
-*   Retail: 85.6%
-*   Healthcare: 75.3%
-*   Government: 68.2%
+![Figure 4: Percentage compromised by at least one successful attack 
+in the past 12 months, by country.]
+Saudi Arabia
+Japan
+USA
+Spain
+Germany
+Italy
+Australia
+France
+Mexico
+Colombia
+Brazil
+Turkey
+Canada
+Singapore
+UK
+China
+South Africa
+93.9%
+93.7%
+91.8%
+90.6%
+89.8%
+89.3%
+88.2%
+87.8%
+87.2%
+86.8%
+86.0%
+85.7%
+84.0%
+82.0%
+81.4%
+72.6%
+62.5%
 
-*Image description: A bar chart showing the percentage of organizations in different industries that experienced at least one successful cyberattack in the past 12 months. Education and Telecom & Technology have the highest percentages, while Government has the lowest.*
-
-**Figure 4:** Percentage compromised by at least one successful attack 
-in the past 12 months, by country.
-
-*   Colombia: 93.9%
-*   Turkey: 93.7%
-*   Spain: 91.8%
-*   Mexico: 90.6%
-*   Canada: 89.8%
-*   France: 89.3%
-*   Saudi Arabia: 88.2%
-*   Japan: 87.8%
-*   USA: 87.2%
-*   Singapore: 86.8%
-*   Brazil: 86.0%
-*   China: 85.7%
-*   South Africa: 84.0%
-*   UK: 82.0%
-*   Italy: 81.4%
-*   Germany: 72.6%
-*   Australia: 62.5%
-
-*Image description: A bar chart showing the percentage of organizations in different countries that experienced at least one successful cyberattack in the past 12 months. Colombia and Turkey have the highest percentages, while Australia has the lowest.*
-
-### Future Likelihood of Successful Cyberattacks
-
-> What is the likelihood that your organization’s network will become compromised by a successful 
-> cyberattack in 2022? 
+## Future Likelihood of Successful Cyberattacks
+What is the likelihood that your organization’s network will become compromised by a successful 
+cyberattack in 2022? 
 
 Expectations about successful cyberattacks over the coming 12 
 months reached a new high in this year’s survey. The number of 
@@ -505,31 +514,24 @@ by 3.1%, to 35.1%. That is four times the number (8.5%) who
 gave that response eight years ago when this survey started (see 
 Figure 5).
 
-**Figure 5:** Percentage indicating compromise is “more likely to occur 
-than not” in the next 12 months.
-
-*Image description: A line graph showing the trend of organizations indicating that a cyberattack is "somewhat or very likely" and "very likely" in the next 12 months from 2014 to 2022. The percentage indicating "somewhat or very likely" has increased from 51.9% in 2014 to 76.1% in 2022. The percentage indicating "very likely" has increased from 8.5% in 2014 to 35.1% in 2022.*
-
-*   Somewhat or very likely:
-    *   2014: 51.9%
-    *   2015: 62.1%
-    *   2016: 61.5%
-    *   2017: 62.3%
-    *   2018: 65.2%
-    *   2019: 69.3%
-    *   2020: 75.6%
-    *   2021: 75.6%
-    *   2022: 76.1%
-*   Very likely:
-    *   2014: 8.5%
-    *   2015: 14.0%
-    *   2016: 16.1%
-    *   2017: 20.4%
-    *   2018: 19.7%
-    *   2019: 21.2%
-    *   2020: 27.2%
-    *   2021: 32.0%
-    *   2022: 35.1%
+![Figure 5: Percentage indicating compromise is “more likely to occur 
+than not” in the next 12 months.]
+2014 2015 2016 2017 2018 2019 2020 2021 2022
+Somewhat or very likely
+Very likely
+8.5%
+14.0%
+16.1%
+20.4% 19.7% 21.2%
+27.2%
+32.0%
+35.1%
+38.1%
+51.9%
+62.1% 61.5% 62.3%
+65.2%
+69.3%
+75.6% 76.1%
 
 The best we can say is that the rate of increase in the combined 
 total has slowed to half a percentage point in this survey, after 
@@ -557,9 +559,9 @@ of Benjamin Disraeli, the 19th century British prime minister, who
 said: “I am prepared for the worst, but hope for the best.”
 
 > “Perhaps we should all follow the example of 
-> Benjamin Disraeli, the 19th century British prime 
-> minister, who said: ‘I am prepared for the worst, 
-> but hope for the best.’”
+Benjamin Disraeli, the 19th century British prime 
+minister, who said: ‘I am prepared for the worst, 
+but hope for the best.’”
 
 When we look at expectations by country, the highest number 
 of respondents predicting successful cyberattacks were in Japan 
@@ -575,46 +577,63 @@ technology (79.1%), and healthcare (76.0%). Those in retail
 And as on the previous question, security professionals in the 
 government sector (54.3%) were least worried (see Figure 7). 
 
-**Figure 6:** Percentage indicating compromise is “more likely to occur 
-than not” in the next 12 months, by country.
+![Figure 7: Percentage indicating compromise is “more likely to occur 
+than not” in the next 12 months, by industry.]
+Finance
+Education
+Telecom & Technology
+Healthcare
+Retail
+Manufacturing
+Government
+86.7%
+84.1%
+68.9%
+54.3%
+70.4%
+76.0%
+79.1%
 
-*   Japan: 87.9%
-*   Canada: 85.4%
-*   Singapore: 84.0%
-*   Saudi Arabia: 83.7%
-*   USA: 83.4%
-*   Italy: 82.0%
-*   Australia: 80.0%
-*   France: 79.7%
-*   Spain: 76.0%
-*   Germany: 74.3%
-*   Mexico: 74.0%
-*   UK: 74.0%
-*   China: 70.8%
-*   South Africa: 63.6%
-*   Colombia: 60.7%
-*   Brazil: 55.9%
-*   Turkey: 38.0%
+![Figure 6: Percentage indicating compromise is “more likely to occur 
+than not” in the next 12 months, by country.]
+Saudi Arabia
+Japan
+USA
+Spain
+Germany
+Italy
+Australia
+France
+Mexico
+Colombia
+Brazil
+Turkey
+Canada
+Singapore
+UK
+China
+South Africa
+87.8%
+85.4%
+84.0%
+83.7%
+83.4%
+82.0%
+80.0%
+79.7%
+76.0%
+74.3%
+74.0%
+74.0%
+70.8%
+63.6%
+60.7%
+55.9%
+38.0%
 
-*Image description: A bar chart showing the percentage of organizations in different countries that believe a cyberattack is "more likely to occur than not" in the next 12 months. Japan, Canada, and Singapore have the highest percentages, while Turkey has the lowest.*
-
-**Figure 7:** Percentage indicating compromise is “more likely to occur 
-than not” in the next 12 months, by industry.
-
-*   Finance: 86.7%
-*   Education: 84.1%
-*   Telecom & Technology: 79.1%
-*   Healthcare: 76.0%
-*   Retail: 70.4%
-*   Manufacturing: 68.9%
-*   Government: 54.3%
-
-*Image description: A bar chart showing the percentage of organizations in different industries that believe a cyberattack is "more likely to occur than not" in the next 12 months. Finance and Education have the highest percentages, while Government has the lowest.*
-
-### Security Posture by IT Domain
-
-> On a scale of 1 to 5, with 5 being highest, rate your organization’s overall security posture 
-> (ability to defend against cyberthreats) in each of the following IT components:
+## Security Posture by IT Domain
+On a scale of 1 to 5, with 5 being highest, rate your organization’s overall security posture 
+(ability to defend against cyberthreats) in each of the following IT components:
 
 Each year we try to gauge how security professionals feel about 
 their ability to defend against cyberthreats across different types 
@@ -630,23 +649,33 @@ position in the previous two surveys. Clearly, SaaS vendors have
 done a good job of staying on top of security issues (or at least 
 are perceived that way by their customers).
 
-**Figure 8:** Perceived security posture by IT domain.
-
-*   Cloud applications (SaaS): 4.13
-*   Laptops / notebooks: 4.12
-*   Websites and web applications: 4.11
-*   Application Containers: 4.11
-*   Cloud infrastructure (IaaS, PaaS): 4.09
-*   Desktops (PCs): 4.09
-*   Network perimeter / DMZ (public web servers): 4.08
-*   Application program interfaces (APIs): 4.04
-*   Internet of Things (IoT): 4.04
-*   Industrial control systems (ICS) / SCADA devices: 4.02
-*   Mobile devices (smartphones, tablets): 4.01
-*   Servers (physical and virtual): 4.0
-*   Datastores (file servers, databases, SANs): 3.98
-
-*Image description: A bar chart showing the perceived security posture of different IT domains, rated on a scale of 1 to 5. Cloud applications (SaaS) have the highest rating, while datastores have the lowest.*
+![Figure 8: Perceived security posture by IT domain.]
+Cloud applications (SaaS)
+Laptops / notebooks
+Websites and web appliations
+Application Containers
+Cloud infrastructure (IaaS, PaaS)
+Desktops (PCs)
+Network perimeter / DMZ (public web servers)
+Application program interfaces (APIs)
+Internet of Things (IoT)
+Industrial control systems (ICS) / SCADA devices
+Mobile devices (smartphones, tablets)
+Servers (physical and virtual)
+Datastores (fle servers, databases, SANs)
+4.13
+4.12
+4.11
+4.11
+4.09
+4.09
+4.08
+4.04
+4.04
+4.02
+4.01
+4.0
+3.98
 
 Respondents are also confident about physical and virtual 
 servers, as well as datastores such as file servers, databases, and 
@@ -668,4 +697,74 @@ The IT domain that most concerns respondents is mobile devices
 such as smartphones and tablets. A big part of the problem is 
 that COVID has increased the business use of mobile devices 
 owned by employees. These cannot easily be updated, locked 
-down, or even monitored by their
+down, or even monitored by their employers, and are therefore 
+less defended and more vulnerable to attacks. A multi-sponsor 
+survey report published by CyberEdge in 2020, “The Impact of 
+COVID-19 on Enterprise IT Security Teams Report,” showed a 
+nearly 60% leap in the number of organizations implementing 
+BYOD policies in response to the new pandemic reality. Clearly, 
+IT security teams continue to be nervous about securing 
+employee-owned mobile devices.
+
+The next two greatest areas of concern are “manufacturing and 
+operational technology (OT),” which includes categories such 
+as industrial control system (ICS) and supervisory control and 
+data acquisition (SCADA) systems, and devices that make up 
+the emerging internet of things (IoT). These are areas with large 
+numbers of devices that were never designed with security 
+in mind. They are also being targeted by state-sponsored and 
+criminal hacking groups, with a few well-publicized incidents 
+related to international conflicts and blackmail. 
+
+> “Laptops and notebooks joined the top tier, 
+in fourth position, moving up from eighth in the 
+previous survey… We believe this reflects the 
+attention and effort over the past two years that 
+has gone into better protection for remote 
+and home workers.”
+
+Application programming interfaces (APIs), which were in the 
+middle of the pack last year, have now emerged as fourth-
+highest area of concern. As organizations move to modular 
+services-based cloud applications, APIs become more tempting 
+targets for threat actors. Protecting APIs is likely to become an 
+even bigger issue over the next few years. We will have more to 
+say about this later in this report (pages 40 and 59).
+
+One final observation: the security posture ratings increased 
+from last year in every single category. This fact shows that 
+organizations are feeling a little bit better about the defenses 
+they have in place to stop cyberthreats. Perhaps this is an early 
+sign that security teams are finally catching up with threat actors 
+in their ongoing arms race.
+
+## Assessing IT Security Functions
+On a scale of 1 to 5, with 5 being highest, rate the adequacy of your organization’s capabilities 
+(people and processes) in each of the following functional areas of IT security:
+
+This question asks respondents to rate the adequacy of their 
+organization’s capabilities in different functional areas of 
+IT security. The answers show us perceived strengths and 
+weaknesses in security-related processes and programs (see 
+Figure 9).
+
+Organizations remain most positive about their capabilities for 
+governance, risk and compliance (GRC) and identity and access 
+management (IAM). These are followed closely by detection of 
+advanced threats and application development and testing, 
+two areas where many organizations have made considerable 
+investments in the past couple of years.
+
+![Figure 9: Perceived adequacy of functional security capabilities.]
+Governance, risk and compliance (GRC)
+Application development and 
+testing (SDLC, DevSecOps)
+Incident investigation and response
+Security engineering / architecture and design
+Brand protection
+Cyber risk quantifcation and reporting
+Detection of rogue insiders / insider attacks
+Third-party risk management (TPRM)
+User security awareness / education
+Attack surface reduction 
+(patch management, pen testing)

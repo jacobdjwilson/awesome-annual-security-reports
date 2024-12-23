@@ -3,30 +3,26 @@ BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
 
-2021 Year End Report
-Data Breach QuickView
+## Table of Contents
+- [In This Issue](#in-this-issue)
+- [Welcome](#welcome)
+- [Key Highlights](#key-highlights)
+- [Looking Back at Six Years of Breach History](#looking-back-at-six-years-of-breach-history)
+- [2021 Trends in Data Theft and Malware](#2021-trends-in-data-theft-and-malware)
+- [Data Breach Trends in 2021](#data-breach-trends-in-2021)
+- [2021 At a Glance](#2021-at-a-glance)
+- [What Was Breached in 2021?](#what-was-breached-in-2021)
+- [Who Was Breached in 2021?](#who-was-breached-in-2021)
+- [Where Did Breaches Occur in 2021?](#where-did-breaches-occur-in-2021)
+- [In Closing](#in-closing)
+- [About Risk Based Security](#about-risk-based-security)
+- [About Flashpoint](#about-flashpoint)
+- [About Cyber Risk Analytics](#about-cyber-risk-analytics)
+- [NO WARRANTY](#no-warranty)
 
-+
-DATA BREACH QUICKVIEW REPORT
-BETTER DATA MATTERS®
-
-© Copyright 2022 Risk Based Security, Inc. All Rights Reserved
 ## In This Issue
 FEATURING VIEWPOINTS FROM
 2021 YEAR END DATA BREACH QUICKVIEW REPORT
-
-[Welcome](#welcome) .......................................................................................................................................... 3
-[Key Highlights](#key-highlights) ..................................................................................................................................... 3
-[Looking Back at Six Years of Breach History](#looking-back-at-six-years-of-breach-history) .................................................................................... 4
-[2021 Trends in Data Theft and Malware](#2021-trends-in-data-theft-and-malware) .......................................................................................................... 6
-[Data Breach Trends in 2021](#data-breach-trends-in-2021) ......................................................................................................................... 9
-[2021 At a Glance](#2021-at-a-glance) ............................................................................................................................................. 10
-[What Was Breached in 2021?](#what-was-breached-in-2021) ........................................................................................................................ 17
-[Who Was Breached in 2021?](#who-was-breached-in-2021) ........................................................................................................................... 19
-[Where Did Breaches Occur in 2021?](#where-did-breaches-occur-in-2021) ............................................................................................................. 20
-[In Closing](#in-closing) ...................................................................................................................................................... 22
-[About Risk Based Security](#about-risk-based-security) ......................................................................................................................... 24
-[About Flashpoint](#about-flashpoint) .............................................................................................................................................. 24
 
 Inga Goddijn
 Executive Vice President,
@@ -51,10 +47,12 @@ Holiday Preparation webinar, AARP’s Cyber Security Awareness webinar, and part
 H-ISAC threat briefings, among others. She has also contributed to several cybersecurity-
 focused publications. Ashely holds an M.S. in Cybersecurity from Fordham University, which
 has been designated by NSA and Homeland Security as a center for excellence in cybersecurity.
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
 ## Welcome
 It is fitting that the publication of this report aligns nicely with Groundhog Day. In many ways, 2021 echoed several of the same
 themes we witnessed in 2020: sparsely stocked shelves returned as the coronavirus continued to wreak havoc with supply
@@ -72,27 +70,29 @@ with our customary practices, this report covers publicly disclosed data comprom
 derived from breaches first reported between January 1, 2021 and December 31, 2021.
 
 ## Key Highlights
-*   There were 4,145 publicly disclosed breaches in 2021, approximately 5% fewer than 2020. However, additional incidents
-    continue to surface. It is typical for the number of breaches disclosed for a given year to subsequently increase by 5% to
-    10% as the data matures. Assuming this pattern continues, 2022 is expected to at least match the 2021 breach count,
-    and potentially exceed it by as much as 5%.
-*   The number of records exposed during the reporting period exceeded 22 billion. While this is 14.5 billion fewer records
-    exposed than in 2021 (the year that set an all time high of 37.2 billion records exposed) it is the second highest year for
-    the amount of confidential data compromised since 2005.
-*   The number of breaches reported in the United States increased 10%, growing to 2,932 in 2021 compared to 2,645 in
-    2020.
-*   Names and Social Security numbers (or their non-US equivalents) were the two most compromised data types. Payment
-    card information, which has become less attractive to malicious actors, was compromised in only 3% of reported
-    breaches.
-*   Overall the healthcare sector experienced the most incidents, accounting for 14% of reported breaches. However, when
-    economic sectors are broken out into their component risk groups, financial services and software providers were the
-    top two most breached business groups, with healthcare practitioners’ offices coming in third.
-*   Manufacturing, not typically considered a popular sector to target, was the sixth most compromised sector, accounting
-    for 9% of reported breaches.
+- There were 4,145 publicly disclosed breaches in 2021, approximately 5% fewer than 2020. However, additional incidents
+continue to surface. It is typical for the number of breaches disclosed for a given year to subsequently increase by 5% to
+10% as the data matures. Assuming this pattern continues, 2022 is expected to at least match the 2021 breach count,
+and potentially exceed it by as much as 5%.
+- The number of records exposed during the reporting period exceeded 22 billion. While this is 14.5 billion fewer records
+exposed than in 2021 (the year that set an all time high of 37.2 billion records exposed) it is the second highest year for
+the amount of confidential data compromised since 2005.
+- The number of breaches reported in the United States increased 10%, growing to 2,932 in 2021 compared to 2,645 in
+2020.
+- Names and Social Security numbers (or their non-US equivalents) were the two most compromised data types. Payment
+card information, which has become less attractive to malicious actors, was compromised in only 3% of reported
+breaches.
+- Overall the healthcare sector experienced the most incidents, accounting for 14% of reported breaches. However, when
+economic sectors are broken out into their component risk groups, financial services and software providers were the
+top two most breached business groups, with healthcare practitioners’ offices coming in third.
+- Manufacturing, not typically considered a popular sector to target, was the sixth most compromised sector, accounting
+for 9% of reported breaches.
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
 ## Looking Back at Six Years of Breach History
 VIEWPOINT by Inga Goddijn
 This is the sixth Year End Data Breach QuickView Report I’ve
@@ -113,7 +113,7 @@ winners from our Cyber Risk Analytics researcher poll, in
 which our team was asked “which 2021 breaches stand out
 to you and why?”
 
-### WILL RANSOMWARE EVER GO AWAY?
+WILL RANSOMWARE EVER GO AWAY?
 If I had been asked six years ago whether ransomware was
 a serious threat, I’m fairly certain I would have said no
 without much hesitation. Back in 2016 there were a handful
@@ -140,7 +140,7 @@ half of the year, 421 in the second half. As one operation
 shuts down, new groups emerge to take their place and
 keep the attacks flowing.
 
-### BETTER LATE THAN NEVER BUT NEVER LATE
+BETTER LATE THAN NEVER BUT NEVER LATE
 IS BETTER
 In our 2018 Year End Report, we took a closer look at the
 average number of days between when a breach was
@@ -171,7 +171,7 @@ investigations, weak enforcement, and a deliberate
 blindness to notification obligations appear to be at the
 root of the delays.
 
-### NOTEABLE & NEWSWORTHY BREACHES
+NOTEABLE & NEWSWORTHY BREACHES
 The Cyber Risk Analytics research team analyzes thousands
 of breach events every year. With such a high volume of
 data, it takes a truly unique set of circumstances for an
@@ -225,100 +225,92 @@ operations across their various locations. Not only did it
 remind us of the near-universal appeal of a really good
 slice, it was charming to see the considerable care going
 into creating a pie in far flung locations like Kyrgyzstan.
-DATA BREACH QUICKVIEW REPORT
-BETTER DATA MATTERS®
 
-© Copyright 2022 Risk Based Security, Inc. All Rights Reserved
 ## 2021 Trends in Data Theft and Malware
 VIEWPOINT by Ashley Allocca
 On January 12th, Risk Based Security and Flashpoint announced that we are joining forces. Flashpoint is the leading provider of
 threat intelligence, with expansive data collections backed by an unrivaled team of security analysts. We’re pleased to include
 Flashpoint’s review of 2021, highlighting key observations of activity taking place on illicit and underground forums.
+1. MOST DISCUSSED MALWARE TYPES AND HACKING SERVICES
+The top 10 most discussed malware types and hacking services discussed over the last year were dominated by phishing,
+stealers, Zero-day attacks, and ransomware, which has notably been banned from a number of top-tier illicit forums.
 
-1.  ### MOST DISCUSSED MALWARE TYPES AND HACKING SERVICES
-    The top 10 most discussed malware types and hacking services discussed over the last year were dominated by phishing,
-    stealers, Zero-day attacks, and ransomware, which has notably been banned from a number of top-tier illicit forums.
-
-    *Image description: A bar chart displaying the top 10 most discussed malware types and hacking services. The categories, from most to least discussed are: Phishing, Stealers, Zero-Day, Ransomware, Botnets, RATs, Credential Stuffing, DDoS, Exploit Kits, and Cryptominers.*
-
-DATA BREACH QUICKVIEW REPORT
-BETTER DATA MATTERS®
-
-© Copyright 2022 Risk Based Security, Inc. All Rights Reserved
-2.  ### MOST POPULAR FORUMS
-    The most popular forums where threat actors advertised and solicited breached reporting were Raid Forums and Exploit, by far.
-
-3.  ### MOST TARGETED SECTORS
-    The sectors most commonly linked to data advertised in forums in 2021 were:
-    *   Government (commonplace data types were Social Security Numbers (SSNs), driver’s licenses, passports, and other
-        government-issued identity documents);
-    *   Financial (fullz, bank logs, and databases, online retailers that store financial data)
-    *   Healthcare (mostly U.S.-based, personally identifiable information (PII), protected health information (PHI), financial
-        data, and login credentials)
-    *   Education (compromised credentials, e.g.)
-    *   Retail (holiday fraud, e.g.)
-
-4.  ### MOST POPULAR ACCESS TYPES ADVERTISED
-    The most popular access types advertised for sale on forums was admin- or user-level access for Remote Desktop Protocol (RDP)
-    / virtual private network (VPN) and content management systems (CMS). This type of access could lead to the compromise of
-    customer personal information and, in some cases, financial information.
-
-5.  ### RISE OF SQL INJECTION ADS
-    Advertisement of SQL injections (SQL) trended upward, gaining steam in popularity as a method for sellers to guarantee data
-    integrity to their customers.
-
-6.  ### PRICING IS BEING WITHHELD
-    Recently, threat actors have been omitting pricing information more than usual although it’s unclear exactly what motivations
-    may be spurring this emerging trend. It is possible that withholding the desired sale price leads only seriously interested buyers
-    to contact the seller. This trend further increases the difficulty of assessing data pricing within illicit forums. Since negotiations
-    are being held in private chats and listing and sale prices are increasingly being withheld, it remains difficult to know the exact
-    value of these data types.
-
-7.  ### NEGOTIATIONS VIA CHAT
-    Negotiations (including communications around vouching and proof-of-concept) have appeared to shift to encrypted chat
-    services from the forum themselves.
-
-8.  ### GEOGRAPHIC DISCLOSURES
-    Threat actors, most of whom are out for financial gain, are increasingly disclosing geographical information about the data and
-    access they advertise. According to our collections, the “unknown” category - which denotes data for sale without location-specific
-    information - is down almost 42%.
+![Image description]
 
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
-9.  ### ZERO-DAY AND PHISHING ADS DOMINATE RAID
-    Raid Forums - traditionally popular amongst threat actors for buying and selling breach data - emerged as a major player in
-    malware and hacking services as well in 2021. Zero-day and phishing attacks were by far the most advertised exploits.
 
-10. ### RANSOMWARE IS TABOO
-    Ransomware has been widely banned on major forums as evidenced by referring to their ransomware offerings as “crypters” or
-    “lockers” to avoid their post or account getting immediately banned.
+2. MOST POPULAR FORUMS
+The most popular forums where threat actors advertised and solicited breached reporting were Raid Forums and Exploit, by far.
+3. MOST TARGETED SECTORS
+The sectors most commonly linked to data advertised in forums in 2021 were:
+- Government (commonplace data types were Social Security Numbers (SSNs), driver’s licenses, passports, and other
+government-issued identity documents);
+- Financial (fullz, bank logs, and databases, online retailers that store financial data)
+- Healthcare (mostly U.S.-based, personally identifiable information (PII), protected health information (PHI), financial
+data, and login credentials)
+- Education (compromised credentials, e.g.)
+- Retail (holiday fraud, e.g.)
+4. MOST POPULAR ACCESS TYPES ADVERTISED
+The most popular access types advertised for sale on forums was admin- or user-level access for Remote Desktop Protocol (RDP)
+/ virtual private network (VPN) and content management systems (CMS). This type of access could lead to the compromise of
+customer personal information and, in some cases, financial information.
+5. RISE OF SQL INJECTION ADS
+Advertisement of SQL injections (SQL) trended upward, gaining steam in popularity as a method for sellers to guarantee data
+integrity to their customers.
+6. PRICING IS BEING WITHHELD
+Recently, threat actors have been omitting pricing information more than usual although it’s unclear exactly what motivations
+may be spurring this emerging trend. It is possible that withholding the desired sale price leads only seriously interested buyers
+to contact the seller. This trend further increases the difficulty of assessing data pricing within illicit forums. Since negotiations
+are being held in private chats and listing and sale prices are increasingly being withheld, it remains difficult to know the exact
+value of these data types.
+7. NEGOTIATIONS VIA CHAT
+Negotiations (including communications around vouching and proof-of-concept) have appeared to shift to encrypted chat
+services from the forum themselves.
+8. GEOGRAPHIC DISCLOSURES
+Threat actors, most of whom are out for financial gain, are increasingly disclosing geographical information about the data and
+access they advertise. According to our collections, the “unknown” category - which denotes data for sale without location-specific
+information - is down almost 42%.
+DATA BREACH QUICKVIEW REPORT
+BETTER DATA MATTERS®
+
+© Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+9. ZERO-DAY AND PHISHING ADS DOMINATE RAID
+Raid Forums - traditionally popular amongst threat actors for buying and selling breach data - emerged as a major player in
+malware and hacking services as well in 2021. Zero-day and phishing attacks were by far the most advertised exploits.
+10. RANSOMWARE IS TABOO
+Ransomware has been widely banned on major forums as evidenced by referring to their ransomware offerings as “crypters” or
+“lockers” to avoid their post or account getting immediately banned.
 
 The standard for actionable data breach intelligence,
 risk ratings and supply chain monitoring.
-1.  Cyber Insurance
-2.  Security & Vulnerability
-    Management
-3.  Vendor Risk Management
-4.  Procurement
-5.  Governance &
-    Management
+1. Cyber Insurance
+2. Security & Vulnerability
+Management
+3. Vendor Risk Management
+4. Procurement
+5. Governance &
+Management
 The Data Breach QuickView report is powered by
-[LEARN MORE](https://riskbasedsecurity.com/contact)
-[REQUEST A DEMO](https://riskbasedsecurity.com/contact)
+LEARN MORE
+REQUEST A DEMO
 riskbasedsecurity.com/contact
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
 ## Data Breach Trends in 2021
 A question we are often asked is whether the data breach landscape is ‘getting better’. Looking back over 2021 and 2020, the
 numbers do not provide a simple answer. The time it takes to report a breach, coupled with the lingering effects of a drop-off in
 media coverage and more ransomware attacks that can be kept out of public view, has undoubtedly played a role in the decline
 in publicly reported breaches. At the same time, the number of sensitive records exposed continues to reach well into the
 billions. Read on for more insights into the who, what, when, and where of breach activity that shaped 2021.
-### 2021 At a Glance
+
+## 2021 At a Glance
 At the time of this report, the number of publicly disclosed data breach events stood at 4,145 or approximately 6% below 2020.
 Does this mean there were fewer breaches in 2021? Based on our experience of how the data develops over time, the answer is
 a resounding no. Readers of the 2020 Year End Report may recall at the time that report was issued, the number of publicly
@@ -327,24 +319,26 @@ actually increased by 11.8%. The same factors, noted in the above introduction, 
 today. Assuming another conservative estimate of 5% to 10%, we anticipate the number of breaches for 2021 will settle in a
 range between 4,352 to 4,560.
 
-*Image description: A bar chart displaying the number of breaches reported by EOY for the past eight years. The years, from 2014 to 2021, are on the x-axis, and the number of breaches is on the y-axis. The number of breaches fluctuates over the years, with a peak in 2020.*
-
+![Image description]
 Figure 1. Number of breaches reported by EOY, for the past eight years
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
 Unlike the number of breaches reported, we anticipate little change to the colossal number of records exposed in 2021. At 22.7
 billion records, 2021 is second only to 2020 in terms of the volume of data compromised. The three largest breaches of 2021
 account for 82% of exposed records, with the largest breach of the year contributing 16 billion records (70%) to the total.
 
-*Image description: A bar chart displaying the number of records lost (in billions) reported by EOY for the past eight years. The years, from 2014 to 2021, are on the x-axis, and the number of records lost (in billions) is on the y-axis. The number of records lost fluctuates over the years, with a significant peak in 2020.*
-
+![Image description]
 Figure 2: Number of records lost (in billions) reported by EOY, for the past eight years
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
 Since the 2017 Year End Report, “Hacking” (unauthorized access to systems or services) has been the top breach type, accounting
 for the most reported breaches, while “Web” (publishing, sharing or open access to data online) has been the top breach type
 responsible for exposing the most records. Where the trends become more interesting is looking down the charts to the
@@ -362,52 +356,50 @@ occurred. While these are typically smaller events, impacting fewer than 10,000 
 “Unknown” breach type impacting more than 10,000 records, including four that impacted over 500,000 records each. These
 incidents combined to push “Unknown” into this year’s statistics.
 
-*Image description: A bar chart displaying the number of breaches by breach type, reported by EOY 2021. The breach types are on the x-axis, and the number of breaches is on the y-axis. The most common breach types are Hacking, Web, and Email.*
-
+![Image description]
 Figure 3: Number of breaches by breach type, reported by EOY 2021
 
-*Image description: A bar chart displaying the number of records lost by breach type (in billions), reported by EOY 2021. The breach types are on the x-axis, and the number of records lost (in billions) is on the y-axis. The most common breach types are Web, Hacking, and Unknown.*
-
+![Image description]
 Figure 4: Number of records lost by breach type (in billions),
 reported by EOY 2021
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
 There is no doubt a malicious insider can do significant harm to an organization. Even ransomware operators have picked up on
 the opportunity, with news surfacing in late summer that unhappy employees of targeted organizations were being bribed to
 deploy ransomware. But insider errors can be equally damaging. In 2021, seven incidents attributable to insider mistakes
 accounted for the exposure of more than 19 billion records, including the leak at FBS Markets, the largest breach ever recorded.
-
 If a database leaks online, but no one is there to pick up the data, is it a breach? In our view yes, but we also recognize there is a
 world of difference between attackers stealing troves of sensitive data and a loss of control over the same dataset. In
 approximately 53% of the reported data breaches, information was confirmed to be in the hands of unauthorized persons, while
 in 46% of breaches data was exposed but no conclusive evidence has surfaced confirming its theft or compromise.
 
-*Image description: A pie chart displaying the number of breaches by attack vector, reported by EOY 2021. The categories are Outside, Inside, and Unknown. The majority of breaches are attributed to Outside attacks.*
-
+![Image description]
 Figure 5: Number of breaches by attack vector, reported by EOY 2021
 
-*Image description: A pie chart displaying the number of breaches by known confidentiality impact, reported by EOY 2021. The categories are Yes - Confirmed, Potential, and No breach of confidentiality. The majority of breaches are categorized as Yes - Confirmed.*
-
+![Image description]
 Figure 6: Number of breaches by known confidentiality impact, reported by EOY 2021
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
 Severity score (a measure based on the number of records exposed in combination with the data types compromised, how the
 attack occurred and more) showed improvement in H2 compared to the first half of the year. With the increasingly long tail for
 disclosing breach details, it would not be surprising to see the average severity score for 2021 increase somewhat. That said,
 predicting which direction the severity score will go is difficult. What can be safely assumed is that regardless of direction, it will
 most likely stay in the range of 5.4 to 5.7.
 
-*Image description: A line graph displaying the severity distribution of breaches in 2021 H1 and H2. The x-axis represents the severity score, and the y-axis represents the percentage of breaches. The graph shows that the severity distribution is similar in both halves of the year, but with a slight shift towards lower severity scores in H2.*
-
+![Image description]
 Figure 7: Severity distribution of breaches in 2021 H1 and H2
 
-*Image description: A line graph displaying the severity distribution of breaches in 2020 and 2021. The x-axis represents the severity score, and the y-axis represents the percentage of breaches. The graph shows that the severity distribution is similar in both years.*
-
+![Image description]
 Figure 8: Severity distribution of breaches in 2020 and 2021
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
@@ -456,15 +448,16 @@ Number of Incidents
 39
 2016
 40
-
 Table 1: Number of incidents with records lost in these ranges reported by EOY 2021
 
 Table 2: Number of incidents that exposed 10 million or more
 records for the past 6 years
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
 In the 2018 Year End Report, we took a closer look at the disclosure timeline. With GDPR regulations taking effect that year,
 significant attention was being given to the 72 hour deadline for informing data protection offices of the breach. The prevailing
 question at the time was whether this attention would impact how long it would take to go from initial discovery to the date of
@@ -491,24 +484,26 @@ Average Number of Days
 72
 2021
 89
-
 Table 3: Average time interval between discovery and reporting
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
 ## What Was Breached in 2021?
 Just as ransomware operations are impacting the number of records exposed, the types of data contained in those records are
 also influenced by these attacks. With 874, or 21%, of the publicly reported breaches including a ransomware component, we see
 a broad range of data types compromised as well as Unknown/Unconfirmed data type appearing in 32% of breaches.
 
-*Image description: A bar chart displaying the data types exposed in breaches reported by EOY 2021. The data types are on the x-axis, and the percentage of breaches exposing each data type is on the y-axis. The most commonly exposed data types are Names, SSN, and Misc.*
-
+![Image description]
 Figure 9: Data types exposed in breaches reported by EOY 2021
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
 A notable trend over the past three years is the steady increase in the number of incidents that expose Social Security numbers
 or their non-U.S. equivalent. Digging deeper into this number, we see that during 2021 the breach types exposing this data do
 not vary significantly from the overall top 5 breach types. We were however surprised to find that the Manufacturing sector
@@ -568,12 +563,13 @@ Credit Cards
 10%
 12%
 12%
-
 Table 4: Top data types lost in breaches reported by EOY for the past three years
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
 ## Who Was Breached in 2021?
 Not surprisingly, the Healthcare sector experienced the most breaches in 2021 followed closely by the Finance and Insurance
 sector. While landing at the top of the chart for most compromised economic sectors is not an enviable position, it is important
@@ -583,24 +579,103 @@ A closer examination of the Healthcare sector reveals that practitioners’ offi
 hospitals accounting for 28%, other facilities coming in at 19% and social services rounding out the sector contributing 13% of
 the breaches.
 
-*Image description: A bar chart displaying the number of breaches by economic sector, reported by EOY 2021. The economic sectors are on the x-axis, and the number of breaches is on the y-axis. The most commonly breached sectors are Healthcare, Finance/Insurance, and Government.*
-
+![Image description]
 Figure 10: Number of breaches by economic sector, reported by EOY 2021
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
 ## Where Did Breaches Occur in 2021?
 In keeping with prior years, the United States was home to the most breaches, accounting for 2,953 or 71% of incidents. This is
 due in part to the notification laws that require breach disclosures, as well as being the home to a significant number of high-
 value targets. While the overall number of breaches reported for 2021 is on par with 2020, the number of breaches reported in
 the United States increased 11.6% in 2021 compared to 2020.
 
-*Image description: A bar chart displaying the distribution of breaches reported by EOY 2021. The countries are on the x-axis, and the number of breaches is on the y-axis. The United States has the highest number of breaches, followed by Canada and the United Kingdom.*
-
+![Image description]
 Figure 11: Distribution of breaches reported by EOY 2021
+
 DATA BREACH QUICKVIEW REPORT
 BETTER DATA MATTERS®
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
-Are some countries home to more “
+
+Are some countries home to more “hackable” organizations than others? It is a challenging question to answer, but breach type
+by country does reveal interesting results. The United States, while reporting the most breaches, experienced a wide variety of
+breach types, similar to the Netherlands and Canada. Other locations, like Brazil and France, mostly reported hacking or malware
+attacks.
+
+![Image description]
+Figure 12: Percentage of breaches by country, reported by EOY 2021
+
+DATA BREACH QUICKVIEW REPORT
+BETTER DATA MATTERS®
+
+© Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
+## In Closing
+If 2020 was a rollercoaster ride, 2021 was more of the same, but perhaps with a little less surprise at the twists and turns that
+defined the year. As hopeful as we were that law enforcement's successes against ransomware operators would put a damper
+on activity, new groups formed, updated malware strains arrived on the scene, and operations continued after a short blip in late
+summer.
+Accidental insider errors took a toll as well, contributing significantly to the number of records exposed during the year. What’s
+more, these errors exposed highly sensitive information like Social Security numbers and their non-U.S. equivalent. Much talk
+has been given to how the pivot to work from home would create a field day for malicious actors. Perhaps so, but the stress of
+the past two years is surely playing a role too in the amount of data exposed.
+What will be in store for 2022? It’s difficult to say but one thing we can be sure of is that as long as malicious actors have a
+pathway to attack monetization, there will be no shortage of breaches to cover.
+
+Methodology and Terms
+Risk Based Security’s research methods include automated processes coupled with traditional human research and analysis. Our
+proprietary applications crawl the Internet 24x7 to capture and aggregate potential data breaches for our researchers to analyze.
+In addition, the research team manually verifies news feeds, blogs, and other sources looking for new data breaches as well as
+new information on previously disclosed incidents.
+The database also includes information obtained through Freedom of Information Act (FOIA) requests, seeking breach
+notification documentation from various state and federal agencies in the United States. The research team extends our
+heartfelt thanks to the individuals and agencies that assist with fulfilling our requests for information.
+
+Data Standards and the Use of “Unknown”
+In order for any data point to be associated with a breach entry, Risk Based Security requires a high degree of confidence in the
+accuracy of the information reported as well as the ability to reference a public source for the information. In short, the research
+team does not guess at the facts. For this reason, the term “Unknown” is used when the item cannot be verified in accordance
+with our data validation requirements. This can occur when the breached organization cannot be identified but leaked data is
+confirmed to be valid or when the breached organization is unwilling or unable to provide sufficient clarity to the data point.
+
+DATA BREACH QUICKVIEW REPORT
+BETTER DATA MATTERS®
+
+© Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
+The Risk Based Security Platform
+The Risk Based Security Platform
+Transform your information security program with truly risk-based, asset-centric intelligence.
+REVEAL
+the risks that apply to your
+organization.
+PRIORITIZE
+what impacts your assets, products
+and supply chain.
+REMEDIATE
+what matters most, coordinating
+across teams.
+LEARN MORE ABOUT “THE PLATFORM”
+With actionable intelligence, evaluate and monitor vendors in real-time based
+on five-star risk ratings and comprehensive historical breach data.
+
+DATA BREACH QUICKVIEW REPORT
+BETTER DATA MATTERS®
+
+© Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
+## About Risk Based Security
+Risk Based Security® (RBS) is a leading provider of Cybersecurity risk management solutions. The award-winning Risk Based
+Security Platform automatically correlates enterprise IT assets with comprehensive, independently-researched vendor, product
+and vulnerability intelligence from VulnDB® and Cyber Risk Analytics®. The result is better risk management outcomes, as well as
+time and cost savings. In addition, YourCISO® provides organizations with on-demand access to high quality security and
+information risk management resources in one easy to use web portal. Headquartered in Richmond, VA, RBS has been a trusted
+partner to many of the world’s best known brands for more than a decade.
+For more information, visit www.riskbasedsecurity.com, call +1 855-RBS-RISK, or follow us on Twitter at @RiskBased.
+
+## About Flashpoint
+Trusted by governments and the

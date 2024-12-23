@@ -1,51 +1,200 @@
-# Table of Contents
-[I N T R O D U C T I O N](#i-n-t-r-o-d-u-c-t-i-o-n)  	                           
-[M E T H O D O L O G Y](#m-e-t-h-o-d-o-l-o-g-y)  	        	                  
-[T R E N D S](#t-r-e-n-d-s) 	
-[Introduction](#introduction) 
-[Ransomware](#ransomware)	
-[Initial access tradecraft](#initial-access-tradecraft) 
-[Command and control frameworks](#command-and-control-frameworks)	
-[Stealers](#stealers)	 	
-[Identity](#identity)                                                                    
-[Email threats](#email-threats) 
-[Adversary and emulation testing](#adversary-and-emulation-testing)	
-[A C K N O W L E D G E M E N T S](#a-c-k-n-o-w-l-e-d-g-e-m-e-n-t-s) 	
-[T H R E AT S](#t-h-r-e-a-t-s) 	                 	
-[Introduction](#introduction-1) 
-[Qbot](#qbot)	
-[Impacket](#impacket)	 
-[AdSearch](#adsearch)	
-[Gootloader](#gootloader)	
-[Mimikatz](#mimikatz)	 
-[SocGholish](#socgholish)	
-[Raspberry Robin](#raspberry-robin)	
-[Cobalt Strike](#cobalt-strike)	
-[BloodHound](#bloodhound)	
-[Gamarue](#gamarue)	 
-[Yellow Cockatoo](#yellow-cockatoo)	
-[Emotet](#emotet)	  
-[PlugX](#plugx)	
-[T E C H N I Q U E S](#t-e-c-h-n-i-q-u-e-s) 	
-[Introduction](#introduction-2) 
-[Windows Command Shell](#windows-command-shell)	
-[PowerShell](#powershell)	
-[Windows Management Instrumentation](#windows-management-instrumentation)	
-[Obfuscated Files or Information](#obfuscated-files-or-information)	
-[Rundll32](#rundll32)	 
-[Ingress Tool Transfer](#ingress-tool-transfer)	
-[Process Injection](#process-injection)	  
-[Service Execution](#service-execution)	  
-[Rename System Utilities](#rename-system-utilities)	
-[LSASS Memory](#lsass-memory)	
-[Modify Registry](#modify-registry)	
-[Gatekeeper Bypass](#gatekeeper-bypass)	 
-[Setuid and Setgid](#setuid-and-setgid)	  
-[Mark-of-the-Web Bypass](#mark-of-the-web-bypass)	
-[SMB/ Windows Admin Shares](#smb-windows-admin-shares)	
-[Multi-Factor Authentication Request Generation](#multi-factor-authentication-request-generation)          
+# Red Canary 2023 Threat Detection Report
 
-# I N T R O D U C T I O N
+## Table of Contents
+- [Introduction](#introduction)
+- [Methodology](#methodology)
+- [Trends](#trends)
+    - [Ransomware](#ransomware)
+    - [Initial access tradecraft](#initial-access-tradecraft)
+    - [Command and control frameworks](#command-and-control-frameworks)
+    - [Stealers](#stealers)
+    - [Identity](#identity)
+    - [Email threats](#email-threats)
+    - [Adversary emulation and testing](#adversary-emulation-and-testing)
+- [Threats](#threats)
+    - [Qbot](#qbot)
+    - [Impacket](#impacket)
+    - [AdSearch](#adsearch)
+    - [Gootloader](#gootloader)
+    - [Mimikatz](#mimikatz)
+    - [SocGholish](#socgholish)
+    - [Raspberry Robin](#raspberry-robin)
+    - [Cobalt Strike](#cobalt-strike)
+    - [BloodHound](#bloodhound)
+    - [Gamarue](#gamarue)
+    - [Yellow Cockatoo](#yellow-cockatoo)
+    - [Emotet](#emotet)
+    - [PlugX](#plugx)
+- [Techniques](#techniques)
+    - [Windows Command Shell](#windows-command-shell)
+    - [PowerShell](#powershell)
+    - [Windows Management Instrumentation](#windows-management-instrumentation)
+    - [Obfuscated Files or Information](#obfuscated-files-or-information)
+    - [Rundll32](#rundll32)
+    - [Ingress Tool Transfer](#ingress-tool-transfer)
+    - [Process Injection](#process-injection)
+    - [Service Execution](#service-execution)
+    - [Rename System Utilities](#rename-system-utilities)
+    - [LSASS Memory](#lsass-memory)
+    - [Modify Registry](#modify-registry)
+    - [Gatekeeper Bypass](#gatekeeper-bypass)
+    - [Mark-of-the-Web Bypass](#mark-of-the-web-bypass)
+    - [Setuid and Setgid](#setuid-and-setgid)
+    - [SMB/Windows Admin Shares](#smbwindows-admin-shares)
+    - [Multi-Factor Authentication Request Generation](#multi-factor-authentication-request-generation)
+- [Acknowledgements](#acknowledgements)
+
+2
+table of contents
+I N T R O D U C T I O N  	                           03
+M E T H O D O L O G Y  	        	                  04
+T R E N D S 	
+	
+	
+            06
+Introduction 
+ 
+ 
+                              07 
+Ransomware	
+ 
+ 
+ 
+          08
+Initial access tradecraft 
+ 
+ 
+         12
+Command and control frameworks	
+ 
+         16
+Stealers	 	
+ 
+ 
+ 
+         18
+Identity  
+                                                                     20
+Email threats 
+ 
+                                                 22
+Adversary and emulation testing	
+	
+         25
+A C K N O W L E D G E M E N T S 	
+             111
+T H R E AT S  	                 	
+   32
+Introduction 
+ 
+ 
+ 
+         33
+Qbot	
+ 
+ 
+                                                 35
+Impacket	 
+                                                                     37
+AdSearch	
+ 
+ 
+                                                 39
+Gootloader	
+ 
+ 
+                             41
+Mimikatz	 
+ 
+                                                 43
+SocGholish	
+ 
+                                                 45
+Raspberry Robin	
+ 
+ 
+                             48
+Cobalt Strike	
+ 
+ 
+                             51
+BloodHound	
+ 
+ 
+                             53
+Gamarue	 
+ 
+                                                 55
+Yellow Cockatoo	
+ 
+ 
+                             57
+Emotet	  
+ 
+                                                 59
+PlugX	
+ 
+ 
+                                                 61
+Introduction 
+ 
+ 
+                              64 
+Windows Command Shell	
+ 
+ 
+          66
+PowerShell	
+ 
+ 
+                              68
+Windows Management Instrumentation	
+          70 
+Obfuscated Files or Information	
+ 
+          73
+Rundll32	 
+ 
+                                                  76 
+Ingress Tool Transfer	
+ 
+ 
+          78
+Process Injection	  
+ 
+                              80
+Service Execution	  
+ 
+                              83
+Rename System Utilities	
+ 
+ 
+          85
+LSASS Memory	
+ 
+ 
+                              87
+Modify Registry	
+ 
+ 
+                              89
+Gatekeeper Bypass	 
+ 
+                              93
+Setuid and Setgid	  
+ 
+                              98
+Mark-of-the-Web Bypass	
+ 
+ 
+          101
+SMB/ Windows Admin Shares	
+ 
+          105
+Multi-Factor Authentication Request Generation           109
+T E C H N I Q U E S  	
+               	    63
+3
 It is our pleasure to provide you with Red Canary’s 2023 Threat Detection Report. 
 Our fifth annual retrospective, this report is based on in-depth analysis of nearly 
 40,000 threats detected across our 800+ customers’ endpoints, networks, cloud 
@@ -56,28 +205,31 @@ observed as adversaries continue to organize, commoditize, and ratchet up their
 cybercrime operations. 
 As the technology that we rely on to conduct business continues to evolve,  
 so do the threats that we face. Here’s what’s new in this year’s report:
-* Cloud and identity attacks are becoming more prevalent across our 
+Cloud and identity attacks are becoming more prevalent across our 
 customers’ environments and appear for the first time in this report.
-* Our unique visibility into email attacks, still the leading initial access 
+Our unique visibility into email attacks, still the leading initial access 
 vector used by adversaries, has put us in a position to detect even more 
 attacks at earlier stages.
-* Adversary simulation and other authorized testing are excluded  
+Adversary simulation and other authorized testing are excluded  
 from our data set, leading to a more accurate representation of the 
 threat landscape. 
-* What’s old is new: Raspberry Robin, a USB-based threat first discovered 
+What’s old is new: Raspberry Robin, a USB-based threat first discovered 
 by Red Canary, continues to evolve and we provide updated research.
-* Mitigation guidance to limit adversaries’ effectiveness.
-
-## intro
-### HOW TO USE THIS REPORT
-* Explore the most prevalent and impactful threats, techniques, and trends 
+Mitigation guidance to limit adversaries’ effectiveness.
+intro
+HOW TO USE THIS REPORT
+•	
+Explore the most prevalent and impactful threats, techniques, and trends 
 that we’ve observed.  
-* Note how adversaries are evolving their tradecraft as organizations continue 
+•	
+Note how adversaries are evolving their tradecraft as organizations continue 
 their shift to cloud-based identity, infrastructure, and applications.  
-* Learn how to emulate, mitigate, and detect specific threats and techniques.  
-* Shape and inform your readiness, detection, and response to critical threats.
-
-# M E T H O D O L O G Y
+•	
+Learn how to emulate, mitigate, and detect specific threats and techniques.  
+•	
+Shape and inform your readiness, detection, and response to critical threats.
+4
+methodology
 As Red Canary eclipses a decade providing world-class security operations 
 to organizations around the world, we continue to analyze, learn, and evolve 
 based on the petabytes of raw data and trillions of signals that our XDR platform 
@@ -86,8 +238,7 @@ analytics, and adversaries are relentlessly pursued by our expert team of
 intelligence, research, detection, and threat hunting professionals. In 2022, Red 
 Canary detected and responded to nearly 40,000 threats that our customers’ 
 preventative controls missed.
-
-## Behind the data
+Behind the data 
 The Threat Detection Report sets itself apart from other annual reports with 
 unique data and insights that are derived from a combination of expansive 
 detection coverage coupled with expert, human-led investigation and 
@@ -98,16 +249,15 @@ of expert investigations across millions of protected systems. Each of the nearl
 weren’t prevented by our customers’ expansive security controls—they are the 
 product of a breadth and depth of analytics that we use to detect the threats  
 that would otherwise go undetected.
-
->“In 2022, Red 
+“In 2022, Red 
 Canary detected 
 and responded to 
 nearly 40,000 threats 
 that our customers’ 
 preventative controls 
 missed.”
-
-## What counts
+5
+What counts 
 When our detection engineers develop detection analytics, they map them to 
 corresponding MITRE ATT&CK® techniques. If the analytic uncovers a realized 
 or confirmed threat, we construct a timeline that includes detailed information 
@@ -131,8 +281,7 @@ Consistent with past years, we exclude unwanted software from the data we use
 to compile this report. And for the first time this year, in an effort to better reflect 
 the threat landscape, we also exclude authorized testing (see a more detailed 
 explanation in the Testing trend section of this report).
-
-## Limitations
+Limitations 
 Red Canary optimizes heavily for detecting and responding rapidly to early-stage 
 adversary activity. As a result, the techniques that rank skew heavily between 
 the initial access stage of an intrusion and any rapid privilege escalation and 
@@ -145,26 +294,25 @@ and detection opportunities helps you and your team prioritize, we recommend
 building your own threat model by comparing the top threats we share in our 
 report with what other teams publish and what you observe in your  
 own environment.
-
-*RECONNAISSANCE*
-*INITIAL ACCESS*
-*EXECUTION*
-*PERSISTENCE*
-*DEFENSE EVASION*
-*CREDENTIAL ACCESS*
-*DISCOVERY*
-*LATERAL MOVEMENT*
-*PRIVILEGE 
-ESCALATION*
-*RESOURCE 
-DEVELOPMENT*
-*COLLECTION*
-*EXFILTRATION*
-*IMPACT*
-*COMMAND  
-& CONTROL*
-
-# T R E N D S
+RECONNAISSANCE
+INITIAL ACCESS
+EXECUTION
+PERSISTENCE
+DEFENSE EVASION
+CREDENTIAL ACCESS
+DISCOVERY
+LATERAL MOVEMENT
+PRIVILEGE 
+ESCALATION
+RESOURCE 
+DEVELOPMENT
+COLLECTION
+EXFILTRATION
+IMPACT
+COMMAND  
+& CONTROL
+7
+trends
 Red Canary performed an analysis of emerging and significant trends that we’ve 
 encountered in confirmed threats, intelligence reporting, and elsewhere over the 
 past year. We’ve compiled the most prominent trends of 2022 in this report to 
@@ -174,17 +322,15 @@ ATT&CK techniques and threat associations from the nearly 40,000 confirmed
 threats we detected in 2022. The Trends section takes us one step beyond that 
 data and allows us to narrate events that might not be prevalent in our detection 
 data set but may be emergent or otherwise deserve your attention.
-
-## TRENDS
-*Ransomware*
-*Initial access tradecraft*
-*Command and control frameworks*
-*Stealers*
-*Identity*
-*Email threats*
-*Adversary emulation and testing*
-
-### How to use our analysis
+Ransomware
+TRENDS
+Initial access tradecraft
+Command and control frameworks
+Stealers
+Identity
+Email threats
+Adversary emulation and testing
+How to use our analysis 
 The 2022 Trends section is intended to provide valuable insight and actionable 
 recommendations for security leaders to make informed decisions. We offer 
 advice to help defenders prepare, prevent, detect, and mitigate activity 
@@ -192,8 +338,7 @@ associated with each trend. The guidance we provide differs, since each trend
 requires a different approach. You might also use our analysis to help anticipate 
 and plan for key trends that may continue into 2023, just as we saw with 2021 
 trends extending into 2022.
-
-### WHAT’S INCLUDED 
+WHAT’S INCLUDED 
 IN THIS SECTION? 
 We’ve written an extensive  
 analysis of seven trends 
@@ -207,17 +352,16 @@ the full analysis—including
 mitigation, detection, and 
 testing guidance—in the 
 web version of this report.
-
-## Ransomware
+8
+TREND
 The ransomware landscape continued to shift in 2022. While some metrics 
 suggested that ransomware was less prevalent, other metrics suggested that 
 ransomware was more prevalent for specific sectors. The community observed 
 new ransomware groups popping up, while others disappeared. Regardless of 
 the exact numbers, ransomware continues to be one of the most pressing threats 
 to every organization.
-
-### What we saw in 2022
-#### A visibility challenge
+What we saw in 2022
+A visibility challenge 
 A major challenge with ransomware is that no one sees all ransomware 
 intrusions, so no one knows how bad the problem really is. From Red Canary’s 
 perspective, we didn’t see much ransomware in 2022—no ransomware group 
@@ -225,31 +369,17 @@ made it into our top 20 threats, and we saw fewer ransomware incidents as
 compared to 2021. However, that reflects our visibility rather than the true 
 prevalence of ransomware. As with any intrusion, ransomware doesn’t come  
 out of thin air—it’s part of a larger chain of events, as depicted in this diagram.
-
-*Image description: A diagram showing the typical stages of a ransomware attack, starting with initial access, then reconnaissance, lateral movement, exfiltration, and finally encryption.*
-
->2022 brought significant developments to the ransomware 
+2022 brought significant developments to the ransomware 
 ecosystem, but the basic—and detectable—adversary 
 behaviors remain the same. 
-
+Ransomware
+9
 We focus on trying to detect ransomware precursor activity in the initial access, 
 reconnaissance, and lateral movement phases and help our customers stop it 
 before it gets to exfiltration or encryption. The result is that we see many more 
 so-called ransomware precursors than we do actual ransomware payloads. In 
 fact, eight out of our top 10 threats are regularly observed during early stages of 
 ransomware intrusions:
-
-* Qbot
-* Impacket
-* Gootloader
-* SocGholish
-* Mimikatz
-* Raspberry Robin
-* Cobalt Strike
-* BloodHound
-
-#### TOP RANSOMWARE PRECURSORS
-
 Red Canary observes some later-stage ransomware intrusions that involve 
 encryption, but these usually come to us through incident response (IR) partners 
 who are called in after an organization realizes they have a ransomware intrusion 
@@ -268,23 +398,28 @@ ransomware group leak sites demonstrates that ransomware is still prevalent.
 Additionally, significant ransomware attacks in 2022 such as the ones against the 
 Costa Rican government and the Los Angeles School District also demonstrate 
 that ransomware remains an impactful threat. 
-
-#### Affiliate model
+Affiliate model 
 One challenge in tracking and responding to ransomware intrusions is that 
 different adversaries are often involved at different phases of the intrusion. As 
 depicted in the below diagram, one adversary might be in charge of initial access, 
 and then pass that access to a different adversary to continue the intrusion.
-
-*Image description: A diagram illustrating the ransomware affiliate model, showing how different actors may be involved at different stages of an attack.*
-
+Qbot
+Impacket
+Gootloader
+SocGholish
+Mimikatz
+Raspberry Robin
+Cobalt Strike
+BloodHound
+TOP RANSOMWARE PRECURSORS
+10
 This makes tracking ransomware groups even more difficult, as intrusions can be 
 a “mix and match” of different affiliates providing access to different ransomware 
 groups. Throughout 2022, ransomware groups continued to rely on affiliates to 
 give them initial access to an environment before they stole or encrypted files. 
 Our partners at Microsoft have an excellent breakdown of this ecosystem we 
 recommend for further reading.
-
-#### Renaming
+Renaming 
 We observed many of the same malware families that were previously 
 “ransomware precursors” continue to lead to ransomware—however, they often 
 led to different ransomware families than in previous years. As we’ve observed 
@@ -297,14 +432,26 @@ assess that groups like Black Basta have some relationship to Conti based on
 similarities between tools and techniques, suggesting operators may have  
 simply started operating under a different name after Conti gained widespread 
 law enforcement scrutiny.
-
-| MALWARE FAMILY (PRECURSOR) | 2021 RANSOMWARE GROUP | 2022 RANSOMWARE GROUP |
-|---|---|---|
-| Qbot | Conti | Black Basta |
-| IcedID | Conti | Quantum |
-| Zloader/BATLOADER | Conti | Royal |
-
-#### Extortion without encryption
+MALWARE  
+FAMILY  
+(PRECURSOR)
+2021 
+RANSOMWARE 
+GROUP
+2022 
+RANSOMWARE 
+GROUP
+Qbot
+Conti
+Black Basta
+IcedID
+Conti
+Quantum
+Zloader/BATLOADER
+Conti
+Royal
+11
+Extortion without encryption 
 As we discussed in last year’s report, adversaries aren’t just encrypting data 
 anymore, they’re stealing it as well and demanding payment or they will leak 
 the data. This shift toward exfiltration and extortion, often without encryption 
@@ -318,10 +465,8 @@ need to think about this category of threat. LAPSUS$-style TTPs are also
 significantly different from traditional ransomware operators, with use of 
 techniques like MFA bypass or even insider recruitment to obtain credentials, 
 which influences how organizations need to think about detection and response.
-
 Visit the Ransomware trend page for relevant detection opportunities and 
 atomic tests to validate your coverage. 
-
 Though the ransomware ecosystem certainly changed in 2022, the good 
 news for defenders is that the techniques these adversaries use often remain 
 the same. While there is no single silver bullet to preventing ransomware, the 
@@ -337,10 +482,9 @@ mechanism to combat this technique. Preventing users from using SMS
 or phone calls for MFA is recommended and implementing a FIDO2 key  
 or authenticator app with number matching or similar is preferred,  
 as outlined here.
-
-### TAKE ACTION
-
-## Initial access tradecraft
+TAKE ACTION
+12
+TREND
 In 2022 we saw major malware campaigns leverage vintage tradecraft in new 
 ways, experimenting with delivery vehicles and file types in an attempt to 
 evade detection. Weaponized Microsoft documents and malicious macros 
@@ -349,14 +493,9 @@ and compressed archives. Adversaries manipulated search engine ads and
 results to lure users into downloading malicious installers. USBs, a well-known 
 threat vector for decades, saw a resurgence in use by new malware families and 
 established adversaries.
-
->Adversaries reevaluated their initial access methodologies  
-in 2022 and leveraged old tradecraft in new ways at 
-prodigious scale.
-
-### Phishing trend: Macros are out, 
-### compressed files and containers are in
-#### Macros traded in for newer delivery vehicles
+Phishing trend: Macros are out, 
+compressed files and containers are in
+Macros traded in for newer delivery vehicles 
 In February 2022, Microsoft announced that they would start blocking VBA 
 macros by default across their entire product suite. Key to implementing this 
 change is the Zone Identifier Alternate Data Stream (ADS) value assigned to 
@@ -377,19 +516,23 @@ phishing emails and began leveraging container files and compressed files to
 deliver their malware, often nesting these file types within each other in an 
 attempt to further bypass security controls. In June 2022, 7-Zip released an 
 update that added an opt-in feature that could add the MOTW to ZIP files.  
+Adversaries reevaluated their initial access methodologies  
+in 2022 and leveraged old tradecraft in new ways at 
+prodigious scale.
+Initial access  
+tradecraft
+13
 In November 2022, Microsoft released a security update that propagated MOTW 
 identifiers to some ZIP and ISO files. These updates may reduce the misuse of ZIP 
 and ISO files in 2023.
-
-#### Compressed archives
+Compressed archives 
 Throughout the year, we observed compressed archives, especially RAR or ZIP 
 files, used as a malicious nested attachment’s outer layer. They do not have a 
 Zone Identifier ADS attribute, so they can not have a MOTW. Again, 7-Zip’s June 
 update may complicate an adversary’s ability to abuse ZIP files but only if users 
 opt in. Multiple threats used compressed archives in their attachments in 2022, 
 including Bumblebee, IcedID, and Qbot. 
-
-#### Container files
+Container files 
 Optical Disk Image (ISO) files and Virtual Hard Drive (VHD) files are two types of 
 container files we’ve seen delivered inside compressed archives in an attempt 
 to evade MOTW restrictions. Container files like ISOs do not support a Zone 
@@ -398,10 +541,9 @@ Identifier ADS attribute and did not have a MOTW until Microsoft’s November
 reported a 150 percent increase in the use of ISO files in malicious campaigns 
 between October 2021 and June 2022. IcedID is one example of a threat that 
 used ISOs, and Bumblebee leveraged both ISOs and VHDs in 2022. 
-
-### Web trends: SEO poisoning  
-### and malvertising
-#### Search engine optimization poisoning
+Web trends: SEO poisoning  
+and malvertising
+Search engine optimization poisoning 
 Search engine optimization (SEO) poisoning continued to be an effective 
 technique for gaining initial access in 2022. Many threats leveraged SEO 
 poisoning, including Gootloader, Yellow Cockatoo, and various stealers. 
@@ -415,17 +557,16 @@ evil installers. Another example, Gootloader, has used websites claiming to offe
 information on contracts and other legal or financial documents. This trend 
 shows no signs of slowing as we move into 2023; in late 2022, one SEO poisoning 
 campaign targeted almost 15,000 websites.
-
-#### Malvertising
+14
+Malvertising 
 SEO poisoning is not the only way adversaries use search engines to their 
 advantage. Malicious advertising, also called malvertising, also persisted in 2022. 
 Malvertising is the use of fake ads on search engine pages that masquerade as 
 legitimate websites to download software like Zoom or TeamViewer. Threats that 
 used malvertising extensively in 2022 include AdSearch, IcedID, and  
 Stealers malware. 
-
-### File type trends: LNK and MSI
-#### LNK files
+File type trends: LNK and MSI
+LNK files 
 Windows shortcut files, also known as LNK files, have also seen increased 
 adversarial use in 2022. Proofpoint reported a 1,675 percent increase in LNK 
 files in malicious campaigns between October 2021 and June 2022. LNK files 
@@ -435,8 +576,7 @@ the specific arguments configured when a LNK file is created, it can point to an
 execute files or include scripts configured to download additional malware. 
 Some prominent threats that leveraged LNK files in 2022 include Emotet, 
 Bumblebee, and other families of non-phishing malware like Raspberry Robin.
-
-#### Windows Installer (MSI) files
+Windows Installer (MSI) files 
 When the stealer Zloader combined malvertising and SEO poisoning in 2022, 
 its installer took the form of Windows Installer (MSI) files. MSI files are used to 
 install and update legitimate software on Windows systems. They are also used 
@@ -444,8 +584,7 @@ by adversaries to install malicious binaries, run scripts, and elevate system
 privileges. Zloader’s malicious MSI files appeared to be installers for versions of 
 legitimate software. Other threats have used MSI files in their intrusions in 2022, 
 including Qbot and Raspberry Robin.
-
-### What’s old is new again: USBs
+What’s old is new again: USBs 
 Continuing the theme of everything old being new again, a number of threats 
 leveraged infected USB external drives for initial access in 2022. USBs containing 
 malicious payloads that infect systems when plugged in have been an evergreen 
@@ -456,10 +595,9 @@ Robin. Many types of USB malware, such as worms, establish persistence
 that can continue for years. In 2022, Gamarue exemplified how pre-existing 
 infections can be exploited by threat actors. FIN7 and other espionage groups 
 also leveraged USBs in 2022. 
-
+15
 Visit the Initial access tradecraft trend page for relevant detection 
 opportunities and atomic tests to validate your coverage.
-
 Preventing container files from executing can be an effective way to avert 
 damaging intrusions that attempt to evade MOTW controls. If your users do not 
 have a business need to mount container files, we recommend taking steps to 
@@ -475,10 +613,9 @@ environment. The best option for your organization will vary based on your
 use cases and business needs. One option could be to use group policies 
 to restrict who can read, write, and execute actions from USB devices. Other 
 options for mitigating USB risks can be found on the Gamarue page.
-
-### TAKE ACTION
-
-## Command and control frameworks
+TAKE ACTION
+16
+TREND
 Commercial and open source C2 and post-exploitation frameworks save red 
 teamers time on custom development and allow them to quickly change TTPs 
 in their engagements. Not surprisingly, adversaries also find them attractive 
@@ -490,33 +627,32 @@ frameworks, most notably Metasploit and Cobalt Strike. While Cobalt Strike
 has received a lot of attention and remains Red Canary’s most-observed 
 framework, both red teamers and adversaries have begun to leverage  
 alternative frameworks.
-
->Move over Cobalt Strike: Adversaries and testers have more options for 
-command and control (C2) and post-exploitation frameworks than ever.
-
 Cobalt Strike and Metasploit continue to be the most popular C2 and  
 post-exploitation frameworks seen in our customers’ environments. Cobalt 
 Strike was the highest-ranking framework, coming in at #8, followed by 
 Metasploit ranking 14th. While they didn’t break into our top 50 for 2022,  
 Brute Ratel, Sliver, and Mythic may continue to gain popularity as adversaries 
 look for alternative frameworks, so they’re worth keeping an eye on.
-
-### Brute Ratel
+Brute Ratel 
 Brute Ratel is a commercial post-exploitation framework with implants  
 that can take many forms, including executables, service binaries, DLLs, and 
 PowerShell scripts. It is capable of moving laterally via Server Message Block 
 (SMB), escalating privileges, and creating processes to inject itself into for 
 defense evasion. Qbot was observed delivering Brute Ratel in 2022.
-
-### Sliver
+Sliver 
 Sliver is an open source post-exploitation framework written in Go. It executes 
 commands through PowerShell or the Windows Command Shell. It supports 
 several protocols for C2 including HTTP, WireGuard, and DNS. TA551 reportedly 
 used Sliver in 2021, and in 2022 Team Cymru observed at least two distinct 
 campaigns using it. In 2022, adversaries also took advantage of Sliver’s support 
 for macOS.
-
-### Mythic
+Move over Cobalt Strike: Adversaries and testers have more options for 
+command and control (C2) and post-exploitation frameworks than ever.
+Command  
+and control  
+frameworks
+17
+Mythic 
 Mythic is an open source post-exploitation framework that has a variety of 
 agents and supports multiple protocols for C2 including TCP, HTTPM, DNS, 
 and SMB. Two popular agents are Apfell and Apollo. Apfell is a JavaScript for 
@@ -525,13 +661,10 @@ can create and inject into Rundll32. It also has the ability to execute PowerShe
 commands. It supports using Mimikatz for lateral movement and credential 
 dumping. Like Sliver, Team Cymru was able to tie some Mythic servers to 
 adversaries in the wild.
-
 Visit the Command and control frameworks trend page for relevant 
 detection opportunities and atomic tests to validate your coverage.
-
-### TAKE ACTION
-
-## Stealers
+TAKE ACTION
+18
 The last few years have seen organizations embrace remote work and 
 technologies that allow employees to work outside the traditional perimeter of 
 an enterprise network. Technologies that allow this kind of work to occur include 
@@ -544,11 +677,7 @@ credentials from various sources on a computer system, including password
 managers, web browsers, files on disk, and more. When used properly, an 
 instance of stealer malware can gather credentials that enable privileged and 
 persistent access to an enterprise in the course of a minute or less.
-
->Stealer malware—such as RedLine, Raccoon, and Vidar—
-enabled some of the highest-profile breaches in 2022.
-
-### Stealing the spotlight
+Stealing the spotlight 
 Red Canary and the larger information security community seemed to witness a 
 rise in the use of stealer malware in 2022, with several stealers making it into our 
 top 10 lists during various months throughout the year. We observed RedLine, 
@@ -570,6 +699,11 @@ organizations, LAPSUS$ relied on gaining initial access with credentials
 taken by RedLine and other stealer malware and sold afterward. This strategy 
 proved extremely successful, resulting in multiple breaches for high-profile 
 organizations such as Uber and Okta.
+Stealer malware—such as RedLine, Raccoon, and Vidar—
+enabled some of the highest-profile breaches in 2022.
+TREND
+Stealers
+19
 We observed RedLine, Raccoon, and Vidar most commonly during the year, 
 and each of these threats has retained a long-held share of the illegal stealer 
 market. In fact, Raccoon and Vidar have evolved from older families to remain 
@@ -578,13 +712,11 @@ operated at lesser prevalence during the year, including some new players such
 as Aurora Stealer, OriginLogger, and Rhadamanthys. Adversaries looking for 
 stealer malware find no shortage of options that simply evolve and grow  
 with efficacy.
-
+TAKE ACTION
 Visit the Stealers trend page for relevant detection opportunities and atomic 
 tests to validate your coverage.
-
-### TAKE ACTION
-
-## Identity
+20
+TREND
 Users continue to be the weakest link in the initial chains of compromise we 
 investigate. Virtual identities used by humans are the critical enabler of breaches 
 that lead to intellectual property theft, ransomware, and cryptomining, to 
@@ -603,30 +735,4 @@ to go away, inadvertently enabling initial access for an adversary. In cases whe
 adversaries failed to gain access to systems after initial MFA bypass, they often 
 abused the trust of public cloud infrastructure to bypass single points of failure 
 in static geographic or hosting provider checks performed by identity access 
-management systems. 
-
->Adversaries are sparking all sorts of identity  
-crises by intercepting MFA requests and other 
- 
-user authentication mechanisms.
-
-### Siphoning data from Office 365
-In 2022 we observed an increase in account compromises targeting Office 365. 
-Adversaries appear to be prioritizing data theft in these operations, ranging 
-from email collection and data exfiltration to full-on employee impersonation 
-in hopes of committing financial fraud. These attacks almost always originated 
-from an account login from an unusual location. In such instances, an adversary 
-login would have unusual attributes, such as logging in from a net new IP address 
-not seen before for a given identity, as well as other, secondary outlier attributes 
-like mismatched User-Agents or never-before-seen device types or geo IP 
-locations. These initial logins were almost always reported from the Office 365 
-Exchange Online workload type in the Azure audit logs, but we also saw other 
-Azure application types being abused.
-Below is a breakdown of the identity compromise sources we observed, 
-organized by Azure Application ID and their respective application name:
-
-| APPLICATION ID | APPLICATION NAME |
-|---|---|
-| 00000006-0000-0ff1-ce00-000000000000 | Microsoft Office 365 Portal |
-| 00000002-0000-0ff1-ce00-000000000000 | Office 365 Exchange Online |
-| fb78d390-0
+management

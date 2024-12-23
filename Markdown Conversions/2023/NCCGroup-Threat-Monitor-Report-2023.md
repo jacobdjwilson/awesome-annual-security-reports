@@ -1,54 +1,57 @@
 # Threat Monitor Annual Report 2023
 
 ## Table of Contents
-1. [Foreword by Matt Hull, Global Head of Threat Intelligence.](#foreword-by-matt-hull-global-head-of-threat-intelligence)
-2. [SECTION 1 - Critical Events Timeline.](#section-1---critical-events-timeline)
-3. [SECTION 2 - Incidents of Note.](#section-2---incidents-of-note)
-4. [SECTION 3 - Law Enforcement Interventions.](#section-3---law-enforcement-interventions)
-5. [SECTION 4 - Incident Response Findings.](#section-4---incident-response-findings)
-6. [SECTION 5 - SOC Findings.](#section-5---soc-findings)
-7. [SECTION 6 - Ransomware Threat Landscape.](#section-6---ransomware-threat-landscape)
-    * [Sectors](#sectors)
-    * [Industrials](#industrials)
-    * [Industries (Industrials)](#industries-industrials)
-    * [Consumer Cyclicals](#consumer-cyclicals)
-    * [Industries (Consumer Cyclicals)](#industries-consumer-cyclicals)
-    * [Technology](#technology)
-    * [Industries (Technology)](#industries-technology)
-8. [SECTION 7 - Threat Actors.](#section-7---threat-actors)
-    * [LockBit 3.0.](#lockbit-30)
-    * [Sectors Targeted](#sectors-targeted)
-    * [Industries Targeted.](#industries-targeted)
-    * [BlackCat.](#blackcat)
-    * [Sectors Targeted](#sectors-targeted-1)
-    * [Industries Targeted.](#industries-targeted-1)
-    * [CL0P.](#cl0p)
-    * [Sectors Targeted](#sectors-targeted-2)
-    * [Industries Targeted.](#industries-targeted-2)
-9. [SECTION 8 - Regions.](#section-8---regions)
-10. [SECTION 9  - Vulnerability Landscape.](#section-9----vulnerability-landscape)
-11. [SECTION 10 - Global Conflicts.](#section-10---global-conflicts)
-    * [Russian Invasion of Ukraine.](#russian-invasion-of-ukraine)
-    * [Increased Attacks, Reduced Impact.](#increased-attacks-reduced-impact)
-    * [Influence and Information Operations.](#influence-and-information-operations)
-    * [Disruption and Hacktivism.](#disruption-and-hacktivism)
-    * [Destructive Operations.](#destructive-operations)
-    * [Global Impact.](#global-impact)
-    * [Summary.](#summary)
-    * [Israeli-Palestinian Conflict.](#israeli-palestinian-conflict)
-12. [SECTION 11 - Threat Spotlight.](#section-11---threat-spotlight)
-    * [Ducks & Loaders: Life after Qakbot?](#ducks--loaders-life-after-qakbot)
-    * [Pikabot overview](#pikabot-overview)
-    * [Anti-analysis analysis and main components](#anti-analysis-analysis-and-main-components)
-    * [The Hunt](#the-hunt)
-    * [Finding one: confirmation](#finding-one-confirmation)
-    * [Finding two: coronation](#finding-two-coronation)
-    * [Finding three: peaks and valleys](#finding-three-peaks-and-valleys)
-    * [The danger of statistics](#the-danger-of-statistics)
-    * [Wrap-up](#wrap-up)
-13. [About us](#about-us)
+- [Foreword by Matt Hull, Global Head of Threat Intelligence.](#foreword-by-matt-hull-global-head-of-threat-intelligence)
+- [SECTION 1 - Critical Events Timeline.](#section-1---critical-events-timeline)
+- [SECTION 2 - Incidents of Note](#section-2---incidents-of-note)
+- [SECTION 3 - Law Enforcement Interventions.](#section-3---law-enforcement-interventions)
+- [SECTION 4 - Incident Response Findings.](#section-4---incident-response-findings)
+- [SECTION 5 - SOC Findings.](#section-5---soc-findings)
+- [SECTION 6 - Ransomware Threat Landscape.](#section-6---ransomware-threat-landscape)
+    - [Sectors](#sectors)
+    - [Industrials](#industrials)
+    - [Industries (Industrials)](#industries-industrials)
+    - [Consumer Cyclicals](#consumer-cyclicals)
+    - [Industries (Consumer Cyclicals)](#industries-consumer-cyclicals)
+    - [Technology](#technology)
+    - [Industries (Technology)](#industries-technology)
+- [SECTION 7 - Threat Actors.](#section-7---threat-actors)
+    - [LockBit 3.0.](#lockbit-30)
+    - [Sectors Targeted](#sectors-targeted)
+    - [Industries Targeted.](#industries-targeted)
+    - [BlackCat](#blackcat)
+    - [Sectors Targeted](#sectors-targeted-1)
+    - [Industries Targeted.](#industries-targeted-1)
+    - [CL0P.](#cl0p)
+    - [Sectors Targeted](#sectors-targeted-2)
+    - [Industries Targeted.](#industries-targeted-2)
+- [SECTION 8 - Regions.](#section-8---regions)
+- [SECTION 9  - Vulnerability Landscape.](#section-9----vulnerability-landscape)
+- [SECTION 10 - Global Conflicts.](#section-10---global-conflicts)
+    - [Russian Invasion of Ukraine.](#russian-invasion-of-ukraine)
+    - [Increased Attacks, Reduced Impact.](#increased-attacks-reduced-impact)
+    - [Influence and Information Operations.](#influence-and-information-operations)
+    - [Disruption and Hacktivism.](#disruption-and-hacktivism)
+    - [Destructive Operations.](#destructive-operations)
+    - [Global Impact.](#global-impact)
+    - [Summary.](#summary)
+    - [Israeli-Palestinian Conflict.](#israeli-palestinian-conflict)
+- [SECTION 11 - Threat Spotlight.](#section-11---threat-spotlight)
+    - [Ducks & Loaders: Life after Qakbot?](#ducks--loaders-life-after-qakbot)
+    - [Pikabot overview](#pikabot-overview)
+    - [Anti-analysis analysis and main components](#anti-analysis-analysis-and-main-components)
+    - [The core module injector](#the-core-module-injector)
+    - [The loader](#the-loader)
+    - [The core module](#the-core-module)
+    - [The Hunt](#the-hunt)
+    - [Finding one: confirmation](#finding-one-confirmation)
+    - [Finding two: coronation](#finding-two-coronation)
+    - [Finding three: peaks and valleys](#finding-three-peaks-and-valleys)
+    - [The danger of statistics](#the-danger-of-statistics)
+    - [Wrap-up](#wrap-up)
+- [About us](#about-us)
 
-# FOREWORD
+# Foreword
 Matt Hull
 Global Head of 
 Threat Intelligence
@@ -107,18 +110,14 @@ further insight into what was a challenging 2023,
 and what organistions should be focusing on in 
 the year ahead. 
 
-# SECTION 1 - Critical Events Timeline
-
+# SECTION 1 - Critical Events Timeline.
+ 
 Royal Mail suffered 6 weeks of disruption 
 to international postal services, affecting 
 11,500 Post Office branches. 
 This was due to a LockBit affiliate driven 
 ransomware attack, with Royal Mail 
 refusing to pay the ransom.
-
-*Ransomware*
-*Royal Mail attack*
-*10th Jan*
 
 Pro-Russian Hacktivist group, Killnet, 
 launched DDoS attacks against US 
@@ -132,11 +131,6 @@ countries in support of Ukraine, with
 DDoS attacks also focused on other 
 NATO countries.
 
-*Hacktivism*
-*Killnet targets NATO countries 
-supporting Ukraine*
-*30th Jan*
-
 Remote Code Injection flaw, CVE-
 2023-0669, on exposed administrative 
 consoles of GoAnywhere secure web file 
@@ -147,10 +141,21 @@ and later shown to be the case that
 CL0P ransomware group was using this 
 flaw in a spate of ransomware attacks.
 
-*Ransomware*
-*GoAnywhere MFT Zero-Day 
-exploited by CL0P*
-*2nd Feb*
+_Ransomware_
+_Hacktivism_
+_Ransomware_
+
+_Royal Mail attack_
+_Killnet targets NATO countries 
+supporting Ukraine_
+_GoAnywhere MFT Zero-Day 
+exploited by CL0P_
+
+_10th Jan_
+_30th Jan_
+_2nd Feb_
+
+![Critical Events Timeline Image]
 
 Emotet was observed returning after 
 a period of hiatus, with new evasion 
@@ -164,10 +169,10 @@ It has been observed being used by
 Ransomware groups to distribute their 
 ransomware payloads.
 
-*Malware*
-*Emotet returns with new 
-evasion techniques*
-*7th Mar*
+_Malware_
+_Emotet returns with new 
+evasion techniques_
+_7th Mar_
 
 Nobelium, aka APT29 and Cozy 
 Bear, targeted European diplomatic 
@@ -185,53 +190,50 @@ campaign compromising the official
 EU electronic document exchange 
 system, LegisWrite.  
 
-*Surveillance*
-*Russian state-sponsored TA 
+_Surveillance_
+_Russian state-sponsored TA 
 targets EU diplomatic entities 
-and systems*
-*14th Mar*
+and systems_
+_14th Mar_
 
-North Korean threat actors 
-expected to be responsible for the 
-compromise, which was used to 
-go on to comprise 3CX customers 
-critical infrastructure organisations 
-within the energy sector. 
-A trojanised version of the legitimate 
-3CX software was used to 
-compromise their customers. What 
-set this attack apart is that the attack 
-was the result of an earlier supply 
-chain attack, with a 3CX employee 
-downloading malware infected 
-software package.
+In response to a Freedom of 
+Information (FOI) request made to the 
+Police Service of Northern Ireland, a 
+spreadsheet detailing the locations 
+and names of serving employees was 
+mistakenly made public and posted 
+online, putting these employees at 
+risk.
 
-*Supply Chain Attack*
-*3CX Voice Over Internet 
-Protocol (VOIP) desktop 
-client compromised*
-*29th Mar*
+Police forces in Norfolk and Suffolk 
+also confirmed FOI requests led 
+to inadvertently sharing too much 
+Personally Identifiable Information 
+(PII) publicly, whilst Cumbria 
+Police blamed human error for the 
+publication of the names and salaries 
+of all its officers online.
 
-Print Management Software maker, 
-Papercut, announced Remote Code 
-Execution (RCE) vulnerabilities in 
-Papercut NG and Papercut MF, 
-which could be levered without 
-authentication in this critically rated 
-CVE.
- A user account data flaw affecting 
-Papercut NG and Papercut MF was 
-also discovered, and both were 
-known to be exploited by threat 
-actors. Papercut has 100+ million 
-customers worldwide. Groups such 
-as LockBit then leveraged this flaw in 
-ransomware attacks.
+_Police Force: Data Leak_
+_FOI request leads to acci-
+dental PII data leak_
+_8th Aug_
 
-*Papercut: Ransomware*
-*Zero-Day actively exploited 
-by Russian threat actors*
-*14th Apr*
+NCSC and its Five Eyes partners 
+issue a report associating Infamous 
+Chisel Malware targeting Ukrainian 
+military Android devices, with the 
+threat actor, Sandworm. 
+The malware allows for data 
+exfiltration and remote access. 
+The campaign is believed to be part 
+of the Russian war efforts against 
+Ukraine.
+
+_Malware Infamous Chisel_
+_Ukraine Military Devices 
+targeted by Russian GRU_
+_31st Aug_
 
 Barracuda announced a zero-day 
 vulnerability in their Email Security 
@@ -249,11 +251,11 @@ appliances with new ones, rather
 than rely on more typical remediation 
 efforts.   
 
-*Barracuda*
-*Zero Day Vulnerability*
-*Replace, don’t patch, 
-vulnerable devices*
-*23rd May*
+_Barracuda_
+_Zero Day Vulnerability_
+_Replace, don’t patch, 
+vulnerable devices_
+_23rd May_
 
 Progress released a security 
 advisory regarding a Zero-Day 
@@ -267,11 +269,32 @@ other File Transfer vulnerabilities,
 to steal data to demand ransom 
 payments.
 
-*Ransomware*
-*Move-IT Managed File 
+_Ransomware_
+_Move-IT Managed File 
 Transfer vulnerability in 
-mass Cl0p exploitation*
-*31st May*
+mass Cl0p exploitation_
+_31st May_
+
+Print Management Software maker, 
+Papercut, announced Remote Code 
+Execution (RCE) vulnerabilities in 
+Papercut NG and Papercut MF, 
+which could be levered without 
+authentication in this critically rated 
+CVE.
+ A user account data flaw affecting 
+Papercut NG and Papercut MF was 
+also discovered, and both were 
+known to be exploited by threat 
+actors. Papercut has 100+ million 
+customers worldwide. Groups such 
+as LockBit then leveraged this flaw in 
+ransomware attacks.
+
+_Papercut: Ransomware_
+_Zero-Day actively exploited 
+by Russian threat actors_
+_14th Apr_
 
 Using forged authentication tokens, 
 Microsoft revealed that Customer 
@@ -283,63 +306,30 @@ Storm-0558 is believed responsible,
 using the access to email accounts 
 to gather useful intelligence. 
 
-*Breach*
-*Microsoft China Storm-0558*
-*11th Jul*
+_Breach_
+_Microsoft China Storm-0558_
+_11th Jul_
 
-In response to a Freedom of 
-Information (FOI) request made to the 
-Police Service of Northern Ireland, a 
-spreadsheet detailing the locations 
-and names of serving employees was 
-mistakenly made public and posted 
-online, putting these employees at 
-risk.
-Police forces in Norfolk and Suffolk 
-also confirmed FOI requests led 
-to inadvertently sharing too much 
-Personally Identifiable Information 
-(PII) publicly, whilst Cumbria 
-Police blamed human error for the 
-publication of the names and salaries 
-of all its officers online.
+North Korean threat actors 
+expected to be responsible for the 
+compromise, which was used to 
+go on to comprise 3CX customers 
+critical infrastructure organisations 
+within the energy sector. 
+A trojanised version of the legitimate 
+3CX software was used to 
+compromise their customers. What 
+set this attack apart is that the attack 
+was the result of an earlier supply 
+chain attack, with a 3CX employee 
+downloading malware infected 
+software package.
 
-*Police Force: Data Leak*
-*FOI request leads to acci-
-dental PII data leak*
-*8th Aug*
-
-NCSC and its Five Eyes partners 
-issue a report associating Infamous 
-Chisel Malware targeting Ukrainian 
-military Android devices, with the 
-threat actor, Sandworm. 
-The malware allows for data 
-exfiltration and remote access. 
-The campaign is believed to be part 
-of the Russian war efforts against 
-Ukraine.
-
-*Malware Infamous Chisel*
-*Ukraine Military Devices 
-targeted by Russian GRU*
-*31st Aug*
-
-The FBI and CISA released an 
-advisory warning that Snatch 
-threat actor group were targeting 
-a wide range of Critical National 
-Infrastructure (CNI) sectors for 
-ransomware attacks. 
-Sectors targeted included the 
-Defence Industrial Base (DIB), Food 
-and Agriculture as well as Information 
-Technology sectors.
-
-*FBI & CISA Advisory*
-*Law Enforcement – Snatch 
-Ransomware*
-*20th Sept*
+_Supply Chain Attack_
+_3CX Voice Over Internet 
+Protocol (VOIP) desktop 
+client compromised_
+_29th Mar_
 
 Hackers exfiltrated data from the 
 hotel and casino giant. They paid 
@@ -348,9 +338,9 @@ on the ransom. The threat actor
 suspected to be responsible is 
 Scattered Spider, aka UNC3944.
 
-*Ransomware*
-*Caesars Casino*
-*27th Sept*
+_Ransomware_
+_Caesars Casino_
+_27th Sept_
 
 China remains active in its offensive 
 cyber capabilities, warned US and 
@@ -368,11 +358,11 @@ The group breaches network devices
 for international subsidiaries to then 
 pivot to corporate headquarters. 
 
-*Hack*
-*US and Japanese warn 
+_Hack_
+_US and Japanese warn 
 of Chinese exploitation of 
-Cisco Router Firmware*
-*27th Sept*
+Cisco Router Firmware_
+_10th Oct_
 
 A successful credential stuffing attack 
 allowed a threat actor to directly access 
@@ -388,9 +378,12 @@ allowed the threat actor to pivot from
 there to scrape some detail from 6.9 
 million customers.
 
-*Law Enforcement*
-*23andMe: Data Breach*
-*7th Oct*
+_Law Enforcement_
+_23andMe: Data Breach_
+_Genetic Company hacked, 
+and genetic ancestry data 
+leaked_
+_12th Oct_
 
 MGM shared details of a 
 ransomware attack, which included 
@@ -400,11 +393,11 @@ to the business in the region of $US
 BlackCat, aka AlphV subgroup of 
 Scattered Spider, took responsibility 
 for the attack, in which the casino 
-refused to pay the ransom. 
+refused to pay the ransom.
 
-*Ransomware*
-*MGM Casino*
-*10th Oct*
+_Ransomware_
+_MGM Casino_
+_27 Sept_
 
 Russian threat actor, Sandstorm, 
 believed responsible for an attack 
@@ -418,14 +411,14 @@ receive alerts warning of Russian
 attacks, therefore endangering 
 life. The attack wiped out ‘almost 
 everything’, leaving infrastructure 
-decimated. 
+decimated.
 
-*Law Enforcement*
-*Kyivstar Telco company 
+_Hack_
+_Kyivstar Telco company 
 disclosed records destroyed 
 by Russian state affiliated 
-TA*
-*12th Oct*
+TA_
+_7th Oct_
 
 The US Federal Bureau of 
 Investigation (FBI) shared a 
@@ -441,9 +434,9 @@ of wiper malware to destroy data,
 amongst other tactics to pressure 
 victims to pay ransom.
 
-*Law Enforcement*
-*Dual Ransomware Advisory*
-*12th Oct*
+_Law Enforcement_
+_Dual Ransomware Advisory_
+_12th Dec_
 
 Palestinian group, Hamas, officially 
 designated in many countries as a 
@@ -459,12 +452,27 @@ Gaza, as a result of which over
 23,000 Palestinians have since been 
 killed.
 
-*Geopolitics*
-*Hamas attack on Israel*
-*7th Oct*
+_Geopolitics_
+_Hamas attack on Israel_
+_7th Oct_
+
+The FBI and CISA released an 
+advisory warning that Snatch 
+threat actor group were targeting 
+a wide range of Critical National 
+Infrastructure (CNI) sectors for 
+ransomware attacks. 
+Sectors targeted included the 
+Defence Industrial Base (DIB), Food 
+and Agriculture as well as Information 
+Technology sectors.
+
+_Law Enforcement – Snatch 
+Ransomware_
+_FBI & CISA Advisory_
+_20th Sept_
 
 # SECTION 2 - Incidents of Note
-
 Hybrid Warfare: Gaza conflict
 Throughout the year, the Russia and Ukraine conflict continued. However, the 7th October 2023 saw the Islamic Re-
 sistance Movement (Hamas) launch a surprise military operation against Israel. The cyber threat landscape has seen 
@@ -594,8 +602,7 @@ platform which triggered another two weeks
 of operational disruption.This breach included 
 35,000,000 records. 
 
-# SECTION 3 - Law Enforcement Interventions
-
+# SECTION 3 - Law Enforcement Interventions.
 TrickBot:
 Trickbot is a banking trojan which started off as a derivative of the Dyre banking trojan in 2016 before evolving 
 independent features which turned it into a flexible and modular piece of malware, enabling cybercriminals to deploy 
@@ -630,7 +637,7 @@ agents means the Kim regime is able to generate
 significant funds.
 US Secretary of State, Anthony Blinken, summarises 
 the issue as:
->“The DPRK conducts malicious cyber activities 
+> “The DPRK conducts malicious cyber activities 
 and deploys information technology (IT) workers 
 abroad who fraudulently obtain employment to 
 generate revenue that supports the Kim regime 
@@ -737,7 +744,7 @@ in prison.
 This second LockBit arrest in six months prompted 
 the U.S. Attorney Philip R. Sellinger for the District 
 of New Jersey to say; 
->“The LockBit conspirators and any other 
+> “The LockBit conspirators and any other 
 ransomware perpetrators cannot hide behind 
 imagined online anonymity. 
 We will continue to work tirelessly with all our 
@@ -795,8 +802,7 @@ Criminal Groups) across Europe, and further highlighted the
 intersection between conventional criminal activity and cyber-
 enabled crimes.
 
-# SECTION 4 - Incident Response Findings
-
+# SECTION 4 - Incident Response Findings.
 Our Incident Response data represents cases handled by our CIRT Team when responding 
 to NCC clients. In 2023, the Financials sector observed the greatest percentage of incidents 
 raised (15%), closely followed by Industrials (14%) and Government (14%). 
@@ -810,9 +816,7 @@ This is likely a combination of the potential for financial gain understood by c
 where targeting these sectors successfully, as well as the continued need for sufficient 
 cyber security hygiene to combat ever growing cyber threats. 
 
-*Figure 1:  Percentage of CIRT Cases by Sectors Impacted*
-
-*Image Description: A pie chart showing the percentage of CIRT cases by sector. The sectors are: Financials (15%), Industrials (14%), Government (14%), Technology (11%), Consumer Cyclicals (10%), Energy (9%), Healthcare (8%), Academic & Educational Services (7%), Retail (6%), Other (6%).*
+![Percentage of CIRT Cases by Sectors Impacted Image]
 
 Analysis of attack categories found that most incidents concerned Unauthorised Access 
 (36%), Phishing (16%) and Malicious Code (15%). 
@@ -822,11 +826,11 @@ Remaining aware of possible signs of authorised access such as unusual activity 
 devices, as well as ensuring appropriate phishing training and awareness can support 
 organisations to prevent or minimise potential attacks. 
 
-*Figure 2: CIRT Cases by Attack Type 2023*
+![CIRT Cases by Attack Type 2023 Image]
 
-*Image Description: A pie chart showing the percentage of CIRT cases by attack type. The attack types are: Unauthorised Access (36%), Phishing (16%), Malicious Code (15%), Data Exfiltration (10%), Denial of Service (6%), Other (17%).*
-
-# SECTION 5 - SOC Findings
-
+# SECTION 5 - SOC Findings.
 Data collated from our Global Security Operations Centre (SOC) reported 3493 true positive incidents across 
-the European and APAC SOC
+the European and APAC SOCs. 2023 saw a 36% increase from the 2559 true positive cases observed in 
+2022, reflecting a growth in the number of tickets raised across NCC Group’s client base. 
+This may also be in line with a growth in NCCs clientele, amounting to a greater number of incidents overall 
+and not necessarily a growth in global security incidents. Regardless, in this section we will dive into the

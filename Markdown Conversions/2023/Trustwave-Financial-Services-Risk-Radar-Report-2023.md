@@ -1,42 +1,43 @@
 # 2023 Financial Services Sector Threat Landscape
+## Table of Contents
+- [Executive Summary](#executive-summary)
+- [Emerging and Prominent Trends](#emerging-and-prominent-trends)
+- [Artificial Intelligence and Generative AI](#artificial-intelligence-and-generative-ai)
+- [Ransomware Groups Targeting Financial Services](#ransomware-groups-targeting-financial-services)
+- [Supplier and Third-Party Risk](#supplier-and-third-party-risk)
+- [Dissecting the Attack Flow for Financial Services](#dissecting-the-attack-flow-for-financial-services)
+- [Attack Flow Overview](#attack-flow-overview)
+- [Attack Flow Steps](#attack-flow-steps)
+- [Initial Foothold: Phishing and Business Email Compromise (BEC)](#initial-foothold-phishing-and-business-email-compromise-bec)
+- [Initial Foothold: Logging in](#initial-foothold-logging-in)
+- [Initial Foothold: Vulnerability Exploitation](#initial-foothold-vulnerability-exploitation)
+- [Initial Foothold: Supply Chain](#initial-foothold-supply-chain)
+- [Initial Payload](#initial-payload)
+- [Expansion / Pivoting](#expansion--pivoting)
+- [Malware: Infostealers](#malware-infostealers)
+- [Malware: RATs](#malware-rats)
+- [Malware: Ransomware](#malware-ransomware)
+- [Exfiltration / Post Compromise](#exfiltration--post-compromise)
+- [Key Takeaways and Recommendations](#key-takeaways-and-recommendations)
+- [Appendix/Reference](#appendixreference)
+- [Threat Groups](#threat-groups)
+- [8BASE](#8base)
+- [BlackCat/ALPHV](#blackcatalphv)
+- [Black Basta](#black-basta)
+- [Clop](#clop)
+- [Medusa](#medusa)
+- [LockBit](#lockbit)
+- [Play](#play)
+- [Royal](#royal)
+
 T R U S T W A V E  T H R E A T  I N T E L L I G E N C E 
 B R I E F I N G  A N D  M I T I G A T I O N  S T R A T E G I E S 
 
-## Contents
-[Executive Summary](#executive-summary)
-[Emerging and Prominent Trends](#emerging-and-prominent-trends)
-  [Artificial Intelligence and Generative AI](#artificial-intelligence-and-generative-ai)
-  [Ransomware Groups Targeting Financial Services](#ransomware-groups-targeting-financial-services)
-  [Supplier and Third-Party Risk](#supplier-and-third-party-risk)
-[Dissecting the Attack Flow for Financial Services](#dissecting-the-attack-flow-for-financial-services)
-  [Attack Flow Overview](#attack-flow-overview)
-  [Attack Flow Steps](#attack-flow-steps)
-  [Initial Foothold: Phishing and Business Email Compromise (BEC)](#initial-foothold-phishing-and-business-email-compromise-bec)
-  [Initial Foothold: Logging in](#initial-foothold-logging-in)
-  [Initial Foothold: Vulnerability Exploitation](#initial-foothold-vulnerability-exploitation)
-  [Initial Foothold: Supply Chain](#initial-foothold-supply-chain)
-  [Initial Payload](#initial-payload)
-  [Expansion / Pivoting](#expansion--pivoting)
-  [Malware: Infostealers](#malware-infostealers)
-  [Malware: RATs](#malware-rats)
-  [Malware: Ransomware](#malware-ransomware)
-  [Exfiltration / Post Compromise](#exfiltration--post-compromise)
-[Key Takeaways and Recommendations](#key-takeaways-and-recommendations)
-[Appendix/Reference](#appendixreference)
-  [Threat Groups](#threat-groups)
-  [8BASE](#8base)
-  [BlackCat/ALPHV](#blackcatalphv)
-  [Black Basta](#black-basta)
-  [Clop](#clop)
-  [Medusa](#medusa)
-  [LockBit](#lockbit)
-  [Play](#play)
-  [Royal](#royal)
+2023 Financial Services Sector Threat Landscape: Trustwave Threat Intelligence Briefing and Mitigation Strategies
 
 OCTOBER 2023
 
-# Executive Summary
-
+## Executive Summary
 When questioned about why he robbed banks, Willie 
 Sutton famously responded, "Because that's where the 
 money is." Some things never change, and threat actors 
@@ -76,32 +77,32 @@ OTHER INDUSTRIES
 
 There are a number of factors that make the financial services industry 
 especially vulnerable to cyberattacks, including:
-
-*   **Sensitive Data:** The financial services industry holds a vast amount of 
+	
+- **Sensitive Data**: The financial services industry holds a vast amount of 
 sensitive customer data, including names, addresses, Social Security 
 numbers, bank account numbers, and credit card numbers, making the 
 sector a high-value target. Organizations must be vigilant and inventory 
 where this data resides. It’s impossible to protect something without 
 knowing where it is.  
-
-*   **Heavily Regulated:** Heightened regulation is a double-edged sword. While 
+	
+- **Heavily Regulated**: Heightened regulation is a double-edged sword. While 
 it incentivizes increased protections, it can also make it complex and 
 expensive for financial institutions to implement and maintain effective 
 cybersecurity programs. 
-
-*   **Trust as Currency:** Consumers anchor their financial decisions on trust. If 
+	
+- **Trust as Currency**: Consumers anchor their financial decisions on trust. If 
 trust is eroded by the compromise of personal data or account information, 
 customers can and will take their money elsewhere. This means they are 
 a prime target for cyber criminals who will try to exploit this dependency 
 on trust.
-
-*   **Partnership Complexity:** As a byproduct of strict regulations, it can be 
+	
+- **Partnership Complexity**: As a byproduct of strict regulations, it can be 
 difficult for financial institutions to partner with vendors or incorporate 
 tools that could improve their security posture. There are unique 
 barriers and requirements for partners, adding complexity to an already 
 complicated landscape. 
-
-*   **Interconnectedness:** In addition to business partners, the financial 
+	
+- **Interconnectedness**: In addition to business partners, the financial 
 services industry is heavily interconnected with other service vendors and 
 financial entities, such as merchants and payment processors, opening it 
 up to supply chain and third-party risk. 
@@ -134,23 +135,43 @@ In this report, we will examine many of the most prevalent threat tactics and
 threat actors operating across financial services and throughout the attack 
 chain, including:
 
-**THREAT ACTORS**
-*   Clop
-*   LockBit
-*   Alphv / BlackCat
-*   Black Basta
-*   8BASE
-*   Royal
-*   Play
-*   Medusa 
+THREAT ACTORS 
+	
+- Clop
+	
+- LockBit
+	
+- Alphv / BlackCat
+	
+- Black Basta
+	
+- 8BASE
+	
+- Royal
+	
+- Play
+	
+- Medusa 
 
-**THREAT TACTICS**
-*   Email-Borne Malicious Attachments (Downloaders, HTML Smuggling)
-*   Phishing (IPFS, Google/Cloudflare Services, RPMSG)
-*   BEC (Payroll Diversion, Contact Request)
-*   Vulnerability Exploitation
-*   Credential Access (Brute Forcing, Abuse of Valid Accounts)
-*   Malware (Infostealers, Ransomware) 
+THREAT TACTICS 
+	
+- Email-Borne Malicious 
+Attachments (Downloaders, 
+HTML Smuggling) 
+	
+- Phishing (IPFS, Google/Cloudflare 
+Services, RPMSG)
+	
+- BEC (Payroll Diversion, 
+Contact Request)
+	
+- Vulnerability Exploitation
+	
+- Credential Access (Brute Forcing, 
+Abuse of Valid Accounts)
+	
+- Malware 
+(Infostealers, Ransomware) 
 
 For additional information about the most prevalent threat actors, please go 
 to the Appendix. 
@@ -163,35 +184,33 @@ and information being sold in underground marketplaces. This could
 lead to significant financial loss for the consumer and reputational 
 impact to the financial services organization.
 
-*Image Description: A screenshot showing a sample of stolen bank account logins being sold in underground marketplaces. The image shows a dark web marketplace with various listings of compromised bank accounts.*
+![Sample of stolen bank account logins being sold in underground marketplaces]
 
 Security leaders are responsible for implementing safeguards to 
 ensure customer safety. Some of the key recommendations and 
 mitigations are:
-
-*   **Consumer Security Education:** Inform customers about the 
+	
+- **Consumer Security Education**: Inform customers about the 
 dangers associated with phishing and malware threats including 
 education on recognizing phishing attempts and safe online 
 practices.
-
-*   **Implementing Security Controls:** Implement robust security 
+	
+- **Implementing Security Controls**: Implement robust security 
 measures to safeguard customer accounts such as encryption, 
 multi-factor authentication (MFA), human identification, 
 penetration testing for consumer facing apps, and intrusion 
 detection systems.
-
-*   **Customer Support and Incident Response:** Provide a support 
+	
+- **Customer Support and Incident Response**: Provide a support 
 mechanism to customers when a security incident occurs 
 including assisting customers in changing passwords, securing 
 compromised accounts, and providing guidance on reinforcing 
 their personal security practices. 
 
-# Emerging and Prominent Trends
+## Emerging and Prominent Trends
 
 ## Artificial Intelligence and Generative AI
-
-**The Threat**
-
+The Threat
 Generative AI and Large Language Models (LLMs) have taken the world by 
 storm. While AI isn’t new, the advances made in Generative AI and LLMs 
 are setting new benchmarks for what’s possible for financial services 
@@ -211,8 +230,7 @@ of these systems has yet to be proven. Therefore, it is essential to adopt a
 risk-benefit approach and carefully consider the implications with the CISO 
 leading the way.
 
-**What Trustwave SpiderLabs Is Seeing**
-
+What Trustwave SpiderLabs Is Seeing
 Trustwave SpiderLabs consistently finds that phishing is one of the most 
 effective methods attackers use to gain an initial foothold in financial services 
 organizations. However, this method is highly dependent on the quality of 
@@ -245,39 +263,36 @@ phishing emails can be drafted and exploit code can be enhanced. These
 advancements will require security vendors to adjust their detection and 
 response capabilities accordingly.
 
-**ARTIFICIAL 
+ARTIFICIAL 
 INTELLIGENCE AND 
-GENERATIVE AI**
-
+GENERATIVE AI
 Unique implications and risks 
 due to the sensitive nature of 
 the data potentially being shared 
 with these tools, as well as 
 advances in phishing.
 
-**Mitigations to Reduce Risk**
-
-*   Evaluate your security solutions with Generative AI and LLMs 
+Mitigations to Reduce Risk
+	
+- Evaluate your security solutions with Generative AI and LLMs 
 in mind. Choose security tools or partners that can detect AI-
 generated threats like advanced phishing.
-
-*   Create robust internal policies and employee training for proper 
+	
+- Create robust internal policies and employee training for proper 
 data usage and data sharing to help minimize the risk of data 
 breaches. 
-
-*   The reality of the current landscape is that Generative AI is here 
+	
+- The reality of the current landscape is that Generative AI is here 
 to stay. While the tools still have inherent risks, financial services 
 organizations, like all entities, will need to determine how to govern 
 the tools versus instituting broad-based bans.  
-
-*   Consider instituting an internal AI Infosec working group 
+	
+- Consider instituting an internal AI Infosec working group 
 across relevant teams (like Legal, Privacy, IT, etc.) to deal with 
 governance and data sharing guidelines.
 
 ## Ransomware Groups Targeting Financial Services
-
-**The Threat**
-
+The Threat
 According to U.S. Commodity Futures Trading Commission (CFTC) 
 commissioner Christy Goldsmith Romero, “A 2022 survey of 130 global 
 financial institutions found that 74% experienced at least one ransomware 
@@ -294,8 +309,7 @@ banks and over 10 financial institutions being named among the victims of
 the MOVEit attack, including Deutsche Bank, ING Bank, Charles Schwab, 
 TD Ameritrade, among others. 
 
-**What Trustwave SpiderLabs Is Seeing**
-
+What Trustwave SpiderLabs Is Seeing
 Trustwave SpiderLabs has seen a continuing rise in ransomware incidents 
 directly targeting the financial services sector. Clop, LockBit, and Alphv/
 BlackCat remain the predominant groups operating in this sector.
@@ -305,7 +319,7 @@ Just in the previous quarter, notable banks such as Latitude Financial,
 European Investment Bank were hit with various types of cyberattacks, 
 potentially exposing millions of customer records. 
 
-*Image Description: A screenshot of the Lockbit Leak site claiming to have data from a breach of Banco De Venezuela. The image shows the Lockbit leak site with a listing of the compromised organization.*
+![Screenshot of the Lockbit Leak site claiming to have data from a breach of Banco De Venezuela]
 
 74% 
 OF 130 GLOBAL 
@@ -333,30 +347,33 @@ data inventories, enforcing basic security hygiene, managing the risk of
 insider threats, and ensuring that personnel remain cognizant of phishing and 
 social engineering attacks. 
 
-**Mitigations to Reduce Risk**
-
-*   Remember, the best defense is a good offense. The subsequent 
+Mitigations to Reduce Risk
+	
+- Remember, the best defense is a good offense. The subsequent 
 sections will dive into each of these further but regularly train and 
 test employees, ensure policies and patches are up to date, and 
 deploy layered email security to help detect and cleanse malicious 
 emails.
-
-*   Regularly backing up your data can help ensure the ability to 
+	
+- Regularly backing up your data can help ensure the ability to 
 recover from a ransomware attack or other types of data loss. Be 
 sure to store backups offsite and verify that they can be restored.  
-
-*   Ransomware and other malware gangs target Remote Desktop 
+	
+- Ransomware and other malware gangs target Remote Desktop 
 Protocol (RDP), the Microsoft protocol that allows users to execute 
 remote operations on other computers. Secure exposed RDP 
 services, patch known vulnerabilities, and/or disable them if not 
 necessary.
 
-*Quote: Trustwave's database security DbProtect delivers 7x more database-specific security and compliance checks vs. vulnerability assessment tools.*
+Trustwave's database 
+security DbProtect delivers 
+7x more database-specific 
+security and compliance 
+checks vs. vulnerability 
+assessment tools.
 
 ## Supplier and Third-Party Risk
-
-**The Threat**
-
+The Threat
 The financial services industry is heavily interconnected with other 
 businesses and with other financial entities, such as merchants and payment 
 processors, opening it up to supply chain and third-party risk.
@@ -372,8 +389,7 @@ regulations. If a third-party fails to comply with these regulations, it could p
 the financial services organization at risk of fines, penalties, or even criminal 
 prosecution.
 
-**What Trustwave SpiderLabs Is Seeing**
-
+What Trustwave SpiderLabs Is Seeing
 Trustwave SpiderLabs has seen a sharp rise in successful attacks due to 
 third-party software and services, including high-profile, supplier-based 
 attack vectors like SolarWinds, 3CX, and just recently, MOVEit. These attacks 
@@ -403,24 +419,23 @@ a mobile app or move millions of dollars across countries highlights how
 broadly connected and complex the sector is. One weak link in the chain can 
 lead to grave consequences for the organization.
 
-**Mitigations to Reduce Risk**
-
-*   Financial services organizations must ensure their own systems 
+Mitigations to Reduce Risk
+	
+- Financial services organizations must ensure their own systems 
 and those belonging to third-party partners are secure and 
 protected by the latest security measures. This can be achieved 
 through regular penetration tests and vulnerability scans.
-
-*   Maintain an inventory management system for all software, 
+	
+- Maintain an inventory management system for all software, 
 including vendor-developed software components, operating 
 systems, version and model numbers.
-
-*   Implement a routine vulnerability scan before installing any new 
+	
+- Implement a routine vulnerability scan before installing any new 
 applications, devices, or technology onto the IT environment.
 
-# Dissecting the Attack Flow for Financial Services
+## Dissecting the Attack Flow for Financial Services
 
 ## Attack Flow Overview
-
 While the details of every breach and compromise may vary, there is a 
 specific attack flow that typically occurs from the initial security bypass 
 to escalation, compromise, followed by persistent home on your network 
@@ -435,9 +450,7 @@ regulatory, or physical impacts to a financial services organization. The
 typical sequence of events unfolds as follows:
 
 ## Attack Flow Steps
-
-**Initial Foothold**
-
+### Initial Foothold
 This step is when the attacker successfully triggers a security bypass that 
 gives them the ability to expand their access to suit their motives and goals. 
 This initial foothold can take various forms, ranging from successful phishing 
@@ -448,8 +461,7 @@ In this section, we will explore the most common methods attackers use
 to gain an initial foothold in financial services, like phishing, abuse of 
 valid accounts, and exploitation of vulnerabilities.
 
-**Initial Payload**
-
+### Initial Payload
 Once the attackers have established a foothold on the network, they will 
 proceed to download more sophisticated tools and malware.
 
@@ -457,40 +469,38 @@ In this section, we will specifically concentrate on real-world
 examples of the types of payloads that frequently target financial 
 services organizations. 
 
-*Diagram: A diagram showing the attack flow steps in a linear fashion, with arrows connecting each step. The steps are Initial Foothold, Initial Payload, Expansion / Pivoting, Malware, and Exfiltration / Post Compromise.*
+Initial Foothold
+Initial Payload
+Expansion
+/ Pivoting
+Malware
+Exfiltration /
+Post Compromise
 
-**Expansion / Pivoting**
-
+### Expansion / Pivoting
 The initial foothold typically involves a low-value workstation, such as a 
 phishing victim's laptop, or a network appliance like a VPN endpoint. 
-
 In this section, we will showcase how once armed with the 
 necessary tools, attackers can target higher-value accounts and 
 systems, such as Domain Admins, root accounts, Active Directory 
 Systems, and Database servers.
 
-**Malware**
-
+### Malware
 There are a wide variety of malware types with a myriad of uses. We’re 
 talking about remote access toolkits (RATs), infostealers, ransomware, and 
 many others. 
-
 In this section, we will focus on the types of malware that are 
 prevalent in financial services.
 
-**Exfiltration / Post Compromise**
-
+### Exfiltration / Post Compromise
 In most cases, the primary motive behind compromises is data theft. 
-
 In this section, we will explore the types of data that are targeted 
 and exfiltrated in financial services-related compromises. 
 Additionally, we will present real-world examples of financial services 
 data breaches to provide concrete illustrations.
 
 ## Initial Foothold: Phishing and Business Email Compromise (BEC)
-
-**The Threat**
-
+The Threat
 Phishing and email-borne malware stand out as the most commonly 
 exploited methods for gaining an initial foothold in an organization. Instead 
 of attempting to exploit the software or systems on the network, attackers 
@@ -501,15 +511,17 @@ convinces their victim to take specific actions, such as opening an
 attachment, clicking on an embedded URL, or following instructions to 
 transfer funds to a purported "stranded CEO."
 
-**TYPICAL PHISHING GOALS:**
-*   **Credential theft example:** Invoice from a customer includes a link. When 
+TYPICAL PHISHING GOALS: 
+	
+- **Credential theft example**: Invoice from a customer includes a link. When 
 the link is clicked, it prompts the user for their password before “access is 
 granted to the document”
-*   **Malware insertion:** Via PowerShell scripts, Javascript, Macros
-*   **Triggering action example:** Wire transfer for “stranded CEO” (BEC)
+	
+- **Malware insertion**: Via PowerShell scripts, Javascript, Macros
+	
+- **Triggering action example**: Wire transfer for “stranded CEO” (BEC)
 
-**Trustwave SpiderLabs Insights**
-
+Trustwave SpiderLabs Insights
 The Trustwave SpiderLabs team is dedicated to monitoring email-based threats 
 including opportunistic phishing, targeted/spear-phishing, and BEC. Over the last 
 year, our team has observed interesting developments in the delivery methods, 
@@ -529,10 +541,21 @@ system. The malicious file is encrypted and embedded into the HTML attachment.
 Once the HTML is opened with a browser, the blob will be automatically decoded and 
 dropped on the system 
 
-*Diagram: A diagram showing the process of an HTML smuggling attack. The steps are Spam email with HTML attachment, User Action Required, Opens HTML containing an encrypted blob, Archive LNK Shortcut file, Clicks, Opens, Contains Qakbot DLL, Launches.*
+![Spam email with HTML attachment]
+![User Action Required]
+![Password-protected archive]
+![Opens]
+![HTML containing an encrypted blob]
+![Archive]
+![LNK]
+![Shortcut file]
+![Clicks]
+![Opens]
+![Contains]
+![Qakbot DLL]
+![Launches]
 
-**Prevalence of email malware attachments**
-
+Prevalence of email malware attachments
 Aside from HTML, our team has observed executables as the next most 
 prevalent type of malicious attachment. Commonly spotted attachments are 
 mostly information stealing malware such as Gootloader, XLoader, Lokibot, 
@@ -552,15 +575,51 @@ malicious attachments are related to voicemail notifications, payment
 receipts, purchase orders, remittances, bank deposits, and quotation 
 requests. 
 
-*Image Description: A word cloud based on the subject lines for emails with malicious attachments. The word cloud contains words such as remittance, advice, confirmation, action, direct, deposit, statement, receipt, approved, benefits, enrollment, completed, information, missed, purchase, listen, review, shipment, processed, shared, notice.*
+![Word cloud based on the subject lines for emails with malicious attachments]
 
-*Chart: A pie chart showing the prevalence of different types of email malware attachments. HTML is 78%, Executable is 14%, PDF is 3%, Excel is 2%, Word Document is 1%, and Other (Shortcut, OneNote) is 2%.*
+HTML
+Executable
+PDF
+Excel
+Word Document
+Other (Shortcut,
+OneNote)
+78%
+14%
+3%
+2%
+1%
+2%
+
+remittance
+remittance
+advice
+confirmation
+action
+direct
+deposit
+statement
+receipt
+approved
+benefits
+enrollment
+completed
+information
+missed
+purchase
+listen
+review
+shipment
+processed
+shared
+advice
+notice
 
 We have also observed that 24% of the emails with malicious attachments 
 attempted to spoof American Express. DHL is next at 21% and Microsoft in 
 third with 15%. 
 
-*Chart: A bar chart showing the top spoofed brands in emails with malicious attachments. American Express is 24%, DHL is 21%, Microsoft is 15%, DocuSign is 11%, RingCentral is 8%, USAA is 5%, DropBox is 4%, FedEx is 3%, Chase is 2%, Wells Fargo is 2%, HSBC is 1%, and Others is 4%.*
+![Top spoofed brands in emails with malicious attachments]
 
 From a purely phishing standpoint (those without malicious attachments), 
 the most prevalent phishing themes are “Urgent Action” themes, mailbox-
@@ -568,22 +627,92 @@ related alerts, document sharing, e-signing, account-related alerts,
 missed communications, meeting-related notifications, and 
 payment/invoice-related alerts.
 
-*Image Description: A word cloud based on the subject lines for phishing emails (no malicious attachments). The word cloud contains words such as action, required, email, password, incoming, messages, received, new, expired, pending, document, message, account, mails, blocked, voice, mail, box.*
+![Wordcloud based on the subject lines for phishing emails (no malicious attachments)]
+
+American Express
+DHL
+Microsoft
+DocuSign
+RingCentral
+USAA
+DropBox
+FedEx
+Chase
+Wells Fargo
+HSBC
+Others
+24%
+21%
+15%
+11%
+8%
+5%
+4%
+3%
+2%
+2%
+1%
+4%
+
+action
+required
+email
+password
+incoming
+messages
+received
+new
+password
+expired
+pending
+messages
+incoming
+emails
+new
+document
+message
+email
+email
+received
+new
+message
+new
+message
+messages
+pending
+voice
+message
+document
+shared
+password
+expiration
+password
+email
+email
+account
+mails
+blocked
+new
+voice
+mail
+box
 
 The brands most spoofed in phishing attacks are Microsoft at 52%, DocuSign 
 at 10%, and American Express at 8%. 
 
-*Chart: A bar chart showing the top impersonated brands in phishing emails. Microsoft is 52%, DocuSign is 10%, American Express is 8%, WeTransfer is 7%, DHL is 5%, Wells Fargo is 4%, Chase is 2%, and Others is 12%.*
+![Top impersonated brands in phishing emails]
 
 Though phishing as an attack vector remains the same, techniques have 
 continually evolved in order to stay ahead of email defenses. During the past 
 year, we have discovered and have subsequently conducted analysis on new 
 techniques in phishing that attackers actively use in the financial services 
 sector:
-
-*   IPFS-based Phishing
-*   Cloudflare Pages.dev and Workers.dev Phishing
-*   RPMSG Campaigns
+	
+- IPFS-based Phishing
+	
+- Cloudflare Pages.dev and Workers.dev Phishing
+	
+- RPMSG Campaigns
 
 For more information, we have linked each of these techniques to their 
 individual in-depth studies on the Trustwave SpiderLabs blogs. 
@@ -592,7 +721,32 @@ Finally, on the BEC front, we have observed that “Payroll Diversion” at 48% 
 still the most used lure with “Request for Contact” and “Task” at 23% and 13% 
 respectively. 
 
-*Chart: A pie chart showing the lures used in BEC messages. Payroll Diversion is 43%, Request for Contact is 23%, Task is 13%, Availability is 10%, Wire Transfer is 2%, Invoice Transaction is 2%, and Gift Purchase is 2%.*
+![Lures used in BEC messages]
+
+Microsoft
+DocuSign
+American Express
+WeTransfer
+DHL
+Wells Fargo
+Chase
+Others
+52%
+10%
+8%
+7%
+5%
+4%
+2%
+12%
+
+13% Task
+43% Payroll Diversion
+2% Gift Purchase
+23% Request for Contact
+10% Availability
+2% Wire Transfer
+2% Invoice Transaction
 
 Additionally, Trustwave SpiderLabs has been monitoring the effect of AI and 
 LLMs like ChatGPT on phishing attacks. Many of the red flags that we teach 
@@ -612,28 +766,29 @@ on underground forums, highlighting the potential cybersecurity risks posed
 by their criminal use. WormGPT's and FraudGPTs capabilities include not 
 only crafting convincing phishing emails, but even assisting in creating 
 undetectable malware, writing malicious code, and finding vulnerabilities. 
-More details can be found in the recent Trustwave SpiderLabs blog [here](https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/wormgpt-and-fraudgpt-the-latest-ai-tools-for-cybercriminals/).
-
-**Mitigations to Reduce Risk**
-
-*   Consistently conduct mock phishing tests to assess the 
+More details can be found in the recent Trustwave SpiderLabs blog here.
+ 
+Mitigations to Reduce Risk
+	
+- Consistently conduct mock phishing tests to assess the 
 effectiveness of anti-phishing training and retrain repeat offenders.
-
-*   Implement robust anti-spoofing measures, including deploying 
+	
+- Implement robust anti-spoofing measures, including deploying 
 technologies on email gateways.
-
-*   Deploy layered email scanning with a solution like MailMarshal to 
+	
+- Deploy layered email scanning with a solution like MailMarshal to 
 provide better detection and protection.
-
-*   Utilize techniques to detect domain misspellings, enabling the 
+	
+- Utilize techniques to detect domain misspellings, enabling the 
 identification of phishing and BEC attacks.
 
-*Quote: When layered, captures up to 90% of malicious emails missed by other email security vendors.*
+When layered, captures up 
+to 90% of malicious emails 
+missed by other email 
+security vendors.
 
 ## Initial Foothold: Logging in
-
-**The Threat**
-
+The Threat
 Sometimes, attackers can gain access to a network by simply logging in. 
 This access can occur if the default credentials for a device have not been 
 changed, weak passwords are used making them vulnerable to brute-forcing, 
@@ -641,15 +796,13 @@ or if credentials have been purchased from an underground forum. Beyond
 simple credentials, attackers can purchase access to a webshell or active 
 sessions already in place in a target organization.
 
-**Trustwave SpiderLabs Insights**
-
+Trustwave SpiderLabs Insights
 The Trustwave SpiderLabs team performs proactive threat hunts and analysis 
 in our client’s environment to identify breaches or compromises that have yet 
 to be identified. In the course of these engagements, the team regularly finds 
 the following issues that directly contribute to this threat.
 
-**ABUSE OF VALID ACCOUNTS**
-
+ABUSE OF VALID ACCOUNTS
 The use of valid accounts continues to be one of the easiest and most 
 efficient ways for a threat actor to get an initial foothold into a financial 
 services organization. Various types of phishing attacks and poor 
@@ -660,8 +813,7 @@ This malware then steals valid credentials from the target. Poor cybersecurity
 hygiene, on the other hand, refers to poor credential and password 
 management that we will further discuss in the next item.
 
-**CREDENTIAL ACCESS**
-
+CREDENTIAL ACCESS 
 Attackers use credential access about 20% of the time for all reported 
 incidents in our client base. Brute-force attacks, in particular, make up the 
 majority of the observations. This tactic has threat actors leveraging valid 
@@ -684,7 +836,15 @@ credentials in cleartext in environments. If a malicious actor can gain access
 to these unsecured files or sniff the password from these applications, they 
 will have gained the foothold they are looking for. 
 
-*Diagram: A diagram showing a threat actor gaining access through a VPN access point.*
+Initial Foothold
+Expansion
+/ Pivoting
+Malware
+Exfiltration /
+Post Compromise
+Initial Payload
+Threat Actor
+VPN Acess Point
 
 In our threat hunts, typical unsecured credentials were often found in 
 plaintext documents with easily identifiable and obvious names such as 
@@ -693,11 +853,9 @@ among others. We also observed that passwords were stored and sent in
 clear text through various applications and configuration files such as custom 
 PowerShell Scripts. 
 
-**INFOSTEALERS**
-
+INFOSTEALERS
 As the name suggests, infostealers focus on that exact activity as its primary 
 function. The stolen information is then typically offered up for sale. 
-
 Our data indicates that most executables attached in email-based attacks 
 in this sector are infostealers. Notable infostealers that we have observed 
 are XLoader, Lokibot Formbook, and Snake Keylogger. Each of these will be 
@@ -707,41 +865,68 @@ It is worth noting that the prevalent use of infostealers has helped create
 an online supply of ready to use login credentials that can be purchased via 
 underground forums and the Dark Web.
 
-**Top tactics not detected by security technologies**
-
+Top tactics not detected by security technologies
 In our Threat Hunts, we uncover things that aren’t alerted by security 
 technologies. These are the top tactics in financial services compared to 
 other industries.
 
-*Chart: A bar chart comparing the top tactics not detected by security technologies between Cross Industry and Financial Services. For Initial Access, Cross Industry is 37% and Financial Services is 45%. For Credential Access, Cross Industry is 23% and Financial Services is 19%. For Execution, Cross Industry is 17% and Financial Services is 12%. For Command & Control, Cross Industry is 6% and Financial Services is 7%. For Discovery, Cross Industry is 5% and Financial Services is 6%.*
+![Top tactics not detected by security technologies]
 
-**Mitigations to Reduce Risk**
+0%
+10%
+20%
+30%
+40%
+Initial Access
+Credential Access
+Execution
+Command & Control
+Discovery
+37%
+23%
+17%
+6%
+5%
+45%
+19%
+12%
+7%
+6%
+Cross Industry
+Financial Services
 
-*   Regularly rotate passwords (e.g., every quarter) to mitigate issues 
+Mitigations to Reduce Risk
+	
+- Regularly rotate passwords (e.g., every quarter) to mitigate issues 
 related to valid accounts.
-
-*   Implement password complexity requirements to enhance security.
-
-*   Enable multi-factor authentication (MFA) to provide an additional 
+	
+- Implement password complexity requirements to enhance security.
+	
+- Enable multi-factor authentication (MFA) to provide an additional 
 layer of protection for accounts.
-
-*   Securely store credentials in programs in Password Vaults or 
+	
+- Securely store credentials in programs in Password Vaults or 
 Password Management Systems to prevent credential abuse.
-
-*   Encrypt credentials when used in scripts to safeguard sensitive 
+	
+- Encrypt credentials when used in scripts to safeguard sensitive 
 information.
-
-*   Audit local administrative accounts regularly and obfuscate admin 
+	
+- Audit local administrative accounts regularly and obfuscate admin 
 accounts by not using admin in the name.
-
-*   Use LAPS on Windows systems to manage local accounts.
-
-*   Implement Privileged Access Management (PAM) and Privileged 
+	
+- Use LAPS on Windows systems to manage local accounts.
+	
+- Implement Privileged Access Management (PAM) and Privileged 
 Identity Management (PIM) solutions to deepen defense in depth 
 strategy.
 
 ## Initial Foothold: Vulnerability Exploitation
-
-**The Threat**
-
+The Threat
 Exploiting vulnerabilities is often the first thing people think of when it comes 
+to information security.  This topic encompasses discussions on zero days, 
+patch agility, proof-of-concept exploits, and vulnerability disclosure.
+
+Simply put, a vulnerability refers to a bug in software that introduces 
+security risks. Attackers develop specialized software or scripts to exploit 
+the vulnerability and circumvent security controls, such as authorization, 
+authentication,

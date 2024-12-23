@@ -1,22 +1,22 @@
 # Ransomware and Extortion Report 2023
 
 ## Table of Contents
-[Executive Summary](#executive-summary)
-[Extortion Is on the Rise](#extortion-is-on-the-rise)
-[Why Having Backups Is No Longer Enough](#why-having-backups-is-no-longer-enough)
-[Common Extortion Tactics](#common-extortion-tactics)
-[Who Is Being Attacked?](#who-is-being-attacked)
-[Insights From Dark Web Leak Sites](#insights-from-dark-web-leak-sites)
-[Industries Most Heavily Impacted](#industries-most-heavily-impacted)
-[Regions Most Heavily Impacted](#regions-most-heavily-impacted)
-[What Are Extortion Threat Groups After?](#what-are-extortion-threat-groups-after)
-[What You Can Expect From an Attack: An Example Ransomware Incident](#what-you-can-expect-from-an-attack-an-example-ransomware-incident)
-[When APTs Use Ransomware](#when-apts-use-ransomware)
-[Conclusion: What to Expect From Extortion Groups in 2023](#conclusion-what-to-expect-from-extortion-groups-in-2023)
-[Reach Out to Experts](#reach-out-to-experts)
-[Methodology](#methodology)
-[Unit 42 Incident Response Methodology](#unit-42-incident-response-methodology)
-[About Palo Alto Networks and Unit 42](#about-palo-alto-networks-and-unit-42)
+- [Executive Summary](#executive-summary)
+- [Extortion Is on the Rise](#extortion-is-on-the-rise)
+- [Why Having Backups Is No Longer Enough](#why-having-backups-is-no-longer-enough)
+- [Common Extortion Tactics](#common-extortion-tactics)
+- [Who Is Being Attacked?](#who-is-being-attacked)
+- [Insights From Dark Web Leak Sites](#insights-from-dark-web-leak-sites)
+- [Industries Most Heavily Impacted](#industries-most-heavily-impacted)
+- [Regions Most Heavily Impacted](#regions-most-heavily-impacted)
+- [What Are Extortion Threat Groups After?](#what-are-extortion-threat-groups-after)
+- [What You Can Expect From an Attack: An Example Ransomware Incident](#what-you-can-expect-from-an-attack-an-example-ransomware-incident)
+- [When APTs Use Ransomware](#when-apts-use-ransomware)
+- [Conclusion: What to Expect From Extortion Groups in 2023](#conclusion-what-to-expect-from-extortion-groups-in-2023)
+- [Reach Out to Experts](#reach-out-to-experts)
+- [Methodology](#methodology)
+- [Unit 42 Incident Response Methodology](#unit-42-incident-response-methodology)
+- [About Palo Alto Networks and Unit 42](#about-palo-alto-networks-and-unit-42)
 
 Threat actors are increasingly employing 
 extortion techniques to gain leverage over 
@@ -52,7 +52,8 @@ key points:
 
 Ransomware and Extortion Report 2023  |  3
 
-### Multi-extortion tactics continue to rise.
+### M
+**Multi-extortion tactics continue to rise.**
 In Unit 42 ransomware cases, as of late 2022, 
 threat actors engaged in data theft in about 70% 
 of cases on average. Compare this to mid-2021, 
@@ -73,22 +74,13 @@ Compare this to mid-2021, when harassment was
 a factor in less than 1% of Unit 42 
 ransomware cases.
 
-*   Victims pay to regain access
-*   Attackers threaten to release stolen data
-*   DDoS attacks shut down public websites
-*   Customers, business partners, and media contacted
-
-| Tactic | Description |
-|---|---|
-| Encryption |  |
-| Data Theft |  |
-| DDoS |  |
-| Harassment |  |
+![Image description: A diagram showing the different extortion tactics used by threat actors. The tactics include Encryption, Data Theft, DDoS, and Harassment. Each tactic is associated with a different action, such as Victims pay to regain access, Attackers threaten to release stolen data, DDoS attacks shut down public websites, and Customers, business partners, and media contacted.]
 
 Ransomware and Extortion Report 2023  |  4
 
-### Extortion gangs are opportunistic, but there are 
-some patterns in the organizations they attack. 
+### E
+**Extortion gangs are opportunistic, but there are 
+some patterns in the organizations they attack.** 
 Based on our analysis of dark web leak sites, 
 manufacturing was one of the most targeted 
 industries in 2022, with 447 compromised 
@@ -103,8 +95,9 @@ most severely affected, according to leak site
 data, accounting for 42% of the observed 
 leaks in 2022.
 
-### Large, multinational organizations can 
-be lucrative targets for threat actors.
+### L
+**Large, multinational organizations can 
+be lucrative targets for threat actors.**
 Attacks on the world’s largest organizations 
 represent a small but notable percentage 
 of public extortion incidents. In 2022, 30 
@@ -114,9 +107,10 @@ Since 2019, at least 96 of these organizations
 have had confidential files publicly exposed to 
 some degree as part of attempted extortion.
 
-### Advanced threat groups may use extortion 
+### A
+**Advanced threat groups may use extortion 
 and ransomware to fund other activities —
-or hide them. Threat groups from countries 
+or hide them.** Threat groups from countries 
 under economic embargoes or sanctions have 
 been observed using ransomware and extortion 
 to fund their operations. 
@@ -127,15 +121,21 @@ using ransomware. Threat actors can gain more
 than money from deploying ransomware—it also 
 has potential for both destruction and espionage.
 
-### Predictions for what to expect from extortion 
-in the coming year. Unit 42 experts have put 
+### P
+**Predictions for what to expect from extortion 
+in the coming year.** Unit 42 experts have put 
 together predictions for what we expect to 
 see from extortion groups in the coming year. 
 Our predictions include:
-* 2023 will be the year we see a large cloud ransomware compromise.
-* A rise in extortion related to insider threats.
-* A rise in politically motivated extortion attempts.
-* The use of ransomware and extortion to distract from attacks aimed to infect the supply chain or source code.
+- 2023 will be the year we see a large 
+cloud ransomware compromise.
+- A rise in extortion related to 
+insider threats.
+- A rise in politically motivated 
+extortion attempts.
+- The use of ransomware and extortion 
+to distract from attacks aimed to infect 
+the supply chain or source code.
 
 Ransomware and Extortion Report 2023  |  5
 The number one goal for many criminal threat 
@@ -153,13 +153,13 @@ the difficult decision to pay ransom.
 Unit 42 has observed the following extortion 
 tactics employed and threatened by ransomware 
 threat actors:
-*   **Encryption:**
+- **Encryption:**
 An organization’s data and files are encrypted, 
 and the threat actor demands payment in 
 order to restore access to them. This has 
 long been the primary extortion tactic of 
 ransomware.
-*   **Data Theft:**
+- **Data Theft:**
 Threat actors acquire an organization’s data 
 and threaten to disseminate it unless they are 
 paid. This often involves dark web leak sites. 
@@ -168,11 +168,11 @@ that may be particularly sensitive, such as files
 containing personally identifiable information 
 (PII), customer financial data, protected health 
 information (PHI), etc.
-*   **Distributed Denial of Service (DDoS):**
+- **Distributed Denial of Service (DDoS):**
 Websites or other resources are targeted via a 
 DDoS attack to disrupt operations and to get 
 an organization’s attention.
-*   **Harassment:**
+- **Harassment:**
 Threat actors may call, email, or 
 otherwise contact an organization’s 
 employees or customers. They may also 
@@ -192,7 +192,7 @@ involve encryption.
 ## Extortion Is on the Rise
 Ransomware and Extortion Report 2023  |  6
 
-*Image description: A graphic showing an upward arrow labeled "Threat actor's use of additional extortion tactics"*
+![Image description: A diagram showing the increase in threat actor's use of additional extortion tactics.]
 
 Ransomware and Extortion Report 2023  |  7
 With ransomware incidents grabbing attention 
@@ -230,8 +230,7 @@ strong backups, but the threat actors followed up
 with harassment campaigns so intense that the 
 resulting costs exceeded the ransom demanded.
 
-## Why Having Backups 
-Is No Longer Enough
+## Why Having Backups Is No Longer Enough
 Ransomware and Extortion Report 2023  |  8
 ### Prepare a Playbook 
 for Multi-Extortion
@@ -262,10 +261,13 @@ have been removed. This ensures that the threat
 actor cannot easily conduct a follow-up attack 
 after an initial breach.
 
-> **UNIT 42 EXECUTIVE RECOMMENDATION:**
-> Read Mitigating Cyber Risks with MITRE ATT&CK for an in-depth set of recommendations by Unit 42 incident responders.
+**UNIT 42 EXECUTIVE 
+RECOMMENDATION:**
+_Read Mitigating Cyber Risks with MITRE 
+ATT&CK for an in-depth set of recommendations 
+by Unit 42 incident responders._
 
-R E C O M M E N D A T I O N
+**R E C O M M E N D A T I O N**
 
 Ransomware and Extortion Report 2023  |  9
 ### Encryption
@@ -288,11 +290,12 @@ involving negotiation also included at least one
 additional extortion tactic.
 
 ## Common Extortion Tactics
-*Image description: A screenshot of a BlackCat ransom note. The text reads:
->> What happened?
+![Image description: An example of a BlackCat ransom note dropped on a compromised system]
+Figure 2. An example of a BlackCat ransom note dropped on a compromised system
+> What happened?
 Important files on your network was ENCRYPTED and now they have “[REDACTED]” extension.
 In order to recover your files you need to follow instructions below.
->> Sensitive Data
+> Sensitive Data
 Sensitive data on your network was DOWNLOADED.
 If you DON’T WANT your sensitive data to be PUBLISHED you have to act quickly.
 Data includes:
@@ -301,14 +304,13 @@ Data includes:
 - Private financial information including:citizens data, courts data, bills, 
 budgets, annual reports, bank statements, etc
 Samples are available on your personal web page linked below.
->> CAUTION
+> CAUTION
 DO NOT MODIFY ENCRYPTED FILES YOURSELF.
 DO NOT USE THIRD PARTY SOFTWARE TO RESTORE YOUR DATA.
 YOU MAY DAMAGE YOUR FILES, IT WILL RESULT IN PERMANENT DATA LOSS.
->> What should I do next?
+> What should I do next?
 1) Download and install Tor Browser from: https://torproject.org/
 2) Navigate to: [REDACTED]
-*
 
 Ransomware and Extortion Report 2023  |  10
 ### Data Theft and Multi-Extortion
@@ -317,34 +319,34 @@ stolen from victims in about 53% of ransomware
 incidents involving negotiation between mid-2021 
 and late 2022. Due to the efficacy of this tactic, 
 
-*Image description: A screenshot of a page "for journalists" from Vice Society's leak site. The text reads:
-There are many journalists asking questions about us and our attacks.
+![Image description: A page “for journalists” from Vice Society’s leak site]
+Figure 3. A page “for journalists” from Vice Society’s leak site
+> There are many journalists asking questions about us and our attacks.
 If you are a journalist and want to ask some questions you should write:
 1. Who are you?
 2. Where are you from?
 3. Where will you publish our answers?
 We are trying to answer everyone in 24 hours.
-#Frequently Asked Questions:
-Why did you choose GTA as branding?
--Some old articles about us used GTA logo, so we decided to use it too.
-How long have you beenn in operation?
--From January 2021.
-Are you recruiting partners or are you closed?
--We have been closed from the beginning and we don’t have affiliates.
-How did you decide to team up and start a dedicated ransomware group? How was ViceSociety born?
--Group of friends that were interested in pentest. We decided to try.
-What do you do if the law says that someone can’t pay you? Does that matter? What happens if the customer doesn’t respond?
--We don’t care about laws. If someone doesn’t pay or doesn’t contact us, we will publish their documents.
-Has Vice Society published all the data it took from “company name” or does Vice Society have additional data that still has not been published?
--We always publish everything.
-Can you explain your decision to publish “company name” data?
--They didn’t pay.
-We DON’T answer questions like:
-What country or region of the world are you from?
-How old are you?
-What vulns/eve do you use?
-©2021 Copyright Vice Society. All rights reserved. Emails: V.society.official@onionmail.org. Vice Society@onionmail.org
-*
+> #Frequently Asked Questions:
+> Why did you choose GTA as branding?
+> -Some old articles about us used GTA logo, so we decided to use it too.
+> How long have you beenn in operation?
+> -From January 2021.
+> Are you recruiting partners or are you closed?
+> -We have been closed from the beginning and we don’t have affiliates.
+> How did you decide to team up and start a dedicated ransomware group? How was ViceSociety born?
+> -Group of friends that were interested in pentest. We decided to try.
+> What do you do if the law says that someone can’t pay you? Does that matter? What happens if the customer doesn’t respond?
+> -We don’t care about laws. If someone doesn’t pay or doesn’t contact us, we will publish their documents.
+> Has Vice Society published all the data it took from “company name” or does Vice Society have additional data that still has not been published?
+> -We always publish everything.
+> Can you explain your decision to publish “company name” data?
+> -They didn’t pay.
+> We DON’T answer questions like:
+> What country or region of the world are you from?
+> How old are you?
+> What vulns/eve do you use?
+> ©2021 Copyright Vice Society. All rights reserved. Emails: V.society.official@onionmail.org. Vice Society@onionmail.org
 
 many threat actors target regulated data sets or 
 highly commercially sensitive information for 
@@ -456,9 +458,7 @@ access to exfiltrate data and follow up with
 extortion attempts. 
 
 Ransomware and Extortion Report 2023  |  12
-> **UNIT 42 EXECUTIVE RECOMMENDATION:**
-> Read Mitigating Cyber Risks with MITRE ATT&CK for an in-depth set of recommendations by Unit 42 incident resonders.
-
+**R E C O M M E N D A T I O N**
 ### Ensure Complete Visibility via 
 Extended Detection and Response 
 (XDR) Technology
@@ -482,7 +482,11 @@ Orchestration, Automation, and Response
 important as attackers may operate when your 
 team is not working.
 
-R E C O M M E N D A T I O N
+**UNIT 42 EXECUTIVE 
+RECOMMENDATION:**
+_Read Mitigating Cyber Risks with MITRE 
+ATT&CK for an in-depth set of recommendations 
+by Unit 42 incident resonders._
 
 Ransomware and Extortion Report 2023  |  13
 Ransomware and Extortion Report 2023  |  14
@@ -638,9 +642,7 @@ While the group extorted some victims, they
 sometimes appeared more interested in the 
 notoriety of compromising high-profile targets. 
 
-> **UNIT 42 EXECUTIVE RECOMMENDATION:**
-> Read Mitigating Cyber Risks with MITRE ATT&CK for an in-depth set of recommendations by Unit 42 incident responders.
-
+**R E C O M M E N D A T I O N**
 ### Implement a Threat 
 Intelligence Program
 Organizations can learn about the tactics, 
@@ -662,7 +664,11 @@ or enhance the effectiveness of your existing
 program based on lessons learned from our 
 incident response investigations. 
 
-R E C O M M E N D A T I O N
+**UNIT 42 EXECUTIVE 
+RECOMMENDATION:**
+_Read Mitigating Cyber Risks with MITRE 
+ATT&CK for an in-depth set of recommendations 
+by Unit 42 incident responders._
 
 Ransomware and Extortion Report 2023  |  17
 Ransomware and Extortion Report 2023  |  18
@@ -697,12 +703,11 @@ revenue streams from operational downtime
 can also push organizations to concede to threat 
 actors’ demands.
 
-*Image description: A bar chart showing industries most heavily impacted by extortion attacks (leak site data, 2022). The industries are, from most to least impacted: Manufacturing, Professional and Legal Services, Construction, Healthcare, Retail, Education, Technology, Transportation, Financial Services, Government, Energy, and Other.*
+![Image description: A bar graph showing the industries most heavily impacted by extortion attacks in 2022, based on leak site data.]
+Figure 4. Industries most heavily impacted by extortion attacks (leak site data, 2022)
 
 Ransomware and Extortion Report 2023  |  19
-> **UNIT 42 EXECUTIVE RECOMMENDATION:**
-> Read Mitigating Cyber Risks with MITRE ATT&CK for an in-depth set of recommendations by Unit 42 incident responders.
-
+**R E C O M M E N D A T I O N**
 ### Proactively Manage and Reduce 
 Your Attack Surface Inventory
 A staggering number (at least 75%) of 
@@ -734,6 +739,8 @@ RDP is the most impactful tool for lateral
 movement once attackers have a foothold 
 inside targeted networks.
 
+**UNIT 42 EXECUTIVE 
+RECOMMENDATION:**
 We also commonly see cybercriminals taking 
 advantage of expired certificates, deprecated 
 server operating system versions, and end-of-life 
@@ -749,7 +756,9 @@ external attack surface, including your cloud
 assets, or does not actively monitor changes 
 to your external asset estate.
 
-R E C O M M E N D A T I O N
+_Read Mitigating Cyber Risks with MITRE 
+ATT&CK for an in-depth set of recommendations 
+by Unit 42 incident responders._
 
 Ransomware and Extortion Report 2023  |  20
 ## Regions Most Heavily Impacted
@@ -775,7 +784,8 @@ observed impacting organizations in 107
 countries in 2022.
 
 Ransomware and Extortion Report 2023  |  21
-*Image description: A bar chart showing the top countries impacted by extortion attempts (leak site data, 2022). The countries are, from most to least impacted: United States, Germany, United Kingdom, Canada, France, Italy, Australia, Spain, Brazil, and Other.*
+![Image description: A bar graph showing the top countries impacted by extortion attempts in 2022, based on leak site data.]
+Figure 5. Top countries impacted by extortion attempts (leak site data, 2022)
 
 Ransomware and Extortion Report 2023  |  22
 While the obvious answer is “money,” it can be 
@@ -823,14 +833,4 @@ passports and tax forms.
 
 Threat actors know that many organizations 
 are legally (and ethically) obligated to protect 
-information of this type. Multinational 
-organizations are bound by cyber regulation and 
-data protection laws from various parts of the 
-world—and failing to meet these requirements 
-can result in fines, sanctions, the loss of 
-operating licenses, and even the imprisonment of 
-individuals. Threat actors can take advantage of 
-these types of consequences to exert leverage on 
-their targets. 
-
-Information that can be used in identity
+information of this type
