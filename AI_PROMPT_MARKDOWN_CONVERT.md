@@ -2,7 +2,7 @@
 ## Purpose
 Ensure technical PDFs are converted to Markdown with complete fidelity, preserving all content, structure, and formatting.
 ## Goals
-1. **Full Conversion**: Include all text, footnotes, references, and technical terminology without omission or summarization.  
+1. **Full Conversion**: Include all text, quotations, footnotes, references, and technical terminology without omission or summarization.  
 2. **TOC Format**: Include a fully functional Table of Contents with proper linking.  
 3. **Markdown Conventions**: Use clear, consistent, and professional formatting.  
 4. **Images**: Describe image contents without embedding.
