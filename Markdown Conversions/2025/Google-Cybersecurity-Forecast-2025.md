@@ -1,39 +1,39 @@
 # Cybersecurity Forecast 2025
 
 ## Table of Contents
-[Introduction](#introduction)
-[Artificial Intelligence](#artificial-intelligence)
-  * [Attacker Use of AI](#attacker-use-of-ai)
-  * [AI for IO](#ai-for-io)
-  * [Next Phase of AI and Security](#next-phase-of-ai-and-security)
-[The Big Four](#the-big-four)
-  * [Russia](#russia)
-  * [China](#china)
-  * [Iran](#iran)
-  * [North Korea](#north-korea)
-[Global Forecasts](#global-forecasts)
-  * [PRC Actors Will Continue to Deploy Custom Malware Ecosystems for Embedded Systems](#prc-actors-will-continue-to-deploy-custom-malware-ecosystems-for-embedded-systems)
-  * [No End in Sight: Ransomware and Multifaceted Extortion](#no-end-in-sight-ransomware-and-multifaceted-extortion)
-  * [Post U.S. Election Activity](#post-us-election-activity)
-  * [Uncovering Operations From Years Past](#uncovering-operations-from-years-past)
-  * [The Rising Threat of Infostealer Malware: A Gateway to High-Impact Data Breaches](#the-rising-threat-of-infostealer-malware-a-gateway-to-high-impact-data-breaches)
-  * [Rising Impact of Compromised Identities in Hybrid Environments](#rising-impact-of-compromised-identities-in-hybrid-environments)
-  * [Democratizing of Cyber Capabilities Will Continue To Lower Barriers to Entry for Less-Skilled and Newer Actors](#democratizing-of-cyber-capabilities-will-continue-to-lower-barriers-to-entry-for-less-skilled-and-newer-actors)
-  * [Maturing Security Operations in the Cloud](#maturing-security-operations-in-the-cloud)
-  * [Criticality Drives More Regulations for Cloud Providers](#criticality-drives-more-regulations-for-cloud-providers)
-  * [More Interest in Web3 and Crypto Heists](#more-interest-in-web3-and-crypto-heists)
-  * [Faster Exploitation and More Vendors Targeted](#faster-exploitation-and-more-vendors-targeted)
-  * [Preparing for an Age of Post-Quantum Cryptography](#preparing-for-an-age-of-post-quantum-cryptography)
-[EMEA Forecasts](#emea-forecasts)
-  * [A Pivotal Year for Compliance](#a-pivotal-year-for-compliance)
-  * [Geopolitical Conflicts Drive Threat Activity](#geopolitical-conflicts-drive-threat-activity)
-  * [More Focus on Cloud Security](#more-focus-on-cloud-security)
-[JAPAC Forecasts](#japac-forecasts)
-  * [North Korea Threat Actors Setting Their Sights on JAPAC](#north-korea-threat-actors-setting-their-sights-on-japac)
-  * [Chinese-Controlled Websites Posing as Local News Outlets Target Global Audiences with Pro-Beijing Content](#chinese-controlled-websites-posing-as-local-news-outlets-target-global-audiences-with-pro-beijing-content)
-  * [Cyber Criminals in Southeast Asia Continue to Innovate](#cyber-criminals-in-southeast-asia-continue-to-innovate)
-[Conclusion](#conclusion)
-[Contributors](#contributors)
+- [Introduction](#introduction)
+- [Artificial Intelligence](#artificial-intelligence)
+  - [Attacker Use of AI](#attacker-use-of-ai)
+  - [AI for IO](#ai-for-io)
+  - [Next Phase of AI and Security](#next-phase-of-ai-and-security)
+- [The Big Four](#the-big-four)
+  - [Russia](#russia)
+  - [China](#china)
+  - [Iran](#iran)
+  - [North Korea](#north-korea)
+- [Global Forecasts](#global-forecasts)
+  - [PRC Actors Will Continue to Deploy Custom Malware Ecosystems for Embedded Systems](#prc-actors-will-continue-to-deploy-custom-malware-ecosystems-for-embedded-systems)
+  - [No End in Sight: Ransomware and Multifaceted Extortion](#no-end-in-sight-ransomware-and-multifaceted-extortion)
+  - [Post U.S. Election Activity](#post-us-election-activity)
+  - [Uncovering Operations From Years Past](#uncovering-operations-from-years-past)
+  - [The Rising Threat of Infostealer Malware: A Gateway to High-Impact Data Breaches](#the-rising-threat-of-infostealer-malware-a-gateway-to-high-impact-data-breaches)
+  - [Rising Impact of Compromised Identities in Hybrid Environments](#rising-impact-of-compromised-identities-in-hybrid-environments)
+  - [Democratizing of Cyber Capabilities Will Continue To Lower Barriers to Entry for Less-Skilled and Newer Actors](#democratizing-of-cyber-capabilities-will-continue-to-lower-barriers-to-entry-for-less-skilled-and-newer-actors)
+  - [Maturing Security Operations in the Cloud](#maturing-security-operations-in-the-cloud)
+  - [Criticality Drives More Regulations for Cloud Providers](#criticality-drives-more-regulations-for-cloud-providers)
+  - [More Interest in Web3 and Crypto Heists](#more-interest-in-web3-and-crypto-heists)
+  - [Faster Exploitation and More Vendors Targeted](#faster-exploitation-and-more-vendors-targeted)
+  - [Preparing for an Age of Post-Quantum Cryptography](#preparing-for-an-age-of-post-quantum-cryptography)
+- [EMEA Forecasts](#emea-forecasts)
+  - [A Pivotal Year for Compliance](#a-pivotal-year-for-compliance)
+  - [Geopolitical Conflicts Drive Threat Activity](#geopolitical-conflicts-drive-threat-activity)
+  - [More Focus on Cloud Security](#more-focus-on-cloud-security)
+- [JAPAC Forecasts](#japac-forecasts)
+  - [North Korea Threat Actors Setting Their Sights on JAPAC](#north-korea-threat-actors-setting-their-sights-on-japac)
+  - [Chinese-Controlled Websites Posing as Local News Outlets Target Global Audiences with Pro-Beijing Content](#chinese-controlled-websites-posing-as-local-news-outlets-target-global-audiences-with-pro-beijing-content)
+  - [Cyber Criminals in Southeast Asia Continue to Innovate](#cyber-criminals-in-southeast-asia-continue-to-innovate)
+- [Conclusion](#conclusion)
+- [Contributors](#contributors)
 
 ## Introduction
 When looking at the year ahead, we never make predictions. Instead, we look at the trends we are already seeing, and provide realistic forecasts of what we expect to see in the wide world of cybersecurity.
@@ -53,7 +53,6 @@ Next year we anticipate malicious actors will continue their rapid adoption of A
 Information Operations (IO) threat actors will increasingly leverage gen AI tools to support their efforts. Deployment of AI capabilities has expanded beyond early use of generative adversarial network (GAN)-created profiles to backstop inauthentic personas, and has shifted to include the use of large language models (LLMs) to support content creation, and the manufacturing of seemingly genuine articles published to inauthentic websites. This is a significant force multiplier that increases the scale at which actors engaged in this space can produce content, and create additional layers of obfuscation. We expect this trend to continue; actors likely using increasingly available gen AI tooling for a variety of ends, including scaling content creation, producing more persuasive content, and backstopping inauthentic personas.
 
 > “2025 is the first year where we’ll genuinely see the second phase of AI in action with security.”
->
 > Sunil Potti. VP/GM, Google Cloud Security
 
 ### Next Phase of AI and Security
@@ -70,7 +69,6 @@ Outside of Ukraine, Russian cyber espionage will almost certainly continue to su
 We anticipate that institutional investments China has made in equipping its cyber threat operators over the last decade will continue to fuel the volume of threat activity and capability development trends into 2025. We will continue to observe Pro-People’s Republic of China (PRC) actors using stealthy tactics, including operational relay box (ORB) networks to obscure operator traffic to and from target environments, targeting of network edge devices to take advantage of vulnerable Internet-exposed attack surface and reduce their footprint in target environments, and exploitation of zero-day vulnerabilities as a byproduct of industrializing collection of software vulnerabilities at a national scale. Additionally, we expect Chinese state-sponsored actors to continue to be aggressive, and demonstrate a high risk tolerance.
 
 > “Geopolitical conflicts will continue driving cyber activity around the world, creating more complexity.”
->
 > Sandra Joyce. VP of Google Threat Intelligence at Google Cloud
 
 Pro-PRC information operations (IO) are expected to directly target elections and voters in countries and regions viewed as top strategic priorities for the PRC, most notably Taiwan and the U.S. This activity is expected to include impersonation of voters, promotion of disinformation about rigged votes, and video content featuring AI-generated news hosts. Pro-PRC IO have been largely ineffective at generating authentic engagement, except for isolated successes. However, narratives and tactics will remain aggressive, including use of ad hominem attacks and intimidation.
@@ -96,7 +94,6 @@ In 2025, PRC actors will continue to employ this strategy to deploy custom malwa
 Ransomware, data theft extortion, and multifaceted extortion are, and will continue to be in 2025, the most disruptive type of cyber crime globally—both due to the volume of incidents and the scope of potential damage for each event. The impact of ransomware and extortion operations will also continue to extend far beyond the initial victim. 2024 saw significant ransomware incidents in the healthcare sector that negatively impacted patient care at hospitals, blocked patients from refilling important prescriptions, and prevented doctors from running vital laboratory tests or billing insurance.
 
 > “Without question, multifaceted extortion and ransomware will continue in 2025, likely with an increase outside the U.S.”
->
 > Charles Carmakal. Mandiant CTO, Google Cloud
 
 Based on available evidence, ransomware and extortion operations to date in 2024 have affected more than 100 countries and every industry vertical. The number of newly identified data leak sites (DLS) doubling in 2024 over 2023, and the emergence of multiple new ransomware as a service (RaaS) offerings, illustrate the thriving and prolific nature of the ransomware and extortion threat landscape.
@@ -181,48 +178,50 @@ In 2025, organizations must prioritize a proactive and comprehensive approach to
 The Cybersecurity Forecast 2025 report aims to equip organizations with the insights and knowledge they need to navigate this complex landscape. By understanding evolving trends and potential threats, organizations can strengthen their defenses, and build a more resilient future.
 
 > “2025 is going to be the year when AI moves from pilots and prototypes into large-scale adoption.”
->
 > Phil Venables. VP, TI Security & CISO, Google Cloud
 
 ## Contributors
 The Cybersecurity Forecast 2025 report features insights from our security leaders:
 
-*   Charles Carmakal
-    Mandiant CTO, Google Cloud
-*   Sandra Joyce
-    VP of Google Threat Intelligence at Google Cloud
-*   Sunil Potti
-    VP/GM, Google Cloud Security
-*   Phil Venables
-    VP, TI Security & CISO, Google Cloud
+Charles Carmakal
+Mandiant CTO, Google Cloud
+
+Sandra Joyce
+VP of Google Threat Intelligence at Google Cloud
+
+Sunil Potti
+VP/GM, Google Cloud Security
+
+Phil Venables
+VP, TI Security & CISO, Google Cloud
 
 Many other security experts contributed to the report:
 
-*   Tufail Ahmed
-*   Dan Black
-*   Sarah Bock
-*   Michelle Cantos
-*   Casey Charrier
-*   Anton Chuvakin
-*   Jamie Collier
-*   Jennifer Fernick
-*   Felix Gröbert
-*   David Grout
-*   Adrian Hernandez
-*   Cris Brafman Kittner
-*   Steve Ledzian
-*   Yihao Lim
-*   Keith Lunden
-*   David Mainor
-*   John McGuiness
-*   Luke McNamara
-*   Matthew McWhirt
-*   Jens Monrad
-*   Mathew Potaczek
-*   Mike Raggi
-*   Kelli Vanderlee
-*   Alden Wahlstrom
-*   Robert Wallace
-*   Jess Xia
+Tufail Ahmed
+Dan Black
+Sarah Bock
+Michelle Cantos
+Casey Charrier
+Anton Chuvakin
+Jamie Collier
+Jennifer Fernick
+Felix Gröbert
+David Grout
+Adrian Hernandez
+Cris Brafman Kittner
+Steve Ledzian
+Yihao Lim
+Keith Lunden
+David Mainor
+John McGuiness
+Luke McNamara
+Matthew McWhirt
+Jens Monrad
+Mathew Potaczek
+Mike Raggi
+Kelli Vanderlee
+Alden Wahlstrom
+Robert Wallace
+Jess Xia
 
 For more information, visit cloud.google.com
