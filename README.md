@@ -213,7 +213,9 @@ Reports will be classified by a header that describes their primary content or e
 - [Snyk](https://snyk.io/reports/ai-code-security/) - [AI Generated Code Security Report](Annual%20Security%20Reports/2023/Snyk-AI-Generated-Code-Security-Report-2023.pdf) (2023) - Examines the security implications of AI-generated code across different sectors.
 
 ## Resources
-Annual reports are composed by a combination of paid and non-profit research both internal and external to the organization. Below you will find various organizations involved in cybersecurity research, consulting, and policy-making. It's divided into six main categories:
+Annual reports are the result of a collaborative effort, combining research from both paid and non-profit sources, drawn from within the organization and the broader cybersecurity community. These reports rely on the contributions of various organizations that help shape the field by setting standards, offering certifications, conducting research, and influencing policy.
+
+The categories below highlight the diverse roles these organizations play in building cybersecurity programs and advancing best practices. By exploring these groups, readers can gain insight into the ecosystem that underpins the development of annual reports and drives progress in the industry.
 
 **[Research Consulting](#research-consulting):** These are organizations that offer paid research services, market analysis, and consulting in the field of information technology and cybersecurity.
 
@@ -239,6 +241,7 @@ Annual reports are composed by a combination of paid and non-profit research bot
 - [Omdia](https://omdia.tech.informa.com/) - A global technology research powerhouse focusing on cybersecurity market analysis and digital transformation.
 
 ## Standards and Certifications
+- [American Institute of CPAs](https://us.aicpa.org/) - The AICPA SOC2 is a framework for managing and safeguarding customer data based on five trust service criteria: Security, Availability, Processing Integrity, Confidentiality, and Privacy.
 - [The Information Security Forum (ISF)](https://www.securityforum.org/) - A global, independent organization dedicated to benchmarking and sharing best practices in information security.
 - [The International Organization for Standardization (ISO)](https://www.iso.org/) - An international organizational body composed of representatives which conduct closed research for creation of standards.
 - [The Information Systems Audit and Control Association (ISACA)](https://www.isaca.org/) - An international professional association focused on IT governance, which conducts research for and on behalf of the members.
