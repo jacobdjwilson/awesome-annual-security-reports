@@ -139,6 +139,7 @@ Reports will be classified by a header that describes their primary content or e
 
 ## Physical Security
 - [Genetec](https://www.genetec.com/a/physical-security-report) - [State of Physical Security](Annual%20Security%20Reports/2025/Genetec-State-of-Physical-Security-2025.pdf) (2025) - Explores the current landscape of physical security, focusing on global trends and the impact of the economy on project timelines and ongoing difficulties in recruiting security professionals.
+- [Security Industry Association](https://www.securityindustry.org/report/security-megatrends-the-2025-vision-for-the-security-industry/) - [Security Megatrends](Annual%20Security%20Reports/2025/SIA-Security-Megatrends-2025.pdf) (2025) - Provides analysis on 10 top trends affecting security industry businesses and practitioners.
 
 ## AI and Emerging Technologies
 - [AICD](https://www.aicd.com.au/innovative-technology/digital-business/artificial-intelligence/governance-of-ai.html) - [Directors Introduction to AI](Annual%20Security%20Reports/2024/AICD-Directors-Introduction-to-AI-2024.pdf) (2024) - Provides an overview of artificial intelligence tailored for directors, highlighting its strategic implications, governance considerations, and best practices for AI implementation in organizations.
