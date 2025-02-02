@@ -34,6 +34,7 @@
     - [Vulnerabilities](#vulnerabilities)
     - [Ransomware](#ransomware)
     - [Data Breaches](#data-breaches)
+    - [Physical Security](#physical-security)
     - [AI and Emerging Technologies](#ai-and-emerging-technologies)
 - [Survey Reports](#survey-reports)
     - [Industry Trends](#industry-trends)
