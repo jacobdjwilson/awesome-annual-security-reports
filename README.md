@@ -183,6 +183,7 @@ Reports will be classified by a header that describes their primary content or e
   Examines application security challenges and strategies from the perspectives of CISOs, AppSec Directors, and DevSecOps managers across the UK, US, and Germany.
 - [Synopsys](https://www.synopsys.com/software-integrity/resources/analyst-reports/sans-devsecops-survey.html) - [SANS 2023 DevSecOps Survey](Annual%20Security%20Reports/2023/SANS-DevSecOps-Survey-2023.pdf) (2023) - Examines the current state of DevSecOps practices across various industries.
 - [Snyk](https://snyk.io/lp/state-of-open-source-2024) - [State of Open Source Security](Annual%20Security%20Reports/2024/Snyk-State-of-Open-Source-Security-2024.pdf) (2024) - Examines the current state of open source security, including trends and challenges across various industries.
+- [Traceable](https://www.traceable.ai/2025-state-of-api-security) - [Global State of API Security](Annual%20Security%20Reports/2025/Traceable-Global-State-of-API-Security-2025.pdf) (2025) - Annual survey gathering insights from 1,548 respondents across 100+ countries on the state of API security.
 
 ## Cloud Security
 - [Fortinet](https://www.fortinet.com/resources/reports/cloud-security) - [Cloud Security Report](Annual%20Security%20Reports/2025/Fortinet-Cloud-Security-Report-2025.pdf) (2025) - Examines the state of cloud security, highlighting key challenges, trends, and best practices for organizations across various industries.
