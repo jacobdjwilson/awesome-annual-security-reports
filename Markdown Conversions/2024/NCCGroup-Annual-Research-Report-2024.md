@@ -1,303 +1,864 @@
-# Cyber Threat Intelligence Annual Report 2024
+# NCC Group’s 2024 Annual Research Report
+
 ## Table of Contents
-- [Foreword](#foreword)
-- [Contents](#contents)
-- [SECTION 1 Timeline of Critical Incidents](#section-1-timeline-of-critical-incidents)
-- [SECTION 2 Ransomware Key Statistics](#section-2-ransomware-key-statistics)
-- [SECTION 3 Ransomware Statistical Trends 2024](#section-3-ransomware-statistical-trends-2024)
-- [SECTION 4 Law Enforcement Targeting Ransomware](#section-4-law-enforcement-targeting-ransomware)
-- [SECTION 5 What have Nation-States been up to](#section-5-what-have-nation-states-been-up-to)
-- [SECTION 6 Key Thematic Research Areas 2024](#section-6-key-thematic-research-areas-2024)
-- [SECTION 7 Misinformation, Disinformation and Malinformation](#section-7-misinformation-disinformation-and-malinformation)
-- [SECTION 8 Vulnerability Threat Landscape](#section-8-vulnerability-threat-landscape)
-- [SECTION 9 NCC Group Customer Impact: Unravelling the Breach 2024](#section-9-ncc-group-customer-impact-unravelling-the-breach-2024)
-
-## Foreword
-Reflecting on the cyber security landscape of 2024, it is evident that the challenges organisations faced were unprecedented in scale and complexity. Last year was marked by a series of high-impact cyber incidents that tested the resilience of businesses and institutions worldwide. From crippling ransomware attacks to sophisticated nation-state espionage campaigns, the financial and operational repercussions underscored the urgent need for stronger defences and more strategic responses.
-
-This annual report provides a detailed analysis of the pivotal events that shaped the cyber security environment in 2024. By exploring key incidents—from the exploitation of zero-day vulnerabilities to global law enforcement efforts dismantling cybercriminal networks—we aim to equip organisations with the insights needed to fortify their operations against similar threats in the future.
-
-Looking to the future, the challenges posed by cyber threat actors are set to escalate, with consequences that may feel like science fiction but are all too real. Cybercriminals and nation-state actors are capitalising on the growing integration of technology into every aspect of our lives. This seamless connectivity, while transformative, presents attackers with increasing opportunities to disrupt systems, steal data, and create chaos at an unprecedented scale.
-
-Third-party compromises are expected to remain a critical concern. The next major breach could send devastating ripple effects across supply chains. In parallel, the rapid advances in artificial intelligence (AI) are giving rise to a new generation of cybercriminal tactics. With AI-driven tools, phishing schemes are becoming more convincing, while generative AI, deepfake technology, and advanced language models make detecting attacks significantly harder.
-
-Cloud vulnerabilities and insecure APIs continue to threaten sensitive business data and critical systems. A single misconfiguration in the cloud could expose entire networks, while poorly secured APIs remain an entry point for attackers to infiltrate systems. These persistent issues emphasise the importance of maintaining robust security hygiene in rapidly evolving technological environments.
-
-Meanwhile, the proliferation of Internet of Things (IoT) devices presents a mounting risk. From smart appliances to city-wide IoT systems, these devices often lack adequate security, making them prime targets for attackers. Cybercriminals have already hijacked IoT devices to build massive botnets, and as these technologies become integral to critical infrastructure, their potential to disrupt operations and expose sensitive data will only grow.
-
-Even ransomware —a long-standing cyber threat—continues to evolve. While traditional attacks focused on encrypting data, many attackers now prioritise data theft, which is faster, easier, and more profitable. Stolen information can be leveraged for extortion, fraud, identity theft, or even future breaches, making it a highly valuable commodity in the hands of cybercriminals.
-
-The geopolitical dimension of cyber security also makes for an ever-changing threat landscape. Nation-state actors are intensifying their efforts to compromise critical infrastructure, including energy, healthcare, and telecommunications. Sophisticated campaigns, such as those by Volt Typhoon, have already highlighted the fragility of these sectors. The use of “pre-positioning”—where adversaries covertly infiltrate systems in preparation for future sabotage or disruption—is a stark reminder of the hidden vulnerabilities that could be activated during times of geopolitical tension or conflict.
-
-In response to these threats, NCC Group remains committed to strengthening its threat intelligence capabilities. Through collaboration with international partners and leveraging cutting-edge technologies, we aim to help our clients not only understand the evolving threat landscape but also act decisively to mitigate risks.
-
-As we publish this report, the cyber security challenges ahead demand that businesses, governments, and individuals stay vigilant and proactive. By understanding the risks and acting today, we can collectively work towards a more secure digital future.
-Thank you for your continued trust in us as we navigate these challenges together.
-Sincerely,
-Matt Hull
-Global Head of Threat Intelligence
-
-## Contents
-SECTION 1 
-Timeline of 
-Critical Incidents ...................................... 4
-SECTION 2 
-Ransomware 
-Key Statistics .......................................... 12
-SECTION 3
-Ransomware Statistical 
-Trends 2024 .................................................16
-SECTION 6
-Key Thematic 
-Research Areas 2024
- ...................................................32
-SECTION 7
-Misinformation, Disinformation and 
-Malinformation
- ...................................................36
-SECTION 8
-Vulunerability Threat 
-Landscape
- ...................................................40
-SECTION 9
-NCC Group Customer Impact: 
-Unravelling the Breach 2024
- ...................................44
-
-## SECTION 1 Timeline of Critical Incidents
-The timeline below provides insights into cyber incidents observed across 2024. This encompasses everything from ransomware attacks and nation-state targeting, to law enforcement and government activity.
-
-11/01/24
-The Cyber Security and Infrastructure Security Agency (CISA), National Security Agency (NSA) and the Federal Bureau of Investigation (FBI) issued an advisory on Volt Typhoon, regarding their compromise of US critical infrastructure networks. The advisory highlighted that Volt Typhoon is pre-positioning itself on IT networks to enable disruptive or destructive cyberattacks in the event of a major crisis or conflict with the United States.
-
-Volt Typhoon has targeted multiple critical infrastructure sectors, including Communications, Energy, Transportation Systems, and Water and Wastewater Systems, across the US and its territories, including Guam. The group’s activities are not consistent with traditional cyber espionage but instead are focused on enabling lateral movement to operational technology (OT) assets to disrupt functions.
-
-20/02/24
-Chinese threat actors, UNC5221, were suspected of exploiting zero-day vulnerabilities in Ivanti Connect Secure VPN and Ivanti Policy Secure gateway. CVE-2023-46805 and CVE-2024-21887, affect all supported versions of the Ivanti Connect Secure VPN and Policy Secure Gateway. Their exploitation allows attackers to bypass authentication and execute arbitrary commands with elevated privileges. The nation-state group used advanced methods to maintain persistence and evade detection, including custom malware and deception of Ivanti’s Integrity Checker Tool.
-
-28/02/24
-Operation Cronos was initiated by the UK’s National Crime Agency (NCA), in collaboration with US and EU agencies, and aimed to dismantle the infrastructure supporting LockBit ransomware. The operation dismantled over 30 servers essential to LockBit’s infrastructure. This included servers to host malware and coordinate ransom negotiations, as well as vital backend systems. Authorities arrested multiple individuals from developers to affiliates who executed attacks. Seized decryption keys were distributed to victims, allowing them to recover data without paying ransoms.
-
-05/03/24
-Change Healthcare, a subsidiary of the UnitedHealth Group, suffered a significant ransomware attack by the ALPHV/Blackcat group. The attackers claimed to have stolen 6 terabytes of sensitive data from the company. The breach disrupted Change Healthcare’s systems, which serve as a critical intermediary for medical and insurance data processing. Following the breach, the company engaged cyber security experts from Mandiant and Palo Alto to investigate the attack.
-
-06/04/24
-The personal information of up to 43 million citizens was compromised in a data breach at France Travail, a French government department responsible for assisting unemployed individuals. The breach exposed names, dates of birth, social security numbers, email addresses, postal addresses, and phone numbers. The incident, which occurred between February 6 and March 5, was investigated by the Cybercrime Brigade of the Paris Judicial Police Department.
-
-The breach raised concerns about identity theft and fraud, as the stolen data could be linked to other breaches to create larger profiles on individuals. French citizens were advised to be vigilant against phishing attempts and ensure that their passwords are strong. This breach follows a previous incident last year that affected 10 million citizens and is considered the worst-ever data breach in France. The attack coincides with DDoS attacks on French government departments, claimed by the pro-Russia Anonymous Sudan group.
-
-07/02/24
-A major cyber incident targeted several key maritime ports and vessels, deploying sophisticated ransomware and malicious software that disrupted port operations and manipulated Automatic Identification Systems (AIS) on ships. This led to substantial delays, misrouted cargo, and increased risk of collisions.
-
-The financial impact was severe, with estimated losses exceeding $500 million, including direct operational disruptions and indirect costs like insurance claims and ransom payments. Major ports in Europe, Asia, and North America, including the Port of Rotterdam and the Port of Singapore, experienced extensive delays and operational shutdowns.
-
-Sensitive data, such as cargo manifests and crew details, were compromised, posing risks of identity theft and espionage. The incident highlighted the urgent need for enhanced cyber security measures in the maritime industry, which relies heavily on outdated systems and lacks robust cyber security protocols.
-
-02/05/24
-The healthcare communication platform ConnectOnCall experienced a significant data breach, compromising the personal information of 900,000 patients and healthcare providers.
-
-The breach involved unauthorised access to the platform between February 16 and May 12, 2024. Exposed data includes names, phone numbers, medical record numbers, dates of birth, and details related to health conditions, treatments, and prescriptions. ConnectOnCall promptly secured its systems, took the platform offline, and enlisted external cyber security specialists to investigate and enhance security measures.
-
-12/05/24
-Operation Endgame was a significant international effort led by France, Germany, and the Netherlands, supported by Eurojust. This also involved Denmark, the UK and US, as well as Armenia, Bulgaria, Lithuania, Portugal, Romania, Switzerland, and Ukraine. The operation targeted botnet infrastructure used for deploying malware, including ransomware, affecting millions globally.
-
-Authorities disrupted over 100 servers and seized more than 2000 domains linked to malware distribution, particularly targeting “dropper” malware families like IceID, Smokeloaded, Pikabot, and Bumblebee. Endgame’s impact extended beyond the immediate takedown, with authorities arresting suspects in Ukraine and Armenia, and issuing arrest warrants for eight individuals in Germany.
-
-27/05/24
-The ransomware attack on Synnovis impacted healthcare services across multiple London hospitals. Synnovis provides essential pathology services to Guy’s and St. Thomas’ NHS Foundation Trust and King’s College Hospital NHS Trust, as well as general practitioners across six London boroughs.
-
-The attack disrupted IT systems that handle blood tests and other diagnostics, creating severe delays in patient care. As a result, critical incidents were declared in some hospitals due to resource strain, and some non-urgent procedures were cancelled or rescheduled. Blood transfusion systems were notably affected, with emergency protocols in place to reserve blood only for essential transfusions.
-
-03/06/24
-The BlackSuit ransomware attack on CDK Global caused a massive disruption to car dealerships across North America, prompting a critical outage that forced CDK to shut down its IT systems.
-
-This resulted in dealerships being unable to process sales, manage inventory, or provide customer service, leading to significant operational challenges. CDK Global initiated negotiations with BlackSuit to avoid leaking data. The attack affected major dealership groups such as Penske Automotive and Sonic Automotive, which had to rely on manual operations.
-
-19/06/24
-The second phase of Operation Cronos involved intense international efforts, including sanctions and legal actions against key actors. Notably, a Russian national, identified as the developer and administrator of LockBit, was sanctioned by the United Kingdom, United States, and Australia.
-
-The sanctions, including asset freezes and travel bans, were imposed by the UK Foreign Commonwealth and Development offices, the US Department of the Treasury’s OFAC, and the Australian Department of Foreign Affairs and Trade. A US Indictment was unsealed against this individual for his role in LockBit’s creation.
-
-12/07/24
-AT&T reported a major data breach affecting the call and SMS logs of approximately 109 million customers. The breach targeted AT&T’s data stored on the Snowflake cloud platform, where attackers accessed logs from multiple timeframes. These logs contained metadata such as phone numbers, call durations, and cell sited IDs. The breach raised significant security concerns due to the sensitive nature of the communications data involved, despite the lack of direct personal identifiers.
-
-After discovering the breach, AT&T collaborated with the FBI and the US Department of Justice (DoJ) to delay public disclosure, citing potential risks to national security and public safety.
-
-06/08/24
-The Texas-based UMC health system suffered a ransomware attack that severely impacted its operations. The incident led the hospital to temporarily shut down its IT system to prevent further compromise, which disrupted patient services and forced the diversion of emergency patients.
-
-Initially, many patients were rerouted, though the emergency center eventually resumed ambulance intake, with limited patient diversions still in place. UMC’s 30 clinics across Texas and New Mexico remained operational, although certain services like radiology were impacted and required downtime.
-
-26/09/24
-The third phase of Operation Cronos targeting LockBit was coordinated by Europol, Eurojust, and law enforcement from 12 countries. This operation led to significant seizures and arrests. Key actions included the arrest of a suspected LockBit developer in France and two individuals in the UK linked to LockBit affiliates. Spanish authorities seized nine servers and arrested a hosting service administrator.
-
-Additionally, the US, UK, and Australia imposed sanctions on individuals tied to LockBit and Evil Corp. Europol’s Joint Cybercrime Action Taskforce played a central role, providing analytical support, crypto-tracing expertise, and coordinating technical operations.
-
-01/10/24
-The BidenCash marketplace leaked over 1.2 million payment card details on a cybercrime forum. The leaked data included card numbers, expiration dates, CVV numbers, and other personal information, such as names and addresses. This leak was part of a promotional strategy by BidenCash to advertise their services. The compromised cards were primarily from the US, India, and Brazil.
-
-07/10/24
-Operation Magnus targeted two major infostealer malware families: RedLine and META. This operation was led by US agencies including the FBI and IRS Criminal Investigation, in partnership with Europol, Eurojust, and law enforcement in Belgium and the Netherlands. These infostealers capture sensitive data, such as login credentials, financial information, and cryptocurrency account details, which are then sold on dark web forums.
-
-The operation disrupted the infrastructure supporting these malware families, including seizing domains, servers, and telegram channels linked to their administrator. One of the key figures, Maxim Rudometov, a Russian national, was charged for his role in the development and operation of RedLine. He faces charges related to fraud and money laundering.
-
-28/10/24
-Operation Serengeti led by INTERPOL and AFRIPOL between September and October 2024, targeted cybercriminals across 19 African countries. The operation resulted in the arrest of 1,006 suspects and the dismantling of 134,089 malicious infrastructures. The operation focused on various cybercrimes, including ransomware, business email compromise (BEC), digital extortion, and online scams. It identified over 35,000 victims and linked cases to nearly $193 million in financial losses worldwide.
-
-31/10/24
-The FBI and CISA issued a joint statement revealing a cyber espionage campaign by the People's Republic of China (PRC) targeting commercial telecommunications infrastructure. PRC-affiliated actors compromised networks at multiple telecommunications companies, enabling the theft of customer call records, compromising private communications in government, and copying information subject to US law enforcement requests.
-
-The FBI and CISA have provided technical assistance, sharing information with potential victims, and working to strengthen cyber defences across the commercial communications sector. They encourage any organisation that believes it might be a victim to contact their local FBI Field Office or CISA.
-
-13/11/24
-Ransomware targeted the Paris Olympics, affecting IT systems at the Reunion des Musees Nationaux, which manages nearly 40 museums, including Olympic venues like the Grand Palais. Although the attackers encrypted some data and demanded a ransom, quick action by cyber security teams prevented significant disruptions to Olympic events. French authorities, aided by the pre-event security enhancements from the French cyber security agency, were prepared for such attacks and had implemented robust defenses, including penetration tests and awareness initiatives. The attack was one of over 68 attempted breaches recorded since the Olympic games started.
-
-01/12/24
-PIH Health faced a major disruption due to a ransomware attack that compromised part of its network. In response, the healthcare provider shut down its entire network as a precaution, affecting critical communication systems, including phone lines, voice messages and internet services across its hospital.
-
-PIH Health engaged third-party cyber forensic specialists to assist with the investigation and recovery efforts. The ransomware virus was isolated, and work is ongoing to securely restore affected systems.
-
-04/12/24
-Reports confirm a two-year campaign in which Russian cyber-espionage group Turla hijacked the infrastructure of the Pakistani threat actor Storm-0156 to conduct their own attacks. By taking over the Pakistani group’s servers, Turla was able to launch covert operations against already compromised targets, making their activities harder to detect. This tactic of hijacking other hackers' infrastructure is a sophisticated method that allows Turla to mask their operations and exploit the existing access and tools of other threat actors.
-
-04/12/24
-Law enforcement agencies successfully demolished sophisticated Russian money laundering networks in a large worldwide investigation known as "Operation Destabilise." The investigation focused on two major Russian-language networks, Smart and TGR, which facilitated the laundering of billions of dollars for cybercriminals, drug traffickers, and sanctioned Russian leaders.
-
-The operation resulted in 84 arrests, the confiscation of more than £20 million in cash and cryptocurrency, and the suspension of operations in 30 countries. The networks exploited bitcoin exchanges to transfer illicit payments without crossing physical borders, having a substantial influence on global cybercrime and money laundering activities.
-
-08/12/24
-Threat actors successfully hacked the US Treasury Department by exploiting a remote support platform used by the federal agency. According to a letter obtained by the New York Times, the incident has been attributed to a Chinese state-sponsored Advanced Persistent Threat (APT) actor. BeyondTrust's investigation revealed two zero-day vulnerabilities, CVE-2024-12356 and CVE-2024-12686, which enabled the threat actors to breach and take control of Remote Support SaaS instances.
-
-As the Treasury Department was a customer of one of these compromised instances, the attackers were able to access agency computers and remotely steal documents.
-
-18/12/24
-Mark Sokolovsky, a 28-year-old Ukrainian national, has been sentenced to 60 months in federal prison for his role in operating the Raccoon Infostealer malware. Sokolovsky conspired to run Raccoon Infostealer as a malware-as-a-service (MaaS), allowing cybercriminals to lease access to the malware for approximately $200 per month, paid in cryptocurrency. This malware was used to steal personal data, including login credentials and financial information, then used for financial crimes or sold on cybercrime forums.
-
-25/12/24
-4.45GB of data leaked from Cisco’s DevHub platform, following an earlier breach in October. This incident was caused by a misconfiguration that made certain files publicly accessible. The leaked data, posted online by the hacker known as IntelBroker, included Java binaries, source code, cloud server disk images, cryptographic signatures, and internal project archives.
-
-Cisco emphasised that its internal systems and enterprise environments remain secure, and that no sensitive customer information such as personally identifiable information (PII) or financial data was exposed. The company has since corrected the configuration error and enhanced its security measures to prevent similar incidents in the future.
-
-## SECTION 2 Ransomware Key Statistics
-![Figure 1 Number of Ransomware Attacks 2023 vs 2024]
-![Figure 2 Number of Ransomware Attacks by Region 2024]
-![Figure 3 Top 10 Threat Actors 2024]
-![Figure 4 Top 10 Threats Actors 2023]
-
-15%
-Global ransomware attacks increased by 15% in 2024
-
-27%
-Industrials accounted for 27% of ransomware attacks in 2024
-
-10%
-LockBit was responsible for 10% of attacks in 2024
-
-![Figure 5 Top 10 Targeted Sectors 2024]
-![Figure 6 Top 10 Targeted Sectors 2023]
-![Figure 7 Top 10 Ransomware Attacks by Sub-Industry 2024]
-![Figure 8 Top 10 Ransomware Attacks by Sub-Industry 2023]
-
-## SECTION 3 Ransomware Statistical Trends 2024
-2024 saw a major shift in the number of attacks per month within the ransomware threat landscape. 5263 attacks were recorded, an increase of 15% from 2023. This surge was particularly noticeable in the latter half of 2024, with November and December experiencing the highest monthly attacks, 565 and 574 respectively. This differs from previous observations in which December normally sees a decrease in ransomware attacks around the holiday season.
-
-All regions experienced an increase in ransomware attacks in 2024. North America remains the most targeted region with 2869 attacks, up 25% from 2023. Asia observed 571 attacks, a 23% increase from 2023, and South America 276, an increase of 29%. Europe, Oceania and Africa saw modest increases alike, which are further detailed in the regional section below.
-
-LockBit remained the most prominent threat actor of the year, although the group’s activity declined from 1034 attacks in 2023 down to 526 in 2024. New actors such as RansomHub rose up the rankings, contributing to the overall increase in attacks. Other notable actors like Play and Akira saw an increase in their activity, with Akira nearly doubling their attacks from 164 in 2023 to 303 in 2024. Lastly, Funksec, a new group which emerged as the top threat actor for December 2024, will be one to watch in 2025.
-
-Several factors contributed to the increase in ransomware attacks in 2024, in which exploited vulnerabilities and compromised credentials were among the top causes. In addition, geopolitical tensions heightened the risk of ransomware being used as a tool to achieve political goals. Moreover, attacks have become more profitable due to increasing cryptocurrency values further escalating these threats. A rise in Ransomware-as-a-Service (RaaS) platforms has also made it easier for attackers to launch attacks, whilst law enforcement action led to the emergence of new threat actors. In 2023, we recorded 62 threat actors which increased to 94 in 2024.
-
-### Industrials Remains the Top Ransomed Sector
-The industrials’ sector was the most targeted, up from 1240 attacks in 2023 to 1424 in 2024, an increase of 15%. This sector is a key component of the global economy, making it a prime target for threat actors. The attacks on the sector have been disruptive, affecting critical infrastructure and causing significant operational downtime.
-
-Many industrial organisations still rely on legacy systems that may not be adequately updated or patched. These outdated systems often have vulnerabilities which threat actors exploit to gain information or infiltrate the system and drop ransomware programs. Fog ransomware was observed to be targeting virtual environments and backup systems that are critical to industrial operations. It can encrypt machine files and delete backups to disrupt operational continuity. Helldown also leveraged tools from LockBit’s leaked builder to actively target the manufacturing sector and proceed with dual extortion tactics.[^1]
-
-[^1]:  Helldown also leveraged tools from LockBit’s leaked builder to actively target the manufacturing sector and proceed with dual extortion tactics.
-
-In addition to vulnerabilities posed by legacy systems, the convergence of Operational Technology (OT) and Information Technology (IT) in industrial environments has expanded the attack surface.[^2] While IT systems are typically more secure, OT systems may lack the same level of protection which provides an entry point for various threat actors specialising in the sector. For instance, BlackSuit, formerly known as Royal, rebranded and enhanced its capabilities to target industrial organisations more effectively to cause significant operational disruption. Furthermore, the sector’s reliance on interconnected supply chains makes it particularly vulnerable to ransomware attacks, in which one successful attack can have a cascading effect on others within the supply chain, significantly increasing its impact.
-
-[^2]: The convergence of Operational Technology (OT) and Information Technology (IT) in industrial environments has expanded the attack surface.
-
-The industrial sector must acknowledge the changing landscape of cyber threats and take proactive measures to protect its operations. Organisations can better fight against sophisticated threats by investing in legacy system modernisation, enhanced cyber security measures, and employee training. This comprehensive approach will reduce the dangers posed by ransomware and other cyberattacks, assuring the resilience and continuation of vital industrial operations.
-
-### RansomHub Becomes the Most Active Threat Actor
-RansomHub emerged as the most active threat actor following the attempted takedown of LockBit 3.0. Early in H1 2024, LockBit continued to be the dominant player within the ransomware landscape. However, law enforcement operations, notably Operation Cronos, which took down their infrastructure and revealed the identity of their lead operator, caused a significant drop in activity by the end of H2 2024.[^3]
-
-[^3]: law enforcement operations, notably Operation Cronos, which took down their infrastructure and revealed the identity of their lead operator, caused a significant drop in activity by the end of H2 2024.
-
-These efforts opened a vacuum in the ransomware landscape which caused many affiliates to either find another operator or create their own variant. RansomHub emerged as a top destination for high level affiliates of LockBit and ALPHV.
-
-Descended from previously prominent variants like Knight and Cyclops, RansomHub’s reputation and technical expertise opened the door for experienced LockBit affiliates to begin conducting attacks with RansomHub.[^4]
-
-[^4]: Descended from previously prominent variants like Knight and Cyclops, RansomHub’s reputation and technical expertise opened the door for experienced LockBit affiliates to begin conducting attacks with RansomHub.
-
-This trend is reflected by the data in H1 2024, where LockBit held 433 victims compared to RansomHub with 123. In H2 2024, RansomHub numbers grew to 378 victims, surpassing LockBit with only 93. These numbers follow law enforcements’ efforts against LockBit, likely influencing the decline. Equally, the authenticity of these numbers remains in question, where it is suspected LockBit artificially inflated their numbers following the takedown.
-
-Overall, RansomHub’s emergence can be attributed to the dynamic between RaaS and law enforcement operations. Targeting major players has forced affiliates to find the next best operator who can provide them with the best software and commission.
-
-This trend is expected to continue with increased activity by major RaaS operators like RansomHub, along with the emergence of more variants. Law enforcement operations will continue; however, affiliates will create or join other ransomware operators where major players are targeted.
-
-### Regional Ransomware Trends
-North America (2689 attacks) and the European Union (1272 attacks) continued to see the greatest number of attacks, in line with our observations since 2021.
-
-The data also indicated a 23% rise in attacks in Asia, a 29% increase in South America, and a 22% uptick in Oceania, when compared to 2023. High payouts, geopolitical pressures, and a thriving RaaS ecosystem are potential factors which explain the multi-regional increase.
-
-2024 was on pace to be a record year for ransom payments, further buoyed by increasing cryptocurrency values.[^5] 2024 also saw a record $75 million ransom payment to the Dark Angels group. The financial incentive to conduct attacks has drawn in more operators and affiliates who look to increase their operations on a global scale. Moreover, organisations in Asia, South America, and Oceania have also been undergoing rapid digitisation, increasing the risk of threat actors looking to exploit weak cyber security measures.
-
-[^5]: 2024 was on pace to be a record year for ransom payments, further buoyed by increasing cryptocurrency values.
-
-Geopolitical factors are also likely at play. States such as the Democratic People's Republic of Korea (DPRK), who invest significantly into financially motivated cybercrime, made over $1.34 billion, a 103% increase from 2023’s $660.50 million.[^6] Moreover, the Russia-Ukraine war and tensions in the South China Sea have placed organisations in the crossfire of threat actors, blurring the lines between state-sponsored and criminal activities.[^7] Ransomware operators can be leveraged as a geopolitical tool by targeting CNI and simultaneously funding regimes, whilst averting kinetic military operations.[^8]
-
-[^6]: States such as the Democratic People's Republic of Korea (DPRK), who invest significantly into financially motivated cybercrime, made over $1.34 billion, a 103% increase from 2023’s $660.50 million.
-[^7]: Moreover, the Russia-Ukraine war and tensions in the South China Sea have placed organisations in the crossfire of threat actors, blurring the lines between state-sponsored and criminal activities.
-[^8]: Ransomware operators can be leveraged as a geopolitical tool by targeting CNI and simultaneously funding regimes, whilst averting kinetic military operations.
-
-The increased number of ransomware operators, and possibly affiliates, has created a thriving RaaS ecosystem allowing threat actors to increase attack volume on organisations outside of the EU and NA. High payouts and nation-states who support ransomware operations against geopolitical competitors have allowed ransomware threat actors to enjoy an environment with more sophisticated resources. This has also lowered their risk of being apprehended.
-
-### Conclusion
-In 2025, we expect to see a continued increase in attack numbers, in line with the incline observed since 2021. Attacks are highly likely to be directed at sectors like industrials, who have historically been vulnerable to ransomware attacks. Law enforcement operations will continue to target major operators. However, the thriving RaaS ecosystem will allow affiliates to easily change their operator and continue conducting attacks under a different ransom group name. Growing use of AI and machine learning to assist with attacks, and defence strategies will significantly reshape the cyber security landscape. Basic security foundations must be implemented by organisations to ensure a proactive defence against ransomware. Integrating technological and automated solutions alike, such as AI-assisted measures, should also be considered to facilitate the process where possible.
-
-## SECTION 4 Law Enforcement Targeting Ransomware
-Despite multiple successes in 2024, in the form of arrests, convictions, charges, and infrastructure takedowns, it has sometimes felt like law enforcement are playing a game of whack-a-mole. Disruptions are often temporary, with recently targeted actors re-emerging shortly after.
-
-### LockBit
-In operation since late 2019, LockBit have already gone through multiple stages of evolution and have proven resilient to law enforcement interventions. In February 2024, the UK’s NCA, alongside international partners, conducted Operation Cronos.
-
-This internationally collaborative effort seized control of LockBit’s primary administration environment which enabled the group’s affiliates to build and conduct their own attacks.
-
-Equally, it targeted LockBit’s dark web leak site where they hosted and threatened to publish their victims’ information. This was co-opted by the NCA to post information pertaining to LockBit’s operations, their source code, and intelligence from their systems regarding their services, affiliates, and past activity.[^9]
-
-[^9]: This was co-opted by the NCA to post information pertaining to LockBit’s operations, their source code, and intelligence from their systems regarding their services, affiliates, and past activity.
-
-![Figure 9 Notice on LockBit's leak site stating control had been taken by the NCA]
-
-LockBit were however back in operation 5 days later, stating that only servers running PHP were lost and backup systems unaffected. The group posted details about their breach and their plans to reinforce their infrastructure to avoid future hacks.
-
-They created a new leak site with a countdown to releasing victim information. LockBit offered up a reward bounty for anybody able to find and report to LockBit, a vulnerability in the latest PHP version. It should be noted that some of the victims posted on their new leak site were previous LockBit victims, leading to speculation that the group was scrambling to ‘save face’.[^10]
-
-[^10]: It should be noted that some of the victims posted on their new leak site were previous LockBit victims, leading to speculation that the group was scrambling to ‘save face’.
-
-Shortly after the commencement of Operation Cronos in February, LockBit member Mikhail Vasilev was sentenced to four years in prison and ordered to pay $860k in restitution to their Canadian victims. Although arrested in November 2022, it wasn’t until February 2024 that he pled guilty to eight criminal charges, including cyber extortion and weapons offenses. The timing of the guilty plea and sentencing was an additional win for law enforcement.[^11]
-
-[^11]: The timing of the guilty plea and sentencing was an additional win for law enforcement.
-
-Despite these setbacks, NCC Group reported in the May edition of the Threat Pulse that LockBit was the most active ransomware group, with 176 reported victims. It should be noted that these figures were obtained from LockBit’s dark web leak site and are based off LockBit’s own reporting. Given the suspicion that they were artificially inflating their numbers with previously targeted victims, these figures were observed with a degree of scepticism.
-
-May of 2024 saw the UK, US, and Australia join in sanctioning Dmitry Yuryevich Khoroshev, a Russian national and accused leader of LockBit, who operated under the name LockBitSupp.[^12] Despite sanctions, there were no arrests, and LockBit continues to be active. The group has shown resilience and adaptability in the past, and it would be unwise to discount them from a revival in the future. In fact, we may observe the group’s resurgence in 2025.
-
-[^12]: May of 2024 saw the UK, US, and Australia join in sanctioning Dmitry Yuryevich Khoroshev, a Russian national and accused leader of LockBit, who operated under the name LockBitSupp.
-
-A recent warning in December 2024 by the alleged group leader, LockBitSupp, announced the return of LockBit 4.0 in the new year. A dark web post stated that we should anticipate new ransomware activity from February 3rd, 2025. This information is to be taken with a pinch of salt, as LockBit may be looking to maintain its notoriety. The takedown of ransomware groups is nonetheless a constant game of cat and mouse, it would therefore be unsurprising should the group re-emerge under a fourth edition.
-
-### ALPHV / BlackCat
-ALPHV/BlackCat’s dark website was shut down less than two weeks after the NCA disrupted LockBit’s infrastructure, with a banner stating it was seized by law enforcement. The NCA, however, stated that it had no connection to BlackCat going offline.[^13]
-
-[^13]: The NCA, however, stated that it had no connection to BlackCat going offline.
-
-It is likely that this was an exit scam using the smokescreen of law enforcement to cover their tracks, though it is possible that the group was spooked by the disruption of LockBit. Additionally, BlackCat had recently received a payout of over $20 million from Optum, a unit within UnitedHealth’s Change Healthcare; it is possible that the group disappeared to avoid sharing the prize with affiliates.[^14]
-
-[^14]: Additionally, BlackCat had recently received a payout of over $20 million from Optum, a unit within UnitedHealth’s Change Healthcare; it is possible that the group disappeared to avoid sharing the prize with affiliates.
-
-Despite going offline at the start of the year, it appears that ALPHV/BlackCat have returned under a new name, Cicada3301. Cicada3301 has been active since June 2024, only a few months after BlackCat’s exit scam. The group shares multiple characteristics with BlackCat, namely that the strain is written in Rust. Cicada3301 is not an exact BlackCat clone, but it is believed that the developers of the Cicada3301 toolset had either seen BlackCat’s code base or were the same developers themselves.[^15]
-
-[^15]: Cic
+- [Executive Summary: Research at NCC Group](#executive-summary-research-at-ncc-group)
+- [25 Years of Research at NCC Group](#25-years-of-research-at-ncc-group)
+- [Cryptography Services](#cryptography-services)
+- [Hardware and Embedded Systems](#hardware-and-embedded-systems)
+- [Security Research Team, Fox-IT](#security-research-team-fox-it)
+- [Future Research](#future-research)
+- [Our Research in 2024](#our-research-in-2024)
+- [Acknowledgements](#acknowledgements)
+- [About Research at NCC Group](#about-research-at-ncc-group)
+
+1
+People powered tech-enabled cyber security
+NCC Group’s 2024 
+Annual Research 
+Report
+Ristin Rivera 
+Research Program Administrator
+Andy Davis
+Global Research Director
+3
+
+## Executive Summary: Research at NCC Group
+The 2024 Research Report highlights a year of significant contributions to the cybersecurity 
+community by NCC Group. Through pioneering research, innovative tools, and active 
+engagement with industry and academia, NCC Group continues to lead in advancing 
+cybersecurity practices and addressing evolving challenges.
+This year, we published:
+Our research this year covered a wide range of critical 
+topics. In vulnerability research and exploitation 
+techniques, we focused on identifying and addressing 
+weaknesses in software and hardware systems to 
+mitigate security risks. In network and system security, we 
+developed advanced strategies for detection, mitigation, 
+and protection against potential threats. Our work in 
+malware and ransomware analysis provided valuable tools 
+and methodologies to counter emerging and increasingly 
+sophisticated threats.
+In the field of cryptography, we explored innovative 
+solutions for secure communications, particularly in 
+preparing for the challenges posed by a post-quantum 
+world. We also analyzed the integration of AI into 
+cybersecurity, assessing both the risks and opportunities 
+presented by these technologies. 
+Additionally, we addressed vulnerabilities in 
+telecommunications infrastructure, emphasizing the 
+importance of securing critical systems that underpin 
+global communications.
+Looking ahead to 2025, we remain committed to the 
+exploration of cybersecurity. Together, with our partners 
+and the global community, we aim to build a safer, more 
+secure digital world.
+Contents
+25 Years of Research 
+at NCC Group...................4
+Cryptography 
+Services............................6
+Hardware and 
+Embedded Systems.
+........8
+Security Research 
+Team, Fox-IT .
+.................10
+Our Research 
+in 2024............................16
+Security Research  
+Services .........................12
+Acknowledgements
+........................................36
+About Research at 
+NCC Group.....................38
+Section 01
+Section 02
+Section 03
+Section 04
+Section 07
+Section 05
+Section 08
+Section 09
+Future 
+Research........................14
+Section 06
+48
+52
+10
+17
+Common Vulnerabilities and 
+Exposures (CVEs), showcasing 
+our commitment to identifying 
+and addressing software and 
+hardware vulnerabilities.
+Blog Posts, offering in-depth 
+insights, technical guidance, 
+and thought leadership 
+across various domains of 
+cybersecurity.
+Open-Source Tools, empowering 
+the global cybersecurity 
+community with resources to 
+enhance security capabilities.
+Public Reports, reinforcing 
+transparency and collaboration 
+by sharing findings from critical 
+assessments and research 
+initiatives.
+NCC Group 2024 Research Report
+4
+5
+
+## 25 Years of Research at NCC Group
+Andy Davis,
+Global Research Director
+The research we have published over the last 25 years highlights the significant role NCC 
+Group has played in the cybersecurity world due to our coverage of a wide array of topics, 
+deep technical insights, and practical applications. 
+As it constitutes an extensive body of knowledge, I enlisted 
+the help of OpenAI’s ChatGPT to help me summarise the 
+content. Here’s what we came up with as an overview of 
+how our work has impacted cybersecurity since 1999:
+Addressing Current and Emerging Threats
+We dive into detailed analysis and mitigation strategies 
+for both current and emerging cybersecurity threats. 
+This includes advanced persistent threats (APTs), 
+exploitation of new and existing vulnerabilities in software 
+and hardware, and the increasing concerns around IoT 
+security. By focusing on real-world threats, we have helped 
+organisations prepare and defend against sophisticated 
+attacks.
+Enhancing Secure Development Practices
+With multiple publications focusing on secure coding 
+practices, secure development lifecycle, and specific 
+programming guidance, our research has been 
+instrumental in elevating the security standards of software 
+development across industries. This has become ever 
+more important as software is increasingly becoming 
+integral to our everyday lives.
+Promoting Cryptographic Security
+The exploration of cryptographic algorithms, quantum 
+cryptography, and secure communications protocols 
+is vital for secure digital transactions. As cyber threats 
+evolve, maintaining robust cryptographic practices is key 
+to ensuring the confidentiality and integrity of our sensitive 
+information.
+Forensics and Incident Response
+The detailed forensic analyses provided in our publications 
+are essential for understanding how breaches occur and 
+how to effectively respond to them. This knowledge is used 
+by incident response teams to quickly mitigate damage 
+and for ongoing efforts to enhance detection and response 
+capabilities within organisations.
+Guidance on Compliance and Best Practices
+Our research includes discussions on security compliance, 
+regulations, and best practices which are essential for 
+organisations to not only meet mandatory regulatory 
+requirements but also to adopt industry-leading security 
+practices. This helps in fostering a security-aware culture 
+within organisations and in building robust security 
+frameworks that protect against breaches and data theft.
+Educational Impact
+By providing in-depth technical knowledge, case studies, 
+and research insights, our publications serve as valuable 
+educational resources for security professionals, 
+researchers, and students. They contribute to the broader 
+understanding of complex cybersecurity topics, which is 
+important for training the next generation of cybersecurity 
+professionals.
+Overall, our contribution through these publications significantly impacts many aspects of cybersecurity by advancing 
+knowledge, shaping industry standards, improving security practices, and driving technological and methodological 
+innovations in the field. Hopefully, our work not only assists organisations in defending against dynamic and sophisticated 
+cyber threats but also plays a crucial role in the academic and research-oriented advancements in cybersecurity, 
+ultimately helping to build a more secure and resilient future.
+Below is a timeline of notable NCC Group research publications over the last 25 years.
+2001
+Windows 2000 Format String Vulnerabilities
+2002
+Oldest publication from still-serving NCC consultant
+2003
+Quantum Cryptography first discussed
+2004
+Blind Exploitation of Stack Overflow Vulnerabilities
+2005
+Improving the Exploitation Prevention Mechanisms on the Windows platform
+2006
+Implementing and Detecting a PCI Rootkit
+2007
+Attacking the Windows Kernel
+2008
+Developing secure Android mobile applications
+2009
+Microsoft SDL: Return-on-Investment
+2010
+Security Compliance as an Engineering Discipline
+2011
+USB: Undermining Security Barriers
+2012
+Abusing Privileged and Unprivileged Linux Containers
+2013
+Bypassing Windows AppLocker using a Time of Check Time of Use vulnerability
+2014
+An Implementer’s Guide to Cyber-Security for Internet of Things Devices and Beyond
+2015
+Secure Device Manufacturing: Supply Chain Security Resilience
+2016
+Hardware Design: FPGA Security Risks
+2017
+First mention of AI in an NCC publication
+2018
+Ethics in Security Testing
+2019
+Connected Health: Security Landscape Review
+2020
+Exploring DeepFake Capabilities & Mitigation Strategies with UCL
+2021
+An Illustrated Guide to Elliptic Curve Cryptography Validation
+2022
+BLE Proximity Authentication Vulnerable to Relay Attacks
+2023
+Rustproofing Linux
+2024
+LTair: The LTE Air Interface Tool
+NCC Group 2024 Research Report
+6
+7
+
+## Cryptography Services
+NCC Group’s Cryptography Services team continued to 
+deliver leading research in 2024. The variety of their rich 
+outputs reflects the ever dynamic and evolving nature 
+of the field of cryptography. Key themes from our crypto 
+research during this period were:
+	
+- Post-Quantum Cryptography: There was a greater 
+	 emphasis on post-quantum cryptography with the 
+	 standardization of post-quantum cryptography 
+	 algorithms by NIST.
+	
+- Security Vulnerabilities: From erroneous 
+	 computations to time-based side-channel attacks, 
+	 we further explored vulnerabilities in cryptographic 
+	 implementations and their implications.
+	
+- Blockchain Platform Cryptography: The 
+	 Cryptography Services team delivered multiple public 
+	 reports which focused on the relationship between 
+	 cryptographic principles and various blockchain 
+	 platforms.
+In the post-quantum age, cryptography research is no 
+longer just about securing information; it includes staying 
+ahead of quantum threats, redefining trust in digital 
+systems, and building a resilient future. Cryptography 
+Services’ research in the ever-changing cryptography 
+landscape ensures that the team remains up to date to 
+deliver the best value to customers. 
+Papers
+Multiple consultants worked on publications on a range of 
+cryptography topics in 2024.
+	
+- In this paper Gerald Doussot explained how to 
+	 implement the Secure Hash Algorithm3 (SHA-3) family 
+	 of functions in Lean 4, a functional programming 
+	 language and theorem prover. 
+	
+- Thomas Pornin published A Prime-Order Group with 
+	 Complete Formulas from Even-Order Elliptic Curves. 
+ 
+	
+- Giacomo Pope has been working with the SQIsign 
+	 team, who are working on both an optimized and 
+	 portable reference C-implementation of the signature 
+	 scheme for the second round of the PQ-DSA call for 
+	 NIST. 
+	
+- Thomas Pornin and others worked on Efficient Proofs 
+	 of Possession for Legacy Signatures to be presented 
+	 at 2025 IEEE Symposium on Security and Privacy (SP).  
+Blog Posts
+The Cryptography Services team continued work on 
+Cryptopals videos, as well as contributions to Real World 
+Cryptography.
+	
+- Eli Sohl had multiple new Cryptopals videos covering 
+	 CTR mode, padding oracles and cryptography 
+	 visualization. 
+	
+- Several members of the team attended Real World 
+	 Cryptography (RWC) in Toronto. 
+	
+- Marie-Sarah Lacharite served as a reviewer and 
+	 moderated the Zero Knowledge and Fully 
+	 Homomorphic Encryption session.
+Published Code
+Additionally, Cryptography Services consultants worked 
+on multiple implementations of various post-quantum 
+cryptography algorithms.
+	
+- Thomas Pornin completed Rust, C and Go 
+	 implementations of Post Quantum Cryptography 
+	 algorithm Falcon/FN-DSA, with same performance and 
+	 features.
+	
+	
+- Eric Schorn completed Post Quantum Cryptography 
+	 Implementation of recently published FIPS 203, 204 
+	 and 205. 
+  
+Presentations
+Various members of the Cryptography Services team 
+presented at cryptography conferences across a range of 
+topics.
+	
+- Javed Samuel presented on Open Source 
+	 Cryptography at International Cryptography Module 
+	 Conference in September.
+	
+- Paul Bottinelli presented  on Cryptography 
+	 Vulnerabilities in the context of Modern Programming 
+	 languages International Cryptography Module 
+	 Conference in September. 
+	
+- Kevin Henry and Elena Bakos Lang presented on 
+	 Lessons on secure deployment of cryptographic 
+	 primitives at the University of Waterloo in July.
+ 
+Public Reports
+The team completed public reports for a range of 
+customers across various cryptography areas. These public 
+reports included:  
+	
+- Kevin Henry, Marie-Sarah Lacharite, and Eli Sohl 
+	 completed an assessment of libxmtp, which is a Rust 
+	 implementation of the Extensible Message Transport 
+	 Protocol (XMTP), built upon Messaging Layer Security 
+	 (MLS) in a Web3 environment.
+	
+	
+- Gerald Doussot, Parnian Alimi, Marie-Sarah Lacharite, 
+	 Thomas Pornin, Eli Sohl, and Javed Samuel completed 
+	 a cryptography security assessment of selected 
+	 aspects of the WhatsApp Identity Proof Linked Storage 
+	 (IPLS) protocol implementation.
+	
+	
+- Kevin Henry, Parnian Alimi, and Elena Bakos Lang 
+	 completed a cryptographic security assessment 
+	 of keyfork, described as an opinionated and modular 
+	 toolchain for generating and managing a wide range 
+	 of cryptographic keys offline and on smartcards from 
+	 a shared mnemonic phrase. 
+	
+- Paul Bottinelli, Kevin Henry, Elena Bakos Lang, and Eric 
+	 Schorn reviewed the consensus mechanism 
+	 implemented by snarkOS: a decentralized operating 
+	 system for zero-knowledge applications that forms 
+	 the backbone of Aleo network, which verifies 
+	 transactions and stores the encrypted state 	
+	 applications in a publicly verifiable manner.
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+Javed Samuel, 
+Global Lead for Cryptography Services 
+NCC Group 2024 Research Report
+8
+9
+
+## Hardware and Embedded Systems
+The Hardware and Embedded Systems team continued 
+to research a broad range of topics over 2024, ranging 
+from wireless communication protocols to confidential 
+computing to reverse engineering of binaries for 
+uncommon architectures. The team published numerous 
+blog posts, new and improved tooling, and multiple 
+conference talks over the past year. Notable highlights 
+include:
+	
+- Reverse engineering and identifying vulnerabilities 
+	 in the PowerG radio protocol: James Chambers and 
+	 Sultan Qasim Khan reverse engineered the 
+	 proprietary PowerG radio protocol used by Johnson 
+	 Controls alarm systems and identified exploitable 
+	 weaknesses in the protocol and popular devices using 
+	 it. Findings were presented at the Recon 2024 
+	 conference.
+	
+- Over-the-air exploitation of Sonos devices: Robert 
+	 Herrera, together with Alex Plaskett of the Exploit 
+	 Development Group (EDG), identified a vulnerability in 
+	 the Wi-Fi stack of a Sonos device and developed an 
+	 over-the-air exploit that enabled covert listening. This 
+	 research was presented at Black Hat USA 2024. 
+	 Details of this project are discussed further in this 
+	 report among other projects by the EDG.
+	
+- Development of tooling to reverse engineer 
+	 binaries for the NanoMIPS ISA: James Chambers 
+	 and Robert Herrera developed and released the first 
+	 public tooling for reverse engineering of binaries 
+	 targeting the NanoMIPS ISA, which is gaining 
+	 prominence for its use in MediaTek 5G basebands.
+	
+- Public report analyzing the eBPF verifier: Nathaniel 
+	 Theis and Chris Anley conducted an in-depth security 
+	 assessment of the eBPF verifier that validates 
+	 the safety of eBPF programs for the Linux kernel. The 
+	 assessment uncovered and led to the fixing of a 
+	 significant bug, and the full assessment report has 
+	 been made public.
+	
+- Public report on Confidential Mode for Google 
+	 Cloud Hyperdisk: Catalin Visinescu conducted a 
+	 security design analysis of Data Encryption Key 
+	 (DEK) handling in the Confidential Mode of Google 
+	 Cloud Hyperdisk. An overview of the analysis was 
+	 made available in a public report.
+	
+- Improvements to Sniffle: Over the course of 2024, 
+	 Sultan Qasim Khan implemented numerous 
+	 enhancements to Sniffle, NCC Group’s open-source 
+	 Bluetooth Low Energy sniffer and testing tool. 
+	 Highlights from Sniffle releases 1.8 to 1.10 include 
+	 decoding of advertising data, improved support for 
+	 extended advertising, support for additional hardware 
+	 including low-cost Sonoff CC2652P dongles, support 
+	 for receiving packets with invalid CRCs, and improved 
+	 performance and reliability.
+ 
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+[Read Here](https://example.com)
+Sultan Qasim Khan,
+Regional Practice Lead
+NCC Group 2024 Research Report
+10
+11
+
+## Security Research Team, Fox-IT
+Edge Devices
+Previously, in 2023, we saw an uptick in compromised 
+edge devices, such as VPN gateways, firewalls, and routers. 
+As predicted back then, this trend continued this year 
+with even greater force. As these devices are still mostly 
+a network’s first line of defence, being able to properly 
+investigate them after a breach is important for scope- and 
+root-cause analysis. Building on previous years’ experience, 
+we improved our analysis and response capabilities for 
+edge devices, enabling us to technically deep dive these 
+systems just as well as other systems in a client’s network!
+Looking forward, we want to focus on creating more 
+visibility by leveraging our current Network Detection 
+and Response (NDR) and Security Information and Event 
+Management (SIEM) monitoring capabilities to proactively 
+monitor and alert our customers about threats that are 
+specific to these edge devices.
+Leading Forensic Analysis Innovation
+In 2022, we released our Digital Forensics & Incident 
+Response (DFIR) framework, Dissect, to the public, enabling 
+DFIR analysts across the globe to seamlessly analyze and 
+collect data from any type of system. Currently, Dissect 
+is widely adopted within the DFIR community and is even 
+included in well-regarded training courses from institutes 
+like SANS. We are continuously expanding and improving 
+upon Dissect with the community, to provide the industry 
+with bleeding edge innovations within the field of DFIR, 
+such as hypervisor-based data acquisition and analysis. 
+Most of our innovations have mainly focused on host 
+analysis and acquisition. We believe that memory analysis 
+and acquisition is still a largely underexplored topic, and its 
+analysis remains cumbersome within the industry. 
+Currently we are making advancements in this area, with 
+the goal to make the analysis and acquisition of memory 
+artefacts as seamless as host analysis and acquisition 
+currently is with Dissect. Additionally, we are also increasing 
+our operational technology (OT) analysis capabilities by 
+adding support for OT specific systems.
+APT Tracking
+Based on past incident response (IR) cases involving 
+the advanced persistent threat (APT) group Lazarus, we 
+started to track this threat actor together with our threat 
+intelligence (TI) team. We discovered that the specific threat 
+actor we were tracking is a Lazarus subgroup publicly 
+known as AppleJeus, which targets the cryptocurrency and 
+trading industry. 
+We managed to identify a new AppleJeus campaign in 2024 
+and warn several organizations proactively to help stop 
+further compromise. We presented and shared our unique 
+insights about this actor and malware at the FIRST 2024 
+conference. 
+We plan to keep tracking this additional subgroup with 
+our current knowledge and share information with other 
+organizations and law enforcement.
+Scanning the Internet
+We are continuously scanning the Internet for malicious 
+servers to feed into our security operations centre (SOC), 
+DFIR and TI teams with curated indicators on these servers. 
+This includes new signatures for tools and malware 
+commonly used by threat actors or that we have identified 
+during incident response cases. In 2024, we have heavily 
+improved this pipeline. 
+Now, this same scanning pipeline is also used for 
+vulnerability research. For example, we routinely identify 
+and fingerprint edge devices on the Internet to provide 
+statistics that can help estimate the impact a vulnerability 
+could have and whether our customers are affected by it.
+Looking forward to 2025, we plan to keep improving our 
+internet scanning capabilities and the processing of scan 
+results. We want to publish more of this scan data we 
+automatically collect with this pipeline, allowing the industry 
+to also leverage this data for a more secure digital future.
+Improving Threat Hunting
+We worked on creating a readable and structured 
+way to record indicators of compromise, allowing for 
+programmatic parsing thereof. This idea stems from the 
+need for recording indicators of compromise quickly and 
+easily by forensic investigators, while also allowing these 
+indicators to be ingested by other tools, e.g., detection 
+platforms or internal tooling. 
+This helps in the overall picture as it allows us to more 
+easily use such indicators in the various detection 
+platforms we are currently using. The diversification 
+of detection platforms requires a unified approach to 
+performing searches of indicators. We plan to simplify 
+and improve the process of threat hunting, in terms of 
+processing indicators and performing threat hunts.
+Network Detection and Response
+In recent years, endpoint detection and response (EDR) 
+and extended detection and response (XDR) have taken 
+a larger role in detecting threat actors at the SOC. We still 
+believe that network detection is a vital part in catching 
+these actors. This is also what we observe internally within 
+our NDR customer base. Albeit the ever-increasing use of 
+encryption, we remain able to effectively leverage our NDR 
+capabilities to detect lateral movement in their internal 
+network and notify our customers about threats. This is 
+especially important for systems like edge devices, which 
+gained the interest of threat actors as an initial point of 
+entry. Combined with the fact that agent- and log-based 
+monitoring brings about their own set of challenges, we 
+believe NDR is especially effective here.
+In addition to creating new detection signatures and 
+improving existing ones, we also improved our detection 
+signature accuracy by researching automated detection 
+rule validation testing using internally developed tooling. 
+Looking forward, we want to improve our OT network 
+detection capabilities to broaden our NDR coverage. 
+Stefan de Reuver,
+Lead Security Analyst
+NCC Group 2024 Research Report
+12
+13
+
+## Security Research Services 
+Jon Renshaw,
+Security Research Services Director
+NCC Group 2024 Research Report
+encourages investment in improved cybersecurity 
+capabilities at manufacturers.
+Telecommunications and Internet Security: It has 
+been a turbulent year in telecommunications security; 
+for one, we saw a key implementation date of the UK 
+Telecommunications Security Act (TSA) pass for tier 1 
+providers in March. But before that notable date, we saw 
+a novel Denial of Service (DoS) attack against Orange 
+España in January, using compromised credentials to 
+reconfigure the Resource Public Key Infrastructure (RPKI), 
+a technology deployed for Border Gateway Protocol (BGP) 
+route validation.
+NCC Group’s research into the security of 5G Testbeds 
+and Trials (5GTT) in the UK was published by the 
+Department of Science, Innovation and Technology 
+(DSIT)[^5] and showed the value of integrating cybersecurity 
+expertise into research programmes to identify gaps 
+and help remove roadblocks to developing technology 
+beneficial to all.
+During the Olympics in France, we saw network outages 
+as a result of physical attacks on fibre optic infrastructure, 
+highlighting that physical security is still an important 
+element of risk management and cyber resilience in 
+highly distributed systems such as telecommunications 
+networks.
+In September, the White House released a “Roadmap 
+to Enhance Internet Routing Security”, advocating 
+for wider adoption of RPKI as a “mature, ready-to-
+implement approach to mitigate vulnerabilities in BGP”. 
+However, in December, they announced that eight US 
+telecommunications providers had been the victims of a 
+China-backed hacking and espionage campaign targeting 
+top political figures, with work ongoing to ensure the 
+hackers had been removed from the compromised 
+environments.
+Quantum Computing & Post-Quantum Cryptography: 
+NIST finalized the first standards from the Post-Quantum 
+Cryptography (PQC) competition, providing a foundation 
+for organisations to begin to migrate away from the 
+current generation of quantum insecure algorithms. 
+The migration has already begun in the internet 
+ecosystem with Chrome leading the way on adoption 
+of the hybrid scheme X25519Kyber768Draft006 but 
+enterprise support will lag behind as organisations 
+need to update their configurations and supporting 
+cryptographic infrastructure. NCC Group continues to 
+collaborate with industry partners on the security of 
+quantum computing through the quantum datacentre 
+of the future project, looking at both quantum use cases 
+in cybersecurity, and the security of quantum computers 
+and their supporting infrastructure.
+Privacy Enhancing Technologies: NCC Group is 
+assuring TikTok’s implementations of cutting-edge Privacy 
+Enhancing Technologies (PETs) as part of Project Clover, 
+a high-profile and complex programme that aims to give 
+users in the European Economic Area, Switzerland, and 
+the United Kingdom assurance and confidence that their 
+data is being kept safe and secure.
+Differential privacy is one of the controls being used to 
+secure aggregated user statistics (alongside other controls 
+such as encryption and redaction for individual data) to 
+protect users’ privacy and provides strong theoretical 
+guarantees of privacy for individuals represented by 
+an aggregate dataset. Our researchers and testers are 
+rigorously assuring the TikTok design and implementation 
+of PETs, that are being implemented at scale, to protect 
+over 175 million European users.
+2024 has been an interesting and varied year, highlighting 
+the overlap of cybersecurity with public life, and raising 
+awareness of how attackers might impinge upon our 
+freedoms as citizens and businesses. Some of the key 
+themes of the year and their relationship to cybersecurity 
+research services at NCC Group include:
+The threat from disinformation: With such a bumper 
+year for elections, disinformation and deepfakes were 
+near the top of the list of potential threats likely to impact 
+on civil society and democracy in 2024. While instances 
+of deepfakes were observed during many of the national 
+elections, it transpired that the quantity and impact 
+of such disinformation was probably less than many 
+expected (noting this is very hard to objectively measure). 
+Perhaps the bigger impacts have been on fraud, with 
+high-profile attacks on enterprises and increasing 
+evidence of deepfakes being used in celebrity investment 
+scams and romance scams.
+Efforts to develop technologies to detect deepfakes 
+continues with both the UK[^1] and US[^2] governments 
+investing in research into emerging technology 
+capabilities. NCC Group also joined the Coalition for 
+Content Provenance and Authenticity (C2PA)[^3] in 2024, 
+providing cybersecurity insights into this developing 
+approach aimed at embedding provenance metadata into 
+digital content.  
+The safety and security of Artificial Intelligence: 
+Generative AI continued to develop at pace in 2024, 
+prompting global efforts to establish regulations and 
+organisations capable of managing emerging risks.  
+This includes understanding AI’s capabilities to, either 
+autonomously or as an aide to a human in the loop, 
+provide an uplift in cyber attackers’ ability to effectively or 
+efficiently compromise targets. 
+Our own previous research has shown that whilst there is 
+a potential uplift in vulnerability research, it really requires 
+an expert to parse, understand, and explore the outputs 
+of AI model analysis of code. While model developers and 
+deployers continue to innovate, governments have acted. 
+The EU has passed the AI Act, with key implementation 
+dates throughout 2025, 2026 and 2027, and various 
+governments have created organisations tasked with 
+understanding, monitoring, and developing mitigations for 
+the risks posed by AI.
+This year, NCC Group carried out research on behalf of 
+Google into how the risks to AI models change when 
+models are deployed on edge and personal computing 
+devices.[^4] Our research concluded that whilst moving 
+capability to the edge can result in performance and 
+privacy improvements, it also creates a complex new 
+attack surface with potential for hardware and side-
+channel vulnerabilities in GPUs and malware embedded 
+in GPU programs.
+Security of Connected Devices: Two significant pieces 
+of legislation became law in the UK and the EU in 
+2024. The Product Security and Telecommunications 
+Infrastructure (PSTI) Act mandates some basic controls for 
+smart devices sold to consumers in the UK, including no 
+default passwords and transparency around vulnerability 
+reporting and security support. The Cyber Resilience Act 
+goes even further, including requirements for secure-by-
+design for connected devices sold into the EU. 
+Over many years, NCC Group has researched the security 
+of connected consumer and enterprise devices, often 
+finding poor security hygiene and a lack of maturity in 
+processes, including vulnerability disclosure and patch 
+management. Looking forward, future research will 
+hopefully reveal a step change in attitudes towards 
+developing devices with security built in, as this legislation 
+
+[^1]: UK government investing in research: [text](URL)
+[^2]: US government investing in research: [text](URL)
+[^3]: Coalition for Content Provenance and Authenticity (C2PA): [text](URL)
+[^4]: Google research: [text](URL)
+[^5]: Department of Science, Innovation and Technology (DSIT): [text](URL)
+14
+15
+
+## Future Research
+The future of security research is ambitious, focusing 
+on emerging technologies, evolving threats, and 
+more proactive defence mechanisms. At the same 
+time, addressing data protection fatigue will require a 
+paradigm shift in how security is delivered—making it 
+simpler, seamless, and less reliant on user action. By 
+marrying cutting-edge research with human-centered 
+design, the industry can tackle both challenges head-
+on, ensuring a safer and more user-friendly digital 
+landscape.
+Individuals are constantly bombarded with privacy 
+notifications, security warnings, and breach alerts. 
+Whether it’s endless cookie consent pop-ups, multi-step 
+authentication processes, or navigating complex privacy 
+settings, the sheer volume of decisions users must make 
+often leaves them feeling overwhelmed and exhausted. 
+This overload can lead to disengagement, where users 
+either ignore warnings or make suboptimal security 
+choices because they feel powerless to control their data 
+effectively. The frustration of keeping up with constantly 
+evolving threats while relying on tools that demand 
+significant time and effort only exacerbates this fatigue.
+As many grow weary of managing their data security 
+and finding trust in corporations, stricter guidelines on 
+how organizations handle data are requested more and 
+more. 
+Laws such as the GDPR and CCPA pushed companies 
+to take on greater responsibility for securing user 
+information and providing transparency, and ISO 
+standards give idealized guidelines. Future legislation 
+will likely follow. Security researchers and developers 
+will play a critical role in helping businesses comply with 
+these laws, creating tools and frameworks to detect 
+potential violations and ensure adherence to evolving 
+regulatory standards.
+Building trust through transparency will be crucial.
+Ristin Rivera,
+Research Program Administrator
+NCC Group 2024 Research Report
+16
+17
+
+## Our Research in 2024
+This article explores the reverse engineering 
+of the classic game Warcraft 2 to identify 
+potential security vulnerabilities. Due to 
+its age and the lack of modern security 
+features like anti-cheat mechanisms, 
+Warcraft 2 provides an accessible platform 
+for learning basic game hacking techniques. 
+The author outlines a methodology that 
+includes defining clear goals, such as 
+uncovering bugs that could be exploited 
+during multiplayer sessions, and reviewing 
+existing research to build upon prior 
+findings. The analysis also involves 
+assessing the game’s attack surface, 
+particularly its peer-to-peer networking 
+model, and using tools to examine the code 
+and behavior for exploitable flaws.
+4 Dec 23
+Alex Plaskett
+Caleb Watt
+Oliver Brooks
+Axel Boesenach and Erik Schamper
+David Brown and 
+Mungomba Mulenga
+Shooting Yourself in the .flags – 
+Jailbreaking the Sonos Era 100
+Retro Gaming Vulnerability 
+Research: Warcraft 2
+Technical Advisory – 
+Multiple Vulnerabilities in 
+PandoraFMS Enterprise
+Memory Scanning 
+for the Masses
+Ivanti Zero Day – Threat 
+Actors observed leveraging 
+CVE-2021-42278 and CVE-
+2021-42287 for quick privilege 
+escalation to Domain Admin 
+Vulnerability Research 
+and Exploitation 
+Techniques
+2 Jan 24
+25 Jan 24
+The research highlights critical security 
+weaknesses in the Sonos Era 100’s bootloader 
+that could be exploited to achieve full device 
+compromise. The security vulnerabilities found 
+are on weaknesses within its bootloader. 
+These vulnerabilities could allow attackers to 
+gain unauthorized root or kernel-level code 
+execution, leading to a complete compromise 
+of the device. By updating their devices 
+with the latest firmware released by Sonos, 
+users can protect themselves from these 
+vulnerabilities.
+This TA highlights 18 critical vulnerabilities 
+in PandoraFMS Enterprise v7.0NG.767, 
+including unauthenticated admin account 
+takeover, remote code execution, XSS, SQL 
+injection, and more. Users are advised to 
+update to the latest version and implement 
+recommended security measures to protect 
+their systems.
+Memory scanning involves examining the 
+memory of running processes to identify 
+specific patterns, which is essential for 
+tasks like credential access, malware 
+detection, and data recovery. However, 
+conducting comprehensive memory scans 
+can be time-consuming, especially when 
+dealing with large memory spaces. 
+To address this inefficiency, a user-friendly 
+Python library designed to expedite the 
+memory scanning process was explored 
+and developed. By filtering memory regions 
+based on their attributes—similar to file 
+permissions—such as read, write, and 
+execute permissions, the library narrows 
+down the areas that need to be scanned. 
+This targeted approach significantly 
+reduces the time required for scanning by 
+focusing only on memory regions relevant 
+to the search criteria.
+David Brown and Mungomba Mulenga 
+discuss the exploitation of specific 
+vulnerabilities in Active Directory by threat 
+actors, following the compromise of Ivanti 
+Secure Connect VPN appliances. Threat 
+actors have been observed exploiting two 
+critical vulnerabilities in Active Directory:
+CVE-2021-42278: This vulnerability 
+allows unauthorized modification of the 
+sAMAccountName attribute of computer 
+accounts, enabling attackers to impersonate 
+other accounts, including domain 
+administrators.
+CVE-2021-42287: This flaw permits attackers 
+to forge Kerberos Ticket Grant
