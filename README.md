@@ -238,6 +238,7 @@ Reports will be classified by a header that describes their primary content or e
 
 ## AI and Emerging Technologies
 - [HiddenLayer](https://hiddenlayer.com/threatreport2024/) - [AI Threat Report](Annual%20Security%20Reports/2024/HiddenLayer-AI-Threat-Landscape-Report-2024.pdf) (2024) - Provides insights into the AI threat landscape across various industries.
+- [Salt](https://salt.security/api-security-trends) - [State of API Security](Annual%20Security%20Reports/2024/Salt-State-of-API-Security-2024.pdf) (2024) - Analyzes the state of API security covering adoption drivers, development trends, security challenges, and customer data analysis. 
 - [Snyk](https://snyk.io/reports/ai-code-security/) - [AI Generated Code Security Report](Annual%20Security%20Reports/2023/Snyk-AI-Generated-Code-Security-Report-2023.pdf) (2023) - Examines the security implications of AI-generated code across different sectors.
 
 ## Resources
