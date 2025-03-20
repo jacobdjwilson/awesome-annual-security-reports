@@ -118,6 +118,7 @@ Reports will be classified by a header that describes their primary content or e
 
 ## Application Security
 - [BlackDuck](https://www.blackduck.com/resources/analyst-reports/software-vulnerability-trends.html) - [Software Vulnerability Snapshot Report](Annual%20Security%20Reports/2024/BlackDuck-Software-Vulnerability-Snapshot-Report-2024.pdf) (2024) - A snapshot of software vulnerabilities, highlighting key findings, potential business impacts, and recommendations.
+- [DigitalAI]() - [Application Security Threat Report](Annual%20Security%20Reports/2025/DigitalAI-Application-Security-Threat-Report-2025.pdf) (2025) - Analyzes the evolving risks in modern application security highlighting key trends.
 - [Escape](https://escape.tech/the-api-secret-sprawl-2024) - [State of API Exposure](Annual%20Security%20Reports/2024/Escape-State-of-API-Exposure-2024.pdf) (2024)  
   Analyzes API security across Fortune 1000 and CAC 40 companies, uncovering 30,000 exposed APIs and 100,000 API issues, emphasizing risks in large organizations.
 - [GitGuardian](https://www.gitguardian.com/state-of-secrets-sprawl-report-2025) - [State of Secrets Sprawl](Annual%20Security%20Reports/2025/GitGuardian-State-of-Secrets-Sprawl-2025.pdf) (2025) - Analyzes the state of leaked credentials, highlighting the impact of AI-enhanced detection in uncovering the full scope of credential exposure.
