@@ -1,236 +1,175 @@
-name: Falcon Hybrid Analysis Scan
+name: Falcon Hybrid-Analysis PDF Security Scan
 
 on:
-  repository_dispatch:
-    types: [pdf-detected]
+  push:
+    branches:
+      - development
+    paths:
+      - 'Annual Security Reports/**/*.pdf'
+  pull_request:
+    branches:
+      - development
+    paths:
+      - 'Annual Security Reports/**/*.pdf'
 
 jobs:
-  falcon-scan:
+  scan-pdf:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
     outputs:
-      scan_result: ${{ steps.check-result.outputs.scan_result }}
-      scan_url: ${{ steps.check-result.outputs.scan_url }}
-      threat_detected: ${{ steps.check-result.outputs.threat_detected }}
-      pdf_path: ${{ github.event.client_payload.pdf_path }}
-      pdf_year: ${{ github.event.client_payload.pdf_year }}
-      pdf_name: ${{ github.event.client_payload.pdf_name }}
-      
+      scan_result: ${{ steps.scan_status.outputs.scan_result }}
+      scan_url: ${{ steps.upload_scan.outputs.scan_url }}
+      threat_detected: ${{ steps.scan_status.outputs.threat_detected }}
+      pdf_path: ${{ steps.get_pdf.outputs.pdf_path }}
+      target_markdown_path: ${{ steps.get_pdf.outputs.target_markdown_path }}
+    
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          ref: development
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-          
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests
-          
-      - name: Submit PDF for scanning
-        id: submit-scan
-        run: |
-          echo "Preparing to scan file: ${{ github.event.client_payload.pdf_path }}"
-          
-          # Python script to submit the PDF to Hybrid Analysis and get the scan results
-          python - <<EOF
-          import requests
-          import time
-          import json
-          import os
-          import base64
-          
-          # API Configuration
-          API_KEY = '${{ secrets.HYBRID_ANALYSIS_API_KEY }}'
-          API_URL = 'https://www.hybrid-analysis.com/api/v2'
-          
-          # File path
-          pdf_path = '${{ github.event.client_payload.pdf_path }}'
-          
-          # Read the PDF file
-          with open(pdf_path, 'rb') as file:
-              file_content = file.read()
-          
-          # Setup headers for API request
-          headers = {
-              'api-key': API_KEY,
-              'User-Agent': 'Falcon Sandbox'
-          }
-          
-          # Submit the file for analysis
-          files = {'file': (os.path.basename(pdf_path), file_content)}
-          
-          # Submit options
-          data = {
-              'environment_id': 300,  # Windows 10 64-bit environment
-              'comment': 'Scan from GitHub Actions',
-              'allow_community_access': 'false',
-              'experimental_anti_evasion': 'true',
-              'duration': 30
-          }
-          
-          print("Submitting file for analysis...")
-          submit_response = requests.post(
-              f"{API_URL}/submit/file",
-              headers=headers,
-              files=files,
-              data=data
-          )
-          
-          if submit_response.status_code != 200:
-              print(f"Error submitting file: {submit_response.text}")
-              exit(1)
-          
-          # Get the job ID from the response
-          job_id = submit_response.json()['job_id']
-          print(f"Submission successful. Job ID: {job_id}")
-          
-          # Write the job ID to a file that can be accessed in the next step
-          with open('job_id.txt', 'w') as f:
-              f.write(job_id)
-          
-          # Get the analysis URL
-          analysis_url = f"https://www.hybrid-analysis.com/sample/{job_id}"
-          print(f"Analysis URL: {analysis_url}")
-          
-          # Set the URL for the GitHub Action output
-          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-              f.write(f"scan_job_id={job_id}\n")
-              f.write(f"scan_url={analysis_url}\n")
-          EOF
+        uses: actions/checkout@v4
       
-      - name: Wait for scan to complete and check results
-        id: check-result
+      - name: Get changed PDF files
+        id: get_pdf
         run: |
-          echo "Checking scan results..."
+          # For push events
+          if [[ "${{ github.event_name }}" == "push" ]]; then
+            # Get list of added or modified PDF files
+            PDF_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | grep -E '^Annual Security Reports/.*\.pdf$' | head -n 1)
+          # For pull request events
+          elif [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            # Get list of added or modified PDF files in the PR
+            PDF_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -E '^Annual Security Reports/.*\.pdf$' | head -n 1)
+          fi
           
-          # Python script to poll for results
-          python - <<EOF
-          import requests
-          import time
-          import json
-          import os
+          if [[ -z "$PDF_FILES" ]]; then
+            echo "No PDF files found to scan"
+            exit 1
+          fi
           
-          # API Configuration
-          API_KEY = '${{ secrets.HYBRID_ANALYSIS_API_KEY }}'
-          API_URL = 'https://www.hybrid-analysis.com/api/v2'
+          echo "PDF to scan: $PDF_FILES"
+          echo "pdf_path=$PDF_FILES" >> $GITHUB_OUTPUT
           
-          # Read the job ID from the previous step
-          with open('job_id.txt', 'r') as f:
-              job_id = f.read().strip()
+          # Calculate the corresponding markdown path
+          MD_PATH="${PDF_FILES/Annual Security Reports/Markdown Conversions}"
+          MD_PATH="${MD_PATH%.pdf}.md"
+          echo "target_markdown_path=$MD_PATH" >> $GITHUB_OUTPUT
+      
+      - name: Upload PDF to Falcon Hybrid-Analysis
+        id: upload_scan
+        run: |
+          PDF_PATH="${{ steps.get_pdf.outputs.pdf_path }}"
           
-          # Setup headers for API request
-          headers = {
-              'api-key': API_KEY,
-              'User-Agent': 'Falcon Sandbox'
-          }
+          # Upload file to Hybrid-Analysis
+          RESPONSE=$(curl -X POST "https://www.hybrid-analysis.com/api/v2/submit/file" \
+            -H "api-key: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}" \
+            -H "Accept: application/json" \
+            -F "file=@$PDF_PATH" \
+            -F "environment_id=160" \
+            -F "scan_type=all")
           
-          # Poll for the scan results
-          max_attempts = 30
-          attempt = 0
-          scan_complete = False
-          threat_detected = False
-          scan_result = {}
+          echo "Hybrid-Analysis Upload Response: $RESPONSE"
           
-          print(f"Polling for scan results for job ID: {job_id}")
+          # Extract job ID from response
+          JOB_ID=$(echo $RESPONSE | jq -r '.job_id')
           
-          while attempt < max_attempts and not scan_complete:
-              attempt += 1
-              print(f"Attempt {attempt} of {max_attempts}...")
+          if [[ "$JOB_ID" == "null" || -z "$JOB_ID" ]]; then
+            echo "Failed to get job ID from Hybrid-Analysis"
+            exit 1
+          fi
+          
+          echo "Hybrid-Analysis Job ID: $JOB_ID"
+          
+          # Generate result URL
+          SCAN_URL="https://www.hybrid-analysis.com/sample/$JOB_ID"
+          echo "scan_url=$SCAN_URL" >> $GITHUB_OUTPUT
+          
+          # Save scan info as artifact
+          echo "Scan URL: $SCAN_URL" > scan_info.txt
+          echo "Job ID: $JOB_ID" >> scan_info.txt
+          echo "PDF Path: $PDF_PATH" >> scan_info.txt
+      
+      - name: Upload scan info as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: scan-results
+          path: scan_info.txt
+      
+      - name: Poll for scan completion
+        id: scan_status
+        run: |
+          JOB_ID=$(echo "${{ steps.upload_scan.outputs.scan_url }}" | awk -F '/' '{print $NF}')
+          MAX_ATTEMPTS=30
+          ATTEMPT=0
+          
+          while [[ $ATTEMPT -lt $MAX_ATTEMPTS ]]; do
+            echo "Checking scan status (attempt $ATTEMPT of $MAX_ATTEMPTS)..."
+            
+            RESPONSE=$(curl -X GET "https://www.hybrid-analysis.com/api/v2/report/$JOB_ID/summary" \
+              -H "api-key: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}" \
+              -H "Accept: application/json")
+            
+            STATE=$(echo $RESPONSE | jq -r '.state')
+            
+            if [[ "$STATE" == "SUCCESS" ]]; then
+              echo "Scan completed successfully"
               
-              try:
-                  # Get the report state
-                  report_response = requests.get(
-                      f"{API_URL}/report/{job_id}/state",
-                      headers=headers
-                  )
-                  
-                  if report_response.status_code != 200:
-                      print(f"Error checking report state: {report_response.text}")
-                      time.sleep(20)
-                      continue
-                  
-                  state = report_response.json().get('state', '')
-                  if state == 'SUCCESS':
-                      scan_complete = True
-                      print("Scan completed successfully!")
-                      
-                      # Get the full report summary
-                      summary_response = requests.get(
-                          f"{API_URL}/report/{job_id}/summary",
-                          headers=headers
-                      )
-                      
-                      if summary_response.status_code == 200:
-                          scan_result = summary_response.json()
-                          
-                          # Check for threats
-                          verdict = scan_result.get('verdict', '')
-                          threat_score = scan_result.get('threat_score', 0)
-                          
-                          print(f"Verdict: {verdict}")
-                          print(f"Threat Score: {threat_score}")
-                          
-                          if verdict.lower() in ['malicious', 'suspicious'] or threat_score > 50:
-                              threat_detected = True
-                              print("WARNING: Potential threat detected!")
-                          else:
-                              print("No threats detected.")
-                      else:
-                          print(f"Error getting report summary: {summary_response.text}")
-                  elif state == 'ERROR':
-                      scan_complete = True
-                      print("Scan encountered an error.")
-                  else:
-                      print(f"Scan in progress. Current state: {state}")
-                      time.sleep(20)
-              except Exception as e:
-                  print(f"Error polling results: {str(e)}")
-                  time.sleep(20)
+              # Check threat score
+              THREAT_SCORE=$(echo $RESPONSE | jq -r '.threat_score')
+              echo "Threat score: $THREAT_SCORE"
+              
+              if [[ $THREAT_SCORE -gt 0 ]]; then
+                echo "Threat detected with score: $THREAT_SCORE"
+                echo "threat_detected=true" >> $GITHUB_OUTPUT
+                echo "scan_result=threat_detected" >> $GITHUB_OUTPUT
+              else
+                echo "No threats detected"
+                echo "threat_detected=false" >> $GITHUB_OUTPUT
+                echo "scan_result=clean" >> $GITHUB_OUTPUT
+              fi
+              
+              # Save full scan results
+              echo "$RESPONSE" > full_scan_results.json
+              
+              # Upload detailed scan results as artifact
+              actions/upload-artifact@v4
+              with:
+                name: full-scan-results
+                path: full_scan_results.json
+              
+              break
+            elif [[ "$STATE" == "ERROR" || "$STATE" == "FAILED" ]]; then
+              echo "Scan failed: $RESPONSE"
+              echo "scan_result=error" >> $GITHUB_OUTPUT
+              echo "threat_detected=unknown" >> $GITHUB_OUTPUT
+              exit 1
+            fi
+            
+            ATTEMPT=$((ATTEMPT+1))
+            sleep 10
+          done
           
-          # Write the results for the GitHub Action output
-          scan_url = f"https://www.hybrid-analysis.com/sample/{job_id}"
-          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-              f.write(f"scan_result={json.dumps(scan_result)}\n")
-              f.write(f"scan_url={scan_url}\n")
-              f.write(f"threat_detected={'true' if threat_detected else 'false'}\n")
-          
-          # Save the scan results as a JSON file
-          with open('scan_results.json', 'w') as f:
-              json.dump(scan_result, f, indent=2)
-          
-          if not scan_complete:
-              print("Timed out waiting for scan results.")
-              exit(1)
-          EOF
-      
-      - name: Save scan results as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: falcon-scan-results
-          path: scan_results.json
-          retention-days: 90
-      
-      - name: Check for threats
-        run: |
-          echo "Scan URL: ${{ steps.check-result.outputs.scan_url }}"
-          echo "Threat Detected: ${{ steps.check-result.outputs.threat_detected }}"
-          
-          if [[ "${{ steps.check-result.outputs.threat_detected }}" == "true" ]]; then
-            echo "::warning::Potential security threat detected in PDF file!"
-          else
-            echo "No threats detected. Proceeding with markdown conversion."
+          if [[ $ATTEMPT -ge $MAX_ATTEMPTS ]]; then
+            echo "Timed out waiting for scan to complete"
+            echo "scan_result=timeout" >> $GITHUB_OUTPUT
+            echo "threat_detected=unknown" >> $GITHUB_OUTPUT
+            exit 1
           fi
       
-      - name: Trigger Gemini Markdown Conversion
-        if: steps.check-result.outputs.threat_detected == 'false'
-        uses: peter-evans/repository-dispatch@v2
+      - name: Trigger markdown conversion for clean files
+        if: steps.scan_status.outputs.threat_detected == 'false'
+        uses: actions/github-script@v7
         with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          event-type: pdf-clean
-          client-payload: '{"pdf_path": "${{ github.event.client_payload.pdf_path }}", "pdf_year": "${{ github.event.client_payload.pdf_year }}", "pdf_name": "${{ github.event.client_payload.pdf_name }}", "scan_url": "${{ steps.check-result.outputs.scan_url }}"}'
+          github-token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'gemini-markdown-conversion.yml',
+              ref: 'development',
+              inputs: {
+                pdf_path: '${{ steps.get_pdf.outputs.pdf_path }}',
+                target_markdown_path: '${{ steps.get_pdf.outputs.target_markdown_path }}',
+                scan_url: '${{ steps.upload_scan.outputs.scan_url }}'
+              }
+            });
