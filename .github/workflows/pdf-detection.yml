@@ -5,23 +5,29 @@ on:
     branches:
       - development
     paths:
-      - 'Annual Security Reports/**.pdf'
+      - 'Annual Security Reports/**/*.pdf'
 
 jobs:
   detect-new-pdf:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
       - name: Get list of added PDF files
         id: get_pdfs
         run: |
-          echo "files=$(git diff-tree --no-commit-id --name-status -r ${{ github.sha }} | grep '^A' | grep '.pdf$' | awk '{print $2}' | jq -R -s -c 'split("\n") | map(select(. != ""))')" >> $GITHUB_OUTPUT
+          files=$(git diff-tree --no-commit-id --name-status -r ${{ github.sha }} | grep '^A' | grep '.pdf$' | awk '{print $2}' | jq -R -s -c 'split("\n") | map(select(. != ""))')
+          echo "files=$files" >> $GITHUB_OUTPUT
 
       - name: Dispatch Scan Workflow
+        if: ${{ steps.get_pdfs.outputs.files != '[]' }}
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           event-type: falcon-scan-request
-          client-payload: |
+          client-payload: >
             {
               "pdf_files": ${{ steps.get_pdfs.outputs.files }},
               "sha": "${{ github.sha }}"
