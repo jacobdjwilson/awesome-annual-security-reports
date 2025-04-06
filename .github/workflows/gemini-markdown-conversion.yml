@@ -1,167 +1,176 @@
 name: Gemini Markdown Conversion
 
 on:
-  workflow_call:
-    inputs:
-      pdf_path:
-        required: true
-        type: string
-      pdf_year:
-        required: true
-        type: string
-      pdf_name:
-        required: true
-        type: string
-    secrets:
-      GEMINI_API_KEY:
-        required: true
+  repository_dispatch:
+    types: [run-gemini-conversion]
 
 jobs:
   convert-to-markdown:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
-      
-      - name: Setup Python
+        with:
+          ref: ${{ github.event.client_payload.ref }}
+
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      
+
       - name: Install dependencies
         run: |
-          pip install requests google-generativeai PyPDF2
-      
-      - name: Read AI prompt
-        id: read-prompt
+          python -m pip install --upgrade pip
+          pip install requests PyPDF2 google-generativeai
+        
+      - name: Convert PDF to Markdown with Gemini 2.0 Flash
+        id: gemini-conversion
         run: |
-          PROMPT_CONTENT=$(cat AI_PROMPT_MARKDOWN_CONVERT.md)
-          PROMPT_CONTENT="${PROMPT_CONTENT//'%'/'%25'}"
-          PROMPT_CONTENT="${PROMPT_CONTENT//$'\n'/'%0A'}"
-          PROMPT_CONTENT="${PROMPT_CONTENT//$'\r'/'%0D'}"
-          echo "prompt=$PROMPT_CONTENT" >> $GITHUB_OUTPUT
-      
-      - name: Convert PDF to Markdown with Gemini
-        id: gemini-convert
-        run: |
-          cat > convert_pdf.py << 'EOF'
-          import sys
+          PDF_PATH="${{ github.event.client_payload.pdf_file_path }}"
+          YEAR_FOLDER="${{ github.event.client_payload.year_folder }}"
+          BASE_FILENAME="${{ github.event.client_payload.base_filename }}"
+          
+          # Read the AI prompt template
+          AI_PROMPT=$(cat AI_PROMPT_MARKDOWN_CONVERT.md)
+          
+          # Read AI prompt version from commit notes
+          AI_PROMPT_VERSION=$(git log -1 --pretty=%B -- AI_PROMPT_MARKDOWN_CONVERT.md | grep -oP 'Version: \K[0-9.]+' || echo "1.0")
+          
+          # Create output directory if it doesn't exist
+          OUTPUT_DIR="Markdown Conversions/$YEAR_FOLDER"
+          mkdir -p "$OUTPUT_DIR"
+          OUTPUT_FILE="$OUTPUT_DIR/$BASE_FILENAME.md"
+          
+          echo "Converting PDF to Markdown using Gemini 2.0 Flash..."
+          echo "Input PDF: $PDF_PATH"
+          echo "Output Markdown: $OUTPUT_FILE"
+          
+          python - <<EOF
           import os
-          import time
-          import json
-          import base64
-          import PyPDF2
+          import sys
           import requests
+          import PyPDF2
           import google.generativeai as genai
-
-          # Get inputs
-          pdf_path = os.environ['PDF_PATH']
-          pdf_year = os.environ['PDF_YEAR']
-          pdf_name = os.environ['PDF_NAME']
-          prompt_text = os.environ['PROMPT_TEXT']
-          api_key = os.environ['GEMINI_API_KEY']
-
+          import time
+          
           # Configure Gemini API
-          genai.configure(api_key=api_key)
-
+          gemini_api_key = '${{ secrets.GEMINI_API_KEY }}'
+          genai.configure(api_key=gemini_api_key)
+          
+          # Extract text from PDF
           def extract_text_from_pdf(pdf_path):
-              with open(pdf_path, 'rb') as file:
-                  pdf_reader = PyPDF2.PdfReader(file)
-                  text = ""
-                  for page_num in range(len(pdf_reader.pages)):
-                      text += pdf_reader.pages[page_num].extract_text() + "\n\n"
-              return text
-
-          def try_gemini_model(model_name, pdf_text, prompt):
               try:
-                  print(f"Trying model: {model_name}")
+                  with open(pdf_path, 'rb') as file:
+                      reader = PyPDF2.PdfReader(file)
+                      text = ""
+                      for page in reader.pages:
+                          text += page.extract_text() + "\n\n"
+                      return text
+              except Exception as e:
+                  print(f"Error extracting text from PDF: {str(e)}")
+                  return None
+          
+          # Convert to markdown using Gemini
+          def convert_to_markdown(pdf_text, prompt_template, model_name="gemini-2.0-flash"):
+              try:
+                  # Format the prompt with the PDF text
+                  full_prompt = prompt_template + "\n\nHere is the PDF content to convert:\n\n" + pdf_text
+                  
+                  # Set up the model
                   model = genai.GenerativeModel(model_name)
                   
-                  # Prepare the complete prompt with the PDF content
-                  complete_prompt = f"{prompt}\n\nHere is the PDF content to convert:\n\n{pdf_text}"
+                  # Generate the markdown
+                  response = model.generate_content(full_prompt)
                   
-                  # Generate content
-                  response = model.generate_content(complete_prompt, 
-                                                   generation_config={"temperature": 0.2, 
-                                                                     "max_output_tokens": 8192})
-                  
-                  markdown_content = response.text
-                  model_used = model_name
-                  return markdown_content, model_used, True
-              
+                  if hasattr(response, 'text'):
+                      return response.text, model_name
+                  else:
+                      print("Invalid response format from Gemini API")
+                      return None, model_name
               except Exception as e:
-                  print(f"Error with {model_name}: {str(e)}")
-                  return None, model_name, False
-
-          # Main conversion process
+                  print(f"Error converting to markdown with {model_name}: {str(e)}")
+                  return None, model_name
+          
+          # Main process
           try:
-              # Extract text from PDF
-              print(f"Extracting text from {pdf_path}")
+              # Read the PDF file
+              pdf_path = '${{ github.event.client_payload.pdf_file_path }}'
               pdf_text = extract_text_from_pdf(pdf_path)
               
-              # Find the best model to use
-              models_to_try = ["gemini-2.0-flash", "gemini-2.0-flash-lite"]
-              
-              markdown_content = None
-              model_used = None
-              success = False
-              
-              for model in models_to_try:
-                  markdown_content, model_used, success = try_gemini_model(model, pdf_text, prompt_text)
-                  if success:
-                      break
-              
-              if not success:
-                  print("All models failed to process the PDF")
+              if not pdf_text:
                   sys.exit(1)
               
-              # Ensure the output directory exists
-              output_dir = f"Markdown Conversions/{pdf_year}"
-              os.makedirs(output_dir, exist_ok=True)
+              # Get AI prompt template
+              prompt_template = '''${{ env.AI_PROMPT }}'''
               
-              # Create markdown file
-              output_file = f"{output_dir}/{pdf_name}.md"
-              with open(output_file, "w") as f:
-                  f.write(markdown_content)
+              # Try with Gemini 2.0 Flash first
+              markdown_content, model_used = convert_to_markdown(pdf_text, prompt_template)
               
-              print(f"Successfully converted PDF to Markdown using {model_used}")
-              print(f"Output file: {output_file}")
+              # If Flash fails, try Flash Lite
+              if not markdown_content:
+                  print("Gemini 2.0 Flash failed. Trying Gemini 2.0 Flash Lite...")
+                  markdown_content, model_used = convert_to_markdown(pdf_text, prompt_template, "gemini-2.0-flash-lite")
               
-              # Output for GitHub Actions
-              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-                  f.write(f"markdown_path={output_file}\n")
-                  f.write(f"model_used={model_used}\n")
-              
+              if markdown_content:
+                  # Write the markdown to file
+                  output_file = '${{ env.OUTPUT_FILE }}'
+                  with open(output_file, 'w') as f:
+                      f.write(markdown_content)
+                  
+                  # Set outputs for use in GitHub Actions
+                  with open(os.environ['GITHUB_ENV'], 'a') as env_file:
+                      env_file.write(f"GEMINI_MODEL_USED={model_used}\n")
+                  
+                  print(f"Successfully converted PDF to markdown using {model_used}")
+                  sys.exit(0)
+              else:
+                  print("Failed to convert PDF to markdown with both Gemini models")
+                  sys.exit(1)
+                  
           except Exception as e:
-              print(f"Error: {str(e)}")
+              print(f"Unexpected error: {str(e)}")
               sys.exit(1)
           EOF
-
-          python convert_pdf.py
-        env:
-          PDF_PATH: ${{ github.event.client_payload.pdf_path }}
-          PDF_YEAR: ${{ github.event.client_payload.pdf_year }}
-          PDF_NAME: ${{ github.event.client_payload.pdf_name }}
-          PROMPT_TEXT: ${{ steps.read-prompt.outputs.prompt }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_OUTPUT: $GITHUB_OUTPUT
-      
-      - name: Commit markdown file
-        run: |
-          MARKDOWN_PATH="${{ steps.gemini-convert.outputs.markdown_path }}"
-          MODEL_USED="${{ steps.gemini-convert.outputs.model_used }}"
-          SCAN_URL="${{ github.event.client_payload.scan_url }}"
           
+          # Check if conversion was successful
+          if [ $? -eq 0 ]; then
+            echo "Conversion successful using $GEMINI_MODEL_USED"
+            echo "gemini_model_used=$GEMINI_MODEL_USED" >> $GITHUB_OUTPUT
+            echo "conversion_success=true" >> $GITHUB_OUTPUT
+          else
+            echo "Conversion failed."
+            echo "conversion_success=false" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+        env:
+          AI_PROMPT: ${{ cat AI_PROMPT_MARKDOWN_CONVERT.md }}
+          OUTPUT_FILE: ${{ format('Markdown Conversions/{0}/{1}.md', github.event.client_payload.year_folder, github.event.client_payload.base_filename) }}
+
+      - name: Commit and push markdown file
+        if: steps.gemini-conversion.outputs.conversion_success == 'true'
+        run: |
+          YEAR_FOLDER="${{ github.event.client_payload.year_folder }}"
+          BASE_FILENAME="${{ github.event.client_payload.base_filename }}"
+          OUTPUT_FILE="Markdown Conversions/$YEAR_FOLDER/$BASE_FILENAME.md"
+          GEMINI_MODEL="${{ steps.gemini-conversion.outputs.gemini_model_used }}"
+          
+          # Get AI prompt version from commit notes
+          AI_PROMPT_VERSION=$(git log -1 --pretty=%B -- AI_PROMPT_MARKDOWN_CONVERT.md | grep -oP 'Version: \K[0-9.]+' || echo "1.0")
+          
+          # Configure Git
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          git add "$MARKDOWN_PATH"
-          git commit -m "Convert PDF to Markdown: ${MARKDOWN_PATH}
-          
-          Processing details:
-          - AI Prompt: V1.0
-          - Model: ${MODEL_USED}
-          - Security scan: ${SCAN_URL}"
-          
+          # Commit the file
+          git add "$OUTPUT_FILE"
+          git commit -m "Convert PDF to Markdown: $BASE_FILENAME [AI Prompt V$AI_PROMPT_VERSION Model $GEMINI_MODEL]"
           git push
+        shell: bash
+
+      - name: Upload markdown as artifact
+        if: steps.gemini-conversion.outputs.conversion_success == 'true'
+        uses: actions/upload-artifact@v3
+        with:
+          name: markdown-conversion
+          path: ${{ format('Markdown Conversions/{0}/{1}.md', github.event.client_payload.year_folder, github.event.client_payload.base_filename) }}
