@@ -2,7 +2,7 @@ name: PDF Detection
 
 on:
   push:
-    branches: [ development ]
+    branches: [ main, development ]
     paths:
       - 'Annual Security Reports/**/*.pdf'
   pull_request:
