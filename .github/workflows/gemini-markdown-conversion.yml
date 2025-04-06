@@ -83,8 +83,11 @@ jobs:
           # Read the PDF content
           PDF_CONTENT=$(cat pdf_content.txt)
           
-          # Prepare the prompt with the PDF content
-          FULL_PROMPT=$(echo "$PROMPT_TEMPLATE" | sed "s/\[PDF_CONTENT\]/$PDF_CONTENT/g")
+          # Create a temp file for the prompt processing
+          cp AI_PROMPT_MARKDOWN_CONVERT.md prompt_template.txt
+          
+          # Use a more reliable method to replace the placeholder
+          PDF_CONTENT_ESCAPED=$(cat pdf_content.txt | jq -Rs .)
           
           # Create the request body
           REQUEST_BODY=$(cat <<EOF
@@ -93,7 +96,10 @@ jobs:
               {
                 "parts": [
                   {
-                    "text": "$FULL_PROMPT"
+                    "text": "Convert the following PDF content to markdown format according to these instructions: $(cat AI_PROMPT_MARKDOWN_CONVERT.md | jq -Rs .)"
+                  },
+                  {
+                    "text": "PDF Content: ${PDF_CONTENT_ESCAPED}"
                   }
                 ]
               }
@@ -136,8 +142,8 @@ jobs:
           # Read the PDF content
           PDF_CONTENT=$(cat pdf_content.txt)
           
-          # Prepare the prompt with the PDF content
-          FULL_PROMPT=$(echo "$PROMPT_TEMPLATE" | sed "s/\[PDF_CONTENT\]/$PDF_CONTENT/g")
+          # Use a more reliable method to replace the placeholder
+          PDF_CONTENT_ESCAPED=$(cat pdf_content.txt | jq -Rs .)
           
           # Create the request body
           REQUEST_BODY=$(cat <<EOF
@@ -146,7 +152,10 @@ jobs:
               {
                 "parts": [
                   {
-                    "text": "$FULL_PROMPT"
+                    "text": "Convert the following PDF content to markdown format according to these instructions: $(cat AI_PROMPT_MARKDOWN_CONVERT.md | jq -Rs .)"
+                  },
+                  {
+                    "text": "PDF Content: ${PDF_CONTENT_ESCAPED}"
                   }
                 ]
               }
