@@ -12,10 +12,15 @@ jobs:
         file: ${{ fromJson(github.event.client_payload.pdf_files) }}
 
     steps:
-      - name: Download file from repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Upload file to Falcon Hybrid Analysis
+      - name: Download PDF
+        run: |
+          mkdir -p scanned-pdfs
+          cp "${{ matrix.file }}" scanned-pdfs/
+
+      - name: Upload PDF to Falcon Hybrid Analysis
         id: hybrid
         run: |
           response=$(curl -s -X POST "https://www.hybrid-analysis.com/api/v2/submit/file" \
@@ -23,19 +28,20 @@ jobs:
             -H "User-Agent: Falcon Sandbox" \
             -F "file=@${{ matrix.file }}" \
             -F "environment_id=120") # Windows 10
-          echo "url=$(echo "$response" | jq -r '.environment_url')" >> $GITHUB_OUTPUT
-          echo "threat_score=$(echo "$response" | jq -r '.threat_score')" >> $GITHUB_OUTPUT
 
-      - name: Upload analysis results as artifact
+          echo "$response" > "results-${{ matrix.file }}.json"
+          url=$(echo "$response" | jq -r '.environment_url')
+          threat_score=$(echo "$response" | jq -r '.threat_score')
+          echo "url=$url" >> $GITHUB_OUTPUT
+          echo "threat_score=$threat_score" >> $GITHUB_OUTPUT
+
+      - name: Upload Hybrid Analysis Results as Artifact
         uses: actions/upload-artifact@v3
         with:
           name: hybrid-analysis-${{ matrix.file }}
-          path: |
-            hybrid-analysis-results-${{ matrix.file }}.json
-        run: |
-          echo "${{ steps.hybrid.outputs.response }}" > hybrid-analysis-results-${{ matrix.file }}.json
+          path: results-${{ matrix.file }}.json
 
-      - name: Dispatch Gemini Conversion if clean
+      - name: Dispatch Gemini Conversion if Clean
         if: ${{ steps.hybrid.outputs.threat_score < 70 }}
         uses: peter-evans/repository-dispatch@v3
         with:
