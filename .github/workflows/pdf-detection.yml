@@ -6,7 +6,7 @@ on:
     paths:
       - 'Annual Security Reports/**/*.pdf'
   pull_request:
-    branches: [ development ]
+    branches: [ main, development ]
     paths:
       - 'Annual Security Reports/**/*.pdf'
 
