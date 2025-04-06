@@ -121,14 +121,17 @@ jobs:
           echo "scan_result=$VERDICT" >> $GITHUB_OUTPUT
           echo "scan_url=$SCAN_URL" >> $GITHUB_OUTPUT
 
+      - name: Create scan results file
+        run: |
+          echo "PDF Path: ${{ steps.find-pdf.outputs.pdf_path }}" > scan-results.txt
+          echo "Scan Result: ${{ steps.virus-scan.outputs.scan_result }}" >> scan-results.txt
+          echo "Scan URL: ${{ steps.virus-scan.outputs.scan_url }}" >> scan-results.txt
+
       - name: Upload scan results as artifact
         uses: actions/upload-artifact@v3
         with:
           name: virus-scan-results
-          path: |
-            echo "PDF Path: ${{ steps.find-pdf.outputs.pdf_path }}" > scan-results.txt
-            echo "Scan Result: ${{ steps.virus-scan.outputs.scan_result }}" >> scan-results.txt
-            echo "Scan URL: ${{ steps.virus-scan.outputs.scan_url }}" >> scan-results.txt
+          path: scan-results.txt
 
       - name: Trigger conversion workflow if safe
         if: steps.virus-scan.outputs.scan_result == 'no specific threat'
