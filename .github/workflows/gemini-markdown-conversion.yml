@@ -1,0 +1,161 @@
+name: Gemini Markdown Conversion
+
+on:
+  repository_dispatch:
+    types: [pdf-clean]
+
+jobs:
+  convert-to-markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: development
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-generativeai requests PyPDF2
+      
+      - name: Get AI Prompt
+        id: get-prompt
+        run: |
+          PROMPT_CONTENT=$(cat AI_PROMPT_MARKDOWN_CONVERT.md)
+          echo "prompt_content<<EOF" >> $GITHUB_ENV
+          echo "$PROMPT_CONTENT" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+      
+      - name: Convert PDF to Markdown with Gemini
+        id: convert-markdown
+        run: |
+          echo "Processing PDF: ${{ github.event.client_payload.pdf_path }}"
+          echo "PDF Year: ${{ github.event.client_payload.pdf_year }}"
+          echo "PDF Name: ${{ github.event.client_payload.pdf_name }}"
+          
+          # Python script to convert PDF to Markdown using Google Gemini
+          python - <<EOF
+          import os
+          import base64
+          import json
+          import google.generativeai as genai
+          import PyPDF2
+          import time
+          import requests
+          
+          # Configure API
+          API_KEY = '${{ secrets.GEMINI_API_KEY }}'
+          genai.configure(api_key=API_KEY)
+          
+          # Read the PDF file
+          pdf_path = '${{ github.event.client_payload.pdf_path }}'
+          pdf_year = '${{ github.event.client_payload.pdf_year }}'
+          pdf_name = '${{ github.event.client_payload.pdf_name }}'
+          
+          # Ensure output directory exists
+          output_dir = f"Markdown Conversions/{pdf_year}"
+          os.makedirs(output_dir, exist_ok=True)
+          
+          # Output markdown file path
+          markdown_path = f"{output_dir}/{pdf_name}.md"
+          
+          # Get the AI prompt for conversion
+          prompt = os.environ['prompt_content']
+          
+          # Function to extract text from PDF
+          def extract_text_from_pdf(pdf_path):
+              text = ""
+              try:
+                  with open(pdf_path, 'rb') as file:
+                      pdf_reader = PyPDF2.PdfReader(file)
+                      for page_num in range(len(pdf_reader.pages)):
+                          page = pdf_reader.pages[page_num]
+                          text += page.extract_text() + "\n\n"
+                  return text
+              except Exception as e:
+                  print(f"Error extracting text from PDF: {str(e)}")
+                  return None
+          
+          # Function to process with specific Gemini model
+          def process_with_model(model_name, pdf_text, prompt):
+              try:
+                  print(f"Attempting to process with {model_name}...")
+                  model = genai.GenerativeModel(model_name)
+                  
+                  # Create the complete prompt
+                  complete_prompt = f"{prompt}\n\nHere is the PDF content to convert:\n\n{pdf_text}"
+                  
+                  # Generate content
+                  response = model.generate_content(complete_prompt)
+                  
+                  if hasattr(response, 'text'):
+                      return response.text
+                  else:
+                      print(f"No text in response from {model_name}")
+                      return None
+              except Exception as e:
+                  print(f"Error with {model_name}: {str(e)}")
+                  return None
+          
+          # Extract text from PDF
+          pdf_text = extract_text_from_pdf(pdf_path)
+          
+          if not pdf_text:
+              print("Failed to extract text from PDF")
+              exit(1)
+          
+          # Try with gemini-2.0-flash first
+          markdown_content = process_with_model('gemini-2.0-flash', pdf_text, prompt)
+          model_used = "Gemini 2.0 Flash"
+          
+          # If failed, try with gemini-2.0-flash-lite
+          if not markdown_content:
+              print("Falling back to gemini-2.0-flash-lite...")
+              markdown_content = process_with_model('gemini-2.0-flash-lite', pdf_text, prompt)
+              model_used = "Gemini 2.0 Flash Lite"
+          
+          # Save the markdown output
+          if markdown_content:
+              with open(markdown_path, 'w', encoding='utf-8') as md_file:
+                  md_file.write(markdown_content)
+              print(f"Successfully converted PDF to Markdown: {markdown_path}")
+              print(f"Model used: {model_used}")
+              
+              # Save the model info for commit message
+              with open('model_info.txt', 'w') as f:
+                  f.write(model_used)
+          else:
+              print("Failed to convert PDF to Markdown with all models")
+              exit(1)
+          EOF
+      
+      - name: Commit Markdown file
+        id: commit-markdown
+        run: |
+          MODEL_USED=$(cat model_info.txt)
+          
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          
+          # Add the new markdown file
+          git add "Markdown Conversions/${{ github.event.client_payload.pdf_year }}/${{ github.event.client_payload.pdf_name }}.md"
+          
+          # Create commit message with processing details
+          COMMIT_MESSAGE="Added markdown conversion for ${{ github.event.client_payload.pdf_name }}"
+          COMMIT_MESSAGE="$COMMIT_MESSAGE\n\nProcessing details:"
+          COMMIT_MESSAGE="$COMMIT_MESSAGE\n- AI Prompt V1.0"
+          COMMIT_MESSAGE="$COMMIT_MESSAGE\n- Model $MODEL_USED"
+          COMMIT_MESSAGE="$COMMIT_MESSAGE\n- Original PDF: ${{ github.event.client_payload.pdf_path }}"
+          COMMIT_MESSAGE="$COMMIT_MESSAGE\n- Falcon Scan: ${{ github.event.client_payload.scan_url }}"
+          
+          # Commit and push the changes
+          git commit -m "$COMMIT_MESSAGE"
+          git push origin development
+          
+          echo "Markdown file committed and pushed successfully."
