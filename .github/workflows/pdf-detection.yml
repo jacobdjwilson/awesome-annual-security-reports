@@ -1,72 +1,28 @@
-name: PDF Detection & Processing
+name: PDF Detection
 
 on:
   push:
     branches:
       - development
     paths:
-      - 'Annual Security Reports/**/*.pdf'
-  pull_request:
-    branches:
-      - development
-    paths:
-      - 'Annual Security Reports/**/*.pdf'
-  workflow_dispatch:
+      - 'Annual Security Reports/**.pdf'
 
 jobs:
-  detect-pdfs:
+  detect-new-pdf:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      
-      - name: Get changed PDF files
-        id: changed_files
+      - name: Get list of added PDF files
+        id: get_pdfs
         run: |
-          if [[ "${{ github.event_name }}" == "push" ]]; then
-            # For push events
-            CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | grep -E '^Annual Security Reports/.*\.pdf$' || echo "")
-          elif [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            # For pull request events
-            CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -E '^Annual Security Reports/.*\.pdf$' || echo "")
-          else
-            # For manual workflow_dispatch - get recently added files
-            CHANGED_FILES=$(git diff --name-only HEAD~5 HEAD | grep -E '^Annual Security Reports/.*\.pdf$' || echo "")
-          fi
-          
-          if [[ -z "$CHANGED_FILES" ]]; then
-            echo "No PDF files changed"
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-          else
-            echo "PDF files changed:"
-            echo "$CHANGED_FILES"
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-            echo "$CHANGED_FILES" >> $GITHUB_ENV
-            echo "EOF" >> $GITHUB_ENV
-          fi
-      
-      - name: Trigger Falcon scan for each PDF
-        if: steps.changed_files.outputs.has_changes == 'true'
-        uses: actions/github-script@v7
+          echo "files=$(git diff-tree --no-commit-id --name-status -r ${{ github.sha }} | grep '^A' | grep '.pdf$' | awk '{print $2}' | jq -R -s -c 'split("\n") | map(select(. != ""))')" >> $GITHUB_OUTPUT
+
+      - name: Dispatch Scan Workflow
+        uses: peter-evans/repository-dispatch@v3
         with:
-          github-token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          script: |
-            const changedFiles = process.env.CHANGED_FILES.split('\n').filter(file => file.trim());
-            
-            for (const file of changedFiles) {
-              console.log(`Triggering scan for: ${file}`);
-              
-              await github.rest.actions.createWorkflowDispatch({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                workflow_id: 'falcon-scan.yml',
-                ref: 'development',
-                inputs: {
-                  pdf_path: file
-                }
-              });
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          event-type: falcon-scan-request
+          client-payload: |
+            {
+              "pdf_files": ${{ steps.get_pdfs.outputs.files }},
+              "sha": "${{ github.sha }}"
             }
