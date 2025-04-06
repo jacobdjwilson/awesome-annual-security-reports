@@ -1,239 +1,155 @@
 name: Gemini Markdown Conversion
 
 on:
-  workflow_dispatch:
-    inputs:
-      pdf_path:
-        description: 'Relative path to the clean PDF file to convert'
-        required: true
-        type: string
-
-# Prevent multiple runs for the same PDF concurrently, useful if trigger fires rapidly
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.inputs.pdf_path }}
-  cancel-in-progress: true
+  repository_dispatch:
+    types: [start-gemini-conversion]
 
 jobs:
   convert-to-markdown:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # Needed to commit the new Markdown file
-
+    
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }} # Use PAT for commit permission
-          ref: development # Ensure we checkout the correct branch
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11' # Specify a Python version
-
-      - name: Install Google Generative AI library
-        run: pip install google-generativeai
-
-      - name: Fetch AI Prompt Content
-        id: get-prompt
+          python-version: '3.10'
+      
+      - name: Install dependencies
         run: |
-          prompt_file="AI_PROMPT_MARKDOWN_CONVERT.md"
-          if [[ ! -f "$prompt_file" ]]; then
-             echo "::error::AI Prompt file not found at $prompt_file"
-             exit 1
-          fi
-          # Read file content and make it available to the python script env var
-          # Use process substitution and export to handle multiline/special chars
-          export AI_PROMPT_CONTENT=$(<"$prompt_file")
-          echo "AI Prompt content loaded."
-          # Optional: Output prompt to logs for verification (be careful with sensitive info if any)
-          # echo "Prompt: $AI_PROMPT_CONTENT"
-
-      - name: Convert PDF to Markdown using Gemini
+          pip install requests google-generativeai PyPDF2
+      
+      - name: Read AI prompt
+        id: read-prompt
+        run: |
+          PROMPT_CONTENT=$(cat AI_PROMPT_MARKDOWN_CONVERT.md)
+          PROMPT_CONTENT="${PROMPT_CONTENT//'%'/'%25'}"
+          PROMPT_CONTENT="${PROMPT_CONTENT//$'\n'/'%0A'}"
+          PROMPT_CONTENT="${PROMPT_CONTENT//$'\r'/'%0D'}"
+          echo "prompt=$PROMPT_CONTENT" >> $GITHUB_OUTPUT
+      
+      - name: Convert PDF to Markdown with Gemini
         id: gemini-convert
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          PDF_PATH: ${{ github.event.inputs.pdf_path }}
-          AI_PROMPT: ${{ env.AI_PROMPT_CONTENT }} # Pass prompt content via env var
-          MODEL_PRIMARY: 'gemini-2.0-flash' # User specified primary model
-          MODEL_FALLBACK: 'gemini-2.0-flash-lite' # User specified fallback model
         run: |
-          # Python script to interact with Gemini API
-          # Note: Ensure the google-generativeai library supports PDF uploads directly.
-          # As of recent versions, it uses the File API for this.
-
-          cat << EOF > gemini_script.py
-          import google.generativeai as genai
+          cat > convert_pdf.py << 'EOF'
+          import sys
           import os
           import time
-          import sys
+          import json
+          import base64
+          import PyPDF2
+          import requests
+          import google.generativeai as genai
 
-          # --- Configuration ---
-          API_KEY = os.getenv('GEMINI_API_KEY')
-          PDF_PATH = os.getenv('PDF_PATH')
-          PROMPT = os.getenv('AI_PROMPT')
-          MODEL_PRIMARY = os.getenv('MODEL_PRIMARY')
-          MODEL_FALLBACK = os.getenv('MODEL_FALLBACK')
-          OUTPUT_MD_FILE = "conversion_result.md"
-          OUTPUT_MODEL_FILE = "used_model.txt"
+          # Get inputs
+          pdf_path = os.environ['PDF_PATH']
+          pdf_year = os.environ['PDF_YEAR']
+          pdf_name = os.environ['PDF_NAME']
+          prompt_text = os.environ['PROMPT_TEXT']
+          api_key = os.environ['GEMINI_API_KEY']
 
-          if not all([API_KEY, PDF_PATH, PROMPT, MODEL_PRIMARY, MODEL_FALLBACK]):
-              print("::error::Missing required environment variables (API_KEY, PDF_PATH, PROMPT, MODELS)")
-              sys.exit(1)
+          # Configure Gemini API
+          genai.configure(api_key=api_key)
 
-          genai.configure(api_key=API_KEY)
+          def extract_text_from_pdf(pdf_path):
+              with open(pdf_path, 'rb') as file:
+                  pdf_reader = PyPDF2.PdfReader(file)
+                  text = ""
+                  for page_num in range(len(pdf_reader.pages)):
+                      text += pdf_reader.pages[page_num].extract_text() + "\n\n"
+              return text
 
-          # --- File Upload ---
-          pdf_file_resource = None
-          try:
-              print(f"Uploading file: {PDF_PATH}...")
-              pdf_file_resource = genai.upload_file(path=PDF_PATH, display_name=os.path.basename(PDF_PATH))
-              print(f"Upload initiated. File resource name: {pdf_file_resource.name}")
-
-              # --- Wait for File Processing ---
-              print("Waiting for file processing...")
-              while pdf_file_resource.state.name == "PROCESSING":
-                  print('.', end='', flush=True)
-                  time.sleep(5) # Check every 5 seconds
-                  # Make sure to get the updated file resource state
-                  pdf_file_resource = genai.get_file(pdf_file_resource.name)
-
-              if pdf_file_resource.state.name != "ACTIVE":
-                  print(f"\n::error::File processing failed. Final state: {pdf_file_resource.state.name}")
-                  # Attempt cleanup before exiting
-                  try:
-                      genai.delete_file(pdf_file_resource.name)
-                      print(f"Cleaned up uploaded file: {pdf_file_resource.name}")
-                  except Exception as e_del:
-                      print(f"::warning::Failed to delete uploaded file {pdf_file_resource.name} after processing failure: {e_del}")
-                  sys.exit(1)
-
-              print("\nFile is now ACTIVE.")
-
-          except Exception as e:
-              print(f"::error::An error occurred during file upload or processing: {e}")
-              # If file resource exists but failed during processing check, try to delete
-              if pdf_file_resource and pdf_file_resource.name:
-                  try:
-                      genai.delete_file(pdf_file_resource.name)
-                      print(f"Cleaned up uploaded file resource {pdf_file_resource.name} after error.")
-                  except Exception as e_del:
-                      print(f"::warning::Failed to delete potentially uploaded file {pdf_file_resource.name} after error: {e_del}")
-              sys.exit(1)
-
-
-          # --- Content Generation (with failover) ---
-          markdown_content = None
-          used_model = ""
-          models_to_try = [MODEL_PRIMARY, MODEL_FALLBACK]
-
-          for model_name in models_to_try:
+          def try_gemini_model(model_name, pdf_text, prompt):
               try:
-                  print(f"Attempting conversion with model: {model_name}...")
+                  print(f"Trying model: {model_name}")
                   model = genai.GenerativeModel(model_name)
-                  # Prepare content: Prompt text + Uploaded File object
-                  # The library handles constructing the request from this list
-                  request_content = [PROMPT, pdf_file_resource]
-
-                  response = model.generate_content(request_content)
-
-                  # Check for empty or blocked response
-                  if not response.parts:
-                     if response.prompt_feedback.block_reason:
-                         print(f"::error::Model {model_name} blocked the prompt. Reason: {response.prompt_feedback.block_reason}")
-                     else:
-                         print(f"::error::Model {model_name} returned an empty response.")
-                     # Continue to next model (if any) or fail
-                     continue # Go to next model in the loop
-
+                  
+                  # Prepare the complete prompt with the PDF content
+                  complete_prompt = f"{prompt}\n\nHere is the PDF content to convert:\n\n{pdf_text}"
+                  
+                  # Generate content
+                  response = model.generate_content(complete_prompt, 
+                                                   generation_config={"temperature": 0.2, 
+                                                                     "max_output_tokens": 8192})
+                  
                   markdown_content = response.text
-                  used_model = model_name
-                  print(f"Successfully converted using {used_model}")
-                  break # Success, exit the loop
-
+                  model_used = model_name
+                  return markdown_content, model_used, True
+              
               except Exception as e:
-                  print(f"::warning::Model {model_name} failed: {e}")
-                  # If this was the last model, the loop will end, and we'll check markdown_content
+                  print(f"Error with {model_name}: {str(e)}")
+                  return None, model_name, False
 
-          # --- Cleanup Uploaded File ---
+          # Main conversion process
           try:
-              print(f"Deleting uploaded file: {pdf_file_resource.name}")
-              genai.delete_file(pdf_file_resource.name)
-          except Exception as e_delete:
-               print(f"::warning::Failed to delete uploaded file {pdf_file_resource.name}: {e_delete}")
-
-          # --- Check result and Write Output ---
-          if markdown_content:
-              print(f"Writing Markdown content to {OUTPUT_MD_FILE}")
-              with open(OUTPUT_MD_FILE, "w", encoding='utf-8') as f:
+              # Extract text from PDF
+              print(f"Extracting text from {pdf_path}")
+              pdf_text = extract_text_from_pdf(pdf_path)
+              
+              # Find the best model to use
+              models_to_try = ["gemini-2.0-flash", "gemini-2.0-flash-lite"]
+              
+              markdown_content = None
+              model_used = None
+              success = False
+              
+              for model in models_to_try:
+                  markdown_content, model_used, success = try_gemini_model(model, pdf_text, prompt_text)
+                  if success:
+                      break
+              
+              if not success:
+                  print("All models failed to process the PDF")
+                  sys.exit(1)
+              
+              # Ensure the output directory exists
+              output_dir = f"Markdown Conversions/{pdf_year}"
+              os.makedirs(output_dir, exist_ok=True)
+              
+              # Create markdown file
+              output_file = f"{output_dir}/{pdf_name}.md"
+              with open(output_file, "w") as f:
                   f.write(markdown_content)
-              with open(OUTPUT_MODEL_FILE, "w") as f:
-                  f.write(used_model)
-              print("Conversion script finished successfully.")
-          else:
-              print("::error::Both Gemini models failed to generate content.")
+              
+              print(f"Successfully converted PDF to Markdown using {model_used}")
+              print(f"Output file: {output_file}")
+              
+              # Output for GitHub Actions
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                  f.write(f"markdown_path={output_file}\n")
+                  f.write(f"model_used={model_used}\n")
+              
+          except Exception as e:
+              print(f"Error: {str(e)}")
               sys.exit(1)
           EOF
 
-          # Execute the Python script
-          python gemini_script.py
-
-      - name: Determine Output Path and Commit Markdown
+          python convert_pdf.py
+        env:
+          PDF_PATH: ${{ github.event.client_payload.pdf_path }}
+          PDF_YEAR: ${{ github.event.client_payload.pdf_year }}
+          PDF_NAME: ${{ github.event.client_payload.pdf_name }}
+          PROMPT_TEXT: ${{ steps.read-prompt.outputs.prompt }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_OUTPUT: $GITHUB_OUTPUT
+      
+      - name: Commit markdown file
         run: |
-          if [[ ! -f conversion_result.md || ! -f used_model.txt ]]; then
-            echo "::error::Conversion output files not found. Gemini step likely failed."
-            exit 1
-          fi
-
-          pdf_path="${{ github.event.inputs.pdf_path }}"
-          # Get directory from PDF path: Annual Security Reports/YYYY -> Markdown Conversions/YYYY
-          pdf_dir=$(dirname "$pdf_path")
-          target_subdir=$(echo "$pdf_dir" | sed 's|Annual Security Reports|Markdown Conversions|')
-
-          # Get base filename without extension: file.pdf -> file
-          pdf_filename_base=$(basename "$pdf_path" .pdf)
-          # Construct target Markdown path
-          target_md_file="${target_subdir}/${pdf_filename_base}.md"
-          target_md_dir=$(dirname "$target_md_file")
-
-          echo "Original PDF path: $pdf_path"
-          echo "Target Markdown directory: $target_md_dir"
-          echo "Target Markdown file: $target_md_file"
-
-          # Create target directory if it doesn't exist
-          mkdir -p "$target_md_dir"
-
-          # Move the result file to the correct location
-          mv conversion_result.md "$target_md_file"
-          used_model=$(cat used_model.txt)
-          rm used_model.txt # Clean up model file
-
-          # Configure Git
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-          # Add, Commit, and Push
-          git add "$target_md_file"
-
-          # Check if there are changes to commit
-          if git diff --staged --quiet; then
-            echo "No changes detected in $target_md_file. Skipping commit."
-          else
-            echo "Committing $target_md_file..."
-            commit_message="feat: Convert $(basename "$pdf_path") to Markdown
-
-            Processed using AI Prompt V1.0, Model: ${used_model}"
-
-            git commit -m "$commit_message"
-            echo "Pushing changes to development branch..."
-            git push origin development
-            if [[ $? -ne 0 ]]; then
-                echo "::error::Failed to push changes to the repository."
-                exit 1
-            fi
-            echo "Changes pushed successfully."
-          fi
-
-      - name: Clean up Python script
-        if: always() # Run even if previous steps fail
-        run: rm -f gemini_script.py
+          MARKDOWN_PATH="${{ steps.gemini-convert.outputs.markdown_path }}"
+          MODEL_USED="${{ steps.gemini-convert.outputs.model_used }}"
+          SCAN_URL="${{ github.event.client_payload.scan_url }}"
+          
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          git add "$MARKDOWN_PATH"
+          git commit -m "Convert PDF to Markdown: ${MARKDOWN_PATH}
+          
+          Processing details:
+          - AI Prompt: V1.0
+          - Model: ${MODEL_USED}
+          - Security scan: ${SCAN_URL}"
+          
+          git push
