@@ -1,8 +1,20 @@
 name: Gemini Markdown Conversion
 
 on:
-  repository_dispatch:
-    types: [start-gemini-conversion]
+  workflow_call:
+    inputs:
+      pdf_path:
+        required: true
+        type: string
+      pdf_year:
+        required: true
+        type: string
+      pdf_name:
+        required: true
+        type: string
+    secrets:
+      GEMINI_API_KEY:
+        required: true
 
 jobs:
   convert-to-markdown:
