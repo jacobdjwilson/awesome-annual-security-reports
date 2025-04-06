@@ -1,433 +1,48 @@
-name: Falcon Hybrid-Analysis PDF Security Scan
+name: Falcon Hybrid Analysis Scan
 
 on:
-  push:
-    branches:
-      - development
-    paths:
-      - 'Annual Security Reports/**/*.pdf'
-  pull_request:
-    branches:
-      - development
-    paths:
-      - 'Annual Security Reports/**/*.pdf'
-  workflow_dispatch:
-    inputs:
-      pdf_path:
-        description: 'Path to the PDF file'
-        required: true
+  repository_dispatch:
+    types: [falcon-scan-request]
 
 jobs:
   scan-pdf:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      actions: write
-    outputs:
-      scan_result: ${{ steps.scan_status.outputs.scan_result }}
-      scan_url: ${{ steps.upload_scan.outputs.scan_url }}
-      threat_detected: ${{ steps.scan_status.outputs.threat_detected }}
-      pdf_path: ${{ steps.get_pdf.outputs.pdf_path }}
-      target_markdown_path: ${{ steps.get_pdf.outputs.target_markdown_path }}
-    
+    strategy:
+      matrix:
+        file: ${{ fromJson(github.event.client_payload.pdf_files) }}
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      
-      - name: Get changed PDF files
-        id: get_pdf
+      - name: Download file from repo
+        uses: actions/checkout@v3
+
+      - name: Upload file to Falcon Hybrid Analysis
+        id: hybrid
         run: |
-          # For workflow_dispatch events
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            PDF_FILES="${{ github.event.inputs.pdf_path }}"
-          # For push events
-          elif [[ "${{ github.event_name }}" == "push" ]]; then
-            # Get list of added or modified PDF files
-            PDF_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | grep -E '^Annual Security Reports/.*\.pdf
-          
-          # Calculate the corresponding markdown path
-          MD_PATH="${PDF_FILES/Annual Security Reports/Markdown Conversions}"
-          MD_PATH="${MD_PATH%.pdf}.md"
-          echo "target_markdown_path=$MD_PATH" >> $GITHUB_OUTPUT
-      
-      - name: Upload PDF to Falcon Hybrid-Analysis
-        id: upload_scan
-        run: |
-          PDF_PATH="${{ steps.get_pdf.outputs.pdf_path }}"
-          
-          # Upload file to Hybrid-Analysis
-          RESPONSE=$(curl -X POST "https://www.hybrid-analysis.com/api/v2/submit/file" \
+          response=$(curl -s -X POST "https://www.hybrid-analysis.com/api/v2/submit/file" \
             -H "api-key: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}" \
-            -H "Accept: application/json" \
-            -F "file=@$PDF_PATH" \
-            -F "environment_id=160" \
-            -F "scan_type=all")
-          
-          echo "Hybrid-Analysis Upload Response: $RESPONSE"
-          
-          # Extract job ID from response
-          JOB_ID=$(echo $RESPONSE | jq -r '.job_id')
-          
-          if [[ "$JOB_ID" == "null" || -z "$JOB_ID" ]]; then
-            echo "Failed to get job ID from Hybrid-Analysis"
-            exit 1
-          fi
-          
-          echo "Hybrid-Analysis Job ID: $JOB_ID"
-          
-          # Generate result URL
-          SCAN_URL="https://www.hybrid-analysis.com/sample/$JOB_ID"
-          echo "scan_url=$SCAN_URL" >> $GITHUB_OUTPUT
-          
-          # Save scan info as artifact
-          echo "Scan URL: $SCAN_URL" > scan_info.txt
-          echo "Job ID: $JOB_ID" >> scan_info.txt
-          echo "PDF Path: $PDF_PATH" >> scan_info.txt
-      
-      - name: Upload scan info as artifact
-        uses: actions/upload-artifact@v4
+            -H "User-Agent: Falcon Sandbox" \
+            -F "file=@${{ matrix.file }}" \
+            -F "environment_id=120") # Windows 10
+          echo "url=$(echo "$response" | jq -r '.environment_url')" >> $GITHUB_OUTPUT
+          echo "threat_score=$(echo "$response" | jq -r '.threat_score')" >> $GITHUB_OUTPUT
+
+      - name: Upload analysis results as artifact
+        uses: actions/upload-artifact@v3
         with:
-          name: scan-results
-          path: scan_info.txt
-      
-      - name: Poll for scan completion
-        id: scan_status
+          name: hybrid-analysis-${{ matrix.file }}
+          path: |
+            hybrid-analysis-results-${{ matrix.file }}.json
         run: |
-          JOB_ID=$(echo "${{ steps.upload_scan.outputs.scan_url }}" | awk -F '/' '{print $NF}')
-          MAX_ATTEMPTS=30
-          ATTEMPT=0
-          
-          while [[ $ATTEMPT -lt $MAX_ATTEMPTS ]]; do
-            echo "Checking scan status (attempt $ATTEMPT of $MAX_ATTEMPTS)..."
-            
-            RESPONSE=$(curl -X GET "https://www.hybrid-analysis.com/api/v2/report/$JOB_ID/summary" \
-              -H "api-key: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}" \
-              -H "Accept: application/json")
-            
-            STATE=$(echo $RESPONSE | jq -r '.state')
-            
-            if [[ "$STATE" == "SUCCESS" ]]; then
-              echo "Scan completed successfully"
-              
-              # Check threat score
-              THREAT_SCORE=$(echo $RESPONSE | jq -r '.threat_score')
-              echo "Threat score: $THREAT_SCORE"
-              
-              if [[ $THREAT_SCORE -gt 0 ]]; then
-                echo "Threat detected with score: $THREAT_SCORE"
-                echo "threat_detected=true" >> $GITHUB_OUTPUT
-                echo "scan_result=threat_detected" >> $GITHUB_OUTPUT
-              else
-                echo "No threats detected"
-                echo "threat_detected=false" >> $GITHUB_OUTPUT
-                echo "scan_result=clean" >> $GITHUB_OUTPUT
-              fi
-              
-              # Save full scan results
-              echo "$RESPONSE" > full_scan_results.json
-              
-              # Upload detailed scan results as artifact
-              uses: actions/upload-artifact@v4
-              with:
-                name: full-scan-results
-                path: full_scan_results.json
-              
-              break
-            elif [[ "$STATE" == "ERROR" || "$STATE" == "FAILED" ]]; then
-              echo "Scan failed: $RESPONSE"
-              echo "scan_result=error" >> $GITHUB_OUTPUT
-              echo "threat_detected=unknown" >> $GITHUB_OUTPUT
-              exit 1
-            fi
-            
-            ATTEMPT=$((ATTEMPT+1))
-            sleep 10
-          done
-          
-          if [[ $ATTEMPT -ge $MAX_ATTEMPTS ]]; then
-            echo "Timed out waiting for scan to complete"
-            echo "scan_result=timeout" >> $GITHUB_OUTPUT
-            echo "threat_detected=unknown" >> $GITHUB_OUTPUT
-            exit 1
-          fi
-      
-      - name: Trigger markdown conversion for clean files
-        if: steps.scan_status.outputs.threat_detected == 'false'
-        uses: actions/github-script@v7
+          echo "${{ steps.hybrid.outputs.response }}" > hybrid-analysis-results-${{ matrix.file }}.json
+
+      - name: Dispatch Gemini Conversion if clean
+        if: ${{ steps.hybrid.outputs.threat_score < 70 }}
+        uses: peter-evans/repository-dispatch@v3
         with:
-          github-token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          script: |
-            github.rest.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              workflow_id: 'gemini-markdown-conversion.yml',
-              ref: 'development',
-              inputs: {
-                pdf_path: '${{ steps.get_pdf.outputs.pdf_path }}',
-                target_markdown_path: '${{ steps.get_pdf.outputs.target_markdown_path }}',
-                scan_url: '${{ steps.upload_scan.outputs.scan_url }}'
-              }
-            });
- | head -n 1)
-          # For pull request events
-          elif [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            # Get list of added or modified PDF files in the PR
-            PDF_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -E '^Annual Security Reports/.*\.pdf
-          
-          # Calculate the corresponding markdown path
-          MD_PATH="${PDF_FILES/Annual Security Reports/Markdown Conversions}"
-          MD_PATH="${MD_PATH%.pdf}.md"
-          echo "target_markdown_path=$MD_PATH" >> $GITHUB_OUTPUT
-      
-      - name: Upload PDF to Falcon Hybrid-Analysis
-        id: upload_scan
-        run: |
-          PDF_PATH="${{ steps.get_pdf.outputs.pdf_path }}"
-          
-          # Upload file to Hybrid-Analysis
-          RESPONSE=$(curl -X POST "https://www.hybrid-analysis.com/api/v2/submit/file" \
-            -H "api-key: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}" \
-            -H "Accept: application/json" \
-            -F "file=@$PDF_PATH" \
-            -F "environment_id=160" \
-            -F "scan_type=all")
-          
-          echo "Hybrid-Analysis Upload Response: $RESPONSE"
-          
-          # Extract job ID from response
-          JOB_ID=$(echo $RESPONSE | jq -r '.job_id')
-          
-          if [[ "$JOB_ID" == "null" || -z "$JOB_ID" ]]; then
-            echo "Failed to get job ID from Hybrid-Analysis"
-            exit 1
-          fi
-          
-          echo "Hybrid-Analysis Job ID: $JOB_ID"
-          
-          # Generate result URL
-          SCAN_URL="https://www.hybrid-analysis.com/sample/$JOB_ID"
-          echo "scan_url=$SCAN_URL" >> $GITHUB_OUTPUT
-          
-          # Save scan info as artifact
-          echo "Scan URL: $SCAN_URL" > scan_info.txt
-          echo "Job ID: $JOB_ID" >> scan_info.txt
-          echo "PDF Path: $PDF_PATH" >> scan_info.txt
-      
-      - name: Upload scan info as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: scan-results
-          path: scan_info.txt
-      
-      - name: Poll for scan completion
-        id: scan_status
-        run: |
-          JOB_ID=$(echo "${{ steps.upload_scan.outputs.scan_url }}" | awk -F '/' '{print $NF}')
-          MAX_ATTEMPTS=30
-          ATTEMPT=0
-          
-          while [[ $ATTEMPT -lt $MAX_ATTEMPTS ]]; do
-            echo "Checking scan status (attempt $ATTEMPT of $MAX_ATTEMPTS)..."
-            
-            RESPONSE=$(curl -X GET "https://www.hybrid-analysis.com/api/v2/report/$JOB_ID/summary" \
-              -H "api-key: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}" \
-              -H "Accept: application/json")
-            
-            STATE=$(echo $RESPONSE | jq -r '.state')
-            
-            if [[ "$STATE" == "SUCCESS" ]]; then
-              echo "Scan completed successfully"
-              
-              # Check threat score
-              THREAT_SCORE=$(echo $RESPONSE | jq -r '.threat_score')
-              echo "Threat score: $THREAT_SCORE"
-              
-              if [[ $THREAT_SCORE -gt 0 ]]; then
-                echo "Threat detected with score: $THREAT_SCORE"
-                echo "threat_detected=true" >> $GITHUB_OUTPUT
-                echo "scan_result=threat_detected" >> $GITHUB_OUTPUT
-              else
-                echo "No threats detected"
-                echo "threat_detected=false" >> $GITHUB_OUTPUT
-                echo "scan_result=clean" >> $GITHUB_OUTPUT
-              fi
-              
-              # Save full scan results
-              echo "$RESPONSE" > full_scan_results.json
-              
-              # Upload detailed scan results as artifact
-              actions/upload-artifact@v4
-              with:
-                name: full-scan-results
-                path: full_scan_results.json
-              
-              break
-            elif [[ "$STATE" == "ERROR" || "$STATE" == "FAILED" ]]; then
-              echo "Scan failed: $RESPONSE"
-              echo "scan_result=error" >> $GITHUB_OUTPUT
-              echo "threat_detected=unknown" >> $GITHUB_OUTPUT
-              exit 1
-            fi
-            
-            ATTEMPT=$((ATTEMPT+1))
-            sleep 10
-          done
-          
-          if [[ $ATTEMPT -ge $MAX_ATTEMPTS ]]; then
-            echo "Timed out waiting for scan to complete"
-            echo "scan_result=timeout" >> $GITHUB_OUTPUT
-            echo "threat_detected=unknown" >> $GITHUB_OUTPUT
-            exit 1
-          fi
-      
-      - name: Trigger markdown conversion for clean files
-        if: steps.scan_status.outputs.threat_detected == 'false'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          script: |
-            github.rest.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              workflow_id: 'gemini-markdown-conversion.yml',
-              ref: 'development',
-              inputs: {
-                pdf_path: '${{ steps.get_pdf.outputs.pdf_path }}',
-                target_markdown_path: '${{ steps.get_pdf.outputs.target_markdown_path }}',
-                scan_url: '${{ steps.upload_scan.outputs.scan_url }}'
-              }
-            });
- | head -n 1)
-          fi
-          
-          if [[ -z "$PDF_FILES" ]]; then
-            echo "No PDF files found to scan"
-            exit 1
-          fi
-          
-          echo "PDF to scan: $PDF_FILES"
-          echo "pdf_path=$PDF_FILES" >> $GITHUB_OUTPUT
-          
-          # Calculate the corresponding markdown path
-          MD_PATH="${PDF_FILES/Annual Security Reports/Markdown Conversions}"
-          MD_PATH="${MD_PATH%.pdf}.md"
-          echo "target_markdown_path=$MD_PATH" >> $GITHUB_OUTPUT
-      
-      - name: Upload PDF to Falcon Hybrid-Analysis
-        id: upload_scan
-        run: |
-          PDF_PATH="${{ steps.get_pdf.outputs.pdf_path }}"
-          
-          # Upload file to Hybrid-Analysis
-          RESPONSE=$(curl -X POST "https://www.hybrid-analysis.com/api/v2/submit/file" \
-            -H "api-key: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}" \
-            -H "Accept: application/json" \
-            -F "file=@$PDF_PATH" \
-            -F "environment_id=160" \
-            -F "scan_type=all")
-          
-          echo "Hybrid-Analysis Upload Response: $RESPONSE"
-          
-          # Extract job ID from response
-          JOB_ID=$(echo $RESPONSE | jq -r '.job_id')
-          
-          if [[ "$JOB_ID" == "null" || -z "$JOB_ID" ]]; then
-            echo "Failed to get job ID from Hybrid-Analysis"
-            exit 1
-          fi
-          
-          echo "Hybrid-Analysis Job ID: $JOB_ID"
-          
-          # Generate result URL
-          SCAN_URL="https://www.hybrid-analysis.com/sample/$JOB_ID"
-          echo "scan_url=$SCAN_URL" >> $GITHUB_OUTPUT
-          
-          # Save scan info as artifact
-          echo "Scan URL: $SCAN_URL" > scan_info.txt
-          echo "Job ID: $JOB_ID" >> scan_info.txt
-          echo "PDF Path: $PDF_PATH" >> scan_info.txt
-      
-      - name: Upload scan info as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: scan-results
-          path: scan_info.txt
-      
-      - name: Poll for scan completion
-        id: scan_status
-        run: |
-          JOB_ID=$(echo "${{ steps.upload_scan.outputs.scan_url }}" | awk -F '/' '{print $NF}')
-          MAX_ATTEMPTS=30
-          ATTEMPT=0
-          
-          while [[ $ATTEMPT -lt $MAX_ATTEMPTS ]]; do
-            echo "Checking scan status (attempt $ATTEMPT of $MAX_ATTEMPTS)..."
-            
-            RESPONSE=$(curl -X GET "https://www.hybrid-analysis.com/api/v2/report/$JOB_ID/summary" \
-              -H "api-key: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}" \
-              -H "Accept: application/json")
-            
-            STATE=$(echo $RESPONSE | jq -r '.state')
-            
-            if [[ "$STATE" == "SUCCESS" ]]; then
-              echo "Scan completed successfully"
-              
-              # Check threat score
-              THREAT_SCORE=$(echo $RESPONSE | jq -r '.threat_score')
-              echo "Threat score: $THREAT_SCORE"
-              
-              if [[ $THREAT_SCORE -gt 0 ]]; then
-                echo "Threat detected with score: $THREAT_SCORE"
-                echo "threat_detected=true" >> $GITHUB_OUTPUT
-                echo "scan_result=threat_detected" >> $GITHUB_OUTPUT
-              else
-                echo "No threats detected"
-                echo "threat_detected=false" >> $GITHUB_OUTPUT
-                echo "scan_result=clean" >> $GITHUB_OUTPUT
-              fi
-              
-              # Save full scan results
-              echo "$RESPONSE" > full_scan_results.json
-              
-              # Upload detailed scan results as artifact
-              actions/upload-artifact@v4
-              with:
-                name: full-scan-results
-                path: full_scan_results.json
-              
-              break
-            elif [[ "$STATE" == "ERROR" || "$STATE" == "FAILED" ]]; then
-              echo "Scan failed: $RESPONSE"
-              echo "scan_result=error" >> $GITHUB_OUTPUT
-              echo "threat_detected=unknown" >> $GITHUB_OUTPUT
-              exit 1
-            fi
-            
-            ATTEMPT=$((ATTEMPT+1))
-            sleep 10
-          done
-          
-          if [[ $ATTEMPT -ge $MAX_ATTEMPTS ]]; then
-            echo "Timed out waiting for scan to complete"
-            echo "scan_result=timeout" >> $GITHUB_OUTPUT
-            echo "threat_detected=unknown" >> $GITHUB_OUTPUT
-            exit 1
-          fi
-      
-      - name: Trigger markdown conversion for clean files
-        if: steps.scan_status.outputs.threat_detected == 'false'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          script: |
-            github.rest.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              workflow_id: 'gemini-markdown-conversion.yml',
-              ref: 'development',
-              inputs: {
-                pdf_path: '${{ steps.get_pdf.outputs.pdf_path }}',
-                target_markdown_path: '${{ steps.get_pdf.outputs.target_markdown_path }}',
-                scan_url: '${{ steps.upload_scan.outputs.scan_url }}'
-              }
-            });
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          event-type: gemini-convert-request
+          client-payload: |
+            {
+              "file": "${{ matrix.file }}",
+              "sha": "${{ github.event.client_payload.sha }}"
+            }
