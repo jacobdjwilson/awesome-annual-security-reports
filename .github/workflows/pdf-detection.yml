@@ -2,33 +2,69 @@ name: PDF Detection
 
 on:
   push:
-    branches:
-      - development
+    branches: [ development ]
+    paths:
+      - 'Annual Security Reports/**/*.pdf'
+  pull_request:
+    branches: [ development ]
     paths:
       - 'Annual Security Reports/**/*.pdf'
 
 jobs:
-  detect-new-pdf:
+  detect-pdf:
     runs-on: ubuntu-latest
-
+    outputs:
+      pdf_path: ${{ steps.find-pdf.outputs.pdf_path }}
+      pdf_year: ${{ steps.extract-info.outputs.pdf_year }}
+      pdf_name: ${{ steps.extract-info.outputs.pdf_name }}
+    
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Get list of added PDF files
-        id: get_pdfs
+        with:
+          fetch-depth: 2
+      
+      - name: Find changed PDF files
+        id: find-pdf
         run: |
-          files=$(git diff-tree --no-commit-id --name-status -r ${{ github.sha }} | grep '^A' | grep '.pdf$' | awk '{print $2}' | jq -R -s -c 'split("\n") | map(select(. != ""))')
-          echo "files=$files" >> $GITHUB_OUTPUT
-
-      - name: Dispatch Scan Workflow
-        if: ${{ steps.get_pdfs.outputs.files != '[]' }}
-        uses: peter-evans/repository-dispatch@v3
+          if [ "${{ github.event_name }}" == "push" ]; then
+            # For push events
+            CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | grep -E "Annual Security Reports/.+\.pdf$" || echo "")
+          else
+            # For pull request events
+            CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -E "Annual Security Reports/.+\.pdf$" || echo "")
+          fi
+          
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No PDF files were changed or added"
+            exit 0
+          fi
+          
+          # Just take the first PDF if there are multiple (we'll process one at a time)
+          PDF_PATH=$(echo "$CHANGED_FILES" | head -n 1)
+          echo "Found changed PDF: $PDF_PATH"
+          echo "pdf_path=$PDF_PATH" >> $GITHUB_OUTPUT
+      
+      - name: Extract year and name
+        id: extract-info
+        if: steps.find-pdf.outputs.pdf_path != ''
+        run: |
+          PDF_PATH="${{ steps.find-pdf.outputs.pdf_path }}"
+          
+          # Extract year from the path
+          PDF_YEAR=$(echo "$PDF_PATH" | grep -oP 'Annual Security Reports/\K\d{4}' || echo "unknown")
+          
+          # Extract filename without extension
+          PDF_NAME=$(basename "$PDF_PATH" .pdf)
+          
+          echo "pdf_year=$PDF_YEAR" >> $GITHUB_OUTPUT
+          echo "pdf_name=$PDF_NAME" >> $GITHUB_OUTPUT
+          echo "Year: $PDF_YEAR, Name: $PDF_NAME"
+    
+      - name: Trigger Falcon Scan
+        if: steps.find-pdf.outputs.pdf_path != ''
+        uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          event-type: falcon-scan-request
-          client-payload: >
-            {
-              "pdf_files": ${{ steps.get_pdfs.outputs.files }},
-              "sha": "${{ github.sha }}"
-            }
+          event-type: start-falcon-scan
+          client-payload: '{"pdf_path": "${{ steps.find-pdf.outputs.pdf_path }}", "pdf_year": "${{ steps.extract-info.outputs.pdf_year }}", "pdf_name": "${{ steps.extract-info.outputs.pdf_name }}"}'
