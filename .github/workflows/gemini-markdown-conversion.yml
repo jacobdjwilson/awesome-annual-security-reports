@@ -1,8 +1,24 @@
 name: Gemini Markdown Conversion
 
 on:
-  repository_dispatch:
-    types: [run-gemini-conversion]
+  workflow_dispatch:
+    inputs:
+      pdf_file_path:
+        description: 'Path to the PDF file'
+        required: true
+        type: string
+      year_folder:
+        description: 'Year folder'
+        required: true
+        type: string
+      base_filename:
+        description: 'Base filename without extension'
+        required: true
+        type: string
+      scan_url:
+        description: 'Falcon Hybrid-Analysis scan URL'
+        required: true
+        type: string
 
 jobs:
   convert-to-markdown:
@@ -12,7 +28,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.client_payload.ref }}
+          ref: ${{ github.ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -27,9 +43,9 @@ jobs:
       - name: Convert PDF to Markdown with Gemini 2.0 Flash
         id: gemini-conversion
         run: |
-          PDF_PATH="${{ github.event.client_payload.pdf_file_path }}"
-          YEAR_FOLDER="${{ github.event.client_payload.year_folder }}"
-          BASE_FILENAME="${{ github.event.client_payload.base_filename }}"
+          PDF_PATH="${{ inputs.pdf_file_path }}"
+          YEAR_FOLDER="${{ inputs.year_folder }}"
+          BASE_FILENAME="${{ inputs.base_filename }}"
           
           # Read the AI prompt template
           AI_PROMPT=$(cat AI_PROMPT_MARKDOWN_CONVERT.md)
@@ -144,14 +160,14 @@ jobs:
           fi
         shell: bash
         env:
-          AI_PROMPT: ${{ cat AI_PROMPT_MARKDOWN_CONVERT.md }}
-          OUTPUT_FILE: ${{ format('Markdown Conversions/{0}/{1}.md', github.event.client_payload.year_folder, github.event.client_payload.base_filename) }}
+          AI_PROMPT: ""
+          OUTPUT_FILE: ${{ format('Markdown Conversions/{0}/{1}.md', inputs.year_folder, inputs.base_filename) }}
 
       - name: Commit and push markdown file
         if: steps.gemini-conversion.outputs.conversion_success == 'true'
         run: |
-          YEAR_FOLDER="${{ github.event.client_payload.year_folder }}"
-          BASE_FILENAME="${{ github.event.client_payload.base_filename }}"
+          YEAR_FOLDER="${{ inputs.year_folder }}"
+          BASE_FILENAME="${{ inputs.base_filename }}"
           OUTPUT_FILE="Markdown Conversions/$YEAR_FOLDER/$BASE_FILENAME.md"
           GEMINI_MODEL="${{ steps.gemini-conversion.outputs.gemini_model_used }}"
           
@@ -173,4 +189,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: markdown-conversion
-          path: ${{ format('Markdown Conversions/{0}/{1}.md', github.event.client_payload.year_folder, github.event.client_payload.base_filename) }}
+          path: ${{ format('Markdown Conversions/{0}/{1}.md', inputs.year_folder, inputs.base_filename) }}
