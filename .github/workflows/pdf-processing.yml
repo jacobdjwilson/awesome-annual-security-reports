@@ -14,13 +14,12 @@ on:
     paths:
       - 'Annual Security Reports/**/*.pdf'
 
-# Prevent workflow from running on legacy branch
-if: ${{ github.ref != 'refs/heads/legacy' }}
-
 jobs:
   pdf_detection:
     name: Detect New PDF Files
     runs-on: ubuntu-latest
+    # Prevent workflow from running on legacy branch
+    if: ${{ github.ref != 'refs/heads/legacy' }}
     outputs:
       pdf_files: ${{ steps.detect-pdf.outputs.pdf_files }}
       is_owner: ${{ steps.check-contributor.outputs.is_owner }}
