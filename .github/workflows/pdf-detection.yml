@@ -70,14 +70,26 @@ jobs:
 
       - name: Trigger Falcon scan workflow
         if: steps.find-pdf.outputs.pdf_file_path != ''
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          event-type: run-falcon-scan
-          client-payload: |
-            {
+        run: |
+          echo "Triggering Falcon scan workflow for: ${{ steps.find-pdf.outputs.pdf_file_path }}"
+          
+          # Create workflow dispatch payload
+          PAYLOAD=$(cat <<EOF
+          {
+            "ref": "${{ github.ref_name }}",
+            "inputs": {
               "pdf_file_path": "${{ steps.find-pdf.outputs.pdf_file_path }}",
               "year_folder": "${{ steps.extract-info.outputs.year_folder }}",
-              "base_filename": "${{ steps.extract-info.outputs.base_filename }}",
-              "ref": "${{ github.ref }}"
+              "base_filename": "${{ steps.extract-info.outputs.base_filename }}"
             }
+          }
+          EOF
+          )
+          
+          # Trigger the workflow using GitHub API
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.REPO_ACCESS_TOKEN }}" \
+            -d "$PAYLOAD" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/falcon-scan.yml/dispatches"
+        shell: bash
