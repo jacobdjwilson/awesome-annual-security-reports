@@ -1,0 +1,456 @@
+name: PDF Processing Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - development
+    paths:
+      - 'Annual Security Reports/**/*.pdf'
+  pull_request:
+    branches:
+      - main
+      - development
+    paths:
+      - 'Annual Security Reports/**/*.pdf'
+  workflow_dispatch:
+    inputs:
+      pdf_file_path:
+        description: 'Path to the PDF file'
+        required: true
+        type: string
+      year_folder:
+        description: 'Year folder'
+        required: true
+        type: string
+      base_filename:
+        description: 'Base filename without extension'
+        required: true
+        type: string
+
+jobs:
+  detect-pdf:
+    runs-on: ubuntu-latest
+    outputs:
+      pdf_file_path: ${{ steps.find-pdf.outputs.pdf_file_path }}
+      year_folder: ${{ steps.extract-info.outputs.year_folder }}
+      base_filename: ${{ steps.extract-info.outputs.base_filename }}
+    
+    # Only run this job if triggered by push or PR events
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Find changed PDF files
+        id: find-pdf
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            # For pull requests, find added or modified PDFs
+            CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -E "Annual Security Reports/.+\.pdf$" || echo "")
+          else
+            # For direct pushes, find added or modified PDFs
+            CHANGED_FILES=$(git diff --name-only HEAD^ HEAD | grep -E "Annual Security Reports/.+\.pdf$" || echo "")
+          fi
+
+          if [[ -z "$CHANGED_FILES" ]]; then
+            echo "No PDF files were added or modified in the Annual Security Reports directory."
+            exit 0
+          fi
+
+          # Take the first PDF file if multiple were found
+          PDF_FILE=$(echo "$CHANGED_FILES" | head -n 1)
+          echo "PDF file detected: $PDF_FILE"
+          echo "pdf_file_path=$PDF_FILE" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: Extract year and filename info
+        id: extract-info
+        if: steps.find-pdf.outputs.pdf_file_path != ''
+        run: |
+          PDF_PATH="${{ steps.find-pdf.outputs.pdf_file_path }}"
+          
+          # Extract the year folder
+          YEAR_FOLDER=$(echo "$PDF_PATH" | sed -E 's|Annual Security Reports/([^/]+)/.*|\1|')
+          echo "year_folder=$YEAR_FOLDER" >> $GITHUB_OUTPUT
+          
+          # Extract base filename without extension
+          BASE_FILENAME=$(basename "$PDF_PATH" .pdf)
+          echo "base_filename=$BASE_FILENAME" >> $GITHUB_OUTPUT
+          
+          echo "Year folder: $YEAR_FOLDER"
+          echo "Base filename: $BASE_FILENAME"
+        shell: bash
+
+  scan-pdf:
+    runs-on: ubuntu-latest
+    needs: [detect-pdf]
+    if: github.event_name == 'workflow_dispatch' || needs.detect-pdf.outputs.pdf_file_path != ''
+    outputs:
+      threat_detected: ${{ steps.analyze-results.outputs.threat_detected }}
+      scan_url: ${{ steps.submit-to-hybrid-analysis.outputs.scan_url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+      
+      # Determine file path based on trigger source
+      - name: Determine PDF path
+        id: determine-path
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "pdf_path=${{ github.event.inputs.pdf_file_path }}" >> $GITHUB_OUTPUT
+            echo "year_folder=${{ github.event.inputs.year_folder }}" >> $GITHUB_OUTPUT
+            echo "base_filename=${{ github.event.inputs.base_filename }}" >> $GITHUB_OUTPUT
+          else
+            echo "pdf_path=${{ needs.detect-pdf.outputs.pdf_file_path }}" >> $GITHUB_OUTPUT
+            echo "year_folder=${{ needs.detect-pdf.outputs.year_folder }}" >> $GITHUB_OUTPUT
+            echo "base_filename=${{ needs.detect-pdf.outputs.base_filename }}" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "Using PDF path: $(cat $GITHUB_OUTPUT | grep pdf_path | cut -d= -f2)"
+        shell: bash
+        
+      - name: Submit PDF to Hybrid Analysis
+        id: submit-to-hybrid-analysis
+        run: |
+          PDF_PATH="${{ steps.determine-path.outputs.pdf_path }}"
+          echo "Processing file: $PDF_PATH"
+          
+          # Submit the file to Hybrid Analysis
+          python - <<EOF
+          import requests
+          import json
+          import time
+          import os
+          import sys
+          
+          # Configure API key and headers
+          api_key = '${{ secrets.HYBRID_ANALYSIS_API_KEY }}'
+          headers = {
+              'api-key': api_key,
+              'User-Agent': 'Falcon Sandbox'
+          }
+          
+          # Prepare the file for upload
+          file_path = '${{ steps.determine-path.outputs.pdf_path }}'
+          
+          try:
+              # Submit the file for scanning
+              with open(file_path, 'rb') as f:
+                  files = {'file': f}
+                  data = {'environment_id': 140}  # Windows 11 64-bit
+                  response = requests.post(
+                      'https://www.hybrid-analysis.com/api/v2/submit/file',
+                      headers=headers,
+                      files=files,
+                      data=data
+                  )
+                  
+                  if response.status_code != 200:
+                      print(f"Error submitting file: {response.text}")
+                      sys.exit(1)
+                      
+                  result = response.json()
+                  job_id = result.get('job_id')
+                  
+                  if not job_id:
+                      print("Failed to get job ID")
+                      print(f"API Response: {response.text}")
+                      sys.exit(1)
+                  
+                  print(f"Submission successful. Job ID: {job_id}")
+                  
+                  # Get the scan URL
+                  scan_url = f"https://www.hybrid-analysis.com/sample/{result['sha256']}"
+                  print(f"Scan URL: {scan_url}")
+                  with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                      f.write(f"scan_url={scan_url}\n")
+                  
+                  # Wait for scan completion (up to 5 minutes)
+                  max_attempts = 30  # 30 * 10 seconds = 5 minutes
+                  attempts = 0
+                  scan_completed = False
+                  
+                  while attempts < max_attempts and not scan_completed:
+                      time.sleep(10)  # Wait for 10 seconds between checks
+                      status_response = requests.get(
+                          f'https://www.hybrid-analysis.com/api/v2/report/{job_id}/state',
+                          headers=headers
+                      )
+                      
+                      if status_response.status_code == 200:
+                          state = status_response.json().get('state')
+                          if state == 'SUCCESS':
+                              scan_completed = True
+                          print(f"Current scan state: {state}")
+                      
+                      attempts += 1
+                  
+                  if not scan_completed:
+                      print("Scan did not complete within the allotted time.")
+                      # We'll continue anyway and check if we can get a report
+                  
+                  # Get the report
+                  report_response = requests.get(
+                      f'https://www.hybrid-analysis.com/api/v2/report/{job_id}/summary',
+                      headers=headers
+                  )
+                  
+                  if report_response.status_code == 200:
+                      report_data = report_response.json()
+                      with open('falcon_scan_report.json', 'w') as report_file:
+                          json.dump(report_data, report_file, indent=2)
+                      print("Scan report saved to falcon_scan_report.json")
+                  else:
+                      print(f"Failed to retrieve scan report: {report_response.text}")
+          
+          except Exception as e:
+              print(f"An error occurred: {str(e)}")
+              sys.exit(1)
+          EOF
+        shell: bash
+
+      - name: Upload scan report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: falcon-scan-report
+          path: falcon_scan_report.json
+
+      - name: Analyze scan results
+        id: analyze-results
+        run: |
+          # Check if the scan report exists
+          if [ -f "falcon_scan_report.json" ]; then
+            # Extract threat information from the report
+            THREAT_LEVEL=$(python -c "import json; f=open('falcon_scan_report.json'); data=json.load(f); print(data.get('threat_level', 0))")
+            VERDICT=$(python -c "import json; f=open('falcon_scan_report.json'); data=json.load(f); print(data.get('verdict', 'unknown'))")
+            
+            echo "Threat level: $THREAT_LEVEL"
+            echo "Verdict: $VERDICT"
+            
+            # Set threat detection flag
+            THREAT_DETECTED="false"
+            if [ "$VERDICT" == "malicious" ] || [ "$THREAT_LEVEL" -gt 1 ]; then
+              THREAT_DETECTED="true"
+              echo "Threat detected in PDF file!"
+            else
+              echo "No threats detected in PDF file."
+            fi
+            
+            echo "threat_detected=$THREAT_DETECTED" >> $GITHUB_OUTPUT
+          else
+            echo "Scan report not found. Unable to analyze results."
+            echo "threat_detected=unknown" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+      
+      - name: Log threat details
+        if: steps.analyze-results.outputs.threat_detected == 'true'
+        run: |
+          echo "Threat detected in PDF file. Stopping workflow chain."
+          echo "Scan URL: ${{ steps.submit-to-hybrid-analysis.outputs.scan_url }}"
+          cat falcon_scan_report.json
+        shell: bash
+
+  convert-to-markdown:
+    runs-on: ubuntu-latest
+    needs: [scan-pdf, detect-pdf]
+    # Only run if no threat was detected
+    if: (needs.scan-pdf.outputs.threat_detected == 'false' || needs.scan-pdf.outputs.threat_detected == 'unknown')
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests PyPDF2 google-generativeai
+      
+      # Determine file path based on trigger source
+      - name: Determine paths and parameters
+        id: determine-params
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "pdf_path=${{ github.event.inputs.pdf_file_path }}" >> $GITHUB_OUTPUT
+            echo "year_folder=${{ github.event.inputs.year_folder }}" >> $GITHUB_OUTPUT
+            echo "base_filename=${{ github.event.inputs.base_filename }}" >> $GITHUB_OUTPUT
+          else
+            echo "pdf_path=${{ needs.detect-pdf.outputs.pdf_file_path }}" >> $GITHUB_OUTPUT
+            echo "year_folder=${{ needs.detect-pdf.outputs.year_folder }}" >> $GITHUB_OUTPUT
+            echo "base_filename=${{ needs.detect-pdf.outputs.base_filename }}" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "scan_url=${{ needs.scan-pdf.outputs.scan_url }}" >> $GITHUB_OUTPUT
+          
+          echo "Using PDF path: $(cat $GITHUB_OUTPUT | grep pdf_path | cut -d= -f2)"
+        shell: bash
+        
+      - name: Convert PDF to Markdown with Gemini
+        id: gemini-conversion
+        run: |
+          PDF_PATH="${{ steps.determine-params.outputs.pdf_path }}"
+          YEAR_FOLDER="${{ steps.determine-params.outputs.year_folder }}"
+          BASE_FILENAME="${{ steps.determine-params.outputs.base_filename }}"
+          
+          # Read the AI prompt template
+          AI_PROMPT=$(cat AI_PROMPT_MARKDOWN_CONVERT.md)
+          
+          # Read AI prompt version from commit notes
+          AI_PROMPT_VERSION=$(git log -1 --pretty=%B -- AI_PROMPT_MARKDOWN_CONVERT.md | grep -oP 'Version: \K[0-9.]+' || echo "1.0")
+          
+          # Create output directory if it doesn't exist
+          OUTPUT_DIR="Markdown Conversions/$YEAR_FOLDER"
+          mkdir -p "$OUTPUT_DIR"
+          OUTPUT_FILE="$OUTPUT_DIR/$BASE_FILENAME.md"
+          
+          echo "Converting PDF to Markdown using Gemini 2.0 Flash..."
+          echo "Input PDF: $PDF_PATH"
+          echo "Output Markdown: $OUTPUT_FILE"
+          
+          python - <<EOF
+          import os
+          import sys
+          import PyPDF2
+          import google.generativeai as genai
+          import time
+          
+          # Configure Gemini API
+          gemini_api_key = '${{ secrets.GEMINI_API_KEY }}'
+          genai.configure(api_key=gemini_api_key)
+          
+          # Extract text from PDF
+          def extract_text_from_pdf(pdf_path):
+              try:
+                  with open(pdf_path, 'rb') as file:
+                      reader = PyPDF2.PdfReader(file)
+                      text = ""
+                      for page in reader.pages:
+                          text += page.extract_text() + "\n\n"
+                      return text
+              except Exception as e:
+                  print(f"Error extracting text from PDF: {str(e)}")
+                  return None
+          
+          # Convert to markdown using Gemini
+          def convert_to_markdown(pdf_text, prompt_template, model_name="gemini-2.0-flash"):
+              try:
+                  # Format the prompt with the PDF text
+                  full_prompt = prompt_template + "\n\nHere is the PDF content to convert:\n\n" + pdf_text
+                  
+                  # Set up the model
+                  model = genai.GenerativeModel(model_name)
+                  
+                  # Generate the markdown
+                  response = model.generate_content(full_prompt)
+                  
+                  if hasattr(response, 'text'):
+                      return response.text, model_name
+                  else:
+                      print("Invalid response format from Gemini API")
+                      return None, model_name
+              except Exception as e:
+                  print(f"Error converting to markdown with {model_name}: {str(e)}")
+                  return None, model_name
+          
+          # Main process
+          try:
+              # Read the PDF file
+              pdf_path = '${{ steps.determine-params.outputs.pdf_path }}'
+              pdf_text = extract_text_from_pdf(pdf_path)
+              
+              if not pdf_text:
+                  sys.exit(1)
+              
+              # Get AI prompt template
+              prompt_template = '''${{ env.AI_PROMPT }}'''
+              
+              # Try with Gemini 2.0 Flash first
+              markdown_content, model_used = convert_to_markdown(pdf_text, prompt_template)
+              
+              # If Flash fails, try Flash Lite
+              if not markdown_content:
+                  print("Gemini 2.0 Flash failed. Trying Gemini 2.0 Flash Lite...")
+                  markdown_content, model_used = convert_to_markdown(pdf_text, prompt_template, "gemini-2.0-flash-lite")
+              
+              if markdown_content:
+                  # Write the markdown to file
+                  output_file = '${{ env.OUTPUT_FILE }}'
+                  with open(output_file, 'w') as f:
+                      f.write(markdown_content)
+                  
+                  # Set outputs for use in GitHub Actions
+                  with open(os.environ['GITHUB_ENV'], 'a') as env_file:
+                      env_file.write(f"GEMINI_MODEL_USED={model_used}\n")
+                  
+                  print(f"Successfully converted PDF to markdown using {model_used}")
+                  sys.exit(0)
+              else:
+                  print("Failed to convert PDF to markdown with both Gemini models")
+                  sys.exit(1)
+                  
+          except Exception as e:
+              print(f"Unexpected error: {str(e)}")
+              sys.exit(1)
+          EOF
+          
+          # Check if conversion was successful
+          if [ $? -eq 0 ]; then
+            echo "Conversion successful using $GEMINI_MODEL_USED"
+            echo "gemini_model_used=$GEMINI_MODEL_USED" >> $GITHUB_OUTPUT
+            echo "conversion_success=true" >> $GITHUB_OUTPUT
+          else
+            echo "Conversion failed."
+            echo "conversion_success=false" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+        env:
+          AI_PROMPT: ""
+          OUTPUT_FILE: ${{ format('Markdown Conversions/{0}/{1}.md', steps.determine-params.outputs.year_folder, steps.determine-params.outputs.base_filename) }}
+
+      - name: Upload markdown as artifact
+        if: steps.gemini-conversion.outputs.conversion_success == 'true'
+        uses: actions/upload-artifact@v3
+        with:
+          name: markdown-conversion
+          path: ${{ format('Markdown Conversions/{0}/{1}.md', steps.determine-params.outputs.year_folder, steps.determine-params.outputs.base_filename) }}
+
+      - name: Commit and push markdown file
+        if: steps.gemini-conversion.outputs.conversion_success == 'true'
+        run: |
+          YEAR_FOLDER="${{ steps.determine-params.outputs.year_folder }}"
+          BASE_FILENAME="${{ steps.determine-params.outputs.base_filename }}"
+          OUTPUT_FILE="Markdown Conversions/$YEAR_FOLDER/$BASE_FILENAME.md"
+          GEMINI_MODEL="${{ steps.gemini-conversion.outputs.gemini_model_used }}"
+          
+          # Get AI prompt version from commit notes
+          AI_PROMPT_VERSION=$(git log -1 --pretty=%B -- AI_PROMPT_MARKDOWN_CONVERT.md | grep -oP 'Version: \K[0-9.]+' || echo "1.0")
+          
+          # Configure Git
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # Commit the file
+          git add "$OUTPUT_FILE"
+          git commit -m "Convert PDF to Markdown: $BASE_FILENAME [AI Prompt V$AI_PROMPT_VERSION Model $GEMINI_MODEL]"
+          git push
+        shell: bash
