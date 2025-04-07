@@ -1,86 +1,195 @@
-name: PDF Detection
+name: Falcon Hybrid-Analysis Scan
 
 on:
-  push:
-    branches:
-      - main
-      - development
-    paths:
-      - 'Annual Security Reports/**/*.pdf'
-  pull_request:
-    branches:
-      - main
-      - development
-    paths:
-      - 'Annual Security Reports/**/*.pdf'
+  workflow_dispatch:
+    inputs:
+      pdf_file_path:
+        description: 'Path to the PDF file'
+        required: true
+        type: string
+      year_folder:
+        description: 'Year folder'
+        required: true
+        type: string
+      base_filename:
+        description: 'Base filename without extension'
+        required: true
+        type: string
 
 jobs:
-  detect-pdf:
+  scan-pdf:
     runs-on: ubuntu-latest
     outputs:
-      pdf_file_path: ${{ steps.find-pdf.outputs.pdf_file_path }}
-      year_folder: ${{ steps.extract-info.outputs.year_folder }}
-      base_filename: ${{ steps.extract-info.outputs.base_filename }}
+      threat_detected: ${{ steps.analyze-results.outputs.threat_detected }}
+      scan_url: ${{ steps.submit-to-hybrid-analysis.outputs.scan_url }}
+      year_folder: ${{ inputs.year_folder }}
+      base_filename: ${{ inputs.base_filename }}
+      pdf_file_path: ${{ inputs.pdf_file_path }}
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          ref: ${{ github.ref }}
 
-      - name: Find changed PDF files
-        id: find-pdf
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
         run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            # For pull requests, find added or modified PDFs
-            CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -E "Annual Security Reports/.+\.pdf$" || echo "")
+          python -m pip install --upgrade pip
+          pip install requests
+        
+      - name: Submit PDF to Hybrid Analysis
+        id: submit-to-hybrid-analysis
+        run: |
+          PDF_PATH="${{ inputs.pdf_file_path }}"
+          echo "Processing file: $PDF_PATH"
+          
+          # Submit the file to Hybrid Analysis
+          python - <<EOF
+          import requests
+          import json
+          import time
+          import os
+          import sys
+          
+          # Configure API key and headers
+          api_key = '${{ secrets.HYBRID_ANALYSIS_API_KEY }}'
+          headers = {
+              'api-key': api_key,
+              'User-Agent': 'Falcon Sandbox'
+          }
+          
+          # Prepare the file for upload
+          file_path = '${{ github.event.client_payload.pdf_file_path }}'
+          
+          try:
+              # Submit the file for scanning
+              with open(file_path, 'rb') as f:
+                  files = {'file': f}
+                  data = {'environment_id': 300}  # Windows 10 x64
+                  response = requests.post(
+                      'https://www.hybrid-analysis.com/api/v2/submit/file',
+                      headers=headers,
+                      files=files,
+                      data=data
+                  )
+                  
+                  if response.status_code != 200:
+                      print(f"Error submitting file: {response.text}")
+                      sys.exit(1)
+                      
+                  result = response.json()
+                  job_id = result.get('job_id')
+                  
+                  if not job_id:
+                      print("Failed to get job ID")
+                      print(f"API Response: {response.text}")
+                      sys.exit(1)
+                  
+                  print(f"Submission successful. Job ID: {job_id}")
+                  
+                  # Get the scan URL
+                  scan_url = f"https://www.hybrid-analysis.com/sample/{result['sha256']}"
+                  print(f"Scan URL: {scan_url}")
+                  with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                      f.write(f"scan_url={scan_url}\n")
+                  
+                  # Wait for scan completion (up to 5 minutes)
+                  max_attempts = 30  # 30 * 10 seconds = 5 minutes
+                  attempts = 0
+                  scan_completed = False
+                  
+                  while attempts < max_attempts and not scan_completed:
+                      time.sleep(10)  # Wait for 10 seconds between checks
+                      status_response = requests.get(
+                          f'https://www.hybrid-analysis.com/api/v2/report/{job_id}/state',
+                          headers=headers
+                      )
+                      
+                      if status_response.status_code == 200:
+                          state = status_response.json().get('state')
+                          if state == 'SUCCESS':
+                              scan_completed = True
+                          print(f"Current scan state: {state}")
+                      
+                      attempts += 1
+                  
+                  if not scan_completed:
+                      print("Scan did not complete within the allotted time.")
+                      # We'll continue anyway and check if we can get a report
+                  
+                  # Get the report
+                  report_response = requests.get(
+                      f'https://www.hybrid-analysis.com/api/v2/report/{job_id}/summary',
+                      headers=headers
+                  )
+                  
+                  if report_response.status_code == 200:
+                      report_data = report_response.json()
+                      with open('falcon_scan_report.json', 'w') as report_file:
+                          json.dump(report_data, report_file, indent=2)
+                      print("Scan report saved to falcon_scan_report.json")
+                  else:
+                      print(f"Failed to retrieve scan report: {report_response.text}")
+          
+          except Exception as e:
+              print(f"An error occurred: {str(e)}")
+              sys.exit(1)
+          EOF
+        shell: bash
+
+      - name: Upload scan report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: falcon-scan-report
+          path: falcon_scan_report.json
+
+      - name: Analyze scan results
+        id: analyze-results
+        run: |
+          # Check if the scan report exists
+          if [ -f "falcon_scan_report.json" ]; then
+            # Extract threat information from the report
+            THREAT_LEVEL=$(python -c "import json; f=open('falcon_scan_report.json'); data=json.load(f); print(data.get('threat_level', 0))")
+            VERDICT=$(python -c "import json; f=open('falcon_scan_report.json'); data=json.load(f); print(data.get('verdict', 'unknown'))")
+            
+            echo "Threat level: $THREAT_LEVEL"
+            echo "Verdict: $VERDICT"
+            
+            # Set threat detection flag
+            THREAT_DETECTED="false"
+            if [ "$VERDICT" == "malicious" ] || [ "$THREAT_LEVEL" -gt 1 ]; then
+              THREAT_DETECTED="true"
+              echo "Threat detected in PDF file!"
+            else
+              echo "No threats detected in PDF file."
+            fi
+            
+            echo "threat_detected=$THREAT_DETECTED" >> $GITHUB_OUTPUT
           else
-            # For direct pushes, find added or modified PDFs
-            CHANGED_FILES=$(git diff --name-only HEAD^ HEAD | grep -E "Annual Security Reports/.+\.pdf$" || echo "")
+            echo "Scan report not found. Unable to analyze results."
+            echo "threat_detected=unknown" >> $GITHUB_OUTPUT
           fi
-
-          if [[ -z "$CHANGED_FILES" ]]; then
-            echo "No PDF files were added or modified in the Annual Security Reports directory."
-            exit 0
-          fi
-
-          # Take the first PDF file if multiple were found
-          PDF_FILE=$(echo "$CHANGED_FILES" | head -n 1)
-          echo "PDF file detected: $PDF_FILE"
-          echo "pdf_file_path=$PDF_FILE" >> $GITHUB_OUTPUT
         shell: bash
 
-      - name: Extract year and filename info
-        id: extract-info
-        if: steps.find-pdf.outputs.pdf_file_path != ''
+      - name: Trigger Gemini markdown conversion
+        if: steps.analyze-results.outputs.threat_detected == 'false'
         run: |
-          PDF_PATH="${{ steps.find-pdf.outputs.pdf_file_path }}"
-          
-          # Extract the year folder
-          YEAR_FOLDER=$(echo "$PDF_PATH" | sed -E 's|Annual Security Reports/([^/]+)/.*|\1|')
-          echo "year_folder=$YEAR_FOLDER" >> $GITHUB_OUTPUT
-          
-          # Extract base filename without extension
-          BASE_FILENAME=$(basename "$PDF_PATH" .pdf)
-          echo "base_filename=$BASE_FILENAME" >> $GITHUB_OUTPUT
-          
-          echo "Year folder: $YEAR_FOLDER"
-          echo "Base filename: $BASE_FILENAME"
-        shell: bash
-
-      - name: Trigger Falcon scan workflow
-        if: steps.find-pdf.outputs.pdf_file_path != ''
-        run: |
-          echo "Triggering Falcon scan workflow for: ${{ steps.find-pdf.outputs.pdf_file_path }}"
+          echo "Triggering Gemini markdown conversion workflow for: ${{ inputs.pdf_file_path }}"
           
           # Create workflow dispatch payload
           PAYLOAD=$(cat <<EOF
           {
             "ref": "${{ github.ref_name }}",
             "inputs": {
-              "pdf_file_path": "${{ steps.find-pdf.outputs.pdf_file_path }}",
-              "year_folder": "${{ steps.extract-info.outputs.year_folder }}",
-              "base_filename": "${{ steps.extract-info.outputs.base_filename }}"
+              "pdf_file_path": "${{ inputs.pdf_file_path }}",
+              "year_folder": "${{ inputs.year_folder }}",
+              "base_filename": "${{ inputs.base_filename }}",
+              "scan_url": "${{ steps.submit-to-hybrid-analysis.outputs.scan_url }}"
             }
           }
           EOF
@@ -91,5 +200,13 @@ jobs:
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: token ${{ secrets.REPO_ACCESS_TOKEN }}" \
             -d "$PAYLOAD" \
-            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/falcon-scan.yml/dispatches"
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/gemini-markdown-conversion.yml/dispatches"
+        shell: bash
+      
+      - name: Log threat details
+        if: steps.analyze-results.outputs.threat_detected == 'true'
+        run: |
+          echo "Threat detected in PDF file. Stopping workflow chain."
+          echo "Scan URL: ${{ steps.submit-to-hybrid-analysis.outputs.scan_url }}"
+          cat falcon_scan_report.json
         shell: bash
