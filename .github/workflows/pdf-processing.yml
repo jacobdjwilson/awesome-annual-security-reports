@@ -305,7 +305,7 @@ jobs:
           echo "::endgroup::"
       
       - name: Upload scan results as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: falcon-scan-results
           path: scan_results.json
@@ -458,7 +458,7 @@ jobs:
         uses: cli/cli-action@v1
       
       - name: Upload clean files list as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: clean-pdf-files
           path: clean_files.json
@@ -487,7 +487,7 @@ jobs:
           pip install requests google-generativeai PyPDF2
       
       - name: Download clean files list
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: clean-pdf-files
       
