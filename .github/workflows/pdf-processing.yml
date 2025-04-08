@@ -298,7 +298,8 @@ jobs:
           
           # Write output in GitHub Actions format
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-              f.write(f"scan_results={json.dumps(clean_results).replace('%', '%25').replace('\n', '%0A').replace('\r', '%0D').replace(':', '%3A').replace(',', '%2C')}\n")
+              escaped_json = json.dumps(clean_results).replace('%', '%25').replace('\n', '%0A').replace('\r', '%0D').replace(':', '%3A').replace(',', '%2C')
+              f.write(f"scan_results={escaped_json}\n")
           
           print("Processed scan results for GitHub Actions output")
           EOF
@@ -447,7 +448,8 @@ jobs:
           
           # Set output for next job
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-              f.write(f"clean_files={clean_files_json.replace('%', '%25').replace('\n', '%0A').replace('\r', '%0D').replace(':', '%3A').replace(',', '%2C')}\n")
+              escaped_json = clean_files_json.replace('%', '%25').replace('\n', '%0A').replace('\r', '%0D').replace(':', '%3A').replace(',', '%2C')
+              f.write(f"clean_files={escaped_json}\n")
               f.write(f"has_clean_files={'true' if clean_files else 'false'}\n")
           
           print(f"Found {len(clean_files)} clean files, {len(malicious_files)} malicious files, and {len(failed_scans)} failed scans")
