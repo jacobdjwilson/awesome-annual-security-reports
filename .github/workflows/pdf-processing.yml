@@ -2,1128 +2,650 @@ name: PDF Processing Workflow
 
 on:
   push:
-    paths:
-      - 'Annual Security Reports/**/*.pdf'
     branches:
       - main
       - development
+    paths:
+      - 'Annual Security Reports/**/*.pdf'
 
 jobs:
-  detect-pdf-changes:
+  detect-pdfs:
     name: Detect New PDF Files
     runs-on: ubuntu-latest
     outputs:
-      pdf_files: ${{ steps.find-new-pdfs.outputs.pdf_files }}
-      has_new_pdfs: ${{ steps.find-new-pdfs.outputs.has_new_pdfs }}
+      pdf_files: ${{ steps.find-pdfs.outputs.pdf_files }}
+      changes_detected: ${{ steps.find-pdfs.outputs.changes_detected }}
+    
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 2
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-
-      - name: Find new PDF files
-        id: find-new-pdfs
+          fetch-depth: 2  # Fetch last 2 commits to detect changes
+      
+      - name: Find changed PDF files
+        id: find-pdfs
         run: |
-          echo "Detecting new PDF files..."
+          # Get list of PDF files added in this commit
+          CHANGED_FILES=$(git diff --name-only --diff-filter=A HEAD^ HEAD | grep -E "Annual Security Reports/.*\.pdf$" || echo "")
           
-          # Get list of changed files in this push
-          CHANGED_FILES=$(git diff --name-status HEAD^ HEAD | grep -E '^A.*\.pdf
-
-  scan-with-falcon:
-    name: Scan PDFs with Falcon Hybrid-Analysis
-    needs: detect-pdf-changes
-    if: needs.detect-pdf-changes.outputs.has_new_pdfs == 'true'
-    runs-on: ubuntu-latest
-    outputs:
-      scan_results: ${{ steps.process-scan-results.outputs.scan_results }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
-      - name: Install dependencies
-        run: npm install axios form-data fs-extra
-
-      - name: Scan PDFs with Falcon Hybrid-Analysis
-        id: scan-pdfs
-        env:
-          HYBRID_ANALYSIS_API_KEY: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}
-          PDF_FILES: ${{ needs.detect-pdf-changes.outputs.pdf_files }}
-        run: |
-          cat > scan-pdfs.js << 'EOL'
-          const axios = require('axios');
-          const FormData = require('form-data');
-          const fs = require('fs');
-          const path = require('path');
-          const fsExtra = require('fs-extra');
-
-          // Function to submit a file to Hybrid Analysis
-          async function submitScan(filePath) {
-            try {
-              console.log(`Preparing to scan: ${filePath}`);
-              
-              const fileName = path.basename(filePath);
-              
-              // Check if file exists
-              if (!fs.existsSync(filePath)) {
-                console.error(`File not found: ${filePath}`);
-                return { file: filePath, error: 'File not found', clean: false };
-              }
-              
-              const form = new FormData();
-              form.append('file', fs.createReadStream(filePath));
-              form.append('environment_id', '300'); // Windows 11 64-bit
-              form.append('scan_type', 'full');
-                
-              console.log(`Submitting ${fileName} to Falcon Hybrid Analysis...`);
-              
-              const submitResponse = await axios.post('https://www.hybrid-analysis.com/api/v2/submit/file', form, {
-                headers: {
-                  ...form.getHeaders(),
-                  'api-key': process.env.HYBRID_ANALYSIS_API_KEY,
-                  'user-agent': 'Falcon Sandbox'
-                }
-              });
-              
-              if (submitResponse.data && submitResponse.data.job_id) {
-                console.log(`Submission successful for ${fileName}. Job ID: ${submitResponse.data.job_id}`);
-                
-                // Poll for results
-                let scanComplete = false;
-                let attempts = 0;
-                let scanResult = null;
-                
-                while (!scanComplete && attempts < 20) {
-                  await new Promise(resolve => setTimeout(resolve, 30000)); // Wait for 30 seconds
-                  attempts++;
-                  
-                  try {
-                    console.log(`Checking scan status for ${fileName} (attempt ${attempts})...`);
-                    const statusResponse = await axios.get(`https://www.hybrid-analysis.com/api/v2/report/${submitResponse.data.job_id}/state`, {
-                      headers: {
-                        'api-key': process.env.HYBRID_ANALYSIS_API_KEY,
-                        'user-agent': 'Falcon Sandbox'
-                      }
-                    });
-                    
-                    if (statusResponse.data && statusResponse.data.state === 'SUCCESS') {
-                      console.log(`Scan complete for ${fileName}`);
-                      scanComplete = true;
-                      
-                      // Get full report
-                      const reportResponse = await axios.get(`https://www.hybrid-analysis.com/api/v2/report/${submitResponse.data.job_id}/summary`, {
-                        headers: {
-                          'api-key': process.env.HYBRID_ANALYSIS_API_KEY,
-                          'user-agent': 'Falcon Sandbox'
-                        }
-                      });
-                      
-                      scanResult = {
-                        file: filePath,
-                        job_id: submitResponse.data.job_id,
-                        report_url: `https://www.hybrid-analysis.com/sample/${reportResponse.data.sha256}/`,
-                        verdict: reportResponse.data.verdict,
-                        threat_score: reportResponse.data.threat_score,
-                        malware_family: reportResponse.data.malware_family || 'None',
-                        clean: reportResponse.data.verdict === 'no specific threat' || reportResponse.data.threat_score < 10
-                      };
-                    } else if (statusResponse.data && statusResponse.data.state === 'ERROR') {
-                      console.error(`Scan error for ${fileName}: ${statusResponse.data.message || 'Unknown error'}`);
-                      scanComplete = true;
-                      scanResult = { 
-                        file: filePath, 
-                        error: statusResponse.data.message || 'Scan failed',
-                        clean: false 
-                      };
-                    }
-                  } catch (error) {
-                    console.error(`Error checking scan status for ${fileName}:`, error.message);
-                  }
-                }
-                
-                if (!scanComplete) {
-                  console.error(`Scan timed out for ${fileName} after ${attempts} attempts`);
-                  return { 
-                    file: filePath, 
-                    job_id: submitResponse.data.job_id,
-                    error: 'Scan timed out', 
-                    clean: false 
-                  };
-                }
-                
-                return scanResult;
-              } else {
-                console.error(`Submission failed for ${fileName}`);
-                return { 
-                  file: filePath, 
-                  error: 'Submission failed', 
-                  clean: false 
-                };
-              }
-            } catch (error) {
-              console.error(`Error scanning ${filePath}:`, error.message);
-              return { 
-                file: filePath, 
-                error: `Scanning error: ${error.message}`, 
-                clean: false 
-              };
-            }
-          }
-
-          async function main() {
-            try {
-              const pdfFiles = JSON.parse(process.env.PDF_FILES);
-              console.log(`Processing ${pdfFiles.length} PDF files`);
-              
-              const results = [];
-              
-              for (const filePath of pdfFiles) {
-                const result = await submitScan(filePath);
-                results.push(result);
-              }
-              
-              // Write results to file for the next step
-              fsExtra.writeJSONSync('scan_results.json', results);
-              console.log('Scan results saved to scan_results.json');
-            } catch (error) {
-              console.error('Error in main function:', error.message);
-              process.exit(1);
-            }
-          }
-
-          main();
-          EOL
-          
-          node scan-pdfs.js
-
-      - name: Process scan results
-        id: process-scan-results
-        run: |
-          if [ -f "scan_results.json" ]; then
-            SCAN_RESULTS=$(cat scan_results.json)
-            # Escape JSON for GitHub Actions output
-            SCAN_RESULTS="${SCAN_RESULTS//'%'/'%25'}"
-            SCAN_RESULTS="${SCAN_RESULTS//$'\n'/'%0A'}"
-            SCAN_RESULTS="${SCAN_RESULTS//$'\r'/'%0D'}"
-            echo "scan_results=$SCAN_RESULTS" >> $GITHUB_OUTPUT
-            
-            echo "Scan results processed."
-          else
-            echo "Error: scan_results.json not found"
-            echo "scan_results=[]" >> $GITHUB_OUTPUT
-            exit 1
-          fi
-
-      - name: Upload scan results as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: falcon-scan-results
-          path: scan_results.json
-          retention-days: 5
-
-  create-issues-for-threats:
-    name: Create Issues for Threats
-    needs: [detect-pdf-changes, scan-with-falcon]
-    if: needs.detect-pdf-changes.outputs.has_new_pdfs == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
-      - name: Create issues for malicious files
-        env:
-          SCAN_RESULTS: ${{ needs.scan-with-falcon.outputs.scan_results }}
-          GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
-          REPO_OWNER: jacobdjwilson
-          REPO_NAME: awesome-annual-security-reports
-        run: |
-          cat > create-issues.js << 'EOL'
-          const axios = require('axios');
-
-          async function createGitHubIssue(title, body) {
-            try {
-              const response = await axios.post(
-                `https://api.github.com/repos/${process.env.REPO_OWNER}/${process.env.REPO_NAME}/issues`,
-                {
-                  title: title,
-                  body: body
-                },
-                {
-                  headers: {
-                    'Authorization': `token ${process.env.GITHUB_TOKEN}`,
-                    'Accept': 'application/vnd.github.v3+json'
-                  }
-                }
-              );
-              return response.data.html_url;
-            } catch (error) {
-              console.error('Error creating GitHub issue:', error.message);
-              return null;
-            }
-          }
-
-          async function main() {
-            try {
-              const scanResults = JSON.parse(process.env.SCAN_RESULTS);
-              
-              for (const result of scanResults) {
-                // Create issues only for files that aren't clean
-                if (result.clean === false && !result.error) {
-                  const fileName = result.file.split('/').pop();
-                  
-                  const issueTitle = `⚠️ Security threat detected in ${fileName}`;
-                  const issueBody = `
-          # Security Threat Alert
-
-          A security threat was detected in the PDF file: \`${result.file}\`
-
-          ## Scan Details
-          - **Report URL**: [Falcon Hybrid Analysis Report](${result.report_url})
-          - **Verdict**: ${result.verdict}
-          - **Threat Score**: ${result.threat_score}
-          - **Malware Family**: ${result.malware_family || 'None'}
-
-          Please review this file carefully before proceeding with any markdown conversion.
-          `;
-                  
-                  console.log(`Creating issue for malicious file: ${fileName}`);
-                  const issueUrl = await createGitHubIssue(issueTitle, issueBody);
-                  
-                  if (issueUrl) {
-                    console.log(`Issue created successfully: ${issueUrl}`);
-                  } else {
-                    console.error(`Failed to create issue for ${fileName}`);
-                  }
-                } else if (result.error) {
-                  const fileName = result.file.split('/').pop();
-                  
-                  const issueTitle = `⚠️ Scan error for ${fileName}`;
-                  const issueBody = `
-          # Scan Error Alert
-
-          An error occurred while scanning the PDF file: \`${result.file}\`
-
-          ## Error Details
-          - **Error**: ${result.error}
-          ${result.job_id ? `- **Job ID**: ${result.job_id}` : ''}
-
-          Please review this file manually or try scanning again.
-          `;
-                  
-                  console.log(`Creating issue for scan error: ${fileName}`);
-                  const issueUrl = await createGitHubIssue(issueTitle, issueBody);
-                  
-                  if (issueUrl) {
-                    console.log(`Issue created successfully: ${issueUrl}`);
-                  } else {
-                    console.error(`Failed to create issue for ${fileName}`);
-                  }
-                }
-              }
-            } catch (error) {
-              console.error('Error in main function:', error.message);
-              process.exit(1);
-            }
-          }
-
-          main();
-          EOL
-          
-          npm install axios
-          node create-issues.js
-
-  convert-to-markdown:
-    name: Convert PDFs to Markdown
-    needs: [detect-pdf-changes, scan-with-falcon]
-    if: needs.detect-pdf-changes.outputs.has_new_pdfs == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
-      - name: Install dependencies
-        run: npm install axios fs-extra
-
-      - name: Prepare for conversion
-        env:
-          SCAN_RESULTS: ${{ needs.scan-with-falcon.outputs.scan_results }}
-        run: |
-          echo 'const fs = require("fs-extra");
-          const scanResults = ${{ needs.scan-with-falcon.outputs.scan_results }};
-          fs.writeJSONSync("clean_files.json", 
-            scanResults.filter(result => result.clean === true)
-              .map(result => result.file)
-          );' > prepare-clean-files.js
-          
-          node prepare-clean-files.js
-          
-          if [ -f "clean_files.json" ] && [ "$(cat clean_files.json | jq 'length')" -gt 0 ]; then
-            echo "Clean files found, proceeding with conversion."
-          else
-            echo "No clean files found for conversion."
-            exit 0
-          fi
-
-      - name: Get AI prompt version
-        id: get-prompt-version
-        run: |
-          PROMPT_FILE="AI_PROMPT_MARKDOWN_CONVERT.md"
-          if [ -f "$PROMPT_FILE" ]; then
-            PROMPT_VERSION=$(git log -1 --format="%s" -- "$PROMPT_FILE" | grep -oE "V[0-9]+\.[0-9]+" || echo "V1.0")
-            echo "prompt_version=$PROMPT_VERSION" >> $GITHUB_OUTPUT
-            echo "AI Prompt version detected: $PROMPT_VERSION"
-          else
-            echo "prompt_version=V1.0" >> $GITHUB_OUTPUT
-            echo "AI Prompt file not found, using default version V1.0"
-          fi
-
-      - name: Convert PDFs to Markdown with Gemini
-        id: convert-pdfs
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          PROMPT_VERSION: ${{ steps.get-prompt-version.outputs.prompt_version }}
-        run: |
-          cat > convert-to-markdown.js << 'EOL'
-          const axios = require('axios');
-          const fs = require('fs-extra');
-          const path = require('path');
-          const { execSync } = require('child_process');
-
-          // Function to read the AI prompt
-          async function readAIPrompt() {
-            try {
-              return await fs.readFile('AI_PROMPT_MARKDOWN_CONVERT.md', 'utf8');
-            } catch (error) {
-              console.error('Error reading AI prompt file:', error.message);
-              return "Please convert this PDF to a well-formatted markdown document, maintaining all headers, structure, and information from the original document. Create proper markdown formatting for headings, lists, tables, and code blocks as needed.";
-            }
-          }
-
-          // Function to convert binary data to base64
-          function binaryToBase64(binary) {
-            return Buffer.from(binary).toString('base64');
-          }
-
-          // Function to convert PDF to Markdown using Gemini
-          async function convertToMarkdown(pdfPath, promptText, model = "gemini-2.0-flash") {
-            try {
-              console.log(`Converting ${pdfPath} to markdown using ${model}...`);
-              
-              // Read PDF file as binary
-              const pdfData = await fs.readFile(pdfPath);
-              const pdfBase64 = binaryToBase64(pdfData);
-              
-              const requestData = {
-                contents: [
-                  {
-                    role: "user",
-                    parts: [
-                      { text: promptText },
-                      {
-                        inline_data: {
-                          mime_type: "application/pdf",
-                          data: pdfBase64
-                        }
-                      }
-                    ]
-                  }
-                ],
-                generationConfig: {
-                  temperature: 0.2,
-                  maxOutputTokens: 32768
-                }
-              };
-              
-              const apiUrl = `https://generativelanguage.googleapis.com/v1/models/${model}:generateContent?key=${process.env.GEMINI_API_KEY}`;
-              
-              const response = await axios.post(apiUrl, requestData, {
-                headers: {
-                  'Content-Type': 'application/json'
-                }
-              });
-              
-              // Check for valid response
-              if (response.data && 
-                  response.data.candidates && 
-                  response.data.candidates[0] && 
-                  response.data.candidates[0].content &&
-                  response.data.candidates[0].content.parts &&
-                  response.data.candidates[0].content.parts[0] &&
-                  response.data.candidates[0].content.parts[0].text) {
-                
-                return {
-                  markdown: response.data.candidates[0].content.parts[0].text,
-                  model: model
-                };
-              } else {
-                console.error('Invalid response format from Gemini API:', JSON.stringify(response.data, null, 2));
-                throw new Error('Invalid response format from Gemini API');
-              }
-            } catch (error) {
-              console.error(`Error converting ${pdfPath} with ${model}:`, error.message);
-              if (model === "gemini-2.0-flash" && error.message.includes('400')) {
-                console.log('Attempting fallback to gemini-2.0-flash-lite...');
-                return convertToMarkdown(pdfPath, promptText, "gemini-2.0-flash-lite");
-              }
-              throw error;
-            }
-          }
-
-          // Function to create the markdown file path
-          function createMarkdownFilePath(pdfPath) {
-            // Replace "Annual Security Reports" with "Markdown Conversions"
-            const relativePath = pdfPath.replace(/^Annual Security Reports\//, 'Markdown Conversions/');
-            // Replace .pdf extension with .md
-            return relativePath.replace(/\.pdf$/, '.md');
-          }
-
-          // Function to ensure directory exists
-          async function ensureDirectoryExists(filePath) {
-            const directory = path.dirname(filePath);
-            await fs.ensureDir(directory);
-          }
-
-          // Main function
-          async function main() {
-            try {
-              // Read the list of clean files
-              const cleanFiles = await fs.readJson('clean_files.json');
-              console.log(`Processing ${cleanFiles.length} clean PDF files...`);
-              
-              // Read the AI prompt
-              const promptText = await readAIPrompt();
-              
-              // Process each clean file
-              for (const pdfPath of cleanFiles) {
-                try {
-                  // Convert PDF to markdown
-                  const result = await convertToMarkdown(pdfPath, promptText);
-                  
-                  // Create markdown file path
-                  const markdownPath = createMarkdownFilePath(pdfPath);
-                  
-                  // Ensure directory exists
-                  await ensureDirectoryExists(markdownPath);
-                  
-                  // Save markdown to file
-                  await fs.writeFile(markdownPath, result.markdown);
-                  console.log(`Saved markdown to ${markdownPath}`);
-                  
-                  // Add and commit the file
-                  try {
-                    execSync(`git config --local user.name "GitHub Action"`);
-                    execSync(`git config --local user.email "action@github.com"`);
-                    execSync(`git add "${markdownPath}"`);
-                    const commitMessage = `AI Prompt ${process.env.PROMPT_VERSION} Model ${result.model}`;
-                    execSync(`git commit -m "${commitMessage}" "${markdownPath}"`);
-                    console.log(`Committed ${markdownPath} with message: ${commitMessage}`);
-                  } catch (gitError) {
-                    console.error(`Git error for ${markdownPath}:`, gitError.message);
-                  }
-                } catch (conversionError) {
-                  console.error(`Failed to convert ${pdfPath}:`, conversionError.message);
-                }
-              }
-              
-              // Push changes
-              try {
-                execSync('git push');
-                console.log('Pushed changes to repository');
-              } catch (pushError) {
-                console.error('Error pushing changes:', pushError.message);
-              }
-            } catch (error) {
-              console.error('Error in main function:', error.message);
-              process.exit(1);
-            }
-          }
-
-          main();
-          EOL
-          
-          npm install axios fs-extra
-          node convert-to-markdown.js
- | awk '{print $2}' | grep -E '^Annual Security Reports/')
-          
-          # Check if any new PDFs were added (not modified or deleted)
           if [ -z "$CHANGED_FILES" ]; then
-            echo "No new PDF files detected."
-            echo "has_new_pdfs=false" >> $GITHUB_OUTPUT
+            echo "No new PDF files detected"
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
             echo "pdf_files=[]" >> $GITHUB_OUTPUT
           else
-            echo "New PDF files detected:"
-            echo "$CHANGED_FILES"
+            echo "New PDF files detected: $CHANGED_FILES"
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
             
-            # Convert to JSON array format without relying on jq
-            JSON_FILES="["
-            while IFS= read -r file; do
-              if [ -n "$file" ]; then
-                # Properly escape the file path for JSON
-                ESCAPED_FILE=$(echo "$file" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g')
-                if [ "$JSON_FILES" != "[" ]; then
-                  JSON_FILES="${JSON_FILES},"
-                fi
-                JSON_FILES="${JSON_FILES}\"${ESCAPED_FILE}\""
-              fi
-            done <<< "$CHANGED_FILES"
-            JSON_FILES="${JSON_FILES}]"
-            
-            echo "has_new_pdfs=true" >> $GITHUB_OUTPUT
-            echo "pdf_files=$JSON_FILES" >> $GITHUB_OUTPUT
+            # Convert the list to JSON array for output
+            PDF_JSON="[$(echo "$CHANGED_FILES" | sed 's/^/"/;s/$/"/' | paste -sd "," -)]"
+            echo "pdf_files=$PDF_JSON" >> $GITHUB_OUTPUT
           fi
+      
+      - name: Log detection results
+        run: |
+          echo "Changes detected: ${{ steps.find-pdfs.outputs.changes_detected }}"
+          echo "PDF files: ${{ steps.find-pdfs.outputs.pdf_files }}"
 
-  scan-with-falcon:
-    name: Scan PDFs with Falcon Hybrid-Analysis
-    needs: detect-pdf-changes
-    if: needs.detect-pdf-changes.outputs.has_new_pdfs == 'true'
+  falcon-scan:
+    name: Scan PDFs with Falcon Hybrid Analysis
+    needs: detect-pdfs
+    if: ${{ needs.detect-pdfs.outputs.changes_detected == 'true' }}
     runs-on: ubuntu-latest
+    
     outputs:
-      scan_results: ${{ steps.process-scan-results.outputs.scan_results }}
+      scan_results: ${{ steps.process-results.outputs.scan_results }}
+    
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
+          python-version: '3.10'
+      
       - name: Install dependencies
-        run: npm install axios form-data fs-extra
-
-      - name: Scan PDFs with Falcon Hybrid-Analysis
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+      
+      - name: Scan PDFs with Falcon
         id: scan-pdfs
         env:
           HYBRID_ANALYSIS_API_KEY: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}
-          PDF_FILES: ${{ needs.detect-pdf-changes.outputs.pdf_files }}
+          PDF_FILES: ${{ needs.detect-pdfs.outputs.pdf_files }}
         run: |
-          cat > scan-pdfs.js << 'EOL'
-          const axios = require('axios');
-          const FormData = require('form-data');
-          const fs = require('fs');
-          const path = require('path');
-          const fsExtra = require('fs-extra');
-
-          // Function to submit a file to Hybrid Analysis
-          async function submitScan(filePath) {
-            try {
-              console.log(`Preparing to scan: ${filePath}`);
-              
-              const fileName = path.basename(filePath);
-              
-              // Check if file exists
-              if (!fs.existsSync(filePath)) {
-                console.error(`File not found: ${filePath}`);
-                return { file: filePath, error: 'File not found', clean: false };
-              }
-              
-              const form = new FormData();
-              form.append('file', fs.createReadStream(filePath));
-              form.append('environment_id', '300'); // Windows 11 64-bit
-              form.append('scan_type', 'full');
-                
-              console.log(`Submitting ${fileName} to Falcon Hybrid Analysis...`);
-              
-              const submitResponse = await axios.post('https://www.hybrid-analysis.com/api/v2/submit/file', form, {
-                headers: {
-                  ...form.getHeaders(),
-                  'api-key': process.env.HYBRID_ANALYSIS_API_KEY,
-                  'user-agent': 'Falcon Sandbox'
-                }
-              });
-              
-              if (submitResponse.data && submitResponse.data.job_id) {
-                console.log(`Submission successful for ${fileName}. Job ID: ${submitResponse.data.job_id}`);
-                
-                // Poll for results
-                let scanComplete = false;
-                let attempts = 0;
-                let scanResult = null;
-                
-                while (!scanComplete && attempts < 20) {
-                  await new Promise(resolve => setTimeout(resolve, 30000)); // Wait for 30 seconds
-                  attempts++;
-                  
-                  try {
-                    console.log(`Checking scan status for ${fileName} (attempt ${attempts})...`);
-                    const statusResponse = await axios.get(`https://www.hybrid-analysis.com/api/v2/report/${submitResponse.data.job_id}/state`, {
-                      headers: {
-                        'api-key': process.env.HYBRID_ANALYSIS_API_KEY,
-                        'user-agent': 'Falcon Sandbox'
-                      }
-                    });
-                    
-                    if (statusResponse.data && statusResponse.data.state === 'SUCCESS') {
-                      console.log(`Scan complete for ${fileName}`);
-                      scanComplete = true;
-                      
-                      // Get full report
-                      const reportResponse = await axios.get(`https://www.hybrid-analysis.com/api/v2/report/${submitResponse.data.job_id}/summary`, {
-                        headers: {
-                          'api-key': process.env.HYBRID_ANALYSIS_API_KEY,
-                          'user-agent': 'Falcon Sandbox'
-                        }
-                      });
-                      
-                      scanResult = {
-                        file: filePath,
-                        job_id: submitResponse.data.job_id,
-                        report_url: `https://www.hybrid-analysis.com/sample/${reportResponse.data.sha256}/`,
-                        verdict: reportResponse.data.verdict,
-                        threat_score: reportResponse.data.threat_score,
-                        malware_family: reportResponse.data.malware_family || 'None',
-                        clean: reportResponse.data.verdict === 'no specific threat' || reportResponse.data.threat_score < 10
-                      };
-                    } else if (statusResponse.data && statusResponse.data.state === 'ERROR') {
-                      console.error(`Scan error for ${fileName}: ${statusResponse.data.message || 'Unknown error'}`);
-                      scanComplete = true;
-                      scanResult = { 
-                        file: filePath, 
-                        error: statusResponse.data.message || 'Scan failed',
-                        clean: false 
-                      };
-                    }
-                  } catch (error) {
-                    console.error(`Error checking scan status for ${fileName}:`, error.message);
-                  }
-                }
-                
-                if (!scanComplete) {
-                  console.error(`Scan timed out for ${fileName} after ${attempts} attempts`);
-                  return { 
-                    file: filePath, 
-                    job_id: submitResponse.data.job_id,
-                    error: 'Scan timed out', 
-                    clean: false 
-                  };
-                }
-                
-                return scanResult;
-              } else {
-                console.error(`Submission failed for ${fileName}`);
-                return { 
-                  file: filePath, 
-                  error: 'Submission failed', 
-                  clean: false 
-                };
-              }
-            } catch (error) {
-              console.error(`Error scanning ${filePath}:`, error.message);
-              return { 
-                file: filePath, 
-                error: `Scanning error: ${error.message}`, 
-                clean: false 
-              };
-            }
-          }
-
-          async function main() {
-            try {
-              const pdfFiles = JSON.parse(process.env.PDF_FILES);
-              console.log(`Processing ${pdfFiles.length} PDF files`);
-              
-              const results = [];
-              
-              for (const filePath of pdfFiles) {
-                const result = await submitScan(filePath);
-                results.push(result);
-              }
-              
-              // Write results to file for the next step
-              fsExtra.writeJSONSync('scan_results.json', results);
-              console.log('Scan results saved to scan_results.json');
-            } catch (error) {
-              console.error('Error in main function:', error.message);
-              process.exit(1);
-            }
-          }
-
-          main();
-          EOL
+          echo "::group::Starting Falcon Scan"
+          python - <<'EOF'
+          import os
+          import json
+          import requests
+          import time
+          import base64
+          import hashlib
           
-          node scan-pdfs.js
-
-      - name: Process scan results
-        id: process-scan-results
+          # Get list of PDF files
+          pdf_files_json = os.environ.get('PDF_FILES')
+          pdf_files = json.loads(pdf_files_json)
+          api_key = os.environ.get('HYBRID_ANALYSIS_API_KEY')
+          
+          scan_results = {}
+          
+          for pdf_file in pdf_files:
+              try:
+                  print(f"Processing: {pdf_file}")
+                  
+                  # Check if file exists
+                  if not os.path.exists(pdf_file):
+                      print(f"Error: File {pdf_file} does not exist")
+                      scan_results[pdf_file] = {
+                          "success": False,
+                          "error": "File does not exist",
+                          "is_malicious": False
+                      }
+                      continue
+                  
+                  # Calculate file hash for tracking
+                  with open(pdf_file, 'rb') as f:
+                      file_content = f.read()
+                      file_hash = hashlib.sha256(file_content).hexdigest()
+                  
+                  # Submit file for scanning
+                  headers = {
+                      'api-key': api_key,
+                      'User-Agent': 'Falcon Sandbox'
+                  }
+                  
+                  # Get file size
+                  file_size = os.path.getsize(pdf_file)
+                  print(f"File size: {file_size} bytes")
+                  
+                  # Prepare the file for upload
+                  files = {
+                      'file': (os.path.basename(pdf_file), open(pdf_file, 'rb'), 'application/pdf')
+                  }
+                  
+                  # Set environment to Windows 11 64-bit
+                  data = {
+                      'environment_id': 300,  # Windows 11 64-bit
+                      'comment': f"GitHub Action - Automatic scan of {pdf_file}"
+                  }
+                  
+                  # Submit the file
+                  print(f"Submitting {pdf_file} to Falcon Hybrid Analysis...")
+                  submit_response = requests.post(
+                      'https://www.hybrid-analysis.com/api/v2/submit/file',
+                      headers=headers,
+                      files=files,
+                      data=data
+                  )
+                  
+                  if submit_response.status_code != 200:
+                      print(f"Error submitting file: {submit_response.text}")
+                      scan_results[pdf_file] = {
+                          "success": False,
+                          "error": f"API Error: {submit_response.text}",
+                          "is_malicious": False
+                      }
+                      continue
+                  
+                  submit_data = submit_response.json()
+                  if not submit_data.get('success', False):
+                      print(f"Submission unsuccessful: {submit_data}")
+                      scan_results[pdf_file] = {
+                          "success": False,
+                          "error": f"Submission Error: {submit_data.get('message', 'Unknown error')}",
+                          "is_malicious": False
+                      }
+                      continue
+                  
+                  job_id = submit_data.get('job_id')
+                  if not job_id:
+                      print("No job ID returned")
+                      scan_results[pdf_file] = {
+                          "success": False,
+                          "error": "No job ID returned",
+                          "is_malicious": False
+                      }
+                      continue
+                  
+                  print(f"Job ID: {job_id}")
+                  
+                  # Poll for scan results
+                  max_polls = 30  # Maximum number of poll attempts
+                  poll_interval = 20  # Time between polls in seconds
+                  
+                  result_url = None
+                  for poll in range(max_polls):
+                      print(f"Polling for results (attempt {poll+1}/{max_polls})...")
+                      
+                      state_response = requests.get(
+                          f'https://www.hybrid-analysis.com/api/v2/report/{job_id}/state',
+                          headers=headers
+                      )
+                      
+                      if state_response.status_code != 200:
+                          print(f"Error checking job state: {state_response.text}")
+                          time.sleep(poll_interval)
+                          continue
+                      
+                      state_data = state_response.json()
+                      state = state_data.get('state', '')
+                      
+                      if state == 'SUCCESS':
+                          # Get the report
+                          report_response = requests.get(
+                              f'https://www.hybrid-analysis.com/api/v2/report/{job_id}/summary',
+                              headers=headers
+                          )
+                          
+                          if report_response.status_code != 200:
+                              print(f"Error getting report: {report_response.text}")
+                              scan_results[pdf_file] = {
+                                  "success": False,
+                                  "error": f"Report retrieval error: {report_response.text}",
+                                  "is_malicious": False
+                              }
+                              break
+                          
+                          report_data = report_response.json()
+                          
+                          # Get result URL
+                          result_url = f"https://www.hybrid-analysis.com/sample/{file_hash}"
+                          
+                          # Check if malicious
+                          verdict = report_data.get('verdict', '')
+                          is_malicious = verdict.lower() in ['malicious', 'suspicious']
+                          
+                          scan_results[pdf_file] = {
+                              "success": True,
+                              "job_id": job_id,
+                              "result_url": result_url,
+                              "is_malicious": is_malicious,
+                              "verdict": verdict,
+                              "threat_score": report_data.get('threat_score', 0),
+                              "threat_level": report_data.get('threat_level', 0),
+                              "file_hash": file_hash
+                          }
+                          
+                          print(f"Scan completed with verdict: {verdict}")
+                          print(f"Result URL: {result_url}")
+                          break
+                      
+                      elif state == 'ERROR' or state == 'FAILED':
+                          print(f"Job failed with state: {state}")
+                          scan_results[pdf_file] = {
+                              "success": False,
+                              "error": f"Job failed with state: {state}",
+                              "is_malicious": False
+                          }
+                          break
+                      
+                      print(f"Current state: {state}, waiting {poll_interval} seconds...")
+                      time.sleep(poll_interval)
+                  
+                  if poll >= max_polls - 1 and not result_url:
+                      print("Timed out waiting for scan results")
+                      scan_results[pdf_file] = {
+                          "success": False,
+                          "error": "Timed out waiting for scan results",
+                          "is_malicious": False,
+                          "job_id": job_id
+                      }
+              
+              except Exception as e:
+                  print(f"Exception processing {pdf_file}: {str(e)}")
+                  scan_results[pdf_file] = {
+                      "success": False,
+                      "error": str(e),
+                      "is_malicious": False
+                  }
+          
+          # Save scan results to file (excluding any sensitive info)
+          with open('scan_results.json', 'w') as f:
+              json.dump(scan_results, f)
+          
+          print("Scan results saved to scan_results.json")
+          EOF
+          echo "::endgroup::"
+      
+      - name: Process and output scan results
+        id: process-results
         run: |
-          if [ -f "scan_results.json" ]; then
-            SCAN_RESULTS=$(cat scan_results.json)
-            # Escape JSON for GitHub Actions output
-            SCAN_RESULTS="${SCAN_RESULTS//'%'/'%25'}"
-            SCAN_RESULTS="${SCAN_RESULTS//$'\n'/'%0A'}"
-            SCAN_RESULTS="${SCAN_RESULTS//$'\r'/'%0D'}"
-            echo "scan_results=$SCAN_RESULTS" >> $GITHUB_OUTPUT
-            
-            echo "Scan results processed."
-          else
-            echo "Error: scan_results.json not found"
-            echo "scan_results=[]" >> $GITHUB_OUTPUT
-            exit 1
-          fi
-
+          echo "::group::Processing Scan Results"
+          python - <<'EOF'
+          import json
+          import os
+          
+          with open('scan_results.json', 'r') as f:
+              scan_results = json.load(f)
+          
+          # Clean and prepare results for output
+          clean_results = {}
+          for pdf_file, result in scan_results.items():
+              clean_results[pdf_file] = {
+                  "success": result.get("success", False),
+                  "is_malicious": result.get("is_malicious", False),
+                  "result_url": result.get("result_url", ""),
+                  "verdict": result.get("verdict", ""),
+                  "threat_score": result.get("threat_score", 0),
+                  "file_hash": result.get("file_hash", "")
+              }
+              
+              # Add error info if available
+              if not result.get("success", False) and "error" in result:
+                  clean_results[pdf_file]["error"] = result["error"]
+          
+          # Write output in GitHub Actions format
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"scan_results={json.dumps(clean_results).replace('%', '%25').replace('\n', '%0A').replace('\r', '%0D').replace(':', '%3A').replace(',', '%2C')}\n")
+          
+          print("Processed scan results for GitHub Actions output")
+          EOF
+          echo "::endgroup::"
+      
       - name: Upload scan results as artifact
         uses: actions/upload-artifact@v3
         with:
           name: falcon-scan-results
           path: scan_results.json
-          retention-days: 5
+          retention-days: 30
 
-  create-issues-for-threats:
-    name: Create Issues for Threats
-    needs: [detect-pdf-changes, scan-with-falcon]
-    if: needs.detect-pdf-changes.outputs.has_new_pdfs == 'true'
+  process-scan-results:
+    name: Process Scan Results
+    needs: [detect-pdfs, falcon-scan]
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
-      - name: Create issues for malicious files
+      
+      - name: Parse scan results and create issues
         env:
-          SCAN_RESULTS: ${{ needs.scan-with-falcon.outputs.scan_results }}
+          SCAN_RESULTS: ${{ needs.falcon-scan.outputs.scan_results }}
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
-          REPO_OWNER: jacobdjwilson
-          REPO_NAME: awesome-annual-security-reports
         run: |
-          cat > create-issues.js << 'EOL'
-          const axios = require('axios');
-
-          async function createGitHubIssue(title, body) {
-            try {
-              const response = await axios.post(
-                `https://api.github.com/repos/${process.env.REPO_OWNER}/${process.env.REPO_NAME}/issues`,
-                {
-                  title: title,
-                  body: body
-                },
-                {
-                  headers: {
-                    'Authorization': `token ${process.env.GITHUB_TOKEN}`,
-                    'Accept': 'application/vnd.github.v3+json'
-                  }
-                }
-              );
-              return response.data.html_url;
-            } catch (error) {
-              console.error('Error creating GitHub issue:', error.message);
-              return null;
-            }
-          }
-
-          async function main() {
-            try {
-              const scanResults = JSON.parse(process.env.SCAN_RESULTS);
-              
-              for (const result of scanResults) {
-                // Create issues only for files that aren't clean
-                if (result.clean === false && !result.error) {
-                  const fileName = result.file.split('/').pop();
-                  
-                  const issueTitle = `⚠️ Security threat detected in ${fileName}`;
-                  const issueBody = `
-          # Security Threat Alert
-
-          A security threat was detected in the PDF file: \`${result.file}\`
-
-          ## Scan Details
-          - **Report URL**: [Falcon Hybrid Analysis Report](${result.report_url})
-          - **Verdict**: ${result.verdict}
-          - **Threat Score**: ${result.threat_score}
-          - **Malware Family**: ${result.malware_family || 'None'}
-
-          Please review this file carefully before proceeding with any markdown conversion.
-          `;
-                  
-                  console.log(`Creating issue for malicious file: ${fileName}`);
-                  const issueUrl = await createGitHubIssue(issueTitle, issueBody);
-                  
-                  if (issueUrl) {
-                    console.log(`Issue created successfully: ${issueUrl}`);
-                  } else {
-                    console.error(`Failed to create issue for ${fileName}`);
-                  }
-                } else if (result.error) {
-                  const fileName = result.file.split('/').pop();
-                  
-                  const issueTitle = `⚠️ Scan error for ${fileName}`;
-                  const issueBody = `
-          # Scan Error Alert
-
-          An error occurred while scanning the PDF file: \`${result.file}\`
-
-          ## Error Details
-          - **Error**: ${result.error}
-          ${result.job_id ? `- **Job ID**: ${result.job_id}` : ''}
-
-          Please review this file manually or try scanning again.
-          `;
-                  
-                  console.log(`Creating issue for scan error: ${fileName}`);
-                  const issueUrl = await createGitHubIssue(issueTitle, issueBody);
-                  
-                  if (issueUrl) {
-                    console.log(`Issue created successfully: ${issueUrl}`);
-                  } else {
-                    console.error(`Failed to create issue for ${fileName}`);
-                  }
-                }
-              }
-            } catch (error) {
-              console.error('Error in main function:', error.message);
-              process.exit(1);
-            }
-          }
-
-          main();
-          EOL
+          echo "::group::Processing scan results"
+          python - <<'EOF'
+          import json
+          import os
+          import subprocess
+          import sys
           
-          npm install axios
-          node create-issues.js
+          # Load scan results
+          scan_results_json = os.environ.get('SCAN_RESULTS', '{}')
+          scan_results = json.loads(scan_results_json)
+          
+          # Process each file
+          clean_files = []
+          malicious_files = []
+          failed_scans = []
+          
+          for pdf_file, result in scan_results.items():
+              print(f"Processing results for: {pdf_file}")
+              
+              if not result.get('success', False):
+                  print(f"Scan failed for {pdf_file}: {result.get('error', 'Unknown error')}")
+                  failed_scans.append({
+                      'file': pdf_file,
+                      'error': result.get('error', 'Unknown error')
+                  })
+                  continue
+              
+              if result.get('is_malicious', False):
+                  print(f"Malicious file detected: {pdf_file}")
+                  malicious_files.append({
+                      'file': pdf_file,
+                      'verdict': result.get('verdict', 'Unknown'),
+                      'threat_score': result.get('threat_score', 0),
+                      'result_url': result.get('result_url', '')
+                  })
+              else:
+                  print(f"Clean file: {pdf_file}")
+                  clean_files.append(pdf_file)
+          
+          # Create issues for malicious files
+          for malicious_file in malicious_files:
+              file_path = malicious_file['file']
+              file_name = os.path.basename(file_path)
+              
+              issue_title = f"⚠️ Security Alert: Malicious content detected in {file_name}"
+              issue_body = f"""
+              ## Security Alert: Malicious Content Detected
+              
+              **File:** {file_path}
+              **Verdict:** {malicious_file['verdict']}
+              **Threat Score:** {malicious_file['threat_score']}
+              
+              ### Analysis Results
+              The file has been flagged as potentially malicious by Falcon Hybrid Analysis.
+              
+              **Results URL:** {malicious_file['result_url']}
+              
+              ### Next Steps
+              1. Do not open or execute this file
+              2. Review the scan results for detailed information
+              3. Consider removing this file from the repository
+              
+              This issue was automatically generated by the PDF Processing workflow.
+              """
+              
+              # Create GitHub issue
+              issue_command = [
+                  'gh', 'issue', 'create',
+                  '--title', issue_title,
+                  '--body', issue_body,
+                  '--label', 'security-alert'
+              ]
+              
+              try:
+                  subprocess.run(issue_command, check=True, env=os.environ)
+                  print(f"Created issue for malicious file: {file_path}")
+              except subprocess.CalledProcessError as e:
+                  print(f"Failed to create issue: {str(e)}")
+          
+          # Create issues for failed scans
+          for failed_scan in failed_scans:
+              file_path = failed_scan['file']
+              file_name = os.path.basename(file_path)
+              
+              issue_title = f"⚠️ Scan Failed: Unable to analyze {file_name}"
+              issue_body = f"""
+              ## Scan Failed
+              
+              **File:** {file_path}
+              **Error:** {failed_scan['error']}
+              
+              ### Next Steps
+              1. Verify the file is a valid PDF
+              2. Check the GitHub Actions logs for more details
+              3. Retry the workflow or scan the file manually
+              
+              This issue was automatically generated by the PDF Processing workflow.
+              """
+              
+              # Create GitHub issue
+              issue_command = [
+                  'gh', 'issue', 'create',
+                  '--title', issue_title,
+                  '--body', issue_body,
+                  '--label', 'scan-failed'
+              ]
+              
+              try:
+                  subprocess.run(issue_command, check=True, env=os.environ)
+                  print(f"Created issue for failed scan: {file_path}")
+              except subprocess.CalledProcessError as e:
+                  print(f"Failed to create issue: {str(e)}")
+          
+          # Output the list of clean files for next job
+          clean_files_json = json.dumps(clean_files)
+          with open('clean_files.json', 'w') as f:
+              f.write(clean_files_json)
+          
+          # Set output for next job
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"clean_files={clean_files_json.replace('%', '%25').replace('\n', '%0A').replace('\r', '%0D').replace(':', '%3A').replace(',', '%2C')}\n")
+              f.write(f"has_clean_files={'true' if clean_files else 'false'}\n")
+          
+          print(f"Found {len(clean_files)} clean files, {len(malicious_files)} malicious files, and {len(failed_scans)} failed scans")
+          EOF
+          echo "::endgroup::"
+      
+      - name: Setup GitHub CLI
+        uses: cli/cli-action@v1
+      
+      - name: Upload clean files list as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: clean-pdf-files
+          path: clean_files.json
+          retention-days: 1
 
-  convert-to-markdown:
-    name: Convert PDFs to Markdown
-    needs: [detect-pdf-changes, scan-with-falcon]
-    if: needs.detect-pdf-changes.outputs.has_new_pdfs == 'true'
+  gemini-conversion:
+    name: Convert Clean PDFs to Markdown with Gemini
+    needs: [detect-pdfs, falcon-scan, process-scan-results]
+    if: ${{ needs.process-scan-results.outputs.has_clean_files == 'true' }}
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          node-version: '16'
-
+          python-version: '3.10'
+      
       - name: Install dependencies
-        run: npm install axios fs-extra
-
-      - name: Prepare for conversion
-        env:
-          SCAN_RESULTS: ${{ needs.scan-with-falcon.outputs.scan_results }}
         run: |
-          echo 'const fs = require("fs-extra");
-          const scanResults = ${{ needs.scan-with-falcon.outputs.scan_results }};
-          fs.writeJSONSync("clean_files.json", 
-            scanResults.filter(result => result.clean === true)
-              .map(result => result.file)
-          );' > prepare-clean-files.js
-          
-          node prepare-clean-files.js
-          
-          if [ -f "clean_files.json" ] && [ "$(cat clean_files.json | jq 'length')" -gt 0 ]; then
-            echo "Clean files found, proceeding with conversion."
-          else
-            echo "No clean files found for conversion."
-            exit 0
-          fi
-
+          python -m pip install --upgrade pip
+          pip install requests google-generativeai PyPDF2
+      
+      - name: Download clean files list
+        uses: actions/download-artifact@v3
+        with:
+          name: clean-pdf-files
+      
       - name: Get AI prompt version
         id: get-prompt-version
         run: |
           PROMPT_FILE="AI_PROMPT_MARKDOWN_CONVERT.md"
           if [ -f "$PROMPT_FILE" ]; then
-            PROMPT_VERSION=$(git log -1 --format="%s" -- "$PROMPT_FILE" | grep -oE "V[0-9]+\.[0-9]+" || echo "V1.0")
+            PROMPT_VERSION=$(git log -1 --pretty=format:'%s' -- "$PROMPT_FILE" | grep -o 'V[0-9]\+\.[0-9]\+' || echo 'V1.0')
             echo "prompt_version=$PROMPT_VERSION" >> $GITHUB_OUTPUT
-            echo "AI Prompt version detected: $PROMPT_VERSION"
+            echo "Prompt version: $PROMPT_VERSION"
           else
             echo "prompt_version=V1.0" >> $GITHUB_OUTPUT
-            echo "AI Prompt file not found, using default version V1.0"
+            echo "Prompt file not found, using default version V1.0"
           fi
-
+      
       - name: Convert PDFs to Markdown with Gemini
-        id: convert-pdfs
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PROMPT_VERSION: ${{ steps.get-prompt-version.outputs.prompt_version }}
         run: |
-          cat > convert-to-markdown.js << 'EOL'
-          const axios = require('axios');
-          const fs = require('fs-extra');
-          const path = require('path');
-          const { execSync } = require('child_process');
-
-          // Function to read the AI prompt
-          async function readAIPrompt() {
-            try {
-              return await fs.readFile('AI_PROMPT_MARKDOWN_CONVERT.md', 'utf8');
-            } catch (error) {
-              console.error('Error reading AI prompt file:', error.message);
-              return "Please convert this PDF to a well-formatted markdown document, maintaining all headers, structure, and information from the original document. Create proper markdown formatting for headings, lists, tables, and code blocks as needed.";
-            }
-          }
-
-          // Function to convert binary data to base64
-          function binaryToBase64(binary) {
-            return Buffer.from(binary).toString('base64');
-          }
-
-          // Function to convert PDF to Markdown using Gemini
-          async function convertToMarkdown(pdfPath, promptText, model = "gemini-2.0-flash") {
-            try {
-              console.log(`Converting ${pdfPath} to markdown using ${model}...`);
-              
-              // Read PDF file as binary
-              const pdfData = await fs.readFile(pdfPath);
-              const pdfBase64 = binaryToBase64(pdfData);
-              
-              const requestData = {
-                contents: [
-                  {
-                    role: "user",
-                    parts: [
-                      { text: promptText },
-                      {
-                        inline_data: {
-                          mime_type: "application/pdf",
-                          data: pdfBase64
-                        }
-                      }
-                    ]
-                  }
-                ],
-                generationConfig: {
-                  temperature: 0.2,
-                  maxOutputTokens: 32768
-                }
-              };
-              
-              const apiUrl = `https://generativelanguage.googleapis.com/v1/models/${model}:generateContent?key=${process.env.GEMINI_API_KEY}`;
-              
-              const response = await axios.post(apiUrl, requestData, {
-                headers: {
-                  'Content-Type': 'application/json'
-                }
-              });
-              
-              // Check for valid response
-              if (response.data && 
-                  response.data.candidates && 
-                  response.data.candidates[0] && 
-                  response.data.candidates[0].content &&
-                  response.data.candidates[0].content.parts &&
-                  response.data.candidates[0].content.parts[0] &&
-                  response.data.candidates[0].content.parts[0].text) {
-                
-                return {
-                  markdown: response.data.candidates[0].content.parts[0].text,
-                  model: model
-                };
-              } else {
-                console.error('Invalid response format from Gemini API:', JSON.stringify(response.data, null, 2));
-                throw new Error('Invalid response format from Gemini API');
-              }
-            } catch (error) {
-              console.error(`Error converting ${pdfPath} with ${model}:`, error.message);
-              if (model === "gemini-2.0-flash" && error.message.includes('400')) {
-                console.log('Attempting fallback to gemini-2.0-flash-lite...');
-                return convertToMarkdown(pdfPath, promptText, "gemini-2.0-flash-lite");
-              }
-              throw error;
-            }
-          }
-
-          // Function to create the markdown file path
-          function createMarkdownFilePath(pdfPath) {
-            // Replace "Annual Security Reports" with "Markdown Conversions"
-            const relativePath = pdfPath.replace(/^Annual Security Reports\//, 'Markdown Conversions/');
-            // Replace .pdf extension with .md
-            return relativePath.replace(/\.pdf$/, '.md');
-          }
-
-          // Function to ensure directory exists
-          async function ensureDirectoryExists(filePath) {
-            const directory = path.dirname(filePath);
-            await fs.ensureDir(directory);
-          }
-
-          // Main function
-          async function main() {
-            try {
-              // Read the list of clean files
-              const cleanFiles = await fs.readJson('clean_files.json');
-              console.log(`Processing ${cleanFiles.length} clean PDF files...`);
-              
-              // Read the AI prompt
-              const promptText = await readAIPrompt();
-              
-              // Process each clean file
-              for (const pdfPath of cleanFiles) {
-                try {
-                  // Convert PDF to markdown
-                  const result = await convertToMarkdown(pdfPath, promptText);
-                  
-                  // Create markdown file path
-                  const markdownPath = createMarkdownFilePath(pdfPath);
-                  
-                  // Ensure directory exists
-                  await ensureDirectoryExists(markdownPath);
-                  
-                  // Save markdown to file
-                  await fs.writeFile(markdownPath, result.markdown);
-                  console.log(`Saved markdown to ${markdownPath}`);
-                  
-                  // Add and commit the file
-                  try {
-                    execSync(`git config --local user.name "GitHub Action"`);
-                    execSync(`git config --local user.email "action@github.com"`);
-                    execSync(`git add "${markdownPath}"`);
-                    const commitMessage = `AI Prompt ${process.env.PROMPT_VERSION} Model ${result.model}`;
-                    execSync(`git commit -m "${commitMessage}" "${markdownPath}"`);
-                    console.log(`Committed ${markdownPath} with message: ${commitMessage}`);
-                  } catch (gitError) {
-                    console.error(`Git error for ${markdownPath}:`, gitError.message);
-                  }
-                } catch (conversionError) {
-                  console.error(`Failed to convert ${pdfPath}:`, conversionError.message);
-                }
-              }
-              
-              // Push changes
-              try {
-                execSync('git push');
-                console.log('Pushed changes to repository');
-              } catch (pushError) {
-                console.error('Error pushing changes:', pushError.message);
-              }
-            } catch (error) {
-              console.error('Error in main function:', error.message);
-              process.exit(1);
-            }
-          }
-
-          main();
-          EOL
+          echo "::group::Converting PDFs to Markdown"
+          python - <<'EOF'
+          import json
+          import os
+          import requests
+          import google.generativeai as genai
+          import PyPDF2
+          import time
+          import re
+          import subprocess
           
-          npm install axios fs-extra
-          node convert-to-markdown.js
+          # Load clean files
+          with open('clean_files.json', 'r') as f:
+              clean_files = json.load(f)
+          
+          # Configure Gemini API
+          gemini_api_key = os.environ.get('GEMINI_API_KEY')
+          genai.configure(api_key=gemini_api_key)
+          
+          # Load the AI prompt
+          prompt_file = "AI_PROMPT_MARKDOWN_CONVERT.md"
+          with open(prompt_file, 'r') as f:
+              ai_prompt = f.read()
+          
+          # Get prompt version
+          prompt_version = os.environ.get('PROMPT_VERSION', 'V1.0')
+          
+          # Function to extract text from PDF
+          def extract_text_from_pdf(pdf_path):
+              try:
+                  with open(pdf_path, 'rb') as file:
+                      reader = PyPDF2.PdfReader(file)
+                      text = ""
+                      for page in reader.pages:
+                          text += page.extract_text() + "\n\n"
+                      return text
+              except Exception as e:
+                  print(f"Error extracting text from PDF {pdf_path}: {str(e)}")
+                  return None
+          
+          # Function to convert text to markdown using Gemini
+          def convert_to_markdown(text, model_name="gemini-1.5-flash"):
+              try:
+                  safety_settings = [
+                      {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+                      {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+                      {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+                      {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"}
+                  ]
+                  
+                  model = genai.GenerativeModel(model_name=model_name, safety_settings=safety_settings)
+                  
+                  # Construct prompt with extracted text
+                  full_prompt = f"{ai_prompt}\n\nHere is the PDF content to convert:\n\n{text}"
+                  
+                  response = model.generate_content(full_prompt)
+                  
+                  if hasattr(response, 'text'):
+                      return response.text
+                  else:
+                      print(f"Unexpected response format: {response}")
+                      return None
+              except Exception as e:
+                  print(f"Error converting to markdown with {model_name}: {str(e)}")
+                  return None
+          
+          # Process each clean file
+          for pdf_file in clean_files:
+              try:
+                  print(f"Processing {pdf_file}")
+                  
+                  # Extract text from PDF
+                  pdf_text = extract_text_from_pdf(pdf_file)
+                  if not pdf_text:
+                      print(f"Failed to extract text from {pdf_file}")
+                      continue
+                  
+                  # First try with flash model
+                  print(f"Converting with gemini-2.0-flash...")
+                  markdown_content = convert_to_markdown(pdf_text, "gemini-2.0-flash")
+                  model_used = "gemini-2.0-flash"
+                  
+                  # Fall back to flash-lite if needed
+                  if not markdown_content:
+                      print(f"Falling back to gemini-2.0-flash-lite...")
+                      markdown_content = convert_to_markdown(pdf_text, "gemini-2.0-flash-lite")
+                      model_used = "gemini-2.0-flash-lite"
+                  
+                  if not markdown_content:
+                      print(f"Failed to convert {pdf_file} to markdown")
+                      continue
+                  
+                  # Determine output path
+                  # Replace 'Annual Security Reports' with 'Markdown Conversions' in the path
+                  output_path = pdf_file.replace('Annual Security Reports', 'Markdown Conversions')
+                  output_path = re.sub(r'\.pdf$', '.md', output_path)
+                  
+                  # Create directory if it doesn't exist
+                  os.makedirs(os.path.dirname(output_path), exist_ok=True)
+                  
+                  # Write markdown content to file
+                  with open(output_path, 'w') as f:
+                      f.write(markdown_content)
+                  
+                  print(f"Saved markdown to {output_path}")
+                  
+                  # Commit the file
+                  commit_message = f"Convert {os.path.basename(pdf_file)} to markdown [AI Prompt {prompt_version} Model {model_used}]"
+                  
+                  # Stage and commit the file
+                  subprocess.run(['git', 'add', output_path], check=True)
+                  subprocess.run(['git', 'config', 'user.name', 'GitHub Action'], check=True)
+                  subprocess.run(['git', 'config', 'user.email', 'action@github.com'], check=True)
+                  subprocess.run(['git', 'commit', '-m', commit_message], check=True)
+                  
+                  # Push changes
+                  push_attempt = 0
+                  max_attempts = 3
+                  
+                  while push_attempt < max_attempts:
+                      try:
+                          subprocess.run(['git', 'pull', '--rebase'], check=True)
+                          subprocess.run(['git', 'push'], check=True)
+                          print(f"Successfully pushed {output_path}")
+                          break
+                      except subprocess.CalledProcessError as e:
+                          push_attempt += 1
+                          print(f"Push attempt {push_attempt} failed: {str(e)}")
+                          if push_attempt >= max_attempts:
+                              print(f"Failed to push after {max_attempts} attempts")
+                          else:
+                              print(f"Waiting before retry...")
+                              time.sleep(5)
+              
+              except Exception as e:
+                  print(f"Error processing {pdf_file}: {str(e)}")
+          
+          print("PDF conversion complete")
+          EOF
+          echo "::endgroup::"
