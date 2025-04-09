@@ -52,9 +52,6 @@ jobs:
     if: ${{ needs.detect-pdfs.outputs.changes_detected == 'true' }}
     runs-on: ubuntu-latest
     
-    outputs:
-      scan_results: ${{ steps.process-results.outputs.scan_results }}
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -273,36 +270,8 @@ jobs:
         id: process-results
         run: |
           echo "::group::Processing Scan Results"
-          python - <<'EOF'
-          import json
-          import os
-          
-          with open('scan_results.json', 'r') as f:
-              scan_results = json.load(f)
-          
-          # Clean and prepare results for output
-          clean_results = {}
-          for pdf_file, result in scan_results.items():
-              clean_results[pdf_file] = {
-                  "success": result.get("success", False),
-                  "is_malicious": result.get("is_malicious", False),
-                  "result_url": result.get("result_url", ""),
-                  "verdict": result.get("verdict", ""),
-                  "threat_score": result.get("threat_score", 0),
-                  "file_hash": result.get("file_hash", "")
-              }
-              
-              # Add error info if available
-              if not result.get("success", False) and "error" in result:
-                  clean_results[pdf_file]["error"] = result["error"]
-          
-          # Write output in GitHub Actions format
-          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-              escaped_json = json.dumps(clean_results).replace('%', '%25').replace('\n', '%0A').replace('\r', '%0D').replace(':', '%3A').replace(',', '%2C')
-              f.write(f"scan_results={escaped_json}\n")
-          
-          print("Processed scan results for GitHub Actions output")
-          EOF
+          # Store the results as an artifact instead of passing through outputs
+          cat scan_results.json
           echo "::endgroup::"
       
       - name: Upload scan results as artifact
@@ -323,9 +292,13 @@ jobs:
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
       
+      - name: Download scan results
+        uses: actions/download-artifact@v4
+        with:
+          name: falcon-scan-results
+      
       - name: Parse scan results and create issues
         env:
-          SCAN_RESULTS: ${{ needs.falcon-scan.outputs.scan_results }}
           GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
         run: |
           echo "::group::Processing scan results"
@@ -335,9 +308,9 @@ jobs:
           import subprocess
           import sys
           
-          # Load scan results
-          scan_results_json = os.environ.get('SCAN_RESULTS', '{}')
-          scan_results = json.loads(scan_results_json)
+          # Load scan results from file instead of environment variable
+          with open('scan_results.json', 'r') as f:
+              scan_results = json.load(f)
           
           # Process each file
           clean_files = []
@@ -448,8 +421,6 @@ jobs:
           
           # Set output for next job
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-              escaped_json = clean_files_json.replace('%', '%25').replace('\n', '%0A').replace('\r', '%0D').replace(':', '%3A').replace(',', '%2C')
-              f.write(f"clean_files={escaped_json}\n")
               f.write(f"has_clean_files={'true' if clean_files else 'false'}\n")
           
           print(f"Found {len(clean_files)} clean files, {len(malicious_files)} malicious files, and {len(failed_scans)} failed scans")
