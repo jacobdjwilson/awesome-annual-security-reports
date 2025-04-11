@@ -167,6 +167,7 @@ jobs:
                       alt_url = "https://www.hybrid-analysis.com/api/v2/quick-scan/file"
                       logging.info(f"Trying alternative API endpoint: {alt_url}")
                       try:
+                          # Important: Need to reopen the file for the second request
                           with open(file_path, 'rb') as alt_f:
                               alt_files = {'file': (os.path.basename(file_path), alt_f)}
                               alt_data = {"scan_type": "all"}
@@ -184,6 +185,7 @@ jobs:
                       third_url = "https://www.hybrid-analysis.com/api/v2/submit/file-for-analysis"
                       logging.info(f"Trying third API endpoint: {third_url}")
                       try:
+                           # Important: Need to reopen the file for the third request
                           with open(file_path, 'rb') as third_f:
                               third_files = {'file': (os.path.basename(file_path), third_f)}
                               third_data = {
@@ -388,11 +390,11 @@ jobs:
                               "job_id": job_id,
                               "sha256": sha256 # Include SHA if we got it from submission
                           }
-                      elif not final_report and job_id in scan_results and scan_results[job_id].get('state','').upper() == 'ERROR':
-                          # Error case already handled within loop, do nothing here
+                      elif job_id in scan_results and scan_results[pdf_file].get('success', True) is False:
+                           # Error case already handled within loop, do nothing here
+                           logging.info(f"Scan for job {job_id} previously recorded as failed.")
                            pass
-                      else:
-                          # Should ideally be handled above, but catchall
+                      else: # Catch cases where polling finished without success/error/timeout recorded
                           logging.error(f"Analysis for job {job_id} did not complete successfully. Final state unknown or polling failed.")
                           scan_results[pdf_file] = {
                                "success": False,
@@ -428,7 +430,7 @@ jobs:
               json.dump(scan_results, f, indent=2)
 
           logging.info("Scan results saved.")
-          EOF
+EOF
           echo "::endgroup::"
 
       - name: Process and output scan results (log)
@@ -642,7 +644,7 @@ The file has been flagged as potentially malicious by Falcon Hybrid Analysis.
               f_out.write(f"has_clean_files={has_clean}\n")
 
           print(f"Processing complete: Found {len(clean_files)} clean files, {len(malicious_files)} malicious files, and {len(failed_scans)} failed scans.")
-          EOF
+EOF
           echo "::endgroup::"
 
       - name: Upload clean files list as artifact
@@ -819,15 +821,20 @@ The file has been flagged as potentially malicious by Falcon Hybrid Analysis.
                   response = model.generate_content(full_prompt)
 
                   # Check for successful response text
-                  if hasattr(response, 'text'):
+                  # Refined check for response content existence and type
+                  if hasattr(response, 'text') and isinstance(response.text, str) and response.text.strip():
                       logging.info(f"Successfully received markdown from {model_name}")
                       return response.text, model_name
                   # Check for blocked response due to safety or other reasons
                   elif response.prompt_feedback and response.prompt_feedback.block_reason:
                        logging.error(f"Gemini API call blocked for model {model_name}. Reason: {response.prompt_feedback.block_reason}")
                        return None, model_name
+                  # Handle cases where response.text might exist but be empty or None
+                  elif hasattr(response, 'text'):
+                       logging.warning(f"Gemini API call for {model_name} returned empty or invalid text.")
+                       return None, model_name
                   else:
-                      logging.error(f"Unexpected response format or empty content from {model_name}. Response: {response}")
+                      logging.error(f"Unexpected response format or empty content from {model_name}. Response parts: {response.parts}")
                       return None, model_name
 
               except Exception as e:
@@ -882,9 +889,23 @@ The file has been flagged as potentially malicious by Falcon Hybrid Analysis.
 
                   # Determine output path
                   # Replace 'Annual Security Reports' with 'Markdown Conversions' and change extension
-                  relative_path = os.path.relpath(pdf_file, 'Annual Security Reports')
-                  output_filename = os.path.splitext(relative_path)[0] + '.md'
-                  output_path = os.path.join('Markdown Conversions', output_filename)
+                  try:
+                      # Find the relative path from 'Annual Security Reports' onwards
+                      base_dir_index = pdf_file.find('Annual Security Reports')
+                      if base_dir_index != -1:
+                          relative_path = pdf_file[base_dir_index + len('Annual Security Reports/'):]
+                      else:
+                           # Fallback if 'Annual Security Reports' is not in the path (shouldn't happen based on 'on.paths')
+                           relative_path = os.path.basename(pdf_file)
+                           logging.warning(f"Could not find 'Annual Security Reports' in path {pdf_file}. Using base name.")
+
+                      output_filename = os.path.splitext(relative_path)[0] + '.md'
+                      output_path = os.path.join('Markdown Conversions', output_filename)
+                  except Exception as path_e:
+                      logging.exception(f"Error determining output path for {pdf_file}: {path_e}")
+                      files_failed_count += 1
+                      continue
+
 
                   # Create directory if it doesn't exist
                   os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -912,6 +933,8 @@ The file has been flagged as potentially malicious by Falcon Hybrid Analysis.
                       status_result = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True, check=True)
                       if not status_result.stdout.strip():
                           logging.info(f"No changes to commit for {output_path}. Skipping commit.")
+                          # Need to remove from index if no changes were actually written or are identical
+                          subprocess.run(['git', 'reset', 'HEAD', '--', output_path], check=False)
                           continue
 
                       # Commit the file
@@ -978,5 +1001,5 @@ The file has been flagged as potentially malicious by Falcon Hybrid Analysis.
               # Optionally fail the step if any file fails:
               # sys.exit(1)
 
-          EOF
+EOF
           echo "::endgroup::"
