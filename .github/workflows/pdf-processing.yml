@@ -15,19 +15,18 @@ jobs:
     outputs:
       pdf_files: ${{ steps.find-pdfs.outputs.pdf_files }}
       changes_detected: ${{ steps.find-pdfs.outputs.changes_detected }}
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # Fetch last 2 commits to detect changes
-
+          fetch-depth: 2
+      
       - name: Find changed PDF files
         id: find-pdfs
         run: |
-          # Get list of PDF files added in this commit
           CHANGED_FILES=$(git diff --name-only --diff-filter=A HEAD^ HEAD | grep -E "Annual Security Reports/.*\.pdf$" || echo "")
-
+          
           if [ -z "$CHANGED_FILES" ]; then
             echo "No new PDF files detected"
             echo "changes_detected=false" >> $GITHUB_OUTPUT
@@ -35,46 +34,34 @@ jobs:
           else
             echo "New PDF files detected: $CHANGED_FILES"
             echo "changes_detected=true" >> $GITHUB_OUTPUT
-
-            # Convert the list to JSON array for output
             PDF_JSON="[$(echo "$CHANGED_FILES" | sed 's/^/"/;s/$/"/' | paste -sd "," -)]"
             echo "pdf_files=$PDF_JSON" >> $GITHUB_OUTPUT
           fi
-
-      - name: Log detection results
-        run: |
-          echo "Changes detected: ${{ steps.find-pdfs.outputs.changes_detected }}"
-          echo "PDF files: ${{ steps.find-pdfs.outputs.pdf_files }}"
 
   falcon-scan:
     name: Scan PDFs with Falcon Hybrid Analysis
     needs: detect-pdfs
     if: ${{ needs.detect-pdfs.outputs.changes_detected == 'true' }}
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+      
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-
+      
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests mimetypes
-
+      
       - name: Create API key file
-        env:
-          HYBRID_ANALYSIS_API_KEY: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}
         run: |
-          # Create falcon.txt file with API key
-          mkdir -p ./temp
-          echo "$HYBRID_ANALYSIS_API_KEY" > ./temp/falcon.txt
-          echo "API key file created with $(wc -c < ./temp/falcon.txt) bytes"
-
+          echo "${{ secrets.HYBRID_ANALYSIS_API_KEY }}" > falcon.txt
+      
       - name: Scan PDFs with Falcon
         id: scan-pdfs
         env:
@@ -83,638 +70,505 @@ jobs:
           echo "::group::Starting Falcon Scan"
           python - <<'EOF'
           import os
+          import sys
           import json
           import requests
           import time
-          import sys
           import logging
           import mimetypes
-
+          
           # Configure logging
           logging.basicConfig(
               level=logging.INFO,
               format='%(asctime)s - %(levelname)s - %(message)s'
           )
-
-          def read_api_key(filename="./temp/falcon.txt"):
-              """Read the API key from the specified file."""
+          
+          def read_api_key(filename="falcon.txt"):
               try:
-                  logging.info(f"Reading API key from: {filename}")
-                  with open(filename, 'r') as f:
+                  file_path = os.path.abspath(filename)
+                  logging.info(f"Reading API key from: {file_path}")
+                  
+                  with open(file_path, 'r') as f:
                       api_key = f.read().strip()
                       if not api_key:
-                          logging.error(f"API key file '{filename}' is empty")
+                          logging.error(f"API key file is empty")
                           sys.exit(1)
                       logging.info(f"API key found. Length: {len(api_key)} characters")
                       return api_key
-              except FileNotFoundError:
-                  logging.error(f"API key file '{filename}' not found")
-                  sys.exit(1)
               except Exception as e:
                   logging.error(f"Error reading API key: {str(e)}")
                   sys.exit(1)
-
+          
           def submit_file(file_path, api_key):
-              """Submit a file to the Hybrid Analysis v2 API."""
               logging.info(f"Submitting file: {file_path}")
-
+              
               # Verify file exists and check size
-              if not os.path.exists(file_path):
-                  logging.error(f"File not found: {file_path}")
-                  return None
               file_size = os.path.getsize(file_path)
               logging.info(f"File size: {file_size} bytes ({file_size / (1024*1024):.2f} MB)")
-
+              
               url = "https://www.hybrid-analysis.com/api/v2/submit/file"
               logging.info(f"API endpoint: {url}")
-
+              
               headers = {
                   "api-key": api_key,
-                  "User-Agent": "GitHub Actions Workflow",
+                  "User-Agent": "Hybrid Analysis Script",
                   "Accept": "application/json"
               }
-
+              
               # Check file content type
               mime_type = mimetypes.guess_type(file_path)[0]
               logging.info(f"File MIME type: {mime_type}")
-
+              
               with open(file_path, 'rb') as f:
                   files = {'file': (os.path.basename(file_path), f)}
-
-                  # Using Windows 10 64-bit (environment_id=110) as default environment
+                  
                   data = {
                       "environment_id": "110",  # Windows 10 64-bit
-                      "comment": "Submitted via GitHub Actions for analysis"
+                      "comment": "Submitted via GitHub Action for analysis"
                   }
-
+                  
                   try:
-                      logging.info("Sending API request to submit/file...")
-                      response = requests.post(url, headers=headers, files=files, data=data, timeout=60) # Added timeout
+                      logging.info("Sending API request...")
+                      response = requests.post(url, headers=headers, files=files, data=data)
                       logging.info(f"Response status code: {response.status_code}")
-
+                      
                       response.raise_for_status()
                       return response.json()
                   except requests.exceptions.RequestException as e:
-                      logging.error(f"Error submitting file to {url}: {e}")
+                      logging.error(f"Error submitting file: {e}")
                       if hasattr(e, 'response') and e.response:
                           try:
                               err_json = e.response.json()
                               logging.error(f"Error details: {json.dumps(err_json)}")
                           except json.JSONDecodeError:
                               logging.error(f"Error response: {e.response.text}")
-
-                      # Try alternative endpoint: quick-scan/file
+                      
+                      # Try with a different API endpoint structure - quick scan
                       alt_url = "https://www.hybrid-analysis.com/api/v2/quick-scan/file"
                       logging.info(f"Trying alternative API endpoint: {alt_url}")
+                      
                       try:
-                          # Important: Need to reopen the file for the second request
                           with open(file_path, 'rb') as alt_f:
-                              alt_files = {'file': (os.path.basename(file_path), alt_f)}
                               alt_data = {"scan_type": "all"}
-                              response = requests.post(alt_url, headers=headers, files=alt_files, data=alt_data, timeout=60) # Added timeout
+                              response = requests.post(alt_url, headers=headers, files={'file': (os.path.basename(file_path), alt_f)}, data=alt_data)
                               logging.info(f"Alternative response status code: {response.status_code}")
-
+                              
                               if response.status_code == 200:
                                   return response.json()
                               else:
                                   logging.error(f"Alternative endpoint failed: {response.text}")
                       except Exception as alt_e:
                           logging.error(f"Alternative endpoint error: {alt_e}")
-
-                      # Try third endpoint: submit/file-for-analysis
-                      third_url = "https://www.hybrid-analysis.com/api/v2/submit/file-for-analysis"
-                      logging.info(f"Trying third API endpoint: {third_url}")
+                          
+                      # Try one more time with submit/file-for-analysis endpoint
                       try:
-                           # Important: Need to reopen the file for the third request
+                          third_url = "https://www.hybrid-analysis.com/api/v2/submit/file-for-analysis"
+                          logging.info(f"Trying third API endpoint: {third_url}")
                           with open(file_path, 'rb') as third_f:
-                              third_files = {'file': (os.path.basename(file_path), third_f)}
                               third_data = {
                                   "environment_id": "110",  # Windows 10 64-bit
                                   "analysis_type": "file",
                                   "priority": "0"
                               }
-                              response = requests.post(third_url, headers=headers, files=third_files, data=third_data, timeout=60) # Added timeout
+                              
+                              response = requests.post(third_url, headers=headers, files={'file': (os.path.basename(file_path), third_f)}, data=third_data)
                               logging.info(f"Third endpoint response status code: {response.status_code}")
-
+                              
                               if response.status_code == 200:
                                   return response.json()
                               else:
                                   logging.error(f"Third endpoint failed: {response.text}")
                       except Exception as third_e:
                           logging.error(f"Third endpoint error: {third_e}")
-
-                  return None # Return None if all submission attempts fail
-
+                  
+                  return None
+          
           def check_report_status(job_id, api_key):
-              """Check the status of a submitted analysis job."""
               url = f"https://www.hybrid-analysis.com/api/v2/report/{job_id}/summary"
-              logging.info(f"Checking report status for job_id: {job_id}")
-
+              
               headers = {
                   "api-key": api_key,
-                  "User-Agent": "GitHub Actions Workflow",
+                  "User-Agent": "Hybrid Analysis Script",
                   "Accept": "application/json"
               }
-
+              
               try:
-                  response = requests.get(url, headers=headers, timeout=30) # Added timeout
-                  logging.info(f"Report status check response code: {response.status_code}")
-
-                  if response.status_code == 200:
-                      return response.json()
-                  elif response.status_code == 404:
-                      logging.info(f"Report {job_id} not found (yet?). Status code 404.")
-                      return None # Report not ready is not necessarily an error here
-                  else:
-                      logging.warning(f"Failed to get report status for {job_id}. Status: {response.status_code}, Response: {response.text}")
-                      return None # Treat other non-200 as report not ready/error
-              except requests.exceptions.RequestException as e:
-                  logging.error(f"Error checking report status for {job_id}: {e}")
+                  response = requests.get(url, headers=headers)
+                  
+                  if response.status_code != 200:
+                      return None
+                  
+                  return response.json()
+              except requests.exceptions.RequestException:
                   return None
-
-          # Get list of PDF files
+          
+          # Get list of PDF files and process each one
           pdf_files_json = os.environ.get('PDF_FILES')
-          try:
-              pdf_files = json.loads(pdf_files_json)
-              if not isinstance(pdf_files, list):
-                  logging.error("PDF_FILES environment variable is not a valid JSON list.")
-                  sys.exit(1)
-              logging.info(f"Received {len(pdf_files)} PDF files to scan.")
-          except json.JSONDecodeError:
-              logging.error("Failed to decode PDF_FILES JSON.")
-              sys.exit(1)
-
-          # Read API key from file
+          pdf_files = json.loads(pdf_files_json)
+          
+          # Read API key
           api_key = read_api_key()
-          if not api_key:
-              sys.exit(1) # Exit if API key couldn't be read
-
+          
+          scan_results = {}
+          
           # Test API connectivity
           test_url = "https://www.hybrid-analysis.com/api/v2/key/current"
-          logging.info("Testing API connectivity...")
+          logging.info("Testing API connectivity")
           try:
               headers = {
                   "api-key": api_key,
-                  "User-Agent": "GitHub Actions Workflow",
+                  "User-Agent": "Hybrid Analysis Script",
                   "Accept": "application/json"
               }
-              response = requests.get(test_url, headers=headers, timeout=30) # Added timeout
+              response = requests.get(test_url, headers=headers)
               if response.status_code == 200:
                   api_info = response.json()
                   logging.info(f"API key is valid. Quota remaining: {api_info.get('quota_remaining', 'unknown')}")
               else:
-                  logging.warning(f"API test failed with status {response.status_code}. Response: {response.text}")
+                  logging.warning(f"API test failed with status {response.status_code}")
           except Exception as e:
               logging.warning(f"API connection test failed: {e}")
-
-          # Process all files
-          scan_results = {}
-
+          
           for pdf_file in pdf_files:
-              logging.info(f"--- Processing file: {pdf_file} ---")
-              if not os.path.exists(pdf_file):
-                  logging.error(f"File {pdf_file} not found in checkout. Skipping.")
-                  scan_results[pdf_file] = {
-                      "success": False,
-                      "error": "File not found in workspace",
-                      "is_malicious": False
-                  }
-                  continue
-
               try:
+                  logging.info(f"Processing: {pdf_file}")
+                  
                   # Submit file for analysis
                   submission = submit_file(pdf_file, api_key)
-
+                  
                   if not submission:
-                      logging.error(f"Failed to get response from submission API for {pdf_file}")
+                      logging.error("Failed to get response from submission API.")
                       scan_results[pdf_file] = {
                           "success": False,
-                          "error": "Failed to get response from submission API after multiple attempts",
+                          "error": "Failed to get response from submission API",
                           "is_malicious": False
                       }
                       continue
-
-                  logging.info(f"Submission response for {pdf_file}: {json.dumps(submission)}")
-
-                  job_id = None
-                  sha256 = None
-
-                  # Handle different response formats
-                  if 'job_id' in submission:
-                      job_id = submission['job_id']
-                      logging.info(f"Job ID found: {job_id}")
-                  elif 'scan_id' in submission: # Handle quick scan response
-                      job_id = submission['scan_id']
-                      logging.info(f"Using scan_id as job_id: {job_id}")
-                  elif 'sha256' in submission:
-                      sha256 = submission['sha256']
-                      logging.info(f"Only SHA256 found (no job_id): {sha256}")
+                      
+                  # Get job_id or alternative ID
+                  if 'job_id' not in submission:
+                      logging.warning("Failed to get job ID from submission.")
+                      
+                      # Check for alternative IDs or SHA256
+                      if 'sha256' in submission:
+                          logging.info(f"SHA256 hash found: {submission['sha256']}")
+                          file_hash = submission['sha256']
+                          result_url = f"https://www.hybrid-analysis.com/sample/{file_hash}"
+                          
+                      if 'scan_id' in submission:
+                          job_id = submission['scan_id']
+                          logging.info(f"Using scan_id as job_id for polling: {job_id}")
+                      else:
+                          scan_results[pdf_file] = {
+                              "success": False,
+                              "error": "Failed to get job ID from submission",
+                              "is_malicious": False,
+                              "sha256": submission.get('sha256', '')
+                          }
+                          continue
                   else:
-                      logging.error(f"No job_id, scan_id, or sha256 found in submission response for {pdf_file}")
-                      scan_results[pdf_file] = {
-                          "success": False,
-                          "error": "Failed to get job ID or hash from submission",
-                          "is_malicious": False
-                      }
-                      continue
-
-                  # If we have a job_id, poll for results
-                  if job_id:
-                      logging.info(f"Polling for results with job_id: {job_id} (max 20 attempts, 15s interval)")
-                      max_attempts = 20
-                      attempt = 0
-                      final_report = None
-
-                      while attempt < max_attempts:
-                          attempt += 1
-                          logging.info(f"Polling attempt {attempt}/{max_attempts} for job {job_id}...")
-                          time.sleep(15)  # Wait 15 seconds between status checks
-
-                          report = check_report_status(job_id, api_key)
-
-                          if not report:
-                              logging.info(f"No report available yet for job {job_id} on attempt {attempt}.")
-                              continue # Continue polling if report is None
-
-                          status = report.get('state', '').upper() # Normalize status
-                          logging.info(f"Job {job_id} status: {status}")
-
-                          if status == 'SUCCESS':
-                              logging.info(f"Analysis complete for job {job_id}!")
-                              final_report = report
-                              break # Exit loop on success
-
-                          elif status == 'ERROR':
-                              error_msg = report.get('error', 'Unknown error')
-                              logging.error(f"Analysis failed for job {job_id}: {error_msg}")
-                              scan_results[pdf_file] = {
-                                  "success": False,
-                                  "error": f"Analysis failed: {error_msg}",
-                                  "is_malicious": False,
-                                  "job_id": job_id
-                              }
-                              final_report = report # Store the error report
-                              break # Exit loop on error
-
-                          elif status == 'IN_PROGRESS' or status == 'PENDING':
-                              logging.info(f"Analysis still in progress for job {job_id} (attempt {attempt}/{max_attempts})")
-                          else:
-                              logging.info(f"Unknown status '{status}' for job {job_id}. Continuing poll.")
-
-                      # Process results after polling loop
-                      if final_report and final_report.get('state', '').upper() == 'SUCCESS':
-                          threat_score = final_report.get('threat_score', 0)
-                          verdict = final_report.get('verdict', 'Unknown')
-                          report_sha256 = final_report.get('sha256', sha256) # Use report SHA if available
-
+                      job_id = submission['job_id']
+                      logging.info(f"File submitted successfully. Job ID: {job_id}")
+                  
+                  # Poll for results
+                  logging.info("Waiting for analysis to complete...")
+                  max_attempts = 20
+                  attempt = 0
+                  
+                  while attempt < max_attempts:
+                      attempt += 1
+                      time.sleep(15)  # Wait 15 seconds between status checks
+                      
+                      report = check_report_status(job_id, api_key)
+                      
+                      if not report:
+                          logging.info(f"Polling attempt {attempt}/{max_attempts}...")
+                          continue
+                      
+                      status = report.get('state', '')
+                      
+                      if status == 'SUCCESS':
+                          logging.info("Analysis complete!")
+                          
+                          # Check for threats
+                          threat_score = report.get('threat_score', 0)
+                          verdict = report.get('verdict', 'Unknown')
+                          
                           logging.info(f"Threat Score: {threat_score}/100")
                           logging.info(f"Verdict: {verdict}")
-
+                          
+                          # Store result
+                          is_malicious = verdict.lower() in ['malicious', 'suspicious'] or threat_score > 50
+                          
+                          if 'sha256' in report:
+                              file_hash = report['sha256']
+                              result_url = f"https://www.hybrid-analysis.com/sample/{file_hash}"
+                          else:
+                              file_hash = submission.get('sha256', '')
+                              result_url = f"https://www.hybrid-analysis.com/sample/{file_hash}" if file_hash else ''
+                          
                           scan_results[pdf_file] = {
                               "success": True,
                               "job_id": job_id,
-                              "sha256": report_sha256,
-                              "is_malicious": verdict.lower() in ['malicious', 'suspicious'],
+                              "result_url": result_url,
+                              "is_malicious": is_malicious,
                               "verdict": verdict,
                               "threat_score": threat_score,
-                              "result_url": f"https://www.hybrid-analysis.com/sample/{report_sha256}" if report_sha256 else None,
-                              "threats": final_report.get('threats', []),
-                              "signatures": final_report.get('signatures', [])[:5] # Show only first 5 sigs
+                              "file_hash": file_hash
                           }
-                      elif not final_report and attempt >= max_attempts: # Handle timeout
-                          logging.warning(f"Timeout waiting for analysis of job {job_id} to complete after {max_attempts} attempts.")
+                          break
+                      
+                      elif status == 'ERROR':
+                          error_msg = report.get('error', 'Unknown error')
+                          logging.error(f"Analysis failed: {error_msg}")
                           scan_results[pdf_file] = {
                               "success": False,
-                              "error": "Timeout waiting for analysis to complete",
-                              "is_malicious": False,
-                              "job_id": job_id,
-                              "sha256": sha256 # Include SHA if we got it from submission
+                              "error": f"Analysis failed: {error_msg}",
+                              "is_malicious": False
                           }
-                      elif job_id in scan_results and scan_results[pdf_file].get('success', True) is False:
-                           # Error case already handled within loop, do nothing here
-                           logging.info(f"Scan for job {job_id} previously recorded as failed.")
-                           pass
-                      else: # Catch cases where polling finished without success/error/timeout recorded
-                          logging.error(f"Analysis for job {job_id} did not complete successfully. Final state unknown or polling failed.")
-                          scan_results[pdf_file] = {
-                               "success": False,
-                               "error": "Analysis did not complete successfully or polling failed",
-                               "is_malicious": False,
-                               "job_id": job_id,
-                               "sha256": sha256
-                          }
-
-                  # If we only have SHA256 but no job_id (e.g., from quick scan hit)
-                  elif sha256:
-                      logging.info(f"File {pdf_file} matched existing analysis (SHA256: {sha256}). Assuming non-malicious as no job was run.")
+                          break
+                      
+                      elif status == 'IN_PROGRESS':
+                          logging.info(f"Status: {status}")
+                      
+                      else:
+                          logging.info(f"Status: {status}")
+                  
+                  if attempt >= max_attempts:
+                      logging.warning("Timeout waiting for analysis to complete.")
                       scan_results[pdf_file] = {
-                          "success": True, # Considered success as we got a hash match
-                          "sha256": sha256,
-                          "is_malicious": False, # Cannot determine without a full report
-                          "verdict": "Unknown (Existing Hash)",
-                          "threat_score": 0,
-                          "result_url": f"https://www.hybrid-analysis.com/sample/{sha256}"
+                          "success": False,
+                          "error": "Timeout waiting for analysis to complete",
+                          "is_malicious": False,
+                          "job_id": job_id
                       }
-
+              
               except Exception as e:
-                  logging.exception(f"Unexpected exception processing {pdf_file}: {str(e)}") # Log traceback
+                  logging.error(f"Exception processing {pdf_file}: {str(e)}")
                   scan_results[pdf_file] = {
                       "success": False,
-                      "error": f"Unexpected Python exception: {str(e)}",
+                      "error": str(e),
                       "is_malicious": False
                   }
-
+          
           # Save scan results to file
-          logging.info("Saving scan results to scan_results.json")
           with open('scan_results.json', 'w') as f:
-              json.dump(scan_results, f, indent=2)
-
-          logging.info("Scan results saved.")
-EOF
+              json.dump(scan_results, f)
+          
+          logging.info("Scan results saved to scan_results.json")
+          EOF
           echo "::endgroup::"
-
-      - name: Process and output scan results (log)
-        id: process-results-log # Renamed step ID for clarity
-        run: |
-          echo "::group::Raw Scan Results JSON"
-          # Display the results for logging
-          if [ -f scan_results.json ]; then
-            cat scan_results.json
-          else
-            echo "scan_results.json not found."
-          fi
-          echo "::endgroup::"
-
+      
       - name: Upload scan results as artifact
         uses: actions/upload-artifact@v4
         with:
           name: falcon-scan-results
           path: scan_results.json
-          retention-days: 30 # Keep results for 30 days
+          retention-days: 30
 
   process-scan-results:
-    name: Process Scan Results and Create Issues
-    needs: [detect-pdfs, falcon-scan] # Depends on scan completion
-    if: always() # Run even if falcon-scan fails, to report failures
+    name: Process Scan Results
+    needs: [detect-pdfs, falcon-scan]
     runs-on: ubuntu-latest
     outputs:
-      has_clean_files: ${{ steps.process-results.outputs.has_clean_files }} # Output for downstream jobs
-
+      has_clean_files: ${{ steps.process-results.outputs.has_clean_files }}
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        # No token needed here unless modifying repo content
-
-      - name: Setup GitHub CLI
-        run: |
-          type -p gh > /dev/null || sudo apt update
-          type -p gh > /dev/null || sudo apt install gh -y
-
-      - name: Download scan results artifact
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+      
+      - name: Download scan results
         uses: actions/download-artifact@v4
         with:
           name: falcon-scan-results
-          path: . # Download to current directory
-
-      - name: Parse scan results and create issues
-        id: process-results # Keep original ID for output mapping
-        env:
-          GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }} # Use dedicated token for issue creation
+      
+      - name: Setup GitHub CLI
         run: |
-          echo "::group::Processing scan results and creating issues"
-          # Check if results file exists
-          if [ ! -f scan_results.json ]; then
-            echo "scan_results.json not found. Assuming scan failed or produced no output."
-            # Optionally create a generic failure issue here
-            echo "has_clean_files=false" >> $GITHUB_OUTPUT
-            echo "::endgroup::"
-            exit 0 # Exit gracefully, nothing to process
-          fi
-
+          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+          sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+          sudo apt update
+          sudo apt install gh -y
+      
+      - name: Parse scan results and create issues
+        id: process-results
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
+        run: |
+          echo "::group::Processing scan results"
           python - <<'EOF'
           import json
           import os
           import subprocess
-          import sys
-
-          # Load scan results from file
-          try:
-              with open('scan_results.json', 'r') as f:
-                  scan_results = json.load(f)
-          except (FileNotFoundError, json.JSONDecodeError) as e:
-              print(f"Error loading scan_results.json: {e}")
-              # Optionally create issue about failed result processing
-              with open(os.environ['GITHUB_OUTPUT'], 'a') as f_out:
-                 f_out.write("has_clean_files=false\n")
-              sys.exit(0) # Exit gracefully
-
+          
+          # Load scan results
+          with open('scan_results.json', 'r') as f:
+              scan_results = json.load(f)
+          
+          # Process each file
           clean_files = []
           malicious_files = []
           failed_scans = []
-
+          
           for pdf_file, result in scan_results.items():
               print(f"Processing results for: {pdf_file}")
-
-              if not result or not isinstance(result, dict):
-                   print(f"Invalid result format for {pdf_file}. Skipping.")
-                   failed_scans.append({
-                      'file': pdf_file,
-                      'error': 'Invalid result format in scan_results.json'
-                   })
-                   continue
-
-              # Check for success explicitly
+              
               if not result.get('success', False):
-                  error_msg = result.get('error', 'Unknown error')
-                  print(f"Scan failed or did not complete successfully for {pdf_file}: {error_msg}")
+                  print(f"Scan failed for {pdf_file}: {result.get('error', 'Unknown error')}")
                   failed_scans.append({
                       'file': pdf_file,
-                      'error': error_msg,
-                      'job_id': result.get('job_id'),
-                      'sha256': result.get('sha256')
+                      'error': result.get('error', 'Unknown error')
                   })
-                  continue # Skip to next file if scan wasn't successful
-
-              # If successful, check for maliciousness
+                  continue
+              
               if result.get('is_malicious', False):
                   print(f"Malicious file detected: {pdf_file}")
                   malicious_files.append({
                       'file': pdf_file,
                       'verdict': result.get('verdict', 'Unknown'),
                       'threat_score': result.get('threat_score', 0),
-                      'result_url': result.get('result_url', ''),
-                      'sha256': result.get('sha256')
+                      'result_url': result.get('result_url', '')
                   })
               else:
-                  # Only count as clean if scan was successful and not malicious
                   print(f"Clean file: {pdf_file}")
                   clean_files.append(pdf_file)
-
-          # Function to create GitHub issue
-          def create_issue(title, body, labels):
-              print(f"Attempting to create issue: {title}")
-              command = [
-                  'gh', 'issue', 'create',
-                  '--title', title,
-                  '--body', body,
-              ]
-              for label in labels:
-                  command.extend(['--label', label])
-
-              try:
-                  # Ensure GITHUB_TOKEN is available
-                  if not os.environ.get('GITHUB_TOKEN'):
-                      print("Error: GITHUB_TOKEN environment variable not set. Cannot create issue.")
-                      return False
-                  env = os.environ.copy()
-                  # Use GITHUB_TOKEN for authentication
-                  env['GH_TOKEN'] = os.environ['GITHUB_TOKEN']
-
-                  result = subprocess.run(command, check=True, capture_output=True, text=True, env=env)
-                  print(f"Successfully created issue: {result.stdout.strip()}")
-                  return True
-              except subprocess.CalledProcessError as e:
-                  print(f"Failed to create issue: {str(e)}")
-                  print(f"Stderr: {e.stderr}")
-                  print(f"Stdout: {e.stdout}")
-                  return False
-              except FileNotFoundError:
-                  print("Error: 'gh' command not found. Make sure GitHub CLI is installed and in PATH.")
-                  return False
-
+          
           # Create issues for malicious files
           for malicious_file in malicious_files:
               file_path = malicious_file['file']
               file_name = os.path.basename(file_path)
+              
               issue_title = f"⚠️ Security Alert: Malicious content detected in {file_name}"
               issue_body = f"""
-## Security Alert: Malicious Content Detected
-
-**File:** `{file_path}`
-**SHA256:** `{malicious_file.get('sha256', 'N/A')}`
-**Verdict:** {malicious_file['verdict']}
-**Threat Score:** {malicious_file['threat_score']}
-
-### Analysis Results
-The file has been flagged as potentially malicious by Falcon Hybrid Analysis.
-**Falcon Analysis URL:** {malicious_file.get('result_url', 'Not available')}
-
-### Next Steps
-1.  **Do not open or execute this file.**
-2.  Review the Falcon scan results linked above for detailed information.
-3.  Consider removing this file from the repository immediately.
-
-*This issue was automatically generated by the PDF Processing workflow.*
-"""
-              create_issue(issue_title, issue_body, ['security-alert', 'malware-detected'])
-
+              ## Security Alert: Malicious Content Detected
+              
+              **File:** {file_path}
+              **Verdict:** {malicious_file['verdict']}
+              **Threat Score:** {malicious_file['threat_score']}
+              
+              ### Analysis Results
+              The file has been flagged as potentially malicious by Falcon Hybrid Analysis.
+              
+              **Results URL:** {malicious_file['result_url']}
+              
+              ### Next Steps
+              1. Do not open or execute this file
+              2. Review the scan results for detailed information
+              3. Consider removing this file from the repository
+              """
+              
+              # Create GitHub issue
+              issue_command = [
+                  'gh', 'issue', 'create',
+                  '--title', issue_title,
+                  '--body', issue_body,
+                  '--label', 'security-alert'
+              ]
+              
+              try:
+                  subprocess.run(issue_command, check=True, env=os.environ)
+                  print(f"Created issue for malicious file: {file_path}")
+              except subprocess.CalledProcessError as e:
+                  print(f"Failed to create issue: {str(e)}")
+          
           # Create issues for failed scans
           for failed_scan in failed_scans:
               file_path = failed_scan['file']
               file_name = os.path.basename(file_path)
+              
               issue_title = f"⚠️ Scan Failed: Unable to analyze {file_name}"
               issue_body = f"""
-## Scan Failed
-
-**File:** `{file_path}`
-**SHA256:** `{failed_scan.get('sha256', 'N/A')}`
-**Job ID:** `{failed_scan.get('job_id', 'N/A')}`
-**Error:** {failed_scan['error']}
-
-### Next Steps
-1.  Verify the file `{file_path}` exists and is a valid PDF in the commit.
-2.  Check the GitHub Actions workflow logs for the `falcon-scan` job for more details.
-3.  If the error is transient (e.g., timeout, API error), consider re-running the workflow.
-4.  If the file is corrupted or unsupported, it may need manual review or removal.
-
-*This issue was automatically generated by the PDF Processing workflow.*
-"""
-              create_issue(issue_title, issue_body, ['scan-failed', 'workflow-issue'])
-
+              ## Scan Failed
+              
+              **File:** {file_path}
+              **Error:** {failed_scan['error']}
+              
+              ### Next Steps
+              1. Verify the file is a valid PDF
+              2. Check the GitHub Actions logs for more details
+              3. Retry the workflow or scan the file manually
+              """
+              
+              # Create GitHub issue
+              issue_command = [
+                  'gh', 'issue', 'create',
+                  '--title', issue_title,
+                  '--body', issue_body,
+                  '--label', 'scan-failed'
+              ]
+              
+              try:
+                  subprocess.run(issue_command, check=True, env=os.environ)
+                  print(f"Created issue for failed scan: {file_path}")
+              except subprocess.CalledProcessError as e:
+                  print(f"Failed to create issue: {str(e)}")
+          
           # Output the list of clean files for next job
           clean_files_json = json.dumps(clean_files)
-          print(f"Clean files identified: {clean_files_json}")
           with open('clean_files.json', 'w') as f:
               f.write(clean_files_json)
-
+          
           # Set output for next job
-          has_clean = 'true' if clean_files else 'false'
-          print(f"Setting has_clean_files output to: {has_clean}")
-          with open(os.environ['GITHUB_OUTPUT'], 'a') as f_out:
-              f_out.write(f"has_clean_files={has_clean}\n")
-
-          print(f"Processing complete: Found {len(clean_files)} clean files, {len(malicious_files)} malicious files, and {len(failed_scans)} failed scans.")
-EOF
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"has_clean_files={'true' if clean_files else 'false'}\n")
+          
+          print(f"Found {len(clean_files)} clean files, {len(malicious_files)} malicious files, and {len(failed_scans)} failed scans")
+          EOF
           echo "::endgroup::"
-
+      
       - name: Upload clean files list as artifact
-        if: steps.process-results.outputs.has_clean_files == 'true' # Only upload if clean files exist
         uses: actions/upload-artifact@v4
         with:
           name: clean-pdf-files
           path: clean_files.json
-          retention-days: 1 # Short retention as it's only needed for the next job
+          retention-days: 1
 
   gemini-conversion:
     name: Convert Clean PDFs to Markdown with Gemini
-    needs: [process-scan-results] # Only needs the results processing job
-    if: needs.process-scan-results.outputs.has_clean_files == 'true' # Run only if clean files exist
+    needs: [detect-pdfs, falcon-scan, process-scan-results]
+    if: ${{ needs.process-scan-results.outputs.has_clean_files == 'true' }}
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }} # Token needed to push commits
-
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+      
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10' # Use a consistent Python version
-
+          python-version: '3.10'
+      
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install google-generativeai PyPDF2 # requests is not directly used here
-
-      - name: Download clean files list artifact
+          pip install requests google-generativeai PyPDF2
+      
+      - name: Download clean files list
         uses: actions/download-artifact@v4
         with:
           name: clean-pdf-files
-          path: . # Download to current directory
-
+      
       - name: Get AI prompt version
         id: get-prompt-version
         run: |
           PROMPT_FILE="AI_PROMPT_MARKDOWN_CONVERT.md"
-          PROMPT_VERSION="V1.0" # Default version
           if [ -f "$PROMPT_FILE" ]; then
-            # Try to get version from last commit message affecting the prompt file
-            VERSION_FROM_COMMIT=$(git log -1 --pretty=format:'%s' -- "$PROMPT_FILE" | grep -o 'V[0-9]\+\.[0-9]\+' || echo '')
-            if [ -n "$VERSION_FROM_COMMIT" ]; then
-              PROMPT_VERSION=$VERSION_FROM_COMMIT
-            else
-              echo "Could not extract version (e.g., V1.2) from last commit message for $PROMPT_FILE. Using default $PROMPT_VERSION."
-            fi
-            echo "Using prompt file: $PROMPT_FILE (Version: $PROMPT_VERSION)"
+            PROMPT_VERSION=$(git log -1 --pretty=format:'%s' -- "$PROMPT_FILE" | grep -o 'V[0-9]\+\.[0-9]\+' || echo 'V1.0')
+            echo "prompt_version=$PROMPT_VERSION" >> $GITHUB_OUTPUT
           else
-            echo "Prompt file '$PROMPT_FILE' not found. Using default version $PROMPT_VERSION."
+            echo "prompt_version=V1.0" >> $GITHUB_OUTPUT
           fi
-          echo "prompt_version=$PROMPT_VERSION" >> $GITHUB_OUTPUT
-
+      
       - name: Convert PDFs to Markdown with Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PROMPT_VERSION: ${{ steps.get-prompt-version.outputs.prompt_version }}
         run: |
-          echo "::group::Converting PDFs to Markdown using Gemini"
-          # Check if clean_files.json exists
-          if [ ! -f clean_files.json ]; then
-             echo "Error: clean_files.json not found. Cannot proceed with conversion."
-             echo "::endgroup::"
-             exit 1
-          fi
-
+          echo "::group::Converting PDFs to Markdown"
           python - <<'EOF'
           import json
           import os
@@ -723,283 +577,129 @@ EOF
           import time
           import re
           import subprocess
-          import sys
-          import logging
-
-          logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
+          
           # Load clean files
-          try:
-              with open('clean_files.json', 'r') as f:
-                  clean_files = json.load(f)
-              if not isinstance(clean_files, list):
-                  logging.error("clean_files.json does not contain a valid list.")
-                  sys.exit(1)
-              logging.info(f"Found {len(clean_files)} clean files to convert.")
-          except (FileNotFoundError, json.JSONDecodeError) as e:
-              logging.error(f"Error loading clean_files.json: {e}")
-              sys.exit(1)
-
+          with open('clean_files.json', 'r') as f:
+              clean_files = json.load(f)
+          
           # Configure Gemini API
           gemini_api_key = os.environ.get('GEMINI_API_KEY')
-          if not gemini_api_key:
-              logging.error("GEMINI_API_KEY secret not set.")
-              sys.exit(1)
-          try:
-              genai.configure(api_key=gemini_api_key)
-          except Exception as e:
-              logging.error(f"Failed to configure Gemini API: {e}")
-              sys.exit(1)
-
+          genai.configure(api_key=gemini_api_key)
+          
           # Load the AI prompt
           prompt_file = "AI_PROMPT_MARKDOWN_CONVERT.md"
-          ai_prompt = "Convert the following text extracted from a PDF document into well-formatted Markdown." # Default prompt
-          if os.path.exists(prompt_file):
-              try:
-                  with open(prompt_file, 'r', encoding='utf-8') as f:
-                     ai_prompt = f.read()
-                  logging.info(f"Loaded AI prompt from {prompt_file}")
-              except Exception as e:
-                  logging.warning(f"Could not read prompt file {prompt_file}: {e}. Using default prompt.")
-          else:
-              logging.warning(f"Prompt file {prompt_file} not found. Using default prompt.")
-
-
-          # Get prompt version from environment
+          with open(prompt_file, 'r') as f:
+              ai_prompt = f.read()
+          
+          # Get prompt version
           prompt_version = os.environ.get('PROMPT_VERSION', 'V1.0')
-
+          
           # Function to extract text from PDF
           def extract_text_from_pdf(pdf_path):
-              logging.info(f"Extracting text from PDF: {pdf_path}")
-              if not os.path.exists(pdf_path):
-                  logging.error(f"PDF file not found at path: {pdf_path}")
-                  return None
               try:
-                  text = ""
                   with open(pdf_path, 'rb') as file:
                       reader = PyPDF2.PdfReader(file)
-                      logging.info(f"PDF has {len(reader.pages)} pages.")
-                      for i, page in enumerate(reader.pages):
-                          try:
-                              page_text = page.extract_text()
-                              if page_text:
-                                 text += page_text + "\n\n"
-                          except Exception as page_e:
-                              logging.warning(f"Could not extract text from page {i+1} of {pdf_path}: {page_e}")
-                  logging.info(f"Extracted {len(text)} characters from {pdf_path}")
-                  # Add basic text cleaning (optional)
-                  text = re.sub(r'\s+\n', '\n', text) # Remove trailing whitespace on lines
-                  text = re.sub(r'\n{3,}', '\n\n', text) # Reduce multiple blank lines
-                  return text.strip()
+                      text = ""
+                      for page in reader.pages:
+                          text += page.extract_text() + "\n\n"
+                      return text
               except Exception as e:
-                  logging.exception(f"Error extracting text from PDF {pdf_path}: {str(e)}")
+                  print(f"Error extracting text from PDF {pdf_path}: {str(e)}")
                   return None
-
+          
           # Function to convert text to markdown using Gemini
-          def convert_to_markdown(text, model_name="gemini-1.5-pro-latest"): # Updated default model
-              if not text:
-                  logging.warning("Input text for conversion is empty.")
-                  return None, model_name # Return model used even on empty input
-
-              logging.info(f"Attempting conversion with model: {model_name}")
+          def convert_to_markdown(text, model_name="gemini-2.0-flash"):
               try:
-                  # Define safety settings - adjust as needed, BLOCK_NONE can be risky
                   safety_settings = [
-                      {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-                      {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-                      {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-                      {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"}
+                      {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+                      {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+                      {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+                      {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"}
                   ]
-
+                  
                   model = genai.GenerativeModel(model_name=model_name, safety_settings=safety_settings)
-
-                  # Construct prompt with extracted text
-                  full_prompt = f"{ai_prompt}\n\n--- PDF Content Start ---\n\n{text}\n\n--- PDF Content End ---"
-
-                  # Make the API call
-                  # Consider adding generation_config like temperature if needed
+                  full_prompt = f"{ai_prompt}\n\nHere is the PDF content to convert:\n\n{text}"
                   response = model.generate_content(full_prompt)
-
-                  # Check for successful response text
-                  # Refined check for response content existence and type
-                  if hasattr(response, 'text') and isinstance(response.text, str) and response.text.strip():
-                      logging.info(f"Successfully received markdown from {model_name}")
-                      return response.text, model_name
-                  # Check for blocked response due to safety or other reasons
-                  elif response.prompt_feedback and response.prompt_feedback.block_reason:
-                       logging.error(f"Gemini API call blocked for model {model_name}. Reason: {response.prompt_feedback.block_reason}")
-                       return None, model_name
-                  # Handle cases where response.text might exist but be empty or None
-                  elif hasattr(response, 'text'):
-                       logging.warning(f"Gemini API call for {model_name} returned empty or invalid text.")
-                       return None, model_name
+                  
+                  if hasattr(response, 'text'):
+                      return response.text
                   else:
-                      logging.error(f"Unexpected response format or empty content from {model_name}. Response parts: {response.parts}")
-                      return None, model_name
-
+                      print(f"Unexpected response format: {response}")
+                      return None
               except Exception as e:
-                  logging.exception(f"Error converting to markdown with {model_name}: {str(e)}")
-                  return None, model_name # Return model name even on exception
-
-          # --- Git Configuration ---
-          try:
-              subprocess.run(['git', 'config', '--global', 'user.name', 'github-actions[bot]'], check=True)
-              subprocess.run(['git', 'config', '--global', 'user.email', 'github-actions[bot]@users.noreply.github.com'], check=True)
-              logging.info("Git user configured globally.")
-          except subprocess.CalledProcessError as e:
-              logging.error(f"Failed to configure git user: {e}")
-              sys.exit(1)
-
-
+                  print(f"Error converting to markdown with {model_name}: {str(e)}")
+                  return None
+          
           # Process each clean file
-          files_processed_count = 0
-          files_failed_count = 0
-
           for pdf_file in clean_files:
-              logging.info(f"--- Processing clean file: {pdf_file} ---")
-              if not os.path.exists(pdf_file):
-                   logging.error(f"Clean file {pdf_file} listed in JSON but not found in workspace. Skipping.")
-                   files_failed_count += 1
-                   continue
-
               try:
+                  print(f"Processing {pdf_file}")
+                  
                   # Extract text from PDF
                   pdf_text = extract_text_from_pdf(pdf_file)
                   if not pdf_text:
-                      logging.error(f"Failed to extract text from {pdf_file}. Skipping conversion.")
-                      files_failed_count += 1
+                      print(f"Failed to extract text from {pdf_file}")
                       continue
-
-                  # --- Convert using Gemini with Fallback ---
-                  primary_model = "gemini-1.5-pro-latest" # Use Pro model first
-                  fallback_model = "gemini-1.5-flash-latest" # Fallback to Flash
-
-                  markdown_content, model_used = convert_to_markdown(pdf_text, primary_model)
-
-                  # Fall back if primary fails
+                  
+                  # First try with flash model
+                  print(f"Converting with gemini-2.0-flash...")
+                  markdown_content = convert_to_markdown(pdf_text, "gemini-2.0-flash")
+                  model_used = "gemini-2.0-flash"
+                  
+                  # Fall back to flash-lite if needed
                   if not markdown_content:
-                      logging.warning(f"Primary model {primary_model} failed. Falling back to {fallback_model}...")
-                      time.sleep(2) # Short delay before fallback
-                      markdown_content, model_used = convert_to_markdown(pdf_text, fallback_model)
-
+                      print(f"Falling back to gemini-2.0-flash-lite...")
+                      markdown_content = convert_to_markdown(pdf_text, "gemini-2.0-flash-lite")
+                      model_used = "gemini-2.0-flash-lite"
+                  
                   if not markdown_content:
-                      logging.error(f"Failed to convert {pdf_file} to markdown using both models. Skipping commit.")
-                      files_failed_count += 1
+                      print(f"Failed to convert {pdf_file} to markdown")
                       continue
-
+                  
                   # Determine output path
-                  # Replace 'Annual Security Reports' with 'Markdown Conversions' and change extension
-                  try:
-                      # Find the relative path from 'Annual Security Reports' onwards
-                      base_dir_index = pdf_file.find('Annual Security Reports')
-                      if base_dir_index != -1:
-                          relative_path = pdf_file[base_dir_index + len('Annual Security Reports/'):]
-                      else:
-                           # Fallback if 'Annual Security Reports' is not in the path (shouldn't happen based on 'on.paths')
-                           relative_path = os.path.basename(pdf_file)
-                           logging.warning(f"Could not find 'Annual Security Reports' in path {pdf_file}. Using base name.")
-
-                      output_filename = os.path.splitext(relative_path)[0] + '.md'
-                      output_path = os.path.join('Markdown Conversions', output_filename)
-                  except Exception as path_e:
-                      logging.exception(f"Error determining output path for {pdf_file}: {path_e}")
-                      files_failed_count += 1
-                      continue
-
-
+                  output_path = pdf_file.replace('Annual Security Reports', 'Markdown Conversions')
+                  output_path = re.sub(r'\.pdf$', '.md', output_path)
+                  
                   # Create directory if it doesn't exist
                   os.makedirs(os.path.dirname(output_path), exist_ok=True)
-                  logging.info(f"Output path: {output_path}")
-
+                  
                   # Write markdown content to file
-                  try:
-                      with open(output_path, 'w', encoding='utf-8') as f:
-                          f.write(markdown_content)
-                      logging.info(f"Saved markdown to {output_path}")
-                  except Exception as e:
-                      logging.exception(f"Failed to write markdown file {output_path}: {e}")
-                      files_failed_count += 1
-                      continue
-
-                  # --- Commit and Push the File ---
-                  commit_message = f"feat: Convert {os.path.basename(pdf_file)} to markdown\n\nAI Prompt: {prompt_version}\nModel: {model_used}"
-
-                  try:
-                      # Stage the new markdown file
-                      subprocess.run(['git', 'add', output_path], check=True)
-                      logging.info(f"Staged file: {output_path}")
-
-                      # Check if there are changes to commit
-                      status_result = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True, check=True)
-                      if not status_result.stdout.strip():
-                          logging.info(f"No changes to commit for {output_path}. Skipping commit.")
-                          # Need to remove from index if no changes were actually written or are identical
-                          subprocess.run(['git', 'reset', 'HEAD', '--', output_path], check=False)
-                          continue
-
-                      # Commit the file
-                      subprocess.run(['git', 'commit', '-m', commit_message], check=True)
-                      logging.info(f"Committed file {output_path} with message: {commit_message}")
-
-                      # Push changes with retry logic
-                      push_attempt = 0
-                      max_attempts = 3
-                      push_successful = False
-                      while push_attempt < max_attempts:
+                  with open(output_path, 'w') as f:
+                      f.write(markdown_content)
+                  
+                  print(f"Saved markdown to {output_path}")
+                  
+                  # Commit the file
+                  commit_message = f"Convert {os.path.basename(pdf_file)} to markdown [AI Prompt {prompt_version} Model {model_used}]"
+                  
+                  # Stage and commit the file
+                  subprocess.run(['git', 'add', output_path], check=True)
+                  subprocess.run(['git', 'config', 'user.name', 'GitHub Action'], check=True)
+                  subprocess.run(['git', 'config', 'user.email', 'action@github.com'], check=True)
+                  subprocess.run(['git', 'commit', '-m', commit_message], check=True)
+                  
+                  # Push changes
+                  push_attempt = 0
+                  max_attempts = 3
+                  
+                  while push_attempt < max_attempts:
+                      try:
+                          subprocess.run(['git', 'pull', '--rebase'], check=True)
+                          subprocess.run(['git', 'push'], check=True)
+                          print(f"Successfully pushed {output_path}")
+                          break
+                      except subprocess.CalledProcessError as e:
                           push_attempt += 1
-                          logging.info(f"Attempting push (attempt {push_attempt}/{max_attempts})...")
-                          try:
-                              # Pull with rebase before pushing to handle potential upstream changes
-                              subprocess.run(['git', 'pull', '--rebase'], check=True, timeout=60)
-                              subprocess.run(['git', 'push'], check=True, timeout=60)
-                              logging.info(f"Successfully pushed commit for {output_path}")
-                              push_successful = True
-                              break # Exit retry loop on success
-                          except subprocess.CalledProcessError as push_err:
-                              logging.warning(f"Push attempt {push_attempt} failed: {push_err}")
-                              if push_attempt >= max_attempts:
-                                  logging.error(f"Failed to push after {max_attempts} attempts.")
-                              else:
-                                  logging.info(f"Waiting 5 seconds before retry...")
-                                  time.sleep(5)
-                          except subprocess.TimeoutExpired:
-                               logging.warning(f"Git operation timed out on attempt {push_attempt}.")
-                               if push_attempt >= max_attempts:
-                                   logging.error(f"Failed to push due to timeout after {max_attempts} attempts.")
-                               else:
-                                   time.sleep(5)
-
-
-                      if not push_successful:
-                         logging.error(f"Failed to push changes for {output_path}. Manual intervention may be required.")
-                         # Consider creating an issue or notification about the push failure
-                         files_failed_count += 1
-                         # Attempt to reset HEAD to avoid issues with subsequent files in the same run
-                         try:
-                             subprocess.run(['git', 'reset', '--hard', 'HEAD~1'], check=True)
-                             logging.info("Rolled back failed commit locally.")
-                         except Exception as reset_e:
-                             logging.error(f"Failed to roll back commit: {reset_e}")
-                      else:
-                          files_processed_count += 1
-
-                  except subprocess.CalledProcessError as git_err:
-                      logging.exception(f"Git operation failed for {output_path}: {git_err}")
-                      files_failed_count += 1
-                  except Exception as git_e: # Catch other potential errors
-                      logging.exception(f"Unexpected error during git operations for {output_path}: {git_e}")
-                      files_failed_count += 1
-
-
+                          print(f"Push attempt {push_attempt} failed: {str(e)}")
+                          if push_attempt >= max_attempts:
+                              print(f"Failed to push after {max_attempts} attempts")
+                          else:
+                              print(f"Waiting before retry...")
+                              time.sleep(5)
+              
               except Exception as e:
-                  logging.exception(f"Unhandled error processing {pdf_file}: {str(e)}")
-                  files_failed_count += 1
-
-          logging.info(f"PDF conversion summary: {files_processed_count} succeeded, {files_failed_count} failed.")
-          if files_failed_count > 0:
-              logging.warning("Some files failed during the conversion or commit process. Check logs for details.")
-              # Optionally fail the step if any file fails:
-              # sys.exit(1)
-
-EOF
+                  print(f"Error processing {pdf_file}: {str(e)}")
+          
+          print("PDF conversion complete")
+          EOF
           echo "::endgroup::"
