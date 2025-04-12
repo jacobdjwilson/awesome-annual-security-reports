@@ -1,4 +1,4 @@
-name: PDF Security Scan
+name: PDF Security Scanner
 
 on:
   push:
@@ -18,9 +18,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 2  # Need at least 2 commits to compare changes
+          fetch-depth: 0
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
-
+          
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -29,38 +29,55 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests jq
-
+          pip install requests
+          
       - name: Identify changed PDF files
         id: changed-files
         run: |
-          if [ "${{ github.event_name }}" == "push" ]; then
-            # Get list of added or modified PDF files (exclude deleted files)
-            FILES=$(git diff --name-status ${{ github.event.before }} ${{ github.event.after }} | grep -E "^[AM].*\.pdf$" | grep -E "^[AM].*Annual Security Reports/.*\.pdf$" | awk '{print $2}')
+          # Compare with previous commit to find changed/added files, ignoring deleted files
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            # For pull requests, compare with the base branch
+            BASE_SHA=${{ github.event.pull_request.base.sha }}
           else
-            # For pull requests
-            FILES=$(git diff --name-status ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -E "^[AM].*\.pdf$" | grep -E "^[AM].*Annual Security Reports/.*\.pdf$" | awk '{print $2}')
+            # For pushes, compare with the previous commit
+            BASE_SHA=$(git rev-parse HEAD^)
           fi
           
-          # Check if we found any PDF files
-          if [ -z "$FILES" ]; then
-            echo "No PDF files added or modified"
+          # Get all changed or added files, filter for PDFs only, ignoring deleted files
+          CHANGED_FILES=$(git diff --name-status $BASE_SHA HEAD | grep -E '^[AM].*\.pdf$' | awk '{print $2}' | grep -E '^Annual Security Reports/')
+          
+          # Check if there are any PDF files to process
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No PDF files were added or modified. Skipping scan."
             echo "pdf_files=" >> $GITHUB_OUTPUT
-          else
-            # Convert newlines to comma-separated list
-            FILES_CSV=$(echo "$FILES" | tr '\n' ',' | sed 's/,$//')
-            echo "Found PDF files: $FILES_CSV"
-            echo "pdf_files=$FILES_CSV" >> $GITHUB_OUTPUT
+            exit 0
           fi
-
-      - name: Create Hybrid Analysis script
-        if: steps.changed-files.outputs.pdf_files != ''
+          
+          # Create a list of PDF files for output
+          echo "pdf_files<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          
+          # Display files for logging
+          echo "Found the following PDF files to scan:"
+          echo "$CHANGED_FILES"
+          
+      - name: Create temporary API key file
+        if: ${{ steps.changed-files.outputs.pdf_files != '' }}
         run: |
-          cat << 'EOF' > scan_pdf.py
+          # Store API key temporarily in a file as required by the script
+          echo "${{ secrets.HYBRID_ANALYSIS_API_KEY }}" > falcon.txt
+          chmod 600 falcon.txt
+          
+      - name: Create PDF scanner script
+        if: ${{ steps.changed-files.outputs.pdf_files != '' }}
+        run: |
+          cat > scan_pdf.py << 'EOL'
           #!/usr/bin/env python3
           """
           Hybrid Analysis PDF Scanner
           This script submits a PDF file to the Hybrid Analysis v2 API and checks for threats.
+          Usage: python scan_pdf.py path/to/file.pdf
           """
 
           import os
@@ -83,6 +100,26 @@ jobs:
               format='%(asctime)s - %(levelname)s - %(message)s',
               handlers=[console_handler]
           )
+
+          def read_api_key(filename="falcon.txt"):
+              """Read the API key from the specified file."""
+              try:
+                  file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
+                  logging.info(f"Reading API key from: {file_path}")
+                  
+                  with open(file_path, 'r') as f:
+                      api_key = f.read().strip()
+                      if not api_key:
+                          logging.error(f"API key file '{file_path}' is empty")
+                          sys.exit(1)
+                      logging.info(f"API key found. Length: {len(api_key)} characters")
+                      return api_key
+              except FileNotFoundError:
+                  logging.error(f"API key file '{file_path}' not found")
+                  sys.exit(1)
+              except Exception as e:
+                  logging.error(f"Error reading API key: {str(e)}")
+                  sys.exit(1)
 
           def submit_file(file_path, api_key):
               """Submit a file to the Hybrid Analysis v2 API."""
@@ -112,7 +149,7 @@ jobs:
                   # Using Windows 10 64-bit (environment_id=110) as default environment
                   data = {
                       "environment_id": "110",  # Windows 10 64-bit
-                      "comment": "Submitted via GitHub Action for analysis"
+                      "comment": "Submitted via GitHub Actions for analysis"
                   }
                   
                   try:
@@ -169,7 +206,7 @@ jobs:
                       except Exception as third_e:
                           logging.error(f"Third endpoint error: {third_e}")
                       
-                      sys.exit(1)
+                      return None
 
           def check_report_status(job_id, api_key):
               """Check the status of a submitted analysis job."""
@@ -191,9 +228,25 @@ jobs:
               except requests.exceptions.RequestException:
                   return None
 
-          def process_file(file_path, api_key):
-              """Process a single PDF file."""
+          def scan_pdf(file_path):
+              """Scan a PDF file with Hybrid Analysis."""
               logging.info(f"Processing file: {file_path}")
+              
+              # Validate file exists
+              if not os.path.isfile(file_path):
+                  logging.error(f"File '{file_path}' not found")
+                  return False
+              
+              # Check file permissions
+              try:
+                  with open(file_path, 'rb') as f:
+                      pass
+              except PermissionError:
+                  logging.error(f"Permission denied: Cannot read file '{file_path}'")
+                  return False
+              
+              # Read API key from file
+              api_key = read_api_key()
               
               # Submit file for analysis
               submission = submit_file(file_path, api_key)
@@ -202,6 +255,7 @@ jobs:
                   logging.error("Failed to get response from submission API.")
                   return False
                   
+              # Handle different response formats
               if 'job_id' not in submission:
                   logging.error("Failed to get job ID from submission.")
                   
@@ -221,17 +275,17 @@ jobs:
               
               # Poll for results
               logging.info("Waiting for analysis to complete...")
-              max_attempts = 20
+              max_attempts = 10
               attempt = 0
               
               while attempt < max_attempts:
                   attempt += 1
-                  time.sleep(15)  # Wait 15 seconds between status checks
+                  time.sleep(30)  # Wait 30 seconds between status checks in GitHub Actions
                   
                   report = check_report_status(job_id, api_key)
                   
                   if not report:
-                      logging.info("Still waiting for results...")
+                      logging.info(f"Attempt {attempt}/{max_attempts}: No report yet")
                       continue
                   
                   status = report.get('state', '')
@@ -243,7 +297,7 @@ jobs:
                       threat_score = report.get('threat_score', 0)
                       verdict = report.get('verdict', 'Unknown')
                       
-                      logging.info(f"Results:")
+                      logging.info(f"Results for {os.path.basename(file_path)}:")
                       logging.info(f"  Threat Score: {threat_score}/100")
                       logging.info(f"  Verdict: {verdict}")
                       
@@ -258,21 +312,6 @@ jobs:
                           report_url = f"https://www.hybrid-analysis.com/sample/{report['sha256']}"
                           logging.info(f"Full report: {report_url}")
                       
-                      # Create summary
-                      summary = {
-                          "file": os.path.basename(file_path),
-                          "threat_score": threat_score,
-                          "verdict": verdict,
-                          "report_url": report_url if 'sha256' in report else None,
-                          "threats": report.get('threats', []),
-                      }
-                      
-                      # Save summary to file
-                      summary_file = f"{os.path.splitext(file_path)[0]}_scan_summary.json"
-                      with open(summary_file, 'w') as f:
-                          json.dump(summary, f, indent=2)
-                      
-                      logging.info(f"Summary saved to {summary_file}")
                       return True
                   
                   elif status == 'ERROR':
@@ -281,7 +320,7 @@ jobs:
                       return False
                   
                   elif status == 'IN_PROGRESS':
-                      logging.info("Analysis still in progress...")
+                      logging.info(f"Attempt {attempt}/{max_attempts}: Analysis in progress")
                   
                   else:
                       logging.info(f"Status: {status}")
@@ -294,187 +333,45 @@ jobs:
               
               return False
 
-          def main():
-              # Get API key from environment
-              api_key = os.environ.get('HYBRID_ANALYSIS_API_KEY')
-              if not api_key:
-                  logging.error("HYBRID_ANALYSIS_API_KEY environment variable not set")
-                  sys.exit(1)
-              
-              # Get file paths from command line arguments
-              file_paths = sys.argv[1:]
-              if not file_paths:
-                  logging.error("No files provided for scanning")
-                  sys.exit(1)
-              
-              # Process each file
-              success_count = 0
-              for file_path in file_paths:
-                  file_path = file_path.strip("'\"")  # Remove any quotes
-                  
-                  # Check if file exists
-                  if not os.path.isfile(file_path):
-                      logging.error(f"File '{file_path}' not found")
-                      continue
-                  
-                  # Check if file is a PDF
-                  if not file_path.lower().endswith('.pdf'):
-                      logging.warning(f"File '{file_path}' does not appear to be a PDF file, skipping")
-                      continue
-                  
-                  # Process the file
-                  if process_file(file_path, api_key):
-                      success_count += 1
-              
-              logging.info(f"Processed {success_count} out of {len(file_paths)} files successfully")
-              if success_count < len(file_paths):
-                  sys.exit(1)
-
           if __name__ == "__main__":
+              if len(sys.argv) != 2:
+                  print(f"Usage: {sys.argv[0]} <pdf_file_path>")
+                  sys.exit(1)
+              
+              file_path = sys.argv[1].strip("'\"")  # Remove any quotes that might be present
+              
+              # Expand path to absolute
+              file_path = os.path.abspath(file_path)
+              
               try:
-                  main()
+                  success = scan_pdf(file_path)
+                  sys.exit(0 if success else 1)
               except KeyboardInterrupt:
-                  logging.warning("Process interrupted by user.")
+                  logging.error("Process interrupted.")
                   sys.exit(0)
               except Exception as e:
                   logging.error(f"Error: {str(e)}")
                   sys.exit(1)
-          EOF
-          
+          EOL
           chmod +x scan_pdf.py
-
+          
       - name: Scan PDF files
-        if: steps.changed-files.outputs.pdf_files != ''
-        env:
-          HYBRID_ANALYSIS_API_KEY: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}
+        if: ${{ steps.changed-files.outputs.pdf_files != '' }}
         run: |
-          # Convert comma-separated list to array
-          IFS=',' read -ra PDF_FILES <<< "${{ steps.changed-files.outputs.pdf_files }}"
-          
-          # Process each PDF file
-          for file in "${PDF_FILES[@]}"; do
-            echo "Scanning PDF file: $file"
-            python scan_pdf.py "$file"
-          done
-
-      - name: Create summary report
-        if: steps.changed-files.outputs.pdf_files != ''
-        run: |
-          echo "# PDF Security Scan Results" > scan_report.md
-          echo "Date: $(date)" >> scan_report.md
-          echo "" >> scan_report.md
-          
-          # Convert comma-separated list to array
-          IFS=',' read -ra PDF_FILES <<< "${{ steps.changed-files.outputs.pdf_files }}"
-          
-          # Add results for each PDF file
-          for file in "${PDF_FILES[@]}"; do
-            summary_file="${file%.*}_scan_summary.json"
-            
-            echo "## $(basename "$file")" >> scan_report.md
-            
-            if [ -f "$summary_file" ]; then
-              threat_score=$(jq -r '.threat_score' "$summary_file")
-              verdict=$(jq -r '.verdict' "$summary_file")
-              report_url=$(jq -r '.report_url // "N/A"' "$summary_file")
-              
-              echo "- **Threat Score:** $threat_score/100" >> scan_report.md
-              echo "- **Verdict:** $verdict" >> scan_report.md
-              echo "- **Report URL:** $report_url" >> scan_report.md
-              
-              # Add threats if any
-              threats_count=$(jq '.threats | length' "$summary_file")
-              if [ "$threats_count" -gt 0 ]; then
-                echo "" >> scan_report.md
-                echo "### Detected Threats:" >> scan_report.md
-                
-                jq -r '.threats[]' "$summary_file" | while read threat; do
-                  echo "- $threat" >> scan_report.md
-                done
-              fi
+          echo "${{ steps.changed-files.outputs.pdf_files }}" | while read pdf_file; do
+            if [ -f "$pdf_file" ]; then
+              echo "Scanning file: $pdf_file"
+              python scan_pdf.py "$pdf_file"
+              echo "----------------------------------------------------"
             else
-              echo "- **Error:** Scan results not available" >> scan_report.md
+              echo "File no longer exists: $pdf_file (may have been deleted in a later commit)"
             fi
-            
-            echo "" >> scan_report.md
           done
-
-      - name: Upload scan report
-        if: steps.changed-files.outputs.pdf_files != ''
-        uses: actions/upload-artifact@v3
-        with:
-          name: pdf-security-scan-report
-          path: scan_report.md
-          retention-days: 30
-
-      - name: Post scan report as comment (on PR)
-        if: github.event_name == 'pull_request' && steps.changed-files.outputs.pdf_files != ''
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          script: |
-            const fs = require('fs');
-            const reportContent = fs.readFileSync('scan_report.md', 'utf8');
-            
-            await github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: reportContent
-            });
-
-      - name: Create security report issue on high threat score
-        if: steps.changed-files.outputs.pdf_files != ''
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          script: |
-            const fs = require('fs');
-            const path = require('path');
-            
-            // Convert comma-separated list to array
-            const pdfFiles = '${{ steps.changed-files.outputs.pdf_files }}'.split(',');
-            
-            // Check each PDF summary for high threat score
-            let highThreatFound = false;
-            let highThreatSummary = "# 🚨 High Threat PDFs Detected\n\nThe following PDF files have a high threat score:\n\n";
-            
-            for (const file of pdfFiles) {
-              const summaryFile = `${file.replace(/\.pdf$/i, '')}_scan_summary.json`;
-              
-              try {
-                if (fs.existsSync(summaryFile)) {
-                  const summary = JSON.parse(fs.readFileSync(summaryFile, 'utf8'));
-                  
-                  // Check if threat score is above 75 (high)
-                  if (summary.threat_score > 75) {
-                    highThreatFound = true;
-                    highThreatSummary += `## ${path.basename(file)}\n`;
-                    highThreatSummary += `- **Threat Score:** ${summary.threat_score}/100\n`;
-                    highThreatSummary += `- **Verdict:** ${summary.verdict}\n`;
-                    highThreatSummary += `- **Report URL:** ${summary.report_url || 'N/A'}\n\n`;
-                    
-                    if (summary.threats && summary.threats.length > 0) {
-                      highThreatSummary += "### Detected Threats:\n";
-                      for (const threat of summary.threats) {
-                        highThreatSummary += `- ${threat}\n`;
-                      }
-                      highThreatSummary += "\n";
-                    }
-                  }
-                }
-              } catch (error) {
-                console.log(`Error processing summary file ${summaryFile}: ${error.message}`);
-              }
-            }
-            
-            // Create issue for high threat PDFs
-            if (highThreatFound) {
-              await github.rest.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title: '🚨 High Threat PDFs Detected in Security Reports',
-                body: highThreatSummary,
-                labels: ['security', 'high-priority']
-              });
-            }
+          
+      - name: Clean up sensitive files
+        if: always()
+        run: |
+          # Clean up the API key file
+          [ -f "falcon.txt" ] && rm -f falcon.txt
+          # Clean up any other potentially sensitive files
+          [ -f "scan_pdf.py" ] && rm -f scan_pdf.py
