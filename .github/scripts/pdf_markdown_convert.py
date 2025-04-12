@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-PDF to Markdown Converter using Google Gemini AI
-This script extracts text from a PDF and uses Google Gemini AI to convert it to well-formatted markdown.
+PDF to Markdown Converter using PyMuPDF and Google Gemini AI
+This script extracts text from a PDF using PyMuPDF and uses Google Gemini AI to convert it to well-formatted markdown.
 For use in GitHub Actions workflows.
 """
 
@@ -17,17 +17,12 @@ from pathlib import Path
 import tempfile
 import re
 
-# Try to import PyPDF2, use pdfminer.six as fallback
+# Import PyMuPDF (fitz is the module name)
 try:
-    import PyPDF2
-    PDF_LIBRARY = "PyPDF2"
+    import fitz  # PyMuPDF
 except ImportError:
-    try:
-        from pdfminer.high_level import extract_text as pdfminer_extract_text
-        PDF_LIBRARY = "pdfminer"
-    except ImportError:
-        print("::error::Neither PyPDF2 nor pdfminer.six is installed. Please install one of them.")
-        sys.exit(1)
+    print("::error::PyMuPDF is not installed. Please install it with 'pip install PyMuPDF'.")
+    sys.exit(1)
 
 # Configure logging
 logging.basicConfig(
@@ -39,26 +34,27 @@ logging.basicConfig(
 )
 
 def extract_text_from_pdf(pdf_path):
-    """Extract text from PDF using available library"""
+    """Extract text from PDF using PyMuPDF"""
     logging.info(f"Extracting text from PDF: {pdf_path}")
     
-    if PDF_LIBRARY == "PyPDF2":
-        logging.info("Using PyPDF2 for text extraction")
-        with open(pdf_path, 'rb') as file:
-            reader = PyPDF2.PdfReader(file)
-            text = ""
-            total_pages = len(reader.pages)
-            logging.info(f"PDF has {total_pages} pages")
-            
-            for i, page in enumerate(reader.pages):
-                logging.info(f"Extracting page {i+1}/{total_pages}")
-                text += page.extract_text() + "\n\n"
-    else:
-        logging.info("Using pdfminer.six for text extraction")
-        text = pdfminer_extract_text(pdf_path)
+    text = ""
+    try:
+        # Open the PDF
+        doc = fitz.open(pdf_path)
+        total_pages = len(doc)
+        logging.info(f"PDF has {total_pages} pages")
         
-    logging.info(f"Extracted {len(text)} characters from PDF")
-    return text
+        # Extract text from each page
+        for i, page in enumerate(doc):
+            logging.info(f"Extracting page {i+1}/{total_pages}")
+            text += page.get_text() + "\n\n"
+            
+        doc.close()
+        logging.info(f"Extracted {len(text)} characters from PDF")
+        return text
+    except Exception as e:
+        logging.error(f"Error extracting text from PDF: {str(e)}")
+        raise
 
 def chunk_text(text, max_chunk_size=8000):
     """Split text into chunks for API processing"""
@@ -96,7 +92,7 @@ def get_gemini_api_key():
         sys.exit(1)
     return api_key
 
-def convert_to_markdown_with_gemini(text_chunks, model="gemini-2.0-flash"):
+def convert_to_markdown_with_gemini(text_chunks, model="gemini-1.5-flash"):
     """Convert text to markdown using Google Gemini AI"""
     api_key = get_gemini_api_key()
     endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
@@ -104,11 +100,10 @@ def convert_to_markdown_with_gemini(text_chunks, model="gemini-2.0-flash"):
         "Content-Type": "application/json"
     }
     
-    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".github", "ai_prompts", "pdf_to_markdown_prompt.md"), 'r') as f:
-        prompt_template = f.read()
-    
-    # If we can't find the prompt file, use a default prompt
-    if not prompt_template or len(prompt_template) < 10:
+    try:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".github", "ai_prompts", "pdf_to_markdown_prompt.md"), 'r') as f:
+            prompt_template = f.read()
+    except (FileNotFoundError, IOError):
         logging.warning("Could not read prompt template, using default prompt")
         prompt_template = """
         Convert the following text extracted from a PDF into clean, well-formatted markdown.
@@ -182,9 +177,9 @@ def convert_to_markdown_with_gemini(text_chunks, model="gemini-2.0-flash"):
                 logging.error(f"API request failed: {str(e)}")
                 if retry_count == max_retries - 1:
                     # If we're on the last retry and using the primary model, try the fallback model
-                    if model == "gemini-2.0-flash":
-                        logging.info("Falling back to gemini-2.0-flash-lite model")
-                        return convert_to_markdown_with_gemini([chunk], model="gemini-2.0-flash-lite")
+                    if model == "gemini-1.5-flash":
+                        logging.info("Falling back to gemini-1.5-flash-lite model")
+                        return convert_to_markdown_with_gemini([chunk], model="gemini-1.5-flash-lite")
                 
                 retry_count += 1
                 time.sleep(5)  # Wait before retrying
@@ -192,29 +187,8 @@ def convert_to_markdown_with_gemini(text_chunks, model="gemini-2.0-flash"):
     # Combine all chunks of markdown
     return "\n\n".join(all_markdown)
 
-def add_frontmatter(markdown_text, pdf_path):
-    """Add Jekyll frontmatter to the markdown"""
-    # Extract filename without extension
-    filename = os.path.basename(pdf_path)
-    title = os.path.splitext(filename)[0].replace("-", " ")
-    
-    # Get current date
-    from datetime import datetime
-    current_date = datetime.now().strftime("%Y-%m-%d")
-    
-    frontmatter = f"""---
-layout: post
-title: "{title}"
-date: {current_date}
-categories: reports
-source_file: "{filename}"
----
-
-"""
-    return frontmatter + markdown_text
-
 def main():
-    parser = argparse.ArgumentParser(description="Convert PDF to Markdown using Google Gemini AI")
+    parser = argparse.ArgumentParser(description="Convert PDF to Markdown using PyMuPDF and Google Gemini AI")
     parser.add_argument("pdf_path", help="Path to the PDF file")
     parser.add_argument("--output", "-o", help="Output markdown file path")
     args = parser.parse_args()
@@ -234,7 +208,7 @@ def main():
         output_path = os.path.join(pdf_dir, f"{pdf_name}.md")
     
     try:
-        # Extract text from PDF
+        # Extract text from PDF using PyMuPDF
         extracted_text = extract_text_from_pdf(pdf_path)
         
         if not extracted_text or len(extracted_text.strip()) < 100:
@@ -248,12 +222,9 @@ def main():
         # Convert text to markdown using Gemini
         markdown_text = convert_to_markdown_with_gemini(text_chunks)
         
-        # Add frontmatter for Jekyll
-        final_markdown = add_frontmatter(markdown_text, pdf_path)
-        
-        # Write markdown to output file
+        # Write markdown to output file (no frontmatter added)
         with open(output_path, "w", encoding="utf-8") as f:
-            f.write(final_markdown)
+            f.write(markdown_text)
         
         logging.info(f"Markdown conversion complete. Output saved to: {output_path}")
         print(f"::notice::Markdown conversion complete. Output saved to: {output_path}")
