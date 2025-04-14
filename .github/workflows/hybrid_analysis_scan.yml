@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 2  # Need to fetch the previous commit to compare files
+          fetch-depth: 0  # Fetch all history for proper file detection
           
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -27,23 +27,54 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests logging
+          pip install requests
 
       - name: Find added files
         id: changed-files
         run: |
+          # First approach: Using git to find changes in the current push
+          if [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+            echo "Using git diff with before/after commits"
+            git diff --name-status ${{ github.event.before }} ${{ github.event.after }} > git_changes.txt
+          else
+            echo "First push detected, comparing with HEAD~1"
+            git diff --name-status HEAD~1 HEAD > git_changes.txt
+          fi
+          
+          # Debug: Show all detected changes
+          echo "All detected changes:"
+          cat git_changes.txt
+          
+          # Extract Annual Security Reports files (PDF/DOCX/PPTX)
+          echo "Filtering for security report files..."
+          cat git_changes.txt | grep -E "(A|M).*Annual Security Reports.*\.(pdf|docx|pptx|PDF|DOCX|PPTX)$" | cut -f2 > report_files.txt
+          
+          # Alternative approach: Find all PDF/DOCX/PPTX files in the repository
+          echo "Searching for all document files in directory..."
+          find "Annual Security Reports" -type f -name "*.pdf" -o -name "*.PDF" -o -name "*.docx" -o -name "*.DOCX" -o -name "*.pptx" -o -name "*.PPTX" | head -n 10 > all_report_files.txt
+          
+          # Create final list of files to scan (with priority to git detected changes)
+          cat report_files.txt > files_to_scan.txt
+          
+          # If no files found from git diff, take the most recent file from find
+          if [ ! -s files_to_scan.txt ]; then
+            echo "No changes detected from git diff, using most recent file"
+            ls -lt $(cat all_report_files.txt 2>/dev/null) 2>/dev/null | head -n 1 | awk '{print $NF}' >> files_to_scan.txt
+          fi
+          
+          # Create multiline env var with the files to scan
           echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          git diff --name-status ${{ github.event.before }} ${{ github.event.after }} | 
-            grep -E "^A.*Annual Security Reports/.*(\.pdf|\.docx|\.pptx)$" | 
-            cut -f2 >> $GITHUB_ENV
+          cat files_to_scan.txt >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
           
           # Debug output (without revealing file contents)
           echo "Files detected for scanning:"
-          git diff --name-status ${{ github.event.before }} ${{ github.event.after }} | 
-            grep -E "^A.*Annual Security Reports/.*(\.pdf|\.docx|\.pptx)$" | 
-            cut -f2 | tee /dev/stderr | wc -l | 
+          cat files_to_scan.txt | tee /dev/stderr | wc -l | 
             xargs -I {} echo "Found {} files to scan"
+          
+          # Show actual files for debugging
+          echo "Files to be scanned:"
+          cat files_to_scan.txt || echo "No files found"
 
       - name: Create API key file
         run: |
@@ -167,6 +198,24 @@ jobs:
               """Process a single file"""
               logging.info(f"Starting scan for file: {file_path}")
               
+              # Validate file path
+              if not os.path.exists(file_path):
+                  logging.error(f"File does not exist: {file_path}")
+                  # Try with and without leading slash
+                  alt_path = file_path.lstrip('/')
+                  if os.path.exists(alt_path):
+                      logging.info(f"Found alternative path: {alt_path}")
+                      file_path = alt_path
+                  else:
+                      # Try with repository root path
+                      repo_path = os.path.join(os.getcwd(), file_path)
+                      if os.path.exists(repo_path):
+                          logging.info(f"Found repository path: {repo_path}")
+                          file_path = repo_path
+                      else:
+                          logging.error(f"File could not be found at any path variant")
+                          return False
+              
               # Submit file for analysis
               submission = submit_file(file_path, api_key)
               
@@ -252,11 +301,36 @@ jobs:
               files_to_process = os.environ.get('CHANGED_FILES', '').strip().split('\n')
               files_to_process = [f for f in files_to_process if f.strip()]
               
+              # Log working directory and file existence for debugging
+              logging.info(f"Current working directory: {os.getcwd()}")
+              logging.info(f"Repository contents: {os.listdir('.')}")
+              
+              if "Annual Security Reports" in os.listdir('.'):
+                  logging.info(f"Security Reports directory exists with contents: {os.listdir('Annual Security Reports')}")
+              
               if not files_to_process:
-                  logging.info("No files to process")
+                  logging.info("No files detected in CHANGED_FILES environment variable")
+                  
+                  # Fallback: Manually look for PDF files as a last resort
+                  logging.info("Attempting to locate PDF files manually...")
+                  for root, dirs, files in os.walk("Annual Security Reports"):
+                      for file in files:
+                          if file.lower().endswith(('.pdf', '.docx', '.pptx')):
+                              full_path = os.path.join(root, file)
+                              logging.info(f"Found document file: {full_path}")
+                              files_to_process.append(full_path)
+                              # Just get the most recent file
+                              break
+                      if files_to_process:
+                          break
+              
+              if not files_to_process:
+                  logging.info("No files to process after all detection methods")
                   return 0
               
-              logging.info(f"Found {len(files_to_process)} files to scan")
+              logging.info(f"Found {len(files_to_process)} files to scan:")
+              for file_idx, file_path in enumerate(files_to_process):
+                  logging.info(f"  {file_idx+1}. {file_path} (exists: {os.path.exists(file_path)})")
               
               # Read API key from file
               api_key = read_api_key()
@@ -276,6 +350,8 @@ jobs:
                       logging.info(f"API key is valid. API status: {response.status_code}")
                   else:
                       logging.warning(f"API test failed with status {response.status_code}")
+                      if hasattr(response, 'text'):
+                          logging.warning(f"Response text: {response.text[:500]}")
                       return 1
               except Exception as e:
                   logging.warning(f"API connection test failed: {e}")
@@ -286,6 +362,7 @@ jobs:
               
               # Process each file
               for file_path in files_to_process:
+                  logging.info(f"Processing file: {file_path}")
                   if process_file(file_path, api_key):
                       success_count += 1
                   else:
