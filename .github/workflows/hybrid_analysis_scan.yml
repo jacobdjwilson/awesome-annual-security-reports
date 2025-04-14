@@ -1,0 +1,322 @@
+name: Hybrid Analysis Security Scan
+
+on:
+  push:
+    branches:
+      - main
+      - development
+    paths:
+      - 'Annual Security Reports/**'
+
+jobs:
+  scan-new-files:
+    runs-on: ubuntu-latest
+    name: Scan New Files with Hybrid Analysis
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2  # Need to fetch the previous commit to compare files
+          
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests logging
+
+      - name: Find added files
+        id: changed-files
+        run: |
+          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
+          git diff --name-status ${{ github.event.before }} ${{ github.event.after }} | 
+            grep -E "^A.*Annual Security Reports/.*(\.pdf|\.docx|\.pptx)$" | 
+            cut -f2 >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          
+          # Debug output (without revealing file contents)
+          echo "Files detected for scanning:"
+          git diff --name-status ${{ github.event.before }} ${{ github.event.after }} | 
+            grep -E "^A.*Annual Security Reports/.*(\.pdf|\.docx|\.pptx)$" | 
+            cut -f2 | tee /dev/stderr | wc -l | 
+            xargs -I {} echo "Found {} files to scan"
+
+      - name: Create API key file
+        run: |
+          # Create a temporary file with API key
+          mkdir -p ./temp
+          echo "${{ secrets.HYBRID_ANALYSIS_API_KEY }}" > ./temp/falcon.txt
+          chmod 600 ./temp/falcon.txt
+        
+      - name: Create hybrid analysis script
+        run: |
+          cat > ./hybrid_analysis_script.py << 'EOL'
+          #!/usr/bin/env python3
+          """
+          Hybrid Analysis Scanner
+          This script submits files to the Hybrid Analysis v2 API and checks for threats.
+          """
+          
+          import os
+          import sys
+          import time
+          import json
+          import requests
+          import logging
+          from datetime import datetime
+          
+          # Configure logging
+          logging.basicConfig(
+              level=logging.INFO,
+              format='%(asctime)s - %(levelname)s - %(message)s'
+          )
+          
+          def read_api_key(filename="./temp/falcon.txt"):
+              """Read the API key from the specified file."""
+              try:
+                  with open(filename, 'r') as f:
+                      api_key = f.read().strip()
+                      if not api_key:
+                          logging.error(f"API key file '{filename}' is empty")
+                          sys.exit(1)
+                      logging.info(f"API key found. Length: {len(api_key)} characters")
+                      return api_key
+              except FileNotFoundError:
+                  logging.error(f"API key file '{filename}' not found")
+                  sys.exit(1)
+              except Exception as e:
+                  logging.error(f"Error reading API key: {str(e)}")
+                  sys.exit(1)
+          
+          def submit_file(file_path, api_key):
+              """Submit a file to the Hybrid Analysis v2 API."""
+              logging.info(f"Submitting file: {file_path}")
+              
+              # Verify file exists and check size
+              if not os.path.exists(file_path):
+                  logging.error(f"File not found: {file_path}")
+                  return None
+                  
+              file_size = os.path.getsize(file_path)
+              logging.info(f"File size: {file_size} bytes ({file_size / (1024*1024):.2f} MB)")
+              
+              url = "https://www.hybrid-analysis.com/api/v2/submit/file"
+              logging.info(f"API endpoint: {url}")
+              
+              headers = {
+                  "api-key": api_key,
+                  "User-Agent": "Hybrid Analysis GitHub Action",
+                  "Accept": "application/json"
+              }
+              
+              import mimetypes
+              mime_type = mimetypes.guess_type(file_path)[0]
+              logging.info(f"File MIME type: {mime_type}")
+              
+              with open(file_path, 'rb') as f:
+                  files = {'file': (os.path.basename(file_path), f)}
+                  
+                  # Using Windows 11 64-bit (environment_id=400) as requested
+                  data = {
+                      "environment_id": "400",  # Windows 11 64-bit
+                      "comment": "Submitted via GitHub Action"
+                  }
+                  
+                  try:
+                      logging.info("Sending API request...")
+                      response = requests.post(url, headers=headers, files=files, data=data)
+                      logging.info(f"Response status code: {response.status_code}")
+                      
+                      response.raise_for_status()
+                      return response.json()
+                  except requests.exceptions.RequestException as e:
+                      logging.error(f"Error submitting file: {e}")
+                      if hasattr(e, 'response') and e.response:
+                          try:
+                              err_json = e.response.json()
+                              logging.error(f"Error details: {json.dumps(err_json)}")
+                          except json.JSONDecodeError:
+                              logging.error(f"Error response: {e.response.text}")
+                      return None
+          
+          def check_report_status(job_id, api_key):
+              """Check the status of a submitted analysis job."""
+              url = f"https://www.hybrid-analysis.com/api/v2/report/{job_id}/summary"
+              
+              headers = {
+                  "api-key": api_key,
+                  "User-Agent": "Hybrid Analysis GitHub Action",
+                  "Accept": "application/json"
+              }
+              
+              try:
+                  response = requests.get(url, headers=headers)
+                  
+                  if response.status_code != 200:
+                      return None
+                  
+                  return response.json()
+              except requests.exceptions.RequestException:
+                  return None
+          
+          def process_file(file_path, api_key):
+              """Process a single file"""
+              logging.info(f"Starting scan for file: {file_path}")
+              
+              # Submit file for analysis
+              submission = submit_file(file_path, api_key)
+              
+              if not submission:
+                  logging.error("Failed to get response from submission API.")
+                  return False
+                  
+              if 'job_id' not in submission:
+                  logging.error("Failed to get job ID from submission.")
+                  
+                  # Check for alternative IDs or SHA256
+                  if 'sha256' in submission:
+                      logging.info(f"SHA256 hash found: {submission['sha256']}")
+                      logging.info(f"Results URL: https://www.hybrid-analysis.com/sample/{submission['sha256']}")
+                      return True
+                      
+                  if 'scan_id' in submission:
+                      job_id = submission['scan_id']
+                      logging.info(f"Using scan_id as job_id for polling: {job_id}")
+                  else:
+                      return False
+              else:
+                  job_id = submission['job_id']
+                  logging.info(f"File submitted successfully. Job ID: {job_id}")
+              
+              # Poll for results - with reasonable timeout
+              logging.info("Waiting for analysis to complete...")
+              max_attempts = 10
+              attempt = 0
+              
+              while attempt < max_attempts:
+                  attempt += 1
+                  logging.info(f"Checking status (attempt {attempt}/{max_attempts})...")
+                  time.sleep(30)  # Wait between status checks
+                  
+                  report = check_report_status(job_id, api_key)
+                  
+                  if not report:
+                      continue
+                  
+                  status = report.get('state', '')
+                  
+                  if status == 'SUCCESS':
+                      logging.info("Analysis complete!")
+                      
+                      # Check for threats
+                      threat_score = report.get('threat_score', 0)
+                      verdict = report.get('verdict', 'Unknown')
+                      
+                      logging.info(f"Results:")
+                      logging.info(f"  Threat Score: {threat_score}/100")
+                      logging.info(f"  Verdict: {verdict}")
+                      
+                      # Log report URL
+                      if 'sha256' in report:
+                          report_url = f"https://www.hybrid-analysis.com/sample/{report['sha256']}"
+                          logging.info(f"Full report: {report_url}")
+                      
+                      return True
+                  
+                  elif status == 'ERROR':
+                      error_msg = report.get('error', 'Unknown error')
+                      logging.error(f"Analysis failed: {error_msg}")
+                      return False
+                  
+                  elif status == 'IN_PROGRESS':
+                      logging.info("Analysis still in progress...")
+                  
+                  else:
+                      logging.info(f"Status: {status}")
+              
+              logging.warning("Timeout waiting for analysis to complete.")
+              if 'sha256' in submission:
+                  logging.info(f"Check status at: https://www.hybrid-analysis.com/sample/{submission['sha256']}")
+              elif job_id:
+                  logging.info(f"Job ID: {job_id}")
+              
+              # Return True even on timeout since the file was successfully submitted
+              return True
+          
+          def main():
+              # Process environment variable with list of files
+              files_to_process = os.environ.get('CHANGED_FILES', '').strip().split('\n')
+              files_to_process = [f for f in files_to_process if f.strip()]
+              
+              if not files_to_process:
+                  logging.info("No files to process")
+                  return 0
+              
+              logging.info(f"Found {len(files_to_process)} files to scan")
+              
+              # Read API key from file
+              api_key = read_api_key()
+              
+              # Test API connectivity
+              test_url = "https://www.hybrid-analysis.com/api/v2/key/current"
+              logging.info("Testing API connectivity")
+              try:
+                  headers = {
+                      "api-key": api_key,
+                      "User-Agent": "Hybrid Analysis GitHub Action",
+                      "Accept": "application/json"
+                  }
+                  response = requests.get(test_url, headers=headers)
+                  if response.status_code == 200:
+                      api_info = response.json()
+                      logging.info(f"API key is valid. API status: {response.status_code}")
+                  else:
+                      logging.warning(f"API test failed with status {response.status_code}")
+                      return 1
+              except Exception as e:
+                  logging.warning(f"API connection test failed: {e}")
+                  return 1
+              
+              success_count = 0
+              failure_count = 0
+              
+              # Process each file
+              for file_path in files_to_process:
+                  if process_file(file_path, api_key):
+                      success_count += 1
+                  else:
+                      failure_count += 1
+              
+              logging.info(f"Scan summary: {success_count} successful, {failure_count} failed")
+              
+              # Return non-zero exit code if any file processing failed
+              return 0 if failure_count == 0 else 1
+          
+          if __name__ == "__main__":
+              try:
+                  exit_code = main()
+                  sys.exit(exit_code)
+              except KeyboardInterrupt:
+                  logging.info("Process interrupted.")
+                  sys.exit(0)
+              except Exception as e:
+                  logging.error(f"Error: {str(e)}")
+                  sys.exit(1)
+          EOL
+          
+          chmod +x ./hybrid_analysis_script.py
+
+      - name: Run scans on new files
+        run: python hybrid_analysis_script.py
+        env:
+          CHANGED_FILES: ${{ env.CHANGED_FILES }}
+        
+      - name: Clean up sensitive files
+        if: always()
+        run: |
+          # Always make sure to clean up API key file
+          rm -rf ./temp
