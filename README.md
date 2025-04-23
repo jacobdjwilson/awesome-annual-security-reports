@@ -156,7 +156,7 @@ Reports are organized by their primary focus. Although many reports span multipl
 
 ## Data Breaches
 - [IBM](https://www.ibm.com/security/data-breach) - [Cost of a Data Breach Report](Annual%20Security%20Reports/2024/IBM-Cost-of-a-Data-Breach-Report-2024.pdf) (2024) - Provides IT, risk management and security leaders with timely, quantifiable evidence to guide them in their strategic decision-making. This research studied 604 organizations impacted by data breaches between March 2023 and February 2024.
-- [Verizon](https://www.verizon.com/business/resources/reports/dbir/) - [Data Breach Investigations Report](Annual%20Security%20Reports/2024/Verizon-Data-Breach-Investigations-Report-2024.pdf) (2024) - Analyzes global data breaches, offering insights into attack patterns, threat actor motivations, and strategies for improving organizational data security and incident response.
+- [Verizon](https://www.verizon.com/business/resources/reports/dbir/) - [Data Breach Investigations Report](Annual%20Security%20Reports/2025/Verizon-Data-Breach-Investigations-Report-2025.pdf) (2025) - Investigates the landscape of data breaches and their contributing factors. A key finding highlights the accidental exposure of secrets, such as credentials used by system administrators and developers, within public code repositories as a significant vulnerability.
 - [Identity Theft Resource Center](https://www.idtheftcenter.org/publication/2024-data-breach-report/) - [Annual Data Breach Report](Annual%20Security%20Reports/2024/ITRC-Annual-Data-Breach-Report-2024.pdf) (2024) - A review of 18,800+ data breaches since 2005, impacting 12 billion victims and exposing 19.8 billion records, focusing on root causes and compromised data types.
 
 ## Physical Security
