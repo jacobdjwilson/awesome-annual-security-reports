@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -e 'packages/markitdown[pdf]'
+          pip install git+https://github.com/microsoft/markitdown.git#subdirectory=packages/markitdown[pdf]
           pip install google-generativeai
       
       - name: Find changed PDF files
@@ -98,23 +98,18 @@ jobs:
           
           def extract_text_from_pdf(pdf_path):
               """First attempt to extract text from PDF using markitdown"""
-              output_path = pdf_path.with_suffix('.txt')
-              
               try:
-                  # Use the markitdown Python package for initial text extraction
-                  subprocess.run([
-                      "python", "-m", "markitdown.cli",
-                      "--input", str(pdf_path),
-                      "--output", str(output_path),
-                      "--format", "txt"
-                  ], check=True)
+                  # Use the markitdown Python package for text extraction
+                  from markitdown import MarkItDown
                   
-                  with open(output_path, 'r', encoding='utf-8') as f:
-                      text = f.read()
+                  # Initialize MarkItDown
+                  md = MarkItDown(enable_plugins=False)
                   
-                  # Clean up temporary file
-                  os.remove(output_path)
-                  return text
+                  # Convert PDF to text
+                  result = md.convert(str(pdf_path))
+                  
+                  # Return the text content
+                  return result.text_content
               except Exception as e:
                   print(f"Error extracting text from PDF: {e}")
                   return None
