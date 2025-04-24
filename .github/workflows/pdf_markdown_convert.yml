@@ -84,8 +84,18 @@ jobs:
           # Setup Gemini API
           genai.configure(api_key=os.environ['GEMINI_API_KEY'])
           
-          # Define model to use
-          MODEL = "gemini-1.5-pro"
+          # Define model to use - in order of preference
+          MODELS = ["gemini-2.5-flash-preview-04-17", "gemini-2.0-flash", "gemini-1.5-flash"]
+          
+          def get_available_model():
+              """Get the first available Gemini model from the preference list"""
+              for model in MODELS:
+                  try:
+                      genai.GenerativeModel(model)
+                      return model
+                  except Exception:
+                      continue
+              return MODELS[-1]  # Fallback to the last model if none available
           
           def read_prompt_file(path):
               """Read the AI prompt file"""
@@ -168,7 +178,7 @@ jobs:
               print(f"Created markdown file: {output_path}")
               
               # Prepare commit message with processing details
-              commit_message = f"Converted {pdf_path.name} to Markdown (AI Prompt {prompt_version} Model {MODEL})"
+              commit_message = f"Converted {pdf_path.name} using AI Prompt {prompt_version} AI Model {MODEL})"
               
               # Add and commit the new markdown file
               try:
