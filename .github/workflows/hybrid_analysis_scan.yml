@@ -150,8 +150,9 @@ def submit_file(file_path, api_key):
     with open(file_path, 'rb') as f:
         files = {'file': (os.path.basename(file_path), f)}
         
+        # Windows 11 64-bit environment
         data = {
-            \"environment_id\": \"400\",  # Windows 11 64-bit
+            \"environment_id\": \"400\",
             \"comment\": \"Submitted via GitHub Action\"
         }
         
