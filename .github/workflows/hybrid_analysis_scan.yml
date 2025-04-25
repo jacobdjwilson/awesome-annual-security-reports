@@ -83,13 +83,13 @@ jobs:
         
       - name: Create hybrid analysis script
         run: |
-          python -c "
+          python << 'EOL'
 with open('hybrid_analysis_script.py', 'w') as f:
     f.write('''#!/usr/bin/env python3
-\"\"\"
+"""
 Hybrid Analysis Scanner
 This script submits files to the Hybrid Analysis v2 API and checks for threats.
-\"\"\"
+"""
 
 import os
 import sys
@@ -412,7 +412,8 @@ if __name__ == \"__main__\":
         logging.error(f\"Error: {str(e)}\")
         sys.exit(1)
 ''')
-          "
+''')
+EOL
           
           chmod +x ./hybrid_analysis_script.py
 
@@ -428,7 +429,7 @@ if __name__ == \"__main__\":
           if [ -f scan_results.json ]; then
             echo "Reading scan results from JSON file"
             
-            python -c "
+            python << 'EOL'
 import json
 import os
 from datetime import datetime
@@ -440,7 +441,7 @@ with open('scan_results.json', 'r') as f:
 # Generate markdown summary
 with open('scan_summary.md', 'w') as f:
     f.write('# Hybrid Analysis Security Scan Results\n\n')
-    f.write(f'Scan completed: {datetime.now().strftime(\"%Y-%m-%d %H:%M:%S\")}\n\n')
+    f.write(f'Scan completed: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n\n')
     f.write('| File | Status | Report URL |\n')
     f.write('| ---- | ------ | ---------- |\n')
     
@@ -452,7 +453,7 @@ with open('scan_summary.md', 'w') as f:
         f.write(f'| {filename} | {status} | {url_display} |\n')
 
 print('Scan summary generated in scan_summary.md')
-            "
+EOL
             
             echo "::set-output name=has_results::true"
           else
@@ -478,7 +479,7 @@ print('Scan summary generated in scan_summary.md')
           cat scan_summary.md >> $GITHUB_STEP_SUMMARY
           
           # Count total scans and issues found
-          python -c "
+          python << 'EOL' >> $GITHUB_OUTPUT
 import json
 total = 0
 issues = 0
@@ -490,7 +491,7 @@ with open('scan_results.json', 'r') as f:
             issues += 1
 print(f'::set-output name=total_scans::{total}')
 print(f'::set-output name=issues_found::{issues}')
-          " >> $GITHUB_OUTPUT
+EOL
           
       - name: Clean up sensitive files
         if: always()
