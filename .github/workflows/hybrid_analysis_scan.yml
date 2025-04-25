@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Fetch all history for proper file detection
+          fetch-depth: 0
           
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -67,350 +67,351 @@ jobs:
           cat files_to_scan.txt >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
           
-          # Debug output (without revealing file contents)
+          # Debug output
           echo "Files detected for scanning:"
           cat files_to_scan.txt | tee /dev/stderr | wc -l | 
             xargs -I {} echo "Found {} files to scan"
           
-          # Show actual files for debugging
           echo "Files to be scanned:"
           cat files_to_scan.txt || echo "No files found"
 
       - name: Create API key file
         run: |
-          # Create a temporary file with API key
           mkdir -p ./temp
           echo "${{ secrets.HYBRID_ANALYSIS_API_KEY }}" > ./temp/falcon.txt
           chmod 600 ./temp/falcon.txt
         
       - name: Create hybrid analysis script
         run: |
-          cat > ./hybrid_analysis_script.py << 'EOL'
-          #!/usr/bin/env python3
-          """
-          Hybrid Analysis Scanner
-          This script submits files to the Hybrid Analysis v2 API and checks for threats.
-          """
-          
-          import os
-          import sys
-          import time
-          import json
-          import requests
-          import logging
-          from datetime import datetime
-          
-          # Configure logging
-          logging.basicConfig(
-              level=logging.INFO,
-              format='%(asctime)s - %(levelname)s - %(message)s'
-          )
-          
-          def read_api_key(filename="./temp/falcon.txt"):
-              """Read the API key from the specified file."""
-              try:
-                  with open(filename, 'r') as f:
-                      api_key = f.read().strip()
-                      if not api_key:
-                          logging.error(f"API key file '{filename}' is empty")
-                          sys.exit(1)
-                      logging.info(f"API key found. Length: {len(api_key)} characters")
-                      return api_key
-              except FileNotFoundError:
-                  logging.error(f"API key file '{filename}' not found")
-                  sys.exit(1)
-              except Exception as e:
-                  logging.error(f"Error reading API key: {str(e)}")
-                  sys.exit(1)
-          
-          def submit_file(file_path, api_key):
-              """Submit a file to the Hybrid Analysis v2 API."""
-              logging.info(f"Submitting file: {file_path}")
-              
-              # Verify file exists and check size
-              if not os.path.exists(file_path):
-                  logging.error(f"File not found: {file_path}")
-                  return None
-                  
-              file_size = os.path.getsize(file_path)
-              logging.info(f"File size: {file_size} bytes ({file_size / (1024*1024):.2f} MB)")
-              
-              url = "https://www.hybrid-analysis.com/api/v2/submit/file"
-              logging.info(f"API endpoint: {url}")
-              
-              headers = {
-                  "api-key": api_key,
-                  "User-Agent": "Hybrid Analysis GitHub Action",
-                  "Accept": "application/json"
-              }
-              
-              import mimetypes
-              mime_type = mimetypes.guess_type(file_path)[0]
-              logging.info(f"File MIME type: {mime_type}")
-              
-              with open(file_path, 'rb') as f:
-                  files = {'file': (os.path.basename(file_path), f)}
-                  
-                  # Using Windows 11 64-bit (environment_id=400) as requested
-                  data = {
-                      "environment_id": "400",  # Windows 11 64-bit
-                      "comment": "Submitted via GitHub Action"
-                  }
-                  
-                  try:
-                      logging.info("Sending API request...")
-                      response = requests.post(url, headers=headers, files=files, data=data)
-                      logging.info(f"Response status code: {response.status_code}")
-                      
-                      response.raise_for_status()
-                      return response.json()
-                  except requests.exceptions.RequestException as e:
-                      logging.error(f"Error submitting file: {e}")
-                      if hasattr(e, 'response') and e.response:
-                          try:
-                              err_json = e.response.json()
-                              logging.error(f"Error details: {json.dumps(err_json)}")
-                          except json.JSONDecodeError:
-                              logging.error(f"Error response: {e.response.text}")
-                      return None
-          
-          def check_report_status(job_id, api_key):
-              """Check the status of a submitted analysis job."""
-              url = f"https://www.hybrid-analysis.com/api/v2/report/{job_id}/summary"
-              
-              headers = {
-                  "api-key": api_key,
-                  "User-Agent": "Hybrid Analysis GitHub Action",
-                  "Accept": "application/json"
-              }
-              
-              try:
-                  response = requests.get(url, headers=headers)
-                  
-                  if response.status_code != 200:
-                      return None
-                  
-                  return response.json()
-              except requests.exceptions.RequestException:
-                  return None
-          
-          def process_file(file_path, api_key):
-              """Process a single file"""
-              logging.info(f"Starting scan for file: {file_path}")
-              
-              # Validate file path
-              if not os.path.exists(file_path):
-                  logging.error(f"File does not exist: {file_path}")
-                  # Try with and without leading slash
-                  alt_path = file_path.lstrip('/')
-                  if os.path.exists(alt_path):
-                      logging.info(f"Found alternative path: {alt_path}")
-                      file_path = alt_path
-                  else:
-                      # Try with repository root path
-                      repo_path = os.path.join(os.getcwd(), file_path)
-                      if os.path.exists(repo_path):
-                          logging.info(f"Found repository path: {repo_path}")
-                          file_path = repo_path
-                      else:
-                          logging.error(f"File could not be found at any path variant")
-                          return False, None
-              
-              # Submit file for analysis
-              submission = submit_file(file_path, api_key)
-              
-              if not submission:
-                  logging.error("Failed to get response from submission API.")
-                  return False, None
-                  
-              if 'job_id' not in submission:
-                  logging.error("Failed to get job ID from submission.")
-                  
-                  # Check for alternative IDs or SHA256
-                  if 'sha256' in submission:
-                      logging.info(f"SHA256 hash found: {submission['sha256']}")
-                      report_url = f"https://www.hybrid-analysis.com/sample/{submission['sha256']}"
-                      logging.info(f"Results URL: {report_url}")
-                      return True, report_url
-                      
-                  if 'scan_id' in submission:
-                      job_id = submission['scan_id']
-                      logging.info(f"Using scan_id as job_id for polling: {job_id}")
-                  else:
-                      return False, None
-              else:
-                  job_id = submission['job_id']
-                  logging.info(f"File submitted successfully. Job ID: {job_id}")
-              
-              # Set default report URL in case we can't get one later
-              report_url = None
-              if 'sha256' in submission:
-                  report_url = f"https://www.hybrid-analysis.com/sample/{submission['sha256']}"
-              
-              # Poll for results - with reasonable timeout
-              logging.info("Waiting for analysis to complete...")
-              max_attempts = 10
-              attempt = 0
-              
-              while attempt < max_attempts:
-                  attempt += 1
-                  logging.info(f"Checking status (attempt {attempt}/{max_attempts})...")
-                  time.sleep(30)  # Wait between status checks
-                  
-                  report = check_report_status(job_id, api_key)
-                  
-                  if not report:
-                      continue
-                  
-                  status = report.get('state', '')
-                  
-                  if status == 'SUCCESS':
-                      logging.info("Analysis complete!")
-                      
-                      # Check for threats
-                      threat_score = report.get('threat_score', 0)
-                      verdict = report.get('verdict', 'Unknown')
-                      
-                      logging.info(f"Results:")
-                      logging.info(f"  Threat Score: {threat_score}/100")
-                      logging.info(f"  Verdict: {verdict}")
-                      
-                      # Log report URL
-                      if 'sha256' in report:
-                          report_url = f"https://www.hybrid-analysis.com/sample/{report['sha256']}"
-                          logging.info(f"Full report: {report_url}")
-                      
-                      return True, report_url
-                  
-                  elif status == 'ERROR':
-                      error_msg = report.get('error', 'Unknown error')
-                      logging.error(f"Analysis failed: {error_msg}")
-                      return False, report_url
-                  
-                  elif status == 'IN_PROGRESS':
-                      logging.info("Analysis still in progress...")
-                  
-                  else:
-                      logging.info(f"Status: {status}")
-              
-              logging.warning("Timeout waiting for analysis to complete.")
-              if 'sha256' in submission:
-                  report_url = f"https://www.hybrid-analysis.com/sample/{submission['sha256']}"
-                  logging.info(f"Check status at: {report_url}")
-              elif job_id:
-                  logging.info(f"Job ID: {job_id}")
-              
-              # Return True even on timeout since the file was successfully submitted
-              return True, report_url
-          
-          def write_results_to_file(results):
-              """Write scan results to a file for GitHub Actions to read"""
-              with open("scan_results.json", "w") as f:
-                  json.dump(results, f)
-              logging.info(f"Scan results written to scan_results.json")
-          
-          def main():
-              # Dictionary to store results
-              results = {}
-              
-              # Process environment variable with list of files
-              files_to_process = os.environ.get('CHANGED_FILES', '').strip().split('\n')
-              files_to_process = [f for f in files_to_process if f.strip()]
-              
-              # Log working directory and file existence for debugging
-              logging.info(f"Current working directory: {os.getcwd()}")
-              logging.info(f"Repository contents: {os.listdir('.')}")
-              
-              if "Annual Security Reports" in os.listdir('.'):
-                  logging.info(f"Security Reports directory exists with contents: {os.listdir('Annual Security Reports')}")
-              
-              if not files_to_process:
-                  logging.info("No files detected in CHANGED_FILES environment variable")
-                  
-                  # Fallback: Manually look for PDF files as a last resort
-                  logging.info("Attempting to locate PDF files manually...")
-                  for root, dirs, files in os.walk("Annual Security Reports"):
-                      for file in files:
-                          if file.lower().endswith(('.pdf', '.docx', '.pptx')):
-                              full_path = os.path.join(root, file)
-                              logging.info(f"Found document file: {full_path}")
-                              files_to_process.append(full_path)
-                              # Just get the most recent file
-                              break
-                      if files_to_process:
-                          break
-              
-              if not files_to_process:
-                  logging.info("No files to process after all detection methods")
-                  return 0
-              
-              logging.info(f"Found {len(files_to_process)} files to scan:")
-              for file_idx, file_path in enumerate(files_to_process):
-                  logging.info(f"  {file_idx+1}. {file_path} (exists: {os.path.exists(file_path)})")
-              
-              # Read API key from file
-              api_key = read_api_key()
-              
-              # Test API connectivity
-              test_url = "https://www.hybrid-analysis.com/api/v2/key/current"
-              logging.info("Testing API connectivity")
-              try:
-                  headers = {
-                      "api-key": api_key,
-                      "User-Agent": "Hybrid Analysis GitHub Action",
-                      "Accept": "application/json"
-                  }
-                  response = requests.get(test_url, headers=headers)
-                  if response.status_code == 200:
-                      api_info = response.json()
-                      logging.info(f"API key is valid. API status: {response.status_code}")
-                  else:
-                      logging.warning(f"API test failed with status {response.status_code}")
-                      if hasattr(response, 'text'):
-                          logging.warning(f"Response text: {response.text[:500]}")
-                      return 1
-              except Exception as e:
-                  logging.warning(f"API connection test failed: {e}")
-                  return 1
-              
-              success_count = 0
-              failure_count = 0
-              
-              # Process each file
-              for file_path in files_to_process:
-                  logging.info(f"Processing file: {file_path}")
-                  success, report_url = process_file(file_path, api_key)
-                  
-                  # Store the result and report URL
-                  results[file_path] = {
-                      "success": success,
-                      "report_url": report_url if report_url else "No report URL available"
-                  }
-                  
-                  if success:
-                      success_count += 1
-                  else:
-                      failure_count += 1
-              
-              logging.info(f"Scan summary: {success_count} successful, {failure_count} failed")
-              
-              # Write results to file for GitHub Actions to use
-              write_results_to_file(results)
-              
-              # Return non-zero exit code if any file processing failed
-              return 0 if failure_count == 0 else 1
-          
-          if __name__ == "__main__":
-              try:
-                  exit_code = main()
-                  sys.exit(exit_code)
-              except KeyboardInterrupt:
-                  logging.info("Process interrupted.")
-                  sys.exit(0)
-              except Exception as e:
-                  logging.error(f"Error: {str(e)}")
-                  sys.exit(1)
-          EOL
+          python -c "
+with open('hybrid_analysis_script.py', 'w') as f:
+    f.write('''#!/usr/bin/env python3
+\"\"\"
+Hybrid Analysis Scanner
+This script submits files to the Hybrid Analysis v2 API and checks for threats.
+\"\"\"
+
+import os
+import sys
+import time
+import json
+import requests
+import logging
+from datetime import datetime
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+def read_api_key(filename=\"./temp/falcon.txt\"):
+    \"\"\"Read the API key from the specified file.\"\"\"
+    try:
+        with open(filename, 'r') as f:
+            api_key = f.read().strip()
+            if not api_key:
+                logging.error(f\"API key file '{filename}' is empty\")
+                sys.exit(1)
+            logging.info(f\"API key found. Length: {len(api_key)} characters\")
+            return api_key
+    except FileNotFoundError:
+        logging.error(f\"API key file '{filename}' not found\")
+        sys.exit(1)
+    except Exception as e:
+        logging.error(f\"Error reading API key: {str(e)}\")
+        sys.exit(1)
+
+def submit_file(file_path, api_key):
+    \"\"\"Submit a file to the Hybrid Analysis v2 API.\"\"\"
+    logging.info(f\"Submitting file: {file_path}\")
+    
+    # Verify file exists and check size
+    if not os.path.exists(file_path):
+        logging.error(f\"File not found: {file_path}\")
+        return None
+        
+    file_size = os.path.getsize(file_path)
+    logging.info(f\"File size: {file_size} bytes ({file_size / (1024*1024):.2f} MB)\")
+    
+    url = \"https://www.hybrid-analysis.com/api/v2/submit/file\"
+    logging.info(f\"API endpoint: {url}\")
+    
+    headers = {
+        \"api-key\": api_key,
+        \"User-Agent\": \"Hybrid Analysis GitHub Action\",
+        \"Accept\": \"application/json\"
+    }
+    
+    import mimetypes
+    mime_type = mimetypes.guess_type(file_path)[0]
+    logging.info(f\"File MIME type: {mime_type}\")
+    
+    with open(file_path, 'rb') as f:
+        files = {'file': (os.path.basename(file_path), f)}
+        
+        data = {
+            \"environment_id\": \"400\",  # Windows 11 64-bit
+            \"comment\": \"Submitted via GitHub Action\"
+        }
+        
+        try:
+            logging.info(\"Sending API request...\")
+            response = requests.post(url, headers=headers, files=files, data=data)
+            logging.info(f\"Response status code: {response.status_code}\")
+            
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            logging.error(f\"Error submitting file: {e}\")
+            if hasattr(e, 'response') and e.response:
+                try:
+                    err_json = e.response.json()
+                    logging.error(f\"Error details: {json.dumps(err_json)}\")
+                except json.JSONDecodeError:
+                    logging.error(f\"Error response: {e.response.text}\")
+            return None
+
+def check_report_status(job_id, api_key):
+    \"\"\"Check the status of a submitted analysis job.\"\"\"
+    url = f\"https://www.hybrid-analysis.com/api/v2/report/{job_id}/summary\"
+    
+    headers = {
+        \"api-key\": api_key,
+        \"User-Agent\": \"Hybrid Analysis GitHub Action\",
+        \"Accept\": \"application/json\"
+    }
+    
+    try:
+        response = requests.get(url, headers=headers)
+        
+        if response.status_code != 200:
+            return None
+        
+        return response.json()
+    except requests.exceptions.RequestException:
+        return None
+
+def process_file(file_path, api_key):
+    \"\"\"Process a single file\"\"\"
+    logging.info(f\"Starting scan for file: {file_path}\")
+    
+    # Validate file path
+    if not os.path.exists(file_path):
+        logging.error(f\"File does not exist: {file_path}\")
+        # Try with and without leading slash
+        alt_path = file_path.lstrip('/')
+        if os.path.exists(alt_path):
+            logging.info(f\"Found alternative path: {alt_path}\")
+            file_path = alt_path
+        else:
+            # Try with repository root path
+            repo_path = os.path.join(os.getcwd(), file_path)
+            if os.path.exists(repo_path):
+                logging.info(f\"Found repository path: {repo_path}\")
+                file_path = repo_path
+            else:
+                logging.error(f\"File could not be found at any path variant\")
+                return False, None
+    
+    # Submit file for analysis
+    submission = submit_file(file_path, api_key)
+    
+    if not submission:
+        logging.error(\"Failed to get response from submission API.\")
+        return False, None
+        
+    if 'job_id' not in submission:
+        logging.error(\"Failed to get job ID from submission.\")
+        
+        # Check for alternative IDs or SHA256
+        if 'sha256' in submission:
+            logging.info(f\"SHA256 hash found: {submission['sha256']}\")
+            report_url = f\"https://www.hybrid-analysis.com/sample/{submission['sha256']}\"
+            logging.info(f\"Results URL: {report_url}\")
+            return True, report_url
+            
+        if 'scan_id' in submission:
+            job_id = submission['scan_id']
+            logging.info(f\"Using scan_id as job_id for polling: {job_id}\")
+        else:
+            return False, None
+    else:
+        job_id = submission['job_id']
+        logging.info(f\"File submitted successfully. Job ID: {job_id}\")
+    
+    # Set default report URL in case we can't get one later
+    report_url = None
+    if 'sha256' in submission:
+        report_url = f\"https://www.hybrid-analysis.com/sample/{submission['sha256']}\"
+    
+    # Poll for results - with reasonable timeout
+    logging.info(\"Waiting for analysis to complete...\")
+    max_attempts = 10
+    attempt = 0
+    
+    while attempt < max_attempts:
+        attempt += 1
+        logging.info(f\"Checking status (attempt {attempt}/{max_attempts})...\")
+        time.sleep(30)  # Wait between status checks
+        
+        report = check_report_status(job_id, api_key)
+        
+        if not report:
+            continue
+        
+        status = report.get('state', '')
+        
+        if status == 'SUCCESS':
+            logging.info(\"Analysis complete!\")
+            
+            # Check for threats
+            threat_score = report.get('threat_score', 0)
+            verdict = report.get('verdict', 'Unknown')
+            
+            logging.info(f\"Results:\")
+            logging.info(f\"  Threat Score: {threat_score}/100\")
+            logging.info(f\"  Verdict: {verdict}\")
+            
+            # Log report URL
+            if 'sha256' in report:
+                report_url = f\"https://www.hybrid-analysis.com/sample/{report['sha256']}\"
+                logging.info(f\"Full report: {report_url}\")
+            
+            return True, report_url
+        
+        elif status == 'ERROR':
+            error_msg = report.get('error', 'Unknown error')
+            logging.error(f\"Analysis failed: {error_msg}\")
+            return False, report_url
+        
+        elif status == 'IN_PROGRESS':
+            logging.info(\"Analysis still in progress...\")
+        
+        else:
+            logging.info(f\"Status: {status}\")
+    
+    logging.warning(\"Timeout waiting for analysis to complete.\")
+    if 'sha256' in submission:
+        report_url = f\"https://www.hybrid-analysis.com/sample/{submission['sha256']}\"
+        logging.info(f\"Check status at: {report_url}\")
+    elif job_id:
+        logging.info(f\"Job ID: {job_id}\")
+    
+    # Return True even on timeout since the file was successfully submitted
+    return True, report_url
+
+def write_results_to_file(results):
+    \"\"\"Write scan results to a file for GitHub Actions to read\"\"\"
+    with open(\"scan_results.json\", \"w\") as f:
+        json.dump(results, f)
+    logging.info(f\"Scan results written to scan_results.json\")
+
+def main():
+    # Dictionary to store results
+    results = {}
+    
+    # Process environment variable with list of files
+    files_to_process = os.environ.get('CHANGED_FILES', '').strip().split('\\n')
+    files_to_process = [f for f in files_to_process if f.strip()]
+    
+    # Log working directory and file existence for debugging
+    logging.info(f\"Current working directory: {os.getcwd()}\")
+    logging.info(f\"Repository contents: {os.listdir('.')}\")
+    
+    if \"Annual Security Reports\" in os.listdir('.'):
+        logging.info(f\"Security Reports directory exists with contents: {os.listdir('Annual Security Reports')}\")
+    
+    if not files_to_process:
+        logging.info(\"No files detected in CHANGED_FILES environment variable\")
+        
+        # Fallback: Manually look for PDF files as a last resort
+        logging.info(\"Attempting to locate PDF files manually...\")
+        for root, dirs, files in os.walk(\"Annual Security Reports\"):
+            for file in files:
+                if file.lower().endswith(('.pdf', '.docx', '.pptx')):
+                    full_path = os.path.join(root, file)
+                    logging.info(f\"Found document file: {full_path}\")
+                    files_to_process.append(full_path)
+                    # Just get the most recent file
+                    break
+            if files_to_process:
+                break
+    
+    if not files_to_process:
+        logging.info(\"No files to process after all detection methods\")
+        return 0
+    
+    logging.info(f\"Found {len(files_to_process)} files to scan:\")
+    for file_idx, file_path in enumerate(files_to_process):
+        logging.info(f\"  {file_idx+1}. {file_path} (exists: {os.path.exists(file_path)})\")
+    
+    # Read API key from file
+    api_key = read_api_key()
+    
+    # Test API connectivity
+    test_url = \"https://www.hybrid-analysis.com/api/v2/key/current\"
+    logging.info(\"Testing API connectivity\")
+    try:
+        headers = {
+            \"api-key\": api_key,
+            \"User-Agent\": \"Hybrid Analysis GitHub Action\",
+            \"Accept\": \"application/json\"
+        }
+        response = requests.get(test_url, headers=headers)
+        if response.status_code == 200:
+            api_info = response.json()
+            logging.info(f\"API key is valid. API status: {response.status_code}\")
+        else:
+            logging.warning(f\"API test failed with status {response.status_code}\")
+            if hasattr(response, 'text'):
+                logging.warning(f\"Response text: {response.text[:500]}\")
+            return 1
+    except Exception as e:
+        logging.warning(f\"API connection test failed: {e}\")
+        return 1
+    
+    success_count = 0
+    failure_count = 0
+    
+    # Process each file
+    for file_path in files_to_process:
+        logging.info(f\"Processing file: {file_path}\")
+        success, report_url = process_file(file_path, api_key)
+        
+        # Store the result and report URL
+        results[file_path] = {
+            \"success\": success,
+            \"report_url\": report_url if report_url else \"No report URL available\",
+            \"scan_time\": datetime.now().isoformat(),
+            \"filename\": os.path.basename(file_path)
+        }
+        
+        if success:
+            success_count += 1
+        else:
+            failure_count += 1
+    
+    logging.info(f\"Scan summary: {success_count} successful, {failure_count} failed\")
+    
+    # Write results to file for GitHub Actions to use
+    write_results_to_file(results)
+    
+    # Return non-zero exit code if any file processing failed
+    return 0 if failure_count == 0 else 1
+
+if __name__ == \"__main__\":
+    try:
+        exit_code = main()
+        sys.exit(exit_code)
+    except KeyboardInterrupt:
+        logging.info(\"Process interrupted.\")
+        sys.exit(0)
+    except Exception as e:
+        logging.error(f\"Error: {str(e)}\")
+        sys.exit(1)
+''')
+          "
           
           chmod +x ./hybrid_analysis_script.py
 
@@ -419,68 +420,79 @@ jobs:
         env:
           CHANGED_FILES: ${{ env.CHANGED_FILES }}
       
-      - name: Configure Git
+      - name: Process scan results
+        id: process-results
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-      
-      - name: Add scan results to commit message
-        run: |
-          # Read the results from the JSON file
+          # Process scan results into markdown and JSON formats
           if [ -f scan_results.json ]; then
-            # Parse the JSON and add URLs to commit messages
-            cat > ./update_commits.py << 'EOL'
-            #!/usr/bin/env python3
+            echo "Reading scan results from JSON file"
             
-            import os
-            import json
-            import subprocess
+            python -c "
+import json
+import os
+from datetime import datetime
+
+# Read scan results
+with open('scan_results.json', 'r') as f:
+    results = json.load(f)
+
+# Generate markdown summary
+with open('scan_summary.md', 'w') as f:
+    f.write('# Hybrid Analysis Security Scan Results\n\n')
+    f.write(f'Scan completed: {datetime.now().strftime(\"%Y-%m-%d %H:%M:%S\")}\n\n')
+    f.write('| File | Status | Report URL |\n')
+    f.write('| ---- | ------ | ---------- |\n')
+    
+    for file_path, scan_info in results.items():
+        filename = os.path.basename(file_path)
+        status = '✅ Success' if scan_info.get('success', False) else '❌ Failed'
+        report_url = scan_info.get('report_url', 'No URL available')
+        url_display = f'[View Report]({report_url})' if report_url and report_url != 'No report URL available' else 'No URL available'
+        f.write(f'| {filename} | {status} | {url_display} |\n')
+
+print('Scan summary generated in scan_summary.md')
+            "
             
-            try:
-                # Read the scan results
-                with open('scan_results.json', 'r') as f:
-                    results = json.load(f)
-                
-                # Process each file result
-                for file_path, scan_info in results.items():
-                    report_url = scan_info.get('report_url', '')
-                    if not report_url or report_url == "No report URL available":
-                        continue
-                    
-                    # Only proceed if the file still exists
-                    if not os.path.exists(file_path):
-                        print(f"File {file_path} no longer exists, skipping commit")
-                        continue
-                        
-                    # Create commit message
-                    commit_message = f"Add security scan results for {os.path.basename(file_path)}\n\nHybrid Analysis Report: {report_url}"
-                    
-                    try:
-                        # Add the file to git staging
-                        subprocess.run(['git', 'add', file_path], check=True)
-                        
-                        # Commit with the scan URL in the message
-                        subprocess.run(['git', 'commit', '--allow-empty', '-m', commit_message], check=True)
-                        print(f"Created commit for {file_path} with scan URL")
-                    except subprocess.CalledProcessError as e:
-                        print(f"Error creating commit for {file_path}: {str(e)}")
-            
-            except Exception as e:
-                print(f"Error processing scan results: {str(e)}")
-                exit(1)
-            EOL
-            
-            chmod +x ./update_commits.py
-            python ./update_commits.py
-            
-            # Push the changes
-            git push origin ${GITHUB_REF#refs/heads/}
+            echo "::set-output name=has_results::true"
           else
             echo "No scan_results.json file found"
+            echo "::set-output name=has_results::false"
           fi
-        
+      
+      - name: Upload scan results as artifact
+        if: steps.process-results.outputs.has_results == 'true'
+        uses: actions/upload-artifact@v3
+        with:
+          name: security-scan-results
+          path: |
+            scan_results.json
+            scan_summary.md
+          retention-days: 90
+          if-no-files-found: error
+      
+      - name: Generate GitHub Job Summary
+        if: steps.process-results.outputs.has_results == 'true'
+        run: |
+          # Add the scan results to the job summary
+          cat scan_summary.md >> $GITHUB_STEP_SUMMARY
+          
+          # Count total scans and issues found
+          python -c "
+import json
+total = 0
+issues = 0
+with open('scan_results.json', 'r') as f:
+    results = json.load(f)
+    total = len(results)
+    for file_path, scan_info in results.items():
+        if not scan_info.get('success', False):
+            issues += 1
+print(f'::set-output name=total_scans::{total}')
+print(f'::set-output name=issues_found::{issues}')
+          " >> $GITHUB_OUTPUT
+          
       - name: Clean up sensitive files
         if: always()
         run: |
-          # Always make sure to clean up API key file
+          # Always clean up API key file
           rm -rf ./temp
