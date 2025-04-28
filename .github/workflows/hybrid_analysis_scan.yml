@@ -83,7 +83,7 @@ jobs:
         
       - name: Create hybrid analysis script
         run: |
-          cat > hybrid_analysis_script.py << 'EOL'
+          cat > hybrid_analysis_script.py << 'EOF'
 #!/usr/bin/env python3
 """
 Hybrid Analysis Scanner
@@ -410,7 +410,7 @@ if __name__ == "__main__":
     except Exception as e:
         logging.error(f"Error: {str(e)}")
         sys.exit(1)
-EOL
+EOF
           
           chmod +x ./hybrid_analysis_script.py
 
@@ -426,7 +426,7 @@ EOL
           if [ -f scan_results.json ]; then
             echo "Reading scan results from JSON file"
             
-            python - << 'EOL'
+            cat > process_results.py << 'EOF'
 import json
 import os
 from datetime import datetime
@@ -450,7 +450,8 @@ with open('scan_summary.md', 'w') as f:
         f.write(f'| {filename} | {status} | {url_display} |\n')
 
 print('Scan summary generated in scan_summary.md')
-EOL
+EOF
+            python process_results.py
             
             echo "has_results=true" >> $GITHUB_OUTPUT
           else
@@ -476,7 +477,7 @@ EOL
           cat scan_summary.md >> $GITHUB_STEP_SUMMARY
           
           # Count total scans and issues found
-          python - << 'EOL' >> $GITHUB_OUTPUT
+          cat > count_results.py << 'EOF'
 import json
 total = 0
 issues = 0
@@ -488,7 +489,8 @@ with open('scan_results.json', 'r') as f:
             issues += 1
 print(f'total_scans={total}')
 print(f'issues_found={issues}')
-EOL
+EOF
+          python count_results.py >> $GITHUB_OUTPUT
           
       - name: Clean up sensitive files
         if: always()
