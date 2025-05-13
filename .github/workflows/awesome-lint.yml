@@ -1,0 +1,37 @@
+name: Awesome Lint
+
+on:
+  push:
+    paths:
+      - 'README.md'
+  pull_request:
+    paths:
+      - 'README.md'
+  workflow_dispatch:  # Allows manual triggering of the workflow
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for proper linting
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --global awesome-lint
+
+      - name: Run awesome-lint
+        run: awesome-lint
+        
+      - name: Check if lint exceptions exist
+        run: |
+          if grep -q "lint ignore" README.md; then
+            echo "Note: README.md contains lint ignore directives. This is expected for certain cases."
+          fi
