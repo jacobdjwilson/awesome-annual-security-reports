@@ -22,6 +22,7 @@ jobs:
         with:
           fetch-depth: 2
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.ref }}
           
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -33,29 +34,63 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Find added security report files
+      - name: Debug branch and git info
+        run: |
+          echo "Current branch: ${{ github.ref }}"
+          echo "Event name: ${{ github.event_name }}"
+          echo "Before SHA: ${{ github.event.before }}"
+          echo "After SHA: ${{ github.event.after }}"
+          echo "Current directory files:"
+          ls -la
+          echo "Annual Security Reports directory:"
+          ls -la "Annual Security Reports" || echo "Directory not found"
+
+      - name: Find security report files to scan
         id: changed-files
         run: |
+          # Find both added (A) and modified (M) files
           echo "FILES_TO_SCAN<<EOF" >> $GITHUB_ENV
           git diff --name-status ${{ github.event.before }} ${{ github.event.after }} | 
-            grep -E "^A.*Annual Security Reports/.*(\.pdf|\.docx|\.pptx)$" | 
+            grep -E "^[AM].*Annual Security Reports/.*(\.pdf|\.docx|\.pptx)$" | 
             cut -f2 >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
           
-          # Debug output
+          # Show all detected changed files for debugging
+          echo "All changed files:"
+          git diff --name-status ${{ github.event.before }} ${{ github.event.after }}
+          
+          # Count files to scan
           count=$(git diff --name-status ${{ github.event.before }} ${{ github.event.after }} | 
-            grep -E "^A.*Annual Security Reports/.*(\.pdf|\.docx|\.pptx)$" | 
+            grep -E "^[AM].*Annual Security Reports/.*(\.pdf|\.docx|\.pptx)$" | 
             wc -l)
           echo "Found $count files to scan"
+          
+          # List files to scan for debugging
+          echo "Files marked for scanning:"
+          git diff --name-status ${{ github.event.before }} ${{ github.event.after }} | 
+            grep -E "^[AM].*Annual Security Reports/.*(\.pdf|\.docx|\.pptx)$" | 
+            cut -f2
+
+      - name: Fall back to manual file detection if nothing found
+        if: ${{ !env.FILES_TO_SCAN }}
+        run: |
+          echo "No files detected via git diff, trying manual detection..."
+          echo "FILES_TO_SCAN<<EOF" >> $GITHUB_ENV
+          find "Annual Security Reports" -type f -name "*.pdf" -o -name "*.docx" -o -name "*.pptx" | head -n 5 >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          
+          # Show detected files
+          echo "Files detected manually:"
+          find "Annual Security Reports" -type f -name "*.pdf" -o -name "*.docx" -o -name "*.pptx" | head -n 5
 
       - name: Check for files to scan
         id: check-files
         run: |
           if [ -z "${{ env.FILES_TO_SCAN }}" ]; then
-            echo "No new security report files found to scan."
+            echo "No security report files found to scan."
             echo "SHOULD_SCAN=false" >> $GITHUB_ENV
           else
-            echo "Found files to scan."
+            echo "Found files to scan. Will proceed with security scanning."
             echo "SHOULD_SCAN=true" >> $GITHUB_ENV
           fi
 
@@ -138,6 +173,26 @@ jobs:
               except:
                   return None
           
+          def add_github_annotation(file_path, report_url, verdict, threat_score):
+              """Add GitHub workflow annotation with scan results"""
+              verdict_suffix = ""
+              if verdict.lower() == "malicious":
+                  level = "error"
+                  verdict_suffix = "⚠️ MALICIOUS"
+              elif verdict.lower() == "suspicious":
+                  level = "warning"
+                  verdict_suffix = "⚠️ SUSPICIOUS"
+              else:
+                  level = "notice"
+                  
+              message = f"Security Scan ({verdict}{verdict_suffix}): Threat Score {threat_score}/100"
+              
+              # Add the annotation that will appear in the GitHub Actions UI
+              print(f"::workflow-command {level} file={file_path}::{message}")
+              print(f"::workflow-command {level} file={file_path}::Hybrid Analysis Report: {report_url}")
+              
+              return True
+          
           def add_commit_note(file_path, report_url, verdict, threat_score):
               """Add scan results to the commit notes for the file"""
               try:
@@ -167,10 +222,18 @@ jobs:
                   ], check=True)
                   
                   logging.info(f"Added commit note to {file_path} (commit {commit_hash}): {note_msg}")
+                  
+                  # Also add a GitHub workflow annotation
+                  add_github_annotation(file_path, report_url, verdict, threat_score)
+                  
                   return True
               except subprocess.CalledProcessError as e:
                   logging.error(f"Failed to add commit note: {e}")
                   logging.error(f"Command output: {e.stdout} - {e.stderr}")
+                  
+                  # Even if git notes fail, still add the annotation
+                  add_github_annotation(file_path, report_url, verdict, threat_score)
+                  
                   return False
           
           def process_file(file_path, api_key):
