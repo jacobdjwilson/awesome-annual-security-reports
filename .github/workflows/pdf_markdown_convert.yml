@@ -1,6 +1,6 @@
 name: PDF to Markdown Conversion
 
-on:
+#on:
   push:
     branches: [main, development]
     paths:
