@@ -27,7 +27,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: 'pip'
           
       - name: Install dependencies
         run: |
@@ -37,23 +36,34 @@ jobs:
       - name: Find added security report files
         id: changed-files
         run: |
-          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
+          echo "FILES_TO_SCAN<<EOF" >> $GITHUB_ENV
           git diff --name-status ${{ github.event.before }} ${{ github.event.after }} | 
             grep -E "^A.*Annual Security Reports/.*(\.pdf|\.docx|\.pptx)$" | 
             cut -f2 >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
           
           # Debug output
-          echo "Files detected for scanning:"
-          git diff --name-status ${{ github.event.before }} ${{ github.event.after }} | 
+          count=$(git diff --name-status ${{ github.event.before }} ${{ github.event.after }} | 
             grep -E "^A.*Annual Security Reports/.*(\.pdf|\.docx|\.pptx)$" | 
-            cut -f2
+            wc -l)
+          echo "Found $count files to scan"
+
+      - name: Check for files to scan
+        id: check-files
+        run: |
+          if [ -z "${{ env.FILES_TO_SCAN }}" ]; then
+            echo "No new security report files found to scan."
+            echo "SHOULD_SCAN=false" >> $GITHUB_ENV
+          else
+            echo "Found files to scan."
+            echo "SHOULD_SCAN=true" >> $GITHUB_ENV
+          fi
 
       - name: Run security scan and update commit notes
-        if: env.CHANGED_FILES != ''
+        if: env.SHOULD_SCAN == 'true'
         env:
           HYBRID_ANALYSIS_API_KEY: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILES_TO_SCAN: ${{ env.FILES_TO_SCAN }}
         run: |
           cat > scan_and_annotate.py << 'EOL'
           #!/usr/bin/env python3
@@ -131,13 +141,24 @@ jobs:
           def add_commit_note(file_path, report_url, verdict, threat_score):
               """Add scan results to the commit notes for the file"""
               try:
+                  # Get the file's commit hash
+                  result = subprocess.run(
+                      ["git", "log", "-n", "1", "--pretty=format:%H", "--", file_path],
+                      capture_output=True, text=True, check=True
+                  )
+                  commit_hash = result.stdout.strip()
+                  
+                  if not commit_hash:
+                      logging.error(f"Could not get commit hash for {file_path}")
+                      return False
+                  
                   # Format the note message
                   note_msg = f"Security Scan Results: {verdict} (Score: {threat_score}/100) - {report_url}"
                   
-                  # Add note to the file in Git
+                  # Add note to the commit
                   subprocess.run([
                       "git", "notes", "--ref=security-scan", "add", "-m", 
-                      note_msg, "--", file_path
+                      note_msg, commit_hash
                   ], check=True)
                   
                   # Push the note to the repository
@@ -145,10 +166,11 @@ jobs:
                       "git", "push", "origin", "refs/notes/security-scan"
                   ], check=True)
                   
-                  logging.info(f"Added commit note to {file_path}: {note_msg}")
+                  logging.info(f"Added commit note to {file_path} (commit {commit_hash}): {note_msg}")
                   return True
               except subprocess.CalledProcessError as e:
                   logging.error(f"Failed to add commit note: {e}")
+                  logging.error(f"Command output: {e.stdout} - {e.stderr}")
                   return False
           
           def process_file(file_path, api_key):
@@ -226,14 +248,14 @@ jobs:
                   return 1
               
               # Get list of files to process
-              files_to_process = os.environ.get('CHANGED_FILES', '').strip().split('\n')
+              files_to_process = os.environ.get('FILES_TO_SCAN', '').strip().split('\n')
               files_to_process = [f for f in files_to_process if f.strip()]
               
               if not files_to_process:
                   logging.info("No files to process")
                   return 0
               
-              logging.info(f"Found {len(files_to_process)} files to scan")
+              logging.info(f"Processing {len(files_to_process)} files")
               
               # Test API connectivity
               logging.info("Testing API connectivity")
@@ -271,11 +293,13 @@ jobs:
                   sys.exit(1)
           EOL
           
+          # Make script executable
+          chmod +x scan_and_annotate.py
+          
           # Run the scan and annotation script
           python scan_and_annotate.py
 
-      - name: Clean up
-        if: always()
+      - name: Skip scan message
+        if: env.SHOULD_SCAN != 'true'
         run: |
-          # Only clean up if needed - no separate API key files in this version
-          echo "Cleanup completed"
+          echo "No security reports to scan. Skipping the security scan."
