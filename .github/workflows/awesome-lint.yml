@@ -111,10 +111,10 @@ jobs:
             echo "Linting succeeded!"
           fi
           
-      # Optional: Create an artifact with the error analysis
+      # Create an artifact with the error analysis
       - name: Upload error analysis
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lint-error-analysis
           path: error_analysis.md
