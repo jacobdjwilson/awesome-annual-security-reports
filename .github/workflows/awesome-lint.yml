@@ -25,75 +25,33 @@ jobs:
       - name: Install awesome-lint
         run: npm install --global awesome-lint
         
-      # Run lint check and capture all errors
-      - name: Run awesome-lint and capture errors
+      # Run lint check and capture errors
+      - name: Run awesome-lint and process errors
         id: lint_check
         run: |
-          awesome-lint > lint_errors.txt || true
-          cat lint_errors.txt
+          # Capture full awesome-lint output
+          awesome-lint > lint_output.txt || true
           
-      # Analyze and display detailed information for all linting issues
-      - name: Analyze lint errors
-        if: always()
-        run: |
-          echo "## Detailed Lint Error Analysis" > error_analysis.md
+          # Display the raw output for reference
+          cat lint_output.txt
           
-          # Extract line numbers and error types from the lint output
-          grep -E "✖ [0-9]+:[0-9]+" lint_errors.txt | while read -r error_line; do
-            # Extract line number, column, and error message
-            if [[ $error_line =~ ✖\ ([0-9]+):([0-9]+)\ (.+) ]]; then
+          # Process each error line and create GitHub annotations
+          grep -E "✖ [0-9]+:[0-9]+" lint_output.txt | while read -r error_line; do
+            if [[ $error_line =~ ✖[[:space:]]+([0-9]+):([0-9]+)[[:space:]]+(.+) ]]; then
               LINE_NUM=${BASH_REMATCH[1]}
               COL_NUM=${BASH_REMATCH[2]}
               ERROR_MSG=${BASH_REMATCH[3]}
               
-              # Get the actual line from README.md
-              CONTENT_LINE=$(sed -n "${LINE_NUM}p" README.md)
+              # Extract the actual content of the line with the error
+              LINE_CONTENT=$(sed -n "${LINE_NUM}p" README.md)
               
-              # Create a pointer to the specific column
-              POINTER=$(printf "%${COL_NUM}s" | tr ' ' ' ')
-              POINTER="${POINTER}^"
-              
-              # Format and add to the analysis
-              echo -e "\n### Error on line ${LINE_NUM}, column ${COL_NUM}: ${ERROR_MSG}\n" >> error_analysis.md
-              echo '```' >> error_analysis.md
-              echo "${CONTENT_LINE}" >> error_analysis.md
-              echo "${POINTER}" >> error_analysis.md
-              echo '```' >> error_analysis.md
-              
-              # Add possible fix suggestions based on error type
-              if [[ $ERROR_MSG == *"match-punctuation"* ]]; then
-                echo -e "\n**Suggestion**: Check for unmatched quotes, parentheses, or brackets on this line." >> error_analysis.md
-              elif [[ $ERROR_MSG == *"no-dead-urls"* ]]; then
-                echo -e "\n**Suggestion**: The URL on this line appears to be broken or inaccessible." >> error_analysis.md
-              elif [[ $ERROR_MSG == *"awesome-list-item"* ]]; then
-                echo -e "\n**Suggestion**: Ensure list items follow the Awesome List formatting guidelines." >> error_analysis.md
-              else
-                echo -e "\n**Suggestion**: Review this line for formatting issues according to Awesome List guidelines." >> error_analysis.md
-              fi
-            fi
-          done
-          
-          # Count total errors
-          ERROR_COUNT=$(grep -c "✖" lint_errors.txt)
-          echo -e "\n## Summary\n" >> error_analysis.md
-          echo "Total errors found: ${ERROR_COUNT}" >> error_analysis.md
-          
-          # Display the analysis
-          cat error_analysis.md
-          
-          # Generate GitHub workflow annotations for each error
-          grep -E "✖ [0-9]+:[0-9]+" lint_errors.txt | while read -r error_line; do
-            if [[ $error_line =~ ✖\ ([0-9]+):([0-9]+)\ (.+) ]]; then
-              LINE_NUM=${BASH_REMATCH[1]}
-              COL_NUM=${BASH_REMATCH[2]}
-              ERROR_MSG=${BASH_REMATCH[3]}
-              echo "::error file=README.md,line=${LINE_NUM},col=${COL_NUM}::${ERROR_MSG}"
+              # Create a GitHub annotation with line content included in the message
+              echo "::error file=README.md,line=${LINE_NUM},col=${COL_NUM}::${ERROR_MSG} | Line content: ${LINE_CONTENT}"
             fi
           done
       
       # Check for lint ignore directives
       - name: Check if lint exceptions exist
-        if: always()
         run: |
           if grep -q "lint ignore" README.md; then
             echo "Note: README.md contains lint ignore directives. This is expected for certain cases."
@@ -101,20 +59,11 @@ jobs:
       
       # Final check - fail the workflow if linting failed
       - name: Determine workflow status
-        if: always()
         run: |
-          if grep -q "✖" lint_errors.txt; then
-            echo "::error::Linting failed. Please fix the errors listed above."
+          if grep -q "✖" lint_output.txt; then
+            echo "::error::Linting failed. Please fix the errors shown above."
             echo "If these are expected issues, add appropriate lint ignore directives."
             exit 1
           else
             echo "Linting succeeded!"
           fi
-          
-      # Create an artifact with the error analysis
-      - name: Upload error analysis
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: lint-error-analysis
-          path: error_analysis.md
