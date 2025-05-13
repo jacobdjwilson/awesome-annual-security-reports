@@ -64,14 +64,14 @@ Reports are organized into two main categories based on their data sources:
 - **Analysis:** Generated through quantification and qualification of data from sensor networks or cybersecurity services.
 - **Survey:** Derived from surveys, interviews, or consulting engagements that capture industry sentiment and practices.
 
-The most recent versions of reports are listed below. Older editions are preserved in their corresponding yearly directories. Reports from sources that have not been updated in the last three years will no longer appear in this `README.md` but will remain accessible in the respective year’s directory.
+The most recent versions of reports are listed below. Older editions are preserved in their corresponding yearly directories. Reports from sources that have not been updated in the last three years will no longer appear in this `README.md` but will remain accessible in the respective year's directory.
 
 Reports are organized by their primary focus. Although many reports span multiple topics, this classification provides a clearer structure. Within each topic, reports are listed alphabetically.
 
 ## Analysis Reports
 
 ## Threat Intelligence
-- [ASD](https://www.cyber.gov.au/about-us/view-all-content/reports-and-statistics/annual-cyber-threat-report-2023-2024) - [Cyber Threat Report](Annual%20Security%20Reports/2024/ASD-Cyber-Threat-Report-2024.pdf) (2024) - Insights into Australia’s evolving cyber threat landscape, attack trends, and defense strategies.
+- [ASD](https://www.cyber.gov.au/about-us/view-all-content/reports-and-statistics/annual-cyber-threat-report-2023-2024) - [Cyber Threat Report](Annual%20Security%20Reports/2024/ASD-Cyber-Threat-Report-2024.pdf) (2024) - Insights into Australia's evolving cyber threat landscape, attack trends, and defense strategies.
 - [ArticWolfLabs](https://arcticwolf.com/arctic-wolf-labs-2025-cybersecurity-predictions/) - [Cybersecurity Predictions](Annual%20Security%20Reports/2025/ArticWolfLabs-Cybersecurity-Predictions-2025.pdf) (2025) -  Aims to prepare security teams for the challenges ahead by offering insights and advice to mitigate threat actor risks in an evolving threat landscape.
 - [BD](https://news.bd.com/2024-06-13-BD-Issues-Annual-Product-Security-Report,-Highlighting-Transparency-and-Collaboration) - [Product Security Annual Report](Annual%20Security%20Reports/2023/BD-Product-Security-Annual-Report-2023.pdf) (2023) - Highlights cybersecurity threats in healthcare, addressing the growing sophistication and frequency of cyberattacks through transparency, collaboration, and adherence to high security standards.
 - [Blackpoint](https://blackpointcyber.com/resources/cybersecurity-annual-threat-report-2024/) - [Annual Threat Report](Annual%20Security%20Reports/2024/Blackpoint-Cyber-Annual-Threat-Report-2024.pdf) (2024) - Analyzes current cyber threats, attack techniques, and emerging trends, providing actionable intelligence for organizations to enhance their security posture.
