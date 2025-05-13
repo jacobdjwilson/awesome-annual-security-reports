@@ -6,6 +6,7 @@
 
 # Awesome Annual Security Reports [![Awesome](https://awesome.re/badge-flat2.svg)](https://awesome.re)
 > A curated list of annual cyber security reports - Centralized annual cybersecurity analysis and industry surveys
+> test
 
 **Definition:** The cybersecurity landscape is constantly evolving, making it hard for CIOs, CISOs, and security leaders to keep up. They're flooded with annual reports from research consultancies, industry working groups, non-profits, and government agencies, and sifting through marketing material to find actionable insights is a major challenge. This list aims to cut through the noise by providing a vendor-neutral resource for the latest security trends, tools, and partnerships. It curates information from trusted sources, making it easier for security leaders to make informed decisions.
 
