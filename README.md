@@ -17,6 +17,7 @@
 When possible, all reports will be sourced from their original authors and uploaded to [Hybrid Analysis](https://www.hybrid-analysis.com/) to provide an added level of confidence. The resulting analysis link will be included in the PDF commit notes. Additionally, all PDF reports will be converted to Markdown using AI, based on the [AI Prompt](AI_PROMPT_MARKDOWN_CONVERT.md) defined in this repository.
 
 **Acknowledgement:** I would like to give recognition for other works that inspired this collection. [Richard Stiennon](https://it-harvest.com/about/) produces an annual, comprehensive industry analysis that surpasses the scope of this list and deserves attention. Additionally, [Rick Howard](https://www.linkedin.com/in/rickhoward/)'s cyber cannon list of must-read books is an invaluable resource, catering to both leadership and practitioner levels within the field.
+test
 
 **Annual Report Counts:** 
 
