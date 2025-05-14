@@ -9,6 +9,7 @@ on:
     branches: [main, development]
     paths:
       - 'Annual Security Reports/**/*.pdf'
+  workflow_dispatch:
 
 jobs:
   convert-pdf-to-markdown:
@@ -30,13 +31,8 @@ jobs:
       
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install --upgrade pip
           pip install markitdown[pdf] google-generativeai
-          # Create a simple requirements file for potential future caching
-          echo "markitdown[pdf]" > requirements.txt
-          echo "google-generativeai" >> requirements.txt
-          # Verify installations
-          pip list
       
       - name: Find changed PDF files
         id: find-pdfs
@@ -45,16 +41,15 @@ jobs:
             # For pull requests
             CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -E "Annual Security Reports/.*\.pdf$" || true)
           elif [[ -n "${{ github.event.before }}" && "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]]; then
-            # For direct pushes with valid before/after commits
+            # For direct pushes
             CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | grep -E "Annual Security Reports/.*\.pdf$" || true)
           else
-            # Fallback for first push or when before/after aren't available
-            echo "Getting all PDF files since this appears to be an initial commit"
+            # For manual runs or initial pushes
             CHANGED_FILES=$(find "Annual Security Reports" -name "*.pdf" 2>/dev/null || true)
           fi
           
           if [[ -z "$CHANGED_FILES" ]]; then
-            echo "No PDF files were found. Exiting."
+            echo "No PDF files found. Exiting."
             echo "pdfs_changed=false" >> $GITHUB_OUTPUT
             exit 0
           fi
@@ -63,54 +58,42 @@ jobs:
           echo "pdf_files<<EOF" >> $GITHUB_OUTPUT
           echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
-          
-          # Debug output
-          echo "Found the following PDF files:"
-          echo "$CHANGED_FILES"
+      
+      - name: Create prompt file if needed
+        run: |
+          PROMPT_PATH=".github/ai_prompts/pdf_to_markdown_prompt.md"
+          mkdir -p $(dirname "$PROMPT_PATH")
+          if [ ! -f "$PROMPT_PATH" ]; then
+            cat > "$PROMPT_PATH" << 'EOL'
+# PDF to Markdown Conversion Prompt
+
+Please convert the provided PDF text content into well-formatted Markdown.
+
+Follow these guidelines:
+1. Preserve the document structure with headings
+2. Maintain bullet points and numbered lists
+3. Preserve tables using Markdown table format
+4. Keep the same paragraph structure as the original
+
+Return only the converted Markdown without commentary.
+EOL
+            git config user.name "GitHub Action"
+            git config user.email "action@github.com"
+            git add "$PROMPT_PATH"
+            git commit -m "Create default PDF to Markdown prompt file v1.0"
+            git push https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF}
+          fi
       
       - name: Get prompt version
         id: get-prompt-version
         if: steps.find-pdfs.outputs.pdfs_changed == 'true'
         run: |
           PROMPT_PATH=".github/ai_prompts/pdf_to_markdown_prompt.md"
-          
-          # Create directories if they don't exist
-          mkdir -p $(dirname "$PROMPT_PATH")
-          
-          # Check if prompt file exists, create a default one if not
-          if [ ! -f "$PROMPT_PATH" ]; then
-            echo "Prompt file not found, creating default prompt..."
-            cat > "$PROMPT_PATH" << 'EOL'
-            # PDF to Markdown Conversion Prompt
-            
-            Please convert the provided PDF text content into well-formatted Markdown. 
-            
-            Follow these guidelines:
-            1. Preserve the document structure with appropriate headings (# for main titles, ## for subtitles, etc.)
-            2. Maintain bullet points and numbered lists
-            3. Preserve tables using Markdown table format
-            4. Include links with proper Markdown syntax
-            5. Represent emphasized text (bold, italics) appropriately
-            6. Keep the same paragraph structure as the original PDF
-            
-            Return only the converted Markdown without additional commentary.
-            EOL
-            git add "$PROMPT_PATH"
-            git commit -m "Create default PDF to Markdown prompt file"
-            git push https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF}
-            echo "Created default prompt file at $PROMPT_PATH"
-            PROMPT_VERSION="v1.0"
-          else
-            # Get the version from the last commit message if available
-            PROMPT_VERSION=$(git log -n 1 --pretty=format:"%s" -- "$PROMPT_PATH" | grep -oP "v\d+\.\d+(\.\d+)?" || echo "v1.0")
-          fi
-          
-          echo "Using prompt version: $PROMPT_VERSION"
+          PROMPT_VERSION=$(git log -n 1 --pretty=format:"%s" -- "$PROMPT_PATH" | grep -oP "v\d+\.\d+(\.\d+)?" || echo "v1.0")
           echo "prompt_version=$PROMPT_VERSION" >> $GITHUB_OUTPUT
       
       - name: Process PDF files
         if: steps.find-pdfs.outputs.pdfs_changed == 'true'
-        id: process-pdfs
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PROMPT_VERSION: ${{ steps.get-prompt-version.outputs.prompt_version }}
@@ -120,185 +103,104 @@ jobs:
           cat > process_pdfs.py << 'EOL'
           import os
           import sys
-          import re
           import google.generativeai as genai
           from pathlib import Path
           import subprocess
-          from concurrent.futures import ThreadPoolExecutor
-          import logging
-          
-          # Setup logging
-          logging.basicConfig(
-              level=logging.INFO,
-              format='%(asctime)s - %(levelname)s - %(message)s'
-          )
-          logger = logging.getLogger(__name__)
           
           # Setup Gemini API
           genai.configure(api_key=os.environ['GEMINI_API_KEY'])
           
-          # Define model to use - in order of preference
-          # Updated to include latest available Gemini models as of May 2025
+          # Define models to try in order of preference
           MODELS = ["gemini-3.0-pro", "gemini-2.5-flash", "gemini-2.0-pro", "gemini-1.5-pro"]
           
-          def get_available_model():
-              """Get the first available Gemini model from the preference list"""
-              for model in MODELS:
-                  try:
-                      genai.GenerativeModel(model)
-                      logger.info(f"Using Gemini model: {model}")
-                      return model
-                  except Exception as e:
-                      logger.warning(f"Model {model} not available: {e}")
-                      continue
-              logger.warning(f"No preferred models available. Falling back to {MODELS[-1]}")
-              return MODELS[-1]  # Fallback to the last model if none available
+          # Get the first available model
+          MODEL = None
+          for model in MODELS:
+              try:
+                  genai.GenerativeModel(model)
+                  MODEL = model
+                  print(f"Using model: {MODEL}")
+                  break
+              except:
+                  continue
           
-          # Set the model to use for this run
-          MODEL = get_available_model()
+          if not MODEL:
+              MODEL = MODELS[-1]  # Fallback to the last model
+              print(f"Falling back to model: {MODEL}")
           
           def read_prompt_file(path):
-              """Read the AI prompt file"""
-              try:
-                  with open(path, 'r') as file:
-                      return file.read()
-              except Exception as e:
-                  logger.error(f"Error reading prompt file: {e}")
-                  return None
+              with open(path, 'r') as file:
+                  return file.read()
           
           def extract_text_from_pdf(pdf_path):
-              """Extract text from PDF using markitdown"""
-              try:
-                  # Use the markitdown Python package for text extraction
-                  from markitdown import MarkItDown
-                  
-                  # Initialize MarkItDown with optimized settings
-                  md = MarkItDown(enable_plugins=False)
-                  
-                  # Convert PDF to text
-                  result = md.convert(str(pdf_path))
-                  
-                  # Return the text content
-                  return result.text_content
-              except Exception as e:
-                  logger.error(f"Error extracting text from PDF: {e}")
-                  return None
+              from markitdown import MarkItDown
+              md = MarkItDown(enable_plugins=False)
+              result = md.convert(str(pdf_path))
+              return result.text_content
           
           def generate_markdown_with_ai(pdf_text, prompt_text):
-              """Generate markdown from PDF text using Gemini AI"""
-              try:
-                  model = genai.GenerativeModel(MODEL)
-                  
-                  # Combine the prompt and PDF text
-                  full_prompt = f"{prompt_text}\n\nHere is the PDF content to convert:\n\n{pdf_text}"
-                  
-                  # Set generation config for best results
-                  generation_config = {
-                      "temperature": 0.2,
-                      "top_p": 0.8,
-                      "top_k": 40,
-                      "max_output_tokens": 8192,
-                  }
-                  
-                  # Generate markdown using Gemini
-                  response = model.generate_content(
-                      full_prompt,
-                      generation_config=generation_config
-                  )
-                  
-                  # Return the generated markdown
-                  return response.text
-              except Exception as e:
-                  logger.error(f"Error generating markdown with AI: {e}")
-                  return None
+              model = genai.GenerativeModel(MODEL)
+              full_prompt = f"{prompt_text}\n\nHere is the PDF content to convert:\n\n{pdf_text}"
+              response = model.generate_content(full_prompt)
+              return response.text
           
           def process_pdf(pdf_path, prompt_path, prompt_version):
-              """Process a PDF file and convert it to markdown"""
-              logger.info(f"Processing PDF: {pdf_path}")
+              print(f"Processing: {pdf_path}")
               
-              # Read the AI prompt
+              # Read the prompt
               prompt_text = read_prompt_file(prompt_path)
-              if not prompt_text:
-                  logger.error("Failed to read prompt file")
-                  return False
               
               # Extract text from PDF
               pdf_text = extract_text_from_pdf(pdf_path)
-              if not pdf_text:
-                  logger.error("Failed to extract text from PDF")
-                  return False
               
-              # Generate markdown with AI
+              # Generate markdown
               markdown_content = generate_markdown_with_ai(pdf_text, prompt_text)
-              if not markdown_content:
-                  logger.error("Failed to generate markdown with AI")
-                  return False
               
-              # Determine output path for markdown file
+              # Save markdown file
               relative_path = pdf_path.relative_to(Path('Annual Security Reports'))
               output_dir = Path('Markdown Conversions') / relative_path.parent
               output_path = output_dir / f"{pdf_path.stem}.md"
               
-              # Create output directory if it doesn't exist
               os.makedirs(output_dir, exist_ok=True)
               
-              # Write markdown content to file
               with open(output_path, 'w', encoding='utf-8') as f:
                   f.write(markdown_content)
               
-              logger.info(f"Created markdown file: {output_path}")
+              print(f"Created: {output_path}")
               
-              # Prepare commit message with processing details
-              commit_message = f"Converted {pdf_path.name} using AI Prompt {prompt_version} (AI Model {MODEL})"
+              # Commit the file
+              commit_message = f"Converted {pdf_path.name} using AI Prompt {prompt_version} (Model {MODEL})"
+              subprocess.run(["git", "config", "user.name", "GitHub Action"], check=True)
+              subprocess.run(["git", "config", "user.email", "action@github.com"], check=True)
+              subprocess.run(["git", "add", str(output_path)], check=True)
+              subprocess.run(["git", "commit", "-m", commit_message], check=True)
               
-              # Add and commit the new markdown file
-              try:
-                  subprocess.run(["git", "config", "user.name", "GitHub Action"], check=True)
-                  subprocess.run(["git", "config", "user.email", "action@github.com"], check=True)
-                  subprocess.run(["git", "add", str(output_path)], check=True)
-                  subprocess.run(["git", "commit", "-m", commit_message], check=True)
-                  logger.info(f"Committed {output_path} with message: {commit_message}")
-                  return True
-              except Exception as e:
-                  logger.error(f"Error committing file: {e}")
-                  return False
+              return True
           
           def main():
-              if len(sys.argv) < 3:
-                  logger.error("Usage: python process_pdfs.py <pdf_paths_file> <prompt_path> <prompt_version>")
-                  return 1
-              
               pdf_paths_file = sys.argv[1]
               prompt_path = sys.argv[2]
               prompt_version = sys.argv[3]
               
-              # Read the list of PDF paths
+              # Read PDF paths
               with open(pdf_paths_file, 'r') as f:
                   pdf_paths = [line.strip() for line in f.readlines()]
               
-              logger.info(f"Found {len(pdf_paths)} PDF files to process")
+              print(f"Processing {len(pdf_paths)} PDF files")
               
               success_count = 0
               
-              # Process PDFs in parallel with ThreadPoolExecutor
-              # Use max_workers based on available CPU cores (up to 4 for GitHub Actions)
-              max_workers = min(4, os.cpu_count() or 1)
-              
-              with ThreadPoolExecutor(max_workers=max_workers) as executor:
-                  results = []
-                  for pdf_path_str in pdf_paths:
-                      pdf_path = Path(pdf_path_str)
-                      results.append(
-                          executor.submit(process_pdf, pdf_path, prompt_path, prompt_version)
-                      )
-                  
-                  # Gather results
-                  for result in results:
-                      if result.result():
+              # Process each PDF
+              for pdf_path_str in pdf_paths:
+                  pdf_path = Path(pdf_path_str)
+                  try:
+                      if process_pdf(pdf_path, prompt_path, prompt_version):
                           success_count += 1
+                  except Exception as e:
+                      print(f"Error processing {pdf_path}: {e}")
               
-              logger.info(f"Successfully processed {success_count}/{len(pdf_paths)} PDFs")
-              return 0 if success_count == len(pdf_paths) else 1
+              print(f"Successfully processed {success_count}/{len(pdf_paths)} PDFs")
+              return 0 if success_count > 0 else 1
           
           if __name__ == "__main__":
               sys.exit(main())
@@ -310,9 +212,5 @@ jobs:
           # Run the Python script
           python process_pdfs.py pdf_paths.txt ".github/ai_prompts/pdf_to_markdown_prompt.md" "$PROMPT_VERSION"
           
-          # Push changes if there were any commits
-          if git diff-index --quiet HEAD --; then
-            echo "No changes to push"
-          else
-            git push https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF}
-          fi
+          # Push changes
+          git push https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF}
