@@ -1,0 +1,69 @@
+name: Awesome Lint
+on:
+  push:
+    paths:
+      - 'README.md'
+  pull_request:
+    paths:
+      - 'README.md'
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install awesome-lint
+        run: npm install --global awesome-lint
+        
+      # Run lint check and capture errors
+      - name: Run awesome-lint and process errors
+        id: lint_check
+        run: |
+          # Capture full awesome-lint output
+          awesome-lint > lint_output.txt || true
+          
+          # Display the raw output for reference
+          cat lint_output.txt
+          
+          # Process each error line and create GitHub annotations
+          grep -E "✖ [0-9]+:[0-9]+" lint_output.txt | while read -r error_line; do
+            if [[ $error_line =~ ✖[[:space:]]+([0-9]+):([0-9]+)[[:space:]]+(.+) ]]; then
+              LINE_NUM=${BASH_REMATCH[1]}
+              COL_NUM=${BASH_REMATCH[2]}
+              ERROR_MSG=${BASH_REMATCH[3]}
+              
+              # Extract the actual content of the line with the error
+              LINE_CONTENT=$(sed -n "${LINE_NUM}p" README.md)
+              
+              # Create a GitHub annotation with line content included in the message
+              echo "::error file=README.md,line=${LINE_NUM},col=${COL_NUM}::${ERROR_MSG} | Line content: ${LINE_CONTENT}"
+            fi
+          done
+      
+      # Check for lint ignore directives
+      - name: Check if lint exceptions exist
+        run: |
+          if grep -q "lint ignore" README.md; then
+            echo "Note: README.md contains lint ignore directives. This is expected for certain cases."
+          fi
+      
+      # Final check - fail the workflow if linting failed
+      - name: Determine workflow status
+        run: |
+          if grep -q "✖" lint_output.txt; then
+            echo "::error::Linting failed. Please fix the errors shown above."
+            echo "If these are expected issues, add appropriate lint ignore directives."
+            exit 1
+          else
+            echo "Linting succeeded!"
+          fi
