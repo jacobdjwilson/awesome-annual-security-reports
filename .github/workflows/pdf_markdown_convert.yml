@@ -98,8 +98,10 @@ jobs:
           PROMPT_VERSION: ${{ steps.get-prompt-version.outputs.prompt_version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Create a Python script to process each PDF
-          echo 'import os
+          # Create Python script using a simplified approach
+          python -c '
+with open("process_pdfs.py", "w") as f:
+    f.write("""import os
 import sys
 import google.generativeai as genai
 from pathlib import Path
@@ -138,7 +140,7 @@ def extract_text_from_pdf(pdf_path):
 
 def generate_markdown_with_ai(pdf_text, prompt_text):
     model = genai.GenerativeModel(MODEL)
-    full_prompt = f"{prompt_text}\n\nHere is the PDF content to convert:\n\n{pdf_text}"
+    full_prompt = f"{prompt_text}\\n\\nHere is the PDF content to convert:\\n\\n{pdf_text}"
     response = model.generate_content(full_prompt)
     return response.text
 
@@ -201,7 +203,9 @@ def main():
     return 0 if success_count > 0 else 1
 
 if __name__ == "__main__":
-    sys.exit(main())' > process_pdfs.py
+    sys.exit(main())
+""")
+'
           
           # Create a file with the list of PDF paths
           echo "${{ steps.find-pdfs.outputs.pdf_files }}" > pdf_paths.txt
