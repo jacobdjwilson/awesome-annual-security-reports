@@ -1,6 +1,6 @@
 name: PDF to Markdown Conversion
 
-#on:
+on:
   push:
     branches: [main, development]
     paths:
@@ -26,13 +26,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12'
+          cache: 'pip'
       
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install "markitdown[pdf]"
-          pip install google-generativeai
+          pip install "markitdown[pdf]>=1.0.0" google-generativeai>=0.8.0
       
       - name: Find changed PDF files
         id: find-pdfs
@@ -80,22 +80,38 @@ jobs:
           import google.generativeai as genai
           from pathlib import Path
           import subprocess
+          from concurrent.futures import ThreadPoolExecutor
+          import logging
+          
+          # Setup logging
+          logging.basicConfig(
+              level=logging.INFO,
+              format='%(asctime)s - %(levelname)s - %(message)s'
+          )
+          logger = logging.getLogger(__name__)
           
           # Setup Gemini API
           genai.configure(api_key=os.environ['GEMINI_API_KEY'])
           
           # Define model to use - in order of preference
-          MODELS = ["gemini-2.5-flash-preview-04-17", "gemini-2.0-flash", "gemini-1.5-flash"]
+          # Updated to include latest available Gemini models as of May 2025
+          MODELS = ["gemini-3.0-pro", "gemini-2.5-flash", "gemini-2.0-pro", "gemini-1.5-pro"]
           
           def get_available_model():
               """Get the first available Gemini model from the preference list"""
               for model in MODELS:
                   try:
                       genai.GenerativeModel(model)
+                      logger.info(f"Using Gemini model: {model}")
                       return model
-                  except Exception:
+                  except Exception as e:
+                      logger.warning(f"Model {model} not available: {e}")
                       continue
+              logger.warning(f"No preferred models available. Falling back to {MODELS[-1]}")
               return MODELS[-1]  # Fallback to the last model if none available
+          
+          # Set the model to use for this run
+          MODEL = get_available_model()
           
           def read_prompt_file(path):
               """Read the AI prompt file"""
@@ -103,16 +119,16 @@ jobs:
                   with open(path, 'r') as file:
                       return file.read()
               except Exception as e:
-                  print(f"Error reading prompt file: {e}")
+                  logger.error(f"Error reading prompt file: {e}")
                   return None
           
           def extract_text_from_pdf(pdf_path):
-              """First attempt to extract text from PDF using markitdown"""
+              """Extract text from PDF using markitdown"""
               try:
                   # Use the markitdown Python package for text extraction
                   from markitdown import MarkItDown
                   
-                  # Initialize MarkItDown
+                  # Initialize MarkItDown with optimized settings
                   md = MarkItDown(enable_plugins=False)
                   
                   # Convert PDF to text
@@ -121,7 +137,7 @@ jobs:
                   # Return the text content
                   return result.text_content
               except Exception as e:
-                  print(f"Error extracting text from PDF: {e}")
+                  logger.error(f"Error extracting text from PDF: {e}")
                   return None
           
           def generate_markdown_with_ai(pdf_text, prompt_text):
@@ -132,35 +148,46 @@ jobs:
                   # Combine the prompt and PDF text
                   full_prompt = f"{prompt_text}\n\nHere is the PDF content to convert:\n\n{pdf_text}"
                   
+                  # Set generation config for best results
+                  generation_config = {
+                      "temperature": 0.2,
+                      "top_p": 0.8,
+                      "top_k": 40,
+                      "max_output_tokens": 8192,
+                  }
+                  
                   # Generate markdown using Gemini
-                  response = model.generate_content(full_prompt)
+                  response = model.generate_content(
+                      full_prompt,
+                      generation_config=generation_config
+                  )
                   
                   # Return the generated markdown
                   return response.text
               except Exception as e:
-                  print(f"Error generating markdown with AI: {e}")
+                  logger.error(f"Error generating markdown with AI: {e}")
                   return None
           
           def process_pdf(pdf_path, prompt_path, prompt_version):
               """Process a PDF file and convert it to markdown"""
-              print(f"Processing PDF: {pdf_path}")
+              logger.info(f"Processing PDF: {pdf_path}")
               
               # Read the AI prompt
               prompt_text = read_prompt_file(prompt_path)
               if not prompt_text:
-                  print("Failed to read prompt file")
+                  logger.error("Failed to read prompt file")
                   return False
               
               # Extract text from PDF
               pdf_text = extract_text_from_pdf(pdf_path)
               if not pdf_text:
-                  print("Failed to extract text from PDF")
+                  logger.error("Failed to extract text from PDF")
                   return False
               
               # Generate markdown with AI
               markdown_content = generate_markdown_with_ai(pdf_text, prompt_text)
               if not markdown_content:
-                  print("Failed to generate markdown with AI")
+                  logger.error("Failed to generate markdown with AI")
                   return False
               
               # Determine output path for markdown file
@@ -175,10 +202,10 @@ jobs:
               with open(output_path, 'w', encoding='utf-8') as f:
                   f.write(markdown_content)
               
-              print(f"Created markdown file: {output_path}")
+              logger.info(f"Created markdown file: {output_path}")
               
               # Prepare commit message with processing details
-              commit_message = f"Converted {pdf_path.name} using AI Prompt {prompt_version} AI Model {MODEL})"
+              commit_message = f"Converted {pdf_path.name} using AI Prompt {prompt_version} (AI Model {MODEL})"
               
               # Add and commit the new markdown file
               try:
@@ -186,15 +213,15 @@ jobs:
                   subprocess.run(["git", "config", "user.email", "action@github.com"], check=True)
                   subprocess.run(["git", "add", str(output_path)], check=True)
                   subprocess.run(["git", "commit", "-m", commit_message], check=True)
-                  print(f"Committed {output_path} with message: {commit_message}")
+                  logger.info(f"Committed {output_path} with message: {commit_message}")
                   return True
               except Exception as e:
-                  print(f"Error committing file: {e}")
+                  logger.error(f"Error committing file: {e}")
                   return False
           
           def main():
               if len(sys.argv) < 3:
-                  print("Usage: python process_pdfs.py <pdf_paths_file> <prompt_path> <prompt_version>")
+                  logger.error("Usage: python process_pdfs.py <pdf_paths_file> <prompt_path> <prompt_version>")
                   return 1
               
               pdf_paths_file = sys.argv[1]
@@ -205,16 +232,29 @@ jobs:
               with open(pdf_paths_file, 'r') as f:
                   pdf_paths = [line.strip() for line in f.readlines()]
               
+              logger.info(f"Found {len(pdf_paths)} PDF files to process")
+              
               success_count = 0
               
-              # Process each PDF
-              for pdf_path_str in pdf_paths:
-                  pdf_path = Path(pdf_path_str)
-                  if process_pdf(pdf_path, prompt_path, prompt_version):
-                      success_count += 1
+              # Process PDFs in parallel with ThreadPoolExecutor
+              # Use max_workers based on available CPU cores (up to 4 for GitHub Actions)
+              max_workers = min(4, os.cpu_count() or 1)
               
-              print(f"Successfully processed {success_count}/{len(pdf_paths)} PDFs")
-              return 0
+              with ThreadPoolExecutor(max_workers=max_workers) as executor:
+                  results = []
+                  for pdf_path_str in pdf_paths:
+                      pdf_path = Path(pdf_path_str)
+                      results.append(
+                          executor.submit(process_pdf, pdf_path, prompt_path, prompt_version)
+                      )
+                  
+                  # Gather results
+                  for result in results:
+                      if result.result():
+                          success_count += 1
+              
+              logger.info(f"Successfully processed {success_count}/{len(pdf_paths)} PDFs")
+              return 0 if success_count == len(pdf_paths) else 1
           
           if __name__ == "__main__":
               sys.exit(main())
@@ -226,5 +266,9 @@ jobs:
           # Run the Python script
           python process_pdfs.py pdf_paths.txt ".github/ai_prompts/pdf_to_markdown_prompt.md" "$PROMPT_VERSION"
           
-          # Push changes
-          git push
+          # Push changes if there were any commits
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to push"
+          else
+            git push
+          fi
