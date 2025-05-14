@@ -8,16 +8,20 @@ on:
     paths:
       - 'Annual Security Reports/**'
 
+permissions:
+  contents: write # Required for adding commit notes
+
 jobs:
-  security-scan:
+  scan-security-files:
     runs-on: ubuntu-latest
-    name: Scan Security Documents
+    name: Scan Security Report Files
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # Need to see what changed
+          fetch-depth: 0  # Fetch all history to avoid "bad object" errors
+          token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,41 +29,113 @@ jobs:
           python-version: '3.12'
           
       - name: Install dependencies
-        run: pip install requests
-
-      - name: Find changed security documents
-        id: find-changes
         run: |
-          # Find renamed (R), added (A), or modified (M) PDF, DOCX, or PPTX files
-          echo "FILES_TO_SCAN<<EOF" >> $GITHUB_ENV
-          git diff --name-status ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "^[RAM].*Annual Security Reports/.*(\.pdf|\.docx|\.pptx)$" | 
-            awk '{print $NF}' >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          python -m pip install --upgrade pip
+          pip install requests
 
-      - name: Run security scan
+      - name: Debug git info
+        run: |
+          echo "Current branch: ${{ github.ref }}"
+          echo "Event name: ${{ github.event_name }}"
+          echo "SHA: ${{ github.sha }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Git history:"
+          git log --oneline -n 5
+          echo "Repository contents:"
+          ls -la
+
+      - name: Find security files to scan
+        id: find-files
+        run: |
+          # Direct approach - find all PDF, DOCX, PPTX files in the repo
+          echo "FILES_TO_SCAN<<EOF" >> $GITHUB_ENV
+          find "Annual Security Reports" -type f \( -name "*.pdf" -o -name "*.docx" -o -name "*.pptx" \) | sort >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          
+          # Count and list files for debugging
+          count=$(find "Annual Security Reports" -type f \( -name "*.pdf" -o -name "*.docx" -o -name "*.pptx" \) | wc -l)
+          echo "Found $count security report files"
+          
+          # List the first 10 files for debugging
+          echo "Files to scan (first 10):"
+          find "Annual Security Reports" -type f \( -name "*.pdf" -o -name "*.docx" -o -name "*.pptx" \) | sort | head -n 10
+          
+          # Set flag for scanning
+          if [ "$count" -gt 0 ]; then
+            echo "SHOULD_SCAN=true" >> $GITHUB_ENV
+          else
+            echo "SHOULD_SCAN=false" >> $GITHUB_ENV
+          fi
+
+      - name: Run security scan and add annotations
+        if: env.SHOULD_SCAN == 'true'
         env:
           HYBRID_ANALYSIS_API_KEY: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}
+          FILES_TO_SCAN: ${{ env.FILES_TO_SCAN }}
+          GITHUB_WORKSPACE: ${{ github.workspace }}
         run: |
-          cat > simple_scan.py << 'EOL'
+          cat > scan_and_annotate.py << 'EOL'
           #!/usr/bin/env python3
+          """
+          Hybrid Analysis Scanner with GitHub annotations
+          """
           import os
           import sys
           import time
+          import json
           import requests
+          import subprocess
           import logging
-
-          # Simple logging
-          logging.basicConfig(level=logging.INFO, format='%(message)s')
-
-          def scan_file(file_path, api_key):
-              """Submit a file to Hybrid Analysis and wait for results"""
-              # Check if file exists
+          from datetime import datetime
+          
+          # Configure logging
+          logging.basicConfig(
+              level=logging.INFO,
+              format='%(asctime)s - %(levelname)s - %(message)s'
+          )
+          
+          def submit_file(file_path, api_key):
+              """Submit a file to Hybrid Analysis and return job details"""
+              logging.info(f"Submitting: {file_path}")
+              
               if not os.path.exists(file_path):
                   logging.error(f"File not found: {file_path}")
-                  return False
+                  return None
+                  
+              url = "https://www.hybrid-analysis.com/api/v2/submit/file"
               
-              # First, check API connection
+              headers = {
+                  "api-key": api_key,
+                  "User-Agent": "Hybrid Analysis GitHub Action",
+                  "Accept": "application/json"
+              }
+              
+              with open(file_path, 'rb') as f:
+                  files = {'file': (os.path.basename(file_path), f)}
+                  data = {
+                      "environment_id": "400",  # Windows 11 64-bit
+                      "comment": "GitHub Security Scan"
+                  }
+                  
+                  try:
+                      response = requests.post(url, headers=headers, files=files, data=data)
+                      response.raise_for_status()
+                      result = response.json()
+                      logging.info(f"Submission result: {json.dumps(result)}")
+                      return result
+                  except requests.exceptions.RequestException as e:
+                      logging.error(f"Error submitting file: {e}")
+                      if hasattr(e, 'response') and e.response:
+                          try:
+                              logging.error(f"Error details: {e.response.json()}")
+                          except:
+                              logging.error(f"Error response: {e.response.text}")
+                      return None
+          
+          def check_report_status(job_id, api_key):
+              """Check analysis status"""
+              url = f"https://www.hybrid-analysis.com/api/v2/report/{job_id}/summary"
+              
               headers = {
                   "api-key": api_key,
                   "User-Agent": "Hybrid Analysis GitHub Action",
@@ -67,144 +143,181 @@ jobs:
               }
               
               try:
-                  # Submit the file
-                  logging.info(f"Submitting {file_path} to Hybrid Analysis...")
-                  
-                  with open(file_path, 'rb') as f:
-                      response = requests.post(
-                          "https://www.hybrid-analysis.com/api/v2/submit/file",
-                          headers=headers,
-                          files={'file': (os.path.basename(file_path), f)},
-                          data={"environment_id": "400", "comment": "GitHub Security Scan"}
-                      )
-                  
-                  if response.status_code != 200:
-                      logging.error(f"Submission failed: {response.status_code} - {response.text}")
-                      return False
-                  
-                  result = response.json()
-                  job_id = result.get('job_id')
-                  sha256 = result.get('sha256')
-                  
-                  if not job_id and not sha256:
-                      logging.error("No job ID or SHA256 in response")
-                      return False
-                  
-                  # If only SHA256 (meaning the file was already analyzed)
-                  if sha256 and not job_id:
-                      report_url = f"https://www.hybrid-analysis.com/sample/{sha256}"
-                      create_annotation(file_path, "Pending", 0, report_url)
-                      logging.info(f"File already analyzed: {report_url}")
-                      return True
-                  
-                  # Wait for analysis to complete - use adaptive timing based on file size
-                  file_size_mb = os.path.getsize(file_path) / (1024 * 1024)
-                  max_attempts = 6
-                  
-                  # Larger files need more time
-                  if file_size_mb > 10:
-                      wait_times = [5, 45, 90, 90, 90, 90]  # Total ~7 minutes
-                  else:
-                      wait_times = [5, 30, 30, 60, 60, 60]  # Total ~4 minutes
-                  
-                  logging.info(f"Waiting for analysis (file size: {file_size_mb:.1f} MB)...")
-                  
-                  for attempt, wait_time in enumerate(wait_times, 1):
-                      if attempt > 1:
-                          time.sleep(wait_time)
-                      
-                      logging.info(f"Checking status (attempt {attempt}/{max_attempts})...")
-                      
-                      try:
-                          status_response = requests.get(
-                              f"https://www.hybrid-analysis.com/api/v2/report/{job_id}/summary",
-                              headers=headers
-                          )
-                          
-                          if status_response.status_code != 200:
-                              continue
-                          
-                          report = status_response.json()
-                          state = report.get('state', '')
-                          
-                          if state == 'SUCCESS':
-                              # Get the results
-                              verdict = report.get('verdict', 'Unknown')
-                              threat_score = report.get('threat_score', 0)
-                              if threat_score is None:
-                                  threat_score = 0
-                                  
-                              # Get the report URL from the SHA256
-                              report_sha256 = report.get('sha256', sha256)
-                              report_url = f"https://www.hybrid-analysis.com/sample/{report_sha256}"
-                              
-                              # Create annotation
-                              create_annotation(file_path, verdict, threat_score, report_url)
-                              logging.info(f"Analysis complete: {verdict} (Score: {threat_score})")
-                              return True
-                          
-                          elif state == 'ERROR':
-                              error_msg = report.get('error', 'Unknown error')
-                              logging.error(f"Analysis failed: {error_msg}")
-                              return False
-                          
-                          logging.info(f"Status: {state}")
-                          
-                      except Exception as e:
-                          logging.error(f"Error checking status: {e}")
-                  
-                  # If we get here, the analysis is still pending
-                  report_url = f"https://www.hybrid-analysis.com/sample/{sha256}"
-                  create_annotation(file_path, "Pending", 0, report_url)
-                  logging.info(f"Analysis still pending, check later: {report_url}")
-                  return True
-                  
-              except Exception as e:
-                  logging.error(f"Error: {e}")
-                  return False
-                  
-          def create_annotation(file_path, verdict, threat_score, report_url):
-              """Create GitHub annotation for a file"""
+                  response = requests.get(url, headers=headers)
+                  if response.status_code == 200:
+                      return response.json()
+                  return None
+              except:
+                  return None
+          
+          def add_github_annotation(file_path, report_url, verdict, threat_score):
+              """Add GitHub workflow annotation with scan results"""
+              # Make file path relative to ensure annotations work correctly
+              workspace = os.environ.get('GITHUB_WORKSPACE', '')
+              if workspace and file_path.startswith(workspace):
+                  file_path = file_path[len(workspace):].lstrip('/')
+              
+              # Determine annotation level based on verdict
               if verdict.lower() == "malicious":
                   level = "error"
-                  icon = "⚠️"
+                  emoji = "⚠️ MALICIOUS"
               elif verdict.lower() == "suspicious":
-                  level = "warning" 
-                  icon = "⚠️"
+                  level = "warning"
+                  emoji = "⚠️ SUSPICIOUS"
               else:
                   level = "notice"
-                  icon = "ℹ️"
+                  emoji = ""
+              
+              # Format messages
+              timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+              message = f"Security Scan ({verdict} {emoji}): Threat Score {threat_score}/100"
+              
+              # Print GitHub annotation commands
+              # Note: This specific format is recognized by GitHub Actions
+              print(f"::{'error' if level == 'error' else 'warning'} file={file_path}::{message}")
+              print(f"::{'error' if level == 'error' else 'warning'} file={file_path}::Hybrid Analysis: {report_url}")
+              
+              # Also log to standard output for visibility in logs
+              logging.info(f"[{timestamp}] {message} - {report_url}")
+              
+              return True
+          
+          def process_file(file_path, api_key):
+              """Process a file and add annotations with results"""
+              logging.info(f"Processing: {file_path}")
+              
+              # Submit file
+              submission = submit_file(file_path, api_key)
+              
+              if not submission:
+                  logging.error("Submission failed")
+                  return False
                   
-              print(f"::{level} file={file_path}::Security Scan: {verdict} {icon} (Score: {threat_score})")
-              print(f"::{level} file={file_path}::Hybrid Analysis: {report_url}")
-
+              # Get job ID or SHA256 for checking results
+              job_id = submission.get('job_id')
+              sha256 = submission.get('sha256')
+              
+              if not job_id and not sha256:
+                  logging.error("No job ID or SHA256 in response")
+                  return False
+              
+              # If we have SHA256 but no job ID, use the direct report URL
+              if sha256 and not job_id:
+                  report_url = f"https://www.hybrid-analysis.com/sample/{sha256}"
+                  logging.info(f"Direct report URL: {report_url}")
+                  # Add pending annotation
+                  return add_github_annotation(file_path, report_url, "Pending", 0)
+              
+              # Poll for results with reasonable timeout
+              logging.info(f"Waiting for analysis to complete (job_id: {job_id})...")
+              
+              for attempt in range(1, 6):  # 5 attempts max
+                  logging.info(f"Checking status (attempt {attempt}/5)...")
+                  time.sleep(30)  # Wait between checks
+                  
+                  report = check_report_status(job_id, api_key)
+                  
+                  if not report:
+                      continue
+                  
+                  status = report.get('state', '')
+                  
+                  if status == 'SUCCESS':
+                      # Extract results
+                      threat_score = report.get('threat_score', 0)
+                      verdict = report.get('verdict', 'Unknown')
+                      
+                      logging.info(f"Results: Threat Score: {threat_score}/100, Verdict: {verdict}")
+                      
+                      # Get report URL using SHA256 from the report or submission
+                      report_sha256 = report.get('sha256') or sha256
+                      report_url = f"https://www.hybrid-analysis.com/sample/{report_sha256}"
+                      
+                      # Add annotations with results
+                      return add_github_annotation(file_path, report_url, verdict, threat_score)
+                  
+                  elif status == 'ERROR':
+                      error_msg = report.get('error', 'Unknown error')
+                      logging.error(f"Analysis failed: {error_msg}")
+                      return False
+              
+              # If we reach here, analysis is still pending
+              report_url = f"https://www.hybrid-analysis.com/sample/{sha256}"
+              return add_github_annotation(file_path, report_url, "Pending", 0)
+          
           def main():
+              # Get API key from environment
               api_key = os.environ.get('HYBRID_ANALYSIS_API_KEY')
               if not api_key:
-                  logging.error("HYBRID_ANALYSIS_API_KEY environment variable not set")
+                  logging.error("HYBRID_ANALYSIS_API_KEY not found in environment")
                   return 1
-                  
-              # Get files from FILES_TO_SCAN environment variable
-              files_env = os.environ.get('FILES_TO_SCAN', '')
-              files = [f for f in files_env.split('\n') if f.strip()]
               
-              if not files:
-                  logging.info("No files to scan")
+              # Get list of files to process
+              files_to_process = os.environ.get('FILES_TO_SCAN', '').strip().split('\n')
+              files_to_process = [f for f in files_to_process if f.strip()]
+              
+              if not files_to_process:
+                  logging.info("No files to process")
                   return 0
               
-              logging.info(f"Scanning {len(files)} files...")
+              logging.info(f"Processing {len(files_to_process)} files")
+              
+              # Test API connectivity
+              logging.info("Testing API connectivity")
+              try:
+                  headers = {
+                      "api-key": api_key,
+                      "User-Agent": "Hybrid Analysis GitHub Action",
+                      "Accept": "application/json"
+                  }
+                  response = requests.get(
+                      "https://www.hybrid-analysis.com/api/v2/key/current", 
+                      headers=headers
+                  )
+                  response.raise_for_status()
+                  logging.info("API connection successful")
+              except Exception as e:
+                  logging.error(f"API connection failed: {e}")
+                  return 1
               
               # Process each file
               results = []
-              for file_path in files:
-                  results.append(scan_file(file_path, api_key))
-                  
-              # Return success if all files were processed successfully
+              # Limit to 3 files at most to stay within time constraints
+              for file_path in files_to_process[:3]:  
+                  result = process_file(file_path, api_key)
+                  results.append(result)
+              
+              # Return exit code based on results
               return 0 if all(results) else 1
-
+          
           if __name__ == "__main__":
-              sys.exit(main())
+              try:
+                  exit_code = main()
+                  sys.exit(exit_code)
+              except Exception as e:
+                  logging.error(f"Unhandled error: {str(e)}")
+                  sys.exit(1)
           EOL
           
-          # Run the script
-          python simple_scan.py
+          # Make script executable
+          chmod +x scan_and_annotate.py
+          
+          # Run the scan and annotation script
+          python scan_and_annotate.py
+
+      - name: Create summary report
+        if: env.SHOULD_SCAN == 'true'
+        run: |
+          echo "## Security Scan Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Security scan completed for files in 'Annual Security Reports' directory." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "See workflow annotations for detailed results of each file scan." >> $GITHUB_STEP_SUMMARY
+
+      - name: Skip scan message
+        if: env.SHOULD_SCAN != 'true'
+        run: |
+          echo "No security reports to scan. Skipping the security scan."
+          echo "## Security Scan Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "No security report files found to scan." >> $GITHUB_STEP_SUMMARY
