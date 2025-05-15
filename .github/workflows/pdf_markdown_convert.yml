@@ -106,7 +106,7 @@ jobs:
           available_models = list_available_models()
           
           # Define models to try in order of preference - using currently available models
-          MODELS = ["gemini-2.5-flash-preview", "gemini-2.0-flash", "gemini-1.5-flash"]
+          MODELS = ["gemini-2.0-flash", "gemini-1.5-flash"]
           
           # Get the first available model
           MODEL = None
