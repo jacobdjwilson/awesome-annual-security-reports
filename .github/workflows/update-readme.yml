@@ -6,6 +6,7 @@ on:
     types:
       - completed
     branches: [main, development]
+  workflow_dispatch:
 
 jobs:
   update-readme:
