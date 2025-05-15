@@ -66,7 +66,7 @@ jobs:
       - name: Verify prompt file exists
         id: check-prompt
         run: |
-          PROMPT_PATH=".github/ai_prompts/pdf_to_markdown_prompt.md"
+          PROMPT_PATH=".github/ai_prompts/pdf-to-markdown-prompt.md"
           if [ -f "$PROMPT_PATH" ]; then
             echo "prompt_exists=true" >> $GITHUB_OUTPUT
             echo "Found prompt file at $PROMPT_PATH"

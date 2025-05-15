@@ -432,7 +432,7 @@ jobs:
               branch = os.environ.get("BRANCH", "development")
               
               # Read the summarization prompt
-              prompt_path = f".github/ai_prompts/markdown_summarization_prompt.md"
+              prompt_path = f".github/ai_prompts/markdown-summarization-prompt.md"
               if not os.path.exists(prompt_path):
                   print(f"Error: Prompt file not found at {prompt_path}")
                   sys.exit(1)
