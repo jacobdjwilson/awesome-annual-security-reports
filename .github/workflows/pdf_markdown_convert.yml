@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install markitdown[pdf] google-generativeai
+          pip install 'markitdown[pdf]' google-generativeai
       
       - name: Find changed PDF files
         id: find-pdfs
@@ -99,13 +99,14 @@ jobs:
           import google.generativeai as genai
           from pathlib import Path
           import subprocess
-
+          from markitdown import MarkItDown
+          
           # Setup Gemini API
           genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-
-          # Define models to try in order of preference
-          MODELS = ["gemini-3.0-pro", "gemini-2.5-flash", "gemini-2.0-pro", "gemini-1.5-pro"]
-
+          
+          # Define models to try in order of preference - flash models only as requested
+          MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+          
           # Get the first available model
           MODEL = None
           for model in MODELS:
@@ -114,39 +115,40 @@ jobs:
                   MODEL = model
                   print(f"Using model: {MODEL}")
                   break
-              except:
+              except Exception as e:
+                  print(f"Model {model} not available: {e}")
                   continue
-
+          
           if not MODEL:
-              MODEL = MODELS[-1]  # Fallback to the last model
-              print(f"Falling back to model: {MODEL}")
-
+              print("No models available. Exiting.")
+              sys.exit(1)
+          
           def read_prompt_file(path):
               with open(path, "r") as file:
                   return file.read()
-
+          
           def extract_text_from_pdf(pdf_path):
-              from markitdown import MarkItDown
+              # Use markitdown to extract text from PDF
               md = MarkItDown(enable_plugins=False)
               result = md.convert(str(pdf_path))
               return result.text_content
-
+          
           def generate_markdown_with_ai(pdf_text, prompt_text):
               model = genai.GenerativeModel(MODEL)
               full_prompt = f"{prompt_text}\n\nHere is the PDF content to convert:\n\n{pdf_text}"
               response = model.generate_content(full_prompt)
               return response.text
-
+          
           def process_pdf(pdf_path, prompt_path, prompt_version):
               print(f"Processing: {pdf_path}")
               
               # Read the prompt
               prompt_text = read_prompt_file(prompt_path)
               
-              # Extract text from PDF
+              # Extract text from PDF using markitdown
               pdf_text = extract_text_from_pdf(pdf_path)
               
-              # Generate markdown
+              # Generate markdown with Gemini
               markdown_content = generate_markdown_with_ai(pdf_text, prompt_text)
               
               # Save markdown file
@@ -169,7 +171,7 @@ jobs:
               subprocess.run(["git", "commit", "-m", commit_message], check=True)
               
               return True
-
+          
           def main():
               pdf_paths_file = sys.argv[1]
               prompt_path = sys.argv[2]
@@ -194,7 +196,7 @@ jobs:
               
               print(f"Successfully processed {success_count}/{len(pdf_paths)} PDFs")
               return 0 if success_count > 0 else 1
-
+          
           if __name__ == "__main__":
               sys.exit(main())
           ENDPYTHONSCRIPT
