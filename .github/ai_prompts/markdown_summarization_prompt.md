@@ -11,14 +11,14 @@ Provide a concise two-sentence summary of a security report, highlighting its ma
 
 ## Conversion Instructions
 ### Structure
-- **First Sentence**: Clearly state the main focus of the report (e.g., cloud security, vulnerability analysis, identity management).
+- **First Sentence**: Clearly state the main focus of the report (e.g., cloud security, vulnerability analysis, identity management).  
 - **Second Sentence**: Highlight key findings, trends, or unexpected insights.
 
 ### Guidelines
 1. Ensure the summary is concise (2 sentences max).
 2. Maintain a professional, technical tone for a cybersecurity audience.
 3. Prioritize notable statistics, trends, or findings over generic statements.
-4. Begin the first sentence with a verb (eg. Focuses, Highlights, Analyzes, Examines, Provides, Offers, Outlines, )
+4. DO NOT start the first sentence with "The Report" instead begin the first sentence with a verb (eg. Focuses on, Highlights, Analyzes, Examines, Provides, Offers, Outlines, )
 
 ### Example Output
 "Examines the state of cloud security and container usage, providing benchmarks for maturity and efficiency. Key findings include a significant disparity between users and service accounts, as well as the rising adoption of runtime security tools in unexpected industries."
