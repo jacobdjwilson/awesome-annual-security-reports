@@ -217,6 +217,10 @@ jobs:
                   
               print(f"Created/Updated: {output_path}")
               
+              # Add the converted file path to the list of converted files
+              with open(os.environ.get("CONVERTED_FILES_PATH", "converted_files.txt"), "a") as f:
+                  f.write(f"{output_path}\n")
+              
               # Commit the file
               try:
                   # Add the file
@@ -257,6 +261,11 @@ jobs:
               prompt_version = sys.argv[3]
               branch = sys.argv[4] if len(sys.argv) > 4 else "unknown"
               
+              # Create or clear the converted files list
+              converted_files_path = os.environ.get("CONVERTED_FILES_PATH", "converted_files.txt")
+              with open(converted_files_path, "w") as f:
+                  f.write("")  # Just create/clear the file
+              
               # Read PDF paths
               with open(pdf_paths_file, "r") as f:
                   pdf_paths = [line.strip() for line in f.readlines()]
@@ -288,6 +297,7 @@ jobs:
           PROMPT_VERSION: ${{ steps.check-prompt.outputs.prompt_version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ steps.find-pdfs.outputs.branch }}
+          CONVERTED_FILES_PATH: "converted_files.txt"
         run: |
           # Create a file with the list of PDF paths
           echo "${{ steps.find-pdfs.outputs.pdf_files }}" > pdf_paths.txt
@@ -297,6 +307,14 @@ jobs:
           
           # Push changes
           git push https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF}
+      
+      - name: Upload converted files info
+        if: steps.find-pdfs.outputs.pdfs_changed == 'true' && steps.check-prompt.outputs.prompt_exists == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: converted_file_info
+          path: converted_files.txt
+          retention-days: 1
       
       - name: Error - Prompt file missing
         if: steps.find-pdfs.outputs.pdfs_changed == 'true' && steps.check-prompt.outputs.prompt_exists != 'true'

@@ -1,0 +1,577 @@
+name: Update README with New Reports
+
+on:
+  workflow_run:
+    workflows: ["PDF to Markdown Conversion"]
+    types:
+      - completed
+    branches: [main, development]
+
+jobs:
+  update-readme:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-generativeai pyyaml mistune gitpython
+      
+      - name: Determine current branch
+        id: branch
+        run: |
+          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD || echo ${GITHUB_REF#refs/heads/})
+          echo "Current branch: $CURRENT_BRANCH"
+          echo "branch=$CURRENT_BRANCH" >> $GITHUB_OUTPUT
+      
+      - name: Download workflow artifact
+        uses: actions/github-script@v7
+        id: download
+        with:
+          script: |
+            const fs = require('fs');
+            
+            // Get the workflow run that triggered this workflow
+            const runId = context.payload.workflow_run.id;
+            console.log(`Processing workflow run: ${runId}`);
+            
+            // Get artifacts from the workflow run
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: runId
+            });
+            
+            // Find the artifact (if any) containing the converted file info
+            const artifact = artifacts.data.artifacts.find(artifact => artifact.name === 'converted_file_info');
+            
+            if (!artifact) {
+              console.log('No converted_file_info artifact found. Exiting.');
+              return false;
+            }
+            
+            // Download the artifact
+            const download = await github.rest.actions.downloadArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: artifact.id,
+              archive_format: 'zip'
+            });
+            
+            // Write the zip to disk
+            fs.writeFileSync('artifact.zip', Buffer.from(download.data));
+            
+            // Extract the artifact
+            await exec.exec('unzip -o artifact.zip -d artifact_contents');
+            
+            return true;
+      
+      - name: Find recently converted files
+        id: find-files
+        if: steps.download.outputs.result == 'true'
+        run: |
+          if [ -f "artifact_contents/converted_files.txt" ]; then
+            echo "recently_converted<<EOF" >> $GITHUB_OUTPUT
+            cat artifact_contents/converted_files.txt >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            echo "files_found=true" >> $GITHUB_OUTPUT
+            echo "Found recently converted files:"
+            cat artifact_contents/converted_files.txt
+          else
+            echo "files_found=false" >> $GITHUB_OUTPUT
+            echo "No recently converted files information found"
+          fi
+      
+      - name: Generate report descriptions and update README
+        if: steps.find-files.outputs.files_found == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ steps.branch.outputs.branch }}
+        run: |
+          cat > update_readme.py << 'EOF'
+          #!/usr/bin/env python3
+          
+          import os
+          import re
+          import sys
+          import json
+          import yaml
+          import google.generativeai as genai
+          from pathlib import Path
+          import subprocess
+          from datetime import datetime
+          import mistune
+          import git
+          
+          # Configure Gemini API
+          genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+          
+          # Define models to try in order of preference - using currently available models
+          MODELS = ["gemini-2.5-flash-preview-04-17", "gemini-2.0-flash", "gemini-1.5-flash"]
+          
+          def setup_model():
+              """Set up and test the Gemini model"""
+              for model in MODELS:
+                  try:
+                      print(f"Attempting to use model: {model}")
+                      test_model = genai.GenerativeModel(model)
+                      # Test a simple generation to verify it works
+                      test_response = test_model.generate_content("Hello")
+                      print(f"Successfully verified model: {model}")
+                      return model
+                  except Exception as e:
+                      print(f"Model {model} not available or failed verification: {str(e)}")
+                      continue
+              
+              print("No models available. Exiting.")
+              sys.exit(1)
+          
+          def read_prompt_file(path):
+              """Read the AI prompt file"""
+              try:
+                  with open(path, "r") as file:
+                      return file.read()
+              except Exception as e:
+                  print(f"Error reading prompt file: {str(e)}")
+                  sys.exit(1)
+          
+          def generate_description(markdown_content, prompt_text, model_name):
+              """Generate a description using the AI model"""
+              try:
+                  print(f"Generating description with {model_name}...")
+                  model = genai.GenerativeModel(model_name)
+                  full_prompt = f"{prompt_text}\n\n# Report Content Below\n\n{markdown_content}"
+                  
+                  # Set generation parameters for better output
+                  generation_config = {
+                      "temperature": 0.2,  # Lower temperature for more predictable output
+                      "max_output_tokens": 1024,
+                  }
+                  
+                  response = model.generate_content(
+                      full_prompt,
+                      generation_config=generation_config
+                  )
+                  description = response.text.strip()
+                  print(f"Successfully generated description ({len(description)} characters)")
+                  # Remove any quotes that might be in the response
+                  description = description.strip('"\'')
+                  return description
+              except Exception as e:
+                  print(f"Error generating description with AI: {str(e)}")
+                  return None
+          
+          def extract_metadata_from_path(file_path):
+              """Extract organization name and year from the file path"""
+              parts = str(file_path).split('/')
+              
+              # Find the year directory (should be one level above the filename)
+              year = None
+              for part in parts:
+                  if re.match(r'^\d{4}$', part):
+                      year = part
+              
+              # Extract organization name from filename
+              filename = parts[-1]
+              match = re.match(r'([A-Za-z0-9]+)-.*\.md', filename)
+              org_name = match.group(1) if match else None
+              
+              return {
+                  'year': year,
+                  'organization': org_name,
+                  'filename': filename,
+                  'path': file_path
+              }
+          
+          def read_markdown_file(file_path):
+              """Read the content of the markdown file"""
+              try:
+                  with open(file_path, "r", encoding="utf-8") as file:
+                      return file.read()
+              except Exception as e:
+                  print(f"Error reading markdown file: {str(e)}")
+                  return None
+          
+          def parse_readme_sections(readme_content):
+              """Parse the README.md content into sections"""
+              sections = {}
+              current_section = None
+              current_content = []
+              
+              lines = readme_content.split('\n')
+              for line in lines:
+                  # Match section headers (## Section Title)
+                  section_match = re.match(r'^## (.+)$', line)
+                  subsection_match = re.match(r'^### (.+)$', line)
+                  
+                  if section_match:
+                      # Save previous section if it exists
+                      if current_section:
+                          sections[current_section] = '\n'.join(current_content)
+                      
+                      # Start a new section
+                      current_section = section_match.group(1)
+                      current_content = [line]
+                  else:
+                      # Add line to current section
+                      if current_section:
+                          current_content.append(line)
+              
+              # Save the last section
+              if current_section:
+                  sections[current_section] = '\n'.join(current_content)
+              
+              return sections
+          
+          def find_report_entry_in_section(section_content, org_name):
+              """Find an existing report entry for the organization in a section"""
+              # Look for lines containing the organization name in list entries
+              lines = section_content.split('\n')
+              for i, line in enumerate(lines):
+                  # Check if line contains the org name at the beginning of a list item
+                  if re.match(r'^- \[' + re.escape(org_name) + r'\]', line):
+                      # Return the line and its index
+                      return {'line': line, 'index': i}
+              
+              return None
+          
+          def determine_section_for_report(filename, sections):
+              """Determine which section the report should be placed in"""
+              # This logic would typically be based on the content or filename patterns
+              # For now, using a simple approach based on keywords in the filename
+              
+              filename_lower = filename.lower()
+              
+              # Map of keywords to sections
+              section_keywords = {
+                  "identity": "Identity Security",
+                  "cloud": "Cloud Security",
+                  "api": "Application Security",
+                  "app": "Application Security",
+                  "application": "Application Security",
+                  "ransomware": "Ransomware",
+                  "vulnerability": "Vulnerabilities",
+                  "privacy": "Privacy and Data Protection",
+                  "breach": "Data Breaches",
+                  "physical": "Physical Security",
+                  "ai": "AI and Emerging Technologies",
+                  "artificial": "AI and Emerging Technologies",
+                  "mobile": "AI and Emerging Technologies",
+                  "threat": "Threat Intelligence",
+                  "security": "Industry Trends",
+                  "penetration": "Penetration Testing",
+                  "pen test": "Penetration Testing"
+              }
+              
+              # Check for keywords in filename
+              for keyword, section in section_keywords.items():
+                  if keyword in filename_lower:
+                      full_section_name = find_full_section_name(sections, section)
+                      if full_section_name:
+                          return full_section_name
+              
+              # Default to Threat Intelligence if no match
+              return find_full_section_name(sections, "Threat Intelligence")
+          
+          def find_full_section_name(sections, partial_name):
+              """Find the full section name that contains the partial name"""
+              for section_name in sections.keys():
+                  if partial_name in section_name:
+                      return section_name
+              return None
+          
+          def update_existing_entry(entry, new_year, new_path, new_description):
+              """Update an existing entry with new year, path and description"""
+              # Replace the year, file path, and description in the entry
+              updated_line = re.sub(r'\(\d{4}\)', f'({new_year})', entry)
+              updated_line = re.sub(r'Annual%20Security%20Reports/\d{4}/.*?\.pdf', f'Annual%20Security%20Reports/{new_year}/{os.path.basename(new_path).replace(".md", ".pdf")}', updated_line)
+              
+              # Replace the description (after file path and before any end indicators)
+              description_pattern = r' - (.*?)(?:\.$|$)'
+              if re.search(description_pattern, updated_line):
+                  updated_line = re.sub(description_pattern, f' - {new_description}.', updated_line)
+              else:
+                  # If no description format found, append new description
+                  updated_line = updated_line.rstrip() + f' - {new_description}.'
+              
+              return updated_line
+          
+          def create_new_entry(org_name, report_name, year, file_path, description):
+              """Create a new entry for the README.md"""
+              pdf_path = file_path.replace("Markdown Conversions", "Annual Security Reports").replace(".md", ".pdf")
+              return f"- [{org_name}]() - [{report_name}]({pdf_path}) ({year}) - {description}."
+          
+          def update_section_content(section_content, entry_info, new_entry):
+              """Update the section content with new or updated entry"""
+              lines = section_content.split('\n')
+              
+              if entry_info:
+                  # Replace existing entry
+                  lines[entry_info['index']] = new_entry
+              else:
+                  # Add new entry in alphabetical order
+                  entry_lines = [line for line in lines if line.startswith('- [')]
+                  other_lines = [line for line in lines if not line.startswith('- [')]
+                  
+                  # Add the new entry
+                  entry_lines.append(new_entry)
+                  
+                  # Sort entries alphabetically
+                  entry_lines.sort(key=lambda x: re.sub(r'^- \[(.*?)\].*$', r'\1', x).lower())
+                  
+                  # Reconstruct the section
+                  section_lines = []
+                  for line in lines:
+                      if line.startswith('- ['):
+                          continue  # Skip old entries, we'll add sorted ones later
+                      section_lines.append(line)
+                      
+                      # After the section header or description, add the sorted entries
+                      if line.startswith('##') or line == '':
+                          section_lines.extend(entry_lines)
+                          # Skip already added entries
+                          entry_lines = []
+              
+                  lines = section_lines if section_lines else lines + [new_entry]
+              
+              return '\n'.join(lines)
+          
+          def update_readme(readme_content, sections, updated_section, section_name):
+              """Update the full README.md content with the updated section"""
+              # Replace the section in the full content
+              section_start = readme_content.find(f"## {section_name}")
+              if section_start == -1:
+                  return readme_content
+              
+              next_section_match = re.search(r'## ', readme_content[section_start+2:])
+              if next_section_match:
+                  section_end = section_start + 2 + next_section_match.start()
+              else:
+                  section_end = len(readme_content)
+              
+              return readme_content[:section_start] + updated_section + readme_content[section_end:]
+          
+          def update_report_count_badges(readme_content, year):
+              """Update the report count badges in the README"""
+              # Find the badge line for the specified year
+              badge_pattern = rf'!\[GitHub repo file or directory count \(in path\)\]\(https://img\.shields\.io/github/directory-file-count/.*?/{year}\?.*?\)'
+              badge_match = re.search(badge_pattern, readme_content)
+              
+              if badge_match:
+                  # Get the entire badge URL
+                  badge_url = badge_match.group(0)
+                  # The URL already contains a count, but after a successful workflow run, this count will be outdated
+                  # We can simply leave it as is, GitHub will render the latest count when the README is viewed
+                  return readme_content
+              
+              return readme_content
+          
+          def create_pull_request(repo_path, branch_name, title, body):
+              """Create a pull request with the changes"""
+              try:
+                  # Get the current branch
+                  current_branch = os.environ.get("BRANCH", "main")
+                  base_branch = current_branch
+                  
+                  # Configure git
+                  subprocess.run(["git", "config", "user.name", "GitHub Action"], check=True)
+                  subprocess.run(["git", "config", "user.email", "action@github.com"], check=True)
+                  
+                  # Create a new branch
+                  subprocess.run(["git", "checkout", "-b", branch_name], check=True)
+                  
+                  # Add changes
+                  subprocess.run(["git", "add", "README.md"], check=True)
+                  
+                  # Commit changes
+                  subprocess.run(["git", "commit", "-m", title], check=True)
+                  
+                  # Push the branch
+                  subprocess.run(["git", "push", "--set-upstream", "origin", branch_name], check=True)
+                  
+                  # Create the pull request using GitHub CLI
+                  cmd = [
+                      "gh", "pr", "create",
+                      "--base", base_branch,
+                      "--head", branch_name,
+                      "--title", title,
+                      "--body", body
+                  ]
+                  
+                  result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+                  pr_url = result.stdout.strip()
+                  
+                  print(f"Pull request created: {pr_url}")
+                  return True
+              except Exception as e:
+                  print(f"Error creating pull request: {str(e)}")
+                  return False
+          
+          def main():
+              # Setup the model
+              model_name = setup_model()
+              
+              # Get current branch
+              branch = os.environ.get("BRANCH", "development")
+              
+              # Read the summarization prompt
+              prompt_path = f".github/ai_prompts/markdown_summarization_prompt.md"
+              if not os.path.exists(prompt_path):
+                  print(f"Error: Prompt file not found at {prompt_path}")
+                  sys.exit(1)
+              
+              prompt_text = read_prompt_file(prompt_path)
+              print(f"Loaded prompt file ({len(prompt_text)} characters)")
+              
+              # Read recently converted files
+              recently_converted = []
+              with open("artifact_contents/converted_files.txt", "r") as f:
+                  for line in f:
+                      recently_converted.append(line.strip())
+              
+              if not recently_converted:
+                  print("No recently converted files found.")
+                  return
+              
+              print(f"Processing {len(recently_converted)} recently converted files")
+              
+              # Read README.md
+              readme_path = "README.md"
+              with open(readme_path, "r", encoding="utf-8") as f:
+                  readme_content = f.read()
+              
+              # Parse sections
+              sections = parse_readme_sections(readme_content)
+              
+              processed_files = []
+              for md_file in recently_converted:
+                  print(f"\nProcessing: {md_file}")
+                  
+                  # Extract metadata
+                  metadata = extract_metadata_from_path(md_file)
+                  if not metadata['organization'] or not metadata['year']:
+                      print(f"Could not extract metadata from {md_file}, skipping")
+                      continue
+                  
+                  print(f"Extracted metadata: {metadata}")
+                  
+                  # Read the markdown content
+                  md_content = read_markdown_file(md_file)
+                  if not md_content:
+                      continue
+                  
+                  # Generate description
+                  description = generate_description(md_content, prompt_text, model_name)
+                  if not description:
+                      print(f"Failed to generate description for {md_file}, skipping")
+                      continue
+                  
+                  print(f"Generated description: {description}")
+                  
+                  # Determine which section to update
+                  section_name = determine_section_for_report(metadata['filename'], sections)
+                  if not section_name:
+                      print(f"Could not determine section for {md_file}, defaulting to Threat Intelligence")
+                      section_name = "Threat Intelligence"
+                  
+                  print(f"Determined section: {section_name}")
+                  
+                  # Find if the organization already has an entry in this section
+                  entry_info = find_report_entry_in_section(sections[section_name], metadata['organization'])
+                  
+                  # Get the report name from the markdown content
+                  # This is usually in the first heading, but a more robust extraction would be needed
+                  report_name = "Report"
+                  for line in md_content.split('\n'):
+                      if line.startswith('# '):
+                          title = line[2:].strip()
+                          report_name = title.split(':')[-1].strip() if ':' in title else title
+                          break
+                  
+                  if entry_info:
+                      print(f"Found existing entry: {entry_info['line']}")
+                      updated_entry = update_existing_entry(
+                          entry_info['line'], 
+                          metadata['year'],
+                          md_file,
+                          description
+                      )
+                  else:
+                      print(f"Creating new entry for {metadata['organization']}")
+                      updated_entry = create_new_entry(
+                          metadata['organization'],
+                          report_name,
+                          metadata['year'],
+                          md_file,
+                          description
+                      )
+                  
+                  # Update the section content
+                  updated_section = update_section_content(sections[section_name], entry_info, updated_entry)
+                  sections[section_name] = updated_section
+                  
+                  # Update the full README.md content
+                  readme_content = update_readme(readme_content, sections, updated_section, section_name)
+                  
+                  # Update report count badges
+                  readme_content = update_report_count_badges(readme_content, metadata['year'])
+                  
+                  processed_files.append({
+                      'org': metadata['organization'],
+                      'year': metadata['year'],
+                      'section': section_name,
+                      'description': description
+                  })
+              
+              if not processed_files:
+                  print("No files were successfully processed.")
+                  return
+              
+              # Write the updated README.md
+              with open(readme_path, "w", encoding="utf-8") as f:
+                  f.write(readme_content)
+              
+              # Create a pull request
+              pr_title = f"Update README.md with new reports: {', '.join([f'{f['org']} ({f['year']})' for f in processed_files])}"
+              
+              pr_body = "This pull request updates README.md with the following reports:\n\n"
+              for file in processed_files:
+                  pr_body += f"- **{file['org']} ({file['year']})** in section '{file['section']}'\n"
+                  pr_body += f"  Description: {file['description']}\n\n"
+              
+              pr_body += "\nThis PR was automatically generated by the Update README workflow."
+              
+              branch_name = f"update-readme-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+              create_pull_request(".", branch_name, pr_title, pr_body)
+          
+          if __name__ == "__main__":
+              main()
+          EOF
+          
+          # Make the script executable
+          chmod +x update_readme.py
+          
+          # Run the script
+          python update_readme.py
+      
+      - name: Output Results
+        if: always()
+        run: |
+          echo "README update process complete."
+          echo "Check created pull requests for the changes."
