@@ -66,7 +66,7 @@ jobs:
       - name: Verify prompt file exists
         id: check-prompt
         run: |
-          PROMPT_PATH=".github/ai_prompts/pdf-to-markdown-prompt.md"
+          PROMPT_PATH=".github/ai-prompts/pdf-to-markdown-prompt.md"
           if [ -f "$PROMPT_PATH" ]; then
             echo "prompt_exists=true" >> $GITHUB_OUTPUT
             echo "Found prompt file at $PROMPT_PATH"
@@ -303,7 +303,7 @@ jobs:
           echo "${{ steps.find-pdfs.outputs.pdf_files }}" > pdf_paths.txt
           
           # Run the Python script
-          python process_pdfs.py pdf_paths.txt ".github/ai_prompts/pdf_to_markdown_prompt.md" "$PROMPT_VERSION" "$BRANCH"
+          python process_pdfs.py pdf_paths.txt ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH"
           
           # Push changes
           git push https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF}
@@ -319,6 +319,6 @@ jobs:
       - name: Error - Prompt file missing
         if: steps.find-pdfs.outputs.pdfs_changed == 'true' && steps.check-prompt.outputs.prompt_exists != 'true'
         run: |
-          echo "Error: Prompt file not found at .github/ai_prompts/pdf_to_markdown_prompt.md"
+          echo "Error: Prompt file not found at .github/ai-prompts/pdf_to_markdown_prompt.md"
           echo "Please ensure the prompt file exists in your repository."
           exit 1
