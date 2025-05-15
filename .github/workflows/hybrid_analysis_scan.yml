@@ -38,20 +38,20 @@ jobs:
           
           # Count for logging
           COUNT=$(git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf|docx|pptx)$" | wc -l)
+            grep -E "Annual Security Reports/.+\.(pdf|docx|pptx)$" | wc -l || echo 0)
           
           echo "Found $COUNT changed security report files"
           
           # Show the files found
           git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf|docx|pptx)$"
+            grep -E "Annual Security Reports/.+\.(pdf|docx|pptx)$" || echo "No files found"
 
       - name: Scan changed files with Hybrid Analysis
         if: env.CHANGED_FILES != ''
         env:
           HYBRID_ANALYSIS_API_KEY: ${{ secrets.HYBRID_ANALYSIS_API_KEY }}
         run: |
-          cat > scan.py << 'EOL'
+          cat > scan.py << 'EOF'
           #!/usr/bin/env python3
           
           import os
@@ -59,6 +59,9 @@ jobs:
           import time
           import requests
           import json
+          
+          # Constants
+          API_BASE_URL = "https://www.hybrid-analysis.com/api/v2"
           
           def scan_file(file_path, api_key):
               """Scan a file with Hybrid Analysis and create annotation with results"""
@@ -71,125 +74,200 @@ jobs:
                   # Setup API headers
                   headers = {
                       "api-key": api_key,
-                      "User-Agent": "Hybrid Analysis GitHub Action",
+                      "User-Agent": "Falcon Sandbox GitHub Action",
                       "Accept": "application/json"
                   }
                   
-                  # Submit file for analysis
+                  # Get file size (in MB) for logging and strategy
                   file_size_mb = os.path.getsize(file_path) / (1024 * 1024)
-                  print(f"Submitting file: {file_path} ({file_size_mb:.2f} MB)")
+                  print(f"File: {os.path.basename(file_path)} ({file_size_mb:.2f} MB)")
                   
-                  with open(file_path, 'rb') as f:
-                      response = requests.post(
-                          "https://www.hybrid-analysis.com/api/v2/submit/file",
-                          headers=headers,
-                          files={'file': (os.path.basename(file_path), f)},
-                          data={"environment_id": "400"}
-                      )
-                  
-                  # Status codes 200 and 201 are both success responses
-                  if response.status_code not in [200, 201]:
-                      print(f"Error: Submission failed with status {response.status_code}")
-                      print(f"Response: {response.text}")
-                      return False
-                  
-                  # Parse response
+                  # First, check API key info and quota
                   try:
-                      result = response.json()
-                      print(f"API Response: {json.dumps(result, indent=2)}")
+                      key_response = requests.get(
+                          f"{API_BASE_URL}/key/current",
+                          headers=headers,
+                          timeout=10
+                      )
+                      key_info = key_response.json()
+                      print(f"API Key Info: {key_info.get('auth_level_name')} level")
+                      print(f"API Headers: {key_response.headers.get('Api-Limits', '')}")
+                      print(f"Submission Limits: {key_response.headers.get('Submission-Limits', '')}")
                   except Exception as e:
-                      print(f"Error parsing response: {e}")
-                      print(f"Raw response: {response.text}")
-                      return False
+                      print(f"Warning: Could not check API key info: {e}")
                   
-                  # Get submission details
-                  job_id = result.get('job_id')
-                  sha256 = result.get('sha256')
-                  
-                  if not job_id and not sha256:
-                      print("Error: No job ID or SHA256 in response")
-                      return False
-                  
-                  print(f"File submitted successfully. SHA256: {sha256}")
-                  
-                  # If no job_id, the file was already analyzed
-                  if sha256 and not job_id:
-                      report_url = f"https://www.hybrid-analysis.com/sample/{sha256}"
-                      create_annotation(file_path, "Previously analyzed", 0, report_url)
-                      return True
-                  
-                  # Poll for analysis results
-                  print(f"Waiting for analysis results (job_id: {job_id})...")
-                  
-                  # Determine appropriate wait times based on file size
-                  if file_size_mb > 20:  # Large file
-                      attempts = 5
-                      wait_times = [10, 60, 90, 90, 90]  # ~5.5 minutes
-                  elif file_size_mb > 5:  # Medium file
-                      attempts = 4
-                      wait_times = [5, 45, 60, 60]  # ~2.8 minutes
-                  else:  # Small file
-                      attempts = 3
-                      wait_times = [5, 30, 30]  # ~1 minute
-                  
-                  print(f"File size: {file_size_mb:.1f} MB - Using {attempts} polling attempts")
-                  
-                  for attempt, wait_time in enumerate(wait_times, 1):
-                      if attempt > 1:
-                          print(f"Waiting {wait_time} seconds before next check...")
-                          time.sleep(wait_time)
+                  # If file size > 50MB, we'll submit for detailed analysis, otherwise use quick-scan
+                  if file_size_mb > 50:
+                      # For larger files, use full submission to Windows 11 environment
+                      print(f"Using full submission for large file ({file_size_mb:.2f} MB)")
                       
-                      print(f"Checking status (attempt {attempt}/{attempts})...")
-                      
-                      try:
-                          status_response = requests.get(
-                              f"https://www.hybrid-analysis.com/api/v2/report/{job_id}/summary",
-                              headers=headers
+                      # Prepare submission parameters
+                      with open(file_path, 'rb') as f:
+                          files = {'file': (os.path.basename(file_path), f)}
+                          data = {
+                              "environment_id": 140,  # Windows 11 64-bit
+                              "comment": "GitHub Security Scan",
+                              "submit_name": os.path.basename(file_path)
+                          }
+                          
+                          # Submit for analysis
+                          print("Submitting file for full analysis...")
+                          response = requests.post(
+                              f"{API_BASE_URL}/submit/file",
+                              headers=headers,
+                              files=files,
+                              data=data,
+                              timeout=300  # 5-minute timeout for large files
                           )
+                      
+                      if response.status_code not in [200, 201]:
+                          print(f"Error: Submission failed with status {response.status_code}")
+                          print(f"Response: {response.text}")
+                          return False
+                      
+                      # Parse response
+                      submission = response.json()
+                      print(f"Submission successful: {json.dumps(submission, indent=2)}")
+                      
+                      # Get job_id and sha256
+                      job_id = submission.get('job_id')
+                      submission_id = submission.get('submission_id')
+                      sha256 = submission.get('sha256')
+                      
+                      if not sha256:
+                          print("Error: No SHA256 in response")
+                          return False
+                      
+                      # Full submissions take longer to process, so we'll just create a pending annotation
+                      report_url = f"https://www.hybrid-analysis.com/sample/{sha256}"
+                      create_annotation(file_path, "Pending Analysis", 0, report_url)
+                      
+                      print(f"Full analysis submitted. Check results later at: {report_url}")
+                      print(f"Job ID: {job_id}, Submission ID: {submission_id}")
+                      
+                      return {
+                          "file": os.path.basename(file_path),
+                          "verdict": "Pending Analysis",
+                          "threat_score": 0,
+                          "report_url": report_url,
+                          "sha256": sha256
+                      }
+                  else:
+                      # Use quick-scan for smaller files
+                      print(f"Using quick-scan for file ({file_size_mb:.2f} MB)")
+                      
+                      # Check available scanners
+                      scanner_response = requests.get(
+                          f"{API_BASE_URL}/quick-scan/state",
+                          headers=headers,
+                          timeout=10
+                      )
+                      
+                      scanners = scanner_response.json()
+                      print(f"Available scanners: {', '.join([s['name'] for s in scanners if s['available']])}")
+                      
+                      # Submit file for quick scan
+                      with open(file_path, 'rb') as f:
+                          files = {'file': (os.path.basename(file_path), f)}
+                          data = {
+                              "scan_type": "all",  # Use all available scanners
+                              "comment": "GitHub Security Scan",
+                              "submit_name": os.path.basename(file_path)
+                          }
                           
-                          # Debug information about the response
-                          print(f"Status check response code: {status_response.status_code}")
+                          print("Submitting file for quick scan...")
+                          response = requests.post(
+                              f"{API_BASE_URL}/quick-scan/file",
+                              headers=headers,
+                              files=files,
+                              data=data,
+                              timeout=300  # 5-minute timeout
+                          )
+                      
+                      if response.status_code not in [200, 201]:
+                          print(f"Error: Quick scan failed with status {response.status_code}")
+                          print(f"Response: {response.text}")
+                          return False
+                      
+                      # Parse response
+                      scan_result = response.json()
+                      scan_id = scan_result.get('id')
+                      sha256 = scan_result.get('sha256')
+                      
+                      if not scan_id or not sha256:
+                          print("Error: No scan ID or SHA256 in response")
+                          return False
+                      
+                      # Check if scan is finished
+                      if not scan_result.get('finished', False):
+                          print(f"Quick scan in progress. Waiting for results (ID: {scan_id})...")
                           
-                          if status_response.status_code != 200:
-                              print(f"Warning: Status check failed with code {status_response.status_code}")
-                              print(f"Response: {status_response.text}")
-                              continue
+                          # Wait and poll for results - max 2 minutes
+                          max_attempts = 4
+                          wait_times = [5, 15, 30, 60]  # Total: 110 seconds
                           
-                          report = status_response.json()
-                          print(f"Status response: {json.dumps(report, indent=2)}")
-                          
-                          status = report.get('state', '')
-                          
-                          if status == 'SUCCESS':
-                              # Get results
-                              verdict = report.get('verdict', 'Unknown')
-                              threat_score = report.get('threat_score')
-                              if threat_score is None:
-                                  threat_score = 0
+                          for attempt, wait_time in enumerate(wait_times, 1):
+                              if attempt > 1:
+                                  print(f"Waiting {wait_time} seconds before checking again...")
+                                  time.sleep(wait_time)
                               
-                              # Get report URL
-                              report_sha256 = report.get('sha256', sha256)
-                              report_url = f"https://www.hybrid-analysis.com/sample/{report_sha256}"
+                              print(f"Checking status (attempt {attempt}/{max_attempts})...")
                               
-                              print(f"Analysis complete: {verdict} (Score: {threat_score})")
-                              create_annotation(file_path, verdict, threat_score, report_url)
-                              return True
-                          
-                          elif status == 'ERROR':
-                              error = report.get('error', 'Unknown error')
-                              print(f"Error: Analysis failed - {error}")
-                              return False
-                          
-                          print(f"Current status: {status}")
-                      except Exception as e:
-                          print(f"Error checking status: {e}")
-                  
-                  # If we get here, analysis is still pending after all attempts
-                  report_url = f"https://www.hybrid-analysis.com/sample/{sha256}"
-                  print(f"Analysis still in progress, check manually: {report_url}")
-                  create_annotation(file_path, "Processing", 0, report_url)
-                  return True
-                  
+                              try:
+                                  status_response = requests.get(
+                                      f"{API_BASE_URL}/quick-scan/{scan_id}",
+                                      headers=headers,
+                                      timeout=10
+                                  )
+                                  
+                                  if status_response.status_code != 201:
+                                      print(f"Warning: Status check failed with code {status_response.status_code}")
+                                      continue
+                                  
+                                  scan_result = status_response.json()
+                                  if scan_result.get('finished', False):
+                                      print("Quick scan finished!")
+                                      break
+                                  
+                                  print("Scan still in progress...")
+                              except Exception as e:
+                                  print(f"Error checking status: {e}")
+                      
+                      # Process the results
+                      report_url = f"https://www.hybrid-analysis.com/sample/{sha256}"
+                      
+                      # Process scanners_v2 results if available
+                      scanners_v2 = scan_result.get('scanners_v2', {})
+                      verdict = "No threats detected"
+                      threat_score = 0
+                      
+                      # Check for malicious results in any scanner
+                      malicious_results = []
+                      
+                      for scanner_name, scanner_result in scanners_v2.items():
+                          status = scanner_result.get('status')
+                          if status in ['malicious', 'suspicious']:
+                              malicious_results.append(f"{scanner_name}: {status}")
+                      
+                      if malicious_results:
+                          verdict = "Suspicious" if "suspicious" in str(malicious_results) else "Malicious"
+                          threat_score = 50 if verdict == "Suspicious" else 80
+                          print(f"Detected threats: {', '.join(malicious_results)}")
+                      
+                      # Create annotation
+                      create_annotation(file_path, verdict, threat_score, report_url)
+                      
+                      print(f"Quick scan complete. Result: {verdict} (Score: {threat_score})")
+                      print(f"Report URL: {report_url}")
+                      
+                      return {
+                          "file": os.path.basename(file_path),
+                          "verdict": verdict,
+                          "threat_score": threat_score,
+                          "report_url": report_url,
+                          "sha256": sha256
+                      }
+              
               except Exception as e:
                   print(f"Error scanning file: {str(e)}")
                   return False
@@ -200,12 +278,12 @@ jobs:
               if verdict.lower() == "malicious":
                   level = "error"
                   icon = "🔴"
-              elif verdict.lower() == "suspicious":
+              elif verdict.lower() in ["suspicious", "pending analysis"]:
                   level = "warning"
                   icon = "🟠"
               else:
                   level = "notice"
-                  icon = "ℹ️"
+                  icon = "✅"
               
               # Format annotation text
               message = f"Security Scan: {verdict} {icon} (Score: {threat_score}/100)"
@@ -213,10 +291,6 @@ jobs:
               # Create GitHub annotations
               print(f"::{level} file={file_path}::{message}")
               print(f"::{level} file={file_path}::Report: {report_url}")
-              
-              # Also add to summary
-              with open(os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md'), 'a') as f:
-                  f.write(f"- **{os.path.basename(file_path)}**: {verdict} {icon} - [View Report]({report_url})\n")
               
               return True
           
@@ -239,179 +313,62 @@ jobs:
               
               # Initialize summary
               with open(os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md'), 'w') as f:
-                  f.write("## Hybrid Analysis Security Scan Results\n\n")
-                  f.write("| File | Verdict | Threat Score | Report |\n")
-                  f.write("|------|---------|--------------|--------|\n")
+                  f.write("## 🔍 Hybrid Analysis Security Scan Results\n\n")
               
               # Process each file
-              success_count = 0
               results = []
+              success_count = 0
               
               for file_path in changed_files:
                   print(f"\n--- Scanning: {file_path} ---")
-                  filename = os.path.basename(file_path)
                   
-                  try:
-                      # Submit file to Hybrid Analysis
-                      headers = {
-                          "api-key": api_key,
-                          "User-Agent": "Hybrid Analysis GitHub Action",
-                          "Accept": "application/json"
-                      }
-                      
-                      # Check file size for logging
-                      file_size_mb = os.path.getsize(file_path) / (1024 * 1024)
-                      print(f"File size: {file_size_mb:.2f} MB")
-                      
-                      # Submit the file
-                      with open(file_path, 'rb') as f:
-                          response = requests.post(
-                              "https://www.hybrid-analysis.com/api/v2/submit/file",
-                              headers=headers,
-                              files={'file': (filename, f)},
-                              data={"environment_id": "400"}
-                          )
-                      
-                      if response.status_code not in [200, 201]:
-                          print(f"Error: Submission failed with status {response.status_code}")
-                          print(f"Response: {response.text}")
-                          continue
-                          
-                      # Parse the result
-                      submission = response.json()
-                      print(f"Submission successful: {json.dumps(submission, indent=2)}")
-                      
-                      job_id = submission.get('job_id')
-                      sha256 = submission.get('sha256')
-                      
-                      if not job_id and not sha256:
-                          print("Error: No job ID or SHA256 in response")
-                          continue
-                      
-                      # If we only have SHA256, it's a previously scanned file
-                      if sha256 and not job_id:
-                          report_url = f"https://www.hybrid-analysis.com/sample/{sha256}"
-                          verdict = "Previously analyzed"
-                          threat_score = 0
-                          
-                          results.append({
-                              "file": filename,
-                              "verdict": verdict,
-                              "threat_score": threat_score,
-                              "report_url": report_url
-                          })
-                          
-                          create_annotation(file_path, verdict, threat_score, report_url)
-                          success_count += 1
-                          continue
-                      
-                      # Wait for analysis to complete
-                      print(f"Waiting for analysis to complete...")
-                      
-                      # Determine wait times based on file size
-                      if file_size_mb > 20:
-                          wait_times = [10, 60, 90, 90, 90]
-                      elif file_size_mb > 5:
-                          wait_times = [5, 45, 60, 60]
-                      else:
-                          wait_times = [5, 30, 30]
-                      
-                      # Poll for results
-                      verdict = "Pending"
-                      threat_score = 0
-                      report_url = f"https://www.hybrid-analysis.com/sample/{sha256}"
-                      
-                      for attempt, wait_time in enumerate(wait_times, 1):
-                          if attempt > 1:
-                              print(f"Waiting {wait_time} seconds before next check...")
-                              time.sleep(wait_time)
-                          
-                          try:
-                              print(f"Checking status (attempt {attempt}/{len(wait_times)})...")
-                              status_response = requests.get(
-                                  f"https://www.hybrid-analysis.com/api/v2/report/{job_id}/summary",
-                                  headers=headers
-                              )
-                              
-                              if status_response.status_code != 200:
-                                  print(f"Status check failed: {status_response.status_code}")
-                                  continue
-                              
-                              report = status_response.json()
-                              state = report.get('state', '')
-                              
-                              if state == 'SUCCESS':
-                                  verdict = report.get('verdict', 'Unknown')
-                                  threat_score = report.get('threat_score', 0)
-                                  if threat_score is None:
-                                      threat_score = 0
-                                  
-                                  report_sha256 = report.get('sha256', sha256)
-                                  report_url = f"https://www.hybrid-analysis.com/sample/{report_sha256}"
-                                  
-                                  print(f"Analysis complete: {verdict} (Score: {threat_score})")
-                                  break
-                              
-                              elif state == 'ERROR':
-                                  print(f"Analysis error: {report.get('error', 'Unknown error')}")
-                                  verdict = "Error"
-                                  break
-                              
-                              print(f"Current status: {state}")
-                          except Exception as e:
-                              print(f"Error checking status: {e}")
-                      
-                      # Store results
-                      results.append({
-                          "file": filename,
-                          "verdict": verdict,
-                          "threat_score": threat_score,
-                          "report_url": report_url
-                      })
-                      
-                      # Create annotation
-                      create_annotation(file_path, verdict, threat_score, report_url)
+                  result = scan_file(file_path, api_key)
+                  if result:
+                      results.append(result)
                       success_count += 1
-                      
-                  except Exception as e:
-                      print(f"Error processing file: {e}")
                   
                   print(f"--- Completed: {file_path} ---\n")
               
               # Write detailed results to summary
-              with open(os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md'), 'w') as f:
-                  f.write("## 🔍 Hybrid Analysis Security Scan Results\n\n")
-                  
+              with open(os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md'), 'a') as f:
                   if results:
                       f.write("| File | Verdict | Threat Score | Report |\n")
                       f.write("|------|---------|--------------|--------|\n")
                       
                       for result in results:
                           icon = ""
-                          if result["verdict"].lower() == "malicious":
+                          verdict = result["verdict"]
+                          
+                          if "malicious" in verdict.lower():
                               icon = "🔴 "
-                          elif result["verdict"].lower() == "suspicious":
+                          elif "suspicious" in verdict.lower() or "pending" in verdict.lower():
                               icon = "🟠 "
-                          elif result["verdict"].lower() == "no specific threat":
+                          else:
                               icon = "✅ "
                           
-                          f.write(f"| {result['file']} | {icon}{result['verdict']} | {result['threat_score']} | [View Report]({result['report_url']}) |\n")
+                          f.write(f"| {result['file']} | {icon}{verdict} | {result['threat_score']} | [View Report]({result['report_url']}) |\n")
                   else:
-                      f.write("No files were scanned or all scans failed.\n")
+                      f.write("No files were successfully scanned.\n")
                   
                   f.write(f"\n\n### Summary\n")
                   f.write(f"- Successfully processed {success_count} out of {len(changed_files)} files\n")
+                  
+                  # Add additional info about Hybrid Analysis
+                  f.write("\n### About the Scan\n")
+                  f.write("- Files larger than 50MB are submitted for full analysis which may take longer to process\n")
+                  f.write("- Smaller files are scanned using quick scan with multiple security engines\n")
+                  f.write("- Visit the report links for complete details and to download the files if needed\n")
               
               # Return success if at least one file was processed
               return 0 if success_count > 0 else 1
           
           if __name__ == "__main__":
               sys.exit(main())
-          EOL
+          EOF
           
           # Make script executable and run
           chmod +x scan.py
-          python scan.py || echo "Scan completed with issues, but continuing workflow"
+          python scan.py || echo "Scan completed with some issues, but continuing workflow"
 
       - name: No files to scan message
         if: env.CHANGED_FILES == ''
