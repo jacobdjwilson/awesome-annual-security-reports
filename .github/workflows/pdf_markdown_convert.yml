@@ -93,6 +93,7 @@ jobs:
           # Print available models for debugging
           def list_available_models():
               try:
+                  print("Attempting to list available models...")
                   models = genai.list_models()
                   print("Available models:")
                   for model in models:
@@ -106,19 +107,21 @@ jobs:
           available_models = list_available_models()
           
           # Define models to try in order of preference - using currently available models
-          MODELS = ["gemini-2.0-flash", "gemini-1.5-flash"]
+          MODELS = ["gemini-2.5-flash-preview-04-17", "gemini-2.0-flash", "gemini-1.5-flash"]
           
           # Get the first available model
           MODEL = None
           for model in MODELS:
               try:
                   print(f"Attempting to use model: {model}")
-                  genai.GenerativeModel(model)
+                  test_model = genai.GenerativeModel(model)
+                  # Test a simple generation to verify it works
+                  test_response = test_model.generate_content("Hello")
                   MODEL = model
-                  print(f"Using model: {MODEL}")
+                  print(f"Successfully verified model: {MODEL}")
                   break
               except Exception as e:
-                  print(f"Model {model} not available: {str(e)}")
+                  print(f"Model {model} not available or failed verification: {str(e)}")
                   continue
           
           if not MODEL:
@@ -136,8 +139,11 @@ jobs:
           def extract_text_from_pdf(pdf_path):
               try:
                   # Use markitdown to extract text from PDF
+                  print(f"Extracting text from PDF: {pdf_path}")
                   md = MarkItDown(enable_plugins=False)
                   result = md.convert(str(pdf_path))
+                  text_length = len(result.text_content)
+                  print(f"Successfully extracted {text_length} characters from PDF")
                   return result.text_content
               except Exception as e:
                   print(f"Error extracting text from PDF: {str(e)}")
@@ -145,6 +151,7 @@ jobs:
           
           def generate_markdown_with_ai(pdf_text, prompt_text):
               try:
+                  print(f"Generating markdown with {MODEL}...")
                   model = genai.GenerativeModel(MODEL)
                   full_prompt = f"{prompt_text}\n\n# Report Content Below\n\n{pdf_text}"
                   
@@ -158,6 +165,7 @@ jobs:
                       full_prompt,
                       generation_config=generation_config
                   )
+                  print(f"Successfully generated markdown ({len(response.text)} characters)")
                   return response.text
               except Exception as e:
                   print(f"Error generating markdown with AI: {str(e)}")
@@ -179,14 +187,13 @@ jobs:
               
               # Read the prompt from repository
               prompt_text = read_prompt_file(prompt_path)
+              print(f"Loaded prompt file ({len(prompt_text)} characters)")
               
               # Extract text from PDF using markitdown
               pdf_text = extract_text_from_pdf(pdf_path)
-              print(f"Successfully extracted text from {pdf_path}")
               
               # Generate markdown with Gemini
               markdown_content = generate_markdown_with_ai(pdf_text, prompt_text)
-              print(f"Successfully generated markdown content")
               
               # Determine the output path that matches the input directory structure
               # e.g., Annual Security Reports/2025/file.pdf -> Markdown Conversions/2025/file.md
@@ -203,13 +210,13 @@ jobs:
               with open(output_path, "w", encoding="utf-8") as f:
                   f.write(markdown_content)
               
-              print(f"Created/Updated: {output_path}")
-              
               # Check if file was created or updated
               if not output_path.exists():
                   print(f"Error: Failed to create {output_path}")
                   return False
                   
+              print(f"Created/Updated: {output_path}")
+              
               # Commit the file
               try:
                   # Add the file
@@ -218,14 +225,18 @@ jobs:
                   subprocess.run(["git", "add", str(output_path)], check=True)
                   
                   # Check if file is modified or new
-                  status = subprocess.run(
+                  status_result = subprocess.run(
                       ["git", "status", "--porcelain", str(output_path)], 
                       capture_output=True, 
-                      text=True,
-                      check=True
-                  ).stdout.strip()
+                      text=True
+                  )
                   
-                  action = "Updated" if status.startswith("M") else "Created"
+                  if status_result.returncode != 0:
+                      print(f"Warning: Git status check failed: {status_result.stderr}")
+                      action = "Updated"
+                  else:
+                      status = status_result.stdout.strip()
+                      action = "Updated" if status.startswith("M") else "Created"
                   
                   # Commit the file
                   commit_message = f"{action} {output_path.name} from {pdf_path.name} using AI Prompt {prompt_version} (Model {MODEL}, Branch {branch})"
