@@ -127,7 +127,6 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ steps.branch.outputs.branch }}
         run: |
           cat > update_readme.py << 'EOF'
@@ -430,77 +429,49 @@ jobs:
                   # Push the branch
                   subprocess.run(["git", "push", "--set-upstream", "origin", branch_name], check=True)
                   
-                  # Check if GH_TOKEN environment variable exists
-                  if "GH_TOKEN" in os.environ:
-                      print("GH_TOKEN environment variable exists")
-                  else:
-                      print("GH_TOKEN environment variable does not exist")
+                  # GitHub REST API approach for creating a PR
+                  github_token = os.environ.get("GITHUB_TOKEN")
+                  if not github_token:
+                      print("Error: GITHUB_TOKEN not set")
+                      return False
+                      
+                  # Get repo details from environment
+                  github_repo = os.environ.get("GITHUB_REPOSITORY", "")
+                  if not github_repo:
+                      print("Error: GITHUB_REPOSITORY not set")
+                      return False
+                      
+                  owner, repo = github_repo.split("/") if "/" in github_repo else ("", "")
                   
-                  # Create the pull request using GitHub CLI
-                  cmd = [
-                      "gh", "pr", "create",
-                      "--base", base_branch,
-                      "--head", branch_name,
-                      "--title", title,
-                      "--body", body
-                  ]
+                  if not owner or not repo:
+                      print(f"Error: Could not determine repository owner and name from {github_repo}")
+                      return False
+                      
+                  # Prepare the API request
+                  url = f"https://api.github.com/repos/{owner}/{repo}/pulls"
+                  headers = {
+                      "Authorization": f"token {github_token}",
+                      "Accept": "application/vnd.github.v3+json"
+                  }
+                  payload = {
+                      "title": title,
+                      "body": body,
+                      "head": branch_name,
+                      "base": base_branch
+                  }
                   
-                  print(f"Executing PR command: {' '.join(cmd)}")
+                  # Make the API request
+                  response = requests.post(url, headers=headers, json=payload)
                   
-                  result = subprocess.run(cmd, capture_output=True, text=True)
-                  if result.returncode != 0:
-                      print(f"PR creation failed with exit code {result.returncode}")
-                      print(f"STDOUT: {result.stdout}")
-                      print(f"STDERR: {result.stderr}")
-                      
-                      # Fall back to GitHub API
-                      print("Falling back to GitHub API for PR creation")
-                      github_token = os.environ.get("GITHUB_TOKEN")
-                      if not github_token:
-                          print("Error: GITHUB_TOKEN not set")
-                          return False
-                          
-                      # Get repo details from environment
-                      github_repo = os.environ.get("GITHUB_REPOSITORY", "")
-                      if not github_repo:
-                          print("Error: GITHUB_REPOSITORY not set")
-                          return False
-                          
-                      owner, repo = github_repo.split("/") if "/" in github_repo else ("", "")
-                      
-                      if not owner or not repo:
-                          print(f"Error: Could not determine repository owner and name from {github_repo}")
-                          return False
-                          
-                      # Prepare the API request
-                      url = f"https://api.github.com/repos/{owner}/{repo}/pulls"
-                      headers = {
-                          "Authorization": f"token {github_token}",
-                          "Accept": "application/vnd.github.v3+json"
-                      }
-                      payload = {
-                          "title": title,
-                          "body": body,
-                          "head": branch_name,
-                          "base": base_branch
-                      }
-                      
-                      # Make the API request
-                      response = requests.post(url, headers=headers, json=payload)
-                      
-                      if response.status_code >= 200 and response.status_code < 300:
-                          pr_data = response.json()
-                          pr_url = pr_data.get("html_url", "")
-                          print(f"Pull request created via API: {pr_url}")
-                          return True
-                      else:
-                          print(f"API Error creating PR: {response.status_code}")
-                          print(f"API Response: {response.text}")
-                          return False
-                  else:
-                      pr_url = result.stdout.strip()
-                      print(f"Pull request created via CLI: {pr_url}")
+                  if response.status_code >= 200 and response.status_code < 300:
+                      pr_data = response.json()
+                      pr_url = pr_data.get("html_url", "")
+                      print(f"Pull request created via API: {pr_url}")
                       return True
+                  else:
+                      print(f"API Error creating PR: {response.status_code}")
+                      print(f"API Response: {response.text}")
+                      return False
               except Exception as e:
                   print(f"Error creating pull request: {str(e)}")
                   import traceback
@@ -598,7 +569,6 @@ jobs:
                   entry_info = find_report_entry_in_section(sections[section_name], metadata['organization'])
                   
                   # Get the report name from the markdown content
-                  # This is usually in the first heading, but a more robust extraction would be needed
                   report_name = "Report"
                   for line in md_content.split('\n'):
                       if line.startswith('# '):
@@ -670,16 +640,7 @@ jobs:
           # Make the script executable
           chmod +x update_readme.py
           
-          # Install GitHub CLI for PR creation
-          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-          sudo apt update
-          sudo apt install gh
-          
-          # Set GitHub CLI auth token via environment variable
-          export GH_TOKEN="${GITHUB_TOKEN}"
-          
-          # Run the script 
+          # Run the script
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             export MANUAL_TEST=true
           fi
