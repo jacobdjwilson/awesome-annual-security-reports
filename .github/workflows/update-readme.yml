@@ -6,28 +6,10 @@ on:
     types:
       - completed
     branches: [main, development]
-  workflow_dispatch:  # Added manual trigger for testing
+  workflow_dispatch:  # Manual trigger for testing
 
 jobs:
-  debug-workflow:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Debug workflow trigger
-        run: |
-          echo "Workflow triggered successfully"
-          echo "Event name: ${{ github.event_name }}"
-          if [ "${{ github.event_name }}" == "workflow_run" ]; then
-            echo "Triggered by workflow: ${{ github.event.workflow_run.name }}"
-            echo "Workflow conclusion: ${{ github.event.workflow_run.conclusion }}"
-            echo "Workflow branch: ${{ github.event.workflow_run.head_branch }}"
-            echo "Workflow run ID: ${{ github.event.workflow_run.id }}"
-          else
-            echo "Triggered manually via workflow_dispatch"
-          fi
-
   update-readme:
-    needs: debug-workflow
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -76,7 +58,7 @@ jobs:
               run_id: runId
             });
             
-            // Find the artifact (if any) containing the converted file info
+            // Find the artifact containing the converted file info
             const artifact = artifacts.data.artifacts.find(artifact => artifact.name === 'converted_file_info');
             
             if (!artifact) {
@@ -128,6 +110,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ steps.branch.outputs.branch }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           cat > update_readme.py << 'EOF'
           #!/usr/bin/env python3
@@ -279,7 +262,6 @@ jobs:
           
           def determine_section_for_report(filename, sections):
               """Determine which section the report should be placed in"""
-              # This logic would typically be based on the content or filename patterns
               filename_lower = filename.lower()
               
               # Map of keywords to sections
@@ -401,13 +383,13 @@ jobs:
                   # Get the entire badge URL
                   badge_url = badge_match.group(0)
                   # The URL already contains a count, but after a successful workflow run, this count will be outdated
-                  # We can simply leave it as is, GitHub will render the latest count when the README is viewed
+                  # GitHub will render the latest count when the README is viewed
                   return readme_content
               
               return readme_content
           
           def create_pull_request(repo_path, branch_name, title, body):
-              """Create a pull request with the changes"""
+              """Create a pull request with the changes using GitHub API"""
               try:
                   # Get the current branch
                   current_branch = os.environ.get("BRANCH", "main")
@@ -486,7 +468,7 @@ jobs:
               branch = os.environ.get("BRANCH", "development")
               
               # Read the summarization prompt
-              prompt_path = f".github/ai-prompts/markdown-summarization-prompt.md"
+              prompt_path = ".github/ai-prompts/markdown-summarization-prompt.md"
               if not os.path.exists(prompt_path):
                   print(f"Error: Prompt file not found at {prompt_path}")
                   sys.exit(1)
