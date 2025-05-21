@@ -20,7 +20,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install google-generativeai pyyaml mistune gitpython requests
+          pip install google-generativeai pyyaml mistune gitpython
       
       - name: Determine current branch
         id: branch
@@ -108,9 +107,6 @@ jobs:
         if: steps.find-files.outputs.files_found == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: ${{ steps.branch.outputs.branch }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           cat > update_readme.py << 'EOF'
           #!/usr/bin/env python3
@@ -118,10 +114,8 @@ jobs:
           import os
           import re
           import sys
-          import requests
           import google.generativeai as genai
           from pathlib import Path
-          import subprocess
           from datetime import datetime
           
           # Configure Gemini API
@@ -388,84 +382,9 @@ jobs:
               
               return readme_content
           
-          def create_pull_request(repo_path, branch_name, title, body):
-              """Create a pull request with the changes using GitHub API"""
-              try:
-                  # Get the current branch
-                  current_branch = os.environ.get("BRANCH", "main")
-                  base_branch = current_branch
-                  
-                  # Configure git
-                  subprocess.run(["git", "config", "user.name", "GitHub Action"], check=True)
-                  subprocess.run(["git", "config", "user.email", "action@github.com"], check=True)
-                  
-                  # Create a new branch
-                  subprocess.run(["git", "checkout", "-b", branch_name], check=True)
-                  
-                  # Add changes
-                  subprocess.run(["git", "add", "README.md"], check=True)
-                  
-                  # Commit changes
-                  subprocess.run(["git", "commit", "-m", title], check=True)
-                  
-                  # Push the branch
-                  subprocess.run(["git", "push", "--set-upstream", "origin", branch_name], check=True)
-                  
-                  # GitHub REST API approach for creating a PR
-                  github_token = os.environ.get("GITHUB_TOKEN")
-                  if not github_token:
-                      print("Error: GITHUB_TOKEN not set")
-                      return False
-                      
-                  # Get repo details from environment
-                  github_repo = os.environ.get("GITHUB_REPOSITORY", "")
-                  if not github_repo:
-                      print("Error: GITHUB_REPOSITORY not set")
-                      return False
-                      
-                  owner, repo = github_repo.split("/") if "/" in github_repo else ("", "")
-                  
-                  if not owner or not repo:
-                      print(f"Error: Could not determine repository owner and name from {github_repo}")
-                      return False
-                      
-                  # Prepare the API request
-                  url = f"https://api.github.com/repos/{owner}/{repo}/pulls"
-                  headers = {
-                      "Authorization": f"token {github_token}",
-                      "Accept": "application/vnd.github.v3+json"
-                  }
-                  payload = {
-                      "title": title,
-                      "body": body,
-                      "head": branch_name,
-                      "base": base_branch
-                  }
-                  
-                  # Make the API request
-                  response = requests.post(url, headers=headers, json=payload)
-                  
-                  if response.status_code >= 200 and response.status_code < 300:
-                      pr_data = response.json()
-                      pr_url = pr_data.get("html_url", "")
-                      print(f"Pull request created via API: {pr_url}")
-                      return True
-                  else:
-                      print(f"API Error creating PR: {response.status_code}")
-                      print(f"API Response: {response.text}")
-                      return False
-              except Exception as e:
-                  print(f"Error creating pull request: {str(e)}")
-                  import traceback
-                  traceback.print_exc()
-                  return False
-          
           def main():
               # Setup the model
               model_name = setup_model()
-              
-              # Get current branch
-              branch = os.environ.get("BRANCH", "development")
               
               # Read the summarization prompt
               prompt_path = ".github/ai-prompts/markdown-summarization-prompt.md"
@@ -487,10 +406,6 @@ jobs:
                       # Just create a minimal test update to README.md
                       with open("README.md", "a") as f:
                           f.write("\n\n<!-- Test update: " + datetime.now().isoformat() + " -->\n")
-                      
-                      # Create a pull request
-                      branch_name = f"test-update-readme-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
-                      create_pull_request(".", branch_name, "Test README update", "This is a test PR to verify the workflow is functioning correctly.")
                       return 0
                   else:
                       print("No recently converted files found and not in test mode.")
@@ -600,10 +515,8 @@ jobs:
               # Write the updated README.md
               with open(readme_path, "w", encoding="utf-8") as f:
                   f.write(readme_content)
-              
-              # Create a pull request
-              pr_title = f"Update README.md with new reports: {', '.join([f'{f['org']} ({f['year']})' for f in processed_files])}"
-              
+                  
+              # Create a summary file for PR body
               pr_body = "This pull request updates README.md with the following reports:\n\n"
               for file in processed_files:
                   pr_body += f"- **{file['org']} ({file['year']})** in section '{file['section']}'\n"
@@ -611,8 +524,14 @@ jobs:
               
               pr_body += "\nThis PR was automatically generated by the Update README workflow."
               
-              branch_name = f"update-readme-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
-              create_pull_request(".", branch_name, pr_title, pr_body)
+              # Write the PR body to a file
+              with open("pr_body.txt", "w", encoding="utf-8") as f:
+                  f.write(pr_body)
+                  
+              # Return successfully processed files count for the commit message
+              org_names = [f"{f['org']} ({f['year']})" for f in processed_files]
+              print(f"COMMIT_MSG=Update README.md with new reports: {', '.join(org_names)}")
+              
               return 0
           
           if __name__ == "__main__":
@@ -622,11 +541,30 @@ jobs:
           # Make the script executable
           chmod +x update_readme.py
           
-          # Run the script
+          # Run the script and capture commit message
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             export MANUAL_TEST=true
           fi
           python update_readme.py
+          
+          # Extract commit message from output for peter-evans/create-pull-request action
+          COMMIT_MSG=$(python update_readme.py 2>&1 | grep "COMMIT_MSG=" | sed 's/COMMIT_MSG=//')
+          if [ -z "$COMMIT_MSG" ]; then
+            COMMIT_MSG="Update README.md with new security reports"
+          fi
+          echo "commit_msg=$COMMIT_MSG" >> $GITHUB_OUTPUT
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        if: steps.find-files.outputs.files_found == 'true'
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: ${{ steps.generate-report-descriptions.outputs.commit_msg || 'Update README.md with new security reports' }}
+          title: ${{ steps.generate-report-descriptions.outputs.commit_msg || 'Update README.md with new security reports' }}
+          body-path: pr_body.txt
+          branch: update-readme-${{ github.run_id }}
+          delete-branch: true
+          base: ${{ steps.branch.outputs.branch }}
       
       - name: Upload debug info
         if: always()
