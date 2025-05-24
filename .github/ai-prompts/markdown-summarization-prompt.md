@@ -18,7 +18,7 @@ Provide a concise two-sentence summary of a security report, highlighting its ma
 1. Ensure the summary is concise (2 sentences max).
 2. Maintain a professional, technical tone for a cybersecurity audience.
 3. Prioritize notable statistics, trends, or findings over generic statements.
-4. DO NOT start the first sentence with "The Report" instead begin the first sentence with a verb (eg. Focuses on, Highlights, Analyzes, Examines, Provides, Offers, Outlines, )
+4. DO NOT start the first sentence with "This Report" or "The Report" instead begin the first sentence with a verb (eg. Focuses on, Highlights, Analyzes, Examines, Provides, Offers, Outlines, )
 
 ### Example Output
 "Examines the state of cloud security and container usage, providing benchmarks for maturity and efficiency. Key findings include a significant disparity between users and service accounts, as well as the rising adoption of runtime security tools in unexpected industries."

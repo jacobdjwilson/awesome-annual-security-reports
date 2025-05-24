@@ -319,6 +319,6 @@ jobs:
       - name: Error - Prompt file missing
         if: steps.find-pdfs.outputs.pdfs_changed == 'true' && steps.check-prompt.outputs.prompt_exists != 'true'
         run: |
-          echo "Error: Prompt file not found at .github/ai-prompts/pdf_to_markdown_prompt.md"
+          echo "Error: Prompt file not found at .github/ai-prompts/pdf-to-markdown-prompt.md"
           echo "Please ensure the prompt file exists in your repository."
           exit 1
