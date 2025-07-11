@@ -47,6 +47,8 @@ jobs:
               
               # Create a GitHub annotation with line content included in the message
               echo "::error file=README.md,line=${LINE_NUM},col=${COL_NUM}::${ERROR_MSG} | Line content: ${LINE_CONTENT}"
+              # Also print to stdout for immediate visibility in run output
+              echo "Error in README.md:${LINE_NUM}:${COL_NUM} - ${ERROR_MSG} | Line content: ${LINE_CONTENT}"
             fi
           done
       
