@@ -150,7 +150,7 @@ jobs:
           genai.configure(api_key=os.environ["GEMINI_API_KEY"])
           
           # Define models to try in order of preference
-          MODELS = ["gemini-2.5-flash-preview-04-17", "gemini-2.0-flash", "gemini-1.5-flash"]
+          MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
           
           def get_available_model():
               """Find the first available Gemini model"""
@@ -286,8 +286,8 @@ jobs:
                       "penetration": ["penetration", "pentest", "red team", "ethical hacking"]
                   }
               
-              def extract_org_and_year(self, file_path: str) -> Tuple[str, str]:
-                  """Extract organization name and year from file path"""
+              def extract_org_and_year(self, file_path: str) -> Tuple[str, str, str, str]:
+                  """Extract organization name, year, report title, and original PDF filename from file path"""
                   path = Path(file_path)
                   
                   # Extract year from path (e.g., "Markdown Conversions/2025/...")
@@ -297,12 +297,19 @@ jobs:
                           year = part
                           break
                   
-                  # Extract organization from filename
-                  filename = path.stem
-                  org_match = re.match(r'^([^-]+)', filename)
-                  org = org_match.group(1) if org_match else filename
+                  # Extract organization and full filename stem
+                  filename_stem = path.stem # e.g., BlackDuck-Software-Vulnerability-Snapshot-Report-2024
+                  org_match = re.match(r'^([^-]+)', filename_stem)
+                  org = org_match.group(1) if org_match else filename_stem
                   
-                  return org.strip(), year
+                  # Derive report title
+                  report_title_raw = filename_stem.replace(f"{org}-", "").replace(f"-{year}", "")
+                  report_title = report_title_raw.replace("-", " ").strip()
+                  
+                  # Derive original PDF filename
+                  original_pdf_filename = f"{filename_stem}.pdf"
+                  
+                  return org.strip(), year, report_title, original_pdf_filename
               
               def read_markdown_content(self, file_path: str) -> str:
                   """Read the content of a markdown file"""
@@ -412,11 +419,13 @@ jobs:
                   self.lines = readme_content.split('\n')
               
               def add_report_entry(self, main_section: str, subsection: str, org: str, year: str, 
-                                 filename: str, summary: str) -> str:
+                                 publisher_url: str, report_title: str, original_pdf_filename: str, summary: str) -> str:
                   """Add a new report entry to the README"""
                   
                   # Create the new entry
-                  entry_line = f"- **{org} {year}**: {summary} - [View Report](Markdown%20Conversions/{year}/{filename})"
+                  # New format: - [<PublisherName>](<PublisherURL>) - [<ReportTitle>](<LocalFilePath>) (<Year>) - <Summary>
+                  local_file_path = f"Annual%20Security%20Reports/{year}/{original_pdf_filename}"
+                  entry_line = f"- [{org}]({publisher_url}) - [{report_title}]({local_file_path}) ({year}) - {summary}"
                   
                   # Find the subsection
                   subsection_pattern = re.compile(r'^#+\s+' + re.escape(subsection), re.IGNORECASE)
@@ -446,22 +455,24 @@ jobs:
                   entries = []
                   entry_lines = []
                   
+                  # Regex to match existing entries in the new format for replacement check
+                  # This regex looks for a line starting with `- [` followed by the organization name,
+                  # then any characters (`.*?`), then `(` followed by the year, then `) - `.
+                  org_year_regex = re.compile(r"^- \[" + re.escape(org) + r"\].*?\(" + re.escape(year) + r"\) - ")
+                  
                   for i in range(subsection_line + 1, next_section_line):
                       line = self.lines[i].strip()
-                      if line.startswith('- **'):
+                      # Check if this line is an existing report entry in the new format
+                      if re.match(r"^- \[.+?\]\(.+?\) - \[.+?\]\(.+?\) \(\d{4}\) - .+", line):
                           entries.append(line)
                           entry_lines.append(i)
                   
                   # Check if this entry already exists (same org and year)
-                  org_year_pattern = f"- **{org} {year}**:"
-                  for existing_entry in entries:
-                      if existing_entry.startswith(org_year_pattern):
+                  for i, existing_entry_line_content in enumerate(self.lines):
+                      if org_year_regex.match(existing_entry_line_content.strip()):
                           print(f"Entry for {org} {year} already exists, updating...")
-                          # Replace existing entry
-                          for i, line in enumerate(self.lines):
-                              if line.strip().startswith(org_year_pattern):
-                                  self.lines[i] = entry_line
-                                  return '\n'.join(self.lines)
+                          self.lines[i] = entry_line
+                          return '\n'.join(self.lines)
                   
                   # Add new entry in alphabetical order
                   entries.append(entry_line)
@@ -552,9 +563,9 @@ jobs:
                           print(f"File not found: {file_path}")
                           continue
                       
-                      # Extract org and year
-                      org, year = analyzer.extract_org_and_year(file_path)
-                      print(f"Organization: {org}, Year: {year}")
+                      # Extract org, year, report title, and original PDF filename
+                      org, year, report_title, original_pdf_filename = analyzer.extract_org_and_year(file_path)
+                      print(f"Organization: {org}, Year: {year}, Report Title: {report_title}, Original PDF: {original_pdf_filename}")
                       
                       # Read content
                       content = analyzer.read_markdown_content(file_path)
@@ -584,10 +595,12 @@ jobs:
                       best_subsection = analyzer.find_best_subsection(content, available_subsections)
                       print(f"Selected subsection: {best_subsection}")
                       
+                      # Placeholder for PublisherURL as it cannot be reliably derived from current information
+                      publisher_url = f"https://[PublisherWebsite]" 
+                      
                       # Update README
-                      filename = Path(file_path).name
                       updated_content = updater.add_report_entry(
-                          main_section, best_subsection, org, year, filename, summary
+                          main_section, best_subsection, org, year, publisher_url, report_title, original_pdf_filename, summary
                       )
                       updater = ReadmeUpdater(updated_content)  # Update with new content
                       
