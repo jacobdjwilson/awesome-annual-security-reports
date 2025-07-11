@@ -32,18 +32,30 @@ jobs:
         run: |
           # Get only renamed, added, or modified files in the push
           echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
+          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | \
             grep -E "Annual Security Reports/.+\.(pdf|docx|pptx)$" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+EOF
           
           # Count for logging
-          COUNT=$(git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
+          # Determine the correct git diff range based on whether github.event.before is a valid object
+          BEFORE_SHA="${{ github.event.before }}"
+          AFTER_SHA="${{ github.event.after }}"
+          
+          DIFF_RANGE=""
+          if git rev-parse --verify "$BEFORE_SHA" &>/dev/null; then
+            DIFF_RANGE="$BEFORE_SHA $AFTER_SHA"
+          else
+            # Fallback for initial pushes or force pushes where 'before' might not exist
+            DIFF_RANGE="HEAD~1 HEAD"
+          fi
+
+          COUNT=$(git diff --diff-filter=RAM --name-only $DIFF_RANGE | \
             grep -E "Annual Security Reports/.+\.(pdf|docx|pptx)$" | wc -l || echo 0)
           
           echo "Found $COUNT changed security report files"
           
           # Show the files found
-          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
+          git diff --diff-filter=RAM --name-only $DIFF_RANGE | \
             grep -E "Annual Security Reports/.+\.(pdf|docx|pptx)$" || echo "No files found"
 
       - name: Scan changed files with VirusTotal
@@ -389,7 +401,7 @@ jobs:
           
           if __name__ == "__main__":
               sys.exit(main())
-          EOF
+EOF
           
           # Make script executable and run
           chmod +x scan.py
