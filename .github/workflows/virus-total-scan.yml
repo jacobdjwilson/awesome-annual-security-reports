@@ -361,6 +361,77 @@ jobs:
               
               return True
           
+          def create_commit_comment(file_path, verdict, report_url, sha256):
+              """Create GitHub commit comment with scan results"""
+              try:
+                  github_token = os.environ.get('GITHUB_TOKEN')
+                  if not github_token:
+                      print("Warning: GITHUB_TOKEN not available, skipping commit comment")
+                      return False
+                  
+                  # Get repository info from environment
+                  repo_full_name = os.environ.get('GITHUB_REPOSITORY')  # owner/repo
+                  commit_sha = os.environ.get('GITHUB_SHA')
+                  
+                  if not repo_full_name or not commit_sha:
+                      print("Warning: Repository info not available, skipping commit comment")
+                      return False
+                  
+                  # Determine emoji based on verdict
+                  if verdict.lower() == "malicious":
+                      emoji = "🔴"
+                  elif verdict.lower() == "suspicious":
+                      emoji = "🟠"
+                  else:
+                      emoji = "✅"
+                  
+                  # Format comment body
+                  comment_body = f"""## {emoji} VirusTotal Scan Results
+          
+          **File:** `{os.path.basename(file_path)}`
+          **Verdict:** {verdict}
+          **SHA256:** `{sha256}`
+          
+          🔗 **[View Full VirusTotal Report]({report_url})**
+          
+          ---
+          *Automated security scan via GitHub Actions*"""
+                  
+                  # GitHub API headers
+                  headers = {
+                      "Authorization": f"token {github_token}",
+                      "Accept": "application/vnd.github.v3+json",
+                      "User-Agent": "GitHub Actions VirusTotal Scanner"
+                  }
+                  
+                  # Create commit comment
+                  api_url = f"https://api.github.com/repos/{repo_full_name}/commits/{commit_sha}/comments"
+                  
+                  payload = {
+                      "body": comment_body,
+                      "path": file_path,
+                      "line": 1
+                  }
+                  
+                  response = requests.post(
+                      api_url,
+                      headers=headers,
+                      json=payload,
+                      timeout=30
+                  )
+                  
+                  if response.status_code == 201:
+                      print(f"✅ Commit comment created successfully for {file_path}")
+                      return True
+                  else:
+                      print(f"Warning: Failed to create commit comment. Status: {response.status_code}")
+                      print(f"Response: {response.text}")
+                      return False
+                      
+              except Exception as e:
+                  print(f"Error creating commit comment: {str(e)}")
+                  return False
+          
           def main():
               # Get API key
               api_key = os.environ.get('VIRUS_TOTAL_API_KEY')
