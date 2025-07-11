@@ -1,4 +1,5 @@
 name: Awesome Lint
+
 on:
   push:
     paths:
