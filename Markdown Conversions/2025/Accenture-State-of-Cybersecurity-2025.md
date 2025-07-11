@@ -3,18 +3,21 @@
 Elevate your cybersecurity
 to fit an AI-driven world
 
-## Authors
+Authors
 
 Paolo Dal Cin
 Global Lead
+
 Accenture Security
 
 Daniel Kendzior
 Global Data and AI Lead
+
 Accenture Security
 
 Yusof Seedat
 Global Research Lead
+
 Accenture Security
 
 With over 27,000 professionals under
@@ -41,12 +44,12 @@ positioning for organizations globally.
 AI is moving faster than security—most organizations
 don’t even realize how exposed they are.
 
-Just 36%
+Just **36%**
 of technology leaders
 say generative AI is
 outpacing their security,
 
-yet 90%
+yet **90%**
 lack the maturity to
 defend against modern,
 AI-driven threats.
@@ -58,16 +61,16 @@ AI-driven threats.
 - [The race to AI adoption, coupled with talent shortages, is outpacing security](#the-race-to-ai-adoption-coupled-with-talent-shortages-is-outpacing-security)
 - [The Reinvention-Ready Zone advantage—where security fuels success](#the-reinvention-ready-zone-advantagewhere-security-fuels-success)
 - [Four actions to strengthen AI security](#four-actions-to-strengthen-ai-security)
-  - [Action 01\_ Built for protection](#action-01_-built-for-protection)
-  - [Action 02\_ The strength to grow](#action-02_-the-strength-to-grow)
-  - [Action 03\_ Real world resilience](#action-03_-real-world-resilience)
-  - [Action 04\_ The reinvention effect](#action-04_-the-reinvention-effect)
+  - [Action 01_ Built for protection](#action-01_-built-for-protection)
+  - [Action 02_ The strength to grow](#action-02_-the-strength-to-grow)
+  - [Action 03_ Real world resilience](#action-03_-real-world-resilience)
+  - [Action 04_ The reinvention effect](#action-04_-the-reinvention-effect)
 - [Start your journey](#start-your-journey)
+- [The CISO checklist](#the-ciso-checklist)
 - [About the research](#about-the-research)
 - [References](#references)
 - [Acknowledgments](#acknowledgments)
 - [About Accenture](#about-accenture)
-- [About Accenture Research](#about-accenture-research)
 - [Disclaimer](#disclaimer)
 - [Copyright](#copyright)
 
@@ -118,10 +121,10 @@ defenses later, often under duress[^3]. This reactive
 approach places growing pressure on already
 stretched security teams.
 
-Only 34%
+Only **34%**
 of organizations have a mature
 cyber strategy. Fewer still—just
-13%—possess the advanced cyber
+**13%**—possess the advanced cyber
 capabilities needed to defend
 against modern, AI-driven threats.
 
@@ -178,8 +181,7 @@ achieve Reinvention-Ready Zone status. These actions
 not only protect AI investments but also leverage AI to
 enhance cybersecurity defenses and resilience.
 
-01
-Develop and deploy a fit-for-purpose security
+01 Develop and deploy a fit-for-purpose security
 governance framework and operating model
 accounting for the realities of an AI-disrupted world.
 Establish clear accountability and align AI security
@@ -199,8 +201,7 @@ organizations assess AI security before deployment,
 despite 66% recognizing AI’s transformative impact
 on cybersecurity in the coming year[^12].
 
-03
-Maintain resilient AI systems with secure
+03 Maintain resilient AI systems with secure
 foundations and proactive threat management.
 Emerging AI-based cyberattacks—including AI worms
 like Morris II—can embed malicious prompts into
@@ -212,8 +213,7 @@ management and AI-specific threat intelligence,
 organizations will remain vulnerable to data poisoning,
 model manipulation and adversarial AI attacks.
 
-04
-Reinvent cybersecurity with generative
+04 Reinvent cybersecurity with generative
 AI to scale security capabilities, strengthen
 cyber defenses and detect threats earlier.
 With an estimated 4.8 million cybersecurity positions
@@ -235,6 +235,7 @@ their AI-powered transformations will not
 only survive but thrive, gaining a crucial
 competitive edge, cementing customer
 loyalty and building unshakable resilience.
+
 Ascending to the Reinvention-Ready Zone—
 where robust security is deeply embedded
 in both strategy and capability—requires
@@ -288,7 +289,7 @@ unprecedented efficiency and innovation. However,
 it is also amplifying cyber risks in ways that many
 organizations are unprepared for.
 
-![Estimated AI adoption]
+![Figure 1: Estimated AI adoption. Our economic analysis projects 80% industry-wide growth in AI adoption over the next decade. The chart shows projected AI adoption percentage over time for various industries (Education, Professional Services, Information, Financial Services, Wholesale Trade, Health, Total Construction, Retail, Manufacturing, Accommodation, Transportation). It highlights that in 5 years, AI adoption will reach 64.3% in Education, 54.6% in Professional Services, 48.6% in Information, 47.1% in Financial Services, 33.6% in Wholesale Trade, 40.1% in Health, 30% in Total Construction, 16.9% in Retail, 15.3% in Manufacturing, 14.2% in Accommodation, and 8.3% in Transportation. It also notes AI adoption will reach 50% by 2029Q2.]
 
 Accenture’s Pulse of Change Index—based
 on key business indicators—measures
@@ -310,7 +311,7 @@ strategy. Our economic analysis projects
 even stronger industry-wide growth over
 the next decade (Figure 1).
 
-Only 20%
+Only **20%**
 of organizations express
 confidence in their ability
 to secure their generative
@@ -421,7 +422,7 @@ of organizations have not established a secure cloud
 foundation with integrated monitoring, detection and
 response capabilities[^28].
 
-Only 10%
+Only **10%**
 of organizations occupy the coveted
 Reinvention-Ready Zone, demonstrating
 both robust security capabilities and
@@ -439,8 +440,6 @@ The results are stark. Only 10% occupy the coveted
 Reinvention-Ready Zone, demonstrating both robust
 security capabilities and integrated cyber strategy.
 
-![Security Posture Maturity: Moving from Exposed to Reinvention-Ready Zone]
-
 Around 27% fall into the Progressing Zone—showing
 cybersecurity strong on strategy but lacking in
 implementation (24%) or strong on protection
@@ -453,6 +452,8 @@ of organizations demonstrate a strong cyber strategy
 through intensified practices, and just 13% possess
 the robust protection and resilience needed to truly
 weather the storm[^29].
+
+![Figure 2: Security Posture Maturity: Moving from Exposed to Reinvention-Ready Zone. The diagram shows a matrix with Cyber Strategy on the Y-axis (Strong cyber strategies at the top) and Cyber Capability on the X-axis (Strong cyber capabilities on the right). Three zones are depicted: Exposed Zone (bottom left, 63%), Progressing Zone (top left, 24% - strong strategy, weak capability; and bottom right, 3% - weak strategy, strong capability), and Reinvention-Ready Zone (top right, 10%). Descriptions for each zone are provided.]
 
 ## The race to AI adoption, coupled with talent shortages, is outpacing security
 
@@ -493,7 +494,7 @@ critical cybersecurity talent shortage, with 83%
 of executives identifying it as a major obstacle to
 achieving a strong security posture[^32].
 
-![Generative AI spend vs. security spend]
+![Figure 3: Generative AI spend vs. security spend. Spending on generative AI initiatives is outpacing investments in securing generative AI. The bar chart shows Gen AI spend as % of IT spend and Cybersecurity budget allocated to securing gen AI initiatives for 2023, 2024, and 2025. The gap between Gen AI spend and security budget is shown as 1.6X in 2024 and 2.6X in 2025.]
 
 ## The Reinvention-Ready Zone advantage—where security fuels success
 
@@ -513,7 +514,7 @@ driving significant business value. These firms achieve
 demonstrating that embedding security from the start
 fuels both resilience and financial success.
 
-![Advantage of security investments]
+![Figure 4: Advantage of security investments. Increasing investments in security posture practices to reach the Reinvention-Ready Zone builds resilience, empowering companies to stay ahead of threats. The chart shows the percentage reduction in Material cyber threat incidents and Minor cyber incidents for Progressing Zone (-11% material, -7% minor) and Reinvention-Ready Zone (-13% material, -14% minor) compared to the Exposed Zone (0%).]
 
 Furthermore, their robust security practices
 contribute to a 1.7 times reduction in technical debt,
@@ -546,8 +547,7 @@ attack surface. Companies must take four
 decisive actions to protect AI investments
 and leverage AI's defensive capabilities:
 
-01
-Develop and deploy a fit-for-
+01 Develop and deploy a fit-for-
 purpose security governance
 framework and operating model
 accounting for the realities of an
@@ -556,16 +556,14 @@ clear accountability and align
 AI security with regulatory and
 business objectives.
 
-02
-Design a digital core to be
+02 Design a digital core to be
 generative AI secure from
 the onset by embedding
 security into AI development,
 deployment and operational
 processes from the outset.
 
-03
-Maintain resilient AI systems
+03 Maintain resilient AI systems
 with secure foundations that
 proactively address emerging
 threats, enhance detection
@@ -573,15 +571,14 @@ capabilities, enable AI-model
 testing and improve
 response mechanisms.
 
-04
-Reinvent cybersecurity
+04 Reinvent cybersecurity
 with generative AI by
 leveraging it to automate
 security processes,
 strengthen cyber defenses
 and detect threats sooner.
 
-### Action 01\_ Built for protection
+### Action 01_ Built for protection
 
 Developing and deploying fit-for-purpose
 security in an AI-disrupted world
@@ -706,65 +703,4 @@ AI-powered phishing and identity fraud become
 more sophisticated, social engineering attacks
 increasingly bypass traditional security controls.
 Reinvention-Ready Zone organizations recognize
-this, with 75% implementing structured AI-focused
-security awareness training, while those in the
-Exposed Zone leave employees vulnerable due to a
-lack of education programs[^40].
-
-Equip employees at all levels—from senior leadership
-to frontline staff—with the skills to recognize and
-respond to AI-driven threats. Tailor training to
-specific roles, ensuring executives, developers and
-frontline teams understand the AI risks most relevant
-to their responsibilities. Strengthen cyber readiness
-
-through AI-specific awareness programs, hands-
-on incident response drills and interactive training,
-such as phishing simulations. Promote cybersecurity
-certifications to deepen expertise and foster a
-security-conscious culture. Assess effectiveness by
-tracking AI phishing resilience, incident reporting
-rates and measurable behavioral improvements.
-
-To future-proof AI security, strengthen AI talent
-pipelines by upskilling security teams and investing
-in AI-specific cybersecurity training. Establishing
-clear AI security policies and usage guidelines
-prevents misuse, unauthorized access and
-compliance failures—ensuring AI systems operate
-securely and responsibly.
-
-By prioritizing AI awareness, training and talent
-development, organizations can reduce human risk,
-strengthen cyber resilience and turn employees into
-active defenders against AI-driven threats.
-
-### Action 02\_ The strength to grow
-
-Designing the Digital Core
-that’s gen AI secure from the outset
-
-While 66% of organizations
-recognize AI's impact on
-cybersecurity, only 37% have
-processes in place to assess AI tool
-security before deployment—a stark
-disconnect between awareness
-and action[^41]. Securing the entire
-generative AI stack, from data and
-models to applications and access
-controls, is critical.
-
-Traditional security alone is insufficient; AI-specific
-defenses are needed to prevent data exposure,
-model compromise and application vulnerabilities.
-True cyber resilience in an AI-driven world requires
-embedding advanced security controls into the
-digital core.
-
-As Chapter 2 of our digital core research points
-out, in order to benefit from the advances of AI,
-organizations must move from traditional instruction-
-driven, predefined technology stacks to intention-
-based systems, powered by AI, with a cognitive
-architecture that mimics human-like thinking
+this, with 75% implementing structured

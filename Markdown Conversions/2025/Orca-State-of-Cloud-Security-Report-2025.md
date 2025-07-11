@@ -1,3 +1,39 @@
+# AI Instruction Set for Converting Technical PDFs to Markdown
+## Purpose
+Ensure technical PDFs are converted to Markdown with complete fidelity, preserving all content, structure, and formatting.
+## Goals
+1. **Full Conversion**: Include all text, quotations, footnotes, references, and technical terminology without omission or summarization.
+2. **TOC Format**: Include a fully functional Table of Contents with proper linking.
+3. **Markdown Conventions**: Use clear, consistent, and professional formatting.
+4. **Images**: Describe image contents without embedding.
+## Conversion Instructions
+### Content
+- **Include All Text**: Retain all sections, preserving the original structure and content.
+- **Headings**: Format with `#` for main headings, `##` and `###` for subheadings.
+- **Lists**: Use `1.` for ordered lists, `-` for unordered lists.
+- **Emphasis and Formatting**: Apply `_italic_`, `**bold**`, `>` for block quotes, and \`\`\` for code blocks.
+- **Links**: Format as `[text](URL)` and ensure accuracy.
+### Images
+- **Do Not Embed**: Replace with descriptive text: `![Image description]`.
+### Table of Contents
+- Place after the document title but before the main content:
+  ## Table of Contents
+  - [Section Title](#section-title)
+  - [Subsection Title](#subsection-title)
+- Ensure anchor links work and follow the format `(#section-title)`.
+### Footnotes and References
+- Use Markdown footnote syntax:
+  Content with a footnote[^1].
+  [^1]: Footnote content here.
+- Retain all technical and academic terms exactly.
+## Verification and Quality Assurance
+1. **Accuracy**: Verify the entire document is converted without omissions.
+2. **TOC Functionality**: Check all links point to the correct headings.
+3. **Readability**: Ensure professional formatting and adherence to Markdown standards. DO NOT enclose the top and bottom of the content in ```markdown and ``` .
+4. **Fidelity**: Confirm the output matches the original PDF exactly.
+---
+# Report Content Below
+
 # 2025 STATE OF CLOUD SECURITY REPORT
 
 > “Cloud security has reached a critical turning point. As organizations increasingly rely on the cloud to accelerate innovation and growth, several converging trends are reshaping the challenges security teams face—and the strategies they need to stay ahead.”
@@ -12,53 +48,41 @@
 - [Executive Summary](#executive-summary)
 - [Key Findings](#key-findings)
 - [General Cloud Usage](#general-cloud-usage)
-- [AI SECURITY](#ai-security)
-  - [AI Security](#ai-security-1)
-- [ATTACK PATHS](#attack-paths)
-  - [Attack Paths](#attack-paths-1)
-- [DATA EXPOSURE](#data-exposure)
-  - [Data Exposure](#data-exposure-1)
-  - [THE BURDEN OF SENSITIVE DATA](#the-burden-of-sensitive-data)
-- [VULNERABILITIES](#vulnerabilities)
+- [AI Security](#ai-security)
+- [Attack Paths](#attack-paths)
+- [Data Exposure](#data-exposure)
+- [Vulnerabilities](#vulnerabilities)
+  - [Vulnerabilities - A Timeless Challenge](#vulnerabilities---a-timeless-challenge)
+  - [Unpatched Web Services](#unpatched-web-services)
+  - [Old, But Still Relevant](#old-but-still-relevant)
+- [Neglected Assets](#neglected-assets)
+  - [Neglected by Defenders, Beloved by Attackers](#neglected-by-defenders-beloved-by-attackers)
+- [Identity & Access](#identity--access)
+  - [Lateral Movement](#lateral-movement)
+  - [Cloud Functions](#cloud-functions)
+  - [Non-Human Identities](#non-human-identities)
+  - [Unused IAM Users](#unused-iam-users)
+- [Application Security](#application-security)
+  - [Secrets Exposure](#secrets-exposure)
+  - [Misconfigurations - IAC](#misconfigurations---iac)
+  - [Misconfigurations - SCM](#misconfigurations---scm)
   - [Vulnerabilities](#vulnerabilities-1)
-  - [4.1 VULNERABILITIES - A TIMELESS CHALLENGE](#41-vulnerabilities---a-timeless-challenge)
-  - [4.2 UNPATCHED WEB SERVICES](#42-unpatched-web-services)
-  - [4.3 OLD, BUT STILL RELEVANT](#43-old-but-still-relevant)
-- [NEGLECTED ASSETS](#neglected-assets)
-  - [Neglected Assets](#neglected-assets-1)
-  - [NEGLECTED BY DEFENDERS, BELOVED BY ATTACKERS](#neglected-by-defenders-beloved-by-attackers)
-- [IDENTITY & ACCESS](#identity--access)
-  - [Identity & Access](#identity--access-1)
-  - [6.1 LATERAL MOVEMENT](#61-lateral-movement)
-  - [6.2 CLOUD FUNCTIONS](#62-cloud-functions)
-  - [6.3 NON-HUMAN IDENTITIES](#63-non-human-identities)
-  - [6.4 UNUSED IAM USERS](#64-unused-iam-users)
-- [APPLICATION SECURITY](#application-security)
-  - [Application Security](#application-security-1)
-  - [7.1 SECRETS EXPOSURE](#71-secrets-exposure)
-  - [7.2 MISCONFIGURATIONS - IAC](#72-misconfigurations---iac)
-  - [7.2 MISCONFIGURATIONS - SCM](#72-misconfigurations---scm)
-  - [7.3 VULNERABILITIES](#73-vulnerabilities)
-- [KUBERNETES](#kubernetes)
-  - [Kubernetes](#kubernetes-1)
-  - [KUBERNETES USAGE AND RISKS](#kubernetes-usage-and-risks)
-- [KEY RECOMMENDATIONS](#key-recommendations)
-  - [Key Recommendations](#key-recommendations-1)
+- [Kubernetes](#kubernetes)
+  - [Kubernetes Usage and Risks](#kubernetes-usage-and-risks)
+- [Key Recommendations](#key-recommendations)
 - [About Orca Security](#about-orca-security)
-
----
 
 ## Foreword
 
 Cloud security has reached a critical turning point. As organizations increasingly rely on the cloud to accelerate innovation and growth, several converging trends are reshaping the challenges security teams face—and the strategies they need to stay ahead.
 
-Multi-cloud adoption is now the norm, with **55%** of organizations using two or more providers. While this offers greater ﬂexibility and resiliency, it also makes it harder to maintain consistent visibility and coverage across environments. At the same time, AI adoption is increasing—**84%** of organizations now use AI in the cloud. But this innovation comes with new risks: **62%** of organizations have at least one vulnerable AI package, and some of the most prevalent AI-related CVEs enable remote code execution.
+Multi-cloud adoption is now the norm, with 55% of organizations using two or more providers. While this offers greater ﬂexibility and resiliency, it also makes it harder to maintain consistent visibility and coverage across environments. At the same time, AI adoption is increasing—84% of organizations now use AI in the cloud. But this innovation comes with new risks: 62% of organizations have at least one vulnerable AI package, and some of the most prevalent AI-related CVEs enable remote code execution.
 
 Traditional risks haven’t gone away either—they’ve intensiﬁed. Nearly a third of cloud assets are in a neglected state, signaling ongoing challenges with monitoring and prioritization.
 
-As organizations store more sensitive data in the cloud, the prevalence of data exposure is rising: **38%** of organizations with sensitive data in their databases also have those databases exposed to the public.
+As organizations store more sensitive data in the cloud, the prevalence of data exposure is rising: 38% of organizations with sensitive data in their databases also have those databases exposed to the public.
 
-These are among the many challenges covered in this report, which highlight the Defender’s Paradox in cloud security: attackers need to be right only once, defenders every time. In fact, **13%** of organizations have a single cloud asset that supports more than 1,000 attack paths—underscoring the importance of comprehensive detection and effective prioritization.
+These are among the many challenges covered in this report, which highlight the Defender’s Paradox in cloud security: attackers need to be right only once, defenders every time. In fact, 13% of organizations have a single cloud asset that supports more than 1,000 attack paths—underscoring the importance of comprehensive detection and effective prioritization.
 
 This report is designed to help teams close their security gaps. Combining real-world insights compiled by the Orca Research Pod, it offers practical guidance on where to focus, what to prioritize, and how to effectively secure multi-cloud environments in the age of AI. We hope this report serves as a valuable resource for your teams.
 
@@ -69,78 +93,93 @@ CEO and Co-Founder of Orca Security
 
 The Orca Research Pod is a group of cloud security researchers that discover and analyze cloud risks and vulnerabilities to strengthen the Orca Cloud Security Platform and promote cloud security best practices.
 
-### RESEARCH METHODOLOGY
-
+RESEARCH METHODOLOGY
 This report was compiled by analyzing data captured from billions of cloud assets on AWS, Azure, Google Cloud, Oracle Cloud, and Alibaba Cloud and hundreds of thousands of code repositories scanned by the Orca Cloud Security Platform.
 
-### REPORT DATA SET
-
+REPORT DATA SET
 - Cloud workload and conﬁguration data
 - Billions of real-world production cloud assets
 - Data referenced in this report was collected in 2025
 - AWS, Azure, GCP, Oracle Cloud, and Alibaba Cloud environments
 
-### 25+ VULNERABILITIES DISCOVERED ON AWS, AZURE, AND GOOGLE CLOUD
+25+ VULNERABILITIES DISCOVERED ON AWS, AZURE, AND GOOGLE CLOUD
 
 The Orca Research Pod has discovered more than 25 major vulnerabilities on public cloud platforms. Our expert security team discovers and analyzes cloud risks and vulnerabilities to strengthen the Orca Platform and promote best practices.
 
-- **2022**
-  - AWS BreakingFormation
-  - AWS Superglue
-  - Databricks
-  - Azure AutoWarp
-  - Azure SynLapse
-  - Azure FabriXxs
-  - Azure CosMiss
-- **2023**
-  - Azure Digital Twins SSRF
-  - Azure Functions App SSRF
-  - Azure API Management SSRF
-  - Azure Machine Learning SSRF
-  - Azure Storage Account Keys Exploitation
-  - Azure Super FabriXss
-  - 2 Azure PostMessage IFrame Vulnerabilities
-  - Bad.Build Supply Chain Risk in GCP
-  - 8 Cross-Site Scripting vulnerabilities on Azure HDInsight
-  - Unauthenticated Access Risk to GCP Dataproc
-- **2024**
-  - Sys:All GKE Loophole
-  - 3 new Azure HDInsight vulnerabilities
-  - System:authenticated default Google Kubernetes Engine (GKE) group
-  - LeakyCLI in AWS and Google Cloud
-- **2025**
-  - Privilege Escalation Vulnerability in Azure Machine Learning
-  - Kubernetes CRD Abstraction Risks in kro (Kube Resource Orchestrator)
+**2022**
+- AWS BreakingFormation
+- AWS Superglue
+- Databricks
+- Azure AutoWarp
+- Azure SynLapse
+- Azure FabriXxs
+- Azure CosMiss
+
+**2023**
+- Azure Digital Twins SSRF
+- Azure Functions App SSRF
+- Azure API Management SSRF
+- Azure Machine Learning SSRF
+- Azure Storage Account Keys Exploitation
+- Azure Super FabriXss
+- 2 Azure PostMessage IFrame Vulnerabilities
+- Bad.Build Supply Chain Risk in GCP
+- 8 Cross-Site Scripting vulnerabilities on Azure HDInsight
+- Unauthenticated Access Risk to GCP Dataproc
+
+**2024**
+- Sys:All GKE Loophole
+- 3 new Azure HDInsight vulnerabilities
+- System:authenticated default Google Kubernetes Engine (GKE) group
+- LeakyCLI in AWS and Google Cloud
+
+**2025**
+- Privilege Escalation Vulnerability in Azure Machine Learning
+- Kubernetes CRD Abstraction Risks in kro (Kube Resource Orchestrator)
 
 ## Executive Summary
 
 Leveraging unique insights into current and emerging cloud risks captured from the Orca Cloud Security Platform, this report reveals the most commonly found, yet dangerous, cloud security risks. Summarizing the results from our research, these are our main ﬁndings:
 
 - **More cloud innovation brings greater cloud risk.**
-  As cloud adoption and cloud-native technologies expand, so does the volume and severity of cloud risks. Nearly a third of cloud assets are neglected today, and each asset contains on average 115 vulnerabilities. Both are two data points among many others illustrating this troubling trend.
+
+As cloud adoption and cloud-native technologies expand, so does the volume and severity of cloud risks. Nearly a third of cloud assets are neglected today, and each asset contains on average 115 vulnerabilities. Both are two data points among many others illustrating this troubling trend.
+
 - **Attack surfaces are expanding—and risks are increasingly interconnected.**
-  76% of organizations have at least one public-facing asset that enables lateral movement, turning a single risk into an opportunity for broader compromise. Security teams not only need to defend a growing attack surface, but increasingly interconnected risks. To illustrate, 36% of organizations have at least one cloud asset supporting more than 100 attack paths—giving attackers a direct route to endanger high-value assets.
+
+76% of organizations have at least one public-facing asset that enables lateral movement, turning a single risk into an opportunity for broader compromise. Security teams not only need to defend a growing attack surface, but increasingly interconnected risks. To illustrate, 36% of organizations have at least one cloud asset supporting more than 100 attack paths—giving attackers a direct route to endanger high-value assets.
+
 - **Risks span the entire application pipeline.**
-  Cloud security risks aren't conﬁned to runtime environments—they often originate earlier in the application development lifecycle. 85% of organizations have plaintext secrets embedded in their source code repositories. If a repository is exposed, attackers can extract the secrets to access systems, exﬁltrate data, and more. Oversights such as these can compound risk across the cloud ecosystem.
+
+Cloud security risks aren't conﬁned to runtime environments—they often originate earlier in the application development lifecycle. 85% of organizations have plaintext secrets embedded in their source code repositories. If a repository is exposed, attackers can extract the secrets to access systems, exﬁltrate data, and more. Oversights such as these can compound risk across the cloud ecosystem.
+
 - **Innovation is expanding attack surfaces—and the scale of cloud risks.**
-  84% of organizations are now using AI in the cloud, introducing new risks, including AI-related CVEs that enable remote code execution. Kubernetes adoption adds further complexity—93% of organizations have at least one privileged service account, increasing the potential of a breach. Combined with growing multi-cloud adoption, these trends are reshaping the nature and scale of cloud security challenges.
+
+84% of organizations are now using AI in the cloud, introducing new risks, including AI-related CVEs that enable remote code execution. Kubernetes adoption adds further complexity—93% of organizations have at least one privileged service account, increasing the potential of a breach. Combined with growing multi-cloud adoption, these trends are reshaping the nature and scale of cloud security challenges.
 
 ## Key Findings
 
 - **13%** of organizations have a single cloud asset responsible for creating more than 1000 attack paths.
   Attack paths represent the toxic risk combinations that attackers can exploit to endanger your high-value cloud assets. When detected, attack paths help security teams prioritize risks, reduce alert fatigue, and maximize productivity.
+
 - **38%** of organizations with sensitive data in their databases also have those databases exposed to the public.
   The exposure of sensitive data—including PII, PHI, ﬁnancial records, secrets, and more—continues to rise as organizations store more critical information in the cloud.
+
 - **115** vulnerabilities on average per cloud asset.
   The average number of vulnerabilities per cloud asset is signiﬁcant, especially considering a broader surge in vulnerability exploitation across cloud environments.
+
 - **58%** of organizations have at least one vulnerability older than 20 years.
   For the ﬁrst time, a majority of organizations are contending with vulnerabilities that have lingered for more than two decades.
+
 - **32%** of cloud assets on average are in a neglected state.
   Nearly one in three assets either run unsupported operating systems or have gone unpatched for over 180 days, providing soft targets for attackers to gain access, move laterally, and escalate attacks.
+
 - **76%** of organizations have at least one cloud asset that is public-facing and enables lateral movement.
   Assets exposed to the Internet and connected internally create critical pathways for attackers to escalate privileges and reach high-value targets within the environment.
+
 - **85%** of organizations have plaintext secrets embedded in their source code repositories.
   Secrets stored in source code pose a major risk. If repositories are exposed through breaches or misconﬁgurations, attackers can harvest these credentials to inﬁltrate systems, steal data, or move laterally.
+
 - **93%** of organizations have at least one privileged Kubernetes service account.
   Over-privileged Kubernetes service accounts, if compromised, can be exploited to access sensitive data, escalate privileges, or disrupt workloads across the cluster.
 
@@ -148,15 +187,27 @@ Leveraging unique insights into current and emerging cloud risks captured from t
 
 While cloud adoption continues to accelerate, the market remains highly concentrated around AWS, Azure, and Google Cloud Platform (GCP), respectively. Each maintains signiﬁcant enterprise adoption, led by AWS. Yet the percentages shown in the corresponding table also underscore the notable yet well-established trend toward multi-cloud adoption.
 
-In fact, this year’s analysis ﬁnds that most organizations are now multi-cloud by design, with **55%** leveraging two or more cloud providers. This marks a signiﬁcant increase from the **12%** of organizations that self-reported deploying multiple clouds in our 2024 Cloud Security Strategies Survey Report, an independent analysis conducted by Gatepoint Research.
+In fact, this year’s analysis ﬁnds that most organizations are now multi-cloud by design, with 55% leveraging two or more cloud providers. This marks a signiﬁcant increase from the 12% of organizations that self-reported deploying multiple clouds in our 2024 Cloud Security Strategies Survey Report, an independent analysis conducted by Gatepoint Research.
 
 What’s driving the multi-cloud demand? Other studies point to an interest in capitalizing on provider specialization—including AI services—and building resilience against potential service disruptions and vendor lock-in.
 
-![Graph showing Cloud Adoption by Provider. AWS: 82%, Azure: 54%, GCP: 35%, Oracle: 10%, Alibaba: 1%.](null)
+![Chart showing Cloud Adoption by Provider](image-1.png)
+Cloud Adoption by Provider
+% of organizations
+- AWS: 82%
+- Azure: 54%
+- GCP: 35%
+- Oracle: 10%
+- Alibaba: 1%
 
-![Graph showing Number of Cloud Providers Per Organization. 1: 46%, 2: 29%, 3: 19%, 4: 6%, 5: <1%.](null)
-
-# AI SECURITY
+![Chart showing Number of Cloud Providers Per Organization](image-2.png)
+Number of Cloud Providers Per Organization
+% of organizations
+- 1: 46%
+- 2: 29%
+- 3: 19%
+- 4: 6%
+- 5: <1%
 
 ## AI Security
 
@@ -164,25 +215,42 @@ What’s driving the multi-cloud demand? Other studies point to an interest in c
 
 Demand for cloud AI services continues to surge as organizations look to enhance innovation and operations. This year’s report illustrates overall AI adoption in the cloud, the popularity of managed and unmanaged AI services, AI adoption by cloud provider, and the most popular AI packages.
 
-Readers of our 2024 State of AI Security Report understand the related cloud risks of AI adoption, a reality that prevails today. In fact, **62%** of organizations have at least one vulnerable AI package in their cloud environment.
+Readers of our 2024 State of AI Security Report understand the related cloud risks of AI adoption, a reality that prevails today. In fact, 62% of organizations have at least one vulnerable AI package in their cloud environment.
 
 The data below lists the most prevalent CVEs associated with AI packages deployed in cloud environments. Two of them, CVE-2024-39705 and CVE-2025-32434, can allow remote code execution and await NVD enrichment at the time of this writing. This points to the need for better detection, prioritization, and remediation of AI-related vulnerabilities.
 
-![Graph showing Most Popular Managed AI Services. AWS SageMaker: 34%, Azure OpenAI: 30%, Azure ML Workspace: 27%, Vertex AI: 13%, AWS Bedrock: 1%.](null)
-
 | AI PACKAGE   | TOP CVE        | % OF ORGS USING AI PACKAGE W/ CVE |
-| :----------- | :------------- | :-------------------------------- |
+|--------------|----------------|-----------------------------------|
 | scikit-learn | CVE-2024-5206  | 82                                |
 | NLTK         | CVE-2024-39705 | 72                                |
 | PyTorch      | CVE-2025-2953  | 59                                |
 | PyTorch      | CVE-2025-3730  | 59                                |
 | PyTorch      | CVE-2025-32434 | 57                                |
 
-![Graph showing Most Popular Managed AI Packages. scikit-learn: 71%, NLTK: 63%, PyTorch: 55%, Transformers: 50%, LangChain: 49%.](null)
+![Chart showing Most Popular Managed AI Services](image-3.png)
+Most Popular Managed AI Services
+% of organizations
+- AWS SageMaker: 34%
+- Azure OpenAI: 30%
+- Azure ML Workspace: 27%
+- Vertex AI: 13%
+- AWS Bedrock: 1%
 
-![Graph showing AI Adoption in the Cloud. Overall: 84%, Unmanaged: 62%, Managed: 52%.](null)
+![Chart showing Most Popular Managed AI Packages](image-4.png)
+Most Popular Managed AI Packages
+% of organizations
+- scikit-learn: 71%
+- NLTK: 63%
+- PyTorch: 55%
+- Transformers: 50%
+- LangChain: 49%
 
-# ATTACK PATHS
+![Chart showing AI Adoption in the Cloud](image-5.png)
+AI Adoption in the Cloud
+% of organizations
+- Overall: 84%
+- Unmanaged: 62%
+- Managed: 52%
 
 ## Attack Paths
 
@@ -192,11 +260,20 @@ The corresponding graphs reveal the most common crown jewels in cloud environmen
 
 Thirteen percent of organizations have a cloud asset responsible for creating more than 1000 attack paths, with the most toxic asset in our dataset responsible for 165,142 attack paths.
 
-![Graph showing Distribution of Attack Paths Created From One Asset. >100: 36%, >200: 29%, >500: 19%, >1000: 13%.](null)
+![Chart showing Distribution of Attack Paths Created From One Asset](image-6.png)
+Distribution of Attack Paths Created From One Asset
+% of organizations
+- >100: 36%
+- >200: 29%
+- >500: 19%
+- >1000: 13%
 
-![Graph showing Most Common Crown Jewels. Exposed Data: 54%, Broad Permission Access: 23%, Compromised Host: 23%.](null)
-
-# DATA EXPOSURE
+![Chart showing Most Common Crown Jewels](image-7.png)
+Most Common Crown Jewels
+% of organizations
+- Exposed Data: 54%
+- Broad Permission Access: 23%
+- Compromised Host: 23%
 
 ## Data Exposure
 
@@ -218,9 +295,17 @@ The growth of cloud data and storage expands the attack surface for organization
 
 Healthcare is the industry most susceptible to sensitive data exposure for databases—an alarming fact for organizations. The Health Insurance Portability and Accountability Act (HIPAA), for example, regulates the privacy of protected health information (PHI) in the US, and can impose ﬁnes up to $1.5 million (USD) for violations depending on culpability. Yet the risk appears to affect a signiﬁcant proportion of organizations across all industries.
 
-![Bar chart showing the percentage of organizations in different industries affected by sensitive data exposure risks. Industries include Healthcare, Media, Consumer and Manufacturing, Technology, Public Sector, Finance, Retail, and Other. Risks shown are: % of organizations with publicly exposed storage buckets have sensitive data in them, % of organizations with sensitive data in their databases also have those databases exposed to the public, and % of organizations with public-facing cloud functions that contains plaintext secrets in its code packages & environment variables.](null)
-
-# VULNERABILITIES
+![Chart showing Sensitive Data Exposure by Industry](image-8.png)
+Sensitive Data Exposure by Industry
+% of organizations
+- Healthcare: Publicly exposed storage buckets with sensitive data (51%), Sensitive data in databases exposed to public (49%), Public-facing cloud functions with plaintext secrets (43%)
+- Media: Publicly exposed storage buckets with sensitive data (29%), Sensitive data in databases exposed to public (26%), Public-facing cloud functions with plaintext secrets (40%)
+- Consumer and Manufacturing: Publicly exposed storage buckets with sensitive data (41%), Sensitive data in databases exposed to public (39%), Public-facing cloud functions with plaintext secrets (36%)
+- Technology: Publicly exposed storage buckets with sensitive data (42%), Sensitive data in databases exposed to public (37%), Public-facing cloud functions with plaintext secrets (31%)
+- Public Sector: Publicly exposed storage buckets with sensitive data (31%), Sensitive data in databases exposed to public (32%), Public-facing cloud functions with plaintext secrets (33%)
+- Finance: Publicly exposed storage buckets with sensitive data (36%), Sensitive data in databases exposed to public (35%), Public-facing cloud functions with plaintext secrets (33%)
+- Retail: Publicly exposed storage buckets with sensitive data (31%), Sensitive data in databases exposed to public (23%), Public-facing cloud functions with plaintext secrets (23%)
+- Other: Publicly exposed storage buckets with sensitive data (29%), Sensitive data in databases exposed to public (30%), Public-facing cloud functions with plaintext secrets (25%)
 
 ## Vulnerabilities
 
@@ -228,7 +313,7 @@ Healthcare is the industry most susceptible to sensitive data exposure for datab
 
 Vulnerabilities predate the cloud as a top concern for security leaders and teams. Yet, year-after-year, they sustain their relevance—with this year no exception. Our analysis shows that the average cloud asset carries a signiﬁcant number of vulnerabilities that security teams must contend with.
 
-In fact, cloud assets on average have **115** vulnerabilities. This represents a signiﬁcant number when we consider that vulnerability exploitation continues to increase.
+In fact, cloud assets on average have 115 vulnerabilities. This represents a signiﬁcant number when we consider that vulnerability exploitation continues to increase.
 
 According to VulnCheck, the number of CVEs exploited and publicly disclosed rose 20% YoY in 2024, totaling 768 CVEs. Findings from the 2025 Data Breach Investigations Report also show an increase in vulnerability exploitation (34%), making it the second most popular initial access vector for breaches and partly responsible for one-ﬁfth of the data breaches publicly disclosed in 2024.
 
@@ -262,8 +347,6 @@ Clearly, these ﬁndings signal the critical need for better patch management, e
 - **32%** of cloud assets vulnerable to Log4Shell are public facing.
 - **58%** of organizations have at least one asset vulnerable to Spring4Shell.
 
-# NEGLECTED ASSETS
-
 ## Neglected Assets
 
 ### NEGLECTED BY DEFENDERS, BELOVED BY ATTACKERS
@@ -272,7 +355,7 @@ Neglected assets are a prime example of the Defender’s Paradox, which says tha
 
 A neglected asset is a cloud asset that uses an unsupported operating system or has remained unpatched for 180 days or more. As applications and operating systems reach EOL, vendors stop offering support, causing security and stability to decrease over time. Neglected assets are a soft target for attackers, which explains why attackers commonly exploit them to gain initial access. Recall the reference to APT29 from the previous chapter. A well-documented TTP (techniques, tactics, and procedures) of the infamous threat group is to target neglected assets, which remain unmonitored and often unpatched.
 
-Based on our analysis, nearly a third of cloud assets are neglected (**32%**), leaving them susceptible to exploitation as they expand organizations’ attack surfaces. The most neglected asset type is virtual machines (**95%** of organizations have at least one), while the most neglected operating system (OS) distribution is Ubuntu (**88%** of organizations have at least one instance). Additionally, our ﬁndings show that more than a ﬁfth of organizations are neglecting at least **40%** of their cloud assets.
+Based on our analysis, nearly a third of cloud assets are neglected (32%), leaving them susceptible to exploitation as they expand organizations’ attack surfaces. The most neglected asset type is virtual machines (95% of organizations have at least one), while the most neglected operating system (OS) distribution is Ubuntu (88% of organizations have at least one instance). Additionally, our ﬁndings show that more than a ﬁfth of organizations are neglecting at least 40% of their cloud assets.
 
 - **32%** of cloud assets are in a neglected state on average.
 - **+20%** of organizations are neglecting at least 40% of their cloud assets.
@@ -282,14 +365,11 @@ Equally troubling, our analysis ﬁnds that nearly nine in every 10 organization
 - **89%** of organizations have at least one neglected cloud asset that is internet-facing, +7% YoY.
 
 Industries particularly susceptible to public-facing neglected assets include:
-
-- CONSUMER & MANUFACTURING: **97%**
-- TECHNOLOGY: **94%**
-- PUBLIC SECTOR: **92%**
+- CONSUMER & MANUFACTURING: 97%
+- TECHNOLOGY: 94%
+- PUBLIC SECTOR: 92%
 
 The prevalence of neglected assets has increased YoY, with nearly every organization and industry affected. This troubling trend is likely to continue as more cloud assets meet the criteria of “neglected” (i.e., unsupported OS or unpatched for a 180 days or more).
-
-# IDENTITY & ACCESS
 
 ## Identity & Access
 
@@ -310,7 +390,7 @@ The adoption of serverless architectures, including cloud functions, continues t
 
 Serverless computing still presents risks, however. Cloud functions conﬁgured to allow public access can lead to unauthorized access and potential data breaches, service disruptions, or unauthorized resource consumption.
 
-Additionally, cloud functions granted administrative privileges can perform wide-ranging actions across cloud resources. If attackers compromise the function, they can access sensitive data, further escalate privileges, and perform other malicious actions.
+Additionally, cloud functions granted administrative privileges can perform wide-ranging actions across cloud resources. If attackers compromise the function, they can access sensitive data, further escalate privileges, and perform other malicious actions
 
 - **42%** of organizations have at least one Lambda function that lacks any policies restricting public access, +12% YoY.
 - **24%** of organizations have Lambda functions with admin permissions, +5% YoY.
@@ -327,26 +407,4 @@ Yet NHIs, when left unsecured, can dramatically increase cloud risks. This is es
 - **77%** of organizations with AWS have at least one service account with permissions across two or more accounts.
 - **12%** of organizations have at least one permissive role attached to more than 50 instances.
 
-Interestingly, our analysis also uncovers the average age of NHIs by type, with several surpassing the one-year mark. We also see the average remediation days for NHI-related assets, a measure that tracks the life of speciﬁc cloud alerts from open to close. Here, we see that IAM misconﬁguration alerts associated with NHIs take the longest to remediate, followed by data protection and authentication.
-
-![Bar chart showing Average Age of NHI by Type. AWS IAM Instance Profile: 416 days, GCP IAM Service Account: 401 days, AWS IAM Role: 354 days, AliCloud RAM Role: 288 days, Azure Service Principal: 278 days, Azure Tenant Assignment: 244 days, GCP IAM Role: 58 days.](null)
-
-![Bar chart showing Average Remediation Days for NHI-related Risks. IAM Misconfiguration: 337 days, Data Protection: 260 days, Authentication: 208 days, Lateral Movement: 123 days, Suspicious Activity: 93 days.](null)
-
-### 6.4 UNUSED IAM USERS
-
-User credentials are considered unused if they remain active but unused for more than 90 days. While seemingly harmless, it can dramatically increase the attack surface and provide attackers opportunities for unauthorized or backdoor access, lateral movement, and more.
-
-This year’s ﬁndings, compared to last year’s, show a moderate, yet notable increase in unused user credentials. This occurs when access keys or passwords associated with an IAM user remain active despite not being used in over three months. Stale user credentials increase the attack surface. If compromised, they may provide silent backdoor access—especially if not closely monitored.
-
-Organizations should implement automated inactivity detection for unused users, enforce credential rotation policies, and disable or delete unused credentials after a deﬁned threshold (e.g., 60–90 days).
-
-- **89%** of organizations have IAM user credentials that haven’t been used for 90+ days, +7% YoY.
-
-# APPLICATION SECURITY
-
-## Application Security
-
-### 7.1 SECRETS EXPOSURE
-
-According to Verizon Data Breach Investigation Report, stolen credentials is the top cause of data breaches for cloud-native applications, contributing to nearly nine out of every 10. Secrets encompass more than just user credentials (e.g., OAuth tokens, access keys), and attackers often ﬁnd and exploit them via code repositories. In fact, past studies by our researchers found that attackers can ﬁ
+Interestingly, our analysis also uncovers the average age of NHIs by type, with several surpassing the one-year mark. We also see the average remediation days for NHI-related assets, a measure that tracks the life of speciﬁ
