@@ -1,5 +1,4 @@
 name: Update README with New Reports
-
 on:
   workflow_run:
     workflows: ["PDF to Markdown Conversion"]
