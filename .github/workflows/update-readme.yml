@@ -226,44 +226,58 @@ jobs:
                                   
                                   # Store subsections by type for easier access
                                   if current_main_section and "analysis" in current_main_section.lower():
-                                      self.analysis_subsections.append(subsection_name)
-                                  elif current_main_section and "survey" in current_main_section.lower():
-                                      self.survey_subsections.append(subsection_name)
-                  
-                  print(f"Extracted TOC structure: {self.toc_sections}")
-                  print(f"Analysis subsections: {self.analysis_subsections}")
-                  print(f"Survey subsections: {self.survey_subsections}")
-                  
-                  return self.toc_sections
-              
-              def find_section_content_area(self, section_heading: str) -> Tuple[int, int]:
-                  """Find the line range for a specific section in the README"""
-                  start_line = -1
-                  end_line = len(self.lines)
-                  
-                  # Create pattern to match the section heading
-                  section_pattern = re.compile(r'^#+\s+' + re.escape(section_heading), re.IGNORECASE)
-                  
-                  for i, line in enumerate(self.lines):
-                      if section_pattern.match(line.strip()):
-                          start_line = i
-                          break
-                  
-                  if start_line == -1:
-                      return -1, -1
-                  
-                  # Find the end of this section (next heading of same level or higher)
-                  section_level = len(re.match(r'^#+', self.lines[start_line]).group())
-                  
-                  for i in range(start_line + 1, len(self.lines)):
-                      line = self.lines[i].strip()
-                      if re.match(r'^#+', line):
-                          current_level = len(re.match(r'^#+', line).group())
-                          if current_level <= section_level:
-                              end_line = i
-                              break
-                  
-                  return start_line, end_line
+                  self.analysis_subsections.append(subsection_name)
+              elif current_main_section and "survey" in current_main_section.lower():
+                  self.survey_subsections.append(subsection_name)
+      
+      print(f"Extracted TOC structure: {self.toc_sections}")
+      print(f"Analysis subsections: {self.analysis_subsections}")
+      print(f"Survey subsections: {self.survey_subsections}")
+      
+      return self.toc_sections
+  
+  def get_existing_pdf_filenames(self) -> set[str]:
+      """Extracts original PDF filenames from existing README entries."""
+      existing_filenames = set()
+      # Regex to capture the original PDF filename from the entry line
+      # Example: - [Org](URL) - [Report Title](Annual%20Security%20Reports/YEAR/Original-PDF-Filename.pdf) (YEAR) - Summary
+      entry_regex = re.compile(r"- \[.+?\]\(.+?\) - \[.+?\]\(Annual%20Security%20Reports/\d{4}/(.+?)\) \(\d{4}\) - .+")
+      
+      for line in self.lines:
+          match = entry_regex.search(line)
+          if match:
+              existing_filenames.add(match.group(1))
+      print(f"Found {len(existing_filenames)} existing PDF filenames in README.")
+      return existing_filenames
+
+  def find_section_content_area(self, section_heading: str) -> Tuple[int, int]:
+      """Find the line range for a specific section in the README"""
+      start_line = -1
+      end_line = len(self.lines)
+      
+      # Create pattern to match the section heading
+      section_pattern = re.compile(r'^#+\s+' + re.escape(section_heading), re.IGNORECASE)
+      
+      for i, line in enumerate(self.lines):
+          if section_pattern.match(line.strip()):
+              start_line = i
+              break
+      
+      if start_line == -1:
+          return -1, -1
+      
+      # Find the end of this section (next heading of same level or higher)
+      section_level = len(re.match(r'^#+', self.lines[start_line]).group())
+      
+      for i in range(start_line + 1, len(self.lines)):
+          line = self.lines[i].strip()
+          if re.match(r'^#+', line):
+              current_level = len(re.match(r'^#+', line).group())
+              if current_level <= section_level:
+                  end_line = i
+                  break
+      
+      return start_line, end_line
           
           class ReportAnalyzer:
               """AI-powered report content analyzer"""
@@ -546,6 +560,7 @@ jobs:
               # Initialize components
               parser = ReadmeParser(readme_content)
               toc_structure = parser.parse_toc_structure()
+              existing_pdf_filenames = parser.get_existing_pdf_filenames() # Get existing filenames
               
               analyzer = ReportAnalyzer(model_name, summarization_prompt)
               updater = ReadmeUpdater(readme_content)
@@ -566,6 +581,11 @@ jobs:
                       # Extract org, year, report title, and original PDF filename
                       org, year, report_title, original_pdf_filename = analyzer.extract_org_and_year(file_path)
                       print(f"Organization: {org}, Year: {year}, Report Title: {report_title}, Original PDF: {original_pdf_filename}")
+                      
+                      # Skip if this file (based on its original PDF filename) is already in README
+                      if original_pdf_filename in existing_pdf_filenames:
+                          print(f"Skipping already processed file: {file_path} (Entry for {org} {year} already exists)")
+                          continue
                       
                       # Read content
                       content = analyzer.read_markdown_content(file_path)
