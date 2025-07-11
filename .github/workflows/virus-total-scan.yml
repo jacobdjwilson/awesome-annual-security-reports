@@ -32,8 +32,9 @@ jobs:
         run: |
           # Get only renamed, added, or modified files in the push
           echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
+          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | \
             grep -E "Annual Security Reports/.+\.(pdf|docx|pptx)$" >> $GITHUB_ENV
+EOF
           echo "EOF" >> $GITHUB_ENV
           
           # Count for logging
