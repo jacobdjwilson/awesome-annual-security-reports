@@ -581,7 +581,7 @@ jobs:
                       success, entry_text, line_number = updater.add_report_entry(analysis, file_path)
                       if success:
                           processed_files.append(file_path)
-                          summaries.append(f"✅ Added: {entry_text} (Line: {line_number})")
+                          summaries.append(f"✅ Added: {entry_text}\n   (Line: {line_number})")
                           print(f"✅ Successfully processed {org_name} ({year})")
                       else:
                           print(f"❌ Failed to update README for {org_name} ({year})")
@@ -688,9 +688,7 @@ jobs:
             if [ -f "pr_summary.txt" ]; then
               echo "### 📝 Updated Reports" >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
-              echo '```' >> $GITHUB_STEP_SUMMARY
               cat pr_summary.txt >> $GITHUB_STEP_SUMMARY
-              echo '```' >> $GITHUB_STEP_SUMMARY
             fi
           else
             echo "### ⚠️ No Processing Results" >> $GITHUB_STEP_SUMMARY
@@ -702,7 +700,6 @@ jobs:
           echo "🔗 Useful Links" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
-          echo "Repository - https://github.com/${{ github.repository }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ github.event_name }}" == "workflow_run" ]; then
             echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
           fi
