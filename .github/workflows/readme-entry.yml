@@ -1,0 +1,661 @@
+name: Update README with New Report Summaries
+
+on:
+  workflow_run:
+    workflows: ["PDF to Markdown Conversion"]
+    types:
+      - completed
+    branches: 
+      - main
+      - development
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Force update all markdown files'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          pip install google-generativeai pyyaml mistune gitpython requests
+
+      - name: Detect Current Branch
+        id: branch
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_run" ]; then
+            BRANCH="${{ github.event.workflow_run.head_branch }}"
+          else
+            BRANCH="${{ github.ref_name }}"
+          fi
+          echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
+          echo "Current branch: $BRANCH"
+
+      - name: Download Artifacts
+        if: github.event_name == 'workflow_run'
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+          path: ./artifacts
+        continue-on-error: true
+
+      - name: Process Artifacts
+        id: artifacts
+        run: |
+          FILES_TO_PROCESS=""
+          
+          if [ -d "./artifacts" ]; then
+            echo "📁 Found artifacts directory"
+            find ./artifacts -name "*.txt" -o -name "*.json" | while read file; do
+              echo "📄 Processing artifact: $file"
+              cat "$file" || echo "❌ Failed to read $file"
+            done
+            
+            # Extract file paths from artifacts
+            if find ./artifacts -name "*.txt" -exec grep -l "Markdown Conversions" {} \; | head -1 > /dev/null; then
+              FILES_TO_PROCESS=$(find ./artifacts -name "*.txt" -exec cat {} \; | grep "Markdown Conversions" | head -20)
+            fi
+          else
+            echo "📁 No artifacts found - scanning directory instead"
+          fi
+          
+          echo "files_to_process<<EOF" >> $GITHUB_OUTPUT
+          echo "$FILES_TO_PROCESS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: 🤖 AI-Powered README Update
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILES_FROM_ARTIFACTS: ${{ steps.artifacts.outputs.files_to_process }}
+          FORCE_UPDATE: ${{ github.event.inputs.force_update }}
+        run: |
+          python3 << 'EOF'
+          import os
+          import sys
+          import json
+          import yaml
+          import re
+          import glob
+          from pathlib import Path
+          from datetime import datetime
+          import google.generativeai as genai
+          import requests
+          from typing import List, Dict, Optional, Tuple
+          
+          class ReadmeParser:
+              def __init__(self, readme_path: str):
+                  self.readme_path = readme_path
+                  self.content = self._read_readme()
+                  self.toc_structure = self._parse_toc()
+                  
+              def _read_readme(self) -> str:
+                  try:
+                      with open(self.readme_path, 'r', encoding='utf-8') as f:
+                          return f.read()
+                  except FileNotFoundError:
+                      print(f"❌ README not found at {self.readme_path}")
+                      return ""
+                  
+              def _parse_toc(self) -> Dict:
+                  """Parse Table of Contents structure dynamically"""
+                  toc_pattern = r'## Table of Contents\n(.*?)(?=\n## |\Z)'
+                  toc_match = re.search(toc_pattern, self.content, re.DOTALL)
+                  
+                  if not toc_match:
+                      print("⚠️ No Table of Contents found")
+                      return {}
+                  
+                  toc_content = toc_match.group(1)
+                  structure = {}
+                  
+                  # Parse main sections and subsections
+                  lines = toc_content.split('\n')
+                  current_section = None
+                  
+                  for line in lines:
+                      line = line.strip()
+                      if not line:
+                          continue
+                          
+                      # Main section (### level)
+                      if line.startswith('### '):
+                          section_name = line[4:].strip()
+                          current_section = section_name
+                          structure[current_section] = {'subsections': {}}
+                          
+                      # Subsection (- level)
+                      elif line.startswith('- ') and current_section:
+                          subsection_match = re.search(r'\[([^\]]+)\]', line)
+                          if subsection_match:
+                              subsection_name = subsection_match.group(1)
+                              structure[current_section]['subsections'][subsection_name] = {}
+                  
+                  return structure
+                  
+              def find_section_content(self, section_name: str, subsection_name: str = None) -> Tuple[int, int]:
+                  """Find the start and end positions of a section in the README"""
+                  if subsection_name:
+                      # Find subsection header
+                      pattern = rf'#### {re.escape(subsection_name)}\n'
+                      match = re.search(pattern, self.content)
+                      if not match:
+                          return -1, -1
+                      
+                      start = match.end()
+                      
+                      # Find next subsection or section
+                      next_header = re.search(r'\n#### |\n### |\n## ', self.content[start:])
+                      if next_header:
+                          end = start + next_header.start()
+                      else:
+                          end = len(self.content)
+                      
+                      return start, end
+                  else:
+                      # Find main section
+                      pattern = rf'### {re.escape(section_name)}\n'
+                      match = re.search(pattern, self.content)
+                      if not match:
+                          return -1, -1
+                      
+                      start = match.end()
+                      next_section = re.search(r'\n### |\n## ', self.content[start:])
+                      if next_section:
+                          end = start + next_section.start()
+                      else:
+                          end = len(self.content)
+                      
+                      return start, end
+          
+          class ReportAnalyzer:
+              def __init__(self, api_key: str):
+                  self.api_key = api_key
+                  self.models = ['gemini-2.0-flash-exp', 'gemini-1.5-flash', 'gemini-2.0-flash-thinking-exp']
+                  self.current_model = None
+                  self._setup_ai()
+                  
+                  # Keyword mapping for categorization
+                  self.keyword_mapping = {
+                      'Identity and Access Management': ['identity', 'access', 'authentication', 'authorization', 'IAM', 'SSO', 'MFA'],
+                      'Cloud Security': ['cloud', 'AWS', 'Azure', 'GCP', 'kubernetes', 'container', 'serverless'],
+                      'Application Security': ['application', 'software', 'code', 'development', 'SAST', 'DAST', 'API'],
+                      'Ransomware and Malware': ['ransomware', 'malware', 'threat', 'attack', 'breach', 'incident'],
+                      'Compliance and Governance': ['compliance', 'governance', 'regulation', 'policy', 'audit', 'GRC'],
+                      'Network Security': ['network', 'firewall', 'VPN', 'intrusion', 'IDS', 'IPS', 'DDoS'],
+                      'Data Security': ['data', 'privacy', 'encryption', 'DLP', 'database', 'backup'],
+                      'Endpoint Security': ['endpoint', 'device', 'mobile', 'laptop', 'workstation', 'MDM'],
+                      'Security Operations': ['SOC', 'SIEM', 'monitoring', 'detection', 'response', 'incident'],
+                      'Risk Management': ['risk', 'assessment', 'vulnerability', 'penetration', 'testing'],
+                      'Emerging Technologies': ['AI', 'ML', 'IoT', 'blockchain', 'quantum', 'edge']
+                  }
+                  
+              def _setup_ai(self):
+                  """Setup AI with fallback models"""
+                  if not self.api_key:
+                      print("⚠️ No Gemini API key provided")
+                      return
+                      
+                  genai.configure(api_key=self.api_key)
+                  
+                  for model_name in self.models:
+                      try:
+                          model = genai.GenerativeModel(model_name)
+                          # Test the model
+                          response = model.generate_content("Hello")
+                          if response.text:
+                              self.current_model = model
+                              print(f"✅ Using AI model: {model_name}")
+                              break
+                      except Exception as e:
+                          print(f"❌ Failed to initialize {model_name}: {e}")
+                          continue
+                  
+                  if not self.current_model:
+                      print("⚠️ No AI models available")
+                      
+              def extract_info_from_path(self, file_path: str) -> Tuple[str, str]:
+                  """Extract organization name and year from file path"""
+                  path_parts = Path(file_path).parts
+                  
+                  # Extract year (should be in path)
+                  year = "Unknown"
+                  for part in path_parts:
+                      if part.isdigit() and len(part) == 4:
+                          year = part
+                          break
+                  
+                  # Extract organization name (usually from filename)
+                  filename = Path(file_path).stem
+                  # Remove year and common suffixes
+                  org_name = re.sub(r'(_|\-)?20\d{2}.*', '', filename)
+                  org_name = re.sub(r'(_|\-)?report.*', '', org_name, flags=re.IGNORECASE)
+                  org_name = org_name.replace('_', ' ').replace('-', ' ')
+                  org_name = ' '.join(word.capitalize() for word in org_name.split())
+                  
+                  return org_name, year
+                  
+              def analyze_content(self, content: str, org_name: str, year: str) -> Dict:
+                  """Analyze content using AI"""
+                  if not self.current_model:
+                      return self._fallback_analysis(content, org_name, year)
+                  
+                  # Load summarization prompt
+                  prompt_path = ".github/ai-prompts/markdown-summarization-prompt.md"
+                  base_prompt = "Analyze this security report and provide a concise summary focusing on key findings and recommendations."
+                  
+                  try:
+                      with open(prompt_path, 'r', encoding='utf-8') as f:
+                          base_prompt = f.read()
+                  except FileNotFoundError:
+                      print(f"⚠️ Prompt file not found at {prompt_path}, using default")
+                  
+                  # Truncate content for AI processing
+                  truncated_content = content[:15000] if len(content) > 15000 else content
+                  
+                  try:
+                      # Generate summary
+                      summary_prompt = f"{base_prompt}\n\nReport Content:\n{truncated_content}"
+                      summary_response = self.current_model.generate_content(summary_prompt)
+                      summary = summary_response.text if summary_response.text else "No summary generated"
+                      
+                      # Determine report type
+                      type_prompt = f"Based on this content, is this an 'Analysis' report (detailed technical analysis) or 'Survey' report (industry survey/statistics)? Content preview: {truncated_content[:1000]}"
+                      type_response = self.current_model.generate_content(type_prompt)
+                      report_type = "Analysis" if "analysis" in type_response.text.lower() else "Survey"
+                      
+                      # Categorize by topic
+                      category = self._categorize_content(truncated_content)
+                      
+                      return {
+                          'organization': org_name,
+                          'year': year,
+                          'summary': summary[:500],  # Limit summary length
+                          'type': report_type,
+                          'category': category,
+                          'ai_processed': True
+                      }
+                      
+                  except Exception as e:
+                      print(f"❌ AI analysis failed: {e}")
+                      return self._fallback_analysis(content, org_name, year)
+                      
+              def _categorize_content(self, content: str) -> str:
+                  """Categorize content based on keywords"""
+                  content_lower = content.lower()
+                  scores = {}
+                  
+                  for category, keywords in self.keyword_mapping.items():
+                      score = sum(content_lower.count(keyword.lower()) for keyword in keywords)
+                      scores[category] = score
+                  
+                  # Return category with highest score, or default
+                  best_category = max(scores, key=scores.get) if scores else "Security Operations"
+                  return best_category if scores[best_category] > 0 else "Security Operations"
+                  
+              def _fallback_analysis(self, content: str, org_name: str, year: str) -> Dict:
+                  """Fallback analysis without AI"""
+                  category = self._categorize_content(content)
+                  
+                  # Simple summary - first few sentences
+                  sentences = content.split('. ')
+                  summary = '. '.join(sentences[:3]) + '.' if len(sentences) > 3 else content[:300]
+                  
+                  return {
+                      'organization': org_name,
+                      'year': year,
+                      'summary': summary,
+                      'type': "Analysis",  # Default type
+                      'category': category,
+                      'ai_processed': False
+                  }
+          
+          class ReadmeUpdater:
+              def __init__(self, readme_parser: ReadmeParser):
+                  self.parser = readme_parser
+                  
+              def add_report_entry(self, analysis: Dict, file_path: str) -> bool:
+                  """Add or update a report entry in the README"""
+                  try:
+                      # Determine section and subsection
+                      main_section = f"{analysis['type']} Reports"
+                      subsection = analysis['category']
+                      
+                      # Check if this section exists
+                      if main_section not in self.parser.toc_structure:
+                          print(f"⚠️ Section '{main_section}' not found in TOC")
+                          return False
+                      
+                      if subsection not in self.parser.toc_structure[main_section]['subsections']:
+                          print(f"⚠️ Subsection '{subsection}' not found in {main_section}")
+                          # Try to find a similar subsection
+                          similar_section = self._find_similar_section(subsection, main_section)
+                          if similar_section:
+                              subsection = similar_section
+                              print(f"📍 Using similar section: {subsection}")
+                          else:
+                              return False
+                      
+                      # Find section content area
+                      start, end = self.parser.find_section_content(main_section, subsection)
+                      if start == -1:
+                          print(f"❌ Could not find content area for {main_section} > {subsection}")
+                          return False
+                      
+                      # Extract current entries
+                      section_content = self.parser.content[start:end]
+                      
+                      # Create new entry
+                      entry_text = f"- **{analysis['organization']} ({analysis['year']})**: {analysis['summary']}"
+                      if not analysis['ai_processed']:
+                          entry_text += " *(Generated without AI analysis)*"
+                      
+                      # Check for existing entry
+                      existing_pattern = rf"- \*\*{re.escape(analysis['organization'])} \({analysis['year']}\)\*\*:"
+                      existing_match = re.search(existing_pattern, section_content)
+                      
+                      if existing_match:
+                          print(f"📝 Updating existing entry for {analysis['organization']} ({analysis['year']})")
+                          # Replace existing entry
+                          old_entry = existing_match.group(0)
+                          # Find the full line
+                          line_start = section_content.rfind('\n', 0, existing_match.start()) + 1
+                          line_end = section_content.find('\n', existing_match.end())
+                          if line_end == -1:
+                              line_end = len(section_content)
+                          
+                          old_full_entry = section_content[line_start:line_end]
+                          updated_section = section_content.replace(old_full_entry, entry_text)
+                      else:
+                          print(f"➕ Adding new entry for {analysis['organization']} ({analysis['year']})")
+                          # Add new entry and sort
+                          lines = section_content.split('\n')
+                          entries = [line for line in lines if line.strip().startswith('- **')]
+                          
+                          entries.append(entry_text)
+                          entries.sort(key=lambda x: (x.split('**')[1].split(' (')[0] if '**' in x else x))
+                          
+                          # Reconstruct section
+                          other_lines = [line for line in lines if not line.strip().startswith('- **')]
+                          updated_section = '\n'.join(other_lines[:2]) + '\n' + '\n'.join(entries) + '\n'
+                      
+                      # Update the full content
+                      self.parser.content = (
+                          self.parser.content[:start] + 
+                          updated_section + 
+                          self.parser.content[end:]
+                      )
+                      
+                      return True
+                      
+                  except Exception as e:
+                      print(f"❌ Error updating README: {e}")
+                      return False
+                      
+              def _find_similar_section(self, target: str, main_section: str) -> Optional[str]:
+                  """Find similar section name"""
+                  available_sections = list(self.parser.toc_structure[main_section]['subsections'].keys())
+                  
+                  # Simple similarity matching
+                  for section in available_sections:
+                      if any(word in section.lower() for word in target.lower().split()):
+                          return section
+                  
+                  return None
+                  
+              def save_readme(self) -> bool:
+                  """Save the updated README"""
+                  try:
+                      with open(self.parser.readme_path, 'w', encoding='utf-8') as f:
+                          f.write(self.parser.content)
+                      return True
+                  except Exception as e:
+                      print(f"❌ Error saving README: {e}")
+                      return False
+          
+          def main():
+              print("🚀 Starting AI-powered README update process")
+              
+              # Initialize components
+              readme_parser = ReadmeParser("README.md")
+              if not readme_parser.content:
+                  print("❌ Could not read README.md")
+                  return
+              
+              analyzer = ReportAnalyzer(os.getenv('GEMINI_API_KEY'))
+              updater = ReadmeUpdater(readme_parser)
+              
+              # Determine files to process
+              files_to_process = []
+              files_from_artifacts = os.getenv('FILES_FROM_ARTIFACTS', '').strip()
+              force_update = os.getenv('FORCE_UPDATE', 'false').lower() == 'true'
+              
+              if files_from_artifacts:
+                  print("📄 Using files from artifacts")
+                  files_to_process = [f.strip() for f in files_from_artifacts.split('\n') if f.strip()]
+              elif force_update or not files_from_artifacts:
+                  print("📁 Scanning Markdown Conversions directory")
+                  conversions_dir = Path("Markdown Conversions")
+                  if conversions_dir.exists():
+                      files_to_process = list(conversions_dir.glob("**/*.md"))
+                      files_to_process = [str(f) for f in files_to_process]
+              
+              if not files_to_process:
+                  print("❌ No files found to process")
+                  return
+              
+              print(f"📊 Found {len(files_to_process)} files to process")
+              
+              # Process each file
+              processed_files = []
+              summaries = []
+              
+              for file_path in files_to_process:
+                  try:
+                      print(f"\n🔍 Processing: {file_path}")
+                      
+                      # Check if file exists
+                      if not os.path.exists(file_path):
+                          print(f"❌ File not found: {file_path}")
+                          continue
+                      
+                      # Read file content
+                      with open(file_path, 'r', encoding='utf-8') as f:
+                          content = f.read()
+                      
+                      if not content.strip():
+                          print(f"⚠️ Empty file: {file_path}")
+                          continue
+                      
+                      # Extract organization and year
+                      org_name, year = analyzer.extract_info_from_path(file_path)
+                      
+                      # Analyze content
+                      analysis = analyzer.analyze_content(content, org_name, year)
+                      
+                      # Update README
+                      if updater.add_report_entry(analysis, file_path):
+                          processed_files.append(file_path)
+                          summaries.append(f"✅ {org_name} ({year}) - {analysis['category']}")
+                          print(f"✅ Successfully processed {org_name} ({year})")
+                      else:
+                          print(f"❌ Failed to update README for {org_name} ({year})")
+                          
+                  except Exception as e:
+                      print(f"❌ Error processing {file_path}: {e}")
+                      continue
+              
+              # Save updated README
+              if processed_files:
+                  if updater.save_readme():
+                      print(f"\n✅ Successfully updated README.md with {len(processed_files)} reports")
+                      
+                      # Create summary for PR
+                      summary_text = f"Updated README.md with {len(processed_files)} security reports:\n\n"
+                      summary_text += "\n".join(summaries)
+                      
+                      # Save summary for PR creation
+                      with open("pr_summary.txt", "w") as f:
+                          f.write(summary_text)
+                      
+                      # Create debug artifact
+                      debug_info = {
+                          'processed_files': processed_files,
+                          'summaries': summaries,
+                          'total_files_found': len(files_to_process),
+                          'successful_updates': len(processed_files),
+                          'ai_available': analyzer.current_model is not None
+                      }
+                      
+                      with open("debug_info.json", "w") as f:
+                          json.dump(debug_info, f, indent=2)
+                      
+                      print("\n📋 Processing Summary:")
+                      print(f"   Total files found: {len(files_to_process)}")
+                      print(f"   Successfully processed: {len(processed_files)}")
+                      print(f"   AI analysis available: {analyzer.current_model is not None}")
+                      
+                  else:
+                      print("❌ Failed to save README.md")
+                      sys.exit(1)
+              else:
+                  print("⚠️ No files were successfully processed")
+          
+          if __name__ == "__main__":
+              main()
+          EOF
+
+      - name: 📤 Upload Debug Artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: readme-update-debug-${{ github.run_number }}
+          path: |
+            debug_info.json
+            pr_summary.txt
+          retention-days: 5
+
+      - name: 🔄 Create Pull Request
+        if: hashFiles('pr_summary.txt') != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Create new branch
+          BRANCH_NAME="update-readme-${{ github.run_number }}"
+          git checkout -b "$BRANCH_NAME"
+          
+          # Add changes
+          git add README.md
+          
+          # Check if there are changes to commit
+          if git diff --cached --quiet; then
+            echo "ℹ️ No changes to commit"
+            exit 0
+          fi
+          
+          # Commit changes
+          git commit -m "📊 Update README with new security reports
+          
+          $(cat pr_summary.txt)"
+          
+          # Push branch
+          git push origin "$BRANCH_NAME"
+          
+          # Create PR
+          PR_TITLE="📊 Update README with New Security Reports"
+          PR_BODY="## Summary
+          
+          This PR automatically updates the README.md file with new security report entries using AI-powered analysis.
+          
+          ## Changes
+          $(cat pr_summary.txt)
+          
+          ## Details
+          - 🤖 AI-powered content analysis and summarization
+          - 📊 Automatic categorization and organization
+          - 🔄 Alphabetical sorting within sections
+          - ✅ Duplicate detection and handling
+          
+          ---
+          *This PR was created automatically by the README update workflow.*"
+          
+          # Create the PR using GitHub CLI or API
+          curl -X POST \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/pulls \
+            -d "{
+              \"title\": \"$PR_TITLE\",
+              \"body\": \"$PR_BODY\",
+              \"head\": \"$BRANCH_NAME\",
+              \"base\": \"${{ steps.branch.outputs.current_branch }}\",
+              \"draft\": false
+            }"
+
+      - name: 📋 Summary
+        if: always()
+        run: |
+          echo "## 🎯 Workflow Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch**: ${{ steps.branch.outputs.current_branch }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f "debug_info.json" ]; then
+            echo "### 📊 Processing Results" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "$(cat debug_info.json | jq -r '
+              "**Files Found**: " + (.total_files_found | tostring) + "\n" +
+              "**Successfully Processed**: " + (.successful_updates | tostring) + "\n" +
+              "**AI Analysis Available**: " + (.ai_available | tostring) + "\n"
+            ')" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            if [ -f "pr_summary.txt" ]; then
+              echo "### 📝 Updated Reports" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo '```' >> $GITHUB_STEP_SUMMARY
+              cat pr_summary.txt >> $GITHUB_STEP_SUMMARY
+              echo '```' >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "### ⚠️ No Processing Results" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "No files were processed successfully." >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Useful Links" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- [Workflow Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
+          echo "- [Repository](https://github.com/${{ github.repository }})" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ github.event_name }}" == "workflow_run" ]; then
+            echo "- [Triggering Workflow](https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }})" >> $GITHUB_STEP_SUMMARY
+          fi
