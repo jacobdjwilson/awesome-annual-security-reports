@@ -182,7 +182,7 @@ jobs:
           class ReportAnalyzer:
               def __init__(self, api_key: str):
                   self.api_key = api_key
-                  self.models = ['gemini-2.0-flash-exp', 'gemini-1.5-flash', 'gemini-2.0-flash-thinking-exp']
+                  self.models = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
                   self.current_model = None
                   self._setup_ai()
                   
