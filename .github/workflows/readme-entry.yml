@@ -1,4 +1,4 @@
-name: Update README with New Report Summaries
+name: Update README with AI Generated Report Entry
 
 on:
   workflow_run:
@@ -26,23 +26,23 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     
     steps:
-      - name: Checkout Repository
+      - name: 🔍 Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Python
+      - name: 🐍 Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
 
-      - name: Install Dependencies
+      - name: 📦 Install Dependencies
         run: |
           pip install google-generativeai pyyaml mistune gitpython requests
 
-      - name: Detect Current Branch
+      - name: 🌿 Detect Current Branch
         id: branch
         run: |
           if [ "${{ github.event_name }}" == "workflow_run" ]; then
@@ -51,9 +51,9 @@ jobs:
             BRANCH="${{ github.ref_name }}"
           fi
           echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
-          echo "Current branch: $BRANCH"
+          echo "📍 Current branch: $BRANCH"
 
-      - name: Download Artifacts
+      - name: 📥 Download Artifacts
         if: github.event_name == 'workflow_run'
         uses: actions/download-artifact@v4
         with:
@@ -62,7 +62,7 @@ jobs:
           path: ./artifacts
         continue-on-error: true
 
-      - name: Process Artifacts
+      - name: 🔍 Process Artifacts
         id: artifacts
         run: |
           FILES_TO_PROCESS=""
@@ -86,7 +86,7 @@ jobs:
           echo "$FILES_TO_PROCESS" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
-      - name: 🤖 AI-Powered README Update
+      - name: 🤖 AI README Update
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -237,8 +237,8 @@ jobs:
                   if not self.current_model:
                       print("⚠️ No AI models available")
                       
-              def extract_info_from_path(self, file_path: str) -> Tuple[str, str]:
-                  """Extract organization name and year from file path"""
+              def extract_info_from_path(self, file_path: str) -> Tuple[str, str, str]:
+                  """Extract organization name, year, and report title from file path"""
                   path_parts = Path(file_path).parts
                   
                   # Extract year (should be in path)
@@ -248,20 +248,41 @@ jobs:
                           year = part
                           break
                   
-                  # Extract organization name (usually from filename)
+                  # Extract organization name and report title from filename
                   filename = Path(file_path).stem
-                  # Remove year and common suffixes
-                  org_name = re.sub(r'(_|\-)?20\d{2}.*', '', filename)
-                  org_name = re.sub(r'(_|\-)?report.*', '', org_name, flags=re.IGNORECASE)
+                  
+                  # Try to split filename into organization and title
+                  # Common patterns: "OrgName-Report-Title-2024" or "OrgName_Report_Title_2024"
+                  filename_clean = re.sub(r'(_|\-)?20\d{2}.*', '', filename)
+                  
+                  # Split by common delimiters
+                  parts = re.split(r'[-_\s]+', filename_clean)
+                  
+                  if len(parts) >= 2:
+                      # First part is usually organization
+                      org_name = parts[0]
+                      # Rest is report title
+                      title_parts = parts[1:]
+                      report_title = ' '.join(title_parts)
+                  else:
+                      # Fallback: use filename as org name
+                      org_name = filename_clean
+                      report_title = f"Security Report {year}"
+                  
+                  # Clean up organization name
                   org_name = org_name.replace('_', ' ').replace('-', ' ')
                   org_name = ' '.join(word.capitalize() for word in org_name.split())
                   
-                  return org_name, year
+                  # Clean up report title
+                  report_title = report_title.replace('_', ' ').replace('-', ' ')
+                  report_title = ' '.join(word.capitalize() for word in report_title.split())
                   
-              def analyze_content(self, content: str, org_name: str, year: str) -> Dict:
+                  return org_name, year, report_title
+                  
+              def analyze_content(self, content: str, org_name: str, year: str, report_title: str) -> Dict:
                   """Analyze content using AI"""
                   if not self.current_model:
-                      return self._fallback_analysis(content, org_name, year)
+                      return self._fallback_analysis(content, org_name, year, report_title)
                   
                   # Load summarization prompt
                   prompt_path = ".github/ai-prompts/markdown-summarization-prompt.md"
@@ -270,6 +291,7 @@ jobs:
                   try:
                       with open(prompt_path, 'r', encoding='utf-8') as f:
                           base_prompt = f.read()
+                          print(f"✅ Loaded AI prompt from {prompt_path}")
                   except FileNotFoundError:
                       print(f"⚠️ Prompt file not found at {prompt_path}, using default")
                   
@@ -277,13 +299,26 @@ jobs:
                   truncated_content = content[:15000] if len(content) > 15000 else content
                   
                   try:
-                      # Generate summary
-                      summary_prompt = f"{base_prompt}\n\nReport Content:\n{truncated_content}"
+                      # Generate summary using the custom prompt
+                      summary_prompt = f"{base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{truncated_content}"
                       summary_response = self.current_model.generate_content(summary_prompt)
                       summary = summary_response.text if summary_response.text else "No summary generated"
                       
+                      # Clean up the summary (remove extra whitespace, limit length)
+                      summary = ' '.join(summary.split())
+                      if len(summary) > 400:
+                          # Truncate at sentence boundary
+                          sentences = summary.split('. ')
+                          truncated_summary = ""
+                          for sentence in sentences:
+                              if len(truncated_summary + sentence + '. ') <= 400:
+                                  truncated_summary += sentence + '. '
+                              else:
+                                  break
+                          summary = truncated_summary.strip()
+                      
                       # Determine report type
-                      type_prompt = f"Based on this content, is this an 'Analysis' report (detailed technical analysis) or 'Survey' report (industry survey/statistics)? Content preview: {truncated_content[:1000]}"
+                      type_prompt = f"Based on this content, is this an 'Analysis' report (detailed technical analysis) or 'Survey' report (industry survey/statistics)? Respond with only 'Analysis' or 'Survey'. Content preview: {truncated_content[:1000]}"
                       type_response = self.current_model.generate_content(type_prompt)
                       report_type = "Analysis" if "analysis" in type_response.text.lower() else "Survey"
                       
@@ -293,7 +328,8 @@ jobs:
                       return {
                           'organization': org_name,
                           'year': year,
-                          'summary': summary[:500],  # Limit summary length
+                          'title': report_title,
+                          'summary': summary,
                           'type': report_type,
                           'category': category,
                           'ai_processed': True
@@ -301,7 +337,7 @@ jobs:
                       
                   except Exception as e:
                       print(f"❌ AI analysis failed: {e}")
-                      return self._fallback_analysis(content, org_name, year)
+                      return self._fallback_analysis(content, org_name, year, report_title)
                       
               def _categorize_content(self, content: str) -> str:
                   """Categorize content based on keywords"""
@@ -316,7 +352,7 @@ jobs:
                   best_category = max(scores, key=scores.get) if scores else "Security Operations"
                   return best_category if scores[best_category] > 0 else "Security Operations"
                   
-              def _fallback_analysis(self, content: str, org_name: str, year: str) -> Dict:
+              def _fallback_analysis(self, content: str, org_name: str, year: str, report_title: str) -> Dict:
                   """Fallback analysis without AI"""
                   category = self._categorize_content(content)
                   
@@ -327,6 +363,7 @@ jobs:
                   return {
                       'organization': org_name,
                       'year': year,
+                      'title': report_title,
                       'summary': summary,
                       'type': "Analysis",  # Default type
                       'category': category,
@@ -368,20 +405,18 @@ jobs:
                       # Extract current entries
                       section_content = self.parser.content[start:end]
                       
-                      # Create new entry
-                      entry_text = f"- **{analysis['organization']} ({analysis['year']})**: {analysis['summary']}"
-                      if not analysis['ai_processed']:
-                          entry_text += " *(Generated without AI analysis)*"
+                      # Create new entry in the specified format
+                      entry_text = self._format_entry(analysis, file_path)
                       
-                      # Check for existing entry
-                      existing_pattern = rf"- \*\*{re.escape(analysis['organization'])} \({analysis['year']}\)\*\*:"
+                      # Check for existing entry (look for organization and year)
+                      org_pattern = re.escape(analysis['organization'])
+                      year_pattern = re.escape(analysis['year'])
+                      existing_pattern = rf"- \[{org_pattern}\].*\({year_pattern}\)"
                       existing_match = re.search(existing_pattern, section_content)
                       
                       if existing_match:
                           print(f"📝 Updating existing entry for {analysis['organization']} ({analysis['year']})")
-                          # Replace existing entry
-                          old_entry = existing_match.group(0)
-                          # Find the full line
+                          # Find the full line containing the existing entry
                           line_start = section_content.rfind('\n', 0, existing_match.start()) + 1
                           line_end = section_content.find('\n', existing_match.end())
                           if line_end == -1:
@@ -393,14 +428,20 @@ jobs:
                           print(f"➕ Adding new entry for {analysis['organization']} ({analysis['year']})")
                           # Add new entry and sort
                           lines = section_content.split('\n')
-                          entries = [line for line in lines if line.strip().startswith('- **')]
+                          entries = [line for line in lines if line.strip().startswith('- [')]
                           
                           entries.append(entry_text)
-                          entries.sort(key=lambda x: (x.split('**')[1].split(' (')[0] if '**' in x else x))
+                          # Sort by organization name (extracted from first link)
+                          entries.sort(key=lambda x: self._extract_org_name_for_sorting(x))
                           
                           # Reconstruct section
-                          other_lines = [line for line in lines if not line.strip().startswith('- **')]
-                          updated_section = '\n'.join(other_lines[:2]) + '\n' + '\n'.join(entries) + '\n'
+                          other_lines = [line for line in lines if not line.strip().startswith('- [')]
+                          # Keep any introductory text, then add entries
+                          intro_lines = [line for line in other_lines if line.strip()]
+                          if intro_lines:
+                              updated_section = '\n'.join(intro_lines) + '\n\n' + '\n'.join(entries) + '\n'
+                          else:
+                              updated_section = '\n'.join(entries) + '\n'
                       
                       # Update the full content
                       self.parser.content = (
@@ -414,6 +455,38 @@ jobs:
                   except Exception as e:
                       print(f"❌ Error updating README: {e}")
                       return False
+                      
+              def _format_entry(self, analysis: Dict, file_path: str) -> str:
+                  """Format entry according to specified template"""
+                  # Use the extracted title from analysis
+                  title = analysis['title']
+                  
+                  # Create organization website URL (fuzzy match)
+                  org_name = analysis['organization']
+                  # Remove common words and create a reasonable domain
+                  domain_base = re.sub(r'\b(company|corp|corporation|inc|llc|ltd|group|security|cyber|tech|technologies)\b', '', org_name.lower())
+                  domain_base = re.sub(r'[^a-z0-9]', '', domain_base)
+                  
+                  # If domain is too short, use original org name
+                  if len(domain_base) < 3:
+                      domain_base = re.sub(r'[^a-z0-9]', '', org_name.lower())
+                  
+                  org_url = f"https://{domain_base}.com"
+                  
+                  # Format the PDF path for the second link
+                  pdf_path = file_path.replace('.md', '.pdf')
+                  # Keep the original path structure for the link
+                  pdf_path_encoded = pdf_path.replace(' ', '%20')
+                  
+                  # Create the formatted entry exactly as specified
+                  entry = f"- [{org_name}]({org_url}) - [{title}]({pdf_path_encoded}) ({analysis['year']}) - {analysis['summary']}"
+                  
+                  return entry
+                  
+              def _extract_org_name_for_sorting(self, entry_line: str) -> str:
+                  """Extract organization name from entry line for sorting"""
+                  match = re.search(r'- \[([^\]]+)\]', entry_line)
+                  return match.group(1) if match else entry_line
                       
               def _find_similar_section(self, target: str, main_section: str) -> Optional[str]:
                   """Find similar section name"""
@@ -437,7 +510,7 @@ jobs:
                       return False
           
           def main():
-              print("🚀 Starting AI-powered README update process")
+              print("🚀 Starting AI README update process")
               
               # Initialize components
               readme_parser = ReadmeParser("README.md")
@@ -467,7 +540,7 @@ jobs:
                   print("❌ No files found to process")
                   return
               
-              print(f"📊 Found {len(files_to_process)} files to process")
+              print(f"✍ Found {len(files_to_process)} files to process")
               
               # Process each file
               processed_files = []
@@ -491,10 +564,10 @@ jobs:
                           continue
                       
                       # Extract organization and year
-                      org_name, year = analyzer.extract_info_from_path(file_path)
+                      org_name, year, report_title = analyzer.extract_info_from_path(file_path)
                       
                       # Analyze content
-                      analysis = analyzer.analyze_content(content, org_name, year)
+                      analysis = analyzer.analyze_content(content, org_name, year, report_title)
                       
                       # Update README
                       if updater.add_report_entry(analysis, file_path):
@@ -581,7 +654,7 @@ jobs:
           fi
           
           # Commit changes
-          git commit -m "📊 Update README with new security reports
+          git commit -m "✍ Update README with new security reports
           
           $(cat pr_summary.txt)"
           
@@ -589,17 +662,17 @@ jobs:
           git push origin "$BRANCH_NAME"
           
           # Create PR
-          PR_TITLE="📊 Update README with New Security Reports"
+          PR_TITLE="✍ Update README with New Security Reports"
           PR_BODY="## Summary
           
-          This PR automatically updates the README.md file with new security report entries using AI-powered analysis.
+          This PR automatically updates the README.md file with new security report entries using AI analysis.
           
           ## Changes
           $(cat pr_summary.txt)
           
           ## Details
-          - 🤖 AI-powered content analysis and summarization
-          - 📊 Automatic categorization and organization
+          - 🤖 AI content analysis and summarization
+          - ✍ Automatic categorization and organization
           - 🔄 Alphabetical sorting within sections
           - ✅ Duplicate detection and handling
           
@@ -629,7 +702,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           
           if [ -f "debug_info.json" ]; then
-            echo "### 📊 Processing Results" >> $GITHUB_STEP_SUMMARY
+            echo "### ✍ Processing Results" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "$(cat debug_info.json | jq -r '
               "**Files Found**: " + (.total_files_found | tostring) + "\n" +
