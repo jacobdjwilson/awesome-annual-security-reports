@@ -670,4 +670,4 @@ jobs:
           
           if [ "${{ steps.check-prompt.outputs.prompt_exists }}" != "true" ]; then
             echo "❌ Summarization prompt not found" >> $GITHUB_STEP_SUMMARY
-          fi
+          fi     
