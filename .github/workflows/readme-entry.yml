@@ -623,7 +623,7 @@ jobs:
             pr_summary.txt
           retention-days: 5
 
-      - name: 🔄 Create Pull Request
+      - name: ⬆️ Commit and Push Changes
         if: hashFiles('pr_summary.txt') != ''
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -631,10 +631,6 @@ jobs:
           # Configure git
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # Create new branch
-          BRANCH_NAME="update-readme-${{ github.run_number }}"
-          git checkout -b "$BRANCH_NAME"
           
           # Add changes
           git add README.md
@@ -650,39 +646,8 @@ jobs:
           
           $(cat pr_summary.txt)"
           
-          # Push branch
-          git push origin "$BRANCH_NAME"
-          
-          # Create PR
-          PR_TITLE="✍ Update README with New Security Reports"
-          PR_BODY="## Summary
-          
-          This PR automatically updates the README.md file with new security report entries using AI analysis.
-          
-          ## Changes
-          $(cat pr_summary.txt)
-          
-          ## Details
-          - 🤖 AI content analysis and summarization
-          - ✍ Automatic categorization and organization
-          - 🔄 Alphabetical sorting within sections
-          - ✅ Duplicate detection and handling
-          
-          ---
-          *This PR was created automatically by the README update workflow.*"
-          
-          # Create the PR using GitHub CLI or API
-          curl -X POST \
-            -H "Authorization: token $GITHUB_TOKEN" \
-            -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/${{ github.repository }}/pulls \
-            -d "{
-              \"title\": \"$PR_TITLE\",
-              \"body\": \"$PR_BODY\",
-              \"head\": \"$BRANCH_NAME\",
-              \"base\": \"${{ steps.branch.outputs.current_branch }}\",
-              \"draft\": false
-            }"
+          # Push changes to the current branch
+          git push origin ${{ steps.branch.outputs.current_branch }}
 
       - name: 📋 Summary
         if: always()
