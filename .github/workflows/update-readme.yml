@@ -225,44 +225,58 @@ jobs:
                                   
                                   # Store subsections by type for easier access
                                   if current_main_section and "analysis" in current_main_section.lower():
-                                      self.analysis_subsections.append(subsection_name)
-                                  elif current_main_section and "survey" in current_main_section.lower():
-                                      self.survey_subsections.append(subsection_name)
-                  
-                  print(f"Extracted TOC structure: {self.toc_sections}")
-                  print(f"Analysis subsections: {self.analysis_subsections}")
-                  print(f"Survey subsections: {self.survey_subsections}")
-                  
-                  return self.toc_sections
-              
-              def find_section_content_area(self, section_heading: str) -> Tuple[int, int]:
-                  """Find the line range for a specific section in the README"""
-                  start_line = -1
-                  end_line = len(self.lines)
-                  
-                  # Create pattern to match the section heading
-                  section_pattern = re.compile(r'^#+\s+' + re.escape(section_heading), re.IGNORECASE)
-                  
-                  for i, line in enumerate(self.lines):
-                      if section_pattern.match(line.strip()):
-                          start_line = i
-                          break
-                  
-                  if start_line == -1:
-                      return -1, -1
-                  
-                  # Find the end of this section (next heading of same level or higher)
-                  section_level = len(re.match(r'^#+', self.lines[start_line]).group())
-                  
-                  for i in range(start_line + 1, len(self.lines)):
-                      line = self.lines[i].strip()
-                      if re.match(r'^#+', line):
-                          current_level = len(re.match(r'^#+', line).group())
-                          if current_level <= section_level:
-                              end_line = i
-                              break
-                  
-                  return start_line, end_line
+                  self.analysis_subsections.append(subsection_name)
+              elif current_main_section and "survey" in current_main_section.lower():
+                  self.survey_subsections.append(subsection_name)
+      
+      print(f"Extracted TOC structure: {self.toc_sections}")
+      print(f"Analysis subsections: {self.analysis_subsections}")
+      print(f"Survey subsections: {self.survey_subsections}")
+      
+      return self.toc_sections
+  
+  def get_existing_pdf_filenames(self) -> set[str]:
+      """Extracts original PDF filenames from existing README entries."""
+      existing_filenames = set()
+      # Regex to capture the original PDF filename from the entry line
+      # Example: - [Org](URL) - [Report Title](Annual%20Security%20Reports/YEAR/Original-PDF-Filename.pdf) (YEAR) - Summary
+      entry_regex = re.compile(r"- \[.+?\]\(.+?\) - \[.+?\]\(Annual%20Security%20Reports/\d{4}/(.+?)\) \(\d{4}\) - .+")
+      
+      for line in self.lines:
+          match = entry_regex.search(line)
+          if match:
+              existing_filenames.add(match.group(1))
+      print(f"Found {len(existing_filenames)} existing PDF filenames in README.")
+      return existing_filenames
+
+  def find_section_content_area(self, section_heading: str) -> Tuple[int, int]:
+      """Find the line range for a specific section in the README"""
+      start_line = -1
+      end_line = len(self.lines)
+      
+      # Create pattern to match the section heading
+      section_pattern = re.compile(r'^#+\s+' + re.escape(section_heading), re.IGNORECASE)
+      
+      for i, line in enumerate(self.lines):
+          if section_pattern.match(line.strip()):
+              start_line = i
+              break
+      
+      if start_line == -1:
+          return -1, -1
+      
+      # Find the end of this section (next heading of same level or higher)
+      section_level = len(re.match(r'^#+', self.lines[start_line]).group())
+      
+      for i in range(start_line + 1, len(self.lines)):
+          line = self.lines[i].strip()
+          if re.match(r'^#+', line):
+              current_level = len(re.match(r'^#+', line).group())
+              if current_level <= section_level:
+                  end_line = i
+                  break
+      
+      return start_line, end_line
           
           class ReportAnalyzer:
               """AI-powered report content analyzer"""
@@ -285,8 +299,8 @@ jobs:
                       "penetration": ["penetration", "pentest", "red team", "ethical hacking"]
                   }
               
-              def extract_org_and_year(self, file_path: str) -> Tuple[str, str]:
-                  """Extract organization name and year from file path"""
+              def extract_org_and_year(self, file_path: str) -> Tuple[str, str, str, str]:
+                  """Extract organization name, year, report title, and original PDF filename from file path"""
                   path = Path(file_path)
                   
                   # Extract year from path (e.g., "Markdown Conversions/2025/...")
@@ -296,12 +310,19 @@ jobs:
                           year = part
                           break
                   
-                  # Extract organization from filename
-                  filename = path.stem
-                  org_match = re.match(r'^([^-]+)', filename)
-                  org = org_match.group(1) if org_match else filename
+                  # Extract organization and full filename stem
+                  filename_stem = path.stem # e.g., BlackDuck-Software-Vulnerability-Snapshot-Report-2024
+                  org_match = re.match(r'^([^-]+)', filename_stem)
+                  org = org_match.group(1) if org_match else filename_stem
                   
-                  return org.strip(), year
+                  # Derive report title
+                  report_title_raw = filename_stem.replace(f"{org}-", "").replace(f"-{year}", "")
+                  report_title = report_title_raw.replace("-", " ").strip()
+                  
+                  # Derive original PDF filename
+                  original_pdf_filename = f"{filename_stem}.pdf"
+                  
+                  return org.strip(), year, report_title, original_pdf_filename
               
               def read_markdown_content(self, file_path: str) -> str:
                   """Read the content of a markdown file"""
@@ -411,11 +432,13 @@ jobs:
                   self.lines = readme_content.split('\n')
               
               def add_report_entry(self, main_section: str, subsection: str, org: str, year: str, 
-                                 filename: str, summary: str) -> str:
+                                 publisher_url: str, report_title: str, original_pdf_filename: str, summary: str) -> str:
                   """Add a new report entry to the README"""
                   
                   # Create the new entry
-                  entry_line = f"- **{org} {year}**: {summary} - [View Report](Markdown%20Conversions/{year}/{filename})"
+                  # New format: - [<PublisherName>](<PublisherURL>) - [<ReportTitle>](<LocalFilePath>) (<Year>) - <Summary>
+                  local_file_path = f"Annual%20Security%20Reports/{year}/{original_pdf_filename}"
+                  entry_line = f"- [{org}]({publisher_url}) - [{report_title}]({local_file_path}) ({year}) - {summary}"
                   
                   # Find the subsection
                   subsection_pattern = re.compile(r'^#+\s+' + re.escape(subsection), re.IGNORECASE)
@@ -445,22 +468,24 @@ jobs:
                   entries = []
                   entry_lines = []
                   
+                  # Regex to match existing entries in the new format for replacement check
+                  # This regex looks for a line starting with `- [` followed by the organization name,
+                  # then any characters (`.*?`), then `(` followed by the year, then `) - `.
+                  org_year_regex = re.compile(r"^- \[" + re.escape(org) + r"\].*?\(" + re.escape(year) + r"\) - ")
+                  
                   for i in range(subsection_line + 1, next_section_line):
                       line = self.lines[i].strip()
-                      if line.startswith('- **'):
+                      # Check if this line is an existing report entry in the new format
+                      if re.match(r"^- \[.+?\]\(.+?\) - \[.+?\]\(.+?\) \(\d{4}\) - .+", line):
                           entries.append(line)
                           entry_lines.append(i)
                   
                   # Check if this entry already exists (same org and year)
-                  org_year_pattern = f"- **{org} {year}**:"
-                  for existing_entry in entries:
-                      if existing_entry.startswith(org_year_pattern):
+                  for i, existing_entry_line_content in enumerate(self.lines):
+                      if org_year_regex.match(existing_entry_line_content.strip()):
                           print(f"Entry for {org} {year} already exists, updating...")
-                          # Replace existing entry
-                          for i, line in enumerate(self.lines):
-                              if line.strip().startswith(org_year_pattern):
-                                  self.lines[i] = entry_line
-                                  return '\n'.join(self.lines)
+                          self.lines[i] = entry_line
+                          return '\n'.join(self.lines)
                   
                   # Add new entry in alphabetical order
                   entries.append(entry_line)
@@ -534,6 +559,7 @@ jobs:
               # Initialize components
               parser = ReadmeParser(readme_content)
               toc_structure = parser.parse_toc_structure()
+              existing_pdf_filenames = parser.get_existing_pdf_filenames() # Get existing filenames
               
               analyzer = ReportAnalyzer(model_name, summarization_prompt)
               updater = ReadmeUpdater(readme_content)
@@ -551,9 +577,14 @@ jobs:
                           print(f"File not found: {file_path}")
                           continue
                       
-                      # Extract org and year
-                      org, year = analyzer.extract_org_and_year(file_path)
-                      print(f"Organization: {org}, Year: {year}")
+                      # Extract org, year, report title, and original PDF filename
+                      org, year, report_title, original_pdf_filename = analyzer.extract_org_and_year(file_path)
+                      print(f"Organization: {org}, Year: {year}, Report Title: {report_title}, Original PDF: {original_pdf_filename}")
+                      
+                      # Skip if this file (based on its original PDF filename) is already in README
+                      if original_pdf_filename in existing_pdf_filenames:
+                          print(f"Skipping already processed file: {file_path} (Entry for {org} {year} already exists)")
+                          continue
                       
                       # Read content
                       content = analyzer.read_markdown_content(file_path)
@@ -583,10 +614,12 @@ jobs:
                       best_subsection = analyzer.find_best_subsection(content, available_subsections)
                       print(f"Selected subsection: {best_subsection}")
                       
+                      # Placeholder for PublisherURL as it cannot be reliably derived from current information
+                      publisher_url = f"https://[PublisherWebsite]" 
+                      
                       # Update README
-                      filename = Path(file_path).name
                       updated_content = updater.add_report_entry(
-                          main_section, best_subsection, org, year, filename, summary
+                          main_section, best_subsection, org, year, publisher_url, report_title, original_pdf_filename, summary
                       )
                       updater = ReadmeUpdater(updated_content)  # Update with new content
                       
@@ -670,4 +703,3 @@ jobs:
           
           if [ "${{ steps.check-prompt.outputs.prompt_exists }}" != "true" ]; then
             echo "❌ Summarization prompt not found" >> $GITHUB_STEP_SUMMARY
-          fi     
