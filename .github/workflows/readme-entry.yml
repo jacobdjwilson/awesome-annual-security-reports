@@ -465,10 +465,19 @@ jobs:
                   
                   org_url = f"https://{domain_base}.com"
                   
-                  # Format the PDF path for the second link
-                  pdf_path = file_path.replace('.md', '.pdf')
-                  # Keep the original path structure for the link
-                  pdf_path_encoded = pdf_path.replace(' ', '%20')
+                  # Extract year and original filename from the markdown file_path
+                  path_parts = Path(file_path).parts
+                  year = "Unknown"
+                  for part in path_parts:
+                      if part.isdigit() and len(part) == 4:
+                          year = part
+                          break
+                  
+                  original_filename_stem = Path(file_path).stem
+                  
+                  # Construct the correct PDF path
+                  correct_pdf_path = Path("Annual Security Reports") / year / f"{original_filename_stem}.pdf"
+                  pdf_path_encoded = str(correct_pdf_path).replace(' ', '%20')
                   
                   # Create the formatted entry exactly as specified
                   entry = f"- [{org_name}]({org_url}) - [{title}]({pdf_path_encoded}) ({analysis['year']}) - {analysis['summary']}"
