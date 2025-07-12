@@ -6,7 +6,7 @@ on:
     types:
       - completed
     branches: [main, development]
-  workflow_dispatch:  # Manual trigger for testing
+  workflow_dispatch:
 
 jobs:
   update-readme:
@@ -153,21 +153,20 @@ jobs:
           MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
           
           def get_available_model():
-              """Find the first available Gemini model"""
-              for model in MODELS:
-                  try:
-                      print(f"Testing model: {model}")
-                      test_model = genai.GenerativeModel(model)
-                      # Test with a simple generation
-                      test_response = test_model.generate_content("Hello", 
-                          generation_config={"max_output_tokens": 10})
-                      print(f"Successfully verified model: {model}")
-                      return model
-                  except Exception as e:
-                      print(f"Model {model} not available: {str(e)}")
-                      continue
+              """Find the first available Gemini model that supports 'generateContent'."""
+              print("Fetching list of available models...")
               
-              print("No models available")
+              # Use genai.list_models() to efficiently get a list of supported models.
+              # This avoids making a generation call for each model to check availability.
+              for model in genai.list_models():
+                  
+                  # Check if the model supports the 'generateContent' method, 
+                  # which is necessary for typical Gemini API usage.
+                  if 'generateContent' in model.supported_generation_methods:
+                      print(f"Found available model: {model.name}")
+                      return model.name
+              
+              print("No suitable models available that support 'generateContent'.")
               return None
           
           class ReadmeParser:
@@ -704,4 +703,3 @@ jobs:
           
           if [ "${{ steps.check-prompt.outputs.prompt_exists }}" != "true" ]; then
             echo "❌ Summarization prompt not found" >> $GITHUB_STEP_SUMMARY
-          fi

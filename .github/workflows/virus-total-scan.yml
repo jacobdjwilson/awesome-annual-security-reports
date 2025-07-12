@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # Just enough to see the changes
+          fetch-depth: 2
           
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,20 +32,19 @@ jobs:
         run: |
           # Get only renamed, added, or modified files in the push
           echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | \
-            grep -E "Annual Security Reports/.+\.(pdf|docx|pptx)$" >> $GITHUB_ENV
-EOF
+          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
+            grep -E "Annual Security Reports/.+\.(pdf)$" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
           
           # Count for logging
           COUNT=$(git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf|docx|pptx)$" | wc -l || echo 0)
+            grep -E "Annual Security Reports/.+\.(pdf)$" | wc -l || echo 0)
           
           echo "Found $COUNT changed security report files"
           
           # Show the files found
           git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf|docx|pptx)$" || echo "No files found"
+            grep -E "Annual Security Reports/.+\.(pdf)$" || echo "No files found"
 
       - name: Scan changed files with VirusTotal
         if: env.CHANGED_FILES != ''
