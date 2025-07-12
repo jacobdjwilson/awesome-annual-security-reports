@@ -362,7 +362,7 @@ jobs:
               def __init__(self, readme_parser: ReadmeParser):
                   self.parser = readme_parser
                   
-              def add_report_entry(self, analysis: Dict, file_path: str) -> bool:
+              def add_report_entry(self, analysis: Dict, file_path: str) -> Tuple[bool, str, int]:
                   """Add or update a report entry in the README"""
                   try:
                       # Determine the logical main section (e.g., "Analysis Reports")
@@ -442,11 +442,18 @@ jobs:
                           self.parser.content[end:]
                       )
                       
-                      return True
+                      # Calculate line number of the inserted/updated entry
+                      # Count newlines in the content before the updated section to get the starting line
+                      lines_before_update = self.parser.content[:start].count('\n')
+                      # Find the line number of the entry within the updated section (0-indexed, so add 1)
+                      line_number_in_section = updated_section.split('\n').index(entry_text) + 1
+                      inserted_line_number = lines_before_update + line_number_in_section
+                      
+                      return True, entry_text, inserted_line_number
                       
                   except Exception as e:
                       print(f"❌ Error updating README: {e}")
-                      return False
+                      return False, "", -1
                       
               def _format_entry(self, analysis: Dict, file_path: str) -> str:
                   """Format entry according to specified template"""
@@ -571,9 +578,10 @@ jobs:
                       analysis = analyzer.analyze_content(content, org_name, year, report_title)
                       
                       # Update README
-                      if updater.add_report_entry(analysis, file_path):
+                      success, entry_text, line_number = updater.add_report_entry(analysis, file_path)
+                      if success:
                           processed_files.append(file_path)
-                          summaries.append(f"✅ {org_name} ({year}) - {analysis['category']}")
+                          summaries.append(f"✅ Added: {entry_text} (Line: {line_number})")
                           print(f"✅ Successfully processed {org_name} ({year})")
                       else:
                           print(f"❌ Failed to update README for {org_name} ({year})")
@@ -691,10 +699,10 @@ jobs:
           fi
           
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 🔗 Useful Links" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 Useful Links" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- [Workflow Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
-          echo "- [Repository](https://github.com/${{ github.repository }})" >> $GITHUB_STEP_SUMMARY
+          echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
+          echo "Repository - https://github.com/${{ github.repository }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ github.event_name }}" == "workflow_run" ]; then
-            echo "- [Triggering Workflow](https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }})" >> $GITHUB_STEP_SUMMARY
+            echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
           fi
