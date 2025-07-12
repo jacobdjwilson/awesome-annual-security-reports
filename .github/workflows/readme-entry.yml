@@ -121,74 +121,60 @@ jobs:
                   
               def _parse_toc(self) -> Dict:
                   """Parse Table of Contents structure dynamically"""
-                  toc_pattern = r'## Table of Contents\n(.*?)(?=\n## |\Z)'
+                  # Correct pattern to capture content between <!-- TOC --> and <!-- /TOC -->
+                  toc_pattern = r'## Contents\n<!-- TOC -->\n(.*?)\n<!-- /TOC -->'
                   toc_match = re.search(toc_pattern, self.content, re.DOTALL)
                   
                   if not toc_match:
-                      print("⚠️ No Table of Contents found")
+                      print("⚠️ No Table of Contents found within <!-- TOC --> markers")
                       return {}
                   
                   toc_content = toc_match.group(1)
                   structure = {}
+                  current_main_section = None
                   
-                  # Parse main sections and subsections
                   lines = toc_content.split('\n')
-                  current_section = None
                   
                   for line in lines:
                       line = line.strip()
                       if not line:
                           continue
                           
-                      # Main section (### level)
-                      if line.startswith('### '):
-                          section_name = line[4:].strip()
-                          current_section = section_name
-                          structure[current_section] = {'subsections': {}}
+                      # Main section (e.g., - [Analysis Reports](#analysis-reports))
+                      if line.startswith('- ') and not line.startswith('    - '): # Not a subsection
+                          match = re.search(r'\[([^\]]+)\]', line)
+                          if match:
+                              section_name = match.group(1)
+                              current_main_section = section_name
+                              structure[current_main_section] = {'subsections': {}}
                           
-                      # Subsection (- level)
-                      elif line.startswith('- ') and current_section:
-                          subsection_match = re.search(r'\[([^\]]+)\]', line)
-                          if subsection_match:
-                              subsection_name = subsection_match.group(1)
-                              structure[current_section]['subsections'][subsection_name] = {}
+                      # Subsection (e.g., - [Threat Intelligence](#threat-intelligence))
+                      elif line.startswith('    - ') and current_main_section:
+                          match = re.search(r'\[([^\]]+)\]', line)
+                          if match:
+                              subsection_name = match.group(1)
+                              structure[current_main_section]['subsections'][subsection_name] = {}
                   
                   return structure
                   
-              def find_section_content(self, section_name: str, subsection_name: str = None) -> Tuple[int, int]:
-                  """Find the start and end positions of a section in the README"""
-                  if subsection_name:
-                      # Find subsection header
-                      pattern = rf'#### {re.escape(subsection_name)}\n'
-                      match = re.search(pattern, self.content)
-                      if not match:
-                          return -1, -1
-                      
-                      start = match.end()
-                      
-                      # Find next subsection or section
-                      next_header = re.search(r'\n#### |\n### |\n## ', self.content[start:])
-                      if next_header:
-                          end = start + next_header.start()
-                      else:
-                          end = len(self.content)
-                      
-                      return start, end
+              def find_section_content(self, heading_name: str) -> Tuple[int, int]:
+                  """Find the start and end positions of a heading in the README"""
+                  # Look for ## Heading Name
+                  pattern = rf'## {re.escape(heading_name)}\n'
+                  match = re.search(pattern, self.content)
+                  if not match:
+                      return -1, -1
+                  
+                  start = match.end()
+                  
+                  # Find the start of the next ## heading or end of file
+                  next_header = re.search(r'\n## ', self.content[start:])
+                  if next_header:
+                      end = start + next_header.start()
                   else:
-                      # Find main section
-                      pattern = rf'### {re.escape(section_name)}\n'
-                      match = re.search(pattern, self.content)
-                      if not match:
-                          return -1, -1
-                      
-                      start = match.end()
-                      next_section = re.search(r'\n### |\n## ', self.content[start:])
-                      if next_section:
-                          end = start + next_section.start()
-                      else:
-                          end = len(self.content)
-                      
-                      return start, end
+                      end = len(self.content)
+                  
+                  return start, end
           
           class ReportAnalyzer:
               def __init__(self, api_key: str):
@@ -376,29 +362,33 @@ jobs:
               def add_report_entry(self, analysis: Dict, file_path: str) -> bool:
                   """Add or update a report entry in the README"""
                   try:
-                      # Determine section and subsection
-                      main_section = f"{analysis['type']} Reports"
-                      subsection = analysis['category']
+                      # Determine the logical main section (e.g., "Analysis Reports")
+                      logical_main_section = f"{analysis['type']} Reports"
+                      # Determine the logical subsection (e.g., "Threat Intelligence")
+                      logical_subsection = analysis['category']
                       
-                      # Check if this section exists
-                      if main_section not in self.parser.toc_structure:
-                          print(f"⚠️ Section '{main_section}' not found in TOC")
+                      # Validate against the TOC structure
+                      if logical_main_section not in self.parser.toc_structure:
+                          print(f"⚠️ Logical main section '{logical_main_section}' not found in TOC structure.")
                           return False
                       
-                      if subsection not in self.parser.toc_structure[main_section]['subsections']:
-                          print(f"⚠️ Subsection '{subsection}' not found in {main_section}")
-                          # Try to find a similar subsection
-                          similar_section = self._find_similar_section(subsection, main_section)
-                          if similar_section:
-                              subsection = similar_section
-                              print(f"📍 Using similar section: {subsection}")
+                      if logical_subsection not in self.parser.toc_structure[logical_main_section]['subsections']:
+                          print(f"⚠️ Logical subsection '{logical_subsection}' not found under '{logical_main_section}' in TOC structure.")
+                          # Try to find a similar subsection in the TOC structure
+                          similar_subsection_in_toc = self._find_similar_section(logical_subsection, logical_main_section)
+                          if similar_subsection_in_toc:
+                              logical_subsection = similar_subsection_in_toc
+                              print(f"📍 Using similar logical subsection from TOC: {logical_subsection}")
                           else:
                               return False
                       
-                      # Find section content area
-                      start, end = self.parser.find_section_content(main_section, subsection)
+                      # Now, find the actual heading in the README content to insert the entry.
+                      # The actual headings for categories like "Threat Intelligence" are '## Threat Intelligence'.
+                      target_heading_in_readme = logical_subsection
+                      
+                      start, end = self.parser.find_section_content(target_heading_in_readme)
                       if start == -1:
-                          print(f"❌ Could not find content area for {main_section} > {subsection}")
+                          print(f"❌ Could not find content area for actual README heading: '## {target_heading_in_readme}'")
                           return False
                       
                       # Extract current entries
