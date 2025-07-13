@@ -150,26 +150,40 @@ jobs:
                   raise
           
           def generate_markdown_with_ai(pdf_text, prompt_text):
-              try:
-                  print(f"Generating markdown with {MODEL}...")
-                  model = genai.GenerativeModel(MODEL)
-                  full_prompt = f"{prompt_text}\n\n# Report Content Below\n\n{pdf_text}"
-                  
-                  # Set generation parameters for better output
-                  generation_config = {
-                      "temperature": 0.2,  # Lower temperature for more predictable output
-                      "max_output_tokens": 8192,
-                  }
-                  
-                  response = model.generate_content(
-                      full_prompt,
-                      generation_config=generation_config
-                  )
-                  print(f"Successfully generated markdown ({len(response.text)} characters)")
-                  return response.text
-              except Exception as e:
-                  print(f"Error generating markdown with AI: {str(e)}")
-                  raise
+              full_prompt = f"{prompt_text}\n\n# Report Content Below\n\n{pdf_text}"
+              
+              # Set generation parameters for better output
+              generation_config = {
+                  "temperature": 0.2,  # Lower temperature for more predictable output
+                  "max_output_tokens": 8192,
+              }
+              
+              for model_name in MODELS:
+                  try:
+                      print(f"Attempting to generate markdown with {model_name}...")
+                      model = genai.GenerativeModel(model_name)
+                      response = model.generate_content(
+                          full_prompt,
+                          generation_config=generation_config
+                      )
+                      
+                      # Check if response contains valid parts
+                      if response.parts:
+                          markdown_content = response.text
+                          print(f"Successfully generated markdown ({len(markdown_content)} characters) with {model_name}")
+                          return markdown_content, model_name
+                      else:
+                          print(f"Model {model_name} returned no valid parts. Finish reason: {response.candidates[0].finish_reason if response.candidates else 'N/A'}")
+                          if response.candidates and response.candidates[0].finish_reason == 2: # SAFETY
+                              print(f"Safety filter triggered for model {model_name}. Trying next model.")
+                              continue
+                          else:
+                              raise Exception(f"Model {model_name} returned no valid parts or an unexpected finish reason.")
+                  except Exception as e:
+                      print(f"Error generating markdown with AI using {model_name}: {str(e)}")
+                      continue
+              
+              raise Exception("All available models failed to generate markdown.")
           
           def process_pdf(pdf_path, prompt_path, prompt_version, branch):
               """Process a PDF file and convert it to markdown
@@ -193,7 +207,7 @@ jobs:
               pdf_text = extract_text_from_pdf(pdf_path)
               
               # Generate markdown with Gemini
-              markdown_content = generate_markdown_with_ai(pdf_text, prompt_text)
+              markdown_content, used_model = generate_markdown_with_ai(pdf_text, prompt_text)
               
               # Determine the output path that matches the input directory structure
               # e.g., Annual Security Reports/2025/file.pdf -> Markdown Conversions/2025/file.md
@@ -239,17 +253,17 @@ jobs:
                       print(f"Warning: Git status check failed: {status_result.stderr}")
                       action = "Updated"
                   else:
-                      status = status_result.stdout.strip()
-                      action = "Updated" if status.startswith("M") else "Created"
-                  
-                  # Commit the file
-                  commit_message = f"{action} {output_path.name} from {pdf_path.name} using AI Prompt {prompt_version} (Model {MODEL}, Branch {branch})"
-                  subprocess.run(["git", "commit", "-m", commit_message], check=True)
-                  print(f"Committed changes: {commit_message}")
-                  return True
-              except Exception as e:
-                  print(f"Error during git operations: {str(e)}")
-                  return False
+                  status = status_result.stdout.strip()
+                  action = "Updated" if status.startswith("M") else "Created"
+              
+              # Commit the file
+              commit_message = f"{action} {output_path.name} from {pdf_path.name} using AI Prompt {prompt_version} (Model {used_model}, Branch {branch})"
+              subprocess.run(["git", "commit", "-m", commit_message], check=True)
+              print(f"Committed changes: {commit_message}")
+              return True
+          except Exception as e:
+              print(f"Error during git operations: {str(e)}")
+              return False
           
           def main():
               if len(sys.argv) < 4:
