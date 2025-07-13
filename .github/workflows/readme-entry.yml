@@ -400,31 +400,43 @@ jobs:
                       # Create new entry in the specified format
                       entry_text = self._format_entry(analysis, file_path)
                       
-                      # Check for existing entry (look for organization and year)
+                      # Create new entry in the specified format
+                      entry_text = self._format_entry(analysis, file_path)
+                      
+                      # Check for existing entry by organization name AND report title
                       org_pattern = re.escape(analysis['organization'])
-                      year_pattern = re.escape(analysis['year'])
-                      existing_pattern = rf"- \[{org_pattern}\].*\({year_pattern}\)"
-                      existing_match = re.search(existing_pattern, section_content)
+                      title_pattern = re.escape(analysis['title'])
+                      # This regex looks for a line starting with '- [' followed by the organization name,
+                      # then the report title, and then the year in parentheses.
+                      existing_entry_pattern = rf"^- \[{org_pattern}\]\(.*\) - \[{title_pattern}\]\(.*\) \((\d{{4}})\).*$"
+                      
+                      existing_match = re.search(existing_entry_pattern, section_content, re.MULTILINE)
+                      
+                      updated_section = section_content
+                      entry_replaced = False
                       
                       if existing_match:
-                          print(f"📝 Updating existing entry for {analysis['organization']} ({analysis['year']})")
-                          # Find the full line containing the existing entry
-                          line_start = section_content.rfind('\n', 0, existing_match.start()) + 1
-                          line_end = section_content.find('\n', existing_match.end())
-                          if line_end == -1:
-                              line_end = len(section_content)
+                          existing_full_entry = existing_match.group(0)
+                          existing_year = int(existing_match.group(1))
+                          new_report_year = int(analysis['year'])
                           
-                          old_full_entry = section_content[line_start:line_end]
-                          updated_section = section_content.replace(old_full_entry, entry_text)
-                      else:
-                          print(f"➕ Adding new entry for {analysis['organization']} ({analysis['year']})")
+                          if new_report_year > existing_year:
+                              print(f"📝 Updating existing entry for {analysis['organization']} - {analysis['title']} (from {existing_year} to {new_report_year})")
+                              updated_section = updated_section.replace(existing_full_entry, entry_text)
+                              entry_replaced = True
+                          else:
+                              print(f"ℹ️ Existing entry for {analysis['organization']} - {analysis['title']} ({existing_year}) is newer or same year as new report ({new_report_year}). No update needed.")
+                              return False, "", -1 # Indicate no update was performed
+                      
+                      if not entry_replaced:
+                          print(f"➕ Adding new entry for {analysis['organization']} - {analysis['title']} ({analysis['year']})")
                           # Add new entry and sort
-                          lines = section_content.split('\n')
+                          lines = updated_section.split('\n')
                           entries = [line for line in lines if line.strip().startswith('- [')]
                           
                           entries.append(entry_text)
-                          # Sort by organization name (extracted from first link)
-                          entries.sort(key=lambda x: self._extract_org_name_for_sorting(x))
+                          # Sort by organization name and then by report title
+                          entries.sort(key=lambda x: (self._extract_org_name_for_sorting(x), self._extract_report_title_for_sorting(x)))
                           
                           # Reconstruct section
                           other_lines = [line for line in lines if not line.strip().startswith('- [')]
@@ -443,13 +455,15 @@ jobs:
                       )
                       
                       # Calculate line number of the inserted/updated entry
-                      # Count newlines in the content before the updated section to get the starting line
-                      lines_before_update = self.parser.content[:start].count('\n')
-                      # Find the line number of the entry within the updated section (0-indexed, so add 1)
-                      line_number_in_section = updated_section.split('\n').index(entry_text) + 1
-                      inserted_line_number = lines_before_update + line_number_in_section
+                      inserted_line_number = -1
+                      updated_content_lines = self.parser.content.split('\n')
+                      target_entry_text = entry_text # Use the newly formatted entry text
+                      for i, line in enumerate(updated_content_lines):
+                          if line.strip() == target_entry_text.strip():
+                              inserted_line_number = i + 1
+                              break
                       
-                      return True, entry_text, inserted_line_number
+                      return True, target_entry_text, inserted_line_number
                       
                   except Exception as e:
                       print(f"❌ Error updating README: {e}")
@@ -494,6 +508,12 @@ jobs:
               def _extract_org_name_for_sorting(self, entry_line: str) -> str:
                   """Extract organization name from entry line for sorting"""
                   match = re.search(r'- \[([^\]]+)\]', entry_line)
+                  return match.group(1) if match else entry_line
+              
+              def _extract_report_title_for_sorting(self, entry_line: str) -> str:
+                  """Extract report title from entry line for sorting"""
+                  # This regex looks for the title part after the organization link and before the year
+                  match = re.search(r'\]\(.*?\) - \[([^\]]+)\]', entry_line)
                   return match.group(1) if match else entry_line
                       
               def _find_similar_section(self, target: str, main_section: str) -> Optional[str]:
