@@ -253,17 +253,17 @@ jobs:
                       print(f"Warning: Git status check failed: {status_result.stderr}")
                       action = "Updated"
                   else:
-                  status = status_result.stdout.strip()
-                  action = "Updated" if status.startswith("M") else "Created"
-              
-              # Commit the file
-              commit_message = f"{action} {output_path.name} from {pdf_path.name} using AI Prompt {prompt_version} (Model {used_model}, Branch {branch})"
-              subprocess.run(["git", "commit", "-m", commit_message], check=True)
-              print(f"Committed changes: {commit_message}")
-              return True
-          except Exception as e:
-              print(f"Error during git operations: {str(e)}")
-              return False
+                      status = status_result.stdout.strip()
+                      action = "Updated" if status.startswith("M") else "Created"
+                  
+                  # Commit the file
+                  commit_message = f"{action} {output_path.name} from {pdf_path.name} using AI Prompt {prompt_version} (Model {used_model}, Branch {branch})"
+                  subprocess.run(["git", "commit", "-m", commit_message], check=True)
+                  print(f"Committed changes: {commit_message}")
+                  return True
+              except Exception as e:
+                  print(f"Error during git operations: {str(e)}")
+                  return False
           
           def main():
               if len(sys.argv) < 4:
