@@ -407,22 +407,25 @@ jobs:
                       org_pattern = re.escape(analysis['organization'])
                       title_pattern = re.escape(analysis['title'])
                       # This regex looks for a line starting with '- [' followed by the organization name,
-                      # then the report title, and then the year in parentheses.
-                      existing_entry_pattern = rf"^- \[{org_pattern}\]\(.*\) - \[{title_pattern}\]\(.*\) \((\d{{4}})\).*$"
+                      # then the report title, and then the year in parentheses, capturing the PDF URL.
+                      existing_entry_pattern = rf"^- \[{org_pattern}\]\((?P<org_url>[^)]+)\) - \[{title_pattern}\]\((?P<pdf_url>[^)]+)\) \((\d{{4}})\).*$"
                       
                       existing_match = re.search(existing_entry_pattern, section_content, re.MULTILINE)
                       
                       updated_section = section_content
                       entry_replaced = False
+                      existing_pdf_url = None
                       
                       if existing_match:
                           existing_full_entry = existing_match.group(0)
                           existing_year = int(existing_match.group(1))
+                          existing_pdf_url = existing_match.group('pdf_url') # Capture existing PDF URL
                           new_report_year = int(analysis['year'])
                           
                           if new_report_year > existing_year:
                               print(f"📝 Updating existing entry for {analysis['organization']} - {analysis['title']} (from {existing_year} to {new_report_year})")
-                              updated_section = updated_section.replace(existing_full_entry, entry_text)
+                              # Use re.sub for robust replacement of the entire line
+                              updated_section = re.sub(existing_entry_pattern, entry_text, updated_section, 1, re.MULTILINE)
                               entry_replaced = True
                           else:
                               print(f"ℹ️ Existing entry for {analysis['organization']} - {analysis['title']} ({existing_year}) is newer or same year as new report ({new_report_year}). No update needed.")
@@ -469,7 +472,7 @@ jobs:
                       print(f"❌ Error updating README: {e}")
                       return False, "", -1
                       
-              def _format_entry(self, analysis: Dict, file_path: str) -> str:
+              def _format_entry(self, analysis: Dict, file_path: str, existing_pdf_url: Optional[str] = None) -> str:
                   """Format entry according to specified template"""
                   # Use the extracted title from analysis
                   title = analysis['title']
@@ -496,9 +499,12 @@ jobs:
                   
                   original_filename_stem = Path(file_path).stem
                   
-                  # Construct the correct PDF path
-                  correct_pdf_path = Path("Annual Security Reports") / year / f"{original_filename_stem}.pdf"
-                  pdf_path_encoded = str(correct_pdf_path).replace(' ', '%20')
+                  # Construct the correct PDF path, using existing_pdf_url if available
+                  if existing_pdf_url:
+                      pdf_path_encoded = existing_pdf_url
+                  else:
+                      correct_pdf_path = Path("Annual Security Reports") / year / f"{original_filename_stem}.pdf"
+                      pdf_path_encoded = str(correct_pdf_path).replace(' ', '%20')
                   
                   # Create the formatted entry exactly as specified
                   entry = f"- [{org_name}]({org_url}) - [{title}]({pdf_path_encoded}) ({analysis['year']}) - {analysis['summary']}"
