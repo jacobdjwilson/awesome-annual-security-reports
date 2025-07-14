@@ -30,21 +30,66 @@ jobs:
       - name: Find changed files
         id: find-files
         run: |
-          # Get only renamed, added, or modified files in the push
-          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf)$" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          # Determine the base and head SHAs for comparison
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+            HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+          elif [[ -n "${{ github.event.before }}" && "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]]; then
+            BASE_SHA="${{ github.event.before }}"
+            HEAD_SHA="${{ github.event.after }}"
+          else
+            # For manual runs or initial pushes, consider all PDFs as "added"
+            echo "No specific git history for comparison. Considering all existing PDFs."
+            find "Annual Security Reports" -name "*.pdf" 2>/dev/null | while read -r file; do
+              echo "A $file" # Mark as Added
+            done > changed_files_raw.txt
+            echo "files_to_scan<<EOF" >> $GITHUB_OUTPUT
+            cat changed_files_raw.txt | grep -E "Annual Security Reports/.*\.pdf$" | awk '{print $2}' >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            echo "deleted_files<<EOF" >> $GITHUB_OUTPUT
+            echo "" >> $GITHUB_OUTPUT # No deleted files for initial push
+            echo "EOF" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Get all changed files (added, modified, deleted, renamed)
+          # A: Added, D: Deleted, M: Modified, R: Renamed
+          git diff --name-status $BASE_SHA $HEAD_SHA | grep -E "\.(pdf)$" > changed_files_raw.txt || true
+
+          # Filter for relevant PDF files and store their status and path
+          FILES_TO_SCAN=""
+          DELETED_FILES=""
+          while IFS=$'\t' read -r status file; do
+            if [[ "$file" =~ Annual\ Security\ Reports/.*\.pdf$ ]]; then
+              if [[ "$status" == "D" ]]; then
+                DELETED_FILES+="$file\n"
+              else
+                FILES_TO_SCAN+="$file\n"
+              fi
+            fi
+          done < changed_files_raw.txt
+
+          if [[ -z "$FILES_TO_SCAN" && -z "$DELETED_FILES" ]]; then
+            echo "No relevant PDF files found (added, modified, or deleted). Exiting."
+            echo "files_to_scan_count=0" >> $GITHUB_OUTPUT
+            echo "deleted_files_count=0" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          echo "files_to_scan<<EOF" >> $GITHUB_OUTPUT
+          echo "$FILES_TO_SCAN" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          echo "deleted_files<<EOF" >> $GITHUB_OUTPUT
+          echo "$DELETED_FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
           
-          # Count for logging
-          COUNT=$(git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf)$" | wc -l || echo 0)
+          SCAN_COUNT=$(echo -n "$FILES_TO_SCAN" | grep -c '^' || echo 0)
+          DELETED_COUNT=$(echo -n "$DELETED_FILES" | grep -c '^' || echo 0)
           
-          echo "Found $COUNT changed security report files"
-          
-          # Show the files found
-          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf)$" || echo "No files found"
+          echo "files_to_scan_count=$SCAN_COUNT" >> $GITHUB_OUTPUT
+          echo "deleted_files_count=$DELETED_COUNT" >> $GITHUB_OUTPUT
+          echo "Found $SCAN_COUNT PDFs to scan."
+          echo "Found $DELETED_COUNT PDFs marked for deletion."
 
       - name: Scan changed files with VirusTotal
         if: env.CHANGED_FILES != ''
@@ -295,25 +340,32 @@ jobs:
                   print("Error: VIRUS_TOTAL_API_KEY environment variable not set")
                   return 1
               
-              # Get changed files from environment
-              changed_files = os.environ.get('CHANGED_FILES', '').strip().split('\n')
-              changed_files = [f for f in changed_files if f.strip()]
+              # Get files to scan from environment
+              files_to_scan = os.environ.get('FILES_TO_SCAN', '').strip().split('\n')
+              files_to_scan = [f for f in files_to_scan if f.strip()]
               
-              if not changed_files:
-                  print("No changed files to scan")
+              # Get deleted files from environment
+              deleted_files = os.environ.get('DELETED_FILES', '').strip().split('\n')
+              deleted_files = [f for f in deleted_files if f.strip()]
+              
+              if not files_to_scan and not deleted_files:
+                  print("No relevant files (added, modified, or deleted) to process.")
+                  # This case will be handled by the summary step
                   return 0
               
-              print(f"Processing {len(changed_files)} changed files")
+              print(f"Processing {len(files_to_scan)} files for scanning.")
+              print(f"Detected {len(deleted_files)} files marked for deletion.")
               
-              # Initialize summary
-              with open(os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md'), 'w') as f:
+              # Initialize summary file
+              summary_file_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
+              with open(summary_file_path, 'w') as f:
                   f.write("## 🛡️ VirusTotal Security Scan Results\n\n")
               
               # Process each file
               results = []
               success_count = 0
               
-              for file_path in changed_files:
+              for file_path in files_to_scan:
                   print(f"\n--- Scanning: {file_path} ---")
                   
                   result = scan_file(file_path, api_key)
@@ -324,7 +376,12 @@ jobs:
                   print(f"--- Completed: {file_path} ---\n")
               
               # Write detailed results to summary
-              with open(os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md'), 'a') as f:
+              with open(summary_file_path, 'a') as f:
+                  f.write("### 📊 Scan Results\n\n")
+                  f.write(f"**PDFs Found for Scanning**: {len(files_to_scan)}\n")
+                  f.write(f"**PDFs Successfully Scanned**: {success_count}\n")
+                  f.write(f"**PDFs Marked for Deletion**: {len(deleted_files)}\n\n")
+                  
                   if results:
                       f.write("| File | Verdict | Detections | Engines | Report |\n")
                       f.write("|------|---------|------------|---------|--------|\n")
@@ -358,34 +415,28 @@ jobs:
                   else:
                       f.write("No files were successfully scanned.\n")
                   
-                  f.write(f"\n\n### Summary\n")
-                  f.write(f"- Successfully processed {success_count} out of {len(changed_files)} files\n")
+                  if deleted_files:
+                      f.write("\n### 🗑️ Deleted Files (Not Scanned)\n\n")
+                      for deleted_file in deleted_files:
+                          f.write(f"- {deleted_file}\n")
                   
-                  # Add statistics
-                  if results:
-                      clean_files = sum(1 for r in results if r["verdict"] == "Clean")
-                      suspicious_files = sum(1 for r in results if r["verdict"] == "Suspicious")
-                      malicious_files = sum(1 for r in results if r["verdict"] == "Malicious")
-                      
-                      f.write(f"- Clean files: {clean_files}\n")
-                      f.write(f"- Suspicious files: {suspicious_files}\n")
-                      f.write(f"- Malicious files: {malicious_files}\n")
+                  if not files_to_scan and not deleted_files:
+                      f.write("### ℹ️ No Relevant Changes\n\n")
+                      f.write("No new, modified, or deleted PDF files were found in 'Annual Security Reports/'.\n")
                   
-                  # Add additional info about VirusTotal
                   f.write("\n### About the Scan\n")
                   f.write("- Files are scanned using the VirusTotal API v3\n")
                   f.write("- Results are based on analysis from 70+ antivirus engines\n")
                   f.write("- Files already in the VirusTotal database use existing scan results\n")
                   f.write("- Visit the report links for complete analysis details\n")
                   
-                  # Add rate limit info
                   f.write("\n### API Usage\n")
                   f.write("- This scan uses the VirusTotal public API\n")
                   f.write("- Rate limits: 4 requests per minute for free accounts\n")
                   f.write("- File size limit: 32MB for free accounts, 650MB for premium\n")
               
-              # Return success if at least one file was processed
-              return 0 if success_count > 0 else 1
+              # Return success if at least one file was processed or no files were expected
+              return 0 if (success_count > 0 or (not files_to_scan and not deleted_files)) else 1
           
           if __name__ == "__main__":
               sys.exit(main())
@@ -395,10 +446,17 @@ jobs:
           chmod +x scan.py
           python scan.py || echo "Scan completed with some issues, but continuing workflow"
 
-      - name: No files to scan message
-        if: env.CHANGED_FILES == ''
+      - name: Summary
+        if: always()
         run: |
-          echo "No security report files were added or modified in this push."
-          echo "## Security Scan Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🛡️ VirusTotal Security Scan Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "No security report files were changed in this push." >> $GITHUB_STEP_SUMMARY
+          echo "**Branch**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # The Python script already writes the detailed summary to GITHUB_STEP_SUMMARY
+          # We just need to add the useful links here.
+          echo "🔗 Useful Links" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
