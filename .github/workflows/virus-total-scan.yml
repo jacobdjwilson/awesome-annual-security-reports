@@ -326,30 +326,35 @@ jobs:
                   return 1
               
               # Get changed files from environment
-              changed_files = os.environ.get('CHANGED_FILES', '').strip().split('\n')
-              changed_files = [f for f in changed_files if f.strip()]
+              files_to_scan = os.environ.get('CHANGED_FILES', '').strip().split('\n')
+              files_to_scan = [f for f in files_to_scan if f.strip()]
               
-              if not changed_files:
-                  print("No changed files to scan")
+              deleted_files = os.environ.get('DELETED_FILES', '').strip().split('\n')
+              deleted_files = [f for f in deleted_files if f.strip()]
+              
+              total_files_processed = len(files_to_scan) + len(deleted_files)
+              
+              if not files_to_scan and not deleted_files:
+                  print("No relevant security report files changed.")
                   return 0
               
-              print(f"Processing {len(changed_files)} changed files")
+              print(f"Processing {len(files_to_scan)} files for scan and {len(deleted_files)} deleted files.")
               
               # Initialize summary
               with open(os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md'), 'w') as f:
                   f.write("## 🛡️ VirusTotal Security Scan Results\n\n")
               
-              # Process each file
+              # Process each file to scan
               results = []
-              success_count = 0
+              success_scan_count = 0
               
-              for file_path in changed_files:
+              for file_path in files_to_scan:
                   print(f"\n--- Scanning: {file_path} ---")
                   
                   result = scan_file(file_path, api_key)
                   if result:
                       results.append(result)
-                      success_count += 1
+                      success_scan_count += 1
                   
                   print(f"--- Completed: {file_path} ---\n")
               
@@ -388,10 +393,16 @@ jobs:
                   else:
                       f.write("No files were successfully scanned.\n")
                   
-                  f.write(f"\n\n### Summary\n")
-                  f.write(f"- Successfully processed {success_count} out of {len(changed_files)} files\n")
+                  if deleted_files:
+                      f.write("\n### 🗑️ Deleted Files\n")
+                      for d_file in deleted_files:
+                          f.write(f"- {d_file} (skipped scan)\n")
                   
-                  # Add statistics
+                  f.write(f"\n\n### Summary\n")
+                  f.write(f"- Successfully scanned {success_scan_count} out of {len(files_to_scan)} files requiring scan.\n")
+                  f.write(f"- {len(deleted_files)} files were deleted and skipped from scanning.\n")
+                  
+                  # Add statistics for scanned files
                   if results:
                       clean_files = sum(1 for r in results if r["verdict"] == "Clean")
                       suspicious_files = sum(1 for r in results if r["verdict"] == "Suspicious")
@@ -414,8 +425,9 @@ jobs:
                   f.write("- Rate limits: 4 requests per minute for free accounts\n")
                   f.write("- File size limit: 32MB for free accounts, 650MB for premium\n")
               
-              # Return success if at least one file was processed
-              return 0 if success_count > 0 else 1
+              # Return success if there were no files to scan, or if at least one file was successfully processed
+              # or if only deleted files were present.
+              return 0 if (len(files_to_scan) == 0 and len(deleted_files) > 0) or success_scan_count > 0 or (len(files_to_scan) == 0 and len(deleted_files) == 0) else 1
           
           if __name__ == "__main__":
               sys.exit(main())
@@ -426,9 +438,9 @@ jobs:
           python scan.py || echo "Scan completed with some issues, but continuing workflow"
 
       - name: No files to scan message
-        if: env.CHANGED_FILES == ''
+        if: env.CHANGED_FILES == '' && env.DELETED_FILES == ''
         run: |
-          echo "No security report files were added or modified in this push."
+          echo "No security report files were added, modified, or deleted in this push."
           echo "## Security Scan Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "No security report files were changed in this push." >> $GITHUB_STEP_SUMMARY
