@@ -246,10 +246,20 @@ jobs:
                   commit_message = f"{action} {output_path.name} from {pdf_path.name} using AI Prompt {prompt_version} (Model {MODEL}, Branch {branch})"
                   subprocess.run(["git", "commit", "-m", commit_message], check=True)
                   print(f"Committed changes: {commit_message}")
-                  return True
+                  return {
+                      "pdf_path": str(pdf_path),
+                      "output_path": str(output_path),
+                      "model_used": MODEL,
+                      "status": "Converted Successfully"
+                  }
               except Exception as e:
                   print(f"Error during git operations: {str(e)}")
-                  return False
+                  return {
+                      "pdf_path": str(pdf_path),
+                      "output_path": "", # No output path if failed
+                      "model_used": MODEL,
+                      "status": f"Failed: {str(e)}"
+                  }
           
           def main():
               if len(sys.argv) < 4:
@@ -273,17 +283,48 @@ jobs:
               print(f"Processing {len(pdf_paths)} PDF files on branch {branch}")
               
               success_count = 0
+              all_results = [] # Initialize all_results list
               
               # Process each PDF
               for pdf_path_str in pdf_paths:
                   pdf_path = Path(pdf_path_str)
                   try:
-                      if process_pdf(pdf_path, prompt_path, prompt_version, branch):
+                      result = process_pdf(pdf_path, prompt_path, prompt_version, branch)
+                      all_results.append(result)
+                      if result["status"] == "Converted Successfully":
                           success_count += 1
                   except Exception as e:
                       print(f"Error processing {pdf_path}: {str(e)}")
+                      all_results.append({
+                          "pdf_path": str(pdf_path),
+                          "output_path": "",
+                          "model_used": MODEL,
+                          "status": f"Failed: {str(e)}"
+                      })
               
               print(f"Successfully processed {success_count}/{len(pdf_paths)} PDFs")
+              
+              # Generate and write summary to GITHUB_STEP_SUMMARY
+              summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
+              with open(summary_path, 'a', encoding='utf-8') as f:
+                  f.write("## 📄 PDF to Markdown Conversion Summary\n\n")
+                  f.write("| PDF File | Markdown Output | Model Used | Status |\n")
+                  f.write("|----------|-----------------|------------|--------|\n")
+                  for result in all_results:
+                      status_icon = "✅" if result['status'] == 'Converted Successfully' else "❌"
+                      f.write(f"| {result['pdf_path']} | {result['output_path']} | {result['model_used']} | {status_icon} {result['status']} |\n")
+                  
+                  f.write(f"\n### Summary\n")
+                  f.write(f"- Successfully converted: {success_count}\n")
+                  f.write(f"- Failed conversions: {len(pdf_paths) - success_count}\n")
+                  f.write(f"- Total PDFs processed: {len(pdf_paths)}\n")
+                  
+                  f.write("\n### About the Conversion\n")
+                  f.write("- PDF text extracted using `markitdown[pdf]`.\n")
+                  f.write("- Markdown generated using Google Gemini API.\n")
+                  f.write("- AI prompt from `.github/ai-prompts/pdf-to-markdown-prompt.md`.\n")
+                  f.write("- Output files are committed to the repository.\n")
+
               return 0 if success_count > 0 else 1
           
           if __name__ == "__main__":
@@ -298,6 +339,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ steps.find-pdfs.outputs.branch }}
           CONVERTED_FILES_PATH: "converted_files.txt"
+          GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
         run: |
           # Create a file with the list of PDF paths
           echo "${{ steps.find-pdfs.outputs.pdf_files }}" > pdf_paths.txt
