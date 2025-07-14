@@ -30,26 +30,56 @@ jobs:
       - name: Find changed files
         id: find-files
         run: |
-          # Get only renamed, added, or modified files in the push
+          # Get all changed files (added, modified, deleted, renamed)
+          ALL_CHANGED_FILES=$(git diff --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | grep -E "Annual Security Reports/.+\.(pdf)$")
+          
+          # Filter for added, modified, or renamed files that still exist
+          CHANGED_FILES_TO_SCAN=""
+          for file in $ALL_CHANGED_FILES; do
+            if [ -f "$file" ]; then
+              CHANGED_FILES_TO_SCAN="$CHANGED_FILES_TO_SCAN\n$file"
+            fi
+          done
           echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf)$" >> $GITHUB_ENV
+          echo "$CHANGED_FILES_TO_SCAN" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          
+          # Filter for deleted files
+          DELETED_FILES=""
+          for file in $ALL_CHANGED_FILES; do
+            if [ ! -f "$file" ]; then
+              DELETED_FILES="$DELETED_FILES\n$file"
+            fi
+          done
+          echo "DELETED_FILES<<EOF" >> $GITHUB_ENV
+          echo "$DELETED_FILES" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
           
           # Count for logging
-          COUNT=$(git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf)$" | wc -l || echo 0)
+          COUNT_TO_SCAN=$(echo "$CHANGED_FILES_TO_SCAN" | grep -c .) || echo 0
+          COUNT_DELETED=$(echo "$DELETED_FILES" | grep -c .) || echo 0
           
-          echo "Found $COUNT changed security report files"
+          echo "Found $COUNT_TO_SCAN security report files to scan."
+          echo "Found $COUNT_DELETED deleted security report files."
           
           # Show the files found
-          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf)$" || echo "No files found"
+          if [ -n "$CHANGED_FILES_TO_SCAN" ]; then
+            echo "Files to scan:"
+            echo "$CHANGED_FILES_TO_SCAN"
+          fi
+          if [ -n "$DELETED_FILES" ]; then
+            echo "Deleted files:"
+            echo "$DELETED_FILES"
+          fi
+          if [ -z "$CHANGED_FILES_TO_SCAN" ] && [ -z "$DELETED_FILES" ]; then
+            echo "No relevant security report files changed."
+          fi
 
       - name: Scan changed files with VirusTotal
-        if: env.CHANGED_FILES != ''
+        if: env.CHANGED_FILES != '' || env.DELETED_FILES != ''
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
+          DELETED_FILES: ${{ env.DELETED_FILES }}
         run: |
           cat > scan.py << 'EOF'
           #!/usr/bin/env python3
