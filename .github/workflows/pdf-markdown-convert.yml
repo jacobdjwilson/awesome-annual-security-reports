@@ -40,60 +40,16 @@ jobs:
           CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD || echo ${GITHUB_REF#refs/heads/})
           echo "Current branch: $CURRENT_BRANCH"
           
-          # Determine the base and head SHAs for comparison
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            BASE_SHA="${{ github.event.pull_request.base.sha }}"
-            HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+            # For pull requests
+            CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -E "Annual Security Reports/.*\.pdf$" || true)
           elif [[ -n "${{ github.event.before }}" && "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]]; then
-            BASE_SHA="${{ github.event.before }}"
-            HEAD_SHA="${{ github.event.after }}"
+            # For direct pushes
+            CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | grep -E "Annual Security Reports/.*\.pdf$" || true)
           else
-            # For manual runs or initial pushes, consider all PDFs as "added"
-            echo "No specific git history for comparison. Considering all existing PDFs."
-            find "Annual Security Reports" -name "*.pdf" 2>/dev/null | while read -r file; do
-              echo "A $file" # Mark as Added
-            done > changed_files_raw.txt
-            echo "pdfs_changed=true" >> $GITHUB_OUTPUT
-            echo "pdf_files<<EOF" >> $GITHUB_OUTPUT
-            cat changed_files_raw.txt | grep -E "Annual Security Reports/.*\.pdf$" | awk '{print $2}' >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
-            echo "branch=$CURRENT_BRANCH" >> $GITHUB_OUTPUT
-            exit 0
+            # For manual runs or initial pushes
+            CHANGED_FILES=$(find "Annual Security Reports" -name "*.pdf" 2>/dev/null || true)
           fi
-
-          # Get all changed files (added, modified, deleted, renamed)
-          # A: Added, D: Deleted, M: Modified, R: Renamed
-          git diff --name-status $BASE_SHA $HEAD_SHA | grep -E "\.(pdf)$" > changed_files_raw.txt || true
-
-          # Filter for relevant PDF files and store their status and path
-          CHANGED_PDFS=""
-          DELETED_PDFS=""
-          while IFS=$'\t' read -r status file; do
-            if [[ "$file" =~ Annual\ Security\ Reports/.*\.pdf$ ]]; then
-              if [[ "$status" == "D" ]]; then
-                DELETED_PDFS+="$file\n"
-              else
-                CHANGED_PDFS+="$file\n"
-              fi
-            fi
-          done < changed_files_raw.txt
-
-          if [[ -z "$CHANGED_PDFS" && -z "$DELETED_PDFS" ]]; then
-            echo "No relevant PDF files found (added, modified, or deleted). Exiting."
-            echo "pdfs_changed=false" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
-          echo "pdfs_changed=true" >> $GITHUB_OUTPUT
-          echo "pdf_files<<EOF" >> $GITHUB_OUTPUT
-          echo "$CHANGED_PDFS" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-          echo "deleted_pdf_files<<EOF" >> $GITHUB_OUTPUT
-          echo "$DELETED_PDFS" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-          echo "branch=$CURRENT_BRANCH" >> $GITHUB_OUTPUT
-          echo "Found $(echo -n "$CHANGED_PDFS" | grep -c '^') PDFs to process."
-          echo "Found $(echo -n "$DELETED_PDFS" | grep -c '^') PDFs marked for deletion."
           
           if [[ -z "$CHANGED_FILES" ]]; then
             echo "No PDF files found. Exiting."
@@ -194,40 +150,26 @@ jobs:
                   raise
           
           def generate_markdown_with_ai(pdf_text, prompt_text):
-              full_prompt = f"{prompt_text}\n\n# Report Content Below\n\n{pdf_text}"
-              
-              # Set generation parameters for better output
-              generation_config = {
-                  "temperature": 0.2,  # Lower temperature for more predictable output
-                  "max_output_tokens": 8192,
-              }
-              
-              for model_name in MODELS:
-                  try:
-                      print(f"Attempting to generate markdown with {model_name}...")
-                      model = genai.GenerativeModel(model_name)
-                      response = model.generate_content(
-                          full_prompt,
-                          generation_config=generation_config
-                      )
-                      
-                      # Check if response contains valid parts
-                      if response.parts:
-                          markdown_content = response.text
-                          print(f"Successfully generated markdown ({len(markdown_content)} characters) with {model_name}")
-                          return markdown_content, model_name
-                      else:
-                          print(f"Model {model_name} returned no valid parts. Finish reason: {response.candidates[0].finish_reason if response.candidates else 'N/A'}")
-                          if response.candidates and response.candidates[0].finish_reason == 2: # SAFETY
-                              print(f"Safety filter triggered for model {model_name}. Trying next model.")
-                              continue
-                          else:
-                              raise Exception(f"Model {model_name} returned no valid parts or an unexpected finish reason.")
-                  except Exception as e:
-                      print(f"Error generating markdown with AI using {model_name}: {str(e)}")
-                      continue
-              
-              raise Exception("All available models failed to generate markdown.")
+              try:
+                  print(f"Generating markdown with {MODEL}...")
+                  model = genai.GenerativeModel(MODEL)
+                  full_prompt = f"{prompt_text}\n\n# Report Content Below\n\n{pdf_text}"
+                  
+                  # Set generation parameters for better output
+                  generation_config = {
+                      "temperature": 0.2,  # Lower temperature for more predictable output
+                      "max_output_tokens": 8192,
+                  }
+                  
+                  response = model.generate_content(
+                      full_prompt,
+                      generation_config=generation_config
+                  )
+                  print(f"Successfully generated markdown ({len(response.text)} characters)")
+                  return response.text
+              except Exception as e:
+                  print(f"Error generating markdown with AI: {str(e)}")
+                  raise
           
           def process_pdf(pdf_path, prompt_path, prompt_version, branch):
               """Process a PDF file and convert it to markdown
@@ -251,7 +193,7 @@ jobs:
               pdf_text = extract_text_from_pdf(pdf_path)
               
               # Generate markdown with Gemini
-              markdown_content, used_model = generate_markdown_with_ai(pdf_text, prompt_text)
+              markdown_content = generate_markdown_with_ai(pdf_text, prompt_text)
               
               # Determine the output path that matches the input directory structure
               # e.g., Annual Security Reports/2025/file.pdf -> Markdown Conversions/2025/file.md
@@ -301,7 +243,7 @@ jobs:
                       action = "Updated" if status.startswith("M") else "Created"
                   
                   # Commit the file
-                  commit_message = f"{action} {output_path.name} from {pdf_path.name} using AI Prompt {prompt_version} (Model {used_model}, Branch {branch})"
+                  commit_message = f"{action} {output_path.name} from {pdf_path.name} using AI Prompt {prompt_version} (Model {MODEL}, Branch {branch})"
                   subprocess.run(["git", "commit", "-m", commit_message], check=True)
                   print(f"Committed changes: {commit_message}")
                   return True
@@ -310,31 +252,25 @@ jobs:
                   return False
           
           def main():
-              if len(sys.argv) < 5:
-                  print("Usage: python process_pdfs.py <pdf_paths_file> <deleted_pdf_paths_file> <prompt_path> <prompt_version> <branch>")
+              if len(sys.argv) < 4:
+                  print("Usage: python process_pdfs.py <pdf_paths_file> <prompt_path> <prompt_version> <branch>")
                   return 1
               
               pdf_paths_file = sys.argv[1]
-              deleted_pdf_paths_file = sys.argv[2]
-              prompt_path = sys.argv[3]
-              prompt_version = sys.argv[4]
-              branch = sys.argv[5] if len(sys.argv) > 5 else "unknown"
+              prompt_path = sys.argv[2]
+              prompt_version = sys.argv[3]
+              branch = sys.argv[4] if len(sys.argv) > 4 else "unknown"
               
               # Create or clear the converted files list
               converted_files_path = os.environ.get("CONVERTED_FILES_PATH", "converted_files.txt")
               with open(converted_files_path, "w") as f:
                   f.write("")  # Just create/clear the file
               
-              # Read PDF paths to process
+              # Read PDF paths
               with open(pdf_paths_file, "r") as f:
-                  pdf_paths = [line.strip() for line in f.readlines() if line.strip()]
-              
-              # Read deleted PDF paths
-              with open(deleted_pdf_paths_file, "r") as f:
-                  deleted_pdf_paths = [line.strip() for line in f.readlines() if line.strip()]
+                  pdf_paths = [line.strip() for line in f.readlines()]
               
               print(f"Processing {len(pdf_paths)} PDF files on branch {branch}")
-              print(f"Detected {len(deleted_pdf_paths)} deleted PDF files.")
               
               success_count = 0
               
@@ -363,12 +299,11 @@ jobs:
           BRANCH: ${{ steps.find-pdfs.outputs.branch }}
           CONVERTED_FILES_PATH: "converted_files.txt"
         run: |
-          # Create files with the lists of PDF paths
+          # Create a file with the list of PDF paths
           echo "${{ steps.find-pdfs.outputs.pdf_files }}" > pdf_paths.txt
-          echo "${{ steps.find-pdfs.outputs.deleted_pdf_files }}" > deleted_pdf_paths.txt
           
           # Run the Python script
-          python process_pdfs.py pdf_paths.txt deleted_pdf_paths.txt ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH"
+          python process_pdfs.py pdf_paths.txt ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH"
           
           # Push changes
           git push https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF}
@@ -387,51 +322,3 @@ jobs:
           echo "Error: Prompt file not found at .github/ai-prompts/pdf-to-markdown-prompt.md"
           echo "Please ensure the prompt file exists in your repository."
           exit 1
-
-      - name: Summary
-        if: always()
-        run: |
-          echo "## 📄 PDF to Markdown Conversion Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Branch**: ${{ steps.find-pdfs.outputs.branch }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Trigger**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          
-          if [ -f "converted_files.txt" ]; then
-            PROCESSED_COUNT=$(grep -c '^' converted_files.txt || echo 0)
-            DELETED_COUNT=$(echo "${{ steps.find-pdfs.outputs.deleted_pdf_files }}" | grep -c '^' || echo 0)
-            
-            echo "### 📊 Conversion Results" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "**PDFs Found for Processing**: $(echo "${{ steps.find-pdfs.outputs.pdf_files }}" | grep -c '^' || echo 0)" >> $GITHUB_STEP_SUMMARY
-            echo "**PDFs Successfully Converted**: $PROCESSED_COUNT" >> $GITHUB_STEP_SUMMARY
-            echo "**PDFs Marked for Deletion**: $DELETED_COUNT" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            
-            if [ "$PROCESSED_COUNT" -gt 0 ]; then
-              echo "### ✅ Converted Files" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-              cat converted_files.txt >> $GITHUB_STEP_SUMMARY
-            fi
-            
-            if [ "$DELETED_COUNT" -gt 0 ]; then
-              echo "### 🗑️ Deleted Files (Not Processed)" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-              echo "${{ steps.find-pdfs.outputs.deleted_pdf_files }}" >> $GITHUB_STEP_SUMMARY
-            fi
-            
-            if [ "$PROCESSED_COUNT" -eq 0 ] && [ "$DELETED_COUNT" -eq 0 ]; then
-              echo "### ℹ️ No Relevant Changes" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-              echo "No new, modified, or deleted PDF files were found in 'Annual Security Reports/'." >> $GITHUB_STEP_SUMMARY
-            fi
-          else
-            echo "### ⚠️ No Processing Results" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "No PDF files were successfully processed." >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "🔗 Useful Links" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
