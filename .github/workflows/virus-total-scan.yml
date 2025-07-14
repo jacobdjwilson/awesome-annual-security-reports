@@ -34,23 +34,21 @@ jobs:
           ALL_CHANGED_FILES=$(git diff --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | grep -E "Annual Security Reports/.+\.(pdf)$")
           
           # Filter for added, modified, or renamed files that still exist
-          CHANGED_FILES_TO_SCAN=""
-          for file in $ALL_CHANGED_FILES; do
+          CHANGED_FILES_TO_SCAN=$(echo "$ALL_CHANGED_FILES" | while read -r file; do
             if [ -f "$file" ]; then
-              CHANGED_FILES_TO_SCAN="$CHANGED_FILES_TO_SCAN\n$file"
+              echo "$file"
             fi
-          done
+          done)
           echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
           echo "$CHANGED_FILES_TO_SCAN" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
           
           # Filter for deleted files
-          DELETED_FILES=""
-          for file in $ALL_CHANGED_FILES; do
+          DELETED_FILES=$(echo "$ALL_CHANGED_FILES" | while read -r file; do
             if [ ! -f "$file" ]; then
-              DELETED_FILES="$DELETED_FILES\n$file"
+              echo "$file"
             fi
-          done
+          done)
           echo "DELETED_FILES<<EOF" >> $GITHUB_ENV
           echo "$DELETED_FILES" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
@@ -108,7 +106,7 @@ jobs:
               # Check if file exists
               if not os.path.exists(file_path):
                   print(f"Error: File not found: {file_path}")
-                  return False
+                  return {"status": "failed", "reason": "File not found"}
               
               try:
                   # Setup API headers
@@ -126,7 +124,8 @@ jobs:
                   # Check file size limit (VirusTotal has a 32MB limit for free API, 650MB for premium)
                   if file_size_bytes > 32 * 1024 * 1024:
                       print(f"Warning: File size ({file_size_mb:.2f} MB) exceeds free API limit (32 MB)")
-                      print("Attempting upload anyway - may require premium API key")
+                      # Do not attempt upload if it exceeds the free tier limit, as it will likely fail
+                      return {"status": "failed", "reason": "File size exceeds 32MB limit for free accounts"}
                   
                   # Calculate file hash first to check if it's already been scanned
                   file_hash = calculate_file_hash(file_path)
@@ -166,7 +165,7 @@ jobs:
                       if response.status_code != 200:
                           print(f"Error: File upload failed with status {response.status_code}")
                           print(f"Response: {response.text}")
-                          return False
+                          return {"status": "failed", "reason": f"File upload failed (Status: {response.status_code})"}
                       
                       # Get the scan ID
                       upload_result = response.json()
@@ -174,7 +173,7 @@ jobs:
                       
                       if not scan_id:
                           print("Error: No scan ID in upload response")
-                          return False
+                          return {"status": "failed", "reason": "No scan ID in upload response"}
                       
                       print(f"File uploaded successfully. Analysis ID: {scan_id}")
                       
@@ -219,17 +218,17 @@ jobs:
                                       break
                                   else:
                                       print("Error retrieving final scan results")
-                                      return False
+                                      return {"status": "failed", "reason": "Error retrieving final scan results"}
                               else:
                                   print(f"Scan status: {status}")
                           except Exception as e:
                               print(f"Error checking scan status: {e}")
                       else:
                           print("Scan did not complete within timeout period")
-                          return False
+                          return {"status": "failed", "reason": "Scan did not complete within timeout period"}
                   else:
                       print(f"Error checking file status: {lookup_response.status_code}")
-                      return False
+                      return {"status": "failed", "reason": f"Error checking file status (Status: {lookup_response.status_code})"}
                   
                   # Process scan results
                   attributes = scan_data.get('data', {}).get('attributes', {})
@@ -278,6 +277,7 @@ jobs:
                   create_annotation(file_path, verdict, threat_score, malicious_count, suspicious_count, total_engines, report_url)
                   
                   return {
+                      "status": "success",
                       "file": os.path.basename(file_path),
                       "verdict": verdict,
                       "threat_score": threat_score,
@@ -293,7 +293,7 @@ jobs:
                   print(f"Error scanning file: {str(e)}")
                   import traceback
                   traceback.print_exc()
-                  return False
+                  return {"status": "failed", "reason": f"Exception during scan: {str(e)}"}
           
           def create_annotation(file_path, verdict, threat_score, malicious_count, suspicious_count, total_engines, report_url):
               """Create GitHub annotation with scan results"""
@@ -346,15 +346,20 @@ jobs:
               
               # Process each file to scan
               results = []
+              failed_scans = []
               success_scan_count = 0
               
               for file_path in files_to_scan:
                   print(f"\n--- Scanning: {file_path} ---")
                   
                   result = scan_file(file_path, api_key)
-                  if result:
+                  if result and result["status"] == "success":
                       results.append(result)
                       success_scan_count += 1
+                  elif result and result["status"] == "failed":
+                      failed_scans.append({"file": os.path.basename(file_path), "reason": result["reason"]})
+                  else:
+                      failed_scans.append({"file": os.path.basename(file_path), "reason": "Unknown error"})
                   
                   print(f"--- Completed: {file_path} ---\n")
               
@@ -393,6 +398,11 @@ jobs:
                   else:
                       f.write("No files were successfully scanned.\n")
                   
+                  if failed_scans:
+                      f.write("\n### ❌ Failed Scans\n")
+                      for f_scan in failed_scans:
+                          f.write(f"- {f_scan['file']}: {f_scan['reason']}\n")
+                  
                   if deleted_files:
                       f.write("\n### 🗑️ Deleted Files\n")
                       for d_file in deleted_files:
@@ -400,6 +410,7 @@ jobs:
                   
                   f.write(f"\n\n### Summary\n")
                   f.write(f"- Successfully scanned {success_scan_count} out of {len(files_to_scan)} files requiring scan.\n")
+                  f.write(f"- {len(failed_scans)} files failed to scan.\n")
                   f.write(f"- {len(deleted_files)} files were deleted and skipped from scanning.\n")
                   
                   # Add statistics for scanned files
@@ -423,7 +434,6 @@ jobs:
                   f.write("\n### API Usage\n")
                   f.write("- This scan uses the VirusTotal public API\n")
                   f.write("- Rate limits: 4 requests per minute for free accounts\n")
-                  f.write("- File size limit: 32MB for free accounts, 650MB for premium\n")
               
               # Return success if there were no files to scan, or if at least one file was successfully processed
               # or if only deleted files were present.
