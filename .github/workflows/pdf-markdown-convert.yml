@@ -165,6 +165,26 @@ jobs:
                       full_prompt,
                       generation_config=generation_config
                   )
+                  
+                  # Log prompt feedback
+                  if response.prompt_feedback:
+                      print(f"Prompt feedback: {response.prompt_feedback}")
+
+                  # Log candidate details for debugging
+                  if response.candidates:
+                      for i, candidate in enumerate(response.candidates):
+                          print(f"Candidate {i} finish reason: {candidate.finish_reason}")
+                          if candidate.safety_ratings:
+                              print(f"Candidate {i} safety ratings: {candidate.safety_ratings}")
+                  
+                  if not response.text:
+                      error_message = "The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned."
+                      if response.candidates and response.candidates[0].finish_reason:
+                          error_message += f" The candidate's finish_reason is {response.candidates[0].finish_reason}."
+                      if response.candidates and response.candidates[0].safety_ratings:
+                          error_message += f" Safety ratings: {response.candidates[0].safety_ratings}."
+                      raise ValueError(error_message)
+
                   print(f"Successfully generated markdown ({len(response.text)} characters)")
                   return response.text
               except Exception as e:
