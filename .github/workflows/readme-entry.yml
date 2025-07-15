@@ -197,8 +197,11 @@ jobs:
                       'Data Security': ['data', 'privacy', 'encryption', 'DLP', 'database', 'backup'],
                       'Endpoint Security': ['endpoint', 'device', 'mobile', 'laptop', 'workstation', 'MDM'],
                       'Security Operations': ['SOC', 'SIEM', 'monitoring', 'detection', 'response', 'incident'],
-                      'Risk Management': ['risk', 'assessment', 'vulnerability', 'penetration', 'testing'],
-                      'Emerging Technologies': ['AI', 'ML', 'IoT', 'blockchain', 'quantum', 'edge']
+                      'Emerging Technologies': ['AI', 'ML', 'IoT', 'blockchain', 'quantum', 'edge'],
+                      # Keywords from 'Risk Management' distributed to existing categories
+                      'Vulnerabilities': ['vulnerability', 'assessment'], # For Analysis Reports
+                      'Penetration Testing': ['penetration', 'testing'], # For Survey Reports
+                      'Industry Trends': ['risk'] # For broader risk discussions in Survey Reports
                   }
                   
               def _setup_ai(self):
