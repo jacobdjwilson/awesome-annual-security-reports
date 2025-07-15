@@ -373,7 +373,7 @@ jobs:
                       # Validate against the TOC structure
                       if logical_main_section not in self.parser.toc_structure:
                           print(f"⚠️ Logical main section '{logical_main_section}' not found in TOC structure.")
-                          return False
+                          return False, "", -1
                       
                       if logical_subsection not in self.parser.toc_structure[logical_main_section]['subsections']:
                           print(f"⚠️ Logical subsection '{logical_subsection}' not found under '{logical_main_section}' in TOC structure.")
@@ -383,7 +383,7 @@ jobs:
                               logical_subsection = similar_subsection_in_toc
                               print(f"📍 Using similar logical subsection from TOC: {logical_subsection}")
                           else:
-                              return False
+                              return False, "", -1
                       
                       # Now, find the actual heading in the README content to insert the entry.
                       # The actual headings for categories like "Threat Intelligence" are '## Threat Intelligence'.
