@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install 'markitdown[pdf]' google-generativeai
+          pip install 'markitdown[pdf]' google-generativeai google-api-python-client
       
       - name: Find changed PDF files
         id: find-pdfs
@@ -86,6 +86,8 @@ jobs:
           from pathlib import Path
           import subprocess
           from markitdown import MarkItDown
+          from googleapiclient.discovery import build
+          from googleapiclient.errors import HttpError
           
           # Setup Gemini API
           genai.configure(api_key=os.environ["GEMINI_API_KEY"])
@@ -149,11 +151,33 @@ jobs:
                   print(f"Error extracting text from PDF: {str(e)}")
                   raise
           
-          def generate_markdown_with_ai(pdf_text, prompt_text):
+          def perform_google_search(query, api_key, cse_id):
+              """Performs a Google Custom Search and returns the first result URL."""
+              try:
+                  service = build("customsearch", "v1", developerKey=api_key)
+                  res = service.cse().list(q=query, cx=cse_id, num=1).execute()
+                  if 'items' in res and len(res['items']) > 0:
+                      print(f"Google Search found URL: {res['items'][0]['link']}")
+                      return res['items'][0]['link']
+                  else:
+                      print("No Google search results found.")
+                      return None
+              except HttpError as e:
+                  print(f"Google Search API error: {e}")
+                  return None
+              except Exception as e:
+                  print(f"An unexpected error occurred during Google Search: {e}")
+                  return None
+          
+          def generate_markdown_with_ai(pdf_text, prompt_text, organization_url=None):
               try:
                   print(f"Generating markdown with {MODEL}...")
                   model = genai.GenerativeModel(MODEL)
-                  full_prompt = f"{prompt_text}\n\n# Report Content Below\n\n{pdf_text}"
+                  
+                  full_prompt = f"{prompt_text}\n\n"
+                  if organization_url:
+                      full_prompt += f"The official report URL is: {organization_url}\n\n"
+                  full_prompt += f"# Report Content Below\n\n{pdf_text}"
                   
                   # Set generation parameters for better output
                   generation_config = {
@@ -212,8 +236,29 @@ jobs:
               # Extract text from PDF using markitdown
               pdf_text = extract_text_from_pdf(pdf_path)
               
-              # Generate markdown with Gemini
-              markdown_content = generate_markdown_with_ai(pdf_text, prompt_text)
+              # Extract organization and title from PDF filename
+              # Example: Annual Security Reports/2024/Varonis - The Identity Crisis 2024.pdf
+              # Organization: Varonis
+              # Title: The Identity Crisis 2024
+              filename_stem = pdf_path.stem
+              parts = filename_stem.split(' - ', 1)
+              organization_name = parts[0].strip() if len(parts) > 0 else ""
+              report_title = parts[1].strip() if len(parts) > 1 else filename_stem
+              
+              # Perform Google Search for the official report URL
+              google_search_api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
+              google_cse_id = os.environ.get("GOOGLE_CSE_ID")
+              organization_url = None
+              
+              if google_search_api_key and google_cse_id:
+                  search_query = f"{organization_name} {report_title} report"
+                  print(f"Performing Google search for: '{search_query}'")
+                  organization_url = perform_google_search(search_query, google_search_api_key, google_cse_id)
+              else:
+                  print("Google Search API keys not provided. Skipping URL search.")
+              
+              # Generate markdown with Gemini, passing the organization URL
+              markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
               
               # Determine the output path that matches the input directory structure
               # e.g., Annual Security Reports/2025/file.pdf -> Markdown Conversions/2025/file.md
@@ -355,6 +400,8 @@ jobs:
         if: steps.find-pdfs.outputs.pdfs_changed == 'true' && steps.check-prompt.outputs.prompt_exists == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
           PROMPT_VERSION: ${{ steps.check-prompt.outputs.prompt_version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ steps.find-pdfs.outputs.branch }}
