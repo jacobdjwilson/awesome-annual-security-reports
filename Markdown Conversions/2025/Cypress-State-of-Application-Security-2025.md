@@ -16,9 +16,7 @@ Survey Findings from IT and Security Leaders Across North America
 - [Critical AppSec Work Goes Undone](#critical-appsec-work-goes-undone)
 - [Noise in the System](#noise-in-the-system)
 - [Why Outsourcing AppSec Is on the Rise](#why-outsourcing-appsec-is-on-the-rise)
-- [What’s Fueling the Shift to Expert Help](#whats-fueling-the-shift-to-expert-help)
-  - [Data-Driven Insights](#data-driven-insights)
-  - [More Signal, Less Noise](#more-signal-less-noise)
+- [What’s Fueling the Shift Toward Expert Help](#whats-fueling-the-shift-toward-expert-help)
 - [What Keeps Teams Up at Night](#what-keeps-teams-up-at-night)
   - [Top AppSec Concerns by Category](#top-appsec-concerns-by-category)
   - [Cloud and Configuration Gaps](#cloud-and-configuration-gaps)
@@ -30,7 +28,6 @@ Survey Findings from IT and Security Leaders Across North America
 - [Conclusion: A New Mandate for Modern AppSec](#conclusion-a-new-mandate-for-modern-appsec)
 - [Survey Methodology](#survey-methodology)
 - [About Cypress Data Defense](#about-cypress-data-defense)
-  - [Why Choose Us?](#why-choose-us)
 
 ## Executive Summary
 
@@ -40,19 +37,18 @@ New research from TechStudio and Cypress Data Defense, based on responses from 2
 
 Findings from the 2025 State of Application Security Survey uncover widespread challenges, from frequent false positives and insecure code releases to understaffed teams and overwhelmed tools. Even as more teams aim to involve security earlier in development, most still wait until the final stages. This leaves critical risks unaddressed until it’s often too late. And with AI apps on the rise, open source-generated code and malicious use of AI tools by hackers will make organizations more vulnerable to exploitation. Teams are constrained, struggling with visibility, and worried about fallout from preventable breaches often without the resources to expand headcount or deliver securely at speed. False alerts create a lot of noise and distractions but surprisingly offer opportunity to bolster security.
 
-> The stakes are high. 60 percent say security issues are more likely to delay releases than bugs. Nearly 80 percent are worried about job loss after a breach. And 83 percent are open to outsourcing application security to get the help they need.
+The stakes are high. 60 percent say security issues are more likely to delay releases than bugs. Nearly 80 percent are worried about job loss after a breach. And 83 percent are open to outsourcing application security to get the help they need.
 
 This report outlines the true state of AppSec and how expert partners like Cypress Data Defense can deliver critical support and close key security gaps.
+
+[^1]: Source: IBM 2024 Cost of a Data Breach Report
+[^2]: Source: 2025 State of Application Security Survey, conducted by TechStudio, an Energize Marketing company, in partnership with Cypress Data Defense.
 
 ## Key Findings: Gaps, Pressures, and Opportunities in Modern AppSec
 
 This data highlights the scale of challenges facing AppSec teams, from insecure code to team burnout, and where organizations see opportunities for external support.
 
-![Chart showing 62% of companies admit to shipping insecure code](https://example.com/image1.png)
-![Chart showing false positives eroding trust in security tools](https://example.com/image2.png)
-![Chart showing security is still bolt-on, not built-in](https://example.com/image3.png)
-![Chart showing teams crave more time for high-value AppSec tasks](https://example.com/image4.png)
-![Chart showing 83% of companies are open to AppSec outsourcing](https://example.com/image5.png)
+![Infographic summarizing key findings: 62% of companies admit to shipping insecure code; False positives are eroding trust in security tools; Security is still bolt-on, not built-in; Teams crave more time for high-value AppSec tasks; 83% of companies are open to AppSec outsourcing; 60% say security issues are more likely to delay product launches than feature bugs; Nearly 80% of respondents are worried about job loss due to an AppSec incident.]
 
 ## AppSec Delays Product Velocity
 
@@ -60,7 +56,7 @@ Anyone who doubts the critical role that application security now plays in bring
 
 Delays often stem from late-stage discovery of vulnerabilities during static or dynamic scans, which require rework and retesting. Embedding security at the design and coding phases, through practices like secure code reviews, threat modeling, and integrated scanning, can reduce bottlenecks and improve release velocity. If in-house security efforts are impeding delivery, as this data suggests, organizations may need to augment capacity with external AppSec expertise.
 
-![Bar chart comparing security issues (60%) vs. feature bugs (40%) as causes for product launch delays](https://example.com/image6.png)
+![Bar chart showing what's more likely to delay the next product launch: 60% Security issues, 40% Feature bugs.]
 
 60% say security issues are more likely to delay product launches than feature bugs, highlighting how security has become a major factor in delivery timelines, and why proactive AppSec must be built into the development process.
 
@@ -70,9 +66,11 @@ Security teams are aware of the rising threat landscape, but their ability to re
 
 Failing to fully address OWASP risks isn’t just a technical issue, it translates directly into business liability. According to IBM’s 2024 Cost of a Data Breach report, organizations with mature DevSecOps practices saved an average of $1.76 million per breach, reinforcing the value of proactive AppSec investment.[^3]
 
-![Pie chart showing preparedness against OWASP Top 10 threats: 51% Fully addressed and actively monitored, 46% Partially addressed, ongoing improvement, 3% Acknowledged, but not fully addressed](https://example.com/image7.png)
+![Bar chart showing organization's preparedness against OWASP Top 10 threats: 51% Fully addressed and actively monitored, 46% Partially addressed, ongoing improvement, 3% Acknowledged, but not fully addressed.]
 
 Only 51% of organizations report that OWASP Top 10 threats are fully addressed and actively monitored, while 46% are still in the improvement phase. This underscores a maturity gap that creates real exposure. Cypress’s hybrid approach to AppSec can help teams close that gap.
+
+[^3]: Source: IBM 2024 Cost of a Data Breach Report
 
 ## Detection Still Takes Too Long
 
@@ -82,7 +80,7 @@ While breach detection times have improved slightly in recent years, they remain
 >
 > — Director of Technology, Financial Services, U.S.
 
-![Bar chart showing breach detection times: 54% Within a month, 43% Within a week, 3% Within six months](https://example.com/image8.png)
+![Bar chart showing how long it would take before someone noticed if an app was breached today: 54% Within a month, 43% Within a week, 3% Within six months.]
 
 Nearly 43% believe their team would detect a breach within a week, while 54% estimate it would take up to a month. This lag in detection reinforces the need for continuous AppSec monitoring and alerting.
 
@@ -90,7 +88,7 @@ Nearly 43% believe their team would detect a breach within a week, while 54% est
 
 The inevitability of an application-level cyberattack and ongoing gaps in AppSec maturity are fueling concern among IT and security leaders, many of whom worry they’ll be held accountable if something goes wrong. Nearly 80% of respondents expressed concern that a security incident could cost them their job: 62% admitted they are worried about being let go, while another 17% said it was a possible outcome. This level of anxiety highlights the personal risks tied to AppSec and reinforces the need for trusted, expert support.
 
-![Pie chart showing concern about job loss due to cyberattack: 62% Yes, 21% No, 17% Maybe](https://example.com/image9.png)
+![Pie chart showing worry about getting fired because of an application level cyberattack: 62% Yes, 21% No, 17% Maybe.]
 
 62% of respondents admit they’re worried about losing their job due to an AppSec incident, illustrating the high-stakes pressure security leaders and engineers face, and the importance of trusted third-party support.
 
@@ -98,7 +96,7 @@ The inevitability of an application-level cyberattack and ongoing gaps in AppSec
 
 Despite the growing risk of cyberattacks, many organizations are still underinvesting in application security. Nearly 90% of respondents say their teams allocate just 11% to 20% of their overall security budgets to AppSec, with none reporting investments above 20%. While this might appear sufficient at first glance, it falls short when considering that a significant share of breaches originate from application-layer vulnerabilities. As application threats escalate, budget alignment remains a critical gap.
 
-![Bar chart showing allocation of security budget to AppSec: 1% Less than 5%, 10% 5% to 10%, 49% 11% to 15%, 40% 16% to 20%, 0% More than 20%](https://example.com/image10.png)
+![Pie chart showing percentage of overall security budget allocated to application security: 1% Less than 5%, 10% 5% to 10%, 49% 11% to 15%, 40% 16% to 20%. 0% of respondents selected “More than 20%”.]
 
 89% of respondents allocate between 11% and 20% of their security budget to application security. This reflects growing recognition of AppSec as a critical investment area. However, very few exceed that threshold. This shows most teams remain resource-constrained.
 
@@ -106,7 +104,7 @@ Despite the growing risk of cyberattacks, many organizations are still underinve
 
 Organizations continue to prioritize perimeter defenses over application-layer protections. More than one-third of respondents say network security receives more budget than AppSec, and nearly 20% point to cloud security as a higher priority. It’s a concerning trend, given that application flaws account for 43% of breaches, leaving critical gaps where attackers are most likely to strike.
 
-![Bar chart showing areas receiving more budget than Application Security: 36% Network Security, 20% Cloud Security, 19% AI Security, 17% Endpoint Security, 8% Email Security](https://example.com/image11.png)
+![Bar chart showing which areas currently receive more budget than Application Security: 36% Network Security, 20% Cloud Security, 19% AI Security, 17% Endpoint Security, 8% Email Security.]
 
 36% of respondents say network security receives more funding than application security, while 20% say cloud security does. This suggests that many organizations still prioritize traditional perimeter defenses over application-layer protection. That’s a concerning trend, given that application flaws account for 43% of breaches.
 
@@ -118,7 +116,7 @@ Organizations continue to prioritize perimeter defenses over application-layer p
 
 The pressure to bring apps to bear quickly in highly competitive markets has pushed an alarming number of security practitioners to do what should be the unthinkable, knowingly ship insecure code. A striking 63% of respondents admit their organization has knowingly released insecure code to meet a deadline. Another 22% aren’t even sure, highlighting a breakdown in oversight and a culture where speed is still prioritized over security.
 
-![Pie chart showing if companies knowingly pushed insecure code: 63% Yes, 22% Not sure, 15% No](https://example.com/image12.png)
+![Pie chart showing if a company has ever knowingly pushed insecure code to meet a deadline: 63% Yes, 22% Not sure, 15% No.]
 
 63% of respondents say their organization has knowingly released insecure code to meet a deadline, and 22% say they aren’t sure. The data is clear that delivery pressures are still winning out over risk mitigation in many teams.
 
@@ -132,6 +130,10 @@ While many organizations recognize that strong security practices can accelerate
 
 Integrating security from the outset of the Software Development Life Cycle (SDLC) can improve release velocity, reduce risk exposure, and lower remediation costs, especially as systems grow more complex.
 
+![Pie chart showing when security is typically involved in the SDLC: 57% Before deployment, 36% Planning, 7% After deployment.]
+
+Only 36% of respondents involve security during the planning stage of the SDLC, while 57% wait until just before deployment. This delay misses key opportunities to shift security left and reduce costly rework. Earlier integration could dramatically improve both risk posture and release velocity.
+
 > “Unsecured APIs in mobile backend services are a big worry.”
 >
 > — Director of Technology, Education, U.S.
@@ -140,15 +142,11 @@ Integrating security from the outset of the Software Development Life Cycle (SDL
 >
 > — Director, Information Technology Operations, Retail, U.S.
 
-![Bar chart showing when security is involved in SDLC: 57% Before deployment, 36% Planning, 7% After deployment](https://example.com/image13.png)
-
-Only 36% of respondents involve security during the planning stage of the SDLC, while 57% wait until just before deployment. This delay misses key opportunities to shift security left and reduce costly rework. Earlier integration could dramatically improve both risk posture and release velocity.
-
 ## Critical AppSec Work Goes Undone
 
 Even organizations with strong security teams and sizable budgets struggle to keep up with essential AppSec tasks. Half of respondents say their teams lack the time or resources for secure code reviews, one of the most fundamental safeguards against releasing vulnerable applications. Other critical activities such as security unit testing (42%) and threat modeling (36%) are also deprioritized due to internal bandwidth constraints. These gaps highlight the need for expanded AppSec support across all stages of the development cycle.
 
-![Bar chart showing desired AppSec activities: 50% Secure code reviews, 42% Security unit testing, 36% Threat modeling, 31% Pen testing, 12% Managing scanners](https://example.com/image14.png)
+![Bar chart showing AppSec activities teams wish they had time or resources for: 50% Secure code reviews, 42% Security unit testing, 36% Threat modeling, 31% Pen testing, 12% Managing scanners.]
 
 50% of respondents say they lack time for secure code reviews, 42% cite unit testing, and 36% mention threat modeling. These gaps point to a widespread need for AppSec support across all stages of the development lifecycle. Cypress’s service model helps teams execute these high-impact activities without straining internal bandwidth.
 
@@ -158,20 +156,164 @@ False positives remain one of the most persistent frustrations in application se
 
 Yet there’s a silver lining: many teams are learning from these noisy signals. Repeated false positives have prompted stronger collaboration, improved tuning processes, and a sharper focus on what matters most. Outsourcing to partners who offer depth without disrupting agility becomes a strategic advantage.
 
-![Bar chart showing frequency of false positives from security scanners: 58% Sometimes, 21% Rarely, 12% All the time, 11% Never](https://example.com/image15.png)
+![Pie chart showing how often false positives are received from security scanners: 58% Sometimes, 21% Rarely, 11% All the time, 10% Never.]
 
 58% of respondents report frequent false positives from security scanners, and 11% say it happens all the time. The noise created by poorly tuned tools continues to drain time and attention. Cypress’s human-led validation approach helps teams focus on what truly matters.....actual risk.
 
 ## Why Outsourcing AppSec Is on the Rise
 
-![Pie chart showing consideration for outsourcing AppSec: 83% Yes, 17% No](https://example.com/image16.png)
+![Pie chart showing if respondents have considered outsourcing any part of their Application Security program: 83% Yes, 17% No.]
 
 83% of respondents have considered outsourcing at least part of their application security program. This shows strong market readiness for managed AppSec solutions. Cypress is well positioned to meet this demand with scalable, expert-driven services.
 
-Security burnout is real
+### Data-Driven Insights
 
-Most security professionals—over 8 in 10—say they are open to outsourcing parts of their AppSec program. The reason? Internal teams are maxed out, and false positives are a key source of friction, distracting teams from real threats.
+Security burnout is real. Most security professionals—over 8 in 10—say they are open to outsourcing parts of their AppSec program. The reason? Internal teams are maxed out, and false positives are a key source of friction, distracting teams from real threats.
 
-## What’s Fueling the Shift to Expert Help
+![List of common business drivers for outsourcing Application Security: The cost of a breach is too high to risk internal shortfalls; A loss of customer trust or service disruption could damage the brand; Security teams are already overextended across other IT functions; Finding and retaining specialized AppSec talent is difficult and expensive; Compliance requirements are becoming more complex and demanding; Accelerated development cycles leave little time for thorough in-house reviews; Organizations can’t afford to monitor application security 24/7; Breach detection and response must keep pace with modern threats.]
 
-###
+## What’s Fueling the Shift Toward Expert Help
+
+More Signal, Less Noise
+
+Security teams aren’t giving up, they’re getting smarter. But the tools they rely on often generate more confusion than clarity. Many respondents shared frustrations about scanner misfires and system blind spots:
+
+> “Scanners act as tools, but humans decide what matters.”
+>
+> — Director, Strategic Technology, Financial Services, U.S.
+
+> “Heuristic-based detection is too aggressive in our environment—this affects scan accuracy.”
+>
+> — Director of Information Technology, Healthcare, U.S.
+
+> “Manual checks are encouraged when alerts look suspicious.”
+>
+> — Chief Technology Officer, Financial Services, U.S.
+
+> “Apps with lots of logs raise too many alerts.”
+>
+> — Chief Technology Officer, Financial Services, Canada
+
+> “Static analysis tools mislabel safe variables as dangerous.”
+>
+> — Chief Information Security Officer, Financial Services, U.S.
+
+## What Keeps Teams Up at Night
+
+From unencrypted data and exposed APIs to insecure mobile practices and internal process failures, security teams shared what really keeps them up at night. These aren’t just theoretical risks — they reflect real-world exposures happening today across development environments.
+
+The findings are clear: security teams want better visibility, faster feedback, and greater confidence in the tools and processes meant to protect them.
+
+### Top AppSec Concerns by Category
+
+### Cloud and Configuration Gaps
+
+> “Public or shared keys for cloud access are a big worry.”
+>
+> — Chief Technology Officer, Financial Services, U.S.
+
+> “Cloud misconfigurations caused by automation tools cause sleepless nights.”
+>
+> — Chief Technology Officer, Financial Services, U.S.
+
+> “Uncontrolled cloud console access risks unauthorized changes.”
+>
+> — Chief Technology Officer, Retail, U.S.
+
+> “Legacy cloud accounts with weak credentials keep me up.”
+>
+> — Director Of Technology, Retail, Canada
+
+### API and Token Exposure
+
+> “Authentication details exposed in URLs are a big concern.”
+>
+> — Director Technology, Financial Services, U.S.
+
+> “Broken API permissions allow unauthorized data access.”
+>
+> — Associate Director of Information Literacy and Instructional Technology, Education, U.S.
+
+> “API tokens stored insecurely in mobile apps pose a huge risk.”
+>
+> — Chief Information Security Officer, Financial Services, U.S.
+
+> “Internal API endpoints lack proper authentication checks.”
+>
+> — Cloud Security Engineer, Financial Services, U.S.
+
+### Mobile App Vulnerabilities
+
+> “Sensitive info like passwords is stored in insecure logs.”
+>
+> — Director Of Technology, Financial Services, U.S.
+
+> “Authentication tokens exposed in mobile apps can be hijacked.”
+>
+> — Chief Information Security Officer, Education, U.S.
+
+> “No integrity checks for mobile app installation or updates is troubling.”
+>
+> — Security Operations Engineer, Financial Services, U.S.
+
+> “Insecure third-party SDKs in mobile apps can be exploited.”
+>
+> — Chief Technology Officer, Financial Services, U.S.
+
+### Data Security and Visibility
+
+> “Sensitive data isn’t encrypted during transit between devices and servers.”
+>
+> — Director, Information Technology, Healthcare, Canada
+
+> “Non-encrypted S3 buckets for sensitive data are a big issue.”
+>
+> — Chief Technology Officer, Financial Services, U.S.
+
+> “We don’t use cloud provider audits to find weaknesses.”
+>
+> — Chief Technology Officer, Financial Services, U.S.
+
+> “Error messages showing too much detail could help attackers.”
+>
+> — Chief Technology Officer, Financial Services, U.S.
+
+### Authentication and Access Control
+
+> “Weak password reset mechanisms allow attackers to bypass security checks.”
+>
+> — Senior Director of Information Technology, Healthcare, U.S.
+
+> “Serverless functions often run with overly broad permissions, accessing more than they should.”
+>
+> — Chief Technology Officer, Financial Services, U.S.
+
+> “No proper logout functionality leaves mobile sessions open.”
+>
+> — Chief Information Security Officer, Financial Services, U.S.
+
+> “Poor session handling makes it easy for hackers to take over accounts.”
+>
+> — Director of Information Technology, Retail, U.S.
+
+### Process Gaps and Human Error
+
+> “Developers at times skip security steps when in a hurry to work faster.”
+>
+> — Director of Information Technology, Healthcare, U.S.
+
+> “Perfect code is useless if the server is set up wrong and can open doors for hackers.”
+>
+> — Director Information Technology Operations, Retail, U.S.
+
+> “AI-generated code might have hidden bugs that are easy to miss.”
+>
+> — Director of Information Technology and Security, Healthcare, U.S.
+
+> “Putting off fixing problems can pile up and make the app unsafe.”
+>
+> — Director of Technology and Innovation, Education, U.S.
+
+## Conclusion: A New Mandate for Modern AppSec
+
+The research is clear: AppSec teams are under pressure, under-resourced, and in need of better solutions. While automation and shift-left strategies remain important, the data shows there’s no substitute for context-aware security and expert support. In today’s dynamic development environment, organizations need more than tools, they need partners
