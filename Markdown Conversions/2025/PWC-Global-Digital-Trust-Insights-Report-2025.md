@@ -2,7 +2,12 @@
 
 Findings from the 2025 Global Digital Trust Insights
 
-![Infographic showing key findings from the 2025 Global Digital Trust Insights. Key statistics include: Only 2% have implemented cyber resilience actions across their organisation in all areas surveyed; Under 50% of CISOs are involved to a large extent in key business activities; 13% point gap in confidence between CISO/CSOs and CEOs regarding compliance with AI and resilience regulations.]
+![Report Cover: Bridging the gaps to cyber resilience: The C-suite playbook - Findings from the 2025 Global Digital Trust Insights. PwC logo is visible.](placeholder_image_description)
+
+![Infographic summarizing key findings:
+- 2%: Only 2% have implemented cyber resilience actions across their organisation in all areas surveyed.
+- 50%: Under 50% of CISOs are involved to a large extent in key business activities.
+- 13%: 13% point gap in confidence between CISO/CSOs and CEOs regarding compliance with AI and resilience regulations.](placeholder_image_description)
 
 With the attack surface continuing to expand through advances in AI, connected devices and cloud technologies and the regulatory environment in constant flux, achieving cyber resilience at an enterprise level is critical.
 
@@ -25,10 +30,11 @@ All of this points to the need for better C-suite collaboration and strategic in
 - [Unlocking the potential of cyber risk quantification: What’s holding organisations back?](#unlocking-the-potential-of-cyber-risk-quantification-whats-holding-organisations-back)
 - [Investing in resilience, building trust](#investing-in-resilience-building-trust)
 - [Is your cyber strategy and leadership driving real resilience?](#is-your-cyber-strategy-and-leadership-driving-real-resilience)
-
-## Navigating cyber threats: Establishing a shared vision for preparedness
+- [About this report](#about-this-report)
+- [Contact us](#contact-us)
 
 ### Threat outlook and emerging risks
+## Navigating cyber threats: Establishing a shared vision for preparedness
 
 - **66%** of tech executives rank cyber as the highest risk for mitigation, compared to 48% of business executives
 - **42%** of executives rank cloud-related threats as their most concerning cyber threat
@@ -42,15 +48,14 @@ What worries organisations most is what they’re least prepared for. The top fo
 
 Additionally, a perception gap exists between security executives and the rest of the organisation, with CISOs and CSOs more likely to rank ransomware among their top three most concerning threats. This may reflect their role, as ransomware is more central to cyber/IT duties and those in that function likely understand the vulnerabilities better than their business peers. This further reinforces the importance of better information-sharing across leadership teams to create alignment on priorities.
 
-### Wake-up call
-
-A threat-informed cyber investment strategy is essential. Prioritise investments in the most pressing cyber risks and take a closer look at where resources are being applied in terms of people, process and defence capabilities.
+> **Wake-up call**
+> A threat-informed cyber investment strategy is essential. Prioritise investments in the most pressing cyber risks and take a closer look at where resources are being applied in terms of people, process and defence capabilities.
 
 ### The strategic divide: Business and tech priorities
 
-**Global average data breach cost exceeds $3 million**
-
 Business executives and tech executives prioritise different risks. While business executives are more concerned with inflation, tech executives rank cyber risks as their top priority — likely due to their proximity to the cyber threat landscape. Even so, nearly half of business executives still rank cyber risks among their top three concerns, underscoring its critical importance. This shared concern represents an opportunity for CISOs to connect the cyber agenda to the business agenda.
+
+### Global average data breach cost exceeds $3 million
 
 Over a quarter of executives tell us their most damaging data breach in the past three years cost their organisation at least $1 million. This is somewhat lower than last year’s survey across organisations of all sizes and in most regions and sectors. Overall, the average data breach is estimated at $3.32 million.
 
@@ -60,13 +65,11 @@ Top performers — identified as those who responded that their organisation is 
 >
 > Rob Joyce, Cyber, Risk & Regulatory Senior Fellow, PwC US, former Special Assistant to the President & Acting Homeland Security Advisor
 
-### Wake-up call
+> **Wake-up call**
+> Business and tech executives — it’s time to get aligned. Balance prioritisation of cyber risks with economic pressures to help safeguard assets and create resilience. Regular cross-functional assessments will keep your strategy and priorities in sync.
 
-Business and tech executives — it’s time to get aligned. Balance prioritisation of cyber risks with economic pressures to help safeguard assets and create resilience. Regular cross-functional assessments will keep your strategy and priorities in sync.
-
-### Wake-up call
-
-Prioritise holistic risk mitigation strategies that encompass prevention, detection, response and recovery. Understand the broader impacts of a breach — beyond financial harm — to build true resilience.
+> **Wake-up call**
+> Prioritise holistic risk mitigation strategies that encompass prevention, detection, response and recovery. Understand the broader impacts of a breach — beyond financial harm — to build true resilience.
 
 ### Executive call-to-action
 
@@ -78,6 +81,7 @@ As organisations face a more sophisticated threat landscape, it’s important fo
 - **CEOs**: Meet regularly with the CRO and CISO to understand the threat vectors they’re most concerned with. Make sure you’re receiving regular reporting on current threat mitigation efforts.
 - **Board**: Understand the top cyber risks to the organisation and ask the tough questions of management. How are risks being mitigated? Do we have adequate plans and funding in place to proactively address risks and respond should an event occur?
 
+### Emerging technologies and GenAI
 ## GenAI and emerging tech: Balancing opportunity and risk
 
 - **67%** of security executives say that GenAI has increased their attack surface over the last year
@@ -96,9 +100,8 @@ Security executives report that GenAI (67%) and cloud technologies (66%) have ex
 
 Also expanding the attack surface are other technologies such as connected devices and operational technology (OT), which will affect industries such as manufacturing, healthcare and energy. As more devices become interconnected, securing these systems becomes harder. In addition, while quantum computing is still on the horizon, 42% percent of security executives report that it has already caused them to address vulnerabilities.
 
-### Wake-up call
-
-Continuous assessment of new vulnerabilities, investment in advanced security measures and fostering closer collaboration between technology, security, risk and legal teams are paramount. By staying prepared for these threats, companies can better safeguard critical assets and maintain stakeholder trust.
+> **Wake-up call**
+> Continuous assessment of new vulnerabilities, investment in advanced security measures and fostering closer collaboration between technology, security, risk and legal teams are paramount. By staying prepared for these threats, companies can better safeguard critical assets and maintain stakeholder trust.
 
 ### Leveraging GenAI for cyber defence: Opportunities and challenges
 
@@ -111,9 +114,8 @@ However, despite these opportunities, organisations face several obstacles when 
 - Inadequate internal controls and risk management (38%)
 - Lack of standardised internal policies governing its use (37%)
 
-### Wake-up call
-
-GenAI can transform your cyber defences, but only if you overcome the challenges to integrate, trust and govern it effectively, applying Responsible AI practices. Otherwise, you risk falling behind in the arms race against threat actors.
+> **Wake-up call**
+> GenAI can transform your cyber defences, but only if you overcome the challenges to integrate, trust and govern it effectively, applying Responsible AI practices. Otherwise, you risk falling behind in the arms race against threat actors.
 
 ### GenAI leads in cyber investment priorities
 
@@ -121,9 +123,8 @@ Recognising the increased cyber risks, 78% of executives have ramped up their cy
 
 Companies are also beginning to invest in quantum preparedness. Although adoption remains years away, there’s already a growing imperative to pursue quantum-resistant technologies and post-quantum security measures to combat future threats posed by this technology in the wrong hands.
 
-### Wake-up call
-
-Investing in GenAI is just the start. Move the needle more by exploring the untapped potential of other technologies, including quantum-resistant solutions, to help your defences outpace evolving threats.
+> **Wake-up call**
+> Investing in GenAI is just the start. Move the needle more by exploring the untapped potential of other technologies, including quantum-resistant solutions, to help your defences outpace evolving threats.
 
 ### Executive call-to-action
 
@@ -135,6 +136,7 @@ As emerging technologies reshape the cybersecurity landscape, it’s critical fo
 - **Chief data officers (CDOs)**: Enhance your data governance protocols and assess any data privacy risks against privacy laws and regulator guidance.
 - **Chief legal officers (CLOs) and general counsel (GCs)**: Collaborate with other risk and compliance teams to guard against improper secondary uses of data and potential legal exposure.
 
+### Regulatory developments
 ## A highly regulated cyber world: Are companies really ready?
 
 - **96%** report that cybersecurity regulations have spurred them to increase their cyber investment in the last 12 months
@@ -147,9 +149,8 @@ Regulatory frameworks are asking companies to swiftly comply with a growing arra
 
 Cyber regulations are proving to be a major driver for cybersecurity investment, with 96% of executives acknowledging that regulatory requirements have spurred them to enhance their security measures. Moreover, 78% believe that regulations have helped to challenge, improve or increase their cybersecurity posture. This indicates that, despite the difficulties of compliance, regulations are serving to further mature cybersecurity capabilities across industries.
 
-### Wake-up call
-
-Organisations that embrace regulatory requirements tend to benefit from stronger security frameworks and a more robust posture against emerging threats. Compliance shouldn’t be viewed as a box-ticking exercise but as an opportunity to build long-term resilience and trust with stakeholders.
+> **Wake-up call**
+> Organisations that embrace regulatory requirements tend to benefit from stronger security frameworks and a more robust posture against emerging threats. Compliance shouldn’t be viewed as a box-ticking exercise but as an opportunity to build long-term resilience and trust with stakeholders.
 
 ### Confidence gap: CISOs feel less certain than CEOs about cyber compliance
 
@@ -157,9 +158,8 @@ Despite the belief that cyber regulations are helping the organisation, there’
 
 Because CISOs are more attuned to the day-to-day operational difficulties, resource constraints and potential vulnerabilities that can hinder cyber compliance, it’s vital that they more effectively communicate these risks to the leadership team. What’s preventing them? Potential obstacles include barriers to CISO participation in strategic decisions and an inability to justify the amount of cyber risk investment needed.
 
-### Wake-up call
-
-Bridging this confidence gap requires better alignment and communication between security executives and the C-suite. CEOs should make sure that CISOs aren’t only heard but also have the resources and support necessary to meet regulatory demands. CISOs need to provide data-backed insights and make the business case for elevating compliance to a strategic imperative.
+> **Wake-up call**
+> Bridging this confidence gap requires better alignment and communication between security executives and the C-suite. CEOs should make sure that CISOs aren’t only heard but also have the resources and support necessary to meet regulatory demands. CISOs need to provide data-backed insights and make the business case for elevating compliance to a strategic imperative.
 
 ### Executive call-to-action
 
@@ -172,6 +172,7 @@ As regulatory requirements continue to shape the cybersecurity landscape, it’s
 - **CLOs and GCs**: Determine the right amount of disclosure details needed to fulfil cyber program reporting obligations, striking a balance between transparency and confidentiality.
 - **Board**: Stay abreast of emerging regulatory requirements and seek input from management on proactive measures being taken to prepare for new requirements. Understand management’s approach to assessing and disclosing cyber incidents.
 
+### Cyber risk quantification
 ## Unlocking the potential of cyber risk quantification: What’s holding organisations back?
 
 - **15%** Only 15% are measuring the financial impact of cyber risks to a significant extent
@@ -186,17 +187,15 @@ While executives largely agree that measuring cyber risk is crucial for prioriti
 
 For the organisations that do measure risk, seven in 10 executives indicate they use security posture assessments to quantify residual risk by considering the effectiveness of key controls such as compliance with vulnerability remediation, user access reviews and training completion. The adoption of more holistic cyber risk quantification practices, however, remains limited.
 
-### Wake-up call
-
-It’s time to realise the full potential of cyber risk quantification. The gap between recognition and implementation is a missed opportunity that can no longer be ignored. Organisations that don’t measure cyber risk or haven’t fully developed this capability are leaving critical intelligence on the table, particularly when it comes to informing board decisions and capital allocation.
+> **Wake-up call**
+> It’s time to realise the full potential of cyber risk quantification. The gap between recognition and implementation is a missed opportunity that can no longer be ignored. Organisations that don’t measure cyber risk or haven’t fully developed this capability are leaving critical intelligence on the table, particularly when it comes to informing board decisions and capital allocation.
 
 ### What are the barriers to wider implementation?
 
 Data issues, scope uncertainty and legal concerns rank high on the list of obstacles to implementing cyber risk quantification. Lack of trust in the reliability of quantification outputs is another. Further complicating adoption is the gap between what senior executives expect and what CISOs deliver, as measuring cyber risk requires alignment between security executives and business risk appetite.
 
-### Wake-up call
-
-The barriers to cyber risk quantification adoption — and use — may be stalling progress. Organisations can’t afford to let these challenges hinder critical decision-making. Address these obstacles head on, build trust in cyber risk quantification and fully integrate it into your strategic process.
+> **Wake-up call**
+> The barriers to cyber risk quantification adoption — and use — may be stalling progress. Organisations can’t afford to let these challenges hinder critical decision-making. Address these obstacles head on, build trust in cyber risk quantification and fully integrate it into your strategic process.
 
 ### Executive call-to-action
 
@@ -207,6 +206,7 @@ Establishing a trusted cyber risk quantification system is essential for making 
 - **CEOs**: Work with your CISO and CRO to gain a deeper understanding of the business value of cyber risk quantification and the potential costs and missed opportunities from not measuring cyber risks.
 - **Board**: Understand the methods your organisation currently uses to assess cyber risk. Press management on its plans to implement risk quantification more broadly to better assess and report on the company’s cyber risk posture.
 
+### Cyber investment and priorities
 ## Investing in resilience, building trust
 
 - **77%** expect their cyber budget to increase next year
@@ -225,9 +225,8 @@ Cyber budgets remain in line with last year, with smaller organisations investin
 
 Over three quarters of executives expect their organisation’s cyber budget to increase next year. That number is higher (82%) for organisations in North America and in the technology, media and telecom (TMT) sector.
 
-### Wake-up call
-
-After a year of maintaining budgets, it’s essential to align the planned increase in spending with both current and future risks so every dollar strengthens resilience and prepares the organisation for the evolving threat landscape.
+> **Wake-up call**
+> After a year of maintaining budgets, it’s essential to align the planned increase in spending with both current and future risks so every dollar strengthens resilience and prepares the organisation for the evolving threat landscape.
 
 ### Investing in what matters most: Cloud and data trust go hand-in-hand
 
@@ -240,46 +239,9 @@ Business and tech executives rank a different list of priorities based on areas 
 
 Why does cloud security continue to demand attention? Despite years of investment, the rapid adoption of cloud technologies, the consolidation of cloud hyperscalers and the rise of hybrid and multi-cloud setups have concentrated risk in the cloud environment. This concentration heightens the potential impact of data access misconfigurations, data breaches and integration challenges. As threat actors evolve, so must cloud security strategies, making continued investment crucial for mitigating these intensified risks.
 
-### Wake-up call
-
-Investing in cybersecurity is investing in trust. Whether it’s securing the cloud, safeguarding data or addressing emerging risks, your commitment to these areas will shape stakeholder confidence and your organisation’s resilience.
+> **Wake-up call**
+> Investing in cybersecurity is investing in trust. Whether it’s securing the cloud, safeguarding data or addressing emerging risks, your commitment to these areas will shape stakeholder confidence and your organisation’s resilience.
 
 ### Cybersecurity and trust: The new competitive edge
 
-Organisations increasingly view cybersecurity as a key differentiator for a competitive advantage, with 57% of executives citing customer trust and 49% citing brand integrity and loyalty as areas of influence. As cyber threats escalate, a strong cybersecurity posture isn’t just about protection — it’s about building a reputation that customers and stakeholders can rely on. At a time when trust is paramount, companies that prioritise cybersecurity are better positioned to stand out as leaders in both safety and integrity.
-
-### Wake-up call
-
-Your cybersecurity isn’t just safeguarding data, it’s safeguarding your brand. In a competitive landscape, trust is everything. Strengthen your security measures now to help your organisation stand out as a leader in data integrity.
-
-### Executive call-to-action
-
-With cybersecurity investments poised to grow, it’s essential for every member of the C-suite to align their strategies with the organisation’s most pressing risks. Executives should make investments that not only address current vulnerabilities but also build trust and resilience.
-
-- **CIOs, CTOs and CISOs**: Translate the business case for data protection and cloud security investment priorities to CFOs based on the business value of key outcomes (e.g., reducing the time to recover mission-critical data or patching a system).
-- **CFOs**: Determine the business value of data protection and cloud security to gain stakeholder trust and make more informed cybersecurity investment decisions.
-- **CDOs**: Collaborate with tech, security and finance executives to pinpoint the most essential data security and integrity priorities to guide the information and cloud security investment strategy. Confirming data quality and readiness is necessary to increase security investments.
-
-## Is your cyber strategy and leadership driving real resilience?
-
-- **2%** Only 2% have implemented cyber resilience actions across their organisation in all areas surveyed
-- **21%** Only 21% usually allocate cyber budget to the top risks of the organisation
-- **50%** Under 50% of CISOs are involved to a large extent in strategic planning on cyber investments
-
-To manage tomorrow’s threats, investments alone are not sufficient — organisations should also elevate their approach to cyber strategy and leadership. From lagging resilience efforts to gaps in CISO involvement in strategic decisions, there are clear areas where strategic alignment is needed. To get there, organisations should emulate the leading cybersecurity practices of their top performing peers. They should also move beyond addressing known threats and implement an agile, secure-by-design approach to business, one that strives to build trust and lasting resilience.
-
-> “It’s the CISO’s job to contextualise and connect the threats that exist to the vulnerabilities within the organisation. That means educating people on the threats the enterprise is prepared to deal with and those it’s not ready for. With an education-forward approach, there tends to be more cooperation across the organisation.”
->
-> David Bruyea, CISO at Moneris
-
-### Partial implementation isn’t enough
-
-Despite mounting concern about cyber risk, most businesses are struggling to fully implement cyber resilience across core practices. A review of 12 resilience actions across people, processes and technology indicates that 42% or fewer of executives believe their organisations have fully implemented any one of those actions. More concerning, only 2% say all 12 resilience actions have been implemented across their organisation. This leaves a glaring vulnerability — without enterprise-wide resilience, companies remain dangerously exposed to the increasing threats that could compromise the entire operation.
-
-Here are just a few key areas that would benefit from cross-organisational attention.
-
-- Establishing a resilience team (only 34% of executives say this has been implemented across the organisation)
-- Developing a cyber recovery playbook for IT-loss scenarios (only 35% say this has been implemented across the organisation)
-- Mapping technology dependencies (only 31% say this has been implemented across the organisation)
-
-### Wake-
+Organisations increasingly view cybersecurity as a key differentiator for a competitive advantage, with 57% of executives citing customer
