@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install 'markitdown[pdf]' google-generativeai
+          pip install 'markitdown[pdf]' google-generativeai google-api-python-client
       
       - name: Find changed PDF files
         id: find-pdfs
@@ -86,6 +86,8 @@ jobs:
           from pathlib import Path
           import subprocess
           from markitdown import MarkItDown
+          from googleapiclient.discovery import build
+          from googleapiclient.errors import HttpError
           
           # Setup Gemini API
           genai.configure(api_key=os.environ["GEMINI_API_KEY"])
@@ -149,11 +151,33 @@ jobs:
                   print(f"Error extracting text from PDF: {str(e)}")
                   raise
           
-          def generate_markdown_with_ai(pdf_text, prompt_text):
+          def perform_google_search(query, api_key, cse_id):
+              """Performs a Google Custom Search and returns the first result URL."""
+              try:
+                  service = build("customsearch", "v1", developerKey=api_key)
+                  res = service.cse().list(q=query, cx=cse_id, num=1).execute()
+                  if 'items' in res and len(res['items']) > 0:
+                      print(f"Google Search found URL: {res['items'][0]['link']}")
+                      return res['items'][0]['link']
+                  else:
+                      print("No Google search results found.")
+                      return None
+              except HttpError as e:
+                  print(f"Google Search API error: {e}")
+                  return None
+              except Exception as e:
+                  print(f"An unexpected error occurred during Google Search: {e}")
+                  return None
+          
+          def generate_markdown_with_ai(pdf_text, prompt_text, organization_url=None):
               try:
                   print(f"Generating markdown with {MODEL}...")
                   model = genai.GenerativeModel(MODEL)
-                  full_prompt = f"{prompt_text}\n\n# Report Content Below\n\n{pdf_text}"
+                  
+                  full_prompt = f"{prompt_text}\n\n"
+                  if organization_url:
+                      full_prompt += f"The official report URL is: {organization_url}\n\n"
+                  full_prompt += f"# Report Content Below\n\n{pdf_text}"
                   
                   # Set generation parameters for better output
                   generation_config = {
@@ -165,6 +189,26 @@ jobs:
                       full_prompt,
                       generation_config=generation_config
                   )
+                  
+                  # Log prompt feedback
+                  if response.prompt_feedback:
+                      print(f"Prompt feedback: {response.prompt_feedback}")
+
+                  # Log candidate details for debugging
+                  if response.candidates:
+                      for i, candidate in enumerate(response.candidates):
+                          print(f"Candidate {i} finish reason: {candidate.finish_reason}")
+                          if candidate.safety_ratings:
+                              print(f"Candidate {i} safety ratings: {candidate.safety_ratings}")
+                  
+                  if not response.text:
+                      error_message = "The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned."
+                      if response.candidates and response.candidates[0].finish_reason:
+                          error_message += f" The candidate's finish_reason is {response.candidates[0].finish_reason}."
+                      if response.candidates and response.candidates[0].safety_ratings:
+                          error_message += f" Safety ratings: {response.candidates[0].safety_ratings}."
+                      raise ValueError(error_message)
+
                   print(f"Successfully generated markdown ({len(response.text)} characters)")
                   return response.text
               except Exception as e:
@@ -192,8 +236,29 @@ jobs:
               # Extract text from PDF using markitdown
               pdf_text = extract_text_from_pdf(pdf_path)
               
-              # Generate markdown with Gemini
-              markdown_content = generate_markdown_with_ai(pdf_text, prompt_text)
+              # Extract organization and title from PDF filename
+              # Example: Annual Security Reports/2024/Varonis - The Identity Crisis 2024.pdf
+              # Organization: Varonis
+              # Title: The Identity Crisis 2024
+              filename_stem = pdf_path.stem
+              parts = filename_stem.split(' - ', 1)
+              organization_name = parts[0].strip() if len(parts) > 0 else ""
+              report_title = parts[1].strip() if len(parts) > 1 else filename_stem
+              
+              # Perform Google Search for the official report URL
+              google_search_api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
+              google_cse_id = os.environ.get("GOOGLE_CSE_ID")
+              organization_url = None
+              
+              if google_search_api_key and google_cse_id:
+                  search_query = f"{organization_name} {report_title} report"
+                  print(f"Performing Google search for: '{search_query}'")
+                  organization_url = perform_google_search(search_query, google_search_api_key, google_cse_id)
+              else:
+                  print("Google Search API keys not provided. Skipping URL search.")
+              
+              # Generate markdown with Gemini, passing the organization URL
+              markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
               
               # Determine the output path that matches the input directory structure
               # e.g., Annual Security Reports/2025/file.pdf -> Markdown Conversions/2025/file.md
@@ -246,10 +311,20 @@ jobs:
                   commit_message = f"{action} {output_path.name} from {pdf_path.name} using AI Prompt {prompt_version} (Model {MODEL}, Branch {branch})"
                   subprocess.run(["git", "commit", "-m", commit_message], check=True)
                   print(f"Committed changes: {commit_message}")
-                  return True
+                  return {
+                      "pdf_path": str(pdf_path),
+                      "output_path": str(output_path),
+                      "model_used": MODEL,
+                      "status": "Converted Successfully"
+                  }
               except Exception as e:
                   print(f"Error during git operations: {str(e)}")
-                  return False
+                  return {
+                      "pdf_path": str(pdf_path),
+                      "output_path": "", # No output path if failed
+                      "model_used": MODEL,
+                      "status": f"Failed: {str(e)}"
+                  }
           
           def main():
               if len(sys.argv) < 4:
@@ -273,17 +348,48 @@ jobs:
               print(f"Processing {len(pdf_paths)} PDF files on branch {branch}")
               
               success_count = 0
+              all_results = [] # Initialize all_results list
               
               # Process each PDF
               for pdf_path_str in pdf_paths:
                   pdf_path = Path(pdf_path_str)
                   try:
-                      if process_pdf(pdf_path, prompt_path, prompt_version, branch):
+                      result = process_pdf(pdf_path, prompt_path, prompt_version, branch)
+                      all_results.append(result)
+                      if result["status"] == "Converted Successfully":
                           success_count += 1
                   except Exception as e:
                       print(f"Error processing {pdf_path}: {str(e)}")
+                      all_results.append({
+                          "pdf_path": str(pdf_path),
+                          "output_path": "",
+                          "model_used": MODEL,
+                          "status": f"Failed: {str(e)}"
+                      })
               
               print(f"Successfully processed {success_count}/{len(pdf_paths)} PDFs")
+              
+              # Generate and write summary to GITHUB_STEP_SUMMARY
+              summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
+              with open(summary_path, 'a', encoding='utf-8') as f:
+                  f.write("## 📄 PDF to Markdown Conversion Summary\n\n")
+                  f.write("| PDF File | Markdown Output | Model Used | Status |\n")
+                  f.write("|----------|-----------------|------------|--------|\n")
+                  for result in all_results:
+                      status_icon = "✅" if result['status'] == 'Converted Successfully' else "❌"
+                      f.write(f"| {result['pdf_path']} | {result['output_path']} | {result['model_used']} | {status_icon} {result['status']} |\n")
+                  
+                  f.write(f"\n### Summary\n")
+                  f.write(f"- Successfully converted: {success_count}\n")
+                  f.write(f"- Failed conversions: {len(pdf_paths) - success_count}\n")
+                  f.write(f"- Total PDFs processed: {len(pdf_paths)}\n")
+                  
+                  f.write("\n### About the Conversion\n")
+                  f.write("- PDF text extracted using `markitdown[pdf]`.\n")
+                  f.write("- Markdown generated using Google Gemini API.\n")
+                  f.write("- AI prompt from `.github/ai-prompts/pdf-to-markdown-prompt.md`.\n")
+                  f.write("- Output files are committed to the repository.\n")
+
               return 0 if success_count > 0 else 1
           
           if __name__ == "__main__":
@@ -294,10 +400,13 @@ jobs:
         if: steps.find-pdfs.outputs.pdfs_changed == 'true' && steps.check-prompt.outputs.prompt_exists == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
           PROMPT_VERSION: ${{ steps.check-prompt.outputs.prompt_version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ steps.find-pdfs.outputs.branch }}
           CONVERTED_FILES_PATH: "converted_files.txt"
+          GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
         run: |
           # Create a file with the list of PDF paths
           echo "${{ steps.find-pdfs.outputs.pdf_files }}" > pdf_paths.txt

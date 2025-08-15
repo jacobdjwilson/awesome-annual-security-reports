@@ -197,8 +197,11 @@ jobs:
                       'Data Security': ['data', 'privacy', 'encryption', 'DLP', 'database', 'backup'],
                       'Endpoint Security': ['endpoint', 'device', 'mobile', 'laptop', 'workstation', 'MDM'],
                       'Security Operations': ['SOC', 'SIEM', 'monitoring', 'detection', 'response', 'incident'],
-                      'Risk Management': ['risk', 'assessment', 'vulnerability', 'penetration', 'testing'],
-                      'Emerging Technologies': ['AI', 'ML', 'IoT', 'blockchain', 'quantum', 'edge']
+                      'Emerging Technologies': ['AI', 'ML', 'IoT', 'blockchain', 'quantum', 'edge'],
+                      # Keywords from 'Risk Management' distributed to existing categories
+                      'Vulnerabilities': ['vulnerability', 'assessment'], # For Analysis Reports
+                      'Penetration Testing': ['penetration', 'testing'], # For Survey Reports
+                      'Industry Trends': ['risk'] # For broader risk discussions in Survey Reports
                   }
                   
               def _setup_ai(self):
@@ -362,7 +365,7 @@ jobs:
               def __init__(self, readme_parser: ReadmeParser):
                   self.parser = readme_parser
                   
-              def add_report_entry(self, analysis: Dict, file_path: str) -> bool:
+              def add_report_entry(self, analysis: Dict, file_path: str) -> Tuple[bool, str, int]:
                   """Add or update a report entry in the README"""
                   try:
                       # Determine the logical main section (e.g., "Analysis Reports")
@@ -373,7 +376,7 @@ jobs:
                       # Validate against the TOC structure
                       if logical_main_section not in self.parser.toc_structure:
                           print(f"⚠️ Logical main section '{logical_main_section}' not found in TOC structure.")
-                          return False
+                          return False, "", -1
                       
                       if logical_subsection not in self.parser.toc_structure[logical_main_section]['subsections']:
                           print(f"⚠️ Logical subsection '{logical_subsection}' not found under '{logical_main_section}' in TOC structure.")
@@ -383,7 +386,7 @@ jobs:
                               logical_subsection = similar_subsection_in_toc
                               print(f"📍 Using similar logical subsection from TOC: {logical_subsection}")
                           else:
-                              return False
+                              return False, "", -1
                       
                       # Now, find the actual heading in the README content to insert the entry.
                       # The actual headings for categories like "Threat Intelligence" are '## Threat Intelligence'.
@@ -400,31 +403,46 @@ jobs:
                       # Create new entry in the specified format
                       entry_text = self._format_entry(analysis, file_path)
                       
-                      # Check for existing entry (look for organization and year)
+                      # Create new entry in the specified format
+                      entry_text = self._format_entry(analysis, file_path)
+                      
+                      # Check for existing entry by organization name AND report title
                       org_pattern = re.escape(analysis['organization'])
-                      year_pattern = re.escape(analysis['year'])
-                      existing_pattern = rf"- \[{org_pattern}\].*\({year_pattern}\)"
-                      existing_match = re.search(existing_pattern, section_content)
+                      title_pattern = re.escape(analysis['title'])
+                      # This regex looks for a line starting with '- [' followed by the organization name,
+                      # then the report title, and then the year in parentheses, capturing the PDF URL.
+                      existing_entry_pattern = rf"^- \[{org_pattern}\]\((?P<org_url>[^)]+)\) - \[{title_pattern}\]\((?P<pdf_url>[^)]+)\) \((\d{{4}})\).*$"
+                      
+                      existing_match = re.search(existing_entry_pattern, section_content, re.MULTILINE)
+                      
+                      updated_section = section_content
+                      entry_replaced = False
+                      existing_pdf_url = None
                       
                       if existing_match:
-                          print(f"📝 Updating existing entry for {analysis['organization']} ({analysis['year']})")
-                          # Find the full line containing the existing entry
-                          line_start = section_content.rfind('\n', 0, existing_match.start()) + 1
-                          line_end = section_content.find('\n', existing_match.end())
-                          if line_end == -1:
-                              line_end = len(section_content)
+                          existing_full_entry = existing_match.group(0)
+                          existing_year = int(existing_match.group(1))
+                          existing_pdf_url = existing_match.group('pdf_url') # Capture existing PDF URL
+                          new_report_year = int(analysis['year'])
                           
-                          old_full_entry = section_content[line_start:line_end]
-                          updated_section = section_content.replace(old_full_entry, entry_text)
-                      else:
-                          print(f"➕ Adding new entry for {analysis['organization']} ({analysis['year']})")
+                          if new_report_year > existing_year:
+                              print(f"📝 Updating existing entry for {analysis['organization']} - {analysis['title']} (from {existing_year} to {new_report_year})")
+                              # Use re.sub for robust replacement of the entire line
+                              updated_section = re.sub(existing_entry_pattern, entry_text, updated_section, 1, re.MULTILINE)
+                              entry_replaced = True
+                          else:
+                              print(f"ℹ️ Existing entry for {analysis['organization']} - {analysis['title']} ({existing_year}) is newer or same year as new report ({new_report_year}). No update needed.")
+                              return False, "", -1 # Indicate no update was performed
+                      
+                      if not entry_replaced:
+                          print(f"➕ Adding new entry for {analysis['organization']} - {analysis['title']} ({analysis['year']})")
                           # Add new entry and sort
-                          lines = section_content.split('\n')
+                          lines = updated_section.split('\n')
                           entries = [line for line in lines if line.strip().startswith('- [')]
                           
                           entries.append(entry_text)
-                          # Sort by organization name (extracted from first link)
-                          entries.sort(key=lambda x: self._extract_org_name_for_sorting(x))
+                          # Sort by organization name and then by report title
+                          entries.sort(key=lambda x: (self._extract_org_name_for_sorting(x), self._extract_report_title_for_sorting(x)))
                           
                           # Reconstruct section
                           other_lines = [line for line in lines if not line.strip().startswith('- [')]
@@ -442,13 +460,22 @@ jobs:
                           self.parser.content[end:]
                       )
                       
-                      return True
+                      # Calculate line number of the inserted/updated entry
+                      inserted_line_number = -1
+                      updated_content_lines = self.parser.content.split('\n')
+                      target_entry_text = entry_text # Use the newly formatted entry text
+                      for i, line in enumerate(updated_content_lines):
+                          if line.strip() == target_entry_text.strip():
+                              inserted_line_number = i + 1
+                              break
+                      
+                      return True, target_entry_text, inserted_line_number
                       
                   except Exception as e:
                       print(f"❌ Error updating README: {e}")
-                      return False
+                      return False, "", -1
                       
-              def _format_entry(self, analysis: Dict, file_path: str) -> str:
+              def _format_entry(self, analysis: Dict, file_path: str, existing_pdf_url: Optional[str] = None) -> str:
                   """Format entry according to specified template"""
                   # Use the extracted title from analysis
                   title = analysis['title']
@@ -465,10 +492,22 @@ jobs:
                   
                   org_url = f"https://{domain_base}.com"
                   
-                  # Format the PDF path for the second link
-                  pdf_path = file_path.replace('.md', '.pdf')
-                  # Keep the original path structure for the link
-                  pdf_path_encoded = pdf_path.replace(' ', '%20')
+                  # Extract year and original filename from the markdown file_path
+                  path_parts = Path(file_path).parts
+                  year = "Unknown"
+                  for part in path_parts:
+                      if part.isdigit() and len(part) == 4:
+                          year = part
+                          break
+                  
+                  original_filename_stem = Path(file_path).stem
+                  
+                  # Construct the correct PDF path, using existing_pdf_url if available
+                  if existing_pdf_url:
+                      pdf_path_encoded = existing_pdf_url
+                  else:
+                      correct_pdf_path = Path("Annual Security Reports") / year / f"{original_filename_stem}.pdf"
+                      pdf_path_encoded = str(correct_pdf_path).replace(' ', '%20')
                   
                   # Create the formatted entry exactly as specified
                   entry = f"- [{org_name}]({org_url}) - [{title}]({pdf_path_encoded}) ({analysis['year']}) - {analysis['summary']}"
@@ -478,6 +517,12 @@ jobs:
               def _extract_org_name_for_sorting(self, entry_line: str) -> str:
                   """Extract organization name from entry line for sorting"""
                   match = re.search(r'- \[([^\]]+)\]', entry_line)
+                  return match.group(1) if match else entry_line
+              
+              def _extract_report_title_for_sorting(self, entry_line: str) -> str:
+                  """Extract report title from entry line for sorting"""
+                  # This regex looks for the title part after the organization link and before the year
+                  match = re.search(r'\]\(.*?\) - \[([^\]]+)\]', entry_line)
                   return match.group(1) if match else entry_line
                       
               def _find_similar_section(self, target: str, main_section: str) -> Optional[str]:
@@ -562,9 +607,10 @@ jobs:
                       analysis = analyzer.analyze_content(content, org_name, year, report_title)
                       
                       # Update README
-                      if updater.add_report_entry(analysis, file_path):
+                      success, entry_text, line_number = updater.add_report_entry(analysis, file_path)
+                      if success:
                           processed_files.append(file_path)
-                          summaries.append(f"✅ {org_name} ({year}) - {analysis['category']}")
+                          summaries.append(f"✅ Added: {entry_text}\n   (Line: {line_number})")
                           print(f"✅ Successfully processed {org_name} ({year})")
                       else:
                           print(f"❌ Failed to update README for {org_name} ({year})")
@@ -671,9 +717,7 @@ jobs:
             if [ -f "pr_summary.txt" ]; then
               echo "### 📝 Updated Reports" >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
-              echo '```' >> $GITHUB_STEP_SUMMARY
               cat pr_summary.txt >> $GITHUB_STEP_SUMMARY
-              echo '```' >> $GITHUB_STEP_SUMMARY
             fi
           else
             echo "### ⚠️ No Processing Results" >> $GITHUB_STEP_SUMMARY
@@ -682,10 +726,9 @@ jobs:
           fi
           
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 🔗 Useful Links" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 Useful Links" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- [Workflow Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
-          echo "- [Repository](https://github.com/${{ github.repository }})" >> $GITHUB_STEP_SUMMARY
+          echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ github.event_name }}" == "workflow_run" ]; then
-            echo "- [Triggering Workflow](https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }})" >> $GITHUB_STEP_SUMMARY
+            echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
           fi

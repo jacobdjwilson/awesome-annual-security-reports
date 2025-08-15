@@ -30,26 +30,54 @@ jobs:
       - name: Find changed files
         id: find-files
         run: |
-          # Get only renamed, added, or modified files in the push
+          # Get all changed files (added, modified, deleted, renamed)
+          ALL_CHANGED_FILES=$(git diff --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | grep -E "Annual Security Reports/.+\.(pdf)$")
+          
+          # Filter for added, modified, or renamed files that still exist
+          CHANGED_FILES_TO_SCAN=$(echo "$ALL_CHANGED_FILES" | while read -r file; do
+            if [ -f "$file" ]; then
+              echo "$file"
+            fi
+          done)
           echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf)$" >> $GITHUB_ENV
+          echo "$CHANGED_FILES_TO_SCAN" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          
+          # Filter for deleted files
+          DELETED_FILES=$(echo "$ALL_CHANGED_FILES" | while read -r file; do
+            if [ ! -f "$file" ]; then
+              echo "$file"
+            fi
+          done)
+          echo "DELETED_FILES<<EOF" >> $GITHUB_ENV
+          echo "$DELETED_FILES" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
           
           # Count for logging
-          COUNT=$(git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf)$" | wc -l || echo 0)
+          COUNT_TO_SCAN=$(echo "$CHANGED_FILES_TO_SCAN" | grep -c .) || echo 0
+          COUNT_DELETED=$(echo "$DELETED_FILES" | grep -c .) || echo 0
           
-          echo "Found $COUNT changed security report files"
+          echo "Found $COUNT_TO_SCAN security report files to scan."
+          echo "Found $COUNT_DELETED deleted security report files."
           
           # Show the files found
-          git diff --diff-filter=RAM --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | 
-            grep -E "Annual Security Reports/.+\.(pdf)$" || echo "No files found"
+          if [ -n "$CHANGED_FILES_TO_SCAN" ]; then
+            echo "Files to scan:"
+            echo "$CHANGED_FILES_TO_SCAN"
+          fi
+          if [ -n "$DELETED_FILES" ]; then
+            echo "Deleted files:"
+            echo "$DELETED_FILES"
+          fi
+          if [ -z "$CHANGED_FILES_TO_SCAN" ] && [ -z "$DELETED_FILES" ]; then
+            echo "No relevant security report files changed."
+          fi
 
       - name: Scan changed files with VirusTotal
-        if: env.CHANGED_FILES != ''
+        if: env.CHANGED_FILES != '' || env.DELETED_FILES != ''
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
+          DELETED_FILES: ${{ env.DELETED_FILES }}
         run: |
           cat > scan.py << 'EOF'
           #!/usr/bin/env python3
@@ -78,7 +106,7 @@ jobs:
               # Check if file exists
               if not os.path.exists(file_path):
                   print(f"Error: File not found: {file_path}")
-                  return False
+                  return {"status": "failed", "reason": "File not found"}
               
               try:
                   # Setup API headers
@@ -96,7 +124,8 @@ jobs:
                   # Check file size limit (VirusTotal has a 32MB limit for free API, 650MB for premium)
                   if file_size_bytes > 32 * 1024 * 1024:
                       print(f"Warning: File size ({file_size_mb:.2f} MB) exceeds free API limit (32 MB)")
-                      print("Attempting upload anyway - may require premium API key")
+                      # Do not attempt upload if it exceeds the free tier limit, as it will likely fail
+                      return {"status": "failed", "reason": "File size exceeds 32MB limit for free accounts"}
                   
                   # Calculate file hash first to check if it's already been scanned
                   file_hash = calculate_file_hash(file_path)
@@ -136,7 +165,7 @@ jobs:
                       if response.status_code != 200:
                           print(f"Error: File upload failed with status {response.status_code}")
                           print(f"Response: {response.text}")
-                          return False
+                          return {"status": "failed", "reason": f"File upload failed (Status: {response.status_code})"}
                       
                       # Get the scan ID
                       upload_result = response.json()
@@ -144,7 +173,7 @@ jobs:
                       
                       if not scan_id:
                           print("Error: No scan ID in upload response")
-                          return False
+                          return {"status": "failed", "reason": "No scan ID in upload response"}
                       
                       print(f"File uploaded successfully. Analysis ID: {scan_id}")
                       
@@ -189,17 +218,17 @@ jobs:
                                       break
                                   else:
                                       print("Error retrieving final scan results")
-                                      return False
+                                      return {"status": "failed", "reason": "Error retrieving final scan results"}
                               else:
                                   print(f"Scan status: {status}")
                           except Exception as e:
                               print(f"Error checking scan status: {e}")
                       else:
                           print("Scan did not complete within timeout period")
-                          return False
+                          return {"status": "failed", "reason": "Scan did not complete within timeout period"}
                   else:
                       print(f"Error checking file status: {lookup_response.status_code}")
-                      return False
+                      return {"status": "failed", "reason": f"Error checking file status (Status: {lookup_response.status_code})"}
                   
                   # Process scan results
                   attributes = scan_data.get('data', {}).get('attributes', {})
@@ -248,6 +277,7 @@ jobs:
                   create_annotation(file_path, verdict, threat_score, malicious_count, suspicious_count, total_engines, report_url)
                   
                   return {
+                      "status": "success",
                       "file": os.path.basename(file_path),
                       "verdict": verdict,
                       "threat_score": threat_score,
@@ -263,7 +293,7 @@ jobs:
                   print(f"Error scanning file: {str(e)}")
                   import traceback
                   traceback.print_exc()
-                  return False
+                  return {"status": "failed", "reason": f"Exception during scan: {str(e)}"}
           
           def create_annotation(file_path, verdict, threat_score, malicious_count, suspicious_count, total_engines, report_url):
               """Create GitHub annotation with scan results"""
@@ -296,30 +326,40 @@ jobs:
                   return 1
               
               # Get changed files from environment
-              changed_files = os.environ.get('CHANGED_FILES', '').strip().split('\n')
-              changed_files = [f for f in changed_files if f.strip()]
+              files_to_scan = os.environ.get('CHANGED_FILES', '').strip().split('\n')
+              files_to_scan = [f for f in files_to_scan if f.strip()]
               
-              if not changed_files:
-                  print("No changed files to scan")
+              deleted_files = os.environ.get('DELETED_FILES', '').strip().split('\n')
+              deleted_files = [f for f in deleted_files if f.strip()]
+              
+              total_files_processed = len(files_to_scan) + len(deleted_files)
+              
+              if not files_to_scan and not deleted_files:
+                  print("No relevant security report files changed.")
                   return 0
               
-              print(f"Processing {len(changed_files)} changed files")
+              print(f"Processing {len(files_to_scan)} files for scan and {len(deleted_files)} deleted files.")
               
               # Initialize summary
               with open(os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md'), 'w') as f:
                   f.write("## 🛡️ VirusTotal Security Scan Results\n\n")
               
-              # Process each file
+              # Process each file to scan
               results = []
-              success_count = 0
+              failed_scans = []
+              success_scan_count = 0
               
-              for file_path in changed_files:
+              for file_path in files_to_scan:
                   print(f"\n--- Scanning: {file_path} ---")
                   
                   result = scan_file(file_path, api_key)
-                  if result:
+                  if result and result["status"] == "success":
                       results.append(result)
-                      success_count += 1
+                      success_scan_count += 1
+                  elif result and result["status"] == "failed":
+                      failed_scans.append({"file": os.path.basename(file_path), "reason": result["reason"]})
+                  else:
+                      failed_scans.append({"file": os.path.basename(file_path), "reason": "Unknown error"})
                   
                   print(f"--- Completed: {file_path} ---\n")
               
@@ -358,10 +398,22 @@ jobs:
                   else:
                       f.write("No files were successfully scanned.\n")
                   
-                  f.write(f"\n\n### Summary\n")
-                  f.write(f"- Successfully processed {success_count} out of {len(changed_files)} files\n")
+                  if failed_scans:
+                      f.write("\n### ❌ Failed Scans\n")
+                      for f_scan in failed_scans:
+                          f.write(f"- {f_scan['file']}: {f_scan['reason']}\n")
                   
-                  # Add statistics
+                  if deleted_files:
+                      f.write("\n### 🗑️ Deleted Files\n")
+                      for d_file in deleted_files:
+                          f.write(f"- {d_file} (skipped scan)\n")
+                  
+                  f.write(f"\n\n### Summary\n")
+                  f.write(f"- Successfully scanned {success_scan_count} out of {len(files_to_scan)} files requiring scan.\n")
+                  f.write(f"- {len(failed_scans)} files failed to scan.\n")
+                  f.write(f"- {len(deleted_files)} files were deleted and skipped from scanning.\n")
+                  
+                  # Add statistics for scanned files
                   if results:
                       clean_files = sum(1 for r in results if r["verdict"] == "Clean")
                       suspicious_files = sum(1 for r in results if r["verdict"] == "Suspicious")
@@ -382,10 +434,10 @@ jobs:
                   f.write("\n### API Usage\n")
                   f.write("- This scan uses the VirusTotal public API\n")
                   f.write("- Rate limits: 4 requests per minute for free accounts\n")
-                  f.write("- File size limit: 32MB for free accounts, 650MB for premium\n")
               
-              # Return success if at least one file was processed
-              return 0 if success_count > 0 else 1
+              # Return success if there were no files to scan, or if at least one file was successfully processed
+              # or if only deleted files were present.
+              return 0 if (len(files_to_scan) == 0 and len(deleted_files) > 0) or success_scan_count > 0 or (len(files_to_scan) == 0 and len(deleted_files) == 0) else 1
           
           if __name__ == "__main__":
               sys.exit(main())
@@ -396,9 +448,9 @@ jobs:
           python scan.py || echo "Scan completed with some issues, but continuing workflow"
 
       - name: No files to scan message
-        if: env.CHANGED_FILES == ''
+        if: env.CHANGED_FILES == '' && env.DELETED_FILES == ''
         run: |
-          echo "No security report files were added or modified in this push."
+          echo "No security report files were added, modified, or deleted in this push."
           echo "## Security Scan Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "No security report files were changed in this push." >> $GITHUB_STEP_SUMMARY
