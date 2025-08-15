@@ -1,10 +1,9 @@
 # Email Threat Trends Report: 2025:Q2
-An Expert Look at Email-Based Threats
 
 ## Table of Contents
 - [Executive Introduction](#executive-introduction)
 - [5 Biggest Takeaways From Q2 2025](#5-biggest-takeaways-from-q2-2025)
-  - [1. Manufacturing and Retail – Still Top Targets for the Second Year in a Row](#1-manufacturing-and-retail-still-top-targets-for-the-second-year-in-a-row)
+  - [1. Manufacturing and Retail – Still Top Targets for the Second Year in a Row](#1-manufacturing-and-retail--still-top-targets-for-the-second-year-in-a-row)
   - [2. Phishing Kits are Out. Customized Deployments are In](#2-phishing-kits-are-out-customized-deployments-are-in)
   - [3. Call Me Maybe: Callback Phishing](#3-call-me-maybe-callback-phishing)
   - [4. BEC Targets Scandinavia](#4-bec-targets-scandinavia)
@@ -41,21 +40,23 @@ We track trends to see where attackers are heading. Our Q2 2025 data leads us to
 
 Last year in Q1, Manufacturing overtook Finance in an upset no one saw coming. Unfortunately for the world’s manufacturers, they have stayed in the lead ever since. The trend continues to this day, six consecutive quarters later.
 
+![Graphic showing "2024 / 2025 MANUFACTURING sector hit hard with attacks" and "Attacks increased by 71% last year"]
+
 Last year, attacks against Manufacturing increased by a staggering 71%. This year, our data show that the Manufacturing sector suffered the most email attacks in Q2 (26%) across a range of vectors, including BEC, phishing, and malspam – you name it. Close behind (as in last year and the last quarter) was Retail (20%), followed by Healthcare (19%).
 
 The fact that Manufacturing received the highest number of email-based attacks aligns perfectly with its current landslide of cyberattacks in general. When we look at the latest Verizon 2025 Data Breach Investigations Report, we note that phishing was the initial access vector in 16% of all cases; credential theft came in with the most at 22% with vulnerability exploitation taking second at 20%.
+
+![Pie chart titled "EMAIL ATTACK BREAKDOWN" showing Credential Theft 22%, Vulnerability Exploitation 20%, and Phishing Emails 16% with an unspecified "Other" category making up the rest.]
 
 This would indicate that phishing is a significant, but not the largest, issue. However, when you consider that phishing is a major factor in threat actors obtaining stolen credentials in the first place, you see how much of a problem it really is.
 
 By tamping down on email-based threats, the manufacturing sector could drastically reduce its number of cyber compromises overall.
 
-![Infographic showing email attack breakdown with Credential Theft (22%), Vulnerability Exploitation (20%), and Phishing Emails (16%). It also shows Manufacturing (26%), Retail (20%), and Healthcare (19%) as top targets for email attacks in Q2, noting a 71% increase in attacks against Manufacturing last year.]
-
 ### 2. Phishing Kits are Out. Customized Deployments are In
 
 For digital “ages,” phishing kits have been a powerful way to propagate malicious campaigns at scale. This quarter, it’s no surprise that we continue to see them, underpinning a substantial number of phishing sites.
 
-![Pie chart illustrating phishing kit breakdown, showing 58% did not use identifiable kits, 20% used Evilginx, 10% used Tycoon 2FA, 7% used 16shop, and 5% used other generic kits.]
+![Pie chart titled "Phishing Kits Breakdown" showing 58% Did not use identifiable phishing kits, 20% Evilginx, 10% Tycoon 2FA, 7% 16shop, and 5% Other generic kits.]
 
 However, what was surprising was that more than half (58%) of the phishing sites we analyzed this quarter did not use identifiable phishing kits. Indicating a trend towards custom-made or obfuscated deployments, this shift is something we anticipate seeing more of in the future.
 
@@ -79,17 +80,18 @@ As in all phishing scams, they rely on a sense of urgency and seek to pique the 
 
 Check out these callback scams in action:
 
-![Two examples of callback phishing emails. The first is a fake Norton LifeLock subscription renewal notice for $399.99 with a phone number to call for cancellation. The second is a fake PayPal payment failed notification with a phone number to call.]
+![Screenshot of a fake "Geek Squad" email with a phone number to call for a subscription renewal issue.](images/callback_scam_geek_squad.png)
+![Screenshot of a fake "Norton LifeLock" email with a phone number to call for a subscription renewal issue.](images/callback_scam_norton.png)
 
 ### 4. BEC Targets Scandinavia
 
-**Executives Are Always a Top Target**
+Executives Are Always a Top Target
 
 Cited often for its high yield (adjusted losses over $2.9 billion, compared to ransomware’s paltry $59.6 million), BEC scams are high on attackers’ priority lists for the damage they can do and the rewards they can bring.
 
 In this quarter’s report, BEC accounted for 42% of scam emails overall, leaving all other forms (Diversion, Email Hijacking, Account Takeover) to account for the remaining 58% combined.
 
-![Pie chart showing the breakdown of scam types this quarter, with BEC accounting for 42% and Diversion, Email Hijacking, and Account Takeover combined accounting for 58%.]
+![Pie chart titled "Type of scams this Quarter" showing 42% BEC and 58% Diversion, Email Hijacking, Account Takeover combined.]
 
 Like last quarter, the majority of BEC scams were launched via impersonation attacks — nearly eight out of ten BEC emails (78%) were an impersonation attempt. And, like last quarter, executives are still the favorite to impersonate.
 
@@ -101,7 +103,7 @@ In Q2, the “impersonation breakdown” looked like:
 - IT Personnel: 3%
 - School Head: 2%
 
-**BEC Scams Target English, Danish, Swedish, and Norwegian Speakers**
+BEC Scams Target English, Danish, Swedish, and Norwegian Speakers
 
 On closer examination, we see that executives in a few select countries were targeted the most.
 
@@ -111,11 +113,11 @@ On closer examination, we see that executives in a few select countries were tar
 
 The percentage of BEC scams is so prevalent that these figures likely had the power to sway the whole. Overall, our figures indicated that the top five languages targeted the most by any type of email spam this quarter were:
 
-- 72.3% English
-- 11.9% Danish
-- 3.8% Swedish
-- 1.5% Norwegian
-- 0.7% French
+1.  72.3% English
+2.  11.9% Danish
+3.  3.8% Swedish
+4.  1.5% Norwegian
+5.  0.7% French
 
 The notable use of Danish, Swedish, and Norwegian in BEC emails reflects a strategic shift by threat actors towards regional targeting and language localization.
 
@@ -125,7 +127,7 @@ We also have to consider the financial and digital maturity of Scandinavian nati
 
 This deeply informed targeting demonstrates how adversaries are evolving their methods and combining cultural context, industry relevance, and linguistic familiarity to bypass traditional security measures and dupe employees on the front lines.
 
-**BEC Pick Up Lines: Don’t Fall for Them**
+BEC Pick Up Lines: Don’t Fall for Them
 
 Lastly, with so many warnings about BEC scams, why are we still falling for them? Maybe because these little phrases know how to hit us where it hurts. Check out these BEC subject lines we saw trending last quarter:
 
@@ -150,33 +152,33 @@ On May 21, Microsoft announced that it had successfully taken down Lumma Stealer
 
 Thanks to a court order from the US District Court for the Northern District of Georgia, the tech company was able to remove five malicious web domains underpinning the malware. The US Department of Justice followed up by commandeering control of Lumma’s central command structure and eliminating the digital marketplaces where the infostealer was sold.
 
-Here are our key observations:
+Here are our key observations:.
 
-**Primary Delivery Method**
+Primary Delivery Method
 
 Lumma Stealer is often delivered via malicious .docx, .html, or .pdf attachments, or through phishing links hosted on compromised or legitimate-looking cloud services (eg, OneDrive, Google Drive).
 
-**Data Theft Capabilities**
+Data Theft Capabilities
 
 - Browser-stored credentials
 - Cryptocurrency wallets
 - System information
 - Saved passwords and autofill data
 
-**Frequent Campaign Themes**
+Frequent Campaign Themes
 
 - Fake invoice or payment notifications
 - Account suspension alerts
 - Software updates or security warnings
 
-**Evasion and Obfuscation**
+Evasion and Obfuscation
 
 - Packers and encrypted payloads
   Often uses packers or encrypted payloads to evade antivirus and EDR detection.
 - Anti-VM and anti-analysis
   Includes anti-VM and anti-analysis techniques to avoid sandbox detection.
 
-**Attribution and Access**
+Attribution and Access
 
 - Highly distributable MaaS
   Lumma Stealer is sold as Malware-as-a-Service (MaaS), making it accessible to a broad range of threat actors.
@@ -189,11 +191,11 @@ Spam levels remained consistent throughout Q2, but there were two concentrated i
 
 Between June 9 and June 12, there was a pronounced spike in the number of spam emails. This denotes a sustained spam operation over multiple days and intentional, organized activity. Another sharp increase occurred four days later on June 16th (see chart).
 
-So what was going on? The timing of the spikes corresponds with critical end-of-quarter (Q2 in this case) financial closing activity such as budget reviews, invoicing, and reporting deadlines. This is particularly true in sectors like manufacturing.
-
 Threat actors exploit the increased urgency during these periods to boost the likelihood that phishing emails disguised as invoices or payment notifications will be opened. The observed campaigns were mainly phishing emails, many impersonating trusted services and using compromised domains for redirection.
 
-![Line graph titled 'Spike of EML Samples by Date' showing a significant increase in spam emails between June 9 and June 12, and another sharp increase on June 16, corresponding to end-of-quarter financial activity.]
+So what was going on? The timing of the spikes corresponds with critical end-of-quarter (Q2 in this case) financial closing activity such as budget reviews, invoicing, and reporting deadlines. This is particularly true in sectors like manufacturing.
+
+![Line graph showing "Spike of EML Samples by Date" with a significant spike between June 9 and June 12, and another on June 16.]
 
 The ability to see global phishing volume in real-time is a high-value asset for clients that need to be ahead of international cybersecurity threats. Our ability to spot these trends and warn our customers allows them to be on high alert for the duration of unexpected spam email emergencies.
 
@@ -205,7 +207,7 @@ It always helps to get the “big picture” view of how attackers are doing wha
 
 Motivated by money themselves, attackers know human nature doesn’t change much on the “other side.”
 
-![Pie chart illustrating common lure themes used by attackers, with Financial Related (35%) and Urgent Request (25%) being the most prevalent, followed by Account Verification/Update (20%), Travel-themed (10%), Legal or HR Notices (5%), and Package/Delivery (5%).]
+![Pie chart titled "Lure Themes" showing Financial Related 35%, Urgent Request 25%, Account Verification/Update 20%, Travel-themed (e.g., booking com) 10%, Legal or HR Notices 5%, and Package/Delivery 5%.]
 
 Financial lures – emails regarding money, financial errors, fiduciary imperatives – were the number one ploy used to get users to open malicious emails. And it worked. Impersonating banks, payment services, or other financial institutions, these phishing emails threaten to hit us where it hurts – our pocketbooks — and they often do.
 
@@ -219,9 +221,15 @@ Once they’ve “hooked us,” how do they get us to the actual point of compro
 
 Among phishing link delivery types, the majority (54%) utilized open redirect mechanisms. Threat actors leverage open redirect links hosted on marketing services, email tracking systems, and even security platforms to mask the true malicious destination. These links appear trustworthy due to their origin domains, making users more likely to click. Examples include:
 
-![Example of an open redirect phishing scam, showing a fake QuickBooks invoice email with a malicious 'View and Pay Invoice' link that uses an open redirect mechanism.]
+`https://www.google.com/url?q=https://malicious.site/`
+`https://t.co/redirect?url=https://malicious.site/`
+`https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=...&redirect_uri=https://malicious.site/`
 
 These links typically redirect to credential harvesting pages or malware-hosting sites after encoding user-related information.
+
+Check out this example of an open redirect phishing scam caught in the wild:
+
+![Screenshot of an email with a link that uses an open redirect, appearing to be from a legitimate service but leading to a malicious site.](images/open_redirect_phishing_scam.png)
 
 Following open redirects, the next most prevalent link delivery mechanism was compromised websites (30%). These can evade detection by blacklisting the IPs used in email security solutions to scan websites, leveraging legitimate services like Google Drive to make them seem safe to secure email gateways (SEGs), or changing their content frequently to outsmart automated scanners (dynamic content injection).
 
@@ -234,15 +242,15 @@ When it comes to attachments, PDFs are still a top contender in malicious campai
 - DOCX (13%) - Frequently containing malicious content such as QR codes or macros.
 - SVG (9%) - These graphic files were all the rage last quarter but have since plummeted from 34% to the 9% we observed in Q2.
 
-Take a look at this real-world example:
-
-![Example of a malicious email using a QR code, showing a fake Microsoft account suspension notice with a QR code that redirects users to a phishing website.]
-
 Note that QR codes popped up prominently in PDFs and DOCX files this quarter, with the majority of those files containing them in some form. These malicious QR codes:
 
 - Redirect users to phishing websites, often Microsoft or banking impersonations.
 - Bypass email filtering solutions that primarily scan text-based content or traditional URLs.
 - Would be found embedded in business-themed documents such as “invoice”, “payment due”, or “2FA reauthentication” notices.
+
+Take a look at this real-world example:
+
+![Screenshot of a PDF document containing a malicious QR code, disguised as an invoice or payment notification.](images/qr_code_phishing_scam.png)
 
 ### 3. Where the Rubber Hits the Road: Exfiltration Methods
 
@@ -250,6 +258,59 @@ Lastly, after baiting their victims with financially based lures and reeling the
 
 This quarter, they favored:
 
-![Pie chart showing exfiltration methods, with HTTP POST To Remote Server (52%) as the most common, followed by Email Exfiltration (30%), Telegram Bots/Webhooks (10%), and Unknown/Obfuscated (8%).]
+![Pie chart showing Exfiltration Methods: 52% HTTP POST To Remove Server, 30% Email Exfiltration, 10% Telegram Bots/Webhooks, 8% Unknown/Obfuscated.]
 
-Most phishing pages exfiltrate credentials via direct HTTP POST requests to attacker-controlled servers. A significant portion still used legacy methods like sending stolen data to attacker emails, but the use of Telegram — the popular messaging app — bot
+Most phishing pages exfiltrate credentials via direct HTTP POST requests to attacker-controlled servers. A significant portion still used legacy methods like sending stolen data to attacker emails, but the use of Telegram — the popular messaging app — bot exfiltration is now growing in popularity due to its ease of setup and anonymity.
+
+With Telegram, attackers can easily target anyone from anywhere. Given that these scams are social engineering attacks, attackers with open communication channels have a clear advantage if they can hook people via text: think bitcoin schemes, romance scams, and other group messages that draw in dozens of strangers for unsolicited reasons.
+
+In other words, it may no longer be the “hacker in the basement with the laptop.” Now, it could be the woman on the subway with the cellphone. The most worrying part about the rising Telegram tide is that it is extremely hard to police. In May of this year, Telegram purged all of its most dangerous Chinese crypto scam markets that provided “money laundering, stolen data, and a variety of other illicit wares” to investment scams in Southeast Asia; then “watched impassively as those black marketeers rebranded, rebuilt, and returned to business as usual,” as reported in WIRED.
+
+### Feature: Attackers Use Legit Login Pages to Throw Us Off the Trail
+
+Another interesting trend is appearing on the horizon as attackers continue to find new ways to make it look like they were never there.
+
+This is next-level planning; we are accustomed to threat actors muddying the waters to evade initial detection, but this most recent tactic ensures we don’t even suspect foul play.
+
+Our analysis of Q2 data reveals that no less than 60% of all credential harvesting pages redirect to an actual, legitimate Microsoft login page. When the victim has to enter their account credentials twice, it will seem like the page is just reloading, or that double authentication was required (for security purposes, of course).
+
+The scheme is brilliant because there is nothing to arouse suspicion when you can ultimately – and legitimately – access your Microsoft account. Perhaps due to login fatigue, users are less prone to notice differences in authentication requirements upfront. Or, it could be because companies are changing their identity and access management (IAM) practices with more regularity.
+
+This tactic not only evades human detection but also delivers an edge against security solutions designed to spot anomalies in the flow. When the flow ends on a trusted site like login.microsoft.com, it all “checks out.”
+
+## Concluding Thoughts: Personalization Is Public Enemy #1 in Phishing
+
+Every attacker knows that customizable is better when you’re outsmarting humans.
+
+It is exactly those (creepy?) little touches that make us doubt our doubts and let down our defenses. They know our name. They know our hometown. They know which school our children attend. And they just referenced an email we sent to our boss last week.
+
+It must be genuine.
+
+By scraping social media sites and other publicly available domains, vast amounts of personal data can be gleaned with the click of a well-trained AI model button.
+
+Thanks to AI, in all its forms, malicious hackers can take powerful and personalized spear-phishing techniques that target high-value individuals over time and apply those same customizable tactics to...well, everyone.
+
+Spear phishing campaigns boast incredible click-through rates of over 53%, while regular phishing emails hover around 18%. The amount of work it took to track someone down over months, building a profile on their personal facts, was prohibitive and therefore saved for “big game” only, like executives.
+
+The force-multiplying capability of AI means that the devastating personal power of spear phishing attacks can be leveled at any unsuspecting victim. And again, these highly customized (and convincing) attacks can be sent out at a scale unimaginable before. Here’s a depressing statistic to prove it:
+
+Since the release of ChatGPT, phishing has increased by 4,151%.
+
+The takeaway? If employees can’t catch these phishing ploys at scale (or at all), organizations need to turn to the technology that can. Integrated cloud email security (ICES) solutions like VIPRE Integrated Email Security (IES) are built to do what no other advanced email platform has been able to do before: catch behavioral patterns, giveaways in semantics, and red flags in attacker language and tone to spot social engineering threats that otherwise evade detection.
+
+- Behavioral detection
+- Threat correlation across channels
+- Intelligence in prevention strategies
+
+One thing is certain: As attackers continually improve social engineering techniques, something in the way organizations address their typical email security problems is going to have to change. Because attackers aren’t leaning into ‘typical’ anymore. Now it’s personal.
+
+Stay up to date and look out for the next installment of the VIPRE Email Threat Trends Report.
+
+To learn more about VIPRE Email Security and what we do for organizations, schedule a demo today.
+
+North America | UK and other regions | DACH Sales | Nordics Sales
+---|---|---|---
+sales@vipre.com | uksales@vipre.com | dach.sales@vipre.com | nordic.sales@vipre.com
++1 855 885 5566 | +44 (0)800 093 2580 | +49 30 2295 7786 | +45 7025 2223
+
+©2025 VIPRE Security Group. All rights reserved. VIPRE is a registered trademark of Ziff Davis, Inc. Other product names used in this publication are for identification purposes only and may be trademarks of their respective companies. VIPRE_2025_EMAILTHREATTRENDSREPORT2025Q2_0708_US
