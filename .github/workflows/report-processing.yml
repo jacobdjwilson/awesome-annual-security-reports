@@ -10,46 +10,53 @@ on:
   workflow_dispatch:
 
 jobs:
-  check-for-added-pdfs:
+  find-new-pdfs:
     runs-on: ubuntu-latest
     outputs:
-      new_pdfs_added: ${{ steps.check.outputs.new_pdfs_added }}
+      new_pdfs: ${{ steps.check.outputs.new_pdfs }}
     steps:
       - name: 🔍 Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: 📝 Check for Added PDF Files
+      - name: 📝 Find Newly Added PDF Files
         id: check
         run: |
-          ADDED_PDFS=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} | grep 'Annual Security Reports/.*\.pdf')
+          ADDED_PDFS=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} | grep 'Annual Security Reports/.*\.pdf' | jq -R . | jq -s .)
+          echo "new_pdfs=$ADDED_PDFS" >> $GITHUB_OUTPUT
           if [ -n "$ADDED_PDFS" ]; then
-            echo "new_pdfs_added=true" >> $GITHUB_OUTPUT
-            echo "✅ New PDF files detected."
+            echo "✅ New PDF files detected: $ADDED_PDFS"
           else
-            echo "new_pdfs_added=false" >> $GITHUB_OUTPUT
             echo "ℹ️ No new PDF files detected."
           fi
 
-  pdf-to-markdown:
-    needs: check-for-added-pdfs
-    if: ${{ github.event_name == 'workflow_dispatch' || needs.check-for-added-pdfs.outputs.new_pdfs_added == 'true' }}
-    uses: ./.github/workflows/pdf-markdown-convert.yml
-    secrets: inherit
-    with:
-      retries: 3
-
   virus-total-scan:
-    needs: pdf-to-markdown
-    if: success() && (github.event_name == 'workflow_dispatch' || needs.check-for-added-pdfs.outputs.new_pdfs_added == 'true')
+    needs: find-new-pdfs
+    if: ${{ needs.find-new-pdfs.outputs.new_pdfs != '[]' }}
+    strategy:
+      matrix:
+        pdf_file: ${{ fromJson(needs.find-new-pdfs.outputs.new_pdfs) }}
     uses: ./.github/workflows/virus-total-scan.yml
     secrets: inherit
     with:
+      pdf_file_path: ${{ matrix.pdf_file }}
+      retries: 3
+
+  pdf-to-markdown:
+    needs: virus-total-scan
+    if: ${{ needs.find-new-pdfs.outputs.new_pdfs != '[]' }}
+    strategy:
+      matrix:
+        pdf_file: ${{ fromJson(needs.find-new-pdfs.outputs.new_pdfs) }}
+    uses: ./.github/workflows/pdf-markdown-convert.yml
+    secrets: inherit
+    with:
+      pdf_file_path: ${{ matrix.pdf_file }}
       retries: 3
 
   update-readme:
-    needs: [pdf-to-markdown, virus-total-scan]
-    if: success() && (github.event_name == 'workflow_dispatch' || needs.check-for-added-pdfs.outputs.new_pdfs_added == 'true')
+    needs: pdf-to-markdown
+    if: ${{ needs.find-new-pdfs.outputs.new_pdfs != '[]' }}
     uses: ./.github/workflows/readme-entry.yml
     secrets: inherit

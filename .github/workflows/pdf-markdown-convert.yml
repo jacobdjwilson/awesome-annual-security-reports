@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   workflow_call:
     inputs:
+      pdf_file_path:
+        description: 'Path to the PDF file to convert'
+        required: true
+        type: string
       retries:
         description: 'Number of retries'
         required: false
@@ -33,34 +37,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install 'markitdown[pdf]' google-generativeai google-api-python-client
       
-      - name: Find changed PDF files
-        id: find-pdfs
-        run: |
-          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD || echo ${GITHUB_REF#refs/heads/})
-          echo "Current branch: $CURRENT_BRANCH"
-          
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            # For pull requests
-            CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -E "Annual Security Reports/.*\.pdf$" || true)
-          elif [[ -n "${{ github.event.before }}" && "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]]; then
-            # For direct pushes
-            CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | grep -E "Annual Security Reports/.*\.pdf$" || true)
-          else
-            # For manual runs or initial pushes
-            CHANGED_FILES=$(find "Annual Security Reports" -name "*.pdf" 2>/dev/null || true)
-          fi
-          
-          if [[ -z "$CHANGED_FILES" ]]; then
-            echo "No PDF files found. Exiting."
-            echo "pdfs_changed=false" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          
-          echo "pdfs_changed=true" >> $GITHUB_OUTPUT
-          echo "pdf_files<<EOF" >> $GITHUB_OUTPUT
-          echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-          echo "branch=$CURRENT_BRANCH" >> $GITHUB_OUTPUT
       
       - name: Verify prompt file exists
         id: check-prompt
@@ -358,47 +334,28 @@ jobs:
                   }
           
           def main():
-              if len(sys.argv) < 4:
-                  print("Usage: python process_pdfs.py <pdf_paths_file> <prompt_path> <prompt_version> <branch>")
-                  return 1
+              pdf_path_str = os.environ.get('PDF_FILE_PATH')
+              if not pdf_path_str:
+                  print("Error: PDF_FILE_PATH not set.")
+                  sys.exit(1)
+
+              prompt_path = ".github/ai-prompts/pdf-to-markdown-prompt.md"
+              prompt_version = os.environ.get('PROMPT_VERSION', 'v1.0')
+              branch = os.environ.get('BRANCH', 'unknown')
               
-              pdf_paths_file = sys.argv[1]
-              prompt_path = sys.argv[2]
-              prompt_version = sys.argv[3]
-              branch = sys.argv[4] if len(sys.argv) > 4 else "unknown"
+              pdf_path = Path(pdf_path_str)
               
-              # Create or clear the converted files list
-              converted_files_path = os.environ.get("CONVERTED_FILES_PATH", "converted_files.txt")
-              with open(converted_files_path, "w") as f:
-                  f.write("")  # Just create/clear the file
-              
-              # Read PDF paths
-              with open(pdf_paths_file, "r") as f:
-                  pdf_paths = [line.strip() for line in f.readlines()]
-              
-              print(f"Processing {len(pdf_paths)} PDF files on branch {branch}")
-              
-              success_count = 0
-              all_results = [] # Initialize all_results list
-              
-              # Process each PDF
-              for pdf_path_str in pdf_paths:
-                  pdf_path = Path(pdf_path_str)
-                  try:
-                      result = process_pdf(pdf_path, prompt_path, prompt_version, branch)
-                      all_results.append(result)
-                      if result["status"] == "Converted Successfully":
-                          success_count += 1
-                  except Exception as e:
-                      print(f"Error processing {pdf_path}: {str(e)}")
-                      all_results.append({
-                          "pdf_path": str(pdf_path),
-                          "output_path": "",
-                          "model_used": MODEL,
-                          "status": f"Failed: {str(e)}"
-                      })
-              
-              print(f"Successfully processed {success_count}/{len(pdf_paths)} PDFs")
+              try:
+                  result = process_pdf(pdf_path, prompt_path, prompt_version, branch)
+                  if result["status"] == "Converted Successfully":
+                      print(f"Successfully processed {pdf_path}")
+                      sys.exit(0)
+                  else:
+                      print(f"Failed to process {pdf_path}")
+                      sys.exit(1)
+              except Exception as e:
+                  print(f"An error occurred while processing {pdf_path}: {e}")
+                  sys.exit(1)
               
               # Generate and write summary to GITHUB_STEP_SUMMARY
               summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
@@ -427,23 +384,20 @@ jobs:
               sys.exit(main())
           ENDPYTHONSCRIPT
 
-      - name: Process PDF files
-        if: steps.find-pdfs.outputs.pdfs_changed == 'true' && steps.check-prompt.outputs.prompt_exists == 'true'
+      - name: Process PDF file
+        if: steps.check-prompt.outputs.prompt_exists == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
           PROMPT_VERSION: ${{ steps.check-prompt.outputs.prompt_version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: ${{ steps.find-pdfs.outputs.branch }}
+          BRANCH: ${{ github.ref_name }}
+          PDF_FILE_PATH: ${{ inputs.pdf_file_path }}
           CONVERTED_FILES_PATH: "converted_files.txt"
           GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
         run: |
-          # Create a file with the list of PDF paths
-          echo "${{ steps.find-pdfs.outputs.pdf_files }}" > pdf_paths.txt
-          
-          # Run the Python script
-          python process_pdfs.py pdf_paths.txt ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH"
+          python process_pdfs.py
           
           # Pull latest changes before pushing
           git pull --rebase https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git $BRANCH
@@ -452,7 +406,7 @@ jobs:
           git push https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF}
       
       - name: Upload converted files info
-        if: steps.find-pdfs.outputs.pdfs_changed == 'true' && steps.check-prompt.outputs.prompt_exists == 'true'
+        if: steps.check-prompt.outputs.prompt_exists == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: converted_file_info
@@ -460,7 +414,7 @@ jobs:
           retention-days: 1
       
       - name: Error - Prompt file missing
-        if: steps.find-pdfs.outputs.pdfs_changed == 'true' && steps.check-prompt.outputs.prompt_exists != 'true'
+        if: steps.check-prompt.outputs.prompt_exists != 'true'
         run: |
           echo "Error: Prompt file not found at .github/ai-prompts/pdf-to-markdown-prompt.md"
           echo "Please ensure the prompt file exists in your repository."

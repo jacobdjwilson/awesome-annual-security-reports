@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   workflow_call:
     inputs:
+      pdf_file_path:
+        description: 'Path to the PDF file to scan'
+        required: true
+        type: string
       retries:
         description: 'Number of retries'
         required: false
@@ -29,57 +33,10 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Find changed files
-        id: find-files
-        run: |
-          # Get all changed files (added, modified, deleted, renamed)
-          ALL_CHANGED_FILES=$(git diff --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | grep -E "Annual Security Reports/.+\.(pdf)$")
-          
-          # Filter for added, modified, or renamed files that still exist
-          CHANGED_FILES_TO_SCAN=$(echo "$ALL_CHANGED_FILES" | while read -r file; do
-            if [ -f "$file" ]; then
-              echo "$file"
-            fi
-          done)
-          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          echo "$CHANGED_FILES_TO_SCAN" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-          
-          # Filter for deleted files
-          DELETED_FILES=$(echo "$ALL_CHANGED_FILES" | while read -r file; do
-            if [ ! -f "$file" ]; then
-              echo "$file"
-            fi
-          done)
-          echo "DELETED_FILES<<EOF" >> $GITHUB_ENV
-          echo "$DELETED_FILES" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-          
-          # Count for logging
-          COUNT_TO_SCAN=$(echo "$CHANGED_FILES_TO_SCAN" | grep -c .) || echo 0
-          COUNT_DELETED=$(echo "$DELETED_FILES" | grep -c .) || echo 0
-          
-          echo "Found $COUNT_TO_SCAN security report files to scan."
-          echo "Found $COUNT_DELETED deleted security report files."
-          
-          # Show the files found
-          if [ -n "$CHANGED_FILES_TO_SCAN" ]; then
-            echo "Files to scan:"
-            echo "$CHANGED_FILES_TO_SCAN"
-          fi
-          if [ -n "$DELETED_FILES" ]; then
-            echo "Deleted files:"
-            echo "$DELETED_FILES"
-          fi
-          if [ -z "$CHANGED_FILES_TO_SCAN" ] && [ -z "$DELETED_FILES" ]; then
-            echo "No relevant security report files changed."
-          fi
-
-      - name: Scan changed files with VirusTotal
-        if: env.CHANGED_FILES != '' || env.DELETED_FILES != ''
+      - name: Scan PDF file with VirusTotal
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
-          DELETED_FILES: ${{ env.DELETED_FILES }}
+          PDF_FILE_PATH: ${{ inputs.pdf_file_path }}
         run: |
           cat > scan.py << 'EOF'
           #!/usr/bin/env python3
@@ -315,104 +272,57 @@ jobs:
                   print("Error: VIRUS_TOTAL_API_KEY environment variable not set")
                   return 1
               
-              # Get changed files from environment
-              files_to_scan = os.environ.get('CHANGED_FILES', '').strip().split('\n')
-              files_to_scan = [f for f in files_to_scan if f.strip()]
-              
-              deleted_files = os.environ.get('DELETED_FILES', '').strip().split('\n')
-              deleted_files = [f for f in deleted_files if f.strip()]
-              
-              total_files_processed = len(files_to_scan) + len(deleted_files)
-              
-              if not files_to_scan and not deleted_files:
-                  print("No relevant security report files changed.")
+              # Get file to scan from environment
+              file_to_scan = os.environ.get('PDF_FILE_PATH', '').strip()
+              if not file_to_scan:
+                  print("No PDF file path provided.")
                   return 0
               
-              print(f"Processing {len(files_to_scan)} files for scan and {len(deleted_files)} deleted files.")
+              print(f"Processing {file_to_scan} for scan.")
               
               # Initialize summary
               with open(os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md'), 'w') as f:
                   f.write("## 🛡️ VirusTotal Security Scan Results\n\n")
               
-              # Process each file to scan
-              results = []
-              failed_scans = []
-              success_scan_count = 0
-              
-              for file_path in files_to_scan:
-                  print(f"\n--- Scanning: {file_path} ---")
-                  
-                  result = scan_file(file_path, api_key)
-                  if result and result["status"] == "success":
-                      results.append(result)
-                      success_scan_count += 1
-                  elif result and result["status"] == "failed":
-                      failed_scans.append({"file": os.path.basename(file_path), "reason": result["reason"]})
-                  else:
-                      failed_scans.append({"file": os.path.basename(file_path), "reason": "Unknown error"})
-                  
-                  print(f"--- Completed: {file_path} ---\n")
+              # Process the file
+              result = scan_file(file_to_scan, api_key)
               
               # Write detailed results to summary
               with open(os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md'), 'a') as f:
-                  if results:
+                  if result and result["status"] == "success":
                       f.write("| File | Verdict | Detections | Engines | Report |\n")
                       f.write("|------|---------|------------|---------|--------|\n")
                       
-                      for result in results:
-                          # Set icon based on verdict
-                          icon = ""
-                          verdict = result["verdict"]
-                          
-                          if "malicious" in verdict.lower():
-                              icon = "🔴 "
-                          elif "suspicious" in verdict.lower():
-                              icon = "🟠 "
-                          else:
-                              icon = "✅ "
-                          
-                          # Format detection summary
-                          detection_count = result["malicious_count"] + result["suspicious_count"]
-                          detection_summary = f"{detection_count}/{result['total_engines']}"
-                          
-                          # Format top detections
-                          detections = result.get("detections", [])
-                          if detections:
-                              top_detections = ", ".join([d.split(":")[0] for d in detections[:3]])
-                              if len(detections) > 3:
-                                  top_detections += f" (+{len(detections) - 3} more)"
-                          else:
-                              top_detections = "None"
-                          
-                          f.write(f"| {result['file']} | {icon}{verdict} | {top_detections} | {detection_summary} | [View Report]({result['report_url']}) |\n")
-                  else:
-                      f.write("No files were successfully scanned.\n")
-                  
-                  if failed_scans:
-                      f.write("\n### ❌ Failed Scans\n")
-                      for f_scan in failed_scans:
-                          f.write(f"- {f_scan['file']}: {f_scan['reason']}\n")
-                  
-                  if deleted_files:
-                      f.write("\n### 🗑️ Deleted Files\n")
-                      for d_file in deleted_files:
-                          f.write(f"- {d_file} (skipped scan)\n")
-                  
-                  f.write(f"\n\n### Summary\n")
-                  f.write(f"- Successfully scanned {success_scan_count} out of {len(files_to_scan)} files requiring scan.\n")
-                  f.write(f"- {len(failed_scans)} files failed to scan.\n")
-                  f.write(f"- {len(deleted_files)} files were deleted and skipped from scanning.\n")
-                  
-                  # Add statistics for scanned files
-                  if results:
-                      clean_files = sum(1 for r in results if r["verdict"] == "Clean")
-                      suspicious_files = sum(1 for r in results if r["verdict"] == "Suspicious")
-                      malicious_files = sum(1 for r in results if r["verdict"] == "Malicious")
+                      # Set icon based on verdict
+                      icon = ""
+                      verdict = result["verdict"]
                       
-                      f.write(f"- Clean files: {clean_files}\n")
-                      f.write(f"- Suspicious files: {suspicious_files}\n")
-                      f.write(f"- Malicious files: {malicious_files}\n")
-                  
+                      if "malicious" in verdict.lower():
+                          icon = "🔴 "
+                      elif "suspicious" in verdict.lower():
+                          icon = "🟠 "
+                      else:
+                          icon = "✅ "
+                      
+                      # Format detection summary
+                      detection_count = result["malicious_count"] + result["suspicious_count"]
+                      detection_summary = f"{detection_count}/{result['total_engines']}"
+                      
+                      # Format top detections
+                      detections = result.get("detections", [])
+                      if detections:
+                          top_detections = ", ".join([d.split(":")[0] for d in detections[:3]])
+                          if len(detections) > 3:
+                              top_detections += f" (+{len(detections) - 3} more)"
+                      else:
+                          top_detections = "None"
+                      
+                      f.write(f"| {result['file']} | {icon}{verdict} | {top_detections} | {detection_summary} | [View Report]({result['report_url']}) |\n")
+                  else:
+                      f.write("File was not successfully scanned.\n")
+                      if result:
+                          f.write(f"Reason: {result.get('reason', 'Unknown')}\n")
+
                   # Add additional info about VirusTotal
                   f.write("\n### About the Scan\n")
                   f.write("- Files are scanned using the VirusTotal API v3\n")
@@ -425,9 +335,7 @@ jobs:
                   f.write("- This scan uses the VirusTotal public API\n")
                   f.write("- Rate limits: 4 requests per minute for free accounts\n")
               
-              # Return success if there were no files to scan, or if at least one file was successfully processed
-              # or if only deleted files were present.
-              return 0 if (len(files_to_scan) == 0 and len(deleted_files) > 0) or success_scan_count > 0 or (len(files_to_scan) == 0 and len(deleted_files) == 0) else 1
+              return 0 if result and result["status"] == "success" else 1
           
           if __name__ == "__main__":
               sys.exit(main())
@@ -436,11 +344,3 @@ jobs:
           # Make script executable and run
           chmod +x scan.py
           python scan.py || echo "Scan completed with some issues, but continuing workflow"
-
-      - name: No files to scan message
-        if: env.CHANGED_FILES == '' && env.DELETED_FILES == ''
-        run: |
-          echo "No security report files were added, modified, or deleted in this push."
-          echo "## Security Scan Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "No security report files were changed in this push." >> $GITHUB_STEP_SUMMARY
