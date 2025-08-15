@@ -1,15 +1,14 @@
 name: PDF to Markdown Conversion
 
 on:
-  push:
-    branches: [main, development]
-    paths:
-      - 'Annual Security Reports/**/*.pdf'
-  pull_request:
-    branches: [main, development]
-    paths:
-      - 'Annual Security Reports/**/*.pdf'
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      retries:
+        description: 'Number of retries'
+        required: false
+        type: number
+        default: 0
 
 jobs:
   convert-pdf-to-markdown:
@@ -82,6 +81,7 @@ jobs:
           cat > process_pdfs.py << 'ENDPYTHONSCRIPT'
           import os
           import sys
+          import time
           import google.generativeai as genai
           from pathlib import Path
           import subprocess
@@ -90,6 +90,9 @@ jobs:
           from googleapiclient.errors import HttpError
           
           # Setup Gemini API
+          if "GEMINI_API_KEY" not in os.environ:
+              print("Error: GEMINI_API_KEY not set in environment variables.")
+              sys.exit(1)
           genai.configure(api_key=os.environ["GEMINI_API_KEY"])
           
           # Print available models for debugging
@@ -152,68 +155,73 @@ jobs:
                   raise
           
           def perform_google_search(query, api_key, cse_id):
-              """Performs a Google Custom Search and returns the first result URL."""
-              try:
-                  service = build("customsearch", "v1", developerKey=api_key)
-                  res = service.cse().list(q=query, cx=cse_id, num=1).execute()
-                  if 'items' in res and len(res['items']) > 0:
-                      print(f"Google Search found URL: {res['items'][0]['link']}")
-                      return res['items'][0]['link']
-                  else:
-                      print("No Google search results found.")
-                      return None
-              except HttpError as e:
-                  print(f"Google Search API error: {e}")
-                  return None
-              except Exception as e:
-                  print(f"An unexpected error occurred during Google Search: {e}")
-                  return None
-          
-          def generate_markdown_with_ai(pdf_text, prompt_text, organization_url=None):
-              try:
-                  print(f"Generating markdown with {MODEL}...")
-                  model = genai.GenerativeModel(MODEL)
-                  
-                  full_prompt = f"{prompt_text}\n\n"
-                  if organization_url:
-                      full_prompt += f"The official report URL is: {organization_url}\n\n"
-                  full_prompt += f"# Report Content Below\n\n{pdf_text}"
-                  
-                  # Set generation parameters for better output
-                  generation_config = {
-                      "temperature": 0.2,  # Lower temperature for more predictable output
-                      "max_output_tokens": 8192,
-                  }
-                  
-                  response = model.generate_content(
-                      full_prompt,
-                      generation_config=generation_config
-                  )
-                  
-                  # Log prompt feedback
-                  if response.prompt_feedback:
-                      print(f"Prompt feedback: {response.prompt_feedback}")
+              """Performs a Google Custom Search with retries and returns the first result URL."""
+              for attempt in range(3):
+                  try:
+                      service = build("customsearch", "v1", developerKey=api_key)
+                      res = service.cse().list(q=query, cx=cse_id, num=1).execute()
+                      if 'items' in res and len(res['items']) > 0:
+                          print(f"Google Search found URL: {res['items'][0]['link']}")
+                          return res['items'][0]['link']
+                      else:
+                          print("No Google search results found.")
+                          return None
+                  except HttpError as e:
+                      print(f"Google Search API error (attempt {attempt + 1}/3): {e}")
+                      if attempt < 2:
+                          time.sleep((2 ** attempt) * 2)  # Exponential backoff: 2s, 4s
+                  except Exception as e:
+                      print(f"An unexpected error occurred during Google Search (attempt {attempt + 1}/3): {e}")
+                      if attempt < 2:
+                          time.sleep((2 ** attempt) * 2)
+              return None
 
-                  # Log candidate details for debugging
-                  if response.candidates:
-                      for i, candidate in enumerate(response.candidates):
-                          print(f"Candidate {i} finish reason: {candidate.finish_reason}")
-                          if candidate.safety_ratings:
-                              print(f"Candidate {i} safety ratings: {candidate.safety_ratings}")
-                  
-                  if not response.text:
-                      error_message = "The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned."
+          def generate_markdown_with_ai(pdf_text, prompt_text, organization_url=None):
+              """Generates markdown with AI, including retries and detailed error logging."""
+              for attempt in range(3):
+                  try:
+                      print(f"Generating markdown with {MODEL} (attempt {attempt + 1}/3)...")
+                      model = genai.GenerativeModel(MODEL)
+                      
+                      full_prompt = f"{prompt_text}\n\n"
+                      if organization_url:
+                          full_prompt += f"The official report URL is: {organization_url}\n\n"
+                      full_prompt += f"# Report Content Below\n\n{pdf_text}"
+                      
+                      generation_config = {
+                          "temperature": 0.2,
+                          "max_output_tokens": 8192,
+                      }
+                      
+                      response = model.generate_content(
+                          full_prompt,
+                          generation_config=generation_config
+                      )
+                      
+                      if response.prompt_feedback:
+                          print(f"Prompt feedback: {response.prompt_feedback}")
+
+                      if response.candidates:
+                          for i, candidate in enumerate(response.candidates):
+                              print(f"Candidate {i} finish reason: {candidate.finish_reason}")
+                              if candidate.safety_ratings:
+                                  print(f"Candidate {i} safety ratings: {candidate.safety_ratings}")
+                      
+                      if response.text:
+                          print(f"Successfully generated markdown ({len(response.text)} characters)")
+                          return response.text
+                      
+                      # If no text, raise an error to trigger retry
+                      error_message = "No valid response text from AI."
                       if response.candidates and response.candidates[0].finish_reason:
-                          error_message += f" The candidate's finish_reason is {response.candidates[0].finish_reason}."
-                      if response.candidates and response.candidates[0].safety_ratings:
-                          error_message += f" Safety ratings: {response.candidates[0].safety_ratings}."
+                          error_message += f" Finish reason: {response.candidates[0].finish_reason}."
                       raise ValueError(error_message)
 
-                  print(f"Successfully generated markdown ({len(response.text)} characters)")
-                  return response.text
-              except Exception as e:
-                  print(f"Error generating markdown with AI: {str(e)}")
-                  raise
+                  except Exception as e:
+                      print(f"Error generating markdown with AI (attempt {attempt + 1}/3): {str(e)}")
+                      if attempt < 2:
+                          time.sleep((2 ** attempt) * 5)  # Exponential backoff: 5s, 10s
+              raise Exception("Failed to generate markdown with AI after 3 attempts.")
           
           def process_pdf(pdf_path, prompt_path, prompt_version, branch):
               """Process a PDF file and convert it to markdown

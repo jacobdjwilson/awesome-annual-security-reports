@@ -1,12 +1,14 @@
 name: VirusTotal Security Scan
 
 on:
-  push:
-    branches:
-      - main
-      - development
-    paths:
-      - 'Annual Security Reports/**'
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      retries:
+        description: 'Number of retries'
+        required: false
+        type: number
+        default: 0
 
 jobs:
   security-scan:
@@ -123,112 +125,100 @@ jobs:
                   
                   # Check file size limit (VirusTotal has a 32MB limit for free API, 650MB for premium)
                   if file_size_bytes > 32 * 1024 * 1024:
-                      print(f"Warning: File size ({file_size_mb:.2f} MB) exceeds free API limit (32 MB)")
-                      # Do not attempt upload if it exceeds the free tier limit, as it will likely fail
-                      return {"status": "failed", "reason": "File size exceeds 32MB limit for free accounts"}
-                  
-                  # Calculate file hash first to check if it's already been scanned
+                      print(f"Warning: File size ({file_size_mb:.2f} MB) exceeds free API limit (32 MB). Skipping.")
+                      return {"status": "skipped", "reason": "File size exceeds 32MB limit for free accounts"}
+
                   file_hash = calculate_file_hash(file_path)
                   print(f"File SHA256: {file_hash}")
-                  
-                  # First, check if file has been scanned before
-                  print("Checking if file has been scanned before...")
-                  lookup_response = requests.get(
-                      f"{API_BASE_URL}/files/{file_hash}",
-                      headers=headers,
-                      timeout=30
-                  )
-                  
-                  scan_id = None
-                  existing_scan = False
-                  
-                  if lookup_response.status_code == 200:
-                      print("File found in VirusTotal database, using existing scan results")
-                      existing_scan = True
-                      scan_data = lookup_response.json()
-                  elif lookup_response.status_code == 404:
-                      print("File not found in database, uploading for new scan...")
-                      
-                      # Submit file for scanning
-                      print("Submitting file for scan...")
-                      with open(file_path, 'rb') as f:
-                          files = {"file": (os.path.basename(file_path), f, "application/octet-stream")}
-                          
-                          # Submit the file
-                          response = requests.post(
-                              f"{API_BASE_URL}/files",
+
+                  # Retry mechanism for API calls
+                  for attempt in range(3):
+                      try:
+                          print(f"Checking if file has been scanned before (attempt {attempt + 1}/3)...")
+                          lookup_response = requests.get(
+                              f"{API_BASE_URL}/files/{file_hash}",
                               headers=headers,
-                              files=files,
-                              timeout=300  # 5-minute timeout for upload
+                              timeout=30
                           )
-                      
-                      if response.status_code != 200:
-                          print(f"Error: File upload failed with status {response.status_code}")
-                          print(f"Response: {response.text}")
-                          return {"status": "failed", "reason": f"File upload failed (Status: {response.status_code})"}
-                      
-                      # Get the scan ID
-                      upload_result = response.json()
-                      scan_id = upload_result.get('data', {}).get('id')
-                      
-                      if not scan_id:
-                          print("Error: No scan ID in upload response")
-                          return {"status": "failed", "reason": "No scan ID in upload response"}
-                      
-                      print(f"File uploaded successfully. Analysis ID: {scan_id}")
-                      
-                      # Wait for scan to complete
-                      print("Waiting for scan to complete...")
-                      
-                      # Poll for results - VirusTotal can take a while
-                      wait_times = [10, 20, 30, 60, 120]  # Total: 240 seconds (4 minutes)
-                      
-                      for attempt, wait_time in enumerate(wait_times, 1):
-                          if attempt > 1:
-                              print(f"Waiting {wait_time} seconds before next check...")
-                              time.sleep(wait_time)
+                          lookup_response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
                           
-                          print(f"Checking scan status (attempt {attempt}/{len(wait_times)})...")
-                          
+                          print("File found in VirusTotal database, using existing scan results.")
+                          scan_data = lookup_response.json()
+                          break # Exit retry loop on success
+                      except requests.exceptions.HTTPError as e:
+                          if e.response.status_code == 404:
+                              print("File not found in database, uploading for new scan...")
+                              scan_data = None # Ensure scan_data is None to proceed with upload
+                              break # Exit retry loop, 404 is not a retryable error
+                          print(f"HTTP error checking file (attempt {attempt + 1}/3): {e}")
+                          if attempt < 2:
+                              time.sleep((2 ** attempt) * 5) # 5s, 10s
+                      except requests.exceptions.RequestException as e:
+                          print(f"Request error checking file (attempt {attempt + 1}/3): {e}")
+                          if attempt < 2:
+                              time.sleep((2 ** attempt) * 5)
+                  else: # If loop completes without break
+                      return {"status": "failed", "reason": "Failed to check file status after multiple retries."}
+
+                  if scan_data is None: # File needs to be uploaded
+                      for attempt in range(3):
                           try:
-                              status_response = requests.get(
-                                  f"{API_BASE_URL}/analyses/{scan_id}",
-                                  headers=headers,
-                                  timeout=30
-                              )
+                              print(f"Submitting file for scan (attempt {attempt + 1}/3)...")
+                              with open(file_path, 'rb') as f:
+                                  files = {"file": (os.path.basename(file_path), f, "application/octet-stream")}
+                                  response = requests.post(
+                                      f"{API_BASE_URL}/files",
+                                      headers=headers,
+                                      files=files,
+                                      timeout=300
+                                  )
+                                  response.raise_for_status()
                               
-                              if status_response.status_code != 200:
-                                  print(f"Warning: Status check failed with code {status_response.status_code}")
-                                  continue
+                              upload_result = response.json()
+                              scan_id = upload_result.get('data', {}).get('id')
+                              if not scan_id:
+                                  raise ValueError("No scan ID in upload response")
                               
-                              analysis_result = status_response.json()
-                              status = analysis_result.get('data', {}).get('attributes', {}).get('status')
+                              print(f"File uploaded successfully. Analysis ID: {scan_id}")
                               
-                              if status == 'completed':
-                                  print("Scan completed!")
-                                  # Get the final scan results using the file hash
-                                  final_response = requests.get(
-                                      f"{API_BASE_URL}/files/{file_hash}",
+                              # Wait for scan to complete
+                              print("Waiting for scan to complete...")
+                              wait_times = [10, 20, 30, 60, 120]
+                              for poll_attempt, wait_time in enumerate(wait_times, 1):
+                                  print(f"Checking scan status (poll attempt {poll_attempt}/{len(wait_times)})...")
+                                  time.sleep(wait_time)
+                                  status_response = requests.get(
+                                      f"{API_BASE_URL}/analyses/{scan_id}",
                                       headers=headers,
                                       timeout=30
                                   )
+                                  status_response.raise_for_status()
                                   
-                                  if final_response.status_code == 200:
+                                  analysis_result = status_response.json()
+                                  status = analysis_result.get('data', {}).get('attributes', {}).get('status')
+                                  
+                                  if status == 'completed':
+                                      print("Scan completed!")
+                                      final_response = requests.get(
+                                          f"{API_BASE_URL}/files/{file_hash}",
+                                          headers=headers,
+                                          timeout=30
+                                      )
+                                      final_response.raise_for_status()
                                       scan_data = final_response.json()
-                                      break
+                                      break # Break from polling loop
                                   else:
-                                      print("Error retrieving final scan results")
-                                      return {"status": "failed", "reason": "Error retrieving final scan results"}
-                              else:
-                                  print(f"Scan status: {status}")
-                          except Exception as e:
-                              print(f"Error checking scan status: {e}")
-                      else:
-                          print("Scan did not complete within timeout period")
-                          return {"status": "failed", "reason": "Scan did not complete within timeout period"}
-                  else:
-                      print(f"Error checking file status: {lookup_response.status_code}")
-                      return {"status": "failed", "reason": f"Error checking file status (Status: {lookup_response.status_code})"}
+                                      print(f"Scan status: {status}")
+                              else: # If polling loop finishes without break
+                                  return {"status": "failed", "reason": "Scan did not complete within timeout period"}
+                              
+                              break # Break from upload retry loop
+                          except (requests.exceptions.RequestException, ValueError) as e:
+                              print(f"Error during file upload/scan (attempt {attempt + 1}/3): {e}")
+                              if attempt < 2:
+                                  time.sleep((2 ** attempt) * 10) # 10s, 20s
+                      else: # If upload retry loop finishes without break
+                          return {"status": "failed", "reason": "Failed to upload and scan file after multiple retries."}
                   
                   # Process scan results
                   attributes = scan_data.get('data', {}).get('attributes', {})

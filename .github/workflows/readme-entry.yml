@@ -1,16 +1,13 @@
 name: Update README with AI Generated Report Entry
 
 on:
-  workflow_run:
-    workflows: ["PDF to Markdown Conversion"]
-    types:
-      - completed
-    branches: 
-      - main
-      - development
   workflow_dispatch:
     inputs:
       force_update:
+  workflow_call:
+
+jobs:
+  update-readme:
         description: 'Force update all markdown files'
         required: false
         default: 'false'
@@ -631,6 +628,13 @@ jobs:
                       # Save summary for PR creation
                       with open("pr_summary.txt", "w") as f:
                           f.write(summary_text)
+
+                      # Save report title for commit message
+                      if len(processed_files) == 1:
+                          org_name, _, report_title = analyzer.extract_info_from_path(processed_files[0])
+                          commit_title = f"Add {org_name} - {report_title} Report ({analysis['year']})"
+                          with open("commit_title.txt", "w") as f:
+                              f.write(commit_title)
                       
                       # Create debug artifact
                       debug_info = {
@@ -688,7 +692,11 @@ jobs:
           fi
           
           # Commit changes
-          git commit -m "✍ Update README with new security reports
+          COMMIT_TITLE="✍ Update README with new security reports"
+          if [ -f "commit_title.txt" ]; then
+            COMMIT_TITLE=$(cat commit_title.txt)
+          fi
+          git commit -m "$COMMIT_TITLE
           
           $(cat pr_summary.txt)"
           

@@ -1,0 +1,31 @@
+name: Report Processing Orchestrator
+
+on:
+  push:
+    branches:
+      - main
+      - development
+    paths:
+      - 'Annual Security Reports/**/*.pdf'
+  workflow_dispatch:
+
+jobs:
+  pdf-to-markdown:
+    uses: ./.github/workflows/pdf-markdown-convert.yml
+    secrets: inherit
+    with:
+      retries: 3
+
+  virus-total-scan:
+    needs: pdf-to-markdown
+    if: success()
+    uses: ./.github/workflows/virus-total-scan.yml
+    secrets: inherit
+    with:
+      retries: 3
+
+  update-readme:
+    needs: [pdf-to-markdown, virus-total-scan]
+    if: success()
+    uses: ./.github/workflows/readme-entry.yml
+    secrets: inherit
