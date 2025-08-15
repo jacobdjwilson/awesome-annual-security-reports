@@ -8,7 +8,7 @@ on:
         description: 'Number of retries'
         required: false
         type: number
-        default: 0
+        default: 0pro
 
 jobs:
   convert-pdf-to-markdown:
@@ -200,12 +200,18 @@ jobs:
                       
                       if response.prompt_feedback:
                           print(f"Prompt feedback: {response.prompt_feedback}")
+                          if response.prompt_feedback.block_reason:
+                              print(f"Prompt blocked due to: {response.prompt_feedback.block_reason}")
+                          if response.prompt_feedback.safety_ratings:
+                              print(f"Prompt safety ratings: {response.prompt_feedback.safety_ratings}")
 
                       if response.candidates:
                           for i, candidate in enumerate(response.candidates):
                               print(f"Candidate {i} finish reason: {candidate.finish_reason}")
                               if candidate.safety_ratings:
                                   print(f"Candidate {i} safety ratings: {candidate.safety_ratings}")
+                              if not candidate.content.parts:
+                                  print(f"Candidate {i} has no content parts.")
                       
                       if response.text:
                           print(f"Successfully generated markdown ({len(response.text)} characters)")
@@ -213,8 +219,13 @@ jobs:
                       
                       # If no text, raise an error to trigger retry
                       error_message = "No valid response text from AI."
-                      if response.candidates and response.candidates[0].finish_reason:
-                          error_message += f" Finish reason: {response.candidates[0].finish_reason}."
+                      if response.candidates:
+                          for i, candidate in enumerate(response.candidates):
+                              error_message += f" Candidate {i} finish reason: {candidate.finish_reason}."
+                              if candidate.safety_ratings:
+                                  error_message += f" Candidate {i} safety ratings: {candidate.safety_ratings}."
+                              if not candidate.content.parts:
+                                  error_message += f" Candidate {i} has no content parts."
                       raise ValueError(error_message)
 
                   except Exception as e:
@@ -259,9 +270,21 @@ jobs:
               organization_url = None
               
               if google_search_api_key and google_cse_id:
-                  search_query = f"{organization_name} {report_title} report"
-                  print(f"Performing Google search for: '{search_query}'")
-                  organization_url = perform_google_search(search_query, google_search_api_key, google_cse_id)
+                  # Construct a more robust search query
+                  search_terms = []
+                  if organization_name:
+                      search_terms.append(organization_name)
+                  if report_title and report_title != organization_name: # Avoid redundancy
+                      search_terms.append(report_title)
+                  search_terms.append("official report") # Add a general term for better results
+                  
+                  search_query = " ".join(search_terms)
+                  
+                  if search_query.strip():
+                      print(f"Performing Google search for: '{search_query}'")
+                      organization_url = perform_google_search(search_query, google_search_api_key, google_cse_id)
+                  else:
+                      print("Search query is empty. Skipping URL search.")
               else:
                   print("Google Search API keys not provided. Skipping URL search.")
               
