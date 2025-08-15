@@ -693,12 +693,23 @@ jobs:
           if [ -f "commit_title.txt" ]; then
             COMMIT_TITLE=$(cat commit_title.txt)
           fi
-          git commit -m "$COMMIT_TITLE
-          
-          $(cat pr_summary.txt)"
+          git commit -m "$COMMIT_TITLE"
           
           # Push changes to the current branch
           git push origin ${{ steps.branch.outputs.current_branch }}
+
+      - name: 🚀 Create Pull Request
+        if: success() && github.event_name == 'push' && hashFiles('pr_summary.txt') != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_BODY=$(cat pr_summary.txt)
+          PR_TITLE="Automated README Update"
+          if [ -f "commit_title.txt" ]; then
+            PR_TITLE=$(cat commit_title.txt)
+          fi
+          
+          gh pr create --title "$PR_TITLE" --body "$PR_BODY" --base main --head ${{ steps.branch.outputs.current_branch }} || echo "Failed to create PR, possibly already exists or no changes."
 
       - name: 📋 Summary
         if: always()
