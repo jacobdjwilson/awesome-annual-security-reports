@@ -4,14 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       force_update:
-  workflow_call:
-
-jobs:
-  update-readme:
         description: 'Force update all markdown files'
         required: false
         default: 'false'
         type: boolean
+  workflow_call:
 
 permissions:
   contents: write
