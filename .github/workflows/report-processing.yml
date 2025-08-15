@@ -10,7 +10,31 @@ on:
   workflow_dispatch:
 
 jobs:
+  check-for-added-pdfs:
+    runs-on: ubuntu-latest
+    outputs:
+      new_pdfs_added: ${{ steps.check.outputs.new_pdfs_added }}
+    steps:
+      - name: 🔍 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 📝 Check for Added PDF Files
+        id: check
+        run: |
+          ADDED_PDFS=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} | grep 'Annual Security Reports/.*\.pdf')
+          if [ -n "$ADDED_PDFS" ]; then
+            echo "new_pdfs_added=true" >> $GITHUB_OUTPUT
+            echo "✅ New PDF files detected."
+          else
+            echo "new_pdfs_added=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No new PDF files detected."
+          fi
+
   pdf-to-markdown:
+    needs: check-for-added-pdfs
+    if: ${{ github.event_name == 'workflow_dispatch' || needs.check-for-added-pdfs.outputs.new_pdfs_added == 'true' }}
     uses: ./.github/workflows/pdf-markdown-convert.yml
     secrets: inherit
     with:
@@ -18,7 +42,7 @@ jobs:
 
   virus-total-scan:
     needs: pdf-to-markdown
-    if: success()
+    if: success() && (github.event_name == 'workflow_dispatch' || needs.check-for-added-pdfs.outputs.new_pdfs_added == 'true')
     uses: ./.github/workflows/virus-total-scan.yml
     secrets: inherit
     with:
@@ -26,6 +50,6 @@ jobs:
 
   update-readme:
     needs: [pdf-to-markdown, virus-total-scan]
-    if: success()
+    if: success() && (github.event_name == 'workflow_dispatch' || needs.check-for-added-pdfs.outputs.new_pdfs_added == 'true')
     uses: ./.github/workflows/readme-entry.yml
     secrets: inherit
