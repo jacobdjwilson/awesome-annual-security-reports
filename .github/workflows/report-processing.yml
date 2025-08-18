@@ -27,7 +27,7 @@ jobs:
           # Use --diff-filter=A to only list added files
           # Use grep to filter for PDF files in 'Annual Security Reports/'
           # Use jq to format the list as a JSON array, ensuring it's always valid JSON
-          NEW_PDFS=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} | grep 'Annual Security Reports/.*\.pdf' | jq -R -s 'split("\n") | map(select(length > 0))')
+          NEW_PDFS=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} | grep 'Annual Security Reports/.*\.pdf' | jq -c -R -s 'split("\n") | map(select(length > 0))')
 
           # If NEW_PDFS is empty or contains only whitespace, set it to an empty JSON array
           if [ -z "$(echo "$NEW_PDFS" | tr -d '[:space:]')" ] || [ "$NEW_PDFS" == "null" ]; then
