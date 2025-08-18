@@ -23,18 +23,13 @@ jobs:
       - name: 📝 Find Newly Added PDF Files
         id: check
         run: |
-          RAW_PDFS=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} | grep 'Annual Security Reports/.*\.pdf')
-          echo "DEBUG: Raw PDFs found: $RAW_PDFS"
-          
-          if [ -z "$RAW_PDFS" ]; then
+          ADDED_PDFS=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} | grep 'Annual Security Reports/.*\.pdf' | jq -c -R -s 'split("\n") | map(select(length > 0))')
+          if [ -z "$ADDED_PDFS" ] || [ "$ADDED_PDFS" == "[]" ]; then
             ADDED_PDFS="[]"
-            echo "ℹ️ No new PDF files detected. Setting new_pdfs to empty JSON array."
+            echo "ℹ️ No new PDF files detected."
           else
-            # Convert each line to a JSON string and then combine into a JSON array
-            ADDED_PDFS=$(echo "$RAW_PDFS" | jq -R -s 'split("\n") | map(select(length > 0))')
             echo "✅ New PDF files detected: $ADDED_PDFS"
           fi
-          echo "DEBUG: Final new_pdfs output: $ADDED_PDFS"
           echo "new_pdfs=$ADDED_PDFS" >> $GITHUB_OUTPUT
 
   virus-total-scan:
