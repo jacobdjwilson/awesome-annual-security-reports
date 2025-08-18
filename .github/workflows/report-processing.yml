@@ -23,7 +23,7 @@ jobs:
       - name: 📝 Find Newly Added PDF Files
         id: check
         run: |
-          ADDED_PDFS=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} | grep 'Annual Security Reports/.*\.pdf' | jq -R . | jq -s .)
+          ADDED_PDFS=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} | grep 'Annual Security Reports/.*\.pdf' | jq -R -s .)
           echo "new_pdfs=$ADDED_PDFS" >> $GITHUB_OUTPUT
           if [ -n "$ADDED_PDFS" ]; then
             echo "✅ New PDF files detected: $ADDED_PDFS"
