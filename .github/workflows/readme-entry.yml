@@ -1,6 +1,13 @@
 name: Update README with AI Generated Report Entry
 
 on:
+  workflow_run:
+    workflows: ["PDF to Markdown Conversion"]
+    types:
+      - completed
+    branches: 
+      - main
+      - development
   workflow_dispatch:
     inputs:
       force_update:
@@ -8,7 +15,6 @@ on:
         required: false
         default: 'false'
         type: boolean
-  workflow_call:
 
 permissions:
   contents: write
@@ -17,7 +23,7 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     
     steps:
       - name: 🔍 Checkout Repository
@@ -625,13 +631,6 @@ jobs:
                       # Save summary for PR creation
                       with open("pr_summary.txt", "w") as f:
                           f.write(summary_text)
-
-                      # Save report title for commit message
-                      if len(processed_files) == 1:
-                          org_name, _, report_title = analyzer.extract_info_from_path(processed_files[0])
-                          commit_title = f"Add {org_name} - {report_title} Report ({analysis['year']})"
-                          with open("commit_title.txt", "w") as f:
-                              f.write(commit_title)
                       
                       # Create debug artifact
                       debug_info = {
@@ -689,27 +688,12 @@ jobs:
           fi
           
           # Commit changes
-          COMMIT_TITLE="✍ Update README with new security reports"
-          if [ -f "commit_title.txt" ]; then
-            COMMIT_TITLE=$(cat commit_title.txt)
-          fi
-          git commit -m "$COMMIT_TITLE"
+          git commit -m "✍ Update README with new security reports
+          
+          $(cat pr_summary.txt)"
           
           # Push changes to the current branch
           git push origin ${{ steps.branch.outputs.current_branch }}
-
-      - name: 🚀 Create Pull Request
-        if: success() && github.event_name == 'push' && hashFiles('pr_summary.txt') != ''
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          PR_BODY=$(cat pr_summary.txt)
-          PR_TITLE="Automated README Update"
-          if [ -f "commit_title.txt" ]; then
-            PR_TITLE=$(cat commit_title.txt)
-          fi
-          
-          gh pr create --title "$PR_TITLE" --body "$PR_BODY" --base main --head ${{ steps.branch.outputs.current_branch }} || echo "Failed to create PR, possibly already exists or no changes."
 
       - name: 📋 Summary
         if: always()
