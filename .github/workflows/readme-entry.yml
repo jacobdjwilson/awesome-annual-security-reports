@@ -186,6 +186,9 @@ jobs:
                   self.current_model = None
                   self._setup_ai()
                   
+                  # List of acronyms that should always be fully capitalized
+                  self.acronyms = ["AI", "IT", "API", "ML", "IoT", "GRC", "IAM", "SSO", "MFA", "AWS", "GCP", "VPN", "IDS", "IPS", "DDoS", "DLP", "MDM", "SOC", "SIEM", "SAST", "DAST"]
+
                   # Keyword mapping for categorization
                   self.keyword_mapping = {
                       'Identity and Access Management': ['identity', 'access', 'authentication', 'authorization', 'IAM', 'SSO', 'MFA'],
@@ -264,9 +267,17 @@ jobs:
                   org_name = org_name.replace('_', ' ').replace('-', ' ')
                   org_name = ' '.join(word.capitalize() for word in org_name.split())
                   
-                  # Clean up report title
+                  # Clean up report title and apply acronym capitalization
                   report_title = report_title.replace('_', ' ').replace('-', ' ')
-                  report_title = ' '.join(word.capitalize() for word in report_title.split())
+                  
+                  processed_title_words = []
+                  for word in report_title.split():
+                      if word.upper() in self.acronyms:
+                          processed_title_words.append(word.upper())
+                      else:
+                          processed_title_words.append(word.capitalize())
+                  
+                  report_title = ' '.join(processed_title_words)
                   
                   return org_name, year, report_title
                   
