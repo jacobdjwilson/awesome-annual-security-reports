@@ -52,6 +52,10 @@ jobs:
           echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
           echo "📍 Current branch: $BRANCH"
 
+      - name: ⏳ Wait for Artifacts (30s)
+        if: github.event.name == 'workflow_run'
+        run: sleep 30
+
       - name: 📥 Download Artifacts
         if: github.event.name == 'workflow_run'
         uses: actions/download-artifact@v4
