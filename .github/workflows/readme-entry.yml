@@ -39,7 +39,7 @@ jobs:
 
       - name: 📦 Install Dependencies
         run: |
-          pip install google-generativeai pyyaml mistune gitpython requests tenacity
+          pip install google-generativeai pyyaml mistune gitpython requests
 
       - name: 🌿 Detect Current Branch
         id: branch
@@ -289,14 +289,10 @@ jobs:
                   # Truncate content for AI processing
                   truncated_content = content[:15000] if len(content) > 15000 else content
                   
-                  @retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=1, min=4, max=10), retry=retry_if_exception_type(Exception))
-                  def _generate_content_with_retry(prompt):
-                      return self.current_model.generate_content(prompt)
-
                   try:
                       # Generate summary using the custom prompt
                       summary_prompt = f"{base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{truncated_content}"
-                      summary_response = _generate_content_with_retry(summary_prompt)
+                      summary_response = self.current_model.generate_content(summary_prompt)
                       summary = summary_response.text if summary_response.text else "No summary generated"
                       
                       # Clean up the summary (remove extra whitespace, limit length)
@@ -314,7 +310,7 @@ jobs:
                       
                       # Determine report type
                       type_prompt = f"Based on this content, is this an 'Analysis' report (detailed technical analysis) or 'Survey' report (industry survey/statistics)? Respond with only 'Analysis' or 'Survey'. Content preview: {truncated_content[:1000]}"
-                      type_response = _generate_content_with_retry(type_prompt)
+                      type_response = self.current_model.generate_content(type_prompt)
                       report_type = "Analysis" if "analysis" in type_response.text.lower() else "Survey"
                       
                       # Categorize by topic
@@ -346,7 +342,7 @@ jobs:
                   # Return category with highest score, or default
                   best_category = max(scores, key=scores.get) if scores else "Security Operations"
                   return best_category if scores[best_category] > 0 else "Security Operations"
-                      
+                  
               def _fallback_analysis(self, content: str, org_name: str, year: str, report_title: str) -> Dict:
                   """Fallback analysis without AI"""
                   category = self._categorize_content(content)
