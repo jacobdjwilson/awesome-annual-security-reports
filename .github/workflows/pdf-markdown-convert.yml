@@ -151,14 +151,64 @@ jobs:
                   print(f"Error extracting text from PDF: {str(e)}")
                   raise
           
-          def perform_google_search(query, api_key, cse_id):
-              """Performs a Google Custom Search and returns the first result URL."""
+          def perform_google_search(organization_name, report_title, pdf_path, api_key, cse_id):
+              """
+              Performs a Google Custom Search to find the official report URL,
+              excluding direct PDF links, CDNs, and media outlets.
+              """
               try:
                   service = build("customsearch", "v1", developerKey=api_key)
-                  res = service.cse().list(q=query, cx=cse_id, num=1).execute()
+
+                  # Extract year from pdf_path
+                  year_match = re.search(r'Annual Security Reports/(\d{4})/', str(pdf_path))
+                  year = year_match.group(1) if year_match else ""
+
+                  # Derive main domain from organization name for site-specific search
+                  # Simple heuristic: remove spaces and common suffixes, then add .com
+                  # This might need more sophisticated logic for edge cases
+                  derived_domain = ""
+                  if organization_name:
+                      # Basic cleaning and domain inference
+                      cleaned_name = re.sub(r'[^a-zA-Z0-9]', '', organization_name).lower()
+                      if "security" in cleaned_name:
+                          cleaned_name = cleaned_name.replace("security", "")
+                      if "inc" in cleaned_name:
+                          cleaned_name = cleaned_name.replace("inc", "")
+                      if "corp" in cleaned_name:
+                          cleaned_name = cleaned_name.replace("corp", "")
+                      
+                      # Attempt to find a common domain for known organizations
+                      domain_map = {
+                          "guidepoint": "guidepointsecurity.com",
+                          # Add more mappings as needed
+                      }
+                      derived_domain = domain_map.get(cleaned_name, f"{cleaned_name}.com")
+                      
+                      # Fallback if the derived domain seems too generic or short
+                      if len(derived_domain) < 10 and "." not in derived_domain: # Heuristic for potentially bad domain
+                          derived_domain = "" # Don't use a potentially bad domain filter
+
+                  # Construct the search query
+                  search_query = f'"{organization_name} {report_title} {year} report" -inurl:pdf'
+                  if derived_domain:
+                      search_query += f' site:{derived_domain}'
+                  
+                  print(f"Performing Google search for: '{search_query}'")
+
+                  # Fetch multiple results to filter
+                  res = service.cse().list(q=search_query, cx=cse_id, num=5).execute() # Fetch up to 5 results
+
                   if 'items' in res and len(res['items']) > 0:
-                      print(f"Google Search found URL: {res['items'][0]['link']}")
-                      return res['items'][0]['link']
+                      for item in res['items']:
+                          link = item['link']
+                          # Exclude known CDN/media patterns (can be expanded)
+                          if not re.search(r'\.(cdn|media|assets)\.', link, re.IGNORECASE) and \
+                             not re.search(r'(\.pdf|\.doc|\.docx)$', link, re.IGNORECASE) and \
+                             not re.search(r'(issuu\.com|slideshare\.net|scmagazine\.com|darkreading\.com)', link, re.IGNORECASE):
+                              print(f"Google Search found suitable URL: {link}")
+                              return link
+                      print("No suitable Google search results found after filtering.")
+                      return None
                   else:
                       print("No Google search results found.")
                       return None
@@ -168,7 +218,6 @@ jobs:
               except Exception as e:
                   print(f"An unexpected error occurred during Google Search: {e}")
                   return None
-          
           def generate_markdown_with_ai(pdf_text, prompt_text, organization_url=None):
               try:
                   print(f"Generating markdown with {MODEL}...")
@@ -251,9 +300,7 @@ jobs:
               organization_url = None
               
               if google_search_api_key and google_cse_id:
-                  search_query = f"{organization_name} {report_title} report"
-                  print(f"Performing Google search for: '{search_query}'")
-                  organization_url = perform_google_search(search_query, google_search_api_key, google_cse_id)
+                  organization_url = perform_google_search(organization_name, report_title, pdf_path, google_search_api_key, google_cse_id)
               else:
                   print("Google Search API keys not provided. Skipping URL search.")
               
