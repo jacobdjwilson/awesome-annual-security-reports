@@ -2,7 +2,7 @@ name: 📝 Update README with AI Generated Report Entry
 
 on:
   workflow_run:
-    workflows: ["PDF to Markdown Conversion"]
+    workflows: ["📎 PDF to Markdown Conversion"]
     types:
       - completed
     branches: 
