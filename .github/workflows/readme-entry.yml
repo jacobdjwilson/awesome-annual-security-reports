@@ -376,8 +376,9 @@ jobs:
               def __init__(self, readme_parser: ReadmeParser):
                   self.parser = readme_parser
                   
-              def add_report_entry(self, analysis: Dict, file_path: str) -> Tuple[bool, str, int]:
+              def add_report_entry(self, analysis: Dict, file_path: str) -> Tuple[bool, str, int, str]:
                   """Add or update a report entry in the README"""
+                  action_taken = ""
                   try:
                       # Determine the logical main section (e.g., "Analysis Reports")
                       logical_main_section = f"{analysis['type']} Reports"
@@ -441,9 +442,10 @@ jobs:
                               # Use re.sub for robust replacement of the entire line
                               updated_section = re.sub(existing_entry_pattern, entry_text, updated_section, 1, re.MULTILINE)
                               entry_replaced = True
+                              action_taken = "Updated"
                           else:
                               print(f"ℹ️ Existing entry for {analysis['organization']} - {analysis['title']} ({existing_year}) is newer or same year as new report ({new_report_year}). No update needed.")
-                              return False, "", -1 # Indicate no update was performed
+                              return False, "", -1, "" # Indicate no update was performed
                       
                       if not entry_replaced:
                           print(f"➕ Adding new entry for {analysis['organization']} - {analysis['title']} ({analysis['year']})")
@@ -463,6 +465,7 @@ jobs:
                               updated_section = '\n'.join(intro_lines) + '\n\n' + '\n'.join(entries) + '\n'
                           else:
                               updated_section = '\n'.join(entries) + '\n'
+                          action_taken = "Added"
                       
                       # Update the full content
                       self.parser.content = (
@@ -480,11 +483,11 @@ jobs:
                               inserted_line_number = i + 1
                               break
                       
-                      return True, target_entry_text, inserted_line_number
+                      return True, target_entry_text, inserted_line_number, action_taken
                       
                   except Exception as e:
                       print(f"❌ Error updating README: {e}")
-                      return False, "", -1
+                      return False, "", -1, ""
                       
               def _format_entry(self, analysis: Dict, file_path: str, existing_pdf_url: Optional[str] = None) -> str:
                   """Format entry according to specified template"""
@@ -618,10 +621,10 @@ jobs:
                       analysis = analyzer.analyze_content(content, org_name, year, report_title)
                       
                       # Update README
-                      success, entry_text, line_number = updater.add_report_entry(analysis, file_path)
+                      success, entry_text, line_number, action_taken = updater.add_report_entry(analysis, file_path)
                       if success:
                           processed_files.append(file_path)
-                          summaries.append(f"✅ Added: {entry_text}\n   (Line: {line_number})")
+                          summaries.append(f"✍ {action_taken} {analysis['organization']} - {analysis['title']} ({analysis['year']})")
                           print(f"✅ Successfully processed {org_name} ({year})")
                       else:
                           print(f"❌ Failed to update README for {org_name} ({year})")
@@ -636,8 +639,7 @@ jobs:
                       print(f"\n✅ Successfully updated README.md with {len(processed_files)} reports")
                       
                       # Create summary for PR
-                      summary_text = f"Updated README.md with {len(processed_files)} security reports:\n\n"
-                      summary_text += "\n".join(summaries)
+                      summary_text = "\n".join(summaries)
                       
                       # Save summary for PR creation
                       with open("pr_summary.txt", "w") as f:
@@ -699,9 +701,7 @@ jobs:
           fi
           
           # Commit changes
-          git commit -m "✍ Update README with new security reports
-          
-          $(cat pr_summary.txt)"
+          git commit -m "$(cat pr_summary.txt)"
           
           # Push changes to the current branch
           git push origin ${{ steps.branch.outputs.current_branch }}
