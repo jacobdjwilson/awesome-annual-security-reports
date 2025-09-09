@@ -1,4 +1,4 @@
-name: Awesome Lint
+name: 🧹 Awesome Lint
 
 on:
   push:
@@ -13,21 +13,21 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: ✅ Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           
-      - name: Setup Node.js
+      - name: 🛠️ Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           
-      - name: Install awesome-lint
+      - name: 📦 Install awesome-lint
         run: npm install --global awesome-lint
         
       # Run lint check and capture errors
-      - name: Run awesome-lint and process errors
+      - name: 🔍 Run awesome-lint and process errors
         id: lint_check
         run: |
           # Capture full awesome-lint output
@@ -54,14 +54,14 @@ jobs:
           done
       
       # Check for lint ignore directives
-      - name: Check if lint exceptions exist
+      - name: ℹ️ Check if lint exceptions exist
         run: |
           if grep -q "lint ignore" README.md; then
             echo "Note: README.md contains lint ignore directives. This is expected for certain cases."
           fi
       
       # Final check - fail the workflow if linting failed
-      - name: Determine workflow status
+      - name: 📊 Determine workflow status
         id: status_check
         run: |
           if grep -q "✖" lint_output.txt; then
@@ -71,10 +71,10 @@ jobs:
             exit 1
           else
             echo "lint_status=succeeded" >> $GITHUB_OUTPUT
-            echo "Linting succeeded!"
+            echo "✅ Linting succeeded!"
           fi
 
-      - name: Summary
+      - name: 📝 Summary
         if: always()
         run: |
           echo "## 🧹 Awesome Lint Summary" >> $GITHUB_STEP_SUMMARY
@@ -86,11 +86,11 @@ jobs:
           if [ "${{ steps.status_check.outputs.lint_status }}" == "succeeded" ]; then
             echo "### ✅ Linting Succeeded" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "The `README.md` file passed all linting checks." >> $GITHUB_STEP_SUMMARY
+            echo "The \`README.md\` file passed all linting checks." >> $GITHUB_STEP_SUMMARY
           else
             echo "### ❌ Linting Failed" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "Linting errors were found in `README.md`. Please review the workflow logs for details and fix the issues." >> $GITHUB_STEP_SUMMARY
+            echo "Linting errors were found in \`README.md\`. Please review the workflow logs for details and fix the issues." >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "#### Detected Errors:" >> $GITHUB_STEP_SUMMARY
             echo "\`\`\`" >> $GITHUB_STEP_SUMMARY

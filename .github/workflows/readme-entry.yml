@@ -1,4 +1,4 @@
-name: Update README with AI Generated Report Entry
+name: 📝 Update README with AI Generated Report Entry
 
 on:
   workflow_run:
@@ -44,7 +44,7 @@ jobs:
       - name: 🌿 Detect Current Branch
         id: branch
         run: |
-          if [ "${{ github.event_name }}" == "workflow_run" ]; then
+          if [ "${{ github.event.name }}" == "workflow_run" ]; then
             BRANCH="${{ github.event.workflow_run.head_branch }}"
           else
             BRANCH="${{ github.ref_name }}"
@@ -53,7 +53,7 @@ jobs:
           echo "📍 Current branch: $BRANCH"
 
       - name: 📥 Download Artifacts
-        if: github.event_name == 'workflow_run'
+        if: github.event.name == 'workflow_run'
         uses: actions/download-artifact@v4
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -442,7 +442,7 @@ jobs:
                               # Use re.sub for robust replacement of the entire line
                               updated_section = re.sub(existing_entry_pattern, entry_text, updated_section, 1, re.MULTILINE)
                               entry_replaced = True
-                              action_taken = "Updated"
+                              action_taken = "📝 Updated"
                           else:
                               print(f"ℹ️ Existing entry for {analysis['organization']} - {analysis['title']} ({existing_year}) is newer or same year as new report ({new_report_year}). No update needed.")
                               return False, "", -1, "" # Indicate no update was performed
@@ -465,7 +465,7 @@ jobs:
                               updated_section = '\n'.join(intro_lines) + '\n\n' + '\n'.join(entries) + '\n'
                           else:
                               updated_section = '\n'.join(entries) + '\n'
-                          action_taken = "Added"
+                          action_taken = "➕ Added"
                       
                       # Update the full content
                       self.parser.content = (
@@ -712,7 +712,7 @@ jobs:
           echo "## 🎯 Workflow Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Branch**: ${{ steps.branch.outputs.current_branch }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Trigger**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger**: ${{ github.event.name }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
           if [ -f "debug_info.json" ]; then
@@ -740,6 +740,6 @@ jobs:
           echo "🔗 Useful Links" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ github.event_name }}" == "workflow_run" ]; then
+          if [ "${{ github.event.name }}" == "workflow_run" ]; then
             echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
           fi

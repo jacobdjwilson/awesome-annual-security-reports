@@ -1,4 +1,4 @@
-name: VirusTotal Security Scan
+name: 🛡️ VirusTotal Security Scan
 
 on:
   push:
@@ -14,20 +14,20 @@ jobs:
     name: Scan Security Reports
     
     steps:
-      - name: Checkout repository
+      - name: ✅ Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
           
-      - name: Set up Python
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: pip install requests
 
-      - name: Find changed files
+      - name: 🔍 Find changed files
         id: find-files
         run: |
           # Get all changed files (added, modified, deleted, renamed)
@@ -73,7 +73,7 @@ jobs:
             echo "No relevant security report files changed."
           fi
 
-      - name: Scan changed files with VirusTotal
+      - name: ⚙️ Scan changed files with VirusTotal
         if: env.CHANGED_FILES != '' || env.DELETED_FILES != ''
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
@@ -408,10 +408,10 @@ jobs:
                       for d_file in deleted_files:
                           f.write(f"- {d_file} (skipped scan)\n")
                   
-                  f.write(f"\n\n### Summary\n")
-                  f.write(f"- Successfully scanned {success_scan_count} out of {len(files_to_scan)} files requiring scan.\n")
-                  f.write(f"- {len(failed_scans)} files failed to scan.\n")
-                  f.write(f"- {len(deleted_files)} files were deleted and skipped from scanning.\n")
+                  f.write(f"\n\n### 📝 Summary\n")
+                  f.write(f"- ✅ Successfully scanned {success_scan_count} out of {len(files_to_scan)} files requiring scan.\n")
+                  f.write(f"- ❌ {len(failed_scans)} files failed to scan.\n")
+                  f.write(f"- 🗑️ {len(deleted_files)} files were deleted and skipped from scanning.\n")
                   
                   # Add statistics for scanned files
                   if results:
@@ -419,19 +419,19 @@ jobs:
                       suspicious_files = sum(1 for r in results if r["verdict"] == "Suspicious")
                       malicious_files = sum(1 for r in results if r["verdict"] == "Malicious")
                       
-                      f.write(f"- Clean files: {clean_files}\n")
-                      f.write(f"- Suspicious files: {suspicious_files}\n")
-                      f.write(f"- Malicious files: {malicious_files}\n")
+                      f.write(f"- ✅ Clean files: {clean_files}\n")
+                      f.write(f"- 🟠 Suspicious files: {suspicious_files}\n")
+                      f.write(f"- 🔴 Malicious files: {malicious_files}\n")
                   
                   # Add additional info about VirusTotal
-                  f.write("\n### About the Scan\n")
-                  f.write("- Files are scanned using the VirusTotal API v3\n")
-                  f.write("- Results are based on analysis from 70+ antivirus engines\n")
-                  f.write("- Files already in the VirusTotal database use existing scan results\n")
-                  f.write("- Visit the report links for complete analysis details\n")
+                  f.write("\n### ℹ️ About the Scan\n")
+                  f.write("- ⚙️ Files are scanned using the VirusTotal API v3\n")
+                  f.write("- 📊 Results are based on analysis from 70+ antivirus engines\n")
+                  f.write("- 💾 Files already in the VirusTotal database use existing scan results\n")
+                  f.write("- 🔗 Visit the report links for complete analysis details\n")
                   
                   # Add rate limit info
-                  f.write("\n### API Usage\n")
+                  f.write("\n### 📈 API Usage\n")
                   f.write("- This scan uses the VirusTotal public API\n")
                   f.write("- Rate limits: 4 requests per minute for free accounts\n")
               
@@ -447,10 +447,10 @@ jobs:
           chmod +x scan.py
           python scan.py || echo "Scan completed with some issues, but continuing workflow"
 
-      - name: No files to scan message
+      - name: 📝 No files to scan message
         if: env.CHANGED_FILES == '' && env.DELETED_FILES == ''
         run: |
           echo "No security report files were added, modified, or deleted in this push."
-          echo "## Security Scan Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🛡️ Security Scan Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "No security report files were changed in this push." >> $GITHUB_STEP_SUMMARY
