@@ -90,8 +90,8 @@ jobs:
             done
             
             # Extract file paths from artifacts
-            if [ -f "./artifacts/converted_file_info/converted_files.txt" ]; then
-              FILES_TO_PROCESS=$(cat ./artifacts/converted_file_info/converted_files.txt | head -20)
+            if [ -f "./artifacts/converted_files.txt" ]; then
+              FILES_TO_PROCESS=$(cat ./artifacts/converted_files.txt | head -20)
             fi
           else
             echo "📁 No artifacts found - scanning directory instead"
