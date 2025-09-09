@@ -52,49 +52,41 @@ jobs:
           echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
           echo "📍 Current branch: $BRANCH"
 
-      - name: 🐛 Debugging - Dump github.event
+      - name: 🔍 Find and Process New Markdown Entries
+        id: new_markdown_entries
         run: |
-          echo "github.event payload:"
-          echo "${{ toJSON(github.event) }}"
-          echo "github.event.workflow_run.id: ${{ github.event.workflow_run.id }}"
-          echo "github.event.workflow_run.run_id: ${{ github.event.workflow_run.run_id }}"
-          echo "github.event.workflow_run.run_number: ${{ github.event.workflow_run.run_number }}"
-          echo "github.event.workflow_run.workflow_id: ${{ github.event.workflow_run.workflow_id }}"
-          echo "github.event.workflow_run.workflow_name: ${{ github.event.workflow_run.workflow_name }}"
-          echo "github.event.workflow_run.head_sha: ${{ github.event.workflow_run.head_sha }}"
-          echo "github.event.workflow_run.head_branch: ${{ github.event.workflow_run.head_branch }}"
-
-      - name: ⏳ Wait for Artifacts (30s)
-        if: github.event.name == 'workflow_run'
-        run: sleep 30
-
-      - name: 📥 Download Artifacts
-        if: github.event.name == 'workflow_run'
-        uses: actions/download-artifact@v4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          run-id: ${{ github.event.workflow_run.id }}
-          path: ./artifacts
-        continue-on-error: true
-
-      - name: 🔍 Process Artifacts
-        id: artifacts
-        run: |
-          FILES_TO_PROCESS=""
+          echo "🔍 Identifying new Markdown files from pdf-markdown-convert.yml commits..."
           
-          if [ -d "./artifacts" ]; then
-            echo "📁 Found artifacts directory"
-            find ./artifacts -name "*.txt" -o -name "*.json" | while read file; do
-              echo "📄 Processing artifact: $file"
-              cat "$file" || echo "❌ Failed to read $file"
-            done
-            
-            # Extract file paths from artifacts
-            if [ -f "./artifacts/converted_files.txt" ]; then
-              FILES_TO_PROCESS=$(cat ./artifacts/converted_files.txt | head -20)
+          # Get the SHA of the commit that triggered this workflow
+          # For workflow_run, github.event.workflow_run.head_sha is the SHA of the commit that triggered the parent workflow
+          TRIGGERING_SHA="${{ github.event.workflow_run.head_sha }}"
+          
+          # Get the parent SHA of the triggering commit
+          # This is needed to perform a diff to find newly added/modified files
+          PARENT_SHA=$(git rev-parse "$TRIGGERING_SHA^1")
+          
+          echo "Triggering SHA: $TRIGGERING_SHA"
+          echo "Parent SHA: $PARENT_SHA"
+          
+          # Find new or modified markdown files in the 'Markdown Conversions' directory
+          # that were part of the commit that triggered the parent workflow
+          CHANGED_MARKDOWN_FILES=$(git diff --name-only "$PARENT_SHA" "$TRIGGERING_SHA" | grep -E "^Markdown Conversions/.*\.md$" || true)
+          
+          if [ -z "$CHANGED_MARKDOWN_FILES" ]; then
+            echo "⚠️ No new or modified Markdown files found in the triggering commit. Scanning entire directory for force_update."
+            # Fallback to scanning the entire directory if no specific changes are found
+            if [ "${{ github.event.inputs.force_update }}" == "true" ]; then
+              echo "📁 Force update is true. Scanning all Markdown Conversions."
+              FILES_TO_PROCESS=$(find "Markdown Conversions" -name "*.md" | head -20 || true)
+            else
+              echo "❌ No files to process. Exiting."
+              echo "files_to_process=" >> $GITHUB_OUTPUT
+              exit 0
             fi
           else
-            echo "📁 No artifacts found - scanning directory instead"
+            echo "📄 Found changed Markdown files:"
+            echo "$CHANGED_MARKDOWN_FILES"
+            FILES_TO_PROCESS=$(echo "$CHANGED_MARKDOWN_FILES" | head -20)
           fi
           
           echo "files_to_process<<EOF" >> $GITHUB_OUTPUT
@@ -105,7 +97,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FILES_FROM_ARTIFACTS: ${{ steps.artifacts.outputs.files_to_process }}
+          FILES_FROM_ARTIFACTS: ${{ steps.new_markdown_entries.outputs.files_to_process }}
           FORCE_UPDATE: ${{ github.event.inputs.force_update }}
         run: |
           python3 << 'EOF'
@@ -616,7 +608,7 @@ jobs:
               processed_files = []
               summaries = []
               
-              for file_path in files_to_process:
+              for file_path in files_to_to_process:
                   try:
                       print(f"\n🔍 Processing: {file_path}")
                       
@@ -762,3 +754,24 @@ jobs:
           if [ "${{ github.event.name }}" == "workflow_run" ]; then
             echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
           fi
+
+</file_content>
+
+Now that you have the latest state of the file, try the operation again with fewer, more precise SEARCH blocks. For large files especially, it may be prudent to try to limit yourself to <5 SEARCH/REPLACE blocks at a time, then wait for the user to respond with the result of the operation before following up with another replace_in_file call to make additional edits.
+(If you run into this error 3 times in a row, you may use the write_to_file tool as a fallback.)
+</error><environment_details>
+# VSCode Visible Files
+.github/workflows/readme-entry.yml
+
+# VSCode Open Tabs
+.github/workflows/readme-entry.yml
+
+# Current Time
+9/9/2025, 6:33:29 PM (America/New_York, UTC-4:00)
+
+# Context Window Usage
+286,000 / 1,048.576K tokens used (27%)
+
+# Current Mode
+ACT MODE
+</environment_details>
