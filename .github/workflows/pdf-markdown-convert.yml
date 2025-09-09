@@ -82,6 +82,7 @@ jobs:
           cat > process_pdfs.py << 'ENDPYTHONSCRIPT'
           import os
           import sys
+          import re
           import google.generativeai as genai
           from pathlib import Path
           import subprocess
@@ -460,6 +461,9 @@ jobs:
           
           # Run the Python script
           python process_pdfs.py pdf_paths.txt ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH"
+          
+          # Pull latest changes and rebase before pushing
+          git pull --rebase origin ${{ steps.find-pdfs.outputs.branch }}
           
           # Push changes
           git push https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF}
