@@ -1,64 +1,30 @@
-# AI THREAT 2025 LANDSCAPE REPORT
+# AI THREAT LANDSCAPE 2025 REPORT: NAVIGATING THE RISE OF AI RISKS
 
 ## Table of Contents
 - [Foreword](#foreword)
 - [Security for AI Survey Insights at a Glance](#security-for-ai-survey-insights-at-a-glance)
 - [AI Threat Landscape Timeline](#ai-threat-landscape-timeline)
 - [What’s New in AI](#whats-new-in-ai)
-  - [Multimodal Models](#multimodal-models)
-  - [Retrieval-Augmented Generation](#retrieval-augmented-generation)
-  - [Agentic AI](#agentic-ai)
-  - [Humanoid Robots](#humanoid-robots)
-  - [The Rise of Open-Weight Models](#the-rise-of-open-weight-models)
 - [Part 1: Risks Related to the Use of AI](#part-1-risks-related-to-the-use-of-ai)
-  - [The Use of AI in Cybercrime](#the-use-of-ai-in-cybercrime)
-  - [The Use of AI in Political Campaigns](#the-use-of-ai-in-political-campaigns)
-  - [Unintended Consequences of AI Use](#unintended-consequences-of-ai-use)
+  - [Cybercrime](#cybercrime)
+  - [Political Campaigns](#political-campaigns)
+  - [Unintended Consequences](#unintended-consequences)
 - [Part 2: Risks Faced by AI-based Systems](#part-2-risks-faced-by-ai-based-systems)
   - [Adversarial Machine Learning Attacks](#adversarial-machine-learning-attacks)
-    - [Model Evasion](#model-evasion)
-    - [Data Poisoning](#data-poisoning)
-    - [Model Backdooring](#model-backdooring)
-    - [Model Theft](#model-theft)
-  - [Attacks Against GenAI](#attacks-against-genai)
-    - [Prompt Injection](#prompt-injection)
-    - [Indirect Injection](#indirect-injection)
-    - [Hacking-as-a-Service](#hacking-as-a-service)
-    - [Privacy Attacks](#privacy-attacks)
-    - [Manipulating Gen AI Watermarks](#manipulating-gen-ai-watermarks)
+  - [Attacks Against Generative AI](#attacks-against-generative-ai)
   - [Supply Chain Security](#supply-chain-security)
-    - [Vulnerabilities in ML Serialization](#vulnerabilities-in-ml-serialization)
-    - [MLOps Platform Reconnaissance](#mlops-platform-reconnaissance)
-    - [Attacks Against AI Embedded in Devices](#attacks-against-ai-embedded-in-devices)
-    - [Abusing ML Services](#abusing-ml-services)
-    - [Hugging Face in Focus: Security Gaps in the Global AI Platform](#hugging-face-in-focus-security-gaps-in-the-global-ai-platform)
-    - [Abusing Hugging Face Conversion Bot](#abusing-hugging-face-conversion-bot)
-    - [Abusing Hugging Face Spaces](#abusing-hugging-face-spaces)
-    - [Account Typosquatting](#account-typosquatting)
-    - [Attacks Against ML Infrastructure](#attacks-against-ml-infrastructure)
-    - [GPU Attacks](#gpu-attacks)
-    - [Malicious Models in the Wild](#malicious-models-in-the-wild)
 - [Part 3: Advancements in Security for AI](#part-3-advancements-in-security-for-ai)
   - [AI Red Teaming Evolution](#ai-red-teaming-evolution)
-    - [Adversarial Tooling](#adversarial-tooling)
-    - [AI Red Teaming Best Practices](#ai-red-teaming-best-practices)
   - [Updates to Existing Defensive Frameworks](#updates-to-existing-defensive-frameworks)
-    - [What’s New in MITRE](#whats-new-in-mitre)
-    - [What’s New in OWASP](#whats-new-in-owasp)
-    - [What’s New in NIST](#whats-new-in-nist)
   - [New Security Initiatives](#new-security-initiatives)
-    - [Model Provenance & Cryptographic Signing](#model-provenance--cryptographic-signing)
-    - [AIBOM / MLBOM](#aibom--mlbom)
-    - [Coalition for Secure AI](#coalition-for-secure-ai)
-    - [Joint Cyber Defense Collaborative (JCDC)](#joint-cyber-defense-collaborative-jcdc)
-  - [New Guidance and Legislation](#new-guidance-and-legislation)
+  - [New Guidance & Legislation](#new-guidance--legislation)
 - [Part 4: Predictions and Recommendations](#part-4-predictions-and-recommendations)
-  - [Predictions for 2025](#predictions-for-2025)
-  - [Recommendations for the Security Practitioner](#recommendations-for-the-security-practitioner)
-- [HiddenLayer Resources](#hiddenlayer-resources)
-  - [PRODUCTS AND SERVICES](#products-and-services)
-  - [HIDDENLAYER RESEARCH](#hiddenlayer-research)
+- [Resources](#resources)
 - [About HiddenLayer](#about-hiddenlayer)
+
+---
+
+![AI Threat 2025 Landscape Report Cover Image](image_01.png)
 
 ## Foreword
 
@@ -75,7 +41,7 @@ Artiﬁcial intelligence remains the most vulnerable technology ever deployed at
 
 In this report, we explore the vulnerabilities introduced by these developments and their real-world consequences for commercial and federal sectors. We provide insights from IT security and data science leaders actively defending against these threats, along with predictions informed by HiddenLayer’s hands-on experience in AI security. Most importantly, we highlight the advancements in security controls essential for protecting AI in all its forms.
 
-As AI continues to drive progress, securing its future is a responsibility shared by developers, data scien- tists, and security professionals alike. This report is a crucial resource for understanding and mitigating AI risks in a rapidly shifting landscape.
+As AI continues to drive progress, securing its future is a responsibility shared by developers, data scien-tists, and security professionals alike. This report is a crucial resource for understanding and mitigating AI risks in a rapidly shifting landscape.
 
 We are proud to present the second annual HiddenLayer AI Threat Landscape Report, expanding on last year’s insights and charting the path forward for securing AI.
 
@@ -83,6 +49,8 @@ TITO
 
 CEO & Co-Founder
 (Unassisted by LLMs)
+
+![Signature of Tito, CEO & Co-Founder](image_02.png)
 
 ## Security for AI Survey Insights at a Glance
 
@@ -92,29 +60,25 @@ The 2025 survey results highlight this tension: while many IT leaders recognize 
 
 These insights come from a survey commissioned by HiddenLayer, where 250 IT decision-makers from a cross-section of industries shared insights into their organizations’ AI security practices. These leaders, responsible for securing or developing AI initiatives, offer a glimpse into their current challenges and efforts to strengthen their organizations from attack.
 
-**AI’s Critical Role in Business Success**
+### AI’s Critical Role in Business Success
 
-**89%**
-of IT leaders reported that most or all AI models in production are critical to their business’s success.
+![Infographic: AI's Critical Role in Business Success](image_03.png)
 
-**100%**
-stated that AI and ML projects are critical or important to revenue generation within the next 18 months (up from 98% last year).
+*   **89%** of IT leaders reported that most or all AI models in production are critical to their business’s success.
+*   **100%** stated that AI and ML projects are critical or important to revenue generation within the next 18 months (up from 98% last year).
 
-**Rising Security Breaches and Vulnerabilities**
+### Rising Security Breaches and Vulnerabilities
 
-**74%**
-of IT leaders reported to deﬁnitely know if they had an AI breach in 2024 (up from 67% reporting last year).
+![Infographic: Rising Security Breaches and Vulnerabilities](image_04.png)
 
-**75%**
-say AI attacks have increased or remained the same from the previous year.
+*   **74%** of IT leaders reported to deﬁnitely know if they had an AI breach in 2024 (up from 67% reporting last year).
+*   **75%** say AI attacks have increased or remained the same from the previous year.
 
-**Sources & Motivations of AI Attacks**
+### Sources & Motivations of AI Attacks
 
-**87%**
-reported being able to identify the source of the breach (up from 77% last year).
+*   **87%** reported being able to identify the source of the breach (up from 77% last year).
 
 **Type of AI Systems Attacked from Identiﬁed Breaches:**
-
 *   **45%** Malware in Models Pulled from Public Repositories
 *   **33%** Attack on Internal or External Chatbot
 *   **21%** Third-Party Applications
@@ -129,25 +93,23 @@ reported being able to identify the source of the breach (up from 77% last year)
 *   Financial Gain
 *   Business Disruption
 
-**Disclosure & Transparency of AI Breaches**
+### Disclosure & Transparency of AI Breaches
 
-**42%**
-of IT leaders strongly agree that companies should be legally required to disclose AI-related security breaches to the public, but
+*   **42%** of IT leaders strongly agree that companies should be legally required to disclose AI-related security breaches to the public, but
+*   **45%** of companies have opted not to report an AI-related security incident due to concerns about public backlash.
 
-**45%**
-of companies have opted not to report an AI-related security incident due to concerns about public backlash.
+### Rising Security Breaches and Vulnerabilities
 
-**Rising Security Breaches and Vulnerabilities**
-
-**88%**
-of IT leaders are concerned about vulnerabilities in third-party AI integrations.
+*   **88%** of IT leaders are concerned about vulnerabilities in third-party AI integrations.
 
 **Top 3 Third-Party Gen AI Applications Currently In Use at Organizations:**
 *   ChatGPT
 *   Microsoft Co-Pilot
 *   Gemini
 
-**Global Origins of AI Attacks**
+### Global Origins of AI Attacks
+
+![Infographic: Global Origins of AI Attacks and Security Measures](image_05.png)
 
 *   **51%** North America
 *   **21%** South America
@@ -156,80 +118,63 @@ of IT leaders are concerned about vulnerabilities in third-party AI integrations
 *   **32%** Asia
 *   **14%** Unknown
 
-**72%**
-of IT leaders acknowledged Shadow AI, solutions that are not officially known or under the control of the IT department, is a signiﬁcant issue in their organization (up from 61% reported last year).
+*   **72%** of IT leaders acknowledged Shadow AI, solutions that are not officially known or under the control of the IT department, is a signiﬁcant issue in their organization (up from 61% reported last year).
+*   **97%** of companies use pre-trained models from repositories like Hugging Face, Azure, and AWS (up from 85% last year), but a little under half reported scanning inbound AI models for safety.
 
-**97%**
-of companies use pre-trained models from repositories like Hugging Face, Azure, and AWS (up from 85% last year), but a little under half reported scanning inbound AI models for safety.
+### Rising Security Breaches and Vulnerabilities
 
-**Rising Security Breaches and Vulnerabilities**
 On average, IT leaders reported spending almost half
+**46%** of their time addressing AI risk or security (up from 15% of time reported last year).
 
-**46%**
-of their time addressing AI risk or security (up from 15% of time reported last year).
-
-**Security Measures & Technology Gaps in AI Defense**
+### Security Measures & Technology Gaps in AI Defense
 
 **Top 3 Common Measures to Secure AI Include:**
 *   Building relationships with AI & security teams
 *   Creating an inventory of AI models
 *   Determining sources of origins of AI models
 
-**16%**
-Only 16% of IT leaders reported securing AI models with manual or automated red teaming.
+*   **16%** Only 16% of IT leaders reported securing AI models with manual or automated red teaming.
+*   **32%** Only 32% of IT leaders are deploying a technology solution to address AI threats.
 
-**32%**
-Only 32% of IT leaders are deploying a technology solution to address AI threats.
+### AI Governance Frameworks & Policies
 
-**AI Governance Frameworks & Policies**
+![Infographic: AI Governance Frameworks, Transparency, and Investments](image_06.png)
 
-**96%**
-of companies have a formal framework for securing AI and ML models.
-
-**81%**
-of organizations have implemented an AI governance committee.
+*   **96%** of companies have a formal framework for securing AI and ML models.
+*   **81%** of organizations have implemented an AI governance committee.
 
 **Top 3 Frameworks Used to Secure AI Include:**
 *   Google Secure AI Framework
 *   IBM Framework for Securing Generative AI
 *   Gartner AI Trust, Risk, and Security Management
 
-**Transparency & Ethical Oversight**
+### Transparency & Ethical Oversight
 
-**67%**
-of IT leaders have a dedicated ethics committee or person overseeing AI ethics.
+*   **67%** of IT leaders have a dedicated ethics committee or person overseeing AI ethics.
+*   **98%** of organizations plan to make AI security practices partially transparent.
 
-**98%**
-of organizations plan to make AI security practices partially transparent.
+### Debate Over AI Security Roles & Responsibilities
 
-**Debate Over AI Security Roles & Responsibilities**
+*   **76%** have internal debate about which teams should control AI security measures.
+*   **42%** of IT leaders believe the AI development team should be held accountable for errors, whereas
+*   **27%** believe the security team should be held responsible.
 
-**76%**
-have internal debate about which teams should control AI security measures.
+### Investments in AI Security for 2025
 
-**42%**
-of IT leaders believe the AI development team should be held accountable for errors, whereas
-
-**27%**
-believe the security team should be held responsible.
-
-**Investments in AI Security for 2025**
-
-**99%**
-consider securing AI a high priority in 2025.
-
-**95%**
-of organizations have increased their budgets for securing AI in 2025.
+*   **99%** consider securing AI a high priority in 2025.
+*   **95%** of organizations have increased their budgets for securing AI in 2025.
 
 ## AI Threat Landscape Timeline
 
+![AI Threat Landscape Timeline 2024](image_07.png)
+
 **2024 AI Threat Landscape Timeline**
 
-AI tech milestones
-Risks related to the use of AI
-Release of new adversarial tools and techniques, disclosure of new vulnerabilities in ML tooling
-Known attacks and breaches
-New AI security measures and legislation
+*   **AI tech milestones**
+*   **Risks related to the use of AI**
+*   **Release of new adversarial tools and techniques, disclosure of new vulnerabilities in ML tooling**
+*   **Known attacks and breaches**
+*   **New AI security measures and legislation**
 
 **JAN**
 *   LeftoverLocals: Listening to LLM responses through leaked GPU local memory
@@ -275,23 +220,23 @@ New AI security measures and legislation
 *   Microsoft shuts down ﬁrst cybercriminal service providing users with access to jailbroken GenAI
 *   Ten arbitrary code execution vulnerabilities and one critical WebUI vulnerability disclosed in MindsDB
 *   High severity vulnerabilities found in Autolabel, Cleanlab, and Guardrails
+
+**OCT**
 *   Wiz ﬁnds critical NVIDIA AI vulnerability in containers using NVIDIA GPUs
 *   ShadowLogic graph backdoor unveiled by HiddenLayer
 *   First attack technique against GenAI watermarks unveiled by HiddenLayer
-
-**OCT**
 *   OMB releases the Advancing the Responsible Acquisition of AI in Govt
 *   President Biden signs ﬁrst-ever National Security Memorandum on AI
 *   Apple Intelligence release in the US
 *   Arbitrary ﬁle write vulnerability found in NVIDIA NeMo
-*   Lawsuit ﬁled against Character.ai states that AI companion chatbot to blame for teenager’s suicide
 
 **NOV**
+*   Lawsuit ﬁled against Character.ai states that AI companion chatbot to blame for teenager’s suicide
 *   UK establishes the Laboratory for AI Security Research (LASR)
 *   First draft of the EU general-purpose AI Code of Practice published
-*   GEMA sues OpenAI for copyright infringement over use of song lyrics in AI training
 
 **DEC**
+*   GEMA sues OpenAI for copyright infringement over use of song lyrics in AI training
 *   Major AI supply chain attack using dependency compromise affects Ultralytics
 *   Google introduces Gemini 2.0
 *   Apple Intelligence launch in the UK
@@ -306,6 +251,8 @@ The past year brought signiﬁcant advancements in AI across multiple domains, i
 
 ### Multimodal Models
 
+![Illustration of multimodal AI capabilities](image_08.png)
+
 Multimodal models became popular with the launch of OpenAI’s GPT-4o. What makes a model “multimodal” is its ability to create multimedia content (images, audio, and video) in response to text- or audio-based prompts, or vice versa, respond with text or audio to multimedia content uploaded to a prompt. For example, a multimodal model can process and translate a photo of a foreign language menu. This capability makes it incredibly versatile and user-friendly. Equally, multimodality has seen advancement toward facilitating real-time, natural conversations.
 
 While GPT-4o might be one of the most used multimodal models, it's certainly not singular. Other well-known multimodal models include KOSMOS and LLaVA from Microsoft, Gemini 2.0 from Google, Chameleon from Meta, and Claude 3 from Anthropic.
@@ -315,6 +262,16 @@ While GPT-4o might be one of the most used multimodal models, it's certainly not
 Another hot topic in AI is a technique called Retrieval-Augmented Generation (RAG). Although ﬁrst proposed in 2020, it has gained signiﬁcant recognition in the past year and is being rapidly implemented across industries. RAG combines large language models (LLMs) with external knowledge retrieval to produce accurate and contextually relevant responses. By having access to a trusted database containing the latest and most relevant information not included in the static training data, an LLM can produce more up-to-date responses less prone to hallucinations. Moreover, using RAG facilitates the creation of highly tailored domain-speciﬁc queries and real-time adaptability.
 
 In September 2024, we saw the release of Oracle Cloud Infrastructure GenAI Agents - a platform that combines LLMs and RAG. In January 2025, a service that helps to streamline the information retrieval process and feed it to an LLM, called Vertex AI RAG Engine, was unveiled by Google.
+
+### Humanoid Robots
+
+![Illustration of humanoid robots and agentic AI](image_09.png)
+
+The concept of humanoid machines can be traced as far back as ancient mythologies of Greece, Egypt, and China. However, the technology to build a fully functional humanoid robot has not matured Sufficiently - until now. Rapid advancements in natural language have expedited machines’ ability to perform a wide range of tasks while offering near-human interactions.
+
+Tesla's Optimus and Agility Robotics' Digit robot are at the forefront of these advancements. Optimus unveiled its second generation in December 2023, featuring signiﬁcant improvements over its predecessor, including faster movement, reduced weight, and sensor-embedded ﬁngers. Digit’s has a longer history, releasing and deploying its ﬁfth version in June 2024 for use at large manufacturing factories.
+
+Advancements in LLM technology are new driving factors for the ﬁeld of robotics. In December 2023, researchers unveiled a humanoid robot called Alter3, which leverages GPT-4. Besides being used for communication, the LLM enables the robot to generate spontaneous movements based on linguistic prompts. Thanks to this integration, Alter3 can perform actions like adopting speciﬁc poses or sequences without explicit programming, demonstrating the capability to recognize new concepts without labeled examples.
 
 ### Agentic AI
 
@@ -326,15 +283,9 @@ Google has been investing heavily over the past year in the development of agent
 
 We’re already seeing Agentic AI turbocharged with the integration of multimodal models into agentic robotics and the concept of agentic RAG. Combining the advancements of these technologies, the future of powerful and complex autonomous solutions will soon transcend imagination into reality.
 
-### Humanoid Robots
-
-The concept of humanoid machines can be traced as far back as ancient mythologies of Greece, Egypt, and China. However, the technology to build a fully functional humanoid robot has not matured Sufficiently - until now. Rapid advancements in natural language have expedited machines’ ability to perform a wide range of tasks while offering near-human interactions.
-
-Tesla's Optimus and Agility Robotics' Digit robot are at the forefront of these advancements. Optimus unveiled its second generation in December 2023, featuring signiﬁcant improvements over its predecessor, including faster movement, reduced weight, and sensor-embedded ﬁngers. Digit’s has a longer history, releasing and deploying its ﬁfth version in June 2024 for use at large manufacturing factories.
-
-Advancements in LLM technology are new driving factors for the ﬁeld of robotics. In December 2023, researchers unveiled a humanoid robot called Alter3, which leverages GPT-4. Besides being used for communication, the LLM enables the robot to generate spontaneous movements based on linguistic prompts. Thanks to this integration, Alter3 can perform actions like adopting speciﬁc poses or sequences without explicit programming, demonstrating the capability to recognize new concepts without labeled examples.
-
 ### The Rise of Open-Weight Models
+
+![Illustration of open-weight models and their proliferation](image_10.png)
 
 Open-weight models are models whose weights (i.e., the output of the model training process) are made available to the broader public. This allows users to implement the model locally, adapt it, and ﬁne-tune it without the constraints of a proprietary model. Traditionally, open-weight models were scoring lower against leading proprietary models in AI performance benchmarking. This is because training a large GenAI solution requires tremendous computing power and is, therefore, incredibly expensive. The biggest players on the market, who are able to afford to train a high-quality GenAI, usually keep their models ringfenced and only allow access to the inference API. The recent release of an open-weight DeepSeek-R1 model might be on course to disrupt this trend.
 
@@ -346,6 +297,8 @@ As frontier-level open-weight models are likely to proliferate, deploying such m
 
 ## Part 1: Risks Related to the Use of AI
 
+![Illustration of AI risks](image_11.png)
+
 Before we cover attacks against AI-based systems, let's do a quick overview of the issues related to the use of AI. There are several areas of concern where malicious or improper use of AI can create trouble for individuals, organizations, and societies alike. These include generating malicious, harmful, or illegal content (such as malware, deepfakes, and disinformation), hallucinations and accuracy issues, privacy breaches, and broader societal and ethical concerns.
 
 **KEY STAT**
@@ -354,11 +307,15 @@ Before we cover attacks against AI-based systems, let's do a quick overview of t
 
 On average, IT leaders spend **46%** of their time on AI addressing risk or security
 
-### The Use of AI in Cybercrime
+### Cybercrime
+
+The Use of AI in Cybercrime
 
 AI is being rapidly adopted across all sectors, and the cybercrime business is, unfortunately, no exception. In 2024, adversaries were found to be leveraging AI for a multitude of illicit tasks, from enhancing their phishing campaigns and ﬁnancial scams to generating malicious code and automating attacks to spreading political misinformation.
 
-**PHISHING & SCAM**
+#### PHISHING & SCAM
+
+![Illustration of phishing and scam attacks using AI](image_12.png)
 
 Since its inception, one of the predominant concerns surrounding generative AI abuse has been its potential to improve phishing and scams, making it almost impossible to distinguish from legitimate content.
 
@@ -384,7 +341,9 @@ The FBI estimates that more than $650 million was lost to romance fraud in 2023 
 
 > Prediction from last year: “Deepfakes will be increasingly used in scam and disinformation”
 
-**MALWARE**
+#### MALWARE
+
+![Illustration of malware generation using AI](image_13.png)
 
 Beyond phishing, AI has also been employed to develop more sophisticated malware and speed up cybercriminal workﬂows.
 
@@ -401,19 +360,23 @@ Cybercriminals also embed AI mechanisms into their payloads to add new functiona
 
 > Prediction from last year: “Threat actors will automate hacking efforts with LLMs”
 
-**DEEP AND DARK WEB CHATTER**
+#### DEEP AND DARK WEB CHATTER
 
 The dark web has long been recognized as a space where communities form outside the boundaries of societal norms. A subset of these communities focuses on the exploitation of emerging technologies. In forums reviewed within these ecosystems, we have found a large number of posts were dedicated to leveraging well-known legitimate or malicious AI services to facilitate illicit operations.
 
 The dark web discussions around the malicious use of AI focused on three categories:
 
-*   Cyber attack techniques: Posts that outline the use of AI to enhance phishing campaigns, malware development, and other offensive tactics.
-*   Deepfakes creation: Discussions focused on utilizing AI to bypass veriﬁcation processes or create deceptive identities.
-*   Creation of illicit material: Discussions about bypassing GenAI guardrails to generate content that violates legal and ethical standards.
+*   **Cyber attack techniques**: Posts that outline the use of AI to enhance phishing campaigns, malware development, and other offensive tactics.
+*   **Deepfakes creation**: Discussions focused on utilizing AI to bypass veriﬁcation processes or create deceptive identities.
+*   **Creation of illicit material**: Discussions about bypassing GenAI guardrails to generate content that violates legal and ethical standards.
 
 Providing unauthorized access to AI models is a prominent theme. Several posts advertise compromised accounts for sale, offering access to proprietary AI platforms that are often jailbroken to allow the generation of restricted content. By using such accounts, malicious actors can operate without liability, prompting AI systems freely and without risk of detection.
 
-### The Use of AI in Political Campaigns
+### Political Campaigns
+
+The Use of AI in Political Campaigns
+
+![Illustration of AI in political campaigns](image_14.png)
 
 The use of AI in political campaigning brings on unprecedented challenges, as spreading disinformation, inﬂuencing public opinion, and manipulating trends is easier than ever before.
 
@@ -421,4 +384,4 @@ In 2024, multiple countries held presidential and/or parliamentary elections, mo
 
 The most dangerous of all were undoubtedly deepfakes. In March 2024, BBC reported the discovery of several AI-generated photos depicting people of color supporting Trump in an attempt to boost support for his candidacy with an important demographic. These images were created and shared by US citizens, and while they contained signs typical to AI art, many social media users appeared to trust they were real. In July, Elon Musk shared a deepfake audio clip of Kamala Harris, which was supposed to discredit her as a presidential candidate. Although the clip was intended as a parody, Musk failed to label it as such, leading millions of people to believe it was real.
 
-It's difficult to assess the level of inﬂuence that AI-generated content had on the outcome of the elections, but the potential impact is immense. For one, the general availability and ease of AI means foreign adversaries don't have to get
+It's difficult to assess the level of inﬂuence that AI-generated content had on the outcome of the elections, but the potential impact is immense. For one, the general availability and ease of AI means foreign adversaries don't have to get directly involved anymore. A hostile state needs only to plant a seed, and legitimate voters can quickly latch on to generate and spread deepfakes. This makes attributing any manipulation attempts to a foreign inﬂu
