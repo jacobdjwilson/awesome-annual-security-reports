@@ -52,6 +52,18 @@ jobs:
           echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
           echo "📍 Current branch: $BRANCH"
 
+      - name: 🐛 Debugging - Dump github.event
+        run: |
+          echo "github.event payload:"
+          echo "${{ toJSON(github.event) }}"
+          echo "github.event.workflow_run.id: ${{ github.event.workflow_run.id }}"
+          echo "github.event.workflow_run.run_id: ${{ github.event.workflow_run.run_id }}"
+          echo "github.event.workflow_run.run_number: ${{ github.event.workflow_run.run_number }}"
+          echo "github.event.workflow_run.workflow_id: ${{ github.event.workflow_run.workflow_id }}"
+          echo "github.event.workflow_run.workflow_name: ${{ github.event.workflow_run.workflow_name }}"
+          echo "github.event.workflow_run.head_sha: ${{ github.event.workflow_run.head_sha }}"
+          echo "github.event.workflow_run.head_branch: ${{ github.event.workflow_run.head_branch }}"
+
       - name: ⏳ Wait for Artifacts (30s)
         if: github.event.name == 'workflow_run'
         run: sleep 30
