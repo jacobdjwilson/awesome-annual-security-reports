@@ -74,8 +74,8 @@ jobs:
             done
             
             # Extract file paths from artifacts
-            if find ./artifacts -name "*.txt" -exec grep -l "Markdown Conversions" {} \; | head -1 > /dev/null; then
-              FILES_TO_PROCESS=$(find ./artifacts -name "*.txt" -exec cat {} \; | grep "Markdown Conversions" | head -20)
+            if [ -f "./artifacts/converted_file_info/converted_files.txt" ]; then
+              FILES_TO_PROCESS=$(cat ./artifacts/converted_file_info/converted_files.txt | head -20)
             fi
           else
             echo "📁 No artifacts found - scanning directory instead"
@@ -580,12 +580,15 @@ jobs:
               if files_from_artifacts:
                   print("📄 Using files from artifacts")
                   files_to_process = [f.strip() for f in files_from_artifacts.split('\n') if f.strip()]
-              elif force_update or not files_from_artifacts:
-                  print("📁 Scanning Markdown Conversions directory")
+              elif force_update: # Only scan full directory if force_update is true
+                  print("📁 Scanning Markdown Conversions directory (force update)")
                   conversions_dir = Path("Markdown Conversions")
                   if conversions_dir.exists():
                       files_to_process = list(conversions_dir.glob("**/*.md"))
                       files_to_process = [str(f) for f in files_to_process]
+              else: # If no artifacts and not force_update, exit gracefully
+                  print("⚠️ No files from artifacts and force_update is false. Exiting.")
+                  return
               
               if not files_to_process:
                   print("❌ No files found to process")
