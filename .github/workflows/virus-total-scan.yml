@@ -9,9 +9,79 @@ on:
       - 'Annual Security Reports/**'
 
 jobs:
-  security-scan:
+  find-files-for-scan:
     runs-on: ubuntu-latest
-    name: Scan Security Reports
+    outputs:
+      files_to_scan: ${{ steps.find-files.outputs.files_to_scan }}
+      deleted_files: ${{ steps.find-files.outputs.deleted_files }}
+      has_changes: ${{ steps.find-files.outputs.has_changes }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          
+      - name: Find changed files
+        id: find-files
+        run: |
+          # Get all changed files (added, modified, deleted, renamed)
+          ALL_CHANGED_FILES=$(git diff --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | grep -E "Annual Security Reports/.+\.(pdf)$")
+          
+          CHANGED_FILES_TO_SCAN=""
+          DELETED_FILES=""
+          
+          # Filter for added, modified, or renamed files that still exist
+          while IFS= read -r file; do
+            if [ -f "$file" ]; then
+              CHANGED_FILES_TO_SCAN="$CHANGED_FILES_TO_SCAN\n$file"
+            fi
+          done <<< "$ALL_CHANGED_FILES"
+          
+          # Filter for deleted files
+          while IFS= read -r file; do
+            if [ ! -f "$file" ]; then
+              DELETED_FILES="$DELETED_FILES\n$file"
+            fi
+          done <<< "$ALL_CHANGED_FILES"
+          
+          # Remove leading newline if present
+          CHANGED_FILES_TO_SCAN=$(echo -e "$CHANGED_FILES_TO_SCAN" | sed '/^$/d' | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          DELETED_FILES=$(echo -e "$DELETED_FILES" | sed '/^$/d' | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          
+          COUNT_TO_SCAN=$(echo "$CHANGED_FILES_TO_SCAN" | jq length)
+          COUNT_DELETED=$(echo "$DELETED_FILES" | jq length)
+          
+          echo "Found $COUNT_TO_SCAN security report files to scan."
+          echo "Found $COUNT_DELETED deleted security report files."
+          
+          echo "files_to_scan=$CHANGED_FILES_TO_SCAN" >> $GITHUB_OUTPUT
+          echo "deleted_files=$DELETED_FILES" >> $GITHUB_OUTPUT
+          
+          if [ "$COUNT_TO_SCAN" -gt 0 ] || [ "$COUNT_DELETED" -gt 0 ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+          
+          if [ "$COUNT_TO_SCAN" -gt 0 ]; then
+            echo "Files to scan: $CHANGED_FILES_TO_SCAN"
+          fi
+          if [ "$COUNT_DELETED" -gt 0 ]; then
+            echo "Deleted files: $DELETED_FILES"
+          fi
+          if [ "$COUNT_TO_SCAN" -eq 0 ] && [ "$COUNT_DELETED" -eq 0 ]; then
+            echo "No relevant security report files changed."
+          fi
+
+  security-scan:
+    needs: find-files-for-scan
+    runs-on: ubuntu-latest
+    name: Scan ${{ matrix.file_path }}
+    if: needs.find-files-for-scan.outputs.has_changes == 'true' && fromJson(needs.find-files-for-scan.outputs.files_to_scan)[0] != null
+    strategy:
+      fail-fast: false
+      matrix:
+        file_path: ${{ fromJson(needs.find-files-for-scan.outputs.files_to_scan) }}
     
     steps:
       - name: Checkout repository
@@ -25,59 +95,12 @@ jobs:
           python-version: '3.12'
           
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests tenacity
 
-      - name: Find changed files
-        id: find-files
-        run: |
-          # Get all changed files (added, modified, deleted, renamed)
-          ALL_CHANGED_FILES=$(git diff --name-only ${{ github.event.before || 'HEAD~1' }} ${{ github.event.after || 'HEAD' }} | grep -E "Annual Security Reports/.+\.(pdf)$")
-          
-          # Filter for added, modified, or renamed files that still exist
-          CHANGED_FILES_TO_SCAN=$(echo "$ALL_CHANGED_FILES" | while read -r file; do
-            if [ -f "$file" ]; then
-              echo "$file"
-            fi
-          done)
-          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          echo "$CHANGED_FILES_TO_SCAN" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-          
-          # Filter for deleted files
-          DELETED_FILES=$(echo "$ALL_CHANGED_FILES" | while read -r file; do
-            if [ ! -f "$file" ]; then
-              echo "$file"
-            fi
-          done)
-          echo "DELETED_FILES<<EOF" >> $GITHUB_ENV
-          echo "$DELETED_FILES" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-          
-          # Count for logging
-          COUNT_TO_SCAN=$(echo "$CHANGED_FILES_TO_SCAN" | grep -c .) || echo 0
-          COUNT_DELETED=$(echo "$DELETED_FILES" | grep -c .) || echo 0
-          
-          echo "Found $COUNT_TO_SCAN security report files to scan."
-          echo "Found $COUNT_DELETED deleted security report files."
-          
-          # Show the files found
-          if [ -n "$CHANGED_FILES_TO_SCAN" ]; then
-            echo "Files to scan:"
-            echo "$CHANGED_FILES_TO_SCAN"
-          fi
-          if [ -n "$DELETED_FILES" ]; then
-            echo "Deleted files:"
-            echo "$DELETED_FILES"
-          fi
-          if [ -z "$CHANGED_FILES_TO_SCAN" ] && [ -z "$DELETED_FILES" ]; then
-            echo "No relevant security report files changed."
-          fi
-
-      - name: Scan changed files with VirusTotal
-        if: env.CHANGED_FILES != '' || env.DELETED_FILES != ''
+      - name: Scan file with VirusTotal
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
-          DELETED_FILES: ${{ env.DELETED_FILES }}
+          FILE_TO_SCAN: ${{ matrix.file_path }}
         run: |
           cat > scan.py << 'EOF'
           #!/usr/bin/env python3
@@ -89,6 +112,7 @@ jobs:
           import json
           import hashlib
           import base64
+          from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
           
           # Constants
           API_BASE_URL = "https://www.virustotal.com/api/v3"
@@ -100,6 +124,14 @@ jobs:
                   for chunk in iter(lambda: f.read(4096), b""):
                       sha256_hash.update(chunk)
               return sha256_hash.hexdigest()
+          
+          @retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=1, min=4, max=60), retry=retry_if_exception_type(requests.exceptions.RequestException))
+          def make_vt_request(method, url, headers, files=None, data=None, timeout=30):
+              """Helper function to make VirusTotal API requests with retries."""
+              print(f"Making {method} request to {url}")
+              response = requests.request(method, url, headers=headers, files=files, data=data, timeout=timeout)
+              response.raise_for_status() # Raise an exception for HTTP errors
+              return response
           
           def scan_file(file_path, api_key):
               """Scan a file with VirusTotal and create annotation with results"""
@@ -133,7 +165,8 @@ jobs:
                   
                   # First, check if file has been scanned before
                   print("Checking if file has been scanned before...")
-                  lookup_response = requests.get(
+                  lookup_response = make_vt_request(
+                      "GET",
                       f"{API_BASE_URL}/files/{file_hash}",
                       headers=headers,
                       timeout=30
@@ -154,18 +187,13 @@ jobs:
                       with open(file_path, 'rb') as f:
                           files = {"file": (os.path.basename(file_path), f, "application/octet-stream")}
                           
-                          # Submit the file
-                          response = requests.post(
+                          response = make_vt_request(
+                              "POST",
                               f"{API_BASE_URL}/files",
                               headers=headers,
                               files=files,
                               timeout=300  # 5-minute timeout for upload
                           )
-                      
-                      if response.status_code != 200:
-                          print(f"Error: File upload failed with status {response.status_code}")
-                          print(f"Response: {response.text}")
-                          return {"status": "failed", "reason": f"File upload failed (Status: {response.status_code})"}
                       
                       # Get the scan ID
                       upload_result = response.json()
@@ -191,15 +219,12 @@ jobs:
                           print(f"Checking scan status (attempt {attempt}/{len(wait_times)})...")
                           
                           try:
-                              status_response = requests.get(
+                              status_response = make_vt_request(
+                                  "GET",
                                   f"{API_BASE_URL}/analyses/{scan_id}",
                                   headers=headers,
                                   timeout=30
                               )
-                              
-                              if status_response.status_code != 200:
-                                  print(f"Warning: Status check failed with code {status_response.status_code}")
-                                  continue
                               
                               analysis_result = status_response.json()
                               status = analysis_result.get('data', {}).get('attributes', {}).get('status')
@@ -207,22 +232,22 @@ jobs:
                               if status == 'completed':
                                   print("Scan completed!")
                                   # Get the final scan results using the file hash
-                                  final_response = requests.get(
+                                  final_response = make_vt_request(
+                                      "GET",
                                       f"{API_BASE_URL}/files/{file_hash}",
                                       headers=headers,
                                       timeout=30
                                   )
                                   
-                                  if final_response.status_code == 200:
-                                      scan_data = final_response.json()
-                                      break
-                                  else:
-                                      print("Error retrieving final scan results")
-                                      return {"status": "failed", "reason": "Error retrieving final scan results"}
+                                  scan_data = final_response.json()
+                                  break
                               else:
                                   print(f"Scan status: {status}")
+                          except requests.exceptions.RequestException as e:
+                              print(f"Error checking scan status (will retry): {e}")
                           except Exception as e:
-                              print(f"Error checking scan status: {e}")
+                              print(f"Non-retryable error checking scan status: {e}")
+                              return {"status": "failed", "reason": f"Non-retryable error during status check: {str(e)}"}
                       else:
                           print("Scan did not complete within timeout period")
                           return {"status": "failed", "reason": "Scan did not complete within timeout period"}
@@ -289,6 +314,9 @@ jobs:
                       "detections": detections
                   }
                   
+              except requests.exceptions.RequestException as e:
+                  print(f"VirusTotal API request failed (will retry): {e}")
+                  raise # Re-raise for tenacity retry
               except Exception as e:
                   print(f"Error scanning file: {str(e)}")
                   import traceback
@@ -323,121 +351,71 @@ jobs:
               api_key = os.environ.get('VIRUS_TOTAL_API_KEY')
               if not api_key:
                   print("Error: VIRUS_TOTAL_API_KEY environment variable not set")
-                  return 1
+                  sys.exit(1)
               
-              # Get changed files from environment
-              files_to_scan = os.environ.get('CHANGED_FILES', '').strip().split('\n')
-              files_to_scan = [f for f in files_to_scan if f.strip()]
+              file_to_scan = os.environ.get('FILE_TO_SCAN')
+              if not file_to_scan:
+                  print("Error: FILE_TO_SCAN environment variable not set")
+                  sys.exit(1)
               
-              deleted_files = os.environ.get('DELETED_FILES', '').strip().split('\n')
-              deleted_files = [f for f in deleted_files if f.strip()]
+              print(f"\n--- Scanning: {file_to_scan} ---")
+              result = scan_file(file_to_scan, api_key)
+              print(f"--- Completed: {file_to_scan} ---\n")
               
-              total_files_processed = len(files_to_scan) + len(deleted_files)
+              # Output result for GitHub Actions
+              print(f"::set-output name=file::{result.get('file', '')}")
+              print(f"::set-output name=status::{result.get('status', 'failed')}")
+              print(f"::set-output name=verdict::{result.get('verdict', 'Unknown')}")
+              print(f"::set-output name=report_url::{result.get('report_url', '')}")
               
-              if not files_to_scan and not deleted_files:
-                  print("No relevant security report files changed.")
-                  return 0
-              
-              print(f"Processing {len(files_to_scan)} files for scan and {len(deleted_files)} deleted files.")
-              
-              # Initialize summary
-              with open(os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md'), 'w') as f:
+              # Generate and write summary to GITHUB_STEP_SUMMARY
+              summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
+              with open(summary_path, 'a', encoding='utf-8') as f:
                   f.write("## 🛡️ VirusTotal Security Scan Results\n\n")
-              
-              # Process each file to scan
-              results = []
-              failed_scans = []
-              success_scan_count = 0
-              
-              for file_path in files_to_scan:
-                  print(f"\n--- Scanning: {file_path} ---")
+                  f.write("| File | Verdict | Detections | Engines | Report |\n")
+                  f.write("|------|---------|------------|---------|--------|\n")
                   
-                  result = scan_file(file_path, api_key)
-                  if result and result["status"] == "success":
-                      results.append(result)
-                      success_scan_count += 1
-                  elif result and result["status"] == "failed":
-                      failed_scans.append({"file": os.path.basename(file_path), "reason": result["reason"]})
-                  else:
-                      failed_scans.append({"file": os.path.basename(file_path), "reason": "Unknown error"})
-                  
-                  print(f"--- Completed: {file_path} ---\n")
-              
-              # Write detailed results to summary
-              with open(os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md'), 'a') as f:
-                  if results:
-                      f.write("| File | Verdict | Detections | Engines | Report |\n")
-                      f.write("|------|---------|------------|---------|--------|\n")
+                  if result["status"] == "success":
+                      icon = ""
+                      verdict = result["verdict"]
+                      if "malicious" in verdict.lower(): icon = "🔴 "
+                      elif "suspicious" in verdict.lower(): icon = "🟠 "
+                      else: icon = "✅ "
                       
-                      for result in results:
-                          # Set icon based on verdict
-                          icon = ""
-                          verdict = result["verdict"]
-                          
-                          if "malicious" in verdict.lower():
-                              icon = "🔴 "
-                          elif "suspicious" in verdict.lower():
-                              icon = "🟠 "
-                          else:
-                              icon = "✅ "
-                          
-                          # Format detection summary
-                          detection_count = result["malicious_count"] + result["suspicious_count"]
-                          detection_summary = f"{detection_count}/{result['total_engines']}"
-                          
-                          # Format top detections
-                          detections = result.get("detections", [])
-                          if detections:
-                              top_detections = ", ".join([d.split(":")[0] for d in detections[:3]])
-                              if len(detections) > 3:
-                                  top_detections += f" (+{len(detections) - 3} more)"
-                          else:
-                              top_detections = "None"
-                          
-                          f.write(f"| {result['file']} | {icon}{verdict} | {top_detections} | {detection_summary} | [View Report]({result['report_url']}) |\n")
+                      detection_count = result["malicious_count"] + result["suspicious_count"]
+                      detection_summary = f"{detection_count}/{result['total_engines']}"
+                      
+                      detections = result.get("detections", [])
+                      if detections:
+                          top_detections = ", ".join([d.split(":")[0] for d in detections[:3]])
+                          if len(detections) > 3:
+                              top_detections += f" (+{len(detections) - 3} more)"
+                      else:
+                          top_detections = "None"
+                      
+                      f.write(f"| {result['file']} | {icon}{verdict} | {top_detections} | {detection_summary} | [View Report]({result['report_url']}) |\n")
                   else:
-                      f.write("No files were successfully scanned.\n")
-                  
-                  if failed_scans:
-                      f.write("\n### ❌ Failed Scans\n")
-                      for f_scan in failed_scans:
-                          f.write(f"- {f_scan['file']}: {f_scan['reason']}\n")
-                  
-                  if deleted_files:
-                      f.write("\n### 🗑️ Deleted Files\n")
-                      for d_file in deleted_files:
-                          f.write(f"- {d_file} (skipped scan)\n")
+                      f.write(f"| {result.get('file', file_to_scan)} | ❌ Failed | N/A | N/A | N/A |\n")
+                      f.write(f"\n### ❌ Failed Scan Details\n- {result.get('file', file_to_scan)}: {result.get('reason', 'Unknown error')}\n")
                   
                   f.write(f"\n\n### Summary\n")
-                  f.write(f"- Successfully scanned {success_scan_count} out of {len(files_to_scan)} files requiring scan.\n")
-                  f.write(f"- {len(failed_scans)} files failed to scan.\n")
-                  f.write(f"- {len(deleted_files)} files were deleted and skipped from scanning.\n")
+                  f.write(f"- Status: {result['status']}\n")
+                  f.write(f"- File processed: {result.get('file', file_to_scan)}\n")
+                  if result['status'] == 'success':
+                      f.write(f"- Verdict: {result['verdict']}\n")
+                      f.write(f"- Report URL: {result['report_url']}\n")
                   
-                  # Add statistics for scanned files
-                  if results:
-                      clean_files = sum(1 for r in results if r["verdict"] == "Clean")
-                      suspicious_files = sum(1 for r in results if r["verdict"] == "Suspicious")
-                      malicious_files = sum(1 for r in results if r["verdict"] == "Malicious")
-                      
-                      f.write(f"- Clean files: {clean_files}\n")
-                      f.write(f"- Suspicious files: {suspicious_files}\n")
-                      f.write(f"- Malicious files: {malicious_files}\n")
-                  
-                  # Add additional info about VirusTotal
                   f.write("\n### About the Scan\n")
                   f.write("- Files are scanned using the VirusTotal API v3\n")
                   f.write("- Results are based on analysis from 70+ antivirus engines\n")
                   f.write("- Files already in the VirusTotal database use existing scan results\n")
                   f.write("- Visit the report links for complete analysis details\n")
                   
-                  # Add rate limit info
                   f.write("\n### API Usage\n")
                   f.write("- This scan uses the VirusTotal public API\n")
                   f.write("- Rate limits: 4 requests per minute for free accounts\n")
               
-              # Return success if there were no files to scan, or if at least one file was successfully processed
-              # or if only deleted files were present.
-              return 0 if (len(files_to_scan) == 0 and len(deleted_files) > 0) or success_scan_count > 0 or (len(files_to_scan) == 0 and len(deleted_files) == 0) else 1
+              return 0 if result['status'] == 'success' else 1
           
           if __name__ == "__main__":
               sys.exit(main())
@@ -447,10 +425,29 @@ jobs:
           chmod +x scan.py
           python scan.py || echo "Scan completed with some issues, but continuing workflow"
 
+  no-files-to-scan:
+    needs: find-files-for-scan
+    runs-on: ubuntu-latest
+    if: needs.find-files-for-scan.outputs.has_changes == 'false'
+    steps:
       - name: No files to scan message
-        if: env.CHANGED_FILES == '' && env.DELETED_FILES == ''
         run: |
           echo "No security report files were added, modified, or deleted in this push."
           echo "## Security Scan Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "No security report files were changed in this push." >> $GITHUB_STEP_SUMMARY
+
+  deleted-files-summary:
+    needs: find-files-for-scan
+    runs-on: ubuntu-latest
+    if: needs.find-files-for-scan.outputs.has_changes == 'true' && fromJson(needs.find-files-for-scan.outputs.deleted_files)[0] != null
+    steps:
+      - name: Deleted files summary
+        env:
+          DELETED_FILES: ${{ needs.find-files-for-scan.outputs.deleted_files }}
+        run: |
+          echo "## 🗑️ Deleted Files Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The following files were deleted and skipped from scanning:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "${{ env.DELETED_FILES }}" | jq -r '.[] | "- \(.)"' >> $GITHUB_STEP_SUMMARY
