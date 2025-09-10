@@ -159,7 +159,7 @@ jobs:
                           
                       # Subsection (e.g.,     - [Threat Intelligence](#threat-intelligence))
                       # Check for '    - ' at the beginning of the line (4 spaces indentation)
-                      if line.startswith('    - ') and current_main_section:
+                      elif line.startswith('    - ') and current_main_section:
                           stripped_line = line.strip()
                           match = re.search(r'\[([^\]]+)\]', stripped_line)
                           if match:
@@ -754,24 +754,3 @@ jobs:
           if [ "${{ github.event.name }}" == "workflow_run" ]; then
             echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
           fi
-
-</file_content>
-
-Now that you have the latest state of the file, try the operation again with fewer, more precise SEARCH blocks. For large files especially, it may be prudent to try to limit yourself to <5 SEARCH/REPLACE blocks at a time, then wait for the user to respond with the result of the operation before following up with another replace_in_file call to make additional edits.
-(If you run into this error 3 times in a row, you may use the write_to_file tool as a fallback.)
-</error><environment_details>
-# VSCode Visible Files
-.github/workflows/readme-entry.yml
-
-# VSCode Open Tabs
-.github/workflows/readme-entry.yml
-
-# Current Time
-9/9/2025, 6:33:29 PM (America/New_York, UTC-4:00)
-
-# Context Window Usage
-286,000 / 1,048.576K tokens used (27%)
-
-# Current Mode
-ACT MODE
-</environment_details>
