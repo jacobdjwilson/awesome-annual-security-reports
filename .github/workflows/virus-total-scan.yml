@@ -7,7 +7,6 @@ on:
       - development
     paths:
       - 'Annual Security Reports/**/*.pdf'
-      - 'Markdown Conversions/**/*.md'
 
 jobs:
   security-scan:
@@ -31,7 +30,6 @@ jobs:
         with:
           files: |
             Annual Security Reports/**/*.pdf
-            Markdown Conversions/**/*.md
           separator: "\n"
 
       - name: 📦 Install dependencies
