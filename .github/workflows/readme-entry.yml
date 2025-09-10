@@ -1,11 +1,10 @@
 name: 📝 Update README with AI Generated Report Entry
 
 on:
-  push:
-    branches: [main, development]
-    paths:
-      - 'Markdown Conversions/**/*.md'
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["⚙️ PDF to Markdown Conversion"]
+    types:
+      - completed
 
 permissions:
   contents: write
@@ -14,6 +13,7 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     
     steps:
       - name: 🔍 Checkout Repository
@@ -32,12 +32,13 @@ jobs:
           pip install google-generativeai pyyaml mistune gitpython requests
           pip install 'markitdown[pdf]' google-api-python-client
 
-      - name: 🔍 Find new and modified markdown files
-        id: changed-files
-        uses: tj-actions/changed-files@v44
+      - name: 📂 Download converted files artifact
+        uses: actions/download-artifact@v4
         with:
-          files: 'Markdown Conversions/**/*.md'
-          separator: "\n"
+          name: converted_file_info
+          path: .
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
 
       - name: 🌿 Detect Current Branch
         id: branch
@@ -47,14 +48,11 @@ jobs:
           echo "📍 Current branch: $BRANCH"
 
       - name: 🤖 AI README Update
-        if: steps.changed-files.outputs.any_changed == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          echo "$CHANGED_FILES" > changed_files.txt
-          python3 ./.github/scripts/update-readme.py changed_files.txt
+          python3 ./.github/scripts/update-readme.py converted_files.txt
 
       - name: 📤 Upload Debug Artifacts
         uses: actions/upload-artifact@v4
