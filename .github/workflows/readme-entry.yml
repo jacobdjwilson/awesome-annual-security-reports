@@ -608,7 +608,7 @@ jobs:
               processed_files = []
               summaries = []
               
-              for file_path in files_to_to_process:
+              for file_path in files_to_process:
                   try:
                       print(f"\n🔍 Processing: {file_path}")
                       
