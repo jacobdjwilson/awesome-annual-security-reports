@@ -8,6 +8,7 @@ from pathlib import Path
 from datetime import datetime
 import google.generativeai as genai
 import requests
+import time
 from typing import List, Dict, Optional, Tuple
 
 class ReadmeParser:
@@ -164,7 +165,7 @@ class ReportAnalyzer:
         return org_name, year, report_title
         
     def analyze_content(self, content: str, org_name: str, year: str, report_title: str, organization_url: Optional[str] = None) -> Dict:
-        """Analyze content using AI"""
+        """Analyze content using AI with retry logic"""
         if not self.current_model:
             return self._fallback_analysis(content, org_name, year, report_title, organization_url)
         
@@ -180,50 +181,56 @@ class ReportAnalyzer:
         
         truncated_content = content[:15000] if len(content) > 15000 else content
         
-        try:
-            summary_prompt = f"{base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{truncated_content}"
-            summary_response = self.current_model.generate_content(summary_prompt)
-            summary = summary_response.text if summary_response.text else "No summary generated"
-            
-            summary = ' '.join(summary.split())
-            if len(summary) > 400:
-                sentences = summary.split('. ')
-                truncated_summary = ""
-                for sentence in sentences:
-                    if len(truncated_summary + sentence + '. ') <= 400:
-                        truncated_summary += sentence + '. '
-                    else:
-                        break
-                summary = truncated_summary.strip()
-            
-            type_prompt = f"Based on this content, is this an 'Analysis' report (detailed technical analysis) or 'Survey' report (industry survey/statistics)? Respond with only 'Analysis' or 'Survey'. Content preview: {truncated_content[:1000]}"
-            type_response = self.current_model.generate_content(type_prompt)
-            report_type = "Analysis" if "analysis" in type_response.text.lower() else "Survey"
-            
-            # AI-driven sub-categorization
-            category_prompt = f"Given the following categories: {self.categories}. Which category best describes the content of this report? Respond with only the category name. Report content: {truncated_content[:2000]}"
-            category_response = self.current_model.generate_content(category_prompt)
-            category = category_response.text.strip()
-            
-            # Fallback to keyword matching if AI returns an invalid category
-            if category not in self.categories:
-                print(f"⚠️ AI returned invalid category '{category}'. Falling back to keyword matching.")
-                category = self._categorize_content_fallback(truncated_content)
-            
-            return {
-                'organization': org_name,
-                'year': year,
-                'title': report_title,
-                'summary': summary,
-                'type': report_type,
-                'category': category,
-                'organization_url': organization_url, # Pass through the URL
-                'ai_processed': True
-            }
-            
-        except Exception as e:
-            print(f"❌ AI analysis failed: {e}")
-            return self._fallback_analysis(content, org_name, year, report_title, organization_url)
+        retries = 3
+        delay = 5  # seconds
+        for i in range(retries):
+            try:
+                summary_prompt = f"{base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{truncated_content}"
+                summary_response = self.current_model.generate_content(summary_prompt)
+                summary = summary_response.text if summary_response.text else "No summary generated"
+                
+                summary = ' '.join(summary.split())
+                if len(summary) > 400:
+                    sentences = summary.split('. ')
+                    truncated_summary = ""
+                    for sentence in sentences:
+                        if len(truncated_summary + sentence + '. ') <= 400:
+                            truncated_summary += sentence + '. '
+                        else:
+                            break
+                    summary = truncated_summary.strip()
+                
+                type_prompt = f"Based on this content, is this an 'Analysis' report (detailed technical analysis) or 'Survey' report (industry survey/statistics)? Respond with only 'Analysis' or 'Survey'. Content preview: {truncated_content[:1000]}"
+                type_response = self.current_model.generate_content(type_prompt)
+                report_type = "Analysis" if "analysis" in type_response.text.lower() else "Survey"
+                
+                # AI-driven sub-categorization
+                category_prompt = f"Given the following categories: {self.categories}. Which category best describes the content of this report? Respond with only the category name. Report content: {truncated_content[:2000]}"
+                category_response = self.current_model.generate_content(category_prompt)
+                category = category_response.text.strip()
+                
+                # Fallback to keyword matching if AI returns an invalid category
+                if category not in self.categories:
+                    print(f"⚠️ AI returned invalid category '{category}'. Falling back to keyword matching.")
+                    category = self._categorize_content_fallback(truncated_content)
+                
+                return {
+                    'organization': org_name,
+                    'year': year,
+                    'title': report_title,
+                    'summary': summary,
+                    'type': report_type,
+                    'category': category,
+                    'organization_url': organization_url, # Pass through the URL
+                    'ai_processed': True
+                }
+            except Exception as e:
+                print(f"❌ AI analysis failed (attempt {i+1}/{retries}): {e}")
+                if "429" in str(e) and i < retries - 1:
+                    time.sleep(delay * (2 ** i)) # Exponential backoff
+                else:
+                    return self._fallback_analysis(content, org_name, year, report_title, organization_url)
+        return self._fallback_analysis(content, org_name, year, report_title, organization_url)
             
     def _categorize_content_fallback(self, content: str) -> str:
         """Categorize content based on keywords (fallback if AI fails)"""
@@ -341,8 +348,8 @@ class ReadmeUpdater:
                 action_taken = "➕ Added"
 
             # Sort only the entries, preserve other lines
-            other_lines = [line for line in lines if not re.match(r"^- \[.*?\]\(.*?\) - \[.*?\]\(.*?\) \d{{4}}.*$", line.strip())]
-            entry_lines = [line for line in updated_lines if re.match(r"^- \[.*?\]\(.*?\) - \[.*?\]\(.*?\) \d{{4}}.*$", line.strip())]
+            other_lines = [line for line in lines if not re.match(r"^- \[.*?\]\(.*?\) - \[.*?\]\(.*?\) \d{4}.*$", line.strip())]
+            entry_lines = [line for line in updated_lines if re.match(r"^- \[.*?\]\(.*?\) - \[.*?\]\(.*?\) \d{4}.*$", line.strip())]
             entry_lines.sort(key=lambda x: (self._extract_org_name_for_sorting(x), self._extract_report_title_for_sorting(x)))
             
             # Reconstruct the section content
@@ -406,6 +413,7 @@ class ReadmeUpdater:
         return match.group(1) if match else entry_line
             
     def _find_similar_section(self, target: str, main_section: str) -> Optional[str]:
+        """Find similar section name"""
         available_sections = list(self.parser.toc_structure[main_section]['subsections'].keys())
         for section in available_sections:
             if any(word in section.lower() for word in target.lower().split()):
@@ -434,19 +442,25 @@ def main():
     
     # Determine files to process
     files_to_process = []
-    conversions_dir = Path("Markdown Conversions")
-    
-    if conversions_dir.exists():
-        # Always process all .md files in the directory for simplicity
-        files_to_process = [str(f) for f in conversions_dir.glob("**/*.md")]
+    changed_md_files_env = os.getenv('CHANGED_MD_FILES', '').strip()
+    force_update = os.getenv('FORCE_UPDATE', 'false').lower() == 'true'
+
+    if changed_md_files_env and not force_update:
+        print("📄 Processing only changed markdown files from environment variable.")
+        files_to_process = [f.strip() for f in changed_md_files_env.split('\n') if f.strip()]
     else:
-        print(f"❌ 'Markdown Conversions' directory not found at {conversions_dir}")
-        Path("pr_summary.txt").touch()
-        Path("debug_info.json").touch()
-        return
+        print("📁 Scanning all markdown files in 'Markdown Conversions' directory.")
+        conversions_dir = Path("Markdown Conversions")
+        if conversions_dir.exists():
+            files_to_process = [str(f) for f in conversions_dir.glob("**/*.md")]
+        else:
+            print(f"❌ 'Markdown Conversions' directory not found at {conversions_dir}")
+            Path("pr_summary.txt").touch()
+            Path("debug_info.json").touch()
+            return
 
     if not files_to_process:
-        print("❌ No markdown files found to process in 'Markdown Conversions' directory.")
+        print("❌ No markdown files found to process.")
         Path("pr_summary.txt").touch()
         Path("debug_info.json").touch()
         return
@@ -506,7 +520,7 @@ def main():
                 json.dump(debug_info, f, indent=2)
             
             print("\n📋 Processing Summary:")
-            print(f"   Total reports found in directory: {len(files_to_process)}")
+            print(f"   Total reports found: {len(files_to_process)}")
             print(f"   Successfully processed: {len(processed_files)}")
             print(f"   AI analysis available: {analyzer.current_model is not None}")
         else:
