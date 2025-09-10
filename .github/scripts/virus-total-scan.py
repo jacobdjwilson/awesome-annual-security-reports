@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import os
 import sys
 import time
@@ -219,6 +217,12 @@ def main():
         else:
             failed_scans.append({"file": os.path.basename(file_path), "reason": "Unknown error"})
         print(f"--- Completed: {file_path} ---\n")
+
+    # Write results to a JSON file
+    output_json_path = os.environ.get("VIRUSTOTAL_RESULTS_JSON_PATH", "virustotal_results.json")
+    with open(output_json_path, "w", encoding="utf-8") as f:
+        json.dump(results, f, indent=2)
+    print(f"Wrote VirusTotal results to {output_json_path}")
 
     summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
     with open(summary_path, 'w', encoding='utf-8') as f:

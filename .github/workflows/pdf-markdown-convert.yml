@@ -1,14 +1,10 @@
 name: ⚙️ PDF to Markdown Conversion
 
 on:
-  push:
-    branches: [main, development]
-    paths:
-      - 'Annual Security Reports/**/*.pdf'
-  pull_request:
-    branches: [main, development]
-    paths:
-      - 'Annual Security Reports/**/*.pdf'
+  workflow_run:
+    workflows: ["🛡️ VirusTotal Security Scan"]
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:
@@ -41,6 +37,15 @@ jobs:
           files: 'Annual Security Reports/**/*.pdf'
           separator: "\n"
 
+      - name: 📂 Download VirusTotal Results Artifact
+        if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
+        uses: actions/download-artifact@v4
+        with:
+          name: virustotal_results
+          path: .
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
       - name: Verify prompt file exists
         id: check-prompt
         run: |
@@ -49,7 +54,7 @@ jobs:
             echo "prompt_exists=true" >> $GITHUB_OUTPUT
             echo "Found prompt file at $PROMPT_PATH"
             PROMPT_VERSION=$(git log -n 1 --pretty=format:"%s" -- "$PROMPT_PATH" | grep -oP 'v\d+\.\d+(\.\d+)?' || echo "v1.0")
-            echo "prompt_version=$PROMPT_VERSION" >> $GITHUB_OUTPUT
+            echo "prompt_version=$PROMPT_OUTPUT"
           else
             echo "prompt_exists=false" >> $GITHUB_OUTPUT
             echo "Prompt file not found at $PROMPT_PATH"
@@ -64,21 +69,22 @@ jobs:
           PROMPT_VERSION: ${{ steps.check-prompt.outputs.prompt_version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ github.ref_name }}
-          CONVERTED_FILES_PATH: "converted_files.txt"
+          CONVERTED_REPORTS_JSON_PATH: "converted_reports.json"
+          VIRUSTOTAL_RESULTS_JSON_PATH: "virustotal_results.json" # Pass path to VT results
           GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
           echo "$CHANGED_FILES" > changed_files.txt
-          python ./.github/scripts/pdf-converter.py changed_files.txt ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH"
+          python ./.github/scripts/pdf-converter.py changed_files.txt ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH" "$VIRUSTOTAL_RESULTS_JSON_PATH"
           git pull --rebase origin ${{ github.ref_name }}
           git push https://${{ secrets.GITHUB_ACTOR }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
       
-      - name: Upload converted files info
+      - name: Upload converted reports info
         if: steps.changed-files.outputs.any_changed == 'true' && steps.check-prompt.outputs.prompt_exists == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: converted_file_info
-          path: converted_files.txt
+          path: converted_reports.json
           retention-days: 1
       
       - name: ❌ Error - Prompt file missing
