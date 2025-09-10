@@ -52,23 +52,13 @@ jobs:
           echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
           echo "📍 Current branch: $BRANCH"
 
-      - name: 📥 Download Converted Reports Artifact
-        if: github.event_name == 'workflow_run'
-        uses: actions/download-artifact@v4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          run-id: ${{ github.event.workflow_run.id }}
-          name: converted_file_info # Specify the artifact name
-          path: . # Download to current directory
-        continue-on-error: true
-
       - name: 🤖 AI README Update
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_UPDATE: ${{ github.event.inputs.force_update }}
         run: |
-          python3 ./.github/scripts/update-readme.py converted_reports.json
+          python3 ./.github/scripts/update-readme.py
 
       - name: 📤 Upload Debug Artifacts
         uses: actions/upload-artifact@v4
