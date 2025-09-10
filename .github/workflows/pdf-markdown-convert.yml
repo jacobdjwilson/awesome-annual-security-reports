@@ -1,4 +1,4 @@
-name: 📎 PDF to Markdown Conversion
+name: ⚙️ PDF to Markdown Conversion
 
 on:
   push:
@@ -420,7 +420,7 @@ jobs:
               # Generate and write summary to GITHUB_STEP_SUMMARY
               summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
               with open(summary_path, 'a', encoding='utf-8') as f:
-                  f.write("## 📎 PDF to Markdown Conversion Summary\n\n")
+                  f.write("## ⚙️ PDF to Markdown Conversion Summary\n\n")
                   f.write("| PDF File | Markdown Output | Model Used | Status |\n")
                   f.write("|----------|-----------------|------------|--------|\n")
                   for result in all_results:
@@ -433,7 +433,7 @@ jobs:
                   f.write(f"- 📊 Total PDFs processed: {len(pdf_paths)}\n")
                   
                   f.write("\n### ℹ️ About the Conversion\n")
-                  f.write("- 📎 PDF text extracted using `markitdown[pdf]`.\n")
+                  f.write("- ⚙️ PDF text extracted using `markitdown[pdf]`.\n")
                   f.write("- 🤖 Markdown generated using Google Gemini API.\n")
                   f.write("- 📝 AI prompt from `.github/ai-prompts/pdf-to-markdown-prompt.md`.\n")
                   f.write("- ⬆️ Output files are committed to the repository.\n")
