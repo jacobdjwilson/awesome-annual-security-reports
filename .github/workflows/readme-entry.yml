@@ -5,7 +5,16 @@ on:
     workflows: ["⚙️ PDF to Markdown Conversion"]
     types:
       - completed
+    branches: 
+      - main
+      - development
   workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Force update all markdown files'
+        required: false
+        default: 'false'
+        type: boolean
 
 permissions:
   contents: write
@@ -14,7 +23,7 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_run' || github.event_name == 'workflow_dispatch'
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     
     steps:
       - name: 🔍 Checkout Repository
@@ -32,53 +41,38 @@ jobs:
         run: |
           pip install google-generativeai pyyaml mistune gitpython requests
 
-      - name: 📂 Download converted files artifact
-        if: github.event_name == 'workflow_run'
-        uses: actions/download-artifact@v4
-        with:
-          name: converted_file_info
-          path: .
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          run-id: ${{ github.event.workflow_run.id }}
-
       - name: 🌿 Detect Current Branch
         id: branch
         run: |
-          BRANCH="${{ github.ref_name }}"
+          if [ "${{ github.event_name }}" == "workflow_run" ]; then
+            BRANCH="${{ github.event.workflow_run.head_branch }}"
+          else
+            BRANCH="${{ github.ref_name }}"
+          fi
           echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
+          echo "📍 Current branch: $BRANCH"
+
+      - name: 📥 Download Converted Reports Artifact
+        if: github.event_name == 'workflow_run'
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+          name: converted_file_info # Specify the artifact name
+          path: . # Download to current directory
+        continue-on-error: true
 
       - name: 🤖 AI README Update
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORCE_UPDATE: ${{ github.event.inputs.force_update }}
         run: |
-          # For workflow_run, the artifact should have been downloaded to converted_reports.json
-          # For workflow_dispatch, we create a dummy converted_reports.json
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            echo "[ { \"file_path\": \"Markdown Conversions/2025/SailPoint-Horizons-of-Identity-Security-2025.md\", \"organization_url\": \"https://www.sailpoint.com\" } ]" > converted_reports.json
-          fi
-          
-          # Check if converted_reports.json exists and is not empty
-          if [ ! -s converted_reports.json ]; then
-            echo "❌ converted_reports.json not found or is empty. Exiting."
-            exit 1
-          fi
-          
           python3 ./.github/scripts/update-readme.py converted_reports.json
 
-      - name: 📝 Debugging: Print debug_info.json and pr_summary.txt
-        if: always()
-        run: |
-          echo "--- Content of debug_info.json ---"
-          cat debug_info.json || echo "debug_info.json not found or empty"
-          echo "----------------------------------"
-          echo "--- Content of pr_summary.txt ---"
-          cat pr_summary.txt || echo "pr_summary.txt not found or empty"
-          echo "----------------------------------"
-
       - name: 📤 Upload Debug Artifacts
-        if: always()
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: readme-update-debug-${{ github.run_number }}
           path: |
@@ -91,15 +85,25 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Configure git
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Add changes
           git add README.md
-          git pull --rebase origin ${{ steps.branch.outputs.current_branch }}
+          
+          # Check if there are changes to commit
           if git diff --cached --quiet; then
             echo "ℹ️ No changes to commit"
             exit 0
           fi
-          git commit -m "$(cat pr_summary.txt)"
+          
+          # Commit changes
+          git commit -m "✍ Update README with new security reports
+          
+          $(cat pr_summary.txt)"
+          
+          # Push changes to the current branch
           git push origin ${{ steps.branch.outputs.current_branch }}
 
       - name: 📋 Summary
@@ -108,17 +112,17 @@ jobs:
           echo "## 🎯 Workflow Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Branch**: ${{ steps.branch.outputs.current_branch }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Trigger**: ${{ github.event.name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
-          if [ -f "debug_info.json" ] && [ -s "debug_info.json" ]; then
+          if [ -f "debug_info.json" ]; then
             echo "### ✍ Processing Results" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "$(cat debug_info.json | jq -r '
+            echo "$$(cat debug_info.json | jq -r '
               "**Files Found**: " + (.total_files_found | tostring) + "\n" +
               "**Successfully Processed**: " + (.successful_updates | tostring) + "\n" +
               "**AI Analysis Available**: " + (.ai_available | tostring) + "\n"
-            )" >> $GITHUB_STEP_SUMMARY
+            )')" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             
             if [ -f "pr_summary.txt" ]; then
@@ -136,6 +140,5 @@ jobs:
           echo "🔗 Useful Links" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ github.event.name }}" == "workflow_run" ]; then
+          if [ "${{ github.event_name }}" == "workflow_run" ]; then
             echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
-          fi
