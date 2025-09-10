@@ -6,7 +6,7 @@ on:
       - main
       - development
     paths:
-      - 'Annual Security Reports/**'
+      - 'Annual Security Reports/**/*.pdf'
 
 jobs:
   security-scan:
