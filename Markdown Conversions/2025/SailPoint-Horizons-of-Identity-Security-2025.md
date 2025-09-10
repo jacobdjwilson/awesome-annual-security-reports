@@ -2,38 +2,20 @@
 
 ## Table of Contents
 - [Executive summary](#executive-summary)
-- [Exhibit 1: Investments in IAM provide the highest perceived ROI when compared to all other security domains](#exhibit-1-investments-in-iam-provide-the-highest-perceived-roi-when-compared-to-all-other-security-domains)
 - [Chapter 1: The future of identity is tightly linked with data and security](#chapter-1-the-future-of-identity-is-tightly-linked-with-data-and-security)
-  - [Exhibit 2: As a central control point in the security tech stack, identity enables and enhances capabilities across multiple domains](#exhibit-2-as-a-central-control-point-in-the-security-tech-stack-identity-enables-and-enhances-capabilities-across-multiple-domains)
-  - [Exhibit 3: Integrated identity will power dynamic access across users, unified visibility, and automated response](#exhibit-3-integrated-identity-will-power-dynamic-access-across-users-unified-visibility-and-automated-response)
-  - [Exhibit 4: Proof points in last 12-18 months support progress across the elements shaping the future of identity](#exhibit-4-proof-points-in-last-12-18-months-support-progress-across-the-elements-shaping-the-future-of-identity)
+  - [As a central control point in the security tech stack, identity enables and enhances capabilities across multiple domains](#as-a-central-control-point-in-the-security-tech-stack-identity-enables-and-enhances-capabilities-across-multiple-domains)
+  - [Integrated identity will power dynamic access across users, unified visibility, and automated response](#integrated-identity-will-power-dynamic-access-across-users-unified-visibility-and-automated-response)
+  - [Proof points in last 12-18 months support progress across the elements shaping the future of identity](#proof-points-in-last-12-18-months-support-progress-across-the-elements-shaping-the-future-of-identity)
 - [Chapter 2: Where organizations are in their journeys](#chapter-2-where-organizations-are-in-their-journeys)
   - [The SailPoint Horizons maturity framework](#the-sailpoint-horizons-maturity-framework)
-    - [Exhibit 5: Over 4 years of annual surveys, we clustered key criteria into 5 maturity horizons guided by survey results](#exhibit-5-over-4-years-of-annual-surveys-we-clustered-key-criteria-into-5-maturity-horizons-guided-by-survey-results)
   - [Where organizations are today](#where-organizations-are-today)
-    - [Exhibit 6: Some organizations are leapfrogging across horizons while others moved backwards](#exhibit-6-some-organizations-are-leapfrogging-across-horizons-while-others-moved-backwards)
-    - [Exhibit 7: Tech and banking see greater share in H4 and H5 while healthcare and manufacturing lag behind average](#exhibit-7-tech-and-banking-see-greater-share-in-h4-and-h5-while-healthcare-and-manufacturing-lag-behind-average)
-    - [Exhibit 8: North American and APAC see greater share in H4+ while Europe and LATAM lag behind average](#exhibit-8-north-american-and-apac-see-greater-share-in-h4-plus-while-europe-and-latam-lag-behind-average)
-    - [Exhibit 9: AI agent and machine identities will grow faster than all other identity types in the next 3-5 years](#exhibit-9-ai-agent-and-machine-identities-will-grow-faster-than-all-other-identity-types-in-the-next-3-5-years)
-    - [Exhibit 10: Organizations need prerequisite capabilities to enable and manage the risks of automated and AI-enabled identity tools](#exhibit-10-organizations-need-prerequisite-capabilities-to-enable-and-manage-the-risks-of-automated-and-ai-enabled-identity-tools)
-    - [Exhibit 11: Organizations adopting emerging identity AI and data capabilities see greater cost savings, productivity, and risk reduction](#exhibit-11-organizations-adopting-emerging-identity-ai-and-data-capabilities-see-greater-cost-savings-productivity-and-risk-reduction)
-    - [Exhibit 12: Horizon 1 and 2 organizations often lack clean and normalized identity data essential for advanced use-case adoption](#exhibit-12-horizon-1-and-2-organizations-often-lack-clean-and-normalized-identity-data-essential-for-advanced-use-case-adoption)
-    - [Exhibit 13: H3+ organizations adopt agentic AI identity capabilities at ~2x higher rates than the average](#exhibit-13-h3-plus-organizations-adopt-agentic-ai-identity-capabilities-at-2x-higher-rates-than-the-average)
-    - [Exhibit 14: Organizations are showing an increasing appetite to utilize identity as a detection mechanism vs. point of control](#exhibit-14-organizations-are-showing-an-increasing-appetite-to-utilize-identity-as-a-detection-mechanism-vs-point-of-control)
-    - [Exhibit 15: Organizations are adopting cloud data access controls, but adoption for dynamic, content-aware access models trails behind](#exhibit-15-organizations-are-adopting-cloud-data-access-controls-but-adoption-for-dynamic-content-aware-access-models-trails-behind)
+  - [Horizon 1 to 2: Establishing foundational identity control](#horizon-1-to-2-establishing-foundational-identity-control)
+  - [Horizon 2 to 3: Expanding identity coverage and automated governance across environments](#horizon-2-to-3-expanding-identity-coverage-and-automated-governance-across-environments)
+  - [Horizon 3 to 4+: Transforming to contextual, adaptive identity](#horizon-3-to-4-transforming-to-contextual-adaptive-identity)
 - [Chapter 3: Your customer success journey across horizons](#chapter-3-your-customer-success-journey-across-horizons)
-  - [Exhibit 16: Deployment challenges hold companies back from realizing value, but employing best practices enables advancement](#exhibit-16-deployment-challenges-hold-companies-back-from-realizing-value-but-employing-best-practices-enables-advancement)
-  - [Exhibit 17: Organizations must address universal and horizon-specific customer success challenges to move across horizons](#exhibit-17-organizations-must-address-universal-and-horizon-specific-customer-success-challenges-to-move-across-horizons)
-  - [Horizon 1 -> 2: Establishing foundational identity control](#horizon-1---2-establishing-foundational-identity-control)
-  - [Horizon 2 -> 3: Expanding identity coverage and automated governance across environments](#horizon-2---3-expanding-identity-coverage-and-automated-governance-across-environments)
-  - [Horizon 3 -> 4+: Transforming to contextual, adaptive identity](#horizon-3---4-plus-transforming-to-contextual-adaptive-identity)
 - [Chapter 4: Quantifying identity ROI](#chapter-4-quantifying-identity-roi)
-  - [Exhibit 18: Organizations that quantify margin, compliance, and risk reduction impact are better positioned to seek increased funding for investments](#exhibit-18-organizations-that-quantify-margin-compliance-and-risk-reduction-impact-are-better-positioned-to-seek-increased-funding-for-investments)
-  - [Exhibit 19: Leading organizations quantify these outcomes to show improved margins](#exhibit-19-leading-organizations-quantify-these-outcomes-to-show-improved-margins)
-  - [Exhibit 20: Advanced identity practices drive faster, measurable threat detection and mitigation](#exhibit-20-advanced-identity-practices-drive-faster-measurable-threat-detection-and-mitigation)
-  - [Exhibit 21: Phishing attack highlights how identity-related incident response best practices thwart attackers](#exhibit-21-phishing-attack-highlights-how-identity-related-incident-response-best-practices-thwart-attackers)
 - [Chapter 5: How to stay ahead as the bar for maturity rises](#chapter-5-how-to-stay-ahead-as-the-bar-for-maturity-rises)
-  - [Navigating your journey forward](#navigating-your-journey-forward)
+- [Navigating your journey forward](#navigating-your-journey-forward)
 - [Appendix](#appendix)
   - [Approach, methodology, and demographics](#approach-methodology-and-demographics)
   - [Sources](#sources)
@@ -46,10 +28,7 @@ As identity security and the attack landscape evolve rapidly, especially with th
 
 Despite challenges faced, organizations report that identity provides the greatest return on investment when compared to all other security domains. Twice as many organizations ranked Identity and Access Management (IAM) as their highest-ROI domain compared to the average (Exhibit 1). This is because effective identity management does more than reduce risk. It drives efficiency, accelerates transformation, and enables smarter decisions across the enterprise.
 
-## Exhibit 1: Investments in IAM provide the highest perceived ROI when compared to all other security domains
-![Exhibit 1: Bar chart showing the percentage of respondents who ranked each security domain as having the highest perceived ROI. IAM is highest at 30%, followed by Endpoint Detection & Response (EDR) at 22%, Data security at 13%, Governance, Risk, and Compliance (GRC) at 12%, Cloud Security Posture Management (CSPM) at 10%, Network security/perimeter at 8%, and Application security at 5%.](image-description-exhibit-1.png)
-
-Source: SailPoint Customer Survey on IAM (n=229): Question 6.06A “Investment in which security domain provides the highest perceived ROI in your organization?”
+![Exhibit 1: Investments in IAM provide the highest perceived ROI when compared to all other security domains](images/exhibit1.png)
 
 Over the last four years, SailPoint has surveyed IAM decision-makers across the globe to assess their capabilities across identity security horizons and define the future of identity. The 375 decision-makers we surveyed in June 2025 included senior leaders in information technology, cybersecurity, and risk. More than half work for organizations with over 10,000 employees, and the majority represent the finance, technology, and healthcare sectors. (For details on survey demographics, see the appendix.)
 
@@ -70,7 +49,7 @@ This year’s research highlights four critical themes from our 2025 survey of g
 
 For every three organizations that moved forward, two moved backward, despite rising levels of identity security investment overall.
 
-- 63 percent of organizations remain in Horizons 1 or 2, suggesting a significant opportunity to unlock the “full potential” of identity security. These programs are typically tactical, manually driven, and limited in their ability to support automation, AI governance, or cross-environment controls. However, many of these organizations are now focused on building foundational capabilities that will enable future scale.
+- 63 percent of organizations remain in Horizons 1 or 2, suggesting a significant opportunity to unlock the “_full potential_” of identity security. These programs are typically tactical, manually driven, and limited in their ability to support automation, AI governance, or cross-environment controls. However, many of these organizations are now focused on building foundational capabilities that will enable future scale.
 - Advancement to Horizons 3 and 4+ was driven by an increased appetite to automate to reduce costs and new capability building. In particular, Horizon 4 organizations this year had higher adoption across ID verification, machine identity management, and AI agent IAM.
 - Four percent of organizations regressed in 2025. This was not due to declining effort, but rather a result of rising capability thresholds to meet Horizons 4 and 5 as the attack landscape intensifies. Organizations that regressed had significantly lower adoption of AI agent IAM capabilities.
 
@@ -94,7 +73,7 @@ Despite rising levels of investment, many identity programs still struggle with 
 
 Although identity enables the business through cost savings and productivity improvements, many organizations still struggle to quantify and communicate this impact, focusing only on compliance enablement and risk reduction.
 
-- Only 25 percent of organizations position IAM as a strategic business enabler. 57 percent of organizations still describe IAM as either a “security control” or “compliance requirement,” limiting the role it plays in transformation initiatives.
+- Only 25 percent of organizations position IAM as a strategic business enabler. 57 percent of organizations still describe IAM as either a “_security control_” or “_compliance requirement_,” limiting the role it plays in transformation initiatives.
 - Organizations that quantify revenue and cost impact of identity investments are better positioned to seek increased funding. Organizations have traditionally quantified returns from identity security in terms of risk reduction and compliance enablement. However, those that quantify margin impact from identity security investment as well create more compelling business cases for increased funding.
 - Integrated identity data unlocks downstream automation and new business use cases. When embedded into platforms like Human Resources (HR), Customer Relationship Management (CRM), or IT Service Management (ITSM), identity data powers AI assistant personalization, smarter provisioning, and more efficient business workflows across departments.
 - Use of advanced identity security capabilities reduces risk through improved incident response. Identity-enabled threat detection and response, next-generation PAM, unified control planes, and AI agent governance lead to faster and more effective detection, containment, and remediation of incidents.
@@ -110,8 +89,9 @@ However, this gap can be closed. Our research explores how organizations are mak
 
 As organizations mature across identity security horizons, the landscape they must navigate is evolving faster than ever. In 2025, advances in AI, data management, and threat detection are reshaping identity security. As identity shifts from a foundational control to the new frontier of security, it has emerged as the central control point in outperforming organizations - where critical decisions are made, policies are enforced, and security operations converge. Identity now serves as the connective tissue across the security ecosystem, touching every domain from endpoint protection to cloud security (Exhibit 2). This strategic positioning powers expanded governance across all human and non-human identities, dynamic privileged access, unified and accurate visibility across environments, and automated threat response capabilities not possible without identity telemetry. These elements are shaping the future of integrated identity security, bringing together identity, data, and security. As integrated programs become essential to harness identity as a dynamic method for detection and response, identity, CISO, data, and AI organizations will have to come together to chart a singular path forward.
 
-### Exhibit 2: As a central control point in the security tech stack, identity enables and enhances capabilities across multiple domains
-![Exhibit 2: Diagram showing Identity as a central control point connecting to various security domains. Domains include Endpoint security, Network security, Cloud security, Data protection, Application security, Governance, Risk & Compliance, Threat detection/SIEM, and Third party security. Each domain has a brief description of how Identity enhances its capabilities.](image-description-exhibit-2.png)
+### As a central control point in the security tech stack, identity enables and enhances capabilities across multiple domains
+
+![Exhibit 2: As a central control point in the security tech stack, identity enables and enhances capabilities across multiple domains](images/exhibit2.png)
 
 Four trends are now shaping how identity capabilities are evolving and expanding across the security ecosystem:
 
@@ -120,4 +100,98 @@ Four trends are now shaping how identity capabilities are evolving and expanding
 - Identity fabric is delivering unified control across complex environments: To reduce fragmentation, organizations are building identity control planes— centralized frameworks that connect identity data and policies across environments. The identity fabric delivers consistent policy enforcement, unified data models, and master identity records to enable seamless identity governance at scale.
 - Identity signals are powering intelligent threat response: Identity has become a source of detection. Signals such as login patterns and credential misuse are being integrated into Security Incident and Event Management (SIEM) and Security Orchestration, Automation, and Response (SOAR) platforms to drive threat detection, forensic investigation, and automated remediation workflows.
 
-Together, these forces offer a blueprint for the future of identity security (Exhibit 3). By anchoring security decisions in adaptive, data-driven controls, they enable identity to serve as both a risk mitigator and a business enabler. As these capabilities mature, they will continue to reduce risk, accelerate transformation,
+Together, these forces offer a blueprint for the future of identity security (Exhibit 3). By anchoring security decisions in adaptive, data-driven controls, they enable identity to serve as both a risk mitigator and a business enabler. As these capabilities mature, they will continue to reduce risk, accelerate transformation, and create long-term value for the business.
+
+### Integrated identity will power dynamic access across users, unified visibility, and automated response
+
+![Exhibit 3: Integrated identity will power dynamic access across users, unified visibility, and automated response](images/exhibit3.png)
+
+While new forces are also shaping the cutting edge of identity security, capability themes referenced in last year’s report have continued to mature. Organizations are not just sustaining momentum, they are scaling these capability themes, applying them more broadly, and embedding them deeper into their environments (Exhibit 3).
+
+- Integrated identity programs have progressed from basic visibility to unified control. Organizations are now building identity control planes that enforce consistent policies, manage entitlements, and align governance across cloud, SaaS, and on-premises platforms.
+- Dynamic trust models are evolving towards continuous adaptive access. Rather than point-in-time decisions, access levels will respond in real time to changes in user behavior, session context, and risk indicators.
+- Federated identities are expanding into broader identity fabrics. What began as cross-platform Single Sign-On (SSO) is now evolving into decentralized identity control, with growing use of data-sharing standards and federated governance frameworks.
+- Frictionless access is becoming both more seamless and more secure. Passwordless authentication using passkeys, biometrics, and certificates is now common, while automation is extending to privileged access, ephemeral credentials, and AI assistant onboarding.
+
+Leading organizations, cybersecurity standards bodies, and governments are already embracing core elements shaping the future of identity (Exhibit 4).
+
+### Proof points in last 12-18 months support progress across the elements shaping the future of identity
+
+![Exhibit 4: Proof points in last 12-18 months support progress across the elements shaping the future of identity](images/exhibit4.png)
+
+## Chapter 2: Where organizations are in their journeys
+
+### The SailPoint Horizons maturity framework
+
+SailPoint categorizes identity security programs into five horizons based on an organization’s maturity across four enablement areas: Strategy, technology & tools, operating model, and talent (Exhibit 5). Since 2024, we have updated Horizons 4 and 5 with new capability thresholds, including for AI agent lifecycle governance and cloud-native identity data protection.
+
+![Exhibit 5: Over 4 years of annual surveys, we clustered key criteria into 5 maturity horizons guided by survey results](images/exhibit5.png)
+
+Based on interviews and a new survey of 375 IAM decision makers across North America, Europe, Asia, and Latin America, we explored where organizations stand in their identity security journeys and how they have progressed since last year. These perspectives illustrate where organizations have excelled, the barriers they face, and how they can move to the next maturity horizon.
+
+### Where organizations are today
+
+While most organizations remain early in their identity journeys, a growing number are leaning into modernization – not just to catch up, but to build the foundations for what is next (Exhibit 6). Many teams are investing in automation to reduce costs and improve efficiency, helping them progress out of foundational maturity levels. At the same time, organizations are investing in AI agent governance, machine identity management, and dynamic access controls to move to more mature horizons. These shifts are accelerating forward momentum for some organizations, while exposing capability gaps that are causing others to fall behind.
+
+![Exhibit 6: Some organizations are leapfrogging across horizons while others moved backwards](images/exhibit6.png)
+
+This year’s maturity shifts highlight three clear patterns. First, the move from Horizons 1 and 2 into Horizon 3 is being driven by organizations seeking to automate manual identity tasks and reduce operational costs. These early-stage programs are responding to resource constraints by streamlining access workflows, especially in environments where IAM still represents a small portion of the overall cybersecurity budget.
+
+Second, advancement into Horizon 4 depends on building entirely new capabilities. Organizations that progressed to these higher levels demonstrated stronger adoption of advanced identity tools, particularly in areas such as ID verification, machine identity management, and AI agent governance. These investments are allowing teams to move beyond manual policy enforcement toward more adaptive and intelligent identity strategies.
+
+Finally, organizations whose efforts remain static can move backward. Four percent of organizations moved backward this year, unable to meet the higher capability thresholds introduced for Horizons 4 and 5. These organizations had notably lower adoption of AI agent IAM controls, signaling that, as identity becomes more tightly linked to AI governance, gaps in capability will increasingly translate into stalled or reversed progress.
+
+Industry dynamics play a major role in maturity differences (Exhibit 7). Technology and banking organizations have the greatest share in Horizon 4+, driven by higher levels of identity investment and capability adoption.
+
+![Exhibit 7: Tech and banking see greater share in H4 and H5 while healthcare and manufacturing lag behind average](images/exhibit7.png)
+
+Healthcare’s rapid progress from just 6 percent in Horizon 4 in 2024 to 10 percent in 2025 is rooted in regulatory pressure, widespread adoption of electronic health records, and urgency to automate workflows, particularly after COVID-19. IAM investments help healthcare companies secure critical patient data, enable clinician efficiency, and reduce compliance risk. Manufacturing, in contrast, remains heavily clustered in Horizon 1 (61 percent), with only 4 percent in Horizon 4 and above. This lag is tied to complex, legacy environments, lower IAM investment levels, and challenges managing diverse identities across factory staff, contractors, and machines.
+
+![Exhibit 8: North American and APAC see greater share in H4+ while Europe and LATAM lag behind average](images/exhibit8.png)
+
+Identity security maturity also varies greatly across regions, with APAC and North America having the greatest share of organizations in Horizon 4+ (Exhibit 8). Identity security maturity of North American organizations is driven by regulatory pressures, greater levels of security funding, and greater cloud adoption. APAC maturity distribution features organizations at both ends of the spectrum—the highest representation of Horizon 1 (56%) organizations alongside the highest representation of Horizon 4+ (15%)—reflecting the region’s diverse markets and varying level of readiness for digital transformation. European organizations, despite strong data protection frameworks, show 50% still in Horizon 1, suggesting opportunity to invest in capabilities that establish compliance and grow maturity. The majority of Latin American organizations remain in Horizons 1 and 2, indicating lower levels of maturity and adoption challenges.
+
+Amid these geographic and sector-specific shifts, a broader transformation is underway: the rapid growth of non-human identities. Machine identities and AI agents are now expanding faster than any other type of identity, driven by the widespread adoption of cloud workloads, automation, and agentic AI (Exhibit 9). AI agents are governed in less than four in ten organizations today, but they will grow faster in number than any other identity type, with over one-third of organizations expecting growth exceeding 30% in the next 3-5 years.
+
+![Exhibit 9: AI agent and machine identities will grow faster than all other identity types in the next 3-5 years](images/exhibit9.png)
+
+Leading organizations are laying the groundwork for more heavily automated identity programs to support a fast-growing number of non-human identities. While the degree of automation varies greatly across organizations, a growing number of teams are putting in place the core enablers needed to scale AI-driven identity capabilities safely and effectively. These include foundational elements such as unified identity data management, real-time monitoring, just-in-time access, and AI governance policies. Together, these prerequisites help create the conditions for success as organizations move toward more advanced maturity levels (Exhibit 10).
+
+![Exhibit 10: Organizations need prerequisite capabilities to enable and manage the risks of automated and AI-enabled identity tools](images/exhibit10.png)
+
+Outperforming organizations, building on prerequisite steps to enable and manage the risks of AI, are adopting emerging capabilities that lead to improved business outcomes. These include optimized identity data workflows, agentic AI for identity operations, identity-centric detection and response, and cloud-based data governance. While once aspirational, these capabilities are now actively driving better outcomes: Organizations that adopt them are significantly more likely to realize gains in productivity, cost efficiency, risk reduction, and audit readiness.
+
+- Unified identity data capabilities that flow data seamlessly between HR systems, directories, and applications drive productivity improvements by reducing manual data reconciliation typically required.
+- AI-driven identity operations results in cost savings by automating historically manual tasks such as auditing and revoking privileges.
+- Identity-centric detection and response reduces risk by rapidly identifying compromised credentials, stopping lateral movement, and preventing privilege escalation during attacks.
+- Cloud data access governance leads to fewer audit findings by ensuring consistent policy enforcement across environments and ensuring that sensitive data remains protected according to regulatory requirements, regardless of where it resides.
+
+Across all four pillars, Horizon 3+ organizations are two to four times more likely than Horizon 1–2 peers to have fully implemented these capabilities (Exhibit 11).
+
+![Exhibit 11: Organizations adopting emerging identity AI and data capabilities see greater cost savings, productivity, and risk reduction](images/exhibit11.png)
+
+Outperforming organizations are prioritizing unified identity data capabilities to drive automation and improve decision-making at scale. Adoption of these capabilities, such as real-time identity data synchronization, is four to eight times higher for Horizon 3+ organizations than for Horizon 1-2 organizations (Exhibit 12). However, adoption is lower for emerging capabilities such as cross-system identity resolution and identity graph mapping. Even among advanced organizations, low data readiness limits progress: 44 percent of H4+ organizations still lack the clean, normalized data needed to fully leverage these tools. This represents a major opportunity for identity programs to scale automation, enhance visibility, and reduce operational risk.
+
+![Exhibit 12: Horizon 1 and 2 organizations often lack clean and normalized identity data essential for advanced use-case adoption](images/exhibit12.png)
+
+The adoption of AI-driven identity capabilities remains in early stages, but leaders are pulling ahead. Horizon 3+ organizations are nearly twice as likely to use agentic AI for tasks such as access policy optimization, real-time privilege adjustments, and autonomous remediation (Exhibit 13). These capabilities not only accelerate decision-making but also help manage the complexity and scale of growing machine and AI agent identities with fewer manual interventions.
+
+![Exhibit 13: H3+ organizations adopt agentic AI identity capabilities at ~2x higher rates than the average](images/exhibit13.png)
+
+Advanced organizations are also using identity signals not just for control, but for detection and response. Adoption of context-rich, identity-data-driven capabilities, such as Identity Threat Detection and Response (ITDR), privileged account monitoring, and real-time threat protection is four times higher in Horizon 3+ organizations than in those at earlier stages (Exhibit 14). These capabilities help organizations detect attacks earlier, respond faster, and reduce lateral movement. As a result, identity is emerging as the center of modern security operations, critical not just for prevention, but for rapid containment and investigation.
+
+![Exhibit 14: Organizations are showing an increasing appetite to utilize identity as a detection mechanism vs. point of control](images/exhibit14.png)
+
+Horizon 3+ organizations adopt cloud data governance capabilities at about 4.5 times higher rates than Horizon 1 and 2 organizations, with adoption patterns showing a clear divide. Organizations are also prioritizing traditional role-based access approaches over attribute-driven and ephemeral ones, with attribute-based data access control (ABAC) and just-in-time (JIT) control showing the lowest adoption at about 30 percent, while basic cloud data access controls reach 45 percent (Exhibit 15). This highlights a continued lag in shifting from perimeter-based defenses to continuous, identity-first governance, leaving many organizations exposed to evolving cloud risks.
+
+![Exhibit 15: Organizations are adopting cloud data access controls, but adoption for dynamic, content-aware access models trails behind](images/exhibit15.png)
+
+Together, these four capabilities are redefining what advanced identity maturity looks like. Organizations that invest in these areas are not just advancing across horizons—they are future-proofing their identity programs to support AI-driven automation, cross-cloud governance, and effective management of emerging risks.
+
+## Chapter 3: Your customer success journey across horizons
+
+While outperforming organizations are seeing productivity gains, cost savings, and risk reduction from identity AI and data capabilities, many organizations are also experiencing challenges across the customer success journey that prevent them from implementing these emerging capabilities. In fact, organizations across horizons struggle to deploy new and emerging identity capabilities, often facing budget overruns, delays, and a lack of desired improvement in user experience (Exhibit 16). However, organizations employing critical customer success elements outperformed across the same set of business outcomes. By adhering to horizons-specific customer success best practices surfaced through our research, organizations can seamlessly onboard new and emerging capabilities that drive advancement across horizons.
+
+![Exhibit 16: Deployment challenges hold companies back from realizing value, but employing best practices enables advancement](images/exhibit16.png)
+
+With 63% of organizations still in Horizons 1 and 2 (Exhibit 6), most security teams find themselves unable to unlock the full potential of identity security as foundational challenges persist. At the same time, Horizon 3+ organizations
