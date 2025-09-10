@@ -14,7 +14,7 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-    if: "${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}"
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     
     steps:
       - name: 🔍 Checkout Repository
@@ -34,6 +34,7 @@ jobs:
           pip install 'markitdown[pdf]' google-api-python-client
 
       - name: 📂 Download converted files artifact
+        if: github.event_name == 'workflow_run'
         uses: actions/download-artifact@v4
         with:
           name: converted_file_info
@@ -46,18 +47,17 @@ jobs:
         run: |
           BRANCH="${{ github.ref_name }}"
           echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
-          echo "📍 Current branch: $BRANCH"
+          echo "📍 Current branch: $BRANCH" >> $GITHUB_OUTPUT
 
       - name: 🤖 AI README Update
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -f converted_files.txt ]; then
-            python3 ./.github/scripts/update-readme.py converted_files.txt
-          else
-            python3 ./.github/scripts/update-readme.py "Markdown Conversions/2025/SailPoint-Horizons-of-Identity-Security-2025.md"
+          if [ ! -f converted_files.txt ]; then
+            echo "Markdown Conversions/2025/SailPoint-Horizons-of-Identity-Security-2025.md" > converted_files.txt
           fi
+          python3 ./.github/scripts/update-readme.py converted_files.txt
 
       - name: 📤 Upload Debug Artifacts
         uses: actions/upload-artifact@v4
@@ -121,4 +121,3 @@ jobs:
           echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ github.event.name }}" == "workflow_run" ]; then
             echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
-          fi
