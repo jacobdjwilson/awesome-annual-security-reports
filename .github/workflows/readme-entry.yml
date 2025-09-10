@@ -71,6 +71,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin ${{ steps.branch.outputs.current_branch }}
           git add README.md
           if git diff --cached --quiet; then
             echo "ℹ️ No changes to commit"
@@ -95,7 +96,7 @@ jobs:
               "**Files Found**: " + (.total_files_found | tostring) + "\n" +
               "**Successfully Processed**: " + (.successful_updates | tostring) + "\n" +
               "**AI Analysis Available**: " + (.ai_available | tostring) + "\n"
-            ')" >> $GITHUB_STEP_SUMMARY
+            )" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             
             if [ -f "pr_summary.txt" ]; then
