@@ -5,6 +5,7 @@ on:
     workflows: ["⚙️ PDF to Markdown Conversion"]
     types:
       - completed
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -13,7 +14,7 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: "${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}"
     
     steps:
       - name: 🔍 Checkout Repository
@@ -33,6 +34,7 @@ jobs:
           pip install 'markitdown[pdf]' google-api-python-client
 
       - name: 📂 Download converted files artifact
+        if: github.event_name == 'workflow_run'
         uses: actions/download-artifact@v4
         with:
           name: converted_file_info
@@ -52,7 +54,11 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python3 ./.github/scripts/update-readme.py converted_files.txt
+          if [ -f converted_files.txt ]; then
+            python3 ./.github/scripts/update-readme.py converted_files.txt
+          else
+            python3 ./.github/scripts/update-readme.py "Markdown Conversions/2025/SailPoint-Horizons-of-Identity-Security-2025.md"
+          fi
 
       - name: 📤 Upload Debug Artifacts
         uses: actions/upload-artifact@v4
