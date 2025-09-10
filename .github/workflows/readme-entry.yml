@@ -35,44 +35,9 @@ jobs:
       - name: 🌿 Detect Current Branch
         id: branch
         run: |
-          if [ "${{ github.event.name }}" == "workflow_run" ]; then
-            BRANCH="${{ github.event.workflow_run.head_branch }}"
-          else
-            BRANCH="${{ github.ref_name }}"
-          fi
+          BRANCH="${{ github.ref_name }}"
           echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
           echo "📍 Current branch: $BRANCH"
-
-      - name: ⬇️ Download Converted Files Artifact
-        uses: actions/download-artifact@v4
-        id: download_artifact
-        with:
-          name: converted_file_info
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          run-id: ${{ github.event.workflow_run.id }}
-          
-      - name: 🔍 Find and Process New Markdown Entries
-        id: new_markdown_entries
-        run: |
-          echo "🔍 Identifying new Markdown files from converted_files.txt..."
-          
-          FILES_TO_PROCESS=""
-          if [ -f "converted_files.txt" ]; then
-            FILES_TO_PROCESS=$(cat converted_files.txt | head -20 || true)
-            echo "📄 Found converted Markdown files:"
-            echo "$FILES_TO_PROCESS"
-          elif [ "${{ github.event.inputs.force_update }}" == "true" ]; then
-            echo "📁 Force update is true. Scanning all Markdown Conversions."
-            FILES_TO_PROCESS=$(find "Markdown Conversions" -name "*.md" | head -20 || true)
-          else
-            echo "❌ No files to process. Exiting."
-            echo "files_to_process=" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          
-          echo "files_to_process<<EOF" >> $GITHUB_OUTPUT
-          echo "$FILES_TO_PROCESS" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: 🤖 AI README Update
         env:
