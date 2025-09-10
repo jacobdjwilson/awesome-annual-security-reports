@@ -34,7 +34,7 @@ jobs:
           pip install 'markitdown[pdf]' google-api-python-client
 
       - name: 📂 Download converted files artifact
-        if: github.event_name == 'workflow_run'
+        if: github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch'
         uses: actions/download-artifact@v4
         with:
           name: converted_file_info
@@ -122,3 +122,4 @@ jobs:
           echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ github.event.name }}" == "workflow_run" ]; then
             echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
+          fi
