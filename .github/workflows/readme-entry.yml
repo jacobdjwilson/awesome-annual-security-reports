@@ -93,7 +93,7 @@ jobs:
           echo "**Trigger**: ${{ github.event.name }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
-          if [ -f "debug_info.json" ]; then
+          if [ -f "debug_info.json" ] && [ -s "debug_info.json" ]; then
             echo "### ✍ Processing Results" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "$(cat debug_info.json | jq -r '
