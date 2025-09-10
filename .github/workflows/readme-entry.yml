@@ -46,17 +46,58 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" == "workflow_run" ]; then
             BRANCH="${{ github.event.workflow_run.head_branch }}"
-          else
+          else:
             BRANCH="${{ github.ref_name }}"
           fi
           echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
           echo "📍 Current branch: $BRANCH"
+
+      - name: 🔍 Get Changed Markdown Files
+        id: changed-md-files
+        run: |
+          CHANGED_FILES=""
+          if [ "${{ github.event_name }}" == "workflow_run" ]; then
+            # For workflow_run, we need to get the diff from the triggering workflow's commit
+            # This is complex as workflow_run doesn't directly expose the diff range.
+            # A simpler approach for workflow_run is to assume the last commit on the head_branch
+            # is the one that triggered the conversion.
+            echo "Running for workflow_run event"
+            git fetch origin ${{ github.event.workflow_run.head_branch }}
+            # Get the last commit on the head branch that triggered this workflow
+            # This might need refinement if multiple commits happen quickly
+            LAST_COMMIT_SHA=$(git rev-parse ${{ github.event.workflow_run.head_sha }})
+            
+            # Find the parent commit to compare against
+            PARENT_COMMIT_SHA=$(git rev-parse $LAST_COMMIT_SHA^)
+            
+            echo "Comparing $PARENT_COMMIT_SHA..$LAST_COMMIT_SHA"
+            CHANGED_FILES=$(git diff --name-only --diff-filter=AM $PARENT_COMMIT_SHA $LAST_COMMIT_SHA -- "Markdown Conversions/**/*.md")
+
+          elif [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "Running for workflow_dispatch event"
+            if [ "${{ github.event.inputs.force_update }}" == "true" ]; then
+              echo "Force update requested. Processing all markdown files."
+              CHANGED_FILES=$(find "Markdown Conversions" -name "*.md" -print)
+            else
+              # Compare current HEAD with the base branch (main or development)
+              BASE_BRANCH="${{ github.base_ref || github.ref_name }}"
+              git fetch origin $BASE_BRANCH
+              CHANGED_FILES=$(git diff --name-only --diff-filter=AM origin/$BASE_BRANCH HEAD -- "Markdown Conversions/**/*.md")
+            fi
+          fi
+          
+          echo "Detected changed files:"
+          echo "$CHANGED_FILES"
+          echo "changed_md_files<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: 🤖 AI README Update
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_UPDATE: ${{ github.event.inputs.force_update }}
+          CHANGED_MD_FILES: ${{ steps.changed-md-files.outputs.changed_md_files }}
         run: |
           python3 ./.github/scripts/update-readme.py
 
@@ -89,9 +130,7 @@ jobs:
           fi
           
           # Commit changes
-          git commit -m "✍ Update README with new security reports
-          
-          $(cat pr_summary.txt)"
+          git commit -m "✍ Update README with new security reports\n\n$(cat pr_summary.txt)"
           
           # Push changes to the current branch
           git push origin ${{ steps.branch.outputs.current_branch }}
@@ -132,3 +171,4 @@ jobs:
           echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ github.event_name }}" == "workflow_run" ]; then
             echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
+          fi
