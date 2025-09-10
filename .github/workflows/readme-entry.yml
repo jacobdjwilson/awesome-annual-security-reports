@@ -47,7 +47,6 @@ jobs:
         run: |
           BRANCH="${{ github.ref_name }}"
           echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
-          echo "📍 Current branch: $BRANCH" >> $GITHUB_OUTPUT
 
       - name: 🤖 AI README Update
         env:
@@ -76,8 +75,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin ${{ steps.branch.outputs.current_branch }}
           git add README.md
+          git pull --rebase origin ${{ steps.branch.outputs.current_branch }}
           if git diff --cached --quiet; then
             echo "ℹ️ No changes to commit"
             exit 0
@@ -121,3 +120,4 @@ jobs:
           echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ github.event.name }}" == "workflow_run" ]; then
             echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
+          fi
