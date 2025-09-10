@@ -54,7 +54,7 @@ jobs:
             echo "prompt_exists=true" >> $GITHUB_OUTPUT
             echo "Found prompt file at $PROMPT_PATH"
             PROMPT_VERSION=$(git log -n 1 --pretty=format:"%s" -- "$PROMPT_PATH" | grep -oP 'v\d+\.\d+(\.\d+)?' || echo "v1.0")
-            echo "prompt_version=$PROMPT_OUTPUT"
+            echo "prompt_version=$PROMPT_VERSION" >> $GITHUB_OUTPUT
           else
             echo "prompt_exists=false" >> $GITHUB_OUTPUT
             echo "Prompt file not found at $PROMPT_PATH"

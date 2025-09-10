@@ -66,9 +66,19 @@ jobs:
           
           python3 ./.github/scripts/update-readme.py converted_reports.json
 
-      - name: 📤 Upload Debug Artifacts
-        uses: actions/upload-artifact@v4
+      - name: 📝 Debugging: Print debug_info.json and pr_summary.txt
         if: always()
+        run: |
+          echo "--- Content of debug_info.json ---"
+          cat debug_info.json || echo "debug_info.json not found or empty"
+          echo "----------------------------------"
+          echo "--- Content of pr_summary.txt ---"
+          cat pr_summary.txt || echo "pr_summary.txt not found or empty"
+          echo "----------------------------------"
+
+      - name: 📤 Upload Debug Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: readme-update-debug-${{ github.run_number }}
           path: |
@@ -128,4 +138,3 @@ jobs:
           echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ github.event.name }}" == "workflow_run" ]; then
             echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
-          fi
