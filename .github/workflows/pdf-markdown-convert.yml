@@ -63,6 +63,12 @@ jobs:
           echo "EOF" >> $GITHUB_OUTPUT
           echo "branch=$CURRENT_BRANCH" >> $GITHUB_OUTPUT
       
+      - name: 🔍 Find new and modified PDF files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: 'Annual Security Reports/**/*.pdf'
+
       - name: Verify prompt file exists
         id: check-prompt
         run: |
@@ -446,6 +452,7 @@ jobs:
 
       - name: 🤖 Process PDF files
         if: steps.find-pdfs.outputs.pdfs_changed == 'true' && steps.check-prompt.outputs.prompt_exists == 'true'
+        if: steps.changed-files.outputs.any_changed == 'true' && steps.check-prompt.outputs.prompt_exists == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
@@ -453,23 +460,28 @@ jobs:
           PROMPT_VERSION: ${{ steps.check-prompt.outputs.prompt_version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ steps.find-pdfs.outputs.branch }}
+          BRANCH: ${{ github.ref_name }}
           CONVERTED_FILES_PATH: "converted_files.txt"
           GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
         run: |
           # Create a file with the list of PDF paths
           echo "${{ steps.find-pdfs.outputs.pdf_files }}" > pdf_paths.txt
+          # The output is space-delimited, so convert to newlines
+          echo "${{ steps.changed-files.outputs.all_changed_files }}" | tr ' ' '\n' > pdf_paths.txt
           
           # Run the Python script
           python process_pdfs.py pdf_paths.txt ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH"
           
           # Pull latest changes and rebase before pushing
           git pull --rebase origin ${{ steps.find-pdfs.outputs.branch }}
+          git pull --rebase origin ${{ github.ref_name }}
           
           # Push changes
           git push https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF}
       
       - name: Upload converted files info
         if: steps.find-pdfs.outputs.pdfs_changed == 'true' && steps.check-prompt.outputs.prompt_exists == 'true'
+        if: steps.changed-files.outputs.any_changed == 'true' && steps.check-prompt.outputs.prompt_exists == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: converted_file_info
@@ -478,6 +490,7 @@ jobs:
       
       - name: ❌ Error - Prompt file missing
         if: steps.find-pdfs.outputs.pdfs_changed == 'true' && steps.check-prompt.outputs.prompt_exists != 'true'
+        if: steps.changed-files.outputs.any_changed == 'true' && steps.check-prompt.outputs.prompt_exists != 'true'
         run: |
           echo "Error: Prompt file not found at .github/ai-prompts/pdf-to-markdown-prompt.md"
           echo "Please ensure the prompt file exists in your repository."
