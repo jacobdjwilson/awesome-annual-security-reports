@@ -1,20 +1,11 @@
 name: 📝 Update README with AI Generated Report Entry
 
 on:
-  workflow_run:
-    workflows: ["⚙️ PDF to Markdown Conversion"]
-    types:
-      - completed
-    branches: 
-      - main
-      - development
+  push:
+    branches: [main, development]
+    paths:
+      - 'Annual Security Reports/**/*.pdf'
   workflow_dispatch:
-    inputs:
-      force_update:
-        description: 'Force update all markdown files'
-        required: false
-        default: 'false'
-        type: boolean
 
 permissions:
   contents: write
@@ -23,7 +14,6 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     
     steps:
       - name: 🔍 Checkout Repository
@@ -40,6 +30,7 @@ jobs:
       - name: 📦 Install Dependencies
         run: |
           pip install google-generativeai pyyaml mistune gitpython requests
+          pip install 'markitdown[pdf]' google-api-python-client
 
       - name: 🌿 Detect Current Branch
         id: branch
