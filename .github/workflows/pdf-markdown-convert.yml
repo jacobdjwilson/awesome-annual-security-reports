@@ -39,6 +39,7 @@ jobs:
         uses: tj-actions/changed-files@v44
         with:
           files: 'Annual Security Reports/**/*.pdf'
+          separator: "\n"
 
       - name: Verify prompt file exists
         id: check-prompt
@@ -65,8 +66,10 @@ jobs:
           BRANCH: ${{ github.ref_name }}
           CONVERTED_FILES_PATH: "converted_files.txt"
           GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
+          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          python ./.github/scripts/pdf-converter.py "${{ steps.changed-files.outputs.all_changed_files }}" ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH"
+          echo "$CHANGED_FILES" > changed_files.txt
+          python ./.github/scripts/pdf-converter.py changed_files.txt ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH"
           git pull --rebase origin ${{ github.ref_name }}
           git push https://${{ secrets.GITHUB_ACTOR }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
       

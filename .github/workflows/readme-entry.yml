@@ -37,6 +37,7 @@ jobs:
         uses: tj-actions/changed-files@v44
         with:
           files: 'Markdown Conversions/**/*.md'
+          separator: "\n"
 
       - name: 🌿 Detect Current Branch
         id: branch
@@ -50,8 +51,10 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          python3 ./.github/scripts/update-readme.py "${{ steps.changed-files.outputs.all_changed_files }}"
+          echo "$CHANGED_FILES" > changed_files.txt
+          python3 ./.github/scripts/update-readme.py changed_files.txt
 
       - name: 📤 Upload Debug Artifacts
         uses: actions/upload-artifact@v4

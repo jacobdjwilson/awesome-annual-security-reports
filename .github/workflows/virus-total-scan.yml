@@ -32,6 +32,7 @@ jobs:
           files: |
             Annual Security Reports/**/*.pdf
             Markdown Conversions/**/*.md
+          separator: "\n"
 
       - name: 📦 Install dependencies
         if: steps.changed-files.outputs.any_changed == 'true'
@@ -41,8 +42,10 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
+          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          python ./.github/scripts/virus-total-scan.py "${{ steps.changed-files.outputs.all_changed_files }}"
+          echo "$CHANGED_FILES" > changed_files.txt
+          python ./.github/scripts/virus-total-scan.py changed_files.txt
 
       - name: 📝 No files to scan message
         if: steps.changed-files.outputs.any_changed != 'true'

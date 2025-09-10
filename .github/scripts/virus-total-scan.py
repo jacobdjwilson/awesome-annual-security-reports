@@ -202,8 +202,9 @@ def main():
         print("No files provided to scan.")
         return
 
-    files_to_scan_string = sys.argv[1]
-    files_to_scan = [path.strip() for path in files_to_scan_string.split(' ') if path.strip()]
+    files_to_scan_file = sys.argv[1]
+    with open(files_to_scan_file, "r") as f:
+        files_to_scan = [line.strip() for line in f.readlines() if line.strip()]
 
     results = []
     failed_scans = []

@@ -123,7 +123,7 @@ def perform_google_search(organization_name, report_title, pdf_path, api_key, cs
                 link = item['link']
                 # Exclude known CDN/media patterns (can be expanded)
                 if not re.search(r'\.(cdn|media|assets)\.', link, re.IGNORECASE) and \
-                   not re.search(r'(\.pdf|\.doc|\.docx)$', link, re.IGNORECASE) and \
+                   not re.search(r'(\.(pdf|doc|docx))$', link, re.IGNORECASE) and \
                    not re.search(r'(issuu\.com|slideshare\.net|scmagazine\.com|darkreading\.com)', link, re.IGNORECASE):
                     print(f"Google Search found suitable URL: {link}")
                     return link
@@ -295,10 +295,10 @@ def process_pdf(pdf_path, prompt_path, prompt_version, branch):
 
 def main():
     if len(sys.argv) < 5:
-        print("Usage: python pdf-converter.py <pdf_paths_string> <prompt_path> <prompt_version> <branch>")
+        print("Usage: python pdf-converter.py <pdf_paths_file> <prompt_path> <prompt_version> <branch>")
         return 1
     
-    pdf_paths_string = sys.argv[1]
+    pdf_paths_file = sys.argv[1]
     prompt_path = sys.argv[2]
     prompt_version = sys.argv[3]
     branch = sys.argv[4]
@@ -309,7 +309,8 @@ def main():
         f.write("")  # Just create/clear the file
     
     # Read PDF paths
-    pdf_paths = [path.strip() for path in pdf_paths_string.split(' ') if path.strip()]
+    with open(pdf_paths_file, "r") as f:
+        pdf_paths = [line.strip() for line in f.readlines() if line.strip()]
     
     print(f"Processing {len(pdf_paths)} PDF files on branch {branch}")
     
