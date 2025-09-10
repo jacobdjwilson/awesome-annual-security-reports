@@ -442,13 +442,15 @@ class ReadmeUpdater:
 def main():
     print("🚀 Starting AI README update process")
     
-    files_to_process = sys.argv[1:]
-    if not files_to_process:
+    if len(sys.argv) < 2:
         print("No files provided to process. Exiting.")
         # Create empty summary files so downstream steps don't fail
         Path("pr_summary.txt").touch()
         Path("debug_info.json").touch()
         return
+
+    files_to_process_string = sys.argv[1]
+    files_to_process = [path.strip() for path in files_to_process_string.split(' ') if path.strip()]
 
     readme_parser = ReadmeParser("README.md")
     if not readme_parser.content:

@@ -51,7 +51,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python3 ./.github/scripts/update-readme.py ${{ steps.changed-files.outputs.all_changed_files }}
+          python3 ./.github/scripts/update-readme.py "${{ steps.changed-files.outputs.all_changed_files }}"
 
       - name: 📤 Upload Debug Artifacts
         uses: actions/upload-artifact@v4

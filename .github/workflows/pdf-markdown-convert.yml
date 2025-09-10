@@ -66,8 +66,7 @@ jobs:
           CONVERTED_FILES_PATH: "converted_files.txt"
           GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
         run: |
-          echo "${{ steps.changed-files.outputs.all_changed_files }}" | tr ' ' '\n' > pdf_paths.txt
-          python ./.github/scripts/pdf-converter.py pdf_paths.txt ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH"
+          python ./.github/scripts/pdf-converter.py "${{ steps.changed-files.outputs.all_changed_files }}" ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH"
           git pull --rebase origin ${{ github.ref_name }}
           git push https://${{ secrets.GITHUB_ACTOR }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
       

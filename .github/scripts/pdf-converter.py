@@ -295,10 +295,10 @@ def process_pdf(pdf_path, prompt_path, prompt_version, branch):
 
 def main():
     if len(sys.argv) < 5:
-        print("Usage: python pdf-converter.py <pdf_paths_file> <prompt_path> <prompt_version> <branch>")
+        print("Usage: python pdf-converter.py <pdf_paths_string> <prompt_path> <prompt_version> <branch>")
         return 1
     
-    pdf_paths_file = sys.argv[1]
+    pdf_paths_string = sys.argv[1]
     prompt_path = sys.argv[2]
     prompt_version = sys.argv[3]
     branch = sys.argv[4]
@@ -309,8 +309,7 @@ def main():
         f.write("")  # Just create/clear the file
     
     # Read PDF paths
-    with open(pdf_paths_file, "r") as f:
-        pdf_paths = [line.strip() for line in f.readlines() if line.strip()]
+    pdf_paths = [path.strip() for path in pdf_paths_string.split(' ') if path.strip()]
     
     print(f"Processing {len(pdf_paths)} PDF files on branch {branch}")
     

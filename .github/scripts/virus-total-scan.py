@@ -198,10 +198,12 @@ def main():
         print("Error: VIRUS_TOTAL_API_KEY environment variable not set")
         sys.exit(1)
     
-    files_to_scan = sys.argv[1:]
-    if not files_to_scan:
+    if len(sys.argv) < 2:
         print("No files provided to scan.")
         return
+
+    files_to_scan_string = sys.argv[1]
+    files_to_scan = [path.strip() for path in files_to_scan_string.split(' ') if path.strip()]
 
     results = []
     failed_scans = []

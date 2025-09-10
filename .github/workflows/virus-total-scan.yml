@@ -42,7 +42,7 @@ jobs:
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
         run: |
-          python ./.github/scripts/virus-total-scan.py ${{ steps.changed-files.outputs.all_changed_files }}
+          python ./.github/scripts/virus-total-scan.py "${{ steps.changed-files.outputs.all_changed_files }}"
 
       - name: 📝 No files to scan message
         if: steps.changed-files.outputs.any_changed != 'true'
