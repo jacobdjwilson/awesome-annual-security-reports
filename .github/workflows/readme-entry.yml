@@ -159,7 +159,7 @@ jobs:
                           
                       # Subsection (e.g.,     - [Threat Intelligence](#threat-intelligence))
                       # Check for '    - ' at the beginning of the line (4 spaces indentation)
-                      elif line.startswith('    - ') and current_main_section:
+                      if line.startswith('    - ') and current_main_section:
                           stripped_line = line.strip()
                           match = re.search(r'\[([^\]]+)\]', stripped_line)
                           if match:
