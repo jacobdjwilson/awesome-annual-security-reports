@@ -12,6 +12,7 @@ jobs:
   security-scan:
     runs-on: ubuntu-latest
     name: Scan Security Reports
+    if: github.event_name == 'push' && (startsWith(github.event.head_commit.message, 'Create') || startsWith(github.event.head_commit.message, 'Delete'))
     
     steps:
       - name: ✅ Checkout repository
