@@ -2,6 +2,7 @@
 import os
 import sys
 import re
+import json
 import google.generativeai as genai
 from pathlib import Path
 import subprocess
@@ -245,13 +246,9 @@ def process_pdf(pdf_path, prompt_path, prompt_version, branch):
     # Check if file was created or updated
     if not output_path.exists():
         print(f"Error: Failed to create {output_path}")
-        return False
+        return {"pdf_path": str(pdf_path), "output_path": "", "model_used": MODEL, "status": "Failed: Output file not created"}
         
     print(f"Created/Updated: {output_path}")
-    
-    # Add the converted file path to the list of converted files
-    with open(os.environ.get("CONVERTED_FILES_PATH", "converted_files.txt"), "a") as f:
-        f.write(f"{output_path}\n")
     
     # Commit the file
     try:
@@ -282,7 +279,8 @@ def process_pdf(pdf_path, prompt_path, prompt_version, branch):
             "pdf_path": str(pdf_path),
             "output_path": str(output_path),
             "model_used": MODEL,
-            "status": "Converted Successfully"
+            "status": "Converted Successfully",
+            "organization_url": organization_url # Include organization URL
         }
     except Exception as e:
         print(f"Error during git operations: {str(e)}")
@@ -290,7 +288,8 @@ def process_pdf(pdf_path, prompt_path, prompt_version, branch):
             "pdf_path": str(pdf_path),
             "output_path": "", # No output path if failed
             "model_used": MODEL,
-            "status": f"Failed: {str(e)}"
+            "status": f"Failed: {str(e)}",
+            "organization_url": organization_url # Include organization URL even on failure
         }
 
 def main():
@@ -302,11 +301,6 @@ def main():
     prompt_path = sys.argv[2]
     prompt_version = sys.argv[3]
     branch = sys.argv[4]
-    
-    # Create or clear the converted files list
-    converted_files_path = os.environ.get("CONVERTED_FILES_PATH", "converted_files.txt")
-    with open(converted_files_path, "w") as f:
-        f.write("")  # Just create/clear the file
     
     # Read PDF paths
     with open(pdf_paths_file, "r") as f:
@@ -331,20 +325,28 @@ def main():
                 "pdf_path": str(pdf_path),
                 "output_path": "",
                 "model_used": MODEL,
-                "status": f"Failed: {str(e)}"
+                "status": f"Failed: {str(e)}",
+                "organization_url": None # No organization URL on processing failure
             })
     
     print(f"Successfully processed {success_count}/{len(pdf_paths)} PDFs")
     
+    # Write results to a JSON file for the next workflow
+    output_json_path = os.environ.get("CONVERTED_REPORTS_JSON_PATH", "converted_reports.json")
+    with open(output_json_path, "w", encoding="utf-8") as f:
+        json.dump(all_results, f, indent=2)
+    print(f"Wrote conversion results to {output_json_path}")
+
     # Generate and write summary to GITHUB_STEP_SUMMARY
     summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
     with open(summary_path, 'a', encoding='utf-8') as f:
         f.write("## ⚙️ PDF to Markdown Conversion Summary\n\n")
-        f.write("| PDF File | Markdown Output | Model Used | Status |\n")
-        f.write("|----------|-----------------|------------|--------|\n")
+        f.write("| PDF File | Markdown Output | Model Used | Status | Organization URL |\n")
+        f.write("|----------|-----------------|------------|--------|------------------|\n")
         for result in all_results:
             status_icon = "✅" if result['status'] == 'Converted Successfully' else "❌"
-            f.write(f"| {result['pdf_path']} | {result['output_path']} | {result['model_used']} | {status_icon} {result['status']} |\n")
+            org_url_display = result['organization_url'] if result['organization_url'] else "N/A"
+            f.write(f"| {result['pdf_path']} | {result['output_path']} | {result['model_used']} | {status_icon} {result['status']} | {org_url_display} |\n")
         
         f.write(f"\n### 📝 Summary\n")
         f.write(f"- ✅ Successfully converted: {success_count}\n")

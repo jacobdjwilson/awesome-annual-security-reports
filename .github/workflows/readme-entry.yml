@@ -31,7 +31,6 @@ jobs:
       - name: 📦 Install Dependencies
         run: |
           pip install google-generativeai pyyaml mistune gitpython requests
-          pip install 'markitdown[pdf]' google-api-python-client
 
       - name: 📂 Download converted files artifact
         if: github.event_name == 'workflow_run'
@@ -53,10 +52,19 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ ! -f converted_files.txt ]; then
-            echo "Markdown Conversions/2025/SailPoint-Horizons-of-Identity-Security-2025.md" > converted_files.txt
+          # For workflow_run, the artifact should have been downloaded to converted_reports.json
+          # For workflow_dispatch, we create a dummy converted_reports.json
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "[ { \"file_path\": \"Markdown Conversions/2025/SailPoint-Horizons-of-Identity-Security-2025.md\", \"organization_url\": \"https://www.sailpoint.com\" } ]" > converted_reports.json
           fi
-          python3 ./.github/scripts/update-readme.py converted_files.txt
+          
+          # Check if converted_reports.json exists and is not empty
+          if [ ! -s converted_reports.json ]; then
+            echo "❌ converted_reports.json not found or is empty. Exiting."
+            exit 1
+          fi
+          
+          python3 ./.github/scripts/update-readme.py converted_reports.json
 
       - name: 📤 Upload Debug Artifacts
         uses: actions/upload-artifact@v4

@@ -84,23 +84,23 @@ class ReportAnalyzer:
         self.current_model = None
         self._setup_ai()
         
-        self.acronyms = ["AI", "IT", "API", "ML", "IoT", "GRC", "IAM", "SSO", "MFA", "AWS", "GCP", "VPN", "IDS", "IPS", "DDoS", "DLP", "MDM", "SOC", "SIEM", "SAST", "DAST"]
+        self.acronyms = ["AI", "IT", "API", "ML", "IoT", "GRC", "IAM", "SSO", "MFA", "AWS", "GCP", "VPN", "IDS", "IPS", "DDoS", "DLP", "MDM", "SOC", "SIEM", "monitoring", "detection", "response", "incident"]
 
-        self.keyword_mapping = {
-            'Identity and Access Management': ['identity', 'access', 'authentication', 'authorization', 'IAM', 'SSO', 'MFA'],
-            'Cloud Security': ['cloud', 'AWS', 'Azure', 'GCP', 'kubernetes', 'container', 'serverless'],
-            'Application Security': ['application', 'software', 'code', 'development', 'SAST', 'DAST', 'API'],
-            'Ransomware and Malware': ['ransomware', 'malware', 'threat', 'attack', 'breach', 'incident'],
-            'Compliance and Governance': ['compliance', 'governance', 'regulation', 'policy', 'audit', 'GRC'],
-            'Network Security': ['network', 'firewall', 'VPN', 'intrusion', 'IDS', 'IPS', 'DDoS'],
-            'Data Security': ['data', 'privacy', 'encryption', 'DLP', 'database', 'backup'],
-            'Endpoint Security': ['endpoint', 'device', 'mobile', 'laptop', 'workstation', 'MDM'],
-            'Security Operations': ['SOC', 'SIEM', 'monitoring', 'detection', 'response', 'incident'],
-            'Emerging Technologies': ['AI', 'ML', 'IoT', 'blockchain', 'quantum', 'edge'],
-            'Vulnerabilities': ['vulnerability', 'assessment'],
-            'Penetration Testing': ['penetration', 'testing'],
-            'Industry Trends': ['risk']
-        }
+        self.categories = [
+            'Identity and Access Management',
+            'Cloud Security',
+            'Application Security',
+            'Ransomware and Malware',
+            'Compliance and Governance',
+            'Network Security',
+            'Data Security',
+            'Endpoint Security',
+            'Security Operations',
+            'Emerging Technologies',
+            'Vulnerabilities',
+            'Penetration Testing',
+            'Industry Trends'
+        ]
         
     def _setup_ai(self):
         """Setup AI with fallback models"""
@@ -108,7 +108,7 @@ class ReportAnalyzer:
             print("⚠️ No Gemini API key provided")
             return
             
-        genai.configure(api_key=self.api_key)
+        genai.configure(api_key=os.environ["GEMINI_API_KEY"])
         
         for model_name in self.models:
             try:
@@ -163,10 +163,10 @@ class ReportAnalyzer:
         
         return org_name, year, report_title
         
-    def analyze_content(self, content: str, org_name: str, year: str, report_title: str) -> Dict:
+    def analyze_content(self, content: str, org_name: str, year: str, report_title: str, organization_url: Optional[str] = None) -> Dict:
         """Analyze content using AI"""
         if not self.current_model:
-            return self._fallback_analysis(content, org_name, year, report_title)
+            return self._fallback_analysis(content, org_name, year, report_title, organization_url)
         
         prompt_path = ".github/ai-prompts/markdown-summarization-prompt.md"
         base_prompt = "Analyze this security report and provide a concise summary focusing on key findings and recommendations."
@@ -200,7 +200,15 @@ class ReportAnalyzer:
             type_response = self.current_model.generate_content(type_prompt)
             report_type = "Analysis" if "analysis" in type_response.text.lower() else "Survey"
             
-            category = self._categorize_content(truncated_content)
+            # AI-driven sub-categorization
+            category_prompt = f"Given the following categories: {self.categories}. Which category best describes the content of this report? Respond with only the category name. Report content: {truncated_content[:2000]}"
+            category_response = self.current_model.generate_content(category_prompt)
+            category = category_response.text.strip()
+            
+            # Fallback to keyword matching if AI returns an invalid category
+            if category not in self.categories:
+                print(f"⚠️ AI returned invalid category '{category}'. Falling back to keyword matching.")
+                category = self._categorize_content_fallback(truncated_content)
             
             return {
                 'organization': org_name,
@@ -209,28 +217,44 @@ class ReportAnalyzer:
                 'summary': summary,
                 'type': report_type,
                 'category': category,
+                'organization_url': organization_url, # Pass through the URL
                 'ai_processed': True
             }
             
         except Exception as e:
             print(f"❌ AI analysis failed: {e}")
-            return self._fallback_analysis(content, org_name, year, report_title)
+            return self._fallback_analysis(content, org_name, year, report_title, organization_url)
             
-    def _categorize_content(self, content: str) -> str:
-        """Categorize content based on keywords"""
+    def _categorize_content_fallback(self, content: str) -> str:
+        """Categorize content based on keywords (fallback if AI fails)"""
+        keyword_mapping = {
+            'Identity and Access Management': ['identity', 'access', 'authentication', 'authorization', 'IAM', 'SSO', 'MFA'],
+            'Cloud Security': ['cloud', 'AWS', 'Azure', 'GCP', 'kubernetes', 'container', 'serverless'],
+            'Application Security': ['application', 'software', 'code', 'development', 'SAST', 'DAST', 'API'],
+            'Ransomware and Malware': ['ransomware', 'malware', 'threat', 'attack', 'breach', 'incident'],
+            'Compliance and Governance': ['compliance', 'governance', 'regulation', 'policy', 'audit', 'GRC'],
+            'Network Security': ['network', 'firewall', 'VPN', 'intrusion', 'IDS', 'IPS', 'DDoS'],
+            'Data Security': ['data', 'privacy', 'encryption', 'DLP', 'database', 'backup'],
+            'Endpoint Security': ['endpoint', 'device', 'mobile', 'laptop', 'workstation', 'MDM'],
+            'Security Operations': ['SOC', 'SIEM', 'monitoring', 'detection', 'response', 'incident'],
+            'Emerging Technologies': ['AI', 'ML', 'IoT', 'blockchain', 'quantum', 'edge'],
+            'Vulnerabilities': ['vulnerability', 'assessment'],
+            'Penetration Testing': ['penetration', 'testing'],
+            'Industry Trends': ['risk']
+        }
         content_lower = content.lower()
         scores = {}
         
-        for category, keywords in self.keyword_mapping.items():
+        for category, keywords in keyword_mapping.items():
             score = sum(content_lower.count(keyword.lower()) for keyword in keywords)
             scores[category] = score
         
         best_category = max(scores, key=scores.get) if scores else "Security Operations"
         return best_category if scores[best_category] > 0 else "Security Operations"
         
-    def _fallback_analysis(self, content: str, org_name: str, year: str, report_title: str) -> Dict:
+    def _fallback_analysis(self, content: str, org_name: str, year: str, report_title: str, organization_url: Optional[str] = None) -> Dict:
         """Fallback analysis without AI"""
-        category = self._categorize_content(content)
+        category = self._categorize_content_fallback(content)
         
         sentences = content.split('. ')
         summary = '. '.join(sentences[:3]) + '.' if len(sentences) > 3 else content[:300]
@@ -242,6 +266,7 @@ class ReportAnalyzer:
             'summary': summary,
             'type': "Analysis",
             'category': category,
+            'organization_url': organization_url, # Pass through the URL
             'ai_processed': False
         }
 
@@ -278,11 +303,11 @@ class ReadmeUpdater:
             
             section_content = self.parser.content[start:end]
             
-            entry_text = self._format_entry(analysis, file_path)
+            entry_text = self._format_entry(analysis, file_path, analysis.get('organization_url'))
             
             org_pattern = re.escape(analysis['organization'])
             title_pattern = re.escape(analysis['title'])
-            existing_entry_pattern = rf"^- \[({org_pattern})\](.*?)" # Simplified pattern to capture organization and title
+            existing_entry_pattern = rf"^- \[({org_pattern})\]\(.*?\) - \[({title_pattern})\]\(.*?\) \((\d{{4}})\).*$" # More robust pattern
             
             lines = section_content.strip().split('\n')
             updated_lines = []
@@ -292,15 +317,18 @@ class ReadmeUpdater:
                 match = re.search(existing_entry_pattern, line)
                 if match:
                     existing_org = match.group(1)
-                    # Check if the organization name matches
-                    if existing_org == analysis['organization']:
-                        # Further check for title and year if needed, or simply replace if org matches
-                        # For simplicity, we'll replace if the org matches and the entry is not already the new one
-                        if entry_text.strip() != line.strip():
+                    existing_title = match.group(2)
+                    existing_year = int(match.group(3))
+                    
+                    if existing_org == analysis['organization'] and existing_title == analysis['title']:
+                        new_report_year = int(analysis['year'])
+                        if new_report_year > existing_year:
+                            print(f"📝 Updating existing entry for {analysis['organization']} - {analysis['title']} (from {existing_year} to {new_report_year})")
                             updated_lines.append(entry_text)
                             entry_updated = True
                             action_taken = "📝 Updated"
                         else:
+                            print(f"ℹ️ Existing entry for {analysis['organization']} - {analysis['title']} ({existing_year}) is newer or same year as new report ({new_report_year}). No update needed.")
                             updated_lines.append(line)
                     else:
                         updated_lines.append(line)
@@ -308,15 +336,21 @@ class ReadmeUpdater:
                     updated_lines.append(line)
 
             if not entry_updated:
+                print(f"➕ Adding new entry for {analysis['organization']} - {analysis['title']} ({analysis['year']})")
                 updated_lines.append(entry_text)
                 action_taken = "➕ Added"
 
-            updated_lines.sort()
-            updated_section = "\n".join(updated_lines) + "\n"
+            # Sort only the entries, preserve other lines
+            other_lines = [line for line in lines if not re.match(r"^- \[.*?\]\(.*?\) - \[.*?\]\(.*?\) \d{{4}}.*$", line.strip())]
+            entry_lines = [line for line in updated_lines if re.match(r"^- \[.*?\]\(.*?\) - \[.*?\]\(.*?\) \d{{4}}.*$", line.strip())]
+            entry_lines.sort(key=lambda x: (self._extract_org_name_for_sorting(x), self._extract_report_title_for_sorting(x)))
             
+            # Reconstruct the section content
+            updated_section_content = "\n".join(other_lines + entry_lines) + "\n"
+
             self.parser.content = (
                 self.parser.content[:start] + 
-                updated_section + 
+                updated_section_content + 
                 self.parser.content[end:]
             )
             
@@ -333,18 +367,20 @@ class ReadmeUpdater:
             print(f"❌ Error updating README: {e}")
             return False, "", -1, ""
             
-    def _format_entry(self, analysis: Dict, file_path: str) -> str:
+    def _format_entry(self, analysis: Dict, file_path: str, organization_url: Optional[str] = None) -> str:
         """Format entry according to specified template"""
         title = analysis['title']
         org_name = analysis['organization']
         
-        domain_base = re.sub(r'\b(company|corp|corporation|inc|llc|ltd|group|security|cyber|tech|technologies)\b', '', org_name.lower())
-        domain_base = re.sub(r'[^a-z0-9]', '', domain_base)
-        
-        if len(domain_base) < 3:
-            domain_base = re.sub(r'[^a-z0-9]', '', org_name.lower())
-        
-        org_url = f"https://{domain_base}.com"
+        # Use provided organization_url if available, otherwise generate from name
+        if organization_url:
+            org_link = organization_url
+        else:
+            domain_base = re.sub(r'\b(company|corp|corporation|inc|llc|ltd|group|security|cyber|tech|technologies)\b', '', org_name.lower())
+            domain_base = re.sub(r'[^a-z0-9]', '', domain_base)
+            if len(domain_base) < 3:
+                domain_base = re.sub(r'[^a-z0-9]', '', org_name.lower())
+            org_link = f"https://{domain_base}.com"
         
         path_parts = Path(file_path).parts
         year = "Unknown"
@@ -357,7 +393,7 @@ class ReadmeUpdater:
         correct_pdf_path = Path("Annual Security Reports") / year / f"{original_filename_stem}.pdf"
         pdf_path_encoded = str(correct_pdf_path).replace(' ', '%20')
         
-        entry = f"- [{org_name}]({org_url}) - [{title}]({pdf_path_encoded}) ({analysis['year']}) - {analysis['summary']}"
+        entry = f"- [{org_name}]({org_link}) - [{title}]({pdf_path_encoded}) ({analysis['year']}) - {analysis['summary']}"
         
         return entry
         
@@ -366,8 +402,8 @@ class ReadmeUpdater:
         return match.group(1) if match else entry_line
     
     def _extract_report_title_for_sorting(self, entry_line: str) -> str:
-        match = re.search(r'\](.*?)\) - \[([^\]]+)\]', entry_line)
-        return match.group(2) if match else entry_line
+        match = re.search(r'\]\(.*?\) - \[([^\]]+)\]', entry_line)
+        return match.group(1) if match else entry_line
             
     def _find_similar_section(self, target: str, main_section: str) -> Optional[str]:
         available_sections = list(self.parser.toc_structure[main_section]['subsections'].keys())
@@ -394,9 +430,22 @@ def main():
         Path("debug_info.json").touch()
         return
 
-    files_to_process_file = sys.argv[1]
-    with open(files_to_process_file, "r") as f:
-        files_to_process = [line.strip() for line in f.readlines() if line.strip()]
+    # Expecting a JSON file path as argument
+    input_json_file = sys.argv[1]
+    
+    try:
+        with open(input_json_file, "r", encoding="utf-8") as f:
+            reports_data = json.load(f)
+    except FileNotFoundError:
+        print(f"❌ Input JSON file not found: {input_json_file}")
+        Path("pr_summary.txt").touch()
+        Path("debug_info.json").touch()
+        return
+    except json.JSONDecodeError:
+        print(f"❌ Error decoding JSON from {input_json_file}")
+        Path("pr_summary.txt").touch()
+        Path("debug_info.json").touch()
+        return
 
     readme_parser = ReadmeParser("README.md")
     if not readme_parser.content:
@@ -406,12 +455,19 @@ def main():
     analyzer = ReportAnalyzer(os.getenv('GEMINI_API_KEY'))
     updater = ReadmeUpdater(readme_parser)
     
-    print(f"✍ Found {len(files_to_process)} files to process")
+    print(f"✍ Found {len(reports_data)} reports to process")
     
     processed_files = []
     summaries = []
     
-    for file_path in files_to_process:
+    for report_info in reports_data:
+        file_path = report_info.get('output_path')
+        organization_url = report_info.get('organization_url')
+
+        if not file_path:
+            print(f"⚠️ Skipping report due to missing output_path: {report_info}")
+            continue
+
         try:
             print(f"\n🔍 Processing: {file_path}")
             
@@ -427,7 +483,7 @@ def main():
                 continue
             
             org_name, year, report_title = analyzer.extract_info_from_path(file_path)
-            analysis = analyzer.analyze_content(content, org_name, year, report_title)
+            analysis = analyzer.analyze_content(content, org_name, year, report_title, organization_url)
             success, _, _, action_taken = updater.add_report_entry(analysis, file_path)
             
             if success:
@@ -452,7 +508,7 @@ def main():
             debug_info = {
                 'processed_files': processed_files,
                 'summaries': summaries,
-                'total_files_found': len(files_to_process),
+                'total_files_found': len(reports_data),
                 'successful_updates': len(processed_files),
                 'ai_available': analyzer.current_model is not None
             }
@@ -460,7 +516,7 @@ def main():
                 json.dump(debug_info, f, indent=2)
             
             print("\n📋 Processing Summary:")
-            print(f"   Total files found: {len(files_to_process)}")
+            print(f"   Total reports found in JSON: {len(reports_data)}")
             print(f"   Successfully processed: {len(processed_files)}")
             print(f"   AI analysis available: {analyzer.current_model is not None}")
         else:
