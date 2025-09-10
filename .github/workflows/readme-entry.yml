@@ -52,41 +52,31 @@ jobs:
           echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
           echo "📍 Current branch: $BRANCH"
 
+      - name: ⬇️ Download Converted Files Artifact
+        uses: actions/download-artifact@v4
+        id: download_artifact
+        with:
+          name: converted_file_info
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+          
       - name: 🔍 Find and Process New Markdown Entries
         id: new_markdown_entries
         run: |
-          echo "🔍 Identifying new Markdown files from pdf-markdown-convert.yml commits..."
+          echo "🔍 Identifying new Markdown files from converted_files.txt..."
           
-          # Get the SHA of the commit that triggered this workflow
-          # For workflow_run, github.event.workflow_run.head_sha is the SHA of the commit that triggered the parent workflow
-          TRIGGERING_SHA="${{ github.event.workflow_run.head_sha }}"
-          
-          # Get the parent SHA of the triggering commit
-          # This is needed to perform a diff to find newly added/modified files
-          PARENT_SHA=$(git rev-parse "$TRIGGERING_SHA^1")
-          
-          echo "Triggering SHA: $TRIGGERING_SHA"
-          echo "Parent SHA: $PARENT_SHA"
-          
-          # Find new or modified markdown files in the 'Markdown Conversions' directory
-          # that were part of the commit that triggered the parent workflow
-          CHANGED_MARKDOWN_FILES=$(git diff --name-only "$PARENT_SHA" "$TRIGGERING_SHA" | grep -E "^Markdown Conversions/.*\.md$" || true)
-          
-          if [ -z "$CHANGED_MARKDOWN_FILES" ]; then
-            echo "⚠️ No new or modified Markdown files found in the triggering commit. Scanning entire directory for force_update."
-            # Fallback to scanning the entire directory if no specific changes are found
-            if [ "${{ github.event.inputs.force_update }}" == "true" ]; then
-              echo "📁 Force update is true. Scanning all Markdown Conversions."
-              FILES_TO_PROCESS=$(find "Markdown Conversions" -name "*.md" | head -20 || true)
-            else
-              echo "❌ No files to process. Exiting."
-              echo "files_to_process=" >> $GITHUB_OUTPUT
-              exit 0
-            fi
+          FILES_TO_PROCESS=""
+          if [ -f "converted_files.txt" ]; then
+            FILES_TO_PROCESS=$(cat converted_files.txt | head -20 || true)
+            echo "📄 Found converted Markdown files:"
+            echo "$FILES_TO_PROCESS"
+          elif [ "${{ github.event.inputs.force_update }}" == "true" ]; then
+            echo "📁 Force update is true. Scanning all Markdown Conversions."
+            FILES_TO_PROCESS=$(find "Markdown Conversions" -name "*.md" | head -20 || true)
           else
-            echo "📄 Found changed Markdown files:"
-            echo "$CHANGED_MARKDOWN_FILES"
-            FILES_TO_PROCESS=$(echo "$CHANGED_MARKDOWN_FILES" | head -20)
+            echo "❌ No files to process. Exiting."
+            echo "files_to_process=" >> $GITHUB_OUTPUT
+            exit 0
           fi
           
           echo "files_to_process<<EOF" >> $GITHUB_OUTPUT
