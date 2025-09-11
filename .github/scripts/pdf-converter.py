@@ -211,9 +211,17 @@ def process_pdf(pdf_path, prompt_path, prompt_version, branch):
     # Organization: Varonis
     # Title: The Identity Crisis 2024
     filename_stem = pdf_path.stem
-    parts = filename_stem.split(' - ', 1)
-    organization_name = parts[0].strip() if len(parts) > 0 else ""
-    report_title = parts[1].strip() if len(parts) > 1 else filename_stem
+    name_parts = filename_stem.split('-')
+    organization_name = name_parts[0].strip()
+    
+    # The last part is the year, so the report title is everything in between
+    year_part = name_parts[-1]
+    if year_part.isdigit() and len(year_part) == 4:
+        report_title_parts = name_parts[1:-1]
+        report_title = ' '.join(report_title_parts).strip()
+    else:
+        report_title_parts = name_parts[1:]
+        report_title = ' '.join(report_title_parts).strip()
     
     # Perform Google Search for the official report URL
     google_search_api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")

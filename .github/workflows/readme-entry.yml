@@ -147,11 +147,7 @@ jobs:
           if [ -f "debug_info.json" ]; then
             echo "### ✍ Processing Results" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "$$(cat debug_info.json | jq -r '
-              "**Files Found**: " + (.total_files_found | tostring) + "\n" +
-              "**Successfully Processed**: " + (.successful_updates | tostring) + "\n" +
-              "**AI Analysis Available**: " + (.ai_available | tostring) + "\n"
-            )')" >> $GITHUB_STEP_SUMMARY
+            echo "$$(cat debug_info.json | jq -r '\n              "**Files Found**: " + (.total_files_found | tostring) + "\n" +\n              "**Successfully Processed**: " + (.successful_updates | tostring) + "\n" +\n              "**AI Analysis Available**: " + (.ai_available | tostring) + "\n"\n            )" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             
             if [ -f "pr_summary.txt" ]; then
@@ -171,4 +167,3 @@ jobs:
           echo "Workflow Run - https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ github.event_name }}" == "workflow_run" ]; then
             echo "Triggering Workflow - https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" >> $GITHUB_STEP_SUMMARY
-          fi

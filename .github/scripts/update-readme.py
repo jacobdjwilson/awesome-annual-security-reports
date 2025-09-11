@@ -137,16 +137,17 @@ class ReportAnalyzer:
                 break
         
         filename = Path(file_path).stem
-        filename_clean = re.sub(r'(_|\-)?20\d{2}.*', '', filename)
-        parts = re.split(r'[-_\s]+', filename_clean)
+        name_parts = filename.split('-')
+        org_name = name_parts[0].strip()
         
-        if len(parts) >= 2:
-            org_name = parts[0]
-            title_parts = parts[1:]
-            report_title = ' '.join(title_parts)
+        # The last part is the year, so the report title is everything in between
+        year_part = name_parts[-1]
+        if year_part.isdigit() and len(year_part) == 4:
+            title_parts = name_parts[1:-1]
+            report_title = ' '.join(title_parts).strip()
         else:
-            org_name = filename_clean
-            report_title = f"Security Report {year}"
+            title_parts = name_parts[1:]
+            report_title = ' '.join(title_parts).strip()
         
         org_name = org_name.replace('_', ' ').replace('-', ' ')
         org_name = ' '.join(word.capitalize() for word in org_name.split())
