@@ -46,7 +46,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" == "workflow_run" ]; then
             BRANCH="${{ github.event.workflow_run.head_branch }}"
-          else:
+          else
             BRANCH="${{ github.ref_name }}"
           fi
           echo "current_branch=$BRANCH" >> $GITHUB_OUTPUT
