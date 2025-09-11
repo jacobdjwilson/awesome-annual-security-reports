@@ -48,13 +48,20 @@ jobs:
           echo "$CHANGED_FILES" > changed_files.txt
           python ./.github/scripts/virus-total-scan.py changed_files.txt
 
-      - name: ⬆️ Upload VirusTotal Results Artifact
+            - name: ⬆️ Upload VirusTotal Results Artifact
         if: steps.changed-files.outputs.any_changed == 'true' && success() # Only upload if scan was attempted and successful
         uses: actions/upload-artifact@v4
         with:
           name: virustotal_results
           path: virustotal_results.json
           retention-days: 1 # Keep for a short period, as it's consumed by another workflow
+
+      - name: ⬆️ Upload changed PDF files list
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: changed-pdf-files
+          path: changed_files.txt
 
       - name: 📝 No files to scan message
         if: steps.changed-files.outputs.any_changed != 'true'

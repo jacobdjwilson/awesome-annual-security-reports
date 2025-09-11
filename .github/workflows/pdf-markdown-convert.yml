@@ -11,19 +11,21 @@ jobs:
   dispatcher:
     runs-on: ubuntu-latest
     outputs:
-      files: ${{ steps.changed-files.outputs.all_changed_files }}
+      files: ${{ steps.read-files.outputs.files_json }}
     steps:
-      - name: ✅ Checkout repository
-        uses: actions/checkout@v4
+      - name: 📂 Download changed PDF files list
+        uses: actions/download-artifact@v4
         with:
-          fetch-depth: 0
+          name: changed-pdf-files
+          path: .
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
 
-      - name: 🔍 Find new and modified PDF files
-        id: changed-files
-        uses: tj-actions/changed-files@v46
-        with:
-          files: 'Annual Security Reports/**/*.pdf'
-          json: 'true'
+      - name: 📄 Read changed files list
+        id: read-files
+        run: |
+          json_array=$(jq -R -s -c 'split("\n") | map(select(length > 0))' changed_files.txt)
+          echo "files_json=$json_array" >> $GITHUB_OUTPUT
 
   worker:
     needs: dispatcher
