@@ -370,8 +370,7 @@ def main():
         return 0 if success_count > 0 else 1
 
 if __name__ == "__main__":
-    # Corrected argument check in main
     if len(sys.argv) < 5:
-        print("Usage: python pdf-converter.py <pdf_paths_file> <prompt_path> <prompt_version> <branch>")
+        print("Usage: python pdf-converter.py <pdf_path> <prompt_path> <prompt_version> <branch>")
         sys.exit(1)
     sys.exit(main())

@@ -8,10 +8,35 @@ on:
   workflow_dispatch:
 
 jobs:
-  convert-pdf-to-markdown:
+  dispatcher:
+    runs-on: ubuntu-latest
+    outputs:
+      files: ${{ steps.changed-files.outputs.all_changed_files }}
+    steps:
+      - name: ✅ Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🔍 Find new and modified PDF files
+        id: changed-files
+        uses: tj-actions/changed-files@v46
+        with:
+          files: 'Annual Security Reports/**/*.pdf'
+          json: 'true'
+
+  worker:
+    needs: dispatcher
+    if: needs.dispatcher.outputs.files != '[]'
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    strategy:
+      matrix:
+        file: ${{ fromJson(needs.dispatcher.outputs.files) }}
+    concurrency:
+      group: ${{ github.workflow }}-${{ matrix.file }}
+      cancel-in-progress: false
     
     steps:
       - name: ✅ Checkout repository
@@ -30,13 +55,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install 'markitdown[pdf]' google-generativeai google-api-python-client
       
-      - name: 🔍 Find new and modified PDF files
-        id: changed-files
-        uses: tj-actions/changed-files@v46
-        with:
-          files: 'Annual Security Reports/**/*.pdf'
-          separator: "\n"
-
       - name: 📂 Download VirusTotal Results Artifact
         if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
         uses: actions/download-artifact@v4
@@ -60,8 +78,8 @@ jobs:
             echo "Prompt file not found at $PROMPT_PATH"
           fi
       
-      - name: 🤖 Process PDF files
-        if: steps.changed-files.outputs.any_changed == 'true' && steps.check-prompt.outputs.prompt_exists == 'true'
+      - name: 🤖 Process PDF file
+        if: steps.check-prompt.outputs.prompt_exists == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
@@ -72,23 +90,21 @@ jobs:
           CONVERTED_REPORTS_JSON_PATH: "converted_reports.json"
           VIRUSTOTAL_RESULTS_JSON_PATH: "virustotal_results.json" # Pass path to VT results
           GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
-          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          echo "$CHANGED_FILES" > changed_files.txt
-          python ./.github/scripts/pdf-converter.py changed_files.txt ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH" "$VIRUSTOTAL_RESULTS_JSON_PATH"
+          python ./.github/scripts/pdf-converter.py "${{ matrix.file }}" ".github/ai-prompts/pdf-to-markdown-prompt.md" "$PROMPT_VERSION" "$BRANCH" "$VIRUSTOTAL_RESULTS_JSON_PATH"
           git pull --rebase origin ${{ github.ref_name }}
           git push https://${{ secrets.GITHUB_ACTOR }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
       
       - name: Upload converted reports info
-        if: steps.changed-files.outputs.any_changed == 'true' && steps.check-prompt.outputs.prompt_exists == 'true'
+        if: steps.check-prompt.outputs.prompt_exists == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: converted_file_info
+          name: converted_file_info_${{ matrix.file }}
           path: converted_reports.json
           retention-days: 1
       
       - name: ❌ Error - Prompt file missing
-        if: steps.changed-files.outputs.any_changed == 'true' && steps.check-prompt.outputs.prompt_exists != 'true'
+        if: steps.check-prompt.outputs.prompt_exists != 'true'
         run: |
           echo "Error: Prompt file not found at .github/ai-prompts/pdf-to-markdown-prompt.md"
           echo "Please ensure the prompt file exists in your repository."
