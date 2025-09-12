@@ -1,0 +1,278 @@
+ # .github/workflows/security-reports-pipeline.yml
+ 
+ name: Security Reports Processing Pipeline
+ 
+ on:
+   push:
+     branches: [main, development]
+     paths:
+       - 'Annual Security Reports/**/*.pdf'
+   pull_request:
+     branches: [main, development]
+     paths:
+       - 'Annual Security Reports/**/*.pdf'
+   workflow_dispatch:
+     inputs:
+       force_scan_all:
+         description: 'Force scan all PDF files (not just changed)'
+         required: false
+         default: 'false'
+         type: boolean
+       skip_virus_scan:
+         description: 'Skip VirusTotal scanning'
+         required: false
+         default: 'false'
+         type: boolean
+ 
+ permissions:
+   contents: write
+   pull-requests: write
+   security-events: write
+ 
+ jobs:
+   discover-and-scan:
+     name: Discover and Scan Files
+     runs-on: ubuntu-latest
+     outputs:
+       has_files: ${{ steps.discover_files.outputs.has_files }}
+ 
+     steps:
+       - name: Checkout Repository
+         uses: actions/checkout@v4
+         with:
+           # Fetch all history for all branches and tags for git diff
+           fetch-depth: 0
+ 
+       - name: Discover Changed PDF Files
+         id: discover_files
+         run: |
+           set -e
+           
+           # Create a directory for job outputs
+           mkdir -p artifacts
+ 
+           # Determine the base for git diff based on the event
+           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+             BASE_SHA="${{ github.event.pull_request.base.sha }}"
+             HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+             echo "Discovering files for PR: comparing base ($BASE_SHA) and head ($HEAD_SHA)"
+             # Checkout the head SHA to ensure we have the files
+             git checkout -q "$HEAD_SHA"
+             CHANGED_FILES=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")
+           elif [[ "${{ github.event.inputs.force_scan_all }}" == "true" ]]; then
+             echo "Force scan enabled: finding all PDF files."
+             CHANGED_FILES=$(find 'Annual Security Reports' -type f -name "*.pdf")
+           else
+             BASE_SHA="${{ github.event.before }}"
+             HEAD_SHA="${{ github.sha }}"
+             # Handle initial push where 'before' is all zeros
+             if [[ "$BASE_SHA" == "0000000000000000000000000000000000000000" ]]; then
+                echo "Initial push detected. Finding all PDF files in the current commit."
+                CHANGED_FILES=$(git ls-tree --full-tree -r --name-only HEAD | grep 'Annual Security Reports/.*\.pdf$')
+             else
+                echo "Discovering files for push: comparing base ($BASE_SHA) and head ($HEAD_SHA)"
+                CHANGED_FILES=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")
+             fi
+           fi
+ 
+           # Filter for PDF files in the correct directory and write to list
+           echo "$CHANGED_FILES" | grep 'Annual Security Reports/.*\.pdf$' > artifacts/files_to_process.txt || true
+ 
+           # Check if any files were found
+           if [ -s "artifacts/files_to_process.txt" ]; then
+             echo "has_files=true" >> $GITHUB_OUTPUT
+             echo "Found $(wc -l < artifacts/files_to_process.txt) PDF file(s) to process."
+             cat artifacts/files_to_process.txt
+           else
+             echo "has_files=false" >> $GITHUB_OUTPUT
+             echo "No new or modified PDF files found in 'Annual Security Reports/'."
+           fi
+ 
+       - name: Setup Python Environment
+         if: steps.discover_files.outputs.has_files == 'true'
+         uses: actions/setup-python@v5
+         with:
+           python-version: '3.12'
+ 
+       - name: Install Dependencies
+         if: steps.discover_files.outputs.has_files == 'true'
+         run: |
+           python -m pip install --upgrade pip
+           pip install requests
+ 
+       - name: Scan Files with VirusTotal
+         if: steps.discover_files.outputs.has_files == 'true' && github.event.inputs.skip_virus_scan != 'true'
+         env:
+           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
+         run: |
+           python .github/scripts/virus-total-scan.py artifacts/files_to_process.txt --output-json artifacts/scan_results.json
+ 
+       - name: Generate Job Summary
+         if: always()
+         run: |
+           echo "## 📂 File Discovery & Security Scan Summary" >> $GITHUB_STEP_SUMMARY
+           if [[ "${{ steps.discover_files.outputs.has_files }}" == "true" ]]; then
+             echo "✅ Found $(wc -l < artifacts/files_to_process.txt) PDF file(s) for processing." >> $GITHUB_STEP_SUMMARY
+             if [[ -f "artifacts/scan_results.json" ]]; then
+               echo "🛡️ VirusTotal scan completed. Results are available in the 'scan-results' artifact." >> $GITHUB_STEP_SUMMARY
+             elif [[ "${{ github.event.inputs.skip_virus_scan }}" == "true" ]]; then
+               echo "⚠️ VirusTotal scan was skipped by user." >> $GITHUB_STEP_SUMMARY
+             else
+               echo "❌ VirusTotal scan failed or did not run." >> $GITHUB_STEP_SUMMARY
+             fi
+           else
+             echo "ℹ️ No new or modified PDF files were found. No further action taken." >> $GITHUB_STEP_SUMMARY
+           fi
+ 
+       - name: Upload Artifacts
+         if: steps.discover_files.outputs.has_files == 'true'
+         uses: actions/upload-artifact@v4
+         with:
+           name: processing-artifacts
+           path: |
+             artifacts/files_to_process.txt
+             artifacts/scan_results.json
+           retention-days: 5
+ 
+   process-and-analyze:
+     name: Process PDFs and Analyze Content
+     runs-on: ubuntu-latest
+     needs: discover-and-scan
+     if: needs.discover-and-scan.outputs.has_files == 'true'
+ 
+     steps:
+       - name: Checkout Repository
+         uses: actions/checkout@v4
+         with:
+           # For PRs, checkout the head of the PR branch
+           ref: ${{ github.event.pull_request.head.sha }}
+ 
+       - name: Download Processing Artifacts
+         uses: actions/download-artifact@v4
+         with:
+           name: processing-artifacts
+           path: artifacts
+ 
+       - name: Setup Python Environment
+         uses: actions/setup-python@v5
+         with:
+           python-version: '3.12'
+ 
+       - name: Install Dependencies
+         run: |
+           python -m pip install --upgrade pip
+           pip install markitdown[pdf] google-generativeai google-api-python-client requests pathlib
+ 
+       - name: Configure Git
+         run: |
+           git config user.name "github-actions[bot]"
+           git config user.email "github-actions[bot]@users.noreply.github.com"
+ 
+       - name: Convert PDFs to Markdown and Commit
+         id: convert
+         env:
+           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
+           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         run: |
+           python .github/scripts/pdf-converter.py \
+             artifacts/files_to_process.txt \
+             .github/ai-prompts \
+             v1 \
+             ${{ github.head_ref || github.ref_name }} \
+             --output-json artifacts/conversion_results.json
+ 
+       - name: Analyze Report Content
+         id: analyze
+         env:
+           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+         run: |
+           python .github/scripts/report-analyzer.py \
+             artifacts/conversion_results.json \
+             --output-json artifacts/analysis_results.json
+ 
+       - name: Generate Job Summary
+         if: always()
+         run: |
+           echo "## 🤖 PDF Processing & Analysis Summary" >> $GITHUB_STEP_SUMMARY
+           if [[ "${{ steps.convert.outcome }}" == "success" ]]; then
+             echo "✅ PDF to Markdown conversion completed." >> $GITHUB_STEP_SUMMARY
+           else
+             echo "❌ PDF to Markdown conversion failed." >> $GITHUB_STEP_SUMMARY
+           fi
+           if [[ "${{ steps.analyze.outcome }}" == "success" ]]; then
+             echo "✅ AI content analysis completed." >> $GITHUB_STEP_SUMMARY
+           else
+             echo "❌ AI content analysis failed." >> $GITHUB_STEP_SUMMARY
+           fi
+           echo "Analysis results are available in the 'analysis-results' artifact for the next job." >> $GITHUB_STEP_SUMMARY
+ 
+       - name: Upload Analysis Artifacts
+         uses: actions/upload-artifact@v4
+         with:
+           name: analysis-results
+           path: artifacts/analysis_results.json
+           retention-days: 5
+ 
+   update-readme:
+     name: Integrate Reports into README
+     runs-on: ubuntu-latest
+     needs: process-and-analyze
+     if: success() && (github.event_name == 'push' || github.event_name == 'pull_request')
+ 
+     steps:
+       - name: Checkout Repository
+         uses: actions/checkout@v4
+         with:
+           ref: ${{ github.event.pull_request.head.sha }}
+ 
+       - name: Download Analysis Artifacts
+         uses: actions/download-artifact@v4
+         with:
+           name: analysis-results
+           path: artifacts
+ 
+       - name: Setup Python Environment
+         uses: actions/setup-python@v5
+         with:
+           python-version: '3.12'
+ 
+       - name: Install Dependencies
+         run: |
+           python -m pip install --upgrade pip
+           pip install requests
+ 
+       - name: Configure Git
+         run: |
+           git config user.name "github-actions[bot]"
+           git config user.email "github-actions[bot]@users.noreply.github.com"
+ 
+       - name: Update README.md
+         id: readme_update
+         run: |
+           python .github/scripts/readme-updater.py artifacts/analysis_results.json --readme-path README.md
+ 
+       - name: Commit and Push README update
+         run: |
+           # Check if README.md was modified
+           if ! git diff --quiet README.md; then
+             echo "README.md has been updated. Committing and pushing changes."
+             git add README.md
+             git commit -m "docs: update README with latest security reports
+ 
+             [skip ci]"
+             git push
+           else
+             echo "No changes to README.md. Nothing to commit."
+           fi
+ 
+       - name: Generate Job Summary
+         if: always()
+         run: |
+           echo "## 📖 README Integration Summary" >> $GITHUB_STEP_SUMMARY
+           if [[ "${{ steps.readme_update.outcome }}" == "success" ]]; then
+             echo "✅ README.md update script ran successfully." >> $GITHUB_STEP_SUMMARY
+           else
+             echo "❌ README.md update script failed." >> $GITHUB_STEP_SUMMARY
+           fi
