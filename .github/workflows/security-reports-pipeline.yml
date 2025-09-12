@@ -66,7 +66,7 @@ jobs:
               # Remove any trailing commas that might have been introduced somehow
               line=$(echo "$line" | sed 's/,$//')
               if [ "$first_item" = false ]; then
-                json_array+=","
+                json_array+=,
               fi
               json_array+="\"$line\""
               first_item=false
@@ -168,9 +168,7 @@ jobs:
           
           python .github/scripts/pdf-converter.py single_pdf_file.txt $PROMPT_PATH $PROMPT_VERSION $BRANCH_NAME --output-json conversions.json
 
-      - name: Commit and Push Markdown Files
-        run: |
-          git push
+      
 
       - name: Run Report Analyzer
         env:
@@ -218,7 +216,7 @@ jobs:
         run: |
           mkdir -p combined_analysis
           echo "[]" > combined_analysis/all_analysis.json
-          for dir in analysis-artifacts/*/;
+          for dir in analysis-artifacts/*/; 
             if [ -f "$dir/analysis.json" ]; then
               jq --argfile existing combined_analysis/all_analysis.json '. + $existing' "$dir/analysis.json" > temp.json && mv temp.json combined_analysis/all_analysis.json
             fi
@@ -237,6 +235,37 @@ jobs:
           python .github/scripts/readme-updater.py combined_analysis/all_analysis.json --readme-path README.md
 
       - name: Commit and Push Changes
+        if: steps.combine_analysis.outputs.combined_analysis_exists == 'true'
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update README with latest security reports"
+            git push
+          fi
+
+  push-changes:
+    runs-on: ubuntu-latest
+    needs: [process-and-analyze-report, update-readme]
+    if: always() && (needs.process-and-analyze-report.result == 'success' || needs.update-readme.result == 'success')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0 # Fetch all history for git operations
+
+      - name: Push all changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git pull --rebase # Rebase to avoid conflicts
+          git push
+
+  - name: Commit and Push Changes
         if: steps.combine_analysis.outputs.combined_analysis_exists == 'true'
         run: |
           git config --global user.name 'github-actions[bot]'
