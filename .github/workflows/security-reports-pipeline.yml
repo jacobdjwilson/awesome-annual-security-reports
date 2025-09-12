@@ -74,6 +74,10 @@ jobs:
             
             json_array+="]"
             
+            echo "--- Content of json_array variable ---"
+            echo "$json_array"
+            echo "--- End of json_array variable ---"
+
             echo "files_to_process<<EOF" >> $GITHUB_OUTPUT
             echo "$json_array" >> $GITHUB_OUTPUT
             echo "EOF" >> $GITHUB_OUTPUT
@@ -214,7 +218,7 @@ jobs:
         run: |
           mkdir -p combined_analysis
           echo "[]" > combined_analysis/all_analysis.json
-          for dir in analysis-artifacts/*/; do
+          for dir in analysis-artifacts/*/;
             if [ -f "$dir/analysis.json" ]; then
               jq --argfile existing combined_analysis/all_analysis.json '. + $existing' "$dir/analysis.json" > temp.json && mv temp.json combined_analysis/all_analysis.json
             fi
