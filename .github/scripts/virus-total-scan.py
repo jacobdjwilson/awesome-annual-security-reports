@@ -30,9 +30,6 @@ def scan_file(file_path: str, api_key: str) -> Dict[str, Any]:
     }
     file_size_mb = os.path.getsize(file_path) / (1024 * 1024)
 
-    if file_size_mb > 32:
-        return {"status": "failed", "reason": "File size exceeds 32MB limit"}
-
     file_hash = calculate_file_hash(file_path)
     
     try:
@@ -42,10 +39,21 @@ def scan_file(file_path: str, api_key: str) -> Dict[str, Any]:
         if lookup_response.status_code == 200:
             scan_data = lookup_response.json()
         elif lookup_response.status_code == 404:
+            upload_endpoint = f"{API_BASE_URL}/files"
+            if file_size_mb > 32:
+                # Get special upload URL for large files
+                upload_url_response = requests.get(f"{API_BASE_URL}/files/upload_url", headers=headers, timeout=30)
+                if upload_url_response.status_code == 200:
+                    upload_endpoint = upload_url_response.json().get('data')
+                    if not upload_endpoint:
+                        return {"status": "failed", "reason": "Could not get large file upload URL"}
+                else:
+                    return {"status": "failed", "reason": f"Failed to get large file upload URL (Status: {upload_url_response.status_code})"}
+
             # Upload file for scanning
             with open(file_path, 'rb') as f:
                 files = {"file": (os.path.basename(file_path), f)}
-                response = requests.post(f"{API_BASE_URL}/files", headers=headers, files=files, timeout=300)
+                response = requests.post(upload_endpoint, headers=headers, files=files, timeout=300)
             
             if response.status_code != 200:
                 return {"status": "failed", "reason": f"File upload failed (Status: {response.status_code})"}
