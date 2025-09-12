@@ -264,16 +264,3 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git pull --rebase # Rebase to avoid conflicts
           git push
-
-  - name: Commit and Push Changes
-        if: steps.combine_analysis.outputs.combined_analysis_exists == 'true'
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add README.md
-          if git diff --staged --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "Update README with latest security reports"
-            git push
-          fi
