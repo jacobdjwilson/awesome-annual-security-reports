@@ -1,4 +1,3 @@
-
 import os
 import sys
 import time
@@ -145,9 +144,10 @@ def main():
             f.write("| File | Verdict | Detections | Engines | Report |\n")
             f.write("|------|---------|------------|---------|--------|\n")
             for res in results:
-                icon = "🔴" if res['verdict'] == "Malicious" else "🟠" if res['verdict'] == "Suspicious" else "✅"
-                detections = f"{res['malicious_count'] + res['suspicious_count']}/{res['total_engines']}"
-                f.write(f"| {res['file']} | {icon} {res['verdict']} | {detections} | {res['total_engines']} | [View Report]({res['report_url']}) |\n")
+                if res['status'] == 'success': # Only process successful scans for the main table
+                    icon = "🔴" if res['verdict'] == "Malicious" else "🟠" if res['verdict'] == "Suspicious" else "✅"
+                    detections = f"{res['malicious_count'] + res['suspicious_count']}/{res['total_engines']}"
+                    f.write(f"| {res['file']} | {icon} {res['verdict']} | {detections} | {res['total_engines']} | [View Report]({res['report_url']}) |\n")
         else:
             f.write("No files were scanned.\n")
         
