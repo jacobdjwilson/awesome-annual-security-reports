@@ -138,6 +138,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Pull latest changes
+        run: git pull
+
       - name: Download conversion results
         uses: actions/download-artifact@v4
         with:
