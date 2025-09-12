@@ -13,7 +13,7 @@ from typing import List, Dict, Any, Optional
 
 # Configure Gemini API
 
-MODELS = ["gemini-1.5-flash", "gemini-1.5-pro", "gemini-1.0-pro"]
+MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
 MODEL = None
 
 def setup_gemini(api_key: str):
