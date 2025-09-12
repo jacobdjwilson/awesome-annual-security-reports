@@ -48,6 +48,10 @@ jobs:
             git diff --name-only --diff-filter=D ${{ github.event.before }} ${{ github.event.after }} | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
           fi
           
+          echo "--- Content of files_to_process.txt ---"
+          cat -v files_to_process.txt
+          echo "--- End of files_to_process.txt ---"
+
           # Convert files_to_process.txt to a JSON array and set as output
           if [ -s files_to_process.txt ]; then
             # Read each line, trim whitespace, and filter out empty lines
