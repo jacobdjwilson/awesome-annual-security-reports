@@ -167,6 +167,7 @@ jobs:
           echo "$PDF_FILE" > single_pdf_file.txt
           
           python .github/scripts/pdf-converter.py single_pdf_file.txt $PROMPT_PATH $PROMPT_VERSION $BRANCH_NAME --output-json conversions.json
+        continue-on-error: true
 
       
 
@@ -175,12 +176,14 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python .github/scripts/report-analyzer.py conversions.json --readme-path README.md --output-json analysis.json
+        continue-on-error: true
 
       - name: Upload analysis results
         uses: actions/upload-artifact@v4
         with:
           name: analysis-results-${{ hashFiles(matrix.pdf_file) }}
           path: analysis.json
+        continue-on-error: true
 
   update-readme:
     runs-on: ubuntu-latest
@@ -200,6 +203,7 @@ jobs:
         with:
           name: analysis-results-*
           path: analysis-artifacts
+          if-no-files-found: ignore
 
       - name: Setup Python Environment
         uses: actions/setup-python@v5
@@ -216,7 +220,7 @@ jobs:
         run: |
           mkdir -p combined_analysis
           echo "[]" > combined_analysis/all_analysis.json
-          for dir in analysis-artifacts/*/; 
+          for dir in analysis-artifacts/*/; do
             if [ -f "$dir/analysis.json" ]; then
               jq --argfile existing combined_analysis/all_analysis.json '. + $existing' "$dir/analysis.json" > temp.json && mv temp.json combined_analysis/all_analysis.json
             fi

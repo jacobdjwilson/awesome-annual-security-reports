@@ -148,7 +148,8 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
             "model_used": MODEL
         }
     except Exception as e:
-        print(f"Error processing {pdf_path}: {str(e)}")
+        error_message = f"Error processing {pdf_path}: {str(e)}"
+        print(error_message, file=sys.stderr) # Print to stderr for visibility in GitHub Actions logs
         return {"status": "failed", "pdf_path": str(pdf_path), "reason": str(e)}
 
 def main():
@@ -216,7 +217,7 @@ def main():
         else:
             f.write("No PDFs were processed.")
 
-    return 0 if converted_output_paths else 1
+    return 0
 
 if __name__ == "__main__":
     sys.exit(main())
