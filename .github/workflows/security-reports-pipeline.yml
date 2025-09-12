@@ -66,7 +66,7 @@ jobs:
               # Remove any trailing commas that might have been introduced somehow
               line=$(echo "$line" | sed 's/,$//')
               if [ "$first_item" = false ]; then
-                json_array+=,"
+                json_array+=","
               fi
               json_array+="\"$line\""
               first_item=false
@@ -200,7 +200,7 @@ jobs:
       - name: Download all analysis results
         uses: actions/download-artifact@v4
         with:
-          name: analysis-results-
+          name: analysis-results-*
           path: analysis-artifacts
 
       - name: Setup Python Environment
