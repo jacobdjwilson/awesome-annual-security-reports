@@ -59,6 +59,8 @@ jobs:
             
             # Loop through each file path
             while IFS= read -r line; do
+              # Remove any trailing commas that might have been introduced somehow
+              line=$(echo "$line" | sed 's/,$//')
               if [ "$first_item" = false ]; then
                 json_array+=,"
               fi
