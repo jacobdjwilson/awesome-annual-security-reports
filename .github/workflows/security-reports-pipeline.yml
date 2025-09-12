@@ -52,12 +52,13 @@ jobs:
           if [ -s files_to_process.txt ]; then
             # Read each line into a bash array
             mapfile -t files < files_to_process.txt
-            # Convert bash array to JSON array
-            json_array=$(printf '%s\n' "${files[@]}" | jq -R . | jq -s . | jq -c .)
-            echo "files_to_process=$json_array" >> $GITHUB_OUTPUT
-          else
-            echo "files_to_process=[]" >> $GITHUB_OUTPUT
-          fi
+            # Construct JSON array manually
+            json_array="["
+            for i in "${!files[@]}"; do
+              file="${files[$i]}"
+              json_array+="\"$file\""
+              if [ "$i" -lt "$((${#files[@]} - 1))" ]; then
+                json_array+=
 
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
