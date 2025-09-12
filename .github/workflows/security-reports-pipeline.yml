@@ -47,10 +47,20 @@ jobs:
             git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.event.after }} | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
             git diff --name-only --diff-filter=D ${{ github.event.before }} ${{ github.event.after }} | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
           fi
-          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          echo "files_to_process<<$EOF" >> $GITHUB_OUTPUT
-          cat files_to_process.txt >> $GITHUB_OUTPUT
-          echo "$EOF" >> $GITHUB_OUTPUT
+          
+          # Convert files_to_process.txt to a JSON array
+          if [ -s files_to_process.txt ]; then
+            # Read each line into a bash array
+            mapfile -t files < files_to_process.txt
+            # Convert bash array to JSON array
+            json_array=$(printf '%s\n' "${{files[@]}}" | jq -R . | jq -s .)
+            echo "files_to_process=$json_array" >> $GITHUB_OUTPUT
+          else
+            echo "files_to_process=[]" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
 
       - name: Setup Python Environment
         if: steps.find-files.outputs.files_to_process != ''
@@ -92,20 +102,18 @@ jobs:
           name: deleted-files
           path: deleted_files.txt
 
-  process-pdfs:
+  process-and-analyze-report:
     runs-on: ubuntu-latest
     needs: discover-and-scan
-    if: needs.discover-and-scan.outputs.files_to_process != ''
+    if: needs.discover-and-scan.outputs.files_to_process != '[]'
+    strategy:
+      matrix:
+        pdf_file: ${{ fromJson(needs.discover-and-scan.outputs.files_to_process) }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Download files to process
-        uses: actions/download-artifact@v4
-        with:
-          name: files-to-process
 
       - name: Setup Python Environment
         uses: actions/setup-python@v5
@@ -124,24 +132,36 @@ jobs:
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          PDF_FILE="${{ matrix.pdf_file }}"
           PROMPT_PATH=".github/ai-prompts/pdf-to-markdown-prompt.md"
           PROMPT_VERSION=$(git log -n 1 --pretty=format:%s -- $PROMPT_PATH | grep -oP 'v\d+\.\d+(\.\d+)?' || echo 'v1.0')
           BRANCH_NAME=${{ github.head_ref || github.ref_name }}
-          python .github/scripts/pdf-converter.py files_to_process.txt $PROMPT_PATH $PROMPT_VERSION $BRANCH_NAME --output-json conversions.json
+          
+          # Create a temporary file for the single PDF path
+          echo "$PDF_FILE" > single_pdf_file.txt
+          
+          python .github/scripts/pdf-converter.py single_pdf_file.txt $PROMPT_PATH $PROMPT_VERSION $BRANCH_NAME --output-json conversions.json
 
       - name: Commit and Push Markdown Files
         run: |
           git push
 
-      - name: Upload conversion results
+      - name: Run Report Analyzer
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python .github/scripts/report-analyzer.py conversions.json --readme-path README.md --output-json analysis.json
+
+      - name: Upload analysis results
         uses: actions/upload-artifact@v4
         with:
-          name: conversion-results
-          path: conversions.json
+          name: analysis-results-${{ hashFiles(matrix.pdf_file) }}
+          path: analysis.json
 
   update-readme:
     runs-on: ubuntu-latest
-    needs: process-pdfs
+    needs: process-and-analyze-report
+    if: always()
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -151,10 +171,11 @@ jobs:
       - name: Pull latest changes
         run: git pull
 
-      - name: Download conversion results
+      - name: Download all analysis results
         uses: actions/download-artifact@v4
         with:
-          name: conversion-results
+          name: analysis-results-
+          path: analysis-artifacts
 
       - name: Setup Python Environment
         uses: actions/setup-python@v5
@@ -166,17 +187,31 @@ jobs:
           python -m pip install --upgrade pip
           pip install google-generativeai
 
-      - name: Run Report Analyzer
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      - name: Combine analysis results
+        id: combine_analysis
         run: |
-          python .github/scripts/report-analyzer.py conversions.json --readme-path README.md --output-json analysis.json
+          mkdir -p combined_analysis
+          echo "[]" > combined_analysis/all_analysis.json
+          for dir in analysis-artifacts/*/; do
+            if [ -f "$dir/analysis.json" ]; then
+              jq --argfile existing combined_analysis/all_analysis.json '. + $existing' "$dir/analysis.json" > temp.json && mv temp.json combined_analysis/all_analysis.json
+            fi
+          done
+          
+          # Check if the combined file is empty or contains only an empty array
+          if [ ! -s combined_analysis/all_analysis.json ] || [ "$(cat combined_analysis/all_analysis.json)" = "[]" ]; then
+            echo "combined_analysis_exists=false" >> $GITHUB_OUTPUT
+          else
+            echo "combined_analysis_exists=true" >> $GITHUB_OUTPUT
+          fi
 
       - name: Run README Updater
+        if: steps.combine_analysis.outputs.combined_analysis_exists == 'true'
         run: |
-          python .github/scripts/readme-updater.py analysis.json --readme-path README.md
+          python .github/scripts/readme-updater.py combined_analysis/all_analysis.json --readme-path README.md
 
       - name: Commit and Push Changes
+        if: steps.combine_analysis.outputs.combined_analysis_exists == 'true'
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
