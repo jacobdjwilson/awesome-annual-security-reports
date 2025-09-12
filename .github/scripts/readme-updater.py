@@ -120,11 +120,11 @@ class ReadmeUpdater:
         return f"- [{org_name}]({org_url}) - [{analysis['title']}]({pdf_path_encoded}) ({analysis['year']}) - {analysis['summary']}"
 
     def _extract_org_name_for_sorting(self, entry_line: str) -> str:
-        match = re.search(r'- \[([^\]]+)\]', entry_line)
+        match = re.search(r'- \[([^\\]+)\]', entry_line)
         return match.group(1).lower() if match else entry_line
 
     def _extract_report_title_for_sorting(self, entry_line: str) -> str:
-        match = re.search(r'\]\(.*?)\) - \[([^\]]+)\]', entry_line)
+        match = re.search(r'\]\(.*?)\) - \[([^\\]+)\]', entry_line)
         return match.group(1).lower() if match else entry_line
 
     def _find_similar_section(self, target: str, main_section: str) -> Optional[str]:
@@ -163,7 +163,7 @@ def main():
             f.write(f"Updated README.md with {len(processed_files)} reports:\n\n" + "\n".join(summaries))
 
     summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
-    with open(summary_path, 'a') as f:
+    with open(summary_path, 'w') as f:
         f.write("\n## ✍️ README Update Summary\n\n")
         if processed_files:
             f.write(f"Successfully updated README.md with {len(processed_files)} reports.\n")

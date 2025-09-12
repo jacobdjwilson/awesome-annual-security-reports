@@ -187,7 +187,7 @@ def main():
         json.dump(analysis_results, f, indent=2)
 
     summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
-    with open(summary_path, 'a') as f:
+    with open(summary_path, 'w') as f:
         f.write("\n## 🤖 AI-Powered Report Analysis Summary\n\n")
         if analysis_results:
             f.write("| File | Category | Type | AI Processed |\n")

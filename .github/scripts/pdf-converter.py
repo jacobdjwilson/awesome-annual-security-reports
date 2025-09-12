@@ -137,7 +137,7 @@ def main():
 
     # Summary
     summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
-    with open(summary_path, 'a') as f:
+    with open(summary_path, 'w') as f:
         f.write("\n## 📄 PDF to Markdown Conversion Summary\n\n")
         if results:
             f.write("| PDF File | Markdown Output | Model Used | Status |")
