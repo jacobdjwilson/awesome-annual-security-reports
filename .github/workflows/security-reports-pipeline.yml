@@ -53,7 +53,7 @@ jobs:
             # Read each line into a bash array
             mapfile -t files < files_to_process.txt
             # Convert bash array to JSON array
-            json_array=$(printf '%s\n' "${files[@]}" | jq -R . | jq -s .)
+            json_array=$(printf '%s\n' "${files[@]}" | jq -R . | jq -s . | jq -c .)
             echo "files_to_process=$json_array" >> $GITHUB_OUTPUT
           else
             echo "files_to_process=[]" >> $GITHUB_OUTPUT
