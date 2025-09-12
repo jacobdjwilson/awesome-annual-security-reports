@@ -42,12 +42,13 @@ jobs:
         id: find-files
         run: |
           if [[ "${{ github.event.inputs.force_scan_all }}" == "true" ]]; then
-            CHANGED_FILES=$(find "Annual Security Reports" -name "*.pdf")
+            find "Annual Security Reports" -name "*.pdf" > files_to_process.txt
+            touch deleted_files.txt
           else
-            CHANGED_FILES=$(git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.event.after }} | grep 'Annual Security Reports/.*\.pdf$' || true)
+            git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.event.after }} | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
+            git diff --name-only --diff-filter=D ${{ github.event.before }} ${{ github.event.after }} | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
           fi
-          echo "files_to_process=$CHANGED_FILES" >> $GITHUB_OUTPUT
-          echo "$CHANGED_FILES" > files_to_process.txt
+          echo "files_to_process=$(cat files_to_process.txt)" >> $GITHUB_OUTPUT
 
       - name: Setup Python Environment
         if: steps.find-files.outputs.files_to_process != ''
@@ -66,7 +67,7 @@ jobs:
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
         run: |
-          python .github/scripts/virus-total-scan.py files_to_process.txt --output-json scan_results.json
+          python .github/scripts/virus-total-scan.py files_to_process.txt --deleted-files deleted_files.txt --output-json scan_results.json
 
       - name: Upload scan results
         if: steps.find-files.outputs.files_to_process != ''
@@ -81,6 +82,13 @@ jobs:
         with:
           name: files-to-process
           path: files_to_process.txt
+
+      - name: Upload deleted files list
+        if: steps.find-files.outputs.files_to_process != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: deleted-files
+          path: deleted_files.txt
 
   process-pdfs:
     runs-on: ubuntu-latest
@@ -160,7 +168,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          python .github/scripts/report-analyzer.py conversions.json --output-json analysis.json
+          python .github/scripts/report-analyzer.py conversions.json --readme-path README.md --output-json analysis.json
 
       - name: Run README Updater
         run: |

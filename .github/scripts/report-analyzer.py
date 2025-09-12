@@ -1,14 +1,14 @@
-
 import os
 import sys
 import json
 import re
 import argparse
 import google.generativeai as genai
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple
+from pathlib import Path
 
 # Configure Gemini API
-MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+MODELS = ["gemini-1.5-flash", "gemini-1.5-pro", "gemini-1.0-pro"]
 MODEL = None
 
 KEYWORD_MAPPING = {
@@ -40,45 +40,106 @@ def setup_gemini(api_key: str):
             print(f"Model {model_name} not available or failed verification: {str(e)}")
             continue
 
-def analyze_content(content: str, org_name: str, year: str, report_title: str) -> Dict[str, Any]:
+def parse_toc_from_readme(readme_path: str) -> List[str]:
+    try:
+        content = Path(readme_path).read_text(encoding='utf-8')
+        toc_pattern = r'## Contents\n<!-- TOC -->\n(.*?)\n<!-- /TOC -->'
+        toc_match = re.search(toc_pattern, content, re.DOTALL)
+        if not toc_match:
+            return []
+        
+        toc_content = toc_match.group(1)
+        categories = set()
+        for line in toc_content.split('\n'):
+            if line.strip().startswith('    - '):
+                match = re.search(r'\[([^\]]+)\]', line)
+                if match:
+                    categories.add(match.group(1))
+        return sorted(list(categories))
+    except FileNotFoundError:
+        return []
+
+def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
+    path = Path(file_path)
+    year = "Unknown"
+    for part in path.parts:
+        if part.isdigit() and len(part) == 4:
+            year = part
+            break
+    
+    filename_clean = re.sub(r'(_|-)?20\d{2}.*', '', path.stem)
+    parts = re.split(r'[-_\s]+', filename_clean)
+    
+    if len(parts) >= 2:
+        org_name = parts[0]
+        report_title = ' '.join(parts[1:])
+    else:
+        org_name = filename_clean
+        report_title = f"Security Report {year}"
+
+    org_name = ' '.join(word.capitalize() for word in org_name.replace('_', ' ').replace('-', ' ').split())
+    report_title = ' '.join(word.capitalize() for word in report_title.replace('_', ' ').replace('-', ' ').split())
+    
+    return org_name, year, report_title
+
+def analyze_content(content: str, org_name: str, year: str, report_title: str, categories: List[str]) -> Dict[str, Any]:
     if not MODEL:
         return fallback_analysis(content, org_name, year, report_title)
 
     try:
         # Summarization
-        summary_prompt = f"Summarize the key findings of this security report titled '{report_title}' from {org_name} ({year}). The summary should be concise and no more than 3 sentences. Report content: {content[:4000]}"
+        with open(".github/ai-prompts/markdown-summarization-prompt.md", 'r', encoding='utf-8') as f:
+            summary_base_prompt = f.read()
+        summary_prompt = f"{summary_base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{content[:15000]}"
         summary_response = genai.GenerativeModel(MODEL).generate_content(summary_prompt)
-        summary = summary_response.text.strip()
+        summary = ' '.join(summary_response.text.strip().split())
+        if len(summary) > 400:
+            sentences = summary.split('. ')
+            summary = ''.join(s + '. ' for s in sentences if len(summary) <= 400)
 
-        # Report Type Classification
-        type_prompt = f"Is this an 'Analysis' report (technical analysis, sensor data) or a 'Survey' report (interviews, sentiment)? Respond with only 'Analysis' or 'Survey'. Content: {content[:2000]}"
-        type_response = genai.GenerativeModel(MODEL).generate_content(type_prompt)
-        report_type = "Analysis" if "analysis" in type_response.text.lower() else "Survey"
+        # Classification and Categorization
+        with open(".github/ai-prompts/report-categorization-prompt.md", 'r', encoding='utf-8') as f:
+            categorization_base_prompt = f.read()
+        
+        category_str = '\n'.join([f"- {cat}" for cat in categories])
+        categorization_prompt = categorization_base_prompt.replace("{{CATEGORIES}}", category_str)
+        categorization_prompt += f"\n\n{content[:8000]}"
 
-        # Categorization
-        category = categorize_content(content)
+        category_response = genai.GenerativeModel(MODEL).generate_content(categorization_prompt)
+        
+        try:
+            response_text = category_response.text.strip().replace('```json', '').replace('```', '')
+            classification = json.loads(response_text)
+            if 'type' not in classification or 'category' not in classification:
+                raise ValueError("Missing 'type' or 'category' in AI response.")
+        except (json.JSONDecodeError, ValueError) as e:
+            print(f"Could not parse AI response for classification: {e}. Falling back to keyword matching.")
+            classification = {
+                'type': 'Analysis', # Default type
+                'category': categorize_content_fallback(content)
+            }
 
         return {
             'organization': org_name,
             'year': year,
             'title': report_title,
             'summary': summary,
-            'type': report_type,
-            'category': category,
+            'type': classification.get('type', 'Analysis'),
+            'category': classification.get('category', 'Industry Trends'),
             'ai_processed': True
         }
     except Exception as e:
         print(f"AI analysis failed: {e}")
         return fallback_analysis(content, org_name, year, report_title)
 
-def categorize_content(content: str) -> str:
+def categorize_content_fallback(content: str) -> str:
     content_lower = content.lower()
     scores = {category: sum(content_lower.count(keyword) for keyword in keywords) for category, keywords in KEYWORD_MAPPING.items()}
     return max(scores, key=scores.get) if any(scores.values()) else "Industry Trends"
 
 def fallback_analysis(content: str, org_name: str, year: str, report_title: str) -> Dict[str, Any]:
-    summary = ' '.join(content.split()[:60]) + '...'
-    category = categorize_content(content)
+    summary = '. '.join(content.split('. ')[:3]) + '.'
+    category = categorize_content_fallback(content)
     return {
         'organization': org_name,
         'year': year,
@@ -92,6 +153,7 @@ def fallback_analysis(content: str, org_name: str, year: str, report_title: str)
 def main():
     parser = argparse.ArgumentParser(description="Analyze markdown content of security reports.")
     parser.add_argument("conversions_json", help="Path to the JSON file with conversion results.")
+    parser.add_argument("--readme-path", help="Path to the README.md file.", default="README.md")
     parser.add_argument("--output-json", help="Path to save the analysis results as a JSON file.", default="analysis.json")
     args = parser.parse_args()
 
@@ -100,6 +162,11 @@ def main():
         print("Warning: GEMINI_API_KEY not set. Using fallback analysis.")
     else:
         setup_gemini(gemini_api_key)
+
+    categories = parse_toc_from_readme(args.readme_path)
+    if not categories:
+        print("Error: Could not parse categories from README.md. Using keyword mapping as fallback.")
+        categories = list(KEYWORD_MAPPING.keys())
 
     with open(args.conversions_json, 'r') as f:
         conversions = json.load(f)
@@ -110,21 +177,15 @@ def main():
             with open(conv['output_path'], 'r', encoding='utf-8') as f:
                 content = f.read()
             
-            # Extract info from path
-            path_parts = conv['output_path'].split('/')
-            year = [part for part in path_parts if part.isdigit() and len(part) == 4][0]
-            filename = os.path.basename(conv['output_path'])
-            org_name = filename.split(' - ')[0]
-            report_title = ' - '.join(filename.split(' - ')[1:]).replace('.md', '')
+            org_name, year, report_title = extract_info_from_path(conv['output_path'])
 
-            analysis = analyze_content(content, org_name, year, report_title)
+            analysis = analyze_content(content, org_name, year, report_title, categories)
             analysis['file_path'] = conv['output_path']
             analysis_results.append(analysis)
 
     with open(args.output_json, 'w') as f:
         json.dump(analysis_results, f, indent=2)
 
-    # Summary
     summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
     with open(summary_path, 'a') as f:
         f.write("\n## 🤖 AI-Powered Report Analysis Summary\n\n")

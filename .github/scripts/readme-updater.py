@@ -1,4 +1,3 @@
-
 import os
 import sys
 import json
@@ -23,13 +22,16 @@ class ReadmeParser:
         structure: Dict[str, Any] = {}
         current_main_section = None
         for line in toc_content.split('\n'):
-            if line.startswith('- '):
-                match = re.search(r'[[^]]+]', line)
+            line = line.strip()
+            if not line:
+                continue
+            if line.startswith('- ') and not line.startswith('    - '):
+                match = re.search(r'\[([^\]]+)\]', line)
                 if match:
                     current_main_section = match.group(1)
                     structure[current_main_section] = {'subsections': {}}
-            elif line.startswith('    - ') and current_main_section:
-                match = re.search(r'[[^]]+]', line)
+            elif line.startswith('- ') and current_main_section:
+                match = re.search(r'\[([^\]]+)\]', line)
                 if match:
                     subsection_name = match.group(1)
                     structure[current_main_section]['subsections'][subsection_name] = {}
@@ -54,8 +56,15 @@ class ReadmeUpdater:
         logical_main_section = f"{analysis['type']} Reports"
         logical_subsection = analysis['category']
 
-        if logical_main_section not in self.parser.toc_structure or logical_subsection not in self.parser.toc_structure[logical_main_section]['subsections']:
+        if logical_main_section not in self.parser.toc_structure:
             return False, "", -1
+        
+        if logical_subsection not in self.parser.toc_structure[logical_main_section]['subsections']:
+            similar_subsection = self._find_similar_section(logical_subsection, logical_main_section)
+            if similar_subsection:
+                logical_subsection = similar_subsection
+            else:
+                return False, "", -1
 
         start, end = self.parser.find_section_content(logical_subsection)
         if start == -1:
@@ -66,18 +75,23 @@ class ReadmeUpdater:
         
         org_pattern = re.escape(analysis['organization'])
         title_pattern = re.escape(analysis['title'])
-        existing_entry_pattern = rf'^- [[{org_pattern}]]\([^)]+\) - [[{title_pattern}]]\([^)]+\) (\d{{4}})' 
+        existing_entry_pattern = rf"^- \[{{{org_pattern}}}\]\([^)]+\) - \[{{{title_pattern}}}\]\([^)]+\) ((\d{{4}}))"
 
         existing_match = re.search(existing_entry_pattern, section_content, re.MULTILINE)
         
+        updated_section = section_content
+        entry_replaced = False
+
         if existing_match:
             existing_year = int(existing_match.group(1))
             if int(analysis['year']) > existing_year:
                 updated_section = re.sub(existing_entry_pattern, entry_text, section_content, 1, re.MULTILINE)
+                entry_replaced = True
             else:
                 return False, "", -1 # No update needed
-        else:
-            lines = section_content.strip().split('\n')
+        
+        if not entry_replaced:
+            lines = updated_section.strip().split('\n')
             entries = [line for line in lines if line.strip().startswith('- [')] + [entry_text]
             entries.sort(key=lambda x: (self._extract_org_name_for_sorting(x), self._extract_report_title_for_sorting(x)))
             updated_section = '\n'.join(entries) + '\n'
@@ -94,7 +108,10 @@ class ReadmeUpdater:
 
     def _format_entry(self, analysis: Dict[str, Any]) -> str:
         org_name = analysis['organization']
-        domain_base = re.sub(r'[^a-z0-9]', '', org_name.lower())
+        domain_base = re.sub(r'\b(company|corp|corporation|inc|llc|ltd|group|security|cyber|tech|technologies)\b', '', org_name.lower())
+        domain_base = re.sub(r'[^a-z0-9]', '', domain_base)
+        if len(domain_base) < 3:
+            domain_base = re.sub(r'[^a-z0-9]', '', org_name.lower())
         org_url = f"https://{domain_base}.com"
         
         pdf_path = Path("Annual Security Reports") / analysis['year'] / f"{Path(analysis['file_path']).stem}.pdf"
@@ -103,12 +120,19 @@ class ReadmeUpdater:
         return f"- [{org_name}]({org_url}) - [{analysis['title']}]({pdf_path_encoded}) ({analysis['year']}) - {analysis['summary']}"
 
     def _extract_org_name_for_sorting(self, entry_line: str) -> str:
-        match = re.search(r'- [[^]]+]', entry_line)
+        match = re.search(r'- \[([^\]]+)\]', entry_line)
         return match.group(1).lower() if match else entry_line
 
     def _extract_report_title_for_sorting(self, entry_line: str) -> str:
-        match = re.search(r'\]\(.*?\) - [[^]]+\]', entry_line)
+        match = re.search(r'\]\(.*?)\) - \[([^\]]+)\]', entry_line)
         return match.group(1).lower() if match else entry_line
+
+    def _find_similar_section(self, target: str, main_section: str) -> Optional[str]:
+        available_sections = list(self.parser.toc_structure[main_section]['subsections'].keys())
+        for section in available_sections:
+            if any(word in section.lower() for word in target.lower().split()):
+                return section
+        return None
 
     def save_readme(self):
         self.parser.readme_path.write_text(self.parser.content, encoding='utf-8')
@@ -138,7 +162,6 @@ def main():
         with open("pr_summary.txt", "w") as f:
             f.write(f"Updated README.md with {len(processed_files)} reports:\n\n" + "\n".join(summaries))
 
-    # Summary
     summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
     with open(summary_path, 'a') as f:
         f.write("\n## ✍️ README Update Summary\n\n")

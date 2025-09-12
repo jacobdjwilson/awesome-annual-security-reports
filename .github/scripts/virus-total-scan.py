@@ -1,4 +1,3 @@
-
 import os
 import sys
 import time
@@ -105,6 +104,7 @@ def create_annotation(file_path: str, result: Dict[str, Any]):
 def main():
     parser = argparse.ArgumentParser(description="Scan files with VirusTotal.")
     parser.add_argument("files_list", help="Path to a file containing a list of PDF paths to scan.")
+    parser.add_argument("--deleted-files", help="Path to a file containing a list of deleted PDF paths.")
     parser.add_argument("--output-json", help="Path to save the results as a JSON file.", default="scan_results.json")
     args = parser.parse_args()
 
@@ -116,8 +116,15 @@ def main():
     with open(args.files_list, 'r') as f:
         files_to_scan = [line.strip() for line in f if line.strip()]
 
+    deleted_files = []
+    if args.deleted_files and os.path.exists(args.deleted_files):
+        with open(args.deleted_files, 'r') as f:
+            deleted_files = [line.strip() for line in f if line.strip()]
+
     results = []
-    for file_path in files_to_scan:
+    for i, file_path in enumerate(files_to_scan):
+        if i > 0:
+            time.sleep(15) # Rate limit to 4 requests per minute
         result = scan_file(file_path, api_key)
         results.append(result)
         if result['status'] == 'success':
@@ -140,6 +147,11 @@ def main():
                     f.write(f"| {res['file']} | {icon} {res['verdict']} | {detections} | {res['total_engines']} | [View Report]({res['report_url']}) |\n")
         else:
             f.write("No files were scanned.\n")
+        
+        if deleted_files:
+            f.write("\n### 🗑️ Deleted Files\n")
+            for d_file in deleted_files:
+                f.write(f"- {d_file} (skipped scan)\n")
 
 if __name__ == "__main__":
     main()
