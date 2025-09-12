@@ -195,7 +195,7 @@ def process_pdf(pdf_path, prompt_path, prompt_version, branch):
         branch: Current branch (main or development)
         
     Returns:
-        bool: True if successful, False otherwise
+        dict: A dictionary with the processing result
     """
     print(f"Processing: {pdf_path} (Branch: {branch})")
     
@@ -207,9 +207,6 @@ def process_pdf(pdf_path, prompt_path, prompt_version, branch):
     pdf_text = extract_text_from_pdf(pdf_path)
     
     # Extract organization and title from PDF filename
-    # Example: Annual Security Reports/2024/Varonis - The Identity Crisis 2024.pdf
-    # Organization: Varonis
-    # Title: The Identity Crisis 2024
     filename_stem = pdf_path.stem
     name_parts = filename_stem.split('-')
     organization_name = name_parts[0].strip()
@@ -237,7 +234,6 @@ def process_pdf(pdf_path, prompt_path, prompt_version, branch):
     markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
     
     # Determine the output path that matches the input directory structure
-    # e.g., Annual Security Reports/2025/file.pdf -> Markdown Conversions/2025/file.md
     relative_path = pdf_path.relative_to(Path("Annual Security Reports"))
     output_dir = Path("Markdown Conversions") / relative_path.parent
     output_path = output_dir / f"{pdf_path.stem}.md"
@@ -258,47 +254,13 @@ def process_pdf(pdf_path, prompt_path, prompt_version, branch):
         
     print(f"Created/Updated: {output_path}")
     
-    # Commit the file
-    try:
-        # Add the file
-        subprocess.run(["git", "config", "user.name", "GitHub Action"], check=True)
-        subprocess.run(["git", "config", "user.email", "action@github.com"], check=True)
-        subprocess.run(["git", "add", str(output_path)], check=True)
-        
-        # Check if file is modified or new
-        status_result = subprocess.run(
-            ["git", "status", "--porcelain", str(output_path)], 
-            capture_output=True, 
-            text=True
-        )
-        
-        if status_result.returncode != 0:
-            print(f"Warning: Git status check failed: {status_result.stderr}")
-            action = "Updated"
-        else:
-            status = status_result.stdout.strip()
-            action = "📝 Updated" if status.startswith("M") else "✨ Created"
-        
-        # Commit the file
-        commit_message = f"{action} {output_path.name} from {pdf_path.name} using AI Prompt {prompt_version} (Model {MODEL}, Branch {branch})"
-        subprocess.run(["git", "commit", "-m", commit_message], check=True)
-        print(f"Committed changes: {commit_message}")
-        return {
-            "pdf_path": str(pdf_path),
-            "output_path": str(output_path),
-            "model_used": MODEL,
-            "status": "Converted Successfully",
-            "organization_url": organization_url # Include organization URL
-        }
-    except Exception as e:
-        print(f"Error during git operations: {str(e)}")
-        return {
-            "pdf_path": str(pdf_path),
-            "output_path": "", # No output path if failed
-            "model_used": MODEL,
-            "status": f"Failed: {str(e)}",
-            "organization_url": organization_url # Include organization URL even on failure
-        }
+    return {
+        "pdf_path": str(pdf_path),
+        "output_path": str(output_path),
+        "model_used": MODEL,
+        "status": "Converted Successfully",
+        "organization_url": organization_url
+    }
 
 def main():
     if len(sys.argv) < 5:
