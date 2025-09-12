@@ -430,12 +430,20 @@ class ReadmeUpdater:
             print(f"❌ Error saving README: {e}")
             return False
 
-def main():
-    if len(sys.argv) < 2:
-        print("Usage: python update-readme.py <markdown_file_path>")
-        sys.exit(1)
+def get_file_path_from_env_or_argv():
+    """Gets the file path from CHANGED_MD_FILES env var or script argument."""
+    if 'CHANGED_MD_FILES' in os.environ and os.environ['CHANGED_MD_FILES']:
+        # Assuming the first file is the one to process if multiple are passed
+        return os.environ['CHANGED_MD_FILES'].split('\n')[0].strip()
+    if len(sys.argv) > 1:
+        return sys.argv[1]
+    return None
 
-    file_path = sys.argv[1]
+def main():
+    file_path = get_file_path_from_env_or_argv()
+    if not file_path:
+        print("Usage: python update-readme.py <markdown_file_path> OR set CHANGED_MD_FILES env var")
+        sys.exit(1)
     
     print("🚀 Starting AI README update process")
     

@@ -263,18 +263,24 @@ def process_pdf(pdf_path, prompt_path, prompt_version, branch):
     }
 
 def main():
-    if len(sys.argv) < 5:
-        print("Usage: python pdf-converter.py <pdf_paths_file> <prompt_path> <prompt_version> <branch>")
+    # Argument handling to support both single file and file list
+    if len(sys.argv) < 5: # pdf-converter.py <path> <prompt> <version> <branch> <json_out>
+        print("Usage: python pdf-converter.py <pdf_path_or_file> <prompt_path> <prompt_version> <branch> [output_json_path]")
         return 1
     
-    pdf_paths_file = sys.argv[1]
+    pdf_input = sys.argv[1]
     prompt_path = sys.argv[2]
     prompt_version = sys.argv[3]
     branch = sys.argv[4]
+    output_json_path = sys.argv[5] if len(sys.argv) > 5 else os.environ.get("CONVERTED_REPORTS_JSON_PATH", "converted_reports.json")
     
     # Read PDF paths
-    with open(pdf_paths_file, "r") as f:
-        pdf_paths = [line.strip() for line in f.readlines() if line.strip()]
+    pdf_paths = []
+    if os.path.exists(pdf_input):
+        with open(pdf_input, "r") as f:
+            pdf_paths = [line.strip() for line in f.readlines() if line.strip()]
+    else: # Assume it's a direct path
+        pdf_paths = [pdf_input]
     
     print(f"Processing {len(pdf_paths)} PDF files on branch {branch}")
     
@@ -302,7 +308,6 @@ def main():
     print(f"Successfully processed {success_count}/{len(pdf_paths)} PDFs")
     
     # Write results to a JSON file for the next workflow
-    output_json_path = os.environ.get("CONVERTED_REPORTS_JSON_PATH", "converted_reports.json")
     with open(output_json_path, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2)
     print(f"Wrote conversion results to {output_json_path}")
@@ -332,7 +337,7 @@ def main():
         return 0 if success_count > 0 else 1
 
 if __name__ == "__main__":
-    if len(sys.argv) < 5:
-        print("Usage: python pdf-converter.py <pdf_path> <prompt_path> <prompt_version> <branch>")
+    if len(sys.argv) < 5: # pdf-converter.py <path> <prompt> <version> <branch> <json_out>
+        print("Usage: python pdf-converter.py <pdf_path_or_file> <prompt_path> <prompt_version> <branch> [output_json_path]")
         sys.exit(1)
     sys.exit(main())

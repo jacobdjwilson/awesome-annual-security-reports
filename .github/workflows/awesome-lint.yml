@@ -9,6 +9,8 @@ on:
       - 'README.md'
   workflow_dispatch:
 
+permissions: read-all
+
 jobs:
   lint:
     runs-on: ubuntu-latest
