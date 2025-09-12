@@ -89,6 +89,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download files to process
         uses: actions/download-artifact@v4
@@ -116,6 +118,10 @@ jobs:
           PROMPT_VERSION=$(git log -n 1 --pretty=format:%s -- $PROMPT_PATH | grep -oP 'v\d+\.\d+(\.\d+)?' || echo 'v1.0')
           BRANCH_NAME=${{ github.head_ref || github.ref_name }}
           python .github/scripts/pdf-converter.py files_to_process.txt $PROMPT_PATH $PROMPT_VERSION $BRANCH_NAME --output-json conversions.json
+
+      - name: Commit and Push Markdown Files
+        run: |
+          git push
 
       - name: Upload conversion results
         uses: actions/upload-artifact@v4
