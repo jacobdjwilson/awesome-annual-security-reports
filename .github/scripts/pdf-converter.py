@@ -140,11 +140,14 @@ def main():
     with open(summary_path, 'w') as f:
         f.write("\n## 📄 PDF to Markdown Conversion Summary\n\n")
         if results:
-            f.write("| PDF File | Markdown Output | Model Used | Status |")
-            f.write("|----------|-----------------|------------|--------|")
+            f.write("| PDF File | Markdown Output | Model Used | Status |
+");
+            f.write("|----------|-----------------|------------|--------|
+");
             for res in results:
                 status_icon = "✅" if res['status'] == 'success' else "❌"
-                f.write(f"| {res['pdf_path']} | {res.get('output_path', 'N/A')} | {res.get('model_used', 'N/A')} | {status_icon} {res['status']} |")
+                f.write(f"| {res['pdf_path']} | {res.get('output_path', 'N/A')} | {res.get('model_used', 'N/A')} | {status_icon} {res['status']} |
+");
         else:
             f.write("No PDFs were processed.")
 

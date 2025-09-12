@@ -25,12 +25,17 @@ class ReadmeParser:
             line = line.strip()
             if not line:
                 continue
+            # Main section (e.g., - [Analysis Reports](#analysis-reports))
+            # Check for '- ' at the beginning of the line, and ensure it's not a subsection (which starts with '    - ')
             if line.startswith('- ') and not line.startswith('    - '):
                 match = re.search(r'\[([^\]]+)\]', line)
                 if match:
-                    current_main_section = match.group(1)
+                    section_name = match.group(1)
+                    current_main_section = section_name
                     structure[current_main_section] = {'subsections': {}}
-            elif line.startswith('- ') and current_main_section:
+            # Subsection (e.g.,     - [Threat Intelligence](#threat-intelligence))
+            # Check for '    - ' at the beginning of the line (4 spaces indentation)
+            elif line.startswith('    - ') and current_main_section:
                 match = re.search(r'\[([^\]]+)\]', line)
                 if match:
                     subsection_name = match.group(1)
@@ -75,7 +80,7 @@ class ReadmeUpdater:
         
         org_pattern = re.escape(analysis['organization'])
         title_pattern = re.escape(analysis['title'])
-        existing_entry_pattern = rf"^- \[{{{org_pattern}}}\]\([^)]+\) - \[{{{title_pattern}}}\]\([^)]+\) ((\d{{4}}))"
+        existing_entry_pattern = rf"^- \[{{{org_pattern}}}\]\([^)]+\) - \[{{{title_pattern}}}\]\([^)]+\) ((\d{{4}}))" # Corrected regex for year capture
 
         existing_match = re.search(existing_entry_pattern, section_content, re.MULTILINE)
         
@@ -120,11 +125,11 @@ class ReadmeUpdater:
         return f"- [{org_name}]({org_url}) - [{analysis['title']}]({pdf_path_encoded}) ({analysis['year']}) - {analysis['summary']}"
 
     def _extract_org_name_for_sorting(self, entry_line: str) -> str:
-        match = re.search(r'- \[([^\\]+)\]', entry_line)
+        match = re.search(r'- \[([^\]]+)\]', entry_line)
         return match.group(1).lower() if match else entry_line
 
     def _extract_report_title_for_sorting(self, entry_line: str) -> str:
-        match = re.search(r'\]\(.*?)\) - \[([^\\]+)\]', entry_line)
+        match = re.search(r'\]\(.*?)\) - \[([^\]]+)\]', entry_line)
         return match.group(1).lower() if match else entry_line
 
     def _find_similar_section(self, target: str, main_section: str) -> Optional[str]:

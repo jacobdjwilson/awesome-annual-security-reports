@@ -1,3 +1,4 @@
+
 import os
 import sys
 import time
@@ -122,6 +123,7 @@ def main():
             deleted_files = [line.strip() for line in f if line.strip()]
 
     results = []
+    failed_scans = []
     for i, file_path in enumerate(files_to_scan):
         if i > 0:
             time.sleep(15) # Rate limit to 4 requests per minute
@@ -129,6 +131,8 @@ def main():
         results.append(result)
         if result['status'] == 'success':
             create_annotation(file_path, result)
+        else:
+            failed_scans.append({"file": os.path.basename(file_path), "reason": result["reason"]})
 
     with open(args.output_json, 'w') as f:
         json.dump(results, f, indent=2)
@@ -141,13 +145,17 @@ def main():
             f.write("| File | Verdict | Detections | Engines | Report |\n")
             f.write("|------|---------|------------|---------|--------|\n")
             for res in results:
-                if res['status'] == 'success':
-                    icon = "🔴" if res['verdict'] == "Malicious" else "🟠" if res['verdict'] == "Suspicious" else "✅"
-                    detections = f"{res['malicious_count'] + res['suspicious_count']}/{res['total_engines']}"
-                    f.write(f"| {res['file']} | {icon} {res['verdict']} | {detections} | {res['total_engines']} | [View Report]({res['report_url']}) |\n")
+                icon = "🔴" if res['verdict'] == "Malicious" else "🟠" if res['verdict'] == "Suspicious" else "✅"
+                detections = f"{res['malicious_count'] + res['suspicious_count']}/{res['total_engines']}"
+                f.write(f"| {res['file']} | {icon} {res['verdict']} | {detections} | {res['total_engines']} | [View Report]({res['report_url']}) |\n")
         else:
             f.write("No files were scanned.\n")
         
+        if failed_scans:
+            f.write("\n### ❌ Failed Scans\n")
+            for f_scan in failed_scans:
+                f.write(f"- {f_scan['file']}: {f_scan['reason']}\n")
+
         if deleted_files:
             f.write("\n### 🗑️ Deleted Files\n")
             for d_file in deleted_files:
