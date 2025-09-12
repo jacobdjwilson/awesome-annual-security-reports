@@ -50,8 +50,24 @@ jobs:
           
           # Convert files_to_process.txt to a JSON array and set as output
           if [ -s files_to_process.txt ]; then
-            json_array=$(cat files_to_process.txt | grep -v '^$' | jq -R . | jq -s . | jq -c .)
-            # Use a multi-line string literal with a custom delimiter
+            # Read each line, trim whitespace, and filter out empty lines
+            files_content=$(cat files_to_process.txt | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | grep -v '^$')
+            
+            # Initialize JSON array
+            json_array="["
+            first_item=true
+            
+            # Loop through each file path
+            while IFS= read -r line; do
+              if [ "$first_item" = false ]; then
+                json_array+=,"
+              fi
+              json_array+="\"$line\""
+              first_item=false
+            done <<< "$files_content"
+            
+            json_array+="]"
+            
             echo "files_to_process<<EOF" >> $GITHUB_OUTPUT
             echo "$json_array" >> $GITHUB_OUTPUT
             echo "EOF" >> $GITHUB_OUTPUT
