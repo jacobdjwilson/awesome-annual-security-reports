@@ -47,23 +47,14 @@ jobs:
             git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.event.after }} | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
             git diff --name-only --diff-filter=D ${{ github.event.before }} ${{ github.event.after }} | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
           fi
-          
           echo "--- Content of files_to_process.txt ---"
           cat -v files_to_process.txt
           echo "--- End of files_to_process.txt ---"
-
-          # Convert files_to_process.txt to a JSON array and set as output
           if [ -s files_to_process.txt ]; then
-            # Read each line, trim whitespace, and filter out empty lines
             files_content=$(cat files_to_process.txt | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | grep -v '^$')
-            
-            # Initialize JSON array
             json_array="["
             first_item=true
-            
-            # Loop through each file path
             while IFS= read -r line; do
-              # Remove any trailing commas that might have been introduced somehow
               line=$(echo "$line" | sed 's/,$//')
               if [ "$first_item" = false ]; then
                 json_array+=,
@@ -71,13 +62,10 @@ jobs:
               json_array+="\"$line\""
               first_item=false
             done <<< "$files_content"
-            
             json_array+="]"
-            
             echo "--- Content of json_array variable ---"
             echo "$json_array"
             echo "--- End of json_array variable ---"
-
             echo "files_to_process<<EOF" >> $GITHUB_OUTPUT
             echo "$json_array" >> $GITHUB_OUTPUT
             echo "EOF" >> $GITHUB_OUTPUT
@@ -91,8 +79,8 @@ jobs:
           echo "### Discovery Scan Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "#### Report Counts" >> $GITHUB_STEP_SUMMARY
-          echo "| Directory | PDF Reports | Markdown Conversions |
-|---|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Directory | PDF Reports | Markdown Conversions |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
           for year_dir in Annual\ Security\ Reports/*/; do
             year=$(basename "$year_dir")
             pdf_count=$(find "$year_dir" -name "*.pdf" -type f | wc -l)
@@ -137,11 +125,9 @@ jobs:
           echo "### VirusTotal Security Scan Results" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           if [ -f scan_results.json ]; then
-            echo "| File | Status | Details |
-|---|---|---|" >> $GITHUB_STEP_SUMMARY
-            # This assumes scan_results.json is an array of objects with file_path, status, and details keys.
-            # You may need to adjust the jq query based on the actual structure of scan_results.json.
-            jq -r '.[] | "| `\(.file_path)` | \(.status) | \(.details // "N/A") |"' scan_results.json >> $GITHUB_STEP_SUMMARY
+            echo "| File | Status | Details |" >> $GITHUB_STEP_SUMMARY
+            echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
+            jq -r '.[] | "| `\(.file_path)` | \(.status) | \(.details // \"N/A\") |"' scan_results.json >> $GITHUB_STEP_SUMMARY
           else
             echo "Scan results file not found or scan was skipped." >> $GITHUB_STEP_SUMMARY
           fi
@@ -201,10 +187,7 @@ jobs:
           PROMPT_PATH=".github/ai-prompts/pdf-to-markdown-prompt.md"
           PROMPT_VERSION=$(git log -n 1 --pretty=format:%s -- $PROMPT_PATH | grep -oP 'v\d+\.\d+(\.\d+)?' || echo 'v1.0')
           BRANCH_NAME=${{ github.head_ref || github.ref_name }}
-          
-          # Create a temporary file for the single PDF path
           echo "$PDF_FILE" > single_pdf_file.txt
-          
           python .github/scripts/pdf-converter.py single_pdf_file.txt $PROMPT_PATH $PROMPT_VERSION $BRANCH_NAME --output-json conversions.json
         continue-on-error: true
 
@@ -213,10 +196,8 @@ jobs:
           echo "### PDF to Markdown Conversion Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           if [ -f conversions.json ]; then
-            echo "| PDF File | Markdown File | Model Used | Status |
-|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
-            # This assumes conversions.json is an array of objects with these keys.
-            # You may need to adjust the jq query based on the actual structure of conversions.json.
+            echo "| PDF File | Markdown File | Model Used | Status |" >> $GITHUB_STEP_SUMMARY
+            echo "|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
             jq -r '.[] | "| `\(.pdf_file)` | `\(.markdown_file)` | \(.model // \"N/A\") | \(.status) |"' conversions.json >> $GITHUB_STEP_SUMMARY
           else
             echo "Conversion results file not found." >> $GITHUB_STEP_SUMMARY
@@ -235,10 +216,8 @@ jobs:
           echo "### Report Analysis Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           if [ -f analysis.json ]; then
-            echo "| Markdown File | Category | Type | Analysis Method |
-|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
-            # This assumes analysis.json is an array of objects with these keys.
-            # You may need to adjust the jq query based on the actual structure of analysis.json.
+            echo "| Markdown File | Category | Type | Analysis Method |" >> $GITHUB_STEP_SUMMARY
+            echo "|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
             jq -r '.[] | "| `\(.markdown_file)` | \(.category) | \(.type) | \(.analysis_method // \"N/A\") |"' analysis.json >> $GITHUB_STEP_SUMMARY
           else
             echo "Analysis results file not found." >> $GITHUB_STEP_SUMMARY
@@ -286,16 +265,13 @@ jobs:
         run: |
           mkdir -p combined_analysis
           echo "[]" > combined_analysis/all_analysis.json
-          # Find all analysis.json files and merge them into one
           find analysis-artifacts -name "analysis.json" -print0 | while IFS= read -r -d $'
 ' file; do
-            # Ensure the file is not empty and contains valid JSON
             if [ -s "$file" ] && jq -e . >/dev/null 2>&1 <"$file"; then
               jq -s '.[0] + .[1]' combined_analysis/all_analysis.json "$file" > temp.json && mv temp.json combined_analysis/all_analysis.json
             fi
           done
           
-          # Check if the combined file is empty or contains only an empty array
           if [ ! -s combined_analysis/all_analysis.json ] || [ "$(jq 'length' combined_analysis/all_analysis.json)" -eq 0 ]; then
             echo "combined_analysis_exists=false" >> $GITHUB_OUTPUT
           else
@@ -307,10 +283,8 @@ jobs:
         run: |
           echo "### Update Readme Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Markdown Entry | Type |
-|---|---|" >> $GITHUB_STEP_SUMMARY
-          # This assumes all_analysis.json is an array of objects with markdown_file and type keys.
-          # You may need to adjust the jq query based on the actual structure of all_analysis.json.
+          echo "| Markdown Entry | Type |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
           jq -r '.[] | "| `\(.markdown_file)` | \(.type // \"N/A\") |"' combined_analysis/all_analysis.json >> $GITHUB_STEP_SUMMARY
 
       - name: Run README Updater
