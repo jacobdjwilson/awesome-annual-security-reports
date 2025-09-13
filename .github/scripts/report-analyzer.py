@@ -8,7 +8,7 @@ from typing import List, Dict, Any, Tuple
 from pathlib import Path
 
 # Configure Gemini API
-MODELS = ["gemini-1.5-flash", "gemini-1.5-pro", "gemini-1.0-pro"]
+MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
 MODEL = None
 
 KEYWORD_MAPPING = {
@@ -188,7 +188,7 @@ def main():
 
     summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
     with open(summary_path, 'w') as f:
-        f.write("\n## 🤖 AI-Powered Report Analysis Summary\n\n")
+        f.write("\n## 📝 Report Analysis Summary\n\n")
         if analysis_results:
             f.write("| File | Category | Type | AI Processed |\n")
             f.write("|------|----------|------|--------------|\n")
