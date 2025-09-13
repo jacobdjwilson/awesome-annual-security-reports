@@ -1,0 +1,13 @@
+[
+  {
+    "organization": "SailPoint",
+    "year": "2025",
+    "title": "Horizons Of Identity Security",
+    "summary": "Analyzes the evolving landscape of identity security, assessing organizational maturity in managing human, machine, and AI identities. It highlights a significant maturity gap, with 63% of organizations in lower maturity horizons, despite identity security offering the highest perceived ROI and the urgent need to secure proliferating machine and AI agent identities.",
+    "type": "Survey",
+    "category": "Identity Security",
+    "ai_processed": true,
+    "file_path": "Markdown Conversions/2025/SailPoint-Horizons-of-Identity-Security-2025.md",
+    "pdf_path": "Annual Security Reports/2025/SailPoint-Horizons-of-Identity-Security-2025.pdf"
+  }
+]
