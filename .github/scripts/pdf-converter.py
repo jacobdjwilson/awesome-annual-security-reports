@@ -51,8 +51,30 @@ def extract_text_from_pdf(pdf_path: Path) -> str:
 def perform_google_search(query: str, api_key: str, cse_id: str) -> Optional[str]:
     try:
         service = build("customsearch", "v1", developerKey=api_key)
-        res = service.cse().list(q=query, cx=cse_id, num=1).execute()
-        return res['items'][0]['link'] if 'items' in res and len(res['items']) > 0 else None
+        res = service.cse().list(q=query, cx=cse_id, num=5).execute()
+        
+        if 'items' in res and len(res['items']) > 0:
+            # Filter out PDF links, media articles, and prefer official organization sites
+            for item in res['items']:
+                url = item['link']
+                title = item.get('title', '').lower()
+                snippet = item.get('snippet', '').lower()
+                
+                # Skip PDF links and media articles
+                if url.endswith('.pdf') or any(x in url.lower() for x in ['/media/', '/news/', '/press-release', 'blog', 'linkedin', 'twitter', 'facebook']):
+                    continue
+                    
+                # Skip third-party sites that just mention the report
+                if any(x in url.lower() for x in ['cybersecuritynews', 'darkreading', 'securityweek', 'infosecurity-magazine']):
+                    continue
+                
+                # Prefer official organization sites
+                return url
+            
+            # If no good match found, return the first result
+            return res['items'][0]['link']
+        
+        return None
     except HttpError as e:
         print(f"Google Search API error: {e}")
         return None
@@ -87,14 +109,14 @@ def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url:
             for i, candidate in enumerate(response.candidates):
                 print(f"Candidate {i} finish reason: {candidate.finish_reason}")
                 if candidate.safety_ratings:
-                    print(f"Candidate {i} safety ratings: {candidate.safety_ratings})")
+                    print(f"Candidate {i} safety ratings: {candidate.safety_ratings}")
         
         if not response.text:
             error_message = "The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned."
             if response.candidates and response.candidates[0].finish_reason:
                 error_message += f" The candidate's finish_reason is {response.candidates[0].finish_reason}."
             if response.candidates and response.candidates[0].safety_ratings:
-                error_message += f" Safety ratings: {response.candidates[0].safety_ratings}. "
+                error_message += f" Safety ratings: {response.candidates[0].safety_ratings}."
             raise ValueError(error_message)
 
         print(f"Successfully generated markdown ({len(response.text)} characters)")
@@ -117,12 +139,17 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         report_title = parts[1].strip() if len(parts) > 1 else filename_stem
         
         organization_url = None
-        if google_search_api_key and google_cse_id:
-            search_query = f"{organization_name} {report_title} report"
+        if google_search_api_key and google_cse_id and organization_name:
+            search_query = f"{organization_name} {report_title} report site:{organization_name.lower().replace(' ', '')}.com"
             print(f"Performing Google search for: '{search_query}'")
             organization_url = perform_google_search(search_query, google_search_api_key, google_cse_id)
+            
+            # If no results with site filter, try broader search
+            if not organization_url:
+                search_query = f"{organization_name} official website"
+                organization_url = perform_google_search(search_query, google_search_api_key, google_cse_id)
         else:
-            print("Google Search API keys not provided. Skipping URL search.")
+            print("Google Search API keys not provided or organization name missing. Skipping URL search.")
 
         markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
         
@@ -145,11 +172,12 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
             "status": "success",
             "pdf_path": str(pdf_path),
             "output_path": str(output_path),
-            "model_used": MODEL
+            "model_used": MODEL,
+            "organization_url": organization_url
         }
     except Exception as e:
         error_message = f"Error processing {pdf_path}: {str(e)}"
-        print(error_message, file=sys.stderr) # Print to stderr for visibility in GitHub Actions logs
+        print(error_message, file=sys.stderr)
         return {"status": "failed", "pdf_path": str(pdf_path), "reason": str(e)}
 
 def main():
@@ -184,38 +212,13 @@ def main():
     with open(args.output_json, 'w') as f:
         json.dump(results, f, indent=2)
 
-    # Commit changes if any files were converted
-    if converted_output_paths:
-        try:
-            subprocess.run(["git", "config", "user.name", "GitHub Action"], check=True)
-            subprocess.run(["git", "config", "user.email", "action@github.com"], check=True)
-            for path in converted_output_paths:
-                subprocess.run(["git", "add", path], check=True)
-            
-            commit_message = f"Converted {len(converted_output_paths)} PDF(s) to Markdown using AI Prompt {args.prompt_version} (Model {MODEL}, Branch {args.branch})"
-            subprocess.run(["git", "commit", "-m", commit_message], check=True)
-            print(f"Committed changes: {commit_message}")
-        except Exception as e:
-            print(f"Error during git operations: {str(e)}")
-
     # Create or clear the converted files list
     converted_files_path = os.environ.get("CONVERTED_FILES_PATH", "converted_files.txt")
     with open(converted_files_path, "w") as f:
         for path in converted_output_paths:
             f.write(f"{path}\n")
 
-    # Summary
-    summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
-    with open(summary_path, 'w') as f:
-        f.write("\n## ⚙️ PDF to Markdown Conversion Summary\n\n")
-        if results:
-            f.write("| PDF File | Markdown Output | Model Used | Status |\n")
-            f.write("|----------|-----------------|------------|--------|\n")
-            for res in results:
-                status_icon = "✅" if res['status'] == 'success' else "❌"
-                f.write(f"| {res['pdf_path']} | {res.get('output_path', 'N/A')} | {res.get('model_used', 'N/A')} | {status_icon} {res['status']} |\n")
-        else:
-            f.write("No PDFs were processed.")
+    print(f"Conversion completed. {len([r for r in results if r['status'] == 'success'])} files converted successfully.")
 
     return 0
 

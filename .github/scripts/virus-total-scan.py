@@ -104,8 +104,7 @@ def create_annotation(file_path: str, result: Dict[str, Any]):
     """Create GitHub annotation with scan results"""
     verdict = result['verdict']
     level = "error" if verdict == "Malicious" else "warning" if verdict == "Suspicious" else "notice"
-    icon = "🔴" if level == "error" else "🟠" if level == "warning" else "✅"
-    message = f"VirusTotal Scan: {verdict} {icon} ({result['malicious_count'] + result['suspicious_count']}/{result['total_engines']} engines)"
+    message = f"VirusTotal Scan: {verdict} ({result['malicious_count'] + result['suspicious_count']}/{result['total_engines']} engines)"
     print(f"::{level} file={file_path}::{message}")
     print(f"::{level} file={file_path}::Report: {result['report_url']}")
 
@@ -134,6 +133,7 @@ def main():
     for i, file_path in enumerate(files_to_scan):
         if i > 0:
             time.sleep(15) # Rate limit to 4 requests per minute
+        print(f"Scanning file {i+1}/{len(files_to_scan)}: {file_path}")
         result = scan_file(file_path, api_key)
         results.append(result)
         if result['status'] == 'success':
@@ -144,30 +144,9 @@ def main():
     with open(args.output_json, 'w') as f:
         json.dump(results, f, indent=2)
 
-    # Summary
-    summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
-    with open(summary_path, 'w') as f:
-        f.write("## 🛡️ VirusTotal Security Scan Results\n\n")
-        if results:
-            f.write("| File | Verdict | Detections | Engines | Report |\n")
-            f.write("|------|---------|------------|---------|--------|\n")
-            for res in results:
-                if res['status'] == 'success': # Only process successful scans for the main table
-                    icon = "🔴" if res['verdict'] == "Malicious" else "🟠" if res['verdict'] == "Suspicious" else "✅"
-                    detections = f"{res['malicious_count'] + res['suspicious_count']}/{res['total_engines']}"
-                    f.write(f"| {res['file']} | {icon} {res['verdict']} | {detections} | {res['total_engines']} | [View Report]({res['report_url']}) |\n")
-        else:
-            f.write("No files were scanned.\n")
-        
-        if failed_scans:
-            f.write("\n### ❌ Failed Scans\n")
-            for f_scan in failed_scans:
-                f.write(f"- {f_scan['file']}: {f_scan['reason']}\n")
+    print(f"Scan completed. {len([r for r in results if r['status'] == 'success'])} files scanned successfully.")
 
-        if deleted_files:
-            f.write("\n### 🗑️ Deleted Files\n")
-            for d_file in deleted_files:
-                f.write(f"- {d_file} (skipped scan)\n")
+    return 0
 
 if __name__ == "__main__":
     main()

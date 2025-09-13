@@ -118,7 +118,9 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, c
         with open(".github/ai-prompts/markdown-summarization-prompt.md", 'r', encoding='utf-8') as f:
             summary_base_prompt = f.read()
         summary_prompt = f"{summary_base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{content[:15000]}"
-        summary_response = genai.GenerativeModel(MODEL).generate_content(summary_prompt)
+        
+        summary_model = genai.GenerativeModel(MODEL)
+        summary_response = summary_model.generate_content(summary_prompt)
         summary = ' '.join(summary_response.text.strip().split())
         
         # Ensure summary is not too long (limit to ~400 chars for README formatting)
@@ -140,7 +142,8 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, c
         categorization_prompt = categorization_base_prompt.replace("{{CATEGORIES}}", category_str)
         categorization_prompt += f"\n\nOrganization: {org_name}\nTitle: {report_title}\nYear: {year}\n\n{content[:8000]}"
 
-        category_response = genai.GenerativeModel(MODEL).generate_content(categorization_prompt)
+        category_model = genai.GenerativeModel(MODEL)
+        category_response = category_model.generate_content(categorization_prompt)
         
         try:
             response_text = category_response.text.strip().replace('```json', '').replace('```', '')
@@ -232,6 +235,12 @@ def main():
 
                 analysis = analyze_content(content, org_name, year, report_title, categories)
                 analysis['file_path'] = conv['output_path']
+                analysis['pdf_path'] = conv['pdf_path']
+                
+                # Include organization URL from conversion if available
+                if 'organization_url' in conv and conv['organization_url']:
+                    analysis['organization_url'] = conv['organization_url']
+                
                 analysis_results.append(analysis)
                 
             except Exception as e:
@@ -241,19 +250,9 @@ def main():
     with open(args.output_json, 'w') as f:
         json.dump(analysis_results, f, indent=2)
 
-    # Generate summary
-    summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
-    with open(summary_path, 'w') as f:
-        f.write("\n## 📝 Report Analysis Summary\n\n")
-        if analysis_results:
-            f.write("| File | Category | Type | AI Processed |\n")
-            f.write("|------|----------|------|--------------|\n")
-            for res in analysis_results:
-                ai_icon = "✅" if res['ai_processed'] else "⚠️"
-                filename = os.path.basename(res['file_path'])
-                f.write(f"| {filename} | {res['category']} | {res['type']} | {ai_icon} |\n")
-        else:
-            f.write("No reports were analyzed.\n")
+    print(f"Analysis completed. {len(analysis_results)} reports analyzed.")
+
+    return 0
 
 if __name__ == "__main__":
     main()
