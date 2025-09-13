@@ -265,15 +265,14 @@ jobs:
         run: |
           mkdir -p combined_analysis
           echo "[]" > combined_analysis/all_analysis.json
-          find analysis-artifacts -name "analysis.json" -print0 | while IFS= read -r -d $'
-' file; do
+          find analysis-artifacts -name "analysis.json" -print0 | while IFS= read -r -d '' file; do
             if [ -s "$file" ] && jq -e . >/dev/null 2>&1 <"$file"; then
               jq -s '.[0] + .[1]' combined_analysis/all_analysis.json "$file" > temp.json && mv temp.json combined_analysis/all_analysis.json
             fi
           done
           
           if [ ! -s combined_analysis/all_analysis.json ] || [ "$(jq 'length' combined_analysis/all_analysis.json)" -eq 0 ]; then
-            echo "combined_analysis_exists=false" >> $GITHUB_OUTPUT
+            echo "combined_analysis_exists=false" >> $GITHUB_OUTPUTOUTPUT
           else
             echo "combined_analysis_exists=true" >> $GITHUB_OUTPUT
           fi
