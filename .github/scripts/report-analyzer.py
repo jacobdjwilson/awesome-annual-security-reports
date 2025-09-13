@@ -61,26 +61,53 @@ def parse_toc_from_readme(readme_path: str) -> List[str]:
 
 def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
     path = Path(file_path)
+    
+    # Extract year from path
     year = "Unknown"
     for part in path.parts:
         if part.isdigit() and len(part) == 4:
             year = part
             break
     
-    filename_clean = re.sub(r'(_|-)?20\d{2}.*', '', path.stem)
-    parts = re.split(r'[-_\s]+', filename_clean)
+    # Parse filename to extract organization and title
+    filename = path.stem
+    
+    # Remove year suffixes and common separators
+    filename_clean = re.sub(r'[-_\s]*20\d{2}[-_\s]*', '', filename)
+    
+    # Split on common separators
+    parts = re.split(r'[-_]+', filename_clean, 1)
     
     if len(parts) >= 2:
-        org_name = parts[0]
-        report_title = ' '.join(parts[1:])
+        org_part = parts[0].strip()
+        title_part = parts[1].strip()
+        
+        # Clean up organization name
+        org_name = re.sub(r'[_-]', ' ', org_part)
+        org_name = ' '.join(word.capitalize() for word in org_name.split())
+        
+        # Clean up title
+        title = re.sub(r'[_-]', ' ', title_part)
+        title = ' '.join(word.capitalize() for word in title.split())
+        
+        # Handle special cases for well-known organizations
+        org_mapping = {
+            'Cyberark': 'CyberArk',
+            'Sailpoint': 'SailPoint',
+            'Crowdstrike': 'CrowdStrike',
+            'Palo Alto': 'Palo Alto Networks',
+        }
+        
+        for old_name, new_name in org_mapping.items():
+            if org_name.lower() == old_name.lower():
+                org_name = new_name
+                break
     else:
-        org_name = filename_clean
-        report_title = f"Security Report {year}"
-
-    org_name = ' '.join(word.capitalize() for word in org_name.replace('_', ' ').replace('-', ' ').split())
-    report_title = ' '.join(word.capitalize() for word in report_title.replace('_', ' ').replace('-', ' ').split())
+        # Fallback if parsing fails
+        org_name = ' '.join(word.capitalize() for word in filename_clean.replace('_', ' ').replace('-', ' ').split())
+        title = f"Security Report {year}"
     
-    return org_name, year, report_title
+    return org_name, year, title
 
 def analyze_content(content: str, org_name: str, year: str, report_title: str, categories: List[str]) -> Dict[str, Any]:
     if not MODEL:
@@ -93,9 +120,17 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, c
         summary_prompt = f"{summary_base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{content[:15000]}"
         summary_response = genai.GenerativeModel(MODEL).generate_content(summary_prompt)
         summary = ' '.join(summary_response.text.strip().split())
+        
+        # Ensure summary is not too long (limit to ~400 chars for README formatting)
         if len(summary) > 400:
             sentences = summary.split('. ')
-            summary = ''.join(s + '. ' for s in sentences if len(summary) <= 400)
+            summary = ''
+            for sentence in sentences:
+                if len(summary + sentence + '. ') <= 400:
+                    summary += sentence + '. '
+                else:
+                    break
+            summary = summary.strip()
 
         # Classification and Categorization
         with open(".github/ai-prompts/report-categorization-prompt.md", 'r', encoding='utf-8') as f:
@@ -103,7 +138,7 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, c
         
         category_str = '\n'.join([f"- {cat}" for cat in categories])
         categorization_prompt = categorization_base_prompt.replace("{{CATEGORIES}}", category_str)
-        categorization_prompt += f"\n\n{content[:8000]}"
+        categorization_prompt += f"\n\nOrganization: {org_name}\nTitle: {report_title}\nYear: {year}\n\n{content[:8000]}"
 
         category_response = genai.GenerativeModel(MODEL).generate_content(categorization_prompt)
         
@@ -115,7 +150,7 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, c
         except (json.JSONDecodeError, ValueError) as e:
             print(f"Could not parse AI response for classification: {e}. Falling back to keyword matching.")
             classification = {
-                'type': 'Analysis', # Default type
+                'type': 'Analysis',  # Default type
                 'category': categorize_content_fallback(content)
             }
 
@@ -138,7 +173,19 @@ def categorize_content_fallback(content: str) -> str:
     return max(scores, key=scores.get) if any(scores.values()) else "Industry Trends"
 
 def fallback_analysis(content: str, org_name: str, year: str, report_title: str) -> Dict[str, Any]:
-    summary = '. '.join(content.split('. ')[:3]) + '.'
+    # Create a more meaningful summary from the content
+    sentences = content.split('. ')
+    # Take first few meaningful sentences (skip headers and empty content)
+    meaningful_sentences = [s.strip() for s in sentences if len(s.strip()) > 20 and not s.strip().startswith('#')]
+    summary_sentences = meaningful_sentences[:3] if meaningful_sentences else [f"Security report from {org_name}"]
+    summary = '. '.join(summary_sentences)
+    if not summary.endswith('.'):
+        summary += '.'
+    
+    # Limit summary length
+    if len(summary) > 400:
+        summary = summary[:400].rsplit('. ', 1)[0] + '.'
+    
     category = categorize_content_fallback(content)
     return {
         'organization': org_name,
@@ -174,18 +221,27 @@ def main():
     analysis_results = []
     for conv in conversions:
         if conv['status'] == 'success':
-            with open(conv['output_path'], 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            org_name, year, report_title = extract_info_from_path(conv['output_path'])
+            try:
+                with open(conv['output_path'], 'r', encoding='utf-8') as f:
+                    content = f.read()
+                
+                # Extract info using the correct path
+                org_name, year, report_title = extract_info_from_path(conv['pdf_path'])
+                
+                print(f"Analyzing: {org_name} - {report_title} ({year})")
 
-            analysis = analyze_content(content, org_name, year, report_title, categories)
-            analysis['file_path'] = conv['output_path']
-            analysis_results.append(analysis)
+                analysis = analyze_content(content, org_name, year, report_title, categories)
+                analysis['file_path'] = conv['output_path']
+                analysis_results.append(analysis)
+                
+            except Exception as e:
+                print(f"Error analyzing {conv['output_path']}: {e}")
+                continue
 
     with open(args.output_json, 'w') as f:
         json.dump(analysis_results, f, indent=2)
 
+    # Generate summary
     summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
     with open(summary_path, 'w') as f:
         f.write("\n## 📝 Report Analysis Summary\n\n")
@@ -194,7 +250,8 @@ def main():
             f.write("|------|----------|------|--------------|\n")
             for res in analysis_results:
                 ai_icon = "✅" if res['ai_processed'] else "⚠️"
-                f.write(f"| {os.path.basename(res['file_path'])} | {res['category']} | {res['type']} | {ai_icon} |\n")
+                filename = os.path.basename(res['file_path'])
+                f.write(f"| {filename} | {res['category']} | {res['type']} | {ai_icon} |\n")
         else:
             f.write("No reports were analyzed.\n")
 
