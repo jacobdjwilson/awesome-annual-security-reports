@@ -125,7 +125,7 @@ jobs:
           if [ -f scan_results.json ]; then
             echo "| File | Status | Details |" >> $GITHUB_STEP_SUMMARY
             echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
-            jq -r '.[] | "| `\(.file_path)` | \(.status) | \(.details // "N/A") |"' scan_results.json >> $GITHUB_STEP_SUMMARY
+            jq -r '.[] | "| `\(.file_path)` | \(.status) | \(.details // \"N/A\") |"' scan_results.json >> $GITHUB_STEP_SUMMARY
           else
             echo "Scan results file not found or scan was skipped." >> $GITHUB_STEP_SUMMARY
           fi
@@ -196,7 +196,7 @@ jobs:
           if [ -f conversions.json ]; then
             echo "| PDF File | Markdown File | Model Used | Status |" >> $GITHUB_STEP_SUMMARY
             echo "|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
-            jq -r '.[] | "| `\(.pdf_file)` | `\(.markdown_file)` | \(.model // "N/A") | \(.status) |"' conversions.json >> $GITHUB_STEP_SUMMARY
+            jq -r '.[] | "| `\(.pdf_file)` | `\(.markdown_file)` | \(.model // \"N/A\") | \(.status) |"' conversions.json >> $GITHUB_STEP_SUMMARY
           else
             echo "Conversion results file not found." >> $GITHUB_STEP_SUMMARY
           fi
@@ -216,7 +216,7 @@ jobs:
           if [ -f analysis.json ]; then
             echo "| Markdown File | Category | Type | Analysis Method |" >> $GITHUB_STEP_SUMMARY
             echo "|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
-            jq -r '.[] | "| `\(.markdown_file)` | \(.category) | \(.type) | \(.analysis_method // "N/A") |"' analysis.json >> $GITHUB_STEP_SUMMARY
+            jq -r '.[] | "| `\(.markdown_file)` | \(.category) | \(.type) | \(.analysis_method // \"N/A\") |"' analysis.json >> $GITHUB_STEP_SUMMARY
           else
             echo "Analysis results file not found." >> $GITHUB_STEP_SUMMARY
           fi
@@ -238,9 +238,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Pull latest changes
-        run: git pull
 
       - name: Download all analysis results
         uses: actions/download-artifact@v4
@@ -282,7 +279,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Markdown Entry | Type |" >> $GITHUB_STEP_SUMMARY
           echo "|---|---|" >> $GITHUB_STEP_SUMMARY
-          jq -r '.[] | "| `\(.markdown_file)` | \(.type // "N/A") |"' combined_analysis/all_analysis.json >> $GITHUB_STEP_SUMMARY
+          jq -r '.[] | "| `\(.markdown_file)` | \(.type // \"N/A\") |"' combined_analysis/all_analysis.json >> $GITHUB_STEP_SUMMARY
 
       - name: Run README Updater
         if: steps.combine_analysis.outputs.combined_analysis_exists == 'true'
