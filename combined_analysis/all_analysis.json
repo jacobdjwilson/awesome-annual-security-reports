@@ -1,12 +1,12 @@
 [
   {
-    "organization": "Cyberark",
+    "organization": "SailPoint",
     "year": "2025",
-    "title": "Identity Security Threat Landscape",
-    "summary": "Examines the 2025 identity security landscape, analyzing cyberattack trends and the multifaceted impact of AI across modern IT ecosystems. Key findings highlight that 9 out of 10 organizations reported a successful identity-centric breach, driven by machine identities vastly outnumbering human identities by 80:1, often lacking critical security controls for AI tools.",
+    "title": "Horizons Of Identity Security",
+    "summary": "Outlines the evolving state of identity security, highlighting its transition from a foundational control to a critical security frontier amidst new threats.",
     "type": "Survey",
     "category": "Identity Security",
     "ai_processed": true,
-    "file_path": "Markdown Conversions/2025/CyberArk-Identity-Security-Threat-Landscape-2025.md"
+    "file_path": "Markdown Conversions/2025/SailPoint-Horizons-of-Identity-Security-2025.md"
   }
 ]
