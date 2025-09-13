@@ -66,9 +66,7 @@ jobs:
             echo "--- Content of json_array variable ---"
             echo "$json_array"
             echo "--- End of json_array variable ---"
-            echo "files_to_process<<EOF" >> $GITHUB_OUTPUT
-            echo "$json_array" >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
+            echo "files_to_process=$json_array" >> $GITHUB_OUTPUT
           else
             echo "files_to_process=[]" >> $GITHUB_OUTPUT
           fi
@@ -272,7 +270,7 @@ jobs:
           done
           
           if [ ! -s combined_analysis/all_analysis.json ] || [ "$(jq 'length' combined_analysis/all_analysis.json)" -eq 0 ]; then
-            echo "combined_analysis_exists=false" >> $GITHUB_OUTPUTOUTPUT
+            echo "combined_analysis_exists=false" >> $GITHUB_OUTPUT
           else
             echo "combined_analysis_exists=true" >> $GITHUB_OUTPUT
           fi
