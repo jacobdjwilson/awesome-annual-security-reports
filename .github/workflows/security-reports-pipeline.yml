@@ -185,6 +185,13 @@ jobs:
           name: conversion-results
           path: conversions.json
 
+      - name: Upload converted markdown files
+        uses: actions/upload-artifact@v4
+        with:
+          name: converted-markdown
+          path: Markdown Conversions/
+          if-no-files-found: ignore
+
   # Step 3: Report Analysis
   analyze-reports:
     runs-on: ubuntu-latest
@@ -210,6 +217,13 @@ jobs:
           name: conversion-results
           path: .
 
+      - name: Download converted markdown files
+        uses: actions/download-artifact@v4
+        with:
+          name: converted-markdown
+          path: Markdown Conversions/
+        continue-on-error: true
+
       - name: Run Report Analyzer
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -222,25 +236,22 @@ jobs:
           name: analysis-results
           path: analysis.json
 
-  # Step 4: Update README
+  # Step 4: Update README and Create PR
   update-readme:
     runs-on: ubuntu-latest
     needs: [discover-and-scan, convert-pdf-to-markdown, analyze-reports]
-    if: always() && needs.discover-and-scan.outputs.has_files == 'true'
+    if: needs.discover-and-scan.outputs.has_files == 'true'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Setup Python Environment
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
 
       - name: Download analysis results
         uses: actions/download-artifact@v4
@@ -249,16 +260,53 @@ jobs:
           path: .
         continue-on-error: true
 
+      - name: Download converted markdown files
+        uses: actions/download-artifact@v4
+        with:
+          name: converted-markdown
+          path: Markdown Conversions/
+        continue-on-error: true
+
       - name: Run README Updater
         id: readme_update
         run: |
           if [ -f analysis.json ] && [ -s analysis.json ]; then
+            echo "Analysis file found, processing README update..."
             python .github/scripts/readme-updater.py analysis.json --readme-path README.md
-            echo "readme_updated=true" >> $GITHUB_OUTPUT
+            
+            # Check if README was actually modified
+            if git diff --quiet HEAD -- README.md; then
+              echo "No changes to README.md"
+              echo "readme_updated=false" >> $GITHUB_OUTPUT
+            else
+              echo "README.md was modified"
+              echo "readme_updated=true" >> $GITHUB_OUTPUT
+            fi
           else
             echo "No analysis results found or file is empty"
             echo "readme_updated=false" >> $GITHUB_OUTPUT
           fi
+
+      - name: Configure Git
+        if: steps.readme_update.outputs.readme_updated == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Commit changes
+        if: steps.readme_update.outputs.readme_updated == 'true'
+        run: |
+          # Stage all changes (README.md and any new markdown files)
+          git add README.md
+          git add "Markdown Conversions/" || true
+          
+          # Create commit message
+          COMMIT_MSG="Update README with new security reports"
+          if [ -f pr_summary.txt ]; then
+            COMMIT_MSG="$(head -n 1 pr_summary.txt)"
+          fi
+          
+          git commit -m "$COMMIT_MSG"
 
       - name: Create Pull Request
         if: steps.readme_update.outputs.readme_updated == 'true'
@@ -266,16 +314,14 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Update README with new security reports"
-          title: "Update README with new security reports"
-          body: |
-            This PR updates the README.md with new or updated security report entries.
-            
-            Changes include:
-            - Updated markdown conversions
-            - New or refreshed README entries
-            - Proper categorization and summarization
+          title: "🔄 Update README with new security reports"
+          body-path: pr_summary.txt
           branch: update-security-reports-${{ github.run_id }}
           delete-branch: true
+          labels: |
+            automated
+            readme-update
+            security-reports
 
   # Step 5: Generate Final Summary
   generate-summary:
@@ -307,16 +353,16 @@ jobs:
 
       - name: Generate Pipeline Summary
         run: |
-          echo "## Security Reports Processing Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔍 Security Reports Processing Pipeline Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Triggered by:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "**Branch:** ${{ github.head_ref || github.ref_name }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Job Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Pipeline Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
           # VirusTotal Results
           if [ -f scan_results.json ]; then
-            echo "### Security Scan Results" >> $GITHUB_STEP_SUMMARY
+            echo "### 🛡️ Security Scan Results" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "| File | Verdict | Detections | Engines | Report |" >> $GITHUB_STEP_SUMMARY
             echo "|------|---------|------------|---------|--------|" >> $GITHUB_STEP_SUMMARY
@@ -326,7 +372,7 @@ jobs:
           
           # Conversion Results
           if [ -f conversions.json ]; then
-            echo "### PDF to Markdown Conversion Summary" >> $GITHUB_STEP_SUMMARY
+            echo "### 📝 PDF to Markdown Conversion Summary" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "| PDF File | Markdown Output | Model Used | Status |" >> $GITHUB_STEP_SUMMARY
             echo "|----------|-----------------|------------|--------|" >> $GITHUB_STEP_SUMMARY
@@ -336,7 +382,7 @@ jobs:
           
           # Analysis Results
           if [ -f analysis.json ]; then
-            echo "### Report Analysis Summary" >> $GITHUB_STEP_SUMMARY
+            echo "### 🔍 Report Analysis Summary" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "| Organization | Title | Category | Type | AI Processed |" >> $GITHUB_STEP_SUMMARY
             echo "|--------------|-------|----------|------|--------------|" >> $GITHUB_STEP_SUMMARY
@@ -345,10 +391,11 @@ jobs:
           fi
           
           # README Update Status
-          echo "### README Update Status" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 README Update Status" >> $GITHUB_STEP_SUMMARY
           if [ "${{ needs.update-readme.result }}" == "success" ]; then
             echo "✅ README update completed successfully" >> $GITHUB_STEP_SUMMARY
             echo "📋 Pull request created for review" >> $GITHUB_STEP_SUMMARY
           else
             echo "❌ README update failed or was skipped" >> $GITHUB_STEP_SUMMARY
+            echo "Check the update-readme job logs for details" >> $GITHUB_STEP_SUMMARY
           fi

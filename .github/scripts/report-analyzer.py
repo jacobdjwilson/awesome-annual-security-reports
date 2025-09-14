@@ -240,6 +240,9 @@ def main():
                 # Include organization URL from conversion if available
                 if 'organization_url' in conv and conv['organization_url']:
                     analysis['organization_url'] = conv['organization_url']
+                else:
+                    # Generate a default organization URL based on the organization name
+                    analysis['organization_url'] = generate_default_org_url(org_name)
                 
                 analysis_results.append(analysis)
                 
@@ -253,6 +256,35 @@ def main():
     print(f"Analysis completed. {len(analysis_results)} reports analyzed.")
 
     return 0
+
+def generate_default_org_url(org_name: str) -> str:
+    """Generate a default organization URL based on the organization name"""
+    org_name_lower = org_name.lower()
+    
+    # Special cases for well-known organizations
+    special_cases = {
+        'cyberark': 'https://www.cyberark.com/threat-landscape/',
+        'sailpoint': 'https://www.sailpoint.com/horizons',
+        'okta': 'https://www.okta.com',
+        'crowdstrike': 'https://www.crowdstrike.com',
+        'palo alto networks': 'https://www.paloaltonetworks.com',
+        'microsoft': 'https://www.microsoft.com',
+        'google': 'https://www.google.com',
+        'amazon': 'https://aws.amazon.com',
+        'ibm': 'https://www.ibm.com'
+    }
+    
+    for key, url in special_cases.items():
+        if key in org_name_lower:
+            return url
+    
+    # Default URL generation
+    domain_base = re.sub(r'\b(company|corp|corporation|inc|llc|ltd|group|security|cyber|tech|technologies)\b', '', org_name.lower())
+    domain_base = re.sub(r'[^a-z0-9]', '', domain_base)
+    if len(domain_base) < 3:
+        domain_base = re.sub(r'[^a-z0-9]', '', org_name.lower())
+    
+    return f"https://www.{domain_base}.com"
 
 if __name__ == "__main__":
     main()
