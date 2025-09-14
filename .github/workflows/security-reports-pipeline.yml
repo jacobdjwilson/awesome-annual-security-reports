@@ -79,7 +79,7 @@ jobs:
 
       - name: Generate Discovery Summary
         run: |
-          echo "## Discovery Scan Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔍 Discovery Scan Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Report Counts" >> $GITHUB_STEP_SUMMARY
           echo "| Directory | PDF Reports | Markdown Conversions |" >> $GITHUB_STEP_SUMMARY
@@ -267,6 +267,18 @@ jobs:
           path: Markdown Conversions/
         continue-on-error: true
 
+      - name: Verify analysis file exists
+        run: |
+          if [ -f analysis.json ]; then
+            echo "Analysis file found, size: $(wc -c < analysis.json) bytes"
+            echo "Analysis content preview:"
+            head -10 analysis.json
+          else
+            echo "Error: analysis.json file not found"
+            ls -la
+            exit 1
+          fi
+
       - name: Run README Updater
         id: readme_update
         run: |
@@ -281,10 +293,15 @@ jobs:
             else
               echo "README.md was modified"
               echo "readme_updated=true" >> $GITHUB_OUTPUT
+              
+              # Show the changes
+              echo "Changes made to README.md:"
+              git diff HEAD -- README.md
             fi
           else
             echo "No analysis results found or file is empty"
             echo "readme_updated=false" >> $GITHUB_OUTPUT
+            exit 1
           fi
 
       - name: Configure Git
@@ -303,7 +320,7 @@ jobs:
           # Create commit message
           COMMIT_MSG="Update README with new security reports"
           if [ -f pr_summary.txt ]; then
-            COMMIT_MSG="$(head -n 1 pr_summary.txt)"
+            COMMIT_MSG="$(head -n 1 pr_summary.txt | sed 's/Updated README.md with [0-9]* report entries:/Update README with security reports/')"
           fi
           
           git commit -m "$COMMIT_MSG"
@@ -314,7 +331,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Update README with new security reports"
-          title: "🔄 Update README with new security reports"
+          title: "📄 Update README with new security reports"
           body-path: pr_summary.txt
           branch: update-security-reports-${{ github.run_id }}
           delete-branch: true
@@ -353,7 +370,7 @@ jobs:
 
       - name: Generate Pipeline Summary
         run: |
-          echo "## 🔍 Security Reports Processing Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔐 Security Reports Processing Pipeline Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Triggered by:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "**Branch:** ${{ github.head_ref || github.ref_name }}" >> $GITHUB_STEP_SUMMARY
@@ -398,4 +415,5 @@ jobs:
           else
             echo "❌ README update failed or was skipped" >> $GITHUB_STEP_SUMMARY
             echo "Check the update-readme job logs for details" >> $GITHUB_STEP_SUMMARY
+            echo "**Status:** ${{ needs.update-readme.result }}" >> $GITHUB_STEP_SUMMARY
           fi

@@ -51,7 +51,7 @@ def extract_text_from_pdf(pdf_path: Path) -> str:
 def perform_google_search(query: str, api_key: str, cse_id: str) -> Optional[str]:
     try:
         service = build("customsearch", "v1", developerKey=api_key)
-        res = service.cse().list(q=query, cx=cse_id, num=5).execute()
+        res = service.cse().list(q=query, cx=cse_id, num=10).execute()
         
         if 'items' in res and len(res['items']) > 0:
             # Filter out PDF links, media articles, and prefer official organization sites
@@ -61,18 +61,23 @@ def perform_google_search(query: str, api_key: str, cse_id: str) -> Optional[str
                 snippet = item.get('snippet', '').lower()
                 
                 # Skip PDF links and media articles
-                if url.endswith('.pdf') or any(x in url.lower() for x in ['/media/', '/news/', '/press-release', 'blog', 'linkedin', 'twitter', 'facebook']):
+                if url.endswith('.pdf') or any(x in url.lower() for x in ['/media/', '/news/', '/press-release', '/blog/', 'linkedin', 'twitter', 'facebook']):
                     continue
                     
                 # Skip third-party sites that just mention the report
-                if any(x in url.lower() for x in ['cybersecuritynews', 'darkreading', 'securityweek', 'infosecurity-magazine']):
+                if any(x in url.lower() for x in ['cybersecuritynews', 'darkreading', 'securityweek', 'infosecurity-magazine', 'techrepublic', 'zdnet']):
                     continue
                 
-                # Prefer official organization sites
+                # Prefer official organization sites (domains that contain the org name or are well-known)
+                print(f"Found potential URL: {url}")
                 return url
             
-            # If no good match found, return the first result
-            return res['items'][0]['link']
+            # If no good match found, return the first result that isn't blocked
+            for item in res['items']:
+                url = item['link']
+                if not url.endswith('.pdf'):
+                    print(f"Using fallback URL: {url}")
+                    return url
         
         return None
     except HttpError as e:
@@ -140,14 +145,24 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         
         organization_url = None
         if google_search_api_key and google_cse_id and organization_name:
-            search_query = f"{organization_name} {report_title} report site:{organization_name.lower().replace(' ', '')}.com"
-            print(f"Performing Google search for: '{search_query}'")
-            organization_url = perform_google_search(search_query, google_search_api_key, google_cse_id)
+            # Try multiple search strategies
+            search_queries = [
+                f"{organization_name} {report_title} report",
+                f"{organization_name} official website reports",
+                f"{organization_name} cybersecurity report",
+                f"site:{organization_name.lower().replace(' ', '')}.com {report_title}",
+                f"{organization_name} official site"
+            ]
             
-            # If no results with site filter, try broader search
+            for query in search_queries:
+                print(f"Performing Google search for: '{query}'")
+                organization_url = perform_google_search(query, google_search_api_key, google_cse_id)
+                if organization_url:
+                    print(f"Found organization URL: {organization_url}")
+                    break
+            
             if not organization_url:
-                search_query = f"{organization_name} official website"
-                organization_url = perform_google_search(search_query, google_search_api_key, google_cse_id)
+                print("No suitable organization URL found via search")
         else:
             print("Google Search API keys not provided or organization name missing. Skipping URL search.")
 

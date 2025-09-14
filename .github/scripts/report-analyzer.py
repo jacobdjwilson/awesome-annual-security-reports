@@ -11,21 +11,6 @@ from pathlib import Path
 MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
 MODEL = None
 
-KEYWORD_MAPPING = {
-    'Threat Intelligence': ['threat intelligence', 'threat landscape', 'threat report', 'apt', 'advanced persistent threat', 'malware', 'phishing', 'cybercrime'],
-    'Application Security': ['application security', 'appsec', 'devsecops', 'owasp', 'sast', 'dast', 'software security', 'vulnerability'],
-    'Cloud Security': ['cloud security', 'aws', 'azure', 'gcp', 'container security', 'kubernetes', 'serverless'],
-    'Vulnerabilities': ['vulnerability', 'cve', 'vulnerability management', 'patching', 'zero-day'],
-    'Ransomware': ['ransomware', 'extortion', 'data breach'],
-    'Data Breaches': ['data breach', 'data leak', 'incident report'],
-    'Physical Security': ['physical security', 'ot security', 'operational technology', 'ics', 'industrial control systems'],
-    'AI and Emerging Technologies': ['artificial intelligence', 'ai', 'machine learning', 'ml', 'emerging technology'],
-    'Industry Trends': ['industry trends', 'cybersecurity trends', 'security report', 'annual report'],
-    'Identity Security': ['identity', 'iam', 'identity and access management', 'authentication', 'mfa', 'zero trust'],
-    'Penetration Testing': ['penetration testing', 'pentesting', 'red team', 'offensive security'],
-    'Privacy and Data Protection': ['privacy', 'data protection', 'gdpr', 'ccpa', 'data privacy'],
-}
-
 def setup_gemini(api_key: str):
     global MODEL
     genai.configure(api_key=api_key)
@@ -40,26 +25,67 @@ def setup_gemini(api_key: str):
             print(f"Model {model_name} not available or failed verification: {str(e)}")
             continue
 
-def parse_toc_from_readme(readme_path: str) -> List[str]:
+def parse_toc_from_readme(readme_path: str) -> Dict[str, List[str]]:
+    """Parse TOC from README.md and return categorized sections"""
     try:
         content = Path(readme_path).read_text(encoding='utf-8')
         toc_pattern = r'## Contents\n<!-- TOC -->\n(.*?)\n<!-- /TOC -->'
         toc_match = re.search(toc_pattern, content, re.DOTALL)
+        
         if not toc_match:
-            return []
+            print("Warning: Could not find TOC section in README.md")
+            return {"Analysis": [], "Survey": []}
         
         toc_content = toc_match.group(1)
-        categories = set()
+        structure = {"Analysis": [], "Survey": []}
+        current_type = None
+        
         for line in toc_content.split('\n'):
-            if line.strip().startswith('    - '):
+            line = line.strip()
+            if not line:
+                continue
+                
+            # Main section detection
+            if line.startswith('- ') and not line.startswith('    - '):
                 match = re.search(r'\[([^\]]+)\]', line)
                 if match:
-                    categories.add(match.group(1))
-        return sorted(list(categories))
+                    section_name = match.group(1)
+                    if 'Analysis Reports' in section_name:
+                        current_type = "Analysis"
+                    elif 'Survey Reports' in section_name:
+                        current_type = "Survey"
+                    else:
+                        current_type = None
+            
+            # Subsection detection
+            elif line.startswith('    - ') and current_type:
+                match = re.search(r'\[([^\]]+)\]', line)
+                if match:
+                    subsection_name = match.group(1)
+                    if subsection_name not in structure[current_type]:
+                        structure[current_type].append(subsection_name)
+        
+        print(f"Parsed categories from README:")
+        print(f"  Analysis: {structure['Analysis']}")
+        print(f"  Survey: {structure['Survey']}")
+        
+        # Ensure we have at least some default categories
+        if not structure["Analysis"]:
+            structure["Analysis"] = ["Industry Trends"]
+        if not structure["Survey"]:
+            structure["Survey"] = ["Industry Trends"]
+            
+        return structure
+        
     except FileNotFoundError:
-        return []
+        print("Warning: README.md not found, using default categories")
+        return {
+            "Analysis": ["Threat Intelligence", "Application Security", "Cloud Security", "Vulnerabilities"],
+            "Survey": ["Industry Trends", "Identity Security", "Application Security", "Cloud Security"]
+        }
 
 def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
+    """Extract organization, year, and title from file path"""
     path = Path(file_path)
     
     # Extract year from path
@@ -109,9 +135,71 @@ def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
     
     return org_name, year, title
 
-def analyze_content(content: str, org_name: str, year: str, report_title: str, categories: List[str]) -> Dict[str, Any]:
+def categorize_content_fallback(content: str, available_categories: Dict[str, List[str]]) -> Tuple[str, str]:
+    """Fallback categorization based on keyword matching"""
+    # Extended keyword mapping
+    keyword_mapping = {
+        'Threat Intelligence': ['threat intelligence', 'threat landscape', 'threat report', 'apt', 'advanced persistent threat', 'malware', 'phishing', 'cybercrime'],
+        'Application Security': ['application security', 'appsec', 'devsecops', 'owasp', 'sast', 'dast', 'software security', 'vulnerability'],
+        'Cloud Security': ['cloud security', 'aws', 'azure', 'gcp', 'container security', 'kubernetes', 'serverless'],
+        'Vulnerabilities': ['vulnerability', 'cve', 'vulnerability management', 'patching', 'zero-day'],
+        'Ransomware': ['ransomware', 'extortion', 'data breach'],
+        'Data Breaches': ['data breach', 'data leak', 'incident report'],
+        'Physical Security': ['physical security', 'ot security', 'operational technology', 'ics', 'industrial control systems'],
+        'AI and Emerging Technologies': ['artificial intelligence', 'ai', 'machine learning', 'ml', 'emerging technology'],
+        'Industry Trends': ['industry trends', 'cybersecurity trends', 'security report', 'annual report', 'survey', 'study'],
+        'Identity Security': ['identity', 'iam', 'identity and access management', 'authentication', 'mfa', 'zero trust'],
+        'Penetration Testing': ['penetration testing', 'pentesting', 'red team', 'offensive security'],
+        'Privacy and Data Protection': ['privacy', 'data protection', 'gdpr', 'ccpa', 'data privacy'],
+    }
+    
+    content_lower = content.lower()
+    
+    # Check for survey indicators first
+    survey_indicators = ['survey', 'study', 'poll', 'respondents', 'interviewed', 'questionnaire', 'feedback']
+    is_survey = any(indicator in content_lower for indicator in survey_indicators)
+    
+    # Score categories based on keyword frequency
+    category_scores = {}
+    for category, keywords in keyword_mapping.items():
+        score = sum(content_lower.count(keyword) for keyword in keywords)
+        category_scores[category] = score
+    
+    # Find the best matching category
+    best_category = max(category_scores, key=category_scores.get) if any(category_scores.values()) else "Industry Trends"
+    
+    # Determine report type and ensure category exists
+    report_type = "Survey" if is_survey else "Analysis"
+    
+    # Check if the best category exists in the available categories for this type
+    if best_category in available_categories[report_type]:
+        return report_type, best_category
+    
+    # Check if it exists in the other type
+    other_type = "Analysis" if report_type == "Survey" else "Survey"
+    if best_category in available_categories[other_type]:
+        return other_type, best_category
+    
+    # Fall back to a generic category that exists
+    for generic in ["Industry Trends", "Other"]:
+        if generic in available_categories[report_type]:
+            return report_type, generic
+        if generic in available_categories[other_type]:
+            return other_type, generic
+    
+    # Ultimate fallback - use the first available category
+    if available_categories[report_type]:
+        return report_type, available_categories[report_type][0]
+    if available_categories[other_type]:
+        return other_type, available_categories[other_type][0]
+    
+    return "Analysis", "Industry Trends"
+
+def analyze_content(content: str, org_name: str, year: str, report_title: str, available_categories: Dict[str, List[str]]) -> Dict[str, Any]:
+    """Analyze content using AI or fallback methods"""
     if not MODEL:
-        return fallback_analysis(content, org_name, year, report_title)
+        print("No AI model available, using fallback analysis")
+        return fallback_analysis(content, org_name, year, report_title, available_categories)
 
     try:
         # Summarization
@@ -138,7 +226,13 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, c
         with open(".github/ai-prompts/report-categorization-prompt.md", 'r', encoding='utf-8') as f:
             categorization_base_prompt = f.read()
         
-        category_str = '\n'.join([f"- {cat}" for cat in categories])
+        # Build category list from available categories
+        all_categories = []
+        for report_type, categories in available_categories.items():
+            all_categories.extend(categories)
+        all_categories = sorted(list(set(all_categories)))  # Remove duplicates and sort
+        
+        category_str = '\n'.join([f"- {cat}" for cat in all_categories])
         categorization_prompt = categorization_base_prompt.replace("{{CATEGORIES}}", category_str)
         categorization_prompt += f"\n\nOrganization: {org_name}\nTitle: {report_title}\nYear: {year}\n\n{content[:8000]}"
 
@@ -148,14 +242,23 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, c
         try:
             response_text = category_response.text.strip().replace('```json', '').replace('```', '')
             classification = json.loads(response_text)
+            
             if 'type' not in classification or 'category' not in classification:
                 raise ValueError("Missing 'type' or 'category' in AI response.")
+            
+            # Validate that the category exists in our available categories
+            report_type = classification.get('type', 'Analysis')
+            category = classification.get('category', 'Industry Trends')
+            
+            # Check if category exists in the specified type
+            if category not in available_categories.get(report_type, []):
+                print(f"AI suggested category '{category}' not found in {report_type} categories, using fallback")
+                report_type, category = categorize_content_fallback(content, available_categories)
+                
         except (json.JSONDecodeError, ValueError) as e:
-            print(f"Could not parse AI response for classification: {e}. Falling back to keyword matching.")
-            classification = {
-                'type': 'Analysis',  # Default type
-                'category': categorize_content_fallback(content)
-            }
+            print(f"Could not parse AI response for classification: {e}. Using fallback.")
+            report_type, category = categorize_content_fallback(content, available_categories)
+            classification = {'type': report_type, 'category': category}
 
         return {
             'organization': org_name,
@@ -168,14 +271,10 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, c
         }
     except Exception as e:
         print(f"AI analysis failed: {e}")
-        return fallback_analysis(content, org_name, year, report_title)
+        return fallback_analysis(content, org_name, year, report_title, available_categories)
 
-def categorize_content_fallback(content: str) -> str:
-    content_lower = content.lower()
-    scores = {category: sum(content_lower.count(keyword) for keyword in keywords) for category, keywords in KEYWORD_MAPPING.items()}
-    return max(scores, key=scores.get) if any(scores.values()) else "Industry Trends"
-
-def fallback_analysis(content: str, org_name: str, year: str, report_title: str) -> Dict[str, Any]:
+def fallback_analysis(content: str, org_name: str, year: str, report_title: str, available_categories: Dict[str, List[str]]) -> Dict[str, Any]:
+    """Create analysis using fallback methods when AI is not available"""
     # Create a more meaningful summary from the content
     sentences = content.split('. ')
     # Take first few meaningful sentences (skip headers and empty content)
@@ -189,73 +288,17 @@ def fallback_analysis(content: str, org_name: str, year: str, report_title: str)
     if len(summary) > 400:
         summary = summary[:400].rsplit('. ', 1)[0] + '.'
     
-    category = categorize_content_fallback(content)
+    report_type, category = categorize_content_fallback(content, available_categories)
+    
     return {
         'organization': org_name,
         'year': year,
         'title': report_title,
         'summary': summary,
-        'type': "Analysis",
+        'type': report_type,
         'category': category,
         'ai_processed': False
     }
-
-def main():
-    parser = argparse.ArgumentParser(description="Analyze markdown content of security reports.")
-    parser.add_argument("conversions_json", help="Path to the JSON file with conversion results.")
-    parser.add_argument("--readme-path", help="Path to the README.md file.", default="README.md")
-    parser.add_argument("--output-json", help="Path to save the analysis results as a JSON file.", default="analysis.json")
-    args = parser.parse_args()
-
-    gemini_api_key = os.environ.get("GEMINI_API_KEY")
-    if not gemini_api_key:
-        print("Warning: GEMINI_API_KEY not set. Using fallback analysis.")
-    else:
-        setup_gemini(gemini_api_key)
-
-    categories = parse_toc_from_readme(args.readme_path)
-    if not categories:
-        print("Error: Could not parse categories from README.md. Using keyword mapping as fallback.")
-        categories = list(KEYWORD_MAPPING.keys())
-
-    with open(args.conversions_json, 'r') as f:
-        conversions = json.load(f)
-
-    analysis_results = []
-    for conv in conversions:
-        if conv['status'] == 'success':
-            try:
-                with open(conv['output_path'], 'r', encoding='utf-8') as f:
-                    content = f.read()
-                
-                # Extract info using the correct path
-                org_name, year, report_title = extract_info_from_path(conv['pdf_path'])
-                
-                print(f"Analyzing: {org_name} - {report_title} ({year})")
-
-                analysis = analyze_content(content, org_name, year, report_title, categories)
-                analysis['file_path'] = conv['output_path']
-                analysis['pdf_path'] = conv['pdf_path']
-                
-                # Include organization URL from conversion if available
-                if 'organization_url' in conv and conv['organization_url']:
-                    analysis['organization_url'] = conv['organization_url']
-                else:
-                    # Generate a default organization URL based on the organization name
-                    analysis['organization_url'] = generate_default_org_url(org_name)
-                
-                analysis_results.append(analysis)
-                
-            except Exception as e:
-                print(f"Error analyzing {conv['output_path']}: {e}")
-                continue
-
-    with open(args.output_json, 'w') as f:
-        json.dump(analysis_results, f, indent=2)
-
-    print(f"Analysis completed. {len(analysis_results)} reports analyzed.")
-
-    return 0
 
 def generate_default_org_url(org_name: str) -> str:
     """Generate a default organization URL based on the organization name"""
@@ -286,5 +329,64 @@ def generate_default_org_url(org_name: str) -> str:
     
     return f"https://www.{domain_base}.com"
 
+def main():
+    parser = argparse.ArgumentParser(description="Analyze markdown content of security reports.")
+    parser.add_argument("conversions_json", help="Path to the JSON file with conversion results.")
+    parser.add_argument("--readme-path", help="Path to the README.md file.", default="README.md")
+    parser.add_argument("--output-json", help="Path to save the analysis results as a JSON file.", default="analysis.json")
+    args = parser.parse_args()
+
+    gemini_api_key = os.environ.get("GEMINI_API_KEY")
+    if not gemini_api_key:
+        print("Warning: GEMINI_API_KEY not set. Using fallback analysis.")
+    else:
+        setup_gemini(gemini_api_key)
+
+    available_categories = parse_toc_from_readme(args.readme_path)
+    print(f"Available categories: {available_categories}")
+
+    with open(args.conversions_json, 'r') as f:
+        conversions = json.load(f)
+
+    analysis_results = []
+    for conv in conversions:
+        if conv['status'] == 'success':
+            try:
+                with open(conv['output_path'], 'r', encoding='utf-8') as f:
+                    content = f.read()
+                
+                # Extract info using the correct path
+                org_name, year, report_title = extract_info_from_path(conv['pdf_path'])
+                
+                print(f"Analyzing: {org_name} - {report_title} ({year})")
+
+                analysis = analyze_content(content, org_name, year, report_title, available_categories)
+                analysis['file_path'] = conv['output_path']
+                analysis['pdf_path'] = conv['pdf_path']
+                
+                # Include organization URL from conversion if available
+                if 'organization_url' in conv and conv['organization_url']:
+                    analysis['organization_url'] = conv['organization_url']
+                else:
+                    # Generate a default organization URL based on the organization name
+                    analysis['organization_url'] = generate_default_org_url(org_name)
+                
+                analysis_results.append(analysis)
+                
+            except Exception as e:
+                print(f"Error analyzing {conv['output_path']}: {e}")
+                continue
+
+    with open(args.output_json, 'w') as f:
+        json.dump(analysis_results, f, indent=2)
+
+    print(f"Analysis completed. {len(analysis_results)} reports analyzed.")
+    
+    # Output results for debugging
+    for result in analysis_results:
+        print(f"Result: {result['organization']} - {result['title']} -> {result['type']} / {result['category']}")
+
+    return 0
+
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
