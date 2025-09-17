@@ -9,6 +9,9 @@ from typing import List, Dict, Any, Tuple, Optional
 class ReadmeParser:
     def __init__(self, readme_path: str):
         self.readme_path = Path(readme_path)
+        if not self.readme_path.exists():
+            raise FileNotFoundError(f"README.md not found: {readme_path}")
+        
         self.content = self.readme_path.read_text(encoding='utf-8')
         self.toc_structure = self._parse_toc()
 
@@ -229,7 +232,8 @@ class ReadmeUpdater:
             'microsoft': 'https://www.microsoft.com',
             'google': 'https://www.google.com',
             'amazon': 'https://aws.amazon.com',
-            'ibm': 'https://www.ibm.com'
+            'ibm': 'https://www.ibm.com',
+            'proofpoint': 'https://www.proofpoint.com'
         }
         
         for key, url in special_cases.items():
@@ -279,19 +283,37 @@ def main():
 
     # Check if analysis file exists and has content
     if not os.path.exists(args.analysis_json):
-        print(f"Error: Analysis file {args.analysis_json} not found")
+        print(f"ERROR: Analysis file {args.analysis_json} not found")
         sys.exit(1)
     
-    with open(args.analysis_json, 'r') as f:
-        analysis_results = json.load(f)
+    # Check file size to ensure it's not empty
+    file_size = os.path.getsize(args.analysis_json)
+    print(f"Analysis file size: {file_size} bytes")
+    
+    if file_size < 10:  # Less than 10 bytes is likely just "[]" or empty
+        print(f"ERROR: Analysis file {args.analysis_json} is too small ({file_size} bytes) - likely empty or contains no results")
+        sys.exit(1)
+    
+    try:
+        with open(args.analysis_json, 'r') as f:
+            analysis_results = json.load(f)
+    except json.JSONDecodeError as e:
+        print(f"ERROR: Invalid JSON in analysis file: {e}")
+        sys.exit(1)
     
     if not analysis_results:
-        print("No analysis results found")
-        sys.exit(0)
+        print("ERROR: Analysis file contains no results")
+        sys.exit(1)
 
-    readme_parser = ReadmeParser(args.readme_path)
-    if not readme_parser.toc_structure:
-        print("Error: Could not parse README.md structure")
+    print(f"Found {len(analysis_results)} analysis results to process")
+
+    try:
+        readme_parser = ReadmeParser(args.readme_path)
+        if not readme_parser.toc_structure:
+            print("ERROR: Could not parse README.md structure")
+            sys.exit(1)
+    except FileNotFoundError as e:
+        print(f"ERROR: {e}")
         sys.exit(1)
         
     updater = ReadmeUpdater(readme_parser)
@@ -300,8 +322,20 @@ def main():
     summaries = []
     actions_taken = {"new": 0, "updated": 0, "refreshed": 0, "errors": 0, "skipped": 0}
     
-    for analysis in analysis_results:
-        print(f"\nProcessing: {analysis['organization']} - {analysis['title']} ({analysis['year']})")
+    for i, analysis in enumerate(analysis_results, 1):
+        print(f"\n=== Processing {i}/{len(analysis_results)} ===")
+        print(f"Processing: {analysis.get('organization', 'Unknown')} - {analysis.get('title', 'Unknown')} ({analysis.get('year', 'Unknown')})")
+        
+        # Validate required fields
+        required_fields = ['organization', 'title', 'year', 'summary', 'type', 'category']
+        missing_fields = [field for field in required_fields if not analysis.get(field)]
+        
+        if missing_fields:
+            print(f"ERROR: Missing required fields: {missing_fields}")
+            actions_taken["errors"] += 1
+            summaries.append(f"❌ Error (missing fields): {analysis.get('organization', 'Unknown')} - {missing_fields}")
+            continue
+        
         success, entry_text, line_number, action = updater.add_report_entry(analysis)
         
         if success:
@@ -317,13 +351,21 @@ def main():
             action_icon = "🆕" if action == "new" else "🔄" if action == "updated" else "✅"
             summaries.append(f"{action_icon} {action.capitalize()}: {analysis['organization']} - {analysis['title']} ({analysis['year']}) (Line: {line_number})")
             actions_taken[action] = actions_taken.get(action, 0) + 1
+            print(f"SUCCESS: {action} - {analysis['organization']}")
         else:
             if action == "older_version":
                 actions_taken["skipped"] += 1
                 summaries.append(f"⏭️ Skipped (older version): {analysis['organization']} - {analysis['title']} ({analysis['year']})")
+                print(f"SKIPPED: {analysis['organization']} (older version)")
             else:
                 actions_taken["errors"] += 1
                 summaries.append(f"❌ Error ({action}): {analysis['organization']} - {analysis['title']}")
+                print(f"ERROR: {analysis['organization']} - {action}")
+
+    print(f"\n=== README UPDATE SUMMARY ===")
+    print(f"Total entries processed: {len(analysis_results)}")
+    print(f"Successful updates: {len(processed_entries)}")
+    print(f"Actions taken: {actions_taken}")
 
     if processed_entries:
         updater.save_readme()
@@ -343,9 +385,9 @@ def main():
         with open("pr_summary.txt", "w") as f:
             f.write(summary_text)
         
-        print(f"\nSuccessfully processed {len(processed_entries)} entries")
+        print(f"✅ Successfully processed {len(processed_entries)} entries")
     else:
-        print("No entries were processed successfully")
+        print("❌ No entries were processed successfully")
 
     # Generate GitHub step summary
     summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')

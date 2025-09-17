@@ -145,6 +145,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: discover-and-scan
     if: needs.discover-and-scan.outputs.has_files == 'true'
+    outputs:
+      conversion_success: ${{ steps.pdf-conversion.outputs.conversion_success }}
+      successful_conversions: ${{ steps.pdf-conversion.outputs.successful_conversions }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -167,7 +170,35 @@ jobs:
           name: files-to-process
           path: .
 
+      - name: Validate required files and environment
+        run: |
+          if [ ! -f files_to_process.txt ]; then
+            echo "ERROR: files_to_process.txt not found"
+            exit 1
+          fi
+          
+          if [ ! -s files_to_process.txt ]; then
+            echo "ERROR: files_to_process.txt is empty"
+            exit 1
+          fi
+          
+          echo "Files to process:"
+          cat files_to_process.txt
+          
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "ERROR: GEMINI_API_KEY not set"
+            exit 1
+          fi
+          
+          if [ ! -f ".github/ai-prompts/pdf-to-markdown-prompt.md" ]; then
+            echo "ERROR: Prompt file not found"
+            exit 1
+          fi
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
       - name: Run PDF Converter
+        id: pdf-conversion
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
@@ -177,7 +208,42 @@ jobs:
           PROMPT_PATH=".github/ai-prompts/pdf-to-markdown-prompt.md"
           PROMPT_VERSION=$(git log -n 1 --pretty=format:%s -- $PROMPT_PATH | grep -oP 'v\d+\.\d+(\.\d+)?' || echo 'v1.0')
           BRANCH_NAME=${{ github.head_ref || github.ref_name }}
-          python .github/scripts/pdf-converter.py files_to_process.txt $PROMPT_PATH $PROMPT_VERSION $BRANCH_NAME --output-json conversions.json
+          
+          echo "Running PDF converter..."
+          echo "Prompt path: $PROMPT_PATH"
+          echo "Prompt version: $PROMPT_VERSION"
+          echo "Branch: $BRANCH_NAME"
+          
+          # Run the converter and capture exit code
+          if python .github/scripts/pdf-converter.py files_to_process.txt "$PROMPT_PATH" "$PROMPT_VERSION" "$BRANCH_NAME" --output-json conversions.json; then
+            echo "PDF conversion completed successfully"
+            
+            # Check if any conversions were successful
+            if [ -f conversions.json ]; then
+              successful_count=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
+              total_count=$(jq 'length' conversions.json)
+              
+              echo "conversion_success=true" >> $GITHUB_OUTPUT
+              echo "successful_conversions=$successful_count" >> $GITHUB_OUTPUT
+              
+              echo "Conversion results: $successful_count/$total_count successful"
+              
+              if [ "$successful_count" -eq 0 ]; then
+                echo "WARNING: No successful conversions"
+                echo "conversion_success=false" >> $GITHUB_OUTPUT
+              fi
+            else
+              echo "ERROR: conversions.json not created"
+              echo "conversion_success=false" >> $GITHUB_OUTPUT
+              echo "successful_conversions=0" >> $GITHUB_OUTPUT
+              exit 1
+            fi
+          else
+            echo "ERROR: PDF conversion failed"
+            echo "conversion_success=false" >> $GITHUB_OUTPUT
+            echo "successful_conversions=0" >> $GITHUB_OUTPUT
+            exit 1
+          fi
 
       - name: Upload conversion results
         uses: actions/upload-artifact@v4
@@ -186,6 +252,7 @@ jobs:
           path: conversions.json
 
       - name: Upload converted markdown files
+        if: steps.pdf-conversion.outputs.conversion_success == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: converted-markdown
@@ -196,7 +263,10 @@ jobs:
   analyze-reports:
     runs-on: ubuntu-latest
     needs: [discover-and-scan, convert-pdf-to-markdown]
-    if: needs.discover-and-scan.outputs.has_files == 'true'
+    if: needs.discover-and-scan.outputs.has_files == 'true' && needs.convert-pdf-to-markdown.outputs.conversion_success == 'true'
+    outputs:
+      analysis_success: ${{ steps.report-analysis.outputs.analysis_success }}
+      analysis_count: ${{ steps.report-analysis.outputs.analysis_count }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -224,11 +294,62 @@ jobs:
           path: Markdown Conversions/
         continue-on-error: true
 
+      - name: Validate conversion results
+        run: |
+          if [ ! -f conversions.json ]; then
+            echo "ERROR: conversions.json not found"
+            exit 1
+          fi
+          
+          file_size=$(stat -c%s conversions.json)
+          echo "Conversion file size: $file_size bytes"
+          
+          if [ "$file_size" -lt 10 ]; then
+            echo "ERROR: conversions.json is too small"
+            exit 1
+          fi
+          
+          successful_count=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
+          echo "Successful conversions found: $successful_count"
+          
+          if [ "$successful_count" -eq 0 ]; then
+            echo "ERROR: No successful conversions to analyze"
+            exit 1
+          fi
+
       - name: Run Report Analyzer
+        id: report-analysis
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          python .github/scripts/report-analyzer.py conversions.json --readme-path README.md --output-json analysis.json
+          echo "Running report analyzer..."
+          
+          if python .github/scripts/report-analyzer.py conversions.json --readme-path README.md --output-json analysis.json; then
+            echo "Report analysis completed successfully"
+            
+            if [ -f analysis.json ]; then
+              analysis_count=$(jq 'length' analysis.json)
+              echo "analysis_success=true" >> $GITHUB_OUTPUT
+              echo "analysis_count=$analysis_count" >> $GITHUB_OUTPUT
+              
+              echo "Analysis results: $analysis_count reports analyzed"
+              
+              if [ "$analysis_count" -eq 0 ]; then
+                echo "WARNING: No reports were analyzed"
+                echo "analysis_success=false" >> $GITHUB_OUTPUT
+              fi
+            else
+              echo "ERROR: analysis.json not created"
+              echo "analysis_success=false" >> $GITHUB_OUTPUT
+              echo "analysis_count=0" >> $GITHUB_OUTPUT
+              exit 1
+            fi
+          else
+            echo "ERROR: Report analysis failed"
+            echo "analysis_success=false" >> $GITHUB_OUTPUT
+            echo "analysis_count=0" >> $GITHUB_OUTPUT
+            exit 1
+          fi
 
       - name: Upload analysis results
         uses: actions/upload-artifact@v4
@@ -240,7 +361,10 @@ jobs:
   update-readme:
     runs-on: ubuntu-latest
     needs: [discover-and-scan, convert-pdf-to-markdown, analyze-reports]
-    if: needs.discover-and-scan.outputs.has_files == 'true'
+    if: needs.discover-and-scan.outputs.has_files == 'true' && needs.analyze-reports.outputs.analysis_success == 'true'
+    outputs:
+      readme_updated: ${{ steps.readme_update.outputs.readme_updated }}
+      pr_created: ${{ steps.create_pr.outputs.pull-request-number }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -258,7 +382,6 @@ jobs:
         with:
           name: analysis-results
           path: .
-        continue-on-error: true
 
       - name: Download converted markdown files
         uses: actions/download-artifact@v4
@@ -267,24 +390,40 @@ jobs:
           path: Markdown Conversions/
         continue-on-error: true
 
-      - name: Verify analysis file exists
+      - name: Verify analysis file
         run: |
-          if [ -f analysis.json ]; then
-            echo "Analysis file found, size: $(wc -c < analysis.json) bytes"
-            echo "Analysis content preview:"
-            head -10 analysis.json
-          else
-            echo "Error: analysis.json file not found"
+          if [ ! -f analysis.json ]; then
+            echo "ERROR: analysis.json file not found"
             ls -la
+            exit 1
+          fi
+          
+          file_size=$(stat -c%s analysis.json)
+          echo "Analysis file size: $file_size bytes"
+          
+          if [ "$file_size" -lt 10 ]; then
+            echo "ERROR: Analysis file is too small ($file_size bytes)"
+            exit 1
+          fi
+          
+          echo "Analysis file content preview:"
+          head -10 analysis.json
+          
+          analysis_count=$(jq 'length' analysis.json)
+          echo "Analysis entries found: $analysis_count"
+          
+          if [ "$analysis_count" -eq 0 ]; then
+            echo "ERROR: No analysis entries found"
             exit 1
           fi
 
       - name: Run README Updater
         id: readme_update
         run: |
-          if [ -f analysis.json ] && [ -s analysis.json ]; then
-            echo "Analysis file found, processing README update..."
-            python .github/scripts/readme-updater.py analysis.json --readme-path README.md
+          echo "Running README updater..."
+          
+          if python .github/scripts/readme-updater.py analysis.json --readme-path README.md; then
+            echo "README updater completed successfully"
             
             # Check if README was actually modified
             if git diff --quiet HEAD -- README.md; then
@@ -299,7 +438,7 @@ jobs:
               git diff HEAD -- README.md
             fi
           else
-            echo "No analysis results found or file is empty"
+            echo "ERROR: README updater failed"
             echo "readme_updated=false" >> $GITHUB_OUTPUT
             exit 1
           fi
@@ -326,6 +465,7 @@ jobs:
           git commit -m "$COMMIT_MSG"
 
       - name: Create Pull Request
+        id: create_pr
         if: steps.readme_update.outputs.readme_updated == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
@@ -374,7 +514,17 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Triggered by:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "**Branch:** ${{ github.head_ref || github.ref_name }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Pipeline Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Run ID:** ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Job Status Overview
+          echo "### 📊 Job Status Overview" >> $GITHUB_STEP_SUMMARY
+          echo "| Job | Status | Notes |" >> $GITHUB_STEP_SUMMARY
+          echo "|-----|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Discovery & Scan | ${{ needs.discover-and-scan.result }} | Found files: ${{ needs.discover-and-scan.outputs.has_files }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| PDF Conversion | ${{ needs.convert-pdf-to-markdown.result }} | Success: ${{ needs.convert-pdf-to-markdown.outputs.conversion_success }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Report Analysis | ${{ needs.analyze-reports.result }} | Success: ${{ needs.analyze-reports.outputs.analysis_success }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| README Update | ${{ needs.update-readme.result }} | Updated: ${{ needs.update-readme.outputs.readme_updated }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
           # VirusTotal Results
@@ -391,9 +541,9 @@ jobs:
           if [ -f conversions.json ]; then
             echo "### 📝 PDF to Markdown Conversion Summary" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "| PDF File | Markdown Output | Model Used | Status |" >> $GITHUB_STEP_SUMMARY
-            echo "|----------|-----------------|------------|--------|" >> $GITHUB_STEP_SUMMARY
-            jq -r '.[] | "| \(.pdf_path) | \(.output_path // "N/A") | \(.model_used // "N/A") | \(if .status == "success" then "✅" else "❌" end) \(.status) |"' conversions.json >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "No conversion results available." >> $GITHUB_STEP_SUMMARY
+            echo "| PDF File | Status | Model Used | Error |" >> $GITHUB_STEP_SUMMARY
+            echo "|----------|---------|------------|-------|" >> $GITHUB_STEP_SUMMARY
+            jq -r '.[] | "| \(.pdf_path | split("/") | last) | \(if .status == "success" then "✅" else "❌" end) \(.status) | \(.model_used // "N/A") | \(.reason // "-") |"' conversions.json >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "No conversion results available." >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
           fi
           
@@ -410,10 +560,31 @@ jobs:
           # README Update Status
           echo "### 📋 README Update Status" >> $GITHUB_STEP_SUMMARY
           if [ "${{ needs.update-readme.result }}" == "success" ]; then
-            echo "✅ README update completed successfully" >> $GITHUB_STEP_SUMMARY
-            echo "📋 Pull request created for review" >> $GITHUB_STEP_SUMMARY
+            if [ "${{ needs.update-readme.outputs.readme_updated }}" == "true" ]; then
+              echo "✅ README update completed successfully" >> $GITHUB_STEP_SUMMARY
+              if [ -n "${{ needs.update-readme.outputs.pr_created }}" ]; then
+                echo "📋 Pull request #${{ needs.update-readme.outputs.pr_created }} created for review" >> $GITHUB_STEP_SUMMARY
+              else
+                echo "📋 Pull request created for review" >> $GITHUB_STEP_SUMMARY
+              fi
+            else
+              echo "ℹ️ No changes needed - README is up to date" >> $GITHUB_STEP_SUMMARY
+            fi
           else
             echo "❌ README update failed or was skipped" >> $GITHUB_STEP_SUMMARY
             echo "Check the update-readme job logs for details" >> $GITHUB_STEP_SUMMARY
             echo "**Status:** ${{ needs.update-readme.result }}" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          # Pipeline Summary
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🎯 Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ needs.update-readme.result }}" == "success" ] && [ "${{ needs.update-readme.outputs.readme_updated }}" == "true" ]; then
+            echo "🎉 **Pipeline completed successfully!** New security reports have been processed and README updated." >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.analyze-reports.result }}" == "success" ]; then
+            echo "⚠️ **Pipeline partially successful.** Reports were processed but README was not updated." >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.convert-pdf-to-markdown.result }}" == "success" ]; then
+            echo "⚠️ **Pipeline partially successful.** PDFs were converted but analysis failed." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **Pipeline failed.** Check individual job logs for details." >> $GITHUB_STEP_SUMMARY
           fi
