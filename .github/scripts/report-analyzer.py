@@ -79,25 +79,19 @@ def parse_toc_from_readme(readme_path: str) -> Dict[str, List[str]]:
         if not structure["Analysis"]:
             structure["Analysis"] = ["Threat Intelligence", "Application Security", "Cloud Security", "Vulnerabilities", "Industry Trends"]
         if not structure["Survey"]:
-            structure["Survey"] = ["Industry Trends", "Identity Security", "Application Security", "Cloud Security"]
+            structure["Survey"] = ["Industry Trends", "Identity Security", "Application Security", "Cloud Security", "Voice"]
             
         return structure
         
-    except FileNotFoundError:
-        print("Warning: README.md not found, using default categories")
-        return {
-            "Analysis": ["Threat Intelligence", "Application Security", "Cloud Security", "Vulnerabilities", "Industry Trends"],
-            "Survey": ["Industry Trends", "Identity Security", "Application Security", "Cloud Security"]
-        }
     except Exception as e:
         print(f"Warning: Error parsing README.md: {e}, using default categories")
         return {
             "Analysis": ["Threat Intelligence", "Application Security", "Cloud Security", "Vulnerabilities", "Industry Trends"],
-            "Survey": ["Industry Trends", "Identity Security", "Application Security", "Cloud Security"]
+            "Survey": ["Industry Trends", "Identity Security", "Application Security", "Cloud Security", "Voice"]
         }
 
 def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
-    """Extract organization, year, and title from file path"""
+    """Extract organization, year, and title from file path with improved parsing"""
     path = Path(file_path)
     
     # Extract year from path
@@ -109,11 +103,19 @@ def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
     
     # Parse filename to extract organization and title
     filename = path.stem
+    print(f"Parsing filename: {filename}")
     
-    # Remove year suffixes and common separators
+    # Remove common extensions and year suffixes
     filename_clean = re.sub(r'[-_\s]*20\d{2}[-_\s]*', '', filename)
     
-    # Split on common separators
+    # Special handling for specific patterns
+    if 'proofpoint' in filename_clean.lower():
+        if 'voice-of-the-ciso' in filename_clean.lower():
+            org_name = "Proofpoint"
+            title = "Voice of the CISO Report"
+            return org_name, year, title
+    
+    # General parsing - split on first dash or underscore
     parts = re.split(r'[-_]+', filename_clean, 1)
     
     if len(parts) >= 2:
@@ -124,7 +126,7 @@ def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
         org_name = re.sub(r'[_-]', ' ', org_part)
         org_name = ' '.join(word.capitalize() for word in org_name.split())
         
-        # Clean up title
+        # Clean up title - convert dashes/underscores to spaces and capitalize
         title = re.sub(r'[_-]', ' ', title_part)
         title = ' '.join(word.capitalize() for word in title.split())
         
@@ -141,11 +143,25 @@ def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
             if org_name.lower() == old_name.lower():
                 org_name = new_name
                 break
+                
+        # Clean up common title patterns
+        title = re.sub(r'\b(report|security|annual)\b', lambda m: m.group(1).capitalize(), title, flags=re.IGNORECASE)
+        
     else:
-        # Fallback if parsing fails
-        org_name = ' '.join(word.capitalize() for word in filename_clean.replace('_', ' ').replace('-', ' ').split())
-        title = f"Security Report {year}"
+        # Fallback if parsing fails - try to extract organization from start
+        words = filename_clean.replace('_', ' ').replace('-', ' ').split()
+        if words:
+            # First word is likely the organization
+            org_name = words[0].capitalize()
+            if len(words) > 1:
+                title = ' '.join(word.capitalize() for word in words[1:])
+            else:
+                title = f"Security Report {year}"
+        else:
+            org_name = "Unknown Organization"
+            title = f"Security Report {year}"
     
+    print(f"Extracted - Org: '{org_name}', Title: '{title}', Year: '{year}'")
     return org_name, year, title
 
 def categorize_content_fallback(content: str, available_categories: Dict[str, List[str]], org_name: str = "", title: str = "") -> Tuple[str, str]:
@@ -165,7 +181,7 @@ def categorize_content_fallback(content: str, available_categories: Dict[str, Li
         'Penetration Testing': ['penetration testing', 'pentesting', 'red team', 'offensive security', 'security testing'],
         'Privacy and Data Protection': ['privacy', 'data protection', 'gdpr', 'ccpa', 'data privacy', 'compliance'],
         'Email Security': ['email security', 'email threats', 'phishing', 'business email compromise', 'bec'],
-        'Voice': ['voice', 'ciso', 'chief information security officer', 'leadership', 'executive'],
+        'Voice': ['voice', 'ciso', 'chief information security officer', 'leadership', 'executive', 'voice of'],
     }
     
     content_lower = content.lower()
@@ -177,7 +193,7 @@ def categorize_content_fallback(content: str, available_categories: Dict[str, Li
     is_survey = any(indicator in content_lower or indicator in title_lower for indicator in survey_indicators)
     
     # Special handling for specific organizations and titles
-    if 'proofpoint' in org_lower and 'voice' in title_lower:
+    if 'proofpoint' in org_lower and ('voice' in title_lower or 'ciso' in title_lower):
         if 'Voice' in available_categories.get("Survey", []):
             return "Survey", "Voice"
         elif 'Industry Trends' in available_categories.get("Survey", []):
@@ -458,13 +474,19 @@ def main():
             
             # Extract info using the correct path
             pdf_path = conv.get('pdf_path', output_path)
-            org_name, year, report_title = extract_info_from_path(pdf_path)
             
-            # Use data from conversion if available
-            if 'organization_name' in conv:
+            # Use data from conversion if available, otherwise extract from path
+            if conv.get('organization_name') and conv.get('report_title'):
                 org_name = conv['organization_name']
-            if 'report_title' in conv:
                 report_title = conv['report_title']
+                # Extract year from path or use current year
+                year = "2025"  # Default for current reports
+                for part in Path(pdf_path).parts:
+                    if part.isdigit() and len(part) == 4 and part.startswith("20"):
+                        year = part
+                        break
+            else:
+                org_name, year, report_title = extract_info_from_path(pdf_path)
             
             print(f"Analyzing: {org_name} - {report_title} ({year})")
 
@@ -498,10 +520,10 @@ def main():
     if analysis_results:
         print("\nResults:")
         for result in analysis_results:
-            ai_indicator = "🤖" if result.get('ai_processed') else "📝"
+            ai_indicator = "AI" if result.get('ai_processed') else "FB"
             print(f"  {ai_indicator} {result['organization']} - {result['title']} -> {result['type']} / {result['category']}")
     else:
-        print("⚠️  No reports were successfully analyzed")
+        print("WARNING: No reports were successfully analyzed")
 
     return 0 if analysis_results else 1
 
