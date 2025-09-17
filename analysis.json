@@ -1,0 +1,14 @@
+[
+  {
+    "organization": "Proofpoint",
+    "year": "2025",
+    "title": "Voice of the CISO Report",
+    "summary": "\"Examines the challenges, expectations, and priorities of CISOs in 2025, focusing on the impact of AI and persistent threats. The report reveals a growing concern among CISOs regarding potential cyberattacks and data loss, despite confidence in their cybersecurity culture, highlighting the need for enhanced data protection measures and addressing human-related risks.\"",
+    "type": "Survey",
+    "category": "Industry Trends",
+    "ai_processed": true,
+    "file_path": "Markdown Conversions/2025/Proofpoint-Voice-of-the-CISO-Report-2025.md",
+    "pdf_path": "Annual Security Reports/2025/Proofpoint-Voice-of-the-CISO-Report-2025.pdf",
+    "organization_url": "https://www.proofpoint.com"
+  }
+]

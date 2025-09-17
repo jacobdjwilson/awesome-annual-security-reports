@@ -1,0 +1,3 @@
+Updated README with 1 security reports
+
+- UPDATED: Proofpoint - Voice of the CISO Report (2025)
