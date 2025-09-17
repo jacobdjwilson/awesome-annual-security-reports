@@ -79,6 +79,10 @@ class ReadmeUpdater:
 
     def add_report_entry(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
         """Add or update a report entry in the README.md file"""
+        # Validate input data
+        if not self._validate_analysis_data(analysis):
+            return False, "", -1, "invalid_data"
+        
         report_type = analysis.get('type', 'Analysis')
         category = analysis.get('category', 'Industry Trends')
         
@@ -109,7 +113,7 @@ class ReadmeUpdater:
                 # If no similar section found, add to the first available subsection or create new one
                 if available_subsections:
                     # Use the most generic subsection available
-                    generic_sections = ['Industry Trends', 'Other', 'General']
+                    generic_sections = ['Industry Trends', 'Other', 'General', 'Voice']
                     for generic in generic_sections:
                         if generic in available_subsections:
                             logical_subsection = generic
@@ -140,17 +144,21 @@ class ReadmeUpdater:
         entry_action = "new"
 
         if existing_line and existing_year:
-            current_year = int(analysis['year'])
-            
-            if current_year >= existing_year:
-                # Replace the existing entry
-                updated_section = section_content.replace(existing_line, entry_text)
-                entry_action = "updated" if current_year > existing_year else "refreshed"
-                print(f"Replacing existing entry: {existing_line}")
-                print(f"With new entry: {entry_text}")
-            else:
-                print(f"Current year {current_year} is older than existing year {existing_year}, skipping update")
-                return False, "", -1, "older_version"
+            try:
+                current_year = int(analysis['year'])
+                
+                if current_year >= existing_year:
+                    # Replace the existing entry
+                    updated_section = section_content.replace(existing_line, entry_text)
+                    entry_action = "updated" if current_year > existing_year else "refreshed"
+                    print(f"Replacing existing entry: {existing_line}")
+                    print(f"With new entry: {entry_text}")
+                else:
+                    print(f"Current year {current_year} is older than existing year {existing_year}, skipping update")
+                    return False, "", -1, "older_version"
+            except (ValueError, TypeError) as e:
+                print(f"Error parsing year '{analysis['year']}': {e}")
+                return False, "", -1, "invalid_year"
         else:
             # Add as new entry
             updated_section = self._add_new_entry_sorted(section_content, entry_text)
@@ -163,6 +171,35 @@ class ReadmeUpdater:
         inserted_line_number = self._find_line_number(entry_text.strip())
 
         return True, entry_text, inserted_line_number, entry_action
+
+    def _validate_analysis_data(self, analysis: Dict[str, Any]) -> bool:
+        """Validate the analysis data has all required fields"""
+        required_fields = ['organization', 'title', 'year', 'summary', 'type', 'category', 'pdf_path']
+        missing_fields = []
+        
+        for field in required_fields:
+            value = analysis.get(field)
+            if not value or (isinstance(value, str) and not value.strip()):
+                missing_fields.append(field)
+        
+        if missing_fields:
+            print(f"ERROR: Missing or empty required fields: {missing_fields}")
+            print(f"Analysis data: {analysis}")
+            return False
+        
+        # Validate year format
+        year = str(analysis.get('year', ''))
+        if not year.isdigit() or len(year) != 4:
+            print(f"ERROR: Invalid year format: '{year}' (should be 4-digit year)")
+            return False
+            
+        # Validate summary length
+        summary = analysis.get('summary', '')
+        if len(summary) > 500:  # Reasonable limit for README
+            print(f"WARNING: Summary is very long ({len(summary)} chars), truncating")
+            analysis['summary'] = summary[:400] + '...'
+        
+        return True
 
     def _find_existing_entry(self, section_content: str, org_name: str) -> Tuple[Optional[str], Optional[int]]:
         """Find existing entry for the same organization"""
@@ -214,7 +251,12 @@ class ReadmeUpdater:
             org_url = self._generate_org_url(org_name)
         
         # Construct the PDF path correctly - use relative path for GitHub
-        pdf_relative_path = f"Annual Security Reports/{analysis['year']}/{Path(analysis['pdf_path']).name}"
+        pdf_path = analysis['pdf_path']
+        
+        # Extract filename from path and construct relative path
+        filename = Path(pdf_path).name
+        year = analysis['year']
+        pdf_relative_path = f"Annual Security Reports/{year}/{filename}"
         pdf_url_encoded = pdf_relative_path.replace(' ', '%20')
 
         return f"- [{org_name}]({org_url}) - [{analysis['title']}]({pdf_url_encoded}) ({analysis['year']}) - {analysis['summary']}"
@@ -306,6 +348,10 @@ def main():
         sys.exit(1)
 
     print(f"Found {len(analysis_results)} analysis results to process")
+    
+    # Debug: print first analysis result
+    if analysis_results:
+        print(f"First analysis result: {json.dumps(analysis_results[0], indent=2)}")
 
     try:
         readme_parser = ReadmeParser(args.readme_path)
@@ -324,17 +370,10 @@ def main():
     
     for i, analysis in enumerate(analysis_results, 1):
         print(f"\n=== Processing {i}/{len(analysis_results)} ===")
-        print(f"Processing: {analysis.get('organization', 'Unknown')} - {analysis.get('title', 'Unknown')} ({analysis.get('year', 'Unknown')})")
-        
-        # Validate required fields
-        required_fields = ['organization', 'title', 'year', 'summary', 'type', 'category']
-        missing_fields = [field for field in required_fields if not analysis.get(field)]
-        
-        if missing_fields:
-            print(f"ERROR: Missing required fields: {missing_fields}")
-            actions_taken["errors"] += 1
-            summaries.append(f"❌ Error (missing fields): {analysis.get('organization', 'Unknown')} - {missing_fields}")
-            continue
+        org = analysis.get('organization', 'Unknown')
+        title = analysis.get('title', 'Unknown')
+        year = analysis.get('year', 'Unknown')
+        print(f"Processing: {org} - {title} ({year})")
         
         success, entry_text, line_number, action = updater.add_report_entry(analysis)
         
@@ -348,18 +387,18 @@ def main():
                 'action': action
             })
             
-            action_icon = "🆕" if action == "new" else "🔄" if action == "updated" else "✅"
-            summaries.append(f"{action_icon} {action.capitalize()}: {analysis['organization']} - {analysis['title']} ({analysis['year']}) (Line: {line_number})")
+            action_icon = "NEW" if action == "new" else "UPD" if action == "updated" else "REF"
+            summaries.append(f"{action_icon}: {analysis['organization']} - {analysis['title']} ({analysis['year']}) (Line: {line_number})")
             actions_taken[action] = actions_taken.get(action, 0) + 1
             print(f"SUCCESS: {action} - {analysis['organization']}")
         else:
             if action == "older_version":
                 actions_taken["skipped"] += 1
-                summaries.append(f"⏭️ Skipped (older version): {analysis['organization']} - {analysis['title']} ({analysis['year']})")
+                summaries.append(f"SKIP (older): {analysis['organization']} - {analysis['title']} ({analysis['year']})")
                 print(f"SKIPPED: {analysis['organization']} (older version)")
             else:
                 actions_taken["errors"] += 1
-                summaries.append(f"❌ Error ({action}): {analysis['organization']} - {analysis['title']}")
+                summaries.append(f"ERROR ({action}): {analysis['organization']} - {analysis['title']}")
                 print(f"ERROR: {analysis['organization']} - {action}")
 
     print(f"\n=== README UPDATE SUMMARY ===")
@@ -385,14 +424,14 @@ def main():
         with open("pr_summary.txt", "w") as f:
             f.write(summary_text)
         
-        print(f"✅ Successfully processed {len(processed_entries)} entries")
+        print(f"SUCCESS: Successfully processed {len(processed_entries)} entries")
     else:
-        print("❌ No entries were processed successfully")
+        print("ERROR: No entries were processed successfully")
 
     # Generate GitHub step summary
     summary_path = os.environ.get('GITHUB_STEP_SUMMARY', 'summary.md')
     with open(summary_path, 'w') as f:
-        f.write("## ✏️ README Update Summary\n\n")
+        f.write("## README Update Summary\n\n")
         if processed_entries:
             f.write(f"Successfully processed {len(processed_entries)} report entries with the following actions:\n\n")
             for action, count in actions_taken.items():
@@ -404,9 +443,9 @@ def main():
         else:
             f.write("No updates were made to the README.md.\n")
             if actions_taken["errors"] > 0:
-                f.write(f"\n⚠️ {actions_taken['errors']} entries could not be processed due to errors.\n")
+                f.write(f"\nWARNING: {actions_taken['errors']} entries could not be processed due to errors.\n")
             if actions_taken["skipped"] > 0:
-                f.write(f"\n⏭️ {actions_taken['skipped']} entries were skipped (older versions).\n")
+                f.write(f"\nINFO: {actions_taken['skipped']} entries were skipped (older versions).\n")
 
     return 0 if processed_entries else 1
 
