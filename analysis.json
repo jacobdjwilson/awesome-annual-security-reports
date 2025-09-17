@@ -1,0 +1,14 @@
+[
+  {
+    "organization": "Orca",
+    "year": "2023",
+    "title": "Honeypotting In The Cloud Report",
+    "summary": "Analyzes the tactics and techniques used by attackers targeting cloud environments through honeypot deployments. The research reveals rapid exploitation of leaked keys on GitHub within minutes and highlights the importance of securing S3 buckets due to their vulnerability to discovery and compromise.",
+    "type": "Analysis",
+    "category": "Cloud Security",
+    "ai_processed": true,
+    "file_path": "Markdown Conversions/2023/Orca-Honeypotting-in-the-Cloud-Report-2023.md",
+    "pdf_path": "Annual Security Reports/2023/Orca-Honeypotting-in-the-Cloud-Report-2023.pdf",
+    "organization_url": "https://www.orca.com"
+  }
+]
