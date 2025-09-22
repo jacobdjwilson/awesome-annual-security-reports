@@ -1,3 +1,0 @@
-Updated README with 1 security reports
-
-- UPDATED: Cyberark - Identity Security Threat Landscape (2025)
