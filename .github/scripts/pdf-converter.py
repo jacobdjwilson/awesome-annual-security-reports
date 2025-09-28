@@ -248,12 +248,14 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         # Search for organization URL
         organization_url = None
         if google_search_api_key and google_cse_id and organization_name:
+            # This specific query is most likely to find the report's landing page.
             search_queries = [
-                f"{organization_name} official website",
-                f"{organization_name} security reports",
+                f'"{organization_name}" "{report_title}"',
+                f'"{organization_name}" security report',
             ]
             
             for query in search_queries:
+                print(f"Searching for URL with query: '{query}'")
                 organization_url = perform_google_search(query, google_search_api_key, google_cse_id)
                 if organization_url:
                     break
