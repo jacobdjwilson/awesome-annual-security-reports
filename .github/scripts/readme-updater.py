@@ -155,7 +155,8 @@ class ReadmeUpdater:
         
         # Check for existing entries
         org_name = analysis['organization']
-        existing_line, existing_year = self._find_existing_entry(section_content, org_name)
+        report_title = analysis['title']
+        existing_line, existing_year = self._find_existing_entry(section_content, org_name, report_title)
         
         if existing_line and existing_year:
             try:
@@ -230,18 +231,25 @@ class ReadmeUpdater:
         
         return True
 
-    def _find_existing_entry(self, section_content: str, org_name: str) -> Tuple[Optional[str], Optional[int]]:
-        """Find existing entry for organization"""
+    def _find_existing_entry(self, section_content: str, org_name: str, report_title: str) -> Tuple[Optional[str], Optional[int]]:
+        """Find existing entry for a specific report from an organization."""
         lines = section_content.split('\n')
+        org_name_lower = org_name.lower()
+        # Normalize title for comparison: lower, remove "the", "of", "and", and spaces
+        title_norm = re.sub(r'\s+|the|of|and', '', report_title.lower())
         
         for line in lines:
             if not line.strip().startswith('- ['):
                 continue
                 
-            org_match = re.search(r'^- \[([^\]]+)\]', line.strip())
-            if org_match:
-                line_org = org_match.group(1)
-                if line_org.lower() == org_name.lower():
+            # Match organization and title from the markdown link format
+            entry_match = re.search(r'^- \[([^\]]+)\]\(.*\) - \[([^\]]+)\]\(.*\)', line.strip())
+            if entry_match:
+                line_org = entry_match.group(1)
+                line_title = entry_match.group(2)
+                line_title_norm = re.sub(r'\s+|the|of|and', '', line_title.lower())
+                
+                if line_org.lower() == org_name_lower and line_title_norm == title_norm:
                     year_match = re.search(r'\((\d{4})\)', line)
                     year = int(year_match.group(1)) if year_match else None
                     return line, year
@@ -269,7 +277,7 @@ class ReadmeUpdater:
     def _format_entry(self, analysis: Dict[str, Any]) -> str:
         """Format entry for README"""
         org_name = analysis['organization']
-        org_url = analysis.get('organization_url', self._generate_org_url(org_name))
+        org_url = analysis['organization_url'] # This is now a required field from the analyzer
         
         filename = Path(analysis['pdf_path']).name
         year = analysis['year']
@@ -277,22 +285,6 @@ class ReadmeUpdater:
         pdf_url_encoded = pdf_relative_path.replace(' ', '%20')
 
         return f"- [{org_name}]({org_url}) - [{analysis['title']}]({pdf_url_encoded}) ({year}) - {analysis['summary']}"
-
-    def _generate_org_url(self, org_name: str) -> str:
-        """Generate organization URL"""
-        special_cases = {
-            'proofpoint': 'https://www.proofpoint.com',
-            'cyberark': 'https://www.cyberark.com',
-            'okta': 'https://www.okta.com',
-            'microsoft': 'https://www.microsoft.com'
-        }
-        
-        for key, url in special_cases.items():
-            if key in org_name.lower():
-                return url
-        
-        domain = re.sub(r'[^a-z0-9]', '', org_name.lower())
-        return f"https://www.{domain}.com"
 
     def _extract_org_name_for_sorting(self, entry_line: str) -> str:
         """Extract org name for sorting"""
