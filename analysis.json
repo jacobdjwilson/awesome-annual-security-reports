@@ -1,0 +1,14 @@
+[
+  {
+    "organization": "Escape",
+    "year": "2023",
+    "title": "The State Of Public Apis",
+    "summary": "Analyzes over 6,000 public APIs, evaluating their design, performance, security, and reliability. The findings reveal that while API documentation and developer experience are improving, significant vulnerabilities exist, with up to 12% of APIs having serious security misconfigurations and sensitive data being exposed.",
+    "type": "Analysis",
+    "category": "Application Security",
+    "ai_processed": true,
+    "file_path": "Markdown Conversions/2023/Escape-The-State-of-Public-APIs-2023.md",
+    "pdf_path": "Annual Security Reports/2023/Escape-The-State-of-Public-APIs-2023.pdf",
+    "organization_url": "https://www.google.com/search?q=%22Escape%22+%22The+State+Of+Public+Apis%22+2023+report"
+  }
+]
