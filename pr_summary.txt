@@ -1,0 +1,3 @@
+Updated README with 1 security reports
+
+- REFRESHED: Escape - The State Of Graphql Security (2024)
