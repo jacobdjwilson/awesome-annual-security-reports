@@ -265,7 +265,7 @@ class ReadmeUpdater:
         # Sort by organization name
         entry_lines.sort(key=lambda x: self._extract_org_name_for_sorting(x))
         
-        return '\n'.join(entry_lines) + '\n\n'
+        return '\n'.join(entry_lines) + '\n'
 
     def _find_line_number(self, entry_text: str) -> int:
         """Find line number of entry"""
