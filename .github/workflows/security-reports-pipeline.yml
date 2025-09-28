@@ -460,9 +460,9 @@ jobs:
             org=$(jq -r '.[0].organization' analysis.json)
             title=$(jq -r '.[0].title' analysis.json)
             year=$(jq -r '.[0].year' analysis.json)
-            pr_title="feat: Add ${org} ${title} (${year}) report"
+            pr_title="Add ${org} ${title} (${year}) report"
           else
-            pr_title="feat: Add ${report_count} new security reports"
+            pr_title="Add ${report_count} new security reports"
           fi
           echo "pr_title=${pr_title}" >> $GITHUB_OUTPUT
 
