@@ -419,6 +419,7 @@ jobs:
 
       - name: Run README Updater
         id: readme_update
+        id: readme_update # Give the step an ID to access its outputs
         run: |
           echo "Running README updater..."
           
@@ -442,6 +443,8 @@ jobs:
             echo "readme_updated=false" >> $GITHUB_OUTPUT
             exit 1
           fi
+        # The python script will now output the summary for the PR body
+        echo "::set-output name=pr_body::$(python -c "import json; results=json.load(open('analysis.json')); summary=f'Updated README with {len(results)} security reports\n\n'; summary+='\n'.join([f'- ADDED: {r[\"organization\"]} - {r[\"title\"]} ({r[\"year\"]})' for r in results]); print(summary.replace('%', '%25').replace('\n', '%0A').replace('\r', '%0D'))")"
 
       - name: Configure Git
         if: steps.readme_update.outputs.readme_updated == 'true'
@@ -449,20 +452,28 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
+      - name: Generate PR Title
+        id: pr_details
+        if: steps.readme_update.outputs.readme_updated == 'true'
+        run: |
+          report_count=$(jq 'length' analysis.json)
+          if [ "$report_count" -eq 1 ]; then
+            org=$(jq -r '.[0].organization' analysis.json)
+            title=$(jq -r '.[0].title' analysis.json)
+            year=$(jq -r '.[0].year' analysis.json)
+            pr_title="feat: Add ${org} ${title} (${year}) report"
+          else
+            pr_title="feat: Add ${report_count} new security reports"
+          fi
+          echo "pr_title=${pr_title}" >> $GITHUB_OUTPUT
+
       - name: Commit changes
         if: steps.readme_update.outputs.readme_updated == 'true'
         run: |
           # Stage all changes (README.md and any new markdown files)
           git add README.md
           git add "Markdown Conversions/" || true
-          
-          # Create commit message
-          COMMIT_MSG="Update README with new security reports"
-          if [ -f pr_summary.txt ]; then
-            COMMIT_MSG="$(head -n 1 pr_summary.txt | sed 's/Updated README.md with [0-9]* report entries:/Update README with security reports/')"
-          fi
-          
-          git commit -m "$COMMIT_MSG"
+          git commit -m "${{ steps.pr_details.outputs.pr_title }}"
 
       - name: Create Pull Request
         id: create_pr
@@ -470,9 +481,9 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Update README with new security reports"
-          title: "📄 Update README with new security reports"
-          body-path: pr_summary.txt
+          commit-message: ${{ steps.pr_details.outputs.pr_title }}
+          title: "📄 ${{ steps.pr_details.outputs.pr_title }}"
+          body: ${{ steps.readme_update.outputs.pr_body }}
           branch: update-security-reports-${{ github.run_id }}
           delete-branch: true
           labels: |

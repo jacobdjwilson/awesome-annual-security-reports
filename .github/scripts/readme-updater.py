@@ -392,15 +392,6 @@ def main():
 
     if processed_entries:
         updater.save_readme()
-        
-        # Create PR summary
-        summary = f"Updated README with {len(processed_entries)} security reports\n\n"
-        for entry in processed_entries:
-            summary += f"- {entry['action'].upper()}: {entry['organization']} - {entry['title']} ({entry['year']})\n"
-        
-        with open("pr_summary.txt", "w") as f:
-            f.write(summary)
-        
         print("SUCCESS: README updated")
     else:
         print("ERROR: No successful updates")
