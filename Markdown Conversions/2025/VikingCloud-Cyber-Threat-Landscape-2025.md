@@ -864,39 +864,67 @@ Survey respondents work at companies in hospitality, retail, travel, healthcare,
 
 or food service. All respondents have director-level titles and above, with 43% in C-suite roles.
 
+![Image of a bar chart showing industry breakdown: Healthcare 4%, Travel 12%, Retail 6%, Hospitality 34%, Restaurant or Food Service 45%]
+
 What industry best describes your company?
 
-![Image of a bar graph showing the distribution of industries represented in the survey]
+Healthcare
 
-Healthcare 4%
+Travel
 
-Travel 12%
+Retail
 
-Retail 6%
+Hospitality
 
-Hospitality 34%
+Restaurant or Food Service
 
-Restaurant or Food Service 45%
+4%
+
+12%
+
+6%
+
+34%
+
+45%
+
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+
+![Image of a bar chart showing geographic area breakdown: USA 72%, UK 19%, Ireland 10%]
 
 What geographic area is your business located?
 
-![Image of a bar graph showing the geographic distribution of survey respondents]
+USA
 
-USA 72%
+UK
 
-UK 19%
+19%
 
-Ireland 10%
+Ireland
+
+10%
+
+72%
+
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+
+![Image of a bar chart showing role level breakdown: C-suite 43%, VP 41%, Director 16%]
 
 What best describes the level of your role?
 
-![Image of a bar graph showing the distribution of job levels among survey respondents]
+C-suite
 
-C-suite 43%
+VP
 
-VP 41%
+Director
 
-Director 16%
+16%
+
+43%
+
+41%
+
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
 
 14/16
 
@@ -951,13 +979,19 @@ experience every day, without fail.
 That’s the measurable value we deliver.
 And that’s what we call, Business Uninterrupted.
 
+![Image showing "6+ billion analyze over 6+ billion online events every day."]
+
 6+ billion
 analyze over 6+ billion
 online events every day.
 
+![Image showing "4+ million trusted by 4+ million businesses."]
+
 4+ million
 trusted by 4+ million
 businesses.
+
+![Image showing "1,000 1,000 dedicated cybersecurity and compliance expert advisors."]
 
 1,000
 1,000 dedicated cybersecurity
