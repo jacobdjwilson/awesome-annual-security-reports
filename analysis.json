@@ -1,0 +1,14 @@
+[
+  {
+    "organization": "Spycloud",
+    "year": "2025",
+    "title": "Identity Threat Report",
+    "summary": "\"Analyzes the landscape of identity-based cyber threats, highlighting trends, benchmarks, and strategies for enhanced protection. Key findings reveal that while most organizations are concerned about identity-based attacks and ransomware, significant defense gaps persist, including limited automation in remediation and inconsistent credential revocation practices.\"",
+    "type": "Survey",
+    "category": "Identity Security",
+    "ai_processed": true,
+    "file_path": "Markdown Conversions/2025/SpyCloud-Identity-Threat-Report-2025.md",
+    "pdf_path": "Annual Security Reports/2025/SpyCloud-Identity-Threat-Report-2025.pdf",
+    "organization_url": "https://www.google.com/search?q=%22Spycloud%22+%22Identity+Threat+Report%22+2025+report"
+  }
+]
