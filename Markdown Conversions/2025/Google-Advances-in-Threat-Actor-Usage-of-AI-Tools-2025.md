@@ -1,4 +1,3 @@
-```markdown
 # GTIG AI Threat Tracker: Advances in Threat Actor Usage of AI Tools
 
 2025 November
@@ -557,4 +556,3 @@ information operations (IO), and serious
 cyber crime networks. We apply our
 intelligence to improve Google's defenses
 and protect our users and customers.
-```
