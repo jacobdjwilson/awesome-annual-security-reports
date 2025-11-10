@@ -32,28 +32,25 @@ jobs:
       - name: 🔍 Run awesome-lint and process errors
         id: lint_check
         run: |
-          # Capture full awesome-lint output
           awesome-lint > lint_output.txt || true
-          
-          # Display the raw output for reference
           cat lint_output.txt
           
-          # Process each error line and create GitHub annotations
-          grep -E "✖ [0-9]+:[0-9]+" lint_output.txt | while read -r error_line; do
-            if [[ $error_line =~ ✖[[:space:]]+([0-9]+):([0-9]+)[[:space:]]+(.+) ]]; then
-              LINE_NUM=${BASH_REMATCH[1]}
-              COL_NUM=${BASH_REMATCH[2]}
-              ERROR_MSG=${BASH_REMATCH[3]}
-              
-              # Extract the actual content of the line with the error
-              LINE_CONTENT=$(sed -n "${LINE_NUM}p" README.md)
-              
-              # Create a GitHub annotation with line content included in the message
-              echo "::error file=README.md,line=${LINE_NUM},col=${COL_NUM}::${ERROR_MSG} | Line content: ${LINE_CONTENT}"
-              # Also print to stdout for immediate visibility in run output
-              echo "Error in README.md:${LINE_NUM}:${COL_NUM} - ${ERROR_MSG} | Line content: ${LINE_CONTENT}"
-            fi
-          done
+          # Use awk to parse the output and create annotations
+          awk -F '[:✖]' '/✖/ {
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "", $1);
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "", $2);
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "", $3);
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "", $4);
+            
+            # The message is the 4th field onwards
+            message=$4;
+            for(i=5; i<=NF; i++) {
+              message = message ":" $i
+            }
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "", message);
+
+            print "::error file=" $1 ",line=" $2 ",col=" $3 "::" message
+          }' lint_output.txt
       
       # Check for lint ignore directives
       - name: ℹ️ Check if lint exceptions exist
@@ -69,7 +66,6 @@ jobs:
           if grep -q "✖" lint_output.txt; then
             echo "lint_status=failed" >> $GITHUB_OUTPUT
             echo "::error::Linting failed. Please fix the errors shown above."
-            echo "If these are expected issues, add appropriate lint ignore directives."
             exit 1
           else
             echo "lint_status=succeeded" >> $GITHUB_OUTPUT
@@ -96,7 +92,7 @@ jobs:
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "#### Detected Errors:" >> $GITHUB_STEP_SUMMARY
             echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
-            grep -E "✖ [0-9]+:[0-9]+" lint_output.txt >> $GITHUB_STEP_SUMMARY || echo "No specific errors captured." >> $GITHUB_STEP_SUMMARY
+            cat lint_output.txt >> $GITHUB_STEP_SUMMARY
             echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "If these are expected issues, consider adding appropriate lint ignore directives." >> $GITHUB_STEP_SUMMARY
