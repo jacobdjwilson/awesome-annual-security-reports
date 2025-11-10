@@ -1,4 +1,3 @@
-```markdown
 # 2024 REPORT
 
 # Insider Threat
@@ -277,4 +276,3 @@ Contact us today to learn how Cybersecurity Insiders can help you stand out in a
 Email us at info@cybersecurity-insiders.com or visit cybersecurity-insiders.com
 
 ©2024 Cybersecurity Insiders. All Rights Reserved.
-```
