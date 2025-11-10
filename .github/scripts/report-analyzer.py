@@ -4,8 +4,10 @@ import json
 import re
 import argparse
 import google.generativeai as genai
+import urllib.parse
 from typing import List, Dict, Any, Tuple
 from pathlib import Path
+from googleapiclient.discovery import build
 
 # Configure Gemini API
 MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
@@ -389,14 +391,30 @@ def fallback_analysis(content: str, org_name: str, year: str, report_title: str,
         'ai_processed': False
     }
 
-def generate_default_org_url(org_name: str, report_title: str, year: str) -> str:
+def get_organization_url(query: str) -> str:
     """
-    Generate a Google search URL to find the report's landing page.
-    This is a more reliable fallback than guessing the domain.
+    Get the top Google search result for a query.
     """
-    from urllib.parse import quote_plus
-    query = f'"{org_name}" "{report_title}" {year} report'
-    return f"https://www.google.com/search?q={quote_plus(query)}"
+    try:
+        api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
+        cse_id = os.environ.get("GOOGLE_CSE_ID")
+        
+        if not api_key or not cse_id:
+            print("Warning: Google Search API key or CSE ID not found. Falling back to search URL.")
+            return f"https://www.google.com/search?q={urllib.parse.quote_plus(query)}"
+
+        service = build("customsearch", "v1", developerKey=api_key)
+        res = service.cse().list(q=query, cx=cse_id, num=1).execute()
+        
+        if 'items' in res and len(res['items']) > 0:
+            return res['items'][0]['link']
+        else:
+            print(f"Warning: No search results for query: {query}")
+            return f"https://www.google.com/search?q={urllib.parse.quote_plus(query)}"
+            
+    except Exception as e:
+        print(f"Error during Google Search: {e}")
+        return f"https://www.google.com/search?q={urllib.parse.quote_plus(query)}"
 
 def main():
     parser = argparse.ArgumentParser(description="Analyze markdown content of security reports.")
@@ -474,7 +492,7 @@ def main():
             analysis['pdf_path'] = pdf_path
 
             # Use the URL from the conversion step, or generate a search URL as a reliable fallback.
-            org_url = conv.get('organization_url') if conv.get('organization_url') else generate_default_org_url(org_name, report_title, year)
+            org_url = conv.get('organization_url') if conv.get('organization_url') else get_organization_url(f'"{org_name}" "{report_title}" {year} report')
             analysis['organization_url'] = org_url
             
             analysis_results.append(analysis)
