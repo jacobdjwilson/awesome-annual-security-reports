@@ -391,30 +391,42 @@ def fallback_analysis(content: str, org_name: str, year: str, report_title: str,
         'ai_processed': False
     }
 
-def get_organization_url(query: str) -> str:
+def get_organization_url(org_name: str, query: str) -> str:
     """
     Get the top Google search result for a query.
+    Falls back to searching for the organization's main website.
     """
     try:
         api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
         cse_id = os.environ.get("GOOGLE_CSE_ID")
         
         if not api_key or not cse_id:
-            print("Warning: Google Search API key or CSE ID not found. Falling back to search URL.")
-            return f"https://www.google.com/search?q={urllib.parse.quote_plus(query)}"
+            print("Warning: Google Search API key or CSE ID not found. Falling back to organization domain guess.")
+            return f"https://www.{org_name.lower().replace(' ', '')}.com"
 
         service = build("customsearch", "v1", developerKey=api_key)
+        
+        # First, search for the specific report
         res = service.cse().list(q=query, cx=cse_id, num=1).execute()
         
         if 'items' in res and len(res['items']) > 0:
             return res['items'][0]['link']
         else:
-            print(f"Warning: No search results for query: {query}")
-            return f"https://www.google.com/search?q={urllib.parse.quote_plus(query)}"
+            print(f"Warning: No search results for query: '{query}'. Falling back to organization search.")
+            
+            # Fallback: search for the organization's main page
+            org_query = f'"{org_name}" official website'
+            res_org = service.cse().list(q=org_query, cx=cse_id, num=1).execute()
+            
+            if 'items' in res_org and len(res_org['items']) > 0:
+                return res_org['items'][0]['link']
+            else:
+                print(f"Warning: No search results for organization query: '{org_query}'. Falling back to domain guess.")
+                return f"https://www.{''.join(e for e in org_name if e.isalnum()).lower()}.com"
             
     except Exception as e:
         print(f"Error during Google Search: {e}")
-        return f"https://www.google.com/search?q={urllib.parse.quote_plus(query)}"
+        return f"https://www.{''.join(e for e in org_name if e.isalnum()).lower()}.com"
 
 def main():
     parser = argparse.ArgumentParser(description="Analyze markdown content of security reports.")
@@ -492,7 +504,7 @@ def main():
             analysis['pdf_path'] = pdf_path
 
             # Use the URL from the conversion step, or generate a search URL as a reliable fallback.
-            org_url = conv.get('organization_url') if conv.get('organization_url') else get_organization_url(f'"{org_name}" "{report_title}" {year} report')
+            org_url = conv.get('organization_url') if conv.get('organization_url') else get_organization_url(org_name, f'"{org_name}" "{report_title}" {year} report')
             analysis['organization_url'] = org_url
             
             analysis_results.append(analysis)
