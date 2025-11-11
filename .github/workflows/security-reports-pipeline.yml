@@ -162,7 +162,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install markitdown[pdf] google-generativeai google-api-python-client
+          pip install markitdown[pdf] google-generativeai googlesearch-python
 
       - name: Download files to process
         uses: actions/download-artifact@v4
@@ -202,7 +202,6 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
-          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PROMPT_PATH=".github/ai-prompts/pdf-to-markdown-prompt.md"
@@ -279,7 +278,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install google-generativeai google-api-python-client
+          pip install google-generativeai googlesearch-python
 
       - name: Download conversion results
         uses: actions/download-artifact@v4
@@ -322,7 +321,6 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
-          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
           echo "Running report analyzer..."
           

@@ -5,9 +5,9 @@ import re
 import argparse
 import google.generativeai as genai
 import urllib.parse
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 from pathlib import Path
-from googleapiclient.discovery import build
+from googlesearch import search
 
 # Configure Gemini API
 MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
@@ -391,35 +391,30 @@ def fallback_analysis(content: str, org_name: str, year: str, report_title: str,
         'ai_processed': False
     }
 
-def get_organization_url(org_name: str, query: str) -> str:
+def get_organization_url(org_name: str, query: str) -> Optional[str]:
     """
     Get the top Google search result for a query.
     Falls back to searching for the organization's main website.
     """
     try:
-        api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
-        cse_id = os.environ.get("GOOGLE_CSE_ID")
-        
-        if not api_key or not cse_id:
-            print("Warning: Google Search API key or CSE ID not found. Falling back to organization domain guess.")
-            return f"https://www.{org_name.lower().replace(' ', '')}.com"
-
-        service = build("customsearch", "v1", developerKey=api_key)
-        
         # First, search for the specific report
-        res = service.cse().list(q=query, cx=cse_id, num=1).execute()
+        search_results = search(query, num_results=1, stop=1, pause=2.0)
+        first_result = next(search_results, None)
         
-        if 'items' in res and len(res['items']) > 0:
-            return res['items'][0]['link']
+        if first_result:
+            print(f"Found URL for query '{query}': {first_result}")
+            return first_result
         else:
             print(f"Warning: No search results for query: '{query}'. Falling back to organization search.")
             
             # Fallback: search for the organization's main page
             org_query = f'"{org_name}" official website'
-            res_org = service.cse().list(q=org_query, cx=cse_id, num=1).execute()
+            search_results_org = search(org_query, num_results=1, stop=1, pause=2.0)
+            first_result_org = next(search_results_org, None)
             
-            if 'items' in res_org and len(res_org['items']) > 0:
-                return res_org['items'][0]['link']
+            if first_result_org:
+                print(f"Found URL for organization query '{org_query}': {first_result_org}")
+                return first_result_org
             else:
                 print(f"Warning: No search results for organization query: '{org_query}'. Falling back to domain guess.")
                 return f"https://www.{''.join(e for e in org_name if e.isalnum()).lower()}.com"

@@ -5,8 +5,7 @@ import google.generativeai as genai
 from pathlib import Path
 import subprocess
 from markitdown import MarkItDown
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
+from googlesearch import search
 import argparse
 import json
 from typing import List, Dict, Any, Optional
@@ -147,46 +146,26 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
     # Ultimate fallback
     return "Unknown Organization", "Security Report"
 
-def perform_google_search(query: str, organization_name: str, report_title: str, api_key: str, cse_id: str) -> Optional[str]:
-    if not api_key or not cse_id:
-        print("Warning: Google Search API key or CSE ID not found. Skipping specific URL search.")
-        return None
-    
+def perform_google_search(query: str) -> Optional[str]:
+    """
+    Performs a Google search and returns the first result URL.
+    """
     try:
-        service = build("customsearch", "v1", developerKey=api_key)
-        res = service.cse().list(q=query, cx=cse_id, num=10).execute() # Fetch up to 10 results
+        # The num_results=1 and stop=1 parameters ensure we only get the first result.
+        # The pause parameter is important to avoid being blocked by Google.
+        search_results = search(query, num_results=1, stop=1, pause=2.0)
         
-        if 'items' in res and len(res['items']) > 0:
-            relevant_urls = []
-            for item in res['items']:
-                url = item['link']
-                # Filter out irrelevant URLs
-                if url.endswith('.pdf') or any(x in url.lower() for x in ['/media/', '/news/', '/blog/', '/press/', '/events/']):
-                    continue
-                
-                # Prioritize URLs that contain both organization name and report title
-                url_lower = url.lower()
-                org_lower = organization_name.lower()
-                title_lower = report_title.lower()
-                
-                if org_lower in url_lower and title_lower.replace(' ', '-') in url_lower:
-                    relevant_urls.insert(0, url) # High priority
-                elif org_lower in url_lower:
-                    relevant_urls.append(url) # Medium priority
-                
-            if relevant_urls:
-                print(f"Found relevant URL: {relevant_urls[0]}")
-                return relevant_urls[0]
+        first_result = next(search_results, None)
         
-        print(f"No specific relevant URL found for query: '{query}'")
-        return None
-    except HttpError as e:
-        print(f"Google Search HTTP error: {e}")
-        if e.resp.status == 403:
-            print("Possible API key issue or daily limit exceeded.")
-        return None
+        if first_result:
+            print(f"Found URL for query '{query}': {first_result}")
+            return first_result
+        else:
+            print(f"No results found for query: '{query}'")
+            return None
+            
     except Exception as e:
-        print(f"Google Search error: {e}")
+        print(f"An error occurred during Google search for query '{query}': {e}")
         return None
 
 def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url: Optional[str]) -> str:
@@ -250,7 +229,7 @@ def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url:
         print(f"ERROR: Failed to generate markdown: {str(e)}")
         raise
 
-def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: str, google_search_api_key: Optional[str], google_cse_id: Optional[str]) -> Dict[str, Any]:
+def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: str) -> Dict[str, Any]:
     result_base = {
         "pdf_path": str(pdf_path),
         "model_used": MODEL,
@@ -260,16 +239,11 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
     
     try:
         print(f"Processing: {pdf_path}")
-        
-        if not pdf_path.exists():
-            raise FileNotFoundError(f"PDF file not found: {pdf_path}")
-        
         prompt_text = read_prompt_file(prompt_path)
         print(f"Loaded prompt file ({len(prompt_text)} characters)")
         
         pdf_text = extract_text_from_pdf(pdf_path)
         
-        # Parse filename
         filename_stem = pdf_path.stem
         organization_name, report_title = parse_filename_to_org_and_title(filename_stem)
         
@@ -277,7 +251,7 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         
         # Search for organization URL
         organization_url = None
-        if google_search_api_key and google_cse_id and organization_name:
+        if organization_name:
             search_queries = [
                 f'"{organization_name}" "{report_title}"',
                 f'"{organization_name}" security report',
@@ -285,11 +259,9 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
             
             for query in search_queries:
                 print(f"Searching for URL with query: '{query}'")
-                organization_url = perform_google_search(query, organization_name, report_title, google_search_api_key, google_cse_id)
+                organization_url = perform_google_search(query)
                 if organization_url:
                     break
-            
-            # Fallback to organization's main website if no specific report URL is found
             if not organization_url:
                 org_main_query = f'"{organization_name}" official website'
                 print(f"Falling back to search for organization's main website with query: '{org_main_query}'")
@@ -359,9 +331,6 @@ def main():
     if not setup_gemini(gemini_api_key):
         sys.exit(1)
 
-    google_search_api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
-    google_cse_id = os.environ.get("GOOGLE_CSE_ID")
-
     try:
         with open(args.files_list, 'r') as f:
             pdf_paths = [Path(line.strip()) for line in f if line.strip()]
@@ -378,7 +347,7 @@ def main():
     
     for i, pdf_path in enumerate(pdf_paths, 1):
         print(f"\n=== Processing file {i}/{len(pdf_paths)} ===")
-        result = process_pdf(pdf_path, args.prompt_path, args.prompt_version, args.branch, google_search_api_key, google_cse_id)
+        result = process_pdf(pdf_path, args.prompt_path, args.prompt_version, args.branch)
         results.append(result)
         
         if result['status'] == 'success':
