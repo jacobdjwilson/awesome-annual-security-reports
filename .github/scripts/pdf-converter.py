@@ -9,6 +9,7 @@ from googlesearch import search
 import argparse
 import json
 from typing import List, Dict, Any, Optional
+import time
 
 # Configure Gemini API
 MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
@@ -149,11 +150,18 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
 def perform_google_search(query: str) -> Optional[str]:
     """
     Performs a Google search and returns the first result URL.
+    Handles different versions of the googlesearch library.
     """
     try:
-        # The num_results=1 and stop=1 parameters ensure we only get the first result.
-        # The pause parameter is important to avoid being blocked by Google. We will retrieve only the first result from the iterator.
-        search_results = search(query, pause=2.0)
+        # Try with pause parameter (newer versions)
+        try:
+            search_results = search(query, pause=2.0)
+        except TypeError:
+            # Fallback: use without pause parameter (older versions)
+            print(f"Note: googlesearch library doesn't support 'pause' parameter, using default")
+            search_results = search(query)
+            # Add manual delay to avoid rate limiting
+            time.sleep(2.0)
         
         first_result = next(search_results, None)
         
@@ -269,14 +277,16 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
                 organization_url = perform_google_search(query)
                 if organization_url:
                     break
+            
             if not organization_url:
                 org_main_query = f'"{organization_name}" official website {year}'
                 print(f"Falling back to search for organization's main website with query: '{org_main_query}'")
                 organization_url = perform_google_search(org_main_query)
-                if not organization_url:
-                    # Ultimate fallback: construct a generic domain
-                    organization_url = f"https://www.{''.join(e for e in organization_name if e.isalnum()).lower()}.com"
-                    print(f"Ultimate fallback: constructed generic URL: {organization_url}")
+                
+            if not organization_url:
+                # Ultimate fallback: construct a generic domain
+                organization_url = f"https://www.{''.join(e for e in organization_name if e.isalnum()).lower()}.com"
+                print(f"Ultimate fallback: constructed generic URL: {organization_url}")
 
         markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
         
