@@ -277,14 +277,16 @@ class ReadmeUpdater:
     def _format_entry(self, analysis: Dict[str, Any]) -> str:
         """Format entry for README"""
         org_name = analysis['organization']
-        org_url = analysis['organization_url'] # This is now a required field from the analyzer
+        org_url = analysis['organization_url']
         
         filename = Path(analysis['pdf_path']).name
         year = analysis['year']
         pdf_relative_path = f"Annual Security Reports/{year}/{filename}"
         pdf_url_encoded = pdf_relative_path.replace(' ', '%20')
+        
+        summary_text = analysis['summary'].strip('"')
 
-        return f"- [{org_name}]({org_url}) - [{analysis['title']}]({pdf_url_encoded}) ({year}) - {analysis['summary']}"
+        return f"- [{org_name}]({org_url}) - [{analysis['title']}]({pdf_url_encoded}) ({year}) - {summary_text}"
 
     def _extract_org_name_for_sorting(self, entry_line: str) -> str:
         """Extract org name for sorting"""
