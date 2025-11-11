@@ -248,13 +248,20 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         organization_name, report_title = parse_filename_to_org_and_title(filename_stem)
         
         print(f"Final parsed result: Organization='{organization_name}', Title='{report_title}'")
+
+        # Extract year from path
+        year = "Unknown"
+        for part in pdf_path.parts:
+            if part.isdigit() and len(part) == 4 and part.startswith("20"):
+                year = part
+                break
         
         # Search for organization URL
         organization_url = None
         if organization_name:
             search_queries = [
-                f'"{organization_name}" "{report_title}"',
-                f'"{organization_name}" security report',
+                f'"{organization_name}" "{report_title}" {year}',
+                f'"{organization_name}" security report {year}',
             ]
             
             for query in search_queries:
@@ -263,7 +270,7 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
                 if organization_url:
                     break
             if not organization_url:
-                org_main_query = f'"{organization_name}" official website'
+                org_main_query = f'"{organization_name}" official website {year}'
                 print(f"Falling back to search for organization's main website with query: '{org_main_query}'")
                 organization_url = perform_google_search(org_main_query)
                 if not organization_url:
