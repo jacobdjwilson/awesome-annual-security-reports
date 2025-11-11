@@ -1,0 +1,152 @@
+import os
+import sys
+import time
+import requests
+import json
+import hashlib
+import argparse
+from typing import List, Dict, Any
+
+# Constants
+API_BASE_URL = "https://www.virustotal.com/api/v3"
+
+def calculate_file_hash(file_path: str) -> str:
+    """Calculate SHA256 hash of a file"""
+    sha256_hash = hashlib.sha256()
+    with open(file_path, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            sha256_hash.update(chunk)
+    return sha256_hash.hexdigest()
+
+def scan_file(file_path: str, api_key: str) -> Dict[str, Any]:
+    """Scan a file with VirusTotal and return results"""
+    if not os.path.exists(file_path):
+        return {"status": "failed", "reason": "File not found"}
+
+    headers = {
+        "x-apikey": api_key,
+        "User-Agent": "VirusTotal GitHub Action",
+        "Accept": "application/json"
+    }
+    file_size_mb = os.path.getsize(file_path) / (1024 * 1024)
+
+    file_hash = calculate_file_hash(file_path)
+    
+    try:
+        # Check if file has been scanned before
+        lookup_response = requests.get(f"{API_BASE_URL}/files/{file_hash}", headers=headers, timeout=30)
+        
+        if lookup_response.status_code == 200:
+            scan_data = lookup_response.json()
+        elif lookup_response.status_code == 404:
+            upload_endpoint = f"{API_BASE_URL}/files"
+            if file_size_mb > 32:
+                # Get special upload URL for large files
+                upload_url_response = requests.get(f"{API_BASE_URL}/files/upload_url", headers=headers, timeout=30)
+                if upload_url_response.status_code == 200:
+                    upload_endpoint = upload_url_response.json().get('data')
+                    if not upload_endpoint:
+                        return {"status": "failed", "reason": "Could not get large file upload URL"}
+                else:
+                    return {"status": "failed", "reason": f"Failed to get large file upload URL (Status: {upload_url_response.status_code})"}
+
+            # Upload file for scanning
+            with open(file_path, 'rb') as f:
+                files = {"file": (os.path.basename(file_path), f)}
+                response = requests.post(upload_endpoint, headers=headers, files=files, timeout=300)
+            
+            if response.status_code != 200:
+                return {"status": "failed", "reason": f"File upload failed (Status: {response.status_code})"}
+            
+            scan_id = response.json().get('data', {}).get('id')
+            if not scan_id:
+                return {"status": "failed", "reason": "No scan ID in upload response"}
+
+            # Poll for results
+            for attempt in range(5):
+                time.sleep(10 * (attempt + 1)) # Exponential backoff
+                status_response = requests.get(f"{API_BASE_URL}/analyses/{scan_id}", headers=headers, timeout=30)
+                if status_response.status_code == 200:
+                    analysis_result = status_response.json()
+                    if analysis_result.get('data', {}).get('attributes', {}).get('status') == 'completed':
+                        final_response = requests.get(f"{API_BASE_URL}/files/{file_hash}", headers=headers, timeout=30)
+                        if final_response.status_code == 200:
+                            scan_data = final_response.json()
+                            break
+            else:
+                return {"status": "failed", "reason": "Scan did not complete within timeout"}
+        else:
+            return {"status": "failed", "reason": f"Error checking file status (Status: {lookup_response.status_code})"}
+
+        # Process results
+        attributes = scan_data.get('data', {}).get('attributes', {})
+        stats = attributes.get('last_analysis_stats', {})
+        malicious_count = stats.get('malicious', 0)
+        suspicious_count = stats.get('suspicious', 0)
+        total_engines = sum(stats.values())
+        verdict = "Malicious" if malicious_count > 0 else "Suspicious" if suspicious_count > 0 else "Clean"
+        
+        return {
+            "status": "success",
+            "file": os.path.basename(file_path),
+            "verdict": verdict,
+            "malicious_count": malicious_count,
+            "suspicious_count": suspicious_count,
+            "total_engines": total_engines,
+            "report_url": f"https://www.virustotal.com/gui/file/{file_hash}",
+            "sha256": file_hash
+        }
+
+    except Exception as e:
+        return {"status": "failed", "reason": str(e)}
+
+def create_annotation(file_path: str, result: Dict[str, Any]):
+    """Create GitHub annotation with scan results"""
+    verdict = result['verdict']
+    level = "error" if verdict == "Malicious" else "warning" if verdict == "Suspicious" else "notice"
+    message = f"VirusTotal Scan: {verdict} ({result['malicious_count'] + result['suspicious_count']}/{result['total_engines']} engines)"
+    print(f"::{level} file={file_path}::{message}")
+    print(f"::{level} file={file_path}::Report: {result['report_url']}")
+
+def main():
+    parser = argparse.ArgumentParser(description="Scan files with VirusTotal.")
+    parser.add_argument("files_list", help="Path to a file containing a list of PDF paths to scan.")
+    parser.add_argument("--deleted-files", help="Path to a file containing a list of deleted PDF paths.")
+    parser.add_argument("--output-json", help="Path to save the results as a JSON file.", default="scan_results.json")
+    args = parser.parse_args()
+
+    api_key = os.environ.get('VIRUS_TOTAL_API_KEY')
+    if not api_key:
+        print("Error: VIRUS_TOTAL_API_KEY environment variable not set.")
+        sys.exit(1)
+
+    with open(args.files_list, 'r') as f:
+        files_to_scan = [line.strip() for line in f if line.strip()]
+
+    deleted_files = []
+    if args.deleted_files and os.path.exists(args.deleted_files):
+        with open(args.deleted_files, 'r') as f:
+            deleted_files = [line.strip() for line in f if line.strip()]
+
+    results = []
+    failed_scans = []
+    for i, file_path in enumerate(files_to_scan):
+        if i > 0:
+            time.sleep(15) # Rate limit to 4 requests per minute
+        print(f"Scanning file {i+1}/{len(files_to_scan)}: {file_path}")
+        result = scan_file(file_path, api_key)
+        results.append(result)
+        if result['status'] == 'success':
+            create_annotation(file_path, result)
+        else:
+            failed_scans.append({"file": os.path.basename(file_path), "reason": result["reason"]})
+
+    with open(args.output_json, 'w') as f:
+        json.dump(results, f, indent=2)
+
+    print(f"Scan completed. {len([r for r in results if r['status'] == 'success'])} files scanned successfully.")
+
+    return 0
+
+if __name__ == "__main__":
+    main()
