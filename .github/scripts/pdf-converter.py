@@ -120,6 +120,8 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
                     'Ai': 'AI',
                     'Api': 'API',
                     'Id': 'ID',
+                    'Dos': 'DoS',
+                    'Ddos': 'DDoS',
                     'Cve': 'CVE',
                 }
 
@@ -147,31 +149,44 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
     # Ultimate fallback
     return "Unknown Organization", "Security Report"
 
-def perform_google_search(query: str) -> Optional[str]:
+def perform_google_search(org_name: str, title: str, year: str) -> Optional[str]:
     """
-    Performs a Google search and returns the first result URL.
-    Handles different versions of the googlesearch library.
+    Performs a Google search with multiple queries and returns the best URL.
+    This is optimized to perform a single search request for multiple results.
     """
+    # Construct a single, powerful query using OR logic
+    query = f'("{org_name}" AND "{title}" AND "{year}") OR ("{org_name}" AND "security report" AND "{year}") OR ("{org_name}" AND "official website")'
+    print(f"Performing optimized Google search with query: {query}")
+
     try:
-        # Try with pause parameter (newer versions)
-        try:
-            search_results = search(query, pause=2.0)
-        except TypeError:
-            # Fallback: use without pause parameter (older versions)
-            print(f"Note: googlesearch library doesn't support 'pause' parameter, using default")
-            search_results = search(query)
-            # Add manual delay to avoid rate limiting
-            time.sleep(2.0)
-        
-        first_result = next(search_results, None)
-        
-        if first_result:
-            print(f"Found URL for query '{query}': {first_result}")
-            return first_result
-        else:
-            print(f"No results found for query: '{query}'")
+        # Fetch top 5 results to analyze
+        results = list(search(query, num=5, stop=5, pause=2.0))
+
+        if not results:
+            print("No results found from optimized search.")
             return None
-            
+
+        # Prioritize results
+        org_lower = org_name.lower()
+        title_lower = title.lower().replace(' ', '-')
+
+        # 1. High priority: URL contains org and title
+        for url in results:
+            url_lower = url.lower()
+            if org_lower in url_lower and title_lower in url_lower:
+                print(f"Found high-priority match: {url}")
+                return url
+
+        # 2. Medium priority: URL contains org name
+        for url in results:
+            if org_lower in url.lower():
+                print(f"Found medium-priority match: {url}")
+                return url
+
+        # 3. Low priority: Return the first result if no better match is found
+        print(f"No specific match found, returning first result: {results[0]}")
+        return results[0]
+
     except Exception as e:
         print(f"An error occurred during Google search for query '{query}': {e}")
         return None
@@ -266,27 +281,13 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         
         # Search for organization URL
         organization_url = None
-        if organization_name:
-            search_queries = [
-                f'"{organization_name}" "{report_title}" {year}',
-                f'"{organization_name}" security report {year}',
-            ]
-            
-            for query in search_queries:
-                print(f"Searching for URL with query: '{query}'")
-                organization_url = perform_google_search(query)
-                if organization_url:
-                    break
-            
-            if not organization_url:
-                org_main_query = f'"{organization_name}" official website {year}'
-                print(f"Falling back to search for organization's main website with query: '{org_main_query}'")
-                organization_url = perform_google_search(org_main_query)
+        if organization_name and report_title and year:
+            organization_url = perform_google_search(organization_name, report_title, year)
                 
-            if not organization_url:
-                # Ultimate fallback: construct a generic domain
-                organization_url = f"https://www.{''.join(e for e in organization_name if e.isalnum()).lower()}.com"
-                print(f"Ultimate fallback: constructed generic URL: {organization_url}")
+        if not organization_url:
+            # Ultimate fallback: construct a generic domain
+            organization_url = f"https://www.{''.join(e for e in organization_name if e.isalnum()).lower()}.com"
+            print(f"Ultimate fallback: constructed generic URL: {organization_url}")
 
         markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
         

@@ -391,33 +391,42 @@ def fallback_analysis(content: str, org_name: str, year: str, report_title: str,
         'ai_processed': False
     }
 
-def get_organization_url(org_name: str, query: str, year: str) -> Optional[str]:
+def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
     """
-    Get the top Google search result for a query.
-    Falls back to searching for the organization's main website.
+    Performs an optimized Google search and returns the best URL.
     """
+    # Construct a single, powerful query using OR logic
+    query = f'("{org_name}" AND "{title}" AND "{year}") OR ("{org_name}" AND "security report" AND "{year}") OR ("{org_name}" AND "official website")'
+    print(f"Performing optimized Google search with query: {query}")
+
     try:
-        # First, search for the specific report
-        search_results = search(query, pause=2.0)
-        first_result = next(search_results, None)
-        
-        if first_result:
-            print(f"Found URL for query '{query}': {first_result}")
-            return first_result
-        else:
-            print(f"Warning: No search results for query: '{query}'. Falling back to organization search.")
-            
-            # Fallback: search for the organization's main page
-            org_query = f'"{org_name}" official website {year}'
-            search_results_org = search(org_query, pause=2.0)
-            first_result_org = next(search_results_org, None)
-            
-            if first_result_org:
-                print(f"Found URL for organization query '{org_query}': {first_result_org}")
-                return first_result_org
-            else:
-                print(f"Warning: No search results for organization query: '{org_query}'. Falling back to domain guess.")
-                return f"https://www.{''.join(e for e in org_name if e.isalnum()).lower()}.com"
+        # Fetch top 5 results to analyze
+        results = list(search(query, num=5, stop=5, pause=2.0))
+
+        if not results:
+            print("No results found from optimized search.")
+            return None
+
+        # Prioritize results
+        org_lower = org_name.lower()
+        title_lower = title.lower().replace(' ', '-')
+
+        # 1. High priority: URL contains org and title
+        for url in results:
+            url_lower = url.lower()
+            if org_lower in url_lower and title_lower in url_lower:
+                print(f"Found high-priority match: {url}")
+                return url
+
+        # 2. Medium priority: URL contains org name
+        for url in results:
+            if org_lower in url.lower():
+                print(f"Found medium-priority match: {url}")
+                return url
+
+        # 3. Low priority: Return the first result if no better match is found
+        print(f"No specific match found, returning first result: {results[0]}")
+        return results[0]
             
     except Exception as e:
         print(f"Error during Google Search: {e}")
@@ -499,7 +508,7 @@ def main():
             analysis['pdf_path'] = pdf_path
 
             # Use the URL from the conversion step, or generate a search URL as a reliable fallback.
-            org_url = conv.get('organization_url') if conv.get('organization_url') else get_organization_url(org_name, f'"{org_name}" "{report_title}" {year} report', year)
+            org_url = conv.get('organization_url') if conv.get('organization_url') else get_organization_url(org_name, report_title, year)
             analysis['organization_url'] = org_url
             
             analysis_results.append(analysis)
