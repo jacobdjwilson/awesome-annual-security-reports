@@ -81,10 +81,6 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
     # Special handling for known patterns
     filename_lower = filename_stem.lower()
     
-    # Proofpoint Voice of the CISO Report pattern
-    if 'proofpoint' in filename_lower and 'voice-of-the-ciso' in filename_lower:
-        return "Proofpoint", "Voice of the CISO Report"
-    
     # General parsing - try different separators
     separators = [' - ', '_-_', '--', '_']
     for sep in separators:
@@ -107,17 +103,29 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
                 
                 # Apply organization name mappings
                 org_mapping = {
+                    'Ai': 'AI',
                     'Cyberark': 'CyberArk',
                     'Sailpoint': 'SailPoint',
                     'Crowdstrike': 'CrowdStrike',
                     'Palo Alto': 'Palo Alto Networks',
-                    'Proofpoint': 'Proofpoint',
                 }
                 
                 for old_name, new_name in org_mapping.items():
                     if org_name.lower() == old_name.lower():
                         org_name = new_name
                         break
+
+                # Apply title name mappings
+                title_mapping = {
+                    'Ai': 'AI',
+                    'Api': 'API',
+                    'Id': 'ID',
+                    'Cve': 'CVE',
+                }
+
+                for old_title, new_title in title_mapping.items():
+                    # Use regex to replace whole words, case-insensitively
+                    title = re.sub(r'\b' + re.escape(old_title) + r'\b', new_title, title, flags=re.IGNORECASE)
                 
                 print(f"Parsed with separator '{sep}': Org='{org_name}', Title='{title}'")
                 return org_name, title
@@ -168,7 +176,7 @@ def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url:
         model = genai.GenerativeModel(MODEL)
         
         # Truncate PDF text if too long
-        max_pdf_chars = 100000
+        max_pdf_chars = 1000000
         if len(pdf_text) > max_pdf_chars:
             print(f"Truncating PDF text from {len(pdf_text)} to {max_pdf_chars} characters")
             pdf_text = pdf_text[:max_pdf_chars] + "\n\n[Content truncated due to length...]"
@@ -239,7 +247,7 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         
         pdf_text = extract_text_from_pdf(pdf_path)
         
-        # Parse filename - THIS IS THE KEY FIX
+        # Parse filename
         filename_stem = pdf_path.stem
         organization_name, report_title = parse_filename_to_org_and_title(filename_stem)
         
@@ -248,7 +256,6 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         # Search for organization URL
         organization_url = None
         if google_search_api_key and google_cse_id and organization_name:
-            # This specific query is most likely to find the report's landing page.
             search_queries = [
                 f'"{organization_name}" "{report_title}"',
                 f'"{organization_name}" security report',
@@ -285,8 +292,8 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
             "status": "success",
             "output_path": str(output_path),
             "organization_url": organization_url,
-            "organization_name": organization_name,  # THIS IS THE KEY ADDITION
-            "report_title": report_title,            # THIS IS THE KEY ADDITION
+            "organization_name": organization_name,
+            "report_title": report_title,
             **result_base
         }
         
