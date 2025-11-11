@@ -147,21 +147,43 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
     # Ultimate fallback
     return "Unknown Organization", "Security Report"
 
-def perform_google_search(query: str, api_key: str, cse_id: str) -> Optional[str]:
+def perform_google_search(query: str, organization_name: str, report_title: str, api_key: str, cse_id: str) -> Optional[str]:
     if not api_key or not cse_id:
+        print("Warning: Google Search API key or CSE ID not found. Skipping specific URL search.")
         return None
     
     try:
         service = build("customsearch", "v1", developerKey=api_key)
-        res = service.cse().list(q=query, cx=cse_id, num=10).execute()
+        res = service.cse().list(q=query, cx=cse_id, num=10).execute() # Fetch up to 10 results
         
         if 'items' in res and len(res['items']) > 0:
+            relevant_urls = []
             for item in res['items']:
                 url = item['link']
-                if url.endswith('.pdf') or any(x in url.lower() for x in ['/media/', '/news/', '/blog/']):
+                # Filter out irrelevant URLs
+                if url.endswith('.pdf') or any(x in url.lower() for x in ['/media/', '/news/', '/blog/', '/press/', '/events/']):
                     continue
-                print(f"Found URL: {url}")
-                return url
+                
+                # Prioritize URLs that contain both organization name and report title
+                url_lower = url.lower()
+                org_lower = organization_name.lower()
+                title_lower = report_title.lower()
+                
+                if org_lower in url_lower and title_lower.replace(' ', '-') in url_lower:
+                    relevant_urls.insert(0, url) # High priority
+                elif org_lower in url_lower:
+                    relevant_urls.append(url) # Medium priority
+                
+            if relevant_urls:
+                print(f"Found relevant URL: {relevant_urls[0]}")
+                return relevant_urls[0]
+        
+        print(f"No specific relevant URL found for query: '{query}'")
+        return None
+    except HttpError as e:
+        print(f"Google Search HTTP error: {e}")
+        if e.resp.status == 403:
+            print("Possible API key issue or daily limit exceeded.")
         return None
     except Exception as e:
         print(f"Google Search error: {e}")
@@ -263,9 +285,19 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
             
             for query in search_queries:
                 print(f"Searching for URL with query: '{query}'")
-                organization_url = perform_google_search(query, google_search_api_key, google_cse_id)
+                organization_url = perform_google_search(query, organization_name, report_title, google_search_api_key, google_cse_id)
                 if organization_url:
                     break
+            
+            # Fallback to organization's main website if no specific report URL is found
+            if not organization_url:
+                org_main_query = f'"{organization_name}" official website'
+                print(f"Falling back to search for organization's main website with query: '{org_main_query}'")
+                organization_url = perform_google_search(org_main_query, organization_name, "", google_search_api_key, google_cse_id)
+                if not organization_url:
+                    # Ultimate fallback: construct a generic domain
+                    organization_url = f"https://www.{''.join(e for e in organization_name if e.isalnum()).lower()}.com"
+                    print(f"Ultimate fallback: constructed generic URL: {organization_url}")
 
         markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
         
