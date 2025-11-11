@@ -287,6 +287,7 @@ Reports are organized by their primary focus. Although many reports span multipl
 - [Salt](https://content.salt.security/AI-Agentic-Survey-2025_LP-AI-Agentic-Survey-2025.html) - [Future Of Agentic AI Report](Annual%20Security%20Reports/2025/Salt-Future-of-Agentic-AI-Report-2025.pdf) (2025) - Highlights the increasing deployment of agentic AI and the foundational importance of robust API security to build and sustain consumer trust. The report uncovers a significant disparity between the rapid adoption of AI agents and lagging consumer trust, with 62% of consumers perceiving chatbots as more vulnerable to manipulation.
 - [Wiz](https://www.wiz.io/reports/ai-security-readiness) - [AI Security Readiness](Annual%20Security%20Reports/2025/Wiz-AI-Security-Readiness-2025.pdf) (2025) - Analyzes the current state of AI security readiness among cloud architects, engineers, and security leaders, highlighting critical gaps. Key findings reveal widespread AI adoption is significantly outpacing the development of in-house security expertise and the implementation of AI-specific posture management tools, leading to substantial visibility challenges like shadow AI.
 
+<!--lint disable remark-lint:double-link-->
 ## Resources
 Annual reports are the result of a collaborative effort, combining research from both paid and non-profit sources, drawn from within the organization and the broader cybersecurity community. These reports rely on the contributions of various organizations that help shape the field by setting standards, offering certifications, conducting research, and influencing policy.
 
@@ -303,6 +304,7 @@ The categories below highlight the diverse roles these organizations play in bui
 **[Working Groups](#working-groups):** These are collaborative organizations or professional associations that conduct research, share information, and develop best practices in cybersecurity.
 
 **[Government and Non-profits](#government-and-non-profits):** This category includes government agencies and non-profit organizations dedicated to cybersecurity research, policy development, and public awareness.
+<!--lint enable remark-lint:double-link-->
 
 ## Research Consulting
 - [451 Research](https://www.451research.com/) - A technology research and advisory firm specializing in emerging technology segments including cybersecurity market analysis and trends.
