@@ -391,7 +391,7 @@ def fallback_analysis(content: str, org_name: str, year: str, report_title: str,
         'ai_processed': False
     }
 
-def get_organization_url(org_name: str, query: str) -> Optional[str]:
+def get_organization_url(org_name: str, query: str, year: str) -> Optional[str]:
     """
     Get the top Google search result for a query.
     Falls back to searching for the organization's main website.
@@ -408,7 +408,7 @@ def get_organization_url(org_name: str, query: str) -> Optional[str]:
             print(f"Warning: No search results for query: '{query}'. Falling back to organization search.")
             
             # Fallback: search for the organization's main page
-            org_query = f'"{org_name}" official website'
+            org_query = f'"{org_name}" official website {year}'
             search_results_org = search(org_query, num_results=1, stop=1, pause=2.0)
             first_result_org = next(search_results_org, None)
             
@@ -499,7 +499,7 @@ def main():
             analysis['pdf_path'] = pdf_path
 
             # Use the URL from the conversion step, or generate a search URL as a reliable fallback.
-            org_url = conv.get('organization_url') if conv.get('organization_url') else get_organization_url(org_name, f'"{org_name}" "{report_title}" {year} report')
+            org_url = conv.get('organization_url') if conv.get('organization_url') else get_organization_url(org_name, f'"{org_name}" "{report_title}" {year} report', year)
             analysis['organization_url'] = org_url
             
             analysis_results.append(analysis)
