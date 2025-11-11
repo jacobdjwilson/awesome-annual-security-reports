@@ -152,8 +152,8 @@ def perform_google_search(query: str) -> Optional[str]:
     """
     try:
         # The num_results=1 and stop=1 parameters ensure we only get the first result.
-        # The pause parameter is important to avoid being blocked by Google.
-        search_results = search(query, num_results=1, stop=1, pause=2.0)
+        # The pause parameter is important to avoid being blocked by Google. The `num` argument limits the number of results.
+        search_results = search(query, num=1, pause=2.0)
         
         first_result = next(search_results, None)
         
@@ -265,7 +265,7 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
             if not organization_url:
                 org_main_query = f'"{organization_name}" official website'
                 print(f"Falling back to search for organization's main website with query: '{org_main_query}'")
-                organization_url = perform_google_search(org_main_query, organization_name, "", google_search_api_key, google_cse_id)
+                organization_url = perform_google_search(org_main_query)
                 if not organization_url:
                     # Ultimate fallback: construct a generic domain
                     organization_url = f"https://www.{''.join(e for e in organization_name if e.isalnum()).lower()}.com"
