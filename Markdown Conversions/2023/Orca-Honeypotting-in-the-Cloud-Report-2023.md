@@ -7,22 +7,22 @@
 - [Executive Summary](#executive-summary)
 - [Methodology](#methodology)
 - [Research Findings](#research-findings)
-- [1. GitHub Honeypot](#1-github-honeypot)
-- [2. AWS S3 Bucket Honeypot](#2-aws-s3-bucket-honeypot)
-- [3. SSH Honeypot](#3-ssh-honeypot)
-- [4. HTTP Honeypot](#4-http-honeypot)
-- [5. DockerHub Honeypot](#5-dockerhub-honeypot)
-- [6. ECR Honeypot](#6-ecr-honeypot)
-- [7. Elasticsearch Honeypot](#7-elasticsearch-honeypot)
-- [8. Amazon EBS (AMI) Honeypot](#8-amazon-ebs-ami-honeypot)
-- [9. Redis Honeypot](#9-redis-honeypot)
+  - [GitHub Honeypot](#github-honeypot)
+  - [AWS S3 Bucket Honeypot](#aws-s3-bucket-honeypot)
+  - [SSH Honeypot](#ssh-honeypot)
+  - [HTTP Honeypot](#http-honeypot)
+  - [DockerHub Honeypot](#dockerhub-honeypot)
+  - [ECR Honeypot](#ecr-honeypot)
+  - [Elasticsearch Honeypot](#elasticsearch-honeypot)
+  - [Amazon EBS (AMI) Honeypot](#amazon-ebs-ami-honeypot)
+  - [Redis Honeypot](#redis-honeypot)
 - [Summary](#summary)
 - [Key Recommendations](#key-recommendations)
 - [About Orca Security](#about-orca-security)
 
 Aacker Tactics and Techniques Revealed
 
-![Report Cover Image]
+![Image: Orca Security Logo]
 
 Inside This Report
 
@@ -62,7 +62,7 @@ About Orca Security 41
 
 ---
 
-# Foreword
+## Foreword
 
 "Know thy enemy and know
 
@@ -100,14 +100,14 @@ essential insights for fortifying cloud defenses.
 
 ---
 
-# About the Orca Research Pod
+## About the Orca Research Pod
 
 14+ vulnerabilities
 discovered on
 AWS, Azure, and
 Google Cloud
 
-![Orca Research Pod Logo]
+![Image: Orca Research Pod Logo]
 
 The Orca Research Pod is a group of cloud security
 researchers that discover and analyze cloud risks
@@ -152,13 +152,13 @@ Conﬁdential
 
 ---
 
-![Bar Kaduri Image]
+![Image: Bar Kaduri]
 
 Bar Kaduri
 
 Threat Research Team Leader, Orca Security
 
-![Tohar Braun Image]
+![Image: Tohar Braun]
 
 Tohar Braun
 
@@ -168,15 +168,15 @@ The goal of our honeypot research was to
 
 ﬁnd out the following:
 
-Which of the popular cloud services are most frequently targeted by aackers?
+*   Which of the popular cloud services are most frequently targeted by aackers?
 
-How long does it take for aackers to access public or easily accessible resources?
+*   How long does it take for aackers to access public or easily accessible resources?
 
-How long does it take for aackers to ﬁnd and use leaked secrets?
+*   How long does it take for aackers to ﬁnd and use leaked secrets?
 
-What are common aack routes and methods?
+*   What are common aack routes and methods?
 
-How can we leverage this information to increase defenses?
+*   How can we leverage this information to increase defenses?
 
 This research aims to equip
 
@@ -196,7 +196,7 @@ Copyright Orca Security 2023
 
 ---
 
-# Executive Summary
+## Executive Summary
 
 1
 
@@ -207,23 +207,20 @@ known: aackers are constantly scanning the Internet
 for lucrative opportunities. What did surprise us however
 was how fast this was happening:
 
-On GitHub, aackers weaponized our leaked keys within minutes. It
+*   On GitHub, aackers weaponized our leaked keys within minutes. It
 
-only took 2 minutes until one of our GitHub honeypot keys was
+    only took 2 minutes until one of our GitHub honeypot keys was
 
-used.
+    used.
+*   The ﬁrst access to our HTTP honeypot was within 3 minutes.
+*   We saw access to our SSH honeypot within 4 minutes. There were
 
-The ﬁrst access to our HTTP honeypot was within 3 minutes.
+    no aempts to use the key we planted, but we saw hundreds of
 
-We saw access to our SSH honeypot within 4 minutes. There were
+    aempts to install malware and cryptominers on our server.
+*   Our S3 Buckets were accessed in one hour and the keys were used
 
-no aempts to use the key we planted, but we saw hundreds of
-
-aempts to install malware and cryptominers on our server.
-
-Our S3 Buckets were accessed in one hour and the keys were used
-
-within 8 hours.
+    within 8 hours.
 
 It took aackers..
 
@@ -245,7 +242,7 @@ Conﬁdential
 
 ---
 
-# Executive Summary
+## Executive Summary
 
 Time to Asset Access
 
@@ -259,24 +256,76 @@ access, and the more likely it is to contain
 sensitive information -> the more aackers will
 do (automatic) reconnaissance.
 
-Certain assets, such as SSH, are highly targeted for
+*   Certain assets, such as SSH, are highly targeted for
 
-malware and cryptomining. We saw hundreds of
+    malware and cryptomining. We saw hundreds of
 
-aempts by aackers to install malware and
+    aempts by aackers to install malware and
 
-cryptominers on our SSH honeypot.
+    cryptominers on our SSH honeypot.
 
 Even though public assets on some resources are discovered much
 faster than others, it’s clear that wherever you store public data, it
 will be compromised at some point - whether it’s in minutes, hours,
 days, or months.
 
-![Time to Asset Access Chart]
+2
+
+3
+
+4
+
+1
+
+2 mins
+GitHub
+
+3 mins
+HTTP
+
+4 mins
+SSH
+
+1 hour
+S3 Bucket
+
+2
+
+2.5
+
+4
+
+2 hours
+Elasticsearch
+
+2.5 hours
+Redis
+
+4 months
+AWS ECR
+
+No aempts to access:
+DockerHub or Amazon EBS
 
 Time to Key Usage
 
-![Time to Key Usage Chart]
+2
+
+8
+
+4
+
+2 mins
+GitHub
+
+8 hours
+S3 Bucket
+
+4 months
+AWS ECR
+
+No aempts to use the keys on:
+HTTP, SSH, Elasticsearch, or Redis
 
 Copyright Orca Security 2023
 Orca Security, Highly
@@ -284,7 +333,7 @@ Conﬁdential
 
 ---
 
-# Executive Summary
+## Executive Summary
 
 3
 
@@ -294,15 +343,16 @@ cannot be relied on
 AWS keys were automatically locked
 down on GitHub, but..
 
-Secrets are automatically locked down on GitHub but not on any
-of the other resources, such as ECR and S3 Buckets.
+*   Secrets are automatically locked down on GitHub but not on any
 
-Even though permissions of the leaked keys were
-locked down as soon as the git push occurred..
+    of the other resources, such as ECR and S3 Buckets.
+*   Even though permissions of the leaked keys were
 
-Except for the breached keys from AWS in GitHub, no keys were
-reported as breached, despite the fact that some of them were used by
-unauthorized users.
+    locked down as soon as the git push occurred..
+*   Except for the breached keys from AWS in GitHub, no keys were
+
+    reported as breached, despite the fact that some of them were used by
+    unauthorized users.
 
 Even if key permissions are locked down (as they were on GitHub), the
 key is not entirely blocked. Although the policy denies most
@@ -326,7 +376,7 @@ Conﬁdential
 
 ---
 
-# Executive Summary
+## Executive Summary
 
 4
 
@@ -363,12 +413,10 @@ Asia Paciﬁc 23%
 United States 50%
 
 Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
 
 ---
 
-# Methodology
+## Methodology
 
 The purpose of this research was to achieve a beer understanding of how
 quickly aackers ﬁnd assets and use secrets in each scenario. Armed
@@ -378,24 +426,24 @@ remediations when an exposed asset has been found.
 
 In our research we measured the following:
 
-• Probability of asset access: How likely is it that an accidentally exposed asset will be accessed
-and how quickly? Does this likelihood dier depending on the resource environment? We tracked
-this by monitoring traic to the services using t-pot[^1] or native access logs.
+*   Probability of asset access: How likely is it that an accidentally exposed asset will be accessed
+    and how quickly? Does this likelihood dier depending on the resource environment? We tracked
+    this by monitoring traic to the services using t-pot[^1] or native access logs.
 
-• Tactics applied in asset access: If assets are accessed, what types of commands are used most
-often? What does this tell us about aacker tactics? We were also able to track this by monitoring
-traic to the services using t-pot[^1] or native access logs.
+*   Tactics applied in asset access: If assets are accessed, what types of commands are used most
+    often? What does this tell us about aacker tactics? We were also able to track this by monitoring
+    traic to the services using t-pot[^1] or native access logs.
 
-• Probability of secret usage: How likely is it that an exposed secret in that asset will be used? By
-using canary AWS tokens (valid access tokens that act as tripwires), we could see when, where,
-and how they were used without providing the aacker access to anything that was actually of
-interest.
+*   Probability of secret usage: How likely is it that an exposed secret in that asset will be used? By
+    using canary AWS tokens (valid access tokens that act as tripwires), we could see when, where,
+    and how they were used without providing the aacker access to anything that was actually of
+    interest.
 
-• Tactics applied in secret usage: If exposed secrets are used, what type of tactics do aackers
+*   Tactics applied in secret usage: If exposed secrets are used, what type of tactics do aackers
 
-use the most? What does this tell us about their strategies?
+    use the most? What does this tell us about their strategies?
 
-[^1]: hps://github.com/telekom-security/tpotce
+[^1]: [https://github.com/telekom-security/tpotce](https://github.com/telekom-security/tpotce)
 
 Data collection
 
@@ -418,13 +466,11 @@ Conﬁdential
 
 ---
 
-# Research Findings
-
-![Research Findings Section Divider]
+## Research Findings
 
 ---
 
-# 1. GitHub Honeypot - Setup
+## GitHub Honeypot - Setup
 
 50%
 
@@ -453,15 +499,16 @@ with an access key in it.
 Although GitHub doesn’t provide access logs to public repos, we could tell
 repo access by tracking usage of the keys in the repos.
 
-GitHub is a source control system that stores intellectual
-property such as software source code, build scripts, and
-Infrastructure as Code scripts.
+*   GitHub is a source control system that stores intellectual
 
-It is not uncommon for organizations to accidentally leak
-secrets, database passwords and other sensitive data in
-code commits. This is especially problematic as it’s
-relatively easy for aackers to discover public GitHub
-repositories and commits.
+    property such as software source code, build scripts, and
+    Infrastructure as Code scripts.
+*   It is not uncommon for organizations to accidentally leak
+
+    secrets, database passwords and other sensitive data in
+    code commits. This is especially problematic as it’s
+    relatively easy for aackers to discover public GitHub
+    repositories and commits.
 
 In view of this potential risk, we wanted to ﬁnd out how
 quickly aackers would discover and weaponize leaked
@@ -473,7 +520,7 @@ Conﬁdential
 
 ---
 
-# GitHub Honeypot - Key Usage
+## GitHub Honeypot - Key Usage
 
 Usage of the AWS key occurred quickly and from many sources.
 It took only 2 minutes for an aacker to use the leaked key.
@@ -524,7 +571,7 @@ Conﬁdential
 
 ---
 
-# GitHub Honeypot - Key Tactics
+## GitHub Honeypot - Key Tactics
 
 The majority of key usage was around reconnaissance:
 aackers were trying to ﬁnd out whether the key provided
@@ -533,22 +580,20 @@ access to any resources that could be of interest.
 API calls made with the keys
 leaked on GitHub:
 
-• “GetCallerIdentity” (25%) was the most used API call, followed
+*   “GetCallerIdentity” (25%) was the most used API call, followed
 
-by “GetAccount” (14%), which suggests that actors are trying to
-test the validity of the secret and gather more information about
-the owner of the exposed key.
+    by “GetAccount” (14%), which suggests that actors are trying to
+    test the validity of the secret and gather more information about
+    the owner of the exposed key.
+*   Next “ListUsers” (8%), and “DescribeInstances” (6%) are used
+    most commonly, which point to reconnaissance commands where
+    the actor is trying to ﬁnd out what the key provides access to.
+*   “ListHostedZones” (5%) is of further interest because it can
 
-• Next “ListUsers” (8%), and “DescribeInstances” (6%) are used
-most commonly, which point to reconnaissance commands where
-the actor is trying to ﬁnd out what the key provides access to.
+    enable an aacker to further enumerate their target’s footprint
+    and look for additional access.
 
-• “ListHostedZones” (5%) is of further interest because it can
-
-enable an aacker to further enumerate their target’s footprint
-and look for additional access.
-
-![API Calls Chart]
+![Image: Chart of API calls made with keys leaked on GitHub]
 
 Copyright Orca Security 2023
 Orca Security, Highly
@@ -556,7 +601,7 @@ Conﬁdential
 
 ---
 
-# GitHub Honeypot - Aacker Close Up
+## GitHub Honeypot - Aacker Close Up
 
 A closer look at the individual actors shows that most start initial
 reconnaissance and then give up, but a small number of actors
@@ -574,22 +619,23 @@ API calls that the top source IPs tried with our keys
 
 Malicious intent
 
-IP addresses 3.109.16.140 and 35.200.187.59 were
-behind the most usage aempts and tried to access
-data with our key. We suspect they’re the same actor. On
-the day of the key publication, they tried the same calls
-only milliseconds apart. Both IPs are located in Mumbai,
-yet, the aacker tried to use API calls in almost all
-regions, and mainly in US-East-1. The ﬁrst scan from this
-actor came about 5 minutes after publication.
+*   IP addresses 3.109.16.140 and 35.200.187.59 were
 
-IP address 88.99.96.208 is a scanner based in
-Germany, it initiated one GetAccount call for each AWS
-region, but then gave up.
+    behind the most usage aempts and tried to access
+    data with our key. We suspect they’re the same actor. On
+    the day of the key publication, they tried the same calls
+    only milliseconds apart. Both IPs are located in Mumbai,
+    yet, the aacker tried to use API calls in almost all
+    regions, and mainly in US-East-1. The ﬁrst scan from this
+    actor came about 5 minutes after publication.
+*   IP address 88.99.96.208 is a scanner based in
 
-IP address 54.39.190.134 is a GitGuardian scanner
-(a code security platform) scanning periodically up
-to 7 days after publication.
+    Germany, it initiated one GetAccount call for each AWS
+    region, but then gave up.
+*   IP address 54.39.190.134 is a GitGuardian scanner
+
+    (a code security platform) scanning periodically up
+    to 7 days after publication.
 
 Copyright Orca Security 2023
 Orca Security, Highly
@@ -597,7 +643,7 @@ Conﬁdential
 
 ---
 
-# GitHub Honeypot - Regions
+## GitHub Honeypot - Regions
 
 Although we saw half of the AWS key exploitation in the US,
 usage also occurred in almost every other region.
@@ -615,7 +661,7 @@ America (4%), and Canada (3%).
 So, as we can see, no region
 is out of target for aackers.
 
-![AWS Regions Chart]
+![Image: Chart of AWS regions where API calls were made with leaked keys on GitHub]
 
 Copyright Orca Security 2023
 Orca Security, Highly
@@ -623,7 +669,7 @@ Conﬁdential
 
 ---
 
-# 2. AWS S3 Bucket Honeypot - Setup
+## AWS S3 Bucket Honeypot - Setup
 
 Bucket naming
 
@@ -646,48 +692,46 @@ it was used.
 
 Our S3 Bucket Honeypot Names
 
-● ben-application-mirroring
-● org.com
-● static-assets-com
-● prod-sandra-sadeh-simon
-● san-gui-images
-● sergei-bucket
-● shen-test
+*   ben-application-mirroring
+*   org.com
+*   static-assets-com
+*   prod-sandra-sadeh-simon
+*   san-gui-images
+*   sergei-bucket
+*   shen-test
 
-● slava-images
-● sophie-tests
-● roy-prod-duplication
-● staging-production-assets
-● static-prod-bucket
-● switanok-zustricz
+*   slava-images
+*   sophie-tests
+*   roy-prod-duplication
+*   staging-production-assets
+*   static-prod-bucket
+*   switanok-zustricz
 
-• Because there is no easy way to ﬁnd names of new or existing
+*   Because there is no easy way to ﬁnd names of new or existing
 
-S3 buckets without having the appropriate permissions to begin
-with, aackers have to ﬁnd accessible buckets by cycling through
-possible names until they discover accessible ones (known as
-brute-forcing).
-
-• To aract our aackers, we used bucket names that included
-variations of names that we know public bucket scanners are
-already actively searching for, and are included on common bucket
-names lists used by aackers.
+    S3 buckets without having the appropriate permissions to begin
+    with, aackers have to ﬁnd accessible buckets by cycling through
+    possible names until they discover accessible ones (known as
+    brute-forcing).
+*   To aract our aackers, we used bucket names that included
+    variations of names that we know public bucket scanners are
+    already actively searching for, and are included on common bucket
+    names lists used by aackers.
 
 Public access
 
-• Our public S3 Buckets allowed anybody to list the objects
+*   Our public S3 Buckets allowed anybody to list the objects
 
-stored in the bucket and read the contents of those objects.
-
-• This is what we wanted in our honeypot, but precisely what we
-wouldn’t want on a storage bucket that contains sensitive
-information.
+    stored in the bucket and read the contents of those objects.
+*   This is what we wanted in our honeypot, but precisely what we
+    wouldn’t want on a storage bucket that contains sensitive
+    information.
 
 Copyright Orca Security 2023
 
 ---
 
-# AWS S3 Bucket Honeypot - Access
+## AWS S3 Bucket Honeypot - Access
 
 While there are actors who actively scan for public buckets with
 easily guessable names, only one of our buckets was actually
@@ -726,7 +770,7 @@ Conﬁdential
 
 ---
 
-# AWS S3 Bucket Honeypot - Publication
+## AWS S3 Bucket Honeypot - Publication
 
 We ﬁrst posted to Pastebin in dierent geographies and languages,
 which led to some access. Initially, we saw the most access from
@@ -738,171 +782,7 @@ Next, we used Twier (posted with appropriate hashtags), GitHub
 Reddit (posted to r/Hacking_Tutorials). This led to a large number of
 logins on the shen-test bucket.
 
-Bucket
-Name
-
-# of Initial
-Logins
-
-First
-Publication
-
-Post
-Views
-
-# of
-Additional
-Logins
-
-Second
-Publication
-
-Post
-Views
-
-# of
-Additional
-Logins
-
-# of Total
-Logins
-
-shen-test
-
-org.com
-
-roy-prod-du
-plications
-
-sergei-buck
-et
-
-switanok-zu
-stricz
-
-sophie-tests
-
-slava-imege
-s
-
-0
-
-23
-
-0
-
-0
-
-0
-
-0
-
-0
-
-Pastebin
-(CN)
-
-Not
-published
-
-Pastebin
-(EN)
-
-Pastebin
-(UA)
-
-Pastebin
-(UA)
-
-Pastebin
-(RU)
-
-Pastebin
-(RU)
-
-13
-
-N/A
-
-21
-
-8
-
-8
-
-13
-
-13
-
-5
-
-Twitter
-
-126
-
-N/A
-
-N/A
-
-N/A
-
-0
-
-6
-
-3
-
-0
-
-0
-
-Reddit
-
-34
-
-N/A
-
-N/A
-
-GitHub
-
-N/A
-
-Twitter
-
-Twitter
-
-25
-
-25
-
-50
-
-N/A
-
-7
-
-N/A
-
-N/A
-
-3
-
-3
-
-55
-
-23
-
-7
-
-6
-
-3
-
-3
-
-3
+![Image: Table of S3 Bucket Publication Details]
 
 The most accessed bucket was shen-test. Shen-test was
 ﬁrst published on the Chinese Pastebin, but got far more
@@ -918,7 +798,7 @@ Conﬁdential
 
 ---
 
-# AWS S3 Bucket Honeypot - Tactics
+## AWS S3 Bucket Honeypot - Tactics
 
 What actions did aackers take once they discovered the buckets?
 
@@ -926,9 +806,9 @@ Scoping out the target
 
 By far the most used action was HEAD-BUCKET. This action is used
 to determine if a bucket exists and whether you have permission to
-access it. Other often used commands were GET_ACL (to read the
-access control list of the resource), GET_Policy_Status (to ﬁnd out
-whether the bucket is public), and GET_Public_Access_Block (to
+access it. Other often used commands were GET\_ACL (to read the
+access control list of the resource), GET\_Policy\_Status (to ﬁnd out
+whether the bucket is public), and GET\_Public\_Access\_Block (to
 retrieve the PublicAccessBlock conﬁguration of the bucket).
 
 Commands used to access the S3 buckets
@@ -937,11 +817,11 @@ We can tell from the actions aackers took that they
 were trying to ﬁnd out whether they could access
 the bucket and if it contained anything interesting:
 
-• Is this bucket public?
-• What permissions do I have?
-• Which users can access the bucket?
-• Is there a public access block on the bucket?
-• Which instances are running in this bucket?
+*   Is this bucket public?
+*   What permissions do I have?
+*   Which users can access the bucket?
+*   Is there a public access block on the bucket?
+*   Which instances are running in this bucket?
 
 Copyright Orca Security 2023
 Orca Security, Highly
@@ -949,7 +829,7 @@ Conﬁdential
 
 ---
 
-# AWS S3 Bucket Honeypot - Key Usage
+## AWS S3 Bucket Honeypot - Key Usage
 
 After the buckets were accessed, it took 8 hours for aackers to
 start using the key. The diagram on the right shows the actions the
@@ -975,7 +855,7 @@ If these keys had been ‘real’ keys, no doubt the aackers could
 have leveraged any information found in the buckets and caused
 some real damage.
 
-![Commands Used with Keys Chart]
+![Image: Chart of commands used with keys exposed on S3 buckets]
 
 Copyright Orca Security 2023
 Orca Security, Highly
@@ -983,7 +863,7 @@ Conﬁdential
 
 ---
 
-# 3. SSH Honeypot
+## SSH Honeypot
 
 For our SSH honeypot, we opened port 22 and allowed any
 user/password combination. We did not need to wait long: we saw
@@ -1000,8 +880,12 @@ passwords such as admin, 123456, root, (empty), and password.
 It took aackers..
 4mins to access our SSH honeypot
 
+![Image: Top usernames detected on attempted logins through SSH]
+
 Top usernames detected on aempted
 logins through SSH
+
+![Image: Top passwords detected on attempted logins through SSH]
 
 Top passwords detected on aempted
 logins through SSH
@@ -1012,7 +896,7 @@ Conﬁdential
 
 ---
 
-# SSH Honeypot - Tactics
+## SSH Honeypot - Tactics
 
 The exposed key was located in /home/<user>/.aws/credentials.
 However, we did not detect any usage of the key.
@@ -1034,11 +918,14 @@ machine becomes a bot that could be controlled remotely and used
 for many purposes, for example as a bot in a DDoS aack.
 
 Mirai variants detected:
+
+```
 771229b5b05e22d4f43e728b38c1e6f08fe7157e3c6dcade0e9af065f710f22d
 77a2c317ca9d43acc056cf8217a8c838d23af63965b33dc931877360d5919b8d
 C5bd2146ebbe575a47a666e07b99eb526d46d74e0d7758bf0bf5cb5b3adaa55a
 36bc49ede8e0f4a54449602ca2bc681f96b14869841a243ddfb7d94fb6f28749
 A04ac6d98ad989312783d4fe3456c53730b212c79a426fb215708b6c6daa3de3
+```
 
 Aempts to run Cryptominers
 
@@ -1048,10 +935,13 @@ machine they exploited to mine cryptocurrency. We also saw hundreds
 of aempts to install cryptominers on our machine.
 
 Miners detected:
+
+```
 B9e643a8e78d2ce745fbe73eb505c8a0cc49842803077809b2267817979d10b0
 28516b0407f1bef5de782d7bf916a9a7cf692ef66261768efae4423e93efe280
-3a43e9ceededc2d3b8bae8f8fc8c539047cdacdd315ebef3adc6651117325e
+3a43e9ceededc2d3b8bae8f8fc8c539047cdacdd315ebef3adc6651117325e
 94f2e4d8d4436874785cd14e6e6d403507b8750852f7f2040352069a75da4c00
+```
 
 Copyright Orca Security 2023
 Orca Security, Highly
@@ -1059,7 +949,7 @@ Conﬁdential
 
 ---
 
-# 4. HTTP Honeypot
+## HTTP Honeypot
 
 Top URIs accessed
 
@@ -1104,7 +994,7 @@ Conﬁdential
 
 ---
 
-# 5. DockerHub
+## DockerHub
 
 For our Docker honeypot, we created a Docker image that builds
 a container with an AWS conﬁg ﬁle that contains keys, then
@@ -1136,7 +1026,7 @@ Conﬁdential
 
 ---
 
-# 6. ECR Honeypot
+## ECR Honeypot
 
 We created a public registry in Amazon’s Elastic Container Registry
 (ECR) with names we believed would aract the interest of aackers:
@@ -1184,7 +1074,7 @@ Conﬁdential
 
 ---
 
-# 7. Elasticsearch Honeypot
+## Elasticsearch Honeypot
 
 Elasticsearch is a popular data analytics and visualization
 program. In the default conﬁguration, the API endpoint for
@@ -1224,7 +1114,7 @@ Conﬁdential
 
 ---
 
-# 8. Amazon EBS (AMI) Honeypot
+## Amazon EBS (AMI) Honeypot
 
 Amazon Elastic Block Store (EBS) is a block storage service
 that allows you to use EBS Snapshots with automated lifecycle
@@ -1254,7 +1144,7 @@ Conﬁdential
 
 ---
 
-# 9. Redis Honeypot
+## Redis Honeypot
 
 Redis is a popular in-memory data structure store that enables very
 fast access to stored data. In a default conﬁguration, Redis exposes
@@ -1323,7 +1213,7 @@ Conﬁdential
 
 ---
 
-# Redis Honeypot - Tactics
+## Redis Honeypot - Tactics
 
 The two calls that the aackers used the most are
 ‘NewConnect’ and ‘Closed’, which are used for straightforward
@@ -1333,4 +1223,7 @@ more about the asset.
 
 Some of the other calls indicate more nefarious aempts. For
 example, ‘MODULE LOAD /.red2.so’ is associated with a
-campaign to exploit exposed Redis servers in
+campaign to exploit exposed Redis servers in order to run a
+cryptominer.
+
+This conﬁrms that aackers are actively looking for
