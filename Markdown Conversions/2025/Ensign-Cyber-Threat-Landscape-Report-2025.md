@@ -1,4 +1,3 @@
-```markdown
 # AI Instruction Set for Converting Technical PDFs to Markdown
 
 ## Purpose
