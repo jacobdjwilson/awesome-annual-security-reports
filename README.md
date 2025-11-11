@@ -1,6 +1,5 @@
 <!-- lint ignore double-link -->
 <!--lint ignore definition-case-->
-<!--lint disable remark-lint:double-link-->
 <!--lint disable awesome-toc-->
 <!--lint disable no-emphasis-as-heading-->
 <!--lint disable awesome-list-item-->
@@ -297,17 +296,17 @@ Annual reports are the result of a collaborative effort, combining research from
 
 The categories below highlight the diverse roles these organizations play in building cybersecurity programs and advancing best practices. By exploring these groups, readers can gain insight into the ecosystem that underpins the development of annual reports and drives progress in the industry.
 
-**[Research Consulting](#research-consulting):** These are organizations that offer paid research services, market analysis, and consulting in the field of information technology and cybersecurity.
+**Research Consulting:** These are organizations that offer paid research services, market analysis, and consulting in the field of information technology and cybersecurity.
 
-**[Standards and Certifications](#standards-and-certifications):** Organizations involved in setting cybersecurity standards, providing certifications, and creating frameworks for best practices.
+**Standards and Certifications:** Organizations involved in setting cybersecurity standards, providing certifications, and creating frameworks for best practices.
 
-**[Threat Intelligence and Incident Response](#threat-intelligence-and-incident-response):** Organizations focused on sharing threat intelligence, coordinating cyber incident responses, and combating cyber threats.
+**Threat Intelligence and Incident Response:** Organizations focused on sharing threat intelligence, coordinating cyber incident responses, and combating cyber threats.
 
-**[Policy and Advocacy](#policy-and-advocacy):** Institutions shaping cybersecurity policies, regulations, and public awareness on a national or international scale.
+**Policy and Advocacy]:** Institutions shaping cybersecurity policies, regulations, and public awareness on a national or international scale.
 
-**[Working Groups](#working-groups):** These are collaborative organizations or professional associations that conduct research, share information, and develop best practices in cybersecurity.
+**Working Groups:** These are collaborative organizations or professional associations that conduct research, share information, and develop best practices in cybersecurity.
 
-**[Government and Non-profits](#government-and-non-profits):** This category includes government agencies and non-profit organizations dedicated to cybersecurity research, policy development, and public awareness.
+**Government and Non-profits:** This category includes government agencies and non-profit organizations dedicated to cybersecurity research, policy development, and public awareness.
 
 ## Research Consulting
 - [451 Research](https://www.451research.com/) - A technology research and advisory firm specializing in emerging technology segments including cybersecurity market analysis and trends.
