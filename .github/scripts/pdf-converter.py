@@ -301,6 +301,10 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
 
         markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
         
+        # Post-process: Remove markdown code block wrappers if AI incorrectly added them
+        markdown_content = re.sub(r'^\s*```(?:markdown)?\s*\n', '', markdown_content, 1)
+        markdown_content = re.sub(r'\n\s*```\s*$', '', markdown_content, 1)
+
         # Prepare output
         relative_path = pdf_path.relative_to(Path("Annual Security Reports"))
         output_dir = Path("Markdown Conversions") / relative_path.parent
