@@ -152,8 +152,8 @@ def perform_google_search(query: str) -> Optional[str]:
     """
     try:
         # The num_results=1 and stop=1 parameters ensure we only get the first result.
-        # The pause parameter is important to avoid being blocked by Google. The `stop` argument limits the number of results.
-        search_results = search(query, stop=1, pause=2.0)
+        # The pause parameter is important to avoid being blocked by Google. We will retrieve only the first result from the iterator.
+        search_results = search(query, pause=2.0)
         
         first_result = next(search_results, None)
         
