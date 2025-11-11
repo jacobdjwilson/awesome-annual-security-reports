@@ -398,7 +398,7 @@ def get_organization_url(org_name: str, query: str, year: str) -> Optional[str]:
     """
     try:
         # First, search for the specific report
-        search_results = search(query, num_results=1, stop=1, pause=2.0)
+        search_results = search(query, stop=1, pause=2.0)
         first_result = next(search_results, None)
         
         if first_result:
@@ -409,7 +409,7 @@ def get_organization_url(org_name: str, query: str, year: str) -> Optional[str]:
             
             # Fallback: search for the organization's main page
             org_query = f'"{org_name}" official website {year}'
-            search_results_org = search(org_query, num_results=1, stop=1, pause=2.0)
+            search_results_org = search(org_query, stop=1, pause=2.0)
             first_result_org = next(search_results_org, None)
             
             if first_result_org:
