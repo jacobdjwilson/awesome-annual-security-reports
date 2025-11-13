@@ -110,13 +110,6 @@ def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
     # Remove common extensions and year suffixes
     filename_clean = re.sub(r'[-_\s]*20\d{2}[-_\s]*', '', filename)
     
-    # Special handling for specific patterns
-    if 'proofpoint' in filename_clean.lower():
-        if 'voice-of-the-ciso' in filename_clean.lower():
-            org_name = "Proofpoint"
-            title = "Voice of the CISO Report"
-            return org_name, year, title
-    
     # General parsing - split on first dash or underscore
     parts = re.split(r'[-_]+', filename_clean, 1)
     
@@ -134,6 +127,7 @@ def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
         
         # Handle special cases for well-known organizations
         org_mapping = {
+            'Blackduck': 'BlackDuck',
             'Cyberark': 'CyberArk',
             'Sailpoint': 'SailPoint',
             'Crowdstrike': 'CrowdStrike',
@@ -193,13 +187,6 @@ def categorize_content_fallback(content: str, available_categories: Dict[str, Li
     # Check for survey indicators first
     survey_indicators = ['survey', 'study', 'poll', 'respondents', 'interviewed', 'questionnaire', 'feedback', 'voice of', 'findings']
     is_survey = any(indicator in content_lower or indicator in title_lower for indicator in survey_indicators)
-    
-    # Special handling for specific organizations and titles
-    if 'proofpoint' in org_lower and ('voice' in title_lower or 'ciso' in title_lower):
-        if 'Voice' in available_categories.get("Survey", []):
-            return "Survey", "Voice"
-        elif 'Industry Trends' in available_categories.get("Survey", []):
-            return "Survey", "Industry Trends"
     
     # Score categories based on keyword frequency
     category_scores = {}
