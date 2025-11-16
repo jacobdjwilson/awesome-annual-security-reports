@@ -389,40 +389,44 @@ def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
         print("Warning: GOOGLE_SEARCH_API_KEY or GOOGLE_CSE_ID not set. Skipping URL search.")
         return f"https://www.{''.join(e for e in org_name if e.isalnum()).lower()}.com"
 
-    query = f'"{org_name}" "{title}" {year} filetype:pdf OR "{org_name}" security report {year}'
+    # Simplified search query
+    query = f'"{org_name}" "{title}" {year}'
     print(f"Performing Google Custom Search with query: {query}")
 
     try:
         service = build("customsearch", "v1", developerKey=api_key)
         res = service.cse().list(q=query, cx=cse_id, num=5).execute()
-        
+
         items = res.get('items', [])
         if not items:
             print("No results found from Google Custom Search.")
             return None
 
-        # Prioritize results
+        # --- Simplified Result Prioritization ---
         org_lower = org_name.lower()
-        title_lower = title.lower().replace(' ', '-')
+        # Get significant keywords from the title (more than 3 letters)
+        title_keywords = {word for word in re.findall(r'\b\w{4,}\b', title.lower())}
         results_urls = [item['link'] for item in items]
 
-        # 1. High priority: URL contains org and title
+        # 1. High priority: URL contains org name and at least one significant title keyword
         for url in results_urls:
             url_lower = url.lower()
-            if org_lower in url_lower and title_lower in url_lower:
-                print(f"Found high-priority match: {url}")
-                return url
+            if org_lower in url_lower:
+                # Check if any title keyword is in the URL
+                if any(keyword in url_lower for keyword in title_keywords):
+                    print(f"Found high-priority match (org + title keyword): {url}")
+                    return url
 
-        # 2. Medium priority: URL contains org name
+        # 2. Medium priority: URL contains just the org name (if no title keyword match)
         for url in results_urls:
             if org_lower in url.lower():
-                print(f"Found medium-priority match: {url}")
+                print(f"Found medium-priority match (org name only): {url}")
                 return url
 
-        # 3. Low priority: Return the first result if no better match is found
-        print(f"No specific match found, returning first result: {results_urls[0]}")
+        # 3. Low priority (Fallback): Return the very first result
+        print(f"No specific match found, returning the first result: {results_urls[0]}")
         return results_urls[0]
-            
+
     except Exception as e:
         print(f"Error during Google Custom Search API call: {e}")
         return f"https://www.{''.join(e for e in org_name if e.isalnum()).lower()}.com"
