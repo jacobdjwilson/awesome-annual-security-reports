@@ -3,7 +3,7 @@ import sys
 import re
 import google.generativeai as genai
 from pathlib import Path
-import subprocess
+from googleapiclient.discovery import build
 from markitdown import MarkItDown
 from googlesearch import search
 import argparse
@@ -150,43 +150,50 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
     # Ultimate fallback
     return "Unknown Organization", "Security Report"
 
-def perform_google_search(org_name: str, title: str, year: str) -> Optional[str]:
+def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
     """
-    Performs a Google search with multiple queries and returns the best URL.
-    This is optimized to perform a single search request for multiple results.
+    Performs an optimized Google search and returns the best URL.
     """
-    # Construct a single, powerful query using OR logic
-    query = f'("{org_name}" AND "{title}" AND "{year}") OR ("{org_name}" AND "security report" AND "{year}") OR ("{org_name}" AND "official website")'
-    print(f"Performing optimized Google search with query: {query}")
+    api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
+    cse_id = os.environ.get("GOOGLE_CSE_ID")
+
+    if not api_key or not cse_id:
+        print("Warning: GOOGLE_SEARCH_API_KEY or GOOGLE_CSE_ID not set. Skipping URL search.")
+        return None
+
+    query = f'"{org_name}" "{title}" {year}'
+    print(f"Performing Google Custom Search with query: {query}")
 
     try:
-        # Fetch top 5 results to analyze
-        results = list(search(query, num=5, stop=5, pause=2.0))
+        service = build("customsearch", "v1", developerKey=api_key)
+        res = service.cse().list(q=query, cx=cse_id, num=5).execute()
 
-        if not results:
-            print("No results found from optimized search.")
+        items = res.get('items', [])
+        if not items:
+            print("No results found from Google Custom Search.")
             return None
 
-        # Prioritize results
+        # --- Simplified Result Prioritization ---
         org_lower = org_name.lower()
-        title_lower = title.lower().replace(' ', '-')
+        title_keywords = {word for word in re.findall(r'\b\w{4,}\b', title.lower())}
+        results_urls = [item['link'] for item in items]
 
-        # 1. High priority: URL contains org and title
-        for url in results:
+        # 1. High priority: URL contains org name and at least one significant title keyword
+        for url in results_urls:
             url_lower = url.lower()
-            if org_lower in url_lower and title_lower in url_lower:
-                print(f"Found high-priority match: {url}")
+            if org_lower in url_lower and any(keyword in url_lower for keyword in title_keywords):
+                print(f"Found high-priority match (org + title keyword): {url}")
                 return url
 
-        # 2. Medium priority: URL contains org name
-        for url in results:
+        # 2. Medium priority: URL contains just the org name
+        for url in results_urls:
             if org_lower in url.lower():
-                print(f"Found medium-priority match: {url}")
+                print(f"Found medium-priority match (org name only): {url}")
                 return url
 
-        # 3. Low priority: Return the first result if no better match is found
-        print(f"No specific match found, returning first result: {results[0]}")
-        return results[0]
+        # 3. Fallback: Return the first result
+        print(f"No specific match found, returning the first result: {results_urls[0]}")
+        return results_urls[0]
 
     except Exception as e:
         print(f"An error occurred during Google search for query '{query}': {e}")
@@ -225,10 +232,12 @@ def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url:
             {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_ONLY_HIGH"},
         ]
         
+        request_options = {"timeout": 120} # Add a 2-minute timeout
         response = model.generate_content(
             full_prompt, 
             generation_config=generation_config,
-            safety_settings=safety_settings
+            safety_settings=safety_settings,
+            request_options=request_options
         )
 
         if response.prompt_feedback and hasattr(response.prompt_feedback, 'block_reason') and response.prompt_feedback.block_reason:
@@ -283,7 +292,7 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         # Search for organization URL
         organization_url = None
         if organization_name and report_title and year:
-            organization_url = perform_google_search(organization_name, report_title, year)
+            organization_url = get_organization_url(organization_name, report_title, year)
                 
         if not organization_url:
             # Ultimate fallback: construct a generic domain
