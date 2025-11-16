@@ -5,9 +5,9 @@ import re
 import argparse
 import google.generativeai as genai
 import urllib.parse
+from googleapiclient.discovery import build
 from typing import List, Dict, Any, Tuple, Optional
 from pathlib import Path
-from googlesearch import search
 
 # Configure Gemini API
 MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
@@ -382,41 +382,49 @@ def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
     """
     Performs an optimized Google search and returns the best URL.
     """
-    # Construct a single, powerful query using OR logic
-    query = f'("{org_name}" AND "{title}" AND "{year}") OR ("{org_name}" AND "security report" AND "{year}") OR ("{org_name}" AND "official website")'
-    print(f"Performing optimized Google search with query: {query}")
+    api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
+    cse_id = os.environ.get("GOOGLE_CSE_ID")
+
+    if not api_key or not cse_id:
+        print("Warning: GOOGLE_SEARCH_API_KEY or GOOGLE_CSE_ID not set. Skipping URL search.")
+        return f"https://www.{''.join(e for e in org_name if e.isalnum()).lower()}.com"
+
+    query = f'"{org_name}" "{title}" {year} filetype:pdf OR "{org_name}" security report {year}'
+    print(f"Performing Google Custom Search with query: {query}")
 
     try:
-        # Fetch top 5 results to analyze
-        results = list(search(query, num=5, stop=5, pause=2.0))
-
-        if not results:
-            print("No results found from optimized search.")
+        service = build("customsearch", "v1", developerKey=api_key)
+        res = service.cse().list(q=query, cx=cse_id, num=5).execute()
+        
+        items = res.get('items', [])
+        if not items:
+            print("No results found from Google Custom Search.")
             return None
 
         # Prioritize results
         org_lower = org_name.lower()
         title_lower = title.lower().replace(' ', '-')
+        results_urls = [item['link'] for item in items]
 
         # 1. High priority: URL contains org and title
-        for url in results:
+        for url in results_urls:
             url_lower = url.lower()
             if org_lower in url_lower and title_lower in url_lower:
                 print(f"Found high-priority match: {url}")
                 return url
 
         # 2. Medium priority: URL contains org name
-        for url in results:
+        for url in results_urls:
             if org_lower in url.lower():
                 print(f"Found medium-priority match: {url}")
                 return url
 
         # 3. Low priority: Return the first result if no better match is found
-        print(f"No specific match found, returning first result: {results[0]}")
-        return results[0]
+        print(f"No specific match found, returning first result: {results_urls[0]}")
+        return results_urls[0]
             
     except Exception as e:
-        print(f"Error during Google Search: {e}")
+        print(f"Error during Google Custom Search API call: {e}")
         return f"https://www.{''.join(e for e in org_name if e.isalnum()).lower()}.com"
 
 def main():
