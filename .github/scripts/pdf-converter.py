@@ -120,6 +120,7 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
                     'Ai': 'AI',
                     'Api': 'API',
                     'Id': 'ID',
+                    'Dns': 'DNS',
                     'Dos': 'DoS',
                     'Ddos': 'DDoS',
                     'Cve': 'CVE',
