@@ -165,7 +165,8 @@ def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
         print("Warning: GOOGLE_SEARCH_API_KEY or GOOGLE_CSE_ID not set. Skipping URL search.")
         return None
 
-    query = f'"{org_name}" "{title}" {year}'
+    # Use a less restrictive query without quotes for more flexible matching
+    query = f'{org_name} {title} {year}'
     print(f"Performing Google Custom Search with query: {query}")
 
     try:

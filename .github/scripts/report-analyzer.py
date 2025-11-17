@@ -399,7 +399,8 @@ def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
         return f"https://www.{''.join(e for e in org_name if e.isalnum()).lower()}.com"
 
     # Simplified search query
-    query = f'"{org_name}" "{title}" {year}'
+    # Use a less restrictive query without quotes for more flexible matching
+    query = f'{org_name} {title} {year}'
     print(f"Performing Google Custom Search with query: {query}")
 
     try:
