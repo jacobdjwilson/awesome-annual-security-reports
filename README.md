@@ -56,7 +56,7 @@ When possible, all reports will be sourced from their original authors and uploa
     - [Policy and Advocacy](#policy-and-advocacy)
     - [Working Groups](#working-groups)
     - [Government and Non-profits](#government-and-non-profits)
-- [Contributing](#contributing)
+- [How to Contribute](#how-to-contribute)
 <!-- /TOC -->
 
 ## Overview
@@ -68,6 +68,14 @@ Reports are organized into two main categories based on their data sources:
 The most recent versions of reports are listed below. Older editions are preserved in their corresponding yearly directories. Reports from sources that have not been updated in the last three years will no longer appear in this `README.md` but will remain accessible in the respective year's directory.
 
 Reports are organized by their primary focus. Although many reports span multiple topics, this classification provides a clearer structure. Within each topic, reports are listed alphabetically.
+
+## How to Contribute
+
+The easiest way to contribute is to suggest a report. If you've found a valuable annual security report that isn't on our list, please let us know!
+
+<a href="https://github.com/jacobdjwilson/awesome-annual-security-reports/issues/new/choose" target="_blank">
+  <img src="https://img.shields.io/badge/Suggest%20a%20New%20Report-brightgreen?style=for-the-badge&logo=github" alt="Suggest a New Report" />
+</a>
 
 ## Analysis Reports
 
@@ -375,6 +383,3 @@ The categories below highlight the diverse roles these organizations play in bui
 - [National Institute of Standards and Technology (NIST)](https://www.nist.gov/cybersecurity) - A U.S. agency that develops cybersecurity standards and guidelines.
 - [Norwegian National Security Authority (NSM)](https://nsm.no/en/) - Norway's expert body for information and object security, providing guidance and incident response capabilities.
 - [Singapore Cyber Security Agency (CSA)](https://www.csa.gov.sg/) - Singapore's national agency overseeing cybersecurity strategy and development.
-
-## Contributing
-[Please refer to the guidelines at CONTRIBUTING.md for details](CONTRIBUTING.md).

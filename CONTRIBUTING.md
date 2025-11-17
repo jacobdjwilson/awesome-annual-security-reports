@@ -1,19 +1,24 @@
 # Contribution Guidelines
 
-Thank you for your interest in contributing to the Awesome Annual Security Reports repository! Please follow the guidelines below when submitting your pull request:
+Thank you for your interest in contributing to the Awesome Annual Security Reports repository! We welcome all contributions.
 
-- Ensure your suggestion is not a duplicate of existing reports.
-- Create a pull request that includes:
-  - **Provide Report Link** to the original source or author.
-  - **Upload PDF Report** to the `Annual Security Reports` sub directory
-  - **Add Description** summarizing the report’s content and relevance.
-  - **Categorize Correctly** your contribution as either `Analysis` or `Survey` and put under the correct heading in ABC order.
-- Upload the PDF of the report directly to the repository. Ensure the file is placed in the appropriate yearly folder for easier access.
-- Include a link to the report on Hybrid Analysis in the commit comments for verification.
-- Format your entry in the following manner:
-  - `- [Report Name](Link_to_Report) - [Description](Path_to_PDF) (Year) - Brief summary of the report’s focus or findings.`
-  - **Example:** 
-    - `- [Mandiant](https://www.mandiant.com/m-trends) - [MTrends Special Report](Annual%20Security%20Reports/2024/Mandiant-M-Trends-2024.pdf) (2024) - The MTrends Special Report offers insights into advanced persistent threats, emerging attack techniques, and strategies for improving organizational cyber defense.`
-- Feel free to suggest new categories or improvements to the existing structure via `Issues`.
+## The Easy Way: Suggest a Report
+
+If you're not familiar with Git or pull requests, the easiest way to contribute is by suggesting a report.
+
+[**➡️ Click here to suggest a new report**](https://github.com/jacobdjwilson/awesome-annual-security-reports/issues/new/choose)
+
+Simply fill out the form with a link to the report, and a maintainer will review it and add it to the collection.
+
+## The Advanced Way: Create a Pull Request
+
+If you are comfortable with Git, you can add a report directly by following these steps:
+
+1.  **Fork the repository.**
+2.  **Add the PDF:** Place the new report's PDF file into the correct `Annual Security Reports/<year>/` directory. Please use the naming convention: `Organization-ReportTitle-Year.pdf`.
+3.  **Commit your changes.** The commit will trigger the automated pipeline to process the file, analyze it, and update the `README.md`.
+4.  **Create a pull request** against the `main` branch.
+
+Our GitHub Actions pipeline will handle the conversion, analysis, and README update automatically. A maintainer will review and merge the final pull request.
 
 We appreciate your contributions and thank you for your suggestions!
