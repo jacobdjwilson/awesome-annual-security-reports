@@ -6,7 +6,7 @@ Thank you for your interest in contributing to the Awesome Annual Security Repor
 
 If you're not familiar with Git or pull requests, the easiest way to contribute is by suggesting a report.
 
-[**➡️ Click here to suggest a new report**](https://github.com/jacobdjwilson/awesome-annual-security-reports/issues/new/choose)
+[**➡️ Click here to suggest a new report**](https://github.com/jacobdjwilson/awesome-annual-security-reports/issues/new?template=report-suggestion.md)
 
 Simply fill out the form with a link to the report, and a maintainer will review it and add it to the collection.
 
