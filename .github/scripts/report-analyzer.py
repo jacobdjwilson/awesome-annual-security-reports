@@ -107,45 +107,54 @@ def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
     filename = path.stem
     print(f"Parsing filename: {filename}")
     
-    # Remove common extensions and year suffixes
-    filename_clean = re.sub(r'[-_\s]*20\d{2}[-_\s]*', '', filename)
-    
-    # General parsing - split on first dash or underscore
-    parts = re.split(r'[-_]+', filename_clean, 1)
-    
-    if len(parts) >= 2:
-        org_part = parts[0].strip()
-        title_part = parts[1].strip()
+    # General parsing - try different separators
+    separators = [' - ', '_-_', '--', '_', '-']
+    org_name = None
+    title = None
+
+    for sep in separators:
+        if sep in filename:
+            parts = filename.split(sep, 1)
+            if len(parts) != 2:
+                continue
+
+            org_part, title_part = parts
+            if not org_part.strip() or not title_part.strip():
+                continue
         
-        # Clean up organization name
-        org_name = re.sub(r'[_-]', ' ', org_part)
-        org_name = ' '.join(word.capitalize() for word in org_name.split())
+            # Clean up organization name
+            org_name = ' '.join(word.capitalize() for word in org_part.replace('_', ' ').replace('-', ' ').split())
         
-        # Clean up title - convert dashes/underscores to spaces and capitalize
-        title = re.sub(r'[_-]', ' ', title_part)
-        title = ' '.join(word.capitalize() for word in title.split())
+            # Clean up title - convert dashes/underscores to spaces and capitalize
+            title = ' '.join(word.capitalize() for word in title_part.replace('_', ' ').replace('-', ' ').split())
+            title = re.sub(r'\s*20\d{2}\s*', '', title).strip()
+
+            if org_name.lower() == title.lower():
+                org_name, title = None, None # Reset on bad parse
+                continue
         
-        # Handle special cases for well-known organizations
-        org_mapping = {
-            'Blackduck': 'BlackDuck',
-            'Cyberark': 'CyberArk',
-            'Sailpoint': 'SailPoint',
-            'Crowdstrike': 'CrowdStrike',
-            'Palo Alto': 'Palo Alto Networks',
-            'Proofpoint': 'Proofpoint',
-        }
+            # Handle special cases for well-known organizations
+            org_mapping = {
+                'Blackduck': 'BlackDuck',
+                'Cyberark': 'CyberArk',
+                'Sailpoint': 'SailPoint',
+                'Crowdstrike': 'CrowdStrike',
+                'Palo Alto': 'Palo Alto Networks',
+                'Proofpoint': 'Proofpoint',
+            }
         
-        for old_name, new_name in org_mapping.items():
-            if org_name.lower() == old_name.lower():
-                org_name = new_name
-                break
+            for old_name, new_name in org_mapping.items():
+                if org_name.lower() == old_name.lower():
+                    org_name = new_name
+                    break
                 
-        # Clean up common title patterns
-        title = re.sub(r'\b(report|security|annual)\b', lambda m: m.group(1).capitalize(), title, flags=re.IGNORECASE)
-        
-    else:
+            # Clean up common title patterns
+            title = re.sub(r'\b(report|security|annual)\b', lambda m: m.group(1).capitalize(), title, flags=re.IGNORECASE)
+            break # Successful parse, exit loop
+
+    if not org_name or not title:
         # Fallback if parsing fails - try to extract organization from start
-        words = filename_clean.replace('_', ' ').replace('-', ' ').split()
+        words = filename.replace('_', ' ').replace('-', ' ').split()
         if words:
             # First word is likely the organization
             org_name = words[0].capitalize()

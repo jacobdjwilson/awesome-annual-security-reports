@@ -82,7 +82,7 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
     filename_lower = filename_stem.lower()
     
     # General parsing - try different separators
-    separators = [' - ', '_-_', '--', '_']
+    separators = [' - ', '_-_', '--', '_', '-'] # Added single hyphen
     for sep in separators:
         if sep in filename_stem:
             parts = filename_stem.split(sep, 1)
@@ -100,6 +100,11 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
                 
                 # Remove year from title if present
                 title = re.sub(r'\s*20\d{2}\s*', '', title).strip()
+
+                # Sanity check to prevent org and title from being the same on a bad split
+                if org_name.lower() == title.lower():
+                    print(f"Parsing with '{sep}' resulted in identical org and title. Skipping.")
+                    continue
                 
                 # Apply organization name mappings
                 org_mapping = {
