@@ -202,7 +202,10 @@ def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
 
     except Exception as e:
         print(f"An error occurred during Google search for query '{query}': {e}")
-        return None
+        # Return a fallback search URL instead of None to prevent downstream failures
+        fallback_url = f"https://www.google.com/search?q={org_name.replace(' ', '+')}+{title.replace(' ', '+')}"
+        print(f"Using fallback search URL: {fallback_url}")
+        return fallback_url
 
 def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url: Optional[str]) -> str:
     if not MODEL:
