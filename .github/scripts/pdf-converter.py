@@ -5,7 +5,6 @@ import google.generativeai as genai
 from pathlib import Path
 from googleapiclient.discovery import build
 from markitdown import MarkItDown
-from googlesearch import search
 import argparse
 import json
 from typing import List, Dict, Any, Optional
