@@ -501,8 +501,9 @@ def main():
             if conv.get('organization_name') and conv.get('report_title'):
                 org_name = conv['organization_name']
                 report_title = conv['report_title']
-                # Extract year from path or use current year
-                year = "2025"  # Default for current reports
+                # Extract year from path or use current year dynamically
+                from datetime import datetime
+                year = str(datetime.now().year)
                 for part in Path(pdf_path).parts:
                     if part.isdigit() and len(part) == 4 and part.startswith("20"):
                         year = part
