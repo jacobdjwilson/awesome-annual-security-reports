@@ -485,7 +485,7 @@ jobs:
           commit-message: ${{ steps.pr_details.outputs.pr_title }}
           title: "📄 ${{ steps.pr_details.outputs.pr_title }}"
           body: ${{ steps.readme_update.outputs.pr_body }}
-          branch: automated/security-report-updates
+          branch: report-update-${{ github.run_id }}
           delete-branch: true
           labels: |
             automated
