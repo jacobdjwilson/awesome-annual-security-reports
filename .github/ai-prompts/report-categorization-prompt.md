@@ -11,7 +11,11 @@ Review the report content to identify its methodology:
 *   **Survey Report**: If the report's findings are primarily based on collecting feedback, interviews, or survey responses from individuals or organizations, classify it as `Survey`.
 *   **Analysis Report**: If the report's findings are primarily based on data collected from technical sources like sensor networks, endpoint data, consulting engagements, incident responses, or network traffic analysis, classify it as `Analysis`.
 ### 2. Determine the Category
-From the list of categories provided below, select the single most appropriate category that represents the main focus of the report.
+Select the single most appropriate category from the list below. Use the following hierarchy of logic to ensure precise categorization:
+1.  **Specificity First**: If the report focuses on a specific attack type (e.g., **Ransomware**) or a specific domain (e.g., **Identity Security**, **Physical Security**), choose that specific category over broader ones.
+2.  **Environment vs. Threat**: If a report focuses on the security *posture* of an environment, categorize by environment (e.g., **Cloud Security**, **Application Security**). If it focuses on *attacks* against that environment, prioritize the attack type if a specific category exists (e.g., **Ransomware**, **Data Breaches**).
+3.  **General Fallbacks**: Only select **Threat Intelligence** (for Analysis) or **Industry Trends** (for Surveys) if the report covers a broad range of topics without a single dominant focus, or if it is a "State of the Union" style report.
+4.  **Emerging Tech**: If the report specifically targets GenAI, LLMs, or deepfakes, prioritize **AI and Emerging Technologies**.
 **Categories:**
 {{CATEGORIES}}
 ### 3. Format the Output
