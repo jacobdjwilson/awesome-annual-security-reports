@@ -1,0 +1,13 @@
+[
+  {
+    "status": "success",
+    "output_path": "Markdown Conversions/2025/AppOmni-State-of-SaaS-Security-Report-2025.md",
+    "organization_url": "https://appomni.com/reports/state-of-saas-security/",
+    "organization_name": "Appomni",
+    "report_title": "State Of Saas Security Report",
+    "pdf_path": "Annual Security Reports/2025/AppOmni-State-of-SaaS-Security-Report-2025.pdf",
+    "model_used": "gemini-2.0-flash",
+    "prompt_version": "v1.0",
+    "branch": "main"
+  }
+]
