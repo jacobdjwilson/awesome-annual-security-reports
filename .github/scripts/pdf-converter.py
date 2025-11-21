@@ -47,28 +47,40 @@ def read_prompt_file(path: str) -> str:
         print(f"ERROR: Failed to read prompt file {path}: {str(e)}")
         raise
 
-def extract_text_from_pdf(pdf_path: Path) -> str:
+def extract_text_from_pdf(pdf_path: Path, min_text_length: int = 100) -> str:
+    """
+    Extracts text from a PDF, attempting standard conversion first and
+    falling back to OCR if the initial attempt yields insufficient content.
+    """
     try:
         print(f"Extracting text from PDF: {pdf_path}")
         if not pdf_path.exists():
             raise FileNotFoundError(f"PDF file not found: {pdf_path}")
-        
+
         file_size = pdf_path.stat().st_size
         print(f"PDF file size: {file_size / (1024*1024):.2f} MB")
-        
+
         md = MarkItDown(enable_plugins=False)
+
+        # --- 1. Attempt standard conversion ---
+        print("Attempting standard text extraction...")
         result = md.convert(str(pdf_path))
-        
-        if not result or not result.text_content:
-            raise ValueError("MarkItDown returned empty content")
-        
-        text_length = len(result.text_content)
-        print(f"Successfully extracted {text_length} characters from PDF")
-        
-        if text_length < 100:
-            print("WARNING: Extracted text is very short, PDF might be image-based or corrupted")
-        
-        return result.text_content
+        text_content = result.text_content if result else ""
+        text_length = len(text_content)
+
+        # --- 2. Check for failure and fallback to OCR ---
+        if text_length < min_text_length:
+            print(f"WARNING: Standard extraction yielded only {text_length} characters. Falling back to OCR.")
+            ocr_result = md.convert(str(pdf_path), ocr=True)
+            text_content = ocr_result.text_content if ocr_result else ""
+            text_length = len(text_content)
+
+        # --- 3. Final validation ---
+        if text_length < min_text_length:
+            raise ValueError(f"Both standard and OCR extraction failed. Only got {text_length} characters.")
+
+        print(f"Successfully extracted {text_length} characters from PDF.")
+        return text_content
     except Exception as e:
         print(f"ERROR: Failed to extract text from PDF {pdf_path}: {str(e)}")
         raise
