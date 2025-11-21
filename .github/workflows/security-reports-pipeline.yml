@@ -159,10 +159,16 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install Tesseract OCR Engine
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr
+
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install markitdown[pdf] google-generativeai google-api-python-client
+          # Install with OCR support for fallback processing
+          pip install markitdown[pdf,ocr] google-generativeai google-api-python-client
 
       - name: Download files to process
         uses: actions/download-artifact@v4
