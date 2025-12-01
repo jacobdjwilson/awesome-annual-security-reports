@@ -180,16 +180,18 @@ in 2022, but the amounts of individual investments varied much more.
 
 ## Analyzing the Shifts in Cybersecurity Funding Dynamics
 
-![Chart comparing cybersecurity funding in 2023 vs 2022, showing shifts in funding dynamics.]
+![Chart comparing cybersecurity funding in 2023 vs 2022.]
 
 When we compare cybersecurity funding in 2023 with 2022, here’s what we see:
 
 - Cybersecurity deals in 2023 between $10.0M and $250.0M saw the biggest drop,
 between 33%-52%, compared to 2022. This level of funding often correlates with
 growth-stage companies that struggled the most this year.
+
 - Later-stage companies raising $250.0M to $500.0M saw a 33% increase in deals
 involving taking on debt to continue their operations. These same companies would
 have probably been IPO-ready in 2021.
+
 - Early-stage deals had a bang-up year! Deals up to $1.0M increased the most
 by around 67%. Investors invested more money in new companies earlier than in
 previous years, signaling that the latest batch of startups would be the industry's great
@@ -230,6 +232,8 @@ founders of new cybersecurity startups.
 In 2023, seed funding for startups reached over $1.0 B across 229 deals. This is just a
 small 3% drop from the $1.3B in seed funding for 236 deals in 2022.
 
+![Chart showing the total money for Series B rounds dropped by about 52%.]
+
 When we look at the more advanced growth stages, the total money for Series B rounds
 dropped by about 52%. It was $1.3B across 46 deals in 2023, down from $4.2B across 96
 deals in 2022. Series C rounds took an even bigger hit, with a 60% drop in funding. It was
@@ -246,7 +250,7 @@ First-time raisers got about 42% less on average than the prior year ($13.3M com
 $22.5M in 2022). The purse strings are clearly getting tighter in an industry more
 accustomed to blank checks.
 
-![Chart showing the number of investments by funding round, comparing 2022 and 2023.]
+![Chart showing the number of investments decreased generally from 2022 to 2023.]
 
 There is more evidence of investors' cautious approach: except for companies raising for the
 fifth time, the number of investments decreased generally from 2022 to 2023.
@@ -256,32 +260,32 @@ of it. I think this will lead to some really impressive companies over the next 
 
 Quick reference for mapping funding stages to funding rounds:
 
-| Stage                  | Funding Type           |
-| ---------------------- | ---------------------- |
-| Early Stage            | Angel                  |
-| Early Stage            | Equity Crowdfunding    |
-| Early Stage            | Pre-Seed               |
-| Early Stage            | Seed                   |
-| Early Stage            | Pre-Series A           |
-| Early Stage            | Series A               |
-| Middle / Growth Stage | Series B               |
-| Middle / Growth Stage | Series C               |
-| Middle / Growth Stage | Venture Round          |
-| Middle / Growth Stage | Corporate Round        |
-| Middle / Growth Stage | Preferred Round        |
-| Late Stage             | Series D               |
-| Late Stage             | Series E               |
-| Late Stage             | Series F               |
-| Late Stage             | Series G               |
-| Late Stage             | Private Equity Round   |
-| Late Stage             | Secondary Market       |
-| Late Stage             | Post-IPO Debt          |
-| Late Stage             | Post-IPO Equity        |
-| Not Stage Specific     | Funding Round          |
-| Not Stage Specific     | Grant                  |
-| Not Stage Specific     | Non-Equity Assistance  |
-| Not Stage Specific     | Debt Financing         |
-| Not Stage Specific     | Convertible Note       |
+| Stage                   | Funding Type           |
+|-------------------------|------------------------|
+| Early Stage             | Angel                  |
+| Early Stage             | Equity Crowdfunding    |
+| Early Stage             | Pre-Seed               |
+| Early Stage             | Seed                   |
+| Early Stage             | Pre-Series A           |
+| Early Stage             | Series A               |
+| Middle / Growth Stage   | Series B               |
+| Middle / Growth Stage   | Series C               |
+| Middle / Growth Stage   | Venture Round          |
+| Middle / Growth Stage   | Corporate Round        |
+| Middle / Growth Stage   | Preferred Round        |
+| Late Stage              | Series D               |
+| Late Stage              | Series E               |
+| Late Stage              | Series F               |
+| Late Stage              | Series G               |
+| Late Stage              | Private Equity Round   |
+| Late Stage              | Secondary Market       |
+| Late Stage              | Post-IPO Debt          |
+| Late Stage              | Post-IPO Equity        |
+| Not Stage Specific      | Funding Round          |
+| Not Stage Specific      | Grant                  |
+| Not Stage Specific      | Non-Equity Assistance  |
+| Not Stage Specific      | Debt Financing         |
+| Not Stage Specific      | Convertible Note       |
 
 Return on Security Stage to Funding Type
 Mapping
@@ -299,11 +303,11 @@ much discussion and debate within companies.
 To fully grasp the landscape, we have to dive into the nuance of cybersecurity product
 categories.
 
-![Chart showing cybersecurity product categories with breakout year in funding dollar growth in 2023.]
+![Chart showing product categories with breakout year in funding dollar growth in 2023.]
 
 These product categories had a breakout year in funding dollar growth in 2023:
 
-![Chart showing cybersecurity product categories with breakout year in funding transaction volume in 2023.]
+![Chart showing another view from a funding transaction volume perspective.]
 
 Another view from a funding transaction volume perspective:
 
@@ -320,8 +324,10 @@ For reference, here is how I define these terms:
 
 - **AI Security**: Software platforms designed to maintain the integrity of AI systems and shield
 them from misuse.
+
 - **Security of AI**: Software platforms focused on securing AI applications from cyberattacks,
 unauthorized access, and manipulation.
+
 - **AI Privacy Assurance**: Software platforms focused on safeguarding sensitive data and
 personal information used in AI processes, ensuring the responsible use of AI systems.
 
@@ -338,12 +344,12 @@ investments in established companies like Akamai, which raised $1.1B in post-IPO
 Hardware Security also had a strong year, but that’s mostly because it didn’t gain any
 traction in 2022, and the transaction amounts are still very small.
 
-![Chart showing cybersecurity product categories with the most significant contraction in funding dollars since 2022.]
+![Chart showing twelve product categories that saw the most significant contraction in funding dollars since 2022.]
 
 On the flip side, these twelve product categories saw the most significant contraction in
 funding dollars since 2022:
 
-![Chart showing cybersecurity product categories with the most significant contraction in funding transaction volume since 2022.]
+![Chart showing another view from a funding transaction volume perspective.]
 
 Another view from a funding transaction volume perspective:
 
@@ -359,6 +365,8 @@ tools - but CSPM was version one.
 Since that time, many other products have climbed on the shoulders of CSPM and passed
 them by as standalone products:
 
+![Image showing a diagram of the Posture Managementification™ of many subsequent disciplines.]
+
 In a market that changes slowly or is really new and technical, competition might be okay
 because you'll have time to create defenses and win customer loyalty. But in a fast-moving
 field like cybersecurity, the likelihood that you've built strong enough defenses by the time
@@ -369,6 +377,8 @@ Looking briefly at the Password Manager category, it's hard to top the big round
 1Password raised $620.0M (after raising $100.0M in 2021), and BitWarden raised $100.0M.
 
 I imagine the investment thesis went something like this:
+
+![Image showing a diagram of the investment thesis.]
 
 ## The Major M&A Movements in 2023
 
@@ -399,6 +409,7 @@ industry ever, surpassing SailPoint's $6.9B acquisition in 2022. With the meteor
 of AI companies in 2023, everyone is scrambling to acquire data to build and train their
 own Large Language Models (LLMs) from, so many see this Cisco acquisition as a
 pure data play.
+
 - **Palo Alto spent over $1B to expand**: They acquired Talon Cyber Security for
 $625.0M - the second remote browser isolation company to be acquired - the year after
 winning the RSA Innovation Sandbox in 2022 and raising nearly $150.0M. Next up,
@@ -416,11 +427,14 @@ Imperative of Data Security](https://www.returnonsecurity.com/p/leveraging-large
 - Attack Surface Management (ASM) companies are beginning to exit, amounting to
 ~$376.0M (I see this shaping out the same way that the CSPM product space. It's a
 feature, not a standalone platform).
+
 - Data Security Posture Management (DSPM) companies are fast-tracking exits totaling
 ~$710.0M. This is especially interesting given that the term has only been around for a
 year.
+
 - Managed Security Service Providers (MSSPs) continued their streak with over 50
 acquisitions totaling about $382.0M, a 50% increase from 2022.
+
 - Secure Access Service Edge (SASE) companies were acquired for approximately
 $1.2B across four deals as traditional firewall providers struggle to keep up with
 changing market demands. Palo Alto is leading the way.
@@ -434,7 +448,9 @@ on the trends:
 
 - The industry showed adaptability amid economic and geopolitical difficulties, with early-
 stage companies leading the way.
+
 - Mergers and acquisitions played a major role, with some deals setting new records.
+
 - Despite setbacks, the cybersecurity field continues to hold potential for future
 innovation, and you can see that through the shifts in funding and product categories.
 
