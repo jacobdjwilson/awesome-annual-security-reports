@@ -61,7 +61,7 @@ This volume may seem high to the uninitiated, but this is a high-speed, low-drag
 
 3/11
 
-![Chart of how the cybersecurity market flywheel works]
+![Chart of cybersecurity market flywheel]
 
 The chart above shows how the industry operates in normal times, say, the last 10-15 years.
 
