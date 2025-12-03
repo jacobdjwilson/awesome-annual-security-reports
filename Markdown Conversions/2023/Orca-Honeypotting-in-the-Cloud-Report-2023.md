@@ -1,30 +1,30 @@
-```markdown
 # in the Cloud Report
 
+Aacker Tactics and Techniques Revealed
+
 ## Table of Contents
+- [Inside This Report](#inside-this-report)
 - [Foreword](#foreword)
 - [About the Orca Research Pod](#about-the-orca-research-pod)
 - [Executive Summary](#executive-summary)
 - [Methodology](#methodology)
 - [Research Findings](#research-findings)
-- [1. GitHub Honeypot](#1-github-honeypot)
-- [2. AWS S3 Bucket Honeypot](#2-aws-s3-bucket-honeypot)
-- [3. SSH Honeypot](#3-ssh-honeypot)
-- [4. HTTP Honeypot](#4-http-honeypot)
-- [5. DockerHub Honeypot](#5-dockerhub-honeypot)
-- [6. ECR Honeypot](#6-ecr-honeypot)
-- [7. Elasticsearch Honeypot](#7-elasticsearch-honeypot)
-- [8. Amazon EBS (AMI) Honeypot](#8-amazon-ebs-ami-honeypot)
-- [9. Redis Honeypot](#9-redis-honeypot)
+- [GitHub Honeypot](#github-honeypot)
+- [AWS S3 Bucket Honeypot](#aws-s3-bucket-honeypot)
+- [SSH Honeypot](#ssh-honeypot)
+- [HTTP Honeypot](#http-honeypot)
+- [DockerHub Honeypot](#dockerhub-honeypot)
+- [ECR Honeypot](#ecr-honeypot)
+- [Elasticsearch Honeypot](#elasticsearch-honeypot)
+- [Amazon EBS (AMI) Honeypot](#amazon-ebs-ami-honeypot)
+- [Redis Honeypot](#redis-honeypot)
 - [Summary](#summary)
 - [Key Recommendations](#key-recommendations)
 - [About Orca Security](#about-orca-security)
 
-Aacker Tactics and Techniques Revealed
+---
 
-![Report Cover Image]
-
-Inside This Report
+## Inside This Report
 
 Foreword 3
 
@@ -60,9 +60,7 @@ Key Recommendations 36
 
 About Orca Security 41
 
----
-
-# Foreword
+## Foreword
 
 "Know thy enemy and know
 
@@ -98,16 +96,9 @@ while shedding light on the latest aack vectors and providing
 
 essential insights for fortifying cloud defenses.
 
----
+## About the Orca Research Pod
 
-# About the Orca Research Pod
-
-14+ vulnerabilities
-discovered on
-AWS, Azure, and
-Google Cloud
-
-![Orca Research Pod Logo]
+![Image description]
 
 The Orca Research Pod is a group of cloud security
 researchers that discover and analyze cloud risks
@@ -117,6 +108,11 @@ practices. In addition, the Orca research team
 discovers and helps resolve vulnerabilities in cloud
 provider platforms so organizations can rely on a safe
 infrastructure in the cloud.
+
+14+ vulnerabilities
+discovered on
+AWS, Azure, and
+Google Cloud
 
 2021
 
@@ -146,21 +142,11 @@ Exploitation Path
 
 Vulnerabilities
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-![Bar Kaduri Image]
-
 Bar Kaduri
 
-Threat Research Team Leader, Orca Security
-
-![Tohar Braun Image]
-
 Tohar Braun
+
+Threat Research Team Leader, Orca Security
 
 Research Technical Lead, Orca Security
 
@@ -192,11 +178,7 @@ environments, and in doing so, help to secure
 
 the cloud for everyone.
 
-Copyright Orca Security 2023
-
----
-
-# Executive Summary
+## Executive Summary
 
 1
 
@@ -239,14 +221,6 @@ to access our SSH Honeypot
 1 hour
 to access our S3 Buckets
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# Executive Summary
-
 Time to Asset Access
 
 2
@@ -272,19 +246,63 @@ faster than others, it’s clear that wherever you store public data, it
 will be compromised at some point - whether it’s in minutes, hours,
 days, or months.
 
-![Time to Asset Access Chart]
+2
+
+3
+
+4
+
+1
+
+2 mins
+GitHub
+
+3 mins
+HTTP
+
+4 mins
+SSH
+
+1 hour
+S3 Bucket
+
+2
+
+2.5
+
+4
+
+2 hours
+Elasticsearch
+
+2.5 hours
+Redis
+
+4 months
+AWS ECR
+
+No aempts to access:
+DockerHub or Amazon EBS
 
 Time to Key Usage
 
-![Time to Key Usage Chart]
+2
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
+8
 
----
+4
 
-# Executive Summary
+2 mins
+GitHub
+
+8 hours
+S3 Bucket
+
+4 months
+AWS ECR
+
+No aempts to use the keys on:
+HTTP, SSH, Elasticsearch, or Redis
 
 3
 
@@ -320,14 +338,6 @@ Even with this policy applied, if the leaked
 credentials have a lot of permissions, an aacker
 can still do damage.
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# Executive Summary
-
 4
 
 No region is safe
@@ -362,13 +372,7 @@ Asia Paciﬁc 23%
 
 United States 50%
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# Methodology
+## Methodology
 
 The purpose of this research was to achieve a beer understanding of how
 quickly aackers ﬁnd assets and use secrets in each scenario. Armed
@@ -412,19 +416,11 @@ placed a secret - in this case AWS keys - in
 our honeypots. And then we observed as
 aackers took the bait..
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
+## Research Findings
 
----
+## GitHub Honeypot - Setup
 
-# Research Findings
-
-![Research Findings Section Divider]
-
----
-
-# 1. GitHub Honeypot - Setup
+![Image description]
 
 50%
 
@@ -467,13 +463,7 @@ In view of this potential risk, we wanted to ﬁnd out how
 quickly aackers would discover and weaponize leaked
 secrets in GitHub commits.
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# GitHub Honeypot - Key Usage
+## GitHub Honeypot - Key Usage
 
 Usage of the AWS key occurred quickly and from many sources.
 It took only 2 minutes for an aacker to use the leaked key.
@@ -518,13 +508,7 @@ from the history than from the original commit, it is important to
 make sure that any keys are not only removed from the newest
 commit, but also from the commit in the history.
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# GitHub Honeypot - Key Tactics
+## GitHub Honeypot - Key Tactics
 
 The majority of key usage was around reconnaissance:
 aackers were trying to ﬁnd out whether the key provided
@@ -548,15 +532,52 @@ the actor is trying to ﬁnd out what the key provides access to.
 enable an aacker to further enumerate their target’s footprint
 and look for additional access.
 
-![API Calls Chart]
+L
+i
+s
+t
+T
+o
+p
+i
+c
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
+s         5
 
----
+%
 
-# GitHub Honeypot - Aacker Close Up
+e
+
+ListId
+ListHostedZones     5%
+ntities         5
+ListClusters       6%
+
+%
+
+List Certiﬁcates     6%
+
+ListBuckets      6%
+
+DescribeInstances    6%
+
+%
+s    8
+
+r
+e
+s
+U
+t
+Lis
+
+GetCallerIdentity  25%
+
+Other    14%
+
+GetAccount   14%
+
+## GitHub Honeypot - Aacker Close Up
 
 A closer look at the individual actors shows that most start initial
 reconnaissance and then give up, but a small number of actors
@@ -591,13 +612,7 @@ IP address 54.39.190.134 is a GitGuardian scanner
 (a code security platform) scanning periodically up
 to 7 days after publication.
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# GitHub Honeypot - Regions
+## GitHub Honeypot - Regions
 
 Although we saw half of the AWS key exploitation in the US,
 usage also occurred in almost every other region.
@@ -615,15 +630,130 @@ America (4%), and Canada (3%).
 So, as we can see, no region
 is out of target for aackers.
 
-![AWS Regions Chart]
+C
+a
+C
+-
+c
+a
+e
+-
+c
+n
+e
+t
+n
+r
+al-
+t
+r
+al-
+1  3
+1  3
+%
+%
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
+E
+u
+-
+n
+o
+r
+t
+h
+-
+1
+ 3
+%
 
----
+Sa-east-1  4%
+Sa-east-1  4%
+Eu-west-3  4%
+Eu-west-3  4%
+Eu-west-2  4%
+Eu-west-2  4%
+Eu-west-1  4%
+Eu-west-1  4%
+Ap-southeast-2  4%
+Ap-southeast-2  4%
+Ap-southeast-1  4%
+Ap-southeast-1  4%
+Ap-northeast-2  4%
+Ap-northeast-2  4%
+Ap-northeast-1  5%
+Ap-northeast-1  5%
+ntral-1  5
+ntral-1  5
 
-# 2. AWS S3 Bucket Honeypot - Setup
+%
+%
+
+e
+u-c
+e
+u-c
+E
+E
+
+Us-east-1  34%
+Us-east-1  34%
+
+Us-west-2  6%
+Us-west-2  6%
+Us-west-1  5%
+Us-west-1  5%
+
+U
+s
+U
+-
+e
+s
+a
+-
+e
+s
+a
+t
+-
+s
+2
+t
+-
+ 5
+2
+ 5
+%
+%
+
+%
+5
+%
+1
+5
+-
+h
+1
+t
+-
+u
+h
+o
+t
+u
+s
+-
+o
+p
+s
+A
+-
+p
+A
+
+## AWS S3 Bucket Honeypot - Setup
+
+![Image description]
 
 Bucket naming
 
@@ -683,11 +813,7 @@ stored in the bucket and read the contents of those objects.
 wouldn’t want on a storage bucket that contains sensitive
 information.
 
-Copyright Orca Security 2023
-
----
-
-# AWS S3 Bucket Honeypot - Access
+## AWS S3 Bucket Honeypot - Access
 
 While there are actors who actively scan for public buckets with
 easily guessable names, only one of our buckets was actually
@@ -720,13 +846,7 @@ breadcrumbs to legitimate buckets (such as references to bucket
 names, IDs, and links) and therefore also expect them to be accessed
 even faster than in our tests.
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# AWS S3 Bucket Honeypot - Publication
+## AWS S3 Bucket Honeypot - Publication
 
 We ﬁrst posted to Pastebin in dierent geographies and languages,
 which led to some access. Initially, we saw the most access from
@@ -912,13 +1032,7 @@ The S3 buckets, for which we published breadcrumbs on the
 Russian Pastebin weren’t accessed until we also posted
 them on Twier (in English).
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# AWS S3 Bucket Honeypot - Tactics
+## AWS S3 Bucket Honeypot - Tactics
 
 What actions did aackers take once they discovered the buckets?
 
@@ -943,13 +1057,7 @@ the bucket and if it contained anything interesting:
 • Is there a public access block on the bucket?
 • Which instances are running in this bucket?
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# AWS S3 Bucket Honeypot - Key Usage
+## AWS S3 Bucket Honeypot - Key Usage
 
 After the buckets were accessed, it took 8 hours for aackers to
 start using the key. The diagram on the right shows the actions the
@@ -975,15 +1083,21 @@ If these keys had been ‘real’ keys, no doubt the aackers could
 have leveraged any information found in the buckets and caused
 some real damage.
 
-![Commands Used with Keys Chart]
+9%
+GetBucketLocation
+9%
+Describe Instances
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
+9%
+List Buckets
 
----
+9%
+Create User
 
-# 3. SSH Honeypot
+64%
+GetCallerIdentity
+
+## SSH Honeypot
 
 For our SSH honeypot, we opened port 22 and allowed any
 user/password combination. We did not need to wait long: we saw
@@ -1006,13 +1120,7 @@ logins through SSH
 Top passwords detected on aempted
 logins through SSH
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# SSH Honeypot - Tactics
+## SSH Honeypot - Tactics
 
 The exposed key was located in /home/<user>/.aws/credentials.
 However, we did not detect any usage of the key.
@@ -1053,15 +1161,9 @@ B9e643a8e78d2ce745fbe73eb505c8a0cc49842803077809b2267817979d10b0
 3a43e9ceededc2d3b8bae8f8fc8c539047cdacdd315ebef3adc6651117325e
 94f2e4d8d4436874785cd14e6e6d403507b8750852f7f2040352069a75da4c00
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
+## HTTP Honeypot
 
----
-
-# 4. HTTP Honeypot
-
-Top URIs accessed
+![Image description]
 
 For our HTTP honeypot, we
 created a machine with an open
@@ -1090,6 +1192,8 @@ It took aackers..
 to access our
 HTTP honeypot
 
+Top URIs accessed
+
 From the URIs we can see that aackers
 were searching for standard HTTP paths
 that could help with typical HTTP
@@ -1098,13 +1202,7 @@ that could be relevant. However they were
 not searching for an exposed secret, which
 is why they did not discover or use the key.
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# 5. DockerHub
+## DockerHub Honeypot
 
 For our Docker honeypot, we created a Docker image that builds
 a container with an AWS conﬁg ﬁle that contains keys, then
@@ -1130,13 +1228,7 @@ The cost/beneﬁt ratio is far less
 aractive on DockerHub and this is why
 aackers are less likely to target it.
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# 6. ECR Honeypot
+## ECR Honeypot
 
 We created a public registry in Amazon’s Elastic Container Registry
 (ECR) with names we believed would aract the interest of aackers:
@@ -1178,13 +1270,7 @@ itself, but if digital breadcrumbs are
 found, like on Stack Overﬂow, actors
 come and scope out the ECR target.
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# 7. Elasticsearch Honeypot
+## Elasticsearch Honeypot
 
 Elasticsearch is a popular data analytics and visualization
 program. In the default conﬁguration, the API endpoint for
@@ -1218,13 +1304,7 @@ our instance wasn’t very interesting.
 
 Top queries on our honeypot
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# 8. Amazon EBS (AMI) Honeypot
+## Amazon EBS (AMI) Honeypot
 
 Amazon Elastic Block Store (EBS) is a block storage service
 that allows you to use EBS Snapshots with automated lifecycle
@@ -1248,13 +1328,7 @@ Since there were no download requests, we can
 assume that there is not much automated
 reconnaissance on Amazon EBS.
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# 9. Redis Honeypot
+## Redis Honeypot
 
 Redis is a popular in-memory data structure store that enables very
 fast access to stored data. In a default conﬁguration, Redis exposes
@@ -1317,13 +1391,7 @@ South Korea
 
 32%
 
-Copyright Orca Security 2023
-Orca Security, Highly
-Conﬁdential
-
----
-
-# Redis Honeypot - Tactics
+## Redis Honeypot - Tactics
 
 The two calls that the aackers used the most are
 ‘NewConnect’ and ‘Closed’, which are used for straightforward
@@ -1333,4 +1401,4 @@ more about the asset.
 
 Some of the other calls indicate more nefarious aempts. For
 example, ‘MODULE LOAD /.red2.so’ is associated with a
-campaign to exploit exposed Redis servers in
+campaign
