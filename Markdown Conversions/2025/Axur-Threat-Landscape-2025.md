@@ -1,5 +1,3 @@
-# Report Content Below
-
 ## Table of Contents
 - [Message from Axur](#message-from-axur)
 - [Executive Summary](#executive-summary)
