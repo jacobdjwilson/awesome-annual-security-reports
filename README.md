@@ -17,7 +17,7 @@
 **Accessibility**
 When possible, all reports will be sourced from their original authors and uploaded to [Virus Total](https://virustotal.com/) via GitHub action to provide an added level of confidence. The resulting analysis link will be included in the PDF commit notes. Additionally, all PDF reports will be converted to Markdown using AI, based on the [AI Prompts](/.github/ai-prompts) defined in this repository.
 
-**Acknowledgement:** I would like to give recognition for other works that inspired this collection. [Richard Stiennon](https://www.linkedin.com/in/stiennon) produces an annual, comprehensive industry analysis that surpasses the scope of this list and deserves attention. Additionally, [Rick Howard](https://www.linkedin.com/in/rickhoward/)'s cyber cannon list of must-read books is an invaluable resource, catering to both leadership and practitioner levels within the field.
+**Acknowledgement:** I would like to give recognition for other works that inspired this collection. [Richard Stiennon](https://www.linkedin.com/in/stiennon) produces an annual comprehensive cybersecurity industry analysis at [IT Harvest](https://it-harvest.com/) that deserves attention of those in the industry. Additionally, [Rick Howard](https://www.linkedin.com/in/rickhoward/)'s [Cyber Cannon](https://cybercanon.org/) list of must-read books is a timeless resource of curated wisdom, catering to both leadership and practitioner levels within the field.
 
 **Annual Report Counts:** 
 
