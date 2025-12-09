@@ -39,7 +39,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Find changed PDF files
+      - name: Find and Validate PDF files
         id: find-files
         run: |
           if [[ "${{ github.event.inputs.force_scan_all }}" == "true" ]]; then
@@ -54,6 +54,54 @@ jobs:
               # For pull requests
               git diff --name-only --diff-filter=AM origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
               git diff --name-only --diff-filter=D origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
+            fi
+          fi
+
+          if [ -s files_to_process.txt ]; then
+            VALID_FILES=""
+            INVALID_FILES=""
+            while IFS= read -r FILE_PATH; do
+              if [ ! -f "$FILE_PATH" ]; then
+                echo "Warning: File not found: $FILE_PATH. Skipping."
+                INVALID_FILES="$INVALID_FILES\n$FILE_PATH (Not Found)"
+                continue
+              fi
+
+              # Check file size (100MB limit)
+              FILE_SIZE=$(stat -c%s "$FILE_PATH")
+              if [ "$FILE_SIZE" -gt 104857600 ]; then
+                echo "Warning: File size ($((FILE_SIZE/1024/1024)) MB) exceeds 100MB limit for $FILE_PATH. Skipping."
+                INVALID_FILES="$INVALID_FILES\n$FILE_PATH (Size Limit Exceeded)"
+                continue
+              fi
+
+              # Check magic number
+              MAGIC_NUMBER=$(head -c 4 "$FILE_PATH" || true)
+              if [ "$MAGIC_NUMBER" != "%PDF" ]; then
+                echo "Warning: File is not a valid PDF for $FILE_PATH (Magic number: '$MAGIC_NUMBER'). Skipping."
+                INVALID_FILES="$INVALID_FILES\n$FILE_PATH (Invalid PDF)"
+                continue
+              fi
+
+              VALID_FILES="$VALID_FILES$FILE_PATH\n"
+            done < files_to_process.txt
+            
+            # Overwrite files_to_process.txt with only valid files
+            echo -e "$VALID_FILES" | sed '/^$/d' > valid_files_to_process.txt
+            if [ -s valid_files_to_process.txt ]; then
+              mv valid_files_to_process.txt files_to_process.txt
+            else
+              rm valid_files_to_process.txt
+              > files_to_process.txt
+            fi
+
+            # Add information about invalid files to summary
+            if [ ! -z "$INVALID_FILES" ]; then
+              echo "### ⚠️ Invalid Files Skipped" >> $GITHUB_STEP_SUMMARY
+              echo "The following files were skipped during validation:" >> $GITHUB_STEP_SUMMARY
+              echo '```' >> $GITHUB_STEP_SUMMARY
+              echo -e "$INVALID_FILES" | sed '/^$/d' >> $GITHUB_STEP_SUMMARY
+              echo '```' >> $GITHUB_STEP_SUMMARY
             fi
           fi
           
