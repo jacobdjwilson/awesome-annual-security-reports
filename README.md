@@ -27,6 +27,7 @@ When possible, all reports will be sourced from their original authors and uploa
 ![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2023?type=file&style=flat-square&label=2023%20Reports)
 ![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2024?type=file&style=flat-square&label=2024%20Reports)
 ![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2025?type=file&style=flat-square&label=2025%20Reports)
+![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2026?type=file&style=flat-square&label=2026%20Reports)
 
 
 ## Contents
