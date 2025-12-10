@@ -4,13 +4,14 @@ import json
 import re
 import argparse
 import google.generativeai as genai
+from google.api_core import exceptions
 import urllib.parse
 from googleapiclient.discovery import build
 from typing import List, Dict, Any, Tuple, Optional
 from pathlib import Path
 
 # Configure Gemini API
-MODELS = ["gemini-2.0-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-3-pro-preview"]
+MODELS = ["gemini-2.0-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.5-flash-live"]
 MODEL = None
 
 def setup_gemini(api_key: str):
@@ -19,15 +20,14 @@ def setup_gemini(api_key: str):
     for model_name in MODELS:
         try:
             test_model = genai.GenerativeModel(model_name)
-            test_response = test_model.generate_content("Hello", generation_config={"max_output_tokens": 10})
-            if test_response and test_response.text:
+            test_response = test_model.count_tokens("Hello")
+            if test_response.total_tokens is not None:
                 MODEL = model_name
                 print(f"Successfully verified model: {MODEL}")
                 break
-        except Exception as e:
+        except (exceptions.GoogleAPICallError, ValueError) as e:
             print(f"Model {model_name} not available or failed verification: {str(e)}")
             continue
-    
     if not MODEL:
         print("Warning: No AI models available. Will use fallback analysis.")
         return False

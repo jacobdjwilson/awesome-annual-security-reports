@@ -2,6 +2,7 @@ import os
 import sys
 import re
 import google.generativeai as genai
+from google.api_core import exceptions
 from pathlib import Path
 from googleapiclient.discovery import build
 from markitdown import MarkItDown
@@ -11,7 +12,7 @@ from typing import List, Dict, Any, Optional
 import time
 
 # Configure Gemini API
-MODELS = ["gemini-2.0-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-3-pro-preview"]
+MODELS = ["gemini-2.0-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.5-flash-live"]
 MODEL = None
 
 def setup_gemini(api_key: str):
@@ -20,13 +21,16 @@ def setup_gemini(api_key: str):
     for model_name in MODELS:
         try:
             test_model = genai.GenerativeModel(model_name)
-            test_response = test_model.generate_content("Hello", generation_config={"max_output_tokens": 10})
-            if test_response and test_response.text:
+            response = test_model.count_tokens("Hello")
+            if response.total_tokens is not None:
                 MODEL = model_name
                 print(f"Successfully verified model: {MODEL}")
-                break
-        except Exception as e:
-            print(f"Model {model_name} not available or failed verification: {str(e)}")
+                break   
+        except exceptions.GoogleAPICallError as e:
+            print(f"Model {model_name} API error: {e}")
+            continue
+        except ValueError as e:
+            print(f"Model {model_name} configuration error: {e}")
             continue
     if not MODEL:
         print("ERROR: No models available. Check API key and quota.")
