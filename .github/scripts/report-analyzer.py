@@ -11,7 +11,7 @@ from typing import List, Dict, Any, Tuple, Optional
 from pathlib import Path
 
 # Configure Gemini API
-MODELS = ["gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-2.0-flash"]
+MODELS = ["gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-2.0-flash-live"]
 MODEL = None
 
 def setup_gemini(api_key: str):
