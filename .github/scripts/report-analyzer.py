@@ -9,6 +9,7 @@ import urllib.parse
 from googleapiclient.discovery import build
 from typing import List, Dict, Any, Tuple, Optional
 from pathlib import Path
+import time
 
 # Configure Gemini API
 MODELS = ["gemini-2.0-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.5-flash-live"]
@@ -239,111 +240,68 @@ def categorize_content_fallback(content: str, available_categories: Dict[str, Li
     return "Analysis", "Industry Trends"
 
 def analyze_content(content: str, org_name: str, year: str, report_title: str, available_categories: Dict[str, List[str]]) -> Dict[str, Any]:
-    """Analyze content using AI or fallback methods"""
+    """Analyze content using a single AI call or fallback methods"""
     if not MODEL:
         print("No AI model available, using fallback analysis")
         return fallback_analysis(content, org_name, year, report_title, available_categories)
 
     try:
-        # First, get basic categorization using fallback
+        # Get fallback classification in case AI fails
         fallback_type, fallback_category = categorize_content_fallback(content, available_categories, org_name, report_title)
-        
-        # Summarization with AI
-        summary_prompt_path = ".github/ai-prompts/markdown-summarization-prompt.md"
-        try:
-            with open(summary_prompt_path, 'r', encoding='utf-8') as f:
-                summary_base_prompt = f.read()
-        except FileNotFoundError:
-            summary_base_prompt = """Please create a concise summary of this security report in 1-2 sentences. 
-Focus on the key findings, threats, or insights. Keep it under 400 characters and professional."""
-        
-        # Truncate content for summary (keep within token limits)
-        summary_content = content[:20000] if len(content) > 20000 else content
-        summary_prompt = f"{summary_base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{summary_content}"
-        
-        summary_model = genai.GenerativeModel(MODEL)
-        summary_response = summary_model.generate_content(
-            summary_prompt,
-            generation_config={"temperature": 0.1, "max_output_tokens": 200}
-        )
-        
-        summary = summary_response.text.strip() if summary_response.text else ""
-        
-        # Clean up and ensure reasonable length
-        if summary:
-            summary = ' '.join(summary.split())
-            if len(summary) > 400:
-                sentences = summary.split('. ')
-                summary = ''
-                for sentence in sentences:
-                    if len(summary + sentence + '. ') <= 400:
-                        summary += sentence + '. '
-                    else:
-                        break
-                summary = summary.strip()
-        else:
-            summary = f"Security report from {org_name} covering industry insights and cybersecurity trends."
 
-        # Classification and Categorization with AI
+        # Use the consolidated categorization and summarization prompt
         categorization_prompt_path = ".github/ai-prompts/report-categorization-prompt.md"
         try:
             with open(categorization_prompt_path, 'r', encoding='utf-8') as f:
-                categorization_base_prompt = f.read()
+                base_prompt = f.read()
         except FileNotFoundError:
-            categorization_base_prompt = """Analyze this security report and classify it into the appropriate type and category.
+            # Provide a fallback prompt if the file is missing
+            base_prompt = """Analyze this security report. Return a single JSON object with "type", "category", and "summary".
+Available categories: {{CATEGORIES}}
+Summary must be 1-2 sentences and under 400 characters."""
 
-Return your response as JSON with the following structure:
-{
-  "type": "Analysis" or "Survey",
-  "category": "category_name"
-}
-
-Available categories:
-{{CATEGORIES}}
-
-Guidelines:
-- "Analysis" reports focus on technical analysis, threat intelligence, vulnerabilities
-- "Survey" reports focus on industry trends, polling data, executive perspectives
-- Choose the most specific applicable category"""
-
-        # Build category list from available categories
-        all_categories = []
-        for report_type, categories in available_categories.items():
-            all_categories.extend(categories)
-        all_categories = sorted(list(set(all_categories)))  # Remove duplicates and sort
-        
+        # Build category list and inject into the prompt
+        all_categories = sorted(list(set(cat for cats in available_categories.values() for cat in cats)))
         category_str = '\n'.join([f"- {cat}" for cat in all_categories])
-        categorization_prompt = categorization_base_prompt.replace("{{CATEGORIES}}", category_str)
-        
-        # Truncate content for categorization
-        categorization_content = content[:12000] if len(content) > 12000 else content
-        categorization_prompt += f"\n\nOrganization: {org_name}\nTitle: {report_title}\nYear: {year}\n\n{categorization_content}"
+        full_prompt = base_prompt.replace("{{CATEGORIES}}", category_str)
 
-        category_model = genai.GenerativeModel(MODEL)
-        category_response = category_model.generate_content(
-            categorization_prompt,
-            generation_config={"temperature": 0.1, "max_output_tokens": 100}
+        # Truncate content to keep the prompt within reasonable limits
+        analysis_content = content[:25000] if len(content) > 25000 else content
+        full_prompt += f"\n\nOrganization: {org_name}\nTitle: {report_title}\nYear: {year}\n\n{analysis_content}"
+
+        # Make the single API call
+        model = genai.GenerativeModel(MODEL)
+        response = model.generate_content(
+            full_prompt,
+            generation_config={"temperature": 0.1, "max_output_tokens": 500, "response_mime_type": "application/json"}
         )
-        
+
         try:
-            response_text = category_response.text.strip().replace('```json', '').replace('```', '').strip()
-            classification = json.loads(response_text)
+            response_text = response.text.strip().replace('```json', '').replace('```', '').strip()
+            result_json = json.loads(response_text)
+
+            if 'type' not in result_json or 'category' not in result_json or 'summary' not in result_json:
+                raise ValueError("Missing 'type', 'category', or 'summary' in AI response.")
+
+            # Validate the results from the AI
+            report_type = result_json.get('type', fallback_type)
+            category = result_json.get('category', fallback_category)
+            summary = result_json.get('summary', f"A security report from {org_name} about {report_title}.")
+
+            # Clean up summary
+            summary = ' '.join(summary.split())
+            if len(summary) > 400:
+                summary = summary[:397] + "..."
             
-            if 'type' not in classification or 'category' not in classification:
-                raise ValueError("Missing 'type' or 'category' in AI response.")
-            
-            # Validate that the category exists in our available categories
-            report_type = classification.get('type', 'Analysis')
-            category = classification.get('category', 'Industry Trends')
-            
-            # Check if category exists in the specified type
+            # Check if the returned category is valid for the returned type
             if category not in available_categories.get(report_type, []):
-                print(f"AI suggested category '{category}' not found in {report_type} categories, using fallback")
+                print(f"AI suggested category '{category}' not found in '{report_type}'. Using fallback.")
+                # Use the original fallback type and category, as they are guaranteed to be valid
                 report_type, category = fallback_type, fallback_category
-                
+
         except (json.JSONDecodeError, ValueError) as e:
             print(f"Could not parse AI response for classification: {e}. Using fallback.")
-            report_type, category = fallback_type, fallback_category
+            return fallback_analysis(content, org_name, year, report_title, available_categories)
 
         print(f"Final classification: {report_type} / {category}")
 
@@ -448,6 +406,20 @@ def main():
     parser.add_argument("--output-json", help="Path to save the analysis results as a JSON file.", default="analysis.json")
     args = parser.parse_args()
 
+    # --- Caching Setup ---
+    SCRIPT_VERSION = "1.1" 
+    existing_analysis = {}
+    if os.path.exists(args.output_json):
+        try:
+            with open(args.output_json, 'r') as f:
+                loaded_analysis = json.load(f)
+                for item in loaded_analysis:
+                    if 'file_path' in item:
+                        existing_analysis[item['file_path']] = item
+            print(f"Loaded {len(existing_analysis)} existing analysis records for caching.")
+        except (json.JSONDecodeError, FileNotFoundError):
+            print("Could not load existing analysis file, will generate all from scratch.")
+
     # Validate input files
     if not os.path.exists(args.conversions_json):
         print(f"ERROR: Conversion results file not found: {args.conversions_json}")
@@ -477,8 +449,8 @@ def main():
     for i, conv in enumerate(conversions, 1):
         print(f"\n=== Analyzing {i}/{len(conversions)} ===")
         
-        if conv['status'] != 'success':
-            print(f"Skipping failed conversion: {conv.get('pdf_path', 'unknown')}")
+        if conv['status'] not in ['success', 'skipped']:
+            print(f"Skipping failed/irrelevant conversion: {conv.get('pdf_path', 'unknown')}")
             continue
             
         try:
@@ -486,7 +458,17 @@ def main():
             if not output_path or not os.path.exists(output_path):
                 print(f"Markdown file not found: {output_path}")
                 continue
-                
+            
+            # --- Caching Check ---
+            md_file_mtime = Path(output_path).stat().st_mtime
+            if output_path in existing_analysis:
+                cached_item = existing_analysis[output_path]
+                # Check if the script version is the same and markdown file is not newer
+                if cached_item.get('script_version') == SCRIPT_VERSION and md_file_mtime < cached_item.get('timestamp', 0):
+                    print(f"Skipping (cached and up-to-date): {output_path}")
+                    analysis_results.append(cached_item) # Use the cached result
+                    continue
+
             with open(output_path, 'r', encoding='utf-8') as f:
                 content = f.read()
             
@@ -494,14 +476,11 @@ def main():
                 print(f"Markdown file is empty: {output_path}")
                 continue
             
-            # Extract info using the correct path
             pdf_path = conv.get('pdf_path', output_path)
             
-            # Use data from conversion if available, otherwise extract from path
             if conv.get('organization_name') and conv.get('report_title'):
                 org_name = conv['organization_name']
                 report_title = conv['report_title']
-                # Extract year from path or use current year dynamically
                 from datetime import datetime
                 year = str(datetime.now().year)
                 for part in Path(pdf_path).parts:
@@ -516,11 +495,10 @@ def main():
             analysis = analyze_content(content, org_name, year, report_title, available_categories)
             analysis['file_path'] = output_path
             analysis['pdf_path'] = pdf_path
+            analysis['organization_url'] = conv.get('organization_url') or get_organization_url(org_name, report_title, year)
+            analysis['timestamp'] = int(time.time()) # Add timestamp
+            analysis['script_version'] = SCRIPT_VERSION # Add script version
 
-            # Use the URL from the conversion step, or generate a search URL as a reliable fallback.
-            org_url = conv.get('organization_url') if conv.get('organization_url') else get_organization_url(org_name, report_title, year)
-            analysis['organization_url'] = org_url
-            
             analysis_results.append(analysis)
             print(f"SUCCESS: {org_name} -> {analysis['type']} / {analysis['category']}")
             
@@ -533,15 +511,15 @@ def main():
         json.dump(analysis_results, f, indent=2)
 
     print(f"\n=== ANALYSIS SUMMARY ===")
-    print(f"Total conversions: {len(conversions)}")
-    print(f"Successful conversions: {len([c for c in conversions if c['status'] == 'success'])}")
-    print(f"Successfully analyzed: {len(analysis_results)}")
+    print(f"Total conversions processed: {len(conversions)}")
+    print(f"Successfully analyzed/retrieved from cache: {len(analysis_results)}")
     
     if analysis_results:
         print("\nResults:")
         for result in analysis_results:
             ai_indicator = "AI" if result.get('ai_processed') else "FB"
-            print(f"  {ai_indicator} {result['organization']} - {result['title']} -> {result['type']} / {result['category']}")
+            cache_indicator = "(cached)" if md_file_mtime < result.get('timestamp', 0) else ""
+            print(f"  {ai_indicator} {result['organization']} - {result['title']} -> {result['type']} / {result['category']} {cache_indicator}")
     else:
         print("WARNING: No reports were successfully analyzed")
 

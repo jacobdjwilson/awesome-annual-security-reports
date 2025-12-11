@@ -293,8 +293,37 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         "prompt_version": prompt_version,
         "branch": branch
     }
-    
+
     try:
+        # Prepare output path
+        relative_path = pdf_path.relative_to(Path("Annual Security Reports"))
+        output_dir = Path("Markdown Conversions") / relative_path.parent
+        output_path = output_dir / f"{pdf_path.stem}.md"
+
+        # --- Caching Check ---
+        if output_path.exists():
+            prompt_mtime = Path(prompt_path).stat().st_mtime
+            pdf_mtime = pdf_path.stat().st_mtime
+            md_mtime = output_path.stat().st_mtime
+            if md_mtime > pdf_mtime and md_mtime > prompt_mtime:
+                print(f"Skipping (up-to-date): {output_path}")
+                # Still need to parse info for downstream tasks
+                organization_name, report_title = parse_filename_to_org_and_title(output_path.stem)
+                year = "Unknown"
+                for part in pdf_path.parts:
+                    if part.isdigit() and len(part) == 4:
+                        year = part
+                        break
+                organization_url = get_organization_url(organization_name, report_title, year)
+                return {
+                    "status": "skipped",
+                    "output_path": str(output_path),
+                    "organization_url": organization_url,
+                    "organization_name": organization_name,
+                    "report_title": report_title,
+                    **result_base
+                }
+
         print(f"Processing: {pdf_path}")
         prompt_text = read_prompt_file(prompt_path)
         print(f"Loaded prompt file ({len(prompt_text)} characters)")
@@ -329,11 +358,6 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         markdown_content = re.sub(r'^\s*```(?:markdown)?\s*\n', '', markdown_content, 1)
         markdown_content = re.sub(r'\n\s*```\s*$', '', markdown_content, 1)
 
-        # Prepare output
-        relative_path = pdf_path.relative_to(Path("Annual Security Reports"))
-        output_dir = Path("Markdown Conversions") / relative_path.parent
-        output_path = output_dir / f"{pdf_path.stem}.md"
-        
         os.makedirs(output_dir, exist_ok=True)
         
         with open(output_path, "w", encoding="utf-8") as f:
@@ -402,7 +426,7 @@ def main():
         result = process_pdf(pdf_path, args.prompt_path, args.prompt_version, args.branch)
         results.append(result)
         
-        if result['status'] == 'success':
+        if result['status'] in ['success', 'skipped']:
             converted_output_paths.append(result['output_path'])
 
     with open(args.output_json, 'w') as f:
