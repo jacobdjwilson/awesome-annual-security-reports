@@ -12,7 +12,7 @@ from typing import List, Dict, Any, Optional
 import time
 
 # Configure Gemini API
-MODELS = ["gemini-2.0-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-2.5-flash-live"]
+MODELS = ["gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-2.0-flash-live"]
 MODEL = None
 
 def setup_gemini(api_key: str):
