@@ -1,4 +1,3 @@
-```markdown
 # PRIVACY IN PRACTICE 2024
 © 2024 ISACA. All Rights Reserved.
 
@@ -380,4 +379,3 @@ www.instagram.com/isacanews/
 [^4]: ISACA, “Generative AI: The Risks, Opportunities and Outlook,” 25 October 2023, https://www.isaca.org/resources/infographics/genera-tive-ai-2023-an-isaca-pulse-poll-infographic
 [^5]: Greenleaf, G.; “Global Data Privacy Laws 2023: 162 National Laws and 20 Bills,” 181 Privacy Laws and Business International Report (PLBIR), 1, 2-4, 3 May 2023, https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4426146#:~:text=The%20Tables%20which%20document%20the-se,the%20total%20to%20162%20globally.
 [^6]: CISCO, Privacy’s Growing Importance and Impact, 2023, https://www.cisco.com/c/dam/en_us/about/doing_business/trust-center/docs/cisco-priva-cy-benchmark-study-2023.pdf?CCID=cc000160&DTID=esootr000515&OID=rptsc030828
-```

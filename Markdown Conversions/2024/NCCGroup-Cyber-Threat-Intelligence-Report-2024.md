@@ -1,4 +1,3 @@
-```markdown
 # Cyber Threat Intelligence Annual Report 2024
 People powered tech-enabled cyber security
 
@@ -836,5 +835,3 @@ defence against ransomware. Integrating technological
 and automated solutions alike, such as AI-assisted 
 measures, should also be considered to facilitate the 
 process where possible.  
-
-# SECTION 4 Law Enforcement Targeting Ransom

@@ -1,4 +1,3 @@
-```markdown
 # The State of Passwordless Identity Assurance 2025
 
 ## Table of Contents
@@ -186,4 +185,3 @@ Garrett holds a bachelor’s degree in international studies from the University
 ### About HYPR
 See how HYPR helps secure your workforce and customers
 Visit: hypr.com/get-a-demo
-```

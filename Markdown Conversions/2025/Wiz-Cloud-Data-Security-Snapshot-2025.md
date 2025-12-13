@@ -1,4 +1,3 @@
-```markdown
 # Cloud Data Security 
 Snapshot: Current 
 Exposure Trends 
@@ -205,4 +204,3 @@ Soaring Breach Costs. IBM Newsroom.
 ![Learn More]
 
 © Wiz Inc. All Rights Reserved.
-```

@@ -1,4 +1,3 @@
-```markdown
 # 2024 Annual Report
 By Insikt Group
 ®

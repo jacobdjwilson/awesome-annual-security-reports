@@ -1,4 +1,3 @@
-```markdown
 # The State of Trust Report
 
 THIRD EDITION
@@ -411,4 +410,3 @@ Vanta is the leading AI‑powered trust management platform that helps businesse
 
 [^1]: The timeframe for data breaches being reported in 2024 was 'In the past' instead of 'In the past 6-12 months'.
 [^2]: There was no timeframe for a terminated vendor relationship due to security concerns in 2024.
-```

@@ -1,4 +1,3 @@
-```markdown
 # The Top 10 Most Prevalent MITRE ATT&CK® Techniques
 ## SneakThief and The Perfect Heist
 

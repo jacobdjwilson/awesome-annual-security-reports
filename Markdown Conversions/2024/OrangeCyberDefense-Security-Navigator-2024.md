@@ -1,4 +1,3 @@
-```markdown
 # Security Navigator 2024
 
 ## Table of Contents

@@ -1,4 +1,3 @@
-```markdown
 # 2023 State of the Internet Report - Censys.io
 
 ## Table of Contents

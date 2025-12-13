@@ -1,4 +1,3 @@
-```markdown
 # Security Navigator 2025
 Research-driven insights to build a safer digital society
 

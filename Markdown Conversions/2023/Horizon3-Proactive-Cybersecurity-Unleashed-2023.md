@@ -1,4 +1,3 @@
-```markdown
 # 2023 YEAR IN REVIEW
 ## Proactive Cybersecurity Unleashed
 ### Observations of the Challenges Organizations Continue to Face

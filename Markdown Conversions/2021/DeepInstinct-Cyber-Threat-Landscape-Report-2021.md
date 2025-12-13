@@ -1,4 +1,3 @@
-```markdown
 # 2021 Mid-Year Threat Landscape Report
 DEEP INSTINCT
 
@@ -198,4 +197,3 @@ www.deepinstinct.com
 info@deepinstinct.com
 
 © Deep Instinct Ltd. This document contains proprietary information. Unauthorized use, duplication, disclosure or modification of this document in whole or in part without written consent of Deep Instinct Ltd. is strictly prohibited.
-```

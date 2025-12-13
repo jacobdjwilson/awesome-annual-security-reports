@@ -1,4 +1,3 @@
-```markdown
 # EMBARGO
 # SPECIAL REPORT: MANDIANT M-TRENDS 2023
 # Google Cloud Security 

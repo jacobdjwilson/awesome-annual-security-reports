@@ -1,4 +1,3 @@
-```markdown
 # 2021 NCC Group Annual Research Report
 
 ## Table of Contents

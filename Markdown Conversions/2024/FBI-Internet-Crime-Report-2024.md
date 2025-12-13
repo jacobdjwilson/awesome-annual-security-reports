@@ -1,4 +1,3 @@
-```markdown
 # 2024 IC3 ANNUAL REPORT
 
 ## Table of Contents

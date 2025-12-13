@@ -1,4 +1,3 @@
-```markdown
 # 2022 State of the Internet Report
 
 ## Table of Contents
