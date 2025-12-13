@@ -1,0 +1,213 @@
+name: Refresh Old Conversions
+
+on:
+  schedule:
+    # Run every Monday at 8:00 AM ET
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  identify-stale-files:
+    runs-on: ubuntu-latest
+    outputs:
+      has_files: ${{ steps.check-files.outputs.has_files }}
+      file_count: ${{ steps.check-files.outputs.file_count }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find stale files
+        id: check-files
+        shell: python
+        run: |
+          import os
+          import subprocess
+          import time
+          from pathlib import Path
+
+          # Configuration
+          MD_ROOT = Path("Markdown Conversions")
+          PDF_ROOT = Path("Annual Security Reports")
+          LIMIT = 6
+          DAYS_OLD = 90
+          AGE_LIMIT_SECONDS = DAYS_OLD * 24 * 3600
+          
+          print(f"Scanning for Markdown files older than {DAYS_OLD} days...")
+          
+          stale_files = []
+          current_time = time.time()
+
+          if MD_ROOT.exists():
+              for md_file in MD_ROOT.rglob("*.md"):
+                  try:
+                      # Get last commit timestamp for the file
+                      timestamp_str = subprocess.check_output(
+                          ['git', 'log', '-1', '--format=%ct', str(md_file)], 
+                          text=True
+                      ).strip()
+                      
+                      if not timestamp_str:
+                          print(f"Skipping {md_file}: No git history found")
+                          continue
+                          
+                      last_commit_time = int(timestamp_str)
+                      age_seconds = current_time - last_commit_time
+                      age_days = age_seconds / (24 * 3600)
+                      
+                      if age_seconds > AGE_LIMIT_SECONDS:
+                          # Map Markdown back to source PDF
+                          # Example: Markdown Conversions/2023/Report.md -> Annual Security Reports/2023/Report.pdf
+                          try:
+                              rel_path = md_file.relative_to(MD_ROOT)
+                              pdf_path = PDF_ROOT / rel_path.with_suffix('.pdf')
+                              
+                              if pdf_path.exists():
+                                  print(f"Found stale file ({age_days:.1f} days old): {pdf_path}")
+                                  stale_files.append((age_seconds, str(pdf_path)))
+                              else:
+                                  print(f"Warning: PDF missing for {md_file}")
+                          except ValueError:
+                              continue
+                  except Exception as e:
+                      print(f"Error processing {md_file}: {e}")
+                      continue
+
+          # Sort by age (descending -> oldest first)
+          stale_files.sort(key=lambda x: x[0], reverse=True)
+
+          # Apply limit
+          files_to_process = [f[1] for f in stale_files[:LIMIT]]
+          
+          print(f"\nFound {len(stale_files)} total stale files.")
+          print(f"Selected top {len(files_to_process)} for processing.")
+
+          # Output results
+          if files_to_process:
+              with open("files_to_process.txt", "w") as f:
+                  f.write("\n".join(files_to_process))
+              
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+                  fh.write("has_files=true\n")
+                  fh.write(f"file_count={len(files_to_process)}\n")
+          else:
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+                  fh.write("has_files=false\n")
+                  fh.write("file_count=0\n")
+
+      - name: Upload file list
+        if: steps.check-files.outputs.has_files == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: files-to-process
+          path: files_to_process.txt
+
+  process-stale-reports:
+    needs: identify-stale-files
+    if: needs.identify-stale-files.outputs.has_files == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr
+          python -m pip install --upgrade pip
+          pip install markitdown[pdf,ocr] google-generativeai google-api-python-client requests
+
+      - name: Download file list
+        uses: actions/download-artifact@v4
+        with:
+          name: files-to-process
+          path: .
+
+      # --- RE-CONVERSION STEP ---
+      - name: Re-run PDF Converter
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
+        run: |
+          PROMPT_PATH=".github/ai-prompts/pdf-to-markdown-prompt.md"
+          
+          # Default prompt version/branch for logging
+          PROMPT_VERSION="refresh-job"
+          BRANCH_NAME="${{ github.ref_name }}"
+          
+          echo "Refresing PDFs..."
+          python .github/scripts/pdf-converter.py files_to_process.txt "$PROMPT_PATH" "$PROMPT_VERSION" "$BRANCH_NAME" --output-json conversions.json
+
+      # --- RE-ANALYSIS STEP ---
+      - name: Re-run Report Analyzer
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
+        run: |
+          if [ -f conversions.json ]; then
+            echo "Analyzing refreshed reports..."
+            python .github/scripts/report-analyzer.py conversions.json --readme-path README.md --output-json analysis.json
+          else
+            echo "No conversions.json found, skipping analysis."
+            exit 1
+          fi
+
+      # --- README UPDATE STEP ---
+      - name: Update README
+        id: readme_update
+        run: |
+          if [ -f analysis.json ]; then
+            echo "Updating README..."
+            if python .github/scripts/readme-updater.py analysis.json --readme-path README.md; then
+              
+              # Check git diff to see if anything actually changed
+              if git diff --quiet HEAD -- README.md "Markdown Conversions/"; then
+                echo "No content changes detected after refresh."
+                echo "changes_detected=false" >> $GITHUB_OUTPUT
+              else
+                echo "Content changes detected."
+                echo "changes_detected=true" >> $GITHUB_OUTPUT
+              fi
+            else
+              echo "README update failed"
+              exit 1
+            fi
+          fi
+
+      # --- PR CREATION ---
+      - name: Create Pull Request
+        if: steps.readme_update.outputs.changes_detected == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "♻️ Refresh stale security reports"
+          title: "♻️ Refresh ${{ needs.identify-stale-files.outputs.file_count }} stale security reports"
+          body: |
+            ### Automated Report Refresh
+            
+            This workflow identified and re-processed **${{ needs.identify-stale-files.outputs.file_count }}** reports that were older than 3 months.
+            
+            **Refreshed Reports:**
+            *(See files changed for details)*
+            
+            This ensures that our Markdown conversions and README summaries remain up-to-date with the latest AI model capabilities.
+          branch: refresh-reports-${{ github.run_id }}
+          delete-branch: true
+          labels: |
+            automated
+            maintenance
+            report-refresh
