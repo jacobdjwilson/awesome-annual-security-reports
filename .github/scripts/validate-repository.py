@@ -78,7 +78,11 @@ def check_markdown_content(file_path: Path) -> List[str]:
                 issues.append(f"Contains AI conversational artifacts ('{pattern}')")
                 break
         
-        # Check 3: Suspiciously short content
+        # Check 3: Specific Header Artifact
+        if content.strip().startswith('# Report Content Below'):
+            issues.append("Begins with artifact header '# Report Content Below'")
+
+        # Check 4: Suspiciously short content
         if len(content.strip()) < 50:
             issues.append("File is suspiciously short (< 50 chars)")
 
