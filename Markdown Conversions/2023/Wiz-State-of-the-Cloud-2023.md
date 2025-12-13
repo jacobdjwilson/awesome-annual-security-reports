@@ -1,4 +1,3 @@
-```markdown
 # 2023 State of the Cloud Whitepaper
 
 ## Table of Contents
@@ -122,4 +121,3 @@ Moreover, 13% of cloud environments have at least one publicly exposed non-manag
 Exposed resources are compromised within hours. In experiments we ran where we created S3 buckets with names we assumed attackers might be targeting – taking well-known company names and adding “-backup”, “_logs”, etc. – we spotted attempts to list the contents of the S3 buckets in as little as 13 hours. In a similar test, we created an S3 bucket with an unguessable name, but referenced it in a commit to a public GitHub repo. Attempts at listing it occurred within 7 hours. This indicates to us the speed with which attackers could potentially find and exfil a publicly exposed S3 bucket.
 
 ![Attackers are searching for exposed resources. A graphic illustrating the time it takes for attackers to discover exposed S3 buckets. Exposed buckets with common names are discovered within 13 hours, while exposed buckets referenced in GitHub repos are found within 7 hours.]
-```

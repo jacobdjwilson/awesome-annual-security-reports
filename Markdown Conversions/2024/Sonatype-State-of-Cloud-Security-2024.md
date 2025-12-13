@@ -1,4 +1,3 @@
-```markdown
 # Table of Contents
 - [State of the Software Supply Chain](#state-of-the-software-supply-chain)
 - [Open Source Scale and Consumption Behaviors](#open-source-scale-and-consumption-behaviors)

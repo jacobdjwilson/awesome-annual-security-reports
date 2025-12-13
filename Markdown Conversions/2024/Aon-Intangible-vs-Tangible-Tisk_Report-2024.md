@@ -1,4 +1,3 @@
-```markdown
 # Global Edition
 Sponsored by Aon
 Independently conducted by Ponemon Institute LLC
