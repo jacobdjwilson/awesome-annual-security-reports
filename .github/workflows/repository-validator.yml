@@ -1,0 +1,44 @@
+name: Repository Integrity Validator
+
+on:
+  schedule:
+    # Run every Monday at 8:00 AM UTC
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  validate-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Validation Script
+        id: validator
+        continue-on-error: true
+        run: |
+          python .github/scripts/validate-repository.py \
+            --pdf-root "Annual Security Reports" \
+            --md-root "Markdown Conversions" \
+            --output-report validation_report.md
+
+      # Only runs if the python script exit code was 1 (issues found)
+      - name: Create Issue on Failure
+        if: steps.validator.outcome == 'failure'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "⚠️ Repository Consistency Check Failed"
+          content-filepath: validation_report.md
+          labels: |
+            maintenance
+            automated-check
+          assignees: ${{ github.actor }}
