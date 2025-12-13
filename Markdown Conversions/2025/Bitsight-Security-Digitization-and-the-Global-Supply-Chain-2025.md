@@ -1,9 +1,3 @@
-# Report Content Below
-
-The official report URL is: https://www.bitsight.com/blog/uncovering-cyber-risks-global-supply-chain
-
-# Report Content Below
-
 R E P O R T
 
 Under the Surface:
