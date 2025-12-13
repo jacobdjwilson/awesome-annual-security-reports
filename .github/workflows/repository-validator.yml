@@ -2,8 +2,8 @@ name: Repository Integrity Validator
 
 on:
   schedule:
-    # Run every Monday at 8:00 AM UTC
-    - cron: '0 8 * * 1'
+    # Run every Monday at 8:00 AM ET
+    - cron: '0 13 * * 1'
   workflow_dispatch:
   push:
     paths:
