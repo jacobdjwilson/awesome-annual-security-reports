@@ -1,10 +1,4 @@
-# Report Content Below
-
-The official report URL is: https://www.playhousesquare.org/
-
-# Report Content Below
-
-State of Physical
+# State of Physical
 Security 2026
 
 Collaborative transformation
