@@ -9,6 +9,9 @@ on:
     branches: [main, development]
     paths:
       - 'Annual Security Reports/**/*.pdf'
+  # Scheduled Run (12:00 UTC = 7:00 AM EST)
+  schedule:
+    - cron: '0 12 * * *'
   workflow_dispatch:
     inputs:
       force_scan_all:
@@ -42,20 +45,62 @@ jobs:
       - name: Find and Validate PDF files
         id: find-files
         run: |
+          # Initialize files
+          > files_to_process.txt
+          > deleted_files.txt
+
+          # --- LOGIC BRANCHING BASED ON TRIGGER ---
+
           if [[ "${{ github.event.inputs.force_scan_all }}" == "true" ]]; then
+            # MANUAL FORCE: Scan everything
+            echo "mode: Force Scan All"
             find "Annual Security Reports" -name "*.pdf" > files_to_process.txt
-            touch deleted_files.txt
-          else
-            if [ "${{ github.event_name }}" == "push" ]; then
-              # For push events, get files changed in this commit
-              git diff --name-only HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
-              git diff --name-only --diff-filter=D HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
+          
+          elif [ "${{ github.event_name }}" == "schedule" ]; then
+            # CRON SCHEDULE: Find oldest unprocessed file
+            echo "mode: Scheduled Catch-up"
+            
+            # Find all PDFs
+            find "Annual Security Reports" -name "*.pdf" -type f > all_pdfs.txt
+            
+            # Identify files missing markdown conversion
+            > missing_conversions.txt
+            while IFS= read -r pdf_path; do
+                # Construct expected markdown path
+                # Replace root folder and extension
+                md_path=$(echo "$pdf_path" | sed 's/Annual Security Reports/Markdown Conversions/' | sed 's/\.pdf$/.md/')
+                
+                if [ ! -f "$md_path" ]; then
+                    echo "$pdf_path" >> missing_conversions.txt
+                fi
+            done < all_pdfs.txt
+
+            if [ -s missing_conversions.txt ]; then
+                count=$(wc -l < missing_conversions.txt)
+                echo "Found $count files pending conversion."
+                
+                # Sort by time (oldest first) and take the single top result
+                cat missing_conversions.txt | xargs ls -rt | head -n 1 > files_to_process.txt
+                
+                echo "Selected oldest unprocessed file: $(cat files_to_process.txt)"
             else
-              # For pull requests
-              git diff --name-only --diff-filter=AM origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
-              git diff --name-only --diff-filter=D origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
+                echo "✅ No backlog found. All PDFs have corresponding Markdown files."
             fi
+
+          elif [ "${{ github.event_name }}" == "push" ]; then
+            # PUSH: Scan changed files
+            echo "mode: Push Event"
+            git diff --name-only HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
+            git diff --name-only --diff-filter=D HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
+          
+          else
+            # PR: Scan changed files relative to main
+            echo "mode: Pull Request"
+            git diff --name-only --diff-filter=AM origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
+            git diff --name-only --diff-filter=D origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
           fi
+
+          # --- VALIDATION (Applied to whatever files were selected above) ---
 
           if [ -s files_to_process.txt ]; then
             VALID_FILES=""
@@ -128,6 +173,7 @@ jobs:
       - name: Generate Discovery Summary
         run: |
           echo "## 🔍 Discovery Scan Summary" >> $GITHUB_STEP_SUMMARY
+          echo "Trigger: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Report Counts" >> $GITHUB_STEP_SUMMARY
           echo "| Directory | PDF Reports | Markdown Conversions |" >> $GITHUB_STEP_SUMMARY
@@ -520,6 +566,12 @@ jobs:
           else
             pr_title="Add ${report_count} new security reports"
           fi
+          
+          # Add prefix for automated catch-up
+          if [ "${{ github.event_name }}" == "schedule" ]; then
+             pr_title="[Automated Catch-up] ${pr_title}"
+          fi
+          
           echo "pr_title=${pr_title}" >> $GITHUB_OUTPUT
 
       - name: Commit changes
