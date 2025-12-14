@@ -41,13 +41,40 @@ jobs:
             --md-root "Markdown Conversions" \
             --output-report validation_report.md
 
-      # --- FAILURE PATH: Create Issue ---
-      - name: Create Issue on Failure
+      # --- FAILURE PATH: Check for Existing Issue ---
+      - name: Check for Existing Issue
+        id: check_issue
+        if: steps.validator.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Search for an open issue with the specific label and title
+          # We grab the first one found (.[0].number)
+          existing_issue=$(gh issue list \
+            --search "Repository Consistency Check Failed in:title" \
+            --state open \
+            --label "automated-check" \
+            --json number \
+            --jq '.[0].number')
+
+          if [ -z "$existing_issue" ]; then
+            echo "No existing issue found. A new one will be created."
+            echo "issue_number=" >> $GITHUB_OUTPUT
+          else
+            echo "Found open issue #$existing_issue. It will be updated."
+            echo "issue_number=$existing_issue" >> $GITHUB_OUTPUT
+          fi
+
+      # --- FAILURE PATH: Create OR Update Issue ---
+      - name: Create or Update Issue
         if: steps.validator.outcome == 'failure'
         uses: peter-evans/create-issue-from-file@v5
         with:
           title: "⚠️ Repository Consistency Check Failed"
           content-filepath: validation_report.md
+          # If this variable is empty, it creates a new issue.
+          # If it contains a number, it updates that issue.
+          issue-number: ${{ steps.check_issue.outputs.issue_number }}
           labels: |
             maintenance
             automated-check
