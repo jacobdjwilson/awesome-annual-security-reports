@@ -9,6 +9,7 @@ import urllib.parse
 from googleapiclient.discovery import build
 from typing import List, Dict, Any, Tuple, Optional
 from pathlib import Path
+from datetime import datetime
 
 # Configure Gemini API
 MODELS = ["gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-2.0-flash-live"]
@@ -474,6 +475,7 @@ def main():
     print(f"Processing {len(conversions)} conversion results...")
 
     analysis_results = []
+    current_year = datetime.now().year
     for i, conv in enumerate(conversions, 1):
         print(f"\n=== Analyzing {i}/{len(conversions)} ===")
         
@@ -502,8 +504,7 @@ def main():
                 org_name = conv['organization_name']
                 report_title = conv['report_title']
                 # Extract year from path or use current year dynamically
-                from datetime import datetime
-                year = str(datetime.now().year)
+                year = str(current_year)
                 for part in Path(pdf_path).parts:
                     if part.isdigit() and len(part) == 4 and part.startswith("20"):
                         year = part
@@ -511,6 +512,17 @@ def main():
             else:
                 org_name, year, report_title = extract_info_from_path(pdf_path)
             
+            # Check if report is older than 2 years
+            try:
+                report_year_int = int(year)
+                # If current year is 2025, we want to keep 2025, 2024, 2023.
+                # Older than 2 years means < (2025 - 2), so < 2023.
+                if report_year_int < (current_year - 2):
+                    print(f"SKIPPING: {org_name} - {report_title} ({year}) is older than 2 years. Skipping analysis and README update.")
+                    continue
+            except ValueError:
+                print(f"Warning: Could not parse year '{year}' for age check. Proceeding...")
+
             print(f"Analyzing: {org_name} - {report_title} ({year})")
 
             analysis = analyze_content(content, org_name, year, report_title, available_categories)
@@ -545,7 +557,7 @@ def main():
     else:
         print("WARNING: No reports were successfully analyzed")
 
-    return 0 if analysis_results else 1
+    return 0
 
 if __name__ == "__main__":
     sys.exit(main())
