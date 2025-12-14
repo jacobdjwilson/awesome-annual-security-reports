@@ -2,8 +2,8 @@ name: Refresh Old Conversions
 
 on:
   schedule:
-    # Run every Monday at 8:00 AM ET
-    - cron: '0 13 * * 1'
+    # Run every day at 7:00 AM ET (12:00 UTC)
+    - cron: '0 12 * * *'
   workflow_dispatch:
 
 permissions:
