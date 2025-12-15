@@ -25,24 +25,6 @@
 - [Recommendations](#recommendations)
 - [Secure the cloud with Sophos](#secure-the-cloud-with-sophos)
 
----
-
-# Report Content Below
-
-The official report URL is: https://www.sophos.com/en-us/content/state-of-cloud-security
-
-# Report Content Below
-
-THE STATE OF
-CLOUD SECURITY 2020
-The results of an independent study
-of 3,521 IT managers hosting data
-and workloads in the public cloud
-
-A Sophos whitepaper July 2020
-
-## THE STATE OF CLOUD SECURITY 2020
-
 ### Introduction
 
 Thanks to growing demand for remote working and public cloud services, on-premises
