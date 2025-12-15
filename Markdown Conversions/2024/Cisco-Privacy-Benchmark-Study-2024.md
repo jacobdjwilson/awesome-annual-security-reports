@@ -1,5 +1,3 @@
-# AI Instruction Set for Converting Technical PDFs to Markdown
-
 ## Table of Contents
 - [Introduction](#introduction)
 - [Methodology](#methodology)
