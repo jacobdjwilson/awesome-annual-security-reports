@@ -3,7 +3,7 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [General Penetration Testing Challenges](#general-penetration-testing-challenges)
-- [Reasons for Pen Testing](#reasons-for-pen-testing)
+- [Reasons for Penetration Testing](#reasons-for-penetration-testing)
 - [Compliance and Pen Testing](#compliance-and-pen-testing)
 - [Phishing](#phishing)
 - [Penetration Testing Frequency](#penetration-testing-frequency)
@@ -15,7 +15,17 @@
 - [Conclusion](#conclusion)
 - [About Core Security](#about-core-security)
 
+# Report Content Below
+
+The official report URL is: https://www.coresecurity.com/resources/guides/2020-pen-testing-survey-report-1
+
+# Report Content Below
+
+2020 Penetration
+Testing Report
+
 ## Introduction
+
 Penetration testing is a vital method to evaluate the security of an organization.
 By attempting to exploit potential security weaknesses of all kinds, from
 misconfigurations to end user mistakes, organizations can proactively take action
@@ -30,6 +40,7 @@ testing program.
 
 The results of this global survey, which will be explored in detail in this report,
 provide valuable data on the following key issues related to pen testing:
+
 - Why to pen test
 - Remediation efforts
 - Finding skilled personnel
@@ -43,7 +54,14 @@ trends, and areas of improvement. With its inauguration, we have sought to creat
 a valuable resource from which the community of cybersecurity professionals can
 benefit.
 
+2
+
+2020 Pen Testing Reportwww.coresecurity.com
+
 ## General Penetration Testing Challenges
+
+![A bar chart showing penetration testing challenges with percentages for each challenge.](Figure 1: Pen testing challenges)
+
 One of the biggest concerns across organizations appears to
 be getting others to act on the findings (Figure 1). However,
 97% of respondents noted that penetration testing was at least
@@ -63,19 +81,60 @@ indicator of overconfidence and a common issue in the in the
 cybersecurity world. How can you be confident in your security
 posture if you do not effectively test it?
 
-![Figure 1: Pen testing challenges - Getting qualified 3rd parties to do the testing 63%, Getting executive sponsorship and funding for the program 25%, Hiring enough skilled personnel to do the testing (internal) 30%, Getting others to act on the findings 46%, Other 7%]
+What challenges does your organization face with
+your penetration testing program?
 
-![Figure 2: Importance of penetration testing - Important 67%, Somewhat important 30%, Not important 3%]
+- 63% Hiring enough skilled
+  personnel to do the
+  testing (internal)
+- 46% Getting others to
+  act on the findings
+- 30% Getting executive sponsorship
+  and funding for the program
+- 25% Getting qualified 3rd parties
+  to do the testing
+- 7% Other
 
-![Figure 3: Confidence in security posture - Confident 39%, Somewhat confident 52%, Not at all confident 9%]
+3
 
-## Reasons for Pen Testing
+2020 Pen Testing Reportwww.coresecurity.com
+
+![A pie chart showing the importance of penetration testing to an organization's security posture.](Figure 2: Importance of penetration testing)
+
+![A pie chart showing confidence in an organization's security posture.](Figure 3: Confidence in security posture)
+
+How important is penetration testing to your
+organization's security posture?
+
+- Important 67%
+- Somewhat
+  important 30%
+- Not important 3%
+
+How confident are you in your
+organization's security posture?
+
+- Confident 39%
+- Somewhat
+  confident 52%
+- Not at all
+  confident 9%
+
+4
+
+2020 Pen Testing Reportwww.coresecurity.com
+
+## Reasons for Penetration Testing
+
+![A bar chart showing the reasons for performing penetration testing.](Figure 4: Reasons for performing penetration testing)
+
+Reasons for Pen Testing
 Organizations appear to have an even balance for why they pen test,
 with 70% reporting that they perform pen tests for vulnerability
 management program support, 69% for measuring security posture,
 and 67% for compliance (Figure 4).
 
-### Common Security Concerns
+Common Security Concerns
 Respondents also reported misconfiguration (77%), phishing (72%),
 and poor passwords (60%) as top concerns (Figure 5). This may
 indicate that pen testing is a desirable way to test for risks related
@@ -93,11 +152,50 @@ reduce risk. Ultimately, maintaining your security posture over time
 requires regular penetration testing and retesting to see if these
 efforts are effective.
 
-![Figure 4: Reasons for performing penetration testing - Vulnerability management program support 70%, Measuring security posture 69%, Compliance or external mandates 67%, Red-Purple-Blue teaming exercises 24%, Other 3%]
+Why does your organization
+perform penetration tests?
 
-![Figure 5: Common security concerns - Phishing 72%, Misconfigurations 77%, Lost/stolen devices 36%, Orphaned accounts 35%, Poor passwords 60%, Other 6%]
+- 70% Vulnerability
+  management
+  program support
+- 69% Measuring
+  security posture
+- 67% Compliance or
+  external mandates
+- 24% Red-Purple-Blue teaming exercises
+- 3% Other
+
+5
+
+2020 Pen Testing Reportwww.coresecurity.com
+
+![A bar chart showing common security risks/entry points.](Figure 5: Common security concerns)
+
+What common security risks/entry points are you most concerned about?
+
+- 77% Misconfigurations
+- 72% Phishing
+- 60% Poor passwords
+- 36% Lost/stolen devices
+- 35% Orphaned accounts
+- 6% Other
+
+6
+
+2020 Pen Testing Reportwww.coresecurity.com
 
 ## Compliance and Pen Testing
+
+![A pie chart showing the importance of penetration testing for compliance initiatives.](Figure 6: Importance of penetration testing for compliance)
+
+How important is penetration testing to your
+compliance initiatives?
+
+- Not at all
+  important 5%
+- Important 68%
+- Somewhat important 27%
+
 The need to stay compliant or adhere to external mandates was a
 primary reason respondents pen testing (68%), as seen in Figure 4.
 95% of respondents reported that pen testing held some level of
@@ -112,11 +210,28 @@ data, ensuring that pen testing will continue to be a critical tool for
 organizations needing to demonstrate the effectiveness of their
 security programs.
 
-![Figure 6: Importance of penetration testing for compliance - Not at all important 5%, Somewhat important 27%, Important 68%]
+7
 
-![Figure 7: Most important types of data to protect - Customer or patient data 77%, Intellectual property 58%, Financial data 68%, Employee data 64%, Other 3%]
+2020 Pen Testing Reportwww.coresecurity.com
+
+![A bar chart showing the types of data most important for organizations to protect.](Figure 7: Most important types of data to protect)
+
+What type of data is most important for your organization to protect?
+
+- 77% Customer or patient data
+- 68% Financial data
+- 64% Employee data
+- 58% Intellectual property
+- 3% Other
+
+8
+
+2020 Pen Testing Reportwww.coresecurity.com
 
 ## Phishing
+
+![A pie chart showing the frequency of phishing simulations conducted by organizations.](Figure 8: Frequency of phishing simulations)
+
 Phishing attempts are nearly impossible to block from every inbox
 and are an incredibly common way for attackers to gain access
 to employee credentials and an organization’s systems. 72% of
@@ -133,9 +248,21 @@ and 25% only conduct them annually, which may indicate a lack of
 awareness of how helpful frequent phishing simulations are, or a lack
 of resources (Figure 8).
 
-![Figure 8: Frequency of phishing simulations - Ongoing 14%, Monthly 19%, Quarterly 23%, Annually 25%, Never 19%]
+How often does your organization
+conduct phishing simulations?
+
+- Ongoing 14%
+- Monthly 19%
+- Quarterly 23%
+- Annually 25%
+- Never 19%
+
+9
+
+2020 Pen Testing Reportwww.coresecurity.com
 
 ## Penetration Testing Frequency
+
 It is promising to see that only a small percentage of respondents
 (15%) indicated that they never pen test. This indicates that pen
 testing is viewed as a critical practice that makes an impact in an
@@ -158,9 +285,23 @@ testing is typically quite a large undertaking, so there may be a
 misunderstanding about the difference between a vulnerability scan,
 which can be run daily or weekly, and a full pen test.
 
-![Figure 9: Frequency of penetration testing - Weekly 9%, Quarterly 11%, Daily 17%, 1-2 times a year 32%, Never 15%, Monthly 16%]
+![A pie chart showing the frequency of penetration testing.](Figure 9: Frequency of penetration testing)
+
+How often does your organization pen test?
+
+- Daily 9%
+- Weekly 11%
+- Monthly 17%
+- Quarterly 16%
+- 1-2 times a year 32%
+- Never 15%
+
+10
+
+2020 Pen Testing Reportwww.coresecurity.com
 
 ## In-House Penetration Testing Efforts
+
 While some businesses exclusively enlist the services of a third-party
 penetration testing team, it is now quite common to build an in-house
 team, with 42% of respondents working at organizations that have one
@@ -188,15 +329,75 @@ required to have an in-house team. Their needs may be adequately met
 by third party services, since their IT infrastructures aren’t as large, so
 testing is not such a time consuming effort (Figure 13).
 
-![Figure 10: In-house penetration testing - Yes 42%, No, but we have in the past 7%, No, we’ve never had an in-house penetration testing team 51%]
+![A pie chart showing whether organizations have an in-house penetration testing team.](Figure 10: In-house penetration testing)
 
-![Figure 11: In-house pen testing team size - 1-2 53%, 3-5 31%, 6-10 7%, More than 11 9%]
+Do you have an in-house
+penetration testing team?
 
-![Figure 12: Confidence in security posture (respondents with internal teams only) - Confident 46%, Somewhat confident 48%, Not at all confident 6%]
+- No, we’ve never had an in-house
+  penetration testing team 51%
+- Yes 42%
+- No, but we have in the past 7%
 
-![Figure 13: Number of employees (for organizations without internal teams) - Less than 100 33%, 100-249 16%, 250-499 12%, 500-999 8%, 1,000-4,999 15%, 5,000-9,999 5%, 10,000 or more 11%]
+11
 
-## In-House Penetration Testing Staffing Challenges
+2020 Pen Testing Reportwww.coresecurity.com
+
+![A pie chart showing the confidence in security posture for respondents with internal teams.](Figure 12: Confidence in security posture)
+
+(respondents with internal teams only)
+
+How confident are you in your
+organization's security posture?
+
+- Confident 46%
+- Somewhat
+  confident 48%
+- Not at all
+  confident 6%
+
+![A pie chart showing the size of in-house pen testing teams.](Figure 11: In-house pen testing team size)
+
+How many dedicated team members does your
+in-house penetration testing team have?
+
+- More
+  than 9%
+  11
+- 6-10 7%
+- 3-5 31%
+- 1-2 53%
+
+12
+
+2020 Pen Testing Reportwww.coresecurity.com
+
+![A bar chart showing the number of employees in organizations without internal teams.](Figure 13: Number of employees)
+
+(for organizations without internal teams)
+
+How many employees does your organization have?
+
+- Less than 100 33%
+- 100-249 16%
+- 250-499 15%
+- 500-999 12%
+- 1,000-4,999 8%
+- 5,000-9,999 11%
+- 10,000 or more 5%
+
+13
+
+2020 Pen Testing Reportwww.coresecurity.com
+
+## In-House Penetration Testing
+Staffing Challenges
+
+![A bar chart showing reasons for not having an in-house pen testing team.](Figure 14: Reasons for not having an in-house pen testing team)
+
+Why doesn't your organization have an in-house
+penetration testing team?
+
 There are many reasons cited for not having an in-house penetration
 testing team. 40% cited lack of talent and 42% cited lack of funding,
 which aligns with the ongoing skills shortage in the cybersecurity
@@ -212,13 +413,44 @@ Some tools can help combat the talent obstacle, as they function not
 only as a way to streamline and enhance pen testing efforts, but also
 as a way to standardize testing and enable comparing results.
 
-![Figure 14: Reasons for not having an in-house pen testing team - Lack of talent/skill 40%, Leverage third parties exclusively 42%, Lack of funding 28%, Not enough need to employ a full-time pen tester/team 24%, Lack of executive sponsorship 7%, Other 45%]
+- 45% Not enough need to employ
+  a full-time pen tester/team
+- 42% Lack of funding
+- 40% Lack of talent/skill
+- 28% Lack of executive sponsorship
+- 24% Leverage third parties exclusively
+- 7% Other
 
-![Figure 15: Years of experience of in-house pen testing team - 1 year or less 25%, 2-3 years 26%, 4-5 years 19%, 6 or more years 30%]
+14
 
-![Figure 16: Influence of pen testing technology - Strong influence 17%, Some influence 43%, No influence 40%]
+2020 Pen Testing Reportwww.coresecurity.com
+
+![A pie chart showing the average years of experience of in-house pen testing teams.](Figure 15: Years of experience of in-house pen testing team)
+
+What is the average number of years of experience your
+in-house team has with penetration testing?
+
+- 30% 1 year or less
+- 26% 2-3 years
+- 25% 4-5 years
+- 19% 6 or more years
+
+![A pie chart showing the influence of pen testing technology on the decision to have an in-house team.](Figure 16: Influence of pen testing technology)
+
+How does penetration testing technology
+influence your organization's decision to have an
+in-house penetration testing function?
+
+- Strong influence 43%
+- Some influence 40%
+- No influence 17%
+
+15
+
+2020 Pen Testing Reportwww.coresecurity.com
 
 ## Purple Teams
+
 Purple teaming, which focuses on aligning the efforts of both red and
 blue teams, creates a communicative joint team that shares the goal
 of improving security. 39% of respondents reported that they have
@@ -238,9 +470,24 @@ engagements, is positive, since purple teams are more collaborative
 and make testing efforts even more effective with unified, cohesive
 plans, goals, and strategies.
 
-![Figure 17: Utilization of a purple team approach - Yes 39%, No, but we are considering it 30%, No, we don't have any plans to implement 31%]
+![A pie chart showing the utilization of a purple team approach.](Figure 17: Utilization of a purple team approach)
+
+Do you utilize a purple team approach
+(red and blue teams working together)
+in your pen-testing strategy?
+
+- Yes 39%
+- No, but we are
+  considering it 30%
+- No, we don't have any
+  plans to implement 31%
+
+16
+
+2020 Pen Testing Reportwww.coresecurity.com
 
 ## Penetration Testing Tools
+
 Nearly all respondents indicated that they use penetration testing
 tools of some kind, and 72% of respondents noted that they used
 free and/or open source tools (Figure 18). This falls in line with
@@ -265,27 +512,140 @@ documentation to prove adherence to certain regulations and
 industry practices. Reporting is also an arduous, time-consuming task,
 so good reporting functionality can streamline things considerably.
 
-![Figure 18: Active use of penetration testing software - Yes, free or open source tools 72%, Yes, commercial tools 49%, No 12%]
+![A bar chart showing the active use of penetration testing software or tools.](Figure 18: Active use of penetration testing software)
 
-![Figure 19: Most important criteria for evaluating pen testing software - Cost 62%, Features/functionality 83%, Support 48%, Ease of use 48%, Vendor experience and reputation 50%, Customer reviews 23%, Other 2%]
+Does your organization actively use
+penetration testing software or tools?
 
-![Figure 20: Most important features in pen testing software - Teaming capabilities 38%, Templates/automation for redundant tasks 58%, Phishing capabilities 43%, Extensive threat library 63%, Multi-vector testing capabilities 64%, Integration with other pen testing tools 51%, Automated cleanup 30%, Reporting 69%]
+- Yes, free or open
+  source tools 72%
+- Yes, commercial
+  tools 49%
+- No 12%
+
+17
+
+2020 Pen Testing Reportwww.coresecurity.com
+
+![A bar chart showing the most important criteria for evaluating penetration testing software.](Figure 19: Most important criteria for evaluating pen testing software)
+
+What criteria do you consider most important
+when evaluating penetration testing software?
+
+- Features/
+  functionality 83%
+- Cost 62%
+- Vendor experience
+  and reputation 50%
+- Support 48%
+- Ease of use 48%
+- Customer
+  reviews 23%
+- Other 2%
+
+18
+
+2020 Pen Testing Reportwww.coresecurity.com
+
+![A bar chart showing the most important features in paid penetration testing software/tools.](Figure 20: Most important features in pen testing software)
+
+What features are most important in paid
+penetration testing software/tools?
+
+- 69% Reporting
+- 64% Multi-vector
+  testing capabilities
+- 63% Extensive threat
+  library
+- 58% Templates/
+  automation for
+  redundant tasks
+- 51% Integration with
+  other pen testing
+  tools
+- 43% Phishing
+  capabilities
+- 38% Teaming
+  capabilities
+- 30% Automated
+  cleanup
+
+19
+
+2020 Pen Testing Reportwww.coresecurity.com
 
 ## Demographics
+
 This report is based on the results of a comprehensive survey of cybersecurity professionals around the
 globe with the aim of presenting an accurate picture of how penetration testing is utilized by different
 organizations and to provide insights about the effectiveness of ethical hacking strategies. The respondents
 represent a diverse cross-section of industries, company size, job level, and region.
 
-![Figure 21: Regions - North America 31%, Europe 30%, Middle East 5%, Asia Pacific 18%, Africa 3%, Latin America 10%, Other 4%]
+![A pie chart showing the regions where organizations are headquartered.](Figure 21: Regions)
 
-![Figure 22: Industries Surveyed - Healthcare 7%, Banking/Finance 13%, Retail 5%, Services 11%, Manufacturing 8%, Education 5%, Insurance 1%, Technology 33%, Government 10%, Other 7%]
+In which region is your organization headquartered?
 
-![Figure 23: Job levels surveyed - Manager/supervisor 30%, Director 13%, Individual contributor 41%, C-Level 16%]
+- North America 31%
+- Europe 30%
+- Asia Pacific 18%
+- Latin America 10%
+- Middle East 5%
+- Other 4%
+- Africa 3%
 
-![Figure 24: Size of organizations surveyed - Les than 100 33%, 100-249 14%, 500-499 10%, 500-999 7%, 1,000-4,999 14%, 5,000-9,999 7%, 10,000 or more 15%]
+20
+
+2020 Pen Testing Reportwww.coresecurity.com
+
+![A pie chart showing the primary industries of the surveyed organizations.](Figure 22: Industries Surveyed)
+
+What is your primary industry?
+
+- Technology 33%
+- Banking/
+  Finance 13%
+- Services 11%
+- Government 10%
+- Manufacturing 8%
+- Healthcare 7%
+- Other 7%
+- Retail 5%
+- Education 5%
+- Insurance 1%
+
+21
+
+2020 Pen Testing Reportwww.coresecurity.com
+
+![A pie chart showing the job levels of the surveyed professionals.](Figure 23: Job levels surveyed)
+
+What is your job level?
+
+- Individual
+  contributor 41%
+- Manager/
+  supervisor 30%
+- Director 16%
+- C-Level 13%
+
+![A bar chart showing the size of the surveyed organizations by employee count.](Figure 24: Size of organizations surveyed)
+
+How many employees does your organization have?
+
+- Les than 100 33%
+- 100-249 14%
+- 250-499 10%
+- 500-999 7%
+- 1,000-4,999 14%
+- 5,000-9,999 15%
+- 10,000 or more 7%
+
+22
+
+2020 Pen Testing Reportwww.coresecurity.com
 
 ## Conclusion
+
 Without penetration testing, how do you know if you’re at risk?
 As scary as it can be to find out that you have dangerous security
 weaknesses, the only way to eliminate them is to know they are
@@ -315,6 +675,12 @@ such flexibility in how an organization can put together a pen testing
 program will allow the practice of pen testing to continue to thrive as
 long as threat actors continue to attack.
 
+www.coresecurity.com
+
+23
+
+2020 Pen Testing Reportwww.coresecurity.com
+
 ## About Core Security
 Core Security provides organizations with critical, actionable insight about who, how,
 and what is vulnerable in their IT environment. With our layered security approach and
@@ -322,4 +688,5 @@ robust threat-aware, identity & access, network security, and vulnerability mana
 solutions, security teams can efficiently manage security risks across the enterprise.
 
 © HelpSystems, LLC. All trademarks and registered trademarks are the property of their respective owners.
+
 cs-gd-0621-79d
