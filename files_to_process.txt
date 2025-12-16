@@ -1,0 +1,6 @@
+Annual Security Reports/2020/Synopsys-DevSecOps-Practices-and-Open-Source-Management-2020.pdf
+Annual Security Reports/2020/RecordedFuture-SANS-Cyber-Threat-Intelligence-Survey-2020.pdf
+Annual Security Reports/2020/DarkTrace-Insider-Threat-Report-2020.pdf
+Annual Security Reports/2020/RedCanary-Threat-Detection-Report-2020.pdf
+Annual Security Reports/2020/Aon-Cyber-Security-Risk-Report-2020.pdf
+Annual Security Reports/2024/CheckPoint-Cybersecurity-Report-2024.pdf
