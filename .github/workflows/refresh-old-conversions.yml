@@ -22,7 +22,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Find stale files
+      - name: Find stale or missing files
         id: check-files
         shell: python
         run: |
@@ -34,67 +34,71 @@ jobs:
           # Configuration
           MD_ROOT = Path("Markdown Conversions")
           PDF_ROOT = Path("Annual Security Reports")
-          LIMIT = 6
+          LIMIT = 10
           DAYS_OLD = 90
           AGE_LIMIT_SECONDS = DAYS_OLD * 24 * 3600
           
-          print(f"Scanning for Markdown files older than {DAYS_OLD} days...")
-          
+          files_to_process = []
           stale_files = []
           current_time = time.time()
 
+          print("Scanning for missing or stale conversions...")
+
+          # 1. Look for MISSING conversions (PDF exists, MD does not)
+          if PDF_ROOT.exists():
+              for pdf_file in PDF_ROOT.rglob("*.pdf"):
+                  rel_path = pdf_file.relative_to(PDF_ROOT)
+                  md_file = MD_ROOT / rel_path.with_suffix('.md')
+                  
+                  if not md_file.exists():
+                      print(f"Found missing conversion: {pdf_file}")
+                      # Priority 0 for missing files so they process first
+                      files_to_process.append(str(pdf_file))
+
+          # 2. Look for STALE conversions (MD exists but is old)
           if MD_ROOT.exists():
               for md_file in MD_ROOT.rglob("*.md"):
                   try:
-                      # Get last commit timestamp for the file
                       timestamp_str = subprocess.check_output(
                           ['git', 'log', '-1', '--format=%ct', str(md_file)], 
                           text=True
                       ).strip()
                       
                       if not timestamp_str:
-                          print(f"Skipping {md_file}: No git history found")
                           continue
                           
                       last_commit_time = int(timestamp_str)
                       age_seconds = current_time - last_commit_time
-                      age_days = age_seconds / (24 * 3600)
                       
                       if age_seconds > AGE_LIMIT_SECONDS:
-                          # Map Markdown back to source PDF
-                          # Example: Markdown Conversions/2023/Report.md -> Annual Security Reports/2023/Report.pdf
-                          try:
-                              rel_path = md_file.relative_to(MD_ROOT)
-                              pdf_path = PDF_ROOT / rel_path.with_suffix('.pdf')
-                              
-                              if pdf_path.exists():
-                                  print(f"Found stale file ({age_days:.1f} days old): {pdf_path}")
-                                  stale_files.append((age_seconds, str(pdf_path)))
-                              else:
-                                  print(f"Warning: PDF missing for {md_file}")
-                          except ValueError:
-                              continue
-                  except Exception as e:
-                      print(f"Error processing {md_file}: {e}")
+                          rel_path = md_file.relative_to(MD_ROOT)
+                          pdf_path = PDF_ROOT / rel_path.with_suffix('.pdf')
+                          
+                          if pdf_path.exists():
+                              stale_files.append((age_seconds, str(pdf_path)))
+                  except Exception:
                       continue
 
-          # Sort by age (descending -> oldest first)
+          # Sort stale files by age (oldest first) and add to list
           stale_files.sort(key=lambda x: x[0], reverse=True)
+          for _, pdf_path in stale_files:
+              if pdf_path not in files_to_process:
+                  files_to_process.append(pdf_path)
 
-          # Apply limit
-          files_to_process = [f[1] for f in stale_files[:LIMIT]]
+          # Apply global limit
+          selected_files = files_to_process[:LIMIT]
           
-          print(f"\nFound {len(stale_files)} total stale files.")
-          print(f"Selected top {len(files_to_process)} for processing.")
+          print(f"\nSummary: Found {len(files_to_process)} total files needing attention.")
+          print(f"Selected {len(selected_files)} for this run.")
 
           # Output results
-          if files_to_process:
+          if selected_files:
               with open("files_to_process.txt", "w") as f:
-                  f.write("\n".join(files_to_process))
+                  f.write("\n".join(selected_files))
               
               with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
                   fh.write("has_files=true\n")
-                  fh.write(f"file_count={len(files_to_process)}\n")
+                  fh.write(f"file_count={len(selected_files)}\n")
           else:
               with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
                   fh.write("has_files=false\n")
@@ -106,6 +110,7 @@ jobs:
         with:
           name: files-to-process
           path: files_to_process.txt
+          retention-days: 1
 
   process-stale-reports:
     needs: identify-stale-files
@@ -135,7 +140,6 @@ jobs:
           name: files-to-process
           path: .
 
-      # --- RE-CONVERSION STEP ---
       - name: Re-run PDF Converter
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -143,71 +147,49 @@ jobs:
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
           PROMPT_PATH=".github/ai-prompts/pdf-to-markdown-prompt.md"
-          
-          # Default prompt version/branch for logging
-          PROMPT_VERSION="refresh-job"
-          BRANCH_NAME="${{ github.ref_name }}"
-          
-          echo "Refresing PDFs..."
-          python .github/scripts/pdf-converter.py files_to_process.txt "$PROMPT_PATH" "$PROMPT_VERSION" "$BRANCH_NAME" --output-json conversions.json
+          python .github/scripts/pdf-converter.py files_to_process.txt "$PROMPT_PATH" "refresh-job" "${{ github.ref_name }}" --output-json conversions.json
 
-      # --- RE-ANALYSIS STEP ---
       - name: Re-run Report Analyzer
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
-          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
           if [ -f conversions.json ]; then
-            echo "Analyzing refreshed reports..."
             python .github/scripts/report-analyzer.py conversions.json --readme-path README.md --output-json analysis.json
-          else
-            echo "No conversions.json found, skipping analysis."
-            exit 1
           fi
 
-      # --- README UPDATE STEP ---
       - name: Update README
         id: readme_update
         run: |
           if [ -f analysis.json ]; then
-            echo "Updating README..."
             if python .github/scripts/readme-updater.py analysis.json --readme-path README.md; then
-              
-              # Check git diff to see if anything actually changed
               if git diff --quiet HEAD -- README.md "Markdown Conversions/"; then
-                echo "No content changes detected after refresh."
                 echo "changes_detected=false" >> $GITHUB_OUTPUT
               else
-                echo "Content changes detected."
                 echo "changes_detected=true" >> $GITHUB_OUTPUT
               fi
-            else
-              echo "README update failed"
-              exit 1
             fi
           fi
 
-      # --- PR CREATION ---
       - name: Create Pull Request
         if: steps.readme_update.outputs.changes_detected == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "♻️ Refresh stale security reports"
-          title: "♻️ Refresh ${{ needs.identify-stale-files.outputs.file_count }} stale security reports"
+          commit-message: "♻️ Refresh stale and missing security reports"
+          title: "♻️ Sync/Refresh ${{ needs.identify-stale-files.outputs.file_count }} security reports"
           body: |
-            ### Automated Report Refresh
+            ### Automated Report Sync
             
-            This workflow identified and re-processed **${{ needs.identify-stale-files.outputs.file_count }}** reports that were older than 3 months.
+            This workflow identified reports that were either:
+            1. **Missing**: PDF exists but no Markdown version was found.
+            2. **Stale**: Markdown version is older than 90 days.
             
-            **Refreshed Reports:**
-            *(See files changed for details)*
-            
-            This ensures that our Markdown conversions and README summaries remain up-to-date with the latest AI model capabilities.
+            **Processed Count:** ${{ needs.identify-stale-files.outputs.file_count }}
           branch: refresh-reports-${{ github.run_id }}
           delete-branch: true
+          add-paths: |
+            README.md
+            Markdown Conversions/
           labels: |
             automated
             maintenance
-            report-refresh
