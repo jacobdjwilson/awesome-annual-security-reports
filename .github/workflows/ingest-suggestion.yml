@@ -6,11 +6,11 @@ permissions:
 
 on:
   issues:
-    types: [opened]
+    types: [opened, labeled]
 
 jobs:
   ingest:
-    if: contains(github.event.issue.labels.*.name, 'report-suggestion')
+    if: github.event.label.name == 'report-suggestion' || contains(github.event.issue.labels.*.name, 'report-suggestion')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
