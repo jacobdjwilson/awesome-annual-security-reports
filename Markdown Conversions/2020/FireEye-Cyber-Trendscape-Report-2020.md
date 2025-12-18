@@ -1,9 +1,3 @@
-# Report Content Below
-
-The official report URL is: https://www.govexec.com/media/fireeyeverodin-trends-2020-cybersecurity.pdf
-
-# Report Content Below
-
 ## Table of Contents
 - [REPORT | CYBER TRENDSCAPE 2020](#report--cyber-trendscape-2020)
 - [Contents](#contents)
