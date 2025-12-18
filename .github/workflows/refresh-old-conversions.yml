@@ -24,85 +24,54 @@ jobs:
 
       - name: Find stale or missing files
         id: check-files
-        shell: python
         run: |
-          import os
-          import subprocess
-          import time
-          from pathlib import Path
-
-          # Configuration
-          MD_ROOT = Path("Markdown Conversions")
-          PDF_ROOT = Path("Annual Security Reports")
-          LIMIT = 10
-          DAYS_OLD = 90
-          AGE_LIMIT_SECONDS = DAYS_OLD * 24 * 3600
+          MD_ROOT="Markdown Conversions"
+          PDF_ROOT="Annual Security Reports"
+          LIMIT=10
+          DAYS_OLD=90
+          THRESHOLD=$(date -d "$DAYS_OLD days ago" +%s)
           
-          files_to_process = []
-          stale_files = []
-          current_time = time.time()
+          echo "Scanning for missing or stale conversions..."
+          > candidates.txt
 
-          print("Scanning for missing or stale conversions...")
+          # 1. Batch find MISSING conversions (PDF exists, MD does not)
+          # We use a subshell to check for MD existence for every PDF found
+          find "$PDF_ROOT" -name "*.pdf" | while read -r pdf; do
+            rel_path="${pdf#$PDF_ROOT/}"
+            md_path="$MD_ROOT/${rel_path%.pdf}.md"
+            if [ ! -f "$md_path" ]; then
+              echo "0 $pdf" >> candidates.txt # Priority 0 for missing files
+            fi
+          done
 
-          # 1. Look for MISSING conversions (PDF exists, MD does not)
-          if PDF_ROOT.exists():
-              for pdf_file in PDF_ROOT.rglob("*.pdf"):
-                  rel_path = pdf_file.relative_to(PDF_ROOT)
-                  md_file = MD_ROOT / rel_path.with_suffix('.md')
-                  
-                  if not md_file.exists():
-                      print(f"Found missing conversion: {pdf_file}")
-                      # Priority 0 for missing files so they process first
-                      files_to_process.append(str(pdf_file))
-
-          # 2. Look for STALE conversions (MD exists but is old)
-          if MD_ROOT.exists():
-              for md_file in MD_ROOT.rglob("*.md"):
-                  try:
-                      timestamp_str = subprocess.check_output(
-                          ['git', 'log', '-1', '--format=%ct', str(md_file)], 
-                          text=True
-                      ).strip()
-                      
-                      if not timestamp_str:
-                          continue
-                          
-                      last_commit_time = int(timestamp_str)
-                      age_seconds = current_time - last_commit_time
-                      
-                      if age_seconds > AGE_LIMIT_SECONDS:
-                          rel_path = md_file.relative_to(MD_ROOT)
-                          pdf_path = PDF_ROOT / rel_path.with_suffix('.pdf')
-                          
-                          if pdf_path.exists():
-                              stale_files.append((age_seconds, str(pdf_path)))
-                  except Exception:
-                      continue
-
-          # Sort stale files by age (oldest first) and add to list
-          stale_files.sort(key=lambda x: x[0], reverse=True)
-          for _, pdf_path in stale_files:
-              if pdf_path not in files_to_process:
-                  files_to_process.append(pdf_path)
-
-          # Apply global limit
-          selected_files = files_to_process[:LIMIT]
+          # 2. Batch find STALE conversions using Git (High Performance)
+          # Get all MD files and their last commit timestamp in one go
+          git ls-files -z "$MD_ROOT" | xargs -0 -I {} git log -1 --format="%ct {}" -- {} >> all_timestamps.txt || true
           
-          print(f"\nSummary: Found {len(files_to_process)} total files needing attention.")
-          print(f"Selected {len(selected_files)} for this run.")
+          while read -r timestamp file; do
+            if [ "$timestamp" -lt "$THRESHOLD" ]; then
+              rel_path="${file#$MD_ROOT/}"
+              pdf_path="$PDF_ROOT/${rel_path%.md}.pdf"
+              if [ -f "$pdf_path" ]; then
+                # Store with timestamp for sorting (oldest first)
+                echo "$timestamp $pdf_path" >> candidates.txt
+              fi
+            fi
+          done < all_timestamps.txt
 
-          # Output results
-          if selected_files:
-              with open("files_to_process.txt", "w") as f:
-                  f.write("\n".join(selected_files))
-              
-              with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
-                  fh.write("has_files=true\n")
-                  fh.write(f"file_count={len(selected_files)}\n")
-          else:
-              with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
-                  fh.write("has_files=false\n")
-                  fh.write("file_count=0\n")
+          # 3. Sort, Limit, and Format Output
+          # Sort by timestamp (column 1), unique by file path (column 2), take top 10
+          sort -k1,1n candidates.txt | cut -d' ' -f2- | head -n $LIMIT > files_to_process.txt
+
+          if [ -s files_to_process.txt ]; then
+            COUNT=$(wc -l < files_to_process.txt)
+            echo "has_files=true" >> "$GITHUB_OUTPUT"
+            echo "file_count=$COUNT" >> "$GITHUB_OUTPUT"
+            echo "Selected $COUNT files for processing."
+          else
+            echo "has_files=false" >> "$GITHUB_OUTPUT"
+            echo "file_count=0" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Upload file list
         if: steps.check-files.outputs.has_files == 'true'
@@ -183,8 +152,6 @@ jobs:
             This workflow identified reports that were either:
             1. **Missing**: PDF exists but no Markdown version was found.
             2. **Stale**: Markdown version is older than 90 days.
-            
-            **Processed Count:** ${{ needs.identify-stale-files.outputs.file_count }}
           branch: refresh-reports-${{ github.run_id }}
           delete-branch: true
           add-paths: |
