@@ -1,5 +1,9 @@
 name: Auto-Ingest Report Suggestion
 
+permissions:
+  contents: read
+  pull-requests: write
+
 on:
   issues:
     types: [opened]
