@@ -1,0 +1,41 @@
+name: Auto-Ingest Report Suggestion
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  ingest:
+    if: contains(github.event.issue.labels.*.name, 'report-suggestion')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Parse Issue Content
+        id: parse
+        uses: stefanbuck/github-issue-parser@v3
+        with:
+          template-path: .github/ISSUE_TEMPLATE/report-suggestion.yml
+
+      - name: Download and Organize PDF
+        run: |
+          URL="${{ steps.parse.outputs.report_url }}"
+          YEAR="${{ steps.parse.outputs.report_year }}"
+          # Clean filename from URL
+          FILENAME=$(basename "$URL" | cut -d? -f1)
+          
+          mkdir -p "Annual Security Reports/$YEAR"
+          curl -L "$URL" -o "Annual Security Reports/$YEAR/$FILENAME"
+          
+          echo "FILE_PATH=Annual Security Reports/$YEAR/$FILENAME" >> $GITHUB_ENV
+
+      - name: Create Ingestion PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Ingest report from Issue #${{ github.event.issue.number }}"
+          title: "Ingest: ${{ steps.parse.outputs.report_year }} Report"
+          body: "Automated ingestion for #${{ github.event.issue.number }}. This PR will trigger the Security Processing Pipeline."
+          branch: "ingest/issue-${{ github.event.issue.number }}"
+          labels: "report-suggestion"

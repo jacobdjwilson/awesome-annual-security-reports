@@ -1,0 +1,24 @@
+name: Report Suggestion
+description: Suggest a new annual security report for the list.
+title: "[REPORT SUGGESTION]: "
+labels: ["report-suggestion"]
+body:
+  - type: input
+    id: report_url
+    attributes:
+      label: Report URL
+      description: Provide the direct link to the PDF or the report landing page.
+    validations:
+      required: true
+  - type: input
+    id: report_year
+    attributes:
+      label: Report Year
+      description: What year is this report for? (e.g., 2025)
+    validations:
+      required: true
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Description
+      description: Brief summary of why this report is "Awesome".
