@@ -1,0 +1,117 @@
+name: Security Report Discovery
+
+on:
+  schedule:
+    # 8:00 AM ET (13:00 UTC) every Monday
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  discover-new-reports:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-generativeai
+
+      - name: Scan for New Reports
+        id: scanner
+        env:
+          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: python
+        run: |
+          import os
+          import sys
+          import json
+          import datetime
+          from googleapiclient.discovery import build
+
+          # Add the scripts directory to path to reuse existing logic
+          sys.path.append('.github/scripts')
+          try:
+              # Reuse extraction logic from your report-analyzer
+              from report_analyzer import extract_info_from_path
+          except ImportError:
+              print("Fallback: Defining local extraction logic if script path differs.")
+              def extract_info_from_path(path):
+                  # Simplified version if import fails
+                  return "Unknown", "2025", "Security Report"
+
+          # 1. Parse README for existing reports
+          with open("README.md", "r", encoding="utf-8") as f:
+              content = f.read()
+
+          # Reuse your existing regex pattern for entries
+          pattern = r'- \[([^\]]+)\]\([^\)]+\) - \[([^\]]+)\]\([^\)]+\) \((\d{4})\)'
+          entries = re.findall(pattern, content)
+          
+          unique_orgs = []
+          seen = set()
+          for org, title, year in entries:
+              if org not in seen:
+                  unique_orgs.append({"org": org, "title": title, "year": int(year)})
+                  seen.add(org)
+
+          # 2. Optimized Rolling Window (Select 10 items)
+          week_num = datetime.date.today().isocalendar()[1]
+          batch_size = 10
+          start_index = (week_num * batch_size) % len(unique_orgs)
+          batch = unique_orgs[start_index : start_index + batch_size]
+          if len(batch) < batch_size:
+              batch += unique_orgs[: batch_size - len(batch)]
+
+          # 3. Google Search for Newer Versions
+          service = build("customsearch", "v1", developerKey=os.environ["GOOGLE_SEARCH_API_KEY"])
+          new_findings = []
+
+          for item in batch:
+              target_year = item['year'] + 1
+              # Re-using search query optimization logic
+              query = f'"{item["org"]}" "{item["title"]}" {target_year}'
+              
+              try:
+                  res = service.cse().list(q=query, cx=os.environ["GOOGLE_CSE_ID"], num=3).execute()
+                  items = res.get('items', [])
+                  
+                  for result in items:
+                      if str(target_year) in result.get('snippet', '') or str(target_year) in result.get('title', ''):
+                          new_findings.append({
+                              "org": item["org"],
+                              "old_year": item["year"],
+                              "new_year": target_year,
+                              "link": result['link'],
+                              "snippet": result.get('snippet', '')
+                          })
+                          break 
+              except Exception as e:
+                  print(f"Search failed: {e}")
+
+          # 4. Create Issues via GH CLI
+          for finding in new_findings:
+              title = f"🔍 Potential New Report: {finding['org']} ({finding['new_year']})"
+              body = (
+                  f"Found a potential newer version of the **{finding['org']}** report.\n\n"
+                  f"- **Existing Year:** {finding['old_year']}\n"
+                  f"- **Detected Year:** {finding['new_year']}\n"
+                  f"- **Link:** {finding['link']}\n\n"
+                  f"**Snippet:**\n> {finding['snippet']}"
+              )
+              
+              exists = os.popen(f'gh issue list --search "{title}" --state open --json number').read()
+              if not json.loads(exists):
+                  os.system(f'gh issue create --title "{title}" --body "{body}" --label "automated-discovery"')
