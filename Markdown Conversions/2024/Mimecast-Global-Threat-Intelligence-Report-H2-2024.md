@@ -1,5 +1,3 @@
-# Report Content Below
-
 ## Table of Contents
 - [Introduction](#introduction)
 - [Executive Summary](#executive-summary)
