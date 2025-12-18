@@ -75,7 +75,7 @@ Reports are organized by their primary focus. Although many reports span multipl
 
 The easiest way to contribute is to suggest a report. If you've found a valuable annual security report that isn't on our list, please let us know!
 
-<a href="https://github.com/jacobdjwilson/awesome-annual-security-reports/issues/new?template=report-suggestion.md" target="_blank">
+<a href="https://github.com/jacobdjwilson/awesome-annual-security-reports/issues/new?template=report-suggestion.yml" target="_blank">
   <img src="https://img.shields.io/badge/Suggest%20a%20New%20Report-brightgreen?style=for-the-badge&logo=github" alt="Suggest a New Report" />
 </a>
 
