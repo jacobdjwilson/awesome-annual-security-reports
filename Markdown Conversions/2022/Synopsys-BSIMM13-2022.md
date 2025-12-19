@@ -1,9 +1,3 @@
-# Report Content Below
-
-The official report URL is: https://www.synopsys.com/content/dam/bsimm/reports/bsimm13.pdf
-
-# Report Content Below
-
 ## PART 1: EXECUTIVE SUMMARY
 
 ### TRENDS AND INSIGHTS
