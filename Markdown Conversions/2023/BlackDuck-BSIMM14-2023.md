@@ -1,11 +1,3 @@
-# Report Content Below
-
-The official report URL is: https://news.blackduck.com/news-releases?l=100
-
-# Report Content Below
-
-REPORT 2023
-
 ## Table of Contents
 - [PART 1: EXECUTIVE SUMMARY](#part-1-executive-summary)
 - [WELCOME TO BSIMM14](#welcome-to-bsimm14)
