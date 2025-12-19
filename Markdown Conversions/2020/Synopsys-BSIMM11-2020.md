@@ -1,10 +1,4 @@
-# Report Content Below
-
-The official report URL is: https://cn.news.synopsys.com/2020-11-09-BSIMM11-DevOps
-
-# Report Content Below
-
-BSIMM11 AUTHORS
+BSIMM11 AUTHORS
 
 Created by Sammy Migues, John Steven, and Mike Ware
 
