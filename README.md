@@ -1,9 +1,3 @@
-<!-- lint ignore double-link -->
-<!--lint ignore definition-case-->
-<!--lint disable awesome-toc-->
-<!--lint disable no-emphasis-as-heading-->
-<!--lint disable awesome-list-item-->
-
 # Awesome Annual Security Reports [![Awesome](https://awesome.re/badge-flat2.svg)](https://awesome.re)
 ![Awesome Annual Security Reports Logo](.github/images/awesome-security-reports-logo.png)
 > A curated list of annual cyber security reports - Centralized annual cybersecurity analysis and industry surveys
