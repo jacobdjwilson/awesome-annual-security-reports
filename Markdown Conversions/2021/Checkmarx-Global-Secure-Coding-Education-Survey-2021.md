@@ -1,13 +1,6 @@
-# Report Content Below
-
-The official report URL is: https://checkmarx.com/press-releases/checkmarx-acquires-codebashing-redefine-secure-coding-education-4/
-
-# Report Content Below
-
 # DEVOPS
 # SECURE CODING
 # EDUCATION
-
 813 Global Developers answered a Secure Coding Education survey providing their thoughts on current education techniques and what can work best moving forward.
 
 The survey was conducted between April-July, 2021 by Cyber Security Hub and Checkmarx.
