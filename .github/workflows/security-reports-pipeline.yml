@@ -17,12 +17,12 @@ on:
       force_scan_all:
         description: 'Force scan all PDF files (not just changed)'
         required: false
-        default: 'false'
+        default: false
         type: boolean
       skip_virus_scan:
         description: 'Skip VirusTotal scanning'
         required: false
-        default: 'false'
+        default: false
         type: boolean
 
 permissions:
