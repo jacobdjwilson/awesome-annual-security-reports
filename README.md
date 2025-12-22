@@ -27,6 +27,7 @@ When possible, all reports will be sourced from their original authors and uploa
 ## Contents
 <!-- TOC -->
 - [Overview](#overview)
+- [How to Contribute](#how-to-contribute)
 - [Analysis Reports](#analysis-reports)
     - [Threat Intelligence](#threat-intelligence)
     - [Application Security](#application-security)
@@ -52,7 +53,6 @@ When possible, all reports will be sourced from their original authors and uploa
     - [Policy and Advocacy](#policy-and-advocacy)
     - [Working Groups](#working-groups)
     - [Government and Non-profits](#government-and-non-profits)
-- [How to Contribute](#how-to-contribute)
 <!-- /TOC -->
 
 ## Overview
