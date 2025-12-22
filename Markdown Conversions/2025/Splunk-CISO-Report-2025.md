@@ -49,7 +49,9 @@ Introduction: The start of a beautiful friendship?
 
 5 Chapter 1: CISOs settle into the C-suite
 
-7 Chapter 2: CISOs and boards mind the gaps
+7
+
+Chapter 2: CISOs and boards mind the gaps
 
 13 Chapter 3: Compliance is getting personal for CISOs
 
@@ -61,7 +63,9 @@ Introduction: The start of a beautiful friendship?
 
 24 Chapter 7: Clear the path to partnership with your board
 
-27 Industry appendix
+27
+
+Industry appendix
 
 29 Region appendix
 
@@ -69,7 +73,7 @@ Introduction: The start of a beautiful friendship?
 
 31 About Splunk
 
-Introduction: The start of a beautiful friendship?
+## Introduction: The start of a beautiful friendship?
 
 INTRODUCTION
 
@@ -81,11 +85,11 @@ Business leaders’ bottom-line concerns often conflict with CISOs’ insistence
 
 The CISO-board relationship is deepening as they have more opportunities to engage on matters of cybersecurity and enterprise risk. Most CISOs (82%) interact directly with the CEO.* The two are like neighbors evolving from acquaintances to close friends, discovering common interests over time as they chat in the driveway.
 
+When CISOs and boards realize their joint mission, they become unstoppable allies who can propel the organization on its path to digital resilience.
+
 Despite the gaps, they share a duty to safeguard the company. Boards protect profitability and stock price; CISOs protect data and systems. This is something to build on. But it will take communication, understanding, and a generous dose of patience to come together.
 
 To thrive, each party will have to step out of their comfort zone and learn the other’s language. For CISOs, that means understanding the business beyond the surface and finding new ways to convey the ROI of security initiatives to their boards. For board members, it means committing to a security-first culture and consulting the CISO as a primary stakeholder in decisions that impact enterprise risk and governance.
-
-When CISOs and boards realize their joint mission, they become unstoppable allies who can propel the organization on its path to digital resilience.
 
 * This report has been updated on February 21, 2025. The data point of ‘82% of CISOs report directly to the CEO’ has been clarified and revised to reflect: ‘82% of CISOs interact directly with the CEO.’ The previous version also used a data point from 2023 that was not applicable.
 
@@ -93,7 +97,7 @@ The path to digital resilience starts with your board | Splunk
 
 4
 
-Chapter 1: CISOs settle into the C-suite
+## Chapter 1: CISOs settle into the C-suite
 
 CHAPTER 1
 
@@ -155,13 +159,7 @@ The path to digital resilience starts with your board | Splunk
 
 5
 
-“
-
-Boards are business leaders who are very good at
-managing the business and financial outcomes.
-But they materially don’t understand that their
-dependency is on technology and the security
-ramifications of how they’re managing technology.
+> Boards are business leaders who are very good at managing the business and financial outcomes. But they materially don’t understand that their dependency is on technology and the security ramifications of how they’re managing technology.
 
 Christopher Kennedy, CISO, Group 1001
 
@@ -179,12 +177,7 @@ of CISOs now participate in
 board meetings somewhat
 often or most of the time
 
-“
-
-When I started as a CISO, the big thing was getting a seat
-at the table with the board. That’s changed. Now, there’s no
-argument, discussion, or debate about whether the CISO role
-should be giving reports directly to the board.
+> When I started as a CISO, the big thing was getting a seat at the table with the board. That’s changed. Now, there’s no argument, discussion, or debate about whether the CISO role should be giving reports directly to the board.
 
 Bruce Foreman, CISO, UMass Memorial Health
 
@@ -192,7 +185,7 @@ The path to digital resilience starts with your board | Splunk
 
 6
 
-Chapter 2: CISOs and boards mind the gaps
+## Chapter 2: CISOs and boards mind the gaps
 
 CHAPTER 2
 
@@ -242,15 +235,7 @@ With some of the most significant priorities at odds, CISOs and boards also dive
 
 So, what exactly are CISOs doing all day? While 63% of CISOs and boards are aligned, saying CISOs devote the lion’s share of their time to security posture and risk mitigation, their perceptions part ways after that. Fifty-two percent of board respondents believe CISOs spend the most time enabling the business — aligning security efforts to business objectives — compared to only 34% of CISOs. In reality, the technical aspects of cybersecurity take up far more of the CISO’s time than the board realizes. According to 58% of CISOs, the bulk of their and their team’s time goes to choosing, installing, and operating technology.
 
-“
-
-If a company is not used to the high
-cost of cybersecurity, then a CISO
-needs to explain the full duties of
-the security team to the board and
-map how security responsibilities
-are woven through the fabric of the
-entire business.
+> If a company is not used to the high cost of cybersecurity, then a CISO needs to explain the full duties of the security team to the board and map how security responsibilities are woven through the fabric of the entire business.
 
 Christopher Kennedy, CISO, Group 1001
 
@@ -383,16 +368,13 @@ The net-net? For one, boards don’t want fire-fighting heroics from CISOs. They
 
 When presenting estimates for future initiatives, CISOs can persuade boards by emphasizing that expenses incurred from lost revenue and reputational damage will likely be less than the cost of downtime from a security incident.
 
-“
-
-CISOs also need to switch up their
-tactics to be better heard, using their
-precious board time to justify the
-ROI of their security investments and
-elevate security to a business enabler,
-not just a cost center.
+> CISOs also need to switch up their tactics to be better heard, using their precious board time to justify the ROI of their security investments and elevate security to a business enabler, not just a cost center.
 
 Kirsty Paine, Field CTO and Strategic Advisor, Splunk
+
+The path to digital resilience starts with your board | Splunk
+
+11
 
 CISOs and boards measure success differently
 
@@ -433,9 +415,9 @@ Boards
 
 The path to digital resilience starts with your board | Splunk
 
-11
+12
 
-Chapter 3: Compliance is getting personal for CISOs
+## Chapter 3: Compliance is getting personal for CISOs
 
 CHAPTER 3
 
@@ -457,23 +439,13 @@ compliance requirements
 
 Perhaps even more shocking, 21% of CISOs revealed they had been pressured not to report a compliance issue. Thankfully, the majority of CISOs surveyed are willing to step up and do the right thing — 59% said they would become a whistleblower if their organization was ignoring compliance requirements.
 
-“Pressuring CISOs not to report issues, rather than being open and
-transparent about any failings and lessons to learn, means that risk-
-based decisions can’t be made — the right people don’t have the real
-information. That can be really dangerous,” said Kirsty Paine, field CTO
-and strategic advisor for Splunk, a Cisco company.
+“Pressuring CISOs not to report issues, rather than being open and transparent about any failings and lessons to learn, means that risk-based decisions can’t be made — the right people don’t have the real information. That can be really dangerous,” said Kirsty Paine, field CTO and strategic advisor for Splunk, a Cisco company.
 
 Of course, when an incident is considered “material” (and the definition is squishy), companies must report it to authorities within hours to days, depending on where in the world they are operating. Recent mandates, including the U.S. SEC cybersecurity ruling, Europe’s NIS2, and DORA, impose much narrower reporting windows — as short as 24 hours in NIS2 — for disclosing cybersecurity incidents. Similarly, Australia’s Security of Critical Infrastructure (SOCI) Act requires mandatory reporting within 12 hours after discovering an incident.
 
 When reporting incidents and other compliance protocols, CISOs should work on crisis management well before any crisis occurs. A proactive plan will help align expectations with the board and have a set response for the broader business.
 
-“
-
-I think everybody who serves as
-head of security or in the boardroom
-for public companies should be
-concerned about personal liability if
-they’re not doing the right things.
+> I think everybody who serves as head of security or in the boardroom for public companies should be concerned about personal liability if they’re not doing the right things.
 
 Chenxi Wang, General Partner, Rain Capital
 and Board Member, MDU Resources
@@ -496,14 +468,7 @@ And while maintaining compliance is vital to the business, CISOs don’t necessa
 
 This disconnect can mean boards and CISOs talk past each other on compliance. “While boards know compliance is important, many may not fully realize or understand the work required to achieve it. With a lack of day-to-day insight, it’s not surprising that board members think it should be ‘easy’ or are confused when CISOs and their teams take excessive amounts of time to achieve and sustain a strong compliance posture,” said Kirsty Paine, field CTO and strategic advisor for Splunk, a Cisco company.
 
-“
-
-HIPAA and any other compliance —
-they’re check boxes. ‘You did this,
-you’re compliant.’ But it doesn’t
-mean you’re secure, of course. It’s
-a baseline, but I think it’s a very
-low baseline.
+> HIPAA and any other compliance — they’re check boxes. ‘You did this, you’re compliant.’ But it doesn’t mean you’re secure, of course. It’s a baseline, but I think it’s a very low baseline.
 
 Bruce Foreman, CISO, UMass Memorial Health
 
@@ -511,7 +476,7 @@ The path to digital resilience starts with your board | Splunk
 
 14
 
-Chapter 4: Bring better evidence to the budget debate
+## Chapter 4: Bring better evidence to the budget debate
 
 CHAPTER 4
 
@@ -523,13 +488,7 @@ Cyber budgets reflect inconsistent support and misalignment, dampening CISOs’ 
 
 Only 29% of CISOs say they receive the proper budget for cybersecurity initiatives and accomplishing their security goals, compared to 41% of board members who think cybersecurity budgets are adequate. Justifiably, CISOs are concerned about how this lack of support will affect their organization’s security posture, and 64% reveal that the current threat and regulatory environment make them concerned that they’re not doing enough.
 
-“
-
-When you go to the board to say that we have a
-potential cyber threat, it’s difficult to justify the
-investment. The usual problem that I face is with the
-certainty of an investment versus the likelihood of a
-threat which may not happen.
+> When you go to the board to say that we have a potential cyber threat, it’s difficult to justify the investment. The usual problem that I face is with the certainty of an investment versus the likelihood of a threat which may not happen.
 
 A board member, U.K.-based multinational banking group
 
@@ -651,7 +610,7 @@ The path to digital resilience starts with your board | Splunk
 
 18
 
-Chapter 5: AI empowers defenders and adversaries
+## Chapter 5: AI empowers defenders and adversaries
 
 CHAPTER 5
 
@@ -752,7 +711,7 @@ The path to digital resilience starts with your board | Splunk
 
 21
 
-Chapter 6: It’s magic when CISOs and boards align
+## Chapter 6: It’s magic when CISOs and boards align
 
 CHAPTER 6
 
@@ -832,7 +791,9 @@ can lean further into shaping the business through cybersecurity.
 
 The path to digital resilience starts with your board | Splunk
 
-Chapter 7: Clear the path to partnership with your board
+23
+
+## Chapter 7: Clear the path to partnership with your board
 
 CHAPTER 7
 
@@ -849,36 +810,17 @@ Here are a few fundamental steps CISOs can take to help drive alignment and ensu
 Educate your board on what you’re
 doing (and why)
 
-There is always room for boards to sharpen their
-security expertise. That especially holds true when
-discussing strategy around incident response, which
-will not only give them a window into standard
-procedures at any given time but will also illuminate
-the value of those procedures when facing auditors or
-during a crisis.
+There is always room for boards to sharpen their security expertise. That especially holds true when discussing strategy around incident response, which will not only give them a window into standard procedures at any given time but will also illuminate the value of those procedures when facing auditors or during a crisis.
 
-So, create tabletop exercises to make it real. Use visuals
-and storytelling to make your message land. Then
-develop a strategy and cadence, and follow through on
-your plan with iterative sessions.
+So, create tabletop exercises to make it real. Use visuals and storytelling to make your message land. Then develop a strategy and cadence, and follow through on your plan with iterative sessions.
 
 2
 
 Boost trust (and budget)
 
-It won’t hurt to practice speaking “board.” While
-boards benefit from your cybersecurity expertise,
-it’s on you to make them understand your needs and
-priorities. Emphasize ROI over MTTD and learn how to
-communicate the value of your investments and the
-importance of resource allocation effectively. (Maybe
-it’s harder to do, but when was security ever easy?)
+It won’t hurt to practice speaking “board.” While boards benefit from your cybersecurity expertise, it’s on you to make them understand your needs and priorities. Emphasize ROI over MTTD and learn how to communicate the value of your investments and the importance of resource allocation effectively. (Maybe it’s harder to do, but when was security ever easy?)
 
-You’ll also want to dive deep into topics like protecting
-revenue and shareholder value, minimizing business
-disruptions, improving brand trust, and delivering
-secure and seamless customer experiences. Boards
-care about growing the business, so speak to their KPIs.
+You’ll also want to dive deep into topics like protecting revenue and shareholder value, minimizing business disruptions, improving brand trust, and delivering secure and seamless customer experiences. Boards care about growing the business, so speak to their KPIs.
 
 The path to digital resilience starts with your board | Splunk
 
@@ -889,45 +831,25 @@ The path to digital resilience starts with your board | Splunk
 Own compliance and
 know your personal liability
 
-CISOs face a more rigorous and punitive regulatory environment,
-so it’s wise to be prepared. That means knowing your personal
-liability, potentially retaining a lawyer in the event of an incident,
-and taking a strategic and well-documented approach. Articulate
-risks to the board and why material events require reporting in the
-first place.
+CISOs face a more rigorous and punitive regulatory environment, so it’s wise to be prepared. That means knowing your personal liability, potentially retaining a lawyer in the event of an incident, and taking a strategic and well-documented approach. Articulate risks to the board and why material events require reporting in the first place.
 
-You should also know what boards expect in a crisis, codify these
-expectations in writing, and make sure all parties agree before an
-incident occurs, not during. Re-read your employment contract,
-and if there are any gaps, close them.
+You should also know what boards expect in a crisis, codify these expectations in writing, and make sure all parties agree before an incident occurs, not during. Re-read your employment contract, and if there are any gaps, close them.
 
 4
 
 Expand your scope
 to include business strategy
 
-We know that stepping out of your comfort zone isn’t easy.
-However, by taking on the role of business strategist, you’ll
-discover how to balance business needs while protecting your
-organization. Because if you want to grow security, you must show
-how security grows the business.
+We know that stepping out of your comfort zone isn’t easy. However, by taking on the role of business strategist, you’ll discover how to balance business needs while protecting your organization. Because if you want to grow security, you must show how security grows the business.
 
 5
 
 Build leadership across the business,
 not just within security
 
-CISOs and boards agree on the importance of leadership skills.
-This means managing up by understanding what matters to the
-board and why. It also involves effective communication with HR,
-legal, and the C-suite, who are crucial to advancing your priorities
-and securing larger tech investments.
+CISOs and boards agree on the importance of leadership skills. This means managing up by understanding what matters to the board and why. It also involves effective communication with HR, legal, and the C-suite, who are crucial to advancing your priorities and securing larger tech investments.
 
-And it’s not just developing business acumen, although you will
-need that in spades. Develop your soft skills. This includes honing
-more effective means of communication and understanding how
-your board prefers to receive information. Refining emotional
-intelligence will also go a long way.
+And it’s not just developing business acumen, although you will need that in spades. Develop your soft skills. This includes honing more effective means of communication and understanding how your board prefers to receive information. Refining emotional intelligence will also go a long way.
 
 To build strong relationships, map out stakeholders, spend time
 with them, and show genuine interest in their work and challenges.
@@ -965,18 +887,14 @@ The path to digital resilience starts with your board | Splunk
 
 26
 
-Industry appendix
+## Industry appendix
 
 Industry appendix
 
 Manufacturing
 
-Compared to their industry counterparts, manufacturing CISOs feel
-less supported by their C-suite, generally expressing less optimism
-about their collaboration and cybersecurity budgets. This lack of
-support could be a factor in why manufacturing experiences more
-cyberattacks than other industries.
+Compared to their industry counterparts, manufacturing CISOs feel less supported by their C-suite, generally expressing less optimism about their collaboration and cybersecurity budgets. This lack of support could be a factor in why manufacturing experiences more cyberattacks than other industries.
 
-CISOs are less likely to say their C-suite supports the cyber team’s
-strategy and advocates for its policies (41% versus 57% of CISOs
-in all industries). And they are also less likely (52%) to
+CISOs are less likely to say their C-suite supports the cyber team’s strategy and advocates for its policies (41% versus 57% of CISOs in all industries). And they are also less likely (52%) to feel like their cyber teams’ KPIs are important to their boards, versus 64% across all industries.
+
+As for cybersecurity funding, only 20% of manufacturing respondents say their organizations provide adequate cybersecurity budgets, and just 50% feel like they can convince their boards to increase their teams’ budgets when needed. Manufacturing’s
