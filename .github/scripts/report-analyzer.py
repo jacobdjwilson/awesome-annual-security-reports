@@ -251,15 +251,18 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, a
         
         # Summarization with AI
         summary_prompt_path = ".github/ai-prompts/markdown-summarization-prompt.md"
-        try:
-            with open(summary_prompt_path, 'r', encoding='utf-8') as f:
-                summary_base_prompt = f.read()
-        except FileNotFoundError:
-            summary_base_prompt = """Please create a concise summary of this security report in 1-2 sentences. 
-Focus on the key findings, threats, or insights. Keep it under 400 characters and professional."""
+        
+        if not os.path.exists(summary_prompt_path):
+             raise FileNotFoundError(f"Summarization prompt file not found: {summary_prompt_path}")
+             
+        with open(summary_prompt_path, 'r', encoding='utf-8') as f:
+            summary_base_prompt = f.read()
+        
+        # Remove markdown image tags
+        clean_content = re.sub(r'!\[.*?\]\(.*?\)', '', content, flags=re.DOTALL)
         
         # Truncate content for summary (keep within token limits)
-        summary_content = content[:20000] if len(content) > 20000 else content
+        summary_content = clean_content[:20000] if len(clean_content) > 20000 else clean_content
         summary_prompt = f"{summary_base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{summary_content}"
         
         summary_model = genai.GenerativeModel(MODEL)
@@ -287,25 +290,12 @@ Focus on the key findings, threats, or insights. Keep it under 400 characters an
 
         # Classification and Categorization with AI
         categorization_prompt_path = ".github/ai-prompts/report-categorization-prompt.md"
-        try:
-            with open(categorization_prompt_path, 'r', encoding='utf-8') as f:
-                categorization_base_prompt = f.read()
-        except FileNotFoundError:
-            categorization_base_prompt = """Analyze this security report and classify it into the appropriate type and category.
+        
+        if not os.path.exists(categorization_prompt_path):
+             raise FileNotFoundError(f"Categorization prompt file not found: {categorization_prompt_path}")
 
-Return your response as JSON with the following structure:
-{
-  "type": "Analysis" or "Survey",
-  "category": "category_name"
-}
-
-Available categories:
-{{CATEGORIES}}
-
-Guidelines:
-- "Analysis" reports focus on technical analysis, threat intelligence, vulnerabilities
-- "Survey" reports focus on industry trends, polling data, executive perspectives
-- Choose the most specific applicable category"""
+        with open(categorization_prompt_path, 'r', encoding='utf-8') as f:
+            categorization_base_prompt = f.read()
 
         # Build category list from available categories
         all_categories = []
@@ -316,8 +306,8 @@ Guidelines:
         category_str = '\n'.join([f"- {cat}" for cat in all_categories])
         categorization_prompt = categorization_base_prompt.replace("{{CATEGORIES}}", category_str)
         
-        # Truncate content for categorization
-        categorization_content = content[:12000] if len(content) > 12000 else content
+        # Truncate content for categorization (use cleaned content here too)
+        categorization_content = clean_content[:12000] if len(clean_content) > 12000 else clean_content
         categorization_prompt += f"\n\nOrganization: {org_name}\nTitle: {report_title}\nYear: {year}\n\n{categorization_content}"
 
         category_model = genai.GenerativeModel(MODEL)
