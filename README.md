@@ -55,8 +55,10 @@
 ## Overview
 
 Reports are organized into two main categories based on their data sources:
-- **Analysis:** Generated through quantification and qualification of data from sensor networks or cybersecurity services.
-- **Survey:** Derived from surveys, interviews, or consulting engagements that capture industry sentiment and practices.
+
+> **Analysis:** Generated through quantification and qualification of data from sensor networks or cybersecurity services.
+
+> **Survey:** Derived from surveys, interviews, or consulting engagements that capture industry sentiment and practices.
 
 The most recent versions of reports are listed below. Older editions are preserved in their corresponding yearly directories. Reports from sources that have not been updated in the last three years will no longer appear in this `README.md` but will remain accessible in the respective year's directory.
 
