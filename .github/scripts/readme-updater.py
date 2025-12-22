@@ -13,383 +13,252 @@ class ReadmeParser:
             raise FileNotFoundError(f"README.md not found: {readme_path}")
         
         self.content = self.readme_path.read_text(encoding='utf-8')
-        self.toc_structure = self._parse_toc()
+        self.structure = self._parse_structure()
 
-    def _parse_toc(self) -> Dict[str, Any]:
-        """Parse the table of contents - this is where the original parsing failed"""
-        # The logs show that Survey Reports exists but has no subsections
-        # This means the README structure is likely:
-        # ## Survey Reports 
-        # ### Industry Trends
-        # - [entries]
+    def _parse_structure(self) -> Dict[str, Any]:
+        """Parses the README structure to identify main report sections."""
+        structure = {
+            "Analysis Reports": {"subsections": {}}, 
+            "Survey Reports": {"subsections": {}}
+        }
         
-        # Instead of looking for TOC, let's find actual sections in the content
-        structure = {"Analysis": {"subsections": {}}, "Survey": {"subsections": {}}}
+        # Regex to identify Level 2 headers (##)
+        sections = re.findall(r'^## (.+)$', self.content, re.MULTILINE)
         
-        # Find all ## headings in the content
-        section_pattern = r'^## (.+)$'
-        sections = re.findall(section_pattern, self.content, re.MULTILINE)
-        
-        print(f"Found sections in README: {sections}")
-        
-        # Map sections to structure
         for section in sections:
+            # Main Section Detection
             if 'Analysis Reports' in section:
-                structure["Analysis Reports"] = {"subsections": {}}
+                pass # Already initialized
             elif 'Survey Reports' in section:
-                structure["Survey Reports"] = {"subsections": {}}
+                pass # Already initialized
+            
+            # Sub-section Mapping (Inferred based on known categories)
             elif section in ['Threat Intelligence', 'Application Security', 'Cloud Security', 'Vulnerabilities', 
                            'Ransomware', 'Data Breaches', 'Physical Security', 'AI and Emerging Technologies']:
-                # These are likely analysis subsections
-                if "Analysis Reports" not in structure:
-                    structure["Analysis Reports"] = {"subsections": {}}
                 structure["Analysis Reports"]["subsections"][section] = {}
-            elif section in ['Industry Trends', 'Identity Security', 'Penetration Testing', 'Privacy and Data Protection', 'Voice']:
-                # These are likely survey subsections  
-                if "Survey Reports" not in structure:
-                    structure["Survey Reports"] = {"subsections": {}}
-                structure["Survey Reports"]["subsections"][section] = {}
-        
-        # If we didn't find the main report sections, add them
-        if "Analysis Reports" not in structure:
-            structure["Analysis Reports"] = {"subsections": {"Industry Trends": {}}}
-        if "Survey Reports" not in structure:
-            structure["Survey Reports"] = {"subsections": {"Industry Trends": {}}}
             
-        # Ensure Survey Reports has some basic categories
+            elif section in ['Industry Trends', 'Identity Security', 'Penetration Testing', 'Privacy and Data Protection', 'Voice']:
+                structure["Survey Reports"]["subsections"][section] = {}
+
+        # Default Fallbacks if specific sections are missing
+        if not structure["Analysis Reports"]["subsections"]:
+            structure["Analysis Reports"]["subsections"]["Industry Trends"] = {}
         if not structure["Survey Reports"]["subsections"]:
-            structure["Survey Reports"]["subsections"] = {
-                "Industry Trends": {},
-                "Voice": {}
-            }
-        
-        print(f"Final parsed structure: {list(structure.keys())}")
-        for main, data in structure.items():
-            if isinstance(data, dict) and 'subsections' in data:
-                print(f"  {main}: {list(data['subsections'].keys())}")
-        
+            structure["Survey Reports"]["subsections"] = {"Industry Trends": {}, "Voice": {}}
+            
         return structure
 
-    def find_section_content(self, heading_name: str) -> Tuple[int, int]:
-        """Find the start and end positions of a section's content"""
-        pattern = rf'^## {re.escape(heading_name)}$'
-        match = re.search(pattern, self.content, re.MULTILINE)
-        if not match:
-            pattern = rf'^### {re.escape(heading_name)}$'
+    def find_section_bounds(self, heading_name: str) -> Tuple[int, int]:
+        """Finds start and end indices of a specific section content."""
+        # Try Level 2 (##) then Level 3 (###)
+        for pattern in [rf'^## {re.escape(heading_name)}$', rf'^### {re.escape(heading_name)}$']:
             match = re.search(pattern, self.content, re.MULTILINE)
-        if not match:
-            print(f"Could not find section: {heading_name}")
-            return -1, -1
+            if match:
+                start = match.end() + 1
+                # Find next header to determine end
+                next_header = re.search(r'\n##', self.content[start:])
+                end = start + next_header.start() if next_header else len(self.content)
+                return start, end
         
-        start = match.end() + 1
-        
-        # Find the next header (## or ###)
-        next_header = re.search(r'\n##', self.content[start:])
-        end = start + next_header.start() if next_header else len(self.content)
-        
-        return start, end
+        return -1, -1
 
 class ReadmeUpdater:
-    def __init__(self, readme_parser: ReadmeParser):
-        self.parser = readme_parser
+    def __init__(self, parser: ReadmeParser):
+        self.parser = parser
 
     def add_report_entry(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
-        """Add or update a report entry with emergency fallback handling"""
-        if not self._validate_analysis_data(analysis):
+        """Orchestrates adding a report entry using a prioritized strategy."""
+        if not self._validate_data(analysis):
             return False, "", -1, "invalid_data"
         
         report_type = analysis.get('type', 'Analysis')
         category = analysis.get('category', 'Industry Trends')
         
-        logical_main_section = f"{report_type} Reports"
-        logical_subsection = category
-
-        print(f"Looking for: '{logical_main_section}' -> '{logical_subsection}'")
+        main_section = f"{report_type} Reports"
         
-        # EMERGENCY FIX: Try multiple approaches to find where to put the entry
-        
-        # Approach 1: Try the logical structure
-        if logical_main_section in self.parser.toc_structure:
-            available_subsections = list(self.parser.toc_structure[logical_main_section].get('subsections', {}).keys())
+        # Strategy 1: Logical Subsection Match
+        if main_section in self.parser.structure:
+            subsections = list(self.parser.structure[main_section]['subsections'].keys())
             
-            if logical_subsection in available_subsections:
-                return self._add_to_subsection(analysis, logical_subsection)
+            # Exact match
+            if category in subsections:
+                return self._insert_into_section(analysis, category)
             
-            # Try similar subsection
-            similar = self._find_similar_section(logical_subsection, available_subsections)
+            # Fuzzy/Similar match
+            similar = self._find_similar_section(category, subsections)
             if similar:
-                print(f"Using similar subsection: {similar}")
-                return self._add_to_subsection(analysis, similar)
+                return self._insert_into_section(analysis, similar)
             
-            # Use first available subsection
-            if available_subsections:
-                fallback_section = available_subsections[0]
-                print(f"Using fallback subsection: {fallback_section}")
-                return self._add_to_subsection(analysis, fallback_section)
+            # First available fallback
+            if subsections:
+                return self._insert_into_section(analysis, subsections[0])
         
-        # Approach 2: Try direct section lookup (e.g., ## Industry Trends)
-        direct_result = self._try_direct_section(analysis, logical_subsection)
-        if direct_result[0]:  # Success
-            return direct_result
-            
-        # Approach 3: Try common fallback sections
-        fallback_sections = ['Industry Trends', 'Other', 'General']
-        for section in fallback_sections:
-            result = self._try_direct_section(analysis, section)
-            if result[0]:  # Success
-                print(f"Used fallback section: {section}")
-                return result
-        
-        # Approach 4: Add to the end of the file as last resort
-        print("Using emergency fallback: adding to end of file")
-        return self._add_to_end_of_file(analysis)
+        # Strategy 2: Direct Section Lookup
+        if self._insert_into_section(analysis, category)[0]:
+            return self._insert_into_section(analysis, category)
 
-    def _add_to_subsection(self, analysis: Dict[str, Any], subsection: str) -> Tuple[bool, str, int, str]:
-        """Add entry to a specific subsection"""
-        start, end = self.parser.find_section_content(subsection)
+        # Strategy 3: Generic Fallbacks
+        for fallback in ['Industry Trends', 'Other', 'General']:
+            res = self._insert_into_section(analysis, fallback)
+            if res[0]: return res
+        
+        # Strategy 4: Append to End (Last Resort)
+        return self._append_to_file(analysis)
+
+    def _insert_into_section(self, analysis: Dict[str, Any], section_name: str) -> Tuple[bool, str, int, str]:
+        """Inserts or updates an entry within a specific section."""
+        start, end = self.parser.find_section_bounds(section_name)
         if start == -1:
             return False, "", -1, "section_not_found"
         
-        section_content = self.parser.content[start:end]
+        content_slice = self.parser.content[start:end]
         entry_text = self._format_entry(analysis)
         
-        # Check for existing entries
-        org_name = analysis['organization']
-        report_title = analysis['title']
-        existing_line, existing_year = self._find_existing_entry(section_content, org_name, report_title)
+        existing_line, existing_year = self._find_existing(content_slice, analysis['organization'], analysis['title'])
         
-        if existing_line and existing_year:
+        if existing_line:
             try:
-                current_year = int(analysis['year'])
-                if current_year >= existing_year:
-                    updated_section = section_content.replace(existing_line, entry_text)
-                    entry_action = "updated" if current_year > existing_year else "refreshed"
+                if int(analysis['year']) >= existing_year:
+                    new_slice = content_slice.replace(existing_line, entry_text)
+                    action = "updated" if int(analysis['year']) > existing_year else "refreshed"
                 else:
                     return False, "", -1, "older_version"
             except (ValueError, TypeError):
                 return False, "", -1, "invalid_year"
         else:
-            updated_section = self._add_new_entry_sorted(section_content, entry_text)
-            entry_action = "new"
+            new_slice = self._sort_and_insert(content_slice, entry_text)
+            action = "new"
         
-        # Update content
-        self.parser.content = self.parser.content[:start] + updated_section + self.parser.content[end:]
-        line_number = self._find_line_number(entry_text.strip())
-        
-        return True, entry_text, line_number, entry_action
+        self.parser.content = self.parser.content[:start] + new_slice + self.parser.content[end:]
+        return True, entry_text, self._find_line_number(entry_text.strip()), action
 
-    def _try_direct_section(self, analysis: Dict[str, Any], section_name: str) -> Tuple[bool, str, int, str]:
-        """Try to add to a section directly (e.g., ## Industry Trends)"""
-        start, end = self.parser.find_section_content(section_name)
-        if start == -1:
-            return False, "", -1, "section_not_found"
-        
-        return self._add_to_subsection(analysis, section_name)
-
-    def _add_to_end_of_file(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
-        """Emergency fallback: add entry to end of file"""
+    def _append_to_file(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
+        """Appends entry to the end of the file as a fallback."""
         entry_text = self._format_entry(analysis)
-        
-        # Find a good place to insert - after last content but before any final sections
-        insert_point = len(self.parser.content.rstrip())
-        
-        # Add a new section if needed
         new_content = f"\n\n## Emergency Entries\n\n{entry_text}\n"
-        
-        self.parser.content = self.parser.content[:insert_point] + new_content
-        line_number = self._find_line_number(entry_text.strip())
-        
-        return True, entry_text, line_number, "new"
-
-    def _validate_analysis_data(self, analysis: Dict[str, Any]) -> bool:
-        """Validate analysis data with better error reporting"""
-        required_fields = ['organization', 'title', 'year', 'summary', 'type', 'category', 'pdf_path']
-        missing_fields = []
-        
-        for field in required_fields:
-            value = analysis.get(field)
-            if not value or (isinstance(value, str) and not value.strip()):
-                missing_fields.append(field)
-        
-        if missing_fields:
-            print(f"ERROR: Missing required fields: {missing_fields}")
-            return False
-        
-        # Check for the filename parsing bug
-        org = analysis.get('organization', '')
-        title = analysis.get('title', '')
-        
-        if org == title and '-' in org:
-            print(f"ERROR: Detected filename parsing bug - org and title are identical: '{org}'")
-            return False
-            
-        # Validate year
-        year_str = str(analysis.get('year', ''))
-        if not year_str.isdigit() or len(year_str) != 4:
-            print(f"ERROR: Invalid year: '{year_str}'")
-            return False
-        
-        return True
-
-    def _find_existing_entry(self, section_content: str, org_name: str, report_title: str) -> Tuple[Optional[str], Optional[int]]:
-        """Find existing entry for a specific report from an organization."""
-        lines = section_content.split('\n')
-        org_name_lower = org_name.lower()
-        # Normalize title for comparison: lower, remove "the", "of", "and", and spaces
-        title_norm = re.sub(r'\s+|the|of|and', '', report_title.lower())
-        
-        for line in lines:
-            if not line.strip().startswith('- ['):
-                continue
-                
-            # Match organization and title from the markdown link format
-            entry_match = re.search(r'^- \[([^\]]+)\]\(.*\) - \[([^\]]+)\]\(.*\)', line.strip())
-            if entry_match:
-                line_org = entry_match.group(1)
-                line_title = entry_match.group(2)
-                line_title_norm = re.sub(r'\s+|the|of|and', '', line_title.lower())
-                
-                if line_org.lower() == org_name_lower and line_title_norm == title_norm:
-                    year_match = re.search(r'\((\d{4})\)', line)
-                    year = int(year_match.group(1)) if year_match else None
-                    return line, year
-        
-        return None, None
-
-    def _add_new_entry_sorted(self, section_content: str, entry_text: str) -> str:
-        """Add new entry in alphabetical order"""
-        lines = section_content.strip().split('\n')
-        entry_lines = [line for line in lines if line.strip() and line.strip().startswith('- [')]
-        entry_lines.append(entry_text)
-        
-        # Sort by organization name
-        entry_lines.sort(key=lambda x: self._extract_org_name_for_sorting(x))
-        
-        return '\n'.join(entry_lines) + '\n'
-
-    def _find_line_number(self, entry_text: str) -> int:
-        """Find line number of entry"""
-        for i, line in enumerate(self.parser.content.split('\n'), 1):
-            if entry_text in line:
-                return i
-        return -1
+        self.parser.content = self.parser.content.rstrip() + new_content
+        return True, entry_text, self._find_line_number(entry_text.strip()), "new"
 
     def _format_entry(self, analysis: Dict[str, Any]) -> str:
-        """Format entry for README"""
-        org_name = analysis['organization']
-        org_url = analysis['organization_url']
+        """Formats the markdown list item, ensuring summary is a single line."""
+        pdf_name = Path(analysis['pdf_path']).name
+        pdf_link = f"Annual Security Reports/{analysis['year']}/{pdf_name}".replace(' ', '%20')
         
-        filename = Path(analysis['pdf_path']).name
-        year = analysis['year']
-        pdf_relative_path = f"Annual Security Reports/{year}/{filename}"
-        pdf_url_encoded = pdf_relative_path.replace(' ', '%20')
-        
-        summary_text = analysis['summary'].strip('"')
+        # Sanitize summary: remove newlines/tabs and collapse spaces
+        summary = ' '.join(analysis['summary'].strip('"').split())
 
-        return f"- [{org_name}]({org_url}) - [{analysis['title']}]({pdf_url_encoded}) ({year}) - {summary_text}"
+        return (f"- [{analysis['organization']}]({analysis['organization_url']}) "
+                f"- [{analysis['title']}]({pdf_link}) ({analysis['year']}) - {summary}")
 
-    def _extract_org_name_for_sorting(self, entry_line: str) -> str:
-        """Extract org name for sorting"""
-        match = re.search(r'- \[([^\]]+)\]', entry_line)
-        return match.group(1).lower() if match else entry_line.lower()
+    def _sort_and_insert(self, content: str, entry: str) -> str:
+        """Inserts new entry while maintaining alphabetical order by Organization."""
+        lines = [l for l in content.strip().split('\n') if l.strip().startswith('- [')]
+        lines.append(entry)
+        
+        # Sort based on Organization name extracted from markdown link
+        lines.sort(key=lambda x: re.search(r'- \[([^\]]+)\]', x).group(1).lower() if re.search(r'- \[([^\]]+)\]', x) else x.lower())
+        return '\n'.join(lines) + '\n'
 
-    def _find_similar_section(self, target: str, available_sections: List[str]) -> Optional[str]:
-        """Find similar section name"""
-        target_words = set(target.lower().split())
+    def _find_existing(self, content: str, org: str, title: str) -> Tuple[Optional[str], Optional[int]]:
+        """Checks for existing entry to prevent duplicates."""
+        org_norm, title_norm = org.lower(), self._normalize_title(title)
         
-        best_match = None
-        best_score = 0
-        
-        for section in available_sections:
-            section_words = set(section.lower().split())
-            overlap = len(target_words.intersection(section_words))
-            if overlap > best_score:
-                best_score = overlap
-                best_match = section
-        
-        return best_match if best_score > 0 else None
+        for line in content.split('\n'):
+            if not line.strip().startswith('- ['): continue
+            
+            match = re.search(r'^- \[([^\]]+)\]\(.*\) - \[([^\]]+)\]\(.*\)', line.strip())
+            if match:
+                curr_org, curr_title = match.group(1).lower(), self._normalize_title(match.group(2))
+                if curr_org == org_norm and curr_title == title_norm:
+                    year_match = re.search(r'\((\d{4})\)', line)
+                    return line, int(year_match.group(1)) if year_match else None
+        return None, None
 
-    def save_readme(self):
-        """Save updated README"""
+    def _normalize_title(self, title: str) -> str:
+        return re.sub(r'\s+|the|of|and', '', title.lower())
+
+    def _find_similar_section(self, target: str, options: List[str]) -> Optional[str]:
+        target_set = set(target.lower().split())
+        best_match, best_score = None, 0
+        
+        for opt in options:
+            score = len(target_set.intersection(set(opt.lower().split())))
+            if score > best_score:
+                best_match, best_score = opt, score
+        return best_match
+
+    def _find_line_number(self, text: str) -> int:
+        for i, line in enumerate(self.parser.content.split('\n'), 1):
+            if text in line: return i
+        return -1
+
+    def _validate_data(self, data: Dict[str, Any]) -> bool:
+        required = ['organization', 'title', 'year', 'summary', 'type', 'category', 'pdf_path']
+        if any(not data.get(f) for f in required):
+            print(f"ERROR: Missing fields in analysis: {[f for f in required if not data.get(f)]}")
+            return False
+        if data.get('organization') == data.get('title') and '-' in data.get('organization', ''):
+             print(f"ERROR: Organization matches Title (parsing error): {data['organization']}")
+             return False
+        return str(data.get('year', '')).isdigit()
+
+    def save(self):
         self.parser.readme_path.write_text(self.parser.content, encoding='utf-8')
-        print(f"README updated: {self.parser.readme_path}")
+        print(f"README successfully updated: {self.parser.readme_path}")
 
 def main():
     parser = argparse.ArgumentParser(description="Update README with security reports")
-    parser.add_argument("analysis_json", help="Analysis results JSON file")
-    parser.add_argument("--readme-path", default="README.md", help="README path")
+    parser.add_argument("analysis_json", help="Path to analysis results JSON")
+    parser.add_argument("--readme-path", default="README.md", help="Path to README.md")
     args = parser.parse_args()
 
-    if not os.path.exists(args.analysis_json):
-        print(f"ERROR: Analysis file not found: {args.analysis_json}")
+    if not os.path.exists(args.analysis_json) or os.path.getsize(args.analysis_json) < 2:
+        print(f"ERROR: Invalid analysis file: {args.analysis_json}")
         sys.exit(1)
-    
-    file_size = os.path.getsize(args.analysis_json)
-    print(f"Analysis file size: {file_size} bytes")
-    
-    if file_size < 2:
-        print(f"ERROR: Analysis file too small ({file_size} bytes)")
-        sys.exit(1)
-    
+
     try:
         with open(args.analysis_json, 'r') as f:
-            analysis_results = json.load(f)
+            results = json.load(f)
     except json.JSONDecodeError as e:
-        print(f"ERROR: Invalid JSON: {e}")
+        print(f"ERROR: JSON Decode Error: {e}")
         sys.exit(1)
-    
-    if not analysis_results:
-        print("No analysis results to process. Skipping README update.")
+
+    if not results:
+        print("No analysis results found. Exiting.")
         sys.exit(0)
 
-    print(f"Processing {len(analysis_results)} analysis results")
+    print(f"Processing {len(results)} reports...")
     
-    # Debug the first result
-    if analysis_results:
-        first = analysis_results[0]
-        print(f"First result: {first.get('organization')} - {first.get('title')} ({first.get('year')})")
-
     try:
-        readme_parser = ReadmeParser(args.readme_path)
-        updater = ReadmeUpdater(readme_parser)
+        updater = ReadmeUpdater(ReadmeParser(args.readme_path))
     except Exception as e:
-        print(f"ERROR: Failed to initialize README parser: {e}")
+        print(f"ERROR: Parser init failed: {e}")
         sys.exit(1)
 
-    processed_entries = []
-    actions_taken = {"new": 0, "updated": 0, "refreshed": 0, "errors": 0, "skipped": 0}
-    
-    for i, analysis in enumerate(analysis_results, 1):
-        print(f"\n=== Processing {i}/{len(analysis_results)} ===")
+    stats = {"new": 0, "updated": 0, "refreshed": 0, "errors": 0}
+    changes_pending = False
+
+    for i, analysis in enumerate(results, 1):
+        print(f"[{i}/{len(results)}] Processing: {analysis.get('organization')} - {analysis.get('title')}")
         
-        success, entry_text, line_number, action = updater.add_report_entry(analysis)
+        success, _, _, action = updater.add_report_entry(analysis)
         
         if success:
-            processed_entries.append({
-                'organization': analysis['organization'],
-                'title': analysis['title'],
-                'year': analysis['year'],
-                'entry_text': entry_text,
-                'line_number': line_number,
-                'action': action
-            })
-            actions_taken[action] += 1
-            print(f"SUCCESS: {action.upper()} - {analysis['organization']}")
+            stats[action] += 1
+            changes_pending = True
+            print(f"  -> SUCCESS ({action.upper()})")
         else:
-            actions_taken["errors"] += 1
-            print(f"FAILED: {analysis['organization']} - {action}")
+            stats["errors"] += 1
+            print(f"  -> FAILED: {action}")
 
-    print(f"\n=== SUMMARY ===")
-    print(f"Processed: {len(analysis_results)}")
-    print(f"Successful: {len(processed_entries)}")
-    print(f"Actions: {actions_taken}")
+    print("\n=== Summary ===")
+    print(f"Processed: {len(results)} | New: {stats['new']} | Updated: {stats['updated']} | Errors: {stats['errors']}")
 
-    if processed_entries:
-        updater.save_readme()
-        print("SUCCESS: README updated")
+    if changes_pending:
+        updater.save()
     else:
-        print("WARNING: No successful updates, but exiting successfully")
-        
+        print("No changes required.")
+
     return 0
 
 if __name__ == "__main__":
