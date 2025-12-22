@@ -325,9 +325,20 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
 
         markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
         
-        # Post-process: Remove markdown code block wrappers if AI incorrectly added them
+        # Post Processing Cleanup
+
+        # 1. Remove markdown code block wrappers if AI incorrectly added them
         markdown_content = re.sub(r'^\s*```(?:markdown)?\s*\n', '', markdown_content, 1)
         markdown_content = re.sub(r'\n\s*```\s*$', '', markdown_content, 1)
+
+        # 2. Fix: Remove prompt instructions if they leaked into the output
+        marker = "# Report Content Below"
+        if marker in markdown_content:
+            print(f"Detected prompt leakage. Cleaning content above marker: '{marker}'")
+            # Find the LAST instance of the marker (rfind) to ensure we get past all instructions
+            last_index = markdown_content.rfind(marker)
+            # Slice the content to start immediately after the marker
+            markdown_content = markdown_content[last_index + len(marker):].strip()
 
         # Prepare output
         relative_path = pdf_path.relative_to(Path("Annual Security Reports"))
