@@ -1,856 +1,373 @@
-# Microsoft Digital Defense Report - October 2021
+# Microsoft Digital Defense Report October 2021
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [The state of cybercrime](#the-state-of-cybercrime)
-    - [Introduction](#introduction-1)
-    - [The cybercrime economy and services](#the-cybercrime-economy-and-services)
-    - [Ransomware and extortion](#ransomware-and-extortion)
-    - [Phishing and other malicious email](#phishing-and-other-malicious-email)
-    - [Malware](#malware)
-    - [Malicious domains](#malicious-domains)
-    - [Adversarial machine learning](#adversarial-machine-learning)
-- [Nation state threats](#nation-state-threats)
-    - [Introduction](#introduction-2)
-    - [Tracking nation state threats](#tracking-nation-state-threats)
-    - [What we're seeing](#what-were-seeing)
-    - [Analysis of nation state activity this year](#analysis-of-nation-state-activity-this-year)
-    - [Private sector offensive actors](#private-sector-offensive-actors)
-    - [Comprehensive protections required](#comprehensive-protections-required)
-- [Supply chain, IoT, and OT security](#supply-chain-iot-and-ot-security)
-    - [Introduction](#introduction-3)
-    - [Challenges in managing risk associated with the supplier ecosystem](#challenges-in-managing-risk-associated-with-the-supplier-ecosystem)
-    - [How Microsoft thinks about supply chain](#how-microsoft-thinks-about-supply-chain)
-    - [IoT and OT threat landscape](#iot-and-ot-threat-landscape)
-    - [The 7 properties of highly secured devices](#the-7-properties-of-highly-secured-devices)
-    - [Applying a Zero Trust approach to IoT solutions](#applying-a-zero-trust-approach-to-iot-solutions)
-    - [IoT at the intersection of cybersecurity and sustainability](#iot-at-the-intersection-of-cybersecurity-and-sustainability)
-    - [IoT security policy considerations](#iot-security-policy-considerations)
-- [Hybrid workforce security](#hybrid-workforce-security)
-    - [Introduction](#introduction-4)
-    - [A Zero Trust approach for securing hybrid work](#a-zero-trust-approach-for-securing-hybrid-work)
-    - [Identities](#identities)
-    - [Devices/Endpoints](#devicesendpoints)
-    - [Applications](#applications)
-    - [Network](#network)
-    - [Infrastructure](#infrastructure)
-    - [Data](#data)
-    - [People](#people)
+- [The State of Cybercrime](#the-state-of-cybercrime)
+- [Nation State Threats](#nation-state-threats)
+- [Supply Chain, IoT, and OT Security](#supply-chain-iot-and-ot-security)
+- [Hybrid Workforce Security](#hybrid-workforce-security)
 - [Disinformation](#disinformation)
-    - [Introduction](#introduction-5)
-    - [Disinformation as an emerging threat](#disinformation-as-an-emerging-threat)
-    - [Mitigation through media literacy](#mitigation-through-media-literacy)
-    - [Disinformation as an enterprise disruptor](#disinformation-as-an-enterprise-disruptor)
-    - [Campaign security and election integrity](#campaign-security-and-election-integrity)
-- [Actionable insights](#actionable-insights)
-    - [Introduction](#introduction-6)
-    - [Summary of report learnings](#summary-of-report-learnings)
-    - [Conclusion](#conclusion)
-- [Contributing teams at Microsoft](#contributing-teams-at-microsoft)
+- [Actionable Insights](#actionable-insights)
+- [Contributing Teams at Microsoft](#contributing-teams-at-microsoft)
 
-# Microsoft Digital Defense Report  OCTOBER 2021
+---
 
-2
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION   ACTIONABLE INSIGHTS   TEAMS
-Microsoft Digital Defense Report  |  October 2021
-CHAPTER 1 
-Introduction
-3	
-Introduction
- 
- 
-5	
-Our 2021 focus areas
-CHAPTER 2 
-The state of cybercrime
-8	
-Introduction 
- 
-8	
-The cybercrime economy and services
- 
- 
-10	
-Ransomware and extortion 
-20	
-Phishing and other malicious email 
-34	
-Malware
- 
- 
-38	
-Malicious domains 
-42	
-Adversarial machine learning
-CHAPTER 3 
-Nation state threats
-48	
-Introduction 
-49	
-Tracking nation state threats 
- 
-52	
-What we’re seeing 
-57	
-Analysis of nation state activity this year 
-69	
-Private sector offensive actors 
-69	
-Comprehensive protections required
-CHAPTER 4 
-Supply chain, IoT, 
-and OT security
- 
-71	
-Introduction 
- 
-72	
-Challenges in managing risk associated with 
-the supplier ecosystem 
-73	
-How Microsoft thinks about supply chain 
-76	
-IoT and OT threat landscape 
-81	
-The 7 properties of highly secured devices 
-82	
-Applying a Zero Trust approach to IoT solutions 
-83	
-IoT at the intersection of cybersecurity and 
-sustainability 
-84	
-IoT security policy considerations
-CHAPTER 5 
-Hybrid workforce security
-89	
-Introduction 
-91	
-A Zero Trust approach for securing hybrid work 
- 
-93	
-Identities 
-98	
-Devices/Endpoints
- 
-99	
-Applications
- 
-100	 Network
- 
-104	 Infrastructure
- 
-105	 Data
-106	 People
- 
-CHAPTER 6 
-Disinformation
-110	
-Introduction 
- 
-111	
-Disinformation as an emerging threat 
- 
-113	
-Mitigation through media literacy 
-114	
-Disinformation as an enterprise disruptor 
-117	
-Campaign security and election integrity
- 
-CHAPTER 7 
-Actionable insights
-122	 Introduction 
- 
-123	 Summary of report learnings 
- 
-128	 Conclusion
- 
-Contributing teams at Microsoft
-3
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION
-ACTIONABLE INSIGHTS   TEAMS
-Introduction
-Our 2021 focus areas
-Microsoft Digital Defense Report  |  October 2021
-Introduction
-   
-TOM BURT, CORPORATE VICE PRESIDENT, CUSTOMER SECURITY & TRUST
-Over the past year the world has borne witness to a burgeoning cybercrime economy and the rapid rise 
-of cybercrime services. We have watched this global market grow in both complexity and fervency. We’ve 
-seen the cyberattack landscape becoming increasingly sophisticated as cybercriminals continue—and even 
-escalate—their activity in times of crisis. New levels of supply chain and ransomware attacks were a powerful 
-reminder that we must all work together, and in new ways, to protect the cybersecurity of the planet.
-We see transparency and information sharing 
-as essential to the protection of the ecosystem. 
-Knowledge brings power, and to that end, security 
-professionals need diverse and timely insights into 
-the threats they are defending against.
-Microsoft serves billions of customers globally, 
-allowing us to aggregate security data from a broad 
-and diverse spectrum of companies, organizations, 
-and consumers. Informed by over 24 trillion 
-security signals per day, our unique position helps 
-us generate a high-fidelity picture of the current 
-state of cybersecurity, including indicators that help 
-us predict what attackers will do next. Our goal in 
-creating the Microsoft Digital Defense Report is to 
-bring together integrated data and insights from 
-more teams, across more areas of Microsoft than 
-ever before. We will share what we’re seeing to help 
-the global community strengthen the defense of the 
-digital ecosystem, and we will include actionable 
-learnings that companies, governments, and 
-consumers can use to further secure individuals and 
-environments.
-The Microsoft Digital Defense Report draws on 
-insights, data, and signals from across Microsoft, 
-including the cloud, endpoints, and the intelligent 
-edge. Note 1  Thousands of Microsoft security experts 
-across 77 countries interpret and contribute to the 
-insights gained from our advanced engineering 
-and threat signals. Our security experts include 
-analysts, researchers, responders, engineers, and 
-data scientists. We also share lessons learned from 
-customers transitioning to a hybrid workforce and 
-frontline stories from our incident responders. Of 
-course, there is malign activity we do not see, some 
-of which is reported on by others in the industry. 
-While the defender community at Microsoft works 
-hard to identify threats and keep our customers 
-informed, the bad actors are skilled and relentless. 
-By continually sharing insights we and others in the 
-industry derive from the work we do, we hope to 
-empower everyone to defend the online ecosystem 
-more effectively.
-Microsoft has made significant and ongoing 
-investments to increase and improve the knowledge 
-we derive from our threat signals. These investments 
-deliver the highly synthesized and integrated 
-insights that we share here. Our goal in aggregating 
-these learnings is to help organizations understand 
-the ways in which cybercriminals are continually 
-shifting their modes of attack—and determine the 
-best ways to combat those attacks. We write and 
-share this report in the spirit of empowering the 
-global community to benefit from the insights, 
-observations, and transparency generated by our 
-unique mission and vantage point.
-THE MICROSOFT 
-DIGITAL DEFENSE 
-REPORT DRAWS ON 
-INSIGHTS, DATA, 
-AND SIGNALS 
-FROM ACROSS 
-MICROSOFT, 
-INCLUDING 
-THE CLOUD, 
-ENDPOINTS, AND 
-THE INTELLIGENT 
-EDGE.
-Note 1  These signals are collected with customer privacy in mind. The data we collect depends on the context of your interactions with Microsoft and the choices you make, including your privacy settings and the products and features you use.
-    
-3
-Microsoft Digital Defense Report  |  October 2021
-4
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION   ACTIONABLE INSIGHTS   TEAMS
-Introduction
-Our 2021 focus areas
-Microsoft security signals
-Volume and diversity of signals processed by Microsoft
-Microsoft Digital Defense Report  |  October 2021
-    
-5
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION   ACTIONABLE INSIGHTS   TEAMS
-Introduction
-Our 2021 focus areas
-Microsoft Digital Defense Report  |  October 2021
- Our 2021 focus areas
-2021 brought powerful reminders that to protect 
-the future we must understand the threats of the 
-present. This requires that we continually share data 
-and insights in new ways. Certain types of attacks 
-have escalated as cybercriminals change tactics, 
-leveraging current events to take advantage of 
-vulnerable targets and advance their activity through 
-new channels. Change brings opportunity—for both 
-attackers and defenders—and this report will focus 
-on the threats that are most novel and relevant to 
-the community as we look to the months ahead.
-Looking at the threat landscape, along with data 
-and signals from cross-company teams, five top-
-level areas emerged as most critical to bring into the 
-sharpest focus in this report: the state of cybercrime; 
-nation state threats; supplier ecosystems, Internet 
-of Things (IoT), and operational technology (OT) 
-security; the hybrid workforce; and disinformation. 
-To provide the greatest benefit, we also extract our 
-recommendations and actionable learnings, and 
-present them throughout the report and in our 
-concluding chapter.
-The state of cybercrime
-In this chapter, we discuss new developments in 
-the cybercrime economy and the growing market 
-for cybercrime services. We provide updates and 
-analysis of what we are seeing in ransomware and 
-extortion, phishing and other malicious email, 
-malware, and the use of domains by cybercriminals, 
-presenting recommendations for mitigating risk 
-in each area. Finally, we share what we’re seeing in 
-adversarial machine learning and what we are doing 
-to stay ahead of cybercriminals in this area.
-Nation state threats
-This chapter provides an update on what we’re 
-seeing in nation state adversarial activity, including 
-reports on seven activity groups we have not 
-previously mentioned publicly. We provide an 
-analysis of the evolving threats in this watershed 
-year with an increased focus on on-premises servers 
-and the exposure of widespread supply chain 
-vulnerabilities. We conclude with a discussion about 
-private sector offensive actors and our guidance for 
-comprehensive protections.
-Supply chain, IoT, and OT 
-security
-The highly publicized events of the last year have 
-made clear that securing and managing risks 
-associated with supplier ecosystems is critically 
-important. This chapter covers some current 
-challenges in doing so in the supplier ecosystem 
-and presents how Microsoft thinks about end-to-
-end supply chain security in nine investment areas. 
-Then we turn our discussion to what we’re seeing 
-in the Internet of Things (IoT) and operational 
-technology (OT) threat landscape, with guidance on 
-the properties of highly secured devices. We include 
-specialized use cases of IoT and present some new 
-research informing IoT policy considerations.
-    
-6
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION   ACTIONABLE INSIGHTS   TEAMS
-Introduction
-Our 2021 focus areas
-Microsoft Digital Defense Report  |  October 2021
-Hybrid workforce security
-This chapter is about our greatest asset, our people. 
-As we have moved to a hybrid workforce over 
-the past year, we’ve seen developments in the 
-threat landscape which point to the importance 
-of adopting a Zero Trust approach. We include 
-threat signals and other data across the six pillars 
-of Zero Trust—identities, endpoints, applications, 
-network, infrastructure, and data—and provide 
-guidance based on what we’re seeing. We conclude 
-with discussions about insider threats in hybrid 
-work environments, and an empathy imperative 
-for managing the new and significant challenges 
-encountered by today’s workforce.
-Disinformation
-This chapter addresses the unprecedented 
-disinformation campaigns and related cyber 
-operations by state and non-state actors, 
-impacting public awareness and knowledge as 
-well as enterprise operations. We look at some 
-parallels in cybersecurity and discuss mitigation 
-through media literacy. We include a discussion on 
-disinformation as an enterprise disruptor, providing 
-a four-point plan for enterprise executives. The 
-chapter concludes with an in-depth exploration of 
-political campaign security and election integrity, 
-two areas that have been targeted by disinformation 
-campaigns.
-Actionable insights
-We open this year’s concluding chapter with a 
-discussion of five paradigm shifts that will center the 
-evolution of work around the inclusivity of people 
-and data. The chapter concludes with a distilled look 
-at the key learnings from all the previous chapters 
-of this report: to minimize impact of attacks we 
-must truly practice good cyber hygiene, implement 
-architectures that support the principles of Zero 
-Trust, and ensure cyber risk management is built into 
-the business.
-Microsoft Digital Defense Report  |  October 2021
-6
-    
-7
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION   ACTIONABLE INSIGHTS   TEAMS
-Microsoft Digital Defense Report  |  October 2021
-TOC
-INTRODUCTION
-THE STATE OF CYBERCRIME
-NATION STATE THREATS
-SUPPLY CHAIN, IOT, AND OT SECURITY
-HYBRID WORKFORCE SECURITY
-DISINFORMATION
-ACTIONABLE INSIGHTS
-TEAMS
-CHAPTER 2 
-The state of cybercrime
-Introduction
-The cybercrime economy and services
-Ransomware and extortion 
-Phishing and other malicious email
-Malware 
-Malicious domains 
-Adversarial machine learning
-   
-   
-   
-   
-   
-   
-   
-   
-8
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION   ACTIONABLE INSIGHTS   TEAMS
-Introduction
-The cybercrime economy and services
-Ransomware and extortion
-Phishing and other malicious email
-Malware
-Malicious domains
-Adversarial machine learning
-Microsoft Digital Defense Report  |  October 2021
-INTRODUCTION: The growing threat of cybercrime 
-AMY HOGAN-BURNEY, GENERAL MANAGER, DIGITAL CRIMES UNIT
-Cybercrime, whether nation state sponsored or permitted, is a threat to national security. Cybercriminals are 
-targeting and attacking all sectors of critical infrastructure, including healthcare and public health, information 
-technology (IT), financial services, and energy sectors. Ransomware attacks are increasingly successful, crippling 
-governments and businesses, and the profits from these attacks are soaring. 
-The cybercrime supply chain, often created by criminal syndicates, continues to mature allowing anyone to buy 
-the services needed to conduct malicious activity for financial gain or other nefarious purpose. Sophisticated 
-cybercriminals are also still working for governments conducting espionage and training in the new battlefield. 
-It is not hopeless, and there are two positive trends 
-we have seen recently. First, more governments 
-and companies are coming forward when they are 
-victims. This transparency helps in several ways. It 
-has made clear to governments around the world 
-that cybercrime is a threat to security. Victim stories 
-humanize and make clear the consequences of these 
-attacks, drawing attention to the problem and allowing 
-increased engagement from incident responders and 
-law enforcement. Second, now that governments 
-around the world recognize that cybercrime is a threat 
-to national security, they have made combatting it a 
-priority. Governments around the world are passing 
-new laws regarding reporting, creating cross-
-government task forces, allocating resources, and 
-seeking out private sector assistance.
-The cybercrime 
-economy and 
-services
-Through our investigations of online organized crime 
-networks, frontline investigations of customer attacks, 
-security and attack research, nation state threat 
-tracking, and security tool development, we continue 
-to see the cybercrime supply chain consolidate and 
-mature. It used to be that cybercriminals had to 
-develop all the technology for their attacks. Today, 
-they rely on a mature supply chain, where specialists 
-create cybercrime kits and services that other actors 
-buy and incorporate into their campaigns. With the 
-increased demand for these services, an economy of 
-specialized services has surfaced, and threat actors 
-are increasing automation to drive down their costs 
-and increase scale. For example, we are seeing an 
-increasing offer of backconnect proxies (proxies that 
-rotate between mobile, residential, and datacenter 
-systems) in addition to Remote Desktop Protocol 
-(RDP), Secure Shell (SSH), virtual private network 
-(VPN), virtual private server (VPS), web shells, cPanels 
-(webhosting management dashboard), and other 
-anonymization systems.
-WITH NO 
-TECHNICAL 
-KNOWLEDGE OF 
-HOW TO CONDUCT 
-A CYBERCRIME 
-ATTACK, AN 
-AMATEUR 
-THREAT ACTOR 
-CAN PURCHASE 
-A RANGE OF 
-SERVICES TO 
-CONDUCT THEIR 
-ATTACKS WITH 
-ONE CLICK.
-Other examples include selling compromised 
-credentials that may have been obtained from 
-phishing, scraping botnet logs or other credential 
-harvesting techniques, imposter domain names, 
-phishing-as-a-service, customized lead generation 
-(for example, victims by country, industry, or roles), 
-    
-    
-    
-    
-    
-    
-8
-Microsoft Digital Defense Report  |  October 2021
-9
-loads (malicious software used to update malware 
-on an infected computer), denial of service (DoS), 
-and more. As an illustration, in some marketplaces, 
-compromised credentials are offered by different 
-sellers for $1.00 USD to $50.00 USD, depending on 
-a variety of variables including the perceived value 
-of the enterprise target. The number of sites offering 
-services has significantly increased in the past 12 
-months as well as volume of credentials and variety 
-of phishing kits.
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION   ACTIONABLE INSIGHTS   TEAMS
-Introduction
-The cybercrime economy and services
-Ransomware and extortion
-Phishing and other malicious email
-Malware
-Malicious domains
-Adversarial machine learning
-Microsoft Digital Defense Report  |  October 2021
-Among the services available to even amateur threat 
-actors are the cryptocurrency escrow services (to 
-ensure services are rendered as offered) that we 
-often see in commodity ransomware campaigns 
-where affiliate models have become firmly 
-established. Nontechnical cybercriminals sign up with 
-a ransomware affiliate where for 30% of the revenue, 
-the affiliate network will supply the ransomware, 
-recovery services, and payment services. The attacker 
-then buys “loads” from a market and pushes the 
-ransomware to the loads they purchased. They then 
-sit back and collect their revenue. 
-At times there are geographic groups of actors 
-who may offer certain services, but most of these 
-cybercrime markets are global in nature. A buyer 
-in Brazil can obtain phishing kits from a seller in 
-Pakistan, domains from the United States, victim 
-leads from Nigeria, and proxies from Romania.
-These prices have remained fairly steady over the 
-past several years, but like any other market they 
-vary according to changes in supply, demand, and 
-externalities such as politics.  
-KEY TAKEAWAYS:
--   Identity and password/phishing attacks are 
-cheap, and on the rise. Why would an attacker 
-break in when they can log in?
--   Distributed denial of service (DDoS) attacks 
-are cheap for unprotected sites—about $300 
-USD/month.
--   Ransomware kits are one of the many types of 
-attack kits designed to enable low-skill attackers 
-to perform more sophisticated attacks.
-Average prices of cybercrime services for sale
-Organizations now face an industrialized attacker economy with skill specialization and trading of illicit 
-commodities. As seen in this snapshot of average prices, many commodities that can be purchased in 
-the dark markets are very inexpensive, making attacks cheaper and easier to conduct (which also drives 
-up attack volume).
-Not all attacks work. It’s critical that we keep 
-improving our defenses to increase the failure rate 
-of attacks and the associated cost to attackers.
-    
-    
-    
-    
-    
-    
-10
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION   ACTIONABLE INSIGHTS   TEAMS
-Introduction
-The cybercrime economy and services
-Ransomware and extortion
-Phishing and other malicious email
-Malware
-Malicious domains
-Adversarial machine learning
-Microsoft Digital Defense Report  |  October 2021
-Ransomware 
-and extortion 
-Ransomware basics and 
-taxonomy
-Ransomware and extortion is a high-profit, low-cost 
-business which has a debilitating impact on targeted 
-organizations, national security, economic security, 
-and public health and safety. What started as simple 
-single-PC ransomware has grown to include a 
-variety of extortion techniques enabled by human 
-intelligence and is affecting the networks of all types 
-of organizations across the globe.
-This combination of real-time intelligence and 
-broader criminal tactics, techniques, and procedures 
-(TTPs) has maximized the impact of these attacks 
-and driven the profits from these attacks to levels 
-that were hard to imagine a few years ago. To put 
-it in perspective, the publicly reported profits from 
-ransomware and extortion attacks gives these 
-attackers a budget that would likely rival the budgets 
-of nation state attack organizations (without even 
-counting the profits from attacks that never made 
-the headlines).
-To counter ransomware, a global collaborative 
-effort between the private sector, law enforcement, 
-and government is necessary to reduce the 
-profitability of this crime, make it more difficult to 
-enter the ransomware market, and supply victims 
-with effective tools for efficient prevention and 
-remediation. Microsoft is a contributor to the 
-Ransomware Task Force report, a comprehensive 
-framework designed for taking action in combatting 
-ransomware. Note 2  Microsoft has also published a 
-project plan with links to technical guidance to 
-help organizations better prepare for and respond 
-to these attacks and is contributing to a National 
-Institute of Standards and Technology (NIST) 
-publication containing a cybersecurity framework 
-profile for ransomware risk management. Note 3 
-A ransomware and extortion attack involves a 
-threat actor deploying malware that encrypts 
-and exfiltrates data and then holds that data 
-for a ransom, often demanding payment in 
-cryptocurrency. Rather than just encrypting a victim’s 
-files and requesting a ransom in exchange for the 
-decryption key, the attackers also exfiltrate sensitive 
-data before deploying the ransomware. This 
-practice prevents victims from disengaging from 
-negotiations and raises the victim’s reputational 
-costs of not paying the ransom as the attackers likely 
-will not only leave the victim’s data encrypted but 
-also leak sensitive information.
-A series of criminal activities occur long before the 
-ransomware is ultimately deployed across computer 
-systems in an organization. As a result, we created a 
-taxonomy that focuses on the relationship between 
-entities within the ransomware ecosystem because 
-any entity may play a different role at any given 
-time.
-Ransomware attacks have evolved into human-
-operated ransomware, also known as “big game 
-ransomware.”
-Ransomware taxonomy
-Primary role
-Description
-Develops
-Writes the malware
-Deploys
-Sends phishing emails, deploys ransomware 
-Provides access
-Malware that loads other malware, or a group that sells access as a service 
-Manages/operates
-Leadership of a group (such as MAZE cartel membership) and/or function that 
-provides coordination (such as managing or operating a central extortion leak site) 
-Publicly reported 
-connection
-A publicly reported connection exists 
-    
-    
-    
-    
-    
-    
-Note 2  https://securityandtechnology.org/ransomwaretaskforce/report/  Note 3  https://aka.ms/humanoperated 
-11
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION   ACTIONABLE INSIGHTS   TEAMS
-Introduction
-The cybercrime economy and services
-Ransomware and extortion
-Phishing and other malicious email
-Malware
-Malicious domains
-Adversarial machine learning
-Microsoft Digital Defense Report  |  October 2021
-For example, as shown in the image at right, a threat 
-actor may develop and deploy malware that gives 
-one threat actor access to a certain category of 
-victims, whereas a different threat actor may merely 
-deploy malware.
- 
-Post-breach response
-Just as the criminal enterprise that deploys 
-ransomware typically involves several stakeholders 
-each with a particular responsibility, the response to 
-ransomware also involves several key stakeholders.
-If a victim of a ransomware attack has cyber 
-insurance, that carrier will employ certain service 
-providers, including an incident response firm, a 
-law firm, and an organization specializing in ransom 
-negotiation. Even if a victim does not have a cyber 
-insurance policy, these stakeholders are common to 
-finding a resolution to the ransom.
-Once a ransomware gang locks a victims’ network, 
-exfiltrates data, and holds the network and 
-data for ransom, an incident response team will 
-investigate the root cause of the breach and drive 
-remediation efforts depending on the victim’s level 
-of preparedness prior to the attack. If the victim has 
-sufficient backups of its data or data has not been 
-stolen, often the incident response team will work 
-to remove the threat actor from the victim’s system, 
-restore business operations, and apply future 
-mitigation measures.  The incident response team 
-will often provide the victim a report which includes 
-root cause, criminal actor movement inside the 
-victim network, data exposure and exfiltration, and 
-remediation recommendations.
-Depending on the jurisdiction of the victim, the 
-victim could be subject to data breach notification 
-requirements. A law firm will often assess the 
-exposure of the victim’s liability and assist the 
-victim with meeting its regulatory obligations. 
-Importantly, the law firm will interface with relevant 
-law enforcement, where appropriate. Finally, if a 
-victim is unable to return to business operations, 
-an organization specializing in negotiating with 
-ransomware criminal syndicates will work to obtain 
-the decryption key on behalf of the victim.
-Sample analysis of roles and relationships between entities within the ransomware ecosystem
-Ransomware syndicates and affiliates are all working together toward these interconnected threats. 
-Rather than one individual behind a ransomware attack, there are multiple groups of individuals, similar 
-to a shared business model.
-    
-    
-    
-    
-    
-    
-12
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION   ACTIONABLE INSIGHTS   TEAMS
-Microsoft Digital Defense Report  |  October 2021
-Introduction    The cybercrime economy and services    Ransomware and extortion    Phishing and other malicious email    Malware    Malicious domains    Adversarial machine learning
-Stakeholders and roles involved in post-breach response
-13
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION   ACTIONABLE INSIGHTS   TEAMS
-Introduction
-The cybercrime economy and services
-Ransomware and extortion
-Phishing and other malicious email
-Malware
-Malicious domains
-Adversarial machine learning
-Microsoft Digital Defense Report  |  October 2021
-Criminal economics: A 
-changing business model
-The business model for ransomware has effectively 
-evolved into an intelligence operation; criminal 
-actors perform research on their target victim to 
-identify an optimal ransom demand. Once a criminal 
-actor infiltrates a network, they may exfiltrate and 
-study financial documents and insurance policies. 
-They may also understand the penalties associated 
-with local breach laws. The actors will then extort 
-money from their victims, to not only unlock their 
-systems, but also to prevent disclosure of the 
-victim’s exfiltrated data to the public. After they’ve 
-collected and analyzed this intelligence, the criminal 
-actor will identify an “appropriate” ransom amount.
-The negotiation chat, at right, with a public school 
-district to extort cash in exchange for a decryption 
-key to unlock the Conti ransomware deployed on 
-its network demonstrates the research performed 
-by the criminal in advance of the negotiation. 
-Here, the criminal actor explains “we examined all 
-financial documents, bank statements for the last 
-year, insurance. And came to the conclusion that 
-you are exaggerating about poor financial condition 
-[sic]. We also calculated your possible losses from 
-lawsuits from both your staff and your students for 
-the leakage of their personal data. These fines will 
-exceed $30 million. We are not talking about the 
-loss of reputation, which in our opinion costs more.”
-Ransomware negotiation chat
-THE 
-RANSOMWARE 
-ENTERPRISE HAS 
-EVOLVED INTO 
-RANSOMWARE AS 
-A SERVICE DRIVEN 
-BY HUMAN 
-INTELLIGENCE 
-AND RESEARCH.
-13
-Microsoft Digital Defense Report  |  October 2021
-    
-    
-    
-    
-    
-    
-14
-TOC   INTRODUCTION   THE STATE OF CYBERCRIME   NATION STATE THREATS   SUPPLY CHAIN, IOT, AND OT SECURITY   HYBRID WORKFORCE SECURITY   DISINFORMATION   ACTIONABLE INSIGHTS   TEAMS
-Introduction
-The cybercrime economy and services
-Ransomware and extortion
-Phishing and other malicious email
-Malware
-Malicious domains
-Adversarial machine learning
-Microsoft Digital Defense Report  |  October 2021
-There are few barriers of entry into this criminal 
-enterprise. A cybercriminal does not need 
-specialized code development skills to profit from 
-this crime. The ransomware enterprise has evolved 
-into ransomware as a service driven by human 
-intelligence and research. It is no longer solely the 
-province of malware developers; rather, the business 
-structure is modular. Malware developers are 
-recruiting hackers with access to networks promising 
-a “cut” of the profit. Criminals can purchase malware 
-and access to specific networks and target specific 
-industries. This is effectively a crime syndicate where 
-each member is paid for a particular expertise.
-In the example shown below, following the crypto 
-flows, we can see where a criminal enterprise split its 
-bitcoin “earnings” such that approximately 15% of 
-the earnings flowed to the developer/manager and 
-75% of the earnings flowed to the attacker.
-Regardless of where ransomware is deployed, 
-typically the threat actors will demand payment via 
-cryptocurrency through crypto wallets. Although 
-the underlying blockchain technology facilitates 
-transparent cryptocurrency flows, the owners of 
-wallets remain pseudonymous. Nonetheless, they 
-still need to find on- and off-ramps into the crypto 
-ecosystem. At its core, the criminal actor needs 
-to append the blockchain with a transaction and 
-ultimately find a way to cash out. There are several 
-stakeholders within the cryptocurrency ecosystem 
-that facilitate ransom-related transactions and 
-payments. These intermediaries often exist in 
-jurisdictions with governments that are historically 
-unwilling to cooperate with the United States 
-and others. It’s these intermediaries that facilitate 
-the flow of ill-gotten earnings from ransomware. 
-The private sector through civil litigation, and 
-the government through prosecution, regulatory 
-enforcement, and international collaboration, can 
-take coordinated action against intermediaries to 
-disrupt the payment process.
-SIDEBAR: TO PAY, OR NOT TO PAY?   
-In the aftermath of a ransomware attack, companies 
-are often completely offline—their security systems 
-tampered with, their backup systems deleted, their 
-data encrypted, and their users unable to log in. 
-When operations are offline and losses pile up, it 
-is important to remember that paying the ransom 
-demands does not guarantee the restoration of 
-operations, nor does paying prevent future attacks.
- 
-In addition, we have in effect, the classic “Tragedy 
-of the Commons” Note 4— while it may make sense for 
-individual victims to pay for their own individual 
-benefit (restore critical business operations), the 
-payment also contributes to the growth of this 
-damaging model for everyone. Ransom payments 
-can keep the cycle turning, as described below: 
--   The business model of extortionists gets 
-reinforced, which also attracts more bad actors 
-into the monetization strategy. Substantial 
-revenue is supplied to the actors who then use 
-part of it for research and development (R&D) 
-to improve their tooling and ability to buy 
-breach access to potential victim organizations. 
-Some ransomware teams have significant 
-amounts of funds for R&D and for buying high-
-end 0-days. For example, some ransomware 
-teams have budget to spend up to $1 million 
-USD, or more, per 0-day. While some high-end 
-ransomware teams buy 0-days, others
+## Introduction
+
+### Our 2021 focus areas
+
+**TOM BURT, CORPORATE VICE PRESIDENT, CUSTOMER SECURITY & TRUST**
+
+Over the past year, the world has borne witness to a burgeoning cybercrime economy and the rapid rise of cybercrime services. We have watched this global market grow in both complexity and fervency. We’ve seen the cyberattack landscape becoming increasingly sophisticated as cybercriminals continue—and even escalate—their activity in times of crisis. New levels of supply chain and ransomware attacks were a powerful reminder that we must all work together, and in new ways, to protect the cybersecurity of the planet.
+
+We see transparency and information sharing as essential to the protection of the ecosystem. Knowledge brings power, and to that end, security professionals need diverse and timely insights into the threats they are defending against.
+
+The Microsoft Digital Defense Report draws on insights, data, and signals from across Microsoft, including the cloud, endpoints, and the intelligent edge.¹ Thousands of Microsoft security experts across 77 countries interpret and contribute to the insights gained from our advanced engineering and threat signals. Our security experts include analysts, researchers, responders, engineers, and data scientists. We also share lessons learned from customers transitioning to a hybrid workforce and frontline stories from our incident responders. Of course, there is malign activity we do not see, some of which is reported on by others in the industry. While the defender community at Microsoft works hard to identify threats and keep our customers informed, the bad actors are skilled and relentless.
+
+By continually sharing insights we and others in the industry derive from the work we do, we hope to empower everyone to defend the online ecosystem more effectively.
+
+Microsoft has made significant and ongoing investments to increase and improve the knowledge we derive from our threat signals. These investments deliver the highly synthesized and integrated insights that we share here. Our goal in aggregating these learnings is to help organizations understand the ways in which cybercriminals are continually shifting their modes of attack—and determine the best ways to combat those attacks. We write and share this report in the spirit of empowering the global community to benefit from the insights, observations, and transparency generated by our unique mission and vantage point.
+
+Microsoft serves billions of customers globally, allowing us to aggregate security data from a broad and diverse spectrum of companies, organizations, and consumers. Informed by over 24 trillion security signals per day, our unique position helps us generate a high-fidelity picture of the current state of cybersecurity, including indicators that help us predict what attackers will do next. Our goal in creating the Microsoft Digital Defense Report is to bring together integrated data and insights from more teams, across more areas of Microsoft than ever before. We will share what we’re seeing to help the global community strengthen the defense of the digital ecosystem, and we will include actionable learnings that companies, governments, and consumers can use to further secure individuals and environments.
+
+---
+
+¹ These signals are collected with customer privacy in mind. The data we collect depends on the context of your interactions with Microsoft and the choices you make, including your privacy settings and the products and features you use.
+
+---
+
+### Microsoft security signals
+
+![Image description: A chart showing the volume and diversity of signals processed by Microsoft.]
+
+---
+
+### Our 2021 focus areas
+
+**The state of cybercrime**
+In this chapter, we discuss new developments in the cybercrime economy and the growing market for cybercrime services. We provide updates and analysis of what we are seeing in ransomware and extortion, phishing and other malicious email, malware, and the use of domains by cybercriminals, presenting recommendations for mitigating risk in each area. Finally, we share what we’re seeing in adversarial machine learning and what we are doing to stay ahead of cybercriminals in this area.
+
+**Nation state threats**
+This chapter provides an update on what we’re seeing in nation state adversarial activity, including reports on seven activity groups we have not previously mentioned publicly. We provide an analysis of the evolving threats in this watershed year with an increased focus on on-premises servers and the exposure of widespread supply chain vulnerabilities. We conclude with a discussion about private sector offensive actors and our guidance for comprehensive protections.
+
+**Supply chain, IoT, and OT security**
+The highly publicized events of the last year have made clear that securing and managing risks associated with supplier ecosystems is critically important. This chapter covers some current challenges in doing so in the supplier ecosystem and presents how Microsoft thinks about end-to-end supply chain security in nine investment areas. Then we turn our discussion to what we’re seeing in the Internet of Things (IoT) and operational technology (OT) threat landscape, with guidance on the properties of highly secured devices. We include specialized use cases of IoT and present some new research informing IoT policy considerations.
+
+**Hybrid workforce security**
+This chapter is about our greatest asset, our people. As we have moved to a hybrid workforce over the past year, we’ve seen developments in the threat landscape which point to the importance of adopting a Zero Trust approach. We include threat signals and other data across the six pillars of Zero Trust—identities, endpoints, applications, network, infrastructure, and data—and provide guidance based on what we’re seeing. We conclude with discussions about insider threats in hybrid work environments, and an empathy imperative for managing the new and significant challenges encountered by today’s workforce.
+
+**Disinformation**
+This chapter addresses the unprecedented disinformation campaigns and related cyber operations by state and non-state actors, impacting public awareness and knowledge as well as enterprise operations. We look at some parallels in cybersecurity and discuss mitigation through media literacy. We include a discussion on disinformation as an enterprise disruptor, providing a four-point plan for enterprise executives. The chapter concludes with an in-depth exploration of political campaign security and election integrity, two areas that have been targeted by disinformation campaigns.
+
+**Actionable insights**
+We open this year’s concluding chapter with a discussion of five paradigm shifts that will center the evolution of work around the inclusivity of people and data. The chapter concludes with a distilled look at the key learnings from all the previous chapters of this report: to minimize impact of attacks we must truly practice good cyber hygiene, implement architectures that support the principles of Zero Trust, and ensure cyber risk management is built into the business.
+
+---
+
+## CHAPTER 2: The State of Cybercrime
+
+### Introduction
+
+### The cybercrime economy and services
+
+**AMY HOGAN-BURNEY, GENERAL MANAGER, DIGITAL CRIMES UNIT**
+
+Cybercrime, whether nation state sponsored or permitted, is a threat to national security. Cybercriminals are targeting and attacking all sectors of critical infrastructure, including healthcare and public health, information technology (IT), financial services, and energy sectors. Ransomware attacks are increasingly successful, crippling governments and businesses, and the profits from these attacks are soaring.
+
+The cybercrime supply chain, often created by criminal syndicates, continues to mature allowing anyone to buy the services needed to conduct malicious activity for financial gain or other nefarious purpose. Sophisticated cybercriminals are also still working for governments conducting espionage and training in the new battlefield.
+
+It is not hopeless, and there are two positive trends we have seen recently. First, more governments and companies are coming forward when they are victims. This transparency helps in several ways. It has made clear to governments around the world that cybercrime is a threat to security. Victim stories humanize and make clear the consequences of these attacks, drawing attention to the problem and allowing increased engagement from incident responders and law enforcement. Second, now that governments around the world recognize that cybercrime is a threat to national security, they have made combatting it a priority. Governments around the world are passing new laws regarding reporting, creating cross-government task forces, allocating resources, and seeking out private sector assistance.
+
+---
+
+#### The cybercrime economy and services
+
+Through our investigations of online organized crime networks, frontline investigations of customer attacks, security and attack research, nation state threat tracking, and security tool development, we continue to see the cybercrime supply chain consolidate and mature. It used to be that cybercriminals had to develop all the technology for their attacks. Today, they rely on a mature supply chain, where specialists create cybercrime kits and services that other actors buy and incorporate into their campaigns. With the increased demand for these services, an economy of specialized services has surfaced, and threat actors are increasing automation to drive down their costs and increase scale. For example, we are seeing an increasing offer of backconnect proxies (proxies that rotate between mobile, residential, and datacenter systems) in addition to Remote Desktop Protocol (RDP), Secure Shell (SSH), virtual private network (VPN), virtual private server (VPS), web shells, cPanels (webhosting management dashboard), and other anonymization systems.
+
+Other examples include selling compromised credentials that may have been obtained from phishing, scraping botnet logs or other credential harvesting techniques, imposter domain names, phishing-as-a-service, customized lead generation (for example, victims by country, industry, or roles), loads (malicious software used to update malware on an infected computer), denial of service (DoS), and more. As an illustration, in some marketplaces, compromised credentials are offered by different sellers for $1.00 USD to $50.00 USD, depending on a variety of variables including the perceived value of the enterprise target. The number of sites offering services has significantly increased in the past 12 months as well as volume of credentials and variety of phishing kits.
+
+Among the services available to even amateur threat actors are the cryptocurrency escrow services (to ensure services are rendered as offered) that we often see in commodity ransomware campaigns where affiliate models have become firmly established. Nontechnical cybercriminals sign up with a ransomware affiliate where for 30% of the revenue, the affiliate network will supply the ransomware, recovery services, and payment services. The attacker then buys “loads” from a market and pushes the ransomware to the loads they purchased. They then sit back and collect their revenue.
+
+At times there are geographic groups of actors who may offer certain services, but most of these cybercrime markets are global in nature. A buyer in Brazil can obtain phishing kits from a seller in Pakistan, domains from the United States, victim leads from Nigeria, and proxies from Romania.
+
+These prices have remained fairly steady over the past several years, but like any other market they vary according to changes in supply, demand, and externalities such as politics.
+
+**WITH NO TECHNICAL KNOWLEDGE OF HOW TO CONDUCT A CYBERCRIME ATTACK, AN AMATEUR THREAT ACTOR CAN PURCHASE A RANGE OF SERVICES TO CONDUCT THEIR ATTACKS WITH ONE CLICK.**
+
+---
+
+**KEY TAKEAWAYS:**
+
+*   Identity and password/phishing attacks are cheap, and on the rise. Why would an attacker break in when they can log in?
+*   Distributed denial of service (DDoS) attacks are cheap for unprotected sites—about $300 USD/month.
+*   Ransomware kits are one of the many types of attack kits designed to enable low-skill attackers to perform more sophisticated attacks.
+
+---
+
+**Average prices of cybercrime services for sale**
+
+![Image description: A table showing average prices of cybercrime services for sale.]
+
+Organizations now face an industrialized attacker economy with skill specialization and trading of illicit commodities. As seen in this snapshot of average prices, many commodities that can be purchased in the dark markets are very inexpensive, making attacks cheaper and easier to conduct (which also drives up attack volume).
+
+---
+
+### Ransomware and extortion
+
+#### Ransomware basics and taxonomy
+
+Ransomware and extortion is a high-profit, low-cost business which has a debilitating impact on targeted organizations, national security, economic security, and public health and safety. What started as simple single-PC ransomware has grown to include a variety of extortion techniques enabled by human intelligence and is affecting the networks of all types of organizations across the globe.
+
+This combination of real-time intelligence and broader criminal tactics, techniques, and procedures (TTPs) has maximized the impact of these attacks and driven the profits from these attacks to levels that were hard to imagine a few years ago. To put it in perspective, the publicly reported profits from ransomware and extortion attacks gives these attackers a budget that would likely rival the budgets of nation state attack organizations (without even counting the profits from attacks that never made the headlines).
+
+To counter ransomware, a global collaborative effort between the private sector, law enforcement, and government is necessary to reduce the profitability of this crime, make it more difficult to enter the ransomware market, and supply victims with effective tools for efficient prevention and remediation. Microsoft is a contributor to the Ransomware Task Force report, a comprehensive framework designed for taking action in combatting ransomware.² Microsoft has also published a project plan with links to technical guidance to help organizations better prepare for and respond to these attacks and is contributing to a National Institute of Standards and Technology (NIST) publication containing a cybersecurity framework profile for ransomware risk management.³
+
+A ransomware and extortion attack involves a threat actor deploying malware that encrypts and exfiltrates data and then holds that data for a ransom, often demanding payment in cryptocurrency. Rather than just encrypting a victim’s files and requesting a ransom in exchange for the decryption key, the attackers also exfiltrate sensitive data before deploying the ransomware. This practice prevents victims from disengaging from negotiations and raises the victim’s reputational costs of not paying the ransom as the attackers likely will not only leave the victim’s data encrypted but also leak sensitive information.
+
+A series of criminal activities occur long before the ransomware is ultimately deployed across computer systems in an organization. As a result, we created a taxonomy that focuses on the relationship between entities within the ransomware ecosystem because any entity may play a different role at any given time.
+
+Ransomware attacks have evolved into human-operated ransomware, also known as “big game ransomware.”
+
+---
+
+#### Ransomware taxonomy
+
+| Primary role | Description | Publicly reported connection |
+| :----------- | :---------- | :--------------------------- |
+| Develops | Writes the malware |  |
+| Deploys | Sends phishing emails, deploys ransomware |  |
+| Provides access | Malware that loads other malware, or a group that sells access as a service |  |
+| Manages/operates | Leadership of a group (such as MAZE cartel membership) and/or function that provides coordination (such as managing or operating a central extortion leak site) |  |
+|  |  | A publicly reported connection exists |
+
+---
+
+² [https://securityandtechnology.org/ransomwaretaskforce/report/](https://securityandtechnology.org/ransomwaretaskforce/report/)
+³ [https://aka.ms/humanoperated](https://aka.ms/humanoperated)
+
+---
+
+For example, as shown in the image at right, a threat actor may develop and deploy malware that gives one threat actor access to a certain category of victims, whereas a different threat actor may merely deploy malware.
+
+![Image description: A diagram illustrating sample analysis of roles and relationships between entities within the ransomware ecosystem.]
+
+#### Post-breach response
+
+Just as the criminal enterprise that deploys ransomware typically involves several stakeholders each with a particular responsibility, the response to ransomware also involves several key stakeholders.
+
+If a victim of a ransomware attack has cyber insurance, that carrier will employ certain service providers, including an incident response firm, a law firm, and an organization specializing in ransom negotiation. Even if a victim does not have a cyber insurance policy, these stakeholders are common to finding a resolution to the ransom.
+
+Once a ransomware gang locks a victims’ network, exfiltrates data, and holds the network and data for ransom, an incident response team will investigate the root cause of the breach and drive remediation efforts depending on the victim’s level of preparedness prior to the attack. If the victim has sufficient backups of its data or data has not been stolen, often the incident response team will work to remove the threat actor from the victim’s system, restore business operations, and apply future mitigation measures. The incident response team will often provide the victim a report which includes root cause, criminal actor movement inside the victim network, data exposure and exfiltration, and remediation recommendations.
+
+Depending on the jurisdiction of the victim, the victim could be subject to data breach notification requirements. A law firm will often assess the exposure of the victim’s liability and assist the victim with meeting its regulatory obligations. Importantly, the law firm will interface with relevant law enforcement, where appropriate. Finally, if a victim is unable to return to business operations, an organization specializing in negotiating with ransomware criminal syndicates will work to obtain the decryption key on behalf of the victim.
+
+Ransomware syndicates and affiliates are all working together toward these interconnected threats. Rather than one individual behind a ransomware attack, there are multiple groups of individuals, similar to a shared business model.
+
+---
+
+![Image description: A diagram showing stakeholders and roles involved in post-breach response.]
+
+---
+
+### Ransomware negotiation chat
+
+#### Criminal economics: A changing business model
+
+The business model for ransomware has effectively evolved into an intelligence operation; criminal actors perform research on their target victim to identify an optimal ransom demand. Once a criminal actor infiltrates a network, they may exfiltrate and study financial documents and insurance policies. They may also understand the penalties associated with local breach laws. The actors will then extort money from their victims, to not only unlock their systems, but also to prevent disclosure of the victim’s exfiltrated data to the public. After they’ve collected and analyzed this intelligence, the criminal actor will identify an “appropriate” ransom amount.
+
+The negotiation chat, at right, with a public school district to extort cash in exchange for a decryption key to unlock the Conti ransomware deployed on its network demonstrates the research performed by the criminal in advance of the negotiation. Here, the criminal actor explains “we examined all financial documents, bank statements for the last year, insurance. And came to the conclusion that you are exaggerating about poor financial condition [sic]. We also calculated your possible losses from lawsuits from both your staff and your students for the leakage of their personal data. These fines will exceed $30 million. We are not talking about the loss of reputation, which in our opinion costs more.”
+
+**THE RANSOMWARE ENTERPRISE HAS EVOLVED INTO RANSOMWARE AS A SERVICE DRIVEN BY HUMAN INTELLIGENCE AND RESEARCH.**
+
+---
+
+There are few barriers of entry into this criminal enterprise. A cybercriminal does not need specialized code development skills to profit from this crime. The ransomware enterprise has evolved into ransomware as a service driven by human intelligence and research. It is no longer solely the province of malware developers; rather, the business structure is modular. Malware developers are recruiting hackers with access to networks promising a “cut” of the profit. Criminals can purchase malware and access to specific networks and target specific industries. This is effectively a crime syndicate where each member is paid for a particular expertise.
+
+In the example shown below, following the crypto flows, we can see where a criminal enterprise split its bitcoin “earnings” such that approximately 15% of the earnings flowed to the developer/manager and 75% of the earnings flowed to the attacker.
+
+![Image description: A diagram showing transaction hashes and wallet addresses related to a ransomware attack.]
+
+---
+
+**SIDEBAR: TO PAY, OR NOT TO PAY?**
+
+In the aftermath of a ransomware attack, companies are often completely offline—their security systems tampered with, their backup systems deleted, their data encrypted, and their users unable to log in. When operations are offline and losses pile up, it is important to remember that paying the ransom demands does not guarantee the restoration of operations, nor does paying prevent future attacks.
+
+Paying a ransom fuels the ransomware syndicates
+
+*   On average, organizations that paid the ransom got back only 65% of their data, with 29% getting back no more than half their data.⁵
+*   Ransom decryptors are buggy and regularly fail to decrypt the largest, most critical data files (files 4 GB+ in size).
+*   Decrypting data files is a slow and labor-intensive process; most customers decrypt only their most critical of data files and restore the rest from backup.
+*   Restoring data does not undo any tampering performed by the attackers.
+*   Restoring data does not secure systems to prevent future attacks.
+*   Organizations must understand the legality of making payments in their country. Governments across the globe are instituting ransomware payment reporting requirements, may have penalties for payments that are made to sanctioned parties, and are considering laws that could make ransom payments illegal.
+
+Paying a ransom gives the criminals more resources to expand their operations, helping them become more organized and specialized. With more funding available, the groups can improve their tools and code, enabling ransomware to spread through networks undetected by antivirus software.
+
+---
+
+⁵ The State of Ransomware 2021 – Sophos News
+
+---
+
+The user must now upload the ransom note text file to the recovery site listed in the ransom note. The note serves as proof of encryption and victim identification for the ransomware actors.
+
+![Image description: A screenshot of a ransomware recovery site.]
+
+After the ransom note is uploaded and verified, a chat session is initiated.
+
+![Image description: A screenshot of a chat session following ransom note upload.]
+
+Conti News site
+
+![Image description: A screenshot of the Conti News site.]
+
+---
+
+The negotiation phase starts with the threat actor, as they prove they can decrypt any files provided by the victim. After a final ransom price is negotiated, the ransomware actor provides a Bitcoin wallet address for the victim to send payment. Conti ransomware actors maintain recovery and news sites on regular top-level domains (as on the open web) as well as on the dark web or Tor (also known as The Onion Router).
+
+As part of the double extortion business model, the actors behind Conti maintain a news site, which serves as the publishing site to prove that if the ransom is not paid, the victim’s private information will be posted publicly and could be sold on the black market. The Conti News site currently lists hundreds of victims with various samples of their private data.
+
+Conti victims are located mostly in the United States and Europe and include public schools, healthcare providers, manufacturing companies, US city governments, and even public utility providers.
+
+---
+
+#### What we’re seeing in ransomware data and signals
+
+**DEFENDER SIGNALS**
+
+![Image description: A chart showing ransomware encounter rate (machine count) for enterprise customers.]
+
+![Image description: A chart showing ransomware encounter rate (machine count) for all customers.]
+
+These charts show the overall increase in ransomware encounters, with notable surges to consumer and commercial encounters in late 2019,⁶ when RaaS started to grow, and in early 2020 at the onset of the COVID-19 pandemic.⁷
+
+---
+
+⁶ [https://www.microsoft.com/security/blog/2019/12/16/ransomware-response-to-pay-or-not-to-pay/](https://www.microsoft.com/security/blog/2019/12/16/ransomware-response-to-pay-or-not-to-pay/)
+⁷ [https://www.microsoft.com/security/blog/2020/03/20/protecting-against-coronavirus-themed-phishing-attacks/](https://www.microsoft.com/security/blog/2020/03/20/protecting-against-coronavirus-themed-phishing-attacks/)
+
+---
+
+![Image description: A map showing ransomware machine counts by country (July 2020-June 2021).]
+
+**DART DATA**
+
+While the Colonial Pipeline ransom attack of May 2021 drew considerable public attention, our Detection and Response Team (DART) ransomware engagement data shows that the three most targeted sectors were consumer, financial, and manufacturing. Despite continued promises from ransomware actors not to attack hospitals or healthcare companies during a pandemic, healthcare remains in the top-five sectors victimized by human-operated ransomware.
+
+![Image description: A bar chart showing DART ransomware engagements by industry (July 2020-June 2021).]
+
+**THE STAKES HAVE CHANGED. THERE IS A MASSIVE GROWTH TRAJECTORY FOR RANSOMWARE AND EXTORTION.**
+
+---
+
+### Summary of recommendations
+
+Use the phases as a starting plan for what to do first, next, and later to get the most impactful elements first.
+
+The stakes have changed. There is a massive growth trajectory for ransomware and extortion. To help protect your organization from ransomware, we recommend that organizations:
+
+**Deploy ransomware protection**
+These recommendations have been prioritized using the Zero Trust principle of assume breach, which focuses on minimizing business risk by assuming the attackers can successfully gain access to your environment through one or more methods.
+
+Microsoft supports the guidance presented in the Ransomware Playbook by the Cyber Readiness Institute.⁸
+
+**Learn more:**
+*   3 steps to prevent and recover from ransomware | Microsoft Security blog (9/7/2021)
+*   Ransom mafia analysis of the world's first ransomware cartel pdf (analyst1.com) (4/7/2021)
+*   Ransomware Playbook - Cyber Readiness Institute
+*   Rapidly protect against ransomware and extortion | Microsoft Docs (8/24/2021)
+*   Azure Sentinel Fusion Detection for Ransomware (microsoft.com) (8/9/2021)
+*   The growing threat of ransomware - Microsoft On the Issues (7/20/2021)
+*   Human-operated ransomware | Microsoft Docs (5/27/2021)
+
+**Prepare a recovery plan by making it harder to access and disrupt systems, which minimizes the monetary incentives for ransomware attackers and makes it easier to recover from an attack without paying the ransom.**
+Limit the scope of damage by forcing the attackers to work harder to gain access to multiple business-critical systems. Establish least-privilege access and adopt Zero Trust principles. These steps make it harder for an attacker who gets in to a network to travel across the network to find valuable data to lock up. Also, encrypt data at rest, and practice good backup-and-restore hygiene. This way, even if data is stolen it will be encrypted and not very useful to the attackers. In the unfortunate event that the attacker does encrypt your data, you will have a good backup to restore from and use to maintain business continuity.
+
+**Make it harder to get in by following basic cybersecurity hygiene steps that make it more difficult for attackers to gain access to the network. The most important of these steps is the use of multifactor authentication (MFA), which is important to raising friction for entry but will take time to complete as part of a larger security journey. Other steps, such as keeping up to date on patching and correct configuration, can be taken to identify and close off vulnerable entry points.**
+
+---
+
+⁸ Ransomware Playbook - Cyber Readiness Institute
+
+---
+
+### Phishing and other malicious email
+
+#### Threat to identity
+
+In 2020, the FBI IC3 Report⁹ identified phishing as the top crime type for victim complaints. The number of reports doubled compared to the previous year. Phishing poses a significant threat to both businesses and individuals, and credential phishing was leveraged in many of the most damaging attacks last year.
+
+From our investigations on online organized crime networks involved in business email compromise (BEC), we noted broad diversification of how credentials are obtained, verified, and later used. Threat actors are increasing their automation and purchasing tools to increase the value of their criminal activities. Credentials belonging to unsuspecting victims could be obtained from phishing websites that impersonate a myriad of online services, automatically scraping and parsing logs belonging to infected devices that record the keys typed on keyboards to guessing where credentials from one breached online service were reused on another.
+
+For each credential, there are services that enrich the information on the identity with additional details on the person’s identity that includes name, company they work for, roles, seniority in company, and industry associated to the company. With this information, the identity could be used in BEC attacks, to send unsolicited messages (spam), to gather sensitive information, or to host phishing websites in related online accounts. Even when one attack occurs, accounts may be resold after automated systems verify that they remain compromised.
+
+Identity is further threatened by impersonation as may be seen in BEC attacks where one party to a financial transaction is impersonated to divert payments to an unauthorized recipient. Our investigations identified that threat actors would monitor financially inclined messages to find an identity to impersonate and thereafter register homoglyph/imposter domains to resemble the email of the person being impersonated. In this case, the person whose credentials were stolen would cause another person to become a victim.
+
+---
+
+⁹ [https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf)
+
+---
+
+#### What we’re seeing
+
+**Types of malicious emails**
+Whether their goal is to phish credentials, redirect a wire transfer to their own bank account, or download malware onto a machine, attackers are most likely to utilize email as their initial entry vector for a campaign. While a lot of focus is given to credential phishing, malicious emails are used in multiple types of cyber incidents. Microsoft security researchers observe the following three most common types of malicious emails:
+
+**PHISHING**
+Phishing is the most common type of malicious email observed in our threat signals. These emails are designed to trick an individual into sharing sensitive information, such as usernames and passwords, with an attacker. To do this, attackers will craft emails using a variety of themes, such as productivity tools, password resets, or other notifications with a sense of urgency to lure a user to click on a link.
+
+The phishing webpages used in these attacks may utilize malicious domains, such as those purchased and operated by the attacker, or compromised domains, where the attacker abuses a vulnerability in a legitimate website to host malicious content. The phishing sites frequently copy well-known, legitimate login pages, such as Office 365 or Google, to trick users into inputting their credentials. Once the user inputs their credentials, they will often be redirected to a legitimate final site—such as the real Office 365 login page—leaving the user unaware that actors have obtained their credentials. Meanwhile, the entered credentials are stored or sent to the attacker for later abuse or sale.
+
+Attackers also use consent phishing to send users links that, if clicked, will grant the attacker access and permissions to applications, such as via OAuth 2.0 authorization protocol. In these instances, users may unwittingly grant the attackers permissions to applications that enable them to access a wealth of sensitive information.
+
+The number of phishing emails observed in Microsoft Exchange global mail flow increased during the period from June 2020 through June 2021. We saw a pronounced surge in November potentially related to holiday-themed phishing, and a subsequent decrease over the US winter holidays, potentially indicating that attackers send fewer messages when many people are not working.
+
+While all industries receive phishing emails, some verticals within those industries tend to receive more phishing campaigns than others. The verticals most affected by phishing may change month to month depending on several factors, including attacker objectives, availability of leaked email addresses, or current events regarding specific sectors and industries.
+
+![Image description: A chart showing emails determined as phish.]
+
+![Image description: A chart showing the top 10 verticals affected by phishing (Defender detections, June 2021).]
+
+---
+
+**MALWARE DELIVERY**
+Malware delivery is another example of how threat actors utilize emails for their objectives. A variety of malware variants, such as Agent Tesla, IcedID, Trickbot, and Qakbot, use email as a primary method of distribution. These emails will use either links or attachments to deliver malware and many times use techniques that overlap with phishing emails. For example, both malware delivery email and phishing email may use links that direct to a CAPTCHA test to evade detection from security technologies.
+
+Since malware does not rely on user interaction in the same way phishing does, attackers can design their delivery to be less noticeable to the user. For example, when using attachments as a delivery method, attackers may use a decoy document with macros that, when enabled by the recipient, download the malware in the background without the user’s knowledge. In these cases, the user may think that the document is broken or isn’t intended for them and may be completely unaware that malicious software is running on their machine.
+
+One of the most common methods of malware delivery observed in the past year was through password-protected archive files. These emails contain archive files, such as ZIP attachments that are password protected, to prevent security technologies from detonating and analyzing them. However, the passwords for these files are often included in the body of the email to enable the recipient to open the files and download the malware. By using these archive files to house the malicious document—frequently an Excel or Word document—the attackers can use a unique archive file for every recipient, making it more difficult for defenders to fully scope a campaign.
+
+Interestingly, between July 2020 and June 2021 we observed an overall downward trend in the number of emails containing malware, indicating that attackers may be using other means of entry. Since malware does not rely on user interaction in the same way phishing does, attackers can design their delivery to be less noticeable to the user. For example, when using attachments as a delivery method, attackers may use a decoy document with macros that, when enabled by the recipient, download the malware in the background without the user’s knowledge. In these cases, the user may think that the document is broken or isn’t intended for them and may be completely unaware that malicious software is running on their machine.
+
+The malware that attackers distribute via email changes regularly for a variety of reasons, including malware takedowns and attacker objectives. As shown in the chart on Defender detections for June 2021, the most prolific malware observed by Microsoft was Agent Tesla, which is a credential-stealing spyware. The second most observed malware, Tisifi, which identifies social engineering lures, was seen only one third as much as Agent Tesla. EncDoc and CVE-2017-11882 as the third and fifth top detections indicate that attackers still favor malicious documents as a common method of delivering a variety of threats. The fourth top detection, HTML/Phish, includes only phishing emails that use an HTML attachment. These types of phishing frequently take the form of fake voicemail phishing messages.
+
+![Image description: A chart showing malware emails per week.]
+
+There has been an overall downward trend in the number of emails containing malware.
+
+![Image description: A chart showing the top 15 Defender detections (June 2021).]
+
+Spyware designed to steal credentials was the most common type of malware observed through email delivery and was detected three times as often as the next highest detection.
+
+**BUSINESS EMAIL COMPROMISE (BEC)**
+While not the most prolific type of malicious email in terms of quantity, BEC has proven to be the most financially impactful type of cybercrime.¹⁰ BEC occurs when an attacker pretends to be a legitimate business account—utilizing either a compromised email address, a lookalike domain they have registered, or a free email service such as Hotmail or Gmail—and sends emails designed to trick recipients into taking some financial action, handing over sensitive information, or providing assets, such as gift cards, to the attacker.
+
+The most common type of BEC observed by Microsoft in the past year was gift card scams. In these scams, attackers will usually create a multitude of free email accounts, changing the display name depending on the target, though attackers have also registered their own domains for these attacks or have created target-specific free email accounts. They will then pretend to be someone the recipient works with (usually their boss or an executive at their company) and ask them to purchase gift cards (often with company funds). Frequently, these emails suggest that the sender wants them for a family member’s birthday gift or for employees as rewards.
+
+The recipient is typically asked to send the digital gift cards to the attacker once purchased, but we have also seen attackers asking the user to buy physical gift cards and send a photo of the code on the back of the card, enabling the attacker to resell them online or trade them for cryptocurrency.
+
+A much more sophisticated and financially damaging type of BEC is wire transfer fraud. In this type of BEC, actors will insert themselves into expected financial transactions and ask the recipient to adjust the bank account information on an outgoing wire transfer. The actors will masquerade as the intended recipient of the funds, so this does not seem out of the ordinary to the victim. Once the victim wires the money to the new account, it is withdrawn by the minority of detected phishing attacks. Microsoft SmartScreen detected more than a million unique domains used in web-based phishing attacks in the last year, of which compromised domains represented just over 5%. This 5% of domains typically host phishing attacks on legitimate websites without disrupting any legitimate traffic so that their attack remains hidden for as long as possible.
+
+Phishers are increasingly leveraging legitimate email campaigns to make emails appear more legitimate to both end users and protection technologies.
+
+---
+
+¹⁰ [https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf); [https://www.microsoft.com/security/blog/2021/06/14/behind-the-scenes-of-business-email-compromise-using-cross-domain-threat-data-to-disrupt-a-large-bec-infrastructure/](https://www.microsoft.com/security/blog/2021/06/14/behind-the-scenes-of-business-email-compromise-using-cross-domain-threat-data-to-disrupt-a-large-bec-infrastructure/)
+
+---
+
+#### Malicious email techniques
+
+Attackers have adapted over time to make their emails more likely to evade detections and protections by utilizing aspects of legitimate business emails. Defenders need to protect the company but also have a duty to maintain the flow of business—and attackers rely on this fact to get
