@@ -81,7 +81,6 @@ def main():
                     
                     create_cmd = [
                         'gh', 'issue', 'create',
-                        '--template', 'report-suggestion.yml',
                         '--title', issue_title,
                         '--body', issue_body
                     ]
