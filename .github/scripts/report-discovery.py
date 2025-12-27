@@ -75,6 +75,18 @@ def main():
                 if any(blacklisted in link for blacklisted in URL_BLACKLIST):
                     print(f"Skipping blacklisted URL: {link}")
                     continue
+                
+                # Rule 1b: Check for previous year in URL, which indicates a link to the old report.
+                url_years = re.findall(r'\b(20\d{2})\b', link)
+                if str(year) in url_years:
+                    print(f"Skipping URL containing previous year '{year}': {link}")
+                    continue
+
+                # Rule 1c: Filter out financial reports, which often have confusing "fiscal years"
+                FINANCIAL_TERMS = ["fiscal year", "quarter", "financial", "earnings", "investor"]
+                if any(term in item_title.lower() for term in FINANCIAL_TERMS) or any(term in link.lower() for term in FINANCIAL_TERMS):
+                    print(f"Skipping likely financial report: {item_title}")
+                    continue
 
                 year_pattern = r'\b' + str(next_year) + r'\b'
                 current_year_pattern = r'\b' + str(year) + r'\b' # 'year' is the year from the README
@@ -88,13 +100,23 @@ def main():
 
                 # Rule 3: If the next year is only in the snippet, be more skeptical.
                 if snippet_has_next_year and not title_has_next_year:
-                    # If the current year is also in the snippet with context words, it's likely a false positive.
+                    # Rule 3a: If snippet has 'copyright' or '©', it's very likely a false positive.
+                    if 'copyright' in snippet.lower() or '©' in snippet:
+                        print(f"Skipping snippet with copyright year: {snippet}")
+                        continue
+                        
+                    # Rule 3b: If the current year is also in the snippet with context words, it's likely a false positive.
                     if re.search(current_year_pattern, snippet) and "report" in snippet.lower():
                         print(f"Skipping ambiguous snippet: {snippet}")
                         continue
                 
-                # Rule 4: If the *current* year is in the title with "report", it might be a retrospective.
+                # Rule 4: Handle conflicts between title and snippet/body
                 if title_has_next_year:
+                    # If title has "next_year", but snippet has "current_year report", it's a conflict.
+                    if re.search(current_year_pattern + r'\b.*report', snippet, re.IGNORECASE):
+                        print(f"Skipping due to conflict between title year ({next_year}) and snippet year ({year}): {snippet}")
+                        continue
+                    # If title has "next_year" but also "current_year report", it's a retrospective.
                     if re.search(current_year_pattern, item_title) and "report" in item_title.lower():
                         print(f"Skipping likely retrospective: {item_title}")
                         continue
