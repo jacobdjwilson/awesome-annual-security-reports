@@ -59,34 +59,65 @@ def main():
             res = service.cse().list(q=search_query, cx=os.environ["GOOGLE_CSE_ID"], num=3).execute()
             items = res.get('items', [])
             
+            # Basic filtering for obviously incorrect URLs
+            URL_BLACKLIST = [
+                "github.com/jacobdjwilson/awesome-annual-security-reports"
+            ]
+
             for item in items:
                 link = item['link']
                 snippet = item.get('snippet', '')
                 item_title = item.get('title', '')
+
+                # --- Start of new validation logic ---
+
+                # Rule 1: Skip blacklisted URLs
+                if any(blacklisted in link for blacklisted in URL_BLACKLIST):
+                    print(f"Skipping blacklisted URL: {link}")
+                    continue
+
+                year_pattern = r'\b' + str(next_year) + r'\b'
+                current_year_pattern = r'\b' + str(year) + r'\b' # 'year' is the year from the README
+
+                title_has_next_year = re.search(year_pattern, item_title)
+                snippet_has_next_year = re.search(year_pattern, snippet)
+
+                # Rule 2: If the next year is not in the title or snippet, it's not a match.
+                if not title_has_next_year and not snippet_has_next_year:
+                    continue
+
+                # Rule 3: If the next year is only in the snippet, be more skeptical.
+                if snippet_has_next_year and not title_has_next_year:
+                    # If the current year is also in the snippet with context words, it's likely a false positive.
+                    if re.search(current_year_pattern, snippet) and "report" in snippet.lower():
+                        print(f"Skipping ambiguous snippet: {snippet}")
+                        continue
                 
-                # Validation: Must contain the next year in title or snippet
-                if str(next_year) in item_title or str(next_year) in snippet:
-                    
-                    # 5. Create Issue using Template
-                    # We use the template to ensure labels and metadata are applied correctly.
-                    # The body must match the structure expected by the issue parser in ingest-suggestion.yml
-                    
-                    issue_title = f"[REPORT SUGGESTION]: {org} ({next_year})"
-                    issue_body = (
-                        f"### Report URL\n{link}\n\n"
-                        f"### Report Year\n{next_year}\n\n"
-                        f"### Description\nAutomated discovery found a potential update.\n\n"
-                        f"**Snippet from Google:**\n> {snippet}"
-                    )
-                    
-                    create_cmd = [
-                        'gh', 'issue', 'create',
-                        '--title', issue_title,
-                        '--body', issue_body
-                    ]
-                    subprocess.run(create_cmd, check=True)
-                    print(f"Created suggestion for {org} {next_year}")
-                    break 
+                # Rule 4: If the *current* year is in the title with "report", it might be a retrospective.
+                if title_has_next_year:
+                    if re.search(current_year_pattern, item_title) and "report" in item_title.lower():
+                        print(f"Skipping likely retrospective: {item_title}")
+                        continue
+
+                # --- End of new validation logic ---
+
+                # If we get here, the result is considered high-fidelity
+                issue_title = f"[REPORT SUGGESTION]: {org} ({next_year})"
+                issue_body = (
+                    f"### Report URL\n{link}\n\n"
+                    f"### Report Year\n{next_year}\n\n"
+                    f"### Description\nAutomated discovery found a potential update.\n\n"
+                    f"**Snippet from Google:**\n> {snippet}"
+                )
+                
+                create_cmd = [
+                    'gh', 'issue', 'create',
+                    '--title', issue_title,
+                    '--body', issue_body
+                ]
+                subprocess.run(create_cmd, check=True)
+                print(f"Created suggestion for {org} {next_year}")
+                break 
                     
         except Exception as e:
             print(f"Search failed for {org}: {e}")
