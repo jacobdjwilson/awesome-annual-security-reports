@@ -26,8 +26,44 @@ jobs:
         run: pip install google-api-python-client
 
       - name: Run Discovery
+        id: discovery_run
         env:
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python .github/scripts/report-discovery.py
+        run: python .github/scripts/report-discovery.py > discovery_output.log 2>&1
+
+      - name: Generate Summary
+        if: always() # Ensure summary runs even if the script fails
+        run: |
+          echo "## 🔎 Report Discovery Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          SUCCESS_COUNT=$(grep -c "SUCCESS:" discovery_output.log || true)
+          SKIPPED_COUNT=$(grep -c "INFO: Skipping" discovery_output.log || true)
+          SEARCH_FAIL_COUNT=$(grep -c "ERROR: Search failed" discovery_output.log || true)
+          DEBUG_SKIPS=$(grep -c "DEBUG: Skipping" discovery_output.log || true)
+          
+          echo "### 📊 Run Results" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| 🚀 New Reports Suggested | **${SUCCESS_COUNT}** |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⏩ Reports Skipped (Already exists) | ${SKIPPED_COUNT} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🔬 Candidates Filtered (False Positives) | ${DEBUG_SKIPS} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⚠️ Search Errors | ${SEARCH_FAIL_COUNT} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "$SUCCESS_COUNT" -gt 0 ]; then
+            echo "### ✅ Suggested Reports" >> $GITHUB_STEP_SUMMARY
+            grep "SUCCESS:" discovery_output.log | sed 's/SUCCESS: Created suggestion for/ - /' >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ "$DEBUG_SKIPS" -gt 0 ]; then
+            echo "### 🔬 Filtered False Positives (Debug Info)" >> $GITHUB_STEP_SUMMARY
+            echo "<details><summary>Click to expand</summary>" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            grep "DEBUG: Skipping" discovery_output.log >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "</details>" >> $GITHUB_STEP_SUMMARY
+          fi
