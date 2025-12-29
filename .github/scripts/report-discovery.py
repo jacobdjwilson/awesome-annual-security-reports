@@ -14,6 +14,57 @@ URL_BLACKLIST = [
 ]
 FINANCIAL_TERMS = ["fiscal year", "quarter", "financial", "earnings", "investor"]
 
+def check_existing_issue(org, next_year):
+    """
+    Check if an issue already exists for this org and year.
+    Checks both open and closed issues from the past year.
+    
+    Args:
+        org (str): Organization name
+        next_year (int): Year to check for
+        
+    Returns:
+        bool: True if issue exists, False otherwise
+    """
+    # Check open issues first (most important)
+    open_cmd = [
+        'gh', 'issue', 'list',
+        '--state', 'open',
+        '--label', 'report-suggestion',
+        '--json', 'title,number',
+        '--limit', '1000'
+    ]
+    
+    result = subprocess.run(open_cmd, capture_output=True, text=True, check=False)
+    if result.returncode == 0 and result.stdout:
+        open_issues = json.loads(result.stdout)
+        for issue in open_issues:
+            title = issue.get('title', '')
+            if org.lower() in title.lower() and str(next_year) in title:
+                print(f"INFO: Skipping {org} {next_year}: Open issue #{issue['number']} exists")
+                return True
+    
+    since_date = (datetime.date.today() - datetime.timedelta(days=LOOKBACK_DAYS)).isoformat()
+    closed_cmd = [
+        'gh', 'issue', 'list',
+        '--state', 'closed',
+        '--label', 'report-suggestion',
+        '--search', f'created:>{since_date}',
+        '--json', 'title,number,closedAt',
+        '--limit', '1000'
+    ]
+    
+    result = subprocess.run(closed_cmd, capture_output=True, text=True, check=False)
+    if result.returncode == 0 and result.stdout:
+        closed_issues = json.loads(result.stdout)
+        for issue in closed_issues:
+            title = issue.get('title', '')
+            if org.lower() in title.lower() and str(next_year) in title:
+                print(f"INFO: Skipping {org} {next_year}: Closed issue #{issue['number']} exists")
+                return True
+    
+    return False
+
 def is_valid_report(item, next_year, current_year):
     """
     Applies a series of validation rules to a Google search result item
@@ -105,7 +156,6 @@ def main():
 
     # 3. Perform Searches
     service = build("customsearch", "v1", developerKey=os.environ["GOOGLE_SEARCH_API_KEY"])
-    since_date = (datetime.date.today() - datetime.timedelta(days=LOOKBACK_DAYS)).isoformat()
     issues_created = 0
 
     # Search for all entries, but limit the number of issues created
@@ -117,13 +167,8 @@ def main():
         current_year = int(year_str)
         next_year = current_year + 1
         
-        # Check if a suggestion for this org and year already exists
-        check_q = f'"{org}" "{next_year}" label:report-suggestion created:>{since_date}'
-        check_cmd = ['gh', 'issue', 'list', '--state', 'all', '--search', check_q, '--json', 'number']
-        result = subprocess.run(check_cmd, capture_output=True, text=True, check=False)
-        
-        if result.returncode == 0 and result.stdout and json.loads(result.stdout):
-            print(f"INFO: Skipping {org} {next_year}: Recent issue exists.")
+        # Check if an issue already exists (open or recently closed)
+        if check_existing_issue(org, next_year):
             continue
 
         # Perform the Google search
@@ -133,7 +178,7 @@ def main():
             
             for item in res.get('items', []):
                 if is_valid_report(item, next_year, current_year):
-                    # Found a valid report, create an issue
+                    # Found a valid report, create an issue with label
                     issue_title = f"[REPORT SUGGESTION]: {org} ({next_year})"
                     issue_body = (
                         f"### Report URL\n{item['link']}\n\n"
@@ -142,7 +187,12 @@ def main():
                         f"**Snippet from Google:**\n> {item.get('snippet', '')}"
                     )
                     
-                    create_cmd = ['gh', 'issue', 'create', '--title', issue_title, '--body', issue_body]
+                    create_cmd = [
+                        'gh', 'issue', 'create',
+                        '--title', issue_title,
+                        '--body', issue_body,
+                        '--label', 'report-suggestion'
+                    ]
                     subprocess.run(create_cmd, check=True)
                     
                     print(f"SUCCESS: Created suggestion for {org} {next_year}")
