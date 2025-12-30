@@ -486,7 +486,6 @@ def main():
                 print(f"Markdown file is empty: {output_path}")
                 continue
             
-            # Extract info using the correct path
             pdf_path = conv.get('pdf_path', output_path)
             
             # Use data from conversion if available, otherwise extract from path
@@ -505,8 +504,6 @@ def main():
             # Check if report is older than 2 years
             try:
                 report_year_int = int(year)
-                # If current year is 2025, we want to keep 2025, 2024, 2023.
-                # Older than 2 years means < (2025 - 2), so < 2023.
                 if report_year_int < (current_year - 2):
                     print(f"SKIPPING: {org_name} - {report_title} ({year}) is older than 2 years. Skipping analysis and README update.")
                     continue
