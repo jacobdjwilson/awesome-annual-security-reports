@@ -1,5 +1,3 @@
-clutch
-
 ## Model Context Protocol: A View from the Trenches
 ### What Enterprise MCP Deployments Actually Look Like
 
