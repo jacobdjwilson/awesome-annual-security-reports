@@ -27,7 +27,7 @@
 - [Overview](#overview)
 - [How to Contribute](#how-to-contribute)
 - [Analysis Reports](#analysis-reports)
-    - [Global Threat Intelligence](#threat-intelligence)
+    - [Global Threat Intelligence](#global-threat-intelligence)
     - [Regional Assessments](#regional-assessments)
     - [Sector Specific Intelligence](#sector-specific-intelligence)
     - [Application Security](#application-security)

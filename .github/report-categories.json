@@ -6,7 +6,7 @@
       "description": "Generated through quantification and qualification of data from sensor networks or cybersecurity services.",
       "sub_categories": [
         {
-          "id": "threat-intelligence",
+          "id": "global-threat-intelligence",
           "name": "Global Threat Intelligence",
           "definition": "Broad-scale analysis of worldwide adversary tactics, malware families, and evolving threat landscapes based on global telemetry."
         },
