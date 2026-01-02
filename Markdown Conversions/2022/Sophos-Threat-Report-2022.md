@@ -1,4 +1,9 @@
 # Sophos 2022 Threat Report
+
+## Interrelated threats target an interdependent world
+
+By SophosLabs, Sophos Managed Threat Response, Sophos Rapid Response, SophosAI
+
 ## Table of Contents
 - [Letter from the CTO](#letter-from-the-cto)
 - [The future of ransomware](#the-future-of-ransomware)
@@ -12,6 +17,7 @@
   - [AI in 2021](#ai-in-2021)
   - [AI is increasingly accessible to threat actors](#ai-is-increasingly-accessible-to-threat-actors)
   - [The ongoing surprises from AI](#the-ongoing-surprises-from-ai)
+  - [Cybersecurity’s pivot to AI](#cybersecuritys-pivot-to-ai)
 - [Unstoppable mobile malware](#unstoppable-mobile-malware)
   - [Catching Flubot: it’s pretty serious](#catching-flubot-its-pretty-serious)
   - [Fake iPhone finance apps steal millions from vulnerable users](#fake-iphone-finance-apps-steal-millions-from-vulnerable-users)
@@ -21,15 +27,18 @@
   - [New threats target Linux, IoT devices](#new-threats-target-linux-iot-devices)
   - [Attackers turn to commercial tools](#attackers-turn-to-commercial-tools)
   - [The year of computing dangerously](#the-year-of-computing-dangerously)
-  - [Malware bypasses international sanctions](#malware-bypasses-international-sanctions)
+- [Malware bypasses international sanctions](#malware-bypasses-international-sanctions)
 
-Interrelated threats target an interdependent world
-By SophosLabs, Sophos Managed Threat Response, Sophos Rapid Response, SophosAI
+---
 
-1
+Sophos 2022 Threat Report
+
+2
+
 November 2021
 
-## Letter from the CTO
+# Letter from the CTO
+
 Joe Levy
 Sophos CTO
 
@@ -43,16 +52,21 @@ As a leading software-as-a-service (SaaS) platform for cybersecurity, Sophos nev
 
 In the past 18 months, the company has been going through a period of transformative change, not to swing the pendulum all the way from the prevention to the detection end of the spectrum, but to bring that pendulum back to the center. We don’t see it as either a malware problem or an adversary problem: we see it as both.
 
-The meaning behind “an ounce of prevention is worth a pound of cure” has never been more important, especially in an era where a single machine executing unwanted instructions can give criminals the foothold they need to hold entire industries to ransom. The speed with which modern attacks unfold makes it even more important to throw up roadblocks that slow down an adversary, because a system that requires hands-on-keyboards within seconds or minutes 24x7x365 is bound to fail. We don’t believe that we should cede ground to those who wish to harm us, so we haven’t given up on prevention.
+The meaning behind “an ounce of prevention is worth a pound of cure” has never been more important, especially in an era where a single machine executing unwanted instructions can give criminals the foothold they need to hold entire industries to ransom.
+
+The speed with which modern attacks unfold makes it even more important to throw up roadblocks that slow down an adversary, because a system that requires hands-on-keyboards within seconds or minutes 24x7x365 is bound to fail. We don’t believe that we should cede ground to those who wish to harm us, so we haven’t given up on prevention.
 
 Another reason Sophos consistently improves upon its tools that eliminate malware, while embarking on a journey to create a platform that gives us real-time visibility into what attackers are doing, is the sheer volume of attacks. Prevention is critical to conserve scarce resources so that they are available to focus on the larger, more devastating attacks that require a human response.
 
 Better protection helps burn down the haystack, revealing the needles that need extra attention.
 
-2
+3
+
 November 2021
 
-We introduced our Rapid Response service in 2020 to help the market counter the ongoing threat of hands-on-keyboards adversaries. Combined with significant investments made by SophosLabs in behavioral protection logic and technology for early attack disruption, it has saved hundreds of customers from attacks they otherwise wouldn’t have discovered until it was too late.
+Sophos 2022 Threat Report
+
+We introduced our Rapid Response service in 2020 to help the market counter the ongoing threat of hands-on-keyboard adversaries. Combined with significant investments made by SophosLabs in behavioral protection logic and technology for early attack disruption, it has saved hundreds of customers from attacks they otherwise wouldn’t have discovered until it was too late.
 
 In 2021, we launched the Adaptive Cybersecurity Ecosystem, the SaaS security operations platform that powers our Extended Detection and Response (XDR) product and our Managed Threat Response (MTR) service, with the familiar Sophos Central interface. This enhanced our ability to obtain real-time telemetry from endpoints, servers, firewalls, and cloud workloads to give customers and our MTR and Rapid Response teams a leg up on threat actors.
 
@@ -68,21 +82,40 @@ We live in an attention economy, and while no single vendor can solve our indust
 
 Sophos operates on principles of being the most credible, the most transparent, and the most scientifically rigorous cybersecurity company in the industry. We believe that shifting the timescale of attack mitigation left, from weeks, to days, to minutes – with the guidance of AI-enhanced security operations – will transform the security industry and put cybercriminals at a constant disadvantage.
 
-3
+4
+
 November 2021
 
-## The future of ransomware
+Sophos 2022 Threat Report
+
+# The future of ransomware
+
 Ransomware has staked its claim as a major element of the cybercriminal ecosystem. As one of the most potentially damaging and costly types of malware attacks, ransomware remains the kind of attack that keeps most administrators up at night, a Keyser Söze of the internet. As we move into 2022, ransomware shows no sign of slowing down, though its business model has gone through some changes that seem likely to persist and even grow over the coming year.
 
-### Ransomware-as-a-service subsumes attacks by solo groups
-Over the past 18 months, the Sophos Rapid Response team has been called in to investigate and remediate hundreds of cases involving ransomware attacks. Ransomware isn’t new, of course, but there have been significant changes to the ransomware landscape over this period: the targets have shifted to ever-larger organizations, and the business model that dictates the mechanics of how attacks transpire has shifted. The biggest change Sophos observed is the shift from “vertically oriented” threat actors, who make and then attack organizations using their own bespoke ransomware, to a model in which one group builds the ransomware and then leases the use of that ransomware out to specialists in the kind of virtual breaking-and-entering that requires a distinct skill set from that of ransomware creators. This ransomware-as-a-service (or RaaS) model has changed the landscape in ways we couldn’t predict.
+## Ransomware-as-a-service subsumes attacks by solo groups
 
-![Fig 1. While ransomware attack response accounted for most of the incidents the Sophos Rapid Response team was involved in during the past year, it didn’t account for them all. Removal of Cobalt Strike Beacons, cryptominers, and even web shells also prompted extra attention, especially in the days following the revelations of the ProxyLogon, and later ProxyShell, exploits, which resulted in a lot of people quickly becoming familiar with how dangerous a web shell could be.]
+Over the past 18 months, the Sophos Rapid Response team has been called in to investigate and remediate hundreds of cases involving ransomware attacks. Ransomware isn’t new, of course, but there have been significant changes to the ransomware landscape over this period: the targets have shifted to ever-larger organizations, and the business model that dictates the mechanics of how attacks transpire has shifted.
+
+The biggest change Sophos observed is the shift from “vertically oriented” threat actors, who make and then attack organizations using their own bespoke ransomware, to a model in which one group builds the ransomware and then leases the use of that ransomware out to specialists in the kind of virtual breaking-and-entering that requires a distinct skill set from that of ransomware creators. This ransomware-as-a-service (or RaaS) model has changed the landscape in ways we couldn’t predict.
+
+Sophos Rapid Response, reason for incident response engagements 2020-2021
+
+*   Misc. malware 5%
+*   Miners 3%
+*   Data exfiltration 3%
+*   Web shells 4%
+*   Cobalt Strike 6%
+*   Ransomware 79%
+
+![Fig 1. While ransomware attack response accounted for most of the incidents the Sophos Rapid Response team was involved in during the past year, it didn’t account for them all. Removal of Cobalt Strike Beacons, cryptominers, and even web shells also prompted extra attention, especially in the days following the revelations of the ProxyLogon, and later ProxyShell, exploits, which resulted in a lot of people quickly becoming familiar with how dangerous a web shell could be.](Image description)
 
 For instance, when the same group crafted and attacked using their own ransomware, those threat actors tended to engage in unique and distinctive attack methods: one group might specialize in exploiting vulnerable internet-facing services like Remote Desktop Protocol (RDP), while another might “buy” access to an organization previously compromised by a different malware group. But under the RaaS model, all these distinctions in the finer details of how an attack takes place have become muddled and make it more difficult for incident responders to identify exactly who is behind an attack.
 
-4
+5
+
 November 2021
+
+Sophos 2022 Threat Report
 
 In 2021, a disgruntled affiliate of the Conti RaaS service, unhappy with how they were treated by the ransomware creators, published an archive that included a rich trove of documentation and guidance (mostly written in Russian) designed to instruct an attacker “affiliate” in the steps required to conduct a ransomware attack. These documents, and the tools they included, give detailed insight into the attack methods that most of these RaaS affiliates will employ. They also demonstrated why, in some cases, we saw what we expected were different attacker groups employing virtually identical tactics, techniques, and procedures (TTPs) during their ransomware attacks.
 
@@ -92,24 +125,38 @@ The publication of the playbook has also benefited Sophos customers. As a result
 
 Sophos believes that, in 2022 and beyond, the RaaS business model will continue to dominate the threat landscape for ransomware attacks, as this model permits experts in ransomware construction to continue to build and improve their product, while giving experts in “initial access” break-ins the ability to focus on this task with increasing intensity. We’ve already seen these RaaS threat actors innovate new ways to break into progressively more well-defended networks, and we expect to see them continue to push in this direction in the year to come.
 
-![Fig 2. Nearly four in five calls to Sophos Rapid Response service came as the result of a ransomware attack, and among those calls, Conti was the most prevalent ransomware we encountered, at 16% of engagements. The next most frequent were the three Rs – Ryuk, REvil, and Ragnarok – who together accounted for the next 28% of attacks. Among the remaining 56% of incidents, we encountered ransomware under 39 different names.]
+Ransomware families investigated by Sophos Rapid Response, 2020-2021
+Conti infection rate portends the expansion of the RaaS model
 
-5
-November 2021
+*   Conti 16%
+*   All other ransomware (35 different “families”) 43%
+*   REvil 15%
+*   Ryuk 9%
+*   Black Kingdom 3%
+*   DarkSide 3%
+*   Maze 3%
+*   Ragnarok 4%
+*   LockBit 4%
 
-### Expanding extortion
+![Fig 2. Nearly four in five calls to Sophos Rapid Response service came as the result of a ransomware attack, and among those calls, Conti was the most prevalent ransomware we encountered, at 16% of engagements. The next most frequent were the three Rs – Ryuk, REvil, and Ragnarok – who together accounted for the next 28% of attacks. Among the remaining 56% of incidents, we encountered ransomware under 39 different names.](Image description)
+
+## Expanding extortion
+
 Ransomware is only as good as your backups, or so an adage might go if any existed. The truth of this statement became the basis for one of the most devastating “innovations” pioneered by some threat actor groups involved in ransomware schemes in the past several years: the rise of extortion in ransomware attacks.
 
 Increasingly, large organizations have been getting the message that ransomware attacks were costly but could be thwarted without the need for a ransom payment – if the organization kept good backups of the data the attackers were encrypting and have been acting on it by engaging with large cloud backup firms to keep their systems cloned. After all, if, for instance, you only lost one day’s worth of work, it would be a manageable loss, completely survivable for the targeted organization, if they chose to restore from backups rather than pay the ransom.
 
-![Fig 3. Atom Silo, like many ransomware threat groups, engages in extortion with a threat of leaking sensitive information, as well as maliciously encrypting files]
+![Fig 3. Atom Silo, like many ransomware threat groups, engages in extortion with a threat of leaking sensitive information, as well as maliciously encrypting files](Image description)
 
 We have to presume that the ransomware groups were also getting the message because they weren’t getting paid. They took advantage of the fact that the average “dwell time” (in which they have access to a targeted organization’s network) can be days to weeks and started using that time to discover an organization’s secrets—and move everything of value to a cloud backup service themselves. Then, when the ransomware attack struck, they’d layer on a second threat: pay up or we release your most sensitive internal documents, customer information, source code, patient records, or, well, anything else, to the world.
 
 It’s a devious ploy and one that put ransomware attackers back on their feet. Large organizations not only face a customer backlash – they could fall victim to privacy laws, such as the European GDPR, if they fail to prevent the release of personally identifiable information belonging to clients or customers, not to mention the loss of trade secrets to competitors. Rather than risk the regulatory (or stock price) fallout from such a disclosure, many of the targeted organizations chose to pay (or have their insurance company pay) the ransom. Of course, the attackers could then do whatever they wanted, including selling that sensitive competitive data to others, but the victims found themselves unable to resist.
 
-6
+7
+
 November 2021
+
+Sophos 2022 Threat Report
 
 There have been cases, however, where the normal forms of ransom and extortion were still insufficient motivation for the victims to pay a hefty ransom. In a limited number of cases, the Sophos Rapid Response team was informed by the victim organization that they’s begun to receive phone calls or voicemails from someone who claimed to be associated with the ransomware attackers, repeating the threat that the attackers would publish the victim’s internal data unless they received their ransom payment.
 
@@ -119,23 +166,33 @@ There have been some bright spots on the horizon, however. In September 2021, th
 
 Sophos expects that threats of extortion over the release of data will continue to be a part of the overall threat posed by ransomware well into the future.
 
-7
+8
+
 November 2021
 
-## Malware begets malware
-### The rise of Cobalt Strike
+Sophos 2022 Threat Report
+
+# Malware begets malware
+
+## The rise of Cobalt Strike
+
 Cobalt Strike is a commercially-produced exploitation tool suite intended for “threat emulation” – recreating the types of techniques used by malicious actors. First released in 2012, it is commonly used by penetration testers and corporate red teams as part of the “offensive security” toolbox.
 
 The business end of Cobalt Strike is its Beacon backdoor, which can be configured in several ways to execute commands, download and execute additional software, and relay commands to other Beacons installed across a targeted network. Beacons can be customized to emulate a wide variety of threats. Unfortunately, they can also be used with ill intent. In fact, the Beacons do such a good job, criminals only need to make minor modifications to the source code in order to leverage the Beacon as a foothold on an infected machine.
 
 That’s become a major concern over the past few years, as leaked copies of the suite’s source code, cracks in its licensing structure, and pirated full versions of Cobalt Strike have found their way into the hands of a very different kind of user from the product’s intended customer base.
 
-![Fig 4. Beacons are a key feature of the Cobalt Strike attack suite, providing a capable backdoor to Windows machines. The malware appears as a payload of “conventional” malware such as Trickbot, IcedID, or BazarLoader, and features prominently in hands-on-keyboard attack incidents investigated by Sophos Rapid Response.]
+The increasing popularity of Cobalt Strike Beacons among attackers
+
+![Fig 4. Beacons are a key feature of the Cobalt Strike attack suite, providing a capable backdoor to Windows machines. The malware appears as a payload of “conventional” malware such as Trickbot, IcedID, or BazarLoader, and features prominently in hands-on-keyboard attack incidents investigated by Sophos Rapid Response.](Image description)
 
 Hacked Cobalt Strike suites have become the Saturday Night Specials of cybercrime: they are widely available on underground marketplaces and can be easily customized. There’s ample training and sample configurations available on the internet to make getting started with Cobalt Strike relatively trivial for cybercriminals. And recently, malicious actors have used access to Cobalt Strike’s source code to port its Beacon backdoor to Linux.
 
-8
+9
+
 November 2021
+
+Sophos 2022 Threat Report
 
 As a result, most of the ransomware cases we’ve seen over the last year have involved the use of Cobalt Strike Beacons. While many malware operators use backdoors associated with the open source Metasploit framework, Cobalt Strike Beacons have become the favored tool of ransomware affiliates and access brokers who sell compromises to ransomware gangs and are often seen tied to ransomware execution. We’ve also observed other malware operators, including the cryptocurrency miner LemonDuck, using Cobalt Strike as part of their access and lateral movement.
 
@@ -143,7 +200,8 @@ In some cases, Beacons are dropped by malicious documents in spam or other insta
 
 We anticipate this trend will continue. Tools such as Cobalt Strike make it easier for ransomware gangs to scale up operations, using playbooks and tools to guide affiliates through achieving their goals, and more intrusions are likely to be powered by Beacons as a result.
 
-### Malware distribution frameworks
+## Malware distribution frameworks
+
 Over time, the families we see as the top “commodity” malware – widely distributed, heavily spammed – have changed quite dramatically. Just 18 months ago, the Emotet family was considered the most widely distributed malware in the world, but then the Emotet gang just closed up shop, and there’s been a fight for dominance among the rest of the competitors ever since.
 
 Emotet brought to the forefront the role of malware not just as a tool to remotely access an infected machine, or as a way to steal passwords, but to serve a place in the malware ecosystem that nobody expected: it became a sort of criminal content distribution network (CDN), similar in principle to those used by major internet portals but used exclusively for malware. Criminal groups could then contract with Emotet to push their malware out to Emotet’s massive network of infected PCs.
@@ -156,22 +214,32 @@ Likewise, a malware now known as Dridex (but which started out as something call
 
 At the end of 2020, criminals had stolen the source code for Cobalt Strike, and published the source code to Github. As we mention in the previous section, Cobalt Strike Beacons are widely used by adversaries. Not surprisingly, therefore, Beacons are among the most frequently encountered malware payloads of various malware distribution networks.
 
-9
+10
+
 November 2021
+
+Sophos 2022 Threat Report
 
 Because many of the most widely distributed malware families also turn an infected machine into a potential destination for Cobalt Strike or malware payloads, it’s unlikely that the malware distribution framework aspect of these malware families will ever go away. Unfortunately, that means that administrators and security teams need to treat even minor malware alerts promptly, as any infection, no matter how seemingly insignificant, may simply be the start of a much more devastating cyberattack.
 
-![Fig 5. Gootloader malware relies on the effectiveness of its ability to poison Google search results in order to spread, and a few weeks after the March 1, 2021 publication of our report about the malware group’s activities, we saw a sharp drop in the number of machines with either a detection of the malware loader or the “reflective loading” behavior it engages in to filelessly infect machines.]
+Gootloader detections drop after 2021 report publication
+Detections of the malicious-SEO malware drop precipitously within weeks of our analysis
 
-### Shotgun attacks, with pinpoint targeting
+![Fig 5. Gootloader malware relies on the effectiveness of its ability to poison Google search results in order to spread, and a few weeks after the March 1, 2021 publication of our report about the malware group’s activities, we saw a sharp drop in the number of machines with either a detection of the malware loader or the “reflective loading” behavior it engages in to filelessly infect machines.](Image description)
+
+## Shotgun attacks, with pinpoint targeting
+
 In past years, we were able to break down attacks into two broad categories. The first: shotgun attacks, in which the threat actors might spam absolutely everyone, or use search engine optimization (SEO) techniques to drive search engine users to malicious web pages. And second: highly targeted attacks, in which the attackers have done some homework and go into the attack with foreknowledge about the target organization, the people who make up that organization, and which of those people might be juicy targets.
 
 But in 2021, we saw the emergence of a hybrid category: a broad-based attack meant to lure in lots of people, but that only fires off when the unlucky people who stumble into the trap meet certain criteria. This may seem counterintuitive, but from the criminals’ perspective, it makes some sense: they can block malware analysts from continuing to probe their servers, and they also reduce suspicion by keeping the number of attacks relatively low, under the radar that might otherwise tip off security researchers or IT admins to a wider campaign.
 
 We saw one example this year with the malware known as Gootloader. The people behind Gootloader have created a broad-based attack using malicious SEO techniques, luring in potential victims who might be looking for a specific kind of legal or technical document when they search for them on Google.
 
-10
+11
+
 November 2021
+
+Sophos 2022 Threat Report
 
 However, the Gootloader threat actors have also established a system that limits the volume of potential victims. For one, they only engage in their poisoning of search terms in four languages: English, German, French, and Korean Hangul. For another, they filter by the region of the world the potential victim is visiting from, using IP geolocation to restrict English-speakers who may be surfing from Australia (for instance) rather than the United States or Canada.
 
@@ -185,34 +253,46 @@ But if the caller is sufficiently convincing – which seems to require a combin
 
 Threat actors like Gootloader and BazarLoader seem to be content with spreading their attacks widely and then taking a quality-filter approach to whatever makes it past the first stage of the attack. SophosLabs believes that this may represent a novel way for malware distributors to thwart malware researchers while giving themselves a greater degree of certainty that their malware is going to a subset of victims that may be more desirable than the general population. We expect to see a wider adoption of these techniques with some malware families going into 2022 and beyond.
 
-![Fig 6. Gootloader attacks begin when the victim searches for terms the attackers have “poisoned” in Google results, usually involving legal documentation. The malicious SEO promotes web sites the attackers control high in the result rankings, delivering visitors to those sites into a trap that looks exactly like this contrived “message board,” which delivers the infectious payload.]
+![Fig 6. Gootloader attacks begin when the victim searches for terms the attackers have “poisoned” in Google results, usually involving legal documentation. The malicious SEO promotes web sites the attackers control high in the result rankings, delivering visitors to those sites into a trap that looks exactly like this contrived “message board,” which delivers the infectious payload.](Image description)
 
-11
+12
+
 November 2021
 
-## Security and AI in 2022 and beyond
-### AI in 2021
+Sophos 2022 Threat Report
+
+# Security and AI in 2022 and beyond
+
+## AI in 2021
+
 In 2021, AI technologies that were only recently considered cutting edge (e.g., AI that generates realistic but totally fabricated images and text) became accessible to non-expert developers, poising them to enter the lexicon of adversary deception tactics. It was also a year in which new AI breakthroughs, such as OpenAI and Google’s AI systems that write working, college-level source code, promised continued AI impact on the way the cybersecurity game is played. And it was the year in which Google DeepMind demonstrated that its AlphaFold deep learning approach had solved the protein structure prediction problem, seminal work that’s been compared to the sequencing of the human genome.
 
 Within the security product community, 2021 was the year that marked the completion of an era of paradigm-shift within the industry, when it came to recognize machine learning (ML) as an indispensable factor in modern detection pipelines, shifting towards integrating ML as a first-class citizen alongside traditional detection technologies. In the 2020s, the mere fact that a vendor uses ML in a particular protection technology will not be noteworthy – it will be table stakes. The real question will be how effective companies’ AI detection solutions are, and what novel capabilities, outside autonomous detection workflows, security companies are developing with AI.
 
-### AI is increasingly accessible to threat actors
+## AI is increasingly accessible to threat actors
+
 As we began this decade, AI consolidated its transition from a specialist discipline to a technology ecosystem in which advanced research labs’ successful prototypes quickly become open-source software components accessible to both benign software developers and malevolent adversaries.
 
 For example, OpenAI’s GPT-2 text generation model, which OpenAI kept under lock –and key in 2019 to prevent its use by bad actors, has now been reproduced by independent researchers and can be spun up for use by the general public, with startups like HuggingFace and Amazon’s SageMaker service pioneering a kind of point-and-click AI service for content providers.
 
-![Fig 7. In the study “Evaluating Large Language Models Trained on Code,” researchers found that simply scaling up the number of parameters (i.e., the number of neurons) in the OpenAI Codex neural network model helped it solve more problems. This confirms the ‘scaling law’ hypothesis, that simply by making neural networks bigger we make them better, and suggests that both attackers and defenders will take advantage of this dynamic in the future. (Graphic credit: Mark Chen, MIT)]
+Bigger neural networks are better at solving problems
+
+![Fig 7. In the study “Evaluating Large Language Models Trained on Code,” researchers found that simply scaling up the number of parameters (i.e., the number of neurons) in the OpenAI Codex neural network model helped it solve more problems. This confirms the ‘scaling law’ hypothesis, that simply by making neural networks bigger we make them better, and suggests that both attackers and defenders will take advantage of this dynamic in the future. (Graphic credit: Mark Chen, MIT)](Image description)
 
 Related to this, generative adversarial networks (GANs), which can synthesize completely fabricated images that look real, have progressed from a research toy in 2014 to a potent adversarial weapon, as shown in the tweet below from Ian Goodfellow, the inventor of GANs. In 2021, GANs were accessible to non-expert adversaries seeking to wage disinformation campaigns and spoof social media profiles.
 
-12
+13
+
 November 2021
+
+Sophos 2022 Threat Report
 
 While we have not yet seen widespread adversary adoption of these new technologies, we can expect to in the coming years – for example, in the generation of watering-hole attack web content and phishing emails. Not far behind them in the AI “industrialization pipeline” will be neural network voice synthesis technologies and video deepfake technology, which are less mature than AI technologies in the image and text domain.
 
-![Fig 8.]
+![Fig 8.](Image description)
 
-### The ongoing surprises from AI
+## The ongoing surprises from AI
+
 Since the 2010s, breakthroughs in neural network vision and language technologies have disrupted the way we practice defensive cybersecurity. For example, most security vendors now use vision and language-inspired neural network technologies to help detect threats.
 
 This year we’ve seen further proof that neural network technology will continue to disrupt old and new areas of cyber defense. Two innovations stand out.
@@ -223,10 +303,14 @@ Second and similarly noteworthy have been the demonstrated breakthroughs achieve
 
 These developments add up to one central takeaway: the AI revolution is far from over, and security practitioners would be wise to keep pace with it and find defensive applications of new AI ideas and technologies.
 
-13
+14
+
 November 2021
 
-### Cybersecurity’s pivot to AI
+Sophos 2022 Threat Report
+
+## Cybersecurity’s pivot to AI
+
 In 2022 and beyond, innovative cybersecurity companies will distinguish themselves by demonstrating new machine learning applications. At Sophos, we see key fields of innovation in two areas.
 
 The first is the underexplored domain of user-facing security machine learning. We believe that in the coming years, user-facing ML will make IT security products as intuitive at making security recommendations as Google is at finding web pages and Netflix is at recommending content. The resulting AI-driven security operations center (SOC) will feel dramatically easier to use and more efficient as compared to today’s SOCs.
@@ -241,38 +325,32 @@ In summary, artificial intelligence is changing at a dizzying pace. New tricks b
 
 A few things are clear: AI developments will have tectonic implications for the security landscape. They will influence and shape the development of defensive security technologies, and the security community will identify novel applications for AI, as AI capabilities develop. While we at Sophos believe user-facing ML models and massive-scale neural networks should be a focus, we expect to continue to be surprised, and to continue to adapt, as this field changes.
 
-14
+15
+
 November 2021
 
-## Unstoppable mobile malware
+Sophos 2022 Threat Report
+
+# Unstoppable mobile malware
+
 Windows computers are not the only targets for cybercriminals. Malware also targets the Android and, to a lesser extent, the iOS platform for mobile devices. As our portable and handheld computing devices have evolved into the dominant tools that we use for everything from online shopping to multifactor authentication to messaging our families or friends, protecting those devices from a wide range of difficult-to-eradicate threats becomes an essential task.
 
-### Catching Flubot: it’s pretty serious
+## Catching Flubot: it’s pretty serious
+
 In 2021, a mobile malware family known as Flubot was one of the predominant banking trojans affecting the Android platform. The malware presents users with fake bank and cryptocurrency app login screens to steal the user’s passwords for those services. In addition to robbing bank details, it also steals data like the contact list, which it then uses to spam the victim’s friends and associates with messages that can lead to additional Flubot infections.
 
 The malware spreads primarily through SMS text messages. It mimics popular shipment tracking services from major international parcel shipment services like DHL, FedEx and UPS. The victim receives SMS alerts with a URL link, and occasionally an SMS that pretends to be a voicemail message – also with a web link.
 
-![Fig 9. The Flubot malware arrives in the form of a text message that appears to originate from a large, international delivery firm like DHL or UPS, or sometimes from a service provider like a phone company. The link in the message takes visitors to a page where they download the malware and infect themselves.]
+![Fig 9. The Flubot malware arrives in the form of a text message that appears to originate from a large, international delivery firm like DHL or UPS, or sometimes from a service provider like a phone company. The link in the message takes visitors to a page where they download the malware and infect themselves.](Image description)
 
 The link usually leads to a compromised website, which is changed frequently to avoid being shut down. Victims who click the link end up on a webpage designed to mimic the legitimate parcel services they imitate in the text messages, but which includes a link to download another copy of Flubot.
 
-15
+16
+
 November 2021
+
+Sophos 2022 Threat Report
 
 Like many other Android trojans, Flubot abuses the Accessibility Service to give itself additional malicious capabilities. The malware’s command-and-control server can retrieve contact details from the victim, which they use so effectively that Flubot spreads at a higher rate than nearly every other banking trojan. For evasion purpose, Flubot uses an algorithmically generated domain name. Flubot can generate thousands of domains and connect only to those that are online.
 
-Flubot’s effectiveness at spreading from user to user by means of SMS messages has been a huge benefit for the malware. SophosLabs expects Flubot to continue to dominate the list of mobile malware we detect and block on Android devices throughout 2022 – unless another malware family decides to implement a similar, rapid method of distribution.
-
-![Fig 10. Many Android malware families evade detection by scanning tools used by the Google Play Store by using a simple trick. The apps uploaded to the Play Store don’t contain any malicious code themselves, but act as a delivery mechanism for a malware payload they only retrieve after you’ve installed the app. These “droppers” act as a gateway to deliver many of the other categories of malware we most frequently detect using the free Sophos Intercept X for Mobile app on Android devices.]
-
-### Fake iPhone finance apps steal millions from vulnerable users
-It’s no wonder that iPhone users think iOS isn’t susceptible to malware: Apple has for years promoted its desktop and mobile platforms as the most secure available. But evidence from mobile malware discovered on Apple’s App Store serves as a stark counterexample.
-
-In the past year, SophosLabs analysts have discovered hundreds of fraudulent applications hosted in Apple’s walled garden that can be used to steal banking and other sensitive credentials from iPhone users. In 2021, we discovered a kind of romance scam that targeted vulnerable users and encouraged them to download malicious iOS apps from a fake “App Store.”
-
-16
-November 2021
-
-In this unusually personal attack, the criminals target potential victims on dating apps and websites, engaging in conversations and befriending the users and gaining their trust. The victims are groomed and eventually encouraged to download iPhone applications that make outlandish promises about investments that offer huge returns. The victims sign up and are encouraged to invest money, but when they become suspicious or attempt to close their accounts, they lose access to the “investment” service, and any money they put into it.
-
-In order to circumvent the protective bubble of the App Store, where such apps would never pass muster and would have been blocked, the criminals use one of two methods to distribute the apps to victims: they may use Apple’s enterprise provision
+Flubot’s effectiveness at spreading from user to user by means of SMS messages has been a huge benefit for
