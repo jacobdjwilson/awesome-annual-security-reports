@@ -1,206 +1,218 @@
 import os
 import re
-import json
-import datetime
-import subprocess
 import sys
+import subprocess
+import datetime
+import requests
+import json
+from bs4 import BeautifulSoup
 from googleapiclient.discovery import build
 
-# --- Configuration Constants ---
+# --- Configuration ---
 MAX_ISSUES_PER_RUN = 10
 LOOKBACK_DAYS = 90
-URL_BLACKLIST = [
-    "github.com/jacobdjwilson/awesome-annual-security-reports"
-]
-FINANCIAL_TERMS = ["fiscal year", "quarter", "financial", "earnings", "investor"]
+TIMEOUT_SECONDS = 15
 
-def check_existing_issue(org, next_year):
+# Terms that indicate false positives
+EXCLUDE_TERMS = [
+    "webinar", "award", "sponsorship", "press release", 
+    "conference", "summit", "call for speakers", "earnings call"
+]
+
+# Terms that usually indicate financial reports (not security reports)
+FINANCIAL_TERMS = ["fiscal", "investor", "shareholder", "10-k", "10-q", "financial results"]
+
+def get_existing_issues(org, year):
     """
-    Check if an issue already exists for this org and year.
-    Checks both open and closed issues from the past year.
-    
-    Args:
-        org (str): Organization name
-        next_year (int): Year to check for
-        
-    Returns:
-        bool: True if issue exists, False otherwise
+    Checks if an issue (Open or Closed) already exists for this Org + Year.
+    Returns: Boolean
     """
-    # Check open issues first (most important)
-    open_cmd = [
+    # 1. Check Open Issues
+    cmd_open = [
         'gh', 'issue', 'list',
         '--state', 'open',
         '--label', 'report-suggestion',
-        '--json', 'title,number',
-        '--limit', '1000'
+        '--search', f'"{org}" "{year}" in:title',
+        '--json', 'number',
+        '--limit', '1'
     ]
     
-    result = subprocess.run(open_cmd, capture_output=True, text=True, check=False)
-    if result.returncode == 0 and result.stdout:
-        open_issues = json.loads(result.stdout)
-        for issue in open_issues:
-            title = issue.get('title', '')
-            if org.lower() in title.lower() and str(next_year) in title:
-                print(f"INFO: Skipping {org} {next_year}: Open issue #{issue['number']} exists")
-                return True
-    
+    # 2. Check Closed Issues (limit lookback to avoid re-opening ancient history)
     since_date = (datetime.date.today() - datetime.timedelta(days=LOOKBACK_DAYS)).isoformat()
-    closed_cmd = [
+    cmd_closed = [
         'gh', 'issue', 'list',
         '--state', 'closed',
         '--label', 'report-suggestion',
-        '--search', f'created:>{since_date}',
-        '--json', 'title,number,closedAt',
-        '--limit', '1000'
+        '--search', f'"{org}" "{year}" in:title created:>{since_date}',
+        '--json', 'number',
+        '--limit', '1'
     ]
-    
-    result = subprocess.run(closed_cmd, capture_output=True, text=True, check=False)
-    if result.returncode == 0 and result.stdout:
-        closed_issues = json.loads(result.stdout)
-        for issue in closed_issues:
-            title = issue.get('title', '')
-            if org.lower() in title.lower() and str(next_year) in title:
-                print(f"INFO: Skipping {org} {next_year}: Closed issue #{issue['number']} exists")
-                return True
-    
+
+    for cmd in [cmd_open, cmd_closed]:
+        res = subprocess.run(cmd, capture_output=True, text=True)
+        if res.returncode == 0 and res.stdout.strip() != "[]":
+            return True
+            
     return False
 
-def is_valid_report(item, next_year, current_year):
+def validate_url_content(url, target_year):
     """
-    Applies a series of validation rules to a Google search result item
-    to determine if it's a high-fidelity candidate for a new report.
-
-    Args:
-        item (dict): A Google search result item.
-        next_year (int): The year we are looking for.
-        current_year (int): The year of the last known report.
-
-    Returns:
-        bool: True if the item is a valid candidate, False otherwise.
+    Visits the URL to perform deep validation.
+    Returns: (Confidence: str, Reasoning: str)
     """
-    link = item.get('link', '')
-    item_title = item.get('title', '').lower()
-    snippet = item.get('snippet', '').lower()
+    try:
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+        response = requests.get(url, headers=headers, timeout=TIMEOUT_SECONDS, verify=False) # verify=False to handle potential cert issues on some corporate sites
+        
+        # 1. Check for Dead Links
+        if response.status_code != 200:
+            return "Low", f"URL returned status {response.status_code}"
 
-    # Rule 1: Skip blacklisted URLs (e.g., the repo itself)
-    if any(blacklisted in link for blacklisted in URL_BLACKLIST):
-        print(f"DEBUG: Skipping blacklisted URL: {link}")
-        return False
+        content_type = response.headers.get('Content-Type', '').lower()
 
-    # Rule 2: Skip URLs that explicitly contain the previous report's year
-    url_years = re.findall(r'\b(20\d{2})\b', link)
-    if str(current_year) in url_years:
-        print(f"DEBUG: Skipping URL containing previous year '{current_year}': {link}")
-        return False
+        # 2. PDF Handling
+        if 'application/pdf' in content_type or url.lower().endswith('.pdf'):
+            if str(target_year) in url:
+                return "High", f"Direct PDF detected with {target_year} in URL."
+            return "Medium", "Direct PDF detected. Year not in URL, manual verification required."
 
-    # Rule 3: Filter out financial reports which have confusing "fiscal years"
-    if any(term in item_title for term in FINANCIAL_TERMS) or any(term in link for term in FINANCIAL_TERMS):
-        print(f"DEBUG: Skipping likely financial report: {item_title}")
-        return False
+        # 3. HTML Handling (The Anti-Footer Logic)
+        soup = BeautifulSoup(response.text, 'html.parser')
 
-    year_pattern = r'\b' + str(next_year) + r'\b'
-    current_year_pattern = r'\b' + str(current_year) + r'\b'
+        # Remove noise: Footers, Navs, Copyright divs
+        for noise in soup.select('footer, nav, .footer, .nav, .copyright, .legal, #footer, #copyright'):
+            noise.decompose()
 
-    title_has_next_year = re.search(year_pattern, item_title)
-    snippet_has_next_year = re.search(year_pattern, snippet)
+        # Get text from valid areas (Headings, Paragraphs, Lists)
+        # Limiting to specific tags avoids pulling hidden metadata or scripts
+        valid_tags = ['h1', 'h2', 'h3', 'p', 'li', 'article', 'main']
+        body_text = " ".join([t.get_text() for t in soup.find_all(valid_tags)]).lower()
+        title_text = (soup.title.string if soup.title else "").lower()
 
-    # Rule 4: The target year must be present in the title or snippet
-    if not title_has_next_year and not snippet_has_next_year:
-        return False
+        full_clean_text = title_text + " " + body_text
 
-    # Rule 5: If the target year is only in the snippet, apply extra scrutiny
-    if snippet_has_next_year and not title_has_next_year:
-        # Check for copyright notices
-        if 'copyright' in snippet or '©' in snippet:
-            print(f"DEBUG: Skipping snippet with copyright year: {snippet}")
-            return False
-        # Check for ambiguous snippets that mention the current year's report
-        if re.search(current_year_pattern, snippet) and "report" in snippet:
-            print(f"DEBUG: Skipping ambiguous snippet: {snippet}")
-            return False
-            
-    # Rule 6: Handle conflicts if the target year is in the title
-    if title_has_next_year:
-        # Title has "next_year", but snippet has "current_year report"
-        if re.search(current_year_pattern + r'\b.*report', snippet, re.IGNORECASE):
-            print(f"DEBUG: Skipping due to conflict between title year ({next_year}) and snippet year ({current_year}): {snippet}")
-            return False
-        # Title has "next_year" AND "current_year report" (likely a retrospective)
-        if re.search(current_year_pattern, item_title) and "report" in item_title:
-            print(f"DEBUG: Skipping likely retrospective: {item_title}")
-            return False
+        # 4. Keyword Checks
+        # A. Check for False Positive Terms (Award, Webinar, etc)
+        for term in EXCLUDE_TERMS:
+            if term in full_clean_text:
+                return "n/a", f"Page contains excluded term: '{term}'"
 
-    return True
+        # B. Check for Target Year
+        if str(target_year) not in full_clean_text:
+            return "n/a", f"Year {target_year} not found in main content (footer excluded)."
+
+        # C. Check for Relevance ("Report", "Threat", "Security")
+        if "report" not in full_clean_text and "threat" not in full_clean_text:
+             return "n/a", "Page text lacks 'report' or 'threat' keywords."
+
+        return "High", f"Found {target_year} and relevant keywords in body content."
+
+    except Exception as e:
+        return "Medium", f"Scraping failed ({str(e)[:50]}). relying on search snippet."
 
 def main():
-    """
-    Main function to discover new security reports.
-    """
-    # 1. Initial Setup
-    if "GOOGLE_SEARCH_API_KEY" not in os.environ or "GOOGLE_CSE_ID" not in os.environ:
+    # 1. Environment Check
+    api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
+    cse_id = os.environ.get("GOOGLE_CSE_ID")
+    if not api_key or not cse_id:
         print("ERROR: Missing Google API keys.")
         sys.exit(1)
 
-    # Ensure the 'report-suggestion' label exists in the repo
-    subprocess.run(['gh', 'label', 'create', 'report-suggestion', '--description', 'Suggest a new annual security report', '--color', '0E8A16'], stderr=subprocess.DEVNULL, check=False)
-
-    # 2. Read existing report entries from README
+    # 2. Parse README for Targets
+    print("INFO: Parsing README.md for targets...")
+    targets = []
     try:
         with open("README.md", "r", encoding="utf-8") as f:
-            # Pattern: - [Org](link) - [Title](link) (Year)
+            # Matches: - [Org Name](url) - [Report Title](url) (2024)
             pattern = r'-\s*\[([^\]]+)\]\([^)]+\)\s*-\s*\[([^\]]+)\]\([^)]+\)\s*\((\d{4})\)'
-            entries = re.findall(pattern, f.read())
+            targets = re.findall(pattern, f.read())
     except FileNotFoundError:
         print("ERROR: README.md not found.")
         sys.exit(1)
 
-    # 3. Perform Searches
-    service = build("customsearch", "v1", developerKey=os.environ["GOOGLE_SEARCH_API_KEY"])
+    print(f"INFO: Found {len(targets)} targets to check.")
+    
+    service = build("customsearch", "v1", developerKey=api_key)
     issues_created = 0
 
-    # Search for all entries, but limit the number of issues created
-    for org, title, year_str in entries:
+    # 3. Execution Loop
+    for org, report_title, last_year in targets:
         if issues_created >= MAX_ISSUES_PER_RUN:
-            print(f"INFO: Reached maximum of {MAX_ISSUES_PER_RUN} issues for this run.")
+            print("INFO: Hit max issues limit. Stopping.")
             break
 
-        current_year = int(year_str)
-        next_year = current_year + 1
+        current_year = int(last_year)
+        target_year = current_year + 1
         
-        # Check if an issue already exists (open or recently closed)
-        if check_existing_issue(org, next_year):
+        # Skip Financial Reports based on title keywords
+        if any(term in report_title.lower() for term in FINANCIAL_TERMS):
+            print(f"DEBUG: Skipping {org} (Financial Report Filter)")
             continue
 
-        # Perform the Google search
+        # Check GitHub for duplicates
+        if get_existing_issues(org, target_year):
+            print(f"DEBUG: Skipping {org} {target_year} (Issue exists)")
+            continue
+
+        print(f"INFO: Searching for {org} {target_year}...")
+        
         try:
-            search_query = f'"{org}" "{title}" {next_year}'
-            res = service.cse().list(q=search_query, cx=os.environ["GOOGLE_CSE_ID"], num=3).execute()
-            
-            for item in res.get('items', []):
-                if is_valid_report(item, next_year, current_year):
-                    # Found a valid report, create an issue with label
-                    issue_title = f"[REPORT SUGGESTION]: {org} ({next_year})"
-                    issue_body = (
-                        f"### Report URL\n{item['link']}\n\n"
-                        f"### Report Year\n{next_year}\n\n"
-                        f"### Description\nAutomated discovery found a potential update.\n\n"
-                        f"**Snippet from Google:**\n> {item.get('snippet', '')}"
-                    )
-                    
-                    create_cmd = [
-                        'gh', 'issue', 'create',
-                        '--title', issue_title,
-                        '--body', issue_body,
-                        '--label', 'report-suggestion'
-                    ]
-                    subprocess.run(create_cmd, check=True)
-                    
-                    print(f"SUCCESS: Created suggestion for {org} {next_year}")
-                    issues_created += 1
-                    break  # Move to the next organization
-                    
+            # Refined Query: Force filetypes to avoid generic landing pages if possible
+            query = f'"{org}" "{report_title}" {target_year}'
+            res = service.cse().list(q=query, cx=cse_id, num=3).execute()
+            items = res.get('items', [])
+
+            for item in items:
+                link = item.get('link')
+                title = item.get('title')
+                snippet = item.get('snippet', '').replace('\n', ' ')
+
+                # Phase 1: Quick exclusion (Blacklist/Regex)
+                if "github.com" in link: continue
+                
+                # Check for excluded terms in Title/Snippet before scraping
+                if any(term in title.lower() for term in EXCLUDE_TERMS):
+                    print(f"DEBUG: Fast-skip {org}: Title contains excluded term.")
+                    continue
+
+                # Phase 2: Deep Validation (Scraping)
+                confidence, reasoning = validate_url_content(link, target_year)
+
+                if confidence == "n/a":
+                    print(f"DEBUG: Rejecting {link} - {reasoning}")
+                    continue
+
+                # Phase 3: Create Issue
+                print(f"SUCCESS: Found candidate for {org} - {confidence}")
+                
+                body = f"""
+### 🔍 Discovery Analysis
+**Confidence:** {confidence}
+**Reasoning:** {reasoning}
+**Snippet:** _{snippet}_
+
+---
+
+### Report Details
+- **Organization:** {org}
+- **Detected Year:** {target_year}
+- **Source URL:** {link}
+
+*Auto-generated by Security Report Discovery Workflow*
+                """
+
+                subprocess.run([
+                    'gh', 'issue', 'create',
+                    '--title', f"[REPORT SUGGESTION]: {org} ({target_year})",
+                    '--body', body,
+                    '--label', 'report-suggestion'
+                ], check=True)
+
+                issues_created += 1
+                break # Move to next Org after finding one valid candidate
+
         except Exception as e:
-            print(f"ERROR: Search failed for {org}: {e}")
+            print(f"ERROR: processing {org}: {e}")
 
 if __name__ == "__main__":
     main()

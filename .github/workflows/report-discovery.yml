@@ -23,7 +23,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install Dependencies
-        run: pip install google-api-python-client
+        run: pip install google-api-python-client beautifulsoup4 requests urllib3
 
       - name: Run Discovery
         id: discovery_run
@@ -34,36 +34,41 @@ jobs:
         run: python .github/scripts/report-discovery.py > discovery_output.log 2>&1
 
       - name: Generate Summary
-        if: always() # Ensure summary runs even if the script fails
+        if: always()
         run: |
           echo "## 🔎 Report Discovery Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          
           SUCCESS_COUNT=$(grep -c "SUCCESS:" discovery_output.log || true)
-          SKIPPED_COUNT=$(grep -c "INFO: Skipping" discovery_output.log || true)
-          SEARCH_FAIL_COUNT=$(grep -c "ERROR: Search failed" discovery_output.log || true)
-          DEBUG_SKIPS=$(grep -c "DEBUG: Skipping" discovery_output.log || true)
+          # Count specific rejection reasons for better observability
+          REJECT_TERM=$(grep -c "excluded term" discovery_output.log || true)
+          REJECT_YEAR=$(grep -c "Year .* not found" discovery_output.log || true)
+          REJECT_KEYWORD=$(grep -c "lacks 'report'" discovery_output.log || true)
+          ERROR_COUNT=$(grep -c "ERROR:" discovery_output.log || true)
           
           echo "### 📊 Run Results" >> $GITHUB_STEP_SUMMARY
           echo "| Metric | Count |" >> $GITHUB_STEP_SUMMARY
           echo "|---|---|" >> $GITHUB_STEP_SUMMARY
           echo "| 🚀 New Reports Suggested | **${SUCCESS_COUNT}** |" >> $GITHUB_STEP_SUMMARY
-          echo "| ⏩ Reports Skipped (Already exists) | ${SKIPPED_COUNT} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 🔬 Candidates Filtered (False Positives) | ${DEBUG_SKIPS} |" >> $GITHUB_STEP_SUMMARY
-          echo "| ⚠️ Search Errors | ${SEARCH_FAIL_COUNT} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🚫 Rejected (Excluded Term) | ${REJECT_TERM} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🚫 Rejected (Year Mismatch) | ${REJECT_YEAR} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🚫 Rejected (No Keywords) | ${REJECT_KEYWORD} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⚠️ Errors | ${ERROR_COUNT} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
           if [ "$SUCCESS_COUNT" -gt 0 ]; then
             echo "### ✅ Suggested Reports" >> $GITHUB_STEP_SUMMARY
-            grep "SUCCESS:" discovery_output.log | sed 's/SUCCESS: Created suggestion for/ - /' >> $GITHUB_STEP_SUMMARY
+            # Grep the success line and clean it up for display
+            grep "SUCCESS: Found candidate for" discovery_output.log | sed 's/SUCCESS: Found candidate for / - /' >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
           fi
 
-          if [ "$DEBUG_SKIPS" -gt 0 ]; then
-            echo "### 🔬 Filtered False Positives (Debug Info)" >> $GITHUB_STEP_SUMMARY
-            echo "<details><summary>Click to expand</summary>" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            grep "DEBUG: Skipping" discovery_output.log >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            echo "</details>" >> $GITHUB_STEP_SUMMARY
+          # Optional: Show detailed debug log for rejections if needed
+          if [ "$REJECT_TERM" -gt 0 ] || [ "$REJECT_YEAR" -gt 0 ]; then
+             echo "<details><summary>🔬 Detailed Rejection Log</summary>" >> $GITHUB_STEP_SUMMARY
+             echo "" >> $GITHUB_STEP_SUMMARY
+             echo '```' >> $GITHUB_STEP_SUMMARY
+             grep "DEBUG: Rejecting" discovery_output.log | tail -n 20 >> $GITHUB_STEP_SUMMARY
+             echo '```' >> $GITHUB_STEP_SUMMARY
+             echo "</details>" >> $GITHUB_STEP_SUMMARY
           fi
