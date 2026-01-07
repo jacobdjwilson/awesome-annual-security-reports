@@ -36,39 +36,69 @@ jobs:
       - name: Generate Summary
         if: always()
         run: |
-          echo "## 🔎 Report Discovery Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔍 Security Report Discovery Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Triggered by:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Run Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "**Run ID:** ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
+          # Count metrics
           SUCCESS_COUNT=$(grep -c "SUCCESS:" discovery_output.log || true)
-          # Count specific rejection reasons for better observability
           REJECT_TERM=$(grep -c "excluded term" discovery_output.log || true)
           REJECT_YEAR=$(grep -c "Year .* not found" discovery_output.log || true)
           REJECT_KEYWORD=$(grep -c "lacks 'report'" discovery_output.log || true)
+          REJECT_URL_YEAR=$(grep -c "URL contains different year" discovery_output.log || true)
+          REJECT_DOMAIN=$(grep -c "domain mismatch" discovery_output.log || true)
+          REJECT_SNIPPET_DATE=$(grep -c "snippet contains pre-dated" discovery_output.log || true)
+          REJECT_COPYRIGHT=$(grep -c "copyright year mismatch" discovery_output.log || true)
+          REJECT_BLOG_DATE=$(grep -c "blog/article pre-dates" discovery_output.log || true)
           ERROR_COUNT=$(grep -c "ERROR:" discovery_output.log || true)
+          SKIPPED_FINANCIAL=$(grep -c "Financial Report Filter" discovery_output.log || true)
+          SKIPPED_DUPLICATE=$(grep -c "Issue exists" discovery_output.log || true)
           
           echo "### 📊 Run Results" >> $GITHUB_STEP_SUMMARY
           echo "| Metric | Count |" >> $GITHUB_STEP_SUMMARY
-          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| 🚀 New Reports Suggested | **${SUCCESS_COUNT}** |" >> $GITHUB_STEP_SUMMARY
-          echo "| 🚫 Rejected (Excluded Term) | ${REJECT_TERM} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🔄 Skipped (Financial Reports) | ${SKIPPED_FINANCIAL} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🔄 Skipped (Duplicate Issues) | ${SKIPPED_DUPLICATE} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🚫 Rejected (Excluded Terms) | ${REJECT_TERM} |" >> $GITHUB_STEP_SUMMARY
           echo "| 🚫 Rejected (Year Mismatch) | ${REJECT_YEAR} |" >> $GITHUB_STEP_SUMMARY
           echo "| 🚫 Rejected (No Keywords) | ${REJECT_KEYWORD} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🚫 Rejected (URL Year Mismatch) | ${REJECT_URL_YEAR} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🚫 Rejected (Domain Mismatch) | ${REJECT_DOMAIN} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🚫 Rejected (Pre-dated Snippet) | ${REJECT_SNIPPET_DATE} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🚫 Rejected (Copyright Year) | ${REJECT_COPYRIGHT} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🚫 Rejected (Blog Pre-dates Report) | ${REJECT_BLOG_DATE} |" >> $GITHUB_STEP_SUMMARY
           echo "| ⚠️ Errors | ${ERROR_COUNT} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
           if [ "$SUCCESS_COUNT" -gt 0 ]; then
             echo "### ✅ Suggested Reports" >> $GITHUB_STEP_SUMMARY
-            # Grep the success line and clean it up for display
-            grep "SUCCESS: Found candidate for" discovery_output.log | sed 's/SUCCESS: Found candidate for / - /' >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            grep "SUCCESS: Found candidate for" discovery_output.log | sed 's/SUCCESS: Found candidate for /- /' >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
           fi
 
-          # Optional: Show detailed debug log for rejections if needed
-          if [ "$REJECT_TERM" -gt 0 ] || [ "$REJECT_YEAR" -gt 0 ]; then
-             echo "<details><summary>🔬 Detailed Rejection Log</summary>" >> $GITHUB_STEP_SUMMARY
+          # Detailed rejection log
+          TOTAL_REJECTIONS=$((REJECT_TERM + REJECT_YEAR + REJECT_KEYWORD + REJECT_URL_YEAR + REJECT_DOMAIN + REJECT_SNIPPET_DATE + REJECT_COPYRIGHT + REJECT_BLOG_DATE))
+          if [ "$TOTAL_REJECTIONS" -gt 0 ]; then
+             echo "<details><summary>🔬 Detailed Rejection Log (Last 30 entries)</summary>" >> $GITHUB_STEP_SUMMARY
              echo "" >> $GITHUB_STEP_SUMMARY
              echo '```' >> $GITHUB_STEP_SUMMARY
-             grep "DEBUG: Rejecting" discovery_output.log | tail -n 20 >> $GITHUB_STEP_SUMMARY
+             grep "DEBUG: Rejecting" discovery_output.log | tail -n 30 >> $GITHUB_STEP_SUMMARY
              echo '```' >> $GITHUB_STEP_SUMMARY
              echo "</details>" >> $GITHUB_STEP_SUMMARY
+             echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          # Pipeline Summary
+          echo "### 🎯 Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          if [ "$SUCCESS_COUNT" -gt 0 ]; then
+            echo "🎉 **Discovery completed successfully!** ${SUCCESS_COUNT} new security report(s) found and suggested." >> $GITHUB_STEP_SUMMARY
+          elif [ "$ERROR_COUNT" -gt 0 ]; then
+            echo "❌ **Discovery failed.** ${ERROR_COUNT} error(s) occurred. Check the logs for details." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ **No new reports discovered.** All candidates were filtered or already tracked." >> $GITHUB_STEP_SUMMARY
           fi
