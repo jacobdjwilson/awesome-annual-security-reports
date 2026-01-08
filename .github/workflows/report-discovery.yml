@@ -2,8 +2,8 @@ name: Security Report Discovery
 
 on:
   schedule:
-    # Runs at 8:00 AM ET (13:00 UTC) every day
-    - cron: '0 13 * * *'
+    # Runs at 6:00 AM ET (11:00 UTC) every day
+    - cron: '0 11 * * *'
   workflow_dispatch:
 
 permissions:
