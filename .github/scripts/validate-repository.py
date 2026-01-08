@@ -4,6 +4,7 @@ import sys
 import json
 import argparse
 from pathlib import Path
+from urllib.parse import unquote
 from typing import List, Dict, Set, Tuple
 import pypdf
 
@@ -249,12 +250,16 @@ def validate_readme_report_entries(readme_path: Path, pdf_root: Path) -> List[st
     readme_reports = {}
     for match in re.finditer(report_pattern, readme_content):
         source = match.group(1)
-        pdf_path = match.group(4)
+        raw_path = match.group(4)
+        pdf_path = unquote(raw_path) 
         year = match.group(5)
+        
+        # Store using the decoded path as key so checking keys later works
         readme_reports[pdf_path] = {
             'source': source,
             'year': year,
-            'line': match.group(0)
+            'line': match.group(0),
+            'raw_path': raw_path # Keep raw path if needed for reporting
         }
     
     # Check each PDF file is listed in README
