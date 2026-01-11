@@ -1,4 +1,30 @@
-REPORT
+# The Cyber Risk Landscape of the U.S. Healthcare Industry
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Key Findings](#key-findings)
+- [Methodology](#methodology)
+- [Distribution of Sample by Sector](#distribution-of-sample-by-sector)
+- [General Statistics](#general-statistics)
+- [Distribution of Letter Scores](#distribution-of-letter-scores)
+- [Score Factors and Problem Areas](#score-factors-and-problem-areas)
+- [What types of relationships are responsible for third-party breaches?](#what-types-of-relationships-are-responsible-for-third-party-breaches)
+- [Breaches and Compromised Devices](#breaches-and-compromised-devices)
+- [Special Subsets](#special-subsets)
+- [Devices & Supplies](#devices--supplies)
+- [The Bottom 10%](#the-bottom-10)
+- [Confirmed Breaches and Potentially Compromised Devices](#confirmed-breaches-and-potentially-compromised-devices)
+- [Case Studies of Publicly Reported Breaches from Our Sample](#case-studies-of-publicly-reported-breaches-from-our-sample)
+  - [Ransomware](#ransomware)
+  - [Third–Party Breaches](#third–party-breaches)
+- [Recommendations](#recommendations)
+  - [Devices & Supplies](#devices--supplies-1)
+  - [Application and Endpoint Security](#application-and-endpoint-security)
+  - [Ransomware](#ransomware-1)
+  - [Third-Party Risk Management](#third-party-risk-management)
+- [About SecurityScorecard](#about-securityscorecard)
+
+# REPORT
 
 The Cyber Risk
 Landscape of the U.S.
@@ -41,20 +67,19 @@ The Cyber Risk Landscape of the U.S. Healthcare Industry | 3
 
 ## Methodology
 
+We further limited the scope to the 500 largest healthcare companies whose stock is publicly traded in the U.S., based on their market capitalization.
+
 We defined a sample small enough to be manageable but big enough to yield useful statistics. We focused on U.S. healthcare for our primarily U.S. audience but also for substantive reasons. The U.S. is the world’s largest economy and thus a top target for criminals for that reason. Also, for its linguistic accessibility. The use of the world’s lingua franca facilitates reconnaissance and social engineering attacks on English speakers and use of their data. U.S. healthcare also differs in significant ways from that of other countries with similar political systems and economies.
 
 This list does include some businesses with non-U.S. operations. The role of large multinational corporations in the U.S. economy and its global reach makes exceptions to our domestic U.S. focus unavoidable.
 
 Covering the financially largest companies aims to ensure that our sample includes companies with greater impact on the market and the patient pool. It also echoes the targeting of ransomware operators, who often choose targets on the basis of financial criteria. Many of them believe that companies with more revenue or higher market value can pay higher ransoms.
 
-We further limited the scope to the 500 largest healthcare companies whose stock is publicly traded in the U.S., based on their market capitalization.
-
 We divided this industry into four sectors:
-
-*   Front-line care providers, as well as specialized vendors that support their services;
-*   Health insurance companies as well as billing & revenue cycle management companies
-*   Pharmaceutical, life sciences, and biotechnology companies
-*   Medical device manufacturers and distributors of medical equipment and supplies.
+- Front-line care providers, as well as specialized vendors that support their services;
+- Health insurance companies as well as billing & revenue cycle management companies
+- Pharmaceutical, life sciences, and biotechnology companies
+- Medical device manufacturers and distributors of medical equipment and supplies.
 
 The Cyber Risk Landscape of the U.S. Healthcare Industry | 5
 
@@ -63,7 +88,7 @@ The Cyber Risk Landscape of the U.S. Healthcare Industry | 5
 This sample of 500 companies had this distribution of companies in each sector:
 
 *   Pharmaceuticals & Biotechnology: 308 (62%)
-*   Devices & Supplies 110 (22%)
+*   Devices & Supplies: 110 (22%)
 *   Care Providers: 72 (14%)
 *   Insurance & Billing: 10 (2%)
 
@@ -83,9 +108,7 @@ These respectable scores are at odds with the common perception of substandard s
 
 The division of our sample into four different sectors also yielded little variation other than somewhat lower mean and median scores in the Devices & Supplies sector. Average and median scores in the three other sectors were consistent with those of the whole sample. Vulnerable medical devices are well-known as a distinctive risk factor in this industry, but mainly for the care providers that deploy them in their attack surfaces, rather than the companies that manufacture or distribute them. The attack surfaces of some medical device manufacturers may have more in common with those of non-medical manufacturers than they do with organizations in other healthcare sectors. Complex manufacturing environments, such as those with Industrial Control Systems (ICS), introduce more layers of security risk and new points of failure. We will review ratings for this sector separately below to gain further insight into these lower scores.
 
-AVERAGE & MEDIAN SCORES
-FOR EACH HEALTHCARE
-SECTOR
+AVERAGE & MEDIAN SCORES FOR EACH HEALTHCARE SECTOR
 
 *   Pharmaceuticals & Biotechnology: 89/89
 *   Devices & Supplies: 86/87
@@ -96,31 +119,26 @@ The Cyber Risk Landscape of the U.S. Healthcare Industry | 7
 
 ## DISTRIBUTION OF LETTER SCORES
 
+We will further examine the bottom 10% with the lowest ratings as a special subset below.
+
 The distribution of letter scores for the numerical grades of these 500 organizations paints a generally favorable portrait. 90% of the sample had either strong “A” or good “B” ratings. Only 10% had weak “C” or lower ratings. The only anomaly in this distribution is that there were slightly more “F”s than “D”s (it usually is the other way around). According to our ratings methodology, a “B” rating indicates a 2.9x greater likelihood of a breach than an “A”; a “C” rating indicates a 5.4x greater likelihood of a breach; a “D” rating indicates a 9.2x greater likelihood of a breach; and a “F” rating indicates a 13.8x greater likelihood of a breach.
 
-*   A (90-100) (48%)
-*   B: (80-89) (42%)
-*   C (70-79) (8%)
-*   D: (60-69) (1%)
-*   F: (Below 60) (1%)
-
-We will further examine the bottom 10% with the lowest ratings as a special subset below.
+*   A (90-100): 48%
+*   B: (80-89): 42%
+*   C (70-79): 8%
+*   D: (60-69): 1%
+*   F: (Below 60): 1%
 
 ## Score Factors and Problem Areas
 
 For each of the 500 organizations in our sample, we identified the one out of the ten scoring factors for which each organization earned its lowest score. The mean lowest score in any scoring factor for all 500 organizations was 77; the median was 80. The lower mean indicates that a small number of extreme low values are dragging down the average of the whole sample.
 
-PERCENTAGES OF
-ORGANIZATIONS
-with their Lowest Score
-Factor in Each Area, and their
-Average Scores in Those
-Lowest-Scoring Areas
+PERCENTAGES OF ORGANIZATIONS with their Lowest Score Factor in Each Area, and their Average Scores in Those Lowest-Scoring Areas
 
-*   Application Security (48%) 80
-*   DNS Health (24%) 76
-*   Network Security (19%) 80
-*   Endpoint Security (9%) 56
+*   Application Security (48%): 80
+*   DNS Health (24%): 76
+*   Network Security (19%): 80
+*   Endpoint Security (9%): 56
 
 The Cyber Risk Landscape of the U.S. Healthcare Industry | 8
 
@@ -134,8 +152,7 @@ The average Endpoint Security score (56) for the relatively small number and per
 
 Our researchers delved further into our ratings in search of specific issues responsible for the lower scores. Below is a breakdown of the issues that had the single-most negative impacts on organizations’ scores. For those individual issues with fewer than 5 findings (which would equal 1% of the sample), we consolidated them as “Miscellaneous” under the rubric of the relevant score factor.
 
-ISSUES WITH THE MOST
-NEGATIVE IMPACT ON SCORES
+ISSUES WITH THE MOST NEGATIVE IMPACT ON SCORES
 
 *   Redirect Chain Contains HTTP (32%)
 *   SSL/TLS Service Supports Weak Protocol (22%)
@@ -153,8 +170,8 @@ NEGATIVE IMPACT ON SCORES
 *   Miscellaneous Application Security Issues (1%)
 *   Content Security Policy is Missing (1%)
 *   Miscellaneous DNS Health Issues (1%)
-*   Miscellaneous Hacker Chatter Issues ( 1%)
-*   Miscellaneous Patching Cadence Issues ( 1%)
+*   Miscellaneous Hacker Chatter Issues (1%)
+*   Miscellaneous Patching Cadence Issues (1%)
 *   None: 2 organizations (< 1%)
 
 The Cyber Risk Landscape of the U.S. Healthcare Industry | 9
@@ -185,19 +202,14 @@ This section examines three subsets of organizations with higher risk profiles, 
 
 Medical device manufacturers and distributors of medical supplies were the only healthcare sector with below-average ratings. An examination of the lowest-scoring security factors for the 110 organizations from that sector in our sample yielded the following distribution.
 
-PERCENTAGES OF DEVICES &
-SUPPLIES ORGANIZATIONS
-with their Lowest Score Factor
-in Each Area, and Their Average
-Scores in Those Lowest-Scoring
-Areas
+PERCENTAGES OF DEVICES & SUPPLIES ORGANIZATIONS with their Lowest Score Factor in Each Area, and Their Average Scores in Those Lowest-Scoring Areas
 
 (Percentages may add up to more than 100% due to rounding error.)
 
-*   Application Security (45%) 79
-*   Network Security (22%) 77
-*   DNS Health (18%) 72
-*   Endpoint Security (15%) 57
+*   Application Security (45%): 79
+*   Network Security (22%): 77
+*   DNS Health (18%): 72
+*   Endpoint Security (15%): 57
 
 The Cyber Risk Landscape of the U.S. Healthcare Industry | 11
 
@@ -205,9 +217,7 @@ The most significant difference between these figures in this Devices & Supplies
 
 A further review of the security issues with the most negative impact on scores provides more insight into this finding. The distribution of the top issues is similar to that of the overall sample, except that the Endpoint Security issue of outdated web browsers is slightly more common in this subset than in the overall sample. This shift partially explains why Endpoint Security is more common as a lowest-score factor in this subset. For issues with only one finding, we have consolidated them into broader categories under their respective risk factors, wherever possible.
 
-ISSUES WITH THE MOST
-NEGATIVE IMPACT ON
-DEVICES & SUPPLIES SCORES
+ISSUES WITH THE MOST NEGATIVE IMPACT ON DEVICES & SUPPLIES SCORES
 
 *   Redirect Chain Contains HTTP (Application Security): 35%
 *   SSL/TLS Service Supports Weak Protocol (Network Security): 27%
@@ -235,8 +245,7 @@ The bottom 10% of the sample, or 50 organizations with scores in the “C” ran
 
 The distribution of the bottom 10% of the sample by sector indicates that organizations from the Devices & Supplies sector represent a disproportionately large share of this subset. Devices & Supplies represents 22% of the overall sample but 34% of the lowest-scoring 10% of that sample. This figure reinforces the above finding that Devices & Supplies organizations tend to score lower than their counterparts in other sectors. The Pharmaceuticals & Biotechnology sector still represents the majority of this subset, but by a smaller margin than in the overall sample.
 
-DISTRIBUTION OF
-BOTTOM 10% BY SECTOR
+DISTRIBUTION OF BOTTOM 10% BY SECTOR
 
 *   Pharmaceuticals & Biotechnology (54%)
 *   Devices & Supplies (34%)
@@ -245,21 +254,16 @@ BOTTOM 10% BY SECTOR
 
 The distribution of lowest-scoring security factors among the bottom 10% differs most significantly from that of the overall sample in that Endpoint Security has moved up to become the third-most common source of lowest scores. We saw in the overall sample that Endpoint Security was less common as a lowest-scoring area, but it had a more substantially negative impact on the scores of that smaller number of organizations with their lowest scores in that factor. We also saw in the Devices & Supplies sector, where scores tend to run lower, that Endpoint Security was more common as a source of lowest scores. It is thus not surprising that Endpoint Security is more common as a lowest-scoring factor in the bottom 10% of the sample.
 
-BOTTOM 10% OF THE SAMPLE
-with their Lowest Score Factor
-in Each Area, and their Average
-Scores in Those Lowest-Scoring
-Areas
+BOTTOM 10% OF THE SAMPLE with their Lowest Score Factor in Each Area, and their Average Scores in Those Lowest-Scoring Areas
 
-*   Application Security (42%) 79
-*   Network Security (30%) 61
-*   Endpoint Security (18%) 48
-*   DNS Health (10%) 60
+*   Application Security (42%): 79
+*   Network Security (30%): 61
+*   Endpoint Security (18%): 48
+*   DNS Health (10%): 60
 
 In keeping with the above, the Endpoint Security issue of outdated web browsers was more than twice as common (percentage-wise) as the single most score-lowering issue in the bottom 10% of the sample than it was in the overall sample. Otherwise, a variety of Application Security issues remained the top concern overall, but the Network Security issue of weak SSL/TLS protocols displaced the use of HTTP in redirect chains as the single-most common worst issue.
 
-ISSUES WITH THE MOST NEGATIVE
-SCORE IMPACT ON THE BOTTOM 10%
+ISSUES WITH THE MOST NEGATIVE SCORE IMPACT ON THE BOTTOM 10%
 
 *   SSL/TLS Service Supports Weak Protocol (Network Security): 32%
 *   Redirect Chain Contains HTTP (Application Security): 30%
@@ -279,12 +283,7 @@ The Cyber Risk Landscape of the U.S. Healthcare Industry | 14
 
 The distribution of publicly reported breaches and machine compromises by sector echoes and amplifies the above findings about the Devices and Supplies sector. That sector accounted for 38% of the organizations with either publicly confirmed breaches in the past year or detected machine compromises in the past 30 days. That percentage is markedly higher than the representation of Devices & Supplies in the overall sample (22%). The Pharmaceuticals & Biotechnology sector also represented 38% of this same subset, but that large percentage was much lower than that of this sector’s representation in the overall sample (62%). In other words, Devices & Supplies organizations appear to be experiencing breaches and machine compromises at a disproportionately high rate, whereas their Pharmaceuticals & Biotechnology counterparts appear to be experiencing compromises at a markedly lower rate.
 
-DISTRIBUTION OF
-SECTOR OF PUBLICLY
-REPORTED BREACHES
-in the Past Year and
-Compromised Machines in
-the Past 30 Days
+DISTRIBUTION OF SECTOR OF PUBLICLY REPORTED BREACHES in the Past Year and Compromised Machines in the Past 30 Days
 
 *   Devices & Supplies (38%)
 *   Pharmaceuticals & Biotechnology (38%)
@@ -293,20 +292,13 @@ the Past 30 Days
 
 The distribution of lowest-scoring factors is also quite different in this subset. Application Security was the most common lowest-scoring factor in the overall sample and in the other subsets, but not in this subset. Indeed, this group of actually or potentially compromised organizations was the only subset where Endpoint Security was the most common lowest-scoring factor. As we saw above, Endpoint Security was less common as a lowest-scoring factor in general but a:) was more common as a lowest-scoring factor for lower-scoring subsets, like Devices & Supplies and the bottom 10%; and b) had more significantly negative score impact on that minority of organizations for which it was the lowest-scoring issue. It is thus not surprising that a subset of definitely or potentially compromised organizations would be the one and only subset in our sample in which Endpoint Security breaks through into first place.
 
-DISTRIBUTION OF
-LOWEST-SCORING AREAS FOR
-ORGANIZATIONS WITH PUBLICLY
-REPORTED BREACHES
-in the Past Year or Compromised
-Machines in the Past 30 Days,
-and Their Average Scores in
-Those Areas
+DISTRIBUTION OF LOWEST-SCORING AREAS FOR ORGANIZATIONS WITH PUBLICLY REPORTED BREACHES in the Past Year or Compromised Machines in the Past 30 Days, and Their Average Scores in Those Areas
 
-*   Endpoint Security (32%) 50
-*   Application Security (30%) 80
-*   DNS Health (23%) 70
-*   Network Security (13%) 80
-*   Hacker Chatter (2%) 90
+*   Endpoint Security (32%): 50
+*   Application Security (30%): 80
+*   DNS Health (23%): 70
+*   Network Security (13%): 80
+*   Hacker Chatter (2%): 90
 
 The Cyber Risk Landscape of the U.S. Healthcare Industry | 15
 
@@ -336,4 +328,4 @@ The Cyber Risk Landscape of the U.S. Healthcare Industry | 17
 
 Many data breaches affecting healthcare organizations, as in other industries, occur via third-parties holding their data, rather than at the organizations themselves. Many breaches in healthcare organizations, as in other industries, also occur via the exploitation of vulnerabilities in third-party software, rather than any flaws in the security posture of the organization itself.
 
-The massive May-June 2023 campaign of the criminal group C10p to exploit a vulnerability in MOVEit file transfer software (CVE-2023-34362) was one of the most extensive examples of both types of third-party breaches. Many organizations, including
+The massive May-June 2023 campaign of the criminal group C10p to exploit a vulnerability in MOVEit file transfer software (CVE-2023-34362) was one of the most extensive examples of both types of third-party breaches. Many organizations, including some in the healthcare industry, suffered breaches either directly, via their own MOVEit installations, or indirectly through a vendor using it. At least one organization in our

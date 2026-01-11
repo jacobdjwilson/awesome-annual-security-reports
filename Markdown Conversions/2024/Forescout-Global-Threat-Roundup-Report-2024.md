@@ -1,23 +1,67 @@
-## Table of Contents
-- [Executive Summary](#executive-summary)
-- [Main Findings](#main-findings)
-  - [Location – Russia Retakes China’s Position](#location--russia-retakes-chinas-position)
-  - [Autonomous Systems – New Techniques for Routing Attacks](#autonomous-systems--new-techniques-for-routing-attacks)
-  - [Attacked Services – the Web Is the Undisputed Leader](#attacked-services--the-web-is-the-undisputed-leader)
-  - [Weak Credentials – a Return to Generic Usernames](#weak-credentials--a-return-to-generic-usernames)
-  - [Exploits – There’s Still Much Beyond KEV](#exploits--theres-still-much-beyond-kev)
-  - [OT Attacks – Increased Focus on Building Automation](#ot-attacks--increased-focus-on-building-automation)
-  - [Attacker Actions/TTPs – the Rise of Discovery](#attacker-actionsttps--the-rise-of-discovery)
-  - [Malware – Botnets Again at the Top](#malware--botnets-again-at-the-top)
-  - [Threat Actors – More Conflicts Bring More Threat Actors to the Scene](#threat-actors--more-conflicts-bring-more-threat-actors-to-the-scene)
-- [Evolution of Attacks on Critical Infrastructure](#evolution-of-attacks-on-critical-infrastructure)
-  - [Who Is Being Attacked?](#who-is-being-attacked)
-  - [Who Is Attacking?](#who-is-attacking)
-- [Conclusion](#conclusion)
+## Contents
+1.  Executive Summary
 
-2024 Threat Roundup | 2
+2.  Main Findings
 
-1. Executive Summary
+2.1. Location – Russia Retakes China’s Position
+
+2.2. Autonomous Systems – New Techniques for Routing Attacks
+
+2.3. Attacked Services – the Web Is the Undisputed Leader
+
+2.4. Weak Credentials – a Return to Generic Usernames
+
+2.5. Exploits – There’s Still Much Beyond KEV
+
+2.6. OT Attacks – Increased Focus on Building Automation
+
+2.7. Attacker Actions/TTPs – the Rise of Discovery
+
+2.8. Malware – Botnets Again at the Top
+
+2.9. Threat Actors – More Conflicts Bring More Threat Actors to the Scene
+
+3.  Evolution of Attacks on Critical Infrastructure
+
+3.1. Who Is Being Attacked?
+
+3.2. Who Is Attacking?
+
+4.  Conclusion
+
+3
+
+5
+
+6
+
+7
+
+9
+
+10
+
+12
+
+15
+
+17
+
+19
+
+ 21
+
+23
+
+23
+
+26
+
+30
+
+ 2024 Threat Roundup  |  2
+
+## 1. Executive Summary
 From the financial impact of attacks to geopolitical tensions that lead to cyber warfare, cybersecurity is top of
 mind for enterprise and government organizations in 2025. In this report, we look back at the 900 million attacks
 we analyzed in the threat landscape of 2024. Additionally, we offer organizations tactical insights and strategic
@@ -31,11 +75,11 @@ provides scientific analysis of cyber incidents.
 Take note: We also include information on vulnerabilities and exploits that are not on the CISA-KEV list but are
 being exploited today.
 
-2024 Threat Roundup | 3
+ 2024 Threat Roundup  |  3
 
-2024 Threat Roundup | 4
+ 2024 Threat Roundup  |  4
 
-Where Does Our Data Come From?
+### Where Does Our Data Come From?
 Most data used for our analysis comes from the Vedere Labs Adversary Engagement Environment
 (AEE), a set of honeypots on the open internet luring attackers and recording their interactions. Data
 points in the AEE are called attacks. They can represent a multitude of malicious actions, including port
@@ -55,16 +99,15 @@ and December 2024.
 Also, we constantly hunt for new command and control (C2) infrastructure and maintain a threat actor
 knowledgebase with data about more than 800 threat actors.
 
-![Diagram showing the flow of data from Attackers, Malware Analysis Lab (MAL), Adversary Engagement Environment (AEE), Threat Actor Knowledgebase, Infrastructure, C2 Hunting, Security Researcher, Intel Factory to the 2024 Threat Roundup report.]
+![Diagram showing data sources: Attackers, Malware Analysis Lab (MAL), Adversary Engagement Environment (AEE), Threat Actor Knowledgebase, Security Researcher, Intel Factory, Infrastructure, C2 Hunting, leading to 2024 Threat Roundup.](Image description)
 
-2024 Threat Roundup | 5
+ 2024 Threat Roundup  |  5
 
-2. Main Findings
-2.1. Location – Russia Retakes China’s Position
+## 2. Main Findings
+### 2.1. Location – Russia Retakes China’s Position
 
-![Graph showing the distribution of attacks by IP address country of origin, with Russia at 16% and China at 8%.]
-
-Figure 1 – Distribution of attacks by IP address country of origin
+![Graph showing distribution of attacks by IP address country of origin.](Image description)
+![Graph showing distribution of attacks by IP address country of origin.](Image description)
 
 Figure 1 shows the distribution of attacks detected by country of origin. We detected attacks originating from 213
 countries and territories (1 more than in 2023 and 22 more than in 2022). Countries appear in this list due to the
@@ -81,20 +124,19 @@ It is important to stress that it is not direct attribution for attack locations
 coming from as they hit our honeypots. Our threat actor database shows that most actors are still located in
 China — although it does not necessarily mean it is the source of individual attacks.
 
-Fact: China and Russia have been in the top 3 of IP address attack origin since 2022.
+**Fact**: China and Russia have been in the top 3 of IP address attack origin since 2022.
 
-Insight for Defenders: Country of origin alone continues to be ineffective to judge the
+**Insight for Defenders**: Country of origin alone continues to be ineffective to judge the
 risk of a particular IP address. However, if your organization does not do business with –
 or in – countries with the highest number of IP addresses that attack, blocking those IP
 ranges may help reduce SOC noise.
 
-2024 Threat Roundup | 6
+ 2024 Threat Roundup  |  6
 
-2.2. Autonomous Systems – New Techniques for Routing Attacks
+### 2.2. Autonomous Systems – New Techniques for Routing Attacks
 
-![Graph showing the distribution of attacks by originating Autonomous System, with ISPs at 57%, Business/Government/Others at 33%, and Hosting/Cloud providers at 10%.]
-
-Figure 2 – Distribution of attacks by originating Autonomous System
+![Graph showing distribution of attacks by originating Autonomous System.](Image description)
+![Graph showing distribution of attacks by originating Autonomous System.](Image description)
 
 Attacks again originated from more than 500 autonomous systems (AS), which are blocks of IP addresses under
 the control of an organization. Figure 2 shows the percentage of attacks coming from the three types of AS we
@@ -127,9 +169,11 @@ Overall, the top 10 ASes are responsible for 48% of attacks (4% less than in 202
 in 2023 remain in the list in 2024: Xhost Internet Solutions Lp, GOOGLE-CLOUD-PLATFORM, LIONLINK-
 NETWORKS, DIGITALOCEAN-ASN, Contabo GmbH and Chang Way Technologies Co. Limited.
 
-Fact: Autonomous Systems continue to be a better sign of risk than country of origin.
+ 2024 Threat Roundup  |  7
 
-Insight for Defenders: IPs belonging to known risky autonomous systems should always
+**Fact**: Autonomous Systems continue to be a better sign of risk than country of origin.
+
+**Insight for Defenders**: IPs belonging to known risky autonomous systems should always
 be treated with care — especially those that remain in the top 10 for years, such as
 Digital Ocean. Continued attacker interest in compromised devices to route action shows
 organizations need real-time threat intelligence about compromised devices in the wild
@@ -137,13 +181,12 @@ and the types of device attackers focus on. This goes beyond APTs targeting a sp
 organization. Be wary of opportunistic Initial Access Brokers (IAB) that breach as many
 organizations as possible and sell that access.
 
-2024 Threat Roundup | 7
+ 2024 Threat Roundup  |  8
 
-2.3. Attacked Services – the Web Is the Undisputed Leader
+### 2.3. Attacked Services – the Web Is the Undisputed Leader
 
-![Graph showing the distribution of attacked ports and services, with Web applications at 41%, Remote management at 33%, Remote storage at 19%, Networking at 3%, and Database at 1%.]
-
-Figure 3 – Distribution of attacked ports and services
+![Graph showing distribution of attacked ports and services.](Image description)
+![Graph showing distribution of attacked ports and services.](Image description)
 
 Figure 3 shows the share of traffic targeting each type of network service, classified according to assigned or
 well- known IPv4 TCP destination ports: Web applications increased from 26% in 2022 and 2023 to 41% in 2024,
@@ -163,34 +206,32 @@ Database services, such as Microsoft SQL Server, Redis, mongoDB, MySQL and Postg
 
 E-mail services, such as IMAP, POP3 and SMTP, remained unchanged since 2022 at less than 1% of attacks.
 
-Fact: Web applications are, without a doubt, the most attacked service type, continuing
+**Fact**: Web applications are, without a doubt, the most attacked service type, continuing
 the trend from 2023.
 
-Insight for Defenders: Ensure that defenses, such as web application firewalls, are in
+**Insight for Defenders**: Ensure that defenses, such as web application firewalls, are in
 place to detect and prevent attacks such as command injections, cross-site scripting and
 SQL injections as early as possible. The increase in attacks on remote management
 protocols is also significant because most of those are related to credential-based attacks.
 Best practices in credentials are paramount, such as avoiding default and easily guessed
 passwords.
 
-2024 Threat Roundup | 9
+ 2024 Threat Roundup  |  9
 
-2.4. Weak Credentials – a Return to Generic Usernames
+### 2.4. Weak Credentials – a Return to Generic Usernames
 
-![Graph showing the percentage of generic usernames used in attacks, increasing from 85% in 2023 to 95% in 2024.]
-![Graph showing the breakdown of specific usernames abused by attackers, with IoT devices at 35% in 2023 and Database, DevOps, and Cloud becoming more relevant in 2024.]
-![Graph showing the top abused credentials by category, with generic usernames being the most prevalent.]
-![Graph showing the top abused credentials by specific username type, highlighting IoT devices, Database, DevOps, and Cloud.]
-
-Figure 4 – Top abused credentials
+![Graph showing top abused credentials, divided into generic and specific usernames.](Image description)
+![Graph showing top abused credentials, divided into generic and specific usernames.](Image description)
+![Graph showing breakdown of specific usernames by category.](Image description)
+![Graph showing breakdown of specific usernames by category.](Image description)
 
 Figure 4 shows the most abused credentials we observed, divided in two categories:
 
-Generic usernames include “root,” “admin,” “user,” “guest” and several other such credentials. The increase from
-85% in 2023 to 95% in 2024 shows that attackers are again relying more heavily on brute-forcing and simple
-dictionary attacks than on targeting specific devices. This is even higher than the 87% we observed in 2022.
-Specific usernames (decreased from 15% to 5%) can be associated to specific roles, such as “www,” “backup,”
-“deployer” or even specific applications and devices, such as “odoo,” “rpi,” “kafka,” “zabbix” or “ec2-user”
+*   **Generic usernames** include “root,” “admin,” “user,” “guest” and several other such credentials. The increase from
+    85% in 2023 to 95% in 2024 shows that attackers are again relying more heavily on brute-forcing and simple
+    dictionary attacks than on targeting specific devices. This is even higher than the 87% we observed in 2022.
+*   **Specific usernames** (decreased from 15% to 5%) can be associated to specific roles, such as “www,” “backup,”
+    “deployer” or even specific applications and devices, such as “odoo,” “rpi,” “kafka,” “zabbix” or “ec2-user”
 
 Even though the overall percentage of specific usernames decreased, it’s still relevant to analyze the breakdown
 of types of specific usernames that attackers are abusing. In 2023, the most popular category was IoT devices
@@ -202,22 +243,22 @@ In the IoT category, the most popular usernames were “ubnt” (for Ubiquiti ro
 networking) and “zyfwp” (for Zyxel firewalls). In February 2024, we published an analysis of botnets targeting
 Ubiquiti routers since there was a takedown of Moobot which had been commandeered by Russia’s APT28.
 
-Fact: Best practices for credential management are crucial to prevent attacks leveraging
+**Fact**: Best practices for credential management are crucial to prevent attacks leveraging
 weak credentials.
 
-Insight for Defenders: NIST released an updated version of its digital identity guidelines
+**Insight for Defenders**: NIST released an updated version of its digital identity guidelines
 in August 2024 that challenges some long-held assumptions in the cybersecurity
 community about password complexity and the need for periodic changes.
 
-2024 Threat Roundup | 10
+ 2024 Threat Roundup  |  10
 
-2.5. Exploits – There’s Still Much Beyond KEV
+ 2024 Threat Roundup  |  11
 
-![Graph showing the percentage of exploit attempts against web servers and applications, increasing from 14% in 2022 to 56% in 2024.]
-![Graph showing the distribution of exploited vulnerabilities by category, with web applications at 56%, network infrastructure at 14%, software libraries at 14%, and IoT devices at 16%.]
-![Table listing the top 10 most exploited vulnerabilities, including CVEs affecting Hikvision, Redis, Microsoft Windows, GitLab, Citrix NetScaler, and ConnectWise ScreenConnect.]
+### 2.5. Exploits – There’s Still Much Beyond KEV
 
-Figure 5 – Vulnerabilities exploited during the study period
+![Graph showing vulnerabilities exploited during the study period.](Image description)
+![Graph showing vulnerabilities exploited during the study period.](Image description)
+![Graph showing vulnerabilities exploited during the study period.](Image description)
 
 Exploit attempts against web servers and applications have been on a steady rise since 2022, and continue as
 the largest category we see:
@@ -240,7 +281,9 @@ exploitation:
 Several categories of IoT devices and other applications known to be often exposed and vulnerable are also
 routinely targeted, but this category decreased from 24% to 16%.
 
-Three other observations are relevant: Five of the top 10 most exploited vulnerabilities we reported in 2023
+ 2024 Threat Roundup  |  12
+
+Three other observations are relevant: Five of the top 10 most exploited vulnerabilities we reported in 2023
 remained in the list in 2024:
 
 *   CVE-2021-36260 affecting Hikvision
@@ -262,4 +305,4 @@ When we merge our AEE data with observations from the Shadowserver foundation, w
 least 25 vulnerabilities affecting OT and Industrial IoT devices that are exploited by botnets or automated attacks
 and which are not included in CISA’s KEV (shown below).
 
-| Vendor           | Products                                    | CVEs
+| Vendor            | Products                                     | CVEs

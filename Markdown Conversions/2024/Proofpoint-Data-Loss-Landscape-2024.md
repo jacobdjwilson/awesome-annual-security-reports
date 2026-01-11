@@ -1,25 +1,3 @@
-# 2024 Data Loss Landscape Report
-
-## Table of Contents
-- [Introduction](#introduction)
-- [Key Findings](#key-findings)
-- [Data Loss Is a People Problem](#data-loss-is-a-people-problem)
-- [Counting the Costs](#counting-the-costs)
-- [Departing Users and Determined Attackers](#departing-users-and-determined-attackers)
-- [Sounding the Alarm](#sounding-the-alarm)
-- [Departing Dearly](#departing-dearly)
-- [Dark Cloud Overhead](#dark-cloud-overhead)
-- [Maturing Beyond Compliance](#maturing-beyond-compliance)
-- [Looking Ahead: Better Visibility, More Expertise](#looking-ahead-better-visibility-more-expertise)
-- [Conclusion](#conclusion)
-- [Methodology](#methodology)
-
-# Report Content Below
-
-The official report URL is: https://www.proofpoint.com/us/resources/threat-reports/data-security-landscape-report
-
-# Report Content Below
-
 REPORT
 
 The 2024 Data
@@ -31,7 +9,25 @@ and misdirected email
 
 proofpoint.com
 
-## INTRODUCTION
+## Table of Contents
+- [INTRODUCTION](#introduction)
+- [KEY FINDINGS](#key-findings)
+- [Data Loss Is a People Problem](#data-loss-is-a-people-problem)
+- [WHAT IS A CARELESS USER?](#what-is-a-careless-user)
+- [Counting the Costs](#counting-the-costs)
+- [Departing Users and Determined Attackers](#departing-users-and-determined-attackers)
+- [Sounding the Alarm](#sounding-the-alarm)
+- [WHAT IS A MALICIOUS USER?](#what-is-a-malicious-user)
+- [Departing Dearly](#departing-dearly)
+- [Dark Cloud Overhead](#dark-cloud-overhead)
+- [WHAT IS A COMPROMISED USER?](#what-is-a-compromised-user)
+- [Maturing Beyond Compliance](#maturing-beyond-compliance)
+- [DLP MATURITY LEVELS](#dlp-maturity-levels)
+- [Looking Ahead: Better Visibility, More Expertise](#looking-ahead-better-visibility-more-expertise)
+- [Conclusion](#conclusion)
+- [Methodology](#methodology)
+
+# INTRODUCTION
 
 Welcome to the inaugural edition of our Data Loss Landscape
 report. In these pages, we’ll explore the current state of data loss
@@ -126,7 +122,7 @@ Compliance
 
 3
 
-## KEY FINDINGS
+# KEY FINDINGS
 
 “Careless users” were the
 most cited cause of data loss.
@@ -156,7 +152,7 @@ disruption as a consequence.
 
 of users are responsible for 88% of data loss events.
 
-## Data Loss Is a People Problem
+# Data Loss Is a People Problem
 
 The vast majority (85%) of organizations polled in our survey
 experienced at least one data loss incident in the past year, showing
@@ -197,7 +193,7 @@ of carelessness include:
 *   Emailing personally identifiable information (PII) to a personal email account
 *   Any other unintended user exposure of systems or data
 
-## WHAT IS A CARELESS USER?
+# WHAT IS A CARELESS USER?
 
 Data loss isn’t always the result of
 deliberately malicious activity. Sometimes
@@ -323,7 +319,7 @@ in attached files or email body. Tessian data suggests that in 81% of
 organizations, at least one user sent the wrong attachment in an
 email last year.
 
-## Counting the Costs
+# Counting the Costs
 
 The high incidence of data loss reported in our survey is mirrored
 by an almost equal incidence of negative consequences. More
@@ -334,25 +330,31 @@ damage. It’s important to note that these consequences are not
 mutually exclusive. For example, a data loss incident can result in
 reputational damage that leads to lost revenue.
 
-56.6% | Business disruption/
+56.6%  |    Business disruption/
+
 revenue loss
 
-38.9% | Damaged
+38.9%  |    Damaged
+
 reputation
 
-35.8% | Weakened competitive
+35.8%  |    Weakened competitive
+
 positioning
 
-34.8% | Regulatory
+34.8%  |    Regulatory
+
 violation/fine
 
-28% | Litigation
+28%  |    Litigation
+
 expenses
 
-8.8% | No consequences — not
+8.8%  |    No consequences — not
+
 reported externally
 
-## Departing Users and
+Departing Users and
 Determined Attackers
 
 The modern threat landscape presents security teams with
@@ -379,7 +381,7 @@ the top answer. This may reflect a greater awareness among these
 respondents of IT users’ ability to manipulate or destroy data as well
 as steal it.
 
-![Figure 1. Consequences of data loss incidents](Image description: A bar chart showing the consequences of data loss incidents. The categories are Business disruption/revenue loss (56.6%), Damaged reputation (38.9%), Weakened competitive positioning (35.8%), Regulatory violation/fine (34.8%), Litigation expenses (28%), and No consequences — not reported externally (8.8%).)
+![Figure 1. Consequences of data loss incidents](Image description: A bar chart showing the consequences of data loss incidents. The longest bar, representing business disruption/revenue loss, is at 56.6%. Other consequences include damaged reputation (38.9%), weakened competitive positioning (35.8%), regulatory violation/fine (34.8%), litigation expenses (28%), and no consequences — not reported externally (8.8%).)
 
 80+%
 
@@ -442,9 +444,9 @@ employees
 Researchers/
 developers
 
-![Figure 2. Users who pose the greatest risk for potential data loss incidents](Image description: A bar chart showing users who pose the greatest risk for potential data loss incidents. The categories are Employees with access to sensitive data (accounting, sales and others) (62.8%), IT users with privileged access credentials (50.6%), Departing employees (28.7%), Partners/suppliers (25.0%), Contractors (23.4%), Executive employees (23.1%), and Researchers/developers (18.7%).)
+![Figure 2. Users who pose the greatest risk for potential data loss incidents](Image description: A horizontal bar chart showing users who pose the greatest risk for potential data loss incidents. The longest bar, representing employees with access to sensitive data (accounting, sales and others), is at 62.8%. Other categories include IT users with privileged access credentials (50.6%), departing employees (28.7%), partners/suppliers (25.0%), contractors (23.4%), executive employees (23.1%), and researchers/developers (18.7%).)
 
-## Sounding the Alarm
+# Sounding the Alarm
 
 The threat from careless, compromised or malicious users is
 reflected in the kinds of data alerts triggered on the Proofpoint
@@ -507,7 +509,7 @@ Upload
 File
 Preview
 
-## WHAT IS A MALICIOUS USER?
+# WHAT IS A MALICIOUS USER?
 
 While it might be comforting to think of cyber criminals as distant figures in far-off places, sometimes the threat comes from inside the house. In fact,
 insider threats can be even more dangerous than external attacks. Malicious insiders are able to bide their time, using privileged access to find
@@ -554,7 +556,7 @@ some companies have banned the use of generative AI sites altogether, others
 recognize the productivity benefits they can provide and have instead opted to
 monitor use.
 
-## Departing Dearly
+# Departing Dearly
 
 Security professionals consider departing employees the third
 riskiest category of user—a risk no doubt enhanced when leavers
@@ -571,15 +573,57 @@ is hording files and data before they leave. Allowing data access and storage on
 employees’ personal devices can offer companies a productivity gain, but it’s
 easy to see how quickly this policy can turn into a potential data loss risk.
 
-![Figure 3. Attack vectors over time](Image description: A line chart showing attack vectors over time, from January 2023 to September 2023. The lines represent Precision attack percent targeted tenants, Brute force percent targeted tenants, Precision attack percent impacted tenants, and Brute force percent impacted tenants. The chart shows that precision attacks consistently targeted and impacted a higher percentage of tenants than brute force attacks.)
+Precision attack percent
+targeted tenants
 
-## Dark Cloud Overhead
+Brute force percent
+targeted tenants
+
+Precision attack percent
+impacted tenants
+
+Brute force percent
+impacted tenants
+
+100%
+
+80%
+
+60%
+
+40%
+
+20%
+
+0%
+
+![Figure 3. Attack vectors over time](Image description: A line graph showing attack vectors over time, from January 2023 to September 2023. The graph displays four lines representing precision attack percent targeted tenants, brute force percent targeted tenants, precision attack percent impacted tenants, and brute force percent impacted tenants. The precision attack lines generally remain higher than the brute force lines, especially for targeted tenants.)
+
+# Dark Cloud Overhead
 
 Nearly 38% of respondents said that the proliferation of cloud/
 SaaS applications is a challenge for their DLP programs. With many
 businesses now fully embracing cloud solutions due to the shift to
 hybrid work and digital transformation, these data stores are a rich
 target for attackers.
+
+Jan 2023
+
+Feb
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+Jul
+
+Aug
+
+Sep
 
 The risk to cloud tenants is borne out by threat data from our platform. Between
 January–September 2023, 96% of monitored cloud tenants were targeted by
@@ -597,7 +641,7 @@ attack types, external threat actors had a 58% overall success rate when trying
 to infiltrate cloud tenants, showing that they recognize data loss is people-
 centric and are looking to exploit users’ vulnerabilities.
 
-## WHAT IS A COMPROMISED USER?
+# WHAT IS A COMPROMISED USER?
 
 Zero-day vulnerabilities might make a lot
 of headlines, but there’s a reason most
@@ -694,8 +738,6 @@ xls
 
 other
 
-![Breakdown of File Types in Suspicious File Activities](Image description: A pie chart showing the breakdown of file types in suspicious file activities. The categories are xlsx (28.06%), pdf (19.44%), docx (18.16%), xls (10.11%), jpg (8.45%), png (6.06%), pptx (3.47%), xlsm (3.43%), and other (2.81%).)
-
 Cloud workspaces are also increasingly under threat from malicious or abused
 OAuth applications. Like traditional malware, a malicious OAuth app can give
 threat actors the freedom to do as they please on an infected tenant. In our
@@ -707,7 +749,7 @@ application remains authorized until its access is revoked. We found that more
 than 15% of compromised organizations experienced this kind of authorized app
 abuse after an initial breach.
 
-## Maturing Beyond Compliance
+# Maturing Beyond Compliance
 
 Many DLP programs were first spun up in response to legal
 regulations. But according to respondents, regulation and
@@ -719,25 +761,32 @@ linked to new privacy regulations being introduced at local and
 international levels, there appears to be a real desire to do more than
 simply comply with the legal minimum.
 
-50.3% | Protecting the privacy of
+50.3%  |    Protecting the privacy of
+
 employees and customers
 
-40.6% | Minimizing costs
+40.6%  |    Minimizing costs
+
 associated with data loss
 
-39.3% | Protecting our company’s
+39.3%  |    Protecting our company’s
+
 reputation
 
-38.8% | Protecting intellectual
+38.8%  |    Protecting intellectual
+
 property
 
-38.3% | Meeting regulatory
+38.3%  |    Meeting regulatory
+
 compliance standards
 
-32.0% | Meeting internal
+32.0%  |    Meeting internal
+
 compliance standards
 
-29.9% | Ensuring the competitiveness
+29.9%  |    Ensuring the competitiveness
+
 of my company
 
 At an industry level, regulation was the key driver among finance respondents—
@@ -759,7 +808,7 @@ roadmaps, source code, patient applications)
 
 Credit/debit information
 
-![Figure 5. Concern for data protection, by type](Image description: A bar chart showing concern for data protection, by type. The categories are Valuable corporate data (M&A documents, legal contracts, supplier contracts, pricing lists) (58.4%), Intellectual property (product designs, product roadmaps, source code, patient applications) (46.5%), Credit/debit information (35.7%), Customer PII (53.0%), Employee PII (36.4%), and Protected health information (PHI) (24.4%).)
+![Figure 5. Concern for data protection, by type](Image description: A stacked bar chart showing concern for data protection by type. The longest segment, representing valuable corporate data, is at 58.4%. Other segments include intellectual property (46.5%), credit/debit information (35.7%), customer PII (53.0%), employee PII (36.4%), and protected health information (PHI) (24.4%).)
 
 58.4%
 
@@ -780,32 +829,34 @@ Employee PII
 Protected health information (PHI)
 
 ![Figure 4. Primary motivational drivers
-for DLP programs](Image description: A bar chart showing the primary motivational drivers for DLP programs. The categories are Protecting the privacy of employees and customers (50.3%), Minimizing costs associated with data loss (40.6%), Protecting our company’s reputation (39.3%), Protecting intellectual property (38.8%), Meeting regulatory compliance standards (38.3%), Meeting internal compliance standards (32.0%), and Ensuring the competitiveness of my company (29.9%).)
+for DLP programs](Image description: A horizontal bar chart showing the primary motivational drivers for DLP programs. The longest bar, representing protecting the privacy of employees and customers, is at 50.3%. Other drivers include minimizing costs associated with data loss (40.6%), protecting our company’s reputation (39.3%), protecting intellectual property (38.8%), meeting regulatory compliance standards (38.3%), meeting internal compliance standards (32.0%), and ensuring the competitiveness of my company (29.9%).)
 
 However, there are outliers, particularly in Europe, where strict data protection
 laws exist such as the General Data Protection Regulation (GDPR). Respondents
 from France and the U.K. both said conforming with external regulations was their
-chief DLP motivator. On the other hand, respondents in Spain and Brazil were
-the least likely to give regulation as a key reason, at around 18% each. Respondents
+chief DLP motivator. On the other hand, respondents in Spain and Brazil were the
+least likely to give regulation as a key reason, at around 18% each. Respondents
 in Germany also cited minimizing costs associated with data loss and protecting
 intellectual property as their second and third drivers after privacy. In South
 Korea, internal compliance was the top factor, with external compliance the
 second most cited response.
 
-### DLP MATURITY LEVELS
+# DLP MATURITY LEVELS
 
-*   **Emerging**: Organizations with a limited or
-    no formal DLP program. They may
-    leverage point solutions that have some
-    DLP capabilities (CASB, IPS, SWG, SEG).
-*   **Evolving**: Organizations with a formal DLP
-    program across some DLP channels.
-    Used primarily for auditing and reporting
-    purposes.
-*   **Mature**: Organizations with a formal DLP
-    program across key DLP channels with
-    classification and automated prevention
-    and remediation.
+Emerging: Organizations with a limited or
+no formal DLP program. They may
+leverage point solutions that have some
+DLP capabilities (CASB, IPS, SWG, SEG).
+
+Evolving: Organizations with a formal DLP
+program across some DLP channels.
+Used primarily for auditing and reporting
+purposes.
+
+Mature: Organizations with a formal DLP
+program across key DLP channels with
+classification and automated prevention
+and remediation.
 
 This focus on “valuable corporate data”—a nebulous category that includes
 contracts, price lists and M&A documents—possibly reflects the growing
@@ -838,7 +889,7 @@ Emerging
 
 Evolving
 
-## Looking Ahead:
+# Looking Ahead:
 Better Visibility, More Expertise
 
 As DLP programs mature, respondents largely agree about the
@@ -855,6 +906,8 @@ malicious or compromised user.
 
 70%
 
+43%
+
 cite visibility into sensitive
 
 data, user behavior and
@@ -866,8 +919,6 @@ important capability for
 their DLP program.
 
 but
-
-43%
 
 say that this is an area
 
@@ -929,7 +980,7 @@ of investment in DLP tools
 
 and expertise is adequate.
 
-## Conclusion
+# Conclusion
 
 Over 90% of respondents in our survey said that their organizations
 are currently investing in DLP solutions—good news for consumers,
@@ -964,15 +1015,15 @@ security teams know how to respond. That way, you can tackle the full spectrum o
 people-centric data loss scenarios, from thwarting external threats to preventing
 malicious, careless and compromised users within your ranks.
 
-## Methodology
+# Methodology
 
-### Point Internal Data
+Point Internal Data
 
 Data was sourced from our Proofpoint information protection platform
 between January–September 2023 and from randomly selected Tessian
 deployments between January and December 2023.
 
-### Survey Data
+Survey Data
 
 Proofpoint partnered with cybersecurity market research firm, CyberEdge
 Group, to develop the 15-question survey instrument, to localize the survey
@@ -988,7 +1039,7 @@ countries and industries should be viewed as anecdotal, as their sample
 sizes are much smaller. Proofpoint recommends making actionable decisions
 based on global data only.
 
-### About CyberEdge Group
+About CyberEdge Group
 
 Founded in 2012, CyberEdge is the largest research, marketing and publishing firm
 to serve the cybersecurity vendor community, working with approximately one in every
@@ -1002,11 +1053,4 @@ DarkReading, CISO Magazine and others.
 
 CyberEdge has cultivated a reputation for delivering the highest-quality market
 research data, survey reports, analyst reports, white papers and custom books and
-eBooks in the cybersecurity industry. The depth of its cybersecurity subject matter
-expertise and the breadth of its services are second to none.
-
-To learn more about CyberEdge, connect to www.cyber-edge.com.
-
-### About Proofpoint, Inc.
-
-Proofpoint, Inc. is
+eBooks in the
