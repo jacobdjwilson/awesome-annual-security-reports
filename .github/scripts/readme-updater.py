@@ -114,7 +114,7 @@ class ReadmeUpdater:
         content_slice = self.parser.content[start:end]
         entry_text = self._format_entry(analysis)
         
-        existing_line, existing_year = self._find_existing(content_slice, analysis['organization'], analysis['title'])
+        existing_line, existing_year = self._find_existing(content_slice, analysis)
         
         if existing_line:
             try:
@@ -159,19 +159,47 @@ class ReadmeUpdater:
         lines.sort(key=lambda x: re.search(r'- \[([^\]]+)\]', x).group(1).lower() if re.search(r'- \[([^\]]+)\]', x) else x.lower())
         return '\n'.join(lines) + '\n'
 
-    def _find_existing(self, content: str, org: str, title: str) -> Tuple[Optional[str], Optional[int]]:
-        """Checks for existing entry to prevent duplicates."""
-        org_norm, title_norm = org.lower(), self._normalize_title(title)
-        
+    def _find_existing(self, content: str, analysis: Dict[str, Any]) -> Tuple[Optional[str], Optional[int]]:
+        """
+        Checks for existing entry to prevent duplicates using three signals:
+        1. Exact Organization and Title match.
+        2. Organization URL match (handles rebranding like WEF vs World Economic Forum).
+        3. PDF Filename match (handles series updates).
+        """
+        org_norm = analysis['organization'].lower()
+        title_norm = self._normalize_title(analysis['title'])
+        target_url = analysis['organization_url'].lower().rstrip('/')
+        target_pdf = Path(analysis['pdf_path']).name.lower()
+
+        # Remove year from PDF filename for generic series matching (e.g., Report-2025.pdf -> Report)
+        target_pdf_base = re.sub(r'\d{4}', '', target_pdf).strip('-_ ')
+
         for line in content.split('\n'):
             if not line.strip().startswith('- ['): continue
             
-            match = re.search(r'^- \[([^\]]+)\]\(.*\) - \[([^\]]+)\]\(.*\)', line.strip())
+            # Extract Components: - [Org](OrgURL) - [Title](PdfURL) (Year)
+            match = re.search(r'^- \[([^\]]+)\]\(([^\)]+)\) - \[([^\]]+)\]\(([^\)]+)\)\s*\((\d{4})\)', line.strip())
             if match:
-                curr_org, curr_title = match.group(1).lower(), self._normalize_title(match.group(2))
+                curr_org = match.group(1).lower()
+                curr_org_url = match.group(2).lower().rstrip('/')
+                curr_title = self._normalize_title(match.group(3))
+                curr_pdf_url = match.group(4).lower()
+                curr_year = int(match.group(5))
+
+                # Check 1: URL Match (Strongest signal for same organization)
+                if target_url == curr_org_url:
+                    return line, curr_year
+
+                # Check 2: PDF Filename Match (Strong signal for report series)
+                curr_pdf_name = Path(curr_pdf_url).name
+                curr_pdf_base = re.sub(r'\d{4}', '', curr_pdf_name).strip('-_ ')
+                if target_pdf_base == curr_pdf_base and target_pdf_base != "":
+                    return line, curr_year
+
+                # Check 3: Org and Title Match (Original Logic)
                 if curr_org == org_norm and curr_title == title_norm:
-                    year_match = re.search(r'\((\d{4})\)', line)
-                    return line, int(year_match.group(1)) if year_match else None
+                    return line, curr_year
+
         return None, None
 
     def _normalize_title(self, title: str) -> str:
@@ -193,13 +221,10 @@ class ReadmeUpdater:
         return -1
 
     def _validate_data(self, data: Dict[str, Any]) -> bool:
-        required = ['organization', 'title', 'year', 'summary', 'type', 'category', 'pdf_path']
+        required = ['organization', 'title', 'year', 'summary', 'type', 'category', 'pdf_path', 'organization_url']
         if any(not data.get(f) for f in required):
             print(f"ERROR: Missing fields in analysis: {[f for f in required if not data.get(f)]}")
             return False
-        if data.get('organization') == data.get('title') and '-' in data.get('organization', ''):
-             print(f"ERROR: Organization matches Title (parsing error): {data['organization']}")
-             return False
         return str(data.get('year', '')).isdigit()
 
     def save(self):
