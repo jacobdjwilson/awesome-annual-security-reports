@@ -5,6 +5,7 @@ import re
 import argparse
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
+from datetime import datetime
 
 class ReadmeParser:
     def __init__(self, readme_path: str):
@@ -69,7 +70,7 @@ class ReadmeUpdater:
     def add_report_entry(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
         """Orchestrates adding a report entry using a prioritized strategy."""
         if not self._validate_data(analysis):
-            return False, "", -1, "invalid_data"
+            return False, "", -1, "invalid_or_stale_data"
         
         report_type = analysis.get('type', 'Analysis')
         category = analysis.get('category', 'Industry Trends')
@@ -221,11 +222,26 @@ class ReadmeUpdater:
         return -1
 
     def _validate_data(self, data: Dict[str, Any]) -> bool:
+        """Validates presence of data and ensures report is not older than 2 years."""
         required = ['organization', 'title', 'year', 'summary', 'type', 'category', 'pdf_path', 'organization_url']
+        
+        # Basic field validation
         if any(not data.get(f) for f in required):
             print(f"ERROR: Missing fields in analysis: {[f for f in required if not data.get(f)]}")
             return False
-        return str(data.get('year', '')).isdigit()
+        
+        # Date threshold validation
+        try:
+            report_year = int(data.get('year'))
+            current_year = datetime.now().year
+            if (current_year - report_year) >= 2:
+                print(f"SKIPPING: Report from {report_year} is older than the 2-year threshold.")
+                return False
+        except (ValueError, TypeError):
+            print(f"ERROR: Invalid year format for {data.get('organization')}")
+            return False
+
+        return True
 
     def save(self):
         self.parser.readme_path.write_text(self.parser.content, encoding='utf-8')
@@ -274,10 +290,10 @@ def main():
             print(f"  -> SUCCESS ({action.upper()})")
         else:
             stats["errors"] += 1
-            print(f"  -> FAILED: {action}")
+            print(f"  -> FAILED/SKIPPED: {action}")
 
     print("\n=== Summary ===")
-    print(f"Processed: {len(results)} | New: {stats['new']} | Updated: {stats['updated']} | Errors: {stats['errors']}")
+    print(f"Processed: {len(results)} | New: {stats['new']} | Updated: {stats['updated']} | Errors/Skipped: {stats['errors']}")
 
     if changes_pending:
         updater.save()
