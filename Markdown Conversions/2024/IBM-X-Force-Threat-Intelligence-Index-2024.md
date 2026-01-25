@@ -13,7 +13,10 @@
 - [Recommendations](#recommendations)
 - [About us](#about-us)
 
+---
+
 ## Executive summary
+
 The biggest shift the IBM® X-Force® team observed in 2023 was a pronounced surge in cyberthreats targeting identities. Attackers have a historical inclination to choose the path of least resistance in pursuit of their objectives. In this era, the focus has shifted towards logging in rather than hacking in, highlighting the relative ease of acquiring credentials compared to exploiting vulnerabilities or executing phishing campaigns. Lack of identity protections was corroborated by IBM X-Force penetration testing data for 2023, which ranked identification and authentication failures as the second most common finding.
 
 Additionally, X-Force observed a 100% increase in “Kerberoasting" during incident response engagements. Kerberoasting is a technique focused on compromising Microsoft Windows Active Directory credentials through Kerberos tickets. This indicates a technique shift in how attackers are acquiring identities to carry out their operations.
@@ -31,39 +34,50 @@ Despite looming gen AI-enabled threats, X-Force hasn’t observed any concrete e
 The IBM X-Force Threat Intelligence Index offers these insights as a resource to IBM clients, researchers in the security industry, policy makers, the media and the broader community of security professionals and business leaders. It’s our intent to keep all parties informed of the current threat landscape so they can make the best decisions for reducing risk.
 
 ## Report highlights
-- **Increase year over year in volume of attacks using valid credentials**: For the first time ever, abusing valid accounts became cybercriminals’ most common entry point into victim environments. It represented 30% of all incidents X-Force responded to in 2023.
-- **Drop in enterprise ransomware incidents**: Despite remaining the most common action on objective (20%), X-Force observed a drop in enterprise ransomware incidents. This drop is likely to impact adversaries’ revenue expectations from encryption-based extortion as larger organizations are stopping attacks before ransomware is deployed and opting against paying and decrypting in favor of rebuilding if ransomware takes hold.
-- **Percentage of data theft and leak incidents**: Data theft and leak rose to the most common impact for organizations, indicating more groups are favoring this method to obtain financial gains.
-- **Upsurge in use of infostealers**: X-Force has observed threat groups who have previously specialized in ransomware showing increasing interest in infostealers. And a number of prominent new infostealers recently debuted and demonstrated increased activity in 2023, such as Rhadamanthys, LummaC2 and StrelaStealer.
-- **Share of security misconfigurations among web application vulnerabilities identified**: X-Force penetration testing engagements revealed that the most observed web application risk across client environments globally was security misconfigurations. Of these misconfigurations, the top offenses included allowing concurrent user sessions in the application, which could weaken multifactor authentication (MFA) through session hijacking.
-- **Percentage of incidents that involved malicious use of legitimate tools**: Nearly one-third of incidents that X-Force responded to were cases where legitimate tools were used for malicious purposes, such as credential theft, reconnaissance, remote access or data exfiltration.
-- **Market share threshold likely to trigger attacks against AI platforms**: X-Force analysis indicates that the establishment of AI market dominance will signal AI attack surface maturity. This analysis suggests that once a single AI technology approaches 50% market share, or when the market consolidates to three or less technologies, the cybercriminal ecosystem will be incentivized to invest in developing tools and attack paths targeting AI technologies.
-- **Share of manufacturing attack incidents within the top 10 attacked industries**: Manufacturing was once again the top attacked industry in 2023 for the third year in a row, representing 25.7% of incidents within the top 10 attacked industries. Malware was the top action on objective observed at 45%. Ransomware accounted for 17% of incidents.
-- **Percentage of critical infrastructure incidents where initial access vector could have been mitigated**: For a majority of incidents on critical infrastructure that X-Force responded to, the initial access vector could have been mitigated with best practices and security fundamentals, such as asset and patch management, credential hardening and the principle of least privilege.
-- **Increase in attacks year over year in Europe**: Europe also experienced the highest percentage of incidents (32%) out of the five geographic regions. Malware was the most observed action on objective accounting for 44% of incidents.
+
+71% Increase year over year in volume of attacks using valid credentials
+
+For the first time ever, abusing valid accounts became cybercriminals’ most common entry point into victim environments. It represented 30% of all incidents X-Force responded to in 2023.
+
+11.5% Drop in enterprise ransomware incidents
+
+Despite remaining the most common action on objective (20%), X-Force observed a drop in enterprise ransomware incidents. This drop is likely to impact adversaries’ revenue expectations from encryption-based extortion as larger organizations are stopping attacks before ransomware is deployed and opting against paying and decrypting in favor of rebuilding if ransomware takes hold.
+
+32% Percentage of data theft and leak incidents
+
+Data theft and leak rose to the most common impact for organizations, indicating more groups are favoring this method to obtain financial gains.
+
+266% Upsurge in use of infostealers
+
+X-Force has observed threat groups who have previously specialized in ransomware showing increasing interest in infostealers. And a number of prominent new infostealers recently debuted and demonstrated increased activity in 2023, such as Rhadamanthys, LummaC2 and StrelaStealer.
+
+30% Share of security misconfigurations among web application vulnerabilities identified
+
+X-Force penetration testing engagements revealed that the most observed web application risk across client environments globally was security misconfigurations. Of these misconfigurations, the top offenses included allowing concurrent user sessions in the application, which could weaken multifactor authentication (MFA) through session hijacking.
+
+32% Percentage of incidents that involved malicious use of legitimate tools
+
+Nearly one-third of incidents that X-Force responded to were cases where legitimate tools were used for malicious purposes, such as credential theft, reconnaissance, remote access or data exfiltration.
+
+50% Market share threshold likely to trigger attacks against AI platforms
+
+X-Force analysis indicates that the establishment of AI market dominance will signal AI attack surface maturity. This analysis suggests that once a single AI technology approaches 50% market share, or when the market consolidates to three or less technologies, the cybercriminal ecosystem will be incentivized to invest in developing tools and attack paths targeting AI technologies.
+
+84% Percentage of critical infrastructure incidents where initial access vector could have been mitigated
+
+For a majority of incidents on critical infrastructure that X-Force responded to, the initial access vector could have been mitigated with best practices and security fundamentals, such as asset and patch management, credential hardening and the principle of least privilege.
+
+25.7% Share of manufacturing attack incidents within the top 10 attacked industries
+
+Manufacturing was once again the top attacked industry in 2023 for the third year in a row, representing 25.7% of incidents within the top 10 attacked industries. Malware was the top action on objective observed at 45%. Ransomware accounted for 17% of incidents.
+
+31% Increase in attacks year over year in Europe
+
+Europe also experienced the highest percentage of incidents (32%) out of the five geographic regions. Malware was the most observed action on objective accounting for 44% of incidents.
 
 ## Top initial access vectors
+
 One of the top initial access vectors in 2023—jumping from third to first place—was the abuse of valid accounts identified in 30% of the observed incidents X-Force responded to. As defenders increase their detection and prevention capabilities, attackers are finding that obtaining valid credentials is an easier route to achieving their goals, considering the alarming volume of compromised yet valid credentials available—and easily accessible—on the dark web. X-Force found that cloud account credentials alone make up 90% of for sale cloud assets on the dark web, making it easy for threat actors to take over legitimate user identities to establish access into victim environments. Attacker use of valid accounts as an initial access vector appears to have a significant impact on the required response efforts, as well.
-
-![Figure 1: Top initial access vectors X-Force observed in 2022 and 2023. Sources: X-Force and MITRE ATT&CK Matrix1 for Enterprise framework]
-
-Top initial access vectors in 2023 versus 2022
-- **2023**
-  - Valid accounts (T1078): 30%
-  - Phishing (T1566): 30%
-  - Exploit public-facing application (T1190): 29%
-  - External remote services (T1133): 9%
-  - Drive-by compromise (T1189): 3%
-  - Trusted relationship (T1199): 3%
-  - Replication through removable media (T1091): 1%
-- **2022**
-  - Phishing (T1566): 41%
-  - Exploit public-facing application (T1190): 26%
-  - Valid accounts (T1078): 16%
-  - External remote services (T1133): 12%
-  - Drive-by compromise (T1189): 1%
-  - Trusted relationship (T1199): 1%
-  - Replication through removable media (T1091): 4%
 
 In 2023, major incidents where the attacker leveraged a valid account for initial access were associated with more complex response measures by defenders—190% greater than the average incident.
 
@@ -71,40 +85,35 @@ As we will analyze further in the report, we identified a concerning trend in th
 
 Phishing, whether through an attachment, link or as a service, also comprised 30% of all incidents remediated by X-Force in 2023. Although tied for first place in 2023, the volume of phishing is down by 44% from 2022.
 
-The significant drop in observed compromises through phishing is likely a reflection of both continued adoption and revaluation of phishing mitigation techniques and strategies, as well as attackers shifting to the use of valid credentials to gain initial access. Using compromised valid credentials is a quick, direct route into the environment. Whereas IBM X-Force Red data indicates that human-crafted phishing emails are time-intensive, requiring on average 16 hours to craft one. However, it’s worth noting that X-Force assesses that phishing is expected to be one of the first malicious use cases of AI that cybercriminals will invest in, theorizing that it’s far from done scaling. In fact, X-Force data shows that AI can generate a deceptive phish in 5 minutes, a potential time savings of nearly 2 days for attackers.
+The significant drop in observed compromises through phishing is likely a reflection of both continued adoption and revaluation of phishing mitigation techniques and strategies, as well as attackers shifting to the use of valid credentials to gain initial access. Using compromised valid credentials is a quick, direct route into the environment. Whereas IBM X-Force Red data indicates that human-crafted phishing emails are time-intensive, requiring on average 16 hours to craft one. However, it’s worth noting that X-Force assesses that phishing is expected to be one of the first malicious use cases of AI that cybercriminals will invest in, theorizing that it’s far from done scaling.
+
+In fact, X-Force data shows that AI can generate a deceptive phish in 5 minutes, a potential time savings of nearly 2 days for attackers.
 
 Furthermore, X-Force responded to multiple cases involving email compromises that circumvented MFA measures using adversary-in-the-middle (AitM) attacks. These attacks started with an initial phishing message that directed users to a reverse-proxy phishing page, which allowed attackers to relay traffic between the user and the legitimate site and thus collect user credentials, MFA input and session cookies. In multiple cases, X-Force observed the threat actor leverage their initial access to carry out both internal and external phishing attempts, as well as further abuse of credentials, to access additional applications.
-
-New to the 2024 IBM X-Force Threat Intelligence Index, X-Force reviewed hundreds of findings from our penetration testing data to reveal the top Open Worldwide Application Security Project (OWASP) web application security risks. The most observed risk across client environments globally was security misconfigurations, accounting for 30% of total findings. Of this category, penetration testers found more than 140 findings of ways that attackers can exploit misconfigurations. Of these misconfigurations, the top offenses included allowing concurrent user sessions in the application at 15%, which could weaken MFA through session hijacking, verbose error messages at 12% and excessive session timeouts at 8%.
-
-In second place, identification and authentication failures made up 21% of the most observed web application security risks. Of these findings, the top offenses were weak password policies that included Active Directory password policies (19%), usernames verifiable through errors (17%), Server Message Block (SMB) signing not required and URLs containing sensitive information at 8% each.
-
-![Figure 2. Top OWASP web application security risks based on penetration testing data. Source: X-Force]
-
-Security misconfigurations top web application risk
 
 In third place, exploitation of public-facing applications—defined as adversaries taking advantage of a weakness in an internet-facing computer or program—was identified in 29% of incidents, which is slightly higher than what we observed in 2022.
 
 In 2023, numerous organizations experienced cyberattacks as a result of widespread exploitation of managed file transfer (MFT) tools, such as MOVEit and GoAnywhere. MFT exploitation poses a high risk, as these internet-connected file transfer services facilitate the immediate access of sensitive enterprise data by attackers. Until 2023, many defenders overlooked the high-risk nature of MFT tools, leading to inadequately protected deployments without proper detection and response strategies. This lack of consideration provided threat actors with a significant time advantage, allowing them to scale their attacks undetected. Last year’s mass exploitation of MFTs, and the ongoing efforts of ransomware groups focusing on data extortion, underscore the need for organizations to fully understand their enterprise architecture. To facilitate this understanding, organizations should develop threat models that map out their systems and the associated attack paths to their sensitive data stored on premises, in the cloud, or through third parties.
 
+### Security misconfigurations top web application risk
+
+New to the 2024 IBM X-Force Threat Intelligence Index, X-Force reviewed hundreds of findings from our penetration testing data to reveal the top Open Worldwide Application Security Project (OWASP) web application security risks. The most observed risk across client environments globally was security misconfigurations, accounting for 30% of total findings. Of this category, penetration testers found more than 140 findings of ways that attackers can exploit misconfigurations. Of these misconfigurations, the top offenses included allowing concurrent user sessions in the application at 15%, which could weaken MFA through session hijacking, verbose error messages at 12% and excessive session timeouts at 8%.
+
+![Top OWASP web application security risks based on penetration testing data.](Image description)
+
+In second place, identification and authentication failures made up 21% of the most observed web application security risks. Of these findings, the top offenses were weak password policies that included Active Directory password policies (19%), usernames verifiable through errors (17%), Server Message Block (SMB) signing not required and URLs containing sensitive information at 8% each.
+
+### Zero-day decline
+
 Every year there are a few vulnerabilities that catch enterprises by surprise and cause widespread damage. In 2023, the CL0P ransomware group exploited a vulnerability in the file transfer application MOVEit, common vulnerabilities and exposures (CVE)-2023-34362, to expose information on millions of individuals.
-
-![Figure 3: The growth of vulnerabilities, exploits and zero days since 1993. Also included is a timeline of major events involving vulnerabilities since 1993. The X-Force Vulnerability Database is one of the oldest and largest vulnerability databases in the world and reached its 30-year anniversary in 2023.]
-
-Zero-day decline
 
 While zero-day vulnerabilities garner notoriety, the reality is that zero-day vulnerabilities make up a very small percentage of the vulnerability attack surface—currently at 3% of total vulnerabilities tracked by X-Force. In 2023, there was a 72% drop in the number of zero days compared to 2022 with only 172 new zero-day vulnerabilities. Furthermore, from 2021 to 2022, there was a 44% decrease of new zero-day vulnerabilities, from 1,105 CVEs added in 2021 to 614 CVEs added in 2022. This decrease is likely indicative of attackers finding other less resource-intensive methods to gain entry, such as exploitation of older vulnerabilities or use of valid credentials, compromised or purchased.
 
-The vulnerability problem
-- **Category** | **Number** | **%**
-- Total vulnerabilities | 260,473 | N/A
-- Total vulnerabilities with weaponized exploits | 84,245 | 32%
-- Total zero days | 7,506 | 3%
-- Critical | 2,872 | 1%
-- High | 100,609 | 39%
-- Medium | 130,553 | 50%
-- Low | 25,781 | 10%
-- Cumlative vulnerabilities, exploits and zero days since 1988
+### The vulnerability problem
+
+![The growth of vulnerabilities, exploits and zero days since 1993. Also included is a timeline of major events involving vulnerabilities since 1993. The X-Force Vulnerability Database is one of the oldest and largest vulnerability databases in the world and reached its 30-year anniversary in 2023.](Image description)
+
+### Linux vulnerabilities
 
 The importance of securing Linux® systems has risen in prominence as increasing amounts of malicious activity targeting Linux have appeared. Malware developers are increasingly developing Linux malware and creating Linux variants of existing malware families. These changes to the Linux threat landscape highlight the criticality of systems hardening and monitoring for malicious activity.
 
@@ -112,90 +121,66 @@ Methodical vulnerability management is a key aspect of proactive defense. Accord
 
 Most threat activity targeting Red Hat Enterprise Linux systems in 2023 was associated with widely distributed threats. According to statistics from the Red Hat Insights malware detection service, the top threats detected were Linux rootkits, malware associated with the recently dismantled IPStorm botnet, which enabled proxying of malicious traffic through compromised devices, and the PGMiner cryptocurrency mining botnet.
 
-![Figure 4: Percentage of client environments with Critical CVEs or CVEs with known exploits. Source: Red Hat Insights]
-
-Linux vulnerabilities
+![Percentage of client environments with Critical CVEs or CVEs with known exploits.](Image description)
 
 ## Top actions on objectives
+
 According to IBM X-Force Incident Response data, deployment of malware was the most common action threat actors took on victim networks, occurring in 43% of all reported incidents. Of the total incidents, 20% were ransomware cases. Backdoors and crypto miners were discovered in 6% and 5% of cases, respectively. The remaining malware incidents included infostealers, loaders, bots, worms, web shells and downloaders.
 
-![Figure 5: Top actions on objectives observed by X-Force in 2023. Incidents can have more than one top action on objective observed. Source: X-Force]
+![Top actions on objectives observed by X-Force in 2023. Incidents can have more than one top action on objective observed.](Image description)
 
-Top actions on objectives 2023
-- **Malware** 43%
-  - 20% Ransomware
-  - 6% Backdoor
-  - 5% Cryptominer
-  - 4% Infostealer
-  - 4% Loader
-  - 4% Bot
-  - 3% Other
-  - 2% Downloader
-  - 2% Webshell
-  - 2% Worm
-- **Tools** 32%
-  - 13% Credential theft (credential acquisition)
-  - 10% Remote access
-  - 6% Recon and scanning
-- **Server access** 18%
-- **Data exfiltration** 11%
-- **BEC** 7%
-- **Spam campaign** 6%
+This year, X-Force also reviewed cases to identify where legitimate tools were used for malicious purposes, which was observed in 32% of cases. For example, X-Force has observed vulnerability scanners used to conduct reconnaissance or adversary simulation tools to exfiltrate data. These tools were used to perform credential theft in 13% of total cases, followed by data exfiltration (11%), remote access (10%) and reconnaissance (6%).
+
+### Ransomware
 
 Although X-Force responded to less ransomware cases in 2023, down 11.5% year over year, ransomware and ransomware-affiliated groups continued to target organizations globally, with multiple variants receiving upgrades to expand their targeting and functionality. The top ransomware variants observed by X-Force were BlackCat, CL0P, LockBit, BlackBasta and Royal.
 
 In 2022, ransomware was topped slightly by backdoors as the top attack X-Force responded to after dominating the IBM X-Force Incident Response activity since 2018. In 2023, although ransomware moved back to the top action on objective, X-Force observed a continued reduction in ransomware incident response activity.
 
-Ransomware
+However, analysis of ransomware extortion sites indicate ransomware activity globally has increased in 2023. The contradictory data points appear to be attributed to similar data presented in last year’s IBM X-Force Threat Intelligence Index. X-Force clients have continued to improve their capabilities to detect and respond to the precursors of a ransomware event, backdoors, lateral movement and identity abuse.
 
-However, analysis of ransomware extortion sites indicate ransomware activity globally has increased in 2023. The contradictory data points appear to be attributed to similar data presented in last year’s IBM X-Force Threat Intelligence Index. X-Force clients have continued to improve their capabilities to detect and respond to the precursors of a ransomware event, backdoors, lateral movement and identity abuse. For instance, X-Force responded to several cases involving Qakbot and other types of infections that were caught before ransomware would have likely been deployed. In addition, as we’ll indicate in the next section, data theft and leaks remain the top impacts observed across IBM X-Force Incident Response engagements.
-
-This year, X-Force also reviewed cases to identify where legitimate tools were used for malicious purposes, which was observed in 32% of cases. For example, X-Force has observed vulnerability scanners used to conduct reconnaissance or adversary simulation tools to exfiltrate data. These tools were used to perform credential theft in 13% of total cases, followed by data exfiltration (11%), remote access (10%) and reconnaissance (6%).
-
-These operations also appear to share many of the same connections to initial access malware distribution groups, such as IcedID, Emotet, Bumblebee, Qakbot and Gozi. X-Force also discovered a campaign likely undertaken by former members of the Conti ransomware group that leveraged a false claim of successful data theft as lure material. As such, the criminal core behind ITG23 is still prominent on the cybercriminal threat landscape.
-
-Ransomware operations that maintained their branding upgraded their operations, demonstrating resiliency. BlackCat developers, for instance, debuted a new variant of the malware dubbed Sphynx in early 2023, which introduced a number of new capabilities to make the ransomware more difficult to detect. Affiliates also have been observed evolving their tactics, techniques and procedures (TTPs) across the attack chain, including using a QR code for victims to access the ransom note. Additionally, ransomware operators continue to develop Linux versions of their ransomware. In 2023, new Linux variants of ransomware families were introduced, including CL0P and Royal.
+For instance, X-Force responded to several cases involving Qakbot and other types of infections that were caught before ransomware would have likely been deployed. In addition, as we’ll indicate in the next section, data theft and leaks remain the top impacts observed across IBM X-Force Incident Response engagements.
 
 These observations suggest that threat actors are no longer limiting themselves to ransomware attacks to commit extortion. They’re looking at other attack types to deliver on their objectives. For example, X-Force responded to multiple incidents associated with the CL0P ransomware group’s widespread data extortion attacks through MOVEit exploitation.
 
 Although the names of the most prominent ransomware operations continued to shift, X-Force uncovered new evidence linking many current families to past operations. While the Conti ransomware group—tracked by X-Force as ITG23—famously shut down in 2022, X-Force found evidence indicating connections to new ransomware projects. These new projects included Quantum, Royal, Zeon and BlackBasta ransomware, as well as the Karakurt data extortion group.
 
-![Figure 6: Time between initial access and ransomware deployment. Source: X-Force]
+These operations also appear to share many of the same connections to initial access malware distribution groups, such as IcedID, Emotet, Bumblebee, Qakbot and Gozi. X-Force also discovered a campaign likely undertaken by former members of the Conti ransomware group that leveraged a false claim of successful data theft as lure material. As such, the criminal core behind ITG23 is still prominent on the cybercriminal threat landscape.
+
+Ransomware operations that maintained their branding upgraded their operations, demonstrating resiliency. BlackCat developers, for instance, debuted a new variant of the malware dubbed Sphynx in early 2023, which introduced a number of new capabilities to make the ransomware more difficult to detect. Affiliates also have been observed evolving their tactics, techniques and procedures (TTPs) across the attack chain, including using a QR code for victims to access the ransom note. Additionally, ransomware operators continue to develop Linux versions of their ransomware. In 2023, new Linux variants of ransomware families were introduced, including CL0P and Royal.
+
+![Time between initial access and ransomware deployment.](Image description)
+
+### Ransomware attack timelines
 
 X-Force performed an analysis of ransomware attacks between 2022 and 2023 to determine if there were any changes in the time it takes for an attacker to carry out a ransomware attack. The average duration of an enterprise ransomware attack—the time between initial access and ransomware deployment—reduced slightly to 92.21 hours (3.84 days) in 2023 from 92.48 hours (3.85 days) in 2022.
 
-This minimal reduction in the ransomware attack lifecycle appears to be directly related to a 38.44% reduction in time spent between obtaining domain administrator privileges and ransomware deployment. Analyzing the incident data from the attacks, with the largest reductions of time between obtaining domain administrator privileges and ransomware deployment, indicates that the attackers spent less time exfiltrating data than in previous years. It appears attackers are requiring more time to obtain administrative privileges to Active Directory compared to 2021. However, this additional time may be an indication that 2021 was a statistical outlier and mainly due to attackers leveraging exploits like Zerologon and PrintNightmare. X-Force analysis didn’t reveal any substantial changes in the tools, techniques and procedures used by threat actors leveraged in ransomware attacks in 2023 compared to 2021. It’s worth noting that this year’s analysis includes data from all mass deployment ransomware attacks, as opposed to our 2022 original analysis, which examined a subset based on initial access.
+This minimal reduction in the ransomware attack lifecycle appears to be directly related to a 38.44% reduction in time spent between obtaining domain administrator privileges and ransomware deployment. Analyzing the incident data from the attacks, with the largest reductions of time between obtaining domain administrator privileges and ransomware deployment, indicates that the attackers spent less time exfiltrating data than in previous years.
 
-Ransomware attack timelines
-- Initial access to ransomware deployment
+It appears attackers are requiring more time to obtain administrative privileges to Active Directory compared to 2021. However, this additional time may be an indication that 2021 was a statistical outlier and mainly due to attackers leveraging exploits like Zerologon and PrintNightmare.
+
+X-Force analysis didn’t reveal any substantial changes in the tools, techniques and procedures used by threat actors leveraged in ransomware attacks in 2023 compared to 2021. It’s worth noting that this year’s analysis includes data from all mass deployment ransomware attacks, as opposed to our 2022 original analysis, which examined a subset based on initial access.
 
 ## Top impacts
+
 The top impact to organizations was data theft and leak, making up 32% of the incidents X-Force responded to—accounting for 19% of the incidents in 2022. This increase aligns with the rise in observed infostealer activity and use of legitimate tools to exfiltrate data. Furthermore, extortion incidents more than doubled in 2023, and the share of all incidents that were extortion increased from 21% in 2022 to 24% in 2023.
 
 As mentioned, extortion-based attacks remained one of the driving forces of cybercrime in 2023 with threat actors leveraging various attack types to deliver on their extortion objectives.
 
-![Figure 7: Top impacts X-Force observed in incident response engagements in 2023. Incidents can have more than one impact observed. Source: X-Force]
-
-Top impacts 2023
-- Data theft and leak: 32%
-- Extortion: 24%
-- Credential harvesting: 23%
-- Brand reputation: 9%
-- Data destruction: 9%
-- **2022**
-  - Data theft and leak: 19%
-  - Extortion: 21%
-  - Credential harvesting: 11%
+![Top impacts X-Force observed in incident response engagements in 2023. Incidents can have more than one impact observed.](Image description)
 
 The proliferation of ransomware attacks over the past few years, coupled with the massive efforts taken to combat and prevent them, has potentially pushed threat actors into simplifying their process. For example, threat actors are increasingly experimenting with extortion-based campaigns that do not rely on ransomware to encrypt data. Instead, the threat can be related to theft of and exposure to sensitive internal victim data. Not only is this method a less resource-intensive attack path, it may also be an indicator that data extortion tactics create the most pressure to elicit payment.
 
-Evolution of malware delivery mechanisms
-Threat actors have reacted to changes in the security environment by introducing increasingly complex infection chains and attempting new methods of malware delivery. In 2023, X-Force observed2 actors using popular methods, such as email campaigns, leveraging:
+### The malware landscape
+
+#### Evolution of malware delivery mechanisms
+
+Threat actors have reacted to changes in the security environment by introducing increasingly complex infection chains and attempting new methods of malware delivery. In 2023, X-Force observed actors using popular methods, such as email campaigns, leveraging:
+
 - OneNote files with embedded scripts
 - PDF files containing malicious links
 - Microsoft Software Installer (MSI) and Nullsoft Scriptable Install System (NSIS) executables disguised as document files
 
-The malware landscape
 Another tactic that X-Force observed, one which gained popularity in 2023 but appears to have since declined, is HTML smuggling. This method leverages HTML5 and JavaScript functionality to download or construct a malicious payload when the HTML page is opened in a web browser. X-Force also frequently observes .url (internet shortcut) files in attack chains leading to the final payload. Malware distribution through malicious disk image files (ISO, IMG and VHD) and LNK files, which was noted in the 2023 X-Force Threat Intelligence Index, has also continued to be observed with decreased frequency.
 
 There has also been an observed uptick in email campaigns using Microsoft Office documents to deliver malware through exploits rather than malicious macros. Documents weaponized with CVE-2017-11882, an arbitrary code execution vulnerability within the Microsoft Office equation editor, increased in popularity in the past year. Remote template injection, a technique to bypass email gateway controls by sending phishing emails that retrieve malicious office templates after delivery, was also observed in 2023.
@@ -204,11 +189,18 @@ In addition, threat actors have increasingly turned to malware delivery vectors 
 
 X-Force has also observed additional threat actors using fake browser updates to distribute malware, including infostealers and the NetSupport remote administration tool. The Gootloader group continues to use SEO poisoning effectively to infect organizations, which can lead to ransomware attacks. X-Force also continued to observe SEO poisoning leveraged by SolarMarker, which has both infostealer and backdoor capabilities.
 
+Over the past year, it has also become increasingly common for threat actors to use complex execution chains. The use of several stages where the malicious behavior is spread across multiple components, along with invoking living off the land tools, increases detection difficulty by analysts and security technologies such as endpoint detection and response (EDR).
+
+Complex execution chains also hinder the analysis capabilities of sandbox technologies by requiring several stages of execution until the final payload. Malware developers can implement anti-sandbox checks at multiple stages, increasing the likelihood that the sandbox analysis fails. With a reduction in sandbox detections, there’s a reduction in the likelihood of security researchers gaining access to valuable resources, such as command and control panels and more advanced tools.
+
+One example of a complex execution chain discovered and analyzed by X-Force in 2023 is the infection chain for WailingCrab malware. Although this infection chain is initialized through an email campaign with a PDF attachment, the final payload isn’t executed until 7 additional steps take place.
+
+### Infostealers on the rise
+
 The past year has seen a significant rise in the number of and threat actor interest in infostealers. Infostealers can be leveraged to facilitate fraud or theft by compromising financial or personal information. However, infostealers have also been frequently linked to more impactful attacks against enterprises by facilitating initial access through stolen credentials.
 
 X-Force noted a 266% increase in infostealer-related activity in 2023 compared to 2022. That upward trend likely contributed to the rise of abuse of valid accounts, the top initial access vector X-Force observed. Infostealers have long been a staple of the criminal underground marketplace, and many operate as a malware-as-a-service (MaaS) model.
 
-Infostealers on the rise
 In addition to the well-established stealers, such as RedLine, Vidar and Raccoon, several prominent new infostealers, which debuted in the latter half of 2022, demonstrated increased activity throughout 2023, such as Rhadamanthys, LummaC2 and StrelaStealer. Different infostealer families target different types of information, from platform-specific credentials to password managers to browser history.
 
 Also, observations of established stealers, such as Agent Tesla, FormBook, Snake Keylogger, Vidar, AZORult and Lokibot, X-Force observed activity by the following recently introduced stealer families:
@@ -230,14 +222,19 @@ Research contributions by Intezer further highlight the increasing value of info
 
 As threat actors invest in infostealers and X-Force observes a developing trend around identity abuse—through credential harvesting or abuse of valid accounts—we expect it to impact defenders’ detection timelines.
 
+### Abuse of cloud services
+
 Threat actors continue to abuse a wide range of public and private cloud services for malware distribution and operation, allowing them to evade network detection mechanisms by masquerading as legitimate traffic.
 
-Discord and Telegram in particular have attracted significant threat actor attention, as multiple aspects of the platforms' functionality can be abused in service of malicious activity. Threat actors have misused Discord for C2, abused the functionality of the platform’s content delivery network (CDN) to host and distribute malware, and used its webhook functionality to exfiltrate data from infected systems. Additionally, X-Force observed a novel technique in 2023 whereby a Discord C2 channel used the native Discord bot capabilities. WailingCrab, a malware discovered by X-Force in 2023, is a multistage malware that uses the Discord CDN to host further WailingCrab stages and other additional payloads. In addition to Discord, the malware was also notable for abusing the MQ Telemetry Transport (MQTT) protocol, which is a lightweight protocol designed for communication between Internet of Things (IoT) devices. WailingCrab uses the public MQTT broker EMQX for its C2 communications, which lets it hide the true address of its C2, as well as allowing the C2 communications to masquerade as legitimate MQTT traffic.
+Discord and Telegram in particular have attracted significant threat actor attention, as multiple aspects of the platforms' functionality can be abused in service of malicious activity. Threat actors have misused Discord for C2, abused the functionality of the platform’s content delivery network (CDN) to host and distribute malware, and used its webhook functionality to exfiltrate data from infected systems. Additionally, X-Force observed a novel technique in 2023 whereby a Discord C2 channel used the native Discord bot capabilities.
 
-Abuse of cloud services
+WailingCrab, a malware discovered by X-Force in 2023, is a multistage malware that uses the Discord CDN to host further WailingCrab stages and other additional payloads. In addition to Discord, the malware was also notable for abusing the MQ Telemetry Transport (MQTT) protocol, which is a lightweight protocol designed for communication between Internet of Things (IoT) devices. WailingCrab uses the public MQTT broker EMQX for its C2 communications, which lets it hide the true address of its C2, as well as allowing the C2 communications to masquerade as legitimate MQTT traffic.
+
 GraphicalNeutrino malware is another notable example, which uses the cloud-based collaboration platform Notion for its C2 communications. This malware uses the platform’s API to send requests to a Notion database where it stores victim information and receives commands and additional payloads. Notably, this malware is used by a group that has been assessed to overlap with Russian espionage group APT29, which IBM tracks as ITG11.
 
 We expect that a variety of threat actors and groups may explore the functionality of cloud services for malicious use.
+
+### Adoption of penetration testing techniques
 
 Threat actors have remained interested in leveraging identity abuse to carry out their attacks and, in 2023, X-Force observed threat actors targeting identity services for privilege escalation rather than endpoint credential harvesting techniques. The shift in behaviors appears to be in response to improvements in endpoint detection and response capabilities in preventing traditional credential harvesting techniques such as OS Credential Dumping: LSASS Memory (T1003.001).
 
@@ -245,16 +242,32 @@ Between 2022 and 2023, X-Force noted a 100% increase in Kerberoasting attacks, t
 
 X-Force observed attackers focusing on SPNs associated with service accounts, as these accounts often hold higher permissions, facilitating broader access to data and systems. Financially motivated attackers in 2023 also targeted Active Directory Certificate Services (AD CS) for privilege escalation, exploiting CVE-2022–26923 to potentially elevate their privileges to domain administrator. Although Microsoft patched this vulnerability in update KB5014754, successful attacks can still occur depending on key distribution center (KDC) configurations, underscoring the importance of vigilant patch management and secure service settings.
 
-![Figure 8: Active Directory Certificate Services attack diagram. Source: X-Force]
-
-Adoption of penetration testing techniques
+![Active Directory Certificate Services attack diagram.](Image description)
 
 ## Cyberwarfare
+
+### Russia-Ukraine conflict
+
 Throughout the course of 2023, X-Force has actively monitored countless Russian state-sponsored attacks, leveraging evolving tools and TTPs to carry out offensive operations against Ukraine and its allies. Of note, Hive0051, which shared overlap with Gamaredon, has accelerated its development efforts to support expanding operations since the onset of the ongoing conflict. X-Force analysis identified three key changes to capabilities: an improved multichannel approach to Domain Name System (DNS) fluxing, obfuscated multistage scripts and the use of fileless PowerShell variants of the Gamma malware.
 
-As of October 2023, X-Force observed a significant increase in Hive0051 activity. This activity features a new multichannel approach of rapidly rotating C2 infrastructure. The approach facilitated at least 1,027 active infections with more than 327 unique malicious domains observed in a single 24-hour period. While Hive0051 has used DNS fluxing to avoid detection as early as December 2022, the automated synchronized fluxing of dynamic DNS records across Telegram channels and Telegraph sites at scale suggests an elevation in actor resources and capability.
+As of October 2023, X-Force observed a significant increase in Hive0051 activity. This activity features a new multichannel approach of rapidly rotating C2 infrastructure. The approach facilitated at least 1,027 active infections with more than 327 unique malicious domains observed in a single 24-hour period.
 
-Russia-Ukraine conflict
+While Hive0051 has used DNS fluxing to avoid detection as early as December 2022, the automated synchronized fluxing of dynamic DNS records across Telegram channels and Telegraph sites at scale suggests an elevation in actor resources and capability.
+
 In addition, by deploying multiple consecutive stages of the Hive0051 exclusive Gamma variant malware, the actor is able to remap victims to separate sets of actor-controlled C2 fluxing clusters.
 
-Looking forward
+Looking forward, it’s highly likely that Hive0051 will continue to foster evolving methodologies to facilitate operations potentially indicating increasingly elevated levels of capability.
+
+In 2023, X-Force observed criminal threat actors leveraging the ongoing conflict in Ukraine to craft well-manufactured phishing campaigns. Since Russia’s invasion of its neighbor, the theme of the conflict has been used as lure material.
+
+In late May, X-Force identified Hive0117 using this approach. The group capitalized on changes to Russian laws associated with the delivery of digital military conscription notices. It mimicked those email notices to deliver its signature DarkWatchman malware. The scale of the campaign extended across Russia, as well as multiple states that were once part of the Soviet Union. As the conflict continues, we assess that it’s highly likely that threat actors will continue to attempt to use the conflict for lure material, especially targeting entities associated with connections to the ongoing war.
+
+Threat actors also performed distributed denial-of-service (DDoS) attacks with varying levels of success. A Microsoft outage that took place in the summer of 2023 was linked by a spokesperson to Anonymous Sudan, a DDoS group that does not claim pro-Russian sentiment but is linked to the Russia-sympathetic group Killnet. DDoS group NoName057(16), which explicitly distanced itself from Killnet, claimed attacks against Italian targets in the summer of 2023 and justified the attacks with anti-Ukrainian rhetoric.
+
+Although more impactful attacks were threatened, such as Killnet’s threat against the European banking system, we have yet to observe the magnitude of activity implied by these threats and the statements of related group.
+
+### Israel-Hamas conflict
+
+In response to the war between Hamas and Israel, X-Force has observed various claimed hacktivism operations related to the crisis in the region. Most targets were in the financial sector, government, travel and transportation industries, and the preponderance of observed activity originated from pro-Palestinian groups targeting Israel. Telegram was the social media outlet of choice for most threat actors and where claims of their activities were posted. As the situation developed, X-Force did observe some pro-Israel hacktivist groups calling for action, in addition to recent posts from Gonjeshke Darande, also known as Predatory Sparrow.
+
+In addition, X-Force uncovered multiple lure documents that predominately feature the ongoing Israel-Hamas war to facilitate the delivery of the ITG05 exclusive Headlace backdoor. X-Force tracks ITG05 as a likely Russian state-sponsored group consisting of multiple activity clusters, sharing overlaps with industry-
