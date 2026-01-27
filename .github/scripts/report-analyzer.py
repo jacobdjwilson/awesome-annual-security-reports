@@ -12,7 +12,7 @@ from pathlib import Path
 from datetime import datetime
 
 # Configure Gemini API
-MODELS = ["gemini-3-flash-preview", "gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash"]
+MODELS = ["gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-3-flash-preview"]
 MODEL = None
 
 def setup_gemini(api_key: str):
