@@ -12,7 +12,17 @@ from pathlib import Path
 from datetime import datetime
 
 # Configure Gemini API
-MODELS = ["gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-3-flash-preview"]
+def load_ai_config():
+    try:
+        config_path = Path(__file__).parent.parent / "artifacts" / "ai-models.json"
+        with open(config_path, 'r') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Warning: Failed to load AI config: {e}. Using defaults.")
+        return None
+
+AI_CONFIG = load_ai_config()
+MODELS = AI_CONFIG["models"]["priority_list"] if AI_CONFIG else ["gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-3-flash-preview"]
 MODEL = None
 
 def setup_gemini(api_key: str):
@@ -265,10 +275,12 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, a
         summary_content = clean_content[:20000] if len(clean_content) > 20000 else clean_content
         summary_prompt = f"{summary_base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{summary_content}"
         
+        gen_config = AI_CONFIG.get("configurations", {}).get("default", {}) if AI_CONFIG else {}
+
         summary_model = genai.GenerativeModel(MODEL)
         summary_response = summary_model.generate_content(
             summary_prompt,
-            generation_config={"temperature": 0.1, "max_output_tokens": 200}
+            generation_config={"temperature": gen_config.get("temperature", 0.1), "max_output_tokens": 200}
         )
         
         summary = summary_response.text.strip() if summary_response.text else ""
@@ -313,7 +325,7 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, a
         category_model = genai.GenerativeModel(MODEL)
         category_response = category_model.generate_content(
             categorization_prompt,
-            generation_config={"temperature": 0.1, "max_output_tokens": 100}
+            generation_config={"temperature": gen_config.get("temperature", 0.1), "max_output_tokens": 100}
         )
         
         try:

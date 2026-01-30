@@ -1,15 +1,18 @@
 {
   "models": {
-    "primary": "gemini-3-flash-preview",
-    "secondary": "gemini-2.5-flash",
-    "embedding": "text-embedding-004"
+    "priority_list": [
+      "gemini-3-flash-preview",
+      "gemini-2.5-flash-latest",
+      "gemini-2.5-flash"
+    ],
+    "embedding": "gemini-embedding-001"
   },
   "configurations": {
     "default": {
-      "temperature": 0.2,
+      "temperature": 0.7,
       "top_p": 0.95,
-      "top_k": 40,
-      "max_output_tokens": 8192
+      "top_k": 64,
+      "max_output_tokens": 65536
     }
   }
 }

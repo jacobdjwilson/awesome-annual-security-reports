@@ -26,8 +26,18 @@ except ImportError:
     sys.exit(1)
 
 # Configure Gemini API
-MODELS = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"] 
-# Note: Updated model list to current stable versions, adjust as needed for your access
+def load_ai_config():
+    try:
+        config_path = Path(__file__).parent.parent / "artifacts" / "ai-models.json"
+        with open(config_path, 'r') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Warning: Failed to load AI config: {e}. Using defaults.")
+        return None
+
+AI_CONFIG = load_ai_config()
+MODELS = AI_CONFIG["models"]["priority_list"] if AI_CONFIG else ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
+
 MODEL = None
 CLIENT = None
 
@@ -267,12 +277,14 @@ def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url:
             full_prompt += f"The official report URL is: {organization_url}\n\n"
         full_prompt += f"# Report Content Below\n\n{pdf_text}"
         
+        gen_config = AI_CONFIG.get("configurations", {}).get("default", {}) if AI_CONFIG else {}
+
         # Configure generation parameters using the new SDK types
         config = types.GenerateContentConfig(
-            temperature=0.1,
-            max_output_tokens=8192,
-            top_p=0.95,
-            top_k=40,
+            temperature=gen_config.get("temperature", 0.1),
+            max_output_tokens=gen_config.get("max_output_tokens", 8192),
+            top_p=gen_config.get("top_p", 0.95),
+            top_k=gen_config.get("top_k", 40),
             safety_settings=[
                 types.SafetySetting(
                     category="HARM_CATEGORY_HARASSMENT",
