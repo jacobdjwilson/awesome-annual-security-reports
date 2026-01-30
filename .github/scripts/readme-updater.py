@@ -10,7 +10,7 @@ from datetime import datetime
 class CategoryManager:
     """Manages report categories from the centralized JSON definition."""
     
-    def __init__(self, categories_path: str = ".github/report-categories.json"):
+    def __init__(self, categories_path: str = ".github/artifacts/report-categories.json"):
         self.categories_path = Path(categories_path)
         self.categories = self._load_categories()
         self.category_map = self._build_category_map()
@@ -464,7 +464,7 @@ def main():
     parser = argparse.ArgumentParser(description="Update README with security reports")
     parser.add_argument("analysis_json", help="Path to analysis results JSON")
     parser.add_argument("--readme-path", default="README.md", help="Path to README.md")
-    parser.add_argument("--categories-path", default=".github/report-categories.json", 
+    parser.add_argument("--categories-path", default=".github/artifacts/report-categories.json", 
                        help="Path to categories JSON")
     parser.add_argument("--validate-toc", action="store_true", 
                        help="Validate TOC against category definitions")
