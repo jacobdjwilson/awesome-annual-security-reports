@@ -353,7 +353,7 @@ jobs:
           if python .github/scripts/report-analyzer.py \
             conversions.json \
             --readme-path README.md \
-            --categories-path .github/report-categories.json \
+            --categories-path .github/artifacts/report-categories.json \
             --output-json analysis.json; then
             
             echo "Report analysis completed successfully"
