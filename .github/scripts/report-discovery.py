@@ -5,6 +5,7 @@ import subprocess
 import datetime
 import requests
 import json
+from pathlib import Path
 from bs4 import BeautifulSoup
 from googleapiclient.discovery import build
 from urllib.parse import urlparse
@@ -14,6 +15,7 @@ MAX_ISSUES_PER_RUN = 10
 LOOKBACK_DAYS = 90
 TIMEOUT_SECONDS = 15
 CURRENT_YEAR = datetime.date.today().year
+REPORTS_BASE_DIR = "Annual Security Reports"
 
 # Terms that indicate false positives
 EXCLUDE_TERMS = [
@@ -61,43 +63,138 @@ def is_secondary_source(url):
         return False
     return any(secondary in domain for secondary in SECONDARY_SOURCE_DOMAINS)
 
-def parse_readme_for_targets():
+def parse_pdf_filename(filename):
     """
-    Parse README.md to extract organization details including category.
-    Returns: list of tuples (org, report_title, last_year, category, report_url)
-    """
-    targets = []
-    current_category = None
+    Parse PDF filename to extract organization, report title, and year.
+    Expected format: Organization-Report-Title-Year.pdf
     
+    Returns: tuple (organization, report_title, year) or None if cannot parse
+    """
+    # Remove .pdf extension
+    name = filename.replace('.pdf', '')
+    
+    # Try to find year at the end (4 digits)
+    year_match = re.search(r'-(\d{4})$', name)
+    if not year_match:
+        return None
+    
+    year = int(year_match.group(1))
+    # Remove year from name
+    name_without_year = name[:year_match.start()]
+    
+    # Split by hyphens to get parts
+    parts = name_without_year.split('-')
+    if len(parts) < 2:
+        return None
+    
+    # First part is organization, rest is report title
+    organization = parts[0]
+    report_title = '-'.join(parts[1:])
+    
+    return (organization, report_title, year)
+
+def scan_repository_reports():
+    """
+    Scan the Annual Security Reports directory for all PDF files from previous years.
+    Returns: list of tuples (organization, report_title, year, file_path, category_from_year)
+    """
+    reports = []
+    
+    if not os.path.exists(REPORTS_BASE_DIR):
+        print(f"ERROR: Reports directory '{REPORTS_BASE_DIR}' not found.")
+        return reports
+    
+    # Iterate through year directories
+    for year_dir in sorted(os.listdir(REPORTS_BASE_DIR)):
+        year_path = os.path.join(REPORTS_BASE_DIR, year_dir)
+        
+        # Skip if not a directory
+        if not os.path.isdir(year_path):
+            continue
+        
+        # Extract year from directory name
+        try:
+            dir_year = int(year_dir)
+        except ValueError:
+            continue
+        
+        # Only process years older than current year
+        if dir_year >= CURRENT_YEAR:
+            print(f"DEBUG: Skipping current/future year directory: {year_dir}")
+            continue
+        
+        print(f"INFO: Scanning directory: {year_dir}")
+        
+        # Scan PDFs in this year directory
+        for filename in os.listdir(year_path):
+            if not filename.endswith('.pdf'):
+                continue
+            
+            # Parse filename
+            parsed = parse_pdf_filename(filename)
+            if not parsed:
+                print(f"DEBUG: Could not parse filename: {filename}")
+                continue
+            
+            org, report_title, file_year = parsed
+            file_path = os.path.join(year_path, filename)
+            
+            # Verify file year matches directory year
+            if file_year != dir_year:
+                print(f"DEBUG: Year mismatch in {filename}: file has {file_year}, directory is {dir_year}")
+            
+            reports.append((org, report_title, file_year, file_path, year_dir))
+            
+    print(f"INFO: Found {len(reports)} historical reports to check for updates")
+    return reports
+
+def get_category_from_readme(org, report_title):
+    """
+    Try to find the category for this report from README.md.
+    Returns: category string or "Unknown"
+    """
+    try:
+        with open("README.md", "r", encoding="utf-8") as f:
+            content = f.read()
+            lines = content.split('\n')
+            
+            current_category = None
+            for line in lines:
+                # Detect category headers
+                if line.startswith('### '):
+                    current_category = line.replace('### ', '').strip()
+                    continue
+                
+                # Check if this line contains our org and report
+                if org in line and current_category:
+                    return current_category
+    except:
+        pass
+    
+    return "Unknown"
+
+def get_report_url_from_readme(org, report_title, year):
+    """
+    Try to find the report URL from README.md for a specific year.
+    Returns: URL string or None
+    """
     try:
         with open("README.md", "r", encoding="utf-8") as f:
             content = f.read()
             lines = content.split('\n')
             
             for line in lines:
-                # Detect category headers (### headers under ## Analysis Reports or ## Survey Reports)
-                if line.startswith('### '):
-                    current_category = line.replace('### ', '').strip()
-                    continue
-                
-                # Match report entries: - [Org Name](url) - [Report Title](url) (year)
-                pattern = r'-\s*\[([^\]]+)\]\(([^)]+)\)\s*-\s*\[([^\]]+)\]\(([^)]+)\)\s*\((\d{4})\)'
-                match = re.search(pattern, line)
-                
-                if match and current_category:
-                    org = match.group(1)
-                    org_url = match.group(2)
-                    report_title = match.group(3)
-                    report_url = match.group(4)
-                    last_year = match.group(5)
-                    
-                    targets.append((org, report_title, last_year, current_category, report_url))
+                # Match report entries with year
+                if org in line and str(year) in line:
+                    # Extract URL from markdown link
+                    url_matches = re.findall(r'\]\(([^)]+)\)', line)
+                    if len(url_matches) >= 2:
+                        # Second URL is usually the report URL
+                        return url_matches[1]
+    except:
+        pass
     
-    except FileNotFoundError:
-        print("ERROR: README.md not found.")
-        sys.exit(1)
-    
-    return targets
+    return None
 
 def get_existing_report_domain(report_url):
     """
@@ -201,159 +298,100 @@ def check_snippet_validity(snippet, title, target_year):
         if copyright_year != target_year and copyright_year == CURRENT_YEAR:
             return False, "", f"Copyright year {copyright_year} != target year {target_year} (likely footer/copyright date)"
     
-    # 2. Check for blog/article publication dates
-    blog_year, date_str = extract_date_from_snippet_start(snippet)
-    if blog_year and blog_year != target_year:
-        if blog_year == CURRENT_YEAR:
-            return False, "", f"Article published {date_str} (current year) - likely blog post about older report"
-        elif blog_year < target_year:
-            return False, "", f"Article pre-dates target year ({date_str})"
+    # 2. Check for blog/article pre-dating the report
+    snippet_date_year, date_string = extract_date_from_snippet_start(snippet)
+    if snippet_date_year and snippet_date_year < target_year:
+        return False, "", f"Snippet contains pre-dated article ({date_string}) - likely blog post announcing report release"
     
-    # 3. Check for explicit year mentions in snippet
-    # Pattern: "2025 Report", "Report 2025", etc.
-    year_report_patterns = [
-        rf'(\d{{4}})\s+(report|study|survey|analysis)',
-        rf'(report|study|survey|analysis)\s+(\d{{4}})',
-    ]
+    # 3. Extract all years from title and snippet
+    title_years = extract_years_from_text(title)
+    snippet_years = extract_years_from_text(snippet)
     
-    for pattern in year_report_patterns:
-        matches = re.findall(pattern, snippet_lower)
-        for match in matches:
-            # Extract the year from the match
-            mentioned_year = None
-            for group in match:
-                if group.isdigit() and len(group) == 4:
-                    mentioned_year = int(group)
-                    break
-            
-            if mentioned_year and mentioned_year != target_year and mentioned_year < target_year:
-                context = snippet[max(0, snippet.lower().find(str(mentioned_year))-30):
-                               min(len(snippet), snippet.lower().find(str(mentioned_year))+50)]
-                return False, "", f"Snippet explicitly mentions '{mentioned_year}' report (not {target_year}): '...{context}...'"
+    # Check for years that don't match target
+    mismatched_years = [y for y in (title_years + snippet_years) if y != target_year and y >= 2020]
+    if mismatched_years and target_year not in (title_years + snippet_years):
+        return False, "", f"Year {mismatched_years[0]} found but not {target_year} (likely different report year)"
     
-    # 4. Check for pre-registration/announcement language
-    prereg_terms = ["pre-register", "coming soon", "save the date", "register now", "registration open", 
-                    "will be released", "to be published", "upcoming report"]
-    for term in prereg_terms:
-        if term in snippet_lower or term in title_lower:
-            return False, "", f"Pre-registration/announcement detected: '{term}'"
+    # 4. Check if target year is present
+    if target_year not in (title_years + snippet_years):
+        # More lenient if snippet is short or truncated
+        if len(snippet) < 50:
+            return True, "upgrade_medium", f"Short snippet but no conflicting years"
+        return False, "", f"Year {target_year} not found in title or snippet"
     
-    # 5. Confidence adjustments based on snippet quality
-    confidence_boost = ""
-    if f"{target_year}" in snippet and "report" in snippet_lower:
-        # Good signal, but check context
-        years_mentioned = extract_years_from_text(snippet)
-        other_years = [y for y in years_mentioned if y != target_year and y < target_year]
-        if other_years:
-            # Multiple years mentioned, unclear which is the report year
-            confidence_boost = "downgrade_medium"
-        else:
-            confidence_boost = "upgrade_medium"
+    # 5. Look for positive signals
+    positive_signals = ["report", "study", "analysis", "survey", "threat", "security", "annual"]
+    has_positive = any(signal in snippet_lower or signal in title_lower for signal in positive_signals)
     
-    return True, confidence_boost, ""
+    if not has_positive:
+        return False, "", "Lacks report-related keywords"
+    
+    # 6. Check for strong date match in title
+    if target_year in title_years:
+        return True, "upgrade_medium", f"Year {target_year} prominently in title"
+    
+    return True, "", f"Year {target_year} found with relevant context"
 
-def validate_url_content(url, target_year, existing_report_domain, title, snippet):
+def validate_url_content(url, target_year, expected_domain, title, snippet):
     """
-    Visits the URL to perform deep validation.
-    Returns: (Confidence: str, Reasoning: str, validation_details: dict)
+    Fetch and validate URL content with comprehensive checks.
+    Returns: (confidence: str, reasoning: str, validation_details: dict)
+    
+    Confidence levels: "High", "Medium", "Low", "n/a" (rejected)
     """
     validation_details = {
-        "is_secondary_source": False,
         "domain_match": None,
-        "year_in_url": None,
+        "year_in_url": [],
+        "is_secondary_source": False,
         "content_type": None,
-        "http_status": None
     }
     
     try:
-        # Check if this is a future year (always invalid)
-        is_future, future_reason = check_future_year(target_year)
-        if is_future:
-            return "n/a", future_reason, validation_details
-        
-        # Check if URL is from secondary source
-        if is_secondary_source(url):
-            validation_details["is_secondary_source"] = True
-            print(f"DEBUG: Secondary source detected: {url}")
-        
-        # Check URL for year mismatches before even fetching
-        years_in_url = extract_years_from_text(url)
-        if years_in_url:
-            validation_details["year_in_url"] = years_in_url
-            # If URL contains a year different from target_year
-            for year in years_in_url:
-                if year != target_year:
-                    if year < target_year:
-                        return "n/a", f"URL contains earlier year ({year} < {target_year})", validation_details
-                    elif year == CURRENT_YEAR and target_year > CURRENT_YEAR:
-                        return "n/a", f"URL from current year ({year}) but looking for future year ({target_year})", validation_details
-        
-        # Check domain match with existing report
+        # A. Domain validation
         url_domain = extract_domain(url)
-        validation_details["domain_match"] = url_domain == existing_report_domain if existing_report_domain else None
+        validation_details["is_secondary_source"] = is_secondary_source(url)
         
-        if existing_report_domain and url_domain:
-            if url_domain != existing_report_domain:
-                # Downgrade confidence but don't auto-reject (might be new hosting)
-                if validation_details["is_secondary_source"]:
-                    return "n/a", f"Secondary source domain mismatch (found: {url_domain}, expected: {existing_report_domain})", validation_details
-                else:
-                    print(f"WARNING: Domain mismatch but not secondary source - {url_domain} vs {existing_report_domain}")
+        if expected_domain:
+            validation_details["domain_match"] = (url_domain == expected_domain)
         
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-        response = requests.get(url, headers=headers, timeout=TIMEOUT_SECONDS, verify=False)
+        # B. URL structure analysis
+        url_years = extract_years_from_text(url)
+        validation_details["year_in_url"] = url_years
         
-        validation_details["http_status"] = response.status_code
+        # Reject if URL contains a different year prominently
+        if url_years and target_year not in url_years:
+            conflicting_years = [y for y in url_years if y != target_year and y >= 2020 and y <= CURRENT_YEAR]
+            if conflicting_years:
+                return "n/a", f"URL contains different year: {conflicting_years[0]}", validation_details
         
-        # 1. Check for Dead Links
-        if response.status_code != 200:
-            return "Low", f"URL returned status {response.status_code}", validation_details
-
+        # C. Fetch and analyze content
+        headers = {'User-Agent': 'Mozilla/5.0 (Security-Report-Discovery-Bot)'}
+        response = requests.get(url, timeout=TIMEOUT_SECONDS, headers=headers, allow_redirects=True)
+        
         content_type = response.headers.get('Content-Type', '').lower()
         validation_details["content_type"] = content_type
-
-        # 2. PDF Handling
-        if 'application/pdf' in content_type or url.lower().endswith('.pdf'):
-            if str(target_year) in url:
-                return "High", f"Direct PDF with {target_year} in URL", validation_details
-            return "Medium", "Direct PDF, year not in URL - manual verification recommended", validation_details
-
-        # 3. HTML Handling
-        soup = BeautifulSoup(response.text, 'html.parser')
-
-        # Remove noise: Footers, Navs, Copyright divs
-        for noise in soup.select('footer, nav, .footer, .nav, .copyright, .legal, #footer, #copyright'):
-            noise.decompose()
-
-        # Get text from valid areas
-        valid_tags = ['h1', 'h2', 'h3', 'p', 'li', 'article', 'main']
-        body_text = " ".join([t.get_text() for t in soup.find_all(valid_tags)]).lower()
-        title_text = (soup.title.string if soup.title else "").lower()
-
-        full_clean_text = title_text + " " + body_text
-
-        # 4. Keyword Checks
-        # A. Check for False Positive Terms
-        for term in EXCLUDE_TERMS:
-            if term in full_clean_text:
-                return "n/a", f"Page contains excluded term: '{term}'", validation_details
-
-        # B. Check for Target Year
-        if str(target_year) not in full_clean_text:
-            return "n/a", f"Year {target_year} not found in content", validation_details
-
-        # C. Check for other year mentions that might indicate wrong report
-        years_in_content = extract_years_from_text(full_clean_text)
-        year_counts = {}
-        for year in years_in_content:
-            year_counts[year] = year_counts.get(year, 0) + 1
         
-        # If an earlier year appears significantly more often
-        if year_counts:
-            most_common_year = max(year_counts, key=year_counts.get)
-            if most_common_year < target_year and year_counts.get(most_common_year, 0) > year_counts.get(target_year, 0) * 2:
-                return "n/a", f"Earlier year ({most_common_year}) mentioned {year_counts[most_common_year]}x vs target year ({target_year}) {year_counts.get(target_year, 0)}x", validation_details
-
+        # Handle PDF files
+        if 'pdf' in content_type:
+            # For PDFs, rely more on URL and title analysis
+            if target_year in url_years or str(target_year) in url:
+                return "High", f"PDF with {target_year} in URL", validation_details
+            elif validation_details["domain_match"]:
+                return "Medium", f"PDF from expected domain", validation_details
+            else:
+                return "Low", f"PDF from unexpected source", validation_details
+        
+        # Parse HTML content
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # Remove script and style elements
+        for script in soup(["script", "style"]):
+            script.decompose()
+        
+        # Get text
+        full_text = soup.get_text()
+        full_clean_text = ' '.join(full_text.split()).lower()
+        
         # D. Check for copyright year in content
         copyright_pattern = r'©\s*(\d{4})|copyright\s+©?\s*(\d{4})'
         copyright_matches = re.findall(copyright_pattern, full_clean_text)
@@ -367,6 +405,11 @@ def validate_url_content(url, target_year, existing_report_domain, title, snippe
         # E. Check for Relevance
         if "report" not in full_clean_text and "threat" not in full_clean_text and "study" not in full_clean_text:
              return "n/a", "Page lacks report/threat/study keywords", validation_details
+
+        # F. Check for target year in content
+        content_years = extract_years_from_text(full_clean_text)
+        if target_year not in content_years:
+            return "n/a", f"Target year {target_year} not found in page content", validation_details
 
         # Confidence determination
         confidence = "High" if validation_details["domain_match"] else "Medium"
@@ -392,24 +435,27 @@ def main():
         print("ERROR: Missing Google API keys.")
         sys.exit(1)
 
-    # 2. Parse README for Targets
-    print("INFO: Parsing README.md for targets...")
-    targets = parse_readme_for_targets()
+    # 2. Scan Repository for Historical Reports
+    print("INFO: Scanning repository for historical reports...")
+    reports = scan_repository_reports()
+    
+    if not reports:
+        print("WARNING: No historical reports found in repository")
+        sys.exit(0)
 
-    print(f"INFO: Found {len(targets)} targets to check.")
+    print(f"INFO: Found {len(reports)} reports to check for updates.")
     print(f"INFO: Current year: {CURRENT_YEAR}")
     
     service = build("customsearch", "v1", developerKey=api_key)
     issues_created = 0
 
-    # 3. Execution Loop
-    for org, report_title, last_year, category, report_url in targets:
+    # 3. Execution Loop - Check each report for newer version
+    for org, report_title, last_year, file_path, year_dir in reports:
         if issues_created >= MAX_ISSUES_PER_RUN:
             print("INFO: Hit max issues limit. Stopping.")
             break
 
-        current_year = int(last_year)
-        target_year = current_year + 1
+        target_year = last_year + 1
         
         # Skip if target year is in the future
         is_future, future_reason = check_future_year(target_year)
@@ -427,20 +473,22 @@ def main():
             print(f"DEBUG: Skipping {org} {target_year} (Issue exists)")
             continue
 
-        # Get existing report domain for validation
-        existing_report_domain = get_existing_report_domain(report_url)
+        # Get category and existing URL from README if available
+        category = get_category_from_readme(org, report_title)
+        last_year_url = get_report_url_from_readme(org, report_title, last_year)
+        existing_report_domain = get_existing_report_domain(last_year_url)
         
         if existing_report_domain:
             print(f"INFO: Expected domain for {org}: {existing_report_domain}")
         else:
-            print(f"WARNING: Could not extract domain from report URL for {org}: {report_url}")
+            print(f"WARNING: Could not determine domain for {org}")
 
-        print(f"INFO: Searching for {org} {target_year}...")
+        print(f"INFO: Searching for {org} {report_title} {target_year}...")
         
         try:
-            # Refined Query - add year to make it more specific
+            # Refined Query - search for organization + report title + target year
             query = f'"{org}" "{report_title}" {target_year}'
-            res = service.cse().list(q=query, cx=cse_id, num=5).execute()  # Increased to 5 for better coverage
+            res = service.cse().list(q=query, cx=cse_id, num=5).execute()
             items = res.get('items', [])
 
             if not items:
@@ -509,6 +557,7 @@ def main():
 ### 🔍 Discovery Analysis
 **Confidence:** {confidence}
 **Reasoning:** {reasoning}
+**Discovery Method:** Repository scan of historical reports
 
 ### 📊 Validation Details
 {validation_summary_text}
@@ -523,7 +572,8 @@ def main():
 - **Report Name:** {report_title}
 - **Category:** {category}
 - **Target Year:** {target_year}
-- **Previous Year:** {current_year}
+- **Previous Year:** {last_year}
+- **Previous File:** `{file_path}`
 - **Expected Domain:** {existing_report_domain or 'Unknown'}
 - **Found Domain:** {validation_details.get('domain_match') if validation_details.get('domain_match') is not None else extract_domain(link)}
 
@@ -532,8 +582,9 @@ def main():
 - [ ] Check if URL points to the actual report document
 - [ ] Confirm the report year matches {target_year}
 - [ ] Validate the source is authoritative (original publisher preferred)
+- [ ] Compare with previous report: `{file_path}`
 
-*Auto-generated by Security Report Discovery Workflow*
+*Auto-generated by Security Report Discovery Workflow (Repository Scanner)*
                 """
 
                 subprocess.run([
@@ -544,7 +595,7 @@ def main():
                 ], check=True)
 
                 issues_created += 1
-                break  # Move to next Org after finding one valid candidate
+                break  # Move to next report after finding one valid candidate
 
         except Exception as e:
             print(f"ERROR: processing {org}: {e}")
