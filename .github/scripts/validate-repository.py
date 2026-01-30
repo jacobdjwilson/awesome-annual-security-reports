@@ -327,7 +327,7 @@ def main():
     parser.add_argument("--pdf-root", default="Annual Security Reports", help="PDF root directory")
     parser.add_argument("--md-root", default="Markdown Conversions", help="Markdown root directory")
     parser.add_argument("--readme", default="README.md", help="README file path")
-    parser.add_argument("--categories", default=".github/report-categories.json", help="Categories JSON file path")
+    parser.add_argument("--categories", default=".github/artifacts/report-categories.json", help="Categories JSON file path")
     parser.add_argument("--output-report", default="validation_report.md", help="Output report file")
     args = parser.parse_args()
 
