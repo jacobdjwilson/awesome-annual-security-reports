@@ -9,7 +9,7 @@ on:
       wait_for_pipelines:
         description: 'Wait for running pipelines to complete before validation'
         required: false
-        default: 'true'
+        default: true
         type: boolean
       max_wait_minutes:
         description: 'Maximum time to wait for pipelines (minutes)'
