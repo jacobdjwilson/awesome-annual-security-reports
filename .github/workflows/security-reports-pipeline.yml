@@ -468,7 +468,7 @@ jobs:
           if python .github/scripts/readme-updater.py \
             analysis.json \
             --readme-path README.md \
-            --categories-path .github/report-categories.json \
+            --categories-path .github/artifacts/report-categories.json \
             --validate-toc; then
             
             echo "README updater completed successfully"
