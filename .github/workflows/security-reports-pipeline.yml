@@ -235,7 +235,6 @@ jobs:
         id: pdf-conversion
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           PROMPT_PATH="${{ steps.conversion-settings.outputs.prompt_path }}"
           PROMPT_VERSION="${{ steps.conversion-settings.outputs.prompt_version }}"
@@ -296,7 +295,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install google-generativeai requests
+          pip install google-genai requests
 
       - name: Download file lists
         uses: actions/download-artifact@v4
