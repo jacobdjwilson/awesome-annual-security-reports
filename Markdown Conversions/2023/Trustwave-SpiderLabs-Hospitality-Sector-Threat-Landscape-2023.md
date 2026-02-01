@@ -1,405 +1,125 @@
-# Whitepaper Name Goes Here
-S U B H E A D
-## 2023 Hospitality Sector Threat Landscape
-T R U S T W A V E  T H R E A T  I N T E L L I G E N C E 
-B R I E F I N G  A N D  M I T I G A T I O N  S T R A T E G I E S 
+# 2023 Hospitality Sector Threat Landscape
+
+The official report URL is: https://levelblue.com/resources/research-reports/2023-hospitality-sector-threat-landscape-trustwave-threat-intelligence-briefing-and-mitigation-strategies
+
+# 2023 Hospitality Sector Threat Landscape
+
+T R U S T W A V E   T H R E A T   I N T E L L I G E N C E
+B R I E F I N G   A N D   M I T I G A T I O N   S T R A T E G I E S
 
 ## Table of Contents
 - [Executive Summary](#executive-summary)
 - [Emerging and Prominent Trends](#emerging-and-prominent-trends)
-- [Generative AI and Large Language Models (LLMs)](#generative-ai-and-large-language-models-llms)
-- [Contactless Technology](#contactless-technology)
-- [Third-party Risk and Exposure](#third-party-risk-and-exposure)
+  - [Generative AI and Large Language Models (LLMs)](#generative-ai-and-large-language-models-llms)
+  - [Contactless Technology](#contactless-technology)
+  - [Third-party Risk and Exposure](#third-party-risk-and-exposure)
 - [Dissecting the Attack Flow for Hospitality](#dissecting-the-attack-flow-for-hospitality)
-- [Attack Flow Overview](#attack-flow-overview)
-- [Attack Flow Steps](#attack-flow-steps)
-- [Initial Foothold: Phishing and Business Email Compromise (BEC)](#initial-foothold-phishing-and-business-email-compromise-bec)
-- [Initial Foothold: Logging in](#initial-foothold-logging-in)
-- [Initial Foothold: Vulnerability Exploitation](#initial-foothold-vulnerability-exploitation)
-- [Initial Foothold: Supply Chain](#initial-foothold-supply-chain)
-- [Initial Payload](#initial-payload)
-- [Expansion / Pivoting](#expansion--pivoting)
-- [Malware: Infostealers](#malware-infostealers)
-- [Malware: RATs](#malware-rats)
-- [Malware: Ransomware](#malware-ransomware)
-- [Exfiltration / Post Compromise](#exfiltration--post-compromise)
+  - [Attack Flow Overview](#attack-flow-overview)
+  - [Attack Flow Steps](#attack-flow-steps)
+  - [Initial Foothold: Phishing and Business Email Compromise (BEC)](#initial-foothold-phishing-and-business-email-compromise-bec)
+  - [Initial Foothold: Logging in](#initial-foothold-logging-in)
+  - [Initial Foothold: Vulnerability Exploitation](#initial-foothold-vulnerability-exploitation)
+  - [Initial Foothold: Supply Chain](#initial-foothold-supply-chain)
+  - [Initial Payload](#initial-payload)
+  - [Expansion / Pivoting](#expansion--pivoting)
+  - [Malware: Infostealers](#malware-infostealers)
+  - [Malware: RATs](#malware-rats)
+  - [Malware: Ransomware](#malware-ransomware)
+  - [Exfiltration / Post Compromise](#exfiltration--post-compromise)
 - [Key Takeaways and Recommendations](#key-takeaways-and-recommendations)
 - [Appendix/Reference](#appendixreference)
-- [Threat Groups](#threat-groups)
-- [ALPHV/BlackCat](#alphvblackcat)
-- [BianLian](#bianlian)
-- [Black Basta](#black-basta)
-- [BlackShadow](#blackshadow)
-- [Clop](#clop)
-- [Conti](#conti)
-- [Hive](#hive)
-- [Karakurt](#karakurt)
-- [LockBit](#lockbit)
-- [LV](#lv)
-- [Magniber](#magniber)
-- [Medusa](#medusa)
-- [Play](#play)
-- [Qillin, Royal](#qillin-royal)
-- [Ragnar](#ragnar)
-- [Vice Society](#vice-society)
+  - [Threat Groups](#threat-groups)
+    - [ALPHV/BlackCat](#alphvblackcat)
+    - [BianLian](#bianlian)
+    - [Black Basta](#black-basta)
+    - [BlackShadow](#blackshadow)
+    - [Clop](#clop)
+    - [Conti](#conti)
+    - [Hive](#hive)
+    - [Karakurt](#karakurt)
+    - [LockBit](#lockbit)
+    - [LV](#lv)
+    - [Magniber](#magniber)
+    - [Medusa](#medusa)
+    - [Play](#play)
+    - [Qillin, Royal](#qillin-royal)
+    - [Ragnar](#ragnar)
+    - [Vice Society](#vice-society)
 
-2023 Hospitality Sector Threat Landscape: Trustwave Threat Intelligence Briefing and Mitigation Strategies
-Contents
-Executive Summary‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 1
-Emerging and Prominent Trends‧
- ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  5
-Generative AI and Large Language Models (LLMs)‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 6
-Contactless Technology‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  8
-Third-party Risk and Exposure ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 10
-Dissecting the Attack Flow for Hospitality ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 12
-Attack Flow Overview‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 13
-Attack Flow Steps‧
- ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 13
-Initial Foothold: Phishing and Business Email Compromise (BEC) ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  15
-Initial Foothold: Logging in‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 19
-Initial Foothold: Vulnerability Exploitation‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  21
-Initial Foothold: Supply Chain ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 25
-Initial Payload‧
- ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 27
-Expansion / Pivoting‧
- ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 30
-Malware: Infostealers‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ 
-32
-Malware: RATs‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 35
-Malware: Ransomware ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 39
-Exfiltration / Post Compromise‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 42
-Key Takeaways and Recommendations‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 44
-TOC
 SEPTEMBER 2023
-3
-2023 Hospitality Sector Threat Landscape: Trustwave Threat Intelligence Briefing and Mitigation Strategies
-Appendix/Reference ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 48
-Threat Groups‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 49
-ALPHV/BlackCat  ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 49
-BianLian  ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 49
-Black Basta ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 50
-BlackShadow  ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 50
-Clop ‧
- ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 50
-Conti ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  51
-Hive‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  51
-Karakurt ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  51
-LockBit ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 52
-LV‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 52
-Magniber‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ ‧ 
-53
-Medusa‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 53
-Play ‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 53
-Qillin, Royal‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 54
-Ragnar‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 54
-Vice Society‧ ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧  ‧ 54
-<a id="executive-summary"></a>
-## Executive Summary
-2
-2023 Hospitality Sector Threat Landscape: Trustwave Threat Intelligence Briefing and Mitigation Strategies
-The global hospitality industry employs nearly 
-300 million individuals worldwide, and provides a place 
-to stay, eat, and relax for billions of people all over the 
-world. Spanning from hotels to restaurants to cruise 
-ships, the industry has become deeply woven into our 
-everyday routines, making its cybersecurity threat 
-landscape especially vast, complex, and critical. 
-Nearly 31% of hospitality organizations have reported a data breach in their 
-company’s history, of which 89% have been affected more than once in a 
-year, according to a report by Cornell University and FreedomPay. These 
-cyberattacks have resulted in the loss of sensitive data, financial losses, and 
-reputational damage. While the average cost of a hospitality breach ($3.4M) 
-is lower than the cross-industry average ($4.4M), the impact on reputation 
-can cause significant harm to the bottom line due to the highly competitive 
-nature of the industry.
-A surge towards digital technologies prompted by the pandemic, along with 
-the overall resurgence of the hospitality industry, has rendered hospitality 
-companies well-acquainted with cyberattacks.
-In February 2022, the global hotel and resort company Marriott was targeted 
-through social engineering, and the attackers made out with 20 gigabytes 
-of sensitive customer data, including personal information and credit card 
-numbers. In September 2022, InterContinental Hotels Group (IHG) was hit by 
-a cyberattack that downed its booking systems and mobile apps. 
-With over 250 security researchers across the globe, the Trustwave 
-SpiderLabs team puts its resources to task in looking into what leads to these 
-breaches. We are uniquely positioned to do so, as we perform over 100,000 
-hours of penetration tests and uncover tens of thousands of vulnerabilities 
-annually. We also have a dedicated email security team analyzing millions 
-of phishing URLs validated daily, including 4,000-8,000 a day that are 
-uniquely identified by Trustwave SpiderLabs. Our diverse coverage of infosec 
-disciplines, including Continuous Threat Hunting, Forensics and Incident 
-Response, Malware Reversal, and Database Security, give us insight into 
-identifying how these breaches occur as well as mitigations and controls that 
-your organization can put in place to prevent these compromises.
-31% 
-OF HOSPITALITY 
-ORGANIZATIONS HAVE 
-REPORTED A DATA 
-BREACH IN THEIR 
-COMPANY’S HISTORY, 
-OF WHICH 89% HAVE 
-BEEN AFFECTED MORE 
-THAN ONCE IN A YEAR
-3.4
-million 
-THE AVERAGE COST OF A 
-HOSPITALITY BREACH
-3
-2023 Hospitality Sector Threat Landscape: Trustwave Threat Intelligence Briefing and Mitigation Strategies
-There are a few factors that make the hospitality industry’s cybersecurity 
-threat profile especially unique, including: 
-	
-- **Seasonal and Less Sophisticated Workforce**: 
-The hospitality sector 
-employs a diverse workforce, with seasonal and less sophisticated staff 
-often engaged during peak periods to meet demand. This presents a 
-distinct risk of insider threat, intentional or not, due to the challenge of 
-providing consistent security training to a continually changing group of 
-employees.  
-	
-- **Constant User Turnover**: 
-Hospitality establishments encounter a fresh 
-set of users virtually every day. This ongoing cycle demands consistent 
-uptime, addresses bandwidth constraints, and strives to minimize potential 
-exposure to security threats.  
-	
-- **Dirty Networks**: 
-Given the substantial volume of network users, whether 
-they’re hotel guests or individuals connecting to coffee shop Wi-Fi, 
-organizations within hospitality must operate under the assumption that 
-their networks are highly susceptible to attacks due to the sheer number 
-of users. There are hesitancies to deploy patches and configuration 
-changes that might have an adverse impact on day-to-day operations.    
-	
-- **Physical Security Concerns**: 
-Unlike conventional office buildings where 
-employee access is typically controlled through access cards, hospitality 
-establishments face cybersecurity risks due to the accessibility of 
-hardware by guests. For instance, the server closet in a hotel could be left 
-unlocked and easily accessible or a thumb drive could easily be inserted 
-into a nearby device.  
-	
-- **Franchise Model**: 
-The franchise framework leads to disparities in 
-policy consistency and implementation across the industry, including 
-cybersecurity measures. Different franchisers and franchisees adopt 
-varied business models, resulting in divergent cybersecurity practices. 
-Given these circumstances, it is crucial for the hospitality sector to minimize 
-its risk and prioritize information protection. This report’s objective is to 
-thoroughly examine the multitude of threats that pose challenges to the 
-hospitality industry.  
-We will begin by highlighting the significant trends currently affecting the 
-industry, including contactless technology, generative AI, and third-party 
-risk. Subsequently, we will analyze the attack flow specific to the hospitality 
-sector, offering insight on specific threat actors, actionable intelligence, and 
-recommended mitigations for each stage to illustrate how organizations can 
-proactively identify and prevent attacks to avoid lasting impact.
-4
-2023 Hospitality Sector Threat Landscape: Trustwave Threat Intelligence Briefing and Mitigation Strategies
-In this report, we will examine many of the most prevalent threat tactics and 
-threat actors operating across hospitality and throughout the attack chain, 
-including:
-THREAT ACTORS 
-	
-- LockBit
-	
-- Medusa
-	
-- Vice Society
-	
-- BianLian
-	
-- BlackBasta
-	
-- Qillin, Royal
-	
-- Karakurt
-	
-- Ragnar
-	
-- Alphv
-	
-- Clop
-	
-- Conti
-	
-- Lv
-	
-- Play
-	
-- Hive
-	
-- BlackShadow 
-THREAT TACTICS 
-	
-- Email-borne Malware 
-(Emotet, Qakbot)
-	
-- Phishing (IPFS, Image Based, 
-Brand Impersonation) 
-	
-- Scams (Fake Order Scams, 
-Extortion Scams) 
-	
-- BEC (e.g., Payroll Diversion) 
-	
-- Malware  
-	
-- Credential Access (Bruteforcing, 
-Auctioned Accounts) 
-	
-- Vulnerability Exploitation
-For additional information about the most prevalent threat actors, please go 
-to the Appendix. 
-<a id="emerging-and-prominent-trends"></a>
-## Emerging and Prominent Trends
-6
-2023 Hospitality Sector Threat Landscape: Trustwave Threat Intelligence Briefing and Mitigation Strategies
-<a id="generative-ai-and-large-language-models-llms"></a>
-## Generative AI and Large Language 
-Models (LLMs)
-The Threat
-Generative AI and Large Language Models (LLMs) continue to take the world 
-by storm. Generative AI is a powerful tool that is being increasingly used 
-by the hospitality sector to improve the guest experience with services like 
-chatbots or language translation. Following the Covid-19 pandemic, many 
-hospitality entities began leveraging chatbots to interact with guests and 
-provide 24/7 customer support.
-However, similar to other industries, using this technology also raises 
-concerns about data privacy and security. Hospitality businesses need 
-to carefully consider the risks and benefits of using generative AI before 
-deploying it.
-How This Could Affect You
-Generative AI systems can be used to collect and store large amounts 
-of data about guests, including personal information, travel preferences, 
-identification documents, and payment details. This can either be through 
-employees inputting the information, or by the guests themselves through 
-use of a chatbot. If exposed or accessed, this data could be used by 
-cybercriminals to commit identity theft, fraud, or other crimes.
-The hospitality industry is in the business of knowing its guests and their 
-preferences. As a result, tailored and personalized marketing is a core 
-component to stay competitive. As more business intelligence and customer 
-analytics platforms integrate generative AI into their tools, the hospitality 
-sector must vet and audit the security protections within those systems.
-Additionally, social engineering attacks can become more sophisticated 
-as LLMs have the capability to create highly personalized and targeted 
-messages.
-While the potential benefits of these tools could be substantial, the security 
-of these systems has not yet been proven. Therefore, it is essential to adopt 
-a risk-benefit approach and carefully consider the implications with the CISO 
-leading the way.
-ARTIFICIAL 
-INTELLIGENCE AND 
-GENERATIVE AI
-Unique implications and risks 
-due to the sensitive nature of 
-the data potentially being shared 
-with these tools, as well as 
-advances in phishing.
-7
-2023 Hospitality Sector Threat Landscape: Trustwave Threat Intelligence Briefing and Mitigation Strategies
-What Trustwave SpiderLabs Is Seeing
-Trustwave is monitoring the progress and attacker implementation of 
-generative AI and LLMs. Based on Trustwave's observations to date, the 
-primary areas of concern are the increased speed and quality at which 
-attackers can create phishing emails and exploit code can be enhanced. 
-This ability will require security vendors to adjust their detection and 
-response capabilities accordingly.
-While LLMs and other technologies categorized as AI seem to have matured 
-at a near-miraculous rate over the past year, Trustwave doesn’t have any 
-indication that LLMs have "changed the game" in any substantive way beyond 
-the existing cat-and-mouse scenarios we've always worked against in the 
-security industry. Attackers are turning to tools like WormGPT and FraudGPT to 
-bypass security controls, as outlined in a recent SpiderLabs blog.
-Trustwave continues to monitor this emerging trend, tracking the novel ways 
-threat actors use it and in opportunities for risk reduction on the defenders' 
-side. While we explore methods of integrating LLMs to augment our workflow, 
-we see promising trends in identifying PoC exploit code, reverse-engineering 
-malware, and processing large amounts of log files to identify and prioritize 
-threats that must be addressed.
-Mitigations to Reduce Risk
-	
-- Evaluate your security solutions with generative AI and LLMs 
-in mind. Choose security tools or partners that can detect AI-
-generated threats like advanced phishing.
-	
-- Create robust internal policies, controls, and employee training for 
-proper data usage and data sharing to help minimize the risk of 
-data breaches. 
-	
-- Consider instituting an internal AI Infosec working group across 
-relevant teams (like Legal, Privacy, IT, Marketing, et al.) to deal 
-with governance and data sharing guidelines.
-	
-- Carefully vet your supply chain and inspect their policies and 
-controls around use of your corporate or customer data in their 
-generative AI and LLM applications.
-	
-- Monitor generative AI systems for suspicious activity and keep 
-them up to date.
-<a id="contactless-technology"></a>
-## Contactless Technology
-The Threat
-During and following the pandemic, the hospitality industry rapidly adopted 
-contactless technology. This is due to the many benefits that contactless 
-technology offers, such as improved customer or guest experience, 
-competitive differentiation, increased efficiency, and during the pandemic, a 
-reduced risk of infection.
-For example, for hotels, contactless check-in, payments, and room access 
-have become industry standard. Across the restaurant industry, ordering 
-food, making reservations, and paying is increasingly going mobile. Concert 
-venues and sporting events have accelerated the use of mobile ticketing and 
-contactless payments.
-While these shifts have led to improved efficiency, they’ve also introduced 
-new security challenges, such as the need to protect sensitive data and 
-prevent fraud. 
-How This Could Affect You
-With hotels bowing to the demand of their customers, 80% of which prefer 
-using mobile technology, mobile has now become a prime attack surface for 
-the hospitality industry.
-Frequently, these attacks commence with cunning social engineering 
-tactics like phishing emails, which enable the introduction of malware into 
-the hospitality organization’s network. Compounding this issue, the reliance 
-on hospitality Wi-Fi networks poses another avenue for exploitation, as 
-evidenced by past instances like the DarkHotel cyber espionage campaign. 
-Due to the interconnectedness of the systems, a breach can take a 
-hospitality organization’s operations fully offline. For example, in December 
-2021, Nordic Choice Hotels fell victim to a ransomware attack that resulted 
-in the shutdown of corporate systems, check-in counters, and internet-
-connected devices. Hotel staff were left to check guests into their rooms 
-with pen and paper.
-What Trustwave SpiderLabs Is Seeing
-In most hotels and hospitality locations, customers and guests will regularly 
-encounter contactless technologies and IoTs such as electronic key cards, 
-kiosks, digital billboards, electronic gaming devices, online reservations 
-systems, smart TVs, tablets, online menus, and mobile PoS (point-of-sale) 
-devices. For a threat actor, these are enticing avenues for attack.
-In fact, based on our research, a threat actor does not even need to be onsite 
-to attack hospitality devices and systems. Trustwave SpiderLabs has seen 
-a multitude of exposed ports, services, and applications from hospitality 
-organizations that are publicly available on the Internet. Prevalent ones are 
-network devices, property management systems, backup power controllers, 
-power distribution systems, phone systems, smart energy management 
-systems, and IP cameras. 
 
-MOBILE HAS 
-NOW BECOME A 
-PRIME ATTACK 
-SURFACE FOR 
-THE HOSPITALITY 
-INDUSTRY
-9
 2023 Hospitality Sector Threat Landscape: Trustwave Threat Intelligence Briefing and Mitigation Strategies
-We have also seen less prevalent exposures, but exposures nonetheless, 
-in equally critical systems like fingerprint readers, wind river systems, air 
-conditioning and water control systems, HVAC controls, RDP sessions, and 
-hotel power backup devices. Needless to say, some of these are systems 
-that support the operations of the organizations and could potentially cause 
-major disruption of services if successfully attacked and compromised.
-The surge of technological advancements in this sector continues to expand 
-the attack surface and opens fresh possibilities and opportunities, both 
-for the business and the threat actors. For example, newer features like 
-contactless table payments and smartphone-card reader integrations offer 
-a seamless experience to businesses and customers alike but also introduce 
-new vectors of attack. It's critical to rigorously scrutinize these technologies' 
-security aspects
+
+# 3
+
+## Appendix/Reference
+
+### Threat Groups
+
+#### ALPHV/BlackCat
+- BlackCat/ALPHV first appeared in late 2021. This ransomware group was the fourth most active in the second quarter of 2022 and third most active in the third quarter 2022. Intel471 reported the group was responsible for about 6.5% of the total reported ransomware cases during this period. While the amount is smaller compared to LockBit or Black Basta, newcomer BlackCat has managed to stand out from the crowd. The group developed a search function in July 2022 for indexed stolen data that had not been seen previously. The group claimed this was done to aid other cybercriminals in finding confidential information which can be used to add pressure to victim organizations forcing them to pay the ransom. This idea was quickly copied with LockBit adding its own, lighter version to its toolset.
+- ALPHV has also set other trends. According to the FBI, ALPHV was the first group to successfully utilize Rust to ransom a victim, well before Hive made the switch. ALPHV’s ability to develop capabilities and functionality that are quickly adopted by other threat actors most likely indicates that its members are most likely ransomware veterans and there are indications the group was linked to the infamous Darkside and BlackMatter gangs.
+
+#### BianLian
+- Starting in June 2022, BianLian has been an active cybercriminal group involved in ransomware development, deployment, and data extortion. It has targeted crucial US infrastructure sectors, alongside Australian infrastructure, professional services, and property development. Their entry point often involves exploiting valid Remote Desktop Protocol (RDP) credentials, utilizing open-source tools and command-line scripts for data discovery and credential gathering.
+- After accessing victim systems, the BianLian group extracts data using File Transfer Protocol (FTP), Rclone, or Mega and then threatens to publish this data unless a ransom is paid. Initially utilizing a double-extortion approach, they encrypted systems and stole data, but shifted towards focusing on data exfiltration-based extortion around January 2023. To maintain control, the group often deploys custom Go-written backdoors tailored to each victim, accompanied by remote access tools like TeamViewer, Atera Agent, SplashTop, and AnyDesk for continued command and control.
+
+#### Black Basta
+- One of the newest ransomware groups is Black Basta. The group has had alleged ties to other gangs, such as Conti, REvil, and Fin7 (aka Carbanak). These ties come in the form of possible former members/affiliates, in the case of Conti, or custom tools, which are potentially linked to Fin7. With potentially experienced members, the group was able to publish more than 20 organizations to its name-and-shame blog within the first two weeks of the group being identified in April 2022, according to Intel471. Since the initial identification of the group, they have compromised over 90 organizations as of September 2022 with no sign of slowing down.
+- The group has had unprecedented success for the short period that they have been active. This success can be linked to a couple of factors. First, Black Basta does not publicly recruit affiliates and most likely only collaborates with actors with whom it has worked with previously. This collaborative methodology is possible because it has been assessed that the Black Basta was formed from members of other successful ransomware groups, so they know other actors. Additionally, the group outsources its capabilities utilizing established tools, such as QakBot and Cobalt Strike, or network access brokers, allowing the group to have a high success rate once inside a victim's environment.
+
+#### BlackShadow
+- Traces of BlackShadow's operations have been identified dating back to early 2019, indicating a long-standing presence. The group employs its own .NET backdoors and custom tools for various actions on compromised systems, including downloading files, executing commands, and exfiltrating data.
+- Often associated with Iranian state sponsorship, BlackShadow is notably linked to the Pay2Key ransomware, which typically targets Israeli entities. However, their motives differ from typical ransomware groups, as they are not primarily financially driven.
+
+#### Clop
+- Clop is a ransomware family that was first observed in February 2019 and has been used against retail, transportation and logistics, education, manufacturing, engineering, automotive, energy, financial, aerospace, telecommunications, professional and legal services, healthcare, and high-tech industries. Clop is a variant of the CryptoMix ransomware.
+- In addition to exploiting a previously undisclosed vulnerability (CVE-2023-34362) in MOVEit Transfer, group has a history of conducting similar campaigns using zero-day exploits, targeting Accellion File Transfer Appliance (FTA) devices in 2020 and 2021, as well as Fortra/Linoma GoAnywhere MFT servers in early 2023.
+
+#### Conti
+- Emerging in 2020, Conti ransomware has been associated with the Ryuk strain through shared code and demonstrates links to cybercrime clusters like Karakurt and TrickBot / Wizard Spider. A notable occurrence was an affiliate's release of the group's playbook in August 2021, detailing tactics and vulnerabilities exploited. A significant development occurred with the release of ContiLeaks in February 2023, which disseminated Conti's internal chat messages and exposed domains compromised with BazarBackdoor malware, facilitating network access. These leaks have prompted changes in the group's dynamics, potentially leading to internal divisions and a diminished rivalry with other RaaS entities, resulting in a noticeable slowdown in their ongoing operations.
+- Leveraging insights from the historical attacks as well as mentioned leaks, Conti actors often choose to exploit vulnerabilities in unpatched assets, further escalating privileges and enabling lateral movement within victim networks. They also known to exhibit reliance on TrickBot malware for certain post-exploitation tasks. Conti's tactics underscore a comprehensive strategy that combines existing software, strategic tool additions, credential compromise, and vulnerability exploitation to maintain persistence, escalate privileges, and conduct lateral movements within targeted networks.
+
+#### Hive
+- Hive ransomware emerged in June 2021, operating as an affiliate-driven ransomware campaign targeting diverse sectors worldwide, including healthcare, nonprofits, retailers, and energy providers. Their reach extends from the US to Japan, employing tactics such as phishing with malicious attachments and leveraging Remote Desktop Protocol (RDP) for lateral movement within networks.
+- The group faced law enforcement action, with authorities seizing their Dark Web sites on January 26, 2023. The seizure, executed through a collaboration involving entities like the US Department of Justice, FBI, Secret Service, Europol, and European countries, marked a significant blow to Hive ransomware's extortion and data leak activities.
+
+#### Karakurt
+- Established in June 2021, the Karakurt Hacking Team operates adeptly by deploying Cobalt Strike beacons, utilizing tools like Mimikatz and AnyDesk, and employing diverse techniques for network traversal and privilege escalation. Their extortion strategy centers on data deletion and confidentiality, although breaches of trust have been reported even after ransom payment.
+- Karakurt's unconventional tactics involve targeting victims previously attacked by other ransomware groups, potentially involving data purchases. They have also engaged in simultaneous attacks alongside other ransomware actors, occasionally employing exaggeration about breach severity or stolen data, showcasing their deceptive approach.
+
+#### LockBit
+- LockBit has continued its reign as the most prominent ransomware group in 2022. For those that don't closely follow these groups, LockBit is and continues to be, the group that dominates the ransomware space. They utilize high payments for recruiting experienced malicious actors, purchasing new exploits, and even run a bug bounty program that offers high-paying bounties - a first for a ransomware group[1]to identity of one of its users. With all these programs and the continued effectiveness of the group, it is forecasted that it will remain the most active and effective group for the foreseeable future.
+- As for developments, the group has developed LockBit 3.0, the newest iteration of the ransomware. The updated version, released in June 2022, and includes additional features that can automate permission elevation, disable Windows Defender, a "safe mode" to bypass installed Antivirus, and the ability to encrypt Windows systems with two different ransomware strains to decrease the chance of decryption from a third party. With these new features, the group has been able to conduct successful attacks, accounting for roughly 44% of successful ransomware attacks so far in 2022 according to Infosecurity Magazine.
+- On a law enforcement note, a member of the LockBit group was recently arrested in Canada and is awaiting extradition to the United States. A dual Russian and Canadian national has allegedly participated within the LockBit campaign and has been charged with conspiracy to intentionally damage protected computers and to transmit ransom demands. The charges carry a maximum of five years in prison.
+
+#### LV
+- Operating since late 2020, the LV group functions as a RaaS entity, with purported ties to the REvil (Sodinokibi) ransomware. While the exact relationship remains uncertain, indications suggest that LV's developers modified REvil's binary script, possibly acquired through a partnership where access to source code was shared, stolen, or sold. LV ransomware seems to have repurposed a REvil v2.03 beta version by altering configurations for their own ransomware activities. This shift highlights their collaborative approach with underground actors, enabling them to target a broad spectrum of regions and industries. The success of a ransomware variant extends beyond new features, emphasizing the significance of expansive reach and improved distribution networks.
+- Collaborating with threat actors holding underground access, LV ransomware has effectively expanded its impact across various regions and industries. This underscores the point that the influence of a ransomware strain is not solely shaped by augmenting functionalities, but also hinges on factors like strategic partnerships and robust distribution networks.
+
+#### Magniber
+- The initial detection of the Magniber ransomware took place towards the end of 2017, when it was observed employing the Magnitude Exploit Kit for malvertising attacks specifically targeting users in South Korea. Despite its early identification, the ransomware has remained active and has continuously enhanced its strategies by adopting novel methods of obfuscation and evasion. In April 2022, Magniber gained infamy for masquerading as a Windows update file, enticing victims into unwittingly installing it. Subsequently, it began propagating through JavaScript starting in September 2022.
+- In early 2022, Magniber distributed itself through fake installers in APPX and MSI formats. The ransomware was executed using the MSI CustomAction table, which called a malicious DLL within the package. The installer also dropped a malware file called Fodscript, used for privileged escalation. Magniber employed various tactics, including posing as fake installers, Windows updates, and COVID-19-related files to deceive users. Additionally, it utilized malformed digital signatures to bypass execution blocks and exploit vulnerabilities such as CVE-2022-44698.
+
+#### Medusa
+- MedusaLocker is a ransomware strain that emerged in 2019 and has since spawned various versions, though core functionalities remain unchanged. Alterations include modified file extensions for encrypted data and variations in the appearance of the ransom note. Ransom payments from victims are typically divided between the affiliate (55-60%) and the developer.
+- This ransomware often infiltrates victim systems via vulnerable Remote Desktop Protocol (RDP) setups, alongside employing email phishing and direct attachment of the ransomware to emails in spam campaigns for initial access.
+
+#### Play
+- Unveiled in June 2022, Play ransomware concentrates its attacks primarily on Latin American nations, with Argentina and Brazil as key targets. Drawing inspiration from Russian counterparts Hive and Nokoyawa, Play employs akin encryption methods.
+- Leveraging reused or leaked credentials, Play breaches networks and systems, relying on tools like Cobalt Strike, SystemBC, Empire, and Mimikatz for lateral movement. Its unique employment of AdFind sets it apart from Hive and Nokoyawa, emphasizing a potential affiliation through shared tactics and tools.
+
+#### Qillin, Royal
+- Royal is ransomware that first appeared in early 2022; a version that also targets ESXi servers was later observed in February 2023. Royal employs partial encryption and multiple threads to evade detection and speed encryption. Royal has been used in attacks against multiple industries worldwide--including critical infrastructure.
+- Royal operates as a private group, distinguishing themselves from other cybercrime operations by purchasing direct access to corporate networks from underground Initial Access Brokers (IABs). Security researchers have identified similarities in the encryption routines and TTPs used in Royal and Conti attacks and noted a possible connection between their operators (the group suspected of being primarily composed of former members of the Conti ransomware group operates discreetly and in a secretive manner. This group, referred to as Team One, consists of ex-members who have come together to form this new entity).
+- Royal has been observed employing various methods to gain initial access to vulnerable systems, often including - callback phishing, SEO poisoning and exploiting exposed RDP accounts. Once they have successfully gained access, the group utilizes a range of tools to facilitate their intrusion operations. These tools include Chisel, a TCP/UDP tunneling software, and AdFind, an Active Directory query tool, among others.
+
+#### Ragnar
+- Active since December 2019, Ragnar Locker is a ransomware strain that predominantly targets English-speaking users. Both the ransomware group and its binary share the name "Ragnar Locker." This ransomware scans and terminates running services on infected machines, focusing on decrypted services. Operating on Windows and Linux systems, it exfiltrates data, utilizes the Salsa20 encryption algorithm for file encryption, and demands payment for data recovery.
+- Employing a dual approach, the Ragnar Locker group practices double extortion. Victims are required to pay not only for file decryption but also to prevent the public release of stolen data. Furthermore, the group promises insights into the attack's origin and security recommendations for those complying with their financial demands. The ransomware goes beyond encryption, erasing volume shadow copies to hinder file recovery and terminating services like vss, sql, veeam, and logmein to maximize impact.
+
+#### Vice Society
+- The Vice Society ransomware group gained attention between late 2022 and early 2023 due to a series of high-profile attacks, including one affecting San Francisco's rapid transit system. While primarily focused on education and healthcare, evidence indicates they are also often targeting the manufacturing sector, suggesting a diverse industry penetration approach through compromised credentials procurement.
+- Initially known for exploiting the PrintNightmare vulnerability, Vice Society utilized ransomware strains like Hello Kitty/Five Hands and Zeppelin. Recently, they developed their own ransomware builder and adopted stronger encryption techniques. A joint advisory by FBI, CISA, and MS-ISAC in September 2022 highlighted the group's disproportionate targeting of the education sector, with expectations of heightened attacks coinciding with the 2022-23 school year.
+
+2023 Hospitality Sector Threat Landscape: Trustwave Threat Intelligence Briefing and Mitigation Strategies
