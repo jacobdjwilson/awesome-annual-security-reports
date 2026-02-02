@@ -17,12 +17,11 @@ except ImportError:
     sys.exit(1)
 
 try:
-    from google import genai
-    from google.genai import types
+    import google.generativeai as genai
     from google.api_core import exceptions
 except ImportError:
-    print("ERROR: The 'google-genai' module is required but not installed.")
-    print("Please install the new SDK using: pip install google-genai")
+    print("ERROR: The 'google-generativeai' module is required but not installed.")
+    print("Please install it using: pip install google-generativeai")
     sys.exit(1)
 
 # Configure Gemini API
@@ -36,38 +35,24 @@ def load_ai_config():
         return None
 
 AI_CONFIG = load_ai_config()
-MODELS = AI_CONFIG["models"]["priority_list"] if AI_CONFIG else ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
+MODELS = AI_CONFIG["models"]["priority_list"] if AI_CONFIG else ["gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-3-flash-preview"]
 
 MODEL = None
-CLIENT = None
 
 def setup_gemini(api_key: str):
-    global MODEL, CLIENT
-    
-    try:
-        # Initialize the new Client
-        CLIENT = genai.Client(api_key=api_key)
-    except Exception as e:
-        print(f"ERROR: Failed to initialize Gemini Client: {e}")
-        return False
-
+    global MODEL
+    genai.configure(api_key=api_key)
     for model_name in MODELS:
         try:
-            # Verify model availability using count_tokens
-            response = CLIENT.models.count_tokens(
-                model=model_name,
-                contents="Hello"
-            )
-            
-            if response.total_tokens is not None:
+            test_model = genai.GenerativeModel(model_name)
+            test_response = test_model.count_tokens("Hello")
+            if test_response.total_tokens is not None:
                 MODEL = model_name
                 print(f"Successfully verified model: {MODEL}")
-                break   
-        except Exception as e:
-            # Catching general exceptions as SDK specific exceptions might vary
-            print(f"Model {model_name} verification failed: {e}")
+                break
+        except (exceptions.GoogleAPICallError, ValueError) as e:
+            print(f"Model {model_name} not available or failed verification: {str(e)}")
             continue
-            
     if not MODEL:
         print("ERROR: No models available. Check API key and quota.")
         return False
@@ -260,65 +245,50 @@ def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
         return fallback_url
 
 def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url: Optional[str]) -> str:
-    if not CLIENT or not MODEL:
-        raise ValueError("Gemini Client or Model not initialized.")
-    
+    if not MODEL:
+        raise ValueError("Gemini Model not initialized.")
+
     try:
         print(f"Generating markdown with {MODEL}...")
-        
+
         # Truncate PDF text if too long
         max_pdf_chars = 1000000
         if len(pdf_text) > max_pdf_chars:
             print(f"Truncating PDF text from {len(pdf_text)} to {max_pdf_chars} characters")
             pdf_text = pdf_text[:max_pdf_chars] + "\n\n[Content truncated due to length...]"
-        
+
         full_prompt = f"{prompt_text}\n\n"
         if organization_url:
             full_prompt += f"The official report URL is: {organization_url}\n\n"
         full_prompt += f"# Report Content Below\n\n{pdf_text}"
-        
-        gen_config = AI_CONFIG.get("configurations", {}).get("default", {}) if AI_CONFIG else {}
 
-        # Configure generation parameters using the new SDK types
-        config = types.GenerateContentConfig(
-            temperature=gen_config.get("temperature", 0.1),
-            max_output_tokens=gen_config.get("max_output_tokens", 8192),
-            top_p=gen_config.get("top_p", 0.95),
-            top_k=gen_config.get("top_k", 40),
-            safety_settings=[
-                types.SafetySetting(
-                    category="HARM_CATEGORY_HARASSMENT",
-                    threshold="BLOCK_ONLY_HIGH"
-                ),
-                types.SafetySetting(
-                    category="HARM_CATEGORY_HATE_SPEECH",
-                    threshold="BLOCK_ONLY_HIGH"
-                ),
-                types.SafetySetting(
-                    category="HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                    threshold="BLOCK_ONLY_HIGH"
-                ),
-                types.SafetySetting(
-                    category="HARM_CATEGORY_DANGEROUS_CONTENT",
-                    threshold="BLOCK_ONLY_HIGH"
-                ),
-            ],
-            response_mime_type="text/plain"
-        )
-        
-        # Call the API using the new Client structure
-        # Note: request_options like timeout are handled via http_options if needed, 
-        # or simplified in standard calls.
-        response = CLIENT.models.generate_content(
-            model=MODEL, 
-            contents=full_prompt,
-            config=config
+        gen_config_settings = AI_CONFIG.get("configurations", {}).get("default", {}) if AI_CONFIG else {}
+        model = genai.GenerativeModel(MODEL)
+
+        generation_config = {
+            "temperature": gen_config_settings.get("temperature", 0.1),
+            "max_output_tokens": gen_config_settings.get("max_output_tokens", 8192),
+            "top_p": gen_config_settings.get("top_p", 0.95),
+            "top_k": gen_config_settings.get("top_k", 40),
+            "response_mime_type": "text/plain",
+        }
+
+        safety_settings = [
+            {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+            {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+            {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+            {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+        ]
+
+        response = model.generate_content(
+            full_prompt,
+            generation_config=generation_config,
+            safety_settings=safety_settings
         )
 
         if not response.text:
-            # Check for safety blocks if text is empty
-            if response.candidates and response.candidates[0].finish_reason:
-                 raise ValueError(f"Content generation blocked: {response.candidates[0].finish_reason}")
+            if response.prompt_feedback and response.prompt_feedback.block_reason:
+                raise ValueError(f"Content generation blocked: {response.prompt_feedback.block_reason}")
             raise ValueError("The response did not contain valid text content.")
 
         generated_text = response.text.strip()
@@ -327,7 +297,7 @@ def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url:
 
         print(f"Successfully generated markdown ({len(generated_text)} characters)")
         return generated_text
-        
+
     except Exception as e:
         print(f"ERROR: Failed to generate markdown: {str(e)}")
         raise
