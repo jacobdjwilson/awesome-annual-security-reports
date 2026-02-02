@@ -35,10 +35,7 @@ def load_ai_config():
         return None
 
 AI_CONFIG = load_ai_config()
-if not AI_CONFIG:
-    print("ERROR: AI config file 'artifacts/ai-models.json' not found or is invalid. Cannot proceed.")
-    sys.exit(1)
-MODELS = AI_CONFIG["models"]["priority_list"]
+MODELS = AI_CONFIG["models"]["priority_list"] if AI_CONFIG else ["gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-3-flash-preview"]
 
 MODEL = None
 
