@@ -295,7 +295,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install google-genai requests
+          pip install google-genai google-api-python-client requests
 
       - name: Download file lists
         uses: actions/download-artifact@v4
