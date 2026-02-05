@@ -3,8 +3,8 @@ import sys
 import json
 import re
 import argparse
-import google.generativeai as genai
-from google.api_core import exceptions
+from google import genai
+from google.genai import types
 import urllib.parse
 from googleapiclient.discovery import build
 from typing import List, Dict, Any, Tuple, Optional
@@ -27,19 +27,22 @@ if not AI_CONFIG:
     sys.exit(1)
 MODELS = AI_CONFIG["models"]["priority_list"]
 MODEL = None
+CLIENT = None
 
 def setup_gemini(api_key: str):
-    global MODEL
-    genai.configure(api_key=api_key)
+    global MODEL, CLIENT
+    CLIENT = genai.Client(api_key=api_key)
     for model_name in MODELS:
         try:
-            test_model = genai.GenerativeModel(model_name)
-            test_response = test_model.count_tokens("Hello")
-            if test_response.total_tokens is not None:
+            response = CLIENT.models.generate_content(
+                model=model_name,
+                contents="Hello"
+            )
+            if response.text:
                 MODEL = model_name
                 print(f"Successfully verified model: {MODEL}")
                 break
-        except (exceptions.GoogleAPICallError, ValueError) as e:
+        except Exception as e:
             print(f"Model {model_name} not available or failed verification: {str(e)}")
             continue
     if not MODEL:
@@ -187,193 +190,180 @@ def categorize_content_fallback(content: str, available_categories: Dict[str, Li
     """Fallback categorization based on keyword matching"""
     # Extended keyword mapping
     keyword_mapping = {
-        'Threat Intelligence': ['threat intelligence', 'threat landscape', 'threat report', 'apt', 'advanced persistent threat', 'malware', 'phishing', 'cybercrime', 'attack', 'attacker'],
-        'Application Security': ['application security', 'appsec', 'devsecops', 'owasp', 'sast', 'dast', 'software security', 'code security'],
-        'Cloud Security': ['cloud security', 'aws', 'azure', 'gcp', 'container security', 'kubernetes', 'serverless', 'cloud infrastructure'],
-        'Vulnerabilities': ['vulnerability', 'cve', 'vulnerability management', 'patching', 'zero-day', 'exploit'],
-        'Ransomware': ['ransomware', 'extortion', 'encryption', 'ransom'],
-        'Data Breaches': ['data breach', 'data leak', 'incident report', 'security incident'],
-        'Physical Security': ['physical security', 'ot security', 'operational technology', 'ics', 'industrial control systems'],
-        'AI and Emerging Technologies': ['artificial intelligence', 'ai', 'machine learning', 'ml', 'emerging technology', 'generative ai'],
-        'Industry Trends': ['industry trends', 'cybersecurity trends', 'security report', 'annual report', 'survey', 'study', 'statistics', 'findings'],
-        'Identity Security': ['identity', 'iam', 'identity and access management', 'authentication', 'mfa', 'zero trust', 'access control'],
-        'Penetration Testing': ['penetration testing', 'pentesting', 'red team', 'offensive security', 'security testing'],
-        'Privacy and Data Protection': ['privacy', 'data protection', 'gdpr', 'ccpa', 'data privacy', 'compliance'],
-        'Email Security': ['email security', 'email threats', 'phishing', 'business email compromise', 'bec'],
-        'Voice': ['voice', 'ciso', 'chief information security officer', 'leadership', 'executive', 'voice of'],
+        "Threat Intelligence": ["threat", "actor", "malware", "apt", "campaign", "intelligence", "ioc", "ttps"],
+        "Application Security": ["appsec", "application", "software", "code", "devsecops", "sast", "dast", "dependency"],
+        "Cloud Security": ["cloud", "aws", "azure", "gcp", "kubernetes", "container", "serverless"],
+        "Vulnerabilities": ["vulnerability", "cve", "exploit", "patch", "zero-day", "disclosure"],
+        "Ransomware": ["ransomware", "extortion", "encryption", "ransom"],
+        "Data Breaches": ["breach", "leak", "exposure", "incident", "compromise"],
+        "Identity Security": ["identity", "iam", "authentication", "sso", "mfa", "passwordless"],
+        "Industry Trends": ["trend", "survey", "report", "state of", "annual", "industry", "statistics"],
     }
-    
+
     content_lower = content.lower()
     title_lower = title.lower()
-    org_lower = org_name.lower()
     
-    # Check for survey indicators first
-    survey_indicators = ['survey', 'study', 'poll', 'respondents', 'interviewed', 'questionnaire', 'feedback', 'voice of', 'findings']
-    is_survey = any(indicator in content_lower or indicator in title_lower for indicator in survey_indicators)
-    
-    # Score categories based on keyword frequency
-    category_scores = {}
+    scores = {}
     for category, keywords in keyword_mapping.items():
         score = sum(content_lower.count(keyword) for keyword in keywords)
-        # Boost score if keywords appear in title
-        score += sum(title_lower.count(keyword) * 2 for keyword in keywords)
-        category_scores[category] = score
+        title_score = sum(title_lower.count(keyword) * 3 for keyword in keywords)  # Weight title matches higher
+        scores[category] = score + title_score
     
-    # Find the best matching category
-    best_category = max(category_scores, key=category_scores.get) if any(category_scores.values()) else "Industry Trends"
+    if scores:
+        best_category = max(scores, key=scores.get)
+        if scores[best_category] > 0:
+            # Determine report type based on category
+            survey_categories = ["Industry Trends", "Identity Security"]
+            report_type = "Survey" if best_category in survey_categories else "Analysis"
+            
+            # Verify category exists in available categories
+            if report_type in available_categories and best_category in available_categories[report_type]:
+                print(f"Fallback categorization: {report_type} / {best_category} (score: {scores[best_category]})")
+                return report_type, best_category
     
-    print(f"Category scores for {org_name}: {dict(sorted(category_scores.items(), key=lambda x: x[1], reverse=True)[:5])}")
-    print(f"Best category: {best_category}, Is survey: {is_survey}")
+    # Default fallback
+    print("Using default category: Analysis / Threat Intelligence")
+    return "Analysis", available_categories["Analysis"][0] if available_categories["Analysis"] else "Threat Intelligence"
+
+def generate_summary_with_ai(content: str, org_name: str, title: str) -> str:
+    """Generate a summary using Gemini API"""
+    try:
+        prompt = f"""Provide a 2-3 sentence summary of this security report from {org_name} titled "{title}".
+
+Focus on:
+1. Main topic/theme of the report
+2. Key findings or statistics (if any)
+3. Primary audience or use case
+
+Report content (first 5000 characters):
+{content[:5000]}"""
+
+        response = CLIENT.models.generate_content(
+            model=MODEL,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=0.3,
+                max_output_tokens=200
+            )
+        )
+        
+        if response.text:
+            summary = response.text.strip()
+            print(f"AI-generated summary: {summary[:100]}...")
+            return summary
+        else:
+            raise ValueError("Empty response from AI")
+            
+    except Exception as e:
+        print(f"AI summary generation failed: {e}")
+        return None
+
+def categorize_with_ai(content: str, available_categories: Dict[str, List[str]], org_name: str, title: str) -> Tuple[str, str]:
+    """Use AI to categorize the report"""
+    try:
+        categories_list_analysis = ', '.join(available_categories.get("Analysis", []))
+        categories_list_survey = ', '.join(available_categories.get("Survey", []))
+        
+        prompt = f"""Categorize this security report from {org_name} titled "{title}".
+
+Available Report Types and Categories:
+- Analysis Reports: {categories_list_analysis}
+- Survey Reports: {categories_list_survey}
+
+Guidelines:
+- "Analysis Reports" are technical reports analyzing threats, vulnerabilities, security trends
+- "Survey Reports" are research-based reports with statistics, industry surveys, executive perspectives
+
+Respond with ONLY:
+Type: [Analysis or Survey]
+Category: [exact category name from the list above]
+
+Report content (first 3000 characters):
+{content[:3000]}"""
+
+        response = CLIENT.models.generate_content(
+            model=MODEL,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=0.1,
+                max_output_tokens=100
+            )
+        )
+        
+        if not response.text:
+            raise ValueError("Empty response from AI")
+            
+        response_text = response.text.strip()
+        print(f"AI categorization response: {response_text}")
+        
+        # Parse response
+        type_match = re.search(r'Type:\s*(Analysis|Survey)', response_text, re.IGNORECASE)
+        category_match = re.search(r'Category:\s*(.+?)(?:\n|$)', response_text, re.IGNORECASE)
+        
+        if type_match and category_match:
+            report_type = type_match.group(1).capitalize()
+            category = category_match.group(1).strip()
+            
+            # Validate category exists in available categories
+            if report_type in available_categories and category in available_categories[report_type]:
+                print(f"AI categorization: {report_type} / {category}")
+                return report_type, category
+            else:
+                print(f"AI category '{category}' not in available list, using fallback")
+        else:
+            print("Could not parse AI categorization response, using fallback")
+            
+    except Exception as e:
+        print(f"AI categorization failed: {e}")
     
-    # Determine report type and ensure category exists
-    report_type = "Survey" if is_survey else "Analysis"
-    
-    # Check if the best category exists in the available categories for this type
-    if best_category in available_categories[report_type]:
-        return report_type, best_category
-    
-    # Check if it exists in the other type
-    other_type = "Analysis" if report_type == "Survey" else "Survey"
-    if best_category in available_categories[other_type]:
-        return other_type, best_category
-    
-    # Fall back to a generic category that exists
-    for generic in ["Industry Trends", "Other"]:
-        if generic in available_categories[report_type]:
-            return report_type, generic
-        if generic in available_categories[other_type]:
-            return other_type, generic
-    
-    # Ultimate fallback - use the first available category
-    if available_categories[report_type]:
-        return report_type, available_categories[report_type][0]
-    if available_categories[other_type]:
-        return other_type, available_categories[other_type][0]
-    
-    return "Analysis", "Industry Trends"
+    # Fallback to keyword-based categorization
+    return categorize_content_fallback(content, available_categories, org_name, title)
 
 def analyze_content(content: str, org_name: str, year: str, report_title: str, available_categories: Dict[str, List[str]]) -> Dict[str, Any]:
-    """Analyze content using AI or fallback methods"""
-    if not MODEL:
-        print("No AI model available, using fallback analysis")
-        return fallback_analysis(content, org_name, year, report_title, available_categories)
-
-    try:
-        # First, get basic categorization using fallback
-        fallback_type, fallback_category = categorize_content_fallback(content, available_categories, org_name, report_title)
-        
-        # Summarization with AI
-        summary_prompt_path = ".github/ai-prompts/markdown-summarization-prompt.md"
-        
-        if not os.path.exists(summary_prompt_path):
-             raise FileNotFoundError(f"Summarization prompt file not found: {summary_prompt_path}")
-             
-        with open(summary_prompt_path, 'r', encoding='utf-8') as f:
-            summary_base_prompt = f.read()
-        
-        # Remove markdown image tags
-        clean_content = re.sub(r'!\[.*?\]\(.*?\)', '', content, flags=re.DOTALL)
-        
-        # Truncate content for summary (keep within token limits)
-        summary_content = clean_content[:20000] if len(clean_content) > 20000 else clean_content
-        summary_prompt = f"{summary_base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{summary_content}"
-        
-        gen_config = AI_CONFIG.get("configurations", {}).get("default", {}) if AI_CONFIG else {}
-
-        summary_model = genai.GenerativeModel(MODEL)
-        summary_response = summary_model.generate_content(
-            summary_prompt,
-            generation_config={"temperature": gen_config.get("temperature", 0.1), "max_output_tokens": 200}
-        )
-        
-        summary = summary_response.text.strip() if summary_response.text else ""
-        
-        # Clean up and ensure reasonable length
-        if summary:
-            summary = ' '.join(summary.split())
-            if len(summary) > 400:
-                sentences = summary.split('. ')
-                summary = ''
-                for sentence in sentences:
-                    if len(summary + sentence + '. ') <= 400:
-                        summary += sentence + '. '
-                    else:
-                        break
-                summary = summary.strip()
-        else:
-            summary = f"Security report from {org_name} covering industry insights and cybersecurity trends."
-
-        # Classification and Categorization with AI
-        categorization_prompt_path = ".github/ai-prompts/report-categorization-prompt.md"
-        
-        if not os.path.exists(categorization_prompt_path):
-             raise FileNotFoundError(f"Categorization prompt file not found: {categorization_prompt_path}")
-
-        with open(categorization_prompt_path, 'r', encoding='utf-8') as f:
-            categorization_base_prompt = f.read()
-
-        # Build category list from available categories
-        all_categories = []
-        for report_type, categories in available_categories.items():
-            all_categories.extend(categories)
-        all_categories = sorted(list(set(all_categories)))  # Remove duplicates and sort
-        
-        category_str = '\n'.join([f"- {cat}" for cat in all_categories])
-        categorization_prompt = categorization_base_prompt.replace("{{CATEGORIES}}", category_str)
-        
-        # Truncate content for categorization (use cleaned content here too)
-        categorization_content = clean_content[:12000] if len(clean_content) > 12000 else clean_content
-        categorization_prompt += f"\n\nOrganization: {org_name}\nTitle: {report_title}\nYear: {year}\n\n{categorization_content}"
-
-        category_model = genai.GenerativeModel(MODEL)
-        category_response = category_model.generate_content(
-            categorization_prompt,
-            generation_config={"temperature": gen_config.get("temperature", 0.1), "max_output_tokens": 100}
-        )
-        
+    """Analyze the markdown content and extract/generate metadata"""
+    
+    # Try AI-based analysis first if MODEL is available
+    if MODEL and CLIENT:
         try:
-            response_text = category_response.text.strip().replace('```json', '').replace('```', '').strip()
-            classification = json.loads(response_text)
-            
-            if 'type' not in classification or 'category' not in classification:
-                raise ValueError("Missing 'type' or 'category' in AI response.")
-            
-            # Validate that the category exists in our available categories
-            report_type = classification.get('type', 'Analysis')
-            category = classification.get('category', 'Industry Trends')
-            
-            # Check if category exists in the specified type
-            if category not in available_categories.get(report_type, []):
-                print(f"AI suggested category '{category}' not found in {report_type} categories, using fallback")
-                report_type, category = fallback_type, fallback_category
-                
-        except (json.JSONDecodeError, ValueError) as e:
-            print(f"Could not parse AI response for classification: {e}. Using fallback.")
-            report_type, category = fallback_type, fallback_category
-
-        print(f"Final classification: {report_type} / {category}")
-
-        return {
-            'organization': org_name,
-            'year': year,
-            'title': report_title,
-            'summary': summary,
-            'type': report_type,
-            'category': category,
-            'ai_processed': True
-        }
-    except Exception as e:
-        print(f"AI analysis failed: {e}")
-        return fallback_analysis(content, org_name, year, report_title, available_categories)
-
-def fallback_analysis(content: str, org_name: str, year: str, report_title: str, available_categories: Dict[str, List[str]]) -> Dict[str, Any]:
-    """Create analysis using fallback methods when AI is not available"""
-    # Create a more meaningful summary from the content
-    sentences = content.split('. ')
-    # Take first few meaningful sentences (skip headers and empty content)
-    meaningful_sentences = [s.strip() for s in sentences if len(s.strip()) > 20 and not s.strip().startswith('#')]
-    summary_sentences = meaningful_sentences[:3] if meaningful_sentences else [f"Security report from {org_name}"]
-    summary = '. '.join(summary_sentences)
+            print("Attempting AI-based analysis...")
+            summary = generate_summary_with_ai(content, org_name, report_title)
+            if summary:
+                report_type, category = categorize_with_ai(content, available_categories, org_name, report_title)
+                return {
+                    'organization': org_name,
+                    'year': year,
+                    'title': report_title,
+                    'summary': summary,
+                    'type': report_type,
+                    'category': category,
+                    'ai_processed': True
+                }
+        except Exception as e:
+            print(f"AI analysis failed, falling back to rule-based: {e}")
+    
+    # Fallback: Extract summary from content
+    print("Using fallback analysis...")
+    lines = [line.strip() for line in content.split('\n') if line.strip()]
+    summary_candidates = []
+    
+    # Try to find introduction or summary section
+    in_intro = False
+    for i, line in enumerate(lines):
+        if any(keyword in line.lower() for keyword in ['introduction', 'executive summary', 'overview', 'abstract']):
+            in_intro = True
+            continue
+        if in_intro and len(line) > 50 and not line.startswith('#'):
+            summary_candidates.append(line)
+            if len(summary_candidates) >= 3:
+                break
+        if in_intro and line.startswith('#'):
+            break
+    
+    # If no good summary found, use first substantial paragraphs
+    if not summary_candidates:
+        summary_candidates = [line for line in lines if len(line) > 50 and not line.startswith('#')][:3]
+    
+    summary = ' '.join(summary_candidates[:2]) if summary_candidates else f"Security report from {org_name} covering {report_title.lower()}."
     if not summary.endswith('.'):
         summary += '.'
     
@@ -405,7 +395,6 @@ def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
         return f"https://www.{''.join(e for e in org_name if e.isalnum()).lower()}.com"
 
     # Simplified search query
-    # Use a less restrictive query without quotes for more flexible matching
     query = f'{org_name} {title} {year}'
     print(f"Performing Google Custom Search with query: {query}")
 
@@ -418,9 +407,8 @@ def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
             print("No results found from Google Custom Search.")
             return None
 
-        # --- Simplified Result Prioritization ---
+        # Simplified Result Prioritization
         org_lower = org_name.lower()
-        # Get significant keywords from the title (more than 3 letters)
         title_keywords = {word for word in re.findall(r'\b\w{4,}\b', title.lower())}
         results_urls = [item['link'] for item in items]
 
@@ -428,12 +416,11 @@ def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
         for url in results_urls:
             url_lower = url.lower()
             if org_lower in url_lower:
-                # Check if any title keyword is in the URL
                 if any(keyword in url_lower for keyword in title_keywords):
                     print(f"Found high-priority match (org + title keyword): {url}")
                     return url
 
-        # 2. Medium priority: URL contains just the org name (if no title keyword match)
+        # 2. Medium priority: URL contains just the org name
         for url in results_urls:
             if org_lower in url.lower():
                 print(f"Found medium-priority match (org name only): {url}")
@@ -531,8 +518,8 @@ def main():
             analysis['file_path'] = output_path
             analysis['pdf_path'] = pdf_path
 
-            # Use the URL from the conversion step, or generate a search URL as a reliable fallback.
-            org_url = conv.get('organization_url') if conv.get('organization_url') else get_organization_url(org_name, report_title, year)
+            # Get organization URL (this is where we do the search, not in pdf-converter)
+            org_url = get_organization_url(org_name, report_title, year)
             analysis['organization_url'] = org_url
             
             analysis_results.append(analysis)
