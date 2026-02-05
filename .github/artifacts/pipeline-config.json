@@ -1,0 +1,40 @@
+{
+  "repository": {
+    "pdf_root": "Annual Security Reports",
+    "markdown_root": "Markdown Conversions",
+    "readme_path": "README.md"
+  },
+  "processing": {
+    "max_pdf_size_mb": 100,
+    "min_text_length": 100,
+    "max_pdf_chars": 1000000,
+    "age_threshold_years": 2
+  },
+  "refresh_old_conversions": {
+    "limit": 10,
+    "days_old": 90
+  },
+  "prompts": {
+    "pdf_to_markdown": ".github/ai-prompts/pdf-to-markdown-prompt.md",
+    "categorization": ".github/ai-prompts/report-categorization-prompt.md",
+    "summarization": ".github/ai-prompts/markdown-summarization-prompt.md"
+  },
+  "organization_mappings": {
+    "Ai": "AI",
+    "Cyberark": "CyberArk",
+    "Sailpoint": "SailPoint",
+    "Crowdstrike": "CrowdStrike",
+    "Palo Alto": "Palo Alto Networks",
+    "Blackduck": "BlackDuck",
+    "Proofpoint": "Proofpoint"
+  },
+  "title_mappings": {
+    "Ai": "AI",
+    "Api": "API",
+    "Id": "ID",
+    "Dns": "DNS",
+    "Dos": "DoS",
+    "Ddos": "DDoS",
+    "Cve": "CVE"
+  }
+}
