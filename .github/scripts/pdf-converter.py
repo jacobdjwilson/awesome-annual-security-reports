@@ -2,7 +2,6 @@ import os
 import sys
 import re
 from pathlib import Path
-from googleapiclient.discovery import build
 import argparse
 import json
 from typing import List, Dict, Any, Optional
@@ -120,11 +119,8 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
     """Parse filename to extract organization and title"""
     print(f"Parsing filename: {filename_stem}")
     
-    # Special handling for known patterns
-    filename_lower = filename_stem.lower()
-    
     # General parsing - try different separators
-    separators = [' - ', '_-_', '--', '_', '-'] # Added single hyphen
+    separators = [' - ', '_-_', '--', '_', '-']
     for sep in separators:
         if sep in filename_stem:
             parts = filename_stem.split(sep, 1)
@@ -197,44 +193,10 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
     # Ultimate fallback
     return "Unknown Organization", "Security Report"
 
-def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
-    """
-    Search the web for the organization's official report URL.
-    Uses Google Custom Search API if available.
-    """
-    try:
-        # Require GOOGLE_CSE_ID and GOOGLE_API_KEY for search
-        cse_id = os.environ.get("GOOGLE_CSE_ID")
-        google_api_key = os.environ.get("GOOGLE_API_KEY")
-        
-        if not cse_id or not google_api_key:
-            print("Google Custom Search credentials not available. Skipping URL search.")
-            return None
-
-        service = build("customsearch", "v1", developerKey=google_api_key)
-        
-        # Construct search query
-        query = f"{org_name} {title} {year} report official"
-        print(f"Searching for: {query}")
-        
-        result = service.cse().list(q=query, cx=cse_id, num=3).execute()
-        
-        if 'items' in result and len(result['items']) > 0:
-            # Return the first result URL
-            url = result['items'][0]['link']
-            print(f"Found organization URL: {url}")
-            return url
-        else:
-            print("No search results found.")
-            return None
-            
-    except Exception as e:
-        print(f"Warning: Failed to search for organization URL: {str(e)}")
-        return None
-
-def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url: Optional[str] = None) -> str:
+def generate_markdown_with_ai(pdf_text: str, prompt_text: str) -> str:
     """
     Generates markdown content from PDF text using the Gemini API.
+    Note: Organization URL search is now handled by report-analyzer.py to avoid duplication.
     """
     try:
         print(f"Generating markdown with AI (model: {MODEL})...")
@@ -245,10 +207,7 @@ def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url:
             print(f"Truncating PDF text from {len(pdf_text)} to {max_pdf_chars} characters")
             pdf_text = pdf_text[:max_pdf_chars] + "\n\n[Content truncated due to length...]"
 
-        full_prompt = f"{prompt_text}\n\n"
-        if organization_url:
-            full_prompt += f"The official report URL is: {organization_url}\n\n"
-        full_prompt += f"# Report Content Below\n\n{pdf_text}"
+        full_prompt = f"{prompt_text}\n\n# Report Content Below\n\n{pdf_text}"
 
         gen_config_settings = AI_CONFIG.get("configurations", {}).get("default", {}) if AI_CONFIG else {}
 
@@ -260,30 +219,13 @@ def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url:
             response_mime_type="text/plain",
         )
 
-        safety_settings = [
-            types.SafetySetting(
-                category="HARM_CATEGORY_HARASSMENT",
-                threshold="BLOCK_MEDIUM_AND_ABOVE"
-            ),
-            types.SafetySetting(
-                category="HARM_CATEGORY_HATE_SPEECH",
-                threshold="BLOCK_MEDIUM_AND_ABOVE"
-            ),
-            types.SafetySetting(
-                category="HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                threshold="BLOCK_MEDIUM_AND_ABOVE"
-            ),
-            types.SafetySetting(
-                category="HARM_CATEGORY_DANGEROUS_CONTENT",
-                threshold="BLOCK_MEDIUM_AND_ABOVE"
-            ),
-        ]
-
+        # Note: safety_settings parameter has been removed in the new google-genai SDK
+        # Safety settings are now configured at the client level or handled automatically
+        
         response = CLIENT.models.generate_content(
             model=MODEL,
             contents=full_prompt,
-            config=generation_config,
-            safety_settings=safety_settings
+            config=generation_config
         )
 
         if not response.text:
@@ -320,24 +262,8 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         
         print(f"Final parsed result: Organization='{organization_name}', Title='{report_title}'")
 
-        # Extract year from path
-        year = "Unknown"
-        for part in pdf_path.parts:
-            if part.isdigit() and len(part) == 4 and part.startswith("20"):
-                year = part
-                break
-        
-        # Search for organization URL
-        organization_url = None
-        if organization_name and report_title and year:
-            organization_url = get_organization_url(organization_name, report_title, year)
-                
-        if not organization_url:
-            # Ultimate fallback: construct a generic domain
-            organization_url = f"https://www.{''.join(e for e in organization_name if e.isalnum()).lower()}.com"
-            print(f"Ultimate fallback: constructed generic URL: {organization_url}")
-
-        markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
+        # Generate markdown without organization URL (will be handled by report-analyzer.py)
+        markdown_content = generate_markdown_with_ai(pdf_text, prompt_text)
         
         # Post Processing Cleanup
 
@@ -376,7 +302,6 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         return {
             "status": "success",
             "output_path": str(output_path),
-            "organization_url": organization_url,
             "organization_name": organization_name,
             "report_title": report_title,
             **result_base
