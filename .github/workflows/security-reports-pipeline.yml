@@ -354,7 +354,6 @@ jobs:
           if python .github/scripts/report-analyzer.py \
             conversions.json \
             --readme-path README.md \
-            --categories-path .github/artifacts/report-categories.json \
             --output-json analysis.json; then
             
             echo "Report analysis completed successfully"
@@ -467,7 +466,6 @@ jobs:
           if python .github/scripts/readme-updater.py \
             analysis.json \
             --readme-path README.md \
-            --categories-path .github/artifacts/report-categories.json \
             --validate-toc; then
             
             echo "README updater completed successfully"
