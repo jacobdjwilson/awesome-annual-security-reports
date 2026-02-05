@@ -11,21 +11,32 @@ from typing import List, Dict, Any, Tuple, Optional
 from pathlib import Path
 from datetime import datetime
 
-# Configure Gemini API
-def load_ai_config():
+# Load centralized configuration
+def load_json_config(config_path: Path) -> Dict[str, Any]:
+    """Load JSON configuration file"""
     try:
-        config_path = Path(__file__).parent.parent / "artifacts" / "ai-models.json"
         with open(config_path, 'r') as f:
             return json.load(f)
-    except Exception as e:
-        print(f"Warning: Failed to load AI config: {e}. Using defaults.")
-        return None
+    except FileNotFoundError:
+        print(f"ERROR: Configuration file not found: {config_path}")
+        print("Please ensure all required configuration files exist in .github/artifacts/")
+        sys.exit(1)
+    except json.JSONDecodeError as e:
+        print(f"ERROR: Invalid JSON in {config_path}: {e}")
+        sys.exit(1)
 
-AI_CONFIG = load_ai_config()
-if not AI_CONFIG:
-    print("ERROR: AI config file 'artifacts/ai-models.json' not found or is invalid. Cannot proceed.")
-    sys.exit(1)
+# Load all configuration files
+ARTIFACTS_DIR = Path(__file__).parent.parent / "artifacts"
+AI_CONFIG = load_json_config(ARTIFACTS_DIR / "ai-models.json")
+PIPELINE_CONFIG = load_json_config(ARTIFACTS_DIR / "pipeline-config.json")
+CATEGORIES_CONFIG = load_json_config(ARTIFACTS_DIR / "report-categories.json")
+
+# Extract configuration values
 MODELS = AI_CONFIG["models"]["priority_list"]
+GEN_CONFIG_DEFAULTS = AI_CONFIG["configurations"]["default"]
+ORGANIZATION_MAPPINGS = PIPELINE_CONFIG["organization_mappings"]
+AGE_THRESHOLD_YEARS = PIPELINE_CONFIG["processing"]["age_threshold_years"]
+
 MODEL = None
 CLIENT = None
 
@@ -50,67 +61,27 @@ def setup_gemini(api_key: str):
         return False
     return True
 
-def parse_toc_from_readme(readme_path: str) -> Dict[str, List[str]]:
-    """Parse TOC from README.md and return categorized sections"""
-    try:
-        content = Path(readme_path).read_text(encoding='utf-8')
-        toc_pattern = r'## Contents\n<!-- TOC -->\n(.*?)\n<!-- /TOC -->'
-        toc_match = re.search(toc_pattern, content, re.DOTALL)
+def load_categories_from_config() -> Dict[str, List[str]]:
+    """Load categories from the categories configuration file"""
+    categories = {"Analysis": [], "Survey": []}
+    
+    for parent_cat in CATEGORIES_CONFIG.get("categories", []):
+        parent_name = parent_cat["parent"].replace(" Reports", "")  # "Analysis Reports" -> "Analysis"
         
-        if not toc_match:
-            print("Warning: Could not find TOC section in README.md")
-            return {"Analysis": ["Industry Trends"], "Survey": ["Industry Trends"]}
-        
-        toc_content = toc_match.group(1)
-        structure = {"Analysis": [], "Survey": []}
-        current_type = None
-        
-        for line in toc_content.split('\n'):
-            line = line.strip()
-            if not line:
-                continue
-                
-            # Main section detection
-            if line.startswith('- ') and not line.startswith('    - '):
-                match = re.search(r'\[([^\]]+)\]', line)
-                if match:
-                    section_name = match.group(1)
-                    if 'Analysis Reports' in section_name:
-                        current_type = "Analysis"
-                    elif 'Survey Reports' in section_name:
-                        current_type = "Survey"
-                    else:
-                        current_type = None
-            
-            # Subsection detection
-            elif line.startswith('    - ') and current_type:
-                match = re.search(r'\[([^\]]+)\]', line)
-                if match:
-                    subsection_name = match.group(1)
-                    if subsection_name not in structure[current_type]:
-                        structure[current_type].append(subsection_name)
-        
-        print(f"Parsed categories from README:")
-        print(f"  Analysis: {structure['Analysis']}")
-        print(f"  Survey: {structure['Survey']}")
-        
-        # Ensure we have at least some default categories
-        if not structure["Analysis"]:
-            structure["Analysis"] = ["Threat Intelligence", "Application Security", "Cloud Security", "Vulnerabilities", "Industry Trends"]
-        if not structure["Survey"]:
-            structure["Survey"] = ["Industry Trends", "Identity Security", "Application Security", "Cloud Security", "Voice"]
-            
-        return structure
-        
-    except Exception as e:
-        print(f"Warning: Error parsing README.md: {e}, using default categories")
-        return {
-            "Analysis": ["Threat Intelligence", "Application Security", "Cloud Security", "Vulnerabilities", "Industry Trends"],
-            "Survey": ["Industry Trends", "Identity Security", "Application Security", "Cloud Security", "Voice"]
-        }
+        for sub_cat in parent_cat.get("sub_categories", []):
+            cat_name = sub_cat["name"]
+            if parent_name not in categories:
+                categories[parent_name] = []
+            categories[parent_name].append(cat_name)
+    
+    print(f"Loaded categories from config:")
+    print(f"  Analysis: {categories.get('Analysis', [])}")
+    print(f"  Survey: {categories.get('Survey', [])}")
+    
+    return categories
 
 def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
-    """Extract organization, year, and title from file path with improved parsing"""
+    """Extract organization, year, and title from file path"""
     path = Path(file_path)
     
     # Extract year from path
@@ -120,11 +91,10 @@ def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
             year = part
             break
     
-    # Parse filename to extract organization and title
+    # Parse filename
     filename = path.stem
     print(f"Parsing filename: {filename}")
     
-    # General parsing - try different separators
     separators = [' - ', '_-_', '--', '_', '-']
     org_name = None
     title = None
@@ -139,41 +109,26 @@ def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
             if not org_part.strip() or not title_part.strip():
                 continue
         
-            # Clean up organization name
             org_name = ' '.join(word.capitalize() for word in org_part.replace('_', ' ').replace('-', ' ').split())
-        
-            # Clean up title - convert dashes/underscores to spaces and capitalize
             title = ' '.join(word.capitalize() for word in title_part.replace('_', ' ').replace('-', ' ').split())
             title = re.sub(r'\s*20\d{2}\s*', '', title).strip()
 
             if org_name.lower() == title.lower():
-                org_name, title = None, None # Reset on bad parse
+                org_name, title = None, None
                 continue
         
-            # Handle special cases for well-known organizations
-            org_mapping = {
-                'Blackduck': 'BlackDuck',
-                'Cyberark': 'CyberArk',
-                'Sailpoint': 'SailPoint',
-                'Crowdstrike': 'CrowdStrike',
-                'Palo Alto': 'Palo Alto Networks',
-                'Proofpoint': 'Proofpoint',
-            }
-        
-            for old_name, new_name in org_mapping.items():
+            # Use organization mappings from config
+            for old_name, new_name in ORGANIZATION_MAPPINGS.items():
                 if org_name.lower() == old_name.lower():
                     org_name = new_name
                     break
                 
-            # Clean up common title patterns
             title = re.sub(r'\b(report|security|annual)\b', lambda m: m.group(1).capitalize(), title, flags=re.IGNORECASE)
-            break # Successful parse, exit loop
+            break
 
     if not org_name or not title:
-        # Fallback if parsing fails - try to extract organization from start
         words = filename.replace('_', ' ').replace('-', ' ').split()
         if words:
-            # First word is likely the organization
             org_name = words[0].capitalize()
             if len(words) > 1:
                 title = ' '.join(word.capitalize() for word in words[1:])
@@ -187,18 +142,17 @@ def extract_info_from_path(file_path: str) -> Tuple[str, str, str]:
     return org_name, year, title
 
 def categorize_content_fallback(content: str, available_categories: Dict[str, List[str]], org_name: str = "", title: str = "") -> Tuple[str, str]:
-    """Fallback categorization based on keyword matching"""
-    # Extended keyword mapping
-    keyword_mapping = {
-        "Threat Intelligence": ["threat", "actor", "malware", "apt", "campaign", "intelligence", "ioc", "ttps"],
-        "Application Security": ["appsec", "application", "software", "code", "devsecops", "sast", "dast", "dependency"],
-        "Cloud Security": ["cloud", "aws", "azure", "gcp", "kubernetes", "container", "serverless"],
-        "Vulnerabilities": ["vulnerability", "cve", "exploit", "patch", "zero-day", "disclosure"],
-        "Ransomware": ["ransomware", "extortion", "encryption", "ransom"],
-        "Data Breaches": ["breach", "leak", "exposure", "incident", "compromise"],
-        "Identity Security": ["identity", "iam", "authentication", "sso", "mfa", "passwordless"],
-        "Industry Trends": ["trend", "survey", "report", "state of", "annual", "industry", "statistics"],
-    }
+    """Fallback categorization based on keyword matching using categories from config"""
+    
+    # Build keyword mapping from categories config
+    keyword_mapping = {}
+    for parent_cat in CATEGORIES_CONFIG.get("categories", []):
+        for sub_cat in parent_cat.get("sub_categories", []):
+            cat_name = sub_cat["name"]
+            # Extract keywords from definition
+            definition = sub_cat.get("definition", "").lower()
+            keywords = re.findall(r'\b\w{4,}\b', definition)
+            keyword_mapping[cat_name] = keywords[:8]  # Take top 8 keywords
 
     content_lower = content.lower()
     title_lower = title.lower()
@@ -206,24 +160,32 @@ def categorize_content_fallback(content: str, available_categories: Dict[str, Li
     scores = {}
     for category, keywords in keyword_mapping.items():
         score = sum(content_lower.count(keyword) for keyword in keywords)
-        title_score = sum(title_lower.count(keyword) * 3 for keyword in keywords)  # Weight title matches higher
+        title_score = sum(title_lower.count(keyword) * 3 for keyword in keywords)
         scores[category] = score + title_score
     
     if scores:
         best_category = max(scores, key=scores.get)
         if scores[best_category] > 0:
-            # Determine report type based on category
-            survey_categories = ["Industry Trends", "Identity Security"]
-            report_type = "Survey" if best_category in survey_categories else "Analysis"
+            # Determine report type from config
+            report_type = None
+            for parent_cat in CATEGORIES_CONFIG.get("categories", []):
+                cat_names = [sub["name"] for sub in parent_cat.get("sub_categories", [])]
+                if best_category in cat_names:
+                    report_type = parent_cat["parent"].replace(" Reports", "")
+                    break
             
-            # Verify category exists in available categories
-            if report_type in available_categories and best_category in available_categories[report_type]:
+            if report_type and report_type in available_categories and best_category in available_categories[report_type]:
                 print(f"Fallback categorization: {report_type} / {best_category} (score: {scores[best_category]})")
                 return report_type, best_category
     
-    # Default fallback
-    print("Using default category: Analysis / Threat Intelligence")
-    return "Analysis", available_categories["Analysis"][0] if available_categories["Analysis"] else "Threat Intelligence"
+    # Default fallback - use first category from each type
+    for parent_cat in CATEGORIES_CONFIG.get("categories", []):
+        if "Analysis" in parent_cat["parent"]:
+            first_cat = parent_cat["sub_categories"][0]["name"] if parent_cat["sub_categories"] else "Global Threat Intelligence"
+            print(f"Using default category: Analysis / {first_cat}")
+            return "Analysis", first_cat
+    
+    return "Analysis", "Global Threat Intelligence"
 
 def generate_summary_with_ai(content: str, org_name: str, title: str) -> str:
     """Generate a summary using Gemini API"""
@@ -259,10 +221,17 @@ Report content (first 5000 characters):
         return None
 
 def categorize_with_ai(content: str, available_categories: Dict[str, List[str]], org_name: str, title: str) -> Tuple[str, str]:
-    """Use AI to categorize the report"""
+    """Use AI to categorize the report using categories from config"""
     try:
-        categories_list_analysis = ', '.join(available_categories.get("Analysis", []))
-        categories_list_survey = ', '.join(available_categories.get("Survey", []))
+        # Build category lists from config
+        categories_by_type = {}
+        for parent_cat in CATEGORIES_CONFIG.get("categories", []):
+            parent_type = parent_cat["parent"].replace(" Reports", "")
+            cats = [sub["name"] for sub in parent_cat.get("sub_categories", [])]
+            categories_by_type[parent_type] = cats
+        
+        categories_list_analysis = ', '.join(categories_by_type.get("Analysis", []))
+        categories_list_survey = ', '.join(categories_by_type.get("Survey", []))
         
         prompt = f"""Categorize this security report from {org_name} titled "{title}".
 
@@ -304,25 +273,21 @@ Report content (first 3000 characters):
             report_type = type_match.group(1).capitalize()
             category = category_match.group(1).strip()
             
-            # Validate category exists in available categories
+            # Validate category exists
             if report_type in available_categories and category in available_categories[report_type]:
                 print(f"AI categorization: {report_type} / {category}")
                 return report_type, category
             else:
                 print(f"AI category '{category}' not in available list, using fallback")
-        else:
-            print("Could not parse AI categorization response, using fallback")
             
     except Exception as e:
         print(f"AI categorization failed: {e}")
     
-    # Fallback to keyword-based categorization
     return categorize_content_fallback(content, available_categories, org_name, title)
 
 def analyze_content(content: str, org_name: str, year: str, report_title: str, available_categories: Dict[str, List[str]]) -> Dict[str, Any]:
     """Analyze the markdown content and extract/generate metadata"""
     
-    # Try AI-based analysis first if MODEL is available
     if MODEL and CLIENT:
         try:
             print("Attempting AI-based analysis...")
@@ -341,12 +306,10 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, a
         except Exception as e:
             print(f"AI analysis failed, falling back to rule-based: {e}")
     
-    # Fallback: Extract summary from content
     print("Using fallback analysis...")
     lines = [line.strip() for line in content.split('\n') if line.strip()]
     summary_candidates = []
     
-    # Try to find introduction or summary section
     in_intro = False
     for i, line in enumerate(lines):
         if any(keyword in line.lower() for keyword in ['introduction', 'executive summary', 'overview', 'abstract']):
@@ -359,7 +322,6 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, a
         if in_intro and line.startswith('#'):
             break
     
-    # If no good summary found, use first substantial paragraphs
     if not summary_candidates:
         summary_candidates = [line for line in lines if len(line) > 50 and not line.startswith('#')][:3]
     
@@ -367,7 +329,6 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, a
     if not summary.endswith('.'):
         summary += '.'
     
-    # Limit summary length
     if len(summary) > 400:
         summary = summary[:400].rsplit('. ', 1)[0] + '.'
     
@@ -384,17 +345,14 @@ def analyze_content(content: str, org_name: str, year: str, report_title: str, a
     }
 
 def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
-    """
-    Performs an optimized Google search and returns the best URL.
-    """
+    """Performs an optimized Google search and returns the best URL"""
     api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
     cse_id = os.environ.get("GOOGLE_CSE_ID")
 
     if not api_key or not cse_id:
-        print("Warning: GOOGLE_SEARCH_API_KEY or GOOGLE_CSE_ID not set. Skipping URL search.")
+        print("Warning: GOOGLE_SEARCH_API_KEY or GOOGLE_CSE_ID not set. Using fallback URL.")
         return f"https://www.{''.join(e for e in org_name if e.isalnum()).lower()}.com"
 
-    # Simplified search query
     query = f'{org_name} {title} {year}'
     print(f"Performing Google Custom Search with query: {query}")
 
@@ -407,12 +365,11 @@ def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
             print("No results found from Google Custom Search.")
             return None
 
-        # Simplified Result Prioritization
         org_lower = org_name.lower()
         title_keywords = {word for word in re.findall(r'\b\w{4,}\b', title.lower())}
         results_urls = [item['link'] for item in items]
 
-        # 1. High priority: URL contains org name and at least one significant title keyword
+        # High priority: URL contains org name and title keyword
         for url in results_urls:
             url_lower = url.lower()
             if org_lower in url_lower:
@@ -420,13 +377,13 @@ def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
                     print(f"Found high-priority match (org + title keyword): {url}")
                     return url
 
-        # 2. Medium priority: URL contains just the org name
+        # Medium priority: URL contains org name
         for url in results_urls:
             if org_lower in url.lower():
                 print(f"Found medium-priority match (org name only): {url}")
                 return url
 
-        # 3. Low priority (Fallback): Return the very first result
+        # Fallback: first result
         print(f"No specific match found, returning the first result: {results_urls[0]}")
         return results_urls[0]
 
@@ -441,7 +398,13 @@ def main():
     parser.add_argument("--output-json", help="Path to save the analysis results as a JSON file.", default="analysis.json")
     args = parser.parse_args()
 
-    # Validate input files
+    # Display loaded configuration
+    print("=== Configuration Loaded ===")
+    print(f"AI Models Priority: {MODELS}")
+    print(f"Age Threshold: {AGE_THRESHOLD_YEARS} years")
+    print(f"Categories loaded from: {ARTIFACTS_DIR / 'report-categories.json'}")
+    print("============================\n")
+
     if not os.path.exists(args.conversions_json):
         print(f"ERROR: Conversion results file not found: {args.conversions_json}")
         sys.exit(1)
@@ -452,7 +415,8 @@ def main():
     else:
         setup_gemini(gemini_api_key)
 
-    available_categories = parse_toc_from_readme(args.readme_path)
+    # Load categories from config instead of README
+    available_categories = load_categories_from_config()
     print(f"Available categories: {available_categories}")
 
     with open(args.conversions_json, 'r') as f:
@@ -490,11 +454,10 @@ def main():
             
             pdf_path = conv.get('pdf_path', output_path)
             
-            # Use data from conversion if available, otherwise extract from path
+            # Use data from conversion if available
             if conv.get('organization_name') and conv.get('report_title'):
                 org_name = conv['organization_name']
                 report_title = conv['report_title']
-                # Extract year from path or use current year dynamically
                 year = str(current_year)
                 for part in Path(pdf_path).parts:
                     if part.isdigit() and len(part) == 4 and part.startswith("20"):
@@ -503,11 +466,11 @@ def main():
             else:
                 org_name, year, report_title = extract_info_from_path(pdf_path)
             
-            # Check if report is older than 2 years
+            # Check age threshold (from config)
             try:
                 report_year_int = int(year)
-                if report_year_int < (current_year - 2):
-                    print(f"SKIPPING: {org_name} - {report_title} ({year}) is older than 2 years. Skipping analysis and README update.")
+                if report_year_int < (current_year - AGE_THRESHOLD_YEARS):
+                    print(f"SKIPPING: {org_name} - {report_title} ({year}) exceeds {AGE_THRESHOLD_YEARS}-year age threshold.")
                     continue
             except ValueError:
                 print(f"Warning: Could not parse year '{year}' for age check. Proceeding...")
@@ -518,7 +481,6 @@ def main():
             analysis['file_path'] = output_path
             analysis['pdf_path'] = pdf_path
 
-            # Get organization URL (this is where we do the search, not in pdf-converter)
             org_url = get_organization_url(org_name, report_title, year)
             analysis['organization_url'] = org_url
             
@@ -529,7 +491,6 @@ def main():
             print(f"ERROR: Failed to analyze {conv.get('output_path', 'unknown')}: {e}")
             continue
 
-    # Save results
     with open(args.output_json, 'w') as f:
         json.dump(analysis_results, f, indent=2)
 
