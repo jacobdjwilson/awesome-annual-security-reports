@@ -17,11 +17,11 @@ except ImportError:
     sys.exit(1)
 
 try:
-    import google.generativeai as genai
-    from google.api_core import exceptions
+    from google import genai
+    from google.genai import types
 except ImportError:
-    print("ERROR: The 'google-generativeai' module is required but not installed.")
-    print("Please install it using: pip install google-generativeai")
+    print("ERROR: The 'google-genai' module is required but not installed.")
+    print("Please install it using: pip install google-genai")
     sys.exit(1)
 
 # Configure Gemini API
@@ -38,21 +38,27 @@ AI_CONFIG = load_ai_config()
 MODELS = AI_CONFIG["models"]["priority_list"] if AI_CONFIG else ["gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-3-flash-preview"]
 
 MODEL = None
+CLIENT = None
 
 def setup_gemini(api_key: str):
-    global MODEL
-    genai.configure(api_key=api_key)
+    global MODEL, CLIENT
+    CLIENT = genai.Client(api_key=api_key)
+    
     for model_name in MODELS:
         try:
-            test_model = genai.GenerativeModel(model_name)
-            test_response = test_model.count_tokens("Hello")
-            if test_response.total_tokens is not None:
+            # Test the model with a simple request
+            response = CLIENT.models.generate_content(
+                model=model_name,
+                contents="Hello"
+            )
+            if response.text:
                 MODEL = model_name
                 print(f"Successfully verified model: {MODEL}")
-                break
-        except (exceptions.GoogleAPICallError, ValueError) as e:
+                return True
+        except Exception as e:
             print(f"Model {model_name} not available or failed verification: {str(e)}")
             continue
+    
     if not MODEL:
         print("ERROR: No models available. Check API key and quota.")
         return False
@@ -193,65 +199,47 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
 
 def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
     """
-    Performs an optimized Google search and returns the best URL.
+    Search the web for the organization's official report URL.
+    Uses Google Custom Search API if available.
     """
-    api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
-    cse_id = os.environ.get("GOOGLE_CSE_ID")
-
-    if not api_key or not cse_id:
-        print("Warning: GOOGLE_SEARCH_API_KEY or GOOGLE_CSE_ID not set. Skipping URL search.")
-        return None
-
-    # Use a less restrictive query without quotes for more flexible matching
-    query = f'{org_name} {title} {year}'
-    print(f"Performing Google Custom Search with query: {query}")
-
     try:
-        service = build("customsearch", "v1", developerKey=api_key)
-        res = service.cse().list(q=query, cx=cse_id, num=5).execute()
-
-        items = res.get('items', [])
-        if not items:
-            print("No results found from Google Custom Search.")
+        # Require GOOGLE_CSE_ID and GOOGLE_API_KEY for search
+        cse_id = os.environ.get("GOOGLE_CSE_ID")
+        google_api_key = os.environ.get("GOOGLE_API_KEY")
+        
+        if not cse_id or not google_api_key:
+            print("Google Custom Search credentials not available. Skipping URL search.")
             return None
 
-        # --- Simplified Result Prioritization ---
-        org_lower = org_name.lower()
-        title_keywords = {word for word in re.findall(r'\b\w{4,}\b', title.lower())}
-        results_urls = [item['link'] for item in items]
-
-        # 1. High priority: URL contains org name and at least one significant title keyword
-        for url in results_urls:
-            url_lower = url.lower()
-            if org_lower in url_lower and any(keyword in url_lower for keyword in title_keywords):
-                print(f"Found high-priority match (org + title keyword): {url}")
-                return url
-
-        # 2. Medium priority: URL contains just the org name
-        for url in results_urls:
-            if org_lower in url.lower():
-                print(f"Found medium-priority match (org name only): {url}")
-                return url
-
-        # 3. Fallback: Return the first result
-        print(f"No specific match found, returning the first result: {results_urls[0]}")
-        return results_urls[0]
-
+        service = build("customsearch", "v1", developerKey=google_api_key)
+        
+        # Construct search query
+        query = f"{org_name} {title} {year} report official"
+        print(f"Searching for: {query}")
+        
+        result = service.cse().list(q=query, cx=cse_id, num=3).execute()
+        
+        if 'items' in result and len(result['items']) > 0:
+            # Return the first result URL
+            url = result['items'][0]['link']
+            print(f"Found organization URL: {url}")
+            return url
+        else:
+            print("No search results found.")
+            return None
+            
     except Exception as e:
-        print(f"An error occurred during Google search for query '{query}': {e}")
-        # Return a fallback search URL instead of None to prevent downstream failures
-        fallback_url = f"https://www.google.com/search?q={org_name.replace(' ', '+')}+{title.replace(' ', '+')}"
-        print(f"Using fallback search URL: {fallback_url}")
-        return fallback_url
+        print(f"Warning: Failed to search for organization URL: {str(e)}")
+        return None
 
-def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url: Optional[str]) -> str:
-    if not MODEL:
-        raise ValueError("Gemini Model not initialized.")
-
+def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url: Optional[str] = None) -> str:
+    """
+    Generates markdown content from PDF text using the Gemini API.
+    """
     try:
-        print(f"Generating markdown with {MODEL}...")
-
-        # Truncate PDF text if too long
+        print(f"Generating markdown with AI (model: {MODEL})...")
+        
+        # Truncate if necessary
         max_pdf_chars = 1000000
         if len(pdf_text) > max_pdf_chars:
             print(f"Truncating PDF text from {len(pdf_text)} to {max_pdf_chars} characters")
@@ -263,32 +251,42 @@ def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url:
         full_prompt += f"# Report Content Below\n\n{pdf_text}"
 
         gen_config_settings = AI_CONFIG.get("configurations", {}).get("default", {}) if AI_CONFIG else {}
-        model = genai.GenerativeModel(MODEL)
 
-        generation_config = {
-            "temperature": gen_config_settings.get("temperature", 0.1),
-            "max_output_tokens": gen_config_settings.get("max_output_tokens", 8192),
-            "top_p": gen_config_settings.get("top_p", 0.95),
-            "top_k": gen_config_settings.get("top_k", 40),
-            "response_mime_type": "text/plain",
-        }
+        generation_config = types.GenerateContentConfig(
+            temperature=gen_config_settings.get("temperature", 0.1),
+            max_output_tokens=gen_config_settings.get("max_output_tokens", 8192),
+            top_p=gen_config_settings.get("top_p", 0.95),
+            top_k=gen_config_settings.get("top_k", 40),
+            response_mime_type="text/plain",
+        )
 
         safety_settings = [
-            {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-            {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-            {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-            {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+            types.SafetySetting(
+                category="HARM_CATEGORY_HARASSMENT",
+                threshold="BLOCK_MEDIUM_AND_ABOVE"
+            ),
+            types.SafetySetting(
+                category="HARM_CATEGORY_HATE_SPEECH",
+                threshold="BLOCK_MEDIUM_AND_ABOVE"
+            ),
+            types.SafetySetting(
+                category="HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                threshold="BLOCK_MEDIUM_AND_ABOVE"
+            ),
+            types.SafetySetting(
+                category="HARM_CATEGORY_DANGEROUS_CONTENT",
+                threshold="BLOCK_MEDIUM_AND_ABOVE"
+            ),
         ]
 
-        response = model.generate_content(
-            full_prompt,
-            generation_config=generation_config,
+        response = CLIENT.models.generate_content(
+            model=MODEL,
+            contents=full_prompt,
+            config=generation_config,
             safety_settings=safety_settings
         )
 
         if not response.text:
-            if response.prompt_feedback and response.prompt_feedback.block_reason:
-                raise ValueError(f"Content generation blocked: {response.prompt_feedback.block_reason}")
             raise ValueError("The response did not contain valid text content.")
 
         generated_text = response.text.strip()
