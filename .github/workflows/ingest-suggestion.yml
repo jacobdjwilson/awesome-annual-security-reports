@@ -1,4 +1,4 @@
-name: Auto-Ingest Report Suggestion
+name: Ingest Report Suggestion
 
 permissions:
   contents: write
