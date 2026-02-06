@@ -275,6 +275,14 @@ jobs:
           name: conversion-results
           path: conversions.json
 
+      - name: Upload generated Markdown files
+        if: steps.convert.outputs.conversion_success == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdown-files
+          path: Markdown Conversions/
+          retention-days: 1
+
   # Step 3: Analyze Reports (ONLY files from this run)
   analyze-reports:
     runs-on: ubuntu-latest
@@ -308,6 +316,12 @@ jobs:
         with:
           name: conversion-results
           path: .
+
+      - name: Download Markdown files
+        uses: actions/download-artifact@v4
+        with:
+          name: markdown-files
+          path: Markdown Conversions/
 
       - name: Verify conversions file
         run: |
