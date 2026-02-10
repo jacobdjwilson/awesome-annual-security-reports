@@ -94,5 +94,30 @@
     "Us": "US",
     "Vec": "VEC",
     "Vpn": "VPN"
+  },
+  "validation": {
+    "max_file_size_mb": 100,
+    "min_markdown_chars": 50,
+    "magic_number": "%PDF"
+  },
+  "discovery": {
+    "max_issues_per_run": 10,
+    "lookback_days": 90,
+    "timeout_seconds": 15,
+    "exclude_terms": [
+      "webinar", "award", "sponsorship", "press release",
+      "conference", "summit", "call for speakers", "earnings call",
+      "podcast", "pre-register", "pre-registration", "coming soon",
+      "save the date", "register now", "registration open"
+    ],
+    "financial_terms": [
+      "fiscal", "investor", "shareholder", "10-k", "10-q", "financial results"
+    ],
+    "secondary_source_domains": [
+      "linkedin.com", "twitter.com", "x.com", "reddit.com", "facebook.com",
+      "medium.com", "forbes.com", "techcrunch.com", "zdnet.com",
+      "darkreading.com", "bleepingcomputer.com", "thehackernews.com",
+      "securityweek.com", "infosecurity-magazine.com"
+    ]
   }
 }

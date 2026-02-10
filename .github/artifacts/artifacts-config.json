@@ -1,0 +1,18 @@
+{
+  "artifacts": {
+    "conversion_results": "conversion-results",
+    "analysis_results": "analysis-results",
+    "file_lists": "file-lists",
+    "validation_report": "validation-report",
+    "discovery_log": "discovery-log",
+    "files_to_process": "files-to-process"
+  },
+  "retention_days": {
+    "conversion_results": 30,
+    "analysis_results": 30,
+    "file_lists": 7,
+    "validation_report": 30,
+    "discovery_log": 30,
+    "files_to_process": 1
+  }
+}
