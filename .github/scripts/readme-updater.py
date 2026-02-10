@@ -32,19 +32,21 @@ class CategoryManager:
             return self._get_fallback_categories()
     
     def _get_fallback_categories(self) -> Dict[str, Any]:
-        """Fallback categories if JSON file is not available."""
+        """Fallback categories if JSON file is not available - matches original structure."""
         return {
             "categories": [
                 {
                     "parent": "Analysis Reports",
                     "parent_id": "analysis-reports",
                     "sub_categories": [
-                        {"id": "global-threat-intelligence", "name": "Global Threat Intelligence"},
+                        {"id": "threat-intelligence", "name": "Threat Intelligence"},
                         {"id": "application-security", "name": "Application Security"},
                         {"id": "cloud-security", "name": "Cloud Security"},
                         {"id": "vulnerabilities", "name": "Vulnerabilities"},
                         {"id": "ransomware", "name": "Ransomware"},
-                        {"id": "data-breaches", "name": "Data Breaches"}
+                        {"id": "data-breaches", "name": "Data Breaches"},
+                        {"id": "physical-security", "name": "Physical Security"},
+                        {"id": "ai-emerging-tech", "name": "AI and Emerging Technologies"}
                     ]
                 },
                 {
@@ -52,8 +54,10 @@ class CategoryManager:
                     "parent_id": "survey-reports",
                     "sub_categories": [
                         {"id": "industry-trends", "name": "Industry Trends"},
-                        {"id": "executive-perspectives", "name": "Executive Perspectives"},
-                        {"id": "identity-security", "name": "Identity Security"}
+                        {"id": "identity-security", "name": "Identity Security"},
+                        {"id": "penetration-testing", "name": "Penetration Testing"},
+                        {"id": "privacy-data-protection", "name": "Privacy and Data Protection"},
+                        {"id": "voice", "name": "Voice"}
                     ]
                 }
             ]
@@ -110,8 +114,13 @@ class CategoryManager:
             match = self.category_map[normalized_hint]
             return match["name"], match["parent"], 1.0
         
-        # Try fuzzy matching
-        best_match = None
+        # Try fuzzy matching with word overlap
+        best_match = self._find_similar_category(category_hint)
+        if best_match:
+            return best_match["name"], best_match["parent"], 0.7
+        
+        # Try similarity score matching
+        best_sim_match = None
         best_score = 0.0
         
         for key, cat_info in self.category_map.items():
@@ -119,13 +128,27 @@ class CategoryManager:
                 score = self._similarity_score(normalized_hint, key)
                 if score > best_score and score > 0.5:  # Minimum threshold
                     best_score = score
-                    best_match = cat_info
+                    best_sim_match = cat_info
         
-        if best_match:
-            return best_match["name"], best_match["parent"], best_score
+        if best_sim_match:
+            return best_sim_match["name"], best_sim_match["parent"], best_score
         
         # No good match found, use default
         return self._get_default_category(report_type)
+    
+    def _find_similar_category(self, target: str) -> Optional[Dict[str, str]]:
+        """Find similar category using word overlap - matches original logic."""
+        target_set = set(target.lower().split())
+        best_match, best_score = None, 0
+        
+        for cat_info in self.category_map.values():
+            if isinstance(cat_info, dict) and "name" in cat_info:
+                cat_name = cat_info["name"]
+                score = len(target_set.intersection(set(cat_name.lower().split())))
+                if score > best_score:
+                    best_match, best_score = cat_info, score
+        
+        return best_match if best_score > 0 else None
     
     def _similarity_score(self, str1: str, str2: str) -> float:
         """Calculate simple similarity score between two strings."""
@@ -149,7 +172,7 @@ class CategoryManager:
         if "survey" in report_type.lower():
             return "Industry Trends", "Survey Reports", 0.0
         else:
-            return "Global Threat Intelligence", "Analysis Reports", 0.0
+            return "Industry Trends", "Analysis Reports", 0.0
     
     def get_all_categories(self) -> Dict[str, List[str]]:
         """Get all categories organized by parent."""
@@ -195,7 +218,7 @@ class CategoryManager:
         return len(issues) == 0, issues
 
 class ReadmeParser:
-    def __init__(self, readme_path: str, category_manager: CategoryManager):
+    def __init__(self, readme_path: str, category_manager: CategoryManager = None):
         self.readme_path = Path(readme_path)
         self.category_manager = category_manager
         
@@ -206,92 +229,161 @@ class ReadmeParser:
         self.structure = self._parse_structure()
 
     def _parse_structure(self) -> Dict[str, Any]:
-        """Parses the README structure using category definitions."""
-        structure = {}
-        all_categories = self.category_manager.get_all_categories()
-        
-        for parent, subcats in all_categories.items():
-            structure[parent] = {
-                "subsections": {subcat: {} for subcat in subcats}
+        """Parses the README structure using category definitions if available."""
+        if self.category_manager:
+            # Use category manager if available
+            structure = {}
+            all_categories = self.category_manager.get_all_categories()
+            
+            for parent, subcats in all_categories.items():
+                structure[parent] = {
+                    "subsections": {subcat: {} for subcat in subcats}
+                }
+            
+            return structure
+        else:
+            # Fallback to original parsing logic
+            structure = {
+                "Analysis Reports": {"subsections": {}}, 
+                "Survey Reports": {"subsections": {}}
             }
-        
-        return structure
+            
+            # Regex to identify Level 2 headers (##)
+            sections = re.findall(r'^## (.+)$', self.content, re.MULTILINE)
+            
+            for section in sections:
+                # Main Section Detection
+                if 'Analysis Reports' in section:
+                    pass # Already initialized
+                elif 'Survey Reports' in section:
+                    pass # Already initialized
+                
+                # Sub-section Mapping (Inferred based on known categories)
+                elif section in ['Threat Intelligence', 'Application Security', 'Cloud Security', 'Vulnerabilities', 
+                               'Ransomware', 'Data Breaches', 'Physical Security', 'AI and Emerging Technologies']:
+                    structure["Analysis Reports"]["subsections"][section] = {}
+                
+                elif section in ['Industry Trends', 'Identity Security', 'Penetration Testing', 'Privacy and Data Protection', 'Voice']:
+                    structure["Survey Reports"]["subsections"][section] = {}
 
-    def find_section_bounds(self, heading_name: str, level: int = 3) -> Tuple[int, int]:
+            # Default Fallbacks if specific sections are missing
+            if not structure["Analysis Reports"]["subsections"]:
+                structure["Analysis Reports"]["subsections"]["Industry Trends"] = {}
+            if not structure["Survey Reports"]["subsections"]:
+                structure["Survey Reports"]["subsections"] = {"Industry Trends": {}, "Voice": {}}
+                
+            return structure
+
+    def find_section_bounds(self, heading_name: str, level: int = None) -> Tuple[int, int]:
         """
         Finds start and end indices of a specific section content.
         
         Args:
             heading_name: The section heading to find
-            level: Heading level (2 for ##, 3 for ###)
+            level: Heading level (2 for ##, 3 for ###). If None, tries both.
         """
-        # Build pattern for the specified heading level
-        header_marker = '#' * level
-        pattern = rf'^{header_marker}\s+{re.escape(heading_name)}\s*$'
-        
-        match = re.search(pattern, self.content, re.MULTILINE)
-        if not match:
+        if level is not None:
+            # Use specified level
+            header_marker = '#' * level
+            pattern = rf'^{header_marker}\s+{re.escape(heading_name)}\s*$'
+            
+            match = re.search(pattern, self.content, re.MULTILINE)
+            if not match:
+                return -1, -1
+            
+            start = match.end() + 1
+            
+            # Find next header of same or higher level to determine end
+            next_header_pattern = rf'\n#{{{1,{level}}}}\s+'
+            next_header = re.search(next_header_pattern, self.content[start:])
+            end = start + next_header.start() if next_header else len(self.content)
+            
+            return start, end
+        else:
+            # Try Level 2 (##) then Level 3 (###) - original behavior
+            for pattern in [rf'^## {re.escape(heading_name)}$', rf'^### {re.escape(heading_name)}$']:
+                match = re.search(pattern, self.content, re.MULTILINE)
+                if match:
+                    start = match.end() + 1
+                    # Find next header to determine end
+                    next_header = re.search(r'\n##', self.content[start:])
+                    end = start + next_header.start() if next_header else len(self.content)
+                    return start, end
+            
             return -1, -1
-        
-        start = match.end() + 1
-        
-        # Find next header of same or higher level to determine end
-        next_header_pattern = rf'\n#{{{1,{level}}}}\s+'
-        next_header = re.search(next_header_pattern, self.content[start:])
-        end = start + next_header.start() if next_header else len(self.content)
-        
-        return start, end
 
 class ReadmeUpdater:
-    def __init__(self, parser: ReadmeParser, category_manager: CategoryManager):
+    def __init__(self, parser: ReadmeParser, category_manager: CategoryManager = None):
         self.parser = parser
         self.category_manager = category_manager
 
     def add_report_entry(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
-        """Orchestrates adding a report entry using category-aware logic."""
+        """Orchestrates adding a report entry using a prioritized strategy."""
         if not self._validate_data(analysis):
             return False, "", -1, "invalid_or_stale_data"
         
-        # Use CategoryManager to determine best category
-        category_hint = analysis.get('category', '')
         report_type = analysis.get('type', 'Analysis')
+        category = analysis.get('category', 'Industry Trends')
         
-        category_name, parent_type, confidence = self.category_manager.match_category(
-            category_hint, report_type
-        )
-        
-        # Log category matching
-        if confidence < 1.0:
-            print(f"  Category matching: '{category_hint}' -> '{category_name}' "
-                  f"(confidence: {confidence:.2f})")
+        if self.category_manager:
+            # Use CategoryManager to determine best category
+            category_hint = category
+            
+            category_name, parent_type, confidence = self.category_manager.match_category(
+                category_hint, report_type
+            )
+            
+            # Log category matching
+            if confidence < 1.0:
+                print(f"  Category matching: '{category_hint}' -> '{category_name}' "
+                      f"(confidence: {confidence:.2f})")
+            else:
+                print(f"  Category: {category_name} (exact match)")
+            
+            # Update analysis with matched category
+            analysis['category'] = category_name
+            analysis['type'] = parent_type.replace(" Reports", "")
+            category = category_name
+            main_section = parent_type
         else:
-            print(f"  Category: {category_name} (exact match)")
+            # Original logic without category manager
+            main_section = f"{report_type} Reports"
         
-        # Update analysis with matched category
-        analysis['category'] = category_name
-        analysis['type'] = parent_type.replace(" Reports", "")
+        # Strategy 1: Logical Subsection Match
+        if main_section in self.parser.structure:
+            subsections = list(self.parser.structure[main_section]['subsections'].keys())
+            
+            # Exact match
+            if category in subsections:
+                return self._insert_into_section(analysis, category)
+            
+            # Fuzzy/Similar match (only if category manager not available)
+            if not self.category_manager:
+                similar = self._find_similar_section(category, subsections)
+                if similar:
+                    return self._insert_into_section(analysis, similar)
+            
+            # First available fallback
+            if subsections:
+                return self._insert_into_section(analysis, subsections[0])
         
-        # Try to insert into the matched section
-        success, entry_text, line_num, action = self._insert_into_section(analysis, category_name)
+        # Strategy 2: Direct Section Lookup
+        result = self._insert_into_section(analysis, category)
+        if result[0]:
+            return result
+
+        # Strategy 3: Generic Fallbacks
+        for fallback in ['Industry Trends', 'Other', 'General']:
+            res = self._insert_into_section(analysis, fallback)
+            if res[0]: 
+                return res
         
-        if success:
-            return success, entry_text, line_num, action
-        
-        # Fallback: try parent section
-        main_section = f"{parent_type}"
-        success, entry_text, line_num, action = self._insert_into_parent_section(
-            analysis, main_section
-        )
-        
-        if success:
-            return success, entry_text, line_num, action
-        
-        # Last resort: append to file
+        # Strategy 4: Append to End (Last Resort)
         return self._append_to_file(analysis)
 
     def _insert_into_section(self, analysis: Dict[str, Any], section_name: str) -> Tuple[bool, str, int, str]:
         """Inserts or updates an entry within a specific section."""
-        start, end = self.parser.find_section_bounds(section_name, level=3)
+        start, end = self.parser.find_section_bounds(section_name)
         if start == -1:
             return False, "", -1, "section_not_found"
         
@@ -316,33 +408,11 @@ class ReadmeUpdater:
         self.parser.content = self.parser.content[:start] + new_slice + self.parser.content[end:]
         return True, entry_text, self._find_line_number(entry_text.strip()), action
 
-    def _insert_into_parent_section(self, analysis: Dict[str, Any], parent_section: str) -> Tuple[bool, str, int, str]:
-        """Insert into parent section (## level) as fallback."""
-        start, end = self.parser.find_section_bounds(parent_section, level=2)
-        if start == -1:
-            return False, "", -1, "parent_section_not_found"
-        
-        # Find or create a "General" subsection
-        general_header = "\n### General\n\n"
-        if "### General" not in self.parser.content[start:end]:
-            # Insert General section at the beginning of parent section
-            self.parser.content = (
-                self.parser.content[:start] + 
-                general_header + 
-                self.parser.content[start:]
-            )
-            # Adjust end pointer
-            end += len(general_header)
-        
-        # Now insert into General subsection
-        return self._insert_into_section(analysis, "General")
-
     def _append_to_file(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
-        """Appends entry to the end of the file as a last resort fallback."""
+        """Appends entry to the end of the file as a fallback."""
         entry_text = self._format_entry(analysis)
-        new_content = f"\n\n## Uncategorized Reports\n\n### General\n\n{entry_text}\n"
+        new_content = f"\n\n## Emergency Entries\n\n{entry_text}\n"
         self.parser.content = self.parser.content.rstrip() + new_content
-        print("WARNING: Entry appended to end of file as 'Uncategorized' - manual review recommended")
         return True, entry_text, self._find_line_number(entry_text.strip()), "new"
 
     def _format_entry(self, analysis: Dict[str, Any]) -> str:
@@ -369,7 +439,7 @@ class ReadmeUpdater:
         """
         Checks for existing entry to prevent duplicates using three signals:
         1. Exact Organization and Title match.
-        2. Organization URL match (handles rebranding).
+        2. Organization URL match (handles rebranding like WEF vs World Economic Forum).
         3. PDF Filename match (handles series updates).
         """
         org_norm = analysis['organization'].lower()
@@ -377,12 +447,11 @@ class ReadmeUpdater:
         target_url = analysis['organization_url'].lower().rstrip('/')
         target_pdf = Path(analysis['pdf_path']).name.lower()
 
-        # Remove year from PDF filename for generic series matching
+        # Remove year from PDF filename for generic series matching (e.g., Report-2025.pdf -> Report)
         target_pdf_base = re.sub(r'\d{4}', '', target_pdf).strip('-_ ')
 
         for line in content.split('\n'):
-            if not line.strip().startswith('- ['): 
-                continue
+            if not line.strip().startswith('- ['): continue
             
             # Extract Components: - [Org](OrgURL) - [Title](PdfURL) (Year)
             match = re.search(r'^- \[([^\]]+)\]\(([^\)]+)\) - \[([^\]]+)\]\(([^\)]+)\)\s*\((\d{4})\)', line.strip())
@@ -393,31 +462,38 @@ class ReadmeUpdater:
                 curr_pdf_url = match.group(4).lower()
                 curr_year = int(match.group(5))
 
-                # Check 1: URL Match (Strongest signal)
+                # Check 1: URL Match (Strongest signal for same organization)
                 if target_url == curr_org_url:
                     return line, curr_year
 
-                # Check 2: PDF Filename Match
+                # Check 2: PDF Filename Match (Strong signal for report series)
                 curr_pdf_name = Path(curr_pdf_url).name
                 curr_pdf_base = re.sub(r'\d{4}', '', curr_pdf_name).strip('-_ ')
                 if target_pdf_base == curr_pdf_base and target_pdf_base != "":
                     return line, curr_year
 
-                # Check 3: Org and Title Match
+                # Check 3: Org and Title Match (Original Logic)
                 if curr_org == org_norm and curr_title == title_norm:
                     return line, curr_year
 
         return None, None
 
     def _normalize_title(self, title: str) -> str:
-        """Normalize title for comparison."""
         return re.sub(r'\s+|the|of|and', '', title.lower())
 
+    def _find_similar_section(self, target: str, options: List[str]) -> Optional[str]:
+        target_set = set(target.lower().split())
+        best_match, best_score = None, 0
+        
+        for opt in options:
+            score = len(target_set.intersection(set(opt.lower().split())))
+            if score > best_score:
+                best_match, best_score = opt, score
+        return best_match
+
     def _find_line_number(self, text: str) -> int:
-        """Find line number of text in content."""
         for i, line in enumerate(self.parser.content.split('\n'), 1):
-            if text in line: 
-                return i
+            if text in line: return i
         return -1
 
     def _validate_data(self, data: Dict[str, Any]) -> bool:
@@ -443,12 +519,15 @@ class ReadmeUpdater:
         return True
 
     def save(self):
-        """Save updated content to README."""
         self.parser.readme_path.write_text(self.parser.content, encoding='utf-8')
         print(f"README successfully updated: {self.parser.readme_path}")
 
     def validate_and_report_toc(self):
         """Validate TOC against category definitions and report issues."""
+        if not self.category_manager:
+            print("Category manager not available - skipping TOC validation")
+            return True, []
+            
         is_valid, issues = self.category_manager.validate_toc(self.parser.content)
         
         if is_valid:
@@ -470,15 +549,15 @@ def main():
                        help="Validate TOC against category definitions")
     args = parser.parse_args()
 
-    # Initialize category manager
+    # Initialize category manager (optional)
+    category_manager = None
     try:
         category_manager = CategoryManager(args.categories_path)
         print(f"✓ Category manager initialized with {len(category_manager.category_map)} categories")
     except Exception as e:
-        print(f"ERROR: Failed to initialize category manager: {e}")
-        sys.exit(1)
+        print(f"WARNING: Failed to initialize category manager: {e}")
+        print("Proceeding with original logic...")
 
-    # Load analysis results
     if not os.path.exists(args.analysis_json) or os.path.getsize(args.analysis_json) < 2:
         print(f"ERROR: Invalid analysis file: {args.analysis_json}")
         sys.exit(1)
@@ -496,7 +575,6 @@ def main():
 
     print(f"Processing {len(results)} reports...")
     
-    # Initialize updater
     try:
         readme_parser = ReadmeParser(args.readme_path, category_manager)
         updater = ReadmeUpdater(readme_parser, category_manager)
@@ -504,13 +582,12 @@ def main():
         print(f"ERROR: Parser init failed: {e}")
         sys.exit(1)
 
-    # Validate TOC if requested
-    if args.validate_toc:
+    # Validate TOC if requested and category manager available
+    if args.validate_toc and category_manager:
         print("\n=== TOC Validation ===")
         updater.validate_and_report_toc()
         print()
 
-    # Process reports
     stats = {"new": 0, "updated": 0, "refreshed": 0, "errors": 0}
     changes_pending = False
 
@@ -527,21 +604,20 @@ def main():
             stats["errors"] += 1
             print(f"  -> FAILED/SKIPPED: {action}")
 
-    # Summary
     print("\n=== Summary ===")
     print(f"Processed: {len(results)} | New: {stats['new']} | Updated: {stats['updated']} | "
           f"Refreshed: {stats['refreshed']} | Errors/Skipped: {stats['errors']}")
 
-    # Save if changes were made
     if changes_pending:
         updater.save()
         
-        # Final TOC validation
-        print("\n=== Final TOC Validation ===")
-        is_valid, issues = updater.validate_and_report_toc()
-        if not is_valid:
-            print("\nWARNING: TOC validation failed after updates.")
-            print("Manual review recommended to ensure all categories are properly defined.")
+        # Final TOC validation if category manager available
+        if category_manager:
+            print("\n=== Final TOC Validation ===")
+            is_valid, issues = updater.validate_and_report_toc()
+            if not is_valid:
+                print("\nWARNING: TOC validation failed after updates.")
+                print("Manual review recommended to ensure all categories are properly defined.")
     else:
         print("No changes required.")
 

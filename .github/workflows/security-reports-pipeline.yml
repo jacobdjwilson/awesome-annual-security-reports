@@ -9,6 +9,7 @@ on:
     branches: [main, development]
     paths:
       - 'Annual Security Reports/**/*.pdf'
+  # Scheduled Run (12:00 UTC = 7:00 AM EST)
   schedule:
     - cron: '0 12 * * *'
   workflow_dispatch:
@@ -51,16 +52,22 @@ jobs:
           # --- LOGIC BRANCHING BASED ON TRIGGER ---
 
           if [[ "${{ github.event.inputs.force_scan_all }}" == "true" ]]; then
+            # MANUAL FORCE: Scan everything
             echo "mode: Force Scan All"
             find "Annual Security Reports" -name "*.pdf" > files_to_process.txt
           
           elif [ "${{ github.event_name }}" == "schedule" ]; then
+            # CRON SCHEDULE: Find oldest unprocessed file
             echo "mode: Scheduled Catch-up"
             
+            # Find all PDFs
             find "Annual Security Reports" -name "*.pdf" -type f > all_pdfs.txt
             
+            # Identify files missing markdown conversion
             > missing_conversions.txt
             while IFS= read -r pdf_path; do
+                # Construct expected markdown path
+                # Replace root folder and extension
                 md_path=$(echo "$pdf_path" | sed 's/Annual Security Reports/Markdown Conversions/' | sed 's/\.pdf$/.md/')
                 
                 if [ ! -f "$md_path" ]; then
@@ -72,6 +79,7 @@ jobs:
                 count=$(wc -l < missing_conversions.txt)
                 echo "Found $count files pending conversion."
                 
+                # Sort by time (oldest first) and take the single top result
                 cat missing_conversions.txt | xargs ls -rt | head -n 1 > files_to_process.txt
                 
                 echo "Selected oldest unprocessed file: $(cat files_to_process.txt)"
@@ -80,17 +88,20 @@ jobs:
             fi
 
           elif [ "${{ github.event_name }}" == "push" ]; then
+            # PUSH: Scan changed files
             echo "mode: Push Event"
             git diff --name-only HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
             git diff --name-only --diff-filter=D HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
           
           else
+            # PR: Scan changed files relative to main
             echo "mode: Pull Request"
             git diff --name-only --diff-filter=AM origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
             git diff --name-only --diff-filter=D origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
           fi
 
-          # --- VALIDATION ---
+          # --- VALIDATION (Applied to whatever files were selected above) ---
+
           if [ -s files_to_process.txt ]; then
             VALID_FILES=""
             INVALID_FILES=""
@@ -101,6 +112,7 @@ jobs:
                 continue
               fi
 
+              # Check file size (100MB limit)
               FILE_SIZE=$(stat -c%s "$FILE_PATH")
               if [ "$FILE_SIZE" -gt 104857600 ]; then
                 echo "Warning: File size ($((FILE_SIZE/1024/1024)) MB) exceeds 100MB limit for $FILE_PATH. Skipping."
@@ -108,6 +120,7 @@ jobs:
                 continue
               fi
 
+              # Check magic number
               MAGIC_NUMBER=$(head -c 4 "$FILE_PATH" || true)
               if [ "$MAGIC_NUMBER" != "%PDF" ]; then
                 echo "Warning: File is not a valid PDF for $FILE_PATH (Magic number: '$MAGIC_NUMBER'). Skipping."
@@ -118,6 +131,7 @@ jobs:
               VALID_FILES="$VALID_FILES$FILE_PATH\n"
             done < files_to_process.txt
             
+            # Overwrite files_to_process.txt with only valid files
             echo -e "$VALID_FILES" | sed '/^$/d' > valid_files_to_process.txt
             if [ -s valid_files_to_process.txt ]; then
               mv valid_files_to_process.txt files_to_process.txt
@@ -126,6 +140,7 @@ jobs:
               > files_to_process.txt
             fi
 
+            # Add information about invalid files to summary
             if [ ! -z "$INVALID_FILES" ]; then
               echo "### ⚠️ Invalid Files Skipped" >> $GITHUB_STEP_SUMMARY
               echo "The following files were skipped during validation:" >> $GITHUB_STEP_SUMMARY
@@ -226,6 +241,7 @@ jobs:
     if: needs.discover-and-scan.outputs.has_files == 'true'
     outputs:
       conversion_success: ${{ steps.pdf-conversion.outputs.conversion_success }}
+      successful_conversions: ${{ steps.pdf-conversion.outputs.successful_conversions }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -242,37 +258,44 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y tesseract-ocr
 
-      - name: Download file lists
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # Install with OCR support for fallback processing
+          pip install markitdown[pdf,ocr] google-generativeai google-api-python-client
+
+      - name: Download files to process
         uses: actions/download-artifact@v4
         with:
           name: files-to-process
           path: .
 
-      - name: Install Dependencies
+      - name: Validate required files and environment
         run: |
-          python -m pip install --upgrade pip
-          # Re-incorporated original dependencies to ensure compatibility with scripts
-          pip install "pypdf[crypto]" google-genai markitdown[pdf,ocr] google-api-python-client
-
-      - name: Determine Conversion Settings
-        id: conversion-settings
-        run: |
-          # Re-incorporated explicit branch-based versioning logic
-          BRANCH_NAME="${{ github.head_ref || github.ref_name }}"
-          
-          if [ "$BRANCH_NAME" == "main" ]; then
-            PROMPT_VERSION="v3"
-            PROMPT_PATH=".github/ai-prompts/pdf-to-markdown-prompt.md"
-          else
-            PROMPT_VERSION="v3-dev"
-            PROMPT_PATH=".github/ai-prompts/pdf-to-markdown-prompt.md"
+          if [ ! -f files_to_process.txt ]; then
+            echo "ERROR: files_to_process.txt not found"
+            exit 1
           fi
           
-          echo "prompt_path=$PROMPT_PATH" >> $GITHUB_OUTPUT
-          echo "prompt_version=$PROMPT_VERSION" >> $GITHUB_OUTPUT
-          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          if [ ! -s files_to_process.txt ]; then
+            echo "ERROR: files_to_process.txt is empty"
+            exit 1
+          fi
           
-          echo "Using prompt: $PROMPT_PATH (version: $PROMPT_VERSION)"
+          echo "Files to process:"
+          cat files_to_process.txt
+          
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "ERROR: GEMINI_API_KEY not set"
+            exit 1
+          fi
+          
+          if [ ! -f ".github/ai-prompts/pdf-to-markdown-prompt.md" ]; then
+            echo "ERROR: Prompt file not found"
+            exit 1
+          fi
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Run PDF Converter
         id: pdf-conversion
@@ -280,37 +303,45 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PROMPT_PATH="${{ steps.conversion-settings.outputs.prompt_path }}"
-          PROMPT_VERSION="${{ steps.conversion-settings.outputs.prompt_version }}"
-          BRANCH_NAME="${{ steps.conversion-settings.outputs.branch_name }}"
+          PROMPT_PATH=".github/ai-prompts/pdf-to-markdown-prompt.md"
+          PROMPT_VERSION=$(git log -n 1 --pretty=format:%s -- $PROMPT_PATH | grep -oP 'v\d+\.\d+(\.\d+)?' || echo 'v1.0')
+          BRANCH_NAME=${{ github.head_ref || github.ref_name }}
           
           echo "Running PDF converter..."
-          echo "Prompt: $PROMPT_PATH"
-          echo "Version: $PROMPT_VERSION"
+          echo "Prompt path: $PROMPT_PATH"
+          echo "Prompt version: $PROMPT_VERSION"
+          echo "Branch: $BRANCH_NAME"
           
+          # Run the converter and capture exit code
           if python .github/scripts/pdf-converter.py files_to_process.txt "$PROMPT_PATH" "$PROMPT_VERSION" "$BRANCH_NAME" --output-json conversions.json; then
             echo "PDF conversion completed successfully"
             
+            # Check if any conversions were successful
             if [ -f conversions.json ]; then
               successful_count=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
               total_count=$(jq 'length' conversions.json)
               
               echo "conversion_success=true" >> $GITHUB_OUTPUT
-              echo "Conversion results: $successful_count successful out of $total_count"
+              echo "successful_conversions=$successful_count" >> $GITHUB_OUTPUT
+              
+              echo "Conversion results: $successful_count/$total_count successful"
               
               if [ "$successful_count" -eq 0 ]; then
-                echo "WARNING: No PDFs were successfully converted"
+                echo "WARNING: No successful conversions"
                 echo "conversion_success=false" >> $GITHUB_OUTPUT
               fi
             else
               echo "ERROR: conversions.json not created"
               echo "conversion_success=false" >> $GITHUB_OUTPUT
+              echo "successful_conversions=0" >> $GITHUB_OUTPUT
               exit 1
             fi
           else
             echo "ERROR: PDF conversion failed"
             echo "conversion_success=false" >> $GITHUB_OUTPUT
+            echo "successful_conversions=0" >> $GITHUB_OUTPUT
             exit 1
           fi
 
@@ -326,7 +357,7 @@ jobs:
         with:
           name: converted-markdown
           path: Markdown Conversions/
-          retention-days: 7
+          if-no-files-found: ignore
 
   # Step 3: Report Analysis
   analyze-reports:
@@ -348,7 +379,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install google-genai google-api-python-client requests
+          pip install google-generativeai google-api-python-client
 
       - name: Download conversion results
         uses: actions/download-artifact@v4
@@ -363,7 +394,7 @@ jobs:
           path: Markdown Conversions/
         continue-on-error: true
 
-      - name: Verify conversions file
+      - name: Validate conversion results
         run: |
           if [ ! -f conversions.json ]; then
             echo "ERROR: conversions.json not found"
@@ -371,12 +402,16 @@ jobs:
           fi
           
           file_size=$(stat -c%s conversions.json)
+          echo "Conversion file size: $file_size bytes"
+          
           if [ "$file_size" -lt 10 ]; then
             echo "ERROR: conversions.json is too small"
             exit 1
           fi
           
           successful_count=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
+          echo "Successful conversions found: $successful_count"
+          
           if [ "$successful_count" -eq 0 ]; then
             echo "ERROR: No successful conversions to analyze"
             exit 1
@@ -398,6 +433,8 @@ jobs:
               analysis_count=$(jq 'length' analysis.json)
               echo "analysis_success=true" >> $GITHUB_OUTPUT
               echo "analysis_count=$analysis_count" >> $GITHUB_OUTPUT
+              
+              echo "Analysis results: $analysis_count reports analyzed"
               
               if [ "$analysis_count" -eq 0 ]; then
                 echo "WARNING: No reports were analyzed"
@@ -455,52 +492,60 @@ jobs:
           path: Markdown Conversions/
         continue-on-error: true
 
-      - name: Update README
+      - name: Verify analysis file
+        run: |
+          if [ ! -f analysis.json ]; then
+            echo "ERROR: analysis.json file not found"
+            ls -la
+            exit 1
+          fi
+          
+          file_size=$(stat -c%s analysis.json)
+          echo "Analysis file size: $file_size bytes"
+          
+          if [ "$file_size" -lt 10 ]; then
+            echo "ERROR: Analysis file is too small ($file_size bytes)"
+            exit 1
+          fi
+          
+          echo "Analysis file content preview:"
+          head -10 analysis.json
+          
+          analysis_count=$(jq 'length' analysis.json)
+          echo "Analysis entries found: $analysis_count"
+          
+          if [ "$analysis_count" -eq 0 ]; then
+            echo "ERROR: No analysis entries found"
+            exit 1
+          fi
+
+      - name: Run README Updater
         id: readme_update
         run: |
+          echo "Running README updater..."
+          
           if python .github/scripts/readme-updater.py analysis.json --readme-path README.md; then
+            echo "README updater completed successfully"
+            
+            # Check if README was actually modified
             if git diff --quiet HEAD -- README.md; then
               echo "No changes to README.md"
               echo "readme_updated=false" >> $GITHUB_OUTPUT
             else
               echo "README.md was modified"
               echo "readme_updated=true" >> $GITHUB_OUTPUT
+              
+              # Show the changes
+              echo "Changes made to README.md:"
+              git diff HEAD -- README.md
             fi
           else
             echo "ERROR: README updater failed"
             echo "readme_updated=false" >> $GITHUB_OUTPUT
             exit 1
           fi
-
-      - name: Generate PR Body
-        id: pr_body
-        if: steps.readme_update.outputs.readme_updated == 'true'
-        run: |
-          # Re-incorporated robust PR body generation from original file
-          cat > pr_body.md << 'EOF'
-          ## 📄 Security Reports Update
-
-          This PR updates the README with the following security reports:
-
-          EOF
-          
-          jq -r '.[] | "### \(.organization) - \(.title) (\(.year))\n\n**Category:** \(.category)\n**Type:** \(.type)\n\n**Summary:** \(.summary)\n\n---\n"' analysis.json >> pr_body.md
-          
-          cat >> pr_body.md << 'EOF'
-
-          ## 🤖 Automated Processing
-
-          - PDF files converted to Markdown
-          - Reports analyzed and categorized using AI
-          - README updated with proper categorization
-
-          **Run ID:** ${{ github.run_id }}
-          **Triggered by:** ${{ github.event_name }}
-          EOF
-          
-          # Use python for safe url encoding of the multi-line body
-          pr_body_encoded=$(cat pr_body.md | python3 -c "import sys, urllib.parse; print(urllib.parse.quote(sys.stdin.read()))")
-          echo "pr_body=$pr_body_encoded" >> $GITHUB_OUTPUT
+          # The python script will now output the summary for the PR body
+          echo "pr_body=$(python -c "import json; results=json.load(open('analysis.json')); summary=f'Updated README with {len(results)} security reports\n\n'; summary+='\n'.join([f'- ADDED: {r[\"organization\"]} - {r[\"title\"]} ({r[\"year\"]})' for r in results]); print(summary.replace('%', '%25').replace('\n', '%0A').replace('\r', '%0D'))")" >> $GITHUB_OUTPUT
 
       - name: Configure Git
         if: steps.readme_update.outputs.readme_updated == 'true'
@@ -522,6 +567,7 @@ jobs:
             pr_title="Add ${report_count} new security reports"
           fi
           
+          # Add prefix for automated catch-up
           if [ "${{ github.event_name }}" == "schedule" ]; then
              pr_title="[Automated Catch-up] ${pr_title}"
           fi
@@ -531,6 +577,7 @@ jobs:
       - name: Commit changes
         if: steps.readme_update.outputs.readme_updated == 'true'
         run: |
+          # Stage all changes (README.md and any new markdown files)
           git add README.md
           git add "Markdown Conversions/" || true
           git commit -m "${{ steps.pr_details.outputs.pr_title }}"
@@ -543,7 +590,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: ${{ steps.pr_details.outputs.pr_title }}
           title: "📄 ${{ steps.pr_details.outputs.pr_title }}"
-          body: ${{ steps.pr_body.outputs.pr_body }}
+          body: ${{ steps.readme_update.outputs.pr_body }}
           branch: report-update-${{ github.run_id }}
           delete-branch: true
           labels: |

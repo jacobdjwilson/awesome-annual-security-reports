@@ -16,11 +16,18 @@ except ImportError:
     sys.exit(1)
 
 try:
-    from google import genai
-    from google.genai import types
+    import google.generativeai as genai
+    from google.api_core import exceptions
 except ImportError:
-    print("ERROR: The 'google-genai' module is required but not installed.")
-    print("Please install it using: pip install google-genai")
+    print("ERROR: The 'google-generativeai' module is required but not installed.")
+    print("Please install it using: pip install google-generativeai")
+    sys.exit(1)
+
+try:
+    from googleapiclient.discovery import build
+except ImportError:
+    print("ERROR: The 'google-api-python-client' module is required but not installed.")
+    print("Please install it using: pip install google-api-python-client")
     sys.exit(1)
 
 # Load centralized configuration
@@ -51,25 +58,24 @@ MAX_PDF_CHARS = PIPELINE_CONFIG["processing"]["max_pdf_chars"]
 MIN_TEXT_LENGTH = PIPELINE_CONFIG["processing"]["min_text_length"]
 
 MODEL = None
-CLIENT = None
 
 def setup_gemini(api_key: str):
-    global MODEL, CLIENT
-    CLIENT = genai.Client(api_key=api_key)
+    global MODEL
+    genai.configure(api_key=api_key)
     
     for model_name in MODELS:
         try:
-            # Test the model with a simple request
-            response = CLIENT.models.generate_content(
-                model=model_name,
-                contents="Hello"
-            )
-            if response.text:
+            test_model = genai.GenerativeModel(model_name)
+            response = test_model.count_tokens("Hello")
+            if response.total_tokens is not None:
                 MODEL = model_name
                 print(f"Successfully verified model: {MODEL}")
                 return True
-        except Exception as e:
-            print(f"Model {model_name} not available or failed verification: {str(e)}")
+        except exceptions.GoogleAPICallError as e:
+            print(f"Model {model_name} API error: {e}")
+            continue
+        except ValueError as e:
+            print(f"Model {model_name} configuration error: {e}")
             continue
     
     if not MODEL:
@@ -91,11 +97,14 @@ def read_prompt_file(path: str) -> str:
         print(f"ERROR: Failed to read prompt file {path}: {str(e)}")
         raise
 
-def extract_text_from_pdf(pdf_path: Path) -> str:
+def extract_text_from_pdf(pdf_path: Path, min_text_length: int = None) -> str:
     """
     Extracts text from a PDF, attempting standard conversion first and
     falling back to OCR if the initial attempt yields insufficient content.
     """
+    if min_text_length is None:
+        min_text_length = MIN_TEXT_LENGTH
+        
     try:
         print(f"Extracting text from PDF: {pdf_path}")
         if not pdf_path.exists():
@@ -113,14 +122,14 @@ def extract_text_from_pdf(pdf_path: Path) -> str:
         text_length = len(text_content)
 
         # --- 2. Check for failure and fallback to OCR ---
-        if text_length < MIN_TEXT_LENGTH:
+        if text_length < min_text_length:
             print(f"WARNING: Standard extraction yielded only {text_length} characters. Falling back to OCR.")
             ocr_result = md.convert(str(pdf_path), ocr=True)
             text_content = ocr_result.text_content if ocr_result else ""
             text_length = len(text_content)
 
         # --- 3. Final validation ---
-        if text_length < MIN_TEXT_LENGTH:
+        if text_length < min_text_length:
             raise ValueError(f"Both standard and OCR extraction failed. Only got {text_length} characters.")
 
         print(f"Successfully extracted {text_length} characters from PDF.")
@@ -188,35 +197,110 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
     # Ultimate fallback
     return "Unknown Organization", "Security Report"
 
-def generate_markdown_with_ai(pdf_text: str, prompt_text: str) -> str:
+def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
+    """
+    Performs an optimized Google search and returns the best URL.
+    """
+    api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
+    cse_id = os.environ.get("GOOGLE_CSE_ID")
+
+    if not api_key or not cse_id:
+        print("Warning: GOOGLE_SEARCH_API_KEY or GOOGLE_CSE_ID not set. Skipping URL search.")
+        return None
+
+    # Use a less restrictive query without quotes for more flexible matching
+    query = f'{org_name} {title} {year}'
+    print(f"Performing Google Custom Search with query: {query}")
+
+    try:
+        service = build("customsearch", "v1", developerKey=api_key)
+        res = service.cse().list(q=query, cx=cse_id, num=5).execute()
+
+        items = res.get('items', [])
+        if not items:
+            print("No results found from Google Custom Search.")
+            return None
+
+        # --- Simplified Result Prioritization ---
+        org_lower = org_name.lower()
+        title_keywords = {word for word in re.findall(r'\b\w{4,}\b', title.lower())}
+        results_urls = [item['link'] for item in items]
+
+        # 1. High priority: URL contains org name and at least one significant title keyword
+        for url in results_urls:
+            url_lower = url.lower()
+            if org_lower in url_lower and any(keyword in url_lower for keyword in title_keywords):
+                print(f"Found high-priority match (org + title keyword): {url}")
+                return url
+
+        # 2. Medium priority: URL contains just the org name
+        for url in results_urls:
+            if org_lower in url.lower():
+                print(f"Found medium-priority match (org name only): {url}")
+                return url
+
+        # 3. Fallback: Return the first result
+        print(f"No specific match found, returning the first result: {results_urls[0]}")
+        return results_urls[0]
+
+    except Exception as e:
+        print(f"An error occurred during Google search for query '{query}': {e}")
+        # Return a fallback search URL instead of None to prevent downstream failures
+        fallback_url = f"https://www.google.com/search?q={org_name.replace(' ', '+')}+{title.replace(' ', '+')}"
+        print(f"Using fallback search URL: {fallback_url}")
+        return fallback_url
+
+def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url: Optional[str]) -> str:
     """
     Generates markdown content from PDF text using the Gemini API.
-    Note: Organization URL search is handled by report-analyzer.py to avoid duplication.
     """
+    if not MODEL:
+        raise ValueError("No available Gemini model.")
+    
     try:
-        print(f"Generating markdown with AI (model: {MODEL})...")
+        print(f"Generating markdown with {MODEL}...")
+        model = genai.GenerativeModel(MODEL)
         
         # Truncate if necessary (using config value)
         if len(pdf_text) > MAX_PDF_CHARS:
             print(f"Truncating PDF text from {len(pdf_text)} to {MAX_PDF_CHARS} characters")
             pdf_text = pdf_text[:MAX_PDF_CHARS] + "\n\n[Content truncated due to length...]"
 
-        full_prompt = f"{prompt_text}\n\n# Report Content Below\n\n{pdf_text}"
+        full_prompt = f"{prompt_text}\n\n"
+        if organization_url:
+            full_prompt += f"The official report URL is: {organization_url}\n\n"
+        full_prompt += f"# Report Content Below\n\n{pdf_text}"
 
         # Use configuration values
-        generation_config = types.GenerateContentConfig(
-            temperature=GEN_CONFIG_DEFAULTS.get("temperature", 0.7),
-            max_output_tokens=GEN_CONFIG_DEFAULTS.get("max_output_tokens", 65536),
-            top_p=GEN_CONFIG_DEFAULTS.get("top_p", 0.95),
-            top_k=GEN_CONFIG_DEFAULTS.get("top_k", 64),
-            response_mime_type="text/plain",
+        generation_config = {
+            "temperature": GEN_CONFIG_DEFAULTS.get("temperature", 0.1),
+            "max_output_tokens": GEN_CONFIG_DEFAULTS.get("max_output_tokens", 8192),
+            "top_p": GEN_CONFIG_DEFAULTS.get("top_p", 0.95),
+            "top_k": GEN_CONFIG_DEFAULTS.get("top_k", 40)
+        }
+
+        safety_settings = [
+            {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_ONLY_HIGH"},
+            {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_ONLY_HIGH"},
+            {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_ONLY_HIGH"},
+            {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_ONLY_HIGH"},
+        ]
+
+        request_options = {"timeout": 120}  # Add a 2-minute timeout
+        response = model.generate_content(
+            full_prompt,
+            generation_config=generation_config,
+            safety_settings=safety_settings,
+            request_options=request_options
         )
 
-        response = CLIENT.models.generate_content(
-            model=MODEL,
-            contents=full_prompt,
-            config=generation_config
-        )
+        if response.prompt_feedback and hasattr(response.prompt_feedback, 'block_reason') and response.prompt_feedback.block_reason:
+            raise ValueError(f"Request blocked: {response.prompt_feedback.block_reason}")
+
+        if response.candidates:
+            for candidate in response.candidates:
+                if candidate.finish_reason in ["SAFETY", "RECITATION"]:
+                    raise ValueError(f"Content generation blocked: {candidate.finish_reason}")
 
         if not response.text:
             raise ValueError("The response did not contain valid text content.")
@@ -252,8 +336,25 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         
         print(f"Final parsed result: Organization='{organization_name}', Title='{report_title}'")
 
+        # Extract year from path
+        year = "Unknown"
+        for part in pdf_path.parts:
+            if part.isdigit() and len(part) == 4 and part.startswith("20"):
+                year = part
+                break
+
+        # Search for organization URL
+        organization_url = None
+        if organization_name and report_title and year:
+            organization_url = get_organization_url(organization_name, report_title, year)
+
+        if not organization_url:
+            # Ultimate fallback: construct a generic domain
+            organization_url = f"https://www.{''.join(e for e in organization_name if e.isalnum()).lower()}.com"
+            print(f"Ultimate fallback: constructed generic URL: {organization_url}")
+
         # Generate markdown
-        markdown_content = generate_markdown_with_ai(pdf_text, prompt_text)
+        markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
         
         # Post Processing Cleanup
         # 1. Remove markdown code block wrappers if AI incorrectly added them
@@ -292,6 +393,7 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         return {
             "status": "success",
             "output_path": str(output_path),
+            "organization_url": organization_url,
             "organization_name": organization_name,
             "report_title": report_title,
             **result_base
