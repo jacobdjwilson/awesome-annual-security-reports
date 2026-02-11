@@ -1,8 +1,9 @@
-# ReliaQuest Annual Cyber-Threat Report 2025
+# Annual Cyber-Threat Report 2025
 
 ## Table of Contents
 - [Executive Summary: 2024 At A Glance](#executive-summary-2024-at-a-glance)
-- [Introduction: 2024 in Review—Fast Threats Demand Faster Responses](#introduction-2024-in-reviewfast-threats-demand-faster-responses)
+- [Recommendations Organizations Can’t Afford to Ignore](#recommendations-organizations-cant-afford-to-ignore)
+- [Introduction: 2024 in Review—Fast Threats Demand Faster Responses](#introduction-2024-in-review—fast-threats-demand-faster-responses)
 - [Inadequate Logging Responsible for Most Breaches in 2024](#inadequate-logging-responsible-for-most-breaches-in-2024)
 - [Breaking In: The Trends Shaping Initial Access Tactics](#breaking-in-the-trends-shaping-initial-access-tactics)
 - [Old Habits Die Hard: Attackers’ Most Frequent Initial Access Techniques](#old-habits-die-hard-attackers-most-frequent-initial-access-techniques)
@@ -28,71 +29,86 @@
 - [The Adversary’s Toolkit: Post-Exploitation Essentials](#the-adversarys-toolkit-post-exploitation-essentials)
 - [GreyMatter Automations for Combatting Legitimate Tool Abuse](#greymatter-automations-for-combatting-legitimate-tool-abuse)
 - [Ransomware Decoded: Exfiltration Is the New Encryption](#ransomware-decoded-exfiltration-is-the-new-encryption)
-- [Exfiltration Outpaces Encryption in Modern Breaches](#exfiltration-outpaces-encryption-in-modern-breaches)
 - [Ransomware in 2024: Increased 11.9%, Hit New Highs](#ransomware-in-2024-increased-119-hit-new-highs)
 - [GreyMatter Detections and Automations for Combatting Ransomware](#greymatter-detections-and-automations-for-combatting-ransomware)
 - [Next Steps: A CISO’s Checklist](#next-steps-a-cisos-checklist)
+- [Our Threat Forecast for 2025](#our-threat-forecast-for-2025)
 - [About ReliaQuest](#about-reliaquest)
 - [Endnotes](#endnotes)
 
-# ReliaQuest Annual Cyber-Threat Report 2025
+---
 
 ## Executive Summary: 2024 At A Glance
 
-**Initial Access Techniques**
+### Incident Metrics and Breach Details
 
-- Phishing Top Initial Access Technique for the 2nd Year Running
-- 30% Of Phishing Messages Involved Credential Harvesters
+*   **3 Minutes**: Lowest Mean Time to Contain (MTTC) Using Automated Response Playbooks
+*   **48 Minutes**: Average Time from Initial Access to Lateral Movement, or “Breakout Time”
+*   **85%**: Of Incidents Involved Compromised Service Accounts
+*   **Two-Thirds**: Of Critical Hands-on-Keyboard Incidents Involved Legitimate Software
+*   **Inadequate Logging**: Top Cause of Breaches
 
-**Malware and Threat Actors**
+### Initial Access Techniques
 
-- SocGholish Top Malware Thanks to New Python Tactics
-- Microsoft Teams Abused for Social Engineering by Black Basta
-- AsyncRAT Rises From 4th to 2nd Place Among Top Malware Threats
-- Lumma Listings on Criminal Marketplaces: 478,000
+*   **Phishing**: Top Initial Access Technique for the 2nd Year Running
+    *   **30%**: Of Phishing Messages Involved Credential Harvesters
+*   **1 in 4**: Active Intrusions Started with Exploitation of Public-Facing Applications
+*   **45%**: Of Hands-on-Keyboard Intrusions Began with Abuse of External Remote Services Like VPNs
+*   **100%**: Of Deployed MFA Controls Bypassed via Session Hijacking in Successful Business Email Compromise (BEC) Attacks
 
-**Incident Metrics and Breach Details**
+### Malware and Threat Actors
 
-- 3 Minutes Lowest Mean Time to Contain (MTTC) Using Automated Response Playbooks
-- 85% Of Incidents Involved Compromised Service Accounts
-- Inadequate Logging Top Cause of Breaches
-- Two-Thirds Of Critical Hands-on-Keyboard Incidents Involved Legitimate Software
-- 48 Minutes Average Time from Initial Access to Lateral Movement, or “Breakout Time”
-- 45% Of Hands-on-Keyboard Intrusions Began with Abuse of External Remote Services Like VPNs
-- 100% Of Deployed MFA Controls Bypassed via Session Hijacking in Successful Business Email Compromise (BEC) Attacks
-- 1 in 4 Active Intrusions Started with Exploitation of Public-Facing Applications
-- United States Region with the Most Targeted Victims
-- Manufacturing & Professional Services Sectors with the Most Targeted Victims
-- Fastest Exfiltration Time: 4 hr 29 min
-- 80% Of Breaches Featured Exfiltration vs 20% with Encryption
-- 5,253 Organizations Named on Ransomware Data-Leak Sites
+*   **SocGholish**: Top Malware Thanks to New Python Tactics
+*   **AsyncRAT**: Rises From 4th to 2nd Place Among Top Malware Threats
+*   **Microsoft Teams**: Abused for Social Engineering by Black Basta
 
-## 3 Recommendations Organizations Can’t Afford to Ignore
+### Targeted Victims
 
-1.  **Barricade Common Entry Points:** Phishing, Drive-By Compromise, Public-Facing Assets, and External Remote Services
+*   **United States**: Region with the Most Targeted Victims
+*   **Manufacturing & Professional Services**: Sectors with the Most Targeted Victims
 
-    -   Phishing and drive-by compromise were the top initial access methods, while public-facing assets and internet-facing external remote services fueled active intrusions.
-    -   Mitigate these risks by securing remote services (e.g., with client-based certificates) and monitoring public-facing assets.
-    -   Patching promptly is key; attackers are moving faster than ever, fueled by an abundance of available credentials.
+### Other Key Metrics
 
-2.  **Incorporate AI and Automation into Security Operations**
+*   **478,000**: Lumma Listings on Criminal Marketplaces
+*   **5,253**: Organizations Named on Ransomware Data-Leak Sites
+*   **4 hr 29 min**: Fastest Exfiltration Time
+*   **80%**: Of Breaches Featured Exfiltration vs 20% with Encryption
 
-    -   Attackers are adopting AI and automation to supercharge common attacks. That means it’s no longer optional for organizations to use AI and automation to their own advantage.
-    -   When integrated into a security operations platform, these technologies can help contain threats rapidly, drive down response times, and allow security teams to focus on tackling more complex challenges.
-    -   Agentic AI, which can autonomously handle alerts end-to-end, shows particular promise for SecOps.
+---
 
-3.  **Eliminate Blind Spots:** Deny Attackers Any Opportunity
+## Recommendations Organizations Can’t Afford to Ignore
 
-    -   Most “hands-on-keyboard” breaches resulted from insufficient logging and unmanaged devices.
-    -   Manage your attack surface and eliminate blind spots by deploying an endpoint security solution across all assets.
-    -   Enable detailed logging for all devices, including endpoints and servers, to capture user activity, system changes, and network traffic.
-    -   Review log retention periods for hot and cold storage and establish clear procedures for retrieving cold storage logs during investigations.
+### Incorporate AI and Automation into Security Operations
+
+Attackers are adopting AI and automation to supercharge common attacks. That means it’s no longer optional for organizations to use AI and automation to their own advantage.
+
+When integrated into a security operations platform, these technologies can help contain threats rapidly, drive down response times, and allow security teams to focus on tackling more complex challenges.
+
+Agentic AI, which can autonomously handle alerts end-to-end, shows particular promise for SecOps.
+
+### Barricade Common Entry Points: Phishing, Drive-By Compromise, Public-Facing Assets, and External Remote Services
+
+Phishing and drive-by compromise were the top initial access methods, while public-facing assets and internet-facing external remote services fueled active intrusions.
+
+Mitigate these risks by securing remote services (e.g., with client-based certificates) and monitoring public-facing assets.
+
+Patching promptly is key; attackers are moving faster than ever, fueled by an abundance of available credentials.
+
+### Eliminate Blind Spots: Deny Attackers Any Opportunity
+
+Most “hands-on-keyboard” breaches resulted from insufficient logging and unmanaged devices. Manage your attack surface and eliminate blind spots by deploying an endpoint security solution across all assets.
+
+Enable detailed logging for all devices, including endpoints and servers, to capture user activity, system changes, and network traffic.
+
+Review log retention periods for hot and cold storage and establish clear procedures for retrieving cold storage logs during investigations.
+
+---
 
 ## Introduction: 2024 in Review—Fast Threats Demand Faster Responses
 
 In 2024, speed became more important than ever in defending against cyber threats.
 
--   **48 Minutes:** Attackers are moving at unprecedented speeds—last year, upon gaining initial access, they achieved lateral movement in an average of 48 minutes and managed to exfiltrate data in as little as 4 hours.
+Attackers are moving at unprecedented speeds—last year, upon gaining initial access, they achieved lateral movement in an average of 48 minutes and managed to exfiltrate data in as little as 4 hours.
 
 Attackers are also getting better at adapting to and evading the latest security controls, making the adoption of AI and automation imperative for organizations. Using AI and automation to tackle initial access attempts not only strengthens defenses but also empowers analysts to focus on what matters most: detecting and investigating the stealthiest and most impactful intrusions.
 
@@ -112,29 +128,31 @@ Our Annual Cyber-Threat Report presents an in-depth analysis of the most critica
 
 Security leaders can use these findings to refine their cybersecurity strategies, address coverage gaps, and enhance employee awareness of evolving threats.
 
+---
+
 ## Inadequate Logging Responsible for Most Breaches in 2024
 
 Our analysis of 2024 customer breaches revealed five critical security control failures at the core of these incidents. Neglecting or underestimating these foundational security practices leaves organizations exposed—regardless of how sophisticated or varied an attacker’s methods may be. Addressing these weaknesses within networks is essential to avoid becoming the next target.
 
-**Five Critical Security Control Failures**
+### Five Critical Security Control Failures
 
--   **Unmanaged Devices:** Devices without security controls like endpoint protection or monitoring agents create security gaps, providing attackers with open pathways throughout networks.
--   **External Exposure:** Vulnerabilities in internet-facing devices serve as entry points for attackers to infiltrate the network.
--   **Insufficient Logging:** Insufficient monitoring or logging leaves parts of the system vulnerable, making it impossible to detect or investigate malicious activity.
--   **Insecure VPN:** VPNs lacking essential protections like multifactor authentication (MFA) or device-based certificates allow attackers to exploit stolen credentials and gain network access.
--   **Help-Desk Procedural Flaws:** Weak help-desk protocols make organizations easy targets for social engineering attacks, with 14% of breaches in 2024 involving social engineering for initial access or privilege escalation.
+*   **Unmanaged Devices**: Devices without security controls like endpoint protection or monitoring agents create security gaps, providing attackers with open pathways throughout networks.
+*   **Insufficient Logging**: Insufficient monitoring or logging leaves parts of the system vulnerable, making it impossible to detect or investigate malicious activity.
+*   **External Exposure**: Vulnerabilities in internet-facing devices serve as entry points for attackers to infiltrate the network.
+*   **Insecure VPN**: VPNs lacking essential protections like multifactor authentication (MFA) or device-based certificates allow attackers to exploit stolen credentials and gain network access.
+*   **Help-Desk Procedural Flaws**: Weak help-desk protocols make organizations easy targets for social engineering attacks, with 14% of breaches in 2024 involving social engineering for initial access or privilege escalation.
 
-Before advancing to sophisticated response strategies, fortifying foundational defenses is critical. Ensure comprehensive endpoint security coverage—prioritizing critical assets— and implement robust logging to maintain full visibility across the network.
+Before advancing to sophisticated response strategies, fortifying foundational defenses is critical. Ensure comprehensive endpoint security coverage—prioritizing critical assets—and implement robust logging to maintain full visibility across the network.
 
 To counter the risks of social engineering and stolen credentials, enforce strong identity controls like device-based certificate authentication. Bolster these efforts with regular penetration testing, including social engineering scenarios, to uncover and address procedural gaps—particularly in help-desk operations. Though basic, these steps form the bedrock of a resilient security posture.
 
+---
+
 ## Breaking In: The Trends Shaping Initial Access Tactics
 
-Initial access is the critical first step of every cyber attack.
+Initial access is the critical first step of every cyber attack. It’s the moment attackers breach any configured defenses to gain a foothold in a network and set their plans into motion.
 
-It’s the moment attackers breach any configured defenses to gain a foothold in a network and set their plans into motion. In this section of the report, we analyze key findings from GreyMatter customer alerts to reveal how attackers attempted to gain network access and which techniques proved most effective.
-
-**Read On To** find out the tactics adversaries are using to compromise systems, learn how to defend against these threats, and discover how ReliaQuest empowers enterprises to stop incidents before they escalate into full-scale breaches.
+In this section of the report, we analyze key findings from GreyMatter customer alerts to reveal how attackers attempted to gain network access and which techniques proved most effective.
 
 **First...** We'll examine phishing and business email compromise (BEC) attacks, which are increasingly bolstered by advanced tactics like bypassing MFA and abusing Microsoft Teams for social engineering.
 
@@ -142,9 +160,15 @@ It’s the moment attackers breach any configured defenses to gain a foothold in
 
 **Finally...** We’ll review the top malware shaping today’s threat landscape, with “SocGholish” leading the charge.
 
+**Read On To** find out the tactics adversaries are using to compromise systems, learn how to defend against these threats, and discover how ReliaQuest empowers enterprises to stop incidents before they escalate into full-scale breaches.
+
+---
+
 ## Old Habits Die Hard: Attackers’ Most Frequent Initial Access Techniques
 
-The consistency in top-ranked initial access techniques from 2023 to 2024 highlights their effectiveness and reflects attackers’ strategy of indiscriminately targeting a wide pool of victims. Phishing and drive-by compromise remain go-to methods, powered by the scalability and affordability of phishing-as-a-service (PaaS) and malware-as-a-service (MaaS) offerings.
+The consistency in top-ranked initial access techniques from 2023 to 2024 highlights their effectiveness and reflects attackers’ strategy of indiscriminately targeting a wide pool of victims.
+
+Phishing and drive-by compromise remain go-to methods, powered by the scalability and affordability of phishing-as-a-service (PaaS) and malware-as-a-service (MaaS) offerings.
 
 These services allow attackers to flood inboxes with phishing campaigns or lure victims to malicious websites through manipulated search engine results.
 
@@ -152,68 +176,56 @@ While most initial access attempts are blocked early, when successful, these bro
 
 Through our analysis of phishing emails reported to the GreyMatter Phishing Analyzer, we uncovered:
 
--   The most prevalent types of malicious email sent
--   The trigger words used to boost email open rates
--   The tactics designed to trick recipients into clicking malicious links
+*   The most prevalent types of malicious email sent
+*   The trigger words used to boost email open rates
+*   The tactics designed to trick recipients into clicking malicious links
 
 We’ll also look at one of the top concerns for CISOs—BEC—by demonstrating how attackers leverage simple phishing techniques to bypass MFA and execute these high-impact attacks.
 
 Finally, we’ll explore adversaries' weaponization of a trusted communication platform to worm their way into networks.
 
-| Technique                     | 2023  | 2024  |
-| :---------------------------- | :---- | :---- |
-| Phishing with Link            | 25%   | 33%   |
-| Drive-By Compromise          | 24%   | 22%   |
-| Phishing with Attachment     | 9%    | 19%   |
-|Replication via Removable Media|       |       |
+### 2024 Initial Access Techniques
+
+*   **25%**: Phishing with Link
+*   **24%**: Drive-By Compromise
+*   **9%**: Phishing with Attachment
+
+### 2023 Initial Access Techniques
+
+*   **33%**: Drive-By Compromise
+*   **22%**: Phishing with Link
+*   **19%**: Replication via Removable Media
+
+---
 
 ## Phishing Trends: The Tactics Honing Cybercrime’s Most Reliable Weapon
 
-To expose the tactics behind the number-one cyber threat facing enterprises today, we turned to the GreyMatter Phishing Analyzer:
-
-A tool designed to automate the triage of employee-reported phishing emails, enabling faster identification and remediation of malicious activity.
+To expose the tactics behind the number-one cyber threat facing enterprises today, we turned to the GreyMatter Phishing Analyzer: A tool designed to automate the triage of employee-reported phishing emails, enabling faster identification and remediation of malicious activity.
 
 This data is collected from phishing emails that evaded detection by email security gateways and provides insight into adversaries’ phishing techniques.
 
 Data from the GreyMatter Phishing Analyzer revealed that nearly 30% of phishing messages that made it past traditional email security tools involved credential harvesters, often disguised as fake Microsoft login portals.
 
-We also identified any financial-themed keywords attackers used to create a sense of urgency and the trusted platforms they abused to make phishing campaigns appear more legitimate. Knowing what to look for in phishing emails not only helps predict attacker strategies but also sharpens employee training, turning your workforce into a powerful first line of defense against phishing attacks.
+We also identified any financial-themed keywords attackers used to create a sense of urgency and the trusted platforms they abused to make phishing campaigns appear more legitimate.
 
-**Nearly 30% of Reported Phishing Emails Contained Credential Harvesters**
+Knowing what to look for in phishing emails not only helps predict attacker strategies but also sharpens employee training, turning your workforce into a powerful first line of defense against phishing attacks.
 
--   **Credential Harvesters:** Dominated as the most reported category of malicious emails, with fake Microsoft login portals being the most common type. These emails lure victims to fraudulent websites designed to steal credentials, often to lay the groundwork for larger attacks like BEC. Enhanced by AI, credential harvesting emails now feature much more polished language, fewer errors, and highly convincing designs, making them an increasingly effective and scalable weapon for cybercriminals.
--   **Scam Emails:** Crafted to solicit money or extract confidential employee information, scam emails were also widespread in 2024.
--   **Malware-Laden Emails:** Attackers also sent a significant volume of malware-laden emails containing attachments or URLs to deploy malicious files upon download.
--   **Reconnaissance Emails:** Another common type of email sent was single-word or blank emails—known as reconnaissance emails—which are used to verify whether an account is active (i.e., no bounce-backs are received) or to gauge the likelihood that the inbox owner might respond.
+### Nearly 30% of Reported Phishing Emails Contained Credential Harvesters
 
-**URGENT: Keywords That Hook**
+*   **Credential Harvesters**: Dominated as the most reported category of malicious emails, with fake Microsoft login portals being the most common type. These emails lure victims to fraudulent websites designed to steal credentials, often to lay the groundwork for larger attacks like BEC. Enhanced by AI, credential harvesting emails now feature much more polished language, fewer errors, and highly convincing designs, making them an increasingly effective and scalable weapon for cybercriminals.
+*   **Scam Emails**: Crafted to solicit money or extract confidential employee information, scam emails were also widespread in 2024.
+*   **Reconnaissance Emails**: Another common type of email sent was single-word or blank emails—known as reconnaissance emails—which are used to verify whether an account is active (i.e., no bounce-backs are received) or to gauge the likelihood that the inbox owner might respond.
+*   **Malware-Laden Emails**: Attackers also sent a significant volume of malware-laden emails containing attachments or URLs to deploy malicious files upon download.
 
-Attackers use deceptively urgent language to manipulate victims into engaging with phishing emails.
+### URGENT: Keywords That Hook
 
-They understand that a sense of urgency often overrides caution, causing recipients to act hastily without evaluating risks.
+Training end users to pause, verify suspicious emails, and think critically before taking action is key to disrupting attackers’ strategies and reducing the success of phishing attempts.
 
-Financial keywords like “payment,” “invoice,” and “statement” dominated phishing email subject lines and filenames last year.
+Attackers use deceptively urgent language to manipulate victims into engaging with phishing emails. They understand that a sense of urgency often overrides caution, causing recipients to act hastily without evaluating risks.
 
-This tactic is particularly effective because phishing emails that mimic financial statements blend seamlessly into routine tasks, like processing invoices or reviewing account statements, catching users off guard.
+Financial keywords like “payment,” “invoice,” and “statement” dominated phishing email subject lines and filenames last year. This tactic is particularly effective because phishing emails that mimic financial statements blend seamlessly into routine tasks, like processing invoices or reviewing account statements, catching users off guard.
 
-_Training end users to pause, verify suspicious emails, and think critically before taking action is key to disrupting attackers’ strategies and reducing the success of phishing attempts._
-
-**Figure 1: Top subject line keywords**
-
-1.  Invoice
-2.  Order
-3.  Payment
-4.  Request
-5.  Receipt
-6.  Purchase
-7.  Statement
-8.  Tax
-9.  Transfer
-10. Bank
-11. Account
-12. Remittance
-
-**Figure 2: Top filename keywords**
+#### Figure 1: Top subject line keywords
 
 1.  Request
 2.  Invoice
@@ -224,80 +236,89 @@ _Training end users to pause, verify suspicious emails, and think critically bef
 7.  Action
 8.  Reminder
 9.  Notification
-10. Order
-11. Update
-12. Document
-13. Ref
-14. PDF
-15. Please
-16. Notice
-17. Business
-18. Password
-19. Sign
-20. Report
+10. Update
+11. Document
+12. Ref
+13. PDF
+14. Please
+15. Notice
+16. Business
+17. Password
+18. Sign
+19. Report
+20. Order
 
-**Attackers’ Favorite Email Providers and File-Sharing Platforms**
+#### Figure 2: Top filename keywords
 
-Free email providers like Gmail and file-sharing platforms like Dropbox and Docusign were among the top tools used in phishing campaigns last year.
+1.  Invoice
+2.  Order
+3.  Payment
+4.  Request
+5.  Receipt
+6.  Purchase
+7.  Statement
+8.  Tax
+9.  Transfer
+10. Remittance
+11. Account
+12. Bank
 
-These platforms are highly trusted and widely used in business, making it easy for attackers to exploit the trust users place in them.
+### Attackers’ Favorite Email Providers and File-Sharing Platforms
 
-Phishing emails leveraging these tools appear more genuine and are therefore harder to spot.
+Free email providers like Gmail and file-sharing platforms like Dropbox and Docusign were among the top tools used in phishing campaigns last year. These platforms are highly trusted and widely used in business, making it easy for attackers to exploit the trust users place in them. Phishing emails leveraging these tools appear more genuine and are therefore harder to spot.
+
+#### Figure 3: Top sender domains
+
+*   fakedEmail.com
 
 Free email services allow attackers to remain anonymous by enabling them to quickly create new accounts and replace blocked ones, while file-sharing platforms are perfect for hosting malicious files or hiding phishing links.
 
 To counter these tactics, businesses must fine-tune their email security tools to catch suspicious activity that hides behind a veil of legitimacy. Employees must also carefully scrutinize links or emails from trusted platforms, as attackers rely on this very trust to bypass defenses and infiltrate organizations.
 
-**Figure 3: Top sender domains**
+#### Take Action Against Phishing
 
--   fakedEmail.com
+*   Rather than just blocking specific file types, configure email security tools to inspect the contents of HTML files for malicious links, scripts, or QR codes.
+*   Configure email security tools to flag unusual activity from trusted platforms like free email providers and file-sharing services.
+*   Use banners to highlight attention-grabbing terms like "payment," "invoice," and "statement" to educate employees on common phishing tactics.
 
-**Take Action Against Phishing**
-
--   Rather than just blocking specific file types, configure email security tools to inspect the contents of HTML files for malicious links, scripts, or QR codes.
--   Configure email security tools to flag unusual activity from trusted platforms like free email providers and file-sharing services.
--   Use banners to highlight attention-grabbing terms like "payment," "invoice," and "statement" to educate employees on common phishing tactics.
+---
 
 ## Session Hijacking Bypassed MFA in Every Successful BEC Incident in 2024
 
-BEC is one of the most dangerous methods attackers use to achieve their financial objectives.
-
-These attacks often start with a phishing email—frequently sent from a compromised partner—containing a link to an attacker-controlled website. This site acts as an adversary-in-the-middle (AiTM), intercepting MFA requests and session tokens from the legitimate login portal.
+BEC is one of the most dangerous methods attackers use to achieve their financial objectives. These attacks often start with a phishing email—frequently sent from a compromised partner—containing a link to an attacker-controlled website. This site acts as an adversary-in-the-middle (AiTM), intercepting MFA requests and session tokens from the legitimate login portal.
 
 With the stolen session tokens, the attacker can authenticate to the service without needing credentials or access to the MFA-enrolled device, effectively bypassing both.
 
 To stay under the radar while executing their strategies, attackers often use commercial VPNs to mask their activities:
 
--   Express VPN
--   SurfEasy VPN
--   Private Internet Access VPN
--   Nord VPN
--   Hide My Ass VPN
--   Surfshark VPN
+*   Express VPN
+*   Surfshark VPN
+*   Nord VPN
+*   SurfEasy VPN
+*   Hide My Ass VPN
+*   Private Internet Access VPN
 
-The combination of a high success rate and devastating impact makes BEC a top security concern for organizations.
+The combination of a high success rate and devastating impact makes BEC a top security concern for organizations. By analyzing real-world compromises of corporate employee email accounts, we’ve identified the key tactics attackers rely on, what makes them so successful, and, most importantly, the steps defenders must take to stop them.
 
-By analyzing real-world compromises of corporate employee email accounts, we’ve identified the key tactics attackers rely on, what makes them so successful, and, most importantly, the steps defenders must take to stop them.
+#### Figure 4: How AiTM phishing bypasses MFA and steals session tokens
 
-**Here are our key takeaways**
+1.  User enters their password into phishing site.
+2.  Phishing site forwards the credentials to legitimate site.
+3.  Legitimate site sends MFA screen in response.
+4.  Phishing site displays MFA prompt from legitimate site to the user.
+5.  User completes MFA authentication.
+6.  Phishing site forwards MFA response to legitimate site.
+7.  Legitimate site issues a session cookie.
+8.  Phishing site redirects the user to another page.
 
--   **MFA Isn’t Foolproof:** In every incident where MFA was configured, attackers managed to bypass it by stealing session tokens through AiTM phishing. Session token interception is now a standard feature in modern phishing toolkits, reducing the level of technical expertise required to bypass MFA.
--   **Trust Is a Weapon:** 9 out of 10 phishing emails came from hacked accounts at trusted partner organizations, exploiting established relationships to successfully deceive targets.
--   **Attackers Hide Their Tracks:** After hijacking a session, attackers used VPNs to conceal their location, allowing them to bypass location-based detections and evade regional access-control policies.
--   **Compromised Accounts Spread the Attack Internally:** In 80% of cases, compromised accounts were used to send phishing emails to other employees within the same organization.
+#### Key Takeaways:
 
-**Figure 4: How AiTM phishing bypasses MFA and steals session tokens**
+*   **MFA Isn’t Foolproof**: In every incident where MFA was configured, attackers managed to bypass it by stealing session tokens through AiTM phishing. Session token interception is now a standard feature in modern phishing toolkits, reducing the level of technical expertise required to bypass MFA.
+*   **Trust Is a Weapon**: 9 out of 10 phishing emails came from hacked accounts at trusted partner organizations, exploiting established relationships to successfully deceive targets.
+*   **Attackers Hide Their Tracks**: After hijacking a session, attackers used VPNs to conceal their location, allowing them to bypass location-based detections and evade regional access-control policies.
+*   **Compromised Accounts Spread the Attack Internally**: In 80% of cases, compromised accounts were used to send phishing emails to other employees within the same organization.
 
-1.  User enters their password into phishing site
-2.  Phishing site forwards the credentials to legitimate site
-3.  Legitimate site sends MFA screen in response
-4.  Phishing site displays MFA prompt from legitimate site to the user
-5.  User completes MFA authentication
-6.  Phishing site forwards MFA response to legitimate site
-7.  Legitimate site issues a session cookie
-8.  Phishing site redirects the user to another page
-
-**Business Email Camouflage**
+#### Business Email Camouflage
 
 In February 2024, we identified a compromised email account belonging to a customer in the information sector. The account had been compromised after a user inadvertently provided their credentials in response to a phishing email impersonating a legitimate IT consulting company.
 
@@ -305,47 +326,49 @@ We promptly informed the customer’s security team, who contacted the user to v
 
 We immediately followed up with the customer to confirm that the account had been compromised and that the security team had unknowingly been communicating with the threat actor. The attacker’s access was swiftly revoked, and the credentials for the compromised account were changed.
 
-**Take Action Against BEC**
+#### Take Action Against BEC
 
--   Train users to recognize common phishing keywords, understand procedures for reporting suspicious emails, and be aware that even trusted partner email accounts can be compromised and used for phishing attacks. Incorporate internal phishing scenarios into security awareness training to help employees effectively identify and respond to these threats.
--   Block anomalous top-level domains (TLDs), such as “.ru,” “.xyz,” and “.ly,” as these TLDs are commonly used to host credential harvesters.
--   Implement conditional access policies to block authentication from noncompliant devices. Deploy phishing-resistant MFA, such as Fast IDentity Online (FIDO), for administrators or other high-risk accounts. Additionally, shorten session timeouts for Microsoft 365 to minimize the window of opportunity for attackers to exploit stolen session tokens and maintain access.
+*   Train users to recognize common phishing keywords, understand procedures for reporting suspicious emails, and be aware that even trusted partner email accounts can be compromised and used for phishing attacks. Incorporate internal phishing scenarios into security awareness training to help employees effectively identify and respond to these threats.
+*   Block anomalous top-level domains (TLDs), such as “.ru,” “.xyz,” and “.ly,” as these TLDs are commonly used to host credential harvesters.
+*   Implement conditional access policies to block authentication from noncompliant devices. Deploy phishing-resistant MFA, such as Fast IDentity Online (FIDO), for administrators or other high-risk accounts. Additionally, shorten session timeouts for Microsoft 365 to minimize the window of opportunity for attackers to exploit stolen session tokens and maintain access.
+
+---
 
 ## Social Engineering: How Attackers Weaponize Microsoft Teams
 
-**Black Basta Exploits Microsoft Teams for Initial Access**
+### Black Basta Exploits Microsoft Teams for Initial Access
 
-Throughout 2024, ReliaQuest observed the ransomware group “Black Basta” employing a new social engineering tactic that leverages Microsoft Teams for initial access.
-
-By compromising legitimate Microsoft Entra ID tenants or creating fraudulent ones, the group impersonates IT support or help-desk staff to deceive targeted users into engaging with malicious Teams messages.
+Throughout 2024, ReliaQuest observed the ransomware group “Black Basta” employing a new social engineering tactic that leverages Microsoft Teams for initial access. By compromising legitimate Microsoft Entra ID tenants or creating fraudulent ones, the group impersonates IT support or help-desk staff to deceive targeted users into engaging with malicious Teams messages.
 
 Black Basta typically begins the attack by spamming users with hundreds of phishing emails. Shortly after, the attackers follow up with either a phone call or a Teams chat message (see Figure 5).
 
 These messages often originate from external accounts with display names like “Help Desk” or “Support Team,” intentionally crafted to appear both legitimate and urgent to increase the likelihood of user interaction.
 
+#### Figure 5: Sample external Microsoft Teams message request (source: microsoft[.]com)
+
 Once attackers establish contact, they manipulate victims into downloading remote monitoring and management (RMM) tools, such as Quick Assist or AnyDesk, under the guise of providing support sessions. These tools grant attackers the ability to install and execute malicious files, facilitating initial access to the organization’s network.
 
 In some cases, attackers have also been observed persuading users to download malicious files themselves—such as scripts or executables—via QR codes, further expanding their arsenal of social engineering techniques.
 
-**Figure 5: Sample external Microsoft Teams message request**
-
-![Image description: Sample external Microsoft Teams message request from microsoft[.]com]
-
-**Manipulating Trust: Social Engineering Through Familiar Platforms**
+### Manipulating Trust: Social Engineering Through Familiar Platforms
 
 As this is a relatively new technique, most organizations have yet to take appropriate defensive measures. Unlike phishing, which is commonly mitigated with security controls and user training, this approach targets less-secured communication channels where users are more likely to engage with malicious activity.
 
 We predict with high confidence that this technique will gain popularity among cybercriminals, largely due to the ease of creating new Microsoft Entra ID tenants, making these accounts disposable and easily replaced if blocked. This tactic highlights why social engineering remains one of the most effective forms of initial access.
 
-_By exploiting human trust in familiar platforms, threat actors significantly increase their chances of success compared to traditional phishing techniques._
+By exploiting human trust in familiar platforms, threat actors significantly increase their chances of success compared to traditional phishing techniques.
 
-As Black Basta and other threat groups continue to innovate, organizations must prioritize addressing these vulnerabilities. Implementing strict controls on external Teams communication, monitoring for anomalous activity—such as messages originating from unexpected locations or using suspicious naming conventions—and providing robust user training are critical. Without these preventative measures in place, these increasingly sophisticated social engineering campaigns are likely to be successful.
+As Black Basta and other threat groups continue to innovate, organizations must prioritize addressing these vulnerabilities. Implementing strict controls on external Teams communication, monitoring for anomalous activity—such as messages originating from unexpected locations or using suspicious naming conventions—and providing robust user training are critical.
 
-**Take Action Against Microsoft Teams Social Engineering**
+Without these preventative measures in place, these increasingly sophisticated social engineering campaigns are likely to be successful.
 
--   Limit Microsoft Teams messaging to approved external tenants only to block malicious actors from impersonating legitimate organizations.
--   Train employees to identify fake support messages, avoid unverified downloads, and recognize QR code scams on platforms like Teams and Slack.
--   Deploy advanced email filtering solutions, such as email security gateways, spam filtering, and advanced threat protection for email, to detect and block mass spam campaigns before they reach user inboxes.
+#### Take Action Against Microsoft Teams Social Engineering
+
+*   Limit Microsoft Teams messaging to approved external tenants only to block malicious actors from impersonating legitimate organizations.
+*   Train employees to identify fake support messages, avoid unverified downloads, and recognize QR code scams on platforms like Teams and Slack.
+*   Deploy advanced email filtering solutions, such as email security gateways, spam filtering, and advanced threat protection for email, to detect and block mass spam campaigns before they reach user inboxes.
+
+---
 
 ## GreyMatter Automations for Combatting Email Attacks
 
@@ -355,16 +378,18 @@ Additionally, GreyMatter offers out-of-the-box and custom threat hunting package
 
 By leveraging the end-to-end automation capabilities of GreyMatter, organizations can detect, respond to, and neutralize threats in minutes.
 
-**Recommended Automated Response Playbooks**
+### Recommended Automated Response Playbooks
 
--   **Block Domain:** Prevents access to a specific malicious domain, which disrupts phishing campaigns, malware delivery, and command-and-control (C2) communications.
--   **Block Email Domain:** Blocks emails originating from malicious domains, reducing phishing attempts and preventing attackers from using compromised or fake domains to target users.
+*   **Block Domain**: Prevents access to a specific malicious domain, which disrupts phishing campaigns, malware delivery, and command-and-control (C2) communications.
+*   **Block Email Domain**: Blocks emails originating from malicious domains, reducing phishing attempts and preventing attackers from using compromised or fake domains to target users.
 
-**Recommended Threat Hunting Packages**
+### Recommended Threat Hunting Packages
 
--   **Phishing—Microsoft Teams:** Identifies malicious messages from external domains in Microsoft Teams to detect and block phishing attempts that deliver credential-harvesting links or malicious files through Teams. By monitoring these messages, customers can stop attackers from using tools like “TeamsPhisher” before users interact with harmful links, reducing the risk of compromised accounts or data breaches.
--   **Phishing—Spearphishing Attachments:** Detects spearphishing attachments with uncommon but business-relevant file extensions. This threat hunting package leverages telemetry from email gateways and endpoints to identify malicious emails that mimic legitimate communications. This allows customers to quickly spot and block these threats, minimizing attackers’ foothold in the network and reducing the risk of compromise.
--   **Hygiene—MFA Modifications:** Monitors unauthorized actions, such as threat actors registering new MFA devices or tricking users into resetting their MFA. By auditing MFA changes, customers can ensure MFA is implemented correctly, confirm that changes follow proper procedures, and quickly identify suspicious activity.
+*   **Phishing—Microsoft Teams**: Identifies malicious messages from external domains in Microsoft Teams to detect and block phishing attempts that deliver credential-harvesting links or malicious files through Teams. By monitoring these messages, customers can stop attackers from using tools like “TeamsPhisher” before users interact with harmful links, reducing the risk of compromised accounts or data breaches.
+*   **Phishing—Spearphishing Attachments**: Detects spearphishing attachments with uncommon but business-relevant file extensions. This threat hunting package leverages telemetry from email gateways and endpoints to identify malicious emails that mimic legitimate communications. This allows customers to quickly spot and block these threats, minimizing attackers’ foothold in the network and reducing the risk of compromise.
+*   **Hygiene—MFA Modifications**: Monitors unauthorized actions, such as threat actors registering new MFA devices or tricking users into resetting their MFA. By auditing MFA changes, customers can ensure MFA is implemented correctly, confirm that changes follow proper procedures, and quickly identify suspicious activity.
+
+---
 
 ## Critical Entry Points: VPN and Voice Phishing Among Most-Successful Techniques
 
@@ -378,63 +403,63 @@ We’ve also included real-world examples to illustrate the damage these techniq
 
 By prioritizing defenses against these methods, organizations can significantly reduce the risk of attacks escalating into lateral movement, privilege escalation, or data exfiltration.
 
-**Figure 6: Successful initial access methods in 2024**
+### Figure 6: Successful initial access methods in 2024
 
--   External Remote Services: 45%
--   Public-Facing Applications: 23%
--   Phishing with Voice: 14%
--   Trusted Relationship: 9%
--   Cloud: 9%
+*   **45%**: External Remote Services
+*   **23%**: Public-Facing Applications
+*   **14%**: Phishing with Voice
+*   **9%**: Cloud
+*   **9%**: Trusted Relationship
+
+---
 
 ## Abuse of External Remote Services Led to 45% of Hands-on-Keyboard Intrusions
 
-Last year, threat actors were most successful in gaining network access via external remote services like VPN portals, Remote Desktop Protocol (RDP), and virtual desktop infrastructure (VDI).
-
-These trusted services act as gateways to an organization’s internal network, allowing attackers to slip past traditional perimeter defenses and gain direct access to sensitive systems and data.
+Last year, threat actors were most successful in gaining network access via external remote services like VPN portals, Remote Desktop Protocol (RDP), and virtual desktop infrastructure (VDI). These trusted services act as gateways to an organization’s internal network, allowing attackers to slip past traditional perimeter defenses and gain direct access to sensitive systems and data.
 
 Once inside, adversaries exploit the trust inherent in these services to operate under the radar, carrying out data theft, lateral movement, or ransomware attacks—all while evading detection. In some cases, they also plant backdoors for future intrusions.
 
 External remote services rely on valid account credentials for authentication, but attackers can easily overcome this hurdle by:
 
--   Brute-Forcing Passwords
--   Mining Data Breaches
--   Purchasing Credentials from Online Marketplaces
+*   Brute-Forcing Passwords
+*   Mining Data Breaches
+*   Purchasing Credentials from Online Marketplaces
 
-IABs are the middlemen in this ecosystem, selling stolen credentials—often obtained through information-stealing malware (infostealers)—to various threat actors, including ransomware affiliates, so they can launch devastating attacks with ease.
+IABs are the middlemen in this ecosystem, selling stolen credentials—often obtained through information-stealing malware (infostealers)—to various threat actors, including ransomware affiliates, so they can launch devastating attacks with ease. Once exposed, data may be leaked or sold online, leaving organizations to face severe reputational and regulatory consequences.
 
-Once exposed, data may be leaked or sold online, leaving organizations to face severe reputational and regulatory consequences.
+The rise in attacks targeting external services has fueled a growing demand for accesses, and IABs are meeting this demand at premium prices:
 
-_The rise in attacks targeting external services has fueled a growing demand for accesses, and IABs are meeting this demand at premium prices:_
+*   IAB listings offering access via VPNs surged by 250% between 2023 and 2024.
+*   The average “buy now” price for these listings climbed 46%, increasing from $2,370 to $3,455.
 
--   IAB listings offering access via VPNs surged by 250% between 2023 and 2024.
--   The average “buy now” price for these listings climbed 46%, increasing from $2,370 to $3,455.
+### Figure 7: IAB listings in 2024 by sector
 
-While all industries are targeted for initial access, certain sectors are more heavily sought after than others.
+*   **74%**: Manufacturing
+*   **63%**: Construction
+*   **55%**: Retail
+*   **39%**: Education
+*   **37%**: Business Services
+*   **33%**: Finance
+*   **33%**: Software
+*   **28%**: Health Care
+*   **22%**: Government
+*   **21%**: Media & Internet
 
-Manufacturing, for example, is a prime target due to its reliance on legacy systems, extensive use of remote access, and prioritization of operational continuity over credential hygiene best practices. If IABs can easily infiltrate a network in a particular industry, they are more likely to target other organizations in the same sector, assuming they have the same weaknesses in security practices.
+While all industries are targeted for initial access, certain sectors are more heavily sought after than others. Manufacturing, for example, is a prime target due to its reliance on legacy systems, extensive use of remote access, and prioritization of operational continuity over credential hygiene best practices. If IABs can easily infiltrate a network in a particular industry, they are more likely to target other organizations in the same sector, assuming they have the same weaknesses in security practices.
 
-**Figure 7: IAB listings in 2024 by sector**
+#### Take Action Against VPN Attacks
 
--   Manufacturing: 74%
--   Construction: 63%
--   Retail: 55%
--   Education: 39%
--   Finance: 37%
--   Software: 33%
--   Health Care: 33%
--   Government: 28%
--   Business Services: 22%
--   Media & Internet: 21%
+*   Implement device-based certificate authentication for VPNs to verify devices before they connect.
+*   Combine this with MFA for an added layer of security against unauthorized access.
+*   Enforce conditional access policies for VPN authentication, such as location and device compliance.
 
-**Take Action Against VPN Attacks**
-
--   Implement device-based certificate authentication for VPNs to verify devices before they connect.
--   Combine this with MFA for an added layer of security against unauthorized access.
--   Enforce conditional access policies for VPN authentication, such as location and device compliance.
+---
 
 ## 23% of Active Intrusions Initiated via Exploitation of Public-Facing Applications
 
-Between 2023 and 2024, adversaries targeting public-facing applications increased by 3%, a trend highly likely fueled by the 2,000-plus critical vulnerabilities identified last year.1
+### 2023 vs. 2024
+
+Between 2023 and 2024, adversaries targeting public-facing applications increased by 3%, a trend highly likely fueled by the 2,000-plus critical vulnerabilities identified last year.¹
 
 These critical vulnerabilities—which are remotely exploitable, require no privileges or user interaction, and are characterized by low complexity—are an attractive opportunity for attackers. With minimal effort, a single exploit can breach multiple organizations, delivering significant returns on investment for cybercriminals.
 
@@ -442,38 +467,30 @@ Although fewer critical vulnerabilities were identified in 2024 compared to the 
 
 In 2024, PoC exploits were released for all three of the most-exploited vulnerabilities, turning opportunistic attacks into focused campaigns. With these ready-made tools in hand, attackers—regardless of skill level—had a clear and easy path to exploitation.
 
-**Most Exploited Vulnerabilities of 2024**
+### Most Exploited Vulnerabilities of 2024
 
--   CVE-2024-1708 affecting ConnectWise ScreenConnect
--   CVE-2024-50623 impacting Cleo Harmony, VLTrader, and LexiCom
--   CVE-2024-3400 targeting Palo Alto GlobalProtect
+*   CVE-2024-1708 affecting ConnectWise ScreenConnect
+*   CVE-2024-50623 impacting Cleo Harmony, VLTrader, and LexiCom
+*   CVE-2024-3400 targeting Palo Alto GlobalProtect
 
-_When PoCs are released, the clock starts ticking; attackers rush to exploit vulnerabilities at scale before organizations can respond. To stay ahead, organizations across all sectors must prioritize securing external-facing assets, as these are prime targets for rapid, opportunistic attacks the moment exploits become available._
+When PoCs are released, the clock starts ticking; attackers rush to exploit vulnerabilities at scale before organizations can respond. To stay ahead, organizations across all sectors must prioritize securing external-facing assets, as these are prime targets for rapid, opportunistic attacks the moment exploits become available.
 
 The information sector emerged as the primary target for public-facing application attacks, largely due to its reliance on software that often inadvertently leaves critical assets exposed, like customer service platforms, hosting infrastructure, and interconnected systems.
 
-**LockBit Finds a Key in ScreenConnect**
+#### LockBit Finds a Key in ScreenConnect
 
-In February 2024, a “LockBit” ransomware affiliate successfully exploited CVE-2024-1708 to gain access to a customer's on-premises ConnectWise ScreenConnect server.
+In February 2024, a “LockBit” ransomware affiliate successfully exploited CVE-2024-1708 to gain access to a customer's on-premises ConnectWise ScreenConnect server. Using this access, the adversary executed a ransomware encryptor via ScreenConnect, impacting numerous hosts within the environment. The affected hosts had adequate visibility through logging and endpoint security tools, enabling a swift and effective response that ultimately prevented a successful attack.
 
-Using this access, the adversary executed a ransomware encryptor via ScreenConnect, impacting numerous hosts within the environment.
+#### Take Action Against Exploitation of Public-Facing Applications
 
-The affected hosts had adequate visibility through logging and endpoint security tools, enabling a swift and effective response that ultimately prevented a successful attack.
+*   Maintain an accurate inventory of public-facing software like VPNs, firewalls, and file-transfer software. Minimize the external attack surface by disabling unused services or applications and limiting the public exposure of systems to only those that are essential for business operations. For devices that need to be externally facing, enforce strict access controls and incorporate a web application firewall (WAF) to monitor and block malicious requests.
+*   Prioritize patching these critical systems and establish fallback plans to mitigate risks when patching isn’t immediately possible.
+*   Equip internal devices and servers relying on this software with adequate logging and security tools to enhance visibility and enable swift responses to threats.
 
-**Take Action Against Exploitation of Public-Facing Applications**
-
--   Maintain an accurate inventory of public-facing software like VPNs, firewalls, and file-transfer software. Minimize the external attack surface by disabling unused services or applications and limiting the public exposure of systems to only those that are essential for business operations. For devices that need to be externally facing, enforce strict access controls and incorporate a web application firewall (WAF) to monitor and block malicious requests.
--   Prioritize patching these critical systems and establish fallback plans to mitigate risks when patching isn’t immediately possible.
--   Equip internal devices and servers relying on this software with adequate logging and security tools to enhance visibility and enable swift responses to threats.
+---
 
 ## Voice Phishing Behind 14% of Breaches
 
-Social engineering is far from new, but it remains one of threat actors’ most effective tools, allowing them to exploit human trust to infiltrate organizations.
+Social engineering is far from new, but it remains one of threat actors’ most effective tools, allowing them to exploit human trust to infiltrate organizations. Attackers frequently deceive users into downloading malicious software or manipulate IT help desks into resetting credentials and disabling MFA. To deceive help-desk personnel, attackers gather employee information such as full names, addresses, and Social Security numbers.
 
-Attackers frequently deceive users into downloading malicious software or manipulate IT help desks into resetting credentials and disabling MFA.
-
-To deceive help-desk personnel, attackers gather employee information such as full names, addresses, and Social Security numbers.
-
-Voice phishing is especially concerning.
-
-It circumvents all technical defenses, instead directly targeting an organization’s people. Employees tricked by these tactics not only risk exposing sensitive information
+Voice phishing is especially concerning. It circumvents all technical defenses, instead directly targeting an organization’s people. Employees tricked by these tactics not only risk exposing sensitive information but also open the door
