@@ -5,6 +5,7 @@ import subprocess
 import datetime
 import requests
 import json
+from pathlib import Path
 from bs4 import BeautifulSoup
 from googleapiclient.discovery import build
 from urllib.parse import urlparse
@@ -14,6 +15,7 @@ MAX_ISSUES_PER_RUN = 10
 LOOKBACK_DAYS = 90
 TIMEOUT_SECONDS = 15
 CURRENT_YEAR = datetime.date.today().year
+REPORTS_BASE_DIR = "Annual Security Reports"
 
 # Terms that indicate false positives
 EXCLUDE_TERMS = [
@@ -61,43 +63,138 @@ def is_secondary_source(url):
         return False
     return any(secondary in domain for secondary in SECONDARY_SOURCE_DOMAINS)
 
-def parse_readme_for_targets():
+def parse_pdf_filename(filename):
     """
-    Parse README.md to extract organization details including category.
-    Returns: list of tuples (org, report_title, last_year, category, report_url)
-    """
-    targets = []
-    current_category = None
+    Parse PDF filename to extract organization, report title, and year.
+    Expected format: Organization-Report-Title-Year.pdf
     
+    Returns: tuple (organization, report_title, year) or None if cannot parse
+    """
+    # Remove .pdf extension
+    name = filename.replace('.pdf', '')
+    
+    # Try to find year at the end (4 digits)
+    year_match = re.search(r'-(\d{4})$', name)
+    if not year_match:
+        return None
+    
+    year = int(year_match.group(1))
+    # Remove year from name
+    name_without_year = name[:year_match.start()]
+    
+    # Split by hyphens to get parts
+    parts = name_without_year.split('-')
+    if len(parts) < 2:
+        return None
+    
+    # First part is organization, rest is report title
+    organization = parts[0]
+    report_title = '-'.join(parts[1:])
+    
+    return (organization, report_title, year)
+
+def scan_repository_reports():
+    """
+    Scan the Annual Security Reports directory for all PDF files from previous years.
+    Returns: list of tuples (organization, report_title, year, file_path, category_from_year)
+    """
+    reports = []
+    
+    if not os.path.exists(REPORTS_BASE_DIR):
+        print(f"ERROR: Reports directory '{REPORTS_BASE_DIR}' not found.")
+        return reports
+    
+    # Iterate through year directories
+    for year_dir in sorted(os.listdir(REPORTS_BASE_DIR)):
+        year_path = os.path.join(REPORTS_BASE_DIR, year_dir)
+        
+        # Skip if not a directory
+        if not os.path.isdir(year_path):
+            continue
+        
+        # Extract year from directory name
+        try:
+            dir_year = int(year_dir)
+        except ValueError:
+            continue
+        
+        # Only process years older than current year
+        if dir_year >= CURRENT_YEAR:
+            print(f"DEBUG: Skipping current/future year directory: {year_dir}")
+            continue
+        
+        print(f"INFO: Scanning directory: {year_dir}")
+        
+        # Scan PDFs in this year directory
+        for filename in os.listdir(year_path):
+            if not filename.endswith('.pdf'):
+                continue
+            
+            # Parse filename
+            parsed = parse_pdf_filename(filename)
+            if not parsed:
+                print(f"DEBUG: Could not parse filename: {filename}")
+                continue
+            
+            org, report_title, file_year = parsed
+            file_path = os.path.join(year_path, filename)
+            
+            # Verify file year matches directory year
+            if file_year != dir_year:
+                print(f"DEBUG: Year mismatch in {filename}: file has {file_year}, directory is {dir_year}")
+            
+            reports.append((org, report_title, file_year, file_path, year_dir))
+            
+    print(f"INFO: Found {len(reports)} historical reports to check for updates")
+    return reports
+
+def get_category_from_readme(org, report_title):
+    """
+    Try to find the category for this report from README.md.
+    Returns: category string or "Unknown"
+    """
+    try:
+        with open("README.md", "r", encoding="utf-8") as f:
+            content = f.read()
+            lines = content.split('\n')
+            
+            current_category = None
+            for line in lines:
+                # Detect category headers
+                if line.startswith('### '):
+                    current_category = line.replace('### ', '').strip()
+                    continue
+                
+                # Check if this line contains our org and report
+                if org in line and current_category:
+                    return current_category
+    except:
+        pass
+    
+    return "Unknown"
+
+def get_report_url_from_readme(org, report_title, year):
+    """
+    Try to find the report URL from README.md for a specific year.
+    Returns: URL string or None
+    """
     try:
         with open("README.md", "r", encoding="utf-8") as f:
             content = f.read()
             lines = content.split('\n')
             
             for line in lines:
-                # Detect category headers (### headers under ## Analysis Reports or ## Survey Reports)
-                if line.startswith('### '):
-                    current_category = line.replace('### ', '').strip()
-                    continue
-                
-                # Match report entries: - [Org Name](url) - [Report Title](url) (year)
-                pattern = r'-\s*\[([^\]]+)\]\(([^)]+)\)\s*-\s*\[([^\]]+)\]\(([^)]+)\)\s*\((\d{4})\)'
-                match = re.search(pattern, line)
-                
-                if match and current_category:
-                    org = match.group(1)
-                    org_url = match.group(2)
-                    report_title = match.group(3)
-                    report_url = match.group(4)
-                    last_year = match.group(5)
-                    
-                    targets.append((org, report_title, last_year, current_category, report_url))
+                # Match report entries with year
+                if org in line and str(year) in line:
+                    # Extract URL from markdown link
+                    url_matches = re.findall(r'\]\(([^)]+)\)', line)
+                    if len(url_matches) >= 2:
+                        # Second URL is usually the report URL
+                        return url_matches[1]
+    except:
+        pass
     
-    except FileNotFoundError:
-        print("ERROR: README.md not found.")
-        sys.exit(1)
-    
-    return targets
+    return None
 
 def get_existing_report_domain(report_url):
     """
@@ -392,24 +489,27 @@ def main():
         print("ERROR: Missing Google API keys.")
         sys.exit(1)
 
-    # 2. Parse README for Targets
-    print("INFO: Parsing README.md for targets...")
-    targets = parse_readme_for_targets()
+    # 2. Scan Repository for Historical Reports
+    print("INFO: Scanning repository for historical reports...")
+    reports = scan_repository_reports()
+    
+    if not reports:
+        print("WARNING: No historical reports found in repository")
+        sys.exit(0)
 
-    print(f"INFO: Found {len(targets)} targets to check.")
+    print(f"INFO: Found {len(reports)} reports to check for updates.")
     print(f"INFO: Current year: {CURRENT_YEAR}")
     
     service = build("customsearch", "v1", developerKey=api_key)
     issues_created = 0
 
-    # 3. Execution Loop
-    for org, report_title, last_year, category, report_url in targets:
+    # 3. Execution Loop - Check each report for newer version
+    for org, report_title, last_year, file_path, year_dir in reports:
         if issues_created >= MAX_ISSUES_PER_RUN:
             print("INFO: Hit max issues limit. Stopping.")
             break
 
-        current_year = int(last_year)
-        target_year = current_year + 1
+        target_year = last_year + 1
         
         # Skip if target year is in the future
         is_future, future_reason = check_future_year(target_year)
@@ -427,18 +527,20 @@ def main():
             print(f"DEBUG: Skipping {org} {target_year} (Issue exists)")
             continue
 
-        # Get existing report domain for validation
-        existing_report_domain = get_existing_report_domain(report_url)
+        # Get category and existing URL from README if available
+        category = get_category_from_readme(org, report_title)
+        last_year_url = get_report_url_from_readme(org, report_title, last_year)
+        existing_report_domain = get_existing_report_domain(last_year_url)
         
         if existing_report_domain:
             print(f"INFO: Expected domain for {org}: {existing_report_domain}")
         else:
-            print(f"WARNING: Could not extract domain from report URL for {org}: {report_url}")
+            print(f"WARNING: Could not determine domain for {org}")
 
-        print(f"INFO: Searching for {org} {target_year}...")
+        print(f"INFO: Searching for {org} {report_title} {target_year}...")
         
         try:
-            # Refined Query - add year to make it more specific
+            # Refined Query - search for organization + report title + target year
             query = f'"{org}" "{report_title}" {target_year}'
             res = service.cse().list(q=query, cx=cse_id, num=5).execute()  # Increased to 5 for better coverage
             items = res.get('items', [])
@@ -509,6 +611,7 @@ def main():
 ### 🔍 Discovery Analysis
 **Confidence:** {confidence}
 **Reasoning:** {reasoning}
+**Discovery Method:** Repository scan of historical reports
 
 ### 📊 Validation Details
 {validation_summary_text}
@@ -523,7 +626,8 @@ def main():
 - **Report Name:** {report_title}
 - **Category:** {category}
 - **Target Year:** {target_year}
-- **Previous Year:** {current_year}
+- **Previous Year:** {last_year}
+- **Previous File:** `{file_path}`
 - **Expected Domain:** {existing_report_domain or 'Unknown'}
 - **Found Domain:** {validation_details.get('domain_match') if validation_details.get('domain_match') is not None else extract_domain(link)}
 
@@ -532,8 +636,9 @@ def main():
 - [ ] Check if URL points to the actual report document
 - [ ] Confirm the report year matches {target_year}
 - [ ] Validate the source is authoritative (original publisher preferred)
+- [ ] Compare with previous report: `{file_path}`
 
-*Auto-generated by Security Report Discovery Workflow*
+*Auto-generated by Security Report Discovery Workflow (Repository Scanner)*
                 """
 
                 subprocess.run([
@@ -544,7 +649,7 @@ def main():
                 ], check=True)
 
                 issues_created += 1
-                break  # Move to next Org after finding one valid candidate
+                break  # Move to next report after finding one valid candidate
 
         except Exception as e:
             print(f"ERROR: processing {org}: {e}")

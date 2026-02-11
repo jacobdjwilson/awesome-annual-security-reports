@@ -1,3 +1,18 @@
+#!/usr/bin/env python3
+"""
+Optimized README Updater - Complete Version with All Enhancements
+
+Key Features:
+1. Uses actual report URLs (never Google search links)
+2. Programmatic summary validation with 10+ checks  
+3. Smart existing report detection using Annual%20Security links
+4. Year-based updates (2025 → 2026)
+5. Category-aware insertion with report-categories.json
+6. Alphabetical ordering enforcement
+7. Security hardened with input validation
+8. Efficient O(n) algorithms
+"""
+
 import os
 import sys
 import json
@@ -6,301 +21,571 @@ import argparse
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
+import urllib.parse
 
+# ==========================
+# CONFIGURATION
+# ==========================
+MAX_SUMMARY_LENGTH = 400
+MIN_SUMMARY_LENGTH = 40
+REQUIRED_VERBS = [
+    'analyzes', 'examines', 'evaluates', 'assesses', 'reviews',
+    'interprets', 'dissects', 'deconstructs', 'scrutinizes',
+    'compares', 'investigates', 'explores', 'probes', 'surveys',
+    'inquires', 'studies', 'documents', 'traces', 'maps',
+    'highlights', 'focuses', 'provides', 'offers', 'outlines'
+]
+FORBIDDEN_PHRASES = [
+    'this report', 'the report', 'this document', 'the document',
+    'this study', 'the study', 'this analysis', 'the analysis'
+]
+MARKETING_WORDS = [
+    'revolutionary', 'groundbreaking', 'cutting-edge',
+    'game-changing', 'unprecedented', 'innovative'
+]
+
+# ==========================
+# SUMMARY VALIDATOR
+# ==========================
+class SummaryValidator:
+    """Programmatic validation of AI-generated summaries."""
+    
+    @staticmethod
+    def validate(summary: str) -> Tuple[bool, List[str]]:
+        """
+        Comprehensive summary validation.
+        Returns: (is_valid, list_of_errors)
+        """
+        errors = []
+        
+        if not summary or not summary.strip():
+            errors.append("Summary is empty")
+            return False, errors
+        
+        summary = summary.strip()
+        
+        # 1. Length validation
+        if len(summary) > MAX_SUMMARY_LENGTH:
+            errors.append(f"Too long: {len(summary)} chars (max {MAX_SUMMARY_LENGTH})")
+        elif len(summary) < MIN_SUMMARY_LENGTH:
+            errors.append(f"Too short: {len(summary)} chars (min {MIN_SUMMARY_LENGTH})")
+        
+        # 2. Single line check
+        if '\n' in summary or '\r' in summary:
+            errors.append("Contains newlines (must be single line)")
+            summary = ' '.join(summary.split())  # Fix it
+        
+        # 3. Sentence count (1-3 sentences)
+        sentences = [s.strip() for s in summary.split('.') if s.strip()]
+        if len(sentences) > 3:
+            errors.append(f"Too many sentences: {len(sentences)} (max 3)")
+        elif len(sentences) < 1:
+            errors.append("No complete sentences")
+        
+        # 4. Starting verb check
+        first_word = summary.split()[0].lower().rstrip('.,;:') if summary.split() else ''
+        if first_word not in REQUIRED_VERBS:
+            errors.append(f"Must start with required verb, found '{first_word}'")
+        
+        # 5. Forbidden phrases
+        summary_lower = summary.lower()
+        for phrase in FORBIDDEN_PHRASES:
+            if phrase in summary_lower:
+                errors.append(f"Contains forbidden phrase: '{phrase}'")
+        
+        # 6. Character validation
+        if not re.match(r"^[a-zA-Z0-9\s',.\-]+$", summary):
+            errors.append("Contains invalid characters")
+        
+        # 7. Parentheses/quotes check
+        if '(' in summary or ')' in summary:
+            errors.append("Contains parentheses (not allowed)")
+        if '"' in summary:
+            errors.append("Contains quotes (not allowed)")
+        
+        # 8. Marketing language
+        for word in MARKETING_WORDS:
+            if word in summary_lower:
+                errors.append(f"Contains marketing language: '{word}'")
+        
+        # 9. Multiple spaces check
+        if '  ' in summary:
+            errors.append("Contains multiple consecutive spaces")
+        
+        # 10. Ends with period
+        if not summary.endswith('.'):
+            errors.append("Must end with period")
+        
+        return len(errors) == 0, errors
+    
+    @staticmethod
+    def sanitize(summary: str) -> str:
+        """Attempt to fix common issues in summary."""
+        if not summary:
+            return ""
+        
+        # Remove newlines and collapse spaces
+        summary = ' '.join(summary.split())
+        
+        # Remove quotes and parentheses
+        summary = re.sub(r'[()"\']', '', summary)
+        
+        # Ensure ends with period
+        if summary and not summary.endswith('.'):
+            summary += '.'
+        
+        # Limit length
+        if len(summary) > MAX_SUMMARY_LENGTH:
+            sentences = summary.split('. ')
+            summary = ''
+            for sentence in sentences:
+                if len(summary + sentence + '. ') <= MAX_SUMMARY_LENGTH:
+                    summary += sentence + '. '
+                else:
+                    break
+            summary = summary.strip()
+        
+        return summary
+
+# ==========================
+# CATEGORY MANAGER  
+# ==========================
+class CategoryManager:
+    """Manages report categories from centralized JSON."""
+    
+    def __init__(self, categories_path: str = ".github/artifacts/report-categories.json"):
+        self.categories_path = Path(categories_path)
+        self.categories = self._load_categories()
+        self.category_map = self._build_category_map()
+    
+    def _load_categories(self) -> Dict[str, Any]:
+        """Load categories with fallback."""
+        if not self.categories_path.exists():
+            print(f"WARNING: Categories file not found: {self.categories_path}")
+            return self._get_fallback_categories()
+        
+        try:
+            with open(self.categories_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except json.JSONDecodeError as e:
+            print(f"ERROR: Invalid categories JSON: {e}")
+            return self._get_fallback_categories()
+    
+    def _get_fallback_categories(self) -> Dict[str, Any]:
+        """Fallback category structure."""
+        return {
+            "categories": [
+                {
+                    "parent": "Analysis Reports",
+                    "sub_categories": [
+                        {"name": "Threat Intelligence"},
+                        {"name": "Application Security"},
+                        {"name": "Cloud Security"},
+                        {"name": "Vulnerabilities"},
+                        {"name": "Ransomware"},
+                        {"name": "Data Breaches"},
+                        {"name": "Physical Security"},
+                        {"name": "AI and Emerging Technologies"}
+                    ]
+                },
+                {
+                    "parent": "Survey Reports",
+                    "sub_categories": [
+                        {"name": "Industry Trends"},
+                        {"name": "Identity Security"},
+                        {"name": "Penetration Testing"},
+                        {"name": "Privacy and Data Protection"},
+                        {"name": "Voice"}
+                    ]
+                }
+            ]
+        }
+    
+    def _build_category_map(self) -> Dict[str, Dict[str, str]]:
+        """Build searchable category map - O(n) complexity."""
+        cat_map = {}
+        for parent_cat in self.categories.get("categories", []):
+            parent_name = parent_cat["parent"]
+            for sub_cat in parent_cat.get("sub_categories", []):
+                cat_name = sub_cat["name"]
+                cat_map[cat_name.lower()] = {
+                    "name": cat_name,
+                    "parent": parent_name
+                }
+        return cat_map
+    
+    def match_category(self, category_hint: str, report_type: str = "Analysis") -> Tuple[str, str, float]:
+        """Match category with confidence score."""
+        if not category_hint:
+            return self._get_default_category(report_type)
+        
+        # Exact match
+        normalized = category_hint.lower().strip()
+        if normalized in self.category_map:
+            match = self.category_map[normalized]
+            return match["name"], match["parent"], 1.0
+        
+        # Fuzzy match
+        best_score = 0.0
+        best_match = None
+        for key, cat_info in self.category_map.items():
+            score = self._similarity_score(normalized, key)
+            if score > best_score:
+                best_score = score
+                best_match = cat_info
+        
+        if best_match and best_score > 0.6:
+            return best_match["name"], best_match["parent"], best_score
+        
+        return self._get_default_category(report_type)
+    
+    def _similarity_score(self, str1: str, str2: str) -> float:
+        """Calculate word overlap similarity."""
+        words1 = set(str1.split())
+        words2 = set(str2.split())
+        if not words1 or not words2:
+            return 0.0
+        overlap = len(words1.intersection(words2))
+        return overlap / max(len(words1), len(words2))
+    
+    def _get_default_category(self, report_type: str) -> Tuple[str, str, float]:
+        """Default category based on type."""
+        if "survey" in report_type.lower():
+            return "Industry Trends", "Survey Reports", 0.0
+        return "Industry Trends", "Analysis Reports", 0.0
+    
+    def get_all_categories(self) -> Dict[str, List[str]]:
+        """Get all categories organized by parent."""
+        result = {}
+        for parent_cat in self.categories.get("categories", []):
+            parent_name = parent_cat["parent"]
+            sub_cats = [sub["name"] for sub in parent_cat.get("sub_categories", [])]
+            result[parent_name] = sub_cats
+        return result
+
+# ==========================
+# README PARSER
+# ==========================
 class ReadmeParser:
-    def __init__(self, readme_path: str):
+    """Efficiently parses README structure."""
+    
+    def __init__(self, readme_path: str, category_manager: CategoryManager = None):
         self.readme_path = Path(readme_path)
+        self.category_manager = category_manager
+        
         if not self.readme_path.exists():
-            raise FileNotFoundError(f"README.md not found: {readme_path}")
+            raise FileNotFoundError(f"README not found: {readme_path}")
         
         self.content = self.readme_path.read_text(encoding='utf-8')
         self.structure = self._parse_structure()
-
+    
     def _parse_structure(self) -> Dict[str, Any]:
-        """Parses the README structure to identify main report sections."""
-        structure = {
-            "Analysis Reports": {"subsections": {}}, 
-            "Survey Reports": {"subsections": {}}
+        """Parse README structure from categories."""
+        if self.category_manager:
+            structure = {}
+            for parent, subcats in self.category_manager.get_all_categories().items():
+                structure[parent] = {"subsections": {subcat: {} for subcat in subcats}}
+            return structure
+        
+        # Fallback structure
+        return {
+            "Analysis Reports": {"subsections": {"Industry Trends": {}}},
+            "Survey Reports": {"subsections": {"Industry Trends": {}}}
         }
+    
+    def find_section_bounds(self, heading_name: str, level: int = 3) -> Tuple[int, int]:
+        """Find section boundaries - O(n) complexity."""
+        pattern = rf'^{"#" * level}\s+{re.escape(heading_name)}\s*$'
+        match = re.search(pattern, self.content, re.MULTILINE)
         
-        # Regex to identify Level 2 headers (##)
-        sections = re.findall(r'^## (.+)$', self.content, re.MULTILINE)
+        if not match:
+            return -1, -1
         
-        for section in sections:
-            # Main Section Detection
-            if 'Analysis Reports' in section:
-                pass # Already initialized
-            elif 'Survey Reports' in section:
-                pass # Already initialized
-            
-            # Sub-section Mapping (Inferred based on known categories)
-            elif section in ['Threat Intelligence', 'Application Security', 'Cloud Security', 'Vulnerabilities', 
-                           'Ransomware', 'Data Breaches', 'Physical Security', 'AI and Emerging Technologies']:
-                structure["Analysis Reports"]["subsections"][section] = {}
-            
-            elif section in ['Industry Trends', 'Identity Security', 'Penetration Testing', 'Privacy and Data Protection', 'Voice']:
-                structure["Survey Reports"]["subsections"][section] = {}
-
-        # Default Fallbacks if specific sections are missing
-        if not structure["Analysis Reports"]["subsections"]:
-            structure["Analysis Reports"]["subsections"]["Industry Trends"] = {}
-        if not structure["Survey Reports"]["subsections"]:
-            structure["Survey Reports"]["subsections"] = {"Industry Trends": {}, "Voice": {}}
-            
-        return structure
-
-    def find_section_bounds(self, heading_name: str) -> Tuple[int, int]:
-        """Finds start and end indices of a specific section content."""
-        # Try Level 2 (##) then Level 3 (###)
-        for pattern in [rf'^## {re.escape(heading_name)}$', rf'^### {re.escape(heading_name)}$']:
-            match = re.search(pattern, self.content, re.MULTILINE)
-            if match:
-                start = match.end() + 1
-                # Find next header to determine end
-                next_header = re.search(r'\n##', self.content[start:])
-                end = start + next_header.start() if next_header else len(self.content)
-                return start, end
+        start = match.end() + 1
+        next_pattern = rf'\n#{{{1,{level}}}}\s+'
+        next_match = re.search(next_pattern, self.content[start:])
+        end = start + next_match.start() if next_match else len(self.content)
         
-        return -1, -1
+        return start, end
 
+# ==========================
+# README UPDATER
+# ==========================
 class ReadmeUpdater:
-    def __init__(self, parser: ReadmeParser):
+    """Intelligent README updates with all enhancements."""
+    
+    def __init__(self, parser: ReadmeParser, category_manager: CategoryManager = None):
         self.parser = parser
-
+        self.category_manager = category_manager
+        self.validator = SummaryValidator()
+    
     def add_report_entry(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
-        """Orchestrates adding a report entry using a prioritized strategy."""
+        """Main entry point - handles add/update logic."""
+        
+        # Validate data
         if not self._validate_data(analysis):
-            return False, "", -1, "invalid_or_stale_data"
+            return False, "", -1, "invalid_data"
         
-        report_type = analysis.get('type', 'Analysis')
-        category = analysis.get('category', 'Industry Trends')
+        # Validate and sanitize summary
+        is_valid, errors = self.validator.validate(analysis['summary'])
+        if not is_valid:
+            print(f"  WARNING: Summary validation failed:")
+            for error in errors:
+                print(f"    - {error}")
+            # Attempt to fix
+            analysis['summary'] = self.validator.sanitize(analysis['summary'])
+            print(f"  Sanitized summary: {analysis['summary'][:50]}...")
         
-        main_section = f"{report_type} Reports"
+        # Ensure report_url is NOT a Google search link
+        if 'organization_url' in analysis and 'google.com/search' in analysis['organization_url']:
+            # Extract actual domain or use fallback
+            org_name = analysis['organization']
+            analysis['organization_url'] = f"https://www.{''.join(c for c in org_name if c.isalnum()).lower()}.com"
+            print(f"  Fixed Google search URL to: {analysis['organization_url']}")
         
-        # Strategy 1: Logical Subsection Match
-        if main_section in self.parser.structure:
-            subsections = list(self.parser.structure[main_section]['subsections'].keys())
-            
-            # Exact match
-            if category in subsections:
-                return self._insert_into_section(analysis, category)
-            
-            # Fuzzy/Similar match
-            similar = self._find_similar_section(category, subsections)
-            if similar:
-                return self._insert_into_section(analysis, similar)
-            
-            # First available fallback
-            if subsections:
-                return self._insert_into_section(analysis, subsections[0])
+        # Determine category
+        if self.category_manager:
+            category_name, parent_type, confidence = self.category_manager.match_category(
+                analysis.get('category', ''), analysis.get('type', 'Analysis')
+            )
+            if confidence < 1.0:
+                print(f"  Category: '{analysis.get('category')}' → '{category_name}' (conf: {confidence:.2f})")
+            analysis['category'] = category_name
+            analysis['type'] = parent_type.replace(" Reports", "")
         
-        # Strategy 2: Direct Section Lookup
-        if self._insert_into_section(analysis, category)[0]:
-            return self._insert_into_section(analysis, category)
-
-        # Strategy 3: Generic Fallbacks
-        for fallback in ['Industry Trends', 'Other', 'General']:
-            res = self._insert_into_section(analysis, fallback)
-            if res[0]: return res
+        # Check for existing report
+        existing = self._find_existing_report(analysis)
         
-        # Strategy 4: Append to End (Last Resort)
-        return self._append_to_file(analysis)
-
-    def _insert_into_section(self, analysis: Dict[str, Any], section_name: str) -> Tuple[bool, str, int, str]:
-        """Inserts or updates an entry within a specific section."""
-        start, end = self.parser.find_section_bounds(section_name)
-        if start == -1:
-            return False, "", -1, "section_not_found"
-        
-        content_slice = self.parser.content[start:end]
-        entry_text = self._format_entry(analysis)
-        
-        existing_line, existing_year = self._find_existing(content_slice, analysis)
-        
-        if existing_line:
-            try:
-                if int(analysis['year']) >= existing_year:
-                    new_slice = content_slice.replace(existing_line, entry_text)
-                    action = "updated" if int(analysis['year']) > existing_year else "refreshed"
-                else:
-                    return False, "", -1, "older_version"
-            except (ValueError, TypeError):
-                return False, "", -1, "invalid_year"
+        if existing:
+            return self._update_existing(existing, analysis)
         else:
-            new_slice = self._sort_and_insert(content_slice, entry_text)
-            action = "new"
-        
-        self.parser.content = self.parser.content[:start] + new_slice + self.parser.content[end:]
-        return True, entry_text, self._find_line_number(entry_text.strip()), action
-
-    def _append_to_file(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
-        """Appends entry to the end of the file as a fallback."""
-        entry_text = self._format_entry(analysis)
-        new_content = f"\n\n## Emergency Entries\n\n{entry_text}\n"
-        self.parser.content = self.parser.content.rstrip() + new_content
-        return True, entry_text, self._find_line_number(entry_text.strip()), "new"
-
-    def _format_entry(self, analysis: Dict[str, Any]) -> str:
-        """Formats the markdown list item, ensuring summary is a single line."""
-        pdf_name = Path(analysis['pdf_path']).name
-        pdf_link = f"Annual Security Reports/{analysis['year']}/{pdf_name}".replace(' ', '%20')
-        
-        # Sanitize summary: remove newlines/tabs and collapse spaces
-        summary = ' '.join(analysis['summary'].strip('"').split())
-
-        return (f"- [{analysis['organization']}]({analysis['organization_url']}) "
-                f"- [{analysis['title']}]({pdf_link}) ({analysis['year']}) - {summary}")
-
-    def _sort_and_insert(self, content: str, entry: str) -> str:
-        """Inserts new entry while maintaining alphabetical order by Organization."""
-        lines = [l for l in content.strip().split('\n') if l.strip().startswith('- [')]
-        lines.append(entry)
-        
-        # Sort based on Organization name extracted from markdown link
-        lines.sort(key=lambda x: re.search(r'- \[([^\]]+)\]', x).group(1).lower() if re.search(r'- \[([^\]]+)\]', x) else x.lower())
-        return '\n'.join(lines) + '\n'
-
-    def _find_existing(self, content: str, analysis: Dict[str, Any]) -> Tuple[Optional[str], Optional[int]]:
+            return self._insert_new(analysis)
+    
+    def _find_existing_report(self, analysis: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """
-        Checks for existing entry to prevent duplicates using three signals:
-        1. Exact Organization and Title match.
-        2. Organization URL match (handles rebranding like WEF vs World Economic Forum).
-        3. PDF Filename match (handles series updates).
+        Finds an existing report entry by matching the report URL.
+        An entry is considered a match if the base filename (excluding the year)
+        in the URL is the same. This allows for updating reports across different years.
         """
-        org_norm = analysis['organization'].lower()
-        title_norm = self._normalize_title(analysis['title'])
-        target_url = analysis['organization_url'].lower().rstrip('/')
-        target_pdf = Path(analysis['pdf_path']).name.lower()
+        # Build target identifier from the new report's PDF path
+        pdf_filename = Path(analysis['pdf_path']).name.lower()
+        pdf_base = re.sub(r'\d{4}', '', pdf_filename).replace('%20', ' ').strip('-_ ')
 
-        # Remove year from PDF filename for generic series matching (e.g., Report-2025.pdf -> Report)
-        target_pdf_base = re.sub(r'\d{4}', '', target_pdf).strip('-_ ')
-
-        for line in content.split('\n'):
-            if not line.strip().startswith('- ['): continue
+        for line in self.parser.content.split('\n'):
+            if not line.strip().startswith('- ['):
+                continue
             
-            # Extract Components: - [Org](OrgURL) - [Title](PdfURL) (Year)
-            match = re.search(r'^- \[([^\]]+)\]\(([^\)]+)\) - \[([^\]]+)\]\(([^\)]+)\)\s*\((\d{4})\)', line.strip())
-            if match:
-                curr_org = match.group(1).lower()
-                curr_org_url = match.group(2).lower().rstrip('/')
-                curr_title = self._normalize_title(match.group(3))
-                curr_pdf_url = match.group(4).lower()
-                curr_year = int(match.group(5))
-
-                # Check 1: URL Match (Strongest signal for same organization)
-                if target_url == curr_org_url:
-                    return line, curr_year
-
-                # Check 2: PDF Filename Match (Strong signal for report series)
-                curr_pdf_name = Path(curr_pdf_url).name
-                curr_pdf_base = re.sub(r'\d{4}', '', curr_pdf_name).strip('-_ ')
-                if target_pdf_base == curr_pdf_base and target_pdf_base != "":
-                    return line, curr_year
-
-                # Check 3: Org and Title Match (Original Logic)
-                if curr_org == org_norm and curr_title == title_norm:
-                    return line, curr_year
-
-        return None, None
-
+            # Parse: - [Org](OrgURL) - [Title](ReportURL) (Year) - Summary
+            match = re.match(
+                r'^-\s*\[([^\]]+)\]\(([^\)]+)\)\s*-\s*\[([^\]]+)\]\(([^\)]+)\)\s*\((\d{4})\)',
+                line.strip()
+            )
+            if not match:
+                continue
+            
+            curr_report_url = match.group(4).lower()
+            
+            # Match based on the report URL's filename, ignoring the year.
+            if 'annual%20security%20reports' in curr_report_url or 'annual security reports' in curr_report_url:
+                curr_filename = Path(urllib.parse.unquote(curr_report_url)).name.lower()
+                curr_base = re.sub(r'\d{4}', '', curr_filename).replace('%20', ' ').strip('-_ ')
+                
+                if pdf_base and curr_base and pdf_base == curr_base:
+                    return {
+                        'line': line,
+                        'year': int(match.group(5)),
+                        'org': match.group(1),
+                        'title': match.group(3),
+                        'match_type': 'report_url_base'
+                    }
+        
+        return None
+    
+    def _update_existing(self, existing: Dict[str, Any], analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
+        """Update existing entry with new year."""
+        new_year = int(analysis['year'])
+        old_year = existing['year']
+        
+        if new_year <= old_year:
+            return False, "", -1, f"older_or_same_year ({new_year} <= {old_year})"
+        
+        # Format new entry
+        new_line = self._format_entry(analysis)
+        
+        # Replace old with new
+        self.parser.content = self.parser.content.replace(existing['line'], new_line)
+        
+        return True, new_line, self._find_line_number(new_line), "updated"
+    
+    def _insert_new(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
+        """Insert new report in correct category, alphabetically."""
+        category = analysis['category']
+        
+        # Find section
+        start, end = self.parser.find_section_bounds(category)
+        if start == -1:
+            # Try fallback category
+            category = "Industry Trends"
+            start, end = self.parser.find_section_bounds(category)
+            if start == -1:
+                return False, "", -1, "no_valid_section"
+        
+        # Get section content
+        section = self.parser.content[start:end]
+        
+        # Extract existing entries
+        entries = [l for l in section.split('\n') if l.strip().startswith('- [')]
+        
+        # Add new entry
+        new_entry = self._format_entry(analysis)
+        entries.append(new_entry)
+        
+        # Sort alphabetically by organization
+        entries.sort(key=lambda x: self._extract_org(x).lower())
+        
+        # Rebuild section
+        new_section = '\n'.join(entries) + '\n'
+        self.parser.content = self.parser.content[:start] + new_section + self.parser.content[end:]
+        
+        return True, new_entry, self._find_line_number(new_entry), "new"
+    
+    def _format_entry(self, analysis: Dict[str, Any]) -> str:
+        """
+        Format entry line.
+        CRITICAL: Uses actual report URL (Annual%20Security), NOT Google search.
+        """
+        # Construct proper report URL
+        pdf_name = Path(analysis['pdf_path']).name
+        report_url = f"Annual%20Security%20Reports/{analysis['year']}/{pdf_name}".replace(' ', '%20')
+        
+        # Sanitize summary
+        summary = self.validator.sanitize(analysis['summary'])
+        
+        return (f"- [{analysis['organization']}]({analysis['organization_url']}) "
+                f"- [{analysis['title']}]({report_url}) "
+                f"({analysis['year']}) - {summary}")
+    
+    def _extract_org(self, line: str) -> str:
+        """Extract organization name from entry line."""
+        match = re.search(r'-\s*\[([^\]]+)\]', line)
+        return match.group(1) if match else ''
+    
     def _normalize_title(self, title: str) -> str:
-        return re.sub(r'\s+|the|of|and', '', title.lower())
-
-    def _find_similar_section(self, target: str, options: List[str]) -> Optional[str]:
-        target_set = set(target.lower().split())
-        best_match, best_score = None, 0
-        
-        for opt in options:
-            score = len(target_set.intersection(set(opt.lower().split())))
-            if score > best_score:
-                best_match, best_score = opt, score
-        return best_match
-
+        """Normalize title for comparison."""
+        return re.sub(r'[^a-z0-9]', '', title.lower())
+    
     def _find_line_number(self, text: str) -> int:
+        """Find line number in content."""
         for i, line in enumerate(self.parser.content.split('\n'), 1):
-            if text in line: return i
+            if text in line:
+                return i
         return -1
-
+    
     def _validate_data(self, data: Dict[str, Any]) -> bool:
-        """Validates presence of data and ensures report is not older than 2 years."""
-        required = ['organization', 'title', 'year', 'summary', 'type', 'category', 'pdf_path', 'organization_url']
+        """Validate required fields and age threshold."""
+        required = ['organization', 'title', 'year', 'summary', 'pdf_path', 'organization_url']
         
-        # Basic field validation
         if any(not data.get(f) for f in required):
-            print(f"ERROR: Missing fields in analysis: {[f for f in required if not data.get(f)]}")
+            missing = [f for f in required if not data.get(f)]
+            print(f"  ERROR: Missing fields: {missing}")
             return False
         
-        # Date threshold validation
+        # Age check
         try:
-            report_year = int(data.get('year'))
-            current_year = datetime.now().year
-            if (current_year - report_year) >= 2:
-                print(f"SKIPPING: Report from {report_year} is older than the 2-year threshold.")
+            year = int(data['year'])
+            if datetime.now().year - year >= 2:
+                print(f"  SKIPPED: Report from {year} exceeds 2-year threshold")
                 return False
         except (ValueError, TypeError):
-            print(f"ERROR: Invalid year format for {data.get('organization')}")
+            print(f"  ERROR: Invalid year: {data.get('year')}")
             return False
-
+        
         return True
-
+    
     def save(self):
+        """Save updated README."""
         self.parser.readme_path.write_text(self.parser.content, encoding='utf-8')
-        print(f"README successfully updated: {self.parser.readme_path}")
+        print(f"✓ README saved: {self.parser.readme_path}")
 
+# ==========================
+# MAIN
+# ==========================
 def main():
-    parser = argparse.ArgumentParser(description="Update README with security reports")
+    parser = argparse.ArgumentParser(
+        description="Optimized README Updater with enhanced validation"
+    )
     parser.add_argument("analysis_json", help="Path to analysis results JSON")
-    parser.add_argument("--readme-path", default="README.md", help="Path to README.md")
+    parser.add_argument("--readme-path", default="README.md")
+    parser.add_argument("--categories-path", default=".github/artifacts/report-categories.json")
     args = parser.parse_args()
-
-    if not os.path.exists(args.analysis_json) or os.path.getsize(args.analysis_json) < 2:
-        print(f"ERROR: Invalid analysis file: {args.analysis_json}")
+    
+    # Load analysis
+    if not os.path.exists(args.analysis_json):
+        print(f"ERROR: Analysis file not found: {args.analysis_json}")
         sys.exit(1)
-
+    
     try:
         with open(args.analysis_json, 'r') as f:
             results = json.load(f)
     except json.JSONDecodeError as e:
-        print(f"ERROR: JSON Decode Error: {e}")
+        print(f"ERROR: Invalid JSON: {e}")
         sys.exit(1)
-
-    if not results:
-        print("No analysis results found. Exiting.")
-        sys.exit(0)
-
-    print(f"Processing {len(results)} reports...")
     
+    if not results:
+        print("No results to process")
+        sys.exit(0)
+    
+    print(f"\n{'='*60}")
+    print(f"Processing {len(results)} reports")
+    print(f"{'='*60}\n")
+    
+    # Initialize
     try:
-        updater = ReadmeUpdater(ReadmeParser(args.readme_path))
+        category_mgr = CategoryManager(args.categories_path)
+        readme_parser = ReadmeParser(args.readme_path, category_mgr)
+        updater = ReadmeUpdater(readme_parser, category_mgr)
     except Exception as e:
-        print(f"ERROR: Parser init failed: {e}")
+        print(f"ERROR: Initialization failed: {e}")
         sys.exit(1)
-
-    stats = {"new": 0, "updated": 0, "refreshed": 0, "errors": 0}
-    changes_pending = False
-
+    
+    # Process
+    stats = {"new": 0, "updated": 0, "skipped": 0, "errors": 0}
+    changes = False
+    
     for i, analysis in enumerate(results, 1):
-        print(f"[{i}/{len(results)}] Processing: {analysis.get('organization')} - {analysis.get('title')}")
+        org = analysis.get('organization', 'Unknown')
+        title = analysis.get('title', 'Unknown')
+        
+        print(f"[{i}/{len(results)}] {org} - {title}")
         
         success, _, _, action = updater.add_report_entry(analysis)
         
         if success:
             stats[action] += 1
-            changes_pending = True
-            print(f"  -> SUCCESS ({action.upper()})")
+            changes = True
+            print(f"  ✓ {action.upper()}")
         else:
-            stats["errors"] += 1
-            print(f"  -> FAILED/SKIPPED: {action}")
-
-    print("\n=== Summary ===")
-    print(f"Processed: {len(results)} | New: {stats['new']} | Updated: {stats['updated']} | Errors/Skipped: {stats['errors']}")
-
-    if changes_pending:
+            if action.startswith("older_or_same"):
+                stats["skipped"] += 1
+                print(f"  ⊘ SKIPPED: {action}")
+            else:
+                stats["errors"] += 1
+                print(f"  ✗ ERROR: {action}")
+    
+    # Summary
+    print(f"\n{'='*60}")
+    print(f"SUMMARY")
+    print(f"{'='*60}")
+    print(f"New: {stats['new']} | Updated: {stats['updated']} | "
+          f"Skipped: {stats['skipped']} | Errors: {stats['errors']}")
+    
+    if changes:
         updater.save()
+        print(f"\n✓ Changes committed to README")
     else:
-        print("No changes required.")
-
-    return 0
+        print(f"\n⊘ No changes needed")
+    
+    return 0 if stats['new'] + stats['updated'] > 0 else 1
 
 if __name__ == "__main__":
     sys.exit(main())

@@ -41,7 +41,12 @@ jobs:
           echo "**Triggered by:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "**Run Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
           echo "**Run ID:** ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Discovery Method:** Repository PDF scan for historical reports" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Count historical reports scanned
+          REPORTS_SCANNED=$(grep -c "INFO: Found .* reports to check for updates" discovery_output.log | head -1 || echo "0")
+          YEARS_SCANNED=$(grep "INFO: Scanning directory:" discovery_output.log | wc -l || echo "0")
           
           # Count metrics
           SUCCESS_COUNT=$(grep -c "SUCCESS:" discovery_output.log || true)
@@ -56,6 +61,15 @@ jobs:
           ERROR_COUNT=$(grep -c "ERROR:" discovery_output.log || true)
           SKIPPED_FINANCIAL=$(grep -c "Financial Report Filter" discovery_output.log || true)
           SKIPPED_DUPLICATE=$(grep -c "Issue exists" discovery_output.log || true)
+          SKIPPED_CURRENT_YEAR=$(grep -c "Skipping current/future year" discovery_output.log || true)
+          
+          echo "### 📂 Repository Scan Statistics" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| 📅 Year Directories Scanned | ${YEARS_SCANNED} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 📄 Historical Reports Found | ${REPORTS_SCANNED} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⏭️ Skipped (Current/Future Year) | ${SKIPPED_CURRENT_YEAR} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
           
           echo "### 📊 Run Results" >> $GITHUB_STEP_SUMMARY
           echo "| Metric | Count |" >> $GITHUB_STEP_SUMMARY
@@ -77,9 +91,20 @@ jobs:
           if [ "$SUCCESS_COUNT" -gt 0 ]; then
             echo "### ✅ Suggested Reports" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
+            echo "The following updated reports were found by scanning historical PDFs:" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
             grep "SUCCESS: Found candidate for" discovery_output.log | sed 's/SUCCESS: Found candidate for /- /' >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
           fi
+
+          # Show sample of scanned reports
+          echo "<details><summary>📋 Sample of Scanned Historical Reports (Last 20)</summary>" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          grep "INFO: Searching for" discovery_output.log | tail -n 20 >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "</details>" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
 
           # Detailed rejection log
           TOTAL_REJECTIONS=$((REJECT_TERM + REJECT_YEAR + REJECT_KEYWORD + REJECT_URL_YEAR + REJECT_DOMAIN + REJECT_SNIPPET_DATE + REJECT_COPYRIGHT + REJECT_BLOG_DATE))
@@ -97,8 +122,29 @@ jobs:
           echo "### 🎯 Pipeline Summary" >> $GITHUB_STEP_SUMMARY
           if [ "$SUCCESS_COUNT" -gt 0 ]; then
             echo "🎉 **Discovery completed successfully!** ${SUCCESS_COUNT} new security report(s) found and suggested." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "These suggestions are based on scanning ${REPORTS_SCANNED} historical reports across ${YEARS_SCANNED} year directories." >> $GITHUB_STEP_SUMMARY
           elif [ "$ERROR_COUNT" -gt 0 ]; then
             echo "❌ **Discovery failed.** ${ERROR_COUNT} error(s) occurred. Check the logs for details." >> $GITHUB_STEP_SUMMARY
           else
             echo "ℹ️ **No new reports discovered.** All candidates were filtered or already tracked." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Scanned ${REPORTS_SCANNED} historical reports for updates." >> $GITHUB_STEP_SUMMARY
           fi
+          
+          # Add helpful information
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 💡 How This Works" >> $GITHUB_STEP_SUMMARY
+          echo "1. **Repository Scan**: The workflow scans all PDF files in the \`Annual Security Reports\` directory" >> $GITHUB_STEP_SUMMARY
+          echo "2. **Historical Analysis**: Only reports from previous years (before ${{ env.CURRENT_YEAR }}) are checked" >> $GITHUB_STEP_SUMMARY
+          echo "3. **Update Search**: For each historical report, searches for the next year's version" >> $GITHUB_STEP_SUMMARY
+          echo "4. **Validation**: Results are validated for accuracy, domain matching, and relevance" >> $GITHUB_STEP_SUMMARY
+          echo "5. **Issue Creation**: Valid candidates are automatically submitted as GitHub issues" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload Full Log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: discovery-log-${{ github.run_id }}
+          path: discovery_output.log
+          retention-days: 30

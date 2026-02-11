@@ -1,23 +1,68 @@
 import os
 import sys
 import re
-import google.generativeai as genai
-from google.api_core import exceptions
 from pathlib import Path
-from googleapiclient.discovery import build
-from markitdown import MarkItDown
 import argparse
 import json
 from typing import List, Dict, Any, Optional
 import time
 
-# Configure Gemini API
-MODELS = ["gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-3-flash-preview"]
+# --- Dependency Handling ---
+try:
+    from markitdown import MarkItDown
+except ImportError:
+    print("ERROR: The 'markitdown' module is required but not installed.")
+    print("Please install it using: pip install markitdown")
+    sys.exit(1)
+
+try:
+    import google.generativeai as genai
+    from google.api_core import exceptions
+except ImportError:
+    print("ERROR: The 'google-generativeai' module is required but not installed.")
+    print("Please install it using: pip install google-generativeai")
+    sys.exit(1)
+
+try:
+    from googleapiclient.discovery import build
+except ImportError:
+    print("ERROR: The 'google-api-python-client' module is required but not installed.")
+    print("Please install it using: pip install google-api-python-client")
+    sys.exit(1)
+
+# Load centralized configuration
+def load_json_config(config_path: Path) -> Dict[str, Any]:
+    """Load JSON configuration file"""
+    try:
+        with open(config_path, 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"ERROR: Configuration file not found: {config_path}")
+        print("Please ensure all required configuration files exist in .github/artifacts/")
+        sys.exit(1)
+    except json.JSONDecodeError as e:
+        print(f"ERROR: Invalid JSON in {config_path}: {e}")
+        sys.exit(1)
+
+# Load all configuration files
+ARTIFACTS_DIR = Path(__file__).parent.parent / "artifacts"
+AI_CONFIG = load_json_config(ARTIFACTS_DIR / "ai-models.json")
+PIPELINE_CONFIG = load_json_config(ARTIFACTS_DIR / "pipeline-config.json")
+
+# Extract configuration values
+MODELS = AI_CONFIG["models"]["priority_list"]
+GEN_CONFIG_DEFAULTS = AI_CONFIG["configurations"]["default"]
+ORGANIZATION_MAPPINGS = PIPELINE_CONFIG["organization_mappings"]
+TITLE_MAPPINGS = PIPELINE_CONFIG["title_mappings"]
+MAX_PDF_CHARS = PIPELINE_CONFIG["processing"]["max_pdf_chars"]
+MIN_TEXT_LENGTH = PIPELINE_CONFIG["processing"]["min_text_length"]
+
 MODEL = None
 
 def setup_gemini(api_key: str):
     global MODEL
     genai.configure(api_key=api_key)
+    
     for model_name in MODELS:
         try:
             test_model = genai.GenerativeModel(model_name)
@@ -25,13 +70,14 @@ def setup_gemini(api_key: str):
             if response.total_tokens is not None:
                 MODEL = model_name
                 print(f"Successfully verified model: {MODEL}")
-                break   
+                return True
         except exceptions.GoogleAPICallError as e:
             print(f"Model {model_name} API error: {e}")
             continue
         except ValueError as e:
             print(f"Model {model_name} configuration error: {e}")
             continue
+    
     if not MODEL:
         print("ERROR: No models available. Check API key and quota.")
         return False
@@ -51,11 +97,14 @@ def read_prompt_file(path: str) -> str:
         print(f"ERROR: Failed to read prompt file {path}: {str(e)}")
         raise
 
-def extract_text_from_pdf(pdf_path: Path, min_text_length: int = 100) -> str:
+def extract_text_from_pdf(pdf_path: Path, min_text_length: int = None) -> str:
     """
     Extracts text from a PDF, attempting standard conversion first and
     falling back to OCR if the initial attempt yields insufficient content.
     """
+    if min_text_length is None:
+        min_text_length = MIN_TEXT_LENGTH
+        
     try:
         print(f"Extracting text from PDF: {pdf_path}")
         if not pdf_path.exists():
@@ -90,14 +139,11 @@ def extract_text_from_pdf(pdf_path: Path, min_text_length: int = 100) -> str:
         raise
 
 def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
-    """Parse filename to extract organization and title"""
+    """Parse filename to extract organization and title using configured mappings"""
     print(f"Parsing filename: {filename_stem}")
     
-    # Special handling for known patterns
-    filename_lower = filename_stem.lower()
-    
     # General parsing - try different separators
-    separators = [' - ', '_-_', '--', '_', '-'] # Added single hyphen
+    separators = [' - ', '_-_', '--', '_', '-']
     for sep in separators:
         if sep in filename_stem:
             parts = filename_stem.split(sep, 1)
@@ -121,33 +167,14 @@ def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
                     print(f"Parsing with '{sep}' resulted in identical org and title. Skipping.")
                     continue
                 
-                # Apply organization name mappings
-                org_mapping = {
-                    'Ai': 'AI',
-                    'Cyberark': 'CyberArk',
-                    'Sailpoint': 'SailPoint',
-                    'Crowdstrike': 'CrowdStrike',
-                    'Palo Alto': 'Palo Alto Networks',
-                }
-                
-                for old_name, new_name in org_mapping.items():
+                # Apply organization name mappings from config
+                for old_name, new_name in ORGANIZATION_MAPPINGS.items():
                     if org_name.lower() == old_name.lower():
                         org_name = new_name
                         break
 
-                # Apply title name mappings
-                title_mapping = {
-                    'Ai': 'AI',
-                    'Api': 'API',
-                    'Id': 'ID',
-                    'Dns': 'DNS',
-                    'Dos': 'DoS',
-                    'Ddos': 'DDoS',
-                    'Cve': 'CVE',
-                }
-
-                for old_title, new_title in title_mapping.items():
-                    # Use regex to replace whole words, case-insensitively
+                # Apply title name mappings from config
+                for old_title, new_title in TITLE_MAPPINGS.items():
                     title = re.sub(r'\b' + re.escape(old_title) + r'\b', new_title, title, flags=re.IGNORECASE)
                 
                 print(f"Parsed with separator '{sep}': Org='{org_name}', Title='{title}'")
@@ -224,6 +251,9 @@ def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
         return fallback_url
 
 def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url: Optional[str]) -> str:
+    """
+    Generates markdown content from PDF text using the Gemini API.
+    """
     if not MODEL:
         raise ValueError("No available Gemini model.")
     
@@ -231,34 +261,34 @@ def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url:
         print(f"Generating markdown with {MODEL}...")
         model = genai.GenerativeModel(MODEL)
         
-        # Truncate PDF text if too long
-        max_pdf_chars = 1000000
-        if len(pdf_text) > max_pdf_chars:
-            print(f"Truncating PDF text from {len(pdf_text)} to {max_pdf_chars} characters")
-            pdf_text = pdf_text[:max_pdf_chars] + "\n\n[Content truncated due to length...]"
-        
+        # Truncate if necessary (using config value)
+        if len(pdf_text) > MAX_PDF_CHARS:
+            print(f"Truncating PDF text from {len(pdf_text)} to {MAX_PDF_CHARS} characters")
+            pdf_text = pdf_text[:MAX_PDF_CHARS] + "\n\n[Content truncated due to length...]"
+
         full_prompt = f"{prompt_text}\n\n"
         if organization_url:
             full_prompt += f"The official report URL is: {organization_url}\n\n"
         full_prompt += f"# Report Content Below\n\n{pdf_text}"
-        
+
+        # Use configuration values
         generation_config = {
-            "temperature": 0.1,
-            "max_output_tokens": 8192,
-            "top_p": 0.95,
-            "top_k": 40
+            "temperature": GEN_CONFIG_DEFAULTS.get("temperature", 0.1),
+            "max_output_tokens": GEN_CONFIG_DEFAULTS.get("max_output_tokens", 8192),
+            "top_p": GEN_CONFIG_DEFAULTS.get("top_p", 0.95),
+            "top_k": GEN_CONFIG_DEFAULTS.get("top_k", 40)
         }
-        
+
         safety_settings = [
             {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_ONLY_HIGH"},
             {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_ONLY_HIGH"},
             {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_ONLY_HIGH"},
             {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_ONLY_HIGH"},
         ]
-        
-        request_options = {"timeout": 120} # Add a 2-minute timeout
+
+        request_options = {"timeout": 120}  # Add a 2-minute timeout
         response = model.generate_content(
-            full_prompt, 
+            full_prompt,
             generation_config=generation_config,
             safety_settings=safety_settings,
             request_options=request_options
@@ -271,7 +301,7 @@ def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url:
             for candidate in response.candidates:
                 if candidate.finish_reason in ["SAFETY", "RECITATION"]:
                     raise ValueError(f"Content generation blocked: {candidate.finish_reason}")
-        
+
         if not response.text:
             raise ValueError("The response did not contain valid text content.")
 
@@ -281,7 +311,7 @@ def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url:
 
         print(f"Successfully generated markdown ({len(generated_text)} characters)")
         return generated_text
-        
+
     except Exception as e:
         print(f"ERROR: Failed to generate markdown: {str(e)}")
         raise
@@ -312,21 +342,21 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
             if part.isdigit() and len(part) == 4 and part.startswith("20"):
                 year = part
                 break
-        
+
         # Search for organization URL
         organization_url = None
         if organization_name and report_title and year:
             organization_url = get_organization_url(organization_name, report_title, year)
-                
+
         if not organization_url:
             # Ultimate fallback: construct a generic domain
             organization_url = f"https://www.{''.join(e for e in organization_name if e.isalnum()).lower()}.com"
             print(f"Ultimate fallback: constructed generic URL: {organization_url}")
 
+        # Generate markdown
         markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
         
         # Post Processing Cleanup
-
         # 1. Remove markdown code block wrappers if AI incorrectly added them
         markdown_content = re.sub(r'^\s*```(?:markdown)?\s*\n', '', markdown_content, 1)
         markdown_content = re.sub(r'\n\s*```\s*$', '', markdown_content, 1)
@@ -335,14 +365,15 @@ def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: s
         marker = "# Report Content Below"
         if marker in markdown_content:
             print(f"Detected prompt leakage. Cleaning content above marker: '{marker}'")
-            # Find the LAST instance of the marker (rfind) to ensure we get past all instructions
             last_index = markdown_content.rfind(marker)
-            # Slice the content to start immediately after the marker
             markdown_content = markdown_content[last_index + len(marker):].strip()
 
-        # Prepare output
-        relative_path = pdf_path.relative_to(Path("Annual Security Reports"))
-        output_dir = Path("Markdown Conversions") / relative_path.parent
+        # Prepare output (using config values)
+        pdf_root = PIPELINE_CONFIG["repository"]["pdf_root"]
+        markdown_root = PIPELINE_CONFIG["repository"]["markdown_root"]
+        
+        relative_path = pdf_path.relative_to(Path(pdf_root))
+        output_dir = Path(markdown_root) / relative_path.parent
         output_path = output_dir / f"{pdf_path.stem}.md"
         
         os.makedirs(output_dir, exist_ok=True)
@@ -385,6 +416,14 @@ def main():
     parser.add_argument("branch", help="Current Git branch.")
     parser.add_argument("--output-json", help="Path to save the conversion results.", default="conversions.json")
     args = parser.parse_args()
+
+    # Display loaded configuration
+    print("=== Configuration Loaded ===")
+    print(f"AI Models Priority: {MODELS}")
+    print(f"PDF Root: {PIPELINE_CONFIG['repository']['pdf_root']}")
+    print(f"Markdown Root: {PIPELINE_CONFIG['repository']['markdown_root']}")
+    print(f"Max PDF Characters: {MAX_PDF_CHARS:,}")
+    print("============================\n")
 
     gemini_api_key = os.environ.get("GEMINI_API_KEY")
     if not gemini_api_key:
