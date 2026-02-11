@@ -1,18 +1,3 @@
-#!/usr/bin/env python3
-"""
-Optimized README Updater - Complete Version with All Enhancements
-
-Key Features:
-1. Uses actual report URLs (never Google search links)
-2. Programmatic summary validation with 10+ checks  
-3. Smart existing report detection using Annual%20Security links
-4. Year-based updates (2025 → 2026)
-5. Category-aware insertion with report-categories.json
-6. Alphabetical ordering enforcement
-7. Security hardened with input validation
-8. Efficient O(n) algorithms
-"""
-
 import os
 import sys
 import json
@@ -44,6 +29,10 @@ MARKETING_WORDS = [
     'game-changing', 'unprecedented', 'innovative'
 ]
 
+# Boundary markers
+START_MARKER = "## Analysis Reports"
+END_MARKER = "## Resources"
+
 # ==========================
 # SUMMARY VALIDATOR
 # ==========================
@@ -52,10 +41,7 @@ class SummaryValidator:
     
     @staticmethod
     def validate(summary: str) -> Tuple[bool, List[str]]:
-        """
-        Comprehensive summary validation.
-        Returns: (is_valid, list_of_errors)
-        """
+        """Comprehensive summary validation. Returns: (is_valid, list_of_errors)"""
         errors = []
         
         if not summary or not summary.strip():
@@ -73,7 +59,7 @@ class SummaryValidator:
         # 2. Single line check
         if '\n' in summary or '\r' in summary:
             errors.append("Contains newlines (must be single line)")
-            summary = ' '.join(summary.split())  # Fix it
+            summary = ' '.join(summary.split())
         
         # 3. Sentence count (1-3 sentences)
         sentences = [s.strip() for s in summary.split('.') if s.strip()]
@@ -148,7 +134,7 @@ class SummaryValidator:
         return summary
 
 # ==========================
-# CATEGORY MANAGER  
+# CATEGORY MANAGER
 # ==========================
 class CategoryManager:
     """Manages report categories from centralized JSON."""
@@ -178,7 +164,7 @@ class CategoryManager:
                 {
                     "parent": "Analysis Reports",
                     "sub_categories": [
-                        {"name": "Threat Intelligence"},
+                        {"name": "Global Threat Intelligence"},
                         {"name": "Application Security"},
                         {"name": "Cloud Security"},
                         {"name": "Vulnerabilities"},
@@ -252,7 +238,7 @@ class CategoryManager:
         """Default category based on type."""
         if "survey" in report_type.lower():
             return "Industry Trends", "Survey Reports", 0.0
-        return "Industry Trends", "Analysis Reports", 0.0
+        return "Global Threat Intelligence", "Analysis Reports", 0.0
     
     def get_all_categories(self) -> Dict[str, List[str]]:
         """Get all categories organized by parent."""
@@ -264,10 +250,10 @@ class CategoryManager:
         return result
 
 # ==========================
-# README PARSER
+# README PARSER WITH BOUNDARIES
 # ==========================
 class ReadmeParser:
-    """Efficiently parses README structure."""
+    """Efficiently parses README structure with strict boundary enforcement."""
     
     def __init__(self, readme_path: str, category_manager: CategoryManager = None):
         self.readme_path = Path(readme_path)
@@ -276,8 +262,32 @@ class ReadmeParser:
         if not self.readme_path.exists():
             raise FileNotFoundError(f"README not found: {readme_path}")
         
-        self.content = self.readme_path.read_text(encoding='utf-8')
+        self.full_content = self.readme_path.read_text(encoding='utf-8')
+        self.start_boundary, self.end_boundary = self._find_boundaries()
+        
+        # Extract only the modifiable section
+        self.content = self.full_content[self.start_boundary:self.end_boundary]
         self.structure = self._parse_structure()
+    
+    def _find_boundaries(self) -> Tuple[int, int]:
+        """Find start and end positions of modifiable section."""
+        start_match = re.search(rf'^{re.escape(START_MARKER)}\s*$', self.full_content, re.MULTILINE)
+        end_match = re.search(rf'^{re.escape(END_MARKER)}\s*$', self.full_content, re.MULTILINE)
+        
+        if not start_match:
+            raise ValueError(f"Start marker '{START_MARKER}' not found in README")
+        if not end_match:
+            raise ValueError(f"End marker '{END_MARKER}' not found in README")
+        
+        start_pos = start_match.end()
+        end_pos = end_match.start()
+        
+        if start_pos >= end_pos:
+            raise ValueError("Start marker appears after end marker")
+        
+        print(f"✓ Found modifiable section: lines {self.full_content[:start_pos].count(chr(10))+1} to {self.full_content[:end_pos].count(chr(10))+1}")
+        
+        return start_pos, end_pos
     
     def _parse_structure(self) -> Dict[str, Any]:
         """Parse README structure from categories."""
@@ -289,12 +299,12 @@ class ReadmeParser:
         
         # Fallback structure
         return {
-            "Analysis Reports": {"subsections": {"Industry Trends": {}}},
+            "Analysis Reports": {"subsections": {"Global Threat Intelligence": {}}},
             "Survey Reports": {"subsections": {"Industry Trends": {}}}
         }
     
     def find_section_bounds(self, heading_name: str, level: int = 3) -> Tuple[int, int]:
-        """Find section boundaries - O(n) complexity."""
+        """Find section boundaries within modifiable content - O(n) complexity."""
         pattern = rf'^{"#" * level}\s+{re.escape(heading_name)}\s*$'
         match = re.search(pattern, self.content, re.MULTILINE)
         
@@ -307,12 +317,18 @@ class ReadmeParser:
         end = start + next_match.start() if next_match else len(self.content)
         
         return start, end
+    
+    def get_full_content(self) -> str:
+        """Reconstruct full README with updated modifiable section."""
+        return (self.full_content[:self.start_boundary] + 
+                self.content + 
+                self.full_content[self.end_boundary:])
 
 # ==========================
 # README UPDATER
 # ==========================
 class ReadmeUpdater:
-    """Intelligent README updates with all enhancements."""
+    """Intelligent README updates with strict boundary enforcement."""
     
     def __init__(self, parser: ReadmeParser, category_manager: CategoryManager = None):
         self.parser = parser
@@ -320,7 +336,7 @@ class ReadmeUpdater:
         self.validator = SummaryValidator()
     
     def add_report_entry(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
-        """Main entry point - handles add/update logic."""
+        """Main entry point - handles add/update logic within boundaries."""
         
         # Validate data
         if not self._validate_data(analysis):
@@ -338,7 +354,6 @@ class ReadmeUpdater:
         
         # Ensure report_url is NOT a Google search link
         if 'organization_url' in analysis and 'google.com/search' in analysis['organization_url']:
-            # Extract actual domain or use fallback
             org_name = analysis['organization']
             analysis['organization_url'] = f"https://www.{''.join(c for c in org_name if c.isalnum()).lower()}.com"
             print(f"  Fixed Google search URL to: {analysis['organization_url']}")
@@ -362,15 +377,13 @@ class ReadmeUpdater:
             return self._insert_new(analysis)
     
     def _find_existing_report(self, analysis: Dict[str, Any]) -> Optional[Dict[str, Any]]:
-        """
-        Finds an existing report entry by matching the report URL.
-        An entry is considered a match if the base filename (excluding the year)
-        in the URL is the same. This allows for updating reports across different years.
-        """
-        # Build target identifier from the new report's PDF path
+        """Find existing report using Annual%20Security link matching as PRIMARY signal."""
         pdf_filename = Path(analysis['pdf_path']).name.lower()
         pdf_base = re.sub(r'\d{4}', '', pdf_filename).replace('%20', ' ').strip('-_ ')
-
+        org_lower = analysis['organization'].lower()
+        title_norm = self._normalize_title(analysis['title'])
+        
+        # Parse all entries in modifiable section only
         for line in self.parser.content.split('\n'):
             if not line.strip().startswith('- ['):
                 continue
@@ -383,9 +396,12 @@ class ReadmeUpdater:
             if not match:
                 continue
             
+            curr_org = match.group(1).lower()
             curr_report_url = match.group(4).lower()
+            curr_title = match.group(3)
+            curr_year = int(match.group(5))
             
-            # Match based on the report URL's filename, ignoring the year.
+            # Signal 1: Annual%20Security link match (STRONGEST)
             if 'annual%20security%20reports' in curr_report_url or 'annual security reports' in curr_report_url:
                 curr_filename = Path(urllib.parse.unquote(curr_report_url)).name.lower()
                 curr_base = re.sub(r'\d{4}', '', curr_filename).replace('%20', ' ').strip('-_ ')
@@ -393,11 +409,21 @@ class ReadmeUpdater:
                 if pdf_base and curr_base and pdf_base == curr_base:
                     return {
                         'line': line,
-                        'year': int(match.group(5)),
+                        'year': curr_year,
                         'org': match.group(1),
                         'title': match.group(3),
-                        'match_type': 'report_url_base'
+                        'match_type': 'pdf_filename'
                     }
+            
+            # Signal 2: Org + Title match
+            if curr_org == org_lower and self._normalize_title(curr_title) == title_norm:
+                return {
+                    'line': line,
+                    'year': curr_year,
+                    'org': match.group(1),
+                    'title': match.group(3),
+                    'match_type': 'org_title'
+                }
         
         return None
     
@@ -412,7 +438,7 @@ class ReadmeUpdater:
         # Format new entry
         new_line = self._format_entry(analysis)
         
-        # Replace old with new
+        # Replace old with new in modifiable content only
         self.parser.content = self.parser.content.replace(existing['line'], new_line)
         
         return True, new_line, self._find_line_number(new_line), "updated"
@@ -424,8 +450,8 @@ class ReadmeUpdater:
         # Find section
         start, end = self.parser.find_section_bounds(category)
         if start == -1:
-            # Try fallback category
-            category = "Industry Trends"
+            # Try default fallback
+            category = "Global Threat Intelligence" if "Analysis" in analysis.get('type', '') else "Industry Trends"
             start, end = self.parser.find_section_bounds(category)
             if start == -1:
                 return False, "", -1, "no_valid_section"
@@ -450,10 +476,7 @@ class ReadmeUpdater:
         return True, new_entry, self._find_line_number(new_entry), "new"
     
     def _format_entry(self, analysis: Dict[str, Any]) -> str:
-        """
-        Format entry line.
-        CRITICAL: Uses actual report URL (Annual%20Security), NOT Google search.
-        """
+        """Format entry line with actual report URL (NOT Google search)."""
         # Construct proper report URL
         pdf_name = Path(analysis['pdf_path']).name
         report_url = f"Annual%20Security%20Reports/{analysis['year']}/{pdf_name}".replace(' ', '%20')
@@ -475,8 +498,9 @@ class ReadmeUpdater:
         return re.sub(r'[^a-z0-9]', '', title.lower())
     
     def _find_line_number(self, text: str) -> int:
-        """Find line number in content."""
-        for i, line in enumerate(self.parser.content.split('\n'), 1):
+        """Find line number in full content."""
+        full = self.parser.get_full_content()
+        for i, line in enumerate(full.split('\n'), 1):
             if text in line:
                 return i
         return -1
@@ -503,16 +527,18 @@ class ReadmeUpdater:
         return True
     
     def save(self):
-        """Save updated README."""
-        self.parser.readme_path.write_text(self.parser.content, encoding='utf-8')
+        """Save updated README with modified section."""
+        full_content = self.parser.get_full_content()
+        self.parser.readme_path.write_text(full_content, encoding='utf-8')
         print(f"✓ README saved: {self.parser.readme_path}")
+        print(f"✓ Modified section between '{START_MARKER}' and '{END_MARKER}'")
 
 # ==========================
 # MAIN
 # ==========================
 def main():
     parser = argparse.ArgumentParser(
-        description="Optimized README Updater with enhanced validation"
+        description="Optimized README Updater with boundary enforcement"
     )
     parser.add_argument("analysis_json", help="Path to analysis results JSON")
     parser.add_argument("--readme-path", default="README.md")
@@ -535,9 +561,10 @@ def main():
         print("No results to process")
         sys.exit(0)
     
-    print(f"\n{'='*60}")
-    print(f"Processing {len(results)} reports")
-    print(f"{'='*60}\n")
+    print(f"\n{'='*70}")
+    print(f"README Updater - Processing {len(results)} reports")
+    print(f"Boundary: '{START_MARKER}' to '{END_MARKER}'")
+    print(f"{'='*70}\n")
     
     # Initialize
     try:
@@ -573,15 +600,16 @@ def main():
                 print(f"  ✗ ERROR: {action}")
     
     # Summary
-    print(f"\n{'='*60}")
+    print(f"\n{'='*70}")
     print(f"SUMMARY")
-    print(f"{'='*60}")
+    print(f"{'='*70}")
     print(f"New: {stats['new']} | Updated: {stats['updated']} | "
           f"Skipped: {stats['skipped']} | Errors: {stats['errors']}")
     
     if changes:
         updater.save()
         print(f"\n✓ Changes committed to README")
+        print(f"✓ Only section between boundaries was modified")
     else:
         print(f"\n⊘ No changes needed")
     
