@@ -363,16 +363,14 @@ class ReadmeUpdater:
     
     def _find_existing_report(self, analysis: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """
-        Find existing report using multiple signals.
-        CRITICAL: Uses Annual%20Security link matching as PRIMARY signal.
+        Finds an existing report entry by matching the report URL.
+        An entry is considered a match if the base filename (excluding the year)
+        in the URL is the same. This allows for updating reports across different years.
         """
-        # Build target identifiers
+        # Build target identifier from the new report's PDF path
         pdf_filename = Path(analysis['pdf_path']).name.lower()
         pdf_base = re.sub(r'\d{4}', '', pdf_filename).replace('%20', ' ').strip('-_ ')
-        org_lower = analysis['organization'].lower()
-        title_norm = self._normalize_title(analysis['title'])
-        
-        # Parse all entries in README
+
         for line in self.parser.content.split('\n'):
             if not line.strip().startswith('- ['):
                 continue
@@ -385,13 +383,9 @@ class ReadmeUpdater:
             if not match:
                 continue
             
-            curr_org = match.group(1).lower()
-            curr_org_url = match.group(2).lower()
-            curr_title = match.group(3)
             curr_report_url = match.group(4).lower()
-            curr_year = int(match.group(5))
             
-            # Signal 1: Annual%20Security link match (STRONGEST)
+            # Match based on the report URL's filename, ignoring the year.
             if 'annual%20security%20reports' in curr_report_url or 'annual security reports' in curr_report_url:
                 curr_filename = Path(urllib.parse.unquote(curr_report_url)).name.lower()
                 curr_base = re.sub(r'\d{4}', '', curr_filename).replace('%20', ' ').strip('-_ ')
@@ -399,21 +393,11 @@ class ReadmeUpdater:
                 if pdf_base and curr_base and pdf_base == curr_base:
                     return {
                         'line': line,
-                        'year': curr_year,
+                        'year': int(match.group(5)),
                         'org': match.group(1),
                         'title': match.group(3),
-                        'match_type': 'pdf_filename'
+                        'match_type': 'report_url_base'
                     }
-            
-            # Signal 2: Org + Title match
-            if curr_org == org_lower and self._normalize_title(curr_title) == title_norm:
-                return {
-                    'line': line,
-                    'year': curr_year,
-                    'org': match.group(1),
-                    'title': match.group(3),
-                    'match_type': 'org_title'
-                }
         
         return None
     
