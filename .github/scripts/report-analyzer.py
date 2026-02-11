@@ -1,17 +1,3 @@
-#!/usr/bin/env python3
-"""
-Optimized Report Analyzer - Complete Version with All Enhancements
-
-Key Features:
-1. Constructs proper Annual%20Security URLs (never Google search links)
-2. Enhanced summary validation and sanitization
-3. Programmatic output validation
-4. Dual SDK support (old/new Google AI)
-5. Better error handling and fallbacks
-6. Security hardened
-7. Efficient processing
-"""
-
 import os
 import sys
 import json
