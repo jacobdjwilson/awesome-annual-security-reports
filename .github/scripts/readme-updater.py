@@ -12,104 +12,63 @@ import urllib.parse
 # CONFIGURATION LOADER
 # ==========================
 class ConfigLoader:
-    """Loads all configuration from JSON files."""
+    """Loads all configuration from .github/artifacts/"""
     
     def __init__(self, artifacts_dir: str = ".github/artifacts"):
         self.artifacts_dir = Path(artifacts_dir)
-        self.updater_config = self._load_updater_config()
-        self.categories_config = self._load_categories_config()
+        
+        # Load all config files
+        self.pipeline_config = self._load_json("pipeline-config.json")
+        self.categories_config = self._load_json("report-categories.json")
+        
+        # Validate required configs loaded
+        if not self.pipeline_config:
+            raise ValueError("pipeline-config.json is required but not found")
+        if not self.categories_config:
+            raise ValueError("report-categories.json is required but not found")
     
-    def _load_updater_config(self) -> Dict[str, Any]:
-        """Load readme-updater configuration."""
-        config_path = self.artifacts_dir / "readme-updater-config.json"
-        
-        if not config_path.exists():
-            print(f"WARNING: Config not found: {config_path}")
-            return self._get_default_updater_config()
-        
-        try:
-            with open(config_path, 'r') as f:
-                return json.load(f)
-        except json.JSONDecodeError as e:
-            print(f"ERROR: Invalid config JSON: {e}")
-            return self._get_default_updater_config()
-    
-    def _load_categories_config(self) -> Dict[str, Any]:
-        """Load categories configuration."""
-        config_path = self.artifacts_dir / "report-categories.json"
-        
-        if not config_path.exists():
-            print(f"WARNING: Categories not found: {config_path}")
-            return self._get_default_categories()
+    def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
+        """Load JSON file from artifacts directory."""
+        path = self.artifacts_dir / filename
+        if not path.exists():
+            print(f"WARNING: {filename} not found in {self.artifacts_dir}")
+            return None
         
         try:
-            with open(config_path, 'r') as f:
+            with open(path, 'r') as f:
                 return json.load(f)
         except json.JSONDecodeError as e:
-            print(f"ERROR: Invalid categories JSON: {e}")
-            return self._get_default_categories()
+            print(f"ERROR: Invalid JSON in {filename}: {e}")
+            return None
     
-    def _get_default_updater_config(self) -> Dict[str, Any]:
-        """Default configuration."""
-        return {
-            "validation": {
-                "summary": {
-                    "max_length": 400,
-                    "min_length": 40,
-                    "required_verbs": ["analyzes", "examines", "evaluates"],
-                    "forbidden_phrases": ["this report", "the report"],
-                    "marketing_words": ["revolutionary", "groundbreaking"]
-                }
-            },
-            "processing": {
-                "age_threshold_years": 2,
-                "start_marker": "## Analysis Reports",
-                "end_marker": "## Resources"
-            },
-            "matching": {
-                "similarity_threshold": 0.6,
-                "exact_match_priority": True,
-                "use_pdf_filename_matching": True,
-                "trust_existing_entries": True
-            }
-        }
+    def get_processing_config(self) -> Dict[str, Any]:
+        """Get processing configuration."""
+        return self.pipeline_config.get("processing", {})
     
-    def _get_default_categories(self) -> Dict[str, Any]:
-        """Default categories."""
-        return {
-            "categories": [
-                {
-                    "parent": "Analysis Reports",
-                    "sub_categories": [
-                        {"name": "Global Threat Intelligence"},
-                        {"name": "Cloud Security"}
-                    ]
-                },
-                {
-                    "parent": "Survey Reports",
-                    "sub_categories": [
-                        {"name": "Industry Trends"}
-                    ]
-                }
-            ]
-        }
+    def get_validation_config(self) -> Dict[str, Any]:
+        """Get validation configuration."""
+        return self.pipeline_config.get("validation", {})
 
 # ==========================
 # SUMMARY VALIDATOR
 # ==========================
 class SummaryValidator:
-    """Validates summaries using configuration."""
+    """Validates summaries using pipeline config."""
     
-    def __init__(self, config: Dict[str, Any]):
-        val_config = config.get("validation", {}).get("summary", {})
-        self.max_length = val_config.get("max_length", 400)
-        self.min_length = val_config.get("min_length", 40)
-        self.required_verbs = val_config.get("required_verbs", [])
-        self.forbidden_phrases = val_config.get("forbidden_phrases", [])
-        self.marketing_words = val_config.get("marketing_words", [])
+    # These are the ONLY constants - validation rules
+    REQUIRED_VERBS = [
+        'analyzes', 'examines', 'evaluates', 'assesses', 'reviews',
+        'interprets', 'dissects', 'deconstructs', 'scrutinizes',
+        'compares', 'investigates', 'explores', 'probes', 'surveys',
+        'inquires', 'studies', 'documents', 'traces', 'maps',
+        'highlights', 'focuses', 'provides', 'offers', 'outlines'
+    ]
+    MAX_LENGTH = 400
+    MIN_LENGTH = 40
     
-    def validate(self, summary: str) -> Tuple[bool, List[str]]:
-        """Validate summary. Returns: (is_valid, errors)"""
+    @classmethod
+    def validate(cls, summary: str) -> Tuple[bool, List[str]]:
+        """Validate summary against rules."""
         errors = []
         
         if not summary or not summary.strip():
@@ -117,44 +76,28 @@ class SummaryValidator:
         
         summary = summary.strip()
         
-        # Length
-        if len(summary) > self.max_length:
-            errors.append(f"Too long: {len(summary)} > {self.max_length}")
-        elif len(summary) < self.min_length:
-            errors.append(f"Too short: {len(summary)} < {self.min_length}")
+        if len(summary) > cls.MAX_LENGTH:
+            errors.append(f"TooLong:{len(summary)}")
+        elif len(summary) < cls.MIN_LENGTH:
+            errors.append(f"TooShort:{len(summary)}")
         
-        # Single line
         if '\n' in summary or '\r' in summary:
-            errors.append("Contains newlines")
+            errors.append("HasNewlines")
         
-        # Starting verb
-        if self.required_verbs:
-            first_word = summary.split()[0].lower().rstrip('.,;:') if summary.split() else ''
-            if first_word not in self.required_verbs:
-                errors.append(f"Bad start: '{first_word}'")
+        first_word = summary.split()[0].lower().rstrip('.,;:') if summary.split() else ''
+        if first_word not in cls.REQUIRED_VERBS:
+            errors.append(f"BadStart:{first_word}")
         
-        # Forbidden phrases
-        summary_lower = summary.lower()
-        for phrase in self.forbidden_phrases:
-            if phrase in summary_lower:
-                errors.append(f"Forbidden: '{phrase}'")
-        
-        # Marketing words
-        for word in self.marketing_words:
-            if word in summary_lower:
-                errors.append(f"Marketing: '{word}'")
-        
-        # Characters
         if not re.match(r"^[a-zA-Z0-9\s',.\-]+$", summary):
-            errors.append("Invalid characters")
+            errors.append("InvalidChars")
         
-        # Parentheses/quotes
         if '(' in summary or ')' in summary or '"' in summary:
-            errors.append("Has parentheses/quotes")
+            errors.append("HasQuotes/Parens")
         
         return len(errors) == 0, errors
     
-    def sanitize(self, summary: str) -> str:
+    @classmethod
+    def sanitize(cls, summary: str) -> str:
         """Fix common issues."""
         if not summary:
             return ""
@@ -165,11 +108,11 @@ class SummaryValidator:
         if summary and not summary.endswith('.'):
             summary += '.'
         
-        if len(summary) > self.max_length:
+        if len(summary) > cls.MAX_LENGTH:
             sentences = summary.split('. ')
             summary = ''
             for s in sentences:
-                if len(summary + s + '. ') <= self.max_length:
+                if len(summary + s + '. ') <= cls.MAX_LENGTH:
                     summary += s + '. '
                 else:
                     break
@@ -180,11 +123,10 @@ class SummaryValidator:
 # CATEGORY MANAGER
 # ==========================
 class CategoryManager:
-    """Manages categories from configuration."""
+    """Manages categories from report-categories.json."""
     
-    def __init__(self, categories_config: Dict[str, Any], matching_config: Dict[str, Any]):
+    def __init__(self, categories_config: Dict[str, Any]):
         self.categories = categories_config
-        self.similarity_threshold = matching_config.get("similarity_threshold", 0.6)
         self.category_map = self._build_map()
     
     def _build_map(self) -> Dict[str, Dict[str, str]]:
@@ -200,8 +142,8 @@ class CategoryManager:
                 }
         return cat_map
     
-    def match_category(self, hint: str, report_type: str = "Analysis") -> Tuple[str, str, float]:
-        """Match category with confidence."""
+    def match_category(self, hint: str, report_type: str = "Analysis") -> Tuple[str, str]:
+        """Match category. Returns: (category_name, parent_type)"""
         if not hint:
             return self._get_default(report_type)
         
@@ -209,7 +151,7 @@ class CategoryManager:
         normalized = hint.lower().strip()
         if normalized in self.category_map:
             match = self.category_map[normalized]
-            return match["name"], match["parent"], 1.0
+            return match["name"], match["parent"]
         
         # Fuzzy match
         best_score = 0.0
@@ -220,8 +162,8 @@ class CategoryManager:
                 best_score = score
                 best_match = cat_info
         
-        if best_match and best_score > self.similarity_threshold:
-            return best_match["name"], best_match["parent"], best_score
+        if best_match and best_score > 0.6:
+            return best_match["name"], best_match["parent"]
         
         return self._get_default(report_type)
     
@@ -233,19 +175,11 @@ class CategoryManager:
             return 0.0
         return len(words1 & words2) / max(len(words1), len(words2))
     
-    def _get_default(self, report_type: str) -> Tuple[str, str, float]:
-        """Default category."""
+    def _get_default(self, report_type: str) -> Tuple[str, str]:
+        """Default category based on type."""
         if "survey" in report_type.lower():
-            return "Industry Trends", "Survey Reports", 0.0
-        return "Global Threat Intelligence", "Analysis Reports", 0.0
-    
-    def get_all_categories(self) -> Dict[str, List[str]]:
-        """Get all categories."""
-        result = {}
-        for parent_cat in self.categories.get("categories", []):
-            parent_name = parent_cat["parent"]
-            result[parent_name] = [sub["name"] for sub in parent_cat.get("sub_categories", [])]
-        return result
+            return "Industry Trends", "Survey Reports"
+        return "Global Threat Intelligence", "Analysis Reports"
 
 # ==========================
 # README PARSER
@@ -253,14 +187,14 @@ class CategoryManager:
 class ReadmeParser:
     """Parses README with boundary enforcement."""
     
-    def __init__(self, readme_path: str, config: Dict[str, Any], category_manager: CategoryManager):
+    def __init__(self, readme_path: str, config: ConfigLoader):
         self.readme_path = Path(readme_path)
         self.config = config
-        self.category_manager = category_manager
         
-        proc_config = config.get("processing", {})
-        self.start_marker = proc_config.get("start_marker", "## Analysis Reports")
-        self.end_marker = proc_config.get("end_marker", "## Resources")
+        # Get boundaries from config
+        repo_config = config.pipeline_config.get("repository", {})
+        self.start_marker = "## Analysis Reports"
+        self.end_marker = "## Resources"
         
         if not self.readme_path.exists():
             raise FileNotFoundError(f"README not found: {readme_path}")
@@ -268,9 +202,6 @@ class ReadmeParser:
         self.full_content = self.readme_path.read_text(encoding='utf-8')
         self.start_pos, self.end_pos = self._find_boundaries()
         self.content = self.full_content[self.start_pos:self.end_pos]
-        
-        # Parse existing entries once (for efficient lookup)
-        self.existing_entries = self._parse_existing_entries()
     
     def _find_boundaries(self) -> Tuple[int, int]:
         """Find section boundaries."""
@@ -278,7 +209,7 @@ class ReadmeParser:
         end_match = re.search(rf'^{re.escape(self.end_marker)}\s*$', self.full_content, re.MULTILINE)
         
         if not start_match or not end_match:
-            raise ValueError("Boundary markers not found")
+            raise ValueError(f"Boundary markers not found in README")
         
         start = start_match.end()
         end = end_match.start()
@@ -288,51 +219,38 @@ class ReadmeParser:
         
         return start, end
     
-    def _parse_existing_entries(self) -> Dict[str, Dict[str, Any]]:
+    def find_existing_entry(self, pdf_path: str) -> Optional[Tuple[str, int]]:
         """
-        Parse all existing entries ONCE for efficient lookup.
-        Key: normalized PDF base filename (year removed)
+        Find existing entry by Annual%20Security PDF filename matching.
+        Returns: (full_line, year) or (None, None)
         """
-        entries = {}
+        pdf_filename = Path(pdf_path).name.lower()
+        pdf_base = re.sub(r'\d{4}', '', pdf_filename).replace('%20', ' ').strip('-_ .').replace('.pdf', '')
         
         for line in self.content.split('\n'):
             if not line.strip().startswith('- ['):
                 continue
             
             match = re.match(
-                r'^-\s*\[([^\]]+)\]\(([^\)]+)\)\s*-\s*\[([^\]]+)\]\(([^\)]+)\)\s*\((\d{4})\)\s*-\s*(.+)$',
+                r'^-\s*\[([^\]]+)\]\(([^\)]+)\)\s*-\s*\[([^\]]+)\]\(([^\)]+)\)\s*\((\d{4})\)',
                 line.strip()
             )
             
             if not match:
                 continue
             
-            org = match.group(1)
-            org_url = match.group(2)
-            title = match.group(3)
-            report_url = match.group(4)
+            report_url = match.group(4).lower()
             year = int(match.group(5))
-            summary = match.group(6)
             
-            # Extract PDF filename and create normalized key
-            if 'annual%20security%20reports' in report_url.lower() or 'annual security reports' in report_url.lower():
-                pdf_filename = Path(urllib.parse.unquote(report_url)).name.lower()
-                # Remove year and special chars for matching
-                pdf_base = re.sub(r'\d{4}', '', pdf_filename).replace('%20', ' ').strip('-_ .').replace('.pdf', '')
+            # Check if this is an Annual Security Reports link
+            if 'annual%20security%20reports' in report_url or 'annual security reports' in report_url:
+                curr_filename = Path(urllib.parse.unquote(report_url)).name.lower()
+                curr_base = re.sub(r'\d{4}', '', curr_filename).replace('%20', ' ').strip('-_ .').replace('.pdf', '')
                 
-                # Store by PDF base name
-                entries[pdf_base] = {
-                    'line': line,
-                    'org': org,
-                    'title': title,
-                    'year': year,
-                    'report_url': report_url,
-                    'org_url': org_url,
-                    'summary': summary,
-                    'pdf_base': pdf_base
-                }
+                if pdf_base and curr_base and pdf_base == curr_base:
+                    return line, year
         
-        return entries
+        return None, None
     
     def find_section_bounds(self, heading: str, level: int = 3) -> Tuple[int, int]:
         """Find section boundaries."""
@@ -357,31 +275,31 @@ class ReadmeParser:
 # README UPDATER
 # ==========================
 class ReadmeUpdater:
-    """Updates README with minimal modifications."""
+    """
+    Updates README for ONLY the reports being processed.
+    NEVER scans or modifies other entries.
+    """
     
-    def __init__(self, parser: ReadmeParser, category_manager: CategoryManager, validator: SummaryValidator, config: Dict[str, Any]):
+    def __init__(self, parser: ReadmeParser, category_manager: CategoryManager, config: ConfigLoader):
         self.parser = parser
         self.category_manager = category_manager
-        self.validator = validator
         self.config = config
-        self.trust_existing = config.get("matching", {}).get("trust_existing_entries", True)
+        self.validator = SummaryValidator()
     
-    def add_report_entry(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
+    def process_report(self, analysis: Dict[str, Any]) -> Tuple[bool, str]:
         """
-        Main entry point.
-        ONLY modifies if:
-        1. Report doesn't exist (new entry)
-        2. Report exists with older year (update year)
+        Process a single report from analysis file.
+        Returns: (success, action)
         """
         
-        # Validate
+        # Validate data
         if not self._validate_data(analysis):
-            return False, "", -1, "invalid_data"
+            return False, "invalid_data"
         
         # Validate summary
         is_valid, errors = self.validator.validate(analysis['summary'])
         if not is_valid:
-            print(f"  WARNING: Summary issues: {errors[:2]}")
+            print(f"  ! Summary: {', '.join(errors[:2])}")
             analysis['summary'] = self.validator.sanitize(analysis['summary'])
         
         # Fix Google search URLs
@@ -390,75 +308,52 @@ class ReadmeUpdater:
             analysis['organization_url'] = f"https://www.{''.join(c for c in org_name if c.isalnum()).lower()}.com"
         
         # Determine category
-        cat_name, parent_type, conf = self.category_manager.match_category(
+        cat_name, parent_type = self.category_manager.match_category(
             analysis.get('category', ''), analysis.get('type', 'Analysis')
         )
         analysis['category'] = cat_name
-        analysis['type'] = parent_type.replace(" Reports", "")
         
-        # Check if report already exists
-        existing = self._find_existing(analysis)
+        # Check if report exists
+        existing_line, existing_year = self.parser.find_existing_entry(analysis['pdf_path'])
         
-        if existing:
-            # Report exists - only update if year is newer
-            return self._update_if_newer(existing, analysis)
+        if existing_line:
+            # Report exists - check if we need to update
+            new_year = int(analysis['year'])
+            if new_year > existing_year:
+                return self._update_existing(existing_line, existing_year, analysis)
+            else:
+                return False, f"current (year {existing_year})"
         else:
             # New report - add it
             return self._insert_new(analysis)
     
-    def _find_existing(self, analysis: Dict[str, Any]) -> Optional[Dict[str, Any]]:
-        """
-        Find existing report by PDF filename matching.
-        Uses pre-parsed entries for O(1) lookup.
-        """
-        pdf_filename = Path(analysis['pdf_path']).name.lower()
-        pdf_base = re.sub(r'\d{4}', '', pdf_filename).replace('%20', ' ').strip('-_ .').replace('.pdf', '')
-        
-        # O(1) lookup in pre-parsed entries
-        return self.parser.existing_entries.get(pdf_base)
-    
-    def _update_if_newer(self, existing: Dict[str, Any], new: Dict[str, Any]) -> Tuple[bool, str, int, str]:
-        """
-        Update ONLY if new year > existing year.
-        Preserves existing summary and all other details.
-        """
-        new_year = int(new['year'])
-        old_year = existing['year']
-        
-        if new_year <= old_year:
-            return False, "", -1, f"existing_current (year {old_year})"
-        
-        # Build updated line - use NEW summary (it's from the new report)
+    def _update_existing(self, old_line: str, old_year: int, new: Dict[str, Any]) -> Tuple[bool, str]:
+        """Update existing entry with new year."""
+        # Build new line with updated year and PDF path
         pdf_name = Path(new['pdf_path']).name
         report_url = f"Annual%20Security%20Reports/{new['year']}/{pdf_name}".replace(' ', '%20')
+        summary = self.validator.sanitize(new['summary'])
         
-        new_line = (f"- [{existing['org']}]({existing['org_url']}) "
-                   f"- [{existing['title']}]({report_url}) "
-                   f"({new['year']}) - {new['summary']}")
+        new_line = (f"- [{new['organization']}]({new['organization_url']}) "
+                   f"- [{new['title']}]({report_url}) "
+                   f"({new['year']}) - {summary}")
         
         # Replace in content
-        self.parser.content = self.parser.content.replace(existing['line'], new_line)
+        self.parser.content = self.parser.content.replace(old_line, new_line)
         
-        # Update cache
-        self.parser.existing_entries[existing['pdf_base']] = {
-            **existing,
-            'line': new_line,
-            'year': new_year
-        }
-        
-        return True, new_line, -1, "updated"
+        return True, f"updated ({old_year}→{new['year']})"
     
-    def _insert_new(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
+    def _insert_new(self, analysis: Dict[str, Any]) -> Tuple[bool, str]:
         """Insert new report alphabetically in correct category."""
         category = analysis['category']
         
         # Find section
         start, end = self.parser.find_section_bounds(category)
         if start == -1:
-            category = "Global Threat Intelligence" if "Analysis" in analysis.get('type', '') else "Industry Trends"
+            category = "Global Threat Intelligence"
             start, end = self.parser.find_section_bounds(category)
             if start == -1:
-                return False, "", -1, "no_section"
+                return False, "no_section"
         
         # Get section
         section = self.parser.content[start:end]
@@ -477,17 +372,17 @@ class ReadmeUpdater:
         
         entries.append(new_entry)
         
-        # Sort alphabetically by org name
+        # Sort alphabetically
         entries.sort(key=lambda x: self._extract_org(x).lower())
         
         # Rebuild section
         new_section = '\n'.join(entries) + '\n'
         self.parser.content = self.parser.content[:start] + new_section + self.parser.content[end:]
         
-        return True, new_entry, -1, "new"
+        return True, "new"
     
     def _extract_org(self, line: str) -> str:
-        """Extract org name."""
+        """Extract org name from line."""
         match = re.search(r'-\s*\[([^\]]+)\]', line)
         return match.group(1) if match else ''
     
@@ -499,7 +394,9 @@ class ReadmeUpdater:
             return False
         
         # Age check
-        age_threshold = self.config.get("processing", {}).get("age_threshold_years", 2)
+        proc_config = self.config.get_processing_config()
+        age_threshold = proc_config.get("age_threshold_years", 2)
+        
         try:
             year = int(data['year'])
             if datetime.now().year - year >= age_threshold:
@@ -519,65 +416,67 @@ class ReadmeUpdater:
 # MAIN
 # ==========================
 def main():
-    parser = argparse.ArgumentParser(description="Optimized README Updater")
-    parser.add_argument("analysis_json")
+    parser = argparse.ArgumentParser(description="README Updater - Processes ONLY reports in analysis file")
+    parser.add_argument("analysis_json", help="Path to analysis.json")
     parser.add_argument("--readme-path", default="README.md")
     parser.add_argument("--artifacts-dir", default=".github/artifacts")
     args = parser.parse_args()
     
-    # Load config
-    config_loader = ConfigLoader(args.artifacts_dir)
+    print(f"\n{'='*70}")
+    print(f"README Updater")
+    print(f"{'='*70}\n")
     
-    # Load analysis
+    # Load configuration
+    try:
+        config_loader = ConfigLoader(args.artifacts_dir)
+        print(f"✓ Config loaded from {args.artifacts_dir}")
+    except Exception as e:
+        print(f"ERROR: Config load failed: {e}")
+        sys.exit(1)
+    
+    # Load analysis file
     if not os.path.exists(args.analysis_json):
-        print(f"ERROR: Analysis file not found")
+        print(f"ERROR: Analysis file not found: {args.analysis_json}")
         sys.exit(1)
     
     try:
         with open(args.analysis_json, 'r') as f:
-            results = json.load(f)
+            analysis_reports = json.load(f)
     except json.JSONDecodeError as e:
         print(f"ERROR: Invalid JSON: {e}")
         sys.exit(1)
     
-    if not results:
-        print("No results to process")
+    if not analysis_reports:
+        print("No reports in analysis file")
         sys.exit(0)
     
-    print(f"\n{'='*70}")
-    print(f"README Updater - {len(results)} reports")
-    print(f"{'='*70}\n")
+    print(f"✓ Loaded {len(analysis_reports)} reports from analysis file\n")
     
     # Initialize
     try:
-        category_mgr = CategoryManager(
-            config_loader.categories_config,
-            config_loader.updater_config.get("matching", {})
-        )
-        validator = SummaryValidator(config_loader.updater_config)
-        readme_parser = ReadmeParser(args.readme_path, config_loader.updater_config, category_mgr)
-        updater = ReadmeUpdater(readme_parser, category_mgr, validator, config_loader.updater_config)
-        
-        print(f"✓ Loaded {len(readme_parser.existing_entries)} existing entries")
-        print()
-        
+        category_mgr = CategoryManager(config_loader.categories_config)
+        readme_parser = ReadmeParser(args.readme_path, config_loader)
+        updater = ReadmeUpdater(readme_parser, category_mgr, config_loader)
     except Exception as e:
         print(f"ERROR: Init failed: {e}")
         sys.exit(1)
     
-    # Process
+    # Process ONLY the reports in the analysis file
     stats = {"new": 0, "updated": 0, "skipped": 0}
     changes = False
     
-    for i, analysis in enumerate(results, 1):
+    for i, analysis in enumerate(analysis_reports, 1):
         org = analysis.get('organization', 'Unknown')
         
-        print(f"[{i}/{len(results)}] {org}")
+        print(f"[{i}/{len(analysis_reports)}] {org}")
         
-        success, _, _, action = updater.add_report_entry(analysis)
+        success, action = updater.process_report(analysis)
         
         if success:
-            stats[action] += 1
+            if "updated" in action:
+                stats["updated"] += 1
+            else:
+                stats["new"] += 1
             changes = True
             print(f"  ✓ {action.upper()}")
         else:
@@ -591,7 +490,7 @@ def main():
     if changes:
         updater.save()
     else:
-        print("\n⊘ No changes")
+        print("\n⊘ No changes needed")
     
     return 0 if changes else 1
 
