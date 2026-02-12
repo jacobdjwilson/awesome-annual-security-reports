@@ -21,17 +21,15 @@ except ImportError:
 # CONFIGURATION LOADER
 # ==========================
 class ConfigLoader:
-    """Loads ALL configuration from .github/artifacts/"""
+    """Loads ALL config from .github/artifacts/"""
     
     def __init__(self, artifacts_dir: str = ".github/artifacts"):
         self.artifacts_dir = Path(artifacts_dir)
         
-        # Load all required configs
         self.ai_config = self._load_json("ai-models.json")
         self.pipeline_config = self._load_json("pipeline-config.json")
         self.categories_config = self._load_json("report-categories.json")
         
-        # Validate required configs
         if not self.ai_config:
             raise ValueError("ai-models.json is REQUIRED")
         if not self.pipeline_config:
@@ -39,36 +37,33 @@ class ConfigLoader:
         if not self.categories_config:
             raise ValueError("report-categories.json is REQUIRED")
         
-        # Extract AI configuration
         self.models = self.ai_config.get("models", {}).get("priority_list", [])
         if not self.models:
-            raise ValueError("No models defined in ai-models.json")
+            raise ValueError("No models in ai-models.json")
         
         self.gen_config = self.ai_config.get("configurations", {}).get("default", {})
         if not self.gen_config:
-            raise ValueError("No default configuration in ai-models.json")
+            raise ValueError("No default config in ai-models.json")
         
-        # Extract processing configuration
         proc_config = self.pipeline_config.get("processing", {})
         self.age_threshold = proc_config.get("age_threshold_years")
         if self.age_threshold is None:
-            raise ValueError("age_threshold_years not defined in pipeline-config.json")
+            raise ValueError("age_threshold_years not in pipeline-config.json")
         
         self.org_mappings = self.pipeline_config.get("organization_mappings", {})
         
-        # Extract prompts
         prompts = self.pipeline_config.get("prompts", {})
         self.summary_prompt_path = prompts.get("summarization")
         self.cat_prompt_path = prompts.get("categorization")
         
         if not self.summary_prompt_path or not self.cat_prompt_path:
-            raise ValueError("Prompt paths not defined in pipeline-config.json")
+            raise ValueError("Prompt paths not in pipeline-config.json")
     
     def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
-        """Load JSON file from artifacts."""
+        """Load JSON."""
         path = self.artifacts_dir / filename
         if not path.exists():
-            print(f"ERROR: Required file not found: {path}")
+            print(f"ERROR: {filename} not found")
             return None
         
         try:
@@ -82,7 +77,7 @@ class ConfigLoader:
 # ANALYSIS CACHE
 # ==========================
 class AnalysisCache:
-    """Cache for AI analysis to minimize API calls."""
+    """Persistent cache to minimize API calls."""
     
     def __init__(self, cache_file: str = "analysis_cache.json"):
         self.cache_file = Path(cache_file)
@@ -91,7 +86,7 @@ class AnalysisCache:
         self.misses = 0
     
     def _load(self) -> Dict[str, Any]:
-        """Load cache from disk."""
+        """Load cache."""
         if self.cache_file.exists():
             try:
                 with open(self.cache_file, 'r') as f:
@@ -101,7 +96,7 @@ class AnalysisCache:
         return {}
     
     def _save(self):
-        """Save cache to disk."""
+        """Save cache."""
         try:
             with open(self.cache_file, 'w') as f:
                 json.dump(self.cache, f, indent=2)
@@ -109,12 +104,12 @@ class AnalysisCache:
             pass
     
     def _hash(self, content: str, org: str, year: str) -> str:
-        """Generate content hash."""
+        """Generate hash."""
         key = f"{org}:{year}:{content[:1000]}"
         return hashlib.md5(key.encode()).hexdigest()
     
     def get(self, content: str, org: str, year: str) -> Optional[Dict[str, Any]]:
-        """Get cached analysis."""
+        """Get cached."""
         cache_key = self._hash(content, org, year)
         if cache_key in self.cache:
             self.hits += 1
@@ -123,13 +118,13 @@ class AnalysisCache:
         return None
     
     def set(self, content: str, org: str, year: str, analysis: Dict[str, Any]):
-        """Cache analysis."""
+        """Cache result."""
         cache_key = self._hash(content, org, year)
         self.cache[cache_key] = analysis
         self._save()
     
     def stats(self) -> str:
-        """Get stats."""
+        """Stats."""
         total = self.hits + self.misses
         rate = (self.hits / total * 100) if total > 0 else 0
         return f"{self.hits} hits, {self.misses} misses ({rate:.1f}% hit rate)"
@@ -138,7 +133,7 @@ class AnalysisCache:
 # AI SETUP
 # ==========================
 def setup_gemini(api_key: str, config: ConfigLoader) -> Tuple[bool, Optional[str]]:
-    """Setup Gemini with models from config."""
+    """Setup Gemini."""
     
     if USE_NEW_SDK:
         client = genai.Client(api_key=api_key)
@@ -149,7 +144,7 @@ def setup_gemini(api_key: str, config: ConfigLoader) -> Tuple[bool, Optional[str
                     contents="test"
                 )
                 if response.text:
-                    print(f"✓ AI Model: {model_name}")
+                    print(f"✓ Model: {model_name}")
                     return True, model_name
             except Exception:
                 continue
@@ -160,12 +155,12 @@ def setup_gemini(api_key: str, config: ConfigLoader) -> Tuple[bool, Optional[str
                 test_model = genai.GenerativeModel(model_name)
                 test_response = test_model.count_tokens("test")
                 if test_response.total_tokens:
-                    print(f"✓ AI Model: {model_name}")
+                    print(f"✓ Model: {model_name}")
                     return True, model_name
             except Exception:
                 continue
     
-    print("ERROR: No AI models available from priority list")
+    print("ERROR: No AI models available")
     return False, None
 
 # ==========================
@@ -181,31 +176,6 @@ class SummaryValidator:
         'inquires', 'studies', 'documents', 'traces', 'maps',
         'highlights', 'focuses', 'provides', 'offers', 'outlines'
     ]
-    
-    @classmethod
-    def validate(cls, summary: str) -> Tuple[bool, List[str]]:
-        """Validate summary."""
-        errors = []
-        
-        if not summary:
-            return False, ["Empty"]
-        
-        if len(summary) > 400:
-            errors.append("TooLong")
-        elif len(summary) < 40:
-            errors.append("TooShort")
-        
-        if '\n' in summary:
-            errors.append("Newlines")
-        
-        first = summary.split()[0].lower().rstrip('.,;:') if summary.split() else ''
-        if first not in cls.REQUIRED_VERBS:
-            errors.append(f"BadStart:{first}")
-        
-        if '(' in summary or ')' in summary or '"' in summary:
-            errors.append("Quotes/Parens")
-        
-        return len(errors) == 0, errors
     
     @classmethod
     def sanitize(cls, summary: str) -> str:
@@ -251,7 +221,7 @@ def construct_org_url(org_name: str, search_url: Optional[str] = None) -> str:
 # CATEGORY LOADER
 # ==========================
 def load_categories(config: ConfigLoader) -> Dict[str, List[str]]:
-    """Load categories from config."""
+    """Load categories."""
     categories = {"Analysis": [], "Survey": []}
     
     for parent_cat in config.categories_config.get("categories", []):
@@ -266,9 +236,9 @@ def load_categories(config: ConfigLoader) -> Dict[str, List[str]]:
 # ==========================
 def analyze_with_ai(content: str, org: str, year: str, title: str, 
                    config: ConfigLoader, model: str, cache: AnalysisCache) -> Dict[str, Any]:
-    """Analyze with AI using configuration."""
+    """Analyze with AI."""
     
-    # Check cache
+    # Check cache FIRST
     cached = cache.get(content, org, year)
     if cached:
         print(f"  ✓ Cached")
@@ -288,7 +258,7 @@ def analyze_with_ai(content: str, org: str, year: str, title: str,
         
         full_prompt = f"{summary_prompt}\n\nOrg: {org}\nTitle: {title}\nYear: {year}\n\n{truncated}"
         
-        # Generate summary using config
+        # Generate summary
         if USE_NEW_SDK:
             client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
             gen_config = types.GenerateContentConfig(
@@ -314,12 +284,7 @@ def analyze_with_ai(content: str, org: str, year: str, title: str,
             )
         
         summary = response.text.strip() if response.text else ""
-        
-        # Validate
-        is_valid, errors = SummaryValidator.validate(summary)
-        if not is_valid:
-            print(f"  ! {', '.join(errors[:2])}")
-            summary = SummaryValidator.sanitize(summary)
+        summary = SummaryValidator.sanitize(summary)
         
         # Categorization
         if not os.path.exists(config.cat_prompt_path):
@@ -377,7 +342,7 @@ def analyze_with_ai(content: str, org: str, year: str, title: str,
 # MAIN
 # ==========================
 def main():
-    parser = argparse.ArgumentParser(description="Report Analyzer - Config-driven")
+    parser = argparse.ArgumentParser(description="Report Analyzer - Production")
     parser.add_argument("conversions_json")
     parser.add_argument("--output-json", default="analysis.json")
     parser.add_argument("--artifacts-dir", default=".github/artifacts")
@@ -387,18 +352,15 @@ def main():
     print(f"Report Analyzer")
     print(f"{'='*70}\n")
     
-    # Load config
     try:
         config = ConfigLoader(args.artifacts_dir)
-        print(f"✓ Config from {args.artifacts_dir}")
+        print(f"✓ Config loaded")
         print(f"  Models: {', '.join(config.models[:2])}...")
         print(f"  Temp: {config.gen_config.get('temperature')}")
-        print(f"  Age threshold: {config.age_threshold} years")
     except Exception as e:
         print(f"ERROR: Config failed: {e}")
         sys.exit(1)
     
-    # Setup AI
     gemini_key = os.environ.get("GEMINI_API_KEY")
     if not gemini_key:
         print("ERROR: GEMINI_API_KEY not set")
@@ -409,10 +371,8 @@ def main():
         print("ERROR: AI setup failed")
         sys.exit(1)
     
-    # Init cache
     cache = AnalysisCache()
     
-    # Load conversions
     if not os.path.exists(args.conversions_json):
         print(f"ERROR: File not found: {args.conversions_json}")
         sys.exit(1)
@@ -426,7 +386,7 @@ def main():
             json.dump([], f)
         sys.exit(0)
     
-    print(f"\n✓ {len(conversions)} conversions to process\n")
+    print(f"✓ {len(conversions)} conversions\n")
     
     results = []
     current_year = datetime.now().year
@@ -447,38 +407,31 @@ def main():
             if not content.strip():
                 continue
             
-            # Metadata
             pdf_path = conv.get('pdf_path', '')
             org_name = conv.get('organization_name', 'Unknown')
             report_title = conv.get('report_title', 'Security Report')
             
-            # Apply org mappings
             org_name = config.org_mappings.get(org_name, org_name)
             
-            # Extract year
             year = str(current_year)
             for part in Path(pdf_path).parts:
                 if part.isdigit() and len(part) == 4 and part.startswith("20"):
                     year = part
                     break
             
-            # Age check
             if int(year) < (current_year - config.age_threshold):
                 print(f"[{i}/{len(conversions)}] {org_name} - OLD ({year})")
                 continue
             
             print(f"[{i}/{len(conversions)}] {org_name} ({year})")
             
-            # Analyze
             analysis = analyze_with_ai(content, org_name, year, report_title, config, model, cache)
-            if analysis['ai_processed']:
+            if analysis['ai_processed'] and cache.misses > cache.hits:
                 api_calls += 1
             
-            # URLs
             report_url = construct_report_url(pdf_path, year)
             org_url = construct_org_url(org_name, conv.get('organization_url'))
             
-            # Result
             result = {
                 'organization': org_name,
                 'title': report_title,
@@ -500,7 +453,6 @@ def main():
             print(f"[{i}/{len(conversions)}] ERROR: {str(e)[:50]}")
             continue
     
-    # Save
     with open(args.output_json, 'w') as f:
         json.dump(results, f, indent=2)
     
