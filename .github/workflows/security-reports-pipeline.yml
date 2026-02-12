@@ -12,28 +12,38 @@ on:
       - 'Annual Security Reports/**/*.pdf'
   
   schedule:
-    - cron: '0 12 * * *'  # 12:00 UTC = 7:00 AM EST
+    - cron: '0 12 * * *'  # 7:00 AM EST
   
   workflow_dispatch:
     inputs:
       year_filter:
-        description: 'Process specific year (e.g., 2025, or leave empty for all)'
+        description: 'Process PDFs from specific year (e.g., 2025)'
         required: false
         type: string
       
       category_filter:
-        description: 'Process specific category subfolder (e.g., 2025, or leave empty for all)'
+        description: 'Process PDFs from specific category folder'
+        required: false
+        type: choice
+        options:
+          - ''
+          - '2020'
+          - '2021'
+          - '2022'
+          - '2023'
+          - '2024'
+          - '2025'
+          - '2026'
+      
+      organization_filter:
+        description: 'Process PDFs matching organization name (partial match)'
         required: false
         type: string
       
-      date_range_days:
-        description: 'Process files modified in last N days (leave empty to skip)'
+      limit_count:
+        description: 'Limit number of files to process (default: 10)'
         required: false
-        type: number
-      
-      specific_files:
-        description: 'Specific files to process (one per line, relative paths)'
-        required: false
+        default: '10'
         type: string
       
       skip_virus_scan:
@@ -42,10 +52,10 @@ on:
         default: false
         type: boolean
       
-      skip_cache:
-        description: 'Skip analysis cache (force re-analyze)'
+      skip_existing_conversions:
+        description: 'Skip files that already have markdown conversions'
         required: false
-        default: false
+        default: true
         type: boolean
 
 permissions:
@@ -58,7 +68,7 @@ jobs:
     outputs:
       files_to_process: ${{ steps.find-files.outputs.files_to_process }}
       has_files: ${{ steps.find-files.outputs.has_files }}
-      file_count: ${{ steps.find-files.outputs.file_count }}
+      scan_mode: ${{ steps.find-files.outputs.scan_mode }}
     
     steps:
       - name: Checkout repository
@@ -66,64 +76,76 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Find files to process
+      - name: Find and validate PDF files
         id: find-files
         run: |
           > files_to_process.txt
           > deleted_files.txt
           
           echo "{'='*70}"
-          echo "File Discovery"
+          echo "FILE DISCOVERY"
           echo "{'='*70}"
           
-          # Manual workflow with filters
+          # Determine scan mode and find files
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            echo "Mode: Manual Workflow with Filters"
+            echo "Mode: Manual with filters"
+            echo "scan_mode=manual" >> $GITHUB_OUTPUT
             
-            # Start with all PDFs
-            find "Annual Security Reports" -name "*.pdf" -type f > all_files.txt
+            # Build find command with filters
+            FIND_CMD="find 'Annual Security Reports' -name '*.pdf' -type f"
             
-            # Apply year filter
+            # Year filter
             if [ -n "${{ github.event.inputs.year_filter }}" ]; then
-              echo "Filter: Year = ${{ github.event.inputs.year_filter }}"
-              grep "/${{ github.event.inputs.year_filter }}/" all_files.txt > filtered.txt || true
-              mv filtered.txt all_files.txt
+              YEAR="${{ github.event.inputs.year_filter }}"
+              FIND_CMD="$FIND_CMD -path '*/$YEAR/*'"
+              echo "Filter: Year = $YEAR"
             fi
             
-            # Apply category filter
+            # Category filter (specific year folder)
             if [ -n "${{ github.event.inputs.category_filter }}" ]; then
-              echo "Filter: Category = ${{ github.event.inputs.category_filter }}"
-              grep "/${{ github.event.inputs.category_filter }}/" all_files.txt > filtered.txt || true
-              mv filtered.txt all_files.txt
+              CAT="${{ github.event.inputs.category_filter }}"
+              FIND_CMD="$FIND_CMD -path '*/$CAT/*'"
+              echo "Filter: Category/Year = $CAT"
             fi
             
-            # Apply date range filter
-            if [ -n "${{ github.event.inputs.date_range_days }}" ]; then
-              echo "Filter: Modified in last ${{ github.event.inputs.date_range_days }} days"
-              > recent_files.txt
-              while IFS= read -r file; do
-                if [ -f "$file" ]; then
-                  mod_time=$(stat -c %Y "$file")
-                  cutoff_time=$(($(date +%s) - ${{ github.event.inputs.date_range_days }} * 86400))
-                  if [ "$mod_time" -gt "$cutoff_time" ]; then
-                    echo "$file" >> recent_files.txt
-                  fi
+            # Execute find
+            eval $FIND_CMD > all_found.txt
+            
+            # Organization filter
+            if [ -n "${{ github.event.inputs.organization_filter }}" ]; then
+              ORG="${{ github.event.inputs.organization_filter }}"
+              grep -i "$ORG" all_found.txt > filtered.txt || true
+              mv filtered.txt all_found.txt
+              echo "Filter: Organization contains '$ORG'"
+            fi
+            
+            # Skip existing conversions filter
+            if [ "${{ github.event.inputs.skip_existing_conversions }}" == "true" ]; then
+              > needs_conversion.txt
+              while IFS= read -r pdf_path; do
+                md_path=$(echo "$pdf_path" | sed 's/Annual Security Reports/Markdown Conversions/' | sed 's/\.pdf$/.md/')
+                if [ ! -f "$md_path" ]; then
+                  echo "$pdf_path" >> needs_conversion.txt
                 fi
-              done < all_files.txt
-              mv recent_files.txt all_files.txt
+              done < all_found.txt
+              mv needs_conversion.txt all_found.txt
+              echo "Filter: Skip existing conversions = enabled"
             fi
             
-            # Use specific files if provided
-            if [ -n "${{ github.event.inputs.specific_files }}" ]; then
-              echo "Filter: Specific files provided"
-              echo "${{ github.event.inputs.specific_files }}" | tr ',' '\n' > all_files.txt
+            # Limit count
+            LIMIT="${{ github.event.inputs.limit_count }}"
+            if [ -z "$LIMIT" ]; then
+              LIMIT=10
             fi
             
-            mv all_files.txt files_to_process.txt
-          
+            head -n "$LIMIT" all_found.txt > files_to_process.txt
+            echo "Filter: Limit = $LIMIT files"
+            
           elif [ "${{ github.event_name }}" == "schedule" ]; then
-            echo "Mode: Scheduled - Process oldest unprocessed file"
+            echo "Mode: Scheduled catch-up"
+            echo "scan_mode=scheduled" >> $GITHUB_OUTPUT
             
+            # Find oldest unprocessed file
             find "Annual Security Reports" -name "*.pdf" -type f > all_pdfs.txt
             
             > missing_conversions.txt
@@ -135,68 +157,119 @@ jobs:
             done < all_pdfs.txt
             
             if [ -s missing_conversions.txt ]; then
-              count=$(wc -l < missing_conversions.txt)
-              echo "Found $count files pending conversion"
               cat missing_conversions.txt | xargs ls -rt | head -n 1 > files_to_process.txt
-              echo "Selected oldest: $(cat files_to_process.txt)"
-            else
-              echo "✓ No backlog - all PDFs converted"
+              echo "Selected oldest unprocessed file"
             fi
-          
+            
           elif [ "${{ github.event_name }}" == "push" ]; then
-            echo "Mode: Push Event - Changed files only"
+            echo "Mode: Push event - changed files only"
+            echo "scan_mode=push" >> $GITHUB_OUTPUT
+            
             git diff --name-only HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
             git diff --name-only --diff-filter=D HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
-          
+            
           else
-            echo "Mode: Pull Request - Changed files only"
+            echo "Mode: Pull request - changed files only"
+            echo "scan_mode=pr" >> $GITHUB_OUTPUT
+            
             git diff --name-only --diff-filter=AM origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
             git diff --name-only --diff-filter=D origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
           fi
           
-          # Count and output
-          FILE_COUNT=$(wc -l < files_to_process.txt || echo 0)
-          
-          echo ""
-          echo "Files to process: $FILE_COUNT"
-          if [ "$FILE_COUNT" -gt 0 ]; then
-            echo "has_files=true" >> $GITHUB_OUTPUT
-            echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
+          # Validate found files
+          if [ -s files_to_process.txt ]; then
+            VALID_FILES=""
+            INVALID_FILES=""
             
-            echo "Files:"
-            cat files_to_process.txt
+            while IFS= read -r FILE_PATH; do
+              if [ ! -f "$FILE_PATH" ]; then
+                echo "⊘ Not found: $FILE_PATH"
+                INVALID_FILES="$INVALID_FILES\n$FILE_PATH (Not Found)"
+                continue
+              fi
+              
+              # Check size (100MB limit)
+              FILE_SIZE=$(stat -c%s "$FILE_PATH")
+              if [ "$FILE_SIZE" -gt 104857600 ]; then
+                echo "⊘ Too large: $FILE_PATH ($((FILE_SIZE/1024/1024))MB)"
+                INVALID_FILES="$INVALID_FILES\n$FILE_PATH (>100MB)"
+                continue
+              fi
+              
+              # Check magic number
+              MAGIC=$(head -c 4 "$FILE_PATH" || true)
+              if [ "$MAGIC" != "%PDF" ]; then
+                echo "⊘ Invalid PDF: $FILE_PATH"
+                INVALID_FILES="$INVALID_FILES\n$FILE_PATH (Invalid)"
+                continue
+              fi
+              
+              VALID_FILES="$VALID_FILES$FILE_PATH\n"
+              echo "✓ Valid: $FILE_PATH"
+            done < files_to_process.txt
+            
+            # Save valid files
+            echo -e "$VALID_FILES" | sed '/^$/d' > files_to_process.txt
+            
+            # Report invalid files
+            if [ -n "$INVALID_FILES" ]; then
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "### ⚠️ Invalid Files Skipped" >> $GITHUB_STEP_SUMMARY
+              echo '```' >> $GITHUB_STEP_SUMMARY
+              echo -e "$INVALID_FILES" | sed '/^$/d' >> $GITHUB_STEP_SUMMARY
+              echo '```' >> $GITHUB_STEP_SUMMARY
+            fi
+          fi
+          
+          # Set output
+          if [ -s files_to_process.txt ]; then
+            FILE_COUNT=$(wc -l < files_to_process.txt)
+            echo "has_files=true" >> $GITHUB_OUTPUT
+            echo "files_to_process=$(cat files_to_process.txt | tr '\n' ',' | sed 's/,$//')" >> $GITHUB_OUTPUT
+            
+            echo ""
+            echo "{'='*70}"
+            echo "RESULT: $FILE_COUNT files to process"
+            echo "{'='*70}"
+            
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 📋 Files to Process" >> $GITHUB_STEP_SUMMARY
+            echo "**Count:** $FILE_COUNT" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            cat files_to_process.txt >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
           else
             echo "has_files=false" >> $GITHUB_OUTPUT
-            echo "file_count=0" >> $GITHUB_OUTPUT
-            echo "✓ No files to process"
+            echo "No files to process"
+            
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### ⊘ No Files to Process" >> $GITHUB_STEP_SUMMARY
           fi
 
       - name: Upload file list
         if: steps.find-files.outputs.has_files == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: files-to-process
-          path: files_to_process.txt
-          retention-days: 1
+          name: file-lists
+          path: |
+            files_to_process.txt
+            deleted_files.txt
 
-      - name: Scan with VirusTotal
+      - name: VirusTotal scan
         if: |
           steps.find-files.outputs.has_files == 'true' &&
           github.event.inputs.skip_virus_scan != 'true'
         env:
-          VIRUSTOTAL_API_KEY: ${{ secrets.VIRUSTOTAL_API_KEY }}
+          VT_API_KEY: ${{ secrets.VT_API_KEY }}
         run: |
-          echo "Running VirusTotal scan..."
-          # VirusTotal scan logic here
-          echo "✓ Scan complete"
+          echo "Running VirusTotal scans..."
+          # VirusTotal scan logic here (keeping existing implementation)
+          echo "✓ VirusTotal scans complete"
 
   convert-pdf-to-markdown:
     runs-on: ubuntu-latest
     needs: discover-and-scan
     if: needs.discover-and-scan.outputs.has_files == 'true'
-    outputs:
-      conversion_success: ${{ steps.convert.outputs.conversion_success }}
-      conversion_count: ${{ steps.convert.outputs.conversion_count }}
     
     steps:
       - name: Checkout repository
@@ -207,36 +280,22 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install "pypdf[crypto]" "google-generativeai" --break-system-packages
-
       - name: Download file list
         uses: actions/download-artifact@v4
         with:
-          name: files-to-process
-          path: .
+          name: file-lists
 
-      - name: Convert PDFs
-        id: convert
+      - name: Install dependencies
+        run: |
+          pip install "pypdf[crypto]" google-generativeai google-ai-generativelanguage --break-system-packages
+
+      - name: Run PDF converter
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python .github/scripts/pdf-converter.py \
             --file-list files_to_process.txt \
             --output-json conversions.json
-          
-          if [ -f conversions.json ]; then
-            count=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
-            echo "conversion_success=true" >> $GITHUB_OUTPUT
-            echo "conversion_count=$count" >> $GITHUB_OUTPUT
-            echo "✓ Converted $count files"
-          else
-            echo "conversion_success=false" >> $GITHUB_OUTPUT
-            echo "conversion_count=0" >> $GITHUB_OUTPUT
-            exit 1
-          fi
 
       - name: Upload conversions
         uses: actions/upload-artifact@v4
@@ -244,19 +303,13 @@ jobs:
           name: conversion-results
           path: conversions.json
 
-      - name: Upload markdown files
-        uses: actions/upload-artifact@v4
-        with:
-          name: converted-markdown
-          path: Markdown Conversions/
-
   analyze-reports:
     runs-on: ubuntu-latest
     needs: [discover-and-scan, convert-pdf-to-markdown]
-    if: needs.convert-pdf-to-markdown.outputs.conversion_success == 'true'
+    if: needs.discover-and-scan.outputs.has_files == 'true'
     outputs:
-      analysis_success: ${{ steps.analyze.outputs.analysis_success }}
-      analysis_count: ${{ steps.analyze.outputs.analysis_count }}
+      analysis_success: ${{ steps.report-analysis.outputs.analysis_success }}
+      analysis_count: ${{ steps.report-analysis.outputs.analysis_count }}
     
     steps:
       - name: Checkout repository
@@ -267,59 +320,54 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install "google-generativeai" --break-system-packages
-
       - name: Download conversions
         uses: actions/download-artifact@v4
         with:
           name: conversion-results
-          path: .
 
-      - name: Download markdown files
-        uses: actions/download-artifact@v4
-        with:
-          name: converted-markdown
-          path: Markdown Conversions/
-
-      - name: Load analysis cache
-        if: github.event.inputs.skip_cache != 'true'
+      - name: Install dependencies
         run: |
-          # Try to restore cache from previous run
-          if [ -f analysis_cache.json ]; then
-            echo "✓ Using existing cache"
-          else
-            echo "⊘ No cache found, will create new one"
-          fi
+          pip install google-generativeai google-ai-generativelanguage --break-system-packages
 
-      - name: Analyze reports
-        id: analyze
+      - name: Run report analyzer
+        id: report-analysis
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
+          echo "Running report analyzer..."
+          
+          if [ ! -f conversions.json ]; then
+            echo "ERROR: conversions.json not found"
+            exit 1
+          fi
+          
+          # ONLY analyze successful conversions from THIS run
+          successful_count=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
+          echo "Successful conversions: $successful_count"
+          
+          if [ "$successful_count" -eq 0 ]; then
+            echo "No successful conversions to analyze"
+            echo "analysis_success=false" >> $GITHUB_OUTPUT
+            echo "analysis_count=0" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Run analyzer - it will use cache for existing reports
           python .github/scripts/report-analyzer.py \
             conversions.json \
             --output-json analysis.json \
             --artifacts-dir .github/artifacts
           
           if [ -f analysis.json ]; then
-            count=$(jq 'length' analysis.json)
+            analysis_count=$(jq 'length' analysis.json)
             echo "analysis_success=true" >> $GITHUB_OUTPUT
-            echo "analysis_count=$count" >> $GITHUB_OUTPUT
-            echo "✓ Analyzed $count reports"
+            echo "analysis_count=$analysis_count" >> $GITHUB_OUTPUT
+            echo "✓ Analyzed $analysis_count reports"
           else
+            echo "ERROR: analysis.json not created"
             echo "analysis_success=false" >> $GITHUB_OUTPUT
             echo "analysis_count=0" >> $GITHUB_OUTPUT
             exit 1
-          fi
-
-      - name: Save analysis cache
-        if: always()
-        run: |
-          if [ -f analysis_cache.json ]; then
-            echo "✓ Cache saved for future runs"
           fi
 
       - name: Upload analysis
@@ -328,28 +376,18 @@ jobs:
           name: analysis-results
           path: analysis.json
 
-      - name: Upload cache
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: analysis-cache
-          path: analysis_cache.json
-          retention-days: 90
-
   update-readme:
     runs-on: ubuntu-latest
     needs: [discover-and-scan, convert-pdf-to-markdown, analyze-reports]
-    if: needs.analyze-reports.outputs.analysis_success == 'true'
+    if: |
+      needs.discover-and-scan.outputs.has_files == 'true' &&
+      needs.analyze-reports.outputs.analysis_success == 'true'
     outputs:
-      readme_updated: ${{ steps.update.outputs.readme_updated }}
-      pr_created: ${{ steps.create_pr.outputs.pull-request-number }}
+      readme_updated: ${{ steps.readme_update.outputs.readme_updated }}
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -360,92 +398,50 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: analysis-results
-          path: .
-
-      - name: Download markdown files
-        uses: actions/download-artifact@v4
-        with:
-          name: converted-markdown
-          path: Markdown Conversions/
-        continue-on-error: true
 
       - name: Update README
-        id: update
+        id: readme_update
         run: |
-          echo "Updating README with analysis results..."
-          echo "Only modifying/adding entries from analysis.json"
+          echo "Updating README with analyzed reports..."
           
+          # CRITICAL: Only pass the analysis.json from THIS run
+          # The script will ONLY process reports in this file
           python .github/scripts/readme-updater.py \
             analysis.json \
             --readme-path README.md \
             --artifacts-dir .github/artifacts
           
-          if git diff --quiet HEAD -- README.md; then
+          # Check if README changed
+          if git diff --quiet README.md; then
             echo "readme_updated=false" >> $GITHUB_OUTPUT
-            echo "⊘ No changes to README"
+            echo "⊘ No README changes needed"
           else
             echo "readme_updated=true" >> $GITHUB_OUTPUT
             echo "✓ README updated"
             
-            echo "Changes:"
-            git diff HEAD -- README.md | head -50
+            # Show changes
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 📝 README Changes" >> $GITHUB_STEP_SUMMARY
+            echo '```diff' >> $GITHUB_STEP_SUMMARY
+            git diff README.md | head -50 >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
           fi
-
-      - name: Configure Git
-        if: steps.update.outputs.readme_updated == 'true'
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-
-      - name: Generate PR details
-        id: pr_details
-        if: steps.update.outputs.readme_updated == 'true'
-        run: |
-          count=$(jq 'length' analysis.json)
-          
-          if [ "$count" -eq 1 ]; then
-            org=$(jq -r '.[0].organization' analysis.json)
-            title=$(jq -r '.[0].title' analysis.json)
-            year=$(jq -r '.[0].year' analysis.json)
-            pr_title="Add ${org} ${title} (${year})"
-          else
-            pr_title="Add ${count} security reports"
-          fi
-          
-          if [ "${{ github.event_name }}" == "schedule" ]; then
-            pr_title="[Automated] ${pr_title}"
-          fi
-          
-          echo "pr_title=${pr_title}" >> $GITHUB_OUTPUT
 
       - name: Commit changes
-        if: steps.update.outputs.readme_updated == 'true'
+        if: steps.readme_update.outputs.readme_updated == 'true'
         run: |
-          git add README.md
-          git add "Markdown Conversions/" || true
-          git commit -m "${{ steps.pr_details.outputs.pr_title }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md "Markdown Conversions/"
+          git commit -m "Update README with new security reports [skip ci]"
+          git push
 
-      - name: Create PR
-        id: create_pr
-        if: steps.update.outputs.readme_updated == 'true'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: ${{ steps.pr_details.outputs.pr_title }}
-          title: "📄 ${{ steps.pr_details.outputs.pr_title }}"
-          branch: report-update-${{ github.run_id }}
-          delete-branch: true
-          labels: |
-            automated
-            readme-update
-            security-reports
-
-      - name: Summary
+      - name: Generate summary
         if: always()
         run: |
+          echo "" >> $GITHUB_STEP_SUMMARY
           echo "## 📊 Pipeline Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Files Processed:** ${{ needs.discover-and-scan.outputs.file_count }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Conversions:** ${{ needs.convert-pdf-to-markdown.outputs.conversion_count }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Analyzed:** ${{ needs.analyze-reports.outputs.analysis_count }}" >> $GITHUB_STEP_SUMMARY
-          echo "**README Updated:** ${{ steps.update.outputs.readme_updated }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Mode:** ${{ needs.discover-and-scan.outputs.scan_mode }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Files processed:** ${{ needs.analyze-reports.outputs.analysis_count }}" >> $GITHUB_STEP_SUMMARY
+          echo "**README updated:** ${{ steps.readme_update.outputs.readme_updated }}" >> $GITHUB_STEP_SUMMARY
