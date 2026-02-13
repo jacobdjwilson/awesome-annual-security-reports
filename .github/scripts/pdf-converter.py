@@ -12,7 +12,7 @@ from datetime import datetime
 # DEPENDENCY CHECKS
 # ==========================
 try:
-    from markitdown import all
+    from markitdown import MarkItDown
 except ImportError:
     print("ERROR: markitdown module required")
     print("Install: pip install markitdown")
