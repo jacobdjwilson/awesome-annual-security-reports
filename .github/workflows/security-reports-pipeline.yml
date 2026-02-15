@@ -69,6 +69,7 @@ jobs:
       files_to_process: ${{ steps.find-files.outputs.files_to_process }}
       has_files: ${{ steps.find-files.outputs.has_files }}
       scan_mode: ${{ steps.find-files.outputs.scan_mode }}
+      file_count: ${{ steps.find-files.outputs.file_count }}
     
     steps:
       - name: Checkout repository
@@ -81,6 +82,7 @@ jobs:
         run: |
           > files_to_process.txt
           > deleted_files.txt
+          > invalid_files.txt
           
           echo "======================================================================"
           echo "FILE DISCOVERY"
@@ -155,33 +157,40 @@ jobs:
             echo "Mode: Push"
             echo "scan_mode=push" >> $GITHUB_OUTPUT
             git diff --name-only HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
-            git diff --name-only --diff-filter=D HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
             
           else
             echo "Mode: Pull request"
             echo "scan_mode=pr" >> $GITHUB_OUTPUT
             git diff --name-only --diff-filter=AM origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
-            git diff --name-only --diff-filter=D origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > deleted_files.txt || true
           fi
           
-          # Validate files
+          # Validate files with detailed reasons
           if [ -s files_to_process.txt ]; then
             VALID_FILES=""
             
             while IFS= read -r FILE_PATH; do
+              REASON=""
+              
               if [ ! -f "$FILE_PATH" ]; then
+                REASON="File Not Found"
+                echo "$FILE_PATH|$REASON" >> invalid_files.txt
                 echo "⊘ Not found: $FILE_PATH"
                 continue
               fi
               
               FILE_SIZE=$(stat -c%s "$FILE_PATH")
               if [ "$FILE_SIZE" -gt 104857600 ]; then
-                echo "⊘ Too large: $FILE_PATH"
+                SIZE_MB=$((FILE_SIZE/1024/1024))
+                REASON="Size Limit Exceeded ($SIZE_MB MB > 100 MB)"
+                echo "$FILE_PATH|$REASON" >> invalid_files.txt
+                echo "⊘ Too large: $FILE_PATH ($SIZE_MB MB)"
                 continue
               fi
               
               MAGIC=$(head -c 4 "$FILE_PATH" || true)
               if [ "$MAGIC" != "%PDF" ]; then
+                REASON="Invalid PDF (Magic number: '$MAGIC')"
+                echo "$FILE_PATH|$REASON" >> invalid_files.txt
                 echo "⊘ Invalid PDF: $FILE_PATH"
                 continue
               fi
@@ -193,14 +202,39 @@ jobs:
             echo -e "$VALID_FILES" | sed '/^$/d' > files_to_process.txt
           fi
           
+          # Set outputs and generate summary
           if [ -s files_to_process.txt ]; then
             FILE_COUNT=$(wc -l < files_to_process.txt)
             echo "has_files=true" >> $GITHUB_OUTPUT
+            echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
             echo "files_to_process=$(cat files_to_process.txt | tr '\n' ',' | sed 's/,$//')" >> $GITHUB_OUTPUT
             echo "✓ $FILE_COUNT files to process"
+            
+            # Summary
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 📋 Files to Process" >> $GITHUB_STEP_SUMMARY
+            echo "**Count:** $FILE_COUNT" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            cat files_to_process.txt >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
           else
             echo "has_files=false" >> $GITHUB_OUTPUT
+            echo "file_count=0" >> $GITHUB_OUTPUT
             echo "⊘ No files to process"
+            
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### ⊘ No Files to Process" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          # Invalid files summary
+          if [ -s invalid_files.txt ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### ⚠️ Invalid Files Skipped" >> $GITHUB_STEP_SUMMARY
+            echo "| File | Reason |" >> $GITHUB_STEP_SUMMARY
+            echo "|------|--------|" >> $GITHUB_STEP_SUMMARY
+            while IFS='|' read -r file reason; do
+              echo "| \`$(basename "$file")\` | $reason |" >> $GITHUB_STEP_SUMMARY
+            done < invalid_files.txt
           fi
 
       - name: Upload file list
@@ -210,12 +244,16 @@ jobs:
           name: file-lists
           path: |
             files_to_process.txt
-            deleted_files.txt
+            invalid_files.txt
 
   convert-pdf-to-markdown:
     runs-on: ubuntu-latest
     needs: discover-and-scan
     if: needs.discover-and-scan.outputs.has_files == 'true'
+    outputs:
+      conversion_success: ${{ steps.converter.outputs.conversion_success }}
+      successful_count: ${{ steps.converter.outputs.successful_count }}
+      failed_count: ${{ steps.converter.outputs.failed_count }}
     
     steps:
       - name: Checkout repository
@@ -233,7 +271,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # Install system dependencies for markitdown
           sudo apt-get update
           sudo apt-get install -y \
             poppler-utils \
@@ -241,7 +278,6 @@ jobs:
             libtesseract-dev \
             libleptonica-dev
           
-          # Install Python packages
           pip install --break-system-packages \
             "markitdown[pdf,ocr]" \
             "pypdf[crypto]" \
@@ -251,6 +287,7 @@ jobs:
             pytesseract
 
       - name: Run PDF converter
+        id: converter
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
@@ -259,13 +296,38 @@ jobs:
             --output-json conversions.json \
             --artifacts-dir .github/artifacts
           
-          # Check for partial conversions
+          # Count results
+          SUCCESSFUL=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
+          FAILED=$(jq '[.[] | select(.status != "success")] | length' conversions.json)
           PARTIAL=$(jq '[.[] | select(.message | contains("partial"))] | length' conversions.json)
           
+          echo "conversion_success=true" >> $GITHUB_OUTPUT
+          echo "successful_count=$SUCCESSFUL" >> $GITHUB_OUTPUT
+          echo "failed_count=$FAILED" >> $GITHUB_OUTPUT
+          
+          # Summary
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📄 PDF Conversion Results" >> $GITHUB_STEP_SUMMARY
+          echo "| Status | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| ✅ Successful | $SUCCESSFUL |" >> $GITHUB_STEP_SUMMARY
+          echo "| ❌ Failed | $FAILED |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⚠️ Partial | $PARTIAL |" >> $GITHUB_STEP_SUMMARY
+          
+          # Detailed conversion list
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "<details><summary>📋 Conversion Details</summary>" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Organization | Status | Message |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------------|--------|---------|" >> $GITHUB_STEP_SUMMARY
+          jq -r '.[] | "| \(.organization_name) | \(.status) | \(.message) |"' conversions.json >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "</details>" >> $GITHUB_STEP_SUMMARY
+          
+          # Warnings for partial conversions
           if [ "$PARTIAL" -gt 0 ]; then
-            echo "⚠️ WARNING: $PARTIAL partial conversion(s)" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### Conversion Warnings" >> $GITHUB_STEP_SUMMARY
+            echo "### ⚠️ Conversion Warnings" >> $GITHUB_STEP_SUMMARY
             jq -r '.[] | select(.message | contains("partial")) | 
               "- **\(.organization_name)**: \(.message)"' conversions.json >> $GITHUB_STEP_SUMMARY
           fi
@@ -290,6 +352,7 @@ jobs:
     outputs:
       analysis_success: ${{ steps.report-analysis.outputs.analysis_success }}
       analysis_count: ${{ steps.report-analysis.outputs.analysis_count }}
+      ai_model: ${{ steps.report-analysis.outputs.ai_model }}
     
     steps:
       - name: Checkout repository
@@ -311,7 +374,47 @@ jobs:
           name: markdown-conversions
           path: Markdown Conversions/
 
+      - name: Pre-Analysis Verification
+        id: verify
+        run: |
+          echo "Verifying conversions.json..."
+          
+          # Check file exists
+          if [ ! -f conversions.json ]; then
+            echo "❌ ERROR: conversions.json not found"
+            exit 1
+          fi
+          
+          # Check file size
+          FILE_SIZE=$(stat -c%s conversions.json)
+          echo "File size: $FILE_SIZE bytes"
+          
+          if [ "$FILE_SIZE" -lt 10 ]; then
+            echo "❌ ERROR: conversions.json is too small ($FILE_SIZE bytes)"
+            exit 1
+          fi
+          
+          # Validate JSON
+          if ! jq empty conversions.json 2>/dev/null; then
+            echo "❌ ERROR: conversions.json is not valid JSON"
+            exit 1
+          fi
+          
+          # Check for successful conversions
+          SUCCESSFUL=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
+          echo "Successful conversions: $SUCCESSFUL"
+          
+          if [ "$SUCCESSFUL" -eq 0 ]; then
+            echo "⚠️ WARNING: No successful conversions to analyze"
+            echo "has_successful=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "has_successful=true" >> $GITHUB_OUTPUT
+          echo "✅ Pre-analysis verification passed"
+
       - name: Install dependencies
+        if: steps.verify.outputs.has_successful == 'true'
         run: |
           pip install --break-system-packages \
             google-generativeai \
@@ -319,25 +422,11 @@ jobs:
 
       - name: Run report analyzer
         id: report-analysis
+        if: steps.verify.outputs.has_successful == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           echo "Running report analyzer..."
-          
-          if [ ! -f conversions.json ]; then
-            echo "ERROR: conversions.json not found"
-            exit 1
-          fi
-          
-          successful_count=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
-          echo "Successful conversions: $successful_count"
-          
-          if [ "$successful_count" -eq 0 ]; then
-            echo "No successful conversions"
-            echo "analysis_success=false" >> $GITHUB_OUTPUT
-            echo "analysis_count=0" >> $GITHUB_OUTPUT
-            exit 0
-          fi
           
           python .github/scripts/report-analyzer.py \
             conversions.json \
@@ -345,18 +434,33 @@ jobs:
             --artifacts-dir .github/artifacts
           
           if [ -f analysis.json ]; then
-            analysis_count=$(jq 'length' analysis.json)
+            ANALYSIS_COUNT=$(jq 'length' analysis.json)
+            AI_MODEL=$(jq -r '.[0].ai_processed // "none"' analysis.json)
+            
             echo "analysis_success=true" >> $GITHUB_OUTPUT
-            echo "analysis_count=$analysis_count" >> $GITHUB_OUTPUT
-            echo "✓ Analyzed $analysis_count reports"
+            echo "analysis_count=$ANALYSIS_COUNT" >> $GITHUB_OUTPUT
+            echo "ai_model=gemini-3-flash-preview" >> $GITHUB_OUTPUT
+            
+            # Analysis preview
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 🤖 AI Analysis Results" >> $GITHUB_STEP_SUMMARY
+            echo "**Model Used:** gemini-3-flash-preview" >> $GITHUB_STEP_SUMMARY
+            echo "**Reports Analyzed:** $ANALYSIS_COUNT" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Organization | Title | Year | Category |" >> $GITHUB_STEP_SUMMARY
+            echo "|--------------|-------|------|----------|" >> $GITHUB_STEP_SUMMARY
+            jq -r '.[] | "| \(.organization) | \(.title) | \(.year) | \(.category) |"' analysis.json >> $GITHUB_STEP_SUMMARY
+            
+            echo "✓ Analyzed $ANALYSIS_COUNT reports"
           else
-            echo "ERROR: analysis.json not created"
+            echo "❌ ERROR: analysis.json not created"
             echo "analysis_success=false" >> $GITHUB_OUTPUT
             echo "analysis_count=0" >> $GITHUB_OUTPUT
             exit 1
           fi
 
       - name: Upload analysis
+        if: steps.verify.outputs.has_successful == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: analysis-results
@@ -371,6 +475,7 @@ jobs:
     outputs:
       readme_updated: ${{ steps.readme_update.outputs.readme_updated }}
       pr_number: ${{ steps.create_pr.outputs.pull-request-number }}
+      pr_title: ${{ steps.generate_pr_content.outputs.pr_title }}
     
     steps:
       - name: Checkout repository
@@ -397,10 +502,12 @@ jobs:
         run: |
           echo "Updating README..."
           
+          # Run with validation
           python .github/scripts/readme-updater.py \
             analysis.json \
             --readme-path README.md \
-            --artifacts-dir .github/artifacts
+            --artifacts-dir .github/artifacts \
+            --validate-toc
           
           # Check for changes
           if git diff --quiet README.md "Markdown Conversions/"; then
@@ -408,8 +515,62 @@ jobs:
             echo "⊘ No changes (entries already exist)"
           else
             echo "readme_updated=true" >> $GITHUB_OUTPUT
-            echo "✓ README updated"
+            
+            # Count changes
+            ADDED=$(git diff README.md | grep '^+' | grep -v '^+++' | wc -l)
+            REMOVED=$(git diff README.md | grep '^-' | grep -v '^---' | wc -l)
+            
+            echo "changes_added=$ADDED" >> $GITHUB_OUTPUT
+            echo "changes_removed=$REMOVED" >> $GITHUB_OUTPUT
+            echo "✓ README updated ($ADDED additions, $REMOVED deletions)"
           fi
+
+      - name: Generate PR content
+        id: generate_pr_content
+        if: steps.readme_update.outputs.readme_updated == 'true'
+        run: |
+          # Generate dynamic PR title
+          REPORT_COUNT=$(jq 'length' analysis.json)
+          
+          if [ "$REPORT_COUNT" -eq 1 ]; then
+            # Single report - use specific title
+            ORG=$(jq -r '.[0].organization' analysis.json)
+            TITLE=$(jq -r '.[0].title' analysis.json)
+            YEAR=$(jq -r '.[0].year' analysis.json)
+            PR_TITLE="Add $ORG $TITLE ($YEAR)"
+          else
+            # Multiple reports - use count
+            PR_TITLE="Update Security Reports - $REPORT_COUNT Report(s)"
+          fi
+          
+          echo "pr_title=$PR_TITLE" >> $GITHUB_OUTPUT
+          
+          # Generate detailed PR body
+          cat > pr_body.md << 'EOFPR'
+          ## 📊 Security Reports Update
+          
+          **Mode:** ${{ needs.discover-and-scan.outputs.scan_mode }}
+          **Reports Processed:** $(jq 'length' analysis.json)
+          **AI Model:** ${{ needs.analyze-reports.outputs.ai_model }}
+          
+          ### 📄 Reports Included
+          
+          EOFPR
+          
+          # Add report details
+          jq -r '.[] | "#### \(.organization) - \(.title) (\(.year))\n\n**Category:** \(.category)\n**Type:** \(.type)\n\n**Summary:** \(.summary)\n\n---\n"' analysis.json >> pr_body.md
+          
+          # Add statistics
+          cat >> pr_body.md << 'EOFPR'
+          
+          ### 📈 Statistics
+          
+          - **Conversions:** ${{ needs.convert-pdf-to-markdown.outputs.successful_count }} successful, ${{ needs.convert-pdf-to-markdown.outputs.failed_count }} failed
+          - **README Changes:** ${{ steps.readme_update.outputs.changes_added }} additions, ${{ steps.readme_update.outputs.changes_removed }} deletions
+          
+          ---
+          *Auto-generated by Security Reports Pipeline*
+          EOFPR
 
       - name: Create Pull Request
         id: create_pr
@@ -417,23 +578,9 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "📄 Update security reports"
-          title: "Update Security Reports - ${{ needs.analyze-reports.outputs.analysis_count }} Report(s)"
-          body: |
-            ## 📊 Security Reports Update
-            
-            **Processed:** ${{ needs.analyze-reports.outputs.analysis_count }} report(s)
-            **Mode:** ${{ needs.discover-and-scan.outputs.scan_mode }}
-            
-            ### Changes
-            - ✅ Updated markdown conversions
-            - ✅ Updated README with report entries
-            
-            ### Reports Included
-            See analysis artifact for details.
-            
-            ---
-            *Auto-generated by Security Reports Pipeline*
+          commit-message: "📄 ${{ steps.generate_pr_content.outputs.pr_title }}"
+          title: "${{ steps.generate_pr_content.outputs.pr_title }}"
+          body-path: pr_body.md
           branch: security-reports-update-${{ github.run_id }}
           delete-branch: true
           labels: |
@@ -443,26 +590,45 @@ jobs:
             README.md
             Markdown Conversions/
 
-      - name: Generate summary
-        if: always()
+  generate-summary:
+    runs-on: ubuntu-latest
+    needs: [discover-and-scan, convert-pdf-to-markdown, analyze-reports, update-readme]
+    if: always()
+    
+    steps:
+      - name: Generate comprehensive summary
         run: |
-          echo "## 📊 Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🎯 Pipeline Execution Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Run ID:** ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Triggered by:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "**Mode:** ${{ needs.discover-and-scan.outputs.scan_mode }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Files processed:** ${{ needs.analyze-reports.outputs.analysis_count }}" >> $GITHUB_STEP_SUMMARY
-          echo "**README updated:** ${{ steps.readme_update.outputs.readme_updated }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
-          if [ "${{ steps.readme_update.outputs.readme_updated }}" == "true" ]; then
-            if [ -n "${{ steps.create_pr.outputs.pull-request-number }}" ]; then
-              echo "### ✅ Pull Request Created" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-              echo "**PR #${{ steps.create_pr.outputs.pull-request-number }}**: Ready for review" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-              echo "[View Pull Request](https://github.com/${{ github.repository }}/pull/${{ steps.create_pr.outputs.pull-request-number }})" >> $GITHUB_STEP_SUMMARY
-            fi
-          else
+          # Job status table
+          echo "### 📊 Job Status" >> $GITHUB_STEP_SUMMARY
+          echo "| Job | Status | Details |" >> $GITHUB_STEP_SUMMARY
+          echo "|-----|--------|---------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Discovery | ${{ needs.discover-and-scan.result }} | ${{ needs.discover-and-scan.outputs.file_count }} files found |" >> $GITHUB_STEP_SUMMARY
+          echo "| Conversion | ${{ needs.convert-pdf-to-markdown.result }} | ${{ needs.convert-pdf-to-markdown.outputs.successful_count }} successful |" >> $GITHUB_STEP_SUMMARY
+          echo "| Analysis | ${{ needs.analyze-reports.result }} | ${{ needs.analyze-reports.outputs.analysis_count }} analyzed |" >> $GITHUB_STEP_SUMMARY
+          echo "| README Update | ${{ needs.update-readme.result }} | Updated: ${{ needs.update-readme.outputs.readme_updated }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # PR link if created
+          if [ -n "${{ needs.update-readme.outputs.pr_number }}" ]; then
+            echo "### ✅ Pull Request Created" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Title:** ${{ needs.update-readme.outputs.pr_title }}" >> $GITHUB_STEP_SUMMARY
+            echo "**PR #${{ needs.update-readme.outputs.pr_number }}**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[📋 View Pull Request](https://github.com/${{ github.repository }}/pull/${{ needs.update-readme.outputs.pr_number }})" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.update-readme.outputs.readme_updated }}" == "false" ]; then
             echo "### ℹ️ No Updates Needed" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "All processed reports already exist in README with current year." >> $GITHUB_STEP_SUMMARY
           fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Pipeline completed at $(date -u +'%Y-%m-%d %H:%M:%S UTC')*" >> $GITHUB_STEP_SUMMARY
