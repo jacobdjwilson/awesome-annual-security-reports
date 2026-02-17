@@ -391,54 +391,6 @@ class ReadmeUpdater:
         print(f"✓ README saved")
 
 # ==========================
-# TOC VALIDATOR
-# ==========================
-def validate_table_of_contents(readme_path: str) -> bool:
-    """Validate that Table of Contents links match actual section headers."""
-    try:
-        with open(readme_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        # Extract TOC links: [Text](#anchor)
-        toc_pattern = r'\[([^\]]+)\]\(#([^\)]+)\)'
-        toc_links = re.findall(toc_pattern, content)
-        
-        # Extract actual section headers: ## Header or ### Header
-        header_pattern = r'^#{2,3}\s+(.+)$'
-        headers = re.findall(header_pattern, content, re.MULTILINE)
-        
-        # Convert header text to anchor format (GitHub style)
-        def to_anchor(text):
-            anchor = text.lower()
-            anchor = re.sub(r'[^\w\s-]', '', anchor)
-            anchor = re.sub(r'\s+', '-', anchor)
-            anchor = re.sub(r'-+', '-', anchor)
-            return anchor.strip('-')
-        
-        # Build set of valid anchors
-        header_anchors = {to_anchor(h): h for h in headers}
-        
-        # Validate each TOC link
-        missing = []
-        for link_text, link_anchor in toc_links:
-            if link_anchor not in header_anchors:
-                missing.append(f"TOC link '{link_text}' → #{link_anchor}")
-        
-        if missing:
-            print("\n⚠️ TOC Validation Warnings:")
-            for m in missing:
-                print(f"  - {m}")
-            return False
-        
-        print(f"\n✅ TOC validation passed ({len(toc_links)} links verified)")
-        return True
-        
-    except Exception as e:
-        print(f"\n⚠️ TOC validation error: {str(e)}")
-        return False
-
-
-# ==========================
 # MAIN
 # ==========================
 def main():
@@ -446,8 +398,8 @@ def main():
     parser.add_argument("analysis_json")
     parser.add_argument("--readme-path", default="README.md")
     parser.add_argument("--artifacts-dir", default=".github/artifacts")
-    parser.add_argument("--validate-toc", action="store_true", 
-                        help="Validate Table of Contents after update")
+    parser.add_argument("--validate-toc", action="store_true",
+                        help="Validate Table of Contents after updates")
     args = parser.parse_args()
     
     print(f"\n{'='*70}")
@@ -515,11 +467,70 @@ def main():
         
         # Validate TOC if requested
         if args.validate_toc:
+            print("\nValidating Table of Contents...")
             validate_table_of_contents(args.readme_path)
     else:
         print("\n⊘ No changes needed")
     
     return 0 if changes else 1
+
+
+def validate_table_of_contents(readme_path: str) -> bool:
+    """
+    Validate that Table of Contents links match actual section headers.
+    
+    Args:
+        readme_path: Path to README.md file
+        
+    Returns:
+        True if validation passes, False otherwise
+    """
+    try:
+        with open(readme_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Extract TOC links: [Text](#anchor)
+        toc_pattern = r'\[([^\]]+)\]\(#([^\)]+)\)'
+        toc_links = re.findall(toc_pattern, content)
+        
+        # Extract actual section headers: ## Header or ### Header
+        header_pattern = r'^#{2,3}\s+(.+)$'
+        headers = re.findall(header_pattern, content, re.MULTILINE)
+        
+        # Convert header text to anchor format (GitHub style)
+        def to_anchor(text):
+            # Remove special chars, lowercase, replace spaces with hyphens
+            anchor = text.lower()
+            # Remove everything except alphanumeric, spaces, hyphens
+            anchor = re.sub(r'[^\w\s-]', '', anchor)
+            # Replace spaces with hyphens
+            anchor = re.sub(r'\s+', '-', anchor)
+            # Remove multiple consecutive hyphens
+            anchor = re.sub(r'-+', '-', anchor)
+            return anchor.strip('-')
+        
+        # Build set of valid anchors
+        header_anchors = {to_anchor(h): h for h in headers}
+        
+        # Validate each TOC link
+        missing = []
+        for link_text, link_anchor in toc_links:
+            if link_anchor not in header_anchors:
+                missing.append(f"TOC link '{link_text}' → #{link_anchor} (no matching header)")
+        
+        if missing:
+            print("❌ TOC Validation Failed:")
+            for m in missing:
+                print(f"  - {m}")
+            return False
+        
+        print(f"✅ TOC validation passed ({len(toc_links)} links verified)")
+        return True
+        
+    except Exception as e:
+        print(f"⚠️ TOC validation error: {str(e)}")
+        return False
+
 
 if __name__ == "__main__":
     sys.exit(main())
