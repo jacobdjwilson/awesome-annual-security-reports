@@ -1,0 +1,50 @@
+{
+  "workflow": {
+    "discovery": {
+      "use_pipeline_config": true,
+      "config_path": "pipeline-config.json",
+      "config_keys": {
+        "max_file_size_mb": "validation.max_file_size_mb",
+        "default_limit": "refresh_old_conversions.limit",
+        "pdf_magic_number": "validation.magic_number"
+      }
+    },
+    "conversion": {
+      "system_packages": [
+        "poppler-utils",
+        "tesseract-ocr",
+        "libtesseract-dev",
+        "libleptonica-dev"
+      ],
+      "python_packages": [
+        "markitdown[pdf,ocr]",
+        "pypdf[crypto]",
+        "google-generativeai",
+        "google-ai-generativelanguage",
+        "Pillow",
+        "pytesseract"
+      ]
+    },
+    "pull_request": {
+      "branch_prefix": "security-reports-update-",
+      "labels": [
+        "automated",
+        "security-reports"
+      ],
+      "delete_branch": true,
+      "single_report_title_template": "Add {organization} {title} ({year})",
+      "multiple_report_title_template": "Update Security Reports - {count} Report(s)"
+    },
+    "validation": {
+      "use_pipeline_config": true,
+      "config_path": "pipeline-config.json",
+      "min_json_size_bytes": 10,
+      "validate_toc": true,
+      "verify_conversions": true
+    },
+    "artifacts": {
+      "use_artifacts_config": true,
+      "config_path": "artifacts-config.json"
+    }
+  }
+}
