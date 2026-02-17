@@ -1,0 +1,40 @@
+{
+  "workflow": {
+    "discovery": {
+      "max_file_size_mb": 100,
+      "default_limit": 10,
+      "pdf_magic_number": "%PDF"
+    },
+    "conversion": {
+      "system_packages": [
+        "poppler-utils",
+        "tesseract-ocr",
+        "libtesseract-dev",
+        "libleptonica-dev"
+      ],
+      "python_packages": [
+        "markitdown[pdf,ocr]",
+        "pypdf[crypto]",
+        "google-generativeai",
+        "google-ai-generativelanguage",
+        "Pillow",
+        "pytesseract"
+      ]
+    },
+    "pull_request": {
+      "branch_prefix": "security-reports-update-",
+      "labels": [
+        "automated",
+        "security-reports"
+      ],
+      "delete_branch": true,
+      "single_report_title_template": "Add {organization} {title} ({year})",
+      "multiple_report_title_template": "Update Security Reports - {count} Report(s)"
+    },
+    "validation": {
+      "min_json_size_bytes": 10,
+      "validate_toc": true,
+      "verify_conversions": true
+    }
+  }
+}

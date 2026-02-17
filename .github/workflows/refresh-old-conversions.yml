@@ -2,9 +2,21 @@ name: Refresh Old Conversions
 
 on:
   schedule:
-    # Run every day at 6:00 AM ET (11:00 UTC)
-    - cron: '0 11 * * *'
+    - cron: '0 11 * * *'  # 6:00 AM ET daily
+  
   workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Number of files to refresh (default: 10)'
+        required: false
+        default: '10'
+        type: string
+      
+      days_old:
+        description: 'Minimum age in days (default: 90)'
+        required: false
+        default: '90'
+        type: string
 
 permissions:
   contents: write
@@ -16,43 +28,61 @@ jobs:
     outputs:
       has_files: ${{ steps.check-files.outputs.has_files }}
       file_count: ${{ steps.check-files.outputs.file_count }}
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Check for existing Refresh PR
+      - name: Check for existing PR
         id: check-pr
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Checking for existing open Sync/Refresh PRs..."
-          # Search for open PRs with the specific title pattern and maintenance label
-          PR_COUNT=$(gh pr list --state open --label "maintenance" --search "Sync/Refresh in:title" --json number -q length)
+          echo "Checking for existing refresh PRs..."
+          
+          PR_COUNT=$(gh pr list \
+            --state open \
+            --label "maintenance" \
+            --search "Refresh in:title" \
+            --json number \
+            -q length)
           
           if [ "$PR_COUNT" -gt 0 ]; then
-            echo "⚠️ An open Sync/Refresh PR already exists. Skipping workflow."
-            echo "pr_exists=true" >> "$GITHUB_OUTPUT"
+            echo "⊘ Existing refresh PR found, skipping"
+            echo "pr_exists=true" >> $GITHUB_OUTPUT
           else
-            echo "No existing PR found. Proceeding."
-            echo "pr_exists=false" >> "$GITHUB_OUTPUT"
+            echo "✓ No existing PR"
+            echo "pr_exists=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Find stale or missing files
+      - name: Find stale files
         id: check-files
         if: steps.check-pr.outputs.pr_exists != 'true'
         run: |
           MD_ROOT="Markdown Conversions"
           PDF_ROOT="Annual Security Reports"
-          LIMIT=10
-          DAYS_OLD=90
+          
+          LIMIT="${{ github.event.inputs.limit }}"
+          DAYS_OLD="${{ github.event.inputs.days_old }}"
+          
+          if [ -z "$LIMIT" ]; then
+            LIMIT=10
+          fi
+          if [ -z "$DAYS_OLD" ]; then
+            DAYS_OLD=90
+          fi
+          
           THRESHOLD=$(date -d "$DAYS_OLD days ago" +%s)
           
-          echo "Scanning for missing or stale conversions..."
+          echo "Finding stale/missing conversions..."
+          echo "  Limit: $LIMIT files"
+          echo "  Min age: $DAYS_OLD days"
+          
           > candidates.txt
-
-          # 1. Batch find MISSING conversions (PDF exists, MD does not)
+          
+          # Find missing conversions
           find "$PDF_ROOT" -name "*.pdf" | while read -r pdf; do
             rel_path="${pdf#$PDF_ROOT/}"
             md_path="$MD_ROOT/${rel_path%.pdf}.md"
@@ -60,35 +90,40 @@ jobs:
               echo "0 $pdf" >> candidates.txt
             fi
           done
-
-          # 2. Batch find STALE conversions using Git
-          git ls-files -z "$MD_ROOT" | xargs -0 -I {} git log -1 --format="%ct {}" -- {} >> all_timestamps.txt || true
           
-          while read -r timestamp file; do
-            if [ "$timestamp" -lt "$THRESHOLD" ]; then
-              rel_path="${file#$MD_ROOT/}"
-              pdf_path="$PDF_ROOT/${rel_path%.md}.pdf"
-              if [ -f "$pdf_path" ]; then
-                echo "$timestamp $pdf_path" >> candidates.txt
+          # Find stale conversions
+          git ls-files -z "$MD_ROOT" | \
+            xargs -0 -I {} git log -1 --format="%ct {}" -- {} | \
+            while read -r timestamp file; do
+              if [ "$timestamp" -lt "$THRESHOLD" ]; then
+                rel_path="${file#$MD_ROOT/}"
+                pdf_path="$PDF_ROOT/${rel_path%.md}.pdf"
+                if [ -f "$pdf_path" ]; then
+                  echo "$timestamp $pdf_path" >> candidates.txt
+                fi
               fi
-            fi
-          done < all_timestamps.txt
-
-          # 3. Sort, Limit, and Format Output
-          sort -k1,1n candidates.txt | cut -d' ' -f2- | head -n $LIMIT > files_to_process.txt
-
+            done
+          
+          # Sort and limit
+          sort -k1,1n candidates.txt | \
+            cut -d' ' -f2- | \
+            head -n "$LIMIT" > files_to_process.txt
+          
           if [ -s files_to_process.txt ]; then
             COUNT=$(wc -l < files_to_process.txt)
-            echo "has_files=true" >> "$GITHUB_OUTPUT"
-            echo "file_count=$COUNT" >> "$GITHUB_OUTPUT"
-            echo "Selected $COUNT files for processing."
+            echo "has_files=true" >> $GITHUB_OUTPUT
+            echo "file_count=$COUNT" >> $GITHUB_OUTPUT
+            echo "✓ Found $COUNT files"
           else
-            echo "has_files=false" >> "$GITHUB_OUTPUT"
-            echo "file_count=0" >> "$GITHUB_OUTPUT"
+            echo "has_files=false" >> $GITHUB_OUTPUT
+            echo "file_count=0" >> $GITHUB_OUTPUT
+            echo "⊘ No stale files"
           fi
 
       - name: Upload file list
-        if: steps.check-pr.outputs.pr_exists != 'true' && steps.check-files.outputs.has_files == 'true'
+        if: |
+          steps.check-pr.outputs.pr_exists != 'true' &&
+          steps.check-files.outputs.has_files == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: files-to-process
@@ -99,73 +134,85 @@ jobs:
     needs: identify-stale-files
     if: needs.identify-stale-files.outputs.has_files == 'true'
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y tesseract-ocr
-          python -m pip install --upgrade pip
-          pip install markitdown[pdf,ocr] google-generativeai google-api-python-client requests
+          pip install --break-system-packages \
+            markitdown \
+            "pypdf[crypto]" \
+            google-generativeai \
+            google-ai-generativelanguage
 
       - name: Download file list
         uses: actions/download-artifact@v4
         with:
           name: files-to-process
-          path: .
 
-      - name: Re-run PDF Converter
+      - name: Run PDF converter
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
-          PROMPT_PATH=".github/ai-prompts/pdf-to-markdown-prompt.md"
-          python .github/scripts/pdf-converter.py files_to_process.txt "$PROMPT_PATH" "refresh-job" "${{ github.ref_name }}" --output-json conversions.json
+          python .github/scripts/pdf-converter.py \
+            --file-list files_to_process.txt \
+            --output-json conversions.json \
+            --artifacts-dir .github/artifacts
 
-      - name: Re-run Report Analyzer
+      - name: Run report analyzer
+        if: success()
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           if [ -f conversions.json ]; then
-            python .github/scripts/report-analyzer.py conversions.json --readme-path README.md --output-json analysis.json
+            python .github/scripts/report-analyzer.py \
+              conversions.json \
+              --output-json analysis.json \
+              --artifacts-dir .github/artifacts
           fi
 
       - name: Update README
         id: readme_update
+        if: success()
         run: |
           if [ -f analysis.json ]; then
-            if python .github/scripts/readme-updater.py analysis.json --readme-path README.md; then
-              if git diff --quiet HEAD -- README.md "Markdown Conversions/"; then
-                echo "changes_detected=false" >> $GITHUB_OUTPUT
-              else
-                echo "changes_detected=true" >> $GITHUB_OUTPUT
-              fi
+            python .github/scripts/readme-updater.py \
+              analysis.json \
+              --readme-path README.md \
+              --artifacts-dir .github/artifacts
+            
+            if git diff --quiet HEAD -- README.md "Markdown Conversions/"; then
+              echo "changes_detected=false" >> $GITHUB_OUTPUT
+            else
+              echo "changes_detected=true" >> $GITHUB_OUTPUT
             fi
           fi
 
-      - name: Create Pull Request
+      - name: Create PR
         if: steps.readme_update.outputs.changes_detected == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "♻️ Refresh stale and missing security reports"
-          title: "♻️ Sync/Refresh ${{ needs.identify-stale-files.outputs.file_count }} security reports"
+          commit-message: "♻️ Refresh ${{ needs.identify-stale-files.outputs.file_count }} stale conversions"
+          title: "♻️ Refresh ${{ needs.identify-stale-files.outputs.file_count }} Security Reports"
           body: |
-            ### Automated Report Sync
+            ## Automated Report Refresh
             
-            This workflow identified reports that were either:
-            1. **Missing**: PDF exists but no Markdown version was found.
-            2. **Stale**: Markdown version is older than 90 days.
+            Refreshed ${{ needs.identify-stale-files.outputs.file_count }} reports that were either:
+            - Missing markdown conversions
+            - Older than 90 days
+            
+            ---
+            *Auto-generated by Refresh Old Conversions workflow*
           branch: refresh-reports-${{ github.run_id }}
           delete-branch: true
           add-paths: |

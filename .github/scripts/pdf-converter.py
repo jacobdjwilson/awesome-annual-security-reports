@@ -1,433 +1,356 @@
 import os
 import sys
 import re
-import google.generativeai as genai
-from google.api_core import exceptions
-from pathlib import Path
-from googleapiclient.discovery import build
-from markitdown import MarkItDown
-import argparse
 import json
-from typing import List, Dict, Any, Optional
-import time
+import hashlib
+import argparse
+from pathlib import Path
+from typing import List, Dict, Any, Optional, Tuple
+from datetime import datetime
 
-# Configure Gemini API
-MODELS = ["gemini-2.5-flash-live", "gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-3-flash-preview"]
-MODEL = None
+# Dependency checks
+try:
+    from markitdown import MarkItDown
+except ImportError:
+    print("ERROR: markitdown required. Install: pip install markitdown")
+    sys.exit(1)
 
-def setup_gemini(api_key: str):
-    global MODEL
-    genai.configure(api_key=api_key)
-    for model_name in MODELS:
-        try:
-            test_model = genai.GenerativeModel(model_name)
-            response = test_model.count_tokens("Hello")
-            if response.total_tokens is not None:
-                MODEL = model_name
-                print(f"Successfully verified model: {MODEL}")
-                break   
-        except exceptions.GoogleAPICallError as e:
-            print(f"Model {model_name} API error: {e}")
-            continue
-        except ValueError as e:
-            print(f"Model {model_name} configuration error: {e}")
-            continue
-    if not MODEL:
-        print("ERROR: No models available. Check API key and quota.")
-        return False
-    return True
-
-def read_prompt_file(path: str) -> str:
+try:
+    from google import genai
+    from google.genai import types
+    USE_NEW_SDK = True
+except ImportError:
     try:
-        with open(path, "r", encoding="utf-8") as file:
-            content = file.read().strip()
-            if not content:
-                raise ValueError(f"Prompt file {path} is empty")
-            return content
-    except FileNotFoundError:
-        print(f"ERROR: Prompt file not found: {path}")
-        raise
-    except Exception as e:
-        print(f"ERROR: Failed to read prompt file {path}: {str(e)}")
-        raise
+        import google.generativeai as genai
+        USE_NEW_SDK = False
+    except ImportError:
+        print("ERROR: google-generativeai required")
+        sys.exit(1)
 
-def extract_text_from_pdf(pdf_path: Path, min_text_length: int = 100) -> str:
-    """
-    Extracts text from a PDF, attempting standard conversion first and
-    falling back to OCR if the initial attempt yields insufficient content.
-    """
-    try:
-        print(f"Extracting text from PDF: {pdf_path}")
-        if not pdf_path.exists():
-            raise FileNotFoundError(f"PDF file not found: {pdf_path}")
-
-        file_size = pdf_path.stat().st_size
-        print(f"PDF file size: {file_size / (1024*1024):.2f} MB")
-
-        md = MarkItDown(enable_plugins=False)
-
-        # --- 1. Attempt standard conversion ---
-        print("Attempting standard text extraction...")
-        result = md.convert(str(pdf_path))
-        text_content = result.text_content if result else ""
-        text_length = len(text_content)
-
-        # --- 2. Check for failure and fallback to OCR ---
-        if text_length < min_text_length:
-            print(f"WARNING: Standard extraction yielded only {text_length} characters. Falling back to OCR.")
-            ocr_result = md.convert(str(pdf_path), ocr=True)
-            text_content = ocr_result.text_content if ocr_result else ""
-            text_length = len(text_content)
-
-        # --- 3. Final validation ---
-        if text_length < min_text_length:
-            raise ValueError(f"Both standard and OCR extraction failed. Only got {text_length} characters.")
-
-        print(f"Successfully extracted {text_length} characters from PDF.")
-        return text_content
-    except Exception as e:
-        print(f"ERROR: Failed to extract text from PDF {pdf_path}: {str(e)}")
-        raise
-
-def parse_filename_to_org_and_title(filename_stem: str) -> tuple[str, str]:
-    """Parse filename to extract organization and title"""
-    print(f"Parsing filename: {filename_stem}")
-    
-    # Special handling for known patterns
-    filename_lower = filename_stem.lower()
-    
-    # General parsing - try different separators
-    separators = [' - ', '_-_', '--', '_', '-'] # Added single hyphen
-    for sep in separators:
-        if sep in filename_stem:
-            parts = filename_stem.split(sep, 1)
-            if len(parts) == 2:
-                org_part = parts[0].strip()
-                title_part = parts[1].strip()
-                
-                # Clean organization name
-                org_name = org_part.replace('_', ' ').replace('-', ' ')
-                org_name = ' '.join(word.capitalize() for word in org_name.split())
-                
-                # Clean title
-                title = title_part.replace('_', ' ').replace('-', ' ')
-                title = ' '.join(word.capitalize() for word in title.split())
-                
-                # Remove year from title if present
-                title = re.sub(r'\s*20\d{2}\s*', '', title).strip()
-
-                # Sanity check to prevent org and title from being the same on a bad split
-                if org_name.lower() == title.lower():
-                    print(f"Parsing with '{sep}' resulted in identical org and title. Skipping.")
-                    continue
-                
-                # Apply organization name mappings
-                org_mapping = {
-                    'Ai': 'AI',
-                    'Cyberark': 'CyberArk',
-                    'Sailpoint': 'SailPoint',
-                    'Crowdstrike': 'CrowdStrike',
-                    'Palo Alto': 'Palo Alto Networks',
-                }
-                
-                for old_name, new_name in org_mapping.items():
-                    if org_name.lower() == old_name.lower():
-                        org_name = new_name
-                        break
-
-                # Apply title name mappings
-                title_mapping = {
-                    'Ai': 'AI',
-                    'Api': 'API',
-                    'Id': 'ID',
-                    'Dns': 'DNS',
-                    'Dos': 'DoS',
-                    'Ddos': 'DDoS',
-                    'Cve': 'CVE',
-                }
-
-                for old_title, new_title in title_mapping.items():
-                    # Use regex to replace whole words, case-insensitively
-                    title = re.sub(r'\b' + re.escape(old_title) + r'\b', new_title, title, flags=re.IGNORECASE)
-                
-                print(f"Parsed with separator '{sep}': Org='{org_name}', Title='{title}'")
-                return org_name, title
-    
-    # Fallback: try to extract from the beginning
-    words = filename_stem.replace('_', ' ').replace('-', ' ').split()
-    if words:
-        org_name = words[0].capitalize()
-        if len(words) > 1:
-            title = ' '.join(word.capitalize() for word in words[1:])
-            # Remove year if present
-            title = re.sub(r'\s*20\d{2}\s*', '', title).strip()
-        else:
-            title = "Security Report"
+# Configuration Loader
+class ConfigLoader:
+    def __init__(self, artifacts_dir: str = ".github/artifacts"):
+        self.artifacts_dir = Path(artifacts_dir)
         
-        print(f"Fallback parsing: Org='{org_name}', Title='{title}'")
-        return org_name, title
+        self.ai_config = self._load_json("ai-models.json")
+        self.pipeline_config = self._load_json("pipeline-config.json")
+        
+        if not self.ai_config:
+            raise ValueError("ai-models.json is REQUIRED")
+        if not self.pipeline_config:
+            raise ValueError("pipeline-config.json is REQUIRED")
+        
+        self.models = self.ai_config.get("models", {}).get("priority_list", [])
+        if not self.models:
+            raise ValueError("No models in ai-models.json")
+        
+        self.gen_config = self.ai_config.get("configurations", {}).get("default", {})
+        
+        proc_config = self.pipeline_config.get("processing", {})
+        self.max_pdf_chars = proc_config.get("max_pdf_chars", 1000000)
+        self.min_text_length = proc_config.get("min_text_length", 100)
+        
+        self.org_mappings = self.pipeline_config.get("organization_mappings", {})
+        self.title_mappings = self.pipeline_config.get("title_mappings", {})
+        
+        prompts = self.pipeline_config.get("prompts", {})
+        self.pdf_prompt_path = prompts.get("pdf_to_markdown")
     
-    # Ultimate fallback
-    return "Unknown Organization", "Security Report"
-
-def get_organization_url(org_name: str, title: str, year: str) -> Optional[str]:
-    """
-    Performs an optimized Google search and returns the best URL.
-    """
-    api_key = os.environ.get("GOOGLE_SEARCH_API_KEY")
-    cse_id = os.environ.get("GOOGLE_CSE_ID")
-
-    if not api_key or not cse_id:
-        print("Warning: GOOGLE_SEARCH_API_KEY or GOOGLE_CSE_ID not set. Skipping URL search.")
-        return None
-
-    # Use a less restrictive query without quotes for more flexible matching
-    query = f'{org_name} {title} {year}'
-    print(f"Performing Google Custom Search with query: {query}")
-
-    try:
-        service = build("customsearch", "v1", developerKey=api_key)
-        res = service.cse().list(q=query, cx=cse_id, num=5).execute()
-
-        items = res.get('items', [])
-        if not items:
-            print("No results found from Google Custom Search.")
+    def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
+        path = self.artifacts_dir / filename
+        if not path.exists():
+            return None
+        try:
+            with open(path, 'r') as f:
+                return json.load(f)
+        except:
             return None
 
-        # --- Simplified Result Prioritization ---
-        org_lower = org_name.lower()
-        title_keywords = {word for word in re.findall(r'\b\w{4,}\b', title.lower())}
-        results_urls = [item['link'] for item in items]
-
-        # 1. High priority: URL contains org name and at least one significant title keyword
-        for url in results_urls:
-            url_lower = url.lower()
-            if org_lower in url_lower and any(keyword in url_lower for keyword in title_keywords):
-                print(f"Found high-priority match (org + title keyword): {url}")
-                return url
-
-        # 2. Medium priority: URL contains just the org name
-        for url in results_urls:
-            if org_lower in url.lower():
-                print(f"Found medium-priority match (org name only): {url}")
-                return url
-
-        # 3. Fallback: Return the first result
-        print(f"No specific match found, returning the first result: {results_urls[0]}")
-        return results_urls[0]
-
-    except Exception as e:
-        print(f"An error occurred during Google search for query '{query}': {e}")
-        # Return a fallback search URL instead of None to prevent downstream failures
-        fallback_url = f"https://www.google.com/search?q={org_name.replace(' ', '+')}+{title.replace(' ', '+')}"
-        print(f"Using fallback search URL: {fallback_url}")
-        return fallback_url
-
-def generate_markdown_with_ai(pdf_text: str, prompt_text: str, organization_url: Optional[str]) -> str:
-    if not MODEL:
-        raise ValueError("No available Gemini model.")
+# Conversion Cache
+class ConversionCache:
+    def __init__(self, cache_file: str = "conversion_cache.json"):
+        self.cache_file = Path(cache_file)
+        self.cache = self._load()
+        self.hits = 0
+        self.misses = 0
     
-    try:
-        print(f"Generating markdown with {MODEL}...")
-        model = genai.GenerativeModel(MODEL)
-        
-        # Truncate PDF text if too long
-        max_pdf_chars = 1000000
-        if len(pdf_text) > max_pdf_chars:
-            print(f"Truncating PDF text from {len(pdf_text)} to {max_pdf_chars} characters")
-            pdf_text = pdf_text[:max_pdf_chars] + "\n\n[Content truncated due to length...]"
-        
-        full_prompt = f"{prompt_text}\n\n"
-        if organization_url:
-            full_prompt += f"The official report URL is: {organization_url}\n\n"
-        full_prompt += f"# Report Content Below\n\n{pdf_text}"
-        
-        generation_config = {
-            "temperature": 0.1,
-            "max_output_tokens": 8192,
-            "top_p": 0.95,
-            "top_k": 40
-        }
-        
-        safety_settings = [
-            {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_ONLY_HIGH"},
-            {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_ONLY_HIGH"},
-            {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_ONLY_HIGH"},
-            {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_ONLY_HIGH"},
-        ]
-        
-        request_options = {"timeout": 120} # Add a 2-minute timeout
-        response = model.generate_content(
-            full_prompt, 
-            generation_config=generation_config,
-            safety_settings=safety_settings,
-            request_options=request_options
-        )
-
-        if response.prompt_feedback and hasattr(response.prompt_feedback, 'block_reason') and response.prompt_feedback.block_reason:
-            raise ValueError(f"Request blocked: {response.prompt_feedback.block_reason}")
-
-        if response.candidates:
-            for candidate in response.candidates:
-                if candidate.finish_reason in ["SAFETY", "RECITATION"]:
-                    raise ValueError(f"Content generation blocked: {candidate.finish_reason}")
-        
-        if not response.text:
-            raise ValueError("The response did not contain valid text content.")
-
-        generated_text = response.text.strip()
-        if len(generated_text) < 100:
-            raise ValueError("Generated markdown content is too short")
-
-        print(f"Successfully generated markdown ({len(generated_text)} characters)")
-        return generated_text
-        
-    except Exception as e:
-        print(f"ERROR: Failed to generate markdown: {str(e)}")
-        raise
-
-def process_pdf(pdf_path: Path, prompt_path: str, prompt_version: str, branch: str) -> Dict[str, Any]:
-    result_base = {
-        "pdf_path": str(pdf_path),
-        "model_used": MODEL,
-        "prompt_version": prompt_version,
-        "branch": branch
-    }
+    def _load(self) -> Dict[str, Any]:
+        if self.cache_file.exists():
+            try:
+                with open(self.cache_file, 'r') as f:
+                    return json.load(f)
+            except:
+                return {}
+        return {}
     
-    try:
-        print(f"Processing: {pdf_path}")
-        prompt_text = read_prompt_file(prompt_path)
-        print(f"Loaded prompt file ({len(prompt_text)} characters)")
-        
-        pdf_text = extract_text_from_pdf(pdf_path)
-        
-        filename_stem = pdf_path.stem
-        organization_name, report_title = parse_filename_to_org_and_title(filename_stem)
-        
-        print(f"Final parsed result: Organization='{organization_name}', Title='{report_title}'")
+    def _save(self):
+        try:
+            with open(self.cache_file, 'w') as f:
+                json.dump(self.cache, f, indent=2)
+        except:
+            pass
+    
+    def _hash(self, pdf_path: str) -> str:
+        stat = Path(pdf_path).stat()
+        key = f"{pdf_path}:{stat.st_size}:{stat.st_mtime}"
+        return hashlib.md5(key.encode()).hexdigest()
+    
+    def get(self, pdf_path: str) -> Optional[str]:
+        cache_key = self._hash(pdf_path)
+        if cache_key in self.cache:
+            self.hits += 1
+            return self.cache[cache_key]
+        self.misses += 1
+        return None
+    
+    def set(self, pdf_path: str, md_path: str):
+        cache_key = self._hash(pdf_path)
+        self.cache[cache_key] = md_path
+        self._save()
 
-        # Extract year from path
-        year = "Unknown"
-        for part in pdf_path.parts:
-            if part.isdigit() and len(part) == 4 and part.startswith("20"):
-                year = part
-                break
+# AI Setup
+def setup_gemini(api_key: str, config: ConfigLoader) -> Tuple[bool, Optional[str]]:
+    if USE_NEW_SDK:
+        client = genai.Client(api_key=api_key)
+        for model_name in config.models:
+            try:
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents="test"
+                )
+                if response.text:
+                    print(f"✓ AI Model: {model_name}")
+                    return True, model_name
+            except:
+                continue
+    else:
+        genai.configure(api_key=api_key)
+        for model_name in config.models:
+            try:
+                test_model = genai.GenerativeModel(model_name)
+                test_response = test_model.count_tokens("test")
+                if test_response.total_tokens:
+                    print(f"✓ AI Model: {model_name}")
+                    return True, model_name
+            except:
+                continue
+    
+    print("WARNING: No AI models available")
+    return False, None
+
+# PDF Converter
+class PDFConverter:
+    def __init__(self, config: ConfigLoader, model: Optional[str] = None):
+        self.config = config
+        self.model = model
+        self.cache = ConversionCache()
         
-        # Search for organization URL
-        organization_url = None
-        if organization_name and report_title and year:
-            organization_url = get_organization_url(organization_name, report_title, year)
-                
-        if not organization_url:
-            # Ultimate fallback: construct a generic domain
-            organization_url = f"https://www.{''.join(e for e in organization_name if e.isalnum()).lower()}.com"
-            print(f"Ultimate fallback: constructed generic URL: {organization_url}")
-
-        markdown_content = generate_markdown_with_ai(pdf_text, prompt_text, organization_url)
+        # Initialize markitdown with error handling
+        try:
+            self.markitdown = MarkItDown()
+            print("✓ MarkItDown initialized")
+        except Exception as e:
+            print(f"! MarkItDown init warning: {str(e)[:50]}")
+            self.markitdown = MarkItDown()
+    
+    def convert(self, pdf_path: str) -> Tuple[bool, str, str]:
+        pdf_path_obj = Path(pdf_path)
+        if not pdf_path_obj.exists():
+            return False, "", "File not found"
         
-        # Post Processing Cleanup
-
-        # 1. Remove markdown code block wrappers if AI incorrectly added them
-        markdown_content = re.sub(r'^\s*```(?:markdown)?\s*\n', '', markdown_content, 1)
-        markdown_content = re.sub(r'\n\s*```\s*$', '', markdown_content, 1)
-
-        # 2. Fix: Remove prompt instructions if they leaked into the output
-        marker = "# Report Content Below"
-        if marker in markdown_content:
-            print(f"Detected prompt leakage. Cleaning content above marker: '{marker}'")
-            # Find the LAST instance of the marker (rfind) to ensure we get past all instructions
-            last_index = markdown_content.rfind(marker)
-            # Slice the content to start immediately after the marker
-            markdown_content = markdown_content[last_index + len(marker):].strip()
-
-        # Prepare output
-        relative_path = pdf_path.relative_to(Path("Annual Security Reports"))
-        output_dir = Path("Markdown Conversions") / relative_path.parent
-        output_path = output_dir / f"{pdf_path.stem}.md"
+        # Check cache
+        cached = self.cache.get(pdf_path)
+        if cached and Path(cached).exists():
+            print(f"  ✓ Cached: {cached}")
+            return True, cached, "cached"
         
-        os.makedirs(output_dir, exist_ok=True)
+        # Parse metadata
+        org_name, report_title, year = self._parse_filename(pdf_path_obj.name)
+        org_name = self.config.org_mappings.get(org_name, org_name)
+        report_title = self._apply_title_mappings(report_title)
         
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(markdown_content)
-
-        if not output_path.exists():
-            raise RuntimeError(f"Failed to create output file: {output_path}")
+        # Output path
+        md_path = self._get_markdown_path(pdf_path_obj, year)
+        md_path.parent.mkdir(parents=True, exist_ok=True)
         
-        output_size = output_path.stat().st_size
-        if output_size < 100:
-            raise RuntimeError(f"Output file is too small: {output_path}")
-
-        print(f"Successfully created: {output_path} ({output_size} bytes)")
-
-        return {
-            "status": "success",
-            "output_path": str(output_path),
-            "organization_url": organization_url,
-            "organization_name": organization_name,
-            "report_title": report_title,
-            **result_base
-        }
+        try:
+            # Convert with markitdown
+            print(f"  Converting with markitdown...")
+            result = self.markitdown.convert(str(pdf_path_obj))
+            
+            # Handle different result types
+            if hasattr(result, 'text_content'):
+                markdown_text = result.text_content
+            elif isinstance(result, str):
+                markdown_text = result
+            else:
+                markdown_text = str(result)
+            
+            if not markdown_text:
+                print(f"  ! No text extracted, trying fallback...")
+                # Fallback: create minimal markdown
+                markdown_text = f"# {org_name} - {report_title} ({year})\n\nSecurity report conversion pending."
+            
+            markdown_text = markdown_text.strip()
+            
+            # Validate length
+            if len(markdown_text) < self.config.min_text_length:
+                print(f"  ! Short extraction ({len(markdown_text)} chars), will save anyway")
+            
+            # Truncate if needed
+            if len(markdown_text) > self.config.max_pdf_chars:
+                markdown_text = markdown_text[:self.config.max_pdf_chars]
+                print(f"  ! Truncated to {self.config.max_pdf_chars} chars")
+            
+            # Save
+            md_path.write_text(markdown_text, encoding='utf-8')
+            self.cache.set(pdf_path, str(md_path))
+            
+            print(f"  ✓ Converted: {md_path}")
+            return True, str(md_path), "success"
+            
+        except Exception as e:
+            error_msg = str(e)[:200]
+            print(f"  ! Conversion error: {error_msg}")
+            
+            # Try to save a minimal file so pipeline can continue
+            try:
+                minimal_md = f"# {org_name} - {report_title} ({year})\n\nConversion error: {error_msg}\n"
+                md_path.write_text(minimal_md, encoding='utf-8')
+                print(f"  ! Saved minimal markdown")
+                return True, str(md_path), f"partial ({error_msg[:50]})"
+            except:
+                return False, "", f"Failed: {error_msg}"
+    
+    def _parse_filename(self, filename: str) -> Tuple[str, str, str]:
+        name = filename.replace('.pdf', '')
+        year_match = re.search(r'-(\d{4})$', name)
         
-    except Exception as e:
-        error_message = f"Failed to process {pdf_path}: {str(e)}"
-        print(f"ERROR: {error_message}", file=sys.stderr)
-        return {
-            "status": "failed", 
-            "reason": str(e),
-            **result_base
-        }
+        if year_match:
+            year = year_match.group(1)
+            name_without_year = name[:year_match.start()]
+        else:
+            year = str(datetime.now().year)
+            name_without_year = name
+        
+        parts = name_without_year.split('-', 1)
+        if len(parts) >= 2:
+            org_name = parts[0]
+            report_title = parts[1]
+        else:
+            org_name = parts[0]
+            report_title = "Security Report"
+        
+        return org_name, report_title, year
+    
+    def _apply_title_mappings(self, title: str) -> str:
+        words = title.split('-')
+        mapped_words = []
+        
+        for word in words:
+            mapped = self.config.title_mappings.get(word)
+            if mapped:
+                mapped_words.append(mapped)
+            else:
+                mapped_words.append(word.capitalize())
+        
+        return ' '.join(mapped_words)
+    
+    def _get_markdown_path(self, pdf_path: Path, year: str) -> Path:
+        parts = list(pdf_path.parts)
+        
+        if 'Annual Security Reports' in parts:
+            idx = parts.index('Annual Security Reports')
+            parts[idx] = 'Markdown Conversions'
+        
+        return Path(*parts).with_suffix('.md')
 
+# Main
 def main():
-    parser = argparse.ArgumentParser(description="Convert PDF files to Markdown using AI.")
-    parser.add_argument("files_list", help="Path to a file containing a list of PDF paths.")
-    parser.add_argument("prompt_path", help="Path to the AI prompt file.")
-    parser.add_argument("prompt_version", help="Version of the AI prompt.")
-    parser.add_argument("branch", help="Current Git branch.")
-    parser.add_argument("--output-json", help="Path to save the conversion results.", default="conversions.json")
+    parser = argparse.ArgumentParser(description="PDF to Markdown Converter")
+    parser.add_argument("--file-list", required=True)
+    parser.add_argument("--output-json", default="conversions.json")
+    parser.add_argument("--artifacts-dir", default=".github/artifacts")
     args = parser.parse_args()
-
-    gemini_api_key = os.environ.get("GEMINI_API_KEY")
-    if not gemini_api_key:
-        print("ERROR: GEMINI_API_KEY environment variable not set.")
-        sys.exit(1)
     
-    if not setup_gemini(gemini_api_key):
-        sys.exit(1)
-
+    print(f"\n{'='*70}")
+    print(f"PDF to Markdown Converter")
+    print(f"{'='*70}\n")
+    
+    # Load config
     try:
-        with open(args.files_list, 'r') as f:
-            pdf_paths = [Path(line.strip()) for line in f if line.strip()]
-    except FileNotFoundError:
-        print(f"ERROR: Files list not found: {args.files_list}")
-        sys.exit(1)
-
-    if not pdf_paths:
-        print("No files to process")
-        sys.exit(0)
-
-    results = []
-    converted_output_paths = []
+        config = ConfigLoader(args.artifacts_dir)
+        print(f"✓ Config loaded\n")
+    except Exception as e:
+        print(f"ERROR: Config failed: {e}")
+        return 1
     
-    for i, pdf_path in enumerate(pdf_paths, 1):
-        print(f"\n=== Processing file {i}/{len(pdf_paths)} ===")
-        result = process_pdf(pdf_path, args.prompt_path, args.prompt_version, args.branch)
-        results.append(result)
+    # Setup AI (optional)
+    gemini_key = os.environ.get("GEMINI_API_KEY")
+    model = None
+    if gemini_key:
+        ai_ok, model = setup_gemini(gemini_key, config)
+    else:
+        print("INFO: No GEMINI_API_KEY, using markitdown only\n")
+    
+    # Load file list
+    if not os.path.exists(args.file_list):
+        print(f"ERROR: File list not found: {args.file_list}")
+        return 1
+    
+    with open(args.file_list, 'r') as f:
+        pdf_files = [line.strip() for line in f if line.strip()]
+    
+    if not pdf_files:
+        print("No files to process")
+        with open(args.output_json, 'w') as f:
+            json.dump([], f)
+        return 0
+    
+    print(f"✓ {len(pdf_files)} files to convert\n")
+    
+    # Convert
+    converter = PDFConverter(config, model)
+    results = []
+    
+    for i, pdf_path in enumerate(pdf_files, 1):
+        print(f"[{i}/{len(pdf_files)}] {Path(pdf_path).name}")
         
-        if result['status'] == 'success':
-            converted_output_paths.append(result['output_path'])
-
+        success, md_path, message = converter.convert(pdf_path)
+        
+        org_name, report_title, year = converter._parse_filename(Path(pdf_path).name)
+        org_name = config.org_mappings.get(org_name, org_name)
+        report_title = converter._apply_title_mappings(report_title)
+        
+        result = {
+            'pdf_path': pdf_path,
+            'output_path': md_path if success else '',
+            'status': 'success' if success else 'failed',
+            'message': message,
+            'organization_name': org_name,
+            'report_title': report_title,
+            'year': year
+        }
+        
+        results.append(result)
+    
+    # Save results
     with open(args.output_json, 'w') as f:
         json.dump(results, f, indent=2)
-
-    converted_files_path = os.environ.get("CONVERTED_FILES_PATH", "converted_files.txt")
-    with open(converted_files_path, "w") as f:
-        for path in converted_output_paths:
-            f.write(f"{path}\n")
-
-    success_count = len([r for r in results if r['status'] == 'success'])
-    print(f"\nConversion completed: {success_count}/{len(results)} successful")
-
-    return 0 if success_count > 0 else 1
+    
+    # Summary
+    successful = len([r for r in results if r['status'] == 'success'])
+    
+    print(f"\n{'='*70}")
+    print(f"Converted: {successful}/{len(results)}")
+    
+    if converter.cache.hits + converter.cache.misses > 0:
+        rate = (converter.cache.hits / (converter.cache.hits + converter.cache.misses) * 100)
+        print(f"Cache: {converter.cache.hits} hits, {converter.cache.misses} misses ({rate:.1f}%)")
+    
+    print(f"\n✓ Results: {args.output_json}")
+    
+    return 0 if successful > 0 else 1
 
 if __name__ == "__main__":
     sys.exit(main())

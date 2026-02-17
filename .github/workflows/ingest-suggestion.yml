@@ -1,46 +1,90 @@
 name: Auto-Ingest Report Suggestion
 
+on:
+  issues:
+    types: [opened, labeled]
+
 permissions:
   contents: write
   pull-requests: write
   issues: read
 
-on:
-  issues:
-    types: [opened, labeled]
-
 jobs:
   ingest:
-    if: github.event.label.name == 'report-suggestion' || contains(github.event.issue.labels.*.name, 'report-suggestion')
+    if: |
+      github.event.label.name == 'report-suggestion' ||
+      contains(github.event.issue.labels.*.name, 'report-suggestion')
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Parse Issue Content
+      - name: Parse issue content
         id: parse
         uses: stefanbuck/github-issue-parser@v3
         with:
           template-path: .github/ISSUE_TEMPLATE/report-suggestion.yml
 
-      - name: Download and Organize PDF
+      - name: Download and organize PDF
         run: |
           URL="${{ steps.parse.outputs.report_url }}"
           YEAR="${{ steps.parse.outputs.report_year }}"
-          # Clean filename from URL
+          ORG="${{ steps.parse.outputs.organization_name }}"
+          
+          # Sanitize filename
           FILENAME=$(basename "$URL" | cut -d? -f1)
           
+          # Ensure directory exists
           mkdir -p "Annual Security Reports/$YEAR"
-          curl -L "$URL" -o "Annual Security Reports/$YEAR/$FILENAME"
+          
+          # Download with retry
+          for i in {1..3}; do
+            if curl -L -f "$URL" -o "Annual Security Reports/$YEAR/$FILENAME"; then
+              echo "✓ Downloaded successfully"
+              break
+            else
+              echo "! Attempt $i failed"
+              sleep 2
+            fi
+          done
+          
+          if [ ! -f "Annual Security Reports/$YEAR/$FILENAME" ]; then
+            echo "ERROR: Download failed after 3 attempts"
+            exit 1
+          fi
           
           echo "FILE_PATH=Annual Security Reports/$YEAR/$FILENAME" >> $GITHUB_ENV
 
-      - name: Create Ingestion PR
+      - name: Create ingestion PR
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Ingest report from Issue #${{ github.event.issue.number }}"
-          title: "Ingest: ${{ steps.parse.outputs.report_year }} Report"
-          body: "Automated ingestion for #${{ github.event.issue.number }}. This PR will trigger the Security Processing Pipeline."
+          commit-message: "📥 Ingest report from Issue #${{ github.event.issue.number }}"
+          title: "📥 Ingest: ${{ steps.parse.outputs.organization_name }} ${{ steps.parse.outputs.report_year }}"
+          body: |
+            ## Report Ingestion
+            
+            Ingesting report from Issue #${{ github.event.issue.number }}
+            
+            **Organization:** ${{ steps.parse.outputs.organization_name }}
+            **Year:** ${{ steps.parse.outputs.report_year }}
+            **URL:** ${{ steps.parse.outputs.report_url }}
+            
+            This PR will trigger the Security Reports Processing Pipeline.
+            
+            ---
+            *Auto-generated from issue suggestion*
           branch: "ingest/issue-${{ github.event.issue.number }}"
-          labels: "report-suggestion"
+          delete-branch: true
+          labels: |
+            report-suggestion
+            automated
+
+      - name: Add comment to issue
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --body "✅ Report downloaded and PR created. The processing pipeline will run automatically."
