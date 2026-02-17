@@ -369,6 +369,7 @@ class ReadmeUpdater:
         """Validate required fields."""
         required = ['organization', 'title', 'year', 'summary', 'pdf_path', 'organization_url']
         
+        # Basic field validation
         if any(not data.get(f) for f in required):
             return False
         
@@ -381,18 +382,15 @@ class ReadmeUpdater:
                 return False
         except (ValueError, TypeError):
             return False
-        
+
         return True
-    
+
     def save(self):
         """Save README."""
         full_content = self.parser.get_full_content()
         self.parser.readme_path.write_text(full_content, encoding='utf-8')
         print(f"✓ README saved")
 
-# ==========================
-# MAIN
-# ==========================
 def main():
     parser = argparse.ArgumentParser(description="README Updater - Production")
     parser.add_argument("analysis_json")
@@ -416,12 +414,12 @@ def main():
     if not os.path.exists(args.analysis_json):
         print(f"ERROR: Analysis file not found: {args.analysis_json}")
         sys.exit(1)
-    
+
     try:
         with open(args.analysis_json, 'r') as f:
             analysis_reports = json.load(f)
     except json.JSONDecodeError as e:
-        print(f"ERROR: Invalid JSON: {e}")
+        print(f"ERROR: JSON Decode Error: {e}")
         sys.exit(1)
     
     if not analysis_reports:
