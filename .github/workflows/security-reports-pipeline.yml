@@ -426,7 +426,7 @@ jobs:
         run: |
           echo "Running report analyzer..."
           
-          if python .github/scripts/report-analyzer.py conversions.json --output-json analysis.json; then
+          if python .github/scripts/report-analyzer.py conversions.json --readme-path README.md --output-json analysis.json; then
             echo "Report analysis completed successfully"
             
             if [ -f analysis.json ]; then

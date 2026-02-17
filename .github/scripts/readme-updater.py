@@ -257,8 +257,6 @@ class ReadmeParser:
     
     def __init__(self, readme_path: str, category_manager: CategoryManager = None):
         self.readme_path = Path(readme_path)
-        self.category_manager = category_manager
-        
         if not self.readme_path.exists():
             raise FileNotFoundError(f"README not found: {readme_path}")
         
@@ -332,9 +330,7 @@ class ReadmeUpdater:
     
     def __init__(self, parser: ReadmeParser, category_manager: CategoryManager = None):
         self.parser = parser
-        self.category_manager = category_manager
-        self.validator = SummaryValidator()
-    
+
     def add_report_entry(self, analysis: Dict[str, Any]) -> Tuple[bool, str, int, str]:
         """Main entry point - handles add/update logic within boundaries."""
         
@@ -479,24 +475,79 @@ class ReadmeUpdater:
         """Format entry line with actual report URL (NOT Google search)."""
         # Construct proper report URL
         pdf_name = Path(analysis['pdf_path']).name
-        report_url = f"Annual%20Security%20Reports/{analysis['year']}/{pdf_name}".replace(' ', '%20')
+        pdf_link = f"Annual Security Reports/{analysis['year']}/{pdf_name}".replace(' ', '%20')
         
-        # Sanitize summary
-        summary = self.validator.sanitize(analysis['summary'])
-        
+        # Sanitize summary: remove newlines/tabs and collapse spaces
+        summary = ' '.join(analysis['summary'].strip('"').split())
+
         return (f"- [{analysis['organization']}]({analysis['organization_url']}) "
-                f"- [{analysis['title']}]({report_url}) "
-                f"({analysis['year']}) - {summary}")
-    
-    def _extract_org(self, line: str) -> str:
-        """Extract organization name from entry line."""
-        match = re.search(r'-\s*\[([^\]]+)\]', line)
-        return match.group(1) if match else ''
-    
+                f"- [{analysis['title']}]({pdf_link}) ({analysis['year']}) - {summary}")
+
+    def _sort_and_insert(self, content: str, entry: str) -> str:
+        """Inserts new entry while maintaining alphabetical order by Organization."""
+        lines = [l for l in content.strip().split('\n') if l.strip().startswith('- [')]
+        lines.append(entry)
+        
+        # Sort based on Organization name extracted from markdown link
+        lines.sort(key=lambda x: re.search(r'- \[([^\]]+)\]', x).group(1).lower() if re.search(r'- \[([^\]]+)\]', x) else x.lower())
+        return '\n'.join(lines) + '\n'
+
+    def _find_existing(self, content: str, analysis: Dict[str, Any]) -> Tuple[Optional[str], Optional[int]]:
+        """
+        Checks for existing entry to prevent duplicates using three signals:
+        1. Exact Organization and Title match.
+        2. Organization URL match (handles rebranding like WEF vs World Economic Forum).
+        3. PDF Filename match (handles series updates).
+        """
+        org_norm = analysis['organization'].lower()
+        title_norm = self._normalize_title(analysis['title'])
+        target_url = analysis['organization_url'].lower().rstrip('/')
+        target_pdf = Path(analysis['pdf_path']).name.lower()
+
+        # Remove year from PDF filename for generic series matching (e.g., Report-2025.pdf -> Report)
+        target_pdf_base = re.sub(r'\d{4}', '', target_pdf).strip('-_ ')
+
+        for line in content.split('\n'):
+            if not line.strip().startswith('- ['): continue
+            
+            # Extract Components: - [Org](OrgURL) - [Title](PdfURL) (Year)
+            match = re.search(r'^- \[([^\]]+)\]\(([^\)]+)\) - \[([^\]]+)\]\(([^\)]+)\)\s*\((\d{4})\)', line.strip())
+            if match:
+                curr_org = match.group(1).lower()
+                curr_org_url = match.group(2).lower().rstrip('/')
+                curr_title = self._normalize_title(match.group(3))
+                curr_pdf_url = match.group(4).lower()
+                curr_year = int(match.group(5))
+
+                # Check 1: URL Match (Strongest signal for same organization)
+                if target_url == curr_org_url:
+                    return line, curr_year
+
+                # Check 2: PDF Filename Match (Strong signal for report series)
+                curr_pdf_name = Path(curr_pdf_url).name
+                curr_pdf_base = re.sub(r'\d{4}', '', curr_pdf_name).strip('-_ ')
+                if target_pdf_base == curr_pdf_base and target_pdf_base != "":
+                    return line, curr_year
+
+                # Check 3: Org and Title Match (Original Logic)
+                if curr_org == org_norm and curr_title == title_norm:
+                    return line, curr_year
+
+        return None, None
+
     def _normalize_title(self, title: str) -> str:
-        """Normalize title for comparison."""
-        return re.sub(r'[^a-z0-9]', '', title.lower())
-    
+        return re.sub(r'\s+|the|of|and', '', title.lower())
+
+    def _find_similar_section(self, target: str, options: List[str]) -> Optional[str]:
+        target_set = set(target.lower().split())
+        best_match, best_score = None, 0
+        
+        for opt in options:
+            score = len(target_set.intersection(set(opt.lower().split())))
+            if score > best_score:
+                best_match, best_score = opt, score
+        return best_match
+
     def _find_line_number(self, text: str) -> int:
         """Find line number in full content."""
         full = self.parser.get_full_content()
@@ -504,28 +555,29 @@ class ReadmeUpdater:
             if text in line:
                 return i
         return -1
-    
+
     def _validate_data(self, data: Dict[str, Any]) -> bool:
-        """Validate required fields and age threshold."""
-        required = ['organization', 'title', 'year', 'summary', 'pdf_path', 'organization_url']
+        """Validates presence of data and ensures report is not older than 2 years."""
+        required = ['organization', 'title', 'year', 'summary', 'type', 'category', 'pdf_path', 'organization_url']
         
+        # Basic field validation
         if any(not data.get(f) for f in required):
-            missing = [f for f in required if not data.get(f)]
-            print(f"  ERROR: Missing fields: {missing}")
+            print(f"ERROR: Missing fields in analysis: {[f for f in required if not data.get(f)]}")
             return False
         
-        # Age check
+        # Date threshold validation
         try:
-            year = int(data['year'])
-            if datetime.now().year - year >= 2:
-                print(f"  SKIPPED: Report from {year} exceeds 2-year threshold")
+            report_year = int(data.get('year'))
+            current_year = datetime.now().year
+            if (current_year - report_year) >= 2:
+                print(f"SKIPPING: Report from {report_year} is older than the 2-year threshold.")
                 return False
         except (ValueError, TypeError):
-            print(f"  ERROR: Invalid year: {data.get('year')}")
+            print(f"ERROR: Invalid year format for {data.get('organization')}")
             return False
-        
+
         return True
-    
+
     def save(self):
         """Save updated README with modified section."""
         full_content = self.parser.get_full_content()
@@ -533,32 +585,27 @@ class ReadmeUpdater:
         print(f"✓ README saved: {self.parser.readme_path}")
         print(f"✓ Modified section between '{START_MARKER}' and '{END_MARKER}'")
 
-# ==========================
-# MAIN
-# ==========================
 def main():
     parser = argparse.ArgumentParser(
         description="Optimized README Updater with boundary enforcement"
     )
     parser.add_argument("analysis_json", help="Path to analysis results JSON")
-    parser.add_argument("--readme-path", default="README.md")
-    parser.add_argument("--categories-path", default=".github/artifacts/report-categories.json")
+    parser.add_argument("--readme-path", default="README.md", help="Path to README.md")
     args = parser.parse_args()
-    
-    # Load analysis
-    if not os.path.exists(args.analysis_json):
-        print(f"ERROR: Analysis file not found: {args.analysis_json}")
+
+    if not os.path.exists(args.analysis_json) or os.path.getsize(args.analysis_json) < 2:
+        print(f"ERROR: Invalid analysis file: {args.analysis_json}")
         sys.exit(1)
-    
+
     try:
         with open(args.analysis_json, 'r') as f:
             results = json.load(f)
     except json.JSONDecodeError as e:
-        print(f"ERROR: Invalid JSON: {e}")
+        print(f"ERROR: JSON Decode Error: {e}")
         sys.exit(1)
-    
+
     if not results:
-        print("No results to process")
+        print("No analysis results found. Exiting.")
         sys.exit(0)
     
     print(f"\n{'='*70}")
@@ -566,24 +613,17 @@ def main():
     print(f"Boundary: '{START_MARKER}' to '{END_MARKER}'")
     print(f"{'='*70}\n")
     
-    # Initialize
     try:
-        category_mgr = CategoryManager(args.categories_path)
-        readme_parser = ReadmeParser(args.readme_path, category_mgr)
-        updater = ReadmeUpdater(readme_parser, category_mgr)
+        updater = ReadmeUpdater(ReadmeParser(args.readme_path))
     except Exception as e:
-        print(f"ERROR: Initialization failed: {e}")
+        print(f"ERROR: Parser init failed: {e}")
         sys.exit(1)
-    
-    # Process
-    stats = {"new": 0, "updated": 0, "skipped": 0, "errors": 0}
-    changes = False
-    
+
+    stats = {"new": 0, "updated": 0, "refreshed": 0, "errors": 0}
+    changes_pending = False
+
     for i, analysis in enumerate(results, 1):
-        org = analysis.get('organization', 'Unknown')
-        title = analysis.get('title', 'Unknown')
-        
-        print(f"[{i}/{len(results)}] {org} - {title}")
+        print(f"[{i}/{len(results)}] Processing: {analysis.get('organization')} - {analysis.get('title')}")
         
         success, _, _, action = updater.add_report_entry(analysis)
         
@@ -611,9 +651,9 @@ def main():
         print(f"\n✓ Changes committed to README")
         print(f"✓ Only section between boundaries was modified")
     else:
-        print(f"\n⊘ No changes needed")
-    
-    return 0 if stats['new'] + stats['updated'] > 0 else 1
+        print("No changes required.")
+
+    return 0
 
 if __name__ == "__main__":
     sys.exit(main())

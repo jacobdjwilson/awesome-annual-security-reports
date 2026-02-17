@@ -115,7 +115,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y tesseract-ocr
           python -m pip install --upgrade pip
-          pip install markitdown[pdf,ocr] google-genai google-api-python-client requests
+          pip install markitdown[pdf,ocr] google-generativeai google-api-python-client requests
 
       - name: Download file list
         uses: actions/download-artifact@v4
@@ -126,6 +126,8 @@ jobs:
       - name: Re-run PDF Converter
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
           PROMPT_PATH=".github/ai-prompts/pdf-to-markdown-prompt.md"
           python .github/scripts/pdf-converter.py files_to_process.txt "$PROMPT_PATH" "refresh-job" "${{ github.ref_name }}" --output-json conversions.json
@@ -133,8 +135,6 @@ jobs:
       - name: Re-run Report Analyzer
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
-          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
           if [ -f conversions.json ]; then
             python .github/scripts/report-analyzer.py conversions.json --readme-path README.md --output-json analysis.json
