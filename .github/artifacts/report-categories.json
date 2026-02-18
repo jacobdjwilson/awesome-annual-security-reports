@@ -1,0 +1,123 @@
+{
+  "categories": [
+    {
+      "parent": "Analysis Reports",
+      "parent_id": "analysis-reports",
+      "description": "Generated through quantification and qualification of data from sensor networks or cybersecurity services.",
+      "sub_categories": [
+        {
+          "id": "global-threat-intelligence",
+          "name": "Global Threat Intelligence",
+          "definition": "Broad-scale analysis of worldwide adversary tactics, malware families, and evolving threat landscapes based on global telemetry."
+        },
+        {
+          "id": "regional-assessments",
+          "name": "Regional Assessments",
+          "definition": "Cybersecurity evaluations and threat forecasts focused on specific geographic nations, territories, or political unions."
+        },
+        {
+          "id": "sector-specific-intelligence",
+          "name": "Sector Specific Intelligence",
+          "definition": "Targeted analysis of threats and vulnerabilities impacting specific vertical industries such as Finance, Healthcare, Energy, or Transportation."
+        },
+        {
+          "id": "application-security",
+          "name": "Application Security",
+          "definition": "Technical assessments of risks involving custom code, APIs, software supply chains, and third-party library dependencies."
+        },
+        {
+          "id": "cloud-security",
+          "name": "Cloud Security",
+          "definition": "Analysis of threats, misconfigurations, and identity risks specifically targeting IaaS, PaaS, and SaaS cloud environments."
+        },
+        {
+          "id": "vulnerabilities",
+          "name": "Vulnerabilities",
+          "definition": "Data-driven research into CVE disclosure trends, exploitation rates, and organizational remediation performance."
+        },
+        {
+          "id": "ransomware",
+          "name": "Ransomware",
+          "definition": "In-depth studies of ransomware-as-a-service (RaaS) operations, extortion tactics, and payment trends."
+        },
+        {
+          "id": "data-breaches",
+          "name": "Data Breaches",
+          "definition": "Quantified analysis of the root causes, patterns, and financial impacts of unauthorized data exfiltration incidents."
+        },
+        {
+          "id": "physical-security",
+          "name": "Physical Security",
+          "definition": "Security research focusing on physical assets, operational technology (OT), industrial control systems (ICS), and critical infrastructure."
+        },
+        {
+          "id": "ai-and-emerging-technologies",
+          "name": "AI and Emerging Technologies",
+          "definition": "Analysis of security risks inherent to or exacerbated by artificial intelligence, Large Language Models (LLMs), and agentic systems."
+        }
+      ]
+    },
+    {
+      "parent": "Survey Reports",
+      "parent_id": "survey-reports",
+      "description": "Derived from surveys, interviews, or consulting engagements that capture industry sentiment and practices.",
+      "sub_categories": [
+        {
+          "id": "industry-trends",
+          "name": "Industry Trends",
+          "definition": "Broad-market sentiment reports detailing shifts in defensive strategies, budget priorities, and general industry outlook."
+        },
+        {
+          "id": "executive-perspectives",
+          "name": "Executive Perspectives",
+          "definition": "Insights and strategic priorities gathered directly from C-suite leaders such as CISOs, CIOs, and Board members."
+        },
+        {
+          "id": "workforce-and-culture",
+          "name": "Workforce and Culture",
+          "definition": "Studies focusing on the cybersecurity skills gap, talent retention, security awareness culture, and human risk management."
+        },
+        {
+          "id": "market-and-investment-research",
+          "name": "Market and Investment Research",
+          "definition": "Financial analysis of the cybersecurity vendor landscape, including venture capital funding, M&A activity, and sector growth."
+        },
+        {
+          "id": "application-security-1",
+          "name": "Application Security",
+          "definition": "Survey-based research regarding developer habits, AppSec tool adoption, and perceived software supply chain maturity."
+        },
+        {
+          "id": "cloud-security-1",
+          "name": "Cloud Security",
+          "definition": "Industry sentiment and organizational challenges related to cloud migration, multi-cloud governance, and shared responsibility."
+        },
+        {
+          "id": "identity-security",
+          "name": "Identity Security",
+          "definition": "Research into the governance of human and non-human identities, including MFA adoption and Zero Trust implementation."
+        },
+        {
+          "id": "penetration-testing",
+          "name": "Penetration Testing",
+          "definition": "Findings and trends derived from offensive security engagements, bug bounty programs, and vulnerability disclosure initiatives."
+        },
+        {
+          "id": "privacy-and-data-protection",
+          "name": "Privacy and Data Protection",
+          "definition": "Analysis of GRC trends, data privacy regulation compliance, and organizational efforts to secure sensitive personal data."
+        },
+        {
+          "id": "ransomware-1",
+          "name": "Ransomware",
+          "definition": "Sentiment research regarding organizational ransomware preparedness, recovery confidence, and ransom payment policies."
+        },
+        {
+          "id": "ai-and-emerging-technologies-1",
+          "name": "AI and Emerging Technologies",
+          "definition": "Industry outlook on AI adoption risks, ethical governance, and the readiness of security teams to manage AI-native threats."
+        }
+      ]
+    }
+  ]
+}
