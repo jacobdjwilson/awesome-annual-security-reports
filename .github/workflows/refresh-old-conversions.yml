@@ -3,7 +3,7 @@ name: Refresh Old Conversions
 on:
   schedule:
     - cron: '0 11 * * *'  # 6:00 AM ET daily
-  
+
   workflow_dispatch:
     inputs:
       limit:
@@ -11,7 +11,7 @@ on:
         required: false
         default: '10'
         type: string
-      
+
       days_old:
         description: 'Minimum age in days (default: 90)'
         required: false
@@ -28,32 +28,37 @@ jobs:
     outputs:
       has_files: ${{ steps.check-files.outputs.has_files }}
       file_count: ${{ steps.check-files.outputs.file_count }}
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Check for existing PR
+      - name: Load workflow configuration
+        id: load_config
+        run: |
+          DEFAULT_LIMIT=$(jq -r '.workflow.discovery.default_limit' .github/artifacts/workflow-config.json)
+          echo "default_limit=$DEFAULT_LIMIT" >> $GITHUB_OUTPUT
+          echo "✓ Default limit: $DEFAULT_LIMIT"
+
+      - name: Check for existing refresh PR
         id: check-pr
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Checking for existing refresh PRs..."
-          
           PR_COUNT=$(gh pr list \
             --state open \
             --label "maintenance" \
             --search "Refresh in:title" \
             --json number \
             -q length)
-          
+
           if [ "$PR_COUNT" -gt 0 ]; then
             echo "⊘ Existing refresh PR found, skipping"
             echo "pr_exists=true" >> $GITHUB_OUTPUT
           else
-            echo "✓ No existing PR"
+            echo "✓ No existing PR found"
             echo "pr_exists=false" >> $GITHUB_OUTPUT
           fi
 
@@ -63,25 +68,25 @@ jobs:
         run: |
           MD_ROOT="Markdown Conversions"
           PDF_ROOT="Annual Security Reports"
-          
+
           LIMIT="${{ github.event.inputs.limit }}"
           DAYS_OLD="${{ github.event.inputs.days_old }}"
-          
+
           if [ -z "$LIMIT" ]; then
-            LIMIT=10
+            LIMIT="${{ steps.load_config.outputs.default_limit }}"
           fi
           if [ -z "$DAYS_OLD" ]; then
             DAYS_OLD=90
           fi
-          
+
           THRESHOLD=$(date -d "$DAYS_OLD days ago" +%s)
-          
+
           echo "Finding stale/missing conversions..."
           echo "  Limit: $LIMIT files"
           echo "  Min age: $DAYS_OLD days"
-          
+
           > candidates.txt
-          
+
           # Find missing conversions
           find "$PDF_ROOT" -name "*.pdf" | while read -r pdf; do
             rel_path="${pdf#$PDF_ROOT/}"
@@ -90,7 +95,7 @@ jobs:
               echo "0 $pdf" >> candidates.txt
             fi
           done
-          
+
           # Find stale conversions
           git ls-files -z "$MD_ROOT" | \
             xargs -0 -I {} git log -1 --format="%ct {}" -- {} | \
@@ -103,21 +108,21 @@ jobs:
                 fi
               fi
             done
-          
+
           # Sort and limit
           sort -k1,1n candidates.txt | \
             cut -d' ' -f2- | \
             head -n "$LIMIT" > files_to_process.txt
-          
+
           if [ -s files_to_process.txt ]; then
             COUNT=$(wc -l < files_to_process.txt)
             echo "has_files=true" >> $GITHUB_OUTPUT
             echo "file_count=$COUNT" >> $GITHUB_OUTPUT
-            echo "✓ Found $COUNT files"
+            echo "✓ Found $COUNT files to refresh"
           else
             echo "has_files=false" >> $GITHUB_OUTPUT
             echo "file_count=0" >> $GITHUB_OUTPUT
-            echo "⊘ No stale files"
+            echo "⊘ No stale files found"
           fi
 
       - name: Upload file list
@@ -130,11 +135,36 @@ jobs:
           path: files_to_process.txt
           retention-days: 1
 
+      - name: Generate discovery summary
+        if: always()
+        run: |
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          PR_EXISTS="${{ steps.check-pr.outputs.pr_exists }}"
+          HAS_FILES="${{ steps.check-files.outputs.has_files }}"
+          COUNT="${{ steps.check-files.outputs.file_count }}"
+
+          echo "## ♻️ Refresh Old Conversions — Discovery" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Limit | \`${{ github.event.inputs.limit || steps.load_config.outputs.default_limit }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Min Age (days) | \`${{ github.event.inputs.days_old || 90 }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "$PR_EXISTS" == "true" ]; then
+            echo "⊘ **Skipped** — An open refresh PR already exists." >> $GITHUB_STEP_SUMMARY
+          elif [ "$HAS_FILES" == "true" ]; then
+            echo "✅ Found **${COUNT}** file(s) to refresh. Processing job will follow." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ No stale or missing conversions found — repository is up to date." >> $GITHUB_STEP_SUMMARY
+          fi
+
   process-stale-reports:
     needs: identify-stale-files
     if: needs.identify-stale-files.outputs.has_files == 'true'
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -144,13 +174,17 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
+      - name: Load configuration and install dependencies
         run: |
-          pip install --break-system-packages \
-            markitdown \
-            "pypdf[crypto]" \
-            google-generativeai \
-            google-ai-generativelanguage
+          SYS_PACKAGES=$(jq -r '.workflow.conversion.system_packages | join(" ")' .github/artifacts/workflow-config.json)
+          PY_PACKAGES=$(jq -r '.workflow.conversion.python_packages | join(" ")' .github/artifacts/workflow-config.json)
+
+          echo "Installing system packages: $SYS_PACKAGES"
+          sudo apt-get update
+          sudo apt-get install -y $SYS_PACKAGES
+
+          echo "Installing Python packages: $PY_PACKAGES"
+          pip install --break-system-packages $PY_PACKAGES
 
       - name: Download file list
         uses: actions/download-artifact@v4
@@ -158,6 +192,7 @@ jobs:
           name: files-to-process
 
       - name: Run PDF converter
+        id: converter
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
@@ -168,7 +203,14 @@ jobs:
             --output-json conversions.json \
             --artifacts-dir .github/artifacts
 
+          SUCCESSFUL=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
+          FAILED=$(jq '[.[] | select(.status != "success")] | length' conversions.json)
+
+          echo "successful_count=$SUCCESSFUL" >> $GITHUB_OUTPUT
+          echo "failed_count=$FAILED" >> $GITHUB_OUTPUT
+
       - name: Run report analyzer
+        id: analyzer
         if: success()
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -185,19 +227,32 @@ jobs:
         if: success()
         run: |
           if [ -f analysis.json ]; then
-            python .github/scripts/readme-updater.py \
-              analysis.json \
-              --readme-path README.md \
-              --artifacts-dir .github/artifacts
-            
+            VALIDATE_TOC=$(jq -r '.workflow.validation.validate_toc' .github/artifacts/workflow-config.json)
+
+            if [ "$VALIDATE_TOC" == "true" ]; then
+              python .github/scripts/readme-updater.py \
+                analysis.json \
+                --readme-path README.md \
+                --artifacts-dir .github/artifacts \
+                --validate-toc
+            else
+              python .github/scripts/readme-updater.py \
+                analysis.json \
+                --readme-path README.md \
+                --artifacts-dir .github/artifacts
+            fi
+
             if git diff --quiet HEAD -- README.md "Markdown Conversions/"; then
               echo "changes_detected=false" >> $GITHUB_OUTPUT
+              echo "⊘ No changes to commit"
             else
               echo "changes_detected=true" >> $GITHUB_OUTPUT
+              echo "✓ Changes detected"
             fi
           fi
 
       - name: Create PR
+        id: create_pr
         if: steps.readme_update.outputs.changes_detected == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
@@ -206,11 +261,13 @@ jobs:
           title: "♻️ Refresh ${{ needs.identify-stale-files.outputs.file_count }} Security Reports"
           body: |
             ## Automated Report Refresh
-            
+
             Refreshed ${{ needs.identify-stale-files.outputs.file_count }} reports that were either:
             - Missing markdown conversions
             - Older than 90 days
-            
+
+            **Run:** [#${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
             ---
             *Auto-generated by Refresh Old Conversions workflow*
           branch: refresh-reports-${{ github.run_id }}
@@ -221,3 +278,32 @@ jobs:
           labels: |
             automated
             maintenance
+
+      - name: Generate processing summary
+        if: always()
+        run: |
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          SUCCESSFUL="${{ steps.converter.outputs.successful_count }}"
+          FAILED="${{ steps.converter.outputs.failed_count }}"
+          PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
+
+          echo "## ♻️ Refresh Old Conversions — Processing" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Result | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Files Targeted | ${{ needs.identify-stale-files.outputs.file_count }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ✅ Conversions Successful | ${SUCCESSFUL:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ❌ Conversions Failed | ${FAILED:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.readme_update.outputs.changes_detected }}" == "true" ]; then
+            if [ -n "$PR_NUM" ]; then
+              PR_URL="https://github.com/${{ github.repository }}/pull/$PR_NUM"
+              echo "✅ Pull request created: [PR #$PR_NUM]($PR_URL)" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "⊘ No README changes detected." >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📎 Full details available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
