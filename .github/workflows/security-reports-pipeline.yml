@@ -2,7 +2,7 @@ name: Security Reports Processing Pipeline
 
 on:
   push:
-    branches: [main, development]
+    branches: [main]
     paths:
       - 'Annual Security Reports/**/*.pdf'
   pull_request:
@@ -48,6 +48,10 @@ on:
         required: false
         default: true
         type: boolean
+
+concurrency:
+  group: security-pipeline-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
   contents: write
@@ -160,14 +164,32 @@ jobs:
             fi
 
           elif [ "${{ github.event_name }}" == "push" ]; then
-            echo "Mode: Push"
+            echo "Mode: Push (main)"
             echo "scan_mode=push" >> $GITHUB_OUTPUT
-            git diff --name-only HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
+
+            ADDED=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' || true)
+            DELETED=$(git diff --name-only --diff-filter=D HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' || true)
+
+            if [ -z "$ADDED" ] && [ -n "$DELETED" ]; then
+              echo "⊘ Only deletions detected — nothing to process"
+              echo "scan_mode=push_delete_only" >> $GITHUB_OUTPUT
+            elif [ -n "$ADDED" ]; then
+              echo "$ADDED" > files_to_process.txt
+            fi
 
           else
             echo "Mode: Pull request"
             echo "scan_mode=pr" >> $GITHUB_OUTPUT
-            git diff --name-only --diff-filter=AM origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' > files_to_process.txt || true
+
+            ADDED=$(git diff --name-only --diff-filter=A origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' || true)
+            DELETED=$(git diff --name-only --diff-filter=D origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' || true)
+
+            if [ -z "$ADDED" ] && [ -n "$DELETED" ]; then
+              echo "⊘ Only deletions detected — nothing to process"
+              echo "scan_mode=pr_delete_only" >> $GITHUB_OUTPUT
+            elif [ -n "$ADDED" ]; then
+              echo "$ADDED" > files_to_process.txt
+            fi
           fi
 
           # Validate files
@@ -226,19 +248,29 @@ jobs:
         if: always()
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          SCAN_MODE="${{ steps.find-files.outputs.scan_mode }}"
+          FILE_COUNT="${{ steps.find-files.outputs.file_count }}"
+
           echo "## 🔍 File Discovery" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Mode | \`${{ steps.find-files.outputs.scan_mode }}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Files Found | ${{ steps.find-files.outputs.file_count }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Mode | \`${SCAN_MODE}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Files Found | ${FILE_COUNT:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          if [ -s files_to_process.txt ]; then
+
+          if [[ "$SCAN_MODE" == *"delete_only" ]]; then
+            echo "⊘ **Skipped** — changeset contained only PDF deletions. No processing needed." >> $GITHUB_STEP_SUMMARY
+          elif [ -s files_to_process.txt ]; then
             echo "**Files to Process:**" >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
             cat files_to_process.txt >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⊘ No new PDF files detected in this changeset." >> $GITHUB_STEP_SUMMARY
           fi
+
           if [ -s invalid_files.txt ]; then
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "**⚠️ Invalid Files Skipped:**" >> $GITHUB_STEP_SUMMARY
