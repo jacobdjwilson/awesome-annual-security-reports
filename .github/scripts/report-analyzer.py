@@ -3,12 +3,15 @@ import sys
 import json
 import re
 import argparse
-from typing import Dict, Any, Optional, Tuple
+import time
+from typing import Dict, Any, Optional, List, Tuple
 from pathlib import Path
 from datetime import datetime
 import hashlib
 
-# Dual SDK support
+# ==========================
+# DEPENDENCY CHECKS
+# ==========================
 try:
     from google import genai
     from google.genai import types
@@ -18,432 +21,581 @@ except ImportError:
         import google.generativeai as genai
         USE_NEW_SDK = False
     except ImportError:
-        print("ERROR: google-generativeai required")
+        print("ERROR: google-generativeai package required")
+        print("Install: pip install google-generativeai")
         sys.exit(1)
 
-# Configuration Loader
+
+# ====================
+# CONFIGURATION LOADER
+# ====================
 class ConfigLoader:
+    """Loads and validates all configuration files from .github/artifacts/"""
+
+    # Prompt paths relative to the repo root
+    SUMMARY_PROMPT_PATH = ".github/ai-prompts/markdown-summarization-prompt.md"
+    CAT_PROMPT_PATH = ".github/ai-prompts/report-categorization-prompt.md"
+
     def __init__(self, artifacts_dir: str = ".github/artifacts"):
         self.artifacts_dir = Path(artifacts_dir)
-        
+
         self.ai_config = self._load_json("ai-models.json")
-        self.pipeline_config = self._load_json("pipeline-config.json")
         self.categories_config = self._load_json("report-categories.json")
-        
+        self.readme_config = self._load_json("readme-updater-config.json")
+
         if not self.ai_config:
-            raise ValueError("ai-models.json is REQUIRED")
-        if not self.pipeline_config:
-            raise ValueError("pipeline-config.json is REQUIRED")
+            raise ValueError("ai-models.json is required")
         if not self.categories_config:
-            raise ValueError("report-categories.json is REQUIRED")
-        
-        self.models = self.ai_config.get("models", {}).get("priority_list", [])
-        if not self.models:
-            raise ValueError("No models in ai-models.json")
-        
-        self.gen_config = self.ai_config.get("configurations", {}).get("default", {})
-        
-        proc_config = self.pipeline_config.get("processing", {})
-        self.age_threshold = proc_config.get("age_threshold_years")
-        if self.age_threshold is None:
-            raise ValueError("age_threshold_years not in pipeline-config.json")
-        
-        self.org_mappings = self.pipeline_config.get("organization_mappings", {})
-        
-        prompts = self.pipeline_config.get("prompts", {})
-        self.summary_prompt_path = prompts.get("summarization")
-        self.cat_prompt_path = prompts.get("categorization")
-        
-        if not self.summary_prompt_path or not self.cat_prompt_path:
-            raise ValueError("Prompt paths not in pipeline-config.json")
-    
+            raise ValueError("report-categories.json is required")
+
+        # AI model names
+        models = self.ai_config.get("models", {})
+        self.primary_model: str = models.get("primary", "gemini-2.5-flash")
+        self.secondary_model: str = models.get("secondary", "gemini-2.5-flash")
+
+        # Generation config defaults
+        self.gen_config: Dict[str, Any] = (
+            self.ai_config.get("configurations", {}).get("default", {})
+        )
+
+        # Retry / rate-limit policy
+        retry = self.ai_config.get("retry_policy", {})
+        self.max_retries: int = retry.get("max_attempts", 3)
+        self.initial_delay: float = retry.get("initial_delay_seconds", 1)
+        self.backoff_mult: float = retry.get("backoff_multiplier", 2)
+
+        # Summary validation rules from readme-updater-config
+        if self.readme_config:
+            val = self.readme_config.get("validation", {}).get("summary", {})
+            self.min_length: int = val.get("min_length", 40)
+            self.max_length: int = val.get("max_length", 400)
+            self.required_verbs: List[str] = [v.lower() for v in val.get("required_verbs", [])]
+            self.forbidden_phrases: List[str] = [p.lower() for p in val.get("forbidden_phrases", [])]
+            self.marketing_words: List[str] = [w.lower() for w in val.get("marketing_words", [])]
+        else:
+            self.min_length = 40
+            self.max_length = 400
+            self.required_verbs = []
+            self.forbidden_phrases = []
+            self.marketing_words = []
+
     def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
+        """Load and parse a JSON config file."""
         path = self.artifacts_dir / filename
         if not path.exists():
-            print(f"ERROR: {filename} not found")
+            print(f"WARNING: {filename} not found at {path}")
             return None
         try:
-            with open(path, 'r') as f:
+            with open(path, "r", encoding="utf-8") as f:
                 return json.load(f)
         except json.JSONDecodeError as e:
             print(f"ERROR: Invalid JSON in {filename}: {e}")
             return None
+        except Exception as e:
+            print(f"ERROR: Could not read {filename}: {e}")
+            return None
 
-# Analysis Cache
+
+# ================
+# ANALYSIS CACHE
+# ================
 class AnalysisCache:
-    def __init__(self, cache_file: str = "analysis_cache.json"):
+    """Caches AI analysis results to avoid redundant API calls."""
+
+    def __init__(self, cache_file: str = ".analysis_cache.json"):
         self.cache_file = Path(cache_file)
         self.cache = self._load()
         self.hits = 0
         self.misses = 0
-    
+
     def _load(self) -> Dict[str, Any]:
         if self.cache_file.exists():
             try:
-                with open(self.cache_file, 'r') as f:
+                with open(self.cache_file, "r", encoding="utf-8") as f:
                     return json.load(f)
-            except:
+            except Exception:
                 return {}
         return {}
-    
+
     def _save(self):
         try:
-            with open(self.cache_file, 'w') as f:
+            with open(self.cache_file, "w", encoding="utf-8") as f:
                 json.dump(self.cache, f, indent=2)
-        except:
-            pass
-    
-    def _hash(self, content: str, org: str, year: str) -> str:
-        key = f"{org}:{year}:{content[:1000]}"
-        return hashlib.md5(key.encode()).hexdigest()
-    
+        except Exception as e:
+            print(f"WARNING: Could not save cache: {e}")
+
+    def _key(self, content: str, org: str, year: str) -> str:
+        raw = f"{org}:{year}:{content[:1000]}"
+        return hashlib.md5(raw.encode()).hexdigest()
+
     def get(self, content: str, org: str, year: str) -> Optional[Dict[str, Any]]:
-        cache_key = self._hash(content, org, year)
-        if cache_key in self.cache:
+        key = self._key(content, org, year)
+        if key in self.cache:
             self.hits += 1
-            return self.cache[cache_key]
+            return self.cache[key]
         self.misses += 1
         return None
-    
-    def set(self, content: str, org: str, year: str, analysis: Dict[str, Any]):
-        cache_key = self._hash(content, org, year)
-        self.cache[cache_key] = analysis
+
+    def set(self, content: str, org: str, year: str, result: Dict[str, Any]):
+        self.cache[self._key(content, org, year)] = result
         self._save()
-    
+
     def stats(self) -> str:
         total = self.hits + self.misses
         rate = (self.hits / total * 100) if total > 0 else 0
-        return f"{self.hits} hits, {self.misses} misses ({rate:.1f}% hit rate)"
+        return f"Cache: {self.hits} hits, {self.misses} misses ({rate:.1f}% hit rate)"
 
-# AI Setup
-def setup_gemini(api_key: str, config: ConfigLoader) -> Tuple[bool, Optional[str]]:
-    if USE_NEW_SDK:
-        client = genai.Client(api_key=api_key)
-        for model_name in config.models:
-            try:
-                response = client.models.generate_content(
-                    model=model_name,
-                    contents="test"
-                )
-                if response.text:
-                    print(f"✓ Model: {model_name}")
-                    return True, model_name
-            except:
-                continue
-    else:
-        genai.configure(api_key=api_key)
-        for model_name in config.models:
-            try:
-                test_model = genai.GenerativeModel(model_name)
-                test_response = test_model.count_tokens("test")
-                if test_response.total_tokens:
-                    print(f"✓ Model: {model_name}")
-                    return True, model_name
-            except:
-                continue
-    
-    print("ERROR: No AI models available")
-    return False, None
 
-# Summary Validator
+# ====================
+# SUMMARY VALIDATOR
+# ====================
 class SummaryValidator:
-    REQUIRED_VERBS = [
-        'analyzes', 'examines', 'evaluates', 'assesses', 'reviews',
-        'interprets', 'dissects', 'deconstructs', 'scrutinizes',
-        'compares', 'investigates', 'explores', 'probes', 'surveys',
-        'inquires', 'studies', 'documents', 'traces', 'maps',
-        'highlights', 'focuses', 'provides', 'offers', 'outlines'
-    ]
-    
-    @classmethod
-    def sanitize(cls, summary: str) -> str:
+    """Validates AI-generated summaries against quality standards from config."""
+
+    def __init__(self, config: ConfigLoader):
+        self.min_words = config.min_length
+        self.max_words = config.max_length
+        self.required_verbs = config.required_verbs
+        self.forbidden_phrases = config.forbidden_phrases
+        self.marketing_words = config.marketing_words
+
+    @staticmethod
+    def sanitize(text: str) -> str:
+        """Clean and normalize summary text."""
+        text = re.sub(r"\s+", " ", text).strip()
+        text = re.sub(r"\*\*?(.*?)\*\*?", r"\1", text)   # Bold
+        text = re.sub(r"`(.*?)`", r"\1", text)             # Code spans
+        text = re.sub(r"\([^)]*\)", "", text)               # Parenthesised content
+        text = text.replace('"', "")
+        text = re.sub(r"\s+([.,;:])", r"\1", text)
+        text = re.sub(r"([.,;:])\s*([.,;:])", r"\1", text)
+        text = re.sub(r"\.{2,}", ".", text)
+        return text.strip()
+
+    def validate(self, summary: str, org: str = "") -> Tuple[bool, List[str]]:
+        """
+        Validate a summary against all quality requirements.
+        Returns (is_valid, errors).
+        """
+        errors: List[str] = []
+
         if not summary:
-            return ""
-        summary = ' '.join(summary.split())
-        summary = re.sub(r'[()"\']', '', summary)
-        if summary and not summary.endswith('.'):
-            summary += '.'
-        if len(summary) > 400:
-            sentences = summary.split('. ')
-            summary = ''
-            for s in sentences:
-                if len(summary + s + '. ') <= 400:
-                    summary += s + '. '
+            return False, ["Summary is empty"]
+
+        words = summary.split()
+        word_count = len(words)
+
+        if word_count < self.min_words:
+            errors.append(f"Too short: {word_count} words (minimum {self.min_words})")
+        if word_count > self.max_words:
+            errors.append(f"Too long: {word_count} words (maximum {self.max_words})")
+
+        first_word = words[0].lower() if words else ""
+        if self.required_verbs and first_word not in self.required_verbs:
+            errors.append(f"Must start with an approved verb, got: '{words[0]}'")
+
+        summary_lower = summary.lower()
+        for phrase in self.forbidden_phrases:
+            if phrase in summary_lower:
+                errors.append(f"Contains forbidden phrase: '{phrase}'")
+        for word in self.marketing_words:
+            if word in summary_lower:
+                errors.append(f"Contains marketing word: '{word}'")
+
+        numbers = re.findall(r"\b\d+%?\b", summary)
+        if len(numbers) < 2:
+            errors.append(f"Needs more data points (found {len(numbers)}, need 2+)")
+
+        generic_phrases = [
+            "provides insights", "offers recommendations",
+            "highlights key", "discusses various", "explores different",
+        ]
+        for phrase in generic_phrases:
+            if phrase in summary_lower:
+                errors.append(f"Too generic: '{phrase}'")
+
+        return len(errors) == 0, errors
+
+    def format_errors(self, errors: List[str], summary: str, org: str) -> str:
+        msg = f"\n{'='*70}\nVALIDATION FAILED: {org}\n{'='*70}\n"
+        for error in errors:
+            msg += f"  ❌ {error}\n"
+        msg += f"\nGenerated summary:\n  {summary}\n{'='*70}\n"
+        return msg
+
+
+# ====================
+# AI ANALYZER
+# ====================
+class AIAnalyzer:
+    """Handles AI interactions with retry logic and summary validation."""
+
+    def __init__(self, config: ConfigLoader, cache: AnalysisCache):
+        self.config = config
+        self.cache = cache
+        self.validator = SummaryValidator(config)
+
+        api_key = os.environ.get("GEMINI_API_KEY")
+        if not api_key:
+            raise ValueError("GEMINI_API_KEY environment variable is required")
+
+        if USE_NEW_SDK:
+            self.client = genai.Client(api_key=api_key)
+        else:
+            genai.configure(api_key=api_key)
+
+    def analyze(
+        self,
+        content: str,
+        org: str,
+        title: str,
+        year: str,
+    ) -> Dict[str, Any]:
+        """
+        Analyze a report with retry logic and validation.
+        Returns dict with summary, type, category, ai_processed.
+        """
+        cached = self.cache.get(content, org, year)
+        if cached:
+            print(f"  ✓ Using cached analysis")
+            return cached
+
+        print(f"  → Generating analysis...")
+
+        delay = self.config.initial_delay
+        for attempt in range(self.config.max_retries):
+            try:
+                result = self._analyze_once(content, org, title, year, attempt + 1)
+                is_valid, errors = self.validator.validate(result["summary"], org)
+
+                if is_valid:
+                    word_count = len(result["summary"].split())
+                    print(f"  ✓ Analysis complete ({word_count} words)")
+                    self.cache.set(content, org, year, result)
+                    return result
+
+                print(f"  ⚠ Attempt {attempt + 1}/{self.config.max_retries} validation failed:")
+                for error in errors:
+                    print(f"    - {error}")
+
+                if attempt < self.config.max_retries - 1:
+                    print(f"  → Retrying with stricter guidance...")
+                    time.sleep(delay)
+                    delay *= self.config.backoff_mult
                 else:
-                    break
-        return summary.strip()
+                    print(self.validator.format_errors(errors, result["summary"], org))
 
-# URL Constructors
-def construct_report_url(pdf_path: str, year: str) -> str:
-    pdf_name = Path(pdf_path).name
-    encoded = pdf_name.replace(' ', '%20')
-    return f"Annual%20Security%20Reports/{year}/{encoded}"
+            except Exception as e:
+                print(f"  ⚠ Attempt {attempt + 1} error: {str(e)[:100]}")
+                if attempt < self.config.max_retries - 1:
+                    time.sleep(delay)
+                    delay *= self.config.backoff_mult
 
-def construct_org_url(org_name: str, search_url: Optional[str] = None) -> str:
-    if search_url and 'google.com/search' not in search_url:
-        return search_url
-    clean = ''.join(c for c in org_name if c.isalnum()).lower()
-    return f"https://www.{clean}.com"
+        print(f"  ⚠ All retries exhausted — using fallback result")
+        return self._fallback_result(org, title, year)
 
-# Category Loader
-def load_categories(config: ConfigLoader) -> Dict[str, list]:
-    categories = {"Analysis": [], "Survey": []}
-    for parent_cat in config.categories_config.get("categories", []):
-        parent_name = parent_cat["parent"].replace(" Reports", "")
-        for sub_cat in parent_cat.get("sub_categories", []):
-            categories[parent_name].append(sub_cat["name"])
-    return categories
+    def _analyze_once(
+        self,
+        content: str,
+        org: str,
+        title: str,
+        year: str,
+        attempt_num: int,
+    ) -> Dict[str, Any]:
+        """Single analysis attempt."""
+        summary_prompt = self._load_prompt(self.config.SUMMARY_PROMPT_PATH)
+        cat_prompt = self._load_prompt(self.config.CAT_PROMPT_PATH)
 
-# AI Analysis
-def analyze_with_ai(content: str, org: str, year: str, title: str, 
-                   config: ConfigLoader, model: str, cache: AnalysisCache) -> Dict[str, Any]:
-    # Check cache
-    cached = cache.get(content, org, year)
-    if cached:
-        print(f"  ✓ Cached")
-        return cached
-    
-    try:
-        # Load prompts
-        if not os.path.exists(config.summary_prompt_path):
-            raise FileNotFoundError(f"Prompt not found: {config.summary_prompt_path}")
-        
-        with open(config.summary_prompt_path, 'r') as f:
-            summary_prompt = f.read()
-        
-        # Clean content
-        clean = re.sub(r'!\[.*?\]\(.*?\)', '', content, flags=re.DOTALL)
-        truncated = clean[:20000] if len(clean) > 20000 else clean
-        
-        # Truncate content for summary (keep within token limits)
-        summary_content = clean_content[:20000] if len(clean_content) > 20000 else clean_content
-        summary_prompt = f"{summary_base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{summary_content}"
-        
-        # Generate summary
-        if USE_NEW_SDK:
-            client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
-            response = client.models.generate_content(
-                model=model,
-                contents=full_prompt,
-                config=types.GenerateContentConfig(
-                    temperature=config.gen_config.get("temperature", 0.7),
-                    top_p=config.gen_config.get("top_p", 0.95),
-                    top_k=config.gen_config.get("top_k", 64),
-                    max_output_tokens=min(config.gen_config.get("max_output_tokens", 200), 200)
-                )
+        clean_content = self._clean_content(content)
+
+        # Escalating guidance on retries
+        retry_guidance = ""
+        if attempt_num > 1:
+            retry_guidance = (
+                "\n\nIMPORTANT: Previous attempt was rejected. YOU MUST:\n"
+                "- Include at least 3 specific statistics or percentages\n"
+                f"- Write between {self.config.min_length}–{self.config.max_length} words (count carefully)\n"
+                "- Start with an approved verb (Analyzes, Examines, Surveys, etc.)\n"
+                "- NO generic phrases like 'provides insights' or 'offers recommendations'\n"
+                "- NO forbidden phrases like 'this report' or 'the report'\n"
             )
-        else:
-            response = genai.GenerativeModel(model).generate_content(
-                full_prompt,
-                generation_config={
-                    "temperature": config.gen_config.get("temperature", 0.7),
-                    "top_p": config.gen_config.get("top_p", 0.95),
-                    "top_k": config.gen_config.get("top_k", 64),
-                    "max_output_tokens": min(config.gen_config.get("max_output_tokens", 200), 200)
-                }
-            )
-        
-        summary = response.text.strip() if response.text else ""
-        summary = SummaryValidator.sanitize(summary)
-        
+
+        summary_full_prompt = (
+            f"{summary_prompt}\n\nOrganization: {org}\nReport Title: {title}\nYear: {year}"
+            f"{retry_guidance}\n\nReport Content:\n{clean_content[:20000]}"
+        )
+
+        summary = self._generate_text(
+            summary_full_prompt,
+            self.config.primary_model,
+            max_tokens=self.config.ai_config.get("configurations", {})
+                .get("summarization", {}).get("max_output_tokens", 400),
+            temperature=self.config.ai_config.get("configurations", {})
+                .get("summarization", {}).get("temperature", 0.2),
+        )
+        summary = self.validator.sanitize(summary)
+
         # Categorization
-        if not os.path.exists(config.cat_prompt_path):
-            raise FileNotFoundError(f"Prompt not found: {config.cat_prompt_path}")
-        
-        with open(config.cat_prompt_path, 'r') as f:
-            cat_prompt = f.read()
-        
-        categories = load_categories(config)
-        cat_list = '\n'.join([f"- {cat}" for cats in categories.values() for cat in cats])
-        cat_prompt = cat_prompt.replace("{{CATEGORIES}}", cat_list)
-        
-        cat_content = clean[:12000] if len(clean) > 12000 else clean
-        full_cat = f"{cat_prompt}\n\nOrg: {org}\nTitle: {title}\nYear: {year}\n\n{cat_content}"
-        
-        if USE_NEW_SDK:
-            cat_response = client.models.generate_content(
-                model=model,
-                contents=full_cat,
-                config=types.GenerateContentConfig(temperature=0.1, max_output_tokens=100)
-            )
-        else:
-            cat_response = genai.GenerativeModel(model).generate_content(
-                full_cat,
-                generation_config={"temperature": 0.1, "max_output_tokens": 100}
-            )
-        
-        # Parse
+        categories = self._load_categories()
+        cat_list = "\n".join(
+            f"- {cat}" for cats in categories.values() for cat in cats
+        )
+        cat_full_prompt = (
+            f"{cat_prompt.replace('{{CATEGORIES}}', cat_list)}\n\n"
+            f"Organization: {org}\nReport Title: {title}\nYear: {year}\n\n"
+            f"Report Content:\n{clean_content[:12000]}"
+        )
+
+        cat_response = self._generate_text(
+            cat_full_prompt,
+            self.config.primary_model,
+            max_tokens=self.config.ai_config.get("configurations", {})
+                .get("categorization", {}).get("max_output_tokens", 100),
+            temperature=self.config.ai_config.get("configurations", {})
+                .get("categorization", {}).get("temperature", 0.1),
+        )
+
         try:
-            text = cat_response.text.strip().replace('```json', '').replace('```', '').strip()
-            classification = json.loads(text)
-            report_type = classification.get('type', 'Analysis')
-            category = classification.get('category', 'Global Threat Intelligence')
-        except:
-            report_type = 'Analysis'
-            category = 'Global Threat Intelligence'
-        
-        result = {
-            'type': report_type,
-            'category': category,
-            'ai_processed': True
-        }
-        
-        cache.set(content, org, year, result)
-        return result
-        
-    except Exception as e:
-        print(f"  ! AI error: {str(e)[:50]}")
-        # Return fallback instead of raising
+            cat_text = cat_response.strip().replace("```json", "").replace("```", "").strip()
+            classification = json.loads(cat_text)
+            report_type = classification.get("type", "Analysis")
+            category = classification.get("category", "Global Threat Intelligence")
+        except Exception:
+            report_type = "Analysis"
+            category = self._infer_category(content, title)
+
         return {
-            'type': 'Analysis',
-            'category': 'Global Threat Intelligence',
-            'summary': f"Analyzes security findings from {org} for {year}.",
-            'ai_processed': False
+            "summary": summary,
+            "type": report_type,
+            "category": category,
+            "ai_processed": True,
         }
 
-# Main
+    def _generate_text(
+        self,
+        prompt: str,
+        model: str,
+        max_tokens: int = 200,
+        temperature: float = 0.2,
+    ) -> str:
+        """Generate text using the configured AI model, with secondary fallback."""
+        try:
+            if USE_NEW_SDK:
+                response = self.client.models.generate_content(
+                    model=model,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        temperature=temperature,
+                        top_p=self.config.gen_config.get("top_p", 0.95),
+                        top_k=self.config.gen_config.get("top_k", 40),
+                        max_output_tokens=max_tokens,
+                    ),
+                )
+            else:
+                response = genai.GenerativeModel(model).generate_content(
+                    prompt,
+                    generation_config={
+                        "temperature": temperature,
+                        "top_p": self.config.gen_config.get("top_p", 0.95),
+                        "top_k": self.config.gen_config.get("top_k", 40),
+                        "max_output_tokens": max_tokens,
+                    },
+                )
+            return response.text.strip() if response.text else ""
+
+        except Exception:
+            if model == self.config.primary_model and self.config.secondary_model != model:
+                print(f"  ⚠ Primary model failed, trying secondary ({self.config.secondary_model})...")
+                return self._generate_text(
+                    prompt, self.config.secondary_model, max_tokens, temperature
+                )
+            raise
+
+    def _load_prompt(self, prompt_path: str) -> str:
+        """Load a prompt template from disk."""
+        if not os.path.exists(prompt_path):
+            raise FileNotFoundError(f"Prompt file not found: {prompt_path}")
+        with open(prompt_path, "r", encoding="utf-8") as f:
+            return f.read()
+
+    def _clean_content(self, content: str) -> str:
+        """Strip images, HTML, and excess whitespace from markdown content."""
+        content = re.sub(r"!\[.*?\]\(.*?\)", "", content, flags=re.DOTALL)
+        content = re.sub(r"<[^>]+>", "", content)
+        content = re.sub(r"\n{3,}", "\n\n", content)
+        content = re.sub(r" {2,}", " ", content)
+        return content.strip()
+
+    def _load_categories(self) -> Dict[str, List[str]]:
+        """Build category lists keyed by type (Analysis/Survey)."""
+        categories: Dict[str, List[str]] = {"Analysis": [], "Survey": []}
+        for group in self.config.categories_config.get("categories", []):
+            parent = group.get("parent", "")
+            parent_type = "Survey" if "Survey" in parent else "Analysis"
+            for sub in group.get("sub_categories", []):
+                name = sub.get("name", "")
+                if name and name not in categories[parent_type]:
+                    categories[parent_type].append(name)
+        return categories
+
+    def _infer_category(self, content: str, title: str) -> str:
+        """Keyword-based category fallback when AI classification fails."""
+        text = (content + " " + title).lower()
+        if any(w in text for w in ["ransomware", "extortion", "raas"]):
+            return "Ransomware"
+        if any(w in text for w in ["cloud", "iaas", "paas", "saas", "container", "kubernetes"]):
+            return "Cloud Security"
+        if any(w in text for w in ["identity", "iam", "authentication", "zero trust"]):
+            return "Identity Security"
+        if any(w in text for w in ["application", "appsec", "devsecops", "software supply"]):
+            return "Application Security"
+        if any(w in text for w in ["vulnerability", "cve", "patch", "exploit"]):
+            return "Vulnerabilities"
+        if any(w in text for w in ["breach", "data exfiltration", "leak"]):
+            return "Data Breaches"
+        if any(w in text for w in ["ai", "llm", "machine learning", "artificial intelligence"]):
+            return "AI and Emerging Technologies"
+        if any(w in text for w in ["ot", "ics", "scada", "industrial"]):
+            return "Physical Security"
+        return "Global Threat Intelligence"
+
+    def _fallback_result(self, org: str, title: str, year: str) -> Dict[str, Any]:
+        return {
+            "summary": (
+                f"Analyzes security findings and threat trends reported by {org} for {year}, "
+                f"examining key attack patterns, vulnerability data, and defensive recommendations."
+            ),
+            "type": "Analysis",
+            "category": "Global Threat Intelligence",
+            "ai_processed": False,
+        }
+
+
+# ====================
+# REPORT PROCESSOR
+# ====================
+def process_reports(conversions_json: str, output_json: str, config: ConfigLoader) -> int:
+    """Load conversions.json, run AI analysis on each, write analysis.json."""
+
+    if not os.path.exists(conversions_json):
+        print(f"ERROR: {conversions_json} not found")
+        return 1
+
+    try:
+        with open(conversions_json, "r", encoding="utf-8") as f:
+            conversions = json.load(f)
+    except json.JSONDecodeError as e:
+        print(f"ERROR: Invalid JSON in {conversions_json}: {e}")
+        return 1
+
+    if not conversions:
+        print("No conversions to process")
+        return 0
+
+    successful = [c for c in conversions if c.get("status") == "success"]
+    if not successful:
+        print("No successful conversions to analyze")
+        return 0
+
+    print(f"✓ {len(successful)} successful conversion(s) to analyze\n")
+
+    cache = AnalysisCache()
+    analyzer = AIAnalyzer(config, cache)
+
+    results: List[Dict[str, Any]] = []
+    errors: List[str] = []
+
+    for i, conv in enumerate(successful, 1):
+        org = conv.get("organization_name", "Unknown")
+        title = conv.get("report_title", "Unknown")
+        year = conv.get("year", "Unknown")
+        md_path = conv.get("output_path", "")
+        pdf_path = conv.get("pdf_path", "")
+
+        print(f"[{i}/{len(successful)}] {org} ({year})")
+
+        if not os.path.exists(md_path):
+            print(f"  ✗ Markdown not found: {md_path}")
+            errors.append(f"{org}: Markdown file missing")
+            continue
+
+        try:
+            content = Path(md_path).read_text(encoding="utf-8")
+        except Exception as e:
+            print(f"  ✗ Could not read markdown: {e}")
+            errors.append(f"{org}: Read error")
+            continue
+
+        try:
+            analysis = analyzer.analyze(content, org, title, year)
+            results.append({
+                "organization": org,
+                "title": title,
+                "year": year,
+                "summary": analysis["summary"],
+                "type": analysis["type"],
+                "category": analysis["category"],
+                "pdf_path": pdf_path,
+                "report_url": pdf_path.replace(" ", "%20"),
+                "organization_url": f"https://www.{re.sub(r'[^a-z0-9]', '', org.lower())}.com",
+                "file_path": md_path,
+                "ai_processed": analysis["ai_processed"],
+            })
+            print(f"  ✓ Complete\n")
+
+        except Exception as e:
+            print(f"  ✗ Analysis failed: {str(e)[:100]}")
+            errors.append(f"{org}: {str(e)[:80]}")
+
+    if results:
+        try:
+            with open(output_json, "w", encoding="utf-8") as f:
+                json.dump(results, f, indent=2)
+            print(f"\n{'='*70}")
+            print(f"✓ Saved {len(results)} result(s) to {output_json}")
+        except Exception as e:
+            print(f"ERROR: Could not save {output_json}: {e}")
+            return 1
+    else:
+        print(f"\n{'='*70}")
+        print("WARNING: No results to save")
+
+    print(f"\n{cache.stats()}")
+    print(f"Success: {len(results)}/{len(successful)}")
+
+    if errors:
+        print(f"\nErrors ({len(errors)}):")
+        for err in errors:
+            print(f"  - {err}")
+
+    print(f"{'='*70}\n")
+    return 0 if results else 1
+
+
+# ====================
+# MAIN
+# ====================
 def main():
     parser = argparse.ArgumentParser(description="Report Analyzer")
-    parser.add_argument("conversions_json")
+    parser.add_argument("conversions_json", help="Path to conversions.json")
     parser.add_argument("--output-json", default="analysis.json")
     parser.add_argument("--artifacts-dir", default=".github/artifacts")
     args = parser.parse_args()
-    
+
     print(f"\n{'='*70}")
     print(f"Report Analyzer")
     print(f"{'='*70}\n")
-    
-    # Load config
+
     try:
         config = ConfigLoader(args.artifacts_dir)
-        print(f"✓ Config loaded")
-        print(f"  Models: {', '.join(config.models[:2])}...")
-        print(f"  Temp: {config.gen_config.get('temperature')}")
+        print(f"✓ Config loaded\n")
+        return process_reports(args.conversions_json, args.output_json, config)
     except Exception as e:
-        print(f"ERROR: Config failed: {e}")
+        print(f"\nFATAL ERROR: {e}")
+        import traceback
+        traceback.print_exc()
         return 1
-    
-    # Setup AI
-    gemini_key = os.environ.get("GEMINI_API_KEY")
-    if not gemini_key:
-        print("ERROR: GEMINI_API_KEY not set")
-        return 1
-    
-    ai_ok, model = setup_gemini(gemini_key, config)
-    if not ai_ok:
-        print("ERROR: AI setup failed")
-        return 1
-    
-    cache = AnalysisCache()
-    
-    # Load conversions
-    if not os.path.exists(args.conversions_json):
-        print(f"ERROR: File not found: {args.conversions_json}")
-        return 1
-    
-    with open(args.conversions_json, 'r') as f:
-        conversions = json.load(f)
 
-    if not conversions:
-        print("No conversions")
-        with open(args.output_json, 'w') as f:
-            json.dump([], f)
-        return 0
-    
-    print(f"✓ {len(conversions)} conversions\n")
-    
-    results = []
-    current_year = datetime.now().year
-    api_calls = 0
-    
-    for i, conv in enumerate(conversions, 1):
-        # CRITICAL: Check status
-        if conv.get('status') != 'success':
-            print(f"[{i}/{len(conversions)}] SKIP: Conversion failed")
-            continue
-            
-        try:
-            output_path = conv.get('output_path')
-            
-            # CRITICAL: Check if output exists
-            if not output_path:
-                print(f"[{i}/{len(conversions)}] SKIP: No output path")
-                continue
-            
-            if not os.path.exists(output_path):
-                print(f"[{i}/{len(conversions)}] SKIP: Output not found: {output_path}")
-                continue
-                
-            with open(output_path, 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            if not content.strip():
-                print(f"[{i}/{len(conversions)}] SKIP: Empty file")
-                continue
-            
-            pdf_path = conv.get('pdf_path', '')
-            org_name = conv.get('organization_name', 'Unknown')
-            report_title = conv.get('report_title', 'Security Report')
-            
-            # Apply org mappings
-            org_name = config.org_mappings.get(org_name, org_name)
-            
-            # Extract year
-            year = conv.get('year', str(current_year))
-            
-            # Check if report is older than 2 years
-            try:
-                if int(year) < (current_year - config.age_threshold):
-                    print(f"[{i}/{len(conversions)}] {org_name} - OLD ({year})")
-                    continue
-            except ValueError:
-                pass
-            
-            print(f"[{i}/{len(conversions)}] {org_name} ({year})")
-            
-            # Analyze
-            analysis = analyze_with_ai(content, org_name, year, report_title, config, model, cache)
-            if analysis['ai_processed'] and cache.misses > cache.hits:
-                api_calls += 1
-            
-            # URLs
-            report_url = construct_report_url(pdf_path, year)
-            org_url = construct_org_url(org_name, conv.get('organization_url'))
-            
-            # Result
-            result = {
-                'organization': org_name,
-                'title': report_title,
-                'year': year,
-                'summary': analysis['summary'],
-                'type': analysis['type'],
-                'category': analysis['category'],
-                'pdf_path': pdf_path,
-                'report_url': report_url,
-                'organization_url': org_url,
-                'file_path': output_path,
-                'ai_processed': analysis['ai_processed']
-            }
-            
-            results.append(result)
-            print(f"  ✓ {analysis['type']}/{analysis['category']}")
-            
-        except Exception as e:
-            print(f"[{i}/{len(conversions)}] ERROR: {str(e)[:50]}")
-            continue
-
-    # Save results
-    with open(args.output_json, 'w') as f:
-        json.dump(results, f, indent=2)
-    
-    print(f"\n{'='*70}")
-    print(f"Processed: {len(results)}/{len(conversions)}")
-    print(f"API calls: {api_calls}")
-    print(f"Cache: {cache.stats()}")
-    print(f"\n✓ Saved: {args.output_json}")
-    
-    # CRITICAL: Return 0 if we processed ANY reports successfully
-    return 0 if len(results) > 0 else 1
 
 if __name__ == "__main__":
     sys.exit(main())

@@ -1,24 +1,124 @@
-name: Report Suggestion
-description: Suggest a new annual security report for the list.
-title: "[REPORT SUGGESTION]: "
-labels: ["report-suggestion"]
-body:
-  - type: input
-    id: report_url
-    attributes:
-      label: Report URL
-      description: Provide the direct link to the PDF or the report landing page.
-    validations:
-      required: true
-  - type: input
-    id: report_year
-    attributes:
-      label: Report Year
-      description: What year is this report for? (e.g., 2025)
-    validations:
-      required: true
-  - type: textarea
-    id: additional_context
-    attributes:
-      label: Description
-      description: Brief summary of why this report is "Awesome".
+name: Auto-Ingest Report Suggestion
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: read
+
+jobs:
+  ingest:
+    if: |
+      github.event.label.name == 'report-suggestion' ||
+      contains(github.event.issue.labels.*.name, 'report-suggestion')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Parse issue content
+        id: parse
+        uses: stefanbuck/github-issue-parser@v3
+        with:
+          template-path: .github/ISSUE_TEMPLATE/report-suggestion.yml
+
+      - name: Download and organize PDF
+        id: download
+        run: |
+          URL="${{ steps.parse.outputs.report_url }}"
+          YEAR="${{ steps.parse.outputs.report_year }}"
+
+          # Sanitize filename
+          FILENAME=$(basename "$URL" | cut -d? -f1)
+          DEST_DIR="Annual Security Reports/$YEAR"
+          DEST_PATH="$DEST_DIR/$FILENAME"
+
+          mkdir -p "$DEST_DIR"
+
+          # Download with retry
+          SUCCESS=false
+          for i in {1..3}; do
+            if curl -L -f "$URL" -o "$DEST_PATH"; then
+              echo "✓ Downloaded: $FILENAME"
+              SUCCESS=true
+              break
+            else
+              echo "! Attempt $i failed, retrying..."
+              sleep 2
+            fi
+          done
+
+          if [ "$SUCCESS" != "true" ]; then
+            echo "❌ Download failed after 3 attempts"
+            exit 1
+          fi
+
+          echo "file_path=$DEST_PATH" >> $GITHUB_OUTPUT
+          echo "file_name=$FILENAME" >> $GITHUB_OUTPUT
+
+      - name: Create ingestion PR
+        id: create_pr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "📥 Ingest report from Issue #${{ github.event.issue.number }}"
+          title: "📥 Ingest: ${{ steps.parse.outputs.organization_name }} ${{ steps.parse.outputs.report_year }}"
+          body: |
+            ## Report Ingestion
+
+            Ingesting report suggested in Issue #${{ github.event.issue.number }}.
+
+            | Field | Value |
+            |-------|-------|
+            | **Organization** | ${{ steps.parse.outputs.organization_name }} |
+            | **Year** | ${{ steps.parse.outputs.report_year }} |
+            | **File** | `${{ steps.download.outputs.file_name }}` |
+            | **Source URL** | ${{ steps.parse.outputs.report_url }} |
+
+            Merging this PR will trigger the Security Reports Processing Pipeline to convert and analyze the report.
+
+            ---
+            *Auto-generated from [Issue #${{ github.event.issue.number }}](https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }})*
+          branch: "ingest/issue-${{ github.event.issue.number }}"
+          delete-branch: true
+          labels: |
+            report-suggestion
+            automated
+
+      - name: Comment on issue
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
+          PR_URL="https://github.com/${{ github.repository }}/pull/$PR_NUM"
+          gh issue comment ${{ github.event.issue.number }} \
+            --body "✅ Report downloaded and [PR #$PR_NUM]($PR_URL) created. The processing pipeline will run automatically once the PR is merged."
+
+      - name: Generate step summary
+        if: always()
+        run: |
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
+          ISSUE_URL="https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }}"
+
+          echo "## 📥 Report Ingestion" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Issue | [#${{ github.event.issue.number }}]($ISSUE_URL) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Organization | ${{ steps.parse.outputs.organization_name }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Year | ${{ steps.parse.outputs.report_year }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| File | \`${{ steps.download.outputs.file_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -n "$PR_NUM" ]; then
+            PR_URL="https://github.com/${{ github.repository }}/pull/$PR_NUM"
+            echo "✅ Pull request created: [PR #$PR_NUM]($PR_URL)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Pull request creation failed. Check [workflow logs]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
+          fi

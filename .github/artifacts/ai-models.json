@@ -10,6 +10,30 @@
       "top_p": 0.95,
       "top_k": 40,
       "max_output_tokens": 8192
+    },
+    "summarization": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "top_k": 40,
+      "max_output_tokens": 400,
+      "comment": "Low temperature for focused, data-driven summaries"
+    },
+    "categorization": {
+      "temperature": 0.1,
+      "top_p": 0.85,
+      "top_k": 20,
+      "max_output_tokens": 100,
+      "comment": "Very low temperature for consistent classification"
     }
+  },
+  "retry_policy": {
+    "max_attempts": 3,
+    "initial_delay_seconds": 1,
+    "backoff_multiplier": 2,
+    "max_delay_seconds": 10
+  },
+  "rate_limits": {
+    "requests_per_minute": 60,
+    "tokens_per_minute": 100000
   }
 }
