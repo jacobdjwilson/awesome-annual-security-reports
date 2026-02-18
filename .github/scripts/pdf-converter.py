@@ -24,91 +24,144 @@ except ImportError:
         import google.generativeai as genai
         USE_NEW_SDK = False
     except ImportError:
-        print("ERROR: google-generativeai required")
+        print("ERROR: google-generativeai package required")
+        print("Install: pip install google-generativeai")
         sys.exit(1)
 
-# Configuration Loader
+# ====================
+# CONFIGURATION LOADER
+# ====================
 class ConfigLoader:
+    """Loads and validates all configuration files."""
+    
     def __init__(self, artifacts_dir: str = ".github/artifacts"):
         self.artifacts_dir = Path(artifacts_dir)
         
+        # Load all configs
         self.ai_config = self._load_json("ai-models.json")
         self.pipeline_config = self._load_json("pipeline-config.json")
+        self.categories_config = self._load_json("report-categories.json")
+        self.readme_config = self._load_json("readme-updater-config.json")
         
+        # Validate required configs
         if not self.ai_config:
             raise ValueError("ai-models.json is REQUIRED")
         if not self.pipeline_config:
             raise ValueError("pipeline-config.json is REQUIRED")
+        if not self.categories_config:
+            raise ValueError("report-categories.json is REQUIRED")
         
-        self.models = self.ai_config.get("models", {}).get("priority_list", [])
-        if not self.models:
-            raise ValueError("No models in ai-models.json")
+        # Extract AI model configuration
+        models = self.ai_config.get("models", {})
+        self.primary_model = models.get("primary", "gemini-3-flash-preview")
+        self.secondary_model = models.get("secondary", "gemini-2.5-flash")
         
         self.gen_config = self.ai_config.get("configurations", {}).get("default", {})
         
+        # Extract processing configuration
         proc_config = self.pipeline_config.get("processing", {})
-        self.max_pdf_chars = proc_config.get("max_pdf_chars", 1000000)
-        self.min_text_length = proc_config.get("min_text_length", 100)
-        
+        self.age_threshold = proc_config.get("age_threshold_years", 2)
         self.org_mappings = self.pipeline_config.get("organization_mappings", {})
-        self.title_mappings = self.pipeline_config.get("title_mappings", {})
         
+        # Extract prompt paths
         prompts = self.pipeline_config.get("prompts", {})
-        self.pdf_prompt_path = prompts.get("pdf_to_markdown")
+        self.summary_prompt_path = prompts.get("summarization")
+        self.cat_prompt_path = prompts.get("categorization")
+        
+        if not self.summary_prompt_path or not self.cat_prompt_path:
+            raise ValueError("Prompt paths not in pipeline-config.json")
+        
+        # Extract validation rules
+        if self.readme_config:
+            validation = self.readme_config.get("validation", {}).get("summary", {})
+            self.min_length = validation.get("min_length", 40)
+            self.max_length = validation.get("max_length", 400)
+            self.required_verbs = validation.get("required_verbs", [])
+            self.forbidden_phrases = validation.get("forbidden_phrases", [])
+            self.marketing_words = validation.get("marketing_words", [])
+        else:
+            self.min_length = 40
+            self.max_length = 400
+            self.required_verbs = []
+            self.forbidden_phrases = []
+            self.marketing_words = []
     
     def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
+        """Load and parse JSON configuration file."""
         path = self.artifacts_dir / filename
         if not path.exists():
+            print(f"WARNING: {filename} not found at {path}")
             return None
+        
         try:
-            with open(path, 'r') as f:
+            with open(path, 'r', encoding='utf-8') as f:
                 return json.load(f)
-        except:
+        except json.JSONDecodeError as e:
+            print(f"ERROR: Invalid JSON in {filename}: {e}")
+            return None
+        except Exception as e:
+            print(f"ERROR: Could not read {filename}: {e}")
             return None
 
-# Conversion Cache
-class ConversionCache:
-    def __init__(self, cache_file: str = "conversion_cache.json"):
+# ================
+# ANALYSIS CACHE
+# ================
+class AnalysisCache:
+    """Caches AI analysis results to avoid redundant API calls."""
+    
+    def __init__(self, cache_file: str = ".analysis_cache.json"):
         self.cache_file = Path(cache_file)
         self.cache = self._load()
         self.hits = 0
         self.misses = 0
     
     def _load(self) -> Dict[str, Any]:
+        """Load cache from disk."""
         if self.cache_file.exists():
             try:
-                with open(self.cache_file, 'r') as f:
+                with open(self.cache_file, 'r', encoding='utf-8') as f:
                     return json.load(f)
-            except:
+            except Exception:
                 return {}
         return {}
     
     def _save(self):
+        """Save cache to disk."""
         try:
-            with open(self.cache_file, 'w') as f:
+            with open(self.cache_file, 'w', encoding='utf-8') as f:
                 json.dump(self.cache, f, indent=2)
-        except:
-            pass
+        except Exception as e:
+            print(f"WARNING: Could not save cache: {e}")
     
-    def _hash(self, pdf_path: str) -> str:
-        stat = Path(pdf_path).stat()
-        key = f"{pdf_path}:{stat.st_size}:{stat.st_mtime}"
+    def _hash(self, content: str, org: str, year: str) -> str:
+        """Generate cache key from content."""
+        key = f"{org}:{year}:{content[:1000]}"
         return hashlib.md5(key.encode()).hexdigest()
     
-    def get(self, pdf_path: str) -> Optional[str]:
-        cache_key = self._hash(pdf_path)
-        if cache_key in self.cache:
+    def get(self, content: str, org: str, year: str) -> Optional[Dict[str, Any]]:
+        """Retrieve cached analysis if available."""
+        key = self._hash(content, org, year)
+        if key in self.cache:
             self.hits += 1
-            return self.cache[cache_key]
+            return self.cache[key]
         self.misses += 1
         return None
     
-    def set(self, pdf_path: str, md_path: str):
-        cache_key = self._hash(pdf_path)
-        self.cache[cache_key] = md_path
+    def set(self, content: str, org: str, year: str, result: Dict[str, Any]):
+        """Store analysis result in cache."""
+        key = self._hash(content, org, year)
+        self.cache[key] = result
         self._save()
+    
+    def stats(self) -> str:
+        """Return cache statistics."""
+        total = self.hits + self.misses
+        hit_rate = (self.hits / total * 100) if total > 0 else 0
+        return f"Cache: {self.hits} hits, {self.misses} misses ({hit_rate:.1f}% hit rate)"
 
-# AI Setup
+# ====================
+# AI SETUP
+# ====================
 def setup_gemini(api_key: str, config: ConfigLoader) -> Tuple[bool, Optional[str]]:
     if USE_NEW_SDK:
         client = genai.Client(api_key=api_key)
@@ -138,7 +191,9 @@ def setup_gemini(api_key: str, config: ConfigLoader) -> Tuple[bool, Optional[str
     print("WARNING: No AI models available")
     return False, None
 
-# PDF Converter
+# ====================
+# PDF CONVERTER
+# ====================
 class PDFConverter:
     def __init__(self, config: ConfigLoader, model: Optional[str] = None):
         self.config = config
@@ -265,7 +320,9 @@ class PDFConverter:
         
         return Path(*parts).with_suffix('.md')
 
-# Main
+# ====================
+# MAIN
+# ====================
 def main():
     parser = argparse.ArgumentParser(description="PDF to Markdown Converter")
     parser.add_argument("--file-list", required=True)
