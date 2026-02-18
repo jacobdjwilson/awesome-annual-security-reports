@@ -135,56 +135,90 @@ class SummaryValidator:
 # CATEGORY MANAGER
 # ==========================
 class CategoryManager:
-    """Matches report categories from config."""
+    """
+    Resolves (report_type, category_hint) → (canonical_name, parent_group_name).
+
+    The README has subcategory names that appear under BOTH ## Analysis Reports
+    and ## Survey Reports (e.g. "Application Security", "Cloud Security",
+    "Ransomware", "AI and Emerging Technologies").  A flat map keyed only by
+    the lowercase name loses this distinction and always returns the last entry
+    written, which is whichever parent group appears second in the JSON.
+
+    The fix: key the internal map by (parent_type, lower_name) so lookups are
+    always scoped to the correct parent group first.
+    """
 
     def __init__(self, categories_config: Dict[str, Any], similarity_threshold: float = 0.6):
         self.threshold = similarity_threshold
-        self.category_map = self._build_map(categories_config)
+        # Map: (parent_type_key, lower_name) → {name, parent, parent_type}
+        # parent_type_key is "analysis" or "survey"
+        self._map: Dict[Tuple[str, str], Dict[str, str]] = {}
+        self._build_map(categories_config)
 
-    def _build_map(self, config: Dict[str, Any]) -> Dict[str, Dict[str, str]]:
-        """Build a flat lowercase map of category name → {name, parent}."""
-        cat_map: Dict[str, Dict[str, str]] = {}
+    def _build_map(self, config: Dict[str, Any]) -> None:
         for parent_cat in config.get("categories", []):
-            parent_name = parent_cat["parent"]
+            parent_name: str = parent_cat.get("parent", "")
+            pt = "survey" if "survey" in parent_name.lower() else "analysis"
             for sub in parent_cat.get("sub_categories", []):
-                name = sub["name"]
-                cat_map[name.lower()] = {"name": name, "parent": parent_name}
-        return cat_map
+                name: str = sub.get("name", "")
+                if name:
+                    self._map[(pt, name.lower())] = {
+                        "name": name,
+                        "parent": parent_name,
+                        "parent_type": pt,
+                    }
 
     def match_category(self, hint: str, report_type: str = "Analysis") -> Tuple[str, str]:
         """
-        Match a category hint to a known category.
-        Returns (category_name, parent_name).
+        Returns (canonical_category_name, parent_group_name).
+
+        Lookup order:
+          1. Exact match within the correct parent type.
+          2. Fuzzy word-overlap within the correct parent type.
+          3. Exact match across all types (last resort, prevents total failure).
+          4. Built-in defaults.
         """
+        pt = "survey" if "survey" in report_type.lower() else "analysis"
+
         if not hint:
-            return self._default(report_type)
+            return self._default(pt)
 
         normalized = hint.lower().strip()
 
-        # Exact match
-        if normalized in self.category_map:
-            m = self.category_map[normalized]
+        # 1. Exact scoped match
+        key = (pt, normalized)
+        if key in self._map:
+            m = self._map[key]
             return m["name"], m["parent"]
 
-        # Fuzzy word-overlap match
+        # 2. Fuzzy scoped match
+        words1 = set(normalized.split())
         best_score = 0.0
         best_match: Optional[Dict[str, str]] = None
-        words1 = set(normalized.split())
-        for key, cat_info in self.category_map.items():
-            words2 = set(key.split())
+        for (entry_pt, entry_name), info in self._map.items():
+            if entry_pt != pt:
+                continue
+            words2 = set(entry_name.split())
             if words1 and words2:
                 score = len(words1 & words2) / max(len(words1), len(words2))
                 if score > best_score:
                     best_score = score
-                    best_match = cat_info
+                    best_match = info
 
         if best_match and best_score >= self.threshold:
             return best_match["name"], best_match["parent"]
 
-        return self._default(report_type)
+        # 3. Cross-type exact match (e.g. AI returns "Identity Security" for an Analysis report
+        #    — it only exists under Survey, so accept it and correct the parent)
+        for (entry_pt, entry_name), info in self._map.items():
+            if entry_name == normalized:
+                return info["name"], info["parent"]
 
-    def _default(self, report_type: str) -> Tuple[str, str]:
-        if "survey" in report_type.lower():
+        # 4. Default
+        return self._default(pt)
+
+    def _default(self, parent_type: str) -> Tuple[str, str]:
+        if parent_type == "survey":
             return "Industry Trends", "Survey Reports"
         return "Global Threat Intelligence", "Analysis Reports"
 
@@ -289,18 +323,48 @@ class ReadmeParser:
         """Remove all non-alphanumeric characters and lowercase for comparison."""
         return re.sub(r"[^a-z0-9]", "", title.lower())
 
-    def find_section_bounds(self, heading: str, level: int = 3) -> Tuple[int, int]:
-        """Return (start, end) byte offsets within self.content for a subsection."""
+    def find_section_bounds(
+        self,
+        heading: str,
+        level: int = 3,
+        parent_heading: Optional[str] = None,
+    ) -> Tuple[int, int]:
+        """
+        Return (start, end) character offsets within self.content for a subsection.
+
+        When parent_heading is provided the search is restricted to the slice of
+        content that falls under that ## block, preventing identically-named
+        ### subsections (e.g. "Application Security" appears under both
+        ## Analysis Reports and ## Survey Reports) from resolving to the wrong one.
+        """
+        search_content = self.content
+        base_offset = 0
+
+        if parent_heading:
+            # Locate the ## parent block within self.content
+            parent_pat = rf"^## {re.escape(parent_heading)}\s*$"
+            parent_m = re.search(parent_pat, self.content, re.MULTILINE)
+            if parent_m:
+                # The block ends at the next ## heading or end-of-content
+                after = self.content[parent_m.end():]
+                next_h2 = re.search(r"\n## ", after)
+                block_end = parent_m.end() + (next_h2.start() if next_h2 else len(after))
+                search_content = self.content[parent_m.end():block_end]
+                base_offset = parent_m.end()
+
         pattern = rf'^{"#" * level}\s+{re.escape(heading)}\s*$'
-        match = re.search(pattern, self.content, re.MULTILINE)
+        match = re.search(pattern, search_content, re.MULTILINE)
 
         if not match:
             return -1, -1
 
-        start = match.end() + 1
-        next_match = re.search(rf"\n#{{{1,{level}}}}\s+", self.content[start:])
-        end = start + next_match.start() if next_match else len(self.content)
-        return start, end
+        abs_start = base_offset + match.end() + 1  # character after the heading newline
+        # End = start of the next heading at same-or-higher level in the search slice
+        remaining = search_content[match.end():]
+        next_heading = re.search(rf"\n#{{{1,{level}}}}\s+", remaining)
+        abs_end = (base_offset + match.end() + next_heading.start()
+                   if next_heading else base_offset + len(search_content))
+        return abs_start, abs_end
 
     def get_full_content(self) -> str:
         """Reconstruct the full README with updated content section."""
@@ -343,11 +407,14 @@ class ReadmeUpdater:
             slug = re.sub(r"[^a-z0-9]", "", analysis["organization"].lower())
             analysis["organization_url"] = f"https://www.{slug}.com"
 
-        # Resolve category
-        cat_name, _parent = self.category_manager.match_category(
+        # Resolve category AND parent group — both are needed for correct section placement
+        cat_name, parent_group = self.category_manager.match_category(
             analysis.get("category", ""), analysis.get("type", "Analysis")
         )
         analysis["category"] = cat_name
+        analysis["parent_group"] = parent_group  # e.g. "Analysis Reports" or "Survey Reports"
+
+        print(f"  → Type: {analysis.get('type')} | Category: {cat_name} | Parent: {parent_group}")
 
         # Check for existing entry
         existing_line, existing_year, match_type = self.parser.find_existing_entry(
@@ -376,19 +443,32 @@ class ReadmeUpdater:
         return True, f"updated ({old_year}→{new['year']}, {match_type})"
 
     def _insert_new(self, analysis: Dict[str, Any]) -> Tuple[bool, str]:
-        """Insert a new entry into the appropriate category subsection."""
+        """Insert a new entry into the correct parent/category subsection."""
         category = analysis["category"]
-        start, end = self.parser.find_section_bounds(category)
+        parent_group = analysis.get("parent_group", "")
+
+        start, end = self.parser.find_section_bounds(category, parent_heading=parent_group)
 
         if start == -1:
-            # Fallback to default category
-            category = "Global Threat Intelligence"
             start, end = self.parser.find_section_bounds(category)
-            if start == -1:
-                return False, "no_section"
+
+        if start == -1:
+            if "survey" in analysis.get("type", "").lower():
+                category = "Industry Trends"
+                start, end = self.parser.find_section_bounds(
+                    category, parent_heading="Survey Reports"
+                )
+            else:
+                category = "Global Threat Intelligence"
+                start, end = self.parser.find_section_bounds(
+                    category, parent_heading="Analysis Reports"
+                )
+
+        if start == -1:
+            return False, "no_section"
 
         section = self.parser.content[start:end]
-        entries = [l for l in section.split("\n") if l.strip().startswith("- [")]
+        entries = [ln for ln in section.split("\n") if ln.strip().startswith("- [")]
 
         entries.append(self._build_entry(analysis))
         entries.sort(key=lambda x: self._extract_org(x).lower())
