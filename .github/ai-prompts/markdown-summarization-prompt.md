@@ -1,6 +1,6 @@
 # AI Instruction Set for Markdown Summarization
 ## Purpose
-Provide a concise two-sentence summary of a security report, highlighting its main focus and key insights.
+Provide a concise two-sentence summary of a security report, highlighting its main focus and key insights (40-120 words) highlighting the report's main focus, methodology, and key quantitative findings..
 
 ## Goals
 1. **Conciseness**: Limit the summary to a maximum of two sentences.
@@ -8,6 +8,8 @@ Provide a concise two-sentence summary of a security report, highlighting its ma
 3. **Insightfulness**: Highlight significant findings, trends, or unexpected data in the second sentence.
 4. **Professional Tone**: Maintain a technical and professional style suitable for a cybersecurity audience.
 5. **Prioritization**: Emphasize notable statistics, trends, or findings over general statements.
+6. **Word Count**: MUST be between 40-120 words.
+7. **Data-Driven**: MUST include at least 1 specific statistic, percentage, or numerical finding.
 
 ## Conversion Instructions
 ### Structure
@@ -31,5 +33,7 @@ Provide a concise two-sentence summary of a security report, highlighting its ma
 3. **Insightfulness**: Confirm the second sentence highlights key and relevant information.
 4. **Accuracy**: Ensure the sentence contains only letters, apostrophes, commas, and periods. No other characters are permitted.
 5. **Tone**: Check that the language used is professional and technical.
+6. **Word Count**: 40-120 words (count every word).
+7. **Data**: Reference to specific statistic, percentage, or numerical finding included.
 ---
 # Report Content Below
