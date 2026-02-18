@@ -5,6 +5,7 @@ Classify a security report into a `Report Type` (Analysis or Survey) and a `Cate
 1.  **Accurate Typing**: Correctly determine if the report is an `Analysis Report` or a `Survey Report` based on its methodology.
 2.  **Precise Categorization**: Assign the most relevant category from the dynamic list provided.
 3.  **Structured Output**: Respond with a simple JSON object containing the type and category.
+4. **No Hallucination**: Only use categories from the provided list
 ## Instructions
 ### 1. Determine the Report Type
 Review the report content to identify its methodology:
