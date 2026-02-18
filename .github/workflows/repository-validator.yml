@@ -23,7 +23,6 @@ on:
 permissions:
   contents: read
   issues: write
-  actions: read
 
 jobs:
   validate-repository:

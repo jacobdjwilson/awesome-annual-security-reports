@@ -215,7 +215,9 @@ def analyze_with_ai(content: str, org: str, year: str, title: str,
         clean = re.sub(r'!\[.*?\]\(.*?\)', '', content, flags=re.DOTALL)
         truncated = clean[:20000] if len(clean) > 20000 else clean
         
-        full_prompt = f"{summary_prompt}\n\nOrg: {org}\nTitle: {title}\nYear: {year}\n\n{truncated}"
+        # Truncate content for summary (keep within token limits)
+        summary_content = clean_content[:20000] if len(clean_content) > 20000 else clean_content
+        summary_prompt = f"{summary_base_prompt}\n\nOrganization: {org_name}\nReport Title: {report_title}\nYear: {year}\n\nReport Content:\n{summary_content}"
         
         # Generate summary
         if USE_NEW_SDK:
@@ -283,7 +285,6 @@ def analyze_with_ai(content: str, org: str, year: str, title: str,
         result = {
             'type': report_type,
             'category': category,
-            'summary': summary,
             'ai_processed': True
         }
         
@@ -342,7 +343,7 @@ def main():
     
     with open(args.conversions_json, 'r') as f:
         conversions = json.load(f)
-    
+
     if not conversions:
         print("No conversions")
         with open(args.output_json, 'w') as f:
@@ -360,7 +361,7 @@ def main():
         if conv.get('status') != 'success':
             print(f"[{i}/{len(conversions)}] SKIP: Conversion failed")
             continue
-        
+            
         try:
             output_path = conv.get('output_path')
             
@@ -372,8 +373,8 @@ def main():
             if not os.path.exists(output_path):
                 print(f"[{i}/{len(conversions)}] SKIP: Output not found: {output_path}")
                 continue
-            
-            with open(output_path, 'r') as f:
+                
+            with open(output_path, 'r', encoding='utf-8') as f:
                 content = f.read()
             
             if not content.strip():
@@ -390,7 +391,7 @@ def main():
             # Extract year
             year = conv.get('year', str(current_year))
             
-            # Age check
+            # Check if report is older than 2 years
             try:
                 if int(year) < (current_year - config.age_threshold):
                     print(f"[{i}/{len(conversions)}] {org_name} - OLD ({year})")
@@ -430,8 +431,8 @@ def main():
         except Exception as e:
             print(f"[{i}/{len(conversions)}] ERROR: {str(e)[:50]}")
             continue
-    
-    # Save
+
+    # Save results
     with open(args.output_json, 'w') as f:
         json.dump(results, f, indent=2)
     

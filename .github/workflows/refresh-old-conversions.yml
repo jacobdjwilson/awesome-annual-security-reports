@@ -160,6 +160,8 @@ jobs:
       - name: Run PDF converter
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
           python .github/scripts/pdf-converter.py \
             --file-list files_to_process.txt \
