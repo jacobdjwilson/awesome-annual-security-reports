@@ -335,11 +335,23 @@ class AIAnalyzer:
         )
         summary = self.validator.sanitize(summary)
 
-        # Categorization
+# ====================
+# CATEGORIZATION
+# ====================
         categories = self._load_categories()
-        cat_list = "\n".join(
-            f"- {cat}" for cats in categories.values() for cat in cats
-        )
+
+        cat_lines: List[str] = []
+        cat_lines.append("ANALYSIS REPORT sub-categories (telemetry/data-driven methodology):")
+        for entry in categories["Analysis"]:
+            defn = f" — {entry['definition']}" if entry.get("definition") else ""
+            cat_lines.append(f"  - {entry['name']}{defn}")
+        cat_lines.append("")
+        cat_lines.append("SURVEY REPORT sub-categories (survey/interview/sentiment methodology):")
+        for entry in categories["Survey"]:
+            defn = f" — {entry['definition']}" if entry.get("definition") else ""
+            cat_lines.append(f"  - {entry['name']}{defn}")
+        cat_list = "\n".join(cat_lines)
+
         cat_full_prompt = (
             f"{cat_prompt.replace('{{CATEGORIES}}', cat_list)}\n\n"
             f"Organization: {org}\nReport Title: {title}\nYear: {year}\n\n"
@@ -350,19 +362,33 @@ class AIAnalyzer:
             cat_full_prompt,
             self.config.primary_model,
             max_tokens=self.config.ai_config.get("configurations", {})
-                .get("categorization", {}).get("max_output_tokens", 100),
+                .get("categorization", {}).get("max_output_tokens", 150),
             temperature=self.config.ai_config.get("configurations", {})
                 .get("categorization", {}).get("temperature", 0.1),
         )
 
+        report_type = "Analysis"
+        category = "Global Threat Intelligence"
         try:
             cat_text = cat_response.strip().replace("```json", "").replace("```", "").strip()
             classification = json.loads(cat_text)
             report_type = classification.get("type", "Analysis")
             category = classification.get("category", "Global Threat Intelligence")
+
+            # Validate: ensure the returned category actually exists under the returned type
+            valid_names = {e["name"] for e in categories.get(report_type, [])}
+            if category not in valid_names:
+                # Try the other type before falling back to keyword inference
+                other_type = "Survey" if report_type == "Analysis" else "Analysis"
+                other_names = {e["name"] for e in categories.get(other_type, [])}
+                if category in other_names:
+                    report_type = other_type
+                else:
+                    print(f"  ⚠ AI returned unknown category '{category}' — using keyword inference")
+                    category = self._infer_category(content, title, report_type)
         except Exception:
             report_type = "Analysis"
-            category = self._infer_category(content, title)
+            category = self._infer_category(content, title, report_type)
 
         return {
             "summary": summary,
@@ -426,38 +452,75 @@ class AIAnalyzer:
         content = re.sub(r" {2,}", " ", content)
         return content.strip()
 
-    def _load_categories(self) -> Dict[str, List[str]]:
-        """Build category lists keyed by type (Analysis/Survey)."""
-        categories: Dict[str, List[str]] = {"Analysis": [], "Survey": []}
+    def _load_categories(self) -> Dict[str, List[Dict[str, str]]]:
+        """
+        Build structured category lists keyed by report type (Analysis / Survey).
+        Each entry carries {name, definition} so the AI gets rich semantic context,
+        not just a bare name list that loses the Analysis-vs-Survey distinction.
+        """
+        categories: Dict[str, List[Dict[str, str]]] = {"Analysis": [], "Survey": []}
         for group in self.config.categories_config.get("categories", []):
             parent = group.get("parent", "")
             parent_type = "Survey" if "Survey" in parent else "Analysis"
+            seen = {e["name"] for e in categories[parent_type]}
             for sub in group.get("sub_categories", []):
                 name = sub.get("name", "")
-                if name and name not in categories[parent_type]:
-                    categories[parent_type].append(name)
+                definition = sub.get("definition", "")
+                if name and name not in seen:
+                    categories[parent_type].append({"name": name, "definition": definition})
+                    seen.add(name)
         return categories
 
-    def _infer_category(self, content: str, title: str) -> str:
-        """Keyword-based category fallback when AI classification fails."""
+    def _infer_category(self, content: str, title: str, report_type: str = "Analysis") -> str:
+        """
+        Keyword-based category fallback when AI classification fails.
+        Scoped by report_type so Survey reports don't land in Analysis-only categories.
+        """
         text = (content + " " + title).lower()
-        if any(w in text for w in ["ransomware", "extortion", "raas"]):
-            return "Ransomware"
-        if any(w in text for w in ["cloud", "iaas", "paas", "saas", "container", "kubernetes"]):
-            return "Cloud Security"
-        if any(w in text for w in ["identity", "iam", "authentication", "zero trust"]):
-            return "Identity Security"
-        if any(w in text for w in ["application", "appsec", "devsecops", "software supply"]):
-            return "Application Security"
-        if any(w in text for w in ["vulnerability", "cve", "patch", "exploit"]):
-            return "Vulnerabilities"
-        if any(w in text for w in ["breach", "data exfiltration", "leak"]):
-            return "Data Breaches"
-        if any(w in text for w in ["ai", "llm", "machine learning", "artificial intelligence"]):
-            return "AI and Emerging Technologies"
-        if any(w in text for w in ["ot", "ics", "scada", "industrial"]):
-            return "Physical Security"
-        return "Global Threat Intelligence"
+        is_survey = "survey" in report_type.lower()
+
+        if not is_survey:
+            if any(w in text for w in ["ransomware", "extortion", "raas"]):
+                return "Ransomware"
+            if any(w in text for w in ["data breach", "data exfiltration", "dbir"]):
+                return "Data Breaches"
+            if any(w in text for w in ["ot", "ics", "scada", "industrial control", "physical security"]):
+                return "Physical Security"
+            if any(w in text for w in ["regional", "national", "country", "australia", "canada", "europe"]):
+                return "Regional Assessments"
+            if any(w in text for w in ["healthcare", "energy", "automotive", "finance sector", "hospitality", "retail"]):
+                return "Sector Specific Intelligence"
+            if any(w in text for w in ["cve", "vulnerability", "patch", "exploit", "zero-day"]):
+                return "Vulnerabilities"
+            if any(w in text for w in ["cloud", "iaas", "paas", "aws", "azure", "kubernetes", "container"]):
+                return "Cloud Security"
+            if any(w in text for w in ["application", "appsec", "api security", "devsecops", "software supply chain"]):
+                return "Application Security"
+            if any(w in text for w in ["ai", "llm", "generative ai", "deepfake", "machine learning"]):
+                return "AI and Emerging Technologies"
+            return "Global Threat Intelligence"
+        else:
+            if any(w in text for w in ["ciso", "cio", "board", "executive", "c-suite"]):
+                return "Executive Perspectives"
+            if any(w in text for w in ["workforce", "skills gap", "talent", "culture", "human risk"]):
+                return "Workforce and Culture"
+            if any(w in text for w in ["market", "investment", "m&a", "venture", "funding", "acquisition"]):
+                return "Market and Investment Research"
+            if any(w in text for w in ["identity", "iam", "mfa", "zero trust", "authentication"]):
+                return "Identity Security"
+            if any(w in text for w in ["penetration test", "pentest", "bug bounty", "red team"]):
+                return "Penetration Testing"
+            if any(w in text for w in ["privacy", "gdpr", "compliance", "grc", "data protection"]):
+                return "Privacy and Data Protection"
+            if any(w in text for w in ["ransomware"]):
+                return "Ransomware"
+            if any(w in text for w in ["cloud"]):
+                return "Cloud Security"
+            if any(w in text for w in ["application", "appsec", "api"]):
+                return "Application Security"
+            if any(w in text for w in ["ai", "llm", "generative ai", "deepfake"]):
+                return "AI and Emerging Technologies"
+            return "Industry Trends"
 
     def _fallback_result(self, org: str, title: str, year: str) -> Dict[str, Any]:
         return {
