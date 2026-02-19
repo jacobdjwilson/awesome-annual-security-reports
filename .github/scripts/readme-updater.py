@@ -136,89 +136,103 @@ class SummaryValidator:
 # ==========================
 class CategoryManager:
     """
-    Resolves (report_type, category_hint) → (canonical_name, parent_group_name).
+    Matches report categories from report-categories.json.
 
-    The README has subcategory names that appear under BOTH ## Analysis Reports
-    and ## Survey Reports (e.g. "Application Security", "Cloud Security",
-    "Ransomware", "AI and Emerging Technologies").  A flat map keyed only by
-    the lowercase name loses this distinction and always returns the last entry
-    written, which is whichever parent group appears second in the JSON.
-
-    The fix: key the internal map by (parent_type, lower_name) so lookups are
-    always scoped to the correct parent group first.
+    Maintains the full parent → sub-category hierarchy so that
+    duplicate sub-category names (Application Security, Cloud Security,
+    Ransomware, AI and Emerging Technologies — which exist under both
+    Analysis Reports and Survey Reports) resolve to the correct parent.
     """
 
     def __init__(self, categories_config: Dict[str, Any], similarity_threshold: float = 0.6):
         self.threshold = similarity_threshold
-        # Map: (parent_type_key, lower_name) → {name, parent, parent_type}
-        # parent_type_key is "analysis" or "survey"
-        self._map: Dict[Tuple[str, str], Dict[str, str]] = {}
-        self._build_map(categories_config)
+        # Build two maps:
+        #   flat_map:    lowercase name → list of {name, parent} (handles duplicates)
+        #   parent_map:  lowercase parent → list of sub-category names
+        self.flat_map, self.parent_map = self._build_maps(categories_config)
 
-    def _build_map(self, config: Dict[str, Any]) -> None:
+    def _build_maps(
+        self, config: Dict[str, Any]
+    ) -> Tuple[Dict[str, List[Dict[str, str]]], Dict[str, List[str]]]:
+        flat: Dict[str, List[Dict[str, str]]] = {}
+        parents: Dict[str, List[str]] = {}
         for parent_cat in config.get("categories", []):
-            parent_name: str = parent_cat.get("parent", "")
-            pt = "survey" if "survey" in parent_name.lower() else "analysis"
+            parent_name = parent_cat["parent"]
+            parents[parent_name.lower()] = []
             for sub in parent_cat.get("sub_categories", []):
-                name: str = sub.get("name", "")
-                if name:
-                    self._map[(pt, name.lower())] = {
-                        "name": name,
-                        "parent": parent_name,
-                        "parent_type": pt,
-                    }
+                name = sub["name"]
+                parents[parent_name.lower()].append(name)
+                entry = {"name": name, "parent": parent_name}
+                key = name.lower()
+                if key not in flat:
+                    flat[key] = []
+                flat[key].append(entry)
+        return flat, parents
 
-    def match_category(self, hint: str, report_type: str = "Analysis") -> Tuple[str, str]:
+    def match_category(
+        self, hint: str, report_type: str = "Analysis", parent_section: str = ""
+    ) -> Tuple[str, str]:
         """
-        Returns (canonical_category_name, parent_group_name).
+        Match a category hint to a known category.
 
-        Lookup order:
-          1. Exact match within the correct parent type.
-          2. Fuzzy word-overlap within the correct parent type.
-          3. Exact match across all types (last resort, prevents total failure).
-          4. Built-in defaults.
+        Priority:
+          1. Exact name match within the parent_section (if provided).
+          2. Exact name match biased by report_type keyword.
+          3. Fuzzy word-overlap match, same bias.
+          4. Type-appropriate default.
+
+        Returns (category_name, parent_name).
         """
-        pt = "survey" if "survey" in report_type.lower() else "analysis"
-
         if not hint:
-            return self._default(pt)
+            return self._default(report_type)
 
         normalized = hint.lower().strip()
 
-        # 1. Exact scoped match
-        key = (pt, normalized)
-        if key in self._map:
-            m = self._map[key]
-            return m["name"], m["parent"]
+        # 1. Exact match constrained to parent_section
+        if parent_section:
+            parent_lower = parent_section.lower()
+            if parent_lower in self.parent_map:
+                for name in self.parent_map[parent_lower]:
+                    if name.lower() == normalized:
+                        return name, parent_section
 
-        # 2. Fuzzy scoped match
-        words1 = set(normalized.split())
+        # 2. Exact match biased by report_type
+        if normalized in self.flat_map:
+            candidates = self.flat_map[normalized]
+            # Prefer candidate whose parent matches report_type
+            type_lower = report_type.lower()
+            for c in candidates:
+                if type_lower in c["parent"].lower():
+                    return c["name"], c["parent"]
+            # Fall back to first candidate
+            return candidates[0]["name"], candidates[0]["parent"]
+
+        # 3. Fuzzy word-overlap across all categories
         best_score = 0.0
         best_match: Optional[Dict[str, str]] = None
-        for (entry_pt, entry_name), info in self._map.items():
-            if entry_pt != pt:
-                continue
-            words2 = set(entry_name.split())
+        words1 = set(normalized.split())
+        for key, cat_list in self.flat_map.items():
+            words2 = set(key.split())
             if words1 and words2:
                 score = len(words1 & words2) / max(len(words1), len(words2))
                 if score > best_score:
                     best_score = score
-                    best_match = info
+                    # Prefer the candidate whose parent matches the type
+                    type_lower = report_type.lower()
+                    for c in cat_list:
+                        if type_lower in c["parent"].lower():
+                            best_match = c
+                            break
+                    if not best_match:
+                        best_match = cat_list[0]
 
         if best_match and best_score >= self.threshold:
             return best_match["name"], best_match["parent"]
 
-        # 3. Cross-type exact match (e.g. AI returns "Identity Security" for an Analysis report
-        #    — it only exists under Survey, so accept it and correct the parent)
-        for (entry_pt, entry_name), info in self._map.items():
-            if entry_name == normalized:
-                return info["name"], info["parent"]
+        return self._default(report_type)
 
-        # 4. Default
-        return self._default(pt)
-
-    def _default(self, parent_type: str) -> Tuple[str, str]:
-        if parent_type == "survey":
+    def _default(self, report_type: str) -> Tuple[str, str]:
+        if "survey" in report_type.lower():
             return "Industry Trends", "Survey Reports"
         return "Global Threat Intelligence", "Analysis Reports"
 
@@ -230,6 +244,15 @@ class ReadmeParser:
     """
     Parses the section of README between start_marker and end_marker.
     All mutations happen within self.content; the rest of the file is untouched.
+
+    Section structure (within the managed region):
+        ## Analysis Reports          ← level-2 parent heading
+        ### Global Threat Intel      ← level-3 sub-section
+        - [Org](url) - [Title](pdf)  ← entry lines
+        ...
+        ## Survey Reports            ← level-2 parent heading
+        ### Industry Trends          ← level-3 sub-section
+        ...
     """
 
     def __init__(self, readme_path: str, config: ConfigLoader):
@@ -242,7 +265,7 @@ class ReadmeParser:
 
         self.full_content = self.readme_path.read_text(encoding="utf-8")
         self.start_pos, self.end_pos = self._find_boundaries()
-        self.content = self.full_content[self.start_pos : self.end_pos]
+        self.content = self.full_content[self.start_pos: self.end_pos]
 
     def _find_boundaries(self) -> Tuple[int, int]:
         start_match = re.search(
@@ -257,7 +280,7 @@ class ReadmeParser:
                 f"  start_marker: '{self.start_marker}'\n"
                 f"  end_marker:   '{self.end_marker}'"
             )
-        return start_match.end(), end_match.start()
+        return start_match.start(), end_match.start()
 
     def find_existing_entry(
         self, org: str, title: str, pdf_path: str
@@ -323,52 +346,51 @@ class ReadmeParser:
         """Remove all non-alphanumeric characters and lowercase for comparison."""
         return re.sub(r"[^a-z0-9]", "", title.lower())
 
-    def find_section_bounds(
-        self,
-        heading: str,
-        level: int = 3,
-        parent_heading: Optional[str] = None,
-    ) -> Tuple[int, int]:
+    def find_subsection_bounds(self, parent_heading: str, sub_heading: str) -> Tuple[int, int]:
         """
-        Return (start, end) character offsets within self.content for a subsection.
+        Find the byte range within self.content for a level-3 sub-section
+        that lives inside a specific level-2 parent section.
 
-        When parent_heading is provided the search is restricted to the slice of
-        content that falls under that ## block, preventing identically-named
-        ### subsections (e.g. "Application Security" appears under both
-        ## Analysis Reports and ## Survey Reports) from resolving to the wrong one.
+        This prevents the common mistake of finding the first ## Application Security
+        heading when the target is the one under ## Survey Reports.
+
+        Returns (content_start, content_end) or (-1, -1) if not found.
         """
-        search_content = self.content
-        base_offset = 0
-
-        if parent_heading:
-            # Locate the ## parent block within self.content
-            parent_pat = rf"^## {re.escape(parent_heading)}\s*$"
-            parent_m = re.search(parent_pat, self.content, re.MULTILINE)
-            if parent_m:
-                # The block ends at the next ## heading or end-of-content
-                after = self.content[parent_m.end():]
-                next_h2 = re.search(r"\n## ", after)
-                block_end = parent_m.end() + (next_h2.start() if next_h2 else len(after))
-                search_content = self.content[parent_m.end():block_end]
-                base_offset = parent_m.end()
-
-        pattern = rf'^{"#" * level}\s+{re.escape(heading)}\s*$'
-        match = re.search(pattern, search_content, re.MULTILINE)
-
-        if not match:
+        # Find the level-2 parent section first
+        parent_pattern = rf"^##\s+{re.escape(parent_heading)}\s*$"
+        parent_match = re.search(parent_pattern, self.content, re.MULTILINE)
+        if not parent_match:
+            print(f"    ⚠ Parent section '## {parent_heading}' not found in README")
             return -1, -1
 
-        abs_start = base_offset + match.end() + 1  # character after the heading newline
-        # End = start of the next heading at same-or-higher level in the search slice
-        remaining = search_content[match.end():]
-        next_heading = re.search(rf"\n#{{{1,{level}}}}\s+", remaining)
-        abs_end = (base_offset + match.end() + next_heading.start()
-                   if next_heading else base_offset + len(search_content))
-        return abs_start, abs_end
+        parent_start = parent_match.end()
+
+        # Find the end of this level-2 section (next ## heading or EOF)
+        next_l2 = re.search(r"\n##\s+", self.content[parent_start:])
+        parent_end = parent_start + next_l2.start() if next_l2 else len(self.content)
+
+        # Within the parent section, locate the level-3 sub-section
+        sub_pattern = rf"^###\s+{re.escape(sub_heading)}\s*$"
+        sub_match = re.search(sub_pattern, self.content[parent_start:parent_end], re.MULTILINE)
+        if not sub_match:
+            print(f"    ⚠ Sub-section '### {sub_heading}' not found under '## {parent_heading}'")
+            return -1, -1
+
+        sub_abs_start = parent_start + sub_match.end() + 1  # skip the newline after heading
+
+        # End of this level-3 section: next ## or ### heading, or end of parent section
+        next_heading = re.search(r"\n#{2,3}\s+", self.content[sub_abs_start:parent_end])
+        sub_abs_end = (
+            sub_abs_start + next_heading.start()
+            if next_heading
+            else parent_end
+        )
+
+        return sub_abs_start, sub_abs_end
 
     def get_full_content(self) -> str:
         """Reconstruct the full README with updated content section."""
-        return self.full_content[: self.start_pos] + self.content + self.full_content[self.end_pos :]
+        return self.full_content[: self.start_pos] + self.content + self.full_content[self.end_pos:]
 
 
 # ==========================
@@ -407,14 +429,15 @@ class ReadmeUpdater:
             slug = re.sub(r"[^a-z0-9]", "", analysis["organization"].lower())
             analysis["organization_url"] = f"https://www.{slug}.com"
 
-        # Resolve category AND parent group — both are needed for correct section placement
-        cat_name, parent_group = self.category_manager.match_category(
-            analysis.get("category", ""), analysis.get("type", "Analysis")
+        # Resolve category and parent section
+        parent_section_hint = analysis.get("parent_section", "")
+        cat_name, parent_name = self.category_manager.match_category(
+            analysis.get("category", ""),
+            analysis.get("type", "Analysis"),
+            parent_section=parent_section_hint,
         )
         analysis["category"] = cat_name
-        analysis["parent_group"] = parent_group  # e.g. "Analysis Reports" or "Survey Reports"
-
-        print(f"  → Type: {analysis.get('type')} | Category: {cat_name} | Parent: {parent_group}")
+        analysis["parent_section"] = parent_name
 
         # Check for existing entry
         existing_line, existing_year, match_type = self.parser.find_existing_entry(
@@ -437,38 +460,39 @@ class ReadmeUpdater:
         new: Dict[str, Any],
         match_type: str,
     ) -> Tuple[bool, str]:
-        """Replace an existing README entry with updated data."""
+        """
+        Replace an existing README entry with updated data.
+        The new entry stays in the same line position so ordering is preserved.
+        """
         new_line = self._build_entry(new)
         self.parser.content = self.parser.content.replace(old_line, new_line)
         return True, f"updated ({old_year}→{new['year']}, {match_type})"
 
     def _insert_new(self, analysis: Dict[str, Any]) -> Tuple[bool, str]:
-        """Insert a new entry into the correct parent/category subsection."""
+        """
+        Insert a new entry into the correct sub-section under the correct
+        parent section (Analysis Reports or Survey Reports).
+
+        Uses find_subsection_bounds() which is parent-aware, preventing
+        duplicate sub-heading names from landing in the wrong section.
+        """
+        parent_name = analysis["parent_section"]
         category = analysis["category"]
-        parent_group = analysis.get("parent_group", "")
 
-        start, end = self.parser.find_section_bounds(category, parent_heading=parent_group)
-
-        if start == -1:
-            start, end = self.parser.find_section_bounds(category)
+        start, end = self.parser.find_subsection_bounds(parent_name, category)
 
         if start == -1:
-            if "survey" in analysis.get("type", "").lower():
-                category = "Industry Trends"
-                start, end = self.parser.find_section_bounds(
-                    category, parent_heading="Survey Reports"
-                )
-            else:
-                category = "Global Threat Intelligence"
-                start, end = self.parser.find_section_bounds(
-                    category, parent_heading="Analysis Reports"
-                )
+            # Attempt default category fallback within the same parent
+            fallback_cat, fallback_parent = self.category_manager._default(analysis.get("type", "Analysis"))
+            print(f"    → Falling back to '{fallback_cat}' under '{fallback_parent}'")
+            start, end = self.parser.find_subsection_bounds(fallback_parent, fallback_cat)
+            if start == -1:
+                return False, "no_section"
+            analysis["category"] = fallback_cat
+            analysis["parent_section"] = fallback_parent
 
-        if start == -1:
-            return False, "no_section"
-
-        section = self.parser.content[start:end]
-        entries = [ln for ln in section.split("\n") if ln.strip().startswith("- [")]
+        section_text = self.parser.content[start:end]
+        entries = [l for l in section_text.split("\n") if l.strip().startswith("- [")]
 
         entries.append(self._build_entry(analysis))
         entries.sort(key=lambda x: self._extract_org(x).lower())
@@ -480,11 +504,17 @@ class ReadmeUpdater:
         return True, "new"
 
     def _build_entry(self, analysis: Dict[str, Any]) -> str:
-        """Format a README list entry."""
-        pdf_name = Path(analysis["pdf_path"]).name
-        report_url = (
-            f"Annual%20Security%20Reports/{analysis['year']}/{pdf_name}".replace(" ", "%20")
-        )
+        """
+        Format a README list entry.
+
+        The pdf_path in analysis.json is already the full relative path from
+        the repo root, e.g. "Annual Security Reports/2025/Foo-Report-2025.pdf".
+        It is used as-is for the link, with spaces percent-encoded.
+        """
+        # pdf_path is the repo-relative path; encode spaces for the markdown link
+        pdf_path = analysis["pdf_path"]
+        report_url = pdf_path.replace(" ", "%20")
+
         summary = self.validator.sanitize(analysis["summary"])
         return (
             f"- [{analysis['organization']}]({analysis['organization_url']}) "
@@ -500,11 +530,14 @@ class ReadmeUpdater:
         """Check that all required fields are present and the report is recent enough."""
         required = ["organization", "title", "year", "summary", "pdf_path", "organization_url"]
         if any(not data.get(f) for f in required):
+            missing = [f for f in required if not data.get(f)]
+            print(f"    ⚠ Missing fields: {missing}")
             return False
 
         try:
             year = int(data["year"])
-            if datetime.now().year - year >= self.config.age_threshold_years:
+            current_year = datetime.now().year
+            if current_year - year >= self.config.age_threshold_years:
                 return False
         except (ValueError, TypeError):
             return False
