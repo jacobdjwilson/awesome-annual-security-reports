@@ -2,7 +2,7 @@ name: Security Reports Processing Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [main, development]
     paths:
       - 'Annual Security Reports/**/*.pdf'
   pull_request:
