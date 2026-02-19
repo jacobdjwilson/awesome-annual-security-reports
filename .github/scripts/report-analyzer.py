@@ -225,6 +225,96 @@ class SummaryValidator:
 
 
 # ====================
+# CATEGORY BUILDER
+# ====================
+class CategoryBuilder:
+    """
+    Reads report-categories.json and produces structured text for AI prompts
+    that clearly shows the type → sub-category → definition hierarchy.
+
+    This prevents the AI from confusing Analysis and Survey sub-categories
+    that share the same name (e.g. 'Application Security', 'Cloud Security',
+    'Ransomware' exist under both parent types).
+    """
+
+    def __init__(self, categories_config: Dict[str, Any]):
+        self.config = categories_config
+
+    def build_prompt_section(self) -> str:
+        """
+        Returns a formatted string listing every sub-category under its parent
+        type, with definitions. This is injected into the {{CATEGORIES}}
+        placeholder in the categorization prompt.
+
+        Format:
+            ## Analysis Reports
+            (description of Analysis Reports)
+            - Global Threat Intelligence: Broad-scale analysis...
+            - Cloud Security: Analysis of threats, misconfigurations...
+
+            ## Survey Reports
+            (description of Survey Reports)
+            - Industry Trends: Broad-market sentiment...
+            - Cloud Security: Industry sentiment and organizational challenges...
+        """
+        lines: List[str] = []
+        for group in self.config.get("categories", []):
+            parent = group.get("parent", "")
+            description = group.get("description", "")
+            lines.append(f"\n## {parent}")
+            if description:
+                lines.append(f"({description})")
+            for sub in group.get("sub_categories", []):
+                name = sub.get("name", "")
+                definition = sub.get("definition", "")
+                lines.append(f"- {name}: {definition}")
+        return "\n".join(lines)
+
+    def all_valid_category_names(self) -> List[str]:
+        """Return every sub-category name (original casing) across all parent types."""
+        names: List[str] = []
+        for group in self.config.get("categories", []):
+            for sub in group.get("sub_categories", []):
+                name = sub.get("name", "")
+                if name:
+                    names.append(name)
+        return names
+
+    def get_parent_for_category(self, category_name: str, report_type: str) -> str:
+        """
+        Given a sub-category name and the report type ('Analysis' or 'Survey'),
+        return the correct parent header string from report-categories.json.
+
+        Example: get_parent_for_category("Cloud Security", "Survey")
+                 → "Survey Reports"
+        """
+        name_lower = category_name.lower()
+        type_lower = report_type.lower()
+
+        # First pass: exact match within the correct parent type
+        for group in self.config.get("categories", []):
+            parent = group.get("parent", "")
+            if type_lower in parent.lower():
+                for sub in group.get("sub_categories", []):
+                    if sub.get("name", "").lower() == name_lower:
+                        return parent
+
+        # Second pass: any group containing the category (type mismatch fallback)
+        for group in self.config.get("categories", []):
+            parent = group.get("parent", "")
+            for sub in group.get("sub_categories", []):
+                if sub.get("name", "").lower() == name_lower:
+                    return parent
+
+        # Final fallback: first group whose parent matches the type keyword
+        for group in self.config.get("categories", []):
+            if type_lower in group.get("parent", "").lower():
+                return group["parent"]
+
+        return "Analysis Reports"
+
+
+# ====================
 # AI ANALYZER
 # ====================
 class AIAnalyzer:
@@ -234,6 +324,7 @@ class AIAnalyzer:
         self.config = config
         self.cache = cache
         self.validator = SummaryValidator(config)
+        self.cat_builder = CategoryBuilder(config.categories_config)
 
         api_key = os.environ.get("GEMINI_API_KEY")
         if not api_key:
@@ -253,7 +344,7 @@ class AIAnalyzer:
     ) -> Dict[str, Any]:
         """
         Analyze a report with retry logic and validation.
-        Returns dict with summary, type, category, ai_processed.
+        Returns dict with summary, type, category, parent_section, ai_processed.
         """
         cached = self.cache.get(content, org, year)
         if cached:
@@ -270,7 +361,9 @@ class AIAnalyzer:
 
                 if is_valid:
                     word_count = len(result["summary"].split())
-                    print(f"  ✓ Analysis complete ({word_count} words)")
+                    print(f"  ✓ Summary valid ({word_count} words)")
+                    print(f"  ✓ Type: {result['type']} | Category: {result['category']}")
+                    print(f"  ✓ Section: {result['parent_section']}")
                     self.cache.set(content, org, year, result)
                     return result
 
@@ -284,6 +377,9 @@ class AIAnalyzer:
                     delay *= self.config.backoff_mult
                 else:
                     print(self.validator.format_errors(errors, result["summary"], org))
+                    # Use the result anyway — readme-updater will sanitize further
+                    self.cache.set(content, org, year, result)
+                    return result
 
             except Exception as e:
                 print(f"  ⚠ Attempt {attempt + 1} error: {str(e)[:100]}")
@@ -302,7 +398,7 @@ class AIAnalyzer:
         year: str,
         attempt_num: int,
     ) -> Dict[str, Any]:
-        """Single analysis attempt."""
+        """Single analysis attempt: generates summary then classification."""
         summary_prompt = self._load_prompt(self.config.SUMMARY_PROMPT_PATH)
         cat_prompt = self._load_prompt(self.config.CAT_PROMPT_PATH)
 
@@ -335,25 +431,11 @@ class AIAnalyzer:
         )
         summary = self.validator.sanitize(summary)
 
-# ====================
-# CATEGORIZATION
-# ====================
-        categories = self._load_categories()
-
-        cat_lines: List[str] = []
-        cat_lines.append("ANALYSIS REPORT sub-categories (telemetry/data-driven methodology):")
-        for entry in categories["Analysis"]:
-            defn = f" — {entry['definition']}" if entry.get("definition") else ""
-            cat_lines.append(f"  - {entry['name']}{defn}")
-        cat_lines.append("")
-        cat_lines.append("SURVEY REPORT sub-categories (survey/interview/sentiment methodology):")
-        for entry in categories["Survey"]:
-            defn = f" — {entry['definition']}" if entry.get("definition") else ""
-            cat_lines.append(f"  - {entry['name']}{defn}")
-        cat_list = "\n".join(cat_lines)
+        # Categorization
+        categories_section = self.cat_builder.build_prompt_section()
 
         cat_full_prompt = (
-            f"{cat_prompt.replace('{{CATEGORIES}}', cat_list)}\n\n"
+            f"{cat_prompt.replace('{{CATEGORIES}}', categories_section)}\n\n"
             f"Organization: {org}\nReport Title: {title}\nYear: {year}\n\n"
             f"Report Content:\n{clean_content[:12000]}"
         )
@@ -362,40 +444,53 @@ class AIAnalyzer:
             cat_full_prompt,
             self.config.primary_model,
             max_tokens=self.config.ai_config.get("configurations", {})
-                .get("categorization", {}).get("max_output_tokens", 150),
+                .get("categorization", {}).get("max_output_tokens", 100),
             temperature=self.config.ai_config.get("configurations", {})
                 .get("categorization", {}).get("temperature", 0.1),
         )
 
-        report_type = "Analysis"
-        category = "Global Threat Intelligence"
-        try:
-            cat_text = cat_response.strip().replace("```json", "").replace("```", "").strip()
-            classification = json.loads(cat_text)
-            report_type = classification.get("type", "Analysis")
-            category = classification.get("category", "Global Threat Intelligence")
+        # Parse and validate classification
+        report_type, category = self._parse_classification(cat_response, content, title)
 
-            # Validate: ensure the returned category actually exists under the returned type
-            valid_names = {e["name"] for e in categories.get(report_type, [])}
-            if category not in valid_names:
-                # Try the other type before falling back to keyword inference
-                other_type = "Survey" if report_type == "Analysis" else "Analysis"
-                other_names = {e["name"] for e in categories.get(other_type, [])}
-                if category in other_names:
-                    report_type = other_type
-                else:
-                    print(f"  ⚠ AI returned unknown category '{category}' — using keyword inference")
-                    category = self._infer_category(content, title, report_type)
-        except Exception:
-            report_type = "Analysis"
-            category = self._infer_category(content, title, report_type)
+        # Resolve the correct parent section header from config
+        parent_section = self.cat_builder.get_parent_for_category(category, report_type)
 
         return {
             "summary": summary,
             "type": report_type,
             "category": category,
+            "parent_section": parent_section,
             "ai_processed": True,
         }
+
+    def _parse_classification(
+        self, response: str, content: str, title: str
+    ) -> Tuple[str, str]:
+        """
+        Extract type and category from the AI JSON response.
+        Validates the category name against the full config list (case-insensitive).
+        Falls back to keyword inference if JSON is malformed or category is unknown.
+        """
+        valid_names = {n.lower(): n for n in self.cat_builder.all_valid_category_names()}
+
+        try:
+            clean = response.strip().replace("```json", "").replace("```", "").strip()
+            obj = json.loads(clean)
+            raw_type = str(obj.get("type", "Analysis")).strip()
+            raw_category = str(obj.get("category", "")).strip()
+
+            # Normalize type to exactly "Analysis" or "Survey"
+            report_type = "Survey" if "survey" in raw_type.lower() else "Analysis"
+
+            # Accept only categories present in the config; recover correct casing
+            if raw_category.lower() in valid_names:
+                return report_type, valid_names[raw_category.lower()]
+
+        except Exception:
+            pass
+
+        # Keyword fallback when AI response is unusable
+        return "Analysis", self._infer_category(content, title)
 
     def _generate_text(
         self,
@@ -452,84 +547,38 @@ class AIAnalyzer:
         content = re.sub(r" {2,}", " ", content)
         return content.strip()
 
-    def _load_categories(self) -> Dict[str, List[Dict[str, str]]]:
-        """
-        Build structured category lists keyed by report type (Analysis / Survey).
-        Each entry carries {name, definition} so the AI gets rich semantic context,
-        not just a bare name list that loses the Analysis-vs-Survey distinction.
-        """
-        categories: Dict[str, List[Dict[str, str]]] = {"Analysis": [], "Survey": []}
-        for group in self.config.categories_config.get("categories", []):
-            parent = group.get("parent", "")
-            parent_type = "Survey" if "Survey" in parent else "Analysis"
-            seen = {e["name"] for e in categories[parent_type]}
-            for sub in group.get("sub_categories", []):
-                name = sub.get("name", "")
-                definition = sub.get("definition", "")
-                if name and name not in seen:
-                    categories[parent_type].append({"name": name, "definition": definition})
-                    seen.add(name)
-        return categories
-
-    def _infer_category(self, content: str, title: str, report_type: str = "Analysis") -> str:
-        """
-        Keyword-based category fallback when AI classification fails.
-        Scoped by report_type so Survey reports don't land in Analysis-only categories.
-        """
+    def _infer_category(self, content: str, title: str) -> str:
+        """Keyword-based category fallback when AI classification fails."""
         text = (content + " " + title).lower()
-        is_survey = "survey" in report_type.lower()
-
-        if not is_survey:
-            if any(w in text for w in ["ransomware", "extortion", "raas"]):
-                return "Ransomware"
-            if any(w in text for w in ["data breach", "data exfiltration", "dbir"]):
-                return "Data Breaches"
-            if any(w in text for w in ["ot", "ics", "scada", "industrial control", "physical security"]):
-                return "Physical Security"
-            if any(w in text for w in ["regional", "national", "country", "australia", "canada", "europe"]):
-                return "Regional Assessments"
-            if any(w in text for w in ["healthcare", "energy", "automotive", "finance sector", "hospitality", "retail"]):
-                return "Sector Specific Intelligence"
-            if any(w in text for w in ["cve", "vulnerability", "patch", "exploit", "zero-day"]):
-                return "Vulnerabilities"
-            if any(w in text for w in ["cloud", "iaas", "paas", "aws", "azure", "kubernetes", "container"]):
-                return "Cloud Security"
-            if any(w in text for w in ["application", "appsec", "api security", "devsecops", "software supply chain"]):
-                return "Application Security"
-            if any(w in text for w in ["ai", "llm", "generative ai", "deepfake", "machine learning"]):
-                return "AI and Emerging Technologies"
-            return "Global Threat Intelligence"
-        else:
-            if any(w in text for w in ["ciso", "cio", "board", "executive", "c-suite"]):
-                return "Executive Perspectives"
-            if any(w in text for w in ["workforce", "skills gap", "talent", "culture", "human risk"]):
-                return "Workforce and Culture"
-            if any(w in text for w in ["market", "investment", "m&a", "venture", "funding", "acquisition"]):
-                return "Market and Investment Research"
-            if any(w in text for w in ["identity", "iam", "mfa", "zero trust", "authentication"]):
-                return "Identity Security"
-            if any(w in text for w in ["penetration test", "pentest", "bug bounty", "red team"]):
-                return "Penetration Testing"
-            if any(w in text for w in ["privacy", "gdpr", "compliance", "grc", "data protection"]):
-                return "Privacy and Data Protection"
-            if any(w in text for w in ["ransomware"]):
-                return "Ransomware"
-            if any(w in text for w in ["cloud"]):
-                return "Cloud Security"
-            if any(w in text for w in ["application", "appsec", "api"]):
-                return "Application Security"
-            if any(w in text for w in ["ai", "llm", "generative ai", "deepfake"]):
-                return "AI and Emerging Technologies"
-            return "Industry Trends"
+        if any(w in text for w in ["ransomware", "extortion", "raas"]):
+            return "Ransomware"
+        if any(w in text for w in ["cloud", "iaas", "paas", "saas", "container", "kubernetes"]):
+            return "Cloud Security"
+        if any(w in text for w in ["identity", "iam", "authentication", "zero trust"]):
+            return "Identity Security"
+        if any(w in text for w in ["application", "appsec", "devsecops", "software supply"]):
+            return "Application Security"
+        if any(w in text for w in ["vulnerability", "cve", "patch", "exploit"]):
+            return "Vulnerabilities"
+        if any(w in text for w in ["breach", "data exfiltration", "leak"]):
+            return "Data Breaches"
+        if any(w in text for w in ["ai", "llm", "machine learning", "artificial intelligence"]):
+            return "AI and Emerging Technologies"
+        if any(w in text for w in ["ot", "ics", "scada", "industrial"]):
+            return "Physical Security"
+        return "Global Threat Intelligence"
 
     def _fallback_result(self, org: str, title: str, year: str) -> Dict[str, Any]:
+        category = self._infer_category(title, title)
+        parent = self.cat_builder.get_parent_for_category(category, "Analysis")
         return {
             "summary": (
                 f"Analyzes security findings and threat trends reported by {org} for {year}, "
                 f"examining key attack patterns, vulnerability data, and defensive recommendations."
             ),
             "type": "Analysis",
-            "category": "Global Threat Intelligence",
+            "category": category,
+            "parent_section": parent,
             "ai_processed": False,
         }
 
@@ -591,6 +640,12 @@ def process_reports(conversions_json: str, output_json: str, config: ConfigLoade
 
         try:
             analysis = analyzer.analyze(content, org, title, year)
+
+            # Build a best-guess org URL: strip non-alphanumeric chars from org name.
+            # Prefer organization_url if the converter already resolved it.
+            org_slug = re.sub(r"[^a-z0-9]", "", org.lower())
+            org_url = conv.get("organization_url") or f"https://www.{org_slug}.com"
+
             results.append({
                 "organization": org,
                 "title": title,
@@ -598,9 +653,9 @@ def process_reports(conversions_json: str, output_json: str, config: ConfigLoade
                 "summary": analysis["summary"],
                 "type": analysis["type"],
                 "category": analysis["category"],
+                "parent_section": analysis["parent_section"],
                 "pdf_path": pdf_path,
-                "report_url": pdf_path.replace(" ", "%20"),
-                "organization_url": f"https://www.{re.sub(r'[^a-z0-9]', '', org.lower())}.com",
+                "organization_url": org_url,
                 "file_path": md_path,
                 "ai_processed": analysis["ai_processed"],
             })
