@@ -13,8 +13,7 @@ import urllib.parse
 # CONFIGURATION LOADER
 # ==========================
 class ConfigLoader:
-    """Loads all policy values from .github/artifacts/ JSON files.
-    No defaults are hard-coded here; every tuneable lives in a config file."""
+    """Loads all policy values from .github/artifacts/ JSON files."""
 
     def __init__(self, artifacts_dir: str = ".github/artifacts"):
         self.artifacts_dir = Path(artifacts_dir)
@@ -27,21 +26,21 @@ class ConfigLoader:
         if not self.readme_config:
             raise ValueError("readme-updater-config.json is required")
 
-        # ── processing ──────────────────────────────────────────────────
+        # Processing config
         proc = self.readme_config.get("processing", {})
         self.age_threshold_years: int = proc.get("age_threshold_years", 2)
         self.start_marker: str        = proc.get("start_marker", "## Analysis Reports")
         self.end_marker: str          = proc.get("end_marker", "## Resources")
         self.pdf_root_folder: str     = proc.get("pdf_root_folder", "Annual Security Reports")
 
-        # ── matching ────────────────────────────────────────────────────
+        # Matching config
         matching = self.readme_config.get("matching", {})
         self.similarity_threshold: float = matching.get("similarity_threshold", 0.6)
         # Fields to rewrite in-place when a newer-year edition is detected.
         # Defined in readme-updater-config.json so policy stays out of code.
         self.update_fields: List[str] = matching.get("update_fields", ["organization_url", "summary"])
 
-        # ── summary validation ───────────────────────────────────────────
+        # Summary validation rules
         val = self.readme_config.get("validation", {}).get("summary", {})
         self.summary_max_length: int   = val.get("max_length", 400)
         self.summary_min_length: int   = val.get("min_length", 40)
@@ -66,8 +65,7 @@ class ConfigLoader:
         True when the report year falls within the active listing window.
 
         Window = (current_year - age_threshold_years, current_year] exclusive on
-        the lower bound:  2026 with threshold=2 → valid years are 2025 and 2026.
-        In 2027 this automatically shifts to 2026–2027.
+        the lower bound.
         Threshold is read from readme-updater-config.json, not hard-coded.
         """
         current_year = datetime.now().year
@@ -233,16 +231,6 @@ class ReadmeParser:
     Owns a mutable slice of the README bounded by start_marker / end_marker
     (both sourced from readme-updater-config.json).  Everything outside that
     region is preserved byte-for-byte.
-
-    Internal structure of self.content:
-        ## Analysis Reports          ← level-2 parent heading (included in slice)
-        ### Global Threat Intel      ← level-3 sub-section
-        - [Org](org_url) - [Title](pdf_url) (year) - summary
-        ...
-        ## Survey Reports
-        ### Industry Trends
-        ...
-
     The start_marker heading itself IS included in self.content so that
     find_section_bounds() can locate level-2 parent headings correctly.
     """
@@ -334,7 +322,7 @@ class ReadmeParser:
 
         return None, None
 
-    # ── section navigation ────────────────────────────────────────────────
+    # Section navigation
 
     def find_section_bounds(
         self, parent_heading: str, sub_heading: str
@@ -379,7 +367,7 @@ class ReadmeParser:
 
         return s_abs_start, s_abs_end
 
-    # ── reconstruction ────────────────────────────────────────────────────
+    # Reconstruction
 
     def get_full_content(self) -> str:
         """Reconstruct the full README with the mutated managed section."""
@@ -422,7 +410,7 @@ class ReadmeUpdater:
         self.config   = config
         self.validator = SummaryValidator(config)
 
-    # ── public entry point ─────────────────────────────────────────────────
+    # Public entry point
 
     def process_report(self, analysis: Dict[str, Any]) -> Tuple[bool, str]:
         """Evaluate one analysis record. Returns (changed, reason_string)."""
@@ -469,7 +457,7 @@ class ReadmeUpdater:
         analysis["parent_section"] = parent_name
         return self._insert_new(analysis)
 
-    # ── update ──────────────────────────────────────────────────────────────
+    # Update
 
     def _update_existing(
         self,
@@ -513,7 +501,7 @@ class ReadmeUpdater:
         self.parser.content = self.parser.content.replace(old_line, new_line, 1)
         return True, f"updated ({old_fields['year']}→{new['year']})"
 
-    # ── insert ──────────────────────────────────────────────────────────────
+    # Insert
 
     def _insert_new(self, analysis: Dict[str, Any]) -> Tuple[bool, str]:
         """
@@ -567,7 +555,7 @@ class ReadmeUpdater:
         )
         return True, f"inserted → {analysis['parent_section']} / {analysis['category']}"
 
-    # ── helpers ──────────────────────────────────────────────────────────────
+    # Helpers
 
     def _sanitize(self, analysis: Dict[str, Any]) -> None:
         """Clean summary and replace Google search placeholder URLs in-place."""
