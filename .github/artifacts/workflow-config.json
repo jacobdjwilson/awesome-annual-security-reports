@@ -19,7 +19,8 @@
         "google-ai-generativelanguage",
         "Pillow",
         "pytesseract"
-      ]
+      ],
+      "max_age_days": 90
     },
     "pull_request": {
       "branch_prefix": "security-reports-update-",

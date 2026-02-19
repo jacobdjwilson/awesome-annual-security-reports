@@ -225,6 +225,96 @@ class SummaryValidator:
 
 
 # ====================
+# CATEGORY BUILDER
+# ====================
+class CategoryBuilder:
+    """
+    Reads report-categories.json and produces structured text for AI prompts
+    that clearly shows the type → sub-category → definition hierarchy.
+
+    This prevents the AI from confusing Analysis and Survey sub-categories
+    that share the same name (e.g. 'Application Security', 'Cloud Security',
+    'Ransomware' exist under both parent types).
+    """
+
+    def __init__(self, categories_config: Dict[str, Any]):
+        self.config = categories_config
+
+    def build_prompt_section(self) -> str:
+        """
+        Returns a formatted string listing every sub-category under its parent
+        type, with definitions. This is injected into the {{CATEGORIES}}
+        placeholder in the categorization prompt.
+
+        Format:
+            ## Analysis Reports
+            (description of Analysis Reports)
+            - Global Threat Intelligence: Broad-scale analysis...
+            - Cloud Security: Analysis of threats, misconfigurations...
+
+            ## Survey Reports
+            (description of Survey Reports)
+            - Industry Trends: Broad-market sentiment...
+            - Cloud Security: Industry sentiment and organizational challenges...
+        """
+        lines: List[str] = []
+        for group in self.config.get("categories", []):
+            parent = group.get("parent", "")
+            description = group.get("description", "")
+            lines.append(f"\n## {parent}")
+            if description:
+                lines.append(f"({description})")
+            for sub in group.get("sub_categories", []):
+                name = sub.get("name", "")
+                definition = sub.get("definition", "")
+                lines.append(f"- {name}: {definition}")
+        return "\n".join(lines)
+
+    def all_valid_category_names(self) -> List[str]:
+        """Return every sub-category name (original casing) across all parent types."""
+        names: List[str] = []
+        for group in self.config.get("categories", []):
+            for sub in group.get("sub_categories", []):
+                name = sub.get("name", "")
+                if name:
+                    names.append(name)
+        return names
+
+    def get_parent_for_category(self, category_name: str, report_type: str) -> str:
+        """
+        Given a sub-category name and the report type ('Analysis' or 'Survey'),
+        return the correct parent header string from report-categories.json.
+
+        Example: get_parent_for_category("Cloud Security", "Survey")
+                 → "Survey Reports"
+        """
+        name_lower = category_name.lower()
+        type_lower = report_type.lower()
+
+        # First pass: exact match within the correct parent type
+        for group in self.config.get("categories", []):
+            parent = group.get("parent", "")
+            if type_lower in parent.lower():
+                for sub in group.get("sub_categories", []):
+                    if sub.get("name", "").lower() == name_lower:
+                        return parent
+
+        # Second pass: any group containing the category (type mismatch fallback)
+        for group in self.config.get("categories", []):
+            parent = group.get("parent", "")
+            for sub in group.get("sub_categories", []):
+                if sub.get("name", "").lower() == name_lower:
+                    return parent
+
+        # Final fallback: first group whose parent matches the type keyword
+        for group in self.config.get("categories", []):
+            if type_lower in group.get("parent", "").lower():
+                return group["parent"]
+
+        return "Analysis Reports"
+
+
+# ====================
 # AI ANALYZER
 # ====================
 class AIAnalyzer:
@@ -234,6 +324,7 @@ class AIAnalyzer:
         self.config = config
         self.cache = cache
         self.validator = SummaryValidator(config)
+        self.cat_builder = CategoryBuilder(config.categories_config)
 
         api_key = os.environ.get("GEMINI_API_KEY")
         if not api_key:
@@ -253,7 +344,7 @@ class AIAnalyzer:
     ) -> Dict[str, Any]:
         """
         Analyze a report with retry logic and validation.
-        Returns dict with summary, type, category, ai_processed.
+        Returns dict with summary, type, category, parent_section, ai_processed.
         """
         cached = self.cache.get(content, org, year)
         if cached:
@@ -270,7 +361,9 @@ class AIAnalyzer:
 
                 if is_valid:
                     word_count = len(result["summary"].split())
-                    print(f"  ✓ Analysis complete ({word_count} words)")
+                    print(f"  ✓ Summary valid ({word_count} words)")
+                    print(f"  ✓ Type: {result['type']} | Category: {result['category']}")
+                    print(f"  ✓ Section: {result['parent_section']}")
                     self.cache.set(content, org, year, result)
                     return result
 
@@ -284,6 +377,9 @@ class AIAnalyzer:
                     delay *= self.config.backoff_mult
                 else:
                     print(self.validator.format_errors(errors, result["summary"], org))
+                    # Use the result anyway — readme-updater will sanitize further
+                    self.cache.set(content, org, year, result)
+                    return result
 
             except Exception as e:
                 print(f"  ⚠ Attempt {attempt + 1} error: {str(e)[:100]}")
@@ -302,7 +398,7 @@ class AIAnalyzer:
         year: str,
         attempt_num: int,
     ) -> Dict[str, Any]:
-        """Single analysis attempt."""
+        """Single analysis attempt: generates summary then classification."""
         summary_prompt = self._load_prompt(self.config.SUMMARY_PROMPT_PATH)
         cat_prompt = self._load_prompt(self.config.CAT_PROMPT_PATH)
 
@@ -336,12 +432,10 @@ class AIAnalyzer:
         summary = self.validator.sanitize(summary)
 
         # Categorization
-        categories = self._load_categories()
-        cat_list = "\n".join(
-            f"- {cat}" for cats in categories.values() for cat in cats
-        )
+        categories_section = self.cat_builder.build_prompt_section()
+
         cat_full_prompt = (
-            f"{cat_prompt.replace('{{CATEGORIES}}', cat_list)}\n\n"
+            f"{cat_prompt.replace('{{CATEGORIES}}', categories_section)}\n\n"
             f"Organization: {org}\nReport Title: {title}\nYear: {year}\n\n"
             f"Report Content:\n{clean_content[:12000]}"
         )
@@ -355,21 +449,48 @@ class AIAnalyzer:
                 .get("categorization", {}).get("temperature", 0.1),
         )
 
-        try:
-            cat_text = cat_response.strip().replace("```json", "").replace("```", "").strip()
-            classification = json.loads(cat_text)
-            report_type = classification.get("type", "Analysis")
-            category = classification.get("category", "Global Threat Intelligence")
-        except Exception:
-            report_type = "Analysis"
-            category = self._infer_category(content, title)
+        # Parse and validate classification
+        report_type, category = self._parse_classification(cat_response, content, title)
+
+        # Resolve the correct parent section header from config
+        parent_section = self.cat_builder.get_parent_for_category(category, report_type)
 
         return {
             "summary": summary,
             "type": report_type,
             "category": category,
+            "parent_section": parent_section,
             "ai_processed": True,
         }
+
+    def _parse_classification(
+        self, response: str, content: str, title: str
+    ) -> Tuple[str, str]:
+        """
+        Extract type and category from the AI JSON response.
+        Validates the category name against the full config list (case-insensitive).
+        Falls back to keyword inference if JSON is malformed or category is unknown.
+        """
+        valid_names = {n.lower(): n for n in self.cat_builder.all_valid_category_names()}
+
+        try:
+            clean = response.strip().replace("```json", "").replace("```", "").strip()
+            obj = json.loads(clean)
+            raw_type = str(obj.get("type", "Analysis")).strip()
+            raw_category = str(obj.get("category", "")).strip()
+
+            # Normalize type to exactly "Analysis" or "Survey"
+            report_type = "Survey" if "survey" in raw_type.lower() else "Analysis"
+
+            # Accept only categories present in the config; recover correct casing
+            if raw_category.lower() in valid_names:
+                return report_type, valid_names[raw_category.lower()]
+
+        except Exception:
+            pass
+
+        # Keyword fallback when AI response is unusable
+        return "Analysis", self._infer_category(content, title)
 
     def _generate_text(
         self,
@@ -426,18 +547,6 @@ class AIAnalyzer:
         content = re.sub(r" {2,}", " ", content)
         return content.strip()
 
-    def _load_categories(self) -> Dict[str, List[str]]:
-        """Build category lists keyed by type (Analysis/Survey)."""
-        categories: Dict[str, List[str]] = {"Analysis": [], "Survey": []}
-        for group in self.config.categories_config.get("categories", []):
-            parent = group.get("parent", "")
-            parent_type = "Survey" if "Survey" in parent else "Analysis"
-            for sub in group.get("sub_categories", []):
-                name = sub.get("name", "")
-                if name and name not in categories[parent_type]:
-                    categories[parent_type].append(name)
-        return categories
-
     def _infer_category(self, content: str, title: str) -> str:
         """Keyword-based category fallback when AI classification fails."""
         text = (content + " " + title).lower()
@@ -460,13 +569,16 @@ class AIAnalyzer:
         return "Global Threat Intelligence"
 
     def _fallback_result(self, org: str, title: str, year: str) -> Dict[str, Any]:
+        category = self._infer_category(title, title)
+        parent = self.cat_builder.get_parent_for_category(category, "Analysis")
         return {
             "summary": (
                 f"Analyzes security findings and threat trends reported by {org} for {year}, "
                 f"examining key attack patterns, vulnerability data, and defensive recommendations."
             ),
             "type": "Analysis",
-            "category": "Global Threat Intelligence",
+            "category": category,
+            "parent_section": parent,
             "ai_processed": False,
         }
 
@@ -528,6 +640,12 @@ def process_reports(conversions_json: str, output_json: str, config: ConfigLoade
 
         try:
             analysis = analyzer.analyze(content, org, title, year)
+
+            # Build a best-guess org URL: strip non-alphanumeric chars from org name.
+            # Prefer organization_url if the converter already resolved it.
+            org_slug = re.sub(r"[^a-z0-9]", "", org.lower())
+            org_url = conv.get("organization_url") or f"https://www.{org_slug}.com"
+
             results.append({
                 "organization": org,
                 "title": title,
@@ -535,9 +653,9 @@ def process_reports(conversions_json: str, output_json: str, config: ConfigLoade
                 "summary": analysis["summary"],
                 "type": analysis["type"],
                 "category": analysis["category"],
+                "parent_section": analysis["parent_section"],
                 "pdf_path": pdf_path,
-                "report_url": pdf_path.replace(" ", "%20"),
-                "organization_url": f"https://www.{re.sub(r'[^a-z0-9]', '', org.lower())}.com",
+                "organization_url": org_url,
                 "file_path": md_path,
                 "ai_processed": analysis["ai_processed"],
             })

@@ -2,7 +2,7 @@ name: Security Reports Processing Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [main, development]
     paths:
       - 'Annual Security Reports/**/*.pdf'
   pull_request:
@@ -149,18 +149,31 @@ jobs:
             echo "Mode: Scheduled"
             echo "scan_mode=scheduled" >> $GITHUB_OUTPUT
 
+            # Read staleness threshold from workflow-config.json so the policy
+            # lives in the artifact, not in this file.
+            MAX_AGE_DAYS=$(jq -r '.workflow.conversion.max_age_days' .github/artifacts/workflow-config.json)
+
             find "Annual Security Reports" -name "*.pdf" -type f > all_pdfs.txt
 
-            > missing_conversions.txt
+            > needs_conversion.txt
             while IFS= read -r pdf_path; do
               md_path=$(echo "$pdf_path" | sed 's/Annual Security Reports/Markdown Conversions/' | sed 's/\.pdf$/.md/')
               if [ ! -f "$md_path" ]; then
-                echo "$pdf_path" >> missing_conversions.txt
+                # No markdown yet — needs conversion
+                echo "$pdf_path" >> needs_conversion.txt
+              else
+                # Markdown exists — skip if it was refreshed within MAX_AGE_DAYS
+                md_age=$(( ( $(date +%s) - $(date -r "$md_path" +%s) ) / 86400 ))
+                if [ "$md_age" -gt "$MAX_AGE_DAYS" ]; then
+                  echo "$pdf_path" >> needs_conversion.txt
+                fi
               fi
             done < all_pdfs.txt
 
-            if [ -s missing_conversions.txt ]; then
-              cat missing_conversions.txt | xargs ls -rt | head -n 1 > files_to_process.txt
+            if [ -s needs_conversion.txt ]; then
+              # Process the single oldest eligible file per scheduled run to
+              # spread load evenly and stay within API rate limits.
+              sort -t/ -k1,1 needs_conversion.txt | head -n 1 > files_to_process.txt
             fi
 
           elif [ "${{ github.event_name }}" == "push" ]; then
