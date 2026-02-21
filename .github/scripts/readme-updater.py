@@ -42,8 +42,8 @@ class ConfigLoader:
 
         # Summary validation rules
         val = self.readme_config.get("validation", {}).get("summary", {})
-        self.summary_max_length: int   = val.get("max_length", 400)
-        self.summary_min_length: int   = val.get("min_length", 40)
+        self.summary_max_length: int   = val.get("max_length", 800)
+        self.summary_min_length: int   = val.get("min_length", 100)
         self.required_verbs:     List[str] = [v.lower() for v in val.get("required_verbs", [])]
         self.forbidden_phrases:  List[str] = [p.lower() for p in val.get("forbidden_phrases", [])]
         self.marketing_words:    List[str] = [w.lower() for w in val.get("marketing_words", [])]
