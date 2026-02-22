@@ -319,56 +319,36 @@ jobs:
           name: file-lists
 
       - name: Install dependencies
-        run: pip install --break-system-packages requests
+        run: |
+          PY_PACKAGES=$(jq -r '.workflow.virustotal.python_packages | join(" ")' .github/artifacts/workflow-config.json)
+          pip install --break-system-packages $PY_PACKAGES
 
       - name: Run VirusTotal scan
         id: vt-scan
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
         run: |
-          SCAN_MODE="${{ needs.discover-and-scan.outputs.scan_mode }}"
-          SKIP_ON_SCHEDULE=$(jq -r '.workflow.virustotal.skip_on_schedule' .github/artifacts/workflow-config.json)
-          SKIP_ON_PUSH=$(jq -r '.workflow.virustotal.skip_on_push' .github/artifacts/workflow-config.json)
-          MANUAL_SKIP="${{ github.event.inputs.skip_virus_scan }}"
-
-          # Evaluate skip conditions
-          SKIP_SCAN="false"
-          if [ "$MANUAL_SKIP" == "true" ]; then
-            SKIP_SCAN="true"
-            echo "⊘ VirusTotal scan skipped (manual override)"
-          elif [ "$SCAN_MODE" == "scheduled" ] && [ "$SKIP_ON_SCHEDULE" == "true" ]; then
-            SKIP_SCAN="true"
-            echo "⊘ VirusTotal scan skipped (scheduled run — configured in workflow-config.json)"
-          elif [[ "$SCAN_MODE" == "push"* ]] && [ "$SKIP_ON_PUSH" == "true" ]; then
-            SKIP_SCAN="true"
-            echo "⊘ VirusTotal scan skipped (push run — configured in workflow-config.json)"
-          fi
-
-          if [ "$SKIP_SCAN" == "true" ]; then
-            echo "scan_passed=true" >> $GITHUB_OUTPUT
-            echo "scan_skipped=true" >> $GITHUB_OUTPUT
-            echo '[]' > scan_results.json
-            exit 0
-          fi
-
-          if [ -z "$VIRUS_TOTAL_API_KEY" ]; then
-            echo "⚠ VIRUS_TOTAL_API_KEY not set — skipping scan"
-            echo "scan_passed=true" >> $GITHUB_OUTPUT
-            echo "scan_skipped=true" >> $GITHUB_OUTPUT
-            echo '[]' > scan_results.json
-            exit 0
+          MANUAL_SKIP_FLAG=""
+          if [ "${{ github.event.inputs.skip_virus_scan }}" == "true" ]; then
+            MANUAL_SKIP_FLAG="--manual-skip"
           fi
 
           python .github/scripts/virus-total-scan.py \
             files_to_process.txt \
-            --output-json scan_results.json
+            --scan-mode "${{ needs.discover-and-scan.outputs.scan_mode }}" \
+            --output-json scan_results.json \
+            --artifacts-dir .github/artifacts \
+            $MANUAL_SKIP_FLAG
 
-          echo "scan_skipped=false" >> $GITHUB_OUTPUT
+          EXIT_CODE=$?
 
-          # Fail the job if any file is Malicious
+          # Determine outputs from the results file written by the script
+          SKIPPED=$(jq 'length == 0' scan_results.json)
           MALICIOUS=$(jq '[.[] | select(.verdict == "Malicious")] | length' scan_results.json)
-          if [ "$MALICIOUS" -gt 0 ]; then
-            echo "❌ $MALICIOUS file(s) flagged as Malicious — blocking pipeline"
+
+          echo "scan_skipped=$SKIPPED" >> $GITHUB_OUTPUT
+
+          if [ $EXIT_CODE -ne 0 ] || [ "${MALICIOUS:-0}" -gt 0 ]; then
             echo "scan_passed=false" >> $GITHUB_OUTPUT
           else
             echo "scan_passed=true" >> $GITHUB_OUTPUT
@@ -387,15 +367,15 @@ jobs:
           echo "## 🛡️ VirusTotal Scan" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          if [ "${{ steps.vt-scan.outputs.scan_skipped }}" == "true" ]; then
+          if [ ! -f scan_results.json ] || [ "$(jq 'length' scan_results.json)" -eq 0 ]; then
             SCAN_MODE="${{ needs.discover-and-scan.outputs.scan_mode }}"
             MANUAL_SKIP="${{ github.event.inputs.skip_virus_scan }}"
             if [ "$MANUAL_SKIP" == "true" ]; then
               echo "⊘ Scan skipped by manual input." >> $GITHUB_STEP_SUMMARY
             else
-              echo "⊘ Scan skipped for \`${SCAN_MODE}\` mode (configured in workflow-config.json)." >> $GITHUB_STEP_SUMMARY
+              echo "⊘ Scan skipped for \`${SCAN_MODE}\` mode (see workflow-config.json)." >> $GITHUB_STEP_SUMMARY
             fi
-          elif [ -f scan_results.json ] && [ "$(jq 'length' scan_results.json)" -gt 0 ]; then
+          else
             echo "| File | Verdict | Detections | Engines | Report |" >> $GITHUB_STEP_SUMMARY
             echo "|------|---------|------------|---------|--------|" >> $GITHUB_STEP_SUMMARY
             jq -r '.[] | select(.status == "success") |
@@ -410,12 +390,10 @@ jobs:
             fi
 
             MALICIOUS=$(jq '[.[] | select(.verdict == "Malicious")] | length' scan_results.json)
-            if [ "$MALICIOUS" -gt 0 ]; then
+            if [ "${MALICIOUS:-0}" -gt 0 ]; then
               echo "" >> $GITHUB_STEP_SUMMARY
-              echo "❌ **$MALICIOUS file(s) flagged as Malicious — pipeline blocked.**" >> $GITHUB_STEP_SUMMARY
+              echo "❌ **${MALICIOUS} file(s) flagged as Malicious — pipeline blocked.**" >> $GITHUB_STEP_SUMMARY
             fi
-          else
-            echo "⚠️ No scan results available." >> $GITHUB_STEP_SUMMARY
           fi
 
   convert-pdf-to-markdown:

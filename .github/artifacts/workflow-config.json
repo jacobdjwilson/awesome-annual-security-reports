@@ -48,9 +48,17 @@
       "markdown_conversions": "Markdown Conversions"
     },
     "virustotal": {
+      "api_base_url": "https://www.virustotal.com/api/v3",
+      "user_agent": "VirusTotal GitHub Action",
+      "large_file_threshold_mb": 32,
+      "poll_attempts": 5,
+      "poll_backoff_base_seconds": 10,
+      "rate_limit_sleep_seconds": 15,
       "skip_on_schedule": false,
       "skip_on_push": false,
-      "rate_limit_sleep_seconds": 15
+      "python_packages": [
+        "requests"
+      ]
     }
   }
 }
