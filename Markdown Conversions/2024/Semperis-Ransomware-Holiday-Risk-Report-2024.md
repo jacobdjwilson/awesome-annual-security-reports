@@ -1,28 +1,10 @@
-# Ransomware Holiday Risk Report 2024
+4
+2
+0
+2
 
-## Table of Contents
-- [Executive Summary](#executive-summary)
-- [Effective Operational Resilience Is a 24/7/365 Initiative](#effective-operational-resilience-is-a-247365-initiative)
-- [Key Findings](#key-findings)
-- [Attackers Don’t Take Holidays](#attackers-dont-take-holidays)
-- [Attackers Strike When SOC Staffing Is Reduced](#attackers-strike-when-soc-staffing-is-reduced)
-- [Attacks Occur During Times of Corporate Distraction](#attacks-occur-during-times-of-corporate-distraction)
-- [Identity Protection Is Pivotal to Business Resilience](#identity-protection-is-pivotal-to-business-resilience)
-- [Aligning Business Priorities](#aligning-business-priorities)
-- [Methodology](#methodology)
-- [How to Cite Information in This Report](#how-to-cite-information-in-this-report)
-- [About Semperis](#about-semperis)
-
-“Threat actors … are calculated and persistent in
-their attack methods. Security awareness and
-functionality don’t wax and wane. If anything,
-organizations should increase their security
-persistence on holidays and weekends, knowing
-that threat actors aren’t taking time off.”
-
-Chris Inglis
-Strategic Advisor, Semperis
-First US National Cyber Director
+Ransomware
+Holiday Risk Report
 
 Expert guidance for strengthening ransomware defense, especially during
 high-risk periods such as holidays, weekends, and corporate transitions
@@ -34,7 +16,26 @@ defenses against attacks that strike during times of distraction
 New evidence that organizations routinely overestimate
 their ability to defend against identity-based attacks
 
-## Executive Summary
+“Threat actors … are calculated and persistent in
+
+their attack methods. Security awareness and
+
+functionality don’t wax and wane. If anything,
+
+organizations should increase their security
+
+persistence on holidays and weekends, knowing
+
+that threat actors aren’t taking time off.”
+
+Chris Inglis
+
+Strategic Advisor, Semperis
+
+First US National Cyber Director
+
+Executive Summary
+
 Ransomware attacks don’t observe business hours, and
 attacks often move too quickly for human intervention alone.
 Therefore, automated identity playbooks are required to
@@ -63,20 +64,21 @@ layoffs) and potential gaps in organizations’ cybersecurity defenses.
 
 Ransomware groups frequently strike
 outside of business hours.
-
 Ransomware attackers often strike when defenses are weakest—86% of study
 participants who experienced a ransomware attack were targeted on
 a weekend or holiday, when staffing is most likely to be reduced.
 
 Organizations typically reduce security staffing
 during the most likely times of attack.
-
 Even though 96% of surveyed organizations maintained a security operations center (SOC),
 85% reduced SOC staffing by as much as 50% on holidays and weekends.
 
+2
+
+Executive Summary
+
 Material corporate events present attractive
 opportunities for ransomware attackers.
-
 From an attacker’s perspective, mergers, acquisitions, IPOs, and workforce
 restructuring provide useful distractions as business and technology leaders focus
 on event requirements rather than cyber defenses. Mergers and acquisitions are
@@ -86,7 +88,6 @@ corporate event.
 
 Business leaders must prioritize
 strengthening identity system defense.
-
 With Active Directory as the core of organizations’ access to systems and resources,
 identity-based attacks are a growing threat. Yet 40% of companies do not have—
 or are uncertain that they have--sufficient budget to defend core identity
@@ -96,50 +97,111 @@ system defense, many organizations are missing key parts of an effective ITDR st
 CONTRIBUTING EXPERTS
 
 Mickey Bresman
+
 Semperis CEO
 
 Sean Deuby
 Semperis Principal
+
 Technologist
+
 (North America)
 
 Guido Grillenmeier
 Semperis Principal
+
 Technologist (EMEA)
 
 Simon Hodgkinson
 Semperis Strategic
+
 Advisor, former
+
 bp CISO
 
 Chris Inglis
+
 Semperis Strategic
+
 Advisor, former
+
 US National
+
 Cyber Director
 
 Ciaran Martin, CB
+
 Paladin Capital
+
 Group Managing
+
 Director, founding
+
 Chief Executive
+
 of the UK’s
+
 National Cyber
+
 Security Centre
 
 Kemba Walden
 Paladin
+
 Global Institute
+
 President, former
+
 Acting US National
+
 Cyber Director
 
 Jeff Wichman
 Semperis Director
 of Incident
+
 Response
 
-## Effective Operational Resilience Is a 24/7/365 Initiative
+3
+
+4
+
+TABLE OF
+Contents
+
+6
+
+7
+
+8
+
+10
+
+12
+
+14
+
+16
+
+Effective Operational Resilience Is a
+24/7/365 Initiative
+
+Key Findings
+
+Attackers Don’t Take Holidays
+
+Attackers Strike When SOC Staffing Is Reduced
+
+Attacks Occur During Times of
+Corporate Distraction
+
+Identity Protection Is Pivotal to
+Business Resilience
+
+Aligning Business Priorities
+
+Effective Operational Resilience
+Is a 24/7/365 Initiative
 Study of global IT and security
 leaders reveals a striking gap in
 ransomware defenses.
@@ -148,10 +210,6 @@ ransomware defenses.
 as possible with the least hassle. They look for
 events that give them more leverage, and they
 try to catch organizations unprepared.”
-
-Sean Deuby
-Principal Technologist
-(North America), Semperis
 
 Ransomware attackers are adept at hiding their activities.
 Whether masquerading as legitimate users to breach
@@ -188,6 +246,13 @@ management (IAM). On-premises Active Directory and
 related cloud-based identity systems, such as Entra ID and
 Okta, form the basis of Zero Trust capabilities and are a
 primary target for cyberattackers, who use these systems
+
+6
+
+Sean Deuby
+Principal Technologist
+(North America), Semperis
+
 to move laterally, escalate privilege, and gain access to
 sensitive resources.
 
@@ -204,9 +269,8 @@ management professionals across multiple industries,
 including education, finance, healthcare, manufacturing
 and utilities, IT and telecommunications, and travel
 and transportation. The first Semperis report based on
-these study responses, 2024 Ransomware Risk Report,
+these study responses,  2024 Ransomware Risk Report,
 discussed the prevalence and effects of ransomware.
-
 Our new report expands on this research, providing
 expert insights into common ransomware attack timing
 and revealing how business and cybersecurity leaders
@@ -221,7 +285,7 @@ and to enable fast, secure recovery of the hybrid Active
 Directory environment is a top business imperative to
 reduce downtime risk.
 
-## Key Findings
+Key Findings
 Ransomware attackers strike when security
 coverage is lighter or when companies are distracted.
 
@@ -230,7 +294,9 @@ when it’s least
 expected—and
 most damaging.
 
-72% of survey respondents (86% of those targeted by ransomware) were
+72%
+
+of survey respondents (86% of those targeted by ransomware) were
 attacked on a holiday or weekend, and 63% of respondents (76% of
 targeted organizations) suffered a ransomware attack during a major
 corporate event, such as a merger, acquisition, or IPO.
@@ -239,60 +305,58 @@ Security staffing
 is a widespread
 challenge.
 
-85% of organizations that maintain a year-round, 24-hour SOC—whether
+85%
+
+of organizations that maintain a year-round, 24-hour SOC—whether
 outsourced or operated in-house—reduce staffing on holidays and
 weekends by up to 50%, due to staffing challenges and difficulty justifying
 higher overtime costs when most employees are out of the office.
 
 Organizations seem
 to overestimate their
-identity defenses.
 
-81% of respondents believe they have the necessary expertise to protect
+identity defenses.  81% of respondents believe they have the necessary expertise to protect
+
 against identity-related attacks, yet 83% suffered a successful
 ransomware attack within the past 12 months.
 
 Many identity
 recovery plans show
-concerning gaps.
 
-40% of respondents either have no budget or are unsure whether they
+concerning gaps.  40% of respondents either have no budget or are unsure whether they
+
 have budget dedicated to defending core identity systems such as
 Active Directory.
 
-86% of organizations
+86%
+
+of organizations
 that experienced
 ransomware attacks
-were targeted on a
+were  targeted on a
 holiday or weekend
 
-US 85%
-UK 85%
-FRANCE 77%
-GERMANY 82%
+77
 
-## Attackers Don’t Take Holidays
+US
+
+UK
+
+FRANCE
+
+GERMANY
+
+85%
+
+85%
+
+77%
+
+82%
+
+Attackers Don’t Take Holidays
+
 For cyber criminals, office closures offer huge opportunities.
-
-“When attackers
-get inside a
-company’s
-systems, especially
-if it’s on a holiday
-weekend when
-staff is diminished,
-they may not be
-noticed right away.
-Companies are less
-careful and more
-vulnerable during
-those periods, and
-attackers know
-that.”
-
-Guido Grillenmeier
-Principal Technologist
-(EMEA), Semperis
 
 Imagine returning from a relaxing weekend only to discover that Active
 Directory is down and your critical IT systems are being held for ransom.
@@ -322,47 +386,94 @@ ransomware payload during a holiday, weekend, or material event. Suddenly,
 you’re being attacked literally from the inside.”
 
 Yet for many respondents, the timing of the attacks came as a surprise.
+
 “When fewer people are in the office, there’s less demand for that help-
 desk role, and internal risks are lower,” says Guido Grillenmeier, Principal
 Technologist (EMEA) at Semperis. “So, it’s understandable that companies
 with a hybrid SOC—one that fulfills both cybersecurity and help-desk roles—
 might ask, ‘Why do I need to have so many people here?’”
 
-EDUCATION 79%
-FINANCE 78%
-HEALTHCARE 74%
-MANUFACTURING 75%
-IT/TELECOM 68%
-TRAVEL/TRANSPORTATION 75%
+8
 
-KEY TAKEAWAYS
+“When attackers
+get inside a
+company’s
+systems, especially
+if it’s on a holiday
+weekend when
+staff is diminished,
+they may not be
+noticed right away.
+Companies are less
+careful and more
+vulnerable during
+those periods, and
+attackers know
+that.”
+
+Guido Grillenmeier
+
+Principal Technologist
+
+(EMEA), Semperis
+
+KEY TAKEAWAYS
+
 Most ransomware attacks took place during a holiday or weekend.
 
-Organizations in France were 10% more likely than organizations in other
+Organizations in France were 10% more likely  than organizations in other
 countries to be targeted during these periods.
-IT/telecom companies companies were 6%-11% less likely to be
-attacked during weekends and holidays.
 
-72% of companies on average have
-been hit with ransomware attacks
-on holidays or weekends
+IT/telecom companies companies were  6%-11% less likely  to be
+attacked during weekends and holidays.
 
 BY THE NUMBERS
 
-FRANCE 81%
-UK 72%
-US 70%
-GERMANY 67%
+72%
 
-## Attackers Strike When SOC Staffing Is Reduced
+of companies on average have
+been hit with ransomware attacks
+on holidays or weekends
+
+FRANCE
+
+81%
+
+UK
+
+72%
+
+US
+
+70%
+
+GERMANY
+
+67%
+
+EDUCATION
+79%
+
+FINANCE
+78%
+
+HEALTHCARE
+74%
+
+MANUFACTURING
+75%
+
+IT/TELECOM
+68%
+
+TRAVEL/TRANSPORTATION
+75%
+
+99
+
+Attackers Strike When
+SOC Staffing Is Reduced
 Ransomware threats demand 24/7/365 attention.
-
-“Cybersecurity cannot wax and wane.
-It must be steady and ever-present.”
-
-Chris Inglis
-Semperis Strategic Advisor,
-former US National Cyber Director
 
 Most of the organizations included in our study
 (96%) said their SOC operates 24/7/365,
@@ -374,11 +485,24 @@ And alarmingly, nearly 5% of respondents
 indicated that their SOC is not staffed at all
 during holidays or weekends.
 
+“Cybersecurity cannot wax and wane.
+It must be steady and ever-present.”
+
+Chris Inglis
+Semperis Strategic Advisor,
+
+former US National Cyber Director
+
 Organizations that scaled back SOC staffing
 during holidays and weekends did so for multiple reasons:
-- They did not think it was necessary, considering most employees work only during weekdays or their business was open only Monday through Friday.
-- Their business had never been targeted by ransomware, or they did not believe that it would be targeted.
-- They were attempting to maintain a work-life balance for staff.
+
+They did not think it was necessary, considering most employees work only
+during weekdays or their business was open only Monday through Friday.
+
+Their business had never been targeted by ransomware, or they did not
+believe that it would be targeted.
+
+They were attempting to maintain a work-life balance for staff.
 
 In addition, many countries mandate higher rates of pay for holiday, overnight, or
 weekend hours. Fully staffing a SOC during these periods can incur significant costs;
@@ -396,29 +520,22 @@ have a SOC, it should be staffed at all times—and not by a skeleton crew,” h
 should be at least 75 percent staffed, and SOC teams should have effective automated
 threat detection and response solution in place as well.”
 
-Organizations in the US were most likely to maintain 24-hour,
-year-round SOC coverage but also most likely to reduce staffing
-to less than 50% during weekends and holidays.
-Organizations in the travel/transportation industry were most
-likely to maintain staffing of 50% or more during weekends and holidays.
+10
 
-EDUCATION 86%
-FINANCE 87%
-HEALTHCARE 81%
-IT/TELECOM 82%
-MANUFACTURING 87%
-TRAVEL/TRANSPORTATION 77%
+KEY TAKEAWAYS
 
-UK 82%
-FRANCE 85%
-GERMANY 75%
-US 90%
-
-KEY TAKEAWAYS
 Despite the high incidence of holiday and weekend cyberattacks, most
-organizations reduce SOC staffing over holidays and weekends.
-Conversely, German companies were the most likely to maintain staffing
+organizations   reduce SOC staffing over holidays and weekends.
+
+Organizations in the US were most likely to  maintain 24-hour,
+year-round SOC coverage  but also most likely to reduce staffing
+to less than 50% during weekends and holidays.
+
+Conversely,  German companies  were the most likely to maintain staffing
 of 50% or more during office closures.
+
+Organizations in the  travel/transportation industry  were most
+likely to maintain staffing of 50% or more during weekends and holidays.
 
 BY THE NUMBERS
 
@@ -426,26 +543,170 @@ Does your
 company maintain
 a 24/7/365 SOC?
 
+Yes (total)*
+
+Yes (outsource/hybrid)
+
+Yes (in-house)
+
+No
+
+ALL
+
+96%
+
+48%
+
+48%
+
+4%
+
+US
+
+97%
+
+47%
+
+50%
+
+3%
+
+UK
+
+FRANCE
+
+GERMANY
+
+98%
+
+95%
+
+49%
+
+49%
+
+2%
+
+47%
+
+48%
+
+5%
+
+91%
+
+50%
+
+41%
+
+9%
+
+EDUCATION
+
+FINANCE
+
+HEALTHCARE IT/TELECOM MANUFACTURING
+
+TRAVEL/
+TRANSPORTATION
+
+Yes (total)*
+
+Yes (outsource/hybrid)
+
+Yes (in-house)
+
+No
+
+95%
+
+44%
+
+51%
+
+4%
+
+98%
+
+48%
+
+50%
+
+2%
+
+94%
+
+54%
+
+41%
+
+6%
+
+96%
+
+39%
+
+57%
+
+4%
+
+97%
+
+44%
+
+52%
+
+3%
+
+96%
+
+45%
+
+51%
+
+4%
+
 We asked companies that maintained a 24/7/365 SOC whether they
 reduced staffing on holidays and weekends, and if so, by how much.
 
-|                        | ALL   | US    | UK    | FRANCE | GERMANY |
-| ---------------------- | ----- | ----- | ----- | ------ | ------- |
-| Yes (total)*           | 96%   | 97%   | 98%   | 95%    | 91%     |
-| Yes (outsource/hybrid) | 48%   | 47%   | 49%   | 47%    | 50%     |
-| Yes (in-house)         | 48%   | 50%   | 49%   | 48%    | 41%     |
-| No                     | 4%    | 3%    | 2%    | 5%     | 9%      |
-|                        |       |       |       |        |         |
-|                        | EDUCATION | FINANCE | HEALTHCARE | IT/TELECOM | MANUFACTURING | TRAVEL/TRANSPORTATION |
-| Yes (total)*           | 95%   | 98%   | 94%   | 96%   | 97%   | 96%   |
-| Yes (outsource/hybrid) | 44%   | 48%   | 54%   | 39%   | 44%   | 45%   |
-| Yes (in-house)         | 51%   | 50%   | 41%   | 57%   | 52%   | 51%   |
-| No                     | 4%    | 2%    | 6%    | 4%    | 3%    | 4%    |
+85% UK
 
-85% of respondents reduced their
+82%
+
+of respondents reduced their
 staffing by as much as 50%
 
-## Attacks Occur During Times of Corporate Distraction
+US
+90%
+
+EDUCATION
+86%
+
+FINANCE
+87%
+
+IT/TELECOM
+82%
+
+MANUFACTURING
+87%
+
+FRANCE
+85%
+
+GERMANY
+75%
+
+HEALTHCARE
+81%
+
+TRAVEL/TRANSPORTATION
+77%
+
+1111
+
+Attacks Occur During Times
+of Corporate Distraction
 Leadership and staff changes,
 system integrations, and
 mergers create vulnerabilities.
@@ -454,10 +715,6 @@ mergers create vulnerabilities.
 organizations that are attacked after a corporate
 event. ... During material events, the business
 priority is to complete the event—not security.”
-
-Simon Hodgkinson
-Strategic Advisor, Semperis
-Former bp CISO
 
 Times of corporate upheaval—whether a merger,
 acquisition, IPO, or reduction in workforce—are
@@ -485,6 +742,7 @@ infrastructures—typically Active Directory
 environments. Ideally, both organizations will
 audit each other’s systems to identify potential
 vulnerabilities before such integration begins.
+
 “If an adversary can get hold of a company that
 has a weak security posture when two companies
 merge, they gain a beachhead that can be used
@@ -494,6 +752,12 @@ says Bresman.
 More often, however, cyber due diligence is
 sacrificed in favor of financial concerns and
 operational expedience. Even when IT teams are
+
+Simon Hodgkinson
+Strategic Advisor, Semperis
+
+Former bp CISO
+
 consulted about cybersecurity vulnerabilities,
 business leaders might pressure them to move
 forward despite identified risks. As Deuby notes,
@@ -511,6 +775,7 @@ Threat actors thrive on such confusion.
 Legacy systems also pose an opportunity for threat
 actors. Transition teams are often reluctant to
 disturb older, potentially fragile systems.
+
 “Legacy applications remain prime targets for a
 long time, increasing the attack surface,” Deuby
 says. “And yet, rebuilding them is typically not
@@ -524,38 +789,109 @@ and former bp CISO, points out, “When you have
 disgruntled employees or former employees, the
 risk of an insider threat goes through the roof.”
 
-In Germany, organizations were significantly less likely to suffer
-an attack during these periods.
-Corporate events create distractions and pressure to overlook cyber due
-diligence. Technical debt, legacy systems, and the potential
-for disgruntled employees present additional risks.
+12
 
-KEY TAKEAWAYS
-A majority (63%) of respondents experienced a ransomware attack
+KEY TAKEAWAYS
+
+A majority (63%) of respondents experienced a   ransomware attack
 following a material corporate event.
-Organizations in the finance sector were most likely to be targeted by
+
+In  Germany,  organizations were significantly less likely to suffer
+an attack during these periods.
+
+Organizations in the   finance sector  were most likely to be targeted by
 ransomware after such events.
 
-EDUCATION 60%
-FINANCE 75%
-HEALTHCARE 62%
-MANUFACTURING 61%
-IT/TELECOM 66%
-TRAVEL/TRANSPORTATION 63%
-
-FRANCE 67%
-UK 67%
-US 64%
-GERMANY 50%
+Corporate events create distractions and pressure to overlook cyber due
+diligence.  Technical debt, legacy systems,  and  the potential
+for disgruntled employees  present additional risks.
 
 BY THE NUMBERS
-63% of companies were victimized
-by a ransomware attack after
+
+63%
+
+of companies were victimized
+by a ransomware attack  after
 a material corporate event
 
-## Identity Protection Is Pivotal to Business Resilience
+EDUCATION
+60%
+
+FINANCE
+75%
+
+HEALTHCARE
+62%
+
+FRANCE
+
+67%
+
+UK
+
+67%
+
+US
+
+64%
+
+GERMANY
+
+50%
+
+MANUFACTURING
+61%
+
+IT/TELECOM
+66%
+
+TRAVEL/TRANSPORTATION
+63%
+
+1313
+
+Identity Protection Is Pivotal
+to Business Resilience
 Operational resilience depends on strong Active Directory
 security and a dedicated identity system recovery plan.
+
+Whether for financial or cultural reasons, organizations are facing
+a clear gap in their cyber defenses. Fully staffing a 24/7/365 SOC
+might help to close this gap, as would increasing IT and security
+resources immediately before, during, and after material
+corporate events.
+
+Realistically, such an increase in staffing might be difficult to
+achieve. Yet organizations must take steps to strengthen their
+ransomware defenses during these critical periods.
+
+[Active Directory’s] pivotal role in
+authentication and authorisation makes
+it a valuable target for malicious actors.
+
+– Five Eyes alliance
+
+For most organizations, strengthening operational
+resilience means improving their ability to defend and
+recover Active Directory.
+
+In September 2024, the Five Eyes alliance—a cybersecurity
+advisory group comprising the Australian Signals Directorate
+(ASD), the US Cybersecurity and Infrastructure Security Agency
+(CISA), the US National Security Agency (NSA), the Canadian
+Centre for Cyber Security (CCCS), the New Zealand National Cyber
+Security Centre (NCSC-NZ), and the UK National Cyber Security
+Centre (NCSC-UK)—published a report encouraging organizations
+to “better protect Active Directory from malicious actors.”1
+
+“Microsoft’s Active Directory is the most widely used authentication
+and authorisation solution in enterprise information technology
+(IT) networks globally [and its] pivotal role in authentication and
+
+1 Detecting and Mitigating Microsoft Active Directory Compromises,
+September 2024.
+
+14
 
 “Cyberattacks, including
 ransomware, often
@@ -573,46 +909,16 @@ resilience
 into their networks.”
 
 Kemba Walden
+
 Paladin Global
+
 Institute President,
+
 former Acting US
+
 National Cyber Director
 
-Whether for financial or cultural reasons, organizations are facing
-a clear gap in their cyber defenses. Fully staffing a 24/7/365 SOC
-might help to close this gap, as would increasing IT and security
-resources immediately before, during, and after material
-corporate events.
-
-Realistically, such an increase in staffing might be difficult to
-achieve. Yet organizations must take steps to strengthen their
-ransomware defenses during these critical periods.
-
-[Active Directory’s] pivotal role in
-authentication and authorisation makes
-it a valuable target for malicious actors.
-– Five Eyes alliance
-
-For most organizations, strengthening operational
-resilience means improving their ability to defend and
-recover Active Directory.
-
-In September 2024, the Five Eyes alliance—a cybersecurity
-advisory group comprising the Australian Signals Directorate
-(ASD), the US Cybersecurity and Infrastructure Security Agency
-(CISA), the US National Security Agency (NSA), the Canadian
-Centre for Cyber Security (CCCS), the New Zealand National Cyber
-Security Centre (NCSC-NZ), and the UK National Cyber Security
-Centre (NCSC-UK)—published a report encouraging organizations
-to “better protect Active Directory from malicious actors.”[^1]
-
-“Microsoft’s Active Directory is the most widely used authentication
-and authorisation solution in enterprise information technology
-(IT) networks globally [and its] pivotal role in authentication and
-
-[^1]: Detecting and Mitigating Microsoft Active Directory Compromises, September 2024.
-
-authorisation makes it a valuable target for malicious actors,” according to the Five Eyes’ advisory,
+authorisation makes it a valuable target for malicious actors,” according to the Five Eyes’ advisory,
 which also notes that Active Directory security is pivotal to “overall network security.”
 
 A truly effective ransomware and cyber-threat defense strategy, then, must include strong identity
@@ -624,6 +930,27 @@ Yet, as illustrated in this report and the 2024 Ransomware Recovery Report, orga
 overestimating their ransomware defense capabilities, including Active Directory–specific backup
 systems and solutions to enable fast recovery of the identity system.
 
+20%
+
+17%
+
+34%
+
+of responding organizations that have an identity recovery
+plan DO NOT take cyber-specific use cases into account.
+
+DO NOT include measures to test for
+identity vulnerabilities.
+
+TEST their identity backups and identity recovery
+plan ONLY QUARTERLY—or less frequently.
+
+61%
+
+DO NOT include dedicated, Active Directory–specific
+backup systems, which are crucial to ensuring a fast,
+malware-free recovery of the identity system.
+
 Wichman emphasizes that the ransomware threat—specifically, the threat to a company’s critical
 identity systems—needs to be considered separately from other technology risks, such as outages
 or disasters.
@@ -632,29 +959,17 @@ or disasters.
 an outage perspective, but it’s useless in a ransomware attack. For those situations, that approach to
 recovery is simply too little, too late.”
 
-- 20% of responding organizations that have an identity recovery plan DO NOT take cyber-specific use cases into account.
-- 17% DO NOT include measures to test for identity vulnerabilities.
-- 34% TEST their identity backups and identity recovery plan ONLY QUARTERLY—or less frequently.
-- 61% DO NOT include dedicated, Active Directory–specific backup systems, which are crucial to ensuring a fast, malware-free recovery of the identity system.
+1515
 
-## Aligning Business Priorities
+Aligning Business Priorities
 Elevating cybersecurity to a business priority and implementing
 automated monitoring solutions will help organizations protect
 themselves against ransomware risk.
-
-“It is critical to thwart identity-based attacks as that takes care of an important part of the problem. As time
-goes by, due to new regulations, organizations are going to have to be able to recover more quickly from
-ransomware. And recovering an identity system will be increasingly important.”
-
-Ciaran Martin
-CB, Paladin Capital Group Managing Director and founding Chief Executive
-of the UK’s National Cyber Security Centre
 
 Ransomware attacks can, and do, strike when
 least expected. No company—regardless of
 region, sector, or SOC status—should
 underestimate the need for constant vigilance.
-
 Furthermore, cybersecurity leaders are
 increasingly insistent that successful ransomware
 defense efforts must include a clear plan to
@@ -663,8 +978,16 @@ defend and recover Active Directory.
 So, what steps can business, technology,
 and security leaders take to reduce the
 likelihood of a successful ransomware attack and
-increase their ability to say “no” to threat actors?
+ increase their ability to say “no” to threat actors?
 Our experts suggest three initial actions.
+
+STEP 1  C-level leadership must
+
+acknowledge ransomware defense and
+identity security as business priorities.
+
+The time has come for members of the C-suite to take a
+more active interest in cybersecurity and ITDR strategy.
 
 “A lot of corporate leaders tend to say,
 ‘Let the tech guys deal with this,’” says
@@ -684,23 +1007,24 @@ assurance issue.”
 Bresman suggests that corporate leaders
 begin by reevaluating risk from an
 operational resilience perspective.
+
 “Every company’s leadership should want
 to understand the exposure of their IT
 infrastructure,” he says. “Every corporate
 board should be asking their CISO two
 questions. One: What is our level of risk?
 
-**STEP 1** C-level leadership must
-acknowledge ransomware defense and
-identity security as business priorities.
+“It is critical to thwart identity-based attacks as that takes care of an important part of the problem. As time
+goes by, due to new regulations, organizations are going to have to be able to recover more quickly from
+ransomware. And recovering an identity system will be increasingly important.”
 
-The time has come for members of the C-suite to take a
-more active interest in cybersecurity and ITDR strategy.
+Ciaran Martin
+CB, Paladin Capital Group Managing Director and founding Chief Executive
+of the UK’s National Cyber Security Centre
 
-A combination of staff, automated solutions, and trusted partners
-can help companies detect threats and mobilize quickly.
+16
 
-And two: What are the systems that would
+And two: What are the systems that would
 completely cripple our organization if they
 were taken out?”
 
@@ -709,7 +1033,8 @@ the most critical business infrastructure
 components, which typically include the
 identity system.
 
-**STEP 2** Robust ITDR
+STEP 2  Robust ITDR
+
 solutions and expert partners
 can help security leaders offset
 staffing challenges.
@@ -722,7 +1047,7 @@ especially outside of business hours,
 a universal challenge.
 
 “Clearly, your security posture will be stronger
-on holidays and weekends if your
+on  holidays and weekends if your
 SOC is staffed to proper levels,” says Martin.
 “Here’s where operational resilience becomes
 so important, as that level of staffing might
@@ -759,7 +1084,15 @@ should consult with a trusted ITDR expert
 with experience defending, detecting, and
 recovering from ransomware.
 
-**STEP 3** Active Directory
+A combination of staff, automated solutions, and trusted partners
+can help companies detect threats and mobilize quickly.
+
+17
+
+RECOMMENDATIONS AND NEXT STEPS
+
+STEP 3  Active Directory
+
 security should be a core aspect of
 every merger or acquisition.
 
@@ -814,27 +1147,41 @@ there is still a lot to do for the protection and
 security of identity systems.”
 
 Mickey Bresman
+
 CEO, Semperis
 
-KEY TAKEAWAYS
-- Ransomware and identity defense are no longer simply IT challenges; they are business priorities.
-- Active Directory security auditing is a necessary part of due diligence in advance of material corporate events.
-- Expert ITDR solutions can help to automate ransomware detection and defense in the face of staffing challenges.
+18
+
+KEY TAKEAWAYS
+
+Ransomware and identity defense are no longer simply IT challenges;
+they are  business priorities.
+
+ Expert ITDR solutions  can help to automate ransomware
+detection and defense in the face of staffing challenges.
+
+Active Directory security auditing is a  necessary part of due
+diligence  in advance of material corporate events.
 
 “Improving operational resilience during material
 events takes patience and diligence. It is essential
 that the CISOs at both organizations involved
 in the material event connect prior to any deal
+
 and discuss ‘must haves’ from a security standpoint before
 the integration of networks begins. They should also identify
 vulnerabilities and weak spots and make sure both organizations
 have the best resources available to reduce risks.”
 
 Kemba Walden
+
 Paladin Global Institute President,
+
 former Acting US National Cyber Director
 
-## Methodology
+19
+
+METHODOLOGY
 In the first half of 2024, global organizations across the United States, the United Kingdom,
 France, and Germany participated in a detailed study on their experience with ransomware.
 To conduct this study, we partnered with experts at Censuswide, an international market
@@ -842,7 +1189,7 @@ research consultancy headquartered in London. Censuswide surveyed 900 IT and sec
 professionals across multiple industries, including education, finance, healthcare,
 manufacturing and utilities, IT and telecommunications, and travel and transportation.
 
-## How to Cite Information in This Report
+HOW TO CITE INFORMATION IN THIS REPORT
 The data in this report are provided as an information source for the cybersecurity community
 and the organizations it serves. Semperis encourages you to share our findings. To cite statistics
 or insights, reference Semperis 2024 Ransomware Holiday Report and link to the full report,
@@ -850,7 +1197,7 @@ downloadable at https://www.semperis.com/ransomware-holiday-risk-report. To inte
 Semperis experts, contact Bill Keeler at billk@semperis.com. Lastly, we’d love to hear your
 questions or thoughts on the topic of ransomware and resilience. Find Semperis on LinkedIn.
 
-## About Semperis
+ABOUT SEMPERIS
 For security teams charged with defending hybrid and multi-cloud environments, Semperis
 ensures the integrity and availability of critical enterprise directory services at every step
 in the cyber kill chain and cuts recovery time by 90%. Purpose-built for securing hybrid
@@ -868,7 +1215,9 @@ Druid. The company has received the highest level of industry accolades, recentl
 Inc. Magazine’s list of best workplaces for 2024 and ranked the fastest-growing cybersecurity
 company in America by the Financial Times. Semperis is a Microsoft Enterprise Cloud Alliance
 and Co-Sell partner and is a member of the Microsoft Intelligent Security Association (MISA).
+
 Learn more: https://www.semperis.com
 
-+1-703-918-4884 | info@semperis.com | www.semperis.com
++1-703-918-4884  |  info@semperis.com  |  www.semperis.com
+
 5 Marine View Plaza, Suite 102, Hoboken, NJ 07030
