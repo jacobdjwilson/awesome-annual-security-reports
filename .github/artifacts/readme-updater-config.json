@@ -46,7 +46,9 @@
         "game-changing",
         "unprecedented",
         "innovative"
-      ]
+      ],
+      "min_sentences": 2,
+      "require_numerical_data": true
     }
   },
   "processing": {
@@ -64,5 +66,11 @@
       "organization_url",
       "summary"
     ]
+  },
+  "org_url_search": {
+    "query_template": "{organization} {title} {year}",
+    "env_api_key": "GOOGLE_SEARCH_API_KEY",
+    "env_cse_id": "GOOGLE_CSE_ID",
+    "num_results": 1
   }
 }

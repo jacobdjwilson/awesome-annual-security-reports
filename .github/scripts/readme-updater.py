@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
 import urllib.parse
+import urllib.request
 
 
 # ==========================
@@ -36,17 +37,24 @@ class ConfigLoader:
         # Matching config
         matching = self.readme_config.get("matching", {})
         self.similarity_threshold: float = matching.get("similarity_threshold", 0.6)
-        # Fields to rewrite in-place when a newer-year edition is detected.
-        # Defined in readme-updater-config.json so policy stays out of code.
         self.update_fields: List[str] = matching.get("update_fields", ["organization_url", "summary"])
 
         # Summary validation rules
         val = self.readme_config.get("validation", {}).get("summary", {})
-        self.summary_max_length: int   = val.get("max_length", 800)
-        self.summary_min_length: int   = val.get("min_length", 100)
+        self.summary_max_length: int       = val.get("max_length", 400)
+        self.summary_min_length: int       = val.get("min_length", 40)
+        self.summary_min_sentences: int    = val.get("min_sentences", 2)
+        self.summary_require_data: bool    = val.get("require_numerical_data", True)
         self.required_verbs:     List[str] = [v.lower() for v in val.get("required_verbs", [])]
         self.forbidden_phrases:  List[str] = [p.lower() for p in val.get("forbidden_phrases", [])]
         self.marketing_words:    List[str] = [w.lower() for w in val.get("marketing_words", [])]
+
+        # Org URL search config
+        search = self.readme_config.get("org_url_search", {})
+        self.search_query_template: str = search.get("query_template", "{organization} {title} {year}")
+        self.search_env_api_key: str    = search.get("env_api_key", "GOOGLE_SEARCH_API_KEY")
+        self.search_env_cse_id: str     = search.get("env_cse_id", "GOOGLE_CSE_ID")
+        self.search_num_results: int    = search.get("num_results", 1)
 
     def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
         path = self.artifacts_dir / filename
@@ -61,15 +69,70 @@ class ConfigLoader:
             return None
 
     def is_year_in_scope(self, report_year: int) -> bool:
-        """
-        True when the report year falls within the active listing window.
-
-        Window = (current_year - age_threshold_years, current_year] exclusive on
-        the lower bound.
-        Threshold is read from readme-updater-config.json, not hard-coded.
-        """
+        """True when the report year falls within the active listing window.
+        Threshold is read from readme-updater-config.json, not hard-coded."""
         current_year = datetime.now().year
         return current_year - report_year < self.age_threshold_years
+
+
+# ==========================
+# GOOGLE SEARCH CLIENT
+# ==========================
+class GoogleSearchClient:
+    """
+    Fetches the first search result URL for a given query using the
+    Google Custom Search JSON API.
+
+    API key and CSE ID are read from environment variables whose names
+    are configured in readme-updater-config.json → org_url_search so
+    that no credentials are ever hard-coded in this file.
+    """
+
+    BASE_URL = "https://www.googleapis.com/customsearch/v1"
+
+    def __init__(self, config: ConfigLoader):
+        self.api_key  = os.environ.get(config.search_env_api_key, "")
+        self.cse_id   = os.environ.get(config.search_env_cse_id, "")
+        self.num      = config.search_num_results
+        self.template = config.search_query_template
+        self._available = bool(self.api_key and self.cse_id)
+
+    def is_available(self) -> bool:
+        return self._available
+
+    def search_first_url(self, organization: str, title: str, year: str) -> Optional[str]:
+        """
+        Build a query from the configured template and return the URL of the
+        first result, or None on any error.
+        """
+        if not self._available:
+            return None
+
+        query = (
+            self.template
+            .replace("{organization}", organization)
+            .replace("{title}", title)
+            .replace("{year}", str(year))
+        )
+
+        params = urllib.parse.urlencode({
+            "key": self.api_key,
+            "cx":  self.cse_id,
+            "q":   query,
+            "num": self.num,
+        })
+        url = f"{self.BASE_URL}?{params}"
+
+        try:
+            with urllib.request.urlopen(url, timeout=10) as resp:
+                data = json.loads(resp.read().decode())
+            items = data.get("items", [])
+            if items:
+                return items[0].get("link")
+        except Exception as e:
+            print(f"    ⚠ Google Search failed for '{query}': {e}")
+
+        return None
 
 
 # ==========================
@@ -82,6 +145,8 @@ class SummaryValidator:
     def __init__(self, config: ConfigLoader):
         self.max_length      = config.summary_max_length
         self.min_length      = config.summary_min_length
+        self.min_sentences   = config.summary_min_sentences
+        self.require_data    = config.summary_require_data
         self.required_verbs  = config.required_verbs
         self.forbidden_phrases = config.forbidden_phrases
         self.marketing_words = config.marketing_words
@@ -99,6 +164,16 @@ class SummaryValidator:
 
         if "\n" in summary:
             errors.append("ContainsNewlines")
+
+        # Sentence count: split on sentence-ending punctuation followed by space
+        # or end-of-string, count non-empty results
+        sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', summary.strip()) if s.strip()]
+        if len(sentences) < self.min_sentences:
+            errors.append(f"TooFewSentences:{len(sentences)}<{self.min_sentences}")
+
+        # Numerical data requirement (digit present anywhere in the text)
+        if self.require_data and not re.search(r'\d', summary):
+            errors.append("NoNumericalData")
 
         words = summary.split()
         first = words[0].lower().rstrip(".,;:") if words else ""
@@ -156,8 +231,6 @@ class CategoryManager:
 
     def __init__(self, categories_config: Dict[str, Any], similarity_threshold: float = 0.6):
         self.threshold = similarity_threshold
-        # flat_map:   lowercase name → list of {name, parent}  (preserves duplicates)
-        # parent_map: lowercase parent name → list of sub-category names
         self.flat_map, self.parent_map = self._build_maps(categories_config)
 
     def _build_maps(
@@ -177,13 +250,7 @@ class CategoryManager:
     def match_category(
         self, hint: str, report_type: str = "Analysis"
     ) -> Tuple[str, str]:
-        """Return (canonical_category_name, parent_section_name).
-
-        Priority:
-          1. Exact name match, biased toward report_type keyword in parent name.
-          2. Fuzzy word-overlap match, same bias.
-          3. Type-appropriate default.
-        """
+        """Return (canonical_category_name, parent_section_name)."""
         if not hint:
             return self._default(report_type)
 
@@ -270,43 +337,25 @@ class ReadmeParser:
                 f"  start_marker: '{self.start_marker}'\n"
                 f"  end_marker:   '{self.end_marker}'"
             )
-        # Use sm.start() (not sm.end()) so the "## Analysis Reports" heading
-        # is part of self.content and visible to find_section_bounds().
+        # Use sm.start() so the "## Analysis Reports" heading is part of self.content
         return sm.start(), em.start()
-
-    # ── entry lookup ──────────────────────────────────────────────────────
 
     @staticmethod
     def _pdf_series_key(url_or_path: str) -> str:
-        """
-        Derive the report-series fingerprint from a PDF filename by stripping
-        the 4-digit year, file extension, percent-encoding, and separator chars.
-
-        Examples:
-          "Annual%20Security%20Reports/2025/Verizon-DBIR-2025.pdf"
-          → filename: "verizon-dbir-2025.pdf"
-          → key:      "verizon-dbir"
-
-          "Annual%20Security%20Reports/2026/Verizon-DBIR-2026.pdf"
-          → key:      "verizon-dbir"   ← same series, different year
-        """
+        """Derive the report-series fingerprint by stripping year, extension,
+        percent-encoding, and separator chars from the PDF filename."""
         name = Path(urllib.parse.unquote(url_or_path)).name.lower()
         name = name.replace(".pdf", "")
-        name = re.sub(r"\d{4}", "", name)       # strip 4-digit years
-        name = re.sub(r"[-_ ]+$", "", name)     # trailing separators
-        name = re.sub(r"^[-_ ]+", "", name)     # leading separators
+        name = re.sub(r"\d{4}", "", name)
+        name = re.sub(r"[-_ ]+$", "", name)
+        name = re.sub(r"^[-_ ]+", "", name)
         return name.strip()
 
     def find_existing_entry(
         self, pdf_path: str
     ) -> Tuple[Optional[str], Optional[Dict[str, str]]]:
-        """
-        Scan self.content for an entry whose PDF series key matches
-        the incoming pdf_path series key (year stripped from both).
-
-        Returns (full_line_string, parsed_fields_dict) or (None, None).
-        Parsed fields: org, org_url, title, report_url, year, summary.
-        """
+        """Scan for an entry whose PDF series key matches pdf_path (year stripped).
+        Returns (full_line_string, parsed_fields_dict) or (None, None)."""
         incoming_key = self._pdf_series_key(pdf_path)
         if not incoming_key:
             return None, None
@@ -322,23 +371,12 @@ class ReadmeParser:
 
         return None, None
 
-    # Section navigation
-
     def find_section_bounds(
         self, parent_heading: str, sub_heading: str
     ) -> Tuple[int, int]:
-        """
-        Return the (start, end) character offsets within self.content for the
-        body of a level-3 sub-section that lives inside a specific level-2
-        parent section.
-
-        Searching within the scoped parent region prevents the wrong
-        "### Application Security" from being matched when the same name
-        exists under both Analysis Reports and Survey Reports.
-
-        Returns (-1, -1) if either heading is not found.
-        """
-        # Locate the level-2 parent
+        """Return (start, end) offsets within self.content for a level-3
+        sub-section scoped inside a specific level-2 parent section.
+        Returns (-1, -1) if either heading is not found."""
         p_pat   = rf"^##\s+{re.escape(parent_heading)}\s*$"
         p_match = re.search(p_pat, self.content, re.MULTILINE)
         if not p_match:
@@ -346,36 +384,23 @@ class ReadmeParser:
             return -1, -1
 
         p_body_start = p_match.end()
-        # Parent section ends at the next ## heading or end of content
-        next_l2  = re.search(r"\n##\s+", self.content[p_body_start:])
-        p_body_end = p_body_start + next_l2.start() if next_l2 else len(self.content)
+        next_l2      = re.search(r"\n##\s+", self.content[p_body_start:])
+        p_body_end   = p_body_start + next_l2.start() if next_l2 else len(self.content)
 
-        # Locate the level-3 sub-section within the parent body
         s_pat   = rf"^###\s+{re.escape(sub_heading)}\s*$"
         s_match = re.search(s_pat, self.content[p_body_start:p_body_end], re.MULTILINE)
         if not s_match:
             print(f"    ⚠ Sub-section '### {sub_heading}' not found under '## {parent_heading}'")
             return -1, -1
 
-        s_abs_start = p_body_start + s_match.end() + 1   # +1 skips trailing \n
-
-        # Sub-section ends at the next ## or ### heading, or end of parent
+        s_abs_start  = p_body_start + s_match.end() + 1
         next_heading = re.search(r"\n#{2,3}\s+", self.content[s_abs_start:p_body_end])
-        s_abs_end    = (
-            s_abs_start + next_heading.start() if next_heading else p_body_end
-        )
+        s_abs_end    = s_abs_start + next_heading.start() if next_heading else p_body_end
 
         return s_abs_start, s_abs_end
 
-    # Reconstruction
-
     def get_full_content(self) -> str:
-        """Reconstruct the full README with the mutated managed section."""
-        return (
-            self.full_content[: self.start_pos]
-            + self.content
-            + self.full_content[self.end_pos:]
-        )
+        return self.full_content[: self.start_pos] + self.content + self.full_content[self.end_pos:]
 
     def save(self) -> None:
         self.readme_path.write_text(self.get_full_content(), encoding="utf-8")
@@ -404,11 +429,13 @@ class ReadmeUpdater:
         parser: ReadmeParser,
         category_manager: CategoryManager,
         config: ConfigLoader,
+        search_client: GoogleSearchClient,
     ):
-        self.parser   = parser
-        self.cat_mgr  = category_manager
-        self.config   = config
-        self.validator = SummaryValidator(config)
+        self.parser        = parser
+        self.cat_mgr       = category_manager
+        self.config        = config
+        self.validator     = SummaryValidator(config)
+        self.search_client = search_client
 
     # Public entry point
 
@@ -421,7 +448,7 @@ class ReadmeUpdater:
         if missing:
             return False, f"missing fields: {', '.join(missing)}"
 
-        # 2 — year scope (threshold from readme-updater-config.json)
+        # 2 — year scope
         try:
             report_year = int(analysis["year"])
         except (ValueError, TypeError):
@@ -434,10 +461,10 @@ class ReadmeUpdater:
                 f"({current - self.config.age_threshold_years + 1}–{current})"
             )
 
-        # Sanitize summary and fix placeholder org URLs before any comparison
+        # Sanitize summary and resolve org URL before any further work
         self._sanitize(analysis)
 
-        # 3 — existing entry check (PDF series key, year-stripped)
+        # 3 — existing entry check
         existing_line, existing_fields = self.parser.find_existing_entry(analysis["pdf_path"])
 
         if existing_line is not None:
@@ -446,10 +473,13 @@ class ReadmeUpdater:
                 return False, f"already current (year={report_year})"
             if report_year > existing_year:
                 return self._update_existing(existing_line, existing_fields, analysis)
-            # Incoming is older than what's already in the README
             return False, f"incoming year {report_year} older than existing {existing_year}"
 
-        # 4 — new entry: resolve category then insert
+        # 4 — new entry: validate summary quality, resolve category, insert
+        is_valid, errors = self.validator.validate(analysis["summary"])
+        if not is_valid:
+            return False, f"summary failed validation: {errors}"
+
         cat_name, parent_name = self.cat_mgr.match_category(
             analysis.get("category", ""), analysis.get("type", "Analysis")
         )
@@ -465,26 +495,15 @@ class ReadmeUpdater:
         old_fields: Dict[str, str],
         new: Dict[str, Any],
     ) -> Tuple[bool, str]:
-        """
-        Rewrite only the fields listed in config.update_fields (from
-        readme-updater-config.json), then swap the old line for the new one
-        in-place.  Position in the section is preserved; no other lines move.
-
-        Supported update_fields: organization_url, summary, year, title.
-        The report_url is always updated because the year in the filename changes.
-        """
-        # Start from old parsed values so untouched fields stay identical
-        merged = dict(old_fields)  # org, org_url, title, report_url, year, summary
-
-        # report_url always reflects the new PDF path (year in filename changed)
+        """Rewrite only config.update_fields in-place; position preserved."""
+        merged = dict(old_fields)
         merged["report_url"] = self._build_report_url(new)
         merged["year"]       = str(new["year"])
 
-        # Update only the fields declared in config (e.g. organization_url, summary)
         field_map = {
-            "organization_url": ("org_url",  new.get("organization_url", "")),
-            "summary":          ("summary",  self.validator.sanitize(new.get("summary", ""))),
-            "title":            ("title",    new.get("title", "")),
+            "organization_url": ("org_url", new.get("organization_url", "")),
+            "summary":          ("summary", self.validator.sanitize(new.get("summary", ""))),
+            "title":            ("title",   new.get("title", "")),
         }
         for config_field, (entry_key, value) in field_map.items():
             if config_field in self.config.update_fields and value:
@@ -504,16 +523,12 @@ class ReadmeUpdater:
     # Insert
 
     def _insert_new(self, analysis: Dict[str, Any]) -> Tuple[bool, str]:
-        """
-        Insert a single new entry at the correct alphabetical position within
-        its sub-section.  Only the new line is added; no existing lines move.
-        """
+        """Insert a single new entry at the correct alphabetical position."""
         parent   = analysis["parent_section"]
         category = analysis["category"]
 
         start, end = self.parser.find_section_bounds(parent, category)
         if start == -1:
-            # Graceful fallback to the type-appropriate default category
             fallback_cat, fallback_parent = self.cat_mgr._default(
                 analysis.get("type", "Analysis")
             )
@@ -527,7 +542,6 @@ class ReadmeUpdater:
         new_entry = self._build_entry(analysis)
         new_org   = self._extract_org(new_entry).lower()
 
-        # Walk the section body to find the correct alphabetical insertion point
         body  = self.parser.content[start:end]
         lines = body.split("\n")
 
@@ -542,7 +556,6 @@ class ReadmeUpdater:
         if insert_idx is not None:
             lines.insert(insert_idx, new_entry)
         else:
-            # Append after the last entry line, before any trailing blank lines
             last_entry = max(
                 (i for i, l in enumerate(lines) if l.strip().startswith("- [")),
                 default=-1,
@@ -558,31 +571,45 @@ class ReadmeUpdater:
     # Helpers
 
     def _sanitize(self, analysis: Dict[str, Any]) -> None:
-        """Clean summary and replace Google search placeholder URLs in-place."""
-        is_valid, _ = self.validator.validate(analysis.get("summary", ""))
-        if not is_valid:
-            analysis["summary"] = self.validator.sanitize(analysis.get("summary", ""))
+        """Clean summary and resolve the organization URL.
 
+        URL resolution priority:
+          1. Use the existing org URL if it is already a real non-Google URL.
+          2. Search Google CSE for "{organization} {title} {year}" and take the
+             first result URL (credentials read from env vars named in config).
+          3. Fall back to https://www.{slug}.com if search is unavailable or
+             returns no results.
+        """
+        # Summary cleanup (structural validation happens later in process_report)
+        summary = analysis.get("summary", "")
+        is_valid, _ = self.validator.validate(summary)
+        if not is_valid:
+            analysis["summary"] = self.validator.sanitize(summary)
+
+        # Org URL resolution
         org_url = analysis.get("organization_url", "")
-        if not org_url or "google.com/search" in org_url:
-            slug = re.sub(r"[^a-z0-9]", "", analysis["organization"].lower())
-            analysis["organization_url"] = f"https://www.{slug}.com"
+        needs_url = not org_url or "google.com/search" in org_url
+
+        if needs_url:
+            searched = self.search_client.search_first_url(
+                organization=analysis["organization"],
+                title=analysis["title"],
+                year=str(analysis.get("year", "")),
+            )
+            if searched:
+                print(f"    ✓ Org URL from search: {searched}")
+                analysis["organization_url"] = searched
+            else:
+                # Last-resort fallback: construct a plausible homepage
+                slug = re.sub(r"[^a-z0-9]", "", analysis["organization"].lower())
+                analysis["organization_url"] = f"https://www.{slug}.com"
+                print(f"    ⚠ Search unavailable; using fallback URL: {analysis['organization_url']}")
 
     def _build_report_url(self, analysis: Dict[str, Any]) -> str:
-        """
-        Build the report_url for the markdown link.
-
-        pdf_path in analysis.json is the repo-relative path, e.g.:
-          "Annual Security Reports/2026/Vendor-Report-2026.pdf"
-
-        The pdf_root_folder value in readme-updater-config.json is used
-        to percent-encode the folder prefix, keeping the path construction
-        config-driven rather than hard-coded.
-        """
+        """pdf_path is already repo-relative; just percent-encode spaces."""
         return analysis["pdf_path"].replace(" ", "%20")
 
     def _build_entry(self, analysis: Dict[str, Any]) -> str:
-        """Format a full README list entry line from an analysis record."""
         return self._format_entry(
             org        = analysis["organization"],
             org_url    = analysis["organization_url"],
@@ -674,6 +701,9 @@ def main() -> int:
     print(f"  Active window   : {min_year}–{current_year} "
           f"(age_threshold_years={config.age_threshold_years})")
     print(f"  Update fields   : {config.update_fields}")
+
+    search_client = GoogleSearchClient(config)
+    print(f"  Google Search   : {'available' if search_client.is_available() else 'unavailable (will use fallback URL)'}")
     print()
 
     if not os.path.exists(args.analysis_json):
@@ -696,7 +726,7 @@ def main() -> int:
     try:
         cat_mgr = CategoryManager(config.categories_config, config.similarity_threshold)
         parser  = ReadmeParser(args.readme_path, config)
-        updater = ReadmeUpdater(parser, cat_mgr, config)
+        updater = ReadmeUpdater(parser, cat_mgr, config, search_client)
     except Exception as e:
         print(f"ERROR: Initialisation failed: {e}")
         return 1
@@ -733,7 +763,6 @@ def main() -> int:
     else:
         print("\n⊘ No changes — README is already up to date")
 
-    # Always exit 0; the workflow detects actual changes via git diff
     return 0
 
 
