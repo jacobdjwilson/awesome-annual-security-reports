@@ -15,7 +15,7 @@
       "python_packages": [
         "markitdown[pdf,ocr]",
         "pypdf[crypto]",
-        "google-generativeai",
+        "google-genai",
         "google-ai-generativelanguage",
         "Pillow",
         "pytesseract"
@@ -36,6 +36,21 @@
       "min_json_size_bytes": 10,
       "validate_toc": true,
       "verify_conversions": true
+    },
+    "analysis": {
+      "python_packages": [
+        "google-genai",
+        "google-ai-generativelanguage"
+      ]
+    },
+    "folders": {
+      "pdf_source": "Annual Security Reports",
+      "markdown_conversions": "Markdown Conversions"
+    },
+    "virustotal": {
+      "skip_on_schedule": false,
+      "skip_on_push": false,
+      "rate_limit_sleep_seconds": 15
     }
   }
 }

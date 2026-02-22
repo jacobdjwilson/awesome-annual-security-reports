@@ -61,7 +61,6 @@ jobs:
   discover-and-scan:
     runs-on: ubuntu-latest
     outputs:
-      files_to_process: ${{ steps.find-files.outputs.files_to_process }}
       has_files: ${{ steps.find-files.outputs.has_files }}
       scan_mode: ${{ steps.find-files.outputs.scan_mode }}
       file_count: ${{ steps.find-files.outputs.file_count }}
@@ -78,15 +77,23 @@ jobs:
           MAX_SIZE_MB=$(jq -r '.workflow.discovery.max_file_size_mb' .github/artifacts/workflow-config.json)
           DEFAULT_LIMIT=$(jq -r '.workflow.discovery.default_limit' .github/artifacts/workflow-config.json)
           PDF_MAGIC=$(jq -r '.workflow.discovery.pdf_magic_number' .github/artifacts/workflow-config.json)
+          PDF_SOURCE=$(jq -r '.workflow.folders.pdf_source' .github/artifacts/workflow-config.json)
+          MD_FOLDER=$(jq -r '.workflow.folders.markdown_conversions' .github/artifacts/workflow-config.json)
+          MAX_AGE_DAYS=$(jq -r '.workflow.conversion.max_age_days' .github/artifacts/workflow-config.json)
 
           echo "max_size_mb=$MAX_SIZE_MB" >> $GITHUB_OUTPUT
           echo "default_limit=$DEFAULT_LIMIT" >> $GITHUB_OUTPUT
           echo "pdf_magic=$PDF_MAGIC" >> $GITHUB_OUTPUT
+          echo "pdf_source=$PDF_SOURCE" >> $GITHUB_OUTPUT
+          echo "md_folder=$MD_FOLDER" >> $GITHUB_OUTPUT
+          echo "max_age_days=$MAX_AGE_DAYS" >> $GITHUB_OUTPUT
 
           echo "✓ Loaded configuration:"
-          echo "  Max file size: $MAX_SIZE_MB MB"
-          echo "  Default limit: $DEFAULT_LIMIT"
-          echo "  PDF magic: $PDF_MAGIC"
+          echo "  Max file size : $MAX_SIZE_MB MB"
+          echo "  Default limit : $DEFAULT_LIMIT"
+          echo "  PDF source    : $PDF_SOURCE"
+          echo "  MD folder     : $MD_FOLDER"
+          echo "  Max age days  : $MAX_AGE_DAYS"
 
       - name: Find and validate PDF files
         id: find-files
@@ -94,6 +101,9 @@ jobs:
           MAX_SIZE_MB: ${{ steps.load_config.outputs.max_size_mb }}
           DEFAULT_LIMIT: ${{ steps.load_config.outputs.default_limit }}
           PDF_MAGIC: ${{ steps.load_config.outputs.pdf_magic }}
+          PDF_SOURCE: ${{ steps.load_config.outputs.pdf_source }}
+          MD_FOLDER: ${{ steps.load_config.outputs.md_folder }}
+          MAX_AGE_DAYS: ${{ steps.load_config.outputs.max_age_days }}
         run: |
           > files_to_process.txt
           > invalid_files.txt
@@ -107,7 +117,7 @@ jobs:
             echo "Mode: Manual"
             echo "scan_mode=manual" >> $GITHUB_OUTPUT
 
-            FIND_CMD="find 'Annual Security Reports' -name '*.pdf' -type f"
+            FIND_CMD="find '$PDF_SOURCE' -name '*.pdf' -type f"
 
             if [ -n "${{ github.event.inputs.year_filter }}" ]; then
               YEAR="${{ github.event.inputs.year_filter }}"
@@ -130,7 +140,7 @@ jobs:
             if [ "${{ github.event.inputs.skip_existing_conversions }}" == "true" ]; then
               > needs_conversion.txt
               while IFS= read -r pdf_path; do
-                md_path=$(echo "$pdf_path" | sed 's/Annual Security Reports/Markdown Conversions/' | sed 's/\.pdf$/.md/')
+                md_path=$(echo "$pdf_path" | sed "s|$PDF_SOURCE|$MD_FOLDER|" | sed 's/\.pdf$/.md/')
                 if [ ! -f "$md_path" ]; then
                   echo "$pdf_path" >> needs_conversion.txt
                 fi
@@ -149,20 +159,16 @@ jobs:
             echo "Mode: Scheduled"
             echo "scan_mode=scheduled" >> $GITHUB_OUTPUT
 
-            # Read staleness threshold from workflow-config.json so the policy
-            # lives in the artifact, not in this file.
-            MAX_AGE_DAYS=$(jq -r '.workflow.conversion.max_age_days' .github/artifacts/workflow-config.json)
-
-            find "Annual Security Reports" -name "*.pdf" -type f > all_pdfs.txt
+            find "$PDF_SOURCE" -name "*.pdf" -type f > all_pdfs.txt
 
             > needs_conversion.txt
             while IFS= read -r pdf_path; do
-              md_path=$(echo "$pdf_path" | sed 's/Annual Security Reports/Markdown Conversions/' | sed 's/\.pdf$/.md/')
+              md_path=$(echo "$pdf_path" | sed "s|$PDF_SOURCE|$MD_FOLDER|" | sed 's/\.pdf$/.md/')
               if [ ! -f "$md_path" ]; then
                 # No markdown yet — needs conversion
                 echo "$pdf_path" >> needs_conversion.txt
               else
-                # Markdown exists — skip if it was refreshed within MAX_AGE_DAYS
+                # Markdown exists — skip if refreshed within MAX_AGE_DAYS
                 md_age=$(( ( $(date +%s) - $(date -r "$md_path" +%s) ) / 86400 ))
                 if [ "$md_age" -gt "$MAX_AGE_DAYS" ]; then
                   echo "$pdf_path" >> needs_conversion.txt
@@ -171,17 +177,16 @@ jobs:
             done < all_pdfs.txt
 
             if [ -s needs_conversion.txt ]; then
-              # Process the single oldest eligible file per scheduled run to
-              # spread load evenly and stay within API rate limits.
+              # Process the single oldest eligible file per scheduled run
               sort -t/ -k1,1 needs_conversion.txt | head -n 1 > files_to_process.txt
             fi
 
           elif [ "${{ github.event_name }}" == "push" ]; then
-            echo "Mode: Push (main)"
+            echo "Mode: Push"
             echo "scan_mode=push" >> $GITHUB_OUTPUT
 
-            ADDED=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' || true)
-            DELETED=$(git diff --name-only --diff-filter=D HEAD~1 HEAD | grep 'Annual Security Reports/.*\.pdf$' || true)
+            ADDED=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep "$PDF_SOURCE/.*\.pdf$" || true)
+            DELETED=$(git diff --name-only --diff-filter=D HEAD~1 HEAD | grep "$PDF_SOURCE/.*\.pdf$" || true)
 
             if [ -z "$ADDED" ] && [ -n "$DELETED" ]; then
               echo "⊘ Only deletions detected — nothing to process"
@@ -194,8 +199,8 @@ jobs:
             echo "Mode: Pull request"
             echo "scan_mode=pr" >> $GITHUB_OUTPUT
 
-            ADDED=$(git diff --name-only --diff-filter=A origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' || true)
-            DELETED=$(git diff --name-only --diff-filter=D origin/main...HEAD | grep 'Annual Security Reports/.*\.pdf$' || true)
+            ADDED=$(git diff --name-only --diff-filter=A origin/main...HEAD | grep "$PDF_SOURCE/.*\.pdf$" || true)
+            DELETED=$(git diff --name-only --diff-filter=D origin/main...HEAD | grep "$PDF_SOURCE/.*\.pdf$" || true)
 
             if [ -z "$ADDED" ] && [ -n "$DELETED" ]; then
               echo "⊘ Only deletions detected — nothing to process"
@@ -260,7 +265,6 @@ jobs:
       - name: Generate discovery summary
         if: always()
         run: |
-          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           SCAN_MODE="${{ steps.find-files.outputs.scan_mode }}"
           FILE_COUNT="${{ steps.find-files.outputs.file_count }}"
 
@@ -292,10 +296,134 @@ jobs:
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
 
-  convert-pdf-to-markdown:
+  virus-total-scan:
     runs-on: ubuntu-latest
     needs: discover-and-scan
     if: needs.discover-and-scan.outputs.has_files == 'true'
+    outputs:
+      scan_passed: ${{ steps.vt-scan.outputs.scan_passed }}
+      scan_skipped: ${{ steps.vt-scan.outputs.scan_skipped }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download file list
+        uses: actions/download-artifact@v4
+        with:
+          name: file-lists
+
+      - name: Install dependencies
+        run: pip install --break-system-packages requests
+
+      - name: Run VirusTotal scan
+        id: vt-scan
+        env:
+          VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
+        run: |
+          SCAN_MODE="${{ needs.discover-and-scan.outputs.scan_mode }}"
+          SKIP_ON_SCHEDULE=$(jq -r '.workflow.virustotal.skip_on_schedule' .github/artifacts/workflow-config.json)
+          SKIP_ON_PUSH=$(jq -r '.workflow.virustotal.skip_on_push' .github/artifacts/workflow-config.json)
+          MANUAL_SKIP="${{ github.event.inputs.skip_virus_scan }}"
+
+          # Evaluate skip conditions
+          SKIP_SCAN="false"
+          if [ "$MANUAL_SKIP" == "true" ]; then
+            SKIP_SCAN="true"
+            echo "⊘ VirusTotal scan skipped (manual override)"
+          elif [ "$SCAN_MODE" == "scheduled" ] && [ "$SKIP_ON_SCHEDULE" == "true" ]; then
+            SKIP_SCAN="true"
+            echo "⊘ VirusTotal scan skipped (scheduled run — configured in workflow-config.json)"
+          elif [[ "$SCAN_MODE" == "push"* ]] && [ "$SKIP_ON_PUSH" == "true" ]; then
+            SKIP_SCAN="true"
+            echo "⊘ VirusTotal scan skipped (push run — configured in workflow-config.json)"
+          fi
+
+          if [ "$SKIP_SCAN" == "true" ]; then
+            echo "scan_passed=true" >> $GITHUB_OUTPUT
+            echo "scan_skipped=true" >> $GITHUB_OUTPUT
+            echo '[]' > scan_results.json
+            exit 0
+          fi
+
+          if [ -z "$VIRUS_TOTAL_API_KEY" ]; then
+            echo "⚠ VIRUS_TOTAL_API_KEY not set — skipping scan"
+            echo "scan_passed=true" >> $GITHUB_OUTPUT
+            echo "scan_skipped=true" >> $GITHUB_OUTPUT
+            echo '[]' > scan_results.json
+            exit 0
+          fi
+
+          python .github/scripts/virus-total-scan.py \
+            files_to_process.txt \
+            --output-json scan_results.json
+
+          echo "scan_skipped=false" >> $GITHUB_OUTPUT
+
+          # Fail the job if any file is Malicious
+          MALICIOUS=$(jq '[.[] | select(.verdict == "Malicious")] | length' scan_results.json)
+          if [ "$MALICIOUS" -gt 0 ]; then
+            echo "❌ $MALICIOUS file(s) flagged as Malicious — blocking pipeline"
+            echo "scan_passed=false" >> $GITHUB_OUTPUT
+          else
+            echo "scan_passed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Upload scan results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scan-results
+          path: scan_results.json
+
+      - name: Generate VirusTotal summary
+        if: always()
+        run: |
+          echo "## 🛡️ VirusTotal Scan" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.vt-scan.outputs.scan_skipped }}" == "true" ]; then
+            SCAN_MODE="${{ needs.discover-and-scan.outputs.scan_mode }}"
+            MANUAL_SKIP="${{ github.event.inputs.skip_virus_scan }}"
+            if [ "$MANUAL_SKIP" == "true" ]; then
+              echo "⊘ Scan skipped by manual input." >> $GITHUB_STEP_SUMMARY
+            else
+              echo "⊘ Scan skipped for \`${SCAN_MODE}\` mode (configured in workflow-config.json)." >> $GITHUB_STEP_SUMMARY
+            fi
+          elif [ -f scan_results.json ] && [ "$(jq 'length' scan_results.json)" -gt 0 ]; then
+            echo "| File | Verdict | Detections | Engines | Report |" >> $GITHUB_STEP_SUMMARY
+            echo "|------|---------|------------|---------|--------|" >> $GITHUB_STEP_SUMMARY
+            jq -r '.[] | select(.status == "success") |
+              "| \(.file) | \(.verdict) | \(.malicious_count + .suspicious_count) | \(.total_engines) | [View](\(.report_url)) |"
+            ' scan_results.json >> $GITHUB_STEP_SUMMARY
+
+            FAILED=$(jq '[.[] | select(.status != "success")] | length' scan_results.json)
+            if [ "${FAILED:-0}" -gt 0 ]; then
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "**⚠️ Failed scans:**" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] | select(.status != "success") | "- \(.file // "unknown"): \(.reason // "unknown error")"' scan_results.json >> $GITHUB_STEP_SUMMARY
+            fi
+
+            MALICIOUS=$(jq '[.[] | select(.verdict == "Malicious")] | length' scan_results.json)
+            if [ "$MALICIOUS" -gt 0 ]; then
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "❌ **$MALICIOUS file(s) flagged as Malicious — pipeline blocked.**" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "⚠️ No scan results available." >> $GITHUB_STEP_SUMMARY
+          fi
+
+  convert-pdf-to-markdown:
+    runs-on: ubuntu-latest
+    needs: [discover-and-scan, virus-total-scan]
+    if: |
+      needs.discover-and-scan.outputs.has_files == 'true' &&
+      needs.virus-total-scan.outputs.scan_passed == 'true'
     outputs:
       successful_count: ${{ steps.converter.outputs.successful_count }}
       failed_count: ${{ steps.converter.outputs.failed_count }}
@@ -331,6 +459,8 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
+          MD_FOLDER=$(jq -r '.workflow.folders.markdown_conversions' .github/artifacts/workflow-config.json)
+
           python .github/scripts/pdf-converter.py \
             --file-list files_to_process.txt \
             --output-json conversions.json \
@@ -352,7 +482,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: markdown-conversions
-          path: Markdown Conversions/
+          path: "Markdown Conversions/"
           if-no-files-found: ignore
 
       - name: Generate conversion summary
@@ -361,6 +491,7 @@ jobs:
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           SUCCESSFUL="${{ steps.converter.outputs.successful_count }}"
           FAILED="${{ steps.converter.outputs.failed_count }}"
+          MD_FOLDER=$(jq -r '.workflow.folders.markdown_conversions' .github/artifacts/workflow-config.json)
 
           echo "## 📄 PDF → Markdown Conversion" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -404,7 +535,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: markdown-conversions
-          path: Markdown Conversions/
+          path: "Markdown Conversions/"
 
       - name: Pre-analysis verification
         id: verify
@@ -440,9 +571,8 @@ jobs:
       - name: Install dependencies
         if: steps.verify.outputs.has_successful == 'true'
         run: |
-          pip install --break-system-packages \
-            google-generativeai \
-            google-ai-generativelanguage
+          PY_PACKAGES=$(jq -r '.workflow.analysis.python_packages | join(" ")' .github/artifacts/workflow-config.json)
+          pip install --break-system-packages $PY_PACKAGES
 
       - name: Run report analyzer
         id: report-analysis
@@ -484,14 +614,9 @@ jobs:
           if [ "${{ steps.verify.outputs.has_successful }}" != "true" ]; then
             echo "⊘ No successful conversions available for analysis." >> $GITHUB_STEP_SUMMARY
           elif [ "${{ steps.report-analysis.outputs.analysis_success }}" == "true" ]; then
-            echo "✅ Successfully analyzed **${COUNT}** report(s)." >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            if [ -f analysis.json ]; then
-              echo "**Reports analyzed:**" >> $GITHUB_STEP_SUMMARY
-              echo '```' >> $GITHUB_STEP_SUMMARY
-              jq -r '.[] | "\(.organization) — \(.title) (\(.year)) [\(.category)]"' analysis.json >> $GITHUB_STEP_SUMMARY
-              echo '```' >> $GITHUB_STEP_SUMMARY
-            fi
+            echo "| Organization | Title | Year | Category | Type |" >> $GITHUB_STEP_SUMMARY
+            echo "|-------------|-------|------|----------|------|" >> $GITHUB_STEP_SUMMARY
+            jq -r '.[] | "| \(.organization) | \(.title) | \(.year) | \(.category) | \(.type // "—") |"' analysis.json >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "📎 Full analysis available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
           else
@@ -500,9 +625,10 @@ jobs:
 
   update-readme:
     runs-on: ubuntu-latest
-    needs: [discover-and-scan, convert-pdf-to-markdown, analyze-reports]
+    needs: [discover-and-scan, virus-total-scan, convert-pdf-to-markdown, analyze-reports]
     if: |
       needs.discover-and-scan.outputs.has_files == 'true' &&
+      needs.virus-total-scan.outputs.scan_passed == 'true' &&
       needs.analyze-reports.outputs.analysis_success == 'true'
     outputs:
       readme_updated: ${{ steps.readme_update.outputs.readme_updated }}
@@ -522,14 +648,22 @@ jobs:
         with:
           name: analysis-results
 
+      - name: Download scan results
+        uses: actions/download-artifact@v4
+        with:
+          name: scan-results
+
       - name: Download markdown files
         uses: actions/download-artifact@v4
         with:
           name: markdown-conversions
-          path: Markdown Conversions/
+          path: "Markdown Conversions/"
 
       - name: Update README
         id: readme_update
+        env:
+          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
           VALIDATE_TOC=$(jq -r '.workflow.validation.validate_toc' .github/artifacts/workflow-config.json)
 
@@ -561,6 +695,7 @@ jobs:
           BRANCH_PREFIX=$(jq -r '.workflow.pull_request.branch_prefix' .github/artifacts/workflow-config.json)
           SINGLE_TEMPLATE=$(jq -r '.workflow.pull_request.single_report_title_template' .github/artifacts/workflow-config.json)
           MULTI_TEMPLATE=$(jq -r '.workflow.pull_request.multiple_report_title_template' .github/artifacts/workflow-config.json)
+          LABELS=$(jq -r '.workflow.pull_request.labels | join("\n")' .github/artifacts/workflow-config.json)
 
           REPORT_COUNT=$(jq 'length' analysis.json)
 
@@ -575,28 +710,46 @@ jobs:
 
           echo "pr_title=$PR_TITLE" >> $GITHUB_OUTPUT
           echo "branch_name=${BRANCH_PREFIX}${{ github.run_id }}" >> $GITHUB_OUTPUT
+          echo "labels<<EOF" >> $GITHUB_OUTPUT
+          echo "$LABELS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
           # Generate PR body
           SCAN_MODE="${{ needs.discover-and-scan.outputs.scan_mode }}"
-          SUCCESSFUL="${{ needs.convert-pdf-to-markdown.outputs.successful_count }}"
-          FAILED="${{ needs.convert-pdf-to-markdown.outputs.failed_count }}"
+          CONV_OK="${{ needs.convert-pdf-to-markdown.outputs.successful_count }}"
+          CONV_FAIL="${{ needs.convert-pdf-to-markdown.outputs.failed_count }}"
+          VT_SKIPPED="${{ needs.virus-total-scan.outputs.scan_skipped }}"
 
           {
             echo "## 📊 Security Reports Update"
             echo ""
-            echo "**Mode:** \`$SCAN_MODE\`"
-            echo "**Reports:** $REPORT_COUNT"
+            echo "**Mode:** \`$SCAN_MODE\`  **Reports:** $REPORT_COUNT"
             echo ""
-            echo "### 📄 Reports Included"
+
+            echo "### 📄 Reports"
             echo ""
-            jq -r '.[] | "#### \(.organization) - \(.title) (\(.year))\n\n**Category:** \(.category)\n**Summary:** \(.summary)\n\n---\n"' analysis.json
+            jq -r '.[] | "#### \(.organization) — \(.title) (\(.year))\n\n**Category:** \(.category)  **Type:** \(.type // "—")\n\n**Summary:** \(.summary)\n\n---\n"' analysis.json
             echo ""
-            echo "### 📈 Statistics"
+
+            echo "### 🛡️ VirusTotal"
             echo ""
-            echo "- **Conversions:** $SUCCESSFUL successful, $FAILED failed"
+            if [ "$VT_SKIPPED" == "true" ]; then
+              echo "Scan skipped for this run mode."
+            elif [ -f scan_results.json ] && [ "$(jq 'length' scan_results.json)" -gt 0 ]; then
+              echo "| File | Verdict | Detections | Report |"
+              echo "|------|---------|------------|--------|"
+              jq -r '.[] | select(.status == "success") | "| \(.file) | \(.verdict) | \(.malicious_count + .suspicious_count)/\(.total_engines) | [View](\(.report_url)) |"' scan_results.json
+            else
+              echo "No scan results."
+            fi
+            echo ""
+
+            echo "### 📈 Conversions"
+            echo ""
+            echo "- Successful: $CONV_OK  Failed: $CONV_FAIL"
             echo ""
             echo "---"
-            echo "*Auto-generated by Security Reports Pipeline · Run [#${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})*"
+            echo "*Auto-generated by Security Reports Pipeline · [Run #${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})*"
           } > pr_body.md
 
       - name: Create Pull Request
@@ -610,9 +763,7 @@ jobs:
           body-path: pr_body.md
           branch: ${{ steps.generate_pr.outputs.branch_name }}
           delete-branch: true
-          labels: |
-            automated
-            security-reports
+          labels: ${{ steps.generate_pr.outputs.labels }}
           add-paths: |
             README.md
             Markdown Conversions/
@@ -622,6 +773,7 @@ jobs:
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
+          VT_SKIPPED="${{ needs.virus-total-scan.outputs.scan_skipped }}"
 
           echo "## 📝 README Update" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -633,6 +785,16 @@ jobs:
             else
               echo "✅ README updated (PR creation may have been skipped or is pending)." >> $GITHUB_STEP_SUMMARY
             fi
+            echo "" >> $GITHUB_STEP_SUMMARY
+            if [ -f analysis.json ]; then
+              echo "**Changes:**" >> $GITHUB_STEP_SUMMARY
+              echo "| Organization | Title | Year | Category |" >> $GITHUB_STEP_SUMMARY
+              echo "|-------------|-------|------|----------|" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] | "| \(.organization) | \(.title) | \(.year) | \(.category) |"' analysis.json >> $GITHUB_STEP_SUMMARY
+            fi
           else
-            echo "⊘ No changes detected — README and Markdown Conversions are already up to date." >> $GITHUB_STEP_SUMMARY
+            echo "⊘ No changes detected — README is already up to date." >> $GITHUB_STEP_SUMMARY
           fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**VirusTotal:** $([ "$VT_SKIPPED" == "true" ] && echo "Skipped" || echo "Passed ✅")" >> $GITHUB_STEP_SUMMARY
