@@ -68,9 +68,9 @@
     ]
   },
   "org_url_search": {
-    "query_template": "{organization} {title} {year}",
+    "query_template": "{organization} \"{title}\" {year} report",
     "env_api_key": "GOOGLE_SEARCH_API_KEY",
     "env_cse_id": "GOOGLE_CSE_ID",
-    "num_results": 1
+    "num_results": 3
   }
 }

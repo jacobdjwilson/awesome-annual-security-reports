@@ -20,7 +20,11 @@
         "Pillow",
         "pytesseract"
       ],
-      "max_age_days": 90
+      "max_age_days": 90,
+      "min_text_length": 100,
+      "max_pdf_chars": 500000,
+      "max_polish_input_chars": 60000,
+      "prompt_path": ".github/ai-prompts/pdf-to-markdown-prompt.md"
     },
     "pull_request": {
       "branch_prefix": "security-reports-update-",

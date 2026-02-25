@@ -24,6 +24,13 @@
       "top_k": 20,
       "max_output_tokens": 100,
       "comment": "Very low temperature for consistent classification"
+    },
+    "conversion": {
+      "temperature": 0.1,
+      "top_p": 0.95,
+      "top_k": 40,
+      "max_output_tokens": 65536,
+      "comment": "Low temperature for faithful, deterministic PDF-to-Markdown reformatting"
     }
   },
   "retry_policy": {
