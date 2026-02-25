@@ -68,9 +68,7 @@
     ]
   },
   "org_url_search": {
-    "query_template": "{organization} \"{title}\" {year} report",
-    "env_api_key": "GOOGLE_SEARCH_API_KEY",
-    "env_cse_id": "GOOGLE_CSE_ID",
-    "num_results": 3
+    "mode": "report_url",
+    "comment": "Search settings (query template, scoring, credentials, skip domains) live in google-search-config.json. This 'mode' key selects which entry under google_search.modes to use."
   }
 }

@@ -47,6 +47,11 @@
         "google-ai-generativelanguage"
       ]
     },
+    "google_search": {
+      "python_packages": [
+        "requests"
+      ]
+    },
     "folders": {
       "pdf_source": "Annual Security Reports",
       "markdown_conversions": "Markdown Conversions"

@@ -3,11 +3,35 @@ import sys
 import json
 import re
 import argparse
+import importlib.util
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
 import urllib.parse
-import urllib.request
+
+
+# ==========================
+# GOOGLE SEARCH IMPORT
+# ==========================
+def _load_google_search_module() -> Optional[Any]:
+    """
+    Dynamically load google-search.py from the same directory as this script.
+    Returns the module object, or None if the file is not found.
+    Lazy-loading means missing credentials or the absent file will never
+    crash the importer — the caller handles None gracefully.
+    """
+    here   = Path(__file__).parent
+    target = here / "google-search.py"
+    if not target.exists():
+        return None
+    try:
+        spec   = importlib.util.spec_from_file_location("google_search", target)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module
+    except Exception as e:
+        print(f"WARNING: Could not load google-search.py: {e}")
+        return None
 
 
 # ==========================
@@ -49,12 +73,11 @@ class ConfigLoader:
         self.forbidden_phrases:  List[str] = [p.lower() for p in val.get("forbidden_phrases", [])]
         self.marketing_words:    List[str] = [w.lower() for w in val.get("marketing_words", [])]
 
-        # Org URL search config
+        # Google Search config — mode to pass to google-search.py for URL resolution.
+        # The full search config (credentials, scoring, templates) lives in
+        # google-search-config.json and is read by google-search.py directly.
         search = self.readme_config.get("org_url_search", {})
-        self.search_query_template: str = search.get("query_template", "{organization} {title} {year}")
-        self.search_env_api_key: str    = search.get("env_api_key", "GOOGLE_SEARCH_API_KEY")
-        self.search_env_cse_id: str     = search.get("env_cse_id", "GOOGLE_CSE_ID")
-        self.search_num_results: int    = search.get("num_results", 1)
+        self.search_mode: str = search.get("mode", "report_url")
 
     def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
         path = self.artifacts_dir / filename
@@ -73,112 +96,6 @@ class ConfigLoader:
         Threshold is read from readme-updater-config.json, not hard-coded."""
         current_year = datetime.now().year
         return current_year - report_year < self.age_threshold_years
-
-
-# ==========================
-# GOOGLE SEARCH CLIENT
-# ==========================
-class GoogleSearchClient:
-    """
-    Fetches the first search result URL for a given query using the
-    Google Custom Search JSON API.
-
-    API key and CSE ID are read from environment variables whose names
-    are configured in readme-updater-config.json → org_url_search so
-    that no credentials are ever hard-coded in this file.
-    """
-
-    BASE_URL = "https://www.googleapis.com/customsearch/v1"
-
-    def __init__(self, config: ConfigLoader):
-        self.api_key  = os.environ.get(config.search_env_api_key, "")
-        self.cse_id   = os.environ.get(config.search_env_cse_id, "")
-        self.num      = config.search_num_results
-        self.template = config.search_query_template
-        self._available = bool(self.api_key and self.cse_id)
-
-    def is_available(self) -> bool:
-        return self._available
-
-    def search_first_url(self, organization: str, title: str, year: str) -> Optional[str]:
-        """
-        Build a query from the configured template and return the URL of the
-        most relevant result (preferring report-specific pages over homepages),
-        or None on any error.
-        """
-        if not self._available:
-            return None
-
-        query = (
-            self.template
-            .replace("{organization}", organization)
-            .replace("{title}", title)
-            .replace("{year}", str(year))
-        )
-
-        params = urllib.parse.urlencode({
-            "key": self.api_key,
-            "cx":  self.cse_id,
-            "q":   query,
-            "num": self.num,
-        })
-        url = f"{self.BASE_URL}?{params}"
-
-        try:
-            with urllib.request.urlopen(url, timeout=10) as resp:
-                data = json.loads(resp.read().decode())
-            items = data.get("items", [])
-            if not items:
-                return None
-
-            org_lower = organization.lower()
-            year_str = str(year)
-
-            # Score each result: prefer URLs that contain org name + year
-            # and look like a report landing page rather than a search/social page
-            SKIP_DOMAINS = {"google.com", "linkedin.com", "twitter.com", "facebook.com",
-                            "youtube.com", "reddit.com", "wikipedia.org"}
-
-            def _score(item: dict) -> int:
-                link = item.get("link", "").lower()
-                title_text = item.get("title", "").lower()
-                snippet = item.get("snippet", "").lower()
-                combined = link + " " + title_text + " " + snippet
-
-                # Disqualify bad domains
-                for bad in SKIP_DOMAINS:
-                    if bad in link:
-                        return -1
-
-                score = 0
-                if org_lower in link:
-                    score += 3
-                if year_str in link:
-                    score += 3
-                if "report" in link:
-                    score += 2
-                if year_str in title_text:
-                    score += 2
-                if org_lower in title_text:
-                    score += 1
-                # Penalise homepage-only URLs (very short paths)
-                from urllib.parse import urlparse as _urlparse
-                parsed = _urlparse(item.get("link", ""))
-                path = parsed.path.strip("/")
-                if len(path) < 3:
-                    score -= 2
-                return score
-
-            best = max(items, key=_score)
-            best_score = _score(best)
-            if best_score < 0:
-                return None
-            return best.get("link")
-
-        except Exception as e:
-            print(f"    ⚠ Google Search failed for '{query}': {e}")
-
-        return None
 
 
 # ==========================
@@ -482,13 +399,14 @@ class ReadmeUpdater:
         parser: ReadmeParser,
         category_manager: CategoryManager,
         config: ConfigLoader,
-        search_client: GoogleSearchClient,
+        google_search_module: Optional[Any],
     ):
-        self.parser        = parser
-        self.cat_mgr       = category_manager
-        self.config        = config
-        self.validator     = SummaryValidator(config)
-        self.search_client = search_client
+        self.parser               = parser
+        self.cat_mgr              = category_manager
+        self.config               = config
+        self.validator            = SummaryValidator(config)
+        self.google_search_module = google_search_module
+        self._artifacts_dir       = config.artifacts_dir
 
     # Public entry point
 
@@ -627,10 +545,11 @@ class ReadmeUpdater:
         """Clean summary and resolve the organization URL.
 
         URL resolution priority:
-          1. Search Google CSE for "{organization} {title} {year} filetype:pdf OR report"
-             to find the specific report page URL.
-          2. If search is unavailable or returns no results, keep any existing
-             non-generic org URL already on the record.
+          1. Call google-search.py's search_one() with mode=report_url to find
+             the specific report landing page. Mode and all search settings live
+             in google-search-config.json — nothing is hardcoded here.
+          2. If google-search.py is unavailable or returns no results, keep any
+             existing non-generic org URL already on the record.
           3. Fall back to https://www.{slug}.com as last resort.
         """
         # Summary cleanup (structural validation happens later in process_report)
@@ -639,20 +558,24 @@ class ReadmeUpdater:
         if not is_valid:
             analysis["summary"] = self.validator.sanitize(summary)
 
-        # Always attempt to find the specific report URL via Google Search
-        if self.search_client.is_available():
-            searched = self.search_client.search_first_url(
-                organization=analysis["organization"],
-                title=analysis["title"],
-                year=str(analysis.get("year", "")),
-            )
-            if searched and "google.com/search" not in searched:
-                print(f"    ✓ Report URL from search: {searched}")
-                analysis["organization_url"] = searched
-                return
+        # Always attempt to find the specific report URL via google-search.py
+        if self.google_search_module is not None:
+            try:
+                searched = self.google_search_module.search_one(
+                    organization  = analysis["organization"],
+                    title         = analysis["title"],
+                    year          = str(analysis.get("year", "")),
+                    artifacts_dir = str(self._artifacts_dir),
+                    mode          = self.config.search_mode,
+                )
+                if searched and "google.com/search" not in searched:
+                    print(f"    ✓ Report URL from search: {searched}")
+                    analysis["organization_url"] = searched
+                    return
+            except Exception as e:
+                print(f"    ⚠ google-search.py search_one() failed: {str(e)[:100]}")
 
-        # Search unavailable or returned nothing — keep existing URL if it
-        # looks like a real org page (not a google search or empty)
+        # google-search.py unavailable or returned nothing — keep existing URL if real
         org_url = analysis.get("organization_url", "")
         if org_url and "google.com/search" not in org_url:
             print(f"    ⚠ Search unavailable; keeping existing URL: {org_url}")
@@ -759,9 +682,13 @@ def main() -> int:
     print(f"  Active window   : {min_year}–{current_year} "
           f"(age_threshold_years={config.age_threshold_years})")
     print(f"  Update fields   : {config.update_fields}")
+    print(f"  Search mode     : {config.search_mode}")
 
-    search_client = GoogleSearchClient(config)
-    print(f"  Google Search   : {'available' if search_client.is_available() else 'unavailable (will use fallback URL)'}")
+    google_search_module = _load_google_search_module()
+    print(
+        f"  Google Search   : "
+        f"{'available (google-search.py loaded)' if google_search_module else 'unavailable (google-search.py not found)'}"
+    )
     print()
 
     if not os.path.exists(args.analysis_json):
@@ -784,7 +711,7 @@ def main() -> int:
     try:
         cat_mgr = CategoryManager(config.categories_config, config.similarity_threshold)
         parser  = ReadmeParser(args.readme_path, config)
-        updater = ReadmeUpdater(parser, cat_mgr, config, search_client)
+        updater = ReadmeUpdater(parser, cat_mgr, config, google_search_module)
     except Exception as e:
         print(f"ERROR: Initialisation failed: {e}")
         return 1

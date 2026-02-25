@@ -1,0 +1,88 @@
+{
+  "google_search": {
+    "base_url": "https://www.googleapis.com/customsearch/v1",
+    "env_api_key": "GOOGLE_SEARCH_API_KEY",
+    "env_cse_id": "GOOGLE_CSE_ID",
+    "request_timeout_seconds": 10,
+    "rate_limit_sleep_seconds": 1,
+    "retry_policy": {
+      "max_attempts": 3,
+      "initial_delay_seconds": 2,
+      "backoff_multiplier": 2,
+      "max_delay_seconds": 15
+    },
+    "modes": {
+      "report_url": {
+        "description": "Finds the specific landing page URL for a named security report.",
+        "query_template": "{organization} \"{title}\" {year} report",
+        "num_results": 5,
+        "scoring": {
+          "org_in_link": 3,
+          "year_in_link": 3,
+          "report_in_link": 2,
+          "year_in_title": 2,
+          "org_in_title": 1,
+          "short_path_penalty": -2,
+          "short_path_threshold": 3
+        },
+        "skip_domains": [
+          "google.com",
+          "linkedin.com",
+          "twitter.com",
+          "x.com",
+          "facebook.com",
+          "youtube.com",
+          "reddit.com",
+          "wikipedia.org"
+        ]
+      },
+      "report_discovery": {
+        "description": "Discovers new security report PDFs published by an organization.",
+        "query_template": "{organization} {title} {year} security report filetype:pdf",
+        "num_results": 5,
+        "scoring": {
+          "org_in_link": 3,
+          "year_in_link": 3,
+          "report_in_link": 2,
+          "year_in_title": 2,
+          "org_in_title": 1,
+          "short_path_penalty": -2,
+          "short_path_threshold": 3
+        },
+        "skip_domains": [
+          "google.com",
+          "linkedin.com",
+          "twitter.com",
+          "x.com",
+          "facebook.com",
+          "youtube.com",
+          "reddit.com",
+          "wikipedia.org"
+        ],
+        "exclude_terms": [
+          "job",
+          "career",
+          "hiring",
+          "stock",
+          "investor",
+          "earnings"
+        ],
+        "financial_terms": [
+          "annual report",
+          "financial results",
+          "quarterly"
+        ]
+      },
+      "generic": {
+        "description": "General-purpose search returning top results with no domain scoring.",
+        "query_template": "{query}",
+        "num_results": 5,
+        "scoring": {},
+        "skip_domains": []
+      }
+    },
+    "python_packages": [
+      "requests"
+    ]
+  }
+}
