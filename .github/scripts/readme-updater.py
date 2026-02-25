@@ -103,7 +103,8 @@ class GoogleSearchClient:
     def search_first_url(self, organization: str, title: str, year: str) -> Optional[str]:
         """
         Build a query from the configured template and return the URL of the
-        first result, or None on any error.
+        most relevant result (preferring report-specific pages over homepages),
+        or None on any error.
         """
         if not self._available:
             return None
@@ -127,8 +128,53 @@ class GoogleSearchClient:
             with urllib.request.urlopen(url, timeout=10) as resp:
                 data = json.loads(resp.read().decode())
             items = data.get("items", [])
-            if items:
-                return items[0].get("link")
+            if not items:
+                return None
+
+            org_lower = organization.lower()
+            year_str = str(year)
+
+            # Score each result: prefer URLs that contain org name + year
+            # and look like a report landing page rather than a search/social page
+            SKIP_DOMAINS = {"google.com", "linkedin.com", "twitter.com", "facebook.com",
+                            "youtube.com", "reddit.com", "wikipedia.org"}
+
+            def _score(item: dict) -> int:
+                link = item.get("link", "").lower()
+                title_text = item.get("title", "").lower()
+                snippet = item.get("snippet", "").lower()
+                combined = link + " " + title_text + " " + snippet
+
+                # Disqualify bad domains
+                for bad in SKIP_DOMAINS:
+                    if bad in link:
+                        return -1
+
+                score = 0
+                if org_lower in link:
+                    score += 3
+                if year_str in link:
+                    score += 3
+                if "report" in link:
+                    score += 2
+                if year_str in title_text:
+                    score += 2
+                if org_lower in title_text:
+                    score += 1
+                # Penalise homepage-only URLs (very short paths)
+                from urllib.parse import urlparse as _urlparse
+                parsed = _urlparse(item.get("link", ""))
+                path = parsed.path.strip("/")
+                if len(path) < 3:
+                    score -= 2
+                return score
+
+            best = max(items, key=_score)
+            best_score = _score(best)
+            if best_score < 0:
+                return None
+            return best.get("link")
+
         except Exception as e:
             print(f"    ⚠ Google Search failed for '{query}': {e}")
 
@@ -152,14 +198,20 @@ class SummaryValidator:
         self.marketing_words = config.marketing_words
 
     def validate(self, summary: str) -> Tuple[bool, List[str]]:
-        """Return (is_valid, [error_codes])."""
+        """Return (is_valid, [error_codes]).
+        Note: max_length / min_length are word counts (not character counts),
+        matching the validation logic in report-analyzer.py.
+        """
         errors: List[str] = []
         if not summary:
             return False, ["Empty summary"]
 
-        if len(summary) > self.max_length:
+        words = summary.split()
+        word_count = len(words)
+
+        if word_count > self.max_length:
             errors.append("TooLong")
-        elif len(summary) < self.min_length:
+        elif word_count < self.min_length:
             errors.append("TooShort")
 
         if "\n" in summary:
@@ -175,7 +227,6 @@ class SummaryValidator:
         if self.require_data and not re.search(r'\d', summary):
             errors.append("NoNumericalData")
 
-        words = summary.split()
         first = words[0].lower().rstrip(".,;:") if words else ""
         if self.required_verbs and first not in self.required_verbs:
             errors.append("BadStart")
@@ -195,23 +246,25 @@ class SummaryValidator:
 
     def sanitize(self, summary: str) -> str:
         """Best-effort cleanup: collapse whitespace, strip parens/quotes,
-        ensure terminal period, trim to max_length on sentence boundary."""
+        ensure terminal period, trim to max_length on word boundary (word count)."""
         if not summary:
             return ""
         summary = " ".join(summary.split())
         summary = re.sub(r'[()"\']', "", summary)
         if not summary.endswith("."):
             summary += "."
-        if len(summary) > self.max_length:
-            sentences = summary.split(". ")
-            trimmed = ""
-            for s in sentences:
-                candidate = trimmed + s + ". "
-                if len(candidate) <= self.max_length:
-                    trimmed = candidate
-                else:
-                    break
-            summary = trimmed.strip()
+        words = summary.split()
+        if len(words) > self.max_length:
+            # Trim to max_length words on a sentence boundary where possible
+            truncated_words = words[:self.max_length]
+            truncated = " ".join(truncated_words)
+            # Try to end on a clean sentence boundary
+            last_period = truncated.rfind(".")
+            if last_period > len(truncated) * 0.6:
+                truncated = truncated[:last_period + 1]
+            elif not truncated.endswith("."):
+                truncated += "."
+            summary = truncated
         return summary.strip()
 
 
@@ -574,11 +627,11 @@ class ReadmeUpdater:
         """Clean summary and resolve the organization URL.
 
         URL resolution priority:
-          1. Use the existing org URL if it is already a real non-Google URL.
-          2. Search Google CSE for "{organization} {title} {year}" and take the
-             first result URL (credentials read from env vars named in config).
-          3. Fall back to https://www.{slug}.com if search is unavailable or
-             returns no results.
+          1. Search Google CSE for "{organization} {title} {year} filetype:pdf OR report"
+             to find the specific report page URL.
+          2. If search is unavailable or returns no results, keep any existing
+             non-generic org URL already on the record.
+          3. Fall back to https://www.{slug}.com as last resort.
         """
         # Summary cleanup (structural validation happens later in process_report)
         summary = analysis.get("summary", "")
@@ -586,24 +639,29 @@ class ReadmeUpdater:
         if not is_valid:
             analysis["summary"] = self.validator.sanitize(summary)
 
-        # Org URL resolution
-        org_url = analysis.get("organization_url", "")
-        needs_url = not org_url or "google.com/search" in org_url
-
-        if needs_url:
+        # Always attempt to find the specific report URL via Google Search
+        if self.search_client.is_available():
             searched = self.search_client.search_first_url(
                 organization=analysis["organization"],
                 title=analysis["title"],
                 year=str(analysis.get("year", "")),
             )
-            if searched:
-                print(f"    ✓ Org URL from search: {searched}")
+            if searched and "google.com/search" not in searched:
+                print(f"    ✓ Report URL from search: {searched}")
                 analysis["organization_url"] = searched
-            else:
-                # Last-resort fallback: construct a plausible homepage
-                slug = re.sub(r"[^a-z0-9]", "", analysis["organization"].lower())
-                analysis["organization_url"] = f"https://www.{slug}.com"
-                print(f"    ⚠ Search unavailable; using fallback URL: {analysis['organization_url']}")
+                return
+
+        # Search unavailable or returned nothing — keep existing URL if it
+        # looks like a real org page (not a google search or empty)
+        org_url = analysis.get("organization_url", "")
+        if org_url and "google.com/search" not in org_url:
+            print(f"    ⚠ Search unavailable; keeping existing URL: {org_url}")
+            return
+
+        # Last-resort fallback: construct a plausible homepage
+        slug = re.sub(r"[^a-z0-9]", "", analysis["organization"].lower())
+        analysis["organization_url"] = f"https://www.{slug}.com"
+        print(f"    ⚠ No URL found; using fallback: {analysis['organization_url']}")
 
     def _build_report_url(self, analysis: Dict[str, Any]) -> str:
         """pdf_path is already repo-relative; just percent-encode spaces."""
