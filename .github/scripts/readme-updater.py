@@ -9,16 +9,7 @@ from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
 import urllib.parse
 
-# ==========================
-# DEPENDENCY CHECK
-# ==========================
-try:
-    import requests
-except ImportError:
-    print("ERROR: requests required. Install: pip install requests")
-    sys.exit(1)
 
-    
 # ==========================
 # GOOGLE SEARCH IMPORT
 # ==========================
