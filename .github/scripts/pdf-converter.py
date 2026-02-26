@@ -557,6 +557,18 @@ def main():
         success, md_path, message = converter.convert(pdf_path)
         org_name, report_title, year = converter._parse_filename(Path(pdf_path).name)
 
+        # Determine method and model used
+        method = "cached" if message == "cached" else ("markitdown+ai" if polisher else "markitdown")
+        model_used = (polisher._active_model if polisher and polisher._active_model else None)
+
+        # Count output chars for visibility
+        output_chars: Optional[int] = None
+        if success and md_path and Path(md_path).exists():
+            try:
+                output_chars = len(Path(md_path).read_text(encoding="utf-8"))
+            except Exception:
+                pass
+
         results.append({
             "pdf_path":          pdf_path,
             "output_path":       md_path if success else "",
@@ -565,6 +577,10 @@ def main():
             "organization_name": org_name,
             "report_title":      report_title,
             "year":              year,
+            "model":             model_used,
+            "method":            method,
+            "attempts":          1,
+            "output_chars":      output_chars,
         })
 
     # ── Save results ──────────────────────────────────────────────────────

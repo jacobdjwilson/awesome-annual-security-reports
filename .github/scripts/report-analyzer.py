@@ -377,9 +377,13 @@ class AIAnalyzer:
                     delay *= self.config.backoff_mult
                 else:
                     print(self.validator.format_errors(errors, result["summary"], org))
-                    # Use the result anyway — readme-updater will sanitize further
-                    self.cache.set(content, org, year, result)
-                    return result
+                    print(f"  ⚠ All retries exhausted with invalid summary — using fallback result")
+                    fallback = self._fallback_result(org, title, year)
+                    fallback["type"]           = result.get("type", fallback["type"])
+                    fallback["category"]       = result.get("category", fallback["category"])
+                    fallback["parent_section"] = result.get("parent_section", fallback["parent_section"])
+                    self.cache.set(content, org, year, fallback)
+                    return fallback
 
             except Exception as e:
                 print(f"  ⚠ Attempt {attempt + 1} error: {str(e)[:100]}")
@@ -657,6 +661,7 @@ def process_reports(conversions_json: str, output_json: str, config: ConfigLoade
                 "pdf_path": pdf_path,
                 "organization_url": org_url,
                 "file_path": md_path,
+                "model": config.primary_model,
                 "ai_processed": analysis["ai_processed"],
             })
             print(f"  ✓ Complete\n")

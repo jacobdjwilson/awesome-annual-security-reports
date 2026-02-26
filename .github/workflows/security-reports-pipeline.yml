@@ -666,8 +666,8 @@ jobs:
               "|-------|-------|\n" +
               "| **Category** | \(.category) |\n" +
               "| **Type** | \(.type // "—") |\n" +
+              "| **Organization URL** | \(if .organization_url then "[\(.organization_url)](\(.organization_url))" else "—" end) |\n" +
               "| **AI Model** | \(.model // "—") |\n" +
-              "| **Attempts** | \(.attempts // 1) |\n" +
               "\n" +
               "**Summary:** \(.summary)\n" +
               "\n---\n"
