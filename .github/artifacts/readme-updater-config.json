@@ -71,8 +71,4 @@
     "mode": "report_url",
     "comment": "Search settings (query template, scoring, credentials, skip domains) live in google-search-config.json. This 'mode' key selects which entry under google_search.modes to use."
   }
-      "python_packages": [
-      "requests"
-    ]
-  }
 }
