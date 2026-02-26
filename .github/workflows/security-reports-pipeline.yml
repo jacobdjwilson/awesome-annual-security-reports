@@ -364,6 +364,8 @@ jobs:
       - name: Generate VirusTotal summary
         if: always()
         run: |
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
           echo "## 🛡️ VirusTotal Scan" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
@@ -371,30 +373,56 @@ jobs:
             SCAN_MODE="${{ needs.discover-and-scan.outputs.scan_mode }}"
             MANUAL_SKIP="${{ github.event.inputs.skip_virus_scan }}"
             if [ "$MANUAL_SKIP" == "true" ]; then
-              echo "⊘ Scan skipped by manual input." >> $GITHUB_STEP_SUMMARY
+              echo "⊘ Scan skipped — manually disabled via workflow input." >> $GITHUB_STEP_SUMMARY
             else
-              echo "⊘ Scan skipped for \`${SCAN_MODE}\` mode (see workflow-config.json)." >> $GITHUB_STEP_SUMMARY
+              echo "⊘ Scan skipped for \`${SCAN_MODE}\` mode (no API key set or mode excluded in workflow-config.json)." >> $GITHUB_STEP_SUMMARY
             fi
           else
-            echo "| File | Verdict | Detections | Engines | Report |" >> $GITHUB_STEP_SUMMARY
-            echo "|------|---------|------------|---------|--------|" >> $GITHUB_STEP_SUMMARY
-            jq -r '.[] | select(.status == "success") |
-              "| \(.file) | \(.verdict) | \(.malicious_count + .suspicious_count) | \(.total_engines) | [View](\(.report_url)) |"
-            ' scan_results.json >> $GITHUB_STEP_SUMMARY
-
+            TOTAL=$(jq 'length' scan_results.json)
+            SUCCESS=$(jq '[.[] | select(.status == "success")] | length' scan_results.json)
             FAILED=$(jq '[.[] | select(.status != "success")] | length' scan_results.json)
-            if [ "${FAILED:-0}" -gt 0 ]; then
+            MALICIOUS=$(jq '[.[] | select(.verdict == "Malicious")] | length' scan_results.json)
+            SUSPICIOUS=$(jq '[.[] | select(.verdict == "Suspicious")] | length' scan_results.json)
+            CLEAN=$(jq '[.[] | select(.verdict == "Clean")] | length' scan_results.json)
+
+            echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+            echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+            echo "| Files Scanned | $TOTAL |" >> $GITHUB_STEP_SUMMARY
+            echo "| ✅ Clean | $CLEAN |" >> $GITHUB_STEP_SUMMARY
+            echo "| ⚠️ Suspicious | $SUSPICIOUS |" >> $GITHUB_STEP_SUMMARY
+            echo "| ❌ Malicious | $MALICIOUS |" >> $GITHUB_STEP_SUMMARY
+            echo "| 💥 Scan Errors | $FAILED |" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+
+            if [ "$SUCCESS" -gt 0 ]; then
+              echo "### Scan Results" >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
-              echo "**⚠️ Failed scans:**" >> $GITHUB_STEP_SUMMARY
-              jq -r '.[] | select(.status != "success") | "- \(.file // "unknown"): \(.reason // "unknown error")"' scan_results.json >> $GITHUB_STEP_SUMMARY
+              echo "| File | Verdict | Malicious | Suspicious | Total Engines | Retries | VirusTotal Report |" >> $GITHUB_STEP_SUMMARY
+              echo "|------|---------|-----------|------------|---------------|---------|-------------------|" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] | select(.status == "success") |
+                "| `\(.file)` | \(if .verdict == "Malicious" then "❌ Malicious" elif .verdict == "Suspicious" then "⚠️ Suspicious" else "✅ Clean" end) | \(.malicious_count) | \(.suspicious_count) | \(.total_engines) | \(.attempts // 1) | [🔗 View Full Report](\(.report_url)) |"
+              ' scan_results.json >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
             fi
 
-            MALICIOUS=$(jq '[.[] | select(.verdict == "Malicious")] | length' scan_results.json)
-            if [ "${MALICIOUS:-0}" -gt 0 ]; then
+            if [ "$FAILED" -gt 0 ]; then
+              echo "### ⚠️ Scan Errors" >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
-              echo "❌ **${MALICIOUS} file(s) flagged as Malicious — pipeline blocked.**" >> $GITHUB_STEP_SUMMARY
+              echo "| File | Error | Attempts |" >> $GITHUB_STEP_SUMMARY
+              echo "|------|-------|----------|" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] | select(.status != "success") |
+                "| `\(.file // "unknown")` | \(.reason // .error // "unknown error") | \(.attempts // "—") |"
+              ' scan_results.json >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+
+            if [ "${MALICIOUS:-0}" -gt 0 ]; then
+              echo "---" >> $GITHUB_STEP_SUMMARY
+              echo "❌ **Pipeline blocked — ${MALICIOUS} file(s) flagged as Malicious.** Check the VirusTotal links above for full detection details." >> $GITHUB_STEP_SUMMARY
             fi
           fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📎 Raw scan data available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
 
   convert-pdf-to-markdown:
     runs-on: ubuntu-latest
@@ -473,19 +501,52 @@ jobs:
 
           echo "## 📄 PDF → Markdown Conversion" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+
           echo "| Result | Count |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| ✅ Successful | ${SUCCESSFUL:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "| ❌ Failed | ${FAILED:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          if [ -f conversions.json ] && [ "${FAILED:-0}" -gt 0 ]; then
-            echo "**Failed conversions:**" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            jq -r '.[] | select(.status != "success") | "\(.pdf_path): \(.error // "unknown error")"' conversions.json >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
+          if [ -f conversions.json ] && [ "$(jq 'length' conversions.json)" -gt 0 ]; then
+            SUCCESS_COUNT=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
+            if [ "$SUCCESS_COUNT" -gt 0 ]; then
+              echo "### ✅ Successful Conversions" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "| File | AI Model | Method | Attempts | Output |" >> $GITHUB_STEP_SUMMARY
+              echo "|------|----------|--------|----------|--------|" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] | select(.status == "success") |
+                "| `\(.pdf_path | split("/") | last)` | \(.model // "—") | \(.method // "—") | \(.attempts // 1) | `\(.output_path // "—" | split("/") | last)` |"
+              ' conversions.json >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+
+            if [ "${FAILED:-0}" -gt 0 ]; then
+              echo "### ❌ Failed Conversions" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "| File | Error | Attempts |" >> $GITHUB_STEP_SUMMARY
+              echo "|------|-------|----------|" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] | select(.status != "success") |
+                "| `\(.pdf_path | split("/") | last)` | \(.error // "unknown error") | \(.attempts // "—") |"
+              ' conversions.json >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+
+            # Show model usage summary if multiple models were used (fallback/retry scenario)
+            MODEL_COUNT=$(jq '[.[] | select(.status == "success") | .model] | unique | length' conversions.json)
+            if [ "${MODEL_COUNT:-0}" -gt 1 ]; then
+              echo "### 🤖 Model Usage" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "| Model | Files Converted |" >> $GITHUB_STEP_SUMMARY
+              echo "|-------|----------------|" >> $GITHUB_STEP_SUMMARY
+              jq -r '[.[] | select(.status == "success")] | group_by(.model) | .[] |
+                "| \(.[0].model) | \(length) |"
+              ' conversions.json >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
           fi
-          echo "📎 Conversion details available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
+
+          echo "📎 Full conversion details available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
 
   analyze-reports:
     runs-on: ubuntu-latest
@@ -592,11 +653,40 @@ jobs:
           if [ "${{ steps.verify.outputs.has_successful }}" != "true" ]; then
             echo "⊘ No successful conversions available for analysis." >> $GITHUB_STEP_SUMMARY
           elif [ "${{ steps.report-analysis.outputs.analysis_success }}" == "true" ]; then
-            echo "| Organization | Title | Year | Category | Type |" >> $GITHUB_STEP_SUMMARY
-            echo "|-------------|-------|------|----------|------|" >> $GITHUB_STEP_SUMMARY
-            jq -r '.[] | "| \(.organization) | \(.title) | \(.year) | \(.category) | \(.type // "—") |"' analysis.json >> $GITHUB_STEP_SUMMARY
+            echo "**${COUNT} report(s) analyzed successfully.**" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "📎 Full analysis available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
+
+            # Per-report details with summaries
+            echo "### 📋 Reports Analyzed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            jq -r '.[] |
+              "#### \(.organization) — \(.title) (\(.year))\n" +
+              "\n" +
+              "| Field | Value |\n" +
+              "|-------|-------|\n" +
+              "| **Category** | \(.category) |\n" +
+              "| **Type** | \(.type // "—") |\n" +
+              "| **AI Model** | \(.model // "—") |\n" +
+              "| **Attempts** | \(.attempts // 1) |\n" +
+              "\n" +
+              "**Summary:** \(.summary)\n" +
+              "\n---\n"
+            ' analysis.json >> $GITHUB_STEP_SUMMARY
+
+            # Model usage breakdown across all reports
+            MODEL_COUNT=$(jq '[.[].model] | map(select(. != null)) | unique | length' analysis.json)
+            if [ "${MODEL_COUNT:-0}" -gt 0 ]; then
+              echo "### 🤖 AI Model Usage" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "| Model | Reports Analyzed |" >> $GITHUB_STEP_SUMMARY
+              echo "|-------|-----------------|" >> $GITHUB_STEP_SUMMARY
+              jq -r 'group_by(.model) | .[] |
+                "| \(.[0].model // "unknown") | \(length) |"
+              ' analysis.json >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+
+            echo "📎 Full analysis JSON available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
           else
             echo "❌ Analysis failed. Check [workflow logs]($RUN_URL) for details." >> $GITHUB_STEP_SUMMARY
           fi
@@ -636,6 +726,12 @@ jobs:
         with:
           name: markdown-conversions
           path: "Markdown Conversions/"
+
+      - name: Install dependencies
+        run: |
+          PY_PACKAGES=$(jq -r '.workflow.google_search.python_packages | join(" ")' .github/artifacts/workflow-config.json)
+          echo "Installing Python packages: $PY_PACKAGES"
+          pip install --break-system-packages $PY_PACKAGES
 
       - name: Update README
         id: readme_update
@@ -752,6 +848,8 @@ jobs:
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
           VT_SKIPPED="${{ needs.virus-total-scan.outputs.scan_skipped }}"
+          CONV_OK="${{ needs.convert-pdf-to-markdown.outputs.successful_count }}"
+          CONV_FAIL="${{ needs.convert-pdf-to-markdown.outputs.failed_count }}"
 
           echo "## 📝 README Update" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -764,15 +862,57 @@ jobs:
               echo "✅ README updated (PR creation may have been skipped or is pending)." >> $GITHUB_STEP_SUMMARY
             fi
             echo "" >> $GITHUB_STEP_SUMMARY
-            if [ -f analysis.json ]; then
-              echo "**Changes:**" >> $GITHUB_STEP_SUMMARY
-              echo "| Organization | Title | Year | Category |" >> $GITHUB_STEP_SUMMARY
-              echo "|-------------|-------|------|----------|" >> $GITHUB_STEP_SUMMARY
-              jq -r '.[] | "| \(.organization) | \(.title) | \(.year) | \(.category) |"' analysis.json >> $GITHUB_STEP_SUMMARY
+
+            # Pipeline metadata table
+            echo "### 🔧 Pipeline Metadata" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
+            echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+            echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+            echo "| Scan Mode | \`${{ needs.discover-and-scan.outputs.scan_mode }}\` |" >> $GITHUB_STEP_SUMMARY
+            echo "| Conversions | ✅ ${CONV_OK:-0} succeeded · ❌ ${CONV_FAIL:-0} failed |" >> $GITHUB_STEP_SUMMARY
+            echo "| VirusTotal | $([ "$VT_SKIPPED" == "true" ] && echo "⊘ Skipped" || echo "✅ Passed") |" >> $GITHUB_STEP_SUMMARY
+            echo "| Run | [#${{ github.run_id }}]($RUN_URL) |" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+
+            # Per-report details
+            if [ -f analysis.json ] && [ "$(jq 'length' analysis.json)" -gt 0 ]; then
+              echo "### 📋 Reports Added / Updated" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] |
+                "#### \(.organization) — \(.title) (\(.year))\n" +
+                "\n" +
+                "| Field | Value |\n" +
+                "|-------|-------|\n" +
+                "| **Category** | \(.category) |\n" +
+                "| **Type** | \(.type // "—") |\n" +
+                "| **Organization URL** | \(if .organization_url then "[\(.organization_url)](\(.organization_url))" else "—" end) |\n" +
+                "| **AI Model (Analysis)** | \(.model // "—") |\n" +
+                "\n" +
+                "**Summary:** \(.summary)\n" +
+                "\n---\n"
+              ' analysis.json >> $GITHUB_STEP_SUMMARY
             fi
+
+            # VirusTotal scan details (inline, not just "passed")
+            if [ "$VT_SKIPPED" != "true" ] && [ -f scan_results.json ] && [ "$(jq 'length' scan_results.json)" -gt 0 ]; then
+              echo "### 🛡️ VirusTotal Results" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "| File | Verdict | Detections | Engines | Report |" >> $GITHUB_STEP_SUMMARY
+              echo "|------|---------|------------|---------|--------|" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] | select(.status == "success") |
+                "| `\(.file)` | \(if .verdict == "Malicious" then "❌ Malicious" elif .verdict == "Suspicious" then "⚠️ Suspicious" else "✅ Clean" end) | \(.malicious_count + .suspicious_count) | \(.total_engines) | [🔗 View Report](\(.report_url)) |"
+              ' scan_results.json >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+
           else
             echo "⊘ No changes detected — README is already up to date." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
+            echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+            echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+            echo "| Scan Mode | \`${{ needs.discover-and-scan.outputs.scan_mode }}\` |" >> $GITHUB_STEP_SUMMARY
+            echo "| Conversions | ✅ ${CONV_OK:-0} succeeded · ❌ ${CONV_FAIL:-0} failed |" >> $GITHUB_STEP_SUMMARY
+            echo "| VirusTotal | $([ "$VT_SKIPPED" == "true" ] && echo "⊘ Skipped" || echo "✅ Passed") |" >> $GITHUB_STEP_SUMMARY
           fi
-
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**VirusTotal:** $([ "$VT_SKIPPED" == "true" ] && echo "Skipped" || echo "Passed ✅")" >> $GITHUB_STEP_SUMMARY
