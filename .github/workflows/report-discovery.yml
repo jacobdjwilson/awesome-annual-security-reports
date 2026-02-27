@@ -75,12 +75,14 @@ jobs:
         if: always()
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          ARTIFACT_URL="$RUN_URL"
 
           # Parse log metrics
-          SCANNED=$(grep -c "Searching:" discovery_output.log 2>/dev/null || echo "0")
-          DISCOVERED=$(grep -c "✓ Found candidate" discovery_output.log 2>/dev/null || echo "0")
-          CREATED=$(grep -c "✓ Created issue" discovery_output.log 2>/dev/null || echo "0")
+          SERIES_TOTAL=$(grep -c "\[" discovery_output.log 2>/dev/null || echo "0")
+          SKIPPED_REPO=$(grep "series skipped" discovery_output.log 2>/dev/null | grep -oP "\d+" | head -1 || echo "0")
+          SEARCHED=$(grep -c "Searching:" discovery_output.log 2>/dev/null || echo "0")
+          CANDIDATES=$(grep -c "Found candidate:" discovery_output.log 2>/dev/null || echo "0")
+          CREATED=$(grep -c "Created issue:" discovery_output.log 2>/dev/null || echo "0")
+          SKIPPED_ISSUE=$(grep -c "already open" discovery_output.log 2>/dev/null || echo "0")
 
           echo "## 🔍 Security Report Discovery" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -88,15 +90,17 @@ jobs:
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Max Discoveries | \`${{ github.event.inputs.max_discoveries || steps.load_config.outputs.default_limit }}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Searches Run | $SCANNED |" >> $GITHUB_STEP_SUMMARY
-          echo "| Candidates Found | $DISCOVERED |" >> $GITHUB_STEP_SUMMARY
-          echo "| Issues Created | $CREATED |" >> $GITHUB_STEP_SUMMARY
+          echo "| Series Skipped (next year in repo) | ${SKIPPED_REPO:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Searches Run | ${SEARCHED:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Candidates Found | ${CANDIDATES:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Issues Created | ${CREATED:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Skipped (issue already open) | ${SKIPPED_ISSUE:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          if [ "$CREATED" -gt 0 ]; then
+          if [ "${CREATED:-0}" -gt 0 ]; then
             echo "### ✅ New Reports Discovered" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            grep "✓ Created issue:" discovery_output.log | sed 's/.*✓ Created issue: /- /' >> $GITHUB_STEP_SUMMARY
+            grep "Created issue:" discovery_output.log | sed 's/.*Created issue: /- /' >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
           else
             echo "⊘ No new reports discovered this run." >> $GITHUB_STEP_SUMMARY

@@ -198,10 +198,14 @@ jobs:
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
+          # --force-reconvert bypasses the conversion cache and deletes the
+          # existing markdown before reconverting, ensuring stale files are
+          # regenerated at full quality rather than returned from cache.
           python .github/scripts/pdf-converter.py \
             --file-list files_to_process.txt \
             --output-json conversions.json \
-            --artifacts-dir .github/artifacts
+            --artifacts-dir .github/artifacts \
+            --force-reconvert
 
           SUCCESSFUL=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
           FAILED=$(jq '[.[] | select(.status != "success")] | length' conversions.json)
@@ -264,7 +268,10 @@ jobs:
 
             Refreshed ${{ needs.identify-stale-files.outputs.file_count }} reports that were either:
             - Missing markdown conversions
-            - Older than 90 days
+            - Older than ${{ github.event.inputs.days_old || 90 }} days
+
+            Markdown files were regenerated from scratch using the full
+            markitdown + AI polish pipeline (identical to newly-added reports).
 
             **Run:** [#${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
@@ -279,6 +286,17 @@ jobs:
             automated
             maintenance
 
+      - name: Upload conversion results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: refresh-conversion-results
+          path: |
+            conversions.json
+            analysis.json
+            readme-update-results.json
+          if-no-files-found: ignore
+
       - name: Generate processing summary
         if: always()
         run: |
@@ -286,6 +304,7 @@ jobs:
           SUCCESSFUL="${{ steps.converter.outputs.successful_count }}"
           FAILED="${{ steps.converter.outputs.failed_count }}"
           PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
+          DAYS_OLD="${{ github.event.inputs.days_old || 90 }}"
 
           echo "## ♻️ Refresh Old Conversions — Processing" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -294,6 +313,8 @@ jobs:
           echo "| Files Targeted | ${{ needs.identify-stale-files.outputs.file_count }} |" >> $GITHUB_STEP_SUMMARY
           echo "| ✅ Conversions Successful | ${SUCCESSFUL:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "| ❌ Conversions Failed | ${FAILED:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Min Age | ${DAYS_OLD} days |" >> $GITHUB_STEP_SUMMARY
+          echo "| Conversion Method | markitdown + AI polish (force-reconvert) |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
           if [ "${{ steps.readme_update.outputs.changes_detected }}" == "true" ]; then
@@ -305,5 +326,29 @@ jobs:
             echo "⊘ No README changes detected." >> $GITHUB_STEP_SUMMARY
           fi
 
-          echo "" >> $GITHUB_STEP_SUMMARY
+          # Per-file conversion detail from conversions.json
+          if [ -f conversions.json ] && [ "$(jq 'length' conversions.json)" -gt 0 ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 📄 Conversion Detail" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| File | Method | Model | Chars | Status |" >> $GITHUB_STEP_SUMMARY
+            echo "|------|--------|-------|-------|--------|" >> $GITHUB_STEP_SUMMARY
+            jq -r '.[] |
+              "| `\(.pdf_path | split("/") | last)` | \(.method // "—") | \(.model // "—") | \(if .output_chars then (.output_chars | tostring) else "—" end) | \(if .status == "success" then "✅" else "❌ \(.message // "")" end) |"
+            ' conversions.json >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # Per-report README update results
+          if [ -f readme-update-results.json ] && [ "$(jq 'length' readme-update-results.json 2>/dev/null || echo 0)" -gt 0 ]; then
+            echo "### 📋 README Update Disposition" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Organization | Year | Action | Reason |" >> $GITHUB_STEP_SUMMARY
+            echo "|--------------|------|--------|--------|" >> $GITHUB_STEP_SUMMARY
+            jq -r '.[] |
+              "| \(.organization) | \(.year) | \(if .status == "changed" then "✅ " + .action else "⊘ skipped" end) | \(.reason) |"
+            ' readme-update-results.json >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
           echo "📎 Full details available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY

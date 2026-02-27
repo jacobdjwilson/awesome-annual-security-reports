@@ -363,10 +363,12 @@ class PDFConverter:
     All paths and thresholds are sourced from ConfigLoader.
     """
 
-    def __init__(self, config: ConfigLoader, polisher: Optional[MarkdownPolisher] = None):
-        self.config   = config
-        self.cache    = ConversionCache()
-        self.polisher = polisher
+    def __init__(self, config: ConfigLoader, polisher: Optional[MarkdownPolisher] = None,
+                 force_reconvert: bool = False):
+        self.config          = config
+        self.cache           = ConversionCache()
+        self.polisher        = polisher
+        self.force_reconvert = force_reconvert
 
         try:
             self.markitdown = MarkItDown()
@@ -384,11 +386,20 @@ class PDFConverter:
         if not pdf_path_obj.exists():
             return False, "", "File not found"
 
-        # Return cached result if the output file still exists on disk
-        cached = self.cache.get(pdf_path)
-        if cached and Path(cached).exists():
-            print(f"  ✓ Cached: {cached}")
-            return True, cached, "cached"
+        # Return cached result if the output file still exists on disk,
+        # unless force_reconvert is set (used by the refresh workflow to bypass
+        # stale cache entries and regenerate markdown from scratch).
+        if not self.force_reconvert:
+            cached = self.cache.get(pdf_path)
+            if cached and Path(cached).exists():
+                print(f"  ✓ Cached: {cached}")
+                return True, cached, "cached"
+        else:
+            # Delete existing markdown so the file is fully regenerated
+            existing_md = self._get_markdown_path(pdf_path_obj)
+            if existing_md.exists():
+                existing_md.unlink()
+                print(f"  ♻ Force-reconvert: removed stale {existing_md.name}")
 
         org_name, report_title, year = self._parse_filename(pdf_path_obj.name)
         md_path = self._get_markdown_path(pdf_path_obj)
@@ -489,9 +500,11 @@ class PDFConverter:
 # ====================
 def main():
     parser = argparse.ArgumentParser(description="PDF to Markdown Converter")
-    parser.add_argument("--file-list",     required=True, help="Text file listing PDFs to convert")
-    parser.add_argument("--output-json",   default="conversions.json")
-    parser.add_argument("--artifacts-dir", default=".github/artifacts")
+    parser.add_argument("--file-list",       required=True, help="Text file listing PDFs to convert")
+    parser.add_argument("--output-json",     default="conversions.json")
+    parser.add_argument("--artifacts-dir",   default=".github/artifacts")
+    parser.add_argument("--force-reconvert", action="store_true",
+                        help="Bypass cache and delete existing markdown before reconverting (used by refresh workflow)")
     args = parser.parse_args()
 
     print(f"\n{'='*70}")
@@ -548,7 +561,8 @@ def main():
     print(f"✓ {len(pdf_files)} file(s) to convert\n")
 
     # ── Convert ───────────────────────────────────────────────────────────
-    converter = PDFConverter(config, polisher=polisher)
+    converter = PDFConverter(config, polisher=polisher,
+                            force_reconvert=args.force_reconvert)
     results: List[Dict[str, Any]] = []
 
     for i, pdf_path in enumerate(pdf_files, 1):
@@ -558,7 +572,12 @@ def main():
         org_name, report_title, year = converter._parse_filename(Path(pdf_path).name)
 
         # Determine method and model used
-        method = "cached" if message == "cached" else ("markitdown+ai" if polisher else "markitdown")
+        if message == "cached":
+            method = "cached"
+        elif args.force_reconvert:
+            method = "reconverted+ai" if polisher else "reconverted"
+        else:
+            method = "markitdown+ai" if polisher else "markitdown"
         model_used = (polisher._active_model if polisher and polisher._active_model else None)
 
         # Count output chars for visibility
