@@ -716,8 +716,9 @@ def main() -> int:
         print(f"ERROR: Initialisation failed: {e}")
         return 1
 
-    stats   = {"inserted": 0, "updated": 0, "skipped": 0}
-    changed = False
+    stats    = {"inserted": 0, "updated": 0, "skipped": 0}
+    changed  = False
+    outcomes = []   # written to skip_log.json for the workflow Step Summary
 
     for i, report in enumerate(reports, 1):
         org  = report.get("organization", "Unknown")
@@ -733,9 +734,20 @@ def main() -> int:
             else:
                 stats["inserted"] += 1
             print(f"  ✓ {reason}")
+            outcomes.append({"org": org, "year": year, "status": "ok", "reason": reason})
         else:
             stats["skipped"] += 1
             print(f"  ⊘ skip: {reason}")
+            outcomes.append({"org": org, "year": year, "status": "skipped", "reason": reason})
+
+    # Write outcomes file so the workflow can render a per-report detail table
+    # in the GitHub Step Summary — without this, skips are invisible to the user.
+    try:
+        with open("skip_log.json", "w", encoding="utf-8") as f:
+            json.dump(outcomes, f, indent=2)
+        print("✓ Wrote skip_log.json")
+    except Exception as e:
+        print(f"WARNING: Could not write skip_log.json: {e}")
 
     print(f"\n{'='*70}")
     print(f"Inserted: {stats['inserted']} | Updated: {stats['updated']} | Skipped: {stats['skipped']}")

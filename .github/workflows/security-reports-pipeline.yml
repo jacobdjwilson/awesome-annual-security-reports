@@ -842,6 +842,14 @@ jobs:
             README.md
             Markdown Conversions/
 
+      - name: Upload README update log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: readme-update-log
+          path: skip_log.json
+          if-no-files-found: ignore
+
       - name: Generate README update summary
         if: always()
         run: |
@@ -906,6 +914,20 @@ jobs:
               echo "" >> $GITHUB_STEP_SUMMARY
             fi
 
+            # Full per-report outcome table including any skipped entries —
+            # written by readme-updater.py as skip_log.json; makes partial runs
+            # fully transparent (e.g. 1 inserted + 1 skipped due to validation).
+            if [ -f skip_log.json ] && [ "$(jq 'length' skip_log.json)" -gt 0 ]; then
+              echo "### 📋 Per-Report Outcomes" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "| Organization | Year | Result | Reason |" >> $GITHUB_STEP_SUMMARY
+              echo "|-------------|------|--------|--------|" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] |
+                "| \(.org) | \(.year) | \(if .status == "ok" then "✅ " else "⊘ " end)\(.status) | \(.reason) |"
+              ' skip_log.json >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+
           else
             echo "⊘ No changes detected — README is already up to date." >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
@@ -915,4 +937,19 @@ jobs:
             echo "| Scan Mode | \`${{ needs.discover-and-scan.outputs.scan_mode }}\` |" >> $GITHUB_STEP_SUMMARY
             echo "| Conversions | ✅ ${CONV_OK:-0} succeeded · ❌ ${CONV_FAIL:-0} failed |" >> $GITHUB_STEP_SUMMARY
             echo "| VirusTotal | $([ "$VT_SKIPPED" == "true" ] && echo "⊘ Skipped" || echo "✅ Passed") |" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+
+            # Per-report outcome table — written by readme-updater.py as skip_log.json.
+            # This is the primary troubleshooting tool: it shows exactly why each report
+            # was inserted, updated, or skipped (including validation failure details).
+            if [ -f skip_log.json ] && [ "$(jq 'length' skip_log.json)" -gt 0 ]; then
+              echo "### 📋 Per-Report Outcomes" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "| Organization | Year | Result | Reason |" >> $GITHUB_STEP_SUMMARY
+              echo "|-------------|------|--------|--------|" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] |
+                "| \(.org) | \(.year) | \(if .status == "ok" then "✅ " else "⊘ " end)\(.status) | \(.reason) |"
+              ' skip_log.json >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
           fi
