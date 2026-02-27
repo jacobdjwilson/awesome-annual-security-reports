@@ -101,7 +101,7 @@ class Finding:
     @property
     def fingerprint(self) -> str:
         """Stable identity key — used for issue deduplication."""
-        return f"{self.category}|{self.file}"
+        return f"{self.category}:{self.file}"
 
     def __str__(self) -> str:
         icon = "❌" if self.severity == "error" else "⚠️"
@@ -466,7 +466,7 @@ class RepositoryValidator:
             "warning_count": sum(1 for f in self.findings if f.severity == "warning"),
             "stats":         self.stats,
             "findings":      [f.to_dict() for f in self.findings],
-            "fingerprints":  sorted({f.fingerprint for f in self.findings}),
+            "fingerprints":  sorted({f.fingerprint for f in self.findings}),  # format: "category:file"
         }
         Path(output_path).write_text(json.dumps(payload, indent=2), encoding="utf-8")
         print(f"✓ JSON findings saved: {output_path}")
