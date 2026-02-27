@@ -190,8 +190,11 @@ jobs:
           HAS=$(jq -r '.has_findings'  validation_findings.json)
           ERRS=$(jq -r '.error_count'  validation_findings.json)
           WARNS=$(jq -r '.warning_count' validation_findings.json)
-          # Fingerprints as a pipe-delimited string for GITHUB_OUTPUT compatibility
-          FPS=$(jq -r '.fingerprints[]' validation_findings.json | sort | paste -sd '|' -)
+          # Fingerprints joined with ';' as the outer list separator.
+          # Each fingerprint is "category:file/path" — inner sep is ':' (safe: no colons
+          # in category names or Linux paths). Outer sep ';' is also safe (no ; in paths).
+          # Using | for BOTH inner and outer was ambiguous and caused each token to split.
+          FPS=$(jq -r '.fingerprints[]' validation_findings.json | sort | paste -sd ';' -)
 
           echo "has_findings=$HAS"    >> $GITHUB_OUTPUT
           echo "error_count=$ERRS"    >> $GITHUB_OUTPUT
@@ -273,144 +276,135 @@ jobs:
           EXISTING_NUM="${{ steps.find_issue.outputs.issue_number }}"
           PREVIOUS_FPS="${{ steps.find_issue.outputs.issue_fingerprints }}"
 
-          ISSUE_URL_BASE="https://github.com/$REPO/issues"
-
-          # ── Helper: set diff on pipe-delimited fingerprint strings ──────
+          # ── Helper: set diff on semicolon-delimited fingerprint strings ─────
+          # Fingerprints are "category:file/path" joined with ';' as list sep.
+          # Split on ';' — unambiguous since Linux paths never contain ';'.
           fps_diff_new() {
-            # Items in arg1 (current) not in arg2 (previous)
-            local cur="$1" prv="$2"
-            if [ -z "$cur" ]; then return; fi
-            IFS='|' read -ra CUR_ARR <<< "$cur"
-            IFS='|' read -ra PRV_ARR <<< "${prv:-}"
+            local cur="${1:-}" prv="${2:-}"
+            [ -z "$cur" ] && return
+            local IFS=';'
+            read -ra CUR_ARR <<< "$cur"
+            read -ra PRV_ARR <<< "$prv"
             for fp in "${CUR_ARR[@]}"; do
               [ -z "$fp" ] && continue
               local found=false
-              for p in "${PRV_ARR[@]}"; do [ "$fp" == "$p" ] && found=true && break; done
-              $found || echo "$fp"
+              for p in "${PRV_ARR[@]}"; do
+                [ "$fp" == "$p" ] && found=true && break
+              done
+              $found || printf '%s\n' "$fp"
             done
           }
 
           fps_diff_resolved() {
-            # Items in arg2 (previous) not in arg1 (current)
             fps_diff_new "${2:-}" "${1:-}"
           }
 
-          # ── Case 1: clean run, no open issue ────────────────────────────
+          # ── Case 1: clean run, no open issue ──────────────────────────────
           if [ "$HAS_FINDINGS" != "true" ] && [ -z "$EXISTING_NUM" ]; then
             echo "✅ Clean — no action needed"
             echo "action=none" >> $GITHUB_OUTPUT
             exit 0
           fi
 
-          # ── Case 2: clean run, existing issue → close ──────────────────
+          # ── Case 2: clean run, existing issue → close ─────────────────────
           if [ "$HAS_FINDINGS" != "true" ] && [ -n "$EXISTING_NUM" ]; then
             COMMIT_URL="https://github.com/$REPO/commit/$SHA"
-            cat > /tmp/resolution.md << RESEOF
-          ## ✅ All Issues Resolved
-
-          Repository validation passed with no findings.
-
-          | Detail | Value |
-          |--------|-------|
-          | Run | [#${{ github.run_id }}]($RUN_URL) |
-          | Commit | [\`$SHORT_SHA\`]($COMMIT_URL) |
-          | Timestamp | $(date -u +"%Y-%m-%d %H:%M UTC") |
-
-          All previously reported integrity issues have been addressed. Closing this ticket.
-          RESEOF
+            # Use printf to avoid heredoc leading-space indentation issues
+            {
+              printf '## ✅ All Issues Resolved\n\n'
+              printf 'Repository validation passed with no findings.\n\n'
+              printf '| Detail | Value |\n'
+              printf '|--------|-------|\n'
+              printf '| Run | [#%s](%s) |\n' "${{ github.run_id }}" "$RUN_URL"
+              printf '| Commit | [`%s`](%s) |\n' "$SHORT_SHA" "$COMMIT_URL"
+              printf '| Timestamp | %s |\n' "$(date -u +"%Y-%m-%d %H:%M UTC")"
+              printf '\nAll previously reported integrity issues have been addressed. Closing this ticket.\n'
+            } > /tmp/resolution.md
 
             gh issue close "$EXISTING_NUM" --comment "$(cat /tmp/resolution.md)"
             echo "✓ Closed issue #$EXISTING_NUM — all resolved"
-            echo "action=closed"            >> $GITHUB_OUTPUT
+            echo "action=closed"              >> $GITHUB_OUTPUT
             echo "closed_issue=$EXISTING_NUM" >> $GITHUB_OUTPUT
             exit 0
           fi
 
-          # ── Case 3: has findings ────────────────────────────────────────
+          # ── Case 3: has findings ───────────────────────────────────────────
           NEW_FPS=$(fps_diff_new "$CURRENT_FPS" "$PREVIOUS_FPS")
           RES_FPS=$(fps_diff_resolved "$CURRENT_FPS" "$PREVIOUS_FPS")
 
           echo "New findings:      ${NEW_FPS:-none}"
           echo "Resolved findings: ${RES_FPS:-none}"
 
-          # Fingerprints unchanged → suppress duplicate issue/comment
+          # Fingerprints unchanged → suppress duplicate issue (no spam)
           if [ -n "$EXISTING_NUM" ] && [ -z "$NEW_FPS" ] && [ -z "$RES_FPS" ]; then
             echo "⊘ Findings identical to open issue #$EXISTING_NUM — no update"
-            echo "action=unchanged"          >> $GITHUB_OUTPUT
+            echo "action=unchanged"              >> $GITHUB_OUTPUT
             echo "unchanged_issue=$EXISTING_NUM" >> $GITHUB_OUTPUT
             exit 0
           fi
 
-          # Build new issue body with full report + embedded fingerprints
+          # Build new issue body.
+          # Embedded fingerprint comment is extracted on the next run for deduplication.
           COMMIT_URL="https://github.com/$REPO/commit/$SHA"
           {
-            echo "## ⚠️ Repository Integrity Issues Detected"
-            echo ""
-            echo "The automated repository validator found issues that require attention."
-            echo ""
-            echo "| Detail | Value |"
-            echo "|--------|-------|"
-            echo "| Workflow Run | [#${{ github.run_id }}]($RUN_URL) |"
-            echo "| Commit | [\`$SHORT_SHA\`]($COMMIT_URL) |"
-            echo "| Trigger | \`${{ github.event_name }}\` |"
-            echo "| Timestamp | $(date -u +"%Y-%m-%d %H:%M UTC") |"
-            echo "| Errors | **$ERRS** |"
-            echo "| Warnings | **$WARNS** |"
-            echo ""
-            echo "---"
-            echo ""
+            printf '## ⚠️ Repository Integrity Issues Detected\n\n'
+            printf 'The automated repository validator found issues that require attention.\n\n'
+            printf '| Detail | Value |\n'
+            printf '|--------|-------|\n'
+            printf '| Workflow Run | [#%s](%s) |\n' "${{ github.run_id }}" "$RUN_URL"
+            printf '| Commit | [`%s`](%s) |\n' "$SHORT_SHA" "$COMMIT_URL"
+            printf '| Trigger | `%s` |\n' "${{ github.event_name }}"
+            printf '| Timestamp | %s |\n' "$(date -u +"%Y-%m-%d %H:%M UTC")"
+            printf '| Errors | **%s** |\n' "$ERRS"
+            printf '| Warnings | **%s** |\n' "$WARNS"
+            printf '\n---\n\n'
             cat validation_report.md
-            echo ""
-            echo "---"
-            # Hidden fingerprint comment — used for deduplication on next run
-            echo "<!-- fingerprints: $CURRENT_FPS -->"
+            printf '\n---\n'
+            printf '<!-- fingerprints: %s -->\n' "$CURRENT_FPS"
           } > /tmp/new_issue_body.md
 
           # If an existing issue is open, close it with a diff summary first
           if [ -n "$EXISTING_NUM" ]; then
             {
-              echo "## 🔄 Superseded by New Validation Run"
-              echo ""
-              echo "This issue is being replaced because the finding set changed."
-              echo ""
+              printf '## 🔄 Superseded by New Validation Run\n\n'
+              printf 'This issue is being replaced because the finding set changed.\n\n'
               if [ -n "$RES_FPS" ]; then
-                echo "### ✅ Resolved since last check"
-                echo ""
+                printf '### ✅ Resolved since last check\n\n'
                 while IFS= read -r fp; do
                   [ -z "$fp" ] && continue
-                  echo "- \`$fp\`"
+                  printf -- '- `%s`\n' "$fp"
                 done <<< "$RES_FPS"
-                echo ""
+                printf '\n'
               fi
               if [ -n "$NEW_FPS" ]; then
-                echo "### 🆕 New findings"
-                echo ""
+                printf '### 🆕 New findings\n\n'
                 while IFS= read -r fp; do
                   [ -z "$fp" ] && continue
-                  echo "- \`$fp\`"
+                  printf -- '- `%s`\n' "$fp"
                 done <<< "$NEW_FPS"
-                echo ""
+                printf '\n'
               fi
-              echo "Workflow Run: [#${{ github.run_id }}]($RUN_URL)"
+              printf 'Workflow Run: [#%s](%s)\n' "${{ github.run_id }}" "$RUN_URL"
             } > /tmp/close_comment.md
 
             gh issue close "$EXISTING_NUM" --comment "$(cat /tmp/close_comment.md)"
             echo "✓ Closed stale issue #$EXISTING_NUM"
           fi
 
-          # Create fresh issue
-          NEW_NUM=$(gh issue create \
+          # Create fresh issue.
+          # NOTE: 'gh issue create' does NOT support --json or --jq flags.
+          # It outputs the new issue URL to stdout — extract the number from it.
+          NEW_URL=$(gh issue create \
             --title "⚠️ Repository Integrity Validation — Issues Found" \
             --body-file /tmp/new_issue_body.md \
             --label "maintenance,automated-check" \
-            --assignee jacobdjwilson \
-            --json number \
-            --jq '.number')
+            --assignee jacobdjwilson)
 
-          echo "✓ Created issue #$NEW_NUM"
-          echo "action=created"        >> $GITHUB_OUTPUT
-          echo "new_issue=$NEW_NUM"    >> $GITHUB_OUTPUT
+          NEW_NUM=$(echo "$NEW_URL" | grep -oE '[0-9]+$')
 
+          echo "✓ Created issue #$NEW_NUM ($NEW_URL)"
+          echo "action=created"     >> $GITHUB_OUTPUT
+          echo "new_issue=$NEW_NUM" >> $GITHUB_OUTPUT
       - name: Generate step summary
         if: always()
         run: |
