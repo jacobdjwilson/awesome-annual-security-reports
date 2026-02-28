@@ -7,84 +7,256 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  issues: read
+  issues: write   # write needed to post comments
 
 jobs:
   ingest:
+    # Run when the report-suggestion label is applied, OR when the issue is
+    # opened and already carries the label (e.g. from the issue template).
     if: |
       github.event.label.name == 'report-suggestion' ||
       contains(github.event.issue.labels.*.name, 'report-suggestion')
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # stefanbuck/github-issue-parser reads the issue body and maps each
+      # form field (by its 'id') to a step output.
+      # Fields used: organization_name, report_title, report_year, report_url, report_category
       - name: Parse issue content
         id: parse
         uses: stefanbuck/github-issue-parser@v3
         with:
           template-path: .github/ISSUE_TEMPLATE/report-suggestion.yml
 
-      - name: Download and organize PDF
+      - name: Validate parsed fields
+        id: validate
         run: |
           URL="${{ steps.parse.outputs.report_url }}"
           YEAR="${{ steps.parse.outputs.report_year }}"
           ORG="${{ steps.parse.outputs.organization_name }}"
-          
-          # Sanitize filename
-          FILENAME=$(basename "$URL" | cut -d? -f1)
-          
-          # Ensure directory exists
-          mkdir -p "Annual Security Reports/$YEAR"
-          
-          # Download with retry
+
+          VALID=true
+          ERRORS=""
+
+          if [ -z "$URL" ]; then
+            VALID=false
+            ERRORS="$ERRORS\n- Report URL is empty"
+          fi
+
+          if [ -z "$YEAR" ] || ! echo "$YEAR" | grep -qE '^[0-9]{4}$'; then
+            VALID=false
+            ERRORS="$ERRORS\n- Report year is missing or not a 4-digit number"
+          fi
+
+          if [ -z "$ORG" ]; then
+            VALID=false
+            ERRORS="$ERRORS\n- Organization name is empty"
+          fi
+
+          if [ "$VALID" != "true" ]; then
+            echo "Validation failed:$ERRORS"
+            echo "valid=false" >> $GITHUB_OUTPUT
+            echo "errors=$ERRORS" >> $GITHUB_OUTPUT
+          else
+            echo "✓ Fields validated"
+            echo "valid=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Comment on validation failure
+        if: steps.validate.outputs.valid == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "$(cat << 'BODY'
+          ❌ **Could not process this suggestion** — one or more required fields are missing or invalid.
+
+          Please edit the issue and ensure the following fields are correctly filled in:
+          ${{ steps.validate.outputs.errors }}
+
+          Once corrected, remove and re-add the `report-suggestion` label to re-trigger processing.
+          BODY
+          )"
+          exit 1
+
+      - name: Download and organize PDF
+        id: download
+        run: |
+          URL="${{ steps.parse.outputs.report_url }}"
+          YEAR="${{ steps.parse.outputs.report_year }}"
+          ORG="${{ steps.parse.outputs.organization_name }}"
+          TITLE="${{ steps.parse.outputs.report_title }}"
+
+          DEST_DIR="Annual Security Reports/$YEAR"
+          mkdir -p "$DEST_DIR"
+
+          # Try to derive a clean filename.
+          # Priority: URL basename → Content-Disposition header → sanitized Org+Title+Year
+          RAW_NAME=$(basename "$URL" | cut -d'?' -f1 | cut -d'#' -f1)
+
+          # Check if the URL basename looks like a real PDF filename
+          if echo "$RAW_NAME" | grep -qiE '\.pdf$'; then
+            FILENAME="$RAW_NAME"
+          else
+            # Construct a canonical filename from the parsed fields
+            SAFE_ORG=$(echo "$ORG"   | tr ' ' '-' | tr -cd 'A-Za-z0-9\-')
+            SAFE_TITLE=$(echo "$TITLE" | tr ' ' '-' | tr -cd 'A-Za-z0-9\-')
+            FILENAME="${SAFE_ORG}-${SAFE_TITLE}-${YEAR}.pdf"
+          fi
+
+          DEST_PATH="$DEST_DIR/$FILENAME"
+
+          echo "Target: $DEST_PATH"
+
+          # Download with retry (follow redirects, fail on HTTP errors)
+          SUCCESS=false
           for i in {1..3}; do
-            if curl -L -f "$URL" -o "Annual Security Reports/$YEAR/$FILENAME"; then
-              echo "✓ Downloaded successfully"
+            if curl -L -f --max-time 120 \
+                -H "User-Agent: Mozilla/5.0 (compatible; awesome-annual-security-reports/1.0)" \
+                "$URL" -o "$DEST_PATH"; then
+              echo "✓ Downloaded on attempt $i: $FILENAME"
+              SUCCESS=true
               break
             else
-              echo "! Attempt $i failed"
-              sleep 2
+              echo "! Attempt $i failed, retrying in 5s..."
+              sleep 5
             fi
           done
-          
-          if [ ! -f "Annual Security Reports/$YEAR/$FILENAME" ]; then
-            echo "ERROR: Download failed after 3 attempts"
+
+          if [ "$SUCCESS" != "true" ]; then
+            echo "❌ Download failed after 3 attempts"
             exit 1
           fi
-          
-          echo "FILE_PATH=Annual Security Reports/$YEAR/$FILENAME" >> $GITHUB_ENV
+
+          # Verify the downloaded file looks like a PDF
+          MAGIC=$(head -c 4 "$DEST_PATH" 2>/dev/null || true)
+          if [ "$MAGIC" != "%PDF" ]; then
+            echo "❌ Downloaded file is not a valid PDF (magic: '$MAGIC')"
+            echo "   This may be a login page or redirect to a non-PDF resource."
+            rm -f "$DEST_PATH"
+            exit 1
+          fi
+
+          FILE_SIZE=$(stat -c%s "$DEST_PATH")
+          echo "✓ PDF verified — ${FILE_SIZE} bytes"
+
+          echo "file_path=$DEST_PATH" >> $GITHUB_OUTPUT
+          echo "file_name=$FILENAME"  >> $GITHUB_OUTPUT
+          echo "file_size=$FILE_SIZE" >> $GITHUB_OUTPUT
+
+      - name: Comment on download failure
+        if: failure() && steps.download.conclusion == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "$(cat << 'BODY'
+          ❌ **Download failed** — the PDF could not be retrieved from the provided URL.
+
+          Common causes:
+          - The URL requires a login or redirects to a landing page
+          - The link has expired or the file has moved
+          - The server blocked the automated download request
+
+          Please verify the URL is a **direct, public link to the PDF** and update the issue.
+          Remove and re-add the `report-suggestion` label to retry.
+          BODY
+          )"
+
+      - name: Configure git for large file pushes
+        run: |
+          git config --global http.postBuffer 524288000
+          git config --global http.lowSpeedLimit 0
+          git config --global http.lowSpeedTime 300
+          echo "✓ Git HTTP buffers configured"
 
       - name: Create ingestion PR
+        id: create_pr
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "📥 Ingest report from Issue #${{ github.event.issue.number }}"
-          title: "📥 Ingest: ${{ steps.parse.outputs.organization_name }} ${{ steps.parse.outputs.report_year }}"
+          commit-message: "📥 Ingest: ${{ steps.parse.outputs.organization_name }} — ${{ steps.parse.outputs.report_title }} (${{ steps.parse.outputs.report_year }})"
+          title: "📥 Ingest: ${{ steps.parse.outputs.organization_name }} ${{ steps.parse.outputs.report_title }} (${{ steps.parse.outputs.report_year }})"
           body: |
-            ## Report Ingestion
-            
-            Ingesting report from Issue #${{ github.event.issue.number }}
-            
-            **Organization:** ${{ steps.parse.outputs.organization_name }}
-            **Year:** ${{ steps.parse.outputs.report_year }}
-            **URL:** ${{ steps.parse.outputs.report_url }}
-            
-            This PR will trigger the Security Reports Processing Pipeline.
-            
+            ## 📥 Report Ingestion
+
+            Ingesting report suggested in Issue #${{ github.event.issue.number }}.
+
+            | Field | Value |
+            |-------|-------|
+            | **Organization** | ${{ steps.parse.outputs.organization_name }} |
+            | **Title** | ${{ steps.parse.outputs.report_title }} |
+            | **Year** | ${{ steps.parse.outputs.report_year }} |
+            | **Category** | ${{ steps.parse.outputs.report_category }} |
+            | **File** | `${{ steps.download.outputs.file_name }}` |
+            | **File Size** | ${{ steps.download.outputs.file_size }} bytes |
+            | **Source URL** | ${{ steps.parse.outputs.report_url }} |
+
+            Merging this PR will trigger the **Security Reports Processing Pipeline** to convert the PDF to Markdown, analyze it, and add it to the README automatically.
+
             ---
-            *Auto-generated from issue suggestion*
+            *Auto-generated from [Issue #${{ github.event.issue.number }}](https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }})*
           branch: "ingest/issue-${{ github.event.issue.number }}"
           delete-branch: true
+          add-paths: |
+            Annual Security Reports/
           labels: |
             report-suggestion
             automated
 
-      - name: Add comment to issue
-        if: success()
+      - name: Comment on issue with PR link
+        if: steps.create_pr.outputs.pull-request-number != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh issue comment ${{ github.event.issue.number }} \
-            --body "✅ Report downloaded and PR created. The processing pipeline will run automatically."
+          PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
+          PR_URL="https://github.com/${{ github.repository }}/pull/$PR_NUM"
+          FILE="${{ steps.download.outputs.file_name }}"
+
+          gh issue comment ${{ github.event.issue.number }} --body "$(cat << BODY
+          ✅ **Report successfully ingested!**
+
+          | Detail | Value |
+          |--------|-------|
+          | **File** | \`$FILE\` |
+          | **Pull Request** | [PR #$PR_NUM]($PR_URL) |
+
+          Once the PR is reviewed and merged, the Security Reports Processing Pipeline will automatically:
+          1. Convert the PDF to Markdown
+          2. Analyze and categorize the report using AI
+          3. Add it to the README
+
+          Thank you for the suggestion! 🙌
+          BODY
+          )"
+
+      - name: Generate step summary
+        if: always()
+        run: |
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
+          ISSUE_URL="https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }}"
+
+          echo "## 📥 Report Ingestion" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Issue | [#${{ github.event.issue.number }}]($ISSUE_URL) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Organization | ${{ steps.parse.outputs.organization_name }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Title | ${{ steps.parse.outputs.report_title }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Year | ${{ steps.parse.outputs.report_year }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Category | ${{ steps.parse.outputs.report_category }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| File | \`${{ steps.download.outputs.file_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -n "$PR_NUM" ]; then
+            PR_URL="https://github.com/${{ github.repository }}/pull/$PR_NUM"
+            echo "✅ Pull request created: [PR #$PR_NUM]($PR_URL)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.validate.outputs.valid }}" == "false" ]; then
+            echo "❌ Validation failed — required fields missing or invalid." >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.download.conclusion }}" == "failure" ]; then
+            echo "❌ Download failed — PDF could not be retrieved from URL." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Pull request creation failed. Check [workflow logs]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
+          fi

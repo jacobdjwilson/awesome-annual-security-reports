@@ -1,124 +1,102 @@
-name: Auto-Ingest Report Suggestion
+name: Suggest a Security Report
+description: Suggest an annual security report to add to the repository.
+title: "[Report Suggestion] "
+labels:
+  - report-suggestion
+assignees:
+  - jacobdjwilson
 
-on:
-  issues:
-    types: [opened, labeled]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📄 Suggest a Security Report
 
-permissions:
-  contents: write
-  pull-requests: write
-  issues: read
+        Thanks for helping grow this collection! Please fill out the fields below.
+        Once submitted, a maintainer will review and — if the report meets the criteria —
+        an automated workflow will download and ingest it for you.
 
-jobs:
-  ingest:
-    if: |
-      github.event.label.name == 'report-suggestion' ||
-      contains(github.event.issue.labels.*.name, 'report-suggestion')
-    runs-on: ubuntu-latest
+        **Requirements:**
+        - Must be a publicly accessible PDF
+        - Must be an annual (or recurring periodic) security report
+        - Must not already be listed in the [README](https://github.com/jacobdjwilson/awesome-annual-security-reports#readme)
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  - type: input
+    id: organization_name
+    attributes:
+      label: Organization Name
+      description: The company or organization that published this report.
+      placeholder: "e.g. Microsoft, CrowdStrike, Verizon"
+    validations:
+      required: true
 
-      - name: Parse issue content
-        id: parse
-        uses: stefanbuck/github-issue-parser@v3
-        with:
-          template-path: .github/ISSUE_TEMPLATE/report-suggestion.yml
+  - type: input
+    id: report_title
+    attributes:
+      label: Report Title
+      description: The official title of the report.
+      placeholder: "e.g. Digital Defense Report"
+    validations:
+      required: true
 
-      - name: Download and organize PDF
-        id: download
-        run: |
-          URL="${{ steps.parse.outputs.report_url }}"
-          YEAR="${{ steps.parse.outputs.report_year }}"
+  - type: input
+    id: report_year
+    attributes:
+      label: Report Year
+      description: The year this edition of the report covers (4-digit year).
+      placeholder: "e.g. 2026"
+    validations:
+      required: true
 
-          # Sanitize filename
-          FILENAME=$(basename "$URL" | cut -d? -f1)
-          DEST_DIR="Annual Security Reports/$YEAR"
-          DEST_PATH="$DEST_DIR/$FILENAME"
+  - type: input
+    id: report_url
+    attributes:
+      label: Direct PDF URL
+      description: |
+        A direct link to the PDF file. Must be publicly accessible without login.
+        The URL should end in `.pdf` or redirect to a PDF download.
+      placeholder: "https://example.com/report-2026.pdf"
+    validations:
+      required: true
 
-          mkdir -p "$DEST_DIR"
+  - type: dropdown
+    id: report_category
+    attributes:
+      label: Category
+      description: Which category best describes this report?
+      options:
+        - Threat Intelligence
+        - Vulnerability & Patch Management
+        - Cloud Security
+        - Application Security
+        - Identity & Access Management
+        - Data Breach & Incident Response
+        - Ransomware & Malware
+        - Phishing & Social Engineering
+        - Compliance & Regulation
+        - AI & Emerging Threats
+        - OT / ICS / IoT Security
+        - Other
+    validations:
+      required: true
 
-          # Download with retry
-          SUCCESS=false
-          for i in {1..3}; do
-            if curl -L -f "$URL" -o "$DEST_PATH"; then
-              echo "✓ Downloaded: $FILENAME"
-              SUCCESS=true
-              break
-            else
-              echo "! Attempt $i failed, retrying..."
-              sleep 2
-            fi
-          done
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional Notes
+      description: Anything else relevant — alternate download links, access notes, etc.
+      placeholder: "Optional. Include alternative URLs if the primary link requires registration."
+    validations:
+      required: false
 
-          if [ "$SUCCESS" != "true" ]; then
-            echo "❌ Download failed after 3 attempts"
-            exit 1
-          fi
-
-          echo "file_path=$DEST_PATH" >> $GITHUB_OUTPUT
-          echo "file_name=$FILENAME" >> $GITHUB_OUTPUT
-
-      - name: Create ingestion PR
-        id: create_pr
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "📥 Ingest report from Issue #${{ github.event.issue.number }}"
-          title: "📥 Ingest: ${{ steps.parse.outputs.organization_name }} ${{ steps.parse.outputs.report_year }}"
-          body: |
-            ## Report Ingestion
-
-            Ingesting report suggested in Issue #${{ github.event.issue.number }}.
-
-            | Field | Value |
-            |-------|-------|
-            | **Organization** | ${{ steps.parse.outputs.organization_name }} |
-            | **Year** | ${{ steps.parse.outputs.report_year }} |
-            | **File** | `${{ steps.download.outputs.file_name }}` |
-            | **Source URL** | ${{ steps.parse.outputs.report_url }} |
-
-            Merging this PR will trigger the Security Reports Processing Pipeline to convert and analyze the report.
-
-            ---
-            *Auto-generated from [Issue #${{ github.event.issue.number }}](https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }})*
-          branch: "ingest/issue-${{ github.event.issue.number }}"
-          delete-branch: true
-          labels: |
-            report-suggestion
-            automated
-
-      - name: Comment on issue
-        if: success()
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
-          PR_URL="https://github.com/${{ github.repository }}/pull/$PR_NUM"
-          gh issue comment ${{ github.event.issue.number }} \
-            --body "✅ Report downloaded and [PR #$PR_NUM]($PR_URL) created. The processing pipeline will run automatically once the PR is merged."
-
-      - name: Generate step summary
-        if: always()
-        run: |
-          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
-          ISSUE_URL="https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }}"
-
-          echo "## 📥 Report Ingestion" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Issue | [#${{ github.event.issue.number }}]($ISSUE_URL) |" >> $GITHUB_STEP_SUMMARY
-          echo "| Organization | ${{ steps.parse.outputs.organization_name }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Year | ${{ steps.parse.outputs.report_year }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| File | \`${{ steps.download.outputs.file_name }}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
-          if [ -n "$PR_NUM" ]; then
-            PR_URL="https://github.com/${{ github.repository }}/pull/$PR_NUM"
-            echo "✅ Pull request created: [PR #$PR_NUM]($PR_URL)" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ Pull request creation failed. Check [workflow logs]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
-          fi
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission Checklist
+      options:
+        - label: The PDF URL is publicly accessible (no login required)
+          required: true
+        - label: This report is not already listed in the README
+          required: true
+        - label: This is an annual or recurring periodic report (not a one-off whitepaper)
+          required: true
