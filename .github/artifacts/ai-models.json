@@ -15,14 +15,14 @@
       "temperature": 0.2,
       "top_p": 0.9,
       "top_k": 40,
-      "max_output_tokens": 400,
+      "max_output_tokens": 1024,
       "comment": "Low temperature for focused, data-driven summaries"
     },
     "categorization": {
       "temperature": 0.1,
       "top_p": 0.85,
       "top_k": 20,
-      "max_output_tokens": 100,
+      "max_output_tokens": 200,
       "comment": "Very low temperature for consistent classification"
     },
     "conversion": {
@@ -35,9 +35,16 @@
   },
   "retry_policy": {
     "max_attempts": 3,
-    "initial_delay_seconds": 1,
+    "initial_delay_seconds": 2,
     "backoff_multiplier": 2,
-    "max_delay_seconds": 10
+    "max_delay_seconds": 30
+  },
+  "quota_retry_policy": {
+    "max_attempts": 3,
+    "initial_delay_seconds": 30,
+    "backoff_multiplier": 2,
+    "max_delay_seconds": 120,
+    "comment": "Uses much longer delays to wait for quota to reset before retrying"
   },
   "rate_limits": {
     "requests_per_minute": 60,

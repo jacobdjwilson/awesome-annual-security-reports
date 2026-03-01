@@ -46,8 +46,10 @@
         "google-genai",
         "google-ai-generativelanguage"
       ],
-      "markdown_lines_for_analysis": 100,
-      "comment": "Number of lines from the top of each markdown conversion to send to AI for summarization and categorization. The first 100 lines capture the title page, table of contents, and executive summary — enough context to produce specific summaries without flooding the model with the full document body."
+      "markdown_lines_for_analysis": 200,
+      "markdown_max_chars_for_analysis": 12000,
+      "errors_output_file": "analysis_errors.json",
+      "comment": "markdown_lines_for_analysis and markdown_max_chars_for_analysis both apply — the larger resulting slice is used, capped at markdown_max_chars_for_analysis. This ensures enough context is passed even when early lines are sparse (e.g. heavy TOC). errors_output_file names the structured per-report error log emitted when analysis fails."
     },
     "google_search": {
       "python_packages": [

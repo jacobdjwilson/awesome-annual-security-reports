@@ -555,6 +555,7 @@ jobs:
     outputs:
       analysis_success: ${{ steps.report-analysis.outputs.analysis_success }}
       analysis_count: ${{ steps.report-analysis.outputs.analysis_count }}
+      error_count: ${{ steps.report-analysis.outputs.error_count }}
 
     steps:
       - name: Checkout repository
@@ -619,45 +620,84 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
+          ERRORS_FILE=$(jq -r '.workflow.analysis.errors_output_file // "analysis_errors.json"' .github/artifacts/workflow-config.json)
+          echo "errors_file=$ERRORS_FILE" >> $GITHUB_OUTPUT
+
           python .github/scripts/report-analyzer.py \
             conversions.json \
             --output-json analysis.json \
             --artifacts-dir .github/artifacts
 
-          if [ -f analysis.json ]; then
+          EXIT_CODE=$?
+
+          # Determine success/partial/failure state
+          ANALYSIS_COUNT=0
+          ERROR_COUNT=0
+
+          if [ -f analysis.json ] && jq empty analysis.json 2>/dev/null; then
             ANALYSIS_COUNT=$(jq 'length' analysis.json)
+          fi
+          if [ -f "$ERRORS_FILE" ] && jq empty "$ERRORS_FILE" 2>/dev/null; then
+            ERROR_COUNT=$(jq 'length' "$ERRORS_FILE")
+          fi
+
+          echo "analysis_count=$ANALYSIS_COUNT" >> $GITHUB_OUTPUT
+          echo "error_count=$ERROR_COUNT" >> $GITHUB_OUTPUT
+
+          if [ "$ANALYSIS_COUNT" -gt 0 ]; then
             echo "analysis_success=true" >> $GITHUB_OUTPUT
-            echo "analysis_count=$ANALYSIS_COUNT" >> $GITHUB_OUTPUT
-            echo "✓ Analyzed $ANALYSIS_COUNT reports"
+            echo "✓ $ANALYSIS_COUNT report(s) analyzed successfully"
+            if [ "$ERROR_COUNT" -gt 0 ]; then
+              echo "⚠ $ERROR_COUNT report(s) failed — check analysis summary for details"
+            fi
           else
             echo "analysis_success=false" >> $GITHUB_OUTPUT
+            echo "❌ All reports failed analysis — see $ERRORS_FILE for details"
+            # Surface error types directly in the log for quick diagnosis
+            if [ -f "$ERRORS_FILE" ] && [ "$ERROR_COUNT" -gt 0 ]; then
+              echo ""
+              echo "Error breakdown:"
+              jq -r '.[] | "  [\(.error_type)] \(.organization) (\(.year)): \(.error[:150])"' "$ERRORS_FILE"
+            fi
             exit 1
           fi
 
-      - name: Upload analysis
-        if: steps.verify.outputs.has_successful == 'true'
+      - name: Upload analysis artifacts
+        if: steps.verify.outputs.has_successful == 'true' && always()
         uses: actions/upload-artifact@v4
         with:
           name: analysis-results
-          path: analysis.json
+          path: |
+            analysis.json
+            ${{ steps.report-analysis.outputs.errors_file }}
+          if-no-files-found: ignore
 
       - name: Generate analysis summary
         if: always()
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           COUNT="${{ steps.report-analysis.outputs.analysis_count }}"
+          ERROR_COUNT="${{ steps.report-analysis.outputs.error_count }}"
+          ERRORS_FILE="${{ steps.report-analysis.outputs.errors_file }}"
+          ERRORS_FILE="${ERRORS_FILE:-analysis_errors.json}"
 
           echo "## 🧠 Report Analysis" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
           if [ "${{ steps.verify.outputs.has_successful }}" != "true" ]; then
             echo "⊘ No successful conversions available for analysis." >> $GITHUB_STEP_SUMMARY
+
           elif [ "${{ steps.report-analysis.outputs.analysis_success }}" == "true" ]; then
-            echo "**${COUNT} report(s) analyzed successfully.**" >> $GITHUB_STEP_SUMMARY
+            # At least some reports succeeded
+            if [ "${ERROR_COUNT:-0}" -eq 0 ]; then
+              echo "✅ **${COUNT} report(s) analyzed successfully.**" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "⚠️ **${COUNT} report(s) succeeded, ${ERROR_COUNT} failed.**" >> $GITHUB_STEP_SUMMARY
+            fi
             echo "" >> $GITHUB_STEP_SUMMARY
 
-            # Per-report details with summaries
-            echo "### 📋 Reports Analyzed" >> $GITHUB_STEP_SUMMARY
+            # Per-report success details
+            echo "### ✅ Reports Analyzed" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             jq -r '.[] |
               "#### \(.organization) — \(.title) (\(.year))\n" +
@@ -673,7 +713,7 @@ jobs:
               "\n---\n"
             ' analysis.json >> $GITHUB_STEP_SUMMARY
 
-            # Model usage breakdown across all reports
+            # Model usage breakdown
             MODEL_COUNT=$(jq '[.[].model] | map(select(. != null)) | unique | length' analysis.json)
             if [ "${MODEL_COUNT:-0}" -gt 0 ]; then
               echo "### 🤖 AI Model Usage" >> $GITHUB_STEP_SUMMARY
@@ -687,8 +727,85 @@ jobs:
             fi
 
             echo "📎 Full analysis JSON available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
+
+            # Show failures section if any reports failed alongside successes
+            if [ "${ERROR_COUNT:-0}" -gt 0 ] && [ -f "$ERRORS_FILE" ]; then
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "### ❌ Failed Reports (${ERROR_COUNT})" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "| Organization | Year | Error Type | Error | Suggested Fix |" >> $GITHUB_STEP_SUMMARY
+              echo "|---|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] |
+                "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.error[:120] | gsub("\n";" ") | gsub("|";"\\|")) | \(.suggestion[:150] | gsub("\n";" ") | gsub("|";"\\|")) |"
+              ' "$ERRORS_FILE" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+
           else
-            echo "❌ Analysis failed. Check [workflow logs]($RUN_URL) for details." >> $GITHUB_STEP_SUMMARY
+            # All reports failed
+            echo "❌ **All reports failed analysis — no README update will be created.**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Check the [workflow logs]($RUN_URL) for the full error output." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+
+            if [ -f "$ERRORS_FILE" ] && [ "${ERROR_COUNT:-0}" -gt 0 ]; then
+              # Error type summary table
+              echo "### 🔍 Error Summary" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "| Error Type | Count | Description |" >> $GITHUB_STEP_SUMMARY
+              echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
+              jq -r '
+                group_by(.error_type) | .[] |
+                (.[0].error_type) as $t |
+                (length) as $n |
+                (
+                  if $t == "quota_exceeded" then "API quota exhausted (429). Wait for reset or upgrade tier."
+                  elif $t == "auth_error" then "Invalid or missing GEMINI_API_KEY secret."
+                  elif $t == "model_unavailable" then "Primary model not accessible — update ai-models.json."
+                  elif $t == "timeout" then "API request timed out — transient issue, retry."
+                  elif $t == "validation_failed" then "AI summary failed quality checks (too short / no numbers)."
+                  elif $t == "config_error" then "Missing file or invalid config — check artifacts/ and prompts/."
+                  else "Unexpected error — check workflow log."
+                  end
+                ) as $desc |
+                "| `\($t)` | \($n) | \($desc) |"
+              ' "$ERRORS_FILE" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+
+              # Per-report failure detail table
+              echo "### 📋 Per-Report Failures" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "| Organization | Year | Error Type | Error Detail | Suggested Fix |" >> $GITHUB_STEP_SUMMARY
+              echo "|---|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] |
+                "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.error[:200] | gsub("\n";" ") | gsub("|";"\\|")) | \(.suggestion[:200] | gsub("\n";" ") | gsub("|";"\\|")) |"
+              ' "$ERRORS_FILE" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+
+              # Actionable next steps per unique error type
+              echo "### 🛠️ Recommended Actions" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              jq -r '
+                [.[].error_type] | unique | .[] |
+                if . == "quota_exceeded" then
+                  "**Quota Exceeded:** Re-run this workflow after waiting 1–5 minutes for RPM quota to reset. For persistent failures, check daily quota limits in Google AI Studio or upgrade your API tier. Both the primary and secondary model hit quota — consider staggering runs."
+                elif . == "auth_error" then
+                  "**Auth Error:** Navigate to **Settings → Secrets and variables → Actions** in this repository and verify `GEMINI_API_KEY` is set to a valid, active key from [Google AI Studio](https://aistudio.google.com/apikey)."
+                elif . == "model_unavailable" then
+                  "**Model Unavailable:** Edit `.github/artifacts/ai-models.json` and update `models.primary` to an available model such as `gemini-2.5-flash`. Commit the change and re-run the workflow."
+                elif . == "validation_failed" then
+                  "**Validation Failed:** The AI produced summaries that were too short or lacked statistics. Try increasing `markdown_lines_for_analysis` in `.github/artifacts/workflow-config.json` (currently configured value) and re-run. Also verify the markdown conversion artifact contains readable text."
+                elif . == "timeout" then
+                  "**Timeout:** Transient API issue. Re-run the workflow."
+                else
+                  "**\(.):** Check the full workflow log for details."
+                end
+              ' "$ERRORS_FILE" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+
+            else
+              echo "> No error detail file was written — check the raw [workflow logs]($RUN_URL) for the Python traceback." >> $GITHUB_STEP_SUMMARY
+            fi
           fi
 
   update-readme:
