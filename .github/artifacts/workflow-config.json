@@ -45,7 +45,9 @@
       "python_packages": [
         "google-genai",
         "google-ai-generativelanguage"
-      ]
+      ],
+      "markdown_lines_for_analysis": 100,
+      "comment": "Number of lines from the top of each markdown conversion to send to AI for summarization and categorization. The first 100 lines capture the title page, table of contents, and executive summary — enough context to produce specific summaries without flooding the model with the full document body."
     },
     "google_search": {
       "python_packages": [

@@ -8,52 +8,62 @@
         {
           "id": "global-threat-intelligence",
           "name": "Global Threat Intelligence",
-          "definition": "Broad-scale analysis of worldwide adversary tactics, malware families, and evolving threat landscapes based on global telemetry."
+          "definition": "Broad-scale analysis of worldwide adversary tactics, malware families, and evolving threat landscapes based on global telemetry.",
+          "keywords": ["threat intelligence", "threat landscape", "telemetry", "adversary", "apt", "nation state", "threat actor", "ioc", "indicator of compromise", "global threats", "cyber threats", "attack trends", "threat report", "malware"]
         },
         {
           "id": "regional-assessments",
           "name": "Regional Assessments",
-          "definition": "Cybersecurity evaluations and threat forecasts focused on specific geographic nations, territories, or political unions."
+          "definition": "Cybersecurity evaluations and threat forecasts focused on specific geographic nations, territories, or political unions.",
+          "keywords": ["regional", "country", "nation", "geographic", "apac", "emea", "latam", "europe", "asia pacific", "middle east", "africa", "americas", "territory"]
         },
         {
           "id": "sector-specific-intelligence",
           "name": "Sector Specific Intelligence",
-          "definition": "Targeted analysis of threats and vulnerabilities impacting specific vertical industries such as Finance, Healthcare, Energy, or Transportation."
+          "definition": "Targeted analysis of threats and vulnerabilities impacting specific vertical industries such as Finance, Healthcare, Energy, or Transportation.",
+          "keywords": ["sector", "vertical", "healthcare", "financial services", "banking", "energy", "utilities", "transportation", "retail", "manufacturing", "education", "government", "critical infrastructure", "industry specific"]
         },
         {
           "id": "application-security",
           "name": "Application Security",
-          "definition": "Technical assessments of risks involving custom code, APIs, software supply chains, and third-party library dependencies."
+          "definition": "Technical assessments of risks involving custom code, APIs, software supply chains, and third-party library dependencies.",
+          "keywords": ["application security", "appsec", "devsecops", "software supply chain", "api security", "sast", "dast", "owasp", "code scanning", "dependency", "open source", "third party library", "software composition"]
         },
         {
           "id": "cloud-security",
           "name": "Cloud Security",
-          "definition": "Analysis of threats, misconfigurations, and identity risks specifically targeting IaaS, PaaS, and SaaS cloud environments."
+          "definition": "Analysis of threats, misconfigurations, and identity risks specifically targeting IaaS, PaaS, and SaaS cloud environments.",
+          "keywords": ["cloud security", "iaas", "paas", "saas", "cloud misconfiguration", "aws", "azure", "gcp", "container", "kubernetes", "cloud native", "cloud posture", "cspm", "cloud threats"]
         },
         {
           "id": "vulnerabilities",
           "name": "Vulnerabilities",
-          "definition": "Data-driven research into CVE disclosure trends, exploitation rates, and organizational remediation performance."
+          "definition": "Data-driven research into CVE disclosure trends, exploitation rates, and organizational remediation performance.",
+          "keywords": ["vulnerability", "cve", "patch", "exploit", "remediation", "vulnerability management", "nvd", "cvss", "zero day", "disclosure", "patching cadence", "mean time to patch", "exploited vulnerabilities"]
         },
         {
           "id": "ransomware",
           "name": "Ransomware",
-          "definition": "In-depth studies of ransomware-as-a-service (RaaS) operations, extortion tactics, and payment trends."
+          "definition": "In-depth studies of ransomware-as-a-service (RaaS) operations, extortion tactics, and payment trends.",
+          "keywords": ["ransomware", "raas", "extortion", "ransom payment", "double extortion", "data leak site", "ransomware group", "encryption", "decryption key", "ransom demand", "ransomware attack"]
         },
         {
           "id": "data-breaches",
           "name": "Data Breaches",
-          "definition": "Quantified analysis of the root causes, patterns, and financial impacts of unauthorized data exfiltration incidents."
+          "definition": "Quantified analysis of the root causes, patterns, and financial impacts of unauthorized data exfiltration incidents.",
+          "keywords": ["data breach", "data exfiltration", "data leak", "breach cost", "breach report", "verizon dbir", "compromised records", "stolen data", "breach patterns", "cost of a data breach"]
         },
         {
           "id": "physical-security",
           "name": "Physical Security",
-          "definition": "Security research focusing on physical assets, operational technology (OT), industrial control systems (ICS), and critical infrastructure."
+          "definition": "Security research focusing on physical assets, operational technology (OT), industrial control systems (ICS), and critical infrastructure.",
+          "keywords": ["physical security", "ot security", "ics", "scada", "operational technology", "industrial control", "critical infrastructure", "plc", "hmi", "building automation", "ot/ics"]
         },
         {
           "id": "ai-and-emerging-technologies",
           "name": "AI and Emerging Technologies",
-          "definition": "Analysis of security risks inherent to or exacerbated by artificial intelligence, Large Language Models (LLMs), and agentic systems."
+          "definition": "Analysis of security risks inherent to or exacerbated by artificial intelligence, Large Language Models (LLMs), and agentic systems.",
+          "keywords": ["artificial intelligence", "machine learning", "llm", "large language model", "genai", "generative ai", "deepfake", "ai security", "ai threat", "agentic", "prompt injection", "ai risk", "ai attack"]
         }
       ]
     },
@@ -65,57 +75,68 @@
         {
           "id": "industry-trends",
           "name": "Industry Trends",
-          "definition": "Broad-market sentiment reports detailing shifts in defensive strategies, budget priorities, and general industry outlook."
+          "definition": "Broad-market sentiment reports detailing shifts in defensive strategies, budget priorities, and general industry outlook.",
+          "keywords": ["industry trends", "market trends", "security trends", "budget", "spending", "investment priorities", "insurance", "cyber insurance", "risk management", "threat outlook", "annual trends", "state of security", "security landscape", "priorities", "survey respondents", "organizations surveyed", "allianz", "commercial cyber"]
         },
         {
           "id": "executive-perspectives",
           "name": "Executive Perspectives",
-          "definition": "Insights and strategic priorities gathered directly from C-suite leaders such as CISOs, CIOs, and Board members."
+          "definition": "Insights and strategic priorities gathered directly from C-suite leaders such as CISOs, CIOs, and Board members.",
+          "keywords": ["ciso", "cio", "cto", "c-suite", "executive", "board", "board of directors", "leadership", "cso", "cyber risk", "governance", "strategic priorities", "executive survey", "cxo"]
         },
         {
           "id": "workforce-and-culture",
           "name": "Workforce and Culture",
-          "definition": "Studies focusing on the cybersecurity skills gap, talent retention, security awareness culture, and human risk management."
+          "definition": "Studies focusing on the cybersecurity skills gap, talent retention, security awareness culture, and human risk management.",
+          "keywords": ["skills gap", "workforce", "talent", "hiring", "staffing", "cybersecurity professionals", "training", "awareness", "human risk", "culture", "burnout", "retention", "diversity", "security team", "headcount", "labor", "jobs", "career", "skills shortage", "security awareness", "workforce development"]
         },
         {
           "id": "market-and-investment-research",
           "name": "Market and Investment Research",
-          "definition": "Financial analysis of the cybersecurity vendor landscape, including venture capital funding, M&A activity, and sector growth."
+          "definition": "Financial analysis of the cybersecurity vendor landscape, including venture capital funding, M&A activity, and sector growth.",
+          "keywords": ["venture capital", "vc funding", "merger", "acquisition", "m&a", "market size", "market forecast", "vendor landscape", "startup", "ipo", "valuation", "cybersecurity market"]
         },
         {
           "id": "application-security-1",
           "name": "Application Security",
-          "definition": "Survey-based research regarding developer habits, AppSec tool adoption, and perceived software supply chain maturity."
+          "definition": "Survey-based research regarding developer habits, AppSec tool adoption, and perceived software supply chain maturity.",
+          "keywords": ["developer survey", "appsec adoption", "devsecops maturity", "shift left", "secure coding", "software supply chain survey", "tool adoption", "developer security"]
         },
         {
           "id": "cloud-security-1",
           "name": "Cloud Security",
-          "definition": "Industry sentiment and organizational challenges related to cloud migration, multi-cloud governance, and shared responsibility."
+          "definition": "Industry sentiment and organizational challenges related to cloud migration, multi-cloud governance, and shared responsibility.",
+          "keywords": ["cloud adoption", "cloud migration", "multi-cloud", "hybrid cloud", "shared responsibility", "cloud governance", "cloud survey", "cloud challenges"]
         },
         {
           "id": "identity-security",
           "name": "Identity Security",
-          "definition": "Research into the governance of human and non-human identities, including MFA adoption and Zero Trust implementation."
+          "definition": "Research into the governance of human and non-human identities, including MFA adoption and Zero Trust implementation.",
+          "keywords": ["identity", "iam", "authentication", "mfa", "zero trust", "privileged access", "pam", "sso", "non-human identity", "service account", "identity governance", "access management"]
         },
         {
           "id": "penetration-testing",
           "name": "Penetration Testing",
-          "definition": "Findings and trends derived from offensive security engagements, bug bounty programs, and vulnerability disclosure initiatives."
+          "definition": "Findings and trends derived from offensive security engagements, bug bounty programs, and vulnerability disclosure initiatives.",
+          "keywords": ["penetration testing", "pentest", "red team", "bug bounty", "ethical hacking", "offensive security", "vulnerability disclosure", "ctf", "exploit research"]
         },
         {
           "id": "privacy-and-data-protection",
           "name": "Privacy and Data Protection",
-          "definition": "Analysis of GRC trends, data privacy regulation compliance, and organizational efforts to secure sensitive personal data."
+          "definition": "Analysis of GRC trends, data privacy regulation compliance, and organizational efforts to secure sensitive personal data.",
+          "keywords": ["privacy", "gdpr", "ccpa", "data protection", "compliance", "regulation", "pii", "personal data", "data governance", "grc", "regulatory", "dpo"]
         },
         {
           "id": "ransomware-1",
           "name": "Ransomware",
-          "definition": "Sentiment research regarding organizational ransomware preparedness, recovery confidence, and ransom payment policies."
+          "definition": "Sentiment research regarding organizational ransomware preparedness, recovery confidence, and ransom payment policies.",
+          "keywords": ["ransomware preparedness", "ransomware survey", "ransom payment policy", "backup recovery", "ransomware readiness", "incident response survey", "ransomware poll"]
         },
         {
           "id": "ai-and-emerging-technologies-1",
           "name": "AI and Emerging Technologies",
-          "definition": "Industry outlook on AI adoption risks, ethical governance, and the readiness of security teams to manage AI-native threats."
+          "definition": "Industry outlook on AI adoption risks, ethical governance, and the readiness of security teams to manage AI-native threats.",
+          "keywords": ["ai adoption", "ai governance", "ai ethics", "ai readiness", "responsible ai", "ai survey", "emerging technology survey", "ai tools", "ai sentiment"]
         }
       ]
     }

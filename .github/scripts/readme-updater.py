@@ -413,6 +413,17 @@ class ReadmeUpdater:
     def process_report(self, analysis: Dict[str, Any]) -> Tuple[bool, str]:
         """Evaluate one analysis record. Returns (changed, reason_string)."""
 
+        # 0 — reject any entry that was not AI-processed.
+        # There is no manual fallback mechanism; generic entries must never be written.
+        if not analysis.get("ai_processed", True):
+            org  = analysis.get("organization", "Unknown")
+            year = analysis.get("year", "?")
+            return False, (
+                f"ai_processed=false — report-analyzer.py did not produce a valid AI summary "
+                f"for {org} ({year}). The report is excluded from README to prevent generic entries. "
+                f"Re-run the pipeline or check GEMINI_API_KEY and model availability."
+            )
+
         # 1 — required fields
         required = ["organization", "title", "year", "summary", "pdf_path", "organization_url"]
         missing  = [f for f in required if not analysis.get(f)]
