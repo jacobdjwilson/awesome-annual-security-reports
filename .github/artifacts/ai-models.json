@@ -1,6 +1,6 @@
 {
   "models": {
-    "primary": "gemini-3-flash-preview",
+    "primary": "gemini-3.1-flash-lite-preview",
     "secondary": "gemini-2.5-flash",
     "embedding": "text-embedding-004",
     "comment": "Gemini 3 Pro Preview is deprecated and will be shut down March 9 2026"
