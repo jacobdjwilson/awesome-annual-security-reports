@@ -623,14 +623,20 @@ jobs:
           ERRORS_FILE=$(jq -r '.workflow.analysis.errors_output_file // "analysis_errors.json"' .github/artifacts/workflow-config.json)
           echo "errors_file=$ERRORS_FILE" >> $GITHUB_OUTPUT
 
+          # Disable exit-on-error so python's non-zero exit does NOT abort the bash
+          # script before we can capture outputs and write the step summary.
+          # Without this, `set -e` (GitHub Actions default) kills the script the
+          # moment python exits 1, meaning EXIT_CODE/$GITHUB_OUTPUT are never written
+          # and the summary step sees empty outputs and falls to "No error detail file".
+          set +e
           python .github/scripts/report-analyzer.py \
             conversions.json \
             --output-json analysis.json \
             --artifacts-dir .github/artifacts
-
           EXIT_CODE=$?
+          set -e
 
-          # Determine success/partial/failure state
+          # Read counts from output files (written by python even on failure)
           ANALYSIS_COUNT=0
           ERROR_COUNT=0
 
@@ -653,7 +659,6 @@ jobs:
           else
             echo "analysis_success=false" >> $GITHUB_OUTPUT
             echo "❌ All reports failed analysis — see $ERRORS_FILE for details"
-            # Surface error types directly in the log for quick diagnosis
             if [ -f "$ERRORS_FILE" ] && [ "$ERROR_COUNT" -gt 0 ]; then
               echo ""
               echo "Error breakdown:"

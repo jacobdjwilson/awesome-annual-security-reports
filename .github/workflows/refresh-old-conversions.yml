@@ -219,11 +219,44 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
+          ERRORS_FILE=$(jq -r '.workflow.analysis.errors_output_file // "analysis_errors.json"' .github/artifacts/workflow-config.json)
+          echo "errors_file=$ERRORS_FILE" >> $GITHUB_OUTPUT
+
           if [ -f conversions.json ]; then
+            # set +e: prevent python's exit code 1 from killing the bash script
+            # before outputs are written (same fix as in security-reports-pipeline.yml)
+            set +e
             python .github/scripts/report-analyzer.py \
               conversions.json \
               --output-json analysis.json \
               --artifacts-dir .github/artifacts
+            ANALYZER_EXIT=$?
+            set -e
+
+            ANALYSIS_COUNT=0
+            ERROR_COUNT=0
+            if [ -f analysis.json ] && jq empty analysis.json 2>/dev/null; then
+              ANALYSIS_COUNT=$(jq 'length' analysis.json)
+            fi
+            if [ -f "$ERRORS_FILE" ] && jq empty "$ERRORS_FILE" 2>/dev/null; then
+              ERROR_COUNT=$(jq 'length' "$ERRORS_FILE")
+            fi
+
+            echo "analysis_count=$ANALYSIS_COUNT" >> $GITHUB_OUTPUT
+            echo "error_count=$ERROR_COUNT" >> $GITHUB_OUTPUT
+
+            if [ "$ANALYSIS_COUNT" -gt 0 ]; then
+              echo "analysis_success=true" >> $GITHUB_OUTPUT
+              echo "✓ $ANALYSIS_COUNT report(s) analyzed successfully"
+            else
+              echo "analysis_success=false" >> $GITHUB_OUTPUT
+              echo "❌ Analysis failed — $ERROR_COUNT report(s) could not be analyzed"
+              if [ -f "$ERRORS_FILE" ] && [ "$ERROR_COUNT" -gt 0 ]; then
+                echo "Error breakdown:"
+                jq -r '.[] | "  [\(.error_type)] \(.organization) (\(.year)): \(.error[:120])"' "$ERRORS_FILE"
+              fi
+              exit 1
+            fi
           fi
 
       - name: Update README
@@ -294,6 +327,7 @@ jobs:
           path: |
             conversions.json
             analysis.json
+            analysis_errors.json
             readme-update-results.json
           if-no-files-found: ignore
 
@@ -351,4 +385,30 @@ jobs:
             echo "" >> $GITHUB_STEP_SUMMARY
           fi
 
+          # Analysis results — show error details if analysis failed
+          ANALYSIS_COUNT="${{ steps.analyzer.outputs.analysis_count }}"
+          ANALYSIS_ERROR_COUNT="${{ steps.analyzer.outputs.error_count }}"
+          ERRORS_FILE="${{ steps.analyzer.outputs.errors_file }}"
+          ERRORS_FILE="${ERRORS_FILE:-analysis_errors.json}"
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🧠 Analysis Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${ANALYSIS_COUNT:-0}" -gt 0 ]; then
+            echo "| ✅ Reports Analyzed | ❌ Analysis Failed |" >> $GITHUB_STEP_SUMMARY
+            echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+            echo "| ${ANALYSIS_COUNT} | ${ANALYSIS_ERROR_COUNT:-0} |" >> $GITHUB_STEP_SUMMARY
+          elif [ -f "$ERRORS_FILE" ] && [ "${ANALYSIS_ERROR_COUNT:-0}" -gt 0 ]; then
+            echo "❌ **All report(s) failed AI analysis.**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Organization | Year | Error Type | Suggested Fix |" >> $GITHUB_STEP_SUMMARY
+            echo "|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
+            jq -r '.[] |
+              "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.suggestion[:150] | gsub("\n";" ") | gsub("|";"\\|")) |"
+            ' "$ERRORS_FILE" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⊘ No analysis was attempted or data is unavailable." >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
           echo "📎 Full details available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY

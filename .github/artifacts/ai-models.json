@@ -2,7 +2,8 @@
   "models": {
     "primary": "gemini-3-flash-preview",
     "secondary": "gemini-2.5-flash",
-    "embedding": "text-embedding-004"
+    "embedding": "text-embedding-004",
+    "comment": "Gemini 3 Pro Preview is deprecated and will be shut down March 9 2026"
   },
   "configurations": {
     "default": {
@@ -37,14 +38,15 @@
     "max_attempts": 3,
     "initial_delay_seconds": 2,
     "backoff_multiplier": 2,
-    "max_delay_seconds": 30
+    "max_delay_seconds": 30,
+    "comment": "For validation failures and general transient errors"
   },
   "quota_retry_policy": {
     "max_attempts": 3,
-    "initial_delay_seconds": 30,
+    "initial_delay_seconds": 60,
     "backoff_multiplier": 2,
-    "max_delay_seconds": 120,
-    "comment": "Uses much longer delays to wait for quota to reset before retrying"
+    "max_delay_seconds": 180,
+    "comment": "For 429 RESOURCE_EXHAUSTED errors"
   },
   "rate_limits": {
     "requests_per_minute": 60,

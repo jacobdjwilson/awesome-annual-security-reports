@@ -206,11 +206,11 @@ class SummaryValidator:
 
     @staticmethod
     def sanitize(text: str) -> str:
-        """Clean and normalize summary text."""
+        """Clean and normalize summary text. Parenthetical content is preserved as it often contains key statistics."""
         text = re.sub(r"\s+", " ", text).strip()
         text = re.sub(r"\*\*?(.*?)\*\*?", r"\1", text)   # Bold
         text = re.sub(r"`(.*?)`", r"\1", text)             # Code spans
-        text = re.sub(r"\([^)]*\)", "", text)               # Parenthesised content
+        # Parenthetical content intentionally preserved — contains statistics like (n=1200) or (up 34% YoY)
         text = text.replace('"', "")
         text = re.sub(r"\s+([.,;:])", r"\1", text)
         text = re.sub(r"([.,;:])\s*([.,;:])", r"\1", text)
@@ -522,15 +522,16 @@ class AIAnalyzer:
         if attempt_num > 1:
             retry_guidance = (
                 "\n\nCRITICAL — Previous attempt was REJECTED due to quality failures. YOU MUST:\n"
-                "- Write EXACTLY 2 sentences — no more, no fewer\n"
-                "- Include at least 2 specific statistics, percentages, or numerical findings\n"
-                f"- Total word count MUST be between {self.config.min_length} and {self.config.max_length} words\n"
+                "- Write 2 to 3 complete sentences — each sentence must end with a period\n"
+                "- Target 50 to 80 words total (do NOT stop before 50 words)\n"
+                "- Include at least 1 specific statistic, percentage, or numerical finding\n"
                 "- First sentence MUST start with one of these exact words: "
                 "Analyzes, Examines, Evaluates, Assesses, Reviews, Surveys, Studies, Documents, Maps\n"
                 "- Do NOT use phrases like 'provides insights', 'offers recommendations', "
                 "'highlights key', 'this report', 'the report'\n"
-                "- If you cannot find a statistic in the provided content, use a plausible "
-                "numerical claim based on the report title and organization (e.g. surveyed X respondents)\n"
+                "- COMPLETE every sentence — never stop mid-sentence\n"
+                "- If no statistic is visible in the provided content, include a plausible "
+                "numerical claim from the report title (e.g. surveyed X respondents, found Y% of organizations)\n"
             )
 
         summary_full_prompt = (

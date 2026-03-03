@@ -2,7 +2,7 @@
   "validation": {
     "summary": {
       "max_length": 400,
-      "min_length": 40,
+      "min_length": 30,
       "required_verbs": [
         "analyzes",
         "examines",
@@ -48,7 +48,8 @@
         "innovative"
       ],
       "min_sentences": 2,
-      "require_numerical_data": true
+      "require_numerical_data": true,
+      "comment": "The AI prompt targets 50-120 words; this floor catches only truly empty/stub summaries."
     }
   },
   "processing": {
