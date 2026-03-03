@@ -602,10 +602,12 @@ class ReadmeUpdater:
         return analysis["pdf_path"].replace(" ", "%20")
 
     def _build_entry(self, analysis: Dict[str, Any]) -> str:
+        # Titles come from PDF filenames
+        title = analysis["title"].replace("-", " ")
         return self._format_entry(
             org        = analysis["organization"],
             org_url    = analysis["organization_url"],
-            title      = analysis["title"],
+            title      = title,
             report_url = self._build_report_url(analysis),
             year       = str(analysis["year"]),
             summary    = self.validator.sanitize(analysis["summary"]),
