@@ -1,252 +1,157 @@
-# state of cyber 2025
-with IT-Harvest
+# State of Cyber 2025
 
-Not for reproduction or commercial distribution.
+**Organization:** IT-Harvest  
+**Report Title:** Harvest-State-of-Cyber-H1  
+**Year:** 2025  
 
-it-harvest.com
+[it-harvest.com](http://it-harvest.com)
+
+*Not for reproduction or commercial distribution.*
 
 ## Table of Contents
 - [Agenda](#agenda)
 - [Market](#market)
-  - [The Global Market: In Focus](#the-global-market-in-focus)
-  - [The Cyber 150: Top IT-Harvest Cyber 150 Vendors](#the-cyber-150-top-it-harvest-cyber-150-vendors)
-  - [The Global Market: Sectors](#the-global-market-sectors)
-  - [The Global Market: Geography and Market Share](#the-global-market-geography-and-market-share)
-  - [Market - Startups](#market---startups)
-- [Technology - AI Security](#technology---ai-security)
-  - [Quick Look](#quick-look)
-  - [AI Security Breakdown](#ai-security-breakdown)
-- [Financing - H1 2025](#financing---h1-2025)
-  - [Startup Financing](#startup-financing)
-- [M&A - H1 2025](#ma---h1-2025)
-  - [Sector Insights](#sector-insights)
-- [Firm](#firm)
-  - [Strategic Advisory](#strategic-advisory)
-  - [Founders](#founders)
-  - [Investors](#investors)
+- [The Cyber 150](#the-cyber-150)
+- [The Global Market: Sectors](#the-global-market-sectors)
+- [The Global Market: Geography and Market Share](#the-global-market-geography-and-market-share)
+- [Market: Startups](#market---startups)
+- [Technology: AI Security](#technology---ai-security)
+- [Financing: H1 2025](#financing---h1-2025)
+- [M&A: H1 2025](#ma---h1-2025)
+- [Firm Information](#firm-information)
 
 ---
 
 ## Agenda
-### 2025
 - Market
 - Technology
 - Financing
 - M&A
 
-Not for reproduction or commercial distribution.
-
 ---
 
 ## Market
-### The Global Market
-#### in focus
+### The Global Market in focus
+- **AI Security** a leader in growth.
+- Less momentum compared to H1 2024. But M&A and funding are up.
+- Actual IPOs on the horizon!
 
-AI Security a leader in growth.
+| Metric | H1 2024 | H1 2025 |
+| :--- | :--- | :--- |
+| Vendors Growth | 51% | 46% |
+| Overall Growth | 4.1% | -6.4% |
 
-Less momentum compared to H1 2024. But M&A and funding are up.
+**Sectors Growth Comparison:**
+- **AI Security:** 29% (H1 2024) vs 17% (H1 2025)
+- **IoT Security:** 2% (H1 2024) vs 8% (H1 2025)
+- **Application:** 8% (H1 2024) vs 5% (H1 2025)
+- **Operations:** 4% (H1 2024) vs 5% (H1 2025)
 
-Actual IPOs on the horizon!
-
-**H1 2024**
-51% of vendors grew
-4.1% Overall Growth
-
-**H1 2025**
-46% of vendors grew
--6.4% Overall Growth
-
-**Sectors**
-
-| Sector         | H1 2024 | H1 2025 |
-| :------------- | :------ | :------ |
-| AI Security    | 29%     | 17%     |
-| IoT Security   | 2%      | 8%      |
-| Application    | 8%      | 5%      |
-| Operations     | 4%      | 5%      |
-
-Not for reproduction or commercial distribution.
-
-Services/MSSPs not included in this section.
-
-![Bar chart comparing H1 2024 and H1 2025 overall growth and sector growth percentages for AI Security, IoT Security, Application, and Operations.](image_description_1.png)
+*Services/MSSPs not included in this section.*
 
 ---
 
-## Market
-### The Cyber 150
-#### Top IT-Harvest Cyber 150 Vendors
-
-- 381 Employees, 127% YTD growth, Device Management
-- 145 Employees, 113% YTD growth, Email Security
-- 812 Employees, 89% YTD growth, Data Security
-- 512 Employees, 84% YTD growth, Code Security
-- 93 Employees, 72% YTD growth, Pentesting
-- 101 Employees, 71% YTD growth, Vulnerability Management
-- 244 Employees, 61% YTD growth, Security Awareness Training
-- 97 Employees, 54% YTD growth, Blockchain
-- 122 Employees, 53% YTD growth, GRC / AI Security
-
-Not for reproduction or commercial distribution.
-
-![List of top IT-Harvest Cyber 150 Vendors with their employee count, YTD growth, and security sector.](image_description_2.png)
+## The Cyber 150
+### Top IT-Harvest Cyber 150 Vendors
+- **Device Management:** 381 Employees, 127% YTD growth
+- **Email Security:** 145 Employees, 113% YTD growth
+- **Data Security:** 812 Employees, 89% YTD growth
+- **Code Security:** 512 Employees, 84% YTD growth
+- **Pentesting:** 93 Employees, 72% YTD growth
+- **Vulnerability Management:** 101 Employees, 71% YTD growth
+- **Security Awareness Training:** 244 Employees, 61% YTD growth
+- **Blockchain:** 97 Employees, 54% YTD growth
+- **GRC / AI Security:** 122 Employees, 53% YTD growth
 
 ---
 
-## Market
-### The Global Market
-#### sectors
+## The Global Market: Sectors
+![Chart showing Overall vs Startups sector distribution]
 
-Overall
-
-Startups
-
-Not for reproduction or commercial distribution.
-
-Services/MSSPs not included in this section.
-
-![Two pie charts showing sector distribution, one for Overall market and one for Startups.](image_description_3.png)
+*Services/MSSPs not included in this section.*
 
 ---
 
-## Market
-### The Global Market
-#### geography and market share
+## The Global Market: Geography and Market Share
+### by Location
+- **USA:** 52%
+- **UK:** 7%
+- **Israel:** 7%
+- **CAN:** 4%
+- **GER:** 4%
 
-**by Location**
-USA 52%
-UK 7%
-Israel 7%
-CAN 4%
-GER 4%
-
-**global security space**
-
-**by Size**
-Small 76%
-Mid 19%
-Large 5%
-
-**Startups**
-34%
-
-Not for reproduction or commercial distribution.
-
-![Two pie charts illustrating global security market share: one by location (USA, UK, Israel, CAN, GER) and one by company size (Small, Mid, Large), with a separate callout for Startups.](image_description_4.png)
+### by Size
+- **Small:** 76%
+- **Mid:** 19%
+- **Large:** 5%
+- **Startups:** 34%
 
 ---
 
 ## Market - Startups
-### 924 Startups Worldwide
+**924 Startups Worldwide**
+- 49% Grew in 2025
+- 30% Shrunk by ≥5% in 2025
+- Founded after 2023
 
-49% Grew in 2025
+**Startup Sector Concentration:**
+- **AI Security:** 58
+- **GRC:** 25
+- **Operations:** 24
 
-30% Shrunk by ≥5% in 2025
+*Since 2023, ~1 in 3 startups are AI Security.*
 
-#### Founded after 2023
-- AI Security 58
-- GRC 25
-- Operations 24
-
-#### Startup Sector Concentration
-
-Since 2023 .~1 in 3. startups are AI Security
-
-Not for reproduction or commercial distribution.
-
-Services/MSSPs not included in this section.
-
-![Bar chart showing the concentration of startups by sector, specifically highlighting AI Security, GRC, and Operations founded after 2023.](image_description_5.png)
+*Services/MSSPs not included in this section.*
 
 ---
 
 ## Technology - AI Security
 ### Quick Look
+- 52% of global security solutions mention AI.*
+- 91% of solutions from vendors founded after 2022 mention AI.*
 
-52% of global security solutions mention AI.[^1]
+![AI Security Breakdown chart]
 
-91% of solutions from vendors founded after 2022 mention AI.[^1]
-
-#### AI Security Breakdown
-
-Not for reproduction or commercial distribution.
-
-[^1]: IT-Harvest (11,340 security solutions analyzed)
-
-![Pie chart illustrating the breakdown of AI Security sub-sectors or components.](image_description_6.png)
+*\*IT-Harvest (11,340 security solutions analyzed)*
 
 ---
 
 ## Financing - H1 2025
+- **Deal Count:** 290 (-6% YoY)
+- **Deal Volume:** 8.5B
+- **Avg. Target Size:** 128
+- **Avg. Target YTD Growth:** 49% (+13% YoY)
 
--6% YoY
-290 deal count
-
-🚀 20% in 24’
-19% of deal volume
-128 avg. target size
-
-8.5B deal volume
-+13% YoY 49% of deal count
-63% in 24’
-28% avg. target YTD growth
-
-#### Startup Financing
-
-| Sector | Percentage |
-| :----- | :--------- |
-| AI Sec.| 16%        |
-| Data   | 13%        |
-| GRC    | 13%        |
-| IAM    | 11%        |
-| App    | 9%         |
-| Other  | 38%        |
-
-Not for reproduction or commercial distribution.
-
-![Dashboard-style graphic presenting key financing metrics for H1 2025, including deal count, deal volume, YoY changes, average target size, and a breakdown of startup financing by sector.](image_description_7.png)
+**Startup Financing Breakdown:**
+- **AI Sec:** 16%
+- **Data:** 13%
+- **GRC:** 13%
+- **IAM:** 11%
+- **App:** 9%
+- **Other:** 38%
 
 ---
 
 ## M&A - H1 2025
+- **Deal Count:** 160 (+5.3% YoY)
+- **Venture Backed:** 64%
+- **Avg. Target Age:** 13 years
+- **Strategic Deal Makeup:** 92%
+- **Avg. Target Size:** 359
 
-+5.3% YoY
-160 deal count
-64% venture backed
-13 years avg. target age
-92% strategic deal makeup
-359 avg. target size
-
-#### Sector Insights
-
-Not for reproduction or commercial distribution.
-
-![Dashboard-style graphic presenting key M&A metrics for H1 2025, including deal count, YoY change, venture-backed percentage, average target age, strategic deal makeup, average target size, and a section for sector insights.](image_description_8.png)
+![Sector Insights chart]
 
 ---
 
-## Firm
-20+ years
-IT-Harvest
+## Firm Information
+**IT-Harvest**
+- 20+ years
+- Strategic Advisory
+- Founders: We help you exit
+- Investors: We are your research partners
 
-#### Strategic Advisory
+**Contact:** [team@itharvest.com](mailto:team@itharvest.com)
 
-#### Founders
-we help you exit
+[it-harvest.com](http://it-harvest.com) | [dashboard.it-harvest.com](http://dashboard.it-harvest.com) | [harvestiq.ai](http://harvestiq.ai)
 
-#### Investors
-we are your research partners
-
-team@itharvest.com
-
-Not for reproduction or commercial distribution.
-
-![IT-Harvest logo or branding, representing the firm.](image_description_9.png)
-
----
-
-it-harvest.com
-dashboard.it-harvest.com
-harvestiq.ai
-
-The contents of this deck are proprietary & confidential
+*The contents of this deck are proprietary & confidential.*
