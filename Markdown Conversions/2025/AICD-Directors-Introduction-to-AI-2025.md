@@ -3,40 +3,30 @@
 ## Table of Contents
 - [Foreword](#foreword)
 - [How to use this guide](#how-to-use-this-guide)
-- [Resource purpose, audience & structure](#resource-purpose-audience-structure)
+- [Resource purpose, audience & structure](#resource-purpose-audience--structure)
 - [Executive summary](#executive-summary)
 - [Section 1: AI and the governance imperative](#section-1-ai-and-the-governance-imperative)
-  - [1.1 What is AI?](#what-is-ai)
-  - [1.1.1 How is AI different from other technology?](#how-is-ai-different-from-other-technology)
-  - [1.1.2 Different types of AI](#different-types-of-ai)
-  - [1.2 AI and directors’ obligations](#ai-and-directors-obligations)
-  - [1.3 AI and governance implications](#ai-and-governance-implications)
-  - [1.4 Traditional IT governance may not be fit-for-purpose for AI](#traditional-it-governance-may-not-be-fit-for-purpose-for-ai)
-  - [1.5 Aligning AI use to organisational strategy](#aligning-ai-use-to-organisational-strategy)
-  - [1.6 AI-specific risk management](#ai-specific-risk-management)
+  - [1.1 What is AI?](#11-what-is-ai)
+  - [1.2 AI and directors’ obligations](#12-ai-and-directors-obligations)
+  - [1.3 AI and governance implications](#13-ai-and-governance-implications)
+  - [1.4 Traditional IT governance may not be fit-for-purpose for AI](#14-traditional-it-governance-may-not-be-fit-for-purpose-for-ai)
+  - [1.5 Aligning AI use to organisational strategy](#15-aligning-ai-use-to-organisational-strategy)
+  - [1.6 AI-specific risk management](#16-ai-specific-risk-management)
 - [Section 2: Practical steps for directors](#section-2-practical-steps-for-directors)
-  - [2.1 Roles & responsibilities](#roles-responsibilities)
-  - [2.2 Governance structures](#governance-structures)
-  - [2.3 People, skills & culture](#people-skills-culture)
-  - [2.4 Principles, policies & strategy](#principles-policies-strategy)
-  - [2.5 Practices, processes & controls](#practices-processes-controls)
-  - [2.6 Supporting infrastructure](#supporting-infrastructure)
-  - [2.7 Stakeholder engagement & impact assessment](#stakeholder-engagement-impact-assessment)
-  - [2.8 Monitoring, reporting & evaluation](#monitoring-reporting-evaluation)
-- [Conclusion](#conclusion)
-- [Appendix – Additional resources](#appendix-additional-resources)
+  - [2.1 Roles & responsibilities](#21-roles--responsibilities)
+  - [2.2 Governance structures](#22-governance-structures)
+  - [2.3 People, skills & culture](#23-people-skills--culture)
+  - [2.4 Principles, policies & strategy](#24-principles-policies--strategy)
+  - [2.5 Practices, processes & controls](#25-practices-processes--controls)
+  - [2.6 Supporting infrastructure](#26-supporting-infrastructure)
+  - [2.7 Stakeholder engagement & impact assessment](#27-stakeholder-engagement--impact-assessment)
+  - [2.8 Monitoring, reporting & evaluation](#28-monitoring-reporting--evaluation)
+- [Appendix – Additional resources](#appendix--additional-resources)
 - [Acknowledgements](#acknowledgements)
-- [About AICD](#about-aicd)
-- [About HTI](#about-hti)
-- [Disclaimer](#disclaimer)
-- [Copyright](#copyright)
 
 ---
 
-![Human Technology Institute logo and text "A Director's Guide to AI Governance"](Image of the Human Technology Institute logo and the title of the guide.)
-
 ## Foreword
-[GO TO CONTENTS](#table-of-contents)
 
 While forms of Artificial Intelligence (AI) have been used for many years, the major development in Generative AI capabilities over recent times has prompted widespread discussion of its role in the economy and broader society.
 
@@ -53,47 +43,31 @@ Internationally, we are seeing jurisdictions attempt to walk the policy tightrop
 To assist boards navigate the ethical and informed use of AI, the Australian Institute of Company Directors (AICD) has partnered with the Human Technology Institute (HTI) at the University of Technology Sydney (UTS) to provide a suite of director resources.
 
 This includes:
-- ‘A Director's Guide to AI Governance’, which provides practical guidance for boards’ using, or wishing to deploy AI within their organisations;
 - ‘A Director's Introduction to AI’, which lays the foundation for knowledge of AI concepts;
+- ‘A Director's Guide to AI Governance’, which provides practical guidance for boards’ using, or wishing to deploy AI within their organisations;
 - A Concise Snapshot of the ‘Eight elements of safe and responsible AI governance’; and
 - a separate SME and NFP governance checklist which recognises the significance of small and medium-sized enterprises to the Australian economy and the specific needs of this sector.
 
 We hope that by applying the ‘eight elements of safe and responsible AI governance’, directors can guide their organisations to deploy AI systems safely and responsibly for maximum strategic and competitive advantage.
 
-**Mark Rigotti MAICD**  
-CEO and Managing Director  
+**Mark Rigotti MAICD**
+CEO and Managing Director
 Australian Institute of Company Directors
 
-**Professor Nicholas Davis MAICD**  
-Co-Director  
-Human Technology Institute  
+**Professor Nicholas Davis MAICD**
+Co-Director
+Human Technology Institute
 University of Technology, Sydney
 
+---
+
 ## How to use this guide
-[GO TO CONTENTS](#table-of-contents)
 
-Having considered all the boards on which you serve, select what applies to you:
+![Table showing how to select reading material based on director knowledge gaps]
 
-**What we suggest you read**
-
-- I know about ChatGPT, but I don’t know any other types of AI
-- I am not clear how AI is different to other technologies
-- I am unsure about the key legal obligations applying to AI use
-- I am not clear about the key risks or opportunities arising from AI
-- I do not know the underlying principles of safe and responsible AI
-  - **A Director's Introduction to AI**
-
-- I understand the difference between General AI and Narrow AI
-- I understand how AI is different to other technologies, but am unclear how this impacts governance
-- I am unsure about where AI is used within my organisation
-- I am unsure about what questions to ask management about the governance and use of AI and how to assess the quality of management’s responses
-  - **A Director's Guide to AI Governance**
-
-- I am a director of a SME or NFP and do not know how to implement AI governance
-  - **AI Governance Checklist for SME and NFP Directors**
+---
 
 ## Resource purpose, audience & structure
-[GO TO CONTENTS](#table-of-contents)
 
 The purpose of this resource is to provide practical guidance for boards and directors of organisations that are using or planning to use AI systems (as distinct from developers and distributors of AI systems).
 
@@ -104,339 +78,790 @@ However, recognising the significance of small and medium-sized enterprises to t
 AI technology as well as AI policy and regulation is dynamic and constantly developing. This resource is not intended to ‘cover the field’, but to provide a suggested framework for board oversight of AI use.
 
 The resource is structured into two sections:
-
 - Section 1 highlights a set of cross-cutting insights and implications for AI governance for directors.
 - Section 2 sets out eight elements of effective, safe and responsible AI governance. It also provides key questions for directors and management responses to watch out for, and provides some case studies.
 
 As part of this Guide you can also find a separate Concise Snapshot of the ‘Eight elements of safe and responsible AI governance’.
 
+---
+
 ## Executive summary
-[GO TO CONTENTS](#table-of-contents)
 
-### ROLES & RESPONSIBILITIES
-- Identify the management and board individual/body accountable for AI decision-making.
-- Identify those involved in, and responsible for, AI system procurement, development and use.
-- Consider whether decision-making processes applied by key accountable persons incorporate consideration of AI risk and opportunity.
+![Table summarizing the eight elements of AI governance: Roles & Responsibilities, Governance Structures, People, Skills & Culture, Principles, Policies & Strategy, Practices, Processes & Controls, Supporting Infrastructure, Stakeholder Engagement & Impact Assessment, and Monitoring, Reporting & Evaluation]
 
-### GOVERNANCE STRUCTURES
-- Determine which existing or new board and management governance structure would most appropriately support AI oversight.
-- Review board and management committee charters to determine whether and how they incorporate AI issues.
-- Consider how external experts can be leveraged within existing governance structures.
-- Consider the nature and frequency of management reporting to the board/ relevant board committee.
-
-### PEOPLE, SKILLS & CULTURE
-- Verify that management have assessed the organisation’s AI skills, capabilities and training needs, and implement upskilling programs (including at the director-level).
-- Discuss the potential for AI to impact the workforce and workforce planning.
-- Consider how AI governance structures can incorporate a diversity of perspectives, including expert views, to aid diversity of thought and avoid ‘group think’.
-
-### PRINCIPLES, POLICIES & STRATEGY
-- Require that AI is considered and, where appropriate, embedded, within the organisation’s strategy. AI use should have a clear business value – ‘AI for AI’s sake’ should be avoided.
-- Engage with management to discuss how safe and responsible AI principles have been incorporated into relevant policies (such as AI/IT use, privacy, confidentiality and cyber security).
-- Recognise that principles and policies need to be proactively implemented and enforced across the supply chain.
-
-### PRACTICES, PROCESSES & CONTROLS
-- Work with management to understand what controls are in place for AI use (e.g. risk appetite statement and risk management framework).
-- Confirm with management that there are processes in place to assess supplier and vendor risk.
-- Monitor and regularly review the effectiveness of controls.
-
-### SUPPORTING INFRASTRUCTURE
-- Confirm that you are broadly aware of where, within the organisation, AI is currently being used. Management can provide this information through an AI inventory.
-- Confirm with management that management is aware of, and has a robust data governance framework in place to manage data collected and stored by the organisation to train AI systems.
-- Focus on increasing transparency to end users about how the organisation's AI systems use data.
-
-### STAKEHOLDER ENGAGEMENT & IMPACT ASSESSMENT
-- Identify and engage with stakeholders to understand AI’s impact and stakeholder expectations of AI use and governance.
-- Confirm with management that AI system design and assessment processes incorporate accessibility and inclusion practices.
-- Consider whether AI-generated results/ outcomes are explained to stakeholders and whether an appeal process is available.
-
-### MONITORING, REPORTING & EVALUATION
-- Confirm that a risk-based monitoring and reporting system for mission-critical and high-risk AI systems is in place.
-- Develop and implement a monitoring and reporting framework with metrics and outcomes to track and measure progress.
-- Consider seeking internal and external assurance.
+---
 
 ## Section 1: AI and the governance imperative
-[GO TO CONTENTS](#table-of-contents)
 
-### 1.1 WHAT IS AI?
-[GO TO CONTENTS](#table-of-contents)
-
-**KEY POINTS:**
-
-- The unique characteristics of AI systems (complex pattern recognition based on large and diverse datasets) mean that traditional governance approaches may not be appropriate.
-- Directors should be aware of AI's unique risks and opportunities and how these require adaptations to existing governance approaches.
-- Effective AI governance should be human-centred, cross-functional, adaptive and iterative.
-- Directors should align investment in AI with organisational values and embed it within broader business strategy. ‘AI for AI’s sake’ should be avoided.
+### 1.1 What is AI?
 
 The definition of AI adopted by the International Organisation for Standardization and the International Electrotechnical Commission ISO/IEC 22989 is:
 
 > An engineered system that generates outputs such as content, forecasts, recommendations or decisions for a given set of human-defined objectives.
 
-### 1.1.1 How is AI different from other technology?
-[GO TO CONTENTS](#table-of-contents)
+#### 1.1.1 How is AI different from other technology?
 
 AI is a special form of digital software that is particularly good at predicting outputs, optimising, classifying, inferring missing data, and generating new data.
 
-AI systems can often outperform non-AI systems, and as a result offer significant productivity, efficiency and customer experience benefits.
-
-AI is also more versatile and scalable than traditional software because it can be replicated and adapted to new contexts at a relatively low cost. As a result of these advantages, AI is increasingly being deployed across organisational teams and functions.
-
-However, the differences between traditional software systems and AI systems also impact governance approaches.
-
-Traditional software systems are built from explicit rules coded by developers, such that their behaviour is inherently more predictable and understandable (even if the software itself is complex).
-
-By contrast, AI systems are often created by defining an objective and using historical data to create an AI model that may rely on billions of inferred connections between data points to achieve its objective. This process means that it can be extremely challenging to replicate, explain or test an AI system’s output.
+Traditional software systems are built from explicit rules coded by developers, such that their behaviour is inherently more predictable and understandable. By contrast, AI systems are often created by defining an objective and using historical data to create an AI model that may rely on billions of inferred connections between data points.
 
 **BOX 1: The role of data in AI systems**
-
 Data is the foundation of AI systems. Data, including personal information, is collected and used to train AI systems. It is both an input and an output of a deployed AI system.
 
-The selection of data, particularly its quality, quantity, and representativeness, will significantly affect the performance of AI systems.
-
-Through the ongoing collection of data and feedback loops, the accuracy and efficiency of AI systems should improve over time.
-
-### 1.1.2 Different types of AI
-[GO TO CONTENTS](#table-of-contents)
-
-Box 2 provides a non-exhaustive list of systems that meet the definition of AI above.
+#### 1.1.2 Different types of AI
 
 **BOX 2: What kinds of systems are usefully defined as AI?**
-
-- **Machine learning**: a broad set of models that have been trained on pre-existing data to produce useful outputs on new data.
-- **Expert systems**: systems that use a knowledge base, inference engine and logic to mimic how humans make decisions.
-- **Natural language systems**: models that can understand and use natural language and speech for tasks such as summarisation, translation, or content moderation.
-- **Facial recognition technologies**: systems that verify a person, identify someone, or analyse personal characteristics using facial data drawn from photos or video.
-- **Recommender systems**: systems that suggest products, services or information to a user based on user preferences, characteristics, or behaviour.
-- **Automated decision-making systems**: systems that use data to classify, analyse and make decisions that affect people with little or no human intervention.
-- **Robotic process automation**: systems that imitate human actions to automate routine tasks through existing digital interfaces.
-- **Virtual agents and chatbots**: digital systems that engage with customers or employees via text or speech.
-- **Generative AI**: systems that produce code, text, music, or images based on text or other inputs.
-- **AI-powered robotics**: physical systems that use computer vision and machine learning models to move and execute tasks in dynamic environments.
-
-General AI (or General Purpose AI) and Narrow AI are two sub-categories of AI (see Table 1).
+- Machine learning
+- Expert systems
+- Natural language systems
+- Facial recognition technologies
+- Recommender systems
+- Automated decision-making systems
+- Robotic process automation
+- Virtual agents and chatbots
+- Generative AI
+- AI-powered robotics
 
 **TABLE 1: Key differences between General AI and Narrow AI**
 
-| Type of AI system | Description[^1] | Examples |
-| :---------------- | :---------------- | :------- |
-| **General AI (or General Purpose AI)** | An AI system that can be used for a broad range of tasks, both intended and unintended by developers. This includes Generative AI. | Text generation (e.g. GPT-4, Gemini), image generation (e.g. DALL.E, Midjourney), programming code generation (i.e. Codex). |
-| **Narrow AI** | An AI system trained to deliver outputs for specialised, constrained tasks and uses to address a specific problem. | Search engines (e.g. Google, Bing), facial recognition (e.g. Apple Face ID), recommender systems (e.g. Amazon, Spotify, Netflix). |
+| Type of AI system | Description | Examples |
+| :--- | :--- | :--- |
+| **General AI** | An AI system that can be used for a broad range of tasks, both intended and unintended by developers. | GPT-4, Gemini, DALL.E, Midjourney |
+| **Narrow AI** | An AI system trained to deliver outputs for specialised, constrained tasks. | Search engines, Face ID, Recommender systems |
 
-[^1]: ISO, 2022. ISO-IEC-22989 Artificial intelligence concepts and terminology.
-
-For more insight on What AI is and its relevance for directors, see Chapter 1 of *A Director’s Introduction to AI*.
+---
 
 ### 1.2 AI and directors’ obligations
-[GO TO CONTENTS](#table-of-contents)
 
-While stand-alone AI regulation has not yet been introduced in Australia, a range of existing laws already apply to the use of AI systems – see Figure 1. Some laws place obligations on the organisation, while others apply to directors and officers individually. The Australian Government has also foreshadowed further reform of these laws to apply more directly to AI use.
-
-For more detail on existing legal obligations, as well as Australian and international regulatory developments, see Chapter 3 of *A Director’s Introduction to AI*.
-
-**FIGURE 1: Existing legal obligations when using AI**
-![Diagram showing existing legal obligations when using AI, including Directors' duties (Good faith, best interest and proper purpose; Due care and diligence) and The legal and regulatory environment (Privacy, IP and Data Use; Consumer Protection; Duty of Care/Diligence; Work Health and Safety).](Diagram illustrating the legal and regulatory environment for AI use, covering directors' duties and various legal areas.)
-
-In line with their directors’ duties, directors are responsible for the oversight of the organisation’s strategy and risk management processes. This includes managing AI risks and opportunities.
-
-AI risks include both AI system failures and malicious, misleading, reckless or inappropriate AI use (see the summary at Table 2). These risks can create and amplify a range of commercial, reputational and regulatory risks to organisations (see Figure 2).
+While stand-alone AI regulation has not yet been introduced in Australia, a range of existing laws already apply to the use of AI systems (e.g., Privacy, IP, Consumer Protection, Work Health and Safety).
 
 **TABLE 2: Key sources of AI risk for organisations**
+- **AI system failures**: Poor performance, bias, fragility, security vulnerabilities.
+- **Malicious/Inappropriate use**: Misleading advice, misinformation, unfair/extractive use, opacity, weaponisation, cyber attacks, fraud.
 
-| Key sources of AI risk | Examples |
-| :------------------- | :------- |
-| **AI system failures** – where systems create harm because they fail to perform as intended | - Poor system performance<br>- Biased system performance<br>- System fragility or unreliability<br>- Security failures or vulnerabilities |
-| **Malicious, misleading, reckless, or inappropriate use** – where systems are deliberately used (whether by the organisation or external parties) in a way which creates or amplifies risk of harm | - Misleading advice<br>- Misinformation at scale<br>- Unfair or extractive use<br>- Opacity and lack of interpretability<br>- Weaponisation<br>- AI-powered cyber attacks<br>- Fraudulent and unlawful use e.g. scams<br>- Financial market manipulation<br>- Excessive deployment<br>- Deployment on vulnerable individuals |
-
-**FIGURE 2: Risks to organisations from AI use**
-![Diagram showing Amplified risks to organisations: Commercial (Commercial losses due to poor or biased AI system performance; adversarial attacks), Reputational (Damage to reputation and loss of trust due to harmful or unlawful treatment of consumers, employees or citizens), Regulatory (Breach of legal obligations that may result in fines, restrictions and require management focus).](Diagram illustrating the amplified commercial, reputational, and regulatory risks organizations face from AI use.)
-
-On the other hand, a lack of investment in AI capabilities also leaves organisations vulnerable to a range of other risks, such as a lack of competitiveness, higher costs, lack of new product and service delivery, poorer consumer service, as well as talent acquisition and retention challenges.
-
-The risks of action and inaction must be carefully weighed by directors alongside the organisational strategy and the risk appetite of the organisation.
-
-For more details on AI risks and opportunities, see Chapter 2 of *A Director’s Introduction to AI*.
+---
 
 ### 1.3 AI and governance implications
-[GO TO CONTENTS](#table-of-contents)
 
-Both the deliberate and ‘shadow’ AI use (see Box 3) throughout an organisation and its supply chains present directors with complex governance challenges.
-
-**KEY QUESTIONS FOR DIRECTORS**
-
-- How can we support experimentation and innovation with AI within the risk tolerance of the organisation?
-- How is AI being used to support the delivery of the organisational strategy and related business goals?
+Both deliberate and ‘shadow’ AI use (unauthorised use of AI by employees) present complex governance challenges.
 
 **BOX 3: What is ‘shadow’ AI use?**
+Shadow AI refers to employees’ unauthorised use of AI applications for work-related purposes. A 2023 ISACA poll found 63% of respondents used Generative AI, but only 36% of organisations permitted it.
 
-Shadow AI refers to employees’ unauthorised use of AI applications for work-related purposes.
-
-The recent availability – and relatively low cost – of capable cloud-based large language models such as ChatGPT means that a significant percentage of employees and contractors are leveraging Generative AI systems for their work without the explicit knowledge, permission or oversight of management.
-
-A 2023 Information Audit and Control Association (ISACA) poll of IT governance professionals across Australia and New Zealand found widespread employee use of Generative AI (63 per cent of respondents), despite only 36 per cent of organisations expressly permitting its use. Just 11 per cent of respondents said that their organisation has a comprehensive policy for Generative AI use.
-
-The phenomenon of shadow AI poses a range of amplified risks to organisations and their stakeholders, including breaches of privacy and confidentiality.
+---
 
 ### 1.4 Traditional IT governance may not be fit-for-purpose for AI
-[GO TO CONTENTS](#table-of-contents)
 
-Some managers and directors may be tempted to place the oversight of AI systems within existing IT governance systems. However, HTI’s research strongly suggests that existing IT risk management frameworks and systems are largely unsuited for AI governance.
+Existing IT risk management frameworks are often unsuited for AI due to:
+- **Speed and rate of change**
+- **Opacity**: Difficulty in testing, validating, and explaining outputs.
+- **Diversity of use cases**: Decentralisation across the organisation.
+- **Uncertain policy/regulatory environment**
 
-This is because traditional IT governance focuses on point-in-time risk assessments of officially sanctioned systems, largely based on vendor assurances.
+Effective frameworks must be **Integrated**, **Iterative and Adaptive**, **Human-centred**, and **Cross-functional**.
 
-Such an approach has limitations in governing AI systems because:
-
-**SPEED AND RATE OF CHANGE**
-
-How organisations use AI is not a ‘tomorrow’ challenge – it is a ‘now’ challenge that involves rapidly advancing technologies.
-
-**OPACITY**
-
-Opacity in the sense of (1) the challenge of testing, validating, explaining and reproducing AI system outputs; and (2) difficulty identifying AI use within an organisation and its value chain.
-
-**DIVERSITY OF USE CASES**
-
-AI use crosses organisational barriers and reporting lines. Its use ranges from being used by frontline workers, being embedded within the core of the organisation’s strategy and risk management approaches, and being embedded within existing systems (e.g. software updates) and supply chains. This decentralisation across the porous boundaries of the organisation makes AI use difficult to control.
-
-**AN UNCERTAIN POLICY, REGULATORY AND TECHNOLOGY ENVIRONMENT**
-
-These uncertainties are driven by local and international regulatory change, technology change, and a shifting threat environment.
-
-Organisations may be tempted to place the entirety of AI system oversight within a risk and compliance function. However, this can mean the significant opportunities of AI systems are not appropriately recognised.
-
-In meeting these challenges, directors need to engage with management to implement an iterative, integrated, flexible and adaptive governance approach which is:
-
-**HUMAN-CENTRED**
-
-This refers to governance mechanisms meaningfully and transparently tracking and reporting how AI systems are impacting key stakeholders (consumers, employees, suppliers, contracting parties, etc).
-
-**CROSS-FUNCTIONAL**
-
-AI governance cannot be achieved through the establishment of separate, disconnected roles or policies and procedures. AI governance needs to span various departments and roles, including those responsible for privacy, IT, legal, product design and development, procurement, HR, risk and strategy. It must also be led at a senior level within the organisation.
-
-**INTEGRATED**
-
-Effective frameworks will integrate all eight elements set out in Section 2, rather than cherry-pick one or two.
-
-**ITERATIVE AND ADAPTIVE**
-
-Given the speed of technological transformation, organisations should not rely on a ‘set and forget’ approach to AI governance. Governance systems and processes should be subject to regular review to monitor whether targets and outcomes are being achieved.
+---
 
 ### 1.5 Aligning AI use to organisational strategy
-[GO TO CONTENTS](#table-of-contents)
 
-The use of AI by organisations should be aligned to the broader organisational strategy. How AI is being used to achieve strategic objectives is core to the work of the board.
+The use of AI should be aligned to the broader organisational strategy. ‘AI for AI’s sake’ should be avoided.
 
-The organisational strategy should be regularly reviewed to clarify and adjust the role of AI and emerging technologies.
-
-**KEY QUESTIONS FOR DIRECTORS TO ASK**
-
-- How is AI currently being used to deliver business goals?
-- What investments are we making in relation to the development and use of AI systems?
-- How can we leverage AI in a responsible way to achieve our organisational strategy?
-- What sorts of problems and challenges can or should AI systems be used to solve?
-- Under what circumstances would we conclude that AI is not the right tool for the job?
-- What is our overall assessment of the evolving balance between the risks and benefits of AI systems to drive business value?
+---
 
 ### 1.6 AI-specific risk management
-[GO TO CONTENTS](#table-of-contents)
 
-As detailed in Chapter 3 of *A Director’s Introduction to AI*, directors have legal duties to effectively oversee the management and mitigation of organisational risks.
+Directors have legal duties to oversee risk. This includes defining the organisation’s risk appetite and ensuring the risk framework covers AI-specific threats.
 
-AI system use – or failure to make use of AI systems when appropriate – by organisations can pose a range of risks (see Chapter 2 of *A Director’s Introduction to AI*) that need to be carefully managed.
-
-**SUGGESTED DIRECTOR STEPS**
-
-- Understand current AI use, which can include the issue of an AI inventory (see Box 4).
-- Review the organisational risk framework to test its application to AI use, noting increased scrutiny by stakeholders over how AI risks are being managed (see Chapter 3 of *A Director’s Introduction to AI*).
-- Define and review the organisation’s risk appetite and risk statement to cover AI use.
-- Align risk management approaches with existing sectoral risk management obligations (such as that required for financial services organisations under section 912A Corporations Act 2001 (Cth)).
+---
 
 ## Section 2: Practical steps for directors
-[GO TO CONTENTS](#table-of-contents)
 
 ### 2.1 Roles & responsibilities
-[GO TO CONTENTS](#table-of-contents)
+Identify the management and board individual/body accountable for AI decision-making. Use an **AI inventory** (a structured database of all AI systems in use) to gain visibility.
 
-This chapter focuses on the practical steps that directors can take in the boardroom and in conversations with management. It is structured around eight key elements of effective AI governance frameworks.
+### 2.2 Governance structures
+Determine which board or management committee supports AI oversight. 
 
-**ELEMENT 1: Roles & responsibilities**
-**ELEMENT 2: Governance structures**
-**ELEMENT 3: People, skills & culture**
-**ELEMENT 4: Principles, policies & strategy**
-**ELEMENT 5: Practices, processes & controls**
-**ELEMENT 6: Supporting infrastructure**
-**ELEMENT 7: Stakeholder engagement & impact assessment**
-**ELEMENT 8: Monitoring, reporting & evaluation**
+**CASE STUDY 1: Governance structures, Telstra**
+Telstra established a *Risk Council for AI & Data (RCAID)* and an *Executive Data & AI Council* to provide advice, approvals, and clear lines of oversight.
 
-[^2]: See HTI’s AI Governance Snapshot #1 Essential Components of AI Governance (HTI, 2024) for further information.
+### 2.3 People, skills & culture
+Assess AI skills and training needs. Directors should seek a "minimum viable understanding" of AI.
 
-FOR PRACTICAL ASSISTANCE FOR DIRECTORS, THIS CHAPTER CONTAINS:
+### 2.4 Principles, policies & strategy
+Embed AI in organisational strategy and ensure high-level principles (like Australia’s AI Ethics Principles) are actionable via specific policies.
 
-1. Key questions for directors to ask themselves and/or management; and
-2. A traffic light system which assists directors process management’s response to key questions:
+### 2.5 Practices, processes & controls
+Implement **AI Impact Assessments** to identify and respond to risks.
 
-**AMBER** suggests there may be some risk, and advises that directors should probe further and assess management’s position and response. An uplift in governance practice may be necessary.
+### 2.6 Supporting infrastructure
+Ensure robust data governance. 
 
-**RED** suggests there is potential high risk, and that directors should work with management to address this risk through implementing safe and responsible AI governance practices (as suggested in this guide).
+**CASE STUDY 2: Data governance and Generative AI, KPMG Australia**
+KPMG launched *KymChat*, an internal Generative AI system, using strict data governance processes including anonymisation and legal review to ensure client data remains secure.
 
-The elements and questions featured in this section may also apply to the governance of some non-AI systems, or technology more broadly. This is deliberate – in ensuring that their organisations are adequately prepared to grasp the benefits and manage the risks of AI systems, directors can and should leverage existing governance knowledge and systems.
+### 2.7 Stakeholder engagement & impact assessment
+Engage with stakeholders to explain and manage the impact of AI systems, particularly regarding model drift and transparency.
 
-However, it is crucial that this knowledge and existing approaches are appropriately applied to the peculiar risks and concerns that the specific characteristics of AI systems create (see section 1.4 and Chapter 2 of *A Director’s Introduction to AI*).
+### 2.8 Monitoring, reporting & evaluation
+Develop a risk-based monitoring framework with metrics to track progress and consider internal/external assurance.
 
-Wherever possible, in each subsection we have highlighted where directors should look to the governance issues specific to AI.
+---
 
-This chapter is not intended to be a comprehensive guide. Regulatory requirements, guidance, and best practices in this area are rapidly evolving. Rather, directors should view these components as an ongoing conversation with management as AI governance continues to evolve.
+## Appendix – Additional resources
+*(Refer to the original document for specific links and further reading.)*
 
-### 2.1 Roles & responsibilities
-[GO TO CONTENTS](#table-of-contents)
+## Acknowledgements
+*(Refer to the original document for specific acknowledgements.)*
 
-HTI’s research suggests that there is little awareness amongst corporate leaders of where, how and why AI systems are being used across their businesses.[^3] This lack of internal knowledge is a major barrier to AI governance efforts and amplifies AI risks.
-
-Directors should be clear on which individual or body, at both the board and management level, has decision-making power and accountability for AI use.
-
-While management will be responsible for AI implementation, the board has overall oversight over the organisation’s AI governance.
-
-In the absence of a structured approach to AI system accountability, most organisations adopt a form of ‘guru-based governance’, where responsibility sits with a single individual viewed as technically competent in AI. Such over-reliance on a single leader or a small set of technical personnel within the organisation is problematic, not least because it creates significant key person risk.
-
-**SUGGESTED DIRECTOR STEPS**
-
-1. Determine and document which individual/body at the board and management level has responsibility, and is ultimately accountable to the board, for decisions regarding AI use. This includes a consideration of how to leverage existing governance structures (such as board and management committees) – see section 2.2.
-2. Identify who is currently involved in, and accountable to the board for, decisions relating to the procurement, development and use of AI systems.
-3. Determine and record where in the organisation AI is already being used. This could be in existing technology products. An AI inventory (Box 4) can provide a useful record of where AI is used within the organisation.
-4. Consider whether decision-making processes applied by key accountable persons incorporate consideration of AI risk and opportunity.
-
-**BOX 4: What is an AI inventory?**
-
-An AI inventory or register is a structured, centralised, and up-to-date database of all AI systems that an organisation relies on, including those offered by third-party providers. The inventory should include details on the technical aspects of each system including:
-
-- type of model and technology infrastructure being leveraged;
-- the data used in both training and operation;
-- the purpose and context of use;
-- ongoing cost to the business; and
-- the result of all recent risk and impact assessments.
-
-An AI inventory is an essential asset for AI governance as it provides greater visibility into the mix of AI system types – their benefits, costs, and criticality, and the distribution of risk across systems and to stakeholders arising from AI use.
-
-An AI inventory may also mitigate the risk of making incorrect or exaggerated claims about a product, service or company’s AI use (known as ‘AI-washing’).
-
+[^1]: ISO, 2022. ISO-IEC-22989 Artificial intelligence concepts and terminology.
+[^2]: HTI’s AI Governance Snapshot #1 Essential Components of AI Governance (HTI, 2024).
 [^3]: Lauren Solomon and Nicholas Davis, The State of AI Governance in Australia (HTI Report, 2023), 13.
+[^4]: See HTI’s AI Governance Lighthouse Case Study: Telstra (HTI, 2024).
+[^5]: See HTI’s AI Governance Snapshot #2 Putting people at the centre of AI – impacted communities and missing voices (HTI, 2024).
+[^6]: See HTI’s AI Governance Lighthouse Case Study: KPMG Australia (HTI, 2024).
 
-**KEY QUESTIONS FOR DIRECTORS TO ASK**
+---
 
-- How are we tracking AI use within the organisation?
-- Which individual or body at the board or management level is responsible for data governance?
-- Which individual or body at the board or management level is responsible for decisions regarding the development and use of AI within the organisation?
-- Which individual or body is responsible for making procurement decisions and identifying, assessing and reporting the risks associated with procurement? Are they tracking which procured products and services use AI?
-- Is there an escalation protocol in place for proposed higher-risk AI uses?
+mpact of AI
+bias on vulnerable and marginalised populations (see Chapter 2 of A Director’s
+Introduction to AI). Engagement with these groups should be prioritised.
 
-**AMBER**
+SUGGESTED DIRECTOR STEPS
 
-- Accountability for AI systems rests entirely with technical teams and/or relatively junior levels of management.
-- Management is aware of internal AI system use, but has not assessed or documented employee or contractor use of third-party systems.
-- Limited guidance/policy on use of AI and appropriate guardrails.
-- Risk management frameworks are applied, but are not tailored to the amplified and new risks associated with AI.
+1
 
-**RED**
+2
 
-- AI understanding is highly concentrated in a few personnel.
-- Management cannot confirm where and why AI systems are being used across the organisation.
-- It is unclear who is responsible for the procurement, management, and outcomes of
+3
+
+Identify and engage with stakeholders to understand AI’s impact and
+stakeholder expectations of AI use and governance.
+
+Request that management review AI system design and assessment
+processes and policies to confirm they incorporate accessibility and
+inclusion practices (so as to reduce the risk of bias).
+
+Consider whether AI-generated results / outcomes are explained to
+stakeholders and whether an appeal process is available.
+
+STEP 5: EVALUATION
+
+Evaluate and monitor the
+ongoing effectiveness of the
+organisation’s stakeholder
+governance vision and the
+board’s role in stakeholder
+engagement.
+
+STEP 1: STAKEHOLDERS AND ORGANISATIO
+
+Identify, prioritise and
+regularly review the
+organisation’s stakeholders
+having regard to the purpose
+and strategic objectives of
+the organisation.
+
+N
+AL P
+
+U
+R
+P
+O
+S
+E
+
+Effective
+Stakeholder
+Governance
+
+Consider stakeholder
+voices as part of the
+board’s decision-making
+processes. Consider
+disclosing/reporting on
+decision making and
+stakeholder impact.
+
+S
+T
+E
+P
+4
+:
+D
+E
+C
+
+ISIO
+N M
+
+A
+KIN
+G
+
+Develop a vision for
+the board’s role in the
+organisation’s stakeholder
+governance and agree this
+with management.
+This may be documented
+in a formal framework.
+
+N
+O
+I
+S
+: VI
+P 2
+E
+T
+S
+
+Engage with key stakeholders
+(either directly or indirectly)
+to understand, consider and
+respond to issues and ensure a
+genuine voice is elevated to
+the boardroom.
+
+STEP 3: ENGAGEMENT
+
+TITLE BASELINEBODY COPYFOOTERHumanTechnologyInstitute
+
+SECTION 1:
+AI AND THE GOVERNANCE
+IMPERATIVE
+
+SECTION 2:
+PRACTICAL STEPS
+FOR DIRECTORS
+
+GO TO CONTENTS
+
+PAGE  32
+
+KEY QUESTIONS FOR DIRECTORS
+TO ASK
+
+AMBER
+
+ • How does our AI Impact Assessment incorporate
+
+ • Stakeholder consultation tends to involve
+
+stakeholder views? (See Box 9)
+
+ • What processes do we have in place to
+
+understand the potential AI harms arising to
+impacted stakeholders?
+
+ • How are we ensuring the voices of potentially
+vulnerable stakeholders are represented in
+engagement mechanisms?
+
+ • How do we include the participation of
+
+stakeholders in the development of safe and
+responsible AI principles and policies and
+governance frameworks?
+
+repeated engagement with a narrow set of
+stakeholders, which are not representative of
+potentially impacted groups.
+
+ • Lack of compensation for the participation of
+
+civil society stakeholders.
+
+ • Stakeholder engagement is rushed or sought late
+
+in the process.
+
+ • What processes are in place for impacted
+
+RED
+
+stakeholders to request reasons, contest, or
+provide redress for decisions made by AI systems?
+
+ • Management suggests that stakeholders do not
+
+understand or have ill-informed views.
+
+ • The organisation has no stakeholder engagement
+
+process.
+
+ • Management assesses AI system impact and risks
+internally without engaging potentially impacted
+parties, even for high-risk applications.
+
+TITLE BASELINEBODY COPYFOOTERHumanTechnologyInstituteSECTION 1:
+AI AND THE GOVERNANCE
+IMPERATIVE
+
+SECTION 2:
+PRACTICAL STEPS
+FOR DIRECTORS
+
+GO TO CONTENTS
+
+PAGE  33
+
+CASE STUDY 3: Stakeholder engagement,
+University of Technology Sydney7
+
+UTS undertook a novel consultation process with UTS
+students, tutors and academics, using the principles of
+Deliberative Democracy (DD) to collectively determine
+the principles that should govern the use of analytics
+and AI at UTS. This structured process involves the
+creation of Deliberative Mini-Public (DMP), which has the
+ability to influence policy and decision-making, includes
+representative and diverse viewpoints, and provides
+for open dialogue and deliberation. Importantly, the
+DMP must be sanctioned by senior leadership with a
+commitment that its recommendations matter.
+
+The 20 members of the DMP were selected from
+131 applicants using stratified sampling to ensure a
+representative and balanced mixture of gender, faculty,
+and students. Across five workshops run over seven
+weeks, the DMP identified the principles that should
+govern UTS’ AI use: accountability/ transparency, bias /
+fairness, equality and access, safety and security, human
+authority, justifications / evidence, and consent. This in-
+depth process provided non-tokenistic engagement that
+gave participants responsibility for the outcomes.
+
+Students and staff felt empowered by this process, building
+engagement and trust. Staff commented that they had
+never been involved in such a meaningful consultation at
+the university before. Meanwhile, students reported that
+they felt privileged to be part of it and developed a sense
+of ownership of the process and outcome.
+
+To build on its partnership with students, UTS initiated
+a series of ‘Student Partnership in AI’ workshops, using
+deliberative democracy principles and processes:
+
+ • Generative AI: This workshop explored how such
+
+technology could be used responsibly to assist learning
+outcomes for students, and issues surrounding the
+use of automated software to detect AI writing in
+assessments.
+
+ • Predictive AI: This workshop discussed a pilot machine
+learning model to identify and support students who
+may withdraw from UTS before census date.
+
+Each workshop had 20 participants recruited to maximise
+the diversity of voices, such that all faculties were
+represented at both undergraduate and postgraduate
+level, providing UTS with the opportunity to hear a wide
+range of student voices and consider their feedback and
+concerns about these technologies.
+
+Having built both trust and credibility with staff and
+students, UTS leadership proceeded to develop its AI
+policies and a dedicated governance committee in the
+forum of the Artificial Intelligence Operations Board. This
+body is tasked with developing institutional knowledge
+and insights about the use, management, and control of
+AI for the purposes of teaching, learning and operations
+at UTS, and responsible for endorsing the use of AI
+systems across the university.
+
+7   See HTI’s AI Governance Lighthouse Case Study: University of Technology Sydney (HTI, 2024) for further information.
+
+TITLE BASELINEBODY COPYFOOTERHumanTechnologyInstituteSECTION 1:
+AI AND THE GOVERNANCE
+IMPERATIVE
+
+SECTION 2:
+PRACTICAL STEPS
+FOR DIRECTORS
+
+GO TO CONTENTS
+
+PAGE  34
+
+2.8  MONITORING, REPORTING &
+EVALUATION
+
+Both the value and risk of AI systems arise from their
+ability to learn and adapt. After deployment, AI
+models can experience ‘model drift’ or degradation
+in performance. Both AI systems themselves and
+overarching AI governance frameworks are, therefore,
+not ‘set and forget’ – they require regular re-assessment
+against key performance indicators (KPIs) and metrics,
+new or potential regulation, and broader market and
+technological developments.
+
+SUGGESTED DIRECTOR STEPS
+
+1
+
+Verify that management has implemented a
+risk-based monitoring and reporting system
+for AI systems that are mission-critical and/or
+could cause significant harm, including AI
+systems and vendor systems.
+
+2 Establish clear metrics and outcomes to track
+and measure the performance of the AI
+governance framework.
+
+3
+
+Develop and implement a monitoring and
+reporting framework and frequency.
+
+4 Consider seeking internal and
+
+external assurance.
+
+KEY QUESTIONS FOR DIRECTORS
+TO ASK
+
+AMBER
+
+ • What KPIs are we using to assess whether
+
+the AI governance framework is performing
+as intended?
+
+ • Absence of key indicators of responsible AI use
+and performance at an organisational and
+system level.
+
+ • What is the appropriate performance framework
+
+ • No clear process for consideration of internal or
+
+and reporting frequency to enable the
+organisation to capitalise on opportunities and
+address risks?
+
+external audit recommendations.
+
+ • Monitoring system implemented without
+
+clear KPIs.
+
+ • How are we identifying and responding to errors
+
+in our AI systems?
+
+ • How are we using internal and external audit as a
+
+check and balance?
+
+ • What are the limitations of our internal and
+external audit processes? Are these clearly
+disclosed in our reporting?
+
+RED
+
+ • No consideration or investment in ongoing
+monitoring, reporting and evaluation of
+AI systems.
+
+ • Management are unaware of where AI is present
+
+in mission-critical systems.
+
+ • No clear line of reporting of risks to the board.
+
+TITLE BASELINEBODY COPYFOOTERHumanTechnologyInstituteSECTION 1:
+AI AND THE GOVERNANCE
+IMPERATIVE
+
+SECTION 2:
+PRACTICAL STEPS
+FOR DIRECTORS
+
+GO TO CONTENTS
+
+PAGE  35
+
+However, principles and policies are not enough. Effective
+governance structures are critical to effective oversight
+of the implementation of responsible AI. Microsoft uses a
+three-tiered system which comprises:
+
+Through adopting a multi-disciplinary holistic governance
+approach, Microsoft seeks to embody responsible AI
+principles and practices within its company and across
+their value chain.
+
+ • Aether, whose research-led working groups provide
+subject-matter expertise on emerging trends with
+respect to Microsoft's AI principles.
+
+ • The Office of Responsible AI (ORA), which sets
+
+company-wide policies and practices for responsible
+AI and ensures internal roles and responsibilities are
+clearly defined. ORA also ensures readiness to adopt
+responsible AI practices within Microsoft and supports
+customers and partners to do the same. It operates
+the intake and triage function for sensitive use cases
+and also formulates and advocates for responsible AI
+public policy externally.
+
+ • The Responsible AI Strategy in Engineering (RAISE)
+
+group, which enables Microsoft’s engineering teams to
+implement responsible AI processes through systems
+and tools.
+
+ • The Environmental, Social and Public Policy Board
+Committee provides oversight of its responsible AI
+program at the board level.
+
+Research
+
+Policy
+
+Engineering
+
+CASE STUDY 4: A vendor’s view: Microsoft’s holistic
+approach to AI governance8
+
+Microsoft’s Responsible AI Governance Framework
+has six responsible AI principles at its core, being: (1)
+accountability; (2) inclusiveness; (3) reliability and
+safety; (4) fairness, (5) transparency; and (6) privacy
+and security.
+
+These principles are supported by policies and standards,
+and practical implementation practices in the form of
+training, tools and testing. Microsoft then institutes
+checks and balances in the form of monitoring and
+auditing to ensure compliance. Finally, practices are
+reported for transparency and tracking.
+
+8   See Microsoft’s Responsible AI website for more information and resources.
+
+TITLE BASELINEBODY COPYFOOTERComplianceMonitoringAuditingReportingRAI Policies and StandardsRAI PrinciplesMicrosoft BoardExecutive LeadershipResponsible AI CouncilOffice of Responsible AIOur ecosystemHumanTechnologyInstituteSECTION 1:
+AI AND THE GOVERNANCE
+IMPERATIVE
+
+SECTION 2:
+PRACTICAL STEPS
+FOR DIRECTORS
+
+GO TO CONTENTS
+
+PAGE  36
+
+Conclusion
+
+AI systems offer a wide range of potential benefits,
+but directors need to take care when overseeing its
+deployment by confirming that the organisation
+has implemented effective, safe and responsible AI
+governance practices.
+
+Applying the lessons from this resource is an
+important starting point, but it is not intended to be a
+comprehensive guide.
+
+Directors need to work with management to carefully
+consider the regulatory and governance implications of AI
+systems specific to their organisations and their industry.
+They must also stay up-to-date on key regulatory and
+policy developments to maintain a ‘minimum viable
+understanding’ of AI governance.
+
+Whatever the future of AI regulation brings, there is
+already a broad range of existing legal obligations that
+apply to an organisation’s use of AI systems which must
+be complied with.
+
+By understanding the specific challenges and
+characteristics of AI and its impact on governance,
+directors will guide their organisations to deploy AI
+systems safely and responsibly for maximum strategic
+and competitive advantage.
+
+TITLE BASELINEBODY COPYHumanTechnologyInstituteSECTION 1:
+AI AND THE GOVERNANCE
+IMPERATIVE
+
+SECTION 2:
+PRACTICAL STEPS
+FOR DIRECTORS
+
+GO TO CONTENTS
+
+PAGE  37
+
+Appendix – Additional resources
+
+ • AICD (2019), Ethics in the Boardroom - a guide to
+
+ • Human Technology Institute (HTI) - Lauren
+
+ • Microsoft (2022), Responsible AI Impact
+
+decision making
+
+ • Australian Human Rights Commission, Technical
+Paper: Addressing Algorithmic Bias (2020);
+Guidance Resource: Artificial intelligence
+and discrimination in insurance pricing and
+underwriting (2022); and HRIA Tool: AI in
+Banking (2024).
+
+ • Atlassian (2023), Responsible Technology Review
+
+Template and No BS Guide to Responsible
+Tech Review.
+
+ • Gradient Institute and CSIRO (2023), Implementing
+
+Australia’s AI Ethics Principles: A selection of
+Responsible AI practices and resources.
+
+Solomon and Nicholas Davis (2023), The State of AI
+Governance in Australia and Insight Summary.
+
+Assessment Template and Responsible AI Impact
+Assessment Guide.
+
+ • NIST (2023), Artificial Intelligence Risk Management
+
+Framework (AI RMF 1.0).
+
+ • HTI (2024) AI Governance Snapshot Series: Essential
+Components of AI Governance; Putting people
+at the centre of AI – impacted communities and
+missing voices.
+
+ • HTI (2024) AI Governance Lighthouse Case Study
+Series: Telstra; KPMG Australia; University of
+Technology Sydney.
+
+ •
+
+ISO/IEC 42001 (2023): Artificial Intelligence
+Management System.
+
+ • KPMG & The University of Queensland (2023), Trust in
+
+Artificial Intelligence A global study.
+
+TITLE BASELINEBODY COPYHumanTechnologyInstituteSECTION 1:
+AI AND THE GOVERNANCE
+IMPERATIVE
+
+SECTION 2:
+PRACTICAL STEPS
+FOR DIRECTORS
+
+GO TO CONTENTS
+
+PAGE  38
+
+Acknowledgements
+
+The AICD would like to acknowledge our Guide co-authors:
+
+Professor Nicholas Davis MAICD
+Co-Director, Human Technology Institute
+University of Technology Sydney
+
+Lauren Solomon
+Lead, AI Governance (until April 2024)
+Human Technology Institute,
+University of Technology Sydney
+
+Llewellyn Spink
+AI Corporate Governance Specialist
+Human Technology Institute,
+University of Technology Sydney
+
+The AICD would also like to acknowledge and
+thank the following people who were involved
+in the review of the Resource:
+
+ • Alison Kitchen MAICD
+
+ • Kee Wong FAICD
+
+ • Phil Coffey GAICD
+
+ • Wendy Stops GAICD
+
+TITLE BASELINEBODY COPYHumanTechnologyInstitute
+A DIRECTOR’S GUIDE TO AI GOVERNANCE
+
+GO TO CONTENTS
+
+PAGE  39
+
+ABOUT AICD
+The Australian Institute of Company Directors is committed to strengthening society through world-class
+governance. We aim to be the independent and trusted voice of governance, building the capability of
+a community of leaders for the benefit of society. Our membership includes directors and senior leaders
+from business, government and the not-for-profit sectors.
+
+ABOUT HTI
+The UTS Human Technology Institute (HTI) is an impact-oriented institute building human values into
+new technologies. Bringing together policy, legal and technical experts, HTI provides independent expert
+advice, policy development, capability building, and data science solutions to support government,
+industry and civil society.
+
+DISCLAIMER
+The utmost care has been taken to ensure this document accurately reflects the legislative and
+regulatory landscape as at the date of publication. However, this is an area subject to constant
+regulatory and legal change. The material in this publication does not constitute legal, accounting or
+other professional advice. While reasonable care has been taken in its preparation,the AICD and HTI
+do not make any express or implied representations or warranties as to the completeness, reliability
+or accuracy of the material in this publication. This publication should not be used or relied upon as a
+substitute for professional advice or as a basis for formulating business decisions. To the extent permitted
+by law, the AICD and HTI exclude all liability for any loss or damage arising out of the use of the material
+in the publication. Any links to third party websites are provided for convenience only and do not
+represent endorsement, sponsorship or approval of those third parties, any products and services offered
+by third parties, or as to the accuracy or currency of the information included in third party websites.
+The opinions of those quoted do not necessarily represent the view of the AICD or HTI. The AICD and HTI
+reserve the right to make changes without notice where necessary.
+
+Copyright
+Copyright strictly reserved. The text, graphics and layout of this document are protected by Australian
+copyright law and the comparable law of other countries. The copyright of this material is vested in the
+AICD and HTI. No part of this material may be reproduced or transmitted in any form, or by any means
+electronic or mechanical, including photocopying, recording or by any information storage and retrieval
+systems without the written permission of the AICD and HTI.
+
+© Australian Institute of Company Directors and Human Technology Institute, 2024.
+
+For more information on A Director’s Guide to AI Governance:
+
+T: 1300 739 119
+E: policy@aicd.com.au
+
+JOIN OUR SOCIAL COMMUNITY
+
+aicd.com.au
+
+4
+2
+_
+3
+0
+4
+1
+T
+C
+C
+
+TITLE BASELINEBODY COPYHumanTechnologyInstitute
