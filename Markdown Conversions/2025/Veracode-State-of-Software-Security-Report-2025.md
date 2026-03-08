@@ -1,26 +1,26 @@
-# 2025 STATE OF A NEW VIEW OF MATURITY
+# 2025 State of Software Security Report
 
 ## Table of Contents
-- [Opening letter](#opening-letter)
+- [Opening Letter](#opening-letter)
 - [Executive Summary](#executive-summary)
-  - [Key findings](#key-findings)
+- [Key Findings](#key-findings)
 - [15 Years of Special SoSS](#15-years-of-special-soss)
 - [State of Software Security in 2025](#state-of-software-security-in-2025)
-  - [Finding flaws](#finding-flaws)
-  - [Fixing flaws](#fixing-flaws)
-  - [Fighting debt](#fighting-debt)
+- [Finding Flaws](#finding-flaws)
+- [Fixing Flaws](#fixing-flaws)
+- [Fighting Debt](#fighting-debt)
 - [Comparing Software Security Program Performance](#comparing-software-security-program-performance)
-  - [Flaw prevalance](#flaw-prevalance)
-  - [Fix capacity](#fix-capacity)
-  - [Fix speed](#fix-speed)
-  - [Debt prevalence](#debt-prevalence)
-  - [Open-source debt](#open-source-debt)
-- [Conclusions & Recommendations](#conclusions-recommendations)
+- [Flaw Prevalence](#flaw-prevalence)
+- [Fix Capacity](#fix-capacity)
+- [Fix Speed](#fix-speed)
+- [Debt Prevalence](#debt-prevalence)
+- [Open-Source Debt](#open-source-debt)
+- [Conclusions & Recommendations](#conclusions--recommendations)
 - [Methodology](#methodology)
 
 ---
 
-## Opening letter
+## Opening Letter
 
 Our research drives our own software security measures, and this year, in our 15th volume of this report, we seek to discover trends about where the most risk resides and what metrics can be used to gauge progress against it. Plus, we want to compare program performance of leading and lagging organizations using these metrics. The gaps between the top 25% and bottom 25% are fascinating.
 
@@ -30,17 +30,11 @@ This is easier said than done, so we hope you find the insights and guidance in 
 
 Sincerely,
 
-Niels Tanis
-Senior Principal
-Security Researcher
+Niels Tanis, Senior Principal Security Researcher  
+Sohail Iqbal, Chief Information Security Officer  
+Chris Wysopal, Chief Security Evangelist
 
-Sohail Iqbal
-Chief Information
-Security Officer
-
-Chris Wysopal
-Chief Security
-Evangelist
+---
 
 ## Executive Summary
 
@@ -48,78 +42,105 @@ In 2025, organizations face increasing threats to their software. The exploitati
 
 Meanwhile, security debt is rising, and the attack surface is getting increasingly complex. Plus, the rise of AI in software engineering, especially with code generators, is transforming the risk landscape. While many teams may not openly admit to using AI, other indicators of its presence and impact can be found.
 
-![Cartoon depicting a person saying "I won't say I'm using AI to generate code…" and another person saying "…but there will be signs."](Image description of cartoon)
+> "I won't say I'm using AI to generate code… but there will be signs."
+
+We also can’t ignore the trends in the regulatory space that are happening in the U.S. and the E.U. In the EU, the Cyber Resilience Act went into effect December 2024 and focuses especially on enhancing the security of software. In the U.S. 2020 Biden Cybersecurity Executive Order emphasized cybersecurity prevention with Zero Trust network architectures and Secure by Design software. Secure by Design included static code analysis, dynamic code analysis, and supply chain security with SBOMs.
 
 The U.S. Federal Government even required vendors to attest to the way they developed software as part of the acquisition process. Understanding your software risk posture is now a requirement. 2024 also gave us a new U.S. Securities and Exchange Commission (SEC) ruling which forces a more disciplined approach to cybersecurity risk management.
 
-We believe these regulatory factors have contributed to some of the positive trends we see in the data, such as the OWASP Top 10 pass rate improving from 32% to 52% in the last five years.
+We believe these regulatory factors have contributed to some of the positive trends we see in the data, such as the OWASP Top 10 pass rate improving from 32% to 52% in the last five years. However, our findings reveal that relying on traditional patching alone isn’t enough. Security teams must take a more strategic, context-driven approach to managing the most urgent and exploitable risks.
 
-However, our findings reveal that relying on traditional patching alone isn’t enough. Security teams must take a more strategic, context-driven approach to managing the most urgent and exploitable risks. This requires seeing all risks in one place and focusing on what matters most to an organization. By prioritizing the most impactful risk remediation actions and creating continuous feedback loops for ongoing improvement, organizations can more effectively manage security risks over time.
+---
 
-### Key findings
+## Key Findings
 
-Good news first, the percentage of apps passing the OWASP Top 10 has increased 63% in 5 years (from **32%** in **2020** to **52%** in **2025**).
+- **OWASP Improvement**: The percentage of apps passing the OWASP Top 10 has increased 63% in 5 years (from 32% in 2020 to 52% in 2025).
+- **High Severity Flaws**: The percentage of apps with high severity flaws has increased by 181%.
+- **Fix Speed**: The average number of days to fix flaws has increased 47% (from 171 days in 2020 to 252 days in 2025).
+- **Security Debt**: Half of organizations have critical security debt (high severity, high exploitability).
+- **Supply Chain**: 70% of critical security debt comes from third-party code and the software supply chain.
 
-Now the bad news... the percentage of apps with high severity flaws has increased by 181%... (**2020** to **2025**)
+### Comparison of Leading vs. Lagging Organizations
 
-...and the average number of days to fix flaws has increased 47%. (**171 days** in **2020** to **252 days** in **2025**)
+| Metric | Leading Organizations | Lagging Organizations |
+| :--- | :--- | :--- |
+| **Flaw Prevalence** | Below 43% | 86% or more |
+| **Fix Capacity** | Above 10% of flaws monthly | <1% of flaws monthly |
+| **Fix Speed** | Half of flaws in 5 weeks | Half of flaws in over a year |
+| **Security Debt** | <17% of apps | <15% |
+| **Open-Source Critical Debt** | >67% of apps | 100% |
 
-Half of organizations have critical security debt (high severity, high exploitability)... (**50%**)
-
-...and 70% of it comes from third party code and the software supply chain.
-
-**ALL SECURITY DEBT**
-- Third party code: **11%**
-- First party code: **89%**
-
-**CRITICAL SECURITY DEBT**
-- Third party code: **70%**
-- First party code: **30%**
-
-The following table is a comparison of the top 25% and bottom 25% of organizations against 5 key metrics we’ve observed indicate the maturity of an organization at finding and fixing flaws in a way that systematically drives down risk.
-
-| LEADING ORGANIZATIONS | LAGGING ORGANIZATIONS |
-| :-------------------- | :-------------------- |
-| Below 43%             | 86% or more           |
-| Above 10% of flaws monthly | <1% of flaws monthly |
-| Half of flaws in 5 weeks | Half of flaws in over a year |
-| <17% of apps          | >67% of apps          |
-| <15%                  | 100%                  |
-
-| METRIC                  |
-| :---------------------- |
-| FLAW PREVALENCE         |
-| FIX CAPACITY            |
-| FIX SPEED               |
-| SECURITY DEBT           |
-| OPEN-SOURCE CRITICAL DEBT |
+---
 
 ## 15 Years of Special SoSS
 
-As a pioneer of the AppSec space, we have years of data to our advantage. This 2025 edition of the State of Software Security (SoSS) report is our 15th volume. That makes it a bit more special than the norm and creates an opportunity to highlight a few long-term trends before we dive into the latest facts and figures.
-
-**15 Years of Special SoSS**
-
-| Metric                       | Volume 1 (2009) | Volume 10 (2018) | Volume 15 (2024) | Change since Vol 1 |
-| :--------------------------- | :-------------- | :--------------- | :--------------- | :----------------- |
-| **NUMBER OF APPLICATIONS TESTED** | 1,591           | 85,000           | 457,000          | +455,409           |
-| **APPS WITH AT LEAST ONE FLAW** | 72%             | 80.3%            | 83%              | +11.5%             |
-| **OWASP TOP 10 PASS RATE**   | 23%             | 34%              | 52.3%            | +127.4%            |
-| **APPS WITH HIGH-SEVERITY FLAWS** | 16%             | 20%              | 56.2% (Note 1)   | -52.9% (SAST only) |
-| **AVERAGE NUMBER OF DAYS TO FIX FLAWS** | 59              | 171              | 252              | +193 DAYS          |
-
-Note:
-- Positive change since Vol 1
-- Negative change since Vol 1
+![Infographic showing 15-year trends in application testing, flaw prevalence, and remediation times]
 
 The fundamental challenge hasn’t changed over the years: security flaws are very common across applications. Even so, there are signs of progress in software security.
 
-The pass rate for scans of OWASP’s most critical risks has more than doubled since Vol. 1. That means less risk for us all!
+- **Sample Size**: The sample size for this study has grown from ~1,600 applications tested in 2009 to nearly half a million in 2024.
+- **OWASP Pass Rate**: The pass rate for scans of OWASP’s most critical risks has more than doubled since Vol. 1.
+- **High-Severity Flaws**: The prevalence of severe flaws in SAST scans was cut in half since Vol. 1. However, when including SCA and DAST, the increase in high-severity flaws is 181% since 2020.
+- **Fix Times**: The time it takes to fix flaws has worsened, largely due to the growing scope and complexity of the software ecosystem.
 
-The sample size for this study has grown from ~1,600 applications tested in 2009 to nearly half a million in 2024! That strengthens the relevance of the findings in this report.
+---
 
-The prevalence of severe flaws in SAST scans was cut in half since Vol. 1. However, when you add in SCA (which only started in the last 5 years) and DAST, the increase in high-severity flaws is 181% since 2020 (from 20% with SAST only in 2020 to 56.2% in 2025 including all scan types).
+## State of Software Security in 2025
 
-One aspect of AppSec that’s gotten worse over iterations of the SoSS is the time it takes to fix flaws. There are many reasons for this, but the ever-growing scope and complexity of the software ecosystem is a core issue. On the bright side, we do see organizations reversing this trend. We’ll share insights gleaned from them in this report.
+The findings analyzed in this report were discovered via 1.8 million SAST, DAST, and SCA scans of nearly half a million applications.
 
-1. All statistics in this 15-year retrospective are based on static analysis (SAST) scans only because that’s consistent with early versions of the SoSS. You’ll see that the “State of” section shows some very
+### Finding Flaws
+Figure 1 reveals that 80.3% of the applications tested over the last year have at least one security flaw. 47.7% have OWASP Top 10 flaws, and 56.2% exhibit high or critical severity flaws.
+
+### Fixing Flaws
+Survival analysis shows that 28% of flaws are still open two years after being discovered. After five years, 9% of flaws linger on. The half-life of flaws stands at just over eight months.
+
+### Fighting Debt
+Security debt refers to flaws that remain unfixed for over a year. 74.2% of organizations have accrued some level of debt, and 49.9% have critical security debt.
+
+---
+
+## Comparing Software Security Program Performance
+
+We analyzed 20 example organizations to see how they manage security debt. Some organizations have almost no security debt, while others are drowning in it.
+
+### Flaw Prevalence
+The typical organization has security flaws in about two-thirds of its applications (median of 66%). Leading organizations maintain a flaw prevalence below 43%.
+
+### Fix Capacity
+The average monthly fix capacity for most applications is less than 10% of all flaws. Leading teams have fix capacities above 10%, while the bottom tier fixes just 1% of its flaws each month.
+
+### Fix Speed
+The typical organization takes about five months to fix half of all detected security flaws. Leading teams cross the halfway point in roughly five weeks.
+
+### Debt Prevalence
+Just over 10% of organizations have no security debt. A quarter of organizations with security debt have it in less than 17% of their applications, while lagging organizations struggle with debt in two-thirds of their applications or more.
+
+### Open-Source Debt
+The majority of an organization’s critical security debt exists in third-party code. Teams on the low end keep that proportion under 15%, while over a quarter of organizations live in the reality where all of their critical debt is contained in open-source libraries.
+
+---
+
+## Conclusions & Recommendations
+
+To mature your software security program, you need:
+
+1. **Visibility and integration across your SDLC**: Prevent net new flaws through automation and feedback loops. Use AI to address simple flaws at scale and implement policy to guide remediation.
+2. **Correlate and contextualize findings**: Use an Application Security Posture Management solution to see what is exploitable, reachable, and urgent. Allocate a percentage of a security champion’s sprint capacity to prioritized security debt.
+
+---
+
+## Methodology
+
+The report contains findings from 1.3M unique applications with 126.4M raw findings, including:
+- 107.4M findings via SAST
+- 3.9M findings via DAST
+- 15M findings via Software Composition Analysis
+
+"Mass closure" events (where thousands of findings are closed in a single scan due to file system scanning errors) were excluded from the analysis to ensure data integrity.
+
+[^1]: All statistics in this 15-year retrospective are based on static analysis (SAST) scans only because that’s consistent with early versions of the SoSS. Combined stats from all scan types is the norm for this report unless otherwise noted.
+[^2]: Remember that findings in this report combine SAST, DAST, and SCA scans unless otherwise noted.
+[^3]: Another benefit of survival analysis is that it accounts for “censored data” that includes flaws still open when our measurement period ends.
+[^4]: We filtered this to applications that have been actively tested for at least one year to allow for the accrual of debt.
+[^5]: Here, we mean open-source developers who use Veracode tools on applications in the same way closed-source developers do. This is distinct from the software composition analysis presented in the report.
