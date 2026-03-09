@@ -7,27 +7,19 @@ on:
   workflow_dispatch:
     inputs:
       max_discoveries:
-        description: 'Maximum number of new issues to create'
+        description: 'Max issues to create (default: from workflow-config.json)'
         required: false
-        default: '10'
+        default: ''
         type: string
-      lookback_days:
-        description: 'Days back to scan for closed feedback issues (Phase 1)'
+      override_date:
+        description: 'Override today''s date for testing (YYYY-MM-DD, leave blank for real today)'
         required: false
-        default: '30'
+        default: ''
         type: string
-      skip_feedback:
-        description: 'Skip Phase 1 feedback loop (useful for testing Phase 2/3 in isolation)'
-        required: false
-        default: 'false'
-        type: choice
-        options:
-          - 'false'
-          - 'true'
 
 permissions:
-  contents: write   # needed to commit updated discovery_memory.json
-  issues: write     # needed to create and read discovery issues
+  contents: read
+  issues: write
 
 jobs:
   discover:
@@ -36,10 +28,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          # Fetch full history so the memory commit doesn't conflict with
-          # any concurrent runs that may have also updated the memory file.
-          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -47,90 +35,9 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: |
-          # google-api-python-client and beautifulsoup4 are no longer needed —
-          # the rewritten scripts use requests directly (same as google-search.py).
-          pip install --break-system-packages requests
+        run: pip install --break-system-packages requests
 
-      - name: Load workflow configuration
-        id: load_config
-        run: |
-          DEFAULT_LIMIT=$(jq -r '.workflow.discovery.default_limit' .github/artifacts/workflow-config.json)
-          echo "default_limit=$DEFAULT_LIMIT" >> $GITHUB_OUTPUT
-
-          MEMORY_FILE=".github/artifacts/discovery_memory.json"
-          echo "memory_file=$MEMORY_FILE" >> $GITHUB_OUTPUT
-
-          # Resolve inputs with fallback to config defaults
-          MAX="${{ github.event.inputs.max_discoveries }}"
-          LOOKBACK="${{ github.event.inputs.lookback_days }}"
-          echo "max_discoveries=${MAX:-$DEFAULT_LIMIT}" >> $GITHUB_OUTPUT
-          echo "lookback_days=${LOOKBACK:-30}" >> $GITHUB_OUTPUT
-
-          echo "✓ Config loaded — limit: ${MAX:-$DEFAULT_LIMIT}, lookback: ${LOOKBACK:-30} days"
-
-      # ── Phase 1: Feedback Loop ─────────────────────────────────────────
-      # Reads closed 'report-discovery' issues, extracts rejection tags from
-      # their closing comments, and updates .github/artifacts/discovery_memory.json.
-      # Changes are committed back to the repo immediately so the file is
-      # always current — even if Phase 2 crashes.
-
-      - name: Phase 1 — Run feedback loop
-        id: feedback
-        if: github.event.inputs.skip_feedback != 'true'
-        env:
-          GH_TOKEN:            ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY:   ${{ github.repository }}
-        run: |
-          mkdir -p .github/data
-
-          set +e
-          python .github/scripts/discovery-feedback.py \
-            --memory-file   "${{ steps.load_config.outputs.memory_file }}" \
-            --artifacts-dir .github/artifacts \
-            --lookback-days "${{ steps.load_config.outputs.lookback_days }}" \
-            > feedback_output.log 2>&1
-          FEEDBACK_EXIT=$?
-          set -e
-
-          cat feedback_output.log
-
-          # Parse structured key=value lines printed by the script
-          PROCESSED=$(grep  "^FEEDBACK_PROCESSED="   feedback_output.log | cut -d= -f2 || echo "0")
-          ACCEPTED=$(grep   "^FEEDBACK_ACCEPTED="    feedback_output.log | cut -d= -f2 || echo "0")
-          REJECTED=$(grep   "^FEEDBACK_REJECTED="    feedback_output.log | cut -d= -f2 || echo "0")
-          DOMAINS=$(grep    "^FEEDBACK_DOMAIN_BLOCKS=" feedback_output.log | cut -d= -f2 || echo "0")
-          KEYWORDS=$(grep   "^FEEDBACK_KEYWORDS="    feedback_output.log | cut -d= -f2 || echo "0")
-
-          echo "feedback_processed=${PROCESSED:-0}"  >> $GITHUB_OUTPUT
-          echo "feedback_accepted=${ACCEPTED:-0}"    >> $GITHUB_OUTPUT
-          echo "feedback_rejected=${REJECTED:-0}"    >> $GITHUB_OUTPUT
-          echo "feedback_domain_blocks=${DOMAINS:-0}" >> $GITHUB_OUTPUT
-          echo "feedback_keywords=${KEYWORDS:-0}"    >> $GITHUB_OUTPUT
-
-      - name: Phase 1 — Commit updated memory
-        if: github.event.inputs.skip_feedback != 'true'
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          MEMORY_FILE="${{ steps.load_config.outputs.memory_file }}"
-
-          if [ -f "$MEMORY_FILE" ] && ! git diff --quiet HEAD -- "$MEMORY_FILE"; then
-            git add "$MEMORY_FILE"
-            git commit -m "chore: update discovery_memory.json [skip ci]"
-            git push
-            echo "✓ Memory file committed and pushed"
-          else
-            echo "⊘ No memory changes to commit"
-          fi
-
-      # ── Phase 2 + 3: Discovery + Heuristic Validation ──────────────────
-      # Searches for next-year versions of every report series that lacks one,
-      # filters against the freshly-updated memory, scores each candidate, and
-      # creates GitHub issues only for candidates above the score threshold.
-
-      - name: Phase 2+3 — Run discovery
+      - name: Run discovery
         id: discovery
         env:
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
@@ -138,132 +45,101 @@ jobs:
           GH_TOKEN:              ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY:     ${{ github.repository }}
         run: |
+          ARGS="--artifacts-dir .github/artifacts"
+
+          if [ -n "${{ github.event.inputs.max_discoveries }}" ]; then
+            ARGS="$ARGS --max-discoveries ${{ github.event.inputs.max_discoveries }}"
+          fi
+
+          if [ -n "${{ github.event.inputs.override_date }}" ]; then
+            ARGS="$ARGS --date ${{ github.event.inputs.override_date }}"
+          fi
+
           set +e
-          python .github/scripts/report-discovery.py \
-            --artifacts-dir   .github/artifacts \
-            --memory-file     "${{ steps.load_config.outputs.memory_file }}" \
-            --max-discoveries "${{ steps.load_config.outputs.max_discoveries }}" \
-            > discovery_output.log 2>&1
-          DISCOVERY_EXIT=$?
+          python .github/scripts/report-discovery.py $ARGS > discovery_output.log 2>&1
+          EXIT_CODE=$?
           set -e
 
           cat discovery_output.log
 
-          # Parse structured key=value lines printed by the script
-          SEARCHED=$(grep    "^DISCOVERY_SEARCHED="         discovery_output.log | cut -d= -f2 || echo "0")
-          MEM_FILT=$(grep    "^DISCOVERY_MEMORY_FILTERED="  discovery_output.log | cut -d= -f2 || echo "0")
-          SUPPRESSED=$(grep  "^DISCOVERY_SCORE_SUPPRESSED=" discovery_output.log | cut -d= -f2 || echo "0")
-          CREATED=$(grep     "^DISCOVERY_CREATED="          discovery_output.log | cut -d= -f2 || echo "0")
-          SKIPPED=$(grep     "^DISCOVERY_SKIPPED="          discovery_output.log | cut -d= -f2 || echo "0")
-          SKIPPED_REPO=$(grep "series skipped" discovery_output.log | grep -oP "\d+" | head -1 || echo "0")
+          # Parse structured key=value lines from script output
+          parse() { grep "^$1=" discovery_output.log | cut -d= -f2 || echo "0"; }
 
-          echo "discovery_searched=${SEARCHED:-0}"       >> $GITHUB_OUTPUT
-          echo "discovery_mem_filtered=${MEM_FILT:-0}"   >> $GITHUB_OUTPUT
-          echo "discovery_suppressed=${SUPPRESSED:-0}"   >> $GITHUB_OUTPUT
-          echo "discovery_created=${CREATED:-0}"         >> $GITHUB_OUTPUT
-          echo "discovery_skipped=${SKIPPED:-0}"         >> $GITHUB_OUTPUT
-          echo "discovery_skipped_repo=${SKIPPED_REPO:-0}" >> $GITHUB_OUTPUT
+          echo "searched=$(parse DISCOVERY_SEARCHED)"         >> $GITHUB_OUTPUT
+          echo "candidates=$(parse DISCOVERY_CANDIDATES)"     >> $GITHUB_OUTPUT
+          echo "created=$(parse DISCOVERY_CREATED)"           >> $GITHUB_OUTPUT
+          echo "suppressed=$(parse DISCOVERY_SUPPRESSED)"     >> $GITHUB_OUTPUT
+          echo "skipped=$(parse DISCOVERY_SKIPPED)"           >> $GITHUB_OUTPUT
+          echo "tier_current=$(parse DISCOVERY_TIER_CURRENT)" >> $GITHUB_OUTPUT
+          echo "tier_stale=$(parse DISCOVERY_TIER_STALE)"     >> $GITHUB_OUTPUT
+          echo "tier_old=$(parse DISCOVERY_TIER_OLD)"         >> $GITHUB_OUTPUT
+          echo "exit_code=$EXIT_CODE"                         >> $GITHUB_OUTPUT
 
-      - name: Upload logs
+      - name: Upload discovery log
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: discovery-logs-${{ github.run_id }}
-          path: |
-            feedback_output.log
-            discovery_output.log
-          if-no-files-found: ignore
+          name: discovery-log-${{ github.run_id }}
+          path: discovery_output.log
           retention-days: 14
 
       - name: Generate step summary
         if: always()
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          DATE_USED="${{ github.event.inputs.override_date }}"
+          [ -z "$DATE_USED" ] && DATE_USED="$(date +%Y-%m-%d) (today)"
 
-          SKIP_FB="${{ github.event.inputs.skip_feedback }}"
+          CREATED="${{ steps.discovery.outputs.created }}"
+          SEARCHED="${{ steps.discovery.outputs.searched }}"
+          CANDIDATES="${{ steps.discovery.outputs.candidates }}"
+          SUPPRESSED="${{ steps.discovery.outputs.suppressed }}"
+          SKIPPED="${{ steps.discovery.outputs.skipped }}"
+          T_CURR="${{ steps.discovery.outputs.tier_current }}"
+          T_STALE="${{ steps.discovery.outputs.tier_stale }}"
+          T_OLD="${{ steps.discovery.outputs.tier_old }}"
 
           echo "## 🔍 Security Report Discovery" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger          | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Max Discoveries  | \`${{ steps.load_config.outputs.max_discoveries }}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Lookback (days)  | \`${{ steps.load_config.outputs.lookback_days }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Trigger    | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Date       | $DATE_USED |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          # ── Phase 1 summary ──────────────────────────────────────────────
-          if [ "$SKIP_FB" == "true" ]; then
-            echo "### 🧠 Phase 1 — Feedback Loop" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "⊘ Skipped (skip_feedback = true)" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-          else
-            FB_PROCESSED="${{ steps.feedback.outputs.feedback_processed }}"
-            FB_ACCEPTED="${{ steps.feedback.outputs.feedback_accepted }}"
-            FB_REJECTED="${{ steps.feedback.outputs.feedback_rejected }}"
-            FB_DOMAINS="${{ steps.feedback.outputs.feedback_domain_blocks }}"
-            FB_KEYWORDS="${{ steps.feedback.outputs.feedback_keywords }}"
-
-            echo "### 🧠 Phase 1 — Feedback Loop" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
-            echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-            echo "| Issues Processed    | ${FB_PROCESSED:-0} |" >> $GITHUB_STEP_SUMMARY
-            echo "| Accepted by Reviewer| ${FB_ACCEPTED:-0} |" >> $GITHUB_STEP_SUMMARY
-            echo "| Rejected by Reviewer| ${FB_REJECTED:-0} |" >> $GITHUB_STEP_SUMMARY
-            echo "| Domains Blocked     | ${FB_DOMAINS:-0} |" >> $GITHUB_STEP_SUMMARY
-            echo "| Keywords Learned    | ${FB_KEYWORDS:-0} |" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-
-            if [ "${FB_DOMAINS:-0}" -gt 0 ] && [ -f feedback_output.log ]; then
-              echo "**Newly blocked domains:**" >> $GITHUB_STEP_SUMMARY
-              grep "Domain blocked:" feedback_output.log | sed 's/.*Domain blocked: /- `/' | sed 's/$/`/' >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
-
-            if [ "${FB_KEYWORDS:-0}" -gt 0 ] && [ -f feedback_output.log ]; then
-              echo "**Newly learned keywords:**" >> $GITHUB_STEP_SUMMARY
-              grep "Keyword learned:" feedback_output.log | sed "s/.*Keyword learned: /- /" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
-          fi
-
-          # ── Phase 2+3 summary ─────────────────────────────────────────────
-          D_SEARCHED="${{ steps.discovery.outputs.discovery_searched }}"
-          D_REPO_SKIP="${{ steps.discovery.outputs.discovery_skipped_repo }}"
-          D_MEM="${{ steps.discovery.outputs.discovery_mem_filtered }}"
-          D_SUPP="${{ steps.discovery.outputs.discovery_suppressed }}"
-          D_CREATED="${{ steps.discovery.outputs.discovery_created }}"
-          D_SKIPPED="${{ steps.discovery.outputs.discovery_skipped }}"
-
-          echo "### 🔭 Phase 2+3 — Discovery + Heuristic Validation" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔭 Search Results" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Series Skipped (next year in repo) | ${D_REPO_SKIP:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Series Searched                    | ${D_SEARCHED:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Filtered by Memory                 | ${D_MEM:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Suppressed (below score threshold) | ${D_SUPP:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Issues Created                     | **${D_CREATED:-0}** |" >> $GITHUB_STEP_SUMMARY
-          echo "| Issues Skipped (already open)      | ${D_SKIPPED:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Searches run (Current year) | ${T_CURR:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Searches run (1yr stale)    | ${T_STALE:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Searches run (2yr+ old)     | ${T_OLD:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Total searches              | ${SEARCHED:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Candidates found            | ${CANDIDATES:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Suppressed (below threshold)| ${SUPPRESSED:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Issues created              | **${CREATED:-0}** |" >> $GITHUB_STEP_SUMMARY
+          echo "| Issues skipped (dup)        | ${SKIPPED:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          if [ "${D_CREATED:-0}" -gt 0 ] && [ -f discovery_output.log ]; then
+          if [ "${CREATED:-0}" -gt 0 ]; then
             echo "### ✅ New Reports Discovered" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            grep "✓ Created issue:" discovery_output.log | sed 's/.*Created issue: /- /' >> $GITHUB_STEP_SUMMARY
+            grep "✓ Created issue:" discovery_output.log \
+              | sed 's/.*Created issue: /- /' >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
           else
             echo "⊘ No new issues created this run." >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-
-            # Surface the reason when nothing was discovered
-            if [ "${D_SUPP:-0}" -gt 0 ] && [ -f discovery_output.log ]; then
-              echo "**Suppressed candidates (below score threshold):**" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-              grep "Best score" discovery_output.log | sed 's/^  /- /' >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
           fi
 
-          echo "📎 Full logs available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
+          if [ "${SUPPRESSED:-0}" -gt 0 ]; then
+            echo "<details><summary>🔻 Suppressed candidates (below score threshold)</summary>" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            grep "Best score\|⊘ Best score" discovery_output.log \
+              | sed 's/^  /- /' >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "</details>" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "📎 Full log: [workflow artifacts]($RUN_URL)" >> $GITHUB_STEP_SUMMARY

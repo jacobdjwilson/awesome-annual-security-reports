@@ -26,51 +26,18 @@
           "short_path_threshold": 3
         },
         "skip_domains": [
-          "google.com",
-          "linkedin.com",
-          "twitter.com",
-          "x.com",
-          "facebook.com",
-          "youtube.com",
-          "reddit.com",
-          "wikipedia.org"
+          "google.com", "linkedin.com", "twitter.com", "x.com",
+          "facebook.com", "youtube.com", "reddit.com", "wikipedia.org"
         ]
       },
       "report_discovery": {
-        "description": "Discovers new security report PDFs published by an organization.",
-        "query_template": "{organization} {title} {year} security report filetype:pdf",
-        "num_results": 5,
-        "scoring": {
-          "org_in_link": 3,
-          "year_in_link": 3,
-          "report_in_link": 2,
-          "year_in_title": 2,
-          "org_in_title": 1,
-          "short_path_penalty": -2,
-          "short_path_threshold": 3
-        },
+        "description": "Discovers new security report PDFs for a specific org+title+year. Returns raw results for heuristic scoring by report-discovery.py.",
+        "query_template": "{organization} {title} {year} annual security report filetype:pdf",
+        "num_results": 8,
         "skip_domains": [
-          "google.com",
-          "linkedin.com",
-          "twitter.com",
-          "x.com",
-          "facebook.com",
-          "youtube.com",
-          "reddit.com",
-          "wikipedia.org"
-        ],
-        "exclude_terms": [
-          "job",
-          "career",
-          "hiring",
-          "stock",
-          "investor",
-          "earnings"
-        ],
-        "financial_terms": [
-          "annual report",
-          "financial results",
-          "quarterly"
+          "google.com", "linkedin.com", "twitter.com", "x.com",
+          "facebook.com", "youtube.com", "reddit.com", "wikipedia.org",
+          "amazon.com", "slideshare.net", "scribd.com"
         ]
       },
       "generic": {
@@ -81,8 +48,71 @@
         "skip_domains": []
       }
     },
-    "python_packages": [
-      "requests"
-    ]
+    "discovery_heuristics": {
+      "_comment": "Scoring config used exclusively by report-discovery.py. Consolidating all tuning here keeps it in one place without a separate heuristics artifact.",
+
+      "score_threshold": 15,
+
+      "positive_signals": {
+        "annual":               10,
+        "year in review":       10,
+        "threat landscape":     10,
+        "state of":              8,
+        "security report":       8,
+        "cybersecurity report":  8,
+        "threat report":         8,
+        "risk report":           6,
+        "intelligence report":   6,
+        "breach report":         6,
+        "vulnerability report":  6,
+        "report":                4,
+        "survey":                3,
+        "findings":              3
+      },
+
+      "negative_signals": {
+        "webinar":        -50,
+        "slides":         -50,
+        "template":       -25,
+        "product sheet":  -25,
+        "case study":     -15,
+        "brochure":       -20,
+        "datasheet":      -20,
+        "infographic":    -15,
+        "video":          -15,
+        "podcast":        -20,
+        "press release":  -15,
+        "release notes":  -15,
+        "changelog":      -20
+      },
+
+      "year_in_url_bonus":   20,
+      "year_in_title_bonus": 15,
+      "pdf_url_bonus":       10,
+
+      "url_reject_patterns": [
+        "/webinar/", "/webinars/", "/slides/", "/video/", "/videos/",
+        "/podcast/", "/podcasts/", "/blog/", "/press/", "/careers/",
+        "/jobs/", "/investor-relations/", "/earnings/", "/datasheet/",
+        "/infographic/", "/product-guide/", "/product-manual/"
+      ],
+
+      "financial_title_terms": [
+        "annual report", "financial results", "quarterly results",
+        "earnings", "investor relations", "10-k", "10-q", "sec filing"
+      ],
+
+      "exclude_terms": [
+        "job posting", "career opportunity", "hiring", "stock price",
+        "certification exam", "training course", "free trial", "register now"
+      ],
+
+      "pdf_path_patterns": [
+        ".pdf", "/download/", "/downloads/", "/assets/", "/reports/",
+        "/research/", "/content/dam/", "/wp-content/uploads/", "/media/", "/files/"
+      ]
+    },
+
+    "python_packages": ["requests"]
   }
 }
