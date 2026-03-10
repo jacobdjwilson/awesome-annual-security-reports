@@ -12,7 +12,7 @@ on:
         default: ''
         type: string
       override_date:
-        description: 'Override today''s date for testing (YYYY-MM-DD, leave blank for real today)'
+        description: 'Override today''s date for testing (YYYY-MM-DD, leave blank for today)'
         required: false
         default: ''
         type: string
@@ -35,6 +35,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
+        # Only requests needed — no google-api-python-client, no beautifulsoup4
         run: pip install --break-system-packages requests
 
       - name: Run discovery
@@ -50,7 +51,6 @@ jobs:
           if [ -n "${{ github.event.inputs.max_discoveries }}" ]; then
             ARGS="$ARGS --max-discoveries ${{ github.event.inputs.max_discoveries }}"
           fi
-
           if [ -n "${{ github.event.inputs.override_date }}" ]; then
             ARGS="$ARGS --date ${{ github.event.inputs.override_date }}"
           fi
@@ -62,18 +62,18 @@ jobs:
 
           cat discovery_output.log
 
-          # Parse structured key=value lines from script output
           parse() { grep "^$1=" discovery_output.log | cut -d= -f2 || echo "0"; }
 
-          echo "searched=$(parse DISCOVERY_SEARCHED)"         >> $GITHUB_OUTPUT
-          echo "candidates=$(parse DISCOVERY_CANDIDATES)"     >> $GITHUB_OUTPUT
-          echo "created=$(parse DISCOVERY_CREATED)"           >> $GITHUB_OUTPUT
-          echo "suppressed=$(parse DISCOVERY_SUPPRESSED)"     >> $GITHUB_OUTPUT
-          echo "skipped=$(parse DISCOVERY_SKIPPED)"           >> $GITHUB_OUTPUT
-          echo "tier_current=$(parse DISCOVERY_TIER_CURRENT)" >> $GITHUB_OUTPUT
-          echo "tier_stale=$(parse DISCOVERY_TIER_STALE)"     >> $GITHUB_OUTPUT
-          echo "tier_old=$(parse DISCOVERY_TIER_OLD)"         >> $GITHUB_OUTPUT
-          echo "exit_code=$EXIT_CODE"                         >> $GITHUB_OUTPUT
+          echo "tasks=$(parse DISCOVERY_TASKS)"                 >> $GITHUB_OUTPUT
+          echo "created=$(parse DISCOVERY_CREATED)"             >> $GITHUB_OUTPUT
+          echo "suppressed=$(parse DISCOVERY_SUPPRESSED)"       >> $GITHUB_OUTPUT
+          echo "skipped=$(parse DISCOVERY_SKIPPED)"             >> $GITHUB_OUTPUT
+          echo "pdf_finds=$(parse DISCOVERY_PDF_FINDS)"         >> $GITHUB_OUTPUT
+          echo "landing_finds=$(parse DISCOVERY_LANDING_FINDS)" >> $GITHUB_OUTPUT
+          echo "tier_current=$(parse DISCOVERY_TIER_CURRENT)"   >> $GITHUB_OUTPUT
+          echo "tier_stale=$(parse DISCOVERY_TIER_STALE)"       >> $GITHUB_OUTPUT
+          echo "tier_old=$(parse DISCOVERY_TIER_OLD)"           >> $GITHUB_OUTPUT
+          echo "exit_code=$EXIT_CODE"                           >> $GITHUB_OUTPUT
 
       - name: Upload discovery log
         if: always()
@@ -91,10 +91,11 @@ jobs:
           [ -z "$DATE_USED" ] && DATE_USED="$(date +%Y-%m-%d) (today)"
 
           CREATED="${{ steps.discovery.outputs.created }}"
-          SEARCHED="${{ steps.discovery.outputs.searched }}"
-          CANDIDATES="${{ steps.discovery.outputs.candidates }}"
+          TASKS="${{ steps.discovery.outputs.tasks }}"
           SUPPRESSED="${{ steps.discovery.outputs.suppressed }}"
           SKIPPED="${{ steps.discovery.outputs.skipped }}"
+          PDF_F="${{ steps.discovery.outputs.pdf_finds }}"
+          LAND_F="${{ steps.discovery.outputs.landing_finds }}"
           T_CURR="${{ steps.discovery.outputs.tier_current }}"
           T_STALE="${{ steps.discovery.outputs.tier_stale }}"
           T_OLD="${{ steps.discovery.outputs.tier_old }}"
@@ -103,29 +104,34 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger    | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Date       | $DATE_USED |" >> $GITHUB_STEP_SUMMARY
+          echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Date    | $DATE_USED |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          echo "### 🔭 Search Results" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔭 Search Coverage" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Searches run (Current year) | ${T_CURR:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Searches run (1yr stale)    | ${T_STALE:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Searches run (2yr+ old)     | ${T_OLD:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Total searches              | ${SEARCHED:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Candidates found            | ${CANDIDATES:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Suppressed (below threshold)| ${SUPPRESSED:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Issues created              | **${CREATED:-0}** |" >> $GITHUB_STEP_SUMMARY
-          echo "| Issues skipped (dup)        | ${SKIPPED:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Tasks run (2 API calls each)   | ${TASKS:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| — Current year (gap = 1yr)     | ${T_CURR:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| — One year stale (gap = 2yr)   | ${T_STALE:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| — Older gaps (gap ≥ 3yr)       | ${T_OLD:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Suppressed (below threshold)   | ${SUPPRESSED:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          echo "### 📋 Issues Created: ${CREATED:-0}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Find Type | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|-----------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| 📥 Direct PDF        | ${PDF_F:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🔒 Gated landing page | ${LAND_F:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
           if [ "${CREATED:-0}" -gt 0 ]; then
-            echo "### ✅ New Reports Discovered" >> $GITHUB_STEP_SUMMARY
+            echo "#### New issues" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            grep "✓ Created issue:" discovery_output.log \
-              | sed 's/.*Created issue: /- /' >> $GITHUB_STEP_SUMMARY
+            grep "✓ Created issue" discovery_output.log \
+              | sed 's/.*Created issue \[.*\]: /- /' >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
           else
             echo "⊘ No new issues created this run." >> $GITHUB_STEP_SUMMARY
@@ -133,9 +139,9 @@ jobs:
           fi
 
           if [ "${SUPPRESSED:-0}" -gt 0 ]; then
-            echo "<details><summary>🔻 Suppressed candidates (below score threshold)</summary>" >> $GITHUB_STEP_SUMMARY
+            echo "<details><summary>🔻 Suppressed candidates</summary>" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            grep "Best score\|⊘ Best score" discovery_output.log \
+            grep "⊘ Best score" discovery_output.log \
               | sed 's/^  /- /' >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "</details>" >> $GITHUB_STEP_SUMMARY

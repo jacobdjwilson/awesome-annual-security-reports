@@ -8,12 +8,22 @@ import time
 from pathlib import Path
 from datetime import datetime, date
 from typing import Dict, Any, List, Optional, Tuple
+from urllib.parse import urlparse
 
 try:
     import requests
 except ImportError:
     print("ERROR: requests required.  pip install requests")
     sys.exit(1)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# FIND TYPE CONSTANTS
+# ══════════════════════════════════════════════════════════════════════════════
+
+FIND_PDF     = "PDF"      # direct PDF download link
+FIND_LANDING = "LANDING"  # gated landing / download page
+FIND_UNKNOWN = "UNKNOWN"  # could not classify
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -37,21 +47,21 @@ class Config:
         # ── Discovery limits ──────────────────────────────────────────────
         disc = wf.get("workflow", {}).get("discovery", {})
         self.max_issues:   int = disc.get("default_limit", 10)
-        self.max_searches: int = disc.get("max_searches_per_run", 25)
+        self.max_tasks:    int = disc.get("max_searches_per_run", 12)
 
         # ── Rotation periods by tier (days) ───────────────────────────────
         rot = disc.get("rotation_days", {})
-        self.rotation_current: int = rot.get("current", 30)   # gap == 1 year
-        self.rotation_stale:   int = rot.get("stale",   91)   # gap == 2 years
-        self.rotation_old:     int = rot.get("old",     182)  # gap >= 3 years
+        self.rotation_current: int = rot.get("current", 30)
+        self.rotation_stale:   int = rot.get("stale",   91)
+        self.rotation_old:     int = rot.get("old",     182)
 
         # ── Google Search ─────────────────────────────────────────────────
         gs = gsc.get("google_search", {})
-        self.gs_base_url:    str       = gs.get("base_url", "https://www.googleapis.com/customsearch/v1")
-        self.gs_env_api_key: str       = gs.get("env_api_key", "GOOGLE_SEARCH_API_KEY")
-        self.gs_env_cse_id:  str       = gs.get("env_cse_id",  "GOOGLE_CSE_ID")
-        self.gs_timeout:     int       = gs.get("request_timeout_seconds", 10)
-        self.gs_rate_sleep:  float     = gs.get("rate_limit_sleep_seconds", 1.0)
+        self.gs_base_url:    str   = gs.get("base_url", "https://www.googleapis.com/customsearch/v1")
+        self.gs_env_api_key: str   = gs.get("env_api_key", "GOOGLE_SEARCH_API_KEY")
+        self.gs_env_cse_id:  str   = gs.get("env_cse_id",  "GOOGLE_CSE_ID")
+        self.gs_timeout:     int   = gs.get("request_timeout_seconds", 10)
+        self.gs_rate_sleep:  float = gs.get("rate_limit_sleep_seconds", 1.0)
 
         retry = gs.get("retry_policy", {})
         self.gs_max_retries:   int   = retry.get("max_attempts",          3)
@@ -59,24 +69,36 @@ class Config:
         self.gs_backoff_mult:  float = retry.get("backoff_multiplier",    2)
         self.gs_max_delay:     float = retry.get("max_delay_seconds",    15)
 
-        mode = gs.get("modes", {}).get("report_discovery", {})
-        self.gs_query_template: str       = mode.get("query_template",
+        modes = gs.get("modes", {})
+        pdf_mode     = modes.get("report_discovery_pdf",     {})
+        landing_mode = modes.get("report_discovery_landing", {})
+
+        self.gs_pdf_query:     str       = pdf_mode.get("query_template",
             "{organization} {title} {year} annual security report filetype:pdf")
-        self.gs_num_results:    int       = mode.get("num_results", 8)
-        self.gs_skip_domains:   List[str] = mode.get("skip_domains", [])
+        self.gs_landing_query: str       = landing_mode.get("query_template",
+            "{organization} {title} {year} annual security report download")
+        self.gs_num_results:   int       = pdf_mode.get("num_results", 8)
+        self.gs_skip_domains:  List[str] = pdf_mode.get("skip_domains", [])
+
+        # ── Find-type classification ──────────────────────────────────────
+        ftc = gs.get("find_type_classification", {})
+        self.pdf_indicators:      List[str] = ftc.get("pdf_indicators",      [".pdf"])
+        self.landing_indicators:  List[str] = ftc.get("landing_page_indicators", [])
+        self.gated_signals:       List[str] = ftc.get("gated_page_signals",  [])
+        self.gated_bonus:         int       = ftc.get("gated_bonus", 12)
 
         # ── Discovery heuristics ──────────────────────────────────────────
         h = gs.get("discovery_heuristics", {})
-        self.score_threshold:      int             = h.get("score_threshold", 15)
-        self.positive_signals:     Dict[str, int]  = h.get("positive_signals", {})
-        self.negative_signals:     Dict[str, int]  = h.get("negative_signals", {})
-        self.year_in_url_bonus:    int             = h.get("year_in_url_bonus",   20)
-        self.year_in_title_bonus:  int             = h.get("year_in_title_bonus", 15)
-        self.pdf_url_bonus:        int             = h.get("pdf_url_bonus",       10)
-        self.url_reject_patterns:  List[str]       = h.get("url_reject_patterns", [])
-        self.financial_title_terms:List[str]       = h.get("financial_title_terms", [])
-        self.exclude_terms:        List[str]       = h.get("exclude_terms", [])
-        self.pdf_path_patterns:    List[str]       = h.get("pdf_path_patterns", [".pdf"])
+        self.score_threshold:       int            = h.get("score_threshold", 15)
+        self.positive_signals:      Dict[str, int] = h.get("positive_signals", {})
+        self.negative_signals:      Dict[str, int] = h.get("negative_signals", {})
+        self.year_in_url_bonus:     int            = h.get("year_in_url_bonus",   20)
+        self.year_in_title_bonus:   int            = h.get("year_in_title_bonus", 15)
+        self.pdf_url_bonus:         int            = h.get("pdf_url_bonus",       10)
+        self.url_reject_patterns:   List[str]      = h.get("url_reject_patterns", [])
+        self.financial_title_terms: List[str]      = h.get("financial_title_terms", [])
+        self.exclude_terms:         List[str]      = h.get("exclude_terms", [])
+        self.pdf_path_patterns:     List[str]      = h.get("pdf_path_patterns", [".pdf"])
 
     def _load(self, filename: str) -> Dict[str, Any]:
         path = self.artifacts_dir / filename
@@ -92,11 +114,7 @@ class Config:
 
 class ReportLineageIndex:
     """
-    Walks the PDF root directory and builds a year-indexed fingerprint map.
-
-    Fingerprint: sha256 of "<org_lower>|<title_lower>" so it's stable even
-    if the filename uses different capitalization or separators over the years.
-
+    Walks the PDF root and builds a year-indexed fingerprint map.
     Answers: "Which years of series X are already in the repo?"
     """
 
@@ -104,7 +122,6 @@ class ReportLineageIndex:
 
     def __init__(self, pdf_root: Path):
         self.pdf_root = pdf_root
-        # fp -> set of years present
         self.index: Dict[str, set] = {}
         self._build()
 
@@ -118,8 +135,7 @@ class ReportLineageIndex:
                 continue
             year = int(m.group(1))
             stem = pdf.name[: m.start()]
-            fp   = self._fp(stem)
-            self.index.setdefault(fp, set()).add(year)
+            self.index.setdefault(self._fp(stem), set()).add(year)
 
         total = sum(len(v) for v in self.index.values())
         print(f"Lineage index: {total} PDF(s) across {len(self.index)} series")
@@ -132,106 +148,62 @@ class ReportLineageIndex:
         title = re.sub(r"[-_ ]+", "-", title).strip("-")
         return f"{org}|{title}"
 
-    def years_present(self, stem: str) -> set:
-        return self.index.get(self._fp(stem), set())
-
     def has_year(self, stem: str, year: int) -> bool:
-        return year in self.years_present(stem)
+        return year in self.index.get(self._fp(stem), set())
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# SLOT SCHEDULER  (the no-database rotation)
+# SLOT SCHEDULER
 # ══════════════════════════════════════════════════════════════════════════════
 
 class SlotScheduler:
     """
-    Assigns each series to a deterministic daily search slot without any
-    persistent state.
+    Assigns each series a deterministic daily search slot with no state file.
 
-    Algorithm
-    ---------
-    1.  Compute a stable integer hash of the series stem:
-            slot_id = int(sha256(stem.lower())[:8], 16)
+      slot      = sha256(stem) % rotation_period
+      today_idx = date.toordinal() % rotation_period
+      search if: slot == today_idx
 
-    2.  Each priority tier has a rotation_period (days).  A series is
-        scheduled for today when:
-            slot_id % rotation_period  ==  epoch_day % rotation_period
-
-        where epoch_day = date.toordinal() (a monotonically increasing int
-        that advances by 1 each calendar day, independent of year).
-
-    Properties
-    ----------
-    - Deterministic: same stem always lands on the same calendar days.
-    - Even distribution: sha256 output is uniform, so series spread
-      naturally across the rotation window.
-    - No storage: re-computed fresh on every run.
-    - Stable across year boundaries: ordinal day doesn't reset on Jan 1.
-    - Predictable: operators can calculate any series' next run date offline.
-
-    Example
-    -------
-    Stem "Microsoft-Digital-Defense-Report" with rotation_period=30:
-        slot_id = 0x3fa7... → some integer, mod 30 = e.g. 17
-        If today's ordinal mod 30 == 17 → searched today.
-        Next search: 30 days later. No log entry needed.
+    toordinal() is a monotonically increasing integer that never resets on
+    Jan 1, so the distribution is stable across year boundaries.
     """
 
     def __init__(self, today: date):
         self.epoch_day = today.toordinal()
 
     def is_due(self, stem: str, rotation_period: int) -> bool:
-        slot_id = int(hashlib.sha256(stem.lower().encode()).hexdigest()[:8], 16)
-        return (slot_id % rotation_period) == (self.epoch_day % rotation_period)
-
-    def days_until_next(self, stem: str, rotation_period: int) -> int:
-        """How many days until this series is next scheduled (for logging)."""
-        slot_id   = int(hashlib.sha256(stem.lower().encode()).hexdigest()[:8], 16)
-        slot_pos  = slot_id % rotation_period
-        today_pos = self.epoch_day % rotation_period
-        delta     = (slot_pos - today_pos) % rotation_period
-        return delta if delta > 0 else rotation_period
+        slot = int(hashlib.sha256(stem.lower().encode()).hexdigest()[:8], 16)
+        return (slot % rotation_period) == (self.epoch_day % rotation_period)
 
 
 # ══════════════════════════════════════════════════════════════════════════════
 # REPORT SCANNER
 # ══════════════════════════════════════════════════════════════════════════════
 
-TIER_CURRENT = "CURRENT"   # gap 1 year   — highest search frequency
-TIER_STALE   = "STALE"     # gap 2 years
-TIER_OLD     = "OLD"       # gap 3+ years — lowest search frequency
+TIER_CURRENT = "CURRENT"
+TIER_STALE   = "STALE"
+TIER_OLD     = "OLD"
 
 class ReportScanner:
     """
-    Scans the repository file tree and produces a prioritised list of
-    search tasks for today based on the slot scheduler.
-
-    For each series that is due today:
-    - Determines which target years are missing from the repo (up to current year).
-    - Emits one search task per missing year so each gap is checked independently.
-
-    Example: repo has Acme-2023, current year 2026, series is due today.
-    → Tasks: search for Acme-2024, Acme-2025, Acme-2026 (three tasks).
+    Scans the file tree and emits (series, target_year) search tasks for
+    series that are (a) missing a newer edition and (b) due today per the
+    slot scheduler.  Emits one task per missing year, newest first.
     """
 
-    def __init__(self, config: Config, lineage: ReportLineageIndex, scheduler: SlotScheduler):
+    def __init__(self, config: Config, lineage: ReportLineageIndex,
+                 scheduler: SlotScheduler):
         self.config       = config
         self.lineage      = lineage
         self.scheduler    = scheduler
         self.current_year = datetime.now().year
 
     def get_todays_tasks(self) -> List[Dict[str, Any]]:
-        """
-        Return search tasks scheduled for today, sorted by priority tier.
-        Each task represents one (series, target_year) pair.
-        """
         if not self.config.PDF_ROOT.exists():
             print(f"ERROR: PDF root not found: {self.config.PDF_ROOT}")
             return []
 
         print(f"Scanning {self.config.PDF_ROOT}...")
-
-        # Collect the most-recent year per series from the file tree
         series_latest: Dict[str, Dict[str, Any]] = {}
         for pdf in self.config.PDF_ROOT.rglob("*.pdf"):
             r = self._parse(pdf)
@@ -248,19 +220,15 @@ class ReportScanner:
         skipped_schedule = 0
 
         for stem, report in series_latest.items():
-            latest_year = report["year"]
-
-            # Find all years that are missing between latest+1 and current_year
+            latest_year  = report["year"]
             missing_years = [
                 y for y in range(latest_year + 1, self.current_year + 1)
                 if not self.lineage.has_year(stem, y)
             ]
-
             if not missing_years:
                 skipped_uptodate += 1
                 continue
 
-            # Assign priority tier based on how stale the newest repo copy is
             gap = self.current_year - latest_year
             if gap == 1:
                 tier, rotation = TIER_CURRENT, self.config.rotation_current
@@ -269,12 +237,10 @@ class ReportScanner:
             else:
                 tier, rotation = TIER_OLD,     self.config.rotation_old
 
-            # Check if this series is scheduled for today
             if not self.scheduler.is_due(stem, rotation):
                 skipped_schedule += 1
                 continue
 
-            # Emit one task per missing year (newest first — most likely to exist)
             for target_year in sorted(missing_years, reverse=True):
                 tasks.append({
                     "org":         report["org"],
@@ -286,7 +252,6 @@ class ReportScanner:
                     "gap":         gap,
                 })
 
-        # Sort: CURRENT first, then STALE, then OLD; newest target year within tier
         tier_order = {TIER_CURRENT: 0, TIER_STALE: 1, TIER_OLD: 2}
         tasks.sort(key=lambda t: (tier_order[t["tier"]], -t["target_year"]))
 
@@ -294,9 +259,7 @@ class ReportScanner:
         print(f"  {skipped_schedule} series not scheduled for today")
         print(f"  {len(tasks)} search task(s) due today across "
               f"{len({t['stem'] for t in tasks})} series")
-
         return tasks
-
 
     def _parse(self, pdf_path: Path) -> Optional[Dict[str, Any]]:
         m = re.search(r"-(\d{4})\.pdf$", pdf_path.name)
@@ -314,34 +277,78 @@ class ReportScanner:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# HEURISTIC VALIDATOR
+# RESULT CLASSIFIER
 # ══════════════════════════════════════════════════════════════════════════════
 
-class HeuristicValidator:
+class ResultClassifier:
     """
-    Scores a search result candidate using the signal tables in
-    google-search-config.json → discovery_heuristics.
+    Determines the find type for a search result URL + snippet.
 
-    Scoring pipeline:
-      1. URL pattern reject (instant -999 for /webinar/, /blog/, etc.)
-      2. Financial title filter (instant -999)
-      3. Exclude term filter (instant -999)
-      4. Positive keyword signals (+weight)
-      5. Negative keyword signals (+weight, weights are negative)
-      6. Structural bonuses: year in URL, year in title, PDF path
+    Evaluation order:
+      1. Any pdf_indicator in URL               → FIND_PDF
+      2. Any landing_page_indicator in URL      → FIND_LANDING
+      3. Any gated_page_signal in snippet       → FIND_LANDING (snippet confirms gating)
+      4. Otherwise                              → FIND_UNKNOWN
 
-    Returns (score, description_string).
+    All pattern lists come from google-search-config.json →
+    find_type_classification, so no strings are hardcoded here.
     """
 
     def __init__(self, config: Config):
         self.config = config
 
-    def score(self, url: str, title: str, snippet: str, year: int) -> Tuple[int, str]:
+    def classify(self, url: str, snippet: str) -> str:
+        url_l  = url.lower()
+        snip_l = snippet.lower()
+
+        for indicator in self.config.pdf_indicators:
+            if indicator.lower() in url_l:
+                return FIND_PDF
+
+        for indicator in self.config.landing_indicators:
+            if indicator.lower() in url_l:
+                return FIND_LANDING
+
+        for signal in self.config.gated_signals:
+            if signal.lower() in snip_l:
+                return FIND_LANDING
+
+        return FIND_UNKNOWN
+
+    def gated_bonus(self, snippet: str) -> int:
+        """Return the gated-page score bonus if snippet contains gating language."""
+        snip_l = snippet.lower()
+        for signal in self.config.gated_signals:
+            if signal.lower() in snip_l:
+                return self.config.gated_bonus
+        return 0
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# HEURISTIC VALIDATOR
+# ══════════════════════════════════════════════════════════════════════════════
+
+class HeuristicValidator:
+    """
+    Scores a result using keyword signals + structural bonuses.
+
+    Find-type-aware bonuses:
+      FIND_PDF     — pdf_url_bonus if URL has a PDF path pattern
+      FIND_LANDING — gated_bonus if snippet contains gating language
+
+    Returns (score, reject_reason).  reject_reason is non-empty only when
+    score == -999 (structural reject).
+    """
+
+    def __init__(self, config: Config, classifier: ResultClassifier):
+        self.config     = config
+        self.classifier = classifier
+
+    def score(self, url: str, title: str, snippet: str,
+              year: int, find_type: str) -> Tuple[int, str]:
         url_l    = url.lower()
         title_l  = title.lower()
-        snip_l   = snippet.lower()
-        combined = f"{url_l} {title_l} {snip_l}"
-        year_str = str(year)
+        combined = f"{url_l} {title_l} {snippet.lower()}"
 
         # ── Structural rejects ────────────────────────────────────────────
         for pat in self.config.url_reject_patterns:
@@ -350,7 +357,7 @@ class HeuristicValidator:
 
         for term in self.config.financial_title_terms:
             if term.lower() in title_l:
-                return -999, f"financial title term '{term}'"
+                return -999, f"financial term '{term}'"
 
         for term in self.config.exclude_terms:
             if term.lower() in combined:
@@ -358,39 +365,53 @@ class HeuristicValidator:
 
         total = 0
 
-        # ── Positive signals ──────────────────────────────────────────────
+        # ── Positive / negative keyword signals ───────────────────────────
         for signal, w in self.config.positive_signals.items():
             if signal.lower() in combined:
                 total += w
 
-        # ── Negative signals ──────────────────────────────────────────────
         for signal, w in self.config.negative_signals.items():
             if signal.lower() in combined:
-                total += w   # w is already negative
+                total += w
 
         # ── Structural bonuses ────────────────────────────────────────────
+        year_str = str(year)
         if year_str in url_l:
             total += self.config.year_in_url_bonus
-
         if year_str in title_l:
             total += self.config.year_in_title_bonus
 
-        for pat in self.config.pdf_path_patterns:
-            if pat.lower() in url_l:
-                total += self.config.pdf_url_bonus
-                break
+        # ── Find-type bonuses ─────────────────────────────────────────────
+        if find_type == FIND_PDF:
+            for pat in self.config.pdf_path_patterns:
+                if pat.lower() in url_l:
+                    total += self.config.pdf_url_bonus
+                    break
+        elif find_type == FIND_LANDING:
+            total += self.classifier.gated_bonus(snippet)
 
         return total, ""
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# GOOGLE SEARCHER
+# GOOGLE SEARCHER  (two-pass)
 # ══════════════════════════════════════════════════════════════════════════════
 
 class GoogleSearcher:
     """
-    Issues a single Google Custom Search query and returns raw result items.
-    All HTTP settings (timeout, retry, rate-limit) come from Config.
+    Executes searches against the Google Custom Search JSON API.
+
+    Two-pass strategy per task:
+      Pass 1 — PDF query (filetype:pdf)
+        Finds direct PDF download links.  If any result scores above the
+        threshold, Pass 2 is skipped for this task to conserve API quota.
+
+      Pass 2 — Landing page query (no filetype filter)
+        Runs only when Pass 1 finds nothing actionable.  Surfaces gated
+        pages, resource hubs, and download landing pages.
+
+    Returns a merged, deduplicated list of annotated result dicts, each
+    tagged with the search pass that found it ("pdf" or "landing").
     """
 
     def __init__(self, config: Config):
@@ -403,13 +424,106 @@ class GoogleSearcher:
                 f"and {config.gs_env_cse_id}"
             )
 
-    def search(self, task: Dict[str, Any]) -> List[Dict[str, Any]]:
-        """Search for one (org, title, target_year) task. Returns raw items."""
-        q = (self.config.gs_query_template
+    def search_task(
+        self,
+        task: Dict[str, Any],
+        classifier: ResultClassifier,
+        validator: HeuristicValidator,
+    ) -> Tuple[Optional[Dict[str, Any]], str]:
+        """
+        Run Pass 1 (PDF) then, if nothing passes threshold, Pass 2 (landing).
+        Returns (best_candidate_or_None, pass_used).
+        """
+        year = task["target_year"]
+
+        # Pass 1 — PDF
+        print(f"  Pass 1 (PDF):     ", end="", flush=True)
+        raw_pdf = self._query(self.config.gs_pdf_query, task)
+        best_pdf, best_pdf_score = self._best_result(
+            raw_pdf, year, classifier, validator, "pdf"
+        )
+
+        if best_pdf is not None and best_pdf_score >= self.config.score_threshold:
+            print(f"  ✓ PDF result (score {best_pdf_score})")
+            return best_pdf, "pdf"
+
+        # Pass 2 — Landing page (only if PDF pass came up empty)
+        print(f"  Pass 2 (landing): ", end="", flush=True)
+        raw_landing = self._query(self.config.gs_landing_query, task)
+
+        # Deduplicate: skip any URL already seen in Pass 1
+        seen_urls = {r["url"] for r in raw_pdf}
+        raw_landing = [r for r in raw_landing if r["url"] not in seen_urls]
+
+        best_land, best_land_score = self._best_result(
+            raw_landing, year, classifier, validator, "landing"
+        )
+
+        if best_land is not None and best_land_score >= self.config.score_threshold:
+            print(f"  ✓ Landing page result (score {best_land_score})")
+            return best_land, "landing"
+
+        # Return whichever scored higher, even if below threshold, so the
+        # caller can log it with the actual score for debugging.
+        if best_pdf is not None and (best_land is None or best_pdf_score >= best_land_score):
+            return best_pdf, "pdf"
+        if best_land is not None:
+            return best_land, "landing"
+
+        print(f"  ⊘ No results")
+        return None, "none"
+
+    def _best_result(
+        self,
+        raw: List[Dict[str, Any]],
+        year: int,
+        classifier: ResultClassifier,
+        validator: HeuristicValidator,
+        pass_label: str,
+    ) -> Tuple[Optional[Dict[str, Any]], int]:
+        """Score all results from one pass; return (best_dict, best_score)."""
+        best: Optional[Dict[str, Any]] = None
+        best_score = -9999
+
+        for item in raw:
+            url     = item["url"]
+            title   = item["title"]
+            snippet = item["snippet"]
+
+            if any(d.lower() in url.lower() for d in self.config.gs_skip_domains):
+                continue
+
+            find_type = classifier.classify(url, snippet)
+            score, reject_reason = validator.score(url, title, snippet, year, find_type)
+
+            if score == -999:
+                continue
+
+            if score > best_score:
+                best_score = score
+                best = {
+                    "url":       url,
+                    "title":     title,
+                    "snippet":   snippet,
+                    "find_type": find_type,
+                    "pass":      pass_label,
+                    "score":     score,
+                }
+
+        if best is not None:
+            print(f"best: {best['url'][:60]} [{best['find_type']}] score={best_score}")
+        else:
+            print("no results")
+
+        return best, best_score
+
+    def _query(self, template: str, task: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Issue one API call and return raw result items."""
+        q = (template
              .replace("{organization}", task["org"])
              .replace("{title}",        task["title"])
              .replace("{year}",         str(task["target_year"])))
-        print(f"  Query: {q[:100]}")
+        print(f"'{q[:80]}'... ", end="", flush=True)
 
         delay = self.config.gs_initial_delay
         for attempt in range(1, self.config.gs_max_retries + 1):
@@ -428,17 +542,18 @@ class GoogleSearcher:
                         if i.get("link")
                     ]
                 if resp.status_code == 429:
-                    print(f"  ⚠ Rate limited — waiting {delay:.0f}s")
+                    print(f"rate limited, waiting {delay:.0f}s... ", end="", flush=True)
                     time.sleep(delay)
                     delay = min(delay * self.config.gs_backoff_mult, self.config.gs_max_delay)
                 else:
-                    print(f"  ! HTTP {resp.status_code}")
+                    print(f"HTTP {resp.status_code}")
                     return []
             except Exception as e:
-                print(f"  ! Exception: {str(e)[:80]}")
                 if attempt < self.config.gs_max_retries:
                     time.sleep(delay)
                     delay = min(delay * self.config.gs_backoff_mult, self.config.gs_max_delay)
+                else:
+                    print(f"error: {str(e)[:60]}")
         return []
 
 
@@ -448,19 +563,20 @@ class GoogleSearcher:
 
 class IssueCreator:
     """
-    Creates GitHub issues for confirmed discovery candidates and checks for
-    existing open issues to prevent duplicates.
+    Creates GitHub issues for discovery candidates.
+    Issue body and labels vary by find_type so reviewers immediately know
+    whether the report is a direct PDF or a gated landing page.
     """
 
     API = "https://api.github.com"
 
-    def __init__(self, token: str, repo: str):
+    def __init__(self, token: str, repo: str, score_threshold: int):
         self.headers = {
             "Authorization": f"token {token}",
             "Accept":        "application/vnd.github.v3+json",
         }
-        self.repo = repo
-        # Cache open issues fetched once per run
+        self.repo      = repo
+        self.threshold = score_threshold
         self._open_titles: Optional[List[str]] = None
 
     def _fetch_open_titles(self) -> List[str]:
@@ -483,14 +599,15 @@ class IssueCreator:
 
     def issue_exists(self, org: str, year: int) -> bool:
         fragment = f"{org} {year}".lower()
-        exists = any(fragment in t for t in self._fetch_open_titles())
-        if exists:
+        if any(fragment in t for t in self._fetch_open_titles()):
             print(f"  ⊘ Issue already open for {org} {year}")
-        return exists
+            return True
+        return False
 
     def create(self, candidate: Dict[str, Any]) -> bool:
-        org  = candidate["org"]
-        year = candidate["target_year"]
+        org       = candidate["org"]
+        year      = candidate["target_year"]
+        find_type = candidate["find_type"]
 
         if self.issue_exists(org, year):
             return False
@@ -501,8 +618,34 @@ class IssueCreator:
             TIER_OLD:     "🔵 Older gap",
         }.get(candidate["tier"], candidate["tier"])
 
-        title = f"[Report Discovery] {org} {year} — {candidate['title']}"
-        body  = (
+        # Find-type label and reviewer guidance
+        if find_type == FIND_PDF:
+            type_badge   = "📥 Direct PDF"
+            type_guidance = (
+                "A direct PDF link was found. Verify the URL is publicly accessible "
+                "and the file downloads correctly before adding to the repository."
+            )
+        elif find_type == FIND_LANDING:
+            type_badge   = "🔒 Gated Landing Page"
+            type_guidance = (
+                "This report appears to be behind a gated landing page requiring "
+                "form submission to access the PDF. This is exactly the type of "
+                "report this repository aims to make freely available.\n\n"
+                "**Reviewer options:**\n"
+                "- Search for a direct PDF link (try appending `filetype:pdf` to the report name in Google)\n"
+                "- Check if the PDF is archived at web.archive.org\n"
+                "- Check the vendor's press release or blog for a direct link\n"
+                "- Submit the form to retrieve the PDF, then upload it"
+            )
+        else:
+            type_badge   = "❓ Unclassified"
+            type_guidance = (
+                "The URL could not be classified as a direct PDF or a gated page. "
+                "Verify manually whether this resolves to a downloadable report."
+            )
+
+        issue_title = f"[Report Discovery] {org} {year} — {candidate['title']}"
+        body = (
             f"## 📄 New Security Report Discovered\n\n"
             f"| Field | Value |\n"
             f"|-------|-------|\n"
@@ -510,28 +653,38 @@ class IssueCreator:
             f"| **Year** | {year} |\n"
             f"| **Report** | {candidate['title']} |\n"
             f"| **URL** | {candidate['url']} |\n"
-            f"| **Heuristic Score** | {candidate['score']} (threshold: {candidate['threshold']}) |\n"
+            f"| **Type** | {type_badge} |\n"
+            f"| **Heuristic Score** | {candidate['score']} (threshold: {self.threshold}) |\n"
             f"| **Priority** | {tier_label} (repo latest: {candidate['latest_year']}) |\n\n"
             f"**Snippet:**\n> {candidate['snippet'][:400]}\n\n"
+            f"---\n\n"
+            f"### 🔍 Reviewer Notes\n\n"
+            f"{type_guidance}\n\n"
             f"---\n"
-            f"*Auto-discovered by the Security Report Discovery workflow.*\n"
-            f"*Verify the URL resolves to a valid PDF before merging.*"
+            f"*Auto-discovered by the Security Report Discovery workflow.*"
         )
+
+        # Use a find-type specific label so issues can be filtered in the UI
+        ft_label = {
+            FIND_PDF:     "direct-pdf",
+            FIND_LANDING: "gated-report",
+            FIND_UNKNOWN: "unclassified-find",
+        }.get(find_type, "automated")
 
         try:
             resp = requests.post(
                 f"{self.API}/repos/{self.repo}/issues",
                 headers=self.headers,
-                json={"title": title, "body": body,
-                      "labels": ["report-suggestion", "automated"]},
+                json={"title": issue_title, "body": body,
+                      "labels": ["report-suggestion", "automated", ft_label]},
                 timeout=15,
             )
             if resp.status_code == 201:
                 html_url = resp.json().get("html_url", "")
-                print(f"  ✓ Created issue: {title}")
-                print(f"    {html_url}")
-                # Add to local cache so same-run dedup works
-                self._open_titles.append(title.lower())
+                print(f"  ✓ Created issue [{find_type}]: {issue_title[:60]}")
+                if html_url:
+                    print(f"    {html_url}")
+                self._open_titles.append(issue_title.lower())
                 return True
             else:
                 print(f"  ! Failed to create issue: HTTP {resp.status_code}")
@@ -548,8 +701,7 @@ class IssueCreator:
 def main() -> int:
     ap = argparse.ArgumentParser(description="Security Report Discovery")
     ap.add_argument("--artifacts-dir",   default=".github/artifacts")
-    ap.add_argument("--max-discoveries", type=int, default=None,
-                    help="Override max issues to create (default: from workflow-config.json)")
+    ap.add_argument("--max-discoveries", type=int, default=None)
     ap.add_argument("--date", default=None,
                     help="Override today's date for testing (YYYY-MM-DD)")
     args = ap.parse_args()
@@ -560,7 +712,6 @@ def main() -> int:
     print(f"Security Report Discovery  —  {today.isoformat()}")
     print(f"{'='*70}\n")
 
-    # ── Config ────────────────────────────────────────────────────────────
     try:
         config = Config(args.artifacts_dir)
     except Exception as e:
@@ -571,21 +722,19 @@ def main() -> int:
 
     print(f"✓ Config loaded")
     print(f"  Max issues/run    : {max_issues}")
-    print(f"  Max searches/run  : {config.max_searches}")
+    print(f"  Max tasks/run     : {config.max_tasks}")
     print(f"  Score threshold   : {config.score_threshold}")
     print(f"  Rotation (current): {config.rotation_current} days")
     print(f"  Rotation (stale)  : {config.rotation_stale} days")
     print(f"  Rotation (old)    : {config.rotation_old} days")
     print()
 
-    # ── Credentials ───────────────────────────────────────────────────────
     gh_token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
     repo     = os.environ.get("GITHUB_REPOSITORY", "")
     if not gh_token or not repo:
         print("ERROR: GH_TOKEN / GITHUB_REPOSITORY required")
         return 1
 
-    # ── Build lineage index ───────────────────────────────────────────────
     print(f"{'='*70}")
     print("Building lineage index...")
     print(f"{'='*70}\n")
@@ -593,128 +742,116 @@ def main() -> int:
     scheduler = SlotScheduler(today)
     scanner   = ReportScanner(config, lineage, scheduler)
 
-    # ── Get today's search tasks ──────────────────────────────────────────
     print()
     tasks = scanner.get_todays_tasks()
 
     if not tasks:
-        print("\n⊘ No searches scheduled for today — all series either")
-        print("  up-to-date or not in their rotation slot.")
+        print("\n⊘ No searches scheduled for today.")
         return 0
 
-    # Cap total searches to avoid excessive API usage
-    tasks_to_run = tasks[: config.max_searches]
-    if len(tasks) > config.max_searches:
-        print(f"\n⚠ {len(tasks)} tasks due today — capping at {config.max_searches}")
+    tasks_to_run = tasks[: config.max_tasks]
+    if len(tasks) > config.max_tasks:
+        print(f"\n⚠ {len(tasks)} tasks due — capping at {config.max_tasks}")
 
     print(f"\n{'='*70}")
-    print(f"Running {len(tasks_to_run)} search(es)  [issue limit: {max_issues}]")
+    print(f"Running {len(tasks_to_run)} task(s)  [2 API calls each, issue limit: {max_issues}]")
     print(f"{'='*70}\n")
 
-    # ── Search + score + create issues ───────────────────────────────────
     try:
         searcher = GoogleSearcher(config)
     except RuntimeError as e:
         print(f"ERROR: {e}")
         return 1
 
-    validator = HeuristicValidator(config)
-    creator   = IssueCreator(gh_token, repo)
+    classifier = ResultClassifier(config)
+    validator  = HeuristicValidator(config, classifier)
+    creator    = IssueCreator(gh_token, repo, config.score_threshold)
 
     stats = {
-        "searched":        0,
-        "skip_domains":    0,
-        "skip_score":      0,
-        "candidates":      0,
-        "issues_created":  0,
-        "issues_skipped":  0,
+        "tasks_run":      0,
+        "skip_score":     0,
+        "no_results":     0,
+        "issues_created": 0,
+        "issues_skipped": 0,
+        "pdf_finds":      0,
+        "landing_finds":  0,
+        "unknown_finds":  0,
     }
     tier_counts = {TIER_CURRENT: 0, TIER_STALE: 0, TIER_OLD: 0}
 
     for i, task in enumerate(tasks_to_run, 1):
         if stats["issues_created"] >= max_issues:
-            print(f"\n⊘ Issue limit ({max_issues}) reached — stopping early")
+            print(f"\n⊘ Issue limit ({max_issues}) reached — stopping")
             break
 
         org  = task["org"]
         year = task["target_year"]
         tier = task["tier"]
 
-        print(f"[{i}/{len(tasks_to_run)}] {org} → {year}  [{tier}]")
-        raw_results = searcher.search(task)
-        stats["searched"] += 1
-        tier_counts[tier] += 1
+        print(f"\n[{i}/{len(tasks_to_run)}] {org} → {year}  [{tier}]")
+        stats["tasks_run"] += 1
+        tier_counts[tier]  += 1
 
-        # Score all results, pick the best above threshold
-        best: Optional[Dict[str, Any]] = None
-        best_score = -9999
+        best, pass_used = searcher.search_task(task, classifier, validator)
 
-        for item in raw_results:
-            url     = item["url"]
-            title   = item["title"]
-            snippet = item["snippet"]
-
-            # Skip noise domains
-            if any(d.lower() in url.lower() for d in config.gs_skip_domains):
-                stats["skip_domains"] += 1
-                continue
-
-            score, reject_reason = validator.score(url, title, snippet, year)
-
-            if score == -999:
-                print(f"  — rejected ({reject_reason}): {url[:60]}")
-                continue
-
-            if score > best_score:
-                best_score = score
-                best = {
-                    "org":         org,
-                    "title":       task["title"],
-                    "url":         url,
-                    "snippet":     snippet,
-                    "target_year": year,
-                    "latest_year": task["latest_year"],
-                    "score":       score,
-                    "threshold":   config.score_threshold,
-                    "tier":        tier,
-                }
-
-        if best is None:
-            print(f"  ⊘ No results after filtering")
-        elif best_score < config.score_threshold:
-            print(f"  ⊘ Best score {best_score} < threshold {config.score_threshold} — suppressed")
-            print(f"    {best['url'][:70]}")
-            stats["skip_score"] += 1
-        else:
-            print(f"  ✓ Candidate (score {best_score}): {best['url'][:70]}")
-            stats["candidates"] += 1
-            if creator.create(best):
-                stats["issues_created"] += 1
+        if best is None or best["score"] < config.score_threshold:
+            if best is None:
+                stats["no_results"] += 1
             else:
-                stats["issues_skipped"] += 1
+                print(f"  ⊘ Best score {best['score']} < threshold {config.score_threshold} — suppressed")
+                print(f"    [{best['find_type']}] {best['url'][:70]}")
+                stats["skip_score"] += 1
+            time.sleep(config.gs_rate_sleep)
+            continue
+
+        # Assemble full candidate dict for issue creation
+        candidate = {
+            **best,
+            "org":         org,
+            "title":       task["title"],
+            "target_year": year,
+            "latest_year": task["latest_year"],
+            "tier":        tier,
+            "threshold":   config.score_threshold,
+        }
+
+        ft = best["find_type"]
+        if ft == FIND_PDF:
+            stats["pdf_finds"] += 1
+        elif ft == FIND_LANDING:
+            stats["landing_finds"] += 1
+        else:
+            stats["unknown_finds"] += 1
+
+        if creator.create(candidate):
+            stats["issues_created"] += 1
+        else:
+            stats["issues_skipped"] += 1
 
         time.sleep(config.gs_rate_sleep)
 
-    # ── Summary ───────────────────────────────────────────────────────────
     print(f"\n{'='*70}")
     print("Discovery Summary")
     print(f"{'='*70}")
-    print(f"  Searches run        : {stats['searched']}")
+    print(f"  Tasks run           : {stats['tasks_run']}")
     print(f"    CURRENT tier      : {tier_counts[TIER_CURRENT]}")
     print(f"    STALE tier        : {tier_counts[TIER_STALE]}")
     print(f"    OLD tier          : {tier_counts[TIER_OLD]}")
-    print(f"  Candidates found    : {stats['candidates']}")
+    print(f"  No results          : {stats['no_results']}")
     print(f"  Suppressed (score)  : {stats['skip_score']}")
     print(f"  Issues created      : {stats['issues_created']}")
+    print(f"    Direct PDF finds  : {stats['pdf_finds']}")
+    print(f"    Gated page finds  : {stats['landing_finds']}")
+    print(f"    Unclassified      : {stats['unknown_finds']}")
     print(f"  Issues skipped(dup) : {stats['issues_skipped']}")
     print(f"{'='*70}")
 
-    # Structured lines for workflow step summary to parse
-    print(f"DISCOVERY_SEARCHED={stats['searched']}")
-    print(f"DISCOVERY_CANDIDATES={stats['candidates']}")
+    print(f"DISCOVERY_TASKS={stats['tasks_run']}")
     print(f"DISCOVERY_CREATED={stats['issues_created']}")
     print(f"DISCOVERY_SUPPRESSED={stats['skip_score']}")
     print(f"DISCOVERY_SKIPPED={stats['issues_skipped']}")
+    print(f"DISCOVERY_PDF_FINDS={stats['pdf_finds']}")
+    print(f"DISCOVERY_LANDING_FINDS={stats['landing_finds']}")
     print(f"DISCOVERY_TIER_CURRENT={tier_counts[TIER_CURRENT]}")
     print(f"DISCOVERY_TIER_STALE={tier_counts[TIER_STALE]}")
     print(f"DISCOVERY_TIER_OLD={tier_counts[TIER_OLD]}")

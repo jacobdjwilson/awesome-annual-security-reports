@@ -1,9 +1,13 @@
 {
   "workflow": {
     "discovery": {
-      "max_file_size_mb": 100,
       "default_limit": 10,
-      "pdf_magic_number": "%PDF"
+      "max_searches_per_run": 12,
+      "rotation_days": {
+        "_comment": "How often each priority tier is re-searched. The slot scheduler uses these periods to distribute series evenly across time without any database. Adjust to taste — larger values = less frequent searches per series.",
+        "current": 30,
+        "stale": 91,
+        "old": 182
     },
     "conversion": {
       "system_packages": [

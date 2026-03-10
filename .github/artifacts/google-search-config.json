@@ -30,9 +30,19 @@
           "facebook.com", "youtube.com", "reddit.com", "wikipedia.org"
         ]
       },
-      "report_discovery": {
-        "description": "Discovers new security report PDFs for a specific org+title+year. Returns raw results for heuristic scoring by report-discovery.py.",
+      "report_discovery_pdf": {
+        "description": "Pass 1 — targets direct PDF files. filetype:pdf operator maximises direct-download hits.",
         "query_template": "{organization} {title} {year} annual security report filetype:pdf",
+        "num_results": 8,
+        "skip_domains": [
+          "google.com", "linkedin.com", "twitter.com", "x.com",
+          "facebook.com", "youtube.com", "reddit.com", "wikipedia.org",
+          "amazon.com", "slideshare.net", "scribd.com"
+        ]
+      },
+      "report_discovery_landing": {
+        "description": "Pass 2 — targets landing pages and gated download pages. No filetype filter so gated pages surface. Run only when pass 1 finds nothing above threshold.",
+        "query_template": "{organization} {title} {year} annual security report download",
         "num_results": 8,
         "skip_domains": [
           "google.com", "linkedin.com", "twitter.com", "x.com",
@@ -48,8 +58,66 @@
         "skip_domains": []
       }
     },
+    "find_type_classification": {
+      "_comment": "Rules used by ResultClassifier to determine whether a URL is a direct PDF, a gated landing page, or unknown. Evaluated in order: pdf_indicators checked first, then landing_page_indicators. All matches are case-insensitive substring checks against the lowercased URL.",
+
+      "pdf_indicators": [
+        ".pdf",
+        "/download/",
+        "/downloads/",
+        "/content/dam/",
+        "/wp-content/uploads/",
+        "/media/documents/",
+        "/files/",
+        "/assets/documents/",
+        "/docs/"
+      ],
+
+      "landing_page_indicators": [
+        "/resources/",
+        "/resource/",
+        "/report/",
+        "/reports/",
+        "/research/",
+        "/whitepaper/",
+        "/whitepapers/",
+        "/insights/",
+        "/library/",
+        "/knowledge/",
+        "/get/",
+        "/access/",
+        "/register/",
+        "/form/",
+        "/lp/",
+        "/landing/",
+        "/thank-you/",
+        "/thankyou/"
+      ],
+
+      "gated_page_signals": [
+        "download now",
+        "download the report",
+        "download the full report",
+        "get the report",
+        "get the full report",
+        "access the report",
+        "fill out",
+        "complete the form",
+        "provide your",
+        "register to",
+        "sign up to",
+        "submit your",
+        "request the",
+        "enter your email",
+        "business email",
+        "free download"
+      ],
+
+      "gated_bonus": 12,
+      "gated_bonus_comment": "Score bonus applied when gated_page_signals appear in the snippet, confirming a real gated download page rather than a generic web page."
+    },
     "discovery_heuristics": {
-      "_comment": "Scoring config used exclusively by report-discovery.py. Consolidating all tuning here keeps it in one place without a separate heuristics artifact.",
+      "_comment": "Scoring config used exclusively by report-discovery.py. PDF and landing page candidates share the same positive/negative keyword signals; find_type-specific bonuses are applied on top.",
 
       "score_threshold": 15,
 
