@@ -26,7 +26,7 @@ Our report is structured around attacker behavior and real-world data. The subse
 
 I invite you to explore the data and findings presented in this report.
 
-**Lotem Finkelstein**, VP Research
+Lotem Finkelstein, VP Research
 
 ---
 
@@ -42,7 +42,7 @@ For years, phishing emails served as the primary social engineering vector, and 
 
 ClickFix emerged as one of the most significant social engineering techniques in 2025. First observed in 2024, ClickFix is an initial access method in which attackers manipulate users into executing malicious actions by presenting them with fraudulent instructions.
 
-![Flowchart of a ClickFix attack showing the progression from email/malvertising to victim interaction and final compromise]
+![Flowchart of a ClickFix attack]
 
 This technique succeeds by exploiting user trust and the tendency to follow technical instructions. It has proven highly effective due to its simplicity, scalability, and ability to bypass certain security controls. In 2025, ClickFix activity increased by approximately 500% compared to the previous year and was observed in nearly half of all documented malware campaigns.
 
@@ -52,29 +52,29 @@ This technique succeeds by exploiting user trust and the tendency to follow tech
 
 Voice phishing and impersonation gained significant traction in 2025, proving to be a highly effective means to exploit user trust. Historically associated with low-complexity consumer fraud, phone-based impersonation has evolved into an enterprise-focused intrusion technique used to gain an initial foothold in large organizations.
 
-In 2025, voice-driven social engineering emerged as a primary initial access vector in high-impact enterprise breaches, enabling data theft and extortion. Notable incidents included the compromise of British retailer Marks & Spencer and the targeting of Jaguar Land Rover.
+![Scattered Spider’s breach of Marks & Spencer]
 
-![Flowchart of Scattered Spider’s breach of Marks & Spencer]
-
-![Flowchart of Salesforce attacks attributed to ShinyHunters]
+![SalesForce attacks attributed to ShinyHunters]
 
 ---
 
 ## The 2025 Ransomware Ecosystem
 
-The number of ransomware victims reached record highs in 2025 as the criminal ecosystem underwent rapid reconfigurations. The year began with a large-scale mass-exploitation by Cl0p, followed by the sudden disappearance of several major RaaS (Ransomware-as-a-Service) groups, which created opportunities for emerging actors.
+The number of ransomware victims reached record highs in 2025 as the criminal ecosystem underwent rapid reconfigurations. The year began with a large-scale mass-exploitation by Cl0p, a cyber crime group, followed by the sudden disappearance of several major RaaS (Ransomware-as-a-Service) groups, which created opportunities for emerging actors.
 
-![Graph showing published ransomware victims per month from 2024 to 2025]
+Ransomware activity reached unprecedented levels in 2025. Over 7,960 victims were named on data-leak sites operated by double-extortion groups, a 53 percent year-over-year increase.
+
+![Published ransomware victims per month]
 
 ### Qilin – The Emerging Dominant RaaS Group
 
-Qilin emerged as the dominant RaaS group of 2025, publishing the identities of over 1,000 victims on its data-leak site (DLS) after they refused to pay a ransom. The group, active since 2022, was well-positioned to capitalize on the temporary vacuum caused by the disappearance of major rivals.
+Qilin emerged as the dominant RaaS group of 2025, publishing the identities of over 1,000 victims on its DLS after they refused to pay a ransom. Following RansomHub’s abrupt collapse in April 2025, Qilin aggressively recruited orphaned affiliates.
 
-![Graph showing monthly count of Qilin’s published victims]
+![Qilin’s promotion of new extortion tools in a Dark Web forum]
 
 ### The Check Point Incident Response Team: Inside a Qilin Ransomware Attack
 
-This case study examines a significant attack against a Western European electric power company, illustrating how a single misconfiguration, compounded by weak identity protection, monitoring, and access privileges, allowed a Qilin affiliate to gain complete control over an enterprise environment.
+The incident began with a “super” domain administrator account referred to here as ADMIN. The account held extensive privileges and was used routinely for daily management tasks. Critically, it could be accessed from an unmanaged personal laptop over VPN and did not require multi-factor authentication (MFA).
 
 ![Timeline of the Qilin attack]
 
@@ -84,13 +84,15 @@ This case study examines a significant attack against a Western European electri
 
 In 2025, cyber operations functioned as an integrated part of warfare along with air power, artillery, and special operations. The impact of cyber operations was realized through sustained interaction with military, political, and informational processes, instead of isolated technical effects.
 
-![Diagram of components of major cyber functions in a military conflict: Positioning, Operational Support, Direct Effect, and Narrative/Signaling]
+![Components of major cyber functions in a military conflict]
 
-The cyber operations we observed in 2025 served a small number of recurring functions, including Positioning and Conditioning Activity, Operational Support Activity, Direct Effect Activity, and Narrative Shaping Activity. These roles are not sequential and frequently overlap, as the same access, capability, or operation may serve different purposes over time.
+The cyber operations we observed in 2025 served a small number of recurring functions:
+1. **Positioning and Conditioning Activity**: Establishing and maintaining access.
+2. **Operational Support Activity**: Enabling or reinforcing ongoing military/political operations.
+3. **Direct Effect Activity**: Causing immediate disruption or degradation.
+4. **Narrative Shaping Activity**: Influencing information flows and public perception.
 
----
-
-*Note: This document is a faithful conversion of the provided technical report content.*
+In the Israeli–Iranian confrontation, previously compromised civilian surveillance infrastructure was activated to provide operational visibility. In June 2025, Iranian operators accessed security cameras surrounding the Weizmann Institute and adjacent street-facing systems, gaining live feeds of roads, parking areas, and movement patterns. These feeds were monitored in the hours leading up to and during an Iranian missile strike on the Weizmann Institute, repurposing consumer-grade sensors into an improvised reconnaissance network supporting real-world targeting.
 
 ---
 
