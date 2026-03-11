@@ -3,6 +3,8 @@
     "discovery": {
       "default_limit": 10,
       "max_searches_per_run": 12,
+      "max_file_size_mb": 100,
+      "pdf_magic_number": "%PDF",
       "rotation_days": {
         "_comment": "How often each priority tier is re-searched. The slot scheduler uses these periods to distribute series evenly across time without any database. Adjust to taste — larger values = less frequent searches per series.",
         "current": 30,
