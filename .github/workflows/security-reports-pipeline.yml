@@ -50,7 +50,15 @@ on:
         type: boolean
 
 concurrency:
-  group: security-pipeline-${{ github.event_name }}-${{ github.ref }}
+  # For push events: queue by branch so concurrent pushes are serialised rather than cancelled — critical when committing PDFs one at a time.
+  group: >-
+    ${{
+      github.event_name == 'pull_request'
+        && format('security-pipeline-pr-{0}', github.ref)
+        || github.event_name == 'push'
+        && format('security-pipeline-push-{0}', github.ref)
+        || format('security-pipeline-{0}-{1}', github.event_name, github.run_id)
+    }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
@@ -80,6 +88,8 @@ jobs:
           PDF_SOURCE=$(jq -r '.workflow.folders.pdf_source' .github/artifacts/workflow-config.json)
           MD_FOLDER=$(jq -r '.workflow.folders.markdown_conversions' .github/artifacts/workflow-config.json)
           MAX_AGE_DAYS=$(jq -r '.workflow.conversion.max_age_days' .github/artifacts/workflow-config.json)
+          PUSH_MODE=$(jq -r '.workflow.discovery.push_mode // "missing_conversion"' .github/artifacts/workflow-config.json)
+          PUSH_BATCH_LIMIT=$(jq -r '.workflow.discovery.push_batch_limit // 20' .github/artifacts/workflow-config.json)
 
           echo "max_size_mb=$MAX_SIZE_MB" >> $GITHUB_OUTPUT
           echo "default_limit=$DEFAULT_LIMIT" >> $GITHUB_OUTPUT
@@ -87,13 +97,17 @@ jobs:
           echo "pdf_source=$PDF_SOURCE" >> $GITHUB_OUTPUT
           echo "md_folder=$MD_FOLDER" >> $GITHUB_OUTPUT
           echo "max_age_days=$MAX_AGE_DAYS" >> $GITHUB_OUTPUT
+          echo "push_mode=$PUSH_MODE" >> $GITHUB_OUTPUT
+          echo "push_batch_limit=$PUSH_BATCH_LIMIT" >> $GITHUB_OUTPUT
 
           echo "✓ Loaded configuration:"
-          echo "  Max file size : $MAX_SIZE_MB MB"
-          echo "  Default limit : $DEFAULT_LIMIT"
-          echo "  PDF source    : $PDF_SOURCE"
-          echo "  MD folder     : $MD_FOLDER"
-          echo "  Max age days  : $MAX_AGE_DAYS"
+          echo "  Max file size   : $MAX_SIZE_MB MB"
+          echo "  Default limit   : $DEFAULT_LIMIT"
+          echo "  PDF source      : $PDF_SOURCE"
+          echo "  MD folder       : $MD_FOLDER"
+          echo "  Max age days    : $MAX_AGE_DAYS"
+          echo "  Push mode       : $PUSH_MODE"
+          echo "  Push batch limit: $PUSH_BATCH_LIMIT"
 
       - name: Find and validate PDF files
         id: find-files
@@ -104,6 +118,8 @@ jobs:
           PDF_SOURCE: ${{ steps.load_config.outputs.pdf_source }}
           MD_FOLDER: ${{ steps.load_config.outputs.md_folder }}
           MAX_AGE_DAYS: ${{ steps.load_config.outputs.max_age_days }}
+          PUSH_MODE: ${{ steps.load_config.outputs.push_mode }}
+          PUSH_BATCH_LIMIT: ${{ steps.load_config.outputs.push_batch_limit }}
         run: |
           > files_to_process.txt
           > invalid_files.txt
@@ -182,17 +198,52 @@ jobs:
             fi
 
           elif [ "${{ github.event_name }}" == "push" ]; then
-            echo "Mode: Push"
+            echo "Mode: Push ($PUSH_MODE)"
             echo "scan_mode=push" >> $GITHUB_OUTPUT
 
-            ADDED=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep "$PDF_SOURCE/.*\.pdf$" || true)
-            DELETED=$(git diff --name-only --diff-filter=D HEAD~1 HEAD | grep "$PDF_SOURCE/.*\.pdf$" || true)
+            if [ "$PUSH_MODE" = "missing_conversion" ]; then
+              # Resilient strategy: find every PDF in the repo that has no
+              # corresponding Markdown file. This is immune to how many commits
+              # were pushed, whether they were committed individually or in bulk,
+              # and whether GitHub's diff window missed any files.
+              #
+              # Because the concurrency group serialises push runs per branch,
+              # a queued run that fires after an earlier one finishes will
+              # naturally find fewer (or zero) remaining files and exit cleanly.
+              echo "  Strategy: scan for PDFs missing a Markdown conversion"
+              > all_missing.txt
+              find "$PDF_SOURCE" -name "*.pdf" -type f | sort | while IFS= read -r pdf_path; do
+                md_path=$(echo "$pdf_path" | sed "s|$PDF_SOURCE|$MD_FOLDER|" | sed 's/\.pdf$/.md/')
+                if [ ! -f "$md_path" ]; then
+                  echo "$pdf_path" >> all_missing.txt
+                fi
+              done
 
-            if [ -z "$ADDED" ] && [ -n "$DELETED" ]; then
-              echo "⊘ Only deletions detected — nothing to process"
-              echo "scan_mode=push_delete_only" >> $GITHUB_OUTPUT
-            elif [ -n "$ADDED" ]; then
-              echo "$ADDED" > files_to_process.txt
+              # Cap the batch size so one large push doesn't exhaust API quota
+              if [ "$PUSH_BATCH_LIMIT" -gt 0 ]; then
+                head -n "$PUSH_BATCH_LIMIT" all_missing.txt > files_to_process.txt
+              else
+                cp all_missing.txt files_to_process.txt
+              fi
+
+              TOTAL_MISSING=$(wc -l < all_missing.txt 2>/dev/null || echo 0)
+              QUEUED=$(wc -l < files_to_process.txt 2>/dev/null || echo 0)
+              echo "  PDFs without Markdown : $TOTAL_MISSING"
+              echo "  Queued for this run   : $QUEUED (batch limit: $PUSH_BATCH_LIMIT)"
+
+            else
+              # Legacy git_diff strategy (fragile with individual-file commits,
+              # kept for backwards compatibility if push_mode=git_diff is set).
+              echo "  Strategy: git diff HEAD~1 (legacy)"
+              ADDED=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep "$PDF_SOURCE/.*\.pdf$" || true)
+              DELETED=$(git diff --name-only --diff-filter=D HEAD~1 HEAD | grep "$PDF_SOURCE/.*\.pdf$" || true)
+
+              if [ -z "$ADDED" ] && [ -n "$DELETED" ]; then
+                echo "⊘ Only deletions detected — nothing to process"
+                echo "scan_mode=push_delete_only" >> $GITHUB_OUTPUT
+              elif [ -n "$ADDED" ]; then
+                echo "$ADDED" > files_to_process.txt
+              fi
             fi
 
           else
@@ -267,6 +318,8 @@ jobs:
         run: |
           SCAN_MODE="${{ steps.find-files.outputs.scan_mode }}"
           FILE_COUNT="${{ steps.find-files.outputs.file_count }}"
+          PUSH_MODE="${{ steps.load_config.outputs.push_mode }}"
+          PUSH_BATCH_LIMIT="${{ steps.load_config.outputs.push_batch_limit }}"
 
           echo "## 🔍 File Discovery" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -274,6 +327,9 @@ jobs:
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Mode | \`${SCAN_MODE}\` |" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ github.event_name }}" == "push" ]; then
+            echo "| Push Strategy | \`${PUSH_MODE}\` (batch limit: ${PUSH_BATCH_LIMIT}) |" >> $GITHUB_STEP_SUMMARY
+          fi
           echo "| Files Found | ${FILE_COUNT:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
@@ -285,7 +341,11 @@ jobs:
             cat files_to_process.txt >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
           else
-            echo "⊘ No new PDF files detected in this changeset." >> $GITHUB_STEP_SUMMARY
+            if [ "${{ github.event_name }}" == "push" ] && [ "$PUSH_MODE" = "missing_conversion" ]; then
+              echo "⊘ No unprocessed PDF files found — all PDFs already have a Markdown conversion." >> $GITHUB_STEP_SUMMARY
+            else
+              echo "⊘ No new PDF files detected in this changeset." >> $GITHUB_STEP_SUMMARY
+            fi
           fi
 
           if [ -s invalid_files.txt ]; then

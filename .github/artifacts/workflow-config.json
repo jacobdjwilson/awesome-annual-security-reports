@@ -5,6 +5,9 @@
       "max_searches_per_run": 12,
       "max_file_size_mb": 100,
       "pdf_magic_number": "%PDF",
+      "push_mode": "missing_conversion",
+      "push_batch_limit": 20,
+      "_push_mode_comment": "Controls how the pipeline identifies files to process on a push event. 'git_diff' uses git diff HEAD~1 (fragile with multi-commit pushes and individual-file commits). 'missing_conversion' scans the full PDF folder for any PDF that has no matching Markdown file — this is resilient regardless of how many commits or PDFs were pushed. Set push_batch_limit to cap the number of PDFs processed per push run (0 = unlimited).",
       "rotation_days": {
         "_comment": "How often each priority tier is re-searched. The slot scheduler uses these periods to distribute series evenly across time without any database. Adjust to taste — larger values = less frequent searches per series.",
         "current": 30,
@@ -45,6 +48,7 @@
     },
     "validation": {
       "min_json_size_bytes": 10,
+      "min_markdown_chars": 200,
       "validate_toc": true,
       "verify_conversions": true
     },
