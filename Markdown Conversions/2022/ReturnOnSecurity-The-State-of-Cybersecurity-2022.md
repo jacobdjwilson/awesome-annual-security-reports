@@ -1,18 +1,6 @@
 # The State of Cybersecurity in 2022 with Predictions for 2023
 
-[www.returnonsecurity.com/p/state-cybersecurity-2022-trends-predictions-2023](www.returnonsecurity.com/p/state-cybersecurity-2022-trends-predictions-2023)
-
-Every year, industry experts, professional investors, and vendors look back at the year that was while also looking at the year to come. This year I also wanted to try my hand at writing a report to reflect on the state of cybersecurity from 2022 and gaze into my crystal ball of what 2023 might hold.
-
-In this post, I'll focus mainly on the macro trends I've observed at the industry level based on conversations I had throughout the year with VCs, other practitioners, and cyber startup founders. I will also lean on personal insights I've taken from the data I collect as a part of the Security, Funded newsletter.
-
-If you're not already subscribed to the newsletter, you definitely should be.
-
-[Subscribe to the Newsletter](Subscribe to the Newsletter)
-
-These thoughts found in this post won't come from the lens of venture capital or private investing but from a cybersecurity practitioner who still buys software and leads security programs today.
-
-You'll find primarily my sentiment analysis, interpretations, inferences, and some wild guesses predictions of my own. This is my first post like this, and it will be exciting to see how many of these concepts come true or fall flat on their face in 2023.
+[www.returnonsecurity.com/p/state-cybersecurity-2022-trends-predictions-2023](http://www.returnonsecurity.com/p/state-cybersecurity-2022-trends-predictions-2023)
 
 ## Table of Contents
 - [2022 Year in Review](#2022-year-in-review)
@@ -31,11 +19,21 @@ You'll find primarily my sentiment analysis, interpretations, inferences, and so
   - [11. War on Information Warfare](#11-war-on-information-warfare)
 - [Wrapping Up](#wrapping-up)
 
+Every year, industry experts, professional investors, and vendors look back at the year that was while also looking at the year to come. This year I also wanted to try my hand at writing a report to reflect on the state of cybersecurity from 2022 and gaze into my crystal ball of what 2023 might hold.
+
+In this post, I'll focus mainly on the macro trends I've observed at the industry level based on conversations I had throughout the year with VCs, other practitioners, and cyber startup founders. I will also lean on personal insights I've taken from the data I collect as a part of the Security, Funded newsletter.
+
+If you're not already subscribed to the newsletter, you definitely should be.
+
+**Subscribe to the Newsletter**
+
+These thoughts found in this post won't come from the lens of venture capital or private investing but from a cybersecurity practitioner who still buys software and leads security programs today.
+
+You'll find primarily my sentiment analysis, interpretations, inferences, and some wild guesses predictions of my own. This is my first post like this, and it will be exciting to see how many of these concepts come true or fall flat on their face in 2023.
+
 ## 2022 Year in Review
 
 A future-looking post wouldn't be complete without a quick walk down memory lane. Let's take a quick look at how 2022 and the years prior shaped up.
-
-1/11
 
 2020 and 2021 were years for the record books with investing in cybersecurity. 2021 specifically saw an influx of non-specialized investors, soaring valuations, low levels of due diligence, and an overall explosion of new cyber companies.
 
@@ -45,23 +43,17 @@ Looking into 2022, however, the cybersecurity market started to feel the pull fr
 
 While cybersecurity funding in 2022 saw a noticeable dip from 2021, that didn't stop it from still having a few major funding transactions:
 
-The big funding rounds
-
-![Table of big funding rounds]
+![The big funding rounds]
 
 And not to be outdone, there were several huge acquisitions from both private equity firms and individual companies:
 
-![Table of huge acquisitions]
-
-2/11
+![Acquisitions and mergers chart]
 
 Overall funding for 2022 is expected to come in at around ~$18.4B, with over 700 funding transactions from 642 unique companies and ~$50.1B from over 260 acquisitions and mergers from publicly available data.
 
 This volume may seem high to the uninitiated, but this is a high-speed, low-drag industry. Here's a visual example I created of how the cybersecurity market flywheel works in general and why there is so much innovation.
 
-3/11
-
-![Chart of how the cybersecurity market flywheel works]
+![Cybersecurity market flywheel diagram]
 
 The chart above shows how the industry operates in normal times, say, the last 10-15 years.
 
@@ -70,27 +62,15 @@ But 2022 was no normal time for cybersecurity, so this got a bit skewed from out
 Here are some of the things that cybersecurity vendors, investors, and buyers saw that skewed the market in 2022:
 
 - For private and public deals alike, the cost of capital for cybersecurity founders and investors soared, making it unfavorable to borrow money and see returns.
-
 - Tech company valuations across sectors dropped to less than half of what they had been in previous years, making it harder to raise as much money for as good a deal.
-
 - Significantly fewer cybersecurity companies hit unicorn status and went IPO (although lacking IPOs was not just a cyber thing).
-
 - Investors increased their due diligence and were more cautious about deploying capital, so fewer early-stage deals were funded until about midway through Q3 2022.
-
 - Opportunistic investors (those without a cyber focus) resisted entering the cybersecurity market in 2022, whereas, in 2021, they came flocking in search of returns.
-
 - There were over 150,000 layoffs in the broader tech sector, according to data from Layoffs.fyi, and cyber companies were not spared. Companies that had previously raised over $1.0B in funding and had 2-3x their staff from 2020-2021 had to start making layoffs to curb their burn rates.
-
 - Unlike in 2020 and 2021, fewer cybersecurity companies emerged from stealth in 2022 with no defensible positioning or without a more solid product market fit.
-
 - Cybersecurity buyers (CISOs and security teams) were forced to make budget concessions or looked to consolidate their security and tech stacks, a stark reversal from the past 5+ years. However, this wasn't uniform, and smaller companies were hit harder than larger ones.
-
 - Cybersecurity vendors saw longer sales cycles with each customer they did win and longer customer deployment timelines. Relationships depend on existing customers over net new customer growth.
-
 - The small to medium enterprise (SME) market, already underserved in cybersecurity, experienced additional pressure as cybersecurity vendors attempted to expand further upmarket.
-
-4/11
-
 - Large, publicly traded cybersecurity vendors put significant focus on the US federal sector on the wave of zero-trust initiatives and efforts to secure critical infrastructure. This was additionally heightened by an increased public-private focus from agencies like the CISA and from waves of cyber-physical attacks from the Russia-Ukraine war.
 
 Public sentiment toward cybersecurity has never been higher, and the risks of not having it have never been more apparent. At the same time, macroeconomic forces have provided strong headwinds to progress for many companies.
@@ -112,17 +92,10 @@ Heading into 2023, I believe the funding landscape in cybersecurity looks more p
 A few industry predictions I think we'll see next year include the following:
 
 - More early-stage cybersecurity deals, as seed-stage companies, will lose less inertia from the downward public market trends.
-
 - Additional layoffs at cyber companies as they continue right-sizing operational budgets.
-
 - A decrease in valuations of later-stage companies as they raise additional funding rounds (also known as a "down round") to weather 2023.
-
 - Cyber companies will focus more on net revenue retention (NRR) – that is, trying to get existing customers to buy more modules and increase overall spending – than on new customer acquisition. The higher the NRR, the higher valuations will be.
-
-5/11
-
 - There will still be an absence of cyber companies going the IPO route. 2022 made this a less attractive path for private companies and investors, and that's not the only path for a healthy business to take to see healthy returns.
-
 - A more significant wave of private equity leveraged buyouts and consolidations than last year.
 
 Combining this with the sentiment from some financial analysts that inflation will ease slightly and that cyber startup founders, a very resourceful bunch, have been operating in a stressed environment for a few quarters, and 2023 has lots of potential.
@@ -131,7 +104,7 @@ Combining this with the sentiment from some financial analysts that inflation wi
 
 I also think it's worth making predictions about the innovation ahead for 2023. The cybersecurity industry loves creating product categories and new acronyms like Pokemon.
 
-— # (#)
+![Product predictions chart]
 
 With that in mind, here are the top 11 product predictions I believe we will see in 2023 and where investment dollars will be going (or should be going).
 
@@ -148,8 +121,6 @@ More money and power are up for grabs than ever before. As a result, it appears 
 Expect over-correcting regulation and more Web3 Security companies in 2023.
 
 ### 2. Artificial Intelligence (AI) & Machine Learning (ML) Security
-
-6/11
 
 AI/ML has long been on a collision course with cybersecurity. Cyber vendors have been touting the benefits of using AI/ML in their product offerings for years, but much of it has been vaporware.
 
@@ -179,8 +150,6 @@ All applications have vulnerabilities, and all no-code and low-code platforms ru
 
 As an industry, we are already familiar with the challenges of securing the cloud. Not to mention the massive amount of funding poured into the cloud security space year after year.
 
-7/11
-
 I expect players to enter the no-code security scene similarly to other emerging realms. It will start with visibility and transparency of what kind of data these no-code platforms can view, store, and edit, and then a risk-based picture will begin to emerge from there.
 
 The first step to overcoming a problem is admitting you have a problem. From there, we will see recommendations and scoring of no-code platforms that allow for more transparent security practices and visibility.
@@ -206,8 +175,6 @@ However it's named, it will all come down to cost management and allocation, esp
 Cost in the cloud results from architectural decisions (good or bad), and now security programs need their version of this. CISOs need to be seen as good stewards of corporate capital, and tools like this will become more critical to show the value of cyber programs.
 
 ### 7. Identity Threat Detection
-
-8/11
 
 A common theme with cyber vendors is to take a new approach to an existing problem space that continues to plague the industry.
 
@@ -237,15 +204,11 @@ What constitutes a Value-Added Reseller (VAR) will change considerably.
 
 The "value" in value-added is often light in VAR relationships. Next is adopting vertically integrated and managed software services, not just bespoke consulting or staff augmentation.
 
-- Every VAR will become an MSSP.
-- Every MSP will become an MSSP.
-- Every MSSP will become a VAR.
-- Every VAR will become an Automation Integrator.
-
-9/11
+Every VAR will become an MSSP. Every MSP will become an MSSP.
+Every MSSP will become a VAR.
+Every VAR will become an Automation Integrator.
 
 And Private Equity firms will buy all of them.
-
 Expect to see a lot more private equity acquisitions in the VAR space next year as these spaces munge into one and create attractive cash-flowing businesses.
 
 ### 10. Consumer Protection Gets New Life
@@ -274,8 +237,6 @@ As we learned from 2020 to 2022, misinformation and disinformation can be a matt
 
 Look for the evolution of products designed to identify, filter, and otherwise dispute misinformation campaigns to be applied at a large scale.
 
-10/11
-
 This will likely be harder to tackle since most information people consume these days, good, bad, or otherwise, come from social media sites. It's been no easy feat for social media platforms to sort out what is freedom of speech, what hate speech is, and what constitutes harmful or foul play on individuals or groups.
 
 It won't be an easy job, but it could benefit the rest of society if it can be done even in a small way.
@@ -299,5 +260,3 @@ Thanks for reading, have a great New Year, and I'd love to hear any feedback you
 Cheers,
 
 Mike P
-
-11/11
