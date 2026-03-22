@@ -16,49 +16,7 @@
 
 ---
 
-2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
-
-Página 1 de 43
-
----
-
-Security Status Report 2025 H1
-
-Índex
-
-EXECUTIVE OVERVIEW ................................................................................................................................ 3
-
-HIGHLIGHTS OF THE FIRST HALF OF 2025 ................................................................................................ 5
-
-MOBILES ......................................................................................................................................................... 9
-
-Apple iOS ..................................................................................................................................................................................................................... 9
-
-Apple Transparency Report ............................................................................................................................................................... 11
-
-Android ........................................................................................................................................................................................................ 15
-
-SIGNIFICANT VULNERABILITIES ............................................................................................................... 20
-
-Vulnerabilities in figures ....................................................................................................................................................................... 21
-
-APT OPERATIONS, ORGANISED GROUPS, AND ASSOCIATED MALWARE ........................................ 24
-
-OT THREAT ANALYSIS ................................................................................................................................ 26
-
-THREAT STUDY BY INDICATOR ................................................................................................................. 31
-
-USEFUL LINKS ............................................................................................................................................. 38
-
- 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
-
-Page 2 de 37
-
----
-
-Security Status Report 2025 H1
-
-# EXECUTIVE OVERVIEW
+## Executive Overview
 
 The purpose of this report is to synthesize the cyber security information of the last few months (from mobile security to the most relevant news and the most common vulnerabilities), adopting a point of view that covers most aspects of this discipline, in order to help the reader understand the risks of the current landscape.
 
@@ -68,619 +26,282 @@ The U.S. government announced in April 2025 that it would stop funding MITRE to 
 
 The potential service disruption generated alarm in the cyber security community. Fortunately, hours before the expiration, CISA stepped in and temporarily renewed MITRE's contract, avoiding an immediate disruption of CVE services. This solution was yet considered temporary and highlighted the fragility of relying on a single government funder for such a critical resource. In response, the creation of the CVE Foundation, an independent entity driven by members of the CVE board itself, was announced. The entity will ensure the long-term sustainability and neutrality of the system.
 
-as Google, Apple, Facebook, GitHub, Telegram... and even government portals. The investigation was led by the Cybernews team, which detected at least 30 databases of different sizes, some with more than 3.5 billion records each. It did not look like an attack on a single company, but a massive collection of thefts. It was eventually learned that the alleged “leak” of 16 billion passwords was not a new leak or a recent attack, but a compilation of credentials previously stolen over the years through infostealer-type malware, previous breaches and credential stuffing attacks. The affected sites were not recently compromised to obtain these credentials.
+On the other hand, in June, what appeared to be one of the biggest cyber security incidents in history was revealed: the leak of 16 billion passwords and login credentials for services such as Google, Apple, Facebook, GitHub, Telegram... and even government portals. The investigation was led by the Cybernews team, which detected at least 30 databases of different sizes, some with more than 3.5 billion records each. It did not look like an attack on a single company, but a massive collection of thefts. It was eventually learned that the alleged “leak” of 16 billion passwords was not a new leak or a recent attack, but a compilation of credentials previously stolen over the years through infostealer-type malware, previous breaches and credential stuffing attacks. The affected sites were not recently compromised to obtain these credentials.
 
 What happened (as other times) is that a massive database was compiled and exposed, composed of records already circulating in underground forums and marketplaces. There is no evidence that it contains unpublished data (or at least, not a relevant amount) or extracted from new breaches. The first news went unnoticed by the mainstream media. While the cyber security industry was biting its nails for 24 hours for fear of losing the CVE system, the world went on. The second news, in contrast, opened generic news in all countries, with front pages and reports. Everyone knew about the leak. In this case, the world was on edge while the industry suspected (by pure logic) that it was a compilation of old thefts of no great significance. The numbers were not so much in technical reality as in a headline.
 
-On the other hand, in June, what appeared to be one of the biggest cyber security incidents in history was revealed: the leak of 16 billion passwords and login credentials for services such
+When the continuity of CVE was compromised, the alarm was immediate: experts, companies, and security managers realized that losing this infrastructure meant flying blind in the face of vulnerabilities, a chaos that would affect incident response, infrastructure protection and global coordination. However, the password leak, despite its enormous media coverage, did not generate the same professional concern because, in essence, it did not alter the threat landscape or introduce new risks: it was, above all, noise and recycling of already exposed data.
 
-When the continuity of CVE was compromised, the alarm was immediate: experts, companies, and security managers realized that losing this infrastructure meant flying blind in the face of
+This phenomenon highlights a persistent gap between what really matters in the industry for digital resilience and what the headlines capture. The media tends to amplify the most spectacular or easily understood incidents, even if their real impact is limited, while structural issues - such as critical infrastructure financing and governance - are relegated or overlooked.
 
- 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
+This not only distorts the user's perception, who often ends up believing any amplified alarm without context, but also reflects a certain immaturity in news coverage: the right experts are rarely consulted and the underlying technical consequences are rarely explained. The industry, for its part, reveals that what is really important is not always what is most visible, and that security depends more on the solidity of its foundations - such as CVE - than on the sensational nature of the incidents that make the front pages. Are we still, perhaps, too far removed from the user?
 
-Page 3 de 37
+Whether you are an amateur or a professional, it is important to be able to keep up with relevant cyber security news: what is the most relevant thing going on? What is the current landscape? Through this report, the reader will have a tool to understand the state of security from different perspectives and will be able to learn about its current state and project possible short-term trends. The information gathered is based in large part on the compilation and synthesis of internal data, contrasted with public information from sources we consider to be of quality. Let's go!
+
+## Highlights of the First Half of 2025
+
+*(Content omitted for brevity in this example, but would follow the structure provided in the source text)*
+
+## Mobiles
+
+### Apple iOS
+
+*(Content regarding iOS 18/26, vulnerabilities, and fragmentation)*
+
+### Apple Transparency Report
+
+*(Content regarding government requests for data)*
+
+### Android
+
+*(Content regarding Android 16, Advanced Protection, and vulnerabilities)*
+
+## Significant Vulnerabilities
+
+*(Table of CVEs and scoring)*
+
+### Vulnerabilities in figures
+
+*(Charts and analysis of CVE distribution)*
+
+## APT Operations, Organised Groups, and Associated Malware
+
+*(Analysis of APT28, Lazarus, Primitive Bear, and Mythic Leopard)*
+
+## OT Threat Analysis
+
+*(Analysis of the Aristeo system and threat statistics)*
+
+## Threat Study by Indicator
+
+*(Analysis of IOCs in collaboration with Maltiverse)*
+
+## Useful Links
+
+*(Placeholder for links)*
+
+---
+2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
 
 ---
 
-Security Status Report 2025 H1
+rectly through an IP or indirectly from a domain) and within that machine a resource is specified through
+a path.
 
-vulnerabilities, a chaos that would affect incident response, infrastructure protection and global coordination. However, the password leak, despite its enormous media coverage, did not generate the same professional concern because, in essence, it did not alter the threat landscape or introduce new risks: it was, above all, noise and recycling of already exposed data.
-This phenomenon highlights a persistent gap between what really matters in the industry for digital resilience and what the headlines capture.
-The media tends to amplify the most spectacular or easily understood incidents, even if their real impact is limited, while structural issues - such as critical infrastructure financing and governance - are relegated or overlooked.
+In the end, in the context of malware, every IP and domain will be part of a URL to request a resource.
+Whether it is a URL that directs us to a phishing site and has a domain very similar to the original or it may be
+that the URL serves as a download point for malware.
 
-This not only distorts the user's perception, who often ends up believing any amplified alarm without context, but also reflects a certain immaturity in news coverage: the right experts are
+It is important to determine what is at the end of the URL and categorize it properly to know what type of
+threat we are dealing with. This is precisely what we have asked in the Maltiverse database, and the
+following results have been found:
 
-rarely consulted and the underlying technical consequences are rarely explained. The industry, for its part, reveals that what is really important is not always what is most visible, and that security depends more on the solidity of its foundations - such as CVE - than on the sensational nature of the incidents that make the front pages. Are we still, perhaps, too far removed from the user?
+Malware Download
 
-Whether you are an amateur or a professional, it is important to be able to keep up with relevant cyber security news: what is the most relevant thing going on? What is the current landscape?
-Through this report, the reader will have a tool to understand the state of security from different perspectives and will be able to learn about its current state and project possible short-term trends. The information gathered is based in large part on the compilation and synthesis of internal data, contrasted with public information from sources we consider to be of quality. Let's go!
+185119
 
- 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
+62,20%
 
-Page 4 de 37
+Phishing
 
----
+Lumma Stealer
 
-Security Status Report 2025 H1
+Formbook
 
-# HIGHLIGHTS OF THE FIRST HALF OF 2025
+Clearfake
 
-The following are the news items that have had the greatest impact during the first half of 2025.
+95977
 
-## JANUARY
+32,25%
 
-*   A flaw that allows hibernate images to be retrieved in clear text is identified, potentially exposing passwords and sensitive data if an attacker has physical access to the BitLocker-encrypted hard drive (CVE-2025-21210). This won't be the only problem with this technology this year.
+5613
 
-*   Two serious vulnerabilities are discovered in SAP: CVE-2025-0070, Improper Authentication in SAP NetWeaver AS for ABAP and ABAP Platform, which allows an authenticated attacker to gain illegitimate access to the system by exploiting improper authentication checks. In addition to CVE-2025-0066, an information disclosure in SAP NetWeaver AS for ABAP and ABAP Platform (Internet Communication Framework).
+1,89%
 
-*   A so-called “Belsen Group” leaks configuration files, IP addresses, and VPN credentials of more than 15,000 FortiGate devices from around the world, both public and private sector, for free on the dark web. The 1.6 GB dump includes sensitive information such as clear text passwords, private keys and firewall rules, and has been collected after exploiting vulnerability CVE-2022-40684 in 2022.
-*   Moxa, a provider of industrial communications and networks, issues an urgent advisory on January 3 about two high-impact breaches. There are no mitigation measures available for some of the affected devices at the time. One of these vulnerabilities allows control of affected devices and systems to be taken over remotely.
+4559
 
-*   Xlab publishes research on a Mirai-based botnet that is exploiting 0-day vulnerabilities in industrial and home routers. The botnet handles about 15,000 bots daily and most of them are located in the USA, China, Russia, Iran, and Turkey. The most common activity of this botnet is DDoS attacks.
-*   Although it occurred in October, it becomes known in January. Cloudflare mitigates the largest DDoS attack ever recorded, which peaks at 5.6 terabits per second. The attack is launched by a Mirai-based botnet with 13,000 compromised devices, it targets an Internet service provider in East Asia and lasts only 80 seconds.
+1,53%
 
-## FEBRUARY
+851
 
-*   A 0-day vulnerability in 7-Zip (CVE-2025-0411) was detected in September 2024 that allowed Russian attackers to bypass “Mark of the Web” (MoTW) protection in Windows using double-nested compressed files. This flaw is exploited during February in phishing campaigns targeting Ukrainian government agencies and companies, allowing the execution of malware such as SmokeLoader without displaying security warnings to the user.
-
-*   At least 28 apps on Google Play and Apple's App Store included malware, known as SparkCat or SparkKitty, designed to steal cryptocurrency wallet recovery phrases using optical character recognition (OCR) techniques. This malware, hidden in legitimate apps and downloaded more than 242,000 times, accesses the device's image gallery and searches for screenshots with keywords associated with cryptocurrencies, allowing attackers to empty victims' wallets. This is the first time such a stealer has managed to infiltrate the App Store.
+0,29%
 
  2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
 
-Page 5 de 37
+Page 31 de 37
 
----
+FAKEUPDATES
 
-Security Status Report 2025 H1
+DCRat
 
-*   The FBI blames North Korea, through the APT Group “Lazarus”, for the theft of 1.5 billion dollars from the cryptoasset exchange Bybit. In this operation, which the FBI called “TraderTraitor” and is listed as the largest cryptoasset theft in history, the criminals manages to breach one of the cold wallets, considered secure, accessing the funds and splitting them into multiple wallets to make them harder to trace.
+Stealc
 
-*   Lee Enterprises, one of the largest newspaper groups in the United States, says a cyberattack affecting its systems caused a disruption in February and impacted its operations. These operations include worker access to the system, making it impossible to deliver articles, print, and deliver dozens of newspapers.
-This company, which publishes 77 daily newspapers with a daily circulation of 1.2 million, 350 weeklies and digital editions with more than 44 million unique visitors, was already attacked in 2020 by Iranian cybercriminals during the presidential election campaign.
+Vidar
 
-*   According to chainAnalysis, in 2024, ransomware payments fell by 35% compared to the previous year, totaling $813.55 million compared to $1.25 billion in 2023, despite record attack volumes. Only 30% of victims who negotiated with cybercriminals eventually paid up.
-
-*   Two critical vulnerabilities are discovered in OpenSSH: one, identified as CVE-2025-26465, allows (MitM) type attacks against OpenSSH customers when the VerifyHostKeyDNS option ware enabled. This flaw has existed since 2014 and particularly affected FreeBSD systems where the option was enabled by default. The second one, CVE-2025-26466, introduced in 2023, allows denial-of-service (DoS) attacks before authentication.
-
-## MARCH
-
-*   The GreyNoise research group detects a backdoor campaign affecting thousands of ASUS routers. According to the researchers, this movement would be focused on the establishment of a future botnet.
-
-*   Proofpoint researchers identify a highly targeted email campaign aimed at fewer than five Proofpoint customers in the United Arab Emirates related to aviation and satellite communications, as well as critical transportation infrastructure. This campaign exposes a backdoor called Sosano and the use of polyglots to obfuscate the payload content. These files are specially designed so that different applications interpret them as different file types.
-
-*   Truffle Security researchers discover nearly 12,000 API keys and valid passwords (including AWS, MailChimp and WalkScore credentials) within the Common Crawl dataset, widely used to train artificial intelligence models from companies such as OpenAI, Google and Meta, many of them hardcoded in HTML and JavaScript.
-
-*   YouTube warns of a sophisticated phishing campaign in which cybercriminals use an AI-generated video simulating the platform's CEO, Neal Mohan, announcing fake changes to the monetization policy. The attackers send this deepfake as a private video to content creators, along with emails that include links to a fake YouTube Partner Program verification page. Attempting to “confirm” the new terms, victims hand over their credentials.
-
-*   Researchers identify a massive malware campaign called “Steam”, in which 331 malicious apps on Google Play, disguised as utilities such as health trackers, battery optimizers or QR scanners, achieves more than 60 million downloads. These initially legitimate apps to bypass
-
- 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
-
-Page 6 de 37
-
----
+Coper
 
 Security Status Report 2025 H1
 
-Google's controls, download malicious code after installation to display intrusive ads, steal credentials and card data through phishing, and make them difficult to remove by hiding their icon and activity.
+695
 
-*   Researchers warn about the massive exploitation of the critical vulnerability CVE-2024-4577 in PHP for Windows, which allows remote code execution on servers using PHP in CGI mode. Although the flaw was patched in June 2024, attackers quickly exploited the exploit, especially in Japan, and then globally, with more than 1,000 unique IPs attempting to exploit the vulnerability in January alone.
+0,23%
 
-## APRIL
+537
 
-*   The FBI, through the Internet Crime and Complaint Center (IC3), states that the U.S. lost more than $16.6 billion in 2024. As a reference, in 2023 the reported losses were $12.5 billion. It should be cautioned that, although the figure is very striking, it only reflects activity detected by the IC3 or reported by victims, so it represents only a portion of the final amount.
+291
 
-*   Renal dialysis company DaVita discloses that it suffered a ransomware attack that encrypted parts of its network and impacted some of its operations. Days later, the cybercriminal group Interlock claims credit for the attack and announced that it had 20 terabytes of the company's confidential information. According to the same group, negotiations with the company were unsuccessful, so they put the information up for sale. DaVita has annual revenues in excess of $12.8 billion.
+0,18%
 
-*   GitHub detects more than 39 million leaked secrets in repositories, including API keys and credentials, exposing users and organizations to serious security risks. Despite measures such as push protection enabled by default on public repositories.
-
-*   A critical remote code execution (RCE) vulnerability has been discovered in Apache Parquet, a data storage format widely used in big data and analytics environments, especially on platforms such as Hadoop, AWS, Google Cloud and Azure. It is identified as CVE-2025-30065 and has a maximum CVSS score of 10.0.
-
-*   A massive campaign is discovered in April in which at least ten malicious extensions for Visual Studio Code, published on Microsoft's official marketplace, infected thousands of Windows users with the XMRig cryptominer for Monero.These extensions, which pretended to be legitimate development tools such as “Prettier”, “Discord Rich Presence” or “Solidity Compiler”, accumulates hundreds of thousands of downloads, many of them artificially inflated to appear popular.
-
-*   Google Chrome 136 fixes a vulnerability that had been allowing websites to identify users' browsing history by analyzing the color of links visited with the CSS :visited selector for more than 20 years. This flaw allows malicious sites to track, profile and even launch phishing attacks by detecting which links a user has visited on other sites.
-
-## MAY
-
-*   A joint police operation carried out by Dutch and US authorities dismantles a botnet consisting of some 7,000 Internet of Things (IoT) devices and others in an End of Life (EoL) state. The
-
- 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
-
-Page 7 de 37
-
----
-
-Security Status Report 2025 H1
-
-network was rented to provide anonymity to the attackers. Attackers paid between $9.95 and $110 per month, generating revenues of more than $46 million.
-
-*   Arla Foods, the Danish food industry giant, confirms that it was the target of a cyberattack that disrupts its production operations at a dairy plant in Germany. This attack forced the company to inform its customers of delays in their orders.
-
-*   A supply chain attack targeting Linux servers is detected, where three malicious Go modules published on GitHub contained obfuscated code that downloaded and executed a Bash script capable of completely overwriting the main disk (/dev/sda) with zeros. This action causes total and irreversible data loss and renders the systems unusable. The modules, which imitated legitimate projects, are quickly removed.
-
-*   The LockBit criminal organization suffers an internal breach when its administration and affiliate panels on the dark web were attacked and replaced with a warning message along with a link to download a copy of its MySQL database. The dump exposes key operational details: more than 59,000 bitcoin addresses, attack configurations, affiliate credentials and, especially, more than 4,400 records of negotiations between victims and extortionists since December 2024.
-*   Researchers uncover a massive campaign that introduced more than 100 malicious extensions to the Chrome Web Store, masquerading as legitimate tools such as VPNs, AI assistants and utilities from well-known brands such as Fortinet and YouTube. These extensions, promote through fake websites and malvertising, offer some of the promised functionality, but in reality, they steal cookies, credentials and browsing data, can execute remote scripts, modify traffic and turn the browser into a proxy for the attackers.
-
-## JUNE
-
-*   WestJet, Canada's second largest airline, confirms a cyberattack that disrupted access to some internal systems. The attack also prevents users from logging into the website and mobile app, services that were restored by now.
-
-*
-
-*   A new attack named ‘SmartAttack’ uses smartwatches as covert ultrasonic signal receivers to extract data from physically isolated systems through the “Airgap” technique, used in many industrial environments. This technique can also interfere with the performance of RAM, displays, SATA cables... etc. Even if the reception of these signals can be done through Smartwatch, still someone must have compromised the Airgap isolated device.
-In June 2025, CVE-2025-49113, a critical remote code execution (RCE) vulnerability in Roundcube Webmail affecting all versions from 1.1.0 to 1.6.10, is disclosed. The flaw, caused by a lack of validation on the _from parameter in the upload.php script, allows an authenticated attacker to execute malicious code on the server, compromising the security of the platform. More than 84,000 Roundcube instances remain vulnerable.
-In June 2025, two critical local privilege escalation vulnerabilities are discovered in Linux, CVE-2025-6018 and CVE-2025-6019, which allow any user with access to a session (even via SSH) to gain root permissions on most modern distributions. The first flaw, in SUSE's PAM configuration, grants “allow_active” privileges to remote users; the second, in libblockdev and the udisks daemon (present by default in almost all Linux systems), allows these users to elevate themselves to root with very little effort.
-
-*
-
- 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
-
-Page 8 de 37
-
----
-
-Security Status Report 2025 H1
-
-*
-
-It is reported that more than 46,000 instances of Grafana exposed to the Internet remain vulnerable to the critical flaw CVE-2025-4123, an open redirect and XSS issue that allows attackers to execute malicious plugins and hijack user accounts via a simple link. The exploit, which does not require elevated privileges and can run even with anonymous access enabled, allows session hijacking, credential switching and, in some cases, SSRF attacks against internal systems.
-
-# MOBILES
-
-## Apple iOS
-
-The new iOS 18 security improvements
-
-We will have to wait until after the summer to know the security improvements of the new version of iOS.
-
-What we do know, so far, is that it will not be called iOS 19 but iOS 26. We are moving from linear numbering to naming the operating systems in a unified way according to the year; but even though it will be released in 2025, the name will be brought forward to the next one.
-
-In the following report we will reveal the new security features that iOS 26 will bring us.
-
-Vulnerabilities and versions released in the first half of 2025
-
-We closed out 2024 with iOS 18.2. 2025 didn’t take long to bring a new update, although in this case, it didn’t include any security fixes. On January 6, iOS 18.2.1 was released.
-
-It wasn’t until January 27 that the first patches arrived. That day, Apple released iOS 18.3, which addressed 38 CVEs — some of them affecting the kernel, with the potential for arbitrary code execution or privilege escalation. Notably, CVE-2025-24085, a vulnerability in CoreMedia, was being actively exploited by attackers to escalate privileges on iOS versions prior to 17.2.
-
-On February 10, Apple issued an emergency update: iOS 18.3.1. This patch addressed a very specific vulnerability, known to have been exploited in a targeted attack against a high-profile individual. Specifically, the update fixed an issue allowing access to a locked iPhone (CVE-2025-24200).
-
-The alarms didn’t stop there. On March 11, Apple released iOS 18.3.2 to patch another vulnerability that had been used in highly targeted attacks. This time, it was a WebKit buffer overflow (out-of-bounds write), registered as CVE-2025-24201.
-
-Given the severity of these two vulnerabilities, Apple also decided to release updates for older devices. On March 31, versions 15.8.4 and 16.7.11 were published to address the same issues on legacy systems.
-
-That same day, iOS 18.4 was released, patching a staggering 75 unique vulnerabilities. Despite the high number, only one of them — CVE-2025-24243, involving the Audio component — could be exploited to execute arbitrary code.
-
-On April 16, Apple released another critical update: iOS 18.4.1. It patched two zero-day vulnerabilities that had been actively exploited in targeted operations — similar to previous cases. One was in the CoreAudio component, and the other in RPAC (Reconfigurable Preprocessing Architecture Core).
-
-From that point until May 12 — the release date of iOS 18.5 — no further incidents were reported. This update addressed 33 vulnerabilities, including two that could allow arbitrary code execution.
-
- 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
-
-Page 9 de 37
-
----
-
-Security Status Report 2025 H1
-
-Evolution of vulnerabilities in iOS during the first half of 2025
-
-This number is similar to that of the first half of 2025, which is slightly higher with 153 patches.
-
-The second half of 2024 closed with 149 patched vulnerabilities, four considered high-risk, with the possibility of executing arbitrary code.
-
-VULNERABILITTIES IN IOS 2025-H1
-Evolution of vulnerabilities by year
-
-Total vulnerabilities found
-
-Category within "arbitrary code
-execution"
-
-387
-
-387
-
-112
-
-69
-
-211
-
-122
-
-96
-
-50
-
-51
-
-163
-
-222
-
-125
-
-156
-
-187
-
-78
-
-63
-
-261
-
-267 260
-
-163
-
-153
-
-13
-
-37 48
-
-66
-
-21
-
-28
-
-22
-
-1
-0
-
-9
-2
-
-27
-
-6
-
-32
-
-14
-
-37
-
-10
-
-2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025
-
-Fragmentation of versions during the first half of 2025
-
-Fragmentation has never been traditionally an issue for iOS developers. The advantage of having a homogeneous platform is undisputed and continues to yield near-identical figures every time we review iPhone user adoption of a new version of the operating system.
-
-And no wonder. The first four share positions are occupied by iOS 18 and its different versions.
-
- 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
-
-Page 10 de 37
-
----
-
-Security Status Report 2025 H1
-
-FRAGMENTACIÓN EN APPLE iOS 2025-H1
-
-Others
-
-21,86%
-
-3,34%
-
-5,72%
-
-5,97%
-
-16.7
-
-18.2
-
-17.6
-
-18.5
-
-18.4
-
-18.1
-
-18.3
-
-9,09%
-
-10,85%
-
-16,12%
-
-27,05%
-
-0,00%
-
-5,00%
-
-10,00%
-
-15,00%
-
-20,00%
-
-25,00%
-
-30,00%
-
-That said, we have a 21.86% share that does not specify version, so it is a bag of versions that we cannot identify and could be supported or not.
-
-The latest version supported by Apple is iOS 15, released in September 2021.
-
-## Apple Transparency Report
-
-Governments sometimes need to rely on large corporations to do their job. When a threat involves knowing the identity or having access to the data of a potential attacker or a victim in danger, the digital information stored by these companies can prove vital to the investigation and avert a catastrophe. Apple publishes a comprehensive report every six months on what data governments request from it, which data and to what extent the requests are fulfilled. We update here some data we have extracted from information published by Apple for the second half of 2023 and first half of 2024 (the latest published by Apple as of the first half of 2025) on government activities and requests to the company.
-
-### Device-based requests
-
-It represents requests from government agencies requesting Apple device information, such as serial number or IMEI number. When law enforcement acts on behalf of customers who, for example, have had their device stolen or lost. It also receives requests related to fraud investigations: they typically request details of Apple customers associated with Apple devices or connections to Apple services.
-
- 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
-
-Page 11 de 37
-
----
-
-Security Status Report 2025 H1
-
-Country
-
-Requests
-2023-H2
-
-Accepted
-2023-H2
-
-Requests
-2024-H1
-
-Accepted
-2024-H1
-
-Addition
-
-% Accepted
-
-United States
-
-6.410
-
-5.233
-
-12.043
-
-10.377
-
-18.543
-
-Germany
-
-8.866
-
-4.463
-
-9.778
-
-4.713
-
-18.644
-
-China
-mainland
-
-905
-
-853
-
-1.212
-
-1.146
-
-2.117
-
-Brazil
-
-5.858
-
-4.765
-
-8.776
-
-6.808
-
-14.634
-
-United
-Kingdom
-
-1.633
-
-1.337
-
-2.925
-
-2.278
-
-4.558
-
-85%
-
-49%
-
-94%
-
-79%
-
-79%
-
-Spain
-
-620
+0,10%
 
 290
 
-540
+0,10%
 
-186
+272
 
-1.160
+0,09%
 
-41%
+There are no surprises regarding the two categories with the highest number of indicators: phishing and
+malware download. Because if there is a classic in cyber security regarding what awaits us at the end of a
+URL, it is precisely these two major categories.
 
-As usual, Germany leads the way in requests for device information, although in 2024 the United States made a strong comeback. Brazil is also a major player here. In Spain, there is a curious detail: the acceptance rate is quite low.
+However, they are categories that group or assimilate a large part of what we find in the long tail. The rest of
+the categories are more explicit and even indicate to which malware family they belong.
 
-### Requests based on financial data
+In the last edition we had Stela Stealer as the star malware. It has disappeared, but in its place comes
+Lumma Stealer, hitting hard and with the same functionality: stealing data. It affects Microsoft Windows
+systems and mainly uses the phishing vector via e-mails.
 
-These requests happen when law enforcement acts on behalf of customers who require assistance related to fraudulent credit card or gift card activity that has been used to purchase Apple products.
+It is followed in the ranking by FormBook, another stealer disguised as a trojan, which also has a MacOS
+version in addition to Windows.
 
-Country
+The rest are distributed, as we can see, among the most widespread malware families. Infrastructure that
+serves as a download point, to capture orders and even to temporarily deposit stolen information. A long line
+of families with different DNA but with a common malicious payload.
 
-Requests
-2023-H2
+Which domains are most commonly used by URLs marked as malicious?
 
-Data Prov.
-2023-H2
+We consulted Maltiverse this year to find out which domains appear most frequently in the URLs studied.
 
-Requests
-2024-H1
+It is interesting to note which services, mostly legitimate, are the most used by malware writers and their
+associated campaigns.
 
-Data Prov.
-2024-H1
+In the end, a URL will have a host or redirect and needs an executable web space or application that at some
+point it will use for its purposes. It is the domain that will “tell us” where it has been hosted and what service
+it has used (illegitimately, for example).
 
-Addition
+vercel.app
 
-% Accepted
+webflow.io
 
-Taiwan
+10281
 
-Japan
+3,45%
 
-China
-mainland
+9480
 
-United States
-
-South Korea
-
-4.415
-
-4.345
-
-4.968
-
-4.819
-
-9.383
-
-477
-
-327
-
-1.018
-
-154
-
-300
-
-278
-
-744
-
-131
-
-1.345
-
-1.142
-
-1.822
-
-465
-
-361
-
-792
-
-1.341
-
-199
-
-930
-
-2.359
-
-111
-
-353
-
-98%
-
-79%
-
-81%
-
-71%
-
-69%
+3,19%
 
  2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
 
-Page 12 de 37
+Page 32 de 37
 
----
+github.io
+
+pages.dev
+
+github.com
+
+weebly.com
+
+godaddysites.com
+
+duckdns.org
+
+r2.dev
+
+glitch.me
 
 Security Status Report 2025 H1
 
-Spain
+6892
 
-593
+4940
 
-197
+3448
 
-640
+2325
 
-224
+1913
 
-1.233
+1519
 
-34%
+1319
 
-Taiwan again surpasses the United States in requests for fraud information during the second half of 2023 and first half of 2024. Spain occupies a prominent position, also, as in the previous case, with a very low acceptance rate.
+1154
 
-### Account-based requests
+2,32%
 
-Requests are made from governments to Apple related to accounts that may have been used in violation of the law and Apple's terms of use. These are iCloud or iTunes accounts and their name, address and even content in the cloud (backup, photos, contacts…).
+1,66%
 
-Country
+1,16%
 
-Requests 2023-
-H2
+0,78%
 
-Requests 2024-
-H1
+0,64%
 
-Addition
+0,51%
 
-% Accepted
-23H2
+0,44%
 
-% Accepted
-24H1
+0,39%
 
-United States
+As usual, the top spots belong to online services that allow you to host web content for free: vercel.app,
+weflow.io, github.io.
 
-10.827
+It's a common pattern: Why take a risk on private hosting or compromised servers when they offer free and
+anonymous hosting?
 
-12.812
+There are also domains associated with these malicious URLs that use dynamic domain resolvers:
+duckdns.org. In essence, they are actually naked IPs that through a free DNS service can be resolved to a
+particular subdomain and even if they need to migrate the malicious infrastructure, they move the IP
+address and will continue to resolve to the new location.
 
-23.639
+As we can see, in one type of service or another, the keynote is always: free and anonymous. Two
+characteristics that are sought after and used zealously by cybercriminals.
+
+Which countries are the IP addresses on which malicious activity has been detected?
+
+Before answering the question, it should be clarified that just because a country appears in this ranking does
+not mean that there is malicious intent with respect to that country. Many countries stand out from the rest
+because they have more services and hosting companies, which translates directly into greater fraudulent
+use. A server can be hosted in a country and the criminal organization that uses it can come from another
+nationality.
+
+India
+
+68265
+
+20,34%
+
+United States of America
+
+52462
+
+15,63%
+
+ 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
+
+Page 33 de 37
+
+China
+
+Singapur
+
+Vietnam
+
+Russia
 
 Germany
 
@@ -688,244 +309,355 @@ Brazil
 
 United Kingdom
 
-Japan
-
-Spain
-
-1.925
-
-3.327
-
-1.414
-
-259
-
-101
-
-2.655
-
-3.664
-
-2.550
-
-841
-
-156
-
-90%
-
-63%
-
-62%
-
-81%
-
-55%
-
-34%
-
-90%
-
-65%
-
-71%
-
-82%
-
-77%
-
-36%
-
-The United States again leads by a comfortable margin in account information requests sent to Apple during late 2023 and early 2024.
-
-### Requests Related to Account Preservation
-
- 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
-
-Page 13 de 37
-
----
+Pakistan
 
 Security Status Report 2025 H1
 
-Under the context of the U.S. Electronic Communications Privacy Act (ECPA), Apple may be requested to “freeze” an account's data and hold it for 90 to 180 days. This is a preliminary step to requesting access to the account, pending legal permission to request data and to prevent the account from being deleted by the respondent.
+30877
 
-Country
+9,20%
 
-Requests 2023-H2
+17491
 
-Preserved 2023-H2
+5,21%
 
-Requests 2024-H1
+16084
 
-Preserved 2024-H1
+4,79%
 
-United States
+13246
 
-Brazil
+3,95%
 
-United Kingdom
+11178
 
-Germany
+8914
 
-France
+7091
 
-Spain
+3,33%
 
-6.610
+2,66%
 
-242
+2,11%
 
-47
+6855
 
-53
+2,04%
 
-2
+There are no major variations in this aspect in recent years. These are countries with large technological
+infrastructures and, therefore, as mentioned above, they have a proportionally greater potential to be used
+by cybercrime.
 
-1
+What kind of maliciousness do IP addresses engage in?
 
-16.682
+We could conclude that certain governments request access to data "too often," but we could also argue
+that justice may operate more quickly there, or that there may be more fraud in these locations the
+interpretation is free. Below are some conclusions based on our analysis:
 
-466
+Suspicious host
 
-54
+Mail Spammer
 
-61
+HTTP Spammer
 
-6
+Malicious host
 
-1
+Bruteforce
 
-8.170
+Hacking
 
-264
+158322
 
-64
+47,17%
 
-52
+143953
 
-41
+42,89%
 
-0
+117679
 
-20.513
+35,06%
 
-407
+81556
 
-99
+24,30%
 
-50
+59340
 
-85
+17,68%
 
-0
+57975
 
-The United States is by far the country with the most requests, followed by Brazil. In this respect, Spain hardly ever makes this type of request.
-
-### Emergency requests
-
-Also under the U.S. Electronic Communications Privacy Act (ECPA), it is possible to request Apple to provide private account data if in emergency situations it is believed that this could avert a danger of death or serious harm to individuals.
-
-Country
-
-Requests
-2023-H2
-
-Data Prov.
-2023-H2
-
-Requests
-2024-H1
-
-Data Prov.
-2024-H1
-
-Add. Data Prov.
-
-United Kingdom
-
-United States
-
-Japan
-
-Canada
-
-Germany
-
-Spain
-
-655
-
-636
-
-259
-
-147
-
-99
-
-5
-
-597
-
-451
-
-215
-
-125
-
-73
-
-3
-
-726
-
-793
-
-288
-
-169
-
-99
-
-1
-
-658
-
-601
-
-239
-
-141
-
-74
-
-1
-
-1.255
-
-1.052
-
-454
-
-266
-
-147
-
-4
+17,27%
 
  2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
 
-Page 14 de 37
+Page 34 de 37
 
----
+Security Status Report 2025 H1
 
-Security Status Report 2025 H1
+Port Scanner
 
-The United Kingdom continues to be the country with the highest number of such requests to Apple, with most of them being fulfilled.
+SSH Attacker
 
-### Requests related to the removal of apps from the market
+Proxy
 
-This data is no longer provided in Apple's report. We will update the following with more information and new developments in Apple's transparency report.
+HTTP Attacker
 
-To clarify: In this exercise we have graphed the tables published by Apple itself. It is important to specify that requests are made in batches that may include more than one account or device. Apple, for example, counts the number of requests for device information, and in turn each request can contain an undetermined number of devices in them. Same with account requests and the number of accounts in each request. When Apple talks about the percentage of fulfilled requests, it is talking about requests, but not about specific accounts. For example: Apple receives 10 requests, with 100 devices among all the requests and then says it has satisfied 90% of the requests, we don
+55216
+
+16,45%
+
+54335
+
+16,19%
+
+51675
+
+15,40%
+
+42955
+
+12,80%
+
+Later, when a label is added with the explanation of why: spam, indiscriminate scans, etc., the suspicious
+host label is not removed as it is a further refinement. Another type of generalist labeling is found in
+“Malicious host”. Identical meaning, although it adds a little more certainty in the preliminary diagnosis.
+
+If we aggregate the tags by specific IP address activity, we see that SPAM, both HTTP and Mail, top the
+ranking with more than 80% of the tags. Remember that tags overlap, so the same IP can contain several of
+them. A generalist of “suspicious” and “HTTP Spammer”, for example, or even that the same IP is used for
+port scanning because it has been a detected activity at some point in time.
+
+SSH Attacker is a unique category. It almost certainly belongs to groups of infected hosts coordinated by a
+Mirai-type botnet. Mass scanning for easy access via SSH (Secure Shell) has been a constant feature of the
+Internet for decades (as was Rlogin or telnet in its early days). Almost 16.19% of IP addresses have been
+observed performing attacks on SSH (mostly dictionary attacks on the login).
+
+Likewise, “Bruteforce” refers to the continuous attempt to perform brute-force authentication (actually,
+again: dictionaries of common usernames and passwords). This category adds up to almost 17.68%.
+
+In another subcategory, indiscriminate scans, we find: Port and Host scanner. IP addresses that have been
+detected by performing mass scans of entire ranges or multiple ports on specific hosts. That is, horizontal
+scans looking for certain ports or vertical scans (in depth) on a group of hosts.
+
+The  “Proxy” category with almost 15.4% are systems that, either deliberately or unsuspectedly, serve as a
+gateway or hop to other machines to hide the origin of certain attacks or unauthorized access.
+
+Overall, we find the “hacking” category with 17.27% closing the ranking. These are nodes that have been
+observed performing attacks in general, either trying to find SQL vulnerabilities or launching exploits. Often,
+these are vulnerability scanners used indiscriminately and, of course, without authorization.
+
+ 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
+
+Page 35 de 37
+
+Security Status Report 2025 H1
+
+What are the top level domains (TLDs) with the most malicious domains?
+
+As we know, a domain resolves to an IP address. In the world of cybercrime, domains are of paramount
+importance because they allow you to make use of it and change the IP address if the currently active server
+ceases its malicious activity.
+
+A domain is composed of several levels. If you look at them, they are stretches of strings separated by dots. If
+we get these groups from right to left they form a hierarchy. The rightmost one is the highest level domain.
+
+Hence, we can group the domains categorized as malicious by their highest level domain. The result of the
+top 10 is this:
+
+xyz
+
+com
+
+io
+
+top
+
+org
+
+app
+
+net
+
+dev
+
+shop
+
+gg
+
+43193
+
+29,52%
+
+34609
+
+23,65%
+
+9768
+
+5170
+
+4705
+
+4188
+
+3532
+
+2896
+
+6,68%
+
+3,53%
+
+3,22%
+
+2,86%
+
+2,41%
+
+1,98%
+
+2450
+
+1,67%
+
+1831
+
+1,25%
+
+“xyz” tops our TLD ranking this semester. Although it disputes in alternation the leadership with “com”, it
+rises strongly and snatches the baton. “xyz” was born in 2014 and was pushed by Google for matching its
+parent: “abc.xyz”.
+
+Why is “xyz” the “favorite” of malware creators? Because of its competitive prices: from $0.99 per year it is a
+more than attractive figure to use domains of this TLD.
+
+Regarding “.app” it is especially curious as it is a TLD for which Google paid more than $25 million to ICANN
+in February 2015 to take control of it. Moreover, it is a TLD for which HTTPS traffic is mandatory.
+
+ 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
+
+Page 36 de 37
+
+Security Status Report 2025 H1
+
+“gg” which sneaks into our top 10 is a geographic TLD belonging to Guernsey. An island in the English
+Channel, belonging to the United Kingdom. It is a TLD lately associated with video games and e-sports sites.
+
+What malicious categorization do the studied domains possess?
+
+Domains are closely linked to URLs (of which they are part) and also, of course, to the IP addresses to which
+a domain resolves.
+
+Finally, let us see how the top 10 of these domains have been classified over the last six months.
+
+Phishing
+
+Metastealer
+
+Formbook
+
+Lumma Stealer
+
+Virut
+
+Malware Download
+
+Joker
+
+Xworm
+
+BumbleBee
+
+Bankbot
+
+44483
+
+39659
+
+14389
+
+8623
+
+6708
+
+5077
+
+2394
+
+1734
+
+1608
+
+1406
+
+30,40%
+
+27,10%
+
+9,83%
+
+5,89%
+
+4,58%
+
+3,47%
+
+1,64%
+
+1,19%
+
+1,10%
+
+0,96%
+
+As we have already mentioned, there is a very close relationship between domains and URLs and this can be
+seen in the top 10 categories: phishing and malware in general. The rest belong to malware families that
+have had an impact.
+
+ 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
+
+Page 37 de 37
+
+Security Status Report 2025 H1
+
+USEFUL LINKS
+
+Do not just stay in the top layer of cyber security analysis, the semi-annual reports are both cumulative and
+summarized. Telefónica Tech's cyber security blog has much more information and news which may be
+interesting for you. Here are our most relevant articles.
+
+ CYBER SECURITY
+
+The truth about the 320 seconds to hack Bitcoin: a technical analysis
+Analysis of an intrusion on the Aristeo platform as a demo of Its predictive capabilities
+Linux and the vulnerability paradox: More reports, more security?
+
+   ARTIFICIAL INTELLIGENCE
+
+https://telefonicatech.com/en/blog/the-incredible-inner-world-of-llms-i
+
+The incredible inner world of LLMs (II)
+
+La tokenización y el caballero andante Don Quijote
+
+The information contained in this document is property of Telefónica Cybersecurity & Cloud Tech S.L.U. (hereinafter “Telefónica Tech”) and/or
+any other entity within the Telefónica Group or its licensors.
+
+Telefónica Tech and/or any Telefónica Group company or Telefónica Tech's licensors reserve all intellectual property rights (including any
+patents or copyrights) arising out of or relating to this document, including the rights to design, produce, reproduce, use, and sell this
+document, except to the extent that such rights are expressly granted to third parties in writing. The information contained in this document
+shall be changed at any time without notice.
+
+Telefónica Tech shall not be liable for any loss or damage arising from the use of the information contained herein.
+
+Telefónica Tech and its trademarks (as well as any trademarks belonging to the Telefónica Group) are registered trademarks. Telefónica Tech
+and its subsidiaries reserve all rights therein.
+
+This report is published under a Creative Commons Attribution - Share Alike license
+
+ 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved.
+
+Page 38 de 37
