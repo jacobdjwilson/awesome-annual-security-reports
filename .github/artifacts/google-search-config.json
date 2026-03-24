@@ -119,7 +119,8 @@
     "discovery_heuristics": {
       "_comment": "Scoring config used exclusively by report-discovery.py. PDF and landing page candidates share the same positive/negative keyword signals; find_type-specific bonuses are applied on top.",
 
-      "score_threshold": 15,
+      "score_threshold": 20,
+      "score_threshold_comment": "Raised from 15 to 20 to reduce false positives. Domain match bonus (+25) means on-domain results still clear the bar easily; off-domain raw PDFs now need stronger keyword evidence.",
 
       "positive_signals": {
         "annual":               10,
@@ -151,12 +152,33 @@
         "podcast":        -20,
         "press release":  -15,
         "release notes":  -15,
-        "changelog":      -20
+        "changelog":      -20,
+        "magazine":       -25,
+        "journal":        -20,
+        "conference":     -30,
+        "proceedings":    -30,
+        "certification":  -20,
+        "course":         -20
       },
 
       "year_in_url_bonus":   20,
       "year_in_title_bonus": 15,
       "pdf_url_bonus":       10,
+
+      "org_domain_match_bonus": 25,
+      "org_domain_match_bonus_comment": "Applied when a result URL's registered domain matches the org's known domain from the README org_url column. This strongly favours the vendor's own publication page over third-party mirrors.",
+
+      "org_domain_mismatch_pdf_penalty": -20,
+      "org_domain_mismatch_pdf_penalty_comment": "Applied to FIND_PDF results whose domain does NOT match the org's known domain. Raw PDFs hosted on unrelated sites are a primary source of false positives (mirrors, aggregators, cached copies of older reports). Landing pages on aggregator sites are NOT penalised because they may legitimately point to the vendor's page.",
+
+      "wrong_year_in_url_penalty": -30,
+      "wrong_year_in_url_penalty_comment": "Applied when the URL contains a 4-digit year that differs from the target year. This is the most reliable signal that filetype:pdf surfaced a previous edition rather than the target year.",
+
+      "self_reference_domains": [
+        "github.com/jacobdjwilson",
+        "raw.githubusercontent.com/jacobdjwilson"
+      ],
+      "self_reference_domains_comment": "URLs matching any of these substrings are hard-rejected. The Google CSE occasionally surfaces the repo itself as a result because the README lists all the PDFs.",
 
       "url_reject_patterns": [
         "/webinar/", "/webinars/", "/slides/", "/video/", "/videos/",

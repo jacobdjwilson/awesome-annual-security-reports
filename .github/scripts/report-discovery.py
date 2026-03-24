@@ -89,16 +89,25 @@ class Config:
 
         # ── Discovery heuristics ──────────────────────────────────────────
         h = gs.get("discovery_heuristics", {})
-        self.score_threshold:       int            = h.get("score_threshold", 15)
-        self.positive_signals:      Dict[str, int] = h.get("positive_signals", {})
-        self.negative_signals:      Dict[str, int] = h.get("negative_signals", {})
-        self.year_in_url_bonus:     int            = h.get("year_in_url_bonus",   20)
-        self.year_in_title_bonus:   int            = h.get("year_in_title_bonus", 15)
-        self.pdf_url_bonus:         int            = h.get("pdf_url_bonus",       10)
-        self.url_reject_patterns:   List[str]      = h.get("url_reject_patterns", [])
-        self.financial_title_terms: List[str]      = h.get("financial_title_terms", [])
-        self.exclude_terms:         List[str]      = h.get("exclude_terms", [])
-        self.pdf_path_patterns:     List[str]      = h.get("pdf_path_patterns", [".pdf"])
+        self.score_threshold:          int            = h.get("score_threshold", 15)
+        self.positive_signals:         Dict[str, int] = h.get("positive_signals", {})
+        self.negative_signals:         Dict[str, int] = h.get("negative_signals", {})
+        self.year_in_url_bonus:        int            = h.get("year_in_url_bonus",   20)
+        self.year_in_title_bonus:      int            = h.get("year_in_title_bonus", 15)
+        self.pdf_url_bonus:            int            = h.get("pdf_url_bonus",       10)
+        self.url_reject_patterns:      List[str]      = h.get("url_reject_patterns", [])
+        self.financial_title_terms:    List[str]      = h.get("financial_title_terms", [])
+        self.exclude_terms:            List[str]      = h.get("exclude_terms", [])
+        self.pdf_path_patterns:        List[str]      = h.get("pdf_path_patterns", [".pdf"])
+
+        # ── Domain-anchoring scoring ──────────────────────────────────────
+        self.org_domain_match_bonus:   int = h.get("org_domain_match_bonus",   25)
+        self.org_domain_mismatch_pdf_penalty: int = h.get("org_domain_mismatch_pdf_penalty", -20)
+        self.wrong_year_in_url_penalty: int = h.get("wrong_year_in_url_penalty", -30)
+        self.self_reference_domains:   List[str] = h.get("self_reference_domains", [
+            "github.com/jacobdjwilson",
+            "raw.githubusercontent.com/jacobdjwilson",
+        ])
 
     def _load(self, filename: str) -> Dict[str, Any]:
         path = self.artifacts_dir / filename
@@ -150,6 +159,77 @@ class ReportLineageIndex:
 
     def has_year(self, stem: str, year: int) -> bool:
         return year in self.index.get(self._fp(stem), set())
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ORG DOMAIN INDEX  (new)
+# ══════════════════════════════════════════════════════════════════════════════
+
+class OrgDomainIndex:
+    """
+    Parses README.md to extract the known org_url for each report series,
+    then maps the PDF filename stem → registered domain (e.g. "crowdstrike.com").
+
+    README format expected:
+        | [CrowdStrike](https://crowdstrike.com) | ... | CrowdStrike-Global-Threat-Report-2024.pdf | ...
+
+    Falls back gracefully if README is absent or the pattern is unrecognised.
+    """
+
+    # Matches a markdown link in a table cell: [text](url)
+    _MD_LINK_RE = re.compile(r"\[([^\]]+)\]\((https?://[^)]+)\)")
+
+    def __init__(self, readme_path: Path = Path("README.md")):
+        self.stem_to_domain: Dict[str, str] = {}
+        self._parse(readme_path)
+
+    def _parse(self, readme_path: Path):
+        if not readme_path.exists():
+            print("WARNING: README.md not found — org domain anchoring disabled")
+            return
+
+        text = readme_path.read_text(encoding="utf-8", errors="replace")
+
+        # Each table row that contains a .pdf filename also has a markdown
+        # org link somewhere on the same line.  We extract both.
+        for line in text.splitlines():
+            pdf_match = re.search(r"([\w\-]+)-(\d{4})\.pdf", line, re.IGNORECASE)
+            if not pdf_match:
+                continue
+            stem = pdf_match.group(1)          # e.g. "CrowdStrike-Global-Threat-Report"
+            # Find the first http(s) link in this line
+            link_match = self._MD_LINK_RE.search(line)
+            if not link_match:
+                continue
+            url = link_match.group(2)
+            domain = self._extract_domain(url)
+            if domain:
+                # Store lower-case stem → domain; keep the first (most specific) match
+                key = stem.lower()
+                if key not in self.stem_to_domain:
+                    self.stem_to_domain[key] = domain
+
+        print(f"Org domain index: {len(self.stem_to_domain)} series with known domains")
+
+    @staticmethod
+    def _extract_domain(url: str) -> str:
+        """Return the registered domain (e.g. 'crowdstrike.com') from a URL."""
+        try:
+            host = urlparse(url).netloc.lower()
+            # Strip www. prefix
+            if host.startswith("www."):
+                host = host[4:]
+            # Return only the last two labels (handles sub-domains)
+            parts = host.split(".")
+            if len(parts) >= 2:
+                return ".".join(parts[-2:])
+            return host
+        except Exception:
+            return ""
+
+    def get_domain(self, stem: str) -> Optional[str]:
+        """Return the registered domain for a PDF stem, or None if unknown."""
+        return self.stem_to_domain.get(stem.lower())
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -325,14 +405,29 @@ class ResultClassifier:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# HEURISTIC VALIDATOR
+# HEURISTIC VALIDATOR  (enhanced)
 # ══════════════════════════════════════════════════════════════════════════════
 
 class HeuristicValidator:
     """
     Scores a result using keyword signals + structural bonuses.
 
-    Find-type-aware bonuses:
+    Enhancements over baseline:
+      - Org domain match bonus: +org_domain_match_bonus when result URL is on
+        the org's registered domain (parsed from README org_url column).
+      - PDF domain mismatch penalty: org_domain_mismatch_pdf_penalty applied to
+        FIND_PDF results whose domain does NOT match the org's registered domain.
+        Landing pages from third-party aggregators are common; raw PDFs from
+        unrelated hosts almost always indicate a false positive.
+      - Wrong-year-in-URL hard penalty: if the URL contains a 4-digit year that
+        is NOT the target year, apply wrong_year_in_url_penalty.  This catches
+        cases where a filetype:pdf search surfaces a previous edition.
+      - Self-reference reject: URLs pointing back to this repository are
+        immediately rejected as structural noise.
+      - Org name cross-check: if the org name does not appear (even loosely)
+        in the combined title+snippet text, apply a configurable penalty.
+
+    Find-type-aware bonuses (unchanged from baseline):
       FIND_PDF     — pdf_url_bonus if URL has a PDF path pattern
       FIND_LANDING — gated_bonus if snippet contains gating language
 
@@ -340,15 +435,26 @@ class HeuristicValidator:
     score == -999 (structural reject).
     """
 
-    def __init__(self, config: Config, classifier: ResultClassifier):
-        self.config     = config
-        self.classifier = classifier
+    # Matches a 4-digit year embedded in a URL path segment or query string.
+    _YEAR_IN_URL_RE = re.compile(r"(?<!\d)(20\d{2})(?!\d)")
+
+    def __init__(self, config: Config, classifier: ResultClassifier,
+                 org_domains: OrgDomainIndex):
+        self.config      = config
+        self.classifier  = classifier
+        self.org_domains = org_domains
 
     def score(self, url: str, title: str, snippet: str,
-              year: int, find_type: str) -> Tuple[int, str]:
+              year: int, find_type: str,
+              task_stem: str = "") -> Tuple[int, str]:
         url_l    = url.lower()
         title_l  = title.lower()
         combined = f"{url_l} {title_l} {snippet.lower()}"
+
+        # ── Self-reference reject ─────────────────────────────────────────
+        for ref_domain in self.config.self_reference_domains:
+            if ref_domain.lower() in url_l:
+                return -999, f"self-reference domain '{ref_domain}'"
 
         # ── Structural rejects ────────────────────────────────────────────
         for pat in self.config.url_reject_patterns:
@@ -374,12 +480,35 @@ class HeuristicValidator:
             if signal.lower() in combined:
                 total += w
 
-        # ── Structural bonuses ────────────────────────────────────────────
+        # ── Year bonuses / penalties ──────────────────────────────────────
         year_str = str(year)
         if year_str in url_l:
             total += self.config.year_in_url_bonus
         if year_str in title_l:
             total += self.config.year_in_title_bonus
+
+        # Wrong-year-in-URL penalty: URL contains a different 4-digit year.
+        # Only penalise once even if multiple years appear.
+        url_years = set(self._YEAR_IN_URL_RE.findall(url_l))
+        wrong_years = url_years - {year_str}
+        if wrong_years:
+            total += self.config.wrong_year_in_url_penalty
+            wrong = ", ".join(sorted(wrong_years))
+            print(f"    ⚠ Wrong year(s) in URL ({wrong}) — penalty {self.config.wrong_year_in_url_penalty}")
+
+        # ── Org domain anchoring ──────────────────────────────────────────
+        result_domain = OrgDomainIndex._extract_domain(url)
+        known_domain  = self.org_domains.get_domain(task_stem) if task_stem else None
+
+        if known_domain and result_domain:
+            if result_domain == known_domain or result_domain.endswith("." + known_domain):
+                total += self.config.org_domain_match_bonus
+            elif find_type == FIND_PDF:
+                # Raw PDFs from unrelated hosts are usually false positives;
+                # landing pages on aggregator sites can still be valid.
+                total += self.config.org_domain_mismatch_pdf_penalty
+                print(f"    ⚠ PDF domain mismatch: result={result_domain} known={known_domain}"
+                      f" — penalty {self.config.org_domain_mismatch_pdf_penalty}")
 
         # ── Find-type bonuses ─────────────────────────────────────────────
         if find_type == FIND_PDF:
@@ -435,12 +564,13 @@ class GoogleSearcher:
         Returns (best_candidate_or_None, pass_used).
         """
         year = task["target_year"]
+        stem = task.get("stem", "")
 
         # Pass 1 — PDF
         print(f"  Pass 1 (PDF):     ", end="", flush=True)
         raw_pdf = self._query(self.config.gs_pdf_query, task)
         best_pdf, best_pdf_score = self._best_result(
-            raw_pdf, year, classifier, validator, "pdf"
+            raw_pdf, year, classifier, validator, "pdf", stem
         )
 
         if best_pdf is not None and best_pdf_score >= self.config.score_threshold:
@@ -456,7 +586,7 @@ class GoogleSearcher:
         raw_landing = [r for r in raw_landing if r["url"] not in seen_urls]
 
         best_land, best_land_score = self._best_result(
-            raw_landing, year, classifier, validator, "landing"
+            raw_landing, year, classifier, validator, "landing", stem
         )
 
         if best_land is not None and best_land_score >= self.config.score_threshold:
@@ -480,6 +610,7 @@ class GoogleSearcher:
         classifier: ResultClassifier,
         validator: HeuristicValidator,
         pass_label: str,
+        task_stem: str = "",
     ) -> Tuple[Optional[Dict[str, Any]], int]:
         """Score all results from one pass; return (best_dict, best_score)."""
         best: Optional[Dict[str, Any]] = None
@@ -494,9 +625,12 @@ class GoogleSearcher:
                 continue
 
             find_type = classifier.classify(url, snippet)
-            score, reject_reason = validator.score(url, title, snippet, year, find_type)
+            score, reject_reason = validator.score(
+                url, title, snippet, year, find_type, task_stem
+            )
 
             if score == -999:
+                print(f"    ✗ Rejected ({reject_reason}): {url[:60]}")
                 continue
 
             if score > best_score:
@@ -558,7 +692,7 @@ class GoogleSearcher:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# GITHUB ISSUE CREATOR
+# GITHUB ISSUE CREATOR  (enhanced deduplication)
 # ══════════════════════════════════════════════════════════════════════════════
 
 class IssueCreator:
@@ -566,6 +700,9 @@ class IssueCreator:
     Creates GitHub issues for discovery candidates.
     Issue body and labels vary by find_type so reviewers immediately know
     whether the report is a direct PDF or a gated landing page.
+
+    Deduplication now checks both open AND recently-closed issues so
+    previously-reviewed findings don't resurface.
     """
 
     API = "https://api.github.com"
@@ -577,30 +714,45 @@ class IssueCreator:
         }
         self.repo      = repo
         self.threshold = score_threshold
-        self._open_titles: Optional[List[str]] = None
+        self._seen_titles: Optional[List[str]] = None
 
-    def _fetch_open_titles(self) -> List[str]:
-        if self._open_titles is not None:
-            return self._open_titles
-        try:
-            resp = requests.get(
-                f"{self.API}/repos/{self.repo}/issues",
-                headers=self.headers,
-                params={"state": "open", "labels": "report-suggestion", "per_page": 100},
-                timeout=15,
-            )
-            if resp.status_code == 200:
-                self._open_titles = [i.get("title","").lower() for i in resp.json()]
-                return self._open_titles
-        except Exception as e:
-            print(f"  ! Could not fetch open issues: {e}")
-        self._open_titles = []
-        return self._open_titles
+    def _fetch_seen_titles(self) -> List[str]:
+        """
+        Fetch titles from open issues AND recently-closed issues (last 200)
+        so that previously-reviewed candidates are not re-created.
+        """
+        if self._seen_titles is not None:
+            return self._seen_titles
+
+        titles: List[str] = []
+
+        for state in ("open", "closed"):
+            try:
+                resp = requests.get(
+                    f"{self.API}/repos/{self.repo}/issues",
+                    headers=self.headers,
+                    params={
+                        "state":    state,
+                        "labels":   "report-suggestion",
+                        "per_page": 100,
+                    },
+                    timeout=15,
+                )
+                if resp.status_code == 200:
+                    titles.extend(i.get("title", "").lower() for i in resp.json())
+                else:
+                    print(f"  ! Could not fetch {state} issues: HTTP {resp.status_code}")
+            except Exception as e:
+                print(f"  ! Could not fetch {state} issues: {e}")
+
+        self._seen_titles = titles
+        print(f"  Dedup index: {len(titles)} issue title(s) loaded (open + closed)")
+        return self._seen_titles
 
     def issue_exists(self, org: str, year: int) -> bool:
         fragment = f"{org} {year}".lower()
-        if any(fragment in t for t in self._fetch_open_titles()):
-            print(f"  ⊘ Issue already open for {org} {year}")
+        if any(fragment in t for t in self._fetch_seen_titles()):
+            print(f"  ⊘ Issue already exists (open or closed) for {org} {year}")
             return True
         return False
 
@@ -623,7 +775,10 @@ class IssueCreator:
             type_badge   = "📥 Direct PDF"
             type_guidance = (
                 "A direct PDF link was found. Verify the URL is publicly accessible "
-                "and the file downloads correctly before adding to the repository."
+                "and the file downloads correctly before adding to the repository.\n\n"
+                "**Important:** Confirm the PDF is from the organisation's own domain "
+                "and matches the expected year — automated searches can occasionally "
+                "surface older editions or third-party mirrors."
             )
         elif find_type == FIND_LANDING:
             type_badge   = "🔒 Gated Landing Page"
@@ -644,6 +799,13 @@ class IssueCreator:
                 "Verify manually whether this resolves to a downloadable report."
             )
 
+        # Surface the known org domain if available so reviewers can sanity-check
+        known_domain = candidate.get("known_domain", "")
+        domain_note  = (
+            f"\n| **Org's Known Domain** | `{known_domain}` |"
+            if known_domain else ""
+        )
+
         issue_title = f"[Report Discovery] {org} {year} — {candidate['title']}"
         body = (
             f"## 📄 New Security Report Discovered\n\n"
@@ -653,7 +815,8 @@ class IssueCreator:
             f"| **Year** | {year} |\n"
             f"| **Report** | {candidate['title']} |\n"
             f"| **URL** | {candidate['url']} |\n"
-            f"| **Type** | {type_badge} |\n"
+            f"| **Type** | {type_badge} |"
+            f"{domain_note}\n"
             f"| **Heuristic Score** | {candidate['score']} (threshold: {self.threshold}) |\n"
             f"| **Priority** | {tier_label} (repo latest: {candidate['latest_year']}) |\n\n"
             f"**Snippet:**\n> {candidate['snippet'][:400]}\n\n"
@@ -684,7 +847,7 @@ class IssueCreator:
                 print(f"  ✓ Created issue [{find_type}]: {issue_title[:60]}")
                 if html_url:
                     print(f"    {html_url}")
-                self._open_titles.append(issue_title.lower())
+                self._seen_titles.append(issue_title.lower())
                 return True
             else:
                 print(f"  ! Failed to create issue: HTTP {resp.status_code}")
@@ -738,9 +901,10 @@ def main() -> int:
     print(f"{'='*70}")
     print("Building lineage index...")
     print(f"{'='*70}\n")
-    lineage   = ReportLineageIndex(config.PDF_ROOT)
-    scheduler = SlotScheduler(today)
-    scanner   = ReportScanner(config, lineage, scheduler)
+    lineage    = ReportLineageIndex(config.PDF_ROOT)
+    org_domains = OrgDomainIndex()          # parses README.md
+    scheduler  = SlotScheduler(today)
+    scanner    = ReportScanner(config, lineage, scheduler)
 
     print()
     tasks = scanner.get_todays_tasks()
@@ -764,7 +928,7 @@ def main() -> int:
         return 1
 
     classifier = ResultClassifier(config)
-    validator  = HeuristicValidator(config, classifier)
+    validator  = HeuristicValidator(config, classifier, org_domains)
     creator    = IssueCreator(gh_token, repo, config.score_threshold)
 
     stats = {
@@ -787,8 +951,14 @@ def main() -> int:
         org  = task["org"]
         year = task["target_year"]
         tier = task["tier"]
+        stem = task["stem"]
 
         print(f"\n[{i}/{len(tasks_to_run)}] {org} → {year}  [{tier}]")
+
+        known_domain = org_domains.get_domain(stem)
+        if known_domain:
+            print(f"  Org domain: {known_domain}")
+
         stats["tasks_run"] += 1
         tier_counts[tier]  += 1
 
@@ -807,12 +977,13 @@ def main() -> int:
         # Assemble full candidate dict for issue creation
         candidate = {
             **best,
-            "org":         org,
-            "title":       task["title"],
-            "target_year": year,
-            "latest_year": task["latest_year"],
-            "tier":        tier,
-            "threshold":   config.score_threshold,
+            "org":          org,
+            "title":        task["title"],
+            "target_year":  year,
+            "latest_year":  task["latest_year"],
+            "tier":         tier,
+            "threshold":    config.score_threshold,
+            "known_domain": known_domain or "",
         }
 
         ft = best["find_type"]
