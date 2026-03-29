@@ -16,6 +16,9 @@ except ImportError:
     print("ERROR: requests required.  pip install requests")
     sys.exit(1)
 
+import hashlib
+import urllib.request
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # FIND TYPE CONSTANTS
@@ -806,6 +809,50 @@ class IssueCreator:
             if known_domain else ""
         )
 
+        # ── VirusTotal block (only present for FIND_PDF candidates) ───────
+        vt_result  = candidate.get("vt_result")
+        vt_section = ""
+        if vt_result:
+            vt_status = vt_result.get("status", "")
+            if vt_status == "success":
+                verdict          = vt_result["verdict"]
+                malicious        = vt_result["malicious_count"]
+                suspicious       = vt_result["suspicious_count"]
+                total            = vt_result["total_engines"]
+                vt_report_url    = vt_result["report_url"]
+                sha256           = vt_result["sha256"]
+                verdict_icon     = ("❌" if verdict == "Malicious"
+                                    else "⚠️" if verdict == "Suspicious"
+                                    else "✅")
+                vt_section = (
+                    f"\n\n---\n\n"
+                    f"### 🛡️ VirusTotal Pre-Scan\n\n"
+                    f"| Field | Value |\n"
+                    f"|-------|-------|\n"
+                    f"| **Verdict** | {verdict_icon} {verdict} |\n"
+                    f"| **Detections** | {malicious + suspicious} / {total} engines |\n"
+                    f"| **SHA-256** | `{sha256}` |\n"
+                    f"| **Full Report** | [🔗 View on VirusTotal]({vt_report_url}) |\n"
+                )
+                if verdict == "Malicious":
+                    vt_section += (
+                        f"\n> ❌ **This PDF was flagged as Malicious by {malicious} engine(s). "
+                        f"Do NOT add this file to the repository without thorough manual review.**\n"
+                    )
+                elif verdict == "Suspicious":
+                    vt_section += (
+                        f"\n> ⚠️ **This PDF was flagged as Suspicious by {suspicious} engine(s). "
+                        f"Review the VirusTotal report before adding this file.**\n"
+                    )
+            elif vt_status == "failed":
+                reason = vt_result.get("reason", "unknown error")
+                vt_section = (
+                    f"\n\n---\n\n"
+                    f"### 🛡️ VirusTotal Pre-Scan\n\n"
+                    f"⚠️ Scan could not be completed: `{reason[:200]}`\n\n"
+                    f"Manually verify the PDF before adding it to the repository.\n"
+                )
+
         issue_title = f"[Report Discovery] {org} {year} — {candidate['title']}"
         body = (
             f"## 📄 New Security Report Discovered\n\n"
@@ -822,7 +869,8 @@ class IssueCreator:
             f"**Snippet:**\n> {candidate['snippet'][:400]}\n\n"
             f"---\n\n"
             f"### 🔍 Reviewer Notes\n\n"
-            f"{type_guidance}\n\n"
+            f"{type_guidance}"
+            f"{vt_section}\n\n"
             f"---\n"
             f"*Auto-discovered by the Security Report Discovery workflow.*"
         )
@@ -834,12 +882,20 @@ class IssueCreator:
             FIND_UNKNOWN: "unclassified-find",
         }.get(find_type, "automated")
 
+        # Append a safety label when VT flagged the PDF so it stands out in triage
+        extra_labels = []
+        vt_verdict = (vt_result or {}).get("verdict", "")
+        if vt_verdict in ("Malicious", "Suspicious"):
+            extra_labels.append("malicious-pdf" if vt_verdict == "Malicious" else "suspicious-pdf")
+
+        issue_labels = ["report-suggestion", "automated", ft_label] + extra_labels
+
         try:
             resp = requests.post(
                 f"{self.API}/repos/{self.repo}/issues",
                 headers=self.headers,
                 json={"title": issue_title, "body": body,
-                      "labels": ["report-suggestion", "automated", ft_label]},
+                      "labels": issue_labels},
                 timeout=15,
             )
             if resp.status_code == 201:
@@ -855,6 +911,241 @@ class IssueCreator:
         except Exception as e:
             print(f"  ! Error creating issue: {str(e)[:80]}")
             return False
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# VIRUSTOTAL SCANNER
+# ══════════════════════════════════════════════════════════════════════════════
+
+class VirusTotalScanner:
+    """
+    Downloads a direct PDF URL to a temporary file, submits it to VirusTotal,
+    and returns a scan result dict.  Reuses the same API patterns as
+    virus-total-scan.py — all policy values (polling, rate limits, large-file
+    threshold) come from workflow-config.json via Config.
+
+    Only called for FIND_PDF candidates.  FIND_LANDING URLs are never scanned
+    because they resolve to a web page, not a PDF binary.
+
+    Result dict shape (mirrors virus-total-scan.py for consistency):
+      {
+        "status":           "success" | "failed" | "skipped",
+        "verdict":          "Clean" | "Suspicious" | "Malicious",  # success only
+        "malicious_count":  int,
+        "suspicious_count": int,
+        "total_engines":    int,
+        "report_url":       str,
+        "sha256":           str,
+        "reason":           str,   # non-empty on failure/skip
+      }
+    """
+
+    _API_BASE = "https://www.virustotal.com/api/v3"
+
+    def __init__(self, api_key: str, config: "Config"):
+        self.api_key = api_key
+        # Pull VT policy from workflow-config.json (same source as virus-total-scan.py)
+        vt = config._load("workflow-config.json").get("workflow", {}).get("virustotal", {})
+        self.large_file_threshold_mb:   int = vt.get("large_file_threshold_mb",   32)
+        self.poll_attempts:             int = vt.get("poll_attempts",              5)
+        self.poll_backoff_base_seconds: int = vt.get("poll_backoff_base_seconds",  10)
+        self.rate_limit_sleep_seconds:  int = vt.get("rate_limit_sleep_seconds",   15)
+
+    # ── Public entry point ────────────────────────────────────────────────
+
+    def scan_url(self, pdf_url: str) -> Dict[str, Any]:
+        """
+        Download the PDF at pdf_url, scan it with VirusTotal, and return a
+        result dict.  Returns a "failed" result on any download or API error
+        so the caller can always proceed — a scan failure is non-blocking for
+        issue creation (the result is surfaced to the reviewer in the issue body).
+        """
+        import tempfile
+
+        print(f"  [VT] Downloading PDF for scan: {pdf_url[:80]}")
+        tmp_path = None
+        try:
+            with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
+                tmp_path = tmp.name
+
+            # Download with a browser-like UA; follow redirects
+            req = urllib.request.Request(
+                pdf_url,
+                headers={"User-Agent": "Mozilla/5.0 (compatible; security-report-scanner/1.0)"},
+            )
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                data = resp.read()
+
+            # Reject anything that is not a PDF (e.g. login-redirect HTML)
+            if not data[:4].startswith(b"%PDF"):
+                return {
+                    "status": "failed",
+                    "reason": f"Downloaded content is not a valid PDF (magic: {data[:4]!r})",
+                    "verdict": "", "malicious_count": 0, "suspicious_count": 0,
+                    "total_engines": 0, "report_url": "", "sha256": "",
+                }
+
+            with open(tmp_path, "wb") as f:
+                f.write(data)
+
+            print(f"  [VT] Download OK — {len(data):,} bytes")
+            return self._scan_file(tmp_path)
+
+        except Exception as exc:
+            return {
+                "status": "failed",
+                "reason": f"Download error: {str(exc)[:120]}",
+                "verdict": "", "malicious_count": 0, "suspicious_count": 0,
+                "total_engines": 0, "report_url": "", "sha256": "",
+            }
+        finally:
+            if tmp_path:
+                try:
+                    os.unlink(tmp_path)
+                except OSError:
+                    pass
+
+    # ── Internal helpers (mirror virus-total-scan.py logic exactly) ───────
+
+    def _headers(self) -> Dict[str, str]:
+        return {
+            "x-apikey":   self.api_key,
+            "User-Agent": "VirusTotal GitHub Action",
+            "Accept":     "application/json",
+        }
+
+    @staticmethod
+    def _sha256(file_path: str) -> str:
+        h = hashlib.sha256()
+        with open(file_path, "rb") as f:
+            for chunk in iter(lambda: f.read(4096), b""):
+                h.update(chunk)
+        return h.hexdigest()
+
+    def _scan_file(self, file_path: str) -> Dict[str, Any]:
+        """Core scan logic — identical algorithm to virus-total-scan.py:scan_file()."""
+        headers    = self._headers()
+        file_hash  = self._sha256(file_path)
+        base_url   = self._API_BASE
+        file_size_mb = os.path.getsize(file_path) / (1024 * 1024)
+
+        try:
+            # ── 1. Hash lookup ─────────────────────────────────────────────
+            lookup = requests.get(
+                f"{base_url}/files/{file_hash}", headers=headers, timeout=30
+            )
+
+            if lookup.status_code == 200:
+                scan_data = lookup.json()
+
+            elif lookup.status_code == 404:
+                # ── 2. Upload ──────────────────────────────────────────────
+                upload_endpoint = f"{base_url}/files"
+
+                if file_size_mb > self.large_file_threshold_mb:
+                    url_resp = requests.get(
+                        f"{base_url}/files/upload_url", headers=headers, timeout=30
+                    )
+                    if url_resp.status_code == 200:
+                        upload_endpoint = url_resp.json().get("data", upload_endpoint)
+                    else:
+                        return {
+                            "status": "failed",
+                            "reason": f"Could not get large-file upload URL (HTTP {url_resp.status_code})",
+                            "verdict": "", "malicious_count": 0, "suspicious_count": 0,
+                            "total_engines": 0, "report_url": "", "sha256": file_hash,
+                        }
+
+                with open(file_path, "rb") as f:
+                    resp = requests.post(
+                        upload_endpoint, headers=headers,
+                        files={"file": (os.path.basename(file_path), f)},
+                        timeout=300,
+                    )
+
+                if resp.status_code != 200:
+                    return {
+                        "status": "failed",
+                        "reason": f"Upload failed (HTTP {resp.status_code})",
+                        "verdict": "", "malicious_count": 0, "suspicious_count": 0,
+                        "total_engines": 0, "report_url": "", "sha256": file_hash,
+                    }
+
+                scan_id = resp.json().get("data", {}).get("id")
+                if not scan_id:
+                    return {
+                        "status": "failed",
+                        "reason": "No scan ID in upload response",
+                        "verdict": "", "malicious_count": 0, "suspicious_count": 0,
+                        "total_engines": 0, "report_url": "", "sha256": file_hash,
+                    }
+
+                # ── 3. Poll for completion ─────────────────────────────────
+                scan_data = None
+                for attempt in range(self.poll_attempts):
+                    sleep_secs = self.poll_backoff_base_seconds * (attempt + 1)
+                    print(f"  [VT] Polling (attempt {attempt + 1}/{self.poll_attempts}, "
+                          f"wait {sleep_secs}s)...")
+                    time.sleep(sleep_secs)
+                    status_resp = requests.get(
+                        f"{base_url}/analyses/{scan_id}", headers=headers, timeout=30
+                    )
+                    if status_resp.status_code == 200:
+                        attrs = status_resp.json().get("data", {}).get("attributes", {})
+                        if attrs.get("status") == "completed":
+                            final = requests.get(
+                                f"{base_url}/files/{file_hash}", headers=headers, timeout=30
+                            )
+                            if final.status_code == 200:
+                                scan_data = final.json()
+                                break
+
+                if scan_data is None:
+                    return {
+                        "status": "failed",
+                        "reason": "Scan did not complete within polling timeout",
+                        "verdict": "", "malicious_count": 0, "suspicious_count": 0,
+                        "total_engines": 0, "report_url": "", "sha256": file_hash,
+                    }
+
+            else:
+                return {
+                    "status": "failed",
+                    "reason": f"Unexpected status checking file (HTTP {lookup.status_code})",
+                    "verdict": "", "malicious_count": 0, "suspicious_count": 0,
+                    "total_engines": 0, "report_url": "", "sha256": file_hash,
+                }
+
+            # ── 4. Parse result ────────────────────────────────────────────
+            attrs            = scan_data.get("data", {}).get("attributes", {})
+            stats            = attrs.get("last_analysis_stats", {})
+            malicious_count  = stats.get("malicious", 0)
+            suspicious_count = stats.get("suspicious", 0)
+            total_engines    = sum(stats.values())
+            verdict = ("Malicious"  if malicious_count  > 0 else
+                       "Suspicious" if suspicious_count > 0 else "Clean")
+
+            print(f"  [VT] Result: {verdict} — "
+                  f"{malicious_count + suspicious_count}/{total_engines} engines")
+
+            return {
+                "status":           "success",
+                "verdict":          verdict,
+                "malicious_count":  malicious_count,
+                "suspicious_count": suspicious_count,
+                "total_engines":    total_engines,
+                "report_url":       f"https://www.virustotal.com/gui/file/{file_hash}",
+                "sha256":           file_hash,
+                "reason":           "",
+            }
+
+        except Exception as exc:
+            return {
+                "status": "failed",
+                "reason": str(exc)[:200],
+                "verdict": "", "malicious_count": 0, "suspicious_count": 0,
+                "total_engines": 0, "report_url": "", "sha256": "",
+            }
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -898,6 +1189,18 @@ def main() -> int:
         print("ERROR: GH_TOKEN / GITHUB_REPOSITORY required")
         return 1
 
+    # VirusTotal scanner — optional; only active when the API key is present.
+    # Direct PDF finds are scanned before issue creation; landing-page finds
+    # are never scanned because they resolve to a web page, not a PDF binary.
+    vt_api_key = os.environ.get("VIRUS_TOTAL_API_KEY", "")
+    vt_scanner: Optional[VirusTotalScanner] = None
+    if vt_api_key:
+        vt_scanner = VirusTotalScanner(vt_api_key, config)
+        print(f"✓ VirusTotal scanner active (direct PDF finds will be scanned)")
+    else:
+        print(f"⊘ VIRUS_TOTAL_API_KEY not set — PDF pre-scanning skipped")
+    print()
+
     print(f"{'='*70}")
     print("Building lineage index...")
     print(f"{'='*70}\n")
@@ -940,6 +1243,11 @@ def main() -> int:
         "pdf_finds":      0,
         "landing_finds":  0,
         "unknown_finds":  0,
+        "vt_clean":       0,
+        "vt_suspicious":  0,
+        "vt_malicious":   0,
+        "vt_failed":      0,
+        "vt_skipped":     0,
     }
     tier_counts = {TIER_CURRENT: 0, TIER_STALE: 0, TIER_OLD: 0}
 
@@ -974,6 +1282,32 @@ def main() -> int:
             time.sleep(config.gs_rate_sleep)
             continue
 
+        # ── VirusTotal pre-scan for direct PDF finds ──────────────────────
+        vt_result: Optional[Dict[str, Any]] = None
+        ft = best["find_type"]
+
+        if ft == FIND_PDF:
+            if vt_scanner:
+                print(f"  [VT] Scanning direct PDF...")
+                time.sleep(vt_scanner.rate_limit_sleep_seconds)
+                vt_result = vt_scanner.scan_url(best["url"])
+                vt_status = vt_result.get("status", "")
+                if vt_status == "success":
+                    verdict = vt_result["verdict"]
+                    if verdict == "Clean":
+                        stats["vt_clean"] += 1
+                    elif verdict == "Suspicious":
+                        stats["vt_suspicious"] += 1
+                        print(f"  ⚠ VT: Suspicious — issue will be labeled")
+                    elif verdict == "Malicious":
+                        stats["vt_malicious"] += 1
+                        print(f"  ❌ VT: Malicious — issue will be labeled, reviewer must decide")
+                else:
+                    stats["vt_failed"] += 1
+                    print(f"  ⚠ VT scan failed: {vt_result.get('reason', '')[:100]}")
+            else:
+                stats["vt_skipped"] += 1
+
         # Assemble full candidate dict for issue creation
         candidate = {
             **best,
@@ -984,9 +1318,9 @@ def main() -> int:
             "tier":         tier,
             "threshold":    config.score_threshold,
             "known_domain": known_domain or "",
+            "vt_result":    vt_result,
         }
 
-        ft = best["find_type"]
         if ft == FIND_PDF:
             stats["pdf_finds"] += 1
         elif ft == FIND_LANDING:
@@ -1015,6 +1349,14 @@ def main() -> int:
     print(f"    Gated page finds  : {stats['landing_finds']}")
     print(f"    Unclassified      : {stats['unknown_finds']}")
     print(f"  Issues skipped(dup) : {stats['issues_skipped']}")
+    if vt_scanner:
+        print(f"  VirusTotal scans    :")
+        print(f"    Clean             : {stats['vt_clean']}")
+        print(f"    Suspicious        : {stats['vt_suspicious']}")
+        print(f"    Malicious         : {stats['vt_malicious']}")
+        print(f"    Failed            : {stats['vt_failed']}")
+    else:
+        print(f"  VT scans skipped    : {stats['vt_skipped']} (no API key)")
     print(f"{'='*70}")
 
     print(f"DISCOVERY_TASKS={stats['tasks_run']}")
@@ -1026,6 +1368,9 @@ def main() -> int:
     print(f"DISCOVERY_TIER_CURRENT={tier_counts[TIER_CURRENT]}")
     print(f"DISCOVERY_TIER_STALE={tier_counts[TIER_STALE]}")
     print(f"DISCOVERY_TIER_OLD={tier_counts[TIER_OLD]}")
+    print(f"DISCOVERY_VT_CLEAN={stats['vt_clean']}")
+    print(f"DISCOVERY_VT_SUSPICIOUS={stats['vt_suspicious']}")
+    print(f"DISCOVERY_VT_MALICIOUS={stats['vt_malicious']}")
 
     return 0
 

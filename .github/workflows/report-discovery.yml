@@ -45,6 +45,7 @@ jobs:
           GOOGLE_CSE_ID:         ${{ secrets.GOOGLE_CSE_ID }}
           GH_TOKEN:              ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY:     ${{ github.repository }}
+          VIRUS_TOTAL_API_KEY:   ${{ secrets.VIRUS_TOTAL_API_KEY }}
         run: |
           ARGS="--artifacts-dir .github/artifacts"
 
@@ -73,6 +74,9 @@ jobs:
           echo "tier_current=$(parse DISCOVERY_TIER_CURRENT)"   >> $GITHUB_OUTPUT
           echo "tier_stale=$(parse DISCOVERY_TIER_STALE)"       >> $GITHUB_OUTPUT
           echo "tier_old=$(parse DISCOVERY_TIER_OLD)"           >> $GITHUB_OUTPUT
+          echo "vt_clean=$(parse DISCOVERY_VT_CLEAN)"           >> $GITHUB_OUTPUT
+          echo "vt_suspicious=$(parse DISCOVERY_VT_SUSPICIOUS)" >> $GITHUB_OUTPUT
+          echo "vt_malicious=$(parse DISCOVERY_VT_MALICIOUS)"   >> $GITHUB_OUTPUT
           echo "exit_code=$EXIT_CODE"                           >> $GITHUB_OUTPUT
 
       - name: Upload discovery log
@@ -99,6 +103,9 @@ jobs:
           T_CURR="${{ steps.discovery.outputs.tier_current }}"
           T_STALE="${{ steps.discovery.outputs.tier_stale }}"
           T_OLD="${{ steps.discovery.outputs.tier_old }}"
+          VT_CLEAN="${{ steps.discovery.outputs.vt_clean }}"
+          VT_SUSP="${{ steps.discovery.outputs.vt_suspicious }}"
+          VT_MAL="${{ steps.discovery.outputs.vt_malicious }}"
 
           echo "## 🔍 Security Report Discovery" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -126,6 +133,27 @@ jobs:
           echo "| 📥 Direct PDF        | ${PDF_F:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "| 🔒 Gated landing page | ${LAND_F:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+
+          # VirusTotal summary — only shown when at least one PDF was scanned
+          VT_TOTAL=$(( ${VT_CLEAN:-0} + ${VT_SUSP:-0} + ${VT_MAL:-0} ))
+          if [ "$VT_TOTAL" -gt 0 ]; then
+            echo "### 🛡️ VirusTotal Pre-Scans: ${VT_TOTAL}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Verdict | Count |" >> $GITHUB_STEP_SUMMARY
+            echo "|---------|-------|" >> $GITHUB_STEP_SUMMARY
+            echo "| ✅ Clean      | ${VT_CLEAN:-0} |" >> $GITHUB_STEP_SUMMARY
+            echo "| ⚠️ Suspicious | ${VT_SUSP:-0} |" >> $GITHUB_STEP_SUMMARY
+            echo "| ❌ Malicious  | ${VT_MAL:-0} |" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            if [ "${VT_MAL:-0}" -gt 0 ]; then
+              echo "⚠️ **${VT_MAL} PDF(s) flagged as Malicious** — issues are labeled \`malicious-pdf\` for triage." >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+            if [ "${VT_SUSP:-0}" -gt 0 ]; then
+              echo "⚠️ **${VT_SUSP} PDF(s) flagged as Suspicious** — issues are labeled \`suspicious-pdf\` for triage." >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+          fi
 
           if [ "${CREATED:-0}" -gt 0 ]; then
             echo "#### New issues" >> $GITHUB_STEP_SUMMARY
