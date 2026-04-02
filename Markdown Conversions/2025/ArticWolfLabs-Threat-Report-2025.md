@@ -1,40 +1,16 @@
-# Arctic Wolf 2025 Cybersecurity Predictions Threat Report
+# Threat Report 2025
 
 ## Table of Contents
 - [Foreword](#foreword)
 - [Key Takeaways](#key-takeaways)
 - [Introduction](#introduction)
-  - [Data sourcing and methodology](#data-sourcing-and-methodology)
 - [Part 01: Ransomware & Data Extortion](#part-01-ransomware--data-extortion)
-  - [Lower barriers to entry have led to a crowded landscape](#lower-barriers-to-entry-have-led-to-a-crowded-landscape)
-  - [Ransomware actors continue to target organizations with no tolerance for downtime](#ransomware-actors-continue-to-target-organizations-with-no-tolerance-for-downtime)
-  - [Ransoms: demands, negotiations, and potential payment](#ransoms-demands-negotiations-and-potential-payment)
-  - [Unsecured RDP is the root cause of the largest portion of ransomware cases](#unsecured-rdp-is-the-root-cause-of-the-largest-portion-of-ransomware-cases)
-  - [Spotlight: The usual suspects](#spotlight-the-usual-suspects)
 - [Part 02: Business Email Compromise](#part-02-business-email-compromise)
-  - [Financial services organizations are the prime targets](#financial-services-organizations-are-the-prime-targets)
-  - [Social engineering (phishing in particular) drives BEC cases](#social-engineering-phishing-in-particular-drives-bec-cases)
 - [Part 03: Intrusions](#part-03-intrusions)
-  - [Intrusions, the first step towards greater threats](#intrusions-the-first-step-towards-greater-threats)
-  - [Intruders disproportionately leverage a small number of vulnerabilities](#intruders-disproportionately-leverage-a-small-number-of-vulnerabilities)
-  - [Vulnerabilities keep increasing](#vulnerabilities-keep-increasing)
-  - [External exposure is the root cause of the vast majority of intrusions](#external-exposure-is-the-root-cause-of-the-vast-majority-of-intrusions)
 - [Part 04: Managing & Mitigating Threats](#part-04-managing--mitigating-threats)
-  - [Ensure you have broad visibility (monitoring) into your environment and assets, and create a baseline of normal behavior](#ensure-you-have-broad-visibility-monitoring-into-your-environment-and-assets-and-create-a-baseline-of-normal-behavior)
-  - [Enforce strong identity controls](#enforce-strong-identity-controls)
-  - [Establish and continually foster a culture of security](#establish-and-continually-foster-a-culture-of-security)
-  - [Consider an IR retainer with an organization that staffs ransomware negotiators](#consider-an-ir-retainer-with-an-organization-that-staffs-ransomware-negotiators)
 - [Conclusion](#conclusion)
-- [How Arctic Wolf can help](#how-arctic-wolf-can-help)
-- [About Arctic Wolf](#about-arctic-wolf)
 
 ---
-
-A R C T I C   W O L F
-
-THREAT REPORT
-
-2025
 
 ## Foreword
 
@@ -42,58 +18,34 @@ This Arctic Wolf® Threat Report draws upon the first-hand experience of Arctic 
 
 By deliberately focusing on cyber attacks that escalated to a level of requiring an incident response (IR) investigation by Arctic Wolf, we aim to:
 
-*   Highlight which attack types are responsible for severe incidents
-*   Uncover the tactics, techniques, and procedures (TTPs) that allow threat actors to evade detection long enough to pursue actions on objective (e.g., deploying ransomware, tricking organizations into transferring funds, conducting intrusions, etc.)
-*   Raise awareness of the cybersecurity practices needed to prevent, detect, and recover from such incidents
+- Highlight which attack types are responsible for severe incidents
+- Uncover the tactics, techniques, and procedures (TTPs) that allow threat actors to evade detection long enough to pursue actions on objective (e.g., deploying ransomware, tricking organizations into transferring funds, conducting intrusions, etc.)
+- Raise awareness of the cybersecurity practices needed to prevent, detect, and recover from such incidents
 
 Very broadly, we see evidence that threat actors are adapting to target stronger cybersecurity postures by looking for novel methods of attack or embracing low-tech — but effective — means of bypassing high-tech safeguards. At the same time, competition within their own ranks and better resilience on the part of their victims has ransomware operators engaging in more aggressive tactics and taking a firmer stance on ransom payments. Business email compromise (BEC) continues to be a menace, especially for organizations that routinely transfer funds and use email to coordinate these activities. And although many intrusions we investigated appear to be failed ransomware attacks, others are more likely to be incidents of stealthy cyber espionage.
 
 How do organizations protect themselves in the continuing cybersecurity arms race? By focusing on the fundamentals, including:
 
-*   An adaptable security posture
-*   Detection and response spanning the full attack surface
-*   An IR process and partner that enables fast and effective recovery
+- An adaptable security posture
+- Detection and response spanning the full attack surface
+- An IR process and partner that enables fast and effective recovery
 
 Our hope is that reading this report will equip you with insights and actions to bolster all three of these elements.
 
-K E R R I   S H A F E R - PA G E ,
-Vice President, Incident Response
+**Kerri Shafer-Page**, Vice President, Incident Response
 
 ---
 
 ## Key Takeaways
 
-### Three Cyber Incident Types Account for 95% of All IR Cases
-
-Organizations typically reserve third-party IR engagements for only the most disruptive and damaging incidents, so it’s telling that our cases are dominated by ransomware (44% of cases), business email compromise (27%), and intrusions (24%). While their combined contribution is quite consistent year over year, an increase in the intrusion proportion is largely offset by a decrease in ransomware’s share. Detailed analysis hints that this is no mere coincidence, with signs that many ransomware attacks were stopped prior to detonation — indicating that organizations are improving their detection capabilities.
-
-### 96% of Ransomware Cases Included Data Theft, as Threat Actors Adapt to Stronger Backup and Restoration Capabilities
-
-As potential victims implemented more reliable backup and restoration processes, ransomware operators introduced data exfiltration as a means to apply additional pressure and protect their revenue streams. Today, this double extortion is undeniably the norm, as 96% of ransomware incidents we investigated included this element. Nevertheless, preparedness on the part of organizations remains important: our case analysis shows that in 68% of ransomware incidents, backups aided in the recovery process.
-
-### The Ransomware Landscape is a Modern-Day Hydra
-
-The well-established ransomware-as-a-service (RaaS) model has democratized access to ransomware software, intrusion tools, and — via initial access brokers — IT environments. One result is a very long tail of threat actors all vying for a piece of the cybercrime pie; as such, we observed more than 50 unique ransomware threat actors in victim environments. Like the Hydra of Greek mythology, when a ransomware operation ceases to exist — whether due to law-enforcement operations, infighting, politics, retirement, etc. — other groups (new and old) fill the void.
-
-### Professional Incident Response (IR) Pays Off
-
-In the not-too-distant past, most ransomware actors showed at least some willingness to negotiate with the victim to arrive at a workable solution. Nowadays, though, harassment and a stated refusal to negotiate are commonplace. Expert incident responders have encountered all these tactics before. Despite attackers’ persistent threats and aggressive tactics, our IR professionals were able to reduce aggregate ransom demands by 64%. Perhaps more importantly, our IR expertise was a major reason why 70% of our clients who used our negotiation services did not pay their ransoms. The Arctic Wolf Incident Response team includes a Threat Negotiation team and does not leverage the use of a partner or vendor to complete these activities.
-
-### When It Comes to Business Email Compromise (BEC), Fraudsters Follow the Money
-
-The finance and insurance industry accounted for 26.5% of BEC IR cases, roughly double the second-place industry (legal and government, at 13.3%). In fact, BEC accounted for 53% of IR cases pertaining to finance and insurance — the only industry for which BEC outnumbered ransomware. Clearly, organizations that regularly exchange money and process payment details over email are in the crosshairs of BEC attacks.
-
-### Attackers Embrace Low-Tech Ways to Bypass High-Tech Defenses
-
-Why kick down the door when you already have the key, or can find someone to open it on your behalf, or — best of all — you find it unlocked to begin with? Unsecured Remote Desktop Protocol (RDP) and compromised VPN credentials are the leading root causes of ransomware and intrusions, while phishing and previously compromised credentials are behind the vast majority of all BEC cases. Access controls and safeguards including strong, phishing-resistant multi-factor authentication (MFA) can not only help to stop attackers from gaining initial access, but are also effective means of thwarting intrusion actions, including reconnaissance.
-
-### Prioritized Patching Can Prevent Intrusions
-
-In 76% of intrusion cases, threat actors employed at least one of 10 specific vulnerabilities, none of which were zero-days and seven of which were associated with remote access tools or other externally facing services. Vulnerability management can seem like a never-ending game of high-stakes Whac-A-Mole — but a little prioritization can take away attackers’ favorite means of infiltration. To inform that prioritization, organizations must understand the complexities of their network, the need to patch critical infrastructure (especially VPN services, firewalls, and other edge devices) based on CVE severity (if known), and the answers to the questions, “Where is our data?” and “Where is our customers’ data?”
-
-### Threat Actors Save Their Zero-Day Exploits for Stealthy Intrusions
-
-While zero-day exploits almost never appeared in ransomware (0.4% of cases) or BEC (0%) incidents, they represented the fifth-leading root cause in intrusions — accounting for 6% of such cases. This stark contrast suggests threat actors are selective, reserving such actions for the most sensitive and targeted activities with the highest probability of success.
+- **95%**: Three cyber incident types account for 95% of all IR cases.
+- **96%**: 96% of ransomware cases included data theft, as threat actors adapt to stronger backup and restoration capabilities.
+- **+50**: The ransomware landscape is a modern-day Hydra. We observed more than 50 unique ransomware threat actors in victim environments.
+- **Professional Incident Response (IR) Pays Off**: Our IR professionals were able to reduce aggregate ransom demands by 64%. 70% of our clients who used our negotiation services did not pay their ransoms.
+- **BEC**: When it comes to Business Email Compromise (BEC), fraudsters follow the money. Finance and insurance accounted for 26.5% of BEC IR cases.
+- **Low-Tech vs. High-Tech**: Attackers embrace low-tech ways to bypass high-tech defenses. Unsecured RDP and compromised VPN credentials are the leading root causes of ransomware and intrusions.
+- **76%**: In 76% of intrusion cases, threat actors employed at least one of 10 specific vulnerabilities.
+- **Zero-Day Exploits**: Threat actors save their zero-day exploits for stealthy intrusions (6% of cases).
 
 ---
 
@@ -101,315 +53,823 @@ While zero-day exploits almost never appeared in ransomware (0.4% of cases) or B
 
 The insights and data presented are drawn from hundreds of global digital forensics and incident response (DFIR) engagements conducted by the Arctic Wolf Incident Response team from October 1, 2023, through September 30, 2024.
 
-The IR case data is augmented with telemetry from the Arctic Wolf Aurora Platform and research from our threat intelligence team, digital forensics experts, incident responders, and professional ransomware negotiators.
-
-The top three incident types collectively accounted for 95% of all IR cases.
-
-Accordingly, we will examine these three types in detail to provide an overview of the threat, and:
-
-*   Reveal which industries are most impacted
-*   Understand root causes
-*   Dive into related topics
-
 ### Data sourcing and methodology
-
-To enable the holistic analysis within this report, all data is aggregated without any identifying characteristics or attributes.
-
-The vast majority of these IR engagements were initiated as part of cyber insurance policies, through our partnerships with insurance providers and privacy law practitioners. Consequently, these incidents typify cyber attacks that were so severe (i.e., damaging, disruptive) that they led to insurance claims — making them ideal study subjects in our aim to better understand the most dangerous threats.
-
-However, many cyber incidents include multiple elements, as threat actors rarely execute a single action. For instance, an attacker may employ social engineering to obtain credentials which are then used to access the environment via a VPN service, followed by lateral movement and reconnaissance, all as precursors to exfiltrating data and ultimately deploying a malicious payload to encrypt files. If this attack progressed through all those steps, we would classify the incident as a ransomware/data extortion case; however, if the lateral movement was detected and contained, it would be classified as an intrusion.
-
-While cyber insurance is a valuable risk transfer option for any organization, it’s important to recognize that certain industries are more likely to have coverage than others, and that our sample cases will reflect this distribution. Rephrased, the sample represents our real-world experience delivering incident response services and is not intended to represent all cyber attacks across all markets and segments.
+To enable the holistic analysis within this report, all data is aggregated without any identifying characteristics or attributes. The vast majority of these IR engagements were initiated as part of cyber insurance policies.
 
 ### Case classification
-
 We classify cases by the focal point of the incident, or the best answer to the question, “What is the most impactful aspect of the attack?”
 
-*   **Ransomware / Data Extortion**: 44%
-*   **Business Email Compromise (BEC)**: 27%
-*   **Intrusions**: 24%
-*   **Other (e.g., Insider Threat, DDoS)**: 1%
-*   **Malware Infections**: 2%
-*   **Data Incidents**: 2%
+![Chart showing Incident Response Cases by Category: 44% Ransomware/Data Extortion, 27% BEC, 24% Intrusions, 2% Malware, 2% Data Incidents, 1% Other]
 
 ---
 
-# PART 01: RANSOMWARE & DATA EXTORTION
+## Part 01: Ransomware & Data Extortion
 
-### Highlights
+Ransomware remains the biggest driver of IR cases (44%). As backup and restoration capabilities improve, double extortion is now the norm (96% of cases).
 
-*   **RANSOMWARE REMAINS THE BIGGEST DRIVER OF IR CASES**: 44% of IR cases during the reporting period pertained to ransomware, indicating just how prevalent such incidents are to victimized organizations.
-*   **AS BACKUP AND RESTORATION CAPABILITIES IMPROVE, DOUBLE EXTORTION IS NOW THE NORM**: In 96% of ransomware IR cases, the attacker also exfiltrated data to apply pressure and extort payment.
-*   **EXPERT NEGOTIATION IS WORTHWHILE**: Although every case is unique to some degree, Arctic Wolf’s experienced ransomware negotiators were able to secure a 64% reduction in aggregate ransom demands.
-*   **MANY VICTIMS PAY UNNECESSARILY**: While prior surveys suggest that upwards of 80% of victims ultimately chose to pay a ransom, our data shows only 30% of Arctic Wolf IR cases resulted in a ransom payment — and in the majority of those incidents, the victim paid to expedite recovery, rather than out of necessity.
-*   **ATTACKERS ARE LETTING THEMSELVES IN**: Unsecured Remote Desktop Protocol (RDP) and compromised virtual private network (VPN) credentials are the leading root causes of ransomware IR cases — with RDP alone being the culprit in 38% of such incidents.
-
-For the 12-month period covered by this report, Ransomware / Data Extortion cases accounted for 44% of our IR incidents.
-
-This proportion represents a slight decline from last year’s report (48.6%)¹, but nevertheless underscores ransomware’s dominance as an attack-of-choice for many threat actors.
-
-Unfortunately, all signs indicate that ransomware and data extortion will remain everyday threats for the foreseeable future. In particular, the risk versus reward calculation provides strong incentives for attackers to go this route. Consider that:
-
-*   Despite some high-profile law enforcement takedowns, the chances of perpetrators facing legal consequences remains low (especially when they enjoy the protection of their governments or security agencies)
-*   Ransom payments, on average, remain high (more on this, in a moment)
-*   There’s always the possibility of a massive payout — for context, 2024 saw the largest ransom payment on record ($75 million USD from a Fortune 50 company, paid to the Dark Angels group)
-
-¹As we’ll see later, there’s evidence this decline is the result of effective defenses stopping attacks at the intrusion stage (i.e., before ransomware deployment)
-
-### Lower barriers to entry have led to a crowded landscape
-
-During this reporting period, we observed more than 50 unique threat actor groups operating in victim environments.
-
-This expansive collection is what happens when financial incentives intersect with the democratization of ransomware, the latter of which is the result of the evolving cybercrime ecosystem.
-
-In the early history of ransomware, threat groups managed the entire attack lifecycle in-house. This meant they needed the skills to develop ransomware software, identify potential victims, successfully infiltrate targets, perform intrusion actions leading to ransomware deployment and detonation, and negotiate payment.
-
-Today, ransomware-as-a-service (RaaS) is a well-established model in which:
-
-*   Ransomware developers (individuals and organizations) write their own software, then lease it to other individuals and groups (usually as a percentage of the ransoms paid)
-*   Initial access brokers (IABs), who specialize in gaining access and establishing persistence, sell access into IT environments around the globe
-*   Individuals and criminal organizations, operating as affiliates to the ransomware groups, conduct the actual attacks and negotiations
-
-Now, any aspiring cybercriminal can simply purchase access into an organization from an IAB and then deploy the ransomware. As part of their affiliate relationship with the ransomware authors, the actual attacker may receive general guidance (or even strict rules) about how to conduct the negotiations; they will also be able to leverage the author’s reputation, as needed.
-
-Plus, the individuals or groups launching attacks are rarely tied to a single variety of ransomware. Exclusivity agreements are rare (and difficult to enforce), so attackers can pick and choose whichever strain they prefer — whether for some technical reason, or perhaps because they stand to earn a bigger cut of the payday.
-
-Although it’s certainly possible to have file encryption or data extortion, rather than both, 96% of the ransomware cases to which we responded included both elements.
-
-The first known “double extortion” incident occurred in 2019, when the Maze ransomware operation attacked security staffing firm Allied Universal. In addition to encrypting files, Maze exfiltrated sensitive data and threatened to publish it unless Allied Universal paid the ransom.
-
-The model quickly caught on and is now the norm due to the pressure it exerts — including against victims with reliable backup and recovery processes.
-
-Notably, threat actors continue to add new extortion layers, including contacting business partners of victims and family members of executives — anything to compel a quick and large payment.
-
-Learn more in our blog, The Dangers of Double and Triple Extortion in Ransomware
+### Lower barriers to entry
+The ransomware-as-a-service (RaaS) model has democratized access to ransomware software, intrusion tools, and IT environments. Any aspiring cybercriminal can purchase access from an Initial Access Broker (IAB) and deploy ransomware.
 
 ### Ransomware actors continue to target organizations with no tolerance for downtime
-
-To extract a payment, ransomware operators apply pressure, typically by taking operations offline or threatening to release sensitive data.
-
-And when we look at the data, we see that five industries that are highly susceptible to both these tactics account for just over two-thirds of ransomware IR cases.
-
-**Ransomware & Data Extortion IR Cases by Industry**
-
-*   Manufacturing: 18.6%
-*   Healthcare: 13.1%
-*   Construction: 12.0%
-*   Legal & Government: 11.7%
-*   Education & Nonprofit: 11.7%
-*   Retail: 7.7%
-*   Business Services: 6.2%
-*   Finance & Insurance: 5.8%
-*   Energy & Natural Resources: 5.5%
-*   Technology: 3.3%
-*   Shipping & Logistics: 2.9%
-*   Other: 1.5%
-
-Manufacturers are historically a favored target of threat actors, as any operational disruption threatens to derail production, risk contractual penalties, create backlogs, and damage the manufacturer’s reputation. Plus, manufacturers often hold valuable information about industrial processes and customers, making them similarly susceptible to the data extortion aspect of modern ransomware.
-
-Given this context, it’s unsurprising to see the manufacturing industry accounts for the largest share of ransomware IR cases, at 18.6%.
-
-Healthcare has the second-largest share, at 13.1%, followed by construction with 12%. The top five are rounded out by legal and government, and education and nonprofit, each at 11.7%.
-
-Like in manufacturing, service or production outages for organizations in any of these industries become immediately evident and have significant consequences; similarly, many such organizations will also be sitting on troves of sensitive and proprietary data.
+Manufacturing (18.6%), Healthcare (13.1%), and Construction (12%) are the top industries targeted.
 
 ### Ransoms: demands, negotiations, and potential payment
+The median aggregate ransom demand remains at $600,000 (USD). While every case is unique, Arctic Wolf’s experienced ransomware negotiators were able to secure a 64% reduction in aggregate ransom demands.
 
-From an outside perspective, ransomware incidents can seem like fairly simple transactions: an attacker severely disrupts an organization and threatens to release data, the attacker states a ransom amount, the organization pays to expedite recovery or refuses to pay.
-
-Behind the scenes, though, things are considerably more complicated.
-
-**The Median Aggregate Ransom Demand Remains at $600,000 (USD)**
-
-It’s generally understood that cybercriminals base their initial ransom demand on a multitude of factors, including:
-
-*   The victim organization’s size and financial position, which threat actors use to estimate the organization’s ability to pay
-*   The victim organization’s industry, which influences their sensitivity to disruption and negative press, and which could provide relevant history on frequency of payouts
-*   The scope of the attack, which typically influences the victim’s ability to recover and the impact to their operations
-*   The victim’s insurance coverage, as some ransomware groups actively seek out cyber insurance policies in a victim’s environment to better inform their ransom demands
-*   The ego, mood, and reputation of the attacker
-
-Perhaps the ‘ransomware industry’ as a whole is reaching something of a steady state, now that victims are better prepared to recover, and now that the cyber insurance market is maturing.
-
-With so many variables at play, there can be considerable variation from year-over-year within each industry. Indeed, comparing the figure below to the one in last year’s report reveals only a few strong consistencies:
-
-*   Retail and the energy and natural resources sector once again faced the highest median ransom demands
-*   Healthcare continued to receive the second lowest ransom demands
-*   Manufacturing and technology were again in the bottom half
-
-The remainder of the list is heavily reordered, compared to last year’s report, with the most notable changes being:
-
-*   Construction, which was third-lowest last year, has jumped to third highest
-*   Finance and insurance, which was fourth-highest last year, has dropped to last
-
-Although it’s tempting to posit explanations for both the consistencies and changes, probably the wisest approach is simply to observe that there is tremendous variation across and within industries, and that specific ransom amounts remain largely unpredictable.
-
-In the aggregate (i.e., across all industries), the myriad of variables largely control for themselves, leading to less fluctuation and stronger predictive value. In fact, despite all the shuffling, the aggregate median initial ransom demand is unchanged: $600,000 (USD).
-
-**Median Initial Ransom Demand by Industry (USD)**
-
-*   Retail: $800K
-*   Energy & Natural Resources: $775K
-*   Construction: $775K
-*   Business Services: $699K
-*   All Industries: $600K
-*   Shipping & Logistics: $600K
-*   Legal & Government: $600K
-*   Education & Nonprofit: $600K
-*   Manufacturing: $550K
-*   Other: $488K
-*   Healthcare: $450K
-*   Technology: $400K
-*   Finance & Insurance: $325K
-
-### Expert negotiation pays off
-
-Many victims— especially those who choose to respond to an attack on their own without professional support — may not be aware that the ransom demand can be negotiated down.
-
-It’s worth bearing in mind that the worst outcome for the attacker is that they don’t get paid. A ransom demand that’s too high or an outright refusal to negotiate can both increase the odds of this result, so ransomware actors have strong motivations to come to the negotiating table, so to speak.
-
-Although negotiating with criminals is at best unsavory, the harsh business reality is that doing so can pay off in a significant way. Individual cases vary, of course, but our IR case data reveals that, in aggregate – Arctic Wolf ransomware negotiators were able to reduce the ransom demand by 64%.
-
-But negotiating with a ransomware actor is best left to the experts, who generally have much, much more experience with doing so than any in-house personnel. A professional ransomware negotiator will work on the victim’s behalf to communicate with the threat actor, to better understand the situation, and to try to reduce the amount demanded.
-
-Plus, we’ve observed that attackers are becoming more aggressive with their extortion tactics and adopting tougher stances. In the not-too-distant past, most ransomware actors showed at least some willingness to negotiate with the victim to arrive at a workable solution². Nowadays, though, harassment has become much more common, and some attackers even reach out to the victim organization’s business partners and the families of the victim organization’s executives — all while refusing to reduce their demands.
-
-²Note: We’re not at all giving them credit for this behavior — our intention is merely to contrast this slightly less deplorable behavior with the more aggressive behavior of the recent past.
-
-Expert incident responders have encountered all these tactics before.
-
-Still, there’s a bigger question: whether or not a threat actor reduces their demand, do victimized organizations even need to pay the ransom?
-
-### Ransom payments are often a business decision rather than a recovery necessity
-
-At Arctic Wolf, our position aligns with the general recommendations of the FBI, other law enforcement agencies, and governments: If possible, ransom demands should not be paid, as starving the perpetrators is the only way we can collectively hope to eliminate these attacks.
-
-Nevertheless, the decision on whether to pay is one that must be made by stakeholders within the victim organization once presented with all possible information and options.
-
-As context, Arctic Wolf’s The State of Cybersecurity: 2024 Trends Report revealed that, within that report’s 12-month research window, 83% of ransomware victims paid a ransom³. In contrast, in the ransomware IR cases used in the report you’re reading now, only 30% of victims elected to pay — meaning 70% chose not to, nearly the inverse of the survey-sourced number.
-
-What’s behind this stark difference?
-
-Lacking visibility into the incidents reflected in the survey, we can’t say for sure. However, we believe it’s fair to say that an organization acting on their own almost certainly lacks the experience to understand all the options available and may succumb to pressure from the perpetrators to act quickly — but calling in a professional IR team can unlock more options.
-
-Employing the services of a professional IR organization can have many benefits, including:
-
-*   Preventing further problems: In some circumstances, the threat actor demanding a payment could be a sanctioned entity or have ties to a terrorist organization. In these cases, any payment to such a group constitutes a crime on behalf of the payee.
-*   Insight into the situation and explanation of what options are available: This can include if a payment is even necessary (sometimes decryption keys are already known) and the reputation of the threat actor. Professional negotiators can sometimes get information from the threat actors (e.g., what data was stolen) that can lead to better-informed decisions.
-*   Smaller payments: While every ransomware affiliate and group is different, professionals know who is more likely to lower their demands, and by how much.
-
-³That is, 83% of organizations hit by ransomware paid either some or all of the initial ransom demand. Note, however, that this figure comes from a survey of 1,000 IT and security decision makers and was not limited to incidents that pulled in IR professionals or, more specifically, Arctic Wolf’s IR professionals. Nevertheless, it indicates that the large majority of ransomware victims pay, overall.
-
-Detailed examination of our IR case data suggests that paying a ransom was the victim’s only viable recovery option in a mere 12% of cases — meaning that some organizations chose to pay when they didn’t (strictly speaking) have to.
-
-The main motivations for doing so were to:
-
-*   Prevent publication of stolen data
-*   Speed up the recovery process
-
-Let’s first confront the reality that the majority of ransomware attacks include data theft. In theory, paying up is the only way to prevent publication and, supposedly, to ensure deletion (although, per the callout below, “buyer beware” applies). However, an IR team may provide compelling evidence that paying the ransom, while perhaps preventing publication, won’t guarantee deletion. This fact alone might cause an organization to reconsider. Or maybe the IR team helps the organization better understand the regulatory ramifications or can uncover information suggesting the exfiltrated data isn’t as sensitive or damaging as first feared. Maybe the presence of the IR team simply buys time, and — no longer feeling rushed to act — the organization reconsiders and ultimately decides not to pay. This list is not intended to be exhaustive, but rather to highlight some possibilities.
-
-The second major aspect is recovery-centric ransoms — that is, paying to receive a decryption key. In this case, the IR team might know of a flaw in the encryption algorithm that renders decryption without a key possible. Or maybe the decryption keys are already known from prior incidents or law enforcement actions. In working with the IR team, perhaps the victim organization finds that their backup and recovery processes are sufficient to negate most of the harm, changing the math that determines the ‘value’ of making the payment. So, while every situation is different, aggregate case analysis indicates that bringing in a professional IR team is worthwhile.
-
-### “Can we trust a ransomware group to be true to their word?”
-
-This is one of the most common questions ransomware victims ask our IR professionals when considering whether or not to pay the ransom/extortion demand.
-
-Our best, most-informed answer is roughly, “Generally, yes, but…”
-
-“Generally, yes...”
-Most ransomware groups and affiliates model themselves after legitimate businesses; accordingly, they recognize that their success depends in large part upon their reputation. If a threat actor’s actions lead to a reputation of not delivering on their promises — by failing to deliver a decryption key or releasing data after a ransom is paid — then that undermines the entire extortion business model.
-
-“But…”
-However, although these groups may model themselves as businesses, never forget that they are criminals. We have handled multiple cases in which our analysts, or agencies with whom we have collaborated, have offensively “hacked back” against the threat actor and discovered data that victims had been assured was deleted — violating the terms of the ransom agreement. While the threat actor may not have released this data, they still kept it. What’s to prevent them from coming back later and demanding additional payment if they find themselves in a situation where they need more money? Plus, if the ransomware actor enjoys the patronage or protection of a government intelligence agency, it’s reasonable to presume that exfiltrated information is immediately passed ‘up the chain.’
-
-In general, payment may be regarded as a path to faster recovery and a means to prevent publication of data but should not be considered as a guarantee that information won’t be distributed privately or even that these criminals will stay true to their word.
-
-### Unsecured RDP is the root cause of the largest portion of ransomware cases
-
-External exposure is the root cause of 93% of our ransomware and data extortion IR cases, with two varieties — external remote access (59.4%) and external exploits (33.2%) — accounting for practically all such incidents.
-
-**Root Causes of Ransomware & Data Extortion IR Cases**
-
-*   External Remote Access (e.g., RDP, VPN, RMM, etc.): 59.4%
-*   External Exploit: 33.2%
-*   Zero-Day Exploit: 0.4%
-*   Malicious Software Download: 4.4%
-*   Previously Compromised Account / Credentials: 0.9%
-*   Social Engineering (e.g., Tech Support Scam, Account Creation, etc.): 0.9%
-*   Phishing: 0.4%
-*   Third Party and Supply Chain: 0.4%
-
-**Categories**
-
-*   External Exposure: 93.0%
-*   Human Risk: 6.6%
-*   Trusted Relationship: 0.4%
-
-Digging deeper, attackers leveraged unsecured Remote Desktop Protocol (RDP) and compromised virtual private network (VPN) credentials as their primary methods, with RDP alone being the culprit in 38% of cases.
-
-To put this in perspective, it means attackers abused the very tools organizations have implemented to enable and secure their remote offices and workforces — often by simply logging in to unprotected services.
-
-With many organizations having offices distributed geographically, and with remote — and hybrid- work models here to stay, remote access tools — including RDP, VPN, and remote monitoring and management (RMM) utilities — are workhorses of modern IT infrastructure. And, unlike many other elements within the tech stack, these tools generally have to be externally accessible.
-
-Unfortunately, absent an added layer of protection such as strong, phishing-resistant multi-factor authentication (MFA), these services also provide a convenient way for threat actors to largely bypass an organization’s defenses. All an attacker needs to do so is obtain a set of active credentials, which can be sourced via phishing, purchased within a cybercrime marketplace, or ‘discovered’ via an identity-based attack like credential stuffing or password spraying. The use of a valid account makes it more difficult for organizations to detect the activity as being malicious, which gives an attacker time to pursue their objectives.
-
-During this report period, we observed malicious usage of 32 different RMM tools. There’s also a distinct upward trend, with RMM tools being used in 36% of IR cases within the last quarter.
-
-What if a target doesn’t have an RMM tool already in place? We observed several instances where the threat actor would send a phishing email with an unauthorized charge/purchase pretext. The recipients would be directed to a phishing site, the goal of which is to have them download and install ConnectWise ScreenConnect. In some cases, the victim would even call a support phone number (provided by the attacker) and actually be guided through the download and installation process. The Black Basta ransomware group is known to employ a similar approach. After following up an email bombing attack by impersonating IT personnel, the group would use Windows Quick Assist to obtain initial access and then turn to a combination of RMM tools to maintain persistence.
-
-Unfortunately, as explained in the Arctic Wolf Labs 2025 Predictions Report, we expect threat actors to continue to target perimeter defenses using these same tactics.
-
-To help withstand perimeter-focused attacks, organizations should scan their environments for unsecured RDP and should pay particular attention to credential management (in addition to implementing and enforcing phishing-resistant MFA).
-
-### Backing up to bounce back
-
-One of the most effective ways an organization can increase resilience against ransomware attacks is to maintain proper backup practices. While backups don’t address the issues around data exfiltration, being able to restore business operations can buy your organization time and limit the ripple effects of the attack. Our case analysis shows that in 68% of ransomware incidents, reliable backups aided in the recovery process — in many cases removing the need for a payout by providing an alternate path to sufficient recovery.
-
-Following the 3-2-1 principle of backup: The 3-2-1 principle says that an organization should have:
-
-*   3 copies of data (1 primary and 2 backup)
-*   2 different types of media
-*   1 off-site copy (ideally in a secure private cloud)
-
-Regular recovery testing: A real-world incident is not the time to uncover problems with processes, prioritization, or the backups themselves — be sure to regularly (and perhaps randomly) test your ability to recover.
-
-Understanding and accounting for the shared responsibility model of cloud services: The cloud/SaaS provider and the SaaS customer (i.e., you) each assume ownership of particular responsibilities with respect to data security. Be sure to understand the terms of each of your contracts, but in general:
-
-*   The SaaS provider is only responsible for the underlying application, operating system, virtualization, hardware, and network — including hardware failures, software failures, natural disasters, power outages, and physical intrusion into the data centers
-*   The customer is responsible for users, data, administration, human errors, programmatic errors, malicious insiders, ransomware attacks, and other malware — in other words, a security incident originating from within your organization that destroys or disrupts your cloud data is your responsibility
-
-Looking beyond ransomware, restoring from reliable backups was also the number one recovery method for intrusions. When an attacker has gained unauthorized access to an environment, there’s a high likelihood that they have established multiple persistence mechanisms that would allow them to regain access should they be expelled. Therefore, it’s often recommended to restore every system accessed by the attacker and start over, rather than assuming all persistence mechanisms were found and removed — as even a single missed backdoor can prove disastrous.
-
-Outlined below and in the right column of this page are some backup best practices that might make a meaningful difference on a dark day.
+### Unsecured RDP
+Unsecured Remote Desktop Protocol (RDP) and compromised VPN credentials are the leading root causes of ransomware IR cases, with RDP alone being the culprit in 38% of such incidents.
 
 ### Spotlight: The usual suspects
-
-We observed 50 unique ransomware threat actors in victim environments. The ransomware-as-a-service reality makes positive attribution of an incident considerably more difficult than in years past.
-
-However, such attributions can be informed by a combination of:
-
-*   Malware samples
-*   Infrastructure overlap or reuse
-*   Post-encryption file extensions
-*   Ransom messages and leak site postings
-*   Negotiation script patterns
-
-As such, our team of researchers have identified the five major ransomware groups that were behind 42% of the cases we investigated in the last 12 months.
+We identified five major ransomware groups behind 42% of the cases investigated:
+1. **Akira** (15% of cases)
+2. **LockBit** (9% of cases)
+3. **BlackSuit** (6% of cases)
+4. **Fog** (5% of cases)
+5. **Play** (4% of cases)
 
 ---
 
-#### THREAT ACTOR: AKIRA
+## Part 02: Business Email Compromise
 
-**DARK WEB DATA:**
+BEC incidents are the second-largest cause of IR cases (27%). 
 
-*   **AW IR DATA | 10.23–10.24:**
-    *   Percentage of Our Cases: 15%
-    *   Median Starting Demand: $325,000 USD
-    *   File Ext. of Encrypted Files: .akira or .powerranges (Megazord variant) or .arika when their ransomware misfires / file corruption on hosts
-*   **First Observed:** March 2023
-*   **Potential Lineage:** Ryuk > Conti --> Akira
-*   **NUMBER OF VICTIMS:** 215 (Listed on their leak site*)
-*   **NUMBER OF POSTS:** 19 (Average postings each month on their data leak site**)
-*   **TOP 3 INDUSTRIES***: 01. Manufacturing ~23%, 02. Construction ~11%, 03. Technology ~7%
-*   **TOP 5 COUNTRIES***: 01. United States ~51%, 02. Canada ~7%, 03. United Kingdom ~5%, 04. Brazil ~4%,
+### Financial services organizations are the prime targets
+The finance and insurance industry accounted for 26.5% of BEC IR cases. BEC accounted for 53% of IR cases pertaining to finance and insurance.
+
+### Social engineering drives BEC
+Phishing (72.9%) and previously compromised credentials (18.8%) are the leading root causes of BEC cases.
+
+---
+
+## Part 03: Intrusions
+
+Intrusions were the third-leading factor behind IR cases (24%).
+
+### Intrusions, the first step towards greater threats
+Intrusions include network intrusions (targeting edge devices) and host-based intrusions (targeting endpoints).
+
+### Prioritized patching can prevent intrusions
+In 76% of intrusion cases, threat actors employed at least one of 10 specific vulnerabilities, none of which were zero-days. Seven of these were associated with remote access tools or other externally facing services.
+
+---
+
+## Part 04: Managing & Mitigating Threats
+
+To protect against these threats, organizations should focus on:
+- **Adaptable security posture**: Implementing phishing-resistant MFA.
+- **Detection and response**: Spanning the full attack surface.
+- **IR process**: Having a partner that enables fast and effective recovery.
+- **Backup practices**: Following the 3-2-1 principle (3 copies, 2 media types, 1 off-site).
+
+---
+
+## Conclusion
+
+The cybersecurity landscape remains a high-stakes arms race. By focusing on the fundamentals—patching critical infrastructure, implementing phishing-resistant MFA, and maintaining robust, tested backups—organizations can significantly reduce their risk profile and improve their resilience against the most common and damaging threats.
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved. | Public
+
+---
+
+f the top six for
+
+• Legal & Government
+
+ransomware, albeit in a different order.
+
+• Manufacturing
+
+29
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public Key TermsA Trio of TargetsARCTIC WOLF   |   2025 THREAT REPORTPART 03: INTRUSIONS
+
+Intrusion IR Cases by Industry
+
+Finance & Insurance
+
+Education & Nonprofit
+
+Legal & Government
+
+Manufacturing
+
+Healthcare
+
+Construction
+
+Business Services
+
+Other
+
+Retail
+
+Energy & Natural Resources
+
+Technology
+
+4.0%
+
+3.3%
+
+Shipping & Logistics
+
+1.3%
+
+15.3%
+
+15.3%
+
+14.7%
+
+11.3%
+
+8.7%
+
+8.7%
+
+6.0%
+
+6.0%
+
+5.3%
+
+Intruders disproportionately leverage a small number of vulnerabilities
+
+Like many clichés, the threat landscape being described as dynamic, ever-changing, or ever-evolving is rooted in
+
+real-world truth.
+
+New vulnerabilities are constantly being discovered, new exploits — including potentially devastating zero-
+
+days — are always being written, and threat actors are always refining their approaches. However, across all
+
+IR cases, time and again, we observe attackers leveraging a favored subset of TTPs.
+
+For example:
+
+This reality is both:
+
+• In 76% of cases, threat actors employed one
+
+• Humbling, because patches exist for all 10; and
+
+or more of 10 specific vulnerabilities (whether
+
+to gain initial access or to perform subsequent
+intrusion actions)
+
+• Empowering, because it shows that a small
+
+amount of prioritized patching can significantly
+
+decrease an organization’s chances of becoming
+
+• In 51% of cases, threat actors employed one or
+
+a victim.
+
+more of the top four.
+
+The number of known vulnerabilities continues to climb rapidly, from just under 6,500 in 2015 to more than 40,000 in 2024.
+
+With advances in AI — reasoning techniques, in particular — we expect threat actors to identify novel routes to initial access.
+
+Thus far, even the most advanced AI models have failed to replicate human reasoning capabilities, but that may soon
+
+change. Once it does, threat actors will undoubtedly harness this newfound power to uncover new ways to break into
+
+protected environments.
+
+Learn more about what we think the near-term future holds in our Arctic Wolf Labs 2025 Predictions Report.
+
+30
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public  AI-Assisted Vulnerability DiscoveryARCTIC WOLF   |   2025 THREAT REPORTPART 03: INTRUSIONS
+
+Vulnerabilities keep increasing
+
+In another record-setting year, over 40,000
+
+vulnerabilities were recorded in 2024.
+
+In addition to that alarming number, 2024 was
+
+also a record-breaking year in regard to the volume
+
+of critical and high-severity vulnerabilities. Both
+
+increased by 13.46% in 2024.
+
+This continued growth, fueled by hybrid work
+
+models, increasing reliance on web applications,
+
+and the use of AI by threat actors, underscores the
+
+importance of implementing a robust, risk-based
+
+vulnerability management program.
+
+Explore the 2024 vulnerability landscape in-depth
+and learn how to better protect your organization.
+
+#01 CVE-2024-40766
+
+SonicWall SonicOS Improper Access Control Vulnerability
+
+#02 CVE-2023-4966
+
+Citrix NetScaler ADC & Gateway Buffer Overflow Vulnerability
+
+#03 CVE-2024-1709
+
+ConnectWise ScreenConnect Authentication Bypass Vulnerability
+
+#04 CVE-2024-3400
+
+Palo Alto Networks PAN-OS Command Injection Vulnerability
+
+#05 CVE-2023-48788
+
+FortiClientEMS Remote Code Execution Vulnerability
+
+#06 CVE-2023-3519
+
+Citrix ADC, Citrix Gateway/ Citrix Bleed Remote Code Execution Vulnerability
+
+#07 CVE-2023-41266 Qlik Sense Remote Code Execution Vulnerability
+
+#08 CVE-2023-20269
+
+Cisco ASA Firewall VPN Authentication Vulnerability
+
+#09 CVE-2021-31207
+
+ProxyToken: On-Premises Microsoft Exchange Authentication Bypass Vulnerability
+
+#10 CVE-2023-27532
+
+Veeam Backup and Replication Authentication Vulnerability
+
+YoY Vulnerability CVSS v3 Severity Breakdown
+
+Low
+
+Medium
+
+High
+
+Critical
+
+31
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public 514521665591617144217982038277432901392352624043054293453493557339289721047810977111781284380391170918801768825111711951093277227132910286828652404116501395496191180811611352152815681419150511738605180513005000100001500020000250003000035000400002012Total:52972013Total:51912014Total:79392015Total:65042016Total:64542017Total:147142018Total:165572019Total:173442020Total:183252021Total:201712022Total:252262023Total:290652024Total:40289ARCTIC WOLF   |   2025 THREAT REPORTProtecting your organization against vulnerabilities
+
+Vulnerability remediation is the act of removing a vulnerability through patching
+or another process.
+
+By focusing on remediation, organizations can greatly reduce their cyber risk and prevent threat actors
+
+from utilizing vulnerability exploits as an attack vector.
+
+There are four main questions an organization needs to ask itself as it sets out to conduct vulnerability
+
+remediation:
+
+Which vulnerabilities should I remediate first?
+
+How can I efficiently remediate those vulnerabilities?
+
+How do I prioritize vulnerabilities based on my resources and business risk tolerance?
+
+How do I set realistic deadlines for my vulnerability remediation plan?
+
+Of course, those questions are easier to ask than to answer, and for many organizations that lack resources,
+
+time, or budget, vulnerability remediation can seem like an endless mountain to climb.
+
+Compounding the challenge, it’s difficult to determine which vulnerability to remediate first if you
+
+don’t have a clear understanding of your overall attack surface. Plus, efficient remediation is all but
+
+impossible without contextualization of your entire environment.
+
+Unfortunately, that contextualization — including your risk policies, asset context, and service level
+
+objectives (SLOs) — is not easy to achieve when you have limited resources and an overwhelmed IT
+
+team. Not to mention the time and resources needed to conduct security scans and do the actual
+
+remediating.
+
+That’s why remediation should just be one part of a full vulnerability management program, which
+
+prioritizes continuous vulnerability remediation and assessment, with other components of the
+
+program complementing and assisting overall remediation and mitigation.
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public
+
+3232
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public    01020304ARCTIC WOLF   |   2025 THREAT REPORTPART 03: INTRUSIONS
+
+External exposure is the root cause of the vast majority of intrusions
+
+Over half (60%) of intrusions were ultimately traced to external exposure. Like the ransomware cases examined
+
+earlier, most of these are attributable to:
+
+• External remote access tools and services (38%)
+
+• External exploits (22%)
+
+The same general analysis and recommendations already discussed (in the ransomware section) with
+
+respect to external remote access tools and services apply here.
+
+Root Causes of Intrusion IR Cases
+
+26.5%
+External Exploit
+
+40.2%
+External Remote
+Access (e.g., RDP,
+VPN, RMM, etc.)
+
+CATEGORIES
+
+76.1%
+External Exposure
+
+23.9%
+Human Risk
+
+6.0%
+
+Zero-Day Exploit
+
+1.7%
+
+Brute-Force Attack
+
+1.7%
+
+Misconfiguration
+
+8.5%
+
+Malicious Software Download
+
+6.8%
+
+Phishing
+
+5.1%
+
+Social Engineering (e.g., Tech Support
+Scam, Account Creation, etc.)
+
+3.4%
+
+Previously Compromised Account / Credentials
+
+When external exploits were the culprit, the threat actor exploited a vulnerability for which a patch was
+
+available prior to the incident — notice that seven of the top 10 vulnerabilities listed above pertain to either
+remote access tools or externally facing services.
+
+Interestingly, intrusion cases have by far the highest attribution to zero-day exploits (6%, versus only 0.4% for
+
+ransomware and no BEC cases).
+
+In some instances where remote access tools were abused, attackers took advantage of misconfigurations
+
+(e.g., open ports, externally facing internal websites, administrative accounts vulnerable to brute-force
+
+tactics) to gain entry.
+
+It’s also worth mentioning that user-initiated malicious software downloads also account for a larger
+percentage of intrusion cases (8.5%) than they do for either ransomware (4.4%) or BEC (0%). These
+intrusions may well be opportunistic, in that a threat actor has booby-trapped an application and is
+simply waiting to be alerted when it’s activated within an organization. This approach could be somewhat
+targeted to particular industries by compromising particular types of software or employing watering hole
+techniques to attract downloads from certain industries or professional roles.
+
+33
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public ARCTIC WOLF   |   2025 THREAT REPORTHow to manage the risks associated with credential theft
+
+Credential theft is the stealing of passwords, usernames, or other information
+that allows for access to networks, applications, assets, or accounts.
+
+Cybercriminals employ several ways to acquire credentials, including:
+
+Phishing (e.g., email, voice, SMS)
+
+Infostealer malware and credential dumping tools (e.g., Redline Stealer, Mimikatz, Sassy)
+
+Credential stuffing and other brute-force attacks against the login box or API
+
+For organizations with hundreds or thousands of users, staying on top of credential protection can be an
+
+overwhelming task, especially if those users are not security minded and are using personal accounts on
+
+company devices or a work email address for personal accounts.
+
+Nevertheless, there are proactive and reactive measures a security team can take to improve credential
+
+security and to build resilience against threat actors equipped with valid credentials.
+
+These measures include:
+
+•  Implementing (and enforcing) strong, phishing-resistant MFA, for example using FIDO Alliance’s
+
+FIDO2 specifications (e.g., WebAuthn)
+
+•  Proactively hardening Active Directory using tools like PingCastle for visibility into configuration
+
+weak spots
+
+•  Using around-the-clock, real-time monitoring — like the kind offered by a managed detection and
+
+response (MDR) solutions — to recognize unusual user behaviors
+
+•  Delivering comprehensive employee security training
+
+•  Ensuring login services include layers of specialized defenses, including bot detection capabilities, to
+
+guard against identity attacks
+
+•  Embracing the principle of least privilege access (PolP), supported by a zero trust access model, role-
+
+based access control (RBAC), and privileged access management (PAM)
+
+•  Conducting (or subscribing to) dark web monitoring
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public
+
+3434
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public    010203ARCTIC WOLF   |   2025 THREAT REPORTPART 04: MANAGING & MITIGATING THREATS
+
+A robust cybersecurity strategy is one that is not only tailored to each organization’s needs, but one that
+
+also includes both proactive and reactive elements to limit the number and severity of incidents while
+
+providing a strong recovery capability.
+
+We’ve already covered:
+
+•  The importance of reliable backup processes, especially for recovering from ransomware and intrusions
+
+•  How to build resilience against social engineering, which remains a major root cause of IR cases
+
+•  Why prioritized vulnerability management can make it much harder for attackers to achieve their
+
+objectives
+
+•  How to manage the risks associated with credential theft, which is crucial as threat actors increasingly
+
+turn to credential abuse as a means of avoiding defenses
+
+Here are some additional recommendations to help safeguard your
+organization in 2025.
+
+Develop a solid understanding of your IT environment and attack surface
+
+One of the most important pillars of an organization’s security posture is understanding the full breadth and
+
+depth of the attack surface.
+
+This data enables organizations to prioritize and refine their security program with precision and develop a
+
+stronger vulnerability and security posture management program.
+
+  Create and maintain an approved software list: This helps you rein in shadow IT and (with
+
+monitoring) identify intrusions. For example, if software not on the approved list is downloaded
+
+within the environment, alert and triage the finding — especially if it’s an RMM tool.
+
+  Create an inventory of assets and their exposure: By doing so, you can gain a better understanding
+of the overall attack surface and can correct instances where applications and devices are mistakenly
+
+exposed.
+
+  Do not expose management interfaces to the Internet: We have seen a multitude of vulnerabilities
+
+that would have a significantly lower impact if management interfaces weren’t exposed.
+
+  Take control of the cloud: We asked an Amazon Web Services expert for their advice on how to best
+
+take control of you cloud environment:
+
+“From my perspective, many cloud security incidents are not rooted in vulnerabilities but instead
+can be traced back to misconfigurations and/or overly permissive access policies. You should
+
+leverage IAM least privileges policies and monitor configuration drift away from your security
+baselines as a part of your standard operations.”
+
+– Ryan Orsi, WW Cloud Foundations Partner Specialists
+
+35
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public ARCTIC WOLF   |   2025 THREAT REPORT
+PART 04: MANAGING & MITIGATING THREATS
+
+Ensure you have broad visibility (monitoring) into your environment and
+assets, and create a baseline of normal behavior
+
+Arctic Wolf has consistently recognized that a lack of visibility allows security threats to go unnoticed for
+
+far too long.
+
+Expanding environmental visibility beyond endpoints alone increases the likelihood of detecting potential
+
+threats at an early stage, allowing for those threats to be stopped before they have a chance to inflict
+
+significant damage.
+
+  Monitor logs: Log monitoring is critical to detect major threats. This includes logs from intrusion
+detection systems (IDS)/network detection and response (NDR) systems, endpoint detection and
+
+response (EDR) solutions, firewalls, identity and access management (IAM) systems, email services
+
+(e.g., to monitor for changes in access and the creation of filtering rules), and the cloud-hosted
+
+services that extend your organization’s environment beyond your own infrastructure.
+
+  Monitor endpoints: Implementing endpoint monitoring across the environment will help you review
+public ports, disable unnecessary ports, and restrict port destinations. This type of monitoring is
+
+crucial to provide visibility into actions taken by potential threat actors. While other types of log
+
+sources can complement this type of visibility, they cannot replace it.
+
+  Create a baseline: The better your understanding of your environment, the better positioned you are
+
+to spot deviations that could be signs of a cyber attack, including data exfiltration.
+
+Enforce strong identity controls
+
+Identity is becoming a major battleground in modern cybersecurity, and today’s threat actors are adept
+
+at finding and leveraging credentials that allow them to log into services and move unnoticed around
+
+victim environments.
+
+
+
+Implement and require strong, phishing-resistant MFA: At this point, failing to implement MFA can
+be seen as an unnecessarily risky decision. Similarly, relying on legacy MFA techniques introduces
+
+further unnecessary risk while giving a false sense of protection. Safeguarding your organization
+
+requires modern, phishing-resistant MFA (e.g., based on the FIDO2 set of specifications).
+
+  Employ a zero trust security strategy: Zero trust limits all access unless identity and security posture
+can be verified. This strategy can reduce the attack surface and limit an attacker’s ability to move
+
+laterally through an organization’s network.
+
+36
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public ARCTIC WOLF   |   2025 THREAT REPORT
+PART 04: MANAGING & MITIGATING THREATS
+
+Establish and continually foster a culture of security
+
+Positive security outcomes don’t happen by chance — they result from a culture in which security is ingrained
+
+and embodied within and by everyone.
+
+  Lead by example: Executives should not be exempt from the security requirements that apply to the
+
+rank and file — attackers routinely take advantage of such exceptional treatment.
+
+  Hold employees, the extended workforce, and third parties to the same high standards: Anyone
+
+who has access to any part of your IT environment should be subject to the same access controls and
+
+security policies.
+
+
+
+Implement a comprehensive security awareness program: This helps users understand how they
+can be targeted and how they are a critical line of defense against threat actors and breach attempts.
+
+  Talk about security: The need for security should be understood by everyone as an everyday reality
+of doing business. Create forums where people can ask questions; designate experts who can be
+
+consulted on specific decisions; review security metrics at all-hands meetings — whatever it takes to
+
+keep security top of mind.
+
+Consider an IR retainer with an organization that staffs ransomware negotiators
+
+The hope is you will never need to activate this retainer or employ these professionals, but if you do, you’ll be
+
+relieved that they are available.
+
+  Prioritize incident readiness. Prepare for severe cyber attacks by creating an incident response plan,
+
+utilize incident runbooks, and reference/update preparedness materials often.
+
+  Find a partner you can trust. A full-service incident response (IR) team should provide everything
+
+needed to stop an attack and quickly restore your organization to pre-incident business operations.
+
+  Seek an IR team with negotiation expertise. When finding a trusted IR partner, examine the
+
+negotiation services and expertise – specifically, data regarding reduced ransoms or not paying the
+
+ransom at all.
+
+  Have insurance and legal approval. Many cyber insurance and data privacy councils have preferred
+incident response providers who have familiarity with legal processes and policy requirements that
+
+ensure a collaborative engagement with any organization and third parties to address legal – and
+
+insurance-related requirements.
+
+37
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public ARCTIC WOLF   |   2025 THREAT REPORTCONCLUSION
+
+Adapting and evolving, together.
+
+In this report, we’ve examined aggregated IR case data pertaining to ransomware, business email
+
+compromise, and intrusion incidents.
+
+We hope the insights and recommendations herein will allow you to take a practical, prioritized, and
+
+informed approach to reducing risk and increasing resilience.
+
+Taking a broad view of the situation, the fact that such incidents continue to occur — that is, despite
+
+massive effort and expense directed towards prevention — speaks to two important realities with
+
+which today’s organizations must contend.
+
+First, adversaries are committed to their ‘craft,’
+
+Second, preventative measures alone are
+
+adapting and evolving as needed to achieve
+
+insufficient. Yes, defenders must build and
+
+their goals.
+
+With strong financial (and sometimes political)
+
+motivations, and unencumbered by laws,
+
+certain ethical standards, or institutional
+
+maintain a foundation of fundamentals and
+
+continually adapt and evolve their security
+
+posture such that, over time, those novel
+
+defenses are integrated into the new normal.
+
+planning horizons, attackers of all types show a
+
+But defenders must also augment these
+
+willingness to:
+
+proactive measures with:
+
+•  Stick with what works: tried-and-tested
+approaches including favored exploits,
+
+•  Reactive capabilities designed to quickly and
+
+effectively detect and respond to attacks
+
+specific intrusion tools, and preferred
+
+that break through outer defenses
+
+strategies
+
+•  Risk transfer measures, including leveraging
+
+•  Constantly develop new TTPs: from
+
+warranties and insurance, in response to the
+
+low-tech methods of bypassing high-tech
+
+reality that — as this report has shown —
+
+tripwires to the most advanced zero-day
+
+incidents do happen (even to well-prepared
+
+exploits — and everything in between
+
+organizations)
+
+It can all seem overwhelming — but you’re not alone.
+
+An entire cybersecurity community stands with you and is committed to sharing and learning, lifting
+
+and helping, and working together to withstand attacks and intrusions.
+
+If you’d like to augment your internal capabilities with external expertise, we’re ready for you to join
+
+the Pack.
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public
+
+3838
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public    ARCTIC WOLF   |   2025 THREAT REPORTHow Arctic Wolf can help
+
+The outcomes you need, the convenience you’ll love.
+
+When we speak with organizations around the world, we’re often asked for three things:
+
+An effective cybersecurity solution that will provide end-to-end protection against cyber
+
+threats, that will be easy to manage, and that will integrate with the security products they’ve
+
+already deployed
+
+A way to financially offset the remaining risk
+
+Expert assistance to help evolve their security posture over time, aligned with their specific
+
+priorities and operating context
+
+In response, we’ve created the Arctic Wolf Security Operations Bundles.
+
+These bundles provide the full suite of technology, security expertise, and risk transfer options to end your
+
+cyber risk.
+
+Whether it’s proactive security offerings like employee awareness training, vulnerability scanning, and
+
+incident readiness planning, or reactive detection, remediation, and active response capabilities to
+
+minimize the severity of an incident, the Security Operations Bundles provide full coverage across all
+
+your attack surfaces.
+
+Best of all, some of the remaining risk may be financially transferred to Arctic Wolf through our
+
+industry-leading Security Operations Warranty. With up to $1.5 million (USD) in financial coverage
+
+and the ability to fund your cyber insurance deductible, your out-of-pocket costs after a severe cyber
+
+attack may be mitigated.
+
+If you aren’t getting the outcomes you’re looking for from the solutions you have today — or if you just need
+
+some support in putting your existing investments to work — we would love to help.
+
+For more information about Arctic Wolf, visit arcticwolf.com
+
+Arctic Wolf and its employees are not licensed producers and therefore are not engaging in the sale, solicitation or negotiation of
+
+insurance and are NOT offering advice regarding insurance terms, conditions, premium rates or claims. Customers interested in purchasing
+
+Cyber Insurance coverage should consult with an appropriately licensed insurance broker.
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public
+
+3939
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public    010203ARCTIC WOLF   |   2025 THREAT REPORTE N D   C Y B E R   R I S K
+
+About Arctic Wolf
+
+Arctic Wolf® is a global leader in security operations, delivering the first cloud-native security
+operations platform to end cyber risk.
+
+Powered by threat telemetry spanning endpoint, network, identity, and cloud sources, the Arctic Wolf
+
+Aurora Platform ingests and analyzes trillions of security events each week to enable critical outcomes
+
+for most security use cases. By delivering automated threat protection, response, and remediation
+
+capabilities, Arctic Wolf delivers world-class security operations with the push of a button so customers
+
+can defend their greatest assets at the speed of data.
+
+For more information about Arctic Wolf, visit arcticwolf.com.
+
+REQUEST A DEMO
+
+©2025 Arctic Wolf Networks, Inc., All Rights Reserved. Arctic Wolf, Arctic Wolf Platform, Arctic Wolf Security Operations Cloud, Arctic Wolf Managed Detection and Response,
+Arctic Wolf Managed Risk, Arctic Wolf Managed Security Awareness, Arctic Wolf Incident Response, and Arctic Wolf Concierge Security Team are either trademarks or registered
+trademarks of Arctic Wolf Networks, Inc. or Arctic Wolf Networks Canada, Inc. and any subsidiaries in Canada, the United States, and/or other countries.
+
+©2025 Arctic Wolf Networks, Inc. All rights reserved.  |  Public AW_RP_2025 LABS THREAT REPORT_0125
