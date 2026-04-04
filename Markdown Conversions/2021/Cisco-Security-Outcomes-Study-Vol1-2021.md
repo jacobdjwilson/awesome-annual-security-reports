@@ -1,597 +1,462 @@
-Contents
+# Security-Outcomes-Study-Vol1
 
-[Introduction](#introduction)  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . 3
+## Table of Contents
+- [Introduction](#introduction)
+- [Key Findings](#key-findings)
+- [Where are we going? Security Program Outcomes](#where-are-we-going-security-program-outcomes)
+- [What are we doing? Security Practices](#what-are-we-doing-security-practices)
+- [How do we get there? Identifying Success Factors](#how-do-we-get-there-identifying-success-factors)
+- [A Roadmap for Success](#a-roadmap-for-success)
+- [About Cisco Secure](#about-cisco-secure)
+- [Appendices](#appendices)
 
-[Key Findings](#key-findings)  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . 5
+---
 
-Where are we going?
-[Security Program Outcomes](#where-are-we-going-security-program-outcomes)  .  .  .  .  .  .  .  .  .  .  . . 7
+# Introduction
 
-What are we doing?
-[Security Practices](#what-are-we-doing-security-practices)  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . 9
+When we set out to develop this study, our main goal was to provide a practical tool for you, the security leader, to guide your investments, propel you to achieve success in your security program, and better manage risk.
 
-How do we get there?
-[Identifying Success Factors](#how-do-we-get-there-identifying-success-factors)  .  .  .  .  .  .  .  .  .  .  . . 11
+With a global representation (25 countries and over 4,800 respondents), we aim to empirically measure what factors drive the best security outcomes. This is quite different than what we have created in the past in our Cybersecurity Report Series, and we hope that this new approach and tone is refreshing and welcomed.
 
-[A Roadmap for Success](#a-roadmap-for-success)  .  .  .  .  .  .  .  .  .  .  .  .  . . 30
+As we know, security is ever evolving to the point that success can sometimes feel elusive. So we set out to answer some questions in this study: How can we efficiently and effectively manage our cybersecurity risk? How is it that even the largest companies with the biggest security budgets still struggle to achieve certain outcomes? With all the various options out there for achieving a successful cybersecurity program, which ones should practitioners focus on? New technology? More training? Better incident response procedures? The possibilities are endless. How can a security team determine what will work best? And what’s to say that won’t change? (Spoiler alert, it will.)
 
-[About Cisco Secure](#about-cisco-secure) .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . 33
+This study will provide you with an extra boost of insight and confidence to get focused for 2021 and beyond. The past year has been challenging – even more so than usual, but there are always steps that can be taken to progress your security strategy. Read on to find out which actions may work best for your organization.
 
-[Appendices](#appendices)  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . . 34
+### About the survey
 
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security Program[Introduction](#introduction)
+**Sampling**
+Cisco contracted a survey research firm, YouGov, to field a fully anonymous (source and respondent) survey that ran during the middle of 2020.
 
-When we set out to develop this study, our main goal was to provide a practical
-tool for you, the security leader, to guide your investments, propel you to achieve
-success in your security program, and better manage risk .
+**Respondents**
+We surveyed over 4,800 active IT, security, and privacy professionals from 25 countries. Sample demographics including industries, company size, and region can be found in Appendix A.
 
-With a global representation (25 countries and over 4,800 respondents), we aim
-to empirically measure what factors drive the best security outcomes. This is quite
-different than what we have created in the past in our Cybersecurity Report Series,
-and we hope that this new approach and tone is refreshing and welcomed.
+**Analysis**
+The Cyentia Institute conducted an independent analysis of the survey data on behalf of Cisco and generated all results presented in this study.
 
-As we know, security is ever evolving to the point that success can sometimes
-feel elusive. So we set out to answer some questions in this study: How can
-we efficiently and effectively manage our cybersecurity risk? How is it that
-even the largest companies with the biggest security budgets still struggle to
-achieve certain outcomes? With all the various options out there for achieving
-a successful cybersecurity program, which ones should practitioners focus on?
-New technology? More training? Better incident response procedures? The
-possibilities are endless. How can a security team determine what will work
-best? And what’s to say that won’t change? (Spoiler alert, it will.)
+**Approach**
+- We asked respondents about their organization’s adherence to 25 security practices spanning governance, strategy, spending, architecture, and operations.
+- We then asked about each program’s level of success across roughly a dozen high-level security objectives or outcomes organized into three main categories: Enabling the Business, Managing Risk, and Operating Efficiently.
+- Next, we conducted extensive multivariate analysis to identify security practices that correlate strongly with successful program-level outcomes.
 
-This study will provide you with an extra boost of insight and confidence to get
-focused for 2021 and beyond. The past year has been challenging – even more so
-than usual, but there are always steps that can be taken to progress your security
-strategy. Read on to find out which actions may work best for your organization.
+> “This is not a marketing report to toss in your swag bag and ignore; this is a report to cuddle up with and read over and over again. In fact, this report will change how we think about running infosec programs.”
+> — Wendy Nather, Head of Advisory CISOs, Duo Security at Cisco
 
-About the survey
+---
 
-Sampling
+# Key Findings
 
-Respondents
+- **Is there evidence that security practices actually do affect program-level outcomes?**
+  Out of the 275 practice-outcome combinations, 45% show significant correlation – meaning a specific practice affected the likelihood of achieving a certain outcome.
+- **The strongest correlation of them all?**
+  A proactive, best-of-breed tech refresh strategy allows you to keep up with business growth.
+- **What about the second strongest correlation?**
+  A well-integrated tech stack improves recruitment and retention of security talent.
+- **Want to achieve overall program success?**
+  Devote resources to proactive tech refresh and integrate your technology.
+- **Want a strong security culture that’s embraced by all?**
+  Focus on good equipment, clear direction, accurate alerts, and timely fixes of security issues.
+- **Want to avoid future incidents and losses?**
+  Conduct after-action reviews of major incident response operations.
+- **Which security practices are most difficult to implement?**
+  Across all 25 practices, those in the architecture and operations category appear most challenging to do well.
+- **Where are programs most successful? Where do they struggle the most?**
+  Programs are most successful in meeting compliance regulations. They struggle the most with avoiding unplanned work and wasted effort.
+- **Which function of the NIST Cybersecurity Framework contributes most to success?**
+  The Identify function ranks #1. The Protect function ranks next to last for contributing to a program’s overall success.
+- **How did organizations minimize the impact of COVID-19 on operations?**
+  They maintained a modern IT and security infrastructure, invested in role-based training, and kept top executives informed.
 
-Analysis
+---
 
-Cisco contracted a survey
-research firm, YouGov, to field
-a fully anonymous (source and
-respondent) survey that ran
-during the middle of 2020.
+# Where are we going? Security Program Outcomes
 
-We surveyed over 4,800
-active IT, security, and
-privacy professionals from
-25 countries. Sample
-demographics including
-industries, company size,
-and region can be found in
-[Appendix A](#appendix-a-sample-demographics).
+Many security studies (and programs) start by focusing on what we’re doing rather than where we’re headed. But a successful security program isn’t just a set of directions; it’s a journey toward a destination. And understanding where we are on the journey helps put everything else in proper perspective.
 
-Approach
+We’ve started with an admittedly difficult task — identifying a set of diverse, program-level objectives and related outcomes that security leaders desire to achieve. These outcomes are an aspirational “security destination” so to speak, even if we know we’ll never quite get to this ideal.
 
-The Cyentia Institute conducted
-an independent analysis of
-the survey data on behalf of
-Cisco and generated all results
-presented in this study.
+Table 1: Security program outcomes used in this study
 
-*   We asked respondents about their organization’s adherence to 25 security practices
-spanning governance, strategy, spending, architecture, and operations.
-*   We then asked about each program’s level of success across roughly a dozen high-level
-security objectives or outcomes organized into three main categories: Enabling the Business,
-Managing Risk, and Operating Efficiently.
-*   Next, we conducted extensive multivariate analysis to identify security practices that correlate
-strongly with successful program-level outcomes.
+| Objective: Enabling the Business | Objective: Managing Risk | Objective: Operating Efficiently |
+| :--- | :--- | :--- |
+| Keeping up with the demands and growth of the business (EB1) | Managing the top cyber risks to the organization (MR1) | Running a cost-effective security program (OP1) |
+| Gaining the confidence and trust of executive leadership (EB2) | Meeting regulatory compliance requirements (MR2) | Minimizing unplanned work and wasted effort (OP2) |
+| Obtaining buy-in from peers and other organizational units (EB3) | Avoiding major security incidents and losses (MR3) | Recruiting and retaining talented security personnel (OP3) |
+| Creating a security culture embraced by all employees (EB4) | | Streamlining incident detection and response processes (OP4) |
 
-3
+![Chart showing percentage of firms succeeding in each security outcome, with a mean of 42.0%]
 
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security ProgramTo bring this report to life, we’ve worked closely with many experts
-around the world, including our CISO Advisory team. If you need any extra
-incentive to read on, here’s a quote to get you inspired:
+---
 
-“This is not a marketing report to toss
-in your swag bag and ignore; this
-is a report to cuddle up with and
-read over and over again. In fact, this
-report will change how we think about
-running infosec programs. ”
+# What are we doing? Security Practices
 
-Wendy Nather, Head of Advisory CISOs,
-Duo Security at Cisco
+We now examine what organizations are doing to meet the objectives discussed in the previous section. To do this, we asked respondents about a set of 25 security practices at their organizations. These practices were drawn from several standards, such as the NIST Cybersecurity Framework (CSF), and were organized into the categories of Business and Governance, Strategy and Spending, and Architecture and Operations.
 
-[Key Findings](#key-findings)
+![Chart showing percent of respondents who strongly agree their firm follows each security practice, with a mean of 42.3%]
 
-Is there evidence that security practices
-actually do affect program-level outcomes?
+---
 
-Out of the 275 practice-outcome combinations, 45%
-show significant correlation – meaning a specific practice
-affected the likelihood of achieving a certain outcome.
+# How do we get there? Identifying Success Factors
 
-The strongest correlation of them all?
+We’ve considered where we want our security programs to go and what we’re currently doing. Now it’s time to figure out exactly how to achieve those outcomes. Our overarching question is simple: What contributes to a successful security program?
 
-A proactive, best-of-breed tech refresh strategy allows
-you to keep up with business growth.
+### Overall Program Success
+![Chart showing practices most strongly correlated with overall security program success, led by Proactive tech refresh (SS6) and Well-integrated tech (AO1)]
 
-What about the second strongest correlation?
+### NIST CSF Functions
+While the CSF’s Protect function isn’t at the bottom for every outcome, it ranks next to last for contributing to the overall success of the security program (Identify ranks #1). That’s certainly counterintuitive, but we don’t see this as suggesting protection isn’t important. Rather, it indicates that the best programs invest in a well-rounded set of defenses to identify, protect, detect, respond, and recover from cyber threats.
 
-A well-integrated tech stack improves recruitment and
-retention of security talent.
+---
 
-Want to achieve overall program success?
-
-Devote resources to proactive tech refresh and integrate
-your technology.
-
-Want a strong security culture that’s
-embraced by all?
-
-Focus on good equipment, clear direction, accurate alerts,
-and timely fixes of security issues.
-
-5
-
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security ProgramWant to avoid future incidents and losses?
-
-Conduct after-action reviews of major incident
-response operations.
-
-Which security practices are most difficult
-to implement?
-
-Across all 25 practices, those in the architecture and
-operations category appear most challenging to do well.
-
-Where are programs most successful?
-Where do they struggle the most?
-
-Programs are most successful in meeting compliance
-regulations. They struggle the most with avoiding
-unplanned work and wasted effort.
-
-Which function of the NIST Cybersecurity
-Framework contributes most to success?
-
-The Identify function ranks #1. The Protect function ranks
-next to last for contributing to a program’s overall success.
-
-How did organizations minimize the
-impact of COVID-19 on operations?
-
-They maintained a modern IT and security
-infrastructure, invested in role-based training,
-and kept top executives informed.
-
-6
-
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security ProgramWhere are we going?
-[Security Program Outcomes](#where-are-we-going-security-program-outcomes)
-
-Many security studies (and programs) start by focusing on what we’re doing rather
-than where we’re headed. But a successful security program isn’t just a set of
-directions; it’s a journey toward a destination. And understanding where we are on
-the journey helps put everything else in proper perspective.
-
-We’ve started with an admittedly difficult task — identifying a set of diverse, program-level
-objectives and related outcomes that security leaders desire to achieve. These outcomes
-are an aspirational “security destination” so to speak, even if we know we’ll never quite get
-to this ideal. Every security leader and program is different, so we’re certain you’ll think of
-various additions and modifications to our proposed list based on your own use cases. At
-the same time, we hope you’ll agree that they’re a reasonable and relevant set of strategic
-outcomes that lay a solid foundation for framing out this study.
-
-Survey respondents were asked to consider and rate how their organization is
-performing for each outcome in [Table 1](#table-1) on a scale of ‘struggling’ to ‘succeeding.’ We
-recognize that subjective, abstract concepts like ‘keeping up with the demands of
-the business’ can be difficult to grasp and rate, so we presented respondents with
-example evidence for each outcome to guide their assessment (see [Appendix B](#appendix-b-full-listing-of-security-outcomes)).
-
-[Table 1: Security program outcomes used in this study](#table-1)
-
-Objective: Enabling the Business | Objective: Managing Risk | Objective: Operating Efficiently
----|---|---
-*   Keeping up with the
-    demands and growth of
-    the business (EB1) | *   Managing the top cyber
-    risks to the organization
-    (MR1) | *   Running a cost-effective
-    security program (OP1)
-*   Gaining the confidence
-    and trust of executive
-    leadership (EB2) | *   Meeting regulatory
-    compliance requirements
-    (MR2) | *   Minimizing unplanned work
-    and wasted effort (OP2)
-*   Obtaining buy-in
-    from peers and other
-    organizational units (EB3) | *   Avoiding major security
-    incidents and losses (MR3) | *   Recruiting and retaining
-    talented security personnel
-    (OP3)
-*   Creating a security
-    culture embraced by all
-    employees (EB4) |  | *   Streamlining incident
-    detection and response
-    processes (OP4)
-
-Moving beyond context and caveats, let’s get back to the question at hand — where
-on their journey towards a successful security program are the 4,800 organizations
-represented in this study? [Figure 1](#figure-1) shows the percentage of firms that say their
-security program is successfully achieving each respective outcome in our list. So,
-roughly 48% of organizations look to be meeting compliance requirements, 46% are
-gaining executive confidence, and so on, down to the 36% who say their programs
-are minimizing unplanned work.
-
-The overall rate of success at the program level is 42%, which we can’t help
-but notice also happens to be The Answer to the Ultimate Question of Life, the
-Universe, and Everything. Coincidence? We think not, which is why we pivoted
-the entire figure around outcomes exhibiting a success rate above and below
-42%. This format helps draw out the consensus among respondents as to which
-outcomes are easier to achieve (those toward the top) and which are more
-difficult (toward the bottom).
-
-7
-
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security Program[Figure 1: Percent of respondents reporting their firm is succeeding in each security outcome](#figure-1)
-
-The ‘maintaining compliance’ and ‘minimizing unplanned work’ are polar opposites
-on this chart. This won’t come as a shock to the many security professionals who
-see so-called “checkbox compliance” as the epitome of an inefficient security
-program. And it hints at the inherent trade-offs that exist when pursuing objectives
-like those we show here. We’ll revisit the notion of trade-offs later when we
-identify program success factors.
-
-The categorical overlay adds another interesting dimension to [Figure 1](#figure-1). It’s
-apparent that outcomes within the ‘Managing Risk’ objective tend to be perceived
-as less difficult, while those falling under ‘Operating Efficiently’ are more difficult.
-Outcomes associated with ‘Enabling the Business’ run the gamut.
-
-Anyone responsible for leading a cybersecurity program knows that it’s not easy
-to manage cyber risk well AND do so with minimal cost. Given the choice, most
-organizations take the risk-averse route of spending more to maximize risk reduction.
-
-8
-
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security ProgramKeepingupw/business(EB1)Gainingexecconfidence(EB2)Obtainingpeerbuy-in(EB3)Creatingsecurityculture(EB4)Managingtoprisks(MR1)Meetingcomplianceregs(MR2)Avoidingmajorincidents(MR3)Runningcost-effectively(OP1)Minimizingunplannedwork(OP2)Retainingsecuritytalent(OP3)StreamliningIRprocesses(OP4)42.6%46.3%36.4%42.1%42.3%47.9%43.4%42.0%35.5%41.3%42.2%Mean%"succeeding"foralloutcomes:42.0%EasiertoachievesuccessHardertoachievesuccessEnabling businessManaging riskOperating efficientlySource: Cisco 2021 Security Outcomes Study[What are we doing?](#what-are-we-doing-security-practices)
-[Security Practices](#what-are-we-doing-security-practices)
-
-We now examine what organizations are doing to meet the objectives discussed in the
-previous section. To do this, we asked respondents about a set of 25 security practices at
-their organizations. These practices were drawn from several standards, such as the NIST
-Cybersecurity Framework (CSF), and were organized into the categories of Business and
-Governance, Strategy and Spending, and Architecture and Operations. Like the outcomes,
-these practices are intended to be representative rather than exhaustive. You’ll find
-the complete list of practices that fall under each of these categories in [Appendix C](#appendix-c-full-listing-of-security-practices).
-
-[Figure 2](#figure-2) ranks all practices according to the percentage of respondents who strongly
-believe their organization is following the tenets of each respective practice. We think the
-ratings depicted in the chart are rather optimistic, but we won’t quibble over that because
-the adoption of controls and maturity of a cybersecurity program aren’t the focus of this
-study. We’re much more interested in how (perceived) security practices relate to the
-(perceived) outcomes from the previous section. But we’re not quite ready to go there yet.
-
-[Figure 2: Percent of respondents who strongly agree their firm follows each security practice](#figure-2)
-
-9
-
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security ProgramUnderstandsecurity&business(BG1)Securityimportanttoexecs(BG2)Clearreportingtoexecs(BG3)Securityawarenesstraining(BG4)Identifytopcyberrisks(BG5)Someoneownscompliance(BG6)Managevendorsecurity(BG7)Accurateassetinventory(BG8)Soundsecuritystrategy(SS1)Sufficientsecuritybudget(SS2)Sufficientsecuritystaff(SS3)Role-specifictraining(SS4)Sufficientsecuritytech(SS5)Proactivetechrefresh(SS6)Well-integratedtech(AO1)Programperformancemetrics(AO2)IT&securityworktogether(AO3)Useautomationeffectively(AO4)Vulnremediationdeadlines(AO5)Securedevelopmentapproach(AO6)Securitymeasuresreviewed(AO7)Accuratethreatdetection(AO8)Timelyincidentresponse(AO9)Promptdisasterrecovery(AO10)Learnfrompriorincidents(AO11)48.3%51.4%46.4%43.1%45.3%49.7%40.5%44.2%42.0%42.4%41.4%43.8%43.4%40.6%37.4%39.3%43.1%37.8%37.8%41.0%43.5%35.9%39.9%38.3%40.7%Mean%"stronglyagree"forallfactors:42.3%MorelikelytoagreeLesslikelytoagreeArchitecture/operationsBusiness/governanceStrategy/spendingSource: Cisco 2021 Security Outcomes StudyWe first want to highlight the relative difference among these security practices.
-The format is the same as that used for outcomes in [Figure 1](#figure-1) and pivots around the
-average level of implementation observed across all controls (42.3%). Those at the
-top are purportedly easier for firms to implement, while those on the bottom appear
-more difficult. We’ll leave you to pick out specific practices of interest and we’ll limit
-commentary to a few high-level observations.
-
-Once again, we find the contrasting poles to be a fascinating glimpse into the diverse
-nature of security programs. Security professionals used to have to fight hard for
-executive attention and support, but respondents indicate that we’ve come a long
-way in that regard. On the other hand, some of the fundamentals that the industry has
-been working on forever, such as threat detection and vulnerability remediation,
-remain a challenge for many organizations. This is a good reminder that “getting
-back to the basics” isn’t quite as simple as it sounds.
-
-Looking more broadly at [Figure 2](#figure-2), we see a general pattern of business and
-governance factors at the top, strategy in the middle, and architecture and operations
-at the bottom. The interpretation of that pattern goes deeper than simply “governance
-is easy; tech is hard.” This likely reflects dependencies between these categories — i.e.,
-you can’t do the stuff at the bottom well without proper governance and strategy. But
-there’s also the reality that most security incidents have some element of architectural
-or operational problems at their root. It’s hard to do all the things well all of the time.
-
-Looking for some quick wins?
-We ran some additional analysis comparing the relative difficulty of the
-practices depicted in [Figure 2](#figure-2) and their correlation with the outcomes listed in
-[Figure 1](#figure-1). Our goal was to find practices that aren’t too hard to implement, yet
-contribute strongly to security program success. Learn more about those quick
-wins in our #SecurityOutcomes blog series.
-
-10
-
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security Program[How do we get there?](#how-do-we-get-there-identifying-success-factors)
-Identifying Success Factors
-
-We’ve considered where we want our security programs to go and what we’re
-currently doing. Now it’s time to figure out exactly how to achieve those outcomes. Our
-overarching question is simple: What contributes to a successful security program?
-
-Since a security program is a complex, inter-dependent system, we analyzed all
-practices and outcomes to identify relationships among them. For each practice-
-outcome combination, we calculated the change in probability of achieving
-outcomes associated with higher levels of adherence to various security practices.
-This approach allowed us to derive statistically-sound answers to questions like:
-
-*   Is there evidence that better security practices correlate with better outcomes?
-*   Which practices contribute most strongly to successful security outcomes?
-*   What are the most effective practices for achieving each specific outcome?
-*   How much more likely are you to achieve x if you do y?
-
-Some may see these as simple questions with simple answers. But is that really
-the case? The security industry uses many best practices as part of its overall
-strategy. Yet we don’t always measure how well those practices work, and
-correlate them with desired outcomes.
-
-No really — how did you correlate practices
-and outcomes?
-Statistics! Many of you may fall asleep (or have recurring nightmares)
-after reading this, but the answer is careful, rigorous statistics. In particular,
-we utilize multivariate generalized linear models to understand the effects
-of each practice on each outcome. That is, we create a logistic regression
-where each outcome variable is the dependent variable and all the factors
-are independent variables. This allows us to test when factors make a
-statistically significant difference and when we might be just seeing the
-correlation by chance.
-
-For all you nerds out there, we also go a step further. As you might
-remember, the regression coefficients for factors in a logistic regression
-don’t quite directly translate to a change in probability. But with a handy
-little technique called “Average Marginal Effects” we can figure out how
-much an organization might gain from each factor. The well-known adage
-“correlation isn’t causation” still applies, but this approach effectively
-spotlights potentially useful practice-outcome associations to consider.
-
-11
-
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security ProgramOverall Program Success
-Let’s start by isolating the ‘overall program success’ outcome because it encompasses
-all others. [Figure 3](#figure-3) lists factors from top to bottom based on their strength of correlation
-with the respondent claiming to have a highly successful security program overall. The
-bars and values indicate the expected increase in probability of overall program success
-associated with each practice. Because of statistical variation, that increase is expressed
-as a range of probability. The middle value marks the average (and most likely) increase
-in the likelihood of program success.
-
-According to these results, organizations wanting to maximize the overall success of
-their security program should ideally start with a modern, well-integrated tech stack.
-Most respondents who said their firm’s tech refresh strategy emphasizes proactive
-refreshes using best-of-breed IT and security technologies are 11% to 15% more likely
-to report successful programs (12.7% on average). Conversely, those who indicated
-that their firms rarely upgrade infrastructure or only do so when things break showed
-significantly reduced rates of success. Ensuring that technologies work well together as
-an integrated defense increases overall success by an average of about 11%.1
-
-[Figure 3: Practices most strongly correlated with overall security program success](#figure-3)
-
-[Figure 3](#figure-3) shows the change in probability of overall program success as a
-range. Read it like this: “A proactive tech refresh strategy increases the chance
-of reporting a successful security program by roughly 11% to 15%, with an
-average of 12.7%.” Every chart like this can be interpreted in the same fashion.
-
-We fully realize this finding seems suspiciously convenient for a company offering
-technologies fitting this description, so we’ll take this opportunity to reiterate that
-a professional survey company (YouGov) conducted this survey, participants didn’t
-know Cisco was involved, and an independent research firm (Cyentia Institute)
-analyzed the data. We’re pleased these results validate Cisco’s strategy and
-solutions portfolio, but we played no part in deriving them.
-
-1It should be noted that the probabilities associated with practice-outcome combinations cannot be added together. So,
-we cannot say that proactive tech refreshes AND well-integrated tech up the success rate by 23.2% (12.7% + 10.5%).
-
-12
-
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security Program3.1%6.1%12.7%10.5%3.6%3.0%4.8%IT & security work together (AO3)Clear reporting to execs (BG3)Program performance metrics (AO2)Timely incident response (AO9)Sound security strategy (SS1)Well-integrated tech (AO1)Proactive tech refresh (SS6)0%2%4%6%8%10%12%14%Average increase in probability of successArchitecture/operationsBusiness/governanceStrategy/spendingSource: Cisco 2021 Security Outcomes StudyWe realize that a proactive tech refresh strategy isn’t always that easy for some
-organizations. Some don’t have the budget; some need to focus their resources and
-efforts elsewhere for various legitimate reasons. The good news is that these results
-DO NOT relegate such organizations to certain failure. It simply means they need to
-identify alternate success factors that work for their situation. That’s exactly what we
-hope this analysis helps them do.
-
-After all, having a sufficient security budget was one of the factors we tested, but it did
-not significantly correlate with overall program success. So good security isn’t
-just about the money. Moving beyond the top two factors in [Figure 3](#figure-3), it’s great to
-see measurable benefits tied to having a sound security strategy. That’s something
-organizations of all types and sizes can develop. Everything else flows from it.
-
-It’s often said that what makes great leaders is the way they respond to a crisis.
-[Figure 3](#figure-3) says that’s a big part of what makes a great security program too. A timely
-incident response requires thorough preparation, smart tools, and tested processes.
-If you need some justification to improve those capabilities, this chart should help.
-
-The next two success factors go hand-in-hand. Using performance metrics to drive
-operations, and then clearly reporting that information to executive leadership, contributes
-significantly to program success. This is the core of the OODA loop, and it works.
-
-And that brings us to the last of the success factors — IT, development, and security teams
-working together. No, we don’t mean some kind of corporate retreat trust fall exercise
-while “Imagine” plays in the background. This factor points to the fact that you can’t do
-security well if you can’t do IT and development well (and vice versa). And if that’s true,
-doesn’t it make sense to communicate and collaborate so everyone’s more successful?
-[Figure 3](#figure-3) shows there’s a benefit to forging strong alliances across the organizational aisle.
-
-One final thing to note is that the top overall success factors span all categories –
-operations, governance, and strategy. This suggests that a great security program
-can’t be built solely upon great governance or great strategy or great operations.
-A winning program requires all of these elements, and the more you do, the better
-you do. That theme will continue to reveal itself throughout the next few sections
-as we explore success factors for each of the 11 program-level outcomes.
-
-13
-
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security ProgramWhat appears to be a strong
-correlation between continually
-upgrading your tech and program
-success may spell bad news for
-organizations that use technology like
-furniture – meaning it sticks around
-until it breaks. This indicates that
-“newer is better” isn’t just a lifestyle
-choice spawned from Silicon Valley.
-
-Read more about this in the Cisco Security Bottom Line Report
-
-[NIST CSF Functions](#nist-csf-functions)
-Beyond adherence to specific practices, we also asked respondents about
-where their security programs place the greatest priority in terms of investment,
-resources, and effort. We used the high-level security functions defined in the
-NIST Cybersecurity Framework (CSF) for this.
-
-While the CSF’s Protect function isn’t at the bottom for every outcome, it ranks
-next to last for contributing to the overall success of the security program
-(Identify ranks #1). That’s certainly counterintuitive, but we don’t see this as
-suggesting protection isn’t important. Rather, it indicates that the best programs
-invest in a well-rounded set of defenses to identify, protect, detect, respond,
-and recover from cyber threats. The field has long been protection-heavy; this
-says that protection alone is not the most effective strategy.
-
-Check out our #SecurityOutcomes blog series to see how all five NIST CSF
-functions contribute to program outcomes.
-
-[Meeting Security Objectives](#meeting-security-objectives)
-Having a security program that is successful overall is a worthy goal, but it’s also
-perfectly reasonable (and often necessary) to pursue specific outcomes. Perhaps
-you looked at the list of outcomes in [Table 1](#table-1) and thought, “I wonder what factors
-would help us achieve [x outcome]?” If so, this section is for you.
-
-Outcomes are organized into the three categories of: Enabling the Business,
-Managing Risk, and Operating Efficiently. Under those headings, we provide
-several security practices that correlate most strongly with respondents asserting
-their programs are successfully achieving each objective. Those wanting the full
-list of success factors for any given outcome should sit tight for just a bit; we have
-something special for you later in the report.
-
-The four practices of Proactive tech refresh (SS6), Well-integrated tech
-(AO1), Timely incident response (AO9), and Prompt disaster recovery (AO10)
-significantly contribute to nearly every outcome. Thus, they’re very common
-across all charts in this section. As a way of diversifying insights, we generally
-focus observations on the top five practices for each outcome besides those
-four. Please do not take that as us de-emphasizing their importance. There’s
-a strong case that they’re THE most important success factors in this study.
-
-15
-
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security Program[Enabling Business](#enabling-business)
-As the label implies, outcomes in this section focus on the security program’s
-mission of supporting and fostering business activities. This category recognizes that
-security doesn’t exist for security’s sake; it serves the business. Let’s see if we can
-find tips on how to accomplish that.
+# A Roadmap for Success
+
+Figure 15 displays all security practices discussed in this report along the bottom and all program-level outcomes on the left side.
+
+![Heatmap showing the correlation between security practices and program outcomes]
+
+---
+
+# About Cisco Secure
+
+Cisco Secure is the comprehensive security portfolio from Cisco, designed to provide integrated, automated, and simple security solutions for organizations of all sizes.
+
+---
+
+# Appendices
+
+- **Appendix A**: Sample demographics (industries, company size, and region).
+- **Appendix B**: Example evidence for security outcomes.
+- **Appendix C**: Complete list of security practices.
+
+---
+
+)Program performance metrics (AO2)Use automation effectively (AO4)Sound security strategy (SS1)Sufficient security budget (SS2)Role-specific training (SS4)Vuln remediation deadlines (AO5)Learn from prior incidents (AO11)Sufficient security staff (SS3)Sufficient security tech (SS5)Clear reporting to execs (BG3)Security awareness training (BG4)Accurate asset inventory (BG8)Security important to execs (BG2)Manage vendor security (BG7)IT & security work together (AO3)Security measures reviewed (AO7)Understand security & business (BG1)Someone owns compliance (BG6)Secure development approach (AO6)Identify top cyber risks (BG5)0%2%4%6%8%Average Marginal Effect (change in probability)Effect of various security practices on desired outcomesSource: Cisco 2021 Security Outcomes StudyThank you for investing your valuable
+time in reading this Security Outcomes
+Study. There’s no shortage of security
+industry reports out there vying for
+your attention, and we hope this
+one provided some actionable, data-
+driven insights to help you build a
+more successful security program.
+Let us know if we can support you
+in any other way in that noble pursuit
+and join us in the conversation using
+#SecurityOutcomes on social platforms.
+
+About Cisco Secure
+
+Cisco has long established itself as the networking leader, while building an open,
+integrated portfolio of cybersecurity solutions along the way. We believe that security
+solutions should be designed to act as a team. They should learn from each other.
+They should listen and respond as a coordinated unit. When that happens, security
+becomes more systematic and effective. Our customers have trusted us for years as
+both the world’s largest provider of IT infrastructure and networking services and the
+world’s largest B2B cybersecurity business.
+
+Cisco Secure is built on the principle of better security, not more. It delivers a
+streamlined, customer-centric approach to security that ensures it’s easy to deploy,
+easy to manage, and easy to use – and that it all works together. We’re driven
+by the fact that people and our customers are at the heart of what we do. We
+understand that customers want to cut through the complexity and noise and feel
+confident in their security; focusing on outcomes. This requires simplification without
+being simplistic. Our cloud-native platform is a giant leap forward in that.
+
+We empower the security community with the reliability and confidence that they’re
+safe from threats now and in the future with the Cisco SecureX platform. We help
+100 percent of the Fortune 100 companies protect what’s now and what’s next with
+the most comprehensive, integrated cybersecurity platform on the planet. Learn
+more about how we simplify experiences, accelerate success, and protect futures at
+cisco.com/go/secure.
+
+Published December 2020
+
+RPT_12_2020
+
+© 2020 Cisco and/or its affiliates . All rights reserved .
+
+Cisco and the Cisco logo are trademarks or registered trademarks of Cisco and/or its affiliates in the U .S . and
+other countries . To view a list of Cisco trademarks, go to this URL: www .cisco .com/go/trademarks . Third-party
+trademarks mentioned are the property of their respective owners . The use of the word partner does not imply
+a partnership relationship between Cisco and any other company . (2062922)
+
+Americas Headquarters Cisco Systems, Inc. San Jose, CAAsia Pacific Headquarters Cisco Systems (USA), Pte. Ltd. SingaporeEurope Headquarters Cisco Systems International BV Amsterdam, The Netherlands
+Appendices
+
+Appendix A: Sample Demographics
+
+Industries represented:
+
+14.6%
+
+13.1%
+
+12.1%
+
+10.9%
+
+Manufacturing
+
+Software Development
+
+Financial Services
+
+All Others
+
+Retail/Wholesale
+
+Telecommunications
+
+Architecture/Engineering
+
+Healthcare
+
+Education
+
+Government
+
+Utilities/Energy
+
+Hospitality
+
+Business Consulting
+
+7.8%
+
+7.5%
+
+6.7%
+
+5.8%
+
+5.4%
+
+5.4%
+
+2.9%
+
+2.8%
+
+2.5%
+
+Marketing/Advertising
+
+1.2%
+
+Arts/Entertainment/Recreation
+
+0.9%
+
+Media/Publishing
+
+0.3%
+
+Company sizes represented (number of employees):
+
+Source: Cisco 2021 Security Outcomes Study
+
+34
+
+The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security Program10.9%6.7%0.9%2.5%5.4%12.1%5.4%5.8%2.8%14.6%1.2%0.3%7.8%13.1%7.5%2.9%Media/PublishingArts/Entertainment/RecreationMarketing/AdvertisingBusiness ConsultingHospitalityUtilities/EnergyGovernmentEducationHealthcareArchitecture/EngineeringTelecommunicationsRetail/WholesaleAll OthersFinancial ServicesSoftware DevelopmentManufacturingSource: Cisco 2021 Security Outcomes Study8.5%9.3%31.7%38.3%12.2%50-249250-499500-9991,000-9,99910,000+Source: Cisco 2021 Security Outcomes StudyCountries represented:
+
+35
+
+The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security Program1.30%4.17%4.41%4.23%4.29%4.31%4.17%2.15%4.50%3.09%4.10%4.19%3.07%4.10%3.09%4.27%4.19%3.14%3.22%4.21%1.96%3.05%4.29%4.33%9.06%3.11%All OthersTaiwanHong KongThailandMalaysiaIndonesiaPhilippinesVietnamSingaporeSouth KoreaItalyMexicoAustraliaGermanyJapanSaudi ArabiaSpainCanadaRussiaChinaThe NetherlandsFranceUnited KingdomBrazilIndiaUnited StatesSource: Cisco 2021 Security Outcomes StudyAppendix B: Full Listing of Security Outcomes
+
+Enabling Business
+
+EB1
 
 Keeping up with the demands and growth of the business
 
-Frequently upgrading to the best available technologies and integrating them to
-work well together both feature prominently again in [Figure 4](#figure-4). Since we’ve already
-discussed those practices quite a bit, we’ll simply note that this finding makes a
-lot of sense to us. The whole notion of ‘keeping up with the business’ means that
-security must move, change, and adapt along with revenue-generating activities.
-Anyone who’s tried to teach old tech new tricks knows that it’s nearly impossible.
-Outdated, fragmented infrastructure hinders the business, period.
+Example and Evidence of Success: The security program responds well to changing
+business needs and doesn't impede new lines of revenue. In some cases, security may
+provide competitive advantage or even be a net revenue generator. If security is viewed
+purely as a cost center or the “Department of ‘No!’” by business execs, it’s a sign of
+struggling to meet this goal.
 
-The strong link between role-specific security training and enabling the business is
-music to our ears. In fact, we made it into a maxim: “Adept people, agile program.”
-Some might argue that this is one of the most fundamental themes in modern
-security programs. Effective training must be of high quality, consistent with the
-culture of the business, and tailored for specific audiences.
+EB2 Gaining the confidence and trust of executive leadership
 
-[Figure 4: Top security success factors for keeping up with the business (EB1)](#figure-4)
+Example and Evidence of Success: Security leaders meet regularly - and favorably - with
+top executives and the Board of Directors. The relationship between business and security
+leaders is one of mutual respect and collaboration. If security is often in the hot seat with
+executives or regularly denied reasonable requests for support, it’s a sign of struggling to
+meet this goal.
 
-Proactive tech refresh (SS6) | 8.9%
----|---
-Role-specific training (SS4) | 6.1%
-Use automation effectively (AO4) | 6.0%
-Well-integrated tech (AO1) | 5.6%
-Timely incident response (AO9) | 5.2%
-Program performance metrics (AO2) | 5.1%
-Vuln remediation deadlines (AO5) | 3.9%
-Sufficient security budget (SS2) | 3.9%
-0% | 2% | 10%
-Average increase in probability of success | 6% | 4% | 8%
-Architecture/operations |  |
-Strategy/spending |  |
-Source: Cisco 2021 Security Outcomes Study
+EB3 Obtaining buy-in from peers and other organizational units
 
-The inclusion of automation in [Figure 4](#figure-4) also makes sense to us. Automation helps
-the security program keep up with the business by eliminating bottlenecks and
-raising agility across people, processes, and technology. The emphasis on tech
-modernization, automation, and integration in [Figure 4](#figure-4) starts to take on a distinctly
-DevSecOps appeal.
+Example and Evidence of Success: Security enlists other divisions in building a cooperative
+defense of the organization. Communication and collaboration is strong with a fair sense of
+“give and take” for the greater good. Non-security leaders or divisions may have security-
+related performance measures. A culture of inter-departmental complaints and contention
+is a sign of struggling to meet this goal.
 
-It may seem odd at first to see incident response (IR) listed as a top business
-enabler. But IR isn’t just about putting out fires and cleaning up the mess. It’s
-ultimately about handling unexpected events with minimal impact to the business.
-And in that light, it makes perfect sense that it makes the cut in [Figure 4](#figure-4).
+EB4 Creating a security culture embraced by all employees
 
-17
+Example and Evidence of Success: Employees are treated as part of the security solution
+rather than the problem. Security isn’t a negative theme in employee satisfaction surveys or
+exit interviews. Non-security staff regularly report phishing attempts, potential malware, and
+other incidents. Frequent security policy violations and workarounds are a sign of struggling
+to meet this goal.
 
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security ProgramOstensibly, a metrics-driven security program is one that’s used to adjust course in
-response to changing conditions. We suspect that’s why performance metrics make
-the list for helping security keep pace with the business. There’s no sense in moving
-quickly if you’re not sure where you are or where you’re going.
+Managing Risk
 
-It’s no surprise that having a sufficient budget helps the security program keep up
-with the business. This is worth remembering, especially if your business model
-involves moving fast and evolving quickly. Proper investments in security show
-promise for aiding that momentum.
+MR1 Managing the top cyber risks to the organization
 
-Find out here how Cisco’s own CISO is helping to drive the business through security.
+Example and Evidence of Success: Top risk scenarios have been agreed upon by
+executives and security leaders and mitigation plans exist for those risks (or they've been
+accepted). Potential cyber risk exposure is currently within the risk appetite established by
+leadership. There’s no evidence that risk management capabilities are failing (e.g., frequent
+near misses, control deviations, response/recovery testing failures, etc.).
 
-Gaining the confidence and trust of executive leadership
+MR2 Meeting regulatory compliance requirements
 
-Score another point for modern, integrated tech. We can’t help but think of executive
-SOC visits here (and have a sudden urge to clean our desk and look busy), but at least
-there’s some evidence that the "tech tour" song and dance really does work!
+Example and Evidence of Success: There’s an absence of avoidable security findings from
+auditors and regulators. The organization is diligently tracking and addressing changing
+regulatory requirements. There’s evidence that the organization understands what’s required,
+acknowledges any findings and deficiencies, and is spending/working to mitigate them.
 
-Many C-Suite executives view cybersecurity as insurance against landing their
-company in the headlines for a major breach or business interruption. Those fears
-may be why accurate threat detection and prompt disaster recovery rise high among
-factors that correlate with gaining executive confidence. Being able to demonstrate
-strong visibility and resilience communicates “we got this” to leadership.
+MR3 Avoiding major security incidents and losses
 
-[Figure 5: Top security success factors for gaining executive confidence (EB2)](#figure-5)
+Example and Evidence of Success: We expect that an organization that’s highly successful
+in achieving this goal has not had a major security incident (of high internal and/or external
+visibility) in the last couple years. Furthermore, there’s no reason to suspect that it’s merely
+a matter of time until a major data loss event occurs. Minor and even moderate incidents
+are expected, but the question here is whether the organization has and will continue to
+stay out of the headlines.
 
-Accurate threat detection (AO8) | 6.6%
----|---
-Proactive tech refresh (SS6) | 6.5%
-Well-integrated tech (AO1) | 6.0%
-Security important to execs (BG2) | 5.2%
-Prompt disaster recovery (AO10) | 5.2%
-Program performance metrics (AO2) | 4.9%
-Accurate asset inventory (BG8) | 4.8%
-Role-specific training (SS4) | 3.9%
-0% | 2% | 8%
-Average increase in probability of success | 4% | 6%
-Architecture/operations |  |
-Business/governance |  |
-Strategy/spending |  |
-Source: Cisco 2021 Security Outcomes Study
+36
 
-Having an accurate asset inventory, program performance metrics, and role-specific
-training seem to continue the theme of assuaging executives’ fears. Demonstrating
-that the security team knows where the crown jewels are located, has the skills to
-defend them, and tracks credible metrics to back up the “we got this” message
-goes a long way toward earning trust at the top.
+The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security ProgramOperating Efficiently
 
-Security being important to execs and gaining their confidence seems rather
-tautological. This is probably a good example of the “correlation isn’t causation”
-adage. If security is important to them, they’re likely supporting the program
-sufficiently and invested in its success.
+OP1 Running a cost-effective security program
 
-18
+Example and Evidence of Success: Executive leaders view the security program as having
+a good return on investment (ROI). There are no recurring rumblings about the overly high
+costs of security. There’s a low rate of shelfware purchases. Staffing is lean but sufficient.
+A plan among executives and security leaders to reduce the security budget without
+increasing risk would be a good sign of success here.
 
-The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security ProgramObtaining buy-in from peers and other organizational units
+OP2 Minimizing unplanned work and wasted effort
 
-Several of the top success factors in [Figure 6](#figure-6) we’ve seen and discussed before. But
-it’s still helpful to see that good security operations (namely detection, integration, and
-automation) help earn respect and participation from other teams/divisions. You could
-even argue that they’re dependent upon those other teams. These practices reduce
-friction, increase flexibility, and generally help the security program shed its stigma as
-the “Department of No”.
+Example and Evidence of Success: Strategy execution proceeds without frequent setbacks
+and deviations. Security budget is spent proactively rather than reactively. Employees spend
+their time on higher-level, more valuable tasks rather than being mired in the mundane.
+Constant firefighting mode or a program that “can’t get out of its own way” is a sign of
+struggling to meet this goal.
 
-[Figure 6
+OP3 Recruiting and retaining talented security personnel
+
+Example and Evidence of Success: The organization has a positive reputation in the
+security community as being a good place to work. Open security positions are generally
+filled quickly and without undue incentives. Talented staff move up instead of move out and
+attrition rates remain low. Employee satisfaction is consistently high.
+
+OP4 Streamlining incident detection and response processes
+
+Example and Evidence of Success: There’s a general sense that security operations
+run efficiently. Triaging security events isn’t a guessing game and doesn’t take forever.
+Responding to and remediating incidents is well-organized rather than chaotic. Metrics like
+time-to-detection and time-to-remediation are tracked and are trending down over time.
+
+37
+
+The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security ProgramAppendix C: Full Listing of Security Practices
+
+Business and Governance
+
+BG1
+
+BG2
+
+I have a clear understanding of how the security initiatives I’m involved in support my
+organization’s business needs and objectives
+
+I have good reason to believe that my organization’s top executives view security as
+important to business objectives
+
+BG3 My organization’s top executives receive clear reporting on the activities and effectiveness
+
+of the security program
+
+BG4 All employees in my organization receive effective security awareness education on threats,
+
+policies, and procedures relevant to their duties
+
+BG5
+
+I know what my organization considers to be our top cyber risks and believe that we’ve
+accurately assessed those risks
+
+BG6 Someone in my organization is responsible for managing security and privacy
+
+compliance requirements
+
+BG7
+
+I’m confident that the security practices of vendors in my organization’s value/supply chain
+are in line with our standards OR that we manage them accordingly
+
+BG8 My organization maintains an accurate inventory of key systems and data and classifies
+
+those assets based on their security requirements and business criticality
+
+Strategy and Spending
+
+SS1 Our security program maintains and communicates a sound overall strategy to successfully
+
+achieve its mission
+
+SS2 Our security program has the financial budget needed to successfully achieve its mission
+
+SS3 Our security program has the personnel needed to successfully achieve its mission
+
+SS4 Our security personnel receive the role-specific training needed to successfully perform
+
+their duties
+
+SS5 Our security program has the technology and tools needed to successfully achieve its mission
+
+SS6 My organization has a proactive tech refresh strategy of frequent upgrades to best available
+
+IT and security technologies
+
+Architecture and Operations
+
+AO1 Our security technologies are well integrated and work effectively together
+
+AO2 Our security program uses performance metrics to drive operational decisions and actions
+
+AO3 My organization’s IT, development, and security operations personnel work effectively together
+
+AO4 We use automation effectively to improve the efficiency of security operations and personnel
+
+AO5 My organization meets established SLAs or deadlines for remediating disclosed vulnerabilities
+
+in systems and software
+
+AO6 My organization takes a rigorous approach to developing and continually maintaining the
+
+security of our internal applications
+
+AO7 Our security measures are actively monitored and regularly reviewed to verify and maintain
+
+their effectiveness
+
+AO8 Our threat detection capabilities provide accurate awareness of potential security events
+
+without significant blind spots
+
+AO9 Our incident response capabilities enable timely and effective investigation and remediation of
+
+security events
+
+AO10 Our recovery capabilities minimize impact and ensure prompt restoration of assets affected
+
+by security incidents
+
+AO11 We make a special effort to identify lessons learned from responding to incidents and use
+
+them to improve security measures for future events
+
+38
+
+The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security Program
