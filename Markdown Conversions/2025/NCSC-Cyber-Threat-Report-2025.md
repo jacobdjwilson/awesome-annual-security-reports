@@ -1,19 +1,14 @@
 # Cyber Threat Report 2025
-## Pūrongo Tuma ā-Ipurangi 2025
-
-An analysis report by the
-National Cyber Security Centre
-
-www.ncsc.govt.nz
 
 ## Table of Contents
 - [Foreword](#foreword)
+- [About us](#about-us)
 - [Key judgements for 2025](#key-judgements-for-2025)
-- [Judgement 1: State-sponsored actors are actively targeting New Zealand](#judgement-1-state-sponsored-actors-are-actively-targeting-new-zealand)
-- [Judgement 2: The commercialisation of cybercrime means cybercriminals have more tools](#judgement-2-the-commercialisation-of-cybercrime-means-cybercriminals-have-more-tools)
-- [Judgement 3: Hacktivists are targeting New Zealand organisations as global conflicts escalate](#judgement-3-hacktivists-are-targeting-new-zealand-organisations-as-global-conflicts-escalate)
-- [Judgement 4: Threat actors are exploiting supply chains, hidden dependencies and organisational blind spots to cause impact](#judgement-4-threat-actors-are-exploiting-supply-chains-hidden-dependencies-and-organisational-blind-spots-to-cause-impact)
-- [Judgement 5: Known weaknesses and unpatched vulnerabilities are providing threat actors with easy access](#judgement-5-known-weaknesses-and-unpatched-vulnerabilities-are-providing-threat-actors-with-easy-access)
+- [Judgement 1: State-sponsored actors are actively targeting New Zealand](#judgement-1--whakataunga-1)
+- [Judgement 2: The commercialisation of cybercrime means cybercriminals have more tools](#judgement-2--whakataunga-2)
+- [Judgement 3: Hacktivists are targeting New Zealand organisations as global conflicts escalate](#judgement-3--whakataunga-3)
+- [Judgement 4: Threat actors are exploiting supply chains, hidden dependencies and organisational blind spots to cause impact](#judgement-4--whakataunga-4)
+- [Judgement 5: Known weaknesses and unpatched vulnerabilities are providing threat actors with easy access](#judgement-5--whakataunga-5)
 - [By the numbers](#by-the-numbers)
 - [Incident reporting analysis](#incident-reporting-analysis)
 - [Glossary](#glossary)
@@ -21,19 +16,13 @@ www.ncsc.govt.nz
 ---
 
 ## Foreword
-### Whakapuakitanga
+Whakapuakitanga
 
-Are you prepared for a serious cyber security incident?
+Are you prepared for a serious cyber security incident? If your organisation was targeted by a sophisticated actor today, would you be ready?
 
-If your organisation was targeted by a sophisticated actor today, would you be ready?
+New Zealand’s remote location at the bottom of the world can isolate us from challenges in other regions, but when it comes to cyber activity, there’s nowhere to hide. Over recent years, the National Cyber Security Centre (NCSC) has dealt with about one incident per day that has the potential to cause harm at the national level. Such incidents don’t just involve large corporates or big government agencies – some smaller organisations also play a crucial role in our economy and society and can be affected.
 
-New Zealand’s remote location at the bottom of the world can isolate us from challenges in other regions, but when it comes to cyber activity, there’s nowhere to hide.
-
-Over recent years, the National Cyber Security Centre (NCSC) has dealt with about one incident per day that has the potential to cause harm at the national level. Such incidents don’t just involve large corporates or big government agencies – some smaller organisations also play a crucial role in our economy and society and can be affected.
-
-Many New Zealand businesses and organisations make the mistake of assuming they are not big enough, wealthy enough or critical enough to be a target.
-
-As we highlight in this report, there are many reasons why your organisation may be a target.
+Many New Zealand businesses and organisations make the mistake of assuming they are not big enough, wealthy enough or critical enough to be a target. As we highlight in this report, there are many reasons why your organisation may be a target.
 
 In cyber security, we talk about the activity of threat actors arising from their capability and intent. Do they have the tools and ability to cause us harm? Do they have a reason to? Around the globe, both capability and intent are on the rise.
 
@@ -47,387 +36,1143 @@ And although you may be doing your best as an organisation to keep your own secu
 
 In summary, malicious actors could target you because of what you have, what you know, or what you stand for. You may be a stepping stone to another, more valuable organisation. You may be collateral damage. Or you might just be an easy win.
 
-HOW PREPARED ARE YOU?
-
+### How prepared are you?
 While cyber security is an important focus of the Government, most protections in New Zealand exist outside government. Individuals, private organisations, and industry are best-placed to protect data, networked devices, and infrastructure, and most effort in protecting technology and systems needs to come from the owners and operators of these.
 
 This report is designed for leaders making strategic decisions about cyber security risks and investments in medium-to-large organisations in both the public and private sectors. However, the report has relevance for anyone seeking to protect themselves or their organisation from cyber risks. By being equipped with the right context and questions to ask, you can ensure your organisation is thinking about the risks that may affect you. Those who have read our previous Cyber Threat Reports may notice that the format has changed this year. We hope you find value in our new approach.
 
-Bridget White (she/her)
+**Bridget White (she/her)**
 Deputy Director-General Cyber Security (acting)
 
-THE PURPOSE OF THIS REPORT
+### The purpose of this report
+- This report is written for leaders making decisions about cyber security in medium-to-large organisations.
+- It outlines five key judgements about the New Zealand cyber security threat environment.
+- We encourage you to use it to consider how prepared your organisation is.
+- The report is designed to provide you context, so you can act on informed decisions.
 
-*   This report is written for leaders making decisions about cyber security in medium-to-large organisations.
-*   It outlines five key judgements about the New Zealand cyber security threat environment.
-*   We encourage you to use it to consider how prepared your organisation is.
-*   The report is designed to provide you context, so you can act on informed decisions.
+---
 
 ## About us
-### He kupu mō mātou
+He kupu mō mātou
 
 The National Cyber Security Centre is a part of the GCSB. We make it easy for everyone in New Zealand to play their part in keeping New Zealand cyber-secure. We deliver our work through three primary approaches:
 
-1.  We support all New Zealanders to act on informed decisions.
-2.  We work with key players to build good cyber security basics into New Zealand’s cyber ecosystem and essential services.
-3.  We use our mandate, relationships and specialist capabilities to counter the most serious harms.
+1. We support all New Zealanders to act on informed decisions.
+2. We work with key players to build good cyber security basics into New Zealand’s cyber ecosystem and essential services.
+3. We use our mandate, relationships and specialist capabilities to counter the most serious harms.
 
-Getting in touch
-### Whakapā mai
+### Getting in touch
+Whakapā mai
 
-Visit ncsc.govt.nz for more cyber security advice and information about NCSC programmes. On our website you can:
+Visit [ncsc.govt.nz](https://www.ncsc.govt.nz) for more cyber security advice and information about NCSC programmes. On our website you can:
+- report a cyber security incident
+- subscribe to receive NCSC news and updates
+- subscribe to receive alerts about current cyber security threats and vulnerabilities, and how to mitigate their impact.
 
-*   report a cyber security incident
-*   subscribe to receive NCSC news and updates
-*   subscribe to receive alerts about current cyber security threats and vulnerabilities, and how to mitigate their impact.
-
-General enquiries
-email us at info@ncsc.govt.nz
-
-Follow the NCSC on LinkedIn.
-www.linkedin.com/company/ncsc-nz
-
-Individuals & small businesses
-For cyber security advice aimed at everyday New Zealanders and small businesses, visit Own Your Online at ownyouronline.govt.nz
-
-www.facebook.com/ownyouronline
-
-www.instagram.com/ownyouronline/
-
-www.youtube.com/@OwnYourOnline
-
-www.linkedin.com/company/ownyouronline/
+---
 
 ## Key judgements for 2025
-### Ngā whakataunga matua mō te tau 2025
+Ngā whakataunga matua mō te tau 2025
 
-Cyber security is a critically important consideration for all New Zealand organisations.
-
-In this document we set out five judgements for 2025 regarding cyber security. Each judgement explores a key aspect of the current threat landscape that we think is most relevant for decision-makers.
+Cyber security is a critically important consideration for all New Zealand organisations. In this document we set out five judgements for 2025 regarding cyber security. Each judgement explores a key aspect of the current threat landscape that we think is most relevant for decision-makers.
 
 The judgements are:
+1. State-sponsored actors are actively targeting New Zealand
+2. The commercialisation of cybercrime means cybercriminals have more tools
+3. Hacktivists are targeting New Zealand organisations as global conflicts escalate
+4. Threat actors are exploiting supply chains, hidden dependencies and organisational blind spots to cause impact
+5. Known weaknesses and unpatched vulnerabilities are providing threat actors with easy access
 
-1.  State-sponsored actors are actively targeting New Zealand
-2.  The commercialisation of cybercrime means cybercriminals have more tools
-3.  Hacktivists are targeting New Zealand organisations as global conflicts escalate
-4.  Threat actors are exploiting supply chains, hidden dependencies and organisational blind spots to cause impact
-5.  Known weaknesses and unpatched vulnerabilities are providing threat actors with easy access
-
-These are explored further in the following sections.
-
-Our judgements are based on our work both domestically and internationally. This is not an exhaustive list, but they include some of the most prominent, noteworthy and recurrent issues that we observe.
+These are explored further in the following sections. Our judgements are based on our work both domestically and internationally. This is not an exhaustive list, but they include some of the most prominent, noteworthy and recurrent issues that we observe.
 
 These judgements also reflect the trends in the more severe incidents the NCSC responded to this year. Of the 5995 reports received by the NCSC during the 2024/25 financial year, 331 incidents were triaged as incidents of potential national significance, meaning they received additional analysis and support.
 
 The statistics and case studies used throughout the report are primarily based on our work between 1 July 2024 and 30 June 2025. We recognise that we do not have perfect understanding of the cyber security environment, so these should be regarded as illustrative rather than a complete overview.
 
-This report will give you a picture of how the cyber security environment is evolving and how these changes should be factored into your risk assessments and strategic thinking.
+---
 
-We hope this information will help you consider how well your organisation is prepared for the current cyber threat landscape, and will help to inform the cyber security investment and resourcing decisions you make in your organisation. This information should be considered alongside other sources of information that inform your cyber security decisions.
-
-## JUDGEMENT 1 | WHAKATAUNGA 1
-
+## Judgement 1 | Whakataunga 1
 ### State-sponsored actors are actively targeting New Zealand
-### Kei te poke tonu ngā mūrere a kāwanatanga kē i a Aotearoa
+Kei te poke tonu ngā mūrere a kāwanatanga kē i a Aotearoa
 
-State-sponsored actors are among the most sophisticated and persistent threats in cyberspace. They are generally motivated not by financial gain but by national objectives such as gaining strategic advantage.
-
-They may attempt to achieve these objectives through intellectual property theft, espionage, disruption of critical services, and even sabotage.
-
-Globally, there is growing concern and increased awareness of state-sponsored malicious cyber activity, particularly against government organisations, critical infrastructure and sensitive industries.
+State-sponsored actors are among the most sophisticated and persistent threats in cyberspace. They are generally motivated not by financial gain but by national objectives such as gaining strategic advantage. They may attempt to achieve these objectives through intellectual property theft, espionage, disruption of critical services, and even sabotage.
 
 #### Tactics and techniques
+State-sponsored actors often use techniques such as spear-phishing, zero-day exploitation, and living off the land to blend into legitimate activity on a computer system or network. They may also make use of ephemeral or disposable infrastructure, like botnets.
 
-State-sponsored actors often use techniques such as spear-phishing, zero-day exploitation, and living off the land to blend into legitimate activity on a computer system or network. They may also make use of ephemeral or disposable infrastructure, like botnets. These actors are often referred to as advanced persistent threats (APTs) due to their resourcing and ability to switch between tactics and techniques to achieve and maintain access to their targets.
-
-Spear-phishing sees actors take the time to research victims, to create a customised and convincing message from what appears to be a trusted source. Artificial intelligence (AI) tools make this job much easier and faster. (Read more on the impact of AI on page 15)
-
-#### EXAMPLES
-
-*   In September 2024, US authorities warned that cyber actors affiliated with the Russian General Staff Main Intelligence Directorate (GRU) were responsible for attacks designed to cause espionage, sabotage and reputational harm. (https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-249a)
-*   Between October 2023 and October 2024, suspected Iranian cyber actors were discovered conducting credential brute-forcing in attempts to access operational technology across the government, information technology, engineering, and energy sectors. (https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-290a)
-
-A zero-day exploitation is a vulnerability that is unknown to the vendor and does not have an available patch. State-sponsored actors are known to utilise zero-day vulnerabilities, often against cyber-mature organisations. The lack of an available security update to address the vulnerability means that malicious cyber actors have more time to compromise computer networks without detection and maintain their unauthorised access.
-
-Living off the land involves the use of legitimate or pre-existing software on a victim network to maintain access. This is less likely to raise alerts for defenders, compared to the installation of malicious software, which may look suspicious in incident response logs and is much more likely to be stopped by antivirus software.
-
-Living off the land techniques have been employed by two prominent threat actor groups referred to as Volt Typhoon and Salt Typhoon.
-
-*   ‘Salt Typhoon’ activity has been described by our US partner agency, CISA, as a ‘broad and significant cyber espionage campaign targeting commercial telecommunications infrastructure’. Salt Typhoon, has been observed in several countries, including New Zealand. New Zealand operates similar systems to partner nations meaning New Zealand organisations need to be aware of this activity and how to defend against it.
-*   ‘Volt Typhoon’ is a PRC state-sponsored actor that has been observed compromising the digital systems of critical infrastructure providers in the United States. The US assesses that Volt Typhoon has compromised multiple critical infrastructure organisations, including telecommunications and energy companies. The actor maintained long-standing access to these organisations using living off the land techniques. The US assesses this is pre-positioning to enable disruptive or destructive attacks against critical infrastructure in the event of a major crisis or conflict. The NCSC assesses that New Zealand’s critical infrastructure operators could be vulnerable to similar activity from PRC state-sponsored actors.
-
-Throughout the reporting year, the NCSC published a number of advisories with its international cyber security partners detailing a range of ways in which state-sponsored cyber actors are having success against even cyber-mature organisations worldwide. The NCSC joins its partners in these publications after a robust review process to validate the nature of the threat and the usability of the information to its New Zealand customers. New Zealand organisations should ask themselves, “Could we detect this kind of activity, or what changes do we need to make to do so in future?”
-
-The following are some of the joint publications the NCSC released to help with identifying and mitigating cyber threats linked to state-sponsored actors:
-
-*   In July 2024, the NCSC joined the Australian Signals Directorate’s Australian Cyber Security Centre and other international partners to release an advisory outlining a PRC state-sponsored cyber group, APT40, and the threat it posed to Australian networks. https://www.ncsc.govt.nz/alerts/prc-mss-tradecraft-in-action/
-*   In September 2024, the NCSC joined international partners to highlight and help mitigate the threat posed by a botnet created by PRC-linked cyber actors to enable malicious cyber activity. https://www.ncsc.govt.nz/alerts/cyber-security-agencies-call-out-prc-linked-botnet-and-provide-mitigation-advice/
-*   In April 2025, the NCSC joined its UK counterpart and others in warning of spyware targeting Taiwanese, Tibetan, Uyghur groups and civil society actors. https://www.ncsc.govt.nz/alerts/moonshine-and-badbazaar-spyware-targeting-communities-and-groups/
-*   In August 2025, the NCSC warned that PRC-linked state-sponsored cyber threat actors were targeting networks globally, including telecommunications, government, transportation, lodging, and military infrastructure networks. https://www.ncsc.govt.nz/alerts/china-state-sponsored-actors-target-networks-globally/
-
-More information can be found at www.ncsc.govt.nz/alerts
+- **Spear-phishing**: Actors research victims to create a customised and convincing message. AI tools make this job much easier and faster.
+- **Zero-day exploitation**: A vulnerability that is unknown to the vendor and does not have an available patch.
+- **Living off the land**: Involves the use of legitimate or pre-existing software on a victim network to maintain access.
 
 #### The New Zealand landscape
+In the 2024/25 year, nearly a quarter of the incidents of potential national significance the NCSC dealt with had suspected state-sponsored links (82 of 331 incidents).
 
-Cyber intrusions and incidents with potential national significance continue to threaten our safety, security and wellbeing.
+![Image: Chart showing the proportion of state-sponsored incidents]
 
-Incidents linked to state-sponsored actors in the reporting year included:
+#### Case Study 1: Network compromise for espionage purposes
+During 2024/25, an organisation informed the NCSC that unauthorised activity had been detected on its network. Investigations found that the suspected state actor had connected to an appliance on the victim’s network using an outdated firmware version vulnerable to recently disclosed CVEs. A review showed that the organisation’s existing cyber security hygiene—including strong passwords, multi-factor authentication (MFA), and network segmentation—was decisive in stopping the actor.
 
-*   compromise of a virtual private network (VPN) appliance in a medium-sized telecommunication company,
-*   brute-forcing attempts against a central government organisation, and
-*   spear-phishing of senior public servants.
+---
 
-In the 2024/25 year, nearly a quarter of the incidents of potential national significance the NCSC dealt with had suspected state-sponsored links (82 of 331 incidents). In the previous year, this proportion was 32% (110 of 343 incidents).
-
-The apparent downward trend in reporting numbers does not reflect a softening in the threat landscape. We have continued to observe significant attacks and intrusions, which require effective management and mitigation.
-
-The boundaries between state and criminal activity are blurring as some governments tolerate, enable and sometimes even benefit from criminal groups operating within their jurisdictions.
-
-State-sponsored cyber actors continue to pose a persistent threat to New Zealand. We are aware of some incidents that could have had much more severe impact if they had not been detected at an early stage. An example is presented in Case Study 1.
-
-Additionally, as the modus operandi of some state-sponsored actors is to remain undetected, compromises can come to light much later than they occur. The international exposure of the sophisticated and high-profile cyber campaigns tracked as Salt Typhoon and Volt Typhoon has demonstrated the level of capability and potential impact of state-sponsored actors linked to the PRC Government.
-
-##### CASE STUDY 1
-
-NETWORK COMPROMISE FOR ESPIONAGE PURPOSES
-
-During 2024/25, an organisation informed the NCSC that unauthorised activity had been detected on its network, and it requested assistance.
-
-The NCSC worked with a commercial cyber security provider to assess the threat and determine how it should be contained. Through analysis undertaken by both teams, it was concluded the activity originated from a resourceful, sophisticated suspected state threat actor that was motivated by espionage.
-
-Investigations found that the suspected state actor had connected to an appliance on the victim’s network. The appliance had been running an outdated firmware version which was vulnerable to recently disclosed critical common vulnerabilities and exposures (CVEs). The actor had also attempted to log into staff accounts using a range of techniques including brute-forcing, and had targeted both cloud and cloud-integrated capabilities. Based on post-compromise analysis, the actor was likely seeking to maintain persistence on the victim’s network for espionage purposes, consistent with state-sponsored motivations.
-
-A review showed that the organisation’s existing cyber security hygiene had been decisive in stopping the actor. This included strong passwords, multi-factor authentication (MFA), and network segmentation.
-
-Through the NCSC’s unique capabilities, we verified that no data had been stolen and offered further advice on mitigating any lingering risk.
-
-#### Three questions leaders should be asking
-
-01  Do we have the relationships, systems and processes to provide for early warning and coordinated response?
-02  Are we confident in our ability to detect a sophisticated actor using living off the land type techniques?
-03  Have we tested our ability to respond to a sophisticated intrusion designed not just to steal, but to remain undetected?
-
-#### Implications for organisations
-
-Although critical infrastructure and government agencies are often perceived to be the main targets of state-sponsored activity, no sector is immune.
-
-Any organisation which holds valuable information, contributes to essential services, or holds influence, may be an appealing target.
-
-Organisations that have prepared themselves to defend against cybercriminals should be aware that preventions effective at addressing the easy access points to their systems may not be sufficient to deal with the tactics and techniques of state actors at their most sophisticated – additional measures may be required. State actors are stealthy and play the long game: they often maintain undetected access for months or years, and the impact to your organisation may not be felt immediately. Detecting these actors can require an in-depth understanding of what baseline activity is expected on your network, in order to notice tell-tale variances.
-
-Resources
-
-For further information, refer to the following guidance:
-
-*   NCSC | Identifying and mitigating Living Off the Land (LOTL) techniques. https://www.ncsc.govt.nz/protect-your-organisation/identifying-and-mitigating-living-off-the-land-lotl-techniques/
-*   NZSIS | Countering Espionage and Foreign Interference. https://www.nzsis.govt.nz/our-work/countering-espionage-and-foreign-interference
-*   NZSIS | Due Diligence Assessments For Espionage and Foreign Interference Threats. https://www.protectivesecurity.govt.nz/assets/psr/due-diligence-assessments.pdf
-*   New Zealand Information Security Manual: Information Security Monitoring. https://nzism.gcsb.govt.nz/ism-document#Chapter-13001
-
-## JUDGEMENT 2 | WHAKATAUNGA 2
-
+## Judgement 2 | Whakataunga 2
 ### The commercialisation of cybercrime means cybercriminals have more tools
-### Nā te tāhoko o te taihara ipurangi kua nui atu ngā utauta ki ngā nanakia ipurangi
+Nā te tāhoko o te taihara ipurangi kua nui atu ngā utauta ki ngā nanakia ipurangi
 
-#### EXAMPLES
+Globally, the shift to ransomware-as-a-service (RaaS) has commercialised cybercrime, allowing criminals to ‘rent’ effective attack tools.
 
-*   In April 2024, MediSecure – a holder of sensitive Australian health data – discovered a database had been encrypted by ransomware actors. Later investigations discovered that over 12 million transactional records across a four-year window had been breached.
-*   In July 2025, Qantas suffered a customer data breach numbering millions of records, including from New Zealand. Criminals later released data on the dark web.
-*   Financially motivated cyber attacks in the UK on Marks & Spencer in April 2025 and Jaguar Land Rover in September 2025 crippled operations and are estimated to have cost the firms hundreds of millions of dollars.
-*   In September 2025, airports across Europe experienced disruption to check-in technology following a ransomware attack.
-
-Globally, the shift to ransomware-as-a-service (RaaS) has commercialised cybercrime, allowing criminals to ‘rent’ effective attack tools, and for criminal groups to specialise in different elements of the attack. Meanwhile, new technologies such as AI are accelerating their work and effectiveness.
-
-Cybercriminals are responsible for most of the incidents New Zealanders report to the NCSC. The end goal for cybercriminals is usually financial gain; however, they may carry out activities that are indirectly related, for example by stealing passwords and personal information, in order to stage future attacks.
-
-Ransomware continues to be the most damaging type of criminal attack, causing disruption as well as potential loss of money, data and sensitive information.
-
-Ransomware activities can result not only in data loss and exposure but also disrupted operations, reputational damage, and financial cost – and in extreme cases, threats to life. It is in the interests of criminals to cause as much trouble as possible to increase their chance that an organisation will pay the ransom. Unfortunately, many of those who pay do not get their data back or their systems unlocked, and sometimes they are extorted further with the threat of releasing sensitive data.
-
-#### Tactics and techniques
-
-Ransomware refers to a multi-stage operation by an actor, typically involving the installation of malware to encrypt files, exfiltrate files, and demand payment. Actors seek targets where disruption will have widespread and visible impact, to increase their chances of being paid.
-
-High-value targets include essential services like transportation, where disruption is costly and highly impactful, and organisations with sensitive personal information such as healthcare and government agencies.
-
-For cybercriminals, any opportunity is a good one, however many prepare by conducting research or social engineering to identify valuable targets and increase their chances of success.
-
-Ransomware perpetrators are financially motivated. Of the moderate to significant ransomware incidents reported to the NCSC in 2024/25, all were linked to suspected financially motivated non-state actors.
-
-Cybercriminals use a range of tools to speed up and support their work. For example, vulnerability scanning gives malicious actors a list of potential targets they can attack en masse or target specifically.
-
-With the advent of RaaS, ransomware attacks now require reduced technical expertise to deploy, lowering barriers to entry. The proliferation of RaaS has led to specialisation and corporate-level execution; defenders now find themselves dealing with experienced and professional negotiators.
-
-More than half of the significant incidents the NCSC analysed in 2024/25 were likely to involve use of RaaS.
-
-RaaS continues to evolve, developing new features to assist cyber actors with avoiding detection, victim engagement and money laundering.
-
-The use of AI has only added to the threat (see below).
-
-##### AI AND CYBER SECURITY RISKS – AMPLIFICATION THROUGH AUTOMATION
-
-Cybercriminals have been early adopters of AI. As a result, attackers no longer need advanced technical skills to launch convincing and scalable attacks. Generative models can create personalised phishing emails in flawless English or te reo Māori, assemble convincing deepfakes for extortion or romance scams, and even write or adapt malicious code. For organisations with thousands of employees and complex supply chains, this means there’s a much higher likelihood that at least one employee will fall victim to a convincing scam.
-
-Automation is another major factor. AI can rapidly scan networks for vulnerabilities, test stolen credentials, or exploit misconfigured cloud services. Large New Zealand companies – such as those in finance, energy, health, and telecommunications – may hold valuable data and provide critical services, making them attractive targets. The scale and speed of AI-driven attacks could overwhelm traditional security teams, especially if basic cyber hygiene is lacking. Still, automation benefits both sides: rapid detection and response must outpace automated attacks to remain effective.
-
-AI doesn’t reinvent cybercrime, but it supercharges methods and scale. For New Zealand – where a few successful incidents can cause outsized disruption – the implications are that organisations need to close basic security gaps while also carefully leveraging AI for defence.
+#### AI and cyber security risks
+Cybercriminals have been early adopters of AI. Attackers no longer need advanced technical skills to launch convincing and scalable attacks. Generative models can create personalised phishing emails, assemble convincing deepfakes, and write malicious code.
 
 #### The New Zealand landscape
+Of the 331 incidents of potential national significance the NCSC dealt with in the past year, 137 were linked to criminal or financially motivated cyber actors – more than double the year before (65). The direct financial loss from cyber security incidents reported to the NCSC in 2024/2025 totalled $26.9M, up from $21.6 million in 2023/2024.
 
-Cybercrime continues to have a significant impact on New Zealanders. Of the 331 incidents of potential national significance the NCSC dealt with in the past year, 137 were linked to criminal or financially motivated cyber actors – more than double the year before (65).
+#### Case Study 2: Ransomware in the health sector
+In May 2025, an organisation in the health sector was impacted by ransomware. The NCSC determined that a lack of MFA on an important service had enabled a threat actor to gain access. Fortunately, the organisation had completed system backups just one hour before the ransomware activity occurred, allowing them to successfully recover their systems.
 
-The direct financial loss from cyber security incidents reported to the NCSC in 2024/2025 totalled $26.9M, up from $21.6 million in 2023/2024.
+---
 
-These figures are indicative only: the full impact is likely to be much more. A consumer survey commissioned by the NCSC indicated that New Zealanders could be losing as much as $1.6 billion each year to cybercriminals and scammers. In addition, organisations frequently incur operational and reputational losses, and individuals are affected by the associated stress.
-
-Our research also tells us that 53% of New Zealand’s small-to-medium enterprises (SMEs) experienced a cyber threat between January and June 2025, a significant increase from the 36% reported in 2024. The impact of these cyber threats on those businesses also increased.
-
-##### CASE STUDY 2
-
-RANSOMWARE IN THE HEALTH SECTOR
-
-In May 2025, the NCSC received an incident notification from an organisation in the health sector that had been impacted by ransomware. Many of the organisation’s servers and endpoint devices had been encrypted, and a large amount of data was stolen.
-
-The organisation’s IT provider helped it to take initial remediation steps, which included changing credentials, updating accounts, and deploying extra security measures. The NCSC assisted the organisation by providing technical assistance to help remediate the problem and understand how the ransomware was able to enter its systems.
-
-Research indicates that while SMEs understand that cyber security is important, complacency often prevents them from implementing some of the most important security practices.
-
-Ransomware continues to have devastating impacts on New Zealand organisations. In 2024/25, 88 reports of ransomware were recorded by the NCSC, compared to 63 the year before.
-
-These included the following:
-
-*   An agriculture producer’s IT infrastructure was infected with ransomware, halting production.
-*   An IT provider’s virtual machines were encrypted, causing service disruption, and their backups were deleted, preventing rebuilding.
-*   A financial service provider was infected with ransomware, compromising documents containing customers’ personal information.
-
-Most of the more impactful ransomware incidents the NCSC dealt with in the past year resulted in either suspected or confirmed data exfiltration. The exfiltration of data and the threat of exposing it publicly can provide criminals with additional leverage.
-
-The NCSC determined that a lack of MFA on an important service had enabled a threat actor to gain access. Fortunately, the organisation had completed system backups just one hour before the ransomware activity occurred. By restoring from these recent backups, it was able to successfully recover its systems and quickly return to normal operations.
-
-This event shows how good security practices – in this case frequent backups – can help mitigate or prevent ransomware incidents. The organisation may have avoided the incident entirely – and prevented data from being stolen – if it had also implemented MFA across its critical systems.
-
-#### Implications for organisations
-
-Many cyber criminals are skilled, motivated, and well-organised, with a range of effective tools at their disposal. Organisations need to be aware of the way that criminals continue to innovate, whether it’s deepfake phishing videos or calls, or deploying information-stealing malware, and how to detect and prevent these.
-
-Through ransomware attacks, cybercriminals can cause significant disruption to business operations, and their extortion activities can damage your reputation with clients and stakeholders. Organisations of all sizes can be targeted. Paying does not guarantee recovery, or that your sensitive data won’t be released.
-
-The New Zealand Government recommends not paying a ransom. Payment does not guarantee that you will get your data back, may breach sanctions, and creates harm to others by providing funding for criminal activities.
-
-#### Three questions leaders should be asking
-
-01  If ransomware impacted our critical systems tomorrow, could we continue operating without paying?
-02  Do we understand the personal information we hold and how we store and protect it?
-03  Have we tested crisis management, legal, and communications processes for a ransomware event?
-
-The direct financial loss from cyber security incidents reported to the NCSC in 2024/2025 totalled $26.9M, up from $21.6 million in 2023/2024.
-
-Resources
-
-For further information, refer to the following guidance:
-
-*   NCSC | Protect your organisation against ransomware. https://www.ncsc.govt.nz/protect-your-organisation/protect-your-organisation-against-ransomware/
-*   DPMC | Government guidance on cyber ransom payments. https://www.dpmc.govt.nz/our-programmes/national-security/cyber-security-strategy/cyber-ransom-advice
-*   NCSC | Public communications for cyber security incidents: A framework for organisations. https://www.ncsc.govt.nz/protect-your-organisation/public-communications-for-cyber-security-incidents-a-framework-for-organisations/
-*   NCSC | Rolls and Responders. https://www.ncsc.govt.nz/protect-your-organisation/rolls-and-responders/
-*   Information Security Manual: Information Security Incidents. https://nzism.gcsb.govt.nz/ism-document#Chapter-13097
-
-## JUDGEMENT 3 | WHAKATAUNGA 3
-
+## Judgement 3 | Whakataunga 3
 ### Hacktivists are targeting New Zealand organisations as global conflicts escalate
-### Kei te whakaeke ngā mūrere ngā whakahaere o Aotearoa i te nui haere kē atu o ngā whawhai o te ao
+Kei te whakaeke ngā mūrere i ngā whakahaere o Aotearoa i te nui haere kē atu o ngā whawhai o te ao
 
-Hacktivism usually seeks to cause disruption to business, sector, or state to promote political or social causes. The goal of hacktivist groups is visibility rather than financial gain, but their activities can still undermine trust, damage reputations, and disrupt services.
-
-Unlike state actors or organised cybercriminals, hacktivists often rely on basic but noisy techniques. Issue-motivated cyber actors rarely seek payment or issue demands and frequently claim responsibility for the activity. Their actions may not cause long-term harm, but they can create operational headaches and public embarrassment.
+Hacktivism usually seeks to cause disruption to business, sector, or state to promote political or social causes. The goal is visibility rather than financial gain.
 
 #### Tactics and techniques
-
-Hacktivists will commonly use distributed denial-of-service (DDoS) attacks and website defacements to cause visible disruption.
-
-DDoS attacks cause an excess of traffic to a network, which can lead to the degradation or inaccessibility of the target network, and sometimes data corruption.
-
-Attack tools are widely available, lowering barriers to entry.
-
-In many cases, actors command sizable botnet infrastructure to orchestrate and sustain DDoS attacks.
-
-Hacktivists will usually target sectors with the highest potential for significant and visible disruption, such as government services, banks and other financial institutions, news media, transport, utilities and retail.
-
-However, the NCSC has observed that hacktivist groups sometimes use opportunistic criteria for target selection, such as existing vulnerabilities and victim availability, rather than a strategic focus on particular organisations.
-
-Large organisations generally engage managed service providers for DDoS mitigation, limiting impact. Smaller businesses, such as those that openly support particular political views or conflict-related activities, could be vulnerable because they often do not have mitigation services in place.
-
-The line between state-sponsored cyber operations and hacktivism has increasingly blurred, with state involvement ranging from direct to indirect. For example:
-
-*   Proxies are employed directly to act.
-*   ‘True believer’ but independently motivated individuals or organisations conduct attacks aligned with foreign state interests.
-*   States may turn a blind eye to activity emanating from within their borders.
-
-#### EXAMPLES
-
-*   In the 2024/25 year pro-Ukrainian and pro-Russian hacktivist groups both conducted global distributed denial-of-service (DDoS) campaigns against financial institutions and government sites, including in New Zealand.
-*   In the same period, environmental and social-justice hacktivists targeted energy companies and public agencies globally to amplify their causes.
+Hacktivists commonly use distributed denial-of-service (DDoS) attacks and website defacements. DDoS attacks cause an excess of traffic to a network, leading to degradation or inaccessibility.
 
 #### The New Zealand landscape
+The NCSC is aware of activity associated with hacktivist groups affecting New Zealand organisations during the 2024/25 period, often coinciding with political activities or statements. While there has been an increase in the frequency of ideologically motivated cyber incidents, they have had varied success to date.
 
-The NCSC is aware of activity associated with hacktivist groups affecting New Zealand organisations during the 2024/25 period. These incidents have often coincided with political activities or statements:
+---
 
-*   In October 2024, the NCSC recorded DDoS attacks against a range of financial sector organisations. This occurred at a similar time to multiple pro-Russian campaigns targeting Western governments.
-*   In June 2025, when the New Zealand Government pledged more financial support to Ukraine, the NCSC recorded DDoS campaigns against organisations in the government, transport, and water sector.
-
-While there has been an increase in the frequency of ideologically motivated cyber incidents in New Zealand, they have had varied success to date.
-
-Nevertheless, disruption can affect customer trust, even if the technical impact is minimal.
-
-There has also been a handful of low-impact New Zealand cyber incidents against operational technology (OT) claimed by hacktivist groups. In situations where OT is less protected, actors setting out to create a nuisance may end up causing significant damage beyond what they expected, escalating tensions and causing unintended consequences.
-
-Although by definition a hacktivist group is motivated by its beliefs, some activity that appears as hacktivism may have other motives.
-
-Hacktivist campaigns may overlap with state or criminal activity, complicating attribution and defence.
-
-At least two known hacktivist groups active against New Zealand were likely created as an unattributable platform for conducting state-sponsored malicious cyber activities.
-
-The actors behind these kinds of cyber incidents probably view DDoS attacks as harder to attribute, plausibly deniable, and unlikely to trigger an escalatory response from the countries affected.
-
-The NCSC anticipates this type of ideologically motivated malicious cyber activity is likely to continue if geostrategic competition trends continue internationally. We assess that the government, financial, news, utilities, IT and retail sectors are most likely to be targeted, due to the potential for noticeable disruption. Cyber actors conducting this kind of activity will target sectors most impacted by digital disruption, as this will help amplify their message.
-
-#### Implications for organisations
-
-The targets of hacktivism are usually symbolic, for example a media organisation, bank or telecommunications company taking a particular stance on a contentious issue, or associated with a certain country. In such cases, an organisation with a New Zealand connection could inadvertently become a target if hacktivists oppose New Zealand Government policy.
-
-Organisations should consider whether they could be targeted by hacktivists for any reason, and what the impact of a typical hacktivist attack would be on the organisation’s business continuity and reputation.
-
-DDoS attacks are much easier to defend against if controls are in place already, rather than trying to mitigate once an attack is underway.
-
-#### Three questions leaders should be asking
-
-01  Have we assessed our risk profile in relation to hacktivism?
-02  Are our websites and online services resilient to denial-of-service attacks?
-03  Do we have a plan for communication and reputation management if our organisation becomes a symbolic target?
-
-##### CASE STUDY 3
-
-HACKTIVISM WITH UNCLEAR MOTIVES
-
-In April 2025, a New Zealand organisation in the health sector began experiencing a high-volume distributed DDoS attack early one morning, causing service outages. Later that same day, the organisation received an extortion email that claimed the attack was being orchestrated by a known hacktivist group. The email threatened to increase the severity of the attack unless a Bitcoin payment was made. However, the email did not specify why this particular organisation had been targeted.
-
-By the evening of the attack, the impacted organisation was able to implement security measures to mitigate the attack and return traffic to normal levels. The following morning, the organisation received another note claiming the attack had been a demonstration, and that the attack would resume with greater severity if the ransom payment was not received. The impacted organisation ensured that adequate security measures had been implemented, and maintained a state of readiness to respond to further attacks. However, no further DDoS activity was observed.
-
-Resources
-
-For further information, refer to the following guidance:
-
-*   NCSC | Preparing for and mitigating Denial of service (DoS) incidents https://www.ncsc.govt.nz/protect-your-organisation/preparing-for-and-mitigating-denial-of-service-dos-incidents/
-*   New Zealand Information Security Manual: Network Security. https://nzism.gcsb.govt.nz/ism-document#Chapter-16188
-*   New Zealand Information Security Manual: Gateway Security. https://nzism.gcsb.govt.nz/ism-document#Chapter-16567
-
-## JUDGEMENT 4 | WHAKATAUNGA 4
-
+## Judgement 4 | Whakataunga 4
 ### Threat actors are exploiting supply chains, hidden dependencies and organisational blind spots to cause impact
-### Kei te urutomo ngā kaiwhakatuma i ngā ara tukutuku, ngā tūhononga i waenga wae pūmanawa tē mōhiotia, me ngā wāhi huna o ngā whakahaere kia nui ai te tūkinotia
+Kei te urutomo ngā kaiwhakatuma i ngā ara tukutuku, ngā tūhononga i waenga wae pūmanawa tē mōhiotia, me ngā wāhi huna o ngā whakahaere kia nui ai te tūkinotia
 
-Malicious actors are increasingly circumventing organisations’ defences by targeting blind spots in the form of supply chain vulnerabilities or other dependencies that may be overlooked.
+Supply chain attacks occur when actors seek to gain access through vulnerabilities in third-party products and services, vendors, or software instead of attacking target organisations directly.
 
-Supply chain attacks are conducted by both financially motivated criminals and state-sponsored actors.
+#### Operational Technology (OT)
+Many New Zealand organisations rely on OT systems to deliver services. Historically, these were air-gapped, but they are increasingly connected to the internet, introducing new risks. The NCSC strongly recommends that OT asset owners identify internet-connected devices and restrict access where unnecessary.
 
-Other examples of organisational blind spots include legacy technology, configuration errors, and incomplete closure of accounts
+---
+
+## Judgement 5 | Whakataunga 5
+### Known weaknesses and unpatched vulnerabilities are providing threat actors with easy access
+He māmā te uru poka noa a ngā kaiwhakatuma nā ngā ngoikoretanga me ngā whakaraeraetanga kāore i te whakatikahia
+
+Many attacks succeed because organisations fail to address common weaknesses. Poor patching, weak credentials, and misconfigured systems provide threat actors with easy entry points.
+
+#### Analysis: The long tail of vulnerability exploitation
+In 2025, the NCSC found that threat actors continue to have success exploiting vulnerabilities up to two years after public disclosure. Patching is not optional; it requires ongoing, proactive attention.
+
+#### Case Study 5: Device vulnerability
+In August 2025, the NCSC received a report that devices owned by 19 New Zealand organisations had been compromised by a suspected ransomware group. All compromised devices were exposed to the same known vulnerability. The NCSC shared this information with New Zealand Police, who contacted the impacted organisations to inform them of the vulnerability and provide remediation advice.
+
+---
+
+## By the numbers
+- **5995**: Total reports received by the NCSC.
+- **331**: Incidents of potential national significance.
+- **$26.9M**: Total direct financial loss reported to the NCSC.
+- **88**: Reports of ransomware recorded.
+
+---
+
+## Incident reporting analysis
+The statistics and case studies used throughout the report are primarily based on our work between 1 July 2024 and 30 June 2025.
+
+---
+
+## Glossary
+- **APT**: Advanced Persistent Threat.
+- **BEC**: Business Email Compromise.
+- **CVE**: Common Vulnerabilities and Exposures.
+- **DDoS**: Distributed Denial-of-Service.
+- **MFA**: Multi-Factor Authentication.
+- **OT**: Operational Technology.
+- **RaaS**: Ransomware-as-a-Service.
+
+---
+
+vulnerabilities being exploited against public-
+facing applications.
+
+Poor credential practices also offer opportunities
+to threat actors, especially with the rising adoption
+of cloud-based services that can be accessed from
+anywhere in the world.
+
+As New Zealand organisations adopt a cloud-first
+strategy for storing and processing their sensitive
+information, malicious cyber actors will almost
+certainly ‘follow the data’ and target application
+programming interface (API) endpoints, mobile
+endpoints and credentials to gain cloud accesses.
+Credential and account compromises will continue
+to be an important part of malicious cyber tradecraft,
+enabling cyber actors to steal sensitive information.
+
+Three questions leaders
+should be asking
+
+01  Do we have an ongoing process for
+understanding the systems within
+our environment?
+
+02  How effective is our patch management
+programme, and do we allow downtime
+to address vulnerabilities?
+
+03  Are we confident our systems are not
+exposed through misconfiguration or
+unmonitored endpoints?
+
+30
+
+NATIONAL CYBER SECURITY CENTRE
+
+NATIONAL CYBER SECURITY CENTRE
+
+31
+
+By the numbers: 2024/25
+
+Total incidents reports recorded
+for 2024/25
+
+5995
+
+(compared to 7122 in 2023/24)
+
+Total incidents triaged for specialist technical
+support because of potential national significance
+
+(compared to 343 in 2023/24)
+
+Significant incident 0.2%
+
+Moderate incident 1.3%
+
+Routine incident 4.5%
+
+Minor incident 94%
+
+331
+
+137
+
+$26.9m
+
+direct financial loss recorded
+
+(compared to $21.6 million in 2023/24)
+
+82
+
+112
+
+25%
+
+incidents linked to
+suspected state-sponsored actors
+(compared to 32% (110)  in 2023/24)
+
+41%
+
+incidents were likely
+criminal or financially motivated
+(compared to 19% (65) in 2023/24)
+
+34%
+
+incidents could not be linked
+(compared to 49% (168) in 2023/24)
+
+$47.9m
+
+estimated harm prevented
+by NCSC detection services work
+
+(compared to $38.8 million in 2023/24)
+
+32
+
+NATIONAL CYBER SECURITY CENTRE
+
+CYBER THREAT REPORT 2025Incident reporting analysis 2024/25
+Tātaritanga pūrongo maiki mō te tau
+2024/25
+
+New Zealanders can report cyber security incidents
+to the NCSC through an online portal, which enables
+us to provide relevant advice on recommended next
+steps to those affected. The NCSC receives incidents
+of all sizes, from phishing sightings up to major cyber
+security breaches.
+
+INCIDENT TRIAGE
+
+The NCSC handles incident reports through two
+distinct triage processes. Most incident reports are
+managed through the NCSC’s general triage process.
+
+A small number of incidents are triaged for
+specialist technical support because of the nature
+of the victim, or the nature of the incident. These
+incidents could cause high impact at the national
+level and are referred to as incidents of potential
+national significance. These may be incidents
+affecting organisations such as operators of critical
+
+infrastructure, and incidents that have the potential
+to impact large groups of New Zealanders.
+
+The following section presents an analysis
+of incidents reported to us during the period
+1 July 2024 to 30 June 2025. Due to the way
+incidents are dealt with, some analysis is only
+available for certain subsets of the data.
+
+WHY REPORT?
+
+Any person or organisation in New Zealand can
+report incidents to the NCSC, to obtain help and
+guidance. We can help you understand what has
+happened, stop the incident getting worse, and
+help you get back on your feet. Reporting also
+provides us with information about the threat
+landscape, which we can use to issue advisories
+and alerts, or take disruptive action.
+
+Severity and sector breakdowns
+In 2024/25, the NCSC received a total of 5,995 reports. Individuals made 4,343 reports and
+organisations were responsible for 1,321 reports. The remaining did not specify the reporter.
+
+INCIDENT SEVERITY
+
+The NCSC triages incidents into six categories ranging from C1 (most significant) to C6 (minor).
+
+In the 2024/25 year, the most severe incidents were categorised as C3. These incidents included several DDoS
+incidents that were likely linked to ideologically motivated malicious cyber activity, and ransomware incidents
+that had links to criminal or financially motivated actors. There was also a significant incident involving the
+network compromise of a New Zealand organisation, which had links to state-sponsored actors.
+
+C6
+
+C5
+
+C4
+
+C3
+
+C2
+
+C1
+
+5635
+Minor
+incident
+
+268
+Routine
+incident
+
+81
+Moderate
+incident
+
+11
+Significant
+incident
+
+0
+Highly Significant
+incident
+
+0
+National Cyber
+Emergency
+
+NATIONAL CYBER SECURITY CENTRE
+
+33
+
+CYBER THREAT REPORT 2025 A national cyber emergency (C1) is defined as an
+incident that causes severe disruption to a core
+New Zealand service, and/or affects key sensitive
+data, and/or undermines the economic or democratic
+stability of New Zealand. At the other end of the
+scale, a minor incident (C6) is defined as an incident
+causing a known or likely impact on an individual/
+individuals, or precursor activity against an individual/
+individuals or a small or medium enterprise. In the
+middle, a significant incident (C3) is defined as an
+incident causing a known or likely impact on a large
+commercial enterprise, wider government, or supply
+chain to core New Zealand services.
+
+Highly significant incidents (C2) consume substantial
+time and resources, but even significant (C3) or
+moderate incidents (C4) can take weeks to resolve
+and will generally involve complex responses involving
+several teams. For minor or routine incidents (C5 or
+C6), the NCSC might respond by providing general
+advice or alerts to customers.
+
+SECTOR BREAKDOWN
+
+The following table shows the sector breakdown of the 5,664 incidents handled through our
+general triage process
+
+Agriculture, Forestry and Fishing
+
+Arts, Recreation and Other Services
+
+Construction
+
+Education and Training
+
+24
+
+26
+
+40
+
+21
+
+Not Specified
+
+Professional, Scientific, Technical,
+
+Administrative and Support Services
+
+Public Administration and Safety
+
+Electricity, Gas, Water and Waste Services
+
+6
+
+Rental, Hiring and Real Estate Services
+
+Financial and Insurance Services
+
+Health Care and Social Assistance
+
+29
+
+34
+
+Retail Trade and Accommodation
+
+Technology
+
+Individual
+
+4343
+
+Transport, Postal and Warehousing
+
+Information Media and Telecommunications
+
+Manufacturing
+
+Wholesale Trade
+
+21
+
+19
+
+929
+
+49
+
+11
+
+8
+
+45
+
+23
+
+19
+
+17
+
+34
+
+NATIONAL CYBER SECURITY CENTRE
+
+CYBER THREAT REPORT 2025SUB-CATEGORY BREAKDOWN
+
+The following table shows a breakdown of the 5,664 incidents handled through our general triage process by
+sub-category.
+
+2,111
+
+1,994
+
+954
+
+Scams and fraud
+
+Phishing and credential harvesting
+
+Unauthorised access
+
+Website compromise
+
+Malware
+
+Ransomware
+
+Denial of service
+
+Suspicious network traﬃc
+
+Botnet traﬃc
+
+Command and control server hosting
+
+155
+
+72
+
+40
+
+14
+
+8
+
+7
+
+2
+
+Other
+
+307
+
+FINANCIAL AND OTHER LOSSES
+
+The NCSC records the direct financial loss reported by
+victims, whether lost to scams or the cost of recovery,
+where this information is volunteered.
+
+•  114 reputational loss incidents: damage to the
+reputation of an individual or organisation as a
+result of the incident.
+
+ The direct financial loss reported in 2024/2025 totalled
+$26.9M, increasing from $21.6 million in 2023/2024.
+
+The NCSC has recorded several types of loss amongst
+the incidents handled through the general triage
+process:
+
+•  1,697 financial loss incidents: this includes not
+
+only money lost as a direct result of an incident,
+but also the cost of recovery, for example the cost
+of contracting IT security services.
+
+•  274 data loss incidents: loss or unauthorised
+
+copying of data, business records, and
+intellectual property.
+
+•  63 operational impact incidents: the time,
+
+staff and resources spent on recovering from
+an incident, taking people away from normal
+business operations.
+
+•  26 technical damage incidents: impacts on
+
+services like email, phone systems or websites,
+resulting in disruption to a business or
+organisation.
+
+•  118 other loss incidents: includes types of loss not
+
+covered in other categories.
+
+Due to the way incidents are handled, not all financial
+loss information is reported or recorded.
+
+NATIONAL CYBER SECURITY CENTRE
+
+35
+
+CYBER THREAT REPORT 2025Analysis of incidents of potential
+national significance
+
+In 2024/25, 331 incidents reported to the NCSC were triaged for specialist support and
+analysis, and are referred to as incidents of potential national significance.
+
+Actor motivations
+
+Out of the 331 incidents, 82 indicated links to
+suspected state-sponsored actors, compared to
+110 in the 2023/24 year.
+
+Over time, the number of incidents of potential
+national significance dealt with by the NCSC has
+remained largely stable.
+
+Of the remaining incidents, 137 indicated links to
+criminal or financially motivated actors, compared to
+65 in the 2023/24 year.
+
+404
+
+181
+
+113
+
+110
+
+350
+
+151
+
+118
+
+81
+
+316
+
+153
+
+73
+
+90
+
+343
+
+168
+
+110
+
+65
+
+331
+
+112
+
+82
+
+137
+
+350
+
+153
+
+101
+
+96
+
+2020/21
+
+2021/22
+
+2022/23
+
+2023/24
+
+2024/25
+
+Average
+
+Unknown
+
+State-sponsored
+
+Criminal
+
+Total Incidents
+
+36
+
+NATIONAL CYBER SECURITY CENTRE
+
+CYBER THREAT REPORT 2025BREAKDOWN BY SECTOR
+
+The sectors most affected by incidents of potential national significance during 2024/25 were public administration
+and safety, financial and insurance services, information media and telecommunications, and professional, scien-
+tific and technical services. The public administration and safety sector – made up of central government agencies,
+local councils, public order and safety services, and defence – experienced a fifth of these potentially high-impact
+incidents. During 2024/25 the NCSC observed a moderate increase in the targeting of the financial sector.
+
+Administrative and
+Support Services
+
+Electricity, Gas, Water
+and Waste Services
+
+Transport, Postal
+and Warehousing
+
+Health Care and
+Social Assistance
+
+Education and Training
+
+Professional, Scientiﬁc
+and Technical Services
+
+Information Media and
+Telecommunications
+
+Financial and
+Insurance Services
+
+Public Administration
+and Safety
+
+3%
+
+3%
+
+3%
+
+4%
+
+4%
+
+6%
+
+7%
+
+9%
+
+20%
+
+HARM PREVENTION THROUGH RESPONSE TO INCIDENTS OF POTENTIAL NATIONAL SIGNIFICANCE
+
+In 2024/25, through response to the 331 incidents of
+potential national significance, the NCSC prevented an
+estimated $47.9 million worth of harm to New Zealand.
+This figure reflects incidents where the NCSC’s
+detection of malicious cyber activity or engagement
+with victims likely prevented future harm.
+
+Since 2016, the NCSC has prevented approximately
+$468.9 million worth of harm to significant
+organisations across New Zealand.
+
+The model used to estimate harm factors in important
+impacts such as losses caused by intellectual property
+theft, including copyright and patent infringement.
+While assigning a dollar value to harm prevention can
+provide a useful benchmark, many of the impacts of
+cyber harm are intangible. Loss of public confidence
+and trust, reduced health and wellbeing, and hesitance
+to adopt new technologies can all eventuate when
+cyber resilience is low.
+
+NATIONAL CYBER SECURITY CENTRE
+
+37
+
+CYBER THREAT REPORT 2025COMMON TACTICS AND TECHNIQUES
+
+The NCSC maps incidents of potential national
+significance to the MITRE ATT&CK framework to
+gain insights into common or emerging trends.
+This framework is an open source knowledge base
+that shows cyber adversary tactics and associated
+techniques based on real-world observations.
+
+The following graph show the tactics and techniques
+observed in incidents of potential national significance
+the NCSC handled in 2024/25, classified using the
+MITRE ATT&CK framework.
+
+For more details on the tactics and associated
+techniques see MITRE ATT&CK® https://attack.mitre.org/
+
+Most-recorded MITRE ATT&CK techniques observed in
+incidents of potential national significance 2024/25
+
+Credential Access (brute forcing)
+
+Impact (DDoS; network ﬂood)
+
+Exﬁltration (unknown)
+
+Credential access (unknown)
+
+Compromise Infrastructure  (Botnet)
+
+Compromise Accounts  (email accounts)
+
+Initial Access (spearphishing link)
+
+Reconnaissance  (active scanning)
+
+Initial Access (exploit public-facing application)
+
+2%
+
+2%
+
+2%
+
+3%
+
+3%
+
+3%
+
+4%
+
+4%
+
+4%
+
+Reconnaissance  (gather credentials)
+
+16%
+
+38
+
+NATIONAL CYBER SECURITY CENTRE
+
+CYBER THREAT REPORT 2025Glossary
+Rarangi kupu
+
+TERM / KUPU
+
+DEFINITION / WHAKAMĀRAMATANGA
+
+A Advanced persistent threat (APT) /
+
+Tuma pakepake arā atu anō
+
+A well-resourced, highly skilled cyber actor or group that has the time, resources, and
+operational capability for long-term intrusion campaigns. Their goal is typically to
+covertly compromise a target, and they will persist until they are successful. They are
+very capable of compromising secured networks using both publicly disclosed and self-
+discovered vulnerabilities.
+
+Application Programming Interface (API) /
+He Tāhono Papatono
+
+A set of rules and tools that allows software applications to communicate, share data,
+and request services from each other, enabling integration, automation, and functionality
+across different systems and platforms.
+
+B Botnet /
+
+Whatunga Pūwerewere
+
+Networks of compromised personal or office devices such as internet modems,
+personal computers, or network attached storage. Malicious cyber actors use these as
+infrastructure to send spam, perform denial-of-service activities, or attempt to obfuscate
+the origins of a malicious cyber campaign.
+
+Brute-force attack /
+He kōkiri takimano
+
+A hacking method that systematically tries all possible passwords or encryption keys
+until the correct one is found, exploiting weak credentials through automated, repetitive
+guessing to gain unauthorised access to systems or data.
+
+Business Email Compromise (BEC) /
+He Whakamōrea Īmēra Pakihi
+
+A cyber attack where criminals impersonate executives or trusted contacts via email
+to manipulate employees into transferring money, sharing sensitive data, or taking
+unauthorised actions, often leading to significant financial and operational consequences.
+BEC is a type of phishing attack.
+
+C Cloud service /
+
+Ratonga kapua
+
+Provides ubiquitous, convenient, on-demand access to shared pools of computing
+resources such as servers, storage, or online applications.
+
+Common vulnerabilities and exposures
+(CVE) /
+Whakaraeraetanga
+
+A vulnerability is a weakness in software, hardware, or a network that can be exploited by
+an actor. The Common Vulnerabilities and Exposures (CVE) database is a publicly available
+register of known vulnerabilities, each assigned a unique identifier in the format of CVE-
+yyyy-xxxx.
+
+Credentials /
+Whakatūturu pārongo
+
+A user’s authentication information used to verify identity – typically a password, token
+or certificate.
+
+Cryptocurrency miner /
+Maina moni whitirangi
+
+Malicious software that co-opts computing resources for generating cryptocurrency. Many
+digital currencies require the solving of computationally intensive mathematical problems
+in order to generate digital assets.
+
+Cyberspace /
+Āteatāurungi
+
+The global network of interdependent information technology infrastructures,
+telecommunication networks, and computer processing systems in which online
+communication takes place.
+
+Cyber security /
+Whakahaumaru ā ipurangi
+
+Measures to protect systems, data and devices from unauthorised access and ensure the
+confidentiality, integrity, and availability of information.
+
+NATIONAL CYBER SECURITY CENTRE
+
+39
+
+CYBER THREAT REPORT 2025TERM / KUPU
+
+DEFINITION / WHAKAMĀRAMATANGA
+
+D Data breach /
+
+Raraunga wāwāhi
+
+The intentional or unintentional release of sensitive or private information into an
+insecure environment.
+
+Defence evasion /
+Karo kaupare
+
+A tactic that describes a series of attempts to prevent network defenders from discovering
+a malicious actor.
+
+Denial of service (DoS) /
+Whakakore ratonga
+
+An attempt to make an online service unavailable by overwhelming the service with more
+traffic than it can handle.
+
+Disinformation /
+Ngā kōrero horihori
+
+The deliberate, intentional spread of false and misleading information designed to achieve
+a strategic purpose.
+
+E Endpoint /
+
+Pito Whakamutunga
+
+A network-connected device that acts as an access point for data and applications,
+including laptops, desktops, and mobile devices, often requiring security measures to
+prevent unauthorised access and cyber threats.
+
+Exfiltration /
+Tāhae
+
+Where an actor has unauthorised access to private organisational data (for example,
+legitimate credentials or intellectual property) and copies it from a system.
+
+H Hacktivism /
+
+Porotū Mūrere
+
+The use of hacking techniques to promote political, social, or ideological causes, where
+activists breach or disrupt systems, leak data, or deface websites to draw attention to their
+message or protest perceived injustices.
+
+Hybrid threat /
+Tuma momorua
+
+A mix of military, non-military, covert and overt activities by state- and non-state-
+sponsored actors that occur below the line of conventional warfare.
+
+Hypervisor /
+Kaiwhakahaere pūrere mariko
+
+Software enabling the creation, management, and running of discretely hosted virtual
+machines (VMs) on the same hardware.
+
+I
+
+Incident /
+Maiki
+
+An occurrence or activity that appears to have degraded the confidentiality, integrity, or
+availability of a data system or network.
+
+Indicators of compromise (IoCs) /
+Paetohu whakamōrearea (ngā IoC)
+
+Usually IP addresses, domain names, or files that may be shared publicly or in confidence.
+Together they suggest a computer system or network may be compromised.
+
+L
+
+Living off the land /
+He ora nō te whenua
+
+A technique using legitimate and pre-existing software on a victim network, in contrast
+to the installation of malicious software, to maintain network accesses. Use of legitimate
+software and accounts is less likely to raise alerts for defenders.
+
+M Malicious cyber actor /
+
+Nanakia tūkino mōhiohio
+
+An individual or group of people who seek to exploit computer systems to steal, destroy or
+degrade an organisation’s information. Actors may be individual computer hackers, part of
+an organised criminal group, or state-sponsored.
+
+Malware /
+Pūmanawa kino
+
+Mitigation /
+Ārai mōrea
+
+Malicious software or code intended to have an adverse impact on organisations’ or
+individuals’ data, such as viruses, Trojans, or worms.
+
+Steps that organisations and individuals can take to minimise and address cyber
+security risks.
+
+40
+
+NATIONAL CYBER SECURITY CENTRE
+
+CYBER THREAT REPORT 2025TERM / KUPU
+
+DEFINITION / WHAKAMĀRAMATANGA
+
+MITRE ATT&CK framework /
+Te Pou Tārawaho MITRE ATT&CK
+
+A knowledge base of adversary tactics, techniques, and procedures, used by cyber security
+professionals to understand, detect, and defend against cyber threats through structured
+analysis of attacker behaviour.
+
+N Nationally significant organisation /
+
+Whakahaere hira ā-Motu
+
+Organisations such as government agencies, key economic generators, niche exporters,
+research institutions, and operators of critical national infrastructure. If these organisations
+were affected by a cyber security incident, the impact could lead to national-level harm.
+
+Network-attached Storage (NAS) /
+Rokiroki Āpiti-Whatunga
+
+A dedicated device connected to a network that provides centralised file storage and
+sharing for multiple users or systems.
+
+O Operational Technology (OT) /
+
+He Hangarau Whakahaere
+
+The systems and equipment used to control, monitor and manage industrial processes
+and physical operations, such as machinery, power grids, and transport systems, enabling
+real-time automation and safety in critical infrastructure.
+
+Opportunistic cyber activity /
+Ngohe ā-ipurangi tūpono
+
+Occurs when malicious cyber actors select their victims based on the availability of a
+vector of compromise, regardless of victim location, sector or intelligence value.
+
+P Personal information /
+
+Ngā mōhiohio whaiaro
+
+Information about an individual, including name, date of birth, biometric records, medical,
+educational, financial, and employment information.
+
+Phishing /
+Hītinihanga
+
+The use of fake, deceptive or alluring messages to solicit a behaviour from the recipient –
+such as clicking a link or divulging personal information or credentials.
+
+Public attribution /
+Whakahuatia whānuitia nō hea
+
+A tool used by governments and private-sector organisations to deliberately release
+information about the source of a cyber intrusion, primarily to uphold norms about what
+constitutes acceptable state behaviour in cyberspace.
+
+R Ransomware /
+
+Pūmanawa utu uruhi
+
+A type of malware designed to disrupt the use of computer systems and files until a
+ransom is paid.
+
+Ransomware-as-a-Service (RaaS) /
+Ko te taupānga-whawhe-hei-ratonga
+
+A criminal business model where developers sell or lease ransomware tools to affiliates,
+who deploy attacks and share profits. It lowers technical barriers, enabling widespread,
+scalable cyber extortion campaigns.
+
+S Small Office/Home Office (SOHO) /
+
+Tari Iti / Tari Kāinga
+
+A business setup with few employees operating from a small or home-based workspace,
+using consumer-grade technology to manage professional tasks, communications, and
+network operations.
+
+Spear phishing /
+He hītinihanga ā-tao
+
+A targeted cyber attack where malicious actors craft personalised messages to trick
+specific individuals into revealing sensitive information, clicking malicious links, or
+installing malware, often by impersonating trusted contacts or organisations.
+
+Supply chain compromise /
+Poke ara ratonga
+
+A form of attack that targets software, hardware or an IT service provider, where the
+ultimate aim is to exploit downstream customers.
+
+NATIONAL CYBER SECURITY CENTRE
+
+41
+
+CYBER THREAT REPORT 2025TERM / KUPU
+
+DEFINITION / WHAKAMĀRAMATANGA
+
+T Targeted cyber activity /
+
+Ngohe ā-ipurangi heipū
+
+Occurs when malicious cyber actors demonstrate an intent or a tasking to compromise an
+organisation for its intelligence value, regardless of a specific access vector.
+
+V Virtual Private Network (VPN) /
+
+Whatunga Tūmataiti Mariko
+
+A secure connection that encrypts internet traffic and routes it through a remote server,
+protecting user privacy, hiding IP addresses, and helping to prevent data from being
+intercepted on public or untrusted networks.
+
+Virtual private server (VPS) /
+Tūmau tūmataiti mariko
+
+A portion of a large physical server divided into virtual spaces available for temporary use.
+
+Z Zero-day vulnerability /
+
+Whakaraeraetanga rā-kore
+
+A software vulnerability for which there is currently no patch, and for which there is often
+no CVE number assigned. The term derives from the number of days for which defenders
+and developers have been aware of the vulnerability.
+
+42
+
+NATIONAL CYBER SECURITY CENTRE
+
+CYBER THREAT REPORT 2025
