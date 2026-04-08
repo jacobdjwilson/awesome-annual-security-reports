@@ -25,7 +25,7 @@ on:
     - cron: '0 13 * * 1'
 
 permissions:
-  contents: read
+  contents: write
   issues: write
 
 jobs:
@@ -456,6 +456,153 @@ jobs:
 
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "📎 Full report available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
+
+  # ============================================================
+  # CLEANUP JOB
+  # Runs on schedule and manual trigger only.
+  # Deletes branches whose PR was closed without merging and
+  # which have not had any new commits pushed since the PR closed.
+  # Protected branches (main, development) are never touched.
+  # ============================================================
+  cleanup-stale-branches:
+    runs-on: ubuntu-latest
+    # Only run on schedule or manual dispatch — skip on workflow_run triggers
+    # to avoid racing with active development work.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: Delete branches from closed, unmerged PRs
+        id: cleanup
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          REPO="${{ github.repository }}"
+
+          # Branches that must never be deleted regardless of PR state.
+          PROTECTED_BRANCHES=("main" "development")
+
+          is_protected() {
+            local branch="$1"
+            for p in "${PROTECTED_BRANCHES[@]}"; do
+              [ "$branch" == "$p" ] && return 0
+            done
+            return 1
+          }
+
+          DELETED=()
+          SKIPPED=()
+
+          echo "Scanning for stale branches from closed (unmerged) PRs..."
+          echo ""
+
+          # Fetch all closed, unmerged PRs with their head branch names.
+          # Uses pagination — iterates until an empty page is returned.
+          PAGE=1
+          while true; do
+            BATCH=$(gh api \
+              "repos/$REPO/pulls?state=closed&per_page=100&page=$PAGE" \
+              --jq '[.[] | select(.merged_at == null) | {number: .number, branch: .head.ref, closed_at: .closed_at}]')
+
+            COUNT=$(echo "$BATCH" | jq 'length')
+            [ "$COUNT" -eq 0 ] && break
+
+            while IFS= read -r PR_JSON; do
+              PR_NUM=$(echo "$PR_JSON" | jq -r '.number')
+              BRANCH=$(echo "$PR_JSON" | jq -r '.branch')
+              CLOSED_AT=$(echo "$PR_JSON" | jq -r '.closed_at')
+
+              # Skip protected branches
+              if is_protected "$BRANCH"; then
+                echo "  [PR #$PR_NUM] ⊘ Skipping protected branch: $BRANCH"
+                SKIPPED+=("$BRANCH (PR #$PR_NUM — protected)")
+                continue
+              fi
+
+              # Check whether the branch still exists on the remote
+              HTTP_STATUS=$(gh api "repos/$REPO/git/refs/heads/$BRANCH" \
+                --silent --include 2>&1 | grep "^HTTP" | awk '{print $2}' || echo "404")
+
+              if [ "$HTTP_STATUS" == "404" ] || \
+                 ! gh api "repos/$REPO/git/refs/heads/$BRANCH" --silent > /dev/null 2>&1; then
+                echo "  [PR #$PR_NUM] ⊘ Branch already gone: $BRANCH"
+                continue
+              fi
+
+              # Confirm the branch head matches the PR's last commit
+              # (guards against a branch being reused after the PR closed)
+              PR_SHA=$(gh api "repos/$REPO/pulls/$PR_NUM" --jq '.head.sha')
+              BRANCH_SHA=$(gh api "repos/$REPO/git/refs/heads/$BRANCH" \
+                --jq '.object.sha' 2>/dev/null || echo "")
+
+              if [ "$PR_SHA" != "$BRANCH_SHA" ]; then
+                echo "  [PR #$PR_NUM] ⊘ Branch has new commits since PR closed — skipping: $BRANCH"
+                SKIPPED+=("$BRANCH (PR #$PR_NUM — new commits after close)")
+                continue
+              fi
+
+              # Safe to delete
+              gh api --method DELETE "repos/$REPO/git/refs/heads/$BRANCH" > /dev/null
+              echo "  [PR #$PR_NUM] 🗑️  Deleted: $BRANCH (closed $CLOSED_AT)"
+              DELETED+=("$BRANCH (PR #$PR_NUM, closed $CLOSED_AT)")
+
+            done < <(echo "$BATCH" | jq -c '.[]')
+
+            (( PAGE++ ))
+          done
+
+          echo ""
+          echo "Done. Deleted: ${#DELETED[@]} branch(es), skipped: ${#SKIPPED[@]}."
+
+          # Pass counts to summary step
+          printf '%s\n' "${DELETED[@]:-}" > /tmp/deleted_branches.txt
+          printf '%s\n' "${SKIPPED[@]:-}" > /tmp/skipped_branches.txt
+          echo "deleted_count=${#DELETED[@]}" >> $GITHUB_OUTPUT
+          echo "skipped_count=${#SKIPPED[@]}" >> $GITHUB_OUTPUT
+
+      - name: Generate step summary
+        if: always()
+        run: |
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          DELETED="${{ steps.cleanup.outputs.deleted_count }}"
+          SKIPPED="${{ steps.cleanup.outputs.skipped_count }}"
+
+          echo "## 🧹 Stale Branch Cleanup" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Branches deleted | ${DELETED:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Branches skipped | ${SKIPPED:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${DELETED:-0}" -gt 0 ]; then
+            echo "### 🗑️ Deleted Branches" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            while IFS= read -r line; do
+              [ -z "$line" ] && continue
+              echo "- \`$line\`" >> $GITHUB_STEP_SUMMARY
+            done < /tmp/deleted_branches.txt
+            echo "" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ No stale branches found — repo is already tidy." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ "${SKIPPED:-0}" -gt 0 ]; then
+            echo "<details><summary>⊘ Skipped branches (${SKIPPED})</summary>" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            while IFS= read -r line; do
+              [ -z "$line" ] && continue
+              echo "- \`$line\`" >> $GITHUB_STEP_SUMMARY
+            done < /tmp/skipped_branches.txt
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "</details>" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "📎 Full log: [workflow run]($RUN_URL)" >> $GITHUB_STEP_SUMMARY
 
   # ============================================================
   # SKIPPED SUMMARY JOB
