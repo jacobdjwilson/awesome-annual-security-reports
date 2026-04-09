@@ -39,27 +39,53 @@ jobs:
         id: load_config
         run: |
           DEFAULT_LIMIT=$(jq -r '.workflow.discovery.default_limit' .github/artifacts/workflow-config.json)
+          MAX_OPEN_PRS=$(jq -r '.workflow.pull_request.max_open_automated_prs // 5' .github/artifacts/workflow-config.json)
           echo "default_limit=$DEFAULT_LIMIT" >> $GITHUB_OUTPUT
+          echo "max_open_prs=$MAX_OPEN_PRS" >> $GITHUB_OUTPUT
           echo "✓ Default limit: $DEFAULT_LIMIT"
+          echo "✓ Max open PRs : $MAX_OPEN_PRS"
 
-      - name: Check for existing refresh PR
+      - name: Check existing refresh PR and PR cap
         id: check-pr
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PR_COUNT=$(gh pr list \
+          MAX_OPEN_PRS="${{ steps.load_config.outputs.max_open_prs }}"
+
+          # Check for an existing refresh PR specifically
+          REFRESH_PR_COUNT=$(gh pr list \
             --state open \
             --label "maintenance" \
             --search "Refresh in:title" \
             --json number \
             -q length)
 
-          if [ "$PR_COUNT" -gt 0 ]; then
+          if [ "${REFRESH_PR_COUNT:-0}" -gt 0 ]; then
             echo "⊘ Existing refresh PR found, skipping"
             echo "pr_exists=true" >> $GITHUB_OUTPUT
+            echo "skip_reason=existing_refresh_pr" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Check the shared automated PR cap
+          OPEN_COUNT=$(gh pr list \
+            --state open \
+            --label "automated" \
+            --json number \
+            -q length)
+
+          echo "Open automated PRs: ${OPEN_COUNT} / ${MAX_OPEN_PRS}"
+
+          if [ "${OPEN_COUNT:-0}" -ge "${MAX_OPEN_PRS}" ]; then
+            echo "⊘ PR cap reached (${OPEN_COUNT} >= ${MAX_OPEN_PRS}) — skipping"
+            echo "pr_exists=true" >> $GITHUB_OUTPUT
+            echo "skip_reason=pr_cap_reached" >> $GITHUB_OUTPUT
+            echo "open_count=$OPEN_COUNT" >> $GITHUB_OUTPUT
           else
-            echo "✓ No existing PR found"
+            echo "✓ No existing PR found, cap OK (${OPEN_COUNT} < ${MAX_OPEN_PRS})"
             echo "pr_exists=false" >> $GITHUB_OUTPUT
+            echo "skip_reason=" >> $GITHUB_OUTPUT
+            echo "open_count=$OPEN_COUNT" >> $GITHUB_OUTPUT
           fi
 
       - name: Find stale files
@@ -140,6 +166,9 @@ jobs:
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           PR_EXISTS="${{ steps.check-pr.outputs.pr_exists }}"
+          SKIP_REASON="${{ steps.check-pr.outputs.skip_reason }}"
+          OPEN_COUNT="${{ steps.check-pr.outputs.open_count }}"
+          MAX_OPEN_PRS="${{ steps.load_config.outputs.max_open_prs }}"
           HAS_FILES="${{ steps.check-files.outputs.has_files }}"
           COUNT="${{ steps.check-files.outputs.file_count }}"
 
@@ -150,10 +179,19 @@ jobs:
           echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Limit | \`${{ github.event.inputs.limit || steps.load_config.outputs.default_limit }}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Min Age (days) | \`${{ github.event.inputs.days_old || 90 }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Open Automated PRs | ${OPEN_COUNT:-?} / ${MAX_OPEN_PRS:-5} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
           if [ "$PR_EXISTS" == "true" ]; then
-            echo "⊘ **Skipped** — An open refresh PR already exists." >> $GITHUB_STEP_SUMMARY
+            if [ "$SKIP_REASON" == "pr_cap_reached" ]; then
+              echo "### ⏸️ PR Cap Reached" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "**${OPEN_COUNT} open automated PRs** — at or above the cap of **${MAX_OPEN_PRS}**." >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "Review and merge or close open automated PRs to unblock future refresh runs." >> $GITHUB_STEP_SUMMARY
+            else
+              echo "⊘ **Skipped** — An open refresh PR already exists." >> $GITHUB_STEP_SUMMARY
+            fi
           elif [ "$HAS_FILES" == "true" ]; then
             echo "✅ Found **${COUNT}** file(s) to refresh. Processing job will follow." >> $GITHUB_STEP_SUMMARY
           else

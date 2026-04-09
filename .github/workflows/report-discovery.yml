@@ -38,8 +38,38 @@ jobs:
         # Only requests needed — no google-api-python-client, no beautifulsoup4
         run: pip install --break-system-packages requests
 
+      - name: Check automated issue cap
+        id: issue-cap
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          MAX_ISSUES=$(jq -r '.workflow.discovery.max_open_automated_issues // 20' .github/artifacts/workflow-config.json)
+
+          # Count open issues that carry the 'automated' label (created by discovery runs)
+          OPEN_COUNT=$(gh issue list \
+            --state open \
+            --label "automated" \
+            --json number \
+            -q length)
+
+          echo "Open automated issues: ${OPEN_COUNT} / ${MAX_ISSUES}"
+
+          if [ "${OPEN_COUNT:-0}" -ge "${MAX_ISSUES}" ]; then
+            echo "cap_reached=true" >> $GITHUB_OUTPUT
+            echo "open_count=$OPEN_COUNT" >> $GITHUB_OUTPUT
+            echo "max_issues=$MAX_ISSUES" >> $GITHUB_OUTPUT
+            echo "⊘ Issue cap reached (${OPEN_COUNT} >= ${MAX_ISSUES}) — skipping discovery."
+            echo "  Triage and close open automated issues to unblock future discovery runs."
+          else
+            echo "cap_reached=false" >> $GITHUB_OUTPUT
+            echo "open_count=$OPEN_COUNT" >> $GITHUB_OUTPUT
+            echo "max_issues=$MAX_ISSUES" >> $GITHUB_OUTPUT
+            echo "✓ Issue cap OK (${OPEN_COUNT} < ${MAX_ISSUES})"
+          fi
+
       - name: Run discovery
         id: discovery
+        if: steps.issue-cap.outputs.cap_reached != 'true'
         env:
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
           GOOGLE_CSE_ID:         ${{ secrets.GOOGLE_CSE_ID }}
@@ -94,6 +124,10 @@ jobs:
           DATE_USED="${{ github.event.inputs.override_date }}"
           [ -z "$DATE_USED" ] && DATE_USED="$(date +%Y-%m-%d) (today)"
 
+          CAP_REACHED="${{ steps.issue-cap.outputs.cap_reached }}"
+          OPEN_ISSUES="${{ steps.issue-cap.outputs.open_count }}"
+          MAX_ISSUES="${{ steps.issue-cap.outputs.max_issues }}"
+
           CREATED="${{ steps.discovery.outputs.created }}"
           TASKS="${{ steps.discovery.outputs.tasks }}"
           SUPPRESSED="${{ steps.discovery.outputs.suppressed }}"
@@ -113,7 +147,19 @@ jobs:
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Date    | $DATE_USED |" >> $GITHUB_STEP_SUMMARY
+          echo "| Open Automated Issues | ${OPEN_ISSUES:-0} / ${MAX_ISSUES:-20} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "$CAP_REACHED" == "true" ]; then
+            echo "### ⏸️ Issue Cap Reached" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**${OPEN_ISSUES} open automated issues** — at or above the cap of **${MAX_ISSUES}**." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Triage and close open discovery issues to unblock future runs." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "📎 Full log: [workflow artifacts]($RUN_URL)" >> $GITHUB_STEP_SUMMARY
+            exit 0
+          fi
 
           echo "### 🔭 Search Coverage" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY

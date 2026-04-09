@@ -90,6 +90,7 @@ jobs:
           MAX_AGE_DAYS=$(jq -r '.workflow.conversion.max_age_days' .github/artifacts/workflow-config.json)
           PUSH_MODE=$(jq -r '.workflow.discovery.push_mode // "missing_conversion"' .github/artifacts/workflow-config.json)
           PUSH_BATCH_LIMIT=$(jq -r '.workflow.discovery.push_batch_limit // 20' .github/artifacts/workflow-config.json)
+          MAX_OPEN_PRS=$(jq -r '.workflow.pull_request.max_open_automated_prs // 5' .github/artifacts/workflow-config.json)
 
           echo "max_size_mb=$MAX_SIZE_MB" >> $GITHUB_OUTPUT
           echo "default_limit=$DEFAULT_LIMIT" >> $GITHUB_OUTPUT
@@ -99,6 +100,7 @@ jobs:
           echo "max_age_days=$MAX_AGE_DAYS" >> $GITHUB_OUTPUT
           echo "push_mode=$PUSH_MODE" >> $GITHUB_OUTPUT
           echo "push_batch_limit=$PUSH_BATCH_LIMIT" >> $GITHUB_OUTPUT
+          echo "max_open_prs=$MAX_OPEN_PRS" >> $GITHUB_OUTPUT
 
           echo "✓ Loaded configuration:"
           echo "  Max file size   : $MAX_SIZE_MB MB"
@@ -108,9 +110,80 @@ jobs:
           echo "  Max age days    : $MAX_AGE_DAYS"
           echo "  Push mode       : $PUSH_MODE"
           echo "  Push batch limit: $PUSH_BATCH_LIMIT"
+          echo "  Max open PRs    : $MAX_OPEN_PRS"
+
+      - name: Check automated PR cap
+        id: pr-cap
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          MAX_OPEN_PRS="${{ steps.load_config.outputs.max_open_prs }}"
+
+          # Count open PRs carrying the 'automated' label (covers pipeline + refresh + ingest)
+          OPEN_COUNT=$(gh pr list \
+            --state open \
+            --label "automated" \
+            --json number \
+            -q length)
+
+          echo "Open automated PRs: ${OPEN_COUNT} / ${MAX_OPEN_PRS}"
+
+          if [ "${OPEN_COUNT:-0}" -ge "${MAX_OPEN_PRS}" ]; then
+            echo "cap_reached=true" >> $GITHUB_OUTPUT
+            echo "open_count=$OPEN_COUNT" >> $GITHUB_OUTPUT
+            echo "⊘ PR cap reached (${OPEN_COUNT} >= ${MAX_OPEN_PRS}) — skipping this run."
+            echo "  Review and merge or close open automated PRs to unblock automation."
+          else
+            echo "cap_reached=false" >> $GITHUB_OUTPUT
+            echo "open_count=$OPEN_COUNT" >> $GITHUB_OUTPUT
+            echo "✓ PR cap OK (${OPEN_COUNT} < ${MAX_OPEN_PRS})"
+          fi
+
+      - name: Collect PDFs already covered by open PR branches
+        id: pending-prs
+        if: steps.pr-cap.outputs.cap_reached != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          MD_FOLDER=$(jq -r '.workflow.folders.markdown_conversions' .github/artifacts/workflow-config.json)
+          PDF_SOURCE=$(jq -r '.workflow.folders.pdf_source' .github/artifacts/workflow-config.json)
+
+          # Fetch all open automated PR branch names
+          BRANCHES=$(gh pr list \
+            --state open \
+            --label "automated" \
+            --json headRefName \
+            -q '.[].headRefName')
+
+          > pending_pdf_paths.txt
+
+          if [ -z "$BRANCHES" ]; then
+            echo "⊘ No open automated PRs — no paths to exclude"
+          else
+            echo "Open automated PR branches:"
+            while IFS= read -r BRANCH; do
+              echo "  $BRANCH"
+              # List Markdown files that exist on this branch but not on the
+              # current HEAD (i.e. files the PR would add/update).
+              git fetch origin "$BRANCH" --depth=1 2>/dev/null || continue
+              MD_FILES=$(git diff --name-only HEAD "origin/$BRANCH" -- "$MD_FOLDER/" 2>/dev/null || true)
+              while IFS= read -r md_file; do
+                [ -z "$md_file" ] && continue
+                # Derive the corresponding PDF path
+                pdf_path=$(echo "$md_file" | sed "s|$MD_FOLDER|$PDF_SOURCE|" | sed 's/\.md$/.pdf/')
+                echo "$pdf_path" >> pending_pdf_paths.txt
+                echo "    → will skip: $pdf_path"
+              done <<< "$MD_FILES"
+            done <<< "$BRANCHES"
+          fi
+
+          PENDING_COUNT=$(grep -c . pending_pdf_paths.txt 2>/dev/null || echo 0)
+          echo "pending_count=$PENDING_COUNT" >> $GITHUB_OUTPUT
+          echo "✓ PDFs with pending conversions in open PRs: $PENDING_COUNT"
 
       - name: Find and validate PDF files
         id: find-files
+        if: steps.pr-cap.outputs.cap_reached != 'true'
         env:
           MAX_SIZE_MB: ${{ steps.load_config.outputs.max_size_mb }}
           DEFAULT_LIMIT: ${{ steps.load_config.outputs.default_limit }}
@@ -261,6 +334,24 @@ jobs:
             fi
           fi
 
+          # ── Exclude PDFs already covered by an open automated PR ──────────
+          # When a PR is open but unmerged, the markdown file does not yet
+          # exist on main, so missing_conversion mode would re-queue the same
+          # PDF on every run. We filter those out here.
+          # When a PR is later *closed* without merging, its branch is deleted,
+          # this exclusion list is empty for that PDF, and the next run picks
+          # it back up automatically — providing full orphan coverage.
+          if [ -s pending_pdf_paths.txt ] && [ -s files_to_process.txt ]; then
+            BEFORE=$(wc -l < files_to_process.txt)
+            grep -vxFf pending_pdf_paths.txt files_to_process.txt > files_filtered.txt || true
+            mv files_filtered.txt files_to_process.txt
+            AFTER=$(wc -l < files_to_process.txt)
+            EXCLUDED=$(( BEFORE - AFTER ))
+            if [ "$EXCLUDED" -gt 0 ]; then
+              echo "⊘ Excluded $EXCLUDED PDF(s) already covered by an open automated PR"
+            fi
+          fi
+
           # Validate files
           if [ -s files_to_process.txt ]; then
             VALID_FILES=""
@@ -320,6 +411,10 @@ jobs:
           FILE_COUNT="${{ steps.find-files.outputs.file_count }}"
           PUSH_MODE="${{ steps.load_config.outputs.push_mode }}"
           PUSH_BATCH_LIMIT="${{ steps.load_config.outputs.push_batch_limit }}"
+          CAP_REACHED="${{ steps.pr-cap.outputs.cap_reached }}"
+          OPEN_COUNT="${{ steps.pr-cap.outputs.open_count }}"
+          MAX_OPEN_PRS="${{ steps.load_config.outputs.max_open_prs }}"
+          PENDING_COUNT="${{ steps.pending-prs.outputs.pending_count }}"
 
           echo "## 🔍 File Discovery" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -330,10 +425,18 @@ jobs:
           if [ "${{ github.event_name }}" == "push" ]; then
             echo "| Push Strategy | \`${PUSH_MODE}\` (batch limit: ${PUSH_BATCH_LIMIT}) |" >> $GITHUB_STEP_SUMMARY
           fi
+          echo "| Open Automated PRs | ${OPEN_COUNT:-0} / ${MAX_OPEN_PRS:-5} |" >> $GITHUB_STEP_SUMMARY
+          echo "| PDFs skipped (open PR) | ${PENDING_COUNT:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "| Files Found | ${FILE_COUNT:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          if [[ "$SCAN_MODE" == *"delete_only" ]]; then
+          if [ "$CAP_REACHED" == "true" ]; then
+            echo "### ⏸️ PR Cap Reached" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**${OPEN_COUNT} open automated PRs** — at or above the cap of **${MAX_OPEN_PRS}**." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Review and merge or close open automated PRs to unblock future runs." >> $GITHUB_STEP_SUMMARY
+          elif [[ "$SCAN_MODE" == *"delete_only" ]]; then
             echo "⊘ **Skipped** — changeset contained only PDF deletions. No processing needed." >> $GITHUB_STEP_SUMMARY
           elif [ -s files_to_process.txt ]; then
             echo "**Files to Process:**" >> $GITHUB_STEP_SUMMARY

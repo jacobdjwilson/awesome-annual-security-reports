@@ -7,6 +7,8 @@
       "pdf_magic_number": "%PDF",
       "push_mode": "missing_conversion",
       "push_batch_limit": 20,
+      "max_open_automated_issues": 20,
+      "_max_open_automated_issues_comment": "Hard cap on open issues carrying the report-suggestion or automated-check label that were created by discovery. When open issue count meets or exceeds this limit, the discovery run exits cleanly without creating new issues.",
       "_push_mode_comment": "Controls how the pipeline identifies files to process on a push event. 'git_diff' uses git diff HEAD~1 (fragile with multi-commit pushes and individual-file commits). 'missing_conversion' scans the full PDF folder for any PDF that has no matching Markdown file — this is resilient regardless of how many commits or PDFs were pushed. Set push_batch_limit to cap the number of PDFs processed per push run (0 = unlimited).",
       "rotation_days": {
         "_comment": "How often each priority tier is re-searched. The slot scheduler uses these periods to distribute series evenly across time without any database. Adjust to taste — larger values = less frequent searches per series.",
@@ -44,7 +46,9 @@
       ],
       "delete_branch": true,
       "single_report_title_template": "Add {organization} {title} ({year})",
-      "multiple_report_title_template": "Update Security Reports - {count} Report(s)"
+      "multiple_report_title_template": "Update Security Reports - {count} Report(s)",
+      "max_open_automated_prs": 5,
+      "_max_open_automated_prs_comment": "Hard cap on total open automated PRs across all pipelines (security-reports-pipeline + refresh-old-conversions + ingest-suggestion). When this limit is reached, new pipeline runs skip PR creation and exit cleanly. Review and merge/close existing PRs to unblock automation."
     },
     "validation": {
       "min_json_size_bytes": 10,
