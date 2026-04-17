@@ -1,153 +1,960 @@
-INTEL 471 ANNUAL
-THREAT REPORT 2024
-& OUTLOOK FOR 2025
+ulnerability monitoring revealed a distinct focus on enterprise IT infrastructure. Threat actors
+prioritized vulnerabilities that could facilitate unauthorized access to corporate networks,
+often targeting remote access solutions, VPNs and cloud-based services. This trend aligns
+with the observed increase in ransomware and data extortion campaigns, where initial
+access is the critical first step.
 
-— A Year of Law Enforcement Wins as RansomHub
-and Infostealer Malware Threats Rise
+Figure 24: The image depicts the top five most targeted software/platforms in underground
+vulnerability offers in 2024.
+
+The  most  frequently  targeted  platforms  in  underground  offers  included  Fortinet,  Citrix,
+Ivanti,  VMware  and  Microsoft.  These  platforms  are  ubiquitous  in  enterprise  environments,
+making them high-value targets for adversaries seeking to maximize their reach. The
+availability of exploits for these platforms on underground forums significantly lowers the
+barrier to entry for less sophisticated threat actors, enabling them to conduct impactful
+attacks with minimal effort.
+
+36
+
+© Intel 471 Inc. All rights reserved.Figure 25: The image depicts the top five most targeted software/platforms in underground
+vulnerability offers in 2024.
+
+The  prevalence  of  these  vulnerabilities  in  the  underground  market  highlights  the  need
+for  organizations  to  prioritize  patching  for  internet-facing  assets.  Threat  actors  are
+increasingly  adept  at  weaponizing  vulnerabilities  shortly  after  they  are  disclosed,  leaving
+organizations with a narrow window of opportunity to mitigate the risk.
+
+37
+
+© Intel 471 Inc. All rights reserved.Vulnerabilities Exploited in Malware,
+Ransomware Campaigns
+
+Malware campaigns
+In 2024, we observed a strong correlation between the exploitation of vulnerabilities and
+the success of malware campaigns. Threat actors frequently leveraged vulnerabilities in
+widely used software to distribute malware, often using automated tools to scan for and
+exploit vulnerable systems.
+
+Figure 26: The image depicts the top five vulnerabilities exploited in malware campaigns
+in 2024.
+
+The  most  frequently  exploited  vulnerabilities  in  malware  campaigns  included  those
+impacting  web  browsers,  document  readers  and  office  productivity  suites.  These
+vulnerabilities  often  allowed  for  remote  code  execution  (RCE),  enabling  adversaries  to
+install  malware  on  the  victim’s  system  without  user  interaction.  The  use  of  these
+vulnerabilities  underscores  the  importance  of  keeping  software  up  to  date  and  using
+security solutions that can detect and block malicious activity.
+
+38
+
+© Intel 471 Inc. All rights reserved.Ransomware campaigns
+Ransomware  groups  also  demonstrated  a  clear  preference  for  exploiting  vulnerabilities
+to  gain  initial  access  to  victim  networks.  By  leveraging  vulnerabilities  in  VPNs,  remote
+access  solutions  and  other  internet-facing  assets,  ransomware  operators  could  quickly
+compromise  multiple  systems  within  a  network,  increasing  the  impact  of  their  attacks.
+
+Figure 27: The image depicts the top five vulnerabilities exploited in ransomware campaigns
+in 2024.
+
+The  exploitation  of  vulnerabilities  in  these  platforms  often  provided  ransomware  groups
+with  a  foothold  in  the  network,  allowing  them  to  conduct  reconnaissance,  exfiltrate
+sensitive  data  and  deploy  ransomware  payloads.  The  speed  at  which  these  vulnerabilities
+were  exploited  highlights  the  need  for  organizations  to  have  a  robust  vulnerability
+management  program  that  includes  regular  scanning,  patching  and  monitoring  for
+suspicious activity.
+
+39
+
+© Intel 471 Inc. All rights reserved.Exploited Vulnerabilities That Had the
+Highest Impact
+
+In 2024, several vulnerabilities had a significant impact on global organizations, leading to
+widespread  disruptions  and  data  breaches.  These  vulnerabilities  were  often  exploited
+by  sophisticated  threat  actors,  including  state-sponsored  groups  and  well-funded
+cybercriminal  collectives.
+
+Figure 28: The image depicts the top five most impactful vulnerabilities in 2024.
+
+The  impact  of  these  vulnerabilities  was  often  compounded  by  the  fact  that  they  were
+exploited  in  widely  used  software  and  platforms,  making  it  difficult  for  organizations
+to  mitigate  the  risk.  The  exploitation  of  these  vulnerabilities  underscores  the  need
+for  a  proactive  approach  to  security,  including  the  use  of  threat  intelligence  to  identify
+and  prioritize  vulnerabilities  that  pose  the  greatest  risk  to  the  organization.
+
+40
+
+© Intel 471 Inc. All rights reserved.Summary
+The  vulnerability  landscape  in  2024  was  characterized  by  a  continued  focus  on  enterprise
+IT  infrastructure,  with  threat  actors  leveraging  a  wide  range  of  vulnerabilities  to  gain
+unauthorized  access  to  corporate  networks.  The  increase  in  the  total  number  of  reported
+vulnerabilities,  combined  with  the  speed  at  which  they  are  weaponized,  highlights  the
+need  for  organizations  to  prioritize  vulnerability  management  and  patching.  The  use
+of  threat  intelligence  to  identify  and  prioritize  vulnerabilities  that  pose  the  greatest
+risk  to  the  organization  is  essential  for  maintaining  a  strong  security  posture  in  an
+increasingly  hostile  threat  landscape.
+
+41
+
+© Intel 471 Inc. All rights reserved.Artificial Intelligence: Separating Fact From Fiction
+
+The  emergence  of  generative  AI  has  undoubtedly  changed  the  technological  landscape,
+offering  both  opportunities  and  challenges  for  cybersecurity.  In  2024,  we  observed
+a  significant  amount  of  hype  surrounding  the  use  of  AI  by  threat  actors,  with  many
+speculating  that  it  would  lead  to  a  surge  in  sophisticated  cyberattacks.  However,  our
+observations  suggest  that  the  reality  is  more  nuanced.
+
+While  AI  has  the  potential  to  enhance  the  capabilities  of  threat  actors,  it  is  not  a
+silver  bullet.  The  use  of  AI  in  cyberattacks  is  still  in  its  infancy,  and  many  of  the  threats
+attributed  to  AI  are  often  the  result  of  traditional  techniques  enhanced  by  automation.
+For  example,  the  use  of  AI  to  generate  phishing  emails  is  a  growing  trend,  but  it  is
+often  used  to  scale  existing  phishing  campaigns  rather  than  to  create  entirely  new
+types  of  attacks.
+
+Furthermore,  the  use  of  AI  by  threat  actors  is  often  limited  by  the  availability  of  high-
+quality  data  and  the  computational  resources  required  to  train  and  deploy  AI  models.
+As  a  result,  the  use  of  AI  in  cyberattacks  is  likely  to  remain  a  niche  activity  for  the
+foreseeable  future,  with  most  threat  actors  continuing  to  rely  on  proven  and  effective
+techniques.
+
+In  conclusion,  while  AI  is  a  powerful  tool  that  has  the  potential  to  transform  the
+cybersecurity  landscape,  it  is  important  to  separate  fact  from  fiction.  The  threats  posed
+by  AI  are  real,  but  they  are  not  as  widespread  or  as  sophisticated  as  the  hype  would
+suggest.  Organizations  should  continue  to  focus  on  the  fundamentals  of  cybersecurity,
+such  as  vulnerability  management,  patching  and  employee  training,  while  also  keeping
+a  watchful  eye  on  the  evolving  threat  landscape.
+
+42
+
+© Intel 471 Inc. All rights reserved.Predictions for 2025: Victims Will Rethink Ransoms,
+Infostealers Gain Features and AI Remains Novel
+
+As we look ahead to 2025, we anticipate several key trends that will shape the cybercriminal
+underground:
+
+•  **Victims Will Rethink Ransoms**: We expect to see a shift in how organizations respond
+to ransomware attacks. As the cost of paying ransoms continues to rise and the success
+rate of data recovery remains uncertain, more organizations will likely choose to invest
+in  resilience  and  incident  response  rather  than  paying  the  ransom.  This  shift  could
+lead to a decline in the profitability of ransomware, forcing threat actors to adapt their
+business models.
+
+•  **Infostealers Gain Features**: Information stealers will continue to evolve, gaining new
+features  and  capabilities  to  evade  detection  and  collect  more  sensitive  data.  We
+anticipate  that  these  tools  will  become  more  integrated  with  other  malware  types,
+enabling  threat  actors  to  conduct  more  complex  and  impactful  attacks.  The  demand
+for  malware  logs  will  remain  high,  driving  the  development  of  more  sophisticated
+stealer  variants.
+
+•  **AI Remains Novel**: While AI will continue to be a topic of discussion, we expect its
+use  in  cyberattacks  to  remain  novel  and  limited  in  2025.  The  barriers  to  entry,
+including  the  need  for  high-quality  data  and  computational  resources,  will  continue
+to  limit  the  widespread  adoption  of  AI  by  threat  actors.  Organizations  should  focus
+on  the  fundamentals  of  cybersecurity  rather  than  getting  distracted  by  the  hype
+surrounding  AI.
+
+•  **Increased Law Enforcement Pressure**: We expect law enforcement agencies to continue
+their  aggressive  campaigns  against  cybercriminal  infrastructure.  The  success  of
+operations  like  Cronos,  Endgame  and  Magnus  has  demonstrated  the  effectiveness  of
+coordinated,  international  action.  This  pressure  will  likely  force  threat  actors  to  adopt
+more  robust  operational  security  measures  and  to  operate  in  more  clandestine  ways.
+
+•  **Supply Chain Attacks**: We anticipate an increase in supply chain attacks, as threat
+actors  seek  to  leverage  the  trust  that  exists  between  organizations  and  their  service
+providers.  By  compromising  a  single  service  provider,  adversaries  can  gain  access
+to  multiple  downstream  customers,  making  these  attacks  highly  efficient  and  impactful.
+
+43
+
+© Intel 471 Inc. All rights reserved.In summary, 2025 will be a year of continued evolution and adaptation in the cybercriminal
+underground.  Organizations  that  prioritize  resilience,  vulnerability  management  and  the
+fundamentals  of  cybersecurity  will  be  better  positioned  to  defend  against  the  evolving
+threats  that  lie  ahead.
+
+44
+
+© Intel 471 Inc. All rights reserved.Sources
+
+1.  "Operation Cronos: LockBit ransomware gang disrupted," National Crime Agency, Feb. 20, 2024.
+2.  "LockBit ransomware group disrupted by international law enforcement operation," FBI, Feb. 20, 2024.
+3.  "LockBit ransomware leader charged," U.S. Department of Justice, May 7, 2024.
+4.  "LockBit ransomware: 16 individuals sanctioned," U.K. Foreign, Commonwealth & Development Office, Aug. 2024.
+5.  "Operation Endgame: The largest ever operation against botnets," Europol, May 30, 2024.
+6.  "Operation Endgame: Season two teaser," Europol, Sept. 2024.
+7.  "Operation Magnus: RedLine and Meta infostealers disrupted," Dutch National Police, Oct. 29, 2024.
+8.  "U.S. charges alleged developer of RedLine infostealer," U.S. Department of Justice, Oct. 29, 2024.
+9.  "TheCom: A new generation of cybercriminals," Intel 471, 2024.
+10. "Indictment of Noah Michael Urban," U.S. Department of Justice, Jan. 2024.
+11. "Arrest of Tyler Buchanan," Spanish National Police, June 2024.
+12. "Charges against Scattered Spider members," FBI, Oct. 2024.
+13. "Operation Passionflower: Encrypted messaging platform taken down," Europol, Dec. 3, 2024.
+14. "CyberArmyRussia: State-associated hacktivism," Intel 471, 2024.
+15. "Op404: NoName057(16) operations," Intel 471, 2024.
+16. "CyberArmyRussia targets U.S. water infrastructure," Intel 471, 2024.
+17. "BLACK MASK TEAM: SCADA compromise," Intel 471, 2024.
+18. "Sabotage-for-hire on underground forums," Intel 471, 2024.
+19. "KillMilk and sabotage-for-hire," Intel 471, 2024.
+20. "Just Evil and CROK Telegram channels," Intel 471, 2024.
+21. "Operation Cronos: Ongoing impact," Intel 471, 2024.
+22. "RansomHub: Rise of a new ransomware leader," Intel 471, 2024.
+23. "Kill Security ransomware analysis," Intel 471, 2024.
+24. "Kill Security: Targeting and ransom demands," Intel 471, 2024.
+25. "Nitrogen ransomware: Emergence and TTPs," Intel 471, 2024.
+26. "Nitrogen and Volcano Demon connection," Intel 471, 2024.
+27. "Sarcoma data extortion group," Intel 471, 2024.
+28. "Sarcoma: Targeting and recruitment," Intel 471, 2024.
+29. "HellCat extortion group," Intel 471, 2024.
+30. "IntelBroker: Actor profile," Intel 471, 2024.
+31. "sandocan: Actor profile," Intel 471, 2024.
+32. "mont4na: Actor profile," Intel 471, 2024.
+33. "Booking.com phishing campaigns," Intel 471, 2024.
+34. "GitHub repository vulnerability campaign," Intel 471, 2024.
+35. "Bumblebee resurgence," Intel 471, 2024.
+36. "SocGholish: Continued significance," Intel 471, 2024.
+37. "SocGholish and Keitaro TDS," Intel 471, 2024.
+38. "Booking.com and ClickFix campaign," Intel 471, 2024.
+39. "LummaC2 update," Intel 471, 2024.
+40. "DLAssistant and Offerloader discovery," Intel 471, 2024.
+41. "Latrodectus stealer plug-in," Intel 471, 2024.
+42. "Number83 Android stealer," Intel 471, 2024.
+43. "UltiRAT discovery," Intel 471, 2024.
+44. "RisePro termination," Intel 471, 2024.
+45. "LummaC2 log marketplace," Intel 471, 2024.
+46. "Coper/Octo update," Intel 471, 2024.
+47. "Chrome 127 security enhancement and stealer updates," Intel 471, 2024.
+48. "Errorfather banking trojan," Intel 471, 2024.
+49. "Vidar version 12 release," Intel 471, 2024.
+
+45
+
+© Intel 471 Inc. All rights reserved.
 
 ---
 
-## Contents
+ulnerability data analysis shows
+Microsoft  remained  the  most  targeted  vendor  in  2024  with  mentions  rising  to  75,  up
+from 62 in 2023. Google moved up to the second position with 23 mentions, reflecting a
+significant year-over-year increase. Ivanti made its first appearance in the top five, taking
+the third spot with 19 mentions, indicating growing focus from threat actors. Apple, which
+held  second  place  last  year,  slipped  to  fourth  with  12  mentions,  while  Apache  secured
+the  fifth  spot  at  11.  Notably,  VMware  and  Cisco  —  both  key  players  in  2023  —  fell  out
+of the top five this year. This data, drawn from threat actor discussions and vulnerability
+sharing on underground forums, highlights shifting priorities and emerging risks, offering
+organizations critical insights to enhance their security posture for the year ahead.
 
-Key findings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+36
 
-Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+© Intel 471 Inc. All rights reserved.Figure 24: The image depicts the top five vendors impacted by vulnerabilities observed in the
+underground in 2023 and 2024.
 
-2024 at a Glance . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+Analysis  of  vulnerabilities  discussed  and  shared  on  underground  forums  revealed  a
+strong focus on vulnerability types that enable full system access or database breaches.
+SQLi led the way with 45 mentions, followed closely by shell injection at 38. This was a
+shift  from  2023,  where  shell  injection  topped  the  list  with  53  occurrences,  followed  by
+privilege escalation (PE) and XSS. The change highlights how threat actors are prioritizing
+vulnerabilities  that  offer  greater  rewards,  such  as  full  control  over  systems  or  access  to
+sensitive data. These vulnerabilities often pave the way for ransomware attacks, data theft
+or long-term persistent access to networks.
 
-Major Events of 2024 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+Figure 25: The image depicts the top five vulnerability types observed in the underground in
+2023 and 2024.
 
-Law Enforcement Operations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+37
 
-Op Cronos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .”
+© Intel 471 Inc. All rights reserved.Vulnerabilities Exploited in Malware, Ransomware
+Campaigns
+Malware campaigns
+Over  the  past  12  months,  we  observed  vulnerabilities  that  allowed  malicious  actors  to
+execute  remote  commands  and  deploy  malware  within  internal  networks.  Our  analysis
+identified  23  key  vulnerabilities  actively  exploited  by  adversaries  to  gain  initial  access.
+Although it can be challenging to attribute these attacks to specific threat actors based
+solely  on  the  malware  used,  these  findings  highlight  the  common  malware  leveraged
+to  compromise  corporate  networks  via  certain  vulnerabilities.  The  five  most  notable
+vulnerabilities  based  on  adversary  interest  were  CVE-2024-1708  and  CVE-2024-1709,
+CVE-2024-21887,  CVE-2024-3400,  CVE-2024-37085  and  CVE-2024-34102.  Specific
+details regarding the top five vulnerabilities are provided in the table below:
 
-•  We reported 3,977 claims from initial access brokers (IABs) offering to sell compromised credentials and/or alleged unauthorized access to networks or systems in 2024. Of that total, about 80% fell into the category of wholesale access.
+CVE ID
 
-•  We reported 516 vulnerabilities in 2024. Of these, 30% were classified as high risk, 46% as medium risk, and 24% as low risk. Among the reported vulnerabilities, 9% were productized, 56% were weaponized, and 19% had proof-of-concept (PoC) code available.
+Weakness
 
-•  Our coverage of hacktivist activity in 2024 was dominated by the war in Ukraine and the Israeli-Palestinian conflict. Additionally, many hacktivist groups formed alliances, and NoName057(16) led our coverage in terms of the volume of operations.
+Threat observed
 
-Intelligence cutoff date (ICOD) for data analysis: Dec. 15, 2024
+Vendor
 
-4
+- UTA0178 Chinese-nexus
+
+Ivanti
+
+Products
+Impacted
+
+Connect
+Secure and
+Policy Secure
+gateways
+
+Observed
+date
+
+Jan. 10,
+2024
+
+CVE-2024-
+21887
+
+Command
+injection
+
+CVE-2024-1708
+CVE-2024-1709
+
+Path traversal,
+Authentica-
+tion bypass
+
+CVE-2024-3400 Operating
+
+system (OS)
+command
+injection
+
+38
+
+group
+
+- GIFTEDVISITOR web
+
+shell
+
+- XMRig cryptocurrency
+
+miner
+
+- Magnet Goblin group
+- Raptor Train botnet
+- Nosedive malware
+- Flax Typhoon Chinese-
+
+nexus group
+
+- LockBit ransomware
+- Black Basta ransomware
+- Bl00dy ransomware
+- Kimsuky North Korean-
+
+nexus group
+
+- XWORM malware
+- ToddlerShark malware
+
+- UTA0218
+- Pioneer Kitten Iran-
+
+nexus group
+
+- NoEscape ransomware
+- RansomHouse
+ransomware
+
+- ALPHV ransomware
+- UPSTYLE Python
+
+backdoor
+
+Connect-
+Wise
+
+ScreenConnect
+
+Feb. 27,
+2024
+
+PAN-OS
+
+Palo Alto
+Net-
+works
+
+April 12,
+2024
+
+© Intel 471 Inc. All rights reserved.CVE-2024-
+37085
+
+Authentica-
+tion bypass
+
+- Black Basta ransomware
+- Akira ransomware
+- Storm-0506
+- Storm-1175
+- Octo Tempest
+- Manatee Tempest
+
+CVE-2024-
+34102
+
+Improper
+restriction
+of XML
+external entity
+reference
+
+- Bobry group
+- Polyovki group
+- Surki group
+- Burunduki group
+- Ondatry group
+- Khomyaki group
+- Belki group
+
+VMware
+
+ESXi
+
+July 30,
+2024
+
+Adobe
+
+Multiple
+products
+
+Oct. 1,
+2024
+
+The use of vulnerabilities and malware incidents fluctuated throughout the year, with a
+noticeable increase toward the end of the first quarter of 2024 and the beginning of the
+second  quarter.  Activity  slowed  during  the  third  quarter  but  gained  momentum  in  the
+fourth  quarter,  with  November  recording  the  highest  number  of  malware  incidents  and
+vulnerabilities  exploited.  The  most  active  groups  throughout  the  year  included  APT28,
+Black Basta, BlackCat and Akira.
+
+Ransomware campaigns
+Vulnerabilities played a crucial role in ransomware campaigns in 2024, as highlighted by
+CISA data. Of the 23 vulnerabilities exploited in ransomware attacks, 13 were associated
+with a CVE-2024 identifier. This accounted for 56% of the total, while the remaining 44%
+were  tied  to  CVE  identifiers  from  previous  years.  This  suggests  threat  actors  primarily
+are  targeting  newly  identified  vulnerabilities,  although  the  data  also  demonstrates  well-
+researched, older vulnerabilities can pose problems if left unpatched.
+
+Figure 26: The image depicts the total vulnerabilities vs. CVEs with a designator of CVE-
+2023/2024 used in ransomware in 2023 and 2024.
+
+39
+
+© Intel 471 Inc. All rights reserved.Exploited Vulnerabilities That Had the Highest
+Impact
+We  analyzed  the  National  Institute  of  Standards  and  Technology  (NIST)  NVD  and  our
+underground intelligence collection on adversary operations over the past 12 months to
+identify the most impactful vulnerabilities abused to achieve initial access to organizations.
+From an initial list of 737 vulnerabilities, we selected relevant vulnerabilities matching the
+subject criteria.
+
+CVE-ID
+
+Vulnerability
+type
+
+Exploitation/
+Adversaries
+
+Vendor
+
+Product
+Impacted
+
+CVE-2023-51467  Authentica-
+tion bypass
+
+Observed
+
+Apache
+
+OFBiz
+
+CVE-2024-21893
+
+SSRF
+
+UNC5325
+
+Ivanti
+
+CVE-2024-27198
+
+Authentica-
+tion bypass
+
+Observed
+
+CVE-2024-1709
+CVE-2024-1708
+
+Path traversal,
+Authentica-
+tion bypass
+
+- LockBit, Black Basta
+Bl00dy ransomware
+- Kimsuky North Kore-
+
+Jet-
+Brains
+
+Con-
+nect-
+Wise
+
+Connect Secure,
+Policy Secure,
+Neurons for Zero
+Trust Access
+
+TeamCity
+
+ScreenConnect
+
+Initial
+disclosure
+
+Dec. 26,
+2023
+
+Jan. 31,
+2024
+
+April 4,
+2024
+
+Feb. 19,
+2024
+
+CVE-2023-46805
+CVE-2024-21887
+
+CVE-2024-3400
+
+Authentica-
+tion bypass,
+Command
+injection
+
+Command
+injection
+
+an-nexus group
+
+- XWORM and Toddler-
+
+Shark malware
+
+UTA0178
+
+Ivanti
+
+Connect Secure,
+Policy Secure
+gateways
+
+Jan. 10,
+2024
+
+UPSTYLE malware
+
+PAN-OS
+
+Palo
+Alto
+Net-
+works
+
+CVE-2024-4577
+
+Argument
+injection
+
+TellYouThePass ransom-
+ware
+
+PHP
+
+PHP
+
+CVE-2024-37085
+
+Authentica-
+tion bypass
+
+CVE-2024-47176
+CVE-2024-47076
+CVE-2024-47175
+CVE-2024-47177
+
+Improper in-
+put validation,
+Command
+injection
+
+- Black Basta, Akira ran-
+
+VMware
+
+ESXi
+
+somware
+
+- Storm-0506,
+
+Storm-1175, Octo Tem-
+pest, Manatee Tempest
+
+Observed
+
+Open-
+Printing
+
+CUPS
+
+Sept. 26,
+2024
+
+CVE-2024-51378
+
+Command
+injection
+
+PSAUX, C3RB3R and Ba-
+buk variant ransomware
+
+Cyber-
+Panel
+
+CyberPanel
+
+Nov. 29,
+2024
+
+40
+
+April 12,
+2024
+
+June 10,
+2024
+
+July 30,
+2024
+
+© Intel 471 Inc. All rights reserved.Summary
+2024 showed the time-to-weaponize for recently disclosed vulnerabilities greatly reduced,
+with actors weaponizing vulnerabilities within hours of initial disclosure in many cases. This
+rapid  exploitation  highlights  the  urgent  need  for  streamlined  vulnerability  management.
+State-backed actors and ransomware once again dominated the vulnerability exploitation
+landscape  by  leveraging  critical  zero-day  and  n-day  vulnerabilities  on  critical  unpatched
+enterprise software. Ransomware actors in particular capitalized on enterprise software
+weaknesses — specifically managed file transfer (MFT) software — demanding high payouts
+and causing widespread disruption. This year was a lucrative year for top-tier vulnerability
+brokers    who  advertised  and  made  successful  transactions  that  impacted  widely  used
+enterprise-grade software such as Microsoft Windows, Palo Alto Networks PAN-OS and
+VMware ESXi.49, 50, 51
+
+The use of AI by attackers and security professionals increased this year as well, enabling the
+automated discovery of vulnerabilities and faster development of exploits. This capability
+lowered  the  barrier  to  entry  for  less-sophisticated  attackers,  resulting  in  an  increase  in
+attack volume and variety. Internet-of-Things (IoT) devices remained consistent points of
+failure, as many IoT devices operated with outdated firmware or insufficient patching for
+known vulnerabilities, increasing their likelihood of attacks. The interconnected nature of
+these devices amplifies the potential damage caused by single points of failure, making IoT
+security a critical area for improvement.
+
+41
+
+© Intel 471 Inc. All rights reserved.Artificial Intelligence: Separating Fact From
+Fiction
+
+The advancement of AI remained a topic of interest to underground threat actors in 2024.
+We observed cybercriminals advertise a handful of AI-based tools this year, including an
+AI-powered data exfiltration and analysis tool; a tool allegedly powered by AI to analyze,
+scrape  and  summarize  information  about  critical  vulnerabilities  and  exposures  (CVEs);
+and  an  AI-based  tool  to  swap  out  the  details  of  business  invoices  that  was  designed  to
+facilitate  invoice  fraud  in  business  email  compromise  (BEC)  attacks.  The  majority  of  AI
+implementations we observed supported criminal activities such as know-your-customer
+(KYC) verification bypass, telephone-oriented attack delivery (TOAD) phishing attacks and
+chatbots. We also reported the use of AI in disinformation campaigns related to elections,
+including the Chinese-run information warfare campaign dubbed Green Cicada Network
+that engaged with contentious political and cultural issues to amplify social discord.52,53,54,55
+
+Despite  the  underground’s  obvious  interest  in  AI,  we  still  have  not  seen  cybercriminals
+unlock the technology’s power at scale. The lack of reliable malicious chatbots leaves a lot
+to be desired by threat actors and highlights existing flaws in AI technology as a whole. The
+shelf life of malicious chatbots has been weeks to months on average, with some becoming
+too popular and shutting down, while others performed too poorly to attract customers.
+Legitimate generative AI models continue to hallucinate, confidently providing incorrect
+or  erroneous  answers.  Additionally,  guardrails  put  in  place  by  reputable  technology
+companies have been mostly successful in restraining actors from leveraging existing AI
+offers for malicious purposes such as developing malware, aside from creating relatively
+rudimentary  variants.  Threat  actors  likely  will  not  be  able  to  abuse  existing  generative
+pretrained transformer (GPT) models for anything beyond beginner-level blackhat requests
+for some time. The compute power required to create their own large language models
+(LLMs) suggests only already successful or state-backed adversaries will be able to afford
+the costs associated with such a task for the foreseeable future.
+
+42
+
+© Intel 471 Inc. All rights reserved.
+Predictions for 2025: Victims Will Rethink
+Ransoms, Infostealers Gain Features and
+AI Remains Novel
+
+Themes that are likely to dominate the underground and cybersecurity landscape in 2025
+include:
+
+The RansomHub group will continue its rise as LockBit’s revival fails and anti-ransomware
+policies will reduce victim payouts.
+
+The sharp rise of RansomHub and fall of LockBit put into focus the fickle nature of the
+ransomware landscape. We see this more pronounced with the RaaS business model since
+these gangs are exposed to external and dynamic forces, while closed groups are far more
+controlled and stable. It would appear that RansomHub gained a large amount of LockBit’s
+market share, allowing it to push ahead of its competitors. History tells us that few groups,
+if any, have been able to weather the headwinds LockBit has had to endure. More broadly,
+ransomware has been the apex threat emanating from the underground for several years.
+However,  as  the  public  becomes  desensitized  to  data  breaches  and  the  negative  press
+associated with affected companies lessens, the onus for businesses to pay to avoid the
+potential  fallout  also  lessens.  When  you  add  in  policies  designed  to  further  expose  the
+actions of ransomware groups, it becomes more likely we will see more companies opting
+not to pay demands.
+
+Recruitment of top IABs by ransomware groups will adversely affect the quality of public
+access offers.
+
+Compromised access offers remained a staple of the underground ecosystem throughout
+2024  and  that  is  unlikely  to  change  moving  into  2025.  Interestingly,  we  have  seen  an
+overall decline in the number of specified offers year-on-year for the last three years. This
+likely is due in part to the recruitment of freelance access brokers by ransomware groups.
+This possibly contributed to the fact that more than one-third of access offers this year
+were attributed to just three actors. If these were to disappear in 2025, the trend could
+ebb ever lower. However, this disparity indicates there is opportunity for newer or lesser-
+known access brokers to become major players in the space. Traditionally there has been
+no shortage of actors who seek to make a name for themselves in this domain.
+
+Information stealers will remain the most commonly sought and leveraged malware type.
+
+As the allure of rapid financial gain continues to draw new actors to the scene, the surge in
+information-stealing malware — led by prominent families such as Lumma, Stealc and Vidar
+— is expected to continue. These malicious tools stand out for their comprehensive, all-in-
+
+43
+
+© Intel 471 Inc. All rights reserved.one functionality — combining initial infiltration techniques, loader capabilities and efficient
+data exfiltration methods into a single framework. This streamlined approach significantly
+lowers the technical barriers to entry, enabling aspiring cybercriminals to easily purchase
+and  deploy  these  solutions  with  minimal  technical  expertise.  By  2025,  these  types  of
+malware are expected not only to remain a dominant force in the cyber threat landscape,
+but  also  to  evolve  and  adapt  further,  continually  challenging  cybersecurity  defenses.  In
+response, international law enforcement efforts are likely to focus more on identifying and
+dismantling the infrastructure that supports these operations, as demonstrated by recent
+takedowns targeting the RedLine and Meta information stealers.
+
+Potential resolution of global conflicts will lead to a further slow down in hacktivism.
+
+Since they began, ongoing global conflicts have galvanized hacktivists and prompted the
+creation of countless new groups. While many of these groups’ lifespans were short, they
+have contributed to a frantic landscape in which DDoS and increasingly more impactful
+attacks have sprung from. Many of these groups used religion and nationalism as justification
+for their creation and attacks. However, without the impetus of conflict, support likely will
+lessen  and  the  geopolitical-motivated  hacktivist  domain  will  become  more  muted.  It  is
+unlikely activity will return to the pre-conflict baseline given the guiding hand nation-states
+likely have provided, but those without backers or a strong user base could disappear.
+
+The use of AI by threat actors will grow but is unlikely to prove decisive.
+
+2024 was a year of change for both legitimate businesses and their criminal counterparts
+as both ecosystems experimented with AI capabilities. Looking forward to next year, wider
+adoption of AI is almost certain to occur, advancing the technology as a whole. As far as AI
+usage in the underground, threat actors almost certainly will continue to abuse legitimate
+tools to the best of their abilities, seeking logic flaws to jailbreak existing GPTs or running
+their own LLM instances to train datasets and serve specific malicious purposes. The use
+of AI technology in a variety of social-engineering schemes, its use to support the creation
+of  malicious  scripts  and  the  appearance  of  AI-based  tools  this  year  suggest  illicit  actors
+are beginning to figure it out, but ultimately they still have a long way to go before AI can
+execute full-chain attacks on their behalf.
+
+44
+
+© Intel 471 Inc. All rights reserved.Sources
+
+1. 20Feb2024 NCA press release: The NCA announces the disruption of LockBit with
+
+Operation Cronos
+https://www.nationalcrimeagency.gov.uk/the-nca-announces-the-disruption-of-lockbit-
+with-operation-cronos
+
+2. 14May2024 Searchlight Cyber article: A Timeline of Events: Operation Cronos and
+
+LockBit
+https://slcyber.io/a-timeline-of-events-operation-cronos-and-lockbit/
+
+3. 01Oct2024 Spot Report
+
+Intel 471 subscription required
+
+4. 01Oct2024 Spot Report
+
+Intel 471 subscription required
+
+5. 12July2024 Intelligence Bulletin: IcedID, SystemBC, Pikabot, SmokeLoader,
+
+Bumblebee, Trickbot botnets dismantled in Operation Endgame — SITREP 12.4
+Intel 471 subscription required
+
+6. 12Dec2024 Operation Endgame website: Operation Endgame
+
+https://www.operation-endgame.com/
+
+7. 28Oct2024 Spot Report
+
+Intel 471 subscription required
+
+8. 29Oct2024 Spot Report
+
+Intel 471 subscription required
+
+9. 03April2024 Intelligence Bulletin: TheCom origins, groups, evolving aspects
+
+Intel 471 subscription required
+
+10. 20Nov2024 Spot Report
+
+Intel 471 subscription required
+
+11. 05Nov2024 CyberScoop article: Man arrested in Canada believed to be behind
+
+Snowflake customer breach
+https://cyberscoop.com/snowflake-breach-suspected-arrested-connor-moucka-waifu/
+
+12. 06Dec2024 Recorded Future article: Another teenage hacker charged as feds
+
+continue Scattered Spider crackdown
+https://therecord.media/another-hacker-scattered-spider-charged
+
+13. 03Dec2024 Spot Report
+
+Intel 471 subscription required
+
+45
+
+© Intel 471 Inc. All rights reserved.14. 30Sep2024
+
+Intel 471 subscription required
+
+15. 06Dec2024 FINTEL: Intelligence BulletinHacktivism highlights reviewed — November
+
+2024
+Intel 471 subscription required
+
+16. 21Feb2024 IR: Major pro-Russian threat actors, groups conduct hacktivist operations
+
+in January 2024
+Intel 471 subscription required
+
+17. 24Sep2024 IR: Iranian Black Mask Team hacktivist group members claim to
+
+compromise 49 supervisory control, data acquisition systems in multiple countries
+Intel 471 subscription required
+
+18. 1Aug2024 IR: Actors on several Russian-language cybercrime forums recruit arsonists
+
+to target military vehicles in Ukraine
+Intel 471 subscription required
+
+19. 9Dec2024 Telegram: JustEvil
+Intel 471 subscription required
+
+20. 10Dec2024 Telegram: GROK
+Intel 471 subscription required
+
+21. 01Oct2024 Fintel: LockBit ransomware-as-a-service affiliate program suffers law
+
+enforcement disruption — SITREP 10.6
+Intel 471 subscription required
+
+22. 06Aug2024 Service Profile: RansomHub ransomware-as-a-service
+
+Intel 471 subscription required
+
+23. 24Oct2024 Information Report: Kill Security (aka KillSec) ransomware group
+
+members customize public ransomware to attack victims worldwide, employ double-
+extortion tactics
+Intel 471 subscription required
+
+24. 18Nov2024 Information Report: Actor reveals Kill Security (aka KillSec) ransomware
+
+group operations, affiliate panel
+Intel 471 subscription required
+
+25. 10Dec2024 Service Profile: Nitrogen ransomware, data extortion group
+
+Intel 471 subscription required
+
+26. 03Dec2024 Breach Report: Ransomware breach claims reviewed — November 2024
+
+Intel 471 subscription required
+
+46
+
+© Intel 471 Inc. All rights reserved.27. 05Nov2024 Breach Report: Ransomware breach claims reviewed — October 2024
+
+Intel 471 subscription required
+
+28. 31Oct2024 Information Report: Actor claims to operate Sarcoma ransomware, seeks
+
+to partner with initial access brokers
+Intel 471 subscription required
+
+29. 19Nov2024 Information Report: reveals HellCat hacking group members’ recent
+
+activity, alleged future plans
+Intel 471 subscription required
+
+Intel 471 subscription required: 30 – 51.
+
+52. 18April2024 Information Report: intelligence-powered data exfiltration, analysis tool,
+
+possibly cooperates with ransomware operators
+Intel 471 subscription required
+
+53. 26April2024 Information Report
+Intel 471 subscription required
+
+54. 06May2024 Information Report
+Intel 471 subscription required
+
+55. 14Aug2024 Spot Report
+
+Intel 471 subscription required
+
+47
+
+© Intel 471 Inc. All rights reserved.intel471
+
+intel471Inc
+
+intel471Inc
+
+intel471
+
+intel471_Inc
+
+1209 N Orange St, Wilmington, DE 19801
+
+No part of this report should be reproduced in any way without explicit
+permission of Intel 471, Inc.
 
 © Intel 471 Inc. All rights reserved.
 
-## Introduction
-
-2024 was a frenetic year for the underground, with law enforcement operations impeding and at times upending mature cyber criminal enterprises. In ransomware, we saw the slow decline of the ransomware-as-a-service (RaaS) leader LockBit following Operation Cronos and consequently the rapid rise of RansomHub in its place. From the very start of the year and throughout, we were reminded of the far-reaching, insidious threat of vulnerabilities and the panic they can engender. This was all the more telling given the frequency with which extortion groups relied on vulnerabilities for initial access. Meanwhile, embattled malware operators sought to mitigate the damages of successful botnet disruptions through the adoption of novel campaigns, and the information stealer cemented its position as the most impactful malware threat. Lastly, a review of 2024 would not be complete without a look at the most exciting, yet sometimes confusing, developing technology — artificial intelligence (AI).
-
-## 2024 at a Glance
-
-![Figure 1: The image depicts an infographic detailing key statistics for 2024.](https://www.intel471.com/resources/whitepapers/the-471-cyber-threat-report-2024/images/figure1.png)
-
-5
+48
 
 © Intel 471 Inc. All rights reserved.
-
-## Major Events of 2024
-
-![Figure 2: The image depicts a timeline detailing key events for 2024.](https://www.intel471.com/resources/whitepapers/the-471-cyber-threat-report-2024/images/figure2.png)
-
-6
-
-© Intel 471 Inc. All rights reserved.
-
-## Law Enforcement Operations
-
-The cybercriminal underground historically has been shaped by global law enforcement operations that target key actors and infrastructure, and this was never more apparent than in 2024. A consistent cadence of operations throughout the year contributed to a slowing of some of the most maligned cyber threats, including ransomware and the proliferation of malware. The scale of the operations was grand, with the targeting of the biggest name in ransomware and the disruption of some of the most mature botnet operations active in the underground. The impressive impact law enforcement agencies were able to effectuate was in part due to the adoption of aggressive media campaigns where they implemented baiting techniques that were picked up and amplified in open source and the underground. Furthermore, a steady flow of sanctions against cybercriminals — past and present — demonstrated the possible ramifications of a life of crime and thrust those impacted into the limelight.
-
-The most impactful operations witnessed this year included:
-
-### Op Cronos
-
-On Feb. 20, 2024, the U.K.’s National Crime Agency (NCA) and the U.S. FBI announced the disruption of the LockBit RaaS as a result of Operation Cronos, a coordinated effort involving law enforcement agencies from 10 countries. This sparked a sequence of events in which the NCA obtained more than 1,000 LockBit ransomware decryption keys, numerous LockBit and Evil Corp members were indicted, numerous individuals linked to LockBit were indicted or arrested across the globe and more than 200 cryptocurrency accounts linked to the group were frozen.1, 2, 3, 4
-
-### Op Endgame
-
-From May 27, 2024, to May 29, 2024, the European Union Agency for Law Enforcement Cooperation (Europol) and law enforcement agencies from several countries targeted multiple malware droppers including IcedID, SystemBC, Pikabot, SmokeLoader, Bumblebee and Trickbot in the “largest ever operation against botnets.” On May 30, 2024, Europol announced the joint operation dubbed Operation Endgame resulted in the disruption of infrastructure used by the botnets, as well as arrests, server takedowns and domain seizures. The operation was initiated and led by officers in France, Germany and the Netherlands and supported by the European Union Agency for Criminal Justice Cooperation (Eurojust) and several other countries. It led to four arrests — one in Armenia and three in Ukraine — 16 location searches, the takedown of more than 100 servers and law enforcement taking control of more than 2,000 domains. Additionally, Europol added eight additional fugitives linked to this criminal activity to Europe’s Most Wanted list.
-
-7
-
-© Intel 471 Inc. All rights reserved.
-
-From May 31, 2024, to Aug. 8, 2024, Europol officials released eight stylized videos on its website dedicated to Operation Endgame where they revealed actor names and provided cryptic clues regarding their operations. In September 2024, Europol released a teaser for season two, which appears to indicate underground cryptocurrency exchanges would be the next target.5, 6
-
-### Op Magnus
-
-On Oct. 28, 2024, we observed discussions on social media about a disruption operation ostensibly by the Dutch National Police and international law enforcement partners against the RedLine and Meta information-stealer malware infrastructure. The following day, Dutch and U.S. authorities confirmed a disruption operation against the RedLine and Meta information-stealing malware dubbed Operation Magnus. The coordinated law enforcement action reportedly resulted in the seizure of two domains and three command-and-control (C2) servers supporting the stealers. Multiple associated Telegram channels were taken offline and millions of compromised victim credentials were recovered. Additionally, U.S. authorities unsealed charges against Maxim Rudometov, an alleged developer of RedLine.7, 8
-
-### TheCom charges, arrests
-
-TheCom is a broad online ecosystem composed of diverse communities and individuals with a significant number of youths operating mostly from Canada, the U.S. and the U.K. that engage in cybercriminal activities such as subscriber identity module (SIM) card-swapping, cryptocurrency theft, online harassment, swatting, bricking and corporate intrusions. This online ecosystem is assessed as the origin of high-profile threat groups over the past years including LAPSUS$, Roasting 0ktapus and the Scattered Spider, UNC3944, Octo Tempest and Muddled Libra intrusion clusters.9
-
-Several individuals were charged or arrested in law enforcement operations targeting cybercriminals linked to TheCom this year that included:
-
-*   In January 2024, the U.S. Department of Justice (DOJ) announced details of an indictment with a series of charges against the individual Noah Michael Urban aka Sosa, Elijah, King Bob, Anthony Ramirez, linked with the Roasting 0ktapus group.
-
-*   In June 2024, the Spanish National Police and the U.S. FBI announced a U.K. national allegedly involved in a spree of corporate intrusions was arrested in a joint operation. The individual was identified as Tyler Buchanan aka tylerb, another member of the Roasting 0ktapus group.
-
-*   In October 2024, an FBI special agent filed a criminal complaint charging the individual Remington Goy Ogletree aka remi with wire fraud in relation to alleged crimes linked to the Scattered Spider intrusion cluster.
-
-8
-
-© Intel 471 Inc. All rights reserved.
-
-*   In October 2024, Alexander “Connor” Moucka aka judische was taken into custody on a provisional arrest warrant, according to Canada’s Department of Justice. The actor was linked to the large-scale supply chain attack impacting the U.S.-based cloud storage provider Snowflake.
-
-*   In November 2024, the FBI unsealed criminal charges against five defendants in connection with a phishing campaign — Ahmed Hossam Eldin Elbadawy aka AD, Noah Michael Urban aka Sosa, Evans Onyeaka Osiebo, Joel Martin Evans aka joeleoli and Tyler Robert Buchanan aka tylerb. We previously linked joeleoli and Sosa to the Roasting 0ktapus group.10, 11, 12
-
-### Op Passionflower
-
-On Dec. 3, 2024, Europol announced the results of an international law enforcement operation named Operation Passionflower that targeted the Matrix aka Mactrix, Totalsec, X-quantum, Q-safe encrypted messaging platform. The platform’s infrastructure consisted of more than 40 servers and was taken down by Dutch and French authorities with follow-up actions carried out by law enforcement agencies in Italy, Lithuania and Spain. Europol’s statement revealed the authorities were monitoring the platform and intercepting communications for three months prior to the takedown. The operation came hot off the heels of Telegram updating its terms of services and privacy policy confirming the intent to comply with information sharing requests from authorities, including IP addresses and phone numbers.13
-
-## Hacktivism Gets Physical: Now Targeting Critical OT
-
-As is often the case, the hacktivism scene is inextricably linked to global geopolitics. In 2024, there was no shortage of events that dictated the direction of travel for many of the key hacktivist groups we track. The pro-Russian hacktivism fraternity primarily focused on influencing the outcome of the Russia-Ukraine war by targeting governments or institutions that offered support to Ukraine while attempting to degrade Ukrainian infrastructure directly with attacks. The situation in Israel and the Palestinian territories developed into a humanitarian crisis that polarized governments and hacktivists. As a result, Israel was targeted repeatedly by a host of groups proclaiming to be ideologically motivated, however, among those likely were several state-associated groups. Away from conflict, a year of elections, sporting events and divisive politics provided ample opportunity for groups seeking to disrupt.
-
-9
-
-© Intel 471 Inc. All rights reserved.
-
-### Pro-Russian Hacktivist Groups Reduce in Number, Maintain Operational Output
-
-![Figure 3: The image depicts Intel 471’s current understanding of the pro-Russian hacktivist landscape.](https://www.intel471.com/resources/whitepapers/the-471-cyber-threat-report-2024/images/figure3.png)
-
-2024 was another dynamic year for pro-Russian hacktivists, with many groups forging new partnerships and alliances, and others that were active in previous years dropping away. For example, the much publicized KillNet and its various splinter groups slowed their operational cadence and came to a halt in September 2024. The spiritual successor Just Evil, run by the actor KillMilk, continued to demonstrate sporadic activity. One of the most active alliances was the triumvirate of NoName057(16), CyberArmyRussia and OverFlame. The trio consistently targeted Ukraine and countries that demonstrated material or diplomatic support to Ukraine. The CyberArmyRussia group possibly has an association with the Russian state, supported by its leader’s claim to have received recognition for its support to the Russian cause.14 The NoName057(16) group most consistently led our coverage in terms of volume of operations, which likely contributed to its success in forging partnerships.
-
-### High Impact Hacktivist Operations
-
-We tracked hundreds of operations coined by hacktivism groups in 2024. However, three stood out due to the persistence and number of organizations targeted:
-
-*   Op404 — The operation primarily was led by NoName057(16) and often used as a catch-all for Russia-Ukraine war-related targeting. Victims were from a variety of countries but most often involved the targeting of Ukraine. The campaign primarily focused on targeting regional and national entities in Ukraine with the most emphasis placed on any entities that fell within critical infrastructure sectors.15
-
-*   OpIsrael — This is an annual operation we have tracked since 2018. The operation usually takes place in April and historically acted as a vehicle for hacktivist groups to show their support to the Palestinian people. However, given the extraordinary year for Israel, the Palestinian territories and the region at large, the operation has been used throughout as a call to arms for a multitude of hacktivist groups. While the number of groups that have attached themselves to the conflict is in the hundreds, the groups most active this year were Handala, 1915 Team, Gaza Children’s group and The Returnees.
-
-*   OpFrance — This year was politically frantic for France. The country underwent a snap election, endured several protests and hosted the Olympics — one of the most watched events globally — all of which provided justification for hacktivist groups to wage disruptive campaigns that often fell under the OpFrance hashtag. Furthermore, French President Emmanuel Macron remained hawkish toward Russian President Vladimir Putin and Russia’s intention in Europe, which galvanized many of the pro-Russian groups identified in figure 3.
-
-### New Tactics, Techniques, Procedures
-
-#### Targeting operational technology systems
-
-A trend we observed this year was the increased targeting of operational technology (OT) systems by hacktivist groups. The Islamic Revolutionary Guards Corps (IRGC)-associated Cyber Av3ngers group gained notoriety in late 2023 when it impacted both Israel- and U.S.-based infrastructure through the compromise of Israeli-made Unitronics Vision Series programmable logic controllers (PLCs). A similar attack occurred in January 2024 when the CyberArmyRussia group claimed access to multiple U.S. water companies’ supervisory control and data acquisition (SCADA) systems.16 In September 2024, members of the Iranian BLACK MASK TEAM hacktivist group claimed to compromise 49 SCADA systems and human-machine interface (HMI) displays in multiple countries.17 Success likely inspired similar attacks as the year wore on.
-
-#### Sabotage-for-hire
-
-In August 2024, we reported on the growing number of sabotage-for-hire offers on underground forums. The advertisements predominantly targeted individuals within
-
-11
-
-© Intel 471 Inc. All rights reserved.
-
-Ukraine and often would promise large sums of money for a variety of actions, which included conducting arson, border crossing, physical assaults, property damage and surveillance.18 Later in the year, we witnessed these offers migrate to hacktivism communities — specifically those associated with the actor KillMilk, such as the Just Evil and CROK Telegram channels.19, 20
-
-## Summary
-
-This year, we witnessed hacktivist groups become more akin to deniable tools of state power than the autonomous disruptive ideologues of the past. Anti-Israeli groups demonstrated this trend more profoundly, as numerous groups reportedly were associated with the Iranian intelligence apparatus. However, it is less clear with the pro-Russian cadre whether their actions are more influenced by the state or by nationalistic sentiment among the disaffected. Regardless, many hacktivist groups demonstrated a genuine understanding of geopolitics and were able to leverage global events to justify their actions. Their aims likely are to sway governmental decision-making and/or incur cost on their targets. In this vein, the trend of targeting OT is a growing concern since it enables hacktivist groups to have greater impact than traditional distributed denial-of-service (DDoS) or defacement attacks and also provides a vector into national infrastructure.
-
-12
-
-© Intel 471 Inc. All rights reserved.
-
-## The Rise and Fall of Ransomware Leaders
-Amid Growing Variants
