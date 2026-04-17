@@ -65,6 +65,9 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   discover-and-scan:
     runs-on: ubuntu-latest
@@ -299,8 +302,8 @@ jobs:
                 cp all_missing.txt files_to_process.txt
               fi
 
-              TOTAL_MISSING=$(wc -l < all_missing.txt 2>/dev/null || echo 0)
-              QUEUED=$(wc -l < files_to_process.txt 2>/dev/null || echo 0)
+              TOTAL_MISSING=$(wc -l < all_missing.txt 2>/dev/null | tr -d ' ' || echo 0)
+              QUEUED=$(wc -l < files_to_process.txt 2>/dev/null | tr -d ' ' || echo 0)
               echo "  PDFs without Markdown : $TOTAL_MISSING"
               echo "  Queued for this run   : $QUEUED (batch limit: $PUSH_BATCH_LIMIT)"
 
@@ -342,10 +345,10 @@ jobs:
           # this exclusion list is empty for that PDF, and the next run picks
           # it back up automatically — providing full orphan coverage.
           if [ -s pending_pdf_paths.txt ] && [ -s files_to_process.txt ]; then
-            BEFORE=$(wc -l < files_to_process.txt)
+            BEFORE=$(wc -l < files_to_process.txt | tr -d ' ')
             grep -vxFf pending_pdf_paths.txt files_to_process.txt > files_filtered.txt || true
             mv files_filtered.txt files_to_process.txt
-            AFTER=$(wc -l < files_to_process.txt)
+            AFTER=$(wc -l < files_to_process.txt | tr -d ' ')
             EXCLUDED=$(( BEFORE - AFTER ))
             if [ "$EXCLUDED" -gt 0 ]; then
               echo "⊘ Excluded $EXCLUDED PDF(s) already covered by an open automated PR"
@@ -385,7 +388,7 @@ jobs:
 
           # Set outputs
           if [ -s files_to_process.txt ]; then
-            FILE_COUNT=$(wc -l < files_to_process.txt)
+            FILE_COUNT=$(wc -l < files_to_process.txt | tr -d ' ')
             echo "has_files=true" >> $GITHUB_OUTPUT
             echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
             echo "✓ $FILE_COUNT files to process"
