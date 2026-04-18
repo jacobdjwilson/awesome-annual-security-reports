@@ -72,9 +72,9 @@ jobs:
   discover-and-scan:
     runs-on: ubuntu-latest
     outputs:
-      has_files: ${{ steps.find-files.outputs.has_files }}
-      scan_mode: ${{ steps.find-files.outputs.scan_mode }}
-      file_count: ${{ steps.find-files.outputs.file_count }}
+      has_files: ${{ steps.consolidate-outputs.outputs.has_files }}
+      scan_mode: ${{ steps.consolidate-outputs.outputs.scan_mode }}
+      file_count: ${{ steps.consolidate-outputs.outputs.file_count }}
 
     steps:
       - name: Checkout repository
@@ -184,6 +184,14 @@ jobs:
           echo "pending_count=$PENDING_COUNT" >> $GITHUB_OUTPUT
           echo "✓ PDFs with pending conversions in open PRs: $PENDING_COUNT"
 
+      - name: Set default outputs when find-files is skipped
+        if: steps.pr-cap.outputs.cap_reached == 'true'
+        run: |
+          echo "has_files=false"  >> $GITHUB_OUTPUT
+          echo "file_count=0"     >> $GITHUB_OUTPUT
+          echo "scan_mode=skipped" >> $GITHUB_OUTPUT
+        id: find-files-defaults
+
       - name: Find and validate PDF files
         id: find-files
         if: steps.pr-cap.outputs.cap_reached != 'true'
@@ -197,6 +205,12 @@ jobs:
           PUSH_MODE: ${{ steps.load_config.outputs.push_mode }}
           PUSH_BATCH_LIMIT: ${{ steps.load_config.outputs.push_batch_limit }}
         run: |
+          # Set safe defaults first — these are overwritten below if files are found.
+          # Ensures outputs are always defined even if an early exit occurs.
+          echo "has_files=false"   >> $GITHUB_OUTPUT
+          echo "file_count=0"      >> $GITHUB_OUTPUT
+          echo "scan_mode=unknown" >> $GITHUB_OUTPUT
+
           > files_to_process.txt
           > invalid_files.txt
 
@@ -386,20 +400,45 @@ jobs:
             echo -e "$VALID_FILES" | sed '/^$/d' > files_to_process.txt
           fi
 
-          # Set outputs
+          # Set outputs — overwrite the safe defaults set at the top of this step.
           if [ -s files_to_process.txt ]; then
-            FILE_COUNT=$(wc -l < files_to_process.txt | tr -d ' ')
-            echo "has_files=true" >> $GITHUB_OUTPUT
-            echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
+            FILE_COUNT=$(wc -l < files_to_process.txt | tr -d '[:space:]')
+            FILE_COUNT="${FILE_COUNT:-0}"
+            echo "has_files=true"          >> $GITHUB_OUTPUT
+            echo "file_count=$FILE_COUNT"  >> $GITHUB_OUTPUT
             echo "✓ $FILE_COUNT files to process"
           else
             echo "has_files=false" >> $GITHUB_OUTPUT
-            echo "file_count=0" >> $GITHUB_OUTPUT
+            echo "file_count=0"    >> $GITHUB_OUTPUT
             echo "⊘ No files to process"
           fi
 
+      - name: Consolidate outputs
+        id: consolidate-outputs
+        if: always()
+        run: |
+          # Coalesce: find-files outputs take precedence when the step ran;
+          # fall back to the defaults step values when find-files was skipped.
+          HAS_FILES="${{ steps.find-files.outputs.has_files }}"
+          SCAN_MODE="${{ steps.find-files.outputs.scan_mode }}"
+          FILE_COUNT="${{ steps.find-files.outputs.file_count }}"
+
+          # Apply fallbacks for skipped/empty cases
+          HAS_FILES="${HAS_FILES:-false}"
+          SCAN_MODE="${SCAN_MODE:-skipped}"
+          FILE_COUNT="${FILE_COUNT:-0}"
+
+          # Sanitize FILE_COUNT to a pure integer (guard against any whitespace)
+          FILE_COUNT=$(echo "$FILE_COUNT" | tr -d '[:space:]')
+          FILE_COUNT="${FILE_COUNT:-0}"
+
+          echo "has_files=$HAS_FILES"   >> $GITHUB_OUTPUT
+          echo "scan_mode=$SCAN_MODE"   >> $GITHUB_OUTPUT
+          echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
+          echo "✓ Consolidated: has_files=$HAS_FILES scan_mode=$SCAN_MODE file_count=$FILE_COUNT"
+
       - name: Upload file lists
-        if: steps.find-files.outputs.has_files == 'true'
+        if: steps.consolidate-outputs.outputs.has_files == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: file-lists
@@ -410,8 +449,8 @@ jobs:
       - name: Generate discovery summary
         if: always()
         run: |
-          SCAN_MODE="${{ steps.find-files.outputs.scan_mode }}"
-          FILE_COUNT="${{ steps.find-files.outputs.file_count }}"
+          SCAN_MODE="${{ steps.consolidate-outputs.outputs.scan_mode }}"
+          FILE_COUNT="${{ steps.consolidate-outputs.outputs.file_count }}"
           PUSH_MODE="${{ steps.load_config.outputs.push_mode }}"
           PUSH_BATCH_LIMIT="${{ steps.load_config.outputs.push_batch_limit }}"
           CAP_REACHED="${{ steps.pr-cap.outputs.cap_reached }}"
