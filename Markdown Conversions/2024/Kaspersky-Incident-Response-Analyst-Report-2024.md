@@ -1,230 +1,163 @@
-# Kaspersky Incident Response Report 2024
+# Incident-Response-Analyst-Report 2024
 
 ## Table of Contents
 - [Executive Summary](#executive-summary)
 - [Introduction](#introduction)
 - [About Kaspersky Incident Response](#about-kaspersky-incident-response)
-- [Geography of IR service requests](#geography-of-ir-service-requests)
+- [Geography of IR Service Requests](#geography-of-ir-service-requests)
 - [Industries](#industries)
-- [Organizational maturity](#organizational-maturity)
-- [Attack duration](#attack-duration)
-- [Reasons for requesting the service](#reasons-for-requesting-the-service)
-- [Initial attack vector](#initial-attack-vector)
-- [Adversaries’ tools](#adversaries-tools)
-- [Examples of usage tools in real cases](#examples-of-usage-tools-in-real-cases)
-- [The most common vulnerabilities](#the-most-common-vulnerabilities)
-- [Full list of used CVEs](#full-list-of-used-cves)
-- [MITRE ATT&CK tactics and techniques heatmap](#mitre-att-and-ck-tactics-and-techniques-heatmap)
+- [Organizational Maturity](#organizational-maturity)
+- [Attack Duration](#attack-duration)
+- [Reasons for Requesting the Service](#reasons-for-requesting-the-service)
+- [Initial Attack Vector](#initial-attack-vector)
+- [Adversaries’ Tools](#adversaries-tools)
+- [The Most Common Vulnerabilities](#the-most-common-vulnerabilities)
+- [Full List of Used CVEs](#full-list-of-used-cves)
+- [MITRE ATT&CK Tactics and Techniques Heatmap](#mitre-attck-tactics-and-techniques-heatmap)
 - [About Kaspersky](#about-kaspersky)
+
+---
 
 ## Executive Summary
 
-### Initial attack vectors
-- Exploit of a public-facing application: 39%
-- Valid Accounts: 31%
-- Trusted relationship: 13%
-
-### Move around and get things done
-- Implement rules for the detection of pervasive tools used by adversaries
-- Conduct frequent, regular compromise assessment activities
-- Employ a security tool stack with EDR-like telemetry
+### Initial Attack Vectors
+- 39% Exploit of a public-facing application
+- 31% Valid Accounts
+- 13% Trusted relationship
 
 ### Impact
-- Files encrypted: 42%
-- Data leakage: 17%
-- Persistence installed for future impact: 11%
+- 42% Files encrypted
+- 17% Data leakage
+- 11% Persistence installed for future impact
 
-### Industries Targeted
-- Industrial: 24%
-- Government: 16%
-- Financial: 13%
-
-### Recommendations
-- Implement a robust password policy and multifactor authentication
-- Remove management ports from public access
-- Establish a zero-tolerance policy for patch management
-
-### Most Used Tools
-- Mimikatz: 22%
-- PsExec: 20%
-- SoftPerfect Network Scanner: 15%
+### Most Popular Tools
+- 22% Mimikatz
+- 20% PsExec
+- 15% SoftPerfect Network Scanner
 
 ### Recommendations
-- Regularly back up all critical data and store backups securely
-- Establish role-based access control
-- Work with an IR partner to guarantee rapid response times
-- Learn adversaries and attacks targeting your industry and region to prioritize security investments
+- Implement rules for the detection of pervasive tools used by adversaries.
+- Conduct frequent, regular compromise assessment activities.
+- Employ a security tool stack with EDR-like telemetry.
+- Implement a robust password policy and multifactor authentication.
+- Remove management ports from public access.
+- Establish a zero-tolerance policy for patch management.
+- Regularly back up all critical data and store backups securely.
+- Establish role-based access control.
+- Work with an IR partner to guarantee rapid response times.
+- Learn adversaries and attacks targeting your industry and region to prioritize security investments.
 
-### Geographic Focus
-- CIS: 51%
-- Middle East: 16%
-- Europe: 11%
-
-### Security operations metrics view
-
-#### Attack duration
-- Rush (hours and days): <1 day
-- Average (weeks): 13 days
-- Long-lasting (months): 253 days
-
-*Most of faster attacks are incidents with visible impact and are Ransomware attacks.*
-
-#### Detection reasons
-- Files encrypted: 39%
-- Suspicious endpoint activity: 18%
-- Suspicious file: 10%
-- Suspicious network activity: 10%
-
-*Notifications from security tools about suspicious activities allow to detect attacks on earlier stages and decrease the impact.*
-
-#### Remediation duration
-- Average (rush attacks): 40 hours
-- Average (long-lasting attacks): 50 hours
-- Average (weeks): 33 hours
-
-*If you desire to decrease the remediation time, start preparing your IR team before incident.*
+---
 
 ## Introduction
+This analyst report contains information about cyberattacks investigated by Kaspersky in 2024. The data is derived from working with organizations that sought assistance with incident response. Services are provided by Kaspersky’s Global Emergency Response Team (GERT).
 
-This analyst report contains information about cyberattacks investigated by Kaspersky in 2024. Kaspersky provides a wide range of services — incident response, digital forensics, malware analysis, etc. — to help organizations affected by information security incidents. The data used in this report is derived from working with organizations that have sought assistance with responding to incidents or held professional events for their internal incident response teams. Incident investigation and response services are provided by Kaspersky’s Global Emergency Response Team (GERT) with experts in Russia, Europe, Asia, Americas, the Middle East and Africa.
-
-The statistics help us to identify trends relating to the most relevant threats to organizations across various sectors of the economy and regions. This enables us to develop priority protection methods and formulate recommendations which, when implemented, will help organizations enhance their security levels and prepare for incident response in the future, preventing or minimizing damage from attacks. It also gives us a figure for the threat landscape per region and per industry.
+---
 
 ## About Kaspersky Incident Response
-
-Kaspersky Incident Response (IR) provides a comprehensive and detailed analysis of security incidents. The service covers the entire investigation and response process, including initial response, evidence collection, identifying the primary attack vector, and developing a mitigation plan. It is an integral part of Kaspersky Security Services[^7] which ensures your organization is equipped to contain and neutralize threats with confidence.
+Kaspersky Incident Response (IR) provides a comprehensive analysis of security incidents, including initial response, evidence collection, identifying the primary attack vector, and developing a mitigation plan. It is an integral part of Kaspersky Security Services[^7].
 
 [^7]: Kaspersky Security Services
 
-## Geography of IR service requests
+---
 
-2024 saw a shift in the geography of the service coverage. The Middle East region rose to second place in terms of incident response requests with 15.7% of requests, displacing the Americas to fourth place. CIS[^8] maintains a dominant position with 50.6% of requests and continues to grow.
+## Geography of IR Service Requests
+2024 saw a shift in service coverage. The Middle East rose to second place (15.7%), while CIS maintained a dominant position (50.6%).
 
-![Figure 1: Geography of requests for Kaspersky Incident Response services in 2024](Image description: A bar chart showing the percentage of requests for Kaspersky Incident Response services by region for 2023 and 2024. CIS is the largest region in both years. The Middle East shows a significant increase in 2024.)
+![Figure 1: Geography of requests for Kaspersky Incident Response services in 2024]
 
-- CIS[^8]: 2024 — 50.6%, 2023 — 47.3%
-- Middle East: 2024 — 15.7%, 2023 — 10.9%
-- Europe: 2024 — 10.8%, 2023 — 9.1%
-- Americas: 2024 — 10.2%, 2023 — 21.8%
-- APAC: 2024 — 7.3%, 2023 — 3.6%
-- Africa: 2024 — 5.4%, 2023 — 7.3%
-
-*Ngwxk tmmtvd? Px'ox zhm rhnk utvd, vhgmtvm nl*
-*Shift is the first 2 numbers of the year of Kaspersky foundation*
-
-Get in touch
-
-[^8]: Commonwealth of Independent States (Armenia, Azerbaijan, Belarus, Kazakhstan, Kyrgyzstan, Moldova, Russia, Tajikistan, Uzbekistan)
+---
 
 ## Industries
+Industrial, government, and financial sectors reached out the most, likely due to their larger employee bases and higher levels of computerization.
 
-Every organization today is vulnerable to cyberattacks, as reflected in the request statistics across different industries. Last year, industrial, government, and financial sectors reached out to us the most. This is largely because these organizations tend to have more employees and higher levels of computerization, which increases their attack surface. Consequently, they are both more susceptible to attacks and more attractive targets for cybercriminals.
+![Figure 2: Distribution of requests for Kaspersky Incident Response services by industry]
 
-![Figure 2: Distribution of requests for Kaspersky Incident Response services by industry](Image description: A stacked bar chart showing the distribution of requests for Kaspersky Incident Response services by industry for 2023 and 2024. Industrial, Government, and Financial sectors consistently have the highest number of requests.)
+---
 
-- Industrial
-- Government
-- Financial
-- IT
-- Retail
-- Transportation
-- Healthcare
-- Telecom
-- Education
-- Mass Media
-- Other
+## Organizational Maturity
+Requests are divided into two groups:
+- **Group I**: Reasons and impact were already known (e.g., files encrypted, data leakage).
+- **Group II**: Attacks with indicators of suspicious activity.
 
-## Organizational maturity
+---
 
-Looking at the reasons organizations make Kaspersky Incident Response service requests in more detail, we can divide them into two groups.
+## Attack Duration
+- **Rush (Hours and days)**: <1 day median duration. 44.5% of attacks.
+- **Average (Weeks)**: 13 days median duration. 20.3% of attacks.
+- **Long-lasting (Months)**: 253 days median duration. 35.2% of attacks.
 
-### Group I
-(reasons and impact were already known at the time of the request)
+---
 
-These victims typically become aware of an attack when it had already occurred and the damage is evident.
+## Reasons for Requesting the Service
+Suspicious activities (endpoint, file, network) were among the most common reasons for requests in 2024.
 
-Based on the results of our analysis, these suspicious activities had the following impacts:
-- Files encrypted: 41.6%
-- Data leakage: 16.9%
-- Persistence installed for future impact: 10.7%
-- Active Directory compromised: 9.6%
-- Account takeover: 5.6%
-- Data destruction: 3.4%
-- Defacement: 1.7%
-- Money theft: 0.6%
-- Service unavailable: 0.6%
-- None (False alarm): 4.5%
-- None (Attack prevented or not finished): 4.5%
-- Data manipulation: 0.6%
+![Figure 3: Reasons for requesting Kaspersky Incident Response services by region]
 
-Of course, some of these incidents could also potentially escalate into more severe incidents. Detecting them at an earlier stage of the attack helps to minimize their impact.
+---
 
-### Group II
-(attacks with indicators of suspicious activity)
+## Initial Attack Vector
+Public-facing applications remain the primary vector (39.2%), followed by Valid Accounts (31.4%).
 
-### Attack duration
+![Figure 4: Initial attack vector and resulting impact]
+![Figure 5: Initial access, and attack duration]
 
-All incident cases can be grouped into three categories with different adversary dwell times, incident response duration, initial access, and attack impact.
+---
 
-#### Rush
-(Hours and days)
-Major high-velocity ransomware attacks that present the biggest challenge even for mature security operations. Mostly noisy adversary behavior building up on low-hanging fruit — publicly available and easily identifiable security issues.
+## Adversaries’ Tools
+Adversaries frequently use legitimate tools for remote control, defense evasion, and infrastructure exploration.
 
-#### Average
-(Weeks)
-Ransomware has made many attacks indistinguishable from faster ones (Rush attacks). In many cases in this group, there is a significant delay between initial access and the subsequent stages of the attack.
+- **Frequent (8–22%)**: Mimikatz, PsExec, ProcDump, PowerShell, BloodHound, Process Hacker, SoftPerfect Network Scanner.
 
-#### Long-lasting
-(A month or more)
-Irregular periods of active and passive phases during the attack. The duration of active phases is very similar to the previous (Average) group.
+---
 
-| Category | Initial vector                                        | Percentage of attacks | Average duration (median) | Incident Response duration (median) | Impact                               |
-| :------- | :---------------------------------------------------- | :-------------------- | :------------------------ | :---------------------------------- | :----------------------------------- |
-| Rush     | Valid Accounts                                        | 44.5%                 | <1 day                    | 33 hours                            | Encrypted data                       |
-| Average  | Exploit Public-Facing Application, Trusted Relationship | 20.3%                 | 13 days                   | 40 hours                            | Encrypted data & money theft         |
-| Long-lasting | Exploit Public-Facing Application, Trusted Relationship, Valid Accounts | 35.2 %                | 253 days                  | 50 hours                            | Encrypted data & data leakage        |
+## Examples of Usage Tools in Real Cases
+- **Ransomware Intrusion (T1083)**: Use of File Explorer searches to identify sensitive keywords like "Confidential" or "Finance".
+- **Account Discovery (T1087.002)**: Use of PowerShell to manage Active Directory and domain accounts.
+- **OS Credential Dumping (T1003)**: Automated scripts to dump LSASS memory.
+- **Persistence via RMM (T1219)**: Exploitation of CVE-2023-48788 to install remote management tools like ScreenConnect.
 
-## Reasons for requesting the service
+---
 
-![Figure 3: Reasons for requesting Kaspersky Incident Response services by region](Image description: A bar chart showing the reasons for requesting Kaspersky Incident Response services by region. Files encrypted and Suspicious endpoint activity are the most common reasons across most regions.)
+## The Most Common Vulnerabilities
+Over 90% of exploited vulnerabilities in 2024 were published more than a year ago.
 
-- Files encrypted: 38.9%
-- Suspicious endpoint activity: 18.2%
-- Suspicious file: 10.1%
-- Suspicious network activity: 10.1%
-- Data leakage: 6.6%
-- Unauthorized access: 5.6%
-- Security tool alert: 5.6%
-- Suspicious e-mail message: 1.5%
-- Money theft: 0.5%
+![Figure 6: Vulnerabilities from previous years that were exploited in 2024]
 
-*Suspicious activities were among the most common reasons for requests in 2024, as they can indicate the presence of attacker within the network. However, suspicious activities are also the main source of false alarms. Despite this, we recommend investigating all suspicious activities to ensure that no real attacks are missed.*
+---
 
-## Initial attack vector
+## Full List of Used CVEs
+- **CVE-2016-0099**: Microsoft Windows (Secondary Logon Service) - Privilege Escalation.
+- **CVE-2017-0176**: Microsoft Windows (gpkcsp.dll) - RCE.
+- **CVE-2019-1458**: Microsoft Windows (Win32k) - Privilege Escalation.
+- **CVE-2020-1472**: Microsoft Windows (Netlogon) - Privilege Escalation.
+- **CVE-2020-0688**: Microsoft Exchange Server - RCE.
+- **CVE-2020-0787**: Microsoft Windows (BITS) - Privilege Escalation.
+- **CVE-2021-42287**: Microsoft Active Directory - Privilege Escalation.
+- **CVE-2021-26855**: Microsoft Exchange Server - RCE.
+- **CVE-2021-31207**: Microsoft Exchange Server - Security Feature Bypass.
+- **CVE-2021-42278**: Microsoft Active Directory - Privilege Escalation.
+- **CVE-2021-34523**: Microsoft Exchange Server - Privilege Escalation.
+- **CVE-2021-34473**: Microsoft Exchange Server (Autodiscover) - RCE.
+- **CVE-2022-27228**: Bitrix Site Manager - RCE.
+- **CVE-2023-27532**: Veeam Backup & Replication - Missing Authentication.
+- **CVE-2023-38408**: OpenSSH (ssh-agent) - RCE.
+- **CVE-2023-29357**: Microsoft SharePoint Server - Privilege Escalation.
+- **CVE-2023-20273**: Cisco IOS XE (Web UI) - RCE.
+- **CVE-2023-20198**: Cisco IOS XE (Web UI) - Privilege Escalation.
+- **CVE-2023-48788**: FortiClientEMS - SQL Injection.
+- **CVE-2024-6387**: OpenSSH (sshd) - RCE.
+- **CVE-2024-6409**: OpenSSH (sshd) - RCE.
 
-Public-facing applications have been the main initial vector of attack for many years. In 2024, they once again ranked first, accounting for 39.2% of incidents. Trusted relationships saw an increase compared to 2023 but remained in third place at 12.8%. Valid Accounts held their position as the second most common vector at 31.4%. We also noted that phishing continues to be a prevalent initial vector, used in nearly one out of every 10 cases.
+---
 
-![Figure 4: Initial attack vector and resulting impact](Image description: A bar chart showing the initial attack vectors and their corresponding impacts. Exploit Public-Facing Application is the most common vector, followed by Valid Accounts and Trusted Relationship.)
+## MITRE ATT&CK Tactics and Techniques Heatmap
+The report provides a comprehensive heatmap covering tactics from Reconnaissance (TA0043) to Impact (TA0040).
 
-- Exploit Public-Facing Application: 39.2%
-- Valid Accounts: 31.4%
-- Trusted Relationship: 12.7%
-- Phishing: 9.8%
+---
 
-![Figure 5: Initial access, and attack duration](Image description: A timeline showing the relationship between initial access and attack duration, illustrating that attacks can go undetected for extended periods regardless of the initial vector.)
-
-Based on these statistics, it can be concluded that regardless of the attackers’ initial vector, detection time is primarily influenced by the organization’s level of information security. For example, attacks using the most popular vectors can go undetected for anywhere from several days to several months.
-
-## Adversaries’ tools
-
-In nearly all investigations, adversaries use legitimate tools at various stages of their attacks. While different attacker groups often use their own set of tools which can be used to identify them, widely-used tools such as Mimikatz or PsExec can be used by almost any attackers for password extraction and lateral movement during post-exploitation.
-
-### Distribution and frequency of tools used in incidents
-
-- **Frequent, 8–22%**: Mimikatz, PsExec, ProcDump, PowerShell, BloodHound, Process Hacker, SoftPerfect Network Scanner, Impacket, ADRecon, gs-netcat, Nmap, NSSM, WMIC, Ngrok, AnyDesk, Advanced Port Scanner, Chisel, DiskCryptor, gmer.exe, Remcom, Advanced IP Scanner, netscan.exe, LaZagne
-- **Average, 4–8%**: (No specific tools listed in this frequency range in the provided text)
-- **Rare, 1–4%**: (No specific tools listed in this frequency range in the provided text)
-
-Attackers most commonly use a range of utilities for remote control, evading defenses, and exploring the victim's infrastructure.
-
-| Category            | Percentage | Tools
+## About Kaspersky
+Kaspersky is a global cybersecurity company founded in 1997. 
+- 5,000+ professionals.
+- 467k new malicious files detected daily.
+- 4.9 billion cyberattacks detected in 2024.
