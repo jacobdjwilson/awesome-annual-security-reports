@@ -1,8 +1,11 @@
 # SANS 2022 Cyber Threat Intelligence Survey
 
+Written by Rebekah Brown and Pasquale Stirparo
+February 2022
+©2022 SANS™ Institute
+
 ## Table of Contents
 - [Executive Summary](#executive-summary)
-- [Survey](#survey)
 - [CTI People and Processes](#cti-people-and-processes)
   - [It Takes Teamwork to Make the Dream Work](#it-takes-teamwork-to-make-the-dream-work)
   - [Team Structure and Organization](#team-structure-and-organization)
@@ -10,35 +13,21 @@
     - [Email-Based Threats](#email-based-threats)
     - [Ransomware Threats](#ransomware-threats)
     - [Threats to Reputation or Brand](#threats-to-reputation-or-brand)
-  - [CTI Processes: The Intelligence Process](#cti-processes-the-intelligence-process)
-    - [Defining CTI Requirements](#defining-cti-requirements)
-    - [CTI Collection](#cti-collection)
-    - [CTI Analysis](#cti-analysis)
-      - [Coordinating with Incident Responders](#coordinating-with-incident-responders)
-    - [CTI Dissemination](#cti-dissemination)
+- [CTI Processes: The Intelligence Process](#cti-processes-the-intelligence-process)
+  - [Defining CTI Requirements](#defining-cti-requirements)
+  - [CTI Collection](#cti-collection)
+  - [CTI Analysis](#cti-analysis)
+    - [Coordinating with Incident Responders](#coordinating-with-incident-responders)
+  - [CTI Dissemination](#cti-dissemination)
 - [Uses and Value of CTI](#uses-and-value-of-cti)
   - [Value and Usefulness of CTI Types](#value-and-usefulness-of-cti-types)
 - [CTI Tools](#cti-tools)
 - [Moving Forward](#moving-forward)
 - [Sponsors](#sponsors)
 
-# Survey
-
-SANS 2022 Cyber
-Threat Intelligence
-Survey
-
-Written by Rebekah Brown and Pasquale Stirparo
-
-February 2022
-
-©2022 SANS™ Institute
-
----
-
 ## Executive Summary
 
-Two major cybersecurity events that showcased the role of cyber threat intelligence (CTI) in network security operations bookended this year’s survey. The SolarWinds software supply chain attack¹ broke as we finished up the 2021 survey, and the Log4j vulnerability response process² was in full swing as we worked to wrap up the 2022 survey. Both events highlighted the need to rapidly gain situational awareness, contextualize vast amounts of shared information, and prioritize remediation of significant threats. The 2022 SANS CTI survey shows that many CTI programs can meet the challenge. While some programs are just getting started due to increased cybersecurity needs and a growing, complex threat environment brought on by the rapid shift to remote work, organizations can rely on CTI providers and information-sharing groups to fill in gaps as their programs mature.
+Two major cybersecurity events that showcased the role of cyber threat intelligence (CTI) in network security operations bookended this year’s survey. The SolarWinds software supply chain attack[^1] broke as we finished up the 2021 survey, and the Log4j vulnerability response process[^2] was in full swing as we worked to wrap up the 2022 survey. Both events highlighted the need to rapidly gain situational awareness, contextualize vast amounts of shared information, and prioritize remediation of significant threats. The 2022 SANS CTI survey shows that many CTI programs can meet the challenge. While some programs are just getting started due to increased cybersecurity needs and a growing, complex threat environment brought on by the rapid shift to remote work, organizations can rely on CTI providers and information-sharing groups to fill in gaps as their programs mature.
 
 Key takeaways:
 
@@ -47,52 +36,12 @@ Key takeaways:
 - Quite an important percentage of respondents, 21%, said that they could not measure whether their CTI program was indeed useful and valuable to their organizations. This result highlights the need for more and better ways to measure the effectiveness of CTI programs, the tools, and the sources, a call to action for both practitioners and vendors alike to find better and easier ways to measure CTI success.
 - Threat intelligence platforms are still not the main tool used by CTI teams—not in the top four—with “spreadsheets/emails” leading the way once again, while one out of two respondents still prefers homegrown CTI platforms. Reasons behind this may differ, but vendors can certainly improve analysts’ experiences by continuing to understand use cases and share more of the requirements between practitioners and vendors. However, the encouraging trend in response to this is the small increase in commercial and open source CTI management platforms with regard to automation/integration.
 
-¹ “A ‘Worst Nightmare’ Cyberattack: The Untold Story Of The SolarWinds Hack,” www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack
-² “Apache Log4j Vulnerability Guidance,” www.cisa.gov/uscert/apache-log4j-vulnerability-guidance
-
-SANS 2022 Cyber Threat Intelligence Survey
-
-2
+[^1]: “A ‘Worst Nightmare’ Cyberattack: The Untold Story Of The SolarWinds Hack,” [www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack](www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack)
+[^2]: “Apache Log4j Vulnerability Guidance,” [www.cisa.gov/uscert/apache-log4j-vulnerability-guidance](www.cisa.gov/uscert/apache-log4j-vulnerability-guidance)
 
 This year we had representatives from more than 200 organizations participate in our Cyber Threat Intelligence Survey. These organizations spanned multiple sectors and were of various sizes, but we did see some interesting trends in responses this year. First, we saw a significant increase in respondents in the education sector, who made up 10% of respondents this year as opposed to 3% last year, likely due to more educational institutions working online. As with previous years, respondents came from organizations comprising fewer than 10,000 people. Last year’s survey highlighted some of the impacts of the shift to remote working and schooling and the increased need for cybersecurity and threat intelligence staff at organizations that may not traditionally have had a dedicated staff. As many organizations, including many in the education sector, continue to have a remote or hybrid presence, hopefully their staff will continue to grow, and we will see reflections of the field expanding reflected in future surveys. Figure 1 provides a snapshot of the demographics for the respondents to the 2022 survey.
 
-### Top 4 Industries Represented
-- Banking and finance
-- Government
-- Cybersecurity service provider
-- Education
-
-### Organizational Size
-- Small (Up to 1,000)
-- Small/Medium (1,001–5,000)
-- Medium (5,001–15,000)
-- Medium/Large (15,001–50,000)
-- Large (More than 50,000)
-
-![Image description]
-
-### Operations and Headquarters
-- Ops: 63 HQ: 10
-- Ops: 79 HQ: 13
-- Ops: 101 HQ: 48
-- Ops: 154 HQ: 130
-- Ops: 47 HQ: 5
-
-### Top 4 Roles Represented
-- Security operations/ Security analyst
-- CTI analyst
-- Security manager or director
-- Incident responder
-
-![Image description]
-
-Figure 1. Demographics of Survey Respondents
-
-SANS 2022 Cyber Threat Intelligence Survey
-
-3
-
----
+![Figure 1. Demographics of Survey Respondents](Figure%201.%20Demographics%20of%20Survey%20Respondents)
 
 ## CTI People and Processes
 
@@ -102,144 +51,96 @@ CTI is analyzed information about the intent, capabilities, and opportunities le
 
 In its early days, many believed that only large organizations with existing robust cybersecurity teams in place utilized CTI. Since 2019, we have seen that more and more organizations are leveraging threat intelligence capabilities, whether or not they have a dedicated team devoted to CTI. This year, 33% of respondents work for organizations with fewer than 1,000 employees. While respondents reported a consistent trend in the presence of purely in-house capabilities, which holds steady at 36% year over year, there was an increase in reports of service-provider support for threat intelligence teams, which is the highest it has been since 2017. From 2021 to 2022, service provider support increased 5%. Although this increase indicates that many organizations are building out more robust capabilities in response to an increased online presence, it is important to note that those capabilities are not mutually exclusive. Many organizations with a CTI team on staff or with the task of CTI spread out across other teams also work with external teams for support for everything from strategic threat modeling to tactical threat detection. In fact, more than half (51%) of respondents reported that their organization uses a hybrid model with both in-house capabilities and external support. See Figure 2.
 
-#### Are your CTI functions and activities handled in-house, by a service provider, or through a combination of the two?
-- In-house: 36.1%
-- Service provider: 12.0%
-- Combination of both: 51.3%
-- Other: 0.5%
-
-![Image description]
-
-Figure 2. In-House Versus Service Provider
-
-SANS 2022 Cyber Threat Intelligence Survey
-
-4
+![Figure 2. In-House Versus Service Provider](Figure%202.%20In-House%20Versus%20Service%20Provider)
 
 ### Team Structure and Organization
 
 When it comes to in-house teams, organizations with formal dedicated threat intelligence teams continue to grow; it is up to 47% this year, after a brief drop in 2021 (see Figure 3). However, organizations reporting that they have no formal CTI team and no plans to create one also increased this year—the percentage actually aligns with the increase in service provider support mentioned earlier. This indicates that organizations continue to see the value of CTI but are comfortable outsourcing it. Although we have not seen this trend in the past few years, it speaks to the evolution and accessibility of managed threat intelligence providers and their ability to support organizations of different sizes and maturity levels.
 
+![Figure 3. Organizational CTI Resources](Figure%203.%20Organizational%20CTI%20Resources)
+
 In past years, survey respondents reported that the majority of analysts on a CTI team or handling CTI functions came from a security operations center (SOC) role. This year we see that number drop to 47%, with the difference spread across the other teams, with 1%–2% in each of the other areas (aside from business groups, which decreased). Responses to the question also indicate that organizations are hiring more analysts directly into CTI roles instead of pulling them from elsewhere on the security team, emphasizing the professionalization of the field. Several respondents also reported that they brought CTI analysts in from cybercrime and fraud teams, highlighting how a team with diverse experience across the threat landscape can help an organization respond to a wide variety of threats.
 
-#### CTI Threats in 2022
+### CTI Threats in 2022
+
 In this year’s survey, we heard a great deal about the types of threats that keep CTI analysts and their leadership up at night. While all organizations will have slightly different threat models and priorities, we picked up on some trends in the industry.
 
-##### Email-Based Threats
+#### Email-Based Threats
+
 Email remains a significant entry point for adversaries into a network. Several respondents reported that many of their CTI processes focus on email-based threats. Some proactively work using filters to block malicious emails, and some focus on raising awareness of employees regarding phishing campaigns. Examples from our respondents include:
 
 > We have shared new variants of malicious email attachments and novel phishing email techniques in a security forum. —Survey Respondent
 
 > Constant monitoring of email and malware threats that are seen globally. Using that information to add additional protection to systems. —Survey Respondent
 
-##### Ransomware Threats
+#### Ransomware Threats
+
 Ransomware is high on everyone’s list of concerns this year, with actors targeting organizations large and small. Another concern is the interconnected nature of networks with contractors, vendors, and other dependencies that could adversely impact an organization even if it is not directly compromised. Because email introduces many ransomware threats, many of the tactics mentioned above are directly aimed at preventing ransomware from entering a system. Other ways CTI works to mitigate this threat include:
 
 > Identifying third party vendors impacted by ransomware and taking action to mitigate their access to our data and infrastructure. —Survey Respondent
 
-##### Threats to Reputation or Brand
+#### Threats to Reputation or Brand
+
 You know you have made it in this field when public relations wants to talk to the CTI team. With both ransomware and misinformation on the rise, organizations have a lot to lose with even the perception of a security breach that impacts customer data. In addition to intrusions targeting sensitive user or company data, organizations must prepare for attacks attempting to hijack the social media accounts of executives as well as the spread of misinformation about companies with the goal of damaging brand reputation.
 
 > For media companies, we specifically monitor for external threat actors (action groups, hacker collectives, foreign governments) and their targeting of social media. —Survey Respondent
 
-![Image description]
-
-Figure 3. Organizational CTI Resources
-
-SANS 2022 Cyber Threat Intelligence Survey
-
-5
-
-### CTI Processes: The Intelligence Process
+## CTI Processes: The Intelligence Process
 
 For CTI teams to operate consistently among team members, it is important to have processes and frameworks in place as a scaffolding against which team members can perform analytic work. One of the foundational processes in CTI is the intelligence process, also known as the intelligence cycle. Both process and cycle are acceptable terms, although cycle often refers to a cyclical process, where when you move on to the next step you do not return to that step until the cycle has made a full rotation. In intelligence, you may move forward from one step to the next, or you may realize that you need to go backward to gain more clarity or get more information before you can proceed forward again.
 
 For the first time, we have been able to capture insights from the 2022 CTI survey across all aspects of the intelligence process, including requirements, collection, data exploitation, analysis, and dissemination.
 
-#### Defining CTI Requirements
+### Defining CTI Requirements
 
 The intelligence process starts with understanding the requirements for the CTI work that a team or individual is tasked with. Once organizations identify these requirements, analysts can focus on answering the key questions of decision makers and can optimize their remaining processes as much as possible. This year, fewer respondents reported that their organizations have formal requirements, and a there was a 5% increase in organizations without plans to develop requirements. See Table 1.
 
-|                                                              | 2019  | 2020  | 2021  | 2022  |
-| :----------------------------------------------------------- | :---- | :---- | :---- | :---- |
-| Yes, we have documented intelligence requirements.            | 43.8% | 39.0% | 35.4% | 33.5% |
-| No, our requirements are ad hoc.                             | 29.7% | 36.1% | 33.5% | 37.0% |
-| No, but we plan to define them.                              | 20.4% | 18.8% | 20.1% | 26.0% |
-| No, and we have no plans to formalize requirements.          | 6.1%  | 6.1%  | 11.0% | 6.7%  |
-
-Table 1. Intelligence Requirements Year over Year
-
 Although fewer organizations report having formalized requirements, the organizations that do have requirements are making it a priority to update them. Only 3% of respondents reported that their requirements have never been updated. Ad hoc is still the most frequent cadence for updating, with just over 40% having reported that they have no schedule or plan for updating requirements and that they are updated as needed. See Figure 4.
+
+**Table 1. Intelligence Requirements Year over Year**
+
+| | 2019 | 2020 | 2021 | 2022 |
+|---|---|---|---|---|
+| Yes, we have documented intelligence requirements. | 30.3% | 29.7% | 36.1% | 33.5% |
+| No, our requirements are ad hoc. | 37.0% | 43.8% | 39.0% | 35.4% |
+| No, but we plan to define them. | 26.0% | 20.4% | 18.8% | 20.1% |
+| No, and we have no plans to formalize requirements. | 6.7% | 6.1% | 6.1% | 11.0% |
 
 Although it can sometimes seem unimportant to plan a time to update requirements, having something scheduled—even just an annual review—helps keep the idea that requirements are not static top of mind.
 
-![Image description]
-
-Figure 4. Reviewing and Updating CTI Requirements
-
-SANS 2022 Cyber Threat Intelligence Survey
-
-6
-
-#### What type of information do you consider to be part of your intelligence gathering? Select all that apply.
-- External sources such as media reports and news: 81.9%
-- Threat feeds from CTI-specific vendors: 72.9%
-- Vulnerability data: 72.3%
-- Open source or public CTI feeds: 71.7%
-- Community or industry groups such as information sharing and analysis centers (ISACs) and computer emergency readiness teams (CERTs): 66.9%
-- Threat feeds from general security vendors: 65.7%
-- Security data gathered from our IDS, firewall, endpoint, and other security systems: 57.8%
-- Incident response and live forensics: 54.8%
-- SIEM platform: 54.8%
-- Other formal and informal groups with a shared interest: 46.4%
-- Application logs: 45.8%
-- Network traffic analysis packet and flow: 44.0%
-- Closed or dark web sources: 37.3%
-- Security analytics platform other than SIEM: 33.1%
-- Forensics (postmortem): 31.9%
-- Shared spreadsheets and/or email: 27.7%
-- Honeypot data: 25.3%
-- User behavior data: 24.7%
-- Other: 4.8%
-
-![Image description]
-
-Figure 5. Sources of Intelligence Gathering
+![Figure 4. Reviewing and Updating CTI Requirements](Figure%204.%20Reviewing%20and%20Updating%20CTI%20Requirements)
 
 In addition to having formal requirements that get updated periodically, it is also a best practice to include all CTI program stakeholders in the development of these requirements. This year, respondents reported that security operations is the team that contributes most to requirements, with 75% of respondents reporting their participation. The examples of CTI uses and analysis, covered later in this report, indicate that many organizations are directly engaged in support to security operations, and that even though they may not have formal requirements, they are working directly to support their stakeholders, which represents a great step in the right direction.
 
-#### CTI Collection
+### CTI Collection
 
 Once a team has requirements it wants to address, the next step requires that they start collecting the information needed. This year, more CTI teams are leveraging external reporting sources such as media reports and news (up to 82% from 77% in 2021). With the number of major intrusions and adversary activity breaking in the news, CTI teams cannot ignore this type of reporting. See Figure 5.
 
+![Figure 5. Sources of Intelligence Gathering](Figure%205.%20Sources%20of%20Intelligence%20Gathering)
+
 Community feeds decreased, but information from respondents’ own networks (such as IDS logs and application logs) increased.
 
-#### CTI Analysis
+### CTI Analysis
 
 We are so excited that we could add questions about CTI analysis into this year’s survey. Analysis is complicated and an often individualized process and can be difficult to capture in a survey question, but through a combination of multiple choice and write-in responses we put together a good view of how organizations conduct CTI analysis.
 
-##### Coordinating with Incident Responders
+#### Coordinating with Incident Responders
+
 This year’s survey responses indicate a brief shift away from incident response (IR) and CTI collaboration. IR teams contributed less to requirements than last year, and forensics contributes less to data collection. While it is difficult to pinpoint the exact reason behind this shift, the data from this survey points at two contributors. First, many respondents this year are newer CTI organizations who are just developing their capabilities. CTI and IR coordination is a critical part of an overall cybersecurity program, but it takes some time to build both the processes and trust that facilitate robust collaboration. If you are a new CTI program just getting started, make sure to make connections with your IR team, whether in-house or external, to establish connections. You will find it much easier to establish communications before a large-scale incident hits.
 
 The second contributor to this is likely the fact that the past year has been incredibly difficult for IR teams and CTI teams as well. We had fewer respondents this year than in past years, likely due to heavy workloads and higher-than-is-healthy levels of burnout in the field. Last year’s survey touched a bit on the mental health impact of remote work and isolation, and those impacts have likely been increasing with the number and severity of significant security incidents across the profession. IR teams: Take care of yourselves and each other, and we hope to see you back in next year’s survey.
 
 The most frequently used analytic method was intuitive or experience-based judgment. In fact, only 16% said that they never leverage this method (see Figure 6). Conceptual models, such as the diamond model for intrusion and analysis (kill chain models are also frequently used), with several respondents specifically identifying the MITRE ATT&CK® framework as a model they have found significantly valuable.
 
-Organizations use structured analytic techniques (SATs), a mainstay of traditional intelligence reporting that they never use them, and only 19% reporting that they frequently use them. Organizations do not commonly use SATs because, unlike conceptual models, very few CTI analysis tools or platforms have integrated these methods into their workflows. Instead, tools more commonly directly allow an analyst to categorize data by kill chain phase or diamond model axis, whereas the few productized SATs are often standalone tools, such as tools made specifically for one of the more popular SATs: analysis of competing hypothesis (ACH). SATs prove valuable for addressing biases in analysis and removing occurrences such as group think and for analysis. Increased integration of some of these techniques into tools used for CTI may make it easier for CTI teams to leverage them.
+![Figure 6. Leveraging Methods of CTI Analysis](Figure%206.%20Leveraging%20Methods%20of%20CTI%20Analysis)
 
-![Image description]
+Organizations use structured analytic techniques (SATs), a mainstay of traditional intelligence reporting that they never use them, and only 19% reporting that they frequently use them. Organizations do not commonly use SATs because, unlike conceptual models, very few CTI analysis tools or platforms have integrated these methods into their workflows. Instead, tools more commonly directly allow an analyst to categorize analysis, the least, with 33% of respondents or tag data by kill chain phase or diamond model axis, whereas the few productized SATs are often standalone tools, such as tools made specifically for one of the more popular SATs: analysis of competing hypothesis (ACH). SATs prove valuable for addressing biases in analysis and removing occurrences such as group think and for analysis. Increased integration of some of these techniques into tools used for CTI may make it easier for CTI teams to leverage them.
 
-Figure 6. Leveraging Methods of CTI Analysis
-
-Threat modeling, the least, with 33% of respondents.
-
-#### CTI Dissemination
+### CTI Dissemination
 
 Once CTI has made it through the intelligence process all the way through analysis, the intelligence needs to get to the right audience in a timely manner. Intelligence dissemination varies depending on the type and urgency of the information. This year, respondents reported emailed documents as the most common way they disseminate CTI, followed by reports. Both of these indicate a narrative form of threat intelligence dissemination rather than just technical pieces of information such as IP addresses and domains. See Figure 7.
 
-![Image description]
-
-Figure 7. Utilization and Dissemination of CTI
+![Figure 7. Utilization and Dissemination of CTI](Figure%207.%20Utilization%20and%20Dissemination%20of%20CTI)
 
 A high demand still exists for this type of technical-level dissemination, with 55% of respondents indicating that they integrate directly with threat intelligence platforms to facilitate tasks such as threat hunting, email filtering, and malware detection.
 
@@ -249,17 +150,13 @@ As with many things in the CTI space, dissemination depends on several factors, 
 
 This year’s survey showed a promising trend when it comes to people and processes: More organizations are beginning to implement threat intelligence capabilities in their organizations. Although those organizations are in the early stages of development, the field of CTI has come a long way since SANS first began surveying CTI professionals, and these organizations will have a wealth of information to help them on their way to successful programs.
 
----
-
 ## Uses and Value of CTI
 
 Threat intelligence has many different uses within an organization, from tactical to strategic, from supporting the risk-assessment team to helping prioritize patching. Also, depending on the maturity level of each organization, one can go from simply consuming intelligence to full production.
 
 As expected, and as it normally should be, most organizations are consumers of intelligence. From our respondents, the types of intelligence consumed are mostly published threat intelligence (58%) and contextual threat alerts (50%), but a significant number also consume raw threat data (48%). We could expect this, because the number of organizations with a higher maturity level and with the need to produce intelligence should indeed be lower. See Figure 8.
 
-![Image description]
-
-Figure 8. Production Versus Consumption of CTI
+![Figure 8. Production Versus Consumption of CTI](Figure%208.%20Production%20Versus%20Consumption%20of%20CTI)
 
 What is interesting though, and a sign that CTI as a discipline is growing and maturing, is the number of organizations that both consume and produce intelligence, with answers between 33%–36% across the three types of intelligence proposed.
 
@@ -275,19 +172,11 @@ We have already said that CTI has multiple types and formats, and we wanted to u
 
 According to our respondents, technical information about malware attackers use (81%) and information about current targeted vulnerabilities (80%) represent the two most useful types of CTI currently. This is consistent with 2021 results, except the two positions have switched. When considering the future, 52% of respondents think that more detailed and timely information about adversary groups in their industry and geography will prove most useful. Timeliness and relevance are indeed key to intelligence, and while respondents are asking for more of it, which is good, a positive sign is that the satisfaction with context (from 59% to 61%), analytics (from 52% to 55%), and relevance (from 66% to 67%) of CTI data has increased from last year. These represent small improvements but are a positive sign nevertheless. See Figure 9.
 
+![Figure 9. Most Useful CTI](Figure%209.%20Most%20Useful%20CTI)
+
 Two things have slightly decreased in terms of satisfaction: strategic reporting and searching and reporting.
 
 Finally, confirming the trend from the previous year, respondents were still mostly not satisfied with the removal of expired IOC, a common problem that can lead to numerous false positives.
-
-![Image description]
-
-Figure 9. Most Useful CTI
-
-SANS 2022 Cyber Threat Intelligence Survey
-
-10
-
----
 
 ## CTI Tools
 
@@ -301,17 +190,13 @@ However, consider this encouraging trend regarding the point above: Since 2021, 
 
 With regard to processing of information—with the expected exception for reversing engineering of malware samples, for which the majority of respondents indicating manual processing (41%)—every other type of processing has a low percentage of responses towards full automation (15% on average across all responses). All other responses have been toward semi-automation, with manual processing still getting very high numbers (roughly 30% on average). See Figure 10.
 
-![Image description]
-
-Figure 10. CTI Processing
+![Figure 10. CTI Processing](Figure%2010.%20CTI%20Processing)
 
 Even though correlation does not imply causation, if we look at this data in light of the previous point, we can see that the need exists for more automation. So, CTI platforms that offer more automation may help their adoption rates, and increased automation may help CTI teams reduce the amount of manual and semi-manual processing (which is still high).
 
 Finally, the importance of integrating the many different tools used—not only the tools used by the CTI teams themselves but also by the others like SOC, IR, vulnerability team, etc.—is paramount today. In this regard, the first result is that only 46% of respondents integrate their threat intelligence within their defense and response systems. This is not great, as we would all hope to see a much higher number, but the good news is that this represents a significant increase from the 41% of last year. Indeed, this positive trend reinforces all responses received about tools: We still have a long way to go, but the direction seems to be right.
 
 Organizations integrate CTI information into defense and response systems most commonly via CTI platform (67% of respondents), followed by intelligence service providers (59%) and vendor APIs (45%). Again, this shows that vendors currently play an important role in making such integration happen.
-
----
 
 ## Moving Forward
 
@@ -323,12 +208,6 @@ Discussions about tooling are always a hot topic in InfoSec, and CTI is no excep
 
 If you can’t measure something, you can’t improve it. One interesting takeaway came from asking our respondents if CTI has improved their security (prevention/detection/response). Even though in a descending trend, a high percentage of organizations still cannot measure the effectiveness of CTI programs, the tools, and the sources. Measuring the value of an intelligence program means that teams will be able to justify the need for more resources, new people, new tools, etc., ideally moving organizations, and in turn the industry, toward a higher maturity level. This represents a call to action for both practitioners and vendors alike to find better and easier ways to measure success in CTI.
 
----
-
 ## Sponsors
 
 SANS would like to thank this survey’s sponsors:
-
-SANS 2022 Cyber Threat Intelligence Survey
-
-13
