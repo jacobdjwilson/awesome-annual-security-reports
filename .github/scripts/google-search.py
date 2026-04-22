@@ -78,6 +78,9 @@ class ConfigLoader:
         self.score_org_in_title:     int = scoring.get("org_in_title",        0)
         self.score_short_path_penalty: int = scoring.get("short_path_penalty", 0)
         self.score_short_path_threshold: int = scoring.get("short_path_threshold", 3)
+        self.score_toplevel_domain_penalty: int = scoring.get("toplevel_domain_penalty", 0)
+        self.score_existing_domain_match_bonus: int = scoring.get("existing_domain_match_bonus", 0)
+        self.score_existing_subdomain_match_bonus: int = scoring.get("existing_subdomain_match_bonus", 0)
 
     def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
         path = self.artifacts_dir / filename
@@ -181,12 +184,43 @@ class GoogleSearchClient:
         if year_str   and year_str   in title_txt:  score += cfg.score_year_in_title
         if org_lower  and org_lower  in title_txt:  score += cfg.score_org_in_title
 
+        # Parse path for structural penalties
+        parsed = urllib.parse.urlparse(item.get("link", ""))
+        path   = parsed.path.strip("/")
+
         # Penalise bare homepage URLs (very short path → unlikely a report page)
         if cfg.score_short_path_penalty:
-            parsed = urllib.parse.urlparse(item.get("link", ""))
-            path   = parsed.path.strip("/")
             if len(path) < cfg.score_short_path_threshold:
                 score += cfg.score_short_path_penalty  # value is negative
+
+        # Extra hard penalty for true top-level domains (path is completely empty)
+        if cfg.score_toplevel_domain_penalty and not path:
+            score += cfg.score_toplevel_domain_penalty  # value is negative
+
+        # Existing URL domain-anchoring bonus
+        # If the query carries a known existing URL, prefer results on the same
+        # domain/subdomain — this prevents drifting to a bare homepage when the
+        # existing entry already points to a specific subdomain (e.g. resource.cobalt.io).
+        existing_url = query_record.get("existing_url", "")
+        if existing_url and cfg.score_existing_domain_match_bonus:
+            existing_host = urllib.parse.urlparse(existing_url).netloc.lower()
+            result_host   = parsed.netloc.lower()
+            if existing_host and result_host:
+                # Strip www. for comparison
+                ex_clean = existing_host.lstrip("www.")
+                re_clean = result_host.lstrip("www.")
+                if ex_clean == re_clean:
+                    # Exact host match (including subdomain like resource.cobalt.io)
+                    score += cfg.score_existing_domain_match_bonus
+                else:
+                    # Check if they share the registered domain (last two labels)
+                    ex_parts = ex_clean.split(".")
+                    re_parts = re_clean.split(".")
+                    ex_reg = ".".join(ex_parts[-2:]) if len(ex_parts) >= 2 else ex_clean
+                    re_reg = ".".join(re_parts[-2:]) if len(re_parts) >= 2 else re_clean
+                    if ex_reg == re_reg and cfg.score_existing_subdomain_match_bonus:
+                        # Same registered domain but different subdomain
+                        score += cfg.score_existing_subdomain_match_bonus
 
         return score
 
@@ -244,6 +278,12 @@ class GoogleSearchClient:
         Execute a single search for the given query_record dict.
         Returns a result dict conforming to the output schema documented
         at the top of this file.
+
+        Optional key in query_record:
+          "existing_url" — the current known URL for this entry (e.g. from the
+          README). When provided, results on the same domain/subdomain receive
+          a scoring bonus, which prevents the search from drifting to a bare
+          homepage when the existing entry already points to a specific page.
 
         This method is the integration point for other scripts importing
         this module — call it directly rather than going through main().
@@ -333,6 +373,7 @@ def search_one(
     year: str,
     artifacts_dir: str = ".github/artifacts",
     mode: str = "report_url",
+    existing_url: str = "",
 ) -> Optional[str]:
     """
     Convenience function for other scripts that want to resolve a single
@@ -340,9 +381,15 @@ def search_one(
 
     Returns the best result URL string, or None if unavailable.
 
+    Pass ``existing_url`` (the current org_url from the README entry) to
+    enable domain-anchoring scoring — this strongly prefers results on the
+    same domain/subdomain as the existing entry and prevents regression to a
+    bare top-level homepage.
+
     Example usage in readme-updater.py:
         from google_search import search_one
-        url = search_one(org, title, year, artifacts_dir=args.artifacts_dir)
+        url = search_one(org, title, year, artifacts_dir=args.artifacts_dir,
+                         existing_url=existing_org_url)
     """
     try:
         config = ConfigLoader(artifacts_dir, mode=mode)
@@ -354,6 +401,7 @@ def search_one(
             "organization": organization,
             "title":        title,
             "year":         year,
+            "existing_url": existing_url,
         }
         result = client.search(record)
         if result["status"] == "success" and result["url"]:

@@ -578,6 +578,7 @@ class ReadmeUpdater:
                     year          = str(analysis.get("year", "")),
                     artifacts_dir = str(self._artifacts_dir),
                     mode          = self.config.search_mode,
+                    existing_url  = analysis.get("organization_url", ""),
                 )
                 if searched and "google.com/search" not in searched:
                     print(f"    ✓ Report URL from search: {searched}")

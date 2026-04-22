@@ -22,8 +22,11 @@
           "report_in_link": 2,
           "year_in_title": 2,
           "org_in_title": 1,
-          "short_path_penalty": -2,
-          "short_path_threshold": 3
+          "short_path_penalty": -8,
+          "short_path_threshold": 3,
+          "toplevel_domain_penalty": -15,
+          "existing_domain_match_bonus": 10,
+          "existing_subdomain_match_bonus": 6
         },
         "skip_domains": [
           "google.com", "linkedin.com", "twitter.com", "x.com",
