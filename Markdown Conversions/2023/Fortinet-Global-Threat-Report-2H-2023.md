@@ -1,9 +1,12 @@
 # 2H 2023 Global Threat Landscape Report
+A Semiannual Report by FortiGuard Labs
 
 ## Table of Contents
 - [Executive Summary](#executive-summary)
-- [Active Threat Landscape at a Glance](#active-threat-landscape-at-a-glance)
+- [2H 2023 Active Threat Landscape at a Glance](#2h-2023-active-threat-landscape-at-a-glance)
 - [A Look at Exploit, Malware, and Botnet Trends](#a-look-at-exploit-malware-and-botnet-trends)
+- [Tracking movement across malware families](#tracking-movement-across-malware-families)
+- [Into the Red Zone](#into-the-red-zone)
 - [Most Active APTs](#most-active-apts)
 - [Penetrating the Red Zone](#penetrating-the-red-zone)
 - [From Exploit Prediction to Outbreak](#from-exploit-prediction-to-outbreak)
@@ -12,12 +15,10 @@
 - [Shedding Light on Dark Web Activity](#shedding-light-on-dark-web-activity)
 - [Trends from the Trenches](#trends-from-the-trenches)
 - [Conclusion](#conclusion)
-- [Footnotes](#footnotes)
 
-# 2H 2023
+---
 
-## Global Threat Landscape Report
-A Semiannual Report by FortiGuard Labs
+## Executive Summary
 
 In the second half of 2023, the cybersecurity landscape saw a range of significant developments that have considerably impacted the digital attack surface. Notable among these was the rise in sophisticated cyberattacks targeting large-scale entities and essential infrastructure.
 
@@ -27,264 +28,303 @@ The need to understand where your attack surface gaps in detection, mitigation, 
 
 The findings in this report represent the collective intelligence of FortiGuard Labs, drawn from a vast array of network sensors collecting threat events each day observed in live production environments around the world from more than 600K+ environments and 10M+ sensors capturing every detail about threats that hit our detection technology. We’ve sifted through all that data to find and extract key insights that we hope will help guide you through the cyber challenges of 2024.
 
-## Executive Summary
+## 2H 2023 Active Threat Landscape at a Glance
 
-### Active Threat Landscape at a Glance
-
-#### Into the Red Zone
-- **Exploit Dispersion**: 41% of organizations detected activity for exploits less than one month old.
-- **ATT&CK Sightings**: Sandbox and network detection and response (NDR) sensors observed activity for over two-thirds of MITRE ATT&CK techniques.
-
-#### APT Groups
-- FortiRecon intelligence indicates 38 of the 143 advanced persistent threat (APT) groups listed by MITRE were active during this time.
-
-#### Ransomware
-- More than 40% of ransomware and wipers targeted the industrial sector, indicating that cybercriminals are focused on OT and the supply chain.
-
-#### Time-to-Exploitation
-- On average, for new exploits identified, attacks occurred in 4.76 days after discovery. That’s 43% faster than the prior period.
-
-#### Exploit Dispersion
-- 41% of organizations detected activity for exploits less than one month old.
-
-#### ATT&CK Sightings
-- Sandbox and network detection and response (NDR) sensors observed activity for over two-thirds of MITRE ATT&CK techniques.
-
-#### Exploit Dispersion
-- 41% of organizations detected activity for exploits less than one month old.
-
-#### APT Groups
-- FortiRecon intelligence indicates 38 of the 143 advanced persistent threat (APT) groups listed by MITRE were active during this time.
-
-#### Ransomware
-- More than 40% of ransomware and wipers targeted the industrial sector, indicating that cybercriminals are focused on OT and the supply chain.
-
-#### Time-to-Exploitation
-- On average, for new exploits identified, attacks occurred in 4.76 days after discovery. That’s 43% faster than the prior period.
+![Infographic showing exploit dispersion, ATT&CK sightings, APT groups, ransomware statistics, and time-to-exploitation metrics.]
 
 ## A Look at Exploit, Malware, and Botnet Trends
 
 FortiGuard Labs monitors a vast array of globally deployed sensors that collect trillions of threat events worldwide each day. This unique vantage point gives us a detailed and comprehensive view of the cyberthreat landscape, including how exploit, malware, and botnet trends change over time.
 
-### Exploits
-- 11,030 unique exploit detections, +10% over last half
-- 63 exploit detections per organization, +17% over last half
-- 73% of firms saw severe attacks, +4% over last half
+- **Exploits**: 11,030 unique exploit detections (+10% over last half); 63 exploit detections per organization (+17% over last half); 73% of firms saw severe attacks (+4% over last half).
+- **Malware**: 39,896 unique variants detected (-11% from last half); 5,962 different active families (-16% from last half); 16 families spread to more than 10% of organizations (-11% from last half).
+- **Botnet**: 319 unique botnets detected (-3% from last half); 4.3 active botnets per sensor (+/-0% from last half); 85 infection days in average (+2% over last half).
 
-### Malware
-- 39,896 unique variants detected, -11% from last half
-- 5,962 different active families, -16% from last half
-- 16 families spread to more than 10% of organizations, -11% from last half
+### IoT exploits are on the rise
+Exploitation activity captured by the FortiGuard Intrusion Prevention System (IPS) sensors running on our FortiGate Next-Generation Firewalls provides unrivaled visibility into how threat actors find vulnerabilities, exploit their targets, and build malicious infrastructure.
 
-### Botnet
-- 319 unique botnets detected, -3% from last half
-- 4.3 active botnets per sensor, +/-0% from last half
-- 85 infection days in average, +2% over last half
+![Chart showing technology platforms targeted most often with exploit attempts from July to December.]
 
-This data, outlined in the chart above, shows that the creation and prevalence of exploits are on the rise. Cybercriminals are targeting the ever-increasing number of new vulnerabilities resulting from the exponential growth in the number and variety of connected devices and an explosion in new applications and online services. It’s only natural that attacks looking to exploit those vulnerabilities would rise as well. This increase in exploit volume per organization is undoubtedly contributing to the prevalence of overwhelmed security teams.
+## Tracking movement across malware families
 
-Interestingly, after rising over the first half of 2023, the volume of malware samples detected by our sensors subsided in the latter half of the year. Unfortunately for defenders, this doesn’t mean that malware is falling out of favor among clever attackers. The observed slowdown is likely because certain types of malware, particularly ransomware, are taking a more targeted approach, leading to an increase in cost-per-ransomware incident. This also explains why bot traffic remained steady during this same time.
-
-#### IoT exploits are on the rise
-Exploitation activity captured by the FortiGuard Intrusion Prevention System (IPS) sensors running on our FortiGate Next-Generation Firewalls provides unrivaled visibility into how threat actors find vulnerabilities, exploit their targets, and build malicious infrastructure. These sensors are often the first point of contact with an adversary probing for exposures. Let’s start with a view of the technologies attackers are probing most aggressively. Not surprisingly, Internet-of-Things (IoT) devices, shown in red in the corresponding chart, are popular targets, largely because they are often under protected or unprotected.
-
-While we have highlighted outbreak alerts for IoT devices here, our FortiGuard Labs team had their radars filled with all manner of additional vulnerability exploits in 2H 2023. Here’s a quick recap of some of those:
-- VMware Aria Operations for Networks Command Injection Vulnerability[^5]
-- IBM Aspera Faspex Code Execution Vulnerability[^6]
-- Cisco IOS XE Web UI Attack[^7]
-- Citrix Bleed Attack[^8]
-- Apache RocketMQ Remote Command Execution Vulnerability[^9]
-- Progress MOVEit Transfer SQL Injection Vulnerability[^10]
-
-#### Technology platforms targeted most often with exploit attempts
-| Month | Top Target 1 | Top Target 2 | Top Target 3 | Top Target 4 | Top Target 5 | Top Target 6 | Top Target 7 | Top Target 8 | Top Target 9 | Top Target 10 |
-|---|---|---|---|---|---|---|---|---|---|---|
-| July | Zyxel.zhttpd (38%) | Multiple.Routers (40%) | Zyxel.zhttpd (39%) | Apache.Log4j (40%) | Zyxel.zhttpd (37%) | Apache.Log4j (43%) | PHP.CGI (37%) | PHP.CGI (37%) | Multiple.Routers (37%) | Zyxel.zhttpd (37%) |
-| Aug | Linux.Kernal (36%) | Zyxel.zhttpd (37%) | Linux.Kernel (35%) | Zyxel.zhttpd (37%) | PHPUnit.Eval-stdin (36%) | PHPUnit.Eval-stdin (37%) | Multiple.Routers (34%) | Linux.Kernel (35%) | D-Link.Devices (35%) | PHPUnit.Eval-stdin (36%) |
-| Sep | Linux.Kernal (36%) | Zyxel.zhttpd (37%) | PHPUnit.Eval-stdin (33%) | Multiple.Routers (35%) | PHPUnit.Eval-stdin (34%) | Linux.Kernal (35%) | Telerik.Web (33%) | Multiple.Routers (34 %) | Dasan.GPON (33%) | D-Link.Devices (30%) |
-| Oct | Zyxel.zhttpd (38%) | Apache.Log4j (40%) | Zyxel.zhttpd (39%) | Apache.Log4j (43%) | Zyxel.zhttpd (37%) | Apache.Log4j (43%) | PHP.CGI (37%) | PHP.CGI (37%) | Multiple.Routers (37%) | Zyxel.zhttpd (37%) |
-| Nov | Linux.Kernal (36%) | Zyxel.zhttpd (37%) | Linux.Kernel (35%) | Zyxel.zhttpd (37%) | PHPUnit.Eval-stdin (36%) | PHPUnit.Eval-stdin (37%) | Multiple.Routers (34%) | Linux.Kernel (35%) | D-Link.Devices (35%) | PHPUnit.Eval-stdin (36%) |
-| Dec | Linux.Kernal (36%) | Zyxel.zhttpd (37%) | PHPUnit.Eval-stdin (33%) | Multiple.Routers (35%) | PHPUnit.Eval-stdin (34%) | Linux.Kernal (35%) | Telerik.Web (33%) | Multiple.Routers (34 %) | Dasan.GPON (33%) | D-Link.Devices (30%) |
-
-Vulnerabilities affecting routers, cameras, and other IoT devices were the focus of several outbreak alerts published by FortiGuard Labs throughout 2023.[^1]
-
-Zyxel Networks equipment was a favorite target for exploits throughout the second half of the year, with FortiGuard Labs issuing an outbreak alert about the company’s firewalls.[^2] Perhaps smelling blood in the water, attackers rediscovered and exploited a Zyxel Networks vulnerability relating to an end-of-life router, which was initially published in 2017.[^3]
-
-Speaking of old vulnerabilities attracting new attention, exploits targeting Zivif web cameras (CVE-2017-11882) made the top 10 list in December 2023. These exploits appear to be related to ongoing Zerobot attacks we alerted security practitioners to in late 2022.[^4] This scenario shows that old vulnerabilities can always be made new (and better) by enterprising threat actors.
-
-We are closing out this exploit review with another chart demonstrating the wide scope of activity detected by our IPS sensors. Here is a look at the top five exploit detections associated with four key MITRE ATT&CK techniques[^11] of Active Scanning, Exploit Public-Facing Apps, Brute Force, and Network DoS.
-
-#### Most prevalent recon and initial access detections associated with MITRE ATT&CK techniques
-- **Active Scanning (T1595)**: SIPVicious.SIP.Scanner (53%), DNS.PTR.Records.Scan (42%), Qualys.Vulnerability.Scanner (2.0%), Port.Scanner (0.85%), Nessus.Scanner (0.73%)
-- **Exploit Public-Facing Application (T1190)**: MS.SMB.Server.Trans.Peeking.Data.Information.Disclosure (63%), SSL.Anonymous.Ciphers.Negotiation (7.4%), Modbus.TCP.Unauthorized.Read.Request.PLC (6.2%), Apache.Log4j.Error.Log.Remote.Code.Execution (3.0%), HTTP.Suspicious.Headers.With.Special.Characters (3.0%)
-- **Brute Force (T1110)**: SSH.Connection.Brute.Force (35%), SMB.Login.Brute.Force (22%), MS.RDP.Connection.Brute.Force (17%), MySQL.Login.Brute.Force (11%), SIP.Register.Brute.Force (6.1%)
-- **Network Denial-of-Service (T1498)**: NTP.Monlist.Command/DoS (64%), IP.Land (15%), BlackNurse.ICMP.Type.3.Code.3.Flood.Dos (11%), Memcached.UDP.Amplification.Detection (2.4%), DNS.Amplificatioj.Detection (1.8%)
-
-Network security appliances provide intelligence on the left side of the MITRE ATT&CK framework, which helps us understand more about the threats that malicious actors are using to try to get inside organizations. Ideally, when applying the ATT&CK framework across your enterprise, we recommend collating ATT&CK sources and creating a consolidated heatmap for using in threat hunting, purple teaming, adversarial emulation, and detection engineering.
-
-#### Tracking movement across malware families
 Once threat actors find an exploitable vulnerability, their next step is often to deploy malware. Samples picked up by our various anti-malware solutions offer insight into popular adversary tools for establishing a foothold, escalating privileges, maintaining presence, and moving laterally within target environments to achieve their goals.
 
-The figure on the next page measures the proportion of organizations in each region that detected variants of the most common malware families during the second half of the year. Malware that gains a foothold in one region of the world, such as the JS/Agent family, gains similar traction across most other geographies.
+![Table showing top malware families based on regional prevalence across Africa, Asia, Europe, Latin America, Middle East, North America, and Oceania.]
 
-#### Top malware families based on regional prevalence
-| Region | JS/Agent | JS/Phishing | MSIL/Kryptik | HTML/Phish | JS/ScrInject | JS/Cryxos | MSIL/GenKryptik | PDF/Phishing | MSIL/GenericKDS | HTML/Phishing | MSIL/Agent | MSOffice/CVE_2018_0798 | JS/Redirector | MSIL/Stealer | NSIS/Injector | MSOffice/CVE_2017_11882 | HTML/infObfus | BAT/Agent | W32/Injector | MSOffice/CVE_2017_11882 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Africa | 40.9% | 17.6% | 17.4% | 16.5% | 20.1% | 12.8% | 14.6% | 14.1% | 11.8% | 12.5% | 11.6% | 9.8% | 13.7% | 9.5% | 8.5% | 8.4% | 11.8% | 5.5% | 8.6% | 8.2% |
-| Asia | 34.2% | 15.9% | 22.6% | 19.9% | 13.1% | 28.6% | 20.8% | 12.8% | 19.1% | 13.1% | 16.1% | 15.0% | 7.7% | 14.6% | 13.4% | 12.1% | 5.9% | 9.1% | 11/9% | 12/3% |
-| Europe | 34.0% | 19.2% | 19.8% | 18.6% | 11.9% | 13.6% | 17.9% | 14.9% | 15.2% | 12.0% | 14.6% | 15.1% | 9.6% | 11.8% | 13.1% | 11.0% | 6.3% | 6.3% | 8.9% | 8.6% |
-| Latin America | 37.4% | 19.8% | 16.6% | 15.2% | 18.6% | 14.7% | 16.1% | 12.9% | 13.6% | 9.6% | 11.4% | 9.4% | 8.0% | 10.3% | 7.1% | 17.6% | 4.2% | 9.0% | 6.8% | 5.0% |
-| Middle East | 30.9% | 12.7% | 16.9% | 13.9% | 33.4% | 12.1% | 15.4% | 11.2% | 12.7% | 9.2% | 12.1% | 10.2% | 7.8% | 10.3% | 10.1% | 9.5% | 10.1% | 6.7% | 9.0% | 7.4% |
-| North America | 30.0% | 12.0% | 4.8% | 7.9% | 10.3% | 13.3% | 4.3% | 8.9% | 3.7% | 5.6% | 3.5% | 3.4% | 7.5% | 2.8% | 2.4% | 2.5% | 10.5% | 3.7% | 2.2% | 2.3% |
-| Oceania | 35.9% | 18.5% | 7.5% | 12.0% | 18.7% | 18.7% | 7.2% | 14.1% | 6.1% | 7.3% | 5.6% | 4.7% | 10.7% | 4.5% | 5.3% | 3.4% | 15.7% | 4.3% | 3.0% | 3.3% |
+## Into the Red Zone
 
-However, two malware families have bucked the regional uniformity trend: JS/ScrInject and JS/Cryxos. For the former, the variant responsible is JS/ScrInject.B!.tr.[^16] This Remote Access Trojan (RAT) has been circulating since 2011 and has a very regular weekly activity cycle.[^17] The other is JS/Cryxos and, in particular, the JS/Cryxos.5478!.tr variant.[^18] This Trojan, known to have a variety of surreptitious capabilities, appears to be driving the bulk of detections across Asia.
-
-Outside the most prevalent generic families depicted above, four additional malware campaigns caught our attention in the second half of 2023: AndroxGh0st, Apache ActiveMQ ransomware, Lazarus RATs, and Agent Tesla. We cover AndroxGh0st extensively in the botnet section, so we’ll summarize the other three here.
-
-#### Apache ActiveMQ
-Apache ActiveMQ is a popular open-source message broker. A vulnerability was disclosed (CVE-2023-46604)[^19] in fall 2023 that allowed a remote attacker with network access to a broker to run arbitrary shell commands by manipulating serialized class types in the OpenWire protocol. Reports emerged in November that attackers were taking advantage of that flaw in the form of the HelloKitty ransomware.[^20] FortiGuard Labs released an outbreak alert detailing how threat actors were exploiting this flaw by running ransomware campaigns targeting servers running outdated and vulnerable versions of Apache ActiveMQ.[^21]
-
-#### Lazarus RATs
-The Lazarus Group is an APT group sponsored by the North Korean government. In this new campaign, Lazarus was observed employing DLang-based RAT malware in the wild. Lazarus’s initial access begins with the successful exploitation of CVE-2021-44228, the infamous Log4j vulnerability discovered in 2021.[^22]
-
-#### Agent Tesla
-FortiGuard Labs captured a phishing campaign that spreads a new Agent Tesla variant.[^23] This well-known malware family uses a .Net-based RAT and data stealer to gain initial access by exploiting Microsoft Office vulnerabilities CVE-2017-11882[^24] and CVE-2018-0802.[^25] The Agent Tesla core module can collect sensitive information from the victim’s device such as, saved credentials, keylogging information, and device screenshots.
-
-### Into the Red Zone
-
-#### New bots on the block: AndroxGh0st, Prometei, and DarkGate
 Once infected with malware, systems often attempt to communicate with remote hosts to download additional payloads, establish command and control (C2) channels, and open backdoors into the environment. This makes the analysis of botnet traffic an important part of monitoring the full scope of malicious activity.
 
-#### New botnets
-- 15% of volume
-- 85.4%
-
-A chart of the most active botnets is inevitably filled with many of the same ones we’ve seen for years, including Gh0st, Mirai, and ZeroAccess. This demonstrates two things:
-- Botnets are resilient. They’re created to persist and, despite coordinated law enforcement takedowns, can be hard to kill.
-- Botnet remediation is a slow process. Much of the botnet traffic we detect comes from infected systems attempting to communicate with botnets that are no longer active.
-
-That said, new botnets do emerge occasionally that warrant attention. In the second half of 2023, three new botnets took the spotlight: AndroxGh0st, Prometei, and DarkGate.
-
-#### Volume of traffic associated with new botnets emerging in 2H 2023
-| Month | Prometei | DarkGate | AndroxGh0st.Malware |
-|---|---|---|---|
-| Jul |  |  |  |
-| Aug |  |  |  |
-| Sep |  |  |  |
-| Oct |  |  |  |
-| Nov |  |  |  |
-| Dec |  |  |  |
-
-#### AndroxGh0st
-The AndroxGh0st botnet is related to the Python-based malware of the same name. It primarily targets user environment (.env) files, which often contain credentials for a variety of high-profile applications. AndroxGh0st includes numerous malicious functions to abuse Simple Mail Transfer Protocols (SMTP). It also scans and exploits exposed credentials and APIs and deploys web shells to maintain persistent access to systems.
-
-We continue to observe widespread activity of AndroxGh0st malware in the wild exploiting multiple vulnerabilities. It specifically targets the PHPUnit (CVE-2017-9841)[^26], Laravel Framework (CVE-2018-15133)[^27], and Apache Web Server (CVE-2021-41773)[^28] vulnerabilities to spread and conduct information-gathering attacks on the target networks. Fortinet was credited with exposing telemetry on AndroxGh0st, showing over 40,000 devices infected by the botnet.[^29]
-
-#### Prometei
-Prometei is malware that can remotely control infected machines. It’s capable of spreading laterally across networks, stealing password credentials, executing arbitrary commands, and downloading and executing additional malicious components. Prometei can also perform cryptocurrency mining and has self-updating capabilities.
-
-This malware strain was recently reinvented, and we created new IPS signatures to aid in detection.[^30] This retooling worked well, as the Prometei botnet has subsequently been catapulted to the sixth spot on our list for total traffic volume across our sensors in 2H 2023.
-
-#### DarkGate
-Though it’s a distant third to AndroxGh0st and Prometei, the DarkGate botnet warrants mention. The DarkGate malware, which has a range of capabilities from remote access to cryptomining to information stealing, was first reported in 2017. Since then, its creators have used it only for specific campaigns. But in mid-2023, the purported author offered to sell it, and the malware soon began making wider rounds.[^31] We saw the DarkGate botnet emerge after the Qakbot takedown as a possible successor.[^32] Whether DarkGate has a future as a leading tool for cybercriminals remains to be seen.
+![Chart showing volume of traffic associated with new botnets emerging in 2H 2023: Prometei, DarkGate, and AndroxGh0st.]
 
 ## Most Active APTs
 
-In the first half of the year, we observed significant activity among APT groups, and that volume has held steady throughout the remainder of 2023. APT groups continue to be highly adaptable to changes in the digital landscape and are increasingly stealthy as they carefully plan and execute attacks. The image below offers a look at the most active APT groups during the second half of the year.
+In the first half of the year, we observed significant activity among APT groups, and that volume has held steady throughout the remainder of 2023. 
 
-#### Most active APT groups during 2H 2023 based on FortiRecon intelligence
-- **Actor**: Lazarus Group
-  - **Top Target(s)**: Technology
-- **APT 28**
-  - **Top Target(s)**: Government
-- **APT 29**
-  - **Top Target(s)**: Government
-- **Andariel Technology**
-- **OilRig**
-  - **Top Target(s)**: Government, Healthcare
-- **Kimsuky**
-  - **Top Target(s)**: Government
-- **Andariel Technology**
-- **OilRig**
-  - **Top Target(s)**: Government, Healthcare
-- **MuddyWater**
-  - **Top Target(s)**: Telecom
-- **APT37**
-  - **Top Target(s)**: Aerospace Defense, Civil Society, and Manufacturing
-
-Researchers’ latest findings indicate a definitive shift in the tactics of the North Korean APT group, Lazarus. Over the past year and a half, they have disclosed three different RATs built using uncommon technologies during development, like QtFramework, PowerBasic, and DLang. This indicates that Lazarus Group is a mature and capable organization, generally using N-Day exploits and known techniques to breach companies in the technology sector, such as blockchain exchanges and software development firms. The group’s attacks have been quite lucrative, netting north of $100 million in crypto thefts alone.
-
-Another group that was active these last months of 2023 was APT 28, using N-Day vulnerabilities in Outlook and Winrar to steal New Technology Lan Manager (NTLM) credentials, focusing on breaching government organizations as well as companies in the higher education, manufacturing, and aerospace industries. The group targeted organizations in Eastern Europe, with multiple campaigns aimed at disrupting operations and stealing information from these enterprises. This same group also used previously undisclosed zero days this year to carry on cyberespionage and steal data. APT 28 has also moved away from using backdoors and compromising peripheral devices in the network and is now using legitimate services such as Google Drive and Microsoft OneDrive to exfiltrate sensitive data.
+![Infographic showing most active APT groups during 2H 2023 based on FortiRecon intelligence, including Lazarus Group, APT 28, APT 29, Andariel, OilRig, Kimsuky, MuddyWater, and APT37.]
 
 ## Penetrating the Red Zone
 
 Prioritizing vulnerabilities for remediation is more important than ever given that the rate of discovery and disclosure continues to quicken. As of this report’s publication, there are over 222,000 vulnerabilities on the Common Vulnerabilities and Exposures (CVE) list.[^33] We witnessed a new record in 2023, with a total of 30,000 new vulnerabilities published—a 17% jump from the previous year.
 
-In 2022, we introduced the concept of the “red zone,” which helps readers better understand how likely (or unlikely) it is that threat actors will exploit a specific vulnerability.[^34] This allows security teams to focus on the vulnerabilities that present the most risk by prioritizing remediation efforts.
-
-Thankfully, our data shows a small subset (12.5%) of all historical CVEs are present and unremediated on endpoints in live environments. This is depicted in the ratio of blue versus gray squares in the adjacent chart.
-
-Further, only a fraction (<1%) of all vulnerabilities were exploited in 2H 2023. That proportion has remained remarkably steady over time, which is good news for security teams.
-
-#### 30K new vulnerabilities across all industries were published in 2023, marking a 17% increase from the prior year.
-
-Of course, the red zone for many prominent software platforms is substantially larger. For example, Microsoft’s attack surface is 20x larger than the overall average (14%) and twice that of Apple (7%) and Linux (5%). Practically speaking, the larger the red zone, the more effort and automated patching is required for timely remediation of high-risk vulnerabilities with active exploits.
-
-#### Red zone activity for all CVEs across all platforms
-- About 0.7% of all CVEs observed on endpoints and under attack
-- **Absent**: 1.6K
-- **Present**:
-- **Attacked**:
-
-#### Red zone activity for CVEs affecting prominent platforms
-- **Microsoft (14.2%)**
-- **Adobe (13.6%)**
-- **Apple (7.1%)**
-- **Linux (5.3%)**
-- **Oracle (3.6%)**
-- **Google (2.6%)**
-
-Here is a look at the top five vulnerabilities that comprise each platform’s red zone based on the prevalence of detected exploit attempts:
-
-#### CVEs with the highest exploit activity for each prominent software platform
-- **Microsoft**: CVE-2017-0147, CVE-2016-3212, CVE-2017-0068, CVE-2021-31207, CVE-2022-24463
-- **Adobe**: CVE-2017-16391, CVE-2008-2992, CVE-2023-26397, CVE-2017-16383, CVE-2018-5019
-- **Apple**: CVE-2018-4443, CVE-2017-13798, CVE-2018-4312, CVE-2020-9802, CVE-2018-4386
-- **Linux**: CVE-2013-2912, CVE-2021-30632, CVE-202130538, CVE-2019-13720, CVE-2020-15994
-- **Oracle**: CVE-2021-44228, CVE-2014-0160, CVE-2016-1000110, CVE-2015-2331, CVE-2014-0224
-- **Google**: CVE-2019-0948, CVE-2019-0537, CVE-2016-3427, CVE-2012-5081, CVE-2013-2416
-
-The share of red zone activity across vulnerabilities differs dramatically among platforms. A full 99% of Linux’s red zone is dominated by exploits targeting CVE-2021-44228.[^35] Compare that to Apple, where the top three vulnerabilities each account for approximately 16% of exploit activity.
-
-Most of these red zone vulnerabilities aren’t new. Only two were published in 2023, and just one of those emerged in the second half of the year (CVE-2023-44487).[^36] The rest span the last decade. And keep in mind that the exploitation “old” vulnerabilities isn’t slowing—the top vulnerability for half the platforms listed was discovered at least five years prior.
+![Chart showing red zone activity for all CVEs across all platforms.]
 
 ## From Exploit Prediction to Outbreak
 
-As we’ve discussed previously, when it comes to vulnerabilities, what’s old is still new in the eyes of many attackers. To understand the prevalence of this trend, we identified all vulnerability exploits and malware samples that occurred in 2H 2023 along with the proportion of organizations registering detections. We then charted those signatures according to when they were created and added to Fortinet devices. The charts on the next page measure the active lifespan of exploit and malware threats.
+As we’ve discussed previously, when it comes to vulnerabilities, what’s old is still new in the eyes of many attackers. To understand the prevalence of this trend, we identified all vulnerability exploits and malware samples that occurred in 2H 2023 along with the proportion of organizations registering detections.
 
-#### Age and prevalence of exploits and malware detected in 2H 2023
+![Charts showing age and prevalence of exploits and malware detected in 2H 2023.]
 
-##### IPS Detections
-- **40.9% of orgs reported exploitation activity <1 month**
-- **47.3% of orgs reported exploitation activity 2 months to 1 year**
-- **97.6% of orgs reported exploitation activity 5+ years**
-- **Age of Triggered Signature**: 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20
+## Ransomware Attacks Increasingly Target Critical Industries
 
-##### Malware Detections
-- **40.5% of orgs reported virus activity <1 month**
-- **38.7% of orgs reported virus activity 2 months to 1 year**
-- **53.8% of orgs reported virus activity 5+ years**
-- **Age of Triggered Signature**: 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28
+Ransomware continues to keep security teams up at night. According to a recent Fortinet survey, more than 80% of leaders are “very” or “extremely” concerned about ransomware.[^39] Across our sensors, ransomware detections surged 13x higher over the first half of 2023. That was followed by a 70% drop during the latter half of the year.
 
-We continue to observe threat actors exploiting vulnerabilities more than 15 years old. Nearly all organizations (98%) have detected exploits that have existed for at least five years. Yet there’s plenty of room for new threats to make their way onto the scene: 41% of organizations also detected exploits from signatures less than one month old. But when it comes to malware, just over half of organizations have detected variants that have been around for five or more years—much less than what we see for exploits.
+![Chart showing industries with the highest volume of ransomware and wiper detections.]
 
-This analysis yields some critical insights into the cyberthreat landscape. Exploits and malware have very similar speeds and scopes related to their spread, but the longevity of each differs. Malware variants die off more quickly as new code replaces the old. Exploits show a much longer active lifespan because the vulnerabilities cybercriminals target can remain unpatched for years.
+## Global ATT&CK Heatmap
 
-Practically speaking, this reinforces the importance of remaining vigilant about security hygiene, as attackers aren’t likely to stop exploiting older vulnerabilities. It’s also a great reminder to security practitioners to act quickly through a consistent patching and updating program when new vulnerabilities emerge that are likely to be exploited.
+MITRE ATT&CK is a widely used repository of adversary tactics, techniques, and procedures (TTPs).[^41] It offers a common language developed from real-world observations that are used by organizations and cybersecurity teams to build threat models and threat-informed defenses.
 
-How can you track emerging vulnerabilities that are most likely to be attacked? The Exploit Prediction Scoring System (EPSS)[^37] exists for this exact purpose. Fortinet is a major contributor to the exploitation data that drives EPSS. The chart below shows the vulnerabilities released in 2023 that were most targeted by exploit activity in the latter half of the year.
+![Chart showing top ATT&CK techniques observed via sandbox solutions.]
 
-#### Most widely exploited CVEs published in 2023 with EPSS score
-- **Top 10 Actively Exploited CVEs: 2023**
-  - **EPSS Ranking**: CVE-2023-1389 (TP-Link) (Top 72.9%), CVE-2023-23752 (Joomla) (Top 25.7%), CVE-2023-27350 (PaperCut) (Top 7.2%), CVE-2023-28
+## Shedding Light on Dark Web Activity
+
+While much of our telemetry shows us what actions attackers have taken in the past, darknet intelligence can help us anticipate what adversaries may do next. For the first time in our threat landscape reports, we’re sharing insights we’ve collected from dark web forums, marketplaces, Telegram channels, and other sources during the second half of 2023.
+
+## Trends from the Trenches
+
+The FortiGuard Managed Detection and Response (MDR) team manages endpoint detection and response (EDR) instances on behalf of customers across the globe. Their daily responsibilities give the team a significant snapshot of adversary activities across business verticals and geopolitical regions.
+
+- **Poorly scoped responses result in unforced errors**: Incomplete IR plans lead to knee-jerk reactions.
+- **Failure to patch**: In 86% of cases investigated, the vulnerability was already known and a patch was available.
+- **Backups**: Backups connected to production 24x7 are being targeted and encrypted by ransomware operators.
+- **ESXi servers**: Increasingly targeted as they offer high impact on business continuity.
+
+## Conclusion
+
+We hope this edition of the Fortinet threat landscape report provides valuable insights to help you prioritize and implement appropriate security measures within your organization. 
+
+[^1]: FortiGuard Labs Outbreak Alert: IoT Vulnerabilities, 2023.
+[^2]: FortiGuard Labs Outbreak Alert: Zyxel Firewalls, 2023.
+[^3]: CVE-2017-18368: Zyxel Router Vulnerability.
+[^4]: Zerobot Malware Analysis, 2022.
+[^5]: VMware Aria Operations for Networks Command Injection Vulnerability.
+[^6]: IBM Aspera Faspex Code Execution Vulnerability.
+[^7]: Cisco IOS XE Web UI Attack.
+[^8]: Citrix Bleed Attack.
+[^9]: Apache RocketMQ Remote Command Execution Vulnerability.
+[^10]: Progress MOVEit Transfer SQL Injection Vulnerability.
+[^11]: MITRE ATT&CK Framework, 2023.
+[^12]: JS/Agent.CY!.tr.
+[^13]: JS/Agent.F022!.tr.
+[^14]: JS/Agent.PIV!.tr.
+[^15]: JS/Agent.NDS!.tr.
+[^16]: JS/ScrInject.B!.tr.
+[^17]: RAT Activity Analysis, 2011-2023.
+[^18]: JS/Cryxos.5478!.tr.
+[^19]: CVE-2023-46604: Apache ActiveMQ Vulnerability.
+[^20]: HelloKitty Ransomware Campaign, 2023.
+[^21]: FortiGuard Labs Outbreak Alert: Apache ActiveMQ.
+[^22]: CVE-2021-44228: Log4j Vulnerability.
+[^23]: Agent Tesla Phishing Campaign, 2023.
+[^24]: CVE-2017-11882: Microsoft Office Vulnerability.
+[^25]: CVE-2018-0802: Microsoft Office Vulnerability.
+[^26]: CVE-2017-9841: PHPUnit Vulnerability.
+[^27]: CVE-2018-15133: Laravel Framework Vulnerability.
+[^28]: CVE-2021-41773: Apache Web Server Vulnerability.
+[^29]: Fortinet Telemetry on AndroxGh0st.
+[^30]: Prometei IPS Signature Update, 2023.
+[^31]: DarkGate Malware Market Analysis, 2023.
+[^32]: Qakbot Takedown Analysis, 2023.
+[^33]: Common Vulnerabilities and Exposures (CVE) List, 2023.
+[^34]: Fortinet Red Zone Concept, 2022.
+[^35]: CVE-2021-44228 Analysis.
+[^36]: CVE-2023-44487.
+[^37]: Exploit Prediction Scoring System (EPSS).
+[^38]: CVE-2023-28121: WooCommerce Payments Plugin.
+[^39]: Fortinet Ransomware Survey, 2023.
+[^40]: Fortinet 2024 Threat Predictions Report.
+[^41]: MITRE ATT&CK Repository.
+[^42]: Fortinet 1H 2023 Threat Landscape Report.
+
+---
+
+that have existed for years, often remain on threat actors’ radar as active targets.
+
+Unfortunately, this means you can’t be so focused on safeguarding against new vulnerabilities and attacks that you
+
+neglect the old ones. Successful security teams need to protect against the entire exploitation life cycle, and this starts
+
+with a proactive patching and updating program.
+
+Critical industries are top ransomware targets. The actors behind ransomware campaigns have always been industrious.
+
+Whether it’s making rapid adjustments to ransom demands based on cryptocurrency market dynamics or creating vast
+
+criminal enterprises to minimize cost and maximize scale, they have a penchant for making things happen. That’s what
+
+makes the ongoing shift to targeting critical industries all the more concerning. These OT-heavy environments are
+
+particularly susceptible to costly outages, which greatly increases the pressure to pay high ransoms to restore productivity.
+
+While each of us has a vital role to play in fighting against our collective adversaries, no single organization can single-
+
+handedly halt threat actors. Shared intelligence is a crucial part of how we ensure timely and precise responses
+
+when attackers strike. The more we collaborate across the public and private sectors, the more effective we can be at
+
+disrupting cybercrime.
+
+41
+
+2H 2023 Global Threat Landscape ReportFootnotes
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+FortiGuard Outbreak Alerts, FortiGuard Labs, accessed February 18, 2024.
+
+Zyxel Multiple Firewall Vulnerabilities, FortiGuard Outbreak Alerts, June 6, 2023.
+
+Zyxel Router Command Injection Attack, FortiGuard Outbreak Alerts, August 9, 2023.
+
+Zerobot Attack, FortiGuard Outbreak Alerts, December 27, 2022.
+
+VMware Aria Operations for Networks Command Injection Vulnerability, FortiGuard Outbreak Alerts, June 22, 2023.
+
+IBM Aspera Faspex Code Execution Vulnerability, FortiGuard Outbreak Alerts, March 1, 2023.
+
+Cisco IOS XE Web UI Attack, FortiGuard Outbreak Alerts, October 20, 2023.
+
+Citrix Bleed Attack, FortiGuard Outbreak Alerts, November 2, 2023.
+
+Apache RocketMQ Remote Command Execution Vulnerability, FortiGuard Outbreak Alerts, July 5, 2023.
+
+10
+
+Progress MOVEit Transfer SQL Injection Vulnerability, FortiGuard Outbreak Alerts, June 5, 2023.
+
+11  MITRE ATT&CK, accessed February 18, 2024.
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+JS/Agent.CY!tr, FortiGuard Labs Encyclopedia, June 9, 2022.
+
+JS/Agent.F022!tr, FortiGuard Labs Encyclopedia, July 10, 2023.
+
+JS/Agent.PIV!tr, FortiGuard Labs Encyclopedia, November 1, 2021.
+
+JS/Agent.NDS!tr, FortiGuard Labs Encyclopedia, November 7, 2023.
+
+JS/ScrInject.B!tr, FortiGuard Labs Encyclopedia, August 30, 2011.
+
+Ibid.
+
+JS/Cryxos.5478!tr, FortiGuard Labs Encyclopedia, March 30, 2021.
+
+19  CVE-2023-46604, NIST National Vulnerability Database, accessed February 18, 2024.
+
+20
+
+21
+
+22
+
+Lucian Constantin, HelloKitty Ransomware Deployed Via Critical Apache Active MQ Flaw, CSO Online, November 2, 2023.
+
+Apache ActiveMQ Ransomware Attack, FortiGuard Outbreak Alerts, November 6, 2023.
+
+Lazarus RAT Attack, FortiGuard Outbreak Alerts, December 12, 2023.
+
+23  Agent Tesla Malware Attack, FortiGuard Outbreak Alerts, September 7, 2023.
+
+24  CVE-2017-11882, NIST National Vulnerability Database, accessed February 18, 2024.
+
+25  CVE-2018-0802, NIST National Vulnerability Database, accessed February 18, 2024.
+
+26  CVE-2017-9841, NIST National Vulnerability Database, accessed February 18, 2024.
+
+27  CVE-2018-15133, NIST National Vulnerability Database, accessed February 18, 2024.
+
+28  CVE-2021-41773, NIST National Vulnerability Database, accessed February 18, 2024.
+
+29  Cedric Pernet, Androxgh0st Malware Botnet Steals AWS, Microsoft Credentials and More, TechRepublic, January 18, 2024.
+
+30  Ravie Lakshmanan, New Version of Prometei Botnet Infects Over 10,000 Systems Worldwide, The Hacker News, March 10, 2023.
+
+31
+
+The Underground Economist: Volume 3, Issue 12, ZeroFox, June 27, 2023.
+
+32  Kevin Poireault, DarkGate and PikaBot Activity Surge in the Wake of QakBot Takedown, Infosecurity Magazine, November 21, 2023.
+
+33  Common Vulnerabilities and Exposures index, MITRE, accessed February 18, 2024.
+
+34  Douglas Jose Pereira dos Santos, 2H 2022 Global Threat Landscape Report: Key Insights for CISOs, Fortinet, March 3, 2023.
+
+35  CVE-2021-44228, NIST National Vulnerability Database, accessed February 18, 2024.
+
+36  CVE-2023-44487, NIST National Vulnerability Database, accessed February 18, 2024.
+
+37
+
+Exploit Prediction Scoring System, Forum of Incident Response and Security Teams, accessed February 18, 2024.
+
+38  CVE-2023-28121, NIST National Vulnerability Database, accessed February 18, 2024.
+
+39  The 2023 Global Ransomware Report, Fortinet, April 20, 2023.
+
+40  Ransomware Extortion Skyrockets in 2023, Reaching $449.1M and Counting, The Hacker News, July 12, 2023.
+
+41  MITRE ATT&CK, accessed February 18, 2024.
+
+42
+
+FortiGuard Labs 1H 2023 Threat Landscape Report, Fortinet, August 7, 2023.
+
+42
+
+2H 2023 Global Threat Landscape ReportCopyright © 2024 Fortinet, Inc. All rights reserved. Fortinet ® , FortiGate® , FortiCare® and FortiGuard®, and certain other marks are registered trademarks of Fortinet, Inc., and other Fortinet names herein may also be registered and/or common
+
+law trademarks of Fortinet. All other product or company names may be trademarks of their respective owners. Performance and other metrics contained herein were attained in internal lab tests under ideal conditions, and actual performance
+
+and other results may vary. Network variables, different network environments and other conditions may affect performance results. Nothing herein represents any binding commitment by Fortinet, and Fortinet disclaims all warranties, whether
+
+express or implied, except to the extent Fortinet enters a binding written contract, signed by Fortinet’s General Counsel, with a purchaser that expressly warrants that the identified product will perform according to certain expressly-identified
+
+performance metrics and, in such event, only the specific performance metrics expressly identified in such binding written contract shall be binding on Fortinet. For absolute clarity, any such warranty will be limited to performance in the same
+
+ideal conditions as in Fortinet’s internal lab tests. Fortinet disclaims in full any covenants, representations, and guarantees pursuant hereto, whether express or implied. Fortinet reserves the right to change, modify, transfer, or otherwise revise
+
+this publication without notice, and the most current version of the publication shall be applicable.
+
+Copyright © 2024 Fortinet, Inc. All rights reserved. May 2, 2024 8:56 am    2564222-0-0-EN
+
+www.fortinet.com
