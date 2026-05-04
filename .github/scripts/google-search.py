@@ -81,6 +81,8 @@ class ConfigLoader:
         self.score_toplevel_domain_penalty: int = scoring.get("toplevel_domain_penalty", 0)
         self.score_existing_domain_match_bonus: int = scoring.get("existing_domain_match_bonus", 0)
         self.score_existing_subdomain_match_bonus: int = scoring.get("existing_subdomain_match_bonus", 0)
+        # Minimum score a result must reach to be accepted (0 = disabled)
+        self.score_min_accept: int = scoring.get("min_accept_score", 0)
 
     def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
         path = self.artifacts_dir / filename
@@ -99,11 +101,69 @@ class ConfigLoader:
 
 
 # ==========================
+# URL UTILITIES
+# ==========================
+def _extract_registered_domain(url: str) -> str:
+    """
+    Return the registered domain (last two labels) from a URL, lowercased.
+    Returns "" on parse failure.
+    """
+    try:
+        host = urllib.parse.urlparse(url).netloc.lower().lstrip("www.")
+        parts = host.split(".")
+        return ".".join(parts[-2:]) if len(parts) >= 2 else host
+    except Exception:
+        return ""
+
+
+def _extract_full_host(url: str) -> str:
+    """
+    Return the full host (netloc), lowercased, without www. prefix.
+    """
+    try:
+        return urllib.parse.urlparse(url).netloc.lower().lstrip("www.")
+    except Exception:
+        return ""
+
+
+def _is_toplevel_domain(url: str) -> bool:
+    """
+    Return True if the URL has an empty or trivially short path — i.e. it
+    points to a site homepage rather than a specific report page.
+    """
+    try:
+        path = urllib.parse.urlparse(url).path.strip("/")
+        return len(path) < 3
+    except Exception:
+        return False
+
+
+def _build_site_scoped_query(query_template: str, query_record: Dict[str, Any], domain: str) -> str:
+    """
+    Build a query using the template but prepend site:<domain> so Google
+    restricts results to that domain only.
+    """
+    base = query_template
+    base = base.replace("{organization}", query_record.get("organization", ""))
+    base = base.replace("{title}",        query_record.get("title",        ""))
+    base = base.replace("{year}",         str(query_record.get("year",     "")))
+    base = base.replace("{query}",        query_record.get("query",        ""))
+    return f"site:{domain} {base.strip()}"
+
+
+# ==========================
 # GOOGLE SEARCH CLIENT
 # ==========================
 class GoogleSearchClient:
     """
     Executes Google Custom Search API queries with retry logic and result scoring.
+
+    Two-phase search strategy (report_url mode with existing_url):
+      Phase 1 — site-scoped: restrict query to the known domain from existing_url.
+                Finds the new year's report on the same subdomain/domain first.
+                This prevents regression to bare homepages or wrong domains.
+      Phase 2 — broad fallback: run unscoped query only if Phase 1 finds nothing
+                above the minimum acceptance threshold.
 
     Credentials are read from the environment variables named in
     google-search-config.json (env_api_key, env_cse_id) — never hardcoded.
@@ -127,18 +187,20 @@ class GoogleSearchClient:
 
     # ── Query builder ─────────────────────────────────────────────────────
 
-    def build_query(self, query_record: Dict[str, Any]) -> str:
+    def build_query(self, query_record: Dict[str, Any], site_domain: str = "") -> str:
         """
-        Substitute placeholders in the mode's query_template using fields
-        from the query record.  Supports {organization}, {title}, {year},
-        and {query} (generic mode).
+        Substitute placeholders in the mode's query_template.
+        If site_domain is provided, prepend site:<domain> to the query.
         """
         q = self.config.query_template
         q = q.replace("{organization}", query_record.get("organization", ""))
         q = q.replace("{title}",        query_record.get("title",        ""))
         q = q.replace("{year}",         str(query_record.get("year",     "")))
         q = q.replace("{query}",        query_record.get("query",        ""))
-        return q.strip()
+        q = q.strip()
+        if site_domain:
+            q = f"site:{site_domain} {q}"
+        return q
 
     # ── Scoring ───────────────────────────────────────────────────────────
 
@@ -146,10 +208,19 @@ class GoogleSearchClient:
         self,
         item: Dict[str, Any],
         query_record: Dict[str, Any],
+        existing_host: str = "",
+        existing_reg_domain: str = "",
     ) -> int:
         """
         Score a single search result using weights from google-search-config.json.
-        Returns -1 to disqualify results from skip_domains.
+
+        Key behaviours:
+        - Returns -1 to hard-disqualify results (skip_domains, exclude_terms, etc.)
+        - Applies a large bonus for exact host match with existing_url (same subdomain)
+        - Applies a smaller bonus for registered-domain match (different subdomain)
+        - Heavily penalises bare top-level domain URLs (no meaningful path)
+        - Requires min_accept_score if configured — bare homepages that only earn
+          the subdomain bonus but nothing else will fall below the threshold.
         """
         cfg       = self.config
         link      = item.get("link", "").lower()
@@ -160,23 +231,22 @@ class GoogleSearchClient:
         org_lower = query_record.get("organization", "").lower()
         year_str  = str(query_record.get("year", ""))
 
-        # Disqualify noise domains
+        # ── Hard disqualifiers ────────────────────────────────────────────
         for domain in cfg.skip_domains:
             if domain.lower() in link:
                 return -1
 
-        # Disqualify results that match exclude_terms (discovery mode)
         if cfg.exclude_terms:
             for term in cfg.exclude_terms:
                 if term.lower() in combined:
                     return -1
 
-        # Disqualify financial reports masquerading as security reports
         if cfg.financial_terms:
             for term in cfg.financial_terms:
                 if term.lower() in title_txt:
                     return -1
 
+        # ── Positive signals ──────────────────────────────────────────────
         score = 0
         if org_lower  and org_lower  in link:       score += cfg.score_org_in_link
         if year_str   and year_str   in link:       score += cfg.score_year_in_link
@@ -184,45 +254,40 @@ class GoogleSearchClient:
         if year_str   and year_str   in title_txt:  score += cfg.score_year_in_title
         if org_lower  and org_lower  in title_txt:  score += cfg.score_org_in_title
 
-        # Parse path for structural penalties
+        # ── Path-based penalties ─────────────────────────────────────────
         parsed = urllib.parse.urlparse(item.get("link", ""))
         path   = parsed.path.strip("/")
 
-        # Penalise bare homepage URLs (very short path → unlikely a report page)
         if cfg.score_short_path_penalty:
             if len(path) < cfg.score_short_path_threshold:
-                score += cfg.score_short_path_penalty  # value is negative
+                score += cfg.score_short_path_penalty  # negative
 
-        # Extra hard penalty for true top-level domains (path is completely empty)
+        # Hard penalty: URL is bare homepage (empty path)
         if cfg.score_toplevel_domain_penalty and not path:
-            score += cfg.score_toplevel_domain_penalty  # value is negative
+            score += cfg.score_toplevel_domain_penalty  # negative
 
-        # Existing URL domain-anchoring bonus
-        # If the query carries a known existing URL, prefer results on the same
-        # domain/subdomain — this prevents drifting to a bare homepage when the
-        # existing entry already points to a specific subdomain (e.g. resource.cobalt.io).
-        existing_url = query_record.get("existing_url", "")
-        if existing_url and cfg.score_existing_domain_match_bonus:
-            existing_host = urllib.parse.urlparse(existing_url).netloc.lower()
-            result_host   = parsed.netloc.lower()
-            if existing_host and result_host:
-                # Strip www. for comparison
-                ex_clean = existing_host.lstrip("www.")
-                re_clean = result_host.lstrip("www.")
-                if ex_clean == re_clean:
-                    # Exact host match (including subdomain like resource.cobalt.io)
-                    score += cfg.score_existing_domain_match_bonus
-                else:
-                    # Check if they share the registered domain (last two labels)
-                    ex_parts = ex_clean.split(".")
-                    re_parts = re_clean.split(".")
-                    ex_reg = ".".join(ex_parts[-2:]) if len(ex_parts) >= 2 else ex_clean
-                    re_reg = ".".join(re_parts[-2:]) if len(re_parts) >= 2 else re_clean
-                    if ex_reg == re_reg and cfg.score_existing_subdomain_match_bonus:
-                        # Same registered domain but different subdomain
-                        score += cfg.score_existing_subdomain_match_bonus
+        # ── Domain anchoring bonus ────────────────────────────────────────
+        # Two-tier: exact subdomain match > registered-domain match.
+        # This is the primary defence against domain regression.
+        result_host       = parsed.netloc.lower().lstrip("www.")
+        result_reg_domain = _extract_registered_domain(item.get("link", ""))
+
+        if existing_host and cfg.score_existing_domain_match_bonus:
+            if result_host == existing_host:
+                # Exact host match including any subdomain
+                score += cfg.score_existing_domain_match_bonus
+            elif (existing_reg_domain and result_reg_domain == existing_reg_domain
+                  and cfg.score_existing_subdomain_match_bonus):
+                # Same registered domain, different subdomain
+                score += cfg.score_existing_subdomain_match_bonus
 
         return score
+
+    def _is_acceptable(self, score: int) -> bool:
+        """True if score meets the minimum acceptance threshold (if configured)."""
+        if self.config.score_min_accept > 0:
+            return score >= self.config.score_min_accept
+        return score >= 0
 
     # ── API call with retry ───────────────────────────────────────────────
 
@@ -249,7 +314,6 @@ class GoogleSearchClient:
                 )
 
                 if resp.status_code == 429:
-                    # Rate limited — sleep and retry
                     wait = delay
                     print(f"  ! Rate limited (429) — waiting {wait:.0f}s...")
                     time.sleep(wait)
@@ -271,30 +335,53 @@ class GoogleSearchClient:
 
         return None
 
+    # ── Best result picker ────────────────────────────────────────────────
+
+    def _pick_best(
+        self,
+        items: List[Dict[str, Any]],
+        query_record: Dict[str, Any],
+        existing_host: str = "",
+        existing_reg_domain: str = "",
+    ) -> Tuple[int, Optional[Dict[str, Any]]]:
+        """
+        Score all items, return (best_score, best_item).
+        Returns (-1, None) if all items are disqualified.
+        """
+        scored = [
+            (self._score_item(item, query_record, existing_host, existing_reg_domain), item)
+            for item in items
+        ]
+        scored.sort(key=lambda x: x[0], reverse=True)
+        best_score, best_item = scored[0]
+        return best_score, best_item if best_score >= 0 else None
+
     # ── Public search API ─────────────────────────────────────────────────
 
     def search(self, query_record: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Execute a single search for the given query_record dict.
-        Returns a result dict conforming to the output schema documented
-        at the top of this file.
+        Execute a search for the given query_record dict.
+
+        Two-phase strategy when existing_url is present:
+          Phase 1 — site-scoped query restricted to the existing URL's exact
+                    host. Strongly prefers results that stay on the known domain
+                    and finds the new year's page. Accepted if score >= min_accept_score.
+          Phase 2 — broad unscoped fallback, only when Phase 1 yields nothing
+                    acceptable. Domain-anchoring bonuses still apply so on-domain
+                    results are preferred over foreign ones.
+
+        If no existing_url, a single broad query is executed (original behaviour).
 
         Optional key in query_record:
-          "existing_url" — the current known URL for this entry (e.g. from the
-          README). When provided, results on the same domain/subdomain receive
-          a scoring bonus, which prevents the search from drifting to a bare
-          homepage when the existing entry already points to a specific page.
-
-        This method is the integration point for other scripts importing
-        this module — call it directly rather than going through main().
+          "existing_url" — the current known URL for this entry from the README.
         """
-        query_id = query_record.get("id", "unknown")
-        query    = self.build_query(query_record)
+        query_id     = query_record.get("id", "unknown")
+        existing_url = query_record.get("existing_url", "")
 
         base_result: Dict[str, Any] = {
             "id":      query_id,
             "status":  "error",
-            "query":   query,
+            "query":   "",
             "url":     "",
             "title":   "",
             "snippet": "",
@@ -307,8 +394,54 @@ class GoogleSearchClient:
             base_result["reason"] = "Google Search credentials not configured"
             return base_result
 
-        print(f"  Searching: {query[:90]}...")
-        items = self._call_api(query, self.config.num_results)
+        # Pre-compute domain components from existing URL for scoring reuse
+        existing_host       = _extract_full_host(existing_url)       if existing_url else ""
+        existing_reg_domain = _extract_registered_domain(existing_url) if existing_url else ""
+
+        # ── Phase 1: site-scoped search (only when existing_url is available) ──
+        if existing_host:
+            site_query = self.build_query(query_record, site_domain=existing_host)
+            base_result["query"] = site_query
+            print(f"  Phase 1 (site-scoped): {site_query[:90]}...")
+
+            items = self._call_api(site_query, self.config.num_results)
+            if items:
+                best_score, best_item = self._pick_best(
+                    items, query_record, existing_host, existing_reg_domain
+                )
+                if best_item is not None and self._is_acceptable(best_score):
+                    # Only accept a site-scoped result if it is NOT a bare homepage.
+                    # A site: search for the homepage itself can return the homepage —
+                    # we want a specific report page, not just "something on this domain."
+                    result_url = best_item.get("link", "")
+                    if not _is_toplevel_domain(result_url):
+                        print(f"  ✓ Phase 1 hit (score={best_score}): {result_url}")
+                        return {
+                            "id":      query_id,
+                            "status":  "success",
+                            "query":   site_query,
+                            "url":     result_url,
+                            "title":   best_item.get("title",   ""),
+                            "snippet": best_item.get("snippet", ""),
+                            "score":   best_score,
+                            "reason":  "site-scoped",
+                        }
+                    else:
+                        print(f"  ⊘ Phase 1 result is bare homepage — falling through to Phase 2")
+                else:
+                    print(f"  ⊘ Phase 1: no acceptable result (best score={best_score}) — trying broad search")
+            else:
+                print(f"  ⊘ Phase 1: no results — trying broad search")
+
+            # Rate limit pause between phase 1 and phase 2
+            time.sleep(self.config.rate_limit_sleep)
+
+        # ── Phase 2 (or sole query): broad unscoped search ────────────────
+        broad_query = self.build_query(query_record)
+        base_result["query"] = broad_query
+        print(f"  {'Phase 2 (broad):' if existing_host else 'Searching:'} {broad_query[:90]}...")
+
+        items = self._call_api(broad_query, self.config.num_results)
 
         if items is None:
             base_result["reason"] = "API call failed after retries"
@@ -319,29 +452,42 @@ class GoogleSearchClient:
             base_result["reason"] = "Query returned no results"
             return base_result
 
-        # Score all results and select the best non-disqualified one
-        scored = [
-            (self._score_item(item, query_record), item)
-            for item in items
-        ]
-        scored.sort(key=lambda x: x[0], reverse=True)
+        best_score, best_item = self._pick_best(
+            items, query_record, existing_host, existing_reg_domain
+        )
 
-        best_score, best_item = scored[0]
-
-        if best_score < 0:
+        if best_item is None:
             base_result["status"] = "no_results"
             base_result["reason"] = "All results disqualified by domain/term filters"
+            return base_result
+
+        result_url = best_item.get("link", "")
+
+        # Final guard: if the best result is still a bare homepage and we have
+        # an existing specific URL, keep the existing URL rather than regressing.
+        if _is_toplevel_domain(result_url) and existing_url and not _is_toplevel_domain(existing_url):
+            print(f"  ⊘ Broad search best result is bare homepage — keeping existing URL")
+            base_result["status"] = "no_results"
+            base_result["reason"] = "Best result was bare homepage; existing specific URL preferred"
+            return base_result
+
+        # Enforce minimum acceptance score for broad results too
+        if not self._is_acceptable(best_score):
+            print(f"  ⊘ Best broad result score {best_score} below min_accept_score "
+                  f"{self.config.score_min_accept}")
+            base_result["status"] = "no_results"
+            base_result["reason"] = f"Best score {best_score} below acceptance threshold"
             return base_result
 
         return {
             "id":      query_id,
             "status":  "success",
-            "query":   query,
-            "url":     best_item.get("link",    ""),
+            "query":   broad_query,
+            "url":     result_url,
             "title":   best_item.get("title",   ""),
             "snippet": best_item.get("snippet", ""),
             "score":   best_score,
-            "reason":  "",
+            "reason":  "broad",
         }
 
     def search_batch(
@@ -379,12 +525,12 @@ def search_one(
     Convenience function for other scripts that want to resolve a single
     report URL without constructing config/client objects themselves.
 
-    Returns the best result URL string, or None if unavailable.
+    Returns the best result URL string, or None if unavailable / below threshold.
 
     Pass ``existing_url`` (the current org_url from the README entry) to
-    enable domain-anchoring scoring — this strongly prefers results on the
-    same domain/subdomain as the existing entry and prevents regression to a
-    bare top-level homepage.
+    enable Phase 1 site-scoped search — this finds the new year's report on
+    the same domain before falling back to a broad query.  Without it, only
+    a broad query is run.
 
     Example usage in readme-updater.py:
         from google_search import search_one
@@ -418,7 +564,6 @@ def main() -> int:
     parser = argparse.ArgumentParser(
         description="Google Custom Search — batch query runner",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog=__doc__,
     )
     parser.add_argument(
         "--queries-json",
@@ -449,7 +594,6 @@ def main() -> int:
     print("Google Custom Search")
     print(f"{'='*70}\n")
 
-    # ── Load config ───────────────────────────────────────────────────────
     try:
         config = ConfigLoader(args.artifacts_dir, mode=args.mode)
     except Exception as e:
@@ -461,9 +605,9 @@ def main() -> int:
     print(f"  Query template : {config.query_template}")
     print(f"  Results per q  : {config.num_results}")
     print(f"  Skip domains   : {len(config.skip_domains)}")
+    print(f"  Min accept     : {config.score_min_accept}")
     print()
 
-    # ── Build client ──────────────────────────────────────────────────────
     client = GoogleSearchClient(config)
     print(
         f"  Google Search  : "
@@ -471,7 +615,6 @@ def main() -> int:
     )
     print()
 
-    # ── Load queries ──────────────────────────────────────────────────────
     queries_path = Path(args.queries_json)
     if not queries_path.exists():
         print(f"ERROR: Queries file not found: {args.queries_json}")
@@ -492,10 +635,8 @@ def main() -> int:
 
     print(f"✓ {len(queries)} query/queries to execute\n")
 
-    # ── Execute ───────────────────────────────────────────────────────────
     results = client.search_batch(queries)
 
-    # ── Save results ──────────────────────────────────────────────────────
     with open(args.output_json, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
 
@@ -507,7 +648,7 @@ def main() -> int:
     print(f"\n{'='*70}")
     print(f"✓ Success    : {successful}/{len(results)}")
     if no_results: print(f"⊘ No results : {no_results}/{len(results)}")
-    if skipped:    print(f"⊘ Skipped    : {skipped}/{len(results)}")
+    if skipped:    print(f"⊘ Skipped    : {skipped}/{len(results)}  (phase-1 site hits count as success)")
     if errors:     print(f"✗ Errors     : {errors}/{len(results)}")
     print(f"✓ Results saved to: {args.output_json}")
     print(f"{'='*70}\n")
