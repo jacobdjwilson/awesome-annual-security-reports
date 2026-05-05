@@ -2,746 +2,792 @@
 
 ## Table of Contents
 - [A C-suite united on cyber-ready futures](#a-c-suite-united-on-cyber-ready-futures)
-- [Findings from the 2023 Global Digital Trust Insights](#findings-from-the-2023-global-digital-trust-insights)
-- [Good news: progress in cybersecurity since 2020](#good-news-progress-in-cybersecurity-since-2020)
-- [Cyber has progressed on many fronts, C-suite execs report](#cyber-has-progressed-on-many-fronts-c-suite-execs-report)
-- [High marks for CISOs and their teams from other execs](#high-marks-for-cisos-and-their-teams-from-other-execs)
-- [CEO view](#ceo-view)
-- [CRO and COO view](#cro-and-coo-view)
-- [CDO, CPO, CMO view](#cdo-cpo-cmo-view)
 - [But the goalposts keep moving](#but-the-goalposts-keep-moving)
-- [Fewer than 40% have fully mitigated emerging cyber risks](#fewer-than-40-have-fully-mitigated-emerging-cyber-risks)
-- [CISOs see the need to advance further on five cyber capabilities](#cisos-see-the-need-to-advance-further-on-five-cyber-capabilities)
 - [Organisations worry about more threats and cyber events in 2023](#organisations-worry-about-more-threats-and-cyber-events-in-2023)
-- [Pathways for attacks](#pathways-for-attacks)
-- [Threat actors](#threat-actors)
-- [Cyber events](#cyber-events)
-- [New challenges for 2023](#new-challenges-for-2023)
 - [C-suite playbook on cyber](#c-suite-playbook-on-cyber)
-- [Cyber in the suite spot](#cyber-in-the-suite-spot)
 - [CEOs take a more active stance on cybersecurity this year](#ceos-take-a-more-active-stance-on-cybersecurity-this-year)
-- [CEOs forging ahead to tackle cyber insecurity — and win](#ceos-forging-ahead-to-tackle-cyber-insecurity-and-win)
 - [Boards can spur better cyber reporting to improve oversight](#boards-can-spur-better-cyber-reporting-to-improve-oversight)
-- [Boards know they need to be better cyber stewards](#boards-know-they-need-to-be-better-cyber-stewards)
 - [The new era of cyber transparency](#the-new-era-of-cyber-transparency)
 - [CIOs, CTOs, and CISOs tackle cloud security](#cios-ctos-and-cisos-tackle-cloud-security)
-- [Cloud security initiatives are paying off, but more work remains](#cloud-security-initiatives-are-paying-off-but-more-work-remains)
 - [CFOs and CISOs get serious about cyber investment risks vs. rewards](#cfos-and-cisos-get-serious-about-cyber-investment-risks-vs-rewards)
-- [Budgeting for cyber is changing](#budgeting-for-cyber-is-changing)
 - [COOs and CISOs team up on plans to defend against rising attacks to the supply chain and OT](#coos-and-cisos-team-up-on-plans-to-defend-against-rising-attacks-to-the-supply-chain-and-ot)
-- [Operational technologies: More, better solutions needed](#operational-technologies-more-better-solutions-needed)
 - [CROs and CISOs responding to risk with resilience](#cros-and-cisos-responding-to-risk-with-resilience)
-- [Fragmented or expansive: What’s your approach to organisational resilience?](#fragmented-or-expansive-whats-your-approach-to-organisational-resilience)
 - [Collaboration on data security and privacy protection is urgent](#collaboration-on-data-security-and-privacy-protection-is-urgent)
-- [To serve customers, data is becoming a must-have tool](#to-serve-customers-data-is-becoming-a-must-have-tool)
-- [Data security and privacy are the Achilles' heel of many organisations](#data-security-and-privacy-are-the-achilles-heel-of-many-organisations)
-- [CISOs and CHROs are breaking old molds](#cisos-and-chro-are-breaking-old-molds)
-- [Expanding qualifications helps companies find new talent](#expanding-qualifications-helps-companies-find-new-talent)
-- [Securing your managed services](#securing-your-managed-services)
-- [Scenarios to illustrate need for C-suite collaboration](#scenarios-to-illustrate-need-for-c-suite-collaboration)
-- [Braced and ready for different scenarios](#braced-and-ready-for-different-scenarios)
-- [Scenario 1: Cloud-based attacks](#scenario-1-cloud-based-attacks)
-- [Scenario 2: Attacks on operational technology](#scenario-2-attacks-on-operational-technology)
-- [Scenario 3: Ransomware](#scenario-3-ransomware)
-- [About the survey](#about-the-survey)
-- [Contact us to learn more](#contact-us-to-learn-more)
+- [CISOs and CHROs are breaking old molds](#cisos-and-chros-are-breaking-old-molds)
 
 ---
 
-The official report URL is: https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html
+## A C-suite united on cyber-ready futures
 
-# A C-suite united on cyber-ready futures
+It’s a bold new world in business. Driven by events no one could have foreseen, leaders in recent years have pushed their companies and themselves beyond their comfort zones: out of the office to remote workplaces; into the cloud; along chains of supply that are almost completely digital. And with each new venture has come new cyber risks.
 
-# Findings from the 2023 Global Digital Trust Insights
+CISOs and cyber teams are rising to the challenge. C-suites are joining forces with them, recognising that their bold moves have increased their organisations’ cyber risk exposure.
 
-1
+### Good news: progress in cybersecurity since 2020
+More than 70% of the 3,522 business and tech executives we surveyed saw improvements in their enterprise’s cybersecurity this year — thanks to cumulative investments and C-suite collaboration. More than a quarter (26%) reported progress in all 10 of the areas we identified as critical to cyber maturity.
 
-PwC | Global Digital Trust Insights 2023
-
-It’s a bold new world in business.
-
-Driven by events no one could have foreseen, leaders in
-recent years have pushed their companies and themselves
-beyond their comfort zones: out of the office to remote
-workplaces; into the cloud; along chains of supply that are
-almost completely digital. And with each new venture has
-come new cyber risks.
-
-CISOs and cyber teams are rising to the challenge.
-C-suites are joining forces with them, recognising that
-their bold moves have increased their organisations’ cyber
-risk exposure.
-
-## Good news: progress in cybersecurity since 2020
-
-More than 70% of the 3,522 business and tech executives we
-surveyed saw improvements in their enterprise’s cybersecurity
-this year — thanks to cumulative investments and C-suite
-collaboration. More than a quarter (26%) reported progress in
-all 10 of the areas we identified as critical to cyber maturity.
-
-### Cyber has progressed on many fronts, C-suite execs report
-
-![Chart showing percentage of cybersecurity team accomplishments in the past 12 months.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-1.png)
-Q: Please indicate whether or not your organisation’s cybersecurity team has accomplished the following in the past 12 months.
-Base: 3,522
-Source: PwC 2023 Global Digital Trust Insights Survey
-
-2
-
-PwC | Global Digital Trust Insights 2023
-
-Among those who saw improvement across the 10 areas:
-
-*   CEOs are 3x more likely to say their CISOs are delivering
-    exceptional results in outcomes like responding faster
-    to threats and anticipating future cyber risks. Nearly 8%
-    said the CISO is doing so in every area.
-*   CROs/COOs are 2x more likely to rate as exceptional
-    their cyber and privacy programmes. More than 5% said
-    their programmes are doing so in every outcome.
-*   CMOs/CDOs/CPOs are 2.5x more likely to agree that
-    their cyber and privacy programmes are valuable to the
-    organisation. Their greatest benefit: confidence in the
-    ability to nurture consumer trust.
-
-### High marks for CISOs and their teams from other execs
-
-#### CEO view
-
-![Chart showing CEO views on CISO performance.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-2.png)
-Q: How is the Chief Information Security Officer (CISO) delivering against
-the following outcomes and expectations with regard to your organisation’s
-cybersecurity in 2022-2023?
-Base: 919 CEOs and corporate directors
-Source: PwC 2023 Global Digital Trust Insights Survey
-
-3
-
-PwC | Global Digital Trust Insights 2023
-
-### High marks for CISOs and their teams from other execs
-#### CRO and COO view
-
-![Chart showing CRO and COO views on cyber and security program performance.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-3.png)
-Q: In your view, how well is the cybersecurity and privacy programme delivering against the following outcomes and expectations with regard to your
-organisation’s cybersecurity in 2021-2022?
-Base: 711 CROs, COOs, and senior executives in risk and compliance and operations
-Source: PwC 2023 Global Digital Trust Insights Survey
-
-#### CDO, CPO, CMO view
-
-![Chart showing CDO, CPO, CMO views on cybersecurity and privacy programs.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-4.png)
-Q: To what extent do you agree or disagree with the following statements about the value you draw from your cybersecurity and privacy programmes
-and teams?
-Base: 412 CDOs, CPOs, CMOs and senior executives of customer-facing functions
-Source: PwC 2023 Global Digital Trust Insights Survey
-
-4
-
-PwC | Global Digital Trust Insights 2023
+![Chart: Cyber has progressed on many fronts, C-suite execs report]
 
 ## But the goalposts keep moving
+Digitisation makes security everyone’s business. The future promises more connected systems and exponentially more data — and more organised adversaries. With ever-expanding cyber risks, business leaders have much more work to do — and in a tough economic environment.
 
-Digitisation makes security everyone’s business. The future
-promises more connected systems and exponentially
-more data — and more organised adversaries. With ever-
-expanding cyber risks, business leaders have much more
-work to do — and in a tough economic environment.
+Fewer than 40% of respondents say they have fully mitigated the risks their bold moves incurred since 2020. Remote work (38%) and the move to the cloud (35%) have commanded the most attention. Larger organisations (more than $1 billion in revenues) and those based in North America are far more likely to have said they’ve mitigated these risks. Less than 3% of respondents say they have done so fully with all 10 risks.
 
-Fewer than 40% of respondents say they have fully
-mitigated the risks their bold moves incurred since 2020.
-Remote work (38%) and the move to the cloud (35%) have
-commanded the most attention. Larger organisations (more
-than $1 billion in revenues) and those based in North America
-are far more likely to have said they’ve mitigated these risks.
-Less than 3% of respondents say they have done so fully
-with all 10 risks.
+![Chart: Fewer than 40% have fully mitigated emerging cyber risks]
 
-### Fewer than 40% have fully mitigated emerging cyber risks
+By their own assessment, CISOs see the need to advance further on five basic cyber capabilities outlined in the US National Institute of Security and Technology’s (NIST) Cybersecurity Framework. Only three percent responded that they were “optimising” in all five.
 
-![Chart showing mitigation of cyber risks associated with various initiatives.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-5.png)
-Q: On a scale of 1 to 10, to what extent has your organisation mitigated the cybersecurity risks associated with each of the following in the last 12 months?
-Base: 3,522
-Source: PwC 2023 Global Digital Trust Insights Survey
+![Chart: CISOs see the need to advance further on five cyber capabilities]
 
-5
+## Organisations worry about more threats and cyber events in 2023
+Senior executives worry that their enterprise isn’t fully prepared to address heightened threats. Topping the 2023 list of rising organisational threats are cybercriminal activity (65%); mobile devices (41%), email (40%), cloud-based breaches (38%); and business email compromise/account takeover (33%) and ransomware (32%).
 
-PwC | Global Digital Trust Insights 2023
+![Chart: Pathways for attacks]
+![Chart: Threat actors]
+![Chart: Cyber events]
 
-By their own assessment, CISOs see the need to advance
-further on five basic cyber capabilities outlined in the US
-National Institute of Security and Technology’s (NIST)
-Cybersecurity Framework. Only three percent responded
-that they were “optimising” in all five.
+### New challenges for 2023
+- Only 9% of the respondents feel highly confident that they can effectively meet all disclosure requirements — even as pressure mounts from regulators to report cyber incidents.
+- Senior executives are bracing not only for a catastrophic cyber attack but also for global recession, a new health crisis, persistent inflation, and supply chain bottlenecks. Yet only 7% approach resilience in an integrated fashion.
+- Consumers, consumer-friendly regulators, privacy advocates and ESG activists are gaining ground. Data security and privacy are the Achilles’ heel of many organisations. Fewer than 5% of senior executives say they always implement 10 standard and leading practices to protect and govern customer data.
 
-Larger organisations with revenues greater than $1 billion are
-more likely to say they’re optimising for Identify (21%). Those
-that have seen revenue increases and expect increases to
-continue are more likely to be optimising for all.
+## C-suite playbook on cyber
+Cybersecurity has become a dynamic field, rapidly adjusting and shifting to keep apace with business inventiveness. Agility is what’s needed for the tougher challenges ahead.
 
-### CISOs see the need to advance further on five cyber capabilities
+### Cyber in the suite spot
+CISO are seizing the initiative to truly lead — to step out of their independent cyber-specialist role and into one of partnering with not just with a few executives, but the entire C-suite. These collaborations have never been more critical.
 
-![Chart showing cybersecurity capability maturity levels.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-6.png)
-Q: Thinking about your cyber-security capabilities in their entirety, please indicate how mature your organisation is in each of the following areas.
+Forty-two percent of senior executives say cyber breaches of their systems have increased since 2020. More than a quarter had a consequential data breach in the past three years that cost more than $1 million. Around 10% suffered costs of $10 million or more, CISOs and CFOs reported.
+
+## CEOs take a more active stance on cybersecurity this year
+More than half of CEOs say they’ll demand a cyber risk management plan for each major business or operational change. And more than half say they’ll spearhead major initiatives such as streamlining the supply chain and eliminating products that weaken the enterprise’s cyber posture.
+
+![Chart: CEOs forging ahead to tackle cyber insecurity — and win]
+
+## Boards can spur better cyber reporting to improve oversight
+Boards are more engaged in cyber as their companies face increasing risks. Fifty-four percent say their organisation has taken on more cyber risks as it pursues more digitisation, and 44% report an increase in cyber breaches into their system since 2020.
+
+![Chart: Boards know they need to be better cyber stewards]
+
+## The new era of cyber transparency
+Stakeholders clamor for more information about how companies manage their cyber risk exposure. Regulators want visibility into cyber practices because they want to protect citizens from fraud and loss of privacy, help investors make better decisions, and prevent industry- or system-wide disruptions.
+
+Four-fifths of senior executives in our survey agree that mandatory disclosure of cyber incidents, with comparable and consistent formats, is necessary to gain stakeholder confidence and trust. But fewer than 10% are confident that their enterprise can comply.
+
+## CIOs, CTOs, and CISOs tackle cloud security
+Cloud-based threats are increasing at nearly 40% of organisations. Meanwhile, nearly two-thirds of senior executives say they haven’t fully mitigated the risks of cloud adoption.
+
+![Chart: Only 19% are very confident that their cloud environment is secured appropriately against all four]
+
+## CFOs and CISOs get serious about cyber investment risks vs. rewards
+Companies continue to increase their spending on cybersecurity. Sixty-five percent of senior executives tell us they expect an increase in 2023, compared to 69% in 2022.
+
+![Chart: Companies rein in cyber spending increases]
+
+## COOs and CISOs team up on plans to defend against rising attacks to the supply chain and OT
+The supply chain is a focal point for cyber and other threats, competitive and macroeconomic pressures, and ESG concerns. More than half (56%) of CROs and COOs tell us they’re extremely or very concerned about their ability to withstand supply chain attacks.
+
+![Chart: Operational technologies: More, better solutions needed]
+
+## CROs and CISOs responding to risk with resilience
+“Risk” is the word in cyber today. More and more, cybersecurity teams are working together with those in risk, internal audit and compliance, a sign that cyber is taking an important place as an enterprise risk-management priority.
+
+![Chart: Fragmented or expansive: What’s your approach to organisational resilience?]
+
+## Collaboration on data security and privacy protection is urgent
+Companies are becoming adept at using data to better understand what customers want and give it to them. Data is now part and parcel of their customer-centric digital transformation.
+
+![Chart: To serve customers, data is becoming a must-have tool]
+![Chart: Data security and privacy are the Achilles' heel of many organisations]
+
+## CISOs and CHROs are breaking old molds
+Attrition is a growing problem for 39% of CISOs, CIOs, and CTOs. It’s hindering progress on cyber goals for another 15%. In response, perhaps, CISOs and CHROs are breaking old molds to fill cyber positions faster and retain the talent they have.
+
+![Chart: Expanding qualifications helps companies find new talent]
+
+---
+
+data science
+
+                    37%
+
+         43%
+
+18%
+
+Experience in business management or operations
+
+                      34%
+
+           46%
+
+19%
+
+Increasing racially/ethnically diversity in the team
+
+                        31%
+
+   35%
+
+30%
+
+Increasing gender diversity in the team
+
+                          29%
+
+           46%
+
+22%
+
+Increasing neurodiversity in the team
+
+                           28%
+
+ 31%
+
+36%
+
+Q: In hiring for your cybersecurity team, to what extent do you consider the following characteristics in your final hiring decision?
 Base: 465 CISOs
 Source: PwC 2023 Global Digital Trust Insights Survey
 
-6
+26
 
-PwC | Global Digital Trust Insights 2023
+PwC  |  Global Digital Trust Insights 2023To help close the talent gap, CISOs have found three
+approaches to be among the most effective:
 
-Senior executives worry that their enterprise isn’t fully
-prepared to address heightened threats. Topping the
-2023 list of rising organisational threats are cybercriminal
-activity (65%); mobile devices (41%), email (40%), cloud-based
-breaches (38%); and business email compromise/account
-takeover (33%) and ransomware (32%).
+•  Upskilling (45%)
 
-### Organisations worry about more threats and cyber
-events in 2023
+•  Hiring incentives, e.g., sign-in bonuses (41%)
 
-#### Pathways for attacks
+•  Managed services for cyber (36%)
 
-![Chart showing expected impact of threats via different pathways.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-7.png)
-Q: For each of the threat actors below, which do you expect to significantly
-affect your organisation in 2023 compared to 2022?
+Securing your managed services
+
+Managed security service is second only to network security
+as a top investment priority for cyber in 2023.
+
+targeting MSPs. In May 2022, the cybersecurity authorities
+of the United Kingdom, Australia, Canada, and the United
+States issued a joint advisory to companies for safeguarding
+themselves amid this trend.
+
+About half of the CISOs we surveyed have fully implemented
+a number of measures to manage their third-party risks.
+
+Fifty-seven percent report disabling MSP accounts that are
+no longer managing infrastructure. Forty-five percent enforce
+multi-factor authentication across all services and products.
+
+Just as spending and reliance on managed security providers
+(MSPs) is gaining steam, so has malicious cyber activity
+
+But more work remains. Only 2.2% have implemented all
+these security practices across the board.
+
+Companies are finding ways to use managed services securely
+
+Only 2.2% have fully implemented all 10 practices
+
+Disable managed service provider (MSP) accounts
+that are no longer managing infrastructure
+
+Verify that the networks used for trust relationships with
+managed service providers (MSPs) are suitably
+segregated from the rest of their networks
+
+Review and verify all connections between internal systems,
+managed service provider (MSP) systems, and other networks
+
+Ensure that contractual arrangements with managed service
+providers (MSPs) include backup services that meet their
+resilience and disaster recovery requirements
+
+Apply the principle of least privilege throughout the managed
+service provider and customer network environments and
+immediate update privileges upon changes in administrative roles
+
+Audit the organisation’s network infrastructure, paying
+particular attention to those on the MSP-customer boundary,
+to identify and disable unused systems and services
+
+             57%
+
+     28%
+
+   10%
+
+     49%
+
+     36%
+
+     12%
+
+     48%
+
+ 33%
+
+ 13%
+
+     48%
+
+    36%
+
+  10%
+
+    47%
+
+   36%
+
+   13%
+
+   46%
+
+ 35%
+
+12%
+
+Ensure management of identity providers and
+trusts between the different environments
+
+  45%
+
+ 36%
+
+  14%
+
+Ensure that contractual arrangements with MSP include
+incident response and recovery plans that meet their
+resilience and disaster recovery requirements
+
+Implement a comprehensive security event management
+for effective monitoring and logging of systems
+
+44%
+
+44%
+
+  38%
+
+  13%
+
+        44%
+
+      7%
+
+Enforce multi-factor authentication
+across all services and products
+
+  46%
+
+35%
+
+11%
+
+Fully implemented              Starting to implement               Planning to implement
+
+Not implemented and not planning to                                    Don't know
+
+Q: Thinking about using managed cybersecurity services, to what extent has your organisation put the following measures in place to manage the risks
+associated with using external resources to address gaps in your cyber talent and capabilities?
+Base: 278 respondents who selected managed services as one of the top effective approaches for addressing the gap in cyber talent
+Source: PwC 2023 Global Digital Trust Insights Survey
+
+27
+
+PwC  |  Global Digital Trust Insights 2023Message to CHROs
+
+Employee turnover is rising in a variety of markets, while fears
+of recession are causing companies anxiety about hiring
+plans. Amid the uncertainty, they might delay doing anything,
+especially when they know they need to try something new to
+avert the crisis amid the phenomena described variously as
+the “great rethink,” “great resignation” and “quiet quitting.”
+
+CISOs and risk executives need to help CHROs ascertain
+the cumulative effects and cascading operational risks of
+employee attrition. No matter which creative responses
+businesses employ to retain and hire talent, senior executives
+also need to help manage reputational risks.
+
+CALL TO ACTION: Ask which skills you really need
+in your cyber programme, update how you recruit
+for those, and give your cyber talent incentives
+and growth paths that are reasons to stay. Your
+reliance on managed services and other external
+talent resources will only grow. Add cybersecurity
+measures to contracts.
+
+28
+
+PwC  |  Global Digital Trust Insights 2023Scenarios to illustrate need for
+C-suite collaboration
+
+We’ve selected three of the cyber event types most concerning
+to senior executives.
+
+Although the tactics and techniques in these scenarios might
+require technical expertise to understand, this much should
+be clear: the consequences of each spill over to areas that
+executives in operations, finance, data, and enterprise risk
+management need to address.
+
+The call to action for each C-suite executive isn’t intended to be
+prescriptive. Instead it illustrates the various angles that might
+need to be addressed for a full and lasting response to cyber
+attack. In cyber, a disengaged executive is a point of failure.
+
+29
+
+PwC  |  Global Digital Trust Insights 2023Braced and ready for different scenarios
+
+How will the scenarios organisations face in 2023 test senior
+executives’ ability to work together amid crises and avoid
+business disruptions?
+
+Catastrophic cyber attack is the nearly unanimous number-
+one concern. Only CFOs ranked it second, after global
+recession and alongside worries about another health crisis
+such as a COVID-19 resurgence.
+
+These scenarios require the C-suite to work together, but
+cybersecurity may be the only problem that requires all hands
+on deck to resolve — and one over which an organisation
+arguably has some control.
+
+Two-thirds of executives consider cybercriminals to be the
+most significant threat actor to their organisation in the
+coming year. Cyber attacks are a thriving business and make
+lucrative careers for cybercriminals.
+
+Cybercrime-as-a-service and off-the-shelf tools allow criminals
+to perpetrate and orchestrate a variety of profitable attacks.
+Ransomware operations, for instance, now run as businesses
+with the main operator “leasing” the ransomware from affiliates.
+Cybercriminals can then deploy leased ransomware large-scale
+across multiple targets.
+
+Starting in 2021, the PwC Threat Intelligence group also
+saw more commercial quartermasters, or companies selling
+cybercrime tools such as spyware, zero-day exploits, and
+other types of malware to more customers in many countries.
+
+These global operations make it easier to get started in a life
+of cybercrime: no longer do threat actors need to develop
+their own malware. At the same time, distributed malware
+makes identifying the culprits more difficult.
+
+These commercially available tools are effective against a wide
+array of targets including, perhaps, government officials and
+private sector executives. Organisations that have deemed
+these types of threats outside their realm need to think again.
+
+Cyber tops a broad array of perceived threats
+
+% who rank these in their top five scenarios
+
+A catastrophic cyber attack
+
+                        50%
+
+Global recession
+
+                 45%
+
+A resurgence of COVID-19
+or a new health crisis
+
+                42%
+
+Inflationary environment
+
+             38%
+
+Supply chain bottlenecks
+
+         34%
+
+A new geopolitical conflict
+
+       33%
+
+Commodity market volatility
+
+Credit crunch / significantly
+reduced access to capital
+
+     32%
+
+     31%
+
+Significant churn in our workforce
+
+     31%
+
+Social instability
+
+A natural disaster or extreme
+weather event
+
+    31%
+
+  30%
+
+Sanctions enforcement
+
+25%
+
+A food crisis
+
+21%
+
+Q: Thinking about overall risks to your organisation over the next 12-24
+months, please rank the top five scenarios that you are formally incorporating
+into your organisational resilience plans.
 Base: 3,522
 Source: PwC 2023 Global Digital Trust Insights Survey
 
-#### Threat actors
-
-![Chart showing expected impact of different threat actors.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-8.png)
-Q: For each of the pathways by which adversaries can gain access to your
-systems, please select those that you expect to significantly affect your
-organisation in 2023 compared to 2022.
-Base: 3,522
-Source: PwC 2023 Global Digital Trust Insights Survey
-
-7
-
-PwC | Global Digital Trust Insights 2023
-
-### Organisations worry about more threats and cyber
-events in 2023
-
-#### Cyber events
-
-![Chart showing expected increase in cyber attacks.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-9.png)
-Q: Which of the following attacks to your organisation do you expect to
-significantly increase in 2023 compared to 2022?
-Base: 3,522
-Source: PwC 2023 Global Digital Trust Insights Survey
-
-#### New challenges for 2023
-
-*   Only 9% of the respondents feel highly confident that
-    they can effectively meet all disclosure requirements —
-    even as pressure mounts from regulators to report
-    cyber incidents.
-
-In Europe, for instance, the EU Agency for Cybersecurity
-(ENISA) requires that critical service providers to report
-to national authorities in event of any significant
-cybersecurity incident.
-
-The US Securities and Exchange Commission is
-considering a rule that would require publicly held
-companies to disclose their cyber risk management,
-strategy, governance and “material” cyber incidents.
-
-And proposed US Cybersecurity and Infrastructure
-Security Agency (CISA) rules, mandated by the Cyber
-Incident Reporting for Critical Infrastructure Act of 2022
-(CIRCIA) signed into law last March, would require
-organisations in 16 critical infrastructure sectors to report
-major cyber attacks and breaches within 72 hours and
-to report within 24 hours any ransomware payments they
-make.
-
-*   Senior executives are bracing not only for a catastrophic
-    cyber attack but also for global recession, a new health
-    crisis, persistent inflation, and supply chain bottlenecks.
-    Yet only 7% approach resilience in an integrated fashion.
-*   Consumers, consumer-friendly regulators, privacy
-    advocates and ESG activists are gaining ground. Data
-    security and privacy are the Achilles’ heel of many
-    organisations. Fewer than 5% of senior executives
-    say they always implement 10 standard and leading
-    practices to protect and govern customer data.
-
-Senior executives are bracing not only for
-a catastrophic cyber attack but also for
-global recession, a new health crisis, high
-inflation, and supply chain bottlenecks. Yet
-only eight percent approach resilience in an
-integrated fashion.
-
-8
-
-PwC | Global Digital Trust Insights 2023
-
----
-
-C-suite
-playbook
-on cyber
-
-PwC | Global Digital Trust Insights 2023
-
-9
-
-PwC | Global Digital Trust Insights 2023
-
-## C-suite playbook on cyber
-
-Cybersecurity has become a dynamic field, rapidly adjusting
-and shifting to keep apace with business inventiveness.
-
-Agility is what’s needed for the tougher challenges ahead.
-How can you continue to make a difference? Where should
-CISOs and cyber teams wield influence for the greatest effect?
-
-The C-suite playbook on cybersecurity, featuring our
-latest Global Digital Trust Insights, highlights what you’ve
-done, what you’re doing now, and what you need to do to
-tackle the challenges of 2023 — with your fellow executives,
-all working together to build cyber-ready futures.
-
-### Cyber in the suite spot
-
-CISO are seizing the initiative to truly lead — to step out
-of their independent cyber-specialist role and into one of
-partnering with not just with a few executives, but the entire
-C-suite. These collaborations have never been more critical.
-
-Forty-two percent of senior executives say cyber breaches
-of their systems have increased since 2020. Executives and
-boards should ask again and again, “Are we affected?”
-and, if not, “Are we vulnerable?”
-
-More than a quarter had a consequential data breach in the
-past three years that cost more than $1 million. Around 10%
-suffered costs of $10 million or more, CISOs and
-CFOs reported.
-
-To CFOs, the most devastating consequences when a breach
-(other than a data breach) occurred were:
-
-*   Downtime or disruptions
-*   Damage to service and product quality
-*   Lost contracts and business opportunities
-*   Lost customers
-*   Costs to recover data (not counting ransom payments)
-*   Lost customer data (if not recovered)
-
-These gut-wrenching moments can serve as a catalyst to
-collaboration, sharpening awareness of a single breach’s
-ripple effects from shop floor to boardroom and calling the
-entire C-suite to act — together.
-
-As a result, the C-suite has renewed its resolve to do better
-on cyber and privacy. To get there, top executives are starting
-to understand the need to work as a cohesive unit — the
-“suite” spot.
-
-At the center is the CISO, empowered by the CEO to
-advocate, collaborate, and orchestrate a better cyber future.
-Forty-six percent of CEOs — 49% at previously breached
-organisations — want to give the CISO more authority to
-drive collaboration on security next year.
-
-A note:
-
-Management teams are organised differently around
-the world, so we may refer to C-suite titles that might
-not exist in your organisation.
-
-Consider the titles as shorthand for the executive
-tasked with cybersecurity in the organisation (CISO)
-who works with the executives responsible for the
-overall business (CEO), management oversight and
-governance (the board), technology infrastructure (CIO
-/ CTO), cyber investments (CFO), operations and supply
-chain (COO), risk management (CRO), data (CDO / CPO)
-and human resources (CHRO).
-
-PwC | Global Digital Trust Insights 2023
-
-10
-
-PwC | Global Digital Trust Insights 2023
-
-### CEOs take a more active stance on cybersecurity this year
-
-More than half of CEOs say they’ll
-demand a cyber risk management
-plan for each major business or
-operational change. And more than
-half say they’ll spearhead major
-initiatives such as streamlining
-the supply chain and eliminating
-products that weaken the enterprise’s
-cyber posture.
-
-CEOs at companies that have suffered breaches in the past
-are even more determined to change how cyber gets done.
-
-CEOs want more information to help them do a better job
-overseeing their organisations’ cyber programmes.
-More than 35% prioritise three areas for better reporting:
-
-*   Cyber risk assessments and practices
-*   Business continuity plans, contingency, and recovery
-    plans in the case of a cyber incident
-*   A dashboard on key cyber risks
-
-CISOs are learning how to give their CEOs just the right
-information on their cyber programme and the risks their
-organisation faces.
-
-Message to the CEO
-
-Where can you, the CEO, make the most difference in
-cybersecurity? Big changes may be the most effective way
-to improve cyber posture — and only you can instigate them.
-
-Are you tolerating avoidable, unnecessary complexities in
-your operations and technologies? This needs to change.
-
-But so often, investigations after a major cyber breach reveal
-weaknesses more systemic than technological, caused by
-a lack of focus among enterprise leaders on addressing
-weaknesses that teams knew existed. Are you ready to support
-a dramatic turnaround? It could be the most effective fix.
-
-Perhaps a disconnect among your senior executives or
-between your business and cyber functions is slowing your
-efforts at growth — an app for consumer use, perhaps; a new
-business line that uses artificial intelligence; expansion into a
-new market; or the use of the Industrial Internet of Things in
-your factory. Isn’t it time you joined forces to secure it all?
-
-#### CEOs forging ahead to tackle cyber insecurity — and win
-
-![Chart showing CEO involvement in cybersecurity matters.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-10.png)
-Q: Which, if any, of the following actions do you intend to take over the next
-12 months to be involved in cybersecurity matters in your organisation?
-Base: 795 CEOs
-Source: PwC 2023 Global Digital Trust Insights Survey
-
-CALL TO ACTION: Speak out about your
-commitment to cyber. Use your influence to
-inspire sweeping changes and create a united
-front against attacks. Rally the C-suite around
-the notion that the secure way could truly be the
-easier way to business success.
-
-PwC | Global Digital Trust Insights 2023
-
-11
-
-PwC | Global Digital Trust Insights 2023
-
-### Boards can spur better cyber reporting to improve oversight
-
-Boards are more engaged in cyber as
-their companies face increasing risks.
-Fifty-four percent say their organisation
-has taken on more cyber risks as it
-pursues more digitisation, and 44%
-report an increase in cyber breaches
-into their system since 2020.
-
-They recognise the challenge of keeping
-up with cyber. Today, less than half of board respondents say
-that their board governs cyber “very effectively” in six areas.
-Fewer than half, for instance, say they “very effectively”
-understand the causes and effects of cyber risks (37%) or
-oversee the alignment of cyber risk management to business
-needs (43%). Only 9% of board respondents say that their
-board governs cyber “very effectively” across all areas.
-
-But the future of cyber oversight could be different.
-Corporate directors are willing to learn about cyber and
-devote time to it. They say these will help them do a better
-job governing cybersecurity in 2023:
-
-*   Internal board training by management (47%)
-*   Increased frequency of meetings focused on cyber (47%)
-*   Improved reporting on cyber incidents, practices, and
-    improvements (44%)
-*   Adding a board member with cyber expertise (43%)
-
-CISOs and the C-suite can help boards get savvy about the
-cybersecurity of their organisation, especially on these top
-improvements that boards would like to see in cyber reporting:
-
-*   A scorecard / dashboard that helps board members
-    understand the key cyber risks to the organisation with
-    relevant metrics
-*   The organisation’s cybersecurity strategy and how it is
-    aligned with its overall strategy
-*   The business continuity, contingency and recovery plans
-    in the event of a cyber incident
-*   Understanding how the organisation’s design supports
-    cybersecurity goals
-
-#### Boards know they need to be better cyber stewards
-
-![Chart showing board governance effectiveness in cybersecurity areas.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-11.png)
-Q: In your view, how well do you in your role as a board member exercise
-governance over the following areas of cybersecurity in your organisation today?
-Base: 124 corporate directors
-Source: PwC 2023 Global Digital Trust Insights Survey
-
-Message to corporate directors
-
-CALL TO ACTION: First, allot more time to the CISO and cyber matters on your agenda. Second,
-don’t settle for board reporting that doesn’t give you confidence and insights that the organisation is
-managing the cyber risks related to its strategic moves. Cybersecurity is not an end state, so monitor
-how the company is making progress in its cyber posture and ability to defend against emerging
-threats. Ask to take part in exercises that help you understand your organisation’s cyber resilience.
-
-## The new era of cyber transparency
-
-Stakeholders clamor for more information about how
-companies manage their cyber risk exposure.
-
-Regulators want visibility into cyber practices because they
-want to protect citizens from fraud and loss of privacy, help
-investors make better decisions, and prevent industry- or
-system-wide disruptions. India has published guidance on
-cyber incident notification required under the Information
-Technology Act. The UK Financial Reporting Council has
-issued guidance about digital security risk disclosures after it
-found that current disclosures by some FTSE 350 companies
-are not meeting investor needs and are often ‘boilerplate’
-and overly static. In addition to the rules pending with the
-Securities and Exchange Commission (proposal) and the
-Cybersecurity & Infrastructure Security Agency (law), the
-New York State Department of Financial Services is weighing
-a proposal that turns leading practices into regulatory
-requirements for covered entities.
-
-Investors are looking for consistent and comparable disclosures
-so they can put their money in companies that fit their needs.
-Cyber incidents can affect shareholder value — temporarily
-or permanently.
-
-Individuals know how their data and privacy are vulnerable
-to cyber breaches. Business partners want their data
-and other assets to be safe. These stakeholders want
-to understand how much they can trust in the ability of
-
-businesses and entire systems to withstand increasing cyber
-threats.
-
-The C-suite sees an upside to all this transparency. Four-
-fifths of senior executives in our survey agree that mandatory
-disclosure of cyber incidents, with comparable and consistent
-formats, is necessary to gain stakeholder confidence and trust.
-
-But fewer than 10% are confident that their enterprise can
-comply. More than half are not confident that they:
-
-*   Can provide required information about a material or
-    significant incident within the required reporting period
-    after the incident (58% not confident)
-*   Can assess the materiality of a cyber incident for purposes
-    of reporting (58%)
-*   Can describe the relevant cyber expertise on the board for
-    purposes of reporting (59%)
-*   Have a policy stating which information can or cannot be
-    disclosed regarding cyber incidents (60%)
-*   Can provide information about third-party risk
-    management (63%)
-
-“There’s a transformation happening here.
-Information security is being seen as an
-enterprise capability, not just a technical
-capability.”
+“One thing is certain about threats: there will be
+something new that we never thought of.”
+
+“Financial institutions have been making cybersecurity
+investments arguably for several decades. Now we’re
+realizing the untapped potential of doing things even better.”
 
 - Ian Schneller, CISO, Health Care
   Service Corporation
 
-CALL TO ACTION: CISOs can position their teams to work with the CFO, general counsel and other
-senior executives to prepare to translate strategy and practices into an accurate, cohesive and
-compelling narrative on the company’s cyber risk management practices. The new era of cyber
-transparency means that CISOs should become adept at presenting information in a way that the board,
-senior management and investors can understand and act upon. It requires a communication strategy
-that’s different from the everyday jargon of cybersecurity.
+- Zee Ladak, Technology and Enterprise
+  Services Chief Risk Officer, Capital One
 
-PwC | Global Digital Trust Insights 2023
+PwC  |  Global Digital Trust Insights 2023
 
-13
+30
+30
 
-PwC | Global Digital Trust Insights 2023
+PwC  |  Global Digital Trust Insights 2023Scenario 1: Cloud-based attacks
 
-### CIOs, CTOs, and CISOs tackle cloud security
+38% expect more serious attacks via
+the cloud in 2023
 
-#### Cloud security initiatives are paying off, but more work remains
+The breach:
 
-![Chart showing confidence levels in cloud security.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-12.png)
-Q: With regard to your cloud environment, how confident are you that your
-organisation is secured appropriately against the following reasons for
-cloud security breaches?
-Base: 1,253 CIOs, CISOs, CTOs and other senior IT and security executives
-Source: PwC 2023 Global Digital Trust Insights Survey
+Attackers exploit a misconfiguration in the company’s
+cloud-hosted internet-facing application and steal user
+data to sell on the black market.
 
-“Is our cloud security plan as agile as our business is, itself,
-in the cloud?” That’s the question CIOs and CISOs should
-be asking now.
+Consequences:
 
-Cloud-based threats are increasing at nearly 40% of
-organisations. Meanwhile, nearly two-thirds of senior executives
-say they haven’t fully mitigated the risks of cloud adoption.
+CISO
 
-The news isn’t all negative. Half of CISOs, CIOs and CTOs
-say they’ve made progress in putting governance in place,
-credential management, resource permissioning, cloud
-security configurations and API management.
+CTO
 
-But only 19% are “very confident” that their organisation has
-adequately secured all these common cloud-breach pathways.
+CISO
 
-The CIO or CTO and their DevOps team may feel eager —
-or pressured — to take advantage of the agility, speed and
-collaboration working in the cloud affords.
+CTO
 
-14
+CISO
 
-PwC | Global Digital Trust Insights 2023
+CTO
 
-They may allow developers to stand up projects in a cloud
-environment before security is in place, or “lift and shift”
-existing systems into the cloud with plans to secure them later.
+CEO
 
-These personnel may sidestep the CISO to avoid the
-methodical, security-first approach the CISO would almost
-certainly advise. In the fast-paced digital world, the
-business side knows, enterprises need speed to achieve
-their objectives. When agility and speed are the goals, who
-needs brakes?
+CIO
 
-But cohesive governance is key, especially in a multi-cloud
-environment where each cloud service provider has different
-security abilities and requirements. Frequent releases of new
-features and updates means that, like the clouds in the sky,
-your enterprise cloud environment is continually changing.
+CRO
 
-In 2023, it’s time to design an overarching security
-architecture that includes all the cloud platforms your
-enterprise is using.
+CIO
 
-Bring together all your enterprise security controls so you
-can secure them from one location, and with as much
-automation as possible.
+CRO
 
-Build infrastructure-as-code (IaC) and DevSecOps tooling
-to automatically set the right security checks on all your
-cloud platforms.
+CIO
 
-CISOs might provide developers with cloud security services
-that are easy to use and conform to the organisation’s
-security policies. Building an encryption API for developer
-use, for instance, can help speed an application’s time to
-market as well as confirm that encryption uses company-
-approved protocols.
+CDO
 
-Message to CIOs and CTOs
+CFO
 
-Form alliances with your CISO and DevSecOps team.
-Adopt the “shift left” paradigm and start putting in place
-cloud security mechanisms before cloud use begins — or,
-if it’s too late for that, as soon as possible.
+COO
 
-Fast development and strong controls can go hand-in-hand.
-Leading companies design and administer controls that
-operate not at the sluggish pace often associated with
-oversight, but at the quick and agile speed of DevOps.
-In these organisations, everyone wins.
+BOARD
 
-CALL TO ACTION: To secure your back-end, front-
-end, IoT and operational technologies, work with
-the CISO to lock down your cloud environments.
+COO
 
-PwC | Global Digital Trust Insights 2023
+Costly notifications to data owners. A possible class-action
+lawsuit against the company. Damage to the enterprise’s
+reputation.
 
-15
+CDO
 
-PwC | Global Digital Trust Insights 2023
+What went wrong:
 
-### CFOs and CISOs get serious about cyber investment risks vs. rewards
+Inadequate security, no defence in depth, coding errors,
+inadequate testing of written and library code, improperly
+encrypted data.
 
-Companies continue to increase their spending on
-cybersecurity. Sixty-five percent of senior executives tell us
-they expect an increase in 2023, compared to 69% in 2022.
+How to work together for better defence:
 
-Companies rein in cyber spending increases
+•  CIO: Enable DevSecOps in application development,
+as well as thorough prelaunch testing. Remediate
+misconfigurations from both users and automated
+deployments.
 
-But they aren’t increasing cyber budgets as much as they did
-for 2022. While more than a quarter of enterprises expected
-2022 cyber outlays to rise by more than 10%, fewer than
-one-fifth expect that rate of escalation next year.
+•  CISO: Establish and enforce policies and procedures
 
-Not surprisingly, organisations that have been breached
-were significantly more likely to say that they would boost
-their 2023 cyber spending: 68% versus 55% that have not
-been breached. And among larger enterprises (with yearly
-revenues greater than $1 billion), 10% said their cyber outlays
-would rise by 15% or more.
+for securing applications and data, vulnerability and
+penetration testing, regular patching, continuous
+compliance monitoring, and security event and incident
+monitoring (SIEM).
 
-![Chart showing changes in cyber budget for 2022 and 2023.](https://www.pwc.ch/en/insights/cybersecurity/global-digital-trust-2023.html/media/image/2023/global-digital-trust-insights-2023-chart-13.png)
-Q: How is your organisation’s cyber budget changing in 2023?
-Base: 3,522 business and technology executives in this survey; 1,638 security and technology executives in last year’s survey
-Source: PwC 2023 Global Digital Trust Insights Survey
+•  CTO: Require that cloud service providers and third
+parties provide dashboards and tools to detect
+misconfigurations across their environments.
 
-16
+•  CDO: Confirm that apps comply with privacy
 
-PwC | Global Digital Trust Insights 2023
+requirements and that customer data is partitioned and
+encrypted for better protection. Put into place solutions
+that encrypt data at rest, in transit, and while in use.
 
-#### Budgeting for cyber is changing
+31
 
-When they budget for cyber, enterprises are taking a more
-expansive approach. Nearly 4 out of 10 CEOs, CFOs, and
-CISOs tell us their companies now fund cybersecurity
-as a percentage of all tech spending, including OT and
-automation. Another 15% say they budget for cyber as a
-percentage of revenue.
+PwC  |  Global Digital Trust Insights 2023Scenario 2: Attacks on operational technology
 
-How organisations set their cyber budgets
+29% of large organisations expect
+an increase in OT attacks
 
-Many have begun to shift their cyber investment strategy, as
-well. More than half say they’re choosing “to a great extent” how
-to spend on cyber in line with seven key parameters, including:
+CISO
 
-*   Aligned with the overall business strategy (55%)
-*   Reflecting cyber priorities (55%)
-*   Adding value to the organisation (52%)
-*   Balancing immediate and long-term needs (51%)
-*   Informed by risk quantification (51%)
-*   Considers the risk appetite of the organisation (51%)
-*   Allocated well against the risks that the organisation
-    faces (51%)
+CTO
 
-We saw this shift coming in our 2021 survey, in which 50%
-of senior executives said they wanted to see budgets better
-reflecting business strategy, 44% wanted a better budgeting
-process and 44% wanted to quantify risks.
+The breach:
 
-Fewer than 8%, however, indicated that they’d made this shift
-in every area. Respondents from the largest organisations
-were significantly more likely to say that they’ve evolved how
-they invest, with 60% saying their spending supports the
-business strategy, for example.
+A manufacturing system is impacted by a ransomware event
+due to exploitable vulnerabilities existing in legacy operating
+systems.
 
-Modernisation of tech
+CIO
 
-Cyber tech solutions are at the top of the list of areas that
-CFOs see as key to improving their organisation’s cyber
-posture.
+Consequences:
 
-Indeed, modernisation, especially of operational technology,
-is still a problem at many organisations. Outdated tech
-and managing its vulnerabilities are top barriers to improving
+Production stops as affected systems are shut down to
+prevent damage from spreading. Impacts ripple through the
+supply chain.
+
+CDO
+
+What went wrong:
+
+Hackers exploit unpatched vulnerabilities to inject
+ransomware. The exploited vulnerabilities were previously
+patched in enterprise systems, however due to a lack of patch
+management, monitoring and detection capabilities for the
+legacy systems, the vulnerabilities remained undetected.
+
+How to work together for better defence:
+
+CISO
+
+CTO
+
+CISO
+
+CTO
+
+CEO
+
+CRO
+
+CIO
+
+CRO
+
+CIO
+
+CDO
+
+CFO
+
+COO
+
+BOARD
+
+COO
+
+•  CIO: With CISO and CTO, map convergences and critical
+
+•  CRO: Develop methodology to assess the cyber risk
+
+interdependencies between IT and OT systems.
+
+•  CISO: Work with CIO and CTO to require separation of
+
+IT and OT, develop a secure landing zone that obscures
+OT from direct access, and train employees on proper
+access and incident response roles.
+
+•  CTO: With CISO and CIO, create a plan for patching and
+
+monitoring endpoints.
+
+present in the OT environment. Include scenarios and
+rehearse incident response procedures that join IT and
+OT response processes.
+
+•  COO: Weigh cybersecurity in the procurement process
+
+for your industrial control systems, in contracting with
+cloud providers, and in defining service agreements with
+external service providers.
+
+32
+
+PwC  |  Global Digital Trust Insights 2023CISO
+
+CTO
+
+CIO
+
+CDO
+
+Scenario 3: Ransomware
+
+45% of security and IT execs expect
+further rise in ransomware attacks
+CISO
+
+CTO
+
+The breach:
+
+A medical employee opens a document in a phishing email,
+activating malware.
+
+CIO
+
+CRO
+
+Consequences:
+
+Service disruption and a near-complete shutdown of the
+hospital networks.
+
+What went wrong:
+
+COO
+
+Antivirus software was running out-of-date rules that failed
+to detect malware embedded in the malicious attachment.
+The lack of multi-factor authentication allowed the attackers
+to obtain initial access. Unnoticed on the corporate network
+for weeks, the cybercriminals conducted reconnaissance of
+the network and eventually compromised a domain admin
+account, giving them elevated privileges to launch malware
+that shut down much of the core IT infrastructure and
+compromised backups.
+
+How to work together for better defence:
+
+•  CEO: Support security awareness training throughout
+
+the organisation.
+
+•  CIO: Review the connections between IT systems and
+
+the organisation’s environment.
+
+•  CTO: Assess the vulnerability of medical devices in a
+
+scenario that targets devices.
+
+•  COO: Help CIO, CISO size up effects on patient safety in
+
+similar scenarios.
+
+•  CISO: Bridge security gaps between IT and operations.
+
+CISO
+
+CTO
+
+CEO
+
+CRO
+
+CIO
+
+CDO
+
+CFO
+
+BOARD
+
+COO
+
+•  CDO: Work with COO, CISO, CPO to assess damage
+
+from theft/corruption of customer data.
+
+•  CRO: Conduct test of resilience with crisis and BC/DR
+
+teams.
+
+•  CFO: Work with CISO, CIO on any disclosures to
+
+regulators and the public. Review cyber spending,
+including cyber insurance, with CISO, CIO in light of
+discovered vulnerabilities. Decide on your policy for
+ransomware payment.
+
+•  Board: Get insight on management’s tabletop exercise
+to prepare for a ransomware attack. Confirm when
+the board will be informed about a cyber incident or
+ransomware attack.
+
+For an example of a post-incident review of a ransomware
+event, please see Conti cyber attack on the HSE.
+
+33
+
+PwC  |  Global Digital Trust Insights 2023About the survey
+
+The 2023 Global Digital Trust Insights is a survey of 3,522
+business, technology, and security executives (CEOs,
+corporate directors, CFOs, CISOs, CIOs, and C-Suite officers)
+conducted in July and August 2022. Female executives make
+up 31% of the sample.
+
+Fifty-two percent of respondents are executives in large
+companies ($1 billion and above in revenues); 16% are in
+companies with $10 billion or more in revenues.
+
+Respondents operate in a range of industries: Industrial
+manufacturing (24%), Tech, media, telecom (21%), Financial
+services (20%), Retail and consumer markets (18%), Energy,
+utilities, and resources (9%), Health (5%), and Government
+and public services (3%).
+
+Respondents are based in various regions: Western Europe
+(31%), North America (28%), Asia Pacific (18%), Latin America
+(12%), Eastern Europe (5%), Africa (4%), and Middle East (3%).
+
+The Global Digital Trust Insights Survey is formerly known as
+the Global State of Information Security Survey (GSISS).
+
+PwC Research, PwC’s global Centre of Excellence for market
+research and insight, conducted this survey.
+
+Contact us to learn more
+
+Sean Joyce
+Global Cybersecurity & Privacy Leader,
+US Cyber, Risk & Regulatory Leader
+PwC US
+sean.joyce@pwc.com
+
+© 2022 PwC. All rights reserved. PwC refers to the US member firm or one of its subsidiaries or affiliates, and may sometimes refer to the
+
+PwC network. Each member firm is a separate legal entity. Please see www.pwc.com/structure for further details. 1358232-2022.
+
+35
+
+PwC  |  2022 Global Risk Survey Report
