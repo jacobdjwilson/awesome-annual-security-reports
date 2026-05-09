@@ -1,41 +1,10 @@
 # Global State of DevSecOps 2024
 
-Insights and Trends in Software Security Testing from Black Duck
-
 ## Table of Contents
 - [Executive Summary](#executive-summary)
 - [About Black Duck](#about-black-duck)
 - [Findings Overview](#findings-overview)
-  - [AI-assisted development soars but securing AI-generated code lags far behind](#ai-assisted-development-soars-but-securing-ai-generated-code-lags-far-behind)
-  - [Parallels between securing AI-generated code and securing open source](#parallels-between-securing-ai-generated-code-and-securing-open-source)
-  - [An increased focus on software security testing](#an-increased-focus-on-software-security-testing)
-  - [Too much noise, too many tools](#too-much-noise-too-many-tools)
-  - [Looking ahead](#looking-ahead)
 - [A Deep Dive into the State of DevSecOps in 2024](#a-deep-dive-into-the-state-of-devsecops-in-2024)
-  - [Three priorities are driving security testing](#three-priorities-are-driving-security-testing)
-    - [Protecting sensitive information](#protecting-sensitive-information)
-    - [Adhering to best practices](#adhering-to-best-practices)
-    - [Automating and ensuring ease of test configuration](#automating-and-ensuring-ease-of-test-configuration)
-  - [Trending toward centralization](#trending-toward-centralization)
-  - [A struggle to attain full security coverage](#a-struggle-to-attain-full-security-coverage)
-  - [Who determines when security tests are run](#who-determines-when-security-tests-are-run)
-  - [A tool proliferation challenge](#a-tool-proliferation-challenge)
-  - [The noise factor](#the-noise-factor)
-  - [Role-based differences](#role-based-differences)
-  - [The AI revolution in security testing](#the-ai-revolution-in-security-testing)
-    - [Worldwide AI adoption](#worldwide-ai-adoption)
-  - [Most respondents not confident they’re securing AI-generated code](#most-respondents-not-confident-theyre-securing-ai-generated-code)
-  - [Interpreting and acting on security test results](#interpreting-and-acting-on-security-test-results)
-    - [Role-based differences](#role-based-differences-1)
-    - [Geographical differences](#geographical-differences)
-    - [Different approaches to parsing and cleansing results](#different-approaches-to-parsing-and-cleansing-results)
-  - [From interpretation to action](#from-interpretation-to-action)
-    - [Constant security testing vs. development speed tension](#constant-security-testing-vs-development-speed-tension)
-    - [Role-based differences](#role-based-differences-2)
-    - [How remediation is accomplished](#how-remediation-is-accomplished)
-      - [Prioritizing issues for remediation](#prioritizing-issues-for-remediation)
-      - [What happens when security issues are discovered](#what-happens-when-security-issues-are-discovered)
-    - [How developers are informed of issues](#how-developers-are-informed-of-issues)
 - [Conclusion](#conclusion)
 - [Appendix](#appendix)
 
@@ -50,545 +19,403 @@ The findings in the “Global State of DevSecOps 2024” report are based on a c
 This report provides critical insights into the current state of DevSecOps practices and AppSec testing. It delivers a comprehensive analysis of trends, challenges, and opportunities, and it offers actionable insights for organizations seeking to enhance their DevSecOps practices.
 
 ## About Black Duck
-
 Formerly the Synopsys Software Integrity Group, Black Duck offers the most comprehensive, powerful, and trusted portfolio of AppSec solutions in the industry. We have an unmatched track record of helping organizations secure their software quickly, integrate security efficiently in their development environments, and safely innovate with new technologies.
 
-blackduck.com | 1
+---
 
 ## Findings Overview
 
 Although 85% of respondents to our survey say they have some measures in place to address the challenges posed by AI-generated code, less than a quarter were very confident in their policies and processes for testing such code.
 
-Here is the breakdown.
-
-24% VERY CONFIDENT
-20% SLIGHTLY CONFIDENT
-41% MODERATELY CONFIDENT
-6% NOT AT ALL CONFIDENT
+![Chart showing confidence levels: 24% Very Confident, 20% Slightly Confident, 41% Moderately Confident, 6% Not at all Confident]
 
 ### AI-assisted development soars but securing AI-generated code lags far behind
-
 One of the most striking discoveries in this report is that the AI revolution is already over—and AI won, at least when it comes to integrating AI into software development processes. The adoption of AI in software development has gone beyond a tipping point, with over 90% of the respondents to our survey using AI assistance in some capacity.
 
 ### Parallels between securing AI-generated code and securing open source
-
 The rapid adoption of AI-assisted coding by software development teams shares several similarities with the historic rise of open source software use. Both movements disrupted traditional software development practices. Open source challenged proprietary software models, and AI-assisted coding is transforming how code is written and reviewed.
 
 But just as with open source use, bringing AI-assisted coding tools into software development presents unique intellectual property (IP), licensing, and security challenges that need careful management by development teams. For example, both unmanaged open source and AI-generated code can create ambiguity about IP ownership and licensing—especially when the AI model uses datasets that might include open source or other third-party code without attribution.
 
 AI-assisted coding tools also have the potential to introduce security vulnerabilities into codebases. One researcher flatly concludes that “autogenerated code cannot be blindly trusted, and still requires a security review to avoid introducing software vulnerabilities.”
 
-There are clear challenges in managing and securing AI-generated code. Our survey found that organizations are at different stages of implementing policies and controls around AI tool usage, reflecting the nascent nature of this trend.
-
-Although 85% of respondents to our survey say they have some measures in place to address the challenges posed by AI-generated code, only 24% are “very confident” in their policies and processes for testing such code. A total 67% of respondents feel only “moderately confident” (41%), “slightly confident” (20%), or “not at all confident” (6%).
-
-This lack of confidence may reflect the fact that that 21% of respondents acknowledge that their development teams are bypassing corporate policies and using unsanctioned—and, one would assume, unsupervised—AI tools. Again, unmanaged AI use parallels the early days of unmanaged open source use, when few executives were aware that their development teams were incorporating open source libraries into proprietary code, let alone the extent of that use.
-
 ### An increased focus on software security testing
-
 Test coverage is substantial but not universal, with 57% of respondents testing between 41% to 80% of their projects, branches, and repositories, suggesting opportunities for expanding security test coverage.
 
 Our findings show that organizations are prioritizing security testing based on the sensitivity of information handled (37% of respondents), while also emphasizing industry best practices (36%) and increasing use of automated security testing (35%).
 
-Configuration of security tests is becoming more centralized, with 55% of respondents using centralized interfaces for test configuration. And although their execution is becoming more automated, the persistence of nonautomated activities documented in this report indicates substantial room for improvement. A significant percentage of respondents still uses manual processes in their application security testing and remediation workflows. The exact amount varies depending on which manual process we look at, but it ranges from about 15% to 43% of respondents.
+Configuration of security tests is becoming more centralized, with 55% of respondents using centralized interfaces for test configuration. And although their execution is becoming more automated, the persistence of nonautomated activities documented in this report indicates substantial room for improvement.
 
 ### Too much noise, too many tools
-
 A slight majority of respondents find security test results at least “somewhat easy” (52%) to understand and act upon, while another 20% deem their results “extremely easy” to understand. However, this perception varies across roles, industries, and geographies.
 
-The findings also reveal a critical challenge with “noise” in security testing results; that is, output that is considered irrelevant or not worth acting upon. Noise is often caused by a high number of false positives or a large volume of duplicative true positives in results. Sixty percent of respondents reported that they consider over 20% of their results as noise, impacting efficiency and decision-making processes.
+The findings also reveal a critical challenge with “noise” in security testing results; that is, output that is considered irrelevant or not worth acting upon. Sixty percent of respondents reported that they consider over 20% of their results as noise, impacting efficiency and decision-making processes.
 
-Despite a broader trend of integrating security into development processes, 61% of respondents report that security testing moderately or severely slows down development. The tension between security and development speed remains a critical challenge for every industry.
-
-The fact that 82% of organizations use between 6 and 20 security testing tools is certainly a factor, with a broad proliferation of tools contributing to the high levels of noise reported by respondents. Multiple tools may detect the same issues, leading to duplicative results. Or different tools may provide conflicting results for the same code or application. Each tool may generate its own false positives, which compounds as more tools are used.
-
-With so many tools in use, organizations are struggling to effectively integrate and correlate results across platforms and pipelines, leading to difficulty distinguishing between genuine issues and false positives, as well as challenges in prioritizing issues across different tools’ outputs.
+Despite a broader trend of integrating security into development processes, 61% of respondents report that security testing moderately or severely slows down development. The fact that 82% of organizations use between 6 and 20 security testing tools is certainly a factor, with a broad proliferation of tools contributing to the high levels of noise reported by respondents.
 
 ### Looking ahead
+Several key trends are shaping the path of DevSecOps:
+- Increased automation of security testing and remediation processes
+- A need for policies concerning the use of AI-assisted development tools
+- Enhanced focus on reducing noise in security test results to improve efficiency
+- The evolution of cross-functional collaboration in security decision-making
 
-Several key trends are shaping the path of DevSecOps.
+---
 
-*   Increased automation of security testing and remediation processes
-*   A need for policies concerning the use of AI-assisted development tools
-*   Enhanced focus on reducing noise in security test results to improve efficiency
-*   The evolution of cross-functional collaboration in security decision-making
+## A Deep Dive into the State of DevSecOps in 2024
+
+Our survey of over 1,000 security professionals reveals a state of flux, with organizations striving to balance security measures with the demands of rapid development cycles.
+
+### Three priorities are driving security testing
+1. **Protecting sensitive information**: The foremost consideration, cited by 37% of respondents.
+2. **Adhering to best practices**: 36% of organizations rely on best practices recommended by third-party organizations like OWASP.
+3. **Automating and ensuring ease of test configuration**: Prioritized by 35% of respondents.
+
+### Trending toward centralization
+The top responses to the survey’s Question 2 reveal a clear trend toward centralization in tool configuration for efficiency and consistency. 30% of respondents reported using a vendor’s interface to configure tests from that vendor, while 26% reported using a centralized interface for all tests.
+
+### A struggle to attain full security coverage
+Nearly 30% of respondents still add new projects, branches, or repositories to their application security testing queue manually. While 38% of respondents report that they are taking full advantage of automated processes to include all projects in test queues, the coverage gap presents significant risk.
+
+### The AI revolution in security testing
+Over 90% of organizations are using AI tools in some capacity for software development. However, only 24% of respondents are “very confident” in their policies and processes for testing such code. A total 67% of respondents feel only “moderately confident” (41%), “slightly confident” (20%), or “not at all confident” (6%).
+
+### Interpreting and acting on security test results
+The effectiveness of application security testing hinges not just on the execution of tests, but also on the ability to interpret results and take appropriate action. 38% of respondents manually parse and cleanse results from all tools, while 25% report fully automated parsing and cleansing.
+
+---
+
+## Conclusion
+
+As we conclude this examination of the current state and future trajectory of application security, it’s clear that DevSecOps is at a critical juncture. Our findings reveal both progress and problems in current DevSecOps practices.
 
 Organizations have significant opportunities to improve their DevSecOps practices by leveraging automation, enhancing the clarity of security test results, developing robust policies for AI-assisted development, and fostering better cross-functional collaboration.
 
 As the landscape continues to evolve, organizations must stay agile, adapting their AppSec processes to meet emerging challenges. The most successful will be those that can effectively balance rigorous security practices with the speed and innovation demands of modern software development.
 
-blackduck.com | 3
+---
 
-## A Deep Dive into the State of DevSecOps in 2024
+## Appendix
 
-Our survey of over 1,000 security professionals reveals a state of flux, with organizations striving to balance security measures with the demands of rapid development cycles. This section delves into the current state of AppSec testing and highlights key trends, challenges, and opportunities that define the testing landscape in 2024.
+The appendix contains detailed breakdowns of survey respondent demographics, including:
+- **Industries**: Technology, Cybersecurity, Application/Software Development, Manufacturing, FinTech, Education, Banking/Financial, Telecommunications/ISP, Healthcare, Retail, Media, Government, Insurance, Transportation, Nonprofit/Association, Utilities, and Other.
+- **Job Roles**: CISO, CTO/CPO, InfoSec, AppSec, Dev/engineering, DevOps, Cloud ops, QA/testing.
+- **Geographic Distribution**: U.K., U.S., France, Germany, Finland, China, Singapore, Japan.
+- **Organization Headcount**: Ranging from fewer than 100 to over 100,000 employees.
 
-Q1. Which of the following criteria does your organization consider when determining which application security tests to run and when they are run?
+[^1]: Black Duck® commissioned Censuswide for this survey.
 
-mature understanding of the impact potential breaches can have across different parts of an application ecosystem.
+---
 
-In a recent analysis of 1,300 customer applications, Black Duck found sensitive data exposure issues affecting 86% of those customers, accounting for over 30,000 vulnerabilities, including 4,800 critical-risk instances. Sensitive data exposure is one of the most common and serious security issues across industries. To address these vulnerabilities, organizations need to implement strong encryption practices, use up-to-date security protocols, and ensure that sensitive data is properly protected both when it’s being transmitted and when it’s stored.
+based on policies/risk tolerance
 
-Sensitivity of information accessed/transmitted by the application
-37%
-General best practices recommended by third-party organizations (e.g., OWASP)
-36%
-Ease-of-configuration or automation of the security tests
-35%
+49.45%
 
-### Three priorities are driving security testing
+We can automatically parse and cleanse results
+from some testing tools; the remainder are
+manually parsed and cleansed
 
-Our results reveal that respondents to our survey have a clear set of priorities for effective security testing. Protecting sensitive information is a key mandate for security teams. Development teams value efficiency through automation and closed feedback loops, and implementing best practices for resilient pipelines is fundamental to operations teams.
+28.05%
 
-#### Protecting sensitive information
+Results generated by all tools are automatically
+parsed and cleansed
 
-The foremost consideration, cited by 37% of respondents, is protecting the sensitive information accessed or transmitted by the application. Taking a risk-based approach as these organizations are doing reflects a
+25.27%
 
-Our data shows that organizations in sectors such as Application/ Software, Banking/Finance, Healthcare, and Government are particularly attuned to this priority, given the highly sensitive nature of the data they handle.
+I am not involved with parsing and cleansing
+application security test results
 
-#### Adhering to best practices
-
-Thirty-six percent of organizations rely on the best practices recommended by third-party organizations like OWASP. Adherence to established guidelines ensures a baseline of security across diverse development environments. However, it also raises questions about the adaptability of these standards in the face of rapidly evolving threats.
-
-Industry standards may have difficulty adapting in the face of rapidly evolving threats. For example, OWASP standards have yet to address the unique security challenges posed by AI-generated code.
-
-blackduck.com | 4
-
-#### Automating and ensuring ease of test configuration
-
-The emphasis on automation and ease of test configuration, prioritized by 35% of respondents, underscores the growing integration of security into DevOps processes. This move toward DevSecOps reflects the recognition that security must be woven into the fabric of the development life cycle rather than treating it as an afterthought.
-
-Q2. Which statement best describes your process of configuring and running application security tests across your SDLC or CI pipeline?
-
-Testing tools provided by the same vendor are configured using a centralized interface and automatically run with policies
-30%
-All tests are configured using a centralized interface and automatically run with policies
-26%
-
-### Trending toward centralization
-
-The top responses to the survey’s Question 2 reveal a clear trend toward centralization in tool configuration for efficiency and consistency. Thirty percent of respondents reported using a vendor’s interface to configure tests from that vendor, while 26% reported using a centralized interface for all tests, regardless of vendor.
-
-Centralizing security tools allows for a unified management interface, which simplifies the monitoring and configuration of security measures. This reduces the complexity associated with managing multiple disparate systems, facilitates integration at each stage of the pipeline, and ensures that security policies are consistently applied across the organization. With a centralized system, security efforts can be more easily coordinated, reducing the likelihood of gaps or overlaps in security coverage. A centralized, holistic approach enhances the ability to detect and respond to threats across the entire IT infrastructure.
-
-Centralized management also allows better visibility into an application’s security profile, enabling more effective identification and mitigation of vulnerabilities. Further, it facilitates the collection and analysis of security data, which is crucial for proactive threat detection and response.
-
-Overall, centralization and vendor consolidation in security testing can significantly enhance an organization’s ability to protect its digital assets by simplifying management, improving coordination, and potentially reducing costs.
-
-### A struggle to attain full security coverage
-
-Q3. Which of the following statements best describes the manner in which new projects, branches, or repositories are added to your application security testing queue?
-
-All are added to the test queue manually (e.g., declared by dev team, selected by security team)
-29%
-All are added to the test queue automatically (e.g., detected by testing tools)
-38%
-Most are added to the test queue automatically; a few are added manually
-22%
-Most are added to the test queue manually; a few are added automatically
-6%
-I am not familiar with how items are added to the security testing queue
-4%
-
-blackduck.com | 5
-
-35% of organizations are still heavily reliant on manual intervention in their security testing queue management.
-
-Q4. Approximately what percentage of your projects, branches, and repositories are included in your application security testing queue?
-
-Percentage of projects, branches, and repositories included in testing queue
-Percentage of respondents
-41%–60%
-37%
-61%–80%
-21%
-
-Despite the emphasis on comprehensive security, many organizations struggle to achieve full coverage, as the responses to Questions 3 and 4 demonstrate. Nearly 30% of respondents still add new projects, branches, or repositories to their application security testing queue manually. Six percent use mostly manual processes with some automation. In other words, about 35% of organizations are still heavily reliant on manual intervention in their security testing queue management.
-
-While there are varying perceptions of the extent to which security testing impacts development workflows, survey results show a clear correlation between the perceived impact on testing and manual processes. For example, 50% of those that say application security testing slows down the process also say that most projects are added to the test queue manually.
-
-However, 38% of respondents report that they are taking full advantage of automated processes to include all projects in test queues, and another 22% report mostly using automated processes. This means that 60% of organizations are leveraging automation to a significant degree in their security testing workflows.
-
-Thirty-seven percent of respondents include only 41% to 60% of their projects, branches, and repositories in their testing queue. Twenty-one percent achieve 61% to 80% coverage.
-
-This coverage gap presents significant risk, potentially leaving critical parts of an organization’s application ecosystem untested. While counterintuitive, some respondents noted slightly higher-than-average coverage despite using manual processes to add projects to the test queue. This may simply be the level of coverage being perceived as higher due to the greater level of effort to test each project.
-
-### Who determines when security tests are run
-
-Q5. Which of the following teams/departments determine which application security tests are performed, when, and on which projects?
-
-Security
-44%
-Development/software engineering
-42%
-DevOps
-37%
-Quality assurance
-34%
-Compliance
-28%
-Cross-functional groups
-21%
-Legal
-19%
 None of the above
-1%
 
-The responses to Question 5 offer valuable insights into how organizations are structuring their application security testing decisions. This data paints a picture of organizations increasingly treating security as a shared responsibility, integrated into various stages of the software development life cycle.
+5.35%
 
-The close percentages for security (44%) and development/ software engineering (42%) suggest a trend toward shared responsibility for security testing. This aligns well with DevSecOps principles, indicating that security is becoming more integrated into the development process.
+3.27%
 
-At 37%, DevOps teams play a significant role in security testing decisions. This further supports the trend toward integrating security throughout the development life cycle. At 34%, QA teams are also heavily involved,
+Q9.   Approximately what percentage of security test results
 
-blackduck.com | 6
+Issues are manually prioritized for remediation
 
-82% of organizations use between 6 and 20 security testing tools.
+42.62%
 
-suggesting that many organizations view security as an integral part of overall software quality.
+I am not familiar with the process of prioritizing
+issues
 
-The involvement of compliance (28%) and legal (19%) teams indicates that regulatory and legal requirements are significant factors in security testing decisions for many organizations.
+7.93%
 
-A proliferation of tools, although intended to provide comprehensive coverage, introduces significant complexity in integration, results interpretation, and overall management. It correlates strongly with another key challenge—noise in security testing results.
+Q11.   What actions/mechanisms occur automatically as a result of
+application security testing results or policy violations?
 
-The noise factor
+Alerting to upstream contributors (e.g., developers,
+engineers, architects)
 
-Twenty-one percent of respondents indicate that cross-functional groups are involved in these decisions, showing a trend toward collaborative, multidisciplinary approaches to security. With only 1% selecting “None of the above,” it’s clear that the majority of organizations have specific teams or processes in place for determining security testing.
+Assignment to developers via issue management
+workflows (e.g., Jira, Slack)
 
-Q9. Approximately what percentage of security test results are noise? For example: duplicative results, false positives, conflicting with other tests/tools.
+37.66%
+
+35.58%
+
+are noise? For example: duplicative results, false positives,
+conflicting with other tests/tools.
+
+Alerting to downstream stakeholders (e.g., security
+team, partners, customers)
+
+32.11%
 
 Percentage of noise in findings
-Percentage of respondents
+
+Percentage of
+respondents
+
+Prevent checking-in of code to SCM/repositories
+
+32.41%
+
+72.25%
+
+20.22%
+
+52.03%
+
+0%–20%
+
 21%–40%
-30%
+
 41%–60%
-30%
-Total
-60%
 
-The distribution across teams suggests a relatively mature approach to security in many organizations, moving away from security as solely the responsibility of a dedicated security team. These results align with broader industry trends toward DevSecOps and “shift-everywhere” security practices, as described in the “Building Security in Maturity Model” report, where security is integrated earlier and more continuously in the development process.
+61%–80%
 
-### A tool proliferation challenge
+Easy (Net)
 
-Q6. Approximately how many application security testing tools does your organization use?
+Security test results are extremely easy to
+understand and to act upon
 
-Number of security testing tools
-Percentage of respondents
-6–10
-34%
-11–15
-33%
-16–20
-15%
-Total
-82%
+Security test results are somewhat easy to
+understand and to act upon
 
-One of the most striking findings from our survey is the sheer number of security testing tools in use, as shown by the responses to Question 6. Eighty-two percent of organizations use between 6 and 20 security testing tools.
+Security test results are somewhat difficult to
+understand and to act upon
 
-Question 9 uncovers a significant hurdle in effective security testing: the high level of noise in results. A total of 60% of respondents reported that between 21% and 60% of their security test results are noise. A high noise level can significantly impact the effectiveness of security efforts and lead to efficiency loss, as teams must spend time filtering out irrelevant findings. It can also lead to alert fatigue and genuine threats being overlooked, as well as resource misallocation due to organizations directing too much of their security efforts toward noncritical issues.
+Security test results are extremely difficult to
+understand and to act upon
 
-### Role-based differences
+I am not involved with interpretation or action
+upon the results of application security tests
 
-There is a perception among security personnel of a high percentage of noise within security test results. This is likely because security teams are commonly tasked with managing security tests, as they sit toward the top of the review funnel. These teams present dev/engineering teams with cleansed and prioritized results, which in turn results in those teams skewing toward lower perceived noise.
+Difficult (Net)
 
-Likewise, 17% of dev/engineering personnel feel they don’t have enough visibility into security tests to identify noise in results. This is in stark
+17.54%
 
-blackduck.com | 7
+81%–100%
 
-contrast to CISOs, CTOs/CPOs, and AppSec professionals; only 1% of respondents in those roles cite a lack of visibility when detecting noisy results. One core tenet of efficient DevSecOps is adequate visibility into software artifacts and associated risks across all teams. Inadequate visibility can slow down issue detection, prioritization, and remediation, and leave pipelines prone to breakdowns and software open to attack.
+I do not have enough visibility into all tests and
+results to identify noise
 
-### The AI revolution in security testing
+4.26%
 
-Q14. Are your developers using AI, generative, or transformational tools to write code and modify projects?
+5.95%
+
+21.80%
+
+15.06%
+
+30.23%
+
+30.23%
+
+14.87%
+
+2.78%
+
+6.84%
+
+Prioritization for triage and remediation
+
+31.81%
+
+Prevent addition of compiled assets into binary
+repositories
+
+29.93%
+
+Block promotion into staging/production
+
+28.44%
+
+Breaking the build
+
+No actions or mechanisms are automated, all are
+manual based on test results
+
+Other
+
+23.89%
+
+4.96%
+
+0.20%
+
+blackduck.com  |  21
+
+Q12.   Out of the following, how are developers/software
+
+Q13.  Which statement best describes the relationship between
+
+Q15.   How confident are you that you have the processes in place to
+
+engineers in your organization notified of/assigned
+application security issues for remediation?
+
+application security testing and software development/
+delivery?
+
+manage and secure AI-generated code?
+
+Automated message via communication/
+collaboration tools (e.g., email, Microsoft
+Teams, Slack)
+
+41.82%
+
+Automated alerts within the security tool (e.g.,
+in-app notification, dashboard)
+
+40.14%
+
+Automated alerts/assignment within issue
+management tools (e.g., Jira, Trello)
+
+Automated alerts/logs within development
+tools (e.g., IDE)
+
+Automated alerts/logs within pipeline tools
+(e.g., build, SCM, repos)
+
+39.35%
+
+35.88%
+
+34.69%
+
+Manual assignment (e.g., by manager or team
+lead)
+
+32.11%
+
+I am not familiar with how developers/
+engineers are made aware of security issues
+
+None of the above
+
+3.27%
+
+1.98%
+
+Application security testing severely slows down
+development/delivery
+
+Application security testing moderately slows down
+development/delivery
+
+Application security testing slightly slows down
+development/delivery
+
+Application security testing does not slow down
+development/delivery
+
+I do not have enough visibility to assess the
+relationship accurately
+
+18.04%
+
+42.81%
+
+24.68%
+
+9.22%
+
+5.25%
+
+Q14.   Are your developers using AI, generative, or transformational
+
+tools to write code and modify projects?
 
 Yes (Net)
-91%
-Yes, all developers are permitted to, and do, use these tools
-27%
-Yes, but only certain developers/teams are permitted to, and do, use these tools
-43%
-Yes, while we do not allow the use of these tools, we are aware that some developers use them
-21%
 
-Over 90% of organizations are using AI tools in some capacity for software development. The distribution of responses to Question 14 illustrates a seemingly phased adoption curve. Twenty-seven percent of respondents note that all developers are permitted to use AI, generative, or transformational tools in their work, while 43% permit only certain developers or teams to use such tools, and 21% forbid their use alongside an awareness that such tools are, in fact, being used by their developers.
+Yes, all developers are permitted to, and do, use these
+tools
 
-#### Worldwide AI adoption
+Yes, but only certain developers/teams are permitted
+to, and do, use these tools
 
-Q14. Are your developers using AI, generative, or transformational tools to write code and modify projects (by region)?
+Yes, while we do not allow the use of these tools, we
+are aware that some developers use them
 
-Yes (Net)
-U.K. 94%
-U.S. 97%
-France 92%
-Germany 94%
-Finland 93%
-China 97%
-Singapore 96%
-Japan 60%
+No, developers are not permitted to, and do not, use
+these tools
 
-Yes, all developers are permitted to, and do, use these tools
-U.K. 30%
-U.S. 26%
-France 26%
-Germany 20%
-Finland 27%
-China 35%
-Singapore 37%
-Japan 26%
+I do not have enough visibility into development
+processes to know if these tools are used
 
-Yes, but only certain developers/ teams are permitted to, and do, use these tools
-U.K. 39%
-U.S. 46%
-France 41%
-Germany 50%
-Finland 51%
-China 50%
-Singapore 37%
-Japan 45%
+90.29%
 
-Yes, while we do not allow the use of these tools, we are aware that some developers use them
-U.K. 26%
-U.S. 26%
-France 25%
-Germany 24%
-Finland 14%
-China 12%
-Singapore 22%
-Japan 25%
+26.86%
 
-No, developers are not permitted to, and do not, use these tools
-U.K. 4%
-U.S. 2%
-France 2%
-Germany 2%
-Finland 6%
-China 2%
-Singapore 6%
-Japan 1%
+42.91%
 
-I do not have enough visibility into development processes to know if these tools are used
-U.K. 5%
-U.S. 2%
-France 3%
-Germany 0%
-Finland 2%
-China 2%
-Singapore 3%
-Japan 1%
+20.52%
 
-The regional responses to Question 14 demonstrate that AI adoption in software development is not only a phenomenon—it is a global phenomenon, with slight variations in results probably reflecting differences in technological infrastructure, regulatory environments, or cultural attitudes toward AI.
+4.66%
 
-blackduck.com | 8
-
-Developers Using AI
-
-Q14 Are your developers using AI, generative, or transformational tools to write code and modify projects (by industry sector)?
-
-Technology 91%
-Cybersecurity 98%
-Application/ Software Development 85%
-Manufacturing 84%
-FinTech 98%
-Education 100%
-Banking/Financial 95%
-Telecommunications/ ISP 90%
-Healthcare 92%
-Retail 87%
-Media 97%
-Government 96%
-Insurance 90%
-Transportation 90%
-Nonprofit/ Association 90%
-Utilities 75%
-Other 50%
-
-Similar numbers play out by industry sector, with over 90% adoption reported across the Technology, Cybersecurity, FinTech, Education, Banking/Financial, Healthcare, Media, Insurance, Transportation, and Utilities sectors. Even lagging sectors, such as Nonprofit, report at least 50% adoption. Perhaps unsurprisingly, the larger the organization, the more likely it has significantly adopted some facet of AI in its software development.
-
-This trend is reshaping the security testing landscape and also introduces new challenges, particularly in securing AI-generated code and managing potential biases or vulnerabilities that AI systems might introduce, as the responses to Question 15 show.
-
-Q15. How confident are you that you have the processes in place to manage and secure AI-generated code?
+5.05%
 
 Confident (Net)
-85%
-Very confident we have the policies and automated testing in place
-24%
-Moderately confident we have the policies and automated testing in place
-41%
-Slightly confident we have the policies and automated testing in place
-20%
-Not at all confident we have the policies and automated testing in place
-6%
+
+84.94%
+
+Very confident we have the policies and automated
+testing in place
+
+24.08%
+
+Moderately confident we have the policies and
+automated testing in place
+
+Slightly confident we have the policies and
+automated testing in place
+
+Not at all confident we have the policies and
+automated testing in place
+
 This is not a priority at this time, as using AI-
 generated code is against company policies
-4%
-I do not have enough visibility into our
-processes to manage and secure AI-
-generated code
-5%
 
-blackduck.com | 9
+41.33%
 
-### Most respondents not confident they’re securing AI-generated code
+19.52%
 
-While the net confidence level of respondents to Question 15 may seem high at first blush, a deeper dive into the responses show that 41% of respondents are only moderately confident that they have the policies and automated testing in place to adequately vet AI-generated code, while 20% are only slightly confident and 6% are not at all confident—a total 67% of respondents altogether showing concern about managing and securing AI-generated code.
+6.05%
 
-This distribution suggests that even though their development teams are adopting AI tools, many organizations are still in the process of putting policies and tools into place to manage the unique challenges posed by AI-generated code. Ensuring the reliability and security of that code remains a significant challenge. As one example, AI tools trained on public open source codebases could introduce potential IP, copyright, and license issues into the code they produce, particularly if that code is used in proprietary software.
+4.46%
 
-Figure 1. Developers’ AI usage (permitted or not) correlated against moderate to high confidence in security controls
+I do not have enough visibility into our processes to
+manage and secure AI-generated code
 
-Moderately confident we have the policies and automated testing in place
-22%
-Not at all confident we have the policies and automated testing in place
-18%
-Slightly confident we have the policies and automated testing in place
-11%
-This is not a priority at this time, as using AI-generated code is against company policies
-11%
-Very confident we have the policies and automated testing in place
-7%
-<5% of orgs
-27% of orgs
-43% of orgs
-21% of orgs
-Confidence in security controls amid AI development
+4.56%
 
-In Figure 1, starting from the left, less than 5% of organizations forbid developers from using AI to write code or modify projects. Perhaps this group’s moderate and high confidence in their preparedness derives from their prohibition of the use of AI, or perhaps there are other access controls that preclude access to AI resources.
+About Black Duck
+Black Duck® offers the most comprehensive, powerful, and trusted
+portfolio of application security solutions in the industry. We have an
+unmatched track record of helping organizations around the world secure
+their software quickly, integrate security efficiently in their development
+environments, and safely innovate with new technologies. As the
+recognized leaders, experts, and innovators in software security, Black
+Duck has everything you need to build trust in your software. Learn more
+at www.blackduck.com.
 
-The second group, 27% of respondents, reports a strong awareness that AI is being used. Eighty-one percent have moderate or high confidence in their security preparedness (22% of overall responses). These respondents are readily leveraging AI tools and confident that they have the controls in place to mitigate consequent risks.
+©2024 Black Duck Software, Inc. All rights reserved. Black Duck is a trademark of Black Duck Software, Inc. in the
+United States and other countries. All other names mentioned herein are trademarks or registered trademarks of
+their respective owners. October 2024
 
-The third and fourth groups are in the midst of an AI evolution, with moderate to high confidence in their security preparedness and a seemingly phased approach to AI-enabled development.
-
-blackduck.com | 10
-
-Figure 2. Developers’ AI usage (permitted or not) correlated against low to slight confidence in security controls
-
-Moderately confident we have the policies and automated testing in place
-38%
-Not at all confident we have the policies and automated testing in place
-33%
-Slightly confident we have the policies and automated testing in place
-11%
-This is not a priority at this time, as using AI-generated code is against company policies
-11%
-Very confident we have the policies and automated testing in place
-7%
-<5% of orgs
-27% of orgs
-43% of orgs
-21% of orgs
-AI and code snippets
-
-A common practice of developers is to use “snippets” (small extracts from larger pieces of code) in software, a problem now exacerbated by the use of AI coding assistants. Although code might include only a snippet of open source, users of the software must still comply with any license associated with the snippet.
-
-Even one noncompliant license in software can result in legal reviews, freezes in merger and acquisition transactions, loss of intellectual property rights, time-consuming remediation efforts, and delays in getting a product to market.
-
-Black Duck’s 2024 OSSRA report relates that over half—53%—of the applications examined contained open source with license conflicts, exposing those applications’ owners to potential IP ownership questions.
-
-In Figure 2, we can see some dissonance between respondents’ use of AI-generated code and AI-assisted development, and the steps they’re taking to safeguard their intellectual property and mitigate security risks.
-
-Starting from the left, the less than 5% that forbids the use of AI tools altogether exhibits slight or nonexistent confidence in security preparedness, with nearly 42% of this group claiming a lack of priority. Consequently, their choice to disallow AI-enabled development may stem from this lagging organizational approach to securing AI-generated code.
-
-The rightmost group highlights a greater exposure to risk, where automated testing of AI-generated code is a notably lower priority despite an awareness of the use of AI-assisted development.
-
-The group second from right illustrates a seemingly phased adoption of AI-enabled development and security controls, with limited permission being granted, perhaps based upon a slight confidence in preparedness.
-
-Most concerning is the group second from left, which has some development teams that are using AI with permission, despite a clear lack of confidence in their preparations to mitigate risks.
-
-blackduck.com | 11
-
-Q7. Which statement best describes the clarity and actionability of the results of your application security tests (by regional)?
-
-Regard results as easy to interpret and act on (Net)
-China 88%
-Singapore 83%
-Finland 82%
-Germany 76%
-U.K. 73%
-France 71%
-U.S. 55%
-Japan 51%
-
-### Geographical differences
-
-Notable variations were observed across countries. For example, 88% of respondents in China found testing results easy to understand, compared to 55% in the U.S. and 51% in Japan. These regional disparities suggest differences in tool adoption, security culture, or regulatory environments across countries.
-
-### Interpreting and acting on security test results
-
-The effectiveness of application security testing hinges not just on the execution of tests, but also on the ability to interpret results and take appropriate action. This section examines the current state of result interpretation and remediation based on our survey results, highlighting both progress and persistent challenges in the field.
-
-Q7. Which statement best describes the clarity and actionability of the results of your application security tests?
-
-Security test results are extremely easy to understand and to act upon
-All respondents 20%
-CISO 37%
-CTO/CPO 23%
-AppSec 21%
-DevOps and dev/ engineering 14%
-
-#### Role-based differences
-
-Our analysis suggests that CISOs, CTOs/CPOs, and AppSec professionals generally reported higher levels of ease in understanding and acting upon security test results compared to other roles (Question 7). For example, 37% of CISOs, 23% of CTO/CPOs, and 21% of AppSec professionals found security test results “extremely easy” to understand and to act upon.
-
-In contrast, only 14% of DevOps and dev/engineering personnel found these tasks extremely easy. This may be due to senior-level personnel having more experience or better interpretative tools at their command than workers in the trenches. Unfortunately, those workers are usually the ones on the front line of security testing and the ones whose efforts are being hampered by the lack of clarity in testing results.
-
-blackduck.com | 12
-
-Q8. Which statement best describes your approach to parsing and cleansing the results of application security tests?
-
-Results generated by all tools are manually parsed and cleansed
-38%
-We can automatically parse and cleanse results from some testing tools; the remainder are manually parsed and cleansed
-28%
-Results generated by all tools are automatically parsed and cleansed
-25%
-
-### Different approaches to parsing and cleansing results
-
-The process of parsing and cleansing security test results reveals a spectrum of approaches (Question 8). For example, 38% of respondents manually parse and cleanse results from all tools. Twenty-five percent report fully automated parsing and cleansing of results. Twenty-eight percent use a combination of automated and manual parsing and cleansing.
-
-The prevalence of manual and hybrid approaches (66% combined) indicates a significant opportunity for increased automation and normalization in results processing. However, the challenge lies in balancing automation with the need for human expertise in interpreting complex security contexts.
-
-100%
-80%
-60%
-40%
-20%
-0%
-Figure 3. Impact of review method on understanding results and taking action
-90%
-77%
-64%
-35%
-10%
-22%
-Results are difficult to understand and act upon
-Results are easy to understand and act upon
-All are reviewed automatically
-All are reviewed manually
-Hybrid review approach
-Automated vs. manual review
-
-As illustrated in Figure 3, it is possible to associate ease of interpretation and action with the method of parsing and cleansing data. The resulting insight reveals a clear benefit to establishing automated mechanisms for parsing and cleansing security test data, whether the benefit comes from accelerated review or more consistent elimination of noise before human consumption. Of those that manually parse and cleanse test results, 22% find those results somewhat or extremely difficult to understand and act upon. Of those that use automated means, only 10% find the same difficulty.
-
-Conversely, 90% of those that use automated methods to parse and cleanse data find the results of security tests somewhat or extremely easy to understand and act upon, while only 77% report the same ease by doing so manually. Notably, when examining those with hybrid approaches to reviewing test results, we see a “worst of both worlds” experience, with 35% citing difficulty understanding and acting on results, and only 64% finding it easy to do so.
-
-blackduck.com | 13
-
-### From interpretation to action
-
-Constant security testing vs. development speed
-tension
-
-Q13. Which statement best describes the relationship between application security testing and software development/delivery?
-
-Application security testing severely slows down development/delivery
-18%
-Application security testing moderately slows down development/delivery
-43%
-Application security testing slightly slows down development/delivery
-25%
-Total
-86%
-
-Despite advancements in tools and processes, tension remains between thorough security testing and the need for development speed, as shown in the responses to Question 13. Eighty-six percent of respondents feel that security testing slows down development by some amount (ranging from slightly to severely). The plurality (43%) feels that testing moderately slows down development. While one-quarter of respondents feel that security testing slightly slows down development/delivery, and another 18% feel that it severely slows the development life cycle.
-
-There may be more insight
+blackduck.com  |  22
