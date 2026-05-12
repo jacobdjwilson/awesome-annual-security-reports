@@ -1,33 +1,34 @@
-# Global State of Authentication Survey 2025
-## Perceptions Vs. Reality: Gaps In Authentication Security
-### Insights by Yubico
+Global State of Authentication Survey 2025
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Executive Summary](#executive-summary)
+  - [Executive Summary](#executive-summary)
 - [I. The New Cyber Landscape](#i-the-new-cyber-landscape)
   - [A Global Cybersecurity Wake-Up Call](#a-global-cybersecurity-wake-up-call)
   - [Inconsistent Authentication](#inconsistent-authentication)
-  - [Perceptions vs. Reality](#perceptions-vs-reality)
+  - [Perceptions vs. Reality](#perceptions-vs.-reality)
   - [Personal Habits Jeopardize Enterprise Security](#personal-habits-jeopardize-enterprise-security)
   - [United States Spotlight](#united-states-spotlight)
   - [AI Has Supercharged Cyber Attacks](#ai-has-supercharged-cyber-attacks)
   - [Blurred Lines Between Human and AI Communication](#blurred-lines-between-human-and-ai-communication)
 - [II. Solutions: The Path to Building Cyber Resilience](#ii-solutions-the-path-to-building-cyber-resilience)
-  - [Knowledge As the First Line of Defense](#knowledge-as-the-first-line-of-defense)
+  - [Knowledge is the First Line of Defense](#knowledge-is-the-first-line-of-defense)
+  - [Effective Education Strategies](#effective-education-strategies)
   - [Closing the Gap on MFA Adoption](#closing-the-gap-on-mfa-adoption)
   - [The Case for Hardware Security Keys](#the-case-for-hardware-security-keys)
 - [Conclusion](#conclusion)
 - [About Yubico](#about-yubico)
-- [Methodology](#methodology)
+  - [Methodology](#methodology)
+
+---
 
 ## Introduction
 
 Cybersecurity threats present an ever-evolving danger to enterprises of all sizes, but many organizations are slow to react to new and emerging risks. Indeed, many employees and companies now believe that legacy security protocols are as effective today as they were months or even years ago. Unfortunately, this perception does not match reality.
 
-Rising threats from artificial intelligence (AI)-powered attacks, combined with outdated cybersecurity guidelines and high-risk employee habits, have left countless organizations vulnerable to security breaches. Yubico’s survey explored individuals’ cybersecurity habits in both their workplace and personal lives. It also examined the dangers of weak security practices and evaluated the growing concerns around emerging technologies like AI and their implications for both organizational and individual security.
+Rising threats from artificial intelligence (AI) -powered attacks, combined with outdated cybersecurity guidelines and high-risk employee habits, have left countless organizations vulnerable to security breaches. Yubico’s survey explored individuals’ cybersecurity habits in both their workplace and personal lives. It also examined the dangers of weak security practices and evaluated the growing concerns around emerging technologies like AI and their implications for both organizational and individual security.
 
-## Executive Summary
+### Executive Summary
 
 Yubico commissioned a global survey of 18,000 employed adults from Australia, India, Japan, France, Germany, Singapore, Sweden, the United Kingdom, and the United States, revealing fundamental failings in organizational security, driven by a misalignment between what employees and their companies perceive as secure and the reality of their vulnerability to modern cyber threats.
 
@@ -37,15 +38,9 @@ Perhaps more telling, personal security habits are undermining protection protoc
 
 The rapid growth and adoption of AI by bad actors has dramatically quickened the pace at which new threats emerge. Our findings indicate that those surveyed are aware of this new reality, with 76% concerned that their accounts are now at a much higher risk of attack — a large increase over the 58% that felt this way in a similar 2024 report.
 
-![Image description: Infographic showing 18,000+ responses and 9 countries.]
-
-Yubico 2025 Global State of Global Authentication Survey 1
+![Infographic showing 18,000+ survey responses across 9 countries]
 
 ## I. The New Cyber Landscape
-
-![Image description: Infographic showing the title "The New Cyber Landscape" with Yubico branding.]
-
-Yubico 2025 Global State of Global Authentication Survey 2
 
 ### A Global Cybersecurity Wake-Up Call
 
@@ -55,15 +50,13 @@ These two statistics suggest that close to half of employees were never introduc
 
 With new attack techniques emerging on a near-constant basis and the rise of AI-based threats, inconsistent cybersecurity training habits leave many organizations and their workforce in a constant state of vulnerability.
 
-#### Inconsistent Authentication
+### Inconsistent Authentication
 
 Further complicating the risk profile of modern enterprise systems is how they inconsistently use authentication. Companies that provide employees with multiple types of authentication to apps and services create a weaker defense against potential vulnerabilities.
 
 Perhaps more eye-opening, 62% of organizations still rely primarily on username/password credentials despite the vast evidence that this outdated technology is increasingly vulnerable. Another 44% of companies utilize SMS-based one-time passwords (OTPs), which are susceptible to SIM swapping attacks and social engineering that, thanks to AI, is now more sophisticated.
 
-![Image description: Bar chart showing the forms of authentication used by companies across different applications/programs. The categories are: Username and password (62%), Mobile SMS based authentication (44%), Mobile TOTP/push authenticator application (39%), Synced passkey (e.g. cloud-based passkeys from cloud providers and platforms) (33%), Device-bound passkey (e.g. hardware security keys) (33%), None of the above (1%).]
-
-Yubico 2025 Global State of Global Authentication Survey 3
+![Bar chart showing company authentication methods: Username and password (62%), Mobile SMS based authentication (44%), Mobile TOTP/push authenticator application (39%), Synced passkey (33%), Device-bound passkey (33%), None of the above (1%)]
 
 ### Perceptions vs. Reality
 
@@ -73,17 +66,11 @@ In our research, SMS authentication was perceived to be the most secure method b
 
 Device-bound passkeys, like those on hardware security keys, were perceived as the most secure by just 30% of respondents, despite being highly effective against a variety of attack types. These misconceptions influence both individual security choices as well as overarching organizational policies, increasing vulnerability across an entire enterprise.
 
-Despite these vulnerabilities, 84% of respondents whose companies’ security measures differ based on role still believe their company’s cybersecurity is as secure as it needs to be, showing misplaced confidence as all levels of an organization need to be treated the same for cybersecurity tools to be effective.
-
 > Despite vulnerabilities, 84% of respondents whose companies’ security measures differ based on role and requirement still believe their company’s cybersecurity is as secure as it needs to be, showing overconfidence.
->
-> 84% still believe their company’s cybersecurity is as secure as it needs to be
 
-![Image description: Pie chart showing the perceived most secure method of authentication. The categories are: SMS authentication (41%), Time-sensitive OTPs through dedicated mobile apps (33%), Passwords (26%), Device-bound passkeys (e.g. hardware security keys) (30%). Note: Percentages may not add up to 100% due to multiple choice or overlapping responses.]
+![Bar chart showing perceived most secure authentication methods: SMS authentication (41%), Mobile TOTP/push authenticator application (33%), Passwords (26%), Device-bound passkey (30%)]
 
-Hardware security keys are widely regarded as the most secure form of authentication. These small, physical devices must be in your possession to verify your identity–making them highly effective at preventing phishing attacks and identity theft. Device-bound passkeys, a type stored on a hardware security key, are considered the “gold standard.”
-
-Yubico 2025 Global State of Global Authentication Survey 4
+> Hardware security keys are widely regarded as the most secure form of authentication. These small, physical devices must be in your possession to verify your identity–making them highly effective at preventing phishing attacks and identity theft. Device-bound passkeys, a type stored on a hardware security key, are considered the “gold standard.”
 
 ### Personal Habits Jeopardize Enterprise Security
 
@@ -95,11 +82,9 @@ Unsurprisingly, personal authentication habits closely resemble the trends obser
 
 > Employees use personal devices for work and work devices for personal activities, turning a personal security misstep into a potential enterprise vulnerability. Personal and professional cybersecurity hygiene should go hand in hand, and be a benefit to each other.”
 >
-> — Ronnie Manning, chief brand advocate, Yubico
+> Ronnie Manning, chief brand advocate, Yubico
 
-![Image description: Bar chart showing how individuals authenticate/login to their personal accounts. The categories are: Username and password (60%), Mobile SMS based authentication (36%), Password manager (23%), Mobile TOTP/push authenticator application (22%), Synced passkey (e.g. cloud-based passkeys from cloud providers and platforms) (15%), Device-bound passkey (e.g. hardware security keys) (14%), None of the above (3%).]
-
-Yubico 2025 Global State of Global Authentication Survey 5
+![Bar chart showing personal account authentication methods: Username and password (60%), Mobile SMS based authentication (36%), Password manager (23%), Mobile TOTP/push authenticator application (22%), Synced passkey (15%), Device-bound passkey (14%), None of the above (3%)]
 
 ### United States Spotlight
 
@@ -111,13 +96,11 @@ However, any technological advantage is undermined by inconsistent authenticatio
 
 Perhaps even more notable, 58% of US employees use personal devices for work accounts — a nearly 10% increase over the global average.
 
-![Image description: Bar chart showing types of passkeys used by US respondents. The categories are: A synced, cloud-based passkey (e.g. iCloud keychain passkeys, google password manager passkeys, Windows Hello passkeys) (67%), A hardware passkey (e.g. a YubiKey) (33%), I don’t remember (13%).]
+![Bar chart showing types of passkeys used by US respondents: A synced, cloud-based passkey (67%), A hardware passkey (33%), I don’t remember (13%)]
 
-Confidence in advanced authentication methods is growing:
-
-In the US, 34% of respondents now believe device bound passkeys are the most secure authentication methods, up from 18% in 2024, an 18-point increase.
-
-Yubico 2025 Global State of Global Authentication Survey 6
+> Confidence in advanced authentication methods is growing:
+>
+> In the US, 34% of respondents now believe device bound passkeys are the most secure authentication methods, up from 18% in 2024, an 18-point increase.
 
 ### AI Has Supercharged Cyber Attacks
 
@@ -131,9 +114,7 @@ Encouragingly, 76% of those surveyed expressed concern about AI impacting the se
 
 > AI is actively rewriting the rules of cybercrime, making it easier for bad actors to launch sophisticated and highly targeted attacks. Organizations that utilize basic authentication methods like passwords and SMS are going to find themselves behind the curve. It’s clear that the time is now for companies to modernize and adopt security methods that are proven against today’s threats.”
 >
-> — Ronnie Manning, chief brand advocate, Yubico
-
-Yubico 2025 Global State of Global Authentication Survey 7
+> Ronnie Manning, chief brand advocate, Yubico
 
 ### Blurred Lines Between Human and AI Communication
 
@@ -145,38 +126,9 @@ Our data shows that most individuals also struggle to differentiate between huma
 
 However, these results were not uniform across all age groups. Younger generations demonstrated a greater ability to correctly identify human writing, suggesting that individuals who have grown up around this type of technology are more likely to intuitively know the difference.
 
-**Human email**
-
-Hi [NAME],
-
-To keep our network secure, we ask that all users reset their login credentials for our project management system every 90 days. Your login is due to expire soon, so please use the link below to reset your credentials — let us know if you have any issues.
-
-https://link/example.com
-
-Thank you,
-[NAME]
-Company administrator
-
-**AI email**
-
-Hi [NAME],
-
-Just a quick heads-up: your login for the company’s project management system has expired (we reset them every 90 days). To keep things secure, we ask that you set up a new login. You can do that by clicking the link below:
-https://link/example.com
-
-Reach out if you have any trouble.
-
-Best,
-[NAME]
-Company administrator
-
-Yubico 2025 Global State of Global Authentication Survey 8
+![Examples of human-written and AI-generated phishing emails, highlighting subtle differences in tone and phrasing]
 
 ## II. Solutions: The Path to Building Cyber Resilience
-
-![Image description: Infographic showing the title "Solutions: The Path to Building Cyber Resilience" with Yubico branding.]
-
-Yubico 2025 Global State of Global Authentication Survey 9
 
 ### Knowledge is the First Line of Defense
 
@@ -186,7 +138,7 @@ A strong example of how misconceptions can derail security efforts can be seen i
 
 Similarly, the recurrent lack of passkey adoption appears to stem from gaps in knowledge as opposed to technical hurdles. Of those surveyed who do not use passkeys, 45% said they had never heard of them. An additional 12% said they are not an option for the sites and services they use, and 11% were concerned they are too complicated. This suggests a need for education and organizational commitment to improve authentication security.
 
-#### Effective Education Strategies
+### Effective Education Strategies
 
 Bolstering enterprise cybersecurity resilience demands a hands-on approach that includes educational programs, technical training, and regular review of security habits. It’s important to dispel misconceptions about the perceived complexity of cybersecurity and present the tools available in straightforward terms. Modern security solutions are built with general users in mind and offer a streamlined approach when compared to outdated passwords.
 
@@ -194,9 +146,7 @@ Educational programs must emphasize the importance of both professional and pers
 
 > Employers must dispel the myth that cybersecurity is only for the tech-savvy. With the right knowledge and tools, every single person in the organization can, and should, contribute to a safe online ecosystem.”
 >
-> — Yubico Spokesperson
-
-Yubico 2025 Global State of Global Authentication Survey 10
+> Yubico Spokesperson
 
 ### Closing the Gap on MFA Adoption
 
@@ -206,11 +156,11 @@ Global variations in adoption rates provide additional insight into effective im
 
 It is essential for organizations to work toward eliminating barriers to MFA adoption as a first step. Companies should provide user-friendly tools, easy-to-understand guidance, and continuous support and troubleshooting. The goal should be to make MFA options convenient and streamlined, not just mandate their use.
 
-![Image description: Pie chart showing whether users have multi-factor authentication (MFA) enabled for their personal email. The categories are: Yes (71%), No (29%).]
+![Pie chart showing MFA adoption for personal email: Yes (71%), No (29%)]
 
-![Image description: Bar chart showing reasons preventing users from adopting MFA. The categories are: Lack of familiarity (40%), Feeling they don’t have the technical know-how (24%), Thinking it takes too much time (22%), Believing it’s too expensive (9%).]
-
-Yubico 2025 Global State of Global Authentication Survey 11
+> What Prevents Users from Adopting MFA?
+>
+> Among those who don’t use MFA, the top reasons include lack of familiarity (40%), feeling they don’t have the technical know-how (24%), thinking it takes too much time (22%), and believing it’s too expensive (9%).
 
 ### The Case for Hardware Security Keys
 
@@ -224,13 +174,9 @@ Despite being the most phishing-resistant effective tool available today, just 1
 
 Just as with adoption of any new technology, implementing hardware security keys requires planning and user support, but the benefits dramatically outweigh both the initial investment and any training that may be required. The successful deployment of hardware security keys typically results in significant ROI, a precipitous drop-off of account incidents, reduced technical support, and improves user confidence and peace of mind as a whole.
 
-#### Generational trends
-
-Generational trends offer optimism for increased adoption, with Millennials (20%) and Gen Z (19%) leading the way in MFA use within corporate environments.
-
-Yubico 2025 Global State of Global Authentication Survey 12
-
-Yubico 2025 Global State of Global Authentication Survey 13
+> Generational trends
+>
+> Generational trends offer optimism for increased adoption, with Millennials (20%) and Gen Z (19%) leading the way in MFA use within corporate environments.
 
 ## Conclusion
 
@@ -242,7 +188,7 @@ Generational trends give us a reason to be optimistic about the future, with you
 
 The way forward for organizations is clear: Embrace integrated approaches with proven technologies that offer true protection against cyber attacks. By taking decisive action today, companies can close the gap between expectation and reality and create a future where security is a shared strength rather than a persistent vulnerability.
 
-## About Yubico:
+## About Yubico
 
 Yubico (Nasdaq Stockholm: YUBICO) is a modern cybersecurity company on a mission to make the internet safer for everyone. As the inventor of the YubiKey, we set the gold standard for modern phishing-resistant, hardware-backed authentication, stopping account takeovers and making secure login simple.
 
@@ -254,8 +200,6 @@ We believe strong security should never be out of reach. Through our philanthrop
 
 Dual-headquartered in Stockholm, Sweden and Santa Clara, California, Yubico is proud to be recognized as one of TIME’s 100 Most Influential Companies and Fast Company’s Most Innovative Companies. Learn more at www.yubico.com.
 
-## Methodology
+### Methodology
 
 Talker Research surveyed 2,000 employed adults from the United States, United Kingdom, Australia, India, Japan, Singapore, France, Germany, and Sweden. The survey was commissioned by Yubico and administered online between August 15 and August 27, 2025.
-
-Yubico 2025 Global State of Global Authentication Survey 14
