@@ -2,7 +2,58 @@ X-Force
 Cloud Threat Landscape
 Report 2024
 
-## Introduction
+Table of
+contents
+
+02
+
+03
+
+05
+
+06
+
+09
+
+Introduction
+
+Key takeaways
+
+Cloud vulnerabilities
+
+Cloud and the dark web
+
+Targeting cloud-based platforms
+and software as a service (SaaS)
+
+11
+
+Initial access vectors
+
+13
+
+15
+
+20
+
+21
+
+23
+
+Actions on objective
+
+Security rule failures in
+cloud-based environments
+
+Cloud and AI
+
+Recommendations
+
+About us
+
+1
+
+X-Force Cloud Threat Landscape Report 2024Introduction
 
 The IBM® X-Force® team is well-positioned within the security
 domain to provide organizations with industry best practices and
@@ -15,16 +66,18 @@ impact it’s having on organizations.
 
 To produce this report, X-Force gathered and analyzed data
 compiled from June 2022 through June 2024 from the
-following sources:¹
+following sources:1
 
  – IBM X-Force Threat Intelligence
  – IBM X-Force Red penetration tests, as well as adversary
+
 simulation and vulnerability management
 services engagements
 
  – IBM X-Force incident response (IR) engagements
  – Red Hat® Insights
  – Dark web analysis by X-Force with data provided by report
+
 contributor Cybersixgill
 
 With the cloud computing market expected to reach
@@ -54,7 +107,9 @@ and safeguard business-critical information and resources,
 ensuring a secure and smooth cloud transformation journey and
 successful future implementations.
 
-## Key takeaways
+2
+
+X-Force Cloud Threat Landscape Report 2024Key takeways
 
 In their data gathering and analysis, X-Force uncovered the most
 prevalent security risks organizations could encounter from
@@ -75,20 +130,24 @@ services for malicious
 activities
 
  – XSS vulnerabilities composed 27% of newly discovered CVE
+
 during the reporting period, which could allow threat actors to
 steal session tokens or redirect users to malicious web pages.
 
  – While the overall mentions of SaaS platforms on dark web
+
 marketplaces decreased by approximately 20% compared to
 2023, gaining access using compromised cloud credentials is
 the second most common initial attack vector.
 
  – There’s been a steady decrease in the average price per
+
 compromised cloud access credentials, from USD 11.74 in
 2022 to USD 10.23 in 2024, equating to an overall decrease of
 12.8% over a 3-year period.
 
  – Threat actors are increasingly leveraging trusted
+
 cloud-based services, such as Dropbox, OneDrive and Google
 Drive, for command-and-control communications and
 malware distribution.
@@ -97,7 +156,9 @@ malware distribution.
 APT37, carried out multistage attacks against cloud-based
 services to distribute remote access trojans (RATs).
 
-Phishing is the leading
+3
+
+X-Force Cloud Threat Landscape Report 2024Phishing is the leading
 initial access vector
 
  – Phishing accounted for 33% of all cloud-related incidents
@@ -109,6 +170,7 @@ Frequent exploitation of
 valid credentials
 
  – 28% of cloud-related incidents involved the use of legitimate
+
 credentials to get into victim environments. Often these
 accounts are overprivileged, with users having more privileges
 than needed to carry out their tasks, posing a significant
@@ -118,6 +180,7 @@ Business email compromise
 (BEC) going after credentials
 
  – BEC attacks, where attackers spoof email accounts posing
+
 as someone within the victim organization or another trusted
 organization, accounted for 39% of incidents over the past 2
 years. Threat actors commonly leverage harvested credentials
@@ -133,11 +196,14 @@ involved improper configuration of essential security and
 management settings in Linux® systems.
 
  – The #1 failed security rule in environments where 50%
+
 or more of the systems are in the cloud involved the failure
 to ensure consistent and secure authentication and
 cryptography practices.
 
-## Cloud vulnerabilities
+4
+
+X-Force Cloud Threat Landscape Report 2024Cloud vulnerabilities
 
 Following last year’s analysis, X-Force categorized new CVE
 according to their potential impact if they were to be
@@ -158,9 +224,74 @@ this exploitation can result in the deployment of cryptominers,
 infostealers, ransomware and other types of malware to achieve
 malicious objectives.
 
-![Figure 1. XSS is the #1 CVE impact. Source: X-Force](Image description: A bar chart showing CVE impacts for 2023 and 2024. For 2024, XSS is the highest at 27%, followed by Gain access at 20%, Obtain information at 20%, Other at 16%, Denial of service at 16%, Bypass security at 13%, Gain privileges at 10%, and Data manipulation at 8%. For 2023, Gain access is the highest at 21%, followed by Obtain information at 20%, Other at 16%, Denial of service at 16%, Bypass security at 16%, Gain privileges at 10%, Data manipulation at 8%, and XSS at 1%. The chart shows a significant increase in XSS impact from 2023 to 2024.)
+CVE impact
 
-## Cloud and the dark web
+Cross-site scripting
+
+Gain access
+
+Obtain information
+
+Other
+
+Denial of service
+
+Bypass security
+
+Gain privileges
+
+Data manipulation
+
+<1
+
+1
+1
+
+14
+
+27
+
+20
+20
+
+21
+
+13
+
+10
+10
+
+8
+
+6
+
+16
+
+16
+
+16
+
+0%
+
+5%
+
+10%
+
+15%
+
+20%
+
+25%
+
+2024
+
+2023
+
+Figure 1. XSS is the #1 CVE impact. Source: X-Force
+
+5
+
+X-Force Cloud Threat Landscape Report 2024Cloud and the dark web
 
 For this year’s report, X-Force researchers once again partnered
 with Cybersixgill to gain insights into how cybercriminals exploit
@@ -184,9 +315,41 @@ for cloud infrastructure improves, such as the speed of detection
 and response capabilities, rendering these credentials less
 effective and, therefore, less valuable.
 
-![Figure 2. There’s been an overall decrease of 12.8% in the price of cloud access credentials since 2022. Measured in USD. Source: Cybersixgill](Image description: A bar chart showing the average price of cloud access credentials on the dark web from 2022 to 2024. The price decreased from $11.74 in 2022 to $10.68 in 2023 and $10.23 in 2024.)
+Average price of cloud access credentials
 
-While access to compromised cloud credentials continues to be
+11.74
+
+10.68
+
+10.23
+
+$12.00
+
+$11.50
+
+$11.00
+
+$10.50
+
+$10.00
+
+$9.50
+
+$9.00
+
+2024
+
+2023
+
+2022
+
+Figure 2. There’s been an overall decrease of 12.8% in the
+price of cloud access credentials since 2022. Measured in USD.
+Source: Cybersixgill
+
+6
+
+X-Force Cloud Threat Landscape Report 2024While access to compromised cloud credentials continues to be
 a popular for sale asset on dark web marketplaces, especially
 regarding cloud-based SaaS solutions, overall mentions of SaaS
 platforms on dark web marketplaces decreased by an average of
@@ -219,6 +382,7 @@ Despite the slight increase, it only represented 1.8% of total
 discussions regarding SaaS solutions.
 
  – Notably, the most significant decrease in marketplace
+
 discussions was regarding WordPress-Admin at 98%, followed
 by Microsoft Active Directory at 44% and ServiceNow at 38%.
 
@@ -231,7 +395,183 @@ of advanced encryption, multifactor authentication (MFA)
 and robust patch management, have significantly reduced
 vulnerabilities and the exploitability of these solutions.
 
-![Figure 3. Top-mentioned SaaS solutions are based on dark web marketplace discussions. Source: Cybersixgill](Image description: A grouped bar chart comparing the number of mentions for various SaaS solutions on the dark web in 2023 and 2024. For most solutions, 2024 mentions are significantly lower than 2023. Notable exceptions include MS TeamViewer with a slight increase. Microsoft Outlook has the highest mentions in both years. WordPress-Admin shows a drastic decrease from 2023 to 2024.)
+4,915,527
+
+5,378,803
+
+MS Outlook
+
+Zoom
+
+Autodesk
+
+MongoDB
+
+Dropbox
+
+MyWorkdayJobs
+
+MS TeamViewer
+
+Taleo
+
+Zendesk
+
+Moodle
+
+Amazon Web Services (AWS)
+
+MS Active Directory
+
+Webex
+
+Box
+
+ServiceNow
+
+WordPress-Admin
+
+139,185
+143,610
+132,777
+122,258
+ 122,870
+144,999
+
+ 111,098
+122,237
+
+ 79,924
+99,552
+
+ 70,595
+
+100,346
+
+ 64,325
+
+115,638
+
+ 48,993
+70,734
+
+ 45,560
+67,452
+
+ 39,242
+49,985
+
+ 16,517
+
+498,511
+
+604,892
+
+315,985
+
+349,074
+
+285,270
+
+329,697
+
+275,616
+
+371,239
+
+832,884
+
+0
+
+200K
+
+400K
+
+600K
+
+800K
+
+1M
+
+4M
+
+5M
+
+6M
+
+2024
+
+2023
+
+Figure 3. Top-mentioned SaaS solutions are based on dark
+web marketplace discussions. Source: Cybersixgill
+
+7
+
+X-Force Cloud Threat Landscape Report 2024Top-mentioned infostealers on the dark web
+
+1,757,063
+
+1,247,604
+
+1,287,750
+
+773,399
+
+583,818
+
+932,480
+
+9,903
+
+3,057
+
+Lumma
+
+RisePro
+
+Vidar
+
+RedLine
+
+Raccoon
+Stealer
+
+Stealc
+
+331,263
+
+221,917
+
+3,163,103
+
+0
+
+500K
+
+1M
+
+1.5M
+
+2M
+
+2.5M
+
+3M
+
+3.5M
+
+Notably, while Lumma and RisePro had
+little to no dark web activity in 2023, they
+were the 2 most popular infostealers
+sold on the dark web in 2024.
+
+2024
+
+2023
+
+Figure 4. Top-mentioned infostealers are based on dark web
+marketplace discussions. Source: Cybersixgill
 
 X-Force observed that Lumma, RisePro and Vidar were the
 most popular infostealers sold on the dark web in 2024. In
@@ -249,9 +589,9 @@ distributing Raccoon Stealer. Additionally, the emergence of new
 infostealers like Lumma and RisePro shifted the focus of threat
 actors, reducing the popularity of Raccoon Stealer.
 
-![Figure 4. Top-mentioned infostealers are based on dark web marketplace discussions. Source: Cybersixgill](Image description: A grouped bar chart comparing the number of mentions for various infostealers on the dark web in 2023 and 2024. Raccoon Stealer was dominant in 2023 but saw a sharp decline in 2024. Lumma and RisePro emerged as the most popular infostealers in 2024.)
+8
 
-## Targeting cloud-based
+X-Force Cloud Threat Landscape Report 2024Targeting cloud-based
 file hosting services,
 platforms and SaaS
 
@@ -272,6 +612,7 @@ Malware distribution
 X-Force has continued to observe threat actors widely using
 cloud-based file hosting services, such as Dropbox, OneDrive
 and Google Drive, to distribute malicious software that appears
+
 to be legitimate. 3 notable malware campaigns include 2 from
 North Korean state-sponsored groups:
 
@@ -288,7 +629,9 @@ campaigns successfully exploited the trusted nature of public
 cloud services by bypassing traditional security measures and
 effectively delivering malware to unsuspecting users.
 
-Cloud platforms and services:
+9
+
+X-Force Cloud Threat Landscape Report 2024Cloud platforms and services:
 Infostealers, cryptominers
 and ransomware
 
@@ -311,6 +654,7 @@ Google Cloud IAM and Snowflake, control access to cloud
 resources, such as virtual machines, storage and databases.
 
  – Cloud storage credentials, such as Dropbox, Box and
+
 Microsoft OneDrive, allow attackers to exfiltrate sensitive files
 and documents.
 
@@ -319,6 +663,7 @@ contain valuable communication data and may be used for
 password reset procedures for other cloud services.
 
  – Cloud-based collaboration tool credentials on platforms,
+
 such as Microsoft Teams, Slack or Google Workspace, where
 sensitive information is often shared among team members,
 are often targeted.
@@ -361,7 +706,9 @@ on cloud environments, emphasizing the necessity for security
 best practices, mitigation strategies and effective disaster
 recovery plans.
 
-## Initial access vectors
+10
+
+X-Force Cloud Threat Landscape Report 2024Initial access vectors
 
 The following outlines the techniques threat actors employed to
 gain initial access, listed in order of most-used vectors.
@@ -392,7 +739,11 @@ more damage in the environment.
 Phishing was the #1 tactic, used in 33%
 of all cloud-related incidents.
 
-Exploiting public-facing applications
+11
+
+X-Force Cloud Threat Landscape Report 2024Exploiting public-facing applications
+
+Top initial access vectors
 
 The third most common vector is exploiting vulnerabilities in
 public-facing applications. It remains a reliable method for
@@ -408,10 +759,39 @@ correctly, there’s a risk of overlooking unpatched applications
 running in the cloud or, even worse, being unaware they exist
 and are running in the first place.
 
+Phishing or spearphishing
+link (T1566.002)
+
+33
+
+Exploit public-facing
+application (T1190)
+
+Valid  cloud accounts
+(T1078.004)
+
+22
+
+22
+
+Unknown
+
+11
+
 There are many vulnerabilities highlighting the critical need
 for robust security measures and proper patching processes
 in cloud environments. The following are 2 notable examples
 disclosed this year:
+
+Brute force: Credential
+stuffing (T1110.004)
+
+Valid  local accounts
+(T1078.003)
+
+6
+
+6
 
 First, in May 2024, a critical Microsoft Outlook remote code
 execution vulnerability (CVE-2024-21413) emerged as a
@@ -430,18 +810,33 @@ OpenSSH is a widely deployed connectivity tool in cloud
 environments for remote login with the Secure Shell
 (SSH) protocol.
 
-![Figure 5. Top initial access vectors X-Force observed in cloud environments. Sources: X-Force and MITRE ATT&CK Matrix for Enterprise framework.²](Image description: A horizontal bar chart showing the top initial access vectors observed in cloud environments. Phishing or spearphishing link is at 33%, Exploit public-facing application is at 22%, Valid cloud accounts is at 22%, Unknown is at 11%, Brute force: Credential stuffing is at 6%, and Valid local accounts is at 6%.)
+0
+
+5% 10% 15% 20% 25% 30% 35%
+
+Figure 5. Top initial access vectors X-Force observed in cloud
+environments. Sources: X-Force and MITRE ATT&CK Matrix
+for Enterprise framework.2
 
 Exploiting vulnerabilities in public-facing
 applications remains a reliable method
 for threat actors to gain access to both
 cloud and on-premises environments.
 
-## Actions on objective
+12
+
+X-Force Cloud Threat Landscape Report 2024Actions on objective
 
 Threat actors used several avenues to gain access to accomplish
 their goals. X-Force found the following to be their most popular
 actions on objective.
+
+In this scenario, attackers use a proxy server to intercept the
+authentication process between the target and a legitimate
+service. This strategy allows the attacker to collect the target’s
+credentials and token that’s generated upon successful MFA
+input from the target, enabling an authenticated session to be
+maintained for the attacker to use. See Figure 6.
 
 Business email compromise
 
@@ -453,14 +848,9 @@ the last 2 years, which made it the #1 action on objective.
 More specifically, threat actors are frequently leveraging AITM
 phishing tactics to bypass user MFA.
 
-In this scenario, attackers use a proxy server to intercept the
-authentication process between the target and a legitimate
-service. This strategy allows the attacker to collect the target’s
-credentials and token that’s generated upon successful MFA
-input from the target, enabling an authenticated session to be
-maintained for the attacker to use. See Figure 6.
+13
 
-If the attack is successful, the threat actor has authenticated
+X-Force Cloud Threat Landscape Report 2024If the attack is successful, the threat actor has authenticated
 using the victim’s credentials and is able to perform any action
 inside the application. In most cases, the attacker can send
 phishing emails from the compromised account, add mail
@@ -489,11 +879,67 @@ accounting for 11% of incidents. It’s commonplace that stolen
 credentials are listed and sold on dark web marketplaces or used
 to compromise other accounts. See Figure 7.
 
-![Figure 6. An attacker-controlled web page steals the victim’s credentials during an AITM attack, which was the most common threat scenario X-Force observed in cloud environments.](Image description: A diagram illustrating a Business Email Compromise (BEC) attack using an Adversary-in-the-Middle (AITM) phishing tactic. The diagram shows an attacker sending a phishing email, which leads the victim to a phishing page that mimics a legitimate login portal. The attacker then steals the victim's credentials and session token. Finally, the attacker uses these stolen credentials and token to authenticate into the victim's environment.)
+BEC attack steps
 
-![Figure 7. Top actions on objective observed by X-Force in cloud environments. Incidents can have more than 1 top action on the objective observed.](Image description: A horizontal bar chart showing the top actions on objective observed in cloud environments. Business email compromise is at 39%, Cryptominer is at 22%, Account compromise & credential harvesting is at 11%, Server access is at 11%, Webshell malware is at 6%, Data destruction is at 6%, and Ransomware is at 5%.)
+Attacker
 
-## Security rule failures
+Phishing email
+
+Attacker steals
+credentials and
+session token
+
+Phishing page
+mimics legitimate
+login portal
+
+Attacker uses credentials and token to
+authenticate into victim environment
+
+Figure 6. An attacker-controlled web page steals the victim’s credentials during
+an AITM attack, which was the most common threat scenario X-Force observed in
+cloud environments.
+
+Actions on objective
+
+Business email
+compromise
+
+39
+
+Cryptominer
+
+22
+
+Account compromise &
+credential harvesting
+
+Server  access
+
+Webshell malware
+
+Data destruction
+
+Ransomware
+
+11
+
+11
+
+6
+
+6
+
+5
+
+0 5% 10% 15% 20% 25% 30% 35% 40%
+
+Figure 7. Top actions on objective observed by X-Force in cloud environments.
+Incidents can have more than 1 top action on the objective observed.
+
+14
+
+X-Force Cloud Threat Landscape Report 2024Security rule failures
 in cloud-based
 environments
 
@@ -522,6 +968,8 @@ practices, manual configurations and insufficient automation
 tools can exacerbate these issues, leading to more security
 misconfigurations and an increase in vulnerabilities.
 
+15
+
 In the broader context, these technical issues in cloud
 infrastructure should signal substantial risks to organizations,
 including the increased likelihood of cyberattacks,
@@ -536,7 +984,55 @@ operational success and regulatory compliance.
 Rule failures in cloud infrastructure
 signal substantial risks to organizations.
 
-Top 5 failed rules for 100% cloud environments
+X-Force Cloud Threat Landscape Report 2024Top 5 failed rules for 100% cloud environments
+
+Rule 1.
+Configuration and security
+guidelines for Linux systems
+
+Rule 2.
+Secure mount options for
+critical directories
+
+Rule 3.
+User home directory
+management
+
+Rule 4.
+Service management
+
+Rule 5.
+NFS service management
+
+12
+
+10
+
+29
+
+27
+
+23
+
+0
+
+5%
+
+10%
+
+15%
+
+20%
+
+25%
+
+30%
+
+Figure 8. Number of top 5 failed rules for 100% cloud environments
+by order of importance. Source: Red Hat Insights
+
+Top 5 failed rules for
+100% cloud environments
 
 From the Red Hat Insights data X-Force analyzed, the following
 highlights the top 5 security rules that frequently failed within
@@ -552,6 +1048,7 @@ separate partition to enhance security and manage disk space
 effectively. To mitigate:
 
  – Configure the default zone for the firewalld service
+
 to ensure proper network security configurations in Red Hat-
 based systems.
 
@@ -559,40 +1056,15 @@ based systems.
 security and manage disk space effectively, preventing denial
 of service attacks and improving system performance.
 
-Rule 2. Secure mount options for critical directories (27%)
+16
+
+X-Force Cloud Threat Landscape Report 2024Rule 2. Secure mount options for critical directories (27%)
 This rule set emphasizes configuring secure mount options for
 critical directories by preventing the execution of binaries, the
 creation of device files, and the execution of setUID and setGID
 programs, thereby enhancing security and enforcing proper
 directory use. To mitigate, prevent the:
 
- – Execution of binaries in the /var/log directory
- – Creation of device files in the /var/log directory
- – Execution of setUID and setGID programs in the
-/var/log/audit directory
-
- – Creation of device files in the /home directory
- – Creation of device files in the /var directory
- – Execution of setUID and setGID programs in the /var directory
- – Execution of binaries in the /var/log/audit directory
- – Execution of setUID and setGID programs in the /var directory
- – Execution of binaries in the /var/log/audit directory
- – Execution of setUID and setGID programs in the
-/home directory
-
-Rule 3. User home directory management (23%)
-This rule set ensures proper ownership and permissions of user
-home directories, enhancing security by preventing unauthorized
-access and maintaining a consistent and organized file system
-structure. To mitigate:
-
- – Ensure all interactive user home directories are group-owned
-by the primary user to maintain proper ownership, access
-controls and organizational consistency.
-
-Rule 4. Service management (12%)
-This rule set involves disabling unnecessary services, such as
-rpcbind and Network File System (NFS), to reduce the attack
 surface, enhance security and free up system resources.
 To mitigate:
 
@@ -610,9 +1082,88 @@ security and free up system resources. NFS allows file sharing
 between systems over a network but, if not required, disabling
 it can improve security and performance.
 
-![Figure 8. Number of top 5 failed rules for 100% cloud environments by order of importance. Source: Red Hat Insights](Image description: A horizontal bar chart showing the top 5 failed security rules in 100% cloud environments. Configuration and security guidelines for Linux systems is at 29%, Secure mount options for critical directories is at 27%, User home directory management is at 23%, Service management is at 12%, and NFS service management is at 10%.)
+ – Execution of binaries in the /var/log directory
+ – Creation of device files in the /var/log directory
+ – Execution of setUID and setGID programs in the
 
-Top 5 failed rules for 50% cloud environments
+/var/log/audit directory
+
+ – Creation of device files in the /home directory
+ – Creation of device files in the /var directory
+ – Execution of setUID and setGID programs in the
+
+/var/log directory
+
+ – Creation of device files in the /var/log/audit directory
+ – Execution of setUID and setGID programs in the /var directory
+ – Execution of binaries in the /var/log/audit directory
+ – Execution of setUID and setGID programs in the
+
+/home directory
+
+Rule 3. User home directory management (23%)
+This rule set ensures proper ownership and permissions of user
+home directories, enhancing security by preventing unauthorized
+access and maintaining a consistent and organized file system
+structure. To mitigate:
+
+ – Ensure all interactive user home directories are group-owned
+by the primary user to maintain proper ownership, access
+controls and organizational consistency.
+
+Rule 4. Service management (12%)
+This rule set involves disabling unnecessary services, such as
+rpcbind and Network File System (NFS), to reduce the attack
+
+17
+
+X-Force Cloud Threat Landscape Report 2024Top 5 failed rules for 50% cloud environments
+
+Rule 1.
+Authentication and
+cryptography policies
+
+Rule 2.
+Account and SSH
+configuration
+
+Rule 3.
+SSH security measures
+
+Rule 4.
+Umask configuration
+
+Rule 5.
+Process debugging
+restrictions
+
+25
+
+20
+
+19
+
+19
+
+18
+
+0
+
+5%
+
+10%
+
+15%
+
+20%
+
+25%
+
+Figure 9. Number of top 5 failed rules for 50% cloud environments
+by order of importance. Source: Red Hat Insights
+
+Top 5 failed rules for 50% or more
+cloud environments
 
 From the Red Hat Insights data X-Force analyzed, the following
 highlights the top 5 security rules that frequently failed within
@@ -626,6 +1177,7 @@ consistent and strong security practices across the system.
 To mitigate:
 
  – Use authselect to standardize and simplify the management
+
 of authentication settings, ensuring consistency and
 enhancing security.
 
@@ -633,36 +1185,13 @@ enhancing security.
 of strong, secure cryptographic algorithms and protocols,
 enhancing security and compliance.
 
-Rule 2. Account and SSH configuration (20%)
+18
+
+X-Force Cloud Threat Landscape Report 2024Rule 2. Account and SSH configuration (20%)
 This rule set involves managing user account inactivity, SSH
 session limits, file ownership and password expiration to
 enhance security, reduce risks and comply with regulatory
 requirements. To mitigate:
-
- – Disable user accounts automatically after a specified
-period of inactivity to reduce security risks associated with
-dormant accounts.
-
- – Set SSH ClientAliveCountMax to ensure idle or unresponsive
-connections are terminated, enhancing security and freeing
-up resources.
-
- – Ensure all files are owned by a valid user, investigating and
-correcting any unowned files to maintain proper file ownership
-and security.
-
- – Set a maximum age for passwords to ensure regular password
-changes, enhancing security and compliance.
-
-Rule 3. SSH security measures (19%)
-This rule set enhances SSH security by disabling access and
-encourages best security practices. To mitigate:
-
- – Disable SSH access via empty passwords to prevent
-unauthorized access and mitigate brute force attacks.
-
- – Disable SSH root login to prevent direct root access, reducing
-the risk of unauthorized administrative access.
 
 Rule 4. Umask configuration (19%)
 This rule set involves configuring the default umask values
@@ -670,23 +1199,56 @@ to ensure new files and directories have secure permissions,
 enhancing security and maintaining consistency. To mitigate:
 
  – Set appropriate umask values in /etc/profile to ensure new
+
+ – Disable user accounts automatically after a specified
+
 files and directories have secure default permissions.
 
+period of inactivity to reduce security risks associated with
+dormant accounts.
+
  – Set appropriate umask values in /etc/bashrc to ensure new
+
 files and directories have secure default permissions.
+
+ – Set SSH ClientAliveCountMax to ensure idle or unresponsive
+connections are terminated, enhancing security and freeing
+up resources.
+
+ – Ensure all files are owned by a valid user, investigating and
+
+correcting any unowned files to maintain proper file ownership
+and security.
 
 Rule 5. Process debugging restrictions (18%)
 This rule set restricts process debugging and inspection to
 descendant processes only, enhancing security by preventing
 unauthorized access and manipulation of processes. To mitigate:
 
+ – Set a maximum age for passwords to ensure regular password
+
  – Restrict the use of ptrace to descendant processes to enhance
+
+changes, enhancing security and compliance.
+
 security by limiting process debugging and inspection
 capabilities, reducing the risk of malicious use.
 
-![Figure 9. Number of top 5 failed rules for 50% cloud environments by order of importance. Source: Red Hat Insights](Image description: A horizontal bar chart showing the top 5 failed security rules in environments with 50% or more cloud systems. Authentication and cryptography policies is at 25%, Account and SSH configuration is at 20%, SSH security measures is at 19%, Umask configuration is at 19%, and Process debugging restrictions is at 18%.)
+Rule 3. SSH security measures (19%)
+This rule set enhances SSH security by disabling access and
+encourages best security practices. To mitigate:
 
-## Cloud and AI
+ – Disable SSH access via empty passwords to prevent
+
+unauthorized access and mitigate brute force attacks.
+
+ – Disable SSH root login to prevent direct root access, reducing
+
+the risk of unauthorized administrative access.
+
+19
+
+X-Force Cloud Threat Landscape Report 2024Cloud and AI
 
 Although cybercriminal and state-sponsored threat actors
 have been conducting global phishing and spam campaigns to
@@ -726,7 +1288,9 @@ Threat actors may already be leveraging
 AI to carry out malicious activities
 against cloud environments.
 
-## Recommendations
+20
+
+X-Force Cloud Threat Landscape Report 2024Recommendations
 
 Considering the evolving cloud threat landscape, organizations
 must continuously monitor, adapt and enhance their security
@@ -741,7 +1305,9 @@ ongoing adjustments to address evolving threats.
 Here are some recommendations to help build a robust
 framework for improving cloud security.
 
-Conduct comprehensive preparation
+21
+
+X-Force Cloud Threat Landscape Report 2024Conduct comprehensive preparation
 and testing
 
 A proactive, holistic security approach is paramount in the cloud
@@ -795,4 +1361,103 @@ Data protection remains a cornerstone of a comprehensive
 cloud security strategy. Encrypt data in storage, use and transit,
 and manage keys securely to help ensure sensitive information
 is safeguarded. Organizations should minimize data exposure
-by reducing the amount of sensitive
+by reducing the amount of sensitive data stored and limiting
+access strictly to necessary personnel. Automating security
+group privileges and decommissioning dormant accounts further
+enhances security by adhering to the principle of least privilege
+and preventing potential account compromises.
+
+22
+
+X-Force Cloud Threat Landscape Report 2024About us
+
+IBM X-Force
+IBM X-Force is a threat-centric team of hackers, responders,
+researchers and analysts. The X-Force portfolio includes
+offensive and defensive products and services, fueled by a
+360-degree view of threats.
+
+With a deep understanding of how threat actors think, strategize
+and strike, X-Force can help you prevent, detect, respond to and
+recover from incidents and focus on business priorities.
+
+If your organization would like support strengthening your
+security posture, schedule a one-on-one briefing with an IBM
+X-Force expert.
+
+IBM
+IBM is a leading global hybrid cloud, AI and business services
+provider, helping clients in more than 175 countries capitalize on
+insights from their data, streamline business processes, reduce
+costs and gain a competitive edge in their industries. All of it is
+backed by IBM’s legendary commitment to trust, transparency,
+responsibility, inclusivity and service. For more information, visit
+www.ibm.com.
+
+Schedule a briefing
+
+23
+
+Contributors
+Austin Zeizel
+Christopher Caridi
+David McMillen
+Michelle Alvarez
+Agnes Ramos-Beauchamp
+Christopher Bedell
+
+Johnny Shaieb
+Scott Lohr
+Scott Moore
+Sophie Cunningham
+Cybersixgill
+Red Hat Insights
+
+X-Force Cloud Threat Landscape Report 20241.      All data gathered and analyzed in the report, except for
+the incident response engagement data, was from June
+2023 through June 2024. X-Force expanded the timeline
+for the incident response engagement data to June 2022
+through June 2024 to provide the 2-year overall initial
+access vector and actions on objectives trends.
+2.   MITRE ATT&CK Matrix, The MITRE Corporation,
+
+19 July 2019.
+
+© Copyright IBM Corporation 2024
+
+IBM, the IBM logo, and X-Force are trademarks or registered trademarks of
+International Business Machines Corporation, in the United States and/or
+other countries. Other product and service names might be trademarks of IBM
+or other companies. A current list of IBM trademarks is available on
+ibm.com/legal/copytrade.
+
+THE INFORMATION IN THIS DOCUMENT IS PROVIDED “AS IS” WITHOUT ANY
+WARRANTY, EXPRESS OR IMPLIED, INCLUDING WITHOUT ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND ANY WARRANTY
+OR CONDITION OF NON-INFRINGEMENT. IBM products are warranted according to
+the terms and conditions of the agreements under which they are provided.
+
+The registered trademark Linux is used pursuant to a sublicense from the Linux
+Foundation, the exclusive licensee of Linus Torvalds, owner of the mark on a
+worldwide basis.
+
+Microsoft is a trademark of Microsoft Corporation in the United States, other
+countries, or both.
+
+Red Hat is a trademark or registered trademark of Red Hat, Inc. or its subsidiaries
+in the United States and other countries.
+
+This document is current as of the initial date of publication and may be changed
+by IBM at any time. Not all offerings are available in every country in which
+IBM operates.
+
+No IT system or product should be considered completely secure, and no single
+product, service or security measure can be completely effective in preventing
+improper use or access. IBM does not warrant that any systems, products or
+services are immune from, or will make your enterprise immune from, the malicious
+or illegal conduct of any party.
+
+The client is responsible for ensuring compliance with all applicable laws and
+regulations. IBM does not provide legal advice nor represent or warrant that its
+services or products will ensure that the client is in compliance with any law
+or regulation.
