@@ -1,11 +1,4 @@
 # 2024 Identity Security Insights
-## Your engine to manage trends and threats
-
-**A report by:**
-**Jane Frankland**
-Author, advisor, and technologist
-
----
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -26,233 +19,55 @@ If information is the new oil, then identities are the rigs that allow that oil 
 
 Do organizations today have what it takes to combat the increasing number of these kind of attacks? If not, how far are they from confidently defending their valuable identities? And how likely are they to take the steps to ensure their safety in the future?
 
-These are questions we pursued relentlessly as we sought experts from four continents, 12 countries, five major industries, and over a dozen different roles to craft our **ManageEngine Identity Security Survey 2024**. Their answers surprised and intrigued us, and we invite you to see how your company’s identity management readiness compares to other organizations around the globe.
-
----
+These are questions we pursued relentlessly as we sought experts from four continents, 12 countries, five major industries, and over a dozen different roles to craft our ManageEngine Identity Security Survey 2024. Their answers surprised and intrigued us, and we invite you to see how your company’s identity management readiness compares to other organizations around the globe.
 
 ## Key takeaways
 
-Criminals love our identities! So much so that:
-
-> **77%** of CISOs polled reported experiencing an identity-related cyberattack in 2023.
-
-However, Zero Trust access management is (still) at below-zero levels! Indeed, when asked how close they are to having zero standing privileges–or no permanent user access permissions–only **27%** could claim that they were “Already there.”
-
-Acknowledging these facts, over two-thirds of those surveyed (**68%**) felt the need to adopt even more tools to deal with the current need.
-
-And not just any tool. Organizations are ready to “experiment” with AI being an IA (intelligent assistant). When asked if their organizations would adopt a new AI tool that “promises productivity boosts and faster investigations,” even if it took 40 hours to train and four weeks to learn, more than half of respondents in all industries said “Yes,” along with **77%** of CISOs and a still substantial—but probably unenthusiastic—**36%** of cyber specialists.
-
-Although money “can’t buy me love”, it certainly can buy more tools!
-
-- **97%** of CTOs expressed confidence that their organizations would allocate a budget to invest in identity security tools within the next five years.
-- However, about **1 in 4** in ITOps don’t share the same view.
-
-Have you noticed that disparity in perception? Well, it wasn’t the only one we identified! When asked how capable their organization’s security stack was for meeting current identity security needs:
-- **73% - 79%** of those in the C-suite responded “Very capable.”
-- Only **54%** in ITOps agreed.
-
-**Bonus takeaway:**
-Survey respondents were asked to name a few IT and security threats that organizations must be prepared to handle in the next three to five years. **AI-generated deepfakes, AI-driven social engineering attacks, and AI-enabled ransomware attacks** that rapidly exploit zero-day vulnerabilities were the top responses.
-
----
+- **77%** of CISOs polled reported experiencing an identity-related cyberattack in 2023.
+- **Zero Trust access management is (still) at below-zero levels**: Only 27% could claim that they were “Already there” regarding zero standing privileges.
+- **68%** of those surveyed felt the need to adopt even more tools to deal with the current need.
+- **AI Adoption**: When asked if their organizations would adopt a new AI tool that “promises productivity boosts and faster investigations,” even if it took 40 hours to train and four weeks to learn, 77% of CISOs and 36% of cyber specialists said “Yes.”
+- **Budget Disparity**: 97% of CTOs expressed confidence in allocating a budget for identity security tools within five years, while about 1 in 4 in ITOps do not share this view.
+- **Capability Perception**: 73%–79% of C-suite executives believe their security stack is “Very capable,” while only 54% of ITOps agree.
 
 ## Perceptions and reality of the IT ecosystem visibility and control
 
-_“You can’t protect what you don’t know,”_ goes the famous security motto.
+“You can’t protect what you don’t know,” goes the famous security motto. Maintaining complete visibility over privileged resources and identities is critical for sectors handling sensitive data. 
 
-Maintaining complete visibility over privileged resources and identities is critical for sectors handling sensitive data. Due to the valuable information they maintain, the finance, government, education, and healthcare segments are prime targets for cyberattacks. Without comprehensive oversight, these sectors risk unauthorized access, data breaches, and compliance violations. Robust visibility enables proactive threat detection, swift incident response, and effective risk management, safeguarding essential services and sensitive information.
+![Chart showing percentage of respondents in different industries who have complete visibility over privileged identities: Finance 62%, Government 47%, Healthcare 59%, Education 57%, IT 63%]
 
-However, the distance between theory and practice can sometimes be worrying. For example, almost all industries still lack visibility and control over at least a quarter of their privileged resources, survey results indicate. This is alarmingly worrying, especially if you consider that representatives in the finance, healthcare, education, and government sectors say they are 68% confident they have “complete visibility” into their privileged (and critical) assets.
-
-Unsurprisingly, the situation is not different across all continents. Although many in IT acknowledge the critical role identities play in protecting data and systems, many businesses seem to be dismissive of the need to effectively manage digital identities across their life cycle.
-
-![Figure 1: Percentage of respondents in different industries who have complete visibility over the privileged identities that they manage and control. Finance: 62%, Government: 47%, IT: 63%, Healthcare: 57%, Education: 59%.]
-
-To be fair, there are factors contributing to this visibility gap:
-
-1. **Legacy systems**: These sectors often rely on outdated systems that lack modern security features and are challenging to integrate with current identity management solutions.
-2. **Regulatory complexity**: Stringent regulations like HIPAA, the GDPR, and FISMA create a complex compliance landscape, sometimes leading to a focus on checkbox compliance rather than comprehensive security.
-3. **Decentralized IT environments**: Many organizations in these sectors have grown through mergers or have multiple departments with independent IT systems, creating siloed environments that hinder centralized visibility.
-4. **Resource constraints**: Budgetary limitations and skill shortages can prevent organizations from implementing and maintaining advanced identity management solutions.
-5. **Rapid digital transformation**: The push to modernize and adopt cloud services often outpaces security measures, leaving gaps in identity oversight.
-6. **Complex attack surfaces**: The increasing use of IoT devices, mobile technologies, and distributed workforces expands the attack surface, making it harder to maintain comprehensive visibility.
-
-Although there is uniformity across industries and regions, the disparity of perceptions between business and security executives and security practitioners on the ground is more alarming. For example, while **92%** of CISOs reported having full visibility and control over their enterprise’s applications, servers, devices, and other resources, only **48%** of their ITOps and infrastructure experts agreed with this assessment, and a slightly higher number of cyber specialists (**59%**) concurred.
-
-The disparity continues in managing privileged identities. CISOs claimed to have “Complete visibility” into **92%** of privileged identities, while ITOps professionals put the number at **44%**. This is a potential overestimation of double the amount. This drastic difference raises questions about the accuracy of self-assessment and the potential for blind spots in security strategies.
-
-However, security gaps might emerge because businesses rely on IT resources beyond their immediate control. Globally, at least **85%** of respondents across all countries oversee assets outside their direct control. While this reflects the reality of modern cloud and SaaS adoption, it introduces significant risk.
-
-The varying perceptions within the business of how secure these external channels are–**85%** of CTOs believe so versus a mere **42%** of CISOs and **65%** of ITOps–is a fascinating and concerning phenomenon that usually stems from differing perspectives and priorities:
-
-- **CTOs** typically focus on technology innovation and operational efficiency. Their high confidence (85%) might reflect optimism about the advanced features and compliance certifications of external services.
-- **CISOs**, being security-focused, are more attuned to potential vulnerabilities and risks. Their lower confidence (42%) likely stems from a deeper understanding of the threat landscape and potential security gaps.
-- **ITOps**, with their middle-ground perspective (65%), balance day-to-day operations with security concerns, resulting in a more moderate view.
-
-However, this disparity might also indicate a deeper cultural issue, where communication gaps and insufficient sharing of security insights and concerns across these different roles lead to misaligned perceptions.
-
-Perhaps most worrying is the overconfidence in security tools. While most respondents believe they have sufficient protection, this optimism is often misplaced. The fact is telling that **26%** of cyber specialists–those closest to the day-to-day security operations–indicate they need additional solutions.
-
----
+### Factors contributing to the visibility gap:
+1. **Legacy systems**: Outdated systems lack modern security features.
+2. **Regulatory complexity**: Stringent regulations like HIPAA, GDPR, and FISMA can lead to checkbox compliance.
+3. **Decentralized IT environments**: Siloed departments hinder centralized visibility.
+4. **Resource constraints**: Budgetary limitations and skill shortages.
+5. **Rapid digital transformation**: Modernization often outpaces security measures.
+6. **Complex attack surfaces**: IoT, mobile, and distributed workforces.
 
 ## The importance of identity security
 
-As traditional network boundaries blur with cloud adoption and remote work, digital identities now serve as the primary gateway to our most sensitive resources and data.
+As traditional network boundaries blur with cloud adoption and remote work, digital identities now serve as the primary gateway to our most sensitive resources and data. 
 
-The importance of identity security in the modern enterprise cannot be overstated. It’s no longer just about protecting user accounts; it’s about safeguarding the very core of how we conduct business, collaborate, and innovate. Every interaction, transaction, and data access point hinges on the integrity and security of digital identities.
-
-As cybercriminals increasingly target identities as their attack vector of choice, robust identity security has evolved from a best practice to an absolute necessity. It’s the linchpin that holds together Zero Trust architectures, enables secure digital transformation, and ultimately determines an organization’s resilience against today’s sophisticated cyberthreats.
-
-Across industries, the recognition of the critical role of identity security is nearly universal. It’s particularly telling that the government and IT sectors lead the pack, with **91%** rating it as “Very important.” This aligns with the complex identity ecosystems these sectors manage and the sensitive nature of their data. What truly stands out is the overwhelming consensus among C-suite executives. When **97%** of CIOs and CTOs emphasize the paramount importance of identity security, it’s clear that this isn’t just a technical concern, it’s a business imperative.
-
-The threat landscape further underscores why identity security is crucial. Social engineering emerges as the top concern across multiple sectors and countries. This isn’t surprising; a single compromised identity can unravel even the most sophisticated security measures.
-
-What’s particularly alarming is the prevalence of identity-related attacks. When **59%** of finance sector respondents report facing such attacks in 2023, it’s clear that this isn’t a hypothetical threat. It’s a daily reality.
-
-![Figure 2: Percentage of respondents across different industries who reported facing an identity security related attack in 2023. Finance: 59%, Education: 52%, Healthcare: 51%, Government: 45%, IT: 45%.]
-
-The disparity in attack reporting between CISOs (**77%**) and ITOps (**29%**) is a critical issue that points to several underlying problems in organizational cybersecurity structures. For example, this disparity likely indicates a severe lack of information sharing between departments. CISOs, with their bird’s-eye view of the security landscape, are aware of more incidents, while ITOps teams might only be privy to a subset of attacks they directly encounter or mitigate. This disparity is a hidden vulnerability and a dangerous one. It suggests that a significant number of identity-related attacks might be unnoticed or unreported by the teams responsible for day-to-day IT operations.
-
----
+![Chart showing percentage of respondents who reported facing an identity security related attack in 2023: Government 45%, Education 52%, Healthcare 51%, Finance 59%, IT 45%]
 
 ## The identity security tech stack
 
-The identity security tech stack represents the front line of defense against a myriad of sophisticated cyberthreats. It’s no longer just about password protection or basic access controls. Modern identity security encompasses a complex ecosystem of tools and technologies designed to authenticate, authorize, and audit every digital interaction within an organization.
+Modern identity security encompasses a complex ecosystem of tools. While 82% of respondents use identity management tools, there is significant "tool sprawl."
 
-From adaptive and phishing-resistant MFA and privileged access management to identity governance and administration, each component of the tech stack plays a crucial role in maintaining the integrity and security of our digital identities. These technologies not only protect against external threats but also mitigate risks from insider threats and accidental misuse.
-
-The widespread adoption of identity management solutions is encouraging, with over **82%** of respondents across all industries and **84%** of global businesses using these tools. However, the choice of solutions varies significantly. The government and education sectors primarily rely on password managers, while the finance, IT, and healthcare sectors lean towards more sophisticated SSO solutions.
-
-What’s particularly intriguing is the tool sprawl we’re witnessing. In the finance sector, **54%** of respondents report using four or more identity management vendors.
-
-![Figure 3: The number of different vendors that enterprises rely on to manage their identity security stack. Global: 1-3 (55%), 4-6 (38%), Above 6 (7%). Government: 1-3 (64%), 4-6 (26%), Above 6 (10%). Education: 1-3 (67%), 4-6 (30%), Above 6 (3%). Healthcare: 1-3 (58%), 4-6 (35%), Above 6 (7%). Finance: 1-3 (46%), 4-6 (49%), Above 6 (5%). IT: 1-3 (56%), 4-6 (37%), Above 6 (7%).]
-
-The tools sprawl trend is a double-edged sword. While it demonstrates a commitment to comprehensive security, it also raises concerns about integration complexity and potential security gaps between solutions.
-
-- Different vendors often use proprietary protocols or data formats, making seamless integration difficult. This can lead to siloed systems that don’t communicate, coordinate, or operate effectively.
-- Managing multiple systems requires diverse skill sets and more time, potentially leading to configuration errors or oversight.
-- Poorly integrated systems can cause latency, affecting user experience and potentially encouraging risky work-arounds.
-- Different tools might interpret and enforce security policies differently, creating inconsistencies in access controls.
-
-Perhaps most telling is the appetite for additional tools. Despite high adoption rates, many respondents, particularly in the finance (**68%**) and government (**74%**) sectors, feel the need for more solutions. This sentiment is strongest among cyber specialists, with **79%** advocating for additional tools.
-
-This desire for more tools, coupled with the optimism about future budget allocations (**94%** of respondents in the finance sector expect increased investments), signals both an awareness of evolving threats and a potential over-reliance on technology as a silver bullet.
-
----
+![Chart showing number of vendors relied upon: 1-3 (55%), 4-6 (38%), Above 6 (7%)]
 
 ## The identity security posture of organizations
 
-The landscape of identity security is rapidly evolving, and our survey reveals a complex picture of how organizations are adapting to these changes.
-
-One of the most striking findings is the gap between perception and reality when it comes to the capabilities of current identity security solutions. While **73-79%** of C-suite executives believe their current solutions are “Very” capable of meeting today’s identity management challenges, only **58%** of cyber specialists and just **54%** of ITOps and infrastructure professionals share this confidence.
-
-![Figure 4: Percentage of respondents across different roles who believe their current identity security solutions are “Very capable” of managing their identity security challenges. C-suite: 73-79%, Cyber security specialists: 58%, ITOps professionals: 54%, Compliance and risk managers: 57%.]
-
-This disparity is concerning, as it suggests a potential disconnect between strategic vision and operational reality:
-
-- When C-suite executives overestimate the capabilities of their security solutions, they might also underestimate the actual risks facing the organization.
-- Strategic decisions made based on an overly optimistic view of security capabilities might not address the real challenges faced by IT and security teams.
-- This disparity suggests a significant communication gap between executives and operational staff.
-
-The adoption of Zero Trust strategies for identity security is encouraging, with **80%** of financial organizations leading the charge. However, the fact that only **64%** of government agencies have such strategies in place is worrying, given the critical nature of the data and systems they protect.
-
-Perhaps most telling is the state of standing privileges within organizations. The concept of “zero standing privileges”–where no user has permanent, unfettered access to critical systems–is a cornerstone of modern identity security. Yet, our survey shows that only **25%** of organizations in any industry have achieved this goal.
-
-![Figure 5: How close do respondents believe their organization is towards having zero standing privileges? Already there: 25%, Somewhat close: 65%, Not close: 10%.]
-
-The primary obstacle? A lack of processes is cited consistently across industries and roles. This finding underscores a critical point: effective identity security is not just about technology but also about people and processes.
-
----
+There is a notable disconnect between strategic vision and operational reality. While 73–79% of C-suite executives believe their solutions are “Very capable,” only 58% of cyber specialists and 54% of ITOps professionals agree. Furthermore, only 25% of organizations have achieved "zero standing privileges."
 
 ## Future threats
 
-As we stand at the precipice of a new era in cybersecurity, the landscape of threats looming on the horizon is both daunting and complex. The next three to five years promise to usher in a paradigm shift in how we approach identity security, driven by rapid technological advancements and evolving attack vectors.
-
-Artificial Intelligence emerges as a dominant theme in future threat predictions. The rise of deepfakes, AI-powered social engineering attacks, and the potential for AI to create sophisticated phishing attempts are top concerns across multiple sectors. A healthcare professional warned of _“artificial intelligence creating deepfake profiles to access sensitive information,”_ while a CIO emphasized the need to _“protect online identities from AI that can create a deepfake video of your face using only a picture.”_
-
-However, it’s noteworthy that despite these concerns, there’s a strong belief in AI’s potential to strengthen identity security. Between **61%** and **69%** of all sectors surveyed believe that AI could bolster their security strategies.
-
-![Figure 6: The percentage of respondents from different sectors that believe in AI’s ability to strengthen their identity security strategies. Government: 62%, Education: 61%, Healthcare: 63%, Finance: 69%, IT: 63%.]
-
-Social engineering attacks continue to be a significant concern, with many respondents highlighting the evolving nature of these threats. The shift to remote work has created new vulnerabilities, with one education sector respondent noting the _“evolving social engineering [attacks] that target a more distributed workforce, preying on the isolation and potential lack of awareness of remote workers.”_
-
-The skills gap and lack of security awareness among users remain pressing issues. Multiple respondents emphasized the need for better training and education, with one Singapore-based professional stating, _“Users need to attend cybersecurity training classes to operate with security in mind, and management also needs to educate their staff to improve IT.”_
-
-Ransomware, supply chain attacks, and the security challenges posed by remote work are also prominent concerns. A finance sector professional warns of _“highly organized criminal gangs that lurk in the network for a long time for intelligence gathering or sabotage.”_
-
-Looking at organizational readiness for these future threats, there’s a notable disparity between private sector companies and government agencies. While **84-89%** of private sector companies report their IT stacks as future-ready, only **73%** of government agencies share this confidence. This gap can be attributed to several factors:
-
-- **Resource Flexibility**: Private sector companies often have more flexibility in adjusting budgets.
-- **Adoption Cycles**: Private companies tend to have shorter technology adoption cycles.
-- **Legacy Systems**: Government agencies often rely on legacy systems that are difficult to update.
-- **Threat Landscape**: Government agencies face unique threats from nation-state actors.
-
-The willingness to adopt new AI-driven cybersecurity solutions, despite significant time investments, is encouraging. However, the disparity between CISOs’ enthusiasm (**77%** extremely likely to adopt) and cyber specialists’ caution (only **36%** extremely likely) highlights a potential disconnect.
-
----
+Artificial Intelligence emerges as a dominant theme in future threat predictions. The rise of deepfakes, AI-powered social engineering, and AI-enabled ransomware are top concerns. Despite these threats, 61–69% of sectors believe AI can also bolster their security strategies.
 
 ## A final word
 
-The purpose of our research was to discover how well various demographics understood the plight of privileged identities, how prepared they believed their organizations were to secure them, and what they thought was standing in the way.
-
-When asked, most industries saw a lack of budget as the number one obstacle preventing them from creating a security stack that could withstand the threats of the future. Second was complex legacy IT infrastructure, which remains a problem for the healthcare and financial services sectors in particular.
-
-It is significant, for instance, that up to two-thirds of all surveyed would adopt new AI-based tools if they thought they could better secure vulnerable identities–even if training took an entire work week plus another month to learn the technology. Also encouraging is that roughly **70-90%** anticipate further investment in identity management within the next five years, and that **60-80%** already have a Zero Trust-focused identity and security plan in place.
-
-ManageEngine’s **PAM360** is a comprehensive enterprise privileged access management solution that empowers IT teams to effectively manage and secure privileged access. With over two decades of experience, ManageEngine has created a robust and reliable PAM solution adopted by more than 5,000 organizations worldwide. Gartner named ManageEngine a Challenger in the 2024 Magic Quadrant™ for Privileged Access Management.
-
----
+The willingness to adopt new AI-driven cybersecurity solutions, despite significant time investments for training, is encouraging. However, the disparity between CISOs’ enthusiasm and cyber specialists’ caution highlights a potential disconnect. ManageEngine’s PAM360 is a comprehensive enterprise privileged access management solution designed to address these complex security requirements.
 
 ## Addendum: Demographics
 
-ManageEngine surveyed 3,000+ global enterprises spanning a wide range of industries, roles, and demographics.
-
-**Countries included:**
-- United States
-- Canada
-- United Kingdom
-- Spain
-- United Arab Emirates
-- Saudi Arabia
-- Singapore
-- India
-- Malaysia
-- Indonesia
-- Philippines
-- Thailand
-- Vietnam
-
-**Industries:**
-Financial services, government, IT, healthcare, and education.
-
-**Company Size:**
-Fewer than 500 employees to over 5,000.
-
-**Roles:**
-- **Executive leadership**: CEO, CISO, CMO, CTO, CIO, CFO, Founder/Owner, Partner, President
-- **Senior leadership**: Executive Vice President, Senior Vice President, Assistant Vice President, Vice President, Director, Group Director, Senior Director
-- **Compliance and risk management**
-- **IT operations and infrastructure**
-- **Cyber specialists**
-
-**Work Environment:**
-- 31% fully in the office
-- 19% exclusively remote
-- 50% hybrid work environment
-
----
-
-### About the author:
-**Jane Frankland** is a highly respected thought leader in cybersecurity and technology. She founded the first female-owned global hacking firm in the 1990s and has played a pivotal role in initiatives such as CREST, Cyber Essentials, and Women4Cyber. She is the author of the bestselling book “IN Security.” Presently, as the CEO of KnewStart, Jane harnesses her expertise to promote innovation and inclusivity.
-[linkedin.com/in/janefrankland/](https://linkedin.com/in/janefrankland/)
-
-### About ManageEngine
-ManageEngine is the enterprise IT management division of Zoho Corporation. Established and emerging enterprises—including 9 of every 10 Fortune 100 organizations—rely on ManageEngine’s real-time IT management tools. For more information, please visit [manageengine.com](https://www.manageengine.com)
-
-**Contact:**
-Zoho Corporation
-4708 HWY 71 E
-Del Valle, TX 78617, USA
-Email: hello-pam360@manageengine.com
-Media: me-pr@manageengine.com
-Phone: +1.925.924.9500 | +1.888.720.9500
+ManageEngine surveyed 3,000+ global enterprises across the United States, Canada, United Kingdom, Spain, United Arab Emirates, Saudi Arabia, Singapore, India, Malaysia, Indonesia, Philippines, Thailand, and Vietnam. Industries included financial services, government, IT, healthcare, and education.
