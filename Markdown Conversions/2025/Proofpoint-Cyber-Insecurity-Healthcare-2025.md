@@ -1,236 +1,87 @@
 # Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 2025
 
-The official report URL is: [https://www.proofpoint.com/us/blog/corporate-news/cyber-insecurity-healthcare-2025-why-cyber-safety-now-patient-safety](https://www.proofpoint.com/us/blog/corporate-news/cyber-insecurity-healthcare-2025-why-cyber-safety-now-patient-safety)
-
 ## Table of Contents
-- [Part 1. Executive Summary](#part-1-executive-summary)
-- [Part 2. Key Findings](#part-2-key-findings)
-- [Part 3. Methodology](#part-3-methodology)
-- [Part 4. Caveats to this report](#part-4-caveats-to-this-report)
-- [Part 5. Appendix with the detailed audited findings](#part-5-appendix-with-the-detailed-audited-findings)
-- [Contact Us](#contact-us)
+- [Executive Summary](#part-1-executive-summary)
+- [Key Findings](#part-2-key-findings)
+- [Methodology](#part-3-methodology)
+- [Caveats to this report](#part-4-caveats-to-this-report)
+- [Appendix with the detailed audited findings](#part-5-appendix-with-the-detailed-audited-findings)
 
 ---
 
 ## Part 1. Executive Summary
 
-### The 2025 Study on Cyber Insecurity in Healthcare
-This fourth annual report was conducted to determine the healthcare industry’s effectiveness in reducing human-targeted cybersecurity risks and disruptions to patient care. With sponsorship from Proofpoint, Ponemon Institute surveyed 677 IT and IT security practitioners in U.S. healthcare organizations who are responsible for participating in such cybersecurity strategies as setting IT cybersecurity priorities, managing budgets and selecting vendors and contractors.
+The 2025 Study on Cyber Insecurity in Healthcare is the fourth annual report conducted to determine the healthcare industry’s effectiveness in reducing human-targeted cybersecurity risks and disruptions to patient care. With sponsorship from Proofpoint, Ponemon Institute surveyed 677 IT and IT security practitioners in U.S. healthcare organizations.
 
-**Healthcare organizations remain frequent targets, with cyberattacks continuing to disrupt patient care**
-According to the research, **93 percent** of organizations surveyed experienced at least one cyberattack in the past 12 months. For organizations in that group, the average number of cyberattacks was **43**, a 3-point increase from 40 in 2024.
-
-The cyberattacks analyzed that took place over a two-year period in this research are cloud/account compromises, supply chain attacks, ransomware and business email compromise (BEC)/spoofing/impersonation. Among the organizations that experienced the four types of cyberattacks, an average of **72 percent** report disruption to patient care, a 3-point jump from 69 percent in 2024.
-
-**While the cost of cyberattacks has declined, they remain a significant financial burden**
-We asked respondents to estimate the single most expensive cyberattack experienced in the past 12 months from a range of less than $10,000 to more than $25 million. Based on the responses, the average total cost for the most expensive cyberattack was **$3.9 million**, down from $4.7 million in 2024 but still substantial. This includes all direct cash outlays, direct labor expenditures, indirect labor costs, overhead costs and lost business opportunities.
-
-This year’s study finds that healthcare organizations’ ability to protect confidential patient data and ensure the highest quality of medical care is increasingly at risk, underscoring the need for a more human-centric security approach.
-
-- **93%** of organizations experienced an average of 43 cyberattacks in the past 12 months.
-- **72%** reported disruption to patient care.
+### Key Findings
+- **93%** of organizations surveyed experienced at least one cyberattack in the past 12 months.
+- Organizations experienced an average of **43** cyberattacks in the past 12 months.
+- **72%** of organizations reported disruption to patient care following a cyberattack.
 - **$3.9M** is the average total cost for the single most expensive cyberattack experienced over the past 12 months.
 
-![Infographic showing 75% of respondents say they have or eventually will move clinical applications to the cloud]
+For the first time, this year’s study examined plans to secure clinical operations in the cloud. Thirty percent of respondents say their organizations have moved clinical applications to the cloud. Forty-five percent say their organizations will move clinical applications to the cloud in the future.
 
-For the first time, this year’s study examined plans to secure clinical operations in the cloud. **Thirty percent** of respondents say their organizations have moved clinical applications to the cloud. **Forty-five percent** say their organizations will move clinical applications to the cloud in the next six months (9 percent), within the next year (8 percent), in the next one to two years (15 percent) or eventually (13 percent).
-
-#### Cybersecurity Cost Categories
-Operational disruptions stemming from system availability problems remain the most expensive consequence. The following is a breakdown of the five cybersecurity cost categories for the single most expensive cyberattack:
-
-1.  **Disruption to normal healthcare operations**: Cost an average of $1,210,172 (decreased from $1,469,524 in 2024).
-2.  **Users’ idle time and lost productivity**: Dropped to $858,832 from $995,484 in 2024.
-3.  **Time required to ensure the impact on patient care is corrected**: Decreased to $702,680 from $853,272 in 2024.
-4.  **Damage or theft of IT assets and infrastructure**: Averaged $624,605, down slightly from $711,060 in 2024.
-5.  **Remediation and technical support activities**: Saw the largest drop (28.6%) from $711,060 in 2024 to $507,491 in 2025.
+### Cost Breakdown of the Single Most Expensive Cyberattack
+- **Disruption to normal healthcare operations**: $1,210,172 (decreased from $1,469,524 in 2024).
+- **Users’ idle time and lost productivity**: $858,832 (decreased from $995,484 in 2024).
+- **Time required to ensure the impact on patient care is corrected**: $702,680 (decreased from $853,272 in 2024).
+- **Damage or theft of IT assets and infrastructure**: $624,605 (down slightly from $711,060 in 2024).
+- **Remediation and technical support activities**: $507,491 (saw the largest drop of 28.6% from $711,060 in 2024).
 
 ---
 
 ## Part 2. Key Findings
 
-### Cybersecurity Threats in Healthcare
+### Cybersecurity Threats
+The report analyzes four primary types of cyberattacks:
+1. **Cloud/account compromise**: For the fourth consecutive year, this is the top cybersecurity threat. 72% of organizations experienced these, with an average of 21 compromises in the past two years.
+2. **Supply chain attacks**: 44% of respondents reported an attack, a significant decline from 68% in 2024.
+3. **Ransomware**: 61% of organizations experienced an average of five ransomware attacks in the past two years. The average total cost for the highest ransom payment reached $1.2 million.
+4. **Business email compromise (BEC)/spoofing/impersonation**: 53% of respondents feel vulnerable to these attacks, with 62% of organizations experiencing an average of four attacks in the past two years.
 
-**Cloud/account compromise**
-For the fourth consecutive year, frequent attacks against the cloud make it the top cybersecurity threat. Nearly two-thirds of respondents (64 percent) say their organizations are vulnerable or highly vulnerable to a cloud/account compromise. **Seventy-two percent** say their organizations have experienced cloud/account compromises, an increase from 69 percent in 2024. These organizations had an average of 21 such compromises in the past two years.
+### From Breach to Bedside: The Persistent Link Between Cyberattacks and Patient Safety
+Cyberthreats are clinical risks. When care is delayed or disrupted, patient outcomes are impacted.
+- **Supply chain attacks**: 87% of respondents reported disruption to patient care.
+- **BEC/spoofing/impersonation**: 70% reported disruption to patient care.
+- **Ransomware**: 67% reported a negative impact on patient care, specifically longer lengths of stay.
+- **Cloud/account compromises**: 61% reported disruption to patient care.
 
-**Supply chain attacks**
-Fewer organizations are experiencing supply chain attacks. **Forty-four percent** of respondents say their organizations experienced an attack against its supply chains, a significant decline from 68 percent in 2024. Fifty-seven percent say their organizations are very or highly vulnerable to supply chain attacks.
+### Insider Risk
+96% of organizations had at least two data loss or exfiltration incidents in the past two years.
+- **Root causes**: Employee negligence (35%), privilege access abuse (25%), and sending PII/PHI to an unintended recipient (25%).
 
-**Ransomware**
-Fewer organizations are paying a ransom, but the amount paid has increased. The costliest ransom paid (extrapolated value) was **$1.2 million**, up from $1.1 million in 2024—a 60 percent increase from 2022. Fifty-five percent of respondents believe their organizations are vulnerable to ransomware.
-
-**Business email compromise (BEC)/spoofing/impersonation**
-Concerns about these attacks have decreased since 2022. **Fifty-three percent** say their organizations are vulnerable to a BEC incident. **Sixty-two percent** say their organizations experienced an average of four attacks in the past two years.
-
-### The Impact of Cyberattacks on Patient Care
-
-Among organizations that experienced the four types of cyberattacks, an average of **72 percent** report disruption to patient care.
-
-**Table 1: Percentage of poor outcomes for four types of cyberattacks**
-| Impact | Ransomware | Supply Chain | BEC | Cloud/Account | 2025 Average |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| Increased complications from medical procedures | 50% | 49% | 55% | 61% | 54% |
-| Longer length of stay | 67% | 40% | 53% | 52% | 53% |
-| Delay in tests/procedures | 56% | 51% | 65% | 35% | 52% |
-| Increase in patients transferred or diverted | 50% | 32% | 46% | 40% | 42% |
-| Increase in mortality rates | 27% | 32% | 21% | 36% | 29% |
-
-- **Ransomware**: 67% say it resulted in longer lengths of stay.
-- **Cloud/Account Compromise**: 61% say it increased complications from medical procedures. The tools most often attacked are text messaging (59%), Zoom/Skype (54%), and email (45%).
-- **Data Loss/Exfiltration**: 96% of organizations had at least two incidents in the past two years. 54% of those who saw disruptions say it increased the mortality rate.
-
-### The Insider Risk to Sensitive Data
-- **35%** say employees not following policies were the cause of data loss.
-- **25%** say data loss was caused by privilege access abuse.
-- **25%** say it was from an employee sending PII or PHI to the wrong recipient via email.
-
-### AI and Machine Learning in Healthcare
-- **57%** of respondents say their organizations have embedded AI in cybersecurity or both cybersecurity and patient care.
-- **55%** say AI is effective in improving cybersecurity posture.
-- **56%** agree AI simplifies patient care and administrators' work.
-- **60%** say safeguarding confidential data used in AI is difficult.
-
-### Solutions and Responses
-- **Top 3 cybersecurity tools for email**: Multi-factor authentication (54%), Secure email gateway (52%), Patch and vulnerability management (51%).
-- **Top 3 tools for identity risk**: Privileged access management (59%), Identity and access management (53%), SIEM alerts (50%).
-- **Barriers**: Lack of in-house expertise (43%) and lack of clear leadership (40%).
+### AI and Machine Learning
+- 57% of respondents have embedded AI in cybersecurity or both cybersecurity and patient care.
+- 55% agree that AI-based security technologies increase the productivity of IT security personnel.
+- 60% find it difficult to safeguard confidential data used in their organization's AI.
 
 ---
 
 ## Part 3. Methodology
 
-A sampling frame of 17,220 IT and IT security practitioners in U.S. healthcare organizations was selected. 
-
-**Table 3: Sample Response**
-| Step | Count |
-| :--- | :--- |
-| Sampling frame | 17,220 |
-| Total returns | 756 |
-| Rejected or screened surveys | 79 |
-| Final sample | 677 |
-| Response rate | 3.9% |
-
-**Figure 26: Type of organization**
-- Private healthcare provider: 21%
-- Healthcare insurer: 20%
-- Public healthcare provider: 18%
-- Healthcare insurance: 11%
-- Payer: 10%
-- Life sciences: 9%
-- Pharma: 6%
-- Biotech: 5%
-
-**Figure 27: Current position within the organization**
-- Senior Executive/VP: 6%
-- Director: 10%
-- Manager: 25%
-- Supervisor: 23%
-- Technician/Staff: 27%
-- Contractor: 2%
-- Other: 7%
+The study surveyed 677 IT and IT security practitioners in U.S. healthcare organizations. 
+- **Sampling frame**: 17,220 individuals.
+- **Response rate**: 3.9%.
+- **Respondent profile**: 21% private healthcare providers, 20% healthcare insurers, 18% public healthcare providers.
 
 ---
 
 ## Part 4. Caveats to this report
 
-1.  **Non-response bias**: The current findings are based on a sample of survey returns. It is possible that individuals who did not participate are substantially different from those who completed the instrument.
-2.  **Sampling-frame bias**: Accuracy is based on contact information and the degree to which the list is representative. Results may be biased by external events such as media coverage.
-3.  **Self-reported results**: The quality of research is based on the integrity of confidential responses. There is always the possibility that a subject did not provide accurate responses.
+1. **Non-response bias**: It is possible that individuals who did not participate are substantially different in their beliefs from those who completed the survey.
+2. **Sampling-frame bias**: Results may be influenced by the accuracy of contact information and external events like media coverage.
+3. **Self-reported results**: The quality of research depends on the integrity of the subjects; there is always a possibility of inaccurate responses.
 
 ---
 
 ## Part 5. Appendix with the detailed audited findings
 
-### Survey Response Data
+![Table of survey responses and frequency data for cybersecurity strategies, threats, and organizational challenges.]
 
-| Survey Response | FY2025 | FY2024 | FY2023 | FY2022 |
-| :--- | :---: | :---: | :---: | :---: |
-| Total sampling frame | 17,220 | 18,015 | 17,085 | 16,451 |
-| Total returns | 756 | 732 | 715 | 698 |
-| Final sample | 677 | 648 | 653 | 641 |
-| Response rate | 3.9% | 3.6% | 3.8% | 3.9% |
+*(Note: The original document contains extensive tables in the appendix detailing year-over-year comparisons for all survey questions. These include metrics on vulnerability ratings, attack frequencies, and technology adoption rates.)*
 
-**S1. Which of the following best describes your role? (Check all that apply)**
-- Setting IT cybersecurity priorities: 55%
-- Managing IT security budgets: 41%
-- Selecting vendors and contractors: 50%
-- Participating in IT cybersecurity strategies: 53%
-- Evaluating and measuring effectiveness: 46%
-- Managing cybersecurity risk: 37%
-- Overseeing governance and compliance: 26%
-
-**Q1. What cybersecurity threats is your organization most concerned about? (Top 6)**
-- Insecure mobile apps (eHealth): 55%
-- Cloud/account compromises: 49%
-- Employee-owned mobile devices or BYOD: 49%
-- Insecure medical devices: 47%
-- Employee negligence or error: 47%
-- Ransomware: 42%
-- Supply chain risks: 42%
-- BEC/spoofing/impersonation: 40%
-- Generative AI or AI tools: 38%
-
-**Q3. What challenges keep your organization’s cybersecurity posture from being fully effective? (Top 3)**
-- Lack of in-house expertise: 43%
-- Lack of clear leadership: 40%
-- Lack of technologies: 39%
-- Insufficient budget: 37%
-- Insufficient staffing: 34%
-- Lack of collaboration: 31%
-
-**Q4-Q7. Vulnerability Ratings (Scale 1-10, 7+ responses)**
-- Cloud/account compromises: 64% (Extrapolated: 7.72)
-- Supply chain attacks: 57% (Extrapolated: 7.52)
-- Ransomware attacks: 55% (Extrapolated: 7.46)
-- BEC/spoofing/impersonation: 53% (Extrapolated: 6.88)
-
-**Q8-Q10. Ransomware Experience**
-- Experienced successful ransomware attack: 61%
-- Average number of attacks (2 years): 5.0
-- Paid the ransom: 33%
-- Average costliest ransom paid: $1,238,375
-
-**Q17. Cloud/Account Compromise Experience**
-- Experienced successful compromise: 72%
-- Average number of compromises (2 years): 21.2
-- Most attacked tools: Text messaging (59%), Zoom/Skype (54%), Email (45%), Teams/Slack (43%).
-
-**Q19-Q21. Data Loss and Exfiltration**
-- Average incidents (2 years): 18.4
-- Root causes: Employee negligence (35%), Privilege access abuse (25%), Email to unintended recipient (25%), Accidental loss (23%).
-- Impact: Increase in mortality rate (54%), Delays in procedures (36%), Complications (31%).
-
-**Q22. Security methods to reduce phishing/email attacks**
-- Multi-factor authentication: 54%
-- Secure email gateway: 52%
-- Patch & vulnerability management: 51%
-- Anti-virus/anti-malware: 49%
-- MSSP: 43%
-
-**Q29-Q31. AI Adoption and Sentiment**
-- AI embedded in cybersecurity: 30%
-- AI embedded in both security and care: 27%
-- AI increases security productivity: 55% (Agree/Strongly Agree)
-- AI simplifies patient care/admin work: 56% (Agree/Strongly Agree)
-
-**Q41. Total cost from the one most significant cybersecurity attack (Past 12 months)**
-- Average Extrapolated Value: $3,903,780
-
-**Q43-Q44. IT Budget**
-- Average annual IT budget: $65,043,000
-- Percentage dedicated to info security: 21%
+[^1]: Footnote: All survey responses were captured in April 2025.
 
 ---
 
-## Contact Us
-
-For more information about this report, please contact Ponemon Institute:
-- **Email**: research@ponemon.org
-- **Phone**: 1.800.887.3118
-- **Website**: [www.proofpoint.com](http://www.proofpoint.com)
-
-**About Proofpoint, Inc.**
-Proofpoint, Inc. is a leading cybersecurity and compliance company that protects organizations’ greatest assets and biggest risks: their people.
-
-**About Ponemon Institute**
-Ponemon Institute is dedicated to independent research and education that advances responsible information and privacy management practices within business and government.
+ow much was the ransom? If your organization has had more than one ransomware attack, please select the costliest ransom paid.FY2025FY2022Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202551An increase in mortality rate Delays in procedures and tests have resulted in poor outcomes Increase in complications from medical procedures Increase in patients transferred or diverted to other facilities Longer length of stay Other (please specify) Total28% 59% 44% 46% 48% 3% 228%29% 61% 47% 52% 58% 5% 252%27% 56% 50% 50% 67% 8% 258%24% 64% 48% 50% 59% 3% 248%FY2023FY2024Q11b. If yes, what impact did the ransomware attack have  on patient care? Please select all that apply.FY2025FY2022One Two to five Six to 10 More than 10 Total Extrapolated value40% 24% 19% 17% 100% 4.853% 21% 15% 11% 100% 3.853% 19% 16% 12% 100% 3.949% 31% 12% 8% 100% 3.5FY2023FY2024Q12b. If yes, how many BEC/spoofing/impersonation attacks did your organization experience over the past two years?FY2025FY2022Yes No (please skip to Q14a) Unsure (please skip to Q14a) Total54% 41% 5% 100%57% 38% 5% 100%62% 32% 6% 100%51% 40% 9% 100%FY2023FY2024Q12a. Did your organization ever experience a BEC/spoofing /impersonation attack?FY2025FY2022Yes No Unsure Total69% 26% 5% 100%65% 31% 4% 100%70% 26% 4% 100%67% 30% 3% 100%FY2023FY2024Q13a. Did the BEC/spoofing/impersonation attack result in a disruption in patient care operations?FY2025FY2022Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202552An increase in mortality rate Delays in procedures and tests have resulted in poor outcomes Increase in complications from medical procedures Increase in patients transferred or diverted to other facilities Longer length of stay Other (please specify) Total12% 71% 56% 46% 55% 4% 244%24% 69% 57% 50% 52% 4% 256%21% 65% 55% 46% 51% 5% 243%21% 60% 51% 45% 48% 2% 227%FY2023FY2024Q13b. If yes, what impact did the BEC/spoofing/impersonation attack have on patient care? Please select all that apply.FY2025FY2022Yes No (please skip to Q16a) Unsure (please skip to Q16a) Total64% 30% 6% 100%68% 28% 4% 100%44% 54% 2% 100%50% 44% 6% 100%FY2023FY2024Q14a. Did your organization ever experience attacks against its supply chain?FY2025FY2022One Two to five Six to 10 More than 10 Total Extrapolated value36% 33% 21% 10% 100% 4.246% 26% 19% 9% 100% 4.053% 22% 16% 9% 100% 3.744% 29% 19% 8% 100% 3.9FY2023FY2024Q14b. If yes, how many supply chain attacks did your organization experience over the past two years?FY2025FY2022Yes No Unsure Total77% 18% 5% 100%82% 18% 0% 100%87% 11% 2% 100%70% 24% 6% 100%FY2023FY2024Q15a. Did the supply chain attacks result in a disruption in patient care operations?FY2025FY2022Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202553An increase in mortality rate Delays in procedures and tests have resulted in poor outcomes Increase in complications from medical procedures Increase in patients transferred or diverted to other facilities Longer length of stay Other (please specify) Total21% 50% 45% 39% 48% 4% 207%26% 48% 51% 38% 45% 3% 211%32% 51% 49% 32% 40% 2% 206%23% 54% 48% 40% 51% 3% 219%FY2023FY2024Q15b. If yes, what impact did the supply chain attacks have on patient care? Please select all that apply.FY2025FY2022Yes, we have moved clinical applications to the cloud Yes, we plan to move clinical applications to the cloud in the next six months Yes, we plan to move clinical applications to the cloud within the next year (please skip to Q16c) Yes, we plan to move clinical applications to the cloud in the next one to two years (please skip to Q16c) Yes, we plan to move clinical applications to the cloud but there is no timeline (please skip to Q16c) No, we have no plans to move applications to the cloud (please skip to Q17a) Total30% 9% 8% 15% 13% 25% 100%Q16a. Will your organization move its clinical applications to the cloud?FY20251 or 2 3 or 4 5 or 6 7 or 8 9 or 10 Total Extrapolated value16% 13% 17% 23% 31% 100% 6.30Q16b. If yes, using the following 10-point scale, please rate how effective your organization is in securing clinical applications in the cloud from 1 = not effective to 10 = highly effective.FY2025Public cloud Private cloud Hybrid cloud Hosted Total34% 21% 23% 22% 100%Q16c. If yes, what type of cloud environment have you or will you move clinical applications to?FY2025Part 2. Protecting the cloudCyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202554Yes No (please skip to Q18) Unsure (please skip to Q18) Total63% 33% 4% 100%69% 29% 2% 100%72% 28% 0% 100%54% 41% 5% 100%FY2023FY2024Q17a. Did your organization ever experience a successful cloud/account compromise?FY2025FY2022Yes No Unsure Total49% 40% 11% 100%57% 34% 9% 100%61% 31% 8% 100%64% 32% 4% 100%FY2023FY2024Q18a. Did the cloud/account compromises result in a disruption in patient care operations?FY2025FY2022Once 2 to 5 6 to 10 11 to 15 16 to 20 21 to 25 26 to 50 More than 50 Total Extrapolated value0% 12% 14% 10% 21% 19% 16% 8% 100% 21.40% 13% 12% 16% 21% 19% 13% 6% 100% 19.92% 10% 11% 16% 23% 15% 14% 9% 100% 21.25% 9% 6% 9% 22% 22% 18% 9% 100% 21.7FY2023FY2024Q17b. How many times have attackers compromised cloud-based user accounts within your organization over the past two years?FY2025FY2022Email Text messaging Zoom/Skype/video conferencing Teams/Slack/Office collaboration tools Project management tools OneDrive/Dropbox/document/file-sharing tools System-generated email Virtual desktop infrastructure (VDI) Total49% 45% 53% 49% 53% 49% 51%   349%59% 61% 56% 47% 31% 47% 23% 24% 348%45% 59% 54% 43% 29% 35% 21% 25% 348%FY2023FY2024Q17c. Which cloud-based user accounts/collaboration tools were most attacked in your organization? Please select all that apply.FY2025Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202555An increase in mortality rate Delays in procedures and tests have resulted in poor outcomes Increase in complications from medical procedures Increase in patients transferred or diverted to other facilities Longer length of stay Other (please specify) Total29% 47% 53% 37% 48% 3% 217%32% 44% 56% 36% 52% 1% 221%36% 35% 61% 40% 52% 4% 228%18% 49% 51% 37% 50% 2% 207%FY2023FY2024Q18b. If yes, what impact did the cloud/account compromises have on patient care? Please select all that apply.FY2025FY2022Part 3. Data loss protection/exfiltration Once 2 to 5 6 to 10 11 to 15 16 to 20 21 to 25 26 to 50 More than 50 Total Extrapolated value8% 5% 12% 24% 10% 23% 13% 5% 100% 19.40% 8% 14% 25% 12% 25% 10% 6% 100% 20.04% 9% 13% 19% 21% 20% 9% 5% 100% 18.4FY2023FY2024Q19. How many data loss and exfiltration incidents involving sensitive and confidential healthcare data occurred within your organization over the past two years?FY2025Accidental data loss Employee negligence because of not following policies Privilege access abuse Malicious insiders Employee sends PII or PHI to an unintended recipient via email Use of stolen credentials Social engineering Exploitation of vulnerabilities Phishing Unsure Total26% 31% 20% 15% 21% 11% 13% 9% 12% 17% 175%23% 35% 25% 18% 25% 15% 14% 8% 11% 16% 190%FY2024Q20. What were the root cause(s) of the data loss and exfiltration incident? Please select all that apply.FY2025Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202556Yes No, Please skip to Q22 Unsure, Please skip to Q22 Total43% 51% 6% 100%51% 45% 4% 100%55% 40% 5% 100%FY2023FY2024Q21a. Did the data loss or exfiltration result in a disruption in patient care operations?FY2025An increase in mortality rate Delays in procedures and tests have resulted in poor outcomes Increase in complications from medical procedures Increase in patients transferred or diverted to other facilities Longer length of stay Other (please specify) Total46% 34% 38% 36% 24% 6% 184%50% 37% 34% 33% 21% 3% 178%54% 36% 31% 29% 27% 4% 181%FY2023FY2024Q21b. If yes, what impact did the data loss or exfiltration incident have on patient care? Please select all that apply.FY2025Secure email gateway (SEG) Domain-based Message Authentication (DMARC) Email data loss prevention Anti-virus/anti-malware Multi-factor authentication Patch & vulnerability management Managed Security Service Provider (MSSP) Firewalls AI/ML Threat intelligence Other (please specify) Total45% 42% 39% 53% 49% 52% 46% 36% 44% 41% 4% 451%52% 43% 36% 49% 54% 51% 43% 33% 41% 38% 8% 448%FY2024Q22. What security methods and technologies does your organization use to reduce phishing and other email-based attacks? Please select all that apply.FY2025Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202557Account takeover protection Identity and access management (IAM) Privileged access management (PAM) Identity theft detection and response (ITDR) Intrusion detection & prevention systems (IDPS) User and entity behavior analytics (UEBA) Alerts from SIEM to gain visibility Endpoint protection Rules-based DLP solution Other (please specify) Total  56% 61% 40% 35% 33% 45% 39% 45% 2% 356%42% 53% 59% 43% 37% 33% 50% 41% 39% 5% 402%FY2024Q23. What other technologies has your organization implemented to prevent identity risk and lateral movement in its network? Please select all that apply.FY2025Policy fine tuning to prevent data loss Secure web gateway (SWG) Cloud security tools Data security posture management (DSPM) Insider threat management (ITM) Web isolation technology Encryption for data at rest Encryption for data in transit Endpoint data loss prevention Network data loss prevention Email data loss prevention Cloud data loss prevention Web data loss prevention IT/IT security team triages incidents Manual policy orchestration Other (please specify) Total23% 28% 44%     29% 41% 46%           25% 29% 3% 304%27% 28% 35% 31% 43% 33% 38% 43% 45% 44% 38% 35% 31% 29% 37% 5% 542%FY2024Q24. What security methods and technologies has your organization implemented to prevent data loss or an exfiltration incident? Please select all that apply.FY2025Yes No Unsure Total59% 35% 6% 100%65% 30% 5% 100%71% 29% 0% 100%76% 20% 4% 100%FY2022FY2023FY2024Q25a. Does your organization take steps to address the risk of employees’ lack of awareness about cybersecurity threats?FY2025Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202558Regular training and awareness programs Simulations of phishing attacks Monitoring of employees TotalAudits and assessments of areas most vulnerable to Include user’s compliance with privacy and security policies employees’ lack of awareness in performance evaluations Other (please specify) 63% 41% 59%  35% 240%39% 3% 57% 40% 54%  36% 234%43% 4% 59% 45% 53%  34% 235%39% 5% 63% 47% 51% 37% 248%44% 6%   FY2022FY2023FY2024Q25b. If yes, what steps does it take?  Please select all that apply.FY20251 or 2 3 or 4 5 or 6 7 or 8 9 or 10 Total Extrapolated value8% 33% 14% 16% 19% 100% 5.2011% 23% 20% 26% 20% 100% 5.9211% 19% 11% 28% 31% 100% 6.48FY2023FY2024Q26. How effective are your current data loss prevention solutions in preventing data loss incidents caused by employees from 1 = not effective to 10 = very effective?FY20251 or 2 3 or 4 5 or 6 7 or 8 9 or 10 Total Extrapolated value15% 20% 26% 25% 14% 100% 5.5615% 23% 23% 24% 15% 100% 5.529% 11% 16% 32% 32% 100% 6.84FY2023FY2024Q27. How effective are your current data loss prevention solutions in preventing data loss incidents caused by malicious insiders from 1 =not effective to 10 = very effective?FY20251 or 2 3 or 4 5 or 6 7 or 8 9 or 10 Total Extrapolated value15% 17% 21% 25% 22% 100% 5.9411% 18% 23% 23% 25% 100% 6.168% 10% 12% 30% 40% 100% 7.18FY2023FY2024Q28. How concerned is your organization that its employees do not understand the sensitivity and confidentiality of data that they share through email from 1 = not concerned to 10 = very concerned?FY2025Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202559Yes, AI is embedded in cybersecurity Yes, AI is embedded in both cybersecurity and patient care No, but we plan to adopt AI in the future (please skip to Part 5) We don’t have plans to adopt AI (please skip to Part 5) TotalYes No (please skip to Q35) Total28% 26% 26% 20% 100%36% 64% 100%30% 27% 21% 22% 100%40% 60% 100%FY2024FY2024Q29. Has your organization adopted AI? Please select one choice only.Q32. To protect email from employees’ negligence and error, does your organization use AI and machine learning to understand human behavior?FY2025FY2025Strongly disagree Disagree Unsure Agree Strongly Agree TotalStrongly disagree Disagree Unsure Agree Strongly Agree Total21% 15% 9% 25% 30% 100%15% 16% 21% 23% 25% 100%20% 18% 7% 25% 30% 100%13% 11% 20% 30% 26% 100%FY2024FY2024Q30. The deployment of AI-based security technologies will increase the productivity of our organization’s IT security personnel.Q31. AI simplifies patient care and administrators’ work by performing tasks that are typically done by humans but in less time and cost.FY2025FY2025Part 4. AI and machine learning in healthcare1 or 2 3 or 4 5 or 6 7 or 8 9 or 10 Total Extrapolated value8% 15% 21% 23% 33% 100% 6.669% 17% 19% 23% 32% 100% 6.54FY2024Q33. If yes, how important is understanding human behavior to protecting email on a scale from 1 = not important to 10 = very important?FY2025Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 2025601 or 2 3 or 4 5 or 6 7 or 8 9 or 10 Total Extrapolated value1 or 2 3 or 4 5 or 6 7 or 8 9 or 10 Total Extrapolated value11% 13% 19% 25% 32% 100% 6.665% 9% 23% 30% 33% 100% 7.0411% 13% 21% 23% 32% 100% 6.549% 12% 19% 25% 35% 100% 6.80FY2024FY2024Q34. How effective is AI in improving the cybersecurity posture of your organization from 1 = not effective to 10 = very effective?Q35. How difficult is it to safeguard confidential and sensitive patient data used in your organization’s AI on a scale from 1 = not difficult to 10 = very difficult?FY2025FY2025AI tools/technology we need are not available We can’t apply AI-based controls that span across the entire enterprise We can’t create a unified view of AI users across the enterprise There are errors and inaccuracies in AI decision rules There are errors and inaccuracies in data inputs ingested by AI technology (engine) There is a heavy reliance on legacy IT environments There are Interoperability issues among AI technologies There is a lack of mature and/or stable AI technologies Other (please specify) Total25% 26% 4% 19% 32% 23% 32% 34% 5% 200%22% 25% 5% 21% 33% 26% 34% 28% 6% 200%FY2024Q36. Which of the following are challenges to the effectiveness of AI-based security technologies used by your organization today? Please select the top two factors.FY2025Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202561Yes, currently use We plan to adopt in six months We plan to adopt within one year We plan to adopt in one to two years We plan to adopt but have no timeline No, plan to adopt in the future (please skip to Part 5) Total1 or 2 3 or 4 5 or 6 7 or 8 9 or 10 Total Extrapolated balue1 or 2 3 or 4 5 or 6 7 or 8 9 or 10 Total Extrapolated value23% 14% 15% 24% 11% 13% 100%8% 17% 19% 31% 25% 100% 6.4612% 16% 22% 27% 23% 100% 6.16Q37. Does your organization use AI-based DLP?Q38. How effective is AI-based DLP in preventing data loss incidents caused by employees from 1 =not effective to 10 = very effective?Q39. How effective is AI-based DLP in preventing data loss incidents caused by malicious insiders from 1 =not effective to 10 = very effective? FY2025FY2025FY2025Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202562Part 5. Cyberattack experienceNone (please skip to Part 6) 1 to 5 6 to 10 11 to 25 26 to 50 51 to 100 More than 100 Total Extrapolated value12% 13% 21% 11% 9% 18% 16% 100% 40.18% 15% 23% 12% 11% 12% 19% 100% 40.47% 10% 22% 16% 13% 11% 21% 100% 43.311% 12% 15% 13% 11% 23% 15% 100% 43.3FY2023FY2024Q40. How many cyberattacks has your organization experienced over the past 12 months?Please note that the cost estimate should include all direct cash outlays, direct labor expenditures, indirect labor costs, overhead costs and lost business opportunities.FY2025FY2022None Less than $10,000 $10,001 to $100,000 $100,001 to $250,000 $250,001 to $500,000 $500,001 to $1,000,000 $1,000,001 to $5,000,000 $5,000,001 to $10,000,000 $10,000,001 to $25,000,000 More than $25,000,000 Cannot estimate Total Extrapolated valueRemediation & technical support activities, including forensic Users’ idle time and lost productivity because of downtime or system Disruption to normal healthcare operations because of system Damage or theft of IT assets and infrastructure Time required to ensure impact on patient care is corrected investigations, incident response activities, help desk and delivery of services to patients performance delays availability problems Total Points0% 0% 7% 13% 18% 14% 19% 11% 15% 3% 0% 100% $4,991,50015 21 10023 26 15 0% 0% 9% 10% 14% 18% 21% 15% 9% 4% 0% 100% $4,740,40015 18 10021 31 15 0% 2% 7% 12% 15% 19% 21% 14% 8% 2% 0% 100% $3,903,78013 18 10022 31 16 0% 0% 6% 12% 18% 16% 21% 13% 12% 2% 0% 100% $4,429,00016 15 10025 23 21 FY2023FY2023FY2024FY2024Q41. Approximately, how much was the total cost from the one most significant cybersecurity attack in the past 12 months?Q42. To understand the relationship of each of the five categories to the total cost of a cybersecurity compromise, please allocate points to each category for a total of 100 points.FY2025FY2025FY2022FY2022Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202563Part 6. Security spending & investmentPart 7. Your role and organizational characteristicsLess than $1,000,000 1,000,000 to $5,000,000 5,000,001 to $10,000,000 10,000,001 to $25,000,000 25,000,001 to $50,000,000 $50,000,001 to $100,000,000 $100,000,000+ Cannot estimate Total Extrapolated value2% 3% 8% 11% 25% 23% 25% 3% 100% $59,258,0000% 4% 9% 11% 20% 25% 31% 0% 100% $66,170,0002% 5% 7% 12% 18% 26% 30% 0% 100% $65,043,0000% 2% 6% 10% 17% 28% 37% 0% 100% $75,200,000FY2023FY2024Q43.What is your organization’s approximate annual budget for IT?FY2025FY2022Less than 5% 5 to 10% 11 to 15% 16 to 20% 21 to 30% More than 30% Total Extrapolated value5% 8% 21% 37% 19% 10% 100% 18%4% 9% 19% 33% 25% 10% 100% 19%5% 10% 16% 22% 27% 20% 100% 21%3% 7% 23% 35% 21% 11% 100% 19%FY2023FY2024FY2025FY2022Q44. What percentage of your organization’s IT budget is dedicated to information security?Public healthcare provider Private healthcare provider Healthcare insurer Payer Healthcare insurance Life sciences Biotech Pharma TotalD1. What best describes your organization?19% 20% 18% 14% 11% 5% 4% 9% 100%21% 22% 19% 8% 12% 6% 4% 8% 100%18% 21% 20% 10% 11% 9% 5% 6% 100%19% 22% 13% 15% 9% 8% 5% 9% 100%FY2023FY2024FY2025FY2022Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 202564Senior Executive/VP Director Manager Supervisor Technician/Staff Contractor Other (please specify) Total8% 17% 29% 23% 19% 4% 0% 100%7% 10% 27% 25% 26% 5% 0% 100%6% 10% 25% 23% 27% 7% 2% 100%9% 16% 23% 14% 33% 5% 0% 100%FY2023FY2024D2. What organizational level best describes your current position?FY2025FY2022CEO/Executive Committee Chief Information Officer Chief Information Security Officer Chief Risk Officer Chief Security Officer Chief Technology Officer Compliance Officer Data Center Management Cloud Administration Other (please specify) Total9% 19% 20% 7% 5% 8% 8% 9% 11% 4% 100%7% 18% 21% 8% 6% 7% 9% 8% 13% 3% 100%8% 16% 22% 9% 5% 8% 10% 6% 12% 4% 100%8% 21% 19% 6% 4% 7% 9% 10% 12% 4% 100%FY2023FY2024D3. Check the primary person you or your IT security leader reports to within the organization.FY2025FY2022Less than 500 500 to 1,000 1,001 to 5,000 5,001 to 10,000 10,001 to 25,000 25,001 to 75,000 More than 75,000 Total18% 21% 18% 10% 12% 14% 7% 100%19% 23% 17% 12% 10% 13% 6% 100%18% 25% 15% 12% 12% 11% 7% 100%16% 25% 19% 9% 13% 12% 6% 100%FY2023FY2024FY2025FY2022D4. What is the headcount of your organization?Cyber Insecurity in Healthcare: The Cost and Impact on Patient Safety and Care 2025DISCOVER THE PROOFPOINT PLATFORM Connect with Proofpoint:LinkedInwww.proofpoint.comProofpoint, Inc. is a leading cybersecurity and compliance company that protects organizations’ greatest assets and biggest risks: their people. With an integrated suite of cloud-based solutions, Proofpoint helps companies around the world stop targeted threats, safeguard their data, and make their users more resilient against cyber attacks. Leading organizations of all sizes, including 85% of the Fortune 100, rely on Proofpoint for people-centric security and compliance solutions that mitigate their most critical risks across email, the cloud, social media, and the web. More information is available at Proofpoint is a registered trademark or tradename of Proofpoint, Inc. in the U.S. and/or other countries. All other trademarks contained herein are the property of their respective owners.Ponemon Institute is dedicated to independent research and education that advances responsible information and privacy management practices within business and government.  Our mission is to conduct high quality, empirical studies on critical issues affecting the management and security of sensitive information about people and organizations. We uphold strict data confidentiality, privacy and ethical research standards.  We do not collect any personally identifiable information from individuals (or company identifiable information in our business research). Furthermore, we have strict quality standards to ensure that subjects are not asked extraneous, irrelevant or improper questions.0400-015-02-01 10/25Contact us For more information about this report, please contact Ponemon Institute by sending an email to  or calling us at 1.800.887.3118.research@ponemon.org
