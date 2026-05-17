@@ -171,6 +171,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+          OUTCOME: ${{ steps.parse.outputs.outcome }}
+          REASON: ${{ steps.parse.outputs.reason }}
+          AUTHOR: ${{ steps.parse.outputs.author }}
+          ISSUE: ${{ steps.parse.outputs.issue }}
+          ISSUE_TITLE: ${{ steps.parse.outputs.title }}
         run: |
           python - << 'PYEOF'
           import json, os, datetime, re, subprocess, sys
@@ -256,12 +261,6 @@ jobs:
           print(f"✓ Feedback recorded: {outcome} for issue #{issue_num} ({org} {year})")
           print(f"  Total events: {data['total_feedback_events']}")
           PYEOF
-        env:
-          OUTCOME: ${{ steps.parse.outputs.outcome }}
-          REASON: ${{ steps.parse.outputs.reason }}
-          AUTHOR: ${{ steps.parse.outputs.author }}
-          ISSUE: ${{ steps.parse.outputs.issue }}
-          ISSUE_TITLE: ${{ steps.parse.outputs.title }}
 
       - name: Commit feedback update
         if: steps.parse.outputs.valid == 'true'
