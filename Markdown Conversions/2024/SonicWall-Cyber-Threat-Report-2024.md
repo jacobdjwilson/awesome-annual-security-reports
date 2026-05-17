@@ -2,23 +2,44 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
+  - [A Note From Our CEO](#a-note-from-our-ceo)
+  - [Small Cracks Lead to Big Payouts](#small-cracks-lead-to-big-payouts)
+  - [2023’s Top Trends](#2023s-top-trends)
+  - [From SMB to the Enterprise, Today and Tomorrow](#from-smb-to-the-enterprise-today-and-tomorrow)
 - [Malware](#malware)
+  - [Highest Since 2019](#highest-since-2019)
+  - [One and Done: Malicious OneNote Files](#one-and-done-malicious-onenote-files)
+  - [Malicious PDFs Are Prevalent](#malicious-pdfs-are-prevalent)
+  - [Top Tactics by Threat Actors](#top-tactics-by-threat-actors)
+    - [Portable Executable (PE) Files Reign Supreme](#portable-executable-pe-files-reign-supreme)
+    - [WinRAR Offers Easy Win for Attackers](#winrar-offers-easy-win-for-attackers)
 - [Ransomware](#ransomware)
+  - [Still a Force to be Reckoned With](#still-a-force-to-be-reckoned-with)
+  - [2023’s Top Ransomware: LockBit](#2023s-top-ransomware-lockbit)
+  - [Still Top of Mind: Why it Matters Today](#still-top-of-mind-why-it-matters-today)
 - [Intrusions](#intrusions)
+  - [Attempts Up 20%](#attempts-up-20)
+  - [Global Malicious Intrusions](#global-malicious-intrusions)
+  - [What is an Intrusion Attempt?](#what-is-an-intrusion-attempt)
 - [Encrypted Threats](#encrypted-threats)
+  - [Encrypted Attacks More Than Double](#encrypted-attacks-more-than-double)
+  - [What Are Encrypted Threats?](#what-are-encrypted-threats)
 - [Cryptojacking](#cryptojacking)
+  - [Why It’s Dangerous (And Why It’s Climbing)](#why-its-dangerous-and-why-its-climbing)
+  - [What Is Cryptojacking?](#what-is-cryptojacking)
+  - [Cryptojacking’s Current Course](#cryptojackings-current-course)
 - [Capture Labs](#capture-labs)
+  - [RTDMI Detections Surpass 1.5 Million](#rtdmi-detections-surpass-15-million)
+  - [RTDMI Steps Up Credential Security](#rtdmi-steps-up-credential-security)
+  - [“Zero-Day” vs. “Never-Before-Seen” Attacks](#zero-day-vs-never-before-seen-attacks)
 - [What You Can Do](#what-you-can-do)
+- [About SonicWall](#about-sonicwall)
 
-# 2024 SONICWALL CYBER THREAT REPORT
+![Cover image for the 2024 SonicWall Cyber Threat Report, featuring the title "SONICWALL CYBER THREAT REPORT" and the subtitle "NAVIGATING THE RELENTLESS SURGE IN CYBERCRIME", along with the SonicWall logo.](https://www.sonicwall.com)
 
-NAVIGATING THE RELENTLESS SURGE IN CYBERCRIME
+## Introduction
 
-sonicwall.com | @sonicwall
-
-## INTRODUCTION
-
-### A NOTE FROM OUR CEO
+### A Note From Our CEO
 
 Almost 18 months ago, we kicked off our outside-in approach across all of SonicWall, with the focus on truly understanding the needs and pain points of our partners and customers and using that insight to drive the delivery of our products and services.
 
@@ -38,8 +59,6 @@ Bob VanKirk
 President & CEO
 SonicWall
 
-2 | 2024 SonicWall Cyber Threat Report | Introduction
-
 ### Small Cracks Lead to Big Payouts
 
 Cyberattacks are big news. Reports of attacks at large, well-known companies or local government offices make headlines on a seemingly constant basis. For those following cybersecurity a bit more closely, the view isn’t too different, with cybersecurity news outlets’ coverage of top breaches dominated by household names like Mailchimp, MGM, Activision and 23andMe.
@@ -58,7 +77,7 @@ But this doesn’t mean threat actors weren’t refining their craft. SonicWall 
 
 Our data continued to reflect vulnerabilities as the most common ransomware vector — and this will likely remain the case as the number of vulnerabilities continues to climb. A record 28,834 CVEs were published in 2023, a 15% increase over 2022’s numbers. In December, SonicWall’s threat researchers discovered and responsibly disclosed CVE-2023-51467, a vulnerability affecting ApacheOFBiz. Large numbers of exploitation attempts have since been observed.
 
-Other campaigns displayed a similar level of innovation. Novel phishing campaigns driving targets to highly convincing Microsoft Outlook and American Express login pages were observed, along with phishing campaigns utilizing QR codes to bypass file scanning technology. Cybercriminals took advantage of inflation and uncertain economic conditions to launch fraudulent loan apps packed with spyware functionalities and credential-theft capabilities. And Google malware scripts embedded in PDFs were weaponized to commit cryptocurrency theft, demonstrating the need for heightened vigilance even in seemingly trusted environments.
+Other campaigns displayed a similar level of innovation. Novel phishing campaigns driving targets to highly convincing Microsoft Outlook and American Express login pages were observed, along with phishing campaigns utilizing QR codes to bypass file scanning technology. Cybercriminals took advantage of inflation and uncertain economic conditions to launch fraudulent loan apps packed with spyware functionalities and credential-theft capabilities. And Google scripts embedded in PDFs were weaponized to commit cryptocurrency theft, demonstrating the need for heightened vigilance even in seemingly trusted environments.
 
 ### From SMB to the Enterprise, Today and Tomorrow
 
@@ -66,9 +85,7 @@ We’re already looking toward a future threat landscape much different from tod
 
 But AI also holds great promise for the world’s defenders. SonicWall was an early adopter of AI and machine learning, with Capture ATP and RTDMI already capable of detecting many of these types of attacks. But in coming years, we’ll begin to see the true potential of AI as a defensive tool.
 
-3 | 2024 SonicWall Cyber Threat Report | Introduction
-
-## MALWARE
+## Malware
 
 ### Highest Since 2019
 
@@ -80,7 +97,7 @@ This divergence also appeared in our industry-specific data. Education, which sa
 
 ### One and Done: Malicious OneNote Files
 
-In early 2023, SonicWall researchers observed threat actors leveraging a new initial vector to infect systems: the use of Microsoft OneNote files. These weaponized attachments were being sent via email, accompanied by a variety of social engineering techniques designed to maximize the odds the attachments would be opened and the target would click on the hidden malicious files tucked inside, triggering the payload execution.
+In early 2023, SonicWall researchers observed threat actors leveraging a new initial vector to infect systems: the use of malicious Microsoft OneNote files. These weaponized attachments were being sent via email, accompanied by a variety of social engineering techniques designed to maximize the odds the attachments would be opened and the target would click on the hidden malicious files tucked inside, triggering the payload execution.
 
 But as security vendors quickly wised up, they began triggering detections based on those attached payload files. Then threat actors pivoted to using a URL that, when clicked, would point to the payload. At the same time, attackers began bloating their code with repeated null bytes at the end of the OneNote files, pushing the file size above 500 MB in an attempt to bypass many AV scanning solutions.
 
@@ -106,13 +123,9 @@ Fortunately, PE malware are red-flagged file types, which are examined thoroughl
 
 #### WinRAR Offers Easy Win for Attackers
 
-Threat actors began exploiting a new vulnerability in popular Windows file archiver tool WinRAR in early 2023. By the second half of the year, multiple stealer malware families — including AgentTesla, Remcos, Rhadamanthys and Guloader — were implicated in a variety of campaigns exploiting CVE-2023-38831, which allows attackers to execute arbitrary code within zip archives. Due to the widespread use of WinRAR in enterprises, these campaigns quickly proliferated globally, targeting the U.S., the Middle East and Asia. They’ve now been linked to state-sponsored hackers from Russia and China, including Sandworm, APT28 and APT 30 and others.
+Threat actors began exploiting a new vulnerability in popular Windows file archiver tool WinRAR in early 2023. By the second half of the year, multiple stealer malware families — including AgentTesla, Remcos, Rhadamanthys and Guloader — were implicated in a variety of campaigns exploiting CVE-2023-38831, which allows attackers to execute arbitrary code within zip archives. Due to the widespread use of WinRAR in enterprises, these campaigns quickly proliferated globally, targeting the U.S., the Middle East and Asia. They’ve now been linked to state-sponsored hackers from Russia and China, including Sandworm, APT28, APT 30 and others.
 
-4 | 2024 SonicWall Cyber Threat Report | Malware
-
-www.sonicwall.com
-
-## RANSOMWARE
+## Ransomware
 
 ### Still a Force to be Reckoned With
 
@@ -123,10 +136,6 @@ A notable exception was Asia. Ransomware volumes hit a record high in 2023, risi
 ### 2023’s Top Ransomware: LockBit
 
 The arrest of two affiliates barely made a dent in LockBit’s numbers: It remained the leading ransomware group in 2023. This is likely due to consistent innovations, such as bug bounty programs to enhance “product” quality, marketing efforts, and the regular release of updated toolkit versions with improved capabilities. After the leak of LockBit 3.0/ “Black,” SonicWall engaged the threat actors, who then made a staggering ransom demand (You can see the details here.)
-
-www.sonicwall.com
-
-6 | 2024 SonicWall Cyber Threat Report | Ransomware
 
 ### Still Top of Mind: Why it Matters Today
 
@@ -144,11 +153,7 @@ There are also still plenty of huge ransomware campaigns being run. In late May,
 
 It’s important to note that vulnerabilities such as this one were the most common vector SonicWall observed for ransomware in 2023 — and those campaigns contributed to ransomware payments surpassing $1 billion for the first time in 2023.
 
-www.sonicwall.com
-
-7 | 2024 SonicWall Cyber Threat Report | Ransomware
-
-## INTRUSIONS
+## Intrusions
 
 ### Attempts Up 20%
 
@@ -162,21 +167,17 @@ These attempts set off alerts that must be reviewed by SOC analysts, or MSPs wit
 
 ### Global Malicious Intrusions
 
-![Image description: A bar chart showing global malicious intrusion attempts by industry, with finance and government showing the highest increases.]
+![Chart showing the trend of global malicious intrusions over time, likely indicating an increase.](https://www.sonicwall.com)
 
 ### What is an Intrusion Attempt?
 
 A malicious intrusion attempt is a security event in which a threat actor tries to gain unauthorized access to a system or resource by exploiting a vulnerability. While the exploit of unpublished “zero-day” vulnerabilities make the most headlines, the most commonly exploited vulnerabilities are generally public and published as CVEs. But because not everyone patches at the same rate, attackers have an opportunity to use unpatched software or appliances as an entry point into a network.
 
-Once threat actors are inside the network, vulnerability exploitation continues as attackers attempt to gain network persistence and lateral movement using other vulnerabilities in unpatched systems within the network.
-
 SonicWall tracks the detection and prevention of exploits coming from both external and internal sources. When a piece of code that constitutes a vulnerability passes a firewall with Intrusion Prevention enabled, and the firewall detects and neutralizes that code, an intrusion attempt is counted.
 
-www.sonicwall.com
+Once threat actors are inside the network, vulnerability exploitation continues as attackers attempt to gain network persistence and lateral movement using other vulnerabilities in unpatched systems within the network.
 
-8 | 2024 SonicWall Cyber Threat Report | Intrusions
-
-## ENCRYPTED THREATS
+## Encrypted Threats
 
 ### Encrypted Attacks More Than Double
 
@@ -192,29 +193,21 @@ Most industry analyst firms conclude that between 80-90 percent of network traff
 
 Legacy firewalls and other traditional security controls lack the capability or processing power to detect, inspect and mitigate threats sent over HTTPs traffic, making this a highly successful avenue for threat actors to deploy and execute attacks.
 
-www.sonicwall.com
-
-9 | 2024 SonicWall Cyber Threat Report | Encrypted Threats
-
-## CRYPTOJACKING
+## Cryptojacking
 
 ### Why It’s Dangerous (And Why It’s Climbing)
 
 In last year’s threat report, we noted a concerning milestone: The number of cryptojacking hits, which had remained fairly low since we began tracking in 2018, surpassed 100,000 for the first time.
 
-But as it turned out, cryptojacking’s ascent was only beginning. In 2023, the number of cryptojacking hits had sailed past 2022’s full-year total by early April, and continued to pick up steam from there. By the end of the year, SonicWall Capture Labs threat researchers had recorded 1.06 billion cryptojacking hits—a 659% increase over 2022’s totals.
+But as it turned out, cryptojacking’s ascent was only beginning. In 2023, the number of cryptojacking hits had sailed past 2022’s full-year total by early April, and continued to pick up steam from there. By the end of the year, SonicWall Capture Labs threat researchers had recorded 1.06 billion cryptojacking hits—a 659% increase over 2022’s totals. This total was fueled by unprecedented attack volumes in November and December—which each had more cryptojacking hits than were noted for the entire year in 2022.
 
-This total was fueled by unprecedented attack volumes in November and December—which each had more cryptojacking hits than were noted for the entire year in 2022. Large increases were also observed across every region. In APAC and LATAM, cryptojacking hits rose 87% and 116% respectively. But truly massive increases were recorded in NOAM (+596%) and Europe (+1,046%).
+Large increases were also observed across every region. In APAC and LATAM, cryptojacking hits rose 87% and 116% respectively. But truly massive increases were recorded in NOAM (+596%) and Europe (+1,046%).
 
 ### What Is Cryptojacking?
 
 Cryptojacking is a type of cyberattack where threat actors hijack a victim’s computing resources to mine cryptocurrencies without their consent or knowledge. It involves the installation of malware, often delivered via phishing emails or compromised websites, that secretly runs in the background on a victim’s computer, smartphone or server.
 
 This malware uses the device’s processing power and energy to solve complex mathematical problems (“proof of work”), generating cryptocurrency for the attacker.
-
-www.sonicwall.com
-
-10 | 2024 SonicWall Cyber Threat Report | Cryptojacking
 
 ### Cryptojacking’s Current Course
 
@@ -232,9 +225,7 @@ Despite the high cost of mining cryptocurrency, cryptomining is not illegal, and
 
 According to SonicWall data, cryptojacking hits made up one-sixth of all malware hits in 2023. As illicit mining becomes more popular, we may start to see the same sort of concerted public and private sector responses that emerged from the early 2020s boom in ransomware.
 
-11 | 2024 SonicWall Cyber Threat Report | Cryptojacking
-
-## CAPTURE LABS
+## Capture Labs
 
 ### RTDMI Detections Surpass 1.5 Million
 
@@ -256,46 +247,35 @@ The “zero-day attack” is one of the most well-known cybersecurity concepts d
 
 Conversely, SonicWall tracks detection and mitigation of “never-before-seen attacks,” which is the first time that SonicWall Capture ATP identifies a signature as malicious. These discoveries often closely align with zero-day attack patterns due to the volume of attacks analyzed by SonicWall.
 
-www.sonicwall.com
-
-12 | 2024 SonicWall Cyber Threat Report | Capture Labs
-
-## WHAT YOU CAN DO
+## What You Can Do
 
 As the rising tide of threats detailed in this report shows, you can’t avoid being targeted. However, there are actions you can take to strengthen your overall cybersecurity approach:
 
 1.  **Enable Multifactor Authentication (MFA)**
     Enabling MFA significantly enhances authentication security—even if someone gains access to your passwords, they won’t be able to access your accounts since a second authentication is required by you, the user.
-
 2.  **Patch Promptly**
     While zero-day vulnerabilities make headlines, most exploit attempts target vulnerabilities months or years old.
-
 3.  **Conduct Regular Security Assessments**
     This will help you identify vulnerabilities, assess risks, and proactively strengthen defenses, ensuring robust protection against evolving threats.
-
-4.  **Conduct Ongoing Security Trainings**: As technology advances, so does cybersecurity. By deploying basic trainings and routine practices — such encouraging employees to not click on malicious links and training employees to identify and report potential security risks — companies can create a more educated and vigilant workforce.
-
+4.  **Conduct Ongoing Security Trainings:** As technology advances, so does cybersecurity. By deploying basic trainings and routine practices — such encouraging employees to not click on malicious links and training employees to identify and report potential security risks — companies can create a more educated and vigilant workforce.
 5.  **Scan Encrypted Traffic**
     Experts estimate that 80-90 percent of all network traffic today is encrypted. But many legacy firewalls lack the capability or processing power to detect, inspect and mitigate cyberattacks sent via HTTPs traffic at all, let alone using TLS 1.3 — so threat actors routinely use encryption to deploy and execute malware. According to SonicWall data, from 2022 to 2023, malware sent over HTTPS rose a staggering 117%. All told, SonicWall recorded 15.8 million encrypted attacks in 2023 — almost as many as in 2021 and 2022 combined. The growth in encrypted traffic and encrypted threats highlights the necessity of ensuring all of this traffic is scanned.
-
 6.  **Extend Your Protection to the Cloud**
     As companies move data and workflows to the cloud, more comprehensive and flexible approaches that include Security Service Edge (SSE) and Zero-Trust Network Architecture (ZTNA) are a necessity for hybrid work environments.
 
 For up-to-date threat intelligence and industry updates, follow the SonicWall blog.
 
-13 | 2024 SonicWall Cyber Threat Report | What You Can Do
+## About SonicWall
 
 SonicWall Inc.
 1033 McCarthy Boulevard
 Milpitas, CA 95035
 
-www.sonicwall.com
-
 © 2024 SonicWall Inc.
 
 SonicWall is a trademark or registered trademark of SonicWall Inc. and/or its affiliates in the U.S.A. and/or other countries. All other trademarks and registered trademarks are property of their respective owners. The information in this document is provided in connection with SonicWall Inc. and/or its affiliates’ products. No license, express or implied, by estoppel or otherwise, to any intellectual property right is granted by this document or in connection with the sale of SonicWall products.
 
-EXCEPT AS SET FORTH IN THE TERMS AND CONDITIONS AS SPECIFIED IN THE LICENSE AGREEMENT FOR THIS PRODUCT, SONICWALL AND/OR ITS AFFILIATES ASSUME NO LIABILITY WHATSOEVER AND DISCLAIMS ANY EXPRESS, IMPLIED OR STATUTORY WARRANTY RELATING TO ITS PRODUCTS INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. IN NO EVENT SHALL SONICWALL AND/ OR ITS AFFILIATES BE LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE, SPECIAL OR INCIDENTAL DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION OR LOSS OF INFORMATION) ARISING OUT OF THE USE OR INABILITY TO USE THIS DOCUMENT, EVEN IF SONICWALL AND/OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+EXCEPT AS SET FORTH IN THE TERMS AND CONDITIONS AS SPECIFIED IN THE LICENSE AGREEMENT FOR THIS PRODUCT, SONICWALL AND/OR ITS AFFILIATES ASSUME NO LIABILITY WHATSOEVER AND DISCLAIMS ANY EXPRESS, IMPLIED OR STATUTORY WARRANTY RELATING TO ITS PRODUCTS INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON- INFRINGEMENT. IN NO EVENT SHALL SONICWALL AND/ OR ITS AFFILIATES BE LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE, SPECIAL OR INCIDENTAL DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION OR LOSS OF INFORMATION) ARISING OUT OF THE USE OR INABILITY TO USE THIS DOCUMENT, EVEN IF SONICWALL AND/OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 SonicWall and/or its affiliates make no representations or warranties with respect to the accuracy or completeness of the contents of this document and reserves the right to make changes to specifications and product descriptions at any time without notice. SonicWall Inc. and/or its affiliates do not make any commitment to update the information contained in this document.
 
@@ -303,13 +283,9 @@ As a best practice, SonicWall routinely optimizes its methodologies for data col
 
 The materials and information contained in this document, including, but not limited to, the text, graphics, photographs, artwork, icons, images, logos, downloads, data and compilations, belong to SonicWall or the original creator and is protected by applicable law, including, but not limited to, United States and international copyright law and regulations.
 
-### About SonicWall
-
 SonicWall is a cybersecurity forerunner with more than 30 years of expertise and a relentless focus on its partners. With the ability to build, scale and manage security across the cloud, hybrid and traditional environments in real time, SonicWall can quickly and economically provide purpose-built security solutions to any organization around the world. Based on data from its own threat research center, SonicWall delivers seamless protection against the most evasive cyberattacks and supplies actionable threat intelligence to partners, customers and the cybersecurity community.
 
 SonicWall, Inc.
 1033 McCarthy Boulevard | Milpitas, CA 95035
 
 As a best practice, SonicWall routinely optimizes its methodologies for data collection, analysis and reporting. This includes improvements to data cleansing, changes in data sources and consolidation of threat feeds. Figures published in previous reports may have been adjusted across different time periods, regions or industries.
-
-15.24 - 2024 SonicWall Cyber Threat Report
