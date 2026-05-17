@@ -112,6 +112,93 @@ class Config:
             "raw.githubusercontent.com/jacobdjwilson",
         ])
 
+        # ── Feedback-learned adjustments (optional — graceful if missing) ─
+        self._load_feedback_overrides()
+
+    def _load_feedback_overrides(self):
+        """
+        Loads discovery-feedback.json and applies learned adjustments on top
+        of the base heuristics.  Fully optional — if the file is absent or
+        malformed, discovery continues with the base config unchanged.
+        """
+        fb_path = self.artifacts_dir / "discovery-feedback.json"
+        if not fb_path.exists():
+            print("ℹ️  discovery-feedback.json not found — feedback learning not active")
+            return
+
+        try:
+            with open(fb_path, "r", encoding="utf-8") as f:
+                fb = json.load(f)
+        except Exception as e:
+            print(f"WARNING: Could not load discovery-feedback.json: {e}")
+            return
+
+        learned    = fb.get("learned", {})
+        overrides  = fb.get("overrides", {})
+        total_evts = fb.get("total_feedback_events", 0)
+        if total_evts > 0:
+            print(f"✓ Feedback learning active ({total_evts} triage events recorded)")
+
+        # ── Signal weight deltas ─────────────────────────────────────────
+        deltas = learned.get("signal_weight_deltas", {})
+        for signal, delta in deltas.get("positive", {}).items():
+            if signal in self.positive_signals and isinstance(delta, (int, float)):
+                self.positive_signals[signal] = self.positive_signals[signal] + int(delta)
+            elif isinstance(delta, (int, float)) and int(delta) != 0:
+                self.positive_signals[signal] = int(delta)
+
+        for signal, delta in deltas.get("negative", {}).items():
+            if signal in self.negative_signals and isinstance(delta, (int, float)):
+                self.negative_signals[signal] = self.negative_signals[signal] + int(delta)
+            elif isinstance(delta, (int, float)) and int(delta) != 0:
+                self.negative_signals[signal] = int(delta)
+
+        # ── Score threshold delta ────────────────────────────────────────
+        thresh_delta = learned.get("score_threshold_delta", 0)
+        if isinstance(thresh_delta, (int, float)) and thresh_delta != 0:
+            self.score_threshold = self.score_threshold + int(thresh_delta)
+            print(f"  Score threshold adjusted by {thresh_delta:+d} → {self.score_threshold}")
+
+        # ── Domain blocklists (learned + overrides merged) ───────────────
+        learned_blocks   = learned.get("domain_blocklist", {}).get("domains", [])
+        override_blocks  = overrides.get("domain_blocklist", [])
+        self.feedback_blocked_domains: List[str] = list({
+            d.lower() for d in (learned_blocks + override_blocks) if isinstance(d, str)
+        })
+
+        # ── Domain trustlist ─────────────────────────────────────────────
+        learned_trusts   = learned.get("domain_trustlist", {}).get("domains", [])
+        override_trusts  = overrides.get("domain_trustlist", [])
+        self.feedback_trusted_domains: List[str] = list({
+            d.lower() for d in (learned_trusts + override_trusts) if isinstance(d, str)
+        })
+        self.feedback_trust_bonus: int = learned.get("domain_trustlist", {}).get("bonus", 10)
+
+        # ── Org-specific signals ─────────────────────────────────────────
+        self.feedback_org_signals: Dict[str, Dict] = {
+            k.lower(): v for k, v in learned.get("org_specific_signals", {}).items()
+            if not v.get("_inactive", False)
+        }
+
+        # ── Title reject/trust patterns ──────────────────────────────────
+        tp = learned.get("title_patterns", {})
+        self.feedback_reject_patterns: List[str] = tp.get("reject", [])
+        self.feedback_trust_patterns:  List[str] = tp.get("trust",  [])
+
+        # ── Hard-reject URLs (overrides only) ────────────────────────────
+        self.feedback_hard_reject_urls: List[str] = [
+            u.lower() for u in
+            overrides.get("hard_reject_urls", {}).get("urls", [])
+            if isinstance(u, str)
+        ]
+
+        if self.feedback_blocked_domains:
+            print(f"  Feedback blocklist: {len(self.feedback_blocked_domains)} domain(s)")
+        if self.feedback_trusted_domains:
+            print(f"  Feedback trustlist: {len(self.feedback_trusted_domains)} domain(s) (+{self.feedback_trust_bonus})")
+        if self.feedback_org_signals:
+            print(f"  Org-specific signal overrides: {len(self.feedback_org_signals)} org(s)")
+
     def _load(self, filename: str) -> Dict[str, Any]:
         path = self.artifacts_dir / filename
         if not path.exists():
@@ -459,6 +546,25 @@ class HeuristicValidator:
             if ref_domain.lower() in url_l:
                 return -999, f"self-reference domain '{ref_domain}'"
 
+        # ── Feedback hard-reject URLs ─────────────────────────────────────
+        for blocked_url in getattr(self.config, "feedback_hard_reject_urls", []):
+            if blocked_url in url_l:
+                return -999, f"feedback hard-reject URL '{blocked_url[:60]}'"
+
+        # ── Feedback domain blocklist ─────────────────────────────────────
+        result_domain_early = OrgDomainIndex._extract_domain(url)
+        for blocked_domain in getattr(self.config, "feedback_blocked_domains", []):
+            if result_domain_early == blocked_domain or result_domain_early.endswith("." + blocked_domain):
+                return -999, f"feedback blocked domain '{blocked_domain}'"
+
+        # ── Feedback title reject patterns ────────────────────────────────
+        for pat in getattr(self.config, "feedback_reject_patterns", []):
+            try:
+                if re.search(pat, title_l, re.IGNORECASE):
+                    return -999, f"feedback title pattern '{pat[:40]}'"
+            except re.error:
+                pass  # Ignore malformed patterns from Gemini
+
         # ── Structural rejects ────────────────────────────────────────────
         for pat in self.config.url_reject_patterns:
             if pat.lower() in url_l:
@@ -512,6 +618,23 @@ class HeuristicValidator:
                 total += self.config.org_domain_mismatch_pdf_penalty
                 print(f"    ⚠ PDF domain mismatch: result={result_domain} known={known_domain}"
                       f" — penalty {self.config.org_domain_mismatch_pdf_penalty}")
+
+        # ── Feedback domain trustlist bonus ───────────────────────────────
+        for trusted_domain in getattr(self.config, "feedback_trusted_domains", []):
+            if result_domain == trusted_domain or result_domain.endswith("." + trusted_domain):
+                bonus = getattr(self.config, "feedback_trust_bonus", 10)
+                total += bonus
+                break
+
+        # ── Org-specific feedback signals ─────────────────────────────────
+        org_l = task_stem.split("-")[0].lower() if task_stem else ""
+        org_sigs = getattr(self.config, "feedback_org_signals", {}).get(org_l, {})
+        for signal, w in org_sigs.get("positive", {}).items():
+            if signal.lower() in combined:
+                total += int(w)
+        for signal, w in org_sigs.get("negative", {}).items():
+            if signal.lower() in combined:
+                total += int(w)
 
         # ── Find-type bonuses ─────────────────────────────────────────────
         if find_type == FIND_PDF:
