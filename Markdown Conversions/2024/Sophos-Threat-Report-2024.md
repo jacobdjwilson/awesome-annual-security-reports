@@ -1,7 +1,6 @@
 # Sophos 2024 Threat Report: Cybercrime on Main Street
 
 ## Table of Contents
-- [Sophos 2024 Threat Report: Cybercrime on Main Street](#sophos-2024-threat-report-cybercrime-on-main-street)
 - [Background](#background)
 - [Executive summary](#executive-summary)
 - [A word about our data](#a-word-about-our-data)
@@ -10,16 +9,11 @@
 - [Cybercrime as a service](#cybercrime-as-a-service)
 - [Finding a different delivery route](#finding-a-different-delivery-route)
 - [“Dual use” tools](#dual-use-tools)
-- [Zero-day attacks and non zero-day attacks](#zero-day-attacks-and-non-zero-day-attacks)
-- [Supply chain attacks and digitally signed malware](#supply-chain-attacks-and-digitally-signed-malware)
 - [Spammers push social engineering boundaries](#spammers-push-social-engineering-boundaries)
 - [Mobile malware and social engineering threats](#mobile-malware-and-social-engineering-threats)
 - [Conclusions](#conclusions)
 
-# Sophos 2024 Threat Report: Cybercrime on Main Street
-Ransomware remains the biggest existential cyber threat to small businesses, but others are growing.
-
-Sophos X-Ops
+---
 
 ## Background
 Cybercrime affects people from all walks of life, but it hits small businesses the hardest. While cyberattacks on large companies and government agencies get a majority of the news coverage, small businesses (broadly speaking, organizations with less than 500 employees) are generally more vulnerable to cybercriminals and suffer more proportionally from the results of cyberattacks. A lack of experienced security operations staff, underinvestment in cybersecurity, and smaller information technology budgets overall are contributing factors to this level of vulnerability. And when they are hit by cyberattacks, the expense of recovery may even force many small businesses to close.
@@ -31,19 +25,19 @@ In 2023, over 75% of customer incident response cases handled by Sophos’ X-Ops
 ## Executive summary
 Based on that data and Sophos threat research, we see that ransomware continues to have the greatest impact on smaller organizations. But other threats also pose an existential threat to small businesses:
 
-*   Data theft is the focus of most malware targeting small and medium businesses—password stealers, keyboard loggers, and other spyware made up nearly half of malware detections. Credential theft through phishing and malware can expose small businesses’ data on cloud platforms and service providers, and network breaches can be used to target their customers as well.
-*   Attackers have stepped up the use of web-based malware distribution—through malvertising or malicious search engine optimization (“SEO poisoning”)—to overcome difficulties created by the blocking of malicious macros in documents, in addition to using disk images to overwhelm malware detection tools.
-*   Unprotected devices connected to organizations’ networks—including unmanaged computers without security software installed, improperly configured computers and systems running software fallen out of support by manufacturers—are a primary point of entry for all types of cybercrime attacks on small businesses.
-*   Attackers have turned increasingly to abuse of drivers—either vulnerable drivers from legitimate companies or malicious drivers that have been signed with stolen or fraudulently obtained certificates—to evade and disable malware defenses on managed systems.
-*   Email attacks have begun to move away from simple social engineering toward more active engagement with targets over email, using a thread of emails and responses to make their lures more convincing.
-*   Attacks on mobile device users, including social engineering-based scams tied to the abuse of third-party services and social media platforms, have grown exponentially, affecting individuals and small businesses. These range from business email and cloud service compromise to pig butchering (shā zhū pán (殺豬盤)) scams.
+- **Data theft** is the focus of most malware targeting small and medium businesses—password stealers, keyboard loggers, and other spyware made up nearly half of malware detections. Credential theft through phishing and malware can expose small businesses’ data on cloud platforms and service providers, and network breaches can be used to target their customers as well.
+- **Attackers have stepped up the use of web-based malware distribution**—through malvertising or malicious search engine optimization (“SEO poisoning”)—to overcome difficulties created by the blocking of malicious macros in documents, in addition to using disk images to overwhelm malware detection tools.
+- **Unprotected devices connected to organizations’ networks**—including unmanaged computers without security software installed, improperly configured computers and systems running software fallen out of support by manufacturers—are a primary point of entry for all types of cybercrime attacks on small businesses.
+- **Attackers have turned increasingly to abuse of drivers**—either vulnerable drivers from legitimate companies or malicious drivers that have been signed with stolen or fraudulently obtained certificates—to evade and disable malware defenses on managed systems.
+- **Email attacks have begun to move away from simple social engineering** toward more active engagement with targets over email, using a thread of emails and responses to make their lures more convincing.
+- **Attacks on mobile device users**, including social engineering-based scams tied to the abuse of third-party services and social media platforms, have grown exponentially, affecting individuals and small businesses. These range from business email and cloud service compromise to pig butchering (shā zhū pán (殺豬盤)) scams.
 
 ## A word about our data
 The data used in our analysis comes from the following sources:
 
-*   Customer reports—detection telemetry from Sophos protection software running on customers’ networks, which gives a broad view of threats encountered, and analyzed within SophosLabs (in this report, referred to as the Labs dataset).
-*   Managed Detection and Response (MDR) incident data, gathered in the course of escalations driven by detection of malicious activity on MDR customers’ networks (in this report, referred to as the MDR dataset).
-*   Incident Response team data, drawn from incidents on customer networks for business of 500 employees or fewer where there was little or no managed detection and response protection in place (in this report, referred to as the IR dataset).
+- **Customer reports**: detection telemetry from Sophos protection software running on customers’ networks, which gives a broad view of threats encountered, and analyzed within SophosLabs (in this report, referred to as the Labs dataset);
+- **Managed Detection and Response (MDR) incident data**: gathered in the course of escalations driven by detection of malicious activity on MDR customers’ networks (in this report, referred to as the MDR dataset);
+- **Incident Response team data**: drawn from incidents on customer networks for business of 500 employees or fewer where there was little or no managed detection and response protection in place (in this report, referred to as the IR dataset).
 
 For a deeper look at data drawn strictly from the cases handled by our external-facing IR team (including cases involving customers with more than 500 employees), please see our sister publication, the Active Adversary Report (AAR). The conclusions in this report are based, unless otherwise stated, on the combined datasets with appropriate normalization.
 
@@ -54,49 +48,18 @@ Business email compromise (BEC), in which email accounts are taken over by a cyb
 
 Stolen credentials, including browser cookies, can be used for business email compromise, access to third-party services such as cloud-based finance systems, and access to internal resources that can be exploited for fraud or other monetary gain. They can also be sold by “access brokers” to anyone who cares to exploit them; Sophos has tracked offers on underground forums claiming to provide access to a number of small and medium businesses’ networks.
 
-![Figure 1: A forum post advertising access to a small US accounting firm](Image description)
-
-![Figure 2: A forum post advertising access to a small business in Belgium](Image description)
-
-![Figure 3: A cybercriminal offering to purchase access to small companies](Image description)
-
-![Figure 4: Access to a small business in Italy being offered for sale on a criminal forum](Image description)
+![Figure 1: A forum post advertising access to a small US accounting firm]
+![Figure 2: A forum post advertising access to a small business in Belgium]
+![Figure 3: A cybercriminal offering to purchase access to small companies]
+![Figure 4: Access to a small business in Italy being offered for sale on a criminal forum]
 
 By category, nearly half of malware detected in 2023 targeted the data of its intended victims. The majority of that is malware we’ve classified specifically as “stealers”—malware that grabs credentials, browser cookies, keystrokes, and other data that can be either turned into cash as sold access or used for further exploitation.
 
-Because of the modular nature of malware, however, it’s difficult to completely categorize malware by functionality—nearly all malware has the ability to steal some form of data from targeted systems. These detections also don’t include other credential theft methods, such as phishing via email, text message, and other social engineering attacks. And then there are other targets, such as macOS and mobile devices, where malware, potentially unwanted applications, and social engineering attacks target users’ data—especially of the financial kind.
-
-### Malware categories by number of signature updates 2023
-- Stealer/Spyware/Keylogger: 43.26%
-- Loader/Downloader/Dropper: 26.59%
-- Remote Access Trojan/ Backdoor: 14.89%
-- Other: 9.95%
-- Ransomware: 5.31%
-
-![Figure 5: Malware detections by type for 2023, as seen in our Labs and MDR datasets](Image description)
-
-Nearly 10% of malware detected falls outside of the four major categories shown above. This “other” category includes malware that targets browsers to inject advertisements, redirect search results to earn cash for clicks, or otherwise modifies or collects data for the profit of the malware developer, among other things.
+![Figure 5: Malware detections by type for 2023, as seen in our Labs and MDR datasets]
 
 Some stealers are very specific in their targeting. Discord “token” stealers, intended to steal Discord messaging service credentials, are often leveraged to deliver other malware through chat servers or via Discord’s content delivery network. But other leading stealers—Strela, Raccoon Stealer, and the venerable RedLine stealer family—are much more aggressive in their targeting, collecting password stores from the operating system and applications as well as browser cookies and other credential data. Raccoon Stealer has also deployed cryptocurrency “clippers” which swap crypto wallet addresses copied to the clipboard with a wallet address controlled by the malware operator.
 
-### Top stealers by number of unique customer reports 2023
-- RedLine: 8.71%
-- Raccoon Stwealer: 8.52%
-- Grandoreiro: 8.17%
-- Discord Token Stealer: 8.12%
-- Strela: 6.35%
-- PyKeylogger: 6.19%
-- Casbaneiro: 5.84%
-- Ursnif: 5.71%
-- Amadey: 3.3%
-- Mystic: 2.76%
-- DuckTail: 2.57%
-- Genesis: 2.2%
-- NPPSPY: 2.14%
-- Aurora: 1.51%
-- Rhaamanthys: 1.39%
-
-![Figure 6: Information stealer malware detections in 2023, drawn from Sophos customer telemetry in the SophosLabs dataset](Image description)
+![Figure 6: Information stealer malware detections in 2023, drawn from Sophos customer telemetry in the SophosLabs dataset]
 
 Sophos has seen an increase in the number of information-stealing malware targeting macOS, and we believe that trend will continue. These stealers—some of which are sold in underground forums and Telegram channels for up to $3,000— can collect system data, browser data, and cryptowallets.
 
@@ -105,77 +68,13 @@ While ransomware makes up a relatively small percentage of overall malware detec
 
 LockBit ransomware was the top threat in small business security cases taken on by Sophos Incident Response in 2023. LockBit is a ransomware-as-a-service, delivered by a number of affiliates, and was the most deployed ransomware of 2022 according to Figure 7.
 
-### Small business ransomware incidents handled by Sophos Incident Response, 2023
-- Lockbit: 27.59%
-- Akira: 15.52%
-- BlackCat: 13.79%
-- Play: 10.34%
-- BitLocker: 5.17%
-- CryTOX: 5.17%
-- Black Basta: 5.17%
-- Rorschach: 3.45%
-- BlackSuit: 3.45%
-- Phobos: 3.45%
-- BianLian: 3.45%
-- Hive: 1.72%
-- Cuba: 1.72%
-
-![Figure 7: A breakdown of ransomware actors behind the small business incidents Sophos Incident Response investigated in 2023; these numbers reflect the dataset of hands-on IR engagements at customers that generally did not have previous Sophos protections in place](Image description)
-
-### Top 20 ransomware by number of unique customer reports, 2023
-- LockBit: 6.69%
-- Generic: 6.06%
-- BlackCat: 5.09%
-- Mallox: 4.80%
-- Chaos: 4.74%
-- PHP Ransom: 4.74%
-- Akira: 4.11%
-- Hornet: 3.09%
-- Royal: 2.86%
-- Globelmposter: 2.80%
-- Moneymessage: 2.34%
-- Satan: 2.17%
-- Nokoyawa: 2.11%
-- NoCry: 2.06%
-- MedusaLocker: 2.06%
-- Rhysida: 2.00%
-- BlackByte: 1.83%
-- BianLian: 1.71%
-- BabLock: 1.43%
-- Hardbit: 1.37%
-- Babuk: 1.31%
-
-![Figure 8: The top attempted ransomware deployments detected by Sophos endpoint protection software and present in our Labs dataset across all customers in 2023, as a percentage of all detected ransomware; “Generic” represents multiple types of ransomware detected with a catch-all signature that were not detected under another definition](Image description)
-
-LockBit was the malware observed the most by Sophos’ Managed Detection and Response (MDR) group (which includes the Incident Response team and its data)—with nearly three times the number of incidents in which ransomware deployment was attempted than its nearest peer, Akira.
-
-### Top malware brands observed in 2023 MDR-handled Incidents, by # of incidents
-- LockBIt
-- QakBot
-- ChromeLoader
-- Akira
-- Phobos
-- BlackCat
-- Gootloader
-- Aurora
-- IcelD
-- Royal
-- Nitrogen
-- Pikabot
-- PLAY
-- BianLian
-- BlackByte
-- MineBridge RAT
-- Danabot
-- SystemBC
-- AsyncRAT
-
-![Figure 9: The most-often observed malware in incidents taken on by Sophos Managed Detection and Response in 2023, as seen in the MDR dataset. Note the differences between this chart and the one in Figure 8; aside from the 2023 dominance of LockBit, we see that though there is a wide array of ransomware families that attempt to infect systems. Only a subset of those progress to a stage that requires hands-on MDR assistance. Note that these are non-exclusive; that is, more than one detection may occur in a single incident](Image description)
+![Figure 7: A breakdown of ransomware actors behind the small business incidents Sophos Incident Response investigated in 2023]
+![Figure 8: The top attempted ransomware deployments detected by Sophos endpoint protection software and present in our Labs dataset across all customers in 2023]
+![Figure 9: The most-often observed malware in incidents taken on by Sophos Managed Detection and Response in 2023]
 
 As 2023 progressed, we saw an increase in the use of remote execution of ransomware—using an unmanaged device on organizations’ networks to attempt to encrypt files on other systems through network file access.
 
-### Remote ransomware incidents, 2022-2023
-![Figure 10: The last two years’ worth of data from customer telemetry gathered by Sophos shows an overall increase in the proportion of attempted ransomware attacks involving remote ransomware – an ongoing problem that’s taken on new life, especially in the latter half of 2023](Image description)
+![Figure 10: The last two years’ worth of data from customer telemetry showing an overall increase in the proportion of attempted ransomware attacks involving remote ransomware]
 
 These types of attacks are able to gain footholds by exploitation of unprotected servers, personal devices, and network appliances that connect to organizations’ Windows-based networks. Defense in depth can prevent these attacks from taking entire organizations offline, but they can still leave organizations vulnerable to data loss and theft.
 
@@ -188,29 +87,16 @@ After a decade of dominance in the malware delivery business, Emotet has receded
 
 None of this has impacted the venerable remote access trojan AgentTesla, which has moved to the top of the MaaS market. It was the malware most often detected by endpoint protection in 2023 overall in endpoint (aside from generic malicious .LNK files and obfuscated malware), and made up 51% of the malware delivery framework detections in our telemetry last year.
 
-### Top malware delivery frameworks by number of unique customer reports, 2023
-- AgentTesla: 50.85%
-- Qakbot: 22.24%
-- Emotet: 8.24%
-- Pikabot: 5.29%
-- FarelT: 4.00%
-- Lokibot: 2.98%
-- DarkGate: 2.18%
-- Formbook: 1.72%
-- IcedID: 1.34%
-- Zbot: 0.63%
-
-![Figure 11: A breakdown of the common frameworks used to deliver malware by attackers, based on the number of endpoint detections from Sophos-protected customer networks; Qakbot numbers represent detections prior to the August 2023 international law enforcement action against its infrastructure](Image description)
+![Figure 11: A breakdown of the common frameworks used to deliver malware by attackers, based on the number of endpoint detections from Sophos-protected customer networks]
 
 ## Finding a different delivery route
 Malware attacks require some form of initial access. Typically, that involves one of the following:
-
-*   Phishing emails
-*   Malicious email attachments
-*   Exploits of vulnerabilities in operating systems and applications
-*   Fake software updates
-*   Exploitation and abuse of Remote Desktop Protocol
-*   Credential theft
+- Phishing emails
+- Malicious email attachments
+- Exploits of vulnerabilities in operating systems and applications
+- Fake software updates
+- Exploitation and abuse of Remote Desktop Protocol
+- Credential theft
 
 MaaS operators have in the past been largely reliant on malicious email attachments for that initial foothold. But changes to the default security of the Microsoft Office platform have had an impact on the MaaS market. As Microsoft has rolled out changes to Office applications that block by default Visual Basic for Applications (VBA) macros in documents downloaded from the Internet, it has become more difficult for MaaS operators to use their favored method of spreading malware.
 
@@ -229,38 +115,15 @@ Remote desktop tools, file compression tools, common file transfer software, oth
 
 Sophos MDR has observed these utilities, which we refer to as “dual-use tools”, abused as part of the post-exploitation process by attackers:
 
-*   Discovery: Advanced IP Scanner, NetScan, PCHunter, HRSword
-*   Persistence: Anydesk, ScreenConnect, DWAgent
-*   Credential Access: Mimikatz, Veeam Credential Dumper, LaZagne
-*   Lateral Movement: PsExec, Impacket, PuTTy
-*   Data Collection & Exfil: FileZilla, WinSCP, megasync, Rclone, WinRar, 7zip
+- **Discovery**: Advanced IP Scanner, NetScan, PCHunter, HRSword
+- **Persistence**: Anydesk, ScreenConnect, DWAgent
+- **Credential Access**: Mimikatz, Veeam Credential Dumper, LaZagne
+- **Lateral Movement**: PsExec, Impacket, PuTTy
+- **Data Collection & Exfil**: FileZilla, WinSCP, megasync, Rclone, WinRar, 7zip
 
-AnyDesk and PsExec were both seen in more incidents by Sophos MDR than was Cobalt Strike, as seen below:
+AnyDesk and PsExec were both seen in more incidents by Sophos MDR than was Cobalt Strike.
 
-### Top “dual-use” tools observed in 2023 MDR-handled incidents, by number of incidents
-- Anydesk
-- PSExec
-- Cobalt Strike
-- Impacket
-- Advanced IP Scanner
-- Mimikatz
-- Winrar
-- SoftPerfect Nework Scanner
-- PuTTy
-- MEGAsync
-- WinSCP
-- Relone
-- FileZilla
-- ConnectWise/ ScreenConnect
-- HRSWord
-- 7Zip
-- RDPclip
-- Veeam Credential Dumper
-- DWAgent
-- PC Hunter
-- LaZagne
-
-![Figure 12: The most-frequently encountered “dual use” tools in cybersecurity incidents, based on the number of cases where each was seen in the Sophos MDR dataset](Image description)
+![Figure 12: The most-frequently encountered “dual use” tools in cybersecurity incidents, based on the number of cases where each was seen in the Sophos MDR dataset]
 
 ## Zero-day attacks and non zero-day attacks
 In May 2023, Progress Software reported vulnerabilities in the company’s widely used secure managed file transfer platform, MOVEit—including one that had been exploited by at least one set of malicious actors. Subsequently the company would reveal multiple additional vulnerabilities and issue multiple patches to fix them.
@@ -297,17 +160,17 @@ Email may seem like an old-school communication method in an era of encrypted en
 
 In the past year, Sophos’ messaging security team came across a slew of new social engineering tricks and techniques designed to evade conventional email controls. Messages in which the attacker emails an attachment or link out of the blue are now passé: The more effective spammers are more likely to strike up a conversation first, then move in for the kill in follow up emails.
 
-![Figure 13: Only after receiving a reply from the target, the spammer sends the target an email with a link to a malicious file inside a password-protected Zip archive](Image description)
+![Figure 13: Only after receiving a reply from the target, the spammer sends the target an email with a link to a malicious file inside a password-protected Zip archive]
 
 We observed this methodology in attacks in which spammers posing as delivery service workers called enterprise customers on the phone and asked them to open a weaponized email. We also saw spammers initially email a solicitation for business or complaint, in attacks targeting a variety of industries in 2023, followed by a link to download a disguised, weaponized file after the business responded to the first email.
 
 Conventional spam prevention involves processes inspecting message content and making decisions based on that content. Spammers experimented with a variety of methods of replacing any text content in their messages with embedded images: Sometimes the pictures appeared to be a written message, while others experimented with the use of QR codes or images that appear to be invoices (with telephone numbers the attackers prompt victims to call) as a way to evade detection.
 
-![Figure 14: A PDF attachment from a spam message embeds a blurry, unreadable thumbnail of a billing invoice and a link to a website hosting a malicious payload](Image description)
+![Figure 14: A PDF attachment from a spam message embeds a blurry, unreadable thumbnail of a billing invoice and a link to a website hosting a malicious payload]
 
 Malicious attachments even pushed boundaries, with weaponized PDFs making something of a comeback, linking to malicious scripts or sites, sometimes using embedded QR codes. The Qakbot malware family expansively abused Microsoft’s OneNote document format, the notebook (or .one file), to deliver payloads before being shut down later in the year in a coordinated takedown. Attackers also latched onto the MSIX file format – a type of archive file format used by Microsoft to distribute apps through the Windows App Store – as a way of bypassing detection.
 
-![Figure 15 A malicious PDF attachment, emailed to Sophos employees, embeds a QR code image that leads to a phishing page](Image description)
+![Figure 15: A malicious PDF attachment, emailed to Sophos employees, embeds a QR code image that leads to a phishing page]
 
 And attackers abused Microsoft’s services as well: By the year’s end, about 15% of the total spam Sophos blocked had been sent using email accounts created in Microsoft’s business-oriented onmicrosoft.com messaging system.
 
@@ -336,26 +199,3 @@ Small businesses face no shortage of threats, and the sophistication of those th
 Criminal syndicates are counting on smaller companies to be less well-defended and to not have deployed modern, sophisticated tools to protect their users and assets. The key to successfully defending against these threats is to prove their assumptions wrong: Educate your staff, deploy multifactor authentication on all externally facing assets, patch servers and network appliances with the utmost priority and consider migrating difficult to manage assets like Microsoft Exchange servers to SaaS email platforms.
 
 The primary difference in our experience between the companies that were impacted the most by cyberattacks and those who suffered the least is time to respond. Having security experts to monitor and respond 24/7 is table stakes for an effective defense in 2024. Staying safe isn’t impossible; it just takes comprehensive planning and layered defenses to buy you time to respond and minimize damages.
-
----
-United Kingdom and Worldwide Sales
-Tel: +44 (0)8447 671131
-Email: sales@sophos.com
-
-North American Sales
-Toll Free: 1-866-866-2802
-Email: nasales@sophos.com
-
-Australia and New Zealand Sales
-Tel: +61 2 9409 9100
-Email: sales@sophos.com.au
-
-Asia Sales
-Tel: +65 62244168
-Email: salesasia@sophos.com
-
-© Copyright 2024. Sophos Ltd. All rights reserved.
-Registered in England and Wales No. 2096520, The Pentagon, Abingdon Science Park, Abingdon, OX14 3YP, UK
-Sophos is the registered trademark of Sophos Ltd. All other product and company names mentioned are trademarks or registered trademarks of their respective owners.
-
-24-04-11 EN (NP)
