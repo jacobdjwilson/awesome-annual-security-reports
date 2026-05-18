@@ -1,100 +1,44 @@
-Zscaler ThreatLabz 2024 AI Security Report
-The AI revolution has arrived. Discover key trends, risks, and best practices in enterprise AI adoption, with insights into AI-driven threats and key strategies to defend against them.
-©2024 Zscaler, Inc. All rights reserved.
-©2024 Zscaler, Inc. All rights reserved.
+# Zscaler ThreatLabz 2024 AI Security Report
 
-## Contents
+## Table of Contents
+- [Executive Summary](#executive-summary)
+- [Key Findings](#key-findings)
+- [Key GenAI and ML Usage Trends](#key-genai-and-ml-usage-trends)
+  - [AI transactions continue to accelerate](#ai-transactions-continue-to-accelerate)
+  - [Enterprises are blocking more AI transactions than ever](#enterprises-are-blocking-more-ai-transactions-than-ever)
+  - [Industry AI breakdown](#industry-ai-breakdown)
+  - [Healthcare and AI](#healthcare-and-ai)
+  - [Finance](#finance)
+  - [Government](#government)
+  - [Manufacturing](#manufacturing)
+  - [Education and AI](#education-and-ai)
+  - [ChatGPT usage trends](#chatgpt-usage-trends)
+  - [AI usage by country](#ai-usage-by-country)
+  - [Regional breakdown: EMEA](#regional-breakdown-emea)
+  - [Regional breakdown: APAC](#regional-breakdown-apac)
+- [Enterprise AI Risk and Real-World Threat Scenarios](#enterprise-ai-risk-and-real-world-threat-scenarios)
+  - [Enabling AI in the enterprise: top 3 risks](#enabling-ai-in-the-enterprise-top-3-risks)
+  - [AI-driven threat scenarios](#ai-driven-threat-scenarios)
+  - [AI impersonation: deepfakes, misinformation, and more](#ai-impersonation-deepfakes-misinformation-and-more)
+  - [AI-generated phishing campaigns](#ai-generated-phishing-campaigns)
+  - [Dark chatbots: uncovering WormGPT and FraudGPT on the dark web](#dark-chatbots-uncovering-wormgpt-and-fraudgpt-on-the-dark-web)
+  - [AI-driven malware and ransomware across the attack chain](#ai-driven-malware-and-ransomware-across-the-attack-chain)
+  - [AI worm attacks and “viral” AI jailbreaking](#ai-worm-attacks-and-viral-ai-jailbreaking)
+  - [AI and US elections](#ai-and-us-elections)
+- [All Eyes on AI Regulations](#all-eyes-on-ai-regulations)
+  - [United States](#united-states)
+  - [European Union](#european-union)
+- [AI Threat Predictions](#ai-threat-predictions)
 
-03 Executive Summary
+---
 
-04 Key Findings
-
-05 Key GenAI and ML Usage Trends
-
-05 AI transactions continue to accelerate
-
-06 Enterprises are blocking more AI transactions than ever
-
-07 Industry AI breakdown
-
-09 Healthcare and AI
-
-10 Finance
-
-11 Government
-
-12 Manufacturing
-
-13 Education and AI
-
-14 ChatGPT usage trends
-
-15 AI usage by country
-
-Regional breakdown: EMEA
-
-Regional breakdown: APAC
-
-18 Enterprise AI Risk and Real-World Threat Scenarios
-
-18 Enabling AI in the enterprise: top 3 risks
-
-20 AI-driven threat scenarios
-
-AI impersonation: deepfakes, misinformation, and more
-
-21 AI-generated phishing campaigns
-
-From query to crime: creating a phishing login page using ChatGPT
-
-22 Dark chatbots: uncovering WormGPT and FraudGPT on the dark web
-
-23 AI-driven malware and ransomware across the attack chain
-
-24 AI worm attacks and “viral” AI jailbreaking
-
-25 AI and US elections
-
-26 All Eyes on AI Regulations
-
-26 United States
-
-27 European Union
-
-28 AI Threat Predictions
-
-31 Case Study: How to Securely Enable ChatGPT in the Enterprise
-
-31 5 Steps to integrate and secure generative AI tools
-
-33 How Zscaler Delivers AI + Zero Trust and Secures Generative AI
-
-33 The key to AI-driven cybersecurity: high-quality data at scale
-
-34 Leveraging AI across the attack chain
-
-18 Enabling the enterprise AI transition: the control is in your hands
-
-35 Summary of Zscaler’s AI-infused offerings
-
-36 Enabling the enterprise AI transition: the control is in your hands
-
-37 Appendix
-
-37 ThreatLabz research methodology
-
-37 About Zscaler ThreatLabz
-
-02
-
-©2024 Zscaler, Inc. All rights reserved.
-ZSCALER THREATLABZ REPORT 2024
-
-### Executive Summary
+## Executive Summary
 
 AI is more than a pioneering innovation—it’s now business as usual. As generative AI tools like ChatGPT transform business in large and small ways, AI is being woven deep into the fabric of enterprise life. However, questions about how to securely adopt these AI tools while defending against AI-driven threats are not settled.
 
-Enterprises are rapidly adopting AI and ML tools across departments like engineering, IT marketing, finance, customer success, and more. Yet, they must balance the numerous risks that come with AI tools to reap their fullest rewards. Indeed, to unlock the transformative potential of AI, enterprises must enable secure controls to protect their data, prevent the leakage of sensitive information, mitigate ‘Shadow AI’ sprawl, and ensure the quality of AI data.
+Enterprises are rapidly adopting AI and ML tools across departments like engineering, IT, marketing, finance, customer success, and more. Yet, they must balance the numerous risks that come with AI tools to reap their fullest rewards. Indeed, to unlock the transformative potential of AI, enterprises must enable secure controls to protect their data, prevent the leakage of sensitive information, mitigate ‘Shadow AI’ sprawl, and ensure the quality of AI data.
+
+Drawing on more than 18 billion transactions from April 2023 to January 2024 across the Zscaler Zero Trust Exchange™, ThreatLabz analyzed how enterprises are using AI and ML tools today. These insights reveal key trends across business sectors and geographies in how enterprises are adapting to the shifting AI landscape and securing their AI tools.
 
 These AI risks to enterprises are bidirectional: outside enterprise walls, AI has become a driving force for cyberthreats. Indeed, AI tools are allowing cybercriminals and nation state-sponsored threat actors to launch sophisticated attacks, more quickly, and at greater scale. Despite this, AI holds promise as a key piece of the cyber defense puzzle as enterprises grapple with a dynamic threat landscape.
 
@@ -102,39 +46,28 @@ Throughout, you’ll find insights into top-of-mind AI topics including business
 
 Just as critically, this report offers best practices on two fronts: how enterprises can securely embrace generative AI transformation while protecting critical data, and how AI-powered tools are working to deliver layered, zero trust security to face the new landscape of AI-driven threats.
 
-Drawing on more than 18 billion transactions from April 2023 to January 2024 across the Zscaler Zero Trust Exchange™, ThreatLabz analyzed how enterprises are using AI and ML tools today. These insights reveal key trends across business sectors and geographies in how enterprises are adapting to the shifting AI landscape and securing their AI tools.
-
 The ThreatLabz 2024 AI Security Report offers key insights into these critical AI challenges and opportunities.
 
-03
+---
 
-©2024 Zscaler, Inc. All rights reserved.
-ZSCALER THREATLABZ REPORT 2024
+## Key Findings
 
-### Key Findings
+- AI/ML tool usage skyrocketed by 594.82%, rising from 521 million AI/ML-driven transactions in April 2023 to 3.1 billion monthly by January 2024.
+- Enterprises are blocking 18.5% of all AI/ML transactions—a 577% increase in blocked transactions over nine months—reflecting growing concerns around AI data security and companies’ reluctance to establish AI policies.
+- The most widely used AI applications by transaction volume are ChatGPT, Drift, OpenAI*, Writer, and LivePerson. The top three blocked applications by transaction volume are ChatGPT, OpenAI, and Fraud.net.
+- The top 5 countries generating the most AI and ML transactions are the US, India, the UK, Australia, and Japan.
+- Manufacturing generates the most AI traffic with 20.9% of all AI/ML transactions in the Zscaler cloud, followed by Finance and Insurance (19.9%) and Services (16.8%).
+- Enterprises are sending significant volumes of data to AI tools, with a total of 569 TB exchanged between AI/ML applications between September 2023 and January 2024.
+- ChatGPT usage continues to soar, with 634.1% growth, even though it is also the most-blocked AI application by enterprises, based on Zscaler cloud insights.
+- AI is empowering threat actors in unprecedented ways, including for AI-driven phishing campaigns, deepfakes and social engineering attacks, polymorphic ransomware, enterprise attack surface discovery, automated exploit generation, and more.
 
-*   AI/ML tool usage skyrocketed by 594.82%, rising from 521 million AI/ML-driven transactions in April 2023 to 3.1 billion monthly by January 2024.
-*   Enterprises are blocking 18.5% of all AI/ML transactions—a 577% increase in blocked transactions over nine months—reflecting growing concerns around AI data security and companies’ reluctance to establish AI policies.
-*   The most widely used AI applications by transaction volume are ChatGPT, Drift, OpenAI*, Writer, and LivePerson. The top three blocked applications by transaction volume are ChatGPT, OpenAI, and Fraud.net.
-*   The top 5 countries generating the most AI and ML transactions are the US, India, the UK, Australia, and Japan.
-*   Manufacturing generates the most AI traffic with 20.9% of all AI/ML transactions in the Zscaler cloud, followed by Finance and Insurance (19.9%) and Services (16.8%).
-*   Enterprises are sending significant volumes of data to AI tools, with a total of 569 TB exchanged between AI/ML applications between September 2023 and January 2024.
-*   ChatGPT usage continues to soar, with 634.1% growth, even though it is also the most-blocked AI application by enterprises, based on Zscaler cloud insights.
-*   AI is empowering threat actors in unprecedented ways, including for AI-driven phishing campaigns, deepfakes and social engineering attacks, polymorphic ransomware, enterprise attack surface discovery, automated exploit generation, and more.
+*NOTE: The Zscaler Zero Trust Exchange tracks ChatGPT transactions independently from other OpenAI transactions at large.*
 
-NOTE: The Zscaler Zero Trust Exchange tracks ChatGPT transactions independently from other OpenAI transactions at large.
-
-04
-
-©2024 Zscaler, Inc. All rights reserved.
-ZSCALER THREATLABZ REPORT 2024
+---
 
 ## Key GenAI and ML Usage Trends
 
-The enterprise AI revolution is far from its peak. Enterprise AI transactions have surged by nearly 600% and show no signs of slowing. Still, blocked transactions to AI apps have also risen — by 577%.
-
-![AI and ML Transaction Trends graph](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 1 AI transactions from April 2023 to January 2024
+![Graph showing AI and ML transaction trends from April 2023 to January 2024]
 
 ### AI transactions continue to accelerate
 
@@ -142,345 +75,843 @@ From April 2023 to January 2024, enterprise AI and ML transactions grew by nearl
 
 Even as AI applications proliferate, however, the majority of AI transactions are being driven by a relatively small set of market-leading AI tools. Overall, ChatGPT accounts for more than half of all AI and ML transactions, while the OpenAI application itself comes in third place, with 7.82% of all transactions. Meanwhile, Drift, the popular AI-powered chatbot, generated nearly one-fifth of enterprise AI traffic (the LivePerson and BoldChat Enterprise chatbots also breached the top apps in spots 5 and 6). Meanwhile, Writer remains a favored generative AI tool in the creation of written enterprise content, such as marketing materials. Finally, Otter, an AI transcription tool often used in video calls, drives a significant portion of AI traffic.
 
-![Top AI applications by transaction volume chart](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 2 Top AI applications by transaction volume
-
-![Top AI/ML apps by the percentage of total data transferred chart](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 3 Top AI/ML apps by the percentage of total data transferred
-
-Meanwhile, the volumes of data that enterprises send and receive from AI tools adds nuance to these trends. Hugging Face, the open-source AI developer platform often described as “the GitHub of AI,” accounts for nearly 60% of enterprise data transferred by AI tools. Since Hugging Face allows users to host and train AI models, it makes sense that it captures significant data volumes from enterprise users.
-
-While ChatGPT and OpenAI make expected appearances on this list, two notable additions are Veed—an AI video editor often used to add subtitles, imagery, and other text to videos—and Fotor, a tool used to generate AI images, among other uses. Since videos and images entail large file sizes compared to other kinds of requests, it’s not surprising to see these two applications represented.
+![Chart showing top AI applications by transaction volume]
 
 ### Enterprises are blocking more AI transactions than ever
 
 Even as enterprise AI adoption continues to surge, organizations are increasingly blocking AI and ML transactions because of data and security concerns. Today, enterprises block 18.5% of all AI transactions, a 577% increase from April to January, for a total of more than 2.6 billion blocked transactions.
 
-![Number of AI/ML transactions blocked over time graph](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 4 Number of AI/ML transactions blocked over time
-
 Some of the most popular AI tools are also the most blocked. Indeed, ChatGPT holds the distinction of being both the most-used and most-blocked AI application. This indicates that despite—or even because of—the popularity of these tools, enterprises are working actively to secure their use against data loss and privacy concerns. Another notable trend is that bing.com, which has an AI-enabled Copilot functionality, is blocked from April to January. In fact, bing.com accounts for 25.02% of all blocked AI and ML domain transactions.
 
-**TOP MOST-BLOCKED AI TOOLS**
-01 ChatGPT
-02 OpenAI
-03 Fraud.net
-04 Forethought
-05 Hugging Face
-06 ChatBot
-07 Aivo
-08 Neeva
-09 infeedo.ai
-10 Jasper
-
-**TOP BLOCKED AI DOMAINS**
-01 Bing.com
-02 Divo.ai
-03 Drift.com
-04 Quillbot.com
-05 Compose.ai
-06 Openai.com
-07 Qortex.ai
-08 Sider.ai
-09 Tabnine.com
-10 securiti.ai
-
-FIGURE 5 Top blocked AI applications and domains by volume of transactions
-
-### Industry AI breakdown
-
-Enterprise industry verticals show notable differences in their overall adoption of AI tools as well as the proportion of AI transactions they block. Manufacturing is the clear leader, driving more than 20% of AI and ML transactions across the Zero Trust Exchange. Still, the finance and insurance, technology, and services sectors follow closely behind. Together, these four industries have pulled ahead of others as the most aggressive AI adopters.
-
-![Share of AI Transactions by Industry Vertical chart](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 6 Industries driving the largest proportions of AI transactions
-
-![AI/ML transaction trends among the highest-volume industries graph](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 7 AI/ML transaction trends among the highest-volume industries, April 2023–January 2024
-
-#### Securing AI/ML transactions
-
-**Percent of Blocked AI Transactions by Vertical**
-
-| Vertical                | % of AI transactions blocked |
-| :---------------------- | :--------------------------- |
-| Finance & Insurance     | 37.16                        |
-| Manufacturing           | 15.65                        |
-| Services                | 13.17                        |
-| Technology              | 19.36                        |
-| Healthcare              | 17.23                        |
-| Retail & Wholesale      | 10.52                        |
-| Others                  | 8.93                         |
-| Energy, Oil & Gas       | 14.24                        |
-| Government              | 6.75                         |
-| Transportation          | 7.90                         |
-| Education               | 2.98                         |
-| Communication           | 4.29                         |
-| Construction            | 4.12                         |
-| Basic Materials, Chemicals & Mining | 2.92                         |
-| Entertainment           | 1.33                         |
-| Food, Beverage & Tobacco| 3.66                         |
-| Hotels, Restaurants & Leisure | 3.16                         |
-| Religious Organizations | 6.06                         |
-| Agriculture & Forestry  | 0.18                         |
-| **Average across all verticals** | **18.53**                    |
-
-FIGURE 8 Top industry verticals by percentage of AI transactions blocked
-
-Paired with the sharp rise in AI transactions, industry sectors are blocking more AI transactions. Here, certain industries diverge from their overall adoption trends, reflecting differing priorities and levels of maturity in terms of securing AI tools. The finance and insurance sector, for instance, blocks the largest proportion of AI transactions: 37.2% vs. the global average of 18.5%. This is likely due in large part to the industry’s strict regulatory and compliance environment, combined with the highly sensitive financial and personal user data these organizations process.
-
-Meanwhile, manufacturing blocks 15.7% of AI transactions, despite its outsized role in driving overall AI transactions. The technology sector, one of the earliest and most eager adopters of AI, has taken something of a middle path, blocking an above-average 19.4% of AI transactions as it works to scale AI adoption. Surprisingly, the healthcare industry blocks a below-average 17.2% of AI transactions, despite these organizations processing a vast wealth of health data and personally identifiable information (PII). This trend likely reflects a lagging effort among healthcare organizations to protect sensitive data involved in AI tools, as security teams play catch-up to AI innovation. Overall AI transactions in healthcare remain comparatively low.
-
-#### Healthcare and AI
-
-Ranking as the sixth biggest AI/ML user, the healthcare industry blocks 17.23% of all AI/ML transactions.
-
-**Vital signs of progress in AI healthcare**
-
-While the healthcare industry is typically cautious when putting innovations like AI into practice, as seen by its current 5% contribution to AI/ML traffic in the Zscaler cloud, it’s only a matter of time before AI has a greater impact on healthcare operations, patient care, and medical research and innovation.¹ Indeed, AI promises to help not only save time, but also save lives. Already, AI-powered technologies are enhancing diagnostics and patient care. By analyzing medical images with remarkable accuracy, AI helps radiologists detect abnormalities more quickly and facilitates faster treatment decisions.²
-
-The potential benefits are vast. AI algorithms can use patient data to personalize treatment plans and accelerate drug discovery by efficiently analyzing biological data. Administrative tasks can be automated with generative AI as well, alleviating burdens on short-staffed healthcare teams.
-
-These advancements underscore AI’s capacity to transform health provision and healthcare delivery.
-
-**Key Healthcare Risks:**
-Healthcare organizations should acknowledge the potential risks and challenges associated with AI, including concerns about data privacy and security, especially for personal identifiable information (PII), as well as ensuring that AI algorithms and their outputs are highly reliable and unbiased when aiding in the administration of patient care.
-
-1. Statista, Future Use Cases for AI in Healthcare, September 2023.
-2. The Hill, AI already plays a vital role in medical imaging and is effectively regulated, February 23, 2024.
-
-**THE TOP AI APPS IN HEALTHCARE ARE:**
-01 ChatGPT
-02 Drift
-03 OpenAI
-04 Writer
-05 Intercom
-06 Zineone
-07 Securiti
-08 Pypestream
-09 Hybrid
-10 VEED
-
-09
-
-©2024 Zscaler, Inc. All rights reserved.
-ZSCALER THREATLABZ REPORT 2024
-
-#### Finance & AI
-
-In second place for total AI/ML usage, the finance industry blocks 37.16% of all AI/ML traffic.
-
-**Financial institutions bank on AI**
-
-Financial services companies have been leading early adopters in the AI era, with the sector accounting for nearly a quarter of AI/ML traffic in the Zscaler cloud. What’s more, McKinsey projects a potential annual revenue of US$200 billion to $340 billion from generative AI initiatives in banking, largely driven by increased productivity.³ AI quite literally represents a wealth of opportunity for banks and financial services.
-
-While AI-powered chatbots and virtual assistants are nothing new to finance (Bank of America’s “Erica” was launched in 2018), generative AI enhancements are elevating these customer service tools to new levels of personalization. Other AI capabilities like predictive modeling and data analysis are poised to deliver massive productivity advantages to financial operations—transforming fraud detection, risk assessments, and more.
-
-**Key Finance & Insurance Risks:**
-Integrating AI into financial services and products also raises security and regulatory concerns about data privacy, biases, and accuracy. The significant 37% of blocked AI/ML traffic reported by ThreatLabz reflects that perspective. Addressing these concerns will require astute oversight and planning to maintain trust and integrity in banking, financial services, and insurance.
-
-3. McKinsey, Capturing the full value of generative AI in banking, December 5, 2023.
-
-**THE TOP AI APPS IN FINANCE ARE:**
-01 ChatGPT
-02 Drift
-03 OpenAI
-04 BoldChat Enterprise
-05 LivePerson
-06 Writer
-07 Hugging Face
-08 Otter Ai
-09 Securiti
-10 Intercom
-
-010
-
-©2024 Zscaler, Inc. All rights reserved.
-ZSCALER THREATLABZ REPORT 2024
-
-#### Government and AI
-
-Although it falls in the top 10 of AI/ML usage, the government sector blocks just 6.75% of AI/ML transactions.
-
-**Global governments navigate AI practices and policies**
-
-Two critical AI discussions have emerged in government: one on implementing AI technologies and another on establishing governance to manage them securely. The advantages of AI adoption by government and public sector entities are substantial, particularly where chatbots and virtual assistants can give citizens faster access to essential information and services across sectors like public transportation and education. AI-driven data analysis can help address societal challenges through data-driven decision-making processes, leading to more efficient policy development and resource allocation.
-
-Notable progress is already underway. For example, the US Department of Justice appointed its inaugural Chief AI Officer, confirming a commitment to using AI systems. ThreatLabz data indicates that government customers are increasingly using AI/ML platforms like ChatGPT and Drift.
-
-**Key Government Risks:**
-Despite these trends, key concerns about AI-related risks and data privacy underscore the continued need for regulatory frameworks and governance across federal organizations. In general, policymakers worldwide have taken significant steps toward AI regulation in the past year, signaling a collective effort to drive responsible development and deployment of AI/ML technologies.
-
-**THE TOP AI APPLICATIONS* IN GOVERNMENT ARE:**
-01 ChatGPT
-02 Drift
-03 OpenAI
-04 Zineone
-*AI applications with at least 1M transactions
-
-011
-
-©2024 Zscaler, Inc. All rights reserved.
-ZSCALER THREATLABZ REPORT 2024
-
-#### Manufacturing and AI
-
-Unsurprisingly, the highest influx of AI/ML traffic (18.2%) in our research comes from manufacturing customers. AI adoption in manufacturing stands as a cornerstone of Industry 4.0, a.k.a. the Fourth Industrial Revolution—an era marked by the convergence of digital technologies and industrial processes.
-
-From preemptively detecting equipment failures by analyzing vast amounts of data from machinery and sensors to optimizing supply chain management, inventory, and logistics operations, AI is proving instrumental to manufacturers. Additionally, AI-driven robotics and automation systems can significantly enhance manufacturing efficiency. They can execute tasks at far greater speed and accuracy than humans—all while reducing costs and errors.
-
-**Manufacturing builds on AI momentum**
-
-As the top AI/ML vertical, the manufacturing vertical blocks 15.65% of all AI/ML applications.
-
-**TOP APPLICATIONS ARE:**
-01 ChatGPT
-02 Drift
-03 OpenAI
-04 Writer
-05 Securiti
-06 Google Search
-07 Zineone
-08 Pypestream
-09 Hugging Face
-10 Fotor
-
-**Key Manufacturing AI Risks:**
-As for the 16% of blocked traffic from AI/ML applications by manufacturing customers, some manufacturers are approaching generative AI/ML with caution. This may arise from concerns regarding the security of manufacturing organizations’ data as well as the need to selectively vet and approve a smaller set of AI applications while blocking applications that incur greater risk.
-
-012
-
-©2024 Zscaler, Inc. All rights reserved.
-ZSCALER THREATLABZ REPORT 2024
-
-#### Education and AI
-
-Coming in 11th in overall AI/ML usage, the education vertical blocks 2.98% of all AI/ML traffic.
-
-**Education embraces AI as a learning tool**
-
-While the education sector is not a top producer of AI traffic, it blocks a comparatively low percentage (2.98%) of AI and ML transactions: approximately 9 million, from a total of more than 309 million transactions. It’s clear that, despite popular narratives that education institutions typically block AI applications like ChatGPT among students, the sector has mostly embraced AI applications as learning tools.
-
-Notably, five of the most popular AI apps in education (ChatGPT, Character.AI, Pixlr, and OpenAI) are explicitly or frequently focused on creative outputs for writing and image generation—while Forethought, meanwhile, can be used as an instructional chatbot aid.
-
-Adding nuance to this narrative, it may also be that many educators block tools like ChatGPT as a matter of classroom policy, but that educational institutions have lagged behind other sectors in implementing technology solutions like DNS filtering that allow organizations to block AI and ML tools in more specific ways.
-
-**Key Education AI Risks:**
-In education, data privacy concerns will likely grow as the sector continues to embrace AI tools, specifically surrounding protections afforded to students’ personal data. In all likelihood, the education sector will increasingly adopt technological means to block selective AI applications, while providing greater data protection measures for personal data.
-
-**TOP APPLICATIONS ARE:**
-01 ChatGPT
-02 Character.AI
-03 Pixlr
-04 Forethought
-05 Deepai
-06 Drift
-07 OpenAI
-
-013
-
-©2024 Zscaler, Inc. All rights reserved.
-ZSCALER THREATLABZ REPORT 2024
-
-### ChatGPT usage trends
-
-ChatGPT adoption has soared. Since April 2023, global ChatGPT transactions grew by more than 634%, an appreciably faster rate than the overall 595% increase in AI transactions. From these findings and the broad industry perception of OpenAI as the premier AI brand, it’s clear that ChatGPT is the favored generative AI tool. In all likelihood, the adoption of OpenAI products will continue to grow, driven in part by the expected release of newer ChatGPT versions and the company’s text-to-video generative AI product, Sora.
-
-Industry usage of ChatGPT closely maps to overall adoption patterns of AI tools in general. In this case, manufacturing is the clear industry leader, again followed by finance and insurance. Here, the technology sector lags slightly in fourth place, with 10.7% of ChatGPT transactions vs. third place and 14.6% overall. This is likely due in part to the tech sector’s status as a fast innovator, which may mean tech companies are more willing to embrace a broader variety of generative AI tools.
-
-![ChatGPT transactions from April 2023 to January 2024 graph](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 9 ChatGPT transactions from April 2023 to January 2024
-
-![Industries driving the largest proportions of ChatGPT transactions chart](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 10 Industries driving the largest proportions of ChatGPT transactions
-
-014
-
-©2024 Zscaler, Inc. All rights reserved.
-ZSCALER THREATLABZ REPORT 2024
-
-### AI usage by country
-
-AI adoption trends differ markedly worldwide, influenced by regulatory requirements, technological infrastructure, cultural considerations, and other factors. Here’s a look at the top countries driving AI and ML transactions in the Zscaler cloud.
-
-As expected, the US produces the lion’s share of AI transactions. India, meanwhile, has emerged as a leading generator of AI traffic, driven by the country’s accelerated commitment to technology innovation. The Indian government also provides a useful example of how fast AI regulation is evolving, with its recent efforts to enact — and then drop — a plan that would require regulatory approval of AI models before they launch.⁴
-
-![Countries driving the largest proportions of AI transactions chart](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 11 Countries driving the largest proportions of AI transactions
-
-4. TechCrunch, India reverses AI stance, requires government approval for model launches, March 3, 2024.
-
-015
-
-©2024 Zscaler, Inc. All rights reserved.
-ZSCALER THREATLABZ REPORT 2024
-
-#### Region breakdown: EMEA
-
-EMEA Country Breakdown
-
-Taking a closer look at the Europe, the Middle East, and Africa (EMEA) region, there are clear divergences in rates of AI and ML transactions between countries. While the UK accounts for only 5.5% of AI transactions globally, it represents more than 20% of AI traffic in EMEA, making it the clear leader. And while France and Germany unsurprisingly rank second and third as AI traffic generators in EMEA, rapid tech innovation in the United Arab Emirates has solidified the country as a top AI adopter in the region.
-
-| Country           | Transactions | % of region |
-| :---------------- | :----------- | :---------- |
-| United Kingdom    | 763413289    | 20.47%      |
-| France            | 504185470    | 13.53%      |
-| Germany           | 471700683    | 12.66%      |
-| United Arab Emirates | 238557680    | 6.40%       |
-| Netherlands       | 222783817    | 5.98%       |
-| Spain             | 198623739    | 5.30%       |
-| Switzerland       | 129059097    | 3.46%       |
-| Italy             | 97544412     | 2.62%       |
-
-FIGURE 12 EMEA countries by total transactions
-
-![EMEA countries by percentage of total AI transactions in region chart](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 13 EMEA countries by percentage of total AI transactions in region
-
-![Growth in AI transactions in EMEA over time graph](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 14 Growth in AI transactions in EMEA over time
-
-016
-
-©2024 Zscaler, Inc. All rights reserved.
-ZSCALER THREATLABZ REPORT 2024
-
-#### Region breakdown: APAC
-
-Diving deeper into the Asia-Pacific region (APAC), ThreatLabz research shows clear and noteworthy trends in AI adoption. Although the region represents far fewer countries, ThreatLabz observed nearly 1.3 billion (135%) more AI transactions in APAC than EMEA. This growth is almost single-handedly being driven by India, which generates nearly half of all AI and ML transactions in the APAC region.
-
-| Country    | Transactions | % of region |
-| :--------- | :----------- | :---------- |
-| India      | 2414319490   | 48.30%      |
-| Australia  | 501562395    | 10.01%      |
-| Japan      | 476425423    | 9.52%       |
-| Singapore  | 284891384    | 5.70%       |
-| Malaysia   | 268043263    | 5.36%       |
-| Philippines| 243754578    | 4.87%       |
-| Hong Kong  | 202119814    | 4.04%       |
-| China      | 104545655    | 2.09%       |
-
-FIGURE 15 APAC countries by total transactions
-
-![APAC countries by percentage of total AI transactions in region chart](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 16 APAC countries by percentage of total AI transactions in region
-
-![Growth in AI transactions in APAC over time graph](https://www.zscaler.com/blogs/security-research/new-ai-insights-explore-key-ai-trends-and-risks-threatlabz-2024-ai-security)
-FIGURE 17 Growth in AI transactions in APAC over time
-
-017
-
-©2024 Zscaler, Inc. All rights reserved.
-ZSCALER THREATLABZ REPORT 2024
+---
 
 ## Enterprise AI Risk and Real-World Threat Scenarios
 
-For enterprises, AI-driven risks and threats fall into two broad categories: the data protection and security risks involved with enabling enterprise AI tools; and the risks of a new cyber threat landscape driven by generative AI tools and automation.
-
 ### Enabling AI in the enterprise: top 3 risks
 
-1.  **Protecting intellectual property and non-public information**
-    Generative AI tools can lead to inadvertent leakage of sensitive and confidential data. In fact, sensitive data disclosure is number six on the Open Worldwide Application Security Project (OWASP) Top Ten for AI Applications.⁵ The past year has seen numerous instances of accidental data leakages or breaches of AI training data, including from cloud misconfigurations, from some of the largest AI tool providers—some exposing terabytes of customers’ private data.
+1. **Protecting intellectual property and non-public information**: Generative AI tools can lead to inadvertent leakage of sensitive and confidential data. Sensitive data disclosure is number six on the OWASP Top Ten for AI Applications.
+2. **Data privacy and security risks of AI applications**: As the number of AI applications grows, enterprises must consider that terms and conditions vary. Some tools use queries to train models, while others may sell data to third parties.
+3. **Data quality concerns: garbage in, garbage out**: The quality of data used to train AI is tied to the trustworthiness of outputs. Enterprises must be aware of "data poisoning," where training data is contaminated.
 
-    A related risk is the threat of model inversion, whereby attackers use the outputs of an LLM paired with knowledge about its model structure to make inferences about, and eventually extract, its training data. Of course, there is also the risk that AI companies themselves will be breached. There have been cases where the credentials of AI company employees have led directly to data leaks.
+### AI-driven threat scenarios
 
-    Meanwhile, there is the chance that adversaries will launch secondary malware attacks, using information stealers like Redline Stealer or LummaC2, to steal employee login credentials and gain access to their AI accounts. In fact, it was recently disclosed that roughly 225,000 ChatGPT user credentials are listed for sale on the dark web, stemming from this type of attack.⁷ While privacy and data security remain top priorities at AI tool providers, these risks remain in play, and they extend equally to smaller AI companies
+#### AI impersonation: deepfakes, misinformation, and more
+The era of AI-generated videos, live avatars, and voice impersonations that are near-indistinguishable from reality has arrived. In 2023, Zscaler thwarted an AI vishing and smishing scenario where threat actors impersonated the voice of Zscaler CEO Jay Chaudhry in WhatsApp messages.
+
+#### AI-generated phishing campaigns
+Threat actors are using generative AI to launch sophisticated, highly convincing phishing and social engineering attacks at greater speed and scale. Typical "tells" (incorrect grammar, awkward syntax) are largely disappearing.
+
+#### Dark chatbots: uncovering WormGPT and FraudGPT on the dark web
+"Dark chatbots" like WormGPT and FraudGPT have no security guardrails. They are predominantly used by threat actors to generate malicious code like malware with AI.
+
+#### AI-driven malware and ransomware across the attack chain
+AI is helping threat actors launch ransomware attacks with greater ease. Attackers use AI to identify an enterprise’s attack surface and internet-facing vulnerabilities, then generate or optimize code exploits for those vulnerabilities.
+
+#### AI worm attacks and “viral” AI jailbreaking
+Researchers have demonstrated the viability of "AI worm" attacks—self-propagating malware that can spread organically through an AI ecosystem to extract sensitive user data.
+
+#### AI and US elections
+The emergence of deepfakes makes it significantly easier for bad actors to spread misinformation and influence the voting public. US intelligence agencies have warned that state-sponsored entities will likely leverage AI to create confusion and undermine trust in the electoral process.
+
+---
+
+## All Eyes on AI Regulations
+
+### United States
+The focus has been on the White House Executive Order on the Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence, which compels developers of the largest AI systems to report safety test results to the Department of Commerce.
+
+### European Union
+The European Parliament has approved the AI Act, which will establish the world’s first comprehensive AI legislation. Expected to take effect in 2026, the laws will require general-purpose AI tools to comply with transparency requirements and will apply stricter policies to "high risk" AI applications.
+
+---
+
+## AI Threat Predictions
+
+1. **Nation-states’ AI dilemma**: State-sponsored threat groups are poised to develop a complex relationship with AI, using it to generate more sophisticated threats while also striving to block access to anti-regime content.
+2. **Dark chatbots and AI-driven attacks**: The scourge of "AI for bad" will grow as the dark web serves as a breeding ground for malicious chatbots like WormGPT and FraudGPT.
+3. **Fighting AI with AI**: Enterprises will increasingly adopt AI technologies to combat AI-driven cyberattacks, including a focus on using deep learning and AI/ML models to detect malware and ransomware hidden in encrypted traffic.
+
+[^1]: Statista, Future Use Cases for AI in Healthcare, September 2023.
+[^2]: The Hill, AI already plays a vital role in medical imaging and is effectively regulated, February 23, 2024.
+[^3]: McKinsey, Capturing the full value of generative AI in banking, December 5, 2023.
+[^4]: TechCrunch, India reverses AI stance, requires government approval for model launches, March 3, 2024.
+[^5]: OWASP, OWASP Top 10 For LLM Applications, Version 1.1, October 16, 2023.
+[^6]: The Hacker News, Three Tips to Protect Your Secrets from AI Accidents, February 26, 2024.
+[^7]: The Hacker News, Over 225,000 Compromised ChatGPT Credentials Up for Sale on Dark Web Markets, March 5, 2024.
+[^8]: SC Magazine, Concerns over AI data quality gives new meaning to the phrase: ‘garbage in, garbage out’, February 2, 2024.
+[^9]: Wired, Here Come the AI Worms, March 1, 2024.
+[^10]: ComPromptMized, Unleashing Zero-click Worms that Target GenAI-Powered Applications, accessed March 12, 2024.
+[^11]: arXiv, Agent Smith: A Single Image Can Jailbreak One Million Multimodal LLM Agents Exponentially Fast, February 13, 2024.
+[^14]: OECD, Policies, data and analysis for trustworthy artificial intelligence, accessed March 12, 2024.
+[^15]: Deloitte, The AI regulations that aren’t being talked about, accessed March 12, 2024.
+[^16]: White House, Executive Order on the Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence, October 30, 2023.
+[^17]: NAIRR Pilot, The National Artificial Intelligence Research Resource (NAIRR) Pilot, accessed March 12, 2024.
+[^18]: Reuters, Healthcare providers to join US plan to manage AI risks - White House, December 14, 2023.
+[^19]: Pennsylvania Office of Attorney General, FTC Bans Use of A.I. to Impersonate Government Agencies and Businesses, February 26, 2024.
+[^20]: European Parliament, EU AI Act: first regulation on artificial intelligence, December 19, 2023.
+[^21]: CNBC, Singapore’s AI ambitions get a boost with $740 million investment plan, February 19, 2024.
+[^22]: World Economic Forum, Global Risks Report 2024: The risks are growing — but so is our capacity to respond, January 10, 2024.
+[^23]: ZDNet, Cybercriminals are using Meta’s Llama 2 AI, February 21, 2024.
+
+---
+
+en
+
+as a critical means to gain visibility into cyber risk as well as create actionable, quantifiable
+
+playbooks to prioritize and remediate security vulnerabilities. Translating noise into practical
+
+signals has long been a top challenge for CISOs, because correlating risk and threat information
+
+across dozens of tools can take a month or more. As such, in 2024, enterprises will look
+
+eagerly to generative AI as a way to bring order to chaos, defray cyber risk, and drive leaner,
+
+more efficient security organizations.
+
+4
+
+Data poisoning in AI supply chains: the risk
+of garbage AI data will grow
+
+Data poisoning will become a top concern as AI supply chain attacks gain momentum. AI
+
+companies as well as their training models and downstream suppliers will be increasingly
+
+targeted by malicious actors.
+
+The OWASP Top 10 for LLM Applications highlights training data poisoning and supply chain
+
+attacks as significant risks, running the risk of compromising the security, reliability, and
+
+performance of AI applications. Simultaneously, vulnerabilities in AI application supply chains—
+including technology partners, third-party data sets, and AI tool plugins or APIs—are ripe for
+
+exploitation.
+
+Enterprises reliant on AI tools will face heightened scrutiny as they assume these tools are
+
+secure and produce accurate results. Greater vigilance in ensuring the quality, integrity, and
+
+scalability of training data sets will be essential, particularly in the realm of AI cybersecurity.
+
+029
+
+©2024 Zscaler, Inc. All rights reserved.ZSCALER THREATLABZ REPORT 2024AI THREAT PREDICTIONS
+
+5
+
+To leash or unleash: enterprises will weigh
+productivity vs. security in their use of
+AI tools
+
+By now, many enterprises are past the early phases of AI tool adoption and integration, and
+
+many will have carefully considered their AI security policies. Even so, this is a fluid situation for
+
+most companies, and questions around which AI tools they will allow, which they will block,
+
+and how they will secure their data remain open.
+
+As the number of AI tools continues to skyrocket, enterprises will need to pay close attention
+
+to the security concerns of each—at a minimum, seeking deep insight into their employees’ AI
+
+usage, with an ability to enable granular access controls by department, team, and even at the
+
+user level. Enterprises may also seek more granular security controls over AI apps themselves,
+
+such as by enforcing data loss prevention policies in AI apps—preventing sensitive data from
+
+leaking—or preventing user actions such as copy and paste.
+
+6
+
+AI-driven deception and distortion: viral
+deepfakes will fuel election interference and
+disinformation campaigns
+
+Emerging technologies like deepfakes pose significant threats, including election interference
+
+and the spread of misinformation. AI has already been implicated in misleading tactics
+
+during US elections, such as generating robocalls impersonating candidates to discourage
+
+voter turnout. These instances, while alarming, likely represent the tip of the AI-driven
+
+disinformation iceberg.
+
+Furthermore, the use of AI in such schemes may not be limited to domestic actors. State-
+
+sponsored entities could also exploit these tactics to sow confusion and undermine trust in
+the electoral process. In a notable case, attackers utilized AI-generated deepfakes to trick an
+
+employee into transferring $25 million, demonstrating the real-world impact of this technology.
+
+Similarly, illicit deepfake images of celebrities like Taylor Swift have gone viral on social media,
+
+calling attention to how easily manipulated content can spread before content moderation
+
+measures can catch up.
+
+030
+
+©2024 Zscaler, Inc. All rights reserved.ZSCALER THREATLABZ REPORT 2024Case Study: Securely Enable
+ChatGPT in the Enterprise
+
+Best practices for AI integration and enterprise
+security policy.
+
+C AS E   ST U DY
+
+5 steps to integrate and secure generative
+AI tools
+
+By now, enterprises have had plenty of exposure to AI tools. But as the number of AI
+
+Enterprises seeking to securely adopt AI applications should take a measured approach.
+
+applications continues to grow dramatically and adoption continues apace, enterprises can
+
+Broadly speaking, they can first block all AI applications to eliminate the risk of data
+
+adopt certain best practices to keep their data, employees, and customers safe. Overall,
+
+leakage, and then take thoughtful steps to adopt specific, vetted AI applications with tight
+
+enterprises must proactively and continually adapt their AI usage and security strategies to
+
+security controls and access control measures to maintain complete control over enterprise
+
+stay ahead of evolving risks while ushering in the transformative potential of AI.
+
+data. For simplicity’s sake, the following journey focuses on OpenAI’s LLM ChatGPT.
+
+Step 1:
+
+Block all AI and ML domains and applications
+
+To eliminate known and unknown risks associated with the thousands of AI applications
+
+available, enterprises can take a proactive zero trust approach, blocking all AI and ML
+
+domains and applications at the global enterprise level. This way, they can focus on
+adopting a minimum set of transformative AI applications while closely controlling their
+
+risks.
+
+Step 2:
+
+Selectively vet and approve generative AI applications
+
+Next, the organization should identify a set of generative AI applications that exceed
+
+high standards for certain criteria, such as the ability to create robust data protection,
+
+security, and contractual measures to protect enterprise and customer data, as well as the
+
+transformative potential of the applications themselves. For many enterprises, ChatGPT will
+
+be one of these applications.
+
+Step 3:
+
+Create a private ChatGPT server instance in the
+corporate/DC environment
+
+To ensure complete control over their data, organizations should host ChatGPT in a
+
+dedicated, secure tenant (such as a private Microsoft Azure AI server) hosted fully within
+
+the organization. Then, through security controls and contractual obligations, enterprises
+should ensure that neither Microsoft and OpenAI (in this example) has access to enterprise
+
+031
+
+©2024 Zscaler, Inc. All rights reserved.ZSCALER THREATLABZ REPORT 2024
+
+ZSCALER’S AI JOURNEY
+
+or customer data, nor will enterprise user queries be used to train ChatGPT at large. This ensures
+
+the organization retains control over its training data, allowing for highly relevant, accurate answers
+
+AI best practices
+
+for enterprise users while minimizing the risk of data poisoning from a public data lake.
+
+In general, enterprises can adopt a few key best practices when it comes to
+
+Step 4:
+
+Move the LLM behind single sign-on (SSO) with strong multifactor
+authentication (MFA)
+
+Next, the organization should move ChatGPT behind a zero trust cloud proxy architecture, such as
+
+the Zscaler Zero Trust Exchange, to enforce zero trust security controls over access to ChatGPT.
+
+This might also include moving ChatGPT behind an identity provider (IdP) with SSO authentication
+
+and strong MFA that includes biometric authentication. This will enable secure and fast user login
+
+to ChatGPT while also allowing the enterprise to configure granular access controls at the user,
+
+team, and department levels. This also ensures a separation of concerns between user queries at
+
+those same user, team, and departmental levels.
+
+Placing ChatGPT behind a cloud proxy like the Zero Trust Exchange further enables the organization
+
+to inspect all TLS/SSL traffic between users and ChatGPT to detect cyberthreats and data leakage
+
+while applying seven distinct layers of zero trust security.
+
+Step 5:
+
+Enforce the Zscaler DLP engine to prevent data leakages
+
+integrating AI tools into the business.
+
+•  Continually assess and mitigate the risks that come with
+
+AI-powered tools to protect intellectual property, personal data, and
+customer information.
+
+•  Ensure that the use of AI tools complies with relevant laws and ethical standards,
+
+including data protection regulations and privacy laws.
+
+•  Establish clear accountability for AI tool development and deployment, including
+
+defined roles and responsibilities for overseeing AI projects.
+
+•  Maintain transparency when using AI tools—justify their use and communicate
+
+their purpose clearly to stakeholders.
+
+AI policy guidelines
+
+Finally, the organization should enforce a DLP engine for the ChatGPT instance to prevent accidental
+
+Enterprises should go behind these best practices and establish a clear policy
+
+leakage of critical information, including proprietary data and code, customer data, personal data,
+financial and legal data, and more. This ensures that any highly sensitive data will never leave the
+
+framework that governs enterprise-wide acceptable use, integration and product
+development, security and data policies, and employee best practices when
+
+production environment.
+
+using AI tools. The following best practices can form a useful starting point for
+
+By following this journey, enterprise users can reap the full benefits of a generative AI tool like
+
+establishing clear AI policies.
+
+ChatGPT while eliminating the most critical data risks of adopting an AI application.
+
+•  Do not provide AI models with personally identifiable information (PII) or any
+
+non-public, proprietary, or confidential information.
+
+•  AI cannot replace a human being, and it should not be used to make decisions
+
+without appropriate human intervention.
+
+•  AI-generated content should not be used without human review and approval,
+
+especially when the content represents your organization.
+
+•  Development and integration of AI tools should follow a Secure Product Lifecycle
+
+Framework to guarantee the highest level of security.
+
+•  Perform thorough product due diligence before implementing AI solutions,
+
+making sure to evaluate their security and ethical implications.
+
+032
+
+©2024 Zscaler, Inc. All rights reserved.ZSCALER THREATLABZ REPORT 2024
+
+How Zscaler Delivers AI + Zero Trust
+and Secures Generative AI
+
+The transformative power of AI in cybersecurity lies in its ability to be
+harnessed to combat the evolving landscape of AI-driven threats. At
+Zscaler, we’re leveraging AI to help enterprises stop attacks across all
+stages of the attack chain as well as easily diagnose and mitigate risk.
+
+The key to AI-driven cybersecurity:
+high-quality data at scale
+
+Enterprises generate a vast wealth of log data that can contain high-fidelity signals that may indicate likely avenues for a
+breach. However, signal-to-noise challenges have historically made it a challenge to isolate these signals quickly. Using
+
+generative AI, Zscaler can leverage this data to effectively enhance triage and protection measures by understanding
+
+the vulnerabilities and weaknesses attackers are likely to exploit. This not only allows Zscaler to predict breaches before
+
+they happen, but also gives executives a holistic way to visualize and quantify cyber maturity and risk while prioritizing
+
+cybersecurity remediation steps with Zscaler Risk360.
+
+Generative AI capabilities not only extend to meta-analysis of enterprise cyber risk—they are also directly inserted into
+
+cybersecurity products to better detect and disrupt advanced threats across the attack chain. Directly integrated into the
+
+world’s largest security cloud, Zscaler LLMs and AI models take advantage of a data lake that sees more than 390 billion
+
+daily transactions, with more than 9 million blocked threats and 300 trillion signals. Far from “garbage in, garbage out,”
+
+this is “large-scale, high-fidelity data and threat intelligence in, finely-tuned, hyper-aware AI cybersecurity out.” All of
+this translates to more powerful, more effective cybersecurity outcomes for IT and security practitioners.
+
+033
+
+©2024 Zscaler, Inc. All rights reserved.ZSCALER THREATLABZ REPORT 2024HOW ZSCALER DELIVERS AI + ZERO TRUST AND SECURES GENERATIVE AI
+
+Leveraging AI across the
+attack chain
+
+A I - P OWE R E D   P H I S H I N G  A N D   C 2   P R E VE N T I O N
+
+Zscaler AI models detect known and patient-zero phishing sites to prevent credential theft
+
+and browser exploitation, as well as analyze traffic patterns, behavior, and malware to
+
+detect never-before-seen command-and-control (C2) infrastructure in real time. These
+
+We’ve discussed numerous ways threat actors are using AI to launch sophisticated
+
+models draw on a combination of threat intelligence, ThreatLabz research, and dynamic
+
+threats at greater speed and scale. Zscaler deploys AI capabilities across the Zero Trust
+
+browser isolation to detect suspicious sites. As a result, enterprises are even more efficient
+
+Exchange platform and cyber product suite to identify and stop both AI-driven and
+
+and effective in detecting new phishing attacks, including AI-generated attacks, and C2
+
+conventional attacks at each stage of the attack chain.
+
+domains.
+
+Stage 1:
+
+Attack surface discovery
+
+F I L E - BAS E D  A I   SA N D B OX  D E F E N S E
+
+The first stage of a cyberattack typically involves threat actors probing the internet-
+
+The AI-powered inline Zscaler Sandbox instantly detects malicious files while keeping
+
+connected enterprise attack surface to identify exploitable weaknesses. Often, this
+
+employees productive. Traditional sandbox technologies make users wait while files are
+
+includes things like VPN or firewall vulnerabilities and misconfigurations or unpatched
+
+analyzed, or else assume patient-zero risk when files are allowed on first pass. Our AI
+
+servers. Generative AI has made this once-arduous task significantly easier for attackers,
+
+Instant Verdict technology instantly identifies, quarantines, and prevents high-confidence
+
+who can simply query a list of known vulnerabilities associated with these assets.
+
+malicious files—including zero-day threats—while removing the need to wait for analysis
+
+Leveraging AI-driven insights in Zscaler Risk360, enterprises can instantly see these
+
+discoverable (and thus risky) applications and assets—their internet-connected attack
+
+surface—and hide them from the public internet behind the Zero Trust Exchange.
+
+This instantly and dramatically reduces the enterprise attack surface while preventing
+attackers from ever discovering weak entry points.
+
+Stage 2:
+
+Risk of compromise
+
+on these files. This includes threats that are delivered over encrypted channels (TLS and
+
+HTTPs) and other file transfer protocols. Meanwhile, benign files are delivered safely and
+
+instantly.
+
+A I  TO   B LO C K  WE B  T H R E AT S
+
+AI-powered Zscaler Browser Isolation blocks zero-day threats while ensuring employees
+
+can access the right sites to do their jobs. In practice, enterprise URL filtering often requires
+
+more granular controls than allow/block; blocked sites are often safe and required for
+
+During the compromise stage, attackers work to exploit vulnerabilities to gain
+
+work, resulting in needless help desk tickets. Our AI Smart Isolation can identify when a site
+
+unauthorized access to enterprise systems or applications. Zscaler AI innovations help
+
+may be risky and open it in isolation for the user—safely streaming the site as pixels in a
+
+reduce the risk of compromise, breaking up sophisticated attacks while prioritizing
+
+secure, containerized environment. This effectively stops web-based threats like malware,
+
+productivity.
+
+ransomware, phishing, and drive-by downloads, creating a strong web security posture
+
+without requiring enterprises to overblock sites as a default.
+
+034
+
+©2024 Zscaler, Inc. All rights reserved.ZSCALER THREATLABZ REPORT 2024
+
+HOW ZSCALER DELIVERS AI + ZERO TRUST AND SECURES GENERATIVE AI
+
+Stage 3:
+
+Lateral movement
+
+Once attackers have a foothold inside an
+
+organization, they will try to move laterally
+
+to access sensitive data and applications.
+
+And for many organizations, user access is
+
+vastly overprovisioned to dozens of critical
+
+applications—meaning that their internal
+
+attack surface is substantial.
+
+Zscaler AI capabilities reduce the potential
+
+blast radius of attacks by analyzing user
+
+access patterns and recommending intelligent
+
+application segmentation policies to limit
+
+lateral risk. For example, it’s common to
+
+see that only 200 users out of 30,000
+
+with access to a finance application actually
+
+need it. Zscaler can automatically create an
+
+application segment that limits access to only
+
+those 200 employees, reducing threat actors’
+
+lateral movement opportunities by more
+
+than 99%.
+
+Stage 4:
+
+Data exfiltration
+
+Summary of Zscaler’s
+AI-infused offerings
+
+Zscaler Internet Access™ provides AI-powered
+
+protection for enterprise users, devices, and web and
+
+SaaS applications across all locations as part of the Zero
+
+Trust Exchange, delivering:
+
+•  AI-powered phishing and C2 detection against never-
+before-seen phishing sites and C2 infrastructure, using
+
+M O R E OVE R,  Z S C A L E R   B LO C KS :
+
+URLs and IPs observed in the Zscaler cloud as well as natively
+integrated open source and commercial threat intel sources.
+
+This includes policy-defined, high-risk URL categories
+
+commonly used for phishing, such as newly observed and
+
+newly activated domains.
+
+IPS signatures developed from ThreatLabz analysis of phishing
+kits and pages.
+
+Zscaler Risk360 delivers a comprehensive and actionable risk
+
+inline AI-based detection from the Zscaler Secure Web
+
+framework that helps security and business leaders to quantify
+
+Gateway (SWG).
+
+and visualize cyber risk across the enterprise.
+
+•  AI-powered sandboxing with comprehensive malware
+
+and zero-day threat prevention.
+
+•  Dynamic, risk-based policy with continuous analysis
+of user, device, application, and content risk to fuel
+
+dynamic security and access policy.
+
+•  AI-powered segmentation with Zscaler
+
+Private Access™, with automated access policy
+
+recommendations to minimize the attack surface and
+
+stop lateral movement using user context, behavior,
+
+location, location, and private app telemetry.
+
+Data Protection with DLP and CASB delivers AI-powered data
+
+classification and data protection across all channels, including
+
+endpoint, email, workloads, BYOD, and cloud posture.
+
+Advanced Threat Protection blocks all known C2 domains.
+
+Zscaler ITDR (Identity Threat Detection and Response)
+
+mitigates the risk of identity-based attacks without ongoing
+
+visibility, risk monitoring, and threat detection.
+
+Zscaler Firewall extends C2 protection to all ports and
+
+protocols, including emerging C2 destinations.
+
+In the final stage of an attack, threat actors
+
+•  AI-powered browser isolation, which creates a safe gap
+
+DNS Security defends against DNS-based attacks and
+
+work to exfiltrate sensitive data. Zscaler
+
+between users and malicious web categories, rendering
+
+exfiltration attempts.
+
+uses AI to allow organizations to deploy data
+
+content as a stream of picture-perfect images to
+
+protections more quickly. AI-driven data
+
+eliminate data leaks and delivery of active threats.
+
+discovery eliminates the time-consuming task
+
+of data fingerprinting and classification, which
+
+can otherwise delay or prevent deployment.
+
+Zscaler AI automatically discovers and
+
+classifies all data across an organization
+
+right out of the box, enabling enterprises to
+
+immediately classify sensitive information
+
+while configuring Data Loss Prevention (DLP)
+
+policies to prevent that data from ever leaving
+the organization in an attack or breach.
+
+Zscaler Private Access™ safeguards applications by limiting
+
+lateral movement with least-privileged access, user-to-app
+
+segmentation, and full inline inspection of private app traffic.
+
+AppProtection with Zscaler Private Access provides high-
+
+performance, inline security inspection of the entire application
+
+payload to expose threats.
+
+Zscaler Deception™ detects and contains attackers attempting
+
+to move laterally or escalate privileges by luring them with
+
+decoy servers, applications, directories, and user accounts.
+
+035
+
+©2024 Zscaler, Inc. All rights reserved.ZSCALER THREATLABZ REPORT 2024
+
+HOW ZSCALER DELIVERS AI + ZERO TRUST AND SECURES GENERATIVE AI
+
+Enabling the enterprise AI transition:
+control is in your hands
+
+Zscaler provides a way for enterprises to foster innovation, creativity, and productivity
+
+with AI applications while keeping users and data safe among emerging channels for data
+
+exfiltration. This empowers enterprises to embrace the transformative potential of AI to
+
+accelerate their business without outright blocking AI applications and domains.
+
+Securing the use of AI/ML apps
+
+AI Apps
+
+Company-wide visibility of AI app usage
+
+AI APP Risk scoring for security & privacy
+
+Selective access controls
+AI/ML URL Category - 3200+ domain, 100+Cloud Apps
+
+Prevent Data Loss to Generative AI Apps
+
+Inline DLP: Blocks IP, PII, etc. from leaking out (ChatGPT Prompts)
+Remote Browser Isolation: restrict uploads, downloads,
+clipboard controls
+
+FIGURE 23 Zscaler delivers innovative, fine-tuned security
+controls designed for enterprise AI
+
+Z S C A L E R   E N A B L E S   E N T E R P R I S E S  TO :
+
+01  Drive full visibility into AI tool usage
+01
+
+Detailed logs provide complete visibility into how enterprise teams are using AI,
+
+including the applications and domains they’re visiting as well as the data and prompts
+
+being used in tools like ChatGPT.
+
+02  Create flexible policies to fine-tune the use of AI
+02
+
+Powerful, tailored URL filtering for AI and ML applications let enterprises easily
+
+define and enforce granular AI access controls and segmentation—blocking access
+
+when necessary, while allowing access with acceptable levels of risk using AI App
+
+Risk Scoring. Enterprises can allow access at the enterprise, department, team, and
+
+user levels as well as enable caution-based access that coaches users on the risks of
+
+generative AI tools. AI-driven segmentation makes it easy to identify appropriate user
+
+segments for access to particular AI applications while minimizing the internal attack
+
+surface associated with AI tools.
+
+03  Enforce granular data security for ChatGPT and other AI applications
+03
+
+Enterprises can prevent the leakage of sensitive data uploaded to AI applications with
+
+granular Zscaler Cloud Application controls for generative AI. By enforcing the Zscaler
+
+DLP engine, enterprises can ensure that no data is accidentally shared when using any
+
+AI tool. Meanwhile, AI-powered data discovery and classification lets enterprises easily
+identify and create DLP policies around their most critical data, including their corporate
+
+code base, financial and legal documents, personal data, customer data, and more.
+
+This video demonstrates how the DLP engine prevents users from inputting credit card
+
+information into ChatGPT.
+
+04  Enable powerful controls using Browser Isolation
+04
+
+Zscaler Browser Isolation renders AI applications in a secure environment, adding a layer
+
+of protection that allows user prompts and queries to AI tools while restricting copy/
+
+paste, uploads, and downloads. This helps mitigate the risk of sensitive data being
+
+accidentally shared with generative AI tools.
+
+Enterprise and security leaders are at a crossroads: they must work to embrace AI to drive
+innovation and stay competitive, but they must also ensure that their data only powers
+
+the business, not breaches. Zscaler empowers enterprises to navigate this transition with
+
+confidence, leveraging a full-suite of AI-powered zero trust security controls that protect
+
+against AI-driven attacks while offering fine-tuned AI policies and data protections required
+to harness the full potential of generative AI.
+
+036
+
+©2024 Zscaler, Inc. All rights reserved.ZSCALER THREATLABZ REPORT 2024Appendix
+
+ThreatLabz research
+methodology
+
+The Zscaler global security cloud processes over 300 trillion daily signals and
+
+blocks 9 billion threats and policy violations per day, with over 250,000 daily
+
+security updates. Analysis of 18.09 billion AI and ML transactions from April
+
+2023 to January 2024 in the Zscaler cloud, the Zero Trust Exchange.
+
+About Zscaler
+ThreatLabz
+
+ThreatLabz is the security research arm of Zscaler. This world-class team is responsible
+
+for hunting new threats and ensuring that the thousands of organizations using the global
+
+Zscaler platform are always protected. In addition to malware research and behavioral
+
+analysis, team members are involved in the research and development of new prototype
+
+modules for advanced threat protection on the Zscaler platform, and regularly conduct
+
+internal security audits to ensure that Zscaler products and infrastructure meet security
+
+compliance standards. ThreatLabz regularly publishes in-depth analyses of new and
+emerging threats on its portal, research.zscaler.com.
+
+037
+
+©2024 Zscaler, Inc. All rights reserved.ZSCALER THREATLABZ REPORT 2024Experience your world, secured.
+
+About Zscaler
+Zscaler (NASDAQ: ZS) accelerates digital transformation so that customers can be more agile, efficient, resilient, and secure. The
+Zscaler Zero Trust Exchange™ protects thousands of customers from cyberattacks and data loss by securely connecting users,
+devices, and applications in any location. Distributed across more than 150 data centers globally, the SASE–based Zero Trust
+Exchange is the world’s largest inline cloud security platform. To learn more, visit www.zscaler.com.
+
+© 2024 Zscaler, Inc. All rights reserved. Zscaler™, Zero Trust Exchange™, Zscaler
+Internet Access™, ZIA™, Zscaler Private Access™, ZPA™ and other trademarks listed
+at zscaler.com/legal/trademarks are either (i) registered trademarks or service marks
+or (ii) trademarks or service marks of Zscaler, Inc. in the United States and/or other
+countries. Any other trademarks are the properties of their respective owners.
+
++1 408.533.0288
+
+Zscaler, Inc. (HQ)  •  120 Holger Way  •  San Jose, CA 95134
+
+zscaler.com
