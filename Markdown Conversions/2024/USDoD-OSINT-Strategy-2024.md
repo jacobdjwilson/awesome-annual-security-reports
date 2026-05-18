@@ -1,5 +1,10 @@
 # OSINT Strategy 2024–2028
 
+**Organization:** USDoD  
+**Year:** 2024  
+
+![Department of Defense Seal]
+
 ## Table of Contents
 - [Foreword](#foreword)
 - [Administration](#administration)
@@ -21,16 +26,15 @@ This strategy will strengthen the DoD OSINT community and enable a true enterpri
 
 Operating on behalf of the Director, DIA, as the Defense Intelligence Enterprise Manager (DIEM) for OSINT, the Defense Open Source Council (DOSC) will collaborate to set standards, track progress, and synchronize activities. We call on all Defense Intelligence Enterprise components to rise to the challenges ahead to fulfill our vision of OSINT as the “first resort” source of intelligence for decision makers and warfighters.
 
-LTG Scott D. Berrier
-22nd Director
-Defense Intelligence Agency
+**LTG Scott D. Berrier**  
+22nd Director, Defense Intelligence Agency
 
-Alan S. MacDougall, PhD
-Director, Science & Technology, DIA/ST
+**Alan S. MacDougall, PhD**  
+Director, Science & Technology, DIA/ST  
 DIEM for OSINT (delegated)
 
-Brad H. Ahlskog
-Chief, OSINT Integration Center, DIA/ST
+**Brad H. Ahlskog**  
+Chief, OSINT Integration Center, DIA/ST  
 Chair, Defense Open Source Council
 
 ---
@@ -39,54 +43,90 @@ Chair, Defense Open Source Council
 
 This strategy updates and replaces the 2012–2017 DoD OSINT Strategy. It applies to Department of Defense components at all echelons or organizational levels that have OSINT programs and activities.
 
-The goals, objectives, and underlying methodologies for strengthening OSINT are widely applicable to all foreign partner engagements.
-
 The requirement for a DoD OSINT strategy is established in Department of Defense Instruction 3115.12, Open Source Intelligence, which also establishes the Defense Intelligence Agency (DIA) as the lead component for OSINT. In December 2021, the Under Secretary of Defense for Intelligence & Security further designated the Director, DIA as the Defense Intelligence Enterprise Manager (DIEM) for OSINT. The DIEM-OSINT designation was codified as department policy in DoD Directive 5105.21 by the Deputy Secretary of Defense on January 25, 2023.
 
-DIA is also tasked to lead the Defense Open Source Council (DOSC), defined in policy as the primary governance mechanism for DoD OSINT. Among the list of DOSC responsibilities is the task to establish an OSINT strategy.
-
-The Director, DIA, tasked the Open Source Intelligence Integration Center (OSIC) to lead execution of the Agency’s DOSC and DIEM responsibilities. The Chief, OSIC also serves Chair of the DOSC, and provides primary staff secretariat support that drives the DOSC agenda.
+DIA is also tasked to lead the Defense Open Source Council (DOSC), defined in policy as the primary governance mechanism for DoD OSINT.
 
 ### The Defense Open Source Council (DOSC)
+- Is the primary governance body for Defense OSINT and serves as a forum for the coordination and facilitation of Defense OSINT activities and programs.
+- Advises and reports to the DIEM for OSINT and the DIE OSINT Board of Governors on Defense issues and recommends initiatives to improve the effectiveness and efficiency of Defense OSINT programs, activities, and systems.
+- Coordinates activities and resolves Defense OSINT issues programs and activities including Tradecraft, Training, Policy, Tools, and Data.
+- Coordinates Defense OSINT recommendations and activities with the National Open Source Committee (NOSC).
+- Establishes and maintains a Defense OSINT strategy to guide the full range of Defense OSINT efforts.
+- Reports to the DIEM for OSINT and the DIE OSINT BoG on issues, performance metrics, and resource recommendations, and identifies matters for BoG decision and direction.
 
-Is the primary governance body for Defense OSINT and serves as a forum for the coordination and facilitation of Defense OSINT activities and programs.
-
-Advises and reports to the DIEM for OSINT and the DIE OSINT Board of Governors on Defense issues and recommends initiatives to improve the effectiveness and efficiency of Defense OSINT programs, activities, and systems.
-
-Coordinates activities and resolves Defense OSINT issues programs and activities including Tradecraft, Training, Policy, Tools, and Data.
-
-Coordinates Defense OSINT recommendations and activities with the National Open Source Committee (NOSC).
-
-Establishes and maintains a Defense OSINT strategy to guide the full range of Defense OSINT efforts.
-
-Reports to the DIEM for OSINT and the DIE OSINT BoG on issues, performance metrics, and resource recommendations, and identifies matters for BoG decision and direction.
-—DIA Charter 22-004
-
-All DoD components with OSINT programs provide representation to the DOSC. DOSC members represent their components and serve as a two-way conduit of information for developing and disseminating OSINT guidelines, standards, and procedures.
-
-The DOSC is the primary governance body for Defense OSINT, and serves as a forum for coordination and facilitation of Defense OSINT activities and programs at the working and action officer levels.
-
-The DOSC advises and reports to the DIEM-OSINT and the DIE OSINT Board of Governors (BoG) on issues, performance metrics, and resource recommendations; and identifies matters for BoG decision and direction.
-
-The OSINT BoG assesses and prioritizes Defense OSINT activities and capabilities, integrates OSINT Community perspectives, and promotes a unified approach to Defense OSINT. The DIEM for OSINT may convene a Defense OSINT Executive Committee (EXCOM) to address specific issues that do not require the attention of the BoG.
-
-![Image description: A graphic titled "OSINT Governance Overview" showing a flow from USSOUTHCOM leveraging OSINT to expand multilateral partner nation collaboration. Captain Nickalious Beaumont (Jamaica Defence Force, left) and members of the Caribbean Task Force simulate the employment of military resources for military operations during Exercise TRADEWINDS 2022 in Belize City, Belize, on May 11, 2022. Photo by Corporal Mitchell Paquette, 12 Wing Imaging Services.](Image description: A graphic titled "OSINT Governance Overview" showing a flow from USSOUTHCOM leveraging OSINT to expand multilateral partner nation collaboration. Captain Nickalious Beaumont (Jamaica Defence Force, left) and members of the Caribbean Task Force simulate the employment of military resources for military operations during Exercise TRADEWINDS 2022 in Belize City, Belize, on May 11, 2022. Photo by Corporal Mitchell Paquette, 12 Wing Imaging Services.)
+![OSINT Governance Overview graphic]
 
 ---
 
 ## Executive Summary
 
-Much has changed since publication of the last OSINT strategy in 2012, which coincided with a surge in mobile device sales and social media platform users that reshaped the open source landscape. The conditions were set for the digital revolution that continues today. In 2012, the newest smart phone could store 64GB of data — it would take 234 of these to store the data produced by a single person each day in 2023, and this number will double in 2 years.
+Much has changed since publication of the last OSINT strategy in 2012. In 2012, the newest smart phone could store 64GB of data — it would take 234 of these to store the data produced by a single person each day in 2023, and this number will double in 2 years.
 
-Against this backdrop, the challenges ahead for Defense OSINT are daunting. The good news is the Defense Intelligence Enterprise has spent the past 10 years ramping up Open Source capabilities. The Defense Intelligence Agency, designated in 2021 as the Defense Intelligence Enterprise Manager for OSINT, through the Open Source Intelligence Integration Center (OSIC), leads a robust Defense Open Source Council (DOSC) to coordinate and synchronize OSINT across the Department.
+**Vision:** OSINT is the premier source of intelligence information for decisionmakers and warfighters.
 
-### Vision
-OSINT is the premier source of intelligence information for decisionmakers and warfighters.
-
-![Image description: A graphic with the text "Data-Centric | Diversified | Dispersed | Distributed" and "Defense OSINT Strategy 2024–2028."](Image description: A graphic with the text "Data-Centric | Diversified | Dispersed | Distributed" and "Defense OSINT Strategy 2024–2028.")
+**DOSC Lines of Effort:** Data-Centric | Diversified | Dispersed | Distributed
 
 ---
 
 ## Strategic Goals and Objectives Overview
 
-| Goal                                                                                                                                                           | Objectives
+![Strategic Goals and Objectives chart]
+
+This strategy establishes a vision, goals, and objectives to elevate OSINT as a core intelligence discipline. Adherence to four Guiding Principles — Data Centricity, Diversified Collection, Dispersed Operations, Distributed Enterprise — will serve as anchor points.
+
+---
+
+## Open Source Challenges and Opportunities
+
+In an era of Strategic Competition, OSINT derives insights, produces actionable intelligence, and enables timely and effective public messaging.
+
+![Internet of Things (IoT) connected devices chart]
+
+### Artificial Intelligence (AI)
+> Leveraging the power of AI to sharpen our intelligence insights and illuminate opportunities is critical to our future success. Our adversaries understand the significance of mastering advanced technologies to undercut our strategic and tactical dominance. — DIA AI Strategy
+
+Artificial intelligence tools represent a double-edged sword. They provide unprecedented capability to sift through vast quantities of data, while simultaneously enabling the rapid creation of false information.
+
+![U.S. Air Force Intermediate OSINT course photo]
+
+---
+
+## Strategic Goals and Enabling Objectives
+
+### Strategic Goal 1: Enhance decisionmaker and warfighter situational awareness through timely delivery of customized, serialized OSINT products and data.
+- **1.1:** Integrate AI/ML capabilities for collecting, processing, and reporting OSINT.
+- **1.2:** Expand and enrich OSINT reporting, adopt new product lines, and implement feedback loop for assessing effectiveness.
+- **1.3:** Develop and Deploy an Open Source, Cross-Domain TC-PED system; integrate OSINT with all source analyst workflows.
+
+### Strategic Goal 2: Maximize the intelligence value of open source information.
+- **2.1:** Attain and maintain OSINT technology advantage; expand engagements across research and development organizations.
+- **2.2:** Optimize sharing of OSINT technologies, support joint tool development, and establish collaboration venues.
+- **2.3:** Develop hybrid, cross-discipline, OSINT collection and processing teams armed with latest tools/capabilities.
+- **2.4:** Establish assessment and evaluation criteria and standards to measure performance and effectiveness of OSINT collection.
+
+### Strategic Goal 3: Expand the open source aperture internally and externally.
+- **3.1:** Improve collaboration with other Intelligence disciplines.
+- **3.2:** Open new pathways and develop novel procedures for acquiring Open Source data and information.
+- **3.3:** Optimize OSINT collaboration with FVEY partners.
+- **3.4:** Establish bilateral OSINT partnerships in priority geographic regions; expand intelligence collaboration with foreign partners.
+
+### Strategic Goal 4: Establish OSINT as a premier intelligence capability and the foundation for all other disciplines.
+- **4.1:** Create and institutionalize OSINT Training, tradecraft, and Civilian/Military career tracks.
+- **4.2:** Strengthen OSINT policy and governance.
+- **4.3:** Expand and enrich OSINT engagement within national-level intelligence Communities.
+- **4.4:** Improve awareness and understanding of OSINT across all government, private sector, and public audiences.
+
+### Strategic Goal 5: Synchronize OSINT with all other Publicly and Commercially Available Information (PAI/CAI) activities.
+- **5.1:** Integrate Multi-Int Collection Management.
+- **5.2:** Develop an Industry-focused commercial data & tool assessment, acquisition, and discovery framework.
+
+---
+
+## References
+
+- Department of Defense Directive 5143.01, Under Secretary of Defense for Intelligence and Security, October 24, 2014, as amended.
+- Department of Defense Directive 5105.21, Defense Intelligence Agency, January 25, 2023.
+- Department of Defense Directive 3115.18, DoD Access to and Use of Publicly Available Information (PAI), June 11, 2019, as amended.
+- Department of Manual 5240.01, Procedures Governing the Conduct of DoD Intelligence Activities, August 8, 2016.
+- (U) Department of Defense Instruction 3115.12, Open Source Intelligence (OSINT), August 24, 2010, as amended.
