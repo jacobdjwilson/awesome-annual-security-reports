@@ -1,15 +1,12 @@
 # 2021 Network Security Report
 
 ## Table of Contents
-- [Introduction](#introduction)
 - [The remote access trend: VPN Vulnerabilities](#the-remote-access-trend-vpn-vulnerabilities)
 - [The remote access trend: Videoconferencing Platform Vulnerabilities](#the-remote-access-trend-videoconferencing-platform-vulnerabilities)
 - [More Windows Vulnerabilities](#more-windows-vulnerabilities)
 - [Cyberpandemic: Solarwinds Supply Chain Hack](#cyberpandemic-solarwinds-supply-chain-hack)
 - [Recommendations: Vulnerability Remediation and Proactive Patch Management](#recommendations-vulnerability-remediation-and-proactive-patch-management)
 - [Looking Ahead: 2021 and beyond](#looking-ahead-2021-and-beyond)
-
-## Introduction
 
 2020 was an unusual year. The COVID-19 pandemic created enormous challenges for businesses worldwide and cybersecurity challenges were prominent among them. As employees transitioned to working from home, this created new vulnerabilities in systems designed for a centralized, in-office workforce. There was a subsequent spike in cybercriminal activity, as bad actors hastened to take advantage of the situation, along with an increase in malware attacks and other network security threats.
 
@@ -19,9 +16,9 @@ Our internal and external network vulnerability scanning systems inspect servers
 
 Early in the year, the United States Department of Homeland Security’s Cybersecurity and Infrastructure Security Agency (CISA) issued an alert strongly urging organizations to update Virtual Private Networks (VPNs). While this alert specifically mentioned a vulnerability that was made public in 2019, there were numerous reports of active exploitation of multiple VPN and gateway platforms throughout 2020. After the abrupt shift to work-from-home in March, malicious actors were targeting unpatched VPN vulnerabilities more frequently. Some of the most serious vulnerabilities that we detected on our customer networks include:
 
-*   Pulse Secure Connect Arbitrary File-Reading Vulnerability (CVE-2019-11510)
-*   Citrix Application Delivery Controller (ADC) and Citrix Gateway Directory Traversal Vulnerability (CVE-2019-19781)
-*   F5 BIG-IP Network Balancer Remote Code Execution Vulnerability (CVE-2020-5902)
+- Pulse Secure Connect Arbitrary File-Reading Vulnerability (CVE-2019-11510)
+- Citrix Application Delivery Controller (ADC) and Citrix Gateway Directory Traversal Vulnerability (CVE-2019-19781)
+- F5 BIG-IP Network Balancer Remote Code Execution Vulnerability (CVE-2020-5902)
 
 The Pulse Secure Connect arbitrary file-reading vulnerability was patched in April 2019, but 8 months after the patch was released, attackers behind the REvil ransomware gained access to the currency exchange Travelex’s network through this flaw. The attackers demanded $6 million to restore the company’s data.
 
@@ -29,9 +26,7 @@ In early 2020, SANS published an update reporting that there had been an increas
 
 F5 disclosed a critical vulnerability in the BIG-IP Traffic Management User Interface (TMUI) in June of 2020. This vulnerability allowed remote code execution and attempts to exploit it were observed in the wild within days. CISA observed broad scanning to detect presence of this vulnerability across federal departments and agencies. The vulnerability was particularly notorious because it could enable the compromise of any application behind the interface.
 
-![Image description]
-
-Figure 1: VPN Vulnerabilities detected on scans
+![Figure 1: VPN Vulnerabilities detected on scans (Chart showing 95% Other unpatched VPNs and 4% Fortinet VPN)]
 
 As Figure 1 shows, at the end of the year, 5% of VPN solutions remained unpatched and were still vulnerable to several of the most prominent VPN CVEs, including those highlighted above. Some had yet to be patched for a two-year-old Fortinet FortiOS SSL VPN path traversal vulnerability (CVE-2018-13379). Exploitation of this flaw could allow an attacker to access contents of the ‘sslvpn_websession’ session file to steal login credentials.
 
@@ -49,19 +44,15 @@ The team at Spiderlabs discovered and reported on further vulnerabilities in Cis
 
 Microsoft Windows had its fair share of vulnerabilities in 2020. The year started off with Microsoft disclosing a critical vulnerability dubbed “Curveball” or “ChainofFools.” Discovered by the NSA, this certificate validation vulnerability affects Windows 10 and Windows Server 2016/2019 along with applications that rely on Windows for trust functionality. The vulnerability makes it possible for malicious actors to spoof certificates that rely on Windows CryptoAPI for signature validation. It can enable attackers to bypass trusted network connections and deliver executable code while masquerading as trusted entities. After the exploit was made public, malware with spoofed Microsoft certificates was uploaded to VirusTotal, a leading threat intelligence library.
 
-In March 2020, a critical vulnerability in Windows 10 was mistakenly disclosed by Microsoft before a fix had been published. Codenamed SMBGhost or EternalDarkness, CVE-2020-0796 is a fully wormable vulnerability so dangerous that it merited the rarest CVSSv3 rating – a perfect 10. The vulnerability, in Microsoft’s Server Message Block version 3.1.1, could enable arbitrary code execution if a malicious data packet were sent to the server. A Shodan search conducted in early January 2021 indicated that over 100K machines were susceptible to attacks exploiting this flaw.
+In March 2020, a critical vulnerability in Windows 10 was mistakenly disclosed by Microsoft before a fix had been published. Codenamed SMBGhost or EternalDarkness, CVE-2020-0796 is a fully wormable vulnerability so dangerous that it merited the rarest CVSSv3 rating – a perfect 10. The vulnerability, in Microsoft’s Server Message Block version 3.1.1, could enable arbitrary code execution if a malicious data packet were sent to the server. A Shodan search conducted in early January 2021 indicated that over 100K machines were susceptible to attacks exploiting this flaw (Figure 2).
 
-![Image description]
-
-Figure 2: Shodan Results for SMBGhost CVE-2020-0796 in Jan 2021
-
-Around August 2020, another privilege escalation vulnerability surfaced. This one, dubbed ZeroLogon and identified as CVE-2020-1472, exploits the Netlogon Remote Protocol (MS-NRPC). This is a zero-day elevation-of-privilege vulnerability that makes it possible for an attacker to spoof a domain controller account and then use it to steal domain credentials, take over the domain, and compromise all associated Active Directory identity services. Exploits were soon released, and by November Microsoft researchers were also able to identify that, in a few cases, attackers had leveraged the ZeroLogon vulnerability to access resources within organizations that were still running unpatched domain controllers, even though a patch had been available for a month.
+![Figure 2: Shodan Results for SMBGhost CVE-2020-0796 in Jan 2021]
 
 Another wormable vulnerability with a perfect CVSSv3 score of 10.0, codenamed SIGRed, was made public in July of 2020. CVE-2020-1350 is a remote code execution vulnerability affecting Microsoft Windows DNS server versions 2003 to 2019. Attackers who exploit it can gain Domain Administrator rights for the server in question, potentially giving them direct access to an organization’s corporate infrastructure.
 
-![Image description]
+Around August 2020, another privilege escalation vulnerability surfaced. This one, dubbed ZeroLogon and identified as CVE-2020-1472, exploits the Netlogon Remote Protocol (MS-NRPC). This is a zero-day elevation-of-privilege vulnerability that makes it possible for an attacker to spoof a domain controller account and then use it to steal domain credentials, take over the domain, and compromise all associated Active Directory identity services. Exploits were soon released, and by November Microsoft researchers were also able to identify that, in a few cases, attackers had leveraged the ZeroLogon vulnerability to access resources within organizations that were still running unpatched domain controllers, even though a patch had been available for a month.
 
-Figure 3: Remotely detecting Zerologon through internal scanner on the same LAN
+![Figure 3: Remotely detecting Zerologon through internal scanner on the same LAN (Line graph showing vulnerability detection frequency over time)]
 
 Our scanners have the unique ability to detect this vulnerability without authentication if the scanner is on the same local area network (LAN) as the vulnerable host. As Figure 3 shows, we queried a sample of scan data from customer networks and observed a number of machines vulnerable to this critical flaw.
 
@@ -69,13 +60,8 @@ Our scanners have the unique ability to detect this vulnerability without authen
 
 The year ended with the most severe hack of 2020 and what was probably the most crippling and devastating breach of the decade. On December 8, FireEye disclosed that hackers had stolen red team tools and internal threat intelligence data from the firm. Days later, on December 13, reports surfaced that there had been a suspected nation-state-level cyberattack targeting SolarWinds Orion, a network monitoring tool. Various corporations and U.S. government agencies including the Departments of Commerce, Homeland Security, and Energy were among the victims of this supply chain attack. The hackers planted a malicious backdoor into code distributed in a routine software update. The malware, dubbed SUNBURST, was disseminated to approximately 18,000 SolarWinds customers. It granted the attackers the ability to modify, steal and destroy data on the customers’ networks. FireEye also released countermeasures intended to reduce the effectiveness of the stolen red team tools, along with a list of CVEs that the tools were designed to exploit.
 
-![Image description]
-
-Figure 4: Vulnerable machines found on Shodan.io as of Jan 2021
-
-![Image description]
-
-Figure 5: Vulnerable machines found on Shodan.io as of Jun 2021
+![Figure 4: Vulnerable machines found on Shodan.io as of Jan 2021]
+![Figure 5: Vulnerable machines found on Shodan.io as of Jun 2021]
 
 As shown in Figure 4 and Figure 5, there are a number of vulnerable targets that currently appear on Shodan.io for some of these CVEs. According to a Shodan report executed on January 8, 2021 for CVE-2019-0708 (Bluekeep) over 200K machines remain vulnerable. As of June 8, 2021 (Figure 5) that number has reduced to ~128K If the query is limited to machines running Windows Remote Desktop Protocol (RDP), there are still nearly 30,000 results. The 16 CVEs in the list include several that are described in the article above, including CVE-2019-11510, CVE-2019-19781 and CVE-2020-1472.
 
@@ -85,15 +71,17 @@ In October 2020, the U.S. National Security Agency (NSA) published a report deta
 
 We recommend that organizations adopt a multi-faceted approach for remediation and patching.
 
-*   **Asset Management**: Having an up-to-date inventory of assets on the networks provides real time visibility which is important in protecting against the ever-changing threat landscape.
-*   **Risk Assessment – Vulnerability Prioritization**: Performing a risk assessment of vulnerabilities is critical since time and resources are often limited. A risk assessment aligned with business objectives helps prioritizing vulnerabilities based on the environment. Systems that contain sensitive data, critical business functions, systems directly exposed to the Internet are likely to be higher risk and should be prioritized first.
-*   **Vulnerability Remediation and Patch Management**: Next comes vulnerability remediation – organizations should define a scan frequency since that helps with streamlining the remediation process. This ties in with proactive patch management. There cannot be enough emphasis on the importance of deploying critical security updates as soon as possible. On average, exploits to critical vulnerabilities surface anywhere from a day to a month and if patching efforts are not timely, it greatly increases the risk of exploitation.
-*   **Continuous Cycle**: And finally, vulnerability management must be a continuous process that should be reviewed adapted on an ongoing basis in order to effectively mitigate the latest threats.
+- **Asset Management**: Having an up-to-date inventory of assets on the networks provides real time visibility which is important in protecting against the ever-changing threat landscape.
+- **Risk Assessment – Vulnerability Prioritization**: Performing a risk assessment of vulnerabilities is critical since time and resources are often limited. A risk assessment aligned with business objectives helps prioritizing vulnerabilities based on the environment. Systems that contain sensitive data, critical business functions, systems directly exposed to the Internet are likely to be higher risk and should be prioritized first.
+- **Vulnerability Remediation and Patch Management**: Next comes vulnerability remediation – organizations should define a scan frequency since that helps with streamlining the remediation process. This ties in with proactive patch management. There cannot be enough emphasis on the importance of deploying critical security updates as soon as possible. On average, exploits to critical vulnerabilities surface anywhere from a day to a month and if patching efforts are not timely, it greatly increases the risk of exploitation.
+- **Continuous Cycle**: And finally, vulnerability management must be a continuous process that should be reviewed adapted on an ongoing basis in order to effectively mitigate the latest threats.
 
 ## Looking Ahead: 2021 and beyond
 
 The working-from-home trend will almost certainly continue into this year, so attackers will likely continue targeting remote access services like RDP and VPNs. It’s also likely that attacks will grow more sophisticated. The SolarWinds supply chain attack is representative of the more complex attacks and nation-state activity that we’re likely to see in the coming years. With more and more companies moving to the cloud, cloud hosting services will be impacted more frequently as well.
 
+***
+
 Trustwave is a leading cybersecurity and managed security services provider focused on threat detection and response. Offering a comprehensive portfolio of managed security services, consulting and professional services, and data protection technology, Trustwave helps businesses embrace digital transformation securely. Trustwave is a Singtel company and the global security arm of Singtel, Optus and NCS, with customers in 96 countries.
 
-For more information about Trustwave, visit www.trustwave.com.
+For more information about Trustwave, visit [www.trustwave.com](http://www.trustwave.com).
