@@ -1,6 +1,4 @@
 {
-  "_comment": "Auto-updated by discovery-feedback-learner.py. Stores triage outcomes and Gemini-derived scoring adjustments. Do not edit the 'learned' section manually — it is overwritten on each learner run. The 'overrides' section IS safe to edit manually to pin specific corrections.",
-
   "schema_version": "1.0",
   "last_updated": null,
   "last_learner_run": null,
@@ -16,59 +14,33 @@
   "triage_log": [],
 
   "learned": {
-    "_comment": "Gemini-derived scoring adjustments. Applied on top of google-search-config.json heuristics at discovery time. Weights are additive deltas relative to the base config values.",
-
     "signal_weight_deltas": {
-      "_comment": "Keys match positive_signals / negative_signals in google-search-config.json. Values are additive adjustments to apply at score time.",
       "positive": {},
       "negative": {}
     },
-
     "domain_blocklist": {
-      "_comment": "Domains repeatedly producing false positives. Results from these domains are hard-rejected during scoring, same as url_reject_patterns.",
       "domains": [],
       "reason_map": {}
     },
-
     "domain_trustlist": {
-      "_comment": "Domains that consistently produce true positives. These receive an additional bonus on top of org_domain_match_bonus.",
       "domains": [],
       "bonus": 10
     },
-
-    "org_specific_signals": {
-      "_comment": "Per-org positive/negative keyword overrides. Key is lowercase org name. Merged with global signals at score time.",
-      "example_org": {
-        "_inactive": true,
-        "positive": { "cyber threat intelligence": 12 },
-        "negative": { "product guide": -30 }
-      }
-    },
-
+    "org_specific_signals": {},
     "title_patterns": {
-      "_comment": "Regex patterns Gemini identified as reliable false-positive indicators. Any result whose title matches one of these is hard-rejected.",
       "reject": [],
       "trust": []
     },
-
     "score_threshold_delta": 0,
-    "score_threshold_delta_comment": "Added to the base score_threshold in google-search-config.json. Positive = stricter. Negative = looser. Gemini adjusts this when the FP rate is high.",
-
     "summary": "",
     "last_gemini_analysis": null
   },
 
   "overrides": {
-    "_comment": "Human-pinned corrections that survive learner rewrites. These take highest precedence over both base config and learned values.",
-
     "domain_blocklist": [],
     "domain_trustlist": [],
-    "org_aliases": {
-      "_comment": "Maps alternate org names found in issue titles back to a canonical org name for dedup matching. E.g. 'MSFT' -> 'Microsoft'.",
-      "example": "CanonicalName"
-    },
+    "org_aliases": {},
     "hard_reject_urls": {
-      "_comment": "Specific URLs that must always be rejected regardless of score. Useful for known-bad mirrors or aggregators.",
       "urls": []
     }
   }

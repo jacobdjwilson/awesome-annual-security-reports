@@ -9,6 +9,9 @@ permissions:
   pull-requests: write
   issues: write   # write needed to post comments
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   ingest:
     # Run when the report-suggestion label is applied, OR when the issue is

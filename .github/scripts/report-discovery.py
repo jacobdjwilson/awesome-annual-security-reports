@@ -141,17 +141,18 @@ class Config:
 
         # ── Signal weight deltas ─────────────────────────────────────────
         deltas = learned.get("signal_weight_deltas", {})
-        for signal, delta in deltas.get("positive", {}).items():
-            if signal in self.positive_signals and isinstance(delta, (int, float)):
-                self.positive_signals[signal] = self.positive_signals[signal] + int(delta)
-            elif isinstance(delta, (int, float)) and int(delta) != 0:
-                self.positive_signals[signal] = int(delta)
+        pos_deltas = deltas.get("positive", {})
+        neg_deltas = deltas.get("negative", {})
+        if not isinstance(pos_deltas, dict): pos_deltas = {}
+        if not isinstance(neg_deltas, dict): neg_deltas = {}
 
-        for signal, delta in deltas.get("negative", {}).items():
-            if signal in self.negative_signals and isinstance(delta, (int, float)):
-                self.negative_signals[signal] = self.negative_signals[signal] + int(delta)
-            elif isinstance(delta, (int, float)) and int(delta) != 0:
-                self.negative_signals[signal] = int(delta)
+        for signal, delta in pos_deltas.items():
+            if isinstance(delta, (int, float)):
+                self.positive_signals[signal] = self.positive_signals.get(signal, 0) + int(delta)
+
+        for signal, delta in neg_deltas.items():
+            if isinstance(delta, (int, float)):
+                self.negative_signals[signal] = self.negative_signals.get(signal, 0) + int(delta)
 
         # ── Score threshold delta ────────────────────────────────────────
         thresh_delta = learned.get("score_threshold_delta", 0)
@@ -177,7 +178,7 @@ class Config:
         # ── Org-specific signals ─────────────────────────────────────────
         self.feedback_org_signals: Dict[str, Dict] = {
             k.lower(): v for k, v in learned.get("org_specific_signals", {}).items()
-            if not v.get("_inactive", False)
+            if isinstance(v, dict) and not v.get("_inactive", False)
         }
 
         # ── Title reject/trust patterns ──────────────────────────────────
