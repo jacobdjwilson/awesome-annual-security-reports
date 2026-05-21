@@ -1,766 +1,1043 @@
-Observations, Metrics, Trends
-& Forecast from the Deepwatch
-Adversary Tactics & Intelligence Team
+# Annual Threat Report 2024
+
+## Table of Contents
+- [Introduction](#introduction)
+- [2023 Trends](#2023-trends)
+- [2023 Observations](#2023-observations)
+- [2024 Forecast](#2024-forecast)
+- [Method](#method)
+- [Appendix](#appendix)
+- [Contact](#contact)
 
 ---
 
-# Welcome to the
-Deepwatch ATI 2024
-Annual Threat Report
+## Introduction
+Welcome to the Deepwatch ATI 2024 Annual Threat Report. For our third year, the Deepwatch Adversary Tactics and Intelligence team presents our Annual Threat Report. Here we provide Deepwatch Observations from 2023, and forecast what organizations can expect in 2024.
 
-For our third year, the Deepwatch
-Adversary Tactics and Intelligence team
-presents our Annual Threat Report. Here
-we provide Deepwatch Observations from
-2023, and forecast what organizations
-can expect in 2024.
+With in-depth analysis of our open source intelligence reporting, we share data on nearly 1.5 million security related events detected across our customers’ environments, and through response engagements.
 
-With in-depth analysis of our open source
-intelligence reporting, we share data
-on nearly 1.5 million security related
-events detected across our customers’
-environments, and through response
-engagements.
+For 2023, we cover the most predominant threats, techniques, and trends, as well as our most significant observations. Finally, our 2024 forecast calls for increased cyber resilience.
 
-For 2023, we cover the most predominant
-threats, techniques, and trends, as well
-as our most significant observations.
-Finally, our 2024 forecast calls for
-increased cyber resilience
+This report sets itself apart with our proprietary data and insights derived from comprehensive detection coverage coupled with human-led expert investigation and confirmation of threats. The data that powers Deepwatch results from thousands of expert investigations across hundreds of thousands of protected systems.
 
-This report sets itself apart with our proprietary
-data and insights derived from comprehensive
-detection coverage coupled with human-led expert
-investigation and confirmation of threats. The data
-that powers Deepwatch results from thousands of
-expert investigations across hundreds of thousands of
-protected systems.
+Each of the nearly 1.5 million detected security related events that we responded to have one thing in common: They were not prevented by our customers’ expansive security controls—they are the product of our analytics that we use to detect the threats that would otherwise go undetected.
 
-Each of the nearly 1.5 million detected security
-related events that we responded to have one thing in
-common: They were not prevented by our customers’
-expansive security controls—they are the product of
-our analytics that we use to detect the threats that
-would otherwise go undetected.
+When our Security Content team and detection engineers develop detection analytics, they map them to one or more corresponding MITRE ATT&CK techniques. If the detection uncovers a potential threat, a Deepwatch expert will investigate and, if confirmed, provide detailed information about the activity observed.
 
-When our Security Content team and detection
-engineers develop detection analytics, they map
-them to one or more corresponding MITRE ATT&CK
-techniques. If the detection uncovers a potential
-threat, a Deepwatch expert will investigate and, if
-confirmed, provide detailed information about the
-activity observed.
+Because we know which ATT&CK techniques a detection aims to detect and which detection led us to identify a threat, we can look at this data over time and determine technique prevalence, correlation, and much more.
 
-Because we know which ATT&CK techniques a
-detection aims to detect and which detection led us
-to identify a threat, we can look at this data over time
-and determine technique prevalence, correlation, and
-much more.
+To ensure effective detection coverage, Deepwatch takes advantage of a defense in depth strategy encompassing various stages of an attack. As a result, technique coverage is not skewed to a specific stage. This contrasts with other providers whose visibility may focus towards the beginning, middle, or later stages of an intrusion due to technology visibility limitations.
 
-To ensure effective detection coverage, Deepwatch
-takes advantage of a defense in depth strategy
-encompassing various stages of an attack. As a
-result, technique coverage is not skewed to a specific
-stage. This contrasts with other providers whose
-visibility may focus towards the beginning, middle, or
-later stages of an intrusion due to technology visibility
-limitations.
+This report examines the broader landscape of threats that leverage techniques and other tradecraft. We also track specific threats associating malicious or suspicious activity with a new or existing threat activity cluster, specific malware variants, abuse of legitimate tools, and known threat actors. ATI continually tracks and analyzes threats throughout the year, publishing weekly threat intelligence reports.
 
-This report examines the broader landscape
-of threats that leverage techniques and other
-tradecraft. We also track specific threats
-associating malicious or suspicious activity
-with a new or existing threat activity cluster,
-specific malware variants, abuse of legitimate
-tools, and known threat actors. ATI continually
-tracks and analyzes threats throughout the
-year, publishing weekly threat intelligence
-reports.
-
+### 2024 Forecast
 In 2024 organizations can expect:
-
-*   Information Stealing Malware Will Continue to
-    Become More Sophisticated
-*   Mass Vulnerability Exploitation and Supply Chain
-    Attacks Will Continue to be a Significant Threat
-*   Tactics Involving External Remote Services, User
-    Execution, and Application Layer Protocol Will
-    Continue to be Widely Observed
-*   Prevalence of Ai in Malleable Tool Performance and
-    Defense Evasion
-*   Abuse of Legitimate Internet Services Will Continue,
-    Likely Escalating in 2024
-*   Rise of Non-Malware-Based Cyber Attacks in 2024
+- Information Stealing Malware Will Continue to Become More Sophisticated
+- Mass Vulnerability Exploitation and Supply Chain Attacks Will Continue to be a Significant Threat
+- Tactics Involving External Remote Services, User Execution, and Application Layer Protocol Will Continue to be Widely Observed
+- Prevalence of Ai in Malleable Tool Performance and Defense Evasion
+- Abuse of Legitimate Internet Services Will Continue, Likely Escalating in 2024
+- Rise of Non-Malware-Based Cyber Attacks in 2024
 
 ---
 
-# CONTENT
-INSIDE
+## 2023 Trends
+In an ever-evolving cyber threat landscape, understanding the top threats from the previous year is crucial for organizations to bolster their cybersecurity posture. Identifying the top threats provides valuable insights into the methods and motivations of threat actors and serves as a cornerstone for developing robust defense strategies.
 
-*   Introduction
-*   2023 Trends
-*   2023 Observations
-*   2024 Forecast
-*   Method
-*   Appendix
-*   Contact
-
----
-
-# 2023 Top Threats
-
-In an ever-evolving cyber threat landscape, understanding the top
-threats from the previous year is crucial for organizations to bolster their
-cybersecurity posture. Identifying the top threats provides valuable
-insights into the methods and motivations of threat actors and serves as
-a cornerstone for developing robust defense strategies.
-This knowledge enables organizations to anticipate potential attacks,
-prioritize security investments, and effectively tailor their incident
-response plans.By analyzing these critical aspects, organizations can
-see the shifts in the cyber threat environment, identify emerging trends,
-and proactively adapt to the changing tactics of adversaries.
-This, in turn, enhances resilience against cyber threats, ensuring the
-continuity and protection of critical assets, in a landscape marked by
-sophistication and unpredictability.
-
-## MITRE ATT&CK Technique Metrics
-
+### MITRE ATT&CK Technique Metrics
 Total of All Techniques Observed: 1,343,862
+![MITRE ATT&CK TECHNIQUE STATS]
 
-## MITRE ATT&CK TECHNIQUE STATS
-
-## Detection Metrics
-
+### Detection Metrics
 Total of All Detections: 1,351,145
+![DETECTION STATS]
 
-## DETECTION STATS
-
-## Malware and Hacking Tool Metrics
-
+### Malware and Hacking Tool Metrics
 Total Malware Families Reported in OSINT: 207
+![MALWARE STATS]
 
-## MALWARE STATS
-
-## Threat Response Metrics
-
+### Threat Response Metrics
 Total Engagements: 45 (not including benign activity and pentest activity)
-
-## INCIDENT RESPONSE ENGAGEMENT STATS
-
----
-
-# 2023 Observations Quick Look
-
-In 2023, over half of incident response engagements involved
-suspicious activities and account compromises, signifying a
-major challenge for organizations. These included unauthorized
-account access and malicious script executions, often evading
-standard security measures and leading to fraudulent activities.
-This underscored the need for improved email security and
-employee training.
-
-Ransomware remained a significant threat, particularly targeting
-healthcare organizations, with sophisticated attacks using double
-extortion tactics. Deepwatch responded to a range of ransomware
-groups, including ALPHV, Monti, and Blacksuite, highlighting the
-evolving threat landscape.
-
-The year also saw diverse malware and hacking tool attacks, notably
-impacting the manufacturing and finance sectors. Deepwatch
-frequently dealt with threats like Raccoon Stealer, IcedID, and Cobalt
-Strike, emphasizing the need for continuous vigilance and advanced
-security measures.
-
-Additionally, the exploitation of critical vulnerabilities in internet-facing
-systems was prevalent, particularly involving known vulnerabilities.
-This trend called for a proactive risk management approach,
-evidenced by numerous system exploitation responses, including
-ColdFusion Exploitation.
-
-The MITRE ATT&CK framework revealed consistent attack tactics
-in 2023, including Valid Accounts, User Execution, and Brute
-Force, indicating a focus on exploiting legitimate credentials and
-user interaction. The most observed tactics were Application Layer
-Protocol, Valid Accounts, Brute Force, Create or Modify System
-Process, and External Remote Services.
-
-Finally, malware and hacking tool families like Cobalt Strike,
-Mimikatz, and QakBot dominated open-source reports. Known
-for network infiltration and credential theft, these malware families
-continued to challenge global cybersecurity, quickly resuming
-operations even after law enforcement disruptions.
+![INCIDENT RESPONSE ENGAGEMENT STATS]
 
 ---
 
-# 2023
+## 2023 Observations
+In 2023, over half of incident response engagements involved suspicious activities and account compromises, signifying a major challenge for organizations. These included unauthorized account access and malicious script executions, often evading standard security measures and leading to fraudulent activities.
 
-## Suspicious Activity and
+### Suspicious Activity and Account Compromise
+Account compromise and various forms of other suspicious activity were a top threat for organizations in 2023. The activity typically involves unauthorized access to user accounts, malicious network traffic, script execution, suspicious network traffic, and brute force activity.
+
+> "When a threat actor has the keys to the kingdom (valid admin usernames and passwords) they are afforded a level of access and freedom within a network that allows them to bypass standard security measures with ease." — Eric Ford, Deepwatch Senior Intelligent Analyst
+
+### Ransomware
+Ransomware continued to be a significant threat in 2023. The majority of ransomware events we responded to involved the use of double extortion techniques, where threat actors not only encrypt data but also threaten to release stolen data publicly.
+
+### Malware
+In 2023, Deepwatch observed various malware families during incident response engagements. Almost 15% of all incident response engagements involved a malware infection, not including ransomware.
+
+### Exploitation of Critical Vulnerabilities
+In 2023, active exploitation of software vulnerabilities was a common trend. 50% of Deepwatch threat response engagements resulted from ColdFusion exploitation.
+
+### Top ATT&CK Techniques and Detections
+The top 5 MITRE ATT&CK Tactics observed in 2023 were:
+1. T1071: Application Layer Protocol
+2. T1078: Valid Accounts
+3. T1110: Brute Force
+4. T1543: Create or Modify System Process
+5. T1133: External Remote Services
+
+### Cobalt Strike, MimiKatz, and Qakbot
+In 2023, open-source reporting was dominated by a triad of formidable malware families: Cobalt Strike, Mimikatz, and QakBot.
+
+---
+
+## 2024 Forecast
+Heading into 2024, the threat landscape is expected to rapidly evolve with sophisticated threats that demand proactive and dynamic responses.
+
+### Information Stealing Malware
+As cybercriminals look for new ways to access sensitive information for financial gain, information-stealing malware will continue enhancing their capabilities. A significant development at the end of 2023 saw various infostealers incorporate an exploit that allowed cybercriminals to restore expired Google cookies.
+
+### Mass Vulnerability Exploitation
+2023 saw cybercriminals exploiting vulnerabilities to target hundreds of organizations. As more organizations use software-as-a-service to streamline critical processes, the attack surface for cybercriminals continues to expand.
+
+### AI in Defense Evasion
+The rapid advancement of AI’s technical skills along with its increased availability to the general public has provided an easy way to leverage its capabilities without a high level of technical proficiency. Its usage in malicious operations is expected to increase in 2024.
+
+---
+
+## Method
+Deepwatch Threat Intelligence Process:
+1. **Requirements Gathering, Planning, & Direction**: The ATI team mission is to provide intelligence that drives effective business decisions.
+2. **Collection, Collation, & Processing**: ATI collects data through various methods, including open-source and internal intelligence.
+3. **Analysis & Production**: Threat Intelligence Analysts examine and evaluate all the information collected.
+4. **Dissemination**: Relevant intelligence is disseminated both to Deepwatch internally and to our customer base.
+5. **Feedback & Evaluation**: A continuous process that occurs at all stages of the intelligence lifecycle.
+
+![Deepwatch Threat Intelligence Process Diagram]
+
+---
+
+## Appendix
+*(Detailed statistical tables for MITRE ATT&CK techniques and Detection stats are provided in the original document structure.)*
+
+---
+
+## Contact
+For further information, please contact the Deepwatch Adversary Tactics and Intelligence team.
+
+---
+
+er
+
+Meduza
+
+Merdoor
+
+Metasploit
+
+Meterpreter
+
+Millenium RAT
+
+Mimikatz
+
+MINODO
+
+Mirai
+
+Money Message ransomware
+
+More_Eggs
+
+MuddyC2Go
+
+MyDoom
+
+NetSupport RAT
+
+NetWire RAT
+
+NineRAT
+
+Ninja
+
+Nitrogen
+
+Noberus ransomware
+
+Nokoyawa ransomware
+
+Nova
+
+Ntospy
+
+OriginBotnet
+
+Persian loader
+
+Persian RAT
+
+PhonyC2
+
+PikaBot
+
+ICONIC Stealer
+
+MortalKombat ransomware
+
+MalasLocker ransomware
+
+PLANKWALK
+
+Mallox ransomware
+
+PLEAD
+
+40
+
+40
+
+APPeNDix
+
+Malware and Hacking Tool Stats
+
+ALL MALWARE FAMILIES OBSERVED IN 2023 THROUGH OSINT REPORTING
+
+PlugX
+
+PrCtrl Rat
+
+PupyRAT
+
+Qakbot
+
+qBit stealer
+
+Rhysida ransomware
+
+RomCom 3.0
+
+ROOTSAW
+
+SpiderSpring
+
+SpiderStack
+
+SprySOCKS
+
+Rorschach ransomware
+
+Stormkitty
+
+Truebot
+
+TZW ransomware
+
+Ursnif
+
+VectorStealer
+
+Royal ransomware
+
+STRATOFEAR
+
+Vice Society ransomware
+
+Quantum ransomware
+
+Samurai
+
+QuasarRAT
+
+QuiteRAT
+
+Raccoon stealer
+
+Raspberry Robin
+
+RDStealer
+
+Read The Manual Locker
+
+ReconShark
+
+RedLine Clipper
+
+RedLine Stealer
+
+ReGeorg
+
+Remcos
+
+ReShell
+
+Rhadamanthys Stealer
+
+StripedFly
+
+STRRAT
+
+Scarab ransomware
+
+Screenshotter
+
+SugarGh0st RAT
+
+SectopRAT
+
+SIDESHOW
+
+SKIPJACK
+
+Skuld
+
+Sliver
+
+SMOKELOADER
+
+Snake
+
+Snatch ransomware
+
+Socks5Systemz
+
+Sordeal
+
+SpiderPig
+
+SystemBC
+
+TIEDYE
+
+Titan Stealer
+
+TOITOIN
+
+TOUCHKEY
+
+TOUCHMOVE
+
+TOUCHSHIFT
+
+TOUCHSHOT
+
+Trap Stealer
+
+TrickGate
+
+TrillClient
+
+VIDAR stealer
+
+W3LL
+
+WasabiSeed
+
+WaterBear
+
+WhisperGate
+
+WhiteSnake Stealer
+
+WSO-NG web shell
+
+XMRig
+
+XWorm
+
+Zapoa
+
+Zeon ransomware
+
+Zingdoor
+
+ZXShell
+
+Top 10 Malware Families Observed In 2023 Through OSINT Reporting
+
+MALWARE FAMILY
+
+Cobalt Strike
+
+Mimikatz
+
+Qakbot
+
+RedLine stealer
+
+IcedID
+
+LockBit ransomware
+
+ALPHV ransomware
+
+AsyncRAT
+
+Mirai
+
+Emotet
+
+41
+
+41
+
+APPeNDix
+
+Malware and Hacking Tool Stats
+
+TOP 10 MALWARE FAMILIES OBSERVED IN
+JANUARY 2023 THROUGH OSINT REPORTING
+
+TOP 10 MALWARE FAMILIES OBSERVED IN
+FEBRUARY 2023 THROUGH OSINT REPORTING
+
+MALWARE FAMILY
+
+MALWARE FAMILY
+
+1. Cobalt Strike
+
+2. IceID
+
+3. Gootloader
+
+4. Ursnif
+
+5. Qakbot
+
+6. Meterpreter
+
+7. Vidar
+
+8. Mimikatz
+
+9. Rhadamanthys Stealer
+
+10. XMRig coinminer
+
+1. Qakbot
+
+2. Cobalt Strike
+
+3. AsyncRAT
+
+4. Quasar RAT
+
+5. RedLine Stealer
+
+6. IcedID
+
+7. XMRig coinminer
+
+8. Xworm
+
+9. NetWire RAT
+
+10. Gootloader
+
+TOP 10 MALWARE FAMILIES OBSERVED IN
+MARCH 2023 THROUGH OSINT REPORTING
+
+TOP 10 MALWARE FAMILIES OBSERVED IN
+APRIL 2023 THROUGH OSINT REPORTING
+
+MALWARE FAMILY
+
+MALWARE FAMILY
+
+1. Qakbot
+
+2. AsyncRAT
+
+3. PlugX
+
+4. BlackLotus
+
+5. RedLine Stealer
+
+6. Mimikatz
+
+7. Ave Maria
+
+8. Emotet
+
+9. MyDoom
+
+1. Cobalt Strike
+
+2. ALPHV ransomware
+
+3. Qakbot
+
+4. LockBit ransomware
+
+5. Emotet
+
+6. Mirai
+
+7. Mimikatz
+
+8. Maui
+
+9. IcedID
+
+10. LockBit ransomware
+
+10. XMRig coinminer
+
+42
+
+42
+
+APPeNDix
+
+Malware and Hacking Tool Stats
+
+TOP 10 MALWARE FAMILIES OBSERVED IN
+MAY 2023 THROUGH OSINT REPORTING
+
+TOP 10 MALWARE FAMILIES OBSERVED IN
+JUNE 2023 THROUGH OSINT REPORTING
+
+MALWARE FAMILY
+
+1. Cobalt Strike
+
+2. LokiBot
+
+3. NetWire RAT
+
+4. BlackByte ransomware
+
+5. Rhysida ransomware
+
+MALWARE FAMILY
+
+1. Cobalt Strike
+
+2. Mirai
+
+3. Mimikatz
+
+4. Qakbot
+
+5. TrueBot
+
+6. MalasLocker ransomware
+
+6. RedLine Stealer
+
+7. 8Base ransomware
+
+8. Babuk ransomware
+
+9. LockBit ransomware
+
+10. Diceloader
+
+7. ReGeorg
+
+8. WhisperGate
+
+9. ReconShark
+
+10. Meterpreter
+
+TOP 10 MALWARE FAMILIES OBSERVED IN
+JULY 2023 THROUGH OSINT REPORTING
+
+TOP 10 MALWARE FAMILIES OBSERVED IN
+AUGUST 2023 THROUGH OSINT REPORTING
+
+MALWARE FAMILY
+
+MALWARE FAMILY
+
+1. Cobalt Strike
+
+2. ALPHV ransomware
+
+3. Metasploit
+
+4. Mimikatz
+
+5. LockBit ransomware
+
+6. GuLoader
+
+7. Emotet
+
+8. Meterpreter
+
+9. IcedID
+
+10. Bumblebee
+
+1. Cobalt Strike
+
+2. LummaC2
+
+3. Nitrogen
+
+4. AsyncRAT
+
+5. Metasploit
+
+6. LockBit ransomware
+
+7. CL0P ransomware
+
+8. BlackByte ransomware
+
+9. BianLian ransomware
+
+10. Qakbot
+
+43
+
+43
+
+APPeNDix
+
+Malware and Hacking Tool Stats
+
+TOP 10 MALWARE FAMILIES OBSERVED IN
+SEPTEMBER 2023 THROUGH OSINT REPORTING
+
+TOP 10 MALWARE FAMILIES OBSERVED IN
+OCTOBER 2023 THROUGH OSINT REPORTING
+
+MALWARE FAMILY
+
+1. Cobalt Strike
+
+2. RedLine Stealer
+
+3. Metasploit
+
+4. Mimikatz
+
+5. Nokoyawa ransomware
+
+6. Akira ransomware
+
+7. LummaC2
+
+8. Whirlpool
+
+9. IcedID
+
+10. SKIPJACK
+
+MALWARE FAMILY
+
+1. Cobalt Strike
+
+2. Mimikatz
+
+3. LummaC2
+
+4. DarkGate
+
+5. IcedID
+
+6. AvosLocker ransomware
+
+7. ALPHV ransomware
+
+8. RedLine Stealer
+
+9. Rhysida ransomware
+
+10. Qakbot
+
+TOP 10 MALWARE FAMILIES OBSERVED IN
+NOVEMEBER 2023 THROUGH OSINT REPORTING
+
+TOP 10 MALWARE FAMILIES OBSERVED IN
+DECEMBER 2023 THROUGH OSINT REPORTING
+
+MALWARE FAMILY
+
+1. Cobalt Strike
+
+2. AsyncRAT
+
+3. ALPHV ransomware
+
+4. Rhysida ransomware
+
+5. Mimikatz
+
+6. Agent Tesla
+
+7. Remcos
+
+8. SystemBC
+
+9. DarkGate
+
+10. RedLine Stealer
+
+MALWARE FAMILY
+
+1. Cobalt Strike
+
+2. Mimikatz
+
+3. LockBit ransomware
+
+4. Qakbot
+
+5. DarkGate
+
+6. AsyncRAT
+
+7. Babuk ransomware
+
+8. LokiBot
+
+9. Nokoyawa ransomware
+
+10. AppleSeed
+
+44
+
+44
+
+APPeNDix
+
+Threat Response Metrics
+
+TOP ENGAGEMENT TYPE
+
+ENGAGEMENT TYPE
+
+NUMBER
+
+PERCENTAGE
+
+Suspicious Activity
+
 Account Compromise
-Dominated Incident
-Response Engagement
-
-Account compromise and various forms of other suspicious
-activity were a top threat for organizations in 2023. The activity
-typically involves unauthorized access to user accounts, malicious
-network traffic, script execution, suspicious network traffic, and brute
-force activity to carry out fraudulent activities, such as stealing sensitive
-information or requesting wire transfers. Additionally, these attacks
-can be challenging to detect and prevent because cybercriminals use
-compromised accounts to access various data and perform actions,
-such as sending phishing emails and setting inbox rules. Whereas
-various suspicious activities may bypass security solutions. As a result,
-organizational leadership expects their security teams to increase their
-focus on email security and employee training to mitigate the risk of BEC
-and EAC in 2024.
-
-> When a threat actor has the keys to the kingdom
-> (valid admin usernames and passwords) they
-> are afforded a level of access and freedom within
-> a network that allows them to bypass standard
-> security measures with ease. These credentials can
-> be used to perform actions with the same authority
-> as legitimate administrators, rendering traditional
-> detection mechanisms ineffective.
->
-> — Eric Ford, Deepwatch Senior Intelligent Analyst
-
-*   In Q1, over 50% of threat
-    response engagements resulted
-    from account compromises and
-    suspicious activities, including
-    social engineering attacks on IT help
-    desks, abnormal O365 access with
-    unauthorized inbox rule creations,
-    RDP brute force attacks, and the
-    execution of malicious scripts and
-    applications.
-*   Over 50% of all incident
-    response engagements involved
-    suspicious activity or account
-    compromise, encompassing
-    everything from unauthorized
-    account access and various
-    activities to access a user account
-    to suspicious network traffic and
-    brute force activity.
-*   Deepwatch responded to account
-    compromise and malicious activity
-    for organizations across nine
-    different industries, predominantly
-    in the finance and insurance,
-    manufacturing, and health care and
-    social assistance sectors.
-
----
-
-# 2023
-
-## Ransomware Still
-Continues to Affect
-Many Industry Sectors
-
-Ransomware continued to be a significant threat in 2023,
-as cybercriminals continued to use this type of malware to
-hold organizations’ data and systems hostage for financial
-gain. Despite increased awareness and efforts by businesses and
-governments to protect against ransomware attacks, the frequency
-and sophistication of these attacks continued to advance. The use of
-double extortion techniques, where attackers encrypt data and threaten
-to release stolen data publicly, added to the pressure on organizations
-to pay the ransom. Businesses continue to incur significant losses
-due to ransomware attacks, both from the ransomware payment and
-operational costs due to disruption of service and restoration.
-
-*   The majority of
-    ransomware events we
-    responded to involved
-    the use of double
-    extortion techniques,
-    where threat actors not only
-    encrypt data but also, threaten
-    to release stolen data publicly,
-    adding to the pressure on
-    organizations to pay the ransom.
-*   Health Care and Social Assistance
-    organizations were the leading
-    targets for ransomware incidents
-    observed and responded to by
-    Deepwatch.
-*   Deepwatch responded to incidents
-    involving ALPHV, Monti, and
-    Blacksuite Ransomware threat
-    groups. Several incidents involved
-    the exfiltration of data.
-
----
-
-# 2023
-
-## Malware
-
-In 2023, Deepwatch observed various malware families
-during incident response engagements, highlighting the
-evolving nature of cyber threats. Various malware families have
-different purposes, from dropping additional malware and data theft
-to establishing command and control to enrolling the infected device
-in a botnet. Our team detected and responded to various malware
-infections, such as Raccoon Stealer, IcedID, Cobalt Strike, ngrok
-usage, and malicious script executions in customer environments.
-This diverse range of threats underscores the need for continuous
-vigilance and advanced security measures in the ever-changing
-landscape of cyber threats.
-
-*   Almost 15% of all incident
-    response engagements involved
-    a malware infection, not
-    including ransomware.
-*   Nearly all infections impacted the
-    manufacturing and finance and
-    insurance sectors.
-*   64 Cyber Intel Briefs
-    published in the last year involved
-    malware.
-
----
-
-# 2023
-# 2023
-
-## Exploitation of Critical
-Vulnerabilities for
-Internet-Facing Systems
-
-In 2023, active exploitation of software vulnerabilities was a
-common trend observed in the threat landscape. We observed
-this trend across various industries and organizations, significantly
-impacting incident response efforts. Many organizations responded
-to multiple instances of active exploitation, often involving known
-vulnerabilities and publicly available exploit code. Despite the efforts
-of security teams to patch and secure systems, the speed and
-sophistication of attackers made it challenging to prevent or quickly
-remediate these types of incidents. Looking forward, organizations
-should take additional steps to be more vigilant and proactive in their
-approach to risk management to mitigate the impact posed by active
-exploitation.
-
-*   50% of Deepwatch threat
-    response engagements
-    resulted from coldfusion exploitation.
-*   10% of all incident response
-    engagements
-    involved significant system
-    exploitation.
-*   9 customer advisories
-    involved vulnerabilities being
-    actively exploited against
-    internet-facing systems.
-
----
-
-# 2023
-
-## Top ATT&CK Techniques
-and Detections
-Observed in 2023
-
-In 2023, the cybersecurity landscape was dominated by a
-consistent pattern of attack tactics and threat detections.
-
-They underscore a persistent focus of threat actors on exploiting
-system vulnerabilities and leveraging legitimate credentials for
-unauthorized access.
-
-This trend suggests that threat actors are increasingly bypassing
-conventional security measures, emphasizing the need for robust
-identity and access management. Trends demand continuous
-monitoring of system processes and network activities.
-
-The top detections, particularly the recurring instances of Suspicious
-Activity and Increasing Risk Score observed in the majority of months,
-highlight the critical importance of proactive threat detection and risk
-assessment strategies.
-
-The frequent occurrence of Internal Network Service Discovery and
-Increased Activity by New Threat Object detections further indicates
-that adversaries constantly evolve their methods,. It demands a
-dynamic and adaptive security posture that can quickly respond to
-emerging threats and anomalies within the network infratstructure.
-
-### Top 5 MITRE ATT&CK
-Tactics Observed in 2023
-
-*   T1071: Application Layer Protocol
-*   T1078: Valid Accounts
-*   T1110: Brute Force
-*   T1543: Create or Modify
-    System Process
-*   T1133: External Remote Services
-
-The following MITRE ATT&CK
-tactics placed in the Top 10 of
-observed tactics in every
-month of 2023
-
-*   T1078: Valid Accounts
-*   T1204: User Execution
-*   T1046: Network Service Scanning
-*   T1543: Create or Modify
-    System Process
-*   T1110: Brute Force
-*   T1071: Application Layer Protocol
-
----
-
-# 2023
-
-## Top 5 Detections
-Observed in 2023
-
-*   **External Authentication from Non-Excluded Country**: The
-    objective of this detection rule is to detect suspicious authentications
-    to resources by monitoring the country information that the user’s
-    are logging in from. If the user is logging in from a Country that is not
-    expected, then it will alert.
-*   **Suspicious Activity**: This detection rule’s objective is to detect when
-    many distinct anomalies are observed for a single user or system over a
-    7 day time period.
-*   **Increasing Risk Score**: This detection rule is intended to detect when
-    the risk score for a single user or system rapidly increases in a 24 hour
-    time period.
-*   **Increased Activity by New Threat Object**: This detection rule
-    is intended to detect when a new threat object (i.e., a known malicious
-    domain, IP address, etc.) is observed across multiple risk objects or
-    detection/anomaly searches in a 7 day time period.
-*   **Internal Network Service Discovery**: This rule is designed to detect
-    an internal host sending unsolicited packets to many destinations over a
-    single port to map the network or discover live hosts to exploit.
-
-### Top Detections Observed
-in the Majority of Months
-in 2023
-
-*   Suspicious Activity
-    10 months
-*   Increasing Risk Score
-    10 months
-*   Internal Network
-    Service Discovery
-    7 months
-*   Increased Activity
-    by New Threat Object
-    7 months
-
----
-
-# 2023
-
-## Cobalt Strike, MimiKatz,
-and Qakbot Among the
-Most Reported Malware
-
-In 2023, open-source reporting was dominated by a triad of
-formidable malware families: Cobalt Strike, Mimikatz, and
-QakBot. These families not only persisted as significant threats ,but
-also topped the list of the most reported malware in hundreds of open-
-source reports gathered from various vendors throughout the year.
-
-Cobalt Strike, originally a legitimate penetration testing tool, was
-frequently exploited by attackers for its advanced network infiltration
-and reconnaissance capabilities.
-
-Mimikatz, on the other hand, gained notoriety for its effectiveness in
-harvesting credentials from Windows systems, making it a go-to tool
-for threat actors seeking unauthorized access.
-
-QakBot, a multifaceted and evolving banking trojan, continued to
-cause disruptions with capabilities including credential theft and
-network propagation.
-
-While law enforcement action in August 2023 disrupted QakBot
-operations, it was not long before they resumed operations in
-December.
-
-The prevalence of these three malware families in 2023 underscores
-their adaptability, sophistication, and the continuous challenge they
-pose to cybersecurity defenses worldwide.
-
-*   Cobalt Strike consistently
-    ranked as the most reported
-    malware family in almost every
-    month of 2023.
-*   MimiKatz consistently ranked in
-    the top 10 most reported malware
-    families, making the top 10 in 9 of the
-    12 months of 2023.
-*   QakBot was consistently ranked in
-    the top 10 most reported malware
-    families, and topped the list in two of
-    the 12 months.
-
----
-
-# 2023
-
-## Recommendations
-
-### Perimeter (Internet Edge)
-
-*   Organizations should implement a perimeter discovery and attack
-    surface monitoring solution, like Deepwatch’s Threat Signal, to identify
-    internet-exposed systems and the threats targeting these systems.
-    Deepwatch’s Threat Signal adopts an 'outside-in' perspective, evaluating
-    an organization's externally accessible presence from the perspective of
-    an attacker to pinpoint risky systems and services.
-*   Regularly scan systems for vulnerabilities and patch systems as soon
-    as possible. Prioritization should be placed on those systems that are
-    internet-exposed with a focus on known exploited vulnerabilities like those
-    featured in CISA’s Known Exploited Vulnerabilities Catalog.
-*   Assets on the public internet expose exploitable services, such as RDP.
-    Where these services must be exposed, appropriate compensating
-    controls should be implemented to prevent common forms of abuse and
-    exploitation. All unnecessary OS applications and network protocols
-    should be disabled on internet-facing assets.
-*   Integrating a secure email gateway as part of the organizational
-    technology stack can significantly reduce the risk of phishing emails
-    arriving in the end-user's inboxes.
-*   Prevent users from launching embedded files in Microsoft OneNote files,
-    like .hta, .bat, .com, .cmd, .exe, .js, .jse, ps1, .scr, .vbs, and .wsf, through
-    Group Policy settings by using the “Embedded Files Blocked Extensions”
-    template available from Microsoft here.
-*   The KEV catalog sends a clear message to all
-    organizations to prioritize remediation efforts on the
-    subset of vulnerabilities that are causing immediate
-    harm based on adversary activity. Organizations
-    should use the KEV catalog as an input to their
-    vulnerability management prioritization framework.
-    -CISA
-
-### Accounts
-
-*   Integrating phishing-resistant multi-factor authentication (MFA)
-    as part of the organizational policy can significantly reduce the risk of a
-    cybercriminal gaining control of valid credentials for additional tactics
-    such as initial access, lateral movement, and collecting information.
-    Organizations can also use phishing-resistant MFA to restrict access to
-    cloud resources and APIs.
-*   An enforced organization-wide policy and process that requires
-    changing default passwords for all hardware, software, and firmware
-    before being deployed on any network. Organizations have a system-
-    enforced policy requiring a minimum password length of 15 or more
-    characters for all password-protected IT assets, and all OT assets are
-    technically possible.
-*   No user accounts have administrator or super-user privileges.
-    Administrators maintain separate user accounts for all actions and
-    activities not associated with the administrator role (e.g. for business
-    email, web browsing, etc.)—Disable remote PowerShell execution for
-    non-administrative users where possible.
-
-### Network & Host
-
-*   Determine if certain websites or attachment types (such as Telegram,
-    Discord, .lnk, and .iso.) are necessary for business operations and
-    block access if security analysts cannot monitor the activity well or if it
-    poses a significant risk.
-*   Prevent users from opening scripts, like .hta, .jse, .js, .vbs, and .wsf,
-    through Group Policy settings and prevent the execution of script
-    interpreters (MSHTA.exe and WSCRIPT.exe) through Group Policy or
-    Application Control.
-*   A system-enforced policy that disables Microsoft Office macros, or
-    similar embedded code, by default on all devices. If macros must be
-    enabled in specific circumstances, there is a policy for authorized users
-    to request that macros are enabled on specific assets.
-*   Employ an anti-virus or EDR solution that can automatically quarantine
-    suspicious files.
-*   Security applications that look for behavior used during exploitation can
-    be used to mitigate some exploitation behavior. Control flow integrity
-    checking is another way to potentially identify and stop a software
-    exploit from occurring.
-
-### Disaster Recovery
-
-*   Customers are highly encouraged to establish an incident response
-    plan and frequently test it. These plans should include the calculation
-    for the amount of time it would take to restore from backups and the
-    overall cost. Customers should restore data from backups when testing
-    their plans.
-*   Customers with encrypted off-site backups should ensure that the
-    digital decryption key or the applications needed to restore are not
-    stored on a local file-sharing network and access is tightly controlled.
-
----
-
-# 2024 Forecast Quick Look
-
-Heading into 2024, the threat landscape is expected to rapidly
-evolve with sophisticated threats that demand proactive and
-dynamic responses.
-
-Information-stealing malware will likely become more advanced,
-capitalizing on compromised credentials and expanding the
-cybercriminal toolbox beyond traditional malware.
-
-Organizations will also witness a surge in mass vulnerability
-exploitation and supply chain attacks, with cybercriminals
-exploiting software-as-a-service vulnerabilities. They reveal
-the critical need for organizations to validate their suppliers'
-cybersecurity practices.
-
-Furthermore, predictive analysis indicates a continued reliance
-on tactics like External Remote Services, User Execution, and
-Application Layer Protocol, as per the MITRE ATT&CK framework,
-signaling persistent and sophisticated attack vectors.
-
-The integration of Artificial Intelligence in malware development
-will add a new dimension to threat capabilities, enhancing evasion
-techniques and adaptability.
-
-The abuse of legitimate internet services is expected to escalate,
-with platforms like GitHub and Telegram being increasingly leveraged
-for malicious purposes.
-
-Finally, organizations may see more malware and tool-less attacks as
-threat actors leverage compromised credentials to access networks
-and employ various techniques to avoid files. As the threat landscape
-evolves, these trends underscore the urgent need for robust and
-adaptable cybersecurity strategies in 2024.
-
----
-
-# 2024
-
-## Information Stealing
-Malware Will Continue
-to Become More
-Sophisticated
-
-As cybercriminals look for new ways to access sensitive
-information for financial gain, information-stealing malware
-will continue enhancing their capabilities, increasing in
-sophistication in 2024. As long as organizations allow users to
-store credentials in their browsers and policies are not established
-to invalidate sessions after they have ended, cybercriminals will
-continue to use infostealers to compromise accounts.
-
-In addition, as more businesses and individuals work remotely
-and use devices to access sensitive internet-facing systems,
-the attack surface increases, giving cybercriminals more attack
-vectors. As a result, we can expect to see a continued increase
-in the development and use of information-stealing malware as a
-means for cybercriminals to steal sensitive information and sell it on
-cybercriminal marketplaces.
-
-*   A significant development at
-    the end of 2023 saw various
-    infostealers incorporate an exploit
-    that allowed cybercriminals to
-    restore expired Google cookies,
-    even after users reset their
-    passwords.
-*   With infostealers now able to
-    restore expired Google cookies,
-    we expect the continuous
-    enhancement of infostealers to
-    incorporate additional exploitation
-    techniques and vulnerabilities.
-    Many are expected to become
-    all-purpose data stealers,
-    targeting other data types beyond
-    passwords stored in browsers.
-*   The rise in infostealing malware
-    in 2023 will see an increase in
-    stolen credentials being sold
-    on cybercriminal marketplaces.
-    This trend will likely result in gaps
-    between initial infostealer infection
-    and follow-on post-infection
-    activity.
-
----
-
-# 2024
-
-## Mass Vulnerability
-Exploitation and Supply
-Chain Attacks Will Continue
-to be a Significant Threat
-
-2023 saw cybercriminals exploiting vulnerabilities to target
-hundreds of organizations. Significant events included
-mass exploitation of vulnerabilities in Fortra GoAnywhere,
-Progress MOVEit Transfer, and Citrix, as well as the supply
-chain attacks against 3CX, JetBrains, and Okta.
-
-As more organizations use software-as-a-service to streamline critical
-processes, the attack surface for cybercriminals continues to expand.
-As more sensitive information is stored and processed online, the
-incentives for attackers to find and exploit vulnerabilities in these
-software systems will only continue to grow. Many organizations do
-not validate the cybersecurity of their suppliers, making them attractive
-targets for cybercriminals. This highlights the need for organizations to
-vet the cybersecurity practices of their suppliers, before acquiring any
-software solution.
-
-*   Over the past year, the trend of
-    exploiting vulnerabilities in software
-    supply chains indicates that
-    cybercriminals will likely continue
-    to exploit these vulnerabilities in 2024.
-*   Cybercriminals can effortlessly identify
-    vulnerable systems for exploitation,
-    allowing them to quickly develop
-    exploit code or weaponize publicly
-    available proof-of-concept code.
-*   Organizations are forced to rely on the
-    security practices of their suppliers
-    to ensure their data is safe. This is
-    compounded by organizations' lack of
-    knowledge of their full attack surface
-    and the race against cybercriminals
-    in identifying vulnerable systems
-    and must first ensure the patches
-    do not “break” current production
-    systems giving the upper hand to
-    cybercriminals.
-
----
-
-# 2024
-
-## Techniques Involving External
-Remote Services, User Execution,
-and Application Layer Protocol Will
-Continue to be Widely Observed
-
-Our predictive analysis, leveraging advanced modeling techniques on historical
-cybersecurity data, provides a forecast for the upcoming year that is crucial for shaping
-cybersecurity strategies. We focused on the three most observed MITRE ATT&CK
-techniques - 'External Remote Services,' 'User Execution,' and 'Application
-Layer Protocol.'
-
-The model anticipates a fluctuating yet consistently high occurrence for
-External Remote Services. Adversaries initially leverage external-facing remote services
-to access and/or persist within a network. This suggests threat actors' sustained reliance on
-this tactic, necessitating continued vigilance and enhanced defensive measures in network
-security and access control protocols. Remote services such as VPNs, Citrix, and other
-access mechanisms allow users to connect to internal enterprise network resources from
-external locations. Often, remote service gateways manage connections and credential
-authentication for these services.
-
-User Execution is forecasted to maintain a relatively stable presence. This
-stability implies continued reliance on users to interact with files and highlights the
-importance of ongoing user education and behavioral analysis as key defense strategies.
-Adversaries rely on user interaction for the execution of malicious code. User interaction
-may include installing applications, opening email attachments, or granting higher document
-permissions. Adversaries may embed malicious code or visual basic code into files such as
-Microsoft Word and Excel documents or software installers. Execution of this code requires
-that the user enable scripting or write access within the document. Embedded code may not
-always be noticeable to the user, especially in cases of trojanized software.
-
-The Application Layer Protocol technique is expected to increase slightly in use.
-This uptrend underscores a growing sophistication in attack methods targeting application
-layers, emphasizing the need for robust application security and real-time monitoring
-systems. Adversaries communicate using OSI application layer protocols to avoid detection/
-network filtering by blending in with existing traffic. Commands to the remote system, and
-often the results of those commands, will be embedded within the protocol traffic between
-the client and server. Adversaries may utilize many protocols, including those used for web
-browsing, transferring files, electronic mail, or DNS. For connections that
+
+Ransomware Incident
+
+Malware Infection
+
+Vulnerability Exploitation
+
+Phishing
+
+Supply Chain
+
+Insider Threat
+
+12
+
+11
+
+7
+
+6
+
+4
+
+2
+
+1
+
+1
+
+27%
+
+25%
+
+16%
+
+13%
+
+9%
+
+4%
+
+2%
+
+2%
+
+ENGAGEMENTS BY INDUSTRY
+
+INDUSTRY
+
+TOTAL
+
+PERCENTAGE
+
+Finance and Insurance
+
+Manufacturing
+
+Health Care and Social Assistance
+
+Professional, Scientific, and Technical Services
+
+Arts, Entertainment, and Recreation
+
+Utilities
+
+Wholesale Trade
+
+Transportation and Warehousing
+
+Information
+
+Educational Services
+
+Accommodation and Food Services
+
+Other Services
+
+14
+
+10
+
+8
+
+4
+
+2
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+1
+
+31%
+
+22%
+
+18%
+
+9%
+
+4%
+
+2%
+
+2%
+
+2%
+
+2%
+
+2%
+
+2%
+
+2%
+
+45
+
+45
+
+APPeNDix
+
+Threat Response Metrics
+
+TOP ENGAGEMENT TYPE
+
+ENGAGEMENTS BY MONTH
+
+Suspicious Activity by Industry
+
+NUMBER
+
+MONTH
+
+NUMBER
+
+PERCENTAGE
+
+November
+
+11
+
+February
+
+March
+
+January
+
+October
+
+April
+
+June
+
+July
+
+May
+
+August
+
+September
+
+December
+
+6
+
+6
+
+5
+
+5
+
+3
+
+3
+
+3
+
+2
+
+1
+
+0
+
+0
+
+24%
+
+13%
+
+13%
+
+11%
+
+11%
+
+7%
+
+7%
+
+7%
+
+4%
+
+2%
+
+0%
+
+0%
+
+Manufacturing
+Health Care and Social Assistance
+Finance and Insurance
+Utilities
+Professional, Scientific, and Technical Services
+Educational Services
+Arts, Entertainment, and Recreation
+Accommodation and Food Services
+
+3
+2
+2
+1
+1
+1
+1
+1
+
+Account Compromise by Industry
+
+NUMBER
+
+Finance and Insurance
+Professional, Scientific, and Technical Services
+Manufacturing
+Health Care and Social Assistance
+Information
+
+4
+2
+2
+2
+1
+
+Ransomware Incident by Industry
+
+NUMBER
+
+Health Care and Social Assistance
+Transportation and Warehousing
+Manufacturing
+Arts, Entertainment, and Recreation
+
+4
+1
+1
+1
+
+Malware Infection by Industry
+
+NUMBER
+
+Manufacturing
+Finance and Insurance
+Wholesale Trade
+
+3
+2
+1
+
+Vulnerability Exploitation by Industry
+
+NUMBER
+
+Finance and Insurance
+Professional, Scientific, and Technical Services
+
+3
+1
+
+46
+
+46
+
+Deepwatch® is the leading managed security
+platform for the cyber resilient enterprise.
+
+The Deepwatch Managed Security Platform and security
+experts provide enterprises with 24x7x365 cyber
+resilience, rapid detections, high fidelity alerts, reduced
+false positives, and automated actions. We operate as an
+extension of cybersecurity teams by delivering unrivaled
+security expertise, unparalleled visibility across your attack
+surface, precision response to threats, and the best return
+on your security investments. The Deepwatch Managed
+Security Platform is trusted by many of the world’s leading
+brands to improve their security posture, cyber resilience,
+and peace of mind.
+
+Deepwatch
+Learn more: www.deepwatch.com
+
+Follow us:
+
+Blog | LinkedIn | Facebook
+
+Ready to bolster your defenses?
+Speak with a Deepwatch Security Expert
+
+© Copyright 2024 Deepwatch incorporated.
+All Rights Reserved.
