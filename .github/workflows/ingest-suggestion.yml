@@ -25,14 +25,68 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # stefanbuck/github-issue-parser reads the issue body and maps each
-      # form field (by its 'id') to a step output.
-      # Fields used: organization_name, report_title, report_year, report_url, report_category
+      # Parse issue form fields directly from the issue body using the GitHub
+      # API via gh CLI. This avoids the fragile stefanbuck/github-issue-parser
+      # action which silently returns empty outputs when it cannot match the
+      # issue body against the template (e.g. on 'labeled' events, encoding
+      # differences, or action version changes).
+      #
+      # GitHub issue forms render each field as:
+      #   ### <Field Label>
+      #   (blank line)
+      #   <value>
+      # We extract values by finding the heading and taking the next non-blank line.
       - name: Parse issue content
         id: parse
-        uses: stefanbuck/github-issue-parser@v3
-        with:
-          template-path: .github/ISSUE_TEMPLATE/report-suggestion.yml
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          # Fetch the raw issue body via the API (guaranteed accurate regardless of event type)
+          BODY=$(gh issue view "$ISSUE_NUMBER" --json body -q '.body')
+
+          parse_field() {
+            local heading="$1"
+            # Match the heading line (case-insensitive), skip blank lines, return first content line
+            echo "$BODY" | awk -v h="$heading" '
+              BEGIN { found=0 }
+              tolower($0) == tolower("### " h) { found=1; next }
+              found && /^[[:space:]]*$/ { next }
+              found { print; exit }
+            ' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//'
+          }
+
+          ORG=$(parse_field "Organization Name")
+          TITLE=$(parse_field "Report Title")
+          YEAR=$(parse_field "Report Year")
+          URL=$(parse_field "Direct PDF URL")
+          CATEGORY=$(parse_field "Category")
+
+          echo "Parsed fields:"
+          echo "  organization_name = '$ORG'"
+          echo "  report_title      = '$TITLE'"
+          echo "  report_year       = '$YEAR'"
+          echo "  report_url        = '$URL'"
+          echo "  report_category   = '$CATEGORY'"
+
+          # Write to GITHUB_OUTPUT — use heredoc delimiter to handle special chars in values
+          {
+            echo "organization_name<<__EOF__"
+            echo "$ORG"
+            echo "__EOF__"
+            echo "report_title<<__EOF__"
+            echo "$TITLE"
+            echo "__EOF__"
+            echo "report_year<<__EOF__"
+            echo "$YEAR"
+            echo "__EOF__"
+            echo "report_url<<__EOF__"
+            echo "$URL"
+            echo "__EOF__"
+            echo "report_category<<__EOF__"
+            echo "$CATEGORY"
+            echo "__EOF__"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Validate parsed fields
         id: validate

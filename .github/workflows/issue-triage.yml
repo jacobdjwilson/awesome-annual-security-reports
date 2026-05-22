@@ -15,9 +15,14 @@ jobs:
   triage:
     runs-on: ubuntu-latest
 
-    # Only run on comments that start with a slash command on discovery issues
+    # Only run on slash commands posted on automated discovery issues.
+    # Discovery issues carry both 'automated' and 'report-suggestion' labels.
+    # We gate on 'automated' (not just 'report-suggestion') so that manually
+    # submitted report suggestions (ingest-suggestion workflow) are never
+    # accidentally processed here.
     if: |
       startsWith(github.event.comment.body, '/') &&
+      contains(github.event.issue.labels.*.name, 'automated') &&
       contains(github.event.issue.labels.*.name, 'report-suggestion')
 
     steps:
