@@ -2,7 +2,7 @@ name: Refresh Old Conversions
 
 on:
   schedule:
-    - cron: '0 11 * * *'  # 6:00 AM ET daily
+    - cron: '0 13 * * *'  # 8:00 AM ET daily
 
   workflow_dispatch:
     inputs:

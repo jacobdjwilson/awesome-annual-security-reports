@@ -1,13 +1,14 @@
 name: Repository Integrity Validator
 
 on:
-  # Fires whenever either processing pipeline completes.
-  # A gate job below blocks validation until BOTH pipelines are idle,
-  # preventing false-positive findings from half-written files.
+  # Fires whenever a processing pipeline completes (including ingest).
+  # The gate job below blocks validation until all monitored pipelines are
+  # idle on the current SHA, preventing false-positives from in-flight writes.
   workflow_run:
     workflows:
       - "Security Reports Processing Pipeline"
       - "Refresh Old Conversions"
+      - "Auto-Ingest Report Suggestion"
     types: [completed]
     branches: [main]
 
@@ -90,6 +91,7 @@ jobs:
           MONITORED_WORKFLOWS=(
             "Security Reports Processing Pipeline"
             "Refresh Old Conversions"
+            "Auto-Ingest Report Suggestion"
           )
 
           BUSY=false

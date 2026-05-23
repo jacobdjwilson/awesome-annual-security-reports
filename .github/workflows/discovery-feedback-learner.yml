@@ -2,8 +2,11 @@ name: Discovery Feedback Learner
 
 on:
   schedule:
-    # Run every Monday at 7:00 AM ET (11:00 UTC) — after a week of triage activity
-    - cron: '0 11 * * 1'
+    # Run every Monday at 7:00 AM ET (12:00 UTC) — 1 hour after the
+    # Security Report Discovery run (06:00 AM ET) so triage activity
+    # from the prior week is captured and any Monday discovery issues
+    # are committed before the learner reads discovery-feedback.json.
+    - cron: '0 12 * * 1'
 
   # Also triggered automatically when the triage workflow closes enough issues:
   # The issue-triage workflow can dispatch this via repository_dispatch once

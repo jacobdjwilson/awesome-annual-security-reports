@@ -9,8 +9,6 @@ on:
     branches: [main, development]
     paths:
       - 'Annual Security Reports/**/*.pdf'
-  schedule:
-    - cron: '0 12 * * *'  # 7:00 AM ET daily
   workflow_dispatch:
     inputs:
       year_filter:
@@ -428,9 +426,13 @@ jobs:
           SCAN_MODE="${SCAN_MODE:-skipped}"
           FILE_COUNT="${FILE_COUNT:-0}"
 
-          # Sanitize FILE_COUNT to a pure integer (guard against any whitespace)
+          # Sanitize FILE_COUNT to a pure integer — guard against whitespace,
+          # empty string, or non-numeric values that would cause "Invalid format"
+          # errors when the runner validates $GITHUB_OUTPUT entries.
           FILE_COUNT=$(echo "$FILE_COUNT" | tr -d '[:space:]')
-          FILE_COUNT="${FILE_COUNT:-0}"
+          if ! [[ "$FILE_COUNT" =~ ^[0-9]+$ ]]; then
+            FILE_COUNT="0"
+          fi
 
           echo "has_files=$HAS_FILES"   >> $GITHUB_OUTPUT
           echo "scan_mode=$SCAN_MODE"   >> $GITHUB_OUTPUT
