@@ -1,236 +1,593 @@
 # 2025 SECURITY MEGATRENDS
 
 ## Table of Contents
-- [STAFF](#staff)
-- [Copyright 2025 Security Industry Association. Reproduction prohibited without prior permission.](#copyright-2025-security-industry-association-reproduction-prohibited-without-prior-permission)
-- [Security Industry Association](#security-industry-association)
-- [2025 SECURITY MEGATRENDS™](#2025-security-megatrends)
-- [SECURING THE CHANNEL](#securing-the-channel)
-- [Sincerely, Scott Dunn Chair, SIA Board of Directors](#sincerely-scott-dunn-chair-sia-board-of-directors)
-- [THANK YOU SIA THANKS ITS 2025 SNG SPONSORS](#thank-you-sia-thanks-its-2025-sng-sponsors)
-- [SUPPORTERS](#supporters)
-- [MEDIA PARTNERS](#media-partners)
-- [THE BUSINESS OF SECURITY](#the-business-of-security)
-- [SAVE THE DATE OCTOBER 14-15, 2025 | NYC](#save-the-date-october-14-15-2025--nyc)
-- [HOW WE DEFINED AND RESEARCHED THE 2024 SIA SECURITY MEGATRENDS](#how-we-defined-and-researched-the-2024-sia-security-megatrends)
-- [Geoff Kohl Editor, 2025 Security Megatrends report Sr. Director of Marketing, SIA](#geoff-kohl-editor-2025-security-megatrends-report-sr-director-of-marketing-sia)
-- [2025 SECURITY MEGATRENDS](#2025-security-megatrends-1)
-- [1 EVOLUTION OF THE CHANNEL page 7](#1-evolution-of-the-channel-page-7)
-- [2 AI: INTELLIGENT AUTOMATION OF SECURITY page 12](#2-ai-intelligent-automation-of-security-page-12)
-- [3 CORRECTING THE SYSTEMIC UNDERVALUATION OF SECURITY page 15](#3-correcting-the-systemic-undervaluation-of-security-page-15)
-- [4 VISUAL INTELLIGENCE, NOT VIDEO SURVEILLANCE page 17](#4-visual-intelligence-not-video-surveillance-page-17)
-- [5 IT-OT-SECURITY CONVERGENCE page 20](#5-it-ot-security-convergence-page-20)
-- [6 PLATFORM AGGREGATION page 22](#6-platform-aggregation-page-22)
-- [7 DEMOCRATIZATION OF IDENTITY AND MOBILE CREDENTIALS page 24](#7-democratization-of-identity-and-mobile-credentials-page-24)
-- [8 GROWTH OF ADVANCED DETECTION TECHNOLOGIES page 27](#8-growth-of-advanced-detection-technologies-page-27)
-- [9 SHIFT OF INFLUENCE FROM HARDWARE TO SOFTWARE page 29](#9-shift-of-influence-from-hardware-to-software-page-29)
-- [10 SAAS, HAAS, DAAS AND A MANAGED SERVICES FUTURE page 30](#10-saas-haas-daas-and-a-managed-services-future-page-30)
-- [EXECUTIVE TAKEAWAYS](#executive-takeaways)
-- [FOUNDATIONAL TRENDS](#foundational-trends)
-- [CYBERSECURITY](#cybersecurity)
-- [GLOBAL TENSIONS](#global-tensions)
-- [CLOUD MODEL FOR TECHNOLOGY DELIVERY](#cloud-model-for-technology-delivery)
-- [CHANGING ECONOMIC CONDITIONS](#changing-economic-conditions)
-- [SUPPLY CHAIN ASSURANCE](#supply-chain-assurance)
-- [SUSTAINABILITY](#sustainability)
-- [WORKFORCE DEVELOPMENT](#workforce-development)
-- [MEGATREND 1 EVOLUTION OF THE CHANNEL](#megatrend-1-evolution-of-the-channel)
-- [MEGATREND MOVEMENT](#megatrend-movement)
-- [“We have lived in a relatively static world where the risks were redefined periodically and the technology moved relatively slowly. That is just not the case anymore. We are now required to deliver solutions differently and respond more dynamically to evolving risks. We must be able to put solutions in place, leverage these emerging technologies quickly to address these risks and respond to the threats and incidents that occur in the environments that we all work to protect.” – ERIC YUNAG, EXECUTIVE VICE PRESIDENT OF PRODUCTS AND SERVICES, CONVERGINT, AT SECURING NEW GROUND (SNG) 2024](#we-have-lived-in-a-relatively-static-world-where-the-risks-were-redefined-periodically-and-the-technology-moved-relatively-slowly-that-is-just-not-the-case-anymore-we-are-now-required-to-deliver-solutions-differently-and-respond-more-dynamically-to-evolving-risks-we-must-be-able-to-put-solutions-in-place-leverage-these-emerging-technologies-quickly-to-address-these-risks-and-respond-to-the-threats-and-incidents-that-occur-in-the-environments-that-we-all-work-to-protect-eric-yunag-executive-vice-president-of-products-and-services-convergint-at-securing-new-ground-sng-2024)
-- [HOW THE MANUFACTURER CAN HELP](#how-the-manufacturer-can-help)
-- [CONVERGING AND COMPETING](#converging-and-competing)
-- [TRENDS IMPACTING THE CHANNEL](#trends-impacting-the-channel)
-- [Technology Modernization](#technology-modernization)
-- [End-User Requirements](#end-user-requirements)
-- [Market Dynamics](#market-dynamics)
-- [NEW ENTRANTS](#new-entrants)
-- [ARE YOUR CHANNEL BUYERS CHANGING FROM THE TRADITIONAL SECURITY INTEGRATOR?](#are-your-channel-buyers-changing-from-the-traditional-security-integrator)
-- [IMPACT ON THE PRACTITIONER](#impact-on-the-practitioner)
-- [The “Evolution of the Channel” is larger than the impact on integrators. In today’s security industry, roles are changing for manufacturers and distributors also, as traditional roles of demarcation blur and force business model adjustment and new scenarios for engagement with the end user.](#the-evolution-of-the-channel-is-larger-than-the-impact-on-integrators-in-todays-security-industry-roles-are-changing-for-manufacturers-and-distributors-also-as-traditional-roles-of-demarcation-blur-and-force-business-model-adjustment-and-new-scenarios-for-engagement-with-the-end-user)
-- [TRADITIONAL ROLES](#traditional-roles)
-- [EVOLVING ROLES](#evolving-roles)
-- [5 OPPORTUNITIES INTEGRATORS](#5-opportunities-integrators)
-- [EMBED TECHNICAL SECURITY TEAM MEMBERS WITH THEIR CLIENTS.](#embed-technical-security-team-members-with-their-clients)
-- [DELIVER TRUE MANAGED SERVICES.](#deliver-true-managed-services)
-- [SPECIALIZATION.](#specialization)
-- [AGGREGATION OF INSIGHTS.](#aggregation-of-insights)
-- [DEVELOP INTO A “MASTER SYSTEMS INTEGRATOR” ROLE.](#develop-into-a-master-systems-integrator-role)
-- [MEGATREND 2 AI: INTELLIGENT AUTOMATION OF SECURITY](#megatrend-2-ai-intelligent-automation-of-security)
-- [MEGATREND MOVEMENT](#megatrend-movement-1)
-- [“AI brings us to the next level. Not only do I see the door is open, but I also see if someone came in when they shouldn’t have, so we get more value out of that. Instead of making the PACS system the centerpiece to our stack, perhaps we should review and see if AI should be the centerpiece to our stack.” – PHIL JANG, CONVERGED SECURITY LEADER, TIKTOK USDS](#ai-brings-us-to-the-next-level-not-only-do-i-see-the-door-is-open-but-i-also-see-if-someone-came-in-when-they-shouldnt-have-so-we-get-more-value-out-of-that-instead-of-making-the-pacs-system-the-centerpiece-to-our-stack-perhaps-we-should-review-and-see-if-ai-should-be-the-centerpiece-to-our-stack-phil-jang-converged-security-leader-tiktok-usds)
-- [APPLYING AI TO CUSTOMERS’ DATA](#applying-ai-to-customers-data)
-- [IMPACT ON MONITORING](#impact-on-monitoring)
-- [AI IN SECURITY: OVERHYPED?](#ai-in-security-overhyped)
-- [HOW SATISFIED ARE END USERS, CONSULTANTS AND INTEGRATORS WITH THE AI-ENABLED SOLUTIONS CURRENTLY BEING OFFERED TO THEM?](#how-satisfied-are-end-users-consultants-and-integrators-with-the-ai-enabled-solutions-currently-being-offered-to-them)
-- [HOT TAKE “I object to the term ‘artificial intelligence’ because it’s anything but. AI stands for ‘absolute ignorance,’ and the problem with using that term [AI] is we tend to anthropomorphize it. The things that humans do well – computers struggle with them. I like IA instead—‘intelligent automation’ —where you put a human in the loop to provide the judgment and creativity and let the computer do the heavy lifting. Tech can do a good job selecting candidates for the guard industry, but it also overlooks good candidates. There are losses of information, and the current technology we have can’t go beyond a line of knowledge. Humans can, but the tech we have today cannot. AI isn’t a description of the tech – it’s a description of the people using it. It makes people artificially more intelligent. If we rely on their decision making and the computer presents them with an option they don’t understand and they say ‘yes,’ it could be they’re signing on to something that’s contrary to what they wanted but they don’t know it. It’s a statistical inference engine, and ‘There’s lies, there’s damn lies and there’s statistic inference engines.’” – PIERRE RACZ, CEO, GENETEC, SPEAKING AT SNG 2024](#hot-take-i-object-to-the-term-artificial-intelligence-because-its-anything-but-ai-stands-for-absolute-ignorance-and-the-problem-with-using-that-term-ai-is-we-tend-to-anthropomorphize-it-the-things-that-humans-do-well--computers-struggle-with-them-i-like-ia-instead-intelligent-automation-where-you-put-a-human-in-the-loop-to-provide-the-judgment-and-creativity-and-let-the-computer-do-the-heavy-lifting-tech-can-do-a-good-job-selecting-candidates-for-the-guard-industry-but-it-also-overlooks-good-candidates-there-are-losses-of-information-and-the-current-technology-we-have-cant-go-beyond-a-line-of-knowledge-humans-can-but-the-tech-we-have-today-cannot-ai-isnt-a-description-of-the-tech--its-a-description-of-the-people-using-it-it-makes-people-artificially-more-intelligent-if-we-rely-on-their-decision-making-and-the-computer-presents-them-with-an-option-they-dont-understand-and-they-say-yes-it-could-be-theyre-signing-on-to-something-thats-contrary-to-what-they-wanted-but-they-dont-know-it-its-a-statistical-inference-engine-and-theres-lies-theres-damn-lies-and-theres-statistic-inference-engines-pierre-racz-ceo-genetec-speaking-at-sng-2024)
-- [TOP FACTORS LIMITING AI IN SECURITY](#top-factors-limiting-ai-in-security)
-- [DIVIDED PERSPECTIVE: GENERATIVE AI’S IMPACT](#divided-perspective-generative-ais-impact)
-- [IMPACT ON THE PRACTITIONER](#impact-on-the-practitioner-1)
-- [IMPACT ON SECURITY STAFFING](#impact-on-security-staffing)
-- [MEGATREND 3 CORRECTING THE SYSTEMIC UNDERVALUATION OF SECURITY](#megatrend-3-correcting-the-systemic-undervaluation-of-security)
-- [MEGATREND MOVEMENT](#megatrend-movement-2)
-- [“We have to sell our value and create value – and the cost of not doing so is catastrophic!” –TARA DUNNING, VICE PRESIDENT OF GLOBAL SECURITY & INFRASTRUCTURE, WESCO](#we-have-to-sell-our-value-and-create-value--and-the-cost-of-not-doing-so-is-catastrophic-tara-dunning-vice-president-of-global-security--infrastructure-wesco)
-- [THE MINDSET SHIFT](#the-mindset-shift)
-- [CONNECTION TO OTHER MEGATRENDS](#connection-to-other-megatrends)
-- [IMPACT TO THE PRACTITIONER](#impact-to-the-practitioner-1)
-- [COMPARING COSTS](#comparing-costs)
-- [MEGATREND 4 VISUAL INTELLIGENCE, NOT VIDEO SURVEILLANCE](#megatrend-4-visual-intelligence-not-video-surveillance)
-- [MEGATREND MOVEMENT](#megatrend-movement-3)
-- [“There’s more opportunity for cameras to become a source of data for our organizations than there ever has been. This allows us to put more infrastructure in, do a better job securing our environment, but also deliver other use cases—energy efficiency and savings, maintenance savings, space optimization, productivity and user experience—in addition to security, safety and compliance.” – ERIC YUNAG, EVP, PRODUCTS AND SERVICES, CONVERGINT](#theres-more-opportunity-for-cameras-to-become-a-source-of-data-for-our-organizations-than-there-ever-has-been-this-allows-us-to-put-more-infrastructure-in-do-a-better-job-securing-our-environment-but-also-deliver-other-use-casesenergy-efficiency-and-savings-maintenance-savings-space-optimization-productivity-and-user-experiencein-addition-to-security-safety-and-compliance-eric-yunag-evp-products-and-services-convergint)
-- [“Because of the power of technology, we’re able to drive business value in other areas. Customers do integrations through our APIs and use the cameras through new ways they hadn’t thought of before.” – FILIP KALISZAN, CEO, VERKADA](#because-of-the-power-of-technology-were-able-to-drive-business-value-in-other-areas-customers-do-integrations-through-our-apis-and-use-the-cameras-through-new-ways-they-hadnt-thought-of-before-filip-kaliszan-ceo-verkada)
-- [SO MANY CAMERAS, SO MUCH POTENTIAL FOR INTELLIGENCE](#so-many-cameras-so-much-potential-for-intelligence)
-- [THE DO-EVERYTHING SENSOR](#the-do-everything-sensor)
-- [KEY PREDICTIONS](#key-predictions)
-- [THE SEVEN STAGES OF VIDEO EVOLUTION](#the-seven-stages-of-video-evolution)
-- [1. Local video capture of important areas](#1-local-video-capture-of-important-areas)
-- [2. Local video capture with limited live monitoring by humans](#2-local-video-capture-with-limited-live-monitoring-by-humans)
-- [3. Networked video capture enabling remote access](#3-networked-video-capture-enabling-remote-access)
-- [4. Video capture integrated with other systems](#4-video-capture-integrated-with-other-systems)
-- [5. Video capture plus automated detection analytics](#5-video-capture-plus-automated-detection-analytics)
-- [6. Recorded video content becomes search enabled](#6-recorded-video-content-becomes-search-enabled)
-- [7. All video content analyzed for intelligence in real time](#7-all-video-content-analyzed-for-intelligence-in-real-time)
-- [MEGATREND 5 IT-OT-SECURITY CONVERGENCE](#megatrend-5-it-ot-security-convergence)
-- [MEGATREND MOVEMENT](#megatrend-movement-4)
-- [“As digital capabilities become more strategic, and complex workarounds become less and less feasible, more companies are getting serious about breaking down these silos and converging the IT/OT operating model. Doing so promises to accelerate in-flight use cases, democratize access to data and technology across the value chain, launch new use cases that utilize cloud-native capabilities, and improve frontline decision making by using data from both IT and OT systems.” – MCKINSEY & COMPANY, 2022](#as-digital-capabilities-become-more-strategic-and-complex-workarounds-become-less-and-less-feasible-more-companies-are-getting-serious-about-breaking-down-these-silos-and-converging-the-it-ot-operating-model-doing-so-promises-to-accelerate-in-flight-use-cases-democratize-access-to-data-and-technology-across-the-value-chain-launch-new-use-cases-that-utilize-cloud-native-capabilities-and-improve-frontline-decision-making-by-using-data-from-both-it-and-ot-systems-mckinsey--company-2022)
-- [IMPACT TO THE PRACTITIONER](#impact-to-the-practitioner-2)
-- [RESOURCES](#resources)
-- [MEGATREND 6 PLATFORM AGGREGATION](#megatrend-6-platform-aggregation)
-- [MEGATREND MOVEMENT](#megatrend-movement-5)
-- [EXPLOSION OF IOT](#explosion-of-iot)
-- [IMPACT TO THE PRACTITIONER](#impact-to-the-practitioner-3)
-- [PERSPECTIVES](#perspectives)
-- [MEGATREND 7 DEMOCRATIZATION OF IDENTITY AND MOBILE CREDENTIALS](#megatrend-7-democratization-of-identity-and-mobile-credentials)
-- [MEGATREND MOVEMENT](#megatrend-movement-6)
-- [“The history of identity has largely been driven by the physical space, through the state bureau (DMV) that produces a document that’s not secure [and which] doesn’t allow transactions to happen in a risk-free posture. More and more, those things [secure transactions] are expected to occur on our phones. The real promise of this is being able to know who’s on the other side of the computer screen – to drive down fraud and abuse.” – DONNIE SCOTT, CEO, IDEMIA, AT SNG 2024](#the-history-of-identity-has-largely-been-driven-by-the-physical-space-through-the-state-bureau-dmv-that-produces-a-document-thats-not-secure-and-which-doesnt-allow-transactions-to-happen-in-a-risk-free-posture-more-and-more-those-things-secure-transactions-are-expected-to-occur-on-our-phones-the-real-promise-of-this-is-being-able-to-know-whos-on-the-other-side-of-the-computer-screen--to-drive-down-fraud-and-abuse-donnie-scott-ceo-idemia-at-sng-2024)
-- [PERSPECTIVE](#perspective)
-- [HOT TAKE The SIA Mobile Credentials event at ISC East 2024 highlighted a crucial distinction in our industry: the difference between proliferation and democratization. While these terms are often used interchangeably, they represent fundamentally different trajectories for identity management. “What we’re witnessing today is proliferation—a widespread increase in identity-based systems and their adoption. However, what our industry desperately needs is democratization—the process of making identity accessible and equitable to a broader audience by reducing costs, complexity and exclusivity. The current landscape remains expensive, complex and restricted to those who are either integrated into existing ecosystems or, in Big Tech’s case, granted permission to participate. We’re experiencing a fascinating return to our roots in identity management and access control. While mobile credentials may seem revolutionary, they’re not entirely new. From 1973 to 1983, the industry utilized the TRW System, which featured a built-in call to a centralized identity check system focused on the person. Then, from 1983 onwards, our focus shifted primarily to the door when TRW spun the system out and Basix was born. Now, we’re essentially coming full circle, returning to person-centric solutions with modern technology. The most significant shift is in not the technology itself but how identity and our preferred modalities have evolved. While mobile wallets have proven transformative—revolutionizing credential storage and elevating access control to mainstream levels and our industry’s first ‘luxury good’—the real winner may be an unexpected bystander: biometrics. As identity-based systems continue their rise across sectors, biometric authentication is quietly positioning itself nicely. Few would have predicted when this journey began that the best marketing for a group that can’t seem to break through, would be wallets and near field communication. That said, the true winner in all of this digital transformation is the customer because they now have the choice of modality, experience and level of assurance desired. But again the true question with all this change is: Can we bridge the gap between proliferation and true democratization, making secure identity solutions accessible to all while maintaining the momentum we’ve achieved?” – LEE ODESS, CEO, ACCESS CONTROL EXECUTIVE BRIEF](#hot-take-the-sia-mobile-credentials-event-at-isc-east-2024-highlighted-a-crucial-distinction-in-our-industry-the-difference-between-proliferation-and-democratization-while-these-terms-are-often-used-interchangeably-they-represent-fundamentally-different-trajectories-for-identity-management-what-were-witnessing-today-is-proliferationa-widespread-increase-in-identity-based-systems-and-their-adoption-however-what-our-industry-desperately-needs-is-democratizationthe-process-of-making-identity-accessible-and-equitable-to-a-broader-audience-by-reducing-costs-complexity-and-exclusivity-the-current-landscape-remains-expensive-complex-and-restricted-to-those-who-are-either-integrated-into-existing-ecosystems-or-in-big-techs-case-granted-permission-to-participate-were-experiencing-a-fascinating-return-to-our-roots-in-identity-management-and-access-control-while-mobile-credentials-may-seem-revolutionary-theyre-not-entirely-new-from-1973-to-1983-the-industry-utilized-the-trw-system-which-featured-a-built-in-call-to-a-centralized-identity-check-system-focused-on-the-person-then-from-1983-onwards-our-focus-shifted-primarily-to-the-door-when-trw-spun-the-system-out-and-basix-was-born-now-were-essentially-coming-full-circle-returning-to-person-centric-solutions-with-modern-technology-the-most-significant-shift-is-in-not-the-technology-itself-but-how-identity-and-our-preferred-modalities-have-evolved-while-mobile-wallets-have-proven-transformativerevolutionizing-credential-storage-and-elevating-access-control-to-mainstream-levels-and-our-industrys-first-luxury-goodthe-real-winner-may-be-an-unexpected-bystander-biometrics-as-identity-based-systems-continue-their-rise-across-sectors-biometric-authentication-is-quietly-positioning-itself-nicely-few-would-have-predicted-when-this-journey-began-that-the-best-marketing-for-a-group-that-cant-seem-to-break-through-would-be-wallets-and-near-field-communication-that-said-the-true-winner-in-all-of-this-digital-transformation-is-the-customer-because-they-now-have-the-choice-of-modality-experience-and-level-of-assurance-desired-but-again-the-true-question-with-all-this-change-is-can-we-bridge-the-gap-between-proliferation-and-true-democratization-making-secure-identity-solutions-accessible-to-all-while-maintaining-the-momentum-weve-achieved-lee-odess-ceo-access-control-executive-brief)
-- [MEGATREND 8 GROWTH OF ADVANCED DETECTION TECHNOLOGIES](#megatrend-8-growth-of-advanced-detection-technologies)
-- [MEGATREND MOVEMENT](#megatrend-movement-7)
-- [SENSING ADVANCEMENT](#sensing-advancement)
-- [Weapons and Gunshot Detection](#weapons-and-gunshot-detection)
-- [Perimeter Security](#perimeter-security)
-- [Health/Environmental Sensors](#health-environmental-sensors)
-- [Intelligent Audio Detection Sensors](#intelligent-audio-detection-sensors)
-- [IMPACT TO THE PRACTITIONER](#impact-to-the-practitioner-4)
-- [HOT TAKE: DISRUPTION IN THREAT SCREENING](#hot-take-disruption-in-threat-screening)
-- [MEGATREND 9 SHIFT OF INFLUENCE FROM HARDWARE TO SOFTWARE](#megatrend-9-shift-of-influence-from-hardware-to-software)
-- [BUT EDGE DEVICE POWER IS KEEPING UP](#but-edge-device-power-is-keeping-up)
-- [IMPACT TO THE PRACTITIONER](#impact-to-the-practitioner-5)
-- [MEGATREND 10 SAAS, HAAS, DAAS AND A MANAGED SERVICES FUTURE](#megatrend-10-saas-haas-daas-and-a-managed-services-future)
-- [“The first major video surveillance hardware manufacturer to figure out a true Hardware as a Service (HaaS) model will become the new juggernaut.” So wrote an anonymous security industry executive when completing SIA’s annual Security Megatrends survey, and this anonymous visionary perfectly summarizes the real business opportunity for the security industry—although it may not be limited to manufacturers and is a delivery model that could be implemented by integrators.](#the-first-major-video-surveillance-hardware-manufacturer-to-figure-out-a-true-hardware-as-a-service-haas-model-will-become-the-new-juggernaut-so-wrote-an-anonymous-security-industry-executive-when-completing-sias-annual-security-megatrends-survey-and-this-anonymous-visionary-perfectly-summarizes-the-real-business-opportunity-for-the-security-industryalthough-it-may-not-be-limited-to-manufacturers-and-is-a-delivery-model-that-could-be-implemented-by-integrators)
-- [“Annualized recurring revenue (ARR) is our roadmap. AI components could be the loss leaders for the integrator. We’re focused on device management.” – MATT TYLER, VP OF STRATEGIC INNOVATION, WACHTER](#annualized-recurring-revenue-arr-is-our-roadmap-ai-components-could-be-the-loss-leaders-for-the-integrator-were-focused-on-device-management-matt-tyler-vp-of-strategic-innovation-wachter)
-- [BREAKING DOWN THE JARGON: HAAS, SAAS AND MANAGED SERVICES](#breaking-down-the-jargon-haas-saas-and-managed-services)
-- [DOES HAAS + SAAS = A MORE CLOSED ECOSYSTEM?](#does-haas--saas--a-more-closed-ecosystem)
-- [ENORMOUS MARKET OPPORTUNITY?](#enormous-market-opportunity)
-- [IMPACT TO THE PRACTITIONER](#impact-to-the-practitioner-6)
-- [Powering Your Business Intelligence](#powering-your-business-intelligence)
-- [Complexities in the Global Security Market: 2024 Through 2026](#complexities-in-the-global-security-market-2024-through-2026)
-- [Security Convergence](#security-convergence)
-- [The Evolving Security Industry: The Adaptation of the Systems Integrator](#the-evolving-security-industry-the-adaptation-of-the-systems-integrator)
-- [Security and Infrastructure Grants Guide](#security-and-infrastructure-grants-guide)
-- [Guide to Video Retention Regulations in the Cannabis Industry](#guide-to-video-retention-regulations-in-the-cannabis-industry)
-- [SIA Federal Grants Guide](#sia-federal-grants-guide)
-- [Right to Repair Laws Guide](#right-to-repair-laws-guide)
-- [Supply Chain Security Principles for the Security Industry Professional](#supply-chain-security-principles-for-the-security-industry-professional)
+- [Staff](#staff)
+- [2025 Security Megatrends: Securing the Channel](#2025-security-megatrends-securing-the-channel)
+- [How We Defined and Researched the 2024 SIA Security Megatrends](#how-we-defined-and-researched-the-2024-sia-security-megatrends)
+- [Executive Takeaways](#executive-takeaways)
+- [Foundational Trends](#foundational-trends)
+- [1. Evolution of the Channel](#1-evolution-of-the-channel)
+- [2. AI: Intelligent Automation of Security](#2-ai-intelligent-automation-of-security)
+- [3. Correcting the Systemic Undervaluation of Security](#3-correcting-the-systemic-undervaluation-of-security)
+- [4. Visual Intelligence, Not Video Surveillance](#4-visual-intelligence-not-video-surveillance)
+- [5. IT-OT-Security Convergence](#5-it-ot-security-convergence)
+- [6. Platform Aggregation](#6-platform-aggregation)
+- [7. Democratization of Identity and Mobile Credentials](#7-democratization-of-identity-and-mobile-credentials)
 
-## STAFF
+---
 
-SCOTT DUNN
-SIA Chair of the Board
+## Staff
+**Scott Dunn**, SIA Chair of the Board
 
-Megatrends Advisors
+**Megatrends Advisors:**
+- Bill Bozeman, Founder, Bozeman Strategic Solutions
+- Tara Dunning, Vice President, Global Security Strategy and Sales, Communications & Security Solutions, Wesco
+- Kasia Hanson, Founder, K Factor Global Consulting
+- Devin Love, Vice President, Core Platforms, Allegion
+- John E. Mack III, EVP and Co-Head of Investment Banking, Imperial Capital
+- Faisal Pandit, Vice President and General Manager, Johnson Controls
+- Brian Ruttenbur, Vice President of Business Development, Alarm.com
+- Steve Van Till, Founder and CEO, Brivo
+- Eric Yunag, EVP, Products and Services, Convergint
 
-BILL BOZEMAN
-Founder, Bozeman Strategic Solutions
+**SIA Staff:**
+- Don Erickson, SIA CEO
+- Geoff Kohl, SIA Senior Director of Marketing (Author and Editor)
+- Kara Klein, Associate Director of Marketing and Media Relations
+- Kevin Murphy, SIA Director of Member Services
+- Michelle Wandres, Production Design
 
-TARA DUNNING
-Vice President, Global Security Strategy and Sales, Communications & Security Solutions, Wesco
+---
 
-KASIA HANSON
-Founder, K Factor Global Consulting
+## 2025 Security Megatrends: Securing the Channel
+At SIA, our mission is to be a catalyst for success in the global security industry. We serve the business community of our industry. At our core are the individuals and companies that develop, produce, install, integrate, design, specify, monitor and operate the products, solutions and services that keep our world safe.
 
-DEVIN LOVE
-Vice President, Core Platforms, Allegion
+The annual Security Megatrends report, now in its ninth year, is part of our commitment to keep members prepared for the future. Artificial intelligence has burst upon our industry, and we have watched as operational technology (OT) converges with information technology (IT) and all aspects of security—physical and cyber. 
 
-JOHN E. MACK III
-EVP and Co-Head of Investment Banking, Imperial Capital
+This year’s report ranks the “Evolution of the Channel” as the No. 1 trend. Integrators are no longer connecting isolated solutions; they are delivering networked solutions fundamental to end users’ businesses. They must now interface with IT and OT systems while navigating business model changes like software-as-a-service (SaaS) and managed services.
 
-FAISAL PANDIT
-Vice President and General Manager, Johnson Controls
+---
 
-BRIAN RUTTENBUR
-Vice President of Business Development, Alarm.com
+## How We Defined and Researched the 2024 SIA Security Megatrends
+Each year at Securing New Ground (SNG), senior-level industry leaders gather to discuss trends. In advance of SNG, SIA surveyed hundreds of executives from member companies regarding factors shaping their business decisions. We also engaged our Megatrends advisors for focused feedback and collaborative editing. 
 
-STEVE VAN TILL
-Founder and CEO. Brivo
+The selection of these trends relies on the speakers, panels, and audience members of SNG. A special session during the 2024 SNG conference (hosted by Van Till, Dunning, and Yunag) provided additional feedback and chart data.
 
-ERIC YUNAG
-EVP, Products and Services,. Convergint
+---
 
-DON ERICKSON
-SIA CEO
-derickson@securityindustry.org
+## Executive Takeaways
+- "Rarely do we see a cyber-only or physical-only attack. The threat landscape is very blended." – Brian Harrell, CSO, Avangrid
+- "We want to get to more predictive security rather than reactive security." – Jeff Stanek, Honeywell
+- "Customers are recognizing their data is valuable. As an industry, we have a ton of data that has not been used to train these AI models." – Pauline Nordstrom, Anekanta Consulting
+- "Ethical use of AI is the top priority for us." – Masato Nakao, i-Pro
 
-GEOFF KOHL
-SIA Senior Director of Marketing
-Author and Editor, 2025 SECURITY MEGATRENDS Report
-gkohl@securityindustry.org
+---
 
-KARA KLEIN
-Associate Director of Marketing
-and Media Relations
-kklein@securityindustry.org
+## Foundational Trends
+These trends are viewed as common concerns that all business leaders must manage:
+- Cybersecurity
+- Global Tensions
+- Cloud Model for Technology Delivery
+- Changing Economic Conditions
+- Supply Chain Assurance
+- Sustainability
+- Workforce Development
 
-KEVIN MURPHY
-SIA Director of Member Services
-kmurphy@securityindustry.org
+---
 
-MICHELLE WANDRES
-Production Design
+## 1. Evolution of the Channel
+The most important trend identified is the evolution of the channel, specifically the systems integration channel. 
 
-## Copyright 2025 Security Industry Association. Reproduction prohibited without prior permission.
+**Challenges:**
+1. **Delivery Model:** As security devices become more advanced and less expensive, providers are adopting "direct to end user" sales models. SaaS models often exclude the integrator from recurring revenue streams.
+2. **Value Proposition:** The value is shifting from configuration to the insights and automation provided by software.
+3. **Technological Upheaval:** The wave of AI-enabled solutions requires new training and skill sets for the integration workforce.
 
-Security Industry Association
-8455 Colesville Road
-Suite 1200
-Silver Spring, MD 20910
-Main: 301-804-4700
-Fax: 301-804-4701
-securityindustry.org
+![Venn diagram showing the overlap between Manufacturers, Distributors, and System Integrators regarding Cloud Applications, Data Management, and System Availability.]
 
-## 2025 SECURITY MEGATRENDS™
-## SECURING THE CHANNEL
+---
 
-At SIA, our mission is to be a catalyst for success in the global security industry.
+## 2. AI: Intelligent Automation of Security
+AI remains a top driver of the industry. The focus is shifting from general intelligence to "intelligent automation" of repetitive business and security processes.
 
-We serve the business community of our industry. At our core are the individuals and companies that develop, produce, install, integrate, design, specify, monitor and operate the products, solutions and services that keep our world safe.
+**Key Insights:**
+- 80% of security spend is currently in manual labor.
+- AI can reduce false alarms and ease the burden on first responders.
+- Public perception (37.8%) and hiring developers with AI skills (35.4%) are the top factors limiting adoption.
 
-Our member companies and their employees are our foundation, and to help keep our industry on the forefront of security, we endeavor to produce research and trends analysis that gives our members an edge and an eye to the future.
+---
 
-Our annual Security Megatrends report, first published with the 2017 report, and now in its ninth year with this 2025 report, is part of that commitment to keep you prepared for the future.
+## 3. Correcting the Systemic Undervaluation of Security
+Security is often viewed as a cost to minimize, yet it provides the "duty of care" necessary for business productivity. Modern security systems provide business insights—such as office occupancy and retail queue delays—that align them with other enterprise software.
 
-The future isn’t always predictable, but it’s always exciting. Artificial intelligence has burst upon our industry in recent years and holds great promise for our industry’s future. We have watched as operational technology (OT) converges with information technology (IT) and simultaneously with all aspects of security—physical and cyber. These profound changes call upon us to adapt and to realign our industry to the needs of the modern business world.
+---
 
-Another area of rapid evolution we see today is the changes in technology and in business and delivery models that systems integration businesses face. Integrators are the second largest core of our membership, just after the technology solution producers (product manufacturers and software firms). The amount of upheaval facing today’s integrators is profound. Technology producers are delivering more advanced solutions than the integrator has ever seen. The integrators are no longer connecting isolated solutions, but are delivering networked solutions that are fundamental to the end users’ businesses, and must be competent in not only traditional security and safety requirements, but now are expected to interface those systems with other IT and OT systems, and must do so in a way that matches the customer’s IT requirements and cyber security.
+## 4. Visual Intelligence, Not Video Surveillance
+Most of the estimated 90 million cameras globally function as simple recording devices. The shift toward "visual intelligence" involves using AI to extract actionable data from video, turning the camera into an "everything tool" for operations, safety, and business efficiency.
 
-Simultaneously, today’s systems integrator must ensure those systems are not only improving the organization’s security but are providing business insights that transcend core security and safety needs – and they must do this while navigating business model changes that see more and more direct-to-customer sales, software-as-a-service and managed services revenue models that are unlike what they worked with even 5 or 10 years ago.
+---
 
-This year’s Megatrends report ranks that “Evolution of the Channel” as the No. 1 trend facing the business of security, a theme that was heard repeatedly at the 2024 Securing New Ground conference and in the surveys and focus group calls that powered this year’s report. The top ranking and deep focus we have put on this trend is not only seen in this year’s Security Megatrends report, but in our early 2024 report “The Evolving Security Industry: The Adaptation of the Systems Integrator,” along with our continued focus in providing online and in-person education and certification for integrators that ranges from our Security Industry Cybersecurity Certification (SICC), our Security Project Management training and certification programs, our Cornerstones modules for onboarding new employees, our GrantED training program to help integrators unlock grant opportunities for their clients, and various technical and business skill programs offered through our e-learning platform SIAcademy.
+## 5. IT-OT-Security Convergence
+The convergence of operational technology (OT), information technology (IT), and physical security is paramount. While technical hurdles exist, the cultural assimilation of these silos remains the primary challenge for organizations.
 
-We remain committed to assisting our integrator members as they adapt and we believe that a vibrant channel is essential to the industry’s overall health and to the business performance of ALL our members, including our SPARC community of corporate security leaders.
+---
 
-Special Thanks: We want to thank all our members who took time to participate in the annual survey, attend the Megatrends sessions at SNG, guest contributors and especially our advisory boards who served as focus groups. We also thank our SNG speakers, from whom many of these insights are drawn. We thank you for allowing us to help serve you and be a catalyst for your success!.
+## 6. Platform Aggregation
+As organizations adopt more IoT devices, they face an explosion of data. Platform aggregation is the emerging trend of creating a holistic, multidimensional view of data tailored to specific user needs, moving beyond the "single pane of glass" concept.
 
-Sincerely,
-Scott Dunn
-Chair, SIA Board of Directors
+---
 
-## THANK YOU SIA THANKS ITS 2025 SNG SPONSORS
+## 7. Democratization of Identity and Mobile Credentials
+The traditional badge office is being disrupted by biometric-based identity and mobile credentials. By leveraging phones and wearables, users can carry multiple identity credentials in a single device, reducing the reliance on physical plastic cards and streamlining access management.
 
-SUPPORTERS
+---
 
-MEDIA PARTNERS
+ce of hotel
+– it was a feature that came to Apple
+in mid-2021, and digital ID came Google
+Wallet in fall 2024.
 
-## THE BUSINESS OF SECURITY
+Already some U.S. jurisdictions are
+accepting phone-based mobile driver’s
+licenses, with high-population states like New
 
-SAVE
+York and California leading the change.
+
+25
+
+securityIndustry.org  | 2025 SECURITY MEGATRENDS©2025, Security Industry Association. All rights reserved.HOT TAKE
+
+The SIA Mobile Credentials event at ISC East 2024 highlighted a crucial distinction in our industry: the
+difference between proliferation and democratization. While these terms are often used interchangeably,
+they represent fundamentally different trajectories for identity management.
+
+“What we’re witnessing today is proliferation—a widespread increase in identity-based systems and
+their adoption. However, what our industry desperately needs is democratization—the process of making
+identity accessible and equitable to a broader audience by reducing costs, complexity and exclusivity.
+The current landscape remains expensive, complex and restricted to those who are either integrated into
+existing ecosystems or, in Big Tech’s case, granted permission to participate.
+
+We’re experiencing a fascinating return to our roots in identity management and access control.
+
+While mobile credentials may seem revolutionary, they’re not entirely new. From 1973 to 1983, the industry utilized the TRW
+System, which featured a built-in call to a centralized identity check system focused on the person. Then, from 1983 onwards, our
+focus shifted primarily to the door when TRW spun the system out and Basix was born. Now, we’re essentially coming full circle,
+returning to person-centric solutions with modern technology.
+
+The most significant shift is in not the technology itself but how identity and our preferred modalities have evolved. While mobile
+
+wallets have proven transformative—revolutionizing credential storage and elevating access control to mainstream levels and our
+industry’s first ‘luxury good’—the real winner may be an unexpected bystander: biometrics. As identity-based systems continue
+their rise across sectors, biometric authentication is quietly positioning itself nicely. Few would have predicted when this journey
+began that the best marketing for a group that can’t seem to break through, would be wallets and near field communication.
+
+That said, the true winner in all of this digital transformation is the customer because they now have the choice of modality,
+
+experience and level of assurance desired.
+
+But again the true question with all this change is: Can we bridge the gap between proliferation and true democratization,
+
+making secure identity solutions accessible to all while maintaining the momentum we’ve achieved?”
+
+– LEE ODESS, CEO, ACCESS CONTROL EXECUTIVE BRIEF
+
+26
+
+2025 SECURITY MEGATRENDS  | securityIndustry.org©2025, Security Industry Association. All rights reserved.8
+
+GROWTH OF ADVANCED DETECTION
+TECHNOLOGIES
+
+MEGATREND
+MOVEMENT
+
+Proposed to the SIA
+membership, this
+Megatrend struck a chord
+and was ranked first
+among the new concept
+trends in the survey for
+this 2025 report.
+
+The technology of alarm and detection technologies sat largely undisturbed for many years,
+delivering motion detection, vibration sensing, glass break detection, metal detection and
+other solid, dependable technologies. Post-9/11, the needs of the aviation and global shipping
+sectors spurred a movement to develop chemical, biological, radiological, nuclear and explo-
+sives detection, which was a substantial milestone but generally was limited in applicability
+to the general commercial security sector simply due to cost and often the size and limited
+throughput of such systems.
+
+Today, however, detection systems are having a resurgence, with numerous specialized
+
+technology developers focused on solving for very specific threats and scenarios.
+
+SENSING ADVANCEMENT
+More than any other areas, the following four areas have seen the most change in applying
+advanced detection capabilities to the commercial security marketplace.
+
+Weapons and Gunshot Detection
+Classic metal detector-based threat screening processes are being overshadowed by emerg-
+ing high-throughput detection systems that couple detection of dense objects with AI and
+video-based tracking of subjects so that persons carrying potential threat devices (weapons,
+typically) can be reached before they proceed deep into a facility like a stadium or entertain-
+ment venue.
+
+Weapons detection is being offered inside facilities and venues, with solution providers
+using AI-style analytics to identify and alert upon weapons visible in a scene. As they push
+the algorithms, they are able to solve for more challenging scenarios, like a gun held at an odd
+angle or a partially visible weapon, and adaptive to the many form factors guns can take.
+
+27
+
+securityIndustry.org  | 2025 SECURITY MEGATRENDSMEGATREND©2025, Security Industry Association. All rights reserved.Staying on the theme of weapons-based threats, gunshot
+
+detection and location is advancing by leaps and bounds.
+Certainly, better acoustic detection has helped separate
+gunfire from similar sounds, but the systems now are better
+at geolocation in both outdoor and indoor environments and
+are often able to integrate with video for locating the shooter.
+Some systems are even adding additional sensors to perform
+dual verification of a gunshot by attempting to recognize
+muzzle flashes.
+
+Perimeter Security
+When forward-looking infrared cameras hit the commercial
+market sector, they made an impression. This thermal imaging
+technology was able to break free of the limits of traditional
+visual light and local illumination to detect persons and objects
+in darkness and challenging weather conditions. That was a
+1960s technology innovation that really began to be commer-
+cialized in the defense sector in the 1970s, although it stayed
+largely unaffordable to the traditional commercial security
+sector until the 2000s, when it began to change the perimeter
+security market of that era.
+
+Today, perimeter detection technologies are making a
+
+dramatic advancement again, with new technologies like LiDAR
+and high-definition radar being applied for perimeter security
+
+boundaries, particularly at critical infrastructure sites. These
+systems aren’t simple detectors: Most new-generation systems
+are able to classify the objects they detect (vehicle? person?
+animal? drone?) and offer enough accuracy to be coupled
+with video imaging tools, and the functional range of these
+technologies has continued to improve, pushing the detectable
+perimeter further away and allowing security teams more time
+to respond.
+
+Health/Environmental Sensors
+A whole new class of sensors is being offered in the security
+industry, often with specialized applications. Vape detection
+is one popular interest area for detection, but other environ-
+mental sensors can detect and alert on various conditions like
+particulates and noxious gases that could have short- or long-
+term health consequences.
+
+Intelligent Audio Detection Sensors
+Dramatic growth is occurring in the world of audio analyt-
+ics, where manufacturers are applying machine learning to
+analyze a lot more than gunshots. Research and development
+teams are isolating noises and applying algorithms to separate
+between normal sounds and those of distress, aggression or
+damage (like glass breakage or impact).
+
+IMPACT TO THE PRACTITIONER
+More than any other trend in this list, the rapid advancements in detection technologies may be the most exciting to corpo-
+rate security leaders, owing to the fact that these advancements can be tied directly to efforts to curb crime, keep employees
+and guests safe and better enable their teams to “deter, detect and defend.” While some of these solutions may still require
+iterative accuracy improvements, these new generations of detection solutions can at least partially solve real-world security
+and safety challenges that couldn’t previously be solved with technology.
+
+HOT TAKE: DISRUPTION IN THREAT SCREENING
+For perspective, we share this anonymous miniature essay submitted by a SIA member as part of the 2025 Megatrends survey. This
+author’s perspective analyzes the business opportunity for AI-enabled advanced detection systems applied to weapons screening:
+
+One area of the security industry poised for disruption is ‘physical access control and threat screening,’ particularly in
+public spaces like airports, stadiums and corporate campuses. Traditionally, these environments rely on manual security
+checks, metal detectors, and personnel-intensive protocols, which are both costly and time-consuming for consumers and
+organizations alike.
+
+The integration of ‘AI-driven standoff weapon detection’ and ‘AR/VR-based enhanced situational awareness’ solutions
+
+could dramatically transform this space. Standoff detection systems reduce the need for physical checkpoints, allowing
+security to be both less invasive and more efficient. By remotely identifying and verifying threats through AI, security
+becomes more proactive, enhancing throughput and allowing for seamless, continuous monitoring without disrupting the
+flow of people.
+
+On the consumer side, there is a growing preference for contactless and unobtrusive security experiences. The traditional
+
+models, often involving long wait times and rigorous inspections, are becoming outdated, especially as expectations for
+convenience and efficiency rise. AI-driven standoff detection, combined with AR for real-time threat visibility, addresses
+these preferences by offering high-level security with minimal inconvenience, supporting a better user experience.
+
+This shift represents a potential business model transformation as well. Security companies that traditionally rely on
+selling physical hardware and staffing services might pivot to subscription-based or as-a-service models, where AI and AR
+solutions are updated continuously. Such a model would make high-tech security more accessible and scalable, providing
+consumers and businesses with greater value. Thus, the convergence of technological advancements, consumer demands
+for convenience, and evolving business models make physical access control and threat screening a prime area for disruption
+in the security industry.”
+
+28
+
+2025 SECURITY MEGATRENDS  | securityIndustry.org©2025, Security Industry Association. All rights reserved.9
+
+SHIFT OF INFLUENCE FROM
+HARDWARE TO SOFTWARE
+
+The industry was historically focused nearly exclusively
+on hardware. At one point in our history, the security
+practitioner and the business ecosystem of consultants
+and integrators serving that practitioner, were tasked
+with hardware selection: the right camera for the scene,
+the best network video recorder (NVR), the best detector
+or control panel, the correct lock and door hardware, etc.
+This was the peak mechanical and electromechanical age
+of the industry, and software was just the interface you
+received on that NVR.
+
+Today, hardware devices are no longer the singular
+focus of the buyer. The end user is more connected than
+ever with the software platform, as that is the point of
+their experience.
+
+What changed was that the value of the data from
+these systems became more important to the security
+operations than the feature set of the devices themselves.
+For the practitioner, that data was no longer associated
+with the device itself but was instead associated with the
+management software that extracted value from the data
+those devices could generate. This change means the
+
+MEGATREND
+MOVEMENT
+
+software and the software providers hold more and more influence in the industry and will
+continue to be more influential, as these software systems can identify data anomalies and
+aggregate data for the “bigger picture” or nontraditional use cases.
+
+New for 2025, this
+Megatrend reflects a
+pattern of emphasis on the
+value software solutions
+rather than the edge
+hardware.
+
+BUT EDGE DEVICE POWER IS KEEPING UP
+Security device providers are generally following a broad trend of delivering more and more
+intelligence at the edge, and while edge devices will always be limited in computing power due
+to their physical formats, the scale of computing now offered at the edge is quite tremendous.
+In the world of video, for example, advanced analytics that once took servers to run are now
+running on the cameras’ own chips.
+
+While software systems are simply in a better position to scale computing resources that
+will turn data into predictions that can make security practitioner more proactive, it’s worth
+remembering that this Megatrend purely reflects a shift of attention from the practitioner, not
+a shift in the velocity of technology advancement or even a shift in market size. Regarding the
+latter: The fates of hardware and software markets are intertwined: More hardware typically
+means the need for more powerful software, and more powerful software can likewise support
+more hardware.
+
+IMPACT TO THE PRACTITIONER
+As software becomes the centerpiece of security management, expect device and
+hardware makers to rapidly push technology advances in their own products to ensure
+that their hardware won’t be treated as “dumb” peripherals that can be commoditized.
+This effort benefits the practitioner, giving you more and more intelligence at the edge,
+which ultimately helps enrich the centralized software.
+
+29
+
+securityIndustry.org  | 2025 SECURITY MEGATRENDSMEGATREND©2025, Security Industry Association. All rights reserved.10
+
+SAAS, HAAS, DAAS AND A
+MANAGED SERVICES FUTURE
+
+An entirely new Megatrend for 2025, this closely connects to the No. 1 Megatrend for 2025, “Evolution of the Channel,” as the
+
+MEGATREND
+MOVEMENT
+
+implementation of this
+trend is likely to be through
+the integrator for this
+model to scale. It’s also
+inherently tied to 2024’s No.
+6-ranked Megatrend “SaaS
+Reshapes the Integration
+Business Model.”
+
+“The first major video surveillance hardware manufacturer to figure out a true Hardware
+as a Service (HaaS) model will become the new juggernaut.” So wrote an anonymous
+security industry executive when completing SIA’s annual Security Megatrends survey,
+and this anonymous visionary perfectly summarizes the real business opportunity for
+the security industry—although it may not be limited to manufacturers and is a delivery
+model that  could be implemented by integrators.
+
+It’s a model that’s already seen early adoption in the business IT services arena, with
+
+companies like Dell, Lenovo and Microsoft all now offering PCs through a HaaS model,
+sometimes also referred to as device-as-a-service (DaaS) or even desktop-as-a-service.
+The model in the IT sector is expanding beyond desktops and moving into more varied
+network infrastructure, delivering infrastructure-as-a-service (IaaS).
+
+While the security industry has already begun to strongly adopt a software-as-a-
+service model, particularly for cloud video and cloud access, the addition of HaaS/DaaS
+with managed services creates the opportunity to now monetize the hardware, and
+not just in a low-cost annual license type of approach, but as a true managed services
+approach, where the full upkeep of the hardware, including patching, cybersecurity,
+maintenance, technical support and data analytics, is undertaken by the manufacturer
+or, perhaps more likely, the systems integrator, in exchange for strong recurring revenue.
+
+“Annualized recurring revenue (ARR) is our roadmap. AI components could be the loss leaders for the
+integrator. We’re focused on device management.”
+
+– MATT TYLER, VP OF STRATEGIC INNOVATION, WACHTER
+
+30
+
+2025 SECURITY MEGATRENDS  | securityIndustry.orgMEGATREND©2025, Security Industry Association. All rights reserved.59%
+
+Increase in multiples that
+HaaS companies receive
+from investors when
+compared to other frontier
+tech business models
+
+Source: Silicon Valley Bank, “The State of
+Hardware as a Service, 2024”
+
+15%
+
+Annual growth rate
+of HaaS solely in the
+desktop-as-a-service
+market
+
+Source: Statista
+
+APPROXIMATELY WHAT
+PERCENTAGE OF YOUR FIRM’S
+REVENUES ARE BASED
+ON RECURRING REVENUE
+SERVICE MODELS?
+
+81-100%
+17.65%
+
+61-80%
+5.88%
+
+41-60%
+13.24%
+
+0-20%
+35.29%
+
+21-40%
+27.94%
+
+BREAKING DOWN THE JARGON:
+HAAS, SAAS AND MANAGED
+SERVICES
+Confused by the lexicon? The difference
+between HaaS and managed services is
+actually fairly straightforward once you
+get past the buzzwords. In managed
+services, the software and devices are
+still owned by the end user, and the end
+user pays the managed services provid-
+er (MSP) for supporting, managing and
+monitoring the end users’ equipment.
+SaaS is the rental of access to software
+from a vendor, and HaaS is a model in
+which the end user rents the hardware/
+equipment from the provider, thus mak-
+ing the equipment wholly the responsi-
+bility of the provider. When combining
+HaaS, SaaS and managed services, the
+end user is truly able to turn all aspects
+of the system over to the vendor(s). It’s
+possible for the business model to be
+split between manufacturer and inte-
+
+grator, with the manufacturer providing
+HaaS and/or SaaS and the integrator
+providing managed services for that
+hardware and software.
+
+DOES HAAS + SAAS = A MORE
+CLOSED ECOSYSTEM?
+It becomes easier to manage a full
+SaaS and HaaS business model if you’re
+managing a single, cohesive ecosystem,
+one that was built to operate as a unit,
+perhaps all from a single vendor—as
+opposed to a system built upon various
+APIs and custom integrations and which
+is dependent upon maintaining just the
+right software versions and hardware
+firmware versions for the system to
+operate as intended. For the integra-
+tor, this could lead to adoption of more
+“end-to-end” vendor solutions, wherein
+the integrator is able to build a predict-
+able managed services revenue stream
+that combines HaaS.
+
+ENORMOUS MARKET
+OPPORTUNITY?
+HaaS is seeing initial adoption by PC
+makers and in specialized industrial
+equipment. When you compare the
+market size, the security industry equip-
+ment opportunity for HaaS may seem
+small, but it’s not. According to data
+from Forrester Research, there were
+over 2 billion PCs in use globally by 2015,
+but the long-term trend has been slow-
+ing PC/laptop/server sales. Meanwhile,
+in terms of security devices, there were
+1.5 billion security cameras alone in-
+stalled by 2022, and that’s not counting
+the myriad other security technologies
+that could be offered in a HaaS model.
+The total addressable market (TAM) for
+security HaaS could actually outpace
+the TAM for PC HaaS.
+
+IMPACT TO THE PRACTITIONER
+For the practitioner ready to hand off technology management and even technology ownership to SaaS and DaaS providers, this
+trend will be good news. Even if this handoff requires a higher annual operating budget, it should be possible to gain savings
+through reduction of the number of staff needed to support such systems in house. More importantly, handing off software and
+device support places the cyber burden on the MSP or solution developer and allows a security team to focus on the core of
+their duties of identifying and assessing risks and improving their organization’s preparedness.
+
+31
+
+securityIndustry.org  | 2025 SECURITY MEGATRENDS©2025, Security Industry Association. All rights reserved.Powering Your
+Business
+Intelligence
+
+From artificial intelligence to supply chain, federal and state funding to
+technical best practices, market research to career tools, you can find
+more essential insights into the security industry at securityindustry.
+org/reports
+
+Complexities in the Global Security Market:
+2024 Through 2026
+This all-new, unique partnership study from the Security Industry
+Association (SIA) and ASIS International provides market data and an
+overview of key drivers creating growth in the security industry.
+
+Security Convergence
+This in-depth report studies the state of security convergence and
+provides recommendations for unifying, aligning and converging
+cybersecurity and physical security practices.
+
+The Evolving Security Industry:
+The Adaptation of the Systems Integrator
+This research report, produced for SIA by Novaira Insights, assesses
+the state of integration business evolution.
+
+Security and Infrastructure Grants Guide
+This tool helps companies navigate the complicated grants processes of
+federal and state governments and effectively find and secure grants.
+
+Guide to Video Retention Regulations in
+the Cannabis Industry
+Presented by the Video Retention Working Group of SIA’s Video and
+Vision Subcommittee, this report offers an overview of video retention
+regulations across various states.
+
+SIA Federal Grants Guide
+This SIA member-only resource provides a thorough guide to federal
+grant programs that can be applied to security improvements.
+
+Right to Repair Laws Guide
+This guide to "right to repair" laws covers state legislation that would
+impact security equipment manufacturers.
+
+Supply Chain Security Principles for the Security
+Industry Professional
+This SIA member-only resource focuses upon some of the key concepts
+and challenges of supply chain security.
