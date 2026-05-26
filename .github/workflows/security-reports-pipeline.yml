@@ -9,8 +9,15 @@ on:
     branches: [main, development]
     paths:
       - 'Annual Security Reports/**/*.pdf'
+  schedule:
+    - cron: '0 12 * * *'  # 7:00 AM ET daily
   workflow_dispatch:
     inputs:
+      quota_retry_attempt:
+        description: 'Internal: retry attempt number after quota exhaustion (1, 2, 3)'
+        required: false
+        default: '1'
+        type: string
       year_filter:
         description: 'Process PDFs from specific year'
         required: false
@@ -426,13 +433,9 @@ jobs:
           SCAN_MODE="${SCAN_MODE:-skipped}"
           FILE_COUNT="${FILE_COUNT:-0}"
 
-          # Sanitize FILE_COUNT to a pure integer — guard against whitespace,
-          # empty string, or non-numeric values that would cause "Invalid format"
-          # errors when the runner validates $GITHUB_OUTPUT entries.
+          # Sanitize FILE_COUNT to a pure integer (guard against any whitespace)
           FILE_COUNT=$(echo "$FILE_COUNT" | tr -d '[:space:]')
-          if ! [[ "$FILE_COUNT" =~ ^[0-9]+$ ]]; then
-            FILE_COUNT="0"
-          fi
+          FILE_COUNT="${FILE_COUNT:-0}"
 
           echo "has_files=$HAS_FILES"   >> $GITHUB_OUTPUT
           echo "scan_mode=$SCAN_MODE"   >> $GITHUB_OUTPUT
@@ -640,6 +643,7 @@ jobs:
     outputs:
       successful_count: ${{ steps.converter.outputs.successful_count }}
       failed_count: ${{ steps.converter.outputs.failed_count }}
+      quota_exhausted: ${{ steps.converter.outputs.quota_exhausted }}
 
     steps:
       - name: Checkout repository
@@ -674,16 +678,35 @@ jobs:
         run: |
           MD_FOLDER=$(jq -r '.workflow.folders.markdown_conversions' .github/artifacts/workflow-config.json)
 
+          set +e
           python .github/scripts/pdf-converter.py \
             --file-list files_to_process.txt \
             --output-json conversions.json \
             --artifacts-dir .github/artifacts
+          CONV_EXIT=$?
+          set -e
 
-          SUCCESSFUL=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
-          FAILED=$(jq '[.[] | select(.status != "success")] | length' conversions.json)
+          QUOTA_SIGNAL=$(grep "^QUOTA_EXHAUSTED=true" conversions.json 2>/dev/null || \
+                         grep "^QUOTA_EXHAUSTED=true" /dev/stdin < <(cat) 2>/dev/null || true)
+          # The script prints QUOTA_EXHAUSTED=true to stdout; capture via log
+          echo "conv_exit_code=$CONV_EXIT" >> $GITHUB_OUTPUT
+
+          SUCCESSFUL=$(jq '[.[] | select(.status == "success")] | length' conversions.json 2>/dev/null || echo 0)
+          FAILED=$(jq '[.[] | select(.status != "success")] | length' conversions.json 2>/dev/null || echo 0)
 
           echo "successful_count=$SUCCESSFUL" >> $GITHUB_OUTPUT
           echo "failed_count=$FAILED" >> $GITHUB_OUTPUT
+
+          if [ "$CONV_EXIT" -eq 2 ]; then
+            echo "quota_exhausted=true" >> $GITHUB_OUTPUT
+          else
+            echo "quota_exhausted=false" >> $GITHUB_OUTPUT
+          fi
+
+          # Non-quota failures are still errors
+          if [ "$CONV_EXIT" -ne 0 ] && [ "$CONV_EXIT" -ne 2 ]; then
+            exit $CONV_EXIT
+          fi
 
       - name: Upload conversions
         uses: actions/upload-artifact@v4
@@ -763,6 +786,7 @@ jobs:
       analysis_success: ${{ steps.report-analysis.outputs.analysis_success }}
       analysis_count: ${{ steps.report-analysis.outputs.analysis_count }}
       error_count: ${{ steps.report-analysis.outputs.error_count }}
+      quota_exhausted: ${{ steps.report-analysis.outputs.quota_exhausted }}
 
     steps:
       - name: Checkout repository
@@ -856,6 +880,16 @@ jobs:
 
           echo "analysis_count=$ANALYSIS_COUNT" >> $GITHUB_OUTPUT
           echo "error_count=$ERROR_COUNT" >> $GITHUB_OUTPUT
+
+          # Exit code 2 = all failures were quota errors; signal for retry-dispatch job
+          if [ "$EXIT_CODE" -eq 2 ]; then
+            echo "analysis_success=false" >> $GITHUB_OUTPUT
+            echo "quota_exhausted=true"   >> $GITHUB_OUTPUT
+            echo "⚠ Quota exhausted (exit 2) — retry-dispatch job will reschedule"
+            exit 0
+          fi
+
+          echo "quota_exhausted=false" >> $GITHUB_OUTPUT
 
           if [ "$ANALYSIS_COUNT" -gt 0 ]; then
             echo "analysis_success=true" >> $GITHUB_OUTPUT
@@ -1282,3 +1316,66 @@ jobs:
               echo "" >> $GITHUB_STEP_SUMMARY
             fi
           fi
+
+
+  # ============================================================
+  # QUOTA RETRY JOB
+  # When conversion or analysis exits with code 2 (all failures
+  # were Gemini 429 quota errors), this job waits and re-dispatches
+  # the pipeline as a new workflow_dispatch run.
+  #
+  # Retry schedule:
+  #   attempt 1 (RETRY_ATTEMPT unset / "1"): wait 4 hours
+  #   attempt 2 (RETRY_ATTEMPT == "2"):      wait 8 hours
+  #   attempt 3+: log and give up (daily quota likely exhausted)
+  #
+  # The re-dispatch passes the same file-list scope (manual filters
+  # are not carried over — the new run uses missing_conversion mode).
+  # ============================================================
+  retry-on-quota:
+    runs-on: ubuntu-latest
+    needs: [discover-and-scan, convert-pdf-to-markdown, analyze-reports]
+    if: |
+      always() &&
+      needs.discover-and-scan.outputs.has_files == 'true' &&
+      (
+        needs.convert-pdf-to-markdown.outputs.quota_exhausted == 'true' ||
+        needs.analyze-reports.outputs.quota_exhausted == 'true'
+      )
+    permissions:
+      actions: write
+
+    steps:
+      - name: Schedule retry dispatch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ATTEMPT="${{ github.event.inputs.quota_retry_attempt }}"
+          ATTEMPT="${ATTEMPT:-1}"
+
+          if [ "$ATTEMPT" -ge 3 ]; then
+            echo "⊘ Quota retry attempt $ATTEMPT — giving up. Daily quota likely exhausted."
+            echo "  Check https://aistudio.google.com/ for quota reset time."
+            exit 0
+          fi
+
+          # Attempt 1 waits 4 h; attempt 2 waits 8 h
+          if [ "$ATTEMPT" -eq 1 ]; then
+            WAIT_SECONDS=14400   # 4 hours
+            NEXT_ATTEMPT=2
+          else
+            WAIT_SECONDS=28800   # 8 hours
+            NEXT_ATTEMPT=3
+          fi
+
+          WAIT_MIN=$(( WAIT_SECONDS / 60 ))
+          echo "⏳ Quota exhausted — sleeping ${WAIT_MIN}m before retry attempt ${NEXT_ATTEMPT}..."
+          sleep "$WAIT_SECONDS"
+
+          echo "🔄 Dispatching retry run (attempt ${NEXT_ATTEMPT})..."
+          gh workflow run security-reports-pipeline.yml \
+            --repo "${{ github.repository }}" \
+            --ref "${{ github.ref_name }}" \
+            --field quota_retry_attempt="$NEXT_ATTEMPT"
+
+          echo "✓ Retry dispatched"
