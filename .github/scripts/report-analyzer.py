@@ -56,6 +56,27 @@ def is_quota_error(error_str: str) -> bool:
     return "429" in s or "resource_exhausted" in s or "quota" in s
 
 
+def extract_retry_delay(error_str: str) -> Optional[int]:
+    """
+    Parse the retry_delay seconds from a Gemini quota error, if present.
+    Gemini embeds retryDelay in 429 error details (e.g. "retryDelay": "60s").
+    Returns None when no explicit delay is found.
+    """
+    import re as _re
+    m = _re.search(r'"retryDelay"\s*:\s*"(\d+)s"', error_str)
+    if m:
+        return int(m.group(1))
+    m = _re.search(r'retry_delay\s*\{\s*seconds\s*:\s*(\d+)', error_str)
+    if m:
+        return int(m.group(1))
+    return None
+
+
+# Exit code 2 signals quota exhaustion to the calling workflow so it can
+# schedule a delayed re-dispatch rather than treating the run as a hard failure.
+EXIT_QUOTA_EXHAUSTED = 2
+
+
 # ====================
 # CONFIGURATION LOADER
 # ====================
@@ -462,14 +483,17 @@ class AIAnalyzer:
                 last_errors = [err_str[:200]]
 
                 if is_quota_error(err_str):
-                    # 429: use quota-specific longer backoff
+                    # 429: honour the API's own retry_delay when present;
+                    # otherwise fall back to the configured quota backoff.
+                    api_delay = extract_retry_delay(err_str)
                     print(f"  ⚠ Attempt {attempt_num} quota error (429): {err_str[:150]}")
                     if attempt < self.config.max_retries - 1:
-                        wait = min(quota_delay, self.config.quota_max_delay)
-                        print(f"  → Quota limit hit — waiting {wait:.0f}s before retry...")
+                        wait = api_delay if api_delay else min(quota_delay, self.config.quota_max_delay)
+                        print(f"  → Quota limit — waiting {wait:.0f}s (source: {'API' if api_delay else 'config'})...")
                         time.sleep(wait)
-                        quota_delay = min(quota_delay * self.config.quota_backoff_mult,
-                                          self.config.quota_max_delay)
+                        if not api_delay:
+                            quota_delay = min(quota_delay * self.config.quota_backoff_mult,
+                                              self.config.quota_max_delay)
                 else:
                     print(f"  ⚠ Attempt {attempt_num} error: {err_str[:150]}")
                     if attempt < self.config.max_retries - 1:
@@ -832,6 +856,11 @@ def process_reports(
             print(f"  - {rec['organization']} ({rec['year']}): [{rec['error_type']}] {rec['error'][:100]}")
 
     print(f"{'='*70}\n")
+    if not results and error_records:
+        all_quota = all(r["error_type"] == "quota_exceeded" for r in error_records)
+        if all_quota:
+            print("QUOTA_EXHAUSTED=true")
+            return EXIT_QUOTA_EXHAUSTED
     return 0 if results else 1
 
 
