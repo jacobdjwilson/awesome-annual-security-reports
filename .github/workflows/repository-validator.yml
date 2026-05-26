@@ -1,14 +1,13 @@
 name: Repository Integrity Validator
 
 on:
-  # Fires whenever a processing pipeline completes (including ingest).
-  # The gate job below blocks validation until all monitored pipelines are
-  # idle on the current SHA, preventing false-positives from in-flight writes.
+  # Fires whenever either processing pipeline completes.
+  # A gate job below blocks validation until BOTH pipelines are idle,
+  # preventing false-positive findings from half-written files.
   workflow_run:
     workflows:
       - "Security Reports Processing Pipeline"
       - "Refresh Old Conversions"
-      - "Auto-Ingest Report Suggestion"
     types: [completed]
     branches: [main]
 
@@ -28,6 +27,7 @@ on:
 permissions:
   contents: write
   issues: write
+  actions: write   # needed to dispatch the pipeline for auto-remediation
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -91,7 +91,6 @@ jobs:
           MONITORED_WORKFLOWS=(
             "Security Reports Processing Pipeline"
             "Refresh Old Conversions"
-            "Auto-Ingest Report Suggestion"
           )
 
           BUSY=false
@@ -410,6 +409,52 @@ jobs:
           echo "✓ Created issue #$NEW_NUM ($NEW_URL)"
           echo "action=created"     >> $GITHUB_OUTPUT
           echo "new_issue=$NEW_NUM" >> $GITHUB_OUTPUT
+      - name: Auto-dispatch pipeline for orphaned PDFs
+        # When the only findings are orphaned PDFs (no matching Markdown),
+        # kick off the Security Reports Processing Pipeline immediately.
+        # The pipeline's push_mode=missing_conversion will pick them all up.
+        # We skip this when the pipeline is already running to avoid pile-ups.
+        if: steps.findings.outputs.has_findings == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          # Check that all findings are orphaned-pdf type
+          REPORT="validation_report.md"
+          if [ ! -f "$REPORT" ]; then
+            echo "⊘ No report file — skipping auto-dispatch"
+            exit 0
+          fi
+
+          # Only dispatch when every error is an orphaned PDF
+          ERROR_COUNT="${{ steps.findings.outputs.error_count }}"
+          ORPHAN_COUNT=$(grep -c "PDF has no matching Markdown" "$REPORT" 2>/dev/null || echo 0)
+
+          if [ "$ORPHAN_COUNT" -eq 0 ] || [ "$ORPHAN_COUNT" -lt "$ERROR_COUNT" ]; then
+            echo "⊘ Non-orphan findings present — skipping auto-dispatch (manual review needed)"
+            exit 0
+          fi
+
+          # Check for an already-running or queued pipeline run
+          ACTIVE=$(gh run list \
+            --workflow security-reports-pipeline.yml \
+            --repo "${{ github.repository }}" \
+            --json status \
+            --jq '[.[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting")] | length')
+
+          if [ "${ACTIVE:-0}" -gt 0 ]; then
+            echo "⊘ Pipeline already active ($ACTIVE run(s)) — skipping auto-dispatch"
+            exit 0
+          fi
+
+          echo "🔄 Dispatching pipeline to convert $ORPHAN_COUNT orphaned PDF(s)..."
+          gh workflow run security-reports-pipeline.yml \
+            --repo "${{ github.repository }}" \
+            --ref main
+
+          echo "✓ Pipeline dispatched — orphaned PDFs will be converted on next run"
+
       - name: Generate step summary
         if: always()
         run: |
