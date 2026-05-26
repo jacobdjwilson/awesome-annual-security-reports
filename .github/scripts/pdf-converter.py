@@ -299,7 +299,10 @@ class MarkdownPolisher:
             return text.strip()
 
         except Exception as e:
-            print(f"  ! Model {model_name} error: {str(e)[:120]}")
+            err = str(e)
+            if is_quota_error(err):
+                raise  # propagate so polish() retry loop can apply the right wait
+            print(f"  ! Model {model_name} error: {err[:120]}")
             return None
 
     # ── Public API ────────────────────────────────────────────────────────
@@ -328,18 +331,38 @@ class MarkdownPolisher:
         polished: Optional[str] = None
         delay = self.config.initial_delay
 
+        quota_exhausted = False
         for attempt in range(self.config.max_retries):
-            for model_name in [self.config.primary_model, self.config.secondary_model]:
-                polished = self._call_model(model_name, prompt)
-                if polished:
-                    self._active_model = model_name
-                    break
+            try:
+                for model_name in [self.config.primary_model, self.config.secondary_model]:
+                    polished = self._call_model(model_name, prompt)
+                    if polished:
+                        self._active_model = model_name
+                        break
+            except Exception as e:
+                err = str(e)
+                if is_quota_error(err):
+                    api_delay = extract_retry_delay(err)
+                    if attempt < self.config.max_retries - 1:
+                        wait = api_delay if api_delay else min(delay * 4, 120)
+                        print(f"  ! Quota error (429) — waiting {wait:.0f}s "
+                              f"(source: {'API' if api_delay else 'config'})...")
+                        time.sleep(wait)
+                        if not api_delay:
+                            delay = min(delay * self.config.backoff_mult, self.config.max_delay)
+                    else:
+                        quota_exhausted = True
+                    continue
+                print(f"  ! Unexpected error: {err[:120]}")
             if polished:
                 break
             if attempt < self.config.max_retries - 1:
                 print(f"  ! Retry {attempt + 1}/{self.config.max_retries} after {delay:.0f}s...")
                 time.sleep(delay)
                 delay = min(delay * self.config.backoff_mult, self.config.max_delay)
+
+        if quota_exhausted:
+            raise RuntimeError("quota_exhausted: Gemini 429 after all retries in polish()")
 
         if not polished:
             print("  ! AI polish unavailable — returning raw markitdown output")
@@ -565,10 +588,24 @@ def main():
                             force_reconvert=args.force_reconvert)
     results: List[Dict[str, Any]] = []
 
+    quota_exhausted_flag = False
+
     for i, pdf_path in enumerate(pdf_files, 1):
         print(f"[{i}/{len(pdf_files)}] {Path(pdf_path).name}")
 
-        success, md_path, message = converter.convert(pdf_path)
+        try:
+            success, md_path, message = converter.convert(pdf_path)
+        except RuntimeError as e:
+            if is_quota_error(str(e)):
+                quota_exhausted_flag = True
+                results.append({
+                    "pdf_path": pdf_path, "output_path": "", "status": "failed",
+                    "message": str(e)[:200], "organization_name": "",
+                    "report_title": "", "year": "", "model": None,
+                    "method": "", "attempts": 1, "output_chars": None,
+                })
+                continue
+            raise
         org_name, report_title, year = converter._parse_filename(Path(pdf_path).name)
 
         # Determine method and model used
@@ -617,6 +654,9 @@ def main():
     print(f"✓ Results saved to: {args.output_json}")
     print(f"{'='*70}\n")
 
+    if successful == 0 and quota_exhausted_flag:
+        print("QUOTA_EXHAUSTED=true")
+        return EXIT_QUOTA_EXHAUSTED
     return 0 if successful > 0 else 1
 
 
