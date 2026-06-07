@@ -1,21 +1,19 @@
-Office of the Director of National Intelligence | March 2025
-
-# ANNUAL THREAT ASSESSMENT OF THE U.S. INTELLIGENCE COMMUNITY
-
-March 2025
+# Annual Threat Assessment of the U.S. Intelligence Community (2025)
 
 ## Table of Contents
-- [INTRODUCTION](#introduction)
-- [FOREWORD](#foreword)
-- [NONSTATE TRANSNATIONAL CRIMINALS AND TERRORISTS](#nonstate-transnational-criminals-and-terrorists)
-    - [Foreign Illicit Drug Actors](#foreign-illicit-drug-actors)
-    - [Transnational Islamic Extremists](#transnational-islamic-extremists)
-    - [Other Transnational Criminals](#other-transnational-criminals)
-- [MAJOR STATE ACTORS](#major-state-actors)
-    - [CHINA](#china)
-    - [RUSSIA](#russia)
+- [Introduction](#introduction)
+- [Foreword](#foreword)
+- [Nonstate Transnational Criminals and Terrorists](#nonstate-transnational-criminals-and-terrorists)
+  - [Foreign Illicit Drug Actors](#foreign-illicit-drug-actors)
+  - [Transnational Islamic Extremists](#transnational-islamic-extremists)
+  - [Other Transnational Criminals](#other-transnational-criminals)
+- [Major State Actors](#major-state-actors)
+  - [China](#china)
+  - [Russia](#russia)
 
-## INTRODUCTION
+---
+
+## Introduction
 
 This annual report of worldwide threats to the national security of the United States responds to Section 617 of the FY21 Intelligence Authorization Act (Pub. L. No. 116-260). This report reflects the collective insights of the Intelligence Community (IC), which is committed to providing the nuanced, independent, and unvarnished intelligence that policymakers, warfighters, and domestic law enforcement personnel need to protect American lives and America’s interests anywhere in the world.
 
@@ -23,9 +21,9 @@ This assessment focuses on the most direct, serious threats to the United States
 
 Information available as of 18 March was used in the preparation of this assessment.
 
-[ 2 ]
+---
 
-## FOREWORD
+## Foreword
 
 The 2025 Annual Threat Assessment (ATA) is the Intelligence Community’s (IC) official, coordinated evaluation of an array of threats to U.S. citizens, the Homeland, and U.S. interests in the world. A diverse set of foreign actors are targeting U.S. health and safety, critical infrastructure, industries, wealth, and government. State adversaries and their proxies are also trying to weaken and displace U.S. economic and military power in their regions and across the globe.
 
@@ -37,9 +35,9 @@ This 2025 ATA report supports the Office of the Director of National Intelligenc
 
 This 2025 Annual Threat Assessment details these myriad threats by actor or perpetrator, starting with nonstate actors and then presenting threats posed by major state actors. The National Intelligence Council stands ready to support policymakers with additional information in a classified setting.
 
-[ 4 ]
+---
 
-## NONSTATE TRANSNATIONAL CRIMINALS AND TERRORISTS
+## Nonstate Transnational Criminals and Terrorists
 
 Transnational criminals, terrorists, and other nonstate actors are threatening and impacting the lives of U.S. citizens, the security and prosperity of the Homeland, and U.S. strength at home and abroad. Some transnational criminal organizations (TCOs) are producing and trafficking large amounts of illicit drugs that are imperiling American lives and livelihoods. They are conducting other illegal activities that challenge U.S. security, such as human trafficking, cyber operations, money laundering, and inciting violence. U.S. citizens—at home and abroad—are also facing more diverse, complex, and decentralized terrorist threats. Actors, ranging from designated Foreign Terrorist Organizations—including the Islamic State of Iraq and ash-Sham (ISIS), al-Qa‘ida, other Islamist terrorist groups, and some drug cartels— to terrorists acting alone or in small cells, are likely to pursue, enable, or inspire attacks. Finally, large-scale illegal immigration has strained local and national infrastructure and resources and enabled known or suspected terrorists to cross into the United States.
 
@@ -47,14 +45,12 @@ Transnational criminals, terrorists, and other nonstate actors are threatening a
 
 Western Hemisphere-based TCOs and terrorists involved in illicit drug production and trafficking bound for the United States endanger the health and safety of millions of Americans and contribute to regional instability. Fentanyl and other synthetic opioids remain the most lethal drugs trafficked into the United States, causing more than 52,000 U.S. deaths in a 12-month period ending in October 2024. This represents a nearly 33 percent decrease in synthetic opioid-related overdose deaths compared to the same reporting time frame the previous year, according to CDC provisional data, and may be because of the availability and accessibility of naloxone.
 
-- **Mexico-based TCOs**—including the Sinaloa Cartel and the New Generation Jalisco Cartel—remain the dominant producers and suppliers of illicit drugs, including fentanyl, heroin, methamphetamine, and South American-sourced cocaine, for the U.S. market. Last year, official points of entry along the U.S.-Mexico border were the main entry point for illicit drugs, often concealed in passenger vehicles and tractor trailers. However, some TCOs likely will at least temporarily change their smuggling techniques and routes in response to increased U.S. security force presence at the border.
-- Since at least 2020, the growth of **Mexico-based independent fentanyl producers**—actors who are autonomous or semiautonomous from Mexican cartel control—has increasingly fragmented Mexico’s fentanyl trade. Independent fentanyl producers are attracted to the drug’s profitability and the low barriers to market entry, including the ease of synthesizing it using basic lab equipment and few personnel.
-- **Colombia-based TCOs and illegal armed groups** are responsible for producing and exporting the vast majority of cocaine that reaches the United States, some of which is transshipped through Ecuador, contributing to an uptick in violent criminal conflicts that spurs regional migration.
-- **Mexico-based TCOs are ramping up lethal attacks** in Mexico against rivals and Mexican security forces using IEDs, including landmines, mortars, and grenades. In 2024, there were nearly 1,600 attacks on Mexican security forces using IEDs, surging from only three reported attacks between 2020-2021. The sophistication of TCO tactics is reshaping Mexico’s security landscape and has heightened the risk to security forces.
+- Mexico-based TCOs—including the Sinaloa Cartel and the New Generation Jalisco Cartel—remain the dominant producers and suppliers of illicit drugs, including fentanyl, heroin, methamphetamine, and South American-sourced cocaine, for the U.S. market. Last year, official points of entry along the U.S.-Mexico border were the main entry point for illicit drugs, often concealed in passenger vehicles and tractor trailers. However, some TCOs likely will at least temporarily change their smuggling techniques and routes in response to increased U.S. security force presence at the border.
+- Since at least 2020, the growth of Mexico-based independent fentanyl producers—actors who are autonomous or semiautonomous from Mexican cartel control—has increasingly fragmented Mexico’s fentanyl trade. Independent fentanyl producers are attracted to the drug’s profitability and the low barriers to market entry, including the ease of synthesizing it using basic lab equipment and few personnel.
+- Colombia-based TCOs and illegal armed groups are responsible for producing and exporting the vast majority of cocaine that reaches the United States, some of which is transshipped through Ecuador, contributing to an uptick in violent criminal conflicts that spurs regional migration.
+- Mexico-based TCOs are ramping up lethal attacks in Mexico against rivals and Mexican security forces using IEDs, including landmines, mortars, and grenades. In 2024, there were nearly 1,600 attacks on Mexican security forces using IEDs, surging from only three reported attacks between 2020-2021. The sophistication of TCO tactics is reshaping Mexico’s security landscape and has heightened the risk to security forces.
 
-[ 5 ]
-
-**China remains the primary source country** for illicit fentanyl precursor chemicals and pill pressing equipment, followed by India. Mexico-based chemical brokers circumvent international controls through mislabeled shipments and the purchase of unregulated dual-use chemicals.
+![China remains the primary source country for illicit fentanyl precursor chemicals and pill pressing equipment, followed by India. Mexico-based chemical brokers circumvent international controls through mislabeled shipments and the purchase of unregulated dual-use chemicals.]
 
 ### Transnational Islamic Extremists
 
@@ -62,196 +58,66 @@ ISIS’s most aggressive branches, including ISIS-Khorasan (ISIS-K), and its ent
 
 The New Year’s Day attacker in New Orleans was influenced by ISIS propaganda, and separately, an Afghan national was arrested in October for planning an election day attack in the name of ISIS, highlighting ISIS’s ability to reach into the Homeland to both inspire and enable attacks.
 
-- **ISIS-K in South Asia** is the group’s branch most capable of carrying out external terrorist attacks and maintains the intent to conduct attacks in South and Central Asia, and globally, although its capabilities vary. ISIS-K’s mass casualty attacks in Russia and Iran in 2024, as well as arrests of ISIS-K supporters in Europe and the United States, highlight the group’s expanding capability beyond South Asia and ability to inspire individuals to conduct attacks abroad.
-- **ISIS will seek to exploit the end of the Asad regime in Syria** to reconstitute its attack capabilities, including external plotting, and to free prisoners to rebuild their ranks.
-- In 2024, the ISIS spokesman publicly hailed the group’s Africa expansion, highlighting the growing importance of the continent to the group. **ISIS-Somalia** has doubled in size during the past year, **ISIS-West Africa** remains the largest branch and leads in numbers of claimed attacks, and **ISIS-Sahel** is expanding into coastal West Africa.
+- ISIS-K in South Asia is the group’s branch most capable of carrying out external terrorist attacks and maintains the intent to conduct attacks in South and Central Asia, and globally, although its capabilities vary. ISIS-K’s mass casualty attacks in Russia and Iran in 2024, as well as arrests of ISIS-K supporters in Europe and the United States, highlight the group’s expanding capability beyond South Asia and ability to inspire individuals to conduct attacks abroad.
+- ISIS will seek to exploit the end of the Asad regime in Syria to reconstitute its attack capabilities, including external plotting, and to free prisoners to rebuild their ranks.
+- In 2024, the ISIS spokesman publicly hailed the group’s Africa expansion, highlighting the growing importance of the continent to the group. ISIS-Somalia has doubled in size during the past year, ISIS-West Africa remains the largest branch and leads in numbers of claimed attacks, and ISIS-Sahel is expanding into coastal West Africa.
 
 Al-Qa‘ida maintains its intent to target the United States and U.S. citizens across its global affiliates. Its leaders, some of whom remain in Iran, have tried to exploit anti-Israeli sentiment over the war in Gaza to unite Muslims and encourage attacks against Israel and the United States. Al-Qa‘ida’s media apparatus issued statements from leaders and the group’s affiliates supporting HAMAS and encouraging attacks against Israeli and U.S. targets.
 
-- **Al-Qa‘ida in the Arabian Peninsula (AQAP)** relaunched its Inspire guide with videos and tweets that encouraged attacks against Jewish targets, the United States, and Europe. Inspire provided instructions for making bombs and placing explosive devices on civilian airliners and gave religious, ideological, historical, and moral justification for such attacks. In addition to trying to inspire attacks worldwide and in the United States, AQAP has the intent to conduct operations in the region and beyond.
-- **Al-Shabaab**—al-Qa‘ida’s largest and wealthiest affiliate—remains focused on attacks in Somalia that further its regional objectives, provides funding to al-Qa‘ida efforts outside of Somalia, and has a burgeoning relationship with the Huthis that could provide access to a new source of more sophisticated weapons, increasing the threat to U.S. interests in the region.
-
-[ 6 ]
-
-- In West Africa, **al-Qa‘ida is expanding its territorial control** by gaining inroads with civilians through the provision of services and intimidation, and is threatening urban centers in Burkina Faso and Mali, where U.S. personnel are located.
-- **Al-Qa‘ida’s affiliate in Syria, Hurras al-Din**, probably is exploiting the end of the Asad regime in Syria to strengthen its position. Despite its public announcement that the group was ordered dissolved by al-Qa‘ida’s senior leaders in Iran, Hurras al-Din members were advised not to disarm and instead to prepare for a future conflict, noting their continued fight against the Jews and their supporters.
+- Al-Qa‘ida in the Arabian Peninsula (AQAP) relaunched its Inspire guide with videos and tweets that encouraged attacks against Jewish targets, the United States, and Europe. Inspire provided instructions for making bombs and placing explosive devices on civilian airliners and gave religious, ideological, historical, and moral justification for such attacks. In addition to trying to inspire attacks worldwide and in the United States, AQAP has the intent to conduct operations in the region and beyond.
+- Al-Shabaab—al-Qa‘ida’s largest and wealthiest affiliate—remains focused on attacks in Somalia that further its regional objectives, provides funding to al-Qa‘ida efforts outside of Somalia, and has a burgeoning relationship with the Huthis that could provide access to a new source of more sophisticated weapons, increasing the threat to U.S. interests in the region.
+- In West Africa, al-Qa‘ida is expanding its territorial control by gaining inroads with civilians through the provision of services and intimidation, and is threatening urban centers in Burkina Faso and Mali, where U.S. personnel are located.
+- Al-Qa‘ida’s affiliate in Syria, Hurras al-Din, probably is exploiting the end of the Asad regime in Syria to strengthen its position. Despite its public announcement that the group was ordered dissolved by al-Qa‘ida’s senior leaders in Iran, Hurras al-Din members were advised not to disarm and instead to prepare for a future conflict, noting their continued fight against the Jews and their supporters.
 
 Other Islamic terrorist groups—including some with historical ties to al-Qa‘ida—continue to pose a threat to the United States primarily in the regions where they operate. Most of these groups generally have targeted local governments in recent years, while Lebanese Hizballah has continued to pursue limited targeting of primarily Israeli and Jewish individuals in and outside of the Middle East. The U.S. Government works with partners worldwide to prevent attacks against U.S. citizens, while watching for indications that these groups may shift intent and build capabilities to pursue transnational attacks.
 
-- In South Asia, **Tehrik-e-Taliban (TTP)** operations in recent years have focused exclusively on targeting the Government of Pakistan, probably to avoid drawing more counterterrorism pressure. However, TTP’s capabilities, historical ties to al-Qa‘ida, and previous support to operations targeting the United States keep us concerned about the potential future threat. Anti-India groups, including Lashkar-e Tayyiba, similarly concern us in part because of their historical links with al-Qa‘ida.
+- In South Asia, Tehrik-e-Taliban (TTP) operations in recent years have focused exclusively on targeting the Government of Pakistan, probably to avoid drawing more counterterrorism pressure. However, TTP’s capabilities, historical ties to al-Qa‘ida, and previous support to operations targeting the United States keep us concerned about the potential future threat. Anti-India groups, including Lashkar-e Tayyiba, similarly concern us in part because of their historical links with al-Qa‘ida.
 
 ### Other Transnational Criminals
 
 Profit-motivated transnational criminals are using corruption, intimidation, and enabling technologies to expand their illegal activities into new markets and to diversify their sources of income, which increase their resiliency to U.S. and international law enforcement and financial regulatory efforts. TCOs are defrauding U.S. citizens, businesses, and government programs, while laundering billions of dollars of illicit proceeds through U.S. and international financial institutions. TCOs sometimes outsource money laundering operations and investments to individuals and networks with legal and banking expertise to circumvent financial regulations.
 
-- **TCOs and their financial facilitators** use a myriad of methods to launder and repatriate illicit proceeds and to evade law enforcement and regulatory pressures. Some TCOs use digital currencies for money laundering and sanctions evasion activities because of its perceived anonymity and weaker international regulations compared to fiat currencies.
+- TCOs and their financial facilitators use a myriad of methods to launder and repatriate illicit proceeds and to evade law enforcement and regulatory pressures. Some TCOs use digital currencies for money laundering and sanctions evasion activities because of its perceived anonymity and weaker international regulations compared to fiat currencies.
 
 Financially motivated cyber criminals continue to prey on inadequately defended U.S. targets, such as healthcare systems and municipal governments, that could have broad impact on the U.S. populace and economy. Others have conducted attacks on critical infrastructure, disrupting utility company business networks or manipulating poorly secured control systems.
 
-- **Ransomware actors** in mid-2024 attacked the largest payment processor for U.S. healthcare transactions, hampering prescriptions and causing extended delays in accessing electronic health records, patient communications, and medication ordering systems, and forcing some ambulances to divert patients to other hospitals.
-
-[ 7 ]
-
-- **U.S. water infrastructure** has become a more common target. In October 2024, criminal actors conducted cyber attacks against both large and small water utilities in the United States, possibly inspired by attacks against water infrastructure by Russian hacktivists and Iranian cyber actors in 2023 that had little effect but drew substantial publicity.
+- Ransomware actors in mid-2024 attacked the largest payment processor for U.S. healthcare transactions, hampering prescriptions and causing extended delays in accessing electronic health records, patient communications, and medication ordering systems, and forcing some ambulances to divert patients to other hospitals.
+- U.S. water infrastructure has become a more common target. In October 2024, criminal actors conducted cyber attacks against both large and small water utilities in the United States, possibly inspired by attacks against water infrastructure by Russian hacktivists and Iranian cyber actors in 2023 that had little effect but drew substantial publicity.
 
 Foreign and U.S.-based human traffickers exploit vulnerable individuals and groups by promising well-paying jobs, confiscating identification documents, coercing victims to engage in risky behaviors and to work in inhumane conditions. TCOs that engage in human trafficking may also engage in other criminal activity threatening the United States, including fraud scams, drug trafficking, and weapons and human smuggling.
 
-- **Criminal actors, including Mexico-based TCOs**, exploit migrants transiting the Western Hemisphere to the United States through kidnapping for ransom, forced labor, and sex trafficking operations. For example, some victims are forced to repay their smuggling fees through debt bondage once they arrive in the United States. These migrants are typically forced to become domestic servants, to work in the fishing, agriculture, and meat processing industries for low wages, or to work in illegal marijuana grow houses.
+- Criminal actors, including Mexico-based TCOs, exploit migrants transiting the Western Hemisphere to the United States through kidnapping for ransom, forced labor, and sex trafficking operations. For example, some victims are forced to repay their smuggling fees through debt bondage once they arrive in the United States. These migrants are typically forced to become domestic servants, to work in the fishing, agriculture, and meat processing industries for low wages, or to work in illegal marijuana grow houses.
 
 The total number of migrants trying to reach the United States has dropped significantly since January 2025 due to a surge in border security enforcement. While key drivers of migration in the Western Hemisphere, such as crime, poverty, and political repression, are likely to continue, heightened border security and mass deportation policies probably serve as a deterrent for migrants seeking to illegally cross U.S. borders.
 
-- **Law enforcement encounters with migrants** at the U.S.-Mexico border were 14 percent lower in 2024 when compared to the previous year, and U.S. Border Patrol apprehensions along the Southwest border in January 2025 dropped 85 percent from the same period in 2024. Guatemalan, Mexican, and Venezuelan nationals were the most frequently encountered nationals at the U.S.-Mexico border.
-- Real or perceived changes to immigration laws or travel polices in transit countries can trigger unexpected spikes. Since 2021, for instance, **Nicaragua has removed visa requirements** for air travelers from third countries, triggering a surge in U.S.-bound migration from those countries through Nicaragua.
+- Law enforcement encounters with migrants at the U.S.-Mexico border were 14 percent lower in 2024 when compared to the previous year, and U.S. Border Patrol apprehensions along the Southwest border in January 2025 dropped 85 percent from the same period in 2024. Guatemalan, Mexican, and Venezuelan nationals were the most frequently encountered nationals at the U.S.-Mexico border.
+- Real or perceived changes to immigration laws or travel polices in transit countries can trigger unexpected spikes. Since 2021, for instance, Nicaragua has removed visa requirements for air travelers from third countries, triggering a surge in U.S.-bound migration from those countries through Nicaragua.
 
-[ 8 ]
+---
 
-## MAJOR STATE ACTORS
+## Major State Actors
 
 Several major state actors present proximate and enduring threats to the United States and its interests in the world, challenging U.S. military and economic strength, regionally and globally. China stands out as the actor most capable of threatening U.S. interests globally, though it is also more cautious than Russia, Iran, and North Korea about risking its economic and diplomatic image in the world by being too aggressive and disruptive. Growing cooperation among these actors expands the threat, increasing the risk that should hostilities with one occur, it may draw in others.
 
-### CHINA
+### China
 
 #### Strategic Overview
 
 President Xi Jinping and the People’s Republic of China (PRC) want to achieve “the great rejuvenation of the Chinese nation” by 2049. The PRC will seek to increase its power and influence to shape world events to create an environment favorable to PRC interests, obtain greater U.S. deference to China’s interests, and fend off challenges to its reputation, legitimacy, and capabilities at home and abroad.
 
-- **Beijing is deeply suspicious of U.S. intentions** and views Washington’s measures against China as part of a concerted, whole-of-government effort, working with U.S. allies and partners, to contain China’s development and rise, undermine CCP rule, and prevent the PRC from achieving its aims. PRC leaders are most concerned about strong unified opposition from the United States and its allies, and are responding, in part, by strengthening ties with partners like Russia and North Korea.
+- Beijing is deeply suspicious of U.S. intentions and views Washington’s measures against China as part of a concerted, whole-of-government effort, working with U.S. allies and partners, to contain China’s development and rise, undermine CCP rule, and prevent the PRC from achieving its aims. PRC leaders are most concerned about strong unified opposition from the United States and its allies, and are responding, in part, by strengthening ties with partners like Russia and North Korea.
 - At the same time, China’s leaders will seek opportunities to reduce tension with Washington when they believe it benefits Beijing, protects its core interests, and buys time to strengthen its position.
 
 The PRC will likely continue posturing to be in a position of advantage in a potential conflict with the United States. The PRC will continue trying to press Taiwan on unification and will continue conducting wide-ranging cyber operations against U.S. targets for both espionage and strategic advantage. China will likely struggle to sufficiently constrain the activities of PRC companies and criminal elements that enable the supply and trafficking of fentanyl precursors and synthetic opioids to the United States, absent greater law enforcement actions.
 
-- **China’s military operations** to project power over Taiwan and its efforts to assert sovereignty claims in the South and East China Seas occur routinely with confrontations that increase concern of miscalculations potentially leading to conflict.
-- China has demonstrated the ability to compromise U.S. infrastructure through **formidable cyber capabilities** that it could employ during a conflict with the United States.
+- China’s military operations to project power over Taiwan and its efforts to assert sovereignty claims in the South and East China Seas occur routinely with confrontations that increase concern of miscalculations potentially leading to conflict.
+- China has demonstrated the ability to compromise U.S. infrastructure through formidable cyber capabilities that it could employ during a conflict with the United States.
 
 Beijing will continue to strengthen its conventional military capabilities and strategic forces, intensify competition in space, and sustain its industrial- and technology-intensive economic strategy to compete with U.S. economic power and global leadership.
 
-[ 9 ]
+---
 
-#### Military
-
-China presents the most comprehensive and robust military threat to U.S. national security. The People’s Liberation Army (PLA) is fielding a joint force that is capable of full-spectrum warfare to challenge intervention by the United States in a regional contingency, projecting power globally, and securing what Beijing claims is its sovereign territory. A major portion of China’s military modernization efforts is focused on developing counter-intervention capabilities tailored against all aspects of U.S. and allied military operations in the Pacific. Beijing will focus on meeting key modernization milestones by 2027 and 2035, aimed at making the PLA a world-class military by 2049.
-
-- Examples of PLA advances in 2024 include the **PLA Navy’s third carrier (CV-18 Fujian)** beginning sea trials and likely being ready to enter operational service in 2025. The **PLA Rocket Force** probably is fielding the DF-27 ballistic missile, with a hypersonic glide vehicle payload option and an estimated range of between 5,000 and 8,000 kilometers. The PLA ground forces are also fielding its most advanced multiple rocket launcher, the PCH191, increasing its long-range, precision strike capability.
-- The PLA has improved its force structure, readiness, and training. The PLA probably has made particular progress in critical areas, such as modernizing key ground forces, expanding its navy with more modern combatants, and fielding a wide variety of new missile systems; it has also improved its electronic warfare (EW) capabilities.
-
-The PLA has the capability to conduct long-range precision-strikes with conventional weapons against the Homeland’s periphery in the Western Pacific, including Guam, Hawaii, and Alaska. China has developed a range of ballistic and cruise missiles with conventional payloads that can be delivered from its mainland as well as by air and sea, including by nuclear-powered submarines. China may be exploring development of conventionally-armed intercontinental range missile systems, which, if developed and fielded, would allow China to threaten conventional strikes against targets in the continental United States.
-
-The PLA will continue to pursue the establishment of overseas military installations and access agreements to project power and protect China’s interests abroad. Beijing may also pursue a mixture of military logistics models, including preferred access to commercial infrastructure abroad, exclusive PLA logistics facilities with pre-positioned supplies co-located with commercial infrastructure, and bases with stationed forces, to meet its overseas military logistics needs.
-
-China is using complex, whole-of-government campaigns featuring coercive military, economic, and influence operations short of war to assert its positions and strength against others, reserving more destructive tools for full-scale conflict. Beijing will likely expand these campaigns to advance unification with Taiwan, project power in East Asia, and reverse perceived U.S. hegemony.
-
-- Beijing has pushed back against U.S. military operations, such as reconnaissance and bomber flights, freedom of navigation operations, and exercises around PRC borders and maritime claims. The PLA regularly intercepts and shadows U.S. forces and sometimes conducts unsafe maneuvers in their vicinity.
-
-[ 10 ]
-
-#### Taiwan and Maritime Flashpoints
-
-In 2025, Beijing will likely apply stronger coercive pressure against Taiwan and perceived increases in U.S. support to the island to further its goal of eventual unification. The PRC calls for a peaceful unification with Taiwan to resolve the Civil War that drove Taiwan’s separation, even as it threatens to use force to compel unification if necessary and counter what it sees as a U.S. attempt to use Taiwan to undermine China’s rise.
-
-A conflict between China and Taiwan would disrupt U.S. access to trade and semiconductor technology critical to the global economy. Even without U.S. involvement in such a conflict, there would likely be significant and costly consequences to U.S. and global economic and security interests.
-
-Beijing is working to isolate Taipei by pressuring states to downgrade diplomatic ties and support China’s unification goal. Since 2016, Taiwan’s official diplomatic relationships have dropped from 22 to only 12, and several of the remaining ones are vulnerable to Chinese pressure.
-
-China is advancing military capabilities for a cross-Strait campaign while also using its armed forces to exert steady state pressure on Taiwan. The PLA probably is making steady but uneven progress on capabilities it would use in an attempt to seize Taiwan and deter—and if necessary, defeat—U.S. military intervention, and it is intensifying the scope, size, and pace of operations around Taiwan.
-
-Beijing will continue to pressure Taipei with economic coercion and probably will increase it if it sees Taiwan taking steps toward formal independence. It could suspend preferential tariff terms, selectively ban Taiwan imports to China, and arbitrarily enforce regulations.
-
-Beijing’s aggressive efforts to assert sovereignty claims in the South and East China Seas are heightening tensions that could trigger a broader conflict.
-
-- In 2024, PRC tactics in the South China Sea led to the loss of the Philippines’ unilateral access to some disputed areas, and forced talks between Beijing and Manila in which the Philippines agreed to concessions in exchange for access. However, Manila is unlikely to relinquish its claims, creating potential for escalation by either side.
-- Tension between China and Japan over the **Senkaku Islands** last flared up a decade ago. Since then, Chinese ships have remained in proximity of the disputed islands, occasionally entering the territorial zone, and driving responses from Japan’s Self-Defense Force to monitor the activity.
-
-#### Cyber
-
-The PRC remains the most active and persistent cyber threat to U.S. government, private-sector, and critical infrastructure networks. The PRC’s campaign to preposition access on critical infrastructure for attacks during crisis or conflict, tracked publicly as **Volt Typhoon**, and its more recently identified compromise of U.S. telecommunications infrastructure, also referred to as **Salt Typhoon**, demonstrates the growing breadth and depth of the PRC’s capabilities to compromise U.S. infrastructure.
-
-[ 11 ]
-
-- If Beijing believed that a major conflict with Washington was imminent, it could consider aggressive cyber operations against U.S. critical infrastructure and military assets. Such strikes would be designed to deter U.S. military action by impeding U.S. decision-making, inducing societal panic, and interfering with the deployment of U.S. forces.
-
-#### Economics
-
-The PRC seeks to compete with the United States as the leading economic power in the world. To do so, the strategy calls for a centralized, state-directed, and nationally resourced approach to dominating global markets and strategic supply chains, limiting foreign competitors, and making other nations dependent on China. PRC leaders are applying the same strategy to bolster China’s position and become more globally dominant in critical supply chains, both in upstream inputs it can provide more cheaply than others and in downstream production at wider scale.
-
-- China’s weak domestic demand, coupled with its industrial policies, such as manufacturing subsidies, have enabled a surge in cheap Chinese exports in sectors such as steel, harming U.S. competitors and fueling a record PRC trade surplus.
-- China’s dominance in key supply chains enables its use of economic coercion against countries that adopt policies Beijing opposes. Beijing is developing an institutionalized framework enabling more assertive and centrally controlled trade retaliation. PRC leaders are using ostensibly unofficial or technical trade and investment barriers, administrative regulations, logistics, and symbolic sanctions in a targeted way against individuals, firms, and sectors, in parallel with messages to warn and deter.
-- PRC leaders appear to be preparing for more economic friction with the United States, and probably are weighing options with the new U.S. administration while looking for leverage and other ways to prevent a major escalation and decoupling.
-
-China’s dominance in the mining and processing of several critical materials is a particular threat, providing it with the ability to restrict quantities and affect global prices. Beijing has shown a willingness to restrict global access to its mineral resources—sometimes in response to geopolitical disputes—as with its banning of exports to the United States of metals used in semiconductor manufacturing, such as **gallium, germanium, and antimony** in December 2024 in response to U.S. export controls on advanced semiconductors and chip-making equipment. Other examples include when the PRC temporarily stopped rare earth element exports to Japan in 2010, and Beijing’s creation of new laws codifying its authority to restrict mineral exports. A prolonged cessation in supplies controlled by China could disrupt critical inputs needed for U.S. industry and technological advancements.
-
-China has similar aims in global shipping and resource access, including in the Arctic, where melting sea ice is creating opportunities for expanded maritime transport and energy exploitation, especially along the Northern Sea Route (NSR) off Russia’s coast. China seeks access to the Arctic’s potentially vast natural resources, including oil, gas, and minerals, even though China is not among the eight Arctic countries that control territory in the region. Beijing seeks to normalize more direct and efficient maritime shipping routes to Russia and other Northern Hemisphere areas, as a way to fuel its economic growth and energy security and reduce its dependence on Middle East energy. China has gradually increased engagement with Greenland mainly through mining projects, infrastructure development, and scientific research projects. Despite less active engagement right now, China’s long-term goal is to expand access to Greenland’s natural resources, as well as to use the same access as a key strategic foothold for advancing China’s broader and economic aims in the Arctic.
-
-[ 12 ]
-
-#### Technology
-
-China is using an aggressive, whole-of-government approach, combined with state direction of the private sector, to become a global S&T superpower, surpass the United States, promote self-reliance, and achieve further economic, political, and military gain. Beijing has prioritized technology sectors such as advanced power and energy, AI, biotechnology, quantum information science, and semiconductors, further challenging U.S. efforts to protect critical technologies by tailoring restrictions narrowly to address national security concerns. China is accelerating its S&T progress through a range of licit and illicit means, to include investments, intellectual property acquisition and theft, cyber operations, talent recruitment, international collaborations, and sanctions evasion.
-
-- Some forecasts indicate China’s technology sectors will account for as much as 23 percent of its gross domestic product by 2026, more than doubling since 2018. In addition to private funding, the PRC government is investing hundreds of billions of dollars in priority technologies, such as AI, microelectronics, and biotechnologies, in pursuit of its self-reliance goals.
-
-China almost certainly has a multifaceted, national-level strategy designed to displace the United States as the world’s most influential AI power by 2030. China is experiencing a boom in generative AI with the rapid emergence of a large number of PRC-developed models, and is broadly pursuing AI for smart cities, mass surveillance, healthcare, S&T innovation, and intelligent weapons. Chinese AI firms are already world leaders in voice and image recognition, video analytics, and mass surveillance technologies. The PLA probably plans to use large language models (LLMs) to generate information deception attacks, create fake news, imitate personas, and enable attack networks. China has also announced initiatives to bolster international support for its vision of AI governance.
-
-- China has stolen hundreds of gigabytes of intellectual property from companies in Asia, Europe, and North America in an effort to leapfrog over technological hurdles, with as much as 80 percent of U.S. economic espionage cases as of 2021 involving PRC entities.
-
-China also sees biotechnology as critical to becoming a dominant economic power and intends to grow its domestic bioeconomy to $3.3 trillion this year. Beijing is investing heavily in collecting health and genetic data both at home and abroad in pursuit of these goals, and has shown it can be globally competitive in certain low-cost, high-volume commodities, such as biomanufacturing and genetic sequencing. Beijing has identified genetic data as a national strategic resource and is expanding state control over the country’s gene banks and other genetic repositories, positioning it to potentially lead in precision medicine and agricultural biotechnology applications.
-
-China has made progress in producing advanced 7-nanometer (nm) semiconductor chips for cryptocurrency mining and cellular devices using previously acquired deep ultraviolet (DUV) lithography equipment, but will face challenges achieving high-quality, high-volume production of these chips without access to extreme ultraviolet lithography tools. PRC researchers also continue to explore applying advanced patterning techniques to DUV machines to produce semiconductor chips as small as 3nm. China leads the world in legacy logic semiconductor (28nm and up) production, accounting for 39.3 percent of global capacity, and is expected to add more capacity than the rest of the world combined through 2028. These legacy chips are vital to producing automobiles, consumer electronics, home appliances, factory automation, broadband, and many military and medical systems.
-
-[ 13 ]
-
-#### WMD
-
-China remains intent on modernizing, diversifying, and expanding its nuclear posture. China’s nuclear weapons and advanced delivery systems pose a direct threat to the Homeland and are capable of delivering catastrophic damage to the United States and threatening U.S. military forces here and abroad.
-
-China most likely possesses capabilities relevant to chemical and biological warfare (CBW) that pose a threat to U.S., allied, and partner forces as well as civilian populations.
-
-#### Biosecurity
-
-China’s approach to and role in global biological, medical, and other health-related global priorities present unique challenges to the United States and the world. The COVID-19 pandemic that ultimately led to the death of more than one million Americans—and multiples more worldwide—began in China, which Beijing still refuses to acknowledge. China’s strict censorship and repression of free speech prevented doctors treating the earliest of patients in Wuhan from warning the world of a far more serious contagion than Beijing wanted told, slowing the world’s preparedness and response. To this day, Beijing refuses to fully cooperate with the rest of the international community trying to definitively pinpoint the precise cause of the disease so it can head off and prepare for any new disease.
-
-Regarding COVID-19 origins, IC agencies have continued to evaluate new information from classified and open sources, revisit previous reporting, and consult with diverse technical experts to increase our understanding of the cause of the pandemic. These efforts have led CIA to assess that a research-related hypothesis is more likely than a natural origin hypothesis.
-
-The other hypothesis for COVID-19—natural origin—includes many scenarios in which humans could have been infected with SARS-CoV-2—the virus that causes COVID-19—or a close progenitor through exposure to wild or domestic animals. China is home to a diverse body of naturally occurring coronaviruses found in a wide geographic area, and there is precedence for these viruses to emerge within human populations far from reservoir locations. For example, the coronavirus that is the closest known relative to SARS-CoV—the virus that causes severe acute respiratory syndrome (SARS)—probably originated in Yunnan Province, according to scientific studies, even though the first SARS outbreak detected in humans in 2003 occurred in Guangdong Province, hundreds of miles away.
-
-- The research-related incident hypothesis also considers a broad range of potential initial human-infection scenarios from events in research facilities, such as government or university laboratories, to research-related activities in the field, such as collecting samples from wild animals.
-
-The PRC’s dominance in pharmaceutical and medical supply production combined with lower quality safety and environmental standards than those of the United States positions Beijing to potentially restrict such exports for leverage over Washington and others in trade or security disputes. The PRC plays an increasingly important role in supplying pharmaceuticals and related medical supplies to the United States, as well as the rest of the world.
-
-- U.S. imports of Chinese pharmaceuticals—defined as medicines, vaccines, blood, organic cultures, bandages, and organs—grew almost five-fold between 2020 and 2022 alone, from $2.1 billion to $10.3 billion.
-
-[ 14 ]
-
-- The PRC also might look to uniquely provide such supplies and medical aid to countries, more cheaply and at scales competitors cannot match, as a way to boost its global influence at the expense of the United States. The PRC’s “vaccine diplomacy” during the COVID-19 pandemic—it provided vaccines to 83 countries—was driven at least in part by geopolitical considerations, such as currying favor for a new port in Burma.
-
-#### Space
-
-China has eclipsed Russia as a space leader and is poised to compete with the United States as the world’s leader in space by deploying increasingly capable interconnected multi-sensor systems and working toward ambitious scientific and strategic goals. China has achieved global coverage in some of its intelligence, surveillance, and reconnaissance (ISR) constellations and world-class status in all but a few space technologies.
-
-- China’s **Beidou constellation** is a world-class position, navigation, and timing capability that competes with U.S. GPS and Europe’s Galileo service. The PLA ISR architecture and satellite communications are areas the PLA continues to improve upon to close the perceived gap between itself and the U.S. military.
-- China’s successful lunar sample return mission in June 2024 contributes to Beijing’s technological prowess and national prestige while supporting its effort to land astronauts on the Moon by 2030 and establish the first lunar base by 2035.
-- China’s commercial space sector is growing quickly with aspiration to be a major global competitor to U.S. and European space companies. For example, China launched the first set of satellites in its low Earth orbit (LEO) proliferated constellation last year for its own satellite Internet service to compete with Western commercial satellite Internet services.
-
-Counterspace operations will be integral to PLA military campaigns, and China has counterspace-weapons capabilities intended to target U.S. and allied satellites. China already has fielded ground-based counterspace capabilities, including EW systems, directed energy weapons (DEWs), and antisatellite (ASAT) missiles intended to disrupt, damage, and destroy target satellites.
-
-- China also has conducted orbital technology demonstrations, which, while not counterspace weapons tests, prove its ability to operate future space-based counterspace weapons. China has also conducted on-orbit satellite inspections of other satellites, which probably would be representative of the tactics required for some counterspace attacks.
-
-#### Malign Influence Activities
-
-Beijing will continue to expand its coercive and subversive malign influence activities to weaken the United States internally and globally, as well as counter what Beijing sees as a U.S.-led campaign to tarnish China’s global relations and overthrow the CCP. Through these efforts, the PRC seeks to suppress critical views and critics of China within the United States and worldwide, and sow doubts in U.S. leadership and strength. Beijing is likely to feel emboldened to use malign influence more regularly in coming years, particularly as it fields AI to improve its capabilities and avoid detection.
-
-[ 15 ]
-
-- PRC actors have increased their capabilities to conduct covert influence operations and disseminate disinformation. For example, pro-China online actors in 2024 used AI-generated news anchors and fake social media accounts with AI-generated profile pictures to sow divisions on issues such as drug use, immigration, and abortion.
-
-#### China’s Challenges
-
-China faces daunting challenges that will impair CCP leaders’ strategic and political achievements. China’s leaders probably are most concerned about corruption, demographic imbalances, and fiscal and economic struggles because they threaten the country’s economic performance and quality of life, two key factors underpinning CCP legitimacy. Despite an acute economic slowdown, China’s leaders probably will resist making needed structural reforms and instead maintain statist economic policies to steer capital toward priority sectors, reduce dependence on foreign technologies, and enable military modernization.
-
-- China’s growth probably will continue to slow because of low consumer and investor confidence. China’s birth and marriage rates continue to decline, reinforcing negative population trends and a shrinking labor force.
-
-Xi’s focus on security and stability for the CCP and securing other leaders’ personal loyalty to him is undermining China’s ability to solve complex domestic problems and will impede Beijing’s global leverage. Xi’s blending of domestic and foreign security threats is undermining China’s position and standing abroad, reducing Beijing’s ability to shape global perceptions and compete with U.S. leadership.
-
-### RUSSIA
+## Russia
 
 #### Strategic Overview
 
@@ -259,93 +125,11 @@ Russia views its ongoing war in Ukraine as a proxy conflict with the West, and i
 
 Regardless of how and when the war in Ukraine ends, Russia’s current geopolitical, economic, military, and domestic political trends underscore its resilience and enduring potential threat to U.S. power, presence, and global interests. Despite having paid enormous military and economic costs in its war with Ukraine, Russia has proven adaptable and resilient, in part because of the expanded backing of China, Iran, and North Korea. President Vladimir Putin appears resolved and prepared to pay a very high price to prevail in what he sees as a defining time in Russia’s strategic competition with the United States, world history, and his personal legacy. Most Russian people continue to passively accept the war, and the emergence of an alternative to Putin probably is less likely now than at any point in his quarter-century rule.
 
-[ 16 ]
-
-- Western efforts to isolate and sanction Russia have accelerated its investments in alternative partnerships and use of various tools of statecraft to offset U.S. power, with China’s backing and reinforcement. Russia’s relationship with China has helped Moscow circumvent sanctions and export controls to continue the war effort, maintain a strong market for energy products, and promote a global counterweight to the United States, even if at the cost of greater vulnerability to Chinese influence. Russia is also increasing military cooperation with Iran and North Korea, which will continue to help its war effort and enhance U.S. adversary cooperation and collective capacity. Finally, Moscow is increasingly willing to play spoiler in Western-centric forums such as the UN as well as use non-Western organizations like the **Brazil, Russia, India, China, and South Africa (BRICS)** group to press policies such as de-dollarization.
+- Western efforts to isolate and sanction Russia have accelerated its investments in alternative partnerships and use of various tools of statecraft to offset U.S. power, with China’s backing and reinforcement. Russia’s relationship with China has helped Moscow circumvent sanctions and export controls to continue the war effort, maintain a strong market for energy products, and promote a global counterweight to the United States, even if at the cost of greater vulnerability to Chinese influence. Russia is also increasing military cooperation with Iran and North Korea, which will continue to help its war effort and enhance U.S. adversary cooperation and collective capacity. Finally, Moscow is increasingly willing to play spoiler in Western-centric forums such as the UN as well as use non-Western organizations like the Brazil, Russia, India, China, and South Africa (BRICS) group to press policies such as de-dollarization.
 - Russia has shown it can navigate substantial economic challenges resulting from the ongoing drains of the war, Western cost imposition, and high inflation and interest rates, for at least the near term by using financial and import substitution workarounds, maintaining low debt, and continuing investments in the defense-industrial base. Russia’s economy remains the fourth largest in the world (based on GDP at purchasing power parity).
 - Russia’s sizable ground force losses in the war have done little to undermine the strategic pillars of its military power, to include its diverse and robust nuclear deterrent and asymmetric capabilities, particularly in counterspace and undersea warfare. Russia’s air and naval forces remain intact, with the former being more modern and capable than at the start of the invasion. Russia is developing a growing arsenal of conventional capabilities, such as theater strike weapons, to target the Homeland and deployed forces and assets abroad—and to hold U.S. allies at risk—during crisis and wartime. Russia’s advanced WMD and space programs threaten the Homeland, U.S. forces, and key warfighting advantages.
 - Russia will continue to be able to deploy anti-U.S. diplomacy, coercive energy tactics, disinformation, espionage, influence operations, military intimidation, cyberattacks, and gray zone tools to try to compete below the level of armed conflict and fashion opportunities to advance Russian interests.
 - The war in Ukraine has afforded Moscow a wealth of lessons regarding combat against Western weapons and intelligence in a large-scale war. This experience probably will challenge future U.S. defense planning, including against other adversaries with whom Moscow is sharing those lessons learned.
-
-#### Russia and the Arctic
-
-Russia controls about half of all Arctic coastline and views the region as essential to its economic well-being and national security. Moscow wants to further develop its Arctic oil and gas reserves and position itself to reap benefits from expected increases in maritime trade. Russia has concerns about increasing economic and military competition with Western countries in the region, which compounded last year when NATO enlarged to include the last two previously nonaligned Arctic states, Finland and Sweden.
-
-- The war in Ukraine has sapped Russia’s finances and available military resources to fulfill its Arctic ambitions, prompting Russia to seek a closer partnership with China in the Arctic, and welcoming other non-Western countries’ increasing involvement, to offset NATO countries’ perceived advantages.
-
-[ 17 ]
-
-- Russia’s interest in Greenland is focused mainly on its proximity to strategically important naval routes between the Arctic and Atlantic Oceans—including for nuclear-armed submarines—and the fact that Greenland hosts a key U.S. military base.
-
-#### Military
-
-Moscow’s massive investments in its defense sector will render the Russian military a continued threat to U.S. national security, despite Russia’s significant personnel and equipment losses—primarily in the ground forces—during the war with Ukraine. Russia’s air and naval forces, despite suffering some losses and expending substantial quantities of precision-guided munitions, remain capable of providing Moscow with regional and global power projection forces, while Russia’s nuclear and counterspace forces continue to provide it with strategic deterrence capability.
-
-- The Ukraine conflict has led to improvements in some Russian military capabilities. For example, Russia’s initial use of EW and unmanned systems was lacking but it adapted and innovated using EW to more effectively interfere with Ukrainian use of radar and GPS and unmanned aerial vehicles (UAVs).
-- Russia possesses long-range precision strike capability, most notably submarines and bombers equipped with LACMs and antiship cruise missiles, that can hold the Homeland at risk.
-- Moscow has increased its defense budget to its heaviest burden level during Putin’s more than two decades in power and taken measures to reduce the impact of sanctions on its military and defense industry.
-- Russia has imported munitions such as UAVs from Iran and artillery shells from North Korea to mitigate to the impact of international sanctions, thereby sustaining its ability to wage war in Ukraine and enhancing the threat its military poses.
-
-Moscow will contend with long-term challenges such as troop quality and corruption, and a fertility rate below what is needed for replacements, but its investments in personnel recruitment and procurement should allow it to steadily reconstitute reserves and expand ground forces in particular during the next decade. Nevertheless, the war in Ukraine will be a drag on those efforts as long as it persists. Moscow will have to continually balance resource allocation between large-scale production of equipment to sustain the war with modernization and recapitalization efforts.
-
-[ 18 ]
-
-#### Russia and Ukraine
-
-Russia in the past year has seized the upper hand in its full-scale invasion of Ukraine and is on a path to accrue greater leverage to press Kyiv and its Western backers to negotiate an end to the war that grants Moscow concessions it seeks. Continuing the Russia-Ukraine war perpetuates strategic risks to the United States of unintended escalation to large-scale war, the potential use of nuclear weapons, heightened insecurity among NATO Allies, particularly in Central, Eastern, and Northern Europe, and a more emboldened China and North Korea.
-
-Even though Russian President Putin will be unable to achieve the total victory he envisioned when initiating the large-scale invasion in February 2022, Russia retains momentum as a grinding war of attrition plays to Russia’s military advantages. This grinding war of attrition will lead to a gradual but steady erosion of Kyiv’s position on the battlefield, regardless of any U.S. or allied attempts to impose new and greater costs on Moscow.
-
-- Despite recruitment challenges, Russia has regularly generated sufficient personnel to replenish losses and create new units to sustain attacks on multiple frontline axes. While Ukraine has increased its overall personnel intake since new legislation on mobilization was passed in spring 2024, Kyiv has stretched its resources trying to launch new offensives—such as in Kursk, Russia—and build more brigades while defending on all fronts.
-- Moscow’s rising defense spending and investments in defense-industrial capacity will continue to enable a high level of production of critical capabilities—such as artillery, long-range missiles, one-way attack UAVs, and glide bombs—and ensure Russia retains a firepower advantage over Ukraine.
-- Both Putin and Ukrainian President Volodymyr Zelenskyy are interested in continuing discussions on how to end the war and have shown a willingness to test partial ceasefires. Nonetheless, Putin probably is attuned to the potential for protracted conflict to drag down the Russian economy and prompt undesired escalation with the West, and Zelenskyy probably understands that his position is weakening, the future of Western assistance is uncertain, and a ceasefire may ultimately become a necessary recourse. However, both leaders for now probably still see the risks of a longer war as less than those of an unsatisfying settlement. For Russia, positive battlefield trends allow for some strategic patience, and for Ukraine, conceding territory or neutrality to Russia without substantial security guarantees from the West could prompt domestic backlash and future insecurity.
-
-#### Cyber
-
-Russia’s advanced cyber capabilities, its repeated success compromising sensitive targets for intelligence collection, and its past attempts to pre-position access on U.S. critical infrastructure make it a persistent counterintelligence and cyber attack threat. Moscow’s unique strength is the practical experience it has gained integrating cyber attacks and operations with wartime military action, almost certainly amplifying its potential to focus combined impact on U.S. targets in time of conflict.
-
-[ 19 ]
-
-- Russia has demonstrated real-world disruptive capabilities during the past decade, including gaining experience in attack execution by relentlessly targeting Ukraine’s networks with disruptive and destructive malware.
-
-#### Malign Influence Activities
-
-Moscow uses influence activities to counter threats, including by stoking political discord in the West, sowing doubt in democratic processes and U.S. global leadership, degrading Western support for Ukraine, and amplifying preferred Russian narratives. Moscow’s malign influence activities will continue for the foreseeable future and will almost certainly increase in sophistication and volume.
-
-- Moscow probably believes information operations efforts to influence U.S. elections are advantageous, regardless of whether they affect election outcomes, because reinforcing doubt in the integrity of the U.S. electoral system achieves one of its core objectives.
-- Russia uses a variety of entities such as the U.S.-sanctioned influence organizations **Social Design Agency (SDA)** and **ANO Dialog** and the state media outlet **RT** in its efforts to covertly shape public opinion in the United States, amplify and stoke domestic divisions, and discreetly engage Americans, while hiding Russia’s hand.
-
-#### WMD
-
-Russia has the largest and most diverse nuclear weapons stockpile that, along with its deployed ground-, air-, and sea-based delivery systems, could inflict catastrophic damage to the Homeland. Russia has developed a more modernized, mobile, and survivable strategic nuclear force that is intended to circumvent or neutralize future augmented U.S. missile defense and ensure deterrence through reliable retaliatory strike potential. In addition, Russia’s vast arsenal of non-strategic nuclear weapons helps it to offset Western conventional superiority and provide formidable escalation management options in theater war scenarios.
-
-Russia continues efforts to modernize its nuclear weapons capabilities in the face of multiple failed tests of new systems.
-
-Russia’s CBW threat is expanding. Russian scientific institutes continue to research and develop CBW capabilities, including technologies to deliver CBW agents. Russia retains an undeclared chemical weapons program and has used chemical weapons at least twice during recent years in assassination attempts with **Novichok** nerve agents, also known as fourth-generation agents, against Russian opposition leader Aleksey Navalny in 2020, and against U.K. citizen Sergey Skripal and his daughter Yuliya Skripal on U.K. soil in 2018. Russian forces almost certainly continue using chemicals against Ukrainian forces, with hundreds of reported attacks occurring since late 2022.
-
-#### Space
-
-Russia continues to train its military space elements and field new antisatellite weapons to disrupt and degrade U.S. and allied space capabilities. It is expanding its arsenal of jamming systems, DEWs, on-orbit counterspace capabilities, and ASAT missiles designed to target U.S. and allied satellites.
-
-[ 20 ]
-
-- Russia is using EW to counter Western on-orbit assets and continues to develop ASAT missiles capable of destroying space targets in LEO.
-
-Despite its Soviet legacy, the war in Ukraine has revealed glaring deficiencies in Russia’s space-based architecture, which will continue to face difficulties from the effects of sanctions and export controls, domestic space-sector problems, and increasingly strained competition for program resources within Russia. However, Russia will remain a space competitor, probably by prioritizing assets critical to its national security and integrating military space services over civil space projects.
-
-- Moscow uses its and others’ civil and commercial remote-sensing satellites to supplement military-dedicated capabilities and has warned that other countries’ commercial infrastructure in outer space used for military purposes can become a legitimate target.
-
-#### Russian Antisatellite Capability
-
-Russia is developing a new satellite meant to carry a nuclear weapon as an antisatellite capability. A nuclear detonation in outer space could cause devastating consequences for the United States, the global economy, and the world in general. It would harm all countries’ national security and commercial satellites and infrastructure, as well as impair U.S. use of space as a driver for economic development.
-
-- In February 2022, Russia launched a satellite, which its Ministry of Defense claimed at the time was for testing on-board instruments and systems under the influence of radiation and heavy charged particles.
-
-#### Technology
-
-While Russia’s S&T ecosystem has been constrained in the wake of its invasion of Ukraine, Moscow continues to deploy nascent AI applications on and off the battlefield and has deepened technical cooperation with partners such as China in support of long-term R&D goals. Moscow’s use of AI to augment military operations probably will further hone Russian tactics and capabilities in the event of future conflicts with the United States or NATO allies.
-
-- Russia is using AI to create highly-capable deepfakes to spread misinformation, conduct malign influen_
 
 ---
 
