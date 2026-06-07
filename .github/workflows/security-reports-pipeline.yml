@@ -92,6 +92,7 @@ jobs:
         run: |
           MAX_SIZE_MB=$(jq -r '.workflow.discovery.max_file_size_mb' .github/artifacts/workflow-config.json)
           DEFAULT_LIMIT=$(jq -r '.workflow.discovery.default_limit' .github/artifacts/workflow-config.json)
+          PDF_MAGIC=$(jq -r '.workflow.discovery.pdf_magic_number' .github/artifacts/workflow-config.json)
           PDF_SOURCE=$(jq -r '.workflow.folders.pdf_source' .github/artifacts/workflow-config.json)
           MD_FOLDER=$(jq -r '.workflow.folders.markdown_conversions' .github/artifacts/workflow-config.json)
           MAX_AGE_DAYS=$(jq -r '.workflow.conversion.max_age_days' .github/artifacts/workflow-config.json)
@@ -101,6 +102,7 @@ jobs:
 
           echo "max_size_mb=$MAX_SIZE_MB" >> $GITHUB_OUTPUT
           echo "default_limit=$DEFAULT_LIMIT" >> $GITHUB_OUTPUT
+          echo "pdf_magic=$PDF_MAGIC" >> $GITHUB_OUTPUT
           echo "pdf_source=$PDF_SOURCE" >> $GITHUB_OUTPUT
           echo "md_folder=$MD_FOLDER" >> $GITHUB_OUTPUT
           echo "max_age_days=$MAX_AGE_DAYS" >> $GITHUB_OUTPUT
@@ -183,7 +185,8 @@ jobs:
             done <<< "$BRANCHES"
           fi
 
-          PENDING_COUNT=$(grep -c . pending_pdf_paths.txt 2>/dev/null || echo 0)
+          PENDING_COUNT=$(wc -l < pending_pdf_paths.txt 2>/dev/null | tr -d '[:space:]')
+          PENDING_COUNT="${PENDING_COUNT:-0}"
           echo "pending_count=$PENDING_COUNT" >> $GITHUB_OUTPUT
           echo "✓ PDFs with pending conversions in open PRs: $PENDING_COUNT"
 
@@ -201,6 +204,7 @@ jobs:
         env:
           MAX_SIZE_MB: ${{ steps.load_config.outputs.max_size_mb }}
           DEFAULT_LIMIT: ${{ steps.load_config.outputs.default_limit }}
+          PDF_MAGIC: ${{ steps.load_config.outputs.pdf_magic }}
           PDF_SOURCE: ${{ steps.load_config.outputs.pdf_source }}
           MD_FOLDER: ${{ steps.load_config.outputs.md_folder }}
           MAX_AGE_DAYS: ${{ steps.load_config.outputs.max_age_days }}
@@ -215,9 +219,6 @@ jobs:
 
           > files_to_process.txt
           > invalid_files.txt
-
-          # Read PDF magic inline to avoid % characters in GITHUB_OUTPUT causing parse errors
-          PDF_MAGIC=$(jq -r '.workflow.discovery.pdf_magic_number' .github/artifacts/workflow-config.json)
 
           echo "======================================================================"
           echo "FILE DISCOVERY"
@@ -402,7 +403,7 @@ jobs:
               echo "✓ Valid: $FILE_PATH"
             done < files_to_process.txt
 
-            printf '%b' "$VALID_FILES" | sed '/^$/d' > files_to_process.txt
+            echo -e "$VALID_FILES" | sed '/^$/d' > files_to_process.txt
           fi
 
           # Set outputs — overwrite the safe defaults set at the top of this step.
