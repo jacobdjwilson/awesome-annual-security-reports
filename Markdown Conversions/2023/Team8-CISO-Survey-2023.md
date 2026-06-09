@@ -48,13 +48,9 @@ In a year filled with economic and geopolitical instability, the theme of resili
 
 - Despite predictions suggesting cybersecurity spending would be impacted by recent economic challenges, most organizations continue to increase their cybersecurity budgets.
 - As expected, enterprises also continued transitioning to the cloud.
-
-The COVID-19 pandemic, the volatile economic environment, and the rise of remote work created new challenges in the cybersecurity landscape that have simultaneously instigated new opportunities for growth.
-
+- The COVID-19 pandemic, the volatile economic environment, and the rise of remote work created new challenges in the cybersecurity landscape that have simultaneously instigated new opportunities for growth.
 - To adapt to the new era of work and data management, the surveyed CISOs felt the need to expand their budget lines, especially for spending on Identity and Access Management (IAM) and cloud security services.
-
-Amidst changes in the threat landscape, CISOs are eager to adopt further innovation.
-
+- Amidst changes in the threat landscape, CISOs are eager to adopt further innovation.
 - As companies have increased integration with third-party infrastructure, CISOs expressed a strong desire for improved third-party risk management solutions.
 - Staffing shortages in the cybersecurity industry, alongside the evolving threats posed by insiders working alone or cooperating with cybercrime groups, have also pushed CISOs to seek solutions that help reduce human error and mitigate insider threats.
 - As enterprises adopt AI solutions, CISOs also expressed the need for innovation in AI security to keep up with the changing landscape of threats.
@@ -68,7 +64,7 @@ The majority of companies with over 50 employees working in their cybersecurity 
 
 For more details, see also Appendix A.1 Budget by CISO organization size (no. of employees)
 
-![Annual cybersecurity budget chart: 29% $3M-$10M, 50% $10M+, 21% 0-$3M]
+![Annual cybersecurity budget chart: 50% $10M+, 29% $3M-$10M, 21% 0-$3M]
 
 ### 1.2 Budget Change
 Around 56 percent of survey respondents reported a budget increase from 2022.
@@ -77,7 +73,7 @@ In the 2022 CISO Survey, 65 percent of respondents reported an increase in their
 
 For more details, see also Appendix A.2 Budget change by CISO organization size (no. of employees).
 
-![Budget Change chart: 19% Decreased, 25% No Change, 56% Increase]
+![Budget Change chart: 56% Increase, 25% No Change, 19% Decreased]
 
 ### 1.3 Budget Decreases
 Among the CISOs surveyed, 19 percent reported budget decreases, with the majority of these cuts observed in larger companies with over 100 cybersecurity employees and budgets exceeding $10 million.
@@ -118,21 +114,13 @@ Data security solutions play a crucial role in digital transformation and cloud 
 The distribution of expected increased budget lines varies depending on cloud deployment status.
 
 **Hybrid Infrastructure**
-Around 56 percent of survey respondents list their cloud deployment status as hybrid, with an ongoing transition towards greater cloud adoption (see also section 7.1 - Survey Responded Cloud Deployment Status).
-
-Among respondents from hybrid companies, 66 percent expect increases in spending on cloud security. CISOs speculated that these hybrid companies, already on their digital transformation, require team reskilling to effectively manage incident response in the cloud. This necessitates increased spending on both cloud security and security operations.
-
-![Hybrid: Top 3 Budget Expansion Categories chart]
+Around 56 percent of survey respondents list their cloud deployment status as hybrid, with an ongoing transition towards greater cloud adoption. Among respondents from hybrid companies, 66 percent expect increases in spending on cloud security. CISOs speculated that these hybrid companies, already on their digital transformation, require team reskilling to effectively manage incident response in the cloud. This necessitates increased spending on both cloud security and security operations.
 
 **Born in Cloud / Mainly Cloud**
 Among companies that predominantly operate in the cloud, data security emerged as the category with the highest anticipated budget expansion. However, only 22 percent of respondents indicated an expectation to increase spending on cloud security. This lower percentage may be attributed to these companies' more advanced cloud deployment status, suggesting that they have already invested in robust cloud security measures. Additionally, it reflects the need for data security solutions that align with the evolving cloud landscape. In the past, companies with on-prem computing could build a perimeter and trust their data was contained.[^9] However, many companies now lack a clearly defined perimeter. In addition, the data flows between on-prem solutions, public, and private clouds have increased security complexity prompting the need for more agile data security solutions.[^10]
 
-![Born in the Cloud & Mainly Cloud: Top 3 Budget Expansion Categories chart]
-
 **On-Premises**
 Even among companies primarily operating on-premises, 30 percent of respondents listed cloud security as an expected budget expansion category. This suggests that despite a slower rate of cloud adoption, there is a recognition of the need for cloud security and potential for further expansion.
-
-![Mainly On Prem: Top 3 Budget Expansion Categories chart]
 
 ---
 
@@ -154,13 +142,13 @@ Another challenge is ensuring that the AI agent/model performs as intended. The 
 
 As AI technology continues to evolve, our understanding of its impact is still developing. However, there is no doubt that there is an urgent need for innovations in AI security solutions.
 
-> "Safely recognizing the benefits of GenAI requires a whole-firm view of the risks and rewards. In this regard, the CISO is well positioned to partner with internal AI specialists in support of GenAI"
-> — Steve Sparkes, CISO, Scotiabank
-
 ### Human Threat
 Insider threats and human factors ranked as one of the top problems among the surveyed CISOs. According to a 2023 Nuspire survey, 41 percent of CISOs reported that human error and lack of internal employee training remained the number one IT system vulnerability, which was a decrease from 50 percent in 2022.[^16] It is projected that by 2025, over half of significant cyber incidents will be attributed to either a shortage of skilled personnel or human error.[^17] Troublingly, around 90% of employees who admitted to engaging in unsecure actions during work were aware that their actions increased the organization’s risk.[^18] However, they proceeded due to the perceived benefits of speed and convenience that outweighed potential risk.[^19] In addition, the risk of deliberate harm or sabotage by an employee always remains a concern for enterprises.
 
 The number of organizations with formal insider risk management programs is expected to rise from 10 percent today to 50 percent by 2025 to fill this need.[^20]
+
+> "Safely recognizing the benefits of GenAI requires a whole-firm view of the risks and rewards. In this regard, the CISO is well positioned to partner with internal AI specialists in support of GenAI"
+> — Steve Sparkes, CISO, Scotiabank
 
 ---
 
@@ -220,18 +208,10 @@ For these reasons, we selected “personal and professional resilience” as the
 
 ## Survey Respondent Information
 
-In addition to cybersecurity-related insights, this report also presents findings from the analysis of general information about the participating CISOs’ companies and teams. Analyzing the aggregated data revealed the following findings:
-
-The majority of CISO survey respondents report hybrid cloud deployment status and are in the process of transitioning more fully to the cloud.
-
-Approximately 50 percent of survey respondents reported having a cybersecurity department with over 50 employees. Among the companies with zero to 50 employees, over 60 percent reported experiencing budget increases. Around 27 percent of respondents manage departments with 50 to 250 employees, while 22 percent manage departments with over 251 employees.
-
-In addition, the majority of CISOs come from either technology or financial service industries. Among companies with 251-500+ employees, approximately 38 percent are in technology, 25 percent in industrial and manufacturing, and 12.5 percent in financial services.
-
 ### 7.1 Survey Responded Cloud Deployment Status
 A 2022 Mckinsey study found that only a small number of surveyed companies currently host more than half of their applications on public cloud platforms.[^32] Most survey respondents report a hybrid state of cloud adoption where they have some data on-prem and in the cloud and are currently in the migration process to the cloud. However, a significant majority of companies anticipate having more than half of their applications in the public cloud within three years.[^33]
 
-![Cloud Deployment Status chart]
+![Cloud Deployment Status chart: 55.5% Hybrid, 17.5% Born in the cloud, 16% Mainly on-prem, 11% Mainly cloud]
 
 **Financial Services**
 Nearly 65 percent of the surveyed CISOs who work in the financial services sector report adopting a hybrid approach, with only about 12 percent stating that they are primarily or fully in the cloud. The relatively low cloud adoption in the financial services industry leaves significant potential for greater cloud impact, particularly in improving IT resilience through increased cloud adoption.[^34]
@@ -243,46 +223,42 @@ There is a notable contrast in the technology sector, as 60 percent of CISOs at 
 The power and natural gas industry shows a preference for on-premise computing, resulting in a slower motivation for cloud migration.[^36] However, our survey indicates that the industrial and manufacturing industry demonstrates high levels of adoption, with only 6.3 percent of respondents reporting a primarily on-prem approach.
 
 ### 7.2 Cybersecurity Department Size
-In 2023, the percentage of teams with 0-50 employees decreased from 59 percent in 2022 to 50.8 percent.
-
-The percentage of departments with 251-500+ employees remained stable, yet there was an increase in teams with 50-250 employees, rising from 18.8 percent in 2022 to 27 percent.
+In 2023, the percentage of teams with 0-50 employees decreased from 59 percent in 2022 to 50.8 percent. The percentage of departments with 251-500+ employees remained stable, yet there was an increase in teams with 50-250 employees, rising from 18.8 percent in 2022 to 27 percent.
 
 Our results suggest potential growth in the size of cybersecurity teams, aligning with the broader trend of a growing cybersecurity workforce. Despite tech firms undergoing layoffs, cybersecurity teams have continued to hire, indicating a sustained demand for cybersecurity employees. The growth in cybersecurity team sizes is expected to continue. The U.S. Bureau of Labor Statistics predicts a significant growth rate of 35 percent for Information Security Analysts between 2021 and 2031, far surpassing the average growth rate for all occupations in the U.S.[^37]
 
 ### 7.3 Industry
 Most of the surveyed CISOs work in either financial services, the industrial and manufacturing sector, or technology. Only about eight percent state that they work in media and entertainment, and around three percent work in health and pharma.
 
-![Industry chart]
+![Industry breakdown chart]
 
 ---
 
 ## Appendix
 
-### Appendix: Budget
-
-**A. Budget change by CISO organization size (no. of employees)**
+### A. Budget change by CISO organization size (no. of employees)
 Our survey results show that departments with 0-50 employees experienced the greatest percentage of the increases, with almost 60 percent of CISOs reporting that the budget increased and only 9 percent reporting budget decreases. Approximately 57 percent of companies with 251-500+ employees also reported budget increases, and only 21 percent reported decreases.
 
 ![Budget change by size charts]
 
-**B. Budget decrease by CISO organization size (no. of employees)**
+### B. Budget decrease by CISO organization size (no. of employees)
 Larger security departments were most affected by budget decreases, With 42 percent of organizations with security departments of 101-250 employees reporting budget decrees. Additionally, 25 percent of organizations with security departments of 251-500+ employees faced decreases.
 
 ![Budget decrease by size chart]
 
-**C. Budget change by cloud adoption**
+### C. Budget change by cloud adoption
 Our survey results find that organizations with higher levels of cloud adoption experienced more budget increases. For example, 72 percent of CISOs that report 100 percent cloud adoption and 51 percent of organizations with hybrid cloud status experienced budget increases. In contrast, 40 percent of organizations with on-prem infrastructure had budget increases, while the rest experienced no change in their budget.
 
 ![Budget change by cloud adoption chart]
 
-**D. Budget change by Industry**
+### D. Budget change by Industry
 Around 62 percent of CISOs who operate in the technology domain reported budget increases. Around 76 percent of CISOs from industrial, manufacturing, mobility and energy domains also reported budget increases. However, in media, gaming, and telco companies, the percentage of organizations that experienced an increase was almost the same as the percentage of organizations that had no change in their budget.
 
 ![Budget change by industry chart]
 
 ---
 
-### Endnotes
+## Endnotes
 [^1]: Quick Answer: How to Responsibly Defend Cybersecurity’s Budget During Economic Headwinds, William Candrick and Richard Addiscott, Gartner, 2023
 [^2]: New survey reveals $2 trillion market opportunity for cybersecurity technology and service providers, Bharath Aiyer, Jeffrey Caso, Peter Russell, and March Sorel, McKinsey, 2022
 [^3]: Quick Answer: How to Responsibly Defend Cybersecurity’s Budget During Economic Headwinds, William Candrick and Richard Addiscott, Gartner, 2023
@@ -304,8 +280,8 @@ Around 62 percent of CISOs who operate in the technology domain reported budget 
 [^19]: Predicts 2023: Cybersecurity Industry Focuses on the Human Deal, Deepti Gopal, Leigh McMullen, Andrew Walls, Richard Addiscott, Paul Furtado, Craig Porter, Oscar Isaka, and Charlie Winckless, Gartner, 2023
 [^20]: Predicts 2023: Cybersecurity Industry Focuses on the Human Deal, Deepti Gopal, Leigh McMullen, Andrew Walls, Richard Addiscott, Paul Furtado, Craig Porter, Oscar Isaka, and Charlie Winckless, Gartner, 2022
 [^21]: Hype Cycle for Security Operations 2022, Andrew Davies, Gartner, 2022
-[^22]: Market Guide for Infrastructure Monitoring Tools, Pankaj Prasad, Matt Crossley,and Mrudula Bangera, Gartner, 2022
-[^23]: Market Guide for Infrastructure Monitoring Tools, Pankaj Prasad, Matt Crossley,and Mrudula Bangera, Gartner, 2022
+[^22]: Market Guide for Infrastructure Monitoring Tools, Pankaj Prasad, Matt Crossley, and Mrudula Bangera, Gartner, 2022
+[^23]: Market Guide for Infrastructure Monitoring Tools, Pankaj Prasad, Matt Crossley, and Mrudula Bangera, Gartner, 2022
 [^24]: Maverick Research: Risk Management Produces Bad Cybersecurity, Andrew Walls, Leigh McMullen, Jay Heiser, and Deepti Gopal, Gartner, 2023
 [^25]: Innovation Insight: Cybersecurity Continuous Control Monitoring
 [^26]: The Evolving CISO: From Naysayer to Enabler, Charles Blauner, 2021

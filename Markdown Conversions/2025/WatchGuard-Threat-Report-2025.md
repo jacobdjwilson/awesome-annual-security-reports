@@ -1,8 +1,7 @@
-# WatchGuard Threat-Report 2025
+# WatchGuard Threat Report 2025
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Report Coverage](#report-coverage)
 - [Executive Summary](#executive-summary)
 
 ---
@@ -23,18 +22,12 @@ As you explore this report, think of it as a map of the digital jungle, highligh
 
 In our connected world, general cybersecurity awareness and proactive defense actions or refinements are our most powerful tools, which this report hopes to provide. Like ecologists protecting the Earth, we all have a part to play in safeguarding what sustains us to ensure a secure future.
 
-## Report Coverage
-
 In this report, we cover:
 
 - **Network-based malware trends**: Based on the multiple malware engines available on our Firebox Unified Threat Management (UTM) appliance, this section of our report breaks down quarterly malware changes in many ways, sharing everything from the top malware variants seen by volume to how much malware evades legacy defenses. In Q1, network-detected malware exploded, increasing 171% per individual Firebox, which is the highest quarterly increase we have seen. Pair this with a significant increase in “zero-day malware,” and this signals a sharp rise in evasive threats. While we don’t have specific data to explain the increase, we postulate that underground malware packing and crypting, and the increase in malicious AI tools helping malware creation, may explain the growth.
-
 - **Network attack trends**: The Firebox’s Intrusion Prevention Service (IPS) blocks known software exploits against many client and server network services. This section highlights the most common network attacks we saw during the quarter. We found the volume of network attacks remained fairly stable, growing a mere single percent. Meanwhile, the breadth of unique exploits threat attackers tried dropped 16%.
-
 - **Top malicious domains**: Our DNS firewall service, DNSWatch, shows us the top malicious phishing, malware, and compromised domains your users almost visited, if not for our protections. Not much changed between Q4 2024 and Q1 2025, but we still share the top 10 lists and recap the threats behind some of these domains.
-
 - **Endpoint malware trends**: We also track the malware trends seen from our endpoint products, which can differ greatly from network malware detection trends. While total endpoint malware volume was down 22 percent, we saw a huge 712 percent increase in new unique malware during Q1. The section also contains details about how malware arrives on endpoints, as well as ransomware and breach trends for the quarter.
-
 - **Digital cybersecurity “ecologist” tips**: While the bulk of this report explains what we see the invasive hacker species doing to disrupt the balance of our shared digital ecosystem, the purpose of the report is to supply you with the knowledge to become a cybersecurity ecologist with the latest research you can use to defend your digital environment. We fill sections of the report with protection strategies and tips tailored to withstand the attacks we see, and highlight top defense strategies at the end.
 
 ## Executive Summary

@@ -55,26 +55,19 @@ Launching into the future is an exhilarating adventure, but it’s worth the rid
 > "The future SOC is extremely streamlined. Analysts will be freed from mundane, repetitive tasks, so they can apply their expertise where it truly matters: defending the organization."
 > — Michael Fanning, CISO, Splunk
 
+### The top sources of inefficiency in the SOC
+
 If you’ve spent time in the security weeds, you know the nuisance of troubleshooting with no clear resolution, the hassle of reconfiguring a setting for the tenth time, or the drudgery of managing inventory.
 
-The SOC of the future, on the other hand, will run much more efficiently. Tools are well-orchestrated and generate alerts rich with context. Every team member performs strategic tasks typically reserved for senior analysts, like in-depth analysis and investigations. They also lean on automation and AI to resolve lower-level alerts.
-
-### The top sources of inefficiency in the SOC
-- **59%**: We spend too much time and/or effort maintaining tools and associated workflows
-- **51%**: Our tools do not integrate well with one another
-- **47%**: We face alerting issues
-- **32%**: Our team does not have the requisite skills
-- **31%**: We have inadequate and/or outdated processes
-- **28%**: We spend too much time normalizing data
-- **27%**: Managing the number of vendors is complex
-- **24%**: We lack an established incident response process
+![Chart showing top sources of inefficiency: 59% spend too much time maintaining tools, 51% tools do not integrate well, 47% alerting issues, 32% lack of requisite skills, 31% inadequate/outdated processes, 28% too much time normalizing data, 27% managing vendors is complex, 24% lack of established incident response process.]
 
 ### Busywork stifles progress and passion
+
 What’s holding teams back from achieving a high level of efficiency? Tool maintenance, for one. Nearly half (46%) of respondents say they spend more time doing busywork — like configuring and troubleshooting tools — than addressing critical efforts like threat investigation and mitigation.
 
 Don’t get us wrong; tool maintenance has its place in the SOC. It can optimize workflows and improve accuracy. But respondents point to the imbalance as a growing problem, with 59% saying that it’s the main source of inefficiency for their teams, followed closely by tools not integrating well together (51%).
 
-"Maintenance is more complicated than it used to be," says Marcus LaFerrera, director of SURGe at Splunk. "Tools are more feature-rich with more frequent updates. And while vendors have introduced support to cut down on the guesswork, there’s far more network complexity that makes the job harder."
+“Maintenance is more complicated than it used to be,” says Marcus LaFerrera, director of SURGe at Splunk. “Tools are more feature-rich with more frequent updates. And while vendors have introduced support to cut down on the guesswork, there’s far more network complexity that makes the job harder.”
 
 Passion and purpose motivate security professionals in their mission to keep organizations safe. But no one gets jazzed about tool maintenance. A team that spends the majority of its time defending is a team that maximizes the passions of its analysts. These SOCs enable the business by being strategic, innovative, and proactive.
 
@@ -82,11 +75,13 @@ Passion and purpose motivate security professionals in their mission to keep org
 > — Kirsty Paine, Field CTO and Strategic Advisor, EMEA, Splunk
 
 ### Alert overload slows down SOCs
+
 Every second counts in the SOC, especially during a major investigation. Inefficiencies aren’t minor headaches. Even a small bottleneck — like a missed alert that results in a data breach — can cause significant reputational, legal, or financial consequences. Downtime is just one example, and it can cost organizations $540,000 per hour, according to The Hidden Costs of Downtime report.
 
 Alerts are another “can’t live with them, can’t live without them” part of the job for analysts, with 47% pointing to alerting issues as the most common source of inefficiency in the SOC. Respondents said most troublesome issues were having too many alerts (59%), dealing with too many false positives (55%), and deciphering alerts that lack context (46%). Each of these issues waste analysts’ precious time as they question alert validity or ignore them altogether.
 
 ### Data deficits derail investigations
+
 Wasted time extends beyond just tool management and alert overload. Data problems also play a significant role. In fact, 57% of respondents report losing valuable time during investigations due to gaps in their data management strategies.
 
 Whether those gaps are attributed to accessibility concerns (39%) or data silos (35%) — both common data challenges flagged by respondents — not being able to access the right data in the right place makes it even harder for SOC teams to act quickly and decisively when facing threats.
@@ -101,22 +96,20 @@ Whether those gaps are attributed to accessibility concerns (39%) or data silos 
 > "In the future, AI will become an integral part of the security analyst experience. AI can enable self-healing systems to detect and mitigate malicious behavior in real time. Imagine what that technology could do once it’s embedded in the SOC."
 > — Tamara Chacon, Security Strategist, Splunk SURGe
 
-Peanut butter and jelly. Thunder and lightning. AI and the future. Some pairings simply make sense. AI is already a powerful tool for both adversaries and defenders. In the SOC of the future, analysts will learn to wield AI to their advantage, applying it to the right tasks at the right time.
-
-Applying AI to security workflows was this year’s highest cybersecurity priority, with 56% listing it as one of their top three initiatives. Productivity gains are real for those who’ve jumped in; 59% say they’ve moderately or significantly boosted their efficiency with AI.
-
 ### Building trust in AI
-Security pros are notoriously skeptical. It’s sort of their job. But trust comes in different shades — from blind faith to complete cynicism and everything in between. Successfully adopting AI is all about balance — trusting it enough to reap the benefits while staying cautious enough to put the right checks and safeguards in place.
 
-Only about 11% of respondents say they trust AI completely to perform mission-critical activities within the SOC. The majority of respondents (61%) say they somewhat trust AI for mission-critical operations.
+Peanut butter and jelly. Thunder and lightning. AI and the future. Some pairings simply make sense. Security pros are notoriously skeptical. But trust comes in different shades — from blind faith to complete cynicism and everything in between. Successfully adopting AI is all about balance — trusting it enough to reap the benefits while staying cautious enough to put the right checks and safeguards in place.
+
+Only about 11% of respondents say they trust AI completely to perform mission-critical activities within the SOC. But it’s unlikely that this group is blindly trusting AI; rather, they may be running their own models and are more easily able to trust a system they’ve built themselves.
 
 > "Trust will grow as organizations mature in their AI implementations. Teams with the resources to build, train, and test their own models will naturally have a higher level of trust in that system."
 > — Petra Jenner, Senior Vice President and General Manager, EMEA, Splunk
 
 ### Tapping into the power of generative AI
+
 Reaping the benefits of generative AI involves leaning on its biggest superpower: filling in the blanks. For example, it can create search query strings and suggest investigative steps based on what it’s seen before. Nearly a third (31%) currently use generative AI to query security tasks in the SOC, and another 48% say they will do so in the near future.
 
-Domain-specific generative AI tools can help build trust with embedded intelligence about cybersecurity use cases, surfacing the right information at the right time with context. Nearly two thirds (63%) agree that it extremely or significantly enhances security operations compared to publicly available tools.
+Domain-specific generative AI tools can help build trust with embedded intelligence about cybersecurity use cases, surfacing the right information at the right time with context. This is the future of generative AI, and respondents are enthusiastic about its role in cybersecurity. Nearly two thirds (63%) agree that it extremely or significantly enhances security operations compared to publicly available tools.
 
 > "Domain-specific AI will simply have better outputs because it’s dialed into a specific function. It’s the next chapter of AI."
 > — Hao Yang, VP of AI, Splunk
@@ -128,23 +121,18 @@ Domain-specific generative AI tools can help build trust with embedded intellige
 > "Cybersecurity is far from stagnant. The SOC teams that thrive will be the ones that quickly adapt and harness emerging skills and technology."
 > — David Dalling, GVP, Global Cyber Strategy, Splunk
 
-Tomorrow’s SOC may be a well-oiled machine, but that doesn’t mean it relies only on technology. It’s home to some pretty major decisions. That’s why people (and their skillsets) will always be at the cornerstone of the SOC — to be decisive and analytical as they navigate these situations.
-
 ### Skills that drive resilience are biggest shortcomings
-Being understaffed and underskilled are serious dilemmas for security teams. Nearly half (49%) call this the biggest cybersecurity challenge in their organization. We found glaring gaps in detection engineering, DevSecOps, and compliance management — simultaneously the most crucial for the future and their weakest capabilities.
 
-### These three in-demand skills paint a picture of what the future SOC will look like:
-1. **Detection engineering**: Respondents rated this as the most important skill for building the future SOC (74%). 41% report a proficiency gap.
-2. **DevSecOps**: Over half (53%) report their teams aren’t up to speed in this area.
-3. **Compliance management**: 60% of respondents rate this as a top three skill, yet 46% say they fall short here.
+Being understaffed and underskilled are serious dilemmas for security teams. Nearly half (49%) call this the biggest cybersecurity challenge in their organization. What’s more, when we asked respondents to rank the most vital skills for building a resilient SOC and then about proficiency of those skills, we found glaring gaps. Respondents say detection engineering, DevSecOps, and compliance management are simultaneously the most crucial for the future and their weakest capabilities.
+
+### These three in-demand skills paint a picture of what the future SOC will look like.
+
+1. **Detection engineering**: Respondents rated detection engineering as the most important skill for building the future SOC, with nearly three-quarters (74%) ranking it in the top three. Forty-one percent report a proficiency gap in this area.
+2. **DevSecOps**: DevSecOps closely followed detection engineering as a high-priority capability. Yet over half (53%) report their teams aren’t up to speed in this area.
+3. **Compliance management**: Sixty percent of respondents rate compliance management as a top three skill, yet 46% say they fall short here.
 
 > "The future of the SOC comes down to streamlining and making it less onerous to perform maintenance and deployment. DevSecOps is a part of that evolution."
 > — Marcus LaFerrera, Director of SURGe, Splunk
-
-### Automating the mundane to find reprieve
-By their nature, high-pressure roles in the SOC are stressful. Over half (52%) say their team is overworked and 42% say they’re understaffed. So it’s no surprise that 52% say stress on the job has prompted them to think about leaving the cybersecurity industry altogether.
-
-Some organizations will take traditional paths, such as hiring and upskilling current employees (44%) or enlisting third-party partners (19%). But a considerable number are focusing forward — about a third (33%) plan to resolve these deficiencies with AI and automation.
 
 ---
 
@@ -153,19 +141,18 @@ Some organizations will take traditional paths, such as hiring and upskilling cu
 > "Detection as code represents a new era of threat detection. It’s a smarter, faster, and more automated way to outpace the next generation of adversaries."
 > — Jose Hernandez, Director, Splunk Threat Research Team
 
-A live phone call that sounds exactly like your CEO. An automated script that scrapes GitHub repositories for security keys. Five years ago, these attack techniques were considered obscure and sophisticated. In 2025, they’re relatively commonplace.
-
 ### Data complexity creates new detection dilemmas
-Detections are one of the most important tools in a defender’s arsenal. Looking ahead, while over three quarters (77%) say their standing is good, they still plan to increase the quality of their SOC’s detections. Only 8% rate their detection quality as excellent. Most respondents blame a few factors; 62% point to poor data quality, whether it’s due to lack of the right data, or lack of data overall.
+
+Detections are one of the most important tools in a defender’s arsenal. Like every powerful tool, detections aren’t one-size-fits-all. Many teams lean heavily on vendor detections but also rely on internal analysts to fine-tune them — this is the most common detection method for respondents, with nearly half (46%) reporting they take this approach frequently or always.
+
+Detections are only as strong as the data they rely on. An explosion of ephemeral data such as service accounts, APIs, token keys, and other data not attached to a person — also called non-human identities — makes it difficult for analysts to effectively capture the data they need for robust detections.
 
 ### Detection as code unlocks a flexible future
-Detection as code (DaC) ushers in a new era of detection engineering that’s agile, dynamic, and automated. Those who have adopted this practice report considerable benefits. Sixty-two percent say it enables test-driven development practices, such as roll back and auditing.
+
+Detection as code ushers in a new era of detection engineering that’s agile, dynamic, and automated. Those who have adopted this practice report considerable benefits. Sixty-two percent say it enables test-driven development practices, such as roll back and auditing — a key element of flexibility.
 
 > "Out-of-the-box detections will only take you so far. Every environment is unique. At the end of the day, there will always be a specific threat that your vendor isn’t aware of."
 > — Jose Hernandez, Director, Splunk Threat Research Team
-
-### Popular threats pack a punch
-In 2025, cybersecurity threats are hitting organizations where it hurts. Respondents report the most commonly experienced type of incident, data breaches (66%), is also the most impactful. Additionally, nearly half (49%) of respondents admit to violating security regulations over the past year.
 
 ---
 
@@ -174,40 +161,39 @@ In 2025, cybersecurity threats are hitting organizations where it hurts. Respond
 > "Security teams have been vying for a single platform for a long time. In the future, we’ll finally see that come to fruition."
 > — Kamal Hathi, SVP, Products & Technology, Splunk
 
-The SOC is a busy place. But busy does not (or should not) equal chaos. The SOC of the future is more coordinated — harmonious, even. Teams will have information at their fingertips to quickly and smoothly investigate alerts, spot anomalies, and respond to incidents.
-
 ### Everything in its right place
-Over three-quarters of respondents (78%) say their security tools are dispersed and disconnected. This isn’t just a minor inconvenience, either; 69% say this disconnect creates moderate to significant challenges for their team.
 
-Respondents believe a unified platform would ease these frustrations. Adopting a unified security platform has led to faster incident response (59%), less time maintaining tools (53%), and better threat coverage (49%).
+Tools can provide the necessary context during incidents and keep a SOC humming along smoothly — but they can cause confusion and gaps in coverage if not properly integrated. When tools become a collection of disjointed elements, maintaining them all becomes a full-time job. Over three-quarters of respondents (78%) say their security tools are dispersed and disconnected.
+
+### A unified approach unlocks major benefits
+
+Respondents believe a unified platform would ease these frustrations. And those who take this approach confirm: the benefits are real. Adopting a unified security platform has led to faster incident response (59%), less time maintaining tools (53%), and better threat coverage (49%), according to respondents.
 
 ### Data sharing accelerates operations
-The future is ultra-collaborative. No one knows that better than a SOC analyst who resolved an incident in record time by bringing in their organization’s IT and engineering data. Sharing data helps teams get a swift understanding of what’s happening in the environment and why.
 
-> "Integrating with other teams’ ticketing software or processes opens up a lot of automation opportunities."
-> — David Dalling, GVP, Global Cyber Strategy, Splunk
+The SOC is increasingly a single strand in an interconnected web. It relies on other departments, like HR, legal, IT, and others, to either take an action or deliver information during a critical security incident. Sharing data helps teams get a swift understanding of what’s happening in the environment and why.
 
 ---
 
 ## Industry highlights
 
-- **Communications and media**: 45% currently use detection as code. 19% completely trust AI to perform mission-critical SOC activities.
-- **Financial services**: 89% regularly use data federation. 41% frequently or always share data across IT, engineering, and security.
-- **Public sector**: 63% have seen a decrease in successful cyberattacks. However, 48% of respondents say their dispersed tools create significant challenges.
-- **Manufacturing**: 76% expend more time on tool maintenance than on threat investigation and mitigation. 95% believe their tools are too dispersed.
+- **Communications and media**: Advanced capabilities; 45% use detection as code.
+- **Financial services**: 26% say keeping up with requirements has gotten easier; 89% use data federation.
+- **Public sector**: 63% have seen a decrease in successful attacks, but struggle with visibility.
+- **Manufacturing**: 77% experienced data breaches; 95% report tools are too dispersed.
 
 ---
 
 ## Country highlights
 
-- **Australia and New Zealand**: 71% are investing more in AI and machine learning to combat staffing shortages.
-- **France**: 15% always use the same data across IT, engineering, and security. 56% have detection as code capabilities.
-- **Germany**: 81% say their tools are disconnected. 29% of generative AI is already performing tasks like threat detection and prioritization.
-- **India**: 68% have dispersed and disconnected tools. 58% struggle with the high cost of data storage and movement.
-- **Japan**: 62% say using AI has boosted the productivity and efficiency of their SOC.
-- **Singapore**: 57% have detection as code capabilities. 20% completely trust AI to perform mission-critical tasks.
-- **U.K.**: 58% cite poor tool integration as their top source of inefficiency.
-- **U.S.**: 59% experienced a decrease in successful cyberattacks. 30% use generative AI for querying security data.
+- **Australia and New Zealand**: 59% cite understaffed/underskilled teams as a top challenge.
+- **France**: 15% always use the same data across IT, engineering, and security.
+- **Germany**: 81% say tools are disconnected; 55% of those with a unified platform spend less time on maintenance.
+- **India**: 68% have dispersed tools; 58% struggle with data storage/movement costs.
+- **Japan**: 51% find it hard to maintain data accessibility; 57% lost time during investigations.
+- **Singapore**: 57% have detection as code capabilities; 61% say AI has increased productivity.
+- **U.K.**: 58% cite poor tool integration as a top inefficiency.
+- **U.S.**: 59% experienced a decrease in successful attacks, yet 52% report being overworked.
 
 ---
 
@@ -223,4 +209,6 @@ Splunk, a Cisco company, helps make organizations more digitally resilient. Lead
 
 ![Splunk Logo]
 
-Splunk, Splunk> and Turn Data Into Doing are trademarks and registered trademarks of Splunk LLC. in the United States and other countries. All other brand names, product names or trademarks belong to their respective owners. © 2025 Splunk LLC. All rights reserved.
+---
+
+security-2025_v15
