@@ -1,4 +1,4 @@
-# AI Security Readiness: Insights from 100 Cloud Architects, Engineers, and Security Leaders
+# AI Security Readiness
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -31,11 +31,11 @@ Security teams must act quickly. A hybrid approach that blends traditional cloud
 ## AI Adoption is Outpacing Security Expertise
 Survey Data Insights: Only 13% of respondents reported no use of AI in their organizations at all. That leaves a whopping 87% that do use AI services, most of which rely on managed offerings like OpenAI and Amazon Bedrock. This mirrors findings from Wiz's report, where 85% of organizations indicated some form of AI use, whether managed or self-hosted.
 
-![Chart: How is your organization using AI currently? (13% Not using, 24% Utilizing AI platforms and Frameworks, 34% Building machine learning models in-house, 36% Using pre-trained models, 57% Using AI services)]
+![Chart: How is your organization using AI currently? (13% Not using, 24% Utilizing platforms/frameworks, 34% Building in-house, 36% Using pre-trained models, 57% Using AI services)]
 
 At the same time, nearly a third of survey respondents (31%) said that a lack of AI security expertise is their biggest challenge.
 
-![Chart: What is the top AI security challenge in your organization? (31% Lack of AI expertise, 17% Incorporating built-in guardrails, 14% Dealing with shadow AI, 14% Safeguarding sensitive training data, 7% Continuously monitoring for unusual activities, 6% Securing access to GenAI models, 6% Detecting and removing attack paths to models, 5% Testing GenAI pipelines)]
+![Chart: Top AI security challenges (31% Lack of AI expertise, 17% Guardrails, 14% Shadow AI, 14% Safeguarding training data, 7% Monitoring, 6% Access, 6% Attack paths, 5% Testing pipelines)]
 
 **Why This Matters:** The rapid adoption of AI services is not being matched by the development of in-house expertise to secure them. Security teams are being asked to protect systems they may not fully understand, and this expertise gap creates a growing risk surface.
 
@@ -44,70 +44,55 @@ At the same time, nearly a third of survey respondents (31%) said that a lack of
 ## AI Security Requires Both Traditional and Advanced Solutions
 Survey Data Insights: Only 13% of respondents report using AI-SPM solutions today. Meanwhile, more traditional controls are widely deployed: 53% have implemented secure development practices, 41% use tenant isolation, and 35% perform audits to uncover shadow AI.
 
-![Chart: What strategies are you implementing to manage AI security risks (53% Secure development practices, 41% Tenant isolation, 35% Regular audits for shadow AI, 28% Comprehensive threat modeling, 13% AI-SPM, 20% None)]
+![Chart: Strategies for managing AI security risks (53% Secure development, 41% Tenant isolation, 35% Audits, 28% Threat modeling, 13% AI-SPM, 20% None)]
 
 **Why This Matters:** Traditional security practices still have a key role to play in securing AI systems. Protecting the software development lifecycle (SDLC), enforcing isolation between tenants, and conducting regular audits are all critical foundations. However, they are not enough on their own. As AI usage grows, so too does the sophistication of associated risks—and current strategies aren't equipped to address the speed or scale of adoption.
 
 One area that deserves greater attention is tenant isolation. In a multi-tenant GenAI architecture, improper segmentation can expose data between workloads and users. As highlighted in Wiz's blog on GenAI tenant isolation, AI workloads often run in environments where shared infrastructure or dependencies create implicit trust boundaries.
-
-If these boundaries aren’t explicitly defined and enforced, attackers may be able to move laterally between tenants or access sensitive outputs from unrelated workloads. The blog also outlines architectural design patterns to mitigate these risks, including granular IAM, scoped permissions, and environment-specific model registries.
-
-In Wiz's State of AI report, we highlighted the rise of open-source models like DeepSeek-R1, which surpassed 130,000 downloads. With more organizations turning to self-hosted models, it’s clear that manual discovery and auditing processes are no longer sufficient.
 
 **Call to Action:** Security programs must take a layered approach: foundational best practices need to be complemented with AI-specific protections. Organizations should adopt CSPM and CNAPP to address broader cloud posture while leveraging AI-SPM for discovering and securing AI-specific risks like shadow usage, model exposures, and data leakage. Isolation must be explicit, not assumed—especially in GenAI environments.
 
 ## Cloud Security Architectures Are Increasingly Complex
 Survey Data Insights: Many respondents (45%) say they operate in hybrid cloud environments, while 33% use multi-cloud setups. Only 22% have a single-cloud architecture. Despite this complexity, security tooling remains rooted in endpoint-focused strategies—EDR is deployed by 70% of respondents, while only about a third use cloud-native platforms like CNAPP or CSPM.
 
-![Chart: What does your cloud architecture currently look like? (45% Hybrid Cloud, 33% Multi-Cloud, 22% Single Cloud)]
+![Chart: Cloud architecture (45% Hybrid, 33% Multi-Cloud, 22% Single Cloud)]
 
 **Why This Matters:** AI workloads don’t live in a vacuum. They span containerized services, serverless compute, and APIs across different cloud providers. Yet most security controls in use are designed for a more centralized IT model. This disconnect creates visibility gaps, increases misconfiguration risk, and exposes sensitive AI models and training data to threats.
 
 **Call to Action:** Organizations should prioritize security tools built for modern, distributed environments. CNAPP and CSPM offer visibility into cloud-native services and AI workloads running across environments. A holistic approach to cloud security that includes AI posture management is crucial to addressing today’s risks.
 
 ## AI Security Challenges Are Not Just Technical—They’re Operational
-Survey Data Insights: When asked about top priorities for AI security solutions, respondents pointed to data privacy (69%), threat visibility (62%), and ease of integration (51%).
+Survey Data Insights: When asked about top priorities for AI security solutions, respondents pointed to data privacy (69%), threat visibility (62%), and ease of integration (51%). However, 25% also admitted they don’t know what AI services are in use in their environments.
 
-![Chart: What key features would you look for in a new AI security solution? (69% Data privacy, 62% Threat landscape visibility, 51% Ease of integration, 50% Protection against adversarial attacks, 46% Protection against model/training tampering, 45% Usability, 27% Vendor reputation, 19% Low performance overhead)]
-
-However, 25% also admitted they don’t know what AI services are in use in their environments.
-
-![Chart: What AI services and technologies are currently running in your environment? (49% Managed services, 33% AI models, 21% AI APIs and Frameworks, 19% SDKs, 25% I don't know)]
+![Chart: AI services in environment (49% Managed services, 33% AI models, 21% AI APIs/Frameworks, 19% SDKs, 25% I don't know)]
 
 **Why This Matters:** While many organizations understand what they want from AI security, fewer know how to operationalize it. Tools that are difficult to integrate stall adoption. Worse, a lack of visibility into deployed services—or shadow AI—makes it impossible to defend against threats you can’t see. This isn’t just a technology problem. It’s a workflow and awareness issue, often compounded by decentralized AI experimentation.
 
 **Call to Action:** To bridge the gap, security tools must be designed to fit into existing cloud and DevOps workflows without requiring major change management. Automation should drive discovery and risk reduction, not add overhead.
 
 ## Evaluating Security Maturity
-Wiz’s Cloud Security Maturity Framework outlines how modern teams evolve from simply gaining visibility to fully transforming how security is embedded across development and operations. It’s a model built to help organizations continuously adapt—as threats evolve, architectures grow more complex, and innovation accelerates.
+Wiz’s Cloud Security Maturity Framework outlines how modern teams evolve from simply gaining visibility to fully transforming how security is embedded across development and operations.
 
-**Cloud Security Maturity Framework:**
-1. Gain Visibility
-2. Reduce Critical Risk
-3. Democratize Security
-4. Develop Securely
-5. Transform Cloud SecOps
+**Phase 1: Gain Visibility** (Experimental AI - High Risk)
+Focus: Discovery, inventory, shadow AI detection, foundational posture visibility.
 
-### Where Does AI Security Maturity Fall Within the Cloud Security Maturity Framework?
-AI security isn’t its own standalone journey—it’s a thread that weaves through every stage of broader cloud security maturity.
+**Phase 2: Reduce Critical Risk** (Early AI Governance - Elevated Risk)
+Focus: Tenant isolation, secure SDLC for AI apps, prioritizing risks with AI context.
 
-*   **Phase 1: Gain Visibility (Experimental AI - High Risk):** AI is used rapidly without centralized governance. Shadow AI is common. Focus: Discovery, inventory, shadow AI detection.
-*   **Phase 2: Reduce Critical Risk (Early AI Governance - Elevated Risk):** AI workloads reach production but are protected by general-purpose tools. Focus: Tenant isolation, secure SDLC for AI, prioritizing risks with AI context.
-*   **Phase 3: Democratize Security & Develop Securely (AI-Integrated Security - Reduced Risk):** Security is embedded into workflows. Teams use CSPM/CNAPP and AI-SPM. Focus: Discovery, inventory, shadow AI detection, foundational posture visibility.
-*   **Phase 4: Transform Cloud SecOps (Proactive, Automated AI Security):** Security operations identify AI-driven risks in real time. Focus: Runtime policy enforcement, automated response, AI-aware threat modeling.
+**Phase 3: Democratize Security & Develop Securely** (AI-Integrated Security - Reduced Risk)
+Focus: Discovery, inventory, shadow AI detection, foundational posture visibility.
 
-Most organizations remain in phase 1 or 2. Moving to phase 3 and beyond requires deliberate planning and investment.
+**Phase 4: Transform Cloud SecOps** (Proactive, Automated AI Security)
+Focus: Runtime policy enforcement, automated response, AI-aware threat modeling.
 
 ## Recommendations: How to Close the AI Security Gap
-- **Adopt tools that continuously scan for new services, models, and shadow AI:** Automated discovery is essential for maintaining visibility and control as environments evolve rapidly.
-- **Integrate security early in the development lifecycle:** Shifting security left allows teams to address misconfigurations and vulnerabilities during design and build phases.
-- **Ensure security controls follow AI workloads across environments:** Security must move with workloads, providing consistent policy enforcement regardless of infrastructure.
-- **Equip security teams with AI-specific training and tools:** Upskilling programs and better collaboration between security and data teams are essential for effective governance.
+- **Adopt tools that continuously scan for new services, models, and shadow AI**: Manual audits can’t keep up with the scale and speed of AI usage growth.
+- **Integrate security early in the development lifecycle**: Shifting security left allows teams to address misconfigurations and vulnerabilities during design and build phases.
+- **Ensure security controls follow AI workloads across environments**: Security must move with workloads, providing consistent policy enforcement regardless of infrastructure.
+- **Equip security teams with AI-specific training and tools**: Upskilling programs and better collaboration between security and data teams are essential.
 
 ## Future-Proofing AI Security
-AI is evolving quickly—and so are the risks. Staying secure means keeping a constant pulse on how AI is used and adapting defenses in real time. Regulations are coming, and attackers are already targeting exposed models and endpoints. In complex, hybrid environments, visibility gaps make AI harder to protect.
-
-Security can’t be reactive. It must be continuous and proactive. That means building automation, visibility, and policy enforcement into every stage of the AI lifecycle. Teams that invest in AI security posture today will be better equipped to scale innovation safely tomorrow.
+AI is evolving quickly—and so are the risks. Staying secure means keeping a constant pulse on how AI is used and adapting defenses in real time. Security can’t be reactive. It must be continuous and proactive. Teams that invest in AI security posture today will be better equipped to scale innovation safely tomorrow.
 
 ## Learn More
 Wiz’s AI Security Posture Management (AI-SPM) solution enables teams to discover AI usage, detect and remediate shadow AI, monitor and secure models and data pipelines, and empower developers and security teams to innovate safely. Explore full AI visibility with our Sample Assessment Report.
