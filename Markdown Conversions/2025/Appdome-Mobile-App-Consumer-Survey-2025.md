@@ -1,5 +1,7 @@
 # 2025 USA Consumer Expectations of Mobile App Security
 
+© 2025 – Appdome Inc., All Rights Reserved
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [2025 Top Findings](#2025-top-findings)
@@ -17,7 +19,6 @@
 
 ## Introduction
 ### AI-Based Threats Take Center Stage
-
 In Appdome's 5th Annual Survey of Consumer Expectations for Mobile App Security, one theme dominates: the rise of AI-driven threats. In the US, consumers are embracing the potential of AI while remaining acutely aware of its risks. 89.4% of US consumers believe that mobile apps must protect against deepfakes, bots, impersonation, and account takeovers; yet only 10.6% feel very confident that these protections are in place. This confidence gap reveals a significant disparity between expectations and delivery.
 
 In this year’s survey, 63.7% of US consumers fear synthetic fraud (fraud and identity theft from mobile apps), making it the top concern in 2025. Breaking this down, identity theft (44.7%) and fraudulent transactions (19%) are the leading triggers for abandonment, reinforcing the need for mobile brands to consider stronger customer identity protections.
@@ -29,8 +30,7 @@ This report explores what US consumers expect in 2025, why the AI threat era rai
 ---
 
 ## 2025 Top Findings
-
-![Graphic: Americans demand strong AI protections, fear fraud and identity theft above all, and treat security as the deciding factor between churn and loyalty.]
+Americans demand strong AI protections, fear fraud and identity theft above all, and treat security as the deciding factor between churn and loyalty.
 
 1. **High Demand, Low Trust in AI Protections**
 Nearly 9 in 10 US consumers (89.4%) demand protections against deepfakes, bots, and impersonation, outpacing global peers (85.9%). Yet confidence is fragile: only 10.6% feel "very confident" that their mobile apps are protected, while a third remain neutral and 15% openly doubt that these protections are in place. Despite strong demand, skepticism toward AI's role in fraud prevention highlights a widening gap between expectations and delivery.
@@ -44,7 +44,6 @@ A majority (54.2%) of Americans have abandoned mobile apps because of security c
 ---
 
 ## High Demand, Low Trust: The US AI Security Paradox
-
 US consumers demand stronger protections against AI-driven threats than their global peers, yet they remain much less confident in app protections and skeptical of AI itself.
 
 ### US Consumers Value Strong AI Protections
@@ -61,7 +60,6 @@ Confidence levels are strikingly low. Only 10.6% of US consumers feel "very conf
 ---
 
 ## Synthetic Fraud Dominates, With Scams as Enabler
-
 Fraud is the leading concern for US consumers, with identity theft driving abandonment and scams contributing to broader fraud risks.
 
 ### Fear of Fraud Compounds the Threat from AI
@@ -75,7 +73,6 @@ The number of US consumers who have been exposed to social engineering attacks o
 ---
 
 ## Privacy Matters and US Consumers Expect it by Default
-
 Americans treat privacy as a non-negotiable expectation, but they rely heavily on "trust by default," forcing app makers to prove that their protections are in place.
 
 ### Caution When Sharing PII in Mobile Apps
@@ -92,7 +89,6 @@ In this year's survey, as in years before, we asked US consumers how often they 
 ---
 
 ## Responsibility for Security Lies with Mobile App Makers
-
 Americans expect mobile app makers to take the lead on security, with prevention prioritized over reimbursement as the basis for trust.
 
 ### App Makers at the Center of Mobile Security
@@ -106,7 +102,6 @@ Americans highlighted mobile fraud as one of their top concerns in this year's e
 ---
 
 ## Security Is the Tipping Point Between Churn and Advocacy
-
 Without protection, US consumers delete mobile apps quickly; with proven protections, they show loyalty, but advocacy remains muted.
 
 ### Privacy & Security Concerns = Churn
@@ -120,6 +115,7 @@ When protections are strong, security becomes a driver of loyalty. 24.4% of US c
 ---
 
 ## 7 Must-Know Truths About Mobile App Security
+Other key findings in our 5th Annual Survey:
 
 - **Mobile leaves web in the dust**: 48.1% of US consumers prefer mobile apps over web (29.7%).
 - **Mobile app counts remain steady**: 82.4% of US consumers use between 3 and 20 mobile apps per week in 2025.
@@ -132,6 +128,7 @@ When protections are strong, security becomes a driver of loyalty. 24.4% of US c
 ---
 
 ## Mobile-Dev & CISO Action Plan
+AI-powered mobile app protection, built to defeat AI-driven attacks and meet the growing security expectations of mobile consumers. Your users expect protection. Here's how to deliver it.
 
 The most effective way to counter AI-driven attacks and meet consumers' increasing security expectations is to combat AI with AI.
 
@@ -144,6 +141,7 @@ The most effective way to counter AI-driven attacks and meet consumers' increasi
 ---
 
 ## The Appdome Advantage
+Better Mobile App Protection, Faster & Easier than Everything Else
 
 1. **BUILD: AI-Native Mobile App Defense**
 Appdome's platform delivers in-app defense, API/bot protection, or customer identity protection directly in the mobile CI/CD pipeline. The DevOps class tool is connected to the mobile CI/CD pipeline. Choose in-app defense, API / bot protection, or customer identity protections for your mobile apps today.
@@ -163,7 +161,7 @@ Give your customer support organization the tools to help mobile end users under
 ---
 
 ## About Appdome
-
+### Mobile App, API & Identity Protection in ONE
 Appdome's mission is to protect every mobile business and user in the world from scams, fraud, bots, and attacks.
 
 Appdome's patented AI-Native XTM Platform is designed to protect every aspect of mobile business now and in the future. From mobile DevOps to mobile applications, networks, APIs, and Customer Identity, Appdome uses AI to generate Android & iOS defense plugins for 400+ mobile app security, anti-fraud, bot defense, anti-malware, geo compliance, social engineering, deepfake, and Customer Identity defenses on demand. Appdome also uses AI inside its ThreatScope™ Mobile XTM to continuously calculate a Mobile Risk Index™ for businesses and applications, as well as rank and preempt attacks in real-time. In Appdome's Threat Resolution Center™, Agentic-AI provides customer support and care teams a quick and easy way to provide end-user threat resolution and remediation. Appdome's Threat-Events™ framework gathers threat and attack metadata. It can be used to inform the application, application SDKs, and back-end network components when threats are present or to create customized threat responses inside Android & iOS apps. As a platform, Appdome functions as a continuous compliance center, tracking all builds, changes, teams, users, defense configurations, events, and more for quick and easy audit of the mobile defense lifecycle. Appdome holds several patents, including U.S. Patents 9,934,017 B2, 10,310,870 B2, 10,606,582 B2, 11,243,748 B2, and 11,294,663 B2. Additional patents pending.
