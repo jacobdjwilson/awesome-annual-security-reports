@@ -1,23 +1,23 @@
-# Home-Access-Report
+# Holiday Travel & Home Security Report 2025
 
 ## Table of Contents
-- [Holiday Travel & Home Security Report 2025](#holiday-travel--home-security-report-2025)
-- [Who’s Getting Your Code This Season?](#who’s-getting-your-code-this-season)
+- [Who’s Getting Your Code This Season?](#whos-getting-your-code-this-season)
 - [The Accumulation Effect](#the-accumulation-effect)
 - [The One-Code Reality](#the-one-code-reality)
 - [Why Temporary Codes Fail](#why-temporary-codes-fail)
-- [What’s Actually Happening](#what’s-actually-happening)
+- [What’s Actually Happening](#whats-actually-happening)
 - [What Homeowners Want](#what-homeowners-want)
 - [The Holiday Stress Test](#the-holiday-stress-test)
 - [What This Means](#what-this-means)
 - [About The Research](#about-the-research)
 
-R E S E A RC H R E P O RT
+---
 
-# Holiday Travel & Home Security Report 2025
+**R E S E A RC H   R E P O RT**
 
-Nearly 80% of Holiday Travelers Will Share Their Codes This Season.
-Most Will Never Change Them.
+**Holiday Travel & Home Security Report 2025**
+
+**Nearly 80% of Holiday Travelers Will Share Their Codes This Season. Most Will Never Change Them.**
 
 As Americans prepare for holiday travel, a familiar ritual is underway: texting access codes to house sitters, neighbors, and family members who’ll check on the house while you’re gone.
 
@@ -33,23 +33,15 @@ Among homeowners planning to travel overnight this holiday season, 78% say they�
 
 The codes go to various combinations of people: 55% share with family members checking on the house, 26% with neighbors, 24% with house or pet sitters, and 22% with friends or colleagues. In fact, 86% of those who share codes give them to multiple types of people—a family member and a neighbor, a house sitter and a friend, or other combinations.
 
-And the primary code–the one used for everyday entry by the household? 22% of homeowners report they have never changed it. Not once since moving in. Given 57% of respondents have lived in their current home for more than 6 years, this presents a lot of opportunities for home’s primary code to be shared with unintended people.
-
-Three-quarters of homeowners (75%) report having shared their access codes with service providers at some point—cleaners, contractors, landscapers, or anyone hired to work in the home.
-
 Among those who have shared codes with service providers, the majority (56%) don’t change them consistently: 32% sometimes change codes, 13% rarely do, and 11% never change them at all. Only 36% always change codes immediately after use, and 8% use temporary codes that automatically expire.
 
-That’s not reckless behavior. When you’re a thousand miles away and the heat needs checking or packages need moving inside, you need someone local with access.
+And the primary code–the one used for everyday entry by the household? 22% of homeowners report they have never changed it. Not once since moving in. Given 57% of respondents have lived in their current home for more than 6 years, this presents a lot of opportunities for home’s primary code to be shared with unintended people.
 
-The question is what happens after you get home.
-
-> 22% of homeowners have NEVER changed their primary access code.
+> **22%** of homeowners have NEVER changed their primary access code.
 
 ## The Accumulation Effect
 
 Codes don’t disappear when people stop needing them. They just sit there, still active, in the background of your daily routine. Over time, they accumulate.
-
-> 67% of parents say their kid’s friends have access codes
 
 One in four homeowners (26%) report having shared their access code with three or more different service providers since moving into their current home.
 
@@ -57,15 +49,13 @@ Layer in the neighbors who had the code two summers ago to bring in Amazon boxes
 
 Now add this holiday season’s batch: the house sitter gets it, the neighbor gets it, the family member gets it. Three more people. None of whom will likely lose access after you return, because changing codes is disruptive and most people don’t bother unless they have a specific reason.
 
-**The result is a growing roster of people who could technically walk into your home right now, most of whom you trust, some of whom you’ve forgotten you gave it to.**
+The result is a growing roster of people who could technically walk into your home right now, most of whom you trust, some of whom you’ve forgotten you gave it to.
 
 ## The One-Code Reality
 
 Here’s what makes this harder to track: most people aren’t using multiple codes.
 
-When asked how many different access codes they currently use for their doors, 45% of homeowners said one. Everyone–household members, kids, cleaners, neighbors–uses the same code.
-
-Another 39% use two or three codes. Only 16% use four or more.
+When asked how many different access codes they currently use for their doors, 45% of homeowners said one. Everyone–household members, kids, cleaners, neighbors–uses the same code. Another 39% use two or three codes. Only 16% use four or more.
 
 This creates a fundamental visibility problem. If your teenager, your house cleaner, and last year’s pet sitter all use the same code, your smart lock’s activity log will show you the door unlocked at 3:47pm on Tuesday. It won’t show you who unlocked it.
 
@@ -75,9 +65,9 @@ One in four homeowners (25%) report they’ve come home from being away and wond
 
 You scroll through your lock’s activity log. You see entries. You try to remember: was the cleaner scheduled that day? Did the neighbor stop by? Is that when the house sitter was supposed to come?
 
-**The timestamps are there. The answers aren’t.**
+The timestamps are there. The answers aren’t.
 
-> 45% use a single code for EVERYONE
+> **45%** use a single code for EVERYONE
 
 ## Why Temporary Codes Fail
 
@@ -97,28 +87,25 @@ For a house cleaner who comes every other week, that’s 26 times a year. For ho
 
 So people default to what’s easy: the permanent code. Text it once, it works forever, nothing to track.
 
-**The feature exists. The behavior doesn’t follow.**
+The feature exists. The behavior doesn’t follow.
 
 ## What’s Actually Happening
 
 The consequences of this pattern aren’t hypothetical. Two in five homeowners (40%) report experiencing or knowing someone who has experienced at least one access-related security incident since living in their current home.
 
-Here are some reported incidents:
-- 12% report items MISSING from their home
-- 10% say someone has entered their home WITHOUT permission
-- 12% found evidence someone was INSIDE
-- 10% had packages STOLEN from in and around their garage or home
-- 10% say service providers came at UNEXPECTED times
-- 8% had an UNCOMFORTABLE interaction with someone who had their code
-- 7% report an EX-PARTNER or former roommate showed up unexpectedly
+- Report items MISSING from their home
+- Say someone has entered their home WITHOUT permission
+- Found evidence someone was INSIDE
+- Had packages STOLEN from in and around their garage or home
+- Say service providers came at UNEXPECTED times
+- Had an UNCOMFORTABLE interaction with someone who had their code
+- Report an EX-PARTNER or former roommate showed up unexpectedly
 
 That last one–the ex-partner or former roommate showing up–points to a specific risk most people don’t think about until it happens. Relationships end. Roommates move out. But the code they were given doesn’t automatically disappear.
 
 Seven percent may not sound like a large number until you consider that it represents millions of households nationwide where someone who no longer belongs in the home still has the ability to walk in.
 
-The other incidents–packages stolen from inside, service providers arriving at unexpected times–suggest that access codes are being used beyond their intended scope.
-
-Whether that’s intentional misuse or simple miscommunication varies, but the pattern is consistent: once a code is shared, visibility into who’s using it and when drops significantly.
+The other incidents–packages stolen from inside, service providers arriving at unexpected times–suggest that access codes are being used beyond their intended scope. Whether that’s intentional misuse or simple miscommunication varies, but the pattern is consistent: once a code is shared, visibility into who’s using it and when drops significantly.
 
 ## What Homeowners Want
 
@@ -130,15 +117,17 @@ But despite these differences in behavior and concern levels, when asked what fe
 
 The top three features are identical for both concerned and unconcerned homeowners, just in slightly different order:
 
-1.  The ability to see a picture of who entered: 42% of unconcerned homeowners, 34% of concerned homeowners
-2.  Activity tracking showing who entered when: 34% of unconcerned, 36% of concerned
-3.  Remote control from their phone: 35% of unconcerned, 32% of concerned
+1. The ability to see a picture of who entered: 42% of unconcerned homeowners, 34% of concerned homeowners
+2. Activity tracking showing who entered when: 34% of unconcerned, 36% of concerned
+3. Remote control from their phone: 35% of unconcerned, 32% of concerned
+
+The next tier follows the same pattern—27% want to disable codes remotely, 25% want temporary codes, 23% want unique codes per person, and 21% want notifications when codes are misused.
 
 Whether homeowners are actively managing their codes or letting them accumulate, the demand is consistent: visibility into who is actually using access codes to enter their home, not just confirmation that the door was unlocked.
 
 The gap isn’t between what concerned and unconcerned homeowners want. It’s between what all homeowners want and what their current systems can tell them. Most doorbell cameras show who’s at the door before entry. Most smart locks log when the door was unlocked. But they’re separate systems, and neither definitively shows you who used what code to unlock the door and walk in.
 
-**That’s the visibility gap—and it exists regardless of how concerned you are about it.**
+That’s the visibility gap—and it exists regardless of how concerned you are about it.
 
 ## The Holiday Stress Test
 
@@ -180,10 +169,14 @@ The smart lock industry promised to make home access easier. It delivered on tha
 
 This holiday season, millions more codes will be shared. Most will never be revoked. And the gap between how many people can enter your home and how many you can actually name will continue to widen—not because people don’t care about security, but because the current approach to digital access asks them to choose between convenience and certainty.
 
-**For now, most are choosing convenience.**
+For now, most are choosing convenience.
 
 ## About The Research
 
-This report draws on a survey of 1,000 U.S. homeowners conducted in November 2025. All respondents own single-family homes and use access codes (smart locks, electronic keypads, or garage door codes) to enter their homes. The survey examined code-sharing behavior, security concerns, and feature preferences as homeowners prepare for the holiday travel season.
+This report draws on a survey of 1,000 U.S. homeowners conducted in November 2025. All respondents own single-family homes and use access codes (smart locks, electronic keypads, or garage door codes) to enter their homes.
 
-For more information, visit [durin.ai](https://durin.ai).
+The survey examined code-sharing behavior, security concerns, and feature preferences as homeowners prepare for the holiday travel season.
+
+For more information, visit durin.ai.
+
+![Image description: A visual representation of the survey data showing the percentage of homeowners who share access codes and the frequency of code changes.]
