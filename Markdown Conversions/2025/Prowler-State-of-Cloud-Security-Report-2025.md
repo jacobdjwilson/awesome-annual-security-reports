@@ -21,11 +21,7 @@ Toni de la Fuente | June 4, 2025
 
 We’ve been in this industry long enough to know that survey data rarely tells the whole story. However, when Prowler surveyed 655 security professionals, some truths emerged that we need to discuss.
 
-Here’s what matters: 96% of security teams say they’re confident in their cloud security.
-
-That’s great!
-
-But let’s focus on the 4% who aren’t—they’re telling us something important. They’re worried about shadow IT, inadequate tooling, and spiraling costs. These aren’t edge cases; they’re leading indicators of industry-wide challenges.
+Here’s what matters: 96% of security teams say they’re confident in their cloud security. That’s great! But let’s focus on the 4% who aren’t—they’re telling us something important. They’re worried about shadow IT, inadequate tooling, and spiraling costs. These aren’t edge cases; they’re leading indicators of industry-wide challenges.
 
 ## Key Takeaways
 
@@ -96,7 +92,7 @@ One of the most striking findings is the widespread adoption of open cloud secur
 - 9 in 10 users agree that these tools are a primary driver of innovation in their security programs
 - 83% report strengthened collaboration between security and IT departments
 - 8 in 10 users have seen reduced cloud operating costs through better identification of redundancies
-- Perhaps most importantly, 86% have seen a measurable reduction in security breaches due to better visibility and proactive security measures.
+- 86% have seen a measurable reduction in security breaches due to better visibility and proactive security measures.
 
 These statistics underscore how open-source solutions are not just cost-effective alternatives but are actively driving better security outcomes.
 
@@ -162,4 +158,4 @@ So why wait?
 
 Start using Prowler today and take control of your security with confidence.
 
-![Try Prowler Cloud Free]
+![Prowler Cloud Free trial call to action]
