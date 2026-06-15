@@ -1,9 +1,5 @@
 # SANS 2025 Threat Hunting Survey: Advancements in Threat Hunting Amid AI and Cloud Challenges
 
-**Written by Josh Lemon**  
-**March 2025**  
-**©2025 SANS™ Institute**
-
 ## Table of Contents
 - [Executive Summary/Introduction](#executive-summaryintroduction)
 - [Plan the Hunt, Hunt the Plan—or Just Wing It?](#plan-the-hunt-hunt-the-planor-just-wing-it)
@@ -38,7 +34,7 @@ When it comes to adversaries, business email compromise (BEC) remains the most d
 - 76% of organizations are using vendor blogs and papers as a priority source for their threat intelligence and research.
 - EDR/XDR remains the top-ranked tool for threat hunting, followed by SIEM and NDR solutions.
 
-![Demographics of Survey Respondents: Charts showing top industries, organizational size, operations/headquarters, and top roles.]
+![Figure 1. Demographics of Survey Respondents: Charts showing top 4 industries, organizational size, operations/headquarters, and top 4 roles.]
 
 ---
 
@@ -46,38 +42,43 @@ When it comes to adversaries, business email compromise (BEC) remains the most d
 
 The 2025 data indicates a slight decline in organizations with formally defined threat hunting methodologies (46%, down from 51% in 2024), as shown in Figure 2. Although this remains a strong indication of maturity within the industry, the drop suggests that some organizations may struggle to maintain structured approaches to threat hunting.
 
-![Figure 2: Types of Methodologies chart showing percentages for formal, ad hoc, and planned methodologies.]
+![Figure 2. Types of Methodologies: Bar chart comparing 2023, 2024, and 2025 data on formal, ad hoc, and planned methodologies.]
 
 When we look at who is building methodologies and who is performing threat hunting, there is a pretty large divide between these two groups. CISOs (53%) and external entities (49%) are the most prominent contributors to methodology development alone. Interestingly, only 15% of dedicated threat hunting teams contribute to methodology development.
 
-When it comes to executing threat hunts, those with dedicated threat hunting teams are the most actively engaged group (62%). IR teams (40%) also have a strong presence in both areas.
+When it comes to organizations updating their methodologies, we see a notable increase in those reviewing and adjusting them on an as-needed basis, rising to 45% from 35% in 2024.
+
+![Figure 3. Methodologies vs. Staffing: Bar chart comparing 2022-2025 data on whether methodologies affect staffing or vice versa.]
 
 ---
 
 ## Worth It, or Just a Wild Goose Chase?
 
-This year’s data shows a decline in organizations that formally measure the effectiveness of their threat hunting programs, dropping to 51% from 64% in 2024 (see Figure 4). 
+This year’s data shows a decline in organizations that formally measure the effectiveness of their threat hunting programs, dropping to 51% from 64% in 2024 (see Figure 4).
 
-![Figure 4: Formally Measuring Success chart.]
+![Figure 4. Formally Measuring Success: Line chart showing the percentage of organizations measuring success from 2021 to 2025.]
 
-Manually tracking the effectiveness of threat hunting has rocketed to the top as the most used method, rising significantly to 61% from 43% in 2024. Automated tracking also saw growth, increasing to 52% from 41% in 2024.
-
-![Figure 5: Improvement of Overall Security chart.]
+![Figure 5. Improvement of Overall Security: Bar chart showing the perceived improvement in security posture resulting from threat hunting.]
 
 ---
 
 ## What Threat Hunting Is Catching in 2025
 
-We found a clear distinction between the areas organizations prioritize for effective threat hunting and the environments where threat hunting is most challenging. Servers (26%) and workstations (25%) rank as the top priorities.
+We found a clear distinction between the areas organizations prioritize for effective threat hunting and the environments where threat hunting is most challenging. Servers (26%) and workstations (25%) rank as the top priorities. However, cloud environments present the biggest challenge, with 39% of respondents citing them as the most complex area.
 
-![Figure 6: Threat Hunting Focus Areas chart.]
+![Figure 6. Threat Hunting Focus Areas: Bar chart comparing importance vs. difficulty across workstations, servers, network, cloud, and portable devices.]
 
-However, when it comes to difficulty conducting threat hunts, cloud environments present the biggest challenge, with 39% of respondents citing them as the most complex area.
+Business email compromise (BEC) remains the most detected attack type, although it has decreased to 64% from 68% in 2024 (see Figure 7).
 
-![Figure 7: Types of Attacks chart.]
-![Figure 8: Techniques by Actor Type chart.]
-![Figure 9: Nation-State Techniques chart.]
-![Figure 10: Ransomware Techniques chart.]
+![Figure 7. Types of Attacks: Bar chart comparing 2024 and 2025 detection rates for BEC, ransomware, nation-states, and industrial espionage.]
+
+![Figure 8. Techniques by Actor Type: Bar chart showing prevalence of LOTL, off-the-shelf tools, custom malware, etc., across different actor types.]
+
+![Figure 9. Nation-State Techniques: Bar chart comparing 2024 and 2025 techniques used by nation-state actors.]
+
+![Figure 10. Ransomware Techniques: Bar chart comparing 2024 and 2025 techniques used by ransomware actors.]
+
+![Figure 11. Espionage Techniques: Bar chart comparing 2024 and 2025 techniques used by criminal actors in industrial espionage.]
 
 ---
 
@@ -89,11 +90,13 @@ This year, we see a notable shift toward automation in threat hunting strategies
 
 ## DIY Threat Hunting—The Trend of Keeping It In-House
 
-The percentage of organizations outsourcing their threat hunting dropped from 37% in 2024 to 30%, reflecting a shift toward building in-house threat hunting capabilities (see Figure 12). 
+The percentage of organizations outsourcing their threat hunting dropped from 37% in 2024 to 30%, reflecting a shift toward building in-house threat hunting capabilities (see Figure 12).
 
-![Figure 12: Year-Over-Year Outsourcing chart.]
-![Figure 13: Outsourcing Approaches chart.]
-![Figure 14: Threat Tracking Tools chart.]
+![Figure 12. Year-Over-Year Outsourcing: Line chart showing the decline in outsourcing from 2021 to 2025.]
+
+![Figure 13. Outsourcing Approaches: Bar chart showing who defines hunting parameters in outsourced environments.]
+
+![Figure 14. Threat Tracking Tools: Bar chart comparing 2024 and 2025 usage of commercial, open source, and internally built tools.]
 
 ---
 
@@ -101,7 +104,7 @@ The percentage of organizations outsourcing their threat hunting dropped from 37
 
 Organizations significantly increased their reliance on a diverse range of sources to stay ahead of evolving attacker techniques, with the most notable growth in vendor blogs and papers, rising from 59% in 2024 to 76% this year (see Figure 15).
 
-![Figure 15: Sources of Intelligence chart.]
+![Figure 15. Sources of Intelligence: Bar chart comparing 2024 and 2025 sources used to stay updated on attacker techniques.]
 
 ---
 
@@ -109,8 +112,9 @@ Organizations significantly increased their reliance on a diverse range of sourc
 
 Over the past year, the most pressing challenge in threat hunting has remained the shortage of skilled personnel, cited by 61% of respondents. Budget constraints surged to 49%, up from 40% in 2024.
 
-![Figure 16: Staff Investment chart.]
-![Figure 17: Tool Investment chart.]
+![Figure 16. Staff Investment: Bar chart showing planned changes in staffing investment.]
+
+![Figure 17. Tool Investment: Bar chart showing planned changes in tooling investment.]
 
 ---
 
@@ -118,6 +122,7 @@ Over the past year, the most pressing challenge in threat hunting has remained t
 
 The 2025 SANS Threat Hunting Survey highlights the ongoing evolution of threat hunting as organizations refine their methodologies, enhance their tooling, and balance internal expertise with outsourced support. The overall trajectory for threat hunting into the future remains positive, with more organizations recognizing the value of proactive threat hunting as a critical pillar of their cybersecurity defenses.
 
-**Sponsors**  
-SANS would like to thank this survey’s sponsors:  
-[List of sponsors omitted]
+[^1]: MITRE, “ATT&CK,” https://attack.mitre.org
+[^2]: “Introducing the PEAK Threat Hunting Framework,” www.splunk.com/en_us/blog/security/peak-threat-hunting-framework.html
+[^3]: “TaHiTI,” www.betaalvereniging.nl/en/safety/tahiti
+[^4]: “Enterprise Detection & Response: The Pyramid of Pain,” https://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html

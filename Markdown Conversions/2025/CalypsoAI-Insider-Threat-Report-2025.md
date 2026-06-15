@@ -30,7 +30,7 @@ Crucially, these usage risks extend to the highest levels of these organizations
 
 AI is no longer just a tool: it’s becoming a trusted employee, and for some, a dealbreaker.
 
-![Chart showing US employee sentiments: 45% trust AI more than co-workers, 38% would prefer AI as a manager, 34% would quit if AI use was disallowed.]
+![Chart showing US employee sentiments: 45% trust AI more than co-workers, 38% would prefer AI as a manager, 34% would quit if AI were disallowed.]
 
 ---
 
@@ -42,7 +42,7 @@ Forget the image of the hooded hacker, the real AI security threat is inside the
 - **28%** of employees have already used AI to access sensitive data or documents.
 - **84%** are somewhat or very confident their company’s CEO/IT team would catch an AI-led breach.
 
-![Chart detailing specific AI usage behaviors including accessing sensitive data and submitting proprietary info.]
+![Chart detailing various AI usage behaviors, including using AI for boring tasks, accessing sensitive data, and submitting proprietary information.]
 
 ---
 
@@ -64,8 +64,8 @@ Lack of AI fluency at the top now poses a significant business risk.
 Entry-level employees pair technical naivety with disengaged attitudes toward AI policies.
 
 - **33%** of entry-level employees say they don’t know what an AI agent is.
+- **21%** say their company’s policies on AI are unclear, so they use AI as they wish.
 - **30%** say they don’t care about their company’s AI policy.
-- **37%** wouldn’t feel guilty if they broke AI protocol.
 
 ---
 
@@ -75,7 +75,7 @@ AI is quietly overriding the industry’s long-standing compliance culture.
 
 - **60%** of employees in financial services & banking say they use AI tools even if it violates their company policy.
 - **36%** say they don’t feel guilty about it.
-- **43%** say they trust AI more than their co-workers.
+- **33%** don’t know what an AI agent is.
 
 ---
 
@@ -84,7 +84,7 @@ AI is quietly overriding the industry’s long-standing compliance culture.
 The people closest to sensitive healthcare data now see AI as more of an ally than a threat.
 
 - **55%** of healthcare employees say they know and follow their organization’s AI policy (the lowest of any regulated industry).
-- **18%** have used AI to access sensitive data or documents.
+- **21%** say their company’s policies on AI are unclear.
 
 > "In healthcare, the stakes are higher but safeguards remain deficient. When AI becomes a trusted aide without being a secured one, sensitive data is exposed. The intent may not be malicious, but the impact can be catastrophic. We need to match AI optimism with appropriate security measures."
 > — **DC Casey, CEO, CalypsoAI**
@@ -106,7 +106,6 @@ IT professionals are some of the most enthusiastic about using AI at work, and t
 
 - **92%** say that if AI was used to access or leak sensitive data, the IT team or the company’s CEO would know.
 - **55%** would prefer to have AI as a manager than a human.
-- **51%** don’t feel guilty about using AI to break company policy.
 
 ---
 
@@ -121,8 +120,3 @@ The total sample size was 1,002 full-time office workers in the United States, a
 CalypsoAI provides the only full-lifecycle platform to secure AI models and applications at the inference layer, deploying Agentic Warfare™ to protect organizations from evolving risks and adversaries. Trusted by global enterprises including Palantir and SGK, CalypsoAI’s industry-leading team of experts is doing the hard miles to ensure security keeps pace with AI innovation.
 
 CalypsoAI was founded in 2018 and has secured over $40 million in venture funding from investors including Paladin Capital Group, Lockheed Martin Ventures and Hakluyt Capital. CalypsoAI was a Top-Two Finalist in the 2025 RSAC Innovation Sandbox contest and is named on Fast Company’s Most Innovative Companies in AI for 2025. Learn more at [calypsoai.com](http://calypsoai.com) and LinkedIn.
-
-**Media Contact**
-Diffusion PR on behalf of CalypsoAI
-CalypsoAI@diffusionpr.com
-(646) 571-0120
