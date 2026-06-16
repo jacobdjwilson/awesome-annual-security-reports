@@ -1,4 +1,4 @@
-# From Risk to Resilience: 2025 Ransomware Trends and Proactive Strategies
+# 2025 Ransomware Trends and Proactive Strategies
 
 ## Table of Contents
 - [Executive Summary: Assessing Ransomware Threats and Defenses in 2025](#executive-summary-assessing-ransomware-threats-and-defenses-in-2025)
@@ -36,8 +36,6 @@ There is some good news. Compared to our 2024 survey,[^1] the percentage of comp
 
 Organizations must shift from reactive security to proactive cyber resilience strategies to meet the challenges of ransomware, leveraging preparedness, rapid response, and secure recovery measures to reduce risk.
 
----
-
 ## Top 6 Ransomware Trends To Watch in 2025
 
 1. Law Enforcement Forces Threat Actors To Adapt
@@ -46,8 +44,6 @@ Organizations must shift from reactive security to proactive cyber resilience st
 4. Emerging Legal Consequences Of Ransom Payments
 5. Collaboration Reinforces Resilience Against Ransomware
 6. Budgets Rise For Security And Recovery, But More Is Needed
-
----
 
 ## Trend 1: Law Enforcement Forces Threat Actors To Adapt
 
@@ -58,8 +54,6 @@ Some of the larger groups that either been shut down, disappeared or ceased oper
 - **LockBit**, a ransomware-as-a-service (RaaS) group, eliminated by law enforcement efforts led by the UK’s National Crime Agency in conjunction with the FBI and Europol.[^2]
 - **BlackCat**, a RaaS group, that the FBI previously disrupted in 2023,[^3] ended operations in March 2024 following their successful attack targeting Change Healthcare — and a ransom payout reportedly worth over 22 million U.S. dollars.[^4]
 - **Black Basta**, which appeared to stop operations in 2025 after leaked chat logs revealed concerns about law enforcement scrutiny after an attack on US Health System Acension, which included 140 hospitals across 19 states.[^5]
-
----
 
 ## Trend 2: Data Exfiltration Attacks Grow
 
@@ -72,8 +66,6 @@ In Q2 of 2024, Coveware by Veeam noted that two of the top three ransomware adve
 When threat actors do gain access to victims’ networks, they tend to use lateral movement techniques. They look for ease of exfiltration or a specific objective, such as compromising VMware ESXi hypervisors, to coerce victims into paying the ransom. These efficient and well-rehearsed strategies often result in faster attacks that can be difficult to detect and contain.
 
 All too often, organizations that have a weak cybersecurity posture and complex network architectures are particularly vulnerable to data exfiltration and related cyber threats.
-
----
 
 ## Trend 3: Ransomware Payments Are Decreasing
 
@@ -89,8 +81,6 @@ Victims are increasingly hesitant to pay ransoms because they can’t trust atta
 
 ![Chart: Did your organization pay a ransom to recover its data?]
 
----
-
 ## Trend 4: Emerging Legal Consequences of Ransom Payments
 
 Paying a ransom can prove very costly, as it incentivizes attackers and confirms that a vulnerable organization is willing to pay. In fact, among those that paid a ransom, 69% were attacked more than once. Organizations that don’t take steps to bolster their capacity for defense and response leave themselves with fewer options when an attack does occur.
@@ -103,8 +93,6 @@ In 2023, 40 CRI members signed a joint governmental pledge to “strongly discou
 
 The FBI discourages organizations from paying ransoms,[^14] and the U.S. Treasury Department advises there may be sanctions risks associated with payments made to entities blocked by the Office of Foreign Asset Control (OFAC).[^15] Global organizations must consider other payment risks and compliance requirements as well.
 
----
-
 ## Trend 5: Collaboration Reinforces Resilience Against Ransomware
 
 > "We are in a shared purpose of security, and we have to do that together. So, I don’t think there’s any way that we get to a future that is cyber secure without both the public and private entities, and their value propositions, coming together to find some solutions."[^16]
@@ -116,8 +104,6 @@ At the same time, platform and technology players are partnering to aggregate ra
 
 ![Chart: Alignment of IT Operations & Security Teams]
 
----
-
 ## Trend 6: Budgets Rise for Security and Recovery, but More Is Needed
 
 Critically, it enables vendors and agencies to provide indicators of compromise and mitigation strategies to others in the ecosystem.
@@ -128,13 +114,11 @@ Overall, organizations tend to devote slightly more resources to security (31% o
 
 On the plus side, 94% of organizations increased the recovery budget for 2025 and 95% increased it for prevention, indicating a growing priority to boost cyber resilience.
 
-### Questions Your Board of Directors Will Ask After a Ransomware Attack
-- **How did the attack occur?** Detail the attack’s cause, scope, and impact.
-- **What has been done to eliminate the threat?** Describe whether a ransom was paid (if so, how) and the steps taken to remove the threat and recover.
-- **Which systems, data, and business operations were affected?** Outline the impacts of the attack, including any financial and reputational consequences.
-- **What has been done to improve cyber resilience and prevent future attacks?** Identify steps taken to strengthen security and recovery, such as changes in governance measures or cybersecurity investment priorities.
-
----
+**Questions Your Board of Directors Will Ask After a Ransomware Attack:**
+- How did the attack occur?
+- What has been done to eliminate the threat?
+- Which systems, data, and business operations were affected?
+- What has been done to improve cyber resilience and prevent future attacks?
 
 ## Key Success Factors: What Organizations With Better Outcomes Have in Common
 
@@ -153,8 +137,6 @@ An organization was considered more successful if five of the nine of the follow
 - Less than 20% of the organization’s production platforms were affected.
 - Less than 10% of the backup repositories were modified or deleted when the threat actor tried.
 
----
-
 ## Ransomware Playbooks Boost Attack Preparation
 
 Pre-attack confidence doesn’t always match reality: 69% of ransomware victims said they thought they were prepared before being attacked, but that confidence dropped by more than 20% post-attack, highlighting critical gaps in planning.
@@ -166,8 +148,6 @@ Overall, it’s critical to foster organizational alignment around cyber resilie
 While 98% of respondents had a ransomware playbook, less than half of organizations had key technical elements, such as backup verifications and frequencies (44%), backup copies and assured cleanliness (44%), alternative infrastructure arrangements (37%), containment or isolation plans (32%), and a pre-defined “chain of command” (30%).
 
 Organizations with more successful outcomes had a much higher instance of including those five key technical elements in their playbooks.
-
----
 
 ## Proactive Backup Recovery Builds Resilience
 
@@ -181,8 +161,6 @@ Secure backups were also underutilized as a proactive measure. Only 32% of respo
 
 Business and IT leaders need to ensure that data and backups are scanned and free of malware before restoring to production to help mitigate enterprise risk.
 
----
-
 ## The Power of “People” in Ransomware Resilience
 
 While these technical aspects of recovery are vital, too many organizations neglect the crucial “people” elements in their ransomware playbooks.
@@ -191,9 +169,7 @@ Just 26% of organizations had a ransom payment decision process in place to guid
 
 Over a third of organizations used internal team members to communicate with threat actors. The rest relied on third parties to assist them, including incident response specialists and ransom negotiation specialists. These specialists are indispensable for guiding engagement based on a detailed understanding of threat actor behavior, which helps support more successful outcomes.
 
-Finally, just 30% of organizations had a pre-defined chain of command for dealing with attacks. The chain of command helps ensure proper authorization ladders and approvals for critical decisions during incident response.
-
----
+Finally, just 30% of organizations had a pre-defined chain of command for dealing with attacks.
 
 ## Bringing It All Together
 
@@ -203,30 +179,24 @@ When viewed together, these measures point to a core difference in mindset betwe
 
 Post-attack, more successful organizations were also more likely to bolster employee training and awareness programs, which can help mitigate social engineering attacks like phishing. Software update policies are also commonly strengthened post-attack to guard against exploitation of software vulnerabilities on an ongoing basis.
 
-![Chart: Ransomware Attack Vectors over time]
-
----
+![Chart: Ransomware Attack Vectors]
 
 ## Taking Stock and Taking Action
 
-Ransomware attacks can damage an organization’s reputation and erode trust among its customers and end users. There can also be severe financial impacts from the costs of dealing with an attack.
+Ransomware attacks can damage an organization’s reputation and erode trust among its customers and end users. There can also be severe financial impacts from the costs of dealing with an attack, including operational downtime, lost productivity, and potential fines or lawsuits.
 
 Organizations that had more successful recoveries followed these best practices:
 - **Develop robust incident response plans** with clear roles and responsibilities.
 - **Create a backup and recovery strategy.** Follow the 3-2-1-1-0 data resilience rule to configure repositories as immutable or otherwise protected and ensure backups are free from malware prior to restoration.[^17]
 - **Implement proactive security measures and processes**, such as zero-trust architecture, identity and access management, software update policies, newer detection and response solutions, and cloud or managed services.
-- **Increase spending on threat detection tools for prevention and backup solutions for recovery.** Platforms for data resilience that are integrated with security tools and have features to prevent or detect threats — such as the Veeam Data Platform[^18] — significantly help enhance cybersecurity and resilience.
+- **Increase spending on threat detection tools** for prevention and backup solutions for recovery.
 - **Organize security training programs** and raise awareness amongst all employees.
-
----
 
 ## About the Report
 
 This year’s ransomware report surveyed 1,300 organizations, 900 of which had experienced at least one ransomware attack resulting in encryption or exfiltration in the past 12 months. The respondents were comprised of Chief Information Security Officers (CISOs) or executives with similar responsibilities, as well as security professionals and IT leaders from across the Americas, Europe, and Australia.
 
 Cyber defense strategies are a board-level issue. Don’t wait for a cyberattack to happen. Take the steps needed to minimize risk and maintain resilience.
-
----
 
 ## Endnotes
 
@@ -247,4 +217,3 @@ Cyber defense strategies are a board-level issue. Don’t wait for a cyberattack
 [^15]: https://ofac.treasury.gov/media/912981/download?inline
 [^16]: https://www.youtube.com/watch?v=Fs2xq0pb7YQ
 [^17]: https://www.veeam.com/blog/321-backup-rule.html
-[^18]: https://www.veeam.com/products/veeam-data-platform.html
