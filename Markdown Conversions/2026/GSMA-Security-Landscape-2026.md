@@ -1,475 +1,362 @@
-as the cornerstone of next-generation digital infrastructure.
+# GSMA Mobile Telecommunications Security Landscape - 2026
 
-The security implications of Agentic AI
-are profound. Because these systems
-can autonomously execute complex
-workflows, they introduce new attack
-vectors, such as:
-
- — **Prompt Injection**: Manipulating the
-  AI’s instructions to force it to
-  perform unintended actions.
-
- — **Model Poisoning**: Corrupting the
-  training data to introduce biases or
-  backdoors into the AI’s decision-
-  making process.
-
- — **Autonomous Lateral Movement**:
-  An agentic system could be
-  compromised and then used to
-  autonomously navigate a network,
-  identifying and exploiting further
-  vulnerabilities without human
-  intervention.
-
-To secure these systems, operators
-must adopt a "Security-by-Design"
-approach for AI, which includes:
-
- — **Robust Input Validation**: Ensuring
-  that all inputs to AI models are
-  sanitised to prevent prompt injection.
-
- — **Human-in-the-loop (HITL)**:
-  Maintaining human oversight for
-  critical decision-making processes
-  executed by agentic systems.
-
- — **Continuous Monitoring**:
-  Implementing real-time monitoring
-  of AI agent behaviour to detect
-  anomalies or deviations from
-  expected operational patterns.
-
- — **AI Governance**: Establishing
-  clear policies and frameworks for
-  the ethical and secure deployment
-  of AI, aligned with international
-  standards like the NIST AI RMF.
-
-75 https://www.ncsc.gov.uk/report/the-near-term-impact-of-ai-on-the-cyber-threat
-76 https://atlas.mitre.org/
-77 https://www.nist.gov/itl/ai-risk-management-framework
-
-19/26
-
-GSMA Mobile Telecommunications  Security Landscape - 2026GSMA Mobile Telecommunications Security Landscape - 2026Generative and Agentic Artificial Intelligence Security
-
-7
-
-Post Quantum Cryptography
-
-Post Quantum Cryptography (PQC) is a topic with some uncertainty on timing but with potential for a significant security impact.
-A Cryptographically Relevant Quantum Computer (CRQC) has the potential to break public key infrastructures which underpin
-many current security protocols including some key distribution and digital signature regimes.
-
-The threat posed by a CRQC is often
-referred to as "Harvest Now, Decrypt
-Later" (HNDL). This is where an
-adversary intercepts and stores encrypted
-data today, with the intention of
-decrypting it once a sufficiently powerful
-quantum computer becomes available.
-This is a critical concern for data with
-long-term confidentiality requirements,
-such as personal identity information,
-medical records, and sensitive
-telecommunications traffic.
-
-The transition to PQC is a complex
-undertaking that requires careful
-planning and execution. The GSMA
-recommends that operators begin
-preparing for this transition by:
-
- — **Inventorying Cryptographic Assets**:
-  Identifying all systems and protocols
-  that rely on public-key cryptography
-  (e.g., TLS, IPsec, digital signatures).
-
- — **Assessing Quantum Risk**:
-  Evaluating the sensitivity of data
-  and the potential impact of a
-  quantum-enabled breach.
-
- — **Monitoring PQC Standards**:
-  Keeping abreast of the latest
-  developments in PQC algorithms
-  (e.g., those standardised by NIST)
-  and their suitability for mobile
-  telecoms use cases.
-
- — **Developing a Migration Roadmap**:
-  Creating a phased plan for upgrading
-  cryptographic implementations to
-  quantum-resistant alternatives.
-
-Key factors to consider for PQC
-transition include:
-
- — **Performance Impact**: PQC
-  algorithms may have different
-  computational and bandwidth
-  requirements compared to classical
-  algorithms.
-
- — **Interoperability**: Ensuring that
-  PQC-enabled systems can still
-  communicate with legacy systems
-  during the transition period.
-
- — **Regulatory Compliance**:
-  Aligning PQC migration plans with
-  emerging national and international
-  cybersecurity regulations.
-
-The GSMA is actively working with
-industry partners to develop guidance
-and best practices for PQC transition,
-ensuring that the mobile ecosystem
-remains secure in the quantum era.
-
-20/26
-
-GSMA Mobile Telecommunications  Security Landscape - 2026GSMA Mobile Telecommunications Security Landscape - 2026Post Quantum Cryptography
-
-8
-
-Mapping the Global Cybersecurity
-Regulatory Landscape
-
-The landscape is completed by examining the fast-moving and often fragmented topic of global cybersecurity regulations.
-To address the evolving threat landscape, national and international policy must adapt.
-
-The regulatory environment for
-cybersecurity is becoming increasingly
-complex and fragmented. Operators
-are facing a growing number of
-requirements from national regulators,
-international bodies, and industry
-standards organisations. This
-fragmentation can create significant
-challenges for operators, particularly
-those with global operations, as they
-must navigate a patchwork of rules and
-obligations.
-
-Key trends in the regulatory landscape
-include:
-
- — **Increased Focus on Supply Chain
-  Security**: Regulators are placing
-  greater emphasis on the security of
-  the entire supply chain, requiring
-  operators to demonstrate greater
-  oversight and assurance of their
-  vendors and partners.
-
- — **Mandatory Vulnerability Disclosure**:
-  Many jurisdictions are introducing
-  mandatory vulnerability disclosure
-  requirements, requiring operators to
-  report security incidents and
-  vulnerabilities within specified
-  timeframes.
-
- — **Stricter Data Protection and
-  Privacy Laws**: Regulations such as
-  GDPR and its equivalents worldwide
-  are driving higher standards for data
-  protection and privacy, with
-  significant penalties for non-
-  compliance.
-
- — **Sector-Specific Security
-  Requirements**: Regulators are
-  increasingly developing security
-  requirements tailored to the specific
-  needs and risks of the mobile
-  telecommunications sector.
-
-To navigate this landscape, the GSMA
-recommends that operators:
-
- — **Engage with Regulators**:
-  Proactively engage with national
-  and international regulators to
-  shape the development of
-  cybersecurity policy.
-
- — **Monitor Regulatory Developments**:
-  Maintain a comprehensive view of
-  the evolving regulatory landscape
-  and its potential impact on their
-  operations.
-
- — **Implement Compliance Frameworks**:
-  Adopt robust compliance frameworks
-  that align with international best
-  practices and standards.
-
- — **Foster Industry Collaboration**:
-  Work with other operators and
-  industry bodies to promote
-  harmonisation and consistency in
-  cybersecurity regulation.
-
-The GSMA is committed to supporting
-its members in navigating the
-regulatory landscape, providing
-guidance, intelligence, and advocacy
-to ensure that cybersecurity policy
-is effective, proportionate, and
-supportive of innovation.
-
-22/26
-
-GSMA Mobile Telecommunications  Security Landscape - 2026GSMA Mobile Telecommunications Security Landscape - 2026Mapping the Global Cybersecurity Regulatory Landscape
-
-9
-
-Final Thoughts
-
-As we look ahead to 2026 and beyond, the mobile telecommunications security landscape will continue to evolve at an
-unprecedented pace. The convergence of new technologies, the increasing sophistication of threat actors, and the
-fragmented regulatory environment present significant challenges for the industry.
-
-However, these challenges also present
-opportunities for the mobile industry
-to strengthen its collective security
-posture and build trust with consumers
-and society. By embracing a proactive,
-risk-based approach to security,
-leveraging the power of collaboration
-and intelligence sharing, and investing
-in the latest security technologies and
-practices, the mobile industry can
-continue to deliver safe and resilient
-connectivity for all.
-
-The ten key security protection priority
-areas identified in this report are:
-
-1.  **Software Security**: Implementing
-  secure-by-design principles and
-  maintaining a comprehensive
-  understanding of code composition.
-
-2.  **Democratisation of Attacks**:
-  Countering the lowering of barriers
-  to attack by implementing robust
-  baseline security controls and
-  threat hunting.
-
-3.  **Pre-Positioning Attacks**:
-  Utilising proactive threat hunting
-  and secure roots of trust to detect
-  and mitigate persistent threats.
-
-4.  **Cyber Hygiene**: Strengthening
-  foundational security practices,
-  including patching, account
-  security, and network segmentation.
-
-5.  **Supply Chain Security**: Adopting
-  a lifecycle approach to supply chain
-  assurance and leveraging industry
-  security schemes like NESAS.
-
-6.  **Scam Prevention**: Implementing
-  network-based and on-device
-  solutions to protect consumers
-  from fraud and scams.
-
-7.  **Threat Intelligence Sharing**:
-  Actively participating in community-
-  driven threat intelligence sharing
-  platforms like the GSMA T-ISAC.
-
-8.  **Risk Management**: Adopting a
-  risk-based approach to security
-  investment and decision-making.
-
-9.  **AI Security**: Developing robust
-  security frameworks for the
-  deployment of generative and
-  agentic AI.
-
-10. **PQC Readiness**: Preparing for
-  the transition to quantum-resistant
-  cryptography to protect long-term
-  data confidentiality.
-
-By focusing on these priority areas, the
-mobile industry can build a more secure
-and resilient future, ensuring that the
-full power of connectivity can be
-unlocked for the benefit of people,
-industry, and society.
-
-25/26
-
-GSMA Mobile Telecommunications  Security Landscape - 2026GSMA Mobile Telecommunications Security Landscape - 2026Final Thoughts
+## Table of Contents
+- [1. Executive Summary](#1-executive-summary)
+- [2. Mobile networks, devices and consumers are under attack](#2-mobile-networks-devices-and-consumers-are-under-attack)
+  - [2.1 Software Attacks](#21-software-attacks)
+  - [2.2 Democratisation of Attacks](#22-democratisation-of-attacks)
+  - [2.3 Successful Pre-Positioning Attacks](#23-successful-pre-positioning-attacks)
+  - [2.4 Exploiting Weak Cyber Hygiene](#24-exploiting-weak-cyber-hygiene)
+  - [2.5 Supply Chain Attacks](#25-supply-chain-attacks)
+  - [2.6 The Spectrum: Security, Fraud, Scams](#26-the-spectrum-security-fraud-scams)
+- [3. Threat Actors](#3-threat-actors)
+- [4. Risk Management](#4-risk-management)
+- [5. Coordinated Vulnerability Disclosure](#5-coordinated-vulnerability-disclosure)
+- [6. Generative and Agentic Artificial Intelligence Security](#6-generative-and-agentic-artificial-intelligence-security)
+- [7. Post Quantum Cryptography](#7-post-quantum-cryptography)
+- [8. Mapping the Global Cybersecurity Regulatory Landscape](#8-mapping-the-global-cybersecurity-regulatory-landscape)
+- [9. Final Thoughts](#9-final-thoughts)
 
 ---
 
-as the cornerstone of
-next-generation digital infrastructure.
+## 1. Executive Summary
+This is the GSMA’s eighth annual Mobile Telecommunications Security Landscape report. Building on the previous reports[^1], it reflects developments during 2025, updated analyses, new and updated content, identifies key trends and provides a look at some of the emerging security topics.
 
-Whilst the area is still in its relative
-infancy, protecting new AI systems,
-data78 and algorithms has many similar
-requirements to the introduction of other
-new solutions. Whilst AI is providing
-efficiency enablers for attackers, the
+The report highlights first that mobile networks, devices and consumers are experiencing a full spectrum of attacks across the globe. This report analyses these attacks and identifies six key areas for attention:
 
-security defensive controls require
-many of the same security controls and
-cyber hygiene to establish a security
-baseline of extant deployed networks,
-systems and service. Beyond baseline
-security, autonomous agent collaboration
-demands enhanced security. Anyone
-adopting agentic systems into any
-workflow must adopt the concept
-of the threat actor as internal to the
-workflow, rather than as an external party
-interacting with it. Consider79,
+- **Software implementations as a key frontline of attacks**
+- **A democratisation of attacks**, whereby there is a lowering of the technical and resource barriers to launch attacks
+- **Pre-positioning attacks** that seek to establish a bridgehead for later attacks
+- **Exploitation of weak cyber hygiene**
+- **Supply chain attacks**
+- **Scam attacks on mobile consumers**
 
-1.  Boundary Collapse, where an
+Each of these areas includes a definition, some indicators of compromise and security mitigations to be developed, extended and implemented.
 
-agentic model’s output is executed
-by tooling that treats the model as
-authoritative;
+![Figure 1, An Overview of topics]
 
-2.  Supply Chain Substitution,
+New for this year, the report includes approaches to vulnerability disclosure alongside a threat actor analysis provided via the GSMA Co-ordinated Vulnerability Disclosure scheme. The report moves on to analyse the emerging security needs associated with generative and agentic artificial intelligence and considerations and migration for post quantum cryptography. The landscape is completed by examining the fast-moving and often fragmented topic of global cybersecurity regulations. Finally, the report identifies ten key security protection priority areas derived from the report content.
 
-tampered dependencies, images, or
+---
 
-  model weights;
+## 2. Mobile networks, devices and consumers are under attack
+The mobile industry has long aimed to develop and deploy robust security measures to protect its assets, customers and services. GSMA continue to see attacks directly on mobile networks, services and devices, including attacks on service delivery, denial of service, the delivery of malware and attacks seeking to exfiltrate data.
 
-3.  Privilege Misconfiguration, overly
+In mobile networks, a single breach can disrupt infrastructure, customers, and supply chains. There is a commonality of attack tactics such as credential theft, token abuse, Software-as-a-Service (SaaS) exploitation, and living-off-the-land methods. This highlights the urgent need for tailored operational security, ongoing behavioural monitoring, robust governance and underscores the importance of flexible detection models and sector-specific expertise.
 
-permissive service accounts that let
-an agent or user facing tool modify
+The operational attack surface is wide and complex. Attacks can be launched at many different points externally and from within the network. Mobile Network Operators (MNOs) have been targeted for many years and these attacks continued in 2025. Threat actors use a range of attack techniques to achieve their goals. After an initial phase of reconnaissance, the attack may move to establish an initial access bridgehead. This initial access phase may persist for months or years, with low levels of activity, occasionally contacting the Command and Control (C2) server, gathering information, exfiltrating low levels of data or waiting for a better time to launch a more destructive or impactful attack. Hence the need for threat hunting activity.
 
-the model scheduler itself, or any
-sensitive data crossing a boundary
-from deterministic permissions to
-probabilistic.
+![Figure 2, A spectrum of attacks]
 
+### 2.1 Software Attacks
+A software attack is a malicious attempt to gain unauthorised access to a computer system or network by exploiting vulnerabilities in code. Deficiencies in coding implementations lead to potential vulnerabilities that attackers may seek to exploit.
+
+**Indicators of Compromise:**
+- Unusual or unauthorised software installations
+- API overloads / data leaks
+- Unexpected configuration changes
+- System crashes or degraded performance
+- Unexpected new code libraries or binaries
+- Lateral movement activity
+
+**Mitigations:**
+- Secure by design code development lifecycle
+- Being fully aware of code composition, eg by using an SBOM
+- Manage security of code repositories
+- Adopt security best practices for API development security
+- Use of privileged access workstations and utilising the principle of least privilege.
+
+### 2.2 Democratisation of Attacks
+There has been a progressive lowering of skill and resource levels required to launch effective attacks. A range of approaches have been evidenced:
+- **SMS Blasters**: Portable and easy-to-use fake mobile base transceiver stations used for fraudulent smishing.
+- **Dark web marketplaces**: Offer hacking tools, exploit kits, and stolen credentials.
+- **Initial access brokers**: Threat actors who procure access to networks and sell them to other TAs.
+- **Ransomware/phishing/malware as-a-service**: Commodity attack tools.
+- **AI-enabled attack efficiency**: Automating reconnaissance, vulnerability scanning, and data analysis.
+
+### 2.3 Successful Pre-Positioning Attacks
+Adversaries compromise systems and persist to prepare for a later escalation or undertake ongoing low-level data exfiltration and ‘beaconing’ to C2 servers. These ‘quiet’ attacks may have been missed by defence capabilities.
+
+**Mitigations:**
+- Threat hunting
+- Implement trusted boot capabilities and secure roots of trust with periodic rebooting of systems
+- Proactive penetration testing
+- Threat intel sharing via the GSMA Telecommunication Information Sharing and Analysis Center (T-ISAC).
+
+### 2.4 Exploiting Weak Cyber Hygiene
+Threat actors often start by using basic toolsets that exploit well-known vulnerabilities. The role of the defender is to make attacks progressively harder to launch.
+
+**Mitigations:**
+- Undertake a complete asset inventory
+- Implement a strong baseline set of controls (e.g., GSMA FS.31)
+- Build in multilayer defences
+- Monitoring and analysis of logging data
+- Improve network and system segmentation
+- Encrypt key data.
+
+### 2.5 Supply Chain Attacks
+Supply chain attacks continue at pace. The opportunity for indirect attacks through supplier or third-party tooling and services requires vigilance.
+
+**Mitigations:**
+- Adopt a lifecycle approach to improve the whole chain of supply and operation
+- Know your traffic: logging and monitoring of all traffic types
+- Use industry security assurance schemes (e.g., GSMA NESAS)
+- Actively manage code deployments and update to ensure correct code versioning and binary equivalence
+- Strictly control remote access arrangements.
+
+### 2.6 The Spectrum: Security, Fraud, Scams
+The scam economy has grown rapidly, costing victims $1 trillion worldwide. The mobile industry is taking comprehensive steps to combat the rising number of scams that affect individuals and society, including the use of AI-powered spam detection and the Scam Signal API.
+
+---
+
+## 3. Threat Actors
+Gaining a comprehensive understanding of threat actors is crucial for enhancing cybersecurity defences. GSMA’s T-ISAC has been tracking several key groups:
+
+- **Salt Typhoon (AKA UNC2286)**: Active since at least 2019, targeting telecommunications infrastructure and government systems worldwide using zero-day exploits and living-off-the-land techniques.
+- **LightBasin (AKA UNC1945 + UNC281)**: Focuses on Linux and Solaris systems in telecommunications, finance, and retail.
+- **Scattered Spider (AKA UNC3944 & Octo Tempest)**: Financially motivated, English-speaking group using social engineering, SIM swapping, and MFA fatigue attacks.
+- **ShinyHunters**: Specialises in data theft and extortion, often gaining access through credential theft or misconfigured cloud services.
+
+![Figure 3, Tactics used by the Threat Actors]
+
+---
+
+## 4. Risk Management
+A powerful strategic security response is to utilise risk and threat management to design and leverage security investments. Threat modelling allows for the identification of the most likely and impactful risks.
+
+**Risk Treatment Options:**
+- Accept the net risk position
+- Sharing the risk through a new delivery arrangement
+- Avoid the risk (e.g., closing a platform)
+- Transfer the risk to another party
+- Risk education
+
+---
+
+## 5. Coordinated Vulnerability Disclosure
+*(Content omitted in source text)*
+
+---
+
+## 6. Generative and Agentic Artificial Intelligence Security
+*(Content omitted in source text)*
+
+---
+
+## 7. Post Quantum Cryptography
+*(Content omitted in source text)*
+
+---
+
+## 8. Mapping the Global Cybersecurity Regulatory Landscape
+*(Content omitted in source text)*
+
+---
+
+## 9. Final Thoughts
+*(Content omitted in source text)*
+
+[^1]: https://www.gsma.com/solutions-and-impact/technologies/security/publications/
+
+---
+
+h implementing additional security
+  controls/architectural re-design to limit the impact and/or
+then developing and deploying networks
+  reduce the likelihood of a successful attack
+in accordance with these revised
+assumptions. With far-sighted design
+assumptions, network and service
+Figure 4, A Risk Management Cycle
+71 https://www.ncsc.gov.uk/files/Summary%20of%20the%20NCSCs%20security%20analysis%20for%20the%20UK%20telecoms%20sector.pdf
+72 See p11 of https://www.gsma.com/solutions-and-impact/technologies/security/gsma_resources/gsma-mobile-telecommunications-security-landscape-2024/
+73 https://www.gsma.com/solutions-and-impact/technologies/security/cybersecurity-knowledge-base/
+
+GSMA Mobile Telecommunications Security Landscape - 2026 1166//2266
+
+Coordinated Vulnerability GSMA Mobile Telecommunications
+Disclosure Security Landscape - 2026
+5 Coordinated Vulnerability Disclosure
+Another part of the strategic defence approach involves threat and vulnerability sharing (as exemplified by GSMA’s T-ISAC service
+(see earlier Threat Actors section). Another service whereby the mobile industry continues to strengthen its collective security
+posture through structured approaches to vulnerability disclosure.
+The GSMA’s Coordinated Vulnerability The GSMA CVD programme, established
+Disclosure (CVD) Programme provides in 2017, has handled over one hundred
+a trusted framework for security disclosures to date. In 2025 alone, GSMA
+researchers, vendors, and operators received 15 CVD cases, covering areas
+to report and remediate vulnerabilities. such as 5G Standalone (SA), Access
+GSMA’s CVD programme primarily Control, and eSIM. Mobile security
+assesses vulnerabilities that relate to researchers to submit their vulnerability 16 16 16
+telecoms standards functionality rather disclosures to the programme74.
+14 15
+than IT level or vendor specific issues.
+By acting as a neutral coordination body,
+the GSMA helps ensure that discovered 11
+10
+weaknesses are responsibly disclosed,
+assessed, and addressed before they can 8
+7
+be exploited, thereby reducing risk across
+the entire mobile ecosystem. This is made
+possible by 25 volunteers from GSMA
+MNO and vendor members, who form the
+expert panel supporting the programme
+2017 2018 2019 2020 2021 2022 2023 2024 2025
+Figure 5, Number of GSMA CVD
+Disclousers per year
+74 https://www.gsma.com/solutions-and-impact/technologies/security/cvd-submit-a-vulnerability/
+GSMA Mobile Telecommunications Security Landscape - 2026 17/26
+
+Coordinated Vulnerability  GSMA Mobile Telecommunications
+Disclosure Security Landscape - 2026
+| In addition to the GSMA initiative, other  | Networks (RAN) are a key area due to  |     |
+| ------------------------------------------ | ------------------------------------- | --- |
+| industry-driven disclosure frameworks      | their reliance on less secure legacy  |     |
+Breakdown of cases across network areas
+| play an important role in raising security  | technologies and the complexity of      |     |
+| ------------------------------------------- | --------------------------------------- | --- |
+| maturity. For example:                      | RAN protocols can increase the risk of  |     |
+insecure implementations.
+1% 1%
+—  CERTs and national disclosure
+  programmes provide structured   Taken together, these initiatives reflect  3%
+5%
+|   channels for vulnerability reporting   | a growing culture of transparency and  |     |
+| ---------------------------------------- | -------------------------------------- | --- |
+7% RAN
+|   that span multiple sectors, including   | collaboration in the mobile industry.  |     |
+| ----------------------------------------- | -------------------------------------- | --- |
+Supply chain
+|   mobile. | By embedding coordinated disclosure  | Core |
+| --------- | ------------------------------------ | ---- |
+36%
+practices at both the industry-wide and
+| —  Standards and specifications   |     | UE  |
+| --------------------------------- | --- | --- |
+individual company levels, stakeholders  7%
+Transmission
+  organisation programmes such as
+are better positioned to respond to
+|   ETSI and 3GPP provide an avenue   |     | Roaming |
+| ----------------------------------- | --- | ------- |
+emerging threats, safeguard users, and
+  for researchers to report
+|     | build trust in mobile technologies. | Cryptography |
+| --- | ----------------------------------- | ------------ |
+  vulnerabilities affecting their relevant
+13%
+|   standards or specifications. |     | UICC |
+| ------------------------------ | --- | ---- |
+IoT
+—  Device and platform providers
+|   maintain robust vulnerability reward   |     | RCS |
+| ---------------------------------------- | --- | --- |
+  programmes and bug bounty
+16%
+  schemes, incentivising proactive   27%
+  researcher participation.
+—  Telecom operators and equipment
+  vendors increasingly run their own
+  disclosure channels, often aligned
+  with international best practices,   Figure 6, Breakdown of cases in
+different network areas
+  to ensure that issues identified in
+  their infrastructure or services are
+  resolved swiftly.
+The diagram opposite provides a
+breakdown of % cases in a variety of
+network component areas. Radio Access
+GSMA Mobile Telecommunications Security Landscape - 2026 18/26
+
+Generative and Agentic Artificial GSMA Mobile Telecommunications
+Intelligence Security Security Landscape - 2026
+Generative and Agentic Artificial
+6
+Intelligence Security
+In the past few years, effective generative AI technology capabilities and availability have increased significantly enabling a range of
+new uses for both offensive75 and defensive purposes with major ramifications for mobile telecoms security.
+AI/ML has the potential to lower the adversary tactics and techniques based security defensive controls require the model scheduler itself, or any
+technical barriers to attack methods that on real-world attack observations. many of the same security controls and sensitive data crossing a boundary
+may have previously been unavailable to NIST has released guidance such as cyber hygiene to establish a security from deterministic permissions to
+less sophisticated threat actors including: Artificial Intelligence Risk Management baseline of extant deployed networks, probabilistic.
+Framework 77. systems and service. Beyond baseline
 AI system security is maturing. There are
+— Enhancing the efficiency and security, autonomous agent collaboration
 security challenges with some emerging
+effectiveness of social engineering With the rapid evolution of generative AI, demands enhanced security. Anyone
 tools80 that need to be built to reflect
+attack types, such as smishing, artificial intelligence is now transitioning adopting agentic systems into any
 existing best practices to defend against
+vishing and phishing. into the era of agentic AI characterised workflow must adopt the concept
 known attack types81. The broader hand
-over between governance and security is
+by autonomy and intent driven decision- of the threat actor as internal to the
+— Scams empowered by generative AI over between governance and security is
+making. Unlike traditional AI limited workflow, rather than as an external party
 also being explored. GSMA launched the
+— Identification of new attack types to predefined tasks, Agentic AI leverages interacting with it. Consider79,
 first industry-wide Responsible AI (RAI)
+through use of AI workflows that decompose complex
 Maturity Roadmap82 to provide telecoms
-operators with the tools and guidance to
-test and assess their responsible use of
+goals, iteratively optimise actions, and 1. Boundary Collapse, where an
+— Synthetic identity fraud (such as operators with the tools and guidance to
+actively adapt to dynamic environments, agentic model’s output is executed
+deepfakes) test and assess their responsible use of
+positioning itself as the cornerstone of by tooling that treats the model as
 the technology.
-
-AI Is Not Enough: Why Cyber
-Hygiene and Standards Still
-Matter in Telecom Security83.
-
+— Enabling efficiencies for attackers next-generation digital infrastructure. authoritative;
+and lowering the attacker skill base
+Whilst the area is still in its relative 2. Supply Chain Substitution, .
+tampered dependencies, images, or AI Is Not Enough: Why Cyber
+infancy, protecting new AI systems,
+Defensive AI-enabled solutions are also data78 and algorithms has many similar model weights; Hygiene and Standards Still
+emerging such as the MITRE ATLAS™ requirements to the introduction of other 3. Privilege Misconfiguration, overly Matter in Telecom Security83.
+(Adversarial Threat Landscape for
+new solutions. Whilst AI is providing permissive service accounts that let
+Artificial-Intelligence Systems76) that
+efficiency enablers for attackers, the an agent or user facing tool modify
+aims to provide a knowledge base of
 Sam Kight - Head of Industry Security, GSMA
-
-75  https://www.darktrace.com/news/new-report-finds-that-78-of-chief-information-security-officers-globally-are-seeing-a-significant-impact-from-ai-powered-cyber-threats
-76  https://atlas.mitre.org/
-77  https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf
-78  https://www.cyber.gov.au/sites/default/files/2025-05/CSI_AI_Data_Security.pdf
-79  https://www.gsma.com/solutions-and-impact/technologies/artificial-intelligence/agentic-ai-for-telecom-charting-the-course-for-an-intelligent-future/ and the broader document for a wider discourse
+75 https://www.darktrace.com/news/new-report-finds-that-78-of-chief-information-security-officers-globally-are-seeing-a-significant-impact-from-ai-powered-cyber-threats
+76 https://atlas.mitre.org/
+77 https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf
+78 https://www.cyber.gov.au/sites/default/files/2025-05/CSI_AI_Data_Security.pdf
+79 https://www.gsma.com/solutions-and-impact/technologies/artificial-intelligence/agentic-ai-for-telecom-charting-the-course-for-an-intelligent-future/ and the broader document for a wider discourse
 80 https://www.axios.com/2025/10/28/atlas-chatgpt-openai-web-browser-security-privacy
-81  https://mellea.ai
+81 https://mellea.ai
 82 https://www.gsma.com/newsroom/press-release/gsma-launches-maturity-roadmap-as-telecoms-industry-leads-the-way-in-the-deployment-of-responsible-ai/
 83 https://insight.scmagazineuk.com/ai-is-not-enough-why-cyber-hygiene-and-standards-still-matter-in-telecom-security
+GSMA Mobile Telecommunications Security Landscape - 2026 19/26
 
-19/26
-
-GSMA Mobile Telecommunications  Security Landscape - 2026GSMA Mobile Telecommunications Security Landscape - 2026Generative and Agentic Artificial Intelligence Security.
-
-7
-
-Post Quantum Cryptography
-
+Post Quantum Cryptography GSMA Mobile Telecommunications
+Security Landscape - 2026
+7 Post Quantum Cryptography
 Post Quantum Cryptography is a topic with some uncertainty on timing but with potential for a significant security impact.
 A Cryptographically Relevant Quantum Computer (CRQC) has the potential to break public key infrastructures which underpin many
 current security protocols including some key distribution and digital signature regimes. It is a complex area with significant
 uncertainty. For telecoms, GSMA’s Post Quantum Telco Networks (PQTN) Task Force84 has been active for several years in
 developing guidelines focused on telco preparedness for quantum safe security.
-
-There was much debate about the
-timescales for transition to PQC, so this
-is explored further here. In large part this
-is impacted on by the timescales within
-which a CRQC will become available.
-The security of commonly employed
-cryptographic algorithms, such as
-RSA- and elliptic curve-based public
-key encryption and digital signature
-schemes, is reliant upon the hardness of
-solving certain underlying mathematical
-problems. Security of these asymmetric
-protocols is founded on the assumption
-that a compute- or time- bounded
-attacker is unable to efficiently compute
-the prime factors of large integers
-or solve the discrete log problem.
-The advent of a CRQC fundamentally
-changes our assumptions regarding
-the compute powers available to bad
-actors. Shor’s algorithm, for example,
-enables the efficient factorisation of
-
-large integers and allows attackers
-to efficiently solve the discrete log
-problem. Importantly, Shor’s algorithm
-can achieve an exponential speedup,
-relative to known classical methods,
-rendering it infeasible to simply increase
-key sizes. Consequently, a sufficiently
-large fault tolerant quantum computer
-poses a threat to systems and protocols
-that utilise public key cryptography and/
-or digital signatures, and large-scale
-changes are required to retain present-
-day security assurances in the face
-of this quantum threat (the CRQC
-‘pull’ factor).
-
-Whilst there is uncertainty on the timing
-for the availability of a CRQC, the recent
-NIST announcements85 with the intention
-to deprecate some important and widely
-used algorithms provides a clear ‘push’
-priority to effect change. There is a lot
-
-of additional information on specific
-algorithms and key lengths, and an
-analysis of the impact will be valuable as
-part on ongoing PQC transition planning.
-There has been significant activity
-to prepare for QSC including
-at NIST86, ETSI87 and IETF88 and
-significant national and regional activity
-(take a look at some of the conference
-presentations to get an update). NIST
-has released three PQC standards to
-start the transition to post-quantum
-cryptography: the Module-Lattice-
-Based Key-Encapsulation Mechanism
-[FIPS203], the Module-Lattice-Based
-Digital Signature Algorithm [FIPS204],
-and the Stateless Hash-Based Signature
-Algorithm [FIPS205]. There are real-world
-implementations of these algorithms
-(including open-source code) beginning
-to be made available.
-
+There was much debate about the large integers and allows attackers of additional information on specific
+timescales for transition to PQC, so this to efficiently solve the discrete log algorithms and key lengths, and an
+is explored further here. In large part this problem. Importantly, Shor’s algorithm analysis of the impact will be valuable as
+is impacted on by the timescales within can achieve an exponential speedup, part on ongoing PQC transition planning.
+which a CRQC will become available. relative to known classical methods, There has been significant activity
+The security of commonly employed rendering it infeasible to simply increase to prepare for QSC including
+cryptographic algorithms, such as key sizes. Consequently, a sufficiently at NIST86, ETSI87 and IETF88 and
+RSA- and elliptic curve-based public large fault tolerant quantum computer significant national and regional activity
+key encryption and digital signature poses a threat to systems and protocols (take a look at some of the conference
+schemes, is reliant upon the hardness of that utilise public key cryptography and/ presentations to get an update). NIST
+solving certain underlying mathematical or digital signatures, and large-scale has released three PQC standards to
+problems. Security of these asymmetric changes are required to retain present- start the transition to post-quantum
+protocols is founded on the assumption day security assurances in the face cryptography: the Module-Lattice-
+that a compute- or time- bounded of this quantum threat (the CRQC Based Key-Encapsulation Mechanism
+attacker is unable to efficiently compute ‘pull’ factor). [FIPS203], the Module-Lattice-Based
+the prime factors of large integers Digital Signature Algorithm [FIPS204],
+or solve the discrete log problem. Whilst there is uncertainty on the timing and the Stateless Hash-Based Signature
+The advent of a CRQC fundamentally for the availability of a CRQC, the recent Algorithm [FIPS205]. There are real-world
+changes our assumptions regarding NIST announcements85 with the intention implementations of these algorithms
+the compute powers available to bad to deprecate some important and widely (including open-source code) beginning
+actors. Shor’s algorithm, for example, used algorithms provides a clear ‘push’ to be made available.
+enables the efficient factorisation of priority to effect change. There is a lot
 84 https://www.gsma.com/solutions-and-impact/technologies/security/post-quantum/
 84 PQ.01 https://www.gsma.com/solutions-and-impact/technologies/security/gsma_resources/post-quantum-telco-network-impact-assessment-whitepaper-pq-01
 84 PQ.02 https://www.gsma.com/solutions-and-impact/technologies/security/gsma_resources/guidelines-for-quantum-risk-management-for-telco-pq-02/
@@ -478,587 +365,278 @@ to be made available.
 84 PQ.05 https://www.gsma.com/solutions-and-impact/technologies/security/gsma_resources/pq-05-post-quantum-cryptography-for-5g-roaming-use-case/
 85 https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf
 86 https://csrc.nist.gov/projects/post-quantum-cryptography
-87  https://www.etsi.org/technologies/quantum-safe-cryptography
+87 https://www.etsi.org/technologies/quantum-safe-cryptography
 88 https://datatracker.ietf.org/wg/pquip/about/
+GSMA Mobile Telecommunications Security Landscape - 2026 20/26
 
-20/26
-
-GSMA Mobile Telecommunications  Security Landscape - 2026GSMA Mobile Telecommunications Security Landscape - 2026Post Quantum Cryptography
-
-The diagram illustrates some of the
+Post Quantum Cryptography GSMA Mobile Telecommunications
+Security Landscape - 2026
+The diagram illustrates some of the
 important push and pull factors alongside
-a set of migration and other factors to
+a set of migration and other factors to MIGRATION FACTORS
 consider for PQC.
-
+— System I service I data prioritisation
+— Availability of accurate and complete
 Most existing QSC migration advice
-sensibly points to establishing an
-inventory of encryption protocols in use.
-Other early steps include identifying
-critical systems and then identifying
-their supporting protocols, risk analysis
-and prioritisation, developing the
-transition plan and delivering it. Practical
-complementary approaches can focus
-beyond today’s implementations and
-look at the planned future state of
-networks and systems. This can include
-understanding planned technology
-refresh, vendor product roadmaps and
-transformation projects. There may be
-little point planning a transition for a
-system that is due to be phased out soon.
-Cryptographic agility is an important
-system design and standardisation
-feature allowing rapid transition of
-cryptographic algorithm.
-
-More QSC detailed approaches are
-identified in the PQTN Task Force
-documentation89 which is actively being
-developed with more guidance.
-
-PUSH FACTORS
-
- — Algorithm deprecation
- — Some vendor road
-  maps
-
-MIGRATION FACTORS
-
- — System I service I data prioritisation
- — Availability of accurate and complete
 CBOM or cryptographic inventory
-
- — Cryptographic agility options
- — Key lengths
- — Planned systems transformation replacements
- — Hybrid cryptographic solutions
- — Open Source Software (OSS)- availability /
-
-accuracy of CBOMs for at-scale use
-and depth of other software
-
-OTHER FACTORS
-
- — Timing / technology maturity of CRQC
- — Cost, constrained budgets and phasing
-
-of migration
-
- — Long-term robustness of new PQC
-
-algorithms
-
- — In-house skills and expertise on
-
-cryptography and
-
- — Leveraging purchasing terms for migration
- — Risk management
- — Difficulty in verification
-
-PULL FACTORS
-
- — New PQC algorithm
+sensibly points to establishing an
+— Cryptographic agility options
+inventory of encryption protocols in use.
+Other early steps include identifying — Key lengths
+critical systems and then identifying — Planned systems transformation replacements
+their supporting protocols, risk analysis — Hybrid cryptographic solutions
+and prioritisation, developing the — Open Source Software (OSS)- availability /
+transition plan and delivering it. Practical accuracy of CBOMs for at-scale use PULL FACTORS
+complementary approaches can focus and depth of other software
+PUSH FACTORS — New PQC algorithm
+beyond today’s implementations and
 stadardisation &
+look at the planned future state of — Algorithm deprecation
 implementations
-
- — Experience from real-
-  world PQC migration
- — CRQC technology
-
-progress
-
+networks and systems. This can include — Some vendor road
+understanding planned technology maps — Experience from real-
+refresh, vendor product roadmaps and OTHER FACTORS world PQC migration
+transformation projects. There may be — Timing / technology maturity of CRQC — CRQC technology
+little point planning a transition for a progress
+— Cost, constrained budgets and phasing
+system that is due to be phased out soon.
+of migration
+Cryptographic agility is an important
+— Long-term robustness of new PQC
+system design and standardisation
+algorithms
+feature allowing rapid transition of
+— In-house skills and expertise on
+cryptographic algorithm.
+cryptography and
+More QSC detailed approaches are — Leveraging purchasing terms for migration
+identified in the PQTN Task Force — Risk management
+documentation89 which is actively being — Difficulty in verification
+developed with more guidance.
 Figure 7, A range of factors affecting PQC
-
 89 https://www.gsma.com/solutions-and-impact/technologies/security/post-quantum-telco-network-task-force/
+GSMA Mobile Telecommunications Security Landscape - 2026 21/26
 
-21/26
-
-GSMA Mobile Telecommunications  Security Landscape - 2026GSMA Mobile Telecommunications Security Landscape - 2026Post Quantum Cryptography
-
-8
-
+Mapping the Global Cybersecurity GSMA Mobile Telecommunications
+Regulatory Landscape Security Landscape - 2026
 Mapping the Global Cybersecurity
+8
 Regulatory Landscape
-
 Cybersecurity regulation is now a defining factor in the resilience of mobile networks. A GSMA report90 highlights that fragmented,
 misaligned, or overly prescriptive regulation imposes unnecessary costs, diverts resources from genuine risk mitigation, and in
 some cases increases exposure to cyber threats.
-
-A Fragmented and Fast-Moving
-Landscape
-
-Cybersecurity regulation is no longer
-the domain of a few national strategies
-or voluntary frameworks. Today, it
-spans mandatory product security
-laws, sector-specific obligations,
-certification schemes, and cross-border
-data governance regimes. From the
-EU’s Cyber Resilience Act (CRA) to the
-UK’s Telecoms Security Act (TSA) and
-China’s cybersecurity review measures,
-the regulatory patchwork is expanding
-rapidly.
-
-For mobile operators, this fragmentation
-results in overlapping or contradictory
-obligations from multiple authorities,
-duplicated reporting requirements, and
-administrative burdens that deliver limited
-security benefit.
-
-Rapidly Expanding Patchwork
-
-Cybersecurity regulation now spans:
-
- — Mandatory product security laws
-
-(e.g., EU’s Cyber Resilience Act, UK’s
-PSTI Act)
-
- — Sector-specific obligations (e.g.,
-  UK’s Telecoms Security Act)
-
- — Certification schemes (e.g., EU
-  Cybersecurity Act, Japan’s JC-Star,
-
-ISMAP)
-
- — Standards agencies (ITU, UNECE,
+A Fragmented and Fast-Moving Rapidly Expanding Patchwork where countries converge and where approaches, from governance models
+Landscape their approaches begin to diverge. to implementation measures. It also
+Cybersecurity regulation now spans: Countries are included because they highlights good practices that can be
+Cybersecurity regulation is no longer have established cybersecurity laws, adapted across borders.
+the domain of a few national strategies — Mandatory product security laws national strategies, or sectorspecific
+or voluntary frameworks. Today, it (e.g., EU’s Cyber Resilience Act, UK’s obligations that create real, enforceable A key takeaway from ENISA’s mapping
+spans mandatory product security PSTI Act) requirements for mobile operators. is the importance of resilience, including
+laws, sector-specific obligations, — Sector-specific obligations (e.g., Others are not shown because their the ability to recover quickly and maintain
+certification schemes, and cross-border frameworks remain voluntary, highlevel, continuity across critical sectors. The
+UK’s Telecoms Security Act)
+data governance regimes. From the or still in draft. ability to recover quickly from cyber
+EU’s Cyber Resilience Act (CRA) to the — Certification schemes (e.g., EU incidents is now as critical as prevention.
+UK’s Telecoms Security Act (TSA) and Cybersecurity Act, Japan’s JC-Star, Strategic Governance and Resilience This includes not only technical recovery
+China’s cybersecurity review measures, ISMAP) but also reputational and operational
+the regulatory patchwork is expanding The persistence of ransomware and continuity. Strategies must therefore
+— Standards agencies (ITU, UNECE,
+rapidly. the targeting of critical sectors call embed resilience across sectors,
 ETSI, NIST, ISO, ENISA, APEC)
-
- — Cross-border data governance (e.g.,
-  China’s Cybersecurity Review)
-
+for a renewed focus on strategic with tailored approaches for high-risk
+For mobile operators, this fragmentation — Cross-border data governance (e.g., governance. National Cyber Security domains like energy, healthcare, and
+results in overlapping or contradictory China’s Cybersecurity Review) Strategies (NCSS) must evolve to manufacturing.
+obligations from multiple authorities, reflect the changing threat environment.
+duplicated reporting requirements, and ENISA’s Interactive Map of NCSS 91
 The following map shows how
+administrative burdens that deliver limited provides a valuable overview of how
 cybersecurity regulation and standards
+security benefit. EU Member States are structuring their
 vary across regions, highlighting
-
-where countries converge and where
-their approaches begin to diverge.
-Countries are included because they
-have established cybersecurity laws,
-national strategies, or sectorspecific
-obligations that create real, enforceable
-requirements for mobile operators.
-Others are not shown because their
-frameworks remain voluntary, highlevel,
-or still in draft.
-
-Strategic Governance and Resilience
-
-The persistence of ransomware and
-the targeting of critical sectors call
-for a renewed focus on strategic
-governance. National Cyber Security
-Strategies (NCSS) must evolve to
-reflect the changing threat environment.
-ENISA’s Interactive Map of NCSS 91
-provides a valuable overview of how
-EU Member States are structuring their
-
-approaches, from governance models
-to implementation measures. It also
-highlights good practices that can be
-adapted across borders.
-
-A key takeaway from ENISA’s mapping
-is the importance of resilience, including
-the ability to recover quickly and maintain
-continuity across critical sectors. The
-ability to recover quickly from cyber
-incidents is now as critical as prevention.
-This includes not only technical recovery
-but also reputational and operational
-continuity. Strategies must therefore
-embed resilience across sectors,
-with tailored approaches for high-risk
-domains like energy, healthcare, and
-manufacturing.
-
 90 https://www.gsma.com/solutions-and-impact/connectivity-for-good/public-policy/gsma_resources/the-impact-of-cybersecurity-regulation-on-mobile-operators
-91  https://www.enisa.europa.eu/topics/national-cyber-security-strategies/ncss-map/national-cyber-security-strategies-interactive-map
+91 https://www.enisa.europa.eu/topics/national-cyber-security-strategies/ncss-map/national-cyber-security-strategies-interactive-map
+GSMA Mobile Telecommunications Security Landscape - 2026 22/26
 
-22/26
-
-GSMA Mobile Telecommunications  Security Landscape - 2026GSMA Mobile Telecommunications Security Landscape - 2026Mapping the Global Cybersecurity Regulatory Landscape
-
-Standards
-
-Legislation
-
-Standards
-
-Legislation
-
-TSA, PSTI, CAF,
-Ports & Shipping
+|     |     |           |                  |     | Mapping the Global Cybersecurity  |                 |     | GSMA Mobile Telecommunications   |
+| --- | --- | --------- | ---------------- | --- | --------------------------------- | --------------- | --- | -------------------------------- |
+|     |     |           |                  |     | Regulatory Landscape              |                 |     | Security Landscape - 2026        |
+|     |     | Standards | Legislation      |     | Standards                         | Legislation     |     |                                  |
+|     |     |           | TSA, PSTI, CAF,  |     |                                   | CRA, RED, CSA,  |     |                                  |
+ISO/IEC 27001 ISO/IEC 27001
+|     |     |     | Ports & Shipping  |     |     | ESPR, DNA |     |     |
+| --- | --- | --- | ----------------- | --- | --- | --------- | --- | --- |
+ETSI EN 303 645  ETSI EN 303 645
 Bill
-
-ISO/IEC 27001
-
-ETSI EN 303 645
-
-ETSI EN 303 645
-
+ETSI EN 303 645  IEC 62443
 PSA Certified Level 1
-
-NCSC CAF
-
-NIST CSF
-
-IMO Guidelines
-
-NCSC guidance
-
-CRA, RED, CSA,
-ESPR, DNA
-
-ISO/IEC 27001
-
-ETSI EN 303 645
-
-IEC 62443
-
 ISO/IEC 15408
-
-NIST CSF
-
-EU Electronic Communications Code
-
-Standards
-
-Legislation
-
+NCSC CAF NIST CSF
+NIST CSF EU Electronic Communications Code
+IMO Guidelines
+|     |     |     |     |     |     |     | Standards | Legislation |
+| --- | --- | --- | --- | --- | --- | --- | --------- | ----------- |
+NCSC guidance
+|     |     |     |     |     |           |                | ISO/IEC 27001 | JC-SIP/STAR |
+| --- | --- | --- | --- | --- | --------- | -------------- | ------------- | ----------- |
+|     |     |     |     |     | Standards | Legislation    |               |             |
+|     |     |     |     |     |           | Cybersecurity  | NIST CSF      |             |
 GB/T 22239-2019
-
+|     |     |     |     |     |     | Review  | METI guidelines |     |
+| --- | --- | --- | --- | --- | --- | ------- | --------------- | --- |
 GB/T 35273-2020
-
-Cybersecurity
-Review
 Measures
-
-Standards
-
-Legislation
-
-JC-SIP/STAR
-
-ISO/IEC 27001
-
-NIST CSF
-
-METI guidelines
-
-Standards
-
-ECC:2018
-
-CITC Cloud Framework
-
-Legislation
-
+|     |     | Standards |     | Legislation |     |     |     |     |
+| --- | --- | --------- | --- | ----------- | --- | --- | --- | --- |
 Cloud Computing
+| Standards | Legislation | ECC:2018 |     |     |     |     |     |     |
+| --------- | ----------- | -------- | --- | --- | --- | --- | --- | --- |
 Regulatory
-Framework
-
-Standards
-
-Legislation
-
-CSA Codes of Practice
-
-Cyber Security
+CITC Cloud Framework
+| ISO/IEC 27001      | NIST CSF,     |     |     | Framework |     |     |                       |                  |
+| ------------------ | ------------- | --- | --- | --------- | --- | --- | --------------------- | ---------------- |
+|                    | Cyber Trust   |     |     |           |     |     | Standards             | Legislation      |
+| NIST SP 800 Series | Mark, CFIAS,  |     |     |           |     |     |                       |                  |
+|                    | NIST 2        |     |     |           |     |     | CSA Codes of Practice | Cyber Security   |
 Act
-
-Standards
-
-Legislation
-
-IT Act
-
-CERT-In guidelines
-
-NCIIPC standards
-
+|     |     |     |     | Standards | Legislation |     |     |     |
+| --- | --- | --- | --- | --------- | ----------- | --- | --- | --- |
 IT Act & National
+IT Act
 Cybersecurity
-Policy
-
-Standards
-
-Legislation
-
-Privacy Act 1988
-
-SOCI Act
-
-ACSC guidance
-
-Notifiable Data
+CERT-In guidelines
+| Standards | Legislation |     |     |     | Policy |     |     |     |
+| --------- | ----------- | --- | --- | --- | ------ | --- | --- | --- |
+NCIIPC standards
+| TIA SCS 9001  | TIA SCS 9001 |     |     |     |     |     |     |     |
+| ------------- | ------------ | --- | --- | --- | --- | --- | --- | --- |
+ISO/IEC 27001
+| NIST CSF |     |     |     |     | Standards        | Legislation      |     |     |
+| -------- | --- | --- | --- | --- | ---------------- | ---------------- | --- | --- |
+|          |     |     |     |     | Privacy Act 1988 | Notifiable Data  |     |     |
 Breaches, Critical
-Infrastructure Act
-
-Standards
-
-Legislation
-
-ISO/IEC 27001
-
-NIST SP 800 Series
-
-NIST CSF,
-Cyber Trust
-Mark, CFIAS,
-NIST 2
-
-Standards
-
-Legislation
-
-TIA SCS 9001
-
-ISO/IEC 27001
-
-NIST CSF
-
-TIA SCS 9001
-
+|     |     |     |     |     | SOCI Act | Infrastructure Act |     |     |
+| --- | --- | --- | --- | --- | -------- | ------------------ | --- | --- |
+ACSC guidance
 Figure 9, Mapping the global cybersecurity regulatory landscape
+GSMA Mobile Telecommunications Security Landscape - 2026 23/26
 
-23/26
-
-GSMA Mobile Telecommunications  Security Landscape - 2026GSMA Mobile Telecommunications Security Landscape - 2026Mapping the Global Cybersecurity Regulatory Landscape — Security-by-design: Encourage a
-proactive, security-by-design
-approach to mitigating cyber risks.
-
- — Capacity-building: Strengthen
-the institutional capacity of
-cybersecurity authorities to ensure
-a whole-of-government approach
-and effective application of policy
-and regulation.
-
-The cyber threat landscape is
-increasingly complex, with ransomware,
-geopolitical tensions, and resilient threat
-actors shaping the strategic environment.
-National regulatory strategies must
-evolve to meet these challenges,
-embedding resilience, risk management,
-intelligence, and collaboration at their
-core.
-
-Looking Ahead: Strategic
-Recommendations
-
+Mapping the Global Cybersecurity GSMA Mobile Telecommunications
+Regulatory Landscape Security Landscape - 2026
+Looking Ahead: Strategic — Security-by-design: Encourage a
+Recommendations proactive, security-by-design
+approach to mitigating cyber risks. Harmonisation
 To address the evolving threat landscape,
+— Capacity-building: Strengthen
 national and international policy must
+the institutional capacity of
 adapt. Based on the synthesis of threat
+cybersecurity authorities to ensure
 intelligence and strategic mapping, the
+a whole-of-government approach Capacity-building: Consistency
 following recommendations emerge.
-
- — Harmonisation: Align
-
+and effective application of policy
+— Harmonisation: Align and regulation.
 cybersecurity policy with
-international standards wherever
-possible, to reduce regulatory
-fragmentation and inconsistency.
-
- — Consistency: Ensure new policies
-
+international standards wherever The cyber threat landscape is
+possible, to reduce regulatory increasingly complex, with ransomware,
+fragmentation and inconsistency. geopolitical tensions, and resilient threat
+— Consistency: Ensure new policies actors shaping the strategic environment.
+National regulatory strategies must
 and frameworks are consistent with
-existing policy to avoid duplication or
+Looking
+evolve to meet these challenges,
+existing policy to avoid duplication or Ahead
+embedding resilience, risk management,
 conflict.
-
- — Risk- and outcome-based: Adopt
+intelligence, and collaboration at their
+— Risk- and outcome-based: Adopt core.
+!
 risk-based and outcome-based
 approaches in the design and
 implementation of cybersecurity
 regulation, giving operators flexibility
-to innovate and deploy effective
+to innovate and deploy effective Security-by-design Risk- and
+outcome-based
 solutions.
-
- — Collaboration: Promote a
-
+— Collaboration: Promote a
 collaborative regulatory culture with
-industry, supported by secure threat
+industry, supported by secure threat Collaboration
 intelligence sharing to strengthen
 resilience, increase awareness
 of cyber threats, enable constructive
-enforcement, and foster a joint
-approach to combating cybercrime.
+enforcement, and foster a joint Figure 8, Significant factors to consider
+approach to combating cybercrime. for regulation
+GSMA Mobile Telecommunications Security Landscape - 2026 24/26
 
-Harmonisation
-
-Capacity-building:
-
-Consistency
-
-Looking
-Ahead
-
-Collaboration
-
-!
-
-Risk- and
-outcome-based
-
-Security-by-design
-
-Figure 8, Significant factors to consider
-for regulation
-
-24/26
-
-GSMA Mobile Telecommunications  Security Landscape - 2026GSMA Mobile Telecommunications Security Landscape - 2026Mapping the Global Cybersecurity Regulatory Landscape
-
-9
-
-Final Thoughts
-
+|     |     |     | Final Thoughts |     |     | GSMA Mobile Telecommunications   |     |
+| --- | --- | --- | -------------- | --- | --- | -------------------------------- | --- |
+Security Landscape - 2026
+9 Final Thoughts
 The GSMA Mobile Security Landscape Report 2026 provides an overview of the security landscape for the mobile industry in the
 context of current threats facing mobile network operators, their customers and the wider ecosystem.
-
-The report has identified a range of key
-security protection areas including:
-
-1.  Strengthen cyber hygiene and
-
-baseline controls including MFA,
-encrypting sensitive data, network
-segmentation and regular patching
-
+| The report has identified a range of key  | 7.  Adopt a risk-based security   |     |     |     |     |     |     |
+| ----------------------------------------- | --------------------------------- | --- | --- | --- | --- | --- | --- |
+| security protection areas including:      |   approach including risk         |     |     |     |     |     |     |
+  assessments, layered defences
+| 1.  Strengthen cyber hygiene and        |   and updating defences against the    |                                               |     |                |     |             |     |
+| --------------------------------------- | -------------------------------------- | --------------------------------------------- | --- | -------------- | --- | ----------- | --- |
+|   baseline controls including MFA,      |     latest threats                     |                                               |     |                |     |             |     |
+|                                         |                                        |                                               |     | 2              |     | 4           |     |
+|   encrypting sensitive data, network    |                                        |                                               |     |                |     | Strengthen  |     |
+|                                         | 8 .  P re                              | p a r e   fo r  e m e r gi ng technologies    |     | K n o w  your  |     |             |     |
+  segmentation and regular patching tr a ff ic s u p p ly   chain
+|     |   su c | h  a s   A I  a n d  P Q C |     |     |     | s ec u r it y |     |
+| --- | ------ | -------------------------- | --- | --- | --- | ------------- | --- |
 2.  Know your traffic including
-
-enhanced threat detection and
-incident response including threat
-hunting
-
+|                                        | 9.  Engage with industry collaboration    |     | 1            |     | 3           |     | 5        |
+| -------------------------------------- | ----------------------------------------- | --- | ------------ | --- | ----------- | --- | -------- |
+|   enhanced threat detection and        |                                           |     | Strengthen   |     |             |     |          |
+|                                        |                                           |     | cyber        |     | Secure the  |     | Combat   |
+|                                        |   standards such as GSMA’s                |     |              |     | software    |     | scams    |
+|   incident response including threat   |                                           |     | hygiene      |     |             |     |          |
+  fraud and security groups92
+  hunting
+10. Promote a security-first culture with
 3.  Secure the software attack vector
-
-including more secure code, API
-security and third-party risk
-
-  management
-
-4.  More broadly, strengthen the entire
-
-supply chain security by applying
-security controls throughout the
-product or service lifecycle
-
-5.  Combat scams and social
-
-engineering
-
-6.  Adopt and support industry
-
-schemes, for example GSMA’s CVD
-& T-ISAC
-
-7.  Adopt a risk-based security
-approach including risk
-assessments, layered defences
-and updating defences against the
-latest threats
-
-8.  Prepare for emerging technologies
-
-such as AI and PQC
-
-9.  Engage with industry collaboration
-
-standards such as GSMA’s
-fraud and security groups92
-
-10.  Promote a security-first culture with
-
-executive engagement and
-continuous improvement
-
-Over the coming year, the GSMA will
-continue to support its members on
+  executive engagement and
+  including more secure code, API
+  continuous improvement
+  security and third-party risk
+|   management                              |                                      |     |     |              |     |                 |     |
+| ----------------------------------------- | ------------------------------------ | --- | --- | ------------ | --- | --------------- | --- |
+|                                           |                                      |     |     | 7            |     | 9               |     |
+|                                           | Over the coming year, the GSMA will  |     |     | Risk-based   |     | Industry        |     |
+| 4.  More broadly, strengthen the entire   |                                      |     |     |              |     | collaboration   |     |
+|                                           | continue to support its members on   |     |     | security     |     | & standards     |     |
+  supply chain security by applying
 security matters by providing security
-best practices, services and events that
-convene the industry - engagement by all
-stakeholders is strongly encouraged.
-
-To get in touch, or to get more
-closely involved, please email
-security@gsma.com.
-
-92 https://www.gsma.com/solutions-and-impact/technologies/security/gsma_resources/security-assurance-andcertification/
-
-2
-
-Know your
-traffic
-
-Strengthen
-supply chain
-security
-
-4
-
-3
-
-Secure the
-software
-
-5
-
-Combat
-scams
-
-1
-
-Strengthen
-cyber
-hygiene
-
-7
-
-Risk-based
-security
-
-8
-
-Prepare for
-emerging
-technologies
-
-9
-
-Industry
-collaboration
-& standards
-
-10
-
+|   security controls throughout the   |     |     | 6   |     | 8   |     | 10  |
+| ------------------------------------ | --- | --- | --- | --- | --- | --- | --- |
 Promote a
-security-first
-culture
-
-Adopt and
-support
-
-6
+|     | best practices, services and events that  |     | Adopt and   |     | Prepare for  |     |     |
+| --- | ----------------------------------------- | --- | ----------- | --- | ------------ | --- | --- |
+  product or service lifecycle support emerging   security-first
+convene the industry - engagement by all  technologies culture
+| 5.  Combat scams and social   | stakeholders is strongly encouraged. |     |     |     |     |     |     |
+| ----------------------------- | ------------------------------------ | --- | --- | --- | --- | --- | --- |
+  engineering
+To get in touch, or to get more
+| 6.  Adopt and support industry   |     |     |     |     |     |     |     |
+| -------------------------------- | --- | --- | --- | --- | --- | --- | --- |
+closely involved, please email
+  schemes, for example GSMA’s CVD
+security@gsma.com.
+  & T-ISAC
 
 Figure 10, A range of key security protection areas
 
-25/26
-25/26
+92 https://www.gsma.com/solutions-and-impact/technologies/security/gsma_resources/security-assurance-andcertification/
 
-GSMA Mobile Telecommunications  Security Landscape - 2026GSMA Mobile Telecommunications Security Landscape - 2026GSMA Mobile Telecommunications Security Landscape - 2026Final Thoughts
+GGSSMMAA  MMoobbiillee  TTeelleeccoommmmuunniiccaattiioonnss  SSeeccuurriittyy  LLaannddssccaappee  --  22002266 2255//2266
 
-GSMA Head Office
+GSMA Head Office
 1 Angel Lane
 London
 EC4R 3AB
 UK
-
 Email: security@gsma.com
