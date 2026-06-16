@@ -31,10 +31,21 @@ from typing import Any, Dict, List, Optional
 # ══════════════════════════════════════════════════════════════════════════════
 
 try:
-    import google.generativeai as genai
+    from google import genai
+    from google.genai import types as genai_types
+    _GENAI_NEW = True
 except ImportError:
-    print("ERROR: google-genai required.  pip install google-genai")
-    sys.exit(1)
+    try:
+        import google.generativeai as genai
+        _GENAI_NEW = False
+    except ImportError:
+        print("ERROR: google-generativeai package required. pip install google-genai")
+        sys.exit(1)
+
+try:
+    import subprocess
+except ImportError:
+    subprocess = None
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -97,46 +108,201 @@ class Config:
 
 class GeminiClient:
     def __init__(self, config: Config):
-        api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_GEMINI_API_KEY", "")
+        api_key = os.environ.get("GEMINI_API_KEY", "")
         if not api_key:
-            raise RuntimeError("GEMINI_API_KEY or GOOGLE_GEMINI_API_KEY env var required")
-        genai.configure(api_key=api_key)
+            raise RuntimeError(
+                "GEMINI_API_KEY not set. Add it under Settings -> Secrets and variables -> Actions."
+            )
+        if _GENAI_NEW:
+            self.client = genai.Client(api_key=api_key)
+        else:
+            genai.configure(api_key=api_key)
+            self.client = None
         self.config = config
 
     def generate(self, prompt: str, model_override: Optional[str] = None) -> str:
-        model_name = model_override or self.config.primary_model
-        model = genai.GenerativeModel(
-            model_name=model_name,
-            generation_config={
-                "temperature":        self.config.temperature,
-                "top_p":              self.config.top_p,
-                "max_output_tokens":  self.config.max_output_tokens,
-            }
-        )
+        for model_name in (model_override or self.config.primary_model,
+                           self.config.secondary_model):
+            result = self._try_model(prompt, model_name)
+            if result is not None:
+                return result
+            print(f"  [Gemini] {model_name} failed — trying secondary")
+        raise RuntimeError("Both primary and secondary Gemini models failed.")
 
+    def _try_model(self, prompt: str, model_name: str) -> Optional[str]:
         delay = self.config.retry_delay
         for attempt in range(1, self.config.retry_max + 1):
             try:
-                response = model.generate_content(prompt)
-                return response.text
+                if _GENAI_NEW:
+                    response = self.client.models.generate_content(
+                        model=model_name,
+                        contents=prompt,
+                        config=genai_types.GenerateContentConfig(
+                            temperature=self.config.temperature,
+                            top_p=self.config.top_p,
+                            max_output_tokens=self.config.max_output_tokens,
+                        ),
+                    )
+                else:
+                    response = genai.GenerativeModel(model_name).generate_content(
+                        prompt,
+                        generation_config={
+                            "temperature":       self.config.temperature,
+                            "top_p":             self.config.top_p,
+                            "max_output_tokens": self.config.max_output_tokens,
+                        },
+                    )
+                return response.text.strip() if response.text else ""
             except Exception as e:
                 err = str(e).lower()
+                if "401" in err or "403" in err or "api_key" in err:
+                    raise RuntimeError(f"Auth error — check GEMINI_API_KEY: {str(e)[:100]}")
                 if "429" in err or "resource_exhausted" in err or "quota" in err:
                     wait = min(self.config.quota_delay * (self.config.quota_mult ** (attempt - 1)),
                                self.config.quota_max_del)
-                    print(f"  [Gemini] Quota limit — waiting {wait}s (attempt {attempt}/{self.config.quota_max})")
+                    print(f"  [Gemini] Quota (429) — waiting {wait}s")
                     time.sleep(wait)
                 elif attempt < self.config.retry_max:
-                    print(f"  [Gemini] Error on attempt {attempt}: {str(e)[:80]} — retrying in {delay}s")
+                    print(f"  [Gemini] Error attempt {attempt}: {str(e)[:60]} — retry in {delay}s")
                     time.sleep(delay)
                     delay = min(delay * self.config.retry_mult, self.config.retry_max_del)
                 else:
-                    raise
+                    print(f"  [Gemini] All retries exhausted for {model_name}")
+                    return None
+        return None
 
-        # Fallback to secondary model
-        print(f"  [Gemini] Primary model failed — falling back to {self.config.secondary_model}")
-        response = genai.GenerativeModel(self.config.secondary_model).generate_content(prompt)
-        return response.text
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# CLOSURE COMMENT READER
+# ══════════════════════════════════════════════════════════════════════════════
+
+class ClosureCommentReader:
+    """
+    Fetches closed discovery issues and reads their comments to extract
+    the reason for closure.  Enriches triage_log entries that lack a
+    reason, and surfaces patterns that Gemini can act on.
+
+    Uses the GH CLI (gh) which is pre-installed on GitHub Actions runners.
+    Falls back gracefully when GH_TOKEN or gh CLI is unavailable.
+    """
+
+    MAX_ISSUES = 100  # closed issues to scan per run
+
+    def __init__(self):
+        self.token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
+        self.repo  = os.environ.get("GITHUB_REPOSITORY", "")
+        self.available = bool(self.token and self.repo)
+        if not self.available:
+            print("ℹ️  GH_TOKEN / GITHUB_REPOSITORY not set — closure comment reading skipped")
+
+    def enrich_triage_log(self, triage_log: List[Dict]) -> List[Dict]:
+        """
+        For entries in triage_log that have no reason, try to fetch the
+        first human comment from the GitHub issue and use it as the reason.
+        Returns the enriched log.
+        """
+        if not self.available:
+            return triage_log
+
+        enriched_count = 0
+        for entry in triage_log:
+            if entry.get("reason") or not entry.get("issue"):
+                continue
+            reason = self._fetch_first_human_comment(str(entry["issue"]))
+            if reason:
+                entry["reason"] = reason[:300]
+                enriched_count += 1
+
+        if enriched_count:
+            print(f"  Enriched {enriched_count} triage log entries with closure comments")
+        return triage_log
+
+    def fetch_recent_closed_patterns(self) -> List[Dict[str, str]]:
+        """
+        Fetch recently-closed automated discovery issues and extract
+        (outcome, org, url, comment_text) tuples for Gemini to analyse.
+        """
+        if not self.available:
+            return []
+
+        import urllib.request
+        import urllib.parse
+
+        patterns = []
+        headers = {
+            "Authorization": f"token {self.token}",
+            "Accept":        "application/vnd.github.v3+json",
+            "User-Agent":    "discovery-feedback-learner",
+        }
+
+        try:
+            url = (
+                f"https://api.github.com/repos/{self.repo}/issues"
+                f"?state=closed&labels=automated,report-suggestion"
+                f"&per_page={self.MAX_ISSUES}&sort=updated&direction=desc"
+            )
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                issues = json.loads(resp.read())
+
+            for issue in issues:
+                num    = issue.get("number")
+                title  = issue.get("title", "")
+                labels = [l.get("name", "") for l in issue.get("labels", [])]
+                outcome = next(
+                    (l for l in labels if l in
+                     ("false-positive", "duplicate", "mismatch", "accepted")), ""
+                )
+                if not outcome or not num:
+                    continue
+
+                comment_text = self._fetch_first_human_comment(str(num))
+                if comment_text:
+                    patterns.append({
+                        "issue":   num,
+                        "title":   title[:120],
+                        "outcome": outcome,
+                        "comment": comment_text[:400],
+                    })
+
+        except Exception as e:
+            print(f"  WARNING: Could not fetch closed issues: {str(e)[:80]}")
+
+        print(f"  Fetched {len(patterns)} closure comment(s) from GitHub")
+        return patterns
+
+    def _fetch_first_human_comment(self, issue_num: str) -> str:
+        """Return the text of the first non-bot comment on an issue, or ''."""
+        import urllib.request
+
+        headers = {
+            "Authorization": f"token {self.token}",
+            "Accept":        "application/vnd.github.v3+json",
+            "User-Agent":    "discovery-feedback-learner",
+        }
+        try:
+            url = f"https://api.github.com/repos/{self.repo}/issues/{issue_num}/comments?per_page=10"
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                comments = json.loads(resp.read())
+
+            for comment in comments:
+                author = comment.get("user", {}).get("login", "")
+                body   = comment.get("body", "").strip()
+                # Skip bot comments and triage-command lines
+                if author.endswith("[bot]") or body.startswith("/"):
+                    continue
+                # Strip markdown quote blocks (> ...) from triage acknowledgements
+                lines = [l for l in body.splitlines()
+                         if l.strip() and not l.strip().startswith(">")
+                         and not l.strip().startswith("_This outcome")]
+                clean = " ".join(lines)[:300]
+                if len(clean) > 10:
+                    return clean
+        except Exception:
+            pass
+        return ""
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -171,6 +337,11 @@ class FeedbackAnalyser:
         dup_events = [e for e in log if e.get("outcome") == "duplicate"]
         mm_events  = [e for e in log if e.get("outcome") == "mismatch"]
         tp_events  = [e for e in log if e.get("outcome") == "true_positive"]
+
+        # Enrich triage log with GitHub closure comments
+        comment_reader = ClosureCommentReader()
+        log = comment_reader.enrich_triage_log(log)
+        closure_patterns = comment_reader.fetch_recent_closed_patterns()
 
         # Build compact event summaries to avoid token overuse
         def summarise_events(events: List[Dict], max_count: int = 30) -> str:
@@ -220,10 +391,17 @@ DUPLICATE events (already in repo or repeat discovery):
 TRUE POSITIVE events (valid finds — we want to keep these):
 {summarise_events(tp_events)}
 
+=== CLOSURE COMMENTS FROM GITHUB ===
+These are the actual comments left by reviewers when closing issues.
+They provide richer context than just the outcome label:
+{closure_comment_block}
+
 === YOUR TASK ===
-Analyse the patterns in the false positive, mismatch, and duplicate events.
-Suggest scoring adjustments that would reduce bad issues WITHOUT eliminating
-the types of true positive results seen above.
+Analyse the patterns in false positive, mismatch, duplicate events, AND the
+closure comments above.  Suggest scoring adjustments that would reduce bad
+issues WITHOUT eliminating true positive results.  Pay special attention to
+recurring language in closure comments (e.g. "already in repo", "wrong year",
+"financial report") as these are the strongest signals.
 
 Respond ONLY with a valid JSON object matching this schema exactly.
 Do not include any markdown, explanation, or commentary outside the JSON:
@@ -246,20 +424,41 @@ Do not include any markdown, explanation, or commentary outside the JSON:
     "trust":  ["<regex_pattern>", ...]
   }},
   "score_threshold_delta": <integer>,
+  "gemini_rejection_patterns": ["<phrase found repeatedly in false positive snippets>"],
+  "validation_threshold": <float between 0.3 and 1.0>,
+  "url_blocklist": ["<specific URL to permanently block>"],
   "summary": "<2-3 sentence plain-English explanation of main adjustments>"
 }}
 
 Rules:
-- signal_weight_deltas: only include signals that NEED changing; empty dict is fine.
-  Positive deltas increase a positive bonus; negative deltas decrease it.
-  For negative signals, a positive delta makes the penalty LESS severe; a
-  negative delta makes the penalty MORE severe.
-- domain_blocklist: only add domains appearing in 2+ false positive events.
-- domain_trustlist: only add domains appearing in 2+ true positive events.
-- score_threshold_delta: only adjust ±5 at most; 0 is fine if no change needed.
-- title_patterns.reject: only add regex patterns seen across 2+ false positives.
+- signal_weight_deltas: only include signals that NEED changing.
+- domain_blocklist: only add domains with 2+ false positives.
+- domain_trustlist: only add domains with 2+ true positives.
+- score_threshold_delta: clamp ±5; 0 if no change needed.
+- title_patterns.reject: regex patterns seen across 2+ false positives.
+- gemini_rejection_patterns: short phrases (3-6 words) that appear repeatedly
+  in the title/snippet of false positive closures. These are fed to the
+  Gemini pre-validator to reject similar candidates before heuristic scoring.
+- validation_threshold: adjust only if similarity dedup is producing too many
+  false "duplicate" suppressions (lower it) or too many actual dups pass through (raise it).
+  Default is 0.75. Only adjust if there is clear evidence to do so.
+- url_blocklist: add a URL only if it appears in 3+ false positive events
+  AND is clearly a noise source (e.g. an aggregator mirror, a blog post, etc.)
 - Keep all arrays and objects present even if empty.
 """
+
+        # Format closure comments for inclusion in the prompt
+        if closure_patterns:
+            rows = [
+                "- issue #{} [{}] \"{}\" -> {}".format(
+                    p["issue"], p["outcome"], p["title"][:60], p["comment"][:200]
+                )
+                for p in closure_patterns[:30]
+            ]
+            closure_comment_block = "\n".join(rows)
+        else:
+            closure_comment_block = "(none available)"
+        prompt = prompt.replace("{closure_comment_block}", closure_comment_block)
 
         print("\nSending triage data to Gemini for analysis...")
         raw = self.client.generate(prompt)
@@ -349,9 +548,40 @@ class FeedbackWriter:
         # ── Score threshold delta ────────────────────────────────────────
         raw_delta = suggestions.get("score_threshold_delta", 0)
         if isinstance(raw_delta, (int, float)):
-            # Clamp to ±5 per run for safety
             delta = max(-5, min(5, int(raw_delta)))
             learned["score_threshold_delta"] = learned.get("score_threshold_delta", 0) + delta
+
+        # ── Gemini rejection patterns (new: phrases seen in rejected snippets) ──
+        new_reject_phrases = [
+            p for p in suggestions.get("gemini_rejection_patterns", [])
+            if isinstance(p, str)
+        ]
+        existing_phrases = learned.setdefault("gemini_rejection_patterns", [])
+        for p in new_reject_phrases:
+            if p not in existing_phrases:
+                existing_phrases.append(p)
+
+        # ── Validation threshold (similarity dedup strictness) ───────────
+        vt = suggestions.get("validation_threshold")
+        if isinstance(vt, float) and 0.3 <= vt <= 1.0:
+            learned["validation_threshold"] = vt
+
+        # ── URL fingerprint blocklist additions from Gemini ───────────────
+        url_blocks = suggestions.get("url_blocklist", [])
+        if isinstance(url_blocks, list):
+            fp_path = self.path
+            try:
+                with open(fp_path, encoding="utf-8") as f:
+                    fb = json.load(f)
+                fps = fb.setdefault("url_fingerprints", {"seen": {}, "blocked": []})
+                import hashlib
+                for url in url_blocks:
+                    if isinstance(url, str):
+                        h = hashlib.sha256(url.strip().lower().encode()).hexdigest()[:16]
+                        if h not in fps["blocked"]:
+                            fps["blocked"].append(h)
+            except Exception:
+                pass
 
         # ── Summary + timestamps ─────────────────────────────────────────
         learned["summary"]              = suggestions.get("summary", "")
