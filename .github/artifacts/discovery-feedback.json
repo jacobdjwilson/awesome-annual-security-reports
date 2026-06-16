@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "last_updated": null,
   "last_learner_run": null,
   "total_feedback_events": 0,
@@ -12,6 +12,21 @@
   },
 
   "triage_log": [],
+
+  "url_fingerprints": {
+    "seen": {},
+    "blocked": []
+  },
+
+  "query_history": {
+    "seen_queries": [],
+    "last_pruned": null
+  },
+
+  "content_index": {
+    "existing_report_keys": [],
+    "last_rebuilt": null
+  },
 
   "learned": {
     "signal_weight_deltas": {
@@ -32,6 +47,8 @@
       "trust": []
     },
     "score_threshold_delta": 0,
+    "validation_threshold": 0.6,
+    "gemini_rejection_patterns": [],
     "summary": "",
     "last_gemini_analysis": null
   },
