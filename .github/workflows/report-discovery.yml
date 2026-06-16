@@ -38,8 +38,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        # Only requests needed — no google-api-python-client, no beautifulsoup4
-        run: pip install --break-system-packages requests
+        run: pip install --break-system-packages requests google-genai google-generativeai google-ai-generativelanguage
 
       - name: Check automated issue cap
         id: issue-cap
@@ -79,6 +78,7 @@ jobs:
           GH_TOKEN:              ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY:     ${{ github.repository }}
           VIRUS_TOTAL_API_KEY:   ${{ secrets.VIRUS_TOTAL_API_KEY }}
+          GEMINI_API_KEY:        ${{ secrets.GEMINI_API_KEY }}
         run: |
           ARGS="--artifacts-dir .github/artifacts"
 
@@ -181,6 +181,20 @@ jobs:
           echo "|-----------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| 📥 Direct PDF        | ${PDF_F:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "| 🔒 Gated landing page | ${LAND_F:-0} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          URL_SEEN=$(parse DISCOVERY_URL_SEEN 2>/dev/null || echo 0)
+          GEM_REJ=$(parse DISCOVERY_GEMINI_REJECTED 2>/dev/null || echo 0)
+          SIM_DUP=$(parse DISCOVERY_SIMILARITY_DUP 2>/dev/null || echo 0)
+          if [ "$((${URL_SEEN:-0} + ${GEM_REJ:-0} + ${SIM_DUP:-0}))" -gt 0 ]; then
+            echo "### 🔬 Pre-issue Filters" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Filter | Count |" >> $GITHUB_STEP_SUMMARY
+            echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+            echo "| 🔁 URL already seen | ${URL_SEEN:-0} |" >> $GITHUB_STEP_SUMMARY
+            echo "| 🤖 Gemini rejected  | ${GEM_REJ:-0} |" >> $GITHUB_STEP_SUMMARY
+            echo "| 📄 Similarity dup   | ${SIM_DUP:-0} |" >> $GITHUB_STEP_SUMMARY
+          fi
           echo "" >> $GITHUB_STEP_SUMMARY
 
           # VirusTotal summary — only shown when at least one PDF was scanned
