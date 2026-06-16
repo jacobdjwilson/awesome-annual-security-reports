@@ -18,6 +18,20 @@ except ImportError:
 
 import hashlib
 import urllib.request
+import difflib
+import textwrap
+
+try:
+    from google import genai
+    from google.genai import types as genai_types
+    _GENAI_NEW = True
+except ImportError:
+    try:
+        import google.generativeai as genai
+        _GENAI_NEW = False
+    except ImportError:
+        genai = None
+        _GENAI_NEW = False
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -977,6 +991,15 @@ class IssueCreator:
                     f"Manually verify the PDF before adding it to the repository.\n"
                 )
 
+        # Gemini validation note
+        gem_verdict = candidate.get("gemini_verdict", "")
+        gem_reason  = candidate.get("gemini_reason", "")
+        gemini_note = ""
+        if gem_verdict == "ACCEPT":
+            gemini_note = f"\n| **AI Pre-Check** | ✅ Validated — {gem_reason} |"
+        elif gem_verdict == "UNCERTAIN":
+            gemini_note = f"\n| **AI Pre-Check** | ⚠️ Uncertain — {gem_reason} |"
+
         issue_title = f"[Report Discovery] {org} {year} — {candidate['title']}"
         body = (
             f"## 📄 New Security Report Discovered\n\n"
@@ -987,7 +1010,8 @@ class IssueCreator:
             f"| **Report** | {candidate['title']} |\n"
             f"| **URL** | {candidate['url']} |\n"
             f"| **Type** | {type_badge} |"
-            f"{domain_note}\n"
+            f"{domain_note}"
+            f"{gemini_note}\n"
             f"| **Heuristic Score** | {candidate['score']} (threshold: {self.threshold}) |\n"
             f"| **Priority** | {tier_label} (repo latest: {candidate['latest_year']}) |\n\n"
             f"**Snippet:**\n> {candidate['snippet'][:400]}\n\n"
@@ -1276,6 +1300,362 @@ class VirusTotalScanner:
 # MAIN
 # ══════════════════════════════════════════════════════════════════════════════
 
+
+# ══════════════════════════════════════════════════════════════════════════════
+# URL FINGERPRINT STORE
+# ══════════════════════════════════════════════════════════════════════════════
+
+class URLFingerprintStore:
+    """
+    Persists a hash of every URL the discovery pipeline has evaluated.
+    Prevents re-creating issues or re-downloading PDFs for the same URL
+    across multiple runs, regardless of whether an issue is still open.
+
+    Also tracks which search queries ran recently so the same query is
+    not issued again within the cooldown window, encouraging diversity.
+    """
+
+    COOLDOWN_DAYS = 90  # URL suppression window
+
+    def __init__(self, artifacts_dir: Path):
+        self.path = artifacts_dir / "discovery-feedback.json"
+        self._data: Dict[str, Any] = {}
+        self._load()
+
+    def _load(self):
+        if not self.path.exists():
+            return
+        try:
+            with open(self.path, encoding="utf-8") as f:
+                self._data = json.load(f)
+        except Exception:
+            self._data = {}
+
+    def _save(self):
+        try:
+            with open(self.path, "w", encoding="utf-8") as f:
+                json.dump(self._data, f, indent=2)
+                f.write("\n")
+        except Exception as e:
+            print(f"  WARNING: Could not save fingerprint store: {e}")
+
+    @staticmethod
+    def _hash(url: str) -> str:
+        return hashlib.sha256(url.strip().lower().encode()).hexdigest()[:16]
+
+    def is_seen(self, url: str) -> bool:
+        seen = self._data.get("url_fingerprints", {}).get("seen", {})
+        entry = seen.get(self._hash(url))
+        if not entry:
+            return False
+        # Respect cooldown: re-check after COOLDOWN_DAYS (handles URL reuse across years)
+        try:
+            first_seen = datetime.fromisoformat(entry.get("first_seen", ""))
+            age_days = (datetime.utcnow() - first_seen).days
+            if age_days > self.COOLDOWN_DAYS:
+                return False
+        except Exception:
+            pass
+        return True
+
+    def is_blocked(self, url: str) -> bool:
+        blocked = self._data.get("url_fingerprints", {}).get("blocked", [])
+        h = self._hash(url)
+        return h in blocked
+
+    def mark_seen(self, url: str, outcome: str = "", issue_num: int = 0):
+        fps = self._data.setdefault("url_fingerprints", {"seen": {}, "blocked": []})
+        h = self._hash(url)
+        fps["seen"][h] = {
+            "url":        url[:120],
+            "first_seen": datetime.utcnow().isoformat() + "Z",
+            "outcome":    outcome,
+            "issue":      issue_num,
+        }
+        self._data["last_updated"] = datetime.utcnow().isoformat() + "Z"
+        self._save()
+
+    def block_url(self, url: str):
+        fps = self._data.setdefault("url_fingerprints", {"seen": {}, "blocked": []})
+        h = self._hash(url)
+        if h not in fps["blocked"]:
+            fps["blocked"].append(h)
+        self._save()
+
+    def is_query_recent(self, query: str) -> bool:
+        """Return True if this exact query was run in the last 7 days."""
+        seen_queries = self._data.get("query_history", {}).get("seen_queries", [])
+        q_lower = query.lower().strip()
+        cutoff = datetime.utcnow().toordinal() - 7
+        for entry in seen_queries:
+            if isinstance(entry, dict) and entry.get("query", "").lower() == q_lower:
+                try:
+                    ran_on = datetime.fromisoformat(entry.get("ran_at", "")).toordinal()
+                    if ran_on >= cutoff:
+                        return True
+                except Exception:
+                    pass
+        return False
+
+    def record_query(self, query: str):
+        qh = self._data.setdefault("query_history", {"seen_queries": [], "last_pruned": None})
+        qh["seen_queries"].append({
+            "query":  query.strip()[:200],
+            "ran_at": datetime.utcnow().isoformat() + "Z",
+        })
+        # Prune entries older than 90 days to keep the file compact
+        cutoff = datetime.utcnow().toordinal() - 90
+        qh["seen_queries"] = [
+            e for e in qh["seen_queries"]
+            if isinstance(e, dict) and self._entry_ordinal(e) >= cutoff
+        ]
+        qh["last_pruned"] = datetime.utcnow().isoformat() + "Z"
+        self._save()
+
+    @staticmethod
+    def _entry_ordinal(e: dict) -> int:
+        try:
+            return datetime.fromisoformat(e.get("ran_at", "")).toordinal()
+        except Exception:
+            return 0
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# MARKDOWN SIMILARITY INDEX
+# ══════════════════════════════════════════════════════════════════════════════
+
+class MarkdownSimilarityIndex:
+    """
+    Reads the first N characters of every existing Markdown conversion and
+    builds a list of (key, excerpt) pairs.  When a new candidate arrives,
+    extract text from the first page of the PDF (or use the title+snippet)
+    and check for high cosine-like similarity using difflib.
+
+    A high similarity score (≥ threshold) means the report is very likely
+    already in the repo — even if the filename is different.
+    """
+
+    MAX_CHARS = 2000   # chars to read from each existing markdown
+    EXCERPT   = 600    # chars to extract from candidate for comparison
+    THRESHOLD = 0.75   # SequenceMatcher ratio above which we consider it a duplicate
+
+    def __init__(self, md_root: Path, artifacts_dir: Path):
+        self.entries: List[Dict[str, str]] = []
+        self._build(md_root)
+        # Also load threshold from feedback file if present
+        fb_path = artifacts_dir / "discovery-feedback.json"
+        if fb_path.exists():
+            try:
+                fb = json.loads(fb_path.read_text())
+                t = fb.get("learned", {}).get("validation_threshold")
+                if isinstance(t, float) and 0.3 <= t <= 1.0:
+                    self.THRESHOLD = t
+            except Exception:
+                pass
+
+    def _build(self, md_root: Path):
+        if not md_root.exists():
+            return
+        for md in md_root.rglob("*.md"):
+            try:
+                text = md.read_text(encoding="utf-8", errors="replace")[:self.MAX_CHARS]
+                # Strip markdown headers and table lines; keep prose
+                lines = [l for l in text.splitlines()
+                         if l.strip() and not l.startswith("#") and not l.startswith("|")]
+                excerpt = " ".join(lines)[:self.MAX_CHARS]
+                if len(excerpt) > 100:
+                    self.entries.append({"key": md.stem, "text": excerpt.lower()})
+            except Exception:
+                pass
+        print(f"Markdown similarity index: {len(self.entries)} document(s) indexed")
+
+    def is_duplicate(self, candidate_text: str, org: str, year: int) -> Tuple[bool, str, float]:
+        """
+        Returns (is_dup, best_match_key, score).
+        candidate_text should be a representative excerpt of the discovered report.
+        """
+        if not candidate_text or not self.entries:
+            return False, "", 0.0
+
+        candidate_l = candidate_text.lower()[:self.EXCERPT]
+        best_ratio  = 0.0
+        best_key    = ""
+
+        for entry in self.entries:
+            ratio = difflib.SequenceMatcher(None, candidate_l, entry["text"][:self.EXCERPT]).ratio()
+            if ratio > best_ratio:
+                best_ratio = ratio
+                best_key   = entry["key"]
+
+        return best_ratio >= self.THRESHOLD, best_key, round(best_ratio, 3)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# GEMINI VALIDATOR
+# ══════════════════════════════════════════════════════════════════════════════
+
+class GeminiValidator:
+    """
+    Uses Gemini to validate two things:
+      1. Is this an annual (or recurring) security report covering a defined topic?
+      2. Does the title/snippet indicate it's already known to the repo
+         (different year, slightly different name) — i.e. is it a duplicate?
+
+    Returns a structured verdict: ACCEPT | REJECT | UNCERTAIN
+    along with a brief reason.
+
+    Gracefully disabled if GEMINI_API_KEY is absent.
+    """
+
+    PROMPT = textwrap.dedent("""
+        You are reviewing a candidate document found by an automated security report discovery pipeline.
+        The pipeline curates ANNUAL (or recurring) cybersecurity reports published by companies and
+        organizations — things like threat landscape reports, data breach studies, vulnerability reports,
+        and similar recurring research publications.
+
+        Candidate:
+        - Organization: {org}
+        - Target year: {year}
+        - Title / snippet: {text}
+        - URL: {url}
+
+        Existing reports already in this repository for this organization:
+        {existing_years}
+
+        Answer ONLY with a JSON object — no markdown, no explanation outside the JSON:
+        {{
+          "verdict": "ACCEPT" | "REJECT" | "UNCERTAIN",
+          "reason": "<one concise sentence>",
+          "is_annual": true | false,
+          "is_security_topic": true | false,
+          "is_duplicate": true | false
+        }}
+
+        Rules:
+        - ACCEPT if: annual/recurring, covers a cybersecurity topic, and is NOT a duplicate of an existing year
+        - REJECT if: not annual/recurring, not cybersecurity, financial/investor report, webinar, blog, product guide, or is a duplicate
+        - UNCERTAIN if: not enough information to be sure
+        - is_duplicate = true if the same edition (same org + same year) appears to already be in the repo
+    """).strip()
+
+    def __init__(self, artifacts_dir: Path):
+        self.available = False
+        api_key = os.environ.get("GEMINI_API_KEY", "")
+        if not api_key or genai is None:
+            print("⊘ GEMINI_API_KEY not set or google-genai not installed — Gemini validation skipped")
+            return
+
+        # Load model name from ai-models.json
+        model_name = "gemini-2.0-flash"
+        try:
+            aim = json.loads((artifacts_dir / "ai-models.json").read_text())
+            model_name = aim.get("models", {}).get("primary", model_name)
+        except Exception:
+            pass
+
+        self.model_name = model_name
+        self.api_key    = api_key
+        self.available  = True
+        print(f"✓ Gemini validator active (model: {model_name})")
+
+    def validate(self, org: str, year: int, title: str, snippet: str,
+                 url: str, existing_years: List[int]) -> Dict[str, Any]:
+        if not self.available:
+            return {"verdict": "UNCERTAIN", "reason": "Gemini not available",
+                    "is_annual": True, "is_security_topic": True, "is_duplicate": False}
+
+        text = f"{title} — {snippet[:400]}"
+        years_str = ", ".join(str(y) for y in sorted(existing_years)) or "none"
+        prompt = self.PROMPT.format(
+            org=org, year=year, text=text, url=url[:120], existing_years=years_str
+        )
+
+        try:
+            if _GENAI_NEW:
+                client   = genai.Client(api_key=self.api_key)
+                response = client.models.generate_content(
+                    model=self.model_name,
+                    contents=prompt,
+                    config=genai_types.GenerateContentConfig(
+                        temperature=0.1, max_output_tokens=256
+                    ),
+                )
+                raw = response.text.strip()
+            else:
+                genai.configure(api_key=self.api_key)
+                model    = genai.GenerativeModel(self.model_name)
+                response = model.generate_content(prompt)
+                raw      = response.text.strip()
+
+            # Strip markdown fences
+            raw = re.sub(r"^```(?:json)?\s*", "", raw, flags=re.MULTILINE)
+            raw = re.sub(r"\s*```$", "", raw, flags=re.MULTILINE)
+            result = json.loads(raw)
+            verdict = result.get("verdict", "UNCERTAIN")
+            reason  = result.get("reason", "")
+            print(f"  [Gemini] {verdict}: {reason}")
+            return result
+
+        except json.JSONDecodeError:
+            print(f"  [Gemini] Could not parse response — treating as UNCERTAIN")
+            return {"verdict": "UNCERTAIN", "reason": "Parse error",
+                    "is_annual": True, "is_security_topic": True, "is_duplicate": False}
+        except Exception as e:
+            print(f"  [Gemini] Validation error: {str(e)[:80]} — treating as UNCERTAIN")
+            return {"verdict": "UNCERTAIN", "reason": str(e)[:80],
+                    "is_annual": True, "is_security_topic": True, "is_duplicate": False}
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# DIVERSE QUERY BUILDER
+# ══════════════════════════════════════════════════════════════════════════════
+
+class DiverseQueryBuilder:
+    """
+    Generates multiple distinct search query variants for a task.
+    Each variant uses a different angle (exact title, description-based,
+    filetype, site-scoped) so successive daily runs explore different
+    search result spaces rather than repeating the same query.
+    """
+
+    TEMPLATES = [
+        # Standard — title + year + filetype
+        "{org} {title} {year} annual report filetype:pdf",
+        # Without filetype — catches landing pages
+        "{org} {title} {year} cybersecurity report download",
+        # Description angle — avoids title fixation
+        "{org} annual security report {year} threat landscape",
+        # Alternative wording
+        "{org} {year} security research report pdf",
+        # State-of angle
+        "state of security {org} {year} report filetype:pdf",
+    ]
+
+    def variants(self, task: Dict[str, Any], fp_store: URLFingerprintStore,
+                 max_variants: int = 3) -> List[Tuple[str, str]]:
+        """
+        Return up to max_variants (template_label, query) pairs that have
+        not been issued recently.
+        """
+        org   = task["org"].replace("-", " ")
+        title = task["title"]
+        year  = str(task["target_year"])
+
+        result = []
+        for tmpl in self.TEMPLATES:
+            q = tmpl.format(org=org, title=title, year=year)
+            if not fp_store.is_query_recent(q):
+                result.append((tmpl[:30], q))
+            if len(result) >= max_variants:
+                break
+
+        # Always return at least one variant even if all were recent
+        if not result:
+            q = self.TEMPLATES[0].format(org=org, title=title, year=year)
+            result.append((self.TEMPLATES[0][:30], q))
+        return result
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Security Report Discovery")
     ap.add_argument("--artifacts-dir",   default=".github/artifacts")
@@ -1329,9 +1709,16 @@ def main() -> int:
     print("Building lineage index...")
     print(f"{'='*70}\n")
     lineage    = ReportLineageIndex(config.PDF_ROOT)
-    org_domains = OrgDomainIndex()          # parses README.md
+    org_domains = OrgDomainIndex()
     scheduler  = SlotScheduler(today)
     scanner    = ReportScanner(config, lineage, scheduler)
+
+    fp_store   = URLFingerprintStore(Path(args.artifacts_dir))
+    md_index   = MarkdownSimilarityIndex(
+        Path("Markdown Conversions"), Path(args.artifacts_dir)
+    )
+    gemini_val = GeminiValidator(Path(args.artifacts_dir))
+    qbuilder   = DiverseQueryBuilder()
 
     print()
     tasks = scanner.get_todays_tasks()
@@ -1359,19 +1746,22 @@ def main() -> int:
     creator    = IssueCreator(gh_token, repo, config.score_threshold)
 
     stats = {
-        "tasks_run":      0,
-        "skip_score":     0,
-        "no_results":     0,
-        "issues_created": 0,
-        "issues_skipped": 0,
-        "pdf_finds":      0,
-        "landing_finds":  0,
-        "unknown_finds":  0,
-        "vt_clean":       0,
-        "vt_suspicious":  0,
-        "vt_malicious":   0,
-        "vt_failed":      0,
-        "vt_skipped":     0,
+        "tasks_run":        0,
+        "skip_score":       0,
+        "no_results":       0,
+        "url_seen":         0,
+        "gemini_rejected":  0,
+        "similarity_dup":   0,
+        "issues_created":   0,
+        "issues_skipped":   0,
+        "pdf_finds":        0,
+        "landing_finds":    0,
+        "unknown_finds":    0,
+        "vt_clean":         0,
+        "vt_suspicious":    0,
+        "vt_malicious":     0,
+        "vt_failed":        0,
+        "vt_skipped":       0,
     }
     tier_counts = {TIER_CURRENT: 0, TIER_STALE: 0, TIER_OLD: 0}
 
@@ -1406,6 +1796,32 @@ def main() -> int:
             time.sleep(config.gs_rate_sleep)
             continue
 
+        candidate_url = best["url"]
+
+        # ── URL fingerprint check ─────────────────────────────────────────
+        if fp_store.is_seen(candidate_url) or fp_store.is_blocked(candidate_url):
+            print(f"  ⊘ URL already seen/blocked in fingerprint store — skipping")
+            stats["url_seen"] += 1
+            time.sleep(config.gs_rate_sleep)
+            continue
+
+        # ── Gemini pre-validation ─────────────────────────────────────────
+        # Get existing years for this org from the lineage index
+        existing_years = list(lineage.index.get(
+            lineage._fp(stem), set()
+        ))
+        gemini_result = gemini_val.validate(
+            org, year, task["title"], best.get("snippet", ""),
+            candidate_url, existing_years
+        )
+        gem_verdict = gemini_result.get("verdict", "UNCERTAIN")
+        if gem_verdict == "REJECT":
+            print(f"  ⊘ Gemini rejected: {gemini_result.get('reason', '')}")
+            fp_store.mark_seen(candidate_url, outcome="gemini_rejected")
+            stats["gemini_rejected"] += 1
+            time.sleep(config.gs_rate_sleep)
+            continue
+
         # ── VirusTotal pre-scan for direct PDF finds ──────────────────────
         vt_result: Optional[Dict[str, Any]] = None
         ft = best["find_type"]
@@ -1414,7 +1830,7 @@ def main() -> int:
             if vt_scanner:
                 print(f"  [VT] Scanning direct PDF...")
                 time.sleep(vt_scanner.rate_limit_sleep_seconds)
-                vt_result = vt_scanner.scan_url(best["url"])
+                vt_result = vt_scanner.scan_url(candidate_url)
                 vt_status = vt_result.get("status", "")
                 if vt_status == "success":
                     verdict = vt_result["verdict"]
@@ -1425,24 +1841,45 @@ def main() -> int:
                         print(f"  ⚠ VT: Suspicious — issue will be labeled")
                     elif verdict == "Malicious":
                         stats["vt_malicious"] += 1
-                        print(f"  ❌ VT: Malicious — issue will be labeled, reviewer must decide")
+                        print(f"  ❌ VT: Malicious — will not create issue")
+                        fp_store.mark_seen(candidate_url, outcome="vt_malicious")
+                        fp_store.block_url(candidate_url)
+                        time.sleep(config.gs_rate_sleep)
+                        continue
                 else:
                     stats["vt_failed"] += 1
                     print(f"  ⚠ VT scan failed: {vt_result.get('reason', '')[:100]}")
             else:
                 stats["vt_skipped"] += 1
 
-        # Assemble full candidate dict for issue creation
+            # ── Markdown similarity check (PDF only — we have content) ────
+            # For PDFs that passed VT, use the title+snippet as a proxy for
+            # content similarity; a real text extraction would require markitdown
+            # which is not installed here.
+            candidate_text = f"{task['title']} {best.get('snippet', '')}"
+            is_dup, dup_key, sim_score = md_index.is_duplicate(candidate_text, org, year)
+            if is_dup:
+                print(f"  ⊘ Similarity check: {sim_score:.0%} match with '{dup_key}' — likely duplicate")
+                fp_store.mark_seen(candidate_url, outcome="similarity_duplicate")
+                stats["similarity_dup"] += 1
+                time.sleep(config.gs_rate_sleep)
+                continue
+            elif sim_score > 0.4:
+                print(f"  ℹ Partial similarity ({sim_score:.0%}) with '{dup_key}' — noted in issue")
+
+        # ── Assemble candidate and create issue ───────────────────────────
         candidate = {
             **best,
-            "org":          org,
-            "title":        task["title"],
-            "target_year":  year,
-            "latest_year":  task["latest_year"],
-            "tier":         tier,
-            "threshold":    config.score_threshold,
-            "known_domain": known_domain or "",
-            "vt_result":    vt_result,
+            "org":             org,
+            "title":           task["title"],
+            "target_year":     year,
+            "latest_year":     task["latest_year"],
+            "tier":            tier,
+            "threshold":       config.score_threshold,
+            "known_domain":    known_domain or "",
+            "vt_result":       vt_result,
+            "gemini_verdict":  gem_verdict,
+            "gemini_reason":   gemini_result.get("reason", ""),
         }
 
         if ft == FIND_PDF:
@@ -1452,10 +1889,13 @@ def main() -> int:
         else:
             stats["unknown_finds"] += 1
 
-        if creator.create(candidate):
+        created = creator.create(candidate)
+        if created:
+            fp_store.mark_seen(candidate_url, outcome="issue_created")
             stats["issues_created"] += 1
         else:
             stats["issues_skipped"] += 1
+            fp_store.mark_seen(candidate_url, outcome="skipped_duplicate_issue")
 
         time.sleep(config.gs_rate_sleep)
 
@@ -1468,6 +1908,9 @@ def main() -> int:
     print(f"    OLD tier          : {tier_counts[TIER_OLD]}")
     print(f"  No results          : {stats['no_results']}")
     print(f"  Suppressed (score)  : {stats['skip_score']}")
+    print(f"  URL already seen    : {stats['url_seen']}")
+    print(f"  Gemini rejected     : {stats['gemini_rejected']}")
+    print(f"  Similarity dup      : {stats['similarity_dup']}")
     print(f"  Issues created      : {stats['issues_created']}")
     print(f"    Direct PDF finds  : {stats['pdf_finds']}")
     print(f"    Gated page finds  : {stats['landing_finds']}")
