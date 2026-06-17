@@ -24,9 +24,9 @@ What’s often overlooked is that this AI revolution is powered by Application P
 
 This report[^1] explores the evolving architecture of AI agents, how both consumers and organizations are engaging with them, and the critical role APIs play in enabling their capabilities. It also examines the security challenges posed by this rapid evolution and offers best practices to help organizations protect their APIs, maintain consumer trust, and ensure the safe future of agentic AI.
 
-[^1]: Methodology: Censuswide carried out a survey on behalf of Salt Security of 1000 US-based consumers and 250 organizations with 250+ employees who are already using agentic AI.
-
 ![Graphic showing 64% of consumers report encountering AI chatbots more frequently than a year ago]
+
+[^1]: Methodology: Censuswide carried out a survey on behalf of Salt Security of 1000 US-based consumers and 250 organizations with 250+ employees who are already using agentic AI.
 
 ---
 
@@ -61,11 +61,8 @@ Consumers still prefer human interaction for personal data sharing. Despite the 
 
 The data also reveals a deeper tension: convenience often trumps caution. Nearly half (44%) of users admit to feeling pressured into providing personal information to chatbots, often just to complete a transaction or access a service. This suggests that while consumers may be wary of AI, they frequently go along with the interaction out of necessity, not confidence.
 
+![Graphic: Who do you trust more with your personal data? Human 40%, Chatbot 6%]
 ![Graphic: 62% agree that chatbots can more easily be tricked by hackers to give up personal data than a human]
-
-This dynamic has serious implications. It points to a fragile trust ecosystem in which users may comply with AI systems under duress or frustration, rather than feeling secure and in control. For organizations, this highlights the importance of designing transparent, ethical, and secure AI experiences, not only to meet user expectations but to avoid a long-term erosion of trust.
-
-![Chart: In which scenarios, if any are you/would you be comfortable inputting or communicating you personal data? (Comparison of In-Person, Phone, Email, Mobile App, Chatbot, Web, Social Media)]
 
 ---
 
@@ -79,7 +76,7 @@ Beyond simple data retrieval or task execution, APIs also allow AI agents to orc
 
 In essence, APIs transform AI agents from isolated algorithms into powerful digital collaborators capable of navigating and acting within interconnected systems. This deep integration is what gives agentic AI its utility, but it also highlights why securing those APIs is so critical. If the interfaces that fuel AI are vulnerable, the agents themselves become liabilities rather than assets.
 
-![Diagram: AI Agent API Interaction Flow (User Request -> API Call -> API Gateway -> AI Agent -> Backend Service -> API Response)]
+![Diagram: AI Agent API Interaction Flow (User Request -> API Call -> API Gateway -> AI Agent -> AI Agent Response -> Backend Service -> API Response)]
 
 ---
 
@@ -103,11 +100,11 @@ Survey data underscores the complexity of these challenges. While a notable perc
 
 ### How Are Privacy Concerns Addressed by Businesses?
 
-As AI agents become more integrated into business operations, addressing privacy concerns is critical, given the clear hesitancy from consumers to interact with it. Encouragingly, businesses appear to be taking a multifaceted approach to managing these concerns, though practices vary in maturity and range.
+As AI agents become more deeply integrated into business operations, addressing privacy concerns is critical, given the clear hesitancy from consumers to interact with it. Encouragingly, businesses appear to be taking a multifaceted approach to managing these concerns, though practices vary in maturity and range.
 
 Survey results show that organizations are adopting several core strategies to mitigate privacy risks associated with AI. The most common approach, cited by 44% of respondents, involves actively monitoring AI decision-making to detect and prevent unintended privacy violations. This reflects a growing awareness that AI systems can generate outcomes that may conflict with privacy expectations, even when those outcomes are not explicitly programmed. Real-time oversight is seen as essential for spotting these issues early and ensuring that AI systems behave within acceptable boundaries.
 
-![Chart: How, if in any way, do you address data privacy concerns related to AI usage within the business? (List of strategies including monitoring, audits, privacy policies, governance, encryption, access controls, etc.)]
+![Table/List: How, if in any way, do you address data privacy concerns related to AI usage within the business? (Top responses: Monitoring AI decision-making 44.40%, Regular audits 43.20%, Clear privacy policies 42.40%, AI governance frameworks 42.00%, Encryption 39.60%, Access controls 37.60%, Explainability testing 37.60%, Dedicated API security solution 37.20%, Dedicated privacy team 37.20%, Penetration testing 36.80%, User control options 36.40%, Global privacy regulations 35.20%, Anonymization 29.60%, None 1.20%)]
 
 Close behind, 43% of businesses report conducting regular audits to ensure compliance with data protection regulations such as GDPR, CCPA, and other global privacy laws. These audits are critical for verifying that data is collected, processed, and stored appropriately, especially in dynamic environments where AI agents are continuously learning and adapting.
 
@@ -117,7 +114,7 @@ In parallel, 42% of respondents noted the use of AI governance frameworks to ens
 
 Interestingly, only 37% of organizations report using a dedicated API security solution, demonstrating the recognition that data privacy is closely linked to how information flows through systems. However, there is clear room for improvement, since APIs serve as the primary channels through which AI agents access and exchange data, meaning that securing them is a fundamental privacy safeguard.
 
-![Chart: Organizations that use a dedicated API security solution by number of employees (250-499: 45%, 500-999: 38%, 1000-1500: 27%, 1500+: 40%)]
+![Chart: Organizations that use a dedicated API security solution by number of employees: 250-499 (45%), 500-999 (38%), 1000-1500 (27%), 1500+ (40%)]
 
 ---
 
@@ -141,21 +138,21 @@ As AI agents become more integrated into business operations and consumer experi
 
 The future of AI agent security is closely tied to innovation in API security. As AI agents become more intelligent, autonomous, and deeply embedded in digital ecosystems, their security cannot be treated in isolation. The APIs that underpin their functionality are evolving into critical control points, not just for enabling capabilities, but also for defending against increasingly sophisticated threats.
 
-Emerging threats are already outpacing traditional defenses. AI-powered attacks which are driven by adversarial machine learning, can adapt and evolve to exploit weaknesses that signature-based or static rule systems simply cannot detect.
-
-These attacks may use automated reconnaissance, mimic legitimate user behavior, or even manipulate prompts and data inputs to distort AI outputs. As these techniques grow more refined, they blur the line between valid and malicious interactions, making it harder for security systems to intervene.
+Emerging threats are already outpacing traditional defenses. AI-powered attacks which are driven by adversarial machine learning, can adapt and evolve to exploit weaknesses that signature-based or static rule systems simply cannot detect. These attacks may use automated reconnaissance, mimic legitimate user behavior, or even manipulate prompts and data inputs to distort AI outputs.
 
 At the same time, architectural shifts are adding layers of complexity. Decentralized infrastructures, including microservices and serverless environments, have introduced agility and scalability, but at the cost of visibility. In these architectures, an AI agent’s logic may be distributed across multiple ephemeral services, complicating traditional approaches to logging, auditing, and policy enforcement.
 
-> “The future of AI agent security will be defined by how well organizations can anticipate and respond to the shifting dynamics of API risk.”
+Moreover, vulnerabilities unique to the AI context, such as prompt injection, model inversion, and data poisoning, are likely to increase as generative AI becomes more prevalent. These are not hypothetical risks; they exploit the very interfaces AI agents rely on to learn, generate, and act.
 
 ---
 
 ## Innovations in API Security
 
-- **AI-driven security tools**: Apply machine learning to monitor API behavior continuously. These tools can detect anomalies that deviate from historical baselines, flag suspicious patterns in real time, and even take automated action to limit exposure.
-- **Blockchain**: Emerging as a powerful solution for enhancing integrity and accountability in API ecosystems. By creating tamper-proof audit logs of every API call, blockchain-based systems can ensure that transactions are both traceable and verifiable.
-- **Homomorphic encryption**: Enables data to be processed without ever being decrypted. This technique holds enormous potential for AI applications that need to analyze sensitive information without risking exposure.
+AI-driven security tools apply machine learning to monitor API behavior continuously. These tools can detect anomalies that deviate from historical baselines, flag suspicious patterns in real time, and even take automated action to limit exposure.
+
+Blockchain is also emerging as a powerful solution for enhancing integrity and accountability in API ecosystems. By creating tamper-proof audit logs of every API call, blockchain-based systems can ensure that transactions are both traceable and verifiable.
+
+Homomorphic encryption enables data to be processed without ever being decrypted. This technique holds enormous potential for AI applications that need to analyze sensitive information, such as financial or healthcare data, without risking exposure.
 
 Ultimately, the security of tomorrow’s AI agents will depend on how proactively organizations can reimagine their API strategies. This means moving beyond patching vulnerabilities as they arise and toward building strong governance for resilient, intelligent, and adaptive API environments.
 

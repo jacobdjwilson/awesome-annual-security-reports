@@ -1,133 +1,134 @@
-r of vulnerability.
+# Cloud Threat Hunting and Defense Landscape
 
-Mitigation Recommendations:
-
-- **Inventory Management**: Maintain a comprehensive inventory of all third-party software and services integrated into the cloud edge.
-- **Vulnerability Scanning**: Regularly scan third-party applications for known vulnerabilities and misconfigurations.
-- **Principle of Least Privilege**: Ensure that third-party applications are granted only the minimum necessary permissions to function.
-- **Regular Patching**: Establish a rigorous patching schedule for all third-party software, prioritizing critical and internet-facing components.
-- **Network Segmentation**: Isolate third-party applications from sensitive internal systems to limit the blast radius of a potential compromise.
-
-② Exposed Cloud Storage and Databases
-
-Cloud storage buckets (e.g., AWS S3, Azure Blob Storage) and databases are frequently misconfigured, often being left publicly accessible or with overly permissive access control lists (ACLs).
-
-Mitigation Recommendations:
-
-- **Public Access Block**: Enable "Block Public Access" features provided by cloud service providers (CSPs) at the account and bucket levels.
-- **Automated Auditing**: Use native CSP tools (e.g., AWS Config, Azure Policy) to continuously monitor for and automatically remediate publicly accessible storage resources.
-- **Encryption**: Enforce encryption at rest for all storage buckets and databases to protect data even if unauthorized access occurs.
-- **Access Logging**: Enable detailed logging for all storage and database access to facilitate the detection of unauthorized data exfiltration.
-
-③ Insecure API Endpoints
-
-APIs are the backbone of cloud communication, but when left exposed without proper authentication or rate limiting, they become prime targets for exploitation.
-
-Mitigation Recommendations:
-
-- **API Gateways**: Use managed API gateways to centralize authentication, authorization, and rate limiting.
-- **Authentication and Authorization**: Enforce strong authentication (e.g., OAuth 2.0, OIDC) and fine-grained authorization for all API endpoints.
-- **Rate Limiting**: Implement rate limiting to prevent brute-force attacks and denial-of-service attempts.
-- **Input Validation**: Rigorously validate all inputs to API endpoints to prevent injection attacks.
-
-Examples in the Wild
-
-Insikt Group curated a list of events published within the past year that demonstrate the threats posed by endpoint misconfiguration in cloud environments.
-
-Misconfigured Kubernetes Dashboards Leading to Cluster Takeover
-
-Throughout 2024, security researchers observed numerous instances where Kubernetes dashboards were exposed to the public internet without authentication. Threat actors utilized automated scanners to identify these endpoints, subsequently gaining administrative access to the underlying clusters. Once inside, attackers deployed malicious containers to mine cryptocurrency, exfiltrate sensitive configuration data (such as secrets and environment variables), and pivot to other internal services.
-
-Exposed AWS S3 Buckets Containing Sensitive Corporate Data
-
-In several high-profile incidents reported in late 2024, organizations inadvertently exposed sensitive data, including customer PII and internal source code, via misconfigured AWS S3 buckets. These buckets were often set to "public" due to human error during the configuration process. Threat actors utilized tools like `s3-scanner` to identify these buckets and exfiltrate the contents. These incidents highlight the critical need for automated configuration monitoring and the implementation of "Block Public Access" policies as a default security posture.
+## Table of Contents
+- [Executive Summary](#executive-summary)
+- [Key Findings](#key-findings)
+- [Introduction](#introduction)
+- [Background](#background)
+- [Methodology](#methodology)
+- [Threats To Cloud Environments](#threats-to-cloud-environments)
+  - [Cloud Abuse](#cloud-abuse)
+  - [Exploitation](#exploitation)
+  - [Endpoint Misconfiguration](#endpoint-misconfiguration)
 
 ---
 
-## Cloud Ransomware
+## Executive Summary
 
-Key Takeaways
+In a review of recently observed attack methods, Insikt Group identified five attack vectors that currently pose the greatest potential threat to cloud environments. Three of these attack methods, vulnerability exploitation, endpoint misconfiguration, and credential abuse leading to account takeover, can grant threat actors initial access. In certain circumstances, these three attack methods can also be employed following initial access to gain increased permissions within a cloud environment, modify the cloud environment, and allow lateral movement, either to additional cloud environments, traditional on-premise environments, or user devices. The two remaining attack methods, cloud abuse and cloud ransomware, demonstrate impact actions threat actors can perform within a cloud environment.
 
-- **Cloud-Native Tactics**: Ransomware groups are increasingly moving away from traditional on-premise encryption to targeting cloud-native storage and backup services.
-- **Disabling Backups**: A primary goal of cloud ransomware is to identify and disable cloud-native backup solutions to prevent recovery without payment.
-- **Data Exfiltration**: Ransomware actors are increasingly using cloud storage as a staging ground for exfiltrated data before encryption.
+Hunting for each of these threats often requires the implementation of robust logging within cloud environments to ensure that data such as network communications, user access, and cloud service usage metrics can be readily accessed and scrutinized for aberrations. Log data assists in both proactive discovery of suspicious activity originating at the edge of cloud environments, such as in instances where misconfiguration and vulnerability scanning occur, and in identifying instances where cloud accounts and resources are abused for malicious purposes.
 
-![Radar chart illustrating cloud ransomware as a threat vector]
+To mitigate threats from impacting cloud environments, proper configuration of the environment is paramount, both at the edge of the cloud environment, including the methods by which users and services interact with the environment, and within the environment itself. Cloud environments that are configured appropriately minimize the risk of initial access and can significantly limit the malicious actions a threat actor is capable of performing post-initial access. Additionally, the most common cloud platforms provide native services focused on security for cloud environments, such as web application firewalls (WAF), identity and access management (IAM) services, secrets storage and management suites, and secure data connectors for hybridized cloud environments, that allow cloud architects to mitigate the threats discussed in this report with relative ease.
 
-### Cost of Impact: 5 (Severe)
+## Key Findings
 
-Cloud ransomware can lead to the total loss of availability for critical business applications and data. The combination of encryption and the destruction of backups often forces organizations into a position where they must pay the ransom or face catastrophic operational failure.
+- Most initial compromises start with exposed or misconfigured cloud endpoints, with attackers using open-source scanners to identify misconfigured endpoints.
+- Stolen or weak credentials, often gathered from initial access brokers (IABs) and previous malicious actions performed by the attacker, remain the fastest path to full-tenant cloud takeover.
+- Threat actors increasingly abuse legitimate SaaS and IaaS resources, shifting costs to the owners of victimized environments and abusing resources to complicate the detection of follow-on malicious actions, such as phishing campaigns.
+- Ransomware groups have adopted cloud-native tactics, encrypting S3 and Azure storage directly and disabling backups to maximize leverage.
+- Hybrid infrastructure lets attackers pivot seamlessly between on-premise and multi-cloud environments, so visibility and controls must extend beyond the cloud environment to the devices and services that access it.
 
-### Commonality: 2 (Low)
+## Introduction
 
-While the impact is severe, the actual deployment of ransomware specifically targeting cloud-native infrastructure is less common than traditional endpoint ransomware. However, this trend is rapidly increasing as more organizations migrate their primary data stores to the cloud.
+During the past decade, a steady shift from traditional on-premise IT infrastructure to cloud-based infrastructure and hybrid cloud infrastructure has taken place. According to PwC’s 2023 Cloud Business Survey, 39% of private respondents stated that the entirety of their operations had been moved to cloud environments. Cloud computing has become a trusted and integral part of many corporations’ day-to-day operations. Since the time of PwC’s reporting, cloud computing as an industry has only grown with no signs of slowing.
 
-### Evolution Potential: 5 (Severe)
+The breadth of cloud products and the depth of services provided by cloud environments continue to grow daily. In a joint study conducted by Amazon and Telecom Advisory Services, cloud adoption accounted for a total of $1 trillion in the global gross domestic product, with a projected increase to $12 trillion between 2024 and 2030. This estimate indicates that traditional computing environments will continue to migrate to cloud environments rapidly in the coming years. That demand for cloud computing resources will continue to increase for the foreseeable future.
 
-Ransomware groups are rapidly evolving their TTPs to include cloud-specific commands, such as using the AWS CLI or Azure PowerShell modules to delete snapshots and disable versioning on storage buckets.
+The success of cloud computing can be squarely attributed to the benefits that adopters are provided. When properly configured, cloud environments allow their adopters to shift costs associated with traditional on-premise environments, create high-availability to remote assets, and eliminate development overhead by gaining access to managed services. As cloud providers continue to offer additional services and products that make similar offerings for traditional environments less effective from cost and operational perspectives, cloud adoption will only continue to grow in the future.
 
-### Effort to Perform: 4 (High)
+## Background
 
-Executing a successful cloud ransomware attack requires a high level of technical proficiency, including knowledge of cloud APIs, identity management, and the specific architecture of the victim's cloud environment.
+Cloud technologies, platforms, and services are increasingly implemented into corporate structures, providing all of the benefits of traditional on-premise environments while reducing costs associated with an on-premise environment in nearly every conceivable way. This relationship was demonstrated in PwC’s “2024 Cloud and AI Business Survey,” which reported that, out of a survey of 1,000 companies that implemented cloud technologies, 74% of the surveyed companies that have optimized their cloud environments reported increased profitability, and 65% of the same respondents reported increased cost savings. While these benefits are highly appealing to corporations, cloud environments pose unique risks and security challenges, challenges that require a fresh approach to cybersecurity to mitigate properly.
 
----
+The advancement of cloud environments has also increased the number of network-accessible endpoints that an organization must monitor and defend. In instances where large enterprise entities have fully migrated their operations to cloud environments, the endpoints required to facilitate user access, deploy web applications, support data transfer, and provide many other kinds of access on a day-to-day basis add up quickly and create a diverse boundary that is constantly interacting with the broader internet. The technologies that interface with and are embedded within this boundary pose unique risks and security challenges. Looking inward, similar issues persist, with cloud defenders requiring a fresh understanding of how cloud environments can be effectively architected to provide the benefits of a cloud environment without allowing undue access to sensitive information and control over mission-critical assets hosted in these environments.
 
-## Credential Abuse and Account Takeover
+As Insikt Group discusses in this report, threat actors have become increasingly aware of the security challenges cloud defenders must address, as well as the opportunities that cloud technologies, environments, and services afford them. The overwhelming amount of data, applications, systems, and other assets hosted on cloud environments, coupled with the task of defending these assets, provides threat actors with novel opportunities to compromise information, abuse environment resources, and profit from illicit activities in ways previously unattainable in on-premise environments. Additionally, threat actors have begun to understand the usefulness of cloud resources as part of an attack chain, realizing they are afforded all of the same benefits of legitimate cloud users, with the added benefits of anonymity and reduced detection capabilities in a way that is unobtainable with traditional infrastructure.
 
-Key Takeaways
+Understanding the threat posed by these adversaries, this report was created to shed light on the most impactful and emerging tactics, techniques, and procedures (TTPs) displayed by threat actors that target and abuse cloud environments. In doing so, it aims to provide an understanding of how threat actors are impacting and abusing cloud environments at a granular level, as well as how to mitigate these threats and hunt for indicators of compromise associated with them so that cloud defenders are better able to identify and respond when necessary.
 
-- **Fastest Path to Takeover**: Stolen credentials remain the most efficient method for threat actors to gain full-tenant control.
-- **IABs**: Initial Access Brokers (IABs) play a significant role in the cloud threat landscape by selling valid credentials to other threat actors.
-- **MFA Fatigue**: Attackers are increasingly using MFA fatigue and session token theft to bypass multi-factor authentication.
+## Methodology
 
-![Radar chart illustrating credential abuse and account takeover as a threat vector]
+This report identified five main threats to cloud environments, each of which are explored their respective sections:
 
-### Cost of Impact: 5 (Severe)
+- Cloud Abuse
+- Exploitation
+- Endpoint Misconfiguration
+- Cloud Ransomware
+- Credential Abuse and Account Takeover
 
-Account takeover, particularly of administrative accounts, grants the attacker full control over the cloud environment, allowing for data theft, resource abuse, and the potential to compromise all downstream systems.
+Each section includes radar charts that measure the following attributes associated with a given threat. These determinations were derived by Insikt Group investigating instances where this threat vector was observed to answer the following questions:
 
-### Commonality: 5 (Severe)
+- **Cost of Impact**: How much would this threat cost a victim in terms of monetary, reputational, and operational losses? In the radar chart, the higher the number, the higher the cost the victim can expect to incur monetarily, reputationally, operationally, or otherwise.
+- **Commonality**: How often is this threat vector observed in attack chains against cloud environments in the wild? In the radar chart, the higher the number, the more likely a cloud defender is to observe this behavior in their own environment.
+- **Evolution Potential**: What is the potential for threat actors to further “evolve” this attack vector in terms of new tools, attack methods, and TTPs that can be employed to achieve this threat vector? In the radar chart, the higher the number, the more likely it is threat actors will be able to perform actions demonstrating this threat in ways previously unobserved, thus complicating detection of the behavior.
+- **Effort to Perform**: What are the technical and monetary costs associated with performing this threat vector? In the radar chart, the higher the number, the greater the barrier for an attacker to demonstrate this threat against a cloud environment, generally in terms of monetary cost or technical capability.
 
-Credential abuse is the most frequently observed initial access vector. Whether through phishing, password spraying, or purchasing credentials from IABs, this remains the primary hurdle for attackers to overcome.
+## Threats To Cloud Environments
 
-### Evolution Potential: 3 (Moderate)
+### Cloud Abuse
 
-While the core concept of credential theft remains the same, the methods of bypassing MFA and stealing session tokens continue to evolve, making this a persistent and difficult threat to mitigate.
+**Key Takeaways**
 
-### Effort to Perform: 2 (Low)
+- Attackers registered their own cloud infrastructure to host malicious content and exfiltrate stolen data to their own cloud environments.
+- Uses for compromised cloud environments varied heavily and were determined by the responsible threat actor’s goal or proficiency.
 
-The barrier to entry for credential abuse is low, as many tools for password spraying and phishing are readily available. Furthermore, the prevalence of credential leaks on the dark web makes obtaining valid credentials relatively inexpensive.
+![Radar chart illustrating cloud abuse as a threat vector]
 
----
+**Cost of Impact: 4 (High)**
+Attacks where threat actors abuse victim cloud environments are highly costly, whereas instances where threat actors register and abuse legitimate services are comparatively less costly. In both instances, threat actors are able to masquerade as legitimate entities, leading to reputational losses for the abused environment and owner. Instances where threat actors abuse compromised victim cloud infrastructure often result in increased costs to the owner of the cloud environment.
 
-## Conclusion
+**Commonality: 4 (High)**
+Abuse of legitimate cloud infrastructure registered by a threat actor is very common, whereas abuse of compromised victim cloud infrastructure is comparatively less common. Many observed attacks against cloud infrastructure include threat actors attempting to gain control of cloud services for follow-on actions at some point, indicating that this type of threat remains common with respect to other cloud threats.
 
-The shift to cloud infrastructure has provided immense benefits to organizations, but it has also introduced a complex and evolving threat landscape. As demonstrated in this report, threat actors are actively exploiting misconfigurations, vulnerabilities, and weak identity controls to compromise cloud environments. 
+**Evolution Potential: 4 (High)**
+Threat actors have demonstrated that there are a plethora of ways cloud abuse can be achieved and then leveraged to perform malicious actions within the past year. Additionally, novel techniques such as “LLMjacking,” where threat actors sell access to compromised, cloud-based LLM models, indicate that threat actors are continuously considering how to monetize the abuse of cloud services, forecasting an increase of cloud service abuse in the future.
 
-To defend against these threats, organizations must adopt a "defense-in-depth" approach that includes:
+**Effort to Perform: 3 (Moderate)**
+Both the abuse of legitimately registered cloud infrastructure and compromised victim cloud infrastructure pose moderate difficulties to threat actors. In the former threat type, attackers must determine how to register for larger cloud platforms anonymously and conduct malicious actions without being detected, all while paying for the environment. In the latter threat type, threat actors are only able to abuse victim cloud infrastructure after adequately compromising cloud services and systems that are necessary for them to achieve their overarching goals.
 
-1. **Robust Logging and Monitoring**: Ensuring that all cloud activity is logged and scrutinized for anomalies.
-2. **Strict Configuration Management**: Implementing automated policies to prevent and remediate misconfigurations.
-3. **Identity-Centric Security**: Moving beyond simple passwords to MFA, passkeys, and the principle of least privilege.
-4. **Proactive Threat Hunting**: Regularly searching for indicators of compromise and suspicious behavior within the cloud environment.
+### Exploitation
 
-By understanding the TTPs of threat actors and implementing the recommended mitigations, organizations can significantly reduce their risk and ensure the security of their cloud-hosted assets.
+**Key Takeaways**
 
----
+- Threat Actors continually leveraged vulnerabilities found in cloud services to exploit victims.
+- Credentials obtained by threat actors were consistently used to gain and maintain access to victim cloud environments.
 
-## References
+![Radar chart illustrating exploitation as a threat vector]
 
-- Amazon & Telecom Advisory Services. (2024). "The Global Economic Impact of Cloud Adoption."
-- CISA & FBI. (2025). "Joint Advisory: Exploitation of Ivanti Cloud Service Appliances."
-- Datadog Security Labs. (2024). "Cryptojacking Campaigns Targeting Docker and Kubernetes."
-- Google. (2024). "Threat Horizons H2 2024 Report."
-- JFrog Security. (2024). "Analysis of Malicious Content on Docker Hub."
-- Microsoft. (2024). "Peach Sandstorm: Abuse of Azure Infrastructure."
-- Microsoft. (2024). "Storm-0501: Hybrid Cloud Environment Compromise."
-- PwC. (2023). "Cloud Business Survey."
-- PwC. (2024). "Cloud and AI Business Survey."
-- Sysdig TRT. (2024). "LLMjacking: Exploiting Cloud-Hosted AI Services."
-- Trend Micro. (2024). "Water Sigbin: Multi-Stage Infection Routine."
+**Cost of Impact: 3 (Moderate)**
+Successful exploitation of cloud infrastructure or the technologies embedded in it may result in multiple benefits to a threat actor, but may not directly translate to victim cost. Based on the vulnerabilities discussed in this report, multiple additional steps or chained exploitation is required in addition to a singular exploit to make an impact on the victim environment. Despite this, vulnerability exploitation is difficult to detect in some instances and may result in threat actors having more time to increase their level of impact within an environment.
+
+**Commonality: 2 (Low)**
+Due to the overhead and managed nature of larger cloud environments, vulnerabilities in the underlying infrastructure are often identified and mitigated before the vulnerabilities are publicly disclosed. This restricted timeline aids in mitigating threat actor exploitation of these vulnerabilities.
+
+**Evolution Potential: 4 (High)**
+The ongoing possibility of undisclosed vulnerabilities means cloud environments will continually face the risk of zero-day vulnerability exploitation.
+
+**Effort to Perform: 4 (High)**
+The discovery of a vulnerability requires a deep technical understanding of the targeted cloud environment, including the infrastructure and services in which a vulnerability may reside, as well as an understanding and background in exploit development. Only sophisticated threat actors are capable of demonstrating this threat.
+
+### Endpoint Misconfiguration
+
+**Key Takeaways**
+
+- Cloud endpoint misconfiguration is the most common way threat actors gain access to a cloud environment.
+- Misconfiguration can stem from the misconfiguration of native cloud assets and technologies that are embedded at the edge of a cloud environment.
+- Threat actors will often target misconfigurations in cloud environments opportunistically by performing broad misconfiguration scanning campaigns.
+
+![Radar chart illustrating endpoint misconfiguration as a threat vector]
+
+**Cost of Impact: 3 (Moderate)**
+Based on the events discussed in this section, misconfigurations in cloud environments are often exploited to gain initial access to cloud environments and services, usually resulting in data theft and exposure. This outcome may cost the cloud operator financially as well as in terms of reputation.
+
+**Commonality: 5 (Severe)**
+The majority of the events discussed throughout this report include some aspect where cloud endpoint misconfiguration was involved. Furthermore, cloud endpoint misconfigurations are often identified indiscriminately via mass scanning campaigns, allowing threat actors to opportunistically exploit this weakness in bulk.
+
+**Evolution Potential: 1 (Minimal)**
+Since the onus of proper endpoint configuration lies with the owner or operator of the cloud environment, there is little that threat actors can do to evolve their attack methodologies after identifying misconfigured cloud endpoints. The attack chain associated with this threat will always consist of threat actors identifying misconfigured endpoints and then accessing them.
+
+**Effort to Perform: 1 (Minimal)**
+There are many automated endpoint scanning repositories and additional tools for scanning publicly accessible infrastructure, such as Shodan and Censys, that a threat actor has access to. These allow for the discovery of misconfigured endpoints, eliminating the technical barrier to endpoint misconfiguration discovery. Once a threat actor can identify an endpoint misconfiguration, they are often easily able to access or verify the exposed endpoint; they can also do this by using automated tooling.
 
 ---
 
