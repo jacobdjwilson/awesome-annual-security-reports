@@ -1,7 +1,6 @@
 # The State of Public APIs 2023
 
 ## Table of Contents
-- [Introduction](#introduction)
 - [General Information](#general-information)
 - [Security](#security)
 - [Performance](#performance)
@@ -10,9 +9,9 @@
 - [Conclusion](#conclusion)
 - [About Escape](#about-escape)
 
-## Introduction
+The State of Public APIs 2023
 
-An analysis of the design, performance, security and reliability of 6,000+ public APIs.
+An analysis of the design, performance, security and reliability of 6,000+ public APIs
 
 More and more companies are extending their software offering with public APIs. They enable external developers to leverage their services, open new usage streams, and empower fruitful partnerships between organizations.
 
@@ -28,16 +27,16 @@ The current data was updated on march 3, 2023.
 
 ## General Information
 
-### What did we scan?
+What did we scan?
 
 Escape’s in-house API scanner crawled 6478 public OpenAPI-documented APIs online. It took us 83,245 requests to gather the data.
 
-- **6,478**: Total scanned endpoints
-- **83,245**: Total sent requests
+- 6,478: Total scanned endpoints
+- 83,245: Total sent requests
 
 We gathered both OpenAPI 2.0 and OpenAPI 3.0+ specs. We observed that most public APIs rely on OpenAPI 3.0.0 Documentation. OpenAPI 3.0.1 also has some ground.
 
-### What metadata were included in the documentations?
+What metadata were included in the documentations?
 
 Between a third and a half of documentations contained metadata such as license, contact info, and terms of services.
 
@@ -49,7 +48,7 @@ We used our passive scanners to search for OWASP API Top 10 project vulnerabilit
 
 Considering that we ran only a passive scan, in the wild, and with no authentication provided, we consider that those results raise concerns about how many public APIs are easily exploitable by malicious actors.
 
-### What sensitive data was found during the crawl?
+What sensitive data was found during the crawl?
 
 During our scan, we detected a concerning amount of sensitive data being open to the wild. Specially, we found several passwords and Json Web Tokens in error messages that were publicly accessible.
 
@@ -89,4 +88,6 @@ Escape is a security company on a journey to help developers create secure and r
 
 To see more content like this, follow us on Twitter, Github or Linkedin
 
-![Escape contact information: escape.tech, ping@escape.tech, +1 (707) 615 6448]
+escape.tech
+ping@escape.tech
++1 (707) 615 6448
