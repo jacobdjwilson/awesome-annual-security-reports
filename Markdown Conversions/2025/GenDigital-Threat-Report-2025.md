@@ -1,4 +1,4 @@
-# Gen Threat Report: Q2/2025
+# Gen Threat Report Q2/2025
 
 ## Table of Contents
 - [Key highlights](#key-highlights)
@@ -6,8 +6,8 @@
 - [FunkSec: AI meets ransomware](#funksec-ai-meets-ransomware)
 - [The perfect crime? Why Facebook is a top weapon for cybercriminals](#the-perfect-crime-why-facebook-is-a-top-weapon-for-cybercriminals)
 - [Fast facts. What to watch.](#fast-facts-what-to-watch)
-
----
+- [Threat Category Q2/2025 Surge](#threat-category-q22025-surge)
+- [Threat Gen’s Response](#threat-gens-response)
 
 ## Key highlights
 
@@ -15,7 +15,8 @@ This quarter, Gen Threat Labs shines a light on PharmaFraud - a network of fake 
 
 ## PharmaFraud: Fake pharmacies, real danger
 
-![Infographic showing 1 million fake pharmacy attacks blocked and 5,000+ fake sites linked to cyber gang MediPhantom]
+**1M** fake pharmacy attacks blocked
+**5,000+** fake sites linked to cyber gang MediPhantom
 
 Thousands of slick-looking online pharmacies are actually run by one giant cybercrime network: MediPhantom. These sites prey on people looking for medications quickly, discreetly or at a lower cost. But, unfortunately, they are putting themselves, their identities and their bank accounts at serious risk.
 
@@ -59,14 +60,16 @@ Facebook is where your mom, your neighbor and your local teacher hang out online
 ## Fast facts. What to watch.
 
 ### 3 must-know stats
-1. 16 billion leaked credentials are still circulating
-2. 317% rise in malicious push notifications
-3. 100+ ransomware victims hit by AI-assisted malware in just 3 months
+- 16 billion leaked credentials are still circulating
+- 317% rise in malicious push notifications
+- 100+ ransomware victims hit by AI-assisted malware in just 3 months
 
 ### Trends to watch
 1. **Cybercrime is scaling like a business**: Global teams. Big data. Branding. Even live-chat support.
 2. **AI is now a criminal co-pilot**: Phishing templates, malware builds, social engineering, it’s speeding everything up.
 3. **Disruption ≠ Deletion**: Takedowns help, but criminals adapt fast. Malware like Lumma keeps coming.
+
+## Threat Category Q2/2025 Surge
 
 | Threat Category | Q2/2025 Surge |
 | :--- | :--- |
@@ -77,10 +80,10 @@ Facebook is where your mom, your neighbor and your local teacher hang out online
 | Remote Access Attacks (RATs) | +62% |
 | Breached Emails | +16% |
 
-| Threat | Gen’s Response |
-| :--- | :--- |
-| AI-powered Ransomware | Discovered cryptographic flaw in FunkSec, launched free decryptor |
-| PharmaFraud Scams | 1M fake pharmacy attacks blocked |
-| Facebook Scams | Blocked messenger-style tech support scams and deepfake finance baits |
+## Threat Gen’s Response
+
+- **AI-powered Ransomware**: Discovered cryptographic flaw in FunkSec, launched free decryptor
+- **PharmaFraud Scams**: 1M fake pharmacy attacks blocked
+- **Facebook Scams**: Blocked messenger-style tech support scams and deepfake finance baits
 
 [Read the full Q2/2025 Threat Report](URL)
