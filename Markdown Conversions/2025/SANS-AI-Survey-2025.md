@@ -1,151 +1,115 @@
 # SANS 2025 AI Survey: Measuring AI’s Impact on Security Three Years Later
 
-**Organization:** SANS  
-**Report Title:** AI-Survey  
-**Year:** 2025  
-**Written by:** Ahmed Abugharbia  
-**Date:** September 2025  
-©2025 SANS™ Institute
-
 ## Table of Contents
 - [Key Findings](#key-findings)
 - [Survey Authors](#survey-authors)
 - [Introduction](#introduction)
+- [Expert Corner: David Hoelzer](#expert-corner-david-hoelzer)
 - [Respondent Demographics](#respondent-demographics)
 - [Use Cases for AI in Security](#use-cases-for-ai-in-security)
-  - [AI in Incident Response](#ai-in-incident-response)
-  - [AI in Application Security (AppSec) and Code Review](#ai-in-application-security-appsec-and-code-review)
-  - [AI in Red Teaming](#ai-in-red-teaming)
+- [Expert Corner: Seth Misenar](#expert-corner-seth-misenar)
+- [AI in Application Security (AppSec) and Code Review](#ai-in-application-security-appsec-and-code-review)
+- [AI in Red Teaming](#ai-in-red-teaming)
 - [Using AI for Security Challenges and Concerns](#using-ai-for-security-challenges-and-concerns)
 - [AI Attacks Are Feared More Than Defenses Are Used](#ai-attacks-are-feared-more-than-defenses-are-used)
+- [Expert Corner: Foster Nethercott](#expert-corner-foster-nethercott)
 - [Governance and Ethical Oversight](#governance-and-ethical-oversight)
+- [Bridging the Gap Between AI Governance and Security Practice](#bridging-the-gap-between-ai-governance-and-security-practice)
 - [Workforce Impacts and Future Trends](#workforce-impacts-and-future-trends)
+- [AI Is Transforming Security Roles](#ai-is-transforming-security-roles)
 - [Conclusion](#conclusion)
+- [Sponsor](#sponsor)
+- [About the SANS Research Program](#about-the-sans-research-program)
 
 ---
 
 ## Key Findings
-
-- **Security Is Lagging Behind Advancements in the AI Industry**: Only half of the respondents who say their organization is currently using AI are using it for cybersecurity tasks.
-- **Robust Implementation Is Limited**: Only 33% use AI for investigating incidents.
+- **Security Is Lagging Behind**: Only half of the respondents who say their organization is currently using AI are using it for cybersecurity tasks.
 - **Incident Response Teams Are Heavily Pursuing AI**: 75% believe AI will complement existing tools like SIEM, SOAR, and EDR over the next three years.
+- **Robust Implementation Is Limited**: Only 33% use AI for investigating incidents.
 - **False Positives Are Overwhelming Analysts**: 66% report that AI systems/agents generate many false positives, leading to alert fatigue.
 - **AI Attacks Are Feared More Than Defenses Are Used**: Although AI is sparingly adopted by security teams, 81% are concerned about emerging AI-powered threats.
 - **Security Teams Are Not Involved Enough**: Only 20% of respondents have limited involvement in governing generative AI (GenAI).
-- **More Training Is Needed**: 51% say AI has affected security team training; 65% emphasized the need for more specialized AI/cybersecurity courses; 64% stressed the importance of continuous learning.
+- **More Training Is Needed**: 51% say AI has affected security team training; 65% emphasized the need for more specialized AI/cybersecurity courses; and 64% stressed the importance of continuous learning.
 - **Respondents Are Optimistic AI Will Not Take Their Jobs**: 67% anticipate growing demand for professionals with AI and cybersecurity expertise in the next three years.
 
----
-
 ## Survey Authors
+**Ahmed Abugharbia**, SANS Certified Instructor. Ahmed is the co-founder of Cystack and founder of Cyberdojo. He has over 17 years of experience in cloud security, network and application security, and incident response. He teaches SEC540, SEC545, and SEC560.
 
-**Ahmed Abugharbia**  
-SANS Certified Instructor  
-![Ahmed Abugharbia profile photo]
-
-**Brandon Evans**  
-SANS Senior Instructor  
-![Brandon Evans profile photo]
-
----
+**Brandon Evans**, SANS Senior Instructor. Brandon is an InfoSec Consultant at On-Brand Technologies LLC. He is the lead author for SEC510 and a contributor to SEC540.
 
 ## Introduction
+AI is not on the horizon. It is here. Generative AI (GenAI) and large language models (LLM) entered the cybersecurity zeitgeist nearly three years ago. Business and security leaders are scrambling to incorporate it. Half of respondents stated they are currently leveraging GenAI for security, while 30% plan to within the next 12 months. This report explores how early adopters are applying GenAI, the problems it solves, the threats it poses, and how it will evolve.
 
-AI is not on the horizon. It is here. It has been here. Generative AI (GenAI) and large language models (LLM) entered the cybersecurity zeitgeist nearly three years ago when ChatGPT became available to the public. Business leaders are clearly interested in using GenAI. They are scrambling to incorporate it in any way that makes sense—and many ways that might not make sense.
-
-Security leaders are also interested in implementing AI. Similarly to the business as a whole, even if they do not have a fully fleshed out use case for GenAI, they do not want to fall behind their peers. Half of respondents stated that they are currently leveraging GenAI for security while 30% said they are planning to within the next 12 months.
-
-How are early adopters applying GenAI to security? What security problems has GenAI made more manageable, if any? What problems and threats does GenAI pose to security teams? How should we expect GenAI-driven security to evolve over time? This report answers these questions using the survey responses from SANS’s vast community of security experts.
-
-GenAI, like anything else, is just a tool. Let us explore whether we should keep it in our utility belt at the ready or leave it in the toolshed for niche operations.
-
-### Expert Corner
-> I agree completely with the majority of respondents that security teams are lagging behind when it comes to AI adoption. In my opinion, this is because leadership teams are sure that they need AI but are not usually able to clearly articulate what that means. This, coupled with the dominant fascination with LLMs (which are amazing!) tends to impact the variety of AI/ML solutions in the cybersecurity space. Honestly, this is the reason SEC595 exists. I created it to teach SOC teams and threat hunters how to leverage AI and ML to create real-world solutions today that far exceed the commercial offerings available … and without ever using an LLM!
->
-> **David Hoelzer**  
-> SANS Faculty Fellow and COO at Enclave Forensics, Inc.
-
----
+## Expert Corner: David Hoelzer
+SANS Faculty Fellow and COO at Enclave Forensics, Inc.
+"I agree completely with the majority of respondents that security teams are lagging behind when it comes to AI adoption... leadership teams are sure that they need AI but are not usually able to clearly articulate what that means."
 
 ## Respondent Demographics
+Most respondents were based in the United States (51%), followed by Europe (20%). Top industries included technology (15%), government (14%), and cybersecurity (14%). 
 
-Most respondents were based in the United States (51%), with Europe second at 20%. The top industries represented were technology (15%), government (14%), and cybersecurity (14%) with the largest response from companies with fewer than 100 employees (18%). Figure 1 shows the survey demographics in detail.
-
-![Figure 1. Demographics]
-
----
+![Figure 1. Demographics chart showing top industries, regions, and roles.]
 
 ## Use Cases for AI in Security
+Adoption varies by discipline. While application security sees meaningful integration, incident response and red teaming remain in earlier stages.
 
-Artificial intelligence continues to reshape cybersecurity. Its adoption varies across different cybersecurity disciplines. Although many security leaders see AI as a powerful tool they can use, the reality is more nuanced. Some domains, like application security, are already seeing meaningful integration and benefit. Others, such as incident response and red teaming, remain in earlier stages of adoption.
-
-### AI in Incident Response
-
-According to the respondents, incident response teams are currently adopting AI to a moderate degree. Only 26% of organizations use AI for responding to incidents and 33% for investigating incidents (see Figure 2). At the same time, 55% of organizations plan to incorporate AI into incident response for automated threat detection and analysis.
+### Incident Response
+Only 26% of organizations use AI for responding to incidents and 33% for investigating incidents. 55% plan to incorporate AI for automated threat detection and analysis.
 
 ![Figure 2. How Organizations Currently Automate Detection and Response]
 
-Most of the survey respondents expect AI to be complementary rather than disruptive, with 75% seeing AI as a complement to existing tools like SIEM, SOAR, and EDR over the next three years and only 13% expecting complete replacement.
+## Expert Corner: Seth Misenar
+SANS Faculty Fellow
+"When two-thirds of teams report AI-driven noise, yet over half plan to expand automation, it’s clear we’re confusing urgency with readiness. False positives are not a glitch. They result from skipping the hard work of data curation, process integration, and precision tuning."
 
-### Expert Corner
-> When two-thirds of teams report AI-driven noise, yet over half plan to expand automation, it’s clear we’re confusing urgency with readiness. False positives are not a glitch. They result from skipping the hard work of data curation, process integration, and precision tuning. To succeed, strategy must come before scale.
->
-> **Seth Misenar**  
-> SANS Faculty Fellow
-
-### AI in Application Security (AppSec) and Code Review
-
-More than a third (37%) of organizations currently use AI in their AppSec activities, while 30% do not, and 32% are unsure. Just like incident response, the primary applications focus on security analysis enhanced with AI capabilities with the most augmented AppSec tool being static analysis security testing (SAST) at 65% (see Figure 3).
+## AI in Application Security (AppSec) and Code Review
+37% of organizations currently use AI in their AppSec activities. The most augmented tool is Static Analysis Security Testing (SAST) at 65%.
 
 ![Figure 3. AI Usage for Security Tasks]
 
-### AI in Red Teaming
-
-Not many organizations are using GenAI for red teaming (15%). This aligns with interest respondents ranked “red team activities” as, by far, the least area they are planning to use AI technology in. The top ethical concern respondents have regarding GenAI and red teaming is whether it can adequately respect the privacy of real users (37%).
-
----
+## AI in Red Teaming
+Only 15% of organizations use GenAI for red teaming. The primary barrier is ethical concern, specifically regarding user privacy (37%) and the risk of automated attacks causing real damage in production (56%).
 
 ## Using AI for Security Challenges and Concerns
-
-AI implementation in cybersecurity reveals a significant gap between ambition and execution. While 50% of organizations currently use AI as part of their cybersecurity strategy and another 30% plan to start within 12 months, the depth of implementation remains shallow across most use cases.
-
----
+While 50% of organizations use AI in their strategy, implementation is shallow. 60% cite integration challenges and 51% cite resource demands as primary hurdles.
 
 ## AI Attacks Are Feared More Than Defenses Are Used
+81% of respondents are concerned with AI-powered threats, despite only 50% using AI for defense. 83% worry about personalized social engineering, and 73% are concerned about deepfakes.
 
-Security teams are reckoning with the fact that their adversaries also have access to GenAI platforms. While roughly half of the respondents’ security teams are currently using GenAI, a whopping 81% are concerned with AI-powered threats.
-
-### Expert Corner
-> The 2025 AI Survey has revealed a concerning disconnect that I’ve witnessed firsthand between red and blue teams. While 81% of security teams are concerned over growing AI-powered attacks, only 50% use these same tools for cybersecurity defense, and worse yet, just 33% leverage it for incident response. This gap between threat perception and defensive implementation suggests we’re preparing for yesterday’s war while tomorrow’s adversaries are already weaponizing these capabilities.
->
-> **Foster Nethercott**  
-> Certified Instructor Candidate
-
----
+## Expert Corner: Foster Nethercott
+Certified Instructor Candidate
+"The 2025 AI Survey has revealed a concerning disconnect... While 81% of security teams are concerned over growing AI-powered attacks, only 50% use these same tools for cybersecurity defense... We’re preparing for yesterday’s war while tomorrow’s adversaries are already weaponizing these capabilities."
 
 ## Governance and Ethical Oversight
+68% of professionals believe they should have a role in governing AI, yet only 35% have a formal AI risk management program. 56% cite lack of visibility into AI model use cases as their biggest audit challenge.
 
-AI governance in cybersecurity reveals a concerning gap between recognition and implementation:
-- Most of the cybersecurity professionals surveyed (68%) believe they should have a role in governing AI use across their enterprises.
-- Only 35% have a formal AI risk management and compliance program in place.
+## Bridging the Gap Between AI Governance and Security Practice
+The report maps survey findings to the *Critical AI Security Controls Guidelines*.[^1]
 
-Table 1 provides recommendations from the Critical AI Security Controls Guidelines to address these governance gaps.[^1]
+| ISSUES | RECOMMENDATION |
+| :--- | :--- |
+| Lack of operational structure | Build an AI-specific governance foundation (GRC). |
+| Missing technical validation | Integrate adversarial testing and model red teaming. |
+| External risk outpaces internal | Treat vendor AI tools with the same scrutiny as internal systems. |
+| Lack of access control | Apply zero trust and least privilege principles. |
+| Lack of visibility | Build continuous monitoring for inference behavior. |
 
 [^1]: “Critical AI Security Guidelines,” www.sans.org/mlp/critical-ai-security-guidelines
 
----
-
 ## Workforce Impacts and Future Trends
-
-The impact of AI on the cybersecurity workforce is already substantial. 51% of organizations report AI has affected training requirements for their security teams, and 54% have observed job-related changes due to AI integration (see Figure 4).
+51% of organizations report AI has affected training requirements. 71% are preparing their workforce through ongoing training on AI fundamentals.
 
 ![Figure 4. AI Effect on Training Requirements and Jobs]
 ![Figure 5. How Organizations Are Preparing Their Workforce for the Evolving AI-Driven Cybersecurity Landscape]
 
----
+## AI Is Transforming Security Roles
+67% anticipate growing demand for professionals with AI and cybersecurity expertise. The authors note that while AI may not replace jobs, it will likely contract the market for entry-level roles as one professional using AI replaces the output of five.
 
 ## Conclusion
+The cybersecurity industry underestimates the transformational nature of AI. Teams are currently focused on incremental changes (alert enrichment) rather than transformational applications (autonomous code review). To avoid irrelevance, professionals must treat AI as a fundamental shift and develop deep expertise.
 
-The survey data shows that the cybersecurity industry underestimates the transformational nature of AI. Organizations have made many first steps toward AI adoption, but much more is needed. Security teams are implementing AI in basic use cases like alert enrichment and anomaly detection, but they are not focusing nearly as much on transformational applications like autonomous code review, threat hunting, and incident investigation.
+## Sponsor
+SANS would like to thank this survey’s sponsor.
 
-The window for getting ahead of this curve is narrowing. The organizations and professionals who treat AI as a fundamental shift will have a role in defining the changes in the cybersecurity field. Those who do not embrace it responsibly will risk irrelevance.
+## About the SANS Research Program
+The SANS Research Program provides data-driven insights and thought leadership to cybersecurity practitioners. For sponsorship opportunities, email Sponsorships@sans.org or visit www.sans.org/sponsorship.
