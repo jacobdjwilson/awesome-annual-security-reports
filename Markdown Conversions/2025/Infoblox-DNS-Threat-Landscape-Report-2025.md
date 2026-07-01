@@ -12,11 +12,8 @@
 
 ---
 
-**Organization:** Infoblox  
-**Report Title:** DNS-Threat-Landscape-Report  
-**Year:** 2025
-
-**The Cyberthreat Fog: How Malicious Actors Use DNS to Deceive and Evade**
+2025 DNS THREAT LANDSCAPE REPORT
+The Cyberthreat Fog: How Malicious Actors Use DNS to Deceive and Evade
 
 Over the past year, threat actors have rapidly advanced their use of deception—scaling operations and leveraging AI to target individuals, organizations, and evade threat research. Infoblox Threat Intel has observed a new level of professionalism and speed in the way actors launch Domain Name System (DNS)-sourced cyberattacks, which affect consumers, businesses, and government agencies alike.
 
@@ -30,9 +27,15 @@ People often refer to DNS as the phonebook of the internet because it translates
 
 DNS is also utilized by malicious actors when phishing, scamming, for detection evasion, and during data extraction. Consequently, analyzing DNS traffic and domain usage is foundational for security analysts. DNS data can be reshaped into predictive threat intelligence by holistically collecting pre-attack telemetry, enriching the data, analyzing it against baselines, and executing deep threat hunts. These insights offer defenders a comprehensive view of adversarial infrastructures, targeted victims, and tactics—before the attacker strikes.
 
+As a result, DNS offers much more than just name resolution and has become both an enforcement point for enterprise security policy and an indicator of potential malicious activity on a network. Organizations like the National Institute of Standards and Technology (NIST) and the Cybersecurity & Infrastructure Security Agency (CISA) have recognized this critical—and early—role that DNS plays in cybersecurity and have highlighted its preemptive security potential in the recently proposed NIST Special Publication (SP) 800-81 Rev. 3.[^1]
+
 > “DNS unlocks a unique vantage point into past threat activity, which in turn serves as a crystal ball—revealing the precursors to future cyberthreats.” — Dr. Renée Burton, Head of Infoblox Threat Intel
 
-As a result, DNS offers much more than just name resolution and has become both an enforcement point for enterprise security policy and an indicator of potential malicious activity on a network. Organizations like the National Institute of Standards and Technology (NIST) and the Cybersecurity & Infrastructure Security Agency (CISA) have recognized this critical—and early—role that DNS plays in cybersecurity and have highlighted its preemptive security potential in the recently proposed NIST Special Publication (SP) 800-81 Rev. 3.[^1]
+This report addresses four key questions:
+- What are the key DNS observations from the past 12 months?
+- Who are the DNS threat actors and what recent activities have been discovered?
+- What are the main malicious tactics behind DNS techniques and why are they dangerous?
+- What are the key challenges for defenders, and what opportunities does DNS-based threat intelligence offer?
 
 [^1]: Secure Domain Name System (DNS) Deployment Guide, National Institute of Standards and Technology (NIST), April 10, 2025.
 
@@ -50,16 +53,18 @@ Within all collected data, Infoblox Threat Intel identified 100.8 million newly 
 ### Control Evasion Via One-Time-Use Domains
 More than one-quarter of the newly observed domains (over 25 million) were classified by Infoblox as malicious or suspicious. Threat actors continuously register, activate, and deploy massive numbers of new domains to evade detection controls. Because it is difficult to identify and classify such large volumes of domains, attackers are able to fly under the radar, bypass blocking mechanisms, and leave minimal forensic evidence.
 
-The isolated usage of identified threat-related domains—both malicious and suspicious—is also significant. Infoblox Threat Intel found that 95 percent of all threat-related domains were observed within a single network environment.
+![Infographic showing 95% of threat-related domains were observed in only one customer environment]
 
-The objective behind this tactic is simple: bypass forensic-based defenses that rely on “patient zero” data by leveraging throwaway domains—of which attackers have unlimited supply.
+The isolated usage of identified threat-related domains—both malicious and suspicious—is also significant. Infoblox Threat Intel found that 95 percent of all threat-related domains were observed within a single network environment. The objective behind this tactic is simple: bypass forensic-based defenses that rely on “patient zero” data by leveraging throwaway domains—of which attackers have unlimited supply.
 
 ### Malicious Versus Suspicious Domains
 - **Malicious domains** are confirmed threats supported by strong evidence. They do not age out and account for 1.6 percent of over 100 million newly observed domains.
 - **Suspicious domains** are potential threats that lack conclusive evidence and account for 23.5 percent of all newly observed domains. If not confirmed, these indicators expire after a few months. Infoblox Threat Intel analysts continuously monitor these domains for new evidence. When additional indicators are discovered, the scores are updated, and suspicious domains may be reclassified as malicious.
 
 ### Cloaking Via Domains Part of Traffic Distribution Systems
-Adtech (short for advertising technology) refers to the tools, software, and platforms used to automate, manage, target, deliver, and analyze digital advertising. Traffic distribution systems (TDSs) are the platforms or mechanisms used—legitimately or maliciously—to redirect incoming internet traffic to different destinations based on predefined rules. Threat actors also adopted this technology, often referred to as malicious adtech.
+Adtech (short for advertising technology) refers to the tools, software, and platforms used to automate, manage, target, deliver, and analyze digital advertising. Traffic distribution systems (TDSs) are the platforms or mechanisms used—legitimately or maliciously—to redirect incoming internet traffic to different destinations based on predefined rules.
+
+![Infographic showing 82% of customers queried a domain part of a traffic distribution system]
 
 Over the past 12 months, 82 percent of all customer environments queried domains that were part of TDS, much of which are operated by malicious adtech operators known for concealing harmful content, such as tailored phishing sites, scareware, scams, and infostealers.
 
@@ -68,7 +73,7 @@ These TDSs often consist of tens of thousands of domains, which are rapidly rota
 ### Domains Linked to Diverse Threat Types
 As new threat-related domains are discovered, Infoblox threat researchers investigate the actors behind them and their underlying intent.
 
-**Top 7 List: How Threat Actors Utilize New Domains**
+**Table 1. Actors’ purpose for newly observed domains.**
 1. Engage in fraudulent activities and scams, such as fake cryptocurrency investment sites.
 2. Host illegal content, including gambling (particularly in regions like China) and adult material.
 3. Create phishing pages designed to steal personal information or credit card data.
@@ -80,23 +85,24 @@ As new threat-related domains are discovered, Infoblox threat researchers invest
 ### Domain Popularity
 Infoblox DNS telemetry also provides insights into domain type usage, offering clues about application popularity and the speed at which threat actors are becoming proficient at successfully pushing large volumes of weaponized domains in front of victims.
 
-- **Key Observations:** Eight domain categories—such as content delivery networks (CDNs), technology providers, security vendors, business productivity tools, search engines, storage, cloud services, and net conferencing—account for the majority (approximately 70 percent on a given day) of all domains within customer DNS queries.
-- In May 2025, domain queries related to personal internet usage—such as online shopping, gaming, and social media (e.g., TikTok and Facebook)—reached parity with those associated with professional collaboration platforms (e.g., Microsoft Teams, Slack).
-- Infoblox Threat Intel observed domains part of TDSs becoming popular in as few as 19 days, 2.35 times faster than in 2024 and 39 times faster than in 2020.
+![Infographic showing 19 days as the time needed for a TDS domain to become popular]
+
+- **Key Observations:**
+    - Eight domain categories—such as content delivery networks (CDNs), technology providers, security vendors, business productivity tools, search engines, storage, cloud services, and net conferencing—account for the majority (approximately 70 percent on a given day) of all domains within customer DNS queries.
+    - In May 2025, domain queries related to personal internet usage—such as online shopping, gaming, and social media (e.g., TikTok and Facebook)—reached parity with those associated with professional collaboration platforms (e.g., Microsoft Teams, Slack).
+    - Infoblox Threat Intel observed domains part of TDSs becoming popular in as few as 19 days, 2.35 times faster than in 2024 and 39 times faster than in 2020.
 
 ## Section 2: Threat Actors and Research
 
-The 100 million new domains discovered over the past year are not forces of nature—they are always caused by human actions and initiated for specific purposes. Infoblox Threat Intel continuously analyzes and investigates the actors behind threat-related domains by enriching collected telemetry and correlating common patterns.
+![Infographic showing 204K total identified suspicious DNS domain clusters, 662 total identified threat actors, and 10 new actors publicly disclosed in the past 12 months]
 
 Since the start of its research, Infoblox Threat Intel discovered a total of 204,000 suspicious domain clusters, each sharing common threat elements, and has identified 662 unique threat actors. In the past 12 months alone, Infoblox researchers have publicly disclosed 10 new actors.
 
-*(Table of key threat actors omitted for brevity, see original report for full list of VexTrio, Hazy Hawk, Enable Scam Actor, etc.)*
-
-## Actor Case Study: Coordination Between WordPress Hackers and VexTrio Viper Cabal
+### Actor Case Study: Coordination Between WordPress Hackers and VexTrio Viper Cabal
 
 Infoblox recently uncovered a complex alliance between WordPress hackers and a network of malicious adtech companies, notably VexTrio’s TDS.
 
-![Figure 1: Relationship between WordPress hackers and commercial adtech industry showing the flow from compromised sites to TDS infrastructure and finally to malicious content]
+![Figure 1: Relationship between WordPress hackers and commercial adtech industry]
 
 **What Happened?**
 - **Quick Migration:** When VexTrio’s TDS was disrupted in fall of 2024, multiple malware actors simultaneously shifted to a seemingly new TDS named “Help TDS.” Further analysis revealed that Help TDS is not independent but closely linked to VexTrio.
@@ -105,8 +111,8 @@ Infoblox recently uncovered a complex alliance between WordPress hackers and a n
 
 ## Section 3: Malicious DNS Techniques
 
-Threat actors use DNS in various ways and with specific objectives in mind. The most common DNS techniques assigned by Infoblox Threat Intel to threat-related domains include:
-- Domains generated by machine algorithms (RDGA, DDGA, and DGA): 54.7%
+**Table 2. DNS techniques assigned to threat-related domains (Jan 2025 – June 2025)**
+- Domains generated by machines algorithms (RDGA, DDGA and DGA): 54.7%
 - Domains used to redirect traffic: 11%
 - CNAME or alias domains: 5.8%
 - Lookalikes: 5.1%
@@ -116,58 +122,79 @@ Threat actors use DNS in various ways and with specific objectives in mind. The 
 - Domains used for C2 and exfiltration: < 0.4%
 
 ### Traffic Distribution Systems Provide a Dangerous Level of Evasion
-DNS plays a central role in TDS by covertly redirecting users through multiple intermediary layers—often without their knowledge—based on various attributes like geolocation, device type, or security posture.
+DNS plays a central role in TDS by covertly redirecting users through multiple intermediary layers. Malicious adtech delivers the right content to the right victim at the right moment.
+
+![Figure 2: A high-level picture of the three players in malicious adtech; affiliates, operators, and malicious advertisers]
+
+**Table 4. TDS operators and delivered malicious content**
+| DNS Operators | Malware | Scams | Phishing | Hijacked Domain |
+| :--- | :---: | :---: | :---: | :---: |
+| Vacant Viper | X | X | | X |
+| Vane Viper | X | X | X | |
+| Vextrio Viper | X | X | X | X |
+| Hasty Hawk | | | X | X |
+| Sophisticated Chickens | | | X | X |
+| Black TDS | X | | X | |
+| Parrot TDS | X | | | |
+| R0bl0ch0n TDS | | X | | |
 
 ### Domain Hijacking to Steal Trust
-Threat actors hijack existing domains primarily to exploit the credibility and trust associated with legitimate domains. 
+Threat actors hijack existing domains primarily to exploit the credibility and trust associated with legitimate domains.
 - **Sitting Ducks Attacks:** In 2024, Infoblox estimated that more than 1 million domains are vulnerable to this attack.
-- **Dangling CNAMES:** In early 2025, threat actors exploited redirection configurations on high-reputation domains such as cdc[.]gov and several U.S.-based universities.
+- **Dangling CNAMES:** In early 2025, threat actors exploited redirection configurations on high-reputation domains such as `cdc[.]gov` and several U.S.-based universities.
 
 ### Lookalike and Typosquatted Domains Deceive Users
-Lookalike domains are slightly altered domain names registered to deceive users. Infoblox identifies several techniques:
-- **Homographs/Homoglyphs:** Using visually similar characters from different sets.
+Lookalike domains are slightly altered domain names registered to deceive users. Infoblox identified several techniques:
+- **Homographs/Homoglyphs:** Visually similar characters from different sets.
 - **Typosquats:** Sneaky typing errors.
-- **Combosquats:** Combining brand names with keywords like "mail" or "support."
-- **Soundsquats:** Domain names that sound similar when spoken aloud.
+- **Combosquats:** Combining brand names with keywords (e.g., "mail", "security").
+- **Soundsquats:** Domains that sound similar when spoken aloud.
 
-### DNS Tunneling
-While Infoblox observed over 480 unique DNS tunneling domains in some months, an average of more than 100 unique domains related to DNS tunneling were discovered per month between June 2024 and June 2025. Tools include Cobalt Strike, Dnscat2, Sliver, and Iodine.
+### DNS Tunneling Used by Threat Actors, Pentesters and Legitimate Security Tools
+DNS tunneling encodes data within DNS queries and responses. An average of more than 100 unique domains related to DNS tunneling were discovered per month between June 2024 and June 2025. Prevalent tools include Cobalt Strike, Dnscat2, DNS Exfiltrator, Sliver, Weasel, Pupy, and Iodine.
 
 ## Section 4: Challenges for Defenders
 
-### Adversarial AI Bypasses Existing Security Controls
-Generative AI (GenAI)—particularly large language models (LLMs)—is driving a transformation in cybersecurity. Adversaries use it to enhance social engineering and detection evasion.
+![Infographic showing 88% of AI-generated malware evades detection]
 
-**Case Study: Reckless Rabbit**
-Reckless Rabbit recently shifted focus to Japanese-speaking users, promoting fake investment schemes through AI-generated news articles. These sites feature deepfake videos of public figures, like Elon Musk and Masayoshi Son, along with fabricated positive reviews to boost credibility.
+### Adversarial AI Bypasses Existing Security Controls
+Generative AI is lowering the barrier to creating deceptive content.
+- **Deepfake Scams:** Criminals are using voice cloning and deepfake videos to commit fraud at scale.
+- **Case Study:** Reckless Rabbit uses deepfake videos of public figures like Elon Musk and Masayoshi Son to promote fake investment schemes to Japanese-speaking victims.
+- **AI-Powered Chatbots:** Actors use chatbots to automate and scale personalized, long-term social engineering scams.
 
 ### Protecting Brand and Organizational Reputation
-Monitoring domains requires tracking not only one’s own domains but also thousands of potential lookalikes. Infoblox detected 28,331 lookalike domains in May 2025.
+- Infoblox detected 28,331 lookalike domains in May 2025.
+- 87 percent of discovered high-risk domains are registered with entities sanctioned by OFAC, making takedowns difficult.
 
-### Compliance Pressures
-Network and security teams face increasing pressure from evolving best practices and new mandates, such as EU NIS2 and NIST SP 800-81 Rev. 3, which require broader oversight—including DNS infrastructure.
+### Compliance Pressures and DNS Challenges
+Frameworks like EU NIS2 and NIST SP 800-81 Rev. 3 require broader oversight of DNS infrastructure. Challenges include operational complexity, fragmented tooling, limited resources, and budget constraints.
 
 ## Next Steps
-For Threat Researchers:
-- Learn more at [https://www.infoblox.com/threat-intel/](https://www.infoblox.com/threat-intel/)
-- GitHub: [https://github.com/infobloxopen/threat-intelligence/](https://github.com/infobloxopen/threat-intelligence/)
-
-For Security Teams:
-- Request a DNS Security Workshop at [https://info.infoblox.com/sec-ensecurityworkshop-20240901-registration.html](https://info.infoblox.com/sec-ensecurityworkshop-20240901-registration.html)
+- **For Threat Researchers:** Visit [Infoblox Threat Intel](https://www.infoblox.com/threat-intel/), follow on Mastodon at `infobloxthreatintel@infosec.exchange`, or access indicators on [GitHub](https://github.com/infobloxopen/threat-intelligence/).
+- **For Security Teams:** Request a [DNS Security Workshop](https://info.infoblox.com/sec-ensecurityworkshop-20240901-registration.html) or learn more about [Infoblox Threat Defense](https://www.infoblox.com/products/threat-defense/).
 
 ## Terminology Used
 - **Adtech:** Advertising technology.
-- **C2:** Command and Control.
-- **CDN:** Content Delivery Network.
+- **BYOD:** Bring your own device.
+- **C2:** Command and control.
+- **CDN:** Content delivery network.
 - **CNAME:** Canonical Name record.
-- **DGA:** Domain Generation Algorithm.
+- **DDGA:** Dictionary domain generation algorithm.
+- **DDI:** DNS, DHCP, and IP address management.
+- **DGA:** Domain generation algorithm.
 - **DNS:** Domain Name System.
 - **GDPR:** General Data Protection Regulation.
-- **LLM:** Large Language Model.
+- **HIPAA:** Health Insurance Portability and Accountability Act.
+- **LLM:** Large language model.
 - **MFA:** Multi-factor authentication.
+- **MX Abuse:** Misuse of mail exchange records.
 - **NIST:** National Institute of Standards and Technology.
-- **NOD:** Newly Observed Domains.
+- **NOD:** Newly observed domains.
+- **OFAC:** Office of Foreign Assets Control.
 - **OSINT:** Open-source intelligence.
+- **PCI DSS:** Payment Card Industry Data Security Standard.
 - **PhaaS:** Phishing-as-a-service.
-- **RDGA:** Registered Domain Generation Algorithm.
-- **TDS:** Traffic Distribution System.
+- **RDGA:** Registered domain generation algorithm.
+- **SASE:** Secure Access Service Edge.
+- **TDS:** Traffic distribution system.
