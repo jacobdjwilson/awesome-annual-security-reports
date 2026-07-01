@@ -1,5 +1,9 @@
 # The State of Threat Exposure Management
 
+Organization: Picus
+Report Title: Blue-Report
+Year: 2023
+
 ## Table of Contents
 - [Key Findings](#key-findings)
 - [What Is Threat Exposure Management?](#what-is-threat-exposure-management)
@@ -9,14 +13,12 @@
 - [Performance by Region](#performance-by-region)
 - [Performance by Attack Vector](#performance-by-attack-vector)
 - [Performance by MITRE ATT&CK Tactic](#performance-by-mitre-attck-tactic)
-- [Performance by 2023 Ransomware Group](#performance-by-2023-ransomware-group)
+- [Performance by 2023 Ransomware Group](#performance-by-ransomware-group)
 - [Spotlight on Ransomware Attacks](#spotlight-on-ransomware-attacks)
 - [Spotlight on Vulnerabilities](#spotlight-on-vulnerabilities)
 - [The Need for Threat Exposure Management](#the-need-for-threat-exposure-management)
 - [Picus Security Customers Prevent Twice As Many Attacks](#picus-security-customers-prevent-twice-as-many-attacks)
 - [About Picus](#about-picus)
-
----
 
 ## Key Findings
 
@@ -36,8 +38,6 @@ Unfortunately, attackers only need to find one gap in organizations’ defenses 
 
 What are security teams to do? Threat exposure management, sometimes referred to as continuous threat exposure management (CTEM), is one approach to cybersecurity that organizations can use to overcome these trade-offs. Organizations wanting to implement a CTEM program can look to Picus Security for a complete solution. Picus customers prevent twice as many attacks, within just three months of deployment.
 
----
-
 ## What Is Threat Exposure Management?
 
 Threat exposure management, sometimes referred to as continuous threat exposure management (CTEM), is an approach to cybersecurity in which organizations effectively prioritize potential risks and corresponding remediation efforts, particularly in the face of a rapidly expanding attack surface. To obtain the insights they need, CTEM programs integrate attack surface discovery, vulnerability management and security validation.
@@ -45,8 +45,6 @@ Threat exposure management, sometimes referred to as continuous threat exposure 
 Security validation typically involves the use of breach and attack simulations (BAS) to discover, verify, prioritize and mitigate real-world threats to an organization’s networks and systems. BAS solutions allows organizations to proactively test their security posture and identify vulnerabilities before they are exploited by real attackers.
 
 The success of a CTEM program can be measured by observing a substantial decrease in cyber risk, improved threat prevention and detection, and a shorter mean time to respond (MTTR). In addition, an effective CTEM program will show improved security control performance, better compliance with regulatory standards, and closer alignment with key business priorities.
-
----
 
 ## Methodology
 
@@ -70,8 +68,6 @@ Results are color coded and grouped according to five levels of threat exposure 
 
 ![Threat exposure management scoring legend table]
 
----
-
 ## Overall Performance
 
 This report finds that organizations do not consistently prevent or detect cyber attacks. The reason is likely less about the quality or capability of the security controls they have in place, but more about how effectively these organizations are utilizing these tools.
@@ -85,8 +81,6 @@ Security organizations fared even worse when it came to detecting successful att
 - **Only 16% of attacks triggered alerts**
 
 Based on our experience running breach and attack simulations, many organizations will be surprised by these results due to a false sense of security. They do not realize the degree to which their existing controls are insufficient for detecting attacks, especially sophisticated ones. To overcome these gaps, organizations may benefit from changing their perspective and taking an “assume breach” approach to cybersecurity.
-
----
 
 ## Performance by Industry
 
@@ -112,8 +106,6 @@ Organizations also appear to be making another trade-off between logging and ale
 
 To address this gap, organizations need to enhance their alert mechanisms. Options for doing so could include: improving automated alerting systems, incorporating more sophisticated threat detection algorithms, or even retraining staff for more effective manual responses. The objective should be to ensure that every logged attack generates an appropriate alert and subsequent action, minimizing the opportunities that cybercriminals have to exploit unnoticed vulnerabilities.
 
----
-
 ## Performance by Region
 
 ### Prevention Effectiveness
@@ -134,8 +126,6 @@ When it comes to attack detection, North America again ranks at the top, with hi
 
 Regardless of the region, alert scores are much lower than logging scores. The alert scores for all regions fall on the lower end of the scale, ranging from 13% to 37%. This suggests that detection security controls, such as SIEM systems, are not optimized to generate alerts for a significant number of attacks. This might be due to an overwhelming number of false positives, improper tuning of the alerting mechanisms, or an inability to effectively correlate and prioritize security events.
 
----
-
 ## Performance by Attack Vector
 
 Organizations’ ability to prevent attacks varies depending on the type of cyber attack being used. For example, organizations demonstrate a high level of preparedness for malware download attacks.
@@ -147,8 +137,6 @@ When it comes to attack scenarios – complex, multi-stage attacks – our findi
 Web application attacks are another type of attack that security teams should pay attention to since an overwhelming majority of modern businesses use web platforms as a core part of their business. Unfortunately, organizations’ prevention effectiveness against web application attacks stands at a moderate 55%, which could expose them to significant risk, especially given the rise of such attacks in recent years.
 
 Overall, these figures suggest that organizations’ cybersecurity postures, while robust against some types of threats, have significant gaps.
-
----
 
 ## Performance by MITRE ATT&CK Tactic
 
@@ -162,9 +150,7 @@ Organizations inability to defend themselves against the impact and command and 
 
 Overall, organizations’ performance against attacker tactics as defined in the MITRE ATT&CK framework differs by tactic. This finding is similar to the varying performance we found organizations have when it comes to preventing different attack vectors. As they invest in one area, they appear to be trading-off investing in others, creating gaps in their security.
 
----
-
-## Performance by 2023 Ransomware Group
+## Performance by Ransomware Group
 
 In 2023, ransomware groups are using a diverse range of TTPs. Given this report’s earlier finding that organizations’ ability to prevent attacks varies depending on the type of attack being used, it is no surprise then that organizations’ ability to defend against different ransomware groups also varies.
 
@@ -178,8 +164,6 @@ Organizations also struggle to prevent attacks (21%) against the Lazarus Group, 
 
 Other groups whose attacks organizations are least successful at preventing include MuddyWater (associated with Iran), APT41 (China-backed and known for both cyber-espionage and cybercrime operations), BlueNoroff (part of the Lazarus Group, focused on financial gain), the Russian-aligned Gamaredon group, the financially motivated TA505 group, Silence and Sandworm (a group linked to the Russian government and known for its destructive attacks against Ukrainian infrastructure).
 
----
-
 ## Spotlight on Ransomware Attacks
 
 Ransomware poses an increasingly prevalent and severe threat to organizations across industries, and around the world. The disruptive impact, adaptability, and constant evolution of ransomware makes it a significant challenge for organizations to protect themselves. Even well-equipped organizations are not impervious, underlining the need for all organizations to take a proactive defensive posture.
@@ -192,8 +176,6 @@ Other ransomware like the notorious NetWalker, Maze, and Darkside varieties, are
 
 Organizations should continuously improve their cyber resilience in the face of these highly adaptable and destructive threats. It's equally crucial for them to stay up to date in the face of the evolving ransomware landscape.
 
----
-
 ## Spotlight on Vulnerabilities
 
 Software vulnerabilities, often referred to as common vulnerabilities and exposures (CVEs), are frequently targeted by attackers. And for good reason. For example, we identified the ten least prevented vulnerability exploits as part of the analysis of attack simulations done for this report. Organizations are only able to prevent them 11-16% of the time. Moreover, organizations are clearly not very effective at prioritizing vulnerability patching. Many of these vulnerabilities are either high severity or remain exposed despite having been known for years.
@@ -203,8 +185,6 @@ Several of the vulnerabilities in this list have drawn substantial media attenti
 The presence of CVE-2019-9947 and CVE-2019-14234, both now 4 years old, highlights the fact that vulnerabilities can pose long-term security risks. Timely identification and remediation of vulnerabilities is essential, even in older systems.
 
 Another finding is that these vulnerabilities affect a broad array of systems – from web browsers to operating systems. Organizations’ vulnerability management programs should span their entire IT ecosystem, but they are clearly having to make trade-offs about what to protect. With that in mind, organizations may need to go beyond vulnerability management to reduce their threat exposure.
-
----
 
 ## The Need for Threat Exposure Management
 
@@ -220,15 +200,11 @@ By proactively validating their security controls, organizations continually imp
 
 As a result, they should also observe a substantial decrease in cyber risk, improved threat detection abilities, and a shorter mean time to respond (MTTR).
 
----
-
 ## Picus Security Customers Prevent Twice As Many Attacks
 
 Picus Security provides a CTEM solution, powered by our pioneering breach and attack simulations, to help organizations of all sizes to continuously validate and enhance their cyber resilience. Security teams can evaluate the effectiveness of their security controls, discover at-risk assets and identify high-risk attack paths that attackers could use to access critical systems and users.
 
 On average, our customers prevent twice as many attacks, within just three months (see chart above). With Picus, security leaders can quickly mature their security posture and move beyond basic vulnerability management. Instead of spending their days making impossible trade-offs that may leave gaps in their defenses, they can consistently and successfully defend against sophisticated multi-pronged attacks.
-
----
 
 ## About Picus
 
@@ -238,4 +214,4 @@ Our Complete Security Validation Platform simulates real-world threats to automa
 
 As the pioneer of Breach and Attack Simulation, our people and technology empower customers worldwide to be threat-centric and proactive.
 
-For more information, visit [www.picussecurity.com](http://www.picussecurity.com)
+For more information, visit www.picussecurity.com
