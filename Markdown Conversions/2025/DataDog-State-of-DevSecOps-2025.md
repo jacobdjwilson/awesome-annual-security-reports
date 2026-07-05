@@ -10,7 +10,6 @@
 - [Fact 7: In AWS, infrastructure-as-code usage is high, but many teams still use ClickOps as well](#fact-7)
 - [Key learnings from the 2025 State of DevSecOps study](#key-learnings)
 - [Methodology](#methodology)
-- [Licensing](#licensing)
 
 The practice of DevSecOps emphasizes the need to identify and respond to security risks at each point in the software development life cycle (SDLC), and has increasingly become the standard in the tech industry. In order to assess the types of risks defenders need to be aware of and what practices they can adopt to improve their security posture, we analyzed tens of thousands of applications and container images within thousands of cloud environments.
 
@@ -71,71 +70,41 @@ In recent years, engineering teams have moved toward adopting minimal container 
 
 This “less is more” approach has benefits for security as well. By analyzing thousands of container images, we found that on average, an image of less than 100 MB has three severe—i.e., with a high or critical CVSS score—vulnerabilities (median 0), while a container image of greater than 500 MB has on average 20 such vulnerabilities (median 7).
 
+> “A smaller image means less to patch—and less to exploit. The more components you include, the larger the attack surface becomes. A distroless approach strips away all unnecessary packages and utilities, leaving only exactly what is needed for intended use; this minimizes vulnerabilities and ensures that attackers have far fewer footholds to work with.”
+> — Amber Bennoui, Principal Product Manager, Product Security, Chainguard
+
 <a id="fact-7"></a>
 ## FACT 7: In AWS, infrastructure-as-code usage is high, but many teams still use ClickOps as well
 
 Infrastructure as code (IaC) has become the dominant practice in cloud environments because it tends to lead to better operational outcomes, such as improved version control and traceability. In addition, IaC is a key component of security best practices, as it helps enforce peer review and makes infrastructure easier to scan for misconfigurations.
 
-IaC adoption continues to grow more widespread. In AWS, 59 percent of organizations are using Terraform, and 57 percent use CloudFormation (slightly up from 2024). In all, 80 percent of organizations use at least one IaC tool. At the same time, we also identified that at least 38 percent of organizations perform ClickOps deployments in production.
+IaC adoption continues to grow more widespread. In AWS, 59 percent of organizations are using Terraform, and 57 percent use CloudFormation (slightly up from 2024). In all, 80 percent of organizations use at least one IaC tool.
+
+At the same time, we also identified that at least 38 percent of organizations perform ClickOps deployments in production—i.e., having engineers manually log in to their AWS accounts to provision infrastructure through the AWS Console.
 
 <a id="key-learnings"></a>
 ## Key learnings from the 2025 State of DevSecOps study
 
 In this section, we outline several best practices that organizations should implement based on these findings, including to:
+
 - Prioritize vulnerabilities with runtime context
 - Deploy guardrails within your software supply chain
 - Deploy frequently to stay current on patches
 - Adopt minimal container images
 - Expand IaC usage and rein in ClickOps
 
-### Prioritize vulnerabilities with runtime context
-Most security teams have a finite set of resources they can leverage to remediate security vulnerabilities. By mapping environmental information about your cloud assets to the vulnerabilities associated with each resource, you can use runtime context to effectively prioritize the vulnerabilities that are the most likely to get exploited. Key characteristics to consider include:
-- Public accessibility
-- Environment
-- Active attack status
-- Highly privileged identity
-- Known exploit proof of concept
-
-### Deploy guardrails within your software supply chain
-Mitigating supply chain risk requires a multi-pronged approach. You can take actions to prevent or detect the execution of malicious packages within your trusted environments, and you can also protect software repositories to harden your ecosystem against attacks.
-
-### Secure your pipeline by eliminating long-lived credentials
-Leaks of long-lived cloud credentials are one of the most common causes for cloud breaches. It’s critical to use short-lived cloud credentials through OpenID Connect (OIDC) or a similar protocol to authenticate both workloads and human users to cloud resources.
-
-### Deploy frequently to stay current on patches
-Services that are deployed more frequently contain fewer out-of-date dependencies. Simply executing CI tasks that update dependencies, build, and test your software on a regular cadence can significantly improve the security of your services without much manual effort.
-
-### Adopt minimal container images
-When building applications, it’s important to attempt to build small, minimal container images: They are faster to deploy, remove complexity, and drastically reduce the number of OS-level vulnerabilities.
-
-### Expand IaC usage and rein in ClickOps
-The first step toward implementing Zero Touch (or “low-touch”) production environments is to automate the deployment process, typically using IaC technologies. Once automation is in place, operators typically need only minimal permissions to the production environment.
+[Detailed guidance on using Datadog products for these practices is provided in the full report.]
 
 <a id="methodology"></a>
 ## Methodology
 
-### Fact 1
-We analyzed vulnerabilities in third-party libraries of applications across various languages and runtimes. We sourced known exploited vulnerabilities from the CISA KEV catalog, extracted on April 9, 2025.
+- **Fact 1**: Analyzed vulnerabilities in third-party libraries across various languages using Datadog Code Security’s Software Composition Analysis. Sourced known exploited vulnerabilities from the CISA KEV catalog (extracted April 9, 2025).
+- **Fact 2**: Relied on Datadog’s security research team and tools like GuardDog to identify malicious packages.
+- **Fact 3**: Queried AWS CloudTrail logs for `AssumeRoleWithWebIdentity` (OIDC) and `IAMUser` access keys associated with GitHub Actions.
+- **Fact 4**: Analyzed vulnerabilities with critical CVSSv3 base scores, applying environmental context (production status, public exposure, EPSS scores, and exploit availability) to compute adjusted scores.
+- **Fact 5**: Calculated median days behind the latest major version for dependencies active in March 2025.
+- **Fact 6**: Analyzed container images scanned through Datadog Cloud Security’s Vulnerability Management feature.
+- **Fact 7**: Analyzed AWS CloudTrail logs for IaC usage (via user agent) and manual ClickOps events (e.g., `RunInstances`, `CreateDBInstance`) performed via the AWS Console.
 
-### Fact 2
-We relied on the research and efforts of Datadog’s security research team using tools like GuardDog to identify and classify malicious packages.
-
-### Fact 3
-To identify organizations that use GitHub Actions with OIDC or IAM users, we queried AWS CloudTrail logs for specific event names and identity providers.
-
-### Fact 4
-We analyzed vulnerabilities in third-party libraries and computed adjusted CVSSv3 metrics based on runtime context (production environment, public exposure, EPSS scores, and exploit availability).
-
-### Fact 5
-We collected data on libraries active in March 2025, calculating the number of days since the latest update to the current major version.
-
-### Fact 6
-We analyzed data from containers scanned through Datadog Cloud Security’s Vulnerability Management feature, reviewing identified OS-level vulnerabilities.
-
-### Fact 7
-We analyzed AWS CloudTrail Logs to determine IaC technology usage based on HTTP user agents and identified manual ClickOps deployments.
-
-<a id="licensing"></a>
-## Licensing
-Report: CC BY-ND 4.0
-Images: CC BY-ND 4.0
+---
+*Report: CC BY-ND 4.0 | Images: CC BY-ND 4.0 | datadog.com*
