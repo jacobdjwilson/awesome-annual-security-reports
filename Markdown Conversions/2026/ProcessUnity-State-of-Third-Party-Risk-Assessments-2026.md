@@ -1,7 +1,7 @@
 # State of Third-Party Risk Assessments 2026
 
 ## Table of Contents
-- [Part 1: Introduction](#part-1-introduction-to-the-data--the-maturity-gap)
+- [Part 1: Introduction](#part-1-introduction)
 - [Part 2: The Ten Findings That Will Reshape Your Approach to Third-Party Risk Assessments](#part-2-the-ten-findings-that-will-reshape-your-approach-to-third-party-risk-assessments)
   - [Key Finding 1 – Beliefs on TPRM Effectiveness](#key-finding-1--beliefs-on-tprm-effectiveness)
   - [Key Finding 2 – Third-Party Breaches Per Month](#key-finding-2--third-party-breaches-per-month)
@@ -26,16 +26,15 @@ Organizations across many industries increasingly believe their Third-Party Risk
 That gap has a measurable cost. Organizations are experiencing frequent third-party breaches, prolonged assessment cycles, slow vendor responses, incomplete remediation, and persistent blind spots across their third-party ecosystems. In fact, organizations report experiencing an average of 12 third-party breaches per year, signaling that third-party risk is not an edge case, but a recurring operational reality. These outcomes highlight a critical truth: having processes in place is not the same as operating a mature, scalable, and effective TPRM program.
 
 ### Purpose of this Study
-The ProcessUnity State of Third-Party Risk Assessments 2026, based on research conducted by the Ponemon Institute, examines how organizations assess and manage third-party risk and evaluates whether current Third-Party Risk Management (TPRM) assessment programs keep pace with the realities of modern third-party ecosystems.
+The ProcessUnity State of Third-Party Risk Assessments 2026, based on research conducted by the Ponemon Institute, examines how organizations assess and manage third-party risk and evaluates whether current Third-Party Risk Management (TPRM) assessment programs keep pace with the realities of modern third-party ecosystems. We studied how third-party risk assessment programs are executed in practice, how long they take, how consistently they scale across vendor portfolios, how confident organizations are in them, and whether they meaningfully reduce the likelihood and impact of third party-driven incidents.
 
 ### About the Research & Global Data Set
-The Ponemon Institute surveyed 1,465 third-party risk practitioners, managers, and leaders. Respondents represented organizations across North America, EMEA, and APAC, spanning industries including Financial Services, Technology & Software, Public Sector, Manufacturing, and Healthcare.
+The Ponemon Institute surveyed 1,465 third-party risk practitioners, managers, and leaders, including IT, security, risk, and compliance professionals. Respondents represented organizations across North America, EMEA, and APAC, spanning industries including Financial Services, Technology & Software, Public Sector, Manufacturing, and Healthcare.
 
 ### The TPRM Maturity Gap
-Based on survey responses, nearly half of organizations believe their Third-Party Risk Management programs are mature. However, the data shows that 53% of companies believe they have effective assessments, yet only 49% measure the effectiveness of those assessments.
+Based on survey responses, nearly half of organizations believe their Third-Party Risk Management programs are mature. However, organizations report experiencing an average of 12 third-party breaches per year, and assessments routinely take four months or longer to complete.
 
-### Focusing On Activities vs. Outcomes
-The distinction matters because process maturity focuses on activities, while program maturity focuses on outcomes. 63% of organizations claim a single assessment takes more than 40 hours for their team to complete over multiple months, yet outcomes do not improve.
+**KEY STAT:** 53% of Companies Surveyed Believe They Have Effective Third-Party Assessments. However, ONLY 49% of Companies Surveyed Measure the Effectiveness of Their Third-Party Assessments.
 
 ---
 
@@ -43,60 +42,56 @@ The distinction matters because process maturity focuses on activities, while pr
 
 ### Key Finding 1 – Beliefs on TPRM Effectiveness
 ![Chart showing confidence in TPRM effectiveness vs. actual breach outcomes]
-66% of large organizations believe their third-party assessments are effective at reducing breach risk, compared to only 40% of small organizations. This confidence gap highlights a core maturity disconnect, as belief in effectiveness does not consistently align with assessment speed, coverage, remediation, or breach outcomes.
+
+Two-thirds of large organizations believe their third-party risk assessments are effective at reducing third-party breach risk, compared to just 40% of small organizations. This confidence gap highlights a core maturity disconnect, as belief in effectiveness does not consistently align with assessment speed, coverage, remediation, or breach outcomes.
 
 ### Key Finding 2 – Third-Party Breaches Per Month
-![Chart showing frequency of third-party breaches]
 Organizations report experiencing an average of 12 third-party breaches or security incidents in the last year. 90% of organizations globally experienced at least one third-party breach in the past 12 months.
 
 ### Key Finding 3 – Breaches & Financial Services
-![Chart showing breach frequency in Financial Services]
 Nearly all Financial Services organizations report experiencing at least one third-party breach in the past year, despite heavy pressure to meet regulatory standards. 58% of Financial Services organizations report third-party risk assessments take longer than four months.
 
 ### Key Finding 4 – Assessment Timelines
-![Chart showing assessment duration]
-64% of large organizations and 55% of small organizations report assessment timelines exceeding four months. 40% of organizations report having an active assessment backlog.
+64% of large organizations and 55% of small organizations report assessment timelines exceeding four months. 40% of organizations report having an active assessment backlog, with 64% citing vendor non-responsiveness as a primary contributor.
 
 ### Key Finding 5 – Assessment Resourcing
-![Chart showing hours spent per assessment]
-63% of assessments require more than 40 hours of team effort, including 28% that require more than 160 hours to complete.
+63% of assessments require more than 40 hours of team effort, including 28% that require more than 160 hours to complete. This heavy manual effort signals that many programs rely on individual contributors rather than scalable systems.
 
 ### Key Finding 6 – Assessment Tooling
-![Chart showing tools used for assessments]
-Two-thirds of organizations still utilize spreadsheets in the assessment process. Only 58% of companies surveyed utilize a dedicated TPRM platform.
+64% of organizations report using spreadsheets, and 67% report using homegrown tools. Only 58% of organizations report using a dedicated Third-Party Risk Management platform.
 
 ### Key Finding 7 – Vendor Response Timelines
-![Chart showing vendor response times]
-60% of organizations wait four months or longer for vendor responses to assessments. 27% of third-parties never respond to an assessment.
+60% of organizations wait four months or longer for vendor responses to assessments. 27% of vendors do not respond at all to assessment requests.
 
 ### Key Finding 8 – Vendor Ecosystem & Assessments
-![Chart showing percentage of population assessed]
-Organizations assess only 36% of their total third-party population on average. Only 15% of organizations report assessing 76–100% of vendors.
+On average, organizations assess roughly one-third (36%) of their total third-party population. Only 15% of organizations report assessing 76–100% of vendors.
 
 ### Key Finding 9 – Onboarding & Remediation
-![Chart showing remediation completion rates]
-Only 16% of organizations complete 90–100% of remediation before onboarding. 66% of companies surveyed do not complete remediation before onboarding due to resource constraints.
+Only 16% of organizations complete 90–100% of remediation activities before onboarding. 66% of companies surveyed do not complete remediation before onboarding due to resource constraints.
 
 ### Key Finding 10 – Assessing Fourth-Party Risk
-![Chart showing fourth-party risk assessment practices]
-Fewer than one-third of organizations assess fourth-party risk as part of their TPRM program. 58% do not assess fourth-party risk at all.
+Fewer than one-third of organizations assess fourth-party (subcontractor) risk as part of their TPRM program. 58% do not assess fourth-party risk at all.
 
 ---
 
 ## Part 3: Additional Survey Insights
-Beyond the headline findings, the survey revealed that responsibility for third-party risk assessments is distributed across multiple functions, often without clear ownership. Only 37% of organizations report having a dedicated budget for third-party risk assessments.
+Beyond the headline findings, the survey revealed that responsibility for third-party risk assessments is distributed across multiple functions (InfoSec 30%, IT 22%, TPRM team 20%), often without clear ownership. Furthermore, only 37% of organizations report having a dedicated budget for third-party risk assessments.
 
 ---
 
 ## Part 4: Implications for Third Party Risk Leaders
-Closing the TPRM maturity gap requires a shift in how organizations define success. True program maturity depends on the ability to move faster without sacrificing rigor, scale assessments intelligently, reduce reliance on manual effort, and evaluate effectiveness through measurable outcomes.
+Closing the TPRM maturity gap requires a shift in how organizations define success. True program maturity depends on the ability to:
+- Move faster without sacrificing rigor.
+- Scale assessments intelligently across the vendor population.
+- Reduce reliance on manual effort.
+- Evaluate effectiveness through measurable outcomes rather than process completion.
 
 ---
 
 ## APPENDIX: Survey Data
-- Appendix 1 – Company Location
-- Appendix 2 – Company Size
-- Appendix 3 – Industry
+- **Appendix 1 – Company Location**: Data regarding regional distribution of respondents.
+- **Appendix 2 – Company Size**: Data regarding organizational scale (Large: >10,000 employees; Small: ≤10,000 employees).
+- **Appendix 3 – Industry**: Data regarding industry-specific risk profiles.
 
 © ProcessUnity 2026
 
