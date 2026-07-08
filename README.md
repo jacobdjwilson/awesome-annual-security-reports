@@ -6,7 +6,7 @@
 
 **Disclaimer:** The reports in this collection are limited to content which does not require a paid subscription, membership, or service contract. There are a variety of different business models and drivers that would cause information to be put behind a paywall, I would like to respect those companies and individuals. Consult the original authors for licensing of any report content.
 
-**Limitations:** This is **not** a repository for project-specific documents such as white papers, intelligence reports, technical specifications, or standards. While all user-submitted uploads or report requests are welcome, we should draw a box around this _awesome_ list. 
+**Limitations:** This repository focuses strictly on recurring annual data. It does not include project-specific documents, one-off technical specifications, or standards. We do include annual, segment-specific industry white papers and security industry funding reports. While all user-submitted uploads or report requests are welcome, we should draw a box around this _awesome_ list. 
 
 **Accessibility:** When possible, all reports will be sourced from their original authors and uploaded to [Virus Total](https://virustotal.com/) via GitHub action to provide an added level of confidence. The resulting analysis link will be included in the PDF commit notes. Additionally, all PDF reports will be converted to Markdown using AI, based on the [AI Prompts](/.github/ai-prompts) defined in this repository.
 
