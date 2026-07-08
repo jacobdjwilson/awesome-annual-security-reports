@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Parse issue form fields directly from the issue body using the GitHub
       # API via gh CLI. This avoids the fragile stefanbuck/github-issue-parser
@@ -230,7 +230,7 @@ jobs:
 
       - name: Create ingestion PR
         id: create_pr
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "📥 Ingest: ${{ steps.parse.outputs.organization_name }} — ${{ steps.parse.outputs.report_title }} (${{ steps.parse.outputs.report_year }})"

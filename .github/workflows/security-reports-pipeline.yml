@@ -83,7 +83,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -445,7 +445,7 @@ jobs:
 
       - name: Upload file lists
         if: steps.consolidate-outputs.outputs.has_files == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: file-lists
           path: |
@@ -517,15 +517,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
       - name: Download file list
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: file-lists
 
@@ -567,7 +567,7 @@ jobs:
 
       - name: Upload scan results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: scan-results
           path: scan_results.json
@@ -648,15 +648,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
       - name: Download file list
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: file-lists
 
@@ -710,13 +710,13 @@ jobs:
           fi
 
       - name: Upload conversions
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: conversion-results
           path: conversions.json
 
       - name: Upload markdown files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: markdown-conversions
           path: "Markdown Conversions/"
@@ -791,20 +791,20 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
       - name: Download conversions
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: conversion-results
 
       - name: Download markdown files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: markdown-conversions
           path: "Markdown Conversions/"
@@ -911,7 +911,7 @@ jobs:
 
       - name: Upload analysis artifacts
         if: steps.verify.outputs.has_successful == 'true' && always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: analysis-results
           path: |
@@ -1068,25 +1068,25 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
       - name: Download analysis
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: analysis-results
 
       - name: Download scan results
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: scan-results
 
       - name: Download markdown files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: markdown-conversions
           path: "Markdown Conversions/"
@@ -1193,7 +1193,7 @@ jobs:
       - name: Create Pull Request
         id: create_pr
         if: steps.readme_update.outputs.readme_updated == 'true'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "${{ steps.generate_pr.outputs.pr_title }}"
@@ -1208,7 +1208,7 @@ jobs:
 
       - name: Upload README update log
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: readme-update-log
           path: skip_log.json
