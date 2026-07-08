@@ -7,8 +7,13 @@
 - [Dark Web and Infostealer Dynamics](#dark-web-and-infostealer-dynamics)
 - [PDI Security Capabilities](#pdi-security-capabilities)
 
+---
+
 ## Executive Summary
-PDI analyzed more than 4 trillion security events to understand how cyberattacks are evolving. The following report outlines the key trends shaping today’s threat landscape and their implications for your environment.
+
+PDI analyzed more than 4 trillion security events to understand how cyberattacks are evolving. Here are the key trends shaping today’s threat landscape—and what they mean for your environment. For deeper analysis, mitigation guidance, and prevention strategies, watch the full analyst briefing.
+
+[View the PDI Threat Intelligence Webinar](URL)
 
 | Metric | Trend |
 | :--- | :--- |
@@ -17,12 +22,10 @@ PDI analyzed more than 4 trillion security events to understand how cyberattacks
 | **Speed & Extortion** | Heavily targeted, accelerating attacks |
 
 **Why It Matters:**
-- More Downtime
-- Fraud Exposure
-- Compliance Pressure
-- Revenue Impact
-
-For deeper analysis, mitigation guidance, and prevention strategies, [watch the full analyst briefing](https://www.pditechnologies.com).
+- **More Downtime:** Operational disruption.
+- **Fraud Exposure:** Financial and data risk.
+- **Compliance Pressure:** Regulatory challenges.
+- **Revenue Impact:** Direct business loss.
 
 ---
 
@@ -39,7 +42,7 @@ There has been a 210% increase in firewall exploit attempts.
 - Managed firewall services backed by a 24/7 SOC.
 - Continuous edge visibility across distributed environments.
 
-[View PDI Analyst Overview](#)
+[View PDI Analyst Overview](URL)
 
 ---
 
@@ -55,14 +58,14 @@ Ransomware surged 61% in Q4 due to expanding access paths, including:
 - Credential Stuffing
 
 **Why It Matters:**
-- Faster attacks reduce the time to respond.
-- Layered extortion amplifies operational impact.
+- **Faster attacks:** Reduce the time to respond.
+- **Layered extortion:** Amplifies operational impact.
 
 **How PDI Can Help:**
 - 24/7 SOC detection and rapid containment.
 - Intelligence-driven monitoring across retail environments.
 
-[View PDI Analyst Overview](#)
+[View PDI Analyst Overview](URL)
 
 ---
 
@@ -80,21 +83,22 @@ Ransomware surged 61% in Q4 due to expanding access paths, including:
 - Continuous monitoring for credential exposure.
 - Risk prioritization tied to real-world exploitation trends.
 
-[View PDI Analyst Overview](#)
+[View PDI Analyst Overview](URL)
 
 ---
 
 ## PDI Security Capabilities
 
-PDI delivers:
-- ✓ Retail-first security expertise
-- ✓ SOC-backed detection and response
-- ✓ Visibility across networks and edge systems
-- ✓ Support for compliance and operational resilience
+Analysis based on threat intelligence collected between January 1 and December 31, 2025, from PDI-monitored environments and additional global sources.
 
-[Learn How PDI Can Help](https://www.pditechnologies.com)
+**PDI delivers:**
+- Retail-first security expertise
+- SOC-backed detection and response
+- Visibility across networks and edge systems
+- Support for compliance and operational resilience
+
+[Learn How PDI Can Help](URL)
 
 ---
-*Analysis based on threat intelligence collected between January 1 and December 31, 2025, from PDI-monitored environments and additional global sources.*
 
 © 2026 PDI Technologies, Inc., All rights reserved.
