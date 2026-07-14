@@ -41,16 +41,18 @@ ESET Director of Threat Prevention Labs
 
 A novel social engineering technique called ClickFix is taking the threat landscape by storm, becoming the second most prevalent attack vector after phishing.
 
+![Fake reCAPTCHA check instructing the victim to paste and execute a malicious command on their device]
+
 While virtually nonexistent a year ago, ESET’s detection for ClickFix, HTML/FakeCaptcha, grew by 517% between H2 2024 and H1 2025. This makes it one of the fastest rising threats, accounting for nearly 8% of all blocked attacks and placing it second in our top 10.
 
 ClickFix is a new type of social engineering that uses a fake error or verification message to manipulate victims into copying and pasting a malicious script and then running it. The list of threats that ClickFix leads to is growing by the day, currently including infostealers, ransomware, remote access trojans, cryptominers, post-exploitation tools, and even custom malware from nation-state-aligned threat actors.
-
-![Fake reCAPTCHA check instructing the victim to paste and execute a malicious command on their device]
 
 #### Expert Comment
 > Looking at ESET telemetry data, ClickFix has quickly become one of the most prominent cybercriminal intrusion vectors. What makes this new social engineering technique effective is that it is simple enough for the victim to follow the instructions, believable enough to look like it might fix a made-up problem, and abuses the probability that victims won’t pay much attention to the exact commands they have been asked to paste and execute on their device. It is also a good example of how threat actors quickly adopt new techniques, once they prove to yield results. With its growing popularity, it is possible that Microsoft and Apple, but also the open-source community, will add some kind of security warning like the one used for macros in Word or Excel, or for files copied from the internet, notifying users that they are about to execute a potentially dangerous script.
 >
 > **Dušan Lacika, ESET Senior Detection Engineer**
+
+![Simplified ClickFix attack flow]
 
 ---
 
@@ -62,6 +64,11 @@ In May 2025, ESET, alongside Microsoft, BitSight, Lumen, Cloudflare, CleanDNS, a
 
 Just a couple of days after Lumma Stealer’s disruption, the notorious infostealer Danabot also got its comeuppance, having been targeted by the FBI and US DoD’s Defense Criminal Investigative Service (DCIS), in conjunction with Operation Endgame coordinated by Europol and Eurojust.
 
+#### Expert Comment
+> We can certainly call the Lumma Stealer disruption a success. The malware suffered a considerable technical blow, taking it out of commission for some time after the operation occurred. While we now see that the threat actors have started rebuilding Lumma Stealer infrastructure using DNS servers located in Russia, the reputation of this cybercriminal endeavor has undoubtedly taken a hit. The ongoing success of Lumma Stealer is very much reliant on the trust of its affiliates. This means that even if Lumma Stealer were to succeed in the rebuilding effort, its user base might just straight up abandon it for another infostealer. In that case, the most likely path for the malware’s operators would be to completely rebrand their service.
+>
+> **Jakub Tomanek, ESET Malware Analyst**
+
 ---
 
 ## SnakeStealer slithers to the top
@@ -69,6 +76,11 @@ Just a couple of days after Lumma Stealer’s disruption, the notorious infostea
 In the wake of Agent Tesla’s creators abandoning their malware, SnakeStealer claims its place as the most-detected infostealer in ESET telemetry data.
 
 SnakeStealer, also known as Snake Keylogger or 404 Keylogger, is .NET malware that first appeared in 2019. Sold via a Telegram group, this infostealer is capable of logging keystrokes, stealing saved credentials, capturing screenshots, and collecting clipboard data.
+
+#### Expert Comment
+> While it is certainly possible that SnakeStealer will replace Agent Tesla as the dominant infostealer, we have to keep in mind that the competition is fierce and there are various other prevalent infostealers offered on the market. One such example is the Pure Logs infostealer, which has also been rising in prominence since Agent Tesla stopped updating. On the other hand, we cannot discount the power of word of mouth, since we have noticed multiple individuals on the dark web recommending SnakeStealer as an alternative to Agent Tesla. By itself, however, there is not much else that makes SnakeStealer stand out in the sea of its competitors.
+>
+> **Jakub Kaloč, ESET Malware Analyst**
 
 ---
 
@@ -78,13 +90,24 @@ Android adware detections jump by 160%, fueled by new evil twin fraud and the ri
 
 A sophisticated new Android threat dubbed Kaleidoscope is flooding devices with intrusive ads through a deceptive evil twin app scheme. Cybercriminals behind this operation create two nearly identical versions of the same app – a harmless one available on official app stores (decoy twin) and a malicious version distributed through third-party app stores (evil twin).
 
+![Tapping the decoy twin app icon launches the Birds on a Wire game (top); tapping the white evil twin icon only brings up the App Info screen (bottom)]
+
 ---
 
 ## The evolution of NFC fraud: From NGate to GhostTap to relay scams
 
 NFC-based fraud soared more than thirty-five-fold, fueled by phishing campaigns and inventive relay techniques.
 
-According to ESET telemetry, NFC-related scams surged more than thirty-five-fold in H1 2025 compared to H2 2024. In the previous reporting period, we typically saw only about one detection each week. By H1 2025, however, detections had grown to dozens per week.
+According to ESET telemetry, NFC-related scams surged more than thirty-five-fold in H1 2025 compared to H2 2024. 
+
+- **NGate**: Relays NFC signals from the victim’s payment card through the compromised phone to attacker-controlled devices.
+- **GhostTap**: Involves cybercriminals secretly using stolen card data stored in digital wallets like Google Pay and Apple Pay.
+- **SuperCard X**: A new threat that exhibits significant code overlap with NGate, delivered via sophisticated social engineering attacks.
+
+#### Expert Comment
+> Each iteration of NFC fraud demonstrates how attackers adapt to new security measures. Even advanced solutions – like multifactor authentication or real-time transaction monitoring – face challenges when criminals physically relay the card data in seconds. Meanwhile, organized smishing campaigns, combined with highly polished malware interfaces, make it even harder for typical users to spot fraud.
+>
+> **Lukáš Štefanko, ESET Senior Malware Researcher**
 
 ---
 
@@ -92,32 +115,43 @@ According to ESET telemetry, NFC-related scams surged more than thirty-five-fold
 
 While the number of ransomware attacks and gangs has been growing, ransomware groups are increasingly fighting each other, impacting several players including the top ransomware as a service – RansomHub.
 
-The most visible clashes are attributed to the DragonForce gang – a very vocal and brazen threat actor. Despite only being a minor player with little trust among affiliates, it was this group that went on a defacement spree in March, taking down the dark web sites of BlackLock, Mamona, and of the number one RaaS at that time – RansomHub.
+In H1 2025, ransomware gangs are increasingly fighting each other. The DragonForce gang went on a defacement spree in March, taking down the dark web sites of BlackLock, Mamona, and the number one RaaS at that time – RansomHub.
+
+#### Expert Comment
+> While Q1 2025 displayed a massive growth in the number of reported attacks, the sudden cessation of RansomHub’s operation put a hard stop to that. When RansomHub emerged in 2024 and swayed LockBit’s and BlackCat’s affiliates, its timing and attractive conditions set it up for quick growth. Now, in contrast, the ransomware landscape is in chaos; this disruption was caused by rivals, not law enforcement. We expect that, over time, a new dominant player will arise, but also that the current infighting won’t stop any time soon.
+>
+> **Jakub Souček, ESET Senior Malware Researcher**
 
 ---
 
 ## Threat telemetry
 
-*   **Overall threat detection**: Decreased by 3% in H1 2025 compared to H2 2024.
-*   **Android detections**: Increased by 62%.
-*   **Cryptocurrency threats**: Decreased by 26%.
-*   **Ransomware**: Increased by 30%.
+*(Note: This section contains statistical data and charts representing the threat landscape as observed by ESET.)*
+
+- **Top 10 malware detections in H1 2025**: Led by HTML/Phishing.Agent (20.5%) and HTML/FakeCaptcha (7.7%).
+- **Android detections**: Android/TrojanDropper.Agent (32.5%) remains the primary threat.
+- **Cryptocurrency threats**: Win/CoinMiner PUA (37.6%) dominates the category.
+- **Downloaders**: MSIL/TrojanDownloader.Agent (10.8%) is the most prevalent.
 
 ---
 
 ## Research publications
 
-*   **ESET Research Podcast: Telekopye, again**: Take a peek into the murky world of cybercrime where groups of scammers who go by the nickname of 'Neanderthals’ wield the Telekopye toolkit to ensnare unsuspecting victims they call 'Mammoths'.
-*   **Under the cloak of UEFI Secure Boot: Introducing CVE-2024-7344**: The story of a signed UEFI application allowing a UEFI Secure Boot bypass.
-*   **PlushDaemon compromises supply chain of Korean VPN service**: ESET researchers have discovered a supply-chain attack.
+- **ESET Research Podcast: Telekopye, again**: Take a peek into the murky world of cybercrime where groups of scammers who go by the nickname of 'Neanderthals’ wield the Telekopye toolkit to ensnare unsuspecting victims they call 'Mammoths'.
+- **Under the cloak of UEFI Secure Boot: Introducing CVE-2024-7344**: The story of a signed UEFI application allowing a UEFI Secure Boot bypass.
+- **PlushDaemon compromises supply chain of Korean VPN service**: ESET researchers have discovered a supply-chain attack.
 
 ---
 
 ## About this report
-This report provides an overview of the threat landscape for the first half of 2025, based on ESET telemetry data and research.
+
+This report provides an overview of the threat landscape for the first half of 2025, based on ESET telemetry and research.
+
+---
 
 ## About ESET
-ESET provides cutting-edge IT security solutions to businesses and consumers worldwide.
+
+ESET is a global leader in cybersecurity, providing advanced threat detection and protection for businesses and consumers worldwide.
 
 ---
 

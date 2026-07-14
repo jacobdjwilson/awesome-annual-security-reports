@@ -1,4 +1,4 @@
-# The Red Report 2026
+# Red-Report 2026
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -20,10 +20,8 @@
 ## Introduction
 The Red Report™ 2026, now in its sixth year, analyzes over 1.1 million malicious files and 15.5 million actions to map global adversary tradecraft to the MITRE ATT&CK® framework. This data-driven approach provides organizations with high-fidelity intelligence to counter the specific techniques used to bypass modern defenses.
 
-The 2026 findings reveal a decisive strategic pivot: 80% of the top ten techniques are now dedicated to evasion and persistence. Adversaries have abandoned "smash-and-grab" tactics for the behavior of a "Digital Parasite." The goal is no longer merely to breach the perimeter, but to inhabit the host, feed on its identity, and weaponize its infrastructure while remaining undetected. Static defenses are no longer sufficient against these adaptive threats.
-
 ## Data Set Overview: Key Figures
-![Data Set Overview Infographic]
+![Infographic showing key statistics of the 2026 dataset]
 
 ## Top 10 MITRE ATT&CK Techniques
 1. **T1055** Process Injection
@@ -38,62 +36,53 @@ The 2026 findings reveal a decisive strategic pivot: 80% of the top ten techniqu
 10. **T1486** Data Encrypted for Impact
 
 ## Executive Summary
-Picus Labs analyzed over 1.1 million malicious files and mapped more than 15.5 million adversarial actions throughout 2025. The findings confirm a critical evolution: the adversary has fundamentally shifted their business model from immediate disruption to long-lived access.
+The 2026 findings reveal a decisive strategic pivot: 80% of the top ten techniques are now dedicated to evasion and persistence. Adversaries have abandoned "smash-and-grab" tactics for the behavior of a "Digital Parasite." The goal is no longer merely to breach the perimeter, but to inhabit the host, feed on its identity, and weaponize its infrastructure while remaining undetected.
 
 ## Key Findings
-- **Silence Over Noise**: We observed a 38% decline in Data Encrypted for Impact (T1486), replaced by a surge in techniques for invisibility.
-- **Identity as the Failure Point**: 1 in 4 attacks involves an adversary attempting to silently extract saved passwords.
-- **Self-Aware Malware**: Virtualization/Sandbox Evasion (T1497) surged to #4 as malware uses trigonometry to detect analysis environments.
+- **Static Defenses Are Being Outpaced**: Automated detections and sandbox pipelines are increasingly contested. Virtualization and Sandbox Evasion (T1497) rose to Rank #4.
+- **Identity Is the Failure Point**: With Credentials from Password Stores (T1555) and Command and Scripting Interpreter (T1059) in the Top 10, attackers are weaponizing identity systems.
+- **The New Risk Profile**: We observed a 38% decline in Data Encrypted for Impact (T1486), replaced by a massive surge in techniques designed for invisibility and espionage.
 
 ## Adopters in Threat Groups & Malware
 | ATT&CK Technique | APT Group | Malware |
 | :--- | :--- | :--- |
-| T1055 Process Injection | NoisyBear [9], APT37 [18] | Tinky Winkey [4], Raven Stealer [5] |
-| T1059 Command Interpreter | Mocha Manakin [24], Mustang Panda [26] | DragonForce [22], CABINETRAT [23] |
+| T1055 Process Injection | NoisyBear, APT37 | Tinky Winkey, Raven Stealer |
+| T1059 Command and Scripting Interpreter | Mocha Manakin, Mustang Panda | DragonForce, CABINETRAT |
 
 ## Recommendations for Security Teams
-1. **Adopt "Continuous Validation"**: Regularly simulate the 2026 Top Ten techniques.
-2. **Combat "Living off the Land"**: Enforce strict scripting policies and advanced memory scanning.
-3. **Harden Cloud Identities**: Monitor non-human identities and enforce least privilege for APIs.
-4. **Operationalize Anti-Evasion**: Utilize bare-metal detonation environments.
-5. **Shift to "Anti-Extortion"**: Implement strict egress filtering and canary tokens.
+1. **Adopt "Continuous Validation" Against New TTPs**: Regularly simulate the specific techniques in this report.
+2. **Combat "Living off the Land"**: Enforce strict scripting policies and deploy advanced memory scanning.
+3. **Harden Cloud Identities**: Monitor non-human identities and implement CIEM.
+4. **Operationalize Anti-Evasion**: Move away from software-based sandboxes to hardware-assisted analysis.
 
 ## The Anatomy of the Digital Parasite
-The era of the "smash-and-grab" predator is ending. In its place, a new organism has emerged that does not seek to destroy the host immediately but to inhabit it, feed on it, and turn its own defenses into camouflage.
+The era of the "smash-and-grab" predator is ending. In its place, a new organism has emerged: the Digital Parasite. These entities do not seek to destroy the host immediately but to inhabit it, feed on it, and turn its own defenses into camouflage.
 
 ## The MITRE ATT&CK Framework
-The MITRE ATT&CK framework is a globally accessible knowledge base of adversary tactics and techniques. As of v18.1, it consists of 14 tactics, 216 techniques, and 475 sub-techniques [1].
+The MITRE ATT&CK framework is a globally accessible knowledge base of adversary tactics and techniques derived from real-world observations. It helps organizations in comprehending and mitigating the tactics, techniques, and procedures (TTPs) employed in cyberattacks.
 
 ## Methodology
-Picus Labs analyzed 1,153,683 unique files between January and December 2025. 94.02% were classified as malicious. We mapped 15,544,909 specific malicious actions to the framework to ensure high-fidelity ranking.
+Between January 2025 and December 2025, Picus Labs analyzed a dataset of 1,153,683 unique files, of which 1,084,718 (94.02%) were classified as malicious. Analysts detected 15,544,909 specific malicious actions, averaging approximately 14 actions per malware sample.
 
 ## T1055 Process Injection
-Process injection is a technique employed by threat actors to enhance their ability to remain undetected, persist within a victim's system, and potentially access higher levels of privileges. It remains the #1 technique due to its extensive array of advantages for adversaries.
+Process injection is a technique employed by threat actors to enhance their ability to remain undetected, persist within a victim's system, and potentially access higher levels of privileges. This method involves the insertion of malicious code into a legitimate process, thereby enabling the attacker to run their code in the context of that process.
 
 ## Sub-techniques of Process Injection
-There are 12 sub-techniques under T1055, including:
-- **T1055.001**: Dynamic-link Library Injection
-- **T1055.002**: Portable Executable Injection
-- **T1055.003**: Thread Execution Hijacking
-
-### T1055.001: Dynamic-link Library Injection
-DLL injection allows adversaries to execute malicious commands by injecting their DLL into a legitimate, often trusted, target process. This technique is particularly dangerous as attackers leverage it to bypass security controls.
-
-### T1055.002: Portable Executable Injection
-PE injection involves the injection of a Portable Executable file into the memory space of another process. Attackers must carefully handle potential hurdles like Address Space Layout Randomization (ASLR).
-
-### T1055.003: Thread Execution Hijacking
-This technique involves injecting code into a process that is already running and then redirecting the execution of one of the threads in that process to the injected code.
+There are 12 sub-techniques under the Process Injection technique in ATT&CK v18:
+- T1055.001: Dynamic-link Library Injection
+- T1055.002: Portable Executable Injection
+- T1055.003: Thread Execution Hijacking
+- ... (and others)
 
 ## References
-[^1]: MITRE ATT&CK® Framework, v18.1 Documentation.
-[^2]: RedLine Stealer Analysis, 2025.
-[^3]: NtCreateThreadEx/RtlCreateUserThread API Documentation.
-[^4]: Tinky Winkey Keylogger Report, August 2025.
-[^5]: Raven Stealer Technical Analysis, July 2025.
-[^6]: Shadow Vector Malware Report.
-[^7]: SmashJacker Hijacker Analysis.
-[^8]: ClickFix Malware Campaign Report, November 2025.
+[^1]: MITRE ATT&CK Matrix for Enterprise v18.1.
+[^2]: RedLine Stealer analysis, 2025.
+[^3]: NtCreateThreadEx/RtlCreateUserThread API documentation.
+[^4]: Tinky Winkey keylogger report, August 2025.
+[^5]: Raven Stealer analysis, July 2025.
+[^6]: Shadow Vector malware report.
+[^7]: SmashJacker browser hijacker report.
+[^8]: ClickFix malware analysis, November 2025.
 
 ---
 
