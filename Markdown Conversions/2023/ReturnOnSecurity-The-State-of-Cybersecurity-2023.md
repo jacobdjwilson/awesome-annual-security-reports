@@ -1,5 +1,9 @@
 # 2023 Cybersecurity Market Review: Disruption and Resilience
 
+**Organization:** ReturnOnSecurity  
+**Report Title:** The State of Cybersecurity  
+**Year:** 2023  
+
 [www.returnonsecurity.com/p/2023-cybersecurity-market-review](http://www.returnonsecurity.com/p/2023-cybersecurity-market-review)
 
 ## Table of Contents
@@ -28,11 +32,11 @@ A combination of factors made the year challenging, including the unwinding of p
 
 ## The TL;DR
 
-*   **Overall**: 2023 funding was down in volume and total spending.
-*   **Globally**: Europe took the biggest hit, followed by the US. Despite geopolitical tensions and conflicts, Israel had the smallest impact.
-*   **Product categories**: Spoiler alert: AI went from zero to hero.
-*   **Funding Stages**: Late-stage companies were supported, but bets were still placed on many early-stage companies. Middle / growth-stage companies took the biggest hit.
-*   **M&A**: 2023 saw the biggest acquisition in cybersecurity history.
+*   **Overall:** 2023 funding was down in volume and total spending.
+*   **Globally:** Europe took the biggest hit, followed by the US. Despite geopolitical tensions and conflicts, Israel had the smallest impact.
+*   **Product categories:** Spoiler alert: AI went from zero to hero.
+*   **Funding Stages:** Late-stage companies were supported, but bets were still placed on many early-stage companies. Middle / growth-stage companies took the biggest hit.
+*   **M&A:** 2023 saw the biggest acquisition in cybersecurity history.
 
 It was a complex and volatile year, but despite all those challenges, the cybersecurity industry still had some shine.
 
@@ -40,7 +44,7 @@ Let's dive into the data and see what it can show us.
 
 As a reminder: I collect as much funding data as possible every week through the newsletter, but since deal specifics often change after the fact or things aren’t reported correctly, it’s possible to miss things. If you want to follow along and get insights in real-time, click the button below to subscribe to the newsletter.
 
-[Subscribe to the Newsletter](https://www.returnonsecurity.com)
+[Subscribe to the Newsletter]
 
 ## Analyzing Funding Rounds and M&A Trends
 
@@ -62,7 +66,7 @@ These stats show a sharp reversal from the heights in 2021 and 2022 when there w
 
 Looking across 2023, we can see the drastic effects of increased interest rates and deal scrutiny at the beginning of the year.
 
-![Chart showing 2023 cybersecurity funding downturn]
+![Chart: 2023 brought a big downturn in cybersecurity funding.]
 
 In the second quarter of 2023, people started to feel a bit more positive, and the economy showed some small signs of improvement. This positive vibe continued into the third quarter but dropped again in the fourth quarter. Investors were still hesitant, leading to a less favorable outcome than at the start of 2023.
 
@@ -100,11 +104,15 @@ We saw a big drop in funding for early-stage companies, but the biggest hit was 
 
 Looking at the tech industry overall, most layoffs were also at companies in the “growth stage.” Generally, less money meant workforce reductions.
 
-![Chart showing biggest layoffs in 2023 to cybersecurity companies]
+![Chart: A quick look at the biggest layoffs in 2023 to cybersecurity companies.]
+
+If you want to dig in more, Layoffs.fyi has more details on this data and the broader tech ecosystem to play around with.
 
 Many cybersecurity firms that got Series B or C funding in 2022 or earlier found themselves in a tough spot. The prior decade saw bigger funding rounds, higher company values, and more startups joining the competition. But in 2023, these companies began to struggle, and the usual venture capital idea of growing no matter what began to seem unreasonable.
 
-I had an opportunity to discuss more about job cuts and companies in the growth phase on Enterprise Security Weekly here: [Watch on YouTube](https://www.youtube.com)
+I had an opportunity to discuss more about job cuts and companies in the growth phase on Enterprise Security Weekly here: [Watch on]
+
+When we examined the funding stages, we noticed a big change in the amount of money given from 2022 to 2023. Overall, the total money invested in 2023 was about 12% less than in 2022, but the amounts of individual investments varied much more.
 
 ## Analyzing the Shifts in Cybersecurity Funding Dynamics
 
@@ -116,15 +124,15 @@ When we compare cybersecurity funding in 2023 with 2022, here’s what we see:
 
 I see two themes emerge here:
 
-### 1: Some later-stage companies may have been thrown a lifeline
+**1: Some later-stage companies may have been thrown a lifeline**
 The few companies that received mega checks in 2023 (just 4, compared to 3 in 2022) would have been preparing for an IPO if this were 2021. Since times are tough, these companies are likely using the money to survive the downturn, become more financially and operationally smart, and adjust their values to match the current market. This will prepare them to act when the market for public stock offerings improves.
 
 When we look at funding that isn’t specific to any stage, companies received over $842.0M in 2023, similar to 2022’s $860.1M. With the value of public companies dropping, money being scrutinized more closely, and fewer deals in general, getting loans helped many businesses stay in the game. This also shows that some companies that might have gone public in the past are still hanging in there.
 
 > Survive to 2025
-> — The word on the street
+> The word on the street
 
-### 2: Early-stage cybersecurity founders are strong and creative
+**2: Early-stage cybersecurity founders are strong and creative**
 On the flip side, 2023 saw more early and small deals than most people thought would happen, especially after how 2022 ended. These early-stage companies are playing a whole different ball game. Both investors and the people starting these companies are now aiming to create strong, money-making businesses with realistic growth goals - a major shift from the past. I believe this move towards more investment in early-stage companies will keep going into 2024.
 
 When we look closer at the funding data, it's clear that 2023 was still a really good year for founders of new cybersecurity startups.
@@ -147,10 +155,30 @@ People often say that diamonds are created under a lot of pressure, and 2023 was
 
 | Stage | Funding Type |
 | :--- | :--- |
-| Early Stage | Angel, Equity Crowdfunding, Pre-Seed, Seed, Pre-Series A, Series A |
-| Middle / Growth Stage | Series B, Series C, Venture Round, Corporate Round, Preferred Round |
-| Late Stage | Series D, Series E, Series F, Series G, Private Equity Round, Secondary Market, Post-IPO Debt, Post-IPO Equity |
-| Not Stage Specific | Funding Round, Grant, Non-Equity Assistance, Debt Financing, Convertible Note |
+| Early Stage | Angel |
+| Early Stage | Equity Crowdfunding |
+| Early Stage | Pre-Seed |
+| Early Stage | Seed |
+| Early Stage | Pre-Series A |
+| Early Stage | Series A |
+| Middle / Growth Stage | Series B |
+| Middle / Growth Stage | Series C |
+| Middle / Growth Stage | Venture Round |
+| Middle / Growth Stage | Corporate Round |
+| Middle / Growth Stage | Preferred Round |
+| Late Stage | Series D |
+| Late Stage | Series E |
+| Late Stage | Series F |
+| Late Stage | Series G |
+| Late Stage | Private Equity Round |
+| Late Stage | Secondary Market |
+| Late Stage | Post-IPO Debt |
+| Late Stage | Post-IPO Equity |
+| Not Stage Specific | Funding Round |
+| Not Stage Specific | Grant |
+| Not Stage Specific | Non-Equity Assistance |
+| Not Stage Specific | Debt Financing |
+| Not Stage Specific | Convertible Note |
 
 ## Deep Dive into Cybersecurity Product Categories
 
@@ -160,9 +188,9 @@ Buyers tend to make purchases based on categories, a trend driven by the industr
 
 To fully grasp the landscape, we have to dive into the nuance of cybersecurity product categories.
 
-![Chart of product categories with breakout funding dollar growth]
+![Chart: These product categories had a breakout year in funding dollar growth in 2023]
 
-![Chart of product categories by funding transaction volume]
+![Chart: Another view from a funding transaction volume perspective]
 
 In 2023, the AI Security sector saw remarkable growth, with funding increasing by approximately 4,000% to total around $95.2M. This was a significant jump from the single transaction in this category in 2022, which featured 12 such deals.
 
@@ -170,32 +198,37 @@ Additionally, these numbers only partially capture the extensive investment in '
 
 For reference, here is how I define these terms:
 
-- **AI Security**: Software platforms designed to maintain the integrity of AI systems and shield them from misuse.
-- **Security of AI**: Software platforms focused on securing AI applications from cyberattacks, unauthorized access, and manipulation.
-- **AI Privacy Assurance**: Software platforms focused on safeguarding sensitive data and personal information used in AI processes, ensuring the responsible use of AI systems.
+- **AI Security:** Software platforms designed to maintain the integrity of AI systems and shield them from misuse.
+- **Security of AI:** Software platforms focused on securing AI applications from cyberattacks, unauthorized access, and manipulation.
+- **AI Privacy Assurance:** Software platforms focused on safeguarding sensitive data and personal information used in AI processes, ensuring the responsible use of AI systems.
 
 These stats also do not include all the companies that pivoted to AI as their primary business. I anticipate the overall AI trend accelerating in 2024, although it's still small compared to the overall funding for AI technologies.
 
+Spoiler alert:
 > The success of AI hinges on AI Security.
 > — Me
 
 *Quick note: Secure Networking saw significant funding increases, mainly due to large investments in established companies like Akamai, which raised $1.1B in post-IPO debt. Hardware Security also had a strong year, but that’s mostly because it didn’t gain any traction in 2022, and the transaction amounts are still very small.*
 
-On the flip side, these twelve product categories saw the most significant contraction in funding dollars since 2022:
+![Chart: These twelve product categories saw the most significant contraction in funding dollars since 2022]
 
-![Chart of product categories with most significant contraction]
+![Chart: Another view from a funding transaction volume perspective]
 
-![Chart of product categories by funding transaction volume decline]
-
-The companies in the product categories that saw the biggest declines in 2023 are not necessarily in a bad position; just trends have changed year over year.
+The companies in the product categories that saw the biggest declines in 2023 are not necessarily in a bad position; just trends have changed year over year, and a story about this can be read here.
 
 As an example, Cloud Security Posture Management (CSPM) really had its moment in the industry in 2020 and 2021. Since CSPM was announced to the world, there has been a Posture Managementification™ of many subsequent disciplines. Overall, I think this is a good and important thing for the industry - to move to test-driven and trust-driven security tools - but CSPM was version one.
 
-Since that time, many other products have climbed on the shoulders of CSPM and passed them by as standalone products.
+Since that time, many other products have climbed on the shoulders of CSPM and passed them by as standalone products:
+
+![Image: Diagram of product evolution]
 
 In a market that changes slowly or is really new and technical, competition might be okay because you'll have time to create defenses and win customer loyalty. But in a fast-moving field like cybersecurity, the likelihood that you've built strong enough defenses by the time competitors show up is very small.
 
 Looking briefly at the Password Manager category, it's hard to top the big rounds we saw in 2022 and earlier, so naturally, this looks a lot lower in 2023. If you remember, in 2022, 1Password raised $620.0M (after raising $100.0M in 2021), and BitWarden raised $100.0M.
+
+I imagine the investment thesis went something like this:
+
+![Image: Diagram of investment thesis]
 
 ## The Major M&A Movements in 2023
 
@@ -205,25 +238,29 @@ Did we witness The Great Cybersecurity Industry Consolidation™? It seems not t
 
 Various factors influence cybersecurity industry consolidation, and there's unlikely ever to be a single “Big Event" consolidating all security companies, leaving only a few options for customers (which no one would like, anyway).
 
-I see cybersecurity industry consolidation as similar to playing the accordion. To make music, someone has to not only press the correct set of keys and buttons but also expand and contract the whole instrument at the same time to play the right notes. There are always new entrants into the cybersecurity industry because technology is constantly changing, and there are always new threats and adversaries to contend with. Different keys get played, buttons get pressed, and different parts of the accordion expand and contract, but the music of progress is always playing.
+I see cybersecurity industry consolidation as similar to playing the accordion (not that I know how to do that, but I’m using this analogy anyway).
 
-### Notable M&A transactions of 2023:
-- **Cisco acquires Splunk for $28.0B**: This is the largest acquisition in the cybersecurity industry ever, surpassing SailPoint's $6.9B acquisition in 2022. With the meteoric rise of AI companies in 2023, everyone is scrambling to acquire data to build and train their own Large Language Models (LLMs) from, so many see this Cisco acquisition as a pure data play.
-- **Palo Alto spent over $1B to expand**: They acquired Talon Cyber Security for $625.0M - the second remote browser isolation company to be acquired - the year after winning the RSA Innovation Sandbox in 2022 and raising nearly $150.0M. Next up, they purchased Dig Security for $400M. Palo Alto’s CEO, Nikesh Arora, stated that Palo Alto intends to continue their M&A cadence at roughly $1.0B/year.
+To make music, someone has to not only press the correct set of keys and buttons but also expand and contract the whole instrument at the same time to play the right notes. There are always new entrants into the cybersecurity industry because technology is constantly changing, and there are always new threats and adversaries to contend with. Different keys get played, buttons get pressed, and different parts of the accordion expand and contract, but the music of progress is always playing.
 
-If you want to read more about the importance of LLM security and how the new data security risk has changed: [Leveraging Large Language Models (LLMs) in Business: Risk Assessment and the Imperative of Data Security](https://www.returnonsecurity.com/p/leveraging-large-language-models-llms-business-risk-assessment-imperative-data-security)
+**Notable M&A transactions of 2023:**
 
-### Other M&A trends in 2023 include:
-- **Attack Surface Management (ASM)** companies are beginning to exit, amounting to ~$376.0M.
-- **Data Security Posture Management (DSPM)** companies are fast-tracking exits totaling ~$710.0M. This is especially interesting given that the term has only been around for a year.
-- **Managed Security Service Providers (MSSPs)** continued their streak with over 50 acquisitions totaling about $382.0M, a 50% increase from 2022.
-- **Secure Access Service Edge (SASE)** companies were acquired for approximately $1.2B across four deals as traditional firewall providers struggle to keep up with changing market demands. Palo Alto is leading the way.
+- **Cisco acquires Splunk for $28.0B:** This is the largest acquisition in the cybersecurity industry ever, surpassing SailPoint's $6.9B acquisition in 2022. With the meteoric rise of AI companies in 2023, everyone is scrambling to acquire data to build and train their own Large Language Models (LLMs) from, so many see this Cisco acquisition as a pure data play.
+- **Palo Alto spent over $1B to expand:** They acquired Talon Cyber Security for $625.0M - the second remote browser isolation company to be acquired - the year after winning the RSA Innovation Sandbox in 2022 and raising nearly $150.0M. Next up, they purchased Dig Security for $400M. Palo Alto’s CEO, Nikesh Arora, stated that Palo Alto intends to continue their M&A cadence at roughly $1.0B/year.
 
-![Image of Nikesh Arora, CEO of Palo Alto Networks]
+If you want to read more about the importance of LLM security and how the new data security risk has changed: [Leveraging Large Language Models (LLMs) in Business: Risk Assessment and the Imperative of Data Security](http://www.returnonsecurity.com/p/leveraging-large-language-models-llms-business-risk-assessment-imperative-data-security)
+
+**Other M&A trends in 2023 include:**
+- Attack Surface Management (ASM) companies are beginning to exit, amounting to ~$376.0M (I see this shaping out the same way that the CSPM product space. It's a feature, not a standalone platform).
+- Data Security Posture Management (DSPM) companies are fast-tracking exits totaling ~$710.0M. This is especially interesting given that the term has only been around for a year.
+- Managed Security Service Providers (MSSPs) continued their streak with over 50 acquisitions totaling about $382.0M, a 50% increase from 2022.
+- Secure Access Service Edge (SASE) companies were acquired for approximately $1.2B across four deals as traditional firewall providers struggle to keep up with changing market demands. Palo Alto is leading the way.
+
+![Image: Nikesh Arora, CEO of Palo Alto Networks]
 
 ## Final Reflections and Key Takeaways
 
 2023 in cybersecurity was a year of recalibration. A few key points stand out when I reflect on the trends:
+
 - The industry showed adaptability amid economic and geopolitical difficulties, with early-stage companies leading the way.
 - Mergers and acquisitions played a major role, with some deals setting new records.
 - Despite setbacks, the cybersecurity field continues to hold potential for future innovation, and you can see that through the shifts in funding and product categories.
@@ -242,7 +279,7 @@ Let us know if you spot any errors, and we’ll fix them.
 
 ## About Return on Security
 
-Return on Security is all about breaking down the cybersecurity industry for you with expert analysis, hard facts, and real-life stories. The goal? To keep security pros, entrepreneurs, and investors ahead in a fast-moving field. Read more about the “Why” [here](https://www.returnonsecurity.com).
+Return on Security is all about breaking down the cybersecurity industry for you with expert analysis, hard facts, and real-life stories. The goal? To keep security pros, entrepreneurs, and investors ahead in a fast-moving field. Read more about the “Why” here.
 
 Feel free to borrow any data, charts, or advice you find here. Just make sure to give a shoutout to Return on Security when you do.
 
