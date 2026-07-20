@@ -104,7 +104,7 @@ Combining this with the sentiment from some financial analysts that inflation wi
 
 I also think it's worth making predictions about the innovation ahead for 2023. The cybersecurity industry loves creating product categories and new acronyms like Pokemon.
 
-![Product predictions chart]
+![Product categories chart]
 
 With that in mind, here are the top 11 product predictions I believe we will see in 2023 and where investment dollars will be going (or should be going).
 

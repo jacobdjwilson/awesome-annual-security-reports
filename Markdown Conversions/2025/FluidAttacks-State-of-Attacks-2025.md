@@ -26,7 +26,7 @@ Data collection period: Jan 1 - Dec 31, 2024
 
 Before delving into the findings for 2024 as a whole, it is important to note that at Fluid Attacks, we recognize that the fact that a system has few vulnerabilities is not synonymous with a high level of security. The key is to keep the risk exposure to a minimum. In other words, for example, having ten vulnerabilities with a CVSS score of 1.0 in a system does not represent the same degree of risk exposure as having one vulnerability with a score of 10.0. Based on this reasoning, we developed the CVSSF metric, a modification of the CVSS score that allows organizations to prioritize their vulnerability remediation efforts more effectively.
 
-![Illustration of a balance scale comparing ten vulnerabilities of 1.0 CVSS against one of 10.0 CVSS]
+![Illustration of balance scale comparing ten low-risk vulnerabilities to one high-risk vulnerability]
 
 The CVSSF overcomes many of the shortcomings of the CVSS, such as aggregation and comparison, providing clearer visibility of the magnitude of risk exposure. Thus, following the example in the previous paragraph and the CVSSF equation,* as we can see in the illustration, those ten vulnerabilities on the left side of the balance merely reach a CVSSF of 0.2. In contrast, the vulnerability on the right has a huge value of 4,096.0, a comparison of values closer to the reality of risks.
 
@@ -65,7 +65,8 @@ Check out the most impactful results
 ### Assessed systems
 The number of systems we evaluated with Continuous Hacking increased by 27.6% compared to the previous year.* In addition, 57.6% of the systems under assessment with our solution in 2023 continued to be evaluated in 2024, a year in which nearly 55% of the systems were new.
 
-![Chart showing 27.6% growth in Continuous Hacking]
+![Graphic showing 27.6% increase in Continuous Hacking]
+
 *We emphasize that this is a comparison limited to the Continuous Hacking solution. In 2023, there were still a few systems being tested with our One-Shot Hacking solution, no longer offered.
 
 ### Risk exposure
@@ -80,17 +81,14 @@ We constantly improve our tools in terms of their scope and vulnerability detect
 ### Vulnerability remediation
 The mean time to remediate (MTTR) vulnerabilities was about 55 days. This is a reduction of almost 19% compared with the 68 days of the previous year. Furthermore, it should be noted that the MTTR for critical severity vulnerabilities was reduced by a significant 65%.
 
-*   **Time to remediate**: Time elapsed between the reporting of a vulnerability and its remediation.
-*   **Break the build**: Security control for CI/CD pipelines in which our CI Gate interrupts software deployment whenever there are still unaccepted vulnerabilities in the product.
-
 ---
 
 ## General findings
 
-*   **872,612**: Reported vulnerabilities
-*   **824**: Mean number of vulnerabilities by system
-*   **31,295,535**: Reported risk exposure (CVSSF units)
-*   **29,552**: Mean risk exposure by system
+- Reported vulnerabilities: 872,612
+- Mean number of vulnerabilities by system: 824
+- Reported risk exposure (CVSSF units): 31,295,535
+- Mean risk exposure by system: 29,552
 
 ### Risk exposure by severity
 Nearly all of the risk exposure in the systems evaluated, i.e., 91.6%, was due to high- and critical-severity vulnerabilities.
@@ -102,11 +100,7 @@ Nearly all of the risk exposure in the systems evaluated, i.e., 91.6%, was due t
 | Medium | 126,110 | 2,620,324.37 |
 | Low | 701,691 | 20,798.08 |
 
-![Graph showing vulnerabilities and risk exposure by severity]
-
-### Risk exposure by detection method
-*   **28.9%**: Automatic (SAST, SCA, DAST, CSPM*)
-*   **71.1%**: Manual (PTaaS, SCR, RE**)
+![Chart: Vulnerabilities and risk exposure by severity]
 
 ---
 
@@ -123,15 +117,6 @@ Starting in the second half of 2024, we decided to discontinue the weakness cate
 | 100. Server-side request forgery (SSRF) | 304 | 7,053 | 1,724,486.6 | 244.5 |
 | 359. Sensitive information in source code - Credentials | 331 | 13,415 | 893,774.0 | 66.6 |
 
-### Top 10 weaknesses by number of systems
-The weakness we detected in more than half of the systems evaluated is "Unverifiable files."
-
-| Weakness | Systems | Persistence | MTS | MdTS |
-| :--- | :--- | :--- | :--- | :--- |
-| 117. Unverifiable files | 540 | 183,708 | 0.6 | 0.6 |
-| 431. Supply chain attack - Lock files | 473 | 18,041 | 0.6 | 0.6 |
-| 052. Insecure encryption algorithm | 430 | 6,270 | 2.0 | 0.6 |
-
 ---
 
 ## Vulnerability remediation
@@ -139,22 +124,15 @@ The weakness we detected in more than half of the systems evaluated is "Unverifi
 Less than half of the identified vulnerabilities were remediated. Systems that broke the build had a remediation rate of 62.4% by the end of the year, significantly higher than those that did not, which had a rate of 31.5%.
 
 ### Time to remediate
-*   **28 days**: Breaking the build
-*   **56 days**: Not breaking the build
-
-| Severity | MTTR | MdTTR | Remediated vulnerabilities |
-| :--- | :--- | :--- | :--- |
-| Low | 59 | 36 | 268,710 |
-| Medium | 43 | 24 | 61,886 |
-| High | 49 | 51 | 19,506 |
-| Critical | 43 | 28 | 7,907 |
+- Breaking the build: 28 median days
+- Not breaking the build: 56 median days
 
 ---
 
 ## Vulnerability remediation support
 
-At Fluid Attacks, we offer different support channels for vulnerability remediation: **Autofix**, **Custom Fix**, and **Talk to a Pentester**.
+At Fluid Attacks, we offer different support channels for vulnerability remediation. The main ones are Autofix, Custom Fix, and Talk to a Pentester.
 
-*   **34.7%**: Systems using Talk to a Pentester
+- 34.7% of systems used "Talk to a Pentester."
 
-Numerous organizations with software under assessment within Continuous Hacking's Advanced plan resorted to the Talk to a Pentester channel. We invite you to take full advantage of this and the other support channels we offer, which can undoubtedly help you improve your remediation rates and times, thereby benefiting your organization's security posture.
+We invite you to take full advantage of this and the other support channels we offer, which can undoubtedly help you improve your remediation rates and times, thereby benefiting your organization's security posture.

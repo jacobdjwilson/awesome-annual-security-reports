@@ -17,10 +17,8 @@
 ---
 
 **Organization:** BigID  
-**Report Title:** AI-Risk-and-Readiness-in-the-Enterprise  
-**Year:** 2025
-
-**AI Risk & Readiness in the Enterprise**
+**Report Title:** AI Risk & Readiness in the Enterprise  
+**Year:** 2025  
 
 **Risk Outpaces Governance**  
 AI is accelerating innovation across the enterprise—but risk is accelerating faster.
@@ -29,13 +27,11 @@ This report, based on a survey of 233 security, compliance, and data leaders, un
 
 ## AI Risk is Outpacing Governance: Organizations Struggle to Keep Up
 
-- **93.2%** of organizations lack full confidence in securing AI-driven data, leaving them exposed to security blind spots and compliance failures.
-- **69.5%** of organizations cite AI-powered data leaks as their top security concern in 2025, yet **47.2%** have no AI-specific security controls in place.
-- Over **80.2%** of organizations are unprepared for AI regulatory compliance, risking fines and reputational damage.
-- **39.9%** admit they lack the tools to protect AI-accessible data, creating a dangerous gap between AI adoption and security controls.
-- Only **6.4%** of organizations have an advanced AI security strategy, signaling widespread unpreparedness for AI-driven threats.
-
-![Connect the Dots Across Data & AI: Security • Compliance • Privacy • AI Data Management]
+*   **93.2%** of organizations lack full confidence in securing AI-driven data, leaving them exposed to security blind spots and compliance failures.
+*   **69.5%** of organizations cite AI-powered data leaks as their top security concern in 2025, yet 47.2% have no AI-specific security controls in place.
+*   **80.2%** of organizations are unprepared for AI regulatory compliance, risking fines and reputational damage.
+*   **39.9%** admit they lack the tools to protect AI-accessible data, creating a dangerous gap between AI adoption and security controls.
+*   Only **6.4%** of organizations have an advanced AI security strategy, signaling widespread unpreparedness for AI-driven threats.
 
 ## AI Risk Awareness vs. Reality
 
@@ -43,20 +39,16 @@ Understanding AI risk is the foundation of AI governance. But without visibility
 
 **Survey Question:** How well does your organization understand the risks associated with AI models and sensitive data exposure?
 
-| Response | % |
-| :--- | :--- |
-| Early-stage risk assessment | 39.5% |
-| Aware but not actively managing it | 24.0% |
-| AI-specific security strategies in place | 24.5% |
-| Full visibility and control | 6.4% |
-| No visibility at all | 5.6% |
+![Chart showing risk assessment stages: Early-stage risk assessment 39.5%, Aware but not actively managing 24.0%, AI-specific security strategies 24.5%, Full visibility 6.4%, No visibility 5.6%]
 
-- **Key Insight:** More than two-thirds of organizations admit they are early-stage or not actively managing AI risk—yet AI adoption is already in motion.
-- **Takeaway:** AI transparency is critical for risk management. Enterprises must move beyond awareness to implementation—starting with visibility into how AI interacts with data. Organizations should implement AI risk monitoring solutions and data discovery tools that provide real-time visibility into AI interactions with sensitive data.
-- **Next Steps:**
-  - Deploy AI risk discovery tools that identify model-data interaction.
-  - Establish ownership for AI governance across security, privacy, and compliance.
-  - Create an inventory of models, their data sources, and risk exposure.
+**Key Insight:** More than two-thirds of organizations admit they are early-stage or not actively managing AI risk—yet AI adoption is already in motion.
+
+**Takeaway:** AI transparency is critical for risk management. Enterprises must move beyond awareness to implementation—starting with visibility into how AI interacts with data. Organizations should implement AI risk monitoring solutions and data discovery tools that provide real-time visibility into AI interactions with sensitive data.
+
+**Next Steps:**
+- Deploy AI risk discovery tools that identify model-data interaction
+- Establish ownership for AI governance across security, privacy, and compliance
+- Create an inventory of models, their data sources, and risk exposure
 
 ## AI-Powered Data Leaks & Shadow AI: The Top Threats of 2025
 
@@ -64,21 +56,21 @@ Understanding AI risk is the foundation of AI governance. But without visibility
 
 **Survey Question:** Which of the following AI risks is your organization most concerned about in 2025? (Select all that apply)
 
-| Risk Area | % of Orgs |
-| :--- | :--- |
-| AI-powered data leaks | 69.5% |
-| Unstructured data exposure | 58.4% |
-| Shadow AI / Dark AI | 48.5% |
-| Compliance with AI regulations | 52.8% |
-| Model access risk | 40.3% |
+*   **AI-powered data leaks:** 69.5%
+*   **Unstructured data exposure:** 58.4%
+*   **Compliance with AI regulations:** 52.8%
+*   **Shadow AI / Dark AI:** 48.5%
+*   **Model access risk:** 40.3%
 
-- **Key Insight:** Data leaks remain the most feared threat—especially through AI’s interaction with unstructured data and the rise of unauthorized models. Organizations must act with urgency, implementing AI-specific data classification policies and access controls to prevent exposure and detect rogue model activity.
-- **Takeaway:** Shadow AI isn’t a hypothetical—it’s already inside many environments. Lack of control over AI tools leads to uncontrolled risk.
-- **Next Steps:**
-  - Enforce model registration and monitoring.
-  - Use DSPM and classification to label AI-accessible data.
-  - Flag unusual or rogue model behavior.
-  - Take action to remediate risk: flag and tag data that’s safe for AI use; establish least privileged permissions for models accessing sensitive data; and minimize sensitive and regulated data to shadow AI exposure.
+**Key Insight:** Data leaks remain the most feared threat—especially through AI’s interaction with unstructured data and the rise of unauthorized models. Organizations must act with urgency, implementing AI-specific data classification policies and access controls to prevent exposure and detect rogue model activity.
+
+**Takeaway:** Shadow AI isn’t a hypothetical—it’s already inside many environments. Lack of control over AI tools leads to uncontrolled risk.
+
+**Next Steps:**
+- Enforce model registration and monitoring
+- Use DSPM and classification to label AI-accessible data
+- Flag unusual or rogue model behavior
+- Take action to remediate risk: flag and tag data that’s safe for AI use; establish least privileged permissions for models accessing sensitive data; and minimize sensitive and regulated data to shadow AI exposure.
 
 *BigID helps organizations uncover Shadow AI and monitor model-data interactions.*
 
@@ -88,19 +80,19 @@ Understanding AI risk is the foundation of AI governance. But without visibility
 
 **Survey Question:** What AI controls does your organization currently have in place?
 
-| Control Type | % Adoption |
-| :--- | :--- |
-| None (still evaluating) | 47.2% |
-| AI risk monitoring & response | 35.2% |
-| Access control for AI models | 30.0% |
-| AI-specific classification | 21.0% |
+*   **None (still evaluating):** 47.2%
+*   **AI risk monitoring & response:** 35.2%
+*   **Access control for AI models:** 30.0%
+*   **AI-specific classification:** 21.0%
 
-- **Key Insight:** Nearly half of organizations lack any formal AI controls—despite rising fears around data exposure and model misuse. Secure AI usage begins with governance. Build visibility across all model endpoints, enforce access rules, and monitor pipelines for shadow AI behavior.
-- **Enterprise Takeaway:** You can’t secure what you don’t control. Model-level access and pipeline visibility must become first-class citizens in security programs.
-- **Next Steps:**
-  - Build pipelines with classification and remediation hooks.
-  - Enable access control and audit logs.
-  - Prioritize policy enforcement tailored to AI-specific risks.
+**Key Insight:** Nearly half of organizations lack any formal AI controls—despite rising fears around data exposure and model misuse. Secure AI usage begins with governance. Build visibility across all model endpoints, enforce access rules, and monitor pipelines for shadow AI behavior.
+
+**Enterprise Takeaway:** You can’t secure what you don’t control. Model-level access and pipeline visibility must become first-class citizens in security programs.
+
+**Next Steps:**
+- Build pipelines with classification and remediation hooks
+- Enable access control and audit logs
+- Prioritize policy enforcement tailored to AI-specific risks
 
 *BigID provides native remediation and classification embedded into AI workflows, automating policy enforcement at scale.*
 
@@ -110,18 +102,18 @@ Understanding AI risk is the foundation of AI governance. But without visibility
 
 **Survey Question:** How prepared is your organization to comply with emerging AI data regulations?
 
-| Response | % |
-| :--- | :--- |
-| In progress, but unclear | 54.9% |
-| Not prepared at all | 25.3% |
-| Ready with governance frameworks | 15.9% |
+*   **In progress, but unclear:** 54.9%
+*   **Not prepared at all:** 25.3%
+*   **Ready with governance frameworks:** 15.9%
 
-- **Key Insight:** 80% of organizations admit they are not ready or unclear on how to comply with emerging regulations. Organizations must prioritize AI compliance with structured, forward-looking frameworks that align to evolving global standards like the EU AI Act.
-- **Takeaway:** AI compliance readiness isn’t about checking boxes—it’s about proving AI systems are transparent, ethical, and accountable.
-- **Next Steps:**
-  - Align AI governance with frameworks like the EU AI Act and NIST AI RMF.
-  - Define data usage, retention, and purpose limitations for AI.
-  - Enable auditability and documentation at every model decision point.
+**Key Insight:** 80% of organizations admit they are not ready or unclear on how to comply with emerging regulations. Organizations must prioritize AI compliance with structured, forward-looking frameworks that align to evolving global standards like the EU AI Act.
+
+**Takeaway:** AI compliance readiness isn’t about checking boxes—it’s about proving AI systems are transparent, ethical, and accountable.
+
+**Next Steps:**
+- Align AI governance with frameworks like the EU AI Act and NIST AI RMF
+- Define data usage, retention, and purpose limitations for AI
+- Enable auditability and documentation at every model decision point
 
 *BigID supports compliance by automating assessments, reporting, and enforcing AI-specific data policies aligned to evolving regulations.*
 
@@ -131,18 +123,18 @@ Understanding AI risk is the foundation of AI governance. But without visibility
 
 **Survey Question:** How confident are you that your AI models aren’t using unauthorized or sensitive data?
 
-| Response | % |
-| :--- | :--- |
-| Somewhat confident – gaps exist | 55.8% |
-| Not confident – no oversight | 31.8% |
-| Very confident – strict controls | 12.4% |
+*   **Somewhat confident – gaps exist:** 55.8%
+*   **Not confident – no oversight:** 31.8%
+*   **Very confident – strict controls:** 12.4%
 
-- **Key Insight:** Trust is low. More than half of respondents suspect their models may be mishandling sensitive or unauthorized data. AI TRiSM isn’t optional—it’s foundational. Establish model governance, map dependencies, enforce guardrails, and build auditability across every stage of the AI lifecycle.
-- **Takeaway:** You can’t build trust on top of uncertainty. AI TRiSM must be baked into every layer—from training to deployment.
-- **Next Steps:**
-  - Map model dependencies to training data and data sources.
-  - Monitor and document model outputs and risks.
-  - Integrate privacy and risk assessments into AI DevOps pipelines.
+**Key Insight:** Trust is low. More than half of respondents suspect their models may be mishandling sensitive or unauthorized data. AI TRiSM isn’t optional—it’s foundational. Establish model governance, map dependencies, enforce guardrails, and build auditability across every stage of the AI lifecycle.
+
+**Takeaway:** You can’t build trust on top of uncertainty. AI TRiSM must be baked into every layer—from training to deployment.
+
+**Next Steps:**
+- Map model dependencies to training data and data sources
+- Monitor and document model outputs and risks
+- Integrate privacy and risk assessments into AI DevOps pipelines
 
 *BigID enables AI TRiSM with policy automation, audit trails, and full AI data lineage visibility across the AI lifecycle.*
 
@@ -157,11 +149,12 @@ Understanding AI risk is the foundation of AI governance. But without visibility
 | Retail & Consumer Goods | No visibility into AI model interactions with PII | 48% |
 | Technology & SaaS | No formal AI risk strategy despite rapid adoption | 42% |
 
-- **Enterprise Takeaway:** A one-size-fits-all approach won’t cut it. AI governance must reflect your data types, threat landscape, and compliance pressure. Verticalized AI challenges require verticalized solutions.
-- **Next Steps:**
-  - Build vertical-specific AI governance playbooks.
-  - Integrate data discovery with regulatory risk scoring (e.g., HIPAA, GLBA, PCI-DSS).
-  - Monitor AI models for purpose drift and compliance violations.
+**Enterprise Takeaway:** A one-size-fits-all approach won’t cut it. AI governance must reflect your data types, threat landscape, and compliance pressure. Verticalized AI challenges require verticalized solutions.
+
+**Next Steps:**
+- Build vertical-specific AI governance playbooks
+- Integrate data discovery with regulatory risk scoring (e.g., HIPAA, GLBA, PCI-DSS)
+- Monitor AI models for purpose drift and compliance violations
 
 *BigID’s verticalized governance templates help financial, healthcare, and tech organizations meet regulatory requirements while operationalizing AI trust.*
 
@@ -169,19 +162,18 @@ Understanding AI risk is the foundation of AI governance. But without visibility
 
 **Survey Question:** Who in your organization is responsible for AI security, compliance, and governance?
 
-| Owner | % |
-| :--- | :--- |
-| IT Security / CISO | 54.1% |
-| Data Governance Team | 29.2% |
-| Risk & Compliance Team | 29.2% |
-| Data Privacy Team | 25.8% |
-| No clear ownership | 21.9% |
+*   **IT Security / CISO:** 54.1%
+*   **Data Governance Team:** 29.2%
+*   **Risk & Compliance Team:** 29.2%
+*   **Data Privacy Team:** 25.8%
+*   **No clear ownership:** 21.9%
 
-- **What It Means:** Responsibility is fragmented—and in 1 in 5 orgs, undefined. Without a clear owner, AI governance programs will stall or fail.
-- **Next Steps:**
-  - Assign dedicated AI governance leaders or committees.
-  - Connect governance with DevOps, DataOps, and SecurityOps.
-  - Use a unified platform to give every stakeholder shared visibility.
+**What It Means:** Responsibility is fragmented—and in 1 in 5 orgs, undefined. Without a clear owner, AI governance programs will stall or fail.
+
+**Next Steps:**
+- Assign dedicated AI governance leaders or committees
+- Connect governance with DevOps, DataOps, and SecurityOps
+- Use a unified platform to give every stakeholder shared visibility
 
 *BigID bridges teams with shared policy controls and centralized AI, privacy, security, and governance dashboards.*
 
@@ -189,42 +181,34 @@ Understanding AI risk is the foundation of AI governance. But without visibility
 
 **Survey Question:** What’s your biggest AI-related priority in 2025?
 
-| Priority | % |
-| :--- | :--- |
-| Compliance & governance | 36.1% |
-| Visibility into AI risk | 30.0% |
-| Preventing AI-driven data leaks | 15.0% |
-| Implementing security controls | 14.2% |
+*   **Compliance & governance:** 36.1%
+*   **Visibility into AI risk:** 30.0%
+*   **Preventing AI-driven data leaks:** 15.0%
+*   **Implementing security controls:** 14.2%
 
-- **What It Means:** The focus is still on visibility and governance—but operational controls are lagging. Too few organizations are focused on prevention and enforcement. AI risk strategy must move from awareness to enforcement—with tooling, telemetry, and trust frameworks.
-- **Next Steps:**
-  - Shift strategy from governance-on-paper to governance-in-practice.
-  - Integrate real-time monitoring and automatic remediation.
-  - Align tooling with stated priorities to close execution gaps.
+**What It Means:** The focus is still on visibility and governance—but operational controls are lagging. Too few organizations are focused on prevention and enforcement. Security priorities aren’t matching security exposures. AI risk strategy must move from awareness to enforcement—with tooling, telemetry, and trust frameworks.
+
+**Next Steps:**
+- Shift strategy from governance-on-paper to governance-in-practice
+- Integrate real-time monitoring and automatic remediation
+- Align tooling with stated priorities to close execution gaps
 
 ## Final Recommendations: Building AI Security That Scales
 
 To close the readiness gap and reduce AI exposure:
-- Deploy AI risk monitoring and shadow AI detection.
-- Build secure pipelines from training data to model output.
-- Implement AI-aware classification, remediation, and policy enforcement.
-- Embed AI TRiSM throughout development and deployment.
-- Align governance with global regulations and internal accountability.
+- Deploy AI risk monitoring and shadow AI detection
+- Build secure pipelines from training data to model output
+- Implement AI-aware classification, remediation, and policy enforcement
+- Embed AI TRiSM throughout development and deployment
+- Align governance with global regulations and internal accountability
 
-**ACTION TODAY PREVENTS EXPOSURE TOMORROW.**
+*ACTION TODAY PREVENTS EXPOSURE TOMORROW.*
 
-*With BigID, enterprises can govern AI with precision—building trust, reducing risk, and preparing for what’s next.*
+With BigID, enterprises can govern AI with precision—building trust, reducing risk, and preparing for what’s next.
 
 ## Survey Demographics: Who Was Surveyed?
 
 This report is based on responses from 233 security, compliance, and data professionals across multiple industries, geographies, and company sizes.
-
-**Geographical Distribution:**
-- North America: 41.2%
-- Europe: 25.3%
-- Asia-Pacific: 18%
-- Middle East & Africa: 8.2%
-- Latin America: 7.3%
 
 **Industries Represented:**
 - Technology & SaaS: 34.3%
@@ -234,6 +218,13 @@ This report is based on responses from 233 security, compliance, and data profes
 - Retail & Consumer Goods: 4.7%
 - Manufacturing / Energy: 4.3%
 - Other Industries: 21.9%
+
+**Geographical Distribution:**
+- North America: 41.2%
+- Europe: 25.3%
+- Asia-Pacific: 18%
+- Middle East & Africa: 8.2%
+- Latin America: 7.3%
 
 **Company Size:**
 - Small to Mid-Sized Enterprises (<1,000 employees): 54.1%
