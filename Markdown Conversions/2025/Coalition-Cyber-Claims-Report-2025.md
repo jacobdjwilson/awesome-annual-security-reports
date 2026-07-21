@@ -1,8 +1,4 @@
-# 2025 Cyber Claims Report
-
-**Organization:** Coalition  
-**Year:** 2025  
-**Website:** [coalitioninc.com](https://coalitioninc.com)
+# 2025 CYBER CLAIMS REPORT
 
 ## Table of Contents
 - [Executive Summary](#executive-summary)
@@ -46,35 +42,31 @@ This report features statistics, charts, and risk insights based on data from Co
 
 ## Key Findings
 
-| Category | Highlight |
+| Category | Metric |
 | :--- | :--- |
-| **Global Highlights** | -7% Decrease in claims frequency; $115K Average loss amount |
-| **Business Email Compromise** | 60% Claims due to BEC and FTF; $35K Average loss amount; 29% BEC events that resulted in FTF |
-| **Funds Transfer Fraud** | +23% Increase in claims severity; $185K Average initial loss amount; $31M Total recoveries via “clawback” |
-| **Ransomware** | -46% Decrease in claims severity; $292K Average loss amount; 60% Ransom reduction via negotiation |
+| **Global Highlights** | -7% Decrease in claims frequency; $115K Average loss amount; 60% Claims due to BEC and FTF |
+| **Business Email Compromise** | +23% Increase in claims severity; $35K Average loss amount; 29% BEC events that resulted in FTF |
+| **Funds Transfer Fraud** | -46% Decrease in claims severity; $185K Average initial loss amount; $31M Total recoveries via “clawback” |
+| **Ransomware** | -7% Decrease in claims severity; $292K Average loss amount; 60% Ransom reduction via negotiation |
 | **The Power of Active Insurance** | 73% Fewer claims than industry average; 56% Reported matters handled at no added cost to policyholders; 32K+ Security issues resolved by policyholders |
 
 ---
 
 ## Global Highlights
 
-### Claims frequency decreased as email-based attacks persisted
-As cyber threats continue to evolve, businesses that take a proactive approach to managing and mitigating risk are experiencing the greatest successes. In fact, 56% of all matters reported to Coalition were handled without any out-of-pocket payments by the policyholder.
+![Global Claims Frequency chart showing 2022-2024 trends]
+![Global Claims Severity chart showing 2022-2024 trends]
 
-Global claims frequency decreased 7% YoY in 2024 to 1.48% with a notable dip in the latter half of the year (Figure 1.1). Claims frequency in the US was higher (1.54%) than the global average in 2024. Frequency in Canada was notably lower (1.13%), as was frequency in the UK (1.09%).
+Claims frequency decreased 7% YoY in 2024 to 1.48% with a notable dip in the latter half of the year. Global claims severity remained stable YoY in 2024 with an average loss amount of $115,000.
 
-Global claims severity remained stable YoY in 2024 with an average loss amount of $115,000 (Figure 1.2). Claims severity in the US was lower ($108,000) than the global average in 2024. Severity in Canada was nearly double the global average ($226,000), while the UK was significantly lower ($35,000). Across all regions, severity continued to be driven by ransomware.
+**Frequency & Severity Explained**
+- **Claims frequency** refers to how often insurance claims are filed over a period of time.
+- **Claims severity** refers to the average cost per insurance claim.
 
-![Global Claims Frequency chart showing a decrease from 1.57% in 2022 to 1.48% in 2024]
-![Global Claims Severity chart showing fluctuations between $84k and $123k]
+**56%** of matters reported to Coalition were handled without any out-of-pocket payments by the policyholder.
 
-### Claims by Event Type (Figure 1.3)
-- **FTF:** 29.8%
-- **BEC:** 29.7%
-- **Ransomware:** 21.1%
-- **Misc. First-Party Loss:** 11.8%
-- **Other:** 6.2%
-- **Third-Party Allegations:** 1.4%
+### Claims by Event Type
+![Chart showing claims by event type: 29.8% FTF, 29.7% BEC, 21.1% Ransomware, 11.8% Misc. First-Party Loss, 6.2% Other, 1.4% Third-Party Allegations]
 
 ---
 
@@ -82,16 +74,16 @@ Global claims severity remained stable YoY in 2024 with an average loss amount o
 
 Industries that handle sensitive financial data, personal health information, or intellectual property are often targeted by cyber criminals due to the high value of their data.
 
-- **Consumer Discretionary:** 1.33% frequency; $118,000 severity.
-- **Consumer Staples:** 2.60% frequency; $124,000 severity.
-- **Energy:** 1.35% frequency; $292,000 severity.
-- **Financial Services:** 1.47% frequency; $95,000 severity.
-- **Healthcare:** 1.38% frequency; $145,000 severity.
-- **Industrials:** 1.64% frequency; $105,000 severity.
-- **Information Technology:** 1.36% frequency; $131,000 severity.
-- **Materials:** 2.20% frequency; $99,000 severity.
-- **Nonprofit:** 1.34% frequency; $73,000 severity.
-- **Real Estate:** 1.02% frequency; $179,000 severity.
+- **Consumer Discretionary**: 1.33% frequency; $118,000 severity.
+- **Consumer Staples**: 2.60% frequency; $124,000 severity.
+- **Energy**: 1.35% frequency; $292,000 severity.
+- **Financial Services**: 1.47% frequency; $95,000 severity.
+- **Healthcare**: 1.38% frequency; $145,000 severity.
+- **Industrials**: 1.64% frequency; $105,000 severity.
+- **Information Technology**: 1.36% frequency; $131,000 severity.
+- **Materials**: 2.20% frequency; $99,000 severity.
+- **Nonprofit**: 1.34% frequency; $73,000 severity.
+- **Real Estate**: 1.02% frequency; $179,000 severity.
 
 ![Claims Frequency by Industry chart]
 ![Claims Severity by Industry chart]
@@ -100,82 +92,78 @@ Industries that handle sensitive financial data, personal health information, or
 
 ## Claims by Revenue Amount
 
-- **<$25M:** 1.07% frequency; $79,000 severity. Represented 64% of total claims.
-- **$25M-$100M:** 3.99% frequency; $139,000 severity. Represented 20% of total claims.
-- **$100M+:** 5.97% frequency; $228,000 severity.
+Small and midsize businesses (SMBs) often face devastating financial consequences from cyber attacks due to limited resources and in-house security expertise.
+
+- **Less than $25M**: 1.07% frequency; $79,000 severity.
+- **$25M-$100M**: 3.99% frequency; $139,000 severity.
+- **$100M+**: 5.97% frequency; $228,000 severity.
 
 ---
 
 ## Business Email Compromise
 
-Business email compromise (BEC) is an event in which cyber criminals gain access to an organization’s email account to execute a cyber attack.
-
-- **Frequency:** Remained stable at 0.44%.
-- **Severity:** Increased 23% YoY to $35,000.
+Business email compromise (BEC) is an event in which cyber criminals gain access to an organization’s email account to execute a cyber attack. BEC claims frequency remained stable in 2024 at 0.44%. BEC claims severity increased 23% YoY to an average loss of $35,000.
 
 ---
 
 ## Funds Transfer Fraud
 
-The typical funds transfer fraud (FTF) is an event in which cyber criminals manipulate businesses into unknowingly sending money to fraudulent accounts.
+FTF events often occur through social engineering tactics or as a direct result of a BEC event. FTF claims frequency decreased 2% YoY in 2024 to 0.44%. FTF initial claims severity decreased 46% YoY in 2024 to an average loss of $185,000.
 
-- **Frequency:** Decreased 2% YoY to 0.44%.
-- **Severity:** Decreased 46% YoY to $185,000.
-- **Clawbacks:** Coalition recovered $31 million in 2024 with an average recovery of $278,000.
+**Coalition Clawbacks**
+- **$31M**: Total FTF recovery in 2024.
+- **$278K**: Average amount recovered per FTF event.
+- **24%**: FTF events with at least partial recovery.
+- **12%**: FTF events with a full recovery.
+- **$101M**: Lifetime clawbacks.
 
 ---
 
 ## Ransomware
 
-Ransomware is a type of malicious software that encrypts a business’ data or systems.
+Ransomware claims frequency decreased 3% YoY in 2024 to 0.31%. Ransomware claims severity decreased 7% YoY in 2024 to an average loss of $292,000. Ransom demands fell 22% YoY in 2024 to an average of $1.1 million.
 
-- **Frequency:** Decreased 3% YoY to 0.31%.
-- **Severity:** Decreased 7% YoY to $292,000.
-- **Ransom Demands:** Fell 22% YoY to an average of $1.1 million.
-- **Negotiations:** Coalition Incident Response (CIR) negotiated a 60% reduction in ransom payments.
+**Ransomware Negotiations**
+When deemed reasonable and necessary, 44% of policyholders opted to pay the ransom. In these cases, Coalition Incident Response successfully negotiated a 60% reduction in payment.
 
 ---
 
 ## Miscellaneous First-Party Loss
 
-Miscellaneous first-party loss refers to direct financial and operational damages experienced by a business in a cyber event that was not BEC, FTF, or ransomware.
-
-- **Frequency:** Decreased 19% YoY to 0.17%.
-- **Severity:** Increased 10% YoY to $49,000.
-- **Third-Party Breaches:** Accounted for 52% of these events (e.g., Change Healthcare and CDK Global incidents).
+Miscellaneous first-party loss refers to direct financial and operational damages experienced by a business in a cyber event that was not BEC, FTF, or ransomware. Claims frequency decreased 19% YoY in 2024 to 0.17%. Claims severity increased 10% YoY in 2024 to an average loss of $49,000.
 
 ---
 
 ## Third-Party Allegations
 
-Third-party allegations refer to claims made against a business by external parties due to a cyber event, privacy breach, infringement, or error.
-
-- **Frequency:** Decreased 50% YoY to 0.02%.
-- **Severity:** Decreased 86% YoY to $23,000.
+Third-party allegations refer to claims made against a business by external parties due to a cyber event, privacy breach, infringement, or error. Frequency decreased 50% YoY in 2024 to 0.02%. Severity decreased 86% YoY in 2024 to an average loss of $23,000.
 
 ---
 
 ## The Power of Active Insurance
 
-Defense against cyber threats starts at the underwriting stage. In 2024, 614 businesses were notified of critical issues at the time of quoting a cyber insurance policy and opted not to resolve the issues or bind a policy, only to later experience a ransomware attack. Total losses among these businesses are estimated at $307 million.
+In 2024, 614 businesses were notified of critical issues at the time of quoting a cyber insurance policy and opted not to resolve the issues or bind a Coalition policy, only to later experience a ransomware attack. Total losses among these businesses are estimated at $307 million.
+
+**Security Alerts**
+- **85K+**: Security alerts sent in 2024.
+- **32K+**: Security issues resolved by policyholders.
 
 ---
 
 ## A Unified Approach
 
-Our mission at Coalition is to help protect the unprotected. We pioneered Active Insurance: the first cyber defense bringing together active cyber risk assessment, proactive protection, expert response, and comprehensive cyber coverage.
+Coalition pioneered Active Insurance: the first cyber defense bringing together active cyber risk assessment, proactive protection, expert response, and comprehensive cyber coverage.
 
-### How Active Insurance Works
-1. **ASSESS:** Real-time, external view of cyber risk.
-2. **PROTECT:** Identify and prevent new threats.
-3. **COVER:** Comprehensive coverage for peace of mind.
-4. **RESPOND:** Immediate expert support to minimize impact.
+- **ASSESS**: Real-time, external view of cyber risk with customized recommendations.
+- **PROTECT**: Identify and prevent new threats with tailored remediation guidance and support.
+- **COVER**: Comprehensive coverage to give peace of mind following an attack.
+- **RESPOND**: Immediate expert support to minimize impact and speed up recovery.
 
 ---
 
 ## Methodology
 
-The 2025 Cyber Claims Report features reported claims data from January 1 to December 31, 2024. Coalition defines a claim as an adverse cyber matter reported by a policyholder that incurred a gross loss. Every cyber insurance claim is categorized as a single event type, with FTF and ransomware superseding BEC due to their severity and overall impact.
+The 2025 Cyber Claims Report features reported claims data from January 1 to December 31, 2024. Coalition defines a claim as an adverse cyber matter reported by a policyholder that incurred a gross loss. To complete the analysis, Coalition data scientists and actuaries used the reported experience as of six months of age.
 
 ---
 
