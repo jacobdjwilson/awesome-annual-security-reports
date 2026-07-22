@@ -1601,8 +1601,13 @@ class GeminiValidator:
             return {"verdict": "UNCERTAIN", "reason": "Parse error",
                     "is_annual": True, "is_security_topic": True, "is_duplicate": False}
         except Exception as e:
-            print(f"  [Gemini] Validation error: {str(e)[:80]} — treating as UNCERTAIN")
-            return {"verdict": "UNCERTAIN", "reason": str(e)[:80],
+            err_str = str(e)
+            if "429" in err_str or "quota" in err_str.lower() or "exhausted" in err_str.lower():
+                print(f"\n  [Gemini] ⚠ API Quota Exhausted! {err_str[:80]}")
+                print("  Gracefully stopping discovery run to preserve remaining rate limits and prevent useless hits.")
+                sys.exit(0)
+            print(f"  [Gemini] Validation error: {err_str[:80]} — treating as UNCERTAIN")
+            return {"verdict": "UNCERTAIN", "reason": err_str[:80],
                     "is_annual": True, "is_security_topic": True, "is_duplicate": False}
 
 

@@ -232,6 +232,24 @@ jobs:
         with:
           name: files-to-process
 
+      - name: Cache AI Conversions
+        uses: actions/cache@v4
+        with:
+          path: .conversion_cache.json
+          key: ai-conversion-cache-${{ github.ref }}-${{ github.run_id }}
+          restore-keys: |
+            ai-conversion-cache-${{ github.ref }}-
+            ai-conversion-cache-
+
+      - name: Cache AI Analysis
+        uses: actions/cache@v4
+        with:
+          path: .analysis_cache.json
+          key: ai-analysis-cache-${{ github.ref }}-${{ github.run_id }}
+          restore-keys: |
+            ai-analysis-cache-${{ github.ref }}-
+            ai-analysis-cache-
+
       - name: Run PDF converter
         id: converter
         env:
@@ -242,17 +260,29 @@ jobs:
           # --force-reconvert bypasses the conversion cache and deletes the
           # existing markdown before reconverting, ensuring stale files are
           # regenerated at full quality rather than returned from cache.
+          set +e
           python .github/scripts/pdf-converter.py \
             --file-list files_to_process.txt \
             --output-json conversions.json \
             --artifacts-dir .github/artifacts \
             --force-reconvert
+          CONV_EXIT=$?
+          set -e
 
-          SUCCESSFUL=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
-          FAILED=$(jq '[.[] | select(.status != "success")] | length' conversions.json)
+          SUCCESSFUL=$(jq '[.[] | select(.status == "success")] | length' conversions.json 2>/dev/null || echo 0)
+          FAILED=$(jq '[.[] | select(.status != "success")] | length' conversions.json 2>/dev/null || echo 0)
 
           echo "successful_count=$SUCCESSFUL" >> $GITHUB_OUTPUT
           echo "failed_count=$FAILED" >> $GITHUB_OUTPUT
+
+          if [ "$CONV_EXIT" -eq 2 ]; then
+            echo "quota_exhausted=true" >> $GITHUB_OUTPUT
+            echo "⚠ Quota exhausted (exit 2) — gracefully stopping. Will retry tomorrow."
+            exit 0
+          elif [ "$CONV_EXIT" -ne 0 ]; then
+            exit $CONV_EXIT
+          fi
+
 
       - name: Run report analyzer
         id: analyzer
@@ -285,6 +315,13 @@ jobs:
 
             echo "analysis_count=$ANALYSIS_COUNT" >> $GITHUB_OUTPUT
             echo "error_count=$ERROR_COUNT" >> $GITHUB_OUTPUT
+
+            if [ "$ANALYZER_EXIT" -eq 2 ]; then
+              echo "analysis_success=false" >> $GITHUB_OUTPUT
+              echo "quota_exhausted=true" >> $GITHUB_OUTPUT
+              echo "⚠ Quota exhausted (exit 2) — gracefully stopping. Will retry tomorrow."
+              exit 0
+            fi
 
             if [ "$ANALYSIS_COUNT" -gt 0 ]; then
               echo "analysis_success=true" >> $GITHUB_OUTPUT

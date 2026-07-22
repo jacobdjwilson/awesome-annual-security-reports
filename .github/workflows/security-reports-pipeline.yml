@@ -672,6 +672,15 @@ jobs:
           echo "Installing Python packages: $PY_PACKAGES"
           pip install --break-system-packages $PY_PACKAGES
 
+      - name: Cache AI Conversions
+        uses: actions/cache@v4
+        with:
+          path: .conversion_cache.json
+          key: ai-conversion-cache-${{ github.ref }}-${{ github.run_id }}
+          restore-keys: |
+            ai-conversion-cache-${{ github.ref }}-
+            ai-conversion-cache-
+
       - name: Run PDF converter
         id: converter
         env:
@@ -845,6 +854,15 @@ jobs:
         run: |
           PY_PACKAGES=$(jq -r '.workflow.analysis.python_packages | join(" ")' .github/artifacts/workflow-config.json)
           pip install --break-system-packages $PY_PACKAGES
+
+      - name: Cache AI Analysis
+        uses: actions/cache@v4
+        with:
+          path: .analysis_cache.json
+          key: ai-analysis-cache-${{ github.ref }}-${{ github.run_id }}
+          restore-keys: |
+            ai-analysis-cache-${{ github.ref }}-
+            ai-analysis-cache-
 
       - name: Run report analyzer
         id: report-analysis
