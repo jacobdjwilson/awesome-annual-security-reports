@@ -21,8 +21,14 @@ jobs:
     # Run when the report-suggestion label is applied, OR when the issue is
     # opened and already carries the label (e.g. from the issue template).
     if: |
-      github.event.label.name == 'report-suggestion' ||
-      contains(github.event.issue.labels.*.name, 'report-suggestion')
+      (
+        github.event.label.name == 'report-suggestion' ||
+        contains(github.event.issue.labels.*.name, 'report-suggestion')
+      ) && (
+        !contains(github.event.issue.labels.*.name, 'automated') ||
+        contains(github.event.issue.labels.*.name, 'accepted') ||
+        github.event.label.name == 'accepted'
+      )
     runs-on: ubuntu-latest
 
     steps:

@@ -15,13 +15,10 @@ jobs:
   triage:
     runs-on: ubuntu-latest
 
-    # Only run on slash commands posted on automated discovery issues.
+    # Only run on comments from humans on automated discovery issues.
     # Discovery issues carry both 'automated' and 'report-suggestion' labels.
-    # We gate on 'automated' (not just 'report-suggestion') so that manually
-    # submitted report suggestions (ingest-suggestion workflow) are never
-    # accidentally processed here.
     if: |
-      startsWith(github.event.comment.body, '/') &&
+      github.event.comment.user.type != 'Bot' &&
       contains(github.event.issue.labels.*.name, 'automated') &&
       contains(github.event.issue.labels.*.name, 'report-suggestion')
 
@@ -35,79 +32,30 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install --break-system-packages requests
+        run: |
+          pip install --break-system-packages requests google-genai google-generativeai
 
-      - name: Parse triage command
+      - name: Parse triage comment
         id: parse
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           COMMENT_BODY: ${{ github.event.comment.body }}
           COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
-          # Extract the first word of the comment as the command
-          CMD=$(echo "$COMMENT_BODY" | head -1 | awk '{print $1}' | tr '[:upper:]' '[:lower:]')
-          # Extract everything after the command as the reason
-          REASON=$(echo "$COMMENT_BODY" | head -1 | sed "s|^$CMD *||")
-
-          echo "command=$CMD"           >> $GITHUB_OUTPUT
-          echo "reason=$REASON"         >> $GITHUB_OUTPUT
+          # Output basic info
           echo "author=$COMMENT_AUTHOR" >> $GITHUB_OUTPUT
           echo "issue=$ISSUE_NUMBER"    >> $GITHUB_OUTPUT
           echo "title=$ISSUE_TITLE"     >> $GITHUB_OUTPUT
+          echo "reason=$COMMENT_BODY"   >> $GITHUB_OUTPUT
 
-          case "$CMD" in
-            /false-positive|/fp)
-              echo "outcome=false_positive" >> $GITHUB_OUTPUT
-              echo "valid=true"             >> $GITHUB_OUTPUT
-              echo "label=false-positive"   >> $GITHUB_OUTPUT
-              echo "close=true"             >> $GITHUB_OUTPUT
-              ;;
-            /duplicate|/dup)
-              echo "outcome=duplicate"      >> $GITHUB_OUTPUT
-              echo "valid=true"             >> $GITHUB_OUTPUT
-              echo "label=duplicate"        >> $GITHUB_OUTPUT
-              echo "close=true"             >> $GITHUB_OUTPUT
-              ;;
-            /mismatch)
-              echo "outcome=mismatch"       >> $GITHUB_OUTPUT
-              echo "valid=true"             >> $GITHUB_OUTPUT
-              echo "label=mismatch"         >> $GITHUB_OUTPUT
-              echo "close=true"             >> $GITHUB_OUTPUT
-              ;;
-            /accept|/true-positive|/tp)
-              echo "outcome=true_positive"  >> $GITHUB_OUTPUT
-              echo "valid=true"             >> $GITHUB_OUTPUT
-              echo "label=accepted"         >> $GITHUB_OUTPUT
-              echo "close=false"            >> $GITHUB_OUTPUT
-              ;;
-            /help)
-              echo "valid=help"             >> $GITHUB_OUTPUT
-              ;;
-            *)
-              echo "valid=false"            >> $GITHUB_OUTPUT
-              ;;
-          esac
+          # Run the classifier script which outputs GITHUB_OUTPUT directly
+          python .github/scripts/triage-comment-classifier.py \
+            --comment "$COMMENT_BODY" \
+            --title "$ISSUE_TITLE" >> $GITHUB_OUTPUT
 
-      - name: Post help message
-        if: steps.parse.outputs.valid == 'help'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh issue comment ${{ github.event.issue.number }} --body "$(cat << 'EOF'
-          ### 🏷️ Triage Commands
 
-          | Command | Aliases | Effect |
-          |---------|---------|--------|
-          | `/accept` | `/true-positive`, `/tp` | Mark as a valid find — labels `accepted`, keeps issue open for ingestion |
-          | `/false-positive [reason]` | `/fp` | Wrong report or unrelated result — labels `false-positive`, closes issue |
-          | `/duplicate [reason]` | `/dup` | Already in repo or a duplicate discovery — labels `duplicate`, closes issue |
-          | `/mismatch [reason]` | | Correct org but wrong year, edition, or category — labels `mismatch`, closes issue |
-          | `/help` | | Show this message |
-
-          All outcomes except `/accept` are fed into the discovery feedback learner to improve future searches.
-          EOF
-          )"
 
       - name: Ignore unknown commands
         if: steps.parse.outputs.valid == 'false'
