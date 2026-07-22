@@ -91,6 +91,10 @@ class ConfigLoader:
         self.pdf_source_folder:      str = folders.get("pdf_source",           "Annual Security Reports")
         self.markdown_output_folder: str = folders.get("markdown_conversions", "Markdown Conversions")
 
+        # ── Validation settings ───────────────────────────────────────────
+        val = self.workflow_config.get("workflow", {}).get("validation", {})
+        self.min_markdown_chars:     int = val.get("min_markdown_chars",       200)
+
     def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
         """Load and parse a JSON config file from artifacts_dir."""
         path = self.artifacts_dir / filename
@@ -112,19 +116,28 @@ class ConfigLoader:
 # CONVERSION CACHE
 # ================
 class ConversionCache:
-    """Caches PDF to Markdown conversion output paths to avoid redundant work."""
+    """Caches PDF to Markdown conversion output paths and metadata to avoid redundant work."""
 
     def __init__(self, cache_file: str = ".conversion_cache.json"):
         self.cache_file = Path(cache_file)
-        self.cache: Dict[str, str] = self._load()
+        self.cache: Dict[str, Any] = self._load()
         self.hits   = 0
         self.misses = 0
 
-    def _load(self) -> Dict[str, str]:
+    def _load(self) -> Dict[str, Any]:
         if self.cache_file.exists():
             try:
                 with open(self.cache_file, "r", encoding="utf-8") as f:
-                    return json.load(f)
+                    data = json.load(f)
+                    # Migrate old string paths to dicts
+                    for k, v in list(data.items()):
+                        if isinstance(v, str):
+                            data[k] = {
+                                "path": v,
+                                "model": "unknown",
+                                "timestamp": 0
+                            }
+                    return data
             except Exception:
                 return {}
         return {}
@@ -139,7 +152,7 @@ class ConversionCache:
     def _key(self, pdf_path: str) -> str:
         return hashlib.md5(str(Path(pdf_path).resolve()).encode()).hexdigest()
 
-    def get(self, pdf_path: str) -> Optional[str]:
+    def get_entry(self, pdf_path: str) -> Optional[Dict[str, Any]]:
         key    = self._key(pdf_path)
         result = self.cache.get(key)
         if result:
@@ -148,8 +161,17 @@ class ConversionCache:
             self.misses += 1
         return result
 
-    def set(self, pdf_path: str, md_path: str):
-        self.cache[self._key(pdf_path)] = md_path
+    def get(self, pdf_path: str) -> Optional[str]:
+        entry = self.get_entry(pdf_path)
+        return entry["path"] if entry else None
+
+    def set(self, pdf_path: str, md_path: str, model_name: str = "unknown"):
+        import time
+        self.cache[self._key(pdf_path)] = {
+            "path": md_path,
+            "model": model_name,
+            "timestamp": int(time.time())
+        }
         self._save()
 
     def stats(self) -> str:
@@ -387,11 +409,12 @@ class PDFConverter:
     """
 
     def __init__(self, config: ConfigLoader, polisher: Optional[MarkdownPolisher] = None,
-                 force_reconvert: bool = False):
+                 force_reconvert: bool = False, smart_reconvert: bool = False):
         self.config          = config
         self.cache           = ConversionCache()
         self.polisher        = polisher
         self.force_reconvert = force_reconvert
+        self.smart_reconvert = smart_reconvert
 
         try:
             self.markitdown = MarkItDown()
@@ -410,19 +433,49 @@ class PDFConverter:
             return False, "", "File not found"
 
         # Return cached result if the output file still exists on disk,
-        # unless force_reconvert is set (used by the refresh workflow to bypass
-        # stale cache entries and regenerate markdown from scratch).
-        if not self.force_reconvert:
-            cached = self.cache.get(pdf_path)
-            if cached and Path(cached).exists():
-                print(f"  ✓ Cached: {cached}")
-                return True, cached, "cached"
+        # unless force_reconvert is set or smart_reconvert indicates a better
+        # model is available or the previous conversion was structurally invalid.
+        cached_entry = self.cache.get_entry(pdf_path)
+        cached_path = cached_entry["path"] if cached_entry else None
+        existing_md = self._get_markdown_path(pdf_path_obj)
+        
+        needs_reconvert = False
+        reconvert_reason = ""
+        
+        if self.force_reconvert:
+            needs_reconvert = True
+            reconvert_reason = "force-reconvert requested"
+        elif self.smart_reconvert:
+            if not cached_entry:
+                needs_reconvert = True
+                reconvert_reason = "not in cache"
+            elif not existing_md.exists():
+                needs_reconvert = True
+                reconvert_reason = "cached file missing from disk"
+            else:
+                cached_model = cached_entry.get("model", "unknown")
+                current_model = self.config.primary_model
+                if cached_model != current_model:
+                    needs_reconvert = True
+                    reconvert_reason = f"model changed ({cached_model} -> {current_model})"
+                else:
+                    md_text = existing_md.read_text(encoding="utf-8", errors="ignore")
+                    if len(md_text) < self.config.min_markdown_chars:
+                        needs_reconvert = True
+                        reconvert_reason = f"markdown too short ({len(md_text)} chars < {self.config.min_markdown_chars})"
+        elif not cached_entry or not existing_md.exists():
+            needs_reconvert = True
+            reconvert_reason = "not in cache or missing from disk"
+            
+        if not needs_reconvert:
+            print(f"  ✓ Cached: {existing_md}")
+            return True, str(existing_md), "cached"
         else:
-            # Delete existing markdown so the file is fully regenerated
-            existing_md = self._get_markdown_path(pdf_path_obj)
             if existing_md.exists():
                 existing_md.unlink()
-                print(f"  ♻ Force-reconvert: removed stale {existing_md.name}")
+                print(f"  ♻ Reconvert ({reconvert_reason}): removed stale {existing_md.name}")
+            else:
+                print(f"  ♻ Convert: {reconvert_reason}")
 
         org_name, report_title, year = self._parse_filename(pdf_path_obj.name)
         md_path = self._get_markdown_path(pdf_path_obj)
@@ -469,7 +522,9 @@ class PDFConverter:
                 print(f"  ⚠ No AI polisher — saving raw markitdown output")
 
             md_path.write_text(markdown_text, encoding="utf-8")
-            self.cache.set(pdf_path, str(md_path))
+            
+            model_to_cache = self.polisher._active_model if self.polisher and getattr(self.polisher, '_active_model', None) else "unknown"
+            self.cache.set(pdf_path, str(md_path), model_to_cache)
 
             print(f"  ✓ Saved: {md_path}")
             return True, str(md_path), "success"
@@ -526,8 +581,9 @@ def main():
     parser.add_argument("--file-list",       required=True, help="Text file listing PDFs to convert")
     parser.add_argument("--output-json",     default="conversions.json")
     parser.add_argument("--artifacts-dir",   default=".github/artifacts")
-    parser.add_argument("--force-reconvert", action="store_true",
-                        help="Bypass cache and delete existing markdown before reconverting (used by refresh workflow)")
+    parser.add_argument("--force-reconvert", action="store_true", help="Bypass cache and force reconversion of all PDFs")
+    parser.add_argument("--smart-reconvert", action="store_true", help="Reconvert only if a newer AI model is available or current Markdown is bad")
+    
     args = parser.parse_args()
 
     print(f"\n{'='*70}")
@@ -585,7 +641,8 @@ def main():
 
     # ── Convert ───────────────────────────────────────────────────────────
     converter = PDFConverter(config, polisher=polisher,
-                            force_reconvert=args.force_reconvert)
+                            force_reconvert=args.force_reconvert,
+                            smart_reconvert=args.smart_reconvert)
     results: List[Dict[str, Any]] = []
 
     quota_exhausted_flag = False
@@ -611,7 +668,7 @@ def main():
         # Determine method and model used
         if message == "cached":
             method = "cached"
-        elif args.force_reconvert:
+        elif args.force_reconvert or args.smart_reconvert:
             method = "reconverted+ai" if polisher else "reconverted"
         else:
             method = "markitdown+ai" if polisher else "markitdown"

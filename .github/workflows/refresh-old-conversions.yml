@@ -18,6 +18,10 @@ on:
         default: '90'
         type: string
 
+concurrency:
+  group: security-reports-processing
+  cancel-in-progress: false
+
 permissions:
   contents: write
   pull-requests: write
@@ -257,15 +261,14 @@ jobs:
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
-          # --force-reconvert bypasses the conversion cache and deletes the
-          # existing markdown before reconverting, ensuring stale files are
-          # regenerated at full quality rather than returned from cache.
+          # --smart-reconvert bypasses the conversion cache only if a newer AI model is available
+          # or the current markdown is structurally invalid, ensuring API tokens are not wasted.
           set +e
           python .github/scripts/pdf-converter.py \
             --file-list files_to_process.txt \
             --output-json conversions.json \
             --artifacts-dir .github/artifacts \
-            --force-reconvert
+            --smart-reconvert
           CONV_EXIT=$?
           set -e
 

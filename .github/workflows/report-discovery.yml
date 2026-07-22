@@ -17,6 +17,10 @@ on:
         default: ''
         type: string
 
+concurrency:
+  group: security-reports-processing
+  cancel-in-progress: false
+
 permissions:
   contents: read
   issues: write

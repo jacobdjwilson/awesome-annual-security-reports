@@ -55,16 +55,8 @@ on:
         type: boolean
 
 concurrency:
-  # For push events: queue by branch so concurrent pushes are serialised rather than cancelled — critical when committing PDFs one at a time.
-  group: >-
-    ${{
-      github.event_name == 'pull_request'
-        && format('security-pipeline-pr-{0}', github.ref)
-        || github.event_name == 'push'
-        && format('security-pipeline-push-{0}', github.ref)
-        || format('security-pipeline-{0}-{1}', github.event_name, github.run_id)
-    }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: security-reports-processing
+  cancel-in-progress: false
 
 permissions:
   contents: write
