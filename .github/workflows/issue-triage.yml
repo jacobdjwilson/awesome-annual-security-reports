@@ -1,8 +1,8 @@
 name: Issue Triage
 
 on:
-  issue_comment:
-    types: [created]
+  issues:
+    types: [edited]
 
 permissions:
   issues: write
@@ -15,10 +15,10 @@ jobs:
   triage:
     runs-on: ubuntu-latest
 
-    # Only run on comments from humans on automated discovery issues.
+    # Only run on edits by humans on automated discovery issues.
     # Discovery issues carry both 'automated' and 'report-suggestion' labels.
     if: |
-      github.event.comment.user.type != 'Bot' &&
+      github.actor != 'github-actions[bot]' &&
       contains(github.event.issue.labels.*.name, 'automated') &&
       contains(github.event.issue.labels.*.name, 'report-suggestion')
 
@@ -31,35 +31,47 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
-        run: |
-          pip install --break-system-packages requests google-genai google-generativeai
-
-      - name: Parse triage comment
+      - name: Parse triage checkbox
         id: parse
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          COMMENT_BODY: ${{ github.event.comment.body }}
-          COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-          ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
-          # Output basic info
-          echo "author=$COMMENT_AUTHOR" >> $GITHUB_OUTPUT
-          echo "issue=$ISSUE_NUMBER"    >> $GITHUB_OUTPUT
-          echo "title=$ISSUE_TITLE"     >> $GITHUB_OUTPUT
-          echo "reason=$COMMENT_BODY"   >> $GITHUB_OUTPUT
+          # Fetch the raw issue body via the API (handles encoding properly)
+          BODY=$(gh issue view "${{ github.event.issue.number }}" --json body -q '.body')
+          
+          if echo "$BODY" | grep -qi '\[x\] \*\*Accept\*\*'; then
+            OUTCOME="true_positive"
+            LABEL="accepted"
+            CLOSE="false"
+          elif echo "$BODY" | grep -qi '\[x\] \*\*Duplicate\*\*'; then
+            OUTCOME="duplicate"
+            LABEL="duplicate"
+            CLOSE="true"
+          elif echo "$BODY" | grep -qi '\[x\] \*\*False Positive\*\*'; then
+            OUTCOME="false_positive"
+            LABEL="false-positive"
+            CLOSE="true"
+          elif echo "$BODY" | grep -qi '\[x\] \*\*Mismatch\*\*'; then
+            OUTCOME="mismatch"
+            LABEL="mismatch"
+            CLOSE="true"
+          else
+            echo "valid=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "valid=true" >> $GITHUB_OUTPUT
+          echo "outcome=$OUTCOME" >> $GITHUB_OUTPUT
+          echo "label=$LABEL" >> $GITHUB_OUTPUT
+          echo "close=$CLOSE" >> $GITHUB_OUTPUT
+          echo "author=${{ github.actor }}" >> $GITHUB_OUTPUT
+          echo "issue=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
+          echo "title=${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
+          echo "reason=Triaged via issue checkbox" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          # Run the classifier script which outputs GITHUB_OUTPUT directly
-          python .github/scripts/triage-comment-classifier.py \
-            --comment "$COMMENT_BODY" \
-            --title "$ISSUE_TITLE" >> $GITHUB_OUTPUT
-
-
-
-      - name: Ignore unknown commands
+      - name: Ignore unknown edits
         if: steps.parse.outputs.valid == 'false'
-        run: echo "Unknown command — ignoring."
+        run: echo "No triage checkboxes checked. Ignoring edit."
 
       - name: Apply triage label
         if: steps.parse.outputs.valid == 'true'
@@ -106,8 +118,7 @@ jobs:
             mismatch)       echo "⚠️";;
           esac)
 
-          MSG="$ICON **Triaged as \`$OUTCOME\`** by @$AUTHOR."
-          [ -n "$REASON" ] && MSG="$MSG\n\n> $REASON"
+          MSG="$ICON **Triaged as \`$OUTCOME\`** by @$AUTHOR via checkbox."
           MSG="$MSG\n\n_This outcome will be incorporated into the next discovery feedback learner run to improve future searches._"
 
           gh issue comment ${{ github.event.issue.number }} --body "$(printf '%b' "$MSG")"
@@ -146,84 +157,65 @@ jobs:
               print(f"ERROR loading feedback file: {e}")
               sys.exit(1)
 
-          # ── Parse issue metadata ─────────────────────────────────────────
-          outcome      = os.environ.get("OUTCOME", "")
-          reason       = os.environ.get("REASON", "")
-          author       = os.environ.get("AUTHOR", "")
-          issue_num    = os.environ.get("ISSUE", "")
-          issue_title  = os.environ.get("ISSUE_TITLE", "")
+          if "feedback_events" not in data:
+              data["feedback_events"] = []
 
-          # Try to extract org + year from issue title
-          # Expected format: "[Report Discovery] OrgName YYYY — Report Title"
-          org, year, url, find_type, score = "", "", "", "", ""
-          title_match = re.search(
-              r"\[Report Discovery\]\s+(.+?)\s+(\d{4})\s+[—-]", issue_title
-          )
-          if title_match:
-              org  = title_match.group(1).strip()
-              year = title_match.group(2).strip()
-
-          # Fetch issue body for URL / score / find_type via GH CLI
+          issue_title = os.environ.get("ISSUE_TITLE", "")
+          # Extract org and URL from the issue body if possible
+          org = ""
+          url = ""
           try:
-              result = subprocess.run(
-                  ["gh", "issue", "view", issue_num, "--json", "body"],
-                  capture_output=True, text=True, timeout=15
+              issue_number = os.environ.get("ISSUE", "")
+              body_output = subprocess.check_output(
+                  ["gh", "issue", "view", issue_number, "--json", "body", "-q", ".body"],
+                  text=True
               )
-              if result.returncode == 0:
-                  body = json.loads(result.stdout).get("body", "")
-                  url_match   = re.search(r"\*\*URL\*\*\s*\|\s*(https?://\S+)", body)
-                  score_match = re.search(r"\*\*Heuristic Score\*\*\s*\|\s*(\d+)", body)
-                  type_match  = re.search(
-                      r"\*\*Type\*\*\s*\|\s*(?:📥|🔒|❓)\s*(Direct PDF|Gated Landing Page|Unclassified)",
-                      body
-                  )
-                  if url_match:   url       = url_match.group(1).strip()
-                  if score_match: score     = score_match.group(1).strip()
-                  if type_match:  find_type = type_match.group(1).strip()
-          except Exception:
-              pass
+              # e.g., | **Organization** | Acme Corp |
+              org_match = re.search(r"\|\s*\*\*Organization\*\*\s*\|\s*([^|]+?)\s*\|", body_output)
+              if org_match: org = org_match.group(1).strip()
+              
+              url_match = re.search(r"\|\s*\*\*URL\*\*\s*\|\s*([^|]+?)\s*\|", body_output)
+              if url_match: url = url_match.group(1).strip()
+          except Exception as e:
+              print(f"Could not extract org/url: {e}")
 
-          # ── Append to triage_log ─────────────────────────────────────────
           event = {
-              "timestamp":   datetime.datetime.utcnow().isoformat() + "Z",
-              "issue":       int(issue_num) if issue_num.isdigit() else issue_num,
-              "title":       issue_title,
-              "org":         org,
-              "year":        year,
-              "url":         url,
-              "find_type":   find_type,
-              "score":       score,
-              "outcome":     outcome,
-              "reason":      reason,
-              "triaged_by":  author
+              "timestamp": datetime.datetime.utcnow().isoformat() + "Z",
+              "issue_number": int(os.environ.get("ISSUE", "0")),
+              "issue_title": issue_title,
+              "org": org,
+              "url": url,
+              "outcome": os.environ.get("OUTCOME", ""),
+              "reason": os.environ.get("REASON", ""),
+              "author": os.environ.get("AUTHOR", "")
           }
-          data.setdefault("triage_log", []).append(event)
 
-          # ── Update outcome counts ────────────────────────────────────────
-          counts = data.setdefault("outcome_counts", {
-              "true_positive": 0, "false_positive": 0,
-              "duplicate": 0, "mismatch": 0
-          })
-          if outcome in counts:
-              counts[outcome] += 1
+          data["feedback_events"].append(event)
+          data["total_feedback_events"] = data.get("total_feedback_events", 0) + 1
 
-          data["total_feedback_events"] = sum(counts.values())
-          data["last_updated"] = datetime.datetime.utcnow().isoformat() + "Z"
+          # Recompute outcome_counts
+          counts = {"true_positive": 0, "false_positive": 0, "duplicate": 0, "mismatch": 0}
+          for ev in data["feedback_events"]:
+              o = ev.get("outcome")
+              if o in counts: counts[o] += 1
+          data["outcome_counts"] = counts
 
-          # ── Write back ───────────────────────────────────────────────────
-          with open(feedback_path, "w") as f:
-              json.dump(data, f, indent=2)
-
-          print(f"✓ Feedback recorded: {outcome} for issue #{issue_num} ({org} {year})")
-          print(f"  Total events: {data['total_feedback_events']}")
+          try:
+              with open(feedback_path, "w") as f:
+                  json.dump(data, f, indent=2)
+                  f.write("\n")
+              print("✓ Feedback event recorded in discovery-feedback.json")
+          except Exception as e:
+              print(f"ERROR saving feedback file: {e}")
+              sys.exit(1)
           PYEOF
 
-      - name: Commit feedback update
+      - name: Commit updated artifact
         if: steps.parse.outputs.valid == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .github/artifacts/discovery-feedback.json
           git diff --cached --quiet || \
-            git commit -m "chore: record triage feedback for issue #${{ github.event.issue.number }} [${{ steps.parse.outputs.outcome }}]"
-          git push
+            git commit -m "chore: record triage feedback for #${{ steps.parse.outputs.issue }}"
+          git push || echo "Push failed (expected if another workflow committed concurrently)"

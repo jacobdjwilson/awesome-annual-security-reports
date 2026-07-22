@@ -1020,6 +1020,13 @@ class IssueCreator:
             f"{type_guidance}"
             f"{vt_section}\n\n"
             f"---\n"
+            f"### 📋 Quick Triage\n"
+            f"Check one of the boxes below to instantly triage this issue:\n"
+            f"- [ ] **Accept** (True Positive - auto-ingest)\n"
+            f"- [ ] **Duplicate** (Already in repo)\n"
+            f"- [ ] **False Positive** (Unrelated report)\n"
+            f"- [ ] **Mismatch** (Correct org, wrong year/topic)\n\n"
+            f"---\n"
             f"*Auto-discovered by the Security Report Discovery workflow.*"
         )
 
