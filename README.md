@@ -543,7 +543,7 @@ The categories below highlight the diverse roles these organizations play in bui
 
 **Threat Intelligence and Incident Response:** Organizations focused on sharing threat intelligence, coordinating cyber incident responses, and combating cyber threats.
 
-**Policy and Advocacy]:** Institutions shaping cybersecurity policies, regulations, and public awareness on a national or international scale.
+**Policy and Advocacy:** Institutions shaping cybersecurity policies, regulations, and public awareness on a national or international scale.
 
 **Working Groups:** These are collaborative organizations or professional associations that conduct research, share information, and develop best practices in cybersecurity.
 
