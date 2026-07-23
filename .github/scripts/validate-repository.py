@@ -4,8 +4,10 @@ import re
 import json
 import argparse
 import urllib.request
+import urllib.parse
 import urllib.error
 import concurrent.futures
+import hashlib
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
@@ -31,6 +33,9 @@ CATEGORY_NAMING         = "naming_convention"
 CATEGORY_YEAR_MISMATCH  = "year_mismatch"
 CATEGORY_STUB_MD        = "stub_markdown"
 CATEGORY_DEAD_LINK      = "dead_link"
+CATEGORY_MISSING_README = "missing_readme"
+CATEGORY_DUPLICATE_PDF  = "duplicate_pdf"
+CATEGORY_DUPLICATE_MD   = "duplicate_md"
 
 # ── Filename convention ──────────────────────────────────────
 # Expected pattern: <Org>-<Title-Words>-<YYYY>.pdf
@@ -195,6 +200,9 @@ class RepositoryValidator:
         self._check_naming_conventions(pdf_files, md_files)
         self._check_year_consistency(pdf_files, md_files)
         self._validate_readme_links()
+        self._check_missing_readme_entries(pdf_files)
+        self._check_duplicates_hash(pdf_files)
+        self._check_duplicates_content(md_files)
 
         errors   = sum(1 for f in self.findings if f.severity == "error")
         warnings = sum(1 for f in self.findings if f.severity == "warning")
@@ -429,6 +437,88 @@ class RepositoryValidator:
             elif status == "warning":
                 self._add(Finding("warning", CATEGORY_DEAD_LINK, url, f"Link warning: {msg}"))
 
+    def _check_missing_readme_entries(self, pdf_files: Dict[str, Path]):
+        current_year = datetime.now().year
+        active_years = {current_year, current_year - 1, current_year - 2}
+        
+        readme_path = Path("README.md")
+        if not readme_path.exists():
+            return
+            
+        with open(readme_path, "r", encoding="utf-8") as f:
+            content = f.read()
+            
+        for pdf_rel in pdf_files:
+            file_year_match = FILENAME_YEAR_RE.search(pdf_rel)
+            if not file_year_match:
+                continue
+                
+            try:
+                file_year = int(file_year_match.group(1))
+            except ValueError:
+                continue
+                
+            if file_year in active_years:
+                pdf_url_encoded = urllib.parse.quote(pdf_rel.replace('\\', '/'))
+                pdf_posix = pdf_rel.replace('\\', '/')
+                
+                if pdf_url_encoded not in content and pdf_posix not in content:
+                    self._add(Finding(
+                        "error", CATEGORY_MISSING_README, pdf_rel,
+                        f"PDF is within active window ({min(active_years)}-{max(active_years)}) but is missing from README.md"
+                    ))
+
+    def _check_duplicates_hash(self, pdf_files: Dict[str, Path]):
+        hashes = {}
+        for pdf_rel, pdf_path in pdf_files.items():
+            try:
+                with open(pdf_path, 'rb') as f:
+                    file_hash = hashlib.sha256(f.read()).hexdigest()
+                    
+                if file_hash in hashes:
+                    self._add(Finding(
+                        "error", CATEGORY_DUPLICATE_PDF, pdf_rel,
+                        f"Duplicate PDF content detected (matches {hashes[file_hash]})"
+                    ))
+                else:
+                    hashes[file_hash] = pdf_rel
+            except Exception:
+                pass
+
+    def _check_duplicates_content(self, md_files: Dict[str, Path]):
+        docs = []
+        for md_rel, md_path in md_files.items():
+            try:
+                with open(md_path, 'r', encoding='utf-8') as f:
+                    text = f.read()
+                words = set(re.findall(r'\b\w{4,}\b', text.lower()))
+                if len(words) > 50:
+                    docs.append((md_rel, words))
+            except Exception:
+                pass
+                
+        for i in range(len(docs)):
+            for j in range(i+1, len(docs)):
+                md_a, set_a = docs[i]
+                md_b, set_b = docs[j]
+                
+                year_a = FILENAME_YEAR_RE.search(md_a)
+                year_b = FILENAME_YEAR_RE.search(md_b)
+                if year_a and year_b and year_a.group(1) != year_b.group(1):
+                    continue
+                    
+                intersection = len(set_a.intersection(set_b))
+                union = len(set_a.union(set_b))
+                if union == 0:
+                    continue
+                    
+                jaccard = intersection / union
+                if jaccard > 0.8:
+                    self._add(Finding(
+                        "warning", CATEGORY_DUPLICATE_MD, md_a,
+                        f"High content similarity ({jaccard:.0%}) detected with {md_b}"
+                    ))
+
     # ── Report writers ────────────────────────────────────────────────────
 
 
@@ -460,6 +550,9 @@ class RepositoryValidator:
                 CATEGORY_INVALID_PDF:   "🔴 Invalid or Unreadable PDFs",
                 CATEGORY_YEAR_MISMATCH: "🔴 Year Inconsistencies",
                 CATEGORY_DEAD_LINK:     "🔴 Dead External Links",
+                CATEGORY_MISSING_README:"🔴 Missing README Entries (Active Window)",
+                CATEGORY_DUPLICATE_PDF: "🔴 Exact PDF Duplicates (Hash Match)",
+                CATEGORY_DUPLICATE_MD:  "🟡 Potential Content Duplicates (Markdown Similarity)",
                 CATEGORY_INVALID_MD:    "🟡 Invalid or Short Markdown Files",
                 CATEGORY_NAMING:        "🟡 Filename Convention Violations",
                 CATEGORY_OVERSIZED:     "🟡 Oversized Files",

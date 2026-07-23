@@ -180,259 +180,25 @@ jobs:
             --output-findings validation_findings.json
           echo "script_ok=true" >> $GITHUB_OUTPUT
 
-      - name: Parse findings
-        id: findings
-        run: |
-          if [ ! -f validation_findings.json ]; then
-            echo "has_findings=false" >> $GITHUB_OUTPUT
-            echo "error_count=0"      >> $GITHUB_OUTPUT
-            echo "warning_count=0"    >> $GITHUB_OUTPUT
-            echo "fingerprints="      >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
-          HAS=$(jq -r '.has_findings'  validation_findings.json)
-          ERRS=$(jq -r '.error_count'  validation_findings.json)
-          WARNS=$(jq -r '.warning_count' validation_findings.json)
-          # Fingerprints joined with ';' as the outer list separator.
-          # Each fingerprint is "category:file/path" — inner sep is ':' (safe: no colons
-          # in category names or Linux paths). Outer sep ';' is also safe (no ; in paths).
-          # Using | for BOTH inner and outer was ambiguous and caused each token to split.
-          FPS=$(jq -r '.fingerprints[]' validation_findings.json | sort | paste -sd ';' -)
-
-          echo "has_findings=$HAS"    >> $GITHUB_OUTPUT
-          echo "error_count=$ERRS"    >> $GITHUB_OUTPUT
-          echo "warning_count=$WARNS" >> $GITHUB_OUTPUT
-          echo "fingerprints=$FPS"    >> $GITHUB_OUTPUT
-
-      - name: Upload validation artifacts
-        if: always()
-        uses: actions/upload-artifact@v6
-        with:
-          name: validation-results-${{ github.run_id }}
-          path: |
-            validation_report.md
-            validation_findings.json
-          retention-days: 30
-          if-no-files-found: ignore
-
-      # ── Issue management ──────────────────────────────────────────────
-      #
-      # Deduplication logic uses fingerprints (category|file strings) that
-      # are embedded as a hidden HTML comment in the issue body.
-      # This allows the workflow to compute a precise diff:
-      #   • New findings     → present in current run, absent from open issue
-      #   • Resolved items   → present in open issue, absent from current run
-      #   • Unchanged        → identical fingerprint sets → no update (no spam)
-      #
-      # Flow:
-      #   has_findings=false + no open issue  → no-op
-      #   has_findings=false + open issue     → close with resolution summary
-      #   has_findings=true  + no open issue  → open new issue
-      #   has_findings=true  + open issue
-      #     fingerprints unchanged            → no update (no spam)
-      #     fingerprints changed              → close old, open new with diff
-      # ─────────────────────────────────────────────────────────────────
-
-      - name: Find existing open validation issue
-        id: find_issue
+      - name: Manage GitHub issues
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          RESULT=$(gh issue list \
-            --state open \
-            --label "automated-check" \
-            --search "Repository Integrity Validation in:title" \
-            --json number,body \
-            --jq '.[0] // empty')
-
-          if [ -z "$RESULT" ]; then
-            echo "issue_number="       >> $GITHUB_OUTPUT
-            echo "issue_fingerprints=" >> $GITHUB_OUTPUT
-            echo "No existing open validation issue found"
-          else
-            NUM=$(echo "$RESULT" | jq -r '.number')
-            BODY=$(echo "$RESULT" | jq -r '.body // ""')
-            # Extract fingerprints from the hidden comment we embed
-            FPS=$(echo "$BODY" | grep -oP '(?<=<!-- fingerprints: )[^>]+(?= -->)' || true)
-            echo "issue_number=$NUM"       >> $GITHUB_OUTPUT
-            echo "issue_fingerprints=$FPS" >> $GITHUB_OUTPUT
-            echo "Found existing issue #$NUM (fingerprints: ${FPS:-none})"
-          fi
-
-      - name: Manage GitHub issue
-        id: issue_mgmt
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-
-          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          REPO="${{ github.repository }}"
-          SHA="${{ needs.gate.outputs.trigger_sha }}"
-          SHORT_SHA="${SHA:0:7}"
-
-          HAS_FINDINGS="${{ steps.findings.outputs.has_findings }}"
-          ERRS="${{ steps.findings.outputs.error_count }}"
-          WARNS="${{ steps.findings.outputs.warning_count }}"
-          CURRENT_FPS="${{ steps.findings.outputs.fingerprints }}"
-
-          EXISTING_NUM="${{ steps.find_issue.outputs.issue_number }}"
-          PREVIOUS_FPS="${{ steps.find_issue.outputs.issue_fingerprints }}"
-
-          # ── Helper: set diff on semicolon-delimited fingerprint strings ─────
-          # Fingerprints are "category:file/path" joined with ';' as list sep.
-          # Split on ';' — unambiguous since Linux paths never contain ';'.
-          fps_diff_new() {
-            local cur="${1:-}" prv="${2:-}"
-            [ -z "$cur" ] && return
-            local IFS=';'
-            read -ra CUR_ARR <<< "$cur"
-            read -ra PRV_ARR <<< "$prv"
-            for fp in "${CUR_ARR[@]}"; do
-              [ -z "$fp" ] && continue
-              local found=false
-              for p in "${PRV_ARR[@]}"; do
-                [ "$fp" == "$p" ] && found=true && break
-              done
-              $found || printf '%s\n' "$fp"
-            done
-          }
-
-          fps_diff_resolved() {
-            fps_diff_new "${2:-}" "${1:-}"
-          }
-
-          # ── Case 1: clean run, no open issue ──────────────────────────────
-          if [ "$HAS_FINDINGS" != "true" ] && [ -z "$EXISTING_NUM" ]; then
-            echo "✅ Clean — no action needed"
-            echo "action=none" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
-          # ── Case 2: clean run, existing issue → close ─────────────────────
-          if [ "$HAS_FINDINGS" != "true" ] && [ -n "$EXISTING_NUM" ]; then
-            COMMIT_URL="https://github.com/$REPO/commit/$SHA"
-            # Use printf to avoid heredoc leading-space indentation issues
-            {
-              printf '## ✅ All Issues Resolved\n\n'
-              printf 'Repository validation passed with no findings.\n\n'
-              printf '| Detail | Value |\n'
-              printf '|--------|-------|\n'
-              printf '| Run | [#%s](%s) |\n' "${{ github.run_id }}" "$RUN_URL"
-              printf '| Commit | [`%s`](%s) |\n' "$SHORT_SHA" "$COMMIT_URL"
-              printf '| Timestamp | %s |\n' "$(date -u +"%Y-%m-%d %H:%M UTC")"
-              printf '\nAll previously reported integrity issues have been addressed. Closing this ticket.\n'
-            } > /tmp/resolution.md
-
-            gh issue close "$EXISTING_NUM" --comment "$(cat /tmp/resolution.md)"
-            echo "✓ Closed issue #$EXISTING_NUM — all resolved"
-            echo "action=closed"              >> $GITHUB_OUTPUT
-            echo "closed_issue=$EXISTING_NUM" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
-          # ── Case 3: has findings ───────────────────────────────────────────
-          NEW_FPS=$(fps_diff_new "$CURRENT_FPS" "$PREVIOUS_FPS")
-          RES_FPS=$(fps_diff_resolved "$CURRENT_FPS" "$PREVIOUS_FPS")
-
-          echo "New findings:      ${NEW_FPS:-none}"
-          echo "Resolved findings: ${RES_FPS:-none}"
-
-          # Fingerprints unchanged → suppress duplicate issue (no spam)
-          if [ -n "$EXISTING_NUM" ] && [ -z "$NEW_FPS" ] && [ -z "$RES_FPS" ]; then
-            echo "⊘ Findings identical to open issue #$EXISTING_NUM — no update"
-            echo "action=unchanged"              >> $GITHUB_OUTPUT
-            echo "unchanged_issue=$EXISTING_NUM" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
-          # Build new issue body.
-          # Embedded fingerprint comment is extracted on the next run for deduplication.
-          COMMIT_URL="https://github.com/$REPO/commit/$SHA"
-          {
-            printf '## ⚠️ Repository Integrity Issues Detected\n\n'
-            printf 'The automated repository validator found issues that require attention.\n\n'
-            printf '| Detail | Value |\n'
-            printf '|--------|-------|\n'
-            printf '| Workflow Run | [#%s](%s) |\n' "${{ github.run_id }}" "$RUN_URL"
-            printf '| Commit | [`%s`](%s) |\n' "$SHORT_SHA" "$COMMIT_URL"
-            printf '| Trigger | `%s` |\n' "${{ github.event_name }}"
-            printf '| Timestamp | %s |\n' "$(date -u +"%Y-%m-%d %H:%M UTC")"
-            printf '| Errors | **%s** |\n' "$ERRS"
-            printf '| Warnings | **%s** |\n' "$WARNS"
-            printf '\n---\n\n'
-            cat validation_report.md
-            printf '\n---\n'
-            printf '<!-- fingerprints: %s -->\n' "$CURRENT_FPS"
-          } > /tmp/new_issue_body.md
-
-          # If an existing issue is open, close it with a diff summary first
-          if [ -n "$EXISTING_NUM" ]; then
-            {
-              printf '## 🔄 Superseded by New Validation Run\n\n'
-              printf 'This issue is being replaced because the finding set changed.\n\n'
-              if [ -n "$RES_FPS" ]; then
-                printf '### ✅ Resolved since last check\n\n'
-                while IFS= read -r fp; do
-                  [ -z "$fp" ] && continue
-                  printf -- '- `%s`\n' "$fp"
-                done <<< "$RES_FPS"
-                printf '\n'
-              fi
-              if [ -n "$NEW_FPS" ]; then
-                printf '### 🆕 New findings\n\n'
-                while IFS= read -r fp; do
-                  [ -z "$fp" ] && continue
-                  printf -- '- `%s`\n' "$fp"
-                done <<< "$NEW_FPS"
-                printf '\n'
-              fi
-              printf 'Workflow Run: [#%s](%s)\n' "${{ github.run_id }}" "$RUN_URL"
-            } > /tmp/close_comment.md
-
-            gh issue close "$EXISTING_NUM" --comment "$(cat /tmp/close_comment.md)"
-            echo "✓ Closed stale issue #$EXISTING_NUM"
-          fi
-
-          # Create fresh issue.
-          # NOTE: 'gh issue create' does NOT support --json or --jq flags.
-          # It outputs the new issue URL to stdout — extract the number from it.
-          NEW_URL=$(gh issue create \
-            --title "⚠️ Repository Integrity Validation — Issues Found" \
-            --body-file /tmp/new_issue_body.md \
-            --label "maintenance,automated-check" \
-            --assignee jacobdjwilson)
-
-          NEW_NUM=$(echo "$NEW_URL" | grep -oE '[0-9]+$')
-
-          echo "✓ Created issue #$NEW_NUM ($NEW_URL)"
-          echo "action=created"     >> $GITHUB_OUTPUT
-          echo "new_issue=$NEW_NUM" >> $GITHUB_OUTPUT
+          python .github/scripts/manage-validation-issues.py
       - name: Auto-dispatch pipeline for orphaned PDFs
-        # When the only findings are orphaned PDFs (no matching Markdown),
-        # kick off the Security Reports Processing Pipeline immediately.
-        # The pipeline's push_mode=missing_conversion will pick them all up.
-        # We skip this when the pipeline is already running to avoid pile-ups.
-        if: steps.findings.outputs.has_findings == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
 
-          # Check that all findings are orphaned-pdf type
-          REPORT="validation_report.md"
-          if [ ! -f "$REPORT" ]; then
-            echo "⊘ No report file — skipping auto-dispatch"
+          if [ ! -f "validation_findings.json" ]; then
             exit 0
           fi
-
-          # Only dispatch when every error is an orphaned PDF
-          ERROR_COUNT="${{ steps.findings.outputs.error_count }}"
-          ORPHAN_COUNT=$(grep -c "PDF has no matching Markdown" "$REPORT" 2>/dev/null || echo 0)
-
-          if [ "$ORPHAN_COUNT" -eq 0 ] || [ "$ORPHAN_COUNT" -lt "$ERROR_COUNT" ]; then
-            echo "⊘ Non-orphan findings present — skipping auto-dispatch (manual review needed)"
+          
+          HAS_ORPHANS=$(jq '[.findings[] | select(.category == "orphaned_pdf" or .category == "stub_markdown")] | length' validation_findings.json)
+          
+          if [ "$HAS_ORPHANS" -eq 0 ]; then
+            echo "⊘ No orphaned PDFs or stubs found — skipping auto-dispatch"
             exit 0
           fi
 
@@ -448,7 +214,7 @@ jobs:
             exit 0
           fi
 
-          echo "🔄 Dispatching pipeline to convert $ORPHAN_COUNT orphaned PDF(s)..."
+          echo "🔄 Dispatching pipeline to convert orphaned/stub PDF(s)..."
           gh workflow run security-reports-pipeline.yml \
             --repo "${{ github.repository }}" \
             --ref main
