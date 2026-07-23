@@ -373,7 +373,18 @@ class ReadmeParser:
         return self.full_content[: self.start_pos] + self.content + self.full_content[self.end_pos:]
 
     def save(self) -> None:
-        self.readme_path.write_text(self.get_full_content(), encoding="utf-8")
+        final_content = self.get_full_content()
+        try:
+            pdf_count = len(list(Path("Annual Security Reports").rglob("*.pdf")))
+            final_content = re.sub(
+                r"(!\[Total.*?badge/Total_Reports-)\d+(-blue)",
+                rf"\g<1>{pdf_count}\g<2>",
+                final_content
+            )
+        except Exception as e:
+            print(f"    ⚠ Could not update total badge: {e}")
+            
+        self.readme_path.write_text(final_content, encoding="utf-8")
         print("✓ README saved")
 
 
