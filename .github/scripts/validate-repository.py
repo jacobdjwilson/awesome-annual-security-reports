@@ -125,11 +125,13 @@ class RepositoryValidator:
       6. Stub / failed-conversion detection  (conversion error placeholders)
     """
 
-    PDF_ROOT = Path("Annual Security Reports")
-    MD_ROOT  = Path("Markdown Conversions")
-
     def __init__(self, config: ConfigLoader):
         self.config = config
+
+        wf_config   = config.workflow_config.get("workflow", {})
+        folders     = wf_config.get("folders", {})
+        self.PDF_ROOT = Path(folders.get("pdf_source", "Annual Security Reports"))
+        self.MD_ROOT  = Path(folders.get("markdown_conversions", "Markdown Conversions"))
 
         disc_config = config.get_discovery_config()
         val_config  = config.get_validation_config()

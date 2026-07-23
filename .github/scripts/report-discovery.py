@@ -53,18 +53,22 @@ class Config:
     No values are hardcoded — everything is overridable via JSON.
     """
 
-    PDF_ROOT = Path("Annual Security Reports")
-
     def __init__(self, artifacts_dir: str = ".github/artifacts"):
         self.artifacts_dir = Path(artifacts_dir)
 
         wf  = self._load("workflow-config.json")
         gsc = self._load("google-search-config.json")
+        
+        # ── Folders ───────────────────────────────────────────────────────
+        folders = wf.get("workflow", {}).get("folders", {})
+        self.pdf_root = Path(folders.get("pdf_source", "Annual Security Reports"))
+        self.md_root  = Path(folders.get("markdown_conversions", "Markdown Conversions"))
 
         # ── Discovery limits ──────────────────────────────────────────────
         disc = wf.get("workflow", {}).get("discovery", {})
-        self.max_issues:   int = disc.get("default_limit", 10)
-        self.max_tasks:    int = disc.get("max_searches_per_run", 12)
+        self.max_issues:      int = disc.get("default_limit", 10)
+        self.max_tasks:       int = disc.get("max_searches_per_run", 12)
+        self.min_search_year: int = disc.get("min_search_year", 2008)
 
         # ── Rotation periods by tier (days) ───────────────────────────────
         rot = disc.get("rotation_days", {})
@@ -384,13 +388,13 @@ class ReportScanner:
         self.current_year = datetime.now().year
 
     def get_todays_tasks(self) -> List[Dict[str, Any]]:
-        if not self.config.PDF_ROOT.exists():
-            print(f"ERROR: PDF root not found: {self.config.PDF_ROOT}")
+        if not self.config.pdf_root.exists():
+            print(f"ERROR: PDF root not found: {self.config.pdf_root}")
             return []
 
-        print(f"Scanning {self.config.PDF_ROOT}...")
+        print(f"Scanning {self.config.pdf_root}...")
         series_latest: Dict[str, Dict[str, Any]] = {}
-        for pdf in self.config.PDF_ROOT.rglob("*.pdf"):
+        for pdf in self.config.pdf_root.rglob("*.pdf"):
             r = self._parse(pdf)
             if not r:
                 continue
@@ -423,7 +427,7 @@ class ReportScanner:
             for y in range(min_year, max_year):
                 candidate_years.add(y)
             # 3. Backward gap (-1 year from the earliest known)
-            if min_year - 1 >= 2008:
+            if min_year - 1 >= self.config.min_search_year:
                 candidate_years.add(min_year - 1)
                 
             missing_years = sorted(
