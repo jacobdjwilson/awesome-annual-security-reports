@@ -905,13 +905,11 @@ jobs:
 
           # Exit code 2 = all failures were quota errors; signal for retry-dispatch job
           if [ "$EXIT_CODE" -eq 2 ]; then
-            echo "analysis_success=false" >> $GITHUB_OUTPUT
             echo "quota_exhausted=true"   >> $GITHUB_OUTPUT
-            echo "⚠ Quota exhausted (exit 2) — retry-dispatch job will reschedule"
-            exit 0
+            echo "⚠ Quota exhausted (exit 2) — saving successful analyses and signaling retry"
+          else
+            echo "quota_exhausted=false" >> $GITHUB_OUTPUT
           fi
-
-          echo "quota_exhausted=false" >> $GITHUB_OUTPUT
 
           if [ "$ANALYSIS_COUNT" -gt 0 ]; then
             echo "analysis_success=true" >> $GITHUB_OUTPUT
@@ -919,15 +917,23 @@ jobs:
             if [ "$ERROR_COUNT" -gt 0 ]; then
               echo "⚠ $ERROR_COUNT report(s) failed — check analysis summary for details"
             fi
+            if [ "$EXIT_CODE" -eq 2 ]; then
+              exit 0
+            fi
           else
             echo "analysis_success=false" >> $GITHUB_OUTPUT
-            echo "❌ All reports failed analysis — see $ERRORS_FILE for details"
-            if [ -f "$ERRORS_FILE" ] && [ "$ERROR_COUNT" -gt 0 ]; then
-              echo ""
-              echo "Error breakdown:"
-              jq -r '.[] | "  [\(.error_type)] \(.organization) (\(.year)): \(.error[:150])"' "$ERRORS_FILE"
+            if [ "$EXIT_CODE" -eq 2 ]; then
+              echo "❌ All reports failed analysis due to quota exhaustion."
+              exit 0
+            else
+              echo "❌ All reports failed analysis — see $ERRORS_FILE for details"
+              if [ -f "$ERRORS_FILE" ] && [ "$ERROR_COUNT" -gt 0 ]; then
+                echo ""
+                echo "Error breakdown:"
+                jq -r '.[] | "  [\(.error_type)] \(.organization) (\(.year)): \(.error[:150])"' "$ERRORS_FILE"
+              fi
+              exit 1
             fi
-            exit 1
           fi
 
       - name: Upload analysis artifacts
@@ -1004,7 +1010,7 @@ jobs:
               echo "| Organization | Year | Error Type | Error | Suggested Fix |" >> $GITHUB_STEP_SUMMARY
               echo "|---|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
               jq -r '.[] |
-                "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.error[:120] | gsub("\n";" ") | gsub("|";"\\|")) | \(.suggestion[:150] | gsub("\n";" ") | gsub("|";"\\|")) |"
+                "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.error[:120] | gsub("\n";" ") | gsub("\\\\|";"\\|")) | \(.suggestion[:150] | gsub("\n";" ") | gsub("\\\\|";"\\|")) |"
               ' "$ERRORS_FILE" >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
             fi
@@ -1046,7 +1052,7 @@ jobs:
               echo "| Organization | Year | Error Type | Error Detail | Suggested Fix |" >> $GITHUB_STEP_SUMMARY
               echo "|---|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
               jq -r '.[] |
-                "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.error[:200] | gsub("\n";" ") | gsub("|";"\\|")) | \(.suggestion[:200] | gsub("\n";" ") | gsub("|";"\\|")) |"
+                "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.error[:200] | gsub("\n";" ") | gsub("\\\\|";"\\|")) | \(.suggestion[:200] | gsub("\n";" ") | gsub("\\\\|";"\\|")) |"
               ' "$ERRORS_FILE" >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
 

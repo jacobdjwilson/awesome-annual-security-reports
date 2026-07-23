@@ -493,17 +493,20 @@ class PDFConverter:
             else:
                 markdown_text = str(result)
 
+            is_stub = False
             if not markdown_text:
                 print(f"  ! No text extracted — saving minimal placeholder")
                 markdown_text = (
                     f"# {org_name} - {report_title} ({year})\n\n"
                     "Security report conversion pending."
                 )
+                is_stub = True
 
             markdown_text = markdown_text.strip()
 
             if len(markdown_text) < self.config.min_text_length:
                 print(f"  ! Short extraction ({len(markdown_text)} chars)")
+                is_stub = True
 
             # Hard cap before sending to AI (avoids token/cost overrun)
             if len(markdown_text) > self.config.max_pdf_chars:
@@ -511,7 +514,7 @@ class PDFConverter:
                 print(f"  ! Truncated raw text to {self.config.max_pdf_chars:,} chars")
 
             # ── Step 2: AI polish — structure, TOC, clean paragraphs ──────
-            if self.polisher and markdown_text:
+            if self.polisher and not is_stub:
                 print(f"  → Polishing with AI ({self.config.primary_model})...")
                 markdown_text = self.polisher.polish(
                     markdown_text, org_name, report_title, year
@@ -527,6 +530,8 @@ class PDFConverter:
             self.cache.set(pdf_path, str(md_path), model_to_cache)
 
             print(f"  ✓ Saved: {md_path}")
+            if is_stub:
+                return False, str(md_path), "failed (stub)"
             return True, str(md_path), "success"
 
         except Exception as e:
@@ -541,7 +546,7 @@ class PDFConverter:
                 )
                 md_path.write_text(stub, encoding="utf-8")
                 print(f"  ! Saved minimal stub to {md_path}")
-                return True, str(md_path), f"partial ({error_msg[:80]})"
+                return False, str(md_path), f"partial ({error_msg[:80]})"
             except Exception:
                 return False, "", f"Failed: {error_msg}"
 
@@ -684,7 +689,7 @@ def main():
 
         results.append({
             "pdf_path":          pdf_path,
-            "output_path":       md_path if success else "",
+            "output_path":       md_path,
             "status":            "success" if success else "failed",
             "message":           message,
             "organization_name": org_name,
