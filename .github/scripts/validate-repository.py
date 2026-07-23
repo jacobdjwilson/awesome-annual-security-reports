@@ -3,6 +3,9 @@ import sys
 import re
 import json
 import argparse
+import urllib.request
+import urllib.error
+import concurrent.futures
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
@@ -27,6 +30,7 @@ CATEGORY_OVERSIZED      = "oversized_file"
 CATEGORY_NAMING         = "naming_convention"
 CATEGORY_YEAR_MISMATCH  = "year_mismatch"
 CATEGORY_STUB_MD        = "stub_markdown"
+CATEGORY_DEAD_LINK      = "dead_link"
 
 # ── Filename convention ──────────────────────────────────────
 # Expected pattern: <Org>-<Title-Words>-<YYYY>.pdf
@@ -190,6 +194,7 @@ class RepositoryValidator:
         self._validate_markdown_integrity(md_files)
         self._check_naming_conventions(pdf_files, md_files)
         self._check_year_consistency(pdf_files, md_files)
+        self._validate_readme_links()
 
         errors   = sum(1 for f in self.findings if f.severity == "error")
         warnings = sum(1 for f in self.findings if f.severity == "warning")
@@ -384,7 +389,48 @@ class RepositoryValidator:
                     self.stats["year_mismatches"] += 1
                     break
 
+    def _validate_readme_links(self):
+        readme_path = Path("README.md")
+        if not readme_path.exists():
+            return
+            
+        with open(readme_path, "r", encoding="utf-8") as f:
+            content = f.read()
+            
+        # Match all external http/https markdown links: [Text](https://...)
+        links = re.findall(r'\[[^\]]+\]\((https?://[^\)]+)\)', content)
+        unique_links = list(set(links))
+        
+        if not unique_links:
+            return
+            
+        print(f"Checking {len(unique_links)} external links from README.md in parallel...")
+        
+        def check_link(url: str):
+            try:
+                req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'})
+                with urllib.request.urlopen(req, timeout=10) as response:
+                    return (url, "ok", None)
+            except urllib.error.HTTPError as e:
+                if e.code in (401, 403):
+                    return (url, "warning", f"HTTP {e.code}: {e.reason}")
+                return (url, "error", f"HTTP {e.code}: {e.reason}")
+            except urllib.error.URLError as e:
+                return (url, "error", f"Connection error: {e.reason}")
+            except Exception as e:
+                return (url, "warning", f"Timeout or other error: {str(e)}")
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+            results = executor.map(check_link, unique_links)
+            
+        for url, status, msg in results:
+            if status == "error":
+                self._add(Finding("error", CATEGORY_DEAD_LINK, url, f"Dead link: {msg}"))
+            elif status == "warning":
+                self._add(Finding("warning", CATEGORY_DEAD_LINK, url, f"Link warning: {msg}"))
+
     # ── Report writers ────────────────────────────────────────────────────
+
 
     def _write_markdown(self, output_path: str):
         errors   = [f for f in self.findings if f.severity == "error"]
@@ -413,6 +459,7 @@ class RepositoryValidator:
                 CATEGORY_STUB_MD:       "🔴 Stub / Failed Conversions",
                 CATEGORY_INVALID_PDF:   "🔴 Invalid or Unreadable PDFs",
                 CATEGORY_YEAR_MISMATCH: "🔴 Year Inconsistencies",
+                CATEGORY_DEAD_LINK:     "🔴 Dead External Links",
                 CATEGORY_INVALID_MD:    "🟡 Invalid or Short Markdown Files",
                 CATEGORY_NAMING:        "🟡 Filename Convention Violations",
                 CATEGORY_OVERSIZED:     "🟡 Oversized Files",
