@@ -136,8 +136,9 @@ jobs:
         if: steps.validate.outputs.valid == 'false'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
-          gh issue comment ${{ github.event.issue.number }} --body "$(cat << 'BODY'
+          gh issue comment "$ISSUE_NUMBER" --body "$(cat << 'BODY'
           ❌ **Could not process this suggestion** — one or more required fields are missing or invalid.
 
           Please edit the issue and ensure the following fields are correctly filled in:
@@ -217,8 +218,9 @@ jobs:
         if: failure() && steps.download.conclusion == 'failure'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
-          gh issue comment ${{ github.event.issue.number }} --body "$(cat << 'BODY'
+          gh issue comment "$ISSUE_NUMBER" --body "$(cat << 'BODY'
           ❌ **Download failed** — the PDF could not be retrieved from the provided URL.
 
           Common causes:
@@ -276,12 +278,13 @@ jobs:
         if: steps.create_pr.outputs.pull-request-number != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
           PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
           PR_URL="https://github.com/${{ github.repository }}/pull/$PR_NUM"
           FILE="${{ steps.download.outputs.file_name }}"
 
-          gh issue comment ${{ github.event.issue.number }} --body "$(cat << BODY
+          gh issue comment "$ISSUE_NUMBER" --body "$(cat << BODY
           ✅ **Report successfully ingested!**
 
           | Detail | Value |
@@ -300,16 +303,18 @@ jobs:
 
       - name: Generate step summary
         if: always()
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
-          ISSUE_URL="https://github.com/${{ github.repository }}/issues/${{ github.event.issue.number }}"
+          ISSUE_URL="https://github.com/${{ github.repository }}/issues/$ISSUE_NUMBER"
 
           echo "## 📥 Report Ingestion" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Issue | [#${{ github.event.issue.number }}]($ISSUE_URL) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Issue | [#$ISSUE_NUMBER]($ISSUE_URL) |" >> $GITHUB_STEP_SUMMARY
           echo "| Organization | ${{ steps.parse.outputs.organization_name }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Title | ${{ steps.parse.outputs.report_title }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Year | ${{ steps.parse.outputs.report_year }} |" >> $GITHUB_STEP_SUMMARY

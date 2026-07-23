@@ -202,6 +202,12 @@ jobs:
           MAX_AGE_DAYS: ${{ steps.load_config.outputs.max_age_days }}
           PUSH_MODE: ${{ steps.load_config.outputs.push_mode }}
           PUSH_BATCH_LIMIT: ${{ steps.load_config.outputs.push_batch_limit }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          YEAR_FILTER: ${{ github.event.inputs.year_filter }}
+          CATEGORY_FILTER: ${{ github.event.inputs.category_filter }}
+          ORG_FILTER: ${{ github.event.inputs.organization_filter }}
+          SKIP_EXISTING: ${{ github.event.inputs.skip_existing_conversions }}
+          LIMIT_COUNT: ${{ github.event.inputs.limit_count }}
         run: |
           # Set safe defaults first — these are overwritten below if files are found.
           # Ensures outputs are always defined even if an early exit occurs.
@@ -217,31 +223,31 @@ jobs:
           echo "======================================================================"
 
           # Determine scan mode
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+          if [ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]; then
             echo "Mode: Manual"
             echo "scan_mode=manual" >> $GITHUB_OUTPUT
 
             FIND_CMD="find '$PDF_SOURCE' -name '*.pdf' -type f"
 
-            if [ -n "${{ github.event.inputs.year_filter }}" ]; then
-              YEAR="${{ github.event.inputs.year_filter }}"
+            if [ -n "$YEAR_FILTER" ]; then
+              YEAR="$YEAR_FILTER"
               FIND_CMD="$FIND_CMD -path '*/$YEAR/*'"
             fi
 
-            if [ -n "${{ github.event.inputs.category_filter }}" ]; then
-              CAT="${{ github.event.inputs.category_filter }}"
+            if [ -n "$CATEGORY_FILTER" ]; then
+              CAT="$CATEGORY_FILTER"
               FIND_CMD="$FIND_CMD -path '*/$CAT/*'"
             fi
 
             eval $FIND_CMD > all_found.txt
 
-            if [ -n "${{ github.event.inputs.organization_filter }}" ]; then
-              ORG="${{ github.event.inputs.organization_filter }}"
+            if [ -n "$ORG_FILTER" ]; then
+              ORG="$ORG_FILTER"
               grep -i "$ORG" all_found.txt > filtered.txt || true
               mv filtered.txt all_found.txt
             fi
 
-            if [ "${{ github.event.inputs.skip_existing_conversions }}" == "true" ]; then
+            if [ "$SKIP_EXISTING" == "true" ]; then
               > needs_conversion.txt
               while IFS= read -r pdf_path; do
                 md_path=$(echo "$pdf_path" | sed "s|$PDF_SOURCE|$MD_FOLDER|" | sed 's/\.pdf$/.md/')
@@ -252,14 +258,14 @@ jobs:
               mv needs_conversion.txt all_found.txt
             fi
 
-            LIMIT="${{ github.event.inputs.limit_count }}"
+            LIMIT="$LIMIT_COUNT"
             if [ -z "$LIMIT" ]; then
               LIMIT="$DEFAULT_LIMIT"
             fi
 
             head -n "$LIMIT" all_found.txt > files_to_process.txt
 
-          elif [ "${{ github.event_name }}" == "schedule" ]; then
+          elif [ "$GITHUB_EVENT_NAME" == "schedule" ]; then
             echo "Mode: Scheduled"
             echo "scan_mode=scheduled" >> $GITHUB_OUTPUT
 
@@ -285,7 +291,7 @@ jobs:
               sort -t/ -k1,1 needs_conversion.txt | head -n 1 > files_to_process.txt
             fi
 
-          elif [ "${{ github.event_name }}" == "push" ]; then
+          elif [ "$GITHUB_EVENT_NAME" == "push" ]; then
             echo "Mode: Push ($PUSH_MODE)"
             echo "scan_mode=push" >> $GITHUB_OUTPUT
 
@@ -446,6 +452,8 @@ jobs:
 
       - name: Generate discovery summary
         if: always()
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: |
           SCAN_MODE="${{ steps.consolidate-outputs.outputs.scan_mode }}"
           FILE_COUNT="${{ steps.consolidate-outputs.outputs.file_count }}"
@@ -460,9 +468,9 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Mode | \`${SCAN_MODE}\` |" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ github.event_name }}" == "push" ]; then
+          if [ "$GITHUB_EVENT_NAME" == "push" ]; then
             echo "| Push Strategy | \`${PUSH_MODE}\` (batch limit: ${PUSH_BATCH_LIMIT}) |" >> $GITHUB_STEP_SUMMARY
           fi
           echo "| Open Automated PRs | ${OPEN_COUNT:-0} / ${MAX_OPEN_PRS:-5} |" >> $GITHUB_STEP_SUMMARY
@@ -484,7 +492,7 @@ jobs:
             cat files_to_process.txt >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
           else
-            if [ "${{ github.event_name }}" == "push" ] && [ "$PUSH_MODE" = "missing_conversion" ]; then
+            if [ "$GITHUB_EVENT_NAME" == "push" ] && [ "$PUSH_MODE" = "missing_conversion" ]; then
               echo "⊘ No unprocessed PDF files found — all PDFs already have a Markdown conversion." >> $GITHUB_STEP_SUMMARY
             else
               echo "⊘ No new PDF files detected in this changeset." >> $GITHUB_STEP_SUMMARY
@@ -530,9 +538,10 @@ jobs:
         id: vt-scan
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
+          SKIP_VIRUS_SCAN: ${{ github.event.inputs.skip_virus_scan }}
         run: |
           MANUAL_SKIP_FLAG=""
-          if [ "${{ github.event.inputs.skip_virus_scan }}" == "true" ]; then
+          if [ "$SKIP_VIRUS_SCAN" == "true" ]; then
             MANUAL_SKIP_FLAG="--manual-skip"
           fi
 
@@ -566,6 +575,8 @@ jobs:
 
       - name: Generate VirusTotal summary
         if: always()
+        env:
+          SKIP_VIRUS_SCAN: ${{ github.event.inputs.skip_virus_scan }}
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
@@ -574,7 +585,7 @@ jobs:
 
           if [ ! -f scan_results.json ] || [ "$(jq 'length' scan_results.json)" -eq 0 ]; then
             SCAN_MODE="${{ needs.discover-and-scan.outputs.scan_mode }}"
-            MANUAL_SKIP="${{ github.event.inputs.skip_virus_scan }}"
+            MANUAL_SKIP="$SKIP_VIRUS_SCAN"
             if [ "$MANUAL_SKIP" == "true" ]; then
               echo "⊘ Scan skipped — manually disabled via workflow input." >> $GITHUB_STEP_SUMMARY
             else
@@ -1250,7 +1261,7 @@ jobs:
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
             echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-            echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+            echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
             echo "| Scan Mode | \`${{ needs.discover-and-scan.outputs.scan_mode }}\` |" >> $GITHUB_STEP_SUMMARY
             echo "| Conversions | ✅ ${CONV_OK:-0} succeeded · ❌ ${CONV_FAIL:-0} failed |" >> $GITHUB_STEP_SUMMARY
             echo "| VirusTotal | $([ "$VT_SKIPPED" == "true" ] && echo "⊘ Skipped" || echo "✅ Passed") |" >> $GITHUB_STEP_SUMMARY
@@ -1307,7 +1318,7 @@ jobs:
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
             echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-            echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+            echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
             echo "| Scan Mode | \`${{ needs.discover-and-scan.outputs.scan_mode }}\` |" >> $GITHUB_STEP_SUMMARY
             echo "| Conversions | ✅ ${CONV_OK:-0} succeeded · ❌ ${CONV_FAIL:-0} failed |" >> $GITHUB_STEP_SUMMARY
             echo "| VirusTotal | $([ "$VT_SKIPPED" == "true" ] && echo "⊘ Skipped" || echo "✅ Passed") |" >> $GITHUB_STEP_SUMMARY
@@ -1360,8 +1371,9 @@ jobs:
       - name: Schedule retry dispatch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RETRY_ATTEMPT: ${{ github.event.inputs.quota_retry_attempt }}
         run: |
-          ATTEMPT="${{ github.event.inputs.quota_retry_attempt }}"
+          ATTEMPT="$RETRY_ATTEMPT"
           ATTEMPT="${ATTEMPT:-1}"
 
           if [ "$ATTEMPT" -ge 3 ]; then

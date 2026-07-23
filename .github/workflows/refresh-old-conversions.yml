@@ -98,12 +98,15 @@ jobs:
       - name: Find stale files
         id: check-files
         if: steps.check-pr.outputs.pr_exists != 'true'
+        env:
+          INPUT_LIMIT: ${{ github.event.inputs.limit }}
+          INPUT_DAYS_OLD: ${{ github.event.inputs.days_old }}
         run: |
           MD_ROOT="Markdown Conversions"
           PDF_ROOT="Annual Security Reports"
 
-          LIMIT="${{ github.event.inputs.limit }}"
-          DAYS_OLD="${{ github.event.inputs.days_old }}"
+          LIMIT="$INPUT_LIMIT"
+          DAYS_OLD="$INPUT_DAYS_OLD"
 
           if [ -z "$LIMIT" ]; then
             LIMIT="${{ steps.load_config.outputs.default_limit }}"
@@ -170,6 +173,10 @@ jobs:
 
       - name: Generate discovery summary
         if: always()
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          INPUT_LIMIT: ${{ github.event.inputs.limit }}
+          INPUT_DAYS_OLD: ${{ github.event.inputs.days_old }}
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           PR_EXISTS="${{ steps.check-pr.outputs.pr_exists }}"
@@ -178,14 +185,18 @@ jobs:
           MAX_OPEN_PRS="${{ steps.load_config.outputs.max_open_prs }}"
           HAS_FILES="${{ steps.check-files.outputs.has_files }}"
           COUNT="${{ steps.check-files.outputs.file_count }}"
+          DEFAULT_LIMIT="${{ steps.load_config.outputs.default_limit }}"
+          
+          FINAL_LIMIT="${INPUT_LIMIT:-$DEFAULT_LIMIT}"
+          FINAL_DAYS="${INPUT_DAYS_OLD:-90}"
 
           echo "## ♻️ Refresh Old Conversions — Discovery" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Limit | \`${{ github.event.inputs.limit || steps.load_config.outputs.default_limit }}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Min Age (days) | \`${{ github.event.inputs.days_old || 90 }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Limit | \`${FINAL_LIMIT}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Min Age (days) | \`${FINAL_DAYS}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Open Automated PRs | ${OPEN_COUNT:-?} / ${MAX_OPEN_PRS:-5} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
@@ -382,7 +393,7 @@ jobs:
 
             Refreshed ${{ needs.identify-stale-files.outputs.file_count }} reports that were either:
             - Missing markdown conversions
-            - Older than ${{ github.event.inputs.days_old || 90 }} days
+            - Older than ${{ github.event.inputs.days_old || '90' }} days
 
             Markdown files were regenerated from scratch using the full
             markitdown + AI polish pipeline (identical to newly-added reports).
@@ -414,12 +425,14 @@ jobs:
 
       - name: Generate processing summary
         if: always()
+        env:
+          INPUT_DAYS_OLD: ${{ github.event.inputs.days_old }}
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           SUCCESSFUL="${{ steps.converter.outputs.successful_count }}"
           FAILED="${{ steps.converter.outputs.failed_count }}"
           PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
-          DAYS_OLD="${{ github.event.inputs.days_old || 90 }}"
+          DAYS_OLD="${INPUT_DAYS_OLD:-90}"
 
           echo "## ♻️ Refresh Old Conversions — Processing" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY

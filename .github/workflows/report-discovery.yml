@@ -83,14 +83,16 @@ jobs:
           GITHUB_REPOSITORY:     ${{ github.repository }}
           VIRUS_TOTAL_API_KEY:   ${{ secrets.VIRUS_TOTAL_API_KEY }}
           GEMINI_API_KEY:        ${{ secrets.GEMINI_API_KEY }}
+          MAX_DISCOVERIES:       ${{ github.event.inputs.max_discoveries }}
+          OVERRIDE_DATE:         ${{ github.event.inputs.override_date }}
         run: |
           ARGS="--artifacts-dir .github/artifacts"
 
-          if [ -n "${{ github.event.inputs.max_discoveries }}" ]; then
-            ARGS="$ARGS --max-discoveries ${{ github.event.inputs.max_discoveries }}"
+          if [ -n "$MAX_DISCOVERIES" ]; then
+            ARGS="$ARGS --max-discoveries $MAX_DISCOVERIES"
           fi
-          if [ -n "${{ github.event.inputs.override_date }}" ]; then
-            ARGS="$ARGS --date ${{ github.event.inputs.override_date }}"
+          if [ -n "$OVERRIDE_DATE" ]; then
+            ARGS="$ARGS --date $OVERRIDE_DATE"
           fi
 
           set +e
@@ -126,9 +128,12 @@ jobs:
 
       - name: Generate step summary
         if: always()
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          OVERRIDE_DATE: ${{ github.event.inputs.override_date }}
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          DATE_USED="${{ github.event.inputs.override_date }}"
+          DATE_USED="$OVERRIDE_DATE"
           [ -z "$DATE_USED" ] && DATE_USED="$(date +%Y-%m-%d) (today)"
 
           CAP_REACHED="${{ steps.issue-cap.outputs.cap_reached }}"
@@ -152,7 +157,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Date    | $DATE_USED |" >> $GITHUB_STEP_SUMMARY
           echo "| Open Automated Issues | ${OPEN_ISSUES:-0} / ${MAX_ISSUES:-20} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY

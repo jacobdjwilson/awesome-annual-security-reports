@@ -105,15 +105,16 @@ jobs:
 
           # Remove existing outcome labels before applying the new one
           for old_label in false-positive duplicate mismatch accepted; do
-            gh issue edit ${{ github.event.issue.number }} --remove-label "$old_label" 2>/dev/null || true
+            gh issue edit "$ISSUE_NUMBER" --remove-label "$old_label" 2>/dev/null || true
           done
 
-          gh issue edit ${{ github.event.issue.number }} --add-label "$LABEL"
+          gh issue edit "$ISSUE_NUMBER" --add-label "$LABEL"
 
       - name: Post triage acknowledgement
         if: steps.parse.outputs.valid == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
           OUTCOME="${{ steps.parse.outputs.outcome }}"
           REASON="${{ steps.parse.outputs.reason }}"
@@ -129,17 +130,18 @@ jobs:
           MSG="$ICON **Triaged as \`$OUTCOME\`** by @$AUTHOR via checkbox."
           MSG="$MSG\n\n_This outcome will be incorporated into the next discovery feedback learner run to improve future searches._"
 
-          gh issue comment ${{ github.event.issue.number }} --body "$(printf '%b' "$MSG")"
+          gh issue comment "$ISSUE_NUMBER" --body "$(printf '%b' "$MSG")"
 
       - name: Close issue (negative outcomes)
         if: steps.parse.outputs.valid == 'true' && steps.parse.outputs.close == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
-          gh issue close ${{ github.event.issue.number }} \
+          gh issue close "$ISSUE_NUMBER" \
             --reason "not planned" \
             --comment "" 2>/dev/null || \
-          gh issue close ${{ github.event.issue.number }}
+          gh issue close "$ISSUE_NUMBER"
 
       - name: Record feedback event in artifact
         if: steps.parse.outputs.valid == 'true'

@@ -52,10 +52,14 @@ jobs:
         id: gate
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          WORKFLOW_RUN_NAME: ${{ github.event.workflow_run.name }}
+          WORKFLOW_RUN_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          WORKFLOW_RUN_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
         run: |
           set -euo pipefail
 
-          EVENT="${{ github.event_name }}"
+          EVENT="$GITHUB_EVENT_NAME"
           REPO="${{ github.repository }}"
 
           # ── Manual / scheduled runs always proceed immediately ──────────
@@ -68,10 +72,10 @@ jobs:
           fi
 
           # ── workflow_run trigger ────────────────────────────────────────
-          TRIGGER_SHA="${{ github.event.workflow_run.head_sha }}"
-          CONCLUSION="${{ github.event.workflow_run.conclusion }}"
+          TRIGGER_SHA="$WORKFLOW_RUN_HEAD_SHA"
+          CONCLUSION="$WORKFLOW_RUN_CONCLUSION"
 
-          echo "Triggered by: ${{ github.event.workflow_run.name }}"
+          echo "Triggered by: $WORKFLOW_RUN_NAME"
           echo "Conclusion:   $CONCLUSION"
           echo "Head SHA:     $TRIGGER_SHA"
           echo ""
@@ -223,6 +227,8 @@ jobs:
 
       - name: Generate step summary
         if: always()
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           HAS="${{ steps.findings.outputs.has_findings }}"
@@ -239,7 +245,7 @@ jobs:
           echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| Run | [#${{ github.run_id }}]($RUN_URL) |" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Commit | \`${{ needs.gate.outputs.trigger_sha }}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Errors | ${ERRS:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "| Warnings | ${WARNS:-0} |" >> $GITHUB_STEP_SUMMARY
@@ -379,6 +385,8 @@ jobs:
 
       - name: Generate step summary
         if: always()
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           DELETED="${{ steps.cleanup.outputs.deleted_count }}"
@@ -388,7 +396,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Branches deleted | ${DELETED:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "| Branches skipped | ${SKIPPED:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -432,6 +440,8 @@ jobs:
 
     steps:
       - name: Generate skip summary
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: |
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           REASON="${{ needs.gate.outputs.skip_reason }}"
@@ -441,7 +451,7 @@ jobs:
           echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| Run | [#${{ github.run_id }}]($RUN_URL) |" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger | \`${{ github.event_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| SHA | \`${{ needs.gate.outputs.trigger_sha }}\` |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### ⊘ Validation Skipped" >> $GITHUB_STEP_SUMMARY
