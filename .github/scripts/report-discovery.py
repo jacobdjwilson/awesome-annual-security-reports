@@ -406,36 +406,59 @@ class ReportScanner:
 
         for stem, report in series_latest.items():
             latest_year  = report["year"]
-            missing_years = [
-                y for y in range(latest_year + 1, self.current_year + 1)
-                if not self.lineage.has_year(stem, y)
-            ]
+            
+            # Identify all existing years for the series to find gaps and lower bounds
+            existing_years = self.lineage.index.get(self.lineage._fp(stem), set())
+            if not existing_years:
+                existing_years = {latest_year}
+                
+            min_year = min(existing_years)
+            max_year = max(existing_years)
+            
+            candidate_years = set()
+            # 1. Forward gaps
+            for y in range(max_year + 1, self.current_year + 1):
+                candidate_years.add(y)
+            # 2. Intermediate gaps
+            for y in range(min_year, max_year):
+                candidate_years.add(y)
+            # 3. Backward gap (-1 year from the earliest known)
+            if min_year - 1 >= 2008:
+                candidate_years.add(min_year - 1)
+                
+            missing_years = sorted(
+                [y for y in candidate_years if not self.lineage.has_year(stem, y)], 
+                reverse=True
+            )
+
             if not missing_years:
                 skipped_uptodate += 1
                 continue
 
-            gap = self.current_year - latest_year
-            if gap == 1:
-                tier, rotation = TIER_CURRENT, self.config.rotation_current
-            elif gap == 2:
-                tier, rotation = TIER_STALE,   self.config.rotation_stale
-            else:
-                tier, rotation = TIER_OLD,     self.config.rotation_old
+            series_due = False
+            for target_year in missing_years:
+                gap = self.current_year - target_year
+                if gap <= 1:
+                    tier, rotation = TIER_CURRENT, self.config.rotation_current
+                elif gap == 2:
+                    tier, rotation = TIER_STALE,   self.config.rotation_stale
+                else:
+                    tier, rotation = TIER_OLD,     self.config.rotation_old
 
-            if not self.scheduler.is_due(stem, rotation):
+                if self.scheduler.is_due(stem, rotation):
+                    series_due = True
+                    tasks.append({
+                        "org":         report["org"],
+                        "title":       report["title"].replace("-", " "),
+                        "stem":        stem,
+                        "latest_year": latest_year,
+                        "target_year": target_year,
+                        "tier":        tier,
+                        "gap":         gap,
+                    })
+                    
+            if not series_due:
                 skipped_schedule += 1
-                continue
-
-            for target_year in sorted(missing_years, reverse=True):
-                tasks.append({
-                    "org":         report["org"],
-                    "title":       report["title"].replace("-", " "),
-                    "stem":        stem,
-                    "latest_year": latest_year,
-                    "target_year": target_year,
-                    "tier":        tier,
-                    "gap":         gap,
-                })
 
         tier_order = {TIER_CURRENT: 0, TIER_STALE: 1, TIER_OLD: 2}
         tasks.sort(key=lambda t: (tier_order[t["tier"]], -t["target_year"]))
