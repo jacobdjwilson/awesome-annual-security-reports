@@ -575,7 +575,7 @@ The categories below highlight the diverse roles these organizations play in bui
 ### Threat Intelligence and Incident Response
 - [The Anti-Phishing Working Group (APWG)](https://apwg.org/) - A global coalition focused on unifying the global response to cybercrime.
 - [The Cyber Threat Alliance (CTA)](https://www.cyberthreatalliance.org/) - An industry-driven group of cybersecurity organizations that share threat intelligence and conduct collaborative research to combat cyber threats.
-- [Center for Threat-Informed Defense (CTID)](https://ctid.mitre-engenuity.org/) - A non-profit, privately funded research and development organization operated by MITRE Engenuity to advance threat-informed defense globally.
+- [Center for Threat-Informed Defense (CTID)](https://mitre-engenuity.org/) - A non-profit, privately funded research and development organization operated by MITRE Engenuity to advance threat-informed defense globally.
 - [The Forum of Incident Response and Security Teams (FIRST)](https://www.first.org/) - Provides platforms, means and tools for incident responders to always find the right partner and to collaborate efficiently.
 - [The Global Cyber Alliance (GCA)](https://globalcyberalliance.org/) - An international, cross-sector effort dedicated to reducing cyber risk.
 - [The Messaging, Malware and Mobile Anti-Abuse Working Group (M3AAWG)](https://www.m3aawg.org/) - Focuses on operational issues of Internet abuse including botnets, malware, spam, viruses, and mobile messaging abuse.
@@ -602,12 +602,12 @@ The categories below highlight the diverse roles these organizations play in bui
 - [Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov/) - A U.S. government agency responsible for enhancing the security and resilience of the nation's critical infrastructure.
 - [Cyber Peace Institute](https://cyberpeaceinstitute.org/) - A non-profit organization focused on reducing the impact of cyberattacks on civilians and promoting peace in cyberspace.
 - [European Union Agency for Cybersecurity (ENISA)](https://www.enisa.europa.eu/) - A European Union agency that contributes to EU cybersecurity policy, enhances trust in digital services, and supports incident response capabilities across Europe.
-- [Europol - European Cybercrime Centre (EC3)](https://www.europol.europa.eu/activities-services-main/areas-interest/european-cybercrime-centre-ec3) - A strategic alliance focused on combating cybercrime within the European Union.
+- [Europol - European Cybercrime Centre (EC3)](https://www.europol.europa.eu/about-europol/european-cybercrime-centre-ec3) - A strategic alliance focused on combating cybercrime within the European Union.
 - [German Federal Office for Information Security (BSI)](https://www.bsi.bund.de/) - Germany's national cyber security authority providing IT security services and guidance.
 - [InfraGard](https://www.infragard.org/) - A partnership between the FBI and members of the private sector for the protection of U.S. Critical Infrastructure.
 - [Internet Security Research Group (ISRG)](https://www.abetterinternet.org/) - A non-profit organization focused on reducing financial, technological, and educational barriers to secure communication over the Internet (creators of Let's Encrypt).
 - [Japan National Center of Incident Readiness and Strategy for Cybersecurity (NISC)](https://www.nisc.go.jp/eng/) - Japan's central organization for national cybersecurity strategy and incident response.
-- [Korean Internet & Security Agency (KISA)](https://www.kisa.or.kr/eng/) - South Korea's government agency dedicated to promoting cybersecurity and a safer internet environment.
+- [Korean Internet & Security Agency (KISA)](https://www.kisa.or.kr/) - South Korea's government agency dedicated to promoting cybersecurity and a safer internet environment.
 - [MITRE Corporation](https://www.mitre.org/) - An American not-for-profit organization which conducts research and development, famously maintaining the ATT&CK and CVE frameworks.
 - [National Cyber Security Centre (NCSC)](https://www.ncsc.gov.uk/) - The UK's technical authority for cyber incidents.
 - [National Cyber Security Centre - Netherlands (NCSC-NL)](https://www.ncsc.nl/english) - The Dutch national cyber security center providing guidance and incident response.
