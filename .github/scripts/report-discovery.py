@@ -1541,37 +1541,6 @@ class GeminiValidator:
     Gracefully disabled if GEMINI_API_KEY is absent.
     """
 
-    PROMPT = textwrap.dedent("""
-        You are reviewing a candidate document found by an automated security report discovery pipeline.
-        The pipeline curates ANNUAL (or recurring) cybersecurity reports published by companies and
-        organizations — things like threat landscape reports, data breach studies, vulnerability reports,
-        and similar recurring research publications.
-
-        Candidate:
-        - Organization: {org}
-        - Target year: {year}
-        - Title / snippet: {text}
-        - URL: {url}
-
-        Existing reports already in this repository for this organization:
-        {existing_years}
-
-        Answer ONLY with a JSON object — no markdown, no explanation outside the JSON:
-        {{
-          "verdict": "ACCEPT" | "REJECT" | "UNCERTAIN",
-          "reason": "<one concise sentence>",
-          "is_annual": true | false,
-          "is_security_topic": true | false,
-          "is_duplicate": true | false
-        }}
-
-        Rules:
-        - ACCEPT if: annual/recurring, covers a cybersecurity topic, and is NOT a duplicate of an existing year
-        - REJECT if: not annual/recurring, not cybersecurity, financial/investor report, webinar, blog, product guide, or is a duplicate
-        - UNCERTAIN if: not enough information to be sure
-        - is_duplicate = true if the same edition (same org + same year) appears to already be in the repo
-    """).strip()
-
     def __init__(self, artifacts_dir: Path):
         self.available = False
         api_key = os.environ.get("GEMINI_API_KEY", "")
@@ -1589,6 +1558,13 @@ class GeminiValidator:
 
         self.model_name = model_name
         self.api_key    = api_key
+        
+        prompt_path = artifacts_dir.parent / "ai-prompts" / "report-discovery-validation-prompt.md"
+        if not prompt_path.exists():
+            print(f"⊘ Prompt file not found: {prompt_path} — Gemini validation skipped")
+            return
+            
+        self.PROMPT     = prompt_path.read_text(encoding="utf-8").strip()
         self.available  = True
         print(f"✓ Gemini validator active (model: {model_name})")
 

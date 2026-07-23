@@ -358,94 +358,26 @@ class FeedbackAnalyser:
                 rows.append(f"... and {extra} more")
             return "\n".join(rows) if rows else "(none)"
 
-        prompt = f"""You are an expert at tuning information-retrieval heuristics for a
-cybersecurity report discovery pipeline.  The pipeline searches Google for annual
-security reports and scores each result.  Below is a summary of how human reviewers
-have triaged the issues the pipeline created.
-
-=== CURRENT SCORING CONFIG ===
-Score threshold (min to create issue): {self.config.base_threshold}
-
-Positive keyword signals (signal → score bonus):
-{json.dumps(self.config.base_positive_signals, indent=2)}
-
-Negative keyword signals (signal → score penalty, values already negative):
-{json.dumps(self.config.base_negative_signals, indent=2)}
-
-=== TRIAGE OUTCOMES ===
-Total events : {total}
-True positive: {len(tp_events)}
-False positive: {len(fp_events)}
-Mismatch     : {len(mm_events)}
-Duplicate    : {len(dup_events)}
-
-FALSE POSITIVE events (wrong/unrelated result — we want fewer of these):
-{summarise_events(fp_events)}
-
-MISMATCH events (correct org, wrong year/edition/category):
-{summarise_events(mm_events)}
-
-DUPLICATE events (already in repo or repeat discovery):
-{summarise_events(dup_events)}
-
-TRUE POSITIVE events (valid finds — we want to keep these):
-{summarise_events(tp_events)}
-
-=== CLOSURE COMMENTS FROM GITHUB ===
-These are the actual comments left by reviewers when closing issues.
-They provide richer context than just the outcome label:
-{closure_comment_block}
-
-=== YOUR TASK ===
-Analyse the patterns in false positive, mismatch, duplicate events, AND the
-closure comments above.  Suggest scoring adjustments that would reduce bad
-issues WITHOUT eliminating true positive results.  Pay special attention to
-recurring language in closure comments (e.g. "already in repo", "wrong year",
-"financial report") as these are the strongest signals.
-
-Respond ONLY with a valid JSON object matching this schema exactly.
-Do not include any markdown, explanation, or commentary outside the JSON:
-
-{{
-  "signal_weight_deltas": {{
-    "positive": {{"<signal_keyword>": <integer_delta>, ...}},
-    "negative": {{"<signal_keyword>": <integer_delta>, ...}}
-  }},
-  "domain_blocklist": ["<domain1>", ...],
-  "domain_trustlist": ["<domain1>", ...],
-  "org_specific_signals": {{
-    "<org_name_lowercase>": {{
-      "positive": {{"<keyword>": <integer>, ...}},
-      "negative": {{"<keyword>": <integer>, ...}}
-    }}
-  }},
-  "title_patterns": {{
-    "reject": ["<regex_pattern>", ...],
-    "trust":  ["<regex_pattern>", ...]
-  }},
-  "score_threshold_delta": <integer>,
-  "gemini_rejection_patterns": ["<phrase found repeatedly in false positive snippets>"],
-  "validation_threshold": <float between 0.3 and 1.0>,
-  "url_blocklist": ["<specific URL to permanently block>"],
-  "summary": "<2-3 sentence plain-English explanation of main adjustments>"
-}}
-
-Rules:
-- signal_weight_deltas: only include signals that NEED changing.
-- domain_blocklist: only add domains with 2+ false positives.
-- domain_trustlist: only add domains with 2+ true positives.
-- score_threshold_delta: clamp ±5; 0 if no change needed.
-- title_patterns.reject: regex patterns seen across 2+ false positives.
-- gemini_rejection_patterns: short phrases (3-6 words) that appear repeatedly
-  in the title/snippet of false positive closures. These are fed to the
-  Gemini pre-validator to reject similar candidates before heuristic scoring.
-- validation_threshold: adjust only if similarity dedup is producing too many
-  false "duplicate" suppressions (lower it) or too many actual dups pass through (raise it).
-  Default is 0.75. Only adjust if there is clear evidence to do so.
-- url_blocklist: add a URL only if it appears in 3+ false positive events
-  AND is clearly a noise source (e.g. an aggregator mirror, a blog post, etc.)
-- Keep all arrays and objects present even if empty.
-"""
+        prompt_path = self.dir.parent / "ai-prompts" / "discovery-feedback-learner-prompt.md"
+        if not prompt_path.exists():
+            print(f"ERROR: Prompt file not found: {prompt_path}")
+            return {}
+            
+        prompt = prompt_path.read_text(encoding="utf-8").format(
+            threshold=self.config.base_threshold,
+            positive_signals=json.dumps(self.config.base_positive_signals, indent=2),
+            negative_signals=json.dumps(self.config.base_negative_signals, indent=2),
+            total=total,
+            tp_count=len(tp_events),
+            fp_count=len(fp_events),
+            mm_count=len(mm_events),
+            dup_count=len(dup_events),
+            fp_events=summarise_events(fp_events),
+            mm_events=summarise_events(mm_events),
+            dup_events=summarise_events(dup_events),
+            tp_events=summarise_events(tp_events),
+            closure_comment_block="{closure_comment_block}"
+        )
 
         # Format closure comments for inclusion in the prompt
         if closure_patterns:
