@@ -35,7 +35,7 @@ jobs:
         id: parse
         run: |
           # Fetch the raw issue body via the API (handles encoding properly)
-          BODY=$(gh issue view "${{ github.event.issue.number }}" --json body -q '.body')
+          BODY=$(gh issue view "$ISSUE_NUMBER" --json body -q '.body')
           
           if echo "$BODY" | grep -qi '\[x\] \*\*Accept\*\*'; then
             OUTCOME="true_positive"
@@ -62,12 +62,20 @@ jobs:
           echo "outcome=$OUTCOME" >> $GITHUB_OUTPUT
           echo "label=$LABEL" >> $GITHUB_OUTPUT
           echo "close=$CLOSE" >> $GITHUB_OUTPUT
-          echo "author=${{ github.actor }}" >> $GITHUB_OUTPUT
-          echo "issue=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
-          echo "title=${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
+          echo "author=$ISSUE_AUTHOR" >> $GITHUB_OUTPUT
+          echo "issue=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+          DELIM=$(uuidgen)
+          {
+            echo "title<<$DELIM"
+            echo "$ISSUE_TITLE"
+            echo "$DELIM"
+          } >> "$GITHUB_OUTPUT"
           echo "reason=Triaged via issue checkbox" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_AUTHOR: ${{ github.actor }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
 
       - name: Ignore unknown edits
         if: steps.parse.outputs.valid == 'false'
