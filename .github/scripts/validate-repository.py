@@ -428,7 +428,10 @@ class RepositoryValidator:
             except Exception as e:
                 return (url, "warning", f"Timeout or other error: {str(e)}")
 
-        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        config = self.get_validation_config()
+        max_workers = config.get("link_checker", {}).get("max_concurrent_workers", 10)
+        
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
             results = executor.map(check_link, unique_links)
             
         for url, status, msg in results:
@@ -473,7 +476,7 @@ class RepositoryValidator:
         for pdf_rel, pdf_path in pdf_files.items():
             try:
                 with open(pdf_path, 'rb') as f:
-                    file_hash = hashlib.sha256(f.read()).hexdigest()
+                    file_hash = hashlib.md5(f.read()).hexdigest()
                     
                 if file_hash in hashes:
                     self._add(Finding(
@@ -486,13 +489,18 @@ class RepositoryValidator:
                 pass
 
     def _check_duplicates_content(self, md_files: Dict[str, Path]):
+        config = self.get_validation_config()
+        dup_config = config.get("duplicate_detection", {})
+        min_words = dup_config.get("min_words_for_comparison", 50)
+        jaccard_threshold = dup_config.get("jaccard_similarity_threshold", 0.8)
+        
         docs = []
         for md_rel, md_path in md_files.items():
             try:
                 with open(md_path, 'r', encoding='utf-8') as f:
                     text = f.read()
                 words = set(re.findall(r'\b\w{4,}\b', text.lower()))
-                if len(words) > 50:
+                if len(words) > min_words:
                     docs.append((md_rel, words))
             except Exception:
                 pass
@@ -513,7 +521,7 @@ class RepositoryValidator:
                     continue
                     
                 jaccard = intersection / union
-                if jaccard > 0.8:
+                if jaccard > jaccard_threshold:
                     self._add(Finding(
                         "warning", CATEGORY_DUPLICATE_MD, md_a,
                         f"High content similarity ({jaccard:.0%}) detected with {md_b}"

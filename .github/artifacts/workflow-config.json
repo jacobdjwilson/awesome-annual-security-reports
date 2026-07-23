@@ -55,7 +55,14 @@
       "min_json_size_bytes": 10,
       "min_markdown_chars": 200,
       "validate_toc": true,
-      "verify_conversions": true
+      "verify_conversions": true,
+      "duplicate_detection": {
+        "min_words_for_comparison": 50,
+        "jaccard_similarity_threshold": 0.8
+      },
+      "link_checker": {
+        "max_concurrent_workers": 10
+      }
     },
     "analysis": {
       "python_packages": [
