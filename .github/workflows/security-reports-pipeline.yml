@@ -1010,7 +1010,7 @@ jobs:
               echo "| Organization | Year | Error Type | Error | Suggested Fix |" >> $GITHUB_STEP_SUMMARY
               echo "|---|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
               jq -r '.[] |
-                "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.error[:120] | gsub("\n";" ") | gsub("\\\\|";"\\|")) | \(.suggestion[:150] | gsub("\n";" ") | gsub("\\\\|";"\\|")) |"
+                "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.error[:120] | gsub("\n";" ") | gsub("\\|";"\\|")) | \(.suggestion[:150] | gsub("\n";" ") | gsub("\\|";"\\|")) |"
               ' "$ERRORS_FILE" >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
             fi
@@ -1052,7 +1052,7 @@ jobs:
               echo "| Organization | Year | Error Type | Error Detail | Suggested Fix |" >> $GITHUB_STEP_SUMMARY
               echo "|---|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
               jq -r '.[] |
-                "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.error[:200] | gsub("\n";" ") | gsub("\\\\|";"\\|")) | \(.suggestion[:200] | gsub("\n";" ") | gsub("\\\\|";"\\|")) |"
+                "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.error[:200] | gsub("\n";" ") | gsub("\\|";"\\|")) | \(.suggestion[:200] | gsub("\n";" ") | gsub("\\|";"\\|")) |"
               ' "$ERRORS_FILE" >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
 

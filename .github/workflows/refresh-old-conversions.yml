@@ -498,7 +498,7 @@ jobs:
             echo "| Organization | Year | Error Type | Suggested Fix |" >> $GITHUB_STEP_SUMMARY
             echo "|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
             jq -r '.[] |
-              "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.suggestion[:150] | gsub("\n";" ") | gsub("|";"\\|")) |"
+              "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.suggestion[:150] | gsub("\n";" ") | gsub("\\|";"\\|")) |"
             ' "$ERRORS_FILE" >> $GITHUB_STEP_SUMMARY
           else
             echo "⊘ No analysis was attempted or data is unavailable." >> $GITHUB_STEP_SUMMARY
