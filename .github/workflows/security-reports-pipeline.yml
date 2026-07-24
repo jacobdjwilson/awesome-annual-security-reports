@@ -1145,7 +1145,7 @@ jobs:
               --artifacts-dir .github/artifacts
           fi
 
-          if git diff --quiet README.md "Markdown Conversions/"; then
+          if [ -z "$(git status --porcelain README.md "Markdown Conversions/")" ]; then
             echo "readme_updated=false" >> $GITHUB_OUTPUT
             echo "⊘ No changes to commit"
           else

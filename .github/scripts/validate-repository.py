@@ -428,7 +428,7 @@ class RepositoryValidator:
             except Exception as e:
                 return (url, "warning", f"Timeout or other error: {str(e)}")
 
-        config = self.get_validation_config()
+        config = self.config.get_validation_config()
         max_workers = config.get("link_checker", {}).get("max_concurrent_workers", 10)
         
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
