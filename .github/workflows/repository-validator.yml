@@ -93,8 +93,8 @@ jobs:
           # Query in_progress / queued / waiting runs for each monitored
           # workflow on this exact SHA. If any are active, defer validation.
           MONITORED_WORKFLOWS=(
-            "Security Reports Processing Pipeline"
-            "Refresh Old Conversions"
+            "security-reports-pipeline.yml"
+            "refresh-old-conversions.yml"
           )
 
           BUSY=false
