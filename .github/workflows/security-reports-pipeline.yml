@@ -594,7 +594,8 @@ jobs:
           else
             TOTAL=$(jq 'length' scan_results.json)
             SUCCESS=$(jq '[.[] | select(.status == "success")] | length' scan_results.json)
-            FAILED=$(jq '[.[] | select(.status != "success")] | length' scan_results.json)
+            FALLBACK=$(jq '[.[] | select(.status == "fallback")] | length' scan_results.json)
+            FAILED=$(jq '[.[] | select(.status == "failed")] | length' scan_results.json)
             MALICIOUS=$(jq '[.[] | select(.verdict == "Malicious")] | length' scan_results.json)
             SUSPICIOUS=$(jq '[.[] | select(.verdict == "Suspicious")] | length' scan_results.json)
             CLEAN=$(jq '[.[] | select(.verdict == "Clean")] | length' scan_results.json)
@@ -602,19 +603,33 @@ jobs:
             echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
             echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
             echo "| Files Scanned | $TOTAL |" >> $GITHUB_STEP_SUMMARY
-            echo "| ✅ Clean | $CLEAN |" >> $GITHUB_STEP_SUMMARY
+            echo "| ✅ Clean (Active) | $CLEAN |" >> $GITHUB_STEP_SUMMARY
             echo "| ⚠️ Suspicious | $SUSPICIOUS |" >> $GITHUB_STEP_SUMMARY
             echo "| ❌ Malicious | $MALICIOUS |" >> $GITHUB_STEP_SUMMARY
-            echo "| 💥 Scan Errors | $FAILED |" >> $GITHUB_STEP_SUMMARY
+            echo "| ⊘ Fallback (Passive) | $FALLBACK |" >> $GITHUB_STEP_SUMMARY
+            echo "| 💥 Errors | $FAILED |" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
 
             if [ "$SUCCESS" -gt 0 ]; then
-              echo "### Scan Results" >> $GITHUB_STEP_SUMMARY
+              echo "### Scan Results (Active)" >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
-              echo "| File | Verdict | Malicious | Suspicious | Total Engines | Retries | VirusTotal Report |" >> $GITHUB_STEP_SUMMARY
-              echo "|------|---------|-----------|------------|---------------|---------|-------------------|" >> $GITHUB_STEP_SUMMARY
+              echo "| File | Verdict | Malicious | Suspicious | VirusTotal Report |" >> $GITHUB_STEP_SUMMARY
+              echo "|------|---------|-----------|------------|-------------------|" >> $GITHUB_STEP_SUMMARY
               jq -r '.[] | select(.status == "success") |
-                "| `\(.file)` | \(if .verdict == "Malicious" then "❌ Malicious" elif .verdict == "Suspicious" then "⚠️ Suspicious" else "✅ Clean" end) | \(.malicious_count) | \(.suspicious_count) | \(.total_engines) | \(.attempts // 1) | [🔗 View Full Report](\(.report_url)) |"
+                "| `\(.file)` | \(if .verdict == "Malicious" then "❌ Malicious" elif .verdict == "Suspicious" then "⚠️ Suspicious" else "✅ Clean" end) | \(.malicious_count) | \(.suspicious_count) | [🔗 View Full Report](\(.report_url)) |"
+              ' scan_results.json >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+            
+            if [ "$FALLBACK" -gt 0 ]; then
+              echo "### ⊘ Scan Fallbacks (Passive Hash Links)" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "The API limit was reached, or the file was not found. Please review these manually:" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "| File | SHA-256 | VirusTotal Link |" >> $GITHUB_STEP_SUMMARY
+              echo "|------|---------|-----------------|" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] | select(.status == "fallback") |
+                "| `\(.file)` | `\(.sha256)` | [🔗 Manual Review](\(.report_url)) |"
               ' scan_results.json >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
             fi
@@ -622,10 +637,10 @@ jobs:
             if [ "$FAILED" -gt 0 ]; then
               echo "### ⚠️ Scan Errors" >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
-              echo "| File | Error | Attempts |" >> $GITHUB_STEP_SUMMARY
-              echo "|------|-------|----------|" >> $GITHUB_STEP_SUMMARY
-              jq -r '.[] | select(.status != "success") |
-                "| `\(.file // "unknown")` | \(.reason // .error // "unknown error") | \(.attempts // "—") |"
+              echo "| File | Error |" >> $GITHUB_STEP_SUMMARY
+              echo "|------|-------|" >> $GITHUB_STEP_SUMMARY
+              jq -r '.[] | select(.status == "failed") |
+                "| `\(.file // "unknown")` | \(.reason // .error // "unknown error") |"
               ' scan_results.json >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
             fi

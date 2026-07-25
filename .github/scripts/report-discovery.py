@@ -1011,11 +1011,17 @@ class IssueCreator:
                     )
             elif vt_status == "failed":
                 reason = vt_result.get("reason", "unknown error")
+                vt_report_url = vt_result.get("report_url", "")
+                sha256 = vt_result.get("sha256", "")
                 vt_section = (
                     f"\n\n---\n\n"
                     f"### 🛡️ VirusTotal Pre-Scan\n\n"
-                    f"⚠️ Scan could not be completed: `{reason[:200]}`\n\n"
-                    f"Manually verify the PDF before adding it to the repository.\n"
+                    f"⚠️ Automated scan fallback: `{reason[:200]}`\n\n"
+                    f"| Field | Value |\n"
+                    f"|-------|-------|\n"
+                    f"| **SHA-256** | `{sha256}` |\n"
+                    f"| **Full Report** | [🔗 View on VirusTotal]({vt_report_url}) |\n\n"
+                    f"Manually verify the PDF using the link before adding it to the repository.\n"
                 )
 
         # Gemini validation note
@@ -1205,128 +1211,57 @@ class VirusTotalScanner:
         return h.hexdigest()
 
     def _scan_file(self, file_path: str) -> Dict[str, Any]:
-        """Core scan logic — identical algorithm to virus-total-scan.py:scan_file()."""
+        """Core scan logic — opportunistic lookup, falling back to passive hash."""
         headers    = self._headers()
         file_hash  = self._sha256(file_path)
         base_url   = self._API_BASE
-        file_size_mb = os.path.getsize(file_path) / (1024 * 1024)
+        report_url = f"https://www.virustotal.com/gui/file/{file_hash}"
 
         try:
-            # ── 1. Hash lookup ─────────────────────────────────────────────
+            if not self.api_key:
+                raise ValueError("No API key provided")
+                
             lookup = requests.get(
                 f"{base_url}/files/{file_hash}", headers=headers, timeout=30
             )
 
             if lookup.status_code == 200:
                 scan_data = lookup.json()
+                attrs            = scan_data.get("data", {}).get("attributes", {})
+                stats            = attrs.get("last_analysis_stats", {})
+                malicious_count  = stats.get("malicious", 0)
+                suspicious_count = stats.get("suspicious", 0)
+                total_engines    = sum(stats.values())
+                verdict = ("Malicious"  if malicious_count  > 0 else
+                           "Suspicious" if suspicious_count > 0 else "Clean")
 
-            elif lookup.status_code == 404:
-                # ── 2. Upload ──────────────────────────────────────────────
-                upload_endpoint = f"{base_url}/files"
+                print(f"  [VT] Result: {verdict} — "
+                      f"{malicious_count + suspicious_count}/{total_engines} engines")
 
-                if file_size_mb > self.large_file_threshold_mb:
-                    url_resp = requests.get(
-                        f"{base_url}/files/upload_url", headers=headers, timeout=30
-                    )
-                    if url_resp.status_code == 200:
-                        upload_endpoint = url_resp.json().get("data", upload_endpoint)
-                    else:
-                        return {
-                            "status": "failed",
-                            "reason": f"Could not get large-file upload URL (HTTP {url_resp.status_code})",
-                            "verdict": "", "malicious_count": 0, "suspicious_count": 0,
-                            "total_engines": 0, "report_url": "", "sha256": file_hash,
-                        }
-
-                with open(file_path, "rb") as f:
-                    resp = requests.post(
-                        upload_endpoint, headers=headers,
-                        files={"file": (os.path.basename(file_path), f)},
-                        timeout=300,
-                    )
-
-                if resp.status_code != 200:
-                    return {
-                        "status": "failed",
-                        "reason": f"Upload failed (HTTP {resp.status_code})",
-                        "verdict": "", "malicious_count": 0, "suspicious_count": 0,
-                        "total_engines": 0, "report_url": "", "sha256": file_hash,
-                    }
-
-                scan_id = resp.json().get("data", {}).get("id")
-                if not scan_id:
-                    return {
-                        "status": "failed",
-                        "reason": "No scan ID in upload response",
-                        "verdict": "", "malicious_count": 0, "suspicious_count": 0,
-                        "total_engines": 0, "report_url": "", "sha256": file_hash,
-                    }
-
-                # ── 3. Poll for completion ─────────────────────────────────
-                scan_data = None
-                for attempt in range(self.poll_attempts):
-                    sleep_secs = self.poll_backoff_base_seconds * (attempt + 1)
-                    print(f"  [VT] Polling (attempt {attempt + 1}/{self.poll_attempts}, "
-                          f"wait {sleep_secs}s)...")
-                    time.sleep(sleep_secs)
-                    status_resp = requests.get(
-                        f"{base_url}/analyses/{scan_id}", headers=headers, timeout=30
-                    )
-                    if status_resp.status_code == 200:
-                        attrs = status_resp.json().get("data", {}).get("attributes", {})
-                        if attrs.get("status") == "completed":
-                            final = requests.get(
-                                f"{base_url}/files/{file_hash}", headers=headers, timeout=30
-                            )
-                            if final.status_code == 200:
-                                scan_data = final.json()
-                                break
-
-                if scan_data is None:
-                    return {
-                        "status": "failed",
-                        "reason": "Scan did not complete within polling timeout",
-                        "verdict": "", "malicious_count": 0, "suspicious_count": 0,
-                        "total_engines": 0, "report_url": "", "sha256": file_hash,
-                    }
-
+                return {
+                    "status":           "success",
+                    "verdict":          verdict,
+                    "malicious_count":  malicious_count,
+                    "suspicious_count": suspicious_count,
+                    "total_engines":    total_engines,
+                    "report_url":       report_url,
+                    "sha256":           file_hash,
+                    "reason":           "",
+                }
             else:
                 return {
                     "status": "failed",
-                    "reason": f"Unexpected status checking file (HTTP {lookup.status_code})",
+                    "reason": f"API fallback (HTTP {lookup.status_code})",
                     "verdict": "", "malicious_count": 0, "suspicious_count": 0,
-                    "total_engines": 0, "report_url": "", "sha256": file_hash,
+                    "total_engines": 0, "report_url": report_url, "sha256": file_hash,
                 }
-
-            # ── 4. Parse result ────────────────────────────────────────────
-            attrs            = scan_data.get("data", {}).get("attributes", {})
-            stats            = attrs.get("last_analysis_stats", {})
-            malicious_count  = stats.get("malicious", 0)
-            suspicious_count = stats.get("suspicious", 0)
-            total_engines    = sum(stats.values())
-            verdict = ("Malicious"  if malicious_count  > 0 else
-                       "Suspicious" if suspicious_count > 0 else "Clean")
-
-            print(f"  [VT] Result: {verdict} — "
-                  f"{malicious_count + suspicious_count}/{total_engines} engines")
-
-            return {
-                "status":           "success",
-                "verdict":          verdict,
-                "malicious_count":  malicious_count,
-                "suspicious_count": suspicious_count,
-                "total_engines":    total_engines,
-                "report_url":       f"https://www.virustotal.com/gui/file/{file_hash}",
-                "sha256":           file_hash,
-                "reason":           "",
-            }
 
         except Exception as exc:
             return {
                 "status": "failed",
-                "reason": str(exc)[:200],
+                "reason": f"API request failed: {str(exc)[:120]}",
                 "verdict": "", "malicious_count": 0, "suspicious_count": 0,
-                "total_engines": 0, "report_url": "", "sha256": "",
+                "total_engines": 0, "report_url": report_url, "sha256": file_hash,
             }
 
 

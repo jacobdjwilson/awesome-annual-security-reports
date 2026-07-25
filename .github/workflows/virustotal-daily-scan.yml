@@ -1,0 +1,63 @@
+name: VirusTotal Daily Background Scan
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Every day at midnight UTC
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  daily-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          PY_PACKAGES=$(jq -r '.workflow.virustotal.python_packages | join(" ")' .github/artifacts/workflow-config.json)
+          pip install --break-system-packages $PY_PACKAGES
+
+      - name: Find all PDFs
+        run: |
+          find "Annual Security Reports" -name "*.pdf" > files_to_process.txt
+          echo "Found $(wc -l < files_to_process.txt) PDFs."
+
+      - name: Run Daily Scan
+        id: vt-scan
+        env:
+          VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
+        run: |
+          python .github/scripts/virus-total-scan.py \
+            files_to_process.txt \
+            --daily-mode \
+            --artifacts-dir .github/artifacts
+
+      - name: Commit tracking file
+        if: always()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/artifacts/vt-scanned.json
+          # Commit only if there are changes
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update VirusTotal tracking" && git push)
+
+      - name: Open Issue on Malicious Finding
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "🚨 Malicious File Detected in Repository",
+              body: "The daily VirusTotal background scanner detected a Malicious file.\n\nPlease check the Action run logs for details and remove the file immediately."
+            })
