@@ -489,7 +489,7 @@ class RepositoryValidator:
                 pass
 
     def _check_duplicates_content(self, md_files: Dict[str, Path]):
-        config = self.get_validation_config()
+        config = self.config.get_validation_config()
         dup_config = config.get("duplicate_detection", {})
         min_words = dup_config.get("min_words_for_comparison", 50)
         jaccard_threshold = dup_config.get("jaccard_similarity_threshold", 0.8)
