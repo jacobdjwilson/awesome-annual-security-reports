@@ -177,15 +177,24 @@ jobs:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           INPUT_LIMIT: ${{ github.event.inputs.limit }}
           INPUT_DAYS_OLD: ${{ github.event.inputs.days_old }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          PR_EXISTS: ${{ steps.check-pr.outputs.pr_exists }}
+          SKIP_REASON: ${{ steps.check-pr.outputs.skip_reason }}
+          OPEN_COUNT: ${{ steps.check-pr.outputs.open_count }}
+          MAX_OPEN_PRS: ${{ steps.load_config.outputs.max_open_prs }}
+          HAS_FILES: ${{ steps.check-files.outputs.has_files }}
+          COUNT: ${{ steps.check-files.outputs.file_count }}
+          DEFAULT_LIMIT: ${{ steps.load_config.outputs.default_limit }}
         run: |
-          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          PR_EXISTS="${{ steps.check-pr.outputs.pr_exists }}"
-          SKIP_REASON="${{ steps.check-pr.outputs.skip_reason }}"
-          OPEN_COUNT="${{ steps.check-pr.outputs.open_count }}"
-          MAX_OPEN_PRS="${{ steps.load_config.outputs.max_open_prs }}"
-          HAS_FILES="${{ steps.check-files.outputs.has_files }}"
-          COUNT="${{ steps.check-files.outputs.file_count }}"
-          DEFAULT_LIMIT="${{ steps.load_config.outputs.default_limit }}"
+          RUN_URL="https://github.com/$GITHUB_REPO/actions/runs/$GITHUB_RUN_ID"
+          PR_EXISTS="$PR_EXISTS"
+          SKIP_REASON="$SKIP_REASON"
+          OPEN_COUNT="$OPEN_COUNT"
+          MAX_OPEN_PRS="$MAX_OPEN_PRS"
+          HAS_FILES="$HAS_FILES"
+          COUNT="$COUNT"
+          DEFAULT_LIMIT="$DEFAULT_LIMIT"
           
           FINAL_LIMIT="${INPUT_LIMIT:-$DEFAULT_LIMIT}"
           FINAL_DAYS="${INPUT_DAYS_OLD:-90}"
@@ -427,27 +436,37 @@ jobs:
         if: always()
         env:
           INPUT_DAYS_OLD: ${{ github.event.inputs.days_old }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          SUCCESSFUL: ${{ steps.converter.outputs.successful_count }}
+          FAILED: ${{ steps.converter.outputs.failed_count }}
+          PR_NUM: ${{ steps.create_pr.outputs.pull-request-number }}
+          FILE_COUNT: ${{ needs.identify-stale-files.outputs.file_count }}
+          CHANGES_DETECTED: ${{ steps.readme_update.outputs.changes_detected }}
+          ANALYSIS_COUNT: ${{ steps.analyzer.outputs.analysis_count }}
+          ANALYSIS_ERROR_COUNT: ${{ steps.analyzer.outputs.error_count }}
+          ERRORS_FILE: ${{ steps.analyzer.outputs.errors_file }}
         run: |
-          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          SUCCESSFUL="${{ steps.converter.outputs.successful_count }}"
-          FAILED="${{ steps.converter.outputs.failed_count }}"
-          PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
+          RUN_URL="https://github.com/$GITHUB_REPO/actions/runs/$GITHUB_RUN_ID"
+          SUCCESSFUL="$SUCCESSFUL"
+          FAILED="$FAILED"
+          PR_NUM="$PR_NUM"
           DAYS_OLD="${INPUT_DAYS_OLD:-90}"
 
           echo "## ♻️ Refresh Old Conversions — Processing" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Result | Count |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Files Targeted | ${{ needs.identify-stale-files.outputs.file_count }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Files Targeted | $FILE_COUNT |" >> $GITHUB_STEP_SUMMARY
           echo "| ✅ Conversions Successful | ${SUCCESSFUL:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "| ❌ Conversions Failed | ${FAILED:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "| Min Age | ${DAYS_OLD} days |" >> $GITHUB_STEP_SUMMARY
           echo "| Conversion Method | markitdown + AI polish (force-reconvert) |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          if [ "${{ steps.readme_update.outputs.changes_detected }}" == "true" ]; then
+          if [ "$CHANGES_DETECTED" == "true" ]; then
             if [ -n "$PR_NUM" ]; then
-              PR_URL="https://github.com/${{ github.repository }}/pull/$PR_NUM"
+              PR_URL="https://github.com/$GITHUB_REPO/pull/$PR_NUM"
               echo "✅ Pull request created: [PR #$PR_NUM]($PR_URL)" >> $GITHUB_STEP_SUMMARY
             fi
           else
@@ -480,9 +499,9 @@ jobs:
           fi
 
           # Analysis results — show error details if analysis failed
-          ANALYSIS_COUNT="${{ steps.analyzer.outputs.analysis_count }}"
-          ANALYSIS_ERROR_COUNT="${{ steps.analyzer.outputs.error_count }}"
-          ERRORS_FILE="${{ steps.analyzer.outputs.errors_file }}"
+          ANALYSIS_COUNT="$ANALYSIS_COUNT"
+          ANALYSIS_ERROR_COUNT="$ANALYSIS_ERROR_COUNT"
+          ERRORS_FILE="$ERRORS_FILE"
           ERRORS_FILE="${ERRORS_FILE:-analysis_errors.json}"
 
           echo "" >> $GITHUB_STEP_SUMMARY

@@ -1393,6 +1393,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RETRY_ATTEMPT: ${{ github.event.inputs.quota_retry_attempt }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
         run: |
           ATTEMPT="$RETRY_ATTEMPT"
           ATTEMPT="${ATTEMPT:-1}"
@@ -1418,8 +1420,8 @@ jobs:
 
           echo "🔄 Dispatching retry run (attempt ${NEXT_ATTEMPT})..."
           gh workflow run security-reports-pipeline.yml \
-            --repo "${{ github.repository }}" \
-            --ref "${{ github.ref_name }}" \
+            --repo "$GITHUB_REPO" \
+            --ref "$GITHUB_REF_NAME" \
             --field quota_retry_attempt="$NEXT_ATTEMPT"
 
           echo "✓ Retry dispatched"

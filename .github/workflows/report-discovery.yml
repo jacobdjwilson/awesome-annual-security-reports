@@ -131,27 +131,27 @@ jobs:
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           OVERRIDE_DATE: ${{ github.event.inputs.override_date }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          CAP_REACHED: ${{ steps.issue-cap.outputs.cap_reached }}
+          OPEN_ISSUES: ${{ steps.issue-cap.outputs.open_count }}
+          MAX_ISSUES: ${{ steps.issue-cap.outputs.max_issues }}
+          CREATED: ${{ steps.discovery.outputs.created }}
+          TASKS: ${{ steps.discovery.outputs.tasks }}
+          SUPPRESSED: ${{ steps.discovery.outputs.suppressed }}
+          SKIPPED: ${{ steps.discovery.outputs.skipped }}
+          PDF_F: ${{ steps.discovery.outputs.pdf_finds }}
+          LAND_F: ${{ steps.discovery.outputs.landing_finds }}
+          T_CURR: ${{ steps.discovery.outputs.tier_current }}
+          T_STALE: ${{ steps.discovery.outputs.tier_stale }}
+          T_OLD: ${{ steps.discovery.outputs.tier_old }}
+          VT_CLEAN: ${{ steps.discovery.outputs.vt_clean }}
+          VT_SUSP: ${{ steps.discovery.outputs.vt_suspicious }}
+          VT_MAL: ${{ steps.discovery.outputs.vt_malicious }}
         run: |
-          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          RUN_URL="https://github.com/$GITHUB_REPO/actions/runs/$GITHUB_RUN_ID"
           DATE_USED="$OVERRIDE_DATE"
           [ -z "$DATE_USED" ] && DATE_USED="$(date +%Y-%m-%d) (today)"
-
-          CAP_REACHED="${{ steps.issue-cap.outputs.cap_reached }}"
-          OPEN_ISSUES="${{ steps.issue-cap.outputs.open_count }}"
-          MAX_ISSUES="${{ steps.issue-cap.outputs.max_issues }}"
-
-          CREATED="${{ steps.discovery.outputs.created }}"
-          TASKS="${{ steps.discovery.outputs.tasks }}"
-          SUPPRESSED="${{ steps.discovery.outputs.suppressed }}"
-          SKIPPED="${{ steps.discovery.outputs.skipped }}"
-          PDF_F="${{ steps.discovery.outputs.pdf_finds }}"
-          LAND_F="${{ steps.discovery.outputs.landing_finds }}"
-          T_CURR="${{ steps.discovery.outputs.tier_current }}"
-          T_STALE="${{ steps.discovery.outputs.tier_stale }}"
-          T_OLD="${{ steps.discovery.outputs.tier_old }}"
-          VT_CLEAN="${{ steps.discovery.outputs.vt_clean }}"
-          VT_SUSP="${{ steps.discovery.outputs.vt_suspicious }}"
-          VT_MAL="${{ steps.discovery.outputs.vt_malicious }}"
 
           echo "## 🔍 Security Report Discovery" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY

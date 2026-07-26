@@ -229,24 +229,34 @@ jobs:
         if: always()
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          HAS_FINDINGS: ${{ steps.findings.outputs.has_findings }}
+          ERROR_COUNT: ${{ steps.findings.outputs.error_count }}
+          WARNING_COUNT: ${{ steps.findings.outputs.warning_count }}
+          ISSUE_ACTION: ${{ steps.issue_mgmt.outputs.action }}
+          NEW_ISSUE: ${{ steps.issue_mgmt.outputs.new_issue }}
+          CLOSED_ISSUE: ${{ steps.issue_mgmt.outputs.closed_issue }}
+          UNCHANGED_ISSUE: ${{ steps.issue_mgmt.outputs.unchanged_issue }}
+          TRIGGER_SHA: ${{ needs.gate.outputs.trigger_sha }}
         run: |
-          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          HAS="${{ steps.findings.outputs.has_findings }}"
-          ERRS="${{ steps.findings.outputs.error_count }}"
-          WARNS="${{ steps.findings.outputs.warning_count }}"
-          ACTION="${{ steps.issue_mgmt.outputs.action }}"
-          NEW_ISSUE="${{ steps.issue_mgmt.outputs.new_issue }}"
-          CLOSED_ISSUE="${{ steps.issue_mgmt.outputs.closed_issue }}"
-          UNCHANGED_ISSUE="${{ steps.issue_mgmt.outputs.unchanged_issue }}"
-          REPO="${{ github.repository }}"
+          RUN_URL="https://github.com/$GITHUB_REPO/actions/runs/$GITHUB_RUN_ID"
+          HAS="$HAS_FINDINGS"
+          ERRS="$ERROR_COUNT"
+          WARNS="$WARNING_COUNT"
+          ACTION="$ISSUE_ACTION"
+          NEW_ISSUE="$NEW_ISSUE"
+          CLOSED_ISSUE="$CLOSED_ISSUE"
+          UNCHANGED_ISSUE="$UNCHANGED_ISSUE"
+          REPO="$GITHUB_REPO"
 
           echo "## 📋 Repository Integrity Validator" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Run | [#${{ github.run_id }}]($RUN_URL) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Run | [#$GITHUB_RUN_ID]($RUN_URL) |" >> $GITHUB_STEP_SUMMARY
           echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Commit | \`${{ needs.gate.outputs.trigger_sha }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Commit | \`${TRIGGER_SHA}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Errors | ${ERRS:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "| Warnings | ${WARNS:-0} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY

@@ -56,14 +56,16 @@ jobs:
       - name: Run feedback learner
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MIN_EVENTS: ${{ github.event.inputs.min_events }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
         run: |
           ARGS="--artifacts-dir .github/artifacts"
 
-          if [ -n "${{ github.event.inputs.min_events }}" ]; then
-            ARGS="$ARGS --min-events ${{ github.event.inputs.min_events }}"
+          if [ -n "$MIN_EVENTS" ]; then
+            ARGS="$ARGS --min-events $MIN_EVENTS"
           fi
 
-          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+          if [ "$DRY_RUN" == "true" ]; then
             ARGS="$ARGS --dry-run"
           fi
 
