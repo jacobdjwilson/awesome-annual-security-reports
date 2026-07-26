@@ -4,15 +4,16 @@ on:
   issues:
     types: [edited]
 
-permissions:
-  issues: write
-  contents: write
+
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   triage:
+    permissions:
+      issues: write
+      contents: write
     runs-on: ubuntu-latest
 
     # Only run on edits by humans on automated discovery issues.
@@ -85,8 +86,8 @@ jobs:
         if: steps.parse.outputs.valid == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LABEL: ${{ steps.parse.outputs.label }}
         run: |
-          LABEL="${{ steps.parse.outputs.label }}"
 
           # Ensure label exists (create it if not)
           gh label create "$LABEL" --color "$(case $LABEL in
@@ -115,10 +116,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          OUTCOME: ${{ steps.parse.outputs.outcome }}
+          REASON: ${{ steps.parse.outputs.reason }}
+          AUTHOR: ${{ steps.parse.outputs.author }}
         run: |
-          OUTCOME="${{ steps.parse.outputs.outcome }}"
-          REASON="${{ steps.parse.outputs.reason }}"
-          AUTHOR="${{ steps.parse.outputs.author }}"
 
           ICON=$(case $OUTCOME in
             true_positive)  echo "✅";;

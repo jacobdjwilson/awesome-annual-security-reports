@@ -27,14 +27,15 @@ on:
         default: false
         type: boolean
 
-permissions:
-  contents: write
+
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   learn:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
 
     steps:

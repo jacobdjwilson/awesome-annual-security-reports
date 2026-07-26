@@ -8,16 +8,17 @@ concurrency:
   group: security-reports-processing
   cancel-in-progress: false
 
-permissions:
-  contents: write
-  pull-requests: write
-  issues: write   # write needed to post comments
+
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   ingest:
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write   # write needed to post comments
     # Run when the report-suggestion label is applied, OR when the issue is
     # opened and already carries the label (e.g. from the issue template).
     if: |
@@ -100,10 +101,11 @@ jobs:
 
       - name: Validate parsed fields
         id: validate
+        env:
+          URL: ${{ steps.parse.outputs.report_url }}
+          YEAR: ${{ steps.parse.outputs.report_year }}
+          ORG: ${{ steps.parse.outputs.organization_name }}
         run: |
-          URL="${{ steps.parse.outputs.report_url }}"
-          YEAR="${{ steps.parse.outputs.report_year }}"
-          ORG="${{ steps.parse.outputs.organization_name }}"
 
           VALID=true
           ERRORS=""
@@ -151,11 +153,12 @@ jobs:
 
       - name: Download and organize PDF
         id: download
+        env:
+          URL: ${{ steps.parse.outputs.report_url }}
+          YEAR: ${{ steps.parse.outputs.report_year }}
+          ORG: ${{ steps.parse.outputs.organization_name }}
+          TITLE: ${{ steps.parse.outputs.report_title }}
         run: |
-          URL="${{ steps.parse.outputs.report_url }}"
-          YEAR="${{ steps.parse.outputs.report_year }}"
-          ORG="${{ steps.parse.outputs.organization_name }}"
-          TITLE="${{ steps.parse.outputs.report_title }}"
 
           DEST_DIR="Annual Security Reports/$YEAR"
           mkdir -p "$DEST_DIR"

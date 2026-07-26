@@ -5,14 +5,15 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
+
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   sync-branch:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout development

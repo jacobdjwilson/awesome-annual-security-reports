@@ -21,15 +21,16 @@ concurrency:
   group: security-reports-processing
   cancel-in-progress: false
 
-permissions:
-  contents: read
-  issues: write
+
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   discover:
+    permissions:
+      contents: read
+      issues: write
     runs-on: ubuntu-latest
 
     steps:

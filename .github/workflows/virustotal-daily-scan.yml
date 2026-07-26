@@ -5,12 +5,13 @@ on:
     - cron: '0 0 * * *' # Every day at midnight UTC
   workflow_dispatch: # Allow manual trigger
 
-permissions:
-  contents: write
-  issues: write
+
 
 jobs:
   daily-scan:
+    permissions:
+      contents: write
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

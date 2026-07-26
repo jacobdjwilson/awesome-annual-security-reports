@@ -22,9 +22,6 @@ concurrency:
   group: security-reports-processing
   cancel-in-progress: false
 
-permissions:
-  contents: write
-  pull-requests: write
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -226,6 +223,9 @@ jobs:
           fi
 
   process-stale-reports:
+    permissions:
+      contents: write
+      pull-requests: write
     needs: identify-stale-files
     if: needs.identify-stale-files.outputs.has_files == 'true'
     runs-on: ubuntu-latest

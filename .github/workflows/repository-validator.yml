@@ -24,10 +24,7 @@ on:
   schedule:
     - cron: '0 13 * * 1'
 
-permissions:
-  contents: write
-  issues: write
-  actions: write   # needed to dispatch the pipeline for auto-remediation
+
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -154,6 +151,9 @@ jobs:
   # Validation findings are handled via GitHub Issues, not job failure.
   # ============================================================
   validate-repository:
+    permissions:
+      issues: write
+      actions: write
     needs: gate
     if: needs.gate.outputs.proceed == 'true'
     runs-on: ubuntu-latest
@@ -297,6 +297,8 @@ jobs:
   # Protected branches (main, development) are never touched.
   # ============================================================
   cleanup-stale-branches:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     # Only run on schedule or manual dispatch — skip on workflow_run triggers
     # to avoid racing with active development work.

@@ -58,9 +58,7 @@ concurrency:
   group: security-reports-processing
   cancel-in-progress: false
 
-permissions:
-  contents: write
-  pull-requests: write
+
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -1098,6 +1096,9 @@ jobs:
           fi
 
   update-readme:
+    permissions:
+      contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     needs: [discover-and-scan, virus-total-scan, convert-pdf-to-markdown, analyze-reports]
     if: |
