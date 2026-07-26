@@ -777,6 +777,17 @@ def main() -> int:
     print(f"\n{'='*70}")
     print(f"Inserted: {stats['inserted']} | Updated: {stats['updated']} | Skipped: {stats['skipped']}")
 
+    # Check for total badge count drift even if no reports were updated
+    try:
+        current_readme = parser.get_full_content()
+        pdf_count = len(list(Path("Annual Security Reports").rglob("*.pdf")))
+        match = re.search(r"!\[Total.*?badge/Total_Reports-(\d+)-blue", current_readme)
+        if match and int(match.group(1)) != pdf_count:
+            print(f"  ✓ Total badge count drifted (README: {match.group(1)}, Actual: {pdf_count})")
+            changed = True
+    except Exception as e:
+        print(f"WARNING: Could not check badge count drift: {e}")
+
     if changed:
         updater.save()
         if args.validate_toc:
