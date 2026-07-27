@@ -1,5 +1,10 @@
 name: Security Reports Processing Pipeline
 
+permissions:
+  contents: read
+  actions: read
+  packages: read
+
 on:
   push:
     branches: [main, development]
