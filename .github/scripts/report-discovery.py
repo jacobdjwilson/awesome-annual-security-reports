@@ -115,6 +115,7 @@ class Config:
         self.negative_signals:         Dict[str, int] = h.get("negative_signals", {})
         self.year_in_url_bonus:        int            = h.get("year_in_url_bonus",   20)
         self.year_in_title_bonus:      int            = h.get("year_in_title_bonus", 15)
+        self.title_in_url_bonus:       int            = h.get("title_in_url_bonus",  15)
         self.pdf_url_bonus:            int            = h.get("pdf_url_bonus",       10)
         self.url_reject_patterns:      List[str]      = h.get("url_reject_patterns", [])
         self.financial_title_terms:    List[str]      = h.get("financial_title_terms", [])
@@ -637,6 +638,12 @@ class HeuristicValidator:
             total += self.config.year_in_url_bonus
         if year_str in title_l:
             total += self.config.year_in_title_bonus
+
+        # ── Title in URL bonus ────────────────────────────────────────────
+        title_slug = title.lower().replace(" ", "-")
+        title_slug_no_report = title.lower().replace(" report", "").replace(" ", "-")
+        if (title_slug and title_slug in url_l) or (title_slug_no_report and title_slug_no_report in url_l):
+            total += getattr(self.config, "title_in_url_bonus", 15)
 
         # Wrong-year-in-URL penalty: URL contains a different 4-digit year.
         # Only penalise once even if multiple years appear.

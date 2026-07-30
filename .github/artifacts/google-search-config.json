@@ -36,7 +36,7 @@
       },
       "report_discovery_pdf": {
         "description": "Pass 1 — targets direct PDF files. filetype:pdf operator maximises direct-download hits.",
-        "query_template": "{organization} {title} {year} annual security report filetype:pdf",
+        "query_template": "{organization} \"{title}\" {year} filetype:pdf",
         "num_results": 8,
         "skip_domains": [
           "google.com", "linkedin.com", "twitter.com", "x.com",
@@ -46,7 +46,7 @@
       },
       "report_discovery_landing": {
         "description": "Pass 2 — targets landing pages and gated download pages. No filetype filter so gated pages surface. Run only when pass 1 finds nothing above threshold.",
-        "query_template": "{organization} {title} {year} annual security report download",
+        "query_template": "{organization} \"{title}\" {year} download",
         "num_results": 8,
         "skip_domains": [
           "google.com", "linkedin.com", "twitter.com", "x.com",
@@ -167,6 +167,7 @@
 
       "year_in_url_bonus":   20,
       "year_in_title_bonus": 15,
+      "title_in_url_bonus":  15,
       "pdf_url_bonus":       10,
 
       "org_domain_match_bonus": 25,
