@@ -1,5 +1,4 @@
-Securing space
-Cyber security for low earth orbit satellite communications
+Securing space: Cyber security for low earth orbit satellite communications
 
 Organization: Australia  
 Report Title: Securing-Space-Cyber-Security-for-Low-Earth-Orbit-Satellite-Communications  
@@ -30,6 +29,8 @@ Year: 2026
   - [Cyber security for satellite operations](#cyber-security-for-satellite-operations)
   - [Threat modelling](#threat-modelling)
 
+---
+
 ## Introduction
 
 The rapid expansion and increasing reliance on Low Earth Orbit (LEO) satellite communication (SATCOM) systems have introduced significant cyber security challenges. As LEO satellite constellations grow, the attack surface for adversaries increases. This growth puts critical networks that depend on these satellite services at greater risk. Securing this infrastructure is essential to ensuring the resilience of commercial communications, national security systems and emergency response capabilities.
@@ -54,6 +55,8 @@ This publication also provides a set of critical questions that organisations ca
 
 The authoring agencies acknowledge that many of the cyber security risks and mitigation strategies outlined in this publication may be broadly relevant to satellite communications, beyond just LEO SATCOM services.
 
+---
+
 ## Background
 
 In LEO SATCOM networks, the CIA triad – Confidentiality, Integrity, and Availability – is critical to maintaining secure and reliable operations (Figure 1). LEO SATCOM systems face unique challenges due to their distributed architecture and limited physical access to space-based assets. They also rely on radio frequency links that are susceptible to jamming, spoofing and interception.
@@ -62,14 +65,14 @@ The constant movement of LEO satellites and frequent handovers make it harder to
 
 Organisations should define security expectations and requirements with their SATCOM service providers. These discussions ensure risk profiles are understood, and appropriate protections are in place. Users and organisations should consider regular testing and updating of incident response and continuity plans, to include scenarios for satellite service loss or compromise.
 
-### CIA Triad
+| CIA Triad | Confidentiality | Integrity | Availability |
+| :--- | :--- | :--- | :--- |
+| **Description** | Preventing unauthorised access to data transmitted or stored in the network. | Ensuring data is not altered during transmission, storage or processing. | Ensuring the network and services are accessible when needed. |
+| **Threat Scenario** | Satellite-to-ground and inter-satellite communications are at risk of eavesdropping due to the interceptable and broadcast nature of radio frequency and optical transmissions. | A malicious actor may intentionally inject malicious commands or modify telemetry, tracking or control data between satellites and ground stations, leading to incorrect system behaviour or reporting. | There may be physical disruptions where satellites can be jammed or suffer from kinetic impacts (for example, anti-satellite weapons). This includes denial-of-service (DoS) attacks that jam satellite uplinks or downlinks or overwhelm them with noise or traffic. |
 
-| Confidentiality | Integrity | Availability |
-| :--- | :--- | :--- |
-| Preventing unauthorised access to data transmitted or stored in the network. | Ensuring data is not altered during transmission, storage or processing. | Ensuring the network and services are accessible when needed. |
-| Satellite-to-ground and inter-satellite communications are at risk of eavesdropping due to the interceptable and broadcast nature of radio frequency and optical transmissions. | A malicious actor may intentionally inject malicious commands or modify telemetry, tracking or control data between satellites and ground stations, leading to incorrect system behaviour or reporting. | There may be physical disruptions where satellites can be jammed or suffer from kinetic impacts (for example, anti-satellite weapons). This includes denial-of-service (DoS) attacks that jam satellite uplinks or downlinks or overwhelm them with noise or traffic. |
+_Figure 1. The CIA triad: Confidentiality, Integrity, Availability_
 
-![Figure 1. The CIA triad: Confidentiality, Integrity, Availability](Figure-1-The-CIA-triad.png)
+---
 
 ## Emerging trends in LEO SATCOM technologies
 
@@ -99,25 +102,15 @@ These ecosystems may combine multi-orbit architectures, on board compute, ultra-
 
 Unlike bespoke space-grade solutions, commercial off-the-shelf products often inherit vulnerabilities from terrestrial environments, introducing new cyber security challenges such as exposure to common exploits, unpatched firmware, and supply chain risks. When integrated into LEO platforms, these vulnerabilities can propagate across space and ground segments, complicating threat modelling and incident response.
 
+---
+
 ## LEO SATCOM cyber security risks and mitigation strategies
 
 The following section outlines high-level cyber security risks and mitigation strategies for LEO SATCOM systems, viewed through the lenses of the space segment, ground infrastructure, user segment, communication links, and the broader supply chain. Figure 2 illustrates the key components of a typical LEO network architecture, including the space, ground, and user segments and the communication links between them.
 
-```
-                  Space Segment
-           LEO Satellite Constellation
-            Inter-satellite 
-                 link
-                  ^
-                  |  communication links
-                  v
-User Segment            Ground Segment
- User Groups         Ground-Station Network
-      \                    /
-       \                  /
-          Internet
-```
-![Figure 2. Typical LEO network architecture](Figure-2-Typical-LEO-network-architecture.png)
+![Typical LEO network architecture showing Space Segment (LEO Satellite Constellation, Inter-satellite link), Ground Segment (Ground-Station Network, Internet), User Segment (User Groups), and communication links between them.]
+
+_Figure 2. Typical LEO network architecture_
 
 LEO SATCOM users also need to consider secure data management and data sovereignty risks, which is further discussed below. For more information, refer to ASD’s ACSC Information security manual and Ten things to know about data security at cyber.gov.au.
 
@@ -182,7 +175,7 @@ Additional threats include credential theft, phishing, and exploitation of insec
 
 Inadequate user awareness and poor cyber hygiene further amplify these risks, as misconfigured devices or weak authentication practices can undermine even robust network-level protections.
 
-#### Mitigations strategies
+#### Mitigation strategies
 
 Mitigation strategies for the user segment should focus on strengthening endpoint security and enforcing secure access practices. Users should implement MFA, strong password policies, and device hardening measures such as disabling unused services and enforcing least-privilege principles.
 
@@ -250,6 +243,8 @@ For more information, refer to guidance on managing cyber supply chains and CISA
 
 Organisations may also consider minimising reliance on a single provider or platform by adopting modular and interoperable architectures where appropriate. This ensures the ability to switch to alternative SATCOM solutions when needed to strengthen resilience.
 
+---
+
 ## Secure data management in LEO SATCOM networks
 
 Ensuring robust data management is essential to maintaining mission integrity and trust across highly distributed satellite ecosystems.
@@ -285,7 +280,9 @@ Comprehensive event logging enables traceability and supports forensic analysis 
 
 Isolate sensitive information within secure enclave environments on satellites or ground networks. Govern access to these zones with explicit, policy-based controls. Support these controls with cross-domain solutions to manage data flows securely between different security domains. Ensure only authorised users can interact with the data.
 
-For more guidance on Zero Trust principles, refer to Foundations for modern defensible architecture and NSA’s Embracing a Zero Trust Security Model
+For more guidance on Zero Trust principles, refer to Foundations for modern defensible architecture and NSA’s Embracing a Zero Trust Security Model.
+
+---
 
 ## Data sovereignty and control across borders
 
@@ -323,7 +320,9 @@ Telemetry and other satellite-generated data should be stored only in designated
 
 #### Space traffic agreements
 
-Providers should work with national regulators to predefine how satellite-generated data is handled across jurisdictions. These agreements help ensure that providers meet both technical compliance requirements (for example, encryption, storage location) and legal obligations related to data sovereignty.
+Providers should work with national regulators to predefine how satellite-generated data is handled across jurisdictions. These agreements help ensure that providers meet both technical and compliance requirements (for example, encryption, storage location) and legal obligations related to data sovereignty.
+
+---
 
 ## Cyber security questions to ask LEO SATCOM service providers
 
@@ -392,9 +391,12 @@ Users and organisations should also consider strategies to reduce vendor lock-in
 - What does a shared responsibility model look like between SATCOM users and service providers?
 - Can you provide an independent cyber security risk assessment for your satellite architecture?
 
+---
+
 ## Further information
 
 ### Satellite communications and space systems
+
 - 9.0 Communications - NASA
 - Satellites and space systems - Australian Communications and Media Authority (ACMA)
 - Analysis of Low Earth Orbit Satellites: Implications for Australia’s agriculture and mining sectors - Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts
@@ -403,17 +405,20 @@ Users and organisations should also consider strategies to reduce vendor lock-in
 - Space technology - Department of Home Affairs
 
 ### Cyber security for satellite operations
+
 - Introduction to Cybersecurity for Commercial Satellite Operations (PDF 2.47MB) - National Institute of Standards and Technology (NIST)
 - Satellite Ground Segment (PDF 1.83MB) - NIST
 - Strengthening cybersecurity of SATCOM network providers and customers - CISA
 
 ### Threat modelling
+
 - ATT&CK - MITRE
 - SPARTA framework - Aerospace Corporation
 
 ---
 
 ## Disclaimer
+
 The material in this guide is of a general nature and should not be regarded as legal advice or relied on for assistance in any particular circumstance or emergency situation. In any important matter, you should seek appropriate independent professional advice in relation to your own circumstances.
 
 This publication includes material created with the assistance of artificial intelligence (AI) tools. All AI-generated material was reviewed by ASD staff aligned with ASD’s principles for the ethical use of AI.
@@ -421,6 +426,7 @@ This publication includes material created with the assistance of artificial int
 The Commonwealth accepts no responsibility or liability for any damage, loss or expense incurred as a result of the reliance on information contained in this guide.
 
 ## Copyright
+
 © Commonwealth of Australia 2026
 
 With the exception of the Coat of Arms and where otherwise stated, all material presented in this publication is provided under a Creative Commons Attribution 4.0 International license [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
@@ -428,6 +434,7 @@ With the exception of the Coat of Arms and where otherwise stated, all material 
 For the avoidance of doubt, this means this license only applies to material as set out in this document. The details of the relevant license conditions are available on the Creative Commons website as is the full legal code for the CC BY 4.0 license [https://creativecommons.org/licenses/by/4.0/legalcode.en](https://creativecommons.org/licenses/by/4.0/legalcode.en).
 
 ### Use of the Coat of Arms
+
 The terms under which the Coat of Arms can be used are detailed on the Department of the Prime Minister and Cabinet website [https://www.pmc.gov.au/resources/commonwealth-coat-arms-information-and-guidelines](https://www.pmc.gov.au/resources/commonwealth-coat-arms-information-and-guidelines)
 
 For more information, or to report a cyber security incident, contact us:  
