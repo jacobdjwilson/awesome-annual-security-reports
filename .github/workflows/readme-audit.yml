@@ -1,0 +1,49 @@
+name: README Audit
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * 1' # Every Monday at 12:00 UTC
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Run README Audit
+        id: audit
+        run: |
+          python .github/scripts/readme-audit.py
+          
+      - name: Upload Findings
+        uses: actions/upload-artifact@v4
+        with:
+          name: readme-audit-findings
+          path: .github/scripts/readme_audit_findings.json
+          
+      - name: Generate Step Summary
+        if: always()
+        run: |
+          if [ -f .github/scripts/readme_audit_findings.json ]; then
+            TOTAL=$(jq '[.[] | length] | add' .github/scripts/readme_audit_findings.json)
+            echo "## 📊 README Audit Results" >> $GITHUB_STEP_SUMMARY
+            echo "Found **$TOTAL** potential issues." >> $GITHUB_STEP_SUMMARY
+            echo "Please download the artifact to review the detailed findings." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## 📊 README Audit Results" >> $GITHUB_STEP_SUMMARY
+            echo "Audit failed to produce a findings file." >> $GITHUB_STEP_SUMMARY
+          fi

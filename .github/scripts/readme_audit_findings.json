@@ -1,0 +1,1735 @@
+{
+  "multiple_years_retention": [],
+  "fuzzy_duplicates": [
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Astra - Cybersecurity Statistics Report (2026)",
+      "entry2": "ORDR - Cybersecurity Statistics Report (2026)",
+      "similarity": 0.91,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Check Point - Cybersecurity Report (2026)",
+      "entry2": "Checkpoint - Cloud Security Report (2025)",
+      "similarity": 0.85,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Dataminr - Cyber Threat Landscape Report (2026)",
+      "entry2": "Ensign - Cyber Threat Landscape Report (2025)",
+      "similarity": 0.87,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Flashpoint - Global Threat Intelligence Report (2026)",
+      "entry2": "Mimecast - Global Threat Intelligence Report (2025)",
+      "similarity": 0.87,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Honeywell - Cyber Threat Report (2025)",
+      "entry2": "SonicWall - Cyber Threat Report (2025)",
+      "similarity": 0.87,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Kroll - Threat Landscape Report (2025)",
+      "entry2": "Rapid7 - Threat Landscape Report (2026)",
+      "similarity": 0.86,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Picus - Red Report (2026)",
+      "entry2": "Picus - Blue Report (2025)",
+      "similarity": 0.86,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "SonicWall - Cyber Threat Report (2025)",
+      "entry2": "SonicWall - Cyber Protect Report (2026)",
+      "similarity": 0.89,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Truesec - Threat Intelligence Report (2026)",
+      "entry2": "Anthropic - Threat Intelligence Report (2025)",
+      "similarity": 0.86,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "DSCI & Seqrite - India Cyber Threat Report (2025)",
+      "entry2": "Seqrite - India Cyber Threat Report (2026)",
+      "similarity": 0.91,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "BioCatch - Digital Banking Fraud Trends in Latin America (2026)",
+      "entry2": "BioCatch - Digital Banking Fraud Trends in Thailand (2026)",
+      "similarity": 0.86,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Health ISAC - Annual Threat Report (2026)",
+      "entry2": "HealthISAC - Annual Threat Report (2025)",
+      "similarity": 0.99,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Nokia - Threat Intelligence Report (2025)",
+      "entry2": "Anthropic - Threat Intelligence Report (2025)",
+      "similarity": 0.89,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Salt - State Of API Security (2025)",
+      "entry2": "SANS - State Of ICS Security (2025)",
+      "similarity": 0.86,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Salt - State Of API Security (2025)",
+      "entry2": "Cisco - State of AI Security (2026)",
+      "similarity": 0.86,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Orca - State of Cloud Security Report (2025)",
+      "entry2": "Prowler - State of Cloud Security Report (2026)",
+      "similarity": 0.91,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Varonis - State Of Data Security Report (2025)",
+      "entry2": "AppOmni - State Of Saas Security Report (2025)",
+      "similarity": 0.87,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Varonis - State Of Data Security Report (2025)",
+      "entry2": "Immuta - State of Data Security Report (2025)",
+      "similarity": 0.86,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Rapid7 - Threat Landscape Report (2026)",
+      "entry2": "Rapid7 - Threat Landscape Report Q3 (2025)",
+      "similarity": 0.96,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Rapid7 - Threat Landscape Report (2026)",
+      "entry2": "ENISA - Threat Landscape Report (2025)",
+      "similarity": 0.86,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Google - Cybersecurity Forecast (2026)",
+      "entry2": "Google - Cybersecurity Forecast 2025 (2025)",
+      "similarity": 0.93,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "ISACA - State Of Cybersecurity (2025)",
+      "entry2": "CompTIA - State of Cybersecurity (2025)",
+      "similarity": 0.87,
+      "message": "Potential duplicate with slightly different wording."
+    },
+    {
+      "type": "fuzzy_duplicate",
+      "entry1": "Cybersecurity Ventures - Cybersecurity Market Report Q4 (2025)",
+      "entry2": "Cybersecurityventures - Cybersecurity Market Report (2026)",
+      "similarity": 0.96,
+      "message": "Potential duplicate with slightly different wording."
+    }
+  ],
+  "missing_reports": [
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Australia-Ssecuring-Space-Cyber-Security-for-Low-Earth-Orbit-Satellite-Communications-2026.md",
+      "message": "Markdown file 2026/Australia-Ssecuring-Space-Cyber-Security-for-Low-Earth-Orbit-Satellite-Communications-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Baird-Disruptors-2026.md",
+      "message": "Markdown file 2026/Baird-Disruptors-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Capgemini-B2B-Pulse-Report-2026.md",
+      "message": "Markdown file 2026/Capgemini-B2B-Pulse-Report-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Cisco-State-of-Industrial-AI-Report-2026.md",
+      "message": "Markdown file 2026/Cisco-State-of-Industrial-AI-Report-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Cofense-Annual-Report-2026.md",
+      "message": "Markdown file 2026/Cofense-Annual-Report-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Darktrace-Annual-Threat-Report-2026.md",
+      "message": "Markdown file 2026/Darktrace-Annual-Threat-Report-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Dragos-OT-Cybersecurity-Report-A-Year-in-Review-2026.md",
+      "message": "Markdown file 2026/Dragos-OT-Cybersecurity-Report-A-Year-in-Review-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/GRCEngineer-The -State-of-GRC-2026.md",
+      "message": "Markdown file 2026/GRCEngineer-The -State-of-GRC-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/GSMA-Post-Quantum-Cryptography-for-5G-Roaming-2026.md",
+      "message": "Markdown file 2026/GSMA-Post-Quantum-Cryptography-for-5G-Roaming-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Gurucul-Insider-Risk-Report-2026.md",
+      "message": "Markdown file 2026/Gurucul-Insider-Risk-Report-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Kaspersky-Security-Services-Global-Report-2026.md",
+      "message": "Markdown file 2026/Kaspersky-Security-Services-Global-Report-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Kiteworks-Data-Security-Compliance-Risk-Annual-Survey-2026.md",
+      "message": "Markdown file 2026/Kiteworks-Data-Security-Compliance-Risk-Annual-Survey-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Kuppingercole-Privileged-Access-Management-2026.md",
+      "message": "Markdown file 2026/Kuppingercole-Privileged-Access-Management-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Netskope-Cloud-and-Threat-Report-2026.md",
+      "message": "Markdown file 2026/Netskope-Cloud-and-Threat-Report-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/PDI-Cyber-Threat-Landscape-Report-Q1-2026.md",
+      "message": "Markdown file 2026/PDI-Cyber-Threat-Landscape-Report-Q1-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Salt-State-of-API-Agentic-AI-2026.md",
+      "message": "Markdown file 2026/Salt-State-of-API-Agentic-AI-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Securtas-Annual-Intelligence-Estimate-Report-2026.md",
+      "message": "Markdown file 2026/Securtas-Annual-Intelligence-Estimate-Report-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Strike48-State-of-Agentic-Security-Report-2026.md",
+      "message": "Markdown file 2026/Strike48-State-of-Agentic-Security-Report-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Thinkst-Scapes-Q1-2026.md",
+      "message": "Markdown file 2026/Thinkst-Scapes-Q1-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/TrendMicro-Security-Predictions-2026.md",
+      "message": "Markdown file 2026/TrendMicro-Security-Predictions-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/VikingCloud-Cyber-Threat-Landscape-2026.md",
+      "message": "Markdown file 2026/VikingCloud-Cyber-Threat-Landscape-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/WEF-Global-Risks-Report-2026.md",
+      "message": "Markdown file 2026/WEF-Global-Risks-Report-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/Zscaler-AI-Security-Report-2026.md",
+      "message": "Markdown file 2026/Zscaler-AI-Security-Report-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2026/ZScaler-Securing-Digital-India-Against-AI-Cyber-Threats-2026.md",
+      "message": "Markdown file 2026/ZScaler-Securing-Digital-India-Against-AI-Cyber-Threats-2026.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Allianz-Risk-Barometer-2025.md",
+      "message": "Markdown file 2025/Allianz-Risk-Barometer-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/ArticWolfLabs-Threat-Report-2025.md",
+      "message": "Markdown file 2025/ArticWolfLabs-Threat-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Atbay-InsurSec-Report-2025.md",
+      "message": "Markdown file 2025/Atbay-InsurSec-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/BeazleySecurity-Quarterly-Threat-Report-Q1-2025.md",
+      "message": "Markdown file 2025/BeazleySecurity-Quarterly-Threat-Report-Q1-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/BeazleySecurity-Quarterly-Threat-Report-Q2-2025.md",
+      "message": "Markdown file 2025/BeazleySecurity-Quarterly-Threat-Report-Q2-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/BeazleySecurity-Quarterly-Threat-Report-Q3-2025.md",
+      "message": "Markdown file 2025/BeazleySecurity-Quarterly-Threat-Report-Q3-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/BeazleySecurity-Quarterly-Threat-Report-Q4-2025.md",
+      "message": "Markdown file 2025/BeazleySecurity-Quarterly-Threat-Report-Q4-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/BeyondTrust-Microsoft-Vulnerability-Report-2025.md",
+      "message": "Markdown file 2025/BeyondTrust-Microsoft-Vulnerability-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/BlackDuck-BSIMM15-2025.md",
+      "message": "Markdown file 2025/BlackDuck-BSIMM15-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/BlackDuck-Open-Source-Risk-Analysis-Report-2025.md",
+      "message": "Markdown file 2025/BlackDuck-Open-Source-Risk-Analysis-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/CatoNetworks-Threat-Report-2025.md",
+      "message": "Markdown file 2025/CatoNetworks-Threat-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Chainalysis-Crypto-Crime-Report-2025.md",
+      "message": "Markdown file 2025/Chainalysis-Crypto-Crime-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/CheckPoint-Cybersecurity-Report-2025.md",
+      "message": "Markdown file 2025/CheckPoint-Cybersecurity-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Cisco-State-of-AI-Security-2025.md",
+      "message": "Markdown file 2025/Cisco-State-of-AI-Security-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Coalition-Cyber-Claims-Report-2025.md",
+      "message": "Markdown file 2025/Coalition-Cyber-Claims-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Cobalt-State-of-Pentesting-2025.md",
+      "message": "Markdown file 2025/Cobalt-State-of-Pentesting-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Connectwise-MSP-Threat-Report-2025.md",
+      "message": "Markdown file 2025/Connectwise-MSP-Threat-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Crowdstrike-Global-Threat-Report-2025.md",
+      "message": "Markdown file 2025/Crowdstrike-Global-Threat-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/CyberProof-Global-Threat-Intelligence-Report-2025.md",
+      "message": "Markdown file 2025/CyberProof-Global-Threat-Intelligence-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/DataDog-State-of-DevSecOps-2025.md",
+      "message": "Markdown file 2025/DataDog-State-of-DevSecOps-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Deepstrike-Cybersecurity-Statistics-2025.md",
+      "message": "Markdown file 2025/Deepstrike-Cybersecurity-Statistics-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/DNSFilter-Annual-Security-Report-2025.md",
+      "message": "Markdown file 2025/DNSFilter-Annual-Security-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Edgescan-Midyear-Vulnerability-Statistics-Report-2025.md",
+      "message": "Markdown file 2025/Edgescan-Midyear-Vulnerability-Statistics-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Edgescan-Vulnerability-Statistics-Report-2025.md",
+      "message": "Markdown file 2025/Edgescan-Vulnerability-Statistics-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Eset-Threat-Report-2025.md",
+      "message": "Markdown file 2025/Eset-Threat-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Europool-Internet-Organized-Crime-Threat-Assessment-2025.md",
+      "message": "Markdown file 2025/Europool-Internet-Organized-Crime-Threat-Assessment-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Expel-Annual-Threat-Report-2025.md",
+      "message": "Markdown file 2025/Expel-Annual-Threat-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/FAIRInstitute-State-Of-Cyber-Risk-Management-Report-2025.md",
+      "message": "Markdown file 2025/FAIRInstitute-State-Of-Cyber-Risk-Management-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Flashpoint-Threat-Intel-Report-2025.md",
+      "message": "Markdown file 2025/Flashpoint-Threat-Intel-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/FluidAttacks-State-of-Attacks-2025.md",
+      "message": "Markdown file 2025/FluidAttacks-State-of-Attacks-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Fortinet-Cloud-Security-Report-2025.md",
+      "message": "Markdown file 2025/Fortinet-Cloud-Security-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Gen-Threat-Report-2025.md",
+      "message": "Markdown file 2025/Gen-Threat-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Genetec-State-of-Physical-Security-2025.md",
+      "message": "Markdown file 2025/Genetec-State-of-Physical-Security-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/GitGuardian-State-of-Secrets-Sprawl-2025.md",
+      "message": "Markdown file 2025/GitGuardian-State-of-Secrets-Sprawl-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Guidepoint-Ransomware-Annual_Report-2025.md",
+      "message": "Markdown file 2025/Guidepoint-Ransomware-Annual_Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/HiddenLayer-AI-Threat-Landscape-Report-2025.md",
+      "message": "Markdown file 2025/HiddenLayer-AI-Threat-Landscape-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Hornet-Cybersecurity-Report-2025.md",
+      "message": "Markdown file 2025/Hornet-Cybersecurity-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Howden-The-Cyber-Security-Gap-Report-2025.md",
+      "message": "Markdown file 2025/Howden-The-Cyber-Security-Gap-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Hoxhunt-Cyber-Threat-Intelligence-Report-2025.md",
+      "message": "Markdown file 2025/Hoxhunt-Cyber-Threat-Intelligence-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Hyperproof-IT-Risk-and-Compliance-Benchmark-Report-2025.md",
+      "message": "Markdown file 2025/Hyperproof-IT-Risk-and-Compliance-Benchmark-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Hypr-State-of-Passwordless-Identity-Assurance-2025.md",
+      "message": "Markdown file 2025/Hypr-State-of-Passwordless-Identity-Assurance-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/IBM-X-Force-Threat-Intelligence-Index-2025.md",
+      "message": "Markdown file 2025/IBM-X-Force-Threat-Intelligence-Index-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Iconiq-The-AI-Builders-Playbook-2025.md",
+      "message": "Markdown file 2025/Iconiq-The-AI-Builders-Playbook-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/IDSA-Trends-in-Identity-Security-2025.md",
+      "message": "Markdown file 2025/IDSA-Trends-in-Identity-Security-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/ISACA-State-of-Privacy-2025.md",
+      "message": "Markdown file 2025/ISACA-State-of-Privacy-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Kiteworks-Forecast-for-Managing-Private-Content-Exposure-Risk-2025.md",
+      "message": "Markdown file 2025/Kiteworks-Forecast-for-Managing-Private-Content-Exposure-Risk-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/KnowBe4-Phishing-Threat-Trends-Report-Volume5-2025.md",
+      "message": "Markdown file 2025/KnowBe4-Phishing-Threat-Trends-Report-Volume5-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/KnowBe4-Phishing-Threat-Trends-Report-Volume6-2025.md",
+      "message": "Markdown file 2025/KnowBe4-Phishing-Threat-Trends-Report-Volume6-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Latio-AI-Security-Report-2025.md",
+      "message": "Markdown file 2025/Latio-AI-Security-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Mandiant-M-Trends-2025.md",
+      "message": "Markdown file 2025/Mandiant-M-Trends-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Mimecast-The-State-of-Human-Risk-2025.md",
+      "message": "Markdown file 2025/Mimecast-The-State-of-Human-Risk-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/NAIC-Cybersecurity-Insurance-Report-2025.md",
+      "message": "Markdown file 2025/NAIC-Cybersecurity-Insurance-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Nexusguard-DDoS-Threat-Analysis-and-Industry-Perspectives-2025.md",
+      "message": "Markdown file 2025/Nexusguard-DDoS-Threat-Analysis-and-Industry-Perspectives-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/ODNI-Annual-Threat-Assessment-2025.md",
+      "message": "Markdown file 2025/ODNI-Annual-Threat-Assessment-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Omada-State-of-Identity-Governance-2025.md",
+      "message": "Markdown file 2025/Omada-State-of-Identity-Governance-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/OrangeCyberDefense-Security-Navigator-2025.md",
+      "message": "Markdown file 2025/OrangeCyberDefense-Security-Navigator-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/PaloAlto-Global-Incident-Response-Report-2025.md",
+      "message": "Markdown file 2025/PaloAlto-Global-Incident-Response-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Picus-Red-Report-2025.md",
+      "message": "Markdown file 2025/Picus-Red-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Prowler-State-of-Cloud-Security-Report-2025.md",
+      "message": "Markdown file 2025/Prowler-State-of-Cloud-Security-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/PWC-Global-Digital-Trust-Insights-Report-2025.md",
+      "message": "Markdown file 2025/PWC-Global-Digital-Trust-Insights-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Rapid7-Initial-Access-Brokers-Report-2025.md",
+      "message": "Markdown file 2025/Rapid7-Initial-Access-Brokers-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/RedCanary-Threat-Detection-Report-2025.md",
+      "message": "Markdown file 2025/RedCanary-Threat-Detection-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/ReversingLabs-Software-Supply-Chain-Security-Report-2025.md",
+      "message": "Markdown file 2025/ReversingLabs-Software-Supply-Chain-Security-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/SIA-Security-Megatrends-2025.md",
+      "message": "Markdown file 2025/SIA-Security-Megatrends-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/SISAsappersThreat-Report-2025.md",
+      "message": "Markdown file 2025/SISAsappersThreat-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Splunk-CISO-Report-2025.md",
+      "message": "Markdown file 2025/Splunk-CISO-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Sysdig-Cloud-Native-Security-Report-2025.md",
+      "message": "Markdown file 2025/Sysdig-Cloud-Native-Security-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Thinkst-Scapes-Q1-2025.md",
+      "message": "Markdown file 2025/Thinkst-Scapes-Q1-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Thinkst-Scapes-Q2-2025.md",
+      "message": "Markdown file 2025/Thinkst-Scapes-Q2-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Thinkst-Scapes-Q3-2025.md",
+      "message": "Markdown file 2025/Thinkst-Scapes-Q3-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Threatlabz-AI-Security-Report-2025.md",
+      "message": "Markdown file 2025/Threatlabz-AI-Security-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/TRM-Crypto-Crime-Report-2025.md",
+      "message": "Markdown file 2025/TRM-Crypto-Crime-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Truesec-Threat-Intelligence-Report-2025.md",
+      "message": "Markdown file 2025/Truesec-Threat-Intelligence-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Upstream-Global-Automotive-Cybersecurity-Report-2025.md",
+      "message": "Markdown file 2025/Upstream-Global-Automotive-Cybersecurity-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Veracode-State-of-Software-Security-Report-2025.md",
+      "message": "Markdown file 2025/Veracode-State-of-Software-Security-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Verizon-Data-Breach-Investigations-Report-2025.md",
+      "message": "Markdown file 2025/Verizon-Data-Breach-Investigations-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/VulnCheck-State-of-Exploitation-2025.md",
+      "message": "Markdown file 2025/VulnCheck-State-of-Exploitation-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Wallarm-API-Threat-Stats-Report-2025.md",
+      "message": "Markdown file 2025/Wallarm-API-Threat-Stats-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Waterfall-OT-Cyber-Threat-Report-2025.md",
+      "message": "Markdown file 2025/Waterfall-OT-Cyber-Threat-Report-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/WEF-Global-Cybersecurity-Outlook-2025.md",
+      "message": "Markdown file 2025/WEF-Global-Cybersecurity-Outlook-2025.md exists within retention period but is not listed in README.md."
+    },
+    {
+      "type": "missing_in_readme",
+      "file": "2025/Zimperium-Global-Mobile-Threat-Report-2025.md",
+      "message": "Markdown file 2025/Zimperium-Global-Mobile-Threat-Report-2025.md exists within retention period but is not listed in README.md."
+    }
+  ],
+  "category_mismatches": [
+    {
+      "type": "category_mismatch",
+      "vendor": "Chainalysis",
+      "report_name": "Crypto Crime Report",
+      "current_category": "Global Threat Intelligence",
+      "suggested_category": "Regional Assessments",
+      "message": "Report might be miscategorized. Score for 'Global Threat Intelligence' is 0, but 'Regional Assessments' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Cloudflare",
+      "report_name": "Security Signals Report",
+      "current_category": "Global Threat Intelligence",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Global Threat Intelligence' is 0, but 'Executive Perspectives' scored 10 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Department of Homeland Security",
+      "report_name": "Threat Assessment",
+      "current_category": "Global Threat Intelligence",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Global Threat Intelligence' is 0, but 'Sector Specific Intelligence' scored 9 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "F5",
+      "report_name": "Advanced Persistent Bots Report",
+      "current_category": "Global Threat Intelligence",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Global Threat Intelligence' is 0, but 'Executive Perspectives' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "StationX",
+      "report_name": "Phishing Statistics",
+      "current_category": "Global Threat Intelligence",
+      "suggested_category": "Data Breaches",
+      "message": "Report might be miscategorized. Score for 'Global Threat Intelligence' is 0, but 'Data Breaches' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Whitehouse",
+      "report_name": "Cybersecurity Posture of the United States",
+      "current_category": "Global Threat Intelligence",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Global Threat Intelligence' is 0, but 'Sector Specific Intelligence' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "National Cyber Security Centre",
+      "report_name": "Cyber Threat Report",
+      "current_category": "Regional Assessments",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Regional Assessments' is 0, but 'Sector Specific Intelligence' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Security Scorecard",
+      "report_name": "State of South Koreas Cybersecurity",
+      "current_category": "Regional Assessments",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Regional Assessments' is 0, but 'Sector Specific Intelligence' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Seqrite",
+      "report_name": "India Cyber Threat Report",
+      "current_category": "Regional Assessments",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Regional Assessments' is 0, but 'Global Threat Intelligence' scored 13 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Sweden",
+      "report_name": "National Strategy for Cybersecurity",
+      "current_category": "Regional Assessments",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Regional Assessments' is 0, but 'Sector Specific Intelligence' scored 10 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "United States Department of Defense",
+      "report_name": "State of DevSecOps",
+      "current_category": "Regional Assessments",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Regional Assessments' is 0, but 'Executive Perspectives' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Bio Catch",
+      "report_name": "Global Scams Report",
+      "current_category": "Sector Specific Intelligence",
+      "suggested_category": "Regional Assessments",
+      "message": "Report might be miscategorized. Score for 'Sector Specific Intelligence' is 0, but 'Regional Assessments' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "GSMA",
+      "report_name": "Security Landscape",
+      "current_category": "Sector Specific Intelligence",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Sector Specific Intelligence' is 0, but 'Vulnerabilities' scored 9 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "TRM Labs",
+      "report_name": "Global Crypto Policy Review Outlook",
+      "current_category": "Sector Specific Intelligence",
+      "suggested_category": "Privacy and Data Protection",
+      "message": "Report might be miscategorized. Score for 'Sector Specific Intelligence' is 0, but 'Privacy and Data Protection' scored 21 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Upstream",
+      "report_name": "Global Automotive Cybersecurity Report",
+      "current_category": "Sector Specific Intelligence",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Sector Specific Intelligence' is 0, but 'Executive Perspectives' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Visa",
+      "report_name": "Biannual Threats Report",
+      "current_category": "Sector Specific Intelligence",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Sector Specific Intelligence' is 0, but 'Global Threat Intelligence' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Armis",
+      "report_name": "Early Warning Insights for Software Supply Chain Attacks",
+      "current_category": "Application Security",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Vulnerabilities' scored 8 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Black Duck",
+      "report_name": "Open Source Risk Analysis Report",
+      "current_category": "Application Security",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Executive Perspectives' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Contrast Security",
+      "report_name": "Software Under Siege",
+      "current_category": "Application Security",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Vulnerabilities' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Data Dog",
+      "report_name": "State Of DevSecOps",
+      "current_category": "Application Security",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Vulnerabilities' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Digital AI",
+      "report_name": "Application Security Threat Report",
+      "current_category": "Application Security",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Sector Specific Intelligence' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Fluid Attacks",
+      "report_name": "State Of Attacks",
+      "current_category": "Application Security",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Vulnerabilities' scored 32 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Git Guardian",
+      "report_name": "State of Secrets Sprawl",
+      "current_category": "Application Security",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Executive Perspectives' scored 7 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Grip",
+      "report_name": "SaaS Security Risks Report",
+      "current_category": "Application Security",
+      "suggested_category": "Industry Trends",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Industry Trends' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Kodem",
+      "report_name": "State of AppSec Workflow",
+      "current_category": "Application Security",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Vulnerabilities' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Legit Security",
+      "report_name": "State of Application Risk Report",
+      "current_category": "Application Security",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Executive Perspectives' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Orca",
+      "report_name": "State of AppSec Report",
+      "current_category": "Application Security",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Vulnerabilities' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Robotti",
+      "report_name": "AppSec Report",
+      "current_category": "Application Security",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Executive Perspectives' scored 9 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Salt",
+      "report_name": "State Of API Security",
+      "current_category": "Application Security",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Executive Perspectives' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Seraphic Security",
+      "report_name": "Zero Trust Browser Security",
+      "current_category": "Application Security",
+      "suggested_category": "Privacy and Data Protection",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Privacy and Data Protection' scored 9 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Sonatype",
+      "report_name": "State of The Software Supplychain",
+      "current_category": "Application Security",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Vulnerabilities' scored 7 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Veracode",
+      "report_name": "State Of Software Security Report",
+      "current_category": "Application Security",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Vulnerabilities' scored 11 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Wallarm",
+      "report_name": "API Threat Stats Report",
+      "current_category": "Application Security",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Vulnerabilities' scored 13 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Wiz",
+      "report_name": "State of Code Security",
+      "current_category": "Application Security",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Executive Perspectives' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Bellsoft",
+      "report_name": "State-of-Container-Security",
+      "current_category": "Cloud Security",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Cloud Security' is 0, but 'Vulnerabilities' scored 9 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Censys",
+      "report_name": "State Of The Internet",
+      "current_category": "Cloud Security",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Cloud Security' is 0, but 'Global Threat Intelligence' scored 18 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Data Dog",
+      "report_name": "State Of Cloud Security",
+      "current_category": "Cloud Security",
+      "suggested_category": "Identity Security",
+      "message": "Report might be miscategorized. Score for 'Cloud Security' is 0, but 'Identity Security' scored 7 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Sysdig",
+      "report_name": "Cloud Native Security and Usage Report",
+      "current_category": "Cloud Security",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Cloud Security' is 0, but 'Vulnerabilities' scored 14 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Toc Consulting",
+      "report_name": "The State of AWS Security",
+      "current_category": "Cloud Security",
+      "suggested_category": "Identity Security",
+      "message": "Report might be miscategorized. Score for 'Cloud Security' is 0, but 'Identity Security' scored 12 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Unosecure",
+      "report_name": "Cloud Compliance Pulse",
+      "current_category": "Cloud Security",
+      "suggested_category": "Identity Security",
+      "message": "Report might be miscategorized. Score for 'Cloud Security' is 0, but 'Identity Security' scored 14 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Varonis",
+      "report_name": "State Of Data Security Report",
+      "current_category": "Cloud Security",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Cloud Security' is 0, but 'Sector Specific Intelligence' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "WithSecure",
+      "report_name": "Salesforce Threat Landscape Report",
+      "current_category": "Cloud Security",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Cloud Security' is 0, but 'Global Threat Intelligence' scored 13 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Wiz",
+      "report_name": "State of AI in the Cloud",
+      "current_category": "Cloud Security",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Cloud Security' is 0, but 'Vulnerabilities' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Hornet",
+      "report_name": "Cybersecurity Report",
+      "current_category": "Vulnerabilities",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Vulnerabilities' is 0, but 'Global Threat Intelligence' scored 11 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Torq",
+      "report_name": "AI SOC Leadership Report",
+      "current_category": "Vulnerabilities",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Vulnerabilities' is 0, but 'Executive Perspectives' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Abnormal",
+      "report_name": "Read Replied Compromised Employee Engagement Trends",
+      "current_category": "Ransomware",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Sector Specific Intelligence' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Akamai",
+      "report_name": "Ransomware Report",
+      "current_category": "Ransomware",
+      "suggested_category": "Industry Trends",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Industry Trends' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Cyfirma",
+      "report_name": "Tracking Ransomware",
+      "current_category": "Ransomware",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Global Threat Intelligence' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Gen Digital",
+      "report_name": "Threat Report",
+      "current_category": "Ransomware",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Global Threat Intelligence' scored 10 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Guidepoint",
+      "report_name": "GRIT Ransomware Annual Report",
+      "current_category": "Ransomware",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Global Threat Intelligence' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Howden",
+      "report_name": "Cyber Report Rebooting Growth",
+      "current_category": "Ransomware",
+      "suggested_category": "Industry Trends",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Industry Trends' scored 23 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Rapid7",
+      "report_name": "Threat Landscape Report Q3",
+      "current_category": "Ransomware",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Global Threat Intelligence' scored 11 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Symantec",
+      "report_name": "Ransomware Threat Landscape",
+      "current_category": "Ransomware",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Global Threat Intelligence' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Vipre",
+      "report_name": "Email Threat Report",
+      "current_category": "Ransomware",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Sector Specific Intelligence' scored 10 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "ZScaler",
+      "report_name": "Threatlabz Ransomware Report",
+      "current_category": "Ransomware",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Sector Specific Intelligence' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "With Secure",
+      "report_name": "Ransomware Threat Report",
+      "current_category": "Ransomware",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Global Threat Intelligence' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Allianz",
+      "report_name": "Commercial Directors and Officers Insurance Insights",
+      "current_category": "Data Breaches",
+      "suggested_category": "Industry Trends",
+      "message": "Report might be miscategorized. Score for 'Data Breaches' is 0, but 'Industry Trends' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Riskrecon",
+      "report_name": "Ripples Across The Risk Surface",
+      "current_category": "Data Breaches",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Data Breaches' is 0, but 'Sector Specific Intelligence' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "RPC",
+      "report_name": "Annual Insurance Review",
+      "current_category": "Data Breaches",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Data Breaches' is 0, but 'Sector Specific Intelligence' scored 7 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Security Industry Association",
+      "report_name": "Security Megatrends",
+      "current_category": "Physical Security",
+      "suggested_category": "Workforce and Culture",
+      "message": "Report might be miscategorized. Score for 'Physical Security' is 0, but 'Workforce and Culture' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "United States Air Force",
+      "report_name": "Science and Technology Vision",
+      "current_category": "Physical Security",
+      "suggested_category": "Workforce and Culture",
+      "message": "Report might be miscategorized. Score for 'Physical Security' is 0, but 'Workforce and Culture' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Akamai",
+      "report_name": "Fraud and Abuse Report",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Privacy and Data Protection",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Privacy and Data Protection' scored 8 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Anthropic",
+      "report_name": "Threat Intelligence Report",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Global Threat Intelligence' scored 11 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "BitDefender",
+      "report_name": "Global Scam Intelligence Report",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Global Threat Intelligence' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "EuropeanTelcoISAC",
+      "report_name": "Security Landscape",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Industry Trends",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Industry Trends' scored 8 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "HumanSecurity",
+      "report_name": "The State of AI Traffic and Cyberthreat Benchmark Report",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Global Threat Intelligence' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Imperva",
+      "report_name": "API Security Threat Report",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Global Threat Intelligence' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Intezer",
+      "report_name": "AI SOC Report",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Global Threat Intelligence' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Latio",
+      "report_name": "AI Security Report",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Vulnerabilities' scored 9 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Microsoft",
+      "report_name": "National Security in the Age of AI and Quantum",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Sector Specific Intelligence' scored 7 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "MNP",
+      "report_name": "Risk Trends",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Industry Trends",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Industry Trends' scored 7 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "OrcaRouter",
+      "report_name": "The AI Threat Report",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Executive Perspectives' scored 9 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Accenture",
+      "report_name": "State of Cybersecurity Resilience",
+      "current_category": "Industry Trends",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Global Threat Intelligence' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Armis",
+      "report_name": "State of Cyberwarfare",
+      "current_category": "Industry Trends",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Executive Perspectives' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "ATIS",
+      "report_name": "Enhanced 5G And Zero Trust Cloud",
+      "current_category": "Industry Trends",
+      "suggested_category": "Identity Security",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Identity Security' scored 24 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Binalyze",
+      "report_name": "The State Of Cybersecurity Investigations",
+      "current_category": "Industry Trends",
+      "suggested_category": "Workforce and Culture",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Workforce and Culture' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Canada",
+      "report_name": "The State of Cybersecurity in Canada",
+      "current_category": "Industry Trends",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Sector Specific Intelligence' scored 11 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Chainguard",
+      "report_name": "State Of Trusted Open Source",
+      "current_category": "Industry Trends",
+      "suggested_category": "Vulnerabilities",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Vulnerabilities' scored 9 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Cisco",
+      "report_name": "State of Wireless Report",
+      "current_category": "Industry Trends",
+      "suggested_category": "Workforce and Culture",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Workforce and Culture' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Comcast",
+      "report_name": "Business Cybersecurity Threat Report",
+      "current_category": "Industry Trends",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Global Threat Intelligence' scored 8 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "ConnectEU",
+      "report_name": "State of Digital Communications",
+      "current_category": "Industry Trends",
+      "suggested_category": "Regional Assessments",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Regional Assessments' scored 19 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Connectwise",
+      "report_name": "MSP Threat Report",
+      "current_category": "Industry Trends",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Global Threat Intelligence' scored 9 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Elastic",
+      "report_name": "State Of Detection Engineering",
+      "current_category": "Industry Trends",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Global Threat Intelligence' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "ENISA",
+      "report_name": "Threat Landscape Report",
+      "current_category": "Industry Trends",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Global Threat Intelligence' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "FINOS",
+      "report_name": "State of Open Source in_Financial Services",
+      "current_category": "Industry Trends",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Sector Specific Intelligence' scored 18 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Forescout",
+      "report_name": "Riskiest Devices",
+      "current_category": "Industry Trends",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Sector Specific Intelligence' scored 28 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Fortinet",
+      "report_name": "Threat Predictions",
+      "current_category": "Industry Trends",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Executive Perspectives' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Google",
+      "report_name": "Cloud ROI Of AI",
+      "current_category": "Industry Trends",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Executive Perspectives' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Google",
+      "report_name": "Cybersecurity Forecast",
+      "current_category": "Industry Trends",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Global Threat Intelligence' scored 8 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "GRF",
+      "report_name": "Top Risks Report",
+      "current_category": "Industry Trends",
+      "suggested_category": "Workforce and Culture",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Workforce and Culture' scored 13 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "GSMA",
+      "report_name": "Post Quantum Cryptography For 5g Roaming",
+      "current_category": "Industry Trends",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Executive Perspectives' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "HealthISAC",
+      "report_name": "Annual Threat Report",
+      "current_category": "Industry Trends",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Global Threat Intelligence' scored 7 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Kong",
+      "report_name": "API Security Perspectives",
+      "current_category": "Industry Trends",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Executive Perspectives' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Momentum",
+      "report_name": "Cybersecurity Almanac",
+      "current_category": "Industry Trends",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Executive Perspectives' scored 8 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Nametag",
+      "report_name": "Workforce Impersonation Report",
+      "current_category": "Industry Trends",
+      "suggested_category": "Workforce and Culture",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Workforce and Culture' scored 13 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Netscout",
+      "report_name": "DDoS Threat Intelligence Report",
+      "current_category": "Industry Trends",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Sector Specific Intelligence' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Picus",
+      "report_name": "Blue Report",
+      "current_category": "Industry Trends",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Global Threat Intelligence' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Pillar",
+      "report_name": "State Of Attacks On Genai",
+      "current_category": "Industry Trends",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Global Threat Intelligence' scored 8 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Sophos",
+      "report_name": "State Of Ransomware In Healthcare",
+      "current_category": "Industry Trends",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Sector Specific Intelligence' scored 29 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Trelllix",
+      "report_name": "Advanced Threat Research Report",
+      "current_category": "Industry Trends",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Global Threat Intelligence' scored 17 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Viking Cloud",
+      "report_name": "Cyber Threat Landscape",
+      "current_category": "Industry Trends",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Executive Perspectives' scored 11 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "World Economic Forum",
+      "report_name": "Global Risks Report",
+      "current_category": "Industry Trends",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Executive Perspectives' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Yubico",
+      "report_name": "Global State Of Authentication Report",
+      "current_category": "Industry Trends",
+      "suggested_category": "Identity Security",
+      "message": "Report might be miscategorized. Score for 'Industry Trends' is 0, but 'Identity Security' scored 13 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Kibu",
+      "report_name": "Quarterly Threat Report Q1",
+      "current_category": "Executive Perspectives",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Executive Perspectives' is 0, but 'Global Threat Intelligence' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Aon",
+      "report_name": "Reinsurance Market Dynamics",
+      "current_category": "Market and Investment Research",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Market and Investment Research' is 0, but 'Executive Perspectives' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Guy Carpenter",
+      "report_name": "US Cyber Industry Exposure Database",
+      "current_category": "Market and Investment Research",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Market and Investment Research' is 0, but 'Executive Perspectives' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Recorded Future",
+      "report_name": "State Of Threat Intelligence",
+      "current_category": "Market and Investment Research",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Market and Investment Research' is 0, but 'Global Threat Intelligence' scored 29 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "UKCyber",
+      "report_name": "Security Sectoral Analysis Report",
+      "current_category": "Market and Investment Research",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Market and Investment Research' is 0, but 'Sector Specific Intelligence' scored 24 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Akamai",
+      "report_name": "APAC API Security",
+      "current_category": "Application Security",
+      "suggested_category": "Regional Assessments",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Regional Assessments' scored 23 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "AppOmni",
+      "report_name": "State Of Saas Security Report",
+      "current_category": "Application Security",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Executive Perspectives' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "BlackDuck",
+      "report_name": "BSIMM16",
+      "current_category": "Application Security",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Executive Perspectives' scored 8 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Checkmarx",
+      "report_name": "Future Of Application Security",
+      "current_category": "Application Security",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Executive Perspectives' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Cycode",
+      "report_name": "State of Application Security Posture Management",
+      "current_category": "Application Security",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Executive Perspectives' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Cypress Data Defense",
+      "report_name": "State of Application Security",
+      "current_category": "Application Security",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Executive Perspectives' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Traceable",
+      "report_name": "Global State of API Security",
+      "current_category": "Application Security",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Application Security' is 0, but 'Executive Perspectives' scored 7 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Google",
+      "report_name": "Cybersecurity Forecast 2025",
+      "current_category": "Cloud Security",
+      "suggested_category": "Global Threat Intelligence",
+      "message": "Report might be miscategorized. Score for 'Cloud Security' is 0, but 'Global Threat Intelligence' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Dashlane",
+      "report_name": "State of Credential Security Report",
+      "current_category": "Identity Security",
+      "suggested_category": "Workforce and Culture",
+      "message": "Report might be miscategorized. Score for 'Identity Security' is 0, but 'Workforce and Culture' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Delinea",
+      "report_name": "State Of Ransomware Report",
+      "current_category": "Ransomware",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Sector Specific Intelligence' scored 4 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Semperis",
+      "report_name": "Ransomware Risk Report",
+      "current_category": "Ransomware",
+      "suggested_category": "Identity Security",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Identity Security' scored 7 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Sophos",
+      "report_name": "State Of Ransomware In Manufacturing",
+      "current_category": "Ransomware",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Sector Specific Intelligence' scored 23 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Veeam",
+      "report_name": "Data Trust and Resilience Report",
+      "current_category": "Ransomware",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'Ransomware' is 0, but 'Executive Perspectives' scored 12 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Appdome",
+      "report_name": "Mobile App Consumer Survey",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Identity Security",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Identity Security' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Clutch Security",
+      "report_name": "MCP A View From The Trenches",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Executive Perspectives' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "DeepInstinct",
+      "report_name": "Voice of SecOps",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Sector Specific Intelligence",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Sector Specific Intelligence' scored 11 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Deloitte",
+      "report_name": "Tech Trends",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Workforce and Culture",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Workforce and Culture' scored 5 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "KPMG",
+      "report_name": "Cybersecurity Considerations",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Executive Perspectives' scored 6 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Memcyco",
+      "report_name": "AI-Driven-Fraud",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Privacy and Data Protection",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Privacy and Data Protection' scored 9 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "SailPoint",
+      "report_name": "The Year of The AI Agent",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Identity Security",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Identity Security' scored 8 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Salt",
+      "report_name": "Future of Agentic AI Report",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Executive Perspectives",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Executive Perspectives' scored 3 based on keywords."
+    },
+    {
+      "type": "category_mismatch",
+      "vendor": "Synack",
+      "report_name": "State of Agentic AI in Pentesting",
+      "current_category": "AI and Emerging Technologies",
+      "suggested_category": "Industry Trends",
+      "message": "Report might be miscategorized. Score for 'AI and Emerging Technologies' is 0, but 'Industry Trends' scored 3 based on keywords."
+    }
+  ]
+}
