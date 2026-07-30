@@ -1,20 +1,15 @@
-# State of Cybersecurity 2025
+Transforming the Business of Information Technology  
+Richard Ricks & Darwin Herdman  
+Founder, Managing Partner & Chief Executive Officer (CEO) & Client Services & Security Officer (CSSO)  
+IT360 Secure  
 
-**Organization:** NCTech  
-**Report Title:** State-of-Cybersecurity  
-**Year:** 2025  
-
-**Authors:**  
-Richard Ricks, Founder, Managing Partner & Chief Executive Officer (CEO)  
-Darwin Herdman, Client Services & Security Officer (CSSO)  
-
-**Date:** 2/11/2025  
-
-©2025 Silver Tree Consulting and Services. Confidential and Proprietary. All rights reserved.
+February 14, 2025  
+State of Cybersecurity Threats in 2025  
+Cybersecurity in 2025: A constant battle against ever-evolving threats, where vigilance is the only defense
 
 ## Table of Contents
-- [A look back at 2024 – What did we learn?](#a-look-back-at-2024--what-did-we-learn)
-- [What we will see in 2025](#what-we-will-see-in-2025)
+- [A Look Back at 2024 – What Did We Learn?](#a-look-back-at-2024--what-did-we-learn)
+- [What We Will See in 2025](#what-we-will-see-in-2025)
 - [Geopolitical Tensions](#geopolitical-tensions)
 - [Advanced Persistent Threats](#advanced-persistent-threats)
 - [AI-Driven Cyber Attacks](#ai-driven-cyber-attacks)
@@ -26,27 +21,34 @@ Darwin Herdman, Client Services & Security Officer (CSSO)
 - [Cloud Security Challenges](#cloud-security-challenges)
 - [Define Your Journey](#define-your-journey)
 
----
-
-## A look back at 2024 – What did we learn?
-
-![Infographic showing 2024 statistics: 45% social engineering, 25% AI-powered attacks, 20 billion records leaked, 60% of SMEs targeted]
-
+## A Look Back at 2024 – What Did We Learn?
 - **45%** of cyber incidents in 2024 were attributed to social engineering attacks, including phishing, pretexting, and impersonation.
 - **25%** of all cyberattacks were powered by artificial intelligence (AI), from automated phishing to AI-driven malware and deepfakes.
 - **Over 20 billion** records were exposed in data leaks across various sectors in 2024.
 - **More than 60%** of small and medium-sized enterprises (SMEs) were targeted by cyberattacks in 2024.
 
-## What we will see in 2025
+## What We Will See in 2025
 
-![Overview matrix of 2025 cybersecurity threats including Geopolitical Tensions, Advanced Persistent Threats, Supply Chain Interdependencies, Regulatory Requirements, AI Driven Cyber Attacks, Cyber Skills Gap, Ransomware as a Service, IoT Vulnerabilities, and Cloud Security Challenges]
+| Geopolitical Tensions | Advanced Persistent Threats | Supply Chain Interdependencies |
+| :--- | :--- | :--- |
+| • State Sponsored Attacks<br>• Hacktivism and Protests<br>• Supply Chain Vulnerabilities<br>• Increased Regulatory Pressure | • Quantum Computing-Enabled APTs<br>• Deeper Integration with AI/ML Tools<br>• Focus on Cloud & Hybrid Infrastructure<br>• Biometric Data and IoT-Targeted APTs | • Third Party Vendor Breaches – Payment Processing, Cloud Storage, accounting and SaaS providers<br>• Lack of Vendor Management, 3rd Party Risk Assessment or Security Standards |
+
+| Regulatory Requirements | AI Driven Cyber Attacks | Cyber Skills Gap |
+| :--- | :--- | :--- |
+| • Increased Compliance Costs<br>• Impact on Innovation and Business Agility<br>• Heightened Risk of Non-Compliance Penalties<br>• Integration of Privacy & Security Controls | • Advanced Deepfake Attacks<br>• Self Learning Malware and AI enabled Evasion<br>• Automated Vulnerability Scanning & Exploitation<br>• AI-Powered Distributed Denial of Service Attacks | • Digital Transformation and IT complexity<br>• Cybersecurity Education & Training Programs<br>• Burnout and High Turnover Rates<br>• Global Competition for Cybersecurity Talent |
+
+| Ransomware as a Service | Internet of Things Vulnerabilities | Cloud Security Challenges |
+| :--- | :--- | :--- |
+| • Rise in Double and Triple Extortion Models<br>• Hyper-Personalized & Sophisticated Campaigns<br>• Increased Attacks from Inexperienced Actors<br>• Expansion Targeting Critical Infrastructure | • Botnets Powered by IoT Devices<br>• Privacy Breaches and Data Harvesting<br>• Device Spoofing and Impersonation<br>• Weaknesses in IoT Device Integration | • Loss of Control Over Data<br>• Inadequate Cloud Security Configurations<br>• Insecure APIs and Interfaces |
+
+---
 
 ## Geopolitical Tensions
 
 ### State Sponsored Attacks
 As nations engage in geopolitical conflicts, they often leverage cyberattacks as part of their broader strategy to disrupt or damage the economies, infrastructure, and institutions of rival states. These attacks are typically more sophisticated, highly coordinated, and persistent, often outpacing the ability of traditional security measures to defend against them.
 
-### Hactivism and Protests
+### Hacktivism and Protests
 These threats often manifest in ways that go beyond traditional cyberattacks and have the potential to disrupt operations, damage reputations, and expose sensitive data. Hacktivists—hackers with political, environmental, or social agendas—may target organizations they perceive as aligned with causes they oppose.
 
 ### Supply Chain Vulnerabilities
@@ -54,6 +56,8 @@ Geopolitical conflicts often lead to increased targeting of critical supply chai
 
 ### Increased Regulatory Pressure
 As conflicts, trade disputes, and international rivalries escalate, governments and regulatory bodies are implementing stricter cybersecurity frameworks and compliance standards to safeguard national interests, protect critical infrastructure, and ensure economic stability.
+
+---
 
 ## Advanced Persistent Threats
 
@@ -69,6 +73,8 @@ APT actors will target hybrid cloud environments and multi-cloud architectures a
 ### Biometric Data and IoT-Targeted APTs
 With the growing reliance on biometric authentication (face recognition, fingerprints, etc.) and IoT devices, attackers will target these technologies as attack vectors. Biometric data manipulation could be used to bypass authentication, and IoT devices could serve as entry points into otherwise secure systems.
 
+---
+
 ## AI-Driven Cyber Attacks
 
 ### Advanced Deepfake Attacks
@@ -82,6 +88,8 @@ AI tools will significantly improve the ability of attackers to scan for and exp
 
 ### Self Learning Malware and AI–Enabled Detection Manipulation
 AI-driven malware will become more autonomous and capable of adapting to defenses in real time. AI will help attackers mimic normal network traffic or human behavior, making it extremely difficult for legacy security tools to differentiate between legitimate activity and malicious actions.
+
+---
 
 ## Internet of Things Vulnerabilities
 
@@ -97,6 +105,8 @@ IoT devices often interact in automated networks, communicating with each other 
 ### Weaknesses in IoT Device Integration
 IoT devices are often integrated into a wide variety of ecosystems, such as smart homes, manufacturing systems, or hospitals, creating a complex web of interdependencies. A vulnerability in one IoT device can cascade and impact other connected devices in the ecosystem.
 
+---
+
 ## Ransomware as a Service
 
 ### Explosion of Ransomware Attacks from Inexperienced Threat Actors
@@ -110,6 +120,8 @@ RaaS will integrate more extortion methods into their offerings, pushing attacke
 
 ### Expansion of Ransomware Targeting Critical Infrastructure
 RaaS will enable more cybercriminals to target high-value sectors like healthcare, finance, energy, and government—critical infrastructure that relies heavily on operational technology (OT). With increasingly automated attack tools and better strategies for infiltrating OT networks, these attackers will be able to cripple operations, causing disruption, financial loss, and national security risks.
+
+---
 
 ## Cyber Skills Gap
 
@@ -125,6 +137,8 @@ The high volume of cyberattacks and the pressure to protect increasingly complex
 ### Global Competition for Cybersecurity Talent
 As the global demand for cybersecurity professionals grows, countries and companies will increasingly compete for the best talent. This leads to higher salaries, increased demand for workers with niche skills, and talent migration to organizations with the most resources to attract and retain top professionals.
 
+---
+
 ## Supply Chain Interdependencies
 
 ### Third-Party Vendor Breaches
@@ -138,6 +152,8 @@ Ransomware attacks increasingly target the critical suppliers in an organization
 
 ### Inadequate Risk Management and Monitoring
 Many organizations do not have a comprehensive view of the security posture of their entire supply chain, especially when it comes to third-party vendors or subcontractors. This lack of visibility makes it difficult to assess and mitigate risks effectively, leaving critical vulnerabilities exposed.
+
+---
 
 ## Regulatory Requirements
 
@@ -153,6 +169,8 @@ As regulations become stricter in 2025, the risk of non-compliance will increase
 ### Integration of Privacy & Security Controls into Business Models
 Businesses will need to integrate security and privacy controls into their business models by default (also known as security by design and privacy by design). This means incorporating robust data protection policies, encryption, access controls, and auditing features right from the early stages of product and service design.
 
+---
+
 ## Cloud Security Challenges
 
 ### Misconfigurations and Human Error
@@ -167,9 +185,9 @@ With the rise of cloud-native technologies such as containers, microservices, an
 ### Increased Attack Surface with Multi-Cloud & Hybrid Environments
 Many organizations are adopting multi-cloud and hybrid cloud environments (using services from multiple cloud providers like AWS, Azure, and Google Cloud), which makes it more challenging to maintain consistent security policies and controls across different platforms. This results in an expanded attack surface.
 
-## Define Your Journey
+---
 
-![Strategic roadmap icons for setting objectives, creating awareness, adopting zero trust, and maintaining vigilance]
+## Define Your Journey
 
 ### Set Your Objective
 - ISO 27001
@@ -199,5 +217,8 @@ Many organizations are adopting multi-cloud and hybrid cloud environments (using
 - Vendor & 3rd Party Risk Management
 
 ---
-SILVERTREESERVICES.COM  
-Darwin Herdman, General Manager
+
+Thank you  
+[SILVERTREESERVICES.COM](https://silvertreeservices.com)  
+Darwin Herdman  
+General Manager
