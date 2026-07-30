@@ -8,9 +8,21 @@ import difflib
 # Configuration
 README_PATH = "../../README.md"
 CATEGORIES_PATH = "../artifacts/report-categories.json"
+CONFIG_PATH = "../artifacts/readme-updater-config.json"
 MD_DIR = "../../Markdown Conversions"
-CURRENT_YEAR = 2026 # Hardcoded for now based on current repo state / clock
-VALID_YEARS = [CURRENT_YEAR, CURRENT_YEAR - 1] # e.g., 2026, 2025
+
+def get_valid_years():
+    try:
+        with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
+            config = json.load(f)
+        age_threshold = config.get('processing', {}).get('age_threshold_years', 2)
+    except Exception:
+        age_threshold = 2
+    
+    current_year = datetime.datetime.now().year
+    return list(range(current_year - age_threshold + 1, current_year + 1))
+
+VALID_YEARS = get_valid_years()
 
 def load_categories():
     with open(CATEGORIES_PATH, 'r', encoding='utf-8') as f:

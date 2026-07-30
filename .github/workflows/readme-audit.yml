@@ -3,7 +3,10 @@ name: README Audit
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 12 * * 1' # Every Monday at 12:00 UTC
+    - cron: '0 14 * * 0' # Every Sunday at 14:00 UTC
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: read
