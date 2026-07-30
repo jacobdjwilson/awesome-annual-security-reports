@@ -2,7 +2,7 @@
 
 From ransomware and AI-powered attacks to supply chain vulnerabilities and the rise of quantum computing, the cyber security landscape is shifting rapidly. In this report, we unpack the key trends our experts foresee for 2025, their implications, and strategies to stay ahead of emerging risks.
 
-Always evolving. Always there.
+Always evolving. Always there.  
 1 How to improve your organisation’s cyber security
 
 ## Table of Contents
@@ -18,8 +18,9 @@ Always evolving. Always there.
 - [10. A Comprehensive Approach is Needed](#10-a-comprehensive-approach-is-needed)
 
 > “At Red Helix, we have seen another year of notable change. With evolving technologies and increasingly sophisticated attack methods, the need for adaptable, forward-looking security solutions is greater than ever. As we approach 2025, we remain dedicated to helping our clients navigate these complexities, focusing on resilience and innovation to stay ahead in an ever-shifting environment.”
-> 
-> — Marion Stewart, CEO
+
+2  Cyber Trends 2025  
+- Marion Stewart, CEO
 
 ---
 
@@ -33,9 +34,13 @@ The average extortion demand rose to £4.1 million per attack in early 2024, fue
 
 This proliferation presents significant challenges for attribution and mitigation. Because RaaS separates ransomware developers from those deploying attacks, identifying specific actors has also become more challenging. Since RaaS allows affiliates to switch tools if an operator is caught, the risk is distributed across a resilient network.
 
-The interplay between users and unpatched environments often serves as an entry point for attackers, making them critical vulnerabilities in an organisation’s defences. For example, if users operate in environments with outdated systems, the likelihood of successful exploitation increases significantly. Therefore, it is important organisations are prioritising these risks and have sufficient security measures to prevent ransomware.
+The interplay between users and unpatched environments often the most common sources of ransomware attacks. Both factors often serve as entry points for attackers, making them critical vulnerabilities in an organisation’s defences.
+
+For example, if users operate in environments with outdated systems, the likelihood of successful exploitation increases significantly. Therefore, it is important organisations are prioritising these risks and have sufficient security measures to prevent ransomware.
 
 Given the cost and difficulty of responding to ransomware attacks, preventive strategies are crucial. Regular patching, data backups, network segmentation, and up-to-date Endpoint Detection & Response (EDR) systems are essential. Organisations should also foster a culture of cyber security awareness through regular testing and training. In this high-risk environment, effective protection strategies will increasingly outweigh reactive measures like insurance, as these only address the aftermath rather than preventing breaches.
+
+3 C3 y Hboewr T troe nimdsp 2ro0v2e your organisation’s cyber security
 
 ---
 
@@ -55,6 +60,9 @@ In response, security teams are increasingly using AI to detect and mitigate sop
 
 The assertion that AI can be a force for good in combating cyber threats is demonstrated by innovations like Telefonica’s AI-powered tool “Daisy,” which targets and entraps scammers. This example highlights the growing potential of artificial intelligence to proactively address challenges in the cyber domain. As cyber threats grow more sophisticated, cyber security experts, AI developers, and policymakers will likely collaborate more frequently to create original solutions that safeguard digital ecosystems while reinforcing the positive narrative of AI as a problem-solving technology.
 
+4 Cyber Trends 2025  
+4 How to improve your organisation’s cyber security
+
 ---
 
 ## 3. Building a Resilient Supply Chain
@@ -65,9 +73,10 @@ Most companies monitor only 30% of their third-party connections, creating oppor
 
 As the supplier selection process matures, more companies will make cyber security measures mandatory. It is important that your supply chain is sufficiently prepared, or you may lose out on potential customer/vendor relationships. This is already prevalent in the financial sector and is fast becoming the norm across all industries as cyber is increasingly recognised for the value it adds to organisations winning new contracts.
 
-> “Supply chain security is particularly important. It only takes one member of your supply chain to suffer a breach for far reaching consequences. We take our due diligence and checks very seriously when we are working with new vendors to ensure our supply chain remains secure.”
-> 
-> — Duncan Forrest, IT Director
+> “Supply chain security is particularly important. It only takes one member of your supply chain to suffer a breach for far reaching consequences. We take our due diligence and checks very seriously when we are working with new vendors to ensure our supply chain remains secure.”  
+> - Duncan Forrest, IT Director
+
+5 C5y bHeorw T rteon idmsp 2r0o2v5 your organisation’s cyber security
 
 ---
 
@@ -81,9 +90,9 @@ A particular phishing technique known as adversary-in-the-middle (AitM) has gain
 
 Cyber criminals are expanding their methods with emerging types of phishing, such as quishing, smishing, and vishing. Quishing leverages QR codes embedded with malware, which, when scanned, can compromise a target’s device. Smishing and vishing use SMS and video calls, respectively, to deceive users into disclosing sensitive data. With personal devices increasingly holding sensitive information, the success rates of these new phishing vectors continue to grow. These variations retain phishing’s core objective, exploiting user trust to gather sensitive information. As these newer techniques gain prominence, user awareness must grow to mitigate their impact.
 
-*Research carried out in 2023 revealed that 60% of those who bought directly from a cyber security vendor consider their business to be very protected, just 23% of those who bought as part of another IT service feel the same way.*[^1]
+> Research carried out in 2023 revealed that 60% of those who bought directly from a cyber security vendor consider their business to be very protected, just 23% of those who bought as part of another IT service feel the same way.[^1]
 
-[^1]: Research carried out in 2023.
+6 C6 y Hboewr T troe nimdsp 2r0o2v5 your organisation’s cyber security
 
 ---
 
@@ -91,7 +100,7 @@ Cyber criminals are expanding their methods with emerging types of phishing, suc
 
 A strong security culture is front and centre of how a business to combat these evolving threats. Comprehensive education initiatives that focus on real-world risks and emphasise the importance of individual actions in preventing breaches. Integrating cyber security risks into the business risk management processes is key to driving awareness and mitigation strategies from the C-suite. By embedding cyber security awareness into everyday business practices and fostering a culture where every employee understands their role in maintaining digital safety, organisations can significantly reduce their vulnerability to human-centric attacks. As cyber threats continue to evolve, the importance of a strong security culture cannot be overstated.
 
-Building a culture of security awareness requires comprehensive education initiatives, focusing on real-world risks and the importance of individual actions in preventing breaches. However, there remains a gap in training adherence, with a 2024 State of Sysadmin report showing that 11% of IT professionals skip required training[^2].
+Building a culture of security awareness requires comprehensive education initiatives, focusing on real-world risks and the importance of individual actions in preventing breaches. However, there remains a gap in training adherence, with a 2024 State of Sysadmin report showing that 11% of IT professionals skip required training.
 
 As cyber security technology advances, the importance of human awareness is increasingly evident, driving organisations to invest in behaviour-driven security measures. These include using behavioural analysis to identify unusual patterns, fostering collaboration within security teams, and embedding cyber security within organisational health and safety frameworks. Continuous training and AI-powered tools can support analysts in threat detection, while collaborative environments enable the sharing of insights critical to investigations.
 
@@ -99,11 +108,16 @@ With cyber security’s evolving role, many organisations now view it as a ‘he
 
 Continuous risk assessments now serve a role akin to physical safety audits. These assessments help identify vulnerabilities and enable proactive threat responses, protecting digital assets and employee productivity. This focus on cyber security as part of an organisation’s ‘health and safety’, promotes a resilient, proactive culture that minimises human risk factors, embedding cyber security awareness into everyday business practices.
 
-[^2]: According to the 2024 State of Sysadmin Report.
+> **11% of IT professionals skip required training.**[^2]
+
+7 Cyber trends 2025
 
 ---
 
 ## 6. Multi-Domain Security Across IoT and Cloud Environments
+
+> “As more IoT devices are introduced, the complexity of managing the networks grows. This isn’t only a matter of scale; it also stems from the diversity of devices being integrated. Each device can come with its own operating system, along with varying protocols, standards, and security measures – which can ultimately lead to vulnerabilities and complications in protecting the network.”  
+> - Rob Pocock, Technology Director
 
 The convergence of Internet of Things (IoT) and cloud computing has created a complex, interconnected ecosystem that demands a comprehensive multi-domain security approach. As IoT devices proliferate, and with growth projections exceeding 21 billion by 2025, each connected device introduces potential vulnerabilities that span both the physical and digital realms.
 
@@ -113,11 +127,11 @@ This interconnected landscape necessitates a holistic security strategy that add
 
 Additionally, adopting a shared responsibility model for security becomes crucial, with both cloud service providers and customers playing active roles in maintaining data integrity and confidentiality.
 
-The integration of artificial intelligence (AI) and machine learning (ML) technologies further enhances the capability to detect and respond to threats across both IoT and cloud environments. These advanced tools can analyse vast amounts of data from diverse sources, identifying patterns and anomalies that might indicate security breaches. As the attack surface expands with the growth of IoT and cloud adoption, organisations can capitalise on continuous monitoring, regular security assessments, and the implementation of adaptive security architectures to ensure they keep pace with emerging threats.
+The integration of artificial intelligence (AI) and machine learning (ML) technologies further enhances the capability to detect and respond to threats across both IoT and cloud environments.
 
-> “As more IoT devices are introduced, the complexity of managing the networks grows. This isn’t only a matter of scale; it also stems from the diversity of devices being integrated. Each device can come with its own operating system, along with varying protocols, standards, and security measures – which can ultimately lead to vulnerabilities and complications in protecting the network.”
-> 
-> — Rob Pocock, Technology Director
+These advanced tools can analyse vast amounts of data from diverse sources, identifying patterns and anomalies that might indicate security breaches. As the attack surface expands with the growth of IoT and cloud adoption, organisations can capitalise on continuous monitoring, regular security assessments, and the implementation of adaptive security architectures to ensure they keep pace with emerging threats.
+
+8 C8y bHeorw T rteon idmsp 2r0o2v5 your organisation’s cyber security
 
 ---
 
@@ -131,15 +145,18 @@ DORA introduces comprehensive requirements for financial institutions to bolster
 
 As compliance expectations rise, cyber insurance costs are projected to increase, with insurers requiring proof of strong cyber security practices. The Cybersecurity Maturity Model Certification (CMMC) 2.0, for example, requires contractors to meet stringent standards, pushing businesses large and small to strengthen their security measures.
 
-> “Regulatory frameworks like NIS2 and DORA are driving a fundamental shift in how organisations approach cyber security. With executives now directly accountable for breaches, cyber security is no longer just an IT concern—it’s a boardroom priority.”
-> 
-> — Tom Exelby, Head of Cyber Security
+> “Regulatory frameworks like NIS2 and DORA are driving a fundamental shift in how organisations approach cyber security. With executives now directly accountable for breaches, cyber security is no longer just an IT concern—it’s a boardroom priority.”  
+> - Tom Exelby, Head of Cyber Security
+
+9 C9y bHeorw T rteon idmsp 2r0o2v5 your organisation’s cyber security
 
 ---
 
-## 8. The Zero Trust Model for a Hybrid Work Era
+## 8. The Zero Trust Model for the Hybrid Work Era
 
-In recent years, the rise of hybrid and remote work has introduced new security challenges, prompting businesses to adopt more sophisticated security measures. By 2025, we expect even greater investments in security solutions specifically tailored for remote work environments, particularly in technologies like Virtual Private Networks (VPNs) and Secure Access Service Edge (SASE). These tools are critical for providing secure, flexible access across varied work settings, supporting a ‘work from anywhere’ culture while safeguarding sensitive data.
+In recent years, the rise of hybrid and remote work has introduced new security challenges, prompting businesses to adopt more sophisticated security measures. By 2025, we expect even greater investments in security solutions specifically tailored for remote work environments, particularly in technologies like Virtual Private Networks (VPNs) and Secure Access Service Edge (SASE).
+
+These tools are critical for providing secure, flexible access across varied work settings, supporting a ‘work from anywhere’ culture while safeguarding sensitive data.
 
 As cyber threats, such as ransomware and network breaches, continue to escalate, the need to limit attack impact has pushed the Zero Trust model into the cyber security spotlight. Zero Trust’s foundational principle, ‘never trust, always verify’, offers a structured, proactive approach to minimise risk by restricting lateral movement across networks. By requiring continuous authentication and enforcing least-privilege access, organisations can significantly reduce exposure, granting users access solely on a ‘need-to-know’ basis.
 
@@ -151,6 +168,8 @@ Zero Trust Network Access (ZTNA) has proven invaluable in overcoming cyber secur
 
 As cyber security strategies advance, Zero Trust is poised to become the backbone of resilient, adaptive cyber security in 2025.
 
+10 1 0C y Hboerw T troe nimdsp 2r0v2e your organisation’s cyber security
+
 ---
 
 ## 9. Quantum Computing and Changing Methods of Decryption
@@ -161,13 +180,14 @@ While quantum computing is not yet mainstream, the research and development in t
 
 As quantum computing continues to progress, businesses must stay agile and innovative in adopting recent technologies to defend against future cyber threats. This proactive approach will be key to securing sensitive data and maintaining trust in digital systems.
 
+11 Cyber Trends 2025
+
 ---
 
 ## 10. A Comprehensive Approach is Needed
 
-> “The need for multiple layers of protection against cyber attacks has never been greater, with attacks coming in so many forms it is vital that organisations combine defences for their network, endpoints, people, data, applications and systems so that the likelihood and impact of a successful breach are minimised.”
-> 
-> — Scott Williams, Operations Director
+> “The need for multiple layers of protection against cyber attacks has never been greater, with attacks coming in so many forms it is vital that organisations combine defences for their network, endpoints, people, data, applications and systems so that the likelihood and impact of a successful breach are minimised.”  
+> - Scott Williams, Operations Director
 
 As we look towards the future of cyber security in 2025 and beyond, both established and emerging threats will continue to evolve, demanding greater attention, innovation, and preparedness from organisations.
 
@@ -180,3 +200,10 @@ For additional support and expert guidance, cyber security specialists such as R
 For specific security concerns or to explore how to better safeguard your company, employees, and clients, please contact Red Helix for a complimentary, no-obligation consultation.
 
 Visit [www.redhelix.co.uk/contact](http://www.redhelix.co.uk/contact) and one of our team will be happy to assist you.
+
+12 Cyber Trends 2025
+
+---
+
+[^1]: According to research carried out in 2023.
+[^2]: According to the 2024 State of Sysadmin Report.
