@@ -1,14 +1,18 @@
 # Tech Trends 2026
 
+As technology innovation and adoption accelerate, five trends reveal how successful organizations are moving from experimentation to impact
+
+i
+
 ## Table of Contents
-- [Executive summary](#executive-summary)
-- [Innovation compounds](#innovation-compounds)
-- [AI goes physical: Navigating the convergence of AI and robotics](#ai-goes-physical-navigating-the-convergence-of-ai-and-robotics)
-- [The agentic reality check: Preparing for a silicon-based workforce](#the-agentic-reality-check-preparing-for-a-silicon-based-workforce)
-- [The AI infrastructure reckoning: Optimizing compute strategy in the age of inference economics](#the-ai-infrastructure-reckoning-optimizing-compute-strategy-in-the-age-of-inference-economics)
-- [The great rebuild: Architecting an AI-native tech organization](#the-great-rebuild-architecting-an-ai-native-tech-organization)
-- [The AI dilemma: Securing and leveraging AI for cyber defense](#the-ai-dilemma-securing-and-leveraging-ai-for-cyber-defense)
-- [Cutting through the noise: Tech signals worth tracking as AI advances](#cutting-through-the-noise-tech-signals-worth-tracking-as-ai-advances)
+- [Executive Summary](#executive-summary)
+- [Innovation Compounds](#innovation-compounds)
+- [AI Goes Physical: Navigating the Convergence of AI and Robotics](#ai-goes-physical-navigating-the-convergence-of-ai-and-robotics)
+- [The Agentic Reality Check: Preparing for a Silicon-Based Workforce](#the-agentic-reality-check-preparing-for-a-silicon-based-workforce)
+- [The AI Infrastructure Reckoning: Optimizing Compute Strategy in the Age of Inference Economics](#the-ai-infrastructure-reckoning-optimizing-compute-strategy-in-the-age-of-inference-economics)
+- [The Great Rebuild: Architecting an AI-Native Tech Organization](#the-great-rebuild-architecting-an-ai-native-tech-organization)
+- [The AI Dilemma: Securing and Leveraging AI for Cyber Defense](#the-ai-dilemma-securing-and-leveraging-ai-for-cyber-defense)
+- [Cutting Through the Noise: Tech Signals Worth Tracking as AI Advances](#cutting-through-the-noise-tech-signals-worth-tracking-as-ai-advanced)
 
 ---
 
@@ -16,59 +20,532 @@
 
 Last year’s Tech Trends report predicted that artificial intelligence would become akin to electricity, a foundational element that’s seamlessly baked into an incredibly broad range of products and services. This year’s report, the 17th annual edition of Tech Trends, proves that hypothesis. No corner of enterprise technology is untouched by AI as the demand for intelligent operations informs decisions on everything from computing hardware to physical robotics. And, while last year’s focus was on building proof-of-concept projects and exploring the art of the possible, this year is all about scaling. Enterprises across industries are operationalizing AI-driven processes. The reason is simple: Leaders have realized that the key to competitive differentiation will be using AI to drive automation, innovation, and acceleration.
 
-## Innovation compounds
+### Innovation compounds
 
 Technology leaders face a critical shift from AI experimentation to measurable impact. Innovation now compounds exponentially: Generative AI reached approximately 100 million users in just two months versus 50 years for telephones to reach 50 million users. This is creating a multiplying flywheel effect where improvements in technology, data, investment, and infrastructure simultaneously accelerate each other. Traditional infrastructure and sequential improvement processes can’t keep pace. Success requires more than sophisticated technology. Organizations must redesign rather than merely automate processes, connect investments to business outcomes, and execute rapidly.
 
-## AI goes physical: Navigating the convergence of AI and robotics
+### AI goes physical: Navigating the convergence of AI and robotics
 
 Physical AI is evolving robots from preprogrammed machines into adaptive systems that perceive, learn, and operate autonomously in complex environments. These capabilities show up in industrial robots, autonomous vehicles, drones, and other systems. Current challenges include gaps in training, safety concerns, and cybersecurity risks, but falling costs are extending adoption beyond smart warehousing and supply chain operations into the mainstream. Humanoid robots are the next frontier, with projections of 2 million workplace humanoids by 2035. Future developments may include bio-hybrid robots and quantum robotics.
 
-## The agentic reality check: Preparing for a silicon-based workforce
+### The agentic reality check: Preparing for a silicon-based workforce
 
 Despite early enthusiasm, many businesses have yet to see significant transformation from agentic AI implementations because most simply automate existing processes rather than fundamentally redesigning operations. Only 11% of surveyed organizations have deployed agentic systems in production, with challenges including legacy system integration, data architecture constraints, and inadequate governance frameworks. Leading organizations are adopting agent-first process redesign, implementing multiagent orchestration using emerging protocols, and treating agents as a silicon-based workforce requiring specialized management frameworks. This includes agent onboarding, performance tracking, and FinOps cost management. The future points toward graduated autonomy levels, hybrid human-digital workforces, and leveraging agent-generated data for continuous learning, transforming how enterprises operate and compete.
 
-## The AI infrastructure reckoning: Optimizing compute strategy in the age of inference economics
+2
+
+### The AI infrastructure reckoning: Optimizing compute strategy in the age of inference economics
 
 As AI moves from experimentation to production, enterprises face an infrastructure dilemma. While token costs have dropped substantially, overall AI spending is exploding due to massive usage growth. Organizations are hitting a tipping point where cloud services become cost-prohibitive for high-volume workloads, with monthly bills reaching tens of millions. Leading enterprises are adopting strategic hybrid architectures: cloud for variable workloads, on-premises for consistent production inference, and edge for latency-critical applications. This can require purpose-built AI data centers featuring hardware optimized for graphics processing units, advanced networking, and specialized cooling. Future challenges include workforce reskilling, AI agents managing infrastructure, and sustainable computing innovations like renewable-powered and potentially orbital data centers.
 
-## The great rebuild: Architecting an AI-native tech organization
-
-AI is fundamentally restructuring technology organizations beyond simple automation. With 64% of organizations increasing AI investments and tech budgets for AI rising, priorities are shifting from infrastructure maintenance to strategic leadership. Leading organizations are anchoring AI initiatives to measurable business outcomes, designing modular architectures for flexibility, and redefining talent strategies around human-machine collaboration. New roles are emerging, such as AI collaboration designers, edge AI engineers, and prompt engineers, while chief information officers are evolving from tech strategists to AI evangelists and orchestrators. Future tech organizations will feature agentic architectures, lean product-led teams, blended human-agent workforces, adaptive governance, and ecosystem-oriented innovation. Success requires embracing continuous evolution and boldly reimagining operations rather than incremental change.
-
-## The AI dilemma: Securing and leveraging AI for cyber defense
+### The AI dilemma: Securing and leveraging AI for cyber defense
 
 AI creates a cybersecurity paradox: The same capabilities driving business innovation are also introducing new risks. Organizations face threats from shadow AI deployments, adversarial attacks, and intrinsic AI system weaknesses across four domains: data, models, applications, and infrastructure. Existing security practices can be adapted to address AI-specific risks through robust access controls, model isolation, and secure deployment architectures. And AI offers powerful new capabilities to counter the very vulnerabilities it creates. Leading organizations are leveraging AI defensively through red teaming with AI agents, adversarial training, and automated threat detection at machine speed. Future challenges include AI-physical infrastructure convergence, autonomous cyber warfare, and quantum and space security threats. Success requires embedding security into AI initiatives from inception, treating it as an enabler rather than a constraint on innovation.
 
-## Cutting through the noise: Tech signals worth tracking as AI advances
+### The great rebuild: Architecting an AI-native tech organization
 
-Tech Trends takes a deep dive into five technology developments that are reshaping how businesses operate, but there are far more than five trends impacting organizations at any given moment. Eight adjacent “signals” also warrant monitoring. They include whether foundational AI models may be plateauing, the impact of synthetic data on models, developments in neuromorphic computing, emerging edge AI use cases, the growth in AI wearables, opportunities for biometric authentication, the privacy impact of AI agents, and the emergence of generative engine optimization. Some of these signals may mature into dominant forces. Others may fade. But all of them reflect the same underlying reality: The pace of technological change has fundamentally shifted, and the organizations that recognize these patterns early will have time to adapt.
+AI is fundamentally restructuring technology organizations beyond simple automation. With 64% of organizations increasing AI investments and tech budgets for AI rising, priorities are shifting from infrastructure maintenance to strategic leadership. Leading organizations are anchoring AI initiatives to measurable business outcomes, designing modular architectures for flexibility, and redefining talent strategies around human-machine collaboration. New roles are emerging, such as AI collaboration designers, edge AI engineers, and prompt engineers, while chief information officers are evolving from tech strategists to AI evangelists and orchestrators. Future tech organizations will feature agentic architectures, lean product-led teams, blended human-agent workforces, adaptive governance, and ecosystem-oriented innovation. Success requires embracing continuous evolution and boldly reimagining operations rather than incremental change.
+
+### Cutting through the noise: Tech signals worth tracking as AI advances
+
+Tech Trends takes a deep dive into five technology developments that are reshaping how businesses operate, but there are far more than five trends impacting organizations at any given moment. Eight adjacent "signals" also warrant monitoring. They include whether foundational AI models may be plateauing, the impact of synthetic data on models, developments in neuromorphic computing, emerging edge AI use cases, the growth in AI wearables, opportunities for biometric authentication, the privacy impact of AI agents, and the emergence of generative engine optimization. Some of these signals may mature into dominant forces. Others may fade. But all of them reflect the same underlying reality: The pace of technological change has fundamentally shifted, and the organizations that recognize these patterns early will have time to adapt.
+
+3
 
 ---
 
-![Figure 1: The AI transformation in numbers, showing 800M weekly users, 35% with no agentic strategy, 280-fold inference cost reduction, 5x faster revenue scaling, 93% investment in tech vs 7% in people, 11% agents in production, and 1% with no operating model changes.]
+## Innovation compounds
+
+As technology innovation and adoption accelerate, five trends reveal how successful organizations are moving from experimentation to impact
+
+Kelly Raskovich
+
+I spend most of my year in conversations with technology leaders, asking what’s working, what isn’t, and what keeps them up at night. Lately, those conversations have taken on a different quality.
+
+The question used to be "What can we do with AI?" Now it’s "How do we move from experimentation to impact?" The focus has moved from endless pilots to real business value, and there’s a sense of urgency behind it all. Not because the technology is getting better—though it is—but because the pace of change itself has accelerated.
+
+The numbers tell the story (figure 1). The telephone took 50 years to reach 50 million users. The internet took seven years. A leading generative AI tool reached about twice that many in two months.[^1] As of this writing, that tool has over 800 million weekly users—roughly 10% of the planet’s population.[^2]
+
+4
+
+But rapid adoption is only the surface. Innovation is compounding; forces aren’t simply additive, but multiplicative. Think of it as a flywheel: Better technology enables more applications. More applications generate more data. More data attracts more investment. More investment builds better infrastructure. Better infrastructure reduces costs. Lower costs enable more experimentation. Each improvement simultaneously accelerates all the others.[^3]
+
+It’s why AI startups scale from US$1 million to US$30 million in revenue five times faster than SaaS companies did.[^4] It’s why the knowledge half-life in AI has shrunk to months from years.[^5] And it’s why one chief information officer (CIO) told me, "The time it takes us to study a new technology now exceeds that technology’s relevance window."
+
+---
+
+### Figure 1: The AI transformation in numbers
+
+- **800M** weekly users of a leading AI tool (10% of planet)
+- **35%** have no agentic strategy
+- **280-fold** inference cost reduction, yet bills in tens of millions
+- **5x faster** revenue scaling (AI vs. SaaS startups)
+- **The investment imbalance:** 93% on tech / 7% on people
+- **Only 11%** have agents in production
+- **Only 1%** report no operating model changes
+
+Sources: Rebecca Bellan, "Sam Altman says ChatGPT has hit 800M weekly active users," TechCrunch, Oct. 6, 2025; Deloitte Emerging Technology Trends in the Enterprise Survey; Wing Venture Capital, "AI growing faster than SaaS"; Stanford Human-Centered AI Institute, "AI Index Report 2025"; Deloitte research on AI investment allocation patterns, 2025; Deloitte 2025 Tech Spending Outlook.
+
+[deloitteinsights.com](https://deloitteinsights.com)
+
+---
+
+Every organization we studied is discovering the same truth: What got them here won’t get them there.
+
+The infrastructure built for cloud-first strategies can’t handle AI economics. Processes designed for human workers don’t work for agents. Security models built for perimeter defense don’t protect against threats operating at machine speed. IT operating models built for service delivery don’t drive business transformation.
+
+This isn’t only about enhancement. It’s about rebuilding.
+
+For 17 years, Tech Trends has explored emerging technologies poised to reshape business in the next 18 to 24 months. Our research is based on trend sensing from conversations with Deloitte subject matter experts and external technology leaders, as well as Deloitte’s proprietary research on emerging technologies. This year, the data reveals five interconnected forces.
+
+### AI goes physical: Navigating the convergence of AI and robotics
+
+Amazon deployed its millionth robot, and its DeepFleet AI coordinates the entire robot fleet, improving travel efficiency within warehouses by 10%.[^6] BMW’s factories have cars driving themselves through kilometer-long production routes.[^7] Intelligence isn’t confined to screens anymore; it’s embodied, autonomous, and solving real problems in the physical world.
+
+5
+
+### The agentic reality check: Preparing for a silicon-based workforce
+
+Only 11% of organizations have agents in production, despite 38% piloting them. The gap between pilot to production tells you everything. Forty-two percent are still developing their strategy, while 35% have no strategy at all.[^8] Gartner predicts that 40% of agentic projects will fail by 2027[^9]—not because the technology doesn’t work, but because organizations are automating broken processes instead of redesigning operations. HPE’s chief financial officer captured what works: "We wanted to select an end-to-end process where we could truly transform, not just solve for a single pain point."[^10] Redesign, don’t automate. That’s the pattern separating success from failure.
+
+### The AI infrastructure reckoning: Optimizing compute strategy in the age of inference economics
+
+Token costs have dropped 280-fold in two years;[^11] yet some enterprises are seeing monthly bills in the tens of millions. Usage exploded faster than costs declined. Organizations are discovering their existing infrastructure strategies aren’t designed to scale AI to production-scale deployment. They’re shifting from cloud-first to strategic hybrid: cloud for elasticity, on-premises for consistency, and edge for immediacy.
+
+### The AI dilemma: Securing and leveraging AI for cyber defense
+
+The technology meant to give businesses an advantage is becoming the target used against them. AT&T’s chief information security officer captured the challenge: "What we’re experiencing today is no different than what we’ve experienced in the past. The only difference with AI is speed and impact."[^12] Organizations must secure AI across four domains—data, models, applications, and infrastructure—but they also have the opportunity to use AI-powered defenses to fight threats operating at machine speed.
+
+### The great rebuild: Architecting an AI-native tech organization
+
+AI is restructuring tech organizations, making them leaner, faster, and more strategic. Only 1% of IT leaders surveyed by Deloitte reported that no major operating model changes were underway.[^13] Leaders are shifting from incremental IT management to orchestrating human-agent teams, with CIOs becoming AI evangelists. Success requires bold reimagination: modular architectures, embedded governance, and perpetual evolution as core capabilities.
+
+Throughout this year’s report, you’ll meet technology leaders successfully navigating this sea change. They don’t have all the answers, but there are noticeable patterns as they light the way forward.
+
+- **Lead with problems, not technology.** Broadcom’s CIO: "Without focusing on a specific business problem and the value you want to derive, it could be easy to invest in AI and receive no return."[^14]
+- **Specifically, their biggest problems.** UiPath CEO: "Rather than getting stuck in a cycle of perpetual proofs of concept, consider attacking your biggest problem and going for a big outcome."[^15]
+- **Prioritize velocity over perfection.** Western Digital’s CIO: "We’d rather fail fast on small pilots than miss the wave entirely."[^16]
+- **Design with people, not just for them.** Walmart involved store associates in building its scheduling app, which includes shift swapping, schedule visibility, and employee control. The result: Scheduling time dropped from 90 minutes to 30 minutes, and people actually used the app.[^17]
+- **Treat change as continuous.** Coca-Cola’s CIO described their journey as moving from "What can we do?" to "What should we do?" That shift—from capability-first to need-first—is what separates productive experimentation from pilot purgatory.[^18]
+
+6
+
+I’ve tracked technology evolution long enough to recognize the patterns. The internet changed everything. Mobile reshaped consumer behavior. Cloud computing was transformative.
+
+But this moment is different.
+
+It’s not just that AI is powerful. It’s that the S-curves are compressing. The distance between emerging and mainstream is collapsing.
+
+Organizations built for sequential improvement can’t compete with those operating in continuous learning loops. The traditional playbook assumed you had time to get it right. That assumption no longer holds.
+
+Innovation compounds. The gap between laggards and leaders grows exponentially. How you respond determines which side of that gap you’re on.
+
+the discipline to connect every investment to business outcomes, and the velocity to execute before the window closes.
+
+Organizations built for sequential improvement can’t compete with those operating in continuous learning loops. The traditional playbook assumed you had time to get it right. That assumption no longer holds.
+
+But you don’t have to navigate this alone. We hope this year’s publication reminds you that everyone’s facing this rapid pace of change, and together, we can shape what comes next.
+
+Kelly Raskovich  
+Executive editor, Tech Trends
 
 ---
 
 ### Endnotes
 
-[^1]: Jeff Desjardins, “In the race to 50 million users there’s one clear winner - and it might surprise you,” World Economic Forum, June 26, 2018; Alexandra Garfinkle, “ChatGPT on track to surpass 100 million users faster than TikTok or Instagram: UBS,” Yahoo Finance, Feb. 2, 2023.
-[^2]: Rebecca Bellan, “Sam Altman says ChatGPT has hit 800M weekly active users,” TechCrunch, Oct. 6, 2025.
-[^3]: Zach DeWitt, “AI growing faster than SaaS,” Wing Venture Capital, November 7, 2024.
+[^1]: Jeff Desjardins, "In the race to 50 million users there’s one clear winner - and it might surprise you," World Economic Forum, June 26, 2018; Alexandra Garfinkle, "ChatGPT on track to surpass 100 million users faster than TikTok or Instagram: UBS," Yahoo Finance, Feb. 2, 2023.
+[^2]: Rebecca Bellan, "Sam Altman says ChatGPT has hit 800M weekly active users," TechCrunch, Oct. 6, 2025.
+[^3]: Zach DeWitt, "AI growing faster than SaaS," Wing Venture Capital, November 7, 2024.
 [^4]: Based on Deloitte analysis of technology adoption cycles and AI capability evolution timelines.
-[^5]: Scott Dresser, “Amazon deploys over 1 million robots and launches new AI foundation model,” Amazon, July 1, 2025.
-[^6]: Brad Anderson, “Who needs factory drivers when cars drive themselves at BMW plants,” CarScoop, Nov. 26, 2024.
-[^7]: Deloitte 2025 Emerging Technology Trends in the Enterprise Survey. From June to July 2025, Deloitte conducted an online survey of 500 US technology leaders to quantify the prevalence, engagement, and perceptions surrounding the adoption of emerging technologies across industries.
-[^8]: Gartner, “Gartner predicts over 40 % of agentic AI projects will be canceled by end of 2027,” press release, June 25, 2025.
-[^9]: Marie Myers (executive vice president and chief financial officer, HPE), interview with Deloitte, March 1, 2025.
-[^10]: Stanford Institute for Human-Centered Artificial Intelligence, “The AI Index report 2025,” accessed Nov. 12, 2025.
-[^11]: Deloitte 2025 Tech Spending Outlook. From June to July 2025, Deloitte conducted an online survey of 302 IT procurement leaders, heads of IT, and non-IT executives with technology spending oversight to understand how US enterprises in key industries are managing technology budgets.
-[^12]: “A no-nonsense approach to secure AI enablement at AT&T,” Deloitte Insights, Nov. 21, 2025.
-[^13]: Katherine Noyes, “Broadcom CIO: ‘Modernization should be driven by the business’,” CIO Journal, The Wall Street Journal, and Deloitte, Sept. 10, 2025.
-[^14]: Katherine Noyes, “UiPath CEO: Agentic automation will ‘usher in a new era of work’,” CIO Journal, The Wall Street Journal, and Deloitte, Feb. 21, 2025.
-[^15]: Katherine Noyes, “Western Digital CIO: In the AI era, ‘Play offense or get left behind’,” CIO Journal, The Wall Street Journal, and Deloitte, Sept. 6, 2025.
-[^16]: Walmart, “Walmart unveils new AI-powered tools to empower 1.5 million associates,” June 24, 2025.
-[^17]: Katherine Noyes, “Coca-Cola CIO on scaling AI: From ‘What can we do?’ to ‘What should we do’,” CIO Journal, The Wall Street Journal, and Deloitte, Jan. 18, 2025.
+[^5]: Ibid.
+[^6]: Scott Dresser, "Amazon deploys over 1 million robots and launches new AI foundation model," Amazon, July 1, 2025.
+[^7]: Brad Anderson, "Who needs factory drivers when cars drive themselves at BMW plants," CarScoop, Nov. 26, 2024.
+[^8]: Deloitte 2025 Emerging Technology Trends in the Enterprise Survey. From June to July 2025, Deloitte conducted an online survey of 500 US technology leaders to quantify the prevalence, engagement, and perceptions surrounding the adoption of emerging technologies across industries.
+[^9]: Gartner, "Gartner predicts over 40% of agentic AI projects will be canceled by end of 2027," press release, June 25, 2025.
+[^10]: Marie Myers (executive vice president and chief financial officer, HPE), interview with Deloitte, March 1, 2025.
+[^11]: Stanford Institute for Human-Centered Artificial Intelligence, "The AI Index report 2025," accessed Nov. 12, 2025.
+[^12]: "A no-nonsense approach to secure AI enablement at AT&T," Deloitte Insights, Nov. 21, 2025.
+[^13]: Deloitte 2025 Tech Spending Outlook. From June to July 2025, Deloitte conducted an online survey of 302 IT procurement leaders, heads of IT, and non-IT executives with technology spending oversight to understand how US enterprises in key industries are managing technology budgets.
+[^14]: Katherine Noyes, "Broadcom CIO: 'Modernization should be driven by the business’,'" CIO Journal, The Wall Street Journal, and Deloitte, Sept. 10, 2025.
+[^15]: Katherine Noyes, "UiPath CEO: Agentic automation will 'usher in a new era of work'," CIO Journal, The Wall Street Journal, and Deloitte, Feb. 21, 2025.
+[^16]: Katherine Noyes, "Western Digital CIO: In the AI era, 'Play offense or get left behind'," CIO Journal, The Wall Street Journal, and Deloitte, Sept. 6, 2025.
+[^17]: Walmart, "Walmart unveils new AI-powered tools to empower 1.5 million associates," June 24, 2025.
+[^18]: Katherine Noyes, "Coca-Cola CIO on scaling AI: From 'What can we do?' to 'What should we do'", CIO Journal, The Wall Street Journal, and Deloitte, Jan. 18, 2025.
+
+7
+
+---
+
+## AI goes physical: Navigating the convergence of AI and robotics
+
+Powered by artificial intelligence, traditional robots are becoming adaptive machines that can operate in—and learn from—complex environments, unlocking safety and precision gains
+
+Jim Rowan, Tim Gaus, Franz Gilbert, and Caroline Brown
+
+Robots powered by physical AI are no longer confined to research labs or factory floors. They’re inspecting power grids, assisting in surgery, navigating city streets, and working alongside humans in warehouses. The transition from prototype to production is happening now.
+
+Physical AI refers to artificial intelligence systems that enable machines to autonomously perceive, understand, reason about, and interact with the physical world in real time. These capabilities show up in robots, vehicles, simulations, and sensor systems. Unlike traditional robots that follow preprogrammed instructions, physical AI systems perceive their environment, learn from experience, and adapt their behavior based on real-time data. Automation alone doesn’t make them revolutionary; rather, it’s their capacity to bridge the gap between digital intelligence and the physical world.
+
+Today, AI-enabled drones, autonomous vehicles, and other robots are becoming increasingly common, particularly in smart warehousing and supply chain operations. The industry, regulatory bodies, and potential adopters are working to break down barriers that hinder the deployment of solutions at scale. As organizations overcome these challenges, AI-enabled robots will likely transition from niche to mainstream adoption. Eventually, we’ll witness physical AI’s next evolutionary leap: the arrival of humanoid robots that can navigate human spaces with unprecedented capability.
+
+### From prototype to production
+
+Unlike traditional AI systems that operate solely in digital environments, physical AI systems integrate sensory input, spatial understanding, and decision-making capabilities, enabling machines to adapt and respond to three-dimensional environments and physical dynamics. They rely on a blend of neural graphics, synthetic data generation, physics-based simulation, and advanced AI reasoning. Training approaches such as reinforcement learning and imitation learning enable these systems to master principles like gravity and friction in virtual environments before being deployed in the real world.
+
+Robots are only one embodiment of physical AI. It also encompasses smart spaces that use fixed cameras and computer vision to optimize operations in factories and warehouses, digital twin simulations that enable virtual testing and optimization of physical systems, and sensor-based AI systems that help human teams manage complex physical environments without requiring robotic manipulation.
+
+Whereas traditional robots follow set instructions, physical AI systems perceive their environment, learn from
+
+9
+
+experience, and adapt their behavior based on real-time data and changing conditions. They manipulate objects, navigate unpredictable spaces, and make split-second decisions with real-world implications. Robot dogs process acoustic signatures to detect equipment failures before they become catastrophic. Factory robots recalculate their routes when production schedules shift mid-operation. Autonomous vehicles use sensor data to spot cyclists sooner than human drivers. Delivery drones adjust their flight paths as wind conditions change. What makes these systems revolutionary isn’t just task automation but their capacity to perceive, reason, and adapt, which enables them to bridge the gap between digital intelligence and the physical world.[^19]
+
+### Tech advancements drive physical AI–robotics integration
+
+Physical AI is ready for mainstream deployment because of the convergence of several technologies that impact how robots perceive their environment, process information, and execute actions in real time.
+
+**Vision-language-action models.** Physical AI adopts training methods from large language models (LLMs) while incorporating data that describes the physical world. Multimodal vision-language-action (VLA) models integrate computer vision, natural language processing, and motor control.[^20] Like the human brain, VLA models help robots interpret their surroundings and select appropriate actions (figure 1).
+
+**Onboard computing and processing.** Neural processing units—specialized processors optimized for edge computing—enable low-latency, energy-efficient, real-time AI processing directly on robots. Onboard capability allows physical AI systems to run LLMs and VLA models, process high-speed sensor data, and make split-second, safety-critical decisions without cloud dependency—essential for autonomous vehicles, industrial robotics, and remote surgery.[^21] It can also transform robots from isolated machines into autonomous systems that can share knowledge and coordinate actions across intelligent networks.
+
+Robotics advancements have made robots more accessible and capable:[^22]
+
+- Computer vision for "seeing" and understanding surroundings
+- Sensors for capturing information such as sound, light, temperature, and touch
+- Actuators for movement, inspired by human muscles
+- Spatial computing for navigating 3D environments
+- Improved batteries that enable longer operation without frequent recharging
+
+---
+
+### Figure 1: How vision-language-action models work
+
+- **Vision:** Computer vision systems interpret visual environments and identify objects, obstacles, and spatial relationships
+- **Language:** Natural language processing understands human commands and can communicate intentions
+- **Action:** Motor control systems execute physical tasks based on visual input and linguistic instructions
+
+[deloitteinsights.com](https://deloitteinsights.com)
+
+---
+
+10
+
+**Training and learning.** In reinforcement learning, robots develop sophisticated behaviors through trial and error by receiving rewards or penalties. In imitation learning, robots mimic expert demonstrations. Both approaches can be applied in simulated environments or in the physical world with real hardware.[^23] A blend of these techniques, starting with simulation-based reinforcement training and then fine-tuning with targeted physical demonstrations, can create continuous learning loops. This helps robots continue to improve by feeding real-world data back into their training policies and simulation spaces.[^24]
+
+### Compelling economics boost industrial adoption
+
+As technology advances, costs have been coming down, and many real-world applications have emerged.
+
+Advanced manufacturing infrastructure now supports the production of complex robotics and physical AI systems at enterprise scale. This means that physical AI robots can now be produced with the reliability and quality control of smartphones or cars, making them practical for everyday industrial use.
+
+Component commoditization and open-source development are reducing entry costs for physical AI systems. However, because these robots need advanced AI chips and processors, they remain more expensive than traditional industrial robots. For now, this cost gap is likely to persist, even as overall prices gradually decline.
+
+These economics are driving the adoption of physical AI and robotics in select use cases. Autonomous vehicles and drones are the most visible robotic form factors (figure 2). Waymo’s robotaxi service has completed over 10 million paid rides, while Aurora Innovation has launched the first commercial self-driving truck service with regular freight deliveries between Dallas and Houston.[^25]
+
+AI-enabled drones are fundamentally changing consumer expectations around speed and convenience, while also serving as powerful commercial tools. Equipped with advanced cameras and sensors, drones now manage warehouse inventory autonomously by navigating between shelves and scanning products with barcode and QR code readers.[^26]
+
+In the enterprise, warehousing and supply chain operations are the earliest adopters of physical AI robotic systems, likely due to labor market pressures.[^27]
+
+Many organizations now use these systems at scale. For example, Amazon recently deployed its millionth robot,
+
+---
+
+### Figure 2: Six key form factors for robotics and physical AI
+
+- **Task specific:** Robots designed for a specific purpose that accomplish a given task more effectively or efficiently than a human would
+- **Quadrupeds:** Four-legged robots designed to complete tasks that do not require or cannot be completed with the humanoid form factor
+- **Autonomous vehicles:** Self-driving vehicles that transport people and goods by road
+- **Drones:** Aerial robots able to observe, decide, and act autonomously for delivery, observation, and security
+- **Humanoids:** Robots designed to look and function like humans, able to complement or supplement human tasks
+- **Autonomous mobile robots:** Robots designed for general-purpose navigation, observation, handling, and delivery
+
+[deloitteinsights.com](https://deloitteinsights.com)
+
+---
+
+11
+
+part of a diverse fleet working alongside humans.[^28] Its DeepFleet AI model coordinates the movement of this massive robot army across the entire fulfillment network, which Amazon reports will improve robot fleet travel efficiency by 10%.[^29]
+
+Similarly, BMW is integrating AI automation into its factories globally. In one novel deployment, BMW uses autonomous vehicle technology—assisted by sensors, digital mapping, and motion planners—to enable newly built cars to drive themselves from the assembly line, through testing, to the factory’s finishing area, all without human assistance.[^30]
+
+### The physical AI inflection point
+
+As technologies advance and converge, costs decrease, and viable use cases emerge, physical AI–driven robots are poised to transition from niche to mainstream adoption—provided that technical, operational, and societal challenges can be overcome.
+
+#### Breaking through implementation barriers
+
+As organizations seek to scale physical AI, they’re encountering a set of complex, interrelated implementation challenges. The technology works, but making it work at scale requires solving problems that span technical, operational, and regulatory domains. Organizations that tackle these challenges head-on will define the next wave of deployment.
+
+**Training and learning.** Simulation environments offer critical advantages in speed, safety, and scalability, but there’s a persistent gap between simulated and real-world performance caused by approximated physics models.[^31] "Visual images in simulated environments are pretty good, but the real world has nuances that look different," says Ayanna Howard, dean of the College of Engineering at The Ohio State University. "A robot might learn to grab something in simulation, but when it enters physical space, it’s not a one-to-one match."[^32] (See the sidebar for the full Q&A.)
+
+---
+
+### THE HUMAN FACTOR: AYANNA HOWARD ON PHYSICAL AI AND THE FUTURE OF ROBOTICS
+
+Ayanna Howard is the dean of the College of Engineering at The Ohio State University and a prominent roboticist and advocate for AI safety and alignment. Previously, she was a senior robotics researcher at NASA’s Jet Propulsion Laboratory and later chaired Georgia Tech’s School of Interactive Computing and founded the Human-Automation Systems Lab.
+
+**Q: What technology challenges are holding back progress in physical AI and robotics?**
+
+**A:** One of the fundamental challenges is that the physical world is inherently dynamic. I can walk into my office every day, but there’s always some difference—maybe someone vacuumed, moved things around, or my computer doesn’t boot up. The question is, how do you simulate all these variations so robots can learn to adapt, walk, lift, and interact with uncertainty the way humans do? You can’t just practice endlessly in the real world because you’ll break things.
+
+There’s also a hardware limitation I paraphrase as the "manipulation-to-physical-body ratio." Some humans can lift their own weight or more, but conventional robots—even heavy ones—often can’t lift half their weight due to actuator limitations. They don’t have muscles like we do to offset rigid actuation, which limits what they can interact with and move.
+
+Finally, there’s the real-time processing challenge. Large language models and vision-language models typically function in what I call "human time": We’re ok waiting a second or two for a response. But if a robot is walking and needs to make a decision, a one- or two-second delay means it drops something, crashes, or potentially hurts someone. We’re getting better at real-time processing, but we’re not quite there yet.
+
+**Q: You’ve done extensive research on trust and overtrust in AI systems. Can you explain how both extremes pose challenges?**
+
+**A:** It turns out that the difference between stated trust and behavioral trust is significant. In other words, people often say they don’t trust AI, but if you ask whether they use a phone or computer, or even leave their house, guess what? They’re using AI.
+
+My research on overtrust focuses on behaviors, not what people say. We’ve conducted studies where people interact with robotic systems that were programmed to make mistakes. When surveyed, participants said they didn’t trust the systems because they had seen them make errors. But when we analyzed their actual behaviors, we saw something different: Their actions showed they did trust the robot.
+
+With physical embodiments of AI, this behavioral overtrust becomes dangerous because these robots apply physical forces in the environment. When they do things, the consequences can be irreversible. With today’s AI, you still need human
+
+12
+
+---
+
+### THE HUMAN FACTOR: AYANNA HOWARD ON PHYSICAL AI AND THE FUTURE OF ROBOTICS, CONTINUED
+
+actuation for most tasks, though agentic AI is starting to change that landscape.
+
+**Q: What are the most critical research areas that need investment?**
+
+**A:** Learning in physical spaces without causing harm. We still need to figure out how to translate simulation to the physical world safely. Visual images in simulated environments are pretty good, but the real world has nuances that look different. A robot might learn to grab something in simulation, but when it enters physical space, it’s not a one-to-one match.
+
+In research, robots do adapt after moving from simulation to physical environments, but they learn around tasks, not holistic environmental interactions. They might learn to grasp balls on different surfaces with varying friction coefficients. But they’re not learning how close to get to people in a mall or on a college campus while juggling those same grasped balls based on simulated social interactions. That kind of comprehensive environmental adaptation doesn’t exist yet.
+
+**Q: Do you have any hot takes that go against conventional wisdom?**
+
+**A:** I fundamentally believe there should always be a human in the loop somewhere. Always. And I’m a roboticist saying this. It doesn’t ensure safety 100%, but it helps mitigate overtrust. Maybe it’s the CEO doing annual reviews of the robots. Without that feedback loop, this can get away from us.
+
+---
+
+Advances in physics engines, synthetic data generation, and approaches that blend virtual training with real-world applications should help organizations achieve the quality of physical training at the scale and safety of simulation.
+
+**Trustworthy AI and safety.** The smallest error rates can have cascading effects in physical systems, potentially leading to production waste, product defects, equipment damage, or safety incidents. If AI systems hallucinate, errors could be perpetuated and amplified across entire production runs, creating compounding downstream effects on costs and operations.
+
+AI-powered machines can behave unpredictably even after extensive safety testing. The stakes rise significantly in public spaces, where autonomous systems must navigate unpredictable human behavior. To scale physical AI systems across various industries, comprehensive safety strategies that integrate regulatory compliance, risk assessments, and continuous monitoring are necessary.[^33]
+
+**Regulatory environment.** Companies must navigate overlapping and sometimes contradictory requirements across jurisdictions.[^34] As robots move from controlled factory environments into public spaces, regulatory bodies are likely to develop new frameworks for safety certification, liability, and operational oversight.
+
+**Data management.** Organizations must capture and manage massive amounts of sensor data, 3D environmental models, and real-time information. High-fidelity digital twins of physical assets are essential for effective training and deployment, requiring extensive data on physical characteristics, object properties, and interactions. Organizations will also need to integrate multimodal data from disparate sources, ensure data security, and manage data infrastructure costs.
+
+**Human acceptance.** While most workers are generally comfortable with predictable, rule-based robots, physical AI systems that learn and adapt introduce new uncertainties, especially worries about job displacement. However, experts predict that most roles will evolve toward collaboration rather than replacement.[^35] The goal is to create environments where robots handle repetitive or dangerous tasks while humans focus on creative problem-solving and complex decision-making.
+
+**Cybersecurity vulnerabilities.** As discussed in "The AI dilemma," physical AI systems create new attack surfaces that bridge digital and physical domains. Connected fleets increase cyber risks, with vulnerabilities potentially leading to unauthorized access, data breaches, or even malicious robot control. The stakes are even higher when security breaches can affect physical safety and operational continuity.
+
+13
+
+**Robot fleet orchestration.** As physical AI systems mature, organizations will increasingly deploy heterogeneous fleets of robots, autonomous vehicles, and AI agents from multiple vendors, each with proprietary protocols. This creates interoperability challenges that can lead to accidents, downtime, system congestion, and operational inefficiency.[^36] Autonomous fleet management and orchestration systems can help resolve these issues.
+
+Over the coming 18 to 24 months, resolving these foundational issues will likely enable physical AI and robotics to expand beyond traditional industries. Warehousing and logistics may have served as physical AI’s proving ground, but sector boundaries do not limit the technology.
+
+### Crumbling sector boundaries
+
+As leading organizations across the public and private sectors are laying the groundwork for physical AI at scale, adoption is accelerating exponentially. Applications are emerging wherever physical AI solves real problems.
+
+In health care, a sector facing global staffing shortages, medical technology companies are developing AI-driven robotic surgery and digital imaging devices. GE HealthCare is building autonomous X-ray and ultrasound systems with robotic arms and machine vision technologies. Other medtech companies are designing intelligent robotic assistants that can help with patient care and automate surgical tasks.[^37]
+
+Restaurants are also deploying robots to help address labor shortages. Sidewalk-crawling delivery robots travel at pedestrian speeds; inside restaurants, robots handle tasks like flipping burgers and preparing salads, while service robots seat customers and serve food.
+
+Naturgy Energy Group, a Spanish multinational natural gas and electrical energy utilities company, currently uses drones for inspection purposes. Rafael Blesa, Naturgy’s chief data officer, envisions an expanded role for physical AI as the technology hardens, particularly in dangerous field operations involving high voltage or open gas pipes. "Many operations related to grid maintenance could be performed by robots in the long term," he explains. "My expectation is that in three to four years, we’ll have robots performing physical operations, which could save lives."[^38]
+
+Similarly, the city of Cincinnati is using AI-powered drones to autonomously inspect bridge structures and road surfaces, reducing costs, keeping human inspectors out of hazardous situations, and condensing months of analysis into minutes. "This type of technology is going to be the nuts and bolts of what’s going to allow [mayors] to do their jobs better and provide better information, decisions, and cost efficiencies for their constituents," said Cincinnati’s mayor, Aftab Pureval.[^39]
+
+In 2024, the city of Detroit launched a free autonomous shuttle service designed for seniors and people with disabilities whose mobility was severely limited by traditional transit systems. Known as Accessibili-D, the self-driving vehicles were equipped with wheelchair accessibility and a trained safety operator. Three autonomous vehicles operated within an 11-square-mile section of Detroit, offering 110 different stops.[^40]
+
+Regardless of the sector, these deployments share a common characteristic: They augment human capabilities in situations where safety, precision, or accessibility are most critical.
+
+### Humanoid robots and beyond
+
+We’ve all seen the viral videos of humanoid robots with their fluid, not-quite-human-but-pretty-darn-close movements. They’re the most compelling robotic form factor, not because they have the most efficient design, but because our world is built for human bodies. This means they can navigate existing infrastructure—doorways, staircases, factory floors, and home kitchens—without costly modifications to accommodate specialized robotic systems.[^41]
+
+"People are very compliant in how they interact with the world and constantly make contact with their environment. That’s very hard for a commercial robot," says Jonathan Hurst, a robotics researcher at Oregon State University and cofounder of Agility Robotics.[^42] (See sidebar for the full Q&A.)
+
+14
+
+Several companies have developed and continue to refine bipedal robots with more precise finger control. With the recent introduction of chain-of-thought reasoning abilities comparable to human cognition, the technological foundation continues to advance.[^43]
+
+During the next decade, the intersection of agentic AI systems with physical AI robotic systems will result in robots whose "brains" are agentic AIs. Robots of all form factors should increasingly be able to adapt to new environments, plan multistep tasks, recover from failure, and operate under uncertainty. The impact of this technology convergence will be particularly profound for humanoid robots.
+
+Instead of custom robotics for each domain, more general agentic modules may be reused across warehouses, homes, health care, agriculture, and other areas. Agentic humanoids could one day function as assistants, coworkers, or health care aides with more intuitive interaction, reasoning, and negotiation capabilities.
+
+Mass adoption of humanoids is likely several years away. Still, UBS estimates that by 2035, there will be 2 million humanoids in the workplace, a number it expects to increase to 300 million by 2050. The firm estimates the total addressable market for these robots will reach
+
+between US$30 billion and US$50 billion by 2035 and climb to between US$1.4 trillion and US$1.7 trillion by 2050.[^44]
+
+Enterprise applications like warehousing and logistics remain the proving ground for humanoid deployment, driven by labor shortages. BMW is testing humanoid robots at its South Carolina factory for tasks requiring dexterity that traditional industrial robots lack: precision manipulation, complex gripping, and two-handed coordination.[^45] For similar reasons, humanoids could play a role in health care. One health care company is testing humanoids in rehabilitation centers to assist therapists by guiding patients through exercises and providing weight support.[^46]
+
+The larger long-term opportunity lies in consumer markets, where the vision extends to comprehensive household tasks such as elderly and disability care, cleaning and maintenance, meal preparation, and laundry. The Bank of America Institute projects that the material costs of a humanoid robot will fall from around US$35,000 in 2025 to between US$13,000 and US$17,000 per unit in the next decade, and Goldman Sachs reports that humanoid manufacturing costs dropped 40% between 2023 and 2024.[^47]
+
+---
+
+### FROM THE LAB TO THE REAL WORLD: JONATHAN HURST ON HUMANOID ROBOTS
+
+Jonathan Hurst is a robotics professor at Oregon State University and cofounder of the school’s Robotics Institute, where his research focuses on legged locomotion. He’s also the cofounder and chief robot officer of Agility Robotics, which develops and deploys humanoid robots that operate alongside human workers in commercial applications.
+
+**Q: Were you trying to solve a specific problem by building a robot with a humanoid form factor?**
+
+**A:** We wanted to make machines that move like animals or people and that could also exist in human spaces. People are very compliant in how they interact with the world and constantly make contact with their environment. That’s very hard for a commercial robot. Typically, robots are very position-controlled devices. They’re good for things like CNC machining [precision manufacturing requiring exact, repeatable positioning] or spot welding, but they’re not good for assembly, manipulation, or locomotion in nonstructured spaces.
+
+With our robot, we’ve gotten pretty close to a normal human-like leg configuration—bipedal, upright torso, bimanual. The most important thing is that each of these features has a purpose. We are capturing the function that underlies that form.
+
+**Q: How did you figure out what the humanoid could do?**
+
+**A:** From the beginning, we aimed to build a human-centric, multipurpose robot. We looked at hundreds of use cases. It turned out that the simple task of
+
+lifting and moving bins and totes is a good match for the technology. This task requires something with a narrow footprint to operate in hallways, go through doors, and be in human spaces. It needs to be able to lift something heavy—like 25 kilograms—to the top of a two-meter shelf.
+
+For this, you need something that’s dynamically stable—a robot that maintains its balance while in motion. A statically stable base will just tip over if you’re trying to lift these things. Therefore, a bipedal pair of legs is the most effective way to be dynamically stable and not fall.
+
+That’s the starting point. From there, we got it to be bimanual because, to pick up big things, you need a grasp on both sides. You need a reachable workspace to pick something off the ground and
+
+15
+
+---
+
+### FROM THE LAB TO THE REAL WORLD: JONATHAN HURST ON HUMANOID ROBOTS, CONTINUED
+
+lift it up high, and an upright torso to do that, so it’s a particularly good match for the technology.
+
+automated, which makes it a really good starting point for a humanoid.
+
+That’s very hard to do with existing automation. There is a fair amount of flexibility needed because all the workflows are distinctive. Different types of totes go to different places, for example. You stack the totes, palletize them, put them on conveyor belts, or take them off AMRs [autonomous mobile robots]. This kind of variety makes it hard for traditional automation, yet it’s still quite structured. You might say semi-structured. It’s in an industrial environment that’s well-controlled and process-
+
+**Q: How can the use of humanoids scale?**
+
+**A:** The market for humanoids is going to be twice the size of the automotive industry in 25 years. There’s a lot of scaling to be done to get to that point because that’s millions of robots. Today, there are only hundreds of robots.
+
+There is a massive market for the functionally safe humanoid—the robot that doesn’t have to be
+
+confined to its own work cell. That’s when you’ll be able to start deploying robots in the thousands. How do you support them in the field? How do you have your robot fleet management software work over all the unique bandwidth limitations and everything else? That’s a hard thing to do in robotics, but it can be done. Waymo has deployed what are basically robots on the roads, so it’s definitely feasible. It’s not like something has to be invented, but the organization has to execute really, really capably to do that. That’s the journey we’re on, once the robot is safe enough to warrant the scale.
+
+---
+
+### Beyond humanoids?
+
+Humanoid robots capture public imagination with their familiar bipedal form. Where do we go from there?
+
+In terms of physical form factors, boundary-pushing engineers are increasingly experimenting with machines that blur biological lines. Imagine robots powered by living mushroom tissue, those that mimic movements using rat muscle tissue, or machines that can transition between solid and liquid states using magnetic fields. In innovative laboratories today, scientists are integrating living organisms into mechanical systems, developing robots that can navigate complex environments through multiple modes of locomotion, and creating machines that adapt their physical form to match the task.[^48]
+
+Quantum robotics—the combination of quantum computing and AI-powered robotics—also holds promise, though it’s still in the very early stages. Superposition, entanglement, quantum algorithms, and other quantum
+
+computing principles could allow robots to operate at speeds that are impossible for today’s binary computers.[^49] Quantum algorithms are expected to improve processing, navigation, decision-making, and fleet coordination, while quantum sensors will enhance perception and interaction.[^50]
+
+Useful quantum robots are expected to be many decades away. Hardware immaturity, integration challenges, and the extreme sensitivity of quantum states are just a few of the challenges that must be solved before quantum computing can be widely deployed.[^51]
+
+Humanoid butlers are at least a decade away, and exotic form factors and quantum capabilities remain largely experimental. But they represent a fundamental shift in how we think about robotics. As these breakthrough technologies graduate from the lab to the enterprise to the home, the field of robotics is moving beyond simply automating human tasks toward creating entirely new categories of machines.
+
+16
+
+---
+
+### Endnotes
+
+[^19]: Nvidia, "What is physical AI?" accessed Nov. 6, 2025.
+[^20]: Anony, "Vision-language-action models for embodied AI: A survey overview," Medium, May 12, 2025.
+[^21]: Josh Schneider and Ian Smalley, "What is a neural processing unit (NPU)?" IBM, accessed Nov. 6, 2025.
+[^22]: Jiefei Wang and Damith Herath, "What makes robots? Sensors, actuators, and algorithms," Foundations of Robotics (Singapore: Springer, 2022); Bank of America Institute, "Humanoid robots 101," April 29, 2025.
+[^23]: MIT Technology Review, "Training robots in the AI-powered industrial metaverse," Jan. 14, 2025.
+[^24]: Automate, "NVIDIA on what physical ai means for robotics," Aug. 5, 2025.
+[^25]: Mark Osis, Raquel Buscaino, and Caroline Brown, "Robotics and physical AI: Intelligence in motion," Deloitte, Oct. 17, 2025.
+[^26]: Ibid.
+[^27]: Ibid.
+[^28]: Michael Grothaus, "What are physical AI and embodied AI? The robots know," Fast Company, July 19, 2025.
+[^29]: Scott Dresser, "Amazon launches a new AI foundation model to power its robotic fleet and deploys its 1 millionth robot," Amazon, July 1, 2025.
+[^30]: Brad Anderson, "Who needs factory drivers when cars drive themselves at BMW plants," Carscoops, Nov. 26, 2024.
+[^31]: Erica Salvato, Gianfranco Fenu, Eric Medvet, and Felice Andrea Pellegrino, "Crossing the reality gap: A survey on sim-to-real transferability of robot controllers in reinforcement learning," IEEE Access 4, 2016.
+[^32]: Ayanna Howard, interview with Deloitte, Sept. 18, 2025.
+[^33]: Standard Bots, "Industrial robot safety standards: What you need to know," April 23, 2025.
+[^34]: Jacob Otasowie, Alexander Blum, Mohamed El Sayed Ahmed, and Mathias Brandstötter, "Danger of AI in robotics: A systematic analysis of ethical, regulatory, and economic challenges," Springer, Sept. 2, 2025.
+[^35]: Osis, Buscaino, and Brown, "Robotics and physical AI."
+[^36]: Rexroth, "Efficient fleet management: How to successfully orchestrate heterogeneous vehicle fleets," Aug. 30, 2024.
+[^37]: Conor Hale, "Nvidia outlines new AI projects in robotic surgery, autonomous imaging," Fierce Biotech, March 21, 2025.
+[^38]: Rafael Blesa, interview with Deloitte, May 22, 2025.
+[^39]: Deloitte US, "Rust belt renaissance: Cincinnati’s OptoAI story," YouTube video, Sept. 15, 2023.
+[^40]: Deloitte US, "Detroit gets moving on autonomous vehicles," accessed Nov. 6, 2025.
+[^41]: Humanoid Robotics Technology, "Top 12 humanoid robots of 2025," February 2025.
+[^42]: Jonathan Hurst, interview with Deloitte, Oct. 6, 2025.
+[^43]: Anabelle Yearsdon, "Humanoid robots guide (2025): Types, history, best models, anatomy and applications," Top 3D Shop, April 28, 2025.
+[^44]: Steve Goldstein, "300 million humanoid robots are coming - and here are the companies that will benefit," Morningstar, June 18, 2025.
+[^45]: BMW Group, "Humanoid robots for BMW Group plant Spartanburg," Nov. 9, 2024.
+[^46]: News.am, "Humanoid robot Fourier GR-1 has been introduced: What is it for?" July 14, 2023.
+[^47]: Goldman Sachs, "The global market for humanoid robots could reach US$38 billion by 2035," Feb. 27, 2024; Bank of America Institute, "Humanoid robots 101."
+[^48]: Future Today Strategy Group, "2025 tech trends report," accessed Nov. 6, 2025.
+[^49]: Matt Swayne, "What is quantum robotics? Researchers report the convergence of quantum computing and AI could lead to Qubots," The Quantum Insider, May 9, 2025.
+[^50]: Fei Yan, Abdullah M. Iliyasu, Nianqiao Li, Ahmed S. Salama, and Kaoru Hirota, "Quantum robotics: A review of emerging trends," Quantum Machine Intelligence 6, no. 86 (2024).
+[^51]: Swayne, "What is quantum robotics?"
+
+17
+
+---
+
+## About the authors
+
+### Jim Rowan
+[jimrowan@deloitte.com](mailto:jimrowan@deloitte.com)
+
+Jim Rowan is the US head of AI at Deloitte and collaborates with external technology organizations, clients, and Deloitte’s business leaders to help our clients achieve their AI ambitions. Beyond his client work, Rowan is a principal in Deloitte Consulting LLP. His experience spans the life sciences, health care, and telecommunications industries, with a strong focus on applying analytics, planning, forecasting, and digital transformation to enhance finance functions.
+
+### Tim Gaus
+[tgaus@deloitte.com](mailto:tgaus@deloitte.com)
+
+Tim Gaus is a principal and the smart manufacturing business leader with Deloitte Consulting LLP. He brings over 25 years of supply chain experience with a focus on value chain optimization using emerging technology. He has led multiple supply chain transformations, spanning supply chain strategy, manufacturing optimization, supply chain planning, inventory optimization, operating model design, and operational excellence for domestic and multinational corporations.
+
+### Franz Gilbert
+[frgilbert@deloitte.com](mailto:frgilbert@deloitte.com)
+
+Franz Gilbert is a managing director at Deloitte Consulting LLP, where he is the Human Capital Strategy and Innovation leader, and serves on the Human Capital Management Committee. He and his team are responsible for developing and driving the Human Capital Growth strategy, incubating new and emerging businesses, and stewarding alliances to bring innovative solutions and deliver more valuable outcomes for clients. Gilbert serves on the board of directors for the Human Resource Certification Institute.
+
+### Caroline Brown
+[carolbrown@deloitte.com](mailto:carolbrown@deloitte.com)
+
+Caroline Brown is a senior manager within Deloitte’s Office of the CTO. She leads a cross-functional editorial and design production team in developing thought leadership. She serves as the editor of Tech Trends, Deloitte’s flagship technology report. A writer and researcher, Brown earned undergraduate and graduate degrees in English and journalism from the University of North Carolina at Chapel Hill.
+
+18
+
+---
+
+## Acknowledgments
+
+Much gratitude goes to the many subject matter leaders across Deloitte who contributed to our research for this chapter: Mahesh Chandramouli, Ryan Kaiser, and Mark Osis.
+
+19
+
+---
+
+## The agentic reality check: Preparing for a silicon-based workforce
+
+Despite its promise, many agentic AI implementations are failing. But leading organizations that are reimagining operations and managing agents as workers are finding success.
+
+Jim Rowan, Nitin Mittal, Parth Patwari, and Ed Burns
+
+Enterprises are moving quickly toward agentic AI, but many are hitting a wall. They’re trying to automate existing processes—tasks designed by and for human workers—without reimagining how the work should actually be done.
+
+Leading organizations are discovering something different: True value comes from redesigning operations, not just layering agents onto old workflows. This means building agent-compatible architectures, implementing robust orchestration frameworks, and developing new management approaches for digital workers.
+
+It also means rethinking work itself. As organizations embrace the full potential of agents, not only are their processes likely to change but so will their definition of a worker. Agents may come to be seen as a silicon-based workforce that complements and enhances the human workforce. Getting the fundamentals right—from microservice-based agent architectures to silicon-workforce management—can prepare enterprises for whatever shape the future of workflow automation takes and position them to compete effectively in an agent-native business environment.
+
+Henry Ford put it perfectly: "Many people are busy trying to find better ways of doing things that should not have to be done at all. There is no progress in merely finding a better way to do a useless thing."[^52] He was writing about building automobiles in 1922, but he could just as easily have been describing enterprise AI in 2025.
+
+### The agent reality check
+
+Agentic AI has captured the attention of enterprises with its compelling promises of autonomous operation and intelligent execution. The momentum is undeniable: Gartner predicts that 15% of day-to-day work decisions will be made autonomously through agentic AI by 2028, up from none in 2024, while 33% of enterprise software applications will include agentic AI by the same timeframe, compared with less than 1% today (figure 1).[^53]
+
+Yet despite this enthusiasm, enterprises are encountering significant obstacles in translating agentic pilots into production-ready solutions. Deloitte’s 2025 Emerging Technology Trends in the Enterprise study notes that while 30% of surveyed organizations are exploring agentic options and 38% are piloting solutions, only 14% have solutions that are ready to be deployed and a mere 11% are actively using these systems in production. Furthermore, 42% of organizations report they are still developing their agentic strategy road map, with 35% having no formal strategy at all.[^54]
+
+### The agentic reality gap
+
+Three fundamental infrastructure obstacles may prevent organizations from realizing the full potential of agentic
+
+---
+
+### Endnotes
+
+[^52]: Henry Ford, My Life and Work (Garden City, NY: Garden City Publishing Co., 1922).
+[^53]: Gartner, "Gartner predicts over 40% of agentic AI projects will be canceled by end of 2027."
+[^54]: Deloitte 2025 Emerging Technology Trends in the Enterprise Survey.
 
 ---
 
