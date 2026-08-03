@@ -63,7 +63,7 @@ class ConfigLoader:
             )
 
         mode_cfg = modes[mode]
-        self.query_template: str       = mode_cfg.get("query_template", "{query}")
+        self.query_templates: List[str] = mode_cfg.get("query_templates", [mode_cfg.get("query_template", "{query}")])
         self.num_results:    int       = mode_cfg.get("num_results", 5)
         self.skip_domains:   List[str] = mode_cfg.get("skip_domains",   [])
         self.exclude_terms:  List[str] = mode_cfg.get("exclude_terms",  [])
@@ -187,12 +187,12 @@ class GoogleSearchClient:
 
     # ── Query builder ─────────────────────────────────────────────────────
 
-    def build_query(self, query_record: Dict[str, Any], site_domain: str = "") -> str:
+    def build_query(self, query_record: Dict[str, Any], template_str: str, site_domain: str = "") -> str:
         """
-        Substitute placeholders in the mode's query_template.
+        Substitute placeholders in the given template_str.
         If site_domain is provided, prepend site:<domain> to the query.
         """
-        q = self.config.query_template
+        q = template_str
         q = q.replace("{organization}", query_record.get("organization", ""))
         q = q.replace("{title}",        query_record.get("title",        ""))
         q = q.replace("{year}",         str(query_record.get("year",     "")))
@@ -400,93 +400,119 @@ class GoogleSearchClient:
 
         # ── Phase 1: site-scoped search (only when existing_url is available) ──
         if existing_host:
-            site_query = self.build_query(query_record, site_domain=existing_host)
-            base_result["query"] = site_query
-            print(f"  Phase 1 (site-scoped): {site_query[:90]}...")
+            for template_str in self.config.query_templates:
+                site_query = self.build_query(query_record, template_str, site_domain=existing_host)
+                base_result["query"] = site_query
+                print(f"  Phase 1 (site-scoped): {site_query[:90]}...")
+    
+                items = self._call_api(site_query, self.config.num_results)
+                if items:
+                    best_score, best_item = self._pick_best(
+                        items, query_record, existing_host, existing_reg_domain
+                    )
+                    if best_item is not None and self._is_acceptable(best_score):
+                        result_url = best_item.get("link", "")
+                        if not _is_toplevel_domain(result_url):
+                            print(f"  ✓ Phase 1 hit (score={best_score}): {result_url}")
+                            return {
+                                "id":      query_id,
+                                "status":  "success",
+                                "query":   site_query,
+                                "url":     result_url,
+                                "title":   best_item.get("title",   ""),
+                                "snippet": best_item.get("snippet", ""),
+                                "score":   best_score,
+                                "reason":  "site-scoped",
+                            }
+                        else:
+                            print(f"  ⊘ Phase 1 result is bare homepage — trying next template or falling through")
+                    else:
+                        print(f"  ⊘ Phase 1: no acceptable result (best score={best_score})")
+                else:
+                    print(f"  ⊘ Phase 1: no results")
+    
+                # Rate limit pause between Phase 1 queries
+                time.sleep(self.config.rate_limit_sleep)
 
-            items = self._call_api(site_query, self.config.num_results)
-            if items:
-                best_score, best_item = self._pick_best(
-                    items, query_record, existing_host, existing_reg_domain
-                )
-                if best_item is not None and self._is_acceptable(best_score):
-                    # Only accept a site-scoped result if it is NOT a bare homepage.
-                    # A site: search for the homepage itself can return the homepage —
-                    # we want a specific report page, not just "something on this domain."
-                    result_url = best_item.get("link", "")
-                    if not _is_toplevel_domain(result_url):
-                        print(f"  ✓ Phase 1 hit (score={best_score}): {result_url}")
+        # ── Phase 2 (or sole query): broad unscoped search ────────────────
+        best_overall_score = -1
+        best_overall_item = None
+        best_overall_query = ""
+
+        for template_str in self.config.query_templates:
+            broad_query = self.build_query(query_record, template_str)
+            base_result["query"] = broad_query
+            print(f"  {'Phase 2 (broad):' if existing_host else 'Searching:'} {broad_query[:90]}...")
+    
+            items = self._call_api(broad_query, self.config.num_results)
+    
+            if items is None:
+                base_result["reason"] = "API call failed after retries"
+                return base_result
+    
+            if not items:
+                print("  ⊘ No results for this template")
+                time.sleep(self.config.rate_limit_sleep)
+                continue
+    
+            best_score, best_item = self._pick_best(
+                items, query_record, existing_host, existing_reg_domain
+            )
+            
+            # Keep track of the absolute best item across templates (if none meet accept score immediately)
+            if best_score > best_overall_score:
+                best_overall_score = best_score
+                best_overall_item = best_item
+                best_overall_query = broad_query
+                
+            if best_item is not None:
+                result_url = best_item.get("link", "")
+                
+                # Check acceptance conditions immediately
+                if self._is_acceptable(best_score):
+                    if not (_is_toplevel_domain(result_url) and existing_url and not _is_toplevel_domain(existing_url)):
+                        print(f"  ✓ Phase 2 hit (score={best_score}): {result_url}")
                         return {
                             "id":      query_id,
                             "status":  "success",
-                            "query":   site_query,
+                            "query":   broad_query,
                             "url":     result_url,
                             "title":   best_item.get("title",   ""),
                             "snippet": best_item.get("snippet", ""),
                             "score":   best_score,
-                            "reason":  "site-scoped",
+                            "reason":  "broad",
                         }
-                    else:
-                        print(f"  ⊘ Phase 1 result is bare homepage — falling through to Phase 2")
-                else:
-                    print(f"  ⊘ Phase 1: no acceptable result (best score={best_score}) — trying broad search")
-            else:
-                print(f"  ⊘ Phase 1: no results — trying broad search")
-
-            # Rate limit pause between phase 1 and phase 2
+            
+            print(f"  ⊘ Template failed to yield acceptable result (best score={best_score})")
             time.sleep(self.config.rate_limit_sleep)
 
-        # ── Phase 2 (or sole query): broad unscoped search ────────────────
-        broad_query = self.build_query(query_record)
-        base_result["query"] = broad_query
-        print(f"  {'Phase 2 (broad):' if existing_host else 'Searching:'} {broad_query[:90]}...")
-
-        items = self._call_api(broad_query, self.config.num_results)
-
-        if items is None:
-            base_result["reason"] = "API call failed after retries"
-            return base_result
-
-        if not items:
+        # If we exhausted all templates, fall back to the best item found, if any
+        if best_overall_item is None:
             base_result["status"] = "no_results"
-            base_result["reason"] = "Query returned no results"
+            base_result["reason"] = "All results disqualified by domain/term filters across all templates"
             return base_result
-
-        best_score, best_item = self._pick_best(
-            items, query_record, existing_host, existing_reg_domain
-        )
-
-        if best_item is None:
-            base_result["status"] = "no_results"
-            base_result["reason"] = "All results disqualified by domain/term filters"
-            return base_result
-
-        result_url = best_item.get("link", "")
-
-        # Final guard: if the best result is still a bare homepage and we have
-        # an existing specific URL, keep the existing URL rather than regressing.
+            
+        result_url = best_overall_item.get("link", "")
         if _is_toplevel_domain(result_url) and existing_url and not _is_toplevel_domain(existing_url):
             print(f"  ⊘ Broad search best result is bare homepage — keeping existing URL")
             base_result["status"] = "no_results"
             base_result["reason"] = "Best result was bare homepage; existing specific URL preferred"
             return base_result
-
-        # Enforce minimum acceptance score for broad results too
-        if not self._is_acceptable(best_score):
-            print(f"  ⊘ Best broad result score {best_score} below min_accept_score "
-                  f"{self.config.score_min_accept}")
+            
+        if not self._is_acceptable(best_overall_score):
+            print(f"  ⊘ Best broad result score {best_overall_score} below min_accept_score {self.config.score_min_accept}")
             base_result["status"] = "no_results"
-            base_result["reason"] = f"Best score {best_score} below acceptance threshold"
+            base_result["reason"] = f"Best score {best_overall_score} below acceptance threshold"
             return base_result
 
         return {
             "id":      query_id,
             "status":  "success",
-            "query":   broad_query,
+            "query":   best_overall_query,
             "url":     result_url,
-            "title":   best_item.get("title",   ""),
-            "snippet": best_item.get("snippet", ""),
-            "score":   best_score,
+            "title":   best_overall_item.get("title",   ""),
+            "snippet": best_overall_item.get("snippet", ""),
+            "score":   best_overall_score,
             "reason":  "broad",
         }
 

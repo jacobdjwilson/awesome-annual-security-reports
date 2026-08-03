@@ -376,6 +376,27 @@ class CategoryBuilder:
 
         return "Analysis Reports"
 
+    def infer_report_type(self, content: str, title: str) -> str:
+        """Deterministically derive whether a report is Survey or Analysis based on keyword frequencies."""
+        text = (title + " " + content).lower()
+        title_lower = title.lower()
+        
+        # Title overrides carry heavy weight
+        if any(w in title_lower for w in ["survey", "executive perspective", "ciso", "poll", "sentiment", "trends", "outlook"]):
+            return "Survey"
+        if any(w in title_lower for w in ["telemetry", "vulnerabilities", "cve", "threat landscape", "intelligence"]):
+            return "Analysis"
+            
+        survey_words = ["survey", "respondents", "interviewed", "poll", "executive", "perspective", "ciso", "sentiment", "decision makers"]
+        analysis_words = ["telemetry", "sensors", "malware", "indicators of compromise", "vulnerabilities", "red team", "cve", "exploit", "attack surface"]
+        
+        survey_score = sum(text.count(w) for w in survey_words)
+        analysis_score = sum(text.count(w) for w in analysis_words)
+        
+        if survey_score > analysis_score:
+            return "Survey"
+        return "Analysis"
+
     def infer_category_from_keywords(
         self, content: str, title: str
     ) -> Tuple[str, str]:
@@ -621,7 +642,8 @@ class AIAnalyzer:
             raw_type     = str(obj.get("type", "Analysis")).strip()
             raw_category = str(obj.get("category", "")).strip()
 
-            report_type = "Survey" if "survey" in raw_type.lower() else "Analysis"
+            # Bypass AI for type; use deterministic heuristic
+            report_type = self.cat_builder.infer_report_type(content, title)
 
             if raw_category.lower() in valid_names:
                 return report_type, valid_names[raw_category.lower()]
@@ -629,7 +651,8 @@ class AIAnalyzer:
         except Exception:
             pass
 
-        inferred_cat, inferred_type = self.cat_builder.infer_category_from_keywords(content, title)
+        inferred_cat, _ = self.cat_builder.infer_category_from_keywords(content, title)
+        inferred_type = self.cat_builder.infer_report_type(content, title)
         print(f"  ⚠ AI classification unparseable — keyword inference: {inferred_type} / {inferred_cat}")
         return inferred_type, inferred_cat
 

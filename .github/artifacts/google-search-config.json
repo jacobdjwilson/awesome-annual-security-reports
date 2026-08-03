@@ -14,7 +14,11 @@
     "modes": {
       "report_url": {
         "description": "Finds the specific landing page URL for a named security report. Uses two-phase search: Phase 1 is site-scoped to the existing domain (when existing_url is supplied), Phase 2 is a broad fallback.",
-        "query_template": "{organization} \"{title}\" {year} report",
+        "query_templates": [
+          "{organization} \"{title}\" {year} security report",
+          "{organization} security {title} {year} report",
+          "{organization} {title}"
+        ],
         "num_results": 5,
         "scoring": {
           "org_in_link": 3,

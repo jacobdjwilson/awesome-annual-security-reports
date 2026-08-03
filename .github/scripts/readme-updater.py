@@ -341,6 +341,19 @@ class ReadmeParser:
 
         return None, None
 
+    def find_org_url(self, org_name: str) -> Optional[str]:
+        """Scan for any entry that matches the given organization name and return its org_url."""
+        org_name_lower = org_name.lower().strip()
+        for line in self.content.splitlines():
+            if not line.strip().startswith("- ["):
+                continue
+            m = self.ENTRY_RE.match(line.strip())
+            if not m:
+                continue
+            if m.group("org").lower().strip() == org_name_lower:
+                return m.group("org_url")
+        return None
+
     def find_section_bounds(
         self, parent_heading: str, sub_heading: str
     ) -> Tuple[int, int]:
@@ -581,6 +594,9 @@ class ReadmeUpdater:
             analysis["summary"] = self.validator.sanitize(summary)
 
         # Always attempt to find the specific report URL via google-search.py
+        known_org_url = self.parser.find_org_url(analysis["organization"])
+        existing_url_for_search = analysis.get("organization_url") or known_org_url or ""
+        
         if self.google_search_module is not None:
             try:
                 searched = self.google_search_module.search_one(
@@ -589,7 +605,7 @@ class ReadmeUpdater:
                     year          = str(analysis.get("year", "")),
                     artifacts_dir = str(self._artifacts_dir),
                     mode          = self.config.search_mode,
-                    existing_url  = analysis.get("organization_url", ""),
+                    existing_url  = existing_url_for_search,
                 )
                 if searched and "google.com/search" not in searched:
                     print(f"    ✓ Report URL from search: {searched}")
@@ -599,9 +615,10 @@ class ReadmeUpdater:
                 print(f"    ⚠ google-search.py search_one() failed: {str(e)[:100]}")
 
         # google-search.py unavailable or returned nothing — keep existing URL if real
-        org_url = analysis.get("organization_url", "")
+        org_url = analysis.get("organization_url") or known_org_url or ""
         if org_url and "google.com/search" not in org_url:
             print(f"    ⚠ Search unavailable; keeping existing URL: {org_url}")
+            analysis["organization_url"] = org_url
             return
 
         # Last-resort fallback: construct a plausible homepage
