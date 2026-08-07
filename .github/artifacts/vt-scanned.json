@@ -3,5 +3,10 @@
     "status": "completed",
     "file": "Annual Security Reports/2010/Verizon-Data-Breach-Investigations-Report-2010.pdf",
     "verdict": "Clean"
+  },
+  "1b8e396c78c4f3d298d76a9f2ef053a50aa7c2530caa5116b3722cf51a5d281e": {
+    "status": "completed",
+    "file": "Annual Security Reports/2021/Proofpoint-State-of-the-Phish-2021.pdf",
+    "verdict": "Clean"
   }
 }
