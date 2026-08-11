@@ -1,7 +1,8 @@
-# The Riskiest Connected Devices in 2025
+# Riskiest Connected Devices of 2025
 
-**Organization:** Forescout  
-**Year:** 2025
+Organization: Forescout  
+Report Title: Riskiest-Devices  
+Year: 2025  
 
 ## Table of Contents
 - [1. Executive Summary](#1-executive-summary)
@@ -17,6 +18,7 @@
 ---
 
 ## 1. Executive Summary
+
 Since 2020, Forescout Research - Vedere Labs has been monitoring the riskiest devices in organizational networks, leveraging data sourced directly from the devices themselves. This marks our fifth report in six years.
 
 For the 2025 edition, we continue our data-driven approach, analyzing millions of devices in Forescout’s Device Cloud using our multifactor risk scoring methodology to assess the most vulnerable devices in enterprise networks. Over the years, we have observed some device types consistently appear in these lists due to their inherent criticality or persistent security neglect. Yet, others fluctuate in risk level based on shifts in the threat landscape and attackers’ interest in finding new entry points through devices.
@@ -24,6 +26,7 @@ For the 2025 edition, we continue our data-driven approach, analyzing millions o
 Our latest findings confirm a trend first noted last year: Network equipment – especially routers – has overtaken endpoints as the riskiest category of IT devices. Driven by increased threat actor focus, adversaries are rapidly exploiting new vulnerabilities in these devices through large-scale attack campaigns. Additionally, there are 12 new device types in this year’s list making it the largest year-over-year change we have observed. This finding reinforces attackers’ continuous pursuit in exploiting new device classes — and the importance for security professionals to stay on top of the latest risks.
 
 ### KEY FINDINGS
+
 - Retail has the riskiest devices on average followed by financial services, government, healthcare, and manufacturing:
   - Gaps in risk scores between industry sectors are now minimal
   - Industry-wide risk levels have increased by 15%
@@ -47,22 +50,28 @@ Our latest findings confirm a trend first noted last year: Network equipment –
   - RDP usage grew in financial services, healthcare and manufacturing
   - RDP decreased in government and retail
   - Both SMB and RDP are now most prevalent in financial services
-- The most frequently vulnerable device types are computers, routers, and wireless routers/access points. Over 50% of devices with the most critical vulnerabilities are routers.
+- The most frequently vulnerable device types are computers, routers, and wireless routers/ access points. Over 50% of devices with the most critical vulnerabilities are routers.
 
 ### QUANTIFYING DEVICE CYBERSECURITY RISK
+
 We assess device cybersecurity risk using a multifactor risk scoring methodology based on three key factors:
+
 - **Configuration** evaluates the number and severity of vulnerabilities on the device, as well as the number and criticality of open ports.
 - **Function** measures the potential organizational impact if the device is compromised.
 - **Behavior** assesses the device’s internet exposure.
 
 Each device receives a risk score ranging from 1 to 10. After scoring individual devices, we calculate average risk score per device type to determine which categories pose the greatest risk. For this report, we analyzed device data from Forescout’s Device Cloud covering the period January 1 to February 28, 2025.
 
+---
+
 ## 2. Riskiest Connected Devices of 2025
+
 Using our dataset and multifactor risk-scoring methodology, we identified the five riskiest device types across four major categories: Information Technology (IT), Internet of Things (IoT), Operational Technology (OT) and Internet of Medical Things (IoMT).
 
 ![Table 1 – Riskiest connected devices per category]
 
 Of the 20 riskiest device types identified in 2025, only eight were also featured in the 2024 report. Remaining on the list are:
+
 - Routers, VoIP systems, IP cameras and UPS devices which have consistently appeared since 2022
 - NAS and BMS which have remained since 2023
 - NVR and PACS which first appeared in 2024
@@ -70,62 +79,71 @@ Of the 20 riskiest device types identified in 2025, only eight were also feature
 Meanwhile, 12 new device types (marked in blue) are making a first “riskiest device” appearance. This represents the largest year-over-year change observed to date, underscoring attackers’ growing interest in targeting emerging device types.
 
 ### IT Devices
+
 The riskiest IT device category saw considerable changes from 2024 as four new device types enter the list.
 
-**ADCs, Firewalls, and Routers**
+#### ADCs, Firewalls, and Routers
 In 2023, endpoints were considered riskier than network infrastructure. However, this trend reversed last year. In 2025, network infrastructure remains the riskiest category — since these devices are often exposed at the network perimeter with open administrative ports.
 
-While routers remain on the list from last year, ADCs and firewalls are new additions. ADC devices typically sit in data centers between firewalls and internal application servers to provide web acceleration and load balancing. Firewalls and routers are essential for securing and enabling communications with external networks. However, all three device types are now routinely affected by high-severity vulnerabilities — many which are actively exploited as zero day threats.
+While routers remain on the list from last year, ADCs and firewalls are new additions. ADC devices typically sit in data centers between firewalls and internal application servers to provide web acceleration and load balancing.
 
-**IPMI**
+Firewalls and routers are essential for securing and enabling communications with external networks. However, all three device types are now routinely affected by high-severity vulnerabilities — many which are actively exploited as zero day threats.
+
+#### IPMI
 IPMI is a hardware-based, out-of-band server management specification that relies on a Baseboard Management Controller (BMC) chip. Often referred to as “lights-out management,” IPMI allows for remote server management even when systems are powered off. Unfortunately, IPMI devices are riddled with critical vulnerabilities, including some with public exploits available for years and others that were recently discovered in 2024. Attackers, including those deploying sophisticated malware, have actively exploited these flaws.
 
-**Domain Controllers**
+#### Domain Controllers
 These are dedicated servers responsible for authentication within a network domain. They determine whether a host can access domain resources and store user credentials and security policies – essentially holding the “keys to the kingdom.” As a result, domain controllers are among the most critical assets in internal networks, making them a prime target for ransomware attacks. Threat actors frequently compromise them post-initial access using them as pivot points for lateral movement within a network.
 
 ### IoT Devices
+
 The riskiest IoT devices include several persistent threats from previous years along with the new addition of PoS systems.
 
-**NVRs, VoIP Systems and IP Cameras**
+#### NVRs, VoIP Systems and IP Cameras
 These remain high-risk because they are often exposed to the internet, contain easily exploitable vulnerabilities and have a long history of being targeted by both cybercriminal botnets and Advanced Persistent Threats (APTs).
 
-**NAS Systems**
+#### NAS Systems
 These network-attached storage systems share the same risks as other IoT devices – internet exposure, vulnerabilities, and frequent exploitation. However, they face an additional threat from ransomware actors. Since 2021, with the advent of QLocker, ransomware groups have increasingly targeted NAS systems. Today, multiple ransomware families are specifically designed to infect NAS devices, exploiting the valuable data they store and their security weaknesses.
 
-**Point of Sale Devices**
+#### Point of Sale Devices
 PoS devices process customer transactions, such as sales in retail stores. They may run traditional IT operating systems (e.g. Windows) or dedicated embedded OSes. These devices have long been prime targets for cybercriminals, who deploy keyloggers and infostealers to capture sensitive data. Additionally, RAM scrapers scan the system’s memory for credit card numbers and payment data before encryption. Certain PoS devices also contain specific vulnerabilities that attackers can exploit to gain deeper system access.
 
 ### OT Devices
+
 The riskiest OT devices saw several changes this year, with Universal Gateways and Historians appearing on the list for the first time.
 
-**Universal Gateways**
+#### Universal Gateways
 These facilitate communication between systems using different protocols (e.g. Modbus and EtherNet/IP) and are commonly at Purdue levels 1 and 2. Their risk stems from interconnecting disparate systems, sometimes bridging both Ethernet and serial communications. This introduces the potential for lateral movement within OT networks and enables threats from the Ethernet network to impact serially connected devices – a concern highlighted in our Deep Lateral Movement research.
 
-**Historians**
+#### Historians
 These servers store operational process data, typically deployed at Purdue level 3. Because they exchange data with enterprise IT systems they sit at the high-risk junction between IT and OT networks. According to SANS, 10% of OT incidents in 2024 involved data historians as an initial access vector. That same report also identified remote storage and processing of historian data as the second and fourth most common OT cloud adoption use cases, potentially expanding OT networks’ attack surface.
 
-**BMSs and Physical Access Control Systems**
+#### BMSs and Physical Access Control Systems
 These are critical for facilities management across many industries. There have been multiple instances of smart buildings exploited by threat actors to disable controllers and render them unusable, recruit vulnerable physical access control devices into botnets, or compromise management workstations for initial access into enterprise networks. These devices combine the insecure-by-design nature of OT with IoT’s internet connectivity, making them highly susceptible to online exposure - even in critical facilities.
 
-**UPS**
+#### UPS
 Uninterruptible power supplies play a crucial role in power monitoring and data center power management. CISA has warned about threat actors targeting UPSs with default credentials, enabling attackers to disrupt critical infrastructure by shutting off power in a critical location or tamper with voltage settings, potentially damaging sensitive equipment.
 
 ### IoMT Devices
+
 The riskiest medical devices saw significant changes from 2024, with four new device types entering the list – similar to the IT category.
 
-**Imaging Devices**
+#### Imaging Devices
 These includes CT scanners, PET-CT scanners and X-ray machines, which generate medical images and are often connected to PACS systems for storage and retrieval. They frequently run legacy, vulnerable IT operating systems and require extensive network connectivity to facilitate image sharing. They rely on the DICOM standard (Digital Imaging and Communications in Medicine) for sharing these files, which defines both image formats and communication protocols. In a recent report, we examined real-world attacks searching for patient data in medical honeypots and threat campaigns leveraging DICOM applications to infect patients and healthcare institutions.
 
-**Lab Equipment**
+#### Lab Equipment
 These devices, such as blood and urine analyzers, are essential for diagnostic laboratories to process biological samples and provide critical health data. These devices typically run specialized operating systems and are connected to Laboratory Information Systems (LIS). A major concern is that data transmission between lab equipment and LIS is often unencrypted, leaving It vulnerable to data exfiltration and data tampering attacks.
 
-**Healthcare Workstations**
+#### Healthcare Workstations
 These are used to interface with various medical data and equipment, including DICOM workstations, treatment planning systems, and diagnostic terminals. These systems handle clinical data using standardized formats such as HL7 (Health Level 7) to integrate with, electronic health records (EHR) and billing systems. These devices provide access to highly sensitive medical information, which is valuable on the dark web and frequently targeted by ransomware gangs.
 
-**Infusion Pump Controllers**
+#### Infusion Pump Controllers
 These manage modular infusion pump systems, regulating medication dosage and infusion duration for patients. As the “brains” of modular infusion systems, they are among the most common and critical devices in hospitals. A successful compromise could allow an attacker to tamper with drug delivery settings, posing serious risks to patient safety.
 
+---
+
 ## 3. Detailed Analysis
+
 ### 3.1. Risk by Industry
 Figure 1 illustrates the distribution of average device risk by industry in our dataset. For this analysis – and the discussions in the following sections - we selected the five industries with the largest number of connected devices.
 
@@ -181,7 +199,10 @@ This distinction between total vulnerabilities and highly exploitable ones reinf
 
 ![Figure 8 - Most vulnerable device types with critical vulnerabilities w/ extreme exploitability]
 
+---
+
 ## 4. Conclusion
+
 The attack surface in modern organizations now spans IT, IoT and OT, with IoMT adding another layer of complexity in healthcare. Focusing security efforts on a single category is no longer sufficient, as attackers exploit devices across different domains to execute attacks. We previously demonstrated this with R4IoT, an attack that begins with an IP camera (IoT), moves to a workstation (IT) and disables PLCs (OT) – illustrating the interconnected nature of today’s cyber threats.
 
 This report has analyzed the current risk levels across this expanded attack surface, identifying the most vulnerable devices that demand immediate attention from security teams.
@@ -189,5 +210,7 @@ This report has analyzed the current risk levels across this expanded attack sur
 To effectively defend this evolving attack surface, organizations must adopt modern security strategies that address risk across all device categories. As threat actors continue shifting their focus away from traditional endpoints, they increasingly target less-protected devices that offer easier initial access. A comprehensive risk and exposure management strategy must identify, prioritize and mitigate risk across IT, OT, IoT and IoMT – rather than treating them in silos. Avoid solutions that only address specific devices, since these fail to provide a complete picture of risk. For example, OT or IoMT-only solutions cannot effectively assess IT risk, just as IT-focused tools lack visibility into specialized devices.
 
 Beyond risk assessment, mitigation should leverage automated controls that extend across the entire enterprise – not just isolated environments like IT, OT, or specific IoT networks. Moreover, these controls should not depend solely on security agents, ensuring that organizations maintain continuous risk reduction across all interconnected systems.
+
+---
 
 © 2025 Forescout Technologies, Inc. All rights reserved. Forescout Technologies, Inc. is a Delaware corporation. A list of our trademarks and patents is available at www.forescout.com/company/legal/intellectual-property-patents-trademarks. Other brands, products or service names may be trademarks or service marks of their respective owners.

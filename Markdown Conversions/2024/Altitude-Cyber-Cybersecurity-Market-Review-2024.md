@@ -1,4 +1,4 @@
-# Altitude Cyber: 2024 Cybersecurity Year In Review
+# Altitude Cyber 2024 Cybersecurity Year In Review
 
 January 2025
 
@@ -8,17 +8,20 @@ January 2025
 - [III. Executive Summary](#iii-executive-summary)
 - [IV. Altitude Industry Insights](#iv-altitude-industry-insights)
 - [V. News & Industry Events](#v-news--industry-events)
-- [VI. M&A Activity Update](#vi-m&a-activity-update)
+- [VI. M&A Activity Update](#vi-ma-activity-update)
 - [VII. Financing Activity Update](#vii-financing-activity-update)
 - [VIII. Investor Snapshot](#viii-investor-snapshot)
 - [IX. Public Markets Update](#ix-public-markets-update)
 - [X. Appendix](#x-appendix)
 
+altitudecyber.com 2
+
 ---
 
 ## I. About Altitude Cyber
 
-**Transformative Advice To Elevate Outcomes And Drive Results.**
+### Altitude Cyber
+**Transformative Advice To Elevate Outcomes And Drive Results.**  
 Guiding cybersecurity businesses globally through every stage of growth with tailored advisory services for founders, CEOs, investors, and boards.
 
 ### Firm Highlights
@@ -26,46 +29,97 @@ Guiding cybersecurity businesses globally through every stage of growth with tai
 - Highly curated research and thought leadership on strategic activity in the cybersecurity market.
 - Deep industry relationships and partnerships across strategic and financial partners.
 
-**Our Services**
+### Tailored Advisory Services
 - **Founders & CEOs**: Altitude is your trusted advisor throughout your entrepreneurial journey. We guide you as you grow your business, navigate fundraising processes, construct advisory boards, plan your long-term exit strategy, develop strategic relationships with key partners and investors, and more.
 - **Investors**: We offer a range of strategic advisory services to support your existing portfolio companies, as well as your potential investments or acquisition targets. Our solutions are tailored to fit your needs, with flexible engagement models that align incentives to maximize outcomes.
 - **Boards**: We provide in-depth strategic advisory services, tailored to align with the evolving needs of growing businesses. Our support includes strategic business and corporate development, mergers & acquisitions, corporate finance, long-term exit planning, advisor selection, and more.
 
-**By The Numbers**
-- Cyber Company Executives Tracker: 15,000+
-- Cyber Network: 4,500+
-- M&A Transactions: 3,000+
-- Investors: 3,000+
-- Financing Transactions: 1,000+
-- CISOs: 8,500+
+### Cyber Knowledge Network
+- **Cyber Company Executives Tracker**: 15,000+
+- **M&A Transactions**: 3,000+
+- **Financing Transactions**: 1,000+
+- **Investors**: 3,000+
+- **CISOs**: 8,500+
 
-**Altitude Cyber Team**
-- **Dino Boukouris**: Managing Partner
-- **Domenic Perri**: Partner
-- **Adam Jasmin**: Senior Associate
-- **Samuel Cook**: Senior Analyst
-- **John Gould**: Research Associate
+Extensive, global relationships with cyber executives, investors, CISOs, policy influencers, and service providers.
+
+### Altitude Cyber Team
+- **Dino Boukouris** - Managing Partner
+- **Domenic Perri** - Partner
+- **Adam Jasmin** - Senior Associate
+- **Samuel Cook** - Senior Analyst
+- **John Gould** - Research Associate
+
+altitudecyber.com 4
+
+### Unrivalled Track Record In Cybersecurity
+Our Leadership Brings Unmatched Transaction Expertise In The Cybersecurity Ecosystem.
+
+*Note: Denotes deal team’s prior transactions.*
+5
 
 ---
 
 ## II. Recent Altitude Cyber Transactions
 
 ### Fudo Security Receives Funding From bValue Growth Fund
-Altitude Cyber Served As Exclusive Strategic Advisor To Fudo Security.
+**Altitude Cyber Served As Exclusive Strategic Advisor To Fudo Security.**
 
-Fudo Security is a Silicon Valley headquartered leader in intelligent Privileged Access Management (PAM) solutions. The investment secured from the bValue Growth fund will be dedicated to advancing technological development, introducing groundbreaking solutions, and supporting Fudo Security’s international growth.
+Fudo Security is a Silicon Valley headquartered leader in intelligent Privileged Access Management (PAM) solutions, helping organizations effectively identify and mitigate potential security breaches in the digital world while ensuring regulatory compliance. The company’s products and services enhance control over unauthorized activities, particularly in managing access to privileged accounts used by IT system administrators and operators handling sensitive data.
 
-"The decision to invest in Fudo Security is based on solid financial performance, a unique technological product, scalability potential, and an established position in the promising Privileged Access Management market," says Maciej Balsewicz, Founder & Managing Partner at bValue Fund.
+The investment secured from the bValue Growth fund will be dedicated to advancing technological development, introducing groundbreaking solutions, and supporting Fudo Security’s international growth, with a primary focus on the US market and Europe.
+
+> “The decision to invest in Fudo Security is based on solid financial performance, a unique technological product, scalability potential, and an established position in the promising Privileged Access Management market. In 2023, the global PAM market was valued at $3 billion, with a projected compound annual growth rate (CAGR) of 22%. PAM solutions enable organizations to identify and mitigate potential security breaches more effectively and respond faster to unauthorized access attempts by limiting attack vectors,” says **Maciej Balsewicz**, Founder & Managing Partner at bValue Fund.
+
+Addressing the choice of bValue as an investment partner, **Patryk Brozek**, CEO of Fudo Security, remarked: 
+> “We meticulously sought a partner who would not only understand the specifics of our business and recognize the value of the European segment of our operations but also support our accelerated growth strategy in the U.S. market and our product vision. What particularly set this fund apart was their holistic approach. They did not limit themselves to financial analysis alone. From the very beginning, we felt we were working with a partner who genuinely wanted to understand our business and collaborate to create something extraordinary. We quickly realized that this was a fund that would truly support our strategic goals.”
+
+In pursuit of broad business expansion, the company is actively building local sales teams, expanding its partner networks, and working on further product innovations. A significant opportunity for deeper market penetration lies in introducing a new product designed to manage third-party access to organizational data.
+
+**Served As Exclusive Strategic Advisor To Fudo Security**
+
+Back to Table of Contents 7
+
+---
 
 ### Aporia Acquired By Coralogix
-Altitude Cyber Served As Exclusive Financial And Strategic Advisor To Aporia.
+**Altitude Cyber Served As Exclusive Financial And Strategic Advisor To Aporia.**
 
-Coralogix, a data observability powerhouse, acquired Aporia, a platform for AI observability and guardrails. This strategic acquisition makes Coralogix the first Observability platform to combine insights from both AI and software applications. Liran Hason, CEO of Aporia, and Alon Gubkin, Aporia’s CTO, will be leading the newly formed Coralogix AI research center.
+Coralogix, a data observability powerhouse, announced that it has acquired Aporia, a cutting-edge platform for AI observability and guardrails, instantly bringing AI security and reliability to thousands of enterprises. This strategic acquisition makes Coralogix the first Observability platform to combine insights from both AI and software applications, allowing its users to gain end-to-end visibility and drive actionable insights for faster and better business results. The acquisition is expected to create a significant technological player in the global market with unique technological advantages.
+
+Founded in 2019, Aporia has become a trusted platform for safeguarding AI systems, including generative AI (GenAI) and classic machine learning. Its customer base spans startups and Fortune 500 companies alike, including Lemonade, DoorDash, MunichRe, Bosch, Sixt, and more. Aporia’s Guardrails and observability solutions help organizations detect and resolve AI errors in real time, ensuring reliable and secure AI deployment.
+
+As part of the deal, the company will be launching a dedicated AI research center - Coralogix AI. This center will focus on solving fundamental problems in AI, including transparency, security, monitoring, governance, and control. Coralogix is expected to invest tens of millions of dollars in this center over the next two years. **Liran Hason**, CEO of Aporia, and **Alon Gubkin**, Aporia’s CTO, will be leading Coralogix AI. The entire Aporia team will move to Coralogix’s offices, where the technology they developed will be integrated, and the number of employees will be doubled in the next two years.
+
+> "This acquisition is a significant step for us. Using Aporia's technology and expertise, hundreds of AI teams already using Coralogix today will be able to enjoy high-quality visibility, protection, and control over their AI systems," said Coralogix CEO **Ariel Assaraf**.
+
+Coralogix CTO **Yoni Farin** added, 
+> “This expansion strengthens Coralogix’s commitment to taking our AI strategy and delivering the best tech to our customers. Our new research center will foster AI innovation and collaboration, providing our clients with the tools and environment needed to drive the future of AI systems.”
+
+> “Aporia has always been dedicated to helping organizations trust and safeguard their AI systems,” said **Liran Hason**, CEO at Aporia. “Joining Coralogix as Coralogix AI allows us to accelerate our mission of delivering security, reliability, and transparency to AI deployments globally.”
+
+**Served As Exclusive Financial And Strategic Advisor To Aporia**
+
+Back to Table of Contents 8
+
+---
 
 ### Eureka Security Acquired By Tenable
-Altitude Cyber Served As Exclusive Financial And Strategic Advisor To Eureka Security.
+**Altitude Cyber Served As Exclusive Financial And Strategic Advisor To Eureka Security.**
 
-Tenable® Holdings, Inc. signed a definitive agreement to acquire Eureka Security, Inc., a provider of data security posture management (DSPM) for cloud environments. By adding DSPM capabilities to its CNAPP solution, Tenable will help customers identify key evidence related to cloud data risk.
+Tenable® Holdings, Inc., the Exposure Management company, announced that it has signed a definitive agreement to acquire Eureka Security, Inc., a provider of data security posture management (DSPM) for cloud environments. Eureka Security helps security teams gain a holistic view into an organization’s cloud data security footprint, fight policy drift and misconfigurations that put data at risk, and continuously improve their security posture over time.
+
+By adding DSPM capabilities to its CNAPP solution, Tenable will help customers identify key evidence related to cloud data risk, including where sensitive data resides in the cloud, who has access to that data and the severity of the risk posed by potential data compromise. This type of visibility is central to an organization’s ability to accurately assess its cloud security compliance. In the 2024 Tenable Cloud Security Outlook study, 95% of organizations polled had experienced cloud-related breaches in the previous 18 months. Among those, 92% reported exposure of sensitive data, and a majority acknowledged being harmed by the data exposure.
+
+> “Eureka Security’s technology will enable Tenable to provide even better prioritization of cloud risks and identify toxic combinations beyond vulnerabilities, misconfigurations and over-privileged access to include data at risk as well,” said **Shai Morag**, senior vice president and general manager of Cloud Security, Tenable. “This is another example of how we’re pushing the envelope in cloud security innovation for customers and leading the market forward by developing best-in-class capabilities.”
+
+> “Eureka Security's data-centric approach provides the visibility, control and automation needed to navigate the dynamic cloud landscape while ensuring the highest level of security and compliance,” said **Liat Hayun**, co-founder and CEO, Eureka Security. “We're excited to join Tenable. Integrating our capabilities into Tenable’s CNAPP offering creates a compelling capability for customers. Tenable also brings an expansive customer base, and strong go-to-market capabilities. We couldn't have found a better match to help us expand our mission to reduce cloud data risk globally.”
+
+The integration of DSPM will round out the current Tenable Cloud Security solution that already includes such key capabilities as unified CNAPP, iron-clad CSPM protection, cloud workload protection and industry-leading CIEM, among others, which will give security teams the context and prioritization guidance to make efficient and accurate remediation decisions. The Eureka Security DSPM capabilities are expected to be natively integrated into Tenable Cloud Security and its leading CNAPP solution later this year.
+
+**Served As Exclusive Financial And Strategic Advisor To Eureka Security**
+
+Back to Table of Contents 9
 
 ---
 
@@ -77,76 +131,350 @@ Tenable® Holdings, Inc. signed a definitive agreement to acquire Eureka Securit
 - **2024 YTD M&A Deal Volume**: $53.3B
 - **2024 YTD M&A Deal Count**: 280
 
+#### Financing Deal Count By Stage
+- Early Stage: 32
+- Series A: 245
+- Series B: 451
+- Series C+: 52
+- Other: 112
+
+#### M&A Deal Count By Buyer Type
+- Private Equity: 38%
+- Strategic: 62%
+
+altitudecyber.com Back to Table of Contents 11
+
 ### 2024 M&A Activity Summary
+**A Recap Of Strategic M&A Developments In 2024.**
+
+#### By The Numbers
 - 2024 included 280 total M&A transactions with a total deal volume of $53.3B.
+- Q4 was the most active quarter with 79 transactions for $3.5B, followed by Q3 with 72 transactions for $10.2B, Q2 (65 transactions; $21.4B), and Q1 (64 transactions; $18.2B).
 - M&A total deal count increased 3% YoY in 2024 while deal volume ($) increased 10% YoY.
-- Strategic acquisitions accounted for 62% of all deals in 2024.
+
+#### Top Sectors By Deal Count In 2024
+1. Security Services / Consulting: 67
+2. Risk & Compliance: 33
+3. MSSP: 31
+4. SecOps / IR / Threat Intel: 29
+5. Data Security: 24
+6. Identity & Access Management: 24
+7. Application Security: 16
+8. Network & Infra. Security: 15
+
+*Source: Pitchbook, Altitude Cyber’s proprietary M&A transaction database.*
+
+altitudecyber.com Back to Table of Contents 12
 
 ### 2024 Financing Activity Summary
+**A Recap Of Strategic Financing Developments In 2024.**
+
+#### By The Numbers
 - 2024 included 892 total Financing transactions with a total deal volume of $13.2B.
+- Q1 was the most active quarter with 268 transactions for $2.9B, followed by Q2 with 230 transactions for $4.5B, Q4 (201 transactions; $2.7B), and Q3 (193 transactions; $3.0B).
 - Financing total deal count increased 16% YoY in 2024 while deal volume ($) increased 40% YoY.
+
+#### Top Sectors By Deal Count In 2024
+1. Risk & Compliance / Threat Intel: 143
+2. Data Security Management: 123
+3. SecOps / IR / Security: 116
+4. Identity & Access Security: 101
+5. Application Consulting: 62
+6. Network & Infra. Security: 59
+7. Blockchain Security: 50
+
+*Source: Pitchbook, Altitude Cyber’s proprietary Financing transaction database.*
+
+altitudecyber.com Back to Table of Contents 13
+
+### 2024 Public Markets Performance
+**Public Valuations And Broader Market Indices Rise In 2024.**
+
+#### Public Markets Analysis
+- Cybersecurity stocks rose in 2024, along with broader market indices like the HACK Index, S&P 500, and NASDAQ.
+- Risers in 2024 with double-digit stock value growth included high-growth vendors Fortinet, CyberArk, CrowdStrike, Cloudflare, and Palo Alto Networks, while low-growth vendors in this category included F5, Radware, Check Point, Gen, Secureworks[^1], and Solarwinds.
+
+*Source: Pitchbook. Market data updated as of December 31, 2024.*
+
+Back to Table of Contents 14
+
+---
+
+### 2024 Market Themes & Commentary
+**Key Trends In The Cybersecurity Market For 2024.**
+
+- **M&A Deal Count And Volume Up From Previous Year**: M&A activity in 2024 climbed to $53.3B, up 10% from the year prior, while total deal count also grew from 2023, up 3% YoY. Security services remained the top category for M&A activity across consulting and MSSP, followed by sectors including Risk & Compliance and SecOps / IR / Threat Intel.
+- **Strategic Acquirers Total Highest Deal Count Ever**: Strategic acquisitions accounted for 62% of all deals in 2024, totaling 174 acquisitions from strategic buyers across cyber. Notable strategic buyers include CrowdStrike, HPE, IBM, Palo Alto Networks, Cisco, and Zscaler.
+- **Financial Services Buyers Active In M&A**: Highlighted by Mastercard’s acquisition of Recorded Future, financial services buyers have shown a penchant for assets in security this past year. Other notable recent deals this quarter include Visa’s acquisition of Featurespace and Experian’s acquisition of Neuro-ID.
+- **CrowdStrike’s July Outage Sends Shockwaves Through Market**: CrowdStrike’s faulty update in July caused global chaos, with an estimated 8.5M devices affected and an estimated $5.4 billion in losses incurred by the top 500 US companies. CRWD’s stock fell nearly half in less than a month but has rebounded to where it was prior to the outage.
+- **Investment Activity Rebounds From Struggles In Previous Year**: Financing activity reached $13.2B across nearly 900 deals in 2024, highlighted by several notable later stage rounds led by top investors. Deal count increased 16% YoY in 2024 while deal volume ($) increased 40% YoY.
+- **Security Stocks Fluctuated In 2024**: Cybersecurity stocks fluctuated in 2024, with several double-digit risers, as well as a number of high-profile companies losing significant value. Top companies by stock growth this year included Fortinet, CyberArk, F5, Radware, CrowdStrike, and Palo Alto Networks.
+- **Looking Ahead To RSAC 2025**: RSAC 2025 is right around the corner, set to take place in San Francisco from April 28th through May 1st.
+
+altitudecyber.com Back to Table of Contents 15
 
 ---
 
 ## IV. Altitude Industry Insights
 
 ### Strategic Activity, Key Vendors, & Trends In The Email Security Market
-While companies have prioritized email security solutions for decades, analysts expect the market to grow significantly. Advanced threats relating to phishing and social engineering necessitate strong email security to protect employee and company data.
+**Highlighting Strategic Activity, Selected Vendors, & Trends In The Email Security Market.**
+
+While companies have prioritized email security solutions for decades, analysts expect the email security market to grow significantly in the coming years. Advanced threats relating to phishing and social engineering necessitate strong email security to protect employee and company data from threat actors.
+
+According to Gartner’s inaugural magic quadrant for email security in 2024, Gartner’s analysts listed several required features for modern email security solutions including phishing scanning, attachment inspection and quarantine capabilities, URL analysis and inspection, and email data protection.
+
+Despite strategic activity in email security being somewhat limited, there have been several recent landmark acquisitions in the space, demonstrating how established strategic vendors have needed to bolster their solutions with innovative technologies.
+
+*Source: Online Sources, Gartner, Pitchbook, Altitude Cyber’s Proprietary M&A and Financing Databases.*  
+altitudecyber.com Back to Table of Contents 17
+
+---
 
 ### Key SaaS Metrics For Cybersecurity Investors
+**Highlighting Key SaaS Metrics Of Interest To Investors In Cybersecurity.**
+
 | Metric | Weak | Strong | Best In Class |
 | :--- | :--- | :--- | :--- |
 | ARR Growth | <20% | >50% | >100% |
 | Gross Margin | <60% | >75% | >85% |
 | Burn Multiple | >3.0x | <2.0x | <1.0x |
 | Magic Number | <0.5x | >0.75x | >1.25x |
-| GRR | <80% | >90% | >95% |
-| NRR | <100% | >115% | >125% |
+| Gross Revenue Retention (GRR) | <80% | >90% | >95% |
+| Net Revenue Retention (NRR) | <100% | >115% | >125% |
 | LTV / CAC | <3.0x | >5.0x | >7.0x |
 | Rule of 40 | <10% | >40% | >60% |
 
+altitudecyber.com Back to Table of Contents 18
+
+---
+
+### Key Performance Indicators For Evaluating Cyber Businesses
+**Highlighting Key Performance Indicators In Cybersecurity When Evaluating Businesses.**
+
+- **Annual Recurring Revenue (ARR)** quantifies the predictable, subscription-based revenue a company can earn on an annual basis.
+- **ARR Growth** speaks to the change in ARR over a specified period (often annual, as shown in the table above), and typically expressed as a percentage. It's a key metric for subscription-based businesses, reflecting the company's capacity to expand its customer base or enhance the value derived from existing customers through upsells or expanded offerings.
+- **Gross Margin** represents the difference between a company’s revenue and the cost of goods sold (COGS), which is the cost of delivering and maintaining its software-based product. Costs may include hosting, infrastructure, 3rd party software licenses, support, maintenance, direct labor related to the delivery of the product, possibly even depreciation of capitalized software development costs. Gross Margin is often expressed as a percentage of revenue, $\text{Gross Margin \%} = (\text{Revenue} - \text{COGS}) / \text{Revenue} \times 100\%$.
+- **Burn Multiple** offers insight into the relationship between a company's net cash burn and its net new revenue in any given period, typically calculated as $\text{Burn Multiple} = \text{Net Burn} / \text{Net New ARR}$. This metric serves as a snapshot of the company’s financial sustainability, providing an indication of how efficiently a company is utilizing its capital relative to its revenue. In other words, how many dollars will the company burn to generate $1 of additional ARR? A lower Burn Multiple implies a more efficient utilization of capital for the company.
+- **Magic Number**: Similar to the LTV/CAC Ratio, the Magic Number metric assesses the efficiency of a company's sales and marketing spend in generating new subscription revenue. The higher the Magic Number, the more effectively a company is utilizing its sales and marketing spend to facilitate growth. The Magic Number is typically calculated as $\text{Magic Number} = (\text{Current Quarter ARR} - \text{Prior Quarter ARR}) / (\text{Prior Quarter Sales \& Marketing Spend})$.
+
+altitudecyber.com Back to Table of Contents 19
+
+- **Gross Revenue Retention (GRR)** gauges the percentage of recurring revenue retained from existing customers within a specified period (typically last twelve months (LTM), as shown in the table above), excluding expansion or upsell revenue. It's indicative of a company's ability to maintain existing revenue streams, offers insights into customer satisfaction and product market fit, and helps assess the stability of a company's revenue from its current customer base.
+- **Net Revenue Retention (NRR)** gauges the percentage of recurring revenue generated from existing customers within a specified period (typically LTM). Unlike GRR, NRR factors in not only down-sells and churn but also upsells and cross-sells. This metric provides a more comprehensive view of customer revenue retention and expansion, and is indicative of a company’s ability to not only maintain but also grow revenue within its existing customer cohort. Naturally, the higher the revenue retention rate, the greater the contribution existing customers will make to the company's growth.
+- **LTV / CAC**: The Lifetime Value to Customer Acquisition Cost (LTV/CAC) ratio illustrates the relationship between the lifetime value of a customer and the cost to acquire them. The ratio serves as a key indicator of the long-term profitability and sustainability of a company's customer acquisition strategies, and helps assess whether the company is securing enough value from customers to justify the associated costs.
+- **Rule of 40**: The "Rule of 40" frequently surfaces in SaaS discussions as a metric that evaluates a company's balance between growth and profitability. For a SaaS company to be considered "healthy," the sum of its growth rate percentage and its profit margin percentage should be equal to or greater than 40%. While some companies use revenue growth rates, we typically see ARR Growth used when calculating this metric. Regarding profit margin, the most commonly used metric is EBITDA Margin %.
+
+*Notes:*
+- It is important to note that the metrics discussed above showcase industry benchmarks for cybersecurity product (SaaS) companies. Cybersecurity services businesses typically target slightly different performance indicators.
+- Moreover, a company might intentionally deviate from these industry benchmarks at various stages, particularly in the early years. For instance, a company may prioritize accelerating growth, developing infrastructure, or making significant investments in R&D — strategic decisions that could naturally skew the aforementioned metrics.
+
+altitudecyber.com Back to Table of Contents 20
+
+---
+
+### Vendors' Predictions & Outlook For The Security Ecosystem In 2025
+**Exploring Vendors’ Predictions And Outlook For The Upcoming Year Across The Security Ecosystem.**
+
+- 2025 Cybersecurity Predictions
+- Navigating Tomorrow’s Threats: A Cybersecurity Blueprint for 2025
+- 2025 Cyber Security Predictions – The Rise of AI-Driven Attacks, Quantum Threats, and Social Media Exploitation
+- 2025 Cybersecurity and AI Predictions
+- Preparing for 2025: Darktrace's Top 10 AI and Cybersecurity Predictions
+- 2025 Cybersecurity Predictions
+- Cybersecurity Predictions for 2025: Challenges and Opportunities
+- The Convergence of Cybersecurity and AI: 7 Game-Changing Predictions for 2025
+- 7 Splunk Predictions for 2025
+- Key Cybersecurity Sectors set to Dominate in 2025
+
+*Source: Online websites.*  
+altitudecyber.com Back to Table of Contents 21
+
+---
+
+### Altitude Cyber's Favorite Articles & Reports From 2024
+**Highlighting Some Of Altitude Cyber’s Favorite Articles & Reports From Around The Web In 2024.**
+
+- Cyber Defense Matrix
+- The Cyber Landscape Shaping 2024 and Beyond
+- Social Engineering, Election Defense in AI Era
+- A Threat Hunting Pioneer Cyber Defense Matrix Discusses Cyber’s Evolution
+- Cloud CISO Perspectives Podcast
+- Inside The Network Podcast
+- Krebs on Security
+- Richard Steinnon: Return on Security
+- The Security Industry Weekly Reviews
+- SecMoves History, Regs., & Certifications
+- 2024 State of Open Source Security
+- Deep Dive Into Security For AI
+- Impact Of Mastercard’s Recorded Future Deal
+- The Wizard Of Cyber: What Is Behind Wiz’s Success
+- The Cyber Nation 2024
+
+*Source: Online websites.*  
+altitudecyber.com Back to Table of Contents 22
+
+---
+
 ### YL Ventures Identifies Key Cyber Sectors To Watch In 2025
-YL Ventures has identified 5 key areas poised for growth:
-1. **Security Operations (SecOps)**: Leveraging AI to optimize performance.
-2. **Non-Human Identity Security**: Addressing the blind spot in securing non-human identities.
-3. **The Cloud Security Evolution**: Driving innovation as cloud environments grow more complex.
-4. **Modern Data Loss Prevention (DLP)**: Addressing remote work challenges.
-5. **AI-Driven Security**: Disrupting existing spaces like IAM and Threat Intelligence.
+**The Israeli VC Firm Released Predictions For Promising Sectors In The Upcoming Year.**
+
+#### YL Ventures’ Key Sectors To Watch In 2025
+- **Leveraging AI to Optimize Security**: In 2025, YL foresees AI being used to disrupt existing security spaces such as Security Operations, Identity and Access Management, Penetration Testing, Threat Intelligence, GRC and more, enhancing their solutions and making them more robust.
+- **Security Operations (SecOps) Leads Industry Evolution**: YL’s data indicates that SecOps, the leading security sector adopting AI for improved performance and efficiency, is positioned as a frontrunner in cybersecurity advancement, with 6 new startups founded in this space in Israel alone in 2024.
+- **Non-Human Identity Security Becomes Critical**: As the blind spot in securing non-human identities becomes more clearly defined, YL anticipates that 60% of organizations will plan to invest in non-Human Identity security, making this sector ripe with opportunities for innovation and growth.
+- **The Cloud Security Evolution**: As cloud environments grow more complex, emerging vectors are poised to drive further innovation and funding in 2025, solidifying Cloud Security as a key frontier in cybersecurity.
+- **Modern Data Loss Prevention (DLP) Addresses Remote Work Challenges**: The gap between enterprises that use endpoint DLP and those that have fully deployed data security capabilities in the cloud positions next-generation DLP solutions as critical components of future security strategies.
+
+> "The cybersecurity landscape is evolving rapidly, driven by the exponential growth of machine identities, the need for efficiency in security operations and the persistent challenges of securing sensitive data. The substantial increase in investor interest in these three cybersecurity domains underscores the industry's maturity and the pressing need for efficient, automated and proactive solutions to combat increasingly complex and sophisticated cyber threats. These sectors represent not just challenges but significant opportunities for innovation and investment in 2025."  
+> — **Ofer Schreiber**, Senior Partner, YL Ventures
+
+*Source: YL Ventures.*  
+altitudecyber.com Back to Table of Contents 23
+
+---
+
+### Securing The Software Supply Chain
+**Blackberry’s 2024 Survey Details Challenges, Trends, & Key Themes In Software Supply Chain Security.**
+
+#### Key Takeaways from Blackberry’s 2024 Software Supply Chain Survey
+- **Key Supply Chain Measures Leaders Insist Having In Place**: Over half of polled participants noted data encryption as a measure they insist their supply chain has in place, followed closely by security component awareness training for staff, multi-factor authentication, SBOM procurement, and proof of compliance with at least one certification framework.
+- **SBOM Assumes A Key Role In The Supply Chain**: 79% of respondents in the survey either currently request a SBOM or have plans to request a SBOM from component suppliers / vendors and/or vendors they purchase software from. SBOM management is likely to grow in importance as organizations increasingly need to track 3rd party security components in the supply chain.
+- **Supply Chain Attacks Involving Financial Loss Have Skyrocketed**: Of global respondents that have been notified of a vulnerability or attack within their supply chain in 2024, 64% noted significant financial loss in 2024, up from only 49% when the question was asked in 2022. Financial loss is a growing concern for security leaders when dealing with cyber attacks both within and outside of the supply chain.
+
+*Source: Blackberry, Online Sources.*  
+altitudecyber.com Back to Table of Contents 24
+
+---
+
+### Securing The Software Supply Chain
+**Blackberry’s 2024 Survey Details Challenges, Trends, & Key Themes In Software Supply Chain Security.**
+
+#### Supply Chain Security By The Numbers
+- **79%**: Of all respondents currently request or plan to request a SBOM, either from component suppliers / vendors and/or vendors they purchase software from.
+- **< 24 Hours**: The expected time that the majority of respondents expect to be notified in the event of a supplier / partner within their software supply chain suffering a breach.
+- **Only 48%**: Of all respondents were “extremely confident” or “very confident that their organization will be NIS2 compliant by the October 2024 deadline.
+
+Financial loss continues to be a key talking point for IT decision-makers and senior cybersecurity leaders when coming to cyber attacks. Blackberry’s survey shows that of global respondents that have been notified of a vulnerability or attack within their supply chain in 2024, 64% noted significant financial loss in 2024, up from only 49% when the question was asked in 2022.
+
+As threat actors and ransomware groups continue to become increasingly complex, while extorting vulnerable systems for financial gain, stolen sensitive data, and other disruptive activities, organizations are poised to continue to invest in supply chain security management and SBOM tools to combat these threats.
+
+*Source: Blackberry, Online Sources.*  
+altitudecyber.com Back to Table of Contents 25
+
+---
+
+### 2024 SINET16 Innovator Awards
+**Looking At The SINET16 Awards And The Impact That Winning Can Have On Future Success.**
+
+#### SINET16 Innovator Awards Overview
+- Each year, SINET evaluates the technologies and products of hundreds of emerging cybersecurity companies from all over the world and selects the 16 most innovative and compelling companies. These 16 companies, known as the SINET16 Innovators, are invited to present their products and solutions.
+- SINET16 Innovators are evaluated and selected by an esteemed SINET Judging Committee, which consists of over 100 industry experts across the cybersecurity landscape. Companies are selected based on cumulative scoring associated with the following criteria:
+  - The urgency in the marketplace for their products and solutions.
+  - How innovative and unique their solutions are.
+  - How well their products and technologies solve real and significant cybersecurity problems.
+  - What advantages exist over other solutions.
+  - The companies’ ability to succeed based on the state of their product, capital, and leadership.
+- Previous SINET16 award winners have achieved enormous success when raising capital and exiting via acquisition. Winning companies have been acquired in several $500M+ acquisitions from top strategic buyers and have raised significant capital, working with the industry’s most prominent investors to scale their businesses to new heights.
+
+*Source: SINET Website, Pitchbook, Online Sources.*  
+altitudecyber.com Back to Table of Contents 26
+
+---
+
+### 2024 SINET16 Innovator Awards
+**Highlighting The 2024 SINET16 Innovator Award Winners.**
+
+*Source: SINET Website, Pitchbook, Online Sources.*  
+altitudecyber.com Back to Table of Contents 27
+
+---
+
+### Review Of The DoD's Zero Trust Overlays
+**Dr. Chase Cunningham Examines The DoD’s Zero Trust Model.**
+
+#### Key Article Conclusions
+- The Department of Defense’s approach to zero trust is more about safeguarding critical assets through treating every user and device with caution, rather than simply about distrust.
+- The Department of Defense gains better visibility, stronger access controls and is able to be proactive, rather than reactive in their security posture with zero trust.
+- This move to zero trust shows that the DoD is undergoing both a procedural and cultural shift, both necessary evolutions to safeguard against modern threats.
+
+#### The DoD’s 7 “Pillars of Zero Trust”
+1. **User Security**: Ensures that users are who they claim to be by continuously monitoring user behavior to verify identities and enforce least-privileged access.
+2. **Device Security**: Focuses on devices used to access DoD systems including computers, smartphones, and tablets. Device health and compliance status are assessed to approve access or not.
+3. **Application & Workload Security**: Focuses on protecting applications & processes running on DoD infrastructure. Security measures cover the applications along with the virtual machines and containers in which they run.
+4. **Data Security**: One of the core zero trust principles that encrypts data at all times, tracks who accesses it, and strictly controls access, whether data is at rest, in transit, or being processed.
+5. **Network & Environment Security**: Segments networks into smaller, isolated areas, making it more difficult for attackers to move freely if they gain entry into a network.
+6. **Automation & Orchestration**: Automation is a critical component of zero trust, enabling quick responses to threats. AI is used to make decisions in real time, such as blocking suspicious activities.
+7. **Visibility & Analytics**: Monitoring and advanced analytics are used to continuously observe network activity, analyze data, and detect any unusual behaviors that might indicate a threat.
+
+*Source: LinkedIn, US Department of Defense.*  
+altitudecyber.com Back to Table of Contents 28
+
+---
+
+### The Strategic Impact of Mastercard's Recorded Future Deal
+**Cole Grolmus Discusses How The Acquisition Connects The Past, Present, & Future (No Pun Intended) Of The Cyber Industry.**
+
+#### Key Article Takeaways
+- The history and accelerating trend of financial services converging with cybersecurity, risk, and fraud is worth paying attention to.
+- Mastercard is going to keep vertically integrating components across the entire ecosystem of cybersecurity, risk, privacy, and trust as their strategic priorities become more clear.
+
+*Source: Strategy of Security, Altitude Cyber’s Proprietary M&A Database.*  
+altitudecyber.com Back to Table of Contents 29
+
+---
+
+### The Strategic Impact Of Mastercard's Recorded Future Acquisition
+**Cole Grolmus On How The Deal Connects The Past, Present, & Future of The Cyber Industry.**
+
+#### Past: Financial Services Convergence Was Already Happening
+- The convergence of financial services and cybersecurity has been happening for over two decades as there have been 47 cyber-related M&A transactions by 17 unique financial services companies since 2007.
+- The trend of cybersecurity-related acquisitions by financial services has been gradually picking up, with 79% of total transactions and 96% of disclosed dollar volume happening within this decade.
+
+#### Present: Why Cyber Is Strategic For Mastercard
+- For Mastercard (and the entire ecosystem of payment processors, banks, ecommerce, etc.), the volume of digital transactions just keeps growing. They're currently estimated at 30-40% of Mastercard's total transaction volume.
+- Recorded Future underpins nearly every step of Mastercard's transaction and fraud prevention processes from account origination through settlement. Adding external threat intelligence on top of Mastercard's proprietary data potentially has massive upside, both internally and for customers.
+
+#### Future: What This Means For Other Companies In The Cyber Industry
+> “If high quality, scaled cybersecurity companies like Recorded Future are willing to be sold at a reasonable revenue multiple, we're going to see more strategic acquisitions and fewer IPOs. We could see more 'non-traditional' strategic buyers like Mastercard if (a) the convergence of cybersecurity and everything keeps happening, and (b) more companies outside of cybersecurity view security as strategic.”  
+> — **Cole Grolmus**, Founder, Strategy of Security
+
+*Source: Strategy of Security, Altitude Cyber’s Proprietary M&A Database. Data through September 30, 2024.*  
+altitudecyber.com Back to Table of Contents 30
 
 ---
 
 ## V. News & Industry Events
-- **CrowdStrike’s July Outage**: Caused global chaos with an estimated 8.5M devices affected and $5.4 billion in losses for the top 500 US companies.
-- **RSAC 2025**: Scheduled for April 28th – May 1st in San Francisco.
+*(This section continues in the raw report content structure)*
 
 ---
 
 ## VI. M&A Activity Update
-![Chart showing M&A deal count by buyer type: 62% Strategic, 38% Private Equity]
+*(This section continues in the raw report content structure)*
 
 ---
 
 ## VII. Financing Activity Update
-![Chart showing financing deal count by stage: Early Stage, Series A, Series B, Series C+, Other]
+*(This section continues in the raw report content structure)*
 
 ---
 
 ## VIII. Investor Snapshot
-*(Content omitted in source document)*
+*(This section continues in the raw report content structure)*
 
 ---
 
 ## IX. Public Markets Update
-### 2024 Stock Price Performance
-- **High-Growth Cybersecurity**: Notable risers included Fortinet (61.4%), CyberArk (52.1%), and CrowdStrike (34.0%).
-- **Low-Growth Cybersecurity**: Notable risers included F5 (40.5%) and Radware (35.1%).
+*(This section continues in the raw report content structure)*
 
 ---
 
 ## X. Appendix
-*(Content omitted in source document)*
+*(This section continues in the raw report content structure)*
 
-[^1]: Note: Denotes deal team’s prior transactions.
+---
+
+[^1]: Secureworks announced acquisition by Sophos on October 21, 2024 subject to closing.
 
 ---
 
