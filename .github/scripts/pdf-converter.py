@@ -467,13 +467,17 @@ class PDFConverter:
             needs_reconvert = True
             reconvert_reason = "not in cache or missing from disk"
             
+        existing_content = None
         if not needs_reconvert:
             print(f"  ✓ Cached: {existing_md}")
             return True, str(existing_md), "cached"
         else:
             if existing_md.exists():
-                existing_md.unlink()
-                print(f"  ♻ Reconvert ({reconvert_reason}): removed stale {existing_md.name}")
+                try:
+                    existing_content = existing_md.read_text(encoding="utf-8", errors="ignore")
+                except Exception:
+                    pass
+                print(f"  ♻ Reconvert ({reconvert_reason}): {existing_md.name}")
             else:
                 print(f"  ♻ Convert: {reconvert_reason}")
 
@@ -531,12 +535,21 @@ class PDFConverter:
 
             print(f"  ✓ Saved: {md_path}")
             if is_stub:
+                if existing_content and len(existing_content) >= self.config.min_markdown_chars:
+                    print(f"  ! New conversion is a stub, restoring previous known good conversion")
+                    md_path.write_text(existing_content, encoding="utf-8")
+                    return True, str(md_path), "recovered from previous"
                 return False, str(md_path), "failed (stub)"
             return True, str(md_path), "success"
 
         except Exception as e:
             error_msg = str(e)[:200]
             print(f"  ! Conversion error: {error_msg}")
+            
+            if existing_content and len(existing_content) >= self.config.min_markdown_chars:
+                print(f"  ! Restoring previous known good conversion after error")
+                md_path.write_text(existing_content, encoding="utf-8")
+                return True, str(md_path), f"recovered from previous ({error_msg[:80]})"
 
             # Save a minimal stub so downstream steps can still run
             try:

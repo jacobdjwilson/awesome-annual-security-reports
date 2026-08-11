@@ -467,9 +467,6 @@ class ReadmeUpdater:
                 f"({current - self.config.age_threshold_years + 1}–{current})"
             )
 
-        # Sanitize summary and resolve org URL before any further work
-        self._sanitize(analysis)
-
         # 3 — existing entry check
         existing_line, existing_fields = self.parser.find_existing_entry(analysis["pdf_path"])
 
@@ -477,9 +474,19 @@ class ReadmeUpdater:
             existing_year = int(existing_fields["year"])
             if report_year == existing_year:
                 return False, f"already current (year={report_year})"
-            if report_year > existing_year:
-                return self._update_existing(existing_line, existing_fields, analysis)
-            return False, f"incoming year {report_year} older than existing {existing_year}"
+            if report_year < existing_year:
+                return False, f"incoming year {report_year} older than existing {existing_year}"
+            
+            # If we are updating an existing entry, inject its exact URL into analysis
+            # so _sanitize can use it for Phase 1 search and as a strong fallback.
+            if not analysis.get("organization_url"):
+                analysis["organization_url"] = existing_fields.get("org_url", "")
+
+        # Sanitize summary and resolve org URL before any further work
+        self._sanitize(analysis)
+
+        if existing_line is not None:
+            return self._update_existing(existing_line, existing_fields, analysis)
 
         # 4 — new entry: validate summary quality, resolve category, insert
         is_valid, errors = self.validator.validate(analysis["summary"])
@@ -621,10 +628,11 @@ class ReadmeUpdater:
             analysis["organization_url"] = org_url
             return
 
-        # Last-resort fallback: construct a plausible homepage
-        slug = re.sub(r"[^a-z0-9]", "", analysis["organization"].lower())
-        analysis["organization_url"] = f"https://www.{slug}.com"
-        print(f"    ⚠ No URL found; using fallback: {analysis['organization_url']}")
+        # Last-resort fallback: construct a plausible homepage only if we really have nothing
+        if not analysis.get("organization_url"):
+            slug = re.sub(r"[^a-z0-9]", "", analysis["organization"].lower())
+            analysis["organization_url"] = f"https://www.{slug}.com"
+            print(f"    ⚠ No URL found; using fallback: {analysis['organization_url']}")
 
     def _build_report_url(self, analysis: Dict[str, Any]) -> str:
         """pdf_path is already repo-relative; just percent-encode spaces."""
