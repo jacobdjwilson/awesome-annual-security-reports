@@ -1,6 +1,13 @@
 # Cybersecurity Forecast 2025
 
+Organization: Google  
+Report Title: Cybersecurity Forecast 2025  
+Year: 2025  
+
+EMBARGO
+
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Artificial Intelligence](#artificial-intelligence)
   - [Attacker Use of AI](#attacker-use-of-ai)
@@ -17,8 +24,8 @@
   - [Post U.S. Election Activity](#post-us-election-activity)
   - [Uncovering Operations From Years Past](#uncovering-operations-from-years-past)
   - [The Rising Threat of Infostealer Malware: A Gateway to High-Impact Data Breaches](#the-rising-threat-of-infostealer-malware-a-gateway-to-high-impact-data-breaches)
-  - [Democratizing of Cyber Capabilities Will Continue To Lower Barriers to Entry for Less-Skilled and Newer Actors](#democratizing-of-cyber-capabilities-will-continue-to-lower-barriers-to-entry-for-less-skilled-and-newer-actors)
   - [Rising Impact of Compromised Identities in Hybrid Environments](#rising-impact-of-compromised-identities-in-hybrid-environments)
+  - [Democratizing of Cyber Capabilities Will Continue To Lower Barriers to Entry for Less-Skilled and Newer Actors](#democratizing-of-cyber-capabilities-will-continue-to-lower-barriers-to-entry-for-less-skilled-and-newer-actors)
   - [Maturing Security Operations in the Cloud](#maturing-security-operations-in-the-cloud)
   - [Criticality Drives More Regulations for Cloud Providers](#criticality-drives-more-regulations-for-cloud-providers)
   - [More Interest in Web3 and Crypto Heists](#more-interest-in-web3-and-crypto-heists)
@@ -46,10 +53,16 @@ The report also features insights from more than a dozen researchers, analysts, 
 
 Technology advances, threats evolve, the cybersecurity landscape changes, and defenders must adapt to it all if they want to keep up. The Google Cloud Cybersecurity Forecast 2025 report aims to help the cybersecurity industry frame its fight against cyber adversaries in 2025.
 
+![Google Cloud Cybersecurity Forecast 2025 Cover Graphic]
+
+SPECIAL REPORT: MANDIANT M-TRENDS 2023 EMBARGO
+
+---
+
 ## Artificial Intelligence
 
-> “2025 is the first year where we’ll genuinely see the second phase of AI in action with security.”
-> — Sunil Potti, VP/GM, Google Cloud Security
+> _“2025 is the first year where we’ll genuinely see the second phase of AI in action with security.”_  
+> **Sunil Potti**, VP/GM, Google Cloud Security
 
 ### Attacker Use of AI
 
@@ -63,10 +76,12 @@ Information Operations (IO) threat actors will increasingly leverage gen AI tool
 
 In 2025, we expect to see a second phase of AI and security in action. This past year, practitioners have been using AI to democratize security, meaning they’ve begun using AI-driven tools to automate the summarization of complex reports, querying vast datasets with ease, and obtaining real-time assistance for a multitude of tasks, thereby augmenting their capabilities and streamlining workflows. Reducing the toil on defenders performing repetitive tasks by integrating AI into processes and procedures is allowing investigations to run more efficiently, and security decision-makers see AI as a key tool in combatting threats. Before AI helps us get closer to fully autonomous security operations, 2025 will usher in an intermediate stage of semi-autonomous security operations. This will require enough capabilities in our security workflows that are being done by the system itself, smartly, but there still needs to be a human being who can now accomplish much more with AI support. This includes being able to parse through alerts—even with false positives—to create a list of the highest priority items, enabling security teams to further triage and remediate the risks that matter most.
 
+---
+
 ## The Big Four
 
-> “Geopolitical conflicts will continue driving cyber activity around the world, creating more complexity.”
-> — Sandra Joyce, VP of Google Threat Intelligence at Google Cloud
+> _“Geopolitical conflicts will continue driving cyber activity around the world, creating more complexity.”_  
+> **Sandra Joyce**, VP of Google Threat Intelligence at Google Cloud
 
 ### Russia
 
@@ -92,6 +107,8 @@ North Korean cyber espionage operations will continue to support the country’s
 
 North Korean actors will continue to pursue revenue generation through IT workers and cryptocurrency theft. IT workers will use stolen and fabricated identities to apply for high paying software development jobs. Significantly, IT workers have also leveraged privileged access to their employers’ systems to enable malicious cyber intrusions, and that trend will continue into next year.
 
+---
+
 ## Global Forecasts
 
 ### PRC Actors Will Continue to Deploy Custom Malware Ecosystems for Embedded Systems
@@ -102,8 +119,8 @@ In 2025, PRC actors will continue to employ this strategy to deploy custom malwa
 
 ### No End in Sight: Ransomware and Multifaceted Extortion
 
-> “Without question, multifaceted extortion and ransomware will continue in 2025, likely with an increase outside the U.S.”
-> — Charles Carmakal, Mandiant CTO, Google Cloud
+> _“Without question, multifaceted extortion and ransomware will continue in 2025, likely with an increase outside the U.S.”_  
+> **Charles Carmakal**, Mandiant CTO, Google Cloud
 
 Ransomware, data theft extortion, and multifaceted extortion are, and will continue to be in 2025, the most disruptive type of cyber crime globally—both due to the volume of incidents and the scope of potential damage for each event. The impact of ransomware and extortion operations will also continue to extend far beyond the initial victim. 2024 saw significant ransomware incidents in the healthcare sector that negatively impacted patient care at hospitals, blocked patients from refilling important prescriptions, and prevented doctors from running vital laboratory tests or billing insurance.
 
@@ -161,6 +178,8 @@ Many organizations in 2025 will be starting their journeys towards adopting new 
 
 Although quantum threats likely won’t have a widespread impact next year, organizations in 2025 will need to start understanding the risks posed by quantum computing, planning their transitions to quantum-resistant solutions, inventorying where they are using cryptography, regularly rotating encryption keys, and generally staying informed of quantum developments using threat intelligence and other guidance.
 
+---
+
 ## EMEA Forecasts
 
 ### A Pivotal Year for Compliance
@@ -178,6 +197,8 @@ There is no evidence to suggest this trend will decrease in 2025. We anticipate 
 ### More Focus on Cloud Security
 
 In 2025, cloud security will be paramount for EMEA enterprises. While cloud security is a global concern, Mandiant incident response teams have observed a significant increase in EMEA investigations stemming from misconfigurations, inadequate monitoring, credential reuse, and weak security practices within unmanaged cloud environments. This trend is expected to continue next year. Organizations in the EMEA region are experiencing rapid cloud adoption, and the division of responsibilities between business owners, DevOps, and SecOps teams have a tendency to exacerbate these issues and challenges. Organizations in the EMEA region will have to prioritize cloud security to protect sensitive data and maintain customer trust. They will also need to invest in robust security solutions, implement stricter access controls, and enhance monitoring capabilities.
+
+---
 
 ## JAPAC Forecasts
 
@@ -197,10 +218,12 @@ This threat poses a heightened risk of inadvertent amplification by other local 
 
 In 2025, we anticipate seeing continued innovation by Southeast Asia cyber criminals. A new report by the United Nations Office on Drugs and Crime found that Asian crime syndicates are now integrating new service-based business models and technologies—including malware, gen AI, and deepfakes—into their operations, while establishing new underground markets and cryptocurrency solutions for their money laundering needs. According to the report, organized cyber crime in the region is evolving rapidly, and this trend will likely lead to an escalation of activity in the JAPAC region. It is critical for governments and enterprises to formalize regular intelligence-sharing to understand these tactics, techniques and procedures in greater detail, and to be able to trace it to illicit financial flows.
 
+---
+
 ## Conclusion
 
-> “2025 is going to be the year when AI moves from pilots and prototypes into large-scale adoption.”
-> — Phil Venables, VP, TI Security & CISO, Google Cloud
+> _“2025 is going to be the year when AI moves from pilots and prototypes into large-scale adoption.”_  
+> **Phil Venables**, VP, TI Security & CISO, Google Cloud
 
 In 2025, the cybersecurity industry will continue to innovate, while organizations will face evolving challenges across the vast threat landscape.
 
@@ -212,4 +235,48 @@ In 2025, organizations must prioritize a proactive and comprehensive approach to
 
 The Cybersecurity Forecast 2025 report aims to equip organizations with the insights and knowledge they need to navigate this complex landscape. By understanding evolving trends and potential threats, organizations can strengthen their defenses, and build a more resilient future.
 
-![Image of report contributors list]
+SPECIAL REPORT: MANDIANT M-TRENDS 2023 EMBARGO
+
+---
+
+## Contributors
+
+The Cybersecurity Forecast 2025 report features insights from our security leaders:
+
+- **Charles Carmakal** — Mandiant CTO, Google Cloud
+- **Sandra Joyce** — VP of Google Threat Intelligence at Google Cloud
+- **Sunil Potti** — VP/GM, Google Cloud Security
+- **Phil Venables** — VP, TI Security & CISO, Google Cloud
+
+Many other security experts contributed to the report:
+
+- Tufail Ahmed
+- Dan Black
+- Sarah Bock
+- Michelle Cantos
+- Casey Charrier
+- Anton Chuvakin
+- Jamie Collier
+- Jennifer Fernick
+- Felix Gröbert
+- David Grout
+- Adrian Hernandez
+- Cris Brafman Kittner
+- Steve Ledzian
+- Yihao Lim
+- Keith Lunden
+- David Mainor
+- John McGuiness
+- Luke McNamara
+- Matthew McWhirt
+- Jens Monrad
+- Mathew Potaczek
+- Mike Raggi
+- Kelli Vanderlee
+- Alden Wahlstrom
+- Robert Wallace
+- Jess Xia
+
+For more information, visit cloud.google.com
+
+SPECIAL REPORT: MANDIANT M-TRENDS 2023 EMBARGO
