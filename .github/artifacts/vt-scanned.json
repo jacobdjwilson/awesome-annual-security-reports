@@ -8,5 +8,10 @@
     "status": "completed",
     "file": "Annual Security Reports/2021/Proofpoint-State-of-the-Phish-2021.pdf",
     "verdict": "Clean"
+  },
+  "69ea49dfe7b0bf2f10ac3278a3a0e40739bd9549aa67a56ebfb6f73f36c31cb8": {
+    "status": "completed",
+    "file": "Annual Security Reports/2013/NIST-ITL-Annual-Report-2013.pdf",
+    "verdict": "Clean"
   }
 }
