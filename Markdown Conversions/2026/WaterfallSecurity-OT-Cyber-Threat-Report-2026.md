@@ -1,4 +1,12 @@
-# OT-Cyber-Threat-Report 2026
+# OT Cyber Threat Report 2026
+
+Waterfall / ICS STRIVE 2026  
+OT Cyber Threat Report  
+
+## Authors
+- Andrew Ginter, VP Industrial Security, Waterfall Security Solutions
+- Gregory Hale, Editor & Founder, Industrial Safety and Security Source, ICS STRIVE
+- Monique Walhof, Consultant, Industrial Safety and Security Source, ICS STRIVE
 
 ## Table of Contents
 - [Key Takeaways](#key-takeaways)
@@ -22,60 +30,80 @@
 
 ## Key Takeaways
 
-- **Cyber incidents causing physical impacts in heavy industry and critical infrastructure dropped by 25% in 2025**, falling from 76 publicly recorded cases in 2024 to 57. Most of this decline appears due to an overall reduction in ransomware attacks because of a number of factors that are not likely to continue to “hold back the tide” – expect consequential breaches to start increasing again in 2026-2027.
-- **Nation-state and hacktivist attacks doubled**, with most such attacks targeting critical infrastructures. Particularly noteworthy attacks in 2025 included:
-    - **Jaguar / LandRover**: The most costly production shutdown in almost a decade.
-    - **Collins Aerospace**: A crippled software-based system caused flight cancellations and delays for weeks – highlighting the need for rapid recovery or manual fall-backs for critical systems operated and managed by third parties.
-    - **Grounded and mis-directed ships**: Highlighted the need for multiple independent checks on important external inputs, such as GPS signals.
-    - **Polish distributed generation**: A near miss, because the lights stayed on, an example of the Russian nation state targeting European critical infrastructures, and a cautionary tale about “bricking” control equipment.
-- **Database of “unhackable” mitigations**: The Cyber-Informed Engineering (CIE) initiative released a database of engineering-grade mitigations for cyber attacks, many of which deserve the title “unhackable,” and Secure OT connectivity principles.
-- **The UK NCSC and partners released innovative guidance** that recognizes network segmentation and especially “unhackable” hardware-enforced segmentation as a key part of OT security, not just a compensating measure. These tools are powerful ways to address today’s automation and cyber realities.
-- **Reality is that we continue deploying more automation** and increasingly connect that automation to the Internet and to cloud-based services, steadily increasing our risk profile. All this is in the context of legal and ethical obligations to make reasonable decisions when those decisions affect other people’s safety, critical infrastructures, or large amounts of shareholders’ money.
-- **Experts and authorities increasingly recommend** that reasonable defenses include engineering-grade, hardware-enforced, deterministic protections such as unidirectional gateway technology and hardware-enforced remote access, in addition to IT-grade software protections.
+Cyber incidents causing physical impacts in heavy industry and critical infrastructure dropped by 25% in 2025, falling from 76 publicly recorded cases in 2024 to 57. Most of this decline appears due to an overall reduction in ransomware attacks because of a number of factors that are not likely to hold back the tide – expect consequential breaches to start increasing again in 2026-2027.
 
-In this time of costly breaches and nation states targeting critical infrastructures, OT security teams cannot assume that cyber attacks with physical consequences will somehow simply go away, nor that software-only defenses are adequate, given the sophistication of today’s ransomware, hacktivist and nation-state attacks. To this end, noteworthy developments in cybersecurity practice include:
-- New advice from multiple agencies that encourages hardware-enforced protection and hardware-enforced remote access for OT systems.
+Nation-state and hacktivist attacks doubled, with most such attacks targeting critical infrastructures. Particularly noteworthy attacks in 2025 included:
+
+- **Jaguar / LandRover**: The most costly production shutdown in almost a decade
+- **Collins Aerospace**: A crippled software-based system caused flight cancellations and delays for weeks – highlighting the need for rapid recovery or manual fall-backs for critical systems operated and managed by third parties
+- **Grounded and mis-directed ships**: Again highlighted the need for multiple independent checks on external inputs, such as GPS signals
+- **Polish distributed generation**: A near miss, because the lights stayed on, an example of the Russian nation state targeting European critical infrastructures, and a cautionary tale about “bricking” control equipment.
+
+In this time of costly breaches and nation states targeting critical infrastructures, OT security teams cannot assume that cyber attacks with physical consequences will somehow simply go away, nor that software-only defenses are adequate, given the sophistication of today’s ransomware, hacktivist and nation-state attacks. To this end, noteworthy developments in recent cybersecurity practice include:
+
+- New advice from multiple agencies encourages hardware-enforced protection and hardware-enforced remote access for OT systems,
 - An update on Cyber-Informed Engineering, the most important new development in OT security in 20 years.
+
+### Database of "Unhackable" Mitigations
+- The Cyber-Informed Engineering (CIE) initiative released a database of engineering-grade mitigations for cyber attacks, many of which deserve the title "unhackable," and Secure OT connectivity principles continue to "hold back the tide" – expect innovative guidance that recognizes network segmentation and especially "unhackable" hardware-enforced segmentation as a key part of OT security, not just a compensating measure.
+- These tools are powerful ways to address today’s automation and cyber realities. Reality is that we continue deploying more automation and increasingly connect that automation to the Internet and to cloud-based services, steadily increasing our risk profile. All this is in the context of legal and ethical obligations to make reasonable decisions when those decisions affect other people’s safety, critical infrastructures, or large amounts of shareholders’ money.
+- Experts and authorities increasingly recommend that reasonable defenses include engineering-grade, hardware-enforced, deterministic protections such as unidirectional gateway technology and hardware-enforced remote access, in addition to IT-grade software protections.
 
 ---
 
 ## Introduction & Methodology
 
-This report documents cyber attacks with physical consequences. Security teams seeking funding for cybersecurity initiatives and business decision makers responsible for allocating such funding each need accurate data as to what breaches have occurred in the past, because those failures of security programs influence what attacks should be considered credible threats in the future. Planning for the future is especially important and especially challenging for industrial operations where every change poses a threat of errors and omissions that might materially impair safe, reliable or efficient/profitable physical operations. Given that changes to such operations can take place only at long intervals, it is especially important to use today’s threat data and trends to anticipate the threat environment our defenses will face towards the end of their deployment life cycle.
+This report documents cyber attacks with physical consequences. Security teams seeking funding for cybersecurity initiatives and business decision makers responsible for allocating such funding each need accurate data as to what breaches have occurred in the past, because those failures of security programs influence what attacks should be considered credible threats in the future. Planning for the future is especially important and especially challenging for industrial operations where every change poses a threat of errors and omissions that might materially impair safe, reliable or efficient / profitable physical operations. Given that changes to such operations can take place only at long intervals, it is especially important to use today’s threat data and trends to anticipate the threat environment our defenses will face towards the end of their deployment life cycle.
 
 In 2025, there were 57 breaches that met the strict inclusion criteria for this report: a surprising 25% decline over 2024.
 
 In support of understanding today’s threats and projecting tomorrow’s, this report documents attacks that breached cybersecurity defenses targeting physical operations and infrastructure that:
-- Are deliberate in nature – not errors and omissions, and neither equipment nor software failures.
-- Produce physical consequences including production delays or outages, equipment damage, environmental disasters, injuries, or casualties – not just data theft or computer system clean-up costs.
-- Impact manufacturing, building automation, heavy industry, and critical industrial infrastructures, including the transportation of people and goods.
-- Are found in public – not private – disclosures.
+
+- Are deliberate in nature – not errors and omissions, and neither equipment nor software failures,
+- Produce physical consequences including production delays or outages, equipment damage, environmental disasters, injuries, or casualties – not just data theft or computer system clean-up costs,
+- Impact manufacturing, building automation, heavy industry, and critical industrial infrastructures, including the transportation of people and goods,
+- Are found in public – not private – disclosures, and
 - Which the research team agrees meet the above criteria with a high degree of confidence.
 
 This report’s data is therefore a conservative estimate, certainly under-reporting actual attack activity. Many incidents were excluded due to disclosure restrictions, insufficient confidence in authenticity, or lack of access to reports in certain languages or regions. Additionally, numerous attacks very likely went unreported or were deemed unreliable in censored conflict zones.
 
-*The incident database and numbers in this report regarding breaches and outages are certain to be an underestimate.*
+> The incident database and numbers in this report regarding breaches and outages are certain to be an underestimate.
 
 Any reader wishing to verify the year’s data can consult Appendix A, which contains the full data set of all incidents the research team counted in 2025. Readers interested in data from previous years should consult Appendix A in the 2025 Waterfall / ICS STRIVE OT Cyber Threat Report.
 
-**Note – why include IT incidents?** A large fraction of ransomware attacks impair only IT assets, and still delay, shut down, or otherwise impact physical industrial operations. Businesses with physical operations need to know what cyber threats can impact their industrial operations, no matter which kinds of computers are targeted. To this end, this report documents all cyber attacks/breaches that impacted physical operations, no matter which cyber assets were compromised or impaired in the attack. For interested readers, the Section *How Operations Were Impacted* details how IT breaches most often impair physical operations.
+> Note – why include IT incidents? A large fraction of ransomware attacks impair only IT assets, and still delay, shut down, or otherwise impact physical industrial operations. Businesses with physical operations need to know what cyber threats can impact their industrial operations, no matter which kinds of computers are targeted. To this end, this report documents all cyber attacks / breaches that impacted physical operations, no matter which cyber assets were compromised or impaired in the attack. For interested readers, the Section How Operations Were Impacted details how IT breaches most often impair physical operations.
+
+Note – why track these industries and not others? This report includes industries that are in a sense related. When a cyber attack shuts down a pharmaceuticals plant, or an electronics factory, or even a shipping line, other industries take note. Power plants, refineries and pipeline operators for example, tend to track incidents in pharmaceuticals, discrete manufacturing, and shipping, because they see themselves as similar kinds of targets. The same is generally not true for hospitals, telephone networks or department store chains. Hospitals and retail stores are set up and defended very little like industrial operations are, and in telephone networks, information is the asset, not physical equipment.
+
+Finally, this report includes not only a discussion of breaches and trends, but an overview of defensive highlights in 2025, including:
+- New advice from multiple agencies encourages hardware-enforced protection and hardware-enforced remote access for OT systems,
+- An update on Cyber-Informed Engineering, the most important new development in OT security in 20 years.
+
+As the threat environment evolves, new kinds of attacks are becoming credible threats that must be addressed in security programs. This report highlights both the attacks and the new ways those attacks are being addressed.
+
+This report is a cooperative effort between Waterfall Security Solutions and the ICS STRIVE OT incident repository. We hope you find the material useful.
+
+**Summary**: This report tracks cyber attacks that caused physical consequences in heavy industry and critical industrial infrastructure in the public record. We include attacks that affect only IT assets, so long as they have physical / production consequences, because physical consequences from all cyber causes are of concern to owners and operators. We track these industries and not others, because this family of industries tends to have similar control system technologies, and so see breaches of each other’s sites as significant threat intensity data points.
 
 ---
 
 ## OT Incident Macro Trends
 
-In 2025, there were 57 breaches that met the strict inclusion criteria for this report. As can be seen in Figure 1, this is a 25% reduction over the 76 comparable breaches in 2024. In the sections and discussion that follow, we explore aspects of these attacks and pull these aspects together into conclusions in Section *Analysis – Where Did the Attacks Go?*
+In 2025, there were 57 breaches that met the strict inclusion criteria for this report. As can be seen in Figure (1), this is a 25% reduction over the 76 comparable breaches in 2024. In the sections and discussion that follow, we explore aspects of these attacks and trends and pull these aspects together into conclusions in the Section Analysis – Where Did the Attacks Go?
 
-![Breaches with physical consequences (2010-2025)]
+![Figure 1: Breaches with physical consequences (2010-2025)]
 
-As is evident in the figure, cyber breaches with physical consequences increased markedly at the turn of the decade. The single biggest reason for the step function change was ransomware. Figure 2 shows that the single type of adversary responsible for a clear majority of attacks in the years 2019-2024 is ransomware criminal groups. It is also the conclusion of the research team that in the years 2022-2025, the majority of “Unknown” incidents are also ransomware, because:
+As is evident in the figure, cyber breaches with physical consequences increased markedly at the turn of the decade. The single biggest reason for the step function change was ransomware. Figure (2) shows that the single type of adversary responsible for a clear majority of attacks in the years 2019-2024 is ransomware criminal groups. It is also the conclusion of the research team that in the years 2022-2025, the majority of “Unknown” incidents are also ransomware, because:
+
 - Hacktivists generally mean to make a point with the victim and with the public, and so generally make public claims about their attacks, successful or not. No such claims were made for attacks in the “Unknown” category.
 - Nation state attacks are still comparatively infrequent.
 - For most “Unknown” attacks, there are no details in the public record contradicting the ransomware theory.
 
+![Figure 2: Attack distribution by threat actor]
+
 It is therefore reasonable to conclude the distribution of attack types in the “Unknown” category is similar to the distribution of known attacks, the majority of which are ransomware. In the remainder of this report, we dive deeper into these numbers, looking at what they mean for industrial defenses.
 
-*A clear majority of cyber attacks with physical consequences are the result of ransomware criminal groups.*
+> A clear majority of cyber attacks with physical consequences are the result of ransomware criminal groups.
 
 **Summary**: Attacks that meet our inclusion criteria are down 25% in 2025 over 2024. Most of these breaches, as in previous years, are ransomware. It is reasonable to expect that even most of the “unknown” threat actor attacks are ransomware. That said, hacktivist and nation-state attacks that deliberately bring about physical consequences increased in 2025 over 2024, despite the overall breach reduction.
 
@@ -83,26 +111,35 @@ It is therefore reasonable to conclude the distribution of attack types in the �
 
 ## Nation States & Hacktivists
 
-![Nation-state and hacktivist attacks doubled in 2025]
+![Figure 3: Nation-state and hacktivist attacks]
 
 Nation-state and hacktivist attacks doubled in 2025 over 2024, with 5 of the 14 attacks clearly linked to the kinetic conflict which is the Russian invasion of Ukraine. This report tracks hacktivists and nation states together, because unlike many ransomware criminals, both hacktivists and nation states deliberately try to bring about physical consequences. In addition, distinguishing between hacktivists and nation states has become difficult. In principle:
-- **Hacktivists** – are amateurs. Hacktivists are not paid to carry out attacks, nor do they profit financially from such attacks. Hacktivists thus generally have no money to buy, nor the organization nor infrastructure needed to build their own sophisticated tools, and again, have no organization that can coordinate the efforts of large numbers of attackers.
+
+- **Hacktivists** – are amateurs not paid to carry out attacks, nor do they profit financially from such attacks. Hacktivists thus generally have no money to buy, nor the organization nor infrastructure needed to build their own sophisticated tools, and again, have no organization that can coordinate the efforts of large numbers of attackers.
 - **Nation States** – are professional attackers, employed by armies, intelligence agencies and other government agencies. These adversaries generally have the money to buy powerful tools, have development teams able to create their own powerful attack tools, and have a strict organizational structure able to coordinate the activities of large numbers of attackers.
 
-These distinctions have blurred in recent years. Increasingly, hacktivist groups with limited organizations or budgets have at least the blessing, if not other support from nation states, when those hacktivists act to support nation-state goals and objectives in a physical/kinetic conflict.
+These distinctions have blurred in recent years. Increasingly, hacktivist groups with limited organizations or budgets have at least the blessing, if not other support, from nation states, when those hacktivists act to support nation-state goals and objectives in a physical / kinetic conflict.
 
-**Significant breaches by hacktivists and nation states in 2025 included:**
+Significant breaches by hacktivists and nation states in 2025 included:
 - **Iran’s air defenses** – an American military cyber attack prevented Iran from launching surface-to-air missiles when American warplanes entered Iranian airspace, as part of a mission to bomb nuclear weapons development sites.
-- **Russia’s Mercury / VetIS / Saturn systems** – for tracking the movement of animal products for human consumption were twice crippled by DDoS attacks. Some Russian meat-packing plants that needed these raw products to continue receiving meat products had automated their operations to the degree that a manual fall-back was impossible. Processing animal products stopped at many Russian plants for the multi-day duration of the attack.
+- **Russia’s Mercury / VetIS / Saturn systems** – for tracking the movement of animal products for human consumption – were twice crippled by DDoS attacks. Some Russian meat-packing plants needed these raw products to switch to manual / printed certificate processing to continue receiving meat, but other plants had automated their operations to the degree that a manual fall-back was impossible. Processing animal products stopped at many Russian plants for the multi-day duration of the attack.
 - **Drones** – could not be converted by the Russian military from consumer firmware to military firmware for use in the invasion of Ukraine for several days because a Ukrainian cyber attack impaired the computers used to reprogram the drones at over 400 military sites.
-- **MSC Antonia** – a container ship, ran aground in the Red Sea due to nation state GPS jamming.
+- **MSC Antonia** – a container ship, ran aground in the Red Sea due to nation-state GPS jamming.
 
-**Recommendation (1)**: When nation-state attacks on a facility are credible threats, from nation-state-backed hacktivists to more sophisticated and well-resourced adversaries, defenders should include a large margin for error in the strength of defensive capabilities, because nation states are almost certainly more capable than their historic attacks indicate.
+Two lesser incidents targeted infrastructure – a Norwegian dam was mis-operated for a period of hours, and a small Polish hydro power plant suffered a short outage, both apparently “low tech” Internet-exposed industrial automation.
 
-**Summary**: Nation-state and hacktivist attacks that caused physical consequences doubled in 2025. Victims included Iranian air defense, Russian civilian infrastructure, Russian military infrastructure, as well as shipping infrastructure. Given that nation-state adversaries try to be efficient, we should expect them to use the least costly attack tools in their arsenal that will achieve each mission objective. Recommendation summary:
-1. Defenders should include a large margin for error when estimating nation-state adversary attack capabilities.
+A serious near miss occurred on December 29, 2025. A coordinated Russian nation-state attack targeted Polish Distributed Energy Resources (DER) including wind and solar sites. See the Section Polish Energy Sector Attack.
 
-*Nation states can be cost conscious, using as little of their attack capabilities as needed to achieve a specific mission objective – be confident they have materially greater capabilities in reserve than they have yet revealed in public.*
+As significant as these developments currently seem, defenders are cautioned that reality is certainly worse than these appearances. Even nation-state militaries, intelligence agencies and other highly capable adversaries routinely take measures to control costs. When an attacker uses a costly, sophisticated capability, such as a zero-day or a new, powerful attack tool, that attack “ages” quickly. Defenders develop security updates and patch the zero days, develop anti-virus signatures and models to recognize and quarantine the new attack tools and patterns, rendering the sophisticated, expensive attack rapidly less effective over time. Thus, when a nation-state-backed team is given an attack objective, we should expect that team to employ the cheapest, simplest tools and techniques that will accomplish the mission objective. In short, is reasonable to expect that nation adversaries have materially greater capabilities available to them than have been revealed in public thus far.
+
+> Nation states can be cost-conscious, using as little of their attack capabilities as needed to achieve a specific mission objective – be confident they have materially greater capabilities in reserve than they have yet revealed in public.
+
+### Recommendation (1)
+When nation-state attacks on a facility are credible threats, from nation-state-backed hacktivists to more sophisticated and well-resourced adversaries, defenders should include a large margin for error in the strength of defensive capabilities, because nation states are almost certainly more capable than their historic attacks indicate.
+
+Despite a reputation for unlimited capability, powerful tools for addressing even nation-state threats are emerging. The Section Defensive Developments describes approaches to cybersecurity that are effective at eliminating entire threat vectors, even for very capable and sophisticated adversaries.
+
+**Summary**: Nation-state and hacktivist attacks that caused physical consequences doubled in 2025. Victims included Iranian air defense, Russian civilian infrastructure, Russian military infrastructure, as well as shipping infrastructure. Given that nation-state adversaries try to be efficient, we should expect them to use the least capable, least costly attack tools in their arsenal that will achieve each mission objective. 
 
 ---
 
@@ -110,9 +147,23 @@ These distinctions have blurred in recent years. Increasingly, hacktivist groups
 
 Historically, the USA, Germany and Canada have rotated through the “top 3” victim geographies. In part this is due to these regions and economies being heavily automated and comparatively wealthy, thus hosting more targets and more lucrative targets for ransomware attacks. In part it is due to these nations serving as head offices of industrial businesses – when cyber attacks target multiple geographies, this report records the impacted geography as the country hosting the head office for the affected business.
 
-![Impacted Industries]
+![Figure 5: Impacted Industries]
 
-In Figure (5) we see that in 2025, discrete manufacturing and transportation were tied.
+In Figure (5) we see that in 2025, discrete manufacturing and transportation were tied...
+
+---
+
+## Appendix A – 2025 Data Set
+
+*(Full data set of all incidents counted in 2025 as per original document structure)*
+
+---
+
+## Appendix B – Sources
+
+*(List of public disclosures, incident repositories, and research citations)*
+
+[^1]: Footnote content referenced within the technical text.
 
 ---
 
