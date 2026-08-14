@@ -1,4 +1,13 @@
-# Ransomware Risk Report 2024
+# Ransomware Risk Report
+
+**Organization:** Semperis  
+**Report Title:** Ransomware-Risk-Report  
+**Year:** 2024  
+
+> “We must assume an ever-present state of threat...You cannot keep ransomware off the field. It’s like trying to fence a field to keep off water. The water is an ever-present and resourceful foe.”  
+> **Chris Inglis**  
+> Strategic Advisor, Semperis  
+> First US National Cyber Director  
 
 ## Table of Contents
 - [Executive Summary](#executive-summary)
@@ -10,12 +19,14 @@
 - [The True Cost of Ransomware Extends Beyond Payments](#the-true-cost-of-ransomware-extends-beyond-payments)
 - [Prioritizing Resilience: Identity Threat Detection and Response](#prioritizing-resilience-identity-threat-detection-and-response)
 - [Future Challenges and Next Steps](#future-challenges-and-next-steps)
+- [Methodology](#methodology)
+- [About Semperis](#about-semperis)
 
 ---
 
 ## Executive Summary
 
-Ransomware, once a sporadic menace, has evolved into an unrelenting adversary. Attacks are no longer isolated incidents; they occur incessantly.
+Ransomware, once a sporadic menace, has evolved into an unrelenting adversary. Attacks are no longer isolated incidents; they occur incessantly. 
 
 Criminal groups orchestrate multiple strikes in rapid succession, exploiting vulnerabilities across organizations. Ransomware infiltrates diverse sectors — healthcare, IT/telecom, education, utilities, and more — leaving chaos in its wake. Critical systems, including Microsoft Active Directory, have become a top attack target.
 
@@ -40,38 +51,61 @@ Ransomware transforms business landscapes, leaving scars that linger. Businesses
 
 IT and security teams must communicate the true risk of ransomware to business leaders to gain Board support for cybersecurity efforts — a top concern for study participants. This report reveals why Board-level commitment is essential: Cybersecurity is no longer simply an IT concern but a strategic imperative.
 
+**CONTRIBUTING EXPERTS**
+- **Mickey Bresman:** Semperis CEO
+- **Simon Hodgkinson:** Semperis Strategic Advisor, former bp CISO
+- **Marty Momdjian:** Semperis Executive VP of Services
+- **Sean Deuby:** Semperis Principal Technologist (North America)
+- **Jeff Wichman:** Semperis Director of Incident Response
+- **Chris Inglis:** Semperis Strategic Advisor, former US National Cyber Director
+- **Guido Grillenmeier:** Semperis Principal Technologist (EMEA)
+
 ---
 
 ## The Key to Operational Resilience: Coming to Terms with the Never-Ending Breach
 
 In-the-trenches IT and security teams disclose serious cyberattack consequences that go under-reported and unacknowledged by business leaders.
 
+> “Paying ransom is not doing anyone any good. The cost of what you pay to a ransomware group is not where the damage will end. And certain attacks aren’t money-driven; rather they aim to cause chaos and disruption.”  
+> **Mickey Bresman**  
+> CEO, Semperis  
+
 Enterprise leaders across industries and around the globe recognize ransomware as a critical threat. However, many still underestimate the full scope of its damage.
 
-Reports of high-profile ransomware attacks are now a media staple. Yet our survey reveals that the frequency with which companies are successfully attacked — not once per year, but multiple times within the same year — is not widely acknowledged. Neither are the long-term impacts, including closures, layoffs, collateral loss of revenue, and cancellation of insurance.
+Reports of high-profile ransomware attacks are now a media staple. Yet our survey reveals that the frequency with which companies are successfully attacked — not once per year, but multiple times within the same year — is not widely acknowledged. Neither are the long-term impacts, including closures, layoffs, collateral loss of security professionals from global organizations across the United States, the United Kingdom, France, and Germany. We surveyed enterprises across multiple industries, including education, finance, healthcare, manufacturing and utilities, IT and telecommunications, and travel and transportation. This report summarizes our study responses, collected in the first half of 2024, and provides expert insights into the implications of ransomware attacks for global enterprise IT, security, and risk-management professionals.
 
 As a result, security, technology, and business leaders can miscalculate the true cost of ransomware, leaving them unequipped to build decisive operational resilience in response to never-ending attacks.
 
 At Semperis, our mission is to be a force for good. As part of this mission, our Breach Preparedness and Response team has seen first-hand the devastating effects of ransomware and the ways in which attackers exploit organizations’ identity systems — Microsoft Active Directory in most cases — to gain leverage, disrupt business, and plant persistent footholds.
 
-To provide a clearer understanding of the prevalence, mechanism, and implications of ransomware attacks, Semperis conducted a detailed study of 900 IT and security professionals from global organizations across the United States, the United Kingdom, France, and Germany. We surveyed enterprises across multiple industries, including education, finance, healthcare, manufacturing and utilities, IT and telecommunications, and travel and transportation. This report summarizes our study responses, collected in the first half of 2024, and provides expert insights into the implications of ransomware attacks for global enterprise IT, security, and risk-management professionals.
+To provide a clearer understanding of the prevalence, mechanism, and implications of ransomware attacks, Semperis conducted a detailed study of 900 IT and security professionals from global organizations across the United States, the United Kingdom, France, and Germany.
 
 We encourage you to share this information with your IT and security teams. Most important, share these findings with your organization’s business leadership — and build alignment around the actions your organization must take to ensure operational resilience in the face of ransomware’s never-ending threat.
 
-> “Paying ransom is not doing anyone any good. The cost of what you pay to a ransomware group is not where the damage will end. And certain attacks aren’t money-driven; rather they aim to cause chaos and disruption.” — **Mickey Bresman, CEO, Semperis**
+Companies are suffering successful ransomware attacks multiple times within the same year — resulting in closures, layoffs, loss of revenue and customer trust, and cancelation of cyber insurance.
 
 ---
 
 ## Key Findings
 
-Attacks are pervasive, successful — and lucrative.
-
-- **Ransomware attacks aren’t a one-time threat.** 74% of respondents that were victimized by ransomware within the past 12 months were attacked multiple times, many within the span of a week.
-- **Few companies see an alternative to payment.** 78% of targeted organizations paid the ransom — 72% paid multiple times. A whopping 32% paid a ransom 4 times or more; in Germany, this figure rose to nearly 50%.
-- **Companies are not prepared to beat ransomware.** 87% of attacks disrupted the business. And for 16% of those who paid ransom, recovering their systems was a matter of life or death.
+- **Attacks are pervasive, successful — and lucrative.** 74% of respondents that were victimized by ransomware within the past 12 months were attacked multiple times, many within the span of a week.
+- **Companies are not prepared to beat ransomware.** 78% of targeted organizations paid the ransom — 72% paid multiple times. A whopping 32% paid a ransom 4 times or more; in Germany, this figure rose to nearly 50%.
+- **Few companies see an alternative to payment.** 87% of attacks disrupted the business. And for 16% of those who paid ransom, recovering their systems was a matter of life or death.
 - **Paying attackers does not solve the larger problem.** 35% of organizations that paid ransom failed to receive decryption keys or were unable to recover their files and assets. In addition, many suffered long-term collateral damage even if they paid.
 
-![Chart showing 83% of responding organizations were targeted by ransomware in the past 12 months, with breakdowns by industry and country.]
+**83% of responding organizations were targeted by ransomware in the past 12 months**
+- **Education:** 82%
+- **Finance:** 88%
+- **Healthcare:** 85%
+- **Manufacturing/Utilities:** 83%
+- **IT/Telecom:** 82%
+- **Travel/Transportation:** 80%
+
+*Regional Breakdown:*
+- **US:** 85%
+- **UK:** 85%
+- **France:** 77%
+- **Germany:** 82%
 
 ---
 
@@ -85,7 +119,32 @@ Ransomware is highly coordinated, strategically timed, and deeply embedded throu
 
 The “assume breach” mindset has been much discussed recently. Our study uncovers a new prerequisite to resilience: assume constant breach. Organizations must be on continual alert, always ready for the success of not one, but multiple breaches.
 
-> “We must assume an ever-present state of threat. This is not just the notorious cases that we hear about every quarter or so. This is happening all day, every day, to a range of companies.” — **Chris Inglis, Strategic Advisor, Semperis, First US National Cyber Director**
+Organizations must understand that cybersecurity has moved beyond a binary, “secure or not secure” approach, says Semperis Strategic Advisor Chris Inglis, former US National Cyber Director and former Deputy Director of the NSA.
+
+> “We must assume an ever-present state of threat. This is not just the notorious cases that we hear about every quarter or so. This is happening all day, every day, to a range of companies.”  
+> **Chris Inglis**
+
+> “Cyber threats are persistent: always on the field, always in play,” says Inglis. “The cost of entry for attackers is too low, the potential rewards too high. You cannot keep ransomware off the field. It’s like trying to fence a field to keep off water. The water is an ever-present and resourceful foe.”
+
+> “When multiple attacks happen, they tend to happen in quick succession. These data points suggest that multiple criminal gangs are leveraging organizations’ vulnerabilities to detonate a second or third malicious attack — in some cases, simultaneously.”  
+> **Simon Hodgkinson**  
+> Strategic Advisor, Semperis  
+> Former bp CISO  
+
+### Key Takeaways
+- **Initial attacks** were most likely to succeed in France; **subsequent attacks** were most successful in Germany.
+- **Initial attacks** were most successful in the education and healthcare sectors; **subsequent attacks** were most likely to succeed in the IT/telecom and travel/transportation industries.
+- Most companies that saw multiple attacks experienced **secondary attacks** within the span of a week. Healthcare organizations were more likely to suffer multiple simultaneous attacks.
+
+### By the Numbers
+- **74%** of organizations that were attacked were targeted more than once.
+- *Country breakdown for multiple attacks:* US (70%), UK (83%), France (61%), Germany (78%), Travel/Transportation (85%).
+- *Of organizations that were attacked multiple times:*
+  - **26%** were attacked simultaneously
+  - **28%** were attacked the same day
+  - **37%** were attacked the same week
+  - **8%** were attacked the same month
+  - **35%** of healthcare organizations were attacked simultaneously
 
 ---
 
@@ -97,7 +156,29 @@ The high-profile Colonial Pipeline attack in May 2021 still stands out as one of
 
 Since then, we’ve seen widespread disruption caused by attacks on healthcare (Change Healthcare and Ascension Health in 2024), IT/telecom (Frontier Communications in 2024), and education (Los Angeles Unified School District and Minneapolis Public School District in 2023).
 
-> “Overall, complexity is rising, and you can only do so much in a day. Cloud computing has not lessened the burden or reduced operational complexity. You have to assume that malicious activity is happening in your network, and you need the ability to find and undo it.” — **Guido Grillenmeier, Principal Technologist (EMEA), Semperis**
+> “Overall, complexity is rising, and you can only do so much in a day. Cloud computing has not lessened the burden or reduced operational complexity. You have to assume that malicious activity is happening in your network, and you need the ability to find and undo it.”  
+> **Guido Grillenmeier**  
+> Principal Technologist (EMEA), Semperis  
+
+The industries included in our survey rely on a hybrid IT infrastructure and a range of devices. Their networks serve users working on external laptops and mobile devices as well as on premises. And many incorporate IoT devices and SCADA systems that run technologies such as life-saving equipment in hospitals, manufacturing equipment on shop floors, or pipeline monitoring devices in the field.
+
+These wide-ranging systems create a broad attack surface that offers entry through embedded operating systems, outdated technology that hasn’t had regular security updates, and long-forgotten backdoors. Critical infrastructure — such as identity systems like Active Directory and Entra ID — are primary targets that enable lateral movement, privilege escalation, data exfiltration, and ransom of the entire network.
+
+### Key Takeaways
+- Most ransomware attacks were successful in causing **widespread business and data disruption**.
+- Critical infrastructure and services — such as healthcare, utilities, communications, and transportation — continue to be prime targets.
+
+### By the Numbers
+- **87%** of attacks caused business disruption, even for those that paid ransom.
+- **37%** suffered data loss.
+- **33%** had to take all systems offline.
+- *Disruption by Industry:*
+  - **Education:** 25% data loss / 27% offline
+  - **Finance:** 43% data loss / 34% offline
+  - **Healthcare:** 40% data loss / 29% offline
+  - **Manufacturing/Utilities:** 42% data loss / 30% offline
+  - **IT/Telecom:** 42% data loss / 40% offline
+  - **Travel/Transportation:** 27% data loss / 24% offline
 
 ---
 
@@ -107,9 +188,62 @@ Despite widespread adoption of cybersecurity and disaster recovery planning, man
 
 According to our survey, most respondents maintained some form of backup, including “tamper-proof” security-based backups and general-purpose data protection systems. Yet 78% of companies that suffered a ransomware attack paid the ransom rather than refuse and attempt recovery.
 
+> “Once you understand how your recovery will play out in real time, you can rework and validate your recovery plan until you have an accurate picture of the required effort. Then you can present that information to your Board with confidence. Without that confidence, you put your leaders in a position where it’s very hard to avoid paying ransom. But with accurate recovery information — you give them the power to say no to attackers.”  
+> **Mickey Bresman**
+
 Our study reveals a flaw in many cybersecurity models: Only about one-quarter of respondents maintained dedicated, Active Directory–specific backup systems. As Gartner has noted, adding a dedicated tool for backup and recovery of Active Directory accelerates and simplifies recovery from cyberattacks.[^1] Without an AD-specific recovery plan and the tools to implement it, organizations are at risk of revenue losses, downtime, reputational damage, and litigation while they scramble to recover the Tier 0 infrastructure that users and applications depend on and restore access to the services that power their business operations.
 
-[^1]: Simpson, Nik. “How to Protect Backup Systems from Ransomware Attacks.” Gartner Research. Sept. 21, 2021. https://www.gartner.com/en/documents/4005993.
+Without the ability to rapidly recover their identity systems — and thus, their business operations — companies might feel they have little choice other than to pay their attackers. Many respondents noted a desire to return to normal business as quickly as possible as a reason for paying ransom. Others, especially those in the IT/telecom industry, paid because they had cyber insurance to defray the costs. Still others considered the threat to patients, customers, their business, or their reputation to be worth the price of ransom.
+
+Unfortunately, our experts note that this reasoning is likely to increase, rather than decrease, the likelihood of future attacks.
+
+> “There is some degree of confidence on the part of ransomware negotiators that if you deal in good faith with the attacker, they have an incentive to deliver what they promised,” explains Chris Inglis. “But proving to be a ’successful’ victim is a dangerous thing.”
+
+> “Ransomware attacks today are often the sum of activities by a loose confederation of groups,” Inglis says. “You’re going to need to negotiate with more than one of them to find your way out of it. Any company that thinks, ‘I’ll just pay my way out,’ is setting themselves up for a harder ride than they might have imagined.”
+
+Jeff Wichman, Semperis Director of Incident Response, agrees. Wichman leads the company’s Breach Preparedness and Response team, helping scores of organizations around the world recover their systems and protect their business against the onslaught of aggressive cyberattacks.
+
+> “No organization can pay their way out of ransomware,” he says. “There are no ‘good’ criminals. Nearly every time, the hackers are at an advantage because the victims are either trying to prevent the release of sensitive data or regain access to their systems. Yet there are countless examples of companies paying ransoms only to have the hackers release the data anyway. Organizations are better served putting the money into the security of their infrastructure and applying the least amount of privilege needed to work.”
+
+> “All companies are at risk of multiple ransom demands. The first ransom might be to regain access to your systems; another — or multiple others — might be to prevent your data from being leaked. Regardless, everything relates to the identity systems — the core of access. Once an attacker gets Tier 0 access, you have limited time to protect your remaining infrastructure.”  
+> **Jeff Wichman**  
+> Director of Incident Response, Semperis  
+
+*Effective ITDR includes both dedicated, identity-specific backup systems and a tested identity recovery plan that includes cyber-specific use cases.*
+
+### Key Takeaways
+- **78%** of companies that were attacked paid ransom.
+- Finance saw the biggest risk to its business. However, this sector paid fewer ransoms overall. Jeff Wichman notes that this is likely due to the industry’s wealth of controls and regulatory oversight to protect both customer information and money. The finance industry also benefits from FS-ISAC, the not-for-profit organization established for protection and threat-intelligence sharing.
+- For healthcare, paying ransom was most often seen as a matter of life or death.
+
+### By the Numbers
+- *Paid ransom by industry:*
+  - **Education:** 71%
+  - **Finance:** 80%
+  - **Healthcare:** 66%
+  - **Manufacturing/Utilities:** 68%
+  - **IT/Telecom:** 79%
+  - **Travel/Transportation:** 85%
+- **72%** paid ransom multiple times.
+- **32%** paid four times or more.
+- *Paid Multiple Times / Paid 4+ Times by Region:*
+  - **US:** 70% / 21%
+  - **UK:** 73% / 38%
+  - **France:** 80% / 36%
+  - **Germany:** 66% / 49%
+- *Paid Multiple Times / Paid 4+ Times by Industry:*
+  - **Education:** 79% / 27%
+  - **Finance:** 68% / 20%
+  - **Healthcare:** 76% / 39%
+  - **Manufacturing/Utilities:** 67% / 25%
+  - **IT/Telecom:** 74% / 25%
+  - **Travel/Transportation:** 74% / 50%
+- *Average Ransom Paid:*
+  - **US:** 88% up to $600k / 12% $600k+
+  - **UK:** 92% up to £600k / 8% £600k+
+  - **France:** 84% up to $600k / 16% $600k+
+  - **Germany:** 89% up to €600k / 11% €600k+
+- *Why did companies pay?* Threat to business, customers, or reputation; Access to cyber insurance; Attempt to return to normal business as quickly as possible; Matter of life or death.
 
 ---
 
@@ -117,11 +251,44 @@ Our study reveals a flaw in many cybersecurity models: Only about one-quarter of
 
 Risk analysis must consider long-term damage to the business, consumers, and the workforce.
 
+> “Ransomware attacks are life-changing events that have enduring effects across every dimension of the business.”  
+> **Chris Inglis**
+
 In any complex organization, security budget, staffing, and resource decisions are a balancing act. Executives weigh the costs against the potential losses. However, in the case of ransomware, executive leadership might be making those decisions without a complete understanding of the potential costs after an attack.
 
 Ransom payment does not guarantee the receipt of usable decryption keys. Furthermore, attackers often use ransomware to deliver malware that can reinfect systems or cause other damage.
 
-> “The threat of a business closing permanently does exist. I’ve seen it happen in real time — sometimes just a couple of months after a breach — because of the loss of revenue and financial burden of mitigation.” — **Marty Momdjian, Semperis Executive VP of Services**
+> “The cost of the ransom payment is not the sum total of the actual damage,” notes Semperis CEO Mickey Bresman. “Certain attacks aren’t money-driven; rather they are aimed at causing chaos and disruption. In addition, the money that you pay is being used for other criminal activities, like human trafficking, drugs, and weapons.”
+
+Ransomware attacks also have ripple effects across the organization. This “collateral damage” means that a successful attack typically costs much more than a ransom payment.
+
+> “The threat of a business closing permanently does exist,” says Marty Momdjian, Semperis Executive VP of Services. “I’ve seen it happen in real time — sometimes just a couple of months after a breach — because of the loss of revenue and financial burden of mitigation. So how do companies try to prevent that? In my experience, layoffs always occur six months to a year after the attack.”
+
+> “This is not a one-time event or time-limited event that you can quickly address and then move on from,” notes Chris Inglis. “This is a life-changing event that has enduring, lingering effects. Loss of customer trust, loss of cyber insurance, regulatory prosecution… that scrutiny never goes away.”
+
+### Key Takeaways
+- **35%** of companies that paid either didn’t receive decryption keys or received corrupted keys.
+- *Non-receipt/corrupted keys by country:* US (34%), UK (43%), France (28%), Germany (27%).
+- *Non-receipt/corrupted keys by industry:* Education (31%), Finance (22%), Healthcare (24%), Manufacturing/Utilities (33%), IT/Telecom (32%), Travel/Transportation (43%).
+- Paying ransom offered no guarantee that decryption keys would be received or work even if delivered. Furthermore, our experience shows that many attacks also insert malware or backdoors for future attacks.
+- Organizations in Germany and in education, healthcare, and manufacturing/utilities were most likely to suffer business disruptions due to offline systems.
+- Companies in the UK and France, as well as those in the finance industry, suffered the greatest brand damage.
+- Many travel/transportation organizations were hit with lawsuits.
+- IT/telecom companies most often had to close up shop — temporarily or permanently.
+- US businesses received the most regulatory fines.
+
+### In any event, ransomware costs more than the ransom.
+- Business disruption
+- Temporary or permanent closings
+- Brand damage
+- Loss of revenue or customers
+- Fines or lawsuits
+- Layoffs and resignations
+- Cyber insurance cancellation or price increase
+
+> “The threat of a business closing permanently does exist. I’ve seen it happen in real time — sometimes just a couple of months after a breach — because of the loss of revenue and financial burden of mitigation.”  
+> **Marty Momdjian**  
+> Executive VP of Services, Semperis  
 
 ---
 
@@ -135,6 +302,33 @@ Attackers are adept at quickly sizing up an organization’s technology ecosyste
 
 This digital complexity makes it imperative to secure your identity system — the heart of every process in your network. Jeff Wichman notes that when it comes to ransomware, “everything relates to the core of access. Once an attacker gets Tier 0 access, you have limited time to protect the remaining infrastructure.”
 
+> “It’s not surprising to me that the majority of ransomware targets the identity system. If an attacker wants to create the maximum impact to extort money, they want to take control of your environment — and they will absolutely want to own Active Directory. Once Active Directory is compromised, the threat actors hold the keys to your kingdom.”  
+> **Simon Hodgkinson**
+
+> “Marty Momdjian sees the survey data as ‘a wake-up call for organizations to shine a spotlight on their identity systems. In previous years, the focus has been on removing friction for users. Today, organizations are realizing that overprovisioned access invites attackers in.’”
+
+Mickey Bresman explains why the identity system, particularly Active Directory, is now the security perimeter for enterprise organizations. 
+
+> “Every minute that the identity system is down is extremely painful. I chatted with a customer who tested their Active Directory recovery plan with the systems that they had in place. They concluded that mitigation of an attack would take them seven days. That’s not acceptable, because it means that everything else in the organization will be down for seven days as well.”
+
+Chris Inglis sees identity as the core issue for successfully resisting ransomware demands. 
+
+> “At the center of this whole discussion is business viability: the ability of the company to achieve its aspirations and its commitments on behalf of its shareholders and customers,” he explains. “Attackers are trying to hold that at risk so that they can then convince you to buy them out. If they can achieve a successful attack on identity, then they own privilege, and they can then use that privilege to their benefit.”
+
+### Key Takeaways
+- **61%** of ransomware victims required more than a day to recover minimal IT functionality, extending business disruptions.
+- Healthcare and travel/transportation — the two industries most-often attacked 4 times or more — reported the lowest adoption of dedicated, AD-specific backup systems.
+
+### By the Numbers
+- *How long did companies take to recover minimal IT functionality?*
+  - **Under 5 hours:** 6%
+  - **5 hours - 1 day:** 33%
+  - **1-7 days:** 49%
+  - **7+ days:** 12%
+- Although **70%** of respondents say they had an identity recovery plan in place, only **27%** of respondents reported dedicated, AD-specific backup systems.
+- *Dedicated AD-specific backup systems by country:* US (25%), UK (23%), France (34%), Germany (36%).
+- *Dedicated AD-specific backup systems by industry:* Education (31%), Finance (36%), Healthcare (24%), Manufacturing/Utilities (31%), IT/Telecom (30%), Travel/Transportation (20%).
+
 ---
 
 ## Future Challenges and Next Steps
@@ -145,14 +339,86 @@ We asked survey respondents about their biggest challenges in the year ahead. Yo
 
 This news didn’t surprise Chris Inglis. He notes that effective cybersecurity requires a three-pronged approach comprising corporate doctrine, skill building, and technology.
 
-> “Considering that there is a 24/7 threat arrayed against today’s organizations, you can never say ‘I am safe’ or take a moment off. The best you can do is to make your environment defensible and then defend it.” — **Chris Inglis**
+> “Technology can help us analyze and assess what’s happening, moment by moment,” Inglis says. “It can help us respond more quickly and recover more quickly. But the thing that is most wanting now is a collective realization that we all have a part to play. That starts with the Board, not with the IT shop. The Board is accountable; the SEC has made that clear. Regulations are increasingly making it clear: cybersecurity is a business issue.”
+
+So, what can organizations do to meet these challenges and ward off future ransomware demands? Explaining the value of identity-first security, in business terms, is a good first step.
+
+> “People tend to put their resources and effort into endpoint protection. But threat actors will get past the endpoint. And once they’re inside the network, they go through the whole identity system. What defense do you have when that happens? Because once they own your identity system, they have all the power. If your identity system goes down, none of your other solutions will work.”  
+> **Sean Deuby**  
+> Principal Technologist (North America), Semperis  
+
+> “Identity is the new perimeter,” says Inglis. “It’s the mechanism by which attackers can hold your core asset. You have your company’s liability at risk, so you must defend it. When you focus on identity, you have a much clearer window into how the life forces within your systems are operating. And when you find anomalies in those life forces, you can track those back not just to the outsider who is trying to reach across that boundary, but to anything that can manipulate privilege.”
+
+Mickey Bresman says that the goal of identity recovery and resilience plans is the ability to say “no” to attackers.
+
+> “Make sure that you have a choice in your response to a ransom situation,” he advises. “Put a backup and disaster recovery plan in place — and not just on paper. Be absolutely sure that you have tested it. Know what your response will look like if systems go down and ensure that you fully understand how long recovery is going to take. Understand the sequence and the dependencies between the systems, because you cannot recover your database server until your identity system is up and running.”
+
+### Key Takeaways
+- Most respondents reported that their biggest hurdle to resilience was **lack of Board-level support**.
+- A detailed, tested **identity resilience plan** can empower organizations to **say “no”** to ransomware demands.
+
+> “Considering that there is a 24/7 threat arrayed against today’s organizations, you can never say ‘I am safe’ or take a moment off. The best you can do is to make your environment defensible and then defend it. That defense is a mix of doctrine, skilling, and technology, all of which are essential. That’s where layered defense comes in.”  
+> **Chris Inglis**
+
+### Biggest Challenges Moving Forward
+- Budget constraints
+- Staffing shortages
+- Lack of Board-level support
+- Outdated or legacy systems
+- Cybersecurity regulations and directives
+
+*What is your #1 concern?*
+- **US:** Board support
+- **UK:** Staffing
+- **Education:** Board support
+- **Finance:** Board support
+- **Healthcare:** Board support
+- **France:** Budget
+- **Germany:** Outdated/legacy systems
+- **Manufacturing/Utilities:** Staffing
+- **IT/Telecom:** Budget
+- **Travel/Transportation:** Regulations
+
+### By Country & Industry: Plans to Increase Security Budgets
+Surprisingly, despite the damage that ransomware has inflicted, **ONLY 30%** of responding organizations plan to increase their security budgets in the next year.
+
+*By Country:*
+- **US:** 27%
+- **UK:** 32%
+- **France:** 31%
+- **Germany:** 34%
+
+*By Industry:*
+- **Education:** 29%
+- **Finance:** 34%
+- **Healthcare:** 28%
+- **Manufacturing/Utilities:** 45%
+- **IT/Telecom:** 36%
+- **Travel/Transportation:** 14%
 
 ---
 
-### Methodology
-In the first half of 2024, global organizations across the United States, the United Kingdom, France, and Germany participated in a detailed study on their experience with ransomware. To conduct this study, we partnered with experts at Censuswide, an international market research consultancy headquartered in London. Censuswide surveyed 900 IT and security professionals across multiple industries, including education, finance, healthcare, manufacturing and utilities, IT and telecommunications, and travel and transportation.
+## Methodology
 
-### About Semperis
-For security teams charged with defending hybrid and multi-cloud environments, Semperis ensures the integrity and availability of critical enterprise directory services at every step in the cyber kill chain and cuts recovery time by 90%. Purpose-built for securing hybrid identity environments — including Active Directory, Entra ID, and Okta — Semperis’ patented technology protects over 100 million identities from cyberattacks, data breaches, and operational errors.
+In the first half of 2024, global organizations across the United States, the United Kingdom, France, and Germany participated in a detailed study on their experience with ransomware.
 
-Learn more: [https://www.semperis.com](https://www.semperis.com)
+To conduct this study, we partnered with experts at Censuswide, an international market research consultancy headquartered in London. Censuswide surveyed 900 IT and security professionals across multiple industries, including education, finance, healthcare, manufacturing and utilities, IT and telecommunications, and travel and transportation.
+
+### How to Cite Information in This Report
+The data in this report are provided as an information source for the cybersecurity community and the organizations it serves. Semperis encourages you to share our findings. To cite statistics or insights, reference Semperis 2024 Ransomware Risk Report and link to the full report, downloadable at [https://www.semperis.com/ransomware-risk-report](https://www.semperis.com/ransomware-risk-report). To interview Semperis experts, contact Bill Keeler at billk@semperis.com. Lastly, we’d love to hear your questions or thoughts on the topic of ransomware and resilience. Find Semperis on LinkedIn.
+
+---
+
+## About Semperis
+
+For security teams charged with defending hybrid and multi-cloud environments, Semperis ensures the integrity and availability of critical enterprise directory services at every step in the cyber kill chain and cuts recovery time by 90%. Purpose-built for securing hybrid identity environments — including Active Directory, Entra ID, and Okta — Semperis’ patented technology protects over 100 million identities from cyberattacks, data breaches, and operational errors. The world’s leading organizations trust Semperis to spot directory vulnerabilities, intercept cyberattacks in progress, and quickly recover from ransomware and other data integrity emergencies. Semperis is headquartered in Hoboken, New Jersey, and operates internationally, with its research and development team distributed throughout the United States, Canada, and Israel.
+
+Semperis hosts the award-winning Hybrid Identity Protection conference and podcast series and built the community hybrid Active Directory cyber defender tools, Purple Knight and Forest Druid. The company has received the highest level of industry accolades, recently named to Inc. Magazine’s list of best workplaces for 2024 and ranked the fastest-growing cybersecurity company in America by the Financial Times. Semperis is a Microsoft Enterprise Cloud Alliance and Co-Sell partner and is a member of the Microsoft Intelligent Security Association (MISA).
+
+**Learn more:** [https://www.semperis.com](https://www.semperis.com)  
++1-703-918-4884 | info@semperis.com | www.semperis.com  
+5 Marine View Plaza, Suite 102, Hoboken, NJ 07030
+
+---
+
+[^1]: Simpson, Nik. “How to Protect Backup Systems from Ransomware Attacks.” Gartner Research. Sept. 21, 2021. https://www.gartner.com/en/documents/4005993.
