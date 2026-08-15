@@ -1,31 +1,21 @@
-# Insider-Threat-Report
+# Insider Threats
+Threat Landscape Series
+
+Organization: DarkTrace  
+Report Title: Insider-Threat-Report  
+Year: 2020  
 
 ## Table of Contents
-- [Challenges of Identifying Insider Threat](#challenges-of-identifying-insider-threat)
-- [Cyber AI: Understanding ‘Normal’ to Identify Insider Threat](#cyber-ai-understanding-normal-to-identify-insider-threat)
+- [Challenges of Identifying Insider Threats](#challenges-of-identifying-insider-threats)
+- [Threats by Numbers](#threats-by-numbers)
+- [Darktrace Immune System](#darktrace-immune-system)
 - [Case Study: Threats From The Inside](#case-study-threats-from-the-inside)
-- [Threat Finds: Self-Learning AI in Action](#threat-finds-self-learning-ai-in-action)
-- [Caught in the Act](#caught-in-the-act)
-- [Crypto-Mining Side Business Under The Floorboards](#crypto-mining-side-business-under-the-floorboards)
+- [Threat Finds: Self-Learning AI in Action](#threats-find-self-learning-ai-in-action)
 - [About Darktrace](#about-darktrace)
 
 ---
 
-Threat Landscape Series
-
-This clear lack of visibility points to the failure of traditional security tools to respond to the needs of today’s dynamic workforce. As employees become increasingly mobile and behave unpredictably, organizations require a nuanced, self-learning approach to cyber security, one which does not rely on rules and can detect the subtle anomalies which point to an insider acting maliciously.
-
-> “Insiders don’t necessarily have to be malicious. Every employee or contractor is a potential threat.”
->
-> — Director of Threat Hunting, Darktrace
-
-### Threats by Numbers
-
-- **11.45 million**: total cost of insider threat attacks in 2020.
-- **47%**: increase in the number of insider threat attacks between 2018 and 2020.
-- **33%**: of breaches are the result of internal incidents.
-
-## Challenges of Identifying Insider Threat
+## Challenges of Identifying Insider Threats
 
 Insider attacks are difficult to spot, yet they often have the greatest impact on business operations. Malicious or compromised insiders can be difficult to identify due to their privileged access and knowledge of company workings, enabling them to easily evade detection.
 
@@ -35,9 +25,29 @@ Recent changes to infrastructure and workforce habits have complicated the situa
 
 On top of this, personal mobile devices have become a particularly common point of exfiltration for both malicious and accidental insiders. Only 13% of organizations state that they can detect insider attacks that start with these devices.
 
+> “Insiders don’t necessarily have to be malicious. Every employee or contractor is a potential threat.”
+> 
+> Director of Threat Hunting, Darktrace
+
 ![Figure 1: Insider threats can come in multiple forms, as this paper will explore]
 
-## Cyber AI: Understanding ‘Normal’ to Identify Insider Threat
+---
+
+## Threats by Numbers
+
+This clear lack of visibility points to the failure of traditional security tools to respond to the needs of today’s dynamic workforce. As employees become increasingly mobile and behave unpredictably, organizations require a nuanced, self-learning approach to cyber security, one which does not rely on rules and can detect the subtle anomalies which point to an insider acting maliciously.
+
+- **$11.45 million**: Total cost of insider threat attacks in 2020.
+- **47%**: Increase in the number of insider threat attacks between 2018 and 2020.
+- **33%**: Breaches that are the result of internal incidents.
+
+Threat Landscape Series | 2
+
+---
+
+## Darktrace Immune System
+
+### Cyber AI: Understanding ‘Normal’ to Identify Insider Threat
 
 Traditional security tools rely on signatures and pre-defined lists to keep the ‘bad’ out. This static idea of what is ‘good’ and what is not becomes untenable against threats which originate from within. As such, they leave companies wide open to insider attacks.
 
@@ -45,11 +55,19 @@ Instead, Darktrace works like a human immune system, detecting and responding to
 
 When Cyber AI detects an insider threat, Darktrace Antigena responds autonomously to disrupt the attack in seconds. In addition, Cyber AI Analyst launches investigations into these anomalous incidents, combining the intuition of a human analyst with the speed and scalability of AI, delivering a 92% time-saving in time to triage.
 
-![Figure 2: The Darktrace Immune System platform covers the entire digital ecosystem]
+| ENTERPRISE IMMUNE SYSTEM | CYBER AI ANALYST | DARKTRACE ANTIGENA |
+| :--- | :--- | :--- |
+| Self-learning Detection | Automated Investigation | Autonomous Response |
+
+![Figure 2: The Darktrace Immune System platform covers the entire digital ecosystem (Workforce, Infrastructure, Industrial, OT, Email, SaaS, Clients, Cloud, Network, IoT)]
 
 > “I can sleep again at night. We are confident that if something comes in Darktrace will pick it up immediately, Antigena will isolate it, and we can then take our time to resolve it.”
->
-> — Head of IT Operations, PPS Insurance
+> 
+> Head of IT Operations, PPS Insurance
+
+Threat Landscape Series | 3
+
+---
 
 ## Case Study: Threats From The Inside
 
@@ -68,28 +86,34 @@ With its unique understanding of ‘normal’ for every device, Darktrace recogn
 ![Figure 5: The anomalous behavior is highlighted]
 
 > “Before Darktrace, we lacked the power to detect if an authorized network user had gone rogue or if a novel threat had bypassed our legacy security systems.”
->
-> — Information Services Manager, Lockyer Valley Regional Council
+> 
+> Information Services Manager, Lockyer Valley Regional Council
 
-As the scanning activity continued and escalated, the Darktrace Immune System increased its anomaly score, with the color of the offending device below indicating the severity of the threat.
+Threat Landscape Series | 4
 
-The offending device was promptly taken offline, stopping the threat before it had a chance to develop. After investigation, it was concluded that the breach had likely originated from a USB drive which was shared with the contracted instructor by one of his students the night before.
+As the scanning activity continued and escalated, the Darktrace Immune System increased its anomaly score, with the color of the offending device indicating the severity of the threat.
 
 ![Figure 6: Threat severity is raised as the attack progresses]
-
-**71% of companies are worried most about accidental data breaches.**
 
 In under two minutes, the instructor’s laptop had attempted connections to every device on the network which prompted the following image on the Threat Visualizer interface, leaving no doubt that there was a problem with the laptop.
 
 ![Figure 7: Device attempts total connectivity]
 
+The offending device was promptly taken offline, stopping the threat before it had a chance to develop. After investigation, it was concluded that the breach had likely originated from a USB drive which was shared with the contracted instructor by one of his students the night before.
+
+- **71%** of companies are worried most about accidental data breaches.
+
 > “Given the prevalence of never-seen-before attacks and insider threats, we were looking for a technology that could swiftly identify and alert us to anomalies as they emerge, inoculating our network from within.”
->
-> — IT and Infrastructure Manager, Shook Lin & Bok LLP
+> 
+> IT and Infrastructure Manager, Shook Lin & Bok LLP
 
 > “Intellectual property is the bedrock on which pharmaceuticals’ development and manufacturing is built. Darktrace’s AI empowers us to defend that highly sensitive data.”
->
-> — IT Systems and Network Administrator, CordenPharma
+> 
+> IT Systems and Network Administrator, CordenPharma
+
+Threat Landscape Series | 5
+
+---
 
 ## Threat Finds: Self-Learning AI in Action
 
@@ -107,6 +131,8 @@ Darktrace’s Cyber AI Analyst reported on every stage of the attack, including 
 
 ![Figure 8: The connections associated with the compromise are a significant deviation from the device’s normal 'pattern of life' and results in multiple unusual activity events and repeated model breaches (orange).]
 
+Threat Landscape Series | 6
+
 ### Disgruntled IT Administrator
 
 When a retail organization in the UK was forced to make a series of redundancies over the course of a single week, they neglected to take a fired IT administrator’s laptop or to delete their corporate account.
@@ -122,8 +148,10 @@ While this activity from a supposedly trusted administrator easily evaded both t
 ![Figure 9: Darktrace’s SaaS Console allows users to visualize and analyze SaaS behaviors across the workforce from one central location]
 
 > “The reality of cyber security today is that border defenses are not enough to keep fast-moving attacks out. Darktrace detects zero-day threats and suspicious insider behaviors, without having to define the activity in advance.”
->
-> — CIO, City of Las Vegas
+> 
+> CIO, City of Las Vegas
+
+Threat Landscape Series | 7
 
 ### Stopping a Malicious Member of the IT Team
 
@@ -137,17 +165,17 @@ A few hours later, the threat returned. The laptop started running commands on h
 
 Once the threat had been neutralized, the security team was able to investigate and confirm that the laptop belonged to a member of the IT team who had been using an illegitimate scanning tool to look for vulnerabilities.
 
-**35% of organizations are affected by insider threats every year.**
+- **35%** of organizations are affected by insider threats every year.
 
 ![Figure 10: Darktrace Antigena responds to an emerging cyber-threat around the world every second]
 
 > “The Enterprise Immune System identifies all kinds of novel threats, including polymorphic malware, stealthy insiders, and highly sophisticated social engineering attacks, without the need for rules or signatures.”
->
-> — IT Director and Data Protection Officer, OpinionWay
+> 
+> IT Director and Data Protection Officer, OpinionWay
 
-## Caught in the Act
+Threat Landscape Series | 8
 
-### Unauthorized Server Access via the VPN
+### Caught in the Act: Unauthorized Server Access via the VPN
 
 One incident occurred while Darktrace was onsite training a customer. A member of the IT team was skeptical about Darktrace’s ability to detect certain activities and ended up leaving the room.
 
@@ -155,17 +183,19 @@ Shortly after, Darktrace detected a device that was downloading an unusual volum
 
 The device belonged to the IT member who had left the room, and they were immediately called back in to explain themselves. It turned out that the employee was attempting to collect information to send to their home server.
 
-![Figure 11: Darktrace's Threat Visualizer displaying unusual connectivity on a similar device]
+With the power of Cyber AI, the security team could recognize that this behavior, which may have been harmless in another context, constituted a serious insider threat. Darktrace was able to supply granular data that showed exactly when and where the malicious insider accessed the server, as well as the specific files the user read and deleted, allowing the team to see the extent of the attack and jumpstart remediation.
 
 A recently terminated employee at a US-based mining company had previously been working from home and retained unsanctioned VPN access to the company’s network following their termination. With this means of entry, the former employee was able to connect to a company server and read more than 9,000 files. Darktrace’s Cyber AI detected over 10,000 unauthorized SMB actions in total.
 
 While the employee had regularly used this server as a part of their daily role at the company, Darktrace identified a surge in connectivity to the server that differed significantly from normal. The user then went on to delete at least 160 files across the products, marketing, customers, internal business, weekly reports, transportation, and systems folders.
 
-With the power of Cyber AI, the security team could recognize that this behavior, which may have been harmless in another context, constituted a serious insider threat. Darktrace was able to supply granular data that showed exactly when and where the malicious insider accessed the server, as well as the specific files the user read and deleted, allowing the team to see the extent of the attack and jumpstart remediation.
-
 > “Cyber-risk is one of the biggest challenges facing businesses today, and Darktrace gives us an edge against fast-moving attackers and malicious or accidental insider threat.”
->
-> — Network and Infrastructure Lead, Waverton
+> 
+> Network and Infrastructure Lead, Waverton
+
+![Figure 11: Darktrace's Threat Visualizer displaying unusual connectivity on a similar device]
+
+Threat Landscape Series | 9
 
 ### Malicious Insider Harvests Data
 
@@ -182,20 +212,24 @@ Darktrace identified the threat in real time, meaning no users fell victim to th
 ![Figure 13: Cyber AI Analyst report observing C2 communications]
 
 > “Understanding the risks posed by cyber-criminals and insiders alike, we knew we needed to take a proactive and innovative approach to our cyber defense.”
->
-> — Information Systems Manager, University Federal Credit Union
+> 
+> Information Systems Manager, University Federal Credit Union
 
-## Crypto-Mining Side Business Under The Floorboards
+Threat Landscape Series | 10
+
+### Crypto-Mining Side Business Under The Floorboards
 
 Bitcoin mining is very hard to detect, especially when carried out by an insider. Most miners use surplus computer capacity at night when offices are closed, but others go to more extreme lengths to slip under the radar.
+
+At a major Italian bank, Darktrace picked up on puzzling data traffic patterns, including servers that seemed to be connecting from a strange IP address in the company’s data center. The security team insisted that the servers didn’t exist on the asset log. After a lot of back and forth, they allowed Darktrace to come in and investigate.
 
 Darktrace traced wires in the data center to 12 servers under the floorboards. It turned out that an employee was responsible for installing the servers: they had been slowly siphoning them off to set up an extensive bitcoin mining operation from within the company.
 
 ![Figure 14: A sample of models breached by the server at the time of this compromise]
 
-At a major Italian bank, Darktrace picked up on puzzling data traffic patterns, including servers that seemed to be connecting from a strange IP address in the company’s data center. The security team insisted that the servers didn’t exist on the asset log. After a lot of back and forth, they allowed Darktrace to come in and investigate.
-
 ![Figure 15: Cyber-attacks can originate in even the most innocuous places]
+
+---
 
 ## About Darktrace
 
@@ -204,10 +238,10 @@ Darktrace is a leading autonomous cyber security AI company and the creator of A
 The company has over 1,500 employees and is headquartered in Cambridge, UK. Every second, Darktrace AI fights back against a cyber-threat, before it can cause damage.
 
 ### For More Information
-- [Visit darktrace.com](http://darktrace.com)
-- [Book a free trial](http://darktrace.com)
-- [Visit our YouTube channel](http://youtube.com)
-- [Follow us on Twitter](http://twitter.com)
-- [Follow us on LinkedIn](http://linkedin.com)
+-  Visit [darktrace.com](https://darktrace.com)
+-  Book a free trial
+- YOUTUBE: Visit our YouTube channel
+- TWITTER: Follow us on Twitter
+- Linkedin-In: Follow us on LinkedIn
 
 Darktrace © Copyright 2021 Darktrace Holdings Limited. All rights reserved. Darktrace is a registered trademark of Darktrace Holdings Limited. Enterprise Immune System, and Threat Visualizer are unregistered trademarks of Darktrace Holdings Limited. Other trademarks included herein are the property of their respective owners.
