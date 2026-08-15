@@ -13,5 +13,10 @@
     "status": "completed",
     "file": "Annual Security Reports/2013/NIST-ITL-Annual-Report-2013.pdf",
     "verdict": "Clean"
+  },
+  "d7840cf4ab6f3f3742b868f2d8b0b04ce03bd251d477371aa225fd2ea284f3d6": {
+    "status": "completed",
+    "file": "Annual Security Reports/2013/Verizon-Data-Breach-Investigations-Report-2013.pdf",
+    "verdict": "Clean"
   }
 }
