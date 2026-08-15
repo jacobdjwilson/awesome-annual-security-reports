@@ -17,10 +17,12 @@
         "query_templates": [
           "{organization} \"{title}\" {year}",
           "{organization} \"{title}\" {year} security report",
+          "{organization} {title} {year} report",
+          "{organization} {title} report",
           "{organization} security {title} {year} report",
           "{organization} {title}"
         ],
-        "num_results": 5,
+        "num_results": 10,
         "scoring": {
           "org_in_link": 3,
           "year_in_link": 3,
