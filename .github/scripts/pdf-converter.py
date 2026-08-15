@@ -82,6 +82,7 @@ class ConfigLoader:
         self.min_text_length:        int = conv.get("min_text_length",         100)
         self.max_pdf_chars:          int = conv.get("max_pdf_chars",       500_000)
         self.max_polish_input_chars: int = conv.get("max_polish_input_chars", 60_000)
+        self.max_fallback_pdf_size_mb: int = conv.get("max_fallback_pdf_size_mb", 20)
         self.conversion_prompt_path: str = conv.get(
             "prompt_path", self.DEFAULT_CONVERSION_PROMPT_PATH
         )
@@ -395,6 +396,94 @@ class MarkdownPolisher:
 
         return polished
 
+    def extract_pdf_with_gemini(self, pdf_path: str, org: str, title: str, year: str) -> Optional[str]:
+        """Uploads the PDF directly to Gemini and extracts text as a fallback."""
+        file_size_mb = Path(pdf_path).stat().st_size / (1024 * 1024)
+        if file_size_mb > self.config.max_fallback_pdf_size_mb:
+            print(f"  ! PDF too large for fallback ({file_size_mb:.1f}MB > {self.config.max_fallback_pdf_size_mb}MB)")
+            return None
+
+        prompt = self._build_prompt(org, title, year, "Please extract the full content of this PDF to Markdown.")
+        
+        for model_name in [self.config.primary_model, self.config.secondary_model]:
+            print(f"  → Uploading PDF to Gemini API ({model_name})...")
+            try:
+                if USE_NEW_SDK:
+                    file_obj = self.client.files.upload(file=str(pdf_path))
+                    
+                    while file_obj.state.name == "PROCESSING":
+                        print("  ! Waiting for file processing...")
+                        time.sleep(2)
+                        file_obj = self.client.files.get(name=file_obj.name)
+                        
+                    if file_obj.state.name == "FAILED":
+                        print("  ! File processing failed on Gemini.")
+                        continue
+                        
+                    response = self.client.models.generate_content(
+                        model=model_name,
+                        contents=[file_obj, prompt],
+                        config=types.GenerateContentConfig(
+                            temperature=self._temperature,
+                            top_p=self._top_p,
+                            top_k=self._top_k,
+                            max_output_tokens=self._max_out_tokens,
+                        ),
+                    )
+                    self.client.files.delete(name=file_obj.name)
+                    
+                else:
+                    file_obj = genai.upload_file(path=str(pdf_path))
+                    
+                    while file_obj.state.name == "PROCESSING":
+                        print("  ! Waiting for file processing...")
+                        time.sleep(2)
+                        file_obj = genai.get_file(file_obj.name)
+                        
+                    if file_obj.state.name == "FAILED":
+                        print("  ! File processing failed on Gemini.")
+                        continue
+                        
+                    model = genai.GenerativeModel(model_name)
+                    response = model.generate_content(
+                        [file_obj, prompt],
+                        generation_config={
+                            "temperature":       self._temperature,
+                            "top_p":             self._top_p,
+                            "top_k":             self._top_k,
+                            "max_output_tokens": self._max_out_tokens,
+                        },
+                    )
+                    genai.delete_file(file_obj.name)
+
+                text = response.text.strip() if response.text else ""
+                if not text:
+                    continue
+
+                if text.startswith("```markdown"):
+                    text = text[len("```markdown"):].lstrip()
+                if text.startswith("```"):
+                    text = text[3:].lstrip()
+                if text.endswith("```"):
+                    text = text[:-3].rstrip()
+                
+                self._active_model = model_name
+                return text.strip()
+
+            except Exception as e:
+                print(f"  ! Model {model_name} extraction error: {str(e)[:120]}")
+                try:
+                    if 'file_obj' in locals() and hasattr(file_obj, 'name'):
+                        if USE_NEW_SDK:
+                            self.client.files.delete(name=file_obj.name)
+                        else:
+                            genai.delete_file(file_obj.name)
+                except Exception:
+                    pass
+                continue
+
+        return None
+
 
 # ====================
 # PDF CONVERTER
@@ -518,14 +607,25 @@ class PDFConverter:
                 print(f"  ! Truncated raw text to {self.config.max_pdf_chars:,} chars")
 
             # ── Step 2: AI polish — structure, TOC, clean paragraphs ──────
-            if self.polisher and not is_stub:
+            if is_stub and self.polisher:
+                print(f"  ! markitdown extraction failed/short. Falling back to Gemini File API extraction...")
+                fallback_text = self.polisher.extract_pdf_with_gemini(str(pdf_path_obj), org_name, report_title, year)
+                if fallback_text:
+                    markdown_text = fallback_text
+                    is_stub = False
+                    model_used = self.polisher._active_model or "unknown"
+                    print(f"  ✓ Direct PDF extraction successful via {model_used} ({len(markdown_text):,} chars)")
+                else:
+                    print(f"  ! Gemini File API extraction also failed or was skipped. Saving minimal placeholder.")
+
+            if self.polisher and not is_stub and not (hasattr(self.polisher, '_active_model') and self.polisher._active_model):
                 print(f"  → Polishing with AI ({self.config.primary_model})...")
                 markdown_text = self.polisher.polish(
                     markdown_text, org_name, report_title, year
                 )
                 model_used = self.polisher._active_model or "unknown"
                 print(f"  ✓ Polished via {model_used} ({len(markdown_text):,} chars)")
-            else:
+            elif not self.polisher:
                 print(f"  ⚠ No AI polisher — saving raw markitdown output")
 
             md_path.write_text(markdown_text, encoding="utf-8")
