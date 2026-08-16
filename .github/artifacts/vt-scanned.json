@@ -18,5 +18,10 @@
     "status": "completed",
     "file": "Annual Security Reports/2013/Verizon-Data-Breach-Investigations-Report-2013.pdf",
     "verdict": "Clean"
+  },
+  "de91d0dbc92e8e3edf0dcbe61a024f7598da094579d45251acc5b4b10e345aa5": {
+    "status": "completed",
+    "file": "Annual Security Reports/2016/Proofpoint-Human-Factor-2016.pdf",
+    "verdict": "Clean"
   }
 }
