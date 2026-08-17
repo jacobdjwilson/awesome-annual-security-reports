@@ -23,5 +23,10 @@
     "status": "completed",
     "file": "Annual Security Reports/2016/Proofpoint-Human-Factor-2016.pdf",
     "verdict": "Clean"
+  },
+  "590654946f071d0ac0052e8348d379f86593d81aaf7c7b9b16089b933d0640b7": {
+    "status": "completed",
+    "file": "Annual Security Reports/2016/Verizon-Data-Breach-Investigations-Report-2016.pdf",
+    "verdict": "Clean"
   }
 }
