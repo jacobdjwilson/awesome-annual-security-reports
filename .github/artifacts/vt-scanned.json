@@ -28,5 +28,10 @@
     "status": "completed",
     "file": "Annual Security Reports/2016/Verizon-Data-Breach-Investigations-Report-2016.pdf",
     "verdict": "Clean"
+  },
+  "ca2a21ced53883c9529ce135de3811bd169474233018023676ee0f51df04bf2e": {
+    "status": "completed",
+    "file": "Annual Security Reports/2016/NIST-ITL-Annual-Report-2016.pdf",
+    "verdict": "Clean"
   }
 }
