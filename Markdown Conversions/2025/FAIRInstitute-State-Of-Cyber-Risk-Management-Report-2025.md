@@ -185,3 +185,5 @@ CRM is entering a new era defined by risk quantification, increased automation, 
 - **GuidePoint Security:** Provides trusted cybersecurity expertise, solutions, and services.
 - **SAFE:** Founder and technical advisor of the non-profit FAIR Institute; specializes in Agentic AI for cyber risk management.
 - **The FAIR Institute:** A non-profit professional organization dedicated to advancing the discipline of measuring and managing cyber and operational risk.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "gemini-3.1-flash-lite"} -->

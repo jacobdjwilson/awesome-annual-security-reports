@@ -4012,3 +4012,5 @@ secure. More information about ENISA and its work can be found here:
 www.enisa.europa.eu.
 ISBN 978-92-9204-723-8
 doi: 10.2824/1946374
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-28", "model": "gemini-3.5-flash-lite"} -->

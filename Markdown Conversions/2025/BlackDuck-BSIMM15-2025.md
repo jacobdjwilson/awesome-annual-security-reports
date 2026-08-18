@@ -6849,4 +6849,4 @@ BSIMM15 112
 
 BSIMM15
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-12", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-12", "model": "gemini-3.5-flash-lite"} -->

@@ -929,3 +929,5 @@ securityscorecard.com or connect with us on LinkedIn.
 SecurityScorecard.com
 info@securityscorecard.io
 ©2025 SecurityScorecard Inc. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-31", "model": "gemini-3.5-flash-lite"} -->

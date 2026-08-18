@@ -1436,3 +1436,5 @@ internal tools. This dramatically reduces cognitive load, and enabling security 
 accelerates understanding, and empowers rapid, informed ThreatConnect empowers defenders to proactively address threats, optimize
 decision-making right at the point of analysis. resources, and foster a more engaged and effective workforce.
 Note that SANS Product Briefi ngs do not represent a SANS endorsement of a sponsor or its products, but rather an overview of its offerings and their capabilities.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-16", "model": "gemini-3.5-flash-lite"} -->

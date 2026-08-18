@@ -213,3 +213,5 @@ Phishing Detection and Prevention Solutions Security without compromise
 Privacy | Compliance | Terms | EMEA Reseller © 2026 Expel, Inc. All Rights Reserved
 Customer Terms | North America Reseller Customer
 Terms | System Status
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-21", "model": "gemini-3.1-flash-lite"} -->

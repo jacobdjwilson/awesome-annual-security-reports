@@ -6124,3 +6124,5 @@ www.kaspersky.com
 
 © 2026 AO Kaspersky Lab. Registered trademarks and
 service marks are the property of their respective owners.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-14", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -347,3 +347,5 @@ This State of AI Security report validates that the AI landscape has and continu
 - **Paul Kassianik** (AI Researcher, Cisco)
 - **Adam Swanda** (AI Researcher, Cisco)
 - **Hyrum Anderson** (Director of Software Engineering, Cisco)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "gemini-3.1-flash-lite"} -->

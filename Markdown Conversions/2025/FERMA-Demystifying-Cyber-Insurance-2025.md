@@ -138,3 +138,5 @@ Published in 2025, Brussels. © FERMA. All rights reserved.
 Any reproduction in full or in part must mention the title and credit FERMA as the copyright owner.
 
 @FERMARISK
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-15", "model": "gemini-3.1-flash-lite"} -->

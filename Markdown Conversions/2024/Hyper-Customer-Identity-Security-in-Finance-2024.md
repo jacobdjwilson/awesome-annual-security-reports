@@ -307,4 +307,4 @@ largest US banks, leading manufacturers, and critical infrastructure
 companies, HYPR secures some of the most complex and demanding
 environments globally.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-17", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-17", "model": "gemini-3.5-flash-lite"} -->

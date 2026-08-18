@@ -1519,3 +1519,5 @@ All other marks mentioned herein may be trademarks of their
 respective companies.
 2025 Unit 42 Incident Response Report | February 2025
 Global Incident Response Report 2025
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-30", "model": "gemini-3.5-flash-lite"} -->

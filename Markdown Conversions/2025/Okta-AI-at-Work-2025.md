@@ -110,3 +110,5 @@ Commissioned by Okta, AlphaSights recruited 125 C-suite executives to take an on
 
 ### Disclaimer
 This document and any recommendations about your security practices are not legal, security, or business advice. This document is intended for general informational purposes only. Okta is not liable to you for any loss or damages that may result from your implementation of the recommendations in this document.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-04", "model": "gemini-3.1-flash-lite"} -->

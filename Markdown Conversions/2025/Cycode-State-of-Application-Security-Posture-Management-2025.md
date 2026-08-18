@@ -296,3 +296,5 @@ Backed by tier-one investors Insight Partners and YL Ventures, the series-B comp
 ---
 
 [^1]: Survey footnote referenced in original text regarding the relationship between security and developer teams.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-11", "model": "gemini-3.5-flash-lite"} -->

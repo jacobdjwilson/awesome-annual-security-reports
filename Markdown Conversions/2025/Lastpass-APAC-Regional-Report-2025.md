@@ -133,3 +133,5 @@ Following the Australian Signals Directorate’s Essential Eight maturity model:
 [^16]: ACSC 2024 Report Implications (LastPass Blog)
 [^17]: Silk Typhoon is targeting remote management tools and cloud services in supply chain attacks (Microsoft Security)
 [^18]: Australian Signals Directorate Essential Eight
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-17", "model": "gemini-3.1-flash-lite"} -->

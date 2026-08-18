@@ -131,3 +131,5 @@ The data is clear: The world can’t live without voice calling. Yet, too often,
 
 - **Market Research:** Censuswide conducted research between Dec 24, 2024, and Jan 7, 2025, surveying 12,003 consumers, 1,802 workers, and 600 senior IT/Security professionals across the UK, US, Canada, France, Germany, and Spain.
 - **Hiya Data:** Based on analysis of more than 262.8 billion calls passing over the Hiya network in 2024. Data is aggregated and anonymized.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-16", "model": "gemini-3.1-flash-lite"} -->

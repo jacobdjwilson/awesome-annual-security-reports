@@ -104,4 +104,4 @@ The Trellix Advanced Research Center provides intelligence and cutting-edge cont
 ![Image: Chart showing ransomware groups reporting most victims per leak sites]
 ![Image: Chart showing cloud incident detections by MITRE ATT&CK techniques]
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "gemini-3.1-flash-lite-preview"} -->

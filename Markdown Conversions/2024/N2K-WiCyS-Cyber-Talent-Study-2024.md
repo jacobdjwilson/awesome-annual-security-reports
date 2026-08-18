@@ -187,4 +187,4 @@ This report reflects the current state of WiCyS member participation and perform
 *   Jeff Welgan, Chief Learning Officer, N2K
 *   Heather Monthie, PhD, CISSP, Workforce Consultant, N2K
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-16", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-16", "model": "gemini-3.1-flash-lite-preview"} -->

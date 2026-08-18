@@ -4146,3 +4146,5 @@ Contact us:
 hello@upstream.auto
 Follow us
 ©© 22002266 UUppssttrreeaamm SSeeccuurriittyy LLttdd.. AAllll RRiigghhttss RReesseerrvveedd
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-03", "model": "gemini-3.1-flash-lite"} -->

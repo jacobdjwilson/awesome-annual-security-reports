@@ -634,4 +634,4 @@ Email: sig-info@synopsys.com
 mentioned herein are trademarks or registered trademarks of their respective owners. November 2020
 DEVSECOPS PRACTICES AND OPEN SOURCE MANAGEMENT IN 2020 | synopsys.com | 23
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-16", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-16", "model": "gemini-3.5-flash-lite"} -->

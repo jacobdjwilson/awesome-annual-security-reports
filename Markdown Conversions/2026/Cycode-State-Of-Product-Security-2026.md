@@ -364,3 +364,5 @@ Real convergence means a purpose-built platform where AST + SSCS + ASPM work in 
 **The 2026 State of Product Security for the AI ERA**  
 presented by Cycode  
 _[Request a demo](#[request-a-demo])_
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-12", "model": "gemini-3.5-flash-lite"} -->

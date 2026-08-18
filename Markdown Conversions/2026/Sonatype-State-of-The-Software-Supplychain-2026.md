@@ -2033,3 +2033,5 @@ vulnerability management, and ensuring faster, more reliable builds — so devel
 on innovation and less time on remediation and rework. Trusted by more than 15 million developers,
 Sonatype helps power secure, modern software development at nearly 2,000 global organizations
 including 70% of the Fortune 100. To learn more about Sonatype, please visit www.sonatype.com.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-15", "model": "gemini-3.5-flash-lite"} -->

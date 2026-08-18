@@ -168,3 +168,5 @@ The 2025 Cyber Claims Report features reported claims data from January 1 to Dec
 ---
 
 [^1]: Industry average based on data reported by US insurers to the National Association of Insurance Commissioners (NAIC). Comparison performed using 2023 claims frequency data from Coalition and NAIC. Claims frequency is calculated using the number of standalone cyber claims reported by the NAIC, divided by the average of standalone cyber policies in force at the current and prior year-ends.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-21", "model": "gemini-3.1-flash-lite"} -->

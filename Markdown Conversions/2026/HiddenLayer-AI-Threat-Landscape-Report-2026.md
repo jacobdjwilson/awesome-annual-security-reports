@@ -1594,3 +1594,5 @@ Kenneth Yeung, Senior AI Security Researcher
 Kevin Finnigin, Principal Security Researcher
 Ryan Tracey, Principal Security Researcher
 61 6622
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-28", "model": "gemini-3.5-flash-lite"} -->

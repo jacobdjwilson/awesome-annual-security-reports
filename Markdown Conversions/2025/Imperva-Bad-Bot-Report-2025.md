@@ -1433,3 +1433,5 @@ please visit imperva.com/contact-us
 imperva.com
 
 © Imperva - November 2025
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-25", "model": "gemini-3.1-flash-lite-preview"} -->

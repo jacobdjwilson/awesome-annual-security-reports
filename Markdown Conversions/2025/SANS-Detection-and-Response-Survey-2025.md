@@ -280,3 +280,5 @@ The SANS Research Program is a key initiative by the SANS Institute and a premie
 All content is authored by SANS instructor experts from around the world who apply their years of experience from hands-on practitioner work in the field, advisory roles, and the classroom to provide education, guidance, and actionable insights that help make the cyber world a safer place.
 
 To learn about sponsorship opportunities for research, content, and in-person or virtual events, email us at Sponsorships@sans.org or go to [www.sans.org/sponsorship](http://www.sans.org/sponsorship).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-18", "model": "gemini-3.5-flash-lite"} -->

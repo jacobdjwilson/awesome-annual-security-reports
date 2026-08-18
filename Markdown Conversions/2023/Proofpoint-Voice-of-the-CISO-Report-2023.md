@@ -175,4 +175,4 @@ The Proofpoint 2023 Voice of the CISO survey, conducted by research firm Censusw
 
 Censuswide complies with the MRS Code of Conduct and ESOMAR principles.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -453,4 +453,4 @@ WE HIGHLIGHTED THREE UNIQUE THEMES THIS QUARTER:
 
 Next quarter will include the “hacker summer camp” trio of conferences as well as the complete publication of all USENIX Security content – it should be another great one!
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

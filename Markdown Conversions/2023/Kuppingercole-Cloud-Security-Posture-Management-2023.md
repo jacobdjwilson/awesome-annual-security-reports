@@ -1718,4 +1718,4 @@ For further information, please contact customers@kuppingercole.com.
 84
 © 2023 KUPPINGERCOLE ANALYSTS AG 84
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-09", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-09", "model": "gemini-3.1-flash-lite"} -->

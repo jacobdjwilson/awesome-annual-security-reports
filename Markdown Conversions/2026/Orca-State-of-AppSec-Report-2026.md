@@ -221,3 +221,5 @@ Over 1 in 4 organizations require no code reviews at all.
 ## 9. Conclusion
 
 The state of application security in 2025–2026 reflects an industry in transition. Organizations have embraced modern development practices, but security maturity has not kept pace. The path forward requires treating application security not as a checkbox, but as a fundamental component of software quality. Every commit, dependency, and configuration change shapes risk and must be evaluated through a security lens.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-21", "model": "gemini-3.1-flash-lite-preview"} -->

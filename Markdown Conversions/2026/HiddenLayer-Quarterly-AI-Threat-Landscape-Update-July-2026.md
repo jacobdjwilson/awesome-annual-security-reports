@@ -254,3 +254,5 @@ HiddenLayer’s AI Security Platform secures agentic, generative, and predictive
 - Kenneth Yeung, Associate Threat Researcher
 - David Lu, Senior ML Threat Operations Specialist
 - Ryan Tracey, Principal Security Researcher
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-30", "model": "gemini-3.5-flash-lite"} -->

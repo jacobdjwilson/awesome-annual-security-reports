@@ -4667,3 +4667,5 @@ Visit us at www.research.checkpoint.com
 www.checkpoint.com
 
 © 2025 Check Point Software Technologies Ltd. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "gemini-3.1-flash-lite"} -->

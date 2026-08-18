@@ -1010,3 +1010,5 @@ and other related marks are trademarks of the Microsoft group of companies. Amaz
 Services, AWS, and other related marks are trademarks of Amazon.com, Inc. or its affiliates. All
 
 other brand names, product names, or trademarks belong to their respective owners.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-16", "model": "gemini-3.1-flash-lite"} -->

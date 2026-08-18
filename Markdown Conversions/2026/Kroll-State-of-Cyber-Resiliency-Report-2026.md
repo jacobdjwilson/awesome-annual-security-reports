@@ -311,3 +311,5 @@ This means finding common ground between security and business priorities. CISOs
 The survey was conducted among 1,000 cybersecurity decision-makers who are senior manager level and above working in organizations with $50 million+ in global annual revenue across the UK and Ireland (150), Germany (50), Switzerland (50), the U.S. (450), Japan (125), Singapore (50), Australia (25), UAE (50) and Saudi Arabia (50).
 
 Interviews were conducted online by Sapio Research in November and December 2025 using an email invitation and an online survey. At an overall level, results are accurate to ± 3.1% at 95% confidence limits assuming a result of 50%.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-29", "model": "gemini-3.1-flash-lite"} -->

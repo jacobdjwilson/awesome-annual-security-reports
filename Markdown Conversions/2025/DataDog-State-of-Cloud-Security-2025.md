@@ -123,3 +123,5 @@ Findings are based on data collected in September 2025 from customers of Datadog
 **Licensing**
 Report: CC BY-ND 4.0
 Images: CC BY-ND 4.0
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-05", "model": "gemini-3.1-flash-lite"} -->

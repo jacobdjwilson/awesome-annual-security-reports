@@ -164,3 +164,5 @@ The handful of companies that provide education and training for security profes
 ## About Us
 
 Duha is a boutique consultancy that provides a spark of genius at the intersection of cybersecurity, leadership, product, and messaging, led by legendary CISO Andy Ellis. Duha advises CISOs, CMOs, CROs, and other executives on improving themselves and their teams. Interested in engaging Andy for a workshop on Cultivating CISOs for your SDRs and field marketers, a conversation about your messaging, or with a leadership keynote for your next event? Contact andy@duha.co.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "gemini-3.1-flash-lite-preview"} -->

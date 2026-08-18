@@ -525,4 +525,4 @@ WE HIGHLIGHTED THREE THEMES FOR THIS QUARTER:
 
 We’re looking forward to seeing what 2025 has in store for us all. We’ll be back next time with more picks from great researchers.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

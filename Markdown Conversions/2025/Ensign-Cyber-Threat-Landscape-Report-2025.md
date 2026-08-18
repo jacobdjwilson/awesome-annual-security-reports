@@ -2285,3 +2285,5 @@ Owned Websites
 v17
 Legend: Increasing levels of observations
 ENSIGN INFOSECURITY | CYBER THREAT LANDSCAPE 2025 65
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "gemini-3.5-flash-lite"} -->

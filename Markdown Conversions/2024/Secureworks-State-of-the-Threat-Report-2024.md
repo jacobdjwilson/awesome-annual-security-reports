@@ -6746,4 +6746,4 @@ Availability varies by region. ©2024 SecureWorks, Inc. All rights reserved.
 
 State of the Threat: A Year in Review | 8th Edition
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "gemini-3.1-flash-lite"} -->

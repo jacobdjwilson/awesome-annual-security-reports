@@ -1149,4 +1149,4 @@ delivery solutions at akamai.com and akamai.com/blog, or follow Akamai Technolog
 Published 07/25.
 Ransomware Report 2025 I Volume 11, Issue 03 Akamai.com | 50
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "gemini-3.5-flash-lite"} -->

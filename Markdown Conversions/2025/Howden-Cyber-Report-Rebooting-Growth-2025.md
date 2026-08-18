@@ -417,3 +417,5 @@ Howden Group Holdings Limited is registered in England and Wales under company r
 [^4]: Global market based on premium and loss ratio data from Howden and third parties, including NAIC, Lloyd’s and Beazley.
 [^5]: Cyber premiums in France fell from €328 million in 2023 to €317 million in 2024, according to AMRAE.
 [^6]: Howden, The cyber security gap, January 2025.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-04", "model": "gemini-3.5-flash-lite"} -->

@@ -844,3 +844,5 @@ Get a Demo
 Benchmark Report
 The Reader’s Digest Issue
 ©2025 HYPERPROOF
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-27", "model": "gemini-3.1-flash-lite"} -->

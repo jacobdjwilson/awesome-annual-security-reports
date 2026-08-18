@@ -90,3 +90,5 @@ An effective defense requires making stolen access difficult to exploit. Enforci
 
 ## Conclusion
 The comparison between 2024 and 2025 highlights how initial access brokers continue to adapt to increasingly robust defensive measures. In 2025, high-privilege credentials, such as domain or local administrator accounts, command greater value because they enable rapid lateral movement and immediate operational impact. Access vectors are evolving in parallel; as VPN infrastructure becomes more hardened, attackers are pivoting to RDP, RDWeb, and SSH services that are operationally critical, widely exposed, and often subject to less rigorous scrutiny.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-29", "model": "gemini-3.1-flash-lite"} -->

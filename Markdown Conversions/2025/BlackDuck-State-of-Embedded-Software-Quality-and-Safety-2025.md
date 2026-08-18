@@ -274,4 +274,4 @@ BLACKDUCK .COM | 27
 
 BLACKDUCK .COM | 28
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-30", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-30", "model": "gemini-3.1-flash-lite"} -->

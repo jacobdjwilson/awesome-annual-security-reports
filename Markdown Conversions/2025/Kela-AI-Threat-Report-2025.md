@@ -227,3 +227,5 @@ From retail to finance, healthcare to government, KELA’s platform ensures that
 [Book a demo](http://www.kelacyber.com)
 Choose KELA for 100% real, actionable intelligence!
 [www.kelacyber.com](http://www.kelacyber.com) | marketing@ke-la.com | [Sign Up for Free Trial](http://www.kelacyber.com)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-03", "model": "gemini-3.1-flash-lite"} -->

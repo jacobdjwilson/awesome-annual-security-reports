@@ -265,3 +265,5 @@ VikingCloud is trusted by over 4 million businesses in 70+ countries to stop thr
 - Website: [vikingcloud.com](https://vikingcloud.com)
 - Sales: [sales@vikingcloud.com](mailto:sales@vikingcloud.com) or visit [vikingcloud.com/contact](https://vikingcloud.com/contact)
 - FOLLOW US
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-04", "model": "gemini-3.5-flash-lite"} -->

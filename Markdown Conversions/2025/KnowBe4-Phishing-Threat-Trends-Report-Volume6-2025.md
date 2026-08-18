@@ -122,3 +122,5 @@ Email security can no longer exist in isolation. Organizations must adopt a holi
 
 [^1]: BBC News, https://www.bbc.co.uk/news/articles/c93llkg4n51o
 [^2]: Computing UK, https://www.computing.co.uk/news/2025/security/cyber-monitoring-centre-estimates-cost-uk-retail-attacks
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-22", "model": "gemini-3.1-flash-lite"} -->

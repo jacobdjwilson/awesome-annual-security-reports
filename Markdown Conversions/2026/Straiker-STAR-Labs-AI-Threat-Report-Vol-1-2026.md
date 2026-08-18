@@ -577,3 +577,5 @@ From a poisoned README to full compromise, and the control that b1re2aks eaDchis
 Products cloned: Claude Code . JetBrains . NotebookLM . Cline . Com14et . SnoDweffleankde AI runtime benchmark, measured across the threat categorie2s9 documented in this report.
 Hosted across: Squarespace . GitHub Pages . Cloudflare Workers & 1P4ages . TNheetl iAfys .c eTnedn cAeIn at tEtadcgke eOnngeine: app context, reconnaissance, then atta3c0k, run by a Discover Agent and an Attack Agent across attack categories, strategies, and adaptive prompting.
 The blast radius: one compromise, three radii 22
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

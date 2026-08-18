@@ -137,4 +137,4 @@ BD collaborates with customers, government agencies, and industry groups to adva
 [^5]: Gartner Predicts 2023: Cybersecurity Industry Focuses on the Human Deal, by analysts Deepti Gopal, Leigh McMullen, Andrew Walls, Richard Addiscott, Paul Furtado, Craig Porter, Oscar Isaka, Charlie Winckless, published 25 January 2023.
 [^6]: Collaborating for Resilience in Healthcare: H-ISAC Annual Report 2022. Health Information Sharing and Analysis Center. https://h-isac.org/wp-content/uploads/2023/04/2022_Health-ISAC-Annual-Report-sm.pdf. Published April 3, 2023.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-23", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-23", "model": "gemini-3.1-flash-lite-preview"} -->

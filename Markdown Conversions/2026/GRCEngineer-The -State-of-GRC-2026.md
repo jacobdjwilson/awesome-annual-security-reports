@@ -208,3 +208,5 @@ GRC Engineer is the leading independent voice for the GRC Engineering discipline
 **Coming later this year:** The GRC Market Report 2026. A comprehensive vendor landscape analysis including detailed evaluations, decision frameworks, and buyer's guides by company size and maturity.
 
 Interested in learning more? ayoub@grcengineer.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-23", "model": "gemini-3.1-flash-lite-preview"} -->

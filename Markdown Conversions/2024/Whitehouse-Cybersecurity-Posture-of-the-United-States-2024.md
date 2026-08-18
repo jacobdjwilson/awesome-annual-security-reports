@@ -1123,4 +1123,4 @@ O F   T H E   U N I T E D   S T A T E S
 
 29
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-19", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-19", "model": "gemini-3.1-flash-lite"} -->

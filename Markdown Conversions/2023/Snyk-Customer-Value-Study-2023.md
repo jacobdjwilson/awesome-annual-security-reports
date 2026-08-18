@@ -129,4 +129,4 @@ On average, customers report that they’re able to achieve 56% higher developer
 - Snyk reporting, September 2023
 - Stack Overflow, Developer Survey, May 2023
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-23", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-23", "model": "gemini-3.1-flash-lite"} -->

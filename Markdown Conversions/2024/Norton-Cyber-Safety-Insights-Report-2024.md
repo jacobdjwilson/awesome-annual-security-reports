@@ -150,4 +150,4 @@ Consumers are increasingly looking toward AI tools and apps to help navigate the
 ---
 Copyright © 2024 Gen Digital Inc. All rights reserved.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-27", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-27", "model": "gemini-3.1-flash-lite"} -->

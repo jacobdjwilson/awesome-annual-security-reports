@@ -1070,4 +1070,4 @@ Sophos is the registered trademark of Sophos Ltd. All other product and company 
 trademarks or registered trademarks of their respective owners.
 20-11-01 EN (DD)
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->

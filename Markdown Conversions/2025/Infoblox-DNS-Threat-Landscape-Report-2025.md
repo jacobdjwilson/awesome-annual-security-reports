@@ -198,3 +198,5 @@ Frameworks like EU NIS2 and NIST SP 800-81 Rev. 3 require broader oversight of D
 - **RDGA:** Registered domain generation algorithm.
 - **SASE:** Secure Access Service Edge.
 - **TDS:** Traffic distribution system.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-30", "model": "gemini-3.1-flash-lite"} -->

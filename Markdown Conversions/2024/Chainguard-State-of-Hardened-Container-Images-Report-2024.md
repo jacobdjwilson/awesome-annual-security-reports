@@ -220,4 +220,4 @@ Thank you to Kaylin Trychon, Will Dolinsky, Sarah O’Rourke, Crystal Poenisch, 
 
 **Software vulnerability**: A software vulnerability is a weakness in a program which, if left unaddressed, may be used by attackers to access, manipulate, or compromise a computer system. From Chainguard Academy
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-05", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-05", "model": "gemini-3.1-flash-lite"} -->

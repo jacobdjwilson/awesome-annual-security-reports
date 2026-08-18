@@ -139,3 +139,5 @@ The Cofense platform combines phishing-specific AI with expert validation, autom
 Global enterprises including Mastercard, Accenture, and Toyota trust Cofense to strengthen organizational resilience against the most persistent cyber threat: phishing.
 
 © 2026 COFENSE. ALL RIGHTS RESERVED. Cofense: The New Era of Phishing 12
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

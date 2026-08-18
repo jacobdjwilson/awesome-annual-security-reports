@@ -672,4 +672,4 @@ What is your organization’s primary industry?
 | -------------------- | --- | --- | --- | --- | ------------------------------------------------------------------------------ | --- | ------------ | --- |
 | Dark Reading Reports |     |     |     |     |                                                                                |     | August 2023  | 23  |
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "gemini-3.5-flash-lite"} -->

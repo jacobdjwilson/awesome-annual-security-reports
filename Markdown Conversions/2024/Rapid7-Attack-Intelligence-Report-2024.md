@@ -1288,4 +1288,4 @@ Any reproduction, distribution, or unauthorized use of this report’s contents 
 
 45
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-16", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-16", "model": "gemini-3.1-flash-lite"} -->

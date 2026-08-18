@@ -279,3 +279,5 @@ CyberProof, a UST company, delivers better security operations and drives superi
 For more information, visit [CyberProof.com](https://www.cyberproof.com).
 
 © 2025 CyberProof Inc. All Rights Reserved
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-29", "model": "gemini-3.1-flash-lite-preview"} -->

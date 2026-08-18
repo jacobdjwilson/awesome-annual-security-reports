@@ -623,3 +623,5 @@ areas of quantitative and qualitative research, so they can save time and thinki
 and unlock more value with their research.
 For more information, visit sapioresearch.com.
 DEEP INSTINCT VOICE OF SECOPS: 6TH EDITION 2025 24
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-18", "model": "gemini-3.5-flash-lite"} -->

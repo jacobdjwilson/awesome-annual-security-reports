@@ -178,3 +178,5 @@ This report is a summary of Distributed Denial-of-Services (DDoS) attacks detect
 © 2025 DigiCert, Inc. All rights reserved. All logos, trademarks, servicemarks, registered trademarks, and/or registered servicemarks are owned by DigiCert, Inc. All other logos, trademarks, servicemarks, registered trademarks, and registered servicemarks are the property of their respective owners.
 
 Bi-Annual DDoS Analysis | © 2025 DigiCert, Inc. | All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "gemini-3.5-flash-lite"} -->

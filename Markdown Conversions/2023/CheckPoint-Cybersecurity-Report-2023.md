@@ -4784,4 +4784,4 @@ W W W . C H E C K P O I N T . C O M
 
 © 1994-2023 Check Point Software Technologies Ltd. All Rights Reserved.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-23", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-23", "model": "gemini-3.1-flash-lite-preview"} -->

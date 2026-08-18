@@ -3207,3 +3207,5 @@ Fortinet, Appian, Outreach, and Thales trust
 Hyperproof.
 To learn more about Hyperproof,
 visit hyperproof.io
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-01", "model": "gemini-3.5-flash-lite"} -->

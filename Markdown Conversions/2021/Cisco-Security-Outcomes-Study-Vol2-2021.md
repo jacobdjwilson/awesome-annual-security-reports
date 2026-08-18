@@ -611,4 +611,4 @@ Third-party trademarks mentioned are the property of their respective owners. Th
 
 Security Outcomes Study, Volume 2Maximizing the Top Five Security Practices
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "gemini-3.1-flash-lite-preview"} -->

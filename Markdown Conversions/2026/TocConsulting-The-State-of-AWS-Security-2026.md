@@ -6331,3 +6331,5 @@ If you need help, we are here.
 111
 
 Toc Consulting · tocconsulting.fr
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-06", "model": "gemini-3.1-flash-lite-preview"} -->

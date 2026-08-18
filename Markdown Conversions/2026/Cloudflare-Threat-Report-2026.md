@@ -1099,3 +1099,5 @@ warranties, representations, or conditions of any kind, whether express or impli
 are trademarks of Cloudflare. All other company and product names and logos may
 be trademarks of the respective companies with which they are associated.
 1 888 99 FLARE | enterprise@cloudflare.com | Cloudflare.com REV:BDES-8830.2026MARCH2
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-09", "model": "gemini-3.1-flash-lite"} -->

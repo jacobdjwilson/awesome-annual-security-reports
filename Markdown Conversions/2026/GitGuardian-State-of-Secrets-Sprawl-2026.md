@@ -659,3 +659,5 @@ as critical, and those scoring 65 or above are high risk.
 © 2026 GitGuardian. All Rights Reserved.
 
 39
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

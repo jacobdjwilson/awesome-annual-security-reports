@@ -209,4 +209,4 @@ The 2024 Trustwave Risk Radar Report underscores the escalating cyber threats fa
 6. **Proactive Measures**: Continuous monitoring, strict access controls, and background checks are critical.
 7. **Ransomware Resilience**: Regular data backups, securing remote desktop services, and updating security patches are key defenses.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-18", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-18", "model": "gemini-3.1-flash-lite"} -->

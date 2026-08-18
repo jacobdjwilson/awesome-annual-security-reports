@@ -167,3 +167,5 @@ As this report has shown, consumers are engaging with AI more frequently but rem
 Effective API governance is as much about building trust as it is about maintaining security. By embedding security into every layer of the AI ecosystem, businesses can protect their data, maintain user confidence, and build a resilient foundation for innovation.
 
 To learn more, visit: [https://salt.security](https://salt.security)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-17", "model": "gemini-3.1-flash-lite"} -->

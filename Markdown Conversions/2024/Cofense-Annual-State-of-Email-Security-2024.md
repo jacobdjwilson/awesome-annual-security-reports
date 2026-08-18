@@ -121,4 +121,4 @@ tj.scholl@cofense.com
 
 Cofense® is the original and leading provider of security awareness training and phishing simulation, offering global enterprise-level advanced email threat detection and remediation solutions. Please visit [www.cofense.com](http://www.cofense.com) or connect with us on X and LinkedIn for additional information.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-09", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-09", "model": "gemini-3.1-flash-lite-preview"} -->

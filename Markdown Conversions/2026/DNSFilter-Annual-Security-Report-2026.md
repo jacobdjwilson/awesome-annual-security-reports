@@ -228,3 +228,5 @@ The average user encounters 66 malicious queries per day, creating a significant
 [^3]: https://blog.cloudflare.com/cloudflare-1-1-1-1-incident-on-july-14-2025/
 [^4]: https://aws.amazon.com/message/101925/
 [^5]: https://www.dnsfilter.com/blog/2026-cybersecurity-predictions
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-14", "model": "gemini-3.1-flash-lite"} -->

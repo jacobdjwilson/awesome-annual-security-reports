@@ -1796,3 +1796,5 @@ learns from each business in real-time. Darktrace’s platform and services are 
 customers globally. To learn more, visit www.darktrace.com.
 North America: +1 (415) 229 9100 Europe: +44 (0) 1223 394 100 Asia-Pacific: +65 6804 5010 Latin America: +55 11 4949 7696
 darktrace.com | info@darktrace.com © 2026 Darktrace Holdings Limited. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-04", "model": "gemini-3.5-flash-lite"} -->

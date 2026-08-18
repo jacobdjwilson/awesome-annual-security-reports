@@ -184,3 +184,5 @@ Combining ML-KEM with ECDHE/DHE schemes is the recommended transitional approach
 ## A.2 Other Information
 - **Document Owner:** PQTN
 - **Editor / Company:** Vinod Choyi, Verizon
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-16", "model": "gemini-3.1-flash-lite"} -->

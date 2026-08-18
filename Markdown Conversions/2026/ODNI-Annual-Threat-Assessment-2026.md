@@ -1430,3 +1430,5 @@ areas of operation, moving closer to cities with a U.S. presence.
 [ 33 ]
 
 [ 34 ]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-15", "model": "gemini-3.5-flash-lite"} -->

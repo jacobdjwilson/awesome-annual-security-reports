@@ -4011,3 +4011,5 @@ in growth-stage funding in Europe with fragmented but researcher-to-founder dedi
 needed to match US levels regulation without conversion needs work investors under $300m,
 concentrated talent clusters too small to lead Series B+
 159
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-08", "model": "gemini-3.1-flash-lite"} -->

@@ -161,4 +161,4 @@ The future of cyber and the future of business are tightly intertwined. How you 
 [^7]: Cyber AI: Real Defense, Deloitte Tech Trends 2022.
 [^8]: Quantum Cyber Readiness Deloitte’s perspective on transitioning to a quantum secure economy.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-25", "model": "gemini-3.1-flash-lite-preview"} -->

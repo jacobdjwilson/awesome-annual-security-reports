@@ -849,3 +849,5 @@ Endnotes
 2. hxxps://www.darkreading[.]com/cyberattacks-data-breaches/canadian-authorities-arrest-snowflake-data-thief
 3. hxxps://www.europol.europa[.]eu/media-press/newsroom/news/law-enforcement-disrupt-worlds-biggest-ransomware-operation
 50
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "gemini-3.1-flash-lite"} -->

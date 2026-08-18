@@ -352,3 +352,5 @@ PwC United States
 sean.joyce@pwc.com | LinkedIn
 
 © 2025 PwC. All rights reserved. PwC refers to the PwC network and/or one or more of its member firms, each of which is a separate legal entity. Please see [www.pwc.com/structure](http://www.pwc.com/structure) for further details.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-06", "model": "gemini-3.1-flash-lite-preview"} -->

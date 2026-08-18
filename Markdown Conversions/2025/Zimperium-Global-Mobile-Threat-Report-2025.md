@@ -185,3 +185,5 @@ Mobile is now a primary attack surface. Organizations must adopt a risk-based ap
 [^3]: https://www.gartner.com/en/newsroom/press-releases/2023-05-10-gartner-survey-reveals-47-percent-of-digital-workers-struggle-to-find-the-information-needed-to-effectively-perform-their-jobs
 [^4]: https://attotime.com/blog/cell-phones-work-statistics
 [^5]: https://jumpcloud.com/blog/byod-statistics
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-11", "model": "gemini-3.1-flash-lite"} -->

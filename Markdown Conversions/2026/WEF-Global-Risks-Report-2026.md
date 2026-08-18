@@ -4887,3 +4887,5 @@ Joely Friedman; Katie Knoch; Justine Moscatello; Justin Rose and Giovanni
 Salvi.
 Cover image: Albert Badia Costa
 Global Risks Report 2026 101
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-04", "model": "gemini-3.5-flash-lite"} -->

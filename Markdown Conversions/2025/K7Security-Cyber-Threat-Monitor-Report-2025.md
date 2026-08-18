@@ -527,3 +527,5 @@ In today’s landscape, a security vulnerability isn’t just a misconfiguration
 
 Copyright © 2025 K7 Computing Private Limited, All Rights Reserved. This material has been compiled by K7 Labs. This work may not be sold, transferred, adapted, abridged, copied or reproduced in whole or in part in any manner or form or any media without the express prior written consent of authorised personnel of K7 Computing Private Limited. All product names and company names and logos mentioned herein are the trademarks or registered trademarks of their respective owners. Email us at k7viruslab@labs.k7computing.com.  
 www.k7computing.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-31", "model": "gemini-3.5-flash-lite"} -->

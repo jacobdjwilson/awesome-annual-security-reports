@@ -2066,3 +2066,5 @@ Corporate Finance
 Financial Restructuring
 Financial and Valuation Advisory
 HL.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-17", "model": "gemini-3.1-flash-lite"} -->

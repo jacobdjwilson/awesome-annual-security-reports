@@ -144,3 +144,5 @@ A static security posture is a failed security posture. CISOs must shift from re
 5. **Leverage dark web intelligence:** Monitor marketplaces for emerging threats and attribution.
 
 For questions related to this report, please contact FortiGuard Labs.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-04", "model": "gemini-3.1-flash-lite"} -->

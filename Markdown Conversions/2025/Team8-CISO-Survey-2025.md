@@ -124,3 +124,5 @@ The 2025 edition was launched at the annual CISO Village Summit, gathering over 
 
 ---
 *Disclaimer: These materials are provided for convenience only and may not be relied upon for any purpose. The contents of this document are not to be construed as legal or business advice. This document is released under the Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) license.*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-11", "model": "gemini-3.1-flash-lite"} -->

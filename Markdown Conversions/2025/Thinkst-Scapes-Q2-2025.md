@@ -273,3 +273,5 @@ Number Verification login flow is able to...
 ## Conclusions
 
 Especially at the 2025 Hacker Summer Camp. We’ll be back next time!
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

@@ -224,3 +224,5 @@ In early 2025, Intezer and AIShield investigated the "CrazyHunter" ransomware gr
 - **Tactics**: Used vulnerable drivers (CVE-2018-6606) for privilege escalation and Active Directory abuse for lateral movement.
 - **Tooling**: ZammOcide (AV-killer), Syscall Phantom (loader), GoStealthFile (exfiltration), and Hunter Ransomware.
 - **Attribution**: Taiwanese authorities identified the operator as a man surnamed Luo from Zhejiang, China, responsible for compromising over 500 systems.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-12", "model": "gemini-3.1-flash-lite"} -->

@@ -102,4 +102,4 @@ While over one-third of adults* who have been in a romantic relationship admit t
 ---
 *Copyright © 2021 NortonLifeLock Inc. All rights reserved.*
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "gemini-3.1-flash-lite-preview"} -->

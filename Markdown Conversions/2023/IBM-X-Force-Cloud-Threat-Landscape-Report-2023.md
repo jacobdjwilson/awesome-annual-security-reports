@@ -287,4 +287,4 @@ Based on observations during remote analysis, the X-Force team provided several 
 [^10]: Cloud Migration a Top Priority for Media and Entertainment Industry, Spiceworks Inc., 9 November 2021.
 [^11]: Cloud Usage Is Alive And Well In The European Cloud Market, Forrester, 19 July 2022.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-28", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-28", "model": "gemini-3.1-flash-lite-preview"} -->

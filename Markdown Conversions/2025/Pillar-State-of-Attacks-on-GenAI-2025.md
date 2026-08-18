@@ -316,3 +316,5 @@ Pillar provides a unique approach to secure the entire AI adoption lifecycle - f
   [https://krebsonsecurity.com/2024/10/a-single-cloud-compromise-can-feed-an-army-of-ai-sex-bots/](https://krebsonsecurity.com/2024/10/a-single-cloud-compromise-can-feed-an-army-of-ai-sex-bots/)
 
 [^2]: Reference to Pillar telemetry data analysis spanning over 2,000 real-world LLM applications.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-11", "model": "gemini-3.5-flash-lite"} -->

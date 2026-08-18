@@ -127,4 +127,4 @@ Serving the bold builders of the future. For over twenty years Lightspeed has be
 
 Visit us at [LSVP.COM](https://LSVP.COM) to learn more about Lightspeed, and [LSVP.COM/CYBER60](https://LSVP.COM/CYBER60) to access the online version of this report.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "gemini-3.1-flash-lite"} -->

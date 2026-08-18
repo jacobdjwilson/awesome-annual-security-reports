@@ -97,3 +97,5 @@ Fewer than half of executives report that their CISOs are largely involved in st
 The 2025 Global Digital Trust Insights is a survey of 4,042 business and technology executives conducted between May and July 2024. Respondents represent 77 countries across various industries, including industrials, tech, media, telecom, financial services, and energy. The survey is conducted by PwC Research.
 
 ![PwC Logo]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "gemini-3.1-flash-lite"} -->

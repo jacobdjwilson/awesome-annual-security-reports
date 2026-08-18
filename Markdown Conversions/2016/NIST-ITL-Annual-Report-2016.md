@@ -7257,4 +7257,4 @@ the use of SWID Tags and the Common Platform achieve those objectives. The recom
 Enumeration (CPE) specifications. The publication is interagency coordination, collaboration with the U.S.
 intended as a supplement to NIST Internal Report 8060, private
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->

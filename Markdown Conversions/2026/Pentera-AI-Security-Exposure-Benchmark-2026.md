@@ -171,3 +171,5 @@ Pentera is the market leader in AI-powered Security Validation, equipping enterp
 For more info, visit: [pentera.io](https://pentera.io)
 
 © 2026 Pentera. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-02", "model": "gemini-3.1-flash-lite"} -->

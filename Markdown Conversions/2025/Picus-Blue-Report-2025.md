@@ -227,3 +227,5 @@ Picus Security is the pioneer of Adversarial Exposure Validation, enabling organ
 For more information, visit [picussecurity.com](https://picussecurity.com)
 
 © 2025 Picus Security. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-30", "model": "gemini-3.1-flash-lite"} -->

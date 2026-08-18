@@ -506,4 +506,4 @@ at-bay.com
 [^11]: ‘People Are Scared’: Inside CISA as It Reels From Trump’s Purge, https://www.wired.com/story/inside-cisa-under-trump/
 [^12]: Trump administration retreats in fight against Russian cyber threats, https://www.theguardian.com/us-news/2025/feb/28/trump-russia-hacking-cyber-security
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-03", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-03", "model": "gemini-3.5-flash-lite"} -->

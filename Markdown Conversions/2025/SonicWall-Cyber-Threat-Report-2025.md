@@ -137,3 +137,5 @@ SonicWall prevented over 17 million attacks on IP cameras in 2024. The **Reaper 
 
 ---
 *© 2025 SonicWall Inc. All rights reserved.*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-30", "model": "gemini-3.1-flash-lite"} -->

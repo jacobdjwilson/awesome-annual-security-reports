@@ -197,3 +197,5 @@ ISACA® (www.isaca.org) champions the global workforce advancing trust in techno
 **Disclaimer:** ISACA has designed and created State of Privacy 2026 (the “Work”) primarily as an educational resource for professionals. ISACA makes no claim that use of any of the Work will assure a successful outcome.
 
 **Reservation of Rights:** © 2026 ISACA. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-19", "model": "gemini-3.1-flash-lite-preview"} -->

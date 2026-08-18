@@ -184,4 +184,4 @@ The results of the 2024 Identity Security Outlook Report send a clear message: i
 **Methodology**
 The 2024 Identity Security Outlook Report findings are based on the results of an online survey conducted in February 2024 that examined the opinions of 523 US-based IT professionals, director level and higher at companies of 250 to 10,000 employees, whose roles involve information security.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-09", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-09", "model": "gemini-3.1-flash-lite-preview"} -->

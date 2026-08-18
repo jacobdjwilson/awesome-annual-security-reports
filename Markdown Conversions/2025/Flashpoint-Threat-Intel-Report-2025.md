@@ -350,3 +350,5 @@ loss, and protect lives. Discover more at flashpoint.io.
 Join the Coversation See Flashpoint in Action
 LinkedIn | X | Threat Intel Blog | Intelligence-101 https://flashpoint.io/demo/
 Copyright ©2025 Flashpoint. All Rights Reserved. 32
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-03", "model": "gemini-3.1-flash-lite"} -->

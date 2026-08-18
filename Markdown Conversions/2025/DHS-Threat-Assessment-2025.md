@@ -608,3 +608,5 @@ U.S. Department of Homeland Security
 24-320-IA
 
 24-320-IA
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-29", "model": "gemini-3.1-flash-lite"} -->

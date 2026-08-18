@@ -1349,3 +1349,5 @@ All trademarks, trade names, service marks, and logos referenced herein belong t
 RWN-2026-WP100 January 14, 2026
 
 Ransomware 2026 | White Paper | 38
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "gemini-3.1-flash-lite"} -->

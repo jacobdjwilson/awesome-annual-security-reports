@@ -248,3 +248,5 @@ Organizations that treat agentic coding as a strategic priority in 2026 will def
 ---
 
 claude.ai
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-15", "model": "gemini-3.5-flash-lite"} -->

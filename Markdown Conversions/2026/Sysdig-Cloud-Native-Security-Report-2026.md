@@ -356,3 +356,5 @@ ALL RIGHTS RESERVED.
 RP-017 REV. A 04/26
 
 USAGE REPORTSysdig helps security and development teams prevent, detect, and respond to threats  instantly. No guesswork.  No black boxes. Just cloud  security, the right way.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "gemini-3.1-flash-lite-preview"} -->

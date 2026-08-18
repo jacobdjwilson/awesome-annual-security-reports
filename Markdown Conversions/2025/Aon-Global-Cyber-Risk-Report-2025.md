@@ -8119,4 +8119,4 @@ timely information and use sources we consider reliable, there can be no guarant
 that such information is accurate as of the date it is received or that it will continue to
 be accurate in the future.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "gemini-3.1-flash-lite-preview"} -->

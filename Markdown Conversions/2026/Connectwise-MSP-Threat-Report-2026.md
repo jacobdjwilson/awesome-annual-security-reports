@@ -200,3 +200,5 @@ partners deliver and secure services more efficiently. Discover how ConnectWise 
 connectwise.com
 
 2026 MSP THREAT REPORT
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-21", "model": "gemini-3.1-flash-lite"} -->

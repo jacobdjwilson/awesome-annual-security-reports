@@ -177,3 +177,5 @@ The shift to cloud-based PACS and DICOM systems introduces new attack vectors, i
 
 **Conclusion**
 The findings in this report emphasize the critical role of cybersecurity in protecting healthcare’s digital transformation. Organizations must focus on addressing IoT vulnerabilities, ensuring secure cloud adoption, and protecting sensitive data exposed by AI-driven technologies. Veriti’s agentless approach integrates with your entire security stack to monitor and remediate these exposures proactively.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-23", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -178,4 +178,4 @@ San Francisco, CA 94105
 info@okta.com
 1-888-722-7871
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "gemini-3.1-flash-lite"} -->

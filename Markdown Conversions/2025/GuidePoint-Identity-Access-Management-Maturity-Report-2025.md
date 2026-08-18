@@ -880,3 +880,5 @@ Conducted by Ponemon Institute©
 Page
 
 41
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-18", "model": "gemini-3.1-flash-lite"} -->

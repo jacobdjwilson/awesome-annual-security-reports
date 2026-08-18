@@ -102,4 +102,4 @@ In conclusion, the future of AI in the cloud seems bright, and we’re excited t
 2. While you’re at it, read ![our blogpost] to learn how to securely build multi-tenant services that leverage generative AI models as part of their operation, so that your customers’ data remains safe as well (and if you’d like to learn more about tenant isolation in general, be sure to take a look at ![the PEACH framework]).
 3. As in all things, ![foster a culture of security ownership towards AI]. Almost every team in an organization can use AI (though time will tell whether every team should). In the new cloud operating model, security teams must work together with developers and cloud engineering teams, and now they must consider how best to bring data scientists and AI engineers into the fold.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-29", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-29", "model": "gemini-3.1-flash-lite"} -->

@@ -185,3 +185,5 @@ leaks, fraud, and 3rd party risks.
 For more information visit: https://cyberint.com / checkpoint.com/erm
 © Cyberint, 2025. All Rights Reserved.
 Travel & Tour Operations Industry Threat Landscape 38
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "gemini-3.1-flash-lite"} -->

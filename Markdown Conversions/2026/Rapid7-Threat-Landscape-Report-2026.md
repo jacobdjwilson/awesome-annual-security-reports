@@ -528,3 +528,5 @@ Attack Surface Management | Vulnerability Management |
 Cloud-Native Application Protection | Application Security |
 Next-Gen SIEM | Threat Intelligence | MDR Services |
 Incident Response Services | MVM Services © RAPID7 2026 V1.0
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-08", "model": "gemini-3.1-flash-lite"} -->

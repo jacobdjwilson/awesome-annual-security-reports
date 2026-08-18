@@ -130,3 +130,5 @@ GRC teams stand at the cusp of a transformative era. In the next five years, the
 
 ### Methodological Notes
 The Drata Survey was conducted by Wakefield Research among 300 U.S. IT & Security Professionals ranging from GRC-related and IT Security titles that work for companies with 250 – 1,500 employees from High-Tech, SaaS, FinTech, HealthTech and Retail industries, between November 21st and December 11th, 2024. The margin of error is +/- 5.7 percentage points at a 95% confidence level.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-06", "model": "gemini-3.1-flash-lite"} -->

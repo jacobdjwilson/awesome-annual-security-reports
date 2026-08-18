@@ -3102,4 +3102,4 @@ Availability varies by region. ©2021 SecureWorks, Inc. All rights reserved.
 
 2021 State of the Threat: A Year in Review
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "gemini-3.1-flash-lite-preview"} -->

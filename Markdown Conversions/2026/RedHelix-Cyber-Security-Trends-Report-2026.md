@@ -171,3 +171,5 @@ By integrating these measures, organisations can navigate evolving cyber threats
 - ODPA. Medical Group Fine Announcement. [odpa.gg](https://odpa.gg)
 - Gartner. Market Forecast for Agentic AI 2026. [gartner.com](https://gartner.com)
 - Goldman Sachs Research. Agentic AI and Market Outlook. [goldmansachs.com/research](https://goldmansachs.com/research)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-28", "model": "gemini-3.5-flash-lite"} -->

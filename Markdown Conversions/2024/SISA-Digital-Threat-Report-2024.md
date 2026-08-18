@@ -1483,4 +1483,4 @@ be prescribed.
 
 48 DIGITAL THREAT REPORT 2024
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-01", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-01", "model": "gemini-3.5-flash-lite"} -->

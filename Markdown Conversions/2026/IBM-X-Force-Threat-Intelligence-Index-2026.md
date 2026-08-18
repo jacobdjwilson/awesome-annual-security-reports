@@ -386,3 +386,5 @@ Sonicwall Firewall Configuration Breach
 Shai-Hulud Worm 2.0
 react2shell
 Source: IBM X-Force. All links in table reside outside ibm.com.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-21", "model": "gemini-3.1-flash-lite"} -->

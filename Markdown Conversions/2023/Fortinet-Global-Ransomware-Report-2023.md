@@ -97,4 +97,4 @@ Ransomware isn’t slowing anytime soon. However, security leaders can take nume
 [^2]: “1H 2022 FortiGuard Labs Global Threat Landscape Report,” Fortinet, August 17, 2022.
 [^3]: “How We Can Help You: Common Scams and Crimes,” FBI.gov.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "gemini-3.1-flash-lite-preview"} -->

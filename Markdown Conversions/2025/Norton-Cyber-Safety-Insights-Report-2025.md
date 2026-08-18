@@ -123,3 +123,5 @@ Visit [https://us.norton.com/blog](https://us.norton.com/blog) for more Cyber Sa
 The study was conducted online in 11 countries worldwide by Dynata on behalf of Gen from April 24th to May 9th, 2025, among 11,006 adults ages 18 and older. Data are weighted where necessary by age, gender, and region, to be nationally representative. Within this report, mentions of parents refer to parents with children younger than 18 years old.
 
 ![Graphic showing the 11 countries surveyed: USA, UK, Australia, Brazil, Czech Republic, France, Germany, Italy, Japan, Mexico, and New Zealand.]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-01", "model": "gemini-3.1-flash-lite-preview"} -->

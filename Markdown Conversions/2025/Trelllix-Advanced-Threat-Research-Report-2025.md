@@ -102,3 +102,5 @@ This document and the information continued herein describes computer security r
 Trellix is a trademark or registered trademark of Musarubra US LLC or its affiliates in the US and other countries. Other names and brands may be claimed as the property of others.
 
 Copyright © 2025 Musarubra US LLC
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-04", "model": "gemini-3.1-flash-lite-preview"} -->

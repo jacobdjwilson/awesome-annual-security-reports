@@ -163,4 +163,4 @@ Strategies recommended:
 
 ![SpyCloud Company Description: SpyCloud transforms recaptured darknet data to protect businesses from cyberattacks. Visit spycloud.com to learn more.]
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "gemini-3.1-flash-lite"} -->

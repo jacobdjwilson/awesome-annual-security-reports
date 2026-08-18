@@ -487,3 +487,5 @@ Image by Pavel Nekoranec (Thinkst).
 27 Q1 2026
 
 28 Q1 2026
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

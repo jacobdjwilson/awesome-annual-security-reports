@@ -129,3 +129,5 @@ Manufacturers must adopt a proactive, multi-layered cybersecurity strategy that 
 - **Physical Damage:** Cyberattacks can result in direct physical damage to critical infrastructure and endanger worker safety.
 - **Lack of Visibility:** 73% of OT devices are unmanaged, leaving them invisible to security teams.
 - **Ransomware:** Ransomware remains a top threat, with the US being the most targeted country for manufacturing-sector attacks.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-30", "model": "gemini-3.1-flash-lite"} -->

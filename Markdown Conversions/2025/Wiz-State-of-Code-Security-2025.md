@@ -133,3 +133,5 @@ Wiz connects code and cloud to protect secrets and prevent incidents. The platfo
 The mission of the Wiz Research team is to view the cloud from the vantage point of an attacker and leverage our observations to help the security community better combat critical risk. We should not look at VCS and CI/CD security in isolation. Attackers seek to exploit toxic combinations of risk in an effort to move laterally across interconnected systems. To stay ahead, security must ensure that issues are addressed from the codebase through to the cloud environment.
 
 **Visit CloudVulnDB**: In February 2025 the CloudVulnDB project expanded its scope to include GitHub and GitLab, in addition to traditional cloud service providers such as AWS, GCP, and Azure.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-09", "model": "gemini-3.1-flash-lite"} -->

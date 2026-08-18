@@ -492,3 +492,5 @@ Overview / Theme 1 / Theme 2 / Theme 3 / Conclusion / GRF Can Help / Appendix
 2026 GRF Top Risks Report • www.grfcpa.com • 23
 
 [^1]: Strategic Drift occurs when organizations gradually lose alignment with strategic objectives due to external pressures.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-28", "model": "gemini-3.5-flash-lite"} -->

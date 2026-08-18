@@ -2384,4 +2384,4 @@ We want to hear ‘em . Drop us a line at dbir@verizon .com, find us on
 LinkedIn and Facebook, or post to Twitter with the hashtag #dbir .
 62
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->

@@ -111,3 +111,5 @@ CSC is the trusted security and threat intelligence provider for the Forbes Glob
 
 ---
 *Copyright ©2025 Corporation Service Company. All Rights Reserved. DBS06272025*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-05", "model": "gemini-3.1-flash-lite"} -->

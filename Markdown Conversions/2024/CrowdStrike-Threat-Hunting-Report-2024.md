@@ -713,4 +713,4 @@ marks, and may use the brands of third parties to identify their products and se
 
 CROWDSTRIKE 2024 THREAT HUNTING REPORT
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -120,4 +120,4 @@ As a market leader in security operations, Arctic Wolf can help close the gaps i
 
 For more information about Arctic Wolf, visit [arcticwolf.com](https://arcticwolf.com).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-16", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-16", "model": "gemini-3.1-flash-lite-preview"} -->

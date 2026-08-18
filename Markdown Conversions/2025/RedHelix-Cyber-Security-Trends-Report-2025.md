@@ -207,3 +207,6 @@ Visit [www.redhelix.co.uk/contact](http://www.redhelix.co.uk/contact) and one of
 
 [^1]: According to research carried out in 2023.
 [^2]: According to the 2024 State of Sysadmin Report.
+
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-30", "model": "gemini-3.5-flash-lite"} -->

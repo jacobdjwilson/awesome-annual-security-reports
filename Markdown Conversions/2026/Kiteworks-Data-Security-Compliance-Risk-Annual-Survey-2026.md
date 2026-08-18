@@ -239,3 +239,5 @@ www.kiteworks.com
 www.kiteworks.com
 
 Data Security and Compliance Risk: 2026 Forecast ReportREPORT
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-17", "model": "gemini-3.1-flash-lite-preview"} -->

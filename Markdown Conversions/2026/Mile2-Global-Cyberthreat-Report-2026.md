@@ -1701,3 +1701,5 @@ individually. Cyber risk rewards discipline, clarity, and preparation. Leaders
 who choose deliberate resilience shape outcomes, preserve trust, and retain
 control even under uncertainty.
 119
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-05", "model": "gemini-3.1-flash-lite"} -->

@@ -78,3 +78,5 @@ Wallarm is the only unified platform for API and agentic AI security successfull
 Wallarm detects and blocks API attacks across legacy and modern API protocols, including REST, gRPC, GraphQL, SOAP, Websockets, XML-RPC, and more. Wallarm is headquartered in San Francisco, California, and is backed by Toba Capital, Y Combinator, Partech, and other investors.
 
 Learn more at [wallarm.com](https://wallarm.com).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-06", "model": "gemini-3.1-flash-lite"} -->

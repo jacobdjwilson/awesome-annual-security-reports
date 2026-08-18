@@ -542,3 +542,5 @@ Western dominated routes.
 [ 30 ]
 
 [ 31 ]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-06", "model": "gemini-3.1-flash-lite"} -->

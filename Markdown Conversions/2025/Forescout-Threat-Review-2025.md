@@ -404,3 +404,5 @@ Once these controls are in place, ensure that threat detection and response syst
 © 2025 Forescout Technologies, Inc. All rights reserved. Forescout Technologies, Inc. is a Delaware corporation. A list of our trademarks and patents is available at www.forescout.com/company/legal/intellectual-property-patents-trademarks. Other brands, products or service names may be trademarks or service marks of their respective owners.
 
 2025H1 Threat Review | 27
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-12", "model": "gemini-3.5-flash-lite"} -->

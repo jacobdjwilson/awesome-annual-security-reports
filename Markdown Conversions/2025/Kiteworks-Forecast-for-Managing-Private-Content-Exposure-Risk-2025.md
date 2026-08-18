@@ -179,3 +179,5 @@ As organizations navigate the complexities of 2025, a proactive and integrated a
 [^25]: “2024 Industry Risk Score Report: Insights and Analysis of Risk Scores Across Industries—2018 to 1H 2024,” Kiteworks, October 2024.
 [^26]: “Privacy in Practice 2024,” ISACA, January 18, 2024.
 [^27]: Ibid.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-27", "model": "gemini-3.1-flash-lite"} -->

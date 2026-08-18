@@ -189,3 +189,5 @@ From news to knowledge, N2K delivers critical industry insights, strategic intel
 Trusted by the industry’s most influential leaders and operators, N2K partners with organizations from Fortune 100 brands to emerging startups, connecting the cybersecurity ecosystem and helping security businesses and professionals grow.
 
 Visit us at: [N2K.com](https://N2K.com)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-12", "model": "gemini-3.1-flash-lite-preview"} -->

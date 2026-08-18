@@ -285,4 +285,4 @@ Feel free to borrow any data, charts, or advice you find here. Just make sure to
 
 Thank you for reading. If you liked this analysis, please share it with your friends, colleagues, and anyone interested in the cybersecurity market.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "gemini-3.1-flash-lite"} -->

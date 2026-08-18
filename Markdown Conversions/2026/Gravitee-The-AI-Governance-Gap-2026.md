@@ -130,3 +130,5 @@ Any **REST API** can be exposed as an **MCP** server, enabling AI agents to disc
 When these capabilities are deployed in concert, _LLM proxying_ for language models, _MCP proxying_ for agent-to-agent communication, _fine-grained authorization_ for identity governance, and _centralized agent discovery_, organizations create an integrated AI governance architecture. Shadow AI still exists, but now there's a frictionless, compliant alternative. Agents can access the LLMs they need, the tools they require, and the APIs they're authorized for, all through a single governance layer that tracks every access, enforces every policy, and maintains complete audit trails.
 
 The cost of compliance becomes lower than the cost of shadow AI. Organizations win.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-06", "model": "gemini-3.1-flash-lite-preview"} -->

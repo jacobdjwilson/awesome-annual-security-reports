@@ -101,3 +101,5 @@ WithSecure™ is part of F-Secure Corporation, founded in 1988, and listed on th
 [^7]: https://www.bloomberg.com/news/articles/2021-06-09/jbs-paid-11-million-in-ransom-to-resolve-cyberattack-dj?s-ref=CIpmV6x8
 [^8]: https://edition.cnn.com/2021/06/07/politics/colonial-pipeline-ransomware-recovered/index.html
 [^9]: https://www.darkreading.com/attacks-breaches/gand-crab-developers-behind-destructive-revil-ransomware
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "gemini-3.1-flash-lite"} -->

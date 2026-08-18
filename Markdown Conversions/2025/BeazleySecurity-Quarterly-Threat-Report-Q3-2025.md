@@ -264,4 +264,4 @@ While any connection between Akira’s widely successful SonicWall VPN campaign 
 - [https://www.comparitech.com/news/ransomware-gang-says-it-hacked-pennsylvanias-attorney-general/](https://www.comparitech.com/news/ransomware-gang-says-it-hacked-pennsylvanias-attorney-general/)
 - [https://www.reuters.com/world/asia-pacific/cybercriminals-claim-hack-japans-asahi-group-2025-10-07/](https://www.reuters.com/world/asia-pacific/cybercriminals-claim-hack-japans-asahi-group-2025-10-07/)
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

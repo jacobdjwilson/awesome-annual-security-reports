@@ -117,3 +117,5 @@ Garrett Bekker is a principal research analyst at 451 Research from S&P Global E
 
 ### About HYPR
 HYPR, the leader in passwordless identity assurance, delivers the industry’s most comprehensive end-to-end identity security for your workforce and customers. By unifying phishing-resistant passwordless authentication, adaptive risk mitigation, and automated identity verification, HYPR ensures secure and seamless user experiences for everyone. Visit: [hypr.com/get-a-demo](http://hypr.com/get-a-demo)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-22", "model": "gemini-3.1-flash-lite"} -->

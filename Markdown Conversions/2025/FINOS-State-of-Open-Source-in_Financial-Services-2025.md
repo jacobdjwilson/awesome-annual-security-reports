@@ -1377,3 +1377,5 @@ Attribution-NoDerivatives 4.0 International Public License.
 To reference this work, please cite as follows: Hilary Carter, Tosha Ellison, Colin
 Eberhardt, Brittany Istenes, and Adrienn Lawson, “The 2025 State of Open Source in
 Financial Services,” foreword by Michael Abbott, The Linux Foundation, October 2025.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "gemini-3.1-flash-lite"} -->

@@ -207,4 +207,4 @@ Stepping back to look at the whole system, 2024 continues to surprise and challe
 
 [^1]: Footnote content referring to technical specifications and document citations.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

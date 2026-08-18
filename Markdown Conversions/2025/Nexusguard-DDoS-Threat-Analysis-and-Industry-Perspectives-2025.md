@@ -442,3 +442,6 @@ The statistics presented here derive from Nexusguard’s global scrubbing networ
 Established in 2008 and headquartered in Singapore, Nexusguard is a global leader in DDoS protection. Using proprietary Bastions technology and a global network of over 50 scrubbing centers, we provide comprehensive protection for networks, web applications, and DNS against malicious attacks. Trusted by 100+ CSPs, including top global providers, and protecting 50,000+ ASNs, we deliver scalable solutions ensuring service availability, operational continuity, and peace of mind. Nexusguard also enables CSPs to offer DDoS-protection-as-a-service, unlocking new revenue opportunities. 
 
 [www.nexusguard.com](https://www.nexusguard.com) for more information.
+
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

@@ -2294,4 +2294,4 @@ cybersecurity professionals with knowledge and intelligence.
 
 So, here’s to 2023 and another successful year of intelligence sharing. Happy hunting!
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-13", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-13", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -3695,3 +3695,5 @@ Products
  Final briefing to SAF/OS, AF/CC, SAF/US and AF/CV by 15 July 2012. Publish report by
 1 January 2013 articulating cyber S&T gaps, vision, and most promising near-, mid- and
 long-term vectors.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

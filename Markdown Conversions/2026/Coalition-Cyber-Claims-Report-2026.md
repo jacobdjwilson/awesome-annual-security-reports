@@ -206,3 +206,5 @@ Coalition is the marketing name for the global operations of affiliates of Coali
 Copyright © 2026. All rights reserved. Coalition, Coalition Control and the Coalition logo are trademarks of Coalition, Inc. All other products and company names
 referenced in the Report are the intellectual property of their respective brand owners.
 2026 CYBER CLAIMS REPORT 33
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-16", "model": "gemini-3.1-flash-lite"} -->

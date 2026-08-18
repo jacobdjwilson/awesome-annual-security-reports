@@ -223,4 +223,4 @@ PDI Security and Network Solutions
 security.pditechnologies.com  
 LinkedIn @pdisecurityandnetworksolutions
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-13", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-13", "model": "gemini-3.5-flash-lite"} -->

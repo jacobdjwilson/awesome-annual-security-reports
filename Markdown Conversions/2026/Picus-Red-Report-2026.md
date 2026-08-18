@@ -8312,3 +8312,5 @@ https://www.trendmicro.com/ru_ru/research/25/c/the-espionage-toolkit-of-earth-al
 All other product names, logos, and brands are property of their respective owners in the United States and/or other countries.
 
 © 2026 Picus Security. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "gemini-3.1-flash-lite"} -->

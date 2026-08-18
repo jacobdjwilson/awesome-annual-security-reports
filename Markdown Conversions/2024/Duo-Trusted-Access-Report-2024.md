@@ -177,4 +177,4 @@ users, devices and applications at duo.com
 and other countries. To view a list of Cisco trademarks, go to this URL: www.cisco.com/go/trademarks. Third-party trademarks mentioned are the property of
 their respective owners. The use of the word partner does not imply a partnership relationship between Cisco and any other company. 1266747417 02/2024
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "gemini-3.1-flash-lite-preview"} -->

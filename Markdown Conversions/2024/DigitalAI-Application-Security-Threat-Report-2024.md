@@ -144,4 +144,4 @@ This study was conducted using anonymized and aggregated data gathered from Digi
 [^4]: AV-Test Institute, 2024.
 [^5]: McKinsey & Co., “Unleashing Developer Productivity with Generative AI,” June 27, 2023.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "gemini-3.1-flash-lite"} -->

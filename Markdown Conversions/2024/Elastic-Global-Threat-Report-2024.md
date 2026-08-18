@@ -2484,4 +2484,4 @@ and other countries. Microsoft, Azure, Windows and other related marks are trade
 Web Services, AWS, and other related marks are trademarks of Amazon.com, Inc. or its affiliates. All other brand names, product
 names, or trademarks belong to their respective owners.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-27", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-27", "model": "gemini-3.5-flash-lite"} -->

@@ -164,4 +164,4 @@ As businesses have evolved, mobile devices have become indispensable tools. They
 - Lookout
 - Proofpoint
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "gemini-3.1-flash-lite-preview"} -->

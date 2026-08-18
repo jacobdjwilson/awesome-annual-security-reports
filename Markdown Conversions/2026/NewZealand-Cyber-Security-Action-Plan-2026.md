@@ -89,3 +89,6 @@ This Action Plan sets out key initiatives that the New Zealand Government will d
 Adapting to changes in the threat environment and new technologies means the Action Plan will be reviewed regularly and actions updated, added or removed as required to remain current and relevant.
 
 NEW ZEALAND’S CYBER SECURITY ACTION PLAN 2026-2027  |  [CYBERSTRATEGY@DPMC.GOVT.NZ](mailto:CYBERSTRATEGY@DPMC.GOVT.NZ)
+
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-27", "model": "gemini-3.5-flash-lite"} -->

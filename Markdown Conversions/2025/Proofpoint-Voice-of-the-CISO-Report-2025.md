@@ -174,3 +174,5 @@ Censuswide complies with the MRS Code of Conduct and ESOMAR principles.
 ![Table showing industry split of respondents, ranging from 5% in Healthcare to 17% in IT, technology and telecoms]
 
 ![Table showing company size split of respondents: 1,000-2,500 (18%), 2,501-5,000 (53%), 5,001+ (29%)]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-22", "model": "gemini-3.1-flash-lite"} -->

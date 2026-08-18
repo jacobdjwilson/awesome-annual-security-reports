@@ -172,4 +172,4 @@ Tel: +1 408 517 4710
 [^6]: [6] ©2015 Proofpoint, Inc. Proofpoint is a trademark of Proofpoint, Inc. THREAT REPORT
 [^7]: [7] ©2015 Proofpoint, Inc. Proofpoint is a trademark of Proofpoint, Inc. THREAT REPORT
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->

@@ -335,3 +335,5 @@ customers globally. To learn more, visit www.darktrace.com.
 darktrace.com | info@darktrace.com
 
 © 2025 Darktrace Holdings Limited. All rights reserved.North America: +1 (415) 229 9100Europe: +44 (0) 1223 394 100Asia-Pacific: +65 6804 5010Latin America: +55 11 4949 7696 ·About Darktrace
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-24", "model": "gemini-3.1-flash-lite-preview"} -->

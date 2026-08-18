@@ -1026,3 +1026,5 @@ Learn more at recordedfuture.com
       CTA20250804
 
                Recorded Future® | www.recordedfuture.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-17", "model": "gemini-3.1-flash-lite"} -->

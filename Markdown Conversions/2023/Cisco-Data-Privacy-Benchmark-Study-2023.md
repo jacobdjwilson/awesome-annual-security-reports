@@ -143,4 +143,4 @@ Cisco Security publishes a series of research-based, data-driven studies includi
 
 © 2023 Cisco and/or its affiliates. All rights reserved.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-24", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-24", "model": "gemini-3.1-flash-lite-preview"} -->

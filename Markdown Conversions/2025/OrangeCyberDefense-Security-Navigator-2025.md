@@ -6662,3 +6662,5 @@ ships with numerous industry-leading recognized and used throughout the industry
 technology vendors. and featured at global conferences, including
 Infosec, RSA, 44Con, BlackHat and DefCon.
 www.orangecyberdefense.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-02", "model": "gemini-3.5-flash-lite"} -->

@@ -1511,3 +1511,5 @@ Follow us
 so you can ﬁnd the right one.
 
 Latio Tech, Inc. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-15", "model": "gemini-3.1-flash-lite"} -->

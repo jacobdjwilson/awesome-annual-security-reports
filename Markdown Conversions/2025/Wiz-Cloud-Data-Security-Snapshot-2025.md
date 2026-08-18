@@ -143,3 +143,5 @@ High exposure rates of storage buckets, containers, and VMs elevate the risk of 
 *[See how Wiz DSPM helps reduce data exposure. Learn More](-see-how-wiz-dspm-helps-reduce-data-exposure-learn-more)*
 
 © Wiz Inc. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-04", "model": "gemini-3.5-flash-lite"} -->

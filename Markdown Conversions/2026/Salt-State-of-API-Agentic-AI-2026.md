@@ -194,3 +194,5 @@ The Salt Security API Protection Platform secures APIs across the full lifecycle
 
 ### About Salt Labs
 Salt Labs identifies API threats and vulnerabilities in customer deployments and in the wild, applying research findings to improve the ML and AI algorithms at the heart of the Salt platform.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-01", "model": "gemini-3.1-flash-lite-preview"} -->

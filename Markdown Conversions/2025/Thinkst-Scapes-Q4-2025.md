@@ -479,3 +479,5 @@ We’re optimistic about research in 2026; we’ll be back next quarter with mor
 30 Q4 2025
 
 31 Q4 2025
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

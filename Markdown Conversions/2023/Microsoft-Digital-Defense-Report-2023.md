@@ -13414,4 +13414,4 @@ Stay connected: @msftissues and @msftsecurity
 October 2023
 Microsoft Threat Intelligence
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-28", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-28", "model": "gemini-3.1-flash-lite-preview"} -->

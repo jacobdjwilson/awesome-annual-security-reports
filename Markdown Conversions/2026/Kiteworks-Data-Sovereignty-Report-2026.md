@@ -402,3 +402,5 @@ customers with a Private Data Network that delivers data governance, compliance,
 of their organization, significantly improving risk management and ensuring regulatory compliance on all private data exchanges. Headquartered in Silicon Valley, Kiteworks protects over 100
 million end-users and thousands of global enterprises and government agencies.
 February 2026 www.kiteworks.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-18", "model": "gemini-3.1-flash-lite"} -->

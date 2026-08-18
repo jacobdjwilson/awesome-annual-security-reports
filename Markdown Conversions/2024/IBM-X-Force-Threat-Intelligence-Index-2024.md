@@ -1966,4 +1966,4 @@ advice or represent or warrant that its services or products
 will ensure that the client is in compliance with any law
 or regulation.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-14", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-14", "model": "gemini-3.1-flash-lite"} -->

@@ -329,4 +329,4 @@ Copyright © 2024 Fortinet, Inc. All rights reserved. May 2, 2024 8:56 am    256
 
 www.fortinet.com
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "gemini-3.1-flash-lite-preview"} -->

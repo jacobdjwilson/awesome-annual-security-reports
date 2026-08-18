@@ -8912,4 +8912,4 @@ McKinsey & Company
 
 Copyright © 2022 McKinsey & Company. All rights reserved.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-23", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-23", "model": "gemini-3.1-flash-lite"} -->

@@ -457,3 +457,5 @@ Guardz helps MSPs connect the security dots across all endpoints, identities, cl
 
 Discover the power of the Guardz platform for your MSP business.  
 [Book a Demo](URL) | [Watch On Demand Demo](URL)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

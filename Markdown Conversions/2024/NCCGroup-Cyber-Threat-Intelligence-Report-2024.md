@@ -1314,4 +1314,4 @@ organisation would benefit from, please get in touch�
 People powered tech-enabled cyber security
 56
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-01", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-01", "model": "gemini-3.5-flash-lite"} -->

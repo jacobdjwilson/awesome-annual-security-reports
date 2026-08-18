@@ -435,3 +435,5 @@ We’re looking forward to seeing what comes next in 2025. We’ll be back next 
 26 Q1 2025
 
 27 Q1 2025
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

@@ -144,3 +144,5 @@ The application risk landscape has changed, and traditional application security
 - **Tighten up permissions**: Implement RBAC and enforce the principle of least privilege.
 - **Streamline AppSec scanning**: Consolidate duplicate tools to reduce alert fatigue.
 - **Continually monitor**: Verify configurations and permissions on an ongoing basis.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-27", "model": "gemini-3.1-flash-lite"} -->

@@ -1484,3 +1484,5 @@ To learn about sponsorship opportunities for research, content, and
 in-person or virtual events, email us at Sponsorships@sans.org or
 go to www.sans.org/sponsorship.
 State of ICS/OT Security 2025 28
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-18", "model": "gemini-3.5-flash-lite"} -->

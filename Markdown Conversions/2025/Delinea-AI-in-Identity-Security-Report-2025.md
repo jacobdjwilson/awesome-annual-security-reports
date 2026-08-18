@@ -118,3 +118,5 @@ Organizations need to take a programmatic approach to AI risk management that en
 Delinea is a pioneer in securing human and machine identities through intelligent, centralized authorization. Leveraging AI-powered intelligence, Delinea’s leading cloud-native Identity Security Platform applies context throughout the entire identity lifecycle across cloud and traditional infrastructure, data, SaaS applications, and AI. Learn more about Delinea on Delinea.com, LinkedIn, X, and YouTube.
 
 © Delinea AIR2025-WP-0825-EN
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-18", "model": "gemini-3.1-flash-lite-preview"} -->

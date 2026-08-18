@@ -250,3 +250,5 @@ Bolting on premium services is a time-honoured way to attract new customers and 
 ---
 
 *Disclaimer: The views and opinions expressed in this report are those of the authors and do not necessarily reflect the official policy or position of the GSMA or its subsidiaries.*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-10", "model": "gemini-3.1-flash-lite"} -->

@@ -145,4 +145,4 @@ The strengthening of partnerships sharing threat intelligence between the public
 [^25]: Douglas Jose Pereira dos Santos, “MITRE Attack Flow Gives CISOs Valuable Context for Better Risk Management,” Fortinet, November 3, 2022.
 [^26]: Geri Revay and Hossein Jazi, “WINTAPIX: A New Kernel Driver Targeting Countries in the Middle East,” Fortinet, May 22, 2023.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "gemini-3.1-flash-lite-preview"} -->

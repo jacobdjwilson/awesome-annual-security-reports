@@ -166,3 +166,5 @@ The four APAC countries we surveyed are making real progress on API security. Mo
 - **Review and subject matter contribution**: Barney Beal, Stas Neyman, Yariv Shivek
 - **Promotional materials**: Ellen O’Brien
 - **Marketing and publishing**: Georgina Morales Hampe
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-10", "model": "gemini-3.1-flash-lite"} -->

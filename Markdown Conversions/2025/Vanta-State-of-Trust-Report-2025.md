@@ -354,3 +354,5 @@ Vanta is the leading AI‑powered trust management platform that helps businesse
 
 [^1]: The timeframe for data breaches being reported in 2024 was 'In the past' instead of 'In the past 6-12 months'.
 [^2]: There was no timeframe for a terminated vendor relationship due to security concerns in 2024.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-03", "model": "gemini-3.5-flash-lite"} -->

@@ -332,3 +332,5 @@ _\*Note: The tangible impact of these threat actors depends on the global geopol
 [^33]: Chang, L M., Chen, T., Barmejo, L. and Lee, T., "Game of Emperor: Unveiling Long Term Earth Estries Cyber Intrusions," Trend Micro, 25 November 2024.
 [^34]: Staff, "PRC State-sponsored cyber activity: Actions for critical infrastructure leaders," Australian Signals Directorate, March 2024.
 [^35]: [Placeholder for internal research reference on root causes].
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-31", "model": "gemini-3.5-flash-lite"} -->

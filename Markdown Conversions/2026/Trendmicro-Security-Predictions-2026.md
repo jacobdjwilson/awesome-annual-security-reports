@@ -784,3 +784,5 @@ hundreds of millions of threats every day.
 Proactive security starts here. TrendMicro.com
 
 THEOFAI-FICATIONCYBERTHREATSTREND MICRO SECURITY PREDICTIONSFOR 2026
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-01-01", "model": "gemini-3.1-flash-lite-preview"} -->

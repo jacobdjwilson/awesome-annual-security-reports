@@ -78,3 +78,5 @@ Wiz’s AI Security Posture Management (AI-SPM) solution helps teams gain full v
 ---
 
 [^1]: Source: 2025 Planning Guide for Security by William Duper, Patrick Hevesi et al, Gartner, October 2024
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-29", "model": "gemini-3.1-flash-lite"} -->

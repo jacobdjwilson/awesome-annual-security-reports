@@ -70,4 +70,4 @@ Cato provides a world-leading single-vendor SASE platform. Cato creates a seamle
 ## Contact Us
 - Website: [www.catonetworks.com](https://www.catonetworks.com)
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-15", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-15", "model": "gemini-3.5-flash-lite"} -->

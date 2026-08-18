@@ -121,4 +121,4 @@ CalypsoAI provides the only full-lifecycle platform to secure AI models and appl
 
 CalypsoAI was founded in 2018 and has secured over $40 million in venture funding from investors including Paladin Capital Group, Lockheed Martin Ventures and Hakluyt Capital. CalypsoAI was a Top-Two Finalist in the 2025 RSAC Innovation Sandbox contest and is named on Fast Company’s Most Innovative Companies in AI for 2025. Learn more at [calypsoai.com](http://calypsoai.com) and LinkedIn.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "gemini-3.1-flash-lite"} -->

@@ -853,3 +853,5 @@ The AI Threat Report 2026 OrcaRouter Security Research · 34
 OrcaRouter
 The AI Threat Report 2026 · OrcaRouter Security Research
 www.orcarouter.ai
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

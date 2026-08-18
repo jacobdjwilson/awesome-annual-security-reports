@@ -1128,3 +1128,5 @@ our community through award-winning technology and world-class
 people� We’re ethical badasses who love what we do: wrecking
 hackers and protecting businesses from real threats�
 Learn More
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-29", "model": "gemini-3.1-flash-lite"} -->

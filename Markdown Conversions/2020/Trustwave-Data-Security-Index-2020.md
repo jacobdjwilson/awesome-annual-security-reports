@@ -379,4 +379,4 @@ Trustwave is a leading cybersecurity and managed security services provider focu
 
 For more information about Trustwave, visit www.trustwave.com.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "gemini-3.5-flash-lite"} -->

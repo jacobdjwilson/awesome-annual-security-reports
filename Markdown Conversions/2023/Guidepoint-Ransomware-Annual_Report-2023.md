@@ -847,4 +847,4 @@ There are multiple routes a group can take through the various classifications, 
 While one group may begin as “Ephemeral” and move their way through the ranks to “Full-time,” another group
 may enter as a “Rebrand” as part of a larger obfuscation strategy to avoid attention from law enforcement.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "gemini-3.1-flash-lite-preview"} -->

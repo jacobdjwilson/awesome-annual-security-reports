@@ -367,3 +367,5 @@ WORKING TO ADVANCE CYBERSECURITY KNOWLEDGE AND PRACTICE.
 We accomplish that goal through collaborative research publications like the
 IRIS series and analytic services that help our clients manage cyber risk.
 Visit cyentia.com for more information.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-06", "model": "gemini-3.1-flash-lite"} -->

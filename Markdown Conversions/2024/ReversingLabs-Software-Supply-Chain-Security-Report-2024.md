@@ -449,4 +449,4 @@ Chain Security capabilities and solutions reversinglabs.com
 trademark of ReversingLabs US Inc. All other product and company names Worldwide Sales +1.617.250.7518
 mentioned are trademarks or registered trademarks of their respective owners. sales@reversinglabs.com
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "gemini-3.5-flash-lite"} -->

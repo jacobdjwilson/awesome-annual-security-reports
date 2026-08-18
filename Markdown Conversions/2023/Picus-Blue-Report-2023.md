@@ -216,4 +216,4 @@ As the pioneer of Breach and Attack Simulation, our people and technology empowe
 
 For more information, visit www.picussecurity.com
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "gemini-3.1-flash-lite"} -->

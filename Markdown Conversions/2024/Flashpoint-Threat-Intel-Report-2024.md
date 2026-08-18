@@ -157,4 +157,4 @@ Flashpoint is the pioneering leader in threat data and intelligence. We empower 
 
 Discover more at [flashpoint.io](https://flashpoint.io).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-13", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-13", "model": "gemini-3.1-flash-lite"} -->

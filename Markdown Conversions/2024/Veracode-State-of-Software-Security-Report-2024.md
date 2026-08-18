@@ -379,4 +379,4 @@ of Veracode, Inc. in the United States and may be registered in certain other ju
 All other product names, brands or logos belong to their respective holders. All other
 trademarks cited herein are property of their respective owners.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-19", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-19", "model": "gemini-3.1-flash-lite"} -->

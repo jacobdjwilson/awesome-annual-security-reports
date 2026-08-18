@@ -445,3 +445,5 @@ States and their respective affiliates. Certain services may not be available to
 deloitte.com/about to learn more about our global network of member firms.
 Copyright © 2026 Deloitte Development LLC. All rights reserved.
 Member of Deloitte Touche Tohmatsu Limited
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "gemini-3.1-flash-lite"} -->

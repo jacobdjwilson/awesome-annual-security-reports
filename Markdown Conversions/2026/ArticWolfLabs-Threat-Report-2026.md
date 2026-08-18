@@ -356,3 +356,5 @@ obligation to update them. Readers should not rely on any single prediction and 
 Arctic Wolf Managed Risk, Arctic Wolf Managed Security Awareness, Arctic Wolf Incident Response, and Arctic Wolf Concierge Security Team are either trademarks or registered
 trademarks of Arctic Wolf Networks, Inc. or Arctic Wolf Networks Canada, Inc. and any subsidiaries in Canada, the United States, and/or other countries.
 AW_RP_2026 THREAT REPORT_0226
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-17", "model": "gemini-3.1-flash-lite"} -->

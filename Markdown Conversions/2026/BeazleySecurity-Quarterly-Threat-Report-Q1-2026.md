@@ -337,3 +337,5 @@ During the quarter, early-stage detections fell to 45% from 65% in Q4 2025. The 
 - [https://mashable.com/article/ai-discovered-zero-day-bug-reports-crisis](https://mashable.com/article/ai-discovered-zero-day-bug-reports-crisis)
 - [https://www.coveware.com/blog/2026/2/3/mass-data-exfiltration-campaigns-lose-their-edge-in-q4-2025](https://www.coveware.com/blog/2026/2/3/mass-data-exfiltration-campaigns-lose-their-edge-in-q4-2025)
 - [https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/](https://www.rapid7.com/blog/post/tr-chrysalis-backdoor-dive-into-lotus-blossoms-toolkit/)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

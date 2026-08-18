@@ -1479,3 +1479,5 @@ can focus on innovation and accelerate digital transformation, thanks to customi
 integrations. We’re building a world where Identity belongs to you. Learn more at okta.com.
 
 WhitepaperOkta’s Secure Identity Commitment
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "gemini-3.1-flash-lite-preview"} -->

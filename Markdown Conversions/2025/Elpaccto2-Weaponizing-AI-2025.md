@@ -3495,3 +3495,5 @@ com/cases/federal/us/535/234/
 94 | EL PACCTO 2.0 Weaponizing Artificial Intelligence: How AI Reshapes The World Of Organized Crime Weaponizing Artificial Intelligence: How AI Reshapes The World Of Organized Crime EL PACCTO 2.0 | 95
 
 96 | EL PACCTO 2.0 Weaponizing Artificial Intelligence: How AI Reshapes The World Of Organized Crime
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-29", "model": "gemini-3.1-flash-lite"} -->

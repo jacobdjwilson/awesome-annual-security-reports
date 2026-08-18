@@ -1429,4 +1429,4 @@ Glossary
 ASD’s glossary provides definitions for terms used in this report and other ASD publications: see
 https://www.cyber.gov.au/learn-basics/view-resources/glossary.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-04", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-04", "model": "gemini-3.1-flash-lite-preview"} -->

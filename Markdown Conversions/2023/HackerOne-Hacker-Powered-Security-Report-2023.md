@@ -393,4 +393,4 @@ HackerOne pinpoints the most critical security flaws across an organization’s 
 ## Contact Us
 Book a meeting with a security expert and scope your pentest today.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "gemini-3.1-flash-lite-preview"} -->

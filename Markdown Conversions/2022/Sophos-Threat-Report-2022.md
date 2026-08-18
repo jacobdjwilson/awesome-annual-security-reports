@@ -464,4 +464,4 @@ trademarks or registered trademarks of their respective owners.
 
 21-11-04 EN (DD)
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-21", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-21", "model": "gemini-3.1-flash-lite-preview"} -->

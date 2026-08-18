@@ -141,4 +141,4 @@ Known (and fixed) CVEs represent the vast majority of IT vulnerabilities.
 ## A Multi-Layered Approach to Home Security
 NETGEAR Armor™, powered by Bitdefender®, helps detect and block known and emerging threats, identify vulnerabilities, and strengthen privacy across network connected devices.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-12", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-12", "model": "gemini-3.1-flash-lite"} -->

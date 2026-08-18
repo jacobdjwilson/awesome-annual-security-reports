@@ -244,4 +244,4 @@ For more information: [https://orca.security](https://orca.security)
 
 ![Take Risk Assessment: Would you like to find out how many of these risks are in your environment? Take our free, no obligation risk assessment to find out.]
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-10", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-10", "model": "gemini-3.1-flash-lite"} -->

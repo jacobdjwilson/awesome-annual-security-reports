@@ -188,3 +188,5 @@ Protecting APIs demands more than firewalls and static rules. It requires full v
 - **JWT**: JSON Web Token
 
 [BACK TO TABLE OF CONTENTS](#table-of-contents)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-18", "model": "gemini-3.1-flash-lite-preview"} -->

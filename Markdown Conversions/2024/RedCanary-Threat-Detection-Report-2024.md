@@ -7217,4 +7217,4 @@ Shane Welcher
 
 2024 Threat Detection Report
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "gemini-3.1-flash-lite"} -->

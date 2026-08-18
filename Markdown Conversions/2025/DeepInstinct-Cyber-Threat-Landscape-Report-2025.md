@@ -133,3 +133,5 @@ The cybersecurity landscape of 2024 was marked by significant evolution in both 
 
 ---
 [^1]: Reports show a 30% increase in overall global cyberattacks in Q2-24 compared to Q2-23.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-03", "model": "gemini-3.1-flash-lite"} -->

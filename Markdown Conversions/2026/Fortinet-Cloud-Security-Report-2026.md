@@ -105,3 +105,5 @@ The 2026 Cloud Security Report is based on a survey of 1,163 IT and cybersecurit
 - **Company Size**: Ranges from fewer than 250 employees to over 25,000.
 
 _Reuse of content: We encourage the reuse of data, charts, and text published in this report under the terms of this Creative Commons Attribution 4.0 International License. Attribution: “2026 Cloud Security Report by Cybersecurity Insiders and Fortinet.”_
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-13", "model": "gemini-3.1-flash-lite"} -->

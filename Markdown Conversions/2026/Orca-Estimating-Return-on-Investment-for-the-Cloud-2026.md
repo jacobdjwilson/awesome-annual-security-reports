@@ -105,3 +105,5 @@ For enterprise teams seeking measurable reductions in cloud-security operating c
 [^1]: This video provides an overview of the prior ROI assessment which resulted in the identification of a 207% return for security teams operating under reasonable enterprise cloud usage assumptions: https://www.youtube.com/watch?v=bbwXWWTb3UU.
 [^2]: See https://orca.security/resources/blog/orca-security-acquires-opus-agentic-ai-cnapp for the acquisition announcement of Opus by Orca Security.
 [^3]: Much of our research in cybersecurity originates with our advisory practice for CISOs and their teams where we have a broad and extensive vantage point for understanding what practitioners are using to protect their enterprise.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-17", "model": "gemini-3.1-flash-lite"} -->

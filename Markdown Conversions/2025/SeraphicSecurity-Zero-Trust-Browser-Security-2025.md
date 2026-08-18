@@ -157,3 +157,5 @@ The Frost Radar benchmarks future growth potential using two major indices:
 Frost & Sullivan is not responsible for any incorrect information supplied by companies or users. Quantitative market information is based primarily on interviews and therefore is subject to fluctuation. Frost & Sullivan research services are for internal use and not for general publication or disclosure to third parties. No part of this research service may be given, lent, resold, or disclosed to noncustomers without written permission.
 
 ![Frost & Sullivan Copyright Notice]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-13", "model": "gemini-3.1-flash-lite"} -->

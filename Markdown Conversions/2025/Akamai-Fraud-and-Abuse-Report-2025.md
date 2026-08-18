@@ -963,4 +963,4 @@ and mitigate threats, so you can build brand trust and deliver on your vision. L
 content delivery solutions at akamai.com and akamai.com/blog, or follow Akamai Technologies on X, and LinkedIn. Published 11/25.
 Fraud and Abuse Report 2025 Akamai.com/security | 48
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-05", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-05", "model": "gemini-3.1-flash-lite"} -->

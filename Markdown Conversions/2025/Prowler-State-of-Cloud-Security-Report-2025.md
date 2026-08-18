@@ -159,3 +159,5 @@ So why wait?
 Start using Prowler today and take control of your security with confidence.
 
 ![Prowler Cloud Free trial call to action]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-13", "model": "gemini-3.1-flash-lite"} -->

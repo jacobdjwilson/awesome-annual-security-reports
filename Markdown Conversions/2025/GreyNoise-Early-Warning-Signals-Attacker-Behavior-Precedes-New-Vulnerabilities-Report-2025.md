@@ -119,3 +119,5 @@ Where:
 - Matched each spike to the first new CVE (CVSS 6+) affecting the same vendor/technology.
 - Ensured each spike was linked to only one CVE, and each CVE could have multiple spikes associated.
 - Filtered out vendors with quasi-stationary (heartbeat) activity, excessive CVE volume (noisy data), or discontinuous time series.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-08", "model": "gemini-3.1-flash-lite"} -->

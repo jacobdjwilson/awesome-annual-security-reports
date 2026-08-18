@@ -131,4 +131,4 @@ Artificial intelligence tools represent a double-edged sword. They provide unpre
 - Department of Manual 5240.01, Procedures Governing the Conduct of DoD Intelligence Activities, August 8, 2016.
 - (U) Department of Defense Instruction 3115.12, Open Source Intelligence (OSINT), August 24, 2010, as amended.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-18", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-18", "model": "gemini-3.1-flash-lite"} -->

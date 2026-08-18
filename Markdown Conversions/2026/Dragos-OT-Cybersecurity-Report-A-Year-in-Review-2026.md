@@ -1862,3 +1862,5 @@ protects customers across the range of operational sectors, including electric, 
 centers, manufacturing, water, transportation, mining, and government.
 Learn more: dragos.com
 9911 ©© DDrraaggooss,, IInncc.. AAllll RRiigghhttss RReesseerrvveedd.. PPrroopprriieettaarryy && CCoonnffiiddeennttiiaall..
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-04", "model": "gemini-3.5-flash-lite"} -->

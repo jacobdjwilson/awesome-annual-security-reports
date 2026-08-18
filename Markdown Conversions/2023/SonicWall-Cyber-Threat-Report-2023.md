@@ -5675,4 +5675,4 @@ consolidation of threat feeds. Figures published in previous reports may have be
 
 2023-CyberThreatReport-JK-7606
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-06", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-06", "model": "gemini-3.1-flash-lite-preview"} -->

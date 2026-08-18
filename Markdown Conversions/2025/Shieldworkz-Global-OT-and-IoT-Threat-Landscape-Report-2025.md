@@ -4878,3 +4878,5 @@ partner with businesses to secure assets, networks, and programs across industri
 services are tailored to each client's cyber risks and backed by the world's largest OT and
 loT threat intelligence facility and a global research team.
 /shieldworkz info@shieldworkz.com https://shieldworkz.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-21", "model": "gemini-3.1-flash-lite"} -->

@@ -2112,3 +2112,5 @@ Pro-Russia Hacktivists Conduct Opportunistic Attacks Against US and Global Criti
 Infrastructure
 Principles for the Secure Integration of Artificial Intelligence in Operational Technology 15-Dec-25
 Appendix F: IC3 QR Codes
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

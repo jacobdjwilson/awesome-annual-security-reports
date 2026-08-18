@@ -297,4 +297,4 @@ Around 62 percent of CISOs who operate in the technology domain reported budget 
 [^36]: Projecting the global value of cloud: $3 trillion is up for grabs for companies that go beyond adoption, McKinsey, 2022
 [^37]: Information Security Analysts, U.S. Bureau of Labor Statistics, 2022
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-09", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-09", "model": "gemini-3.1-flash-lite"} -->

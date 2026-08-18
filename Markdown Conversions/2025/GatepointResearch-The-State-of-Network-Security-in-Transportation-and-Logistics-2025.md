@@ -164,3 +164,5 @@ For more on Aryaka, please visit [www.aryaka.com](http://www.aryaka.com).
 [See How It Works](URL) | [View Interactive Tour](URL)
 
 info@aryaka.com | +1.888.692.7925
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "gemini-3.1-flash-lite"} -->

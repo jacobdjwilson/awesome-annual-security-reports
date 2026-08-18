@@ -287,3 +287,5 @@ Central repository for public-sector cybersecurity thought leadership, white pap
 resources, podcasts, webinars, and case studies focused on government and national
 security audiences.
 https://wwps.microsoft.com/cybersecurity
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "gemini-3.1-flash-lite"} -->

@@ -452,3 +452,5 @@ Allianz Global Corporate & Specialty SE, Königinstraße 28, 80802 Munich, Germa
 Commercial Register: Munich, HRB 208312
 
 November 2025
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "gemini-3.5-flash-lite"} -->

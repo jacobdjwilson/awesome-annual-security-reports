@@ -227,3 +227,5 @@ security.
 | --- | --- | --- | --- | --- | ----------- | -------- | ------------------- | ------------ | ---------- |
 healthcare professionals and patients.
 2025 Trustwave Risk Radar Report: Healthcare Sector
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-14", "model": "gemini-3.1-flash-lite"} -->

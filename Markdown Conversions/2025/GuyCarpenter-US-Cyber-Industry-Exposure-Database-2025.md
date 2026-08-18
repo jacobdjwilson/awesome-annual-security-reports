@@ -108,3 +108,5 @@ We acknowledge the uncertainty surrounding a scaling exercise of this magnitude 
 - **Ariel Yeung**, Principal Data Scientist, Guidewire Cyence
 
 [^1]: https://www.verisk.com/4a25ed/siteassets/media/pcs/pcs-cyber-catastrophe-notpetyas-tail.pdf
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-24", "model": "gemini-3.1-flash-lite-preview"} -->

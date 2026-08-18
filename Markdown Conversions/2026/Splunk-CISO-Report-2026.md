@@ -157,3 +157,5 @@ Oxford Economics researchers surveyed 650 Chief Information Security Officers (C
 
 ---
 *© 2025 Splunk LLC. All rights reserved.*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-21", "model": "gemini-3.1-flash-lite"} -->

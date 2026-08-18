@@ -124,3 +124,5 @@ Major breaches since January 2025 attributable to stolen or misused identities:
 3. **Live evidence over static attestations**: Insurers and regulators now demand real-time dashboards proving least privilege and key hygiene.
 
 _Unosecur | Unified Identity Fabric at Runtime_
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-17", "model": "gemini-3.1-flash-lite"} -->

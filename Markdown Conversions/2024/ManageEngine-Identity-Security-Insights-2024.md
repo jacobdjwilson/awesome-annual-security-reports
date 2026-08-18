@@ -72,4 +72,4 @@ The willingness to adopt new AI-driven cybersecurity solutions, despite signific
 
 ManageEngine surveyed 3,000+ global enterprises across the United States, Canada, United Kingdom, Spain, United Arab Emirates, Saudi Arabia, Singapore, India, Malaysia, Indonesia, Philippines, Thailand, and Vietnam. Industries included financial services, government, IT, healthcare, and education.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-15", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-15", "model": "gemini-3.1-flash-lite"} -->

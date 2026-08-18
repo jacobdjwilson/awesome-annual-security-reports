@@ -104,3 +104,5 @@ julian.alovisi@howdengroup.com
 - **Sectors**: IT & telecoms (24%), Manufacturing (13%), Construction (12%), Financial services (10%), Other (9%), Media (7%), Medical & health services (5%), Retail (4%), Hospitality and leisure (4%), Education (3%), Accountancy (2%), Transportation & distribution (2%), Legal (2%).
 
 ![Chart showing survey respondent breakdown by sector, revenue, and headcount]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-29", "model": "gemini-3.1-flash-lite"} -->

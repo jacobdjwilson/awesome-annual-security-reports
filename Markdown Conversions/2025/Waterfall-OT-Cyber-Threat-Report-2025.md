@@ -5130,3 +5130,5 @@ researcher
 Eduardo Kovacs, Contributing Editor, SecurityWeek @EduardKovacs (Twitter/X)
 FalconFeeds.io’s Twitter/X feed @FalconFeedsio (Twitter/X)
 72
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-03", "model": "gemini-3.5-flash-lite"} -->

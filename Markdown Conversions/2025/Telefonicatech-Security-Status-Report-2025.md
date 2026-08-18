@@ -807,3 +807,5 @@ Telefónica Tech and its trademarks (as well as any trademarks belonging to the 
 and its subsidiaries reserve all rights therein.
 This report is published under a Creative Commons Attribution - Share Alike license
 2025 © Telefónica Cybersecurity & Cloud Tech, S.L.U. All Rights Reserved. Page 38 de 37
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-30", "model": "gemini-3.5-flash-lite"} -->

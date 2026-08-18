@@ -132,3 +132,5 @@ Privacy is a critical element of customer trust in today’s complex business en
 Cisco Security is publishing a series of research-based, data-driven studies. The reports in each year’s series include the Consumer Privacy Survey, Data Privacy Benchmark Study, Threat Insights, and Prioritization to Prediction.
 
 © 2025 Cisco and/or its affiliates. All rights reserved. Cisco and the Cisco logo are trademarks or registered trademarks of Cisco and/or its affiliates in the U.S. and other countries. To view a list of Cisco trademarks, go to [www.cisco.com/go/trademarks](http://www.cisco.com/go/trademarks).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "gemini-3.1-flash-lite"} -->

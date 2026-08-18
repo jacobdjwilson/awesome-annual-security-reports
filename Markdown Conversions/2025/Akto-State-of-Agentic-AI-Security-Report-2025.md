@@ -218,4 +218,4 @@ akto.io
 95 Third Street, 2nd Floor, San Francisco, CA 94103, United States  
 +1 415-329-1415
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-12", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-12", "model": "gemini-3.1-flash-lite"} -->

@@ -195,3 +195,5 @@ Staffed by the industry's foremost cloud threat and malware researchers, Netskop
 Netskope provides threat protection to millions of users worldwide. Information presented in this report is based on anonymized usage data collected by the Netskope One platform.
 
 The statistics in this report are based on the period from October 1, 2024, through October 31, 2025. Stats reflect attacker tactics, user behavior, and organization policy.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-13", "model": "gemini-3.5-flash-lite"} -->

@@ -1451,3 +1451,5 @@ rapid, guided restoration after ransomware attacks. Seqrite has also unveiled SI
 to help enterprises navigate growing cyber complexity with intelligent, conversational analysis.
 Today, 30,000+ enterprises in more than 70 countries trust Seqrite with their cybersecurity needs. For more information, please visit:
 https://www.seqrite.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "gemini-3.5-flash-lite"} -->

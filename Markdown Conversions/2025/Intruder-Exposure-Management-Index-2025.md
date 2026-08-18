@@ -138,3 +138,5 @@ Intruder's exposure management platform helps lean security teams stop breaches 
 Founded in 2015 by Chris Wallis, a former ethical hacker turned corporate blue teamer, Intruder was selected for GCHQ's Cyber Accelerator and is now protecting over 3,000 companies worldwide.
 
 Start a free trial or book a call with one of our experts at intruder.io
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "gemini-3.1-flash-lite-preview"} -->

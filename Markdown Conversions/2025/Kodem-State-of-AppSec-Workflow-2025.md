@@ -232,3 +232,5 @@ The survey included 82 respondents.
 
 ---
 find your Appy place at [www.kodemsecurity.com](http://www.kodemsecurity.com)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-11", "model": "gemini-3.1-flash-lite"} -->

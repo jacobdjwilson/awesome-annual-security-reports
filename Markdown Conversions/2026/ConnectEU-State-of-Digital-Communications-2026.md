@@ -3224,3 +3224,5 @@ Subscribe to our weekly
 #ConnectNews newsletter
 Printed on recycled paper
 116 STATE OF DIGITAL COMMUNICATIONS | 2026
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-27", "model": "gemini-3.5-flash-lite"} -->

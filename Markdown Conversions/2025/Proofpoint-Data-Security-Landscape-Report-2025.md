@@ -111,3 +111,5 @@ Founded in 2012, CyberEdge Group is the premier research, marketing, and publish
 *Proofpoint, Inc. is a global leader in human- and agent-centric cybersecurity. Learn more at [www.proofpoint.com](http://www.proofpoint.com).*
 
 [0400-016-01-01]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-25", "model": "gemini-3.1-flash-lite"} -->

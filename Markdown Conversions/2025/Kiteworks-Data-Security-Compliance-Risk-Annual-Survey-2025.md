@@ -1675,3 +1675,5 @@ compliance on all private data exchanges. Headquartered in
 Silicon Valley, Kiteworks protects over 100 million end-users
 and over 1,500 global enterprises and government agencies.
 www.kiteworks.com September 2025
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-11", "model": "gemini-3.5-flash-lite"} -->

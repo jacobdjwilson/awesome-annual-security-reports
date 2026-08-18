@@ -134,4 +134,4 @@ Code42 is the leader in Insider Risk Management, offering complete data loss det
 
 Vanson Bourne is an independent specialist in market research for the technology sector. For more information, visit [www.vansonbourne.com](http://www.vansonbourne.com).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-24", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-24", "model": "gemini-3.1-flash-lite-preview"} -->

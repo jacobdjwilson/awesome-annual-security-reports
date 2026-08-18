@@ -156,3 +156,5 @@ This report was produced with contributions from the Cyentia Institute and the V
 **About Veracode**: Veracode is a global leader in Application Risk Management for the AI era. Learn more at [www.veracode.com](http://www.veracode.com).
 
 © Veracode 2026. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-13", "model": "gemini-3.1-flash-lite"} -->

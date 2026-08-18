@@ -131,4 +131,4 @@ This accounts for a total of:
 ### A Note on Mass Closures
 While preparing the data for our analysis, we noticed several large single-day closure events. These "mass closure" events have significant effects on measuring flaw persistence and time to remediation and were ultimately excluded from the analysis.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-09", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-09", "model": "gemini-3.1-flash-lite-preview"} -->

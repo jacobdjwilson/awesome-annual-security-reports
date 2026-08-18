@@ -212,3 +212,5 @@ Splunk, a Cisco company, helps make organizations more digitally resilient. Lead
 ---
 
 security-2025_v15
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-09", "model": "gemini-3.1-flash-lite"} -->

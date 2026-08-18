@@ -451,4 +451,4 @@ belong to their respective owners. © 2024 Splunk Inc. All rights reserved.
 
 24-492903-Splunk-State-of-Security-111
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "gemini-3.1-flash-lite"} -->

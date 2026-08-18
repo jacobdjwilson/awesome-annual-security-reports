@@ -248,3 +248,5 @@ As cyber threats grow in sophistication and scale, the importance of robust cybe
 [^29]: https://securityscorecard.com/resource/global-third-party-breach-report/
 [^30]: https://deepstrike.io/blog/social-engineering-statistics-2025
 [^31]: https://www.weforum.org/stories/2025/02/deepfake-ai-cybercrime-arup/
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-04", "model": "gemini-3.5-flash-lite"} -->

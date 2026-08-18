@@ -2331,3 +2331,5 @@ CYBER SECURITY
 2026
 
 The world is how we shape it. www.soprasteria.no
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-28", "model": "gemini-3.5-flash-lite"} -->

@@ -1160,3 +1160,5 @@ more at www .blackduck .com .
 blackduck .com  |  41
 
 blackduck .com  |  42
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-05", "model": "gemini-3.1-flash-lite-preview"} -->

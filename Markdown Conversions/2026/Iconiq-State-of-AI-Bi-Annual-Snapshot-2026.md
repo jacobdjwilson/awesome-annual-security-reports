@@ -728,3 +728,5 @@ AA Ip-geersnoenra inte ad scuoitn stemnitli nmgay be incorrect. AA Ip-geersnoenr
 AD epsecrrsipotnio snm ailuintogm foart tichael lyca gmenerearated with low confidence AA Ip-geersnoenra wteitdh cloonngte hnati mr samyi lbineg incorrect. AA Ip-geersnoenra stmedil icnogn ftoern at pmicatyu rbee incorrect. AA Ip-geersnoenra inte ad scuoitntent may be incorrect. AA Ip-geersnoenra inte ad bcloanckte snhti rmtay be incorrect. AA Ip-geersnoenra wteitdh cloonngte hnati rm samyi lbineg incorrect.
 AD ecslocsriep-tuiopn o af uat opmerasotinca slmly iglienngerated AA Ip-geersnoenra wteitdh cloonngte hnati rm samyi lbineg incorrect.
 44
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-28", "model": "gemini-3.5-flash-lite"} -->

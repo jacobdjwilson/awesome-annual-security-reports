@@ -920,4 +920,4 @@ delivery solutions at akamai.com and akamai.com/blog, or follow Akamai Technolog
 Published 04/25.
 State of Apps and API Security 2025 I Volume 11, Issue 02 Akamai.com | 47
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-05", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-05", "model": "gemini-3.1-flash-lite"} -->

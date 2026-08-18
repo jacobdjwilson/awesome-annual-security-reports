@@ -512,4 +512,4 @@ A penguin on Boulders Beach, Cape Town, South Africa. Photo by Kym Ellis on Unsp
 
 Looking out from Cape Point, Cape Town, South Africa. Photo by Clayton Cardinalli on Unsplash.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->

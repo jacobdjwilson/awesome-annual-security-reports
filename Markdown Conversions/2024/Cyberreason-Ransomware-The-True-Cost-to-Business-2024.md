@@ -163,4 +163,4 @@ This research was conducted by Censuswide on behalf of Cybereason. A total of 1,
 
 ![Chart showing industry representation: IT and Telecommunications 31%, Manufacturing and Utilities 13%, Retail, Catering and Leisure 10%, and others.]
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "gemini-3.1-flash-lite-preview"} -->

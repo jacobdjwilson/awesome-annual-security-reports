@@ -294,3 +294,5 @@ We funded a third-party research partner to collect 1,200 survey responses in Au
 - $5.1 billion - $10 billion: 83
 - $10.1 billion - $50 billion: 42
 - More than $50 billion: 32
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-01", "model": "gemini-3.5-flash-lite"} -->

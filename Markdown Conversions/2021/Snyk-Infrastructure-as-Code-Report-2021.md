@@ -147,4 +147,4 @@ After receiving 543 responses from members of our opted-in 2M+ IT community, we 
 - Architects (12%)
 - Cloud & Platform (11%)
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "gemini-3.1-flash-lite-preview"} -->

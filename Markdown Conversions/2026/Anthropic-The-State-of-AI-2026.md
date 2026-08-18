@@ -608,3 +608,5 @@ Setting your AI strategy for 2026? Check out other resources from our team:
 ## Start building with :claude:
 
 Contact our Sales team to build agents that handle complex workflows on the Claude Developer Platform or integrate Claude directly into your development environment with Claude Code.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-06", "model": "gemini-3.1-flash-lite-preview"} -->

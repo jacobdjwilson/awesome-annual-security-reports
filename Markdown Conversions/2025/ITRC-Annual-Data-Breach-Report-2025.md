@@ -127,3 +127,5 @@ Consumers may access the latest information about data breaches and enroll in Br
 - Live Chat on our website: [IDTheftCenter.org](http://IDTheftCenter.org)
 
 © IDENTITY THEFT RESOURCE CENTER 2025 | IDTHEFTCENTER.ORG
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "gemini-3.1-flash-lite-preview"} -->

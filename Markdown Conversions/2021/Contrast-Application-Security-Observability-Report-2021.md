@@ -590,4 +590,4 @@ Fax: 650.397.4133
 
 contrastsecurity.com
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-22", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-22", "model": "gemini-3.1-flash-lite"} -->

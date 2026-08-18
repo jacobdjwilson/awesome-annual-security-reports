@@ -10414,4 +10414,4 @@ https://www.linkedin.com/showcase/microsoft-on-the-issues/
 A Microsoft Threat Intelligence report
 October 2024
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-15", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-15", "model": "gemini-3.1-flash-lite"} -->

@@ -105,3 +105,5 @@ Applying the Return on Mitigation (RoM) methodology across all HackerOne program
 - **External Benchmarks**: Data sourced from Verizon DBIR 2025, IBM Cost of a Data Breach Report 2025, SANS 2024 Top Attacks and Threats Report, and the 2024 ISC2 Cybersecurity Workforce Study.
 
 [^1]: Return on Mitigation (RoM) is a cybersecurity risk-valuation model that expresses the financial impact of avoided breaches.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-05", "model": "gemini-3.1-flash-lite-preview"} -->

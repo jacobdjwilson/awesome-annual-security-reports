@@ -280,3 +280,5 @@ Many other security experts contributed to the report:
 For more information, visit cloud.google.com
 
 SPECIAL REPORT: MANDIANT M-TRENDS 2023 EMBARGO
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-12", "model": "gemini-3.5-flash-lite"} -->

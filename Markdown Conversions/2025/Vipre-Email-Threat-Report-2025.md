@@ -88,3 +88,5 @@ Organizations need to turn to technology that can catch behavioral patterns, sem
 - **Nordics Sales**: nordic.sales@vipre.com | +45 7025 2223
 
 ©2025 VIPRE Security Group. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-16", "model": "gemini-3.1-flash-lite"} -->

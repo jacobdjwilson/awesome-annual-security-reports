@@ -586,3 +586,5 @@ www.truesec.com
 Threat Intelligence Report 2025 551
 
 www.truesec.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-31", "model": "gemini-3.5-flash-lite"} -->

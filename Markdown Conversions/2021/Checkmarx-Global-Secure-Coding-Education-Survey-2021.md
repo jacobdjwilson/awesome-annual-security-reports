@@ -132,4 +132,4 @@ Start your free Software Security Training Solutions (Codebashing) trial today a
 
 Visit [CSHub.com](https://www.cshub.com) for more information from cyber security leaders for the cyber security community.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "gemini-3.1-flash-lite-preview"} -->

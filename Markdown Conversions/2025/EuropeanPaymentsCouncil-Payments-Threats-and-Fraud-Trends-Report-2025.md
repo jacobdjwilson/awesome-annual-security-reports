@@ -3612,3 +3612,5 @@ Table 7 Summary threats versus controls and mitigations
 www.epc-cep.eu
 
 77 / 77
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-02", "model": "gemini-3.1-flash-lite"} -->

@@ -128,3 +128,5 @@ Dive deeper into the ways AI is expanding the enterprise attack surface in the T
 [^5]: Zscaler ThreatLabz 2026 AI Security Report
 [^6]: Australian Signals Directorate: “Annual Cyber Threat Report 2024-2025”
 [^7]: National Cyber Security Centre: “Businesses in Aotearoa need to prioritise cyber security.”
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-29", "model": "gemini-3.1-flash-lite"} -->

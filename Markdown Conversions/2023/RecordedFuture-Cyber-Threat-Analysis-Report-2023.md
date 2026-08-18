@@ -268,4 +268,4 @@ andactionableintelligence.
 Learnmoreatrecordedfuture.com
 28 TA 2024 0321 RecordedFuture®|www.recordedfuture.com
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-18", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-18", "model": "gemini-3.1-flash-lite"} -->

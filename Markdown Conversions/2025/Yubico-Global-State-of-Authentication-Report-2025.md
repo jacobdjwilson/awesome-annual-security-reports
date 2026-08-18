@@ -203,3 +203,5 @@ Dual-headquartered in Stockholm, Sweden and Santa Clara, California, Yubico is p
 ### Methodology
 
 Talker Research surveyed 2,000 employed adults from the United States, United Kingdom, Australia, India, Japan, Singapore, France, Germany, and Sweden. The survey was commissioned by Yubico and administered online between August 15 and August 27, 2025.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-12", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -227,3 +227,5 @@ Quarterly breach simulations test AWS security incident response procedures end-
 [^3]: Shared Responsibility in Cloud Security and Automation Insights | Fidelis Security
 [^4]: https://fidelissecurity.com/resource/case-study/pci-compliance-with-fidelis-on-aws/
 [^5]: 2025 Cost of a Data Breach Report: Navigating the AI rush without sidelining security | IBM
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-15", "model": "gemini-3.1-flash-lite"} -->

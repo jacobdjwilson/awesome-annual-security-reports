@@ -2367,4 +2367,4 @@ Figure 51 BATLOADER’s Distribution Source Code
 
 2022 NCC Group Annual Threat Monitor
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-21", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-21", "model": "gemini-3.1-flash-lite"} -->

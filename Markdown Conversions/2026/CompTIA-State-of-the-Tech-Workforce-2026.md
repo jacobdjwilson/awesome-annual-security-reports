@@ -6292,3 +6292,5 @@ $109,479,
 $50K
 | Tech   | Services | Insurance | Public Sector |     |     |     |     |     |     | metro wage5 |     |
 | ------ | -------- | --------- | ------------- | --- | --- | --- | --
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-18", "model": "gemini-3.5-flash-lite"} -->

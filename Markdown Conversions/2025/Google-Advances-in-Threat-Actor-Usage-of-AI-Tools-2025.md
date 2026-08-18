@@ -197,3 +197,5 @@ Google also continuously invests in AI research, helping to ensure AI is built r
 
 ## About the Authors
 Google Threat Intelligence Group focuses on identifying, analyzing, mitigating, and eliminating entire classes of cyber threats against Alphabet, our users, and our customers. Our work includes countering threats from government-backed attackers, targeted zero-day exploits, coordinated information operations (IO), and serious cyber crime networks. We apply our intelligence to improve Google's defenses and protect our users and customers.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-25", "model": "gemini-3.1-flash-lite"} -->

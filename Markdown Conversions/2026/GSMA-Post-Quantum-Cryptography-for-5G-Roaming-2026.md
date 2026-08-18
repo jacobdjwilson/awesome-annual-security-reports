@@ -1756,3 +1756,5 @@ Your comments or suggestions & questions are always welcome.
 V1.0
 
 Page 24 of 24
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-14", "model": "gemini-3.1-flash-lite-preview"} -->

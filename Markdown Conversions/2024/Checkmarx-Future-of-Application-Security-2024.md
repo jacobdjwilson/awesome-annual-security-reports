@@ -160,4 +160,4 @@ Censuswide abides by and employs members of the Market Research Society which is
 
 Checkmarx is the leader in application security and ensures that enterprises worldwide can secure their application development from code to cloud. Our consolidated platform and services address the needs of enterprises by improving security and reducing TCO, while simultaneously building trust between AppSec, developers, and CISOs. At Checkmarx, we believe it’s not just about finding risk, but remediating it across the entire application footprint and software supply chain with one seamless process for all relevant stakeholders. We are honored to serve more than 1,800 customers, which includes 60 percent of all Fortune 100 companies including Siemens, Airbus, SalesForce, Stellantis, Adidas, Wal-Mart and Sanofi.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-09", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-09", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -141,4 +141,4 @@ The 2024 Cloud Security Report is based on a global survey of 927 cybersecurity 
 ---
 *©2024 Cybersecurity Insiders. All Rights Reserved.*
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-13", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-13", "model": "gemini-3.1-flash-lite"} -->

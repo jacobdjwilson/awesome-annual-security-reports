@@ -261,4 +261,4 @@ To learn more and see insights on your company’s exposed data, visit [spycloud
 
 Learn more at [spycloud.com](https://spycloud.com)
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-21", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-21", "model": "gemini-3.1-flash-lite-preview"} -->

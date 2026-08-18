@@ -2002,4 +2002,4 @@ www.nccgroup.com
 
 68
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-29", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-29", "model": "gemini-3.1-flash-lite-preview"} -->

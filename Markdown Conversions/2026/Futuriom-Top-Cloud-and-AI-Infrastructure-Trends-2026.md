@@ -4452,3 +4452,5 @@ Said Ouissal, Erik Nordmark
 Copyright 2026 Rayno Media Inc.
 
 25
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-14", "model": "gemini-3.1-flash-lite-preview"} -->

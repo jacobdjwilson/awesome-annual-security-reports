@@ -336,3 +336,5 @@ Genetec Inc. surveyed physical security professionals from August 12 to Septembe
 
 ### Appendix 4 – Open-ended comments
 Survey participants provided additional context regarding technology deployment, integration, motivations for replacing legacy systems, and challenges faced in 2024. These comments highlight the ongoing need for training, the impact of economic uncertainty on project timelines, and the growing role of AI and data analytics in modern security operations.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "gemini-3.1-flash-lite"} -->

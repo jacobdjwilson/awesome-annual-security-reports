@@ -305,3 +305,5 @@ Command Platform | Exposure Management | Attack Surface Management | Vulnerabili
 *Try our security platform risk-free - start your trial at rapid7.com*
 
 © RAPID7 2025 V1.0
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "gemini-3.5-flash-lite"} -->

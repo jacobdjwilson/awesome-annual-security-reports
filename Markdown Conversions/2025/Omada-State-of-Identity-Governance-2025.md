@@ -166,3 +166,5 @@ Omada simplifies Identity Governance by providing a full-featured, cloud-native 
 © 2025 Omada A/S
 V29012025
 Omada Identity
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-08", "model": "gemini-3.1-flash-lite"} -->

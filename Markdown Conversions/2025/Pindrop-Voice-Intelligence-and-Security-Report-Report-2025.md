@@ -747,3 +747,5 @@ this even a human?” In a world where synthetic voices can replicate emotion, t
 the voice is no longer a guaranteed marker of authenticity. It can be generated, cloned, or
 manipulated—making it both a high-value signal and a high-risk surface.
 47 2025 Voice Intelligence and Security Report
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "gemini-3.1-flash-lite"} -->

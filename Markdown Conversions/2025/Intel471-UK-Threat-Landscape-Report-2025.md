@@ -77,3 +77,5 @@ CISOs, boards, and business leaders assuming ownership of cyber risk as enterpri
 
 ## About Intel 471
 Intel 471 equips enterprises and government agencies with intelligence-driven security offerings powered by real-time insights into cyber adversaries, threat patterns, and potential attacks relevant to their operations. By integrating human-sourced intelligence with advanced automation and curation, the company’s platform enhances security measures and enables teams to bolster their security posture by prioritising controls and detections based on real-time cyber threats. Organisations are empowered to neutralise and mitigate digital risks across dozens of use cases across our solution portfolios: Cyber Threat Exposure, Cyber Threat Intelligence, and Cyber Threat Hunting. Learn more at www.intel471.com.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-18", "model": "gemini-3.1-flash-lite-preview"} -->

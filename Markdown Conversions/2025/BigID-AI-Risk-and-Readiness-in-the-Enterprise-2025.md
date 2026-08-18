@@ -240,4 +240,4 @@ Customers use BigID to reduce their AI & data risk, automate security and privac
 > "Tools like BigID are the future. Organizations should be leveraging these tools to remove the manual processes from data discovery, provide better visibility, and help with prioritization of controls."
 > — Ryan O’Leary, Future of Trust: Battling Data Discovery Confusion
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "gemini-3.1-flash-lite"} -->

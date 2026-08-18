@@ -423,4 +423,4 @@ Semperis hosts the award-winning Hybrid Identity Protection conference and podca
 
 [^1]: Simpson, Nik. “How to Protect Backup Systems from Ransomware Attacks.” Gartner Research. Sept. 21, 2021. https://www.gartner.com/en/documents/4005993.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "gemini-3.5-flash-lite"} -->

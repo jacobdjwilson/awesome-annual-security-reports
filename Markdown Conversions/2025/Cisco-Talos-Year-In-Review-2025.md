@@ -1611,3 +1611,5 @@ View our blog: TalosIntelligence.com/blog | Subscribe: Threat Source newsletter 
 © 2026 Cisco and/or its affiliates. All rights reserved. Cisco and the Cisco logo are trademarks or registered trademarks of Cisco and/or its affiliates
 in the U.S. and other countries. To view a list of Cisco trademarks, go to this URL: www.cisco.com/go/trademarks. Third-party trademarks mentioned
 ©ar e2 0th2e6 pCroispceor tayn odf/ othr eitisr raeffislpiaetcetsiv. eA lol wrignhetrss .r Tesheer uvesed .o f| t htael owsoinrtde lpligaretnnceer .dcoomes not imply a partnership relationship between Cisco and any other company. (1110R) pppaaagggeee 444333
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

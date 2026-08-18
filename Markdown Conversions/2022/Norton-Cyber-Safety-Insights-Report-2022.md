@@ -103,4 +103,4 @@ Over one-third of adults* who have been in a romantic relationship admit to onli
 - **Age**: Gen Z (31%), Millennials (29%), Gen X (24%), Boomers (13%), Seniors (3%)
 - **Gender**: 49% Male, 51% Female
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-19", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-19", "model": "gemini-3.1-flash-lite-preview"} -->

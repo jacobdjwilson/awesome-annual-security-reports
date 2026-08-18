@@ -3206,4 +3206,4 @@ effective programs and instill confidence in their cyber readiness.
 Inc. All other brands, products, or service names are or may be trademarks or service marks of their
 respective owners. M-EXT-RT-EN-US-000429-01
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-19", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-19", "model": "gemini-3.1-flash-lite-preview"} -->

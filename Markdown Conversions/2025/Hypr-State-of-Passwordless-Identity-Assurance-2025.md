@@ -219,3 +219,5 @@ Trusted by organizations worldwide, including two of the four largest US banks, 
 
 See how HYPR helps secure your workforce and customers  
 Visit: [hypr.com/get-a-demo](https://hypr.com/get-a-demo)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-02", "model": "gemini-3.5-flash-lite"} -->

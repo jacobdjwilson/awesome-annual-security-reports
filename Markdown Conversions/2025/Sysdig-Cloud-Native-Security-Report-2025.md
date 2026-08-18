@@ -160,3 +160,5 @@ From the startling speed of cloud attacks to the widespread reliance on open sou
 As organizations look to adapt and continue to thrive over the next 12 months, this report serves as both a benchmark and a roadmap for navigating the complexities of the cloud‑native world. To that end, open source software has truly cemented itself as a cornerstone of cloud security, bridging the gap between enterprises and small businesses alike. Until next year, keep up the good work and secure every second of your cloud journey!
 
 ![Image description: Sysdig logo and closing statement]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-04", "model": "gemini-3.1-flash-lite"} -->

@@ -146,3 +146,5 @@ International CISOs earn $469K total compensation, which is 32% below the North 
 4. **Secure Liability Protection**: 36% of private company CISOs operate without executive liability protection.
 5. **Manage Third-Party Risk**: The #1 security priority for 43% of respondents.
 6. **Develop NextGen Pipeline**: Execution-layer talent scarcity requires proactive development.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-02", "model": "gemini-3.1-flash-lite"} -->

@@ -36,3 +36,5 @@ This report aggregates data from BitDefender’s global telemetry network, which
 ## References
 
 [^1]: Global Financial Fraud Observatory, "Annual Economic Impact of Cyber-Enabled Crime," 2026.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-08", "model": "gemini-3.1-flash-lite"} -->

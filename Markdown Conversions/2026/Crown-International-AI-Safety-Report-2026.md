@@ -8601,3 +8601,5 @@ Reinforcement Learning from Human Feedback,
 Y. Jiang, A. Zou, Z. C. Lipton, J. Z. Kolter, Safety
 arXiv [cs.CL] (2022); http://dx.doi.org/10.48550/
 Pretraining: Toward the next Generation of Saf
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "gemini-3.5-flash-lite"} -->

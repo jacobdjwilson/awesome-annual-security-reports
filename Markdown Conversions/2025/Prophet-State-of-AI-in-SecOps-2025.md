@@ -142,3 +142,5 @@ The size of the SOC team scales with the organization, but even large teams stru
 - **Tool sprawl**: The proliferation of numerous security tools, leading to increased complexity.
 
 [^1]: Note: All statistics and commentary are derived from the Prophet Security 2025 survey data.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-25", "model": "gemini-3.1-flash-lite"} -->

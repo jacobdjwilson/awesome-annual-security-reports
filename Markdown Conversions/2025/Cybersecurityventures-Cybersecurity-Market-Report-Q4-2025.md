@@ -122,3 +122,5 @@ The totality of the cybersecurity market is far larger than information security
 **Media Contact**: Editors at Cybercrime Magazine (info@cybersecurityventures.com)
 
 PUBLISHED BY CYBERCRIME MAGAZINE IN PARTNERSHIP WITH EVOLUTION EQUITY PARTNERS. ALL RIGHTS RESERVED CYBERSECURITY VENTURES ©2025
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-22", "model": "gemini-3.1-flash-lite"} -->

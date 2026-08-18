@@ -218,4 +218,4 @@ Kaspersky is a global cybersecurity and digital privacy company founded in 1997.
 [^22]: Kaspersky Online File Reputation
 [^23]: Github. Impacket
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-20", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-20", "model": "gemini-3.1-flash-lite-preview"} -->

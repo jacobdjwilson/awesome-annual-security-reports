@@ -113,3 +113,5 @@ Wallarm is the leading API security company, purpose-built to protect modern clo
 - LinkedIn: [linkedin.com/company/wallarm](https://linkedin.com/company/wallarm)
 - YouTube: [youtube.com/@wallarmchannel](https://youtube.com/@wallarmchannel)
 - Explore Product: [tour.playground.wallarm.com](https://tour.playground.wallarm.com)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-01", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -92,4 +92,4 @@ escape.tech
 ping@escape.tech
 +1 (707) 615 6448
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-22", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-22", "model": "gemini-3.1-flash-lite"} -->

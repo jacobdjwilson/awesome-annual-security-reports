@@ -89,3 +89,5 @@ This research was based on a global survey of 3,120 respondents fielded via web 
 ---
 *Source: 2026 Data Threat Report custom survey from S&P Global Market Intelligence 451 Research, commissioned by Thales.*
 *© Thales - February 2026*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-05", "model": "gemini-3.1-flash-lite"} -->

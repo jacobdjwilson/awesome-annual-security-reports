@@ -461,3 +461,5 @@ Whew! It’s been quite a quarter. Usually as we head into the holiday period th
 30 Q3 2025
 
 31 Q3 2025
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

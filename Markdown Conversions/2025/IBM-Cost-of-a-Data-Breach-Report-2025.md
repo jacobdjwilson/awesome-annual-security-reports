@@ -709,3 +709,5 @@ The client is responsible for ensuring compliance with all applicable laws and
 regulations. IBM does not provide legal advice nor represent or warrant that its
 services or products will ensure that the client is compliant with any law
 or regulation.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-11", "model": "gemini-3.1-flash-lite"} -->

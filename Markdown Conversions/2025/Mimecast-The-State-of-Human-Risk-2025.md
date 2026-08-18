@@ -254,3 +254,5 @@ Mimecast is a leading cybersecurity company transforming the way businesses mana
 Mimecast is a registered trademark or trademark of Mimecast Services Limited in the United States and/or other countries. All other third-party trademarks and logos contained in this press release are the property of their respective owners.
 
 www.mimecast.com | ©2025 Mimecast | All Rights Reserved | GL07425
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-31", "model": "gemini-3.5-flash-lite"} -->

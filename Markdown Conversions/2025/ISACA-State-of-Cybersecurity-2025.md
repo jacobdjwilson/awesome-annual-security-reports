@@ -152,3 +152,5 @@ Although talent shortages are not a significant problem now, an aging cybersecur
 This report was developed by ISACA. The Board of Directors includes John De Santis (Chair), Jamie Norton (Vice-Chair), and other industry leaders.
 
 © 2025 ISACA. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-02", "model": "gemini-3.1-flash-lite-preview"} -->

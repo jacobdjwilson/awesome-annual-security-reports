@@ -916,4 +916,4 @@ Zscaler, Inc. (HQ)  •  120 Holger Way  •  San Jose, CA 95134
 
 zscaler.com
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-18", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-18", "model": "gemini-3.1-flash-lite"} -->

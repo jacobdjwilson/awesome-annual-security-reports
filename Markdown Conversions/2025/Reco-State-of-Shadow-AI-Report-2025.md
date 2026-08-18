@@ -208,3 +208,5 @@ The opportunity is now. Every day these tools become more embedded in workflows.
 
 ---
 *This report presents analysis conducted by Reco and authored by The Cybersecurity Pulse, based on comprehensive shadow AI data from Reco's enterprise customer base.*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-14", "model": "gemini-3.1-flash-lite"} -->

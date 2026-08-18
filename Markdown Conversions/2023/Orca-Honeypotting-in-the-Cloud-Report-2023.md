@@ -526,4 +526,4 @@ Orca detects, prioritizes, and helps remediate cloud risks across every layer of
 
 *Watch a recorded demo or take our free cloud risk assessment.*
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-27", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-27", "model": "gemini-3.5-flash-lite"} -->

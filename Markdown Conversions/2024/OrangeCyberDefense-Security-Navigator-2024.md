@@ -6149,4 +6149,4 @@ show that they have attacked victims all around the world, (NATO) and countries 
 Spain
 shifting their purported motivations and reasonings frequently. Russi
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-02", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-02", "model": "gemini-3.5-flash-lite"} -->

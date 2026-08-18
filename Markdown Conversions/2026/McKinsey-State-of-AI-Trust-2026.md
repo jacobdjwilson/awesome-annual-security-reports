@@ -250,3 +250,5 @@ _Henning Soller_ is a partner in McKinsey’s Frankfurt office, _Anselm Ohme_ is
 
 [^1]: “AI principles,” OECD, accessed February 20, 2026.
 [^2]: The act sets requirements for all companies that use, deploy, or integrate AI systems. The obligations center on governance, accountability, and oversight: ensuring the system’s performance, addressing bias and unfairness, maintaining human oversight, and being able to demonstrate compliance.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-06", "model": "gemini-3.1-flash-lite-preview"} -->

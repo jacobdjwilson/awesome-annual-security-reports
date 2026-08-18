@@ -391,3 +391,5 @@ owned and controlled by other parties. Gallagher strongly encourages you to revi
 Insurance brokerage and related services provided by Arthur J. Gallagher Risk Management Services, LLC License Nos. IL 100292093 / CA 0D69293
 © 2026 Arthur J. Gallagher & Co., and affiliates & subsidiaries | GPUS106830
 2026 CYBER INSURANCE MARKET OUTLOOK 12
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-18", "model": "gemini-3.5-flash-lite"} -->

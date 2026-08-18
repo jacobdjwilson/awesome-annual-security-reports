@@ -107,4 +107,4 @@ Threat actors continue to favor well-known tools like **Mimikatz** and **Cobalt 
 
 [^1]: Industry data counts are limited to customers who have elected to provide details pertaining to their business sectors.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "gemini-3.1-flash-lite-preview"} -->

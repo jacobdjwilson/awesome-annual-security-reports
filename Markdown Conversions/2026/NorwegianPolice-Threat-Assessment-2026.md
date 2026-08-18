@@ -654,3 +654,5 @@ Police Threat Assessment 2026
 Published by: National Criminal Investigation Service
 politiet.no/trusselvurdering
 Published on 25 February 2026
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-10", "model": "gemini-3.1-flash-lite"} -->

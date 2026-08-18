@@ -559,4 +559,4 @@ Zero-day vulnerability / A software vulnerability for which there is currently n
 Whakaraeraetanga rā-kore CVE number assigned. The term derives from the number of days for which defenders and
 developers have been aware of the vulnerability.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-29", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-29", "model": "gemini-3.1-flash-lite"} -->

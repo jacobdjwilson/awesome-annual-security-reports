@@ -144,3 +144,5 @@ APIs are now a critical part of the digital infrastructure, but their rapid grow
 Traceable is the industry’s leading API Security company that helps organizations achieve API protection in a cloud-first, API-driven world. With an API Data Lake at the core of the platform, Traceable is the only intelligent and context-aware solution that powers complete API security – security posture management, threat protection and threat management across the entire Software Development Lifecycle. To learn more about how API security can help your business, book a demo with a security expert.
 
 [www.traceable.ai](http://www.traceable.ai)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-27", "model": "gemini-3.1-flash-lite"} -->

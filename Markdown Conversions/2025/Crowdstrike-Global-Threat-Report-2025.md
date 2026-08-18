@@ -997,3 +997,5 @@ Learn more: www.crowdstrike.com
 Follow us: Blog | X | LinkedIn | Facebook | Instagram | YouTube
 Start a free trial today: www.crowdstrike.com/free-trial-guide
 © 2025 CrowdStrike, Inc. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "gemini-3.1-flash-lite"} -->

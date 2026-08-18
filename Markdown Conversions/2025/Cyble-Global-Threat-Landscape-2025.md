@@ -124,3 +124,5 @@ Hacktivism in 2025 moved beyond DDoS attacks into ransomware and critical infras
 H1 2025 marked a clear escalation in both volume and sophistication of ransomware attacks. From zero-day abuse and sector-specific targeting to the rise of multi-continent hacktivism and software supply chain threats, organizations face a landscape that demands proactive threat intelligence, robust patching hygiene, and cross-sector cyber resilience strategies.
 
 © 2025 Cyble Inc. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-30", "model": "gemini-3.1-flash-lite"} -->

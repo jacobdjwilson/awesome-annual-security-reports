@@ -1291,3 +1291,5 @@ Start a free trial today: https://www.crowdstrike.com/trial
 © 2026 CrowdStrike, Inc. All rights reserved. CrowdStrike and CrowdStrike Falcon are marks owned by CrowdStrike, Inc. and are
 registered in the United States and other countries. CrowdStrike owns other trademarks and service marks and may use the brands
 of third parties to identify their products and services.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-04", "model": "gemini-3.1-flash-lite"} -->

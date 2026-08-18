@@ -257,3 +257,5 @@ www.nccgroup.com
 [^44]: Ministry of Justice cyber-attack incident report.
 [^45]: IET and Cyber Security Breaches Survey public sentiment data (2025).
 [^46]: European Union Digital Identity (eID) Wallet rollout timeline (2026).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-30", "model": "gemini-3.5-flash-lite"} -->

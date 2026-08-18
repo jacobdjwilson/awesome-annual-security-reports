@@ -95,4 +95,4 @@ In the next chapter of our series, we’ll be tackling how you can get better ou
 [CONTACT US: Click here to schedule a meeting.](https://example.com)
 [LEARN MORE: Check out our other content.](https://example.com)
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-01", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-01", "model": "gemini-3.1-flash-lite-preview"} -->

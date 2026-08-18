@@ -1623,3 +1623,5 @@ Page 37 of 40
 2026 NMFTA Transportation Industry Cybersecurity Trends Report© Copyright 2025, National Motor Freight Traffic Association, Inc. (NMFTA)™ All rights reserved.
 
 1001 N Fairfax St, Ste 600, Alexandria, VA 22314-1798
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-17", "model": "gemini-3.5-flash-lite"} -->

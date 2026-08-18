@@ -130,4 +130,4 @@ Complexity is here to stay. Hybrid work environments are becoming a fixture, the
 
 [^1]: Methodology: The Deloitte 2021 Future of Cyber Survey, conducted by both Deloitte and Wakefield Research, polled nearly 600 C-level executives about cybersecurity at companies with at least $500 million in annual revenue including nearly 200 CISOs, 100 CIOs, 100 CEOs, 100 CFOs, and 100 CMOs between June 6 – August 24, 2021 using an online survey.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-05", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-05", "model": "gemini-3.1-flash-lite-preview"} -->

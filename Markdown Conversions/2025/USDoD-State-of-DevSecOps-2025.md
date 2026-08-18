@@ -1711,3 +1711,5 @@ and infrastructure they need to build, launch,and manage secure software.
 The State of DevSecOps within the Department of Defense | 46
 
 The State of DevSecOps within the Department of Defense | 47
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-06", "model": "gemini-3.1-flash-lite"} -->

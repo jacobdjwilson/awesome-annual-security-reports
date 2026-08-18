@@ -161,4 +161,4 @@ experience, security and development teams can now work better together. That’
 code annually, improve developer productivity by 50%, and deliver 2X AppSec ROI.
 Checkmarx. Always Ready To Run.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "gemini-3.1-flash-lite"} -->

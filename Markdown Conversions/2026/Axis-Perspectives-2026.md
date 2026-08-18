@@ -536,3 +536,5 @@ www.axis.com
 
 ©2026 Axis Communications AB. AXIS COMMUNICATIONS, AXIS, ARTPEC and VAPIX are registered trademarks
 of Axis AB in various jurisdictions. All other trademarks are the property of their respective owners.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-01", "model": "gemini-3.1-flash-lite-preview"} -->

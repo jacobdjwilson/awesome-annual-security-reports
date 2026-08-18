@@ -440,4 +440,4 @@ Wombat was born from research at the world-renowned Carnegie Mellon University, 
 Contact Us: wombatsecurity.com | info@wombatsecurity.com | +1 (412) 621 1484 | UK +44 (20) 3807 3472  
 00118SOTP © 2008-2018 Wombat Security Technologies, Inc. All rights reserved.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->

@@ -378,3 +378,5 @@ measurable business outcomes. We believe that working closely with our clients a
 better security, together model, jointly empowers us to defend against the greatest threats.
 To learn more visit, www.cyberproof.com.
 © 2025 CyberProof Inc. All Rights Reserved 8
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-28", "model": "gemini-3.5-flash-lite"} -->

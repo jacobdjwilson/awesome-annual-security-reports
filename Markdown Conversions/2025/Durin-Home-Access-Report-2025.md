@@ -180,3 +180,5 @@ The survey examined code-sharing behavior, security concerns, and feature prefer
 For more information, visit durin.ai.
 
 ![Image description: A visual representation of the survey data showing the percentage of homeowners who share access codes and the frequency of code changes.]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-13", "model": "gemini-3.1-flash-lite"} -->

@@ -398,3 +398,5 @@ GitGuardian is an end-to-end NHI security platform that empowers software-driven
 **Secrets managers usage analysis**: We analyzed a sample of 2,584 public repositories for which we identified a secrets manager was available. To find those repositories, we relied on the CI/CD configuration files when those indicated secrets were pulled from a secrets manager at build time.
 
 **Analysis of Leaked Secret Permissions**: This study analyzed the permissions associated with leaked GitLab and GitHub API tokens. For both platforms, the study used their respective API functionality to retrieve the scopes of each token, allowing for the determination of read-only versus write access.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "gemini-3.1-flash-lite"} -->

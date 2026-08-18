@@ -154,3 +154,5 @@ High-risk events—hiring and onboarding, device enrollment and replacement, acc
 Organizations that adapt will make the shift from periodic identity checks to continuous identity assurance, embedding workforce identity verification into the places where trust matters most.
 
 Visit [getnametag.com](http://getnametag.com) to learn more.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "gemini-3.1-flash-lite-preview"} -->

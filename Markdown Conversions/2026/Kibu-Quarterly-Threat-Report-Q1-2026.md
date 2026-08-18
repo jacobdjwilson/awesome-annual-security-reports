@@ -223,3 +223,5 @@ Learn more at [TrustKibu.com](http://TrustKibu.com)
 [^21]: Yee, Isaac, et al. Op. cit.
 [^22]: Halaweh, Mohanad, and Ghaleb El Refae. “Examining the accuracy of AI detection software tools in Education.ˮ 2024 Fifth International Conference on Intelligent Data Science Technologies and Applications (IDSTA), 24 Sept. 2024, pp. 186–190, https://doi.org/10.1109/idsta62194.2024.10747004.
 [^23]: Maroofi, Sourena, et al. “Are you human?ˮ Proceedings of the ACM Internet Measurement Conference, 27 Oct. 2020, pp. 78–86, https://doi.org/10.1145/3419394.3423632.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-18", "model": "gemini-3.1-flash-lite"} -->

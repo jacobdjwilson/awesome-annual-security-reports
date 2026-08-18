@@ -218,3 +218,5 @@ Use traffic analysis and anomaly detection tools to identify botnet activity ear
 
 ### 8.7 Work with your partners
 Get the knowledge and capabilities you need by bringing together internal operational and cyber practitioners, leaning on your vendors, and participating in your industry’s ISAC.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-30", "model": "gemini-3.1-flash-lite"} -->

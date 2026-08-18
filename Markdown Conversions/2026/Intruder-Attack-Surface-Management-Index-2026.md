@@ -32,3 +32,5 @@ The data presented in this index was compiled through a combination of:
 
 ## References
 [^1]: Intruder Security Research Lab, "2026 Vulnerability Exploitation Trends," January 2026.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-21", "model": "gemini-3.1-flash-lite"} -->

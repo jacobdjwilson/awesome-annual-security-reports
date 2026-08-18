@@ -123,4 +123,4 @@ Headquartered in Seattle with offices in more than 30 countries, Veeam protects 
 
 Learn more at [www.veeam.com](http://www.veeam.com) or follow Veeam on LinkedIn @veeam-software and X @veeam.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-19", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-19", "model": "gemini-3.1-flash-lite"} -->

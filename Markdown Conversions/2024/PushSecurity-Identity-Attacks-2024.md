@@ -259,4 +259,4 @@ It may have been a landmark year for identity attacks, but we’re still only sc
 
 This means that it’s essential that organizations re-evaluate and strengthen their defenses against identity attacks.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "gemini-3.1-flash-lite"} -->

@@ -368,3 +368,5 @@ Private & Strictly Confidential 66
 San Francisco | Palo Alto | New York | London
 Join our community
 PPrriivvaattee && SSttrriiccttllyy CCoonnffiiddeennttiiaall
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-06", "model": "gemini-3.1-flash-lite"} -->

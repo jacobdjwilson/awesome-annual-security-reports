@@ -222,3 +222,5 @@ Powered by dark web identity intelligence, analysts and investigators can surfac
 SpyCloud protects businesses from the stolen identity data criminals are using to target them now. Its automated identity threat protection solutions leverage advanced analytics and AI to proactively prevent ransomware and account takeover, detect insider threats, safeguard employee and consumer identities, and accelerate cybercrime investigations. To learn more about its holistic identity approach and see your company’s exposed identity data, visit [spycloud.com](https://spycloud.com).
 
 [GET A DEMO OR REQUEST MORE INFO](URL_TO_DEMO_REQUEST)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-19", "model": "gemini-3.1-flash-lite-preview"} -->

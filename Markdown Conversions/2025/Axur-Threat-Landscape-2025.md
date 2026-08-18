@@ -1524,4 +1524,4 @@ Spring/Summer 2025 Collection Lookbook
 | --- | ------------------------- | --- | --- | --- | --- | --- |
 Detected on 04/28/2025 at 12:11 PM https://www.zyatramedia.com/releases/may-originals 61
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-27", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-27", "model": "gemini-3.5-flash-lite"} -->

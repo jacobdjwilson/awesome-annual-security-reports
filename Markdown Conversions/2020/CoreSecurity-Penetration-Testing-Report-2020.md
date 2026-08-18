@@ -199,4 +199,4 @@ Core Security provides organizations with critical, actionable insight about who
 
 © HelpSystems, LLC. All trademarks and registered trademarks are the property of their respective owners. cs-gd-0621-79d
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-04", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-04", "model": "gemini-3.5-flash-lite"} -->

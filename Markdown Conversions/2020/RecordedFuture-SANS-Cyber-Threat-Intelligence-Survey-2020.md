@@ -934,4 +934,4 @@ Sponsor
 SANS would like to thank this survey’s sponsor:
 2020 SANS Cyber Threat Intelligence (CTI) Survey 17
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-16", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-16", "model": "gemini-3.5-flash-lite"} -->

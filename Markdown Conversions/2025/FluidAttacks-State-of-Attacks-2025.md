@@ -136,3 +136,5 @@ At Fluid Attacks, we offer different support channels for vulnerability remediat
 - 34.7% of systems used "Talk to a Pentester."
 
 We invite you to take full advantage of this and the other support channels we offer, which can undoubtedly help you improve your remediation rates and times, thereby benefiting your organization's security posture.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "gemini-3.1-flash-lite"} -->

@@ -2125,4 +2125,4 @@ Chainalysis does not guarantee or warrant the accuracy, completeness, timeliness
 in this report and will not be responsible for any claim attributable to errors, omissions, or other inaccuracies of any part of
 such material.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "gemini-3.5-flash-lite"} -->

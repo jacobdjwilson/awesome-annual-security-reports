@@ -159,3 +159,5 @@ The Salesforce Threat Landscape 2026 40 (40)
 #1 Cyber Security Solution for
 Modern Salesforce Threats
 cloudprotection.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-10", "model": "gemini-3.1-flash-lite"} -->

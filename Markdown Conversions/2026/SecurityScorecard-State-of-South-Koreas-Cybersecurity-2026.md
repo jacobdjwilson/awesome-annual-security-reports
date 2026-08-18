@@ -187,3 +187,5 @@ South Korea’s largest enterprises demonstrate meaningful cybersecurity maturit
 3. **Fourth-party risk must be actively monitored**: 2,474 fourth-party breach instances highlight cascading dependency risk.
 4. **Executive accountability is rising**: Regulators are shifting focus from “Did a breach occur?” to “Was governance sufficient?”
 5. **Resilience is a competitive differentiator**: Organizations that implement continuous ecosystem monitoring and integrate security ratings into procurement decisions will materially reduce both breach likelihood and regulatory exposure.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "gemini-3.1-flash-lite"} -->

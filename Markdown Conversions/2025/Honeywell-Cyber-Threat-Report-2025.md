@@ -589,3 +589,5 @@ NC 28202
 WPR-25-02-EN | 05/25  
 www.honeywell.com © 2025 Honeywell International Inc.  
 2025 Cyber Threat Report | www.honeywell.com | 29
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "gemini-3.5-flash-lite"} -->

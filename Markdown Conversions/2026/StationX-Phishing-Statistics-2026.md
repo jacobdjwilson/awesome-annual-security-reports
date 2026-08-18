@@ -567,3 +567,5 @@ TAKE THE NEXT STEP IN YOUR CAREER TODAY!
 UNLOCK YOUR MASTER’S PROGRAM (https://www.stationx.net/membership/?
 
 cta_src=app&cta_p=article-footer-cta)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-23", "model": "gemini-3.1-flash-lite"} -->

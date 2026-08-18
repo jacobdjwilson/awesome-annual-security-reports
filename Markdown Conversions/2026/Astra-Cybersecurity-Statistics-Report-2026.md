@@ -483,3 +483,5 @@ Penetration Testing
 Made with ❤ in
 Privacy Policy Terms of Service Report a Vulnerability
 Copyright © 2026 ASTRA IT, Inc. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-06", "model": "gemini-3.1-flash-lite-preview"} -->

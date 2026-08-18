@@ -129,3 +129,5 @@ Dashlane is the leading credential security platform that secures access and pro
 
 Visit dashlane.com/blog for more resources, digital security tips, and Dashlane product news.
 Visit dashlane.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-12", "model": "gemini-3.1-flash-lite"} -->

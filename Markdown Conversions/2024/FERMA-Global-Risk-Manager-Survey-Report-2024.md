@@ -3233,4 +3233,4 @@ www.ferma.eu
 
 Copyright © 2024 FERMA, in partnership with PwC
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-12", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-12", "model": "gemini-3.1-flash-lite-preview"} -->

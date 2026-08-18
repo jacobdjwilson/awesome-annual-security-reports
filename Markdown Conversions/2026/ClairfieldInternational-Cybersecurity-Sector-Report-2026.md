@@ -239,3 +239,5 @@ info@clairfield.com
   T: +404 841-9351  
 
 www.clairfield.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-13", "model": "gemini-3.5-flash-lite"} -->

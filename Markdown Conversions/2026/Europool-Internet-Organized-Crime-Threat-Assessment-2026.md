@@ -1100,3 +1100,5 @@ material
 
 This publication and more information on Europol are available on the Internet.
 www.europol.europa.eu
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-29", "model": "gemini-3.1-flash-lite"} -->

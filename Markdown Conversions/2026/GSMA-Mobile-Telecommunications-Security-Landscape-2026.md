@@ -677,3 +677,5 @@ London
 EC4R 3AB
 UK
 Email: security@gsma.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-08", "model": "gemini-3.1-flash-lite"} -->

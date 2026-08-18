@@ -263,3 +263,5 @@ AppSec teams must accept that human capacity is insufficient to manage this pace
 27. Top 23 DevSecOps Tools in 2026 | Aikido
 28. SAST, DAST & IAST | The ‘Hows’ of Application Security Testing | Imperva
 29. SAST vs DAST vs IAST: Choosing the Right Approach for Application Security — Bright Security
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-13", "model": "gemini-3.5-flash-lite"} -->

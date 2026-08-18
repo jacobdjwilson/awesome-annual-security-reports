@@ -5720,3 +5720,5 @@ innovation with confidence. Learn more at www.blackduck.com .
 ©2026 Black Duck Software, Inc. All rights reserved. Black Duck is a trademark of Black Duck Software, Inc. in the United States and other countries. All other names
 mentioned herein are trademarks or registered trademarks of their respective owners. January 2026
 BSIMM16 95
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-12", "model": "gemini-3.5-flash-lite"} -->

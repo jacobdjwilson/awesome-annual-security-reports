@@ -913,3 +913,5 @@ such data. The results from the use of such data are provided on
 an “as is” basis and IBM makes no representations or
 warranties, express or implied.
 1227cc9e83cb97ae-USEN-06 6611
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-06", "model": "gemini-3.1-flash-lite"} -->

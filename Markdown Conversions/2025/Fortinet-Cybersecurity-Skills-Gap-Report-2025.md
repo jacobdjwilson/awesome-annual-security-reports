@@ -104,3 +104,5 @@ Cybersecurity has become an increasingly strategic concern. As boards take on mo
 Fortinet (NASDAQ: FTNT) is a driving force in the evolution of cybersecurity and the convergence of networking and security. Our mission is to secure people, devices, and data everywhere. The Fortinet Training Institute is dedicated to making cybersecurity training and new career opportunities available to everyone. FortiGuard Labs develops and utilizes leading-edge machine learning and AI technologies to provide customers with timely and consistently top-rated protection.
 
 *Copyright © 2025 Fortinet, Inc. All rights reserved.*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-08", "model": "gemini-3.1-flash-lite"} -->

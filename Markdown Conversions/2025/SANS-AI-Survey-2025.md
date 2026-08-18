@@ -113,3 +113,5 @@ SANS would like to thank this survey’s sponsor.
 
 ## About the SANS Research Program
 The SANS Research Program provides data-driven insights and thought leadership to cybersecurity practitioners. For sponsorship opportunities, email Sponsorships@sans.org or visit www.sans.org/sponsorship.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "gemini-3.1-flash-lite"} -->

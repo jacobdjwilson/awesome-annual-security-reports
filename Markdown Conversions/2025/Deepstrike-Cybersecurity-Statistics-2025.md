@@ -947,3 +947,5 @@ companies, focusing on cloud security, application vulnerabilities,
 and adversary emulation. His work involves dissecting complex
 attack chains and developing resilient defense strategies for clients
 in the finance, healthcare, and technology sectors.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-12", "model": "gemini-3.1-flash-lite"} -->

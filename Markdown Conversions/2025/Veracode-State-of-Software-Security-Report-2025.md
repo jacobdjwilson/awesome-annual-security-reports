@@ -96,3 +96,5 @@ The new view of software security maturity requires:
 The report contains findings from 1.3M unique applications with 126.4M raw findings, including 107.4M via SAST, 3.9M via DAST, and 15M via Software Composition Analysis. "Mass closure" events (where thousands of flaws are closed in a single scan due to filesystem or branch errors) were excluded from the analysis to ensure data integrity.
 
 [^1]: All statistics in this 15-year retrospective are based on static analysis (SAST) scans only because that’s consistent with early versions of the SoSS. Combined stats from all scan types is the norm for this report unless otherwise noted.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "gemini-3.1-flash-lite"} -->

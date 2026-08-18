@@ -108,3 +108,5 @@ Our survey was conducted online in September 2024. Respondents held a variety of
 
 **Disclaimer:**
 This report is based on data derived from a survey that assessed how cybersecurity and IT professionals perceive AI in cybersecurity. The findings are based on self-reported assessments and subjective opinions of survey participants rather than objective performance measures or independently verified data.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-04", "model": "gemini-3.1-flash-lite-preview"} -->

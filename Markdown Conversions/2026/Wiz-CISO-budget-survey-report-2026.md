@@ -277,3 +277,5 @@ AI adoption is accelerating in the cloud, and with it comes a new layer of risk.
 ![See Wiz in action: Explore how Wiz helps your team surface real risk, cut through the noise, and secure every layer of your cloud.]
 ![Request a demo]
 ![Watch a 12-minute demo video]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-16", "model": "gemini-3.1-flash-lite"} -->

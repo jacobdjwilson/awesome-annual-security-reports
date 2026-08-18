@@ -134,4 +134,4 @@ In July and August 2024, quantitative research conducted by Sapio Research was c
 ### About Vanta
 Vanta is the leading trust management platform that helps organizations of all sizes automate compliance, manage risk, and prove trust. Founded in 2018, Vanta has customers in 58 countries with offices in Dublin, London, New York, San Francisco and Sydney. For more information, visit [www.vanta.com](http://www.vanta.com).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-18", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-18", "model": "gemini-3.1-flash-lite"} -->

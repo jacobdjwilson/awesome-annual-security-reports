@@ -104,4 +104,4 @@ Mend, formerly known as WhiteSource, effortlessly secures what developers create
 
 For more information, visit [www.mend.io](http://www.mend.io), the Mend blog, and Mend on LinkedIn and Twitter.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "gemini-3.1-flash-lite-preview"} -->

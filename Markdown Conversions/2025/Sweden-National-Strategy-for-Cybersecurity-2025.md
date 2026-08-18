@@ -815,3 +815,5 @@ Ministry of Defence 51
 Ministry of Defence
 Switchboard: +46 8-405 10 00
 www.government.se
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-27", "model": "gemini-3.5-flash-lite"} -->

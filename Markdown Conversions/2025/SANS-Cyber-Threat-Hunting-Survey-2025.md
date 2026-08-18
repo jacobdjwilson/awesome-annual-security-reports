@@ -126,3 +126,5 @@ The 2025 SANS Threat Hunting Survey highlights the ongoing evolution of threat h
 [^2]: “Introducing the PEAK Threat Hunting Framework,” www.splunk.com/en_us/blog/security/peak-threat-hunting-framework.html
 [^3]: “TaHiTI,” www.betaalvereniging.nl/en/safety/tahiti
 [^4]: “Enterprise Detection & Response: The Pyramid of Pain,” https://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "gemini-3.1-flash-lite"} -->

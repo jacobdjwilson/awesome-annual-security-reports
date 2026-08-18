@@ -175,3 +175,5 @@ We offer several support channels for vulnerability remediation. The main ones a
 Autofix and Custom Fix were used in more than half the systems; Custom Fix was far more common (93% of those systems). These tools were used to help with mostly low- and medium-severity vulnerabilities.
 
 ![Image description: Chart showing the distribution of support tool usage across systems.]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-16", "model": "gemini-3.1-flash-lite-preview"} -->

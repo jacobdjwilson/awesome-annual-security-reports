@@ -171,4 +171,4 @@ Abnormal is currently trusted by more than 3,200 organizations, including over 2
 **Interested in Stopping Modern Email Attacks?**
 [Request a Demo](URL) | [See Your ROI](URL)
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-21", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-21", "model": "gemini-3.1-flash-lite"} -->

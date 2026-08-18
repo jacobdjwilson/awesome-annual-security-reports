@@ -226,4 +226,4 @@ The Company has several offices across the United States, and its clients includ
 [^1]: https://www.gartner.com/en/newsroom/press-releases/2023-02-22-gartner-predicts-nearly-half-of-cybersecurity-leaders-will-change-jobs-by-2025
 [^2]: Bureau of Labor Statistics (BLS) data referenced in context of workforce trends.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-09", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-09", "model": "gemini-3.1-flash-lite-preview"} -->

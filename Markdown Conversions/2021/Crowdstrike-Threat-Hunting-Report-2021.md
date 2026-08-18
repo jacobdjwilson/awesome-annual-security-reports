@@ -2637,4 +2637,4 @@ to security incidents, prevent breaches and optimize your speed to remediation
 
 2021 Threat Hunting Report
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-05", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-05", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -163,4 +163,4 @@ The 2021 Cloud Security Report is based on a comprehensive survey of 613 cyberse
 
 For more information on (ISC)², visit [www.isc2.org](http://www.isc2.org).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "gemini-3.1-flash-lite-preview"} -->

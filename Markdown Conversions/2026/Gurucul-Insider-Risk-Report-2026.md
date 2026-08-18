@@ -794,3 +794,5 @@ cybersecurity-insiders.com
 Feb 2026 // Version 1.8
 
 STRATEGIC INSIGHT FOR CYBERSECURITY LEADERS
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-14", "model": "gemini-3.1-flash-lite-preview"} -->

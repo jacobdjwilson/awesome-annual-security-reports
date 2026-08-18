@@ -867,4 +867,4 @@ need for exceptions to cloud migration
 
 43
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-13", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-13", "model": "gemini-3.1-flash-lite"} -->

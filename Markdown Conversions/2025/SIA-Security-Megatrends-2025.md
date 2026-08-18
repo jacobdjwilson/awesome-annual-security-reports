@@ -573,3 +573,5 @@ Supply Chain Security Principles for the Security
 Industry Professional
 This SIA member-only resource focuses upon some of the key concepts
 and challenges of supply chain security.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "gemini-3.1-flash-lite"} -->

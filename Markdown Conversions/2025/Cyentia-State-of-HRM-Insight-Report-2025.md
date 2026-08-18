@@ -459,3 +459,5 @@ science firm, working to advance cybersecurity knowledge and
 practice. We accomplish that goal by collaborating with security
 companies to publish data-driven reports like this one and through
 analytic services that help organizations manage cyber risk.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-12", "model": "gemini-3.1-flash-lite"} -->

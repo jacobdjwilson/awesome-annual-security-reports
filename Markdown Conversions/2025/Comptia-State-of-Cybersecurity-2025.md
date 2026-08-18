@@ -120,3 +120,5 @@ The Computing Technology Industry Association (CompTIA) is the world’s leading
 ![Chart showing cybersecurity metrics used, including Effectiveness of training (42%), MTTD (39%), MTTR (37%), and others.]
 
 ![Chart showing resource groups involved in cybersecurity: Internal generalist (54%), Internal specialist (52%), General outside firm (36%), and Specialized outside firm (31%).]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-27", "model": "gemini-3.1-flash-lite"} -->

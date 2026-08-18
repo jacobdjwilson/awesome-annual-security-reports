@@ -349,4 +349,4 @@ Organizations need to take action to defend themselves against this wide range o
 [^2]: “Dridex and Shifu give spam bots the day off and spread via exploit kits,” November 18, 2015, http://www.proofpoint.com/us/threat-insight/post/dridex-shifu-give-spam-bots-day-off
 [^3]: “Dyre malware campaigners innovate with distribution techniques,” October 9, 2015, http://www.proofpoint.com/us/dyre-malware-campaigners-innovate-distribution-techniques
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->

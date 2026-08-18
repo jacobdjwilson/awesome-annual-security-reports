@@ -56,3 +56,5 @@ To round things out, here are some executive highlights from our Q1 2025 report:
 - Endpoints malware delivery vectors shifted appreciably in Q1. For years, malicious scripts, primarily PowerShell, have remained the most common way malware arrives on an endpoint by a fairly large margin, while Windows binaries have continued to gain ground as the second-most common vector. However, this quarter we saw browsers and “other” vectors rising significantly on the list, suggesting that threat actors are returning to “drive-by download” tactics and delivering malware more often in piracy-related tools and remote software.
 
 That’s just a glimpse of the trends in invasive cyber species infiltrating our shared digital ecosystem. For much more detail and tips that will make you a better cybersecurity ecologist, read on.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-09", "model": "gemini-3.1-flash-lite"} -->

@@ -4933,4 +4933,4 @@ Availability varies by region. ©2022 SecureWorks, Inc. All rights reserved.
 
 2022 State of the Threat: A Year in Review060708010203040506070809
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-21", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-21", "model": "gemini-3.1-flash-lite-preview"} -->

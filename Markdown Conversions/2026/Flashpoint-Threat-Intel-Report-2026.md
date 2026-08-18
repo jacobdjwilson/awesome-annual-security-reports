@@ -241,3 +241,5 @@ Three key imperatives for 2026:
 Flashpoint is the leader and largest private provider of threat data and intelligence. Discover more at [flashpoint.io](https://flashpoint.io).
 
 Copyright ©2026 Flashpoint. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "gemini-3.1-flash-lite"} -->

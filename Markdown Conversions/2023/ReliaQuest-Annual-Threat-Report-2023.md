@@ -415,4 +415,4 @@ Manda inkteern Satieoncaul croiptyyrig Pht,o trsadseimbalrke, patent, trade secr
 representations or warranties provided of any kind and should not be relied upon for any purpose. ReliaQuest has no obligation to amend, modify, or update the information contained in this document 31
 in the event that such information changes or subsequently becomes inaccurate. Printed in the USA.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "gemini-3.1-flash-lite"} -->

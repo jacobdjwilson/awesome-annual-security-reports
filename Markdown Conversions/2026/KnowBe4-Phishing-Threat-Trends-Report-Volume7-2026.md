@@ -195,3 +195,5 @@ KnowBe4, Inc.   |   33 N Garden Ave, Suite 1200, Clearwater, FL 33755
 Other product and company names mentioned herein may be trademarks and/or registered trademarks of their respective companies.
 
 Copyright © 2026  KnowBe4 All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-22", "model": "gemini-3.1-flash-lite"} -->

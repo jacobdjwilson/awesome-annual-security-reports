@@ -44,3 +44,5 @@ Looking ahead, the integration of AI-driven risk assessment will play a critical
 
 [^1]: Descope Internal Security Audit, 2024.
 [^2]: Global Identity and Access Management (IAM) Market Trends, 2025.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "gemini-3.1-flash-lite"} -->

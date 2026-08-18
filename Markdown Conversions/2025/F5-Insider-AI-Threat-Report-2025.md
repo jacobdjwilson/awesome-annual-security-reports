@@ -974,3 +974,5 @@ To learn more, visit f5.com/solutions/use-cases/ai-runtime-security.
 Any other products, services, or company names referenced herein may be trademarks of their respective owners with no endorsement or affiliation, expressed or implied, claimed by F5, Inc.
 
 DC 12.2025 | JOB-CODE-1798076382
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-14", "model": "gemini-3.1-flash-lite-preview"} -->

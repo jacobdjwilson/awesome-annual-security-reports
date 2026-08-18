@@ -152,4 +152,4 @@ For more information about Arctic Wolf, visit [arcticwolf.com](https://arcticwol
 
 ©2025 Arctic Wolf Networks, Inc. All rights reserved. | Public ARCTIC WOLF LABS
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "gemini-3.1-flash-lite"} -->

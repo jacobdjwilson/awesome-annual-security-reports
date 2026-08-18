@@ -92,3 +92,5 @@ To counter the risk of compromised developer accounts distributing malicious upd
 
 ## Contributors
 Jason Bisson, Chary Chen, Anton Chuvakin, Michael Cote, Charles DeBeck, Elliot Eaton, Jack Fermon, Christopher Liebchen, Crystal Lister, Angelus Llanos, Jose Luis Sanchez Martinez, Bob Mechler, Noah McDonald, Glenn Staniforth, Chris Linklater, Matthew McWhirt, Joachim Metz, Simon Scannell, John Stone.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-05", "model": "gemini-3.1-flash-lite"} -->

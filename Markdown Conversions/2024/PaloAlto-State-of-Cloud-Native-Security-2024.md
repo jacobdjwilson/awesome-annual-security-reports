@@ -157,4 +157,4 @@ AI is here, and it’s fair to say that organizations are anxious, optimistic, a
 [^2]: Data Created Worldwide 2010-2025
 [^3]: Economic Potential of Generative AI | McKinsey
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-15", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-15", "model": "gemini-3.1-flash-lite"} -->

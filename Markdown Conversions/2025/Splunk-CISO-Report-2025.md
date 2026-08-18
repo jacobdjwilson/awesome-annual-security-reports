@@ -308,3 +308,5 @@ Splunk, a Cisco company, helps make organizations more digitally resilient. Lead
 Keep the conversation going with Splunk.
 
 Splunk, Splunk> and Turn Data Into Doing are trademarks and registered trademarks of Splunk LLC. in the United States and other countries. All other brand names, product names or trademarks belong to their respective owners. © 2025 Splunk LLC. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-04", "model": "gemini-3.1-flash-lite-preview"} -->

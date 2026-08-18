@@ -389,4 +389,4 @@ Cisco Secure is built on the principle of better security, not more. It delivers
 
 9. **Recruiting and retaining talented security personnel**: The organization has a positive reputation in the security community as being a good place to work. Open security positions are generally filled quickly and without undue incentives. Talented staff move up instead of move out and attrition rates remain low. Employee satisfaction is consistently high.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-10", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-10", "model": "gemini-3.1-flash-lite-preview"} -->

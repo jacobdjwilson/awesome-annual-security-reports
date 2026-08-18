@@ -439,3 +439,5 @@ The terms under which the Coat of Arms can be used are detailed on the Departmen
 
 For more information, or to report a cyber security incident, contact us:  
 cyber.gov.au | 1300 CYBER1 (1300 292 371)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-28", "model": "gemini-3.5-flash-lite"} -->

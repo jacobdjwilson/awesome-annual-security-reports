@@ -7602,3 +7602,5 @@ Start your journey toward stronger cyber resilience today at picussecurity.com
 All other product names, logos, and brands are property of their respective owners in the United States and/or other countries.
 
 © 2025 Picus Security. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "gemini-3.1-flash-lite"} -->

@@ -489,3 +489,5 @@ automation, Prowler enables security teams to scale impact without scaling headc
 - Learn more: [prowler.com](https://prowler.com)
 - Try Prowler Cloud: [cloud.prowler.com](https://cloud.prowler.com)
 - See Prowler in Action: [prowler.com/interactive-demo](https://prowler.com/interactive-demo)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-15", "model": "gemini-3.5-flash-lite"} -->

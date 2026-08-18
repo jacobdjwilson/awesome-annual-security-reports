@@ -222,3 +222,5 @@ Yet with rising budget support and growing executive awareness, the opportunity 
 [Speak with an Expert](https://duo.com)
 
 [Free Trial](https://duo.com)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-02", "model": "gemini-3.1-flash-lite-preview"} -->

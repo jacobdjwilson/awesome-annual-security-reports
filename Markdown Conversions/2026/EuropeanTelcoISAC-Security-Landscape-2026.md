@@ -115,3 +115,5 @@ The Telco Security Landscape will be reviewed later this year, and we look forwa
 **TNO - The Netherlands Organisation for Applied Scientific Research**, is one of Europe’s leading R&D and innovation bodies. Its mission is to strengthen the competitiveness of companies and the welfare of society in a sustainable way. TNO is a non-profit organisation that operates independently and objectively and its many working areas include telecommunications and cybersecurity. TNO is a longstanding partner of ETIS and a core member of the ETIS Information Security WG. Its role includes coordination of the group’s annual security landscaping activity, of which this publication is the result. For more information, please visit [www.tno.nl/en/](http://www.tno.nl/en/).
 
 ![Backside picture]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-08", "model": "gemini-3.1-flash-lite"} -->

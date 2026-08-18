@@ -1001,3 +1001,5 @@ society
 ![Image of a closing slide with "Thank You!" and the slogan "Build a safer digital society." ]
 
 ![Image of a page divider with "Orange Restricted" watermark]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-06", "model": "gemini-3.1-flash-lite-preview"} -->

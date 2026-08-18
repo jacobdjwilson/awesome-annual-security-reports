@@ -105,3 +105,5 @@ This 2025 State of AI Data Security Report is based on a survey of 921 IT and cy
 
 **Rights Notice**
 ©2025 Cybersecurity Insiders. All rights reserved. Limited editorial citation permitted with clear attribution to “Cybersecurity Insiders, 2025 State of AI Data Security Report” and a visible link to https://cybersecurity-insiders.com. No redistribution, derivatives, scraping, or AI/ML training.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-12", "model": "gemini-3.1-flash-lite"} -->

@@ -159,3 +159,5 @@ Unless otherwise noted, this analysis focuses exclusively on Okta Workforce Iden
 Principal Emerging Technology Researcher
 
 Fei Liu is an emerging technology researcher, currently working with Okta CEO Todd McKinnon. Fei uses her research and technical skills to help Todd stay apprised of relevant technology trends and developments. Prior to joining Okta, she held various research and strategy roles at Huawei and IBM. Over the years, her research interests have spanned from semiconductors to identity, through to security. She holds a Ph.D. in electrical engineering from the University of California, Los Angeles, an MBA from New York University, and a B.S. in electronic engineering from Tsinghua University.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "gemini-3.1-flash-lite-preview"} -->

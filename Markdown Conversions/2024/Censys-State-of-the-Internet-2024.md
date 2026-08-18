@@ -229,4 +229,4 @@ CISA provides guidance for securing and defending ICS environments, but we make 
 *   **S7**: A proprietary Siemens protocol used in communications between HMIs and PLCs in an automated or industrial environment.
 *   **WDBRPC (Wind River Debug)**: A protocol for Wind River’s VxWorks real-time operating system (RTOS).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-03", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-03", "model": "gemini-3.1-flash-lite"} -->

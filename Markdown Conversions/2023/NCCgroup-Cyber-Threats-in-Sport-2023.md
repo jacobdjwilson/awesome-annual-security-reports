@@ -332,4 +332,4 @@ Manchester
 content is for general purposes only and should not be used as a substitute for consultation with professional advisors. NCC Group shall not be liable for any losses which occur as a result of reliance
 on the content.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "gemini-3.5-flash-lite"} -->

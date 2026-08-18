@@ -1194,4 +1194,4 @@ artifacts. (NIST SP 800-204D)
 
 38
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-04", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-04", "model": "gemini-3.1-flash-lite"} -->

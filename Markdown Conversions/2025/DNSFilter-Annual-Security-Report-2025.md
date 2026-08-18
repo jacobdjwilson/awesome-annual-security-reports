@@ -332,3 +332,5 @@ BOOK YOUR DNSFILTER DEMO TODAY
 [^16]: http://www.cnn.com/2024/10/07/business/property-damange-hurricane-helene-47-billion/index.html
 [^17]: https://www.trendmicro.com/en_us/research/24/j/ai-election-deepfakes.html
 [^18]: https://www.helpnetsecurity.com/2024/10/22/us-election-phishing-activity/
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "gemini-3.1-flash-lite"} -->

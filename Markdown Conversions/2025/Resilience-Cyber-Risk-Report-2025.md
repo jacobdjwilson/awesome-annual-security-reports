@@ -105,3 +105,5 @@ The data and insights presented in this report are derived from Resilience's int
 - **Double extortion**: A ransomware strategy where attackers demand payment both for decrypting files and for preventing the public release of stolen data.
 
 *This report represents our analysis of cyber risk trends based on actual claims experience and threat intelligence. For the most current information and specific guidance for your organization, please consult with Resilience's risk management and insurance professionals.*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "gemini-3.1-flash-lite"} -->

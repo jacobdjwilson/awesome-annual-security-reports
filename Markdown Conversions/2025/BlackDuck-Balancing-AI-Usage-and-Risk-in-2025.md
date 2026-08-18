@@ -658,4 +658,4 @@ Black Duck® meets the board-level risks of modern software with True Scale Appl
 [^Q13]: Q13. How confident are you in your ability to ensure AI-powered code assistants don’t introduce any open source code that’s subject to license obligations that put your intellectual property at risk?
 [^Q12]: Q12. From the list below, what is the PRIMARY security-related benefit your team has experienced from using AI code generators/coding assistants?
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-12", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-12", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -134,3 +134,5 @@ The study surveyed 507 security professionals across a wide spectrum of organiza
 SpyCloud transforms recaptured darknet data to disrupt cybercrime. Its automated identity threat protection solutions leverage advanced analytics and AI to proactively prevent ransomware and account takeover, detect insider threats, safeguard employee and consumer identities, and accelerate cybercrime investigations. Headquartered in Austin, TX, SpyCloud is home to more than 200 cybersecurity experts.
 
 To learn more, visit [spycloud.com](http://spycloud.com).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-25", "model": "gemini-3.1-flash-lite"} -->

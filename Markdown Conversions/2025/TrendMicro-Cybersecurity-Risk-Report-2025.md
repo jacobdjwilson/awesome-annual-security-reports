@@ -327,3 +327,5 @@ Copyright ©2025 Trend Micro Incorporated. All rights reserved. Trend Micro, the
 Micro Incorporated. All other company and/or product names may be trademarks or registered trademarks of their owners. Information contained in this document is
 subject to change without notice. Trend Micro, the Trend Micro logo, and the t-ball logo Reg. U.S. Pat. & Tm. Off.
 For details about what personal information we collect and why, please see our Privacy Notice on our website at: trendmicro.com/privacy
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-08", "model": "gemini-3.1-flash-lite"} -->

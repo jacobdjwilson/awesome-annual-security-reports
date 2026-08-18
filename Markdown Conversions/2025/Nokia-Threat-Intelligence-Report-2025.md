@@ -1647,3 +1647,5 @@ networks today – and work with us to create the digital services and applicati
 Nokia is a registered trademark of Nokia Corporation. Other product and company names mentioned herein
 may be trademarks or trade names of their respective owners.
 © 2025 Nokia
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-30", "model": "gemini-3.5-flash-lite"} -->

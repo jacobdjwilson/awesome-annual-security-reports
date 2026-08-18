@@ -665,4 +665,4 @@ of any network is a requirement nowadays, and we are pleased to provide the most
 can help protect your business from cyber-attacks, contact us any time.
 Security Awareness Training
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->

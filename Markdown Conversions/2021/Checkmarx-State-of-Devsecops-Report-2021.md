@@ -115,4 +115,4 @@ The Cyber Security Hub is an online news source for global cyber security profes
 
 [^1]: "There’s always a shortage of experienced people, and that’s the challenge," said Stephen Gates, security evangelist and senior solutions specialist at Checkmarx.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "gemini-3.1-flash-lite-preview"} -->

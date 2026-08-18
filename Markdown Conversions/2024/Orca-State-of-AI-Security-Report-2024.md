@@ -148,4 +148,4 @@ Orca’s agentless-first Cloud Security Platform provides 100% visibility of all
 
 [^1]: 2024 Orca Security. All rights reserved.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-14", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-14", "model": "gemini-3.1-flash-lite"} -->

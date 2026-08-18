@@ -129,3 +129,5 @@ This report examines the evolving landscape of API security by analyzing expert 
 Kong Inc., a leading developer of cloud API technologies, is on a mission to enable companies around the world to become “API-first.” Kong helps organizations globally — from startups to Fortune 500 enterprises — unleash developer productivity, build securely, and accelerate time to market.
 
 For more information about Kong, please visit [www.konghq.com](http://www.konghq.com) or follow us on X @thekonginc.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-19", "model": "gemini-3.1-flash-lite"} -->

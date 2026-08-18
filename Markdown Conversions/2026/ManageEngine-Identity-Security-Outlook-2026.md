@@ -507,3 +507,5 @@ https://mnge.it/pam360.
 Identity Security Outlook 2026
 Unified PAM platform for modern enterprises
 58
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "gemini-3.1-flash-lite"} -->

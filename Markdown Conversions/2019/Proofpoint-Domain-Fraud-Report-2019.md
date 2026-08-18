@@ -602,4 +602,4 @@ proofpoint.com 0519-004
 [^4]: Historical price trends sourced from: https://tld-list.com
 [^5]: Spamhaus. “The World’s Most Abused TLDs.” Accessed April 2019.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->

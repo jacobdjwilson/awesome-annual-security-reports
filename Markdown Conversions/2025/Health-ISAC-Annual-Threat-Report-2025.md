@@ -1502,3 +1502,5 @@ Together, we are stronger, better, and more resilient  We invite you to join us
 Memberships are purchased for your organization (not individuals), with
 unlimited seat licenses. To schedule a membership overview, visit
 https://health-isac.org/join-h-isac/
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-13", "model": "gemini-3.1-flash-lite-preview"} -->

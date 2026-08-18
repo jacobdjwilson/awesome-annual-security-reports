@@ -126,4 +126,4 @@ In 2022, the IC3 received 2,385 complaints identified as ransomware with adjuste
 - Losses reported in foreign currencies are converted to U.S. dollars when possible.
 - [Additional notes included in original text...]
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-21", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-21", "model": "gemini-3.1-flash-lite"} -->

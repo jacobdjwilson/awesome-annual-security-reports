@@ -2149,4 +2149,4 @@ Figure 53: SERC Regional Risk Framework
 In Figure 53, the outer circle is included to emphasize that SERC is actively engaging and collaborating with stakeholders throughout the
 entire process.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-25", "model": "gemini-3.1-flash-lite"} -->

@@ -224,3 +224,5 @@ any such information or sources. Aon undertakes no obligation to review, update 
 otherwise, nor any obligation to correct any errors or inaccuracies in this Document. This Document is made available on an “as is” basis, and Aon makes
 no representation or warranty of any kind (whether express or implied), including without limitation in respect of the accuracy, completeness, timeliness, or
 sufficiency of the Document.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-18", "model": "gemini-3.1-flash-lite-preview"} -->

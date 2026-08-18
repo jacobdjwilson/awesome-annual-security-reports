@@ -704,4 +704,4 @@ do not represent the number of individuals filing a complaint.
 • “Subject earnings per Destination State” is the amount swindled by the subject, as reported by
 the victim, per state.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->

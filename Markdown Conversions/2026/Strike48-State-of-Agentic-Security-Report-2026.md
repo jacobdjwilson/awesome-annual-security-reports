@@ -182,3 +182,5 @@ We don’t ask you to take our word for it. Strike48 is built to prove its value
 
 Strike48 | 3 Center Plaza, Suite 302, Boston, MA 02108  
 © 2026 Strike48. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

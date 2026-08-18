@@ -238,3 +238,5 @@ BioCatch prevents fraud and financial crime by recognizing patterns in human beh
 - You may print or download to a local hard disk extracts for your personal and non-commercial use only.
 - You may copy the content to individual third parties for their personal use, but only if you acknowledge the document and BioCatch as the source of the material.
 - You may not, except with our express written permission, distribute or commercially exploit the content. Nor may you transmit it or store it in any other website or other form of electronic retrieval system without our express written permission.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-06", "model": "gemini-3.1-flash-lite-preview"} -->

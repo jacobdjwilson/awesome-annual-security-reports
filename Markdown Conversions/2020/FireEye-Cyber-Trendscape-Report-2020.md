@@ -673,4 +673,4 @@ names are or may be trademarks or service cyber security for organizations strug
 marks of their respective owners.
 F-EXT-RT-US-EN-000235-01 prevent, and respond to cyber attacks.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-16", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-16", "model": "gemini-3.5-flash-lite"} -->

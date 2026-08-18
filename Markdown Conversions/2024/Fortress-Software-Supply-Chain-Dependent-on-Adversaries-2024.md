@@ -108,4 +108,4 @@ Until we have confidence that software isn’t laced with malicious code, every 
 ---
 [^1]: Source: Fortress SBOM Use Cases for Asset Owners Whitepaper, August 2023, https://www.fortressinfosec.com/en-us/sbom-use-cases-for-asset-owners
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-23", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-23", "model": "gemini-3.1-flash-lite"} -->

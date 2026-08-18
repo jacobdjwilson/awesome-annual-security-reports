@@ -203,3 +203,5 @@ Veeam delivers deep contextual intelligence across every data asset, identity, a
 Headquartered in Seattle with offices in more than 30 countries, Veeam protects over 550,000 customers worldwide, including 82% of the Fortune 500, who trust Veeam to keep their businesses running.
 
 Learn more at [www.veeam.com](http://www.veeam.com) or follow Veeam on LinkedIn @veeam-software and X @veeam.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-21", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -82,3 +82,5 @@ Facebook is where your mom, your neighbor and your local teacher hang out online
 | Facebook Scams | Blocked messenger-style tech support scams and deepfake finance baits |
 
 [Read the full Q2/2025 Threat Report](URL)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "gemini-3.1-flash-lite"} -->

@@ -405,4 +405,4 @@ threats across hybrid environments.
 
 www.deepinstinct.com  |  info@deepinstinct.com
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-21", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-21", "model": "gemini-3.1-flash-lite"} -->

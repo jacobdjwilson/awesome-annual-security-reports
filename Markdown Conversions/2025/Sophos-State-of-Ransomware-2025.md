@@ -145,3 +145,5 @@ Having data encrypted in a ransomware attack has significant repercussions for t
 To explore how Sophos can help you optimize your ransomware defenses, speak to an advisor or visit [www.sophos.com](http://www.sophos.com)
 
 © Copyright 2025. Sophos Ltd. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-08", "model": "gemini-3.1-flash-lite"} -->

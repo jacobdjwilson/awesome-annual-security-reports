@@ -393,4 +393,4 @@ Special thanks for their contributions to this year’s report to Nancy Bernstei
 
 Rachel Bay has performed her incredible design magic during the nine years we’ve worked on the OSSRA together. It’s been my privilege and honor to write it. — Fred Bals
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "gemini-3.1-flash-lite"} -->

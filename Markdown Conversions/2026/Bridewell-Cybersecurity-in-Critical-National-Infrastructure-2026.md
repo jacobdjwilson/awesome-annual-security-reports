@@ -1362,3 +1362,5 @@ CNI Research Report 2026 30
 | bridewell.com | +44 (0)3303 110 940 | hello@bridewell.com |
 | ------------- | ------------------- | ------------------- |
 CNI Research Report 2026 31
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-18", "model": "gemini-3.5-flash-lite"} -->

@@ -1303,3 +1303,5 @@ com-is-back-as-verisign-discounts-bear-fruit
 domain-promotions/specialpromotions
 67. https://www.icann.org/octo-ssr/metrica/faqs-en
 INTERISLE CONSULTING GROUP MALICIOUS REGISTRATIONS IN THE DOMAIN NAME MARKET 45
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-03", "model": "gemini-3.1-flash-lite"} -->

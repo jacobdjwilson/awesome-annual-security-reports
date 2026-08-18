@@ -113,3 +113,5 @@ The priorities around cloud, talent, and data reflect a snapshot of representati
 [^1]: Osterman Research, CISO and CIO Investment Priorities for Cybersecurity in 2023, February 2023.
 [^2]: Osterman Research, Using AI to Enhance Defensive Cybersecurity, November 2024.
 [^3]: OWASP, OWASP Top 10 API Security Risks - 2023.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-03", "model": "gemini-3.1-flash-lite"} -->

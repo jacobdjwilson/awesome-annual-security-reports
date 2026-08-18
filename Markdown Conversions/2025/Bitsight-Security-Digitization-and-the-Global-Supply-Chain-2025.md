@@ -396,4 +396,4 @@ Bitsight is a cyber risk management leader transforming how companies manage exp
 
 ©2024, BitSight Technologies, Inc. and its affiliates (“Bitsight”). BITSIGHT® is a registered trademark of Bitsight. All rights reserved.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-03", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-03", "model": "gemini-3.5-flash-lite"} -->

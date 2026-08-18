@@ -249,4 +249,4 @@ In the face of evolving threats and complexities, safeguarding your cloud enviro
 
 By integrating these best practices into your cloud security strategy, you can address the key challenges highlighted in the 2024 Cloud Security Report while positioning your organization to navigate the cloud landscape confidently and securely.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-14", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-14", "model": "gemini-3.1-flash-lite"} -->

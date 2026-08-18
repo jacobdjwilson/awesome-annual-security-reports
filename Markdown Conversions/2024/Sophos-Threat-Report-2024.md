@@ -200,4 +200,4 @@ Criminal syndicates are counting on smaller companies to be less well-defended a
 
 The primary difference in our experience between the companies that were impacted the most by cyberattacks and those who suffered the least is time to respond. Having security experts to monitor and respond 24/7 is table stakes for an effective defense in 2024. Staying safe isn’t impossible; it just takes comprehensive planning and layered defenses to buy you time to respond and minimize damages.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "gemini-3.1-flash-lite"} -->

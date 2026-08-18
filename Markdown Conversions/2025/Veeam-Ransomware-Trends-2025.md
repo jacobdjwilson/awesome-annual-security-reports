@@ -217,3 +217,5 @@ Cyber defense strategies are a board-level issue. Don’t wait for a cyberattack
 [^15]: https://ofac.treasury.gov/media/912981/download?inline
 [^16]: https://www.youtube.com/watch?v=Fs2xq0pb7YQ
 [^17]: https://www.veeam.com/blog/321-backup-rule.html
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "gemini-3.1-flash-lite"} -->

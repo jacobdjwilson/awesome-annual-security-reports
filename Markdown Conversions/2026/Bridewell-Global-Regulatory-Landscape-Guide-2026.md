@@ -1104,3 +1104,5 @@ modern cyber security services.
 +44 (0)3303 110 940
 hello@bridewell.com
 wwwwww..bbrridideewweell.lcl.ocmom
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-18", "model": "gemini-3.5-flash-lite"} -->

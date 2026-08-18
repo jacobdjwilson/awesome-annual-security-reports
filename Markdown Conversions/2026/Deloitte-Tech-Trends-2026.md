@@ -4344,3 +4344,5 @@ deloitte.com/about to learn more about our global network of member firms.
 
 Copyright © 2025 Deloitte Development LLC. All rights reserved.
 Member of Deloitte Touche Tohmatsu Limited
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-02", "model": "gemini-3.5-flash-lite"} -->

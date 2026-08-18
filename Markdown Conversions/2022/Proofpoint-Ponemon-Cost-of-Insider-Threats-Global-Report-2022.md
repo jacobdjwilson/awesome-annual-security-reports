@@ -126,4 +126,4 @@ Proofpoint, Inc. is a leading cybersecurity and compliance company that protects
 
 ©Proofpoint, Inc.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-20", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-20", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -147,3 +147,5 @@ The data points to a shared recognition that the old model is failing.
 10. **Align with a Zero Trust framework**: Use NIST 800-207 or CISA’s Zero Trust Maturity Model to assess progress.
 
 [^1]: All statistics and insights in this report are based on Tailscale’s 2025 Secure Access and Zero Trust Adoption Survey.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "gemini-3.1-flash-lite"} -->

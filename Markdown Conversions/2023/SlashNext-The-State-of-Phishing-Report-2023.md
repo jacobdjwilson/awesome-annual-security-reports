@@ -204,4 +204,4 @@ Pleasanton CA 94566
 Contact Sales: 1(800) 930-8643
 Request a Demo: [https://www.slashnext.com/request-a-demo/](https://www.slashnext.com/request-a-demo/)
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "gemini-3.1-flash-lite-preview"} -->

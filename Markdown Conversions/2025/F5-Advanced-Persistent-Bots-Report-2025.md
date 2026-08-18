@@ -374,3 +374,5 @@ bets on a gambling site, watching a TV show on a
 streaming app, sending and receiving money on a money
 
 transfer app etc.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-02", "model": "gemini-3.1-flash-lite-preview"} -->

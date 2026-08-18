@@ -284,4 +284,4 @@ Synopsys provides integrated solutions that transform the way you build and deli
 
 ©2023 Synopsys, Inc. All rights reserved. Synopsys is a trademark of Synopsys, Inc. in the United States and other countries. A list of Synopsys trademarks is available at [www.synopsys.com/copyright.html](www.synopsys.com/copyright.html). All other names mentioned herein are trademarks or registered trademarks of their respective owners. March 2023
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-06", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-06", "model": "gemini-3.1-flash-lite-preview"} -->

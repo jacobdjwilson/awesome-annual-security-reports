@@ -101,4 +101,4 @@ The IDSA is a group of identity and security vendors, solution providers, and pr
 
 For more information on the Identity Security Alliance and how to become a member, visit [www.idsalliance.org](http://www.idsalliance.org).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-14", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-14", "model": "gemini-3.1-flash-lite"} -->

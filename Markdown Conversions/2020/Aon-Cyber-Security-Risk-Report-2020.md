@@ -353,4 +353,4 @@ The information contained herein and the statements expressed are of a general n
 
 Visit [aon.com/cyber-solutions](https://aon.com/cyber-solutions) for more information.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-15", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-15", "model": "gemini-3.5-flash-lite"} -->

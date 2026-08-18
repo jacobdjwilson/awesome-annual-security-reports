@@ -313,4 +313,4 @@ The collapse of BreachForums v2 has led to a fragmentation of its users for now,
 
 [^1]: Pyarmor is an obfuscation tool used to protect Python scripts; see [Pyarmor GitHub repository](https://github.com/dashingsoft/pyarmor).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "gemini-3.5-flash-lite"} -->

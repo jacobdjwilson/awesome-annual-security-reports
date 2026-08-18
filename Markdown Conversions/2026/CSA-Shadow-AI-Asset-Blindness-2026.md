@@ -209,3 +209,5 @@ The shadow AI problem is tractable. The organizations that will navigate it succ
 [29] SentinelOne. "NullBulge | Threat Actor Masquerades as Hacktivist Group Rebelling Against AI." SentinelOne Labs, 2024.  
 [30] New York Department of Financial Services. "Guidance on the Use of Artificial Intelligence and External Consumer Data and Information Sources." NYDFS, 2024.  
 [31] European Parliament and Council of the European Union. "Regulation (EU) 2022/2554 on Digital Operational Resilience for the Financial Sector (DORA)." Official Journal of the European Union, December 2022.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-18", "model": "gemini-3.1-flash-lite"} -->

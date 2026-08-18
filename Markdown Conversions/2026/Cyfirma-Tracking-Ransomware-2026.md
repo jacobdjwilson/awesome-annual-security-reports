@@ -201,3 +201,5 @@ Ransomware entering 2026 is no longer a discrete cyber incident but an enduring,
 - **Dubai:** Unit JLT-PH2-RET-5, Cluster R, Jumeirah Lakes Towers, Dubai, UAE
 
 Copyright CYFIRMA. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-12", "model": "gemini-3.5-flash-lite"} -->

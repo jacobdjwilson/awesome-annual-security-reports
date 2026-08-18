@@ -148,4 +148,4 @@ Thousands of organizations worldwide trust Varonis to defend their data wherever
 
 Varonis protects data first, not last. Learn more at [www.varonis.com](http://www.varonis.com).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-30", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-30", "model": "gemini-3.1-flash-lite"} -->

@@ -2752,3 +2752,5 @@ design, engineering and business operations. The Group reported 2024
 global revenues of €22.1 billion.
 Make it real | www.capgemini.com
 Copyright © 2026 Capgemini. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-04", "model": "gemini-3.5-flash-lite"} -->

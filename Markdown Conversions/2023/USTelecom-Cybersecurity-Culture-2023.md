@@ -98,4 +98,4 @@ The findings in this report demonstrate the importance of cybersecurity culture 
 [^1]: Widup, S., Pinto, A., Hylender, D., Bassett, G. & Langlois, P. (2021). 2021 Verizon Data Breach Investigations Report. Verizon.
 [^2]: Widup, S., Pinto, A., Hylender, D., Bassett, G. & Langlois, P. (2021). 2021 Verizon Data Breach Investigations Report. Verizon.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -109,3 +109,5 @@ Frost & Sullivan evaluated 11 vendors: Adaptive Shield, AppOmni, CheckRed Securi
 Frost & Sullivan is not responsible for any incorrect information supplied by companies or users. Quantitative market information is based primarily on interviews and is subject to fluctuation. This research service is for internal use only and may not be reproduced or disclosed to third parties without written permission.
 
 © 2024 Frost & Sullivan. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-11", "model": "gemini-3.1-flash-lite"} -->

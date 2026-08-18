@@ -370,3 +370,5 @@ centers and a strong global partner network. For more information, visit
 www.eset.com or follow us on LinkedIn, Facebook, and X.
 
 ESET THREAT REPORT(eset):research© 2025 ESET, spol. s r.o. - All rights reserved.Trademarks used herein are trademarks or registered trademarks of ESET, spol. s r.o.All other names and brands are registered trademarks of their respective companies.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "gemini-3.1-flash-lite"} -->

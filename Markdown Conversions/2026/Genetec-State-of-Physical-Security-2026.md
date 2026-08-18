@@ -598,3 +598,5 @@ info@genetec.com
 © Genetec Inc., 2025-2026. Genetec and the Genetec Logo are trademarks of Genetec Inc.,
 and may be registered or pending registration in several jurisdictions. Other trademarks used in
 this document may be trademarks of the manufacturers or vendors of the respective products.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-24", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -288,3 +288,5 @@ Organizations must implement comprehensive security hygiene addressing both tech
 [^2]: https://www.mimecast.com/threat-intelligence-hub/svg-attachment-abuse/
 [^3]: https://cofense.com/blog/svg-files-abused-in-emerging-campaigns/
 [^4]: https://www.mimecast.com/blog/how-chatgpt-upended-email/
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "gemini-3.5-flash-lite"} -->

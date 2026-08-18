@@ -122,3 +122,5 @@ The Salt Security API Protection Platform secures APIs across the full lifecycle
 
 ## Methodology
 The findings of this report are based on insights from 206 professionals tasked with managing APIs in their organizations across various industries, including Technology (28%), Financial Services and Insurance (14%), and Energy and Utilities (13%).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-11", "model": "gemini-3.1-flash-lite"} -->

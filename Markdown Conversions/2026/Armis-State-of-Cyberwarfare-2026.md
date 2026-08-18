@@ -398,3 +398,5 @@ Armis is a privately held company headquartered in California.
 armis.com  
 
 © 2026 ARMIS, INC.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-12", "model": "gemini-3.5-flash-lite"} -->

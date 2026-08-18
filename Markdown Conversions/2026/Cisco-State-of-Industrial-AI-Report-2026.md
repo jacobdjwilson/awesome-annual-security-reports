@@ -685,3 +685,5 @@ For more information, visit [sapioresearch.com](https://sapioresearch.com).
 [^1]: Source: Deloitte “State of AI in the Enterprise”, January 2026 - [https://www.deloitte.com/content/dam/assets-zone3/us/en/docs/services/consulting/2026/state-of-ai-2026.pdf](https://www.deloitte.com/content/dam/assets-zone3/us/en/docs/services/consulting/2026/state-of-ai-2026.pdf)
 [^2]: Source: [https://www.forrester.com/technology/generative-ai/](https://www.forrester.com/technology/generative-ai/)
 [^3]: Source: [https://www.fortinet.com/resources/reports/state-ot-cybersecurity?utm_content=blog-cta-ot-security](https://www.fortinet.com/resources/reports/state-ot-cybersecurity?utm_content=blog-cta-ot-security)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-06", "model": "gemini-3.1-flash-lite-preview"} -->

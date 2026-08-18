@@ -139,3 +139,5 @@ The first half of 2025 has seen concentrated cyberattacks targeting specific ind
 - **Cloud Abuse & Supply Chain Exploits**: Attackers exploit cloud platform features and third-party vendors to expand reach and persistence.
 - **Generative AI Exploitation by Threat Actors**: Attackers leverage AI to automate phishing, malware development, target research, and social engineering.
 - **Other Threats**: IoT and remote work vulnerabilities, cryptocurrency-related attacks, and cybersecurity staffing shortages continue to challenge SMB defenses.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-11", "model": "gemini-3.5-flash-lite"} -->

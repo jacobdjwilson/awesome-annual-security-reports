@@ -99,3 +99,5 @@ Findings are based on a VikingCloud July 2025 online quantitative survey of 200 
 VikingCloud is the leading Predict-to-Prevent cybersecurity and compliance company. Powered by the Asgard Platform®, the company monitors and analyzes over 6+ billion online events every day, serving 4+ million businesses with 1,000 dedicated expert advisors.
 
 For more information, visit: [vikingcloud.com](https://vikingcloud.com)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-30", "model": "gemini-3.1-flash-lite"} -->

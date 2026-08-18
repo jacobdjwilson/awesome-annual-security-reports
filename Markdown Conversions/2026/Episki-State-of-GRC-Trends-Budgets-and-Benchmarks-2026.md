@@ -153,3 +153,5 @@ It's genuinely changing the work, but the change is uneven. Treat AI as a force 
 ![Image: Episki platform interface showing dashboard with multi-framework compliance status]
 ![Image: Bar chart comparing GRC budget allocation across different company sizes]
 ![Image: Flowchart illustrating the transition from manual spreadsheet-based compliance to automated continuous assurance]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-23", "model": "gemini-3.1-flash-lite-preview"} -->

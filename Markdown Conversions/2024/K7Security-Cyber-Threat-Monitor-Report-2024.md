@@ -174,4 +174,4 @@ Apps masquerading as system cleaners or key generators continue to remain preval
 ---
 *Copyright © 2023 K7 Computing Private Limited, All Rights Reserved.*
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "gemini-3.1-flash-lite"} -->

@@ -197,4 +197,4 @@ While still a new concept to many, the demand for open source BOMs is growing. I
 [^7]: GitHub, Nicole Forsgren et al, The 2020 State of the Octoverse, 2020.
 [^9]: Mark Horvath, Dionisio Zumerle, and Dale Gardner, Magic Quadrant for Application Security Testing, Gartner, 4/29/2020.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-09", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-09", "model": "gemini-3.1-flash-lite-preview"} -->

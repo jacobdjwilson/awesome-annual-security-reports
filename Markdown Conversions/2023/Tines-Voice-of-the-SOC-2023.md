@@ -221,4 +221,4 @@ Smart workflow automation offers a logical solution to many of the challenges ou
 
 To learn more about how smart, secure workflows can make a difference in your SOC, visit [tines.com](https://tines.com).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-29", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-29", "model": "gemini-3.1-flash-lite"} -->

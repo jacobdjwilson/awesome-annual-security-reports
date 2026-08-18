@@ -242,4 +242,4 @@ CrowdStrike Holdings, Inc. (Nasdaq: CRWD), a global cybersecurity leader, has re
 - **Log Management**: Humio.
 - **Services**: CrowdStrike Services (IR and Proactive).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-11", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-11", "model": "gemini-3.1-flash-lite-preview"} -->

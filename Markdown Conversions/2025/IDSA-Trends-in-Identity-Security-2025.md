@@ -396,3 +396,5 @@ Security Alliance, www.idsalliance.org.
 16
 
 Copyright © 2025, IDSA2025 Trends  |   Research
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-14", "model": "gemini-3.1-flash-lite-preview"} -->

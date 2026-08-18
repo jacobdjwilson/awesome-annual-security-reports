@@ -1338,3 +1338,5 @@ public sector, ensuring we have a detailed understanding of specific sectors
 and policy challenges. Combined with our methods and communications
 expertise, this helps ensure that our research makes a difference for
 decision makers and communities.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-02", "model": "gemini-3.5-flash-lite"} -->

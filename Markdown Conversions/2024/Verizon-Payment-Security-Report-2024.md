@@ -12140,4 +12140,4 @@ trademarks and service marks of Verizon Trademark Services LLC or its affiliates
 and/or other countries. All other trademarks and service marks are the property of their respective
 owners. OGREP6490724
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-16", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-16", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -166,4 +166,4 @@ Suite 63, Pure Offices, 1 Port Way, Port Solent, Portsmouth PO6 4TY, United King
 **US Headquarters**
 900 16th Street NW, Suite 450, Washington, DC 20006, United States
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-14", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-14", "model": "gemini-3.1-flash-lite"} -->

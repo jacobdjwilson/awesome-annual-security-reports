@@ -1520,4 +1520,4 @@ Follow us:
 INTERPOL HQ @INTERPOL_HQ INTERPOL INTERPOL HQ INTERPOL_HQ
 36
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-17", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-17", "model": "gemini-3.5-flash-lite"} -->

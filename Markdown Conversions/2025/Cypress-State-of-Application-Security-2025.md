@@ -220,3 +220,5 @@ Website: www.cypressdatadefense.com
 [^1]: Source: IBM 2024 Cost of a Data Breach Report
 [^2]: Source: 2025 State of Application Security Survey, conducted by TechStudio, an Energize Marketing company, in partnership with Cypress Data Defense.
 [^3]: Source: IBM 2024 Cost of a Data Breach Report
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-29", "model": "gemini-3.1-flash-lite-preview"} -->

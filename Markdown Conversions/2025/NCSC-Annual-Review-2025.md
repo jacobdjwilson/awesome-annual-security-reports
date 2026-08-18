@@ -4275,3 +4275,5 @@ Follow us
  X-TWITTER  @NCSC
  INSTAGRAM  @cyberhq
  LINKEDIN-IN  National Cyber Security Centre
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-29", "model": "gemini-3.1-flash-lite-preview"} -->

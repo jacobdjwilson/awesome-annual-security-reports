@@ -158,4 +158,4 @@ Orca’s agentless-first Cloud Security Platform connects to your environment in
 
 To find out more, schedule a personalized demo of the Orca platform.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-18", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-18", "model": "gemini-3.1-flash-lite"} -->

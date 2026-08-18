@@ -388,3 +388,5 @@ Overcoming the complex challenges outlined above requires multifaceted policy co
 on the internet.
 www.europol.europa.eu
 28
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "gemini-3.5-flash-lite"} -->

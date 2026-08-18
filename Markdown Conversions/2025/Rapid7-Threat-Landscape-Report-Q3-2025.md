@@ -304,3 +304,5 @@ Cloud | Applications | Infrastructure | Network | Data
 
 **TRY OUR SECURITY PLATFORM RISK-FREE**  
 Start your trial at rapid7.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-01", "model": "gemini-3.5-flash-lite"} -->

@@ -2415,3 +2415,5 @@ Extends ability to assess
 
 The State of Third-Party Risk Assessments 2026
 260126
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-08", "model": "gemini-3.1-flash-lite"} -->

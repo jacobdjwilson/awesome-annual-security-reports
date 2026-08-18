@@ -445,3 +445,5 @@ disclose-data-breaches-impacting-customers/ 44. https://kpmg.com/kpmg-us/content
 21. https://ia.acs.org.au/article/2025/qantas-customer-data-leaked-to-dark- security-benchmark-survey-results.pdf
 web.html
 CCoonnffiiddeennttiiaall aanndd PPrroopprriieettaarryy.. ©© 22002266 CCyybbeerrPPrrooooff 5522
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "gemini-3.1-flash-lite"} -->

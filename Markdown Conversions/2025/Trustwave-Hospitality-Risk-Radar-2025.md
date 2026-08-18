@@ -157,3 +157,5 @@ The hospitality industry finds itself at the crossroads of convenience and cyber
 - **Backups and Business Continuity**: Maintain encrypted, offline, and immutable backups.
 - **Raise Internal Awareness and Training**: Conduct cybersecurity training for all employees and run phishing simulations.
 - **Monitor the Threat Landscape**: Subscribe to industry-specific threat intelligence feeds and implement dark web monitoring.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "gemini-3.1-flash-lite"} -->

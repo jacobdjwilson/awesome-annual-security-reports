@@ -1236,3 +1236,5 @@ Kenneth Yeung, AI Threat Researcher
 Kasimir Schulz, Director, Security Research
 Megan David, AI Researcher
 51
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-30", "model": "gemini-3.1-flash-lite"} -->

@@ -111,4 +111,4 @@ Censys Attack Surface Management (ASM) continually uncovers unknown assets like 
 ## Survey Methodology
 The survey was conducted online. Respondents were recruited via emailed invitations containing an embedded link to the survey. The emails were sent to a list of IT and security professionals. The survey was conducted in accordance with standard research practices and existing US privacy laws. The report includes data based on analysis of the Censys search engine, which scans the entire IPv4 space across the United States, Europe, and Asia. The survey included 100+ respondents from organizations with more than 1,000 employees, and respondents come from more than 18 industries.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-03", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-03", "model": "gemini-3.1-flash-lite"} -->

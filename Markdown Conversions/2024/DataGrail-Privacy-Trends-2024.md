@@ -171,4 +171,4 @@ DataGrail services millions of consumers through companies like Amazon, Salesfor
 
 Visit [www.datagrail.io](http://www.datagrail.io) or follow DataGrail on LinkedIn and Twitter to learn more.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "gemini-3.1-flash-lite-preview"} -->

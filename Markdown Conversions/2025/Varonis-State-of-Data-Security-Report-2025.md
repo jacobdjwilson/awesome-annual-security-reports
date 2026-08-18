@@ -184,3 +184,5 @@ The Varonis Data Security Platform was named a Leader and a Customer Favorite by
 | Get full access to the Varonis Data Security Platform for the length of your assessment at no cost. | Our experts will monitor your data during your assessment and call you if they see anything alarming. | A detailed summary of your data security risks that is yours to keep, even if you don’t become a customer. |
 
 [Get your assessment]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-25", "model": "gemini-3.1-flash-lite"} -->

@@ -140,4 +140,4 @@ The 2021 Cloud Security Report is based on the results of a comprehensive online
 
 **Industry**: Financial Services (23%), Technology, Software & Internet (22%), Government (10%), Professional Services (7%), Manufacturing (6%), Education & Research (4%), Telecommunications (4%), Transportation & Logistics (4%), Healthcare, Pharmaceuticals & Biotech (4%), Other (16%).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "gemini-3.1-flash-lite-preview"} -->

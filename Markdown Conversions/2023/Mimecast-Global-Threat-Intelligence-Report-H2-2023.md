@@ -202,4 +202,4 @@ Attackers slightly changed the sectors they targeted in Q4 2023, focusing on fin
 
 www.mimecast.com | ©2024 Mimecast | All Rights Reserved | GL-05902
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-02", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-02", "model": "gemini-3.1-flash-lite"} -->

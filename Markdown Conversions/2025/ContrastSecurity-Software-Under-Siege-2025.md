@@ -89,3 +89,5 @@ An effective approach to managing application cyber risk relies on two critical,
 [^14]: CrowdStrike 2025 Global Threat Report, Feb 27, 2025
 [^15]: IBM Cost of a Data Breach Report 2024, July 30, 2024
 [^16]: IBM Cost of a Data Breach Report 2024, July 30, 2024
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-05", "model": "gemini-3.1-flash-lite"} -->

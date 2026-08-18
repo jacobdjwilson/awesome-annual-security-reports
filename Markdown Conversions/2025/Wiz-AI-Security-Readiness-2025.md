@@ -99,3 +99,5 @@ Wiz’s AI Security Posture Management (AI-SPM) solution enables teams to discov
 
 ---
 [^1]: Wiz’s State of AI in the Cloud 2025 report.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-09", "model": "gemini-3.1-flash-lite"} -->

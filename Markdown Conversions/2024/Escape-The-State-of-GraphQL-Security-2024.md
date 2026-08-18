@@ -239,4 +239,4 @@ It shows that securing GraphQL APIs requires a detailed understanding of their u
 
 As GraphQL APIs continue to evolve, so too should the strategies used to secure them, ensuring safe and reliable operations. Organizations can protect their APIs and stay compliant by maintaining a comprehensive API inventory, conducting regular security audits, implementing resolver middleware for authorization and authentication, and using tools to limit query complexity.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-22", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-22", "model": "gemini-3.1-flash-lite"} -->

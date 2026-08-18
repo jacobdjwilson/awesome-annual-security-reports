@@ -136,3 +136,5 @@ A new social engineering technique emerged in 2024 called "ClickFix." Instead of
 ## Conclusion
 
 The data indicates that threat actors will continue to target MSPs and quickly switch tactics. Combating these threats requires a layered approach to protection, prevention, and detection. A comprehensive cybersecurity stack should include awareness training, EDR/MDR, vulnerability and patch management, and SaaS cybersecurity solutions. ConnectWise remains committed to providing the tools and expertise necessary to help MSPs navigate this landscape.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-18", "model": "gemini-3.1-flash-lite-preview"} -->

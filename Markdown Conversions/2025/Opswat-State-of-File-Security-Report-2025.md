@@ -137,3 +137,5 @@ A sampling frame of 18,602 IT and IT security practitioners in the United States
 ## Appendix: Detailed Survey Results
 
 *(Note: The original report contains detailed tables for all survey questions S1 through D4. Please refer to the source document for the full statistical breakdown of these responses.)*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-16", "model": "gemini-3.1-flash-lite"} -->

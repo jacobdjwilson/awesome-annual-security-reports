@@ -333,3 +333,5 @@ This law has more of a geopolitical aspect, specifying that suppliers to CII do 
   - Other network products or services that may have significant impacts on the security of CII
 
 The measures require terms and conditions in procurement agreements which will, among other things, require suppliers to cooperate in any cyber security review.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-21", "model": "gemini-3.1-flash-lite"} -->

@@ -131,4 +131,4 @@ Unit 42 and Cortex Xpanse collected petabytes of information on internet-accessi
 [^1]: 2021 Cortex Xpanse Attack Surface Threat Report, Palo Alto Networks, May 10, 2021.
 [^2]: 2022 Unit 42 Incident Response Report, Palo Alto Networks, July 26, 2022.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-01", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-01", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -236,3 +236,5 @@ Unlock the full potential of your data – without compromising security or comp
 **Machine Learning**: Machine learning (ML) is a subset of artificial intelligence (AI) that uses data and algorithms to train machines to learn as humans do. ML plays an emerging role in the data science field, as algorithms learn to review large data sets then identify patterns, predict outcomes, and make classifications.
 
 **Unified audit**: Unified audit capabilities provide a single, transparent view across all data access, enabling visibility to accelerate audits and ensure compliance.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-29", "model": "gemini-3.1-flash-lite"} -->

@@ -424,3 +424,5 @@ resistant-cryptography-is-here/ba-p/4238780
 •  https://pubs.opengroup.org/security/zero-trust-commandments/
 
 38
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "gemini-3.1-flash-lite"} -->

@@ -910,3 +910,5 @@ The global telecom ecosystem can no longer rely on legacy trust models. Without 
 enforceable interconnect controls, transparency in commercial network access, and regulatory
 accountability, mobile networks will continue to serve as a global platform for covert espionage.
 50
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-08", "model": "gemini-3.1-flash-lite"} -->

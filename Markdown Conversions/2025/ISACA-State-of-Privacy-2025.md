@@ -167,3 +167,5 @@ ISACA would like to recognize the Board of Directors:
 ---
 [^1]: Szczesny, M.; “Data Privacy Matters to Your Customers — Show Them It's a Priority for You, Too. Here's How.,” Entrepreneur, 13 February 2024, https://www.entrepreneur.com/science-technology/consumers-demand-more-data-protection-can-you-deliver/468944
 [^2]: ISACA, State of Cybersecurity 2024, 1 October 2024, https://www.isaca.org/resources/reports/state-of-cybersecurity-2024
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "gemini-3.1-flash-lite"} -->

@@ -97,3 +97,5 @@ The data from 2,500 organizations across nine countries delivers an unequivocal 
 
 ---
 [^1]: This 8%/80% stat is from the Mimecast whitepaper *The Size and Shape of Workforce Risk*.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-29", "model": "gemini-3.1-flash-lite"} -->

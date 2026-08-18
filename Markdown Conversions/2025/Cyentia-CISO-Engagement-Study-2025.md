@@ -523,3 +523,5 @@ and attain greater visibility in competitive markets. Cyentia’s partnership
 with ISMG provides robust, data-based research and analysis to help the
 cybersecurity community reduce risks and confront the latest threats.
 © 2025 CyberTheory. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-05", "model": "gemini-3.1-flash-lite"} -->

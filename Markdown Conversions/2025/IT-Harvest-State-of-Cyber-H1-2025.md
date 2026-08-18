@@ -122,3 +122,5 @@ We help you exit; we are your research partners.
 *   **Websites**: [it-harvest.com](https://it-harvest.com), [dashboard.it-harvest.com](https://dashboard.it-harvest.com), [harvestiq.ai](https://harvestiq.ai)
 
 _The contents of this deck are proprietary & confidential._
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-11", "model": "gemini-3.1-flash-lite"} -->

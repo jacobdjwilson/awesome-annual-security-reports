@@ -127,3 +127,5 @@ Sean Gallagher is Principal Threat Researcher, Sophos X-Ops. Prior to joining So
 
 ---
 © 2025 Sophos Ltd. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-20", "model": "gemini-3.1-flash-lite-preview"} -->

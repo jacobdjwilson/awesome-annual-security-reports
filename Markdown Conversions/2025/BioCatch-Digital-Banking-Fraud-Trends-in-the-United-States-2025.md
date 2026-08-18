@@ -126,4 +126,4 @@ For more information, please visit [www.biocatch.com](http://www.biocatch.com).
 [^2]: https://public.tableau.com/app/profile/federal.trade.commission/viz/TheBigViewAllSentinelReports/TopReports
 [^3]: https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-30", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-30", "model": "gemini-3.1-flash-lite"} -->

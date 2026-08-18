@@ -201,4 +201,4 @@ We then conducted a series of “what if” experiments to explore the return on
 [^4]: Make the Leap, Take the Lead, Accenture 2021.
 [^5]: Ransomware response and recovery, Accenture 2021.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "gemini-3.1-flash-lite-preview"} -->

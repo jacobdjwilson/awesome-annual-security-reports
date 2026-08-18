@@ -106,3 +106,5 @@ This report is based on anonymized customer data from Grip SaaS Security Control
 Grip Security is the industry leader in SaaS identity risk management. Our platform enables companies to discover, prioritize, secure, and orchestrate SaaS risk mitigation.
 
 ![Grip Security Contact Information]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-27", "model": "gemini-3.1-flash-lite"} -->

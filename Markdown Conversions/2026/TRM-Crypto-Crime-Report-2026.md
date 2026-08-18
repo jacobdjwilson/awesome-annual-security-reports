@@ -179,3 +179,5 @@ The rise in illicit flows — especially those involving stablecoins, sanctions,
 - Faster attribution tools and cross-jurisdictional collaboration
 - Monitoring of non-custodial infrastructure (e.g. no-KYC DEXs, escrow services)
 - Intelligence-led approaches that focus on liquidity risk, not just transaction counts
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "gemini-3.1-flash-lite-preview"} -->

@@ -180,3 +180,5 @@ Microsoft declined to participate in the full Forrester Wave evaluation process.
 We conduct all our research, including Forrester Wave evaluations, in accordance with the integrity policy posted on our website.
 
 © 2025 Forrester Research, Inc. and/or its subsidiaries. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-30", "model": "gemini-3.5-flash-lite"} -->

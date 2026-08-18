@@ -1446,3 +1446,5 @@ intelligence/adversarial-misuse-generative-ai.
 https://www.nist.gov/cybersecurity/what-post-quantum-cryptography.
 
 Page 26 of 26
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-14", "model": "gemini-3.1-flash-lite-preview"} -->

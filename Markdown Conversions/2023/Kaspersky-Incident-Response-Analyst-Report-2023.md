@@ -2336,4 +2336,4 @@ service marks are the property of their respective owners.
 
 Incident Response      Analyst report 2023MITRE ATT&CK tactics and techniques heatmapTools and exploits Initial vectors Why incident response is so critical Attack duration RecommendationsAbout Kaspersky IntroductionTrends in the 2023
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-16", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-16", "model": "gemini-3.1-flash-lite-preview"} -->

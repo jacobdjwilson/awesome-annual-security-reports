@@ -1607,4 +1607,4 @@ client is in compliance with any law or regulation. Statements regarding IBM’s
 subject to change or withdrawal without notice, and represent goals and objectives only.
 82
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->

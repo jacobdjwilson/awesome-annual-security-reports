@@ -235,3 +235,5 @@ Apono is a cloud identity-security company helping enterprises manage and contro
 Request a Demo
 Visit us at: [www.apono.io](https://www.apono.io)
 Phone: +1 (626) 548-6178 | Email: [info@apono.io](mailto:info@apono.io)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-06", "model": "gemini-3.1-flash-lite-preview"} -->

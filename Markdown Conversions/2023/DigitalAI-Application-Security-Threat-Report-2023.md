@@ -159,4 +159,4 @@ Digital.ai is an industry-leading technology company dedicated to helping Global
 
 Additional information about Digital.ai can be found at [digital.ai/](https://digital.ai/) and on Twitter, LinkedIn, and Facebook.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "gemini-3.1-flash-lite"} -->

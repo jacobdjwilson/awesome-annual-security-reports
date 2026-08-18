@@ -88,4 +88,4 @@ Respondents said that over half of all AppSec teams are struggling to some degre
 ## About this report
 The survey contained 30 questions covering how organizations perceive and use AI code completion tools and generative coding. The survey polled 537 respondents working in technology roles. 45.3% were from the United States, 30.9% from the United Kingdom, and 23.6% from Canada. The panel included developer management (42.1%), developers (37.6%), IT management (30.9%), and security management (30.7%). The largest percentage of respondents cited ChatGPT (70.3%) as a tool used, followed by Amazon CodeWhisperer (47.4%), GitHub Copilot (43.7%), Microsoft Visual Studio IntelliCode (35.8%), and Tabnine (19.9%).
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-06", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-06", "model": "gemini-3.1-flash-lite-preview"} -->

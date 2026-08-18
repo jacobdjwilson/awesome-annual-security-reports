@@ -528,4 +528,4 @@ other countries. All other trademarks and service marks are the property of thei
 VerizonEnterprise.com
 Verizon 2016 Data Breach Investigations Report 80
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->

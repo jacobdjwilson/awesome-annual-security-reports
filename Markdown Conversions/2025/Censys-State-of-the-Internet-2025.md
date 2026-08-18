@@ -191,4 +191,4 @@ This report examined adversary infrastructure from multiple angles: Internet-sca
 [^11]: https://platform.censys.io/search?q=%28host.services.tls.fingerprint_sha256+%3D+%22e234e102cd8de90e258906d253157aeb7699a3c6df0c4e79e05d01801999dcb5%22%29
 [^12]: https://platform.censys.io/hosts/8.219.153.173?at_time=2025-08-29T19%3A23%3A48Z
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-30", "model": "legacy"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-30", "model": "gemini-3.1-flash-lite"} -->

@@ -577,3 +577,5 @@ For many organizations, the top challenges with AI are rooted in the foundationa
 
 **Ready to see ROI from AI?**  
 Get in touch | Share this report
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "gemini-3.5-flash-lite"} -->
