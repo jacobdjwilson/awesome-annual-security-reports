@@ -162,3 +162,5 @@ Strategies recommended:
 - **Deploy a continuous Zero Trust approach**: Continuously verify every user's identity for compromise when accessing applications.
 
 ![SpyCloud Company Description: SpyCloud transforms recaptured darknet data to protect businesses from cyberattacks. Visit spycloud.com to learn more.]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "legacy"} -->

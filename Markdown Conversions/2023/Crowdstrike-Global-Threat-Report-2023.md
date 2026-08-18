@@ -806,3 +806,5 @@ service marks, and may use the brands of third parties to identify their
 products and services.
 
 CrowdStrike2023 GLOBAL THREAT REPORT
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-25", "model": "legacy"} -->

@@ -208,3 +208,5 @@ As enterprises scale up their operations, they also need to prioritize safeguard
 [^33]: Matt Wixey. (Aug. 29, 2023). Sophos. “For the win? Offensive research contests on criminal forums.” Accessed on Oct. 10, 2023, at Link.
 [^34]: Fyodor Yarochkin, Vladimir Kropotov, and Jay Liao. (Jan. 18, 2023). Trend Micro. “’Payzero’ Scams and The Evolution of Asset Theft in Web3.” Accessed on Nov. 9, 2023, at Link.
 [^35]: Cifer Fang et al. (March 24, 2022). Trend Micro. “An Investigation of Cryptocurrency Scams and Schemes.” Accessed on Nov. 9, 2023, at Link.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->

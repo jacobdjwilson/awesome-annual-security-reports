@@ -772,3 +772,5 @@ behalf  of Bugcrowd, January 2024.
 THE T OT AL EC ONOMIC IMP ACT  OF BUGCROWD M AN AG ED BUG B OUNTY
 
 4 2
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-13", "model": "legacy"} -->

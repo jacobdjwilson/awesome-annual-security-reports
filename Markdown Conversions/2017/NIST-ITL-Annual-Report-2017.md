@@ -7035,3 +7035,5 @@ National Checklist Program (NCP) (FAR) was published. Paragraph (d) of section 3
 states, “In acquiring information technology, agencies
 There are many threats to IT, ranging from shall include the appropriate IT security policies and
 remotely launched network service exploits to requirements, including the use of com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

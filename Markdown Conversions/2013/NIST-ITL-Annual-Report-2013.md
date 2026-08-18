@@ -5704,3 +5704,5 @@ Continuous Monitoring
 EO
 13636
 Assets Roadmap
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

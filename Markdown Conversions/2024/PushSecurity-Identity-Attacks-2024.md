@@ -258,3 +258,5 @@ Account takeover via identity attacks is now the go-to approach for threat actor
 It may have been a landmark year for identity attacks, but we’re still only scratching the surface of what’s possible in the new world of decentralized, SaaS-centric IT. There’s no doubt that we should expect the threat of identity attacks to grow further in 2025.
 
 This means that it’s essential that organizations re-evaluate and strengthen their defenses against identity attacks.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "legacy"} -->

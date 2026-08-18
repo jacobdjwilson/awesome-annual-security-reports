@@ -7256,3 +7256,5 @@ This report describes the association between for cybersecurity and makes recomm
 the use of SWID Tags and the Common Platform achieve those objectives. The recommendations cover
 Enumeration (CPE) specifications. The publication is interagency coordination, collaboration with the U.S.
 intended as a supplement to NIST Internal Report 8060, private
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

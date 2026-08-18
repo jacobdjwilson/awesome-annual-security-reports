@@ -649,3 +649,5 @@ with some prioritizing security in key urban centers while ceding rural territor
 [ 30 ]
 
 [ 31 ]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-31", "model": "legacy"} -->

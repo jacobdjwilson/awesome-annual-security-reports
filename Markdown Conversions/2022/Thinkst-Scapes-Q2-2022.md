@@ -431,3 +431,5 @@ As next quarter’s issue will include one of the largest multi-events of the ye
 25 Q2 2022
 
 ![Valley of Desolation, South Africa . Photo by Wolfgang Hasselmann on Unsplash.]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->

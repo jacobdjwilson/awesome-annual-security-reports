@@ -1977,3 +1977,5 @@ many of them as possible in 2023.
 page 65
 
 2022 YEAR IN REVIEW
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-21", "model": "legacy"} -->

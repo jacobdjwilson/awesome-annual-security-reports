@@ -91,3 +91,5 @@ To see more content like this, follow us on Twitter, Github or Linkedin
 escape.tech
 ping@escape.tech
 +1 (707) 615 6448
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-22", "model": "legacy"} -->

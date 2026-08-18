@@ -194,3 +194,5 @@ We provide cybersecurity marketers with unique marketing opportunities to reach 
 For more information please visit [www.cybersecurity-insiders.com](www.cybersecurity-insiders.com)
 
 Copyright © 2022 Cybersecurity Insiders. All Rights Reserved. Data can be reproduced or referenced as long as it is sourced and linked to [www.cybersecurity-insiders.com](www.cybersecurity-insiders.com).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-11", "model": "legacy"} -->

@@ -187,3 +187,5 @@ Picus Security provides a threat exposure management solution—the Picus Securi
 
 ### About Picus Security
 Picus Security, the leading security validation company, provides organizations a clear picture of their cyber risk based on business context. For more information, visit [picussecurity.com](https://picussecurity.com).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-08", "model": "legacy"} -->

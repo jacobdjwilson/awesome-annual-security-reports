@@ -178,3 +178,5 @@ Rapid7 researchers and community members publish vulnerability analysis in Rapid
 Rapid7 zero-day vulnerability research is published on a regular basis [here](https://www.rapid7.com/blog/).
 
 When a new threat arises, Rapid7 guidance can be found in the emergent threats section of the Rapid7 blog, along with corresponding information for Rapid7 customers. If you are a customer, we’d love to hear your feedback. You can contact your customer success manager (CSM) or technical account manager (TAM), or contact us at research@rapid7.com.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "legacy"} -->

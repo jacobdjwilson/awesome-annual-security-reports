@@ -158,3 +158,5 @@ The data in this report was collected over a 4 week period from February 1 to Fe
 Digital.ai is an industry-leading technology company dedicated to helping Global 5000 enterprises achieve digital transformation goals. The company’s AI-powered DevSecOps platform unifies, secures, and generates predictive insights across the software lifecycle. 
 
 Additional information about Digital.ai can be found at [digital.ai/](https://digital.ai/) and on Twitter, LinkedIn, and Facebook.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "legacy"} -->

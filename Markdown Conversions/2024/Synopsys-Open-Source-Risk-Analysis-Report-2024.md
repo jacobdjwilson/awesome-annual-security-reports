@@ -392,3 +392,5 @@ The “Open Source Security and Risk Analysis” report is produced through the 
 Special thanks for their contributions to this year’s report to Nancy Bernstein, Scott Handy, Siobhan Hunter, Matt Jacobs, Natalie Lightner, Merin McDonell, Mike McGuire, Phil Odence, Rie Sekine, Liz Samet, Jenny Stout, and Jack Taylor.
 
 Rachel Bay has performed her incredible design magic during the nine years we’ve worked on the OSSRA together. It’s been my privilege and honor to write it. — Fred Bals
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "legacy"} -->

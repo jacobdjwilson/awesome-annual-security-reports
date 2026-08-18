@@ -119,3 +119,5 @@ Pre-hardened images shift from reactive to proactive security. The vendor handle
 Across every section of the survey, one message repeats consistently: Teams want security, efficiency, and simplicity, but their current tooling makes this difficult to achieve.
 
 The 48% requesting pre-hardened images aren't just looking for a security tool. They're signaling a desire to build their platform engineering on a foundation that's secure by default. Hardened vendor-maintained images directly address the root causes of today's container security challenges, reducing vulnerability exposure, operational strain, cloud costs, and risk of human errors. As the industry moves beyond reactive security, hardened images are emerging as the most effective path toward stable, low-maintenance, high-security container environments.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-04", "model": "legacy"} -->

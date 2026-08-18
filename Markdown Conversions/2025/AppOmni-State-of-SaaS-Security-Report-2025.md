@@ -145,3 +145,5 @@ The path to effective SaaS security isn’t more complexity; it’s clarity, dep
 
 ## About AppOmni
 AppOmni is the leader in SaaS Security and enables customers to achieve secure productivity with their SaaS applications. The AppOmni Platform continuously scans SaaS APIs, configurations, and ingested audit logs to deliver complete data access visibility, secure identities and SaaS-to-SaaS connections, detect threats, prioritize insights, and simplify compliance reporting.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "legacy"} -->

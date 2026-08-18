@@ -527,3 +527,5 @@ trademarks and service marks or registered trademarks and service marks of Veriz
 other countries. All other trademarks and service marks are the property of their respective owners.
 VerizonEnterprise.com
 Verizon 2016 Data Breach Investigations Report 80
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

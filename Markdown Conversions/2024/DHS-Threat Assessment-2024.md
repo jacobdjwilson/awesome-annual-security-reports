@@ -189,3 +189,5 @@ The impacts of climate change and natural disasters pose acute and systemic thre
 ---
 [^f]: Intermittent encryption consists of encrypting only parts of the targeted files’ content. The process takes less time than full encryption but still locks data.
 [^g]: Ransomware-as-a-Service is a business model used by ransomware developers, which includes leasing ransomware variants in the same way that legitimate software developers lease Software-as-a-Service products. Ransomware-as-a-Service provides cyber actors without sophisticated technical knowledge the ability to launch ransomware attacks by subscribing to a service, often for a nominal fee or percentage of the ransomed amount.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "legacy"} -->

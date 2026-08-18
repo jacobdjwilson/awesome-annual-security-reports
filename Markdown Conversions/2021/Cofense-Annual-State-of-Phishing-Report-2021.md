@@ -190,3 +190,5 @@ Cofense solves the problem of phishing emails that get past SEGs (Secure Email G
 - **Focus:** 100% of our R&D is focused on developing solutions to stop phishing attacks.
 
 © 2021 Cofense. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-04", "model": "legacy"} -->

@@ -891,3 +891,5 @@ Figure 20: Year-Over-Year Resiliency Improvement   .  .  .  .  .  .  .  .  .  . 
 2023 Cofense Annual State of Email Security Report  •  25
 
 COFENSE .COM
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-25", "model": "legacy"} -->

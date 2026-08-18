@@ -2986,3 +2986,5 @@ which is a separate legal entity. Please see www.pwc.com/
 structure for further details.
 
 pwc.com/cyber-security
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-20", "model": "legacy"} -->

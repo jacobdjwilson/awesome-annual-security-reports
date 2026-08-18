@@ -4473,3 +4473,5 @@ Resources
   About Trellix
 
 Copyright © 2024 Musarubra US LLC
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-18", "model": "legacy"} -->

@@ -913,3 +913,5 @@ Facebook, Twitter, or LinkedIn.
 | Fulton, MD 20759 | London EC2M 3TY | Sydney 2000, NSW | Copyright 2021 |
 | ---------------- | --------------- | ---------------- | -------------- |
 USA • 1.877.866.2836 United Kingdom Australia All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

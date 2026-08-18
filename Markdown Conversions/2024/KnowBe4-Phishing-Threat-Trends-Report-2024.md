@@ -124,3 +124,5 @@ An integrated cloud email security solution, Defend delivers AI-powered behavior
 [www.egress.com](http://www.egress.com)
 
 © Egress Software Technologies Inc 2024. 1999-1024
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-22", "model": "legacy"} -->

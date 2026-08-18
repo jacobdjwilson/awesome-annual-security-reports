@@ -958,3 +958,5 @@ permission of Intel 471, Inc.
 48
 
 © Intel 471 Inc. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-17", "model": "legacy"} -->

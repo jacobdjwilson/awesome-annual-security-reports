@@ -3771,3 +3771,5 @@ Mandiant is now part of Google Cloud.
 ©2023 Mandiant, Inc. All rights reserved. Mandiant and M-Trends are registered trademarks of
 Mandiant, Inc. All other brands, products, or service names are or may be trademarks or service marks
 of their respective owners. A-EXT-RT-EN-US-000483-02
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-28", "model": "legacy"} -->

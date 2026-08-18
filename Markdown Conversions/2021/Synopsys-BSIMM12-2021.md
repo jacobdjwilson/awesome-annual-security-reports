@@ -373,3 +373,5 @@ Email: sig-info@synopsys.com
 www.synopsys.com/copyright.html . All other names mentioned herein are trademarks or registered trademarks of their respective owners. September 2021
 
    |  synopsys.com  |  7
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-16", "model": "legacy"} -->

@@ -429,3 +429,5 @@ mentioned herein are trademarks or registered trademarks of their respective own
 ©2024 Black Duck Software, Inc. All rights reserved. Black Duck is a trademark of Black Duck Software, Inc. in the United States and other countries. All other names
 mentioned herein are trademarks or registered trademarks of their respective owners. April 2025
 2025 Open Source Security and Risk Analysis report | 30
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-08", "model": "legacy"} -->

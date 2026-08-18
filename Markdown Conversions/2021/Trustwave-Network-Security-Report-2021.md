@@ -85,3 +85,5 @@ The working-from-home trend will almost certainly continue into this year, so at
 Trustwave is a leading cybersecurity and managed security services provider focused on threat detection and response. Offering a comprehensive portfolio of managed security services, consulting and professional services, and data protection technology, Trustwave helps businesses embrace digital transformation securely. Trustwave is a Singtel company and the global security arm of Singtel, Optus and NCS, with customers in 96 countries.
 
 For more information about Trustwave, visit [www.trustwave.com](http://www.trustwave.com).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-20", "model": "legacy"} -->

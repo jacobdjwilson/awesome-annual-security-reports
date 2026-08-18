@@ -220,3 +220,5 @@ The second edition of the Voice of the SOC paints a clear picture of the pressur
 Smart workflow automation offers a logical solution to many of the challenges outlined in this report. SOC teams at leading organizations are deploying the technology to run mission-critical workflows and achieve greater productivity at scale, all without having to write a single line of code.
 
 To learn more about how smart, secure workflows can make a difference in your SOC, visit [tines.com](https://tines.com).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-29", "model": "legacy"} -->

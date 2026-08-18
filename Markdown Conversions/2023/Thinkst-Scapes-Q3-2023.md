@@ -424,3 +424,5 @@ Image by Jacob Torrey.
 24 Q3 2023
 
 25 Q3 2023
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->

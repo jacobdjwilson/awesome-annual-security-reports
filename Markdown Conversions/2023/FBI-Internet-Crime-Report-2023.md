@@ -3812,3 +3812,5 @@ Date
 11/17/2023
 
 12/12/2023
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-25", "model": "legacy"} -->

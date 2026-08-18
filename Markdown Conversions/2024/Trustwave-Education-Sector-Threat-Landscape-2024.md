@@ -1852,3 +1852,5 @@ targeting of the education sector, with expectations of heightened attacks
 coinciding with the 2022-23 school year.
 
 2024 Education Threat Landscape: Trustwave Threat Intelligence Briefing and Mitigation Strategies
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-20", "model": "legacy"} -->

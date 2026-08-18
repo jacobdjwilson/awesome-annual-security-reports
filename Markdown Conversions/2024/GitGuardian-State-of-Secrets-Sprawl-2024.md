@@ -183,3 +183,5 @@ All GitHub metrics are extracted from the State of the Octoverse 2023. The study
 
 ---
 *© 2024 GitGuardian. All Rights Reserved.*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "legacy"} -->

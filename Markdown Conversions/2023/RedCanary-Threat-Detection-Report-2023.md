@@ -4024,3 +4024,5 @@ Shane Welcher
 Erin York
 
 111
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "legacy"} -->

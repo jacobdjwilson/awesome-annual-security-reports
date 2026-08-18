@@ -3232,3 +3232,5 @@ enquiries@ferma.eu
 www.ferma.eu
 
 Copyright © 2024 FERMA, in partnership with PwC
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-12", "model": "legacy"} -->

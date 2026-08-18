@@ -1148,3 +1148,5 @@ mitigate threats, so you can build brand trust and deliver on your vision. Learn
 delivery solutions at akamai.com and akamai.com/blog, or follow Akamai Technologies on X, formerly known as Twitter, and LinkedIn.
 Published 07/25.
 Ransomware Report 2025 I Volume 11, Issue 03 Akamai.com | 50
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "legacy"} -->

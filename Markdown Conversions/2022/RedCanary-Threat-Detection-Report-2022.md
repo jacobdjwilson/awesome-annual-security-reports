@@ -3122,3 +3122,5 @@ Erin York
 l Conclusion
 
 80
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-20", "model": "legacy"} -->

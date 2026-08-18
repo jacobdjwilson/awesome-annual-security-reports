@@ -4097,3 +4097,5 @@ paragraph 3.33.8).
 56 As reported in the ECA report on the financial year 2023 (https://www.eca.europa.eu/ECAPublications/SAR-AGENCIES-
 2023/SAR-AGENCIES-2023_EN.pdf)
 Consolidated Annual Activity Report 2024 95
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-02", "model": "legacy"} -->

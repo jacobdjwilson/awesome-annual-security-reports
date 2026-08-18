@@ -448,3 +448,5 @@ Chain Security capabilities and solutions reversinglabs.com
 © Copyright 2024 ReversingLabs. All rights reserved. ReversingLabs is the registered
 trademark of ReversingLabs US Inc. All other product and company names Worldwide Sales +1.617.250.7518
 mentioned are trademarks or registered trademarks of their respective owners. sales@reversinglabs.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "legacy"} -->

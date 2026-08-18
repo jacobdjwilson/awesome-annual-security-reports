@@ -146,3 +146,5 @@ After receiving 543 responses from members of our opted-in 2M+ IT community, we 
 - Security & Compliance (16%)
 - Architects (12%)
 - Cloud & Platform (11%)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "legacy"} -->

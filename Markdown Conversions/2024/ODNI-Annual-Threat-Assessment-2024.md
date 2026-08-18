@@ -1182,3 +1182,5 @@ to two years.
 [ 40 ]
 
 [ 41 ]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-13", "model": "legacy"} -->

@@ -84,3 +84,5 @@ The move towards the concept of DevSecOps has accelerated in conjunction with ad
 ---
 
 _Snyk is a developer-first platform for building software securely. Learn more about how Snyk can help you secure cloud native applications across your IDEs, repos, containers, and pipelines._
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "legacy"} -->

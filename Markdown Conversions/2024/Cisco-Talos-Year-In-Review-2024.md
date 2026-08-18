@@ -893,3 +893,5 @@ View our blog: TalosIntelligence.com/blog | Subscribe: Threat Source newsletter 
 © 2025 Cisco and/or its affiliates. All rights reserved. Cisco and the Cisco logo are trademarks or registered trademarks of Cisco and/or its affiliates
 in the U.S. and other countries. To view a list of Cisco trademarks, go to this URL: www.cisco.com/go/trademarks. Third-party trademarks mentioned
 ©ar e2 0th2e5 pCroispceor tayn odf/ othr eitisr raeffislpiaetcetsiv. eA lol wrignehtrss .r Tesheer uvesed .o f| t htael owsoinrtde lpligaretnnceer .dcoomes not imply a partnership relationship between Cisco and any other company. (1110R) pppaaagggeee 444000
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "legacy"} -->

@@ -1881,3 +1881,5 @@ Tel: 855-KNOWBE4 (566-9234)  |  www.KnowBe4.com  |  Email: Sales@KnowBe4.com
 herein may be trademarks and/or registered trademarks of their respective companies.
 
 V031821
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "legacy"} -->

@@ -491,3 +491,5 @@ WE HIGHLIGHTED THREE THEMES FOR THIS QUARTER:
 3. Cross-layer gotchas.
 
 We’re looking forward to seeing how the year closes out with our year-in-review and the final quarter of 2024.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->

@@ -260,3 +260,5 @@ Thanks for reading, have a great New Year, and I'd love to hear any feedback you
 Cheers,
 
 Mike P
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "legacy"} -->

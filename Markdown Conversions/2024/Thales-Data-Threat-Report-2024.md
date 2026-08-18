@@ -79,3 +79,5 @@ Enterprises should focus on:
 
 ## About This Study
 This research was based on a global survey of 2,961 respondents across 18 countries and 37 industries, conducted by S&P Global Market Intelligence and commissioned by Thales. Respondents represent organizations with annual revenues of US$100 million or more.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-18", "model": "legacy"} -->

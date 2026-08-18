@@ -306,3 +306,5 @@ That solution is available now. Welcome to the new age of application security!
 ---
 
 [^1]: “How Software Engineering Leaders Can Mitigate Software Supply Chain Risks,” Gartner, 15 July 2021.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-10", "model": "legacy"} -->

@@ -147,3 +147,5 @@ Orca’s AI Security Posture Management (AI-SPM) provides visibility and risk an
 Orca’s agentless-first Cloud Security Platform provides 100% visibility of all assets on AWS, Azure, Google Cloud, Kubernetes, and more, detecting risks across every layer of the cloud estate.
 
 [^1]: 2024 Orca Security. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-14", "model": "legacy"} -->

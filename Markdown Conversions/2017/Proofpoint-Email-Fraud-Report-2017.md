@@ -223,3 +223,5 @@ Proofpoint, Inc. (NASDAQ:PFPT), a next-generation cybersecurity company, enables
 ©Proofpoint, Inc. Proofpoint is a trademark of Proofpoint, Inc. in the United States and other countries. All other trademarks contained herein are property of their respective owners.
 
 [www.proofpoint.com](https://www.proofpoint.com)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

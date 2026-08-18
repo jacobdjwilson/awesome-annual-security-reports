@@ -4108,3 +4108,5 @@ All other company names, trademarks, and service marks are the property of their
 67
 
 Table of Contents IntroductionResearch HighlightsCurrent  Security PosturePerceptions  and ConcernsCurrent and Future InvestmentsPractices and  StrategiesThe Road AheadSurvey DemographicsResearch MethodologyResearch SponsorsAbout CyberEdge Group
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-17", "model": "legacy"} -->

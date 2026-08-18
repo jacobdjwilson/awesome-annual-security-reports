@@ -175,3 +175,5 @@ IN THIS QUARTER’S EDITION:
 ...behind us. We look forward to diving in, finding interesting...
 
 [^1]: Footnote content referenced within technical documentation.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->

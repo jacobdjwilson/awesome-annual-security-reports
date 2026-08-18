@@ -5674,3 +5674,5 @@ As a best practice, SonicWall routinely optimizes its methodologies for data col
 consolidation of threat feeds. Figures published in previous reports may have been adjusted across different time periods, regions or industries.
 
 2023-CyberThreatReport-JK-7606
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-06", "model": "legacy"} -->

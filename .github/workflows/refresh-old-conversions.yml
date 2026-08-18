@@ -115,40 +115,61 @@ jobs:
             DAYS_OLD=90
           fi
 
-          THRESHOLD=$(date -d "$DAYS_OLD days ago" +%s)
+          python -c '
+import os
+import json
+import time
+from pathlib import Path
+from datetime import datetime
 
-          echo "Finding stale/missing conversions..."
-          echo "  Limit: $LIMIT files"
-          echo "  Min age: $DAYS_OLD days"
+limit = int(os.environ.get("LIMIT") or 10)
+days_old = int(os.environ.get("DAYS_OLD") or 90)
 
-          > candidates.txt
+with open(".github/artifacts/ai-models.json") as f:
+    primary_model = json.load(f).get("models", {}).get("primary", "gemini-3.5-flash-lite")
 
-          # Find missing conversions
-          find "$PDF_ROOT" -name "*.pdf" | while read -r pdf; do
-            rel_path="${pdf#$PDF_ROOT/}"
-            md_path="$MD_ROOT/${rel_path%.pdf}.md"
-            if [ ! -f "$md_path" ]; then
-              echo "0 $pdf" >> candidates.txt
-            fi
-          done
+threshold_timestamp = time.time() - (days_old * 86400)
 
-          # Find stale conversions
-          git ls-files -z "$MD_ROOT" | \
-            xargs -0 -I {} git log -1 --format="%ct {}" -- {} | \
-            while read -r timestamp file; do
-              if [ "$timestamp" -lt "$THRESHOLD" ]; then
-                rel_path="${file#$MD_ROOT/}"
-                pdf_path="$PDF_ROOT/${rel_path%.md}.pdf"
-                if [ -f "$pdf_path" ]; then
-                  echo "$timestamp $pdf_path" >> candidates.txt
-                fi
-              fi
-            done
+candidates = []
 
-          # Sort and limit
-          sort -k1,1n candidates.txt | \
-            cut -d' ' -f2- | \
-            head -n "$LIMIT" > files_to_process.txt
+for root, _, files in os.walk("Annual Security Reports"):
+    for file in files:
+        if not file.endswith(".pdf"): continue
+        pdf_path = Path(root) / file
+        rel_path = pdf_path.relative_to("Annual Security Reports")
+        md_path = Path("Markdown Conversions") / rel_path.with_suffix(".md")
+        
+        if not md_path.exists():
+            candidates.append((0, 0, str(pdf_path)))
+            continue
+            
+        try:
+            content = md_path.read_text(encoding="utf-8")
+            import re
+            match = re.search(r"<!-- CONVERSION_METADATA: (\{.*?\}) -->", content)
+            if not match:
+                candidates.append((1, 0, str(pdf_path)))
+                continue
+            
+            meta = json.loads(match.group(1))
+            if meta.get("model") != primary_model:
+                candidates.append((1, 1, str(pdf_path)))
+                continue
+                
+            date_str = meta.get("date")
+            if date_str:
+                dt = datetime.strptime(date_str, "%Y-%m-%d")
+                ts = dt.timestamp()
+                if ts < threshold_timestamp:
+                    candidates.append((2, ts, str(pdf_path)))
+        except Exception:
+            candidates.append((1, 0, str(pdf_path)))
+
+candidates.sort(key=lambda x: (x[0], x[1]))
+with open("files_to_process.txt", "w") as f:
+    for c in candidates[:limit]:
+        f.write(c[2] + "\n")
+'
 
           if [ -s files_to_process.txt ]; then
             COUNT=$(wc -l < files_to_process.txt | tr -d ' ')
@@ -258,15 +279,6 @@ jobs:
         uses: actions/download-artifact@v7
         with:
           name: files-to-process
-
-      - name: Cache AI Conversions
-        uses: actions/cache@v4
-        with:
-          path: .conversion_cache.json
-          key: ai-conversion-cache-${{ github.ref }}-${{ github.run_id }}
-          restore-keys: |
-            ai-conversion-cache-${{ github.ref }}-
-            ai-conversion-cache-
 
       - name: Cache AI Analysis
         uses: actions/cache@v4

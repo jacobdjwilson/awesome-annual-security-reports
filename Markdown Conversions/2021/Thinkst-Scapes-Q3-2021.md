@@ -1060,3 +1060,5 @@ content released world-wide in the coming quarter as opposed
 to a survey of over a year of content.
 
 Q3    20213332THINKSTSCAPES QUARTERLYThree Rondavels View Point, South Africa. Photo by Matthias Mullie on Unsplash.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

@@ -2636,3 +2636,5 @@ to security incidents, prevent breaches and optimize your speed to remediation
 © 2021 CrowdStrike, Inc. All rights reserved.
 
 2021 Threat Hunting Report
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-05", "model": "legacy"} -->

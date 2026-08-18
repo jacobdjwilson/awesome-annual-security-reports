@@ -128,3 +128,5 @@ Our State of Cybersecurity Resilience 2023 research involved 3,000 global respon
 [^1]: Dig8ital
 [^2]: Reinventing for resilience, Accenture 2023
 [^3]: A new era of generative AI for everyone, Accenture 2023
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-22", "model": "legacy"} -->

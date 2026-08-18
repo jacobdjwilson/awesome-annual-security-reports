@@ -1020,3 +1020,5 @@ To discuss how our Threat Intelligence team can help
 your organisation, get in touch via:
 +44 (0)3303 110 940 hello@bridewell.com bridewell.com
 2025 Cyber Threat Intelligence Report 58
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "legacy"} -->

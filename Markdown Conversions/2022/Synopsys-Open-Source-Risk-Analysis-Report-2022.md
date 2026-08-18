@@ -109,3 +109,5 @@ The concept of a software Bill of Materials (SBOM) derives from manufacturing. A
 [^2]: Eran Orzel, 2021 Software Supply Chain Security Report, Argon Security, 2021.
 [^3]: CVEdetails.com, Docker security vulnerabilities, 2021.
 [^4]: Dominick Reuter, A developer sabotaged their own open-source libraries, breaking thousands of apps, in apparent protest of mega-corporations, Business Insider, 1/10/2022.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-21", "model": "legacy"} -->

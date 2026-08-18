@@ -2218,3 +2218,5 @@ leading threat intelligence and frontline expertise
 with continuous security validation to arm
 organizations with the tools needed to increase
 security effectiveness and reduce business risk.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "legacy"} -->

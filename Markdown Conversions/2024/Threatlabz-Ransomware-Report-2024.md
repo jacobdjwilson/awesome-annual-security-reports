@@ -616,3 +616,5 @@ learn more, visit www.zscaler.com.
 ©2024 Zscaler, Inc. All rights reserved.ThreatLabz 2024 Ransomware Report© 2024 Zscaler, Inc. All rights reserved. Zscaler™ and other trademarks listed at zscaler.com/legal/trademarks
 are  either  (i)  registered  trademarks  or  service  marks  or  (ii)  trademarks  or  service  marks  of  Zscaler,  Inc.  in  the
 United States and/or other countries. Any other trademarks are the properties of their respective owners.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-18", "model": "legacy"} -->

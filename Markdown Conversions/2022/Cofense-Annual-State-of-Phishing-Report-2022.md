@@ -279,3 +279,5 @@ We also celebrated five years without phishing related breaches for any of our m
 > — Trust Radius review
 
 The continuous evolution and demonstrable results of our solutions show that the mission remains clear for Cofense: **We stop phish.**
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-11", "model": "legacy"} -->

@@ -151,3 +151,5 @@ Cybersecurity is a team sport. Arctic Wolf® is a global leader in security oper
 For more information about Arctic Wolf, visit [arcticwolf.com](https://arcticwolf.com).
 
 ©2025 Arctic Wolf Networks, Inc. All rights reserved. | Public ARCTIC WOLF LABS
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-26", "model": "legacy"} -->

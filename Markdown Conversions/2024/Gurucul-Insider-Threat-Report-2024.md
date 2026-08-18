@@ -109,3 +109,5 @@ This 2024 Insider Threat Report is based on a comprehensive online survey of 413
 
 ---
 ©2024 Cybersecurity Insiders. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-25", "model": "legacy"} -->

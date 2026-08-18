@@ -156,3 +156,5 @@ Cybereason is the XDR company, partnering with Defenders to end attacks at the e
 Learn more at [www.cybereason.com](http://www.cybereason.com)
 
 ©Cybereason 2022. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-11", "model": "legacy"} -->

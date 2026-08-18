@@ -181,3 +181,5 @@ Beazley Security has routinely observed ransomware operators leverage stolen, va
 
 Privacy Policy  
 ©2026 Beazley Security is a wholly owned subsidiary of Beazley plc, providing cyber security services. Beazley Security does not provide insurance products or services, nor does it provide legal services or advice. Customer information may be shared between Beazley Security and Beazley plc and/or its affiliates and subsidiaries; however, such information will not be used to inform the underwriting or claims decisions of any Beazley insurance affiliate, unless the customer agrees to disclose such information for that purpose.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->

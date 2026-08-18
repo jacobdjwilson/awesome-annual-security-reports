@@ -12714,3 +12714,5 @@ including conferences, newsletters, and original content.
 www.bsimm.com
 
 PAGE 114   |   BUILDING SECURITY IN MATURITY MODEL (BSIMM) – VERSION 11
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-02", "model": "legacy"} -->

@@ -123,3 +123,5 @@ If you have been compromised, contact the Unit 42 Incident Response team:
 *(List of 40+ references omitted for brevity, as per original document structure)*
 
 Copyright © 2025 Palo Alto Networks. All Rights Reserved
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-23", "model": "legacy"} -->

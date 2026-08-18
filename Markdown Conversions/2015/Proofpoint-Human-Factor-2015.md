@@ -216,3 +216,5 @@ Proofpoint Inc. (NASDAQ:PFPT) is a leading next-generation security and complian
 Sunnyvale, CA 94089  
 +14085174710  
 [wwwproofpointcom](www.proofpoint.com)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

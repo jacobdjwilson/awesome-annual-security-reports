@@ -932,3 +932,5 @@ United Kingdom
 Australia
 
 All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-09", "model": "legacy"} -->

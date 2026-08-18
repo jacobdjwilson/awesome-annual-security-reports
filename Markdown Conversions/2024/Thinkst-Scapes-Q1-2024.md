@@ -425,3 +425,5 @@ Image by Jacob Torrey (Thinkst)
 26 Q1 2024
 
 27 Q1 2024
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->

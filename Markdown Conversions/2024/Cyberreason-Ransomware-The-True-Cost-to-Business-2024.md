@@ -162,3 +162,5 @@ Cybereason is the XDR company, partnering with Defenders to end attacks at the e
 This research was conducted by Censuswide on behalf of Cybereason. A total of 1,008 cybersecurity professionals from organizations with 500 or more employees took part in the online survey between September 25th and October 6th 2023. Participants are from the United States, United Kingdom, France and Germany.
 
 ![Chart showing industry representation: IT and Telecommunications 31%, Manufacturing and Utilities 13%, Retail, Catering and Leisure 10%, and others.]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "legacy"} -->

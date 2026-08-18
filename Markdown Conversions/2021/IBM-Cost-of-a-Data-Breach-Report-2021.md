@@ -2264,3 +2264,5 @@ IBM’s future direction and intent are subject to change or
 withdrawal without notice, and represent goals and objectives only.
 
 73
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "legacy"} -->

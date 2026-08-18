@@ -571,3 +571,5 @@ C
 C
 
 TITLE BASELINEBODY COPYHumanTechnologyInstitute
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "legacy"} -->

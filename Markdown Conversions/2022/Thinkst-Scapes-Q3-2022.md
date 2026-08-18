@@ -474,3 +474,5 @@ Next quarter will likely see a reduction in quantity with the holidays, but the 
 Photo by Wolfgang Hasselmann on Unsplash.
 
 Photo by Arthur Hickinbotham on Unsplash.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->

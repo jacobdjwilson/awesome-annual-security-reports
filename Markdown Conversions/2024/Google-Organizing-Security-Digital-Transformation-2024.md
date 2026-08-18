@@ -866,3 +866,5 @@ burning legacy applications
 need for exceptions to cloud migration
 
 43
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-13", "model": "legacy"} -->

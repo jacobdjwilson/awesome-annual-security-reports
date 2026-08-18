@@ -2903,3 +2903,5 @@ Spinningfields
 Manchester
 
 2022 & 2023 NCC Group Research Report
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-29", "model": "legacy"} -->

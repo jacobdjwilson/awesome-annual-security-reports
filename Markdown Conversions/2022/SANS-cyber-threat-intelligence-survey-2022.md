@@ -211,3 +211,5 @@ If you can’t measure something, you can’t improve it. One interesting takeaw
 ## Sponsors
 
 SANS would like to thank this survey’s sponsors:
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-21", "model": "legacy"} -->

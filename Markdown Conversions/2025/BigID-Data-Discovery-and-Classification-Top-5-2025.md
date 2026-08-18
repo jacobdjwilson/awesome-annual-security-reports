@@ -304,3 +304,5 @@ bigid.com
 Copyright © 2025 TAG Infosphere, Inc. This report may not be reproduced, distributed, or shared without TAG Infosphere’s written permission. The material in this report is comprised
 of the opinions of the TAG Infosphere analysts and is not to be interpreted as consisting of factual assertions. All warranties regarding the correctness, usefulness, accuracy, or
 completeness of this report are disclaimed herein.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-13", "model": "legacy"} -->

@@ -671,3 +671,5 @@ What is your organization’s primary industry?
 |                      |     |     | 6%  | 7%  | Data: Dark Reading survey of 242 cybersecurity and IT professionals, June 2023 |     |              |     |
 | -------------------- | --- | --- | --- | --- | ------------------------------------------------------------------------------ | --- | ------------ | --- |
 | Dark Reading Reports |     |     |     |     |                                                                                |     | August 2023  | 23  |
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-22", "model": "legacy"} -->

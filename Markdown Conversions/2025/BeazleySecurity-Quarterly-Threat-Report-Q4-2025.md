@@ -255,3 +255,5 @@ Overall, our telemetry shows that in Q4, attackers remained persistent, with det
 - [https://techcommunity.microsoft.com/blog/microsoft-entra-blog/defend-your-users-from-mfa-fatigue-attacks/2365677](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/defend-your-users-from-mfa-fatigue-attacks/2365677)
 - [https://www.bleepingcomputer.com/news/security/meet-shinysp1d3r-new-ransomware-as-a-service-created-by-shinyhunters/](https://www.bleepingcomputer.com/news/security/meet-shinysp1d3r-new-ransomware-as-a-service-created-by-shinyhunters/)
 - [https://www.bleepingcomputer.com/news/security/shinyhunters-starts-leaking-data-stolen-in-salesforce-attacks/](https://www.bleepingcomputer.com/news/security/shinyhunters-starts-leaking-data-stolen-in-salesforce-attacks/)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->

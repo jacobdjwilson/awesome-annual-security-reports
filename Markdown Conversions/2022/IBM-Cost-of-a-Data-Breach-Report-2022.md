@@ -4602,3 +4602,5 @@ applicable to it. IBM does not provide legal advice or represent or warrant that
 services or products will ensure that the client is in compliance with any law or
 regulation. Statements regarding IBM’s future direction and intent are subject to
 change or withdrawal without notice, and represent goals and objectives only.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-13", "model": "legacy"} -->

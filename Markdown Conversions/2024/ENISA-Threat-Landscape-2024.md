@@ -7456,3 +7456,5 @@ information about ENISA and its work can be found here: www.enisa.europa.eu.
 
 ISBN 978-92-9204-675-0
 DOI: 10.2824/0710888
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-22", "model": "legacy"} -->

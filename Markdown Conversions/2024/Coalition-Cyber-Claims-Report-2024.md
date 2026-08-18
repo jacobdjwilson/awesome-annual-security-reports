@@ -175,3 +175,5 @@ Coalition uses the reported experience as of six months of age rather than ultim
 [^5]: Coalition Incident Response services provided through Coalition’s affiliate are offered to policyholders as an option via our incident response firm panel.
 [^6]: Federal Trade Commission, As Nationwide Fraud Losses Top $10 Billion in 2023, FTC Steps Up Efforts to Protect the Public
 [^7]: Decrease in ransom amount paid only includes negotiations handled by Coalition Incident Response, an affiliate firm made available to all policyholders via panel selection.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-17", "model": "legacy"} -->

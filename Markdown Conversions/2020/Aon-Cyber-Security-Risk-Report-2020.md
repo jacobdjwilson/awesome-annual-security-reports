@@ -352,3 +352,5 @@ Cyber security services offered by Stroz Friedberg Inc. and its affiliates. Insu
 The information contained herein and the statements expressed are of a general nature and are not intended to address the circumstances of any particular individual or entity. Although we endeavor to provide accurate and timely information and use sources we consider reliable, there can be no guarantee that such information is accurate as of the date it is received or that it will continue to be accurate in the future. No one should act on such information without appropriate professional advice after a thorough examination of the particular situation.
 
 Visit [aon.com/cyber-solutions](https://aon.com/cyber-solutions) for more information.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-15", "model": "legacy"} -->

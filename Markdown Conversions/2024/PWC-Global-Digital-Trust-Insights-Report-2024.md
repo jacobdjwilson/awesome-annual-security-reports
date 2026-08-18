@@ -91,3 +91,5 @@ PwC US
 sean.joyce@pwc.com | [LinkedIn](https://www.linkedin.com)
 
 © 2023 PwC. All rights reserved. PwC refers to the PwC network and/or one or more of its member firms, each of which is a separate legal entity. Please see [www.pwc.com/structure](http://www.pwc.com/structure) for further details. 1811474-2023.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-15", "model": "legacy"} -->

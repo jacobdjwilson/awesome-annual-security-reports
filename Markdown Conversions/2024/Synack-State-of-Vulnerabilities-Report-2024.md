@@ -230,3 +230,5 @@ In a sea of CVEs, simply managing vulnerabilities, let alone addressing their ro
 To learn more about PTaaS and vulnerability trends, please visit [www.synack.com](http://www.synack.com).
 
 © 2024 Synack Inc. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "legacy"} -->

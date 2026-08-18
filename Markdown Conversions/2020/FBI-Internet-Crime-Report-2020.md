@@ -703,3 +703,5 @@ do not represent the number of individuals filing a complaint.
 • “Count by Subject per state” is the number of subjects per state, as reported by victims.
 • “Subject earnings per Destination State” is the amount swindled by the subject, as reported by
 the victim, per state.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

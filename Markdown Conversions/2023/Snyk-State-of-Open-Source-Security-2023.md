@@ -135,3 +135,5 @@ Overall, we appear to be in a great period of transition, moving from older appr
 
 ## Methodology and Respondent Composition
 We surveyed 404 respondents from organizations ranging from small companies to very large multinationals. The largest percentage worked at either small companies with less than 100 employees or at companies with between 100 and 10,000 employees. Respondents were all in technical disciplines, including software development, infrastructure, operations, and security. All respondents were working in the United States. For the directly measured portions of the report, we analyzed aggregated, anonymized data from security scans and Snyk product usage. The coverage of this analysis was from April 2022 through March 2023 unless otherwise noted.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-06", "model": "legacy"} -->

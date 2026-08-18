@@ -196,3 +196,5 @@ While still a new concept to many, the demand for open source BOMs is growing. I
 [^6]: Frank Nagle et al, Report on the 2020 FOSS Contributor Survey, The Linux Foundation, 12/8/2020.
 [^7]: GitHub, Nicole Forsgren et al, The 2020 State of the Octoverse, 2020.
 [^9]: Mark Horvath, Dionisio Zumerle, and Dale Gardner, Magic Quadrant for Application Security Testing, Gartner, 4/29/2020.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-09", "model": "legacy"} -->

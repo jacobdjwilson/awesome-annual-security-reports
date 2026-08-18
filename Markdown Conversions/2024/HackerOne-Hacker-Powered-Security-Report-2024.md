@@ -315,3 +315,5 @@ If you want to turn this data into real impact
 for your organization, speak to our experts
 
 sales@hackerone.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-13", "model": "legacy"} -->

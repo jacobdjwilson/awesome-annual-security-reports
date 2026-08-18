@@ -168,3 +168,5 @@ Appdome's patented AI-Native XTM Platform is designed to protect every aspect of
 
 To learn more about Appdome, visit [appdome.com](https://appdome.com)
 Or sign up for a free trial at [fusion.appdome.com](https://fusion.appdome.com)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-12", "model": "legacy"} -->

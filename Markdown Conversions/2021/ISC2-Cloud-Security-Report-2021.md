@@ -162,3 +162,5 @@ The 2021 Cloud Security Report is based on a comprehensive survey of 613 cyberse
 (ISC)² is an international nonprofit membership association focused on inspiring a safe and secure cyber world. Best known for the acclaimed Certified Information Systems Security Professional (CISSP®) certification, (ISC)² offers a portfolio of credentials that are part of a holistic, pragmatic approach to security. In 2015, (ISC)² launched the Certified Cloud Security Professional (CCSP®) credential.
 
 For more information on (ISC)², visit [www.isc2.org](http://www.isc2.org).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "legacy"} -->

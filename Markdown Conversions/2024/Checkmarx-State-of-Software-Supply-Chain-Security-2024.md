@@ -98,3 +98,5 @@ The AppSec market has matured significantly in recent years, meaning organizatio
 ## Methodology
 
 To get more insight into current trends in software supply chain security, we commissioned a survey of 900 CISOs and application security professionals. The survey was conducted online by Global Surveyz Research. Respondents included a mix of CISOs, Deputy CISOs, VPs, Directors, and application security managers from companies in North America, W. Europe, and APAC with an annual revenue of $750M+, across a variety of industries.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-09", "model": "legacy"} -->

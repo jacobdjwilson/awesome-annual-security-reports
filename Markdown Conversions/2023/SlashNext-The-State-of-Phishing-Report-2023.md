@@ -203,3 +203,5 @@ At SlashNext, we know that the demands of a changing and growing threat landscap
 Pleasanton CA 94566
 Contact Sales: 1(800) 930-8643
 Request a Demo: [https://www.slashnext.com/request-a-demo/](https://www.slashnext.com/request-a-demo/)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "legacy"} -->

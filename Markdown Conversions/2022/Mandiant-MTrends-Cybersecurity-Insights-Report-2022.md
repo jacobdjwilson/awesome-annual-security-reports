@@ -3205,3 +3205,5 @@ effective programs and instill confidence in their cyber readiness.
 ©2022 Mandiant, Inc. All rights reserved. Mandiant and M-Trends are registered trademarks of Mandiant,
 Inc. All other brands, products, or service names are or may be trademarks or service marks of their
 respective owners. M-EXT-RT-EN-US-000429-01
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-19", "model": "legacy"} -->

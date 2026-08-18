@@ -1258,3 +1258,5 @@ Tel.:  +41 (0) 22 869 1212
 Fax: +41 (0) 22 786 2744
 contact@weforum.org
 www.weforum.org
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-19", "model": "legacy"} -->

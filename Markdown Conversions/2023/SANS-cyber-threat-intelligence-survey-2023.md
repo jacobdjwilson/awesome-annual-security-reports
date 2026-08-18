@@ -91,3 +91,5 @@ CTI analysts will continue to face demands from various stakeholders. Recommenda
 ## Sponsors
 
 SANS would like to thank this survey’s sponsors: [Sponsor logos/names would appear here].
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "legacy"} -->

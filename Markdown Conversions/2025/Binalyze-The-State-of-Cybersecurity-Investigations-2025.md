@@ -107,3 +107,5 @@ Cyberattacks are no longer the exception, they’re the expectation. What define
 Findings are based on a survey of 200 US CISOs and others with sole responsibility for IT cybersecurity decision-making at enterprises with 500 or more employees. Research was performed in September 2025.
 
 ![Binalyze research report cover graphic]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-02", "model": "legacy"} -->

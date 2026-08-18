@@ -127,3 +127,5 @@ This cloud security survey was conducted in early 2025 and gathered responses fr
 ---
 
 *Reuse of content: We encourage the reuse of data, charts, and text published in this report under the terms of this Creative Commons Attribution 4.0 International License.*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-21", "model": "legacy"} -->

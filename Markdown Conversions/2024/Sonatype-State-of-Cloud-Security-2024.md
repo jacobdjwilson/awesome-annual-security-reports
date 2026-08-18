@@ -1702,3 +1702,5 @@ harness AI and data intelligence to mitigate risk, maximize efficiencies, and dr
 opment. More than 2,000 organizations, including 70% of the Fortune 100 and 15 million software devel-
 opers, rely on Sonatype to optimize their software supply chains. To learn more about Sonatype, please
 visit www.sonatype.com.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-03", "model": "legacy"} -->

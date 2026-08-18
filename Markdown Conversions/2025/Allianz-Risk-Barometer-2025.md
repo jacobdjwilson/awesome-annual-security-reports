@@ -1352,3 +1352,5 @@ Specialty SE, nor any other company of Allianz Group does make any representatio
 Allianz Global Corporate & Specialty SE, Königinstraße 28, 80802 Munich, Germany.
 Commercial Register: Munich, HRB 208312
 January 2025
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-27", "model": "legacy"} -->

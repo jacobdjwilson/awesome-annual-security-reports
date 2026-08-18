@@ -1174,3 +1174,5 @@ www.nopsec.com
 www.nopsec.com
 
 37
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-17", "model": "legacy"} -->

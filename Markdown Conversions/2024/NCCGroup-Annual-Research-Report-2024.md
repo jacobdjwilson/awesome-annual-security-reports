@@ -452,3 +452,5 @@ XYZ Building, 2 Hardman Boulevard
 Spinningfields, Manchester
 www.nccgroup.com
 40
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-29", "model": "legacy"} -->

@@ -1831,3 +1831,5 @@ found at www.paloaltonetworks.com/company/
 trademarks.html. All other marks mentioned herein may be
 trademarks of their respective companies.
 2024 Unit 42 Incident Response Report 02/2024.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-15", "model": "legacy"} -->

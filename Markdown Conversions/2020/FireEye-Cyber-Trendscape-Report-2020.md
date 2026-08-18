@@ -672,3 +672,5 @@ Inc. All other brands, products, or service approach, FireEye eliminates the com
 names are or may be trademarks or service cyber security for organizations struggling to prepare for,
 marks of their respective owners.
 F-EXT-RT-US-EN-000235-01 prevent, and respond to cyber attacks.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-16", "model": "legacy"} -->

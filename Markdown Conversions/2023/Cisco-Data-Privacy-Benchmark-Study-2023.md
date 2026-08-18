@@ -142,3 +142,5 @@ For additional information, contact Robert Waitman, Cisco Director of Privacy Re
 Cisco Security publishes a series of research-based, data-driven studies including the Security Outcomes Report, Threat Report and Blogs, Data Privacy Benchmark Study, and Consumer Privacy Survey.
 
 © 2023 Cisco and/or its affiliates. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-24", "model": "legacy"} -->

@@ -317,3 +317,5 @@ Moving forward, a proactive and adaptive stance will be indispensable in counter
 [^8]: ibid.
 
 *(Additional sources referenced in the report include: DNSFilter Labs, JD Supra, Dark Reading, 23andMe, CNN, Egress, CISA, US Department of Justice, Malpedia, BleepingComputer, Huntress, NPR, and Infosecurity Magazine.)*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "legacy"} -->

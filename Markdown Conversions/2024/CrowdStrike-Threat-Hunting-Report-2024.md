@@ -712,3 +712,5 @@ Patent and Trademark Office, and in other countries. CrowdStrike owns other trad
 marks, and may use the brands of third parties to identify their products and services.
 
 CROWDSTRIKE 2024 THREAT HUNTING REPORT
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "legacy"} -->

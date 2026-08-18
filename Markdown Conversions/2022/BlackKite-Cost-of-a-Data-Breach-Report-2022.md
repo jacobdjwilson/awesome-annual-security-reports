@@ -299,3 +299,5 @@ With 500+ customers across the globe and counting, we're committed to improving 
 - **Email:** info@blackkite.com
 - **Phone:** +1 (571) 335-0222
 - **Address:** 800 Boylston Street, Suite 2905, Boston, MA 02199
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-17", "model": "legacy"} -->

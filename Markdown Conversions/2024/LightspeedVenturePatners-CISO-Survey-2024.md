@@ -126,3 +126,5 @@ The CISO Survey was conducted by Lightspeed Venture Partners, polling 214 member
 Serving the bold builders of the future. For over twenty years Lightspeed has been the first investor and an early backer of some of the most innovative companies in the world. We stand behind our Founders with high conviction, from Seed to Series F and beyond.
 
 Visit us at [LSVP.COM](https://LSVP.COM) to learn more about Lightspeed, and [LSVP.COM/CYBER60](https://LSVP.COM/CYBER60) to access the online version of this report.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "legacy"} -->

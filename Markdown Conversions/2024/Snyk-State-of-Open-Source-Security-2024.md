@@ -98,3 +98,5 @@ The findings from our 2024 research paint a concerning picture of an industry st
 We surveyed 453 technologists across application development and security. We used many of the same questions we had asked in the 2023 State of Open Source Security and compared to the past results, where applicable. Respondents were located in the United States of America, Canada, and the United Kingdom. The question types included binary responses, multi-picks, and ratings on a scale. Respondents came from a wide variety of sectors, including automotive, business services, communications, education, energy and utilities, entertainment/media, financial services, government, and SaaS technology.
 
 © 2024 Snyk Limited
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-20", "model": "legacy"} -->

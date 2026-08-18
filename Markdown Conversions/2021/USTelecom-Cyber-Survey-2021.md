@@ -130,3 +130,5 @@ It takes 7.5 months for organizations to fully recover from a breach. 59% report
 [^8]: https://www.ibm.com/security/digital-assets/cost-data-breach-report/#/pdf
 [^9]: https://www.accenture.com/_acnmedia/PDF-116/Accenture-Cybersecurity-Report-2020.pdf
 [^10]: https://www.darkreading.com/operations/cybersecurity-budget-rose-in-2019-uncertainty-prevails-in-2020/d/d-id/1338580#:~:text=As%20a%20percentage%20of%20the,a%20share%20of%20employee%20cost; https://www.csoonline.com/article/3432138/how-much-should-you-spend-on-security.html; https://cybersecurity.att.com/blogs/security-essentials/how-to-justify-your-cybersecurity-budget#:~:text=Finally%2C%20it’s%20worth%20noting%20that,fiscal%20budget%20(%244.746%20trillion)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-09", "model": "legacy"} -->

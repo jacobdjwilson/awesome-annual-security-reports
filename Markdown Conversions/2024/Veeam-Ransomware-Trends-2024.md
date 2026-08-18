@@ -122,3 +122,5 @@ Veeam®, the #1 global market leader in data protection and ransomware recovery,
 Headquartered in Seattle with offices in more than 30 countries, Veeam protects over 450,000 customers worldwide, including 74% of the Global 2000, who trust Veeam to keep their businesses running. Radical Resilience starts with Veeam.
 
 Learn more at [www.veeam.com](http://www.veeam.com) or follow Veeam on LinkedIn @veeam-software and X @veeam.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-19", "model": "legacy"} -->

@@ -834,3 +834,5 @@ understood by the audiences that matter most to them.
 
 Copyright © Cision Ltd. All Rights Reserved.
 300 S Riverside Plaza, Suite 300, Chicago, IL 60606 | 866.639.5087
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-14", "model": "legacy"} -->

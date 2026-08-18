@@ -161,3 +161,5 @@ Kaspersky is a global cybersecurity company founded in 1997.
 - 5,000+ professionals.
 - 467k new malicious files detected daily.
 - 4.9 billion cyberattacks detected in 2024.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-19", "model": "legacy"} -->

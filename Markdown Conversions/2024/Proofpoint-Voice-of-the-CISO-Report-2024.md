@@ -175,3 +175,5 @@ Censuswide complies with the MRS Code of Conduct and ESOMAR principles.
 
 ![Chart showing industry split among respondents]
 ![Chart showing company size split among respondents]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-16", "model": "legacy"} -->

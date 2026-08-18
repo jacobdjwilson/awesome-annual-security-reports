@@ -237,3 +237,5 @@ Proofpoint, Inc. (NASDAQ:PFPT), a next-generation cybersecurity company, enables
 proofpoint.com
 
 0518-021
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

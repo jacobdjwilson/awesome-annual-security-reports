@@ -137,3 +137,5 @@ Throughout the past decade, Cisco has published a wealth of definitive security 
 Published January 2022
 RPT_01_2022
 © 2022 Cisco and/or its affiliates. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-10", "model": "legacy"} -->

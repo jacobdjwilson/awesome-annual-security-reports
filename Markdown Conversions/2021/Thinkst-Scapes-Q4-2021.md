@@ -511,3 +511,5 @@ With the holidays and the emergence of yet-another-variant, there is a sharp dec
 A penguin on Boulders Beach, Cape Town, South Africa. Photo by Kym Ellis on Unsplash.
 
 Looking out from Cape Point, Cape Town, South Africa. Photo by Clayton Cardinalli on Unsplash.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

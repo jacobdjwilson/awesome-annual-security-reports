@@ -167,3 +167,5 @@ Tidelift helps organizations use open source for building their applications wit
 - Increase operational efficiency by saving costly manual package evaluation and remediation time.
 
 If you are interested in having a strategic partner in this effort, please reach out to us. We’d love to help.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-14", "model": "legacy"} -->

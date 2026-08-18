@@ -130,3 +130,5 @@ Artificial intelligence tools represent a double-edged sword. They provide unpre
 - Department of Defense Directive 3115.18, DoD Access to and Use of Publicly Available Information (PAI), June 11, 2019, as amended.
 - Department of Manual 5240.01, Procedures Governing the Conduct of DoD Intelligence Activities, August 8, 2016.
 - (U) Department of Defense Instruction 3115.12, Open Source Intelligence (OSINT), August 24, 2010, as amended.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-18", "model": "legacy"} -->

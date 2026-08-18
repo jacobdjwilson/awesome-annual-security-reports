@@ -3030,3 +3030,5 @@ notices sent by the multiple organizations impacted by the single data compromis
 © IDENTITY THEFT RESOURCE  CEN TER  2024   |   IDTHEFTCENTER.ORG
 
 40
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-28", "model": "legacy"} -->

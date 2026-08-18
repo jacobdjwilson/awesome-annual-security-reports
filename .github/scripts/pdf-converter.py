@@ -113,72 +113,7 @@ class ConfigLoader:
             return None
 
 
-# ================
-# CONVERSION CACHE
-# ================
-class ConversionCache:
-    """Caches PDF to Markdown conversion output paths and metadata to avoid redundant work."""
 
-    def __init__(self, cache_file: str = ".conversion_cache.json"):
-        self.cache_file = Path(cache_file)
-        self.cache: Dict[str, Any] = self._load()
-        self.hits   = 0
-        self.misses = 0
-
-    def _load(self) -> Dict[str, Any]:
-        if self.cache_file.exists():
-            try:
-                with open(self.cache_file, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                    # Migrate old string paths to dicts
-                    for k, v in list(data.items()):
-                        if isinstance(v, str):
-                            data[k] = {
-                                "path": v,
-                                "model": "unknown",
-                                "timestamp": 0
-                            }
-                    return data
-            except Exception:
-                return {}
-        return {}
-
-    def _save(self):
-        try:
-            with open(self.cache_file, "w", encoding="utf-8") as f:
-                json.dump(self.cache, f, indent=2)
-        except Exception as e:
-            print(f"WARNING: Could not save conversion cache: {e}")
-
-    def _key(self, pdf_path: str) -> str:
-        return hashlib.md5(str(Path(pdf_path).resolve()).encode()).hexdigest()
-
-    def get_entry(self, pdf_path: str) -> Optional[Dict[str, Any]]:
-        key    = self._key(pdf_path)
-        result = self.cache.get(key)
-        if result:
-            self.hits += 1
-        else:
-            self.misses += 1
-        return result
-
-    def get(self, pdf_path: str) -> Optional[str]:
-        entry = self.get_entry(pdf_path)
-        return entry["path"] if entry else None
-
-    def set(self, pdf_path: str, md_path: str, model_name: str = "unknown"):
-        import time
-        self.cache[self._key(pdf_path)] = {
-            "path": md_path,
-            "model": model_name,
-            "timestamp": int(time.time())
-        }
-        self._save()
-
-    def stats(self) -> str:
-        total = self.hits + self.misses
-        rate  = (self.hits / total * 100) if total > 0 else 0
-        return f"Cache: {self.hits} hits, {self.misses} misses ({rate:.1f}% hit rate)"
 
 
 # ====================
@@ -500,7 +435,6 @@ class PDFConverter:
     def __init__(self, config: ConfigLoader, polisher: Optional[MarkdownPolisher] = None,
                  force_reconvert: bool = False, smart_reconvert: bool = False):
         self.config          = config
-        self.cache           = ConversionCache()
         self.polisher        = polisher
         self.force_reconvert = force_reconvert
         self.smart_reconvert = smart_reconvert
@@ -512,6 +446,21 @@ class PDFConverter:
             print(f"! MarkItDown init warning: {str(e)[:80]}")
             self.markitdown = MarkItDown()
 
+
+    def _get_existing_metadata(self, md_path: Path) -> dict:
+        if not md_path.exists():
+            return {}
+        try:
+            text = md_path.read_text(encoding="utf-8", errors="ignore")
+            # Look for the metadata tag at the end of the file
+            match = re.search(r'<!-- CONVERSION_METADATA: (\{.*?\}) -->', text)
+            if match:
+                import json
+                return json.loads(match.group(1))
+        except Exception:
+            pass
+        return {}
+
     def convert(self, pdf_path: str) -> Tuple[bool, str, str]:
         """
         Convert a single PDF to Markdown.
@@ -521,12 +470,9 @@ class PDFConverter:
         if not pdf_path_obj.exists():
             return False, "", "File not found"
 
-        # Return cached result if the output file still exists on disk,
-        # unless force_reconvert is set or smart_reconvert indicates a better
-        # model is available or the previous conversion was structurally invalid.
-        cached_entry = self.cache.get_entry(pdf_path)
-        cached_path = cached_entry["path"] if cached_entry else None
+        # Check if the output file exists and has up-to-date metadata
         existing_md = self._get_markdown_path(pdf_path_obj)
+        existing_meta = self._get_existing_metadata(existing_md)
         
         needs_reconvert = False
         reconvert_reason = ""
@@ -535,14 +481,14 @@ class PDFConverter:
             needs_reconvert = True
             reconvert_reason = "force-reconvert requested"
         elif self.smart_reconvert:
-            if not cached_entry:
-                needs_reconvert = True
-                reconvert_reason = "not in cache"
-            elif not existing_md.exists():
+            if not existing_md.exists():
                 needs_reconvert = True
                 reconvert_reason = "cached file missing from disk"
+            elif not existing_meta:
+                needs_reconvert = True
+                reconvert_reason = "missing metadata tag"
             else:
-                cached_model = cached_entry.get("model", "unknown")
+                cached_model = existing_meta.get("model", "unknown")
                 current_model = self.config.primary_model
                 if cached_model != current_model:
                     needs_reconvert = True
@@ -552,9 +498,9 @@ class PDFConverter:
                     if len(md_text) < self.config.min_markdown_chars:
                         needs_reconvert = True
                         reconvert_reason = f"markdown too short ({len(md_text)} chars < {self.config.min_markdown_chars})"
-        elif not cached_entry or not existing_md.exists():
+        elif not existing_md.exists():
             needs_reconvert = True
-            reconvert_reason = "not in cache or missing from disk"
+            reconvert_reason = "missing from disk"
             
         existing_content = None
         if not needs_reconvert:
@@ -628,10 +574,16 @@ class PDFConverter:
             elif not self.polisher:
                 print(f"  ⚠ No AI polisher — saving raw markitdown output")
 
+            model_used = self.polisher._active_model if self.polisher and getattr(self.polisher, '_active_model', None) else "unknown"
+            from datetime import datetime
+            import json
+            meta = {
+                "source": "https://github.com/jacobdjwilson/awesome-annual-security-reports",
+                "date": datetime.now().strftime("%Y-%m-%d"),
+                "model": model_used
+            }
+            markdown_text += f"\n\n<!-- CONVERSION_METADATA: {json.dumps(meta)} -->\n"
             md_path.write_text(markdown_text, encoding="utf-8")
-            
-            model_to_cache = self.polisher._active_model if self.polisher and getattr(self.polisher, '_active_model', None) else "unknown"
-            self.cache.set(pdf_path, str(md_path), model_to_cache)
 
             print(f"  ✓ Saved: {md_path}")
             if is_stub:

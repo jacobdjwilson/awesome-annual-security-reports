@@ -119,3 +119,5 @@ Only 16% of respondents stated that the hiring and recruiting of security staff 
 As a market leader in security operations, Arctic Wolf can help close the gaps in your cybersecurity defenses, manage your risks, and deliver comprehensive incident response services to address escalated threats. The Arctic Wolf® Platform delivers automated threat detection and response at scale and empowers organizations of virtually any size to stand up world-class security operations.
 
 For more information about Arctic Wolf, visit [arcticwolf.com](https://arcticwolf.com).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-16", "model": "legacy"} -->

@@ -1434,3 +1434,5 @@ Vulnerability
 42
 
 APPENDIX A: CVE LISTING    |    2023 QUALYS TRURISK RESEARCH REPORT© 2023 QUALYS, INC. ALL RIGHTS RESERVED. V230327
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "legacy"} -->

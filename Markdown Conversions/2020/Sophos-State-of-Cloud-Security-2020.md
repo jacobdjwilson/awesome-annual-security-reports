@@ -503,3 +503,5 @@ Start an instant demo at [www.sophos.com/demo](www.sophos.com/demo)
 Registered in England and Wales No. 2096520, The Pentagon, Abingdon Science Park, Abingdon, OX14 3YP, UK  
 Sophos is the registered trademark of Sophos Ltd. All other product and company names mentioned are trademarks or registered trademarks of their respective owners.  
 20-06-18 WPEN (DD)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-13", "model": "legacy"} -->

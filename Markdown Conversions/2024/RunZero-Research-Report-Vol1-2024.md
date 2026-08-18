@@ -3047,3 +3047,5 @@ Try runZero for Free
 240506
 
 runzero.com/try/
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "legacy"} -->

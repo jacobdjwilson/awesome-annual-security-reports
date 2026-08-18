@@ -1247,3 +1247,5 @@ information herein. If you have specific security concerns, please contact Risk 
 analysis and security consulting services.
 
 © Copyright 2022 Risk Based Security, Inc. All Rights Reserved
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "legacy"} -->

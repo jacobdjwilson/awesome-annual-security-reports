@@ -618,3 +618,5 @@ Things change rapidly on the Internet, but security begins with visibility. It i
 2 0 2 2   S T A T E   O F   T H E   I N T E R N E T   R E P O R T  •  C ENSY S .IO
 
 44
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-31", "model": "legacy"} -->

@@ -9758,3 +9758,5 @@ XZ Utils Backdoor — Everything You Need to Know, and What You Can Do. (1 April
 https://www.akamai.com/blog/security-research/critical-linux-backdoor-xz-utils-discovered-what-to-know
 
 118
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-12", "model": "legacy"} -->

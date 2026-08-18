@@ -332,3 +332,5 @@ tackers did not have time to target you) versus an “all hands on deck” massi
 We hope our quantification, context, and advice prove useful as you emerge from these 2
 
 major incidents to take on the remaining challenges that await us all in 2021 and beyond.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "legacy"} -->

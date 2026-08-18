@@ -139,3 +139,5 @@ The 2021 Cloud Security Report is based on the results of a comprehensive online
 **Company Size**: Fewer than 10 (4%), 10-99 (13%), 100-499 (14%), 500-999 (9%), 1,000-4,999 (20%), 5,000-10,000 (10%), Over 10,000 (30%).
 
 **Industry**: Financial Services (23%), Technology, Software & Internet (22%), Government (10%), Professional Services (7%), Manufacturing (6%), Education & Research (4%), Telecommunications (4%), Transportation & Logistics (4%), Healthcare, Pharmaceuticals & Biotech (4%), Other (16%).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "legacy"} -->

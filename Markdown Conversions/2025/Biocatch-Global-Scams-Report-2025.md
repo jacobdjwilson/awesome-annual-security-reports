@@ -148,3 +148,5 @@ www.biocatch.com | E: info@biocatch.com
 [in /company/biocatch](https://www.linkedin.com/company/biocatch)
 
 ©BioCatch 2025. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "legacy"} -->

@@ -5782,3 +5782,5 @@ Zscaler
 2021 DBIR  Appendix D
 
 118
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-10", "model": "legacy"} -->

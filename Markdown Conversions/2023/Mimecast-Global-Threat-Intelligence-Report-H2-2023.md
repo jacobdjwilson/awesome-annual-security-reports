@@ -201,3 +201,5 @@ The fourth quarter of 2023 solidified many of the trends from previous quarters.
 Attackers slightly changed the sectors they targeted in Q4 2023, focusing on finance, such as banking and other services; professional services, such as HR and accounting; and the travel, hospitality, and catering sector. While campaigns targeting the human resources and recruitment services sector have subsided somewhat, the industry remains the third most targeted sector.
 
 www.mimecast.com | ©2024 Mimecast | All Rights Reserved | GL-05902
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-02", "model": "legacy"} -->

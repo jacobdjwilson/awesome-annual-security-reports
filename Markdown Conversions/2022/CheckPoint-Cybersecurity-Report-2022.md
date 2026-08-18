@@ -1705,3 +1705,5 @@ plus behind the scenes and other exclusive content.
 Visit us at https://research.checkpoint.com/category/cpradio/
 WWW.CHECKPOINT.COM
 © 1994-2022 Check Point Software Technologies Ltd. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-13", "model": "legacy"} -->

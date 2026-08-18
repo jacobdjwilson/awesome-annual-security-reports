@@ -2124,3 +2124,5 @@ liability for any decision made or any other acts or omissions in connection wit
 Chainalysis does not guarantee or warrant the accuracy, completeness, timeliness, suitability or validity of the information
 in this report and will not be responsible for any claim attributable to errors, omissions, or other inaccuracies of any part of
 such material.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-14", "model": "legacy"} -->

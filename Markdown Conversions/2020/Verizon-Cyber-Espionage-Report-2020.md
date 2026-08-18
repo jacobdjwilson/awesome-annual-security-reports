@@ -2423,3 +2423,5 @@ PSaeycmureitnyt R eport
 
 verizon.com/business/resources/reports/cyber-espionage-report/
 REP11431120
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-11", "model": "legacy"} -->

@@ -286,3 +286,5 @@ Based on observations during remote analysis, the X-Force team provided several 
 [^9]: The X-Force team uses a multifaceted ranking algorithm to prioritize and score the severity of vulnerabilities with a risk score that uses factors such as ease of use, level of access granted and impact on the affected system. This information is inserted into a risk formula that scores the threat based on the Common Vulnerability Scoring System (CVSS), the potential damage possible, difficulty and utility to an attacker.
 [^10]: Cloud Migration a Top Priority for Media and Entertainment Industry, Spiceworks Inc., 9 November 2021.
 [^11]: Cloud Usage Is Alive And Well In The European Cloud Market, Forrester, 19 July 2022.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-28", "model": "legacy"} -->

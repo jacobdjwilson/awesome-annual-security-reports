@@ -128,3 +128,5 @@ On average, customers report that they’re able to achieve 56% higher developer
 - IBM, Cost of a data breach report, July 2023
 - Snyk reporting, September 2023
 - Stack Overflow, Developer Survey, May 2023
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-23", "model": "legacy"} -->

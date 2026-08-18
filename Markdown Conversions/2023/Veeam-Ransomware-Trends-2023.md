@@ -105,3 +105,5 @@ Veeam provides organizations with resiliency through data security, data recover
 ![Scan to learn more about Veeam ransomware solutions]
 
 © 2023 Veeam Software. All rights reserved. All trademarks are the property of their respective owners.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "legacy"} -->

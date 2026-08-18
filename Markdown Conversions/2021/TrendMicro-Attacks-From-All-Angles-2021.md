@@ -1963,3 +1963,5 @@ research.
 www.trendmicro.com
 
 ©2021 by Trend Micro, Incorporated. All rights reserved. Trend Micro, the Trend Micro t-ball logo, Trend Micro Smart Protection Network, Trend Micro Smart Home Network, and Trend Micro Zero Day Initiative are trademarks or registered trademarks of Trend Micro, Incorporated. All other product or company names may be trademarks or registered trademarks of their owners.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-09", "model": "legacy"} -->

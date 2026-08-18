@@ -1982,3 +1982,5 @@ team at PR@KnowBe4.com.
 © 2024 KnowBe4, Inc. All rights reserved. Other product and company names mentioned
 herein may be trademarks and/or registered trademarks of their respective companies.
 01E04K04
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-05", "model": "legacy"} -->

@@ -100,3 +100,5 @@ Attackers are leveraging telemetry from Shodan to gather information about vulne
 
 ---
 *Trustwave is a leading cybersecurity and managed security services provider. For more information, visit [www.trustwave.com](http://www.trustwave.com).*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-20", "model": "legacy"} -->

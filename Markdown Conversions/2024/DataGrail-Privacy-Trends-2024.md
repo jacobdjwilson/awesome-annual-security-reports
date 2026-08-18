@@ -170,3 +170,5 @@ Security, legal, and executive teams use DataGrail to automate privacy workflows
 DataGrail services millions of consumers through companies like Amazon, Salesforce, Overstock, Instacart, and New Balance, and is a G2 leader. DataGrail is backed by leading VCs and strategic investors, including Third Point Ventures, Felicis Ventures, Next47, Cloud Apps Capital Partners, Operator Collective, HubSpot, Okta Ventures, and American Express Ventures.
 
 Visit [www.datagrail.io](http://www.datagrail.io) or follow DataGrail on LinkedIn and Twitter to learn more.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "legacy"} -->

@@ -103,3 +103,5 @@ The sharp increase in the overall number of open source vulnerabilities publishe
 Mend, formerly known as WhiteSource, effortlessly secures what developers create. Mend uniquely removes the burden of application security, allowing development teams to deliver quality, secure code, faster. With a proven track record of successfully meeting complex and large-scale application security needs, the world’s most demanding software developers rely on Mend. The company has more than 1,000 customers, including 25 percent of the Fortune 100, and manages Renovate, the open-source automated dependency update project.
 
 For more information, visit [www.mend.io](http://www.mend.io), the Mend blog, and Mend on LinkedIn and Twitter.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-07", "model": "legacy"} -->

@@ -589,3 +589,5 @@ Phone: 888.371.1333
 Fax: 650.397.4133
 
 contrastsecurity.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-22", "model": "legacy"} -->

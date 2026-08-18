@@ -1559,3 +1559,5 @@ purpose of the report or any part of it and can accept no liability for any loss
 in any way whatsoever by any person who may use or rely on it. This report does not
 constitute advice, and no person should act on such information without appropriate
 professional advice after a thorough examination of the particular situation.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-01", "model": "legacy"} -->

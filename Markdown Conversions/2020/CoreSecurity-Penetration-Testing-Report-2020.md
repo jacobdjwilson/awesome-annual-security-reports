@@ -198,3 +198,5 @@ Though pen testing programs are not without their challenges, the amount of opti
 Core Security provides organizations with critical, actionable insight about who, how, and what is vulnerable in their IT environment. With our layered security approach and robust threat-aware, identity & access, network security, and vulnerability management solutions, security teams can efficiently manage security risks across the enterprise.
 
 © HelpSystems, LLC. All trademarks and registered trademarks are the property of their respective owners. cs-gd-0621-79d
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-04", "model": "legacy"} -->

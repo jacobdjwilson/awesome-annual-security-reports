@@ -287,3 +287,5 @@ No matter what you are currently doing, you can determine a baseline today. Gath
 
 **Contact Us:** wombatsecurity.com | info@wombatsecurity.com | 412.621.1484 | UK +44 (20) 3807 3472  
 00116SOTP © 2008-2016 Wombat Security Technologies, Inc. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

@@ -180,3 +180,5 @@ Following best practices is not sufficient and companies need to secure the SDLC
 There are millions of commits per day on public GitHub, how can organizations look through the noise and focus exclusively on the information that is of direct interest to them? How can they make sure their secrets are not ending on their developers’ personal repositories on GitHub? They can’t avoid that developers have personal repositories, they need automated detection and efficient remediation tools.
 
 In this state of secrets sprawl on GitHub analysis we focused on secrets although this is not the only sensitive information that can end up being publicly exposed: Intellectual Property, personal and medical data are also at risk. But this is for another State of Report!
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-30", "model": "legacy"} -->

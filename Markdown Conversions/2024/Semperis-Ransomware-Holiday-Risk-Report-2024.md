@@ -265,3 +265,5 @@ Semperis hosts the award-winning Hybrid Identity Protection conference and podca
 Learn more: https://www.semperis.com
 +1-703-918-4884 | info@semperis.com | www.semperis.com
 5 Marine View Plaza, Suite 102, Hoboken, NJ 07030
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-04", "model": "legacy"} -->

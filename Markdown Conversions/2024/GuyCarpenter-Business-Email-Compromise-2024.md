@@ -89,3 +89,5 @@ Business Email Compromise (BEC) may not always capture sensational headlines lik
 [^1]: “Business Email Compromise”, Federal Bureau of Investigation, https://www.fbi.gov/how-we-can-help-you/scams-and-safety/common-scams-and-crimes/business-email-compromise
 [^2]: “Business Email Compromise: The $50 Billion Scam”, Federal Bureau of Investigation, https://www.ic3.gov/Media/Y2023/PSA230609
 [^3]: Federal Bureau of Investigation Internet Crime Complaint Center, “Internet Crime Report 2023”
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "legacy"} -->

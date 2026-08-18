@@ -215,3 +215,5 @@ Our Complete Security Validation Platform simulates real-world threats to automa
 As the pioneer of Breach and Attack Simulation, our people and technology empower customers worldwide to be threat-centric and proactive.
 
 For more information, visit www.picussecurity.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "legacy"} -->

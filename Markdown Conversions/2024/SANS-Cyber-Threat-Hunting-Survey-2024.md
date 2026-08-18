@@ -116,3 +116,5 @@ Splunk offers a comprehensive data platform for end-to-end threat visibility. To
 ![Splunk’s Operationalized Data Science Pipeline diagram]
 
 [^1]: SANS 2024 Threat Hunting Survey: Hunting for Normal Within Chaos, March 2024.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-23", "model": "legacy"} -->

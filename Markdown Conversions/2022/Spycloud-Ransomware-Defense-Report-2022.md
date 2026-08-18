@@ -260,3 +260,5 @@ SpyCloud transforms recaptured darknet data to protect businesses from cyberatta
 To learn more and see insights on your company’s exposed data, visit [spycloud.com](https://spycloud.com).
 
 Learn more at [spycloud.com](https://spycloud.com)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-21", "model": "legacy"} -->

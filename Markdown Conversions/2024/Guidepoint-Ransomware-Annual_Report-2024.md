@@ -220,3 +220,5 @@ These groups consist in whole, or in part, of former Developing or Established g
 These groups have operated successfully for at least nine months and have well-defined and consistent tactics, techniques, and procedures. Established groups often possess functional business units that enable sustained ransomware operations, with specialists focused on areas such as personnel, encryption, negotiations, etc. These organizations successfully employ technology and redundant infrastructure to support their operations.
 
 There are multiple routes a group can take through the various classifications, and no one route is standard. While one group may begin as “Ephemeral” and move their way through the ranks to “Full-time,” another group may enter as a “Rebrand” as part of a larger obfuscation strategy to avoid attention from law enforcement.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-23", "model": "legacy"} -->

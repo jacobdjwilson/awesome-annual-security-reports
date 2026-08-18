@@ -219,3 +219,5 @@ Thank you to Kaylin Trychon, Will Dolinsky, Sarah O’Rourke, Crystal Poenisch, 
 **“Hardened” Container Image**: There is active debate on what exactly constitutes a “hardened” container image. This whitepaper employs the definition that emphasizes few or zero CVEs. A broader definition could include the inclusion of secure-by-design features in containers: the use of digital signatures and the inclusion of SBOMs, for instance.
 
 **Software vulnerability**: A software vulnerability is a weakness in a program which, if left unaddressed, may be used by attackers to access, manipulate, or compromise a computer system. From Chainguard Academy
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-05", "model": "legacy"} -->

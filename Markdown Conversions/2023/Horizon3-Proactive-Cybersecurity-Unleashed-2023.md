@@ -366,3 +366,5 @@ Annual-Review-2023_240318
 [^3]: https://thehackernews.com/2023/03/jenkins-security-alert-new-security.html
 [^4]: https://sysdig.com/blog/labrat-cryptojacking-proxyjacking-campaign/
 [^5]: https://www.darkreading.com/vulnerabilities-threats/the-overlooked-problem-of-n-day-vulnerabilities
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-01", "model": "legacy"} -->

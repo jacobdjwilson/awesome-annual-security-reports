@@ -194,3 +194,5 @@ TLP: AMBER
 As the leading independent provider of risk and financial advisory solutions, Kroll leverages our unique insights, data and technology to help clients stay ahead of complex demands. Kroll’s global team continues the firm’s nearly 100-year history of trusted expertise spanning risk, governance, transactions and valuation. Learn more at [www.kroll.com](http://www.kroll.com).
 
 © 2023 Kroll, LLC. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-01", "model": "legacy"} -->

@@ -103,3 +103,5 @@ The CyberArk 2024 Identity Security Threat Landscape Report was conducted by B2B
 
 ---
 *©Copyright 2024 CyberArk Software. All rights reserved.*
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-10", "model": "legacy"} -->

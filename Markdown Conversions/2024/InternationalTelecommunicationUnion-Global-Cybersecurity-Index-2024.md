@@ -2800,3 +2800,5 @@ Geneva, 2024
 Photo credit: Adobe Stock
 
 International Telecommunication UnionTelecommunication Development BureauPlace des NationsCH-1211 Geneva 20Switzerland
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-14", "model": "legacy"} -->

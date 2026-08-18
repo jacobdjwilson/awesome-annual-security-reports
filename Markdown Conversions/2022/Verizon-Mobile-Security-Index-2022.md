@@ -2277,3 +2277,5 @@ MSI 2022  Appendices
 64
 
 65
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-22", "model": "legacy"} -->

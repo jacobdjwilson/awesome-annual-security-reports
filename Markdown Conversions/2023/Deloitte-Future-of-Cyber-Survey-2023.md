@@ -160,3 +160,5 @@ The future of cyber and the future of business are tightly intertwined. How you 
 [^6]: Take 5: 5G cybersecurity, Part of Deloitte’s ‘Take 5 on 5G’ article series.
 [^7]: Cyber AI: Real Defense, Deloitte Tech Trends 2022.
 [^8]: Quantum Cyber Readiness Deloitte’s perspective on transitioning to a quantum secure economy.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-25", "model": "legacy"} -->

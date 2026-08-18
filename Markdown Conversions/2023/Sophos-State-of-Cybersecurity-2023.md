@@ -148,3 +148,5 @@ Sophos provides services and technologies that enable organizations to accelerat
 [^1]: The State of Ransomware 2022, Sophos
 
 © Copyright 2023. Sophos Ltd. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-06", "model": "legacy"} -->

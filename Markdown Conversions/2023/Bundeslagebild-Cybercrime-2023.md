@@ -109,3 +109,5 @@ www.bka.de/Lagebilder
 Diese Publikation wird vom Bundeskriminalamt im Rahmen der Öffentlichkeitsarbeit herausgegeben. Die Publikation wird kostenlos zur Verfügung gestellt und ist nicht zum Verkauf bestimmt.
 
 Nachdruck und sonstige Vervielfältigung, auch auszugsweise, nur mit Quellenangabe des Bundeskriminalamtes (Cybercrime Bundeslagebild, Bundeslagebild 2023, Seite XX).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-23", "model": "legacy"} -->

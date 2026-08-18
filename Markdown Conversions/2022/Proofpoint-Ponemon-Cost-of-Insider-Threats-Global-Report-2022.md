@@ -125,3 +125,5 @@ The study relies on confidential diagnostic interviews and numerical estimation 
 Proofpoint, Inc. is a leading cybersecurity and compliance company that protects organizations’ greatest assets and biggest risks: their people. [www.proofpoint.com](http://www.proofpoint.com)
 
 ©Proofpoint, Inc.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-20", "model": "legacy"} -->

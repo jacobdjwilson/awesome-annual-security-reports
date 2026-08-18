@@ -182,3 +182,5 @@ GitGuardian is a code security platform that provides solutions for DevOps gener
 
 ### About DarkOwl
 DarkOwl is a Denver-based information security company specializing in darknet OSINT tools. For more information, visit [www.darkowl.com](http://www.darkowl.com).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-11", "model": "legacy"} -->

@@ -241,3 +241,5 @@ CrowdStrike Holdings, Inc. (Nasdaq: CRWD), a global cybersecurity leader, has re
 - **Identity Protection**: Falcon Identity Threat Detection, Falcon Identity Threat Protection.
 - **Log Management**: Humio.
 - **Services**: CrowdStrike Services (IR and Proactive).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-11", "model": "legacy"} -->

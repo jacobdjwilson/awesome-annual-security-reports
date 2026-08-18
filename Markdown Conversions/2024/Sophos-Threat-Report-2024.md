@@ -199,3 +199,5 @@ Small businesses face no shortage of threats, and the sophistication of those th
 Criminal syndicates are counting on smaller companies to be less well-defended and to not have deployed modern, sophisticated tools to protect their users and assets. The key to successfully defending against these threats is to prove their assumptions wrong: Educate your staff, deploy multifactor authentication on all externally facing assets, patch servers and network appliances with the utmost priority and consider migrating difficult to manage assets like Microsoft Exchange servers to SaaS email platforms.
 
 The primary difference in our experience between the companies that were impacted the most by cyberattacks and those who suffered the least is time to respond. Having security experts to monitor and respond 24/7 is table stakes for an effective defense in 2024. Staying safe isn’t impossible; it just takes comprehensive planning and layered defenses to buy you time to respond and minimize damages.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-17", "model": "legacy"} -->

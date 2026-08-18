@@ -103,3 +103,5 @@ The Trellix Advanced Research Center provides intelligence and cutting-edge cont
 ![Image: Chart showing top ransomware used in Q1 2023]
 ![Image: Chart showing ransomware groups reporting most victims per leak sites]
 ![Image: Chart showing cloud incident detections by MITRE ATT&CK techniques]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "legacy"} -->

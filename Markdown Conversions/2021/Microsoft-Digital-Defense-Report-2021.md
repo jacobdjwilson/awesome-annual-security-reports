@@ -13049,3 +13049,5 @@ Microsoft Digital Defense Report  |  October 2021
 133
 
 Microsoft Digital Defense Report  |  October 2021© 2021 Microsoft. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "legacy"} -->

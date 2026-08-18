@@ -4222,3 +4222,5 @@ time of publication and may change at any time. Zimperium, Inc. assumes no
 responsibility or liability for errors, omissions or for the results obtained from the use of
 the information. If you have specific mobile endpoint or application security concerns,
 please contact Zimperium, Inc. via https://www.zimperium.com/contact-us/.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "legacy"} -->

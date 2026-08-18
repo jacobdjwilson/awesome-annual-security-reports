@@ -150,3 +150,5 @@ Severity calculations include the total incurred loss of a ransomware claim, wit
 [^3]: California Office of the Attorney General, https://oag.ca.gov/system/files/Exhibit%20A_6.pdf
 [^4]: The MOVEit Cyberattack – What happened. PBI’s response. What’s next., https://www.pbinfo.com/the-moveit-cyberattack-what-happened-pbis-response-whats-next/
 [^5]: Severity is the financial loss or damages related to a claim
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-17", "model": "legacy"} -->

@@ -103,3 +103,5 @@ This year promises surging spam, phishing, and disinformation attacks as a conve
 
 ## Conclusion
 The evolution of the threat landscape continues to challenge cybersecurity teams. Malicious links remain the preferred delivery method for payloads. Employees at small and medium businesses continue to see more than twice the number of threats compared to users at large enterprises. As companies migrate to the cloud, the attack surface expands, and the abuse of generative AI will likely improve the targeting and content of phishing campaigns. Maintaining data availability and focusing on the "human in the loop" remain critical to successful business outcomes.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-04", "model": "legacy"} -->

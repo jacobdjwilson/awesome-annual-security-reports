@@ -183,3 +183,5 @@ Code42 is the Insider Risk Management leader. Native to the cloud, the Code42® 
 Vanson Bourne is an independent specialist in market research for the technology sector. Their reputation for robust and credible research-based analysis is founded upon rigorous research principles.
 
 © 2022 Code42 Software, Inc. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-11", "model": "legacy"} -->

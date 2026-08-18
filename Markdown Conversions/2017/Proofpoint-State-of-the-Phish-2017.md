@@ -307,3 +307,5 @@ Contact Us: wombatsecurity.com | info@wombatsecurity.com | 412 621 1484 | UK +44
 00317SOTP © 2008-2017 Wombat Security Technologies, Inc. All rights reserved.
 
 [^1]: Source: [https://docs.apwg.org/reports/apwg_trends_report_q3_2016.pdf](https://docs.apwg.org/reports/apwg_trends_report_q3_2016.pdf)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

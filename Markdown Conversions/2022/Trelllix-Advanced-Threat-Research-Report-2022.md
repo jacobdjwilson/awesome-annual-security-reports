@@ -197,3 +197,5 @@ To keep track of the latest threats and research, see our team’s resources:
 Trellix is a global company redefining the future of cybersecurity. The company’s open and native extended detection and response (XDR) platform helps organizations confronted by today’s most advanced threats gain confidence in the protection and resilience of their operations. More at [www.trellix.com](http://www.trellix.com).
 
 Copyright ©️ 2022 Musarubra US LLC
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-22", "model": "legacy"} -->

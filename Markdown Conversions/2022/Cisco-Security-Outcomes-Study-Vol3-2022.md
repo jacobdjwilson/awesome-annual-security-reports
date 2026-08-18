@@ -388,3 +388,5 @@ Cisco Secure is built on the principle of better security, not more. It delivers
 8. **Maintaining a cost-effective security program**: Executive leaders view the security program as having good ROI. No recurring rumblings about the overly high costs of security. Low rate of shelfware purchases. Staffing is lean yet not starved. A plan among executives and security leaders to reduce the security budget without increasing risk would be a good sign of success here.
 
 9. **Recruiting and retaining talented security personnel**: The organization has a positive reputation in the security community as being a good place to work. Open security positions are generally filled quickly and without undue incentives. Talented staff move up instead of move out and attrition rates remain low. Employee satisfaction is consistently high.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-10", "model": "legacy"} -->

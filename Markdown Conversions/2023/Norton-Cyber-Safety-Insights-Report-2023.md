@@ -107,3 +107,5 @@ The global use of dating app/websites among adults has opened a door to dating s
 
 - **Age**: 33% Gen Z (18-25), 29% Millennials (26-42), 24% Gen X (43-57), 14% Older Adults (58+).
 - **Gender**: 49% Male, 51% Female.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-29", "model": "legacy"} -->

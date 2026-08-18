@@ -5906,3 +5906,5 @@ Zscaler
 2022 DBIR  Appendix F
 
 107
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-22", "model": "legacy"} -->

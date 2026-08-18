@@ -2788,3 +2788,5 @@ Dragos.com
 X-TWITTER  facebook  linkedin
 
 Copyright © 2024 Dragos, Inc. All Rights Reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-25", "model": "legacy"} -->

@@ -242,3 +242,5 @@ In addressing the complex challenges posed by sophisticated nation-state cyber t
   - Media & Entertainment ISAC
 
 There are historical precedents for the PRC cyber-espionage activities, as demonstrated by the PLA and MSS track records of using cyber capabilities for intelligence gathering and other national security objectives. This indicates that the PRC remains a persistent and dynamic threat actor in the cyber domain. As cloud computing adoption continues to grow across the world, it is important for public and private organizations to be aware of the potential APT threats posed by the PRC and to take steps to protect their infrastructure from these attacks.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-03", "model": "legacy"} -->

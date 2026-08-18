@@ -2847,3 +2847,5 @@ almost certainly understated.
 76
 
 © 2024 NetDiligence®NETDILIGENCE® CYBER CLAIMS STUDY2024 REPORTVersion 1.1
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-16", "model": "legacy"} -->

@@ -158,3 +158,5 @@ We found 713 high-impact CVEs. The top 5 occurrences include:
 Our study reveals that over 100,000 vulnerabilities are present across Fortune 1000 and CAC 40 companies. Organizations must respond by adopting best practices for risk mitigation and integrating continuous, automated testing of their applications.
 
 For more information, visit [escape.tech](https://escape.tech).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-05", "model": "legacy"} -->

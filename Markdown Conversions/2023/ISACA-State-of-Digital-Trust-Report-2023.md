@@ -168,3 +168,5 @@ ISACA would like to recognize the Board of Directors:
 - Bjorn R. Watne
 - Asaf Weisberg
 - Gabriela Hernandez-Cardoso
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-22", "model": "legacy"} -->

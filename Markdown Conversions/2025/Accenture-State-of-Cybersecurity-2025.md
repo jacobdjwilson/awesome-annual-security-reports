@@ -282,3 +282,5 @@ Accenture does not provide legal, regulatory, audit, or tax advice. Readers are 
 such third-party marks are the property of their respective owners. No sponsorship, endorsement or approval of this content by the owners of such marks is intended, expressed or implied.
 Some images included in this document have been generated using artificial intelligence technology.
 Copyright © 2025 Accenture. All rights reserved. Accenture and its logo are registered trademarks of Accenture.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-06", "model": "legacy"} -->

@@ -331,3 +331,5 @@ Splunk, Splunk> and Turn Data Into Doing are trademarks and registered trademark
 all other brand names, product names or trademarks belong to their respective owners. © 2023 Splunk inc. all rights reserved.
 
 23-119356-Splunk-State of Security-eB-108
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-06", "model": "legacy"} -->

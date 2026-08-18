@@ -245,3 +245,5 @@ The company has over 1,500 employees and is headquartered in Cambridge, UK. Ever
 - Linkedin-In: Follow us on LinkedIn
 
 Darktrace © Copyright 2021 Darktrace Holdings Limited. All rights reserved. Darktrace is a registered trademark of Darktrace Holdings Limited. Enterprise Immune System, and Threat Visualizer are unregistered trademarks of Darktrace Holdings Limited. Other trademarks included herein are the property of their respective owners.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-15", "model": "legacy"} -->

@@ -5065,3 +5065,5 @@ For more information about the Synopsys Software Integrity Group, visit us onlin
 their respective owners. October 2023.
 
    State of DevSecOps 2023
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-06", "model": "legacy"} -->

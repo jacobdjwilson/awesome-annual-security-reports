@@ -176,3 +176,5 @@ Conferences this quarter, we were able to find a...
 THREE THEMES WERE HIGHLIGHTED THIS QUARTER:
 
 [^1]: Footnotes and references handled dynamically according to document specifications.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->

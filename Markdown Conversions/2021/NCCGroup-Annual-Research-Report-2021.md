@@ -1165,3 +1165,5 @@ Matt Lewis
 Director of Commercial Research
 matt.lewis@nccgroup.com
 39 2021 NCC Group Annual Research Report
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-31", "model": "legacy"} -->

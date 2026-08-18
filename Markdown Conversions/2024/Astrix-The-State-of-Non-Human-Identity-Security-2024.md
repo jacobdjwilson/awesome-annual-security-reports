@@ -236,3 +236,5 @@ The primary objectives of the survey were to gain a deeper understanding of seve
 - Current security efforts, policies, and management of non-human identities
 - Challenges with connecting to third-party vendors
 - Current management and policies for API keys
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-09", "model": "legacy"} -->

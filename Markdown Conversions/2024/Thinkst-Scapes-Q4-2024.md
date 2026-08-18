@@ -524,3 +524,5 @@ WE HIGHLIGHTED THREE THEMES FOR THIS QUARTER:
 3. Digging deep into how things work at multiple layers of the stack.
 
 We’re looking forward to seeing what 2025 has in store for us all. We’ll be back next time with more picks from great researchers.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->

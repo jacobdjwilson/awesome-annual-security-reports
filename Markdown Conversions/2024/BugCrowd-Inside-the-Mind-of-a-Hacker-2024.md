@@ -750,3 +750,5 @@ functions or data.
 35
 
 INSIDE THE MIND OF A HACKER 2024
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-11", "model": "legacy"} -->

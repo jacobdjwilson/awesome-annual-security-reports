@@ -791,3 +791,5 @@ PwC network. Each member firm is a separate legal entity. Please see www.pwc.com
 35
 
 PwC  |  2022 Global Risk Survey Report
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "legacy"} -->

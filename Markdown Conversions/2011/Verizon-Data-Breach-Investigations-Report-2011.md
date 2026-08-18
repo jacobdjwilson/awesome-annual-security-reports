@@ -3225,3 +3225,5 @@ and joint strategies are implemented. An example of such cooperation can be read
 NHTCU recently started up the Dutch Electronic Crimes Task Force, a new cooperation with financial and other parties to
 institutionalize public-private partnership as a means to actively combat certain types of cybercrime.
 72
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

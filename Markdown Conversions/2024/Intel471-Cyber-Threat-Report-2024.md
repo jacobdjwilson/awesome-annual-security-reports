@@ -1853,3 +1853,5 @@ No part of this report should be reproduced in any way without explicit
 permission of Intel 471, Inc.
 
 © Intel 471 Inc. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-17", "model": "legacy"} -->

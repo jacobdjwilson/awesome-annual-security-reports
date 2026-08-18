@@ -8373,3 +8373,5 @@ Operational level
 
 Reporting on information manipulation should consider cybersecurity aspects more systematically and
 should be supported by
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-25", "model": "legacy"} -->

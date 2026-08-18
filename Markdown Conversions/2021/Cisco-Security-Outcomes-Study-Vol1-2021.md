@@ -460,3 +460,5 @@ them to improve security measures for future events
 38
 
 The 2021 Security Outcomes StudyPoised for Success: Proven Factors for Your Security Program
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-04", "model": "legacy"} -->

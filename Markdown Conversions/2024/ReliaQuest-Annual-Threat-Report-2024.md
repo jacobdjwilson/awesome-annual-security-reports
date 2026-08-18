@@ -746,3 +746,5 @@ companies. The ReliaQuest software, platform, portal and its entire contents, fe
 Manda inkteern Satieoncaul croiptyyrig Pht,o trsadseimbalrke, patent, trade secret, and other intellectual property or proprietary rights laws. All other information presented is provided for informational purposes with no
 representations or warranties provided of any kind and should not be relied upon for any purpose. ReliaQuest has no obligation to amend, modify, or update the information contained in this document 50
 in the event that such information changes or subsequently becomes inaccurate. Printed in the USA.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-01", "model": "legacy"} -->

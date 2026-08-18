@@ -161,3 +161,5 @@ Shaul Vilkomir-Preisman, Bar Block, Simon Kenin, Mark Vaitzman
 
 © Deep Instinct Ltd.
 [deepinstinct.com](https://deepinstinct.com)
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-21", "model": "legacy"} -->

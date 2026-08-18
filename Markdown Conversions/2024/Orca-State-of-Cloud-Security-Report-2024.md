@@ -157,3 +157,5 @@ All industry averages improved by 1-5% in 2023. Financial services and healthcar
 Orca’s agentless-first Cloud Security Platform connects to your environment in minutes and provides 100% visibility of all your assets on AWS, Azure, Google Cloud, Kubernetes, and more. Orca detects, prioritizes, and helps remediate cloud risks across every layer of your cloud estate.
 
 To find out more, schedule a personalized demo of the Orca platform.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-18", "model": "legacy"} -->

@@ -367,3 +367,5 @@ All Rights Reserved.
 [^1]: Figure estimated using npm download counts from January to August 2022.
 [^2]: YoY growth estimated based on known PyPI downloads from January to August 2022 as queried from.
 [^3]: YoY growth estimated based on known NuGet Gallery downloads from January to August 2022.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-26", "model": "legacy"} -->

@@ -113,3 +113,5 @@ Without a strong data architecture and proper protections, it is impossible to s
 - **Large Language Model (LLM)**: A machine learning model trained on massive data sets for natural language processing.
 - **Machine Learning (ML)**: A subset of AI that uses data and algorithms to identify patterns and predict outcomes.
 - **Shift left**: Introducing security measures and testing early in the development cycle.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-14", "model": "legacy"} -->

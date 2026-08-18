@@ -108,3 +108,5 @@ Palo Alto Networks is the global cybersecurity leader, shaping the cloud-centric
 Prisma® Cloud is a comprehensive cloud-native security platform with the industry’s broadest security and compliance coverage. For more information, visit [www.paloaltonetworks.com/prisma/Cloud](http://www.paloaltonetworks.com/prisma/Cloud).
 
 ![Image description: Cover art featuring team members Kathleen Qin, Ivan Melia, and Mohit Bhasin standing behind a prismatic glass partition.]
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-01", "model": "legacy"} -->

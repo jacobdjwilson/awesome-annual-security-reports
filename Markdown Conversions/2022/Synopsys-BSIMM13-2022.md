@@ -14785,3 +14785,5 @@ BSIMM FOUNDATIONS REPORT – VERSION 13
 92
 
 BSIMM FOUNDATIONS REPORT – VERSION 13
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-02", "model": "legacy"} -->

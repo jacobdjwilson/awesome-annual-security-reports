@@ -102,3 +102,5 @@ Cryptojacking malware hides on a device and uses the machineâ€™s resources to â€
 - **Palo Alto Networks**: Acquired Zingbox in September 2019 to provide a revolutionary approach to IoT security.
 - **Unit 42**: The global threat intelligence team at Palo Alto Networks, providing in-depth research on cyberthreats.
 - **Methodology**: This report is based on a two-year analysis of 1.2 million IoT devices and 73.2 billion network sessions across 2018 and 2019.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-08", "model": "legacy"} -->

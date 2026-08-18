@@ -14546,3 +14546,5 @@ Dive deeper: https://blogs.microsoft.com/on-the-issues/
 Stay connected: @msftissues and @msftsecurity
 
 © 2022 Microsoft. All rights reserved.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-19", "model": "legacy"} -->

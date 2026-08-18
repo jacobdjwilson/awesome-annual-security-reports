@@ -328,3 +328,5 @@ this publication without notice, and the most current version of the publication
 Copyright © 2024 Fortinet, Inc. All rights reserved. May 2, 2024 8:56 am    2564222-0-0-EN
 
 www.fortinet.com
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-27", "model": "legacy"} -->

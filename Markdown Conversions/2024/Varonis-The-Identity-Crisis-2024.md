@@ -147,3 +147,5 @@ Varonis (Nasdaq: VRNS) is a leader in data security, fighting a different battle
 Thousands of organizations worldwide trust Varonis to defend their data wherever it lives — across SaaS, IaaS, and hybrid cloud environments. Customers use Varonis to automate a wide range of security outcomes, including data security posture management (DSPM), data classification, data access governance (DAG), data detection and response (DDR), data loss prevention (DLP), and insider risk management.
 
 Varonis protects data first, not last. Learn more at [www.varonis.com](http://www.varonis.com).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-30", "model": "legacy"} -->

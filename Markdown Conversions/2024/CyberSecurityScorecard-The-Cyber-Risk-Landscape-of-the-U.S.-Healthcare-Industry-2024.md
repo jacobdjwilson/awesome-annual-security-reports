@@ -1558,3 +1558,5 @@ info@securityscorecard.io
 ©2024 SecurityScorecard Inc. All Rights Reserved.
 
 The Cyber Risk Landscape of the U.S. Healthcare Industry    |     21
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-14", "model": "legacy"} -->

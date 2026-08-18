@@ -581,3 +581,5 @@ These findings underscore the complex challenges organizations face in securing 
 ---
 
 QUESTIONS? CONTACT US AT HELLO@PERMISO.IO
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-13", "model": "legacy"} -->

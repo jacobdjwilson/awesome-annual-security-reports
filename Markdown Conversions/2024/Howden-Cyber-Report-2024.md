@@ -3604,3 +3604,5 @@ howdenbroking.com
 
 Howden Group Holdings Limited is registered in England and Wales under company registration number 2937398. Registered office:
 One Creechurch Place, London, EC3A 5AF. Calls may be monitored and recorded for quality assurance purposes. 06/24 Ref: 11050 V0.5
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-14", "model": "legacy"} -->

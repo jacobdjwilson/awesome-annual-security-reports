@@ -291,3 +291,5 @@ The data contained in this report comes directly from the Return on Security dat
 ## About Return on Security
 
 Return on Security is all about breaking down the cybersecurity industry for you with expert analysis, hard facts, and real-life stories. The goal? To keep security pros, entrepreneurs, and investors ahead in a fast-moving field. Follow me on LinkedIn to never miss Return on Security updates.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-21", "model": "legacy"} -->

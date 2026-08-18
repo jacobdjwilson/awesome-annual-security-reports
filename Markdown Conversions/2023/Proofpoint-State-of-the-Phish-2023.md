@@ -102,3 +102,5 @@ Proofpoint suggests three approaches to improve security:
 Proofpoint, Inc. is a leading cybersecurity and compliance company that protects organizations’ greatest assets and biggest risks: their people. More information is available at [www.proofpoint.com](http://www.proofpoint.com).
 
 ©Proofpoint, Inc. 0400-010-01-01
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-04", "model": "legacy"} -->

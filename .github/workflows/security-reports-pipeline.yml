@@ -693,15 +693,6 @@ jobs:
           echo "Installing Python packages: $PY_PACKAGES"
           pip install --break-system-packages $PY_PACKAGES
 
-      - name: Cache AI Conversions
-        uses: actions/cache@v4
-        with:
-          path: .conversion_cache.json
-          key: ai-conversion-cache-${{ github.ref }}-${{ github.run_id }}
-          restore-keys: |
-            ai-conversion-cache-${{ github.ref }}-
-            ai-conversion-cache-
-
       - name: Run PDF converter
         id: converter
         env:

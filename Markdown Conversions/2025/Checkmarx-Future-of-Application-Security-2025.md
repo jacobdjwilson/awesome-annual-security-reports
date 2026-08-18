@@ -160,3 +160,5 @@ the most critical issues to fix and give AppSec the tools they need, all while l
 experience, security and development teams can now work better together. That’s why 1700+ customers rely on Checkmarx to scan over 1 trillion lines of
 code annually, improve developer productivity by 50%, and deliver 2X AppSec ROI.
 Checkmarx. Always Ready To Run.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "legacy"} -->

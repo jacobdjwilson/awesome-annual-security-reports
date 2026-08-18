@@ -100,3 +100,5 @@ For more information, visit [dimensionalresearch.com](http://dimensionalresearch
 The IDSA is a group of identity and security vendors, solution providers, and practitioners that acts as an independent source of thought leadership, expertise, and practical guidance on identity-centric approaches to security for technology professionals. The IDSA is a non-profit that facilitates community collaboration to help organizations reduce risk by providing education, best practices, and resources.
 
 For more information on the Identity Security Alliance and how to become a member, visit [www.idsalliance.org](http://www.idsalliance.org).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-14", "model": "legacy"} -->

@@ -2630,3 +2630,5 @@ real-time information about the latest threats and how to cope with them at www.
 marks of WatchGuard Technologies, Inc. in the United States and/or other countries. All other tradenames are the property of their respective owners. Part No. WG_060324
 
 Q1 2024 Internet Security Report44
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-19", "model": "legacy"} -->

@@ -110,3 +110,5 @@ On average, Chainguard customers saw the following returns on investment after t
 
 > "Our partnership with Chainguard enabled us to meet or exceed the rigorous standards required in highly regulated industries and government sectors where we serve our customers. By reducing the burden of patching and hardening associated with managing supply chain risks, we can increase our developers' focus on driving innovation in support of our customers' missions."
 > — Andrew Cunje, CISO at Appian
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-06", "model": "legacy"} -->

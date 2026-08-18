@@ -631,3 +631,5 @@ The Verizon and Verizon Business names and logos and all other names, logos, and
 and services are trademarks and service marks or registered trademarks and service marks of Verizon Trademark Services
 LLC or its affi liates in the United States and/or other countries. All other trademarks and service marks are the property
 of their respective owners.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

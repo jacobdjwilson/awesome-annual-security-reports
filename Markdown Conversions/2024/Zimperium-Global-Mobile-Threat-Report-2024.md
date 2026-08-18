@@ -185,3 +185,5 @@ As organizations embrace mobile-first strategies, mobile devices have become the
 
 ## About Zimperium
 Zimperium has helped thousands of enterprises and government agencies around the world to successfully employ a mobile-first security strategy. Contact us at [https://www.zimperium.com/contact-us/](https://www.zimperium.com/contact-us/).
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-19", "model": "legacy"} -->

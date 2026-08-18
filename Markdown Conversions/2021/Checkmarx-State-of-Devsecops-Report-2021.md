@@ -114,3 +114,5 @@ Application security continues to rise in importance because it represents legal
 The Cyber Security Hub is an online news source for global cyber security professionals and business leaders. We’re dedicated to providing the latest industry news, thought leadership and analysis in the cyber security space.
 
 [^1]: "There’s always a shortage of experienced people, and that’s the challenge," said Stephen Gates, security evangelist and senior solutions specialist at Checkmarx.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-03", "model": "legacy"} -->

@@ -3937,3 +3937,5 @@ Tel: +30 28 14 40 9710 ISSN: 2363-3050
 DOI: 10.2824/967192
 info@enisa.europa.eu
 www.enisa.europa.eu
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "legacy"} -->

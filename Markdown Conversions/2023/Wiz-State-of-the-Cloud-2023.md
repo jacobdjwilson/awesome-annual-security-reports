@@ -104,3 +104,5 @@ Exposed resources are compromised within hours. In experiments we ran where we c
 
 [^1]: The API counts data was obtained by walking the commits of botocore.
 [^2]: Privilege counts were acquired from https://github.com/iann0036/iam-dataset.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-03", "model": "legacy"} -->

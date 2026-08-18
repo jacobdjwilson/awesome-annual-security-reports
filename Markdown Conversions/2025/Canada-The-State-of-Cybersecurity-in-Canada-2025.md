@@ -4716,3 +4716,5 @@ Detection and Response (MDR) services, enhancing their
 even under attack.
 ability to detect and mitigate advanced threats.
 The State of Cybersecurity in Canada 2025 102
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-12", "model": "legacy"} -->

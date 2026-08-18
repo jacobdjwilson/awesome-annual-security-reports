@@ -2483,3 +2483,5 @@ Elastic, Elasticsearch and other related marks are trademarks, logos or register
 and other countries. Microsoft, Azure, Windows and other related marks are trademarks of the Microsoft group of companies. Amazon
 Web Services, AWS, and other related marks are trademarks of Amazon.com, Inc. or its affiliates. All other brand names, product
 names, or trademarks belong to their respective owners.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-27", "model": "legacy"} -->

@@ -235,3 +235,5 @@ Using the Breakout Scale to assess the impact of IO, we would assess this as a C
 ---
 **Authors**
 Ben Nimmo
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-15", "model": "legacy"} -->

@@ -1836,3 +1836,5 @@ ASD’s glossary provides definitions for terms used in this report and other AS
 viewed at: https://www.cyber.gov.au/learn-basics/view-resources/glossary.
 
 Australian Signals DirectorateAnnual Cyber Threat Report 2023–24
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-08", "model": "legacy"} -->

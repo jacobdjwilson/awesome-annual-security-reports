@@ -120,3 +120,5 @@ The total sample size was 1,002 full-time office workers in the United States, a
 CalypsoAI provides the only full-lifecycle platform to secure AI models and applications at the inference layer, deploying Agentic Warfare™ to protect organizations from evolving risks and adversaries. Trusted by global enterprises including Palantir and SGK, CalypsoAI’s industry-leading team of experts is doing the hard miles to ensure security keeps pace with AI innovation.
 
 CalypsoAI was founded in 2018 and has secured over $40 million in venture funding from investors including Paladin Capital Group, Lockheed Martin Ventures and Hakluyt Capital. CalypsoAI was a Top-Two Finalist in the 2025 RSAC Innovation Sandbox contest and is named on Fast Company’s Most Innovative Companies in AI for 2025. Learn more at [calypsoai.com](http://calypsoai.com) and LinkedIn.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-15", "model": "legacy"} -->

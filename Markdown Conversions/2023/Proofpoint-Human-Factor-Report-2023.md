@@ -175,3 +175,5 @@ No matter where attackers look next for inspiration, a people-centric approach t
 
 ### Footnotes
 [^1]: FBI. “Internet Crime Report 2022.” March 2023.
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-05-01", "model": "legacy"} -->

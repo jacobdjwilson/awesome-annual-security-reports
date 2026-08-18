@@ -145,3 +145,5 @@ These cases collectively demonstrate a concerning evolution in how AI empowers c
 
 **AUTHORS**
 Alex Moix, Ken Lebedev, Jacob Klein
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-18", "model": "legacy"} -->

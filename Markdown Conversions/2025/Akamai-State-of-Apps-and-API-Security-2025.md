@@ -919,3 +919,5 @@ mitigate threats, so you can build brand trust and deliver on your vision. Learn
 delivery solutions at akamai.com and akamai.com/blog, or follow Akamai Technologies on X, formerly known as Twitter, and LinkedIn.
 Published 04/25.
 State of Apps and API Security 2025 I Volume 11, Issue 02 Akamai.com | 47
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-05", "model": "legacy"} -->

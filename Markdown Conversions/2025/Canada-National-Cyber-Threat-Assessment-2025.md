@@ -1835,3 +1835,5 @@ entropy-of-our-world-order/.
 174  https://www.cyber.gc.ca/en/cyber-security-readiness-goals/cross-sector-cyber-security-readiness-goals-toolkit
 
 53
+
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-05", "model": "legacy"} -->
