@@ -62,8 +62,9 @@ class Config:
 
         # AI model
         models = aim.get("models", {})
-        self.primary_model   = models.get("primary",   "gemini-2.5-flash")
-        self.secondary_model = models.get("secondary", "gemini-2.5-flash")
+        self.primary_model   = models.get("primary")
+        self.secondary_model = models.get("secondary")
+        self.tertiary_model  = models.get("tertiary")
 
         # AI config
         cfg = aim.get("configurations", {}).get("categorization", {})
@@ -121,13 +122,14 @@ class GeminiClient:
         self.config = config
 
     def generate(self, prompt: str, model_override: Optional[str] = None) -> str:
-        for model_name in (model_override or self.config.primary_model,
-                           self.config.secondary_model):
+        for model_name in filter(None, (model_override or self.config.primary_model,
+                           self.config.secondary_model,
+                           self.config.tertiary_model)):
             result = self._try_model(prompt, model_name)
             if result is not None:
                 return result
-            print(f"  [Gemini] {model_name} failed — trying secondary")
-        raise RuntimeError("Both primary and secondary Gemini models failed.")
+            print(f"  [Gemini] {model_name} failed — trying next fallback")
+        raise RuntimeError("All Gemini models failed (primary, secondary, tertiary).")
 
     def _try_model(self, prompt: str, model_name: str) -> Optional[str]:
         delay = self.config.retry_delay

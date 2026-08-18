@@ -59,8 +59,9 @@ class ConfigLoader:
 
         # ── AI model names ────────────────────────────────────────────────
         models = self.ai_config.get("models", {})
-        self.primary_model:   str = models.get("primary",   "gemini-2.5-flash")
-        self.secondary_model: str = models.get("secondary", "gemini-2.5-flash")
+        self.primary_model:   str = models.get("primary")
+        self.secondary_model: str = models.get("secondary")
+        self.tertiary_model:  str = models.get("tertiary")
 
         # ── Generation configs (keyed by task) ────────────────────────────
         configs = self.ai_config.get("configurations", {})
@@ -124,7 +125,7 @@ def setup_gemini(api_key: str, config: ConfigLoader) -> Tuple[bool, Optional[str
     Probe primary then secondary model to confirm API access.
     Returns (success, active_model_name).
     """
-    for model_name in [config.primary_model, config.secondary_model]:
+    for model_name in filter(None, [config.primary_model, config.secondary_model, config.tertiary_model]):
         try:
             if USE_NEW_SDK:
                 client   = genai.Client(api_key=api_key)
@@ -292,7 +293,7 @@ class MarkdownPolisher:
         quota_exhausted = False
         for attempt in range(self.config.max_retries):
             try:
-                for model_name in [self.config.primary_model, self.config.secondary_model]:
+                for model_name in filter(None, [self.config.primary_model, self.config.secondary_model, self.config.tertiary_model]):
                     polished = self._call_model(model_name, prompt)
                     if polished:
                         self._active_model = model_name
@@ -340,7 +341,7 @@ class MarkdownPolisher:
 
         prompt = self._build_prompt(org, title, year, "Please extract the full content of this PDF to Markdown.")
         
-        for model_name in [self.config.primary_model, self.config.secondary_model]:
+        for model_name in filter(None, [self.config.primary_model, self.config.secondary_model, self.config.tertiary_model]):
             print(f"  → Uploading PDF to Gemini API ({model_name})...")
             try:
                 if USE_NEW_SDK:
@@ -670,6 +671,7 @@ def main():
     print(f"✓ Config loaded")
     print(f"  Primary model    : {config.primary_model}")
     print(f"  Secondary model  : {config.secondary_model}")
+    print(f"  Tertiary model   : {config.tertiary_model}")
     print(f"  Conversion prompt: {config.conversion_prompt_path}")
     print(f"  Max PDF chars    : {config.max_pdf_chars:,}")
     print(f"  Max polish input : {config.max_polish_input_chars:,}")

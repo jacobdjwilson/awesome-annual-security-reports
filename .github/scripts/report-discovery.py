@@ -1491,12 +1491,15 @@ class GeminiValidator:
             return
 
         # Load model name from ai-models.json
-        model_name = "gemini-2.0-flash"
+        model_name = None
         try:
             aim = json.loads((artifacts_dir / "ai-models.json").read_text())
-            model_name = aim.get("models", {}).get("primary", model_name)
+            model_name = aim.get("models", {}).get("primary")
         except Exception:
             pass
+        if not model_name:
+            print("⊘ Primary model not found in ai-models.json — Gemini validation skipped")
+            return
 
         self.model_name = model_name
         self.api_key    = api_key

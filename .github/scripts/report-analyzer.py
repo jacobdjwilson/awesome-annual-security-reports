@@ -102,8 +102,9 @@ class ConfigLoader:
 
         # AI model names
         models = self.ai_config.get("models", {})
-        self.primary_model: str   = models.get("primary", "gemini-2.5-flash")
-        self.secondary_model: str = models.get("secondary", "gemini-2.5-flash")
+        self.primary_model: str   = models.get("primary")
+        self.secondary_model: str = models.get("secondary")
+        self.tertiary_model: str  = models.get("tertiary")
 
         # Generation config defaults
         self.gen_config: Dict[str, Any] = (
@@ -690,10 +691,15 @@ class AIAnalyzer:
 
         except Exception as e:
             # Try secondary model if primary failed for any reason
-            if model == self.config.primary_model and self.config.secondary_model != model:
+            if self.config.secondary_model and model == self.config.primary_model and self.config.secondary_model != model:
                 print(f"  ⚠ Primary model failed ({model}), trying secondary ({self.config.secondary_model})...")
                 return self._generate_text(
                     prompt, self.config.secondary_model, max_tokens, temperature
+                )
+            elif self.config.tertiary_model and model == self.config.secondary_model and self.config.tertiary_model != model:
+                print(f"  ⚠ Secondary model failed ({model}), trying tertiary ({self.config.tertiary_model})...")
+                return self._generate_text(
+                    prompt, self.config.tertiary_model, max_tokens, temperature
                 )
             raise
 
@@ -892,7 +898,7 @@ def _error_suggestion(error_type: str, config: ConfigLoader) -> str:
     suggestions = {
         "quota_exceeded": (
             f"API quota exhausted for both primary ({config.primary_model}) and secondary "
-            f"({config.secondary_model}) models. "
+            f"({config.secondary_model}) or tertiary ({config.tertiary_model}) models. "
             "Wait for quota to reset (typically 1 minute for RPM limits or 24 hours for daily limits), "
             "then re-run the workflow manually. "
             "Consider upgrading the API tier or reducing parallel runs."
@@ -948,6 +954,7 @@ def main():
         print(f"✓ Config loaded")
         print(f"  Primary model   : {config.primary_model}")
         print(f"  Secondary model : {config.secondary_model}")
+        print(f"  Tertiary model  : {config.tertiary_model}")
         print(f"  Max retries     : {config.max_retries} (standard) / "
               f"{config.quota_max_retries} (quota)")
         print(f"  Content window  : {config.markdown_lines_for_analysis} lines / "

@@ -2,6 +2,7 @@
   "models": {
     "primary": "gemini-3.5-flash-lite",
     "secondary": "gemini-3.6-flash",
+    "tertiary": "gemini-3.7-flash",
     "embedding": "text-embedding-2",
     "comment": "Last updated July 21 2026"
   },
