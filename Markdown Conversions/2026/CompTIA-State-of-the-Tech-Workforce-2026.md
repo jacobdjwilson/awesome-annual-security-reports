@@ -1,143 +1,980 @@
-# State of the Tech Workforce 2026
+State of22 th00e 2266
+Tech Workforce
+Nationwide | State | Metro Area
+Tech Hiring Trends | Wages | Workforce Characteristics CompTIA.org
 
-## Table of Contents
-- [Copyright Page](#copyright-page)
-- [About](#about)
-- [Table of Contents](#table-of-contents)
-- [Defining Net Tech Employment](#defining-net-tech-employment)
-- [Year in Review](#year-in-review)
-- [Trending Indicators](#trending-indicators)
-- [Assessing the Impact of Artificial Intelligence](#assessing-the-impact-of-artificial-intelligence)
-- [The Many Facets of Wage Data](#the-many-facets-of-wage-data)
-- [Key Findings – State Employment](#key-findings--state-employment)
-- [Key Findings – Metro Area Employment](#key-findings--metro-area-employment)
-- [National Snapshot](#national-snapshot)
-- [State Snapshots](#state-snapshots)
-
----
-
-## Copyright Page
-COMPTIA STATE OF THE TECH WORKFORCE | 2026 RELEASE Copyright © 2026 CompTIA, Inc., used under license by CompTIA, Inc. All rights reserved. All certification programs and education related to such programs are operated exclusively by CompTIA, Inc. CompTIA is a registered trademark of CompTIA, Inc. in the U.S. and internationally. Other brands and company names mentioned herein may be trademarks or service marks of CompTIA, Inc. or of their respective owners.
-
-Reproduction or dissemination prohibited without the written consent of CompTIA, Inc. Printed in the U.S. March 2026. CompTIA is responsible for all content and analysis. Any questions regarding the report should be directed to CompTIA Research and Market Intelligence staff at research@comptia.org.
-
+COPYRIGHT PAGE
+COMPTIA STATE OF THE TECH WORKFORCE | 2026 RELEASE Copyright © 2026 CompTIA,
+Inc., used under license by
+CompTIA, Inc. All rights
+reserved. All certification
+programs and education related
+to such programs are operated
+exclusively by CompTIA, Inc.
+CompTIA is a registered
+trademark of CompTIA, Inc. in
+the U.S. and internationally.
+Other brands and company
+names mentioned herein may be
+trademarks or service marks of
+CompTIA, Inc. or of their
+respective owners.
+Reproduction or dissemination
+prohibited without the written
+consent of CompTIA, Inc.
+Printed in the U.S. March 2026
+CompTIA is responsible for all
+content and analysis. Any
+questions regarding the report
+should be directed to CompTIA
+Research and Market
+Intelligence staff at
+research@comptia.org.
 CompTIA, Inc.
 3500 Lacey Road, Suite 150
 Downers Grove, IL 60515
 Phone: (630) 678 - 8300
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 2
 
----
+ABOUT
+ABOUT COMPTIA
+CompTIA, Inc. is the leading global provider of vendor-neutral training and certification
+products in the information technology (IT) space. CompTIA unlocks potential for millions
+of aspiring technology professionals and careers changers. Working in partnership with
+thousands of academic institutions, governments, training providers and workforce
+development organizations, CompTIA helps students build career-ready skills through
+best-in-class learning solutions, industry-recognized certifications and career resources.
+Certifications such as CompTIA A+, CompTIA Network+, CompTIA Security+, Data+ and
+Cloud+ are benchmarks for foundational skills. For IT professionals with multiple years of
+work experience, CompTIA Xpert Series certifications in data, cloud infrastructure,
+advanced cybersecurity and AI validate expert-level knowledge of business-critical
+technologies. CompTIA Essential series courses, such as CompTIA AI Essentials, help
+business professionals across functional areas build the depth and breadth of digital
+fluency skills to thrive in an ever-changing workplace.
+ABOUT COMPTIA’S STATE OF THE TECH WORKFORCE
+CompTIA designed State of the Tech Workforce, previously referred to as Cyberstates, to
+serve as a reference tool, making national, state, and metro area-level data accessible to a
+wide range of users. State of the Tech Workforce quantifies the size and scope of the tech
+industry and the tech workforce across multiple vectors. To provide additional context, the
+report includes time-series trending, wage percentiles, business establishments, employer
+job postings trending, digital skills trending, demographic profiling, emerging tech metrics,
+and more.
+CompTIA defines the information technology (IT) workforce as the professionals who
+develop, deploy, support, secure and manage the infrastructure, systems, applications and
+data that powers the world’s economy. Tech-adjacent workers, also referred to as digital
+or knowledge workers, rely on a suite of digital tools and data to perform their jobs. The
+lines between the core tech workforce and the tech-adjacent digital workforce continue to
+blur as technology underpins just about every business function across industry sectors.
+CompTIA’s tech jobs taxonomy is the framework CompTIA uses to guide its data
+aggregation and reporting decisions. As with any taxonomy differences may exist due to
+factors such as the dividing line between core tech job role and tech-adjacent job role,
+data sources, and related. See the methodology section for details of the specific NAICS
+codes and SOC codes CompTIA uses in its definitions.
+IMPORTANT NOTE about timing: the 2025 estimates and 2026 projections represent the
+most up-to-date data at the time of reporting. As with any labor market data source there
+is a lag effect and recent developments during late 2025 and early 2026 will likely not be
+fully reflected in the data. Additionally, the U.S. Bureau of Labor Statistics and Lightcast
+may issue backward revisions to the data affecting historical employment levels –
+sometimes increasing and sometimes decreasing. CompTIA will evaluate the data as it
+unfolds and determine if an off-cycle mid-year update to the report makes sense.
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 3
 
-## About
-### About CompTIA
-CompTIA, Inc. is the leading global provider of vendor-neutral training and certification products in the information technology (IT) space. CompTIA unlocks potential for millions of aspiring technology professionals and careers changers. Working in partnership with thousands of academic institutions, governments, training providers and workforce development organizations, CompTIA helps students build career-ready skills through best-in-class learning solutions, industry-recognized certifications and career resources. Certifications such as CompTIA A+, CompTIA Network+, CompTIA Security+, Data+ and Cloud+ are benchmarks for foundational skills. For IT professionals with multiple years of work experience, CompTIA Xpert Series certifications in data, cloud infrastructure, advanced cybersecurity and AI validate expert-level knowledge of business-critical technologies. CompTIA Essential series courses, such as CompTIA AI Essentials, help business professionals across functional areas build the depth and breadth of digital fluency skills to thrive in an ever-changing workplace.
+TABLE OF CONTENTS
+| BACKGROUND AND KEY FINDINGS  |     | 5   |
+| ---------------------------- | --- | --- |
+| NATIONAL SNAPSHOT            |     | 12  |
+| STATE SNAPSHOTS              |     | 14  |
+| METRO AREA SNAPSHOTS         |     | 66  |
+| APPENDIX TABLES - A          |     | 118 |
 
-### About CompTIA’s State of the Tech Workforce
-CompTIA designed State of the Tech Workforce, previously referred to as Cyberstates, to serve as a reference tool, making national, state, and metro area-level data accessible to a wide range of users. State of the Tech Workforce quantifies the size and scope of the tech industry and the tech workforce across multiple vectors. To provide additional context, the report includes time-series trending, wage percentiles, business establishments, employer job postings trending, digital skills trending, demographic profiling, emerging tech metrics, and more.
+TECH OCCUPATION TRENDING BY STATE
+       TECH OCCUPATION TRENDING BY METRO
+|        NET TECH EMPLOYMENT TRENDING BY STATE  |     |     |
+| --------------------------------------------- | --- | --- |
+|   NET TECH EMPLOYMENT TRENDING BY METRO       |     |     |
+|   RANKINGS: NET TECH EMPLOYMENT BY STATE      |     |     |
+  RANKINGS: NET TECH EMPLOYMENT BY METRO
+|                      |     |     |
+| -------------------- | --- | --- |
+| APPENDIX TABLES - B  |     | 127 |
+  TECH WORKFORCE CHARACTERISTICS BY OCCUPATION
+  TECH WORKFORCE CHARACTERISTICS BY STATE
+  TECH WORKFORCE CHARACTERISTICS BY METRO
 
-CompTIA defines the information technology (IT) workforce as the professionals who develop, deploy, support, secure and manage the infrastructure, systems, applications and data that powers the world’s economy. Tech-adjacent workers, also referred to as digital or knowledge workers, rely on a suite of digital tools and data to perform their jobs. The lines between the core tech workforce and the tech-adjacent digital workforce continue to blur as technology underpins just about every business function across industry sectors.
+| APPENDIX TABLES - C                   |     | 131 |
+| ------------------------------------- | --- | --- |
+|   TECH EMPLOYMENT OUTLOOK: 2025-2035  |     |     |
 
-CompTIA’s tech jobs taxonomy is the framework CompTIA uses to guide its data aggregation and reporting decisions. As with any taxonomy differences may exist due to factors such as the dividing line between core tech job role and tech-adjacent job role, data sources, and related. See the methodology section for details of the specific NAICS codes and SOC codes CompTIA uses in its definitions.
+| APPENDIX TABLES - D  |     | 133 |
+| -------------------- | --- | --- |
+  TECH WAGE PERCENTILES BY STATE
+  TECH WAGE PERCENTILES BY METRO
+        COST OF LIVING ADJUSTED TECH WAGES BY STATE
+        COST OF LIVING ADJUSTED TECH WAGES BY METRO
+| APPENDIX TABLES - E  |     | 138 |
+| -------------------- | --- | --- |
+  TECH INDUSTRY SECTOR SUMMARY BY STATE
+  TECH INDUSTRY SECTOR SUMMARY  BY METRO
+        TECH INDUSTRY SECTOR SUMMARY BY STATE
+        TECH  INDUSTRY SECTOR SUMMARY BY METRO
+| METHODOLOGY  |     | 143 |
+| ------------ | --- | --- |
+  BACKGROUND
+|   TECH INDUSTRY AND WORKFORCE CLASSIFICATION  |     |     |
+| --------------------------------------------- | --- | --- |
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 4
 
-**IMPORTANT NOTE about timing**: the 2025 estimates and 2026 projections represent the most up-to-date data at the time of reporting. As with any labor market data source there is a lag effect and recent developments during late 2025 and early 2026 will likely not be fully reflected in the data. Additionally, the U.S. Bureau of Labor Statistics and Lightcast may issue backward revisions to the data affecting historical employment levels – sometimes increasing and sometimes decreasing. CompTIA will evaluate the data as it unfolds and determine if an off-cycle mid-year update to the report makes sense.
+DEFINING NET TECH EMPLOYMENT
+The tech workforce consists of two primary components, represented as a single figure by CompTIA’s net tech employment
+designation. The foundation is the set of technology professionals working in technical positions, such as cybersecurity, tech
+support, network engineering, software development, data science, AI and related roles. Many of these professionals work for
+technology companies (40%), but many others are employed by organizations across every industry sector in the U.S. economy
+(60%).
+The second component consists of the business professionals employed by technology companies. These professionals –
+encompassing sales, marketing, finance, HR, operations and management, play an important role in supporting the development
+and delivery of the technology products and services used throughout the economy. Approximately 38% of the net tech-
+employment total consists of tech industry business professionals.
+One final segment involves workers classified as self-employed. For the purposes of this report, only dedicated, full-time self-
+employed technology workers are counted towards net tech employment. Workers that are characterized as “gig” workers, which
+may entail working on the side for supplementary income, are excluded from this analysis due to lack of precision with the data and
+to minimize the possibility of double counting.
+N = Technology professionals employed across every sector of the economy
+(e.g. tech support specialists, software developers, network architects, database scientists, etc.)
+N = Tech sector employment, less technology professionals
+(e.g. sales, marketing, finance, HR, etc.)
+9.8 million
+Projected total
+62%
+workers in 2026
+% of NET tech
+employment in
+core technology
+occupations
+= 100,000 workers
+Source: Lightcast | U.S. Bureau of Labor Statistics | CompTIA
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 5
 
----
+YEAR IN REVIEW
+| KEY POINTS |     |     | NET TECH EMPLOYMENT TRENDING |     |     |          |
+| ---------- | --- | --- | ---------------------------- | --- | --- | -------- |
+| ⇥          |     |     |                              |     |     | +185,499 |
+The 2025 estimates and 2026 projections reflect the most
+|     |     |     |     |     | -33,624 | +1.9% |
+| --- | --- | --- | --- | --- | ------- | ----- |
+up-to-date data at the time of reporting. As with any labor
+-0.3%
+market data source there is a lag effect and recent
+developments during late 2025 and early 2026 will likely
+9.5
+not be fully reflected in the data.
+| ⇥   |     | SREKROW FO SNOILLIM |     |     |     |     |
+| --- | --- | ------------------- | --- | --- | --- | --- |
+For the most up-to-date employment trending data, see
+CompTIA’s monthly Tech Jobs Report.
+8.0
+⇥ Net tech employment in the United States – as described
+on the previous page, reached an estimated 9,597,888
+workers in 2025, a decrease of 0.3% year-over-year or
+approximately 33,624 fewer workers employed in
+6.5
+technology. Net tech employment is forecasted to grow
+by 1.9% to 9.8 million in 2026.
+⇥ Among the components of net tech employment, the tech
+sector side of the equation is projected to grow 2.0% in
+5.0
+the year ahead, while the occupation side across the  2020 2021 2022 2023 2024 2025 2026
+| economy is projected to grow at 2.2%.  |     |     |     |     |     | est. proj. |
+| -------------------------------------- | --- | --- | --- | --- | --- | ---------- |
+⇥ Within the technology industry category, which
+encompasses technology occupations and supporting  2025  2026
+business occupations, growth has varied. Since 2020, the  2020 2021 2022 2023 2024 est. proj.
+SREKROW FO SNOILLIM
+tech services and custom software services category  Tech Occupation  5.2 5.4 5.7 5.8 5.9 5.9 6.1
+Employment
+powered job growth, accounting for 58% of job gains.
+Software [product] accounted for 40% of the job gains in  Tech Industry
+|                        |     |     |            | 5.8 6.0 6.3 | 6.3 6.2 | 6.1 6.3 |
+| ---------------------- | --- | --- | ---------- | ----------- | ------- | ------- |
+| the same time period.  |     |     | Employment |             |         |         |
+⇥ The interconnected nature of technology across software  Net Tech
+|     |     |     |     | 8.7 8.9 9.5 | 9.6 9.6 | 9.6 9.8 |
+| --- | --- | --- | --- | ----------- | ------- | ------- |
+Employment
+and applications, infrastructure and hardware, data,
+support operations and cybersecurity, means job growth
+tends to occur in concert. On a volume and percent
+TECH OCCUPATION EMPLOYMENT TRENDING
+change basis the software and data categories contribute
+| the most to employer gains.  |     |     |     |     |        | +128,074 |
+| ---------------------------- | --- | --- | --- | --- | ------ | -------- |
+|                              |     |     |     |     | +1,287 | +2.2%    |
+| ⇥                            |     |     |     |     | +0.02% |          |
+Economic impact data further corroborates the vital
+| importance of tech. As a percentage of the U.S. economy,  |     |     | 6.0 |     |     |     |
+| --------------------------------------------------------- | --- | --- | --- | --- | --- | --- |
+the tech industry accounts for estimated 8.7% of direct
+economic value, which translates to over $2 trillion.
+CIOs, IT Directors,
+Managers, Other
+|     | 2025  | 2026  | Data Science, Data Analysts,  |     |     |     |
+| --- | ----- | ----- | ----------------------------- | --- | --- | --- |
+Tech occupation category- % change  % change  Database, Machine Learning
+| level rates of change | estimate | projection |     |     |     |     |
+| --------------------- | -------- | ---------- | --- | --- | --- | --- |
+4.0 Tech Support, Help Desk,
+SREKROW FO SNOILLIM IT Specialists
+| CIOs, IT Directors, Managers,  | 0.3% | 2.5% |     |     |     |     |
+| ------------------------------ | ---- | ---- | --- | --- | --- | --- |
+Other
+Network Administrators, Architects,
+Cloud Engineers, Support
+| Data Science, Data Analysts,  | 1.4% | 3.5% |     |     |     |     |
+| ----------------------------- | ---- | ---- | --- | --- | --- | --- |
+Database, Machine Learning
+Cybersecurity, Systems Analysts,
+Tech Support, Help Desk, IT  -1.2% 0.6% IT Project Mgt., Other
+| Specialists                  |       |      | 2.0 |     |     |     |
+| ---------------------------- | ----- | ---- | --- | --- | --- | --- |
+| Network Admins, Architects,  | -0.7% | 1.2% |     |     |     |     |
+Cloud Engineers, Support
+Software Development, Web,
+Cybersecurity, Systems Analysts,  0.4% 2.3% Software QA/Testing, AI
+IT Project Mgt., Other
+| Software Development,    | 0.1% | 2.6% |           |           |      |           |
+| ------------------------ | ---- | ---- | --------- | --------- | ---- | --------- |
+| Programmers, Web, QA, AI |      |      | 0.0       |           |      |           |
+|                          |      |      | 2020 2021 | 2022 2023 | 2024 | 2025 2026 |
+ est.  proj.
+Source: Lightcast | U.S. Bureau of Labor Statistics | CompTIA
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 6
 
-## Defining Net Tech Employment
-The tech workforce consists of two primary components, represented as a single figure by CompTIA’s net tech employment designation. The foundation is the set of technology professionals working in technical positions, such as cybersecurity, tech support, network engineering, software development, data science, AI and related roles. Many of these professionals work for technology companies (40%), but many others are employed by organizations across every industry sector in the U.S. economy (60%).
+TRENDING INDICATORS
+| KEY POINTS |     | TECH OCCUPATION EMPLOYMENT OUTLOOK |     |     |
+| ---------- | --- | ---------------------------------- | --- | --- |
+Workforce need = annual replacement rate + growth rate
+⇥
+According to projections from the U.S. Bureau of Labor
+Statistics and Lightcast, in the next ten years the tech  Additional hires to
+workforce will grow twice as fast as the overall U.S.  offset retirements and
+workforce separations
+workforce.
+Hiring activity to
+⇥ Calculating future workforce needs over the next decade
+offset mobility
+|     | SREKROW FO SNOILLIM |     |     | (e.g. job changes,  |
+| --- | ------------------- | --- | --- | ------------------- |
+is a function of several variables. There is a growth
+promotions, transfers)
+component, which may entail organizations adding
+headcount due to expansion or possibly to support new
+emerging technologies. There is a retirement factor, with a
+portion of the workforce transitioning away from the labor  6.7
+market permanently. And lastly, there is a segment leaving  6.1
+the workforce for some other reason, also referred to as  4.8
+separations. These may stem from a career change,
+layoffs, a return to school, family pursuits, or other.
+Changes to any of these variables will affect future
+workforce projections.
+⇥ The replacement rate for tech occupations during the  2016 2026 2036
+2026-2036 period is expected to average about 6%
+annually, or approximately 323,000 workers each year,  AGGREGATE ANNUAL POSTINGS
+totaling several million through 2036. The total turnover  FOR TECH JOB ROLES
+rate, which encompasses workers transitioning within tech
+Job postings by U.S. employers
+such as those promoted into a new role, is estimated to
+average 42% annually during the period. In comparison,  Active job postings New job postings
+the highest turnover occupations have annual rates
+typically in the 100%-200% range.
+⇥ Tech occupation employment over the next 10 years is
+4.0
+expected to grow at about twice the rate of overall
+| employment across the economy. Projected tech growth  | SGNITSOP FO SNOILLIM |     |     |     |
+| ----------------------------------------------------- | -------------------- | --- | --- | --- |
+rates above the national rate:
+|   420%  | Data Scientists and Data Analysts    |     |     |     |
+| ------- | ------------------------------------ | --- | --- | --- |
+|   346%  | Cybersecurity Analysts and Engineers |     |     |     |
+2.0
+|   188%              | Software Developers and Engineers     |           |           |           |
+| ------------------- | ------------------------------------- | --------- | --------- | --------- |
+|              175%   | CIOs, IT Directors and Manager        |           |           |           |
+|   110%              | Software QA and Testers               |           |           |           |
+|                93%  | Database Architects                   |           |           |           |
+|   81%               | Web Designers and UI/UX               | 0.0       |           |           |
+|                     |                                       | 2020 2021 | 2022 2023 | 2024 2025 |
+|   81%               | Emerging Tech, IT Project Mgt., Other |           |           |           |
+|   80%               | Systems Analysts and Engineers        |           |           |           |
+|                32%  | Web Developers                        |           |           |           |
+RANK ORDER OF INDUSTRY SECTOR
+EMPLOYMENT OF TECHNOLOGY WORKERS
+⇥ Employer job posting data from Lightcast provides another
+Top 10 sectors employ approximately 94% of tech workers
+layer of insight into the tech job market outlook. Overall
+tech job postings reached record levels during the post- #1  Tech sector
+pandemic hiring frenzy of 2021-2022 and then fell back to  #2  Professional, Scientific, Engineering Services sector
+| a normalized range.  |     | #3  Finance and Insurance sector |     |     |
+| -------------------- | --- | -------------------------------- | --- | --- |
+#4  Public sector
+⇥ Note: job postings should not be interpreted as unfilled
+jobs and there is not a 1:1 relationship between postings  #5  Management and Holding Companies sector
+| and actual hires made |     | #6  Administrative Services sector |     |     |
+| --------------------- | --- | ---------------------------------- | --- | --- |
+#7  Retail and Wholesale sector
+#8  Manufacturing sector
+#9  Healthcare and Social Services sector
+#10  Education sector
+See footnote of location summaries for composition details
+Source: Lightcast | U.S. Bureau of Labor Statistics | CompTIA
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 7
 
-The second component consists of the business professionals employed by technology companies. These professionals – encompassing sales, marketing, finance, HR, operations and management, play an important role in supporting the development and delivery of the technology products and services used throughout the economy. Approximately 38% of the net tech-employment total consists of tech industry business professionals.
+ASSESSING THE IMPACT OF ARTIFICIAL INTELLIGENCE
+KEY POINTS EMPLOYER HIRING ACTIVITY
+FOR AI POSITIONS AND SKILLS
+⇥ Approximately three years into the generative AI era
+provides enough of a data track record to glean insights
+into how AI is shaping the work and business landscape.
+And yet, many questions and unknowns remain. 250,000
+⇥ Mirroring the pattern of prior disruptive technologies, there
+are three primary dimensions of AI-induced change to the 200,000
+workforce: 1). New jobs will be created, 2). Jobs will be
+displaced, and 3). Jobs will change.
+150,000
+⇥ A review of employer hiring activity via job postings reveals
+a market dominated by AI skills hiring – reaching more than
+275,000 active job postings for January 2026. 100,000
+⇥ Hiring for AI skill may entail employers seeking candidates
+with AI fluency and the ability to utilize and optimize AI 50,000
+tools to perform tasks and boost productivity. For example,
+an employer hiring a marketing manager with the ability to
+use generative AI tools to assist with developing, 0
+deploying and monitoring marketing campaigns; or a
+software developer with skill and experience in leveraging
+AI-enabled coding tools to save time in generating and
+debugging code. See CompTIA AI research studies for
+more details.
+⇥ For just about every digital or knowledge worker, AI can be
+thought of as another tool in workplace tool belts. This
+human-AI interaction will continue to evolve as will the
+skills development requirements for those in the workforce
+or preparing to enter the workforce.
+⇥ The other side of AI hiring occurs with employers recruiting
+dedicated AI positions, such as AI engineers or AI
+architects, that may develop custom-trained large
+language models (LLMs) for specific uses. While hiring for
+dedicated AI professionals increased rapidly year-over-
+year (up 81%), this hiring typically occurs among large
+enterprises and accounts for a relatively small share of
+overall tech hiring.
+⇥ CompTIA’s AI Framework provides a skills-based approach
+to deploying AI. How the pieces fit together, and the skills
+and processes required to drive repeatable results is just
+as important as the AI technology itself.
+Source: Lightcast | CompTIA
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 8
+4202-naJ 4202-beF 4202-raM 4202-rpA 4202-yaM 4202-nuJ 4202-luJ 4202-guA 4202-peS 4202-tcO 4202-voN 4202-ceD 5202-naJ 5202-beF 5202-raM 5202-rpA 5202-yaM 5202-nuJ 5202-luJ 5202-guA 5202-peS 5202-tcO 5202-voN 5202-ceD 6202-naJ
+Employer active job postings for AI skills across labor market
+Employer active job postings for dedicated AI job titles
+EMPLOYER WORK LEVEL HIRING FOR
+POSITIONS REQUIRING AI SKILLS
+400,000
+300,000
+200,000
+100,000
+0
+0-3 years 4-6 years 7 or more Not
+years specified
+COMPTIA AI FRAMEWORK
+RANK ORDER OF INDUSTRY SECTOR
+Skills-based approach to deploying AI
+HIRING ACTIVITY FOR AI SKILLS
+Top 7 sectors account for approximately 74% of
+hiring activity via job postings for AI skills
+Security DevOps
+#1 Tech sector
+#2 Professional, Scientific, Engineering Services sector
+#3 Finance and Insurance sector
+CORE SKILL Interaction #4 Manufacturing sector
+Architecture
+DOMAINS AI fluency skills #5 Administrative Services sector
+#6 Retail sector
+#7 Healthcare and Social Services sector
+Data Systems #8 Education sector
+Analytics and infrastructure
+Aggregate data covering time period January 2025-January 2026
+6202
+NAJ-5202
+NAJ
+|
+SGNITSOP
+FO
+EMULOV
+Active job postings across all occupation
+categories across labor market
+35%
+24%
+23%
+ATAD
+GNITSOP
+BOJ
+TSACTHGIL
+FO
+SISYLANA
+AITPMOC
+19%
 
-One final segment involves workers classified as self-employed. For the purposes of this report, only dedicated, full-time self-employed technology workers are counted towards net tech employment. Workers that are characterized as “gig” workers, which may entail working on the side for supplementary income, are excluded from this analysis due to lack of precision with the data and to minimize the possibility of double counting.
+THE MANY FACETS OF WAGE DATA
+KEY POINTS ANNUAL WAGE COMPARISON ACROSS OCCUPATIONS
+⇥ There are many nuances to the tech wage discussion. At
+National Wage Percentiles Tech Wage Percentiles
+the industry level – meaning the universe of technology $200K
+companies in the sector, wages encompass all staff
+positions, from the CEO down to entry-level helpdesk $175K
+workers. Both technical and non-technical positions
+factor into the industry wage calculation. Because of the $150K
+diversity of positions covered, interpreting summary 126%
+higher
+industry wage data requires accounting for these factors.
+$125K
+In comparison, tech occupation wages cover only
+Engineering positions. This is the primary focus of the
+$100K
+wage data of this report.
+⇥ Cost of living differences mean the wages in one location $75K
+are not directly comparable to another. For example, the
+buying power of a salary in New York City or San Jose $50K
+will not go nearly as far as in Des Moines or Cleveland.
+$25K
+⇥ Beyond location, the other important variables to
+consider when reviewing wage data are job role, areas of
+$0K
+expertise, job experience, industry sector, and company
+10th per- 25th per- 50th 75th per- 90th per-
+size. A skilled employee in a hot field such as artificial
+centile centile (median) centile centile
+intelligence, working for a Fortune 500 company, will earn
+on average far more than a tech worker in an established
+field, working for a small business in a rural area.
+⇥ Percentiles help provide insight into wage ranges. This TECH WAGES MAY VARY SIGNIFICANTLY BASED
+approach minimizes the impact of outlier data points, ON OCCUPATION, LOCATION, AND PERCENTILE
+such as workers receiving massive stock payouts. It is Wage percentile examples for Software
+also useful in depicting wages along common career $225K Developers and Tech Support Specialists
+paths, with workers just starting out earning wages at the
+10th percentile, and then with experience and additional
+training and certification, moving up through the higher $200K
+wage levels.
+⇥ Across all tech occupation categories covered in this $175K
+report, the median wage, also referred to as the 50th
+percentile or midpoint, was an estimated $112,805 in Wages in the
+2024, the most recent year of available government data. $150K same tech job
+This figure is more than double the median wage across can vary widely
+all occupations of the U.S. labor force. Note: sources
+such as Glassdoor may provide more real-time data but $125K
+the tradeoff is a higher degree of data uncertainty than
+data from the U.S. Bureau of Labor Statistics.
+$100K
+⇥ The scatterplot graph to the right illustrates the degree to
+which wages will differ across states. The data presents
+wages for software developers and tech support
+$75K
+specialists across percentiles. Tenth and 25th percentiles
+often correspond to early-stage career positions (e.g. 0-4
+years of experience), while 75th and 90th percentiles
+$50K
+cover higher-end experience and expertise.
+⇥ When drilling down to the metro area level, wage
+differences may become even more pronounced. Top tier $25K
+wages in locations such as San Jose or New York City
+may run into hundreds of thousands, if not more when
+factoring in bonuses or stock options. $0K
+10th percentile 75th percentile
+25th percentile 90th percentile
+Source: Lightcast | U.S. Bureau of Labor Statistics | CompTIA
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 9
 
-![Diagram showing Net Tech Employment components: Technology professionals across every sector (62%) and Tech sector business professionals (38%)]
+KEY FINDINGS – STATE EMPLOYMENT
+| STATE NET TECH EMPLOYMENT | TOP STATES BY NET  |     |
+| ------------------------- | ------------------ | --- |
+TECH EMPLOYMENT
+⇥
+Seventeen states experienced positive job gains in net tech employment from
+|     | 1. California 1,458,022 |     |
+| --- | ----------------------- | --- |
+2024 to 2025. States that saw losses include California, Massachusetts,
+Colorado, Oregon, and Michigan. All states are projected to generate positive  2. Texas 977,687
+tech employment job growth in 2026.
+|     | 3. New York | 588,274 |
+| --- | ----------- | ------- |
+⇥ States projected to see the biggest gains in Net tech employment in 2026 are
+|     | 4. Florida | 548,899 |
+| --- | ---------- | ------- |
+Texas (+32,238), California (+16,949), Florida (+14,453), New York (+13,566),
+|     | 5. Virginia | 376,920 |
+| --- | ----------- | ------- |
+and Washington (+9,524). While the largest projected job gains are associated
+|     | Washington | 357,749 |
+| --- | ---------- | ------- |
+with the states with a significant tech presence, the fact that all states are  6.
+projected to experience tech employment job gains speaks to the continued  7. Illinois 328,158
+broad-based impact of technology across the nation.
+|     | 8. North Carolina | 324,493 |
+| --- | ----------------- | ------- |
+⇥
+The metrics used to provide context and insight into the data tend to be  9. Pennsylvania 309,981
+based on absolute size or are relative, which may involve percent change or
+|     | 10. Massachusetts | 308,134 |
+| --- | ----------------- | ------- |
+account for factors such as population or economic size differences. Absolute
+measures tend to be highly correlated with the size of the state or metro area.
+TOP STATES BY NET
+⇥ California is the largest state in the nation by a wide margin. Its population is
+TECH EMPLOYMENT JOB GAINS
+26% larger and its economy is 51% larger than the next largest state.
+California’s economy is equal to the combined total of the bottom 25 states. It  1. Texas 3,409
+follows California is the leader in terms of net tech employment related to
+|     | 2. South Carolina | 1,321 |
+| --- | ----------------- | ----- |
+size.
+|     | 3. Washington | 1,310 |
+| --- | ------------- | ----- |
+⇥ California’s net tech employment was an estimated 1,458,022 workers in
+|     | Utah | 1,017 |
+| --- | ---- | ----- |
+4.
+2025, a loss of 11,795 jobs year-over-year. Other states that saw big losses
+|     | 5. Arkansas | 503 |
+| --- | ----------- | --- |
+were Massachusetts (-4,249), Colorado (-3,269), Oregon (-2,811), and
+Michigan (-2,345). States that experienced notable tech employment gains  6. Nevada 354
+include Texas, South Carolina, Washington, Utah, Arkansas, and Nevada.
+|     | 7. Kansas | 329 |
+| --- | --------- | --- |
+⇥ On a percent change basis, the top five states for job growth in 2025 were
+|     | 8. Montana | 196 |
+| --- | ---------- | --- |
+Wyoming (+1.5%), South Carolina (+1.2%), Arkansas (+1.1%), Montana (+1.0%),
+|     | 9. Indiana | 190 |
+| --- | ---------- | --- |
+Utah (+0.8%).
+|     | 10. Mississippi | 148 |
+| --- | --------------- | --- |
+⇥ Employment concentration is a relative metric that compares tech
+employment to the overall base of employment within a state. Sixteen states
+are at a higher rate than the national average of 5.8%. TOP STATES BY PROJECTED %
+CHANGE IN TECH OCCUPATION
+⇥ Washington has the highest concentration (9.3%) of tech workers relative to
+GROWTH 2026-2036
+its overall employment base, which means citizens of the state are more likely
+Nevada
+to hold a tech job relative to other industry sectors. Top ten states for net  1. 24%
+| tech employment concentration: | Wyoming |     |
+| ------------------------------ | ------- | --- |
+|                                | 2.      | 22% |
+| ⇥ Washington: 9.3%             | Utah    |     |
+|                                | 3.      | 21% |
+⇥ District of Columbia: 9.0%
+|     | Texas | 19% |
+| --- | ----- | --- |
+4.
+⇥ Virginia: 8.6%
+|     | 5. South Carolina | 19% |
+| --- | ----------------- | --- |
+⇥ Colorado: 8.2%
+| ⇥   | 6. Tennessee | 19% |
+| --- | ------------ | --- |
+Massachusetts: 8.0%
+| ⇥ Maryland: 7.6% | 7. Colorado | 17% |
+| ---------------- | ----------- | --- |
+⇥ New Hampshire: 7.6%
+|     | 8. Idaho | 16% |
+| --- | -------- | --- |
+⇥
+| California: 7.4% | Mississippi |     |
+| ---------------- | ----------- | --- |
+|                  | 9.          | 16% |
+⇥ Utah: 7.1%
+West Virginia
+| ⇥ New Jersey: 6.6% | 10. | 15% |
+| ------------------ | --- | --- |
+⇥
+Across most states (48) the greatest share of tech professionals work within
+the tech sector, such as working for a software company, a computer
+manufacturer or a managed security services provider. The number two and
+three positions see more variation across the professional services sector, the
+finance and insurance sector, and the government sector.
+Source: Lightcast | U.S. Bureau of Labor Statistics | CompTIA
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 10
 
----
+KEY FINDINGS – METRO AREA EMPLOYMENT
+| METRO AREA NET TECH EMPLOYMENT | TOP METROS BY NET  |     |
+| ------------------------------ | ------------------ | --- |
+TECH EMPLOYMENT
+⇥
+The top ten metropolitan areas employ about 3.4 million tech industry and tech
+|     | 1. New York City | 613,950 |
+| --- | ---------------- | ------- |
+occupation workers, more than 1 in 3 tech workers in the nation.
+|     | 2. Dallas | 377,013 |
+| --- | --------- | ------- |
+⇥ New York City is the largest metropolitan area in the country by a wide margin. It
+follows that it also has the largest base of tech employment. 3. Washington DC 363,873
+| ⇥   | 4. Los Angeles | 360,417 |
+| --- | -------------- | ------- |
+Silicon Valley continues to be a critically important hub for innovation. Between
+San Francisco and San Jose, there are  more than 650,000 tech industry and  5. San Francisco 334,428
+tech occupation workers. The discussion doesn’t end there, however, as  San Jose 318,039
+6.
+technology increasingly has a significant presence across the nation. Cities such
+|     | 7. Seattle | 274,137 |
+| --- | ---------- | ------- |
+as Boston, Seattle, New York, Dallas, Atlanta, Los Angeles, Denver and more,
+boast sizable tech workforces and notable job gain rates. This includes the  8. Boston 254,937
+sometimes “under the radar” tech cities of Austin, Raleigh, Charlotte, Phoenix,  9. Chicago 239,093
+Detroit, Orlando, and more.
+|     | 10. Atlanta | 220,549 |
+| --- | ----------- | ------- |
+METRO AREA EMPLOYMENT CONCENTRATION
+TOP METROS BY NET
+⇥ Employment concentration provides a measure of tech employment relative to
+TECH EMPLOYMENT JOB GAINS
+employment across all the other industry sectors in a local economy. Along with
+economic impact as a percentage of a local economy, these metrics help to put  1. Austin 2,671
+| tech into context.  | 2. Raleigh | 1,061 |
+| ------------------- | ---------- | ----- |
+⇥ At 27%, San Jose has the highest concentration of net tech employment as a  3. San Antonio 545
+| percentage of its overall employment base.  | Las Vegas | 348 |
+| ------------------------------------------- | --------- | --- |
+4.
+⇥ Compared to the national tech employment concentration benchmark of 5.8%,  5. Charleston 338
+26 metro areas had the same rate or higher, confirming the importance of  6. Omaha 160
+technology to a far-reaching set of cities across the country.
+|                                         | 7. Salt Lake City | 136 |
+| --------------------------------------- | ----------------- | --- |
+| METRO AREA TECH BUSINESS ESTABLISHMENTS | 8. Huntsville     | 53  |
+|                                         | 9. Des Moines     | 44  |
+⇥ A large, dynamic base of business establishments, also referred to as company
+locations, is another measure of a healthy tech sector. The New York City metro  10. Charlotte 41
+area is home to 26,337 tech business establishments. Other top cities are
+Washington DC, Los Angeles, Atlanta, Dallas, and Seattle.   TOP METROS BY TECH
+ECONOMIC IMPACT AS A
+⇥ The vast majority of tech business establishments are categorized as small
+businesses under the Small Business Administration’s definition of up to 500  PERCENT OF LOCAL ECONOMY
+employees.
+|     | 1. San Jose | 51% |
+| --- | ----------- | --- |
+⇥
+Outside of the top five, the next largest metropolitan areas for the number of  2. Seattle 31%
+tech sector business establishments include  Seattle, Denver, San Francisco,
+|     | 3. San Francisco | 20% |
+| --- | ---------------- | --- |
+Miami, Boston, and Chicago.
+|     | Austin | 23% |
+| --- | ------ | --- |
+4.
+| METRO AREA EMPLOYER JOB POSTINGS | 5. Raleigh  | 16% |
+| -------------------------------- | ----------- | --- |
+|                                  | 6. Portland | 14% |
+⇥ Cities with the most tech job postings January 2025-January 2026  were
+Washington DC, New York, Dallas, San Jose, Chicago, Boston, and San  7. Boston 14%
+Francisco.
+|     | 8. Washington DC | 13% |
+| --- | ---------------- | --- |
+⇥ Job positions with AI skills were highest in New York City (93,028), San Francisco  9. Denver 13%
+(64,503), San Jose (59,245), Washington DC (58,154), San Jose (18,392), and
+|     | 10. Dallas | 11% |
+| --- | ---------- | --- |
+Boston (44,559), rounding out the top five cities.
+⇥
+The top five metro areas with the most job tech postings that specified less than
+a four-year degree for the time period January 2025-January 2026 were New
+York, Washington DC, Dallas, San Francisco, and Chicago.
+METRO AREA WORKFORCE DEMOGRAPHIC CHARACTERISTICS
+⇥ See Appendix for summary of key workforce demographic characteristics.
+Source: Lightcast | U.S. Bureau of Labor Statistics | CompTIA
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 11
 
-## Year in Review
-- Net tech employment in the United States reached an estimated 9,597,888 workers in 2025, a decrease of 0.3% year-over-year. Net tech employment is forecasted to grow by 1.9% to 9.8 million in 2026.
-- Within the technology industry category, growth has varied. Since 2020, the tech services and custom software services category powered job growth, accounting for 58% of job gains.
-- As a percentage of the U.S. economy, the tech industry accounts for an estimated 8.7% of direct economic value, which translates to over $2 trillion.
+NATIONAL SNAPSHOT
+Copyright © 2025 CompTIA, Inc. | State of the Tech Workforce | Page 12
 
----
+United States
+STATE OF TECHNOLOGY SUMMARY
+| 9,597,888  | NET TECH EMPLOYMENT1                                                                 |     |     |     |     |     |     |     |     |     |     |     |
+| ---------- | ------------------------------------------------------------------------------------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 5.8%       | NET EMPLOYMENT AS A % OF OVERALL WORKFORCE                                           |     |     |     |     |     |     |     |     |     |     |     |
+| 6,059,282  | TECH OCCUPATION EMPLOYMENT [2026 projection]                                         |     |     |     |     |     |     |     |     |     |     |     |
+| $2.27t     | ECONOMIC IMPACT [estimated direct impact of tech sector]                             |     |     |     |     |     |     |     |     |     |     |     |
+| 705,798    | TECH BUSINESS ESTABLISHMENTS [firms with payroll]                                    |     |     |     |     |     |     |     |     |     |     |     |
+| 3,080,057  | EMPLOYER JOB POSTINGS [Jan 2025-Jan 2026 active postings total for tech occupations] |     |     |     |     |     |     |     |     |     |     |     |
+| 1,229,505  | EMPLOYER JOB POSTINGS REQUIRING AI SKILL [Jan 2025-Jan 2026 total all jobs]          |     |     |     |     |     |     |     |     |     |     |     |
+Sources: CompTIA analysis of Lightcast, U.S. Bureau of Labor Statistics, U.S. Bureau of Economic Analysis, and others | 1Net of tech industry + tech occupation employment
+Note: backward revisions to data and classification changes by the BLS mean prior year editions of this report are not always directly comparable | See Methodology page
+NET TECH EMPLOYMENT
+|     |       |     |     |     |      | Net tech employment |     |     | Tech occupation employment |     |     |     |
+| --- | ----- | --- | --- | --- | ---- | ------------------- | --- | --- | -------------------------- | --- | --- | --- |
+|     | TECH  |     |     |     | 10.0 |                     |     |     |                            |     |     |     |
+OCCUPATION
+|     | JOBS |     |     |     | 8.0 |     |     |     |     |     |     | Projected tech  |
+| --- | ---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --------------- |
+occ. growth of
+|                    | 5.9 million |           |     |     |          |     |     |     |     |     |     | +128,074 jobs3  |
+| ------------------ | ----------- | --------- | --- | --- | -------- | --- | --- | --- | --- | --- | --- | --------------- |
+|                    |             | TECH      |     |     | 6.0      |     |     |     |     |     |     |                 |
+|                    |             |           |     |     | snoilliM |     |     |     |     |     |     | at +2.2% vs.    |
+|                    |             | INDUSTRY  |     |     |          |     |     |     |     |     |     | prior year      |
+|                    |             | JOBS      |     |     | 4.0      |     |     |     |     |     |     | growth of       |
+| 40% intersection = |             |           |     |     |          |     |     |     |     |     |     | 0.0%            |
+6.1 million
+|     | 9.6 million  |     |     |     | 2.0 |     |     |     |     |     |     |     |
+| --- | ------------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Net Tech
+|     | Employment |     |     |     | 0.0                                                 |      |      |      |      |      |       |     |
+| --- | ---------- | --- | --- | --- | --------------------------------------------------- | ---- | ---- | ---- | ---- | ---- | ----- | --- |
+|     |            |     |     |     |                                                     | 2021 | 2022 | 2023 | 2024 | 2025 | 2026  |     |
+|     |            |     |     |     | 3Tech occupation employment across industry sectors |      |      |      |      | est. | proj. |     |
+TECH OCCUPATION CATEGORY GROWTH EMPLOYER HIRING FOR ESSENTIAL SKILLS
+|     |     | 2025  | 2026 %  Growth vs.  |     |     |     |     |     |     |     |     |     |
+| --- | --- | ----- | ------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     |     | base  | Change4 Benchmark4  |     |     |     |     |     |     |     |     |     |
+CIOs, IT Directors, Managers 652,753 2.7% 2.0x Digital  Infra-
+|                                   |     |     |     |     |                     | AI  | Cyber |     | Data |     |         |           |
+| --------------------------------- | --- | --- | --- | --- | ------------------- | --- | ----- | --- | ---- | --- | ------- | --------- |
+|                                   |     |     |     |     |                     |     |       |     |      |     | Fluency | structure |
+| Cybersecurity, Systems Analysts,  |     |     |     |     | sgnitsop boj evitcA |     |       |     |      |     |         |           |
+IT Project Mgt., Other
+|     |     | 1,154,684 | 2.3% | 1.7x |     |     |     |     |     |     |     |     |
+| --- | --- | --------- | ---- | ---- | --- | --- | --- | --- | --- | --- | --- | --- |
+Complementary professional and soft skills underpin each category | not mutually exclusive
+Data Science, Data Analysts,
+| Database, Machine Learning |     | 419,602 | 3.5% | 2.6x |     |     |     |     |     |     |     |     |
+| -------------------------- | --- | ------- | ---- | ---- | --- | --- | --- | --- | --- | --- | --- | --- |
+Network Admins, Architects, Cloud  Data Digital Infrastructure
+|                    |     |         |      |      |     |           |                |        | Analytics |     | Fluency | and Support |
+| ------------------ | --- | ------- | ---- | ---- | --- | --------- | -------------- | ------ | --------- | --- | ------- | ----------- |
+| Engineers, Support |     | 631,043 | 1.2% | 0.9x |     |           | Cybersecurity  |        |           |     |         |             |
+|                    |     |         |      |      |     | AI skills |                | skills | skills    |     | skills  | skills      |
+Software Development,
+| Programmers, Web, QA, AI |     | 2,099,869 | 2.6% | 1.9x |     |            |            |     |            |            |     |           |
+| ------------------------ | --- | --------- | ---- | ---- | --- | ---------- | ---------- | --- | ---------- | ---------- | --- | --------- |
+|                          |     |           |      |      |     | 1,229,505  | 3,945,864  |     | 5,032,662  | 14,029,916 |     | 5,552,421 |
+Tech Support, Help Desk, IT
+| Specialists |     | 693,303 | 0.7% | 0.5x |     |     |     |     |     |     |     |     |
+| ----------- | --- | ------- | ---- | ---- | --- | --- | --- | --- | --- | --- | --- | --- |
+4Projected growth rate for 2026 | 4Benchmark comparison to overall national rate of 1.34% CompTIA analysis of Lightcast employer job posting data | Totals across all jobs | Jan 2025-Jan 2026
+TOP INDUSTRY SECTORS DRIVING TECH HIRING TECH OCCUPATION WAGES [by percentile]
+| Top 4 industry sectors6 based on tech workers employed in sector | projected 2026 |     |     |     |     | $200K |     |     |     |     |     |     |            |
+| --------------------------------------------------------------------------------- | --- | --- | --- | --- | ----- | --- | --- | --- | --- | --- | --- | ---------- |
+| # 1                                                                               | # 2 | # 3 | #   | 4   |       |     |     |     |     |     |     |            |
+|                                                                                   |     |     |     |     | $150K |     |     |     |     |     |     | Estimated  |
+median tech
+wage
+|     | Professional,  |     |     |     | $100K |     |     |     |     |     |     |     |
+| --- | -------------- | --- | --- | --- | ----- | --- | --- | --- | --- | --- | --- | --- |
+$112,805,
+|     | Scientific,  |              |     |     |     |     |     |     |     |     | 126% higher  |     |
+| --- | ------------ | ------------ | --- | --- | --- | --- | --- | --- | --- | --- | ------------ | --- |
+|     | Engineering  | Finance and  |     |     |     |     |     |     |     |     | than median  |     |
+$50K
+| Tech      | Services | Insurance | Public Sector |     |     |     |     |     |     |     | national wage5 |     |
+| --------- | -------- | --------- | ------------- | --- | --- | --- | --- | --- | --- | --- | -------------- | --- |
+| 2,526,914 | 689,070  | 569,232   | 552,530       |     |     |     |     |     |     |     |                |     |
+$0K
+|     |     |     |     |     |     | 10th | 25th | 50th | 75th | 90th |     |     |
+| --- | --- | --- | --- | --- | --- | ---- | ---- | ---- | ---- | ---- | --- | --- |
+6Tech sector includes tech services, manufacturing, telecom and cloud infrastructure, and software
+Public sector includes federal, state and local governments, agencies, schools and hospitals; excluding military   52024 data | most recent available
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 13
 
-## Trending Indicators
-- According to projections from the U.S. Bureau of Labor Statistics and Lightcast, in the next ten years the tech workforce will grow twice as fast as the overall U.S. workforce.
-- The replacement rate for tech occupations during the 2026-2036 period is expected to average about 6% annually, or approximately 323,000 workers each year.
-- Employer job posting data from Lightcast provides another layer of insight into the tech job market outlook. Overall tech job postings reached record levels during the post-pandemic hiring frenzy of 2021-2022 and then fell back to a normalized range.
+STATE SNAPSHOTS
+Copyright © 2025 CompTIA, Inc. | State of the Tech Workforce | Page 14
 
----
+Alabama
+STATE OF TECHNOLOGY SUMMARY
+97,437 NET TECH EMPLOYMENT1
+✪Supplemental
+metro report
+4.3% NET EMPLOYMENT AS A % OF OVERALL WORKFORCE
+67,970 TECH OCCUPATION EMPLOYMENT [2026 projection] QUARTILE RANKINGS [1st quartile = more favorable ranking]
+$12.0b ECONOMIC IMPACT [estimated direct impact of tech sector]  1st COST OF LIVING [vs. national benchmark2]
+9,059 TECH BUSINESS ESTABLISHMENTS [firms with payroll] 1st TECH WAGE PREMIUM [vs. prevailing median wage]
+34,971  EMPLOYER JOB POSTINGS [Jan 2025-Jan 2026 active postings total for tech occupations] 3rd  TECH JOB POSTINGS RATIO [postings to tech base ratio2]
+9,349 EMPLOYER JOB POSTINGS REQUIRING AI SKILL [Jan 2025-Jan 2026 total all jobs]  1st AGGREGATE RELATIVE RANKING
+Sources: CompTIA analysis of Lightcast, U.S. Bureau of Labor Statistics, U.S. Bureau of Economic Analysis, and others | 1Net of tech industry + tech occupation employment | 2Lightcast COL index;
+lower rank equates to lower cost of living relative to national benchmark | 2Tech job postings per base of 1,000 tech workers in region | See Methodology page for more details
+NET TECH EMPLOYMENT
+|     |     |     |     |     |     | Net tech employment |     | Tech occupation employment |     |     |     |
+| --- | --- | --- | --- | --- | --- | ------------------- | --- | -------------------------- | --- | --- | --- |
+TECH
+| OCCUPATION  |     |     |     |     | 90,000 |     |     |     |     |     |     |
+| ----------- | --- | --- | --- | --- | ------ | --- | --- | --- | --- | --- | --- |
+JOBS
+Projected tech
+occ. growth of
+ 66,561
+|     |     | TECH  |     |     | 60,000 |     |     |     |     |     | +1,409 jobs3 at  |
+| --- | --- | ----- | --- | --- | ------ | --- | --- | --- | --- | --- | ---------------- |
++2.1% vs. prior
+INDUSTRY
+year growth of
+JOBS
++0.2%
+| 44% intersection = |     |     |     |     | 30,000 |     |     |     |     |     |     |
+| ------------------ | --- | --- | --- | --- | ------ | --- | --- | --- | --- | --- | --- |
+ 55,507
+97,437
+Net Tech
+| Employment |     |     |     |     |                                                     | 0    |           |      |      |       |     |
+| ---------- | --- | --- | --- | --- | --------------------------------------------------- | ---- | --------- | ---- | ---- | ----- | --- |
+|            |     |     |     |     |                                                     | 2021 | 2022 2023 | 2024 | 2025 | 2026  |     |
+|            |     |     |     |     | 3Tech occupation employment across industry sectors |      |           |      | est. | proj. |     |
+TECH OCCUPATION CATEGORY GROWTH EMPLOYER HIRING FOR ESSENTIAL SKILLS
+|                                   |     | 2025  2026 %  | Growth vs.  |      |                     |     |       |      |          |     |           |
+| --------------------------------- | --- | ------------- | ----------- | ---- | ------------------- | --- | ----- | ---- | -------- | --- | --------- |
+|                                   |     | base Change4  | Benchmark4  |      |                     |     |       |      |          |     |           |
+| CIOs, IT Directors, Managers      |     | 6,531         | 2.8%        | 2.1x |                     |     |       |      | Digital  |     | Infra-    |
+|                                   |     |               |             |      |                     | AI  | Cyber | Data |          |     |           |
+|                                   |     |               |             |      |                     |     |       |      | Fluency  |     | structure |
+| Cybersecurity, Systems Analysts,  |     |               |             |      | sgnitsop boj evitcA |     |       |      |          |     |           |
+IT Project Mgt., Other
+|     |     | 13,527 | 2.6% | 1.9x |     |     |     |     |     |     |     |
+| --- | --- | ------ | ---- | ---- | --- | --- | --- | --- | --- | --- | --- |
+Complementary professional and soft skills underpin each category | not mutually exclusive
+Data Science, Data Analysts,
+| Database, Machine Learning |     | 4,589 | 2.9% | 2.2x |     |     |     |     |     |     |     |
+| -------------------------- | --- | ----- | ---- | ---- | --- | --- | --- | --- | --- | --- | --- |
+Network Admins, Architects, Cloud  Data Digital Infrastructure
+|                    |     |       |      |      |     |           |                | Analytics | Fluency |        | and Support |
+| ------------------ | --- | ----- | ---- | ---- | --- | --------- | -------------- | --------- | ------- | ------ | ----------- |
+| Engineers, Support |     | 9,346 | 1.0% | 0.7x |     |           | Cybersecurity  |           |         |        |             |
+|                    |     |       |      |      |     | AI skills | skills         | skills    |         | skills | skills      |
+Software Development,
+| Programmers, Web, QA, AI |     | 22,679 | 2.6% | 1.9x |     |        |         |         |          |     |         |
+| ------------------------ | --- | ------ | ---- | ---- | --- | ------ | ------- | ------- | -------- | --- | ------- |
+|                          |     |        |      |      |     | 9,349  | 53,767  | 52,237  | 170,493  |     | 66,484  |
+Tech Support, Help Desk, IT
+| Specialists |     | 7,264 | 0.6% | 0.5x |     |     |     |     |     |     |     |
+| ----------- | --- | ----- | ---- | ---- | --- | --- | --- | --- | --- | --- | --- |
+4Projected growth rate for 2026 | 4Benchmark comparison to overall national rate of 1.34% CompTIA analysis of Lightcast employer job posting data | Totals across all jobs | Jan 2025-Jan 2026
+TOP INDUSTRY SECTORS DRIVING TECH HIRING TECH OCCUPATION WAGES [by percentile]
+| Top 4 industry sectors6 based on tech workers employed in sector | projected 2026 |     |     |     |     | $200K |     |     |     |     |            |     |
+| --------------------------------------------------------------------------------- | --- | --- | --- | --- | ----- | --- | --- | --- | --- | ---------- | --- |
+| # 1                                                                               | # 2 | # 3 | #   | 4   |       |     |     |     |     |            |     |
+|                                                                                   |     |     |     |     | $150K |     |     |     |     | Estimated  |     |
+median tech
+wage $97,751,
+|     |     | Professional,  |     |     | $100K |     |     |     |     |     |     |
+| --- | --- | -------------- | --- | --- | ----- | --- | --- | --- | --- | --- | --- |
+126% higher
+Scientific,
+than median
+|     |     | Engineering  | Finance and  |     |     |     |     |     |     | state wage5 |     |
+| --- | --- | ------------ | ------------ | --- | --- | --- | --- | --- | --- | ----------- | --- |
+$50K
+| Tech   | Public Sector | Services | Insurance |     |     |     |     |     |     |     |     |
+| ------ | ------------- | -------- | --------- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 25,196 | 9,566         | 8,647    | 7,328     |     |     |     |     |     |     |     |     |
+$0K
+|     |     |     |     |     |     | 10th | 25th 50th | 75th | 90th |     |     |
+| --- | --- | --- | --- | --- | --- | ---- | --------- | ---- | ---- | --- | --- |
+6Tech sector includes tech services, manufacturing, telecom and cloud infrastructure, and software
+Public sector includes federal, state and local governments, agencies, schools and hospitals; excluding military   52024 data | most recent available
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 15
 
-## Assessing the Impact of Artificial Intelligence
-- Mirroring the pattern of prior disruptive technologies, there are three primary dimensions of AI-induced change to the workforce: 1) New jobs will be created, 2) Jobs will be displaced, and 3) Jobs will change.
-- A review of employer hiring activity via job postings reveals a market dominated by AI skills hiring – reaching more than 275,000 active job postings for January 2026.
-- Hiring for AI skill may entail employers seeking candidates with AI fluency and the ability to utilize and optimize AI tools to perform tasks and boost productivity.
-- While hiring for dedicated AI professionals increased rapidly year-over-year (up 81%), this hiring typically occurs among large enterprises and accounts for a relatively small share of overall tech hiring.
+Alaska
+STATE OF TECHNOLOGY SUMMARY
+| 10,486 NET TECH EMPLOYMENT1                     |     |     |     |     |     |     |     |     |     |     |     |     |
+| ----------------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2.9% NET EMPLOYMENT AS A % OF OVERALL WORKFORCE |     |     |     |     |     |     |     |     |     |     |     |     |
+6,805 TECH OCCUPATION EMPLOYMENT [2026 projection] QUARTILE RANKINGS [1st quartile = more favorable ranking]
+$1.7b ECONOMIC IMPACT [estimated direct impact of tech sector]  4th COST OF LIVING [vs. national benchmark2]
+1,119 TECH BUSINESS ESTABLISHMENTS [firms with payroll] 4th TECH WAGE PREMIUM [vs. prevailing median wage]
+8,124  EMPLOYER JOB POSTINGS [Jan 2025-Jan 2026 active postings total for tech occupations] 1st  TECH JOB POSTINGS RATIO [postings to tech base ratio2]
+3,271 EMPLOYER JOB POSTINGS REQUIRING AI SKILL [Jan 2025-Jan 2026 total all jobs]  4th  AGGREGATE RELATIVE RANKING
+Sources: CompTIA analysis of Lightcast, U.S. Bureau of Labor Statistics, U.S. Bureau of Economic Analysis, and others | 1Net of tech industry + tech occupation employment | 2Lightcast COL index;
+lower rank equates to lower cost of living relative to national benchmark | 2Tech job postings per base of 1,000 tech workers in region | See Methodology page for more details
+NET TECH EMPLOYMENT
+|     |       |     |     |     |        | Net tech employment |     |     | Tech occupation employment |     |     |     |
+| --- | ----- | --- | --- | --- | ------ | ------------------- | --- | --- | -------------------------- | --- | --- | --- |
+|     | TECH  |     |     |     | 12,000 |                     |     |     |                            |     |     |     |
+OCCUPATION
+JOBS
+Projected tech
+occ. growth of
+|     |  6,725  |       |     |     | 8,000 |     |     |     |     |     |     |               |
+| --- | ------- | ----- | --- | --- | ----- | --- | --- | --- | --- | --- | --- | ------------- |
+|     |         | TECH  |     |     |       |     |     |     |     |     |     | +81 jobs3 at  |
++1.2% vs. prior
+INDUSTRY
+year growth of
+JOBS
+|     |     |     |     |     | 4,000 |     |     |     |     |     |     | +0.8% |
+| --- | --- | --- | --- | --- | ----- | --- | --- | --- | --- | --- | --- | ----- |
+30% intersection =
+ 5,362
+10,486
+Net Tech
+| Employment |     |     |     |     |                                                     | 0    |      |      |      |      |       |     |
+| ---------- | --- | --- | --- | --- | --------------------------------------------------- | ---- | ---- | ---- | ---- | ---- | ----- | --- |
+|            |     |     |     |     |                                                     | 2021 | 2022 | 2023 | 2024 | 2025 | 2026  |     |
+|            |     |     |     |     | 3Tech occupation employment across industry sectors |      |      |      |      | est. | proj. |     |
+TECH OCCUPATION CATEGORY GROWTH EMPLOYER HIRING FOR ESSENTIAL SKILLS
+|                                   |     | 2025         | 2026 %  Growth vs.  |      |                     |     |       |     |      |     |          |           |
+| --------------------------------- | --- | ------------ | ------------------- | ---- | ------------------- | --- | ----- | --- | ---- | --- | -------- | --------- |
+|                                   |     | base Change4 | Benchmark4          |      |                     |     |       |     |      |     |          |           |
+| CIOs, IT Directors, Managers      |     | 904          | 2.1%                | 1.6x |                     |     |       |     |      |     | Digital  | Infra-    |
+|                                   |     |              |                     |      |                     | AI  | Cyber |     | Data |     |          |           |
+|                                   |     |              |                     |      |                     |     |       |     |      |     | Fluency  | structure |
+| Cybersecurity, Systems Analysts,  |     |              |                     |      | sgnitsop boj evitcA |     |       |     |      |     |          |           |
+IT Project Mgt., Other
+|     |     | 1,588 | 1.4% | 1.0x |     |     |     |     |     |     |     |     |
+| --- | --- | ----- | ---- | ---- | --- | --- | --- | --- | --- | --- | --- | --- |
+Complementary professional and soft skills underpin each category | not mutually exclusive
+Data Science, Data Analysts,
+| Database, Machine Learning |     | 557 | 3.4% | 2.5x |     |     |     |     |     |     |     |     |
+| -------------------------- | --- | --- | ---- | ---- | --- | --- | --- | --- | --- | --- | --- | --- |
+Network Admins, Architects, Cloud  Data Digital Infrastructure
+|                    |     |     |      |      |     |           |                |        | Analytics |     | Fluency | and Support |
+| ------------------ | --- | --- | ---- | ---- | --- | --------- | -------------- | ------ | --------- | --- | ------- | ----------- |
+| Engineers, Support |     | 923 | 0.3% | 0.2x |     |           | Cybersecurity  |        |           |     |         |             |
+|                    |     |     |      |      |     | AI skills |                | skills | skills    |     | skills  | skills      |
+Software Development,
+| Programmers, Web, QA, AI |     | 1,370 | 1.5% | 1.1x |     |        |         |     |         |     |         |         |
+| ------------------------ | --- | ----- | ---- | ---- | --- | ------ | ------- | --- | ------- | --- | ------- | ------- |
+|                          |     |       |      |      |     | 3,271  | 13,000  |     | 15,336  |     | 41,106  | 18,270  |
+Tech Support, Help Desk, IT
+| Specialists |     | 1,069 | 0.0% | 0.0x |     |     |     |     |     |     |     |     |
+| ----------- | --- | ----- | ---- | ---- | --- | --- | --- | --- | --- | --- | --- | --- |
+4Projected growth rate for 2026 | 4Benchmark comparison to overall national rate of 1.34% CompTIA analysis of Lightcast employer job posting data | Totals across all jobs | Jan 2025-Jan 2026
+TOP INDUSTRY SECTORS DRIVING TECH HIRING TECH OCCUPATION WAGES [by percentile]
+| Top 4 industry sectors6 based on tech workers employed in sector | projected 2026 |     |     |     |     | $200K |     |     |     |     |     |     |     |
+| --------------------------------------------------------------------------------- | --- | --- | --- | --- | ----- | --- | --- | --- | --- | --- | --- | --- |
+| # 1                                                                               | # 2 | # 3 | #   | 4   |       |     |     |     |     |     |     |     |
+$150K
+Estimated
+median tech
+|     |     | Professional,  |             |     | $100K |     |     |     |     |     | wage $93,697,  |     |
+| --- | --- | -------------- | ----------- | --- | ----- | --- | --- | --- | --- | --- | -------------- | --- |
+|     |     | Scientific,    | Management  |     |       |     |     |     |     |     | 61% higher     |     |
+than median
+|               |       | Engineering  | and Holding  |     |      |     |     |     |     |     |             |     |
+| ------------- | ----- | ------------ | ------------ | --- | ---- | --- | --- | --- | --- | --- | ----------- | --- |
+|               |       |              |              |     | $50K |     |     |     |     |     | state wage5 |     |
+| Public Sector | Tech  | Services     | Companies    |     |      |     |     |     |     |     |             |     |
+| 2,153         | 1,619 | 692          | 436          |     |      |     |     |     |     |     |             |     |
+$0K
+|     |     |     |     |     |     | 10th | 25th | 50th | 75th | 90th |     |     |
+| --- | --- | --- | --- | --- | --- | ---- | ---- | ---- | ---- | ---- | --- | --- |
+6Tech sector includes tech services, manufacturing, telecom and cloud infrastructure, and software
+Public sector includes federal, state and local governments, agencies, schools and hospitals; excluding military   52024 data | most recent available
+Copyright © 2026 CompTIA, Inc. | State of the Tech Workforce | Page 16
 
----
-
-## The Many Facets of Wage Data
-- At the industry level, wages encompass all staff positions, from the CEO down to entry-level helpdesk workers. In comparison, tech occupation wages cover only Engineering positions.
-- Cost of living differences mean the wages in one location are not directly comparable to another.
-- Across all tech occupation categories covered in this report, the median wage, also referred to as the 50th percentile or midpoint, was an estimated $112,805 in 2024. This figure is more than double the median wage across all occupations of the U.S. labor force.
-
----
-
-## Key Findings – State Employment
-- Seventeen states experienced positive job gains in net tech employment from 2024 to 2025. All states are projected to generate positive tech employment job growth in 2026.
-- California is the largest state in the nation by a wide margin. Its population is 26% larger and its economy is 51% larger than the next largest state.
-- Washington has the highest concentration (9.3%) of tech workers relative to its overall employment base.
-
----
-
-## Key Findings – Metro Area Employment
-- The top ten metropolitan areas employ about 3.4 million tech industry and tech occupation workers, more than 1 in 3 tech workers in the nation.
-- New York City is the largest metropolitan area in the country by a wide margin.
-- At 27%, San Jose has the highest concentration of net tech employment as a percentage of its overall employment base.
-
----
-
-## National Snapshot
-**United States**
-- **Net Tech Employment**: 9,597,888
-- **Net Employment as a % of Overall Workforce**: 5.8%
-- **Tech Occupation Employment (2026 projection)**: 6,059,282
-- **Economic Impact**: $2.27t
-- **Tech Business Establishments**: 705,798
-- **Employer Job Postings (Jan 2025-Jan 2026)**: 3,080,057
-- **Employer Job Postings Requiring AI Skill**: 1,229,505
-
----
-
-## State Snapshots
-### Alabama
-- **Net Tech Employment**: 97,437
-- **Net Employment as a % of Overall Workforce**: 4.3%
-- **Tech Occupation Employment (2026 projection)**: 67,970
-- **Economic Impact**: $12.0b
-- **Tech Business Establishments**: 9,059
-- **Employer Job Postings**: 34,971
-- **Employer Job Postings Requiring AI Skill**: 9,349
-
-### Alaska
-- **Net Tech Employment**: 10,486
-- **Net Employment as a % of Overall Workforce**: 2.9%
-- **Tech Occupation Employment (2026 projection)**: 6,805
-- **Economic Impact**: $1.7b
-- **Tech Business Establishments**: 1,119
-- **Employer Job Postings**: 8,124
-- **Employer Job Postings Requiring AI Skill**: 3,271
-
-### Arizona
-- **Net Tech Employment**: 208,168
-- **Net Employment as a % of Overall Workforce**: 6.0%
-- **Tech Occupation Employment (2026 projection)**: 129,528
-- **Economic Impact**: $39.3b
-- **Tech Business Establishments**: 16,016
-
----
-
-TECH BUSINESS ESTABLISHMENTS [firms with payroll] 2nd TECH WAGE PREMIUM [vs. prevailing median wage]
+Arizona
+STATE OF TECHNOLOGY SUMMARY
+208,168 NET TECH EMPLOYMENT1
+✪Supplemental
+metro report
+6.0% NET EMPLOYMENT AS A % OF OVERALL WORKFORCE
+129,528 TECH OCCUPATION EMPLOYMENT [2026 projection] QUARTILE RANKINGS [1st quartile = more favorable ranking]
+$39.3b ECONOMIC IMPACT [estimated direct impact of tech sector]  3rd COST OF LIVING [vs. national benchmark2]
+16,016 TECH BUSINESS ESTABLISHMENTS [firms with payroll] 2nd TECH WAGE PREMIUM [vs. prevailing median wage]
 61,774  EMPLOYER JOB POSTINGS [Jan 2025-Jan 2026 active postings total for tech occupations] 3rd  TECH JOB POSTINGS RATIO [postings to tech base ratio2]
 19,953 EMPLOYER JOB POSTINGS REQUIRING AI SKILL [Jan 2025-Jan 2026 total all jobs]   2nd AGGREGATE RELATIVE RANKING
 Sources: CompTIA analysis of Lightcast, U.S. Bureau of Labor Statistics, U.S. Bureau of Economic Analysis, and others | 1Net of tech industry + tech occupation employment | 2Lightcast COL index;
