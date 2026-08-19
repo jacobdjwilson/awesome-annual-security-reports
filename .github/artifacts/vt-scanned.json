@@ -33,5 +33,10 @@
     "status": "completed",
     "file": "Annual Security Reports/2016/NIST-ITL-Annual-Report-2016.pdf",
     "verdict": "Clean"
+  },
+  "a43b1b4f9b35adeee55dc5697b27a6a919cab1c43c98a0cc13d11bc998619ae6": {
+    "status": "completed",
+    "file": "Annual Security Reports/2016/ENISA-Threat-Landscape-2016.pdf",
+    "verdict": "Clean"
   }
 }
