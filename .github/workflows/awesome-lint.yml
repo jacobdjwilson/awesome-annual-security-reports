@@ -38,21 +38,7 @@ jobs:
           awesome-lint > lint_output.txt || true
           cat lint_output.txt
 
-          # Parse output and create annotations
-          awk -F '[:✖]' '/✖/ {
-            gsub(/^[[:space:]]+|[[:space:]]+$/, "", $1);
-            gsub(/^[[:space:]]+|[[:space:]]+$/, "", $2);
-            gsub(/^[[:space:]]+|[[:space:]]+$/, "", $3);
-            gsub(/^[[:space:]]+|[[:space:]]+$/, "", $4);
-
-            message=$4;
-            for(i=5; i<=NF; i++) {
-              message = message ":" $i
-            }
-            gsub(/^[[:space:]]+|[[:space:]]+$/, "", message);
-
-            print "::error file=" $1 ",line=" $2 ",col=" $3 "::" message
-          }' lint_output.txt
+          python .github/scripts/parse-awesome-lint.py
 
       - name: Check for lint ignore directives
         run: |
@@ -84,30 +70,4 @@ jobs:
           REF_NAME: "${{ github.ref_name }}"
           EVENT_NAME: "${{ github.event_name }}"
         run: |
-          echo "## 🧹 Awesome Lint" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Branch | \`$REF_NAME\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger | \`$EVENT_NAME\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Errors | ${ERROR_COUNT:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
-          if [ "$STATUS" == "succeeded" ]; then
-            echo "### ✅ Lint Passed" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "\`README.md\` passed all awesome-lint checks." >> $GITHUB_STEP_SUMMARY
-          else
-            echo "### ❌ Lint Failed" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "**${ERROR_COUNT:-0}** error(s) found in \`README.md\`. Review the annotations in the [workflow run]($RUN_URL) for details." >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "<details><summary>🔍 Lint Output</summary>" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            cat lint_output.txt >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            echo "</details>" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "If these are expected issues, add appropriate \`lint ignore\` directives to \`README.md\`." >> $GITHUB_STEP_SUMMARY
-          fi
+          python .github/scripts/generate-workflow-summary.py --workflow lint

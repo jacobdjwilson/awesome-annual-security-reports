@@ -1,0 +1,89 @@
+import os
+import sys
+import subprocess
+import json
+import urllib.parse
+
+def run_cmd(cmd):
+    try:
+        result = subprocess.run(cmd, shell=True, check=True, capture_output=True, text=True)
+        return result.stdout.strip()
+    except subprocess.CalledProcessError as e:
+        return ""
+
+def write_output(key, value):
+    output_file = os.environ.get("GITHUB_OUTPUT")
+    if output_file:
+        with open(output_file, "a") as f:
+            f.write(f"{key}={value}\n")
+
+def main():
+    event = os.environ.get("GITHUB_EVENT_NAME", "")
+    repo = os.environ.get("GITHUB_REPOSITORY", "")
+    sha = os.environ.get("GITHUB_SHA", "")
+
+    if event in ["workflow_dispatch", "schedule"]:
+        write_output("proceed", "true")
+        write_output("skip_reason", "")
+        write_output("trigger_sha", sha)
+        print("✓ Manual/scheduled — proceeding")
+        sys.exit(0)
+
+    trigger_sha = os.environ.get("WORKFLOW_RUN_HEAD_SHA", "")
+    conclusion = os.environ.get("WORKFLOW_RUN_CONCLUSION", "")
+    run_name = os.environ.get("WORKFLOW_RUN_NAME", "")
+
+    print(f"Triggered by: {run_name}")
+    print(f"Conclusion:   {conclusion}")
+    print(f"Head SHA:     {trigger_sha}\n")
+
+    if conclusion != "success":
+        write_output("proceed", "false")
+        write_output("skip_reason", "pipeline_did_not_succeed")
+        write_output("trigger_sha", trigger_sha)
+        print("⊘ Triggering workflow did not succeed — skipping")
+        sys.exit(0)
+
+    monitored_workflows = ["security-reports-pipeline.yml", "refresh-old-conversions.yml"]
+    busy = False
+
+    for wf_name in monitored_workflows:
+        print(f"Checking: {wf_name}")
+        encoded = urllib.parse.quote(wf_name)
+        for status in ["in_progress", "queued", "waiting"]:
+            count_str = run_cmd(f"gh api 'repos/{repo}/actions/workflows/{encoded}/runs?head_sha={trigger_sha}&status={status}' --jq '.total_count'")
+            count = int(count_str) if count_str.isdigit() else 0
+            print(f"  {status}: {count}")
+            if count > 0:
+                busy = True
+                break
+        if busy:
+            break
+    print("")
+
+    if busy:
+        write_output("proceed", "false")
+        write_output("skip_reason", "pipelines_still_running")
+        write_output("trigger_sha", trigger_sha)
+        print("⊘ A monitored pipeline is still running — deferring validation")
+        print("  The validator will run again when the other pipeline finishes.")
+        sys.exit(0)
+
+    changed_str = run_cmd(f"gh api 'repos/{repo}/commits/{trigger_sha}' --jq '[.files[].filename | select(startswith(\"Annual Security Reports/\") or startswith(\"Markdown Conversions/\"))] | length'")
+    changed = int(changed_str) if changed_str.lstrip("-").isdigit() else -1
+    print(f"Files changed in monitored directories: {changed}")
+
+    if changed == 0:
+        write_output("proceed", "false")
+        write_output("skip_reason", "no_relevant_changes")
+        write_output("trigger_sha", trigger_sha)
+        print("⊘ No changes in monitored directories — skipping")
+        sys.exit(0)
+
+    write_output("proceed", "true")
+    write_output("skip_reason", "")
+    write_output("trigger_sha", trigger_sha)
+    print("✓ Gate passed — proceeding with validation")
+
+if __name__ == "__main__":
+    main()

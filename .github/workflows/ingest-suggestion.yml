@@ -56,51 +56,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
-          # Fetch the raw issue body via the API (guaranteed accurate regardless of event type)
-          BODY=$(gh issue view "$ISSUE_NUMBER" --json body -q '.body')
-
-          parse_field() {
-            local heading="$1"
-            # Match the heading line (case-insensitive), skip blank lines, return first content line
-            echo "$BODY" | awk -v h="$heading" '
-              BEGIN { found=0 }
-              tolower($0) == tolower("### " h) { found=1; next }
-              found && /^[[:space:]]*$/ { next }
-              found { print; exit }
-            ' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//'
-          }
-
-          ORG=$(parse_field "Organization Name")
-          TITLE=$(parse_field "Report Title")
-          YEAR=$(parse_field "Report Year")
-          URL=$(parse_field "Direct PDF URL")
-          CATEGORY=$(parse_field "Category")
-
-          echo "Parsed fields:"
-          echo "  organization_name = '$ORG'"
-          echo "  report_title      = '$TITLE'"
-          echo "  report_year       = '$YEAR'"
-          echo "  report_url        = '$URL'"
-          echo "  report_category   = '$CATEGORY'"
-
-          # Write to GITHUB_OUTPUT — use heredoc delimiter to handle special chars in values
-          {
-            echo "organization_name<<__EOF__"
-            echo "$ORG"
-            echo "__EOF__"
-            echo "report_title<<__EOF__"
-            echo "$TITLE"
-            echo "__EOF__"
-            echo "report_year<<__EOF__"
-            echo "$YEAR"
-            echo "__EOF__"
-            echo "report_url<<__EOF__"
-            echo "$URL"
-            echo "__EOF__"
-            echo "report_category<<__EOF__"
-            echo "$CATEGORY"
-            echo "__EOF__"
-          } >> "$GITHUB_OUTPUT"
+          python .github/scripts/parse-issue-form.py
 
       - name: Validate parsed fields
         id: validate
@@ -311,30 +267,15 @@ jobs:
         if: always()
         env:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          PR_NUM: ${{ steps.create_pr.outputs.pull-request-number }}
+          ORG_NAME: ${{ steps.parse.outputs.organization_name }}
+          REPORT_TITLE: ${{ steps.parse.outputs.report_title }}
+          REPORT_YEAR: ${{ steps.parse.outputs.report_year }}
+          REPORT_CATEGORY: ${{ steps.parse.outputs.report_category }}
+          FILE_NAME: ${{ steps.download.outputs.file_name }}
+          VALID: ${{ steps.validate.outputs.valid }}
+          DOWNLOAD_CONCLUSION: ${{ steps.download.conclusion }}
         run: |
-          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
-          ISSUE_URL="https://github.com/${{ github.repository }}/issues/$ISSUE_NUMBER"
-
-          echo "## 📥 Report Ingestion" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Issue | [#$ISSUE_NUMBER]($ISSUE_URL) |" >> $GITHUB_STEP_SUMMARY
-          echo "| Organization | ${{ steps.parse.outputs.organization_name }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Title | ${{ steps.parse.outputs.report_title }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Year | ${{ steps.parse.outputs.report_year }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Category | ${{ steps.parse.outputs.report_category }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| File | \`${{ steps.download.outputs.file_name }}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
-          if [ -n "$PR_NUM" ]; then
-            PR_URL="https://github.com/${{ github.repository }}/pull/$PR_NUM"
-            echo "✅ Pull request created: [PR #$PR_NUM]($PR_URL)" >> $GITHUB_STEP_SUMMARY
-          elif [ "${{ steps.validate.outputs.valid }}" == "false" ]; then
-            echo "❌ Validation failed — required fields missing or invalid." >> $GITHUB_STEP_SUMMARY
-          elif [ "${{ steps.download.conclusion }}" == "failure" ]; then
-            echo "❌ Download failed — PDF could not be retrieved from URL." >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ Pull request creation failed. Check [workflow logs]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
-          fi
+          python .github/scripts/generate-workflow-summary.py --workflow ingest

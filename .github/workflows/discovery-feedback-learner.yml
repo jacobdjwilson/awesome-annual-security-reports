@@ -88,37 +88,4 @@ jobs:
       - name: Generate step summary
         if: always()
         run: |
-          FEEDBACK=".github/artifacts/discovery-feedback.json"
-          if [ ! -f "$FEEDBACK" ]; then
-            echo "⚠️ Feedback file not found." >> $GITHUB_STEP_SUMMARY
-            exit 0
-          fi
-
-          TOTAL=$(jq -r '.total_feedback_events // 0' "$FEEDBACK")
-          TP=$(jq -r '.outcome_counts.true_positive // 0' "$FEEDBACK")
-          FP=$(jq -r '.outcome_counts.false_positive // 0' "$FEEDBACK")
-          DUP=$(jq -r '.outcome_counts.duplicate // 0' "$FEEDBACK")
-          MM=$(jq -r '.outcome_counts.mismatch // 0' "$FEEDBACK")
-          SUMMARY=$(jq -r '.learned.summary // "(not yet run)"' "$FEEDBACK")
-          LAST_RUN=$(jq -r '.last_learner_run // "never"' "$FEEDBACK")
-          THRESH_DELTA=$(jq -r '.learned.score_threshold_delta // 0' "$FEEDBACK")
-          BLOCK_COUNT=$(jq -r '.learned.domain_blocklist.domains | length' "$FEEDBACK" 2>/dev/null || echo 0)
-          TRUST_COUNT=$(jq -r '.learned.domain_trustlist.domains | length' "$FEEDBACK" 2>/dev/null || echo 0)
-
-          echo "## 🧠 Discovery Feedback Learner" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Last run | $LAST_RUN |" >> $GITHUB_STEP_SUMMARY
-          echo "| Total feedback events | $TOTAL |" >> $GITHUB_STEP_SUMMARY
-          echo "| ✅ True positives | $TP |" >> $GITHUB_STEP_SUMMARY
-          echo "| 🚫 False positives | $FP |" >> $GITHUB_STEP_SUMMARY
-          echo "| 🔁 Duplicates | $DUP |" >> $GITHUB_STEP_SUMMARY
-          echo "| ⚠️ Mismatches | $MM |" >> $GITHUB_STEP_SUMMARY
-          echo "| Score threshold delta | $THRESH_DELTA |" >> $GITHUB_STEP_SUMMARY
-          echo "| Domains blocked | $BLOCK_COUNT |" >> $GITHUB_STEP_SUMMARY
-          echo "| Domains trusted | $TRUST_COUNT |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Gemini Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "$SUMMARY" >> $GITHUB_STEP_SUMMARY
+          python .github/scripts/generate-workflow-summary.py --workflow learner

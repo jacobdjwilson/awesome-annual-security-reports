@@ -56,131 +56,19 @@ jobs:
         id: check-pr
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAX_OPEN_PRS: ${{ steps.load_config.outputs.max_open_prs }}
+          WORKFLOW_TYPE: refresh
         run: |
-          MAX_OPEN_PRS="${{ steps.load_config.outputs.max_open_prs }}"
-
-          # Check for an existing refresh PR specifically
-          REFRESH_PR_COUNT=$(gh pr list \
-            --state open \
-            --label "maintenance" \
-            --search "Refresh in:title" \
-            --json number \
-            -q length)
-
-          if [ "${REFRESH_PR_COUNT:-0}" -gt 0 ]; then
-            echo "⊘ Existing refresh PR found, skipping"
-            echo "pr_exists=true" >> $GITHUB_OUTPUT
-            echo "skip_reason=existing_refresh_pr" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
-          # Check the shared automated PR cap
-          OPEN_COUNT=$(gh pr list \
-            --state open \
-            --label "automated" \
-            --json number \
-            -q length)
-
-          echo "Open automated PRs: ${OPEN_COUNT} / ${MAX_OPEN_PRS}"
-
-          if [ "${OPEN_COUNT:-0}" -ge "${MAX_OPEN_PRS}" ]; then
-            echo "⊘ PR cap reached (${OPEN_COUNT} >= ${MAX_OPEN_PRS}) — skipping"
-            echo "pr_exists=true" >> $GITHUB_OUTPUT
-            echo "skip_reason=pr_cap_reached" >> $GITHUB_OUTPUT
-            echo "open_count=$OPEN_COUNT" >> $GITHUB_OUTPUT
-          else
-            echo "✓ No existing PR found, cap OK (${OPEN_COUNT} < ${MAX_OPEN_PRS})"
-            echo "pr_exists=false" >> $GITHUB_OUTPUT
-            echo "skip_reason=" >> $GITHUB_OUTPUT
-            echo "open_count=$OPEN_COUNT" >> $GITHUB_OUTPUT
-          fi
+          python .github/scripts/check-pr-cap.py
 
       - name: Find stale files
         id: check-files
         if: steps.check-pr.outputs.pr_exists != 'true'
         env:
-          INPUT_LIMIT: ${{ github.event.inputs.limit }}
-          INPUT_DAYS_OLD: ${{ github.event.inputs.days_old }}
+          LIMIT: ${{ github.event.inputs.limit || steps.load_config.outputs.default_limit }}
+          DAYS_OLD: ${{ github.event.inputs.days_old || '90' }}
         run: |
-          MD_ROOT="Markdown Conversions"
-          PDF_ROOT="Annual Security Reports"
-
-          LIMIT="$INPUT_LIMIT"
-          DAYS_OLD="$INPUT_DAYS_OLD"
-
-          if [ -z "$LIMIT" ]; then
-            LIMIT="${{ steps.load_config.outputs.default_limit }}"
-          fi
-          if [ -z "$DAYS_OLD" ]; then
-            DAYS_OLD=90
-          fi
-
-          python -c '
-          import os
-          import json
-          import time
-          from pathlib import Path
-          from datetime import datetime
-
-          limit = int(os.environ.get("LIMIT") or 10)
-          days_old = int(os.environ.get("DAYS_OLD") or 90)
-
-          with open(".github/artifacts/ai-models.json") as f:
-              primary_model = json.load(f).get("models", {}).get("primary", "gemini-3.5-flash-lite")
-
-          threshold_timestamp = time.time() - (days_old * 86400)
-
-          candidates = []
-
-          for root, _, files in os.walk("Annual Security Reports"):
-              for file in files:
-                  if not file.endswith(".pdf"): continue
-                  pdf_path = Path(root) / file
-                  rel_path = pdf_path.relative_to("Annual Security Reports")
-                  md_path = Path("Markdown Conversions") / rel_path.with_suffix(".md")
-                  
-                  if not md_path.exists():
-                      candidates.append((0, 0, str(pdf_path)))
-                      continue
-                      
-                  try:
-                      content = md_path.read_text(encoding="utf-8")
-                      import re
-                      match = re.search(r"<!-- CONVERSION_METADATA: (\{.*?\}) -->", content)
-                      if not match:
-                          candidates.append((1, 0, str(pdf_path)))
-                          continue
-                      
-                      meta = json.loads(match.group(1))
-                      if meta.get("model") != primary_model:
-                          candidates.append((1, 1, str(pdf_path)))
-                          continue
-                          
-                      date_str = meta.get("date")
-                      if date_str:
-                          dt = datetime.strptime(date_str, "%Y-%m-%d")
-                          ts = dt.timestamp()
-                          if ts < threshold_timestamp:
-                              candidates.append((2, ts, str(pdf_path)))
-                  except Exception:
-                      candidates.append((1, 0, str(pdf_path)))
-
-          candidates.sort(key=lambda x: (x[0], x[1]))
-          with open("files_to_process.txt", "w") as f:
-              for c in candidates[:limit]:
-                  f.write(c[2] + "\n")
-          '
-
-          if [ -s files_to_process.txt ]; then
-            COUNT=$(wc -l < files_to_process.txt | tr -d ' ')
-            echo "has_files=true" >> $GITHUB_OUTPUT
-            echo "file_count=$COUNT" >> $GITHUB_OUTPUT
-            echo "✓ Found $COUNT files to refresh"
-          else
-            echo "has_files=false" >> $GITHUB_OUTPUT
-            echo "file_count=0" >> $GITHUB_OUTPUT
-            echo "⊘ No stale files found"
-          fi
+          python .github/scripts/check-stale-conversions.py
 
       - name: Upload file list
         if: |
@@ -462,81 +350,4 @@ jobs:
           ANALYSIS_ERROR_COUNT: ${{ steps.analyzer.outputs.error_count }}
           ERRORS_FILE: ${{ steps.analyzer.outputs.errors_file }}
         run: |
-          RUN_URL="https://github.com/$GITHUB_REPO/actions/runs/$GITHUB_RUN_ID"
-          SUCCESSFUL="$SUCCESSFUL"
-          FAILED="$FAILED"
-          PR_NUM="$PR_NUM"
-          DAYS_OLD="${INPUT_DAYS_OLD:-90}"
-
-          echo "## ♻️ Refresh Old Conversions — Processing" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Result | Count |" >> $GITHUB_STEP_SUMMARY
-          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Files Targeted | $FILE_COUNT |" >> $GITHUB_STEP_SUMMARY
-          echo "| ✅ Conversions Successful | ${SUCCESSFUL:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| ❌ Conversions Failed | ${FAILED:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Min Age | ${DAYS_OLD} days |" >> $GITHUB_STEP_SUMMARY
-          echo "| Conversion Method | markitdown + AI polish (force-reconvert) |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
-          if [ "$CHANGES_DETECTED" == "true" ]; then
-            if [ -n "$PR_NUM" ]; then
-              PR_URL="https://github.com/$GITHUB_REPO/pull/$PR_NUM"
-              echo "✅ Pull request created: [PR #$PR_NUM]($PR_URL)" >> $GITHUB_STEP_SUMMARY
-            fi
-          else
-            echo "⊘ No README changes detected." >> $GITHUB_STEP_SUMMARY
-          fi
-
-          # Per-file conversion detail from conversions.json
-          if [ -f conversions.json ] && [ "$(jq 'length' conversions.json)" -gt 0 ]; then
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### 📄 Conversion Detail" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "| File | Method | Model | Chars | Status |" >> $GITHUB_STEP_SUMMARY
-            echo "|------|--------|-------|-------|--------|" >> $GITHUB_STEP_SUMMARY
-            jq -r '.[] |
-              "| `\(.pdf_path | split("/") | last)` | \(.method // "—") | \(.model // "—") | \(if .output_chars then (.output_chars | tostring) else "—" end) | \(if .status == "success" then "✅" else "❌ \(.message // "")" end) |"
-            ' conversions.json >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-          fi
-
-          # Per-report README update results
-          if [ -f readme-update-results.json ] && [ "$(jq 'length' readme-update-results.json 2>/dev/null || echo 0)" -gt 0 ]; then
-            echo "### 📋 README Update Disposition" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "| Organization | Year | Action | Reason |" >> $GITHUB_STEP_SUMMARY
-            echo "|--------------|------|--------|--------|" >> $GITHUB_STEP_SUMMARY
-            jq -r '.[] |
-              "| \(.organization) | \(.year) | \(if .status == "changed" then "✅ " + .action else "⊘ skipped" end) | \(.reason) |"
-            ' readme-update-results.json >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-          fi
-
-          # Analysis results — show error details if analysis failed
-          ANALYSIS_COUNT="$ANALYSIS_COUNT"
-          ANALYSIS_ERROR_COUNT="$ANALYSIS_ERROR_COUNT"
-          ERRORS_FILE="$ERRORS_FILE"
-          ERRORS_FILE="${ERRORS_FILE:-analysis_errors.json}"
-
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 🧠 Analysis Results" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          if [ "${ANALYSIS_COUNT:-0}" -gt 0 ]; then
-            echo "| ✅ Reports Analyzed | ❌ Analysis Failed |" >> $GITHUB_STEP_SUMMARY
-            echo "|---|---|" >> $GITHUB_STEP_SUMMARY
-            echo "| ${ANALYSIS_COUNT} | ${ANALYSIS_ERROR_COUNT:-0} |" >> $GITHUB_STEP_SUMMARY
-          elif [ -f "$ERRORS_FILE" ] && [ "${ANALYSIS_ERROR_COUNT:-0}" -gt 0 ]; then
-            echo "❌ **All report(s) failed AI analysis.**" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "| Organization | Year | Error Type | Suggested Fix |" >> $GITHUB_STEP_SUMMARY
-            echo "|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
-            jq -r '.[] |
-              "| **\(.organization)** | \(.year) | `\(.error_type)` | \(.suggestion[:150] | gsub("\n";" ") | gsub("\\|";"\\|")) |"
-            ' "$ERRORS_FILE" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "⊘ No analysis was attempted or data is unavailable." >> $GITHUB_STEP_SUMMARY
-          fi
-
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "📎 Full details available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
+          python .github/scripts/generate-refresh-summary.py

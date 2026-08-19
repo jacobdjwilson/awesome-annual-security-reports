@@ -32,8 +32,7 @@ jobs:
 
       - name: Find all PDFs
         run: |
-          find "Annual Security Reports" -name "*.pdf" > files_to_process.txt
-          echo "Found $(wc -l < files_to_process.txt) PDFs."
+          python .github/scripts/find-all-pdfs.py
 
       - name: Run Daily Scan
         id: vt-scan

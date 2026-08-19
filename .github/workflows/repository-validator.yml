@@ -57,95 +57,7 @@ jobs:
           WORKFLOW_RUN_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
           WORKFLOW_RUN_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
         run: |
-          set -euo pipefail
-
-          EVENT="$GITHUB_EVENT_NAME"
-          REPO="${{ github.repository }}"
-
-          # ── Manual / scheduled runs always proceed immediately ──────────
-          if [ "$EVENT" == "workflow_dispatch" ] || [ "$EVENT" == "schedule" ]; then
-            echo "proceed=true"                         >> $GITHUB_OUTPUT
-            echo "skip_reason="                         >> $GITHUB_OUTPUT
-            echo "trigger_sha=${{ github.sha }}"        >> $GITHUB_OUTPUT
-            echo "✓ Manual/scheduled — proceeding"
-            exit 0
-          fi
-
-          # ── workflow_run trigger ────────────────────────────────────────
-          TRIGGER_SHA="$WORKFLOW_RUN_HEAD_SHA"
-          CONCLUSION="$WORKFLOW_RUN_CONCLUSION"
-
-          echo "Triggered by: $WORKFLOW_RUN_NAME"
-          echo "Conclusion:   $CONCLUSION"
-          echo "Head SHA:     $TRIGGER_SHA"
-          echo ""
-
-          # Skip if the triggering workflow itself did not succeed
-          if [ "$CONCLUSION" != "success" ]; then
-            echo "proceed=false"                          >> $GITHUB_OUTPUT
-            echo "skip_reason=pipeline_did_not_succeed"   >> $GITHUB_OUTPUT
-            echo "trigger_sha=$TRIGGER_SHA"               >> $GITHUB_OUTPUT
-            echo "⊘ Triggering workflow did not succeed — skipping"
-            exit 0
-          fi
-
-          # ── Check whether sibling pipelines are still running ───────────
-          # Query in_progress / queued / waiting runs for each monitored
-          # workflow on this exact SHA. If any are active, defer validation.
-          MONITORED_WORKFLOWS=(
-            "security-reports-pipeline.yml"
-            "refresh-old-conversions.yml"
-          )
-
-          BUSY=false
-          for WF_NAME in "${MONITORED_WORKFLOWS[@]}"; do
-            echo "Checking: $WF_NAME"
-
-            # URL-encode the workflow name for the API query
-            ENCODED=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$WF_NAME")
-
-            for STATUS in in_progress queued waiting; do
-              COUNT=$(gh api \
-                "repos/$REPO/actions/workflows/$ENCODED/runs?head_sha=$TRIGGER_SHA&status=$STATUS" \
-                --jq '.total_count' 2>/dev/null || echo "0")
-              echo "  $STATUS: ${COUNT:-0}"
-              if [ "${COUNT:-0}" -gt 0 ]; then
-                BUSY=true
-                break 2
-              fi
-            done
-          done
-          echo ""
-
-          if [ "$BUSY" == "true" ]; then
-            echo "proceed=false"                     >> $GITHUB_OUTPUT
-            echo "skip_reason=pipelines_still_running" >> $GITHUB_OUTPUT
-            echo "trigger_sha=$TRIGGER_SHA"          >> $GITHUB_OUTPUT
-            echo "⊘ A monitored pipeline is still running — deferring validation"
-            echo "  The validator will run again when the other pipeline finishes."
-            exit 0
-          fi
-
-          # ── Check whether relevant files changed on this SHA ────────────
-          CHANGED=$(gh api \
-            "repos/$REPO/commits/$TRIGGER_SHA" \
-            --jq '[.files[].filename | select(startswith("Annual Security Reports/") or startswith("Markdown Conversions/"))] | length' \
-            2>/dev/null || echo "-1")
-
-          echo "Files changed in monitored directories: ${CHANGED}"
-
-          if [ "${CHANGED}" == "0" ]; then
-            echo "proceed=false"                  >> $GITHUB_OUTPUT
-            echo "skip_reason=no_relevant_changes" >> $GITHUB_OUTPUT
-            echo "trigger_sha=$TRIGGER_SHA"        >> $GITHUB_OUTPUT
-            echo "⊘ No changes in monitored directories — skipping"
-            exit 0
-          fi
-
-          echo "proceed=true"             >> $GITHUB_OUTPUT
-          echo "skip_reason="             >> $GITHUB_OUTPUT
-          echo "trigger_sha=$TRIGGER_SHA" >> $GITHUB_OUTPUT
-          echo "✓ Gate passed — proceeding with validation"
+          python .github/scripts/check-pipeline-gate.py
 
   # ============================================================
   # VALIDATE JOB
@@ -237,60 +149,12 @@ jobs:
           HAS_FINDINGS: ${{ steps.findings.outputs.has_findings }}
           ERROR_COUNT: ${{ steps.findings.outputs.error_count }}
           WARNING_COUNT: ${{ steps.findings.outputs.warning_count }}
-          ISSUE_ACTION: ${{ steps.issue_mgmt.outputs.action }}
           NEW_ISSUE: ${{ steps.issue_mgmt.outputs.new_issue }}
           CLOSED_ISSUE: ${{ steps.issue_mgmt.outputs.closed_issue }}
           UNCHANGED_ISSUE: ${{ steps.issue_mgmt.outputs.unchanged_issue }}
           TRIGGER_SHA: ${{ needs.gate.outputs.trigger_sha }}
         run: |
-          RUN_URL="https://github.com/$GITHUB_REPO/actions/runs/$GITHUB_RUN_ID"
-          HAS="$HAS_FINDINGS"
-          ERRS="$ERROR_COUNT"
-          WARNS="$WARNING_COUNT"
-          ACTION="$ISSUE_ACTION"
-          NEW_ISSUE="$NEW_ISSUE"
-          CLOSED_ISSUE="$CLOSED_ISSUE"
-          UNCHANGED_ISSUE="$UNCHANGED_ISSUE"
-          REPO="$GITHUB_REPO"
-
-          echo "## 📋 Repository Integrity Validator" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Run | [#$GITHUB_RUN_ID]($RUN_URL) |" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Commit | \`${TRIGGER_SHA}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Errors | ${ERRS:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Warnings | ${WARNS:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
-          if [ "${HAS:-false}" != "true" ]; then
-            echo "### ✅ Validation Passed" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "All PDF ↔ Markdown pairs are consistent, correctly named, and structurally valid." >> $GITHUB_STEP_SUMMARY
-            if [ -n "$CLOSED_ISSUE" ]; then
-              echo "" >> $GITHUB_STEP_SUMMARY
-              echo "✅ Closed previously open issue [#$CLOSED_ISSUE](https://github.com/$REPO/issues/$CLOSED_ISSUE) — all issues resolved." >> $GITHUB_STEP_SUMMARY
-            fi
-          else
-            echo "### ⚠️ Issues Detected" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            if [ -n "$NEW_ISSUE" ]; then
-              echo "Opened issue [#$NEW_ISSUE](https://github.com/$REPO/issues/$NEW_ISSUE) with full details." >> $GITHUB_STEP_SUMMARY
-            elif [ -n "$UNCHANGED_ISSUE" ]; then
-              echo "Findings unchanged — no update to open issue [#$UNCHANGED_ISSUE](https://github.com/$REPO/issues/$UNCHANGED_ISSUE)." >> $GITHUB_STEP_SUMMARY
-            fi
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "<details><summary>📄 Validation Report</summary>" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            cat validation_report.md 2>/dev/null || echo "(report not available)" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            echo "</details>" >> $GITHUB_STEP_SUMMARY
-          fi
-
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "📎 Full report available in [workflow artifacts]($RUN_URL)." >> $GITHUB_STEP_SUMMARY
+          python .github/scripts/generate-validator-summary.py --step validate
 
   # ============================================================
   # CLEANUP JOB
@@ -313,135 +177,18 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -euo pipefail
-
-          REPO="${{ github.repository }}"
-
-          # Branches that must never be deleted regardless of PR state.
-          PROTECTED_BRANCHES=("main" "development")
-
-          is_protected() {
-            local branch="$1"
-            for p in "${PROTECTED_BRANCHES[@]}"; do
-              [ "$branch" == "$p" ] && return 0
-            done
-            return 1
-          }
-
-          DELETED=()
-          SKIPPED=()
-
-          echo "Scanning for stale branches from closed (unmerged) PRs..."
-          echo ""
-
-          # Fetch all closed, unmerged PRs with their head branch names.
-          # Uses pagination — iterates until an empty page is returned.
-          PAGE=1
-          while true; do
-            BATCH=$(gh api \
-              "repos/$REPO/pulls?state=closed&per_page=100&page=$PAGE" \
-              --jq '[.[] | select(.merged_at == null) | {number: .number, branch: .head.ref, closed_at: .closed_at}]')
-
-            COUNT=$(echo "$BATCH" | jq 'length')
-            [ "$COUNT" -eq 0 ] && break
-
-            while IFS= read -r PR_JSON; do
-              PR_NUM=$(echo "$PR_JSON" | jq -r '.number')
-              BRANCH=$(echo "$PR_JSON" | jq -r '.branch')
-              CLOSED_AT=$(echo "$PR_JSON" | jq -r '.closed_at')
-
-              # Skip protected branches
-              if is_protected "$BRANCH"; then
-                echo "  [PR #$PR_NUM] ⊘ Skipping protected branch: $BRANCH"
-                SKIPPED+=("$BRANCH (PR #$PR_NUM — protected)")
-                continue
-              fi
-
-              # Check whether the branch still exists on the remote
-              HTTP_STATUS=$(gh api "repos/$REPO/git/refs/heads/$BRANCH" \
-                --silent --include 2>&1 | grep "^HTTP" | awk '{print $2}' || echo "404")
-
-              if [ "$HTTP_STATUS" == "404" ] || \
-                 ! gh api "repos/$REPO/git/refs/heads/$BRANCH" --silent > /dev/null 2>&1; then
-                echo "  [PR #$PR_NUM] ⊘ Branch already gone: $BRANCH"
-                continue
-              fi
-
-              # Confirm the branch head matches the PR's last commit
-              # (guards against a branch being reused after the PR closed)
-              PR_SHA=$(gh api "repos/$REPO/pulls/$PR_NUM" --jq '.head.sha')
-              BRANCH_SHA=$(gh api "repos/$REPO/git/refs/heads/$BRANCH" \
-                --jq '.object.sha' 2>/dev/null || echo "")
-
-              if [ "$PR_SHA" != "$BRANCH_SHA" ]; then
-                echo "  [PR #$PR_NUM] ⊘ Branch has new commits since PR closed — skipping: $BRANCH"
-                SKIPPED+=("$BRANCH (PR #$PR_NUM — new commits after close)")
-                continue
-              fi
-
-              # Safe to delete
-              gh api --method DELETE "repos/$REPO/git/refs/heads/$BRANCH" > /dev/null
-              echo "  [PR #$PR_NUM] 🗑️  Deleted: $BRANCH (closed $CLOSED_AT)"
-              DELETED+=("$BRANCH (PR #$PR_NUM, closed $CLOSED_AT)")
-
-            done < <(echo "$BATCH" | jq -c '.[]')
-
-            (( PAGE++ ))
-          done
-
-          echo ""
-          echo "Done. Deleted: ${#DELETED[@]} branch(es), skipped: ${#SKIPPED[@]}."
-
-          # Pass counts to summary step
-          printf '%s\n' "${DELETED[@]:-}" > /tmp/deleted_branches.txt
-          printf '%s\n' "${SKIPPED[@]:-}" > /tmp/skipped_branches.txt
-          echo "deleted_count=${#DELETED[@]}" >> $GITHUB_OUTPUT
-          echo "skipped_count=${#SKIPPED[@]}" >> $GITHUB_OUTPUT
+          python .github/scripts/cleanup-stale-branches.py
 
       - name: Generate step summary
         if: always()
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
+          DELETED: ${{ steps.cleanup.outputs.deleted_count }}
+          SKIPPED: ${{ steps.cleanup.outputs.skipped_count }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
         run: |
-          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          DELETED="${{ steps.cleanup.outputs.deleted_count }}"
-          SKIPPED="${{ steps.cleanup.outputs.skipped_count }}"
-
-          echo "## 🧹 Stale Branch Cleanup" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Branches deleted | ${DELETED:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Branches skipped | ${SKIPPED:-0} |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
-          if [ "${DELETED:-0}" -gt 0 ]; then
-            echo "### 🗑️ Deleted Branches" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            while IFS= read -r line; do
-              [ -z "$line" ] && continue
-              echo "- \`$line\`" >> $GITHUB_STEP_SUMMARY
-            done < /tmp/deleted_branches.txt
-            echo "" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "✅ No stale branches found — repo is already tidy." >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-          fi
-
-          if [ "${SKIPPED:-0}" -gt 0 ]; then
-            echo "<details><summary>⊘ Skipped branches (${SKIPPED})</summary>" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            while IFS= read -r line; do
-              [ -z "$line" ] && continue
-              echo "- \`$line\`" >> $GITHUB_STEP_SUMMARY
-            done < /tmp/skipped_branches.txt
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "</details>" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-          fi
-
-          echo "📎 Full log: [workflow run]($RUN_URL)" >> $GITHUB_STEP_SUMMARY
+          python .github/scripts/generate-validator-summary.py --step cleanup
 
   # ============================================================
   # SKIPPED SUMMARY JOB
@@ -457,33 +204,9 @@ jobs:
       - name: Generate skip summary
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          TRIGGER_SHA: ${{ needs.gate.outputs.trigger_sha }}
+          REASON: ${{ needs.gate.outputs.skip_reason }}
         run: |
-          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          REASON="${{ needs.gate.outputs.skip_reason }}"
-
-          echo "## 📋 Repository Integrity Validator" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Run | [#${{ github.run_id }}]($RUN_URL) |" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| SHA | \`${{ needs.gate.outputs.trigger_sha }}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### ⊘ Validation Skipped" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
-          case "$REASON" in
-            pipeline_did_not_succeed)
-              echo "The triggering pipeline did not complete successfully — validation skipped to avoid acting on a broken or partial state." >> $GITHUB_STEP_SUMMARY
-              ;;
-            pipelines_still_running)
-              echo "One or more monitored pipelines are still running on this commit." >> $GITHUB_STEP_SUMMARY
-              echo "Validation will run automatically when they finish." >> $GITHUB_STEP_SUMMARY
-              ;;
-            no_relevant_changes)
-              echo "No files changed in \`Annual Security Reports/\` or \`Markdown Conversions/\` — nothing to validate." >> $GITHUB_STEP_SUMMARY
-              ;;
-            *)
-              echo "Validation was not required for this run." >> $GITHUB_STEP_SUMMARY
-              ;;
-          esac
+          python .github/scripts/generate-validator-summary.py --step skipped
