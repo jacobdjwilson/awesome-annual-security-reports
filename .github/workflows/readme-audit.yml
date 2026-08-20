@@ -36,13 +36,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: readme-audit-findings
-          path: .github/scripts/readme_audit_findings.json
+          path: .github/artifacts/readme_audit_findings.json
           
       - name: Generate Step Summary
         if: always()
         run: |
-          if [ -f .github/scripts/readme_audit_findings.json ]; then
-            TOTAL=$(jq '[.[] | length] | add' .github/scripts/readme_audit_findings.json)
+          if [ -f .github/artifacts/readme_audit_findings.json ]; then
+            TOTAL=$(jq '[.[] | length] | add' .github/artifacts/readme_audit_findings.json)
             echo "## 📊 README Audit Results" >> $GITHUB_STEP_SUMMARY
             echo "Found **$TOTAL** potential issues." >> $GITHUB_STEP_SUMMARY
             echo "Please download the artifact to review the detailed findings." >> $GITHUB_STEP_SUMMARY
