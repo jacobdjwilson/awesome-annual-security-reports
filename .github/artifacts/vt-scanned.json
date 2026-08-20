@@ -38,5 +38,10 @@
     "status": "completed",
     "file": "Annual Security Reports/2016/ENISA-Threat-Landscape-2016.pdf",
     "verdict": "Clean"
+  },
+  "f64aa538cf9ae1898a6e3cc6df68145f984ff191c53d727020e50970bc2d90da": {
+    "status": "completed",
+    "file": "Annual Security Reports/2016/Proofpoint-State-of-the-Phish-2016.pdf",
+    "verdict": "Clean"
   }
 }
