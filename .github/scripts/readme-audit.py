@@ -209,10 +209,11 @@ def main():
         'category_mismatches': check_categories(entries, cat_keywords)
     }
     
-    with open('readme_audit_findings.json', 'w', encoding='utf-8') as f:
+    output_path = '../artifacts/readme_audit_findings.json'
+    with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(findings, f, indent=2)
         
-    print("Audit complete. Findings written to readme_audit_findings.json")
+    print(f"Audit complete. Findings written to {output_path}")
     
     total_findings = sum(len(v) for v in findings.values())
     if total_findings > 0:
