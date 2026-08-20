@@ -30,6 +30,14 @@ jobs:
           PY_PACKAGES=$(jq -r '.workflow.virustotal.python_packages | join(" ")' .github/artifacts/workflow-config.json)
           pip install --break-system-packages $PY_PACKAGES
 
+      - name: Cache VirusTotal Tracking
+        uses: actions/cache@v4
+        with:
+          path: .github/artifacts/vt-scanned.json
+          key: vt-scanned-${{ github.run_id }}
+          restore-keys: |
+            vt-scanned-
+
       - name: Find all PDFs
         run: |
           python .github/scripts/find-all-pdfs.py
@@ -44,14 +52,7 @@ jobs:
             --daily-mode \
             --artifacts-dir .github/artifacts
 
-      - name: Commit tracking file
-        if: always()
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .github/artifacts/vt-scanned.json
-          # Commit only if there are changes
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update VirusTotal tracking" && git push)
+
 
       - name: Open Issue on Malicious Finding
         if: failure()
