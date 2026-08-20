@@ -16,7 +16,9 @@
         "current": 7,
         "stale": 14,
         "old": 30
-      }
+      },
+      "validation_prompt_path": ".github/ai-prompts/report-discovery-validation-prompt.md",
+      "feedback_learner_prompt_path": ".github/ai-prompts/discovery-feedback-learner-prompt.md"
     },
     "conversion": {
       "system_packages": [
@@ -73,6 +75,8 @@
       "markdown_lines_for_analysis": 200,
       "markdown_max_chars_for_analysis": 12000,
       "errors_output_file": "analysis_errors.json",
+      "summary_prompt_path": ".github/ai-prompts/markdown-summarization-prompt.md",
+      "categorization_prompt_path": ".github/ai-prompts/report-categorization-prompt.md",
       "comment": "markdown_lines_for_analysis and markdown_max_chars_for_analysis both apply — the larger resulting slice is used, capped at markdown_max_chars_for_analysis. This ensures enough context is passed even when early lines are sparse (e.g. heavy TOC). errors_output_file names the structured per-report error log emitted when analysis fails."
     },
     "google_search": {

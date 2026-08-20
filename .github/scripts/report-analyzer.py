@@ -83,10 +83,6 @@ EXIT_QUOTA_EXHAUSTED = 2
 class ConfigLoader:
     """Loads and validates all configuration files from .github/artifacts/"""
 
-    # Prompt paths relative to the repo root
-    SUMMARY_PROMPT_PATH = ".github/ai-prompts/markdown-summarization-prompt.md"
-    CAT_PROMPT_PATH     = ".github/ai-prompts/report-categorization-prompt.md"
-
     def __init__(self, artifacts_dir: str = ".github/artifacts"):
         self.artifacts_dir = Path(artifacts_dir)
 
@@ -99,12 +95,22 @@ class ConfigLoader:
             raise ValueError("ai-models.json is required")
         if not self.categories_config:
             raise ValueError("report-categories.json is required")
+        if not self.workflow_config:
+            raise ValueError("workflow-config.json is required")
 
         # AI model names
         models = self.ai_config.get("models", {})
         self.primary_model: str   = models.get("primary")
         self.secondary_model: str = models.get("secondary")
         self.tertiary_model: str  = models.get("tertiary")
+
+        # Prompt paths loaded from workflow-config.json
+        analysis_cfg = (self.workflow_config or {}).get("workflow", {}).get("analysis", {})
+        self.SUMMARY_PROMPT_PATH = analysis_cfg.get("summary_prompt_path")
+        self.CAT_PROMPT_PATH     = analysis_cfg.get("categorization_prompt_path")
+        
+        if not self.SUMMARY_PROMPT_PATH or not self.CAT_PROMPT_PATH:
+            raise ValueError("summary_prompt_path and categorization_prompt_path are required in workflow-config.json (under analysis)")
 
         # Generation config defaults
         self.gen_config: Dict[str, Any] = (

@@ -779,7 +779,6 @@ def main():
     print(f"✓ Converted: {successful}/{len(results)}")
     if failed:
         print(f"✗ Failed:    {failed}/{len(results)}")
-    print(f"\n{converter.cache.stats()}")
     print(f"✓ Results saved to: {args.output_json}")
     print(f"{'='*70}\n")
 

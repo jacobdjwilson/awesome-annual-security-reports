@@ -60,6 +60,10 @@ class Config:
         fb  = self._load("discovery-feedback.json")
         gsc = self._load("google-search-config.json")
 
+        # Prompt
+        discovery_cfg = wf.get("workflow", {}).get("discovery", {})
+        self.prompt_path_str = discovery_cfg.get("feedback_learner_prompt_path")
+        
         # AI model
         models = aim.get("models", {})
         self.primary_model   = models.get("primary")
@@ -360,7 +364,10 @@ class FeedbackAnalyser:
                 rows.append(f"... and {extra} more")
             return "\n".join(rows) if rows else "(none)"
 
-        prompt_path = self.dir.parent / "ai-prompts" / "discovery-feedback-learner-prompt.md"
+        if not self.config.prompt_path_str:
+            print(f"ERROR: Prompt path missing from workflow-config.json")
+            return {}
+        prompt_path = Path(self.config.prompt_path_str)
         if not prompt_path.exists():
             print(f"ERROR: Prompt file not found: {prompt_path}")
             return {}

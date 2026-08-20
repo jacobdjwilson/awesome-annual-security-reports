@@ -1504,7 +1504,22 @@ class GeminiValidator:
         self.model_name = model_name
         self.api_key    = api_key
         
-        prompt_path = artifacts_dir.parent / "ai-prompts" / "report-discovery-validation-prompt.md"
+        wf_config_path = artifacts_dir / "workflow-config.json"
+        prompt_path_str = None
+        if wf_config_path.exists():
+            import json
+            try:
+                wf_data = json.loads(wf_config_path.read_text(encoding="utf-8"))
+                prompt_path_str = wf_data.get("workflow", {}).get("discovery", {}).get("validation_prompt_path")
+            except Exception:
+                pass
+                
+        if not prompt_path_str:
+            print(f"⊘ Prompt path missing from workflow-config.json — Gemini validation skipped")
+            self.PROMPT = None
+            return
+
+        prompt_path = Path(prompt_path_str)
         if not prompt_path.exists():
             print(f"⊘ Prompt file not found: {prompt_path} — Gemini validation skipped")
             return
@@ -1668,7 +1683,7 @@ def main() -> int:
     print(f"{'='*70}")
     print("Building lineage index...")
     print(f"{'='*70}\n")
-    lineage    = ReportLineageIndex(config.PDF_ROOT)
+    lineage    = ReportLineageIndex(config.pdf_root)
     org_domains = OrgDomainIndex()
     scheduler  = SlotScheduler(today)
     scanner    = ReportScanner(config, lineage, scheduler)

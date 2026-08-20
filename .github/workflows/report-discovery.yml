@@ -86,7 +86,8 @@ jobs:
 
           export EXIT_CODE
           python .github/scripts/parse-discovery-output.py
-
+          
+          exit $EXIT_CODE
       - name: Upload discovery log
         if: always()
         uses: actions/upload-artifact@v6

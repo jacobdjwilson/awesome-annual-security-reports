@@ -12,15 +12,28 @@ def main():
     run_id = os.environ.get("GITHUB_RUN_ID", "")
     run_url = f"https://github.com/{repo}/actions/runs/{run_id}"
 
-    file_count = os.environ.get("FILE_COUNT", "0")
-    successful = os.environ.get("SUCCESSFUL", "0")
-    failed = os.environ.get("FAILED", "0")
-    pr_num = os.environ.get("PR_NUM", "")
-    days_old = os.environ.get("INPUT_DAYS_OLD", "90")
-    changes_detected = os.environ.get("CHANGES_DETECTED", "false")
-    analysis_count = os.environ.get("ANALYSIS_COUNT", "0")
-    analysis_error_count = os.environ.get("ANALYSIS_ERROR_COUNT", "0")
-    errors_file = os.environ.get("ERRORS_FILE", "analysis_errors.json")
+    # Load config for defaults
+    config_path = ".github/artifacts/workflow-config.json"
+    config = {}
+    if os.path.exists(config_path):
+        try:
+            with open(config_path, "r", encoding="utf-8") as f:
+                config = json.load(f).get("workflow", {})
+        except Exception:
+            pass
+
+    default_days_old = str(config.get("conversion", {}).get("max_age_days"))
+    default_errors_file = config.get("analysis", {}).get("errors_output_file")
+
+    file_count = os.environ.get("FILE_COUNT") or "0"
+    successful = os.environ.get("SUCCESSFUL") or "0"
+    failed = os.environ.get("FAILED") or "0"
+    pr_num = os.environ.get("PR_NUM") or ""
+    days_old = os.environ.get("INPUT_DAYS_OLD") or default_days_old
+    changes_detected = os.environ.get("CHANGES_DETECTED") or "false"
+    analysis_count = os.environ.get("ANALYSIS_COUNT") or "0"
+    analysis_error_count = os.environ.get("ANALYSIS_ERROR_COUNT") or "0"
+    errors_file = os.environ.get("ERRORS_FILE") or default_errors_file
 
     with open(github_step_summary, "a", encoding="utf-8") as summary:
         summary.write("## ♻️ Refresh Old Conversions — Processing\n\n")
