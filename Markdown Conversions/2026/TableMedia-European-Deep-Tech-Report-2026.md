@@ -1,176 +1,1135 @@
-# European Deep Tech Report 2026
+| T H | E   | 2 0 | 2 6   |     |     |      |     |     |
+| --- | --- | --- | ----- | --- | --- | ---- | --- | --- |
+| E U | R   | O P | E A N |   D | E E | P  T | E C | H   |
+| R E | P O | RT  |       |     |     |      |     |     |
+March 2026
 
-## Table of Contents
-- [Executive Summary](#executive-summary)
-- [About this report](#about-this-report)
-- [Meet the authors](#meet-the-authors)
-- [Content](#content)
-- [1. Deep Tech Defined](#1-deep-tech-defined)
-- [2. The European Deep Tech Opportunity](#2-the-european-deep-tech-opportunity)
-- [3. Funding Landscape](#3-funding-landscape)
-- [4. Origins of Deep Tech](#4-origins-of-deep-tech)
-- [5. Segment Deep Dives](#5-segment-deep-dives)
-- [6. Founder Resources](#6-founder-resources)
-- [7. Challenges & Recommendations](#7-challenges--recommendations)
-- [8. Deep Tech (Mis)conceptions](#8-deep-tech-misconceptions)
+Executive Summary
+1. DEEP TECH DEFINED Deep Tech is defined as novel scientific or engineering breakthroughs making their way into products and companies for the
+first time. Scientific and engineering breakthroughs have changed our lives immeasurably over the last century and even withi n
+the last 30 years as advances in telecoms, robotics and AI make their way from labs into our homes and workplaces. Looking
+forward, we need disruptive innovations more than ever to solve global challenges like climate change, resource scarcity or
+looming demographic and productivity crises.
+2. THE EUROPEAN Europe has the raw ingredients to build the next generational Deep Tech companies: Talent, Market Opportunity and Capital.
+DEEP TECH – Technical & Entrepreneurial Talent: Europe is home to 30% of the world's top Deep Tech universities and produces twice as
+OPPORTUNITY many science and engineering graduates as the US. A talent flywheel is now turning, with successful companies recycling
+founders, operators, and capital back into the European ecosystem.
+– Market Opportunity: Geopolitical tailwinds are driving demand for sovereign technology and local supply chains.
+Governments recognize the opportunity to drive economic growth through investment in innovation and are using policy and
+public capital to target AI infrastructure, semiconductors, space, and defence as instruments of GDP growth.
+– Capital: VC funding in Deep Tech continues to accelerate and is explored in detail in its own section .
+3. FUNDING LANDSCAPE – State of the Market: The value of VC backed European Deep Tech continues to grow, reaching a new high at $690bn with
+companies like Helsing and Synthesia driving recent growth.
+– Funding Landscape: VC funding for Deep Tech continues its growth on last year, rising to $20.3bn and making up an all
+time high of 32% of all VC investment, more than double the 15% of 2015. Deep Tech funding has proven its resilience and
+is only 4% down from the 2021 peak compared to Regular Tech which remains 54% down from 2021.
+2
 
----
+Executive Summary
+3. FUNDING LANDSCAPE – Countries: The UK attracted the most funding ($5.2bn), followed by France ($3.9bn) and Germany ($3.2bn). Finland,
+(CONT.) Sweden and Switzerland have the highest proportion of funding that went into Deep Tech.
+– Cities: Paris is the top European hub for Deep Tech VC funding in 2025 ($3.0bn), followed by London ($2.2bn) and
+Munich ($1.8bn). London is the top hub in most Novel Deep Tech segments, while Munich leads in Defence and Space,
+and Zurich in Novel Robotics.
+– Funding Gap: 70% of late -stage funding for European Deep Tech startups comes from non -European investors. They raise
+smaller rounds and are less likely to progress from one round to the next compared to US counterparts. European Deep
+Tech startups face a yearly funding gap between $4 -24bn.
+– Exit: Exits for European Deep Tech companies are broadly flat in 2024 and mostly (>80%) driven by M&A. By value, the
+majority of this M&A is acquired by US companies. P ublic market listings showed signs of recovery in the US and China for
+Deep Tech companies, while European public markets remained quiet in 2025.
+4. ORIGINS OF DEEP TECH Research spinouts account for 33% of new Deep Tech startups since 2015 with the highest portion in the fields of photonics
+and quantum technology. The typical European Deep Tech founder has a technical background, at least a master’s degree and
+is 35 years old. Just under a quarter have work experience in startups, while a further 21% have experience in blue chip:
+industrial corporates, consulting firms or tech firms.
+3
 
-## Executive Summary
+Executive Summary
+5. SEGMENT DEEP DIVES
+2025 funding (YoY growth)
+NOVEL AI FUTURE OF COMPUTE NOVEL ROBOTICS COMPBIO & CHEMISTRY NOVEL ENERGY SPACE TECH DEFENCE
+$3.4bn (+27%) $2.5bn (+115%) $468m (+64%) $1.1bn (+88%) $700m (-41%) $1.3bn (+22%) $1.8bn (+125%)
+Foundational Models: Quantum computing Cognitive robotics: AI-driven drug discovery: Nuclear Fusion: Earth observation: AI for Defence:
+Mistral €1.7bn hardware & software: NeuraRobotics €120m Isomorphic Labs $600m, Proxima Fusion €145m, ICEYE €150m, Overstory $43m Helsing €600m
+AI Models for vision and Quantinuum$800m, General purpose robotic Charm Therapeutics $80m, Marvel Fusion €50m, Launch vehicles: Drones:
+voice generation: IQM $320m, Multiverse intelligence: Relation Therapeutics $55m Renaissance Fusion €32m Isar Aerospace €150m Quantum Systems €340m,
+Black Forest Labs $300m, Computing €189m, Genesis AI $105m, AI-driven material Small nuclear reactors: Small satellite STARK $62m
+Synthesia$193m, Alice & Bob €100m Flexion Robotics $50m, discovery: CuspAI$100m Blykalla$50m, manufacturing: Air defence systems:
+ElevenLabs$180m Novel memory: Ferroelectric NoMagic$35m, AI-driven protein design: Steady Energy €32m EnduroSat$153m, Destinus€140m,
+AI-driven Engineering: Memory Company €77m Sereact€25m Latent Labs $50m, Growth Areas: Novel Aerospacelab€56m, Cambridge Aerospace $100m
+PhysicsX$155m, Photonic chips: Humanoids: Chemify$50m approaches for generating Reflex Aerospace €50m, Unmanned ground systems:
+Neural Concept $100m Q.ANT $80m Generative Bionics €70m Foundational model for clean energy in large volume, ReOrbit€45m ARX Robotics €42m
+World Models: Growth Areas: Growth Areas: Robotic biology: Bioptimus$41m grid-scale energy storage and Growth Areas: Enable Growth Areas:
+General Intuition $134m New compute hardware for a intelligence leading to Growth Areas: Shift further distribution systems to satisfy European sovereign launch Commercializing sovereign
+Growth areas: Enhancing AI's post Moore's Law era like generalization and flexibility towards ‘in silico’ design using rising energy needs and capacity and expand space European solutions that
+understanding of the physical quantum or photonic, more across applications, expansion AI in areas like pharma, geopolitical tensions. activity around earth leverage AI, drones and
+world & science, developing efficient data centre infra- of robotic companies becoming materials, biology, chemistry. observation, satellite robotics driven by rising
+European sovereign AI models, structure especially for AI full-stack providers including Supported by foundational manufacturing and in-space European defence budgets and
+capitalizing on AI Agent workloads, quantum-safe integration services, general biology models, agentic AI and manufacturing. More activity in geopolitical conflicts.
+orchestration. cryptography, brain-computer purpose Humanoids as the holy novel algorithms. Additionally, space creates needs for space
+interfaces. grail. hybrid systems that conduct debris removal and in-orbit
+physical experiments will lead satellite servicing.
+to further step changes.
+4
 
-### 1. DEEP TECH DEFINED
-Deep Tech is defined as novel scientific or engineering breakthroughs making their way into products and companies for the first time. Scientific and engineering breakthroughs have changed our lives immeasurably over the last century and even within the last 30 years as advances in telecoms, robotics and AI make their way from labs into our homes and workplaces. Looking forward, we need disruptive innovations more than ever to solve global challenges like climate change, resource scarcity or looming demographic and productivity crises.
+Executive Summary
+6. FOUNDER RESOURCES Deep Tech founders have a broad range of financing options spanning VC equity investments, grants and private credit
+offerings. Deep Tech investor criteria shift with each funding round, from technical validation at Seed to commercial tractio n
+and scale at Series B. To support early -stage technical founders, several online resources exist like our Data Room template or
+pitch deck checklist.
+7. CHALLENGES & To build a thriving European Deep Tech ecosystem, we identify four main challenges:
+RECOMMENDATIONS – The growth -stage funding gap: Beyond Series A there is not enough capital in Europe to fund businesses locally. As a result,
+companies raise smaller rounds, sell, or take capital from overseas that often results in a shift in the ‘geographic centre o f
+mass’ of the business away from Europe.
+– Fragmentation: Europe suffers from high -friction, fragmented regulation across countries while lacking the power of
+concentrated talent clusters.
+– Researcher to Founder: More needs to be done to turn European research excellence into high quality startups.
+– Risk appetite: European corporates and governments need to work more closely with startups and embrace risk to drive success.
+8. DEEP TECH Deep Tech is often misunderstood. It is the origin of venture capital and has historically shaped regional sovereignty by
+(MIS)CONCEPTIONS catalysing transformative technology trends and creating generation defining companies. Although more capital is typically
+required than for ‘shallow tech’, most of it is invested in building defensible IP and products that can’t be recreated overn ight
+using generative AI tools. Longer development timelines delay initial revenue, but once a technology matures, revenue growth
+often accelerates. While companies like Lilium have made headlines, Deep Tech companies fail at rates comparable to others,
+albeit with a distinct risk profile that investors must understand. The exit landscape remains too immature but overall retur ns
+suggest that Deep Tech portfolios outperform conventional tech.
+5
 
-### 2. THE EUROPEAN DEEP TECH OPPORTUNITY
-Europe has the raw ingredients to build the next generational Deep Tech companies: Talent, Market Opportunity and Capital.
-- **Technical & Entrepreneurial Talent**: Europe is home to 30% of the world's top Deep Tech universities and produces twice as many science and engineering graduates as the US. A talent flywheel is now turning, with successful companies recycling founders, operators, and capital back into the European ecosystem.
-- **Market Opportunity**: Geopolitical tailwinds are driving demand for sovereign technology and local supply chains. Governments recognize the opportunity to drive economic growth through investment in innovation and are using policy and public capital to target AI infrastructure, semiconductors, space, and defence as instruments of GDP growth.
-- **Capital**: VC funding in Deep Tech continues to accelerate and is explored in detail in its own section.
+50% white
+or
+About this report Methodology FCFBF6
+Deep Tech is Some technologies that were once considered novel or
+constantly evolving ‘Deep’ have now become mainstream and widely adopted.
+LLMs are going through this transition currently. This is why
+E3DDD1 8CB3CB B5B7AE DCB5B1
+certain companies are included in previous reports but not
+The report aims to align Europe’s definition of Deep Tech,
+in this year's report. As a result, funding numbers may vary
+examine the characteristics of the European ecosystem, dive
+from year to year.
+deep into key areas of Deep Tech, and lay out ways Europe can
+enhance its global competitiveness. B7A99B 5C98BE 8E958B C99191
+Data cut-off dates Cut-off dates for data is February 2026
+Deep Tech is no longer a niche curiosity. This report exists to cut through that static.
+unless stated otherwise on the chart.
+As the marginal costs to create software We aim to provide the European ecosystem
+plummet and traditional moats erode, with the definitions, data, and perspectives
+927F6B 0070AA 536156 B87072
+driven by generative AI tools, the hunt for designed to accelerate growth. Our goal is
+true defensibility has shifted toward the simple: to provide the clarity needed to Data sources Dealroom is the primary data provider for this report.
+physical and fundamental. Founders and build, fund, and scale world-leading Deep References to additional data sources and reports can be
+investors are looking beyond iterative Tech companies from within Europe. found on each slide.
+digital applications to solve the world’s
+In the following pages, we endeavour to
+hardest problems.
+align Europe's definition of Deep Tech,
+Yet, as capital pours in, so does noise. The examine the characteristics of the
+sector continues to suffer from fragmented ecosystem, and determine the blockers to
+Previous editions of the European Deep Tech Report
+definitions, conflicting data, and a lack of its global competitiveness.
+shared vision. This linguistic friction slows
+down founders and complicates the
+investment thesis. We cannot scale global
+champions if we aren’t even speaking the
+same language. 2022 2023
+6
+Innovative energy Comparison with Asia & China Comments Margaret
+2 0 2 1
+o f D e
+8 January 2021
+: th e y e
+e p T e c h
+a r
+.
+AD ebslucreip atniodn b alauctokm coavtiecrally generated AA Ic-goevnere roaft ae dc ocmonptaennyt 'ms aanyn buea li nrecoprorretct. AA Ic-goevnere roaft ae dc ocmonptaennyt 'ms aanyn buea li nrecoprorretct.
+2021 2024/25
 
-### 3. FUNDING LANDSCAPE
-- **State of the Market**: The value of VC backed European Deep Tech continues to grow, reaching a new high at $690bn with companies like Helsing and Synthesia driving recent growth.
-- **Funding Landscape**: VC funding for Deep Tech continues its growth on last year, rising to $20.3bn and making up an all time high of 32% of all VC investment, more than double the 15% of 2015. Deep Tech funding has proven its resilience and is only 4% down from the 2021 peak compared to Regular Tech which remains 54% down from 2021.
-- **Countries**: The UK attracted the most funding ($5.2bn), followed by France ($3.9bn) and Germany ($3.2bn). Finland, Sweden and Switzerland have the highest proportion of funding that went into Deep Tech.
-- **Cities**: Paris is the top European hub for Deep Tech VC funding in 2025 ($3.0bn), followed by London ($2.2bn) and Munich ($1.8bn). London is the top hub in most Novel Deep Tech segments, while Munich leads in Defence and Space, and Zurich in Novel Robotics.
-- **Funding Gap**: 70% of late-stage funding for European Deep Tech startups comes from non-European investors. They raise smaller rounds and are less likely to progress from one round to the next compared to US counterparts. European Deep Tech startups face a yearly funding gap between $4-24bn.
-- **Exit**: Exits for European Deep Tech companies are broadly flat in 2024 and mostly (>80%) driven by M&A. By value, the majority of this M&A is acquired by US companies. Public market listings showed signs of recovery in the US and China for Deep Tech companies, while European public markets remained quiet in 2025.
+50% white
+or
+Meet the authors Thank you to all contributors for their valued insight: FCFBF6
+|     |     | Founders & Operators               | Investors & LPs                    | Academia             |               |               |
+| --- | --- | ---------------------------------- | ---------------------------------- | -------------------- | ------------- | ------------- |
+|     |     | Christian Dupont, iPronics         | Nathan Benaich, Air Street Capital | Prof. Marco Hutter,  |               |               |
+|     |     |                                    |                                    | ETH Zurich           | E3DDD1 8CB3CB | B5B7AE DCB5B1 |
+|     |     | Jonathan Durnford-Smith, Synthesia | Craig Douglas, World Fund          |                      |               |               |
+Prof. Helmut Schönenberger,
+|     |     | Mehdi Ghissassi, Ai71 | Benjamin Erhart, UVC Partners |     |     |     |
+| --- | --- | --------------------- | ----------------------------- | --- | --- | --- |
+UnternehmerTUM& TUM
+|     |     | Jan Goetz, IQM | Alex Ferrara, Bessemer Venture Partners |     |     |     |
+| --- | --- | -------------- | --------------------------------------- | --- | --- | --- |
+Prof. Fabian Theis,
+|     |     | Max Gulde, Constellr | Fabian Gruner, HV Capital |     |     |     |
+| --- | --- | -------------------- | ------------------------- | --- | --- | --- |
+Helmholtz Munich
+Alexander Hammer, Dunia Innovation Avantika Gupta, Type One Ventures B7A99B 5C98BE 8E958B C99191
+|     |     | Stephan Herrmann, Reverion | Klaus Hommels, Lakestar |     |     |     |
+| --- | --- | -------------------------- | ----------------------- | --- | --- | --- |
+Corporate
+|            |                     | Roman Hölzl, RobCo         | Steven Jacobs, Drumbeat Capital           |               |     |     |
+| ---------- | ------------------- | -------------------------- | ----------------------------------------- | ------------- | --- | --- |
+| Simon King | Marc Alexander Kühn |                            |                                           | Tobias Henz,  |     |     |
+|            |                     | VayshKewada, Salience Labs | Michael Jobst, 55 North, VsquaredVentures |               |     |     |
+McKinsey & Company
+| Lakestar | Lakestar |                                        |                                    |                  |               |               |
+| -------- | -------- | -------------------------------------- | ---------------------------------- | ---------------- | ------------- | ------------- |
+|          |          | Martin Kupp, Renaissance Fusion & ESCP | Helmut Katzgraber, 55 North        |                  |               |               |
+|          |          |                                        |                                    | Stefan Maassen,  | 927F6B 0070AA | 536156 B87072 |
+|          |          | Moritz von der Linden, Marvel Fusion   | Andreas Klinger, Prototype Capital |                  |               |               |
+Deutsche Börse
+|     |     | Enrique Lizaso, Multiverse Computing | Victoria Lietha, SwisscommVentures |     |     |     |
+| --- | --- | ------------------------------------ | ---------------------------------- | --- | --- | --- |
+Gilles Requena,
+|     |     | Elena Obukhova, The Big Search | Sandra Malmberg, EQT Ventures |     |     |     |
+| --- | --- | ------------------------------ | ----------------------------- | --- | --- | --- |
+European Patent Office
+|     |     | James Regan, Oriole Networks | Jan Miczaika, HV Capital |     |     |     |
+| --- | --- | ---------------------------- | ------------------------ | --- | --- | --- |
+Neil Shah,
+|     |     | Romain Roullois, France Deeptech    | Paul Murphy, Lightspeed      | London Stock Exchange |     |     |
+| --- | --- | ----------------------------------- | ---------------------------- | --------------------- | --- | --- |
+|     |     | Nikita Rudin, Flexion Robotics      | Nels Nelsen, MenaltoAdvisors |                       |     |     |
+|     |     | Francesco Sciortino, Proxima Fusion | Andre Retterath, Earlybird   |                       |     |     |
+|     |     | Marc Wietfeld, Arx Robotics         | Jean Schmitt, Jolt Capital   |                       |     |     |
+Patrik Sobocki, Industrifonden
+| Nicolas Autret | Lorenzo Chiavarini |     |     |     |     |     |
+| -------------- | ------------------ | --- | --- | --- | --- | --- |
+Pierre Socha, Amadeus Capital Partners
+| Walden Catalyst | Dealroom |     |     |     |     |     |
+| --------------- | -------- | --- | --- | --- | --- | --- |
+Young Sohn, Walden Catalyst Ventures
+Cyril Vancura, imec.xpand
+Clement Vanden Driessche, Elaia
+Sander Verbrugge, NIF
+Johannes Virkkunen, European Investment Fund
+Will Wells, Speedinvest
+Rinke Zonneveld, Invest-NL
+7
 
-### 4. ORIGINS OF DEEP TECH
-Research spinouts account for 33% of new Deep Tech startups since 2015 with the highest portion in the fields of photonics and quantum technology. The typical European Deep Tech founder has a technical background, at least a master’s degree and is 35 years old. Just under a quarter have work experience in startups, while a further 21% have experience in blue chip: industrial corporates, consulting firms or tech firms.
+About the authors
+European, multi -stage Global venture capital firm Global startup & venture capital
+venture capital firm dedicated to Deep Tech investments intelligence platform
+Lakestar is a mission-driven investment firm focused on Walden Catalyst Ventures is helping early-stage companies Dealroom is the source of record on startups, innovation,
+building the next generation of sector-defining companies. in the US, Europe, and Israel build the next generation of high-growth companies, venture capital and tech
+We are increasingly focused on European sovereignty and category-defining businesses in Deep Tech. We back the ecosystems globally. Dealroom is a trusted source of
+resilience, backing the critical technologies and engineering bold and the daring—trailblazers who are changing the innovation data and predictive analytics, used by leading
+breakthroughs that ensure the continent’s future leadership. world and making life better for all of us. venture capitalists, corporates and governments, to discover
+the world’s most promising companies.
+Moving beyond generalist venture capital, we provide Walden Catalyst invests in innovators and entrepreneurs
+intensive, patient partnership to founders. With a global passionate about disruptive technologies and committed to Clients include many of the world’s foremost organisations
+mindset and deep roots in Europe’s regulatory and political excellence. For startups, this translates into unparalleled such as Sequoia, Accel, Index Ventures, McKinsey, BCG,
+landscapes, we empower visionary entrepreneurs to solve access to operational expertise, global reach, and a network Deloitte, Google, AWS, Microsoft, Stripe, and over 100
+complex challenges and build enduring companies that of industry captains eager to help build and scale the governments worldwide.
+transcend market cycles. companies of the future.
+8
 
-### 5. SEGMENT DEEP DIVES
-- **NOVEL AI**: $3.4bn (+27%)
-- **FUTURE OF COMPUTE**: $2.5bn (+115%)
-- **NOVEL ROBOTICS**: $468m (+64%)
-- **COMPBIO & CHEMISTRY**: $1.1bn (+88%)
-- **NOVEL ENERGY**: $700m (-41%)
-- **SPACE TECH**: $1.3bn (+22%)
-- **DEFENCE**: $1.8bn (+125%)
+Content
+1. DEEP TECH DEFINED
+page 10
+2. THE EUROPEAN DEEP TECH OPPORTUNITY
+page 17
+3. FUNDING LANDSCAPE
+page 29
+4. ORIGINS OF DEEP TECH
+page 71
+5. SEGMENT DEEP DIVES – BIGGEST TRENDS
+page 78
+NOVEL AI | FUTURE OF COMPUTE | NOVEL ROBOTICS | COMPUTATIONAL BIOLOGY & CHEMISTRY | NOVEL ENERGY | SPACE TECH | DEFENCE
+6. FOUNDER RESOURCES
+page 129
+7. CHALLENGES & RECOMMENDATIONS
+page 140
+8. DEEP TECH (MIS)CONCEPTIONS
+page 148
 
-### 6. FOUNDER RESOURCES
-Deep Tech founders have a broad range of financing options spanning VC equity investments, grants and private credit offerings. Deep Tech investor criteria shift with each funding round, from technical validation at Seed to commercial traction and scale at Series B. To support early-stage technical founders, several online resources exist like our Data Room template or pitch deck checklist.
+1 .
+| D E | E P |  T E | C H |   D | E F | I N | E D |     |
+| --- | --- | ---- | --- | --- | --- | --- | --- | --- |
 
-### 7. CHALLENGES & RECOMMENDATIONS
-To build a thriving European Deep Tech ecosystem, we identify four main challenges:
-- **The growth-stage funding gap**: Beyond Series A there is not enough capital in Europe to fund businesses locally. As a result, companies raise smaller rounds, sell, or take capital from overseas that often results in a shift in the ‘geographic centre of mass’ of the business away from Europe.
-- **Fragmentation**: Europe suffers from high-friction, fragmented regulation across countries while lacking the power of concentrated talent clusters.
-- **Researcher to Founder**: More needs to be done to turn European research excellence into high quality startups.
-- **Risk appetite**: European corporates and governments need to work more closely with startups and embrace risk to drive success.
+50% white
+or
+FCFBF6
+E3DDD1 8CB3CB B5B7AE DCB5B1
+Deep Tech is defined as
+B7A99B 5C98BE 8E958B C99191
+novel scientific or engineering breakthroughs
+927F6B 0070AA 536156 B87072
+making their way into
+products and companies
+for the first time
+11
 
-### 8. DEEP TECH (MIS)CONCEPTIONS
-Deep Tech is often misunderstood. It is the origin of venture capital and has historically shaped regional sovereignty by catalysing transformative technology trends and creating generation defining companies. Although more capital is typically required than for ‘shallow tech’, most of it is invested in building defensible IP and products that can’t be recreated overnight using generative AI tools. Longer development timelines delay initial revenue, but once a technology matures, revenue growth often accelerates. While companies like Lilium have made headlines, Deep Tech companies fail at rates comparable to others, albeit with a distinct risk profile that investors must understand. The exit landscape remains too immature but overall returns suggest that Deep Tech portfolios outperform conventional tech.
+50% white
+or
+Why Deep Tech matters:  FCFBF6
+Case 1:  Cost of data transmission
+Scientific and engineering
+Over the last 30 years, the cost of data transmission has decreased by over 1000x driven by enabling technologies
+like Broadband, WiFi, optical fibre, or 5G, resulting in a democratization of information.1, 2
+breakthroughs have
+E3DDD1 8CB3CB B5B7AE DCB5B1
+altered our lives
+| immeasurably over the  | 1990s | 2025 |
+| ---------------------- | ----- | ---- |
+B7A99B 5C98BE 8E958B C99191
+|     | $1,200 | $0.05 |
+| --- | ------ | ----- |
+last century and even
+|     | per Mbps | per Mbps |
+| --- | -------- | -------- |
+within the last 30 years
+927F6B 0070AA 536156 B87072
+Case 2:  Manufacturing hours per vehicle
+Commercialization of robotic automation in automotive manufacturing has brought down the time to produce
+a vehicle drastically and increased overall productivity.
+|     | 1990s3 | 2025   |
+| --- | ------ | ------ |
+|     | 40h+   | 10-15h |
+Sources: 1) DrPeering, 2010; 2) TeleGeography, 2025; 3) Reliableplant, 2006 12
 
----
+50% white
+or
+Why Deep Tech still matters: Solving today’s biggest problems will continue to FCFBF6
+require solutions that demand new technologies
+E3DDD1 8CB3CB B5B7AE DCB5B1
+Climate change Resource demand and scarcity Demographic and productivity crises
+2025 was the 3rd hottest year on record with Electrification is driving new resource require- Declining birth rates means fewer workers
+the top 3 years being: 2024, 2023, 2025.1 ments for hard to access or extract elements.3 must support the population.4 B7A99B 5C98BE 8E958B C99191
+Addressing this trend requires the development of To meet this demand, technologies are needed that To maintain and improve our quality of life, more
+technologies such as long-duration energy storage and optimize the entire resource lifecycle, from advanced advanced automation and robotic solutions are
+Direct Air Capture. These innovations are essential for sensors that streamline mineral discovery to innovative needed in verticals like manufacturing and health care.
+decarbonizing energy systems, removing atmospheric battery chemistries and motor technologies that reduce 927F6B 0070AA 536156 B87072
+CO , and strengthening resilience against climate change. our dependence on scarce elements.
+2
+Global mean temperature difference from 1850-1900 Demand Dependants per 100 working-age people, %
+average, 1850-20242
+20Mt 100
+Rare Earth
+2°C Total old age dependency ratio (65+ / 15-64)
+Graphite
+80
+15Mt
+Cobalt
+1°C Nickel 60
+10Mt
+Lithium
+40
+0°C 5Mt
+20
+0Mt
+2021 2024 2030 2040
+-1°C 0
+1850 1940 2025 Historical Actual/Est. Projected Projected 2000 2010 2020 2030 2040 2050 2060 2070 2080 2090 2100
+Sources: 1) European Commission, 2026; 2) HadCRUT5; 3) IEA, 2025; 4) United Nations, 2024 13
 
-## About this report
-Deep Tech is no longer a niche curiosity. This report exists to cut through that static. As the marginal costs to create software plummet and traditional moats erode, driven by generative AI tools, the hunt for true defensibility has shifted toward the physical and fundamental. Founders and investors are looking beyond iterative digital applications to solve the world’s hardest problems.
+50% white
+or
+Deep Tech progresses in waves driven by scientific and engineering breakthroughs  FCFBF6
+that define their eras, creating (and destroying) generational companies in the process
+E3DDD1 8CB3CB B5B7AE DCB5B1
+| Personal Computer |     | Cell + Smartphone |     | Internet |     | Generative AI |     |
+| ----------------- | --- | ----------------- | --- | -------- | --- | ------------- | --- |
+B7A99B 5C98BE 8E958B C99191
+|     | 1bn users in  |     | 1bn users in  |     | 1bn users in  |     | 1bn users in  |
+| --- | ------------- | --- | ------------- | --- | ------------- | --- | ------------- |
+|     | 36 years      |     | 32 years      |     | 25 years      |     | 3 months      |
+927F6B 0070AA 536156 B87072
+Market Cap ($bn) Market Cap ($bn) Market Cap ($bn) Market Cap ($tn)
+|  700 |     |      |     |  700 |     |     |     |
+| ---- | --- | ---- | --- | ---- | --- | --- | --- |
+|      |     |  700 |     |      |     | 3   |     |
+|  600 |     |      |     |  600 |     |     |     |
+ 600
+$4.15tn
+|  500 |     |      |     |  500 |     |     |                |
+| ---- | --- | ---- | --- | ---- | --- | --- | -------------- |
+|      |     |  500 |     |      |     | 2   | September 2025 |
+ 400
+|  400 |     |  400 |     |     |     |     |     |
+| ---- | --- | ---- | --- | --- | --- | --- | --- |
+ 300
+|  300 |     |  300 |     |     |     |     |     |
+| ---- | --- | ---- | --- | --- | --- | --- | --- |
+1
+ 200
+|  200 |     |  200 |     |     |     |     | Next potential loser |
+| ---- | --- | ---- | --- | --- | --- | --- | -------------------- |
+ 100
+|  100 |     |  100 |     |     |     |     |     |
+| ---- | --- | ---- | --- | --- | --- | --- | --- |
+-
+ -
+|  -  |     |  -  |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+86 88 90 92 94 96 98 00 02 04 06 08 10 12 04 06 08 10 12 14 16 13 15 17 19 21 23 25
+Sources: The Physics Factbook, 2004;  Gartner, Device Forecast, 2013-2023; World Bank, Mobile cellular subscriptions, Individuals using the Internet, and Population, May 2023;
+Similarweb; S&P, CapitalIQ, June 2024 14
 
-Yet, as capital pours in, so does noise. The sector continues to suffer from fragmented definitions, conflicting data, and a lack of shared vision. This linguistic friction slows down founders and complicates the investment thesis. We cannot scale global champions if we aren’t even speaking the same language.
+50% white
+or
+| The journey of Deep  |     |     |     |     |     |     |     |     | FCFBF6 |     |
+| -------------------- | --- | --- | --- | --- | --- | --- | --- | --- | ------ | --- |
+Current state of the Deep Tech journey along
+phases from Lab Research to Mass Adoption
+Tech, from the lab to
+mainstream adoption
+|                                    |     |              |     |                     |     |              |               |     | E3DDD1 8CB3CB | B5B7AE DCB5B1 |
+| ---------------------------------- | --- | ------------ | --- | ------------------- | --- | ------------ | ------------- | --- | ------------- | ------------- |
+|                                    |     | Lab Research |     | Product Development |     | Go-to-market | Mass Adoption |     |               |               |
+| Deep Tech is constantly evolving.  |     |              |     |                     |     |              | mRNA          |     |               |               |
+New Deep Tech areas emerge from  Cloud Computing B7A99B 5C98BE 8E958B C99191
+| fundamental research and the  |     |     |     |     |     |     | LLMs |     |     |     |
+| ----------------------------- | --- | --- | --- | --- | --- | --- | ---- | --- | --- | --- |
+3D Printing
+convergence of disciplines.
+|     | n   |     |     |     |     | Satellite Internet |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | ------------------ | --- | --- | --- | --- |
+o
+|                                         | i   |     |     |     |     |                  | Li-Ion batteries |     |               |               |
+| --------------------------------------- | --- | --- | --- | --- | --- | ---------------- | ---------------- | --- | ------------- | ------------- |
+| A challenge with the earliest stage of  | t a |     |     |     |     |                  |                  |     |               |               |
+|                                         |     |     |     |     |     | Reusable rockets |                  |     | 927F6B 0070AA | 536156 B87072 |
+r
+| Deep Tech is that categories often  | t e |     |     |     |             |                       |               |     |     |     |
+| ----------------------------------- | --- | --- | --- | --- | ----------- | --------------------- | ------------- | --- | --- | --- |
+|                                     | n   |     |     |     |             | Warehouse Autonomous  |               |     |     |     |
+| remain nameless until they move     | e   |     |     |     | AR Headsets |                       |               |     |     |     |
+|                                     | P   |     |     |     |             |                       | Mobile Robots | 5G  |     |     |
 
-### Methodology
-Some technologies that were once considered novel or ‘Deep’ have now become mainstream and widely adopted. LLMs are going through this transition currently. This is why certain companies are included in previous reports but not in this year's report. As a result, funding numbers may vary from year to year.
+t
+| beyond the laboratory stage.  | e   |     |     |     |     | Autonomous  |     | connectivity |     |     |
+| ----------------------------- | --- | --- | --- | --- | --- | ----------- | --- | ------------ | --- | --- |
+k
+r
+|                                    | a   |     |     | Photonic  |     | vehicles |     |     |     |     |
+| ---------------------------------- | --- | --- | --- | --------- | --- | -------- | --- | --- | --- | --- |
+| Over time, technologies that were  | M   |     |     |           |     |          |     |     |     |     |
+Convolutional
+Computing
+|     |     |     |     |     |     | Intelligence  |     | Neural  |     |     |
+| --- | --- | --- | --- | --- | --- | ------------- | --- | ------- | --- | --- |
+once considered Deep Tech become
+|     |     |     |     |     |     | for robotics | Networks |     |     |     |
+| --- | --- | --- | --- | --- | --- | ------------ | -------- | --- | --- | --- |
+mainstream and widely adopted.
+|                              |     |     |     | In space      | Humanoids |     |     |     |     |     |
+| ---------------------------- | --- | --- | --- | ------------- | --------- | --- | --- | --- | --- | --- |
+| LLMs are going through this  |     |     |     | manufacturing |           |     |     |     |     |     |
+Small
+World
+Modular
+| transition currently.   |     | Models |     |          |                 |     |     |     |     |     |
+| ----------------------- | --- | ------ | --- | -------- | --------------- | --- | --- | --- | --- | --- |
+|                         |     |        |     | Quantum  | Brain Computer  |     |     |     |     |     |
+Reactors
+|     |     |     | Fusion | Computing | Interfaces |     |     |     |     |     |
+| --- | --- | --- | ------ | --------- | ---------- | --- | --- | --- | --- | --- |
+Low
+|     | High |     |     | Technological uncertainty  |     |     |     |     |     |     |
+| --- | ---- | --- | --- | -------------------------- | --- | --- | --- | --- | --- | --- |
+‘It works’
+‘Will it work’
+15
 
-- **Data cut-off dates**: Cut-off dates for data is February 2026 unless stated otherwise on the chart.
-- **Data sources**: Dealroom is the primary data provider for this report. References to additional data sources and reports can be found on each slide.
+50% white
+or
+Deep Tech companies FCFBF6
+have different risk
+Development risk Capital intensity
+profiles that investors
+Longer initial Often heavy CapEx ahead of E3DDD1 8CB3CB B5B7AE DCB5B1
+development phase revenues and PMF
+need to understand
+B7A99B 5C98BE 8E958B C99191
+Deep Tech
+Team risk
+Market risk
+Academic and scientific 927F6B 0070AA 536156 B87072
+If the technology solves one of
+backgrounds may have less
+the world’s biggest problems,
+commercial experience
+there will be ample demand
+Regular
+Tech
+Competition risk Technology risk
+Often the strong technology New technologies don’t always
+edge prevents competition work as expected
+Based on qualitative and quantitative analysis by Lakestar, Walden Catalyst and Dealroom 16
 
----
+2 .
+| T H | E   |   E U | R O | P E   | A N |      |     |     |     |
+| --- | --- | ----- | --- | ----- | --- | ---- | --- | --- | --- |
+| D E | E   | P  T  | E C | H   O | P P | O RT | U N | I T | Y   |
 
-## Meet the authors
-![Table of contributors including Founders, Operators, Investors, LPs, and Academia]
+50% white
+or
+Europe has the raw  FCFBF6
+ingredients to build the
+next generational
+|     |     |     |     | E3DDD1 8CB3CB | B5B7AE DCB5B1 |
+| --- | --- | --- | --- | ------------- | ------------- |
+Deep Tech companies
+Technical &
+Europe has the skills
+|     | entrepreneurial  |     |     | B7A99B 5C98BE | 8E958B C99191 |
+| --- | ---------------- | --- | --- | ------------- | ------------- |
+talent
+|     |     |     |     | 927F6B 0070AA | 536156 B87072 |
+| --- | --- | --- | --- | ------------- | ------------- |
+Market
+| Deep Tech  |     |     | There is a  |     |     |
+| ---------- | --- | --- | ----------- | --- | --- |
+Capital
+| funding is on  |     | opportunity | recognized  |     |     |
+| -------------- | --- | ----------- | ----------- | --- | --- |
+| the rise       |     |             | need for    |     |     |
+sovereign tech
+18
 
-### Lakestar
-European, multi-stage venture capital firm dedicated to Deep Tech investments. Lakestar is a mission-driven investment firm focused on building the next generation of sector-defining companies.
+50% white
+or
+Europe hosts 30% of the top universities in Deep Tech subjects FCFBF6
+European university ranking in key Deep Tech domains (THE ranking 2026)
+E3DDD1 8CB3CB B5B7AE DCB5B1
+Engineering Computer Sciences Physical Sciences1
+1. Harvard University 1. University of Oxford 1. California Institute of Technology
+2. University of Oxford 2. University of Cambridge 2. Harvard University B7A99B 5C98BE 8E958B C99191
+3. Massachusetts Institute of Technology 3. ETH Zurich 2. Stanford University
+3. Stanford University 4. Massachusetts Institute of Technology 4. Massachusetts Institute of Technology
+5. University of Cambridge 5. Princeton University 5. Princeton University
+6. University of California, Berkeley 6. Stanford University 5. University of Cambridge
+927F6B 0070AA 536156 B87072
+7. California Institute of Technology 7. Carnegie Mellon University 7. University of California, Berkeley
+8. Peking University 8. Harvard University 8. University of Oxford
+9. Princeton University 9. Imperial College London 9. ETH Zurich
+10. National University of Singapore 10. Peking University 10. Tsinghua University
+11. ETH Zurich 11. California Institute of Technology 11. National University of Singapore
+12. Imperial College London 12. Tsinghua University 12. Imperial College London
+13. Tsinghua University 13. National University of Singapore 12. Peking University
+14. Nanyang Technological University, Singapore 13. University of California, Berkeley 14. Yale University
+15. Georgia Institute of Technology 15. Technical University of Munich 15. The University of Chicago
+16. Delft University of Technology 16. Nanyang Technological University, Singapore 16. Columbia University
+17. Yale University 17. Cornell University 17. University of California, Los Angeles
+18. University of California, Los Angeles 18. University of California, Los Angeles 18. Cornell University
+19. Technical University of Munich 19. University of Illinois at Urbana-Champaign 19. Technical University of Munich
+20. Carnegie Mellon University 20. University of Washington 20. École Polytechnique Fédérale de Lausanne
+1) Chemistry, Physics & Astronomy, Mathematics & Statistics, Geology, and Environmental, Earth and Marine Sciences
+Source: World University Ranking by Times Higher Education 19
 
-### Walden Catalyst Ventures
-Global venture capital firm helping early-stage companies in the US, Europe, and Israel build the next generation of high-growth companies, and category-defining businesses in Deep Tech.
+50% white
+or
+Europe has deep pools of technical talent and world “ The quality of European talent, both FCFBF6
+technical and commercial, is world -class,
+leading research full stop. At Lightspeed we back
+companies globally, and the best
+founders we meet in London, Paris, or
+E3DDD1 8CB3CB B5B7AE DCB5B1
+Munich are operating at exactly the same
+Strong talent pool Leading publication and IP level as their counterparts in San
+Francisco or New York.
+The honest constraint isn’t quality, it’s B7A99B 5C98BE 8E958B C99191
+quantity: we simply don’t have enough of
+it yet. But that’s changing fast. We’re
+seeing a new generation of European
+1.5 million STEM graduates per year 19.2% world’s top-10% most-cited papers
+founders and operators who’ve built or
+927F6B 0070AA 536156 B87072
+Europe produces 1.5m STEM graduates per year, more The EU accounts for 19.2% of the world’s top-10% most- scaled the continent’s breakout
+than double the US, with rising STEM graduation rates cited papers, almost on par with the US companies and are now ready to go
+bigger and more ambitious. And
+alongside them, a growing wave of
+experienced Europeans are returning
+from the US, bringing that knowledge
+back home. That flywheel is just getting
+started, and it’s one of the most exciting
+structural shifts happening in European
+2.15 million researchers (FTE) 21.8% international patent applications tech right now.”
+Europe has a huge pool of 2.15m researchers Europe generated 21.8% of international patent
+(FTE) and ~40% of EU doctoral students are in applications, second only to Asia
+science & tech fields PAUL MURPHY
+PARTNER AT LIGHTSPEED
+VENTURE PARTNERS
 
-### Dealroom
-Global startup & venture capital intelligence platform. Dealroom is the source of record on startups, innovation, venture capital and tech ecosystems globally.
+50% white
+or
+Europe has a growing FCFBF6
+Europe-based talent working in tech
+Count of Europe-based tech employees in million
+pool of entrepreneurial
+4.6
+and commercial talent
+4.5
+4.4 E3DDD1 8CB3CB B5B7AE DCB5B1
+4.2
++9%
+Beyond technical talent, Deep Tech startups 3.8
+need to build scalable businesses like any
+B7A99B 5C98BE 8E958B C99191
+other startup. This means building
+3.3
+functions in areas such as product, sales,
+3.0
+marketing, finance, HR, etc.
+2.7
+While these can be Deep Tech specific in 927F6B 0070AA 536156 B87072
+some cases, much of this talent is fungible
+2.3
+2.2
+between Deep Tech and non -Deep Tech
+startups and in this respect, Europe benefits
+from a rapidly growing tech ecosystem
+generally.
+Over the past decade talent working in tech
+in Europe has grown at a compounded
+annual rate of 9.1% to reach 4.6 million.
+2016 2017 2018 2019 2020 2021 2022 2023 2024 2025
+Source: State of European Tech, 2025 21
 
----
+50% white
+or
+The European FCFBF6
+The European Deep Tech flywheel
+Entrepreneur
+Deep Tech flywheel Capital
+turned investor
+Talent
+Investors
+E3DDD1 8CB3CB B5B7AE DCB5B1
+(Angels, VCs)
+Venture ecosystems scale through feedback
+cycles. Successful companies feed founders,
+1
+talent and capital back into the system to
+help it grow such that each successive cycle B7A99B 5C98BE 8E958B C99191
+1
+can be bigger than the last.
+Top performing
+Founders Growing and scaling startups 2
+Exit/IPO
+companies
+The European venture ecosystem is less
+mature than Silicon Valley which has seen
+927F6B 0070AA 536156 B87072
+many more cycles. The European Deep Tech
+venture ecosystem is even less mature than
+the wider European venture ecosystem.
+Talent
+Universities
+Set-backs
+1 Founders and companies leave 2 Exits/IPOs have stalled in Europe in the last few years, leading to
+Europe, typically for the US, for better ⎻ Less capital flowing back to funds, which can then fund fewer businesses
+market and capital access. or write smaller cheques.
+⎻ Fewer founders exiting and starting their next thing.
+22
 
-## Content
-1. **DEEP TECH DEFINED** (page 10)
-2. **THE EUROPEAN DEEP TECH OPPORTUNITY** (page 17)
-3. **FUNDING LANDSCAPE** (page 29)
-4. **ORIGINS OF DEEP TECH** (page 71)
-5. **SEGMENT DEEP DIVES – BIGGEST TRENDS** (page 78)
-6. **FOUNDER RESOURCES** (page 129)
-7. **CHALLENGES & RECOMMENDATIONS** (page 140)
-8. **DEEP TECH (MIS)CONCEPTIONS** (page 148)
+50% white
+or
+European flywheel FCFBF6
+Academic Excellence Economic Impact
+case study
+⎻ Founded in London in 2010 DeepMind alumni have founded companies that
+⎻ Published 1,000+ papers raised over $5bn in funding, created $23bn in
+E3DDD1 8CB3CB B5B7AE DCB5B1
+enterprise value, and employ 2,000+ people.
+⎻ Acquired by Google in 2014
+⎻ Nobel Prize in chemistry in 2024
+B7A99B 5C98BE 8E958B C99191
+Notable Successes Enterprise value of DeepMind spin-offs
+High-profile spin-offs like Mistral, Isomorphic Labs, and $
+Advanced Machine Intelligence are each now worth 23bn
+927F6B 0070AA 536156 B87072
+more than DeepMind’s original acquisition price.
+18bn
+Further examples of notable DeepMind
+spin-offs can be found here
+AA Is-gcreeneenrsahtoedt o cfo an tceonmt pmuateyr be incorrect.
+Long-Term Growth 8bn
+The "Deep Tech flywheel" typically takes a decade to
+gain momentum; Europe is currently in the early 3bn
+stages of this compounding process.
+126m
+2022 2023 2024 2025 March
+2026
+Source: Mix of qualitative and quantitative analysis by Lakestar, Walden Catalyst and Dealroom 23
 
----
+50% white
+or
+To further mature, the FCFBF6
+Deep Tech unicorns with Nearly 40% of these unicorns are based in the US
+European ecosystem European founders
+100% = 137 unicorns
+needs to retain founders 13 relocated, including:
+E3DDD1 8CB3CB B5B7AE DCB5B1
+tempted to build
+9%
+outside of Europe
+B7A99B 5C98BE 8E958B C99191
+28% 39 diaspora founders, including:
+63% 85based
+While we have the talent, more work must in Europe
+be done to keep it in Europe.
+927F6B 0070AA 536156 B87072
+We see 40% of the European Deep Tech
+unicorn founders have either relocated to
+the US post founding (relocation) or moved
+there prior to founding (diaspora founders).
+Efforts are underway to resolve with
+European founders leave Europe for the US for several reasons:
+EU Inc 1 pushing for a common legal
+framework for startups, and public -private
+Capital Depth Market Scale Reduced Friction
+partnerships to improve funding options
+for later stage scale -ups2. US investors provide One regulatory environment, Fewer bureaucratic hurdles
+larger, faster, and more one language, and one large (visas, regulations)
+risk-tolerant funding. customer base. compared to Europe.
+Sources: 1) EU-INC, 2026; 2) European Innovation Council, 2026 24
 
-## 1. Deep Tech Defined
-Deep Tech is defined as novel scientific or engineering breakthroughs making their way into products and companies for the first time.
+EU -INC is standard “
+In today’s Realpolitik world, tech sovereignty is geopolitical sovereignty.
+Europe needs new, massive, innovative tech companies to prevail. Yet,
+legal infrastructure
+our fragmented system makes it twice as hard for European founders to
+to reduce hurdles
+raise capital across Europe and accelerate quickly. This is why we’ve seen
+induced by our so many European founders braindrain to the US and build billion -euro-
+companies abroad.
+fragmented system
+EU –INC is a concrete solution by and for the entire European startup
+ecosystem that helps Europe leapfrog everyone else. It’s essentially
+standard legal infrastructure built around a digital, API -first central EU
+registry that enables seamless cross border investment, governance, talent
+retention (ESOP) and scaling.”
+ANDREAS KLINGER
+GP AT PROTOTYPE CAPITAL AND INITIATOR EU-INC
 
-### Why Deep Tech matters
-- **Case 1: Cost of data transmission**: Over the last 30 years, the cost of data transmission has decreased by over 1000x driven by enabling technologies like Broadband, WiFi, optical fibre, or 5G, resulting in a democratization of information.
-- **Case 2: Manufacturing hours per vehicle**: Commercialization of robotic automation in automotive manufacturing has brought down the time to produce a vehicle drastically and increased overall productivity.
+Munich ecosystem deep dive “ What makes Munich truly
+unique is the deep integration
+between TUM as a world -wide
+Munich is in the top -3 European cities measured by attracted funding in 2025 ($1.8bn) –
+top-ranked technical university,
+with an explicit dominance within Deep Tech topics like Space, Defence and Robotics.
+UnternehmerTUM as Europe’s
+While Germany has a distribution of Deep Tech companies, Munich is the epicentre.
+largest startup factory, and the
+It benefits from a dense concentration of technical talent, startup support, customers and
+strong industrial base with
+investment capital.
+global players and innovative
+Mittelstand companies.
+Technical talent Customers Startup support Venture firms
+The collaborative ecosystem
+culture translates world -class
+research into scalable Deep Tech
+ventures – producing over 100
+new tech startups annually.”
+PROFESSOR HELMUT
+SCHÖNENBERGER
+FOUNDER UNTERNEHMERTUM
+VICE PRESIDENT TUM
 
-### Why Deep Tech still matters
-Solving today’s biggest problems will continue to require solutions that demand new technologies:
-- **Climate change**: Addressing this requires technologies such as long-duration energy storage and Direct Air Capture.
-- **Resource demand and scarcity**: Technologies are needed that optimize the entire resource lifecycle, from advanced sensors that streamline mineral discovery to innovative battery chemistries.
-- **Demographic and productivity crises**: To maintain and improve our quality of life, more advanced automation and robotic solutions are needed in verticals like manufacturing and health care.
+50% white
+or
+A macroeconomic “ Europe’s Deep Tech challenge is often FCFBF6
+Annual GDP growth1 framed as a lack of capital. And the
+view on Europe funding gap is massive, especially at later
+20% stages. It is increasingly recognized, and
+momentum to address it is building.
+E3DDD1 8CB3CB B5B7AE DCB5B1
+But capital alone will not be enough. What
+money cannot buy is experience. And
+10%
+while we are building momentum to
+China
+Macroeconomic shocks unleash the entrepreneurial spirits in our
+US B7A99B 5C98BE 8E958B C99191
+societies, one of Europe’s distinctive
+Recent macroeconomic shocks (Covid pandemic, 0% EU strengths is its industrial base, with deep
+Russian invasion in Ukraine, Chinese imports and
+expertise in industrialization, in scaling
+US tariffs) have demonstrated an urgent need for
+complex technologies, and in operating
+Europe to build homegrown technologies and
+under real world constraints across highly 927F6B 0070AA 536156 B87072
+-10%
+supply chains.
+regulated markets.
+The real opportunity is to combine these
+Big markets Public capital
+strengths with smarter capital allocation
+European markets are big and both governments Public capital is increasingly going to help support these goals
+and systematic collaboration between
+and corporates increasingly want to buy from – EuroHPC joint undertaking of €7bn to 20274 corporates, startups, investors, and the
+European suppliers first where they can.
+– France announced €109bn over five years investment in AI public sector. Some European countries
++ data centres5 already show what works. The next step is
+Historic years of low GDP growth to learn deliberately from these best
+– EU Chips Act €43bn by 2030 for semiconductor production
+GDP growth of Europe as a whole lags China and + innovation in Europe6 practices and scale them across the
+region.”
+remains behind the US. Innovation driven creative – Germany announces €35bn of space investment by 20307
+destruction can accelerate this growth2. Getting this – Expected €20bn+ per year on European Deep Tech through
+right could spur a $1tn economic growth increased defence spend (3.5% GDP NATO defence spend
+TOBIAS HENZ
+opportunity by 20303. targets)8, 9
+PARTNER AT
+MCKINSEY & COMPANY
+Sources: 1) Worldbank, 2026;2) Nobel Prize, 2025; 3) McKinsey, 2025; 4) European Commission, 2026;
+5) Le Monde, 2025; 6) European Council, 2023; 7) DW, 2025; 8) NATO, 2025; 9) Deep Tech spending based on NATO
+targets, current % GDP spend and current GDP. Assumes 10% of incremental spend goes to deep tech per year.
 
-### Deep Tech progresses in waves
-Deep Tech progresses in waves driven by scientific and engineering breakthroughs that define their eras, creating (and destroying) generational companies in the process (e.g., Personal Computer, Cell + Smartphone, Internet, Generative AI).
+Europe has a “
+Europe has a unique opportunity in the emerging Deep Tech era. I often think about
+this through what I call the four I’s: Ideas, Innovation, Investment, and Independence.
+unique opportunity
+Europe is rich in ideas, supported by world -class research institutions and exceptional
+in the Deep Tech
+engineering talent. The next step is accelerating innovation, enabling entrepreneurs to
+translate breakthrough science into real -world technologies across AI infrastructure,
+era – driven by
+advanced computing, robotics, energy, and defence and security technologies.
+four I’s: Ideas,
+To build global leaders, Europe must also mobilize global investment to scale
+companies rapidly and compete on the world stage. At Walden Catalyst, we see this
+Innovation,
+momentum firsthand through companies such as Nearfield Instruments, enabling next -
+Investment, and generation semiconductor manufacturing, and ANYbotics, bringing autonomous
+robotics into industrial environments worldwide.
+Independence
+But this is not only about growth. It is also about independence, ensuring that Europe
+can build, own, and sustain critical technologies and industrial capabilities in the areas
+that will shape its future competitiveness and resilience.
+Ultimately, aligning these four forces: ideas, innovation, investment, and independence
+will determine Europe’s ability to build the next generation of globally significant Deep
+Tech companies.”
+YOUNG SOHN
+FOUNDING MANAGING PARTNER AT WALDEN CATALYST
+CHAIRMAN AT HARMAN INTERNATIONAL
+CHAIRMAN ADVISORY BOARD AT SAMSUNG SEMICONDUCTOR
 
-### The journey of Deep Tech
-The journey of Deep Tech, from the lab to mainstream adoption, involves phases from Lab Research to Product Development to Go-to-market to Mass Adoption. A challenge with the earliest stage of Deep Tech is that categories often remain nameless until they move beyond the laboratory stage.
+3 .
+| F U | N D | I N | G   |     |
+| --- | --- | --- | --- | --- |
+| L A | N D | S C | A P | E   |
 
-### Risk Profiles
-Deep Tech companies have different risk profiles that investors need to understand:
-- **Development risk**: Longer initial development phase.
-- **Capital intensity**: Often heavy CapEx ahead of revenues and PMF.
-- **Team risk**: Academic and scientific backgrounds may have less commercial experience.
-- **Market risk**: If the technology solves one of the world’s biggest problems, there will be ample demand.
-- **Competition risk**: Often the strong technology edge prevents competition.
-- **Technology risk**: New technologies don’t always work as expected.
+50% white
+or
+European Deep Tech is now worth $690bn, 60% of this are private,  FCFBF6
+non-acquired companies
+|     |     |     |     |     |     |     |     |     | E3DDD1 8CB3CB | B5B7AE DCB5B1 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | ------------- | ------------- |
+Combined enterprise value of European Deep Tech VC-backed startups Selected key successes
+$ bn
+|     |     |     |     |     | 690 | Company | Cohort | Valuation |               |               |
+| --- | --- | --- | --- | --- | --- | ------- | ------ | --------- | ------------- | ------------- |
+|     |     |     |     |     |     |         |        |           | B7A99B 5C98BE | 8E958B C99191 |
+614
+|     |     |     |     |     | 2020-2025 |     | 2020-2025 | $13.2bn |     |     |
+| --- | --- | --- | --- | --- | --------- | --- | --------- | ------- | --- | --- |
+512
+|     |     |     |     |     |     |     | 2015-2020 | $4bn | 927F6B 0070AA | 536156 B87072 |
+| --- | --- | --- | --- | --- | --- | --- | --------- | ---- | ------------- | ------------- |
+477
+2015-2020
+432
+|     |     |     |     |     |     |     | 2010-2015 | $13bn |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --------- | ----- | --- | --- |
+295
+|     |     |     |     |     |     |     | 2005-2010 | $29bn (public) |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --------- | -------------- | --- | --- |
+2010-2015
+201
+|     |     |     |     |     |     |     | 2000-2005 | $2.5bn (public) |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --------- | --------------- | --- | --- |
+2005-2010
+158
+2000-2005
+118
+| 95  |     |     |     |     |           |     | 1995-2000 | $2.4bn (acquired) |     |     |
+| --- | --- | --- | --- | --- | --------- | --- | --------- | ----------------- | --- | --- |
+| 73  |     |     |     |     | 1995-2000 |     |           |                   |     |     |
+1990-1995
+|           |           |           |           |           |      |     | 1990-1995 | $115bn (public) |     |     |
+| --------- | --------- | --------- | --------- | --------- | ---- | --- | --------- | --------------- | --- | --- |
+| 2015 2016 | 2017 2018 | 2019 2020 | 2021 2022 | 2023 2024 | 2025 |     |           |                 |     |     |
+30
 
----
+50% white
+or
+125 unicorns, $1bn+ exits or $100m+ revenue outcomes have emerged in  FCFBF6
+» Explore online
+European Deep Tech, with a fast growing pool of earlier stage companies
+|     |     |     |     | E3DDD1 8CB3CB | B5B7AE DCB5B1 |
+| --- | --- | --- | --- | ------------- | ------------- |
+Flow of new startups European pool of $100k+ funded companies by funding stage  European Deep Tech outcomes
+(8k+ companies total)
+|     |     |     |     | B7A99B 5C98BE | 8E958B C99191 |
+| --- | --- | --- | --- | ------------- | ------------- |
+T$h1o0r0omug+ hrberveednsu  eU annicdo/ronrs $1bn+ value
+Thoroughbreds &
+Number of startups raising a VC-round each year S$t1a0r0tukp–s1 i5nm p ofuonlding B$r1e5amko–1ut0s0m funding S$c1a0l0em-u+p sfunding C$o2l5tsm-100m revenue
+Number of startups  Startups in pool Breakouts Scale-ups Colts Unicorns
+raising a VC-round
+$100k–15m funding $15m–100m funding $100m+ funding $25m-100m revenue $100m+ revenue and/or
+| each year |     |     |     | 927F6B 0070AA | 536156 B87072 |
+| --------- | --- | --- | --- | ------------- | ------------- |
+$1bn+ value
+| ±900  | 6.4k | 1.4k | 269 |     |     |
+| ----- | ---- | ---- | --- | --- | --- |
+| ±900  | 6.4k | 1.4k | 269 |     |     |
+165 125
+165 125
+31
 
-## 2. The European Deep Tech Opportunity
-Europe has the raw ingredients to build the next generational Deep Tech companies:
-- **Technical & entrepreneurial talent**: Europe has the skills.
-- **Market**: There is a recognized need for sovereign tech.
-- **Capital**: Deep Tech funding is on the rise.
+50% white
+or
+Deep Tech is growing again and has proven its resilience FCFBF6
+Both Deep Tech and Regular Tech are growing again year over year, with Deep Tech registering a stronger +20% growth.
+Looking back, Deep Tech is just 4% shy of its 2021 peak, while Regular Tech is still down 54%. E3DDD1 8CB3CB B5B7AE DCB5B1
+VC funding in European DEEP TECH startups by stage VC funding in European REGULAR TECH startups by stage
+|        |      |     |      |        |      |     |     | B7A99B 5C98BE | 8E958B C99191 |
+| ------ | ---- | --- | ---- | ------ | ---- | --- | --- | ------------- | ------------- |
+| $ bn   |      |     | $ bn |        |      |     |     |               |               |
+|        | 21.2 |     | -4%  |        | 94.9 |     |     |               |               |
+| $250m+ |      |     | 20.3 | $250m+ |      |     |     |               |               |
+19.8
+| $100-250m |     |      |      | $100-250m |      |     |     |               |               |
+| --------- | --- | ---- | ---- | --------- | ---- | --- | --- | ------------- | ------------- |
+| $40-100m  |     | 17.4 |      | $40-100m  |      |     |     | 927F6B 0070AA | 536156 B87072 |
+|           |     |      | 16.9 |           | 76.8 |     |     |               |               |
+| $15-40m   |     |      |      | $15-40m   |      |     |     |               |               |
+-54%
+| $4-15m |     |     |     | $4-15m |     |      |      |     |     |
+| ------ | --- | --- | --- | ------ | --- | ---- | ---- | --- | --- |
+| $1-4m  |     |     |     | $1-4m  |     |      |      |     |     |
+| $0-1m  |     |     |     | $0-1m  |     |      |      |     |     |
+|        | 9.7 |     |     |        |     | 42.5 | 44.1 |     |     |
+9.0
+38.0 38.7
+37.9
+27.9
+6.1
+4.9 21.5
+4.5
+19.1
+16.8
+2.9
+2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025
+32
 
-### University Rankings
-Europe hosts 30% of the top universities in Deep Tech subjects (Engineering, Computer Sciences, Physical Sciences).
+50% white
+or
+Deep Tech now captures  FCFBF6
+Deep Tech share of total VC funding in Europe
+%
+nearly one -third of all
+32%
+VC funding in Europe
+|     |     |     |     |     |     |     |     |     |     |     | E3DDD1 8CB3CB | B5B7AE DCB5B1 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------------- | ------------- |
+30%
+29%
+This share has increased more than 2x
+over the last 10 years.
+|     |     |     |     |     |     |     |     |     |     |     | B7A99B 5C98BE | 8E958B C99191 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------------- | ------------- |
+2x
+|     |     |     |     |     | 20% |     | 20% |     |     |     |               |               |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------------- | ------------- |
+|     | 19% | 19% |     | 19% |     |     |     |     |     |     |               |               |
+|     |     |     | 18% |     |     | 18% |     |     |     |     | 927F6B 0070AA | 536156 B87072 |
+15%
+| 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 |     |     |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | --- | --- |
+33
 
-### Talent Pool
-- 1.5 million STEM graduates per year.
-- 19.2% of the world’s top-10% most-cited papers.
-- 2.15 million researchers (FTE).
-- 21.8% of international patent applications.
+50% white
+or
+Late -stage financing made the most relevant step up compared to last year – FCFBF6
+indicating growing attractiveness of European scale -ups for investors
+E3DDD1 8CB3CB B5B7AE DCB5B1
+Small Deep Tech rounds Large Deep Tech rounds Mega Deep Tech rounds
+$ bn $ bn $ bn
+$4-15m $40-100m $250m+ 11.4 B7A99B 5C98BE 8E958B C99191
+$1-4m $15-40m $100-250m
+$0-1m
+9.8
+927F6B 0070AA 536156 B87072
+7.9
+7.6
+7.1 7.2
+6.9
+6.5
+6.0
+5.5
+4.4
+4.2 4.2
+4.0
+3.8
+3.5 3.5
+3.1
+2.9
+2.4 2.7 2.5 2.4 2.6
+1.8 1.7 1.7
+1.2
+0.9 1.0 0.8 0.8 0.9
+2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025
+34
 
-### Entrepreneurial Talent
-Beyond technical talent, Deep Tech startups need to build scalable businesses. Over the past decade, talent working in tech in Europe has grown at a compounded annual rate of 9.1% to reach 4.6 million.
+50% white
+or
+Deep Tech attracted  FCFBF6
+Deep Tech funding vs. other sectors in Europe
+$ bn
+significantly more
+|     | 2025 funding |     |     | 2020-2025 funding |     |     | 2024-2025 growth |     |     | 2020-2025 growth |     |     |
+| --- | ------------ | --- | --- | ----------------- | --- | --- | ---------------- | --- | --- | ---------------- | --- | --- |
+funding than any other
+E3DDD1 8CB3CB B5B7AE DCB5B1
+| Deep Tech |     |     | 20.3 |     |     | 105.2 |     | 20% |     |     | 108% |     |
+| --------- | --- | --- | ---- | --- | --- | ----- | --- | --- | --- | --- | ---- | --- |
+sector in 2025
+| AI      |     |     | 11.3 |     |     | 47.6 |     | 59% |     |     | 129% |     |
+| ------- | --- | --- | ---- | --- | --- | ---- | --- | --- | --- | --- | ---- | --- |
+| Fintech |     |     | 11.3 |     |     | 88.9 |     | 32% |     |     | 9%   |     |
+B7A99B 5C98BE 8E958B C99191
+| Enterprise Software   |     |     | 11.2 |     |     | 57.5 |     | 61%  |     |     | 96% |     |
+| --------------------- | --- | --- | ---- | --- | --- | ---- | --- | ---- | --- | --- | --- | --- |
+| Health & Lifesciences |     |     | 8.8  |     |     | 52.5 |     | 4%   |     |     | 24% |     |
+| Climate Tech          |     | 6.0 |      |     |     | 54.2 |     | -19% |     |     | 44% |     |
+927F6B 0070AA 536156 B87072
+| Energy         |     | 4.9 |     |     |      | 33.9 |     | -8%  |      |     | 138% |      |
+| -------------- | --- | --- | --- | --- | ---- | ---- | --- | ---- | ---- | --- | ---- | ---- |
+| Transportation |     | 3.4 |     |     |      | 34.4 |     | -9%  |      |     | -7%  |      |
+| Food           |     | 2.0 |     |     | 26.8 |      |     | -23% |      |     | -20% |      |
+| Hosting        |     | 2.0 |     | 4.0 |      |      |     |      | 224% |     |      | 461% |
+| Marketing      |     | 1.9 |     |     | 22.1 |      |     | -16% |      |     | -41% |      |
+| Security       |     | 1.7 |     |     | 9.9  |      |     | 51%  |      |     | 125% |      |
+| Real Estate    |     | 1.3 |     |     | 12.6 |      |     | 9%   |      |     | -14% |      |
+| Travel         |     | 1.2 |     |     | 7.3  |      |     | -14% |      |     | 27%  |      |
+| Media          |     | 1.1 |     |     | 8.9  |      |     | 8%   |      |     | -1%  |      |
+Segments shown exclude overlaps with Deep Tech, so Climate Tech is to be understood as non-Deep Tech Climate Tech (excluding nuclear, next gen batteries etc) 35
 
-### The European Deep Tech flywheel
-Venture ecosystems scale through feedback cycles. Successful companies feed founders, talent and capital back into the system to help it grow.
+50% white
+or
+AI x Deep Tech makes FCFBF6
+AI x Deep Tech share of Deep Tech VC funding
+up a rising share of Deep %
+Tech funding in Europe,
+Europe US E3DDD1 8CB3CB B5B7AE DCB5B1
+but still significantly less
+than in the US
+85%
+B7A99B 5C98BE 8E958B C99191
+Rest of Deep Tech
+927F6B 0070AA 536156 B87072
+50%
+41%
+30%
+29%
+AI x Deep Tech
+2022 2023 2024 2025 2025
+36
 
-### Retaining Founders
-To further mature, the European ecosystem needs to retain founders tempted to build outside of Europe. Nearly 40% of European Deep Tech unicorn founders have either relocated to the US post founding or moved there prior to founding.
+50% white
+or
+| Seed rounds are larger  |     |     |     |     |     |     |     |     |     | FCFBF6 |     |
+| ----------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------ | --- |
+Average round size in Europe, Deep Tech (DT) vs. Regular Tech (RT)
+$ m
+in Deep Tech and at an
+| all time | -high | 5 Seed |     |     |     | 20 Series A |     |     |      |               |               |
+| -------- | ----- | ------ | --- | --- | --- | ----------- | --- | --- | ---- | ------------- | ------------- |
+|          |       |        |     |     | DT  |             |     |     | DT   | E3DDD1 8CB3CB | B5B7AE DCB5B1 |
+|          |       |        |     |     | $5m |             |     |     | $18m |               |               |
+4
+|     |     |     |     |     | RT  |     |     |     | RT  |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+15
+| Round sizes at Series A onwards have  |     |     |     |     | $4m |     |     |     | $16m |     |     |
+| ------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | ---- | --- | --- |
+3
+jumped back to previous peak levels.
+|     |     |     |     |     |     |     |     |     |     | B7A99B 5C98BE | 8E958B C99191 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------------- | ------------- |
+2
+10
+1
+|     |     |             |           |           |      |               |           |           |      | 927F6B 0070AA | 536156 B87072 |
+| --- | --- | ----------- | --------- | --------- | ---- | ------------- | --------- | --------- | ---- | ------------- | ------------- |
+|     |     | 0           |           |           |      | 5             |           |           |      |               |               |
+|     |     | 2019 2020   | 2021 2022 | 2023 2024 | 2025 | 2019 2020     | 2021 2022 | 2023 2024 | 2025 |               |               |
+|     |     | 50 Series B |           |           |      | 150 Series C+ |           |           |      |               |               |
+DT
+$40m
+40
+DT
+RT
+|     |     |     |     |     |     | 100 |     |     | $98m |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | ---- | --- | --- |
+$39m
+30
+RT
+$79m
+20
+50
+10
+|     |     | 0         |           |           |      | 0         |           |           |      |     |     |
+| --- | --- | --------- | --------- | --------- | ---- | --------- | --------- | --------- | ---- | --- | --- |
+|     |     | 2019 2020 | 2021 2022 | 2023 2024 | 2025 | 2019 2020 | 2021 2022 | 2023 2024 | 2025 |     |     |
+Rounds names refer to standardized round types according to Dealroommethodology which looks at nominal round label,
+round amount, previous rounds, and company age to standardize round types beyond nominal reporting. 37
 
----
+50% white
+or
+The US extends its lead over Europe in Deep Tech funding,  FCFBF6
+driven by AI model makers
+E3DDD1 8CB3CB B5B7AE DCB5B1
+Deep Tech funding by region
+% growth last 12 months % growth since 2020 2025 2024 2023 2023 2022 2021
+B7A99B 5C98BE 8E958B C99191
+| US    |     |     | 92% |     | 286% | $144bn | $75bn | $46bn | $50bn | $74bn | $37bn |
+| ----- | --- | --- | --- | --- | ---- | ------ | ----- | ----- | ----- | ----- | ----- |
+| China | -8% |     |     | 40% |      | $16bn  | $18bn | $19bn | $20bn | $20bn | $12bn |
+927F6B 0070AA 536156 B87072
+| Europe        |     | 21% |     | 118% |      | $20bn  | $17bn  | $17bn | $19bn  | $21bn  | $9bn  |
+| ------------- | --- | --- | --- | ---- | ---- | ------ | ------ | ----- | ------ | ------ | ----- |
+| EU 27         |     | 26% |     |      | 142% | $13bn  | $11bn  | $12bn | $12bn  | $13bn  | $6bn  |
+| Rest of world |     | 53% |     |      | 189% |        |        |       |        |        |       |
+|               |     |     |     |      |      | $9bn   | $11bn  | $7bn  | $12bn  | $14bn  | $4bn  |
+| World         |     | 58% |     |      | 202% |        |        |       |        |        |       |
+|               |     |     |     |      |      | $189bn | $120bn | $90bn | $101bn | $128bn | $63bn |
+It should be noted that US AI model makers account for >50% of US Deep Tech funding and a significant portion of this is allo cated to
+infrastructure, such as chips and memory, rather than directly advancing Deep Tech innovation. The more limited AI model inve stments in the
+rest of the world imply a lower spend on AI -dedicated infrastructure and a higher proportion of funding going to other Deep Tech areas.
+38
 
-## 3. Funding Landscape
-- European Deep Tech is now worth $690bn.
-- 125 unicorns, $1bn+ exits or $100m+ revenue outcomes have emerged in European Deep Tech.
-- Deep Tech is growing again and has proven its resilience, registering a stronger +20% growth compared to Regular Tech.
-- Deep Tech now captures nearly one-third of all VC funding in Europe.
-- Late-stage financing made the most relevant step up compared to last year.
-- Deep Tech attracted significantly more funding than any other sector in 2025.
-- AI x Deep Tech makes up a rising share of Deep Tech funding in Europe, but still significantly less than in the US.
-- Seed rounds are larger in Deep Tech and at an all-time high.
-- The US extends its lead over Europe in Deep Tech funding, driven by AI model makers.
-
----
-
-nductors.
+50% white
+or
+The US had the strongest FCFBF6
+Share of VC funding going to Deep Tech by region
+increase in Deep Tech %
+funding of the last 3 years 60
+E3DDD1 8CB3CB B5B7AE DCB5B1
+US
+Foundational AI Models:
+50 China
+The surge of Deep Tech funding in the US
+B7A99B 5C98BE 8E958B C99191
+since 2022 is mostly driven by investment
+Global
+in foundational AI models. Companies like
+40
+OpenAI, Anthropic and xAI all had funding
+rounds in double -digit billions in 2025.
+927F6B 0070AA 536156 B87072
+China: Europe
+30
+Very striking is the continued increase of
+relevance of Deep Tech in the Chinese
+economy since 2016. Today, Chinese Deep
+Tech companies are receiving a higher 20
+share of VC funding than their European
+counterparts. The largest chunk, 46% of it,
+goes into semiconductors.
 10
 0
 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025
@@ -4012,4 +4971,4 @@ needed to match US levels regulation without conversion needs work investors und
 concentrated talent clusters too small to lead Series B+
 159
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-08", "model": "gemini-3.1-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-23", "model": "gemini-3.5-flash-lite"} -->
