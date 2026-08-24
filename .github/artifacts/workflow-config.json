@@ -20,6 +20,31 @@
       "validation_prompt_path": ".github/ai-prompts/report-discovery-validation-prompt.md",
       "feedback_learner_prompt_path": ".github/ai-prompts/discovery-feedback-learner-prompt.md"
     },
+    "issue_triage": {
+      "labels": {
+        "false-positive": { "color": "b60205", "description": "Discovery produced a wrong or unrelated result" },
+        "duplicate": { "color": "cfd3d7", "description": "Already in repo or previously reviewed" },
+        "mismatch": { "color": "d93f0b", "description": "Correct org but wrong year/edition/category" },
+        "accepted": { "color": "0e8a16", "description": "Valid discovery — ready for ingestion" }
+      },
+      "feedback_artifact_path": ".github/artifacts/discovery-feedback.json"
+    },
+    "ingest": {
+      "form_fields": {
+        "org": "Organization Name",
+        "title": "Report Title",
+        "year": "Report Year",
+        "url": "Direct PDF URL",
+        "category": "Category"
+      },
+      "table_fields": {
+        "org": "Organization",
+        "title": "Report",
+        "year": "Year",
+        "url": "URL",
+        "category": "Category"
+      }
+    },
     "conversion": {
       "system_packages": [
         "poppler-utils",

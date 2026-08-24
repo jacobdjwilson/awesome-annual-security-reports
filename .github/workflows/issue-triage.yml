@@ -90,29 +90,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LABEL: ${{ steps.parse.outputs.label }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
-
-          # Ensure label exists (create it if not)
-          gh label create "$LABEL" --color "$(case $LABEL in
-            false-positive) echo 'b60205';;  # red
-            duplicate)       echo 'cfd3d7';;  # grey
-            mismatch)        echo 'd93f0b';;  # orange-red
-            accepted)        echo '0e8a16';;  # green
-            *)               echo 'e4e669';;
-          esac)" --description "$(case $LABEL in
-            false-positive) echo 'Discovery produced a wrong or unrelated result';;
-            duplicate)      echo 'Already in repo or previously reviewed';;
-            mismatch)       echo 'Correct org but wrong year/edition/category';;
-            accepted)       echo 'Valid discovery — ready for ingestion';;
-            *)              echo '';;
-          esac)" 2>/dev/null || true
-
-          # Remove existing outcome labels before applying the new one
-          for old_label in false-positive duplicate mismatch accepted; do
-            gh issue edit "$ISSUE_NUMBER" --remove-label "$old_label" 2>/dev/null || true
-          done
-
-          gh issue edit "$ISSUE_NUMBER" --add-label "$LABEL"
+          python .github/scripts/apply-triage-label.py
 
       - name: Post triage acknowledgement
         if: steps.parse.outputs.valid == 'true'
@@ -158,71 +138,7 @@ jobs:
           ISSUE: ${{ steps.parse.outputs.issue }}
           ISSUE_TITLE: ${{ steps.parse.outputs.title }}
         run: |
-          python - << 'PYEOF'
-          import json, os, datetime, re, subprocess, sys
-
-          feedback_path = ".github/artifacts/discovery-feedback.json"
-
-          # ── Load existing feedback file ──────────────────────────────────
-          try:
-              with open(feedback_path, "r") as f:
-                  data = json.load(f)
-          except Exception as e:
-              print(f"ERROR loading feedback file: {e}")
-              sys.exit(1)
-
-          if "feedback_events" not in data:
-              data["feedback_events"] = []
-
-          issue_title = os.environ.get("ISSUE_TITLE", "")
-          # Extract org and URL from the issue body if possible
-          org = ""
-          url = ""
-          try:
-              issue_number = os.environ.get("ISSUE", "")
-              body_output = subprocess.check_output(
-                  ["gh", "issue", "view", issue_number, "--json", "body", "-q", ".body"],
-                  text=True
-              )
-              # e.g., | **Organization** | Acme Corp |
-              org_match = re.search(r"\|\s*\*\*Organization\*\*\s*\|\s*([^|]+?)\s*\|", body_output)
-              if org_match: org = org_match.group(1).strip()
-              
-              url_match = re.search(r"\|\s*\*\*URL\*\*\s*\|\s*([^|]+?)\s*\|", body_output)
-              if url_match: url = url_match.group(1).strip()
-          except Exception as e:
-              print(f"Could not extract org/url: {e}")
-
-          event = {
-              "timestamp": datetime.datetime.utcnow().isoformat() + "Z",
-              "issue_number": int(os.environ.get("ISSUE", "0")),
-              "issue_title": issue_title,
-              "org": org,
-              "url": url,
-              "outcome": os.environ.get("OUTCOME", ""),
-              "reason": os.environ.get("REASON", ""),
-              "author": os.environ.get("AUTHOR", "")
-          }
-
-          data["feedback_events"].append(event)
-          data["total_feedback_events"] = data.get("total_feedback_events", 0) + 1
-
-          # Recompute outcome_counts
-          counts = {"true_positive": 0, "false_positive": 0, "duplicate": 0, "mismatch": 0}
-          for ev in data["feedback_events"]:
-              o = ev.get("outcome")
-              if o in counts: counts[o] += 1
-          data["outcome_counts"] = counts
-
-          try:
-              with open(feedback_path, "w") as f:
-                  json.dump(data, f, indent=2)
-                  f.write("\n")
-              print("✓ Feedback event recorded in discovery-feedback.json")
-          except Exception as e:
-              print(f"ERROR saving feedback file: {e}")
-              sys.exit(1)
-          PYEOF
+          python .github/scripts/record-feedback-event.py
 
       - name: Commit updated artifact
         if: steps.parse.outputs.valid == 'true'
