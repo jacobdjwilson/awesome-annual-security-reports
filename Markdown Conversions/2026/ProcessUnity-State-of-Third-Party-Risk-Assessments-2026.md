@@ -1,103 +1,1420 @@
-# State of Third-Party Risk Assessments 2026
+State of Third-Party
+Risk Assessments
+2026
+The Cost of the Maturity Gap
+Organizations today believe their TPRM processes are mature, but
+the data they shared via our 2026 survey tells a different story.
+Prepared in collaboration with Ponemon Institute
 
-## Table of Contents
-- [Part 1: Introduction](#part-1-introduction)
-- [Part 2: The Ten Findings That Will Reshape Your Approach to Third-Party Risk Assessments](#part-2-the-ten-findings-that-will-reshape-your-approach-to-third-party-risk-assessments)
-  - [Key Finding 1 – Beliefs on TPRM Effectiveness](#key-finding-1--beliefs-on-tprm-effectiveness)
-  - [Key Finding 2 – Third-Party Breaches Per Month](#key-finding-2--third-party-breaches-per-month)
-  - [Key Finding 3 – Breaches & Financial Services](#key-finding-3--breaches--financial-services)
-  - [Key Finding 4 – Assessment Timelines](#key-finding-4--assessment-timelines)
-  - [Key Finding 5 – Assessment Resourcing](#key-finding-5--assessment-resourcing)
-  - [Key Finding 6 – Assessment Tooling](#key-finding-6--assessment-tooling)
-  - [Key Finding 7 – Vendor Response Timelines](#key-finding-7--vendor-response-timelines)
-  - [Key Finding 8 – Vendor Ecosystem & Assessments](#key-finding-8--vendor-ecosystem--assessments)
-  - [Key Finding 9 – Onboarding & Remediation](#key-finding-9--onboarding--remediation)
-  - [Key Finding 10 – Assessing Fourth-Party Risk](#key-finding-10--assessing-fourth-party-risk)
-- [Part 3: Additional Survey Insights](#part-3-additional-survey-insights)
-- [Part 4: Implications for Third Party Risk Leaders](#part-4-implications-for-third-party-risk-leaders)
-- [APPENDIX: Survey Data](#appendix-survey-data)
+The State of Third-Party Risk Assessments 2026
+Table of Contents
+Part 1: Introduction 3
+Part 2: The Ten Findings That Will Reshape Your
+8
+Approach to Third-Party Risk Assessments
+Key Finding 1 – Beliefs on TPRM Effectiveness 9
+Key Finding 2 – Third-Party Breaches Per Month 11
+Key Finding 3 – Breaches & Financial Services 13
+Key Finding 4 – Assessment Timelines 15
+Key Finding 5 – Assessment Resourcing 17
+Key Finding 6 – Assessment Tooling 18
+Key Finding 7 – Vendor Response Timelines 19
+Key Finding 8 – Vendor Ecosystem & Assessments 20
+Key Finding 9 – Onboarding & Remediation 22
+Key Finding 10 – Assessing Fourth-Party Risk 24
+Part 3: Additional Survey Insights 25
+Part 4: Implications for Third Party Risk Leaders 31
+APPENDIX: Survey Data 35
+Appendix 1 – Company Location 36
+Appendix 2 – Company Size 58
+Appendix 3 – Industry 77
+© ProcessUnity 2026 2
 
----
+The State of Third-Party Risk Assessments 2026
+PART 1
+Introduction to the Data
+& the Maturity Gap
+Organizations across many industries increasingly believe their
+Third-Party Risk Management (TPRM) programs are mature. The
+data in the ProcessUnity State of Third-Party Risk Assessments
+2026 tells a more complex story. While most organizations have
+established assessment processes, policies, and frameworks, the
+data from our 1,465 respondents uncovers that many have not
+achieved true program maturity, and the gap between perception
+and reality is growing.
+That gap has a measurable cost. Organizations are experiencing Organizations
+frequent third-party breaches, prolonged assessment cycles, slow
+report
+vendor responses, incomplete remediation, and persistent blind
+spots across their third-party ecosystems. In fact, organizations
+experiencing
+report experiencing an average of 12 third-party breaches per year,
+signaling that third-party risk is not an edge case, but a recurring an average of
+operational reality. These outcomes highlight a critical truth: having
+12 third-party
+processes in place is not the same as operating a mature, scalable,
+and effective TPRM program. breaches
+per year
+Purpose of this Study
+The ProcessUnity State of Third-Party Risk Assessments 2026 ,
+based on research conducted by the Ponemon Institute, examines
+how organizations assess and manage third-party risk and
+evaluates whether current Third-Party Risk Management (TPRM)
+assessment programs keep pace with the realities of modern
+third-party ecosystems. We studied how third-party risk assessment
+programs are executed in practice, how long they take, how
+consistently they scale across vendor portfolios, how confident
+organizations are in them, and whether they meaningfully reduce
+the likelihood and impact of third party-driven incidents.
+Third-party risk assessments represent a foundational component
+of TPRM programs. But while many organizations have formalized
+assessment processes, policies, and governance structures in
+place, this research evaluates whether those processes translate
+into measurable outcomes, including reduced breach frequency,
+improved visibility, and timely remediation of identified risks.
+3
 
-## Part 1: Introduction to the Data & the Maturity Gap
+The State of Third-Party Risk Assessments 2026
+About the Research &
+Global Data Set
+The Ponemon Institute surveyed 1,465 third-party risk practitioners,
+managers, and leaders, including IT, security, risk, and compliance
+professionals who are directly involved in their organization’s
+third-party risk assessment activities. Respondents represented
+organizations across North America, EMEA (Europe, Middle East,
+and Africa), and APAC (Asia Pacific), and spanned a broad range
+of industries, including Financial Services, Technology & Software,
+Public Sector, Manufacturing, Healthcare, and others.
+The survey consisted of 34 primary questions, in addition to
+demographic questions related to organizational size, industry, and
+geography. The questions examined a wide range of Third-Party
+Risk Management practices and outcomes, including:
+• TPRM program maturity and perceived effectiveness
+• Assessment timelines and resource requirements
+• Vendor responsiveness and questionnaire completion
+• Portfolio coverage and visibility across vendor
+ecosystems, including fourth-party risk
+• Onboarding decisions and remediation practices
+• Third-party breach frequency and impact
+• Systems, tools, and budget used to support assessments
+All responses were collected confidentially and analyzed in
+aggregate by the Ponemon Institute.
+To better understand how scale, geography, and industry influence
+third-party risk outcomes, responses were analyzed by region,
+industry, and organizational size using the following definitions
+throughout this report:
+• Large organizations: More than 10,000 employees
+• Small organizations: 10,000 employees or fewer
+Respondents represented
+organizations across North America,
+EMEA (Europe, Middle East, and
+Africa), and APAC (Asia Pacific)
+4
 
-Organizations across many industries increasingly believe their Third-Party Risk Management (TPRM) programs are mature. The data in the ProcessUnity State of Third-Party Risk Assessments 2026 tells a more complex story. While most organizations have established assessment processes, policies, and frameworks, the data from our 1,465 respondents uncovers that many have not achieved true program maturity, and the gap between perception and reality is growing.
+The State of Third-Party Risk Assessments 2026
+The TPRM Maturity Gap
+Based on survey responses, nearly half of organizations believe their
+Third-Party Risk Management programs are mature. Many point to
+standardized assessments, documented policies, defined workflows,
+and formal governance as evidence that their programs are working.
+On paper, these indicators suggest progress and control. In practice,
+the data tells a different story. Organizations report experiencing
+an average of 12 third-party breaches per year, and assessments
+routinely take four months or longer to complete (64% of large
+organizations report a four-plus month timeframe). These outcomes
+raise a critical question: if assessment programs are truly mature, why
+does risk continue to materialize so frequently?
+The TPRM maturity gap highlighted in this survey represents a
+disconnect between having third-party risk processes in place and
+operating a program that consistently delivers meaningful risk
+reduction at scale.
+KEY STAT
+53%
+of Companies Surveyed
+Believe They Have Effective
+Third-Party Assessments
+However...
+ONLY
+49% of Companies Surveyed
+Measure the Effectiveness of
+Their Third-Party Assessments
+5
 
-That gap has a measurable cost. Organizations are experiencing frequent third-party breaches, prolonged assessment cycles, slow vendor responses, incomplete remediation, and persistent blind spots across their third-party ecosystems. In fact, organizations report experiencing an average of 12 third-party breaches per year, signaling that third-party risk is not an edge case, but a recurring operational reality. These outcomes highlight a critical truth: having processes in place is not the same as operating a mature, scalable, and effective TPRM program.
+The State of Third-Party Risk Assessments 2026
+Process Maturity vs.
+Program Maturity
+Most organizations reach basic process maturity. Teams conduct
+On average, how many hours of your team’s time
+assessments, distribute questionnaires, and document workflows.
+does one third-party assessment take?
+Far fewer reach true program maturity, where those processes move
+quickly, scale across the entire vendor ecosystem, and materially
+More Than 40 Hours
+reduce exposuOren.  average, how many hours of your team’s time
+does one third-party assessment take?
+35%
+|     | On average, how many hours of your team’s time  |     |                                 |     | More Than 40 Hours |       |
+| --- | ----------------------------------------------- | --- | ------------------------------- | --- | ------------------ | ----- |
+|     |                                                 |     | 2  th7i%rd-party assessment tak |     |                    | 2 8 % |
+|     | does one                                        |     |                                 |     |                    | e ?   |
+|     | 10%                                             |     |                                 |     | 35%                |       |
+More Than 40 Hours
+|     | Less Than  |     | 8  to |  40  | 40 to 160  | 21860%+  |
+| --- | ---------- | --- | ----- | ---- | ---------- | -------- |
+|     |            |     | 2 7   | %    |            |          |
+|     | 8 Hours    |     | Hours |      | Hours      | Hours    |
+35%
+10%
+28%
+27%
+|     | Less Than  |     | 8 to 40  |     | 40 to 160  | 160+  |
+| --- | ---------- | --- | -------- | --- | ---------- | ----- |
+|     | 8 Hours    |     | Hours    |     | Hours      | Hours |
+10%
+On average, how long does it take to complete one
+|     | third-party assessment (from launch to closure)? Less Than  |     | 8 to 40  |     | 40 to 160  | 160+  |
+| --- | ----------------------------------------------------------- | --- | -------- | --- | ---------- | ----- |
+|     | 8 Hours                                                     |     | Hours    |     | Hours      | Hours |
+On average, how long does it take to complete one
+third-party assessment (from launch to closure)?
+On average, how long does it tak2e 4to% complete one
+23%
+21%
+third-party a1s9se%ssment (from launch to closure)?
+13%
+24%
+23%
+Less Than  21%
+|     |         |     | 119 to% 3  | 4 to 6  | 7 to 12  | More than    |
+| --- | ------- | --- | ---------- | ------- | -------- | ------------ |
+|     | 30 Days |     | Months     | Months  | Months   | 121 M3o%nths |
+24%
+23%
+21%
+19%
+|                       | Less Than  |                                     | 1 to 3  | 4 to 6  | 7 to 12                                     | M1or3e %than  |
+| --------------------- | ---------- | ----------------------------------- | ------- | ------- | ------------------------------------------- | ------------- |
+|                       | 30 Days    |                                     | Months  | Months  | Months                                      | 12 Months     |
+| WhatL epses Trhcaenn  |            | t of 1y too u3 r total4 t thoi 6rd  |         |         | -part7y t op 1o2 pulaMtoioren t hdano  you  |               |
+|                       | 30 Days    |                                     | Months  | Months  | Months                                      | 12 Months     |
+assess? (Please select one choice only)
+What percent of your total third-party population do you
+assess? (Please select one choice only)
+What percent o2f9 y%our total third-party population do you
+|     | 23% | assess? (Please select one choice only) |     |     |     |     |
+| --- | --- | --------------------------------------- | --- | --- | --- | --- |
+18%
+|     |     |     |     | 15% |     | 15% |
+| --- | --- | --- | --- | --- | --- | --- |
+29%
+23%
+|     | Less than  | 10% - 25% |     | 26% - 50% | 511%8 - %75% | 76% - 100% |
+| --- | ---------- | --------- | --- | --------- | ------------ | ---------- |
+|     | 10%        |           |     | 15%       |              | 15%        |
+6
+29%
+23%
+|     |            |           |     | 261%5 - %50% | 18%       | 761%5 - 1%00% |
+| --- | ---------- | --------- | --- | ------------ | --------- | ------------- |
+|     | Less than  | 10% - 25% |     |              | 51% - 75% |               |
+10%
+|     | Less than  | 10% - 25% |     | 26% - 50% | 51% - 75% | 76% - 100% |
+| --- | ---------- | --------- | --- | --------- | --------- | ---------- |
+10%
 
-### Purpose of this Study
-The ProcessUnity State of Third-Party Risk Assessments 2026, based on research conducted by the Ponemon Institute, examines how organizations assess and manage third-party risk and evaluates whether current Third-Party Risk Management (TPRM) assessment programs keep pace with the realities of modern third-party ecosystems. We studied how third-party risk assessment programs are executed in practice, how long they take, how consistently they scale across vendor portfolios, how confident organizations are in them, and whether they meaningfully reduce the likelihood and impact of third party-driven incidents.
+The State of Third-Party Risk Assessments 2026
+Focusing On Activities
+vs. Outcomes
+The distinction matters because process maturity focuses on
+activities, while program maturity focuses on outcomes. A program
+can complete assessments, enforce policies, and meet internal
+and regulatory requirements, yet still struggle to prevent incidents,
+close remediation gaps and assessment backlogs, or maintain
+visibility across third- and fourth-party relationships. 63% of
+organizations claim a single assessment takes more than 40 hours
+for their team to complete over multiple months, yet outcomes do
+not improve as we illustrate throughout this report. This illustrates a
+widening gap between perception and reality.
+The cost of this maturity gap is cumulative. Long assessment
+cycles delay risk decisions. Manual workflows concentrate effort
+on individual contributors rather than distributing risk ownership
+across the organization. Limited coverage leaves large portions
+of vendor ecosystems unassessed. Deferred remediation allows
+known issues to persist in production environments. Over time,
+these conditions create operational drag, increased risk, and
+repeated exposure.
+Perhaps most critically, the maturity gap creates a false sense of
+confidence. Visibility can concentrate on responsive, easy-to-assess
+vendors, while harder-to-evaluate relationships may receive less
+scrutiny. Programs appear effective based on what is visible, even
+as material risk remains unmanaged. As third-party ecosystems
+grow larger and more interconnected, this false confidence
+becomes increasingly dangerous.
+Closing the TPRM maturity gap requires a shift in how
+organizations define success. True program maturity
+depends on the ability to:
+• Move faster without sacrificing rigor
+• Scale assessments intelligently across the vendor population
+• Reduce reliance on manual effort
+• Evaluate effectiveness through measurable outcomes rather
+than process completion
+The sections that follow explore how this gap manifests across
+assessment execution, vendor engagement, remediation practices,
+and visibility, and explain why organizations must close the gap to
+manage third-party risk in today’s operating environment.
+7
 
-### About the Research & Global Data Set
-The Ponemon Institute surveyed 1,465 third-party risk practitioners, managers, and leaders, including IT, security, risk, and compliance professionals. Respondents represented organizations across North America, EMEA, and APAC, spanning industries including Financial Services, Technology & Software, Public Sector, Manufacturing, and Healthcare.
+The State of Third-Party Risk Assessments 2026
+PART 2
+The Ten Findings That Will
+Reshape Your Approach to
+Third-Party Risk Assessments
+It’s crucial to understand the persistent maturity gap in Third-Party Risk
+Management. By examining each of the ten key findings uncovered in the State
+of Third-Party Risk Assessments 2026, critical disconnects are revealed between
+organizations’ confidence in their third-party risk assessments, and the actual
+outcomes they achieve. When reviewing the findings and supporting data,
+consider how they reflect, or challenge, an organization’s current approach, and
+use these insights to inform more effective third-party risk strategies in practice.
+8
 
-### The TPRM Maturity Gap
-Based on survey responses, nearly half of organizations believe their Third-Party Risk Management programs are mature. However, organizations report experiencing an average of 12 third-party breaches per year, and assessments routinely take four months or longer to complete.
+How would you rate the maturity of your TPRM program?
+Select only one choice.
+100
+17%
+21%
+The State of Third-Party Risk Assessments 2026
+80
+23%
+egatnecreP
+|               | 60  |     |     | 35% |
+| ------------- | --- | --- | --- | --- |
+| KEY FINDING 1 |     | 32% |     |     |
+40
+29%
+66%  of large organizations believe their third-party
+20
+28%
+assessments are effective at reducing breach risk,
+15%
+0
+|     | Less Than 10,000  |     | More Than 10,000  |     |
+| --- | ----------------- | --- | ----------------- | --- |
+compared to only   of small organizations Employees Employees
+40%
+|     | Informal | Reactive | Proactive | Optimized |
+| --- | -------- | -------- | --------- | --------- |
+Confidence in  How effective are your organization’s third-party risk assessments
+in reducing the likelihood of a third-party data breach?
+TPRM Assessment
+100
+| Effectiveness Outpaces  |     | 24% |     |     |
+| ----------------------- | --- | --- | --- | --- |
+37%
+| Intended Outcomes | 80  |     |     |     |
+| ----------------- | --- | --- | --- | --- |
+16%
+egatnecreP 60 Believe Their Program is Effective
+| Two-thirds of large organizations believe their  |     |     |     | 29% |
+| ------------------------------------------------ | --- | --- | --- | --- |
+29%
+| third-party risk assessments are effective at  | 40  |     |     |     |
+| ---------------------------------------------- | --- | --- | --- | --- |
+Believe Their Program is Effective
+reducing third-party breach risk, compared to
+| just 40% of small organizations. This confidence  |     |     |     | 14% |
+| ------------------------------------------------- | --- | --- | --- | --- |
+|                                                   | 20  | 20% |     |     |
+| gap highlights a core maturity disconnect, as     |     |     |     | 12% |
+| belief in effectiveness does not consistently     |     | 11% |     | 8%  |
+0
+align with assessment speed, coverage,  Less Than 10,000  More Than 10,000
+|     |     | Employees |     | Employees |
+| --- | --- | --------- | --- | --------- |
+remediation, or breach outcomes.
+|     | Not       | Somewhat  | Partially | Highly              |
+| --- | --------- | --------- | --------- | ------------------- |
+|     | Effective | Effective | Effective | Effective Effective |
+What This Reveals About
+| the Maturity Gap What the Data Shows |     |     |     |     |
+| ------------------------------------ | --- | --- | --- | --- |
+66% of large organizations rate their TPRM
+•
+This finding highlights a familiar experience for
+assessments as effective, compared to 40% of small
+many organizations: confidence in third-party
+organizations, yet 89% of large organizations and
+risk assessments themselves often grows faster
+92% of small organizations experienced at least
+than the programs. Formal processes, tooling,
+one third-party breach in the past year.
+and governance can create a sense of control,
+even when day-to-day execution struggles  •  51% of respondents reported they don’t measure
+to keep pace with scale and complexity.
+the effectiveness of their assessments at all,
+Over time, this gap between confidence and
+highlighting an indicator of limited understanding
+| outcomes makes it harder   | of true assessment effectiveness. |     |     |     |
+| -------------------------- | --------------------------------- | --- | --- | --- |
+for organizations to accurately assess their
+•  While many organizations report high program
+true risk posture, leaving them exposed
+to third-party-driven threats. effectiveness, they still experienced an average of
+12 third-party breaches in the last year,
+demonstrating that confidence does not correlate
+with reduced incident frequency.
+9
 
-**KEY STAT:** 53% of Companies Surveyed Believe They Have Effective Third-Party Assessments. However, ONLY 49% of Companies Surveyed Measure the Effectiveness of Their Third-Party Assessments.
+The State of Third-Party Risk Assessments 2026
+KEY FINDING 1 (CONT.)
+66%  of large organizations believe their third-party
+assessments are effective at reducing breach risk,
+compared to only   of small organizations
+40%
+How would you rate the maturity of your TPRM program?
+Select only one choice.
+How would you rate the maturity of your TPRM program?
+More than
+|     | 15% | Se 2 | le 9 c % t only one c3h5o%ice. |     |     |     |     | 21% |     |     |
+| --- | --- | ---- | ------------------------------ | --- | --- | --- | --- | --- | --- | --- |
+10,000
+Employees
+More than
+| 10,000  | 15% |     | 29% |     | 35% |     |     | 21% |     |     |
+| ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+Less than
+|     | 28% |     |     | 32% |     |     | 23% |     | 17% |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+10,000
+Employees
+Less than
+| 10,000  | 28% |     |     | 32% |     |     | 23% |     | 17% |     |
+| ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+|     | Informal |     | Reactive |     |     | Proactive |     |           | Optimized |     |
+| --- | -------- | --- | -------- | --- | --- | --------- | --- | --------- | --------- | --- |
+|     | Informal |     | Reactive |     |     | Proactive |     | Optimized |           |     |
+How many data breaches or security incidents caused by third
+parties did your organization experience over the past 12 months
+How many data breaches or security incidents caused by third
+parties did your organization experience over the past 12 months
+More than
+| 10,000  | 11% | 21% |     | 17% |     | 25% |     | 16% |     | 4% 6% |
+| ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ----- |
+Employees
+More than
+10,000
+|     | 11% | 21% |     | 17% |     | 25% |     | 16% | 4%  | 6%  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+Less than
+| 10,000  | 8%  | 29% |     | 17% |     |     | 23% |     | 14% | 6% 3% |
+| ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ----- |
+Employees
+Less than
+| 10,000  | 8%  | 29% |     | 17% |     |     | 23% | 14% |     | 6% 3% |
+| ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ----- |
+Employees
+| None | 1 to 5 | 6 to 10 |     | 11 to 20 | 21 to 30 |     | More than 30 |     |     | Unsure |
+| ---- | ------ | ------- | --- | -------- | -------- | --- | ------------ | --- | --- | ------ |
+| None | 1 to 5 | 6 to 10 |     | 11 to 20 | 21 to 30 |     | More than 30 |     |     | Unsure |
+10
 
----
+The State of Third-Party Risk Assessments 2026
+KEY FINDING 2
+Organizations average
+one third-party breach
+, with Financial Services organizations
+per month
+reporting the most third-party breaches
+Third-Party Breaches
+How many data breaches or security
+are Frequent and
+incidents caused by third parties did
+Ongoing
+your organization experience over the
+past 12 months?
+Organizations report experiencing an
+average of 12 third-party breaches or
+security incidents in the last year, indicating
+that third-party risk is a recurring operational
+None 10%
+reality rather than an isolated event.
+1 to 5 25%
+What This Reveals About
+the Maturity Gap
+6 to 10 17%
+Frequent third-party breaches show that many
+organizations still react to incidents instead of
+11 to 20 24%
+preventing them. Even after teams complete
+assessments and document their third party’s
+controls, risk continues to materialize across 21 to 30 15%
+vendor relationships. This pattern suggests
+that existing programs are not yet translating More 5%
+than 30
+process effort into sustained risk reduction.
+Unsure 4%
+What the Data Shows
+• 90% of organizations globally
+experienced at least one third-party
+breach in the past 12 months, with an
+average of 12 breaches per organization.
+What were the consequences of the third-party data
+• Breach occurrence is consistent
+breach or security incident? Please select all that apply
+across organization size (89% of large
+organizations, 92% of small organizations)
+and across industries, indicating systemic
+exposure rather than isolated failure.
+19%
+11
+52%
+16%
+15%
+4%
+64%
+30%
+42%
+Financial loss Operational Reputational Lawsuits &
+Disruption Damage Fines
+Regulator Intellectual Strategic Other
+Consequences Property Theft Setbacks
+How many data breaches or security incidents caused
+by third parties did your organization experience over
+the past 12 months?
+More than
+10,000 11% 21% 17% 25% 16% 4% 6%
+Employees
+Less than
+10,000 8% 29% 17% 25% 14% 6% 3%
+Employees
+None 1 to 5 6 to 10 11 to 20 21 to 30 More than 30 Unsure
 
-## Part 2: The Ten Findings That Will Reshape Your Approach to Third-Party Risk Assessments
+How many data breaches or security
+incidents caused by third parties did
+your organization experience over the
+How manyp dasatt a1 2b rmeaocnhthess? or security
+incidents caused by third parties did
+your organization experience over the
+|     | None   | 1p0a%st 12 months? |     |     |     |     |     |     |
+| --- | ------ | ------------------ | --- | --- | --- | --- | --- | --- |
+|     | 1 to 5 |                    | 25% |     |     |     |     |     |
+10%
+None
+|                                                   | 6 to 10 | 17% |     |     |     |     |     |      |
+| ------------------------------------------------- | ------- | --- | --- | --- | --- | --- | --- | ---- |
+|                                                   | 1 to 5  |     | 25% |     |     |     |     |      |
+| The State of Third-Party 1R1i stko  2A0ssessments |         |     | 24% |     |     |     |     | 2026 |
+|                                                   | 6 to 10 | 17% |     |     |     |     |     |      |
+15%
+21 to 30
+11 to 20
+24%
+More
+KEY FINDING 2 (thCanO 30NT.5)%
+|                        | 21 to 30 | 15% |                         |     |     |     |     |     |
+| ---------------------- | -------- | --- | ----------------------- | --- | --- | --- | --- | --- |
+| Organizations average  | Unsure   |     | one third-party breach  |     |     |     |     |     |
+4%
+More
+5%
+than 30 , with Financial Services organizations
+per month
+Unsure
+4%
+reporting the most third-party breaches
+What were the consequences of the third-party data
+breach or security incident? Please select all that apply
+What were the consequences of the third-party data
+breach or security incident? Please select all that apply
+19%
+52%
+16%
+19%
+15%
+|     | 4%  |     |     | 52% |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+16%
+|     | 4%  |     |     |     |     | 15% |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     |     | 64% |     |     |     | 30% |     |     |
+42%
+64%
+30%
+42%
+|     |     |                | Operational    | Reputational  |     | Lawsuits &  |     |     |
+| --- | --- | -------------- | -------------- | ------------- | --- | ----------- | --- | --- |
+|     |     | Financial loss | Disruption     | Damage        |     | Fines       |     |     |
+|     |     | Regulator      | Intellectual   | Strategic     |     | Other       |     |     |
+|     |     | Consequences   | Property Theft | Setbacks      |     |             |     |     |
+|     |     |                | Operational    | Reputational  |     | Lawsuits &  |     |     |
+|     |     | Financial loss | Disruption     | Damage        |     | Fines       |     |     |
+|     |     | Regulator      | Intellectual   | Strategic     |     | Other       |     |     |
+|     |     | Consequences   | Property Theft | Setbacks      |     |             |     |     |
+How many data breaches or security incidents caused
+by third parties did your organization experience over
+the past 12 months?
+How many data breaches or security incidents caused
+by third parties did your organization experience over
+More than
+the past 12 months?
+|     | 10,000  | 11% | 21% | 17% | 25% | 16% | 4% 6% |     |
+| --- | ------- | --- | --- | --- | --- | --- | ----- | --- |
+Employees
+More than
+Less than
+|     | 10,000          | 11%            | 21% | 17% | 25% | 16% | 4% 6% |     |
+| --- | --------------- | -------------- | --- | --- | --- | --- | ----- | --- |
+|     | Emp 1 lo 0 y ,0 | e 0 e 0 s   8% | 29% | 17% | 25% | 14% | 6% 3% |     |
+Employees
+|     | LeNosnse than  | 1 to 5 | 6 to 10 11 to 20 | 21 to 30 |     | More than 30 | Unsure |     |
+| --- | -------------- | ------ | ---------------- | -------- | --- | ------------ | ------ | --- |
+|     | 10,000         | 8%     | 29%              | 17%      | 25% | 14%          | 6% 3%  |     |
+Employees
+|     | None | 1 to 5 | 6 to 10 11 to 20 | 21 to 30 |     | More than 30 | Unsure | 12  |
+| --- | ---- | ------ | ---------------- | -------- | --- | ------------ | ------ | --- |
 
-### Key Finding 1 – Beliefs on TPRM Effectiveness
-![Chart showing confidence in TPRM effectiveness vs. actual breach outcomes]
+| The State of Third-Party Risk Assessments |     |     |     |     |     |     |     |     |     |     |     |     | 2026 |
+| ----------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---- |
+KEY FINDING 3
+| 90% of Financial Services |     |     |     |     |     |  Organizations  |     |     |     |     |     |     |     |
+| ------------------------- | --- | --- | --- | --- | --- | --------------- | --- | --- | --- | --- | --- | --- | --- |
+Experienced a Third-Party Breach in the Last Year
+Financial Services
+Organizations Face
+Elevated Third-Party Risk
+Nearly all Financial Services organizations report
+experiencing at least one third-party breach in the
+past year, despite heavy pressure to meet regulatory
+standards that require businesses to implement
+controls and processes to defend against breaches.
+How many data breaches or security incidents caused by third parties did your organization experience over the past 12 months?
+|                            | Financial Services | 10% |     | 26% |     | 19% |     | 23% |     |     | 14% |     | 6% 2% |
+| -------------------------- | ------------------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ----- |
+|                            | Public Sector      | 8%  | 23% |     | 15% |     | 27% |     |     | 14% |     | 4%  | 5%    |
+| Industrial & Manufacturing |                    | 13% |     | 23% |     | 18% |     | 23% |     |     | 14% |     | 5% 4% |
+Technology & Software
+|     |     | 9%  |     | 27% |     | 15% |     | 23% |     | 14% |     | 8%  | 4%  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Services
+|     |     | 13% |     | 25% |     | 19% |     | 24% |     |     | 12% |     | 4% 3% |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ----- |
+Health & Pharmaceutical
+|     |        | 10% |     | 26% |     | 19% |     | 23% |     |     | 12% | 4%  | 6%  |
+| --- | ------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     | Retail | 8%  | 24% |     |     | 20% |     | 23% |     | 15% |     | 5%  | 5%  |
+Number of Breaches
+|     |     |     |     | None 1 - 5 | 6 - 10 | 11 - 20 | 21 - 30 | 30+ | Unsure |     |     |     |     |
+| --- | --- | --- | --- | ---------- | ------ | ------- | ------- | --- | ------ | --- | --- | --- | --- |
+13
 
-Two-thirds of large organizations believe their third-party risk assessments are effective at reducing third-party breach risk, compared to just 40% of small organizations. This confidence gap highlights a core maturity disconnect, as belief in effectiveness does not consistently align with assessment speed, coverage, remediation, or breach outcomes.
+The State of Third-Party Risk Assessments 2026
+KEY FINDING 3 (CONT.)
+Organizations
+90% of Financial Services
+Experienced a Third-Party Breach in the Last Year
+On average, how long does it take a financial
+services organization complete one third-party
+assessment (from launch to closure)
+What This Reveals About
+the Maturity Gap What the Data Shows
+Less than
+24%
+30 Days
+• In addition to high frequency of third-
+In highly regulated industries,
+strong governance and compliance
+party br
+M
+e1a
+o n
+cto
+t
+h
+h
+3e
+s
+s, 58% of F1in8a%ncial Services
+organizations report third-party risk assessments
+requirements can create the appearance
+take longer than four months, one of the longest
+of maturity. However, persistent breach 4 to 6 25%
+assessmMeonntt htsimelines across all industries
+activity indicates that compliance-driven
+surveyed.
+processes alone are not sufficient to 1 - 12
+21%
+Months
+manage complex third-party ecosystems. • 60% of Financial Services organizations rate
+This gap highlights the limits of maturity their TPRM program as effective, despite 90%
+More than
+12%
+defined primarily by regulatory alignment expe1ri2e Mncoinnthgs at least one third-party breach in
+rather than operational effectiveness. the past year.
+On average, how long does it take a financial How effective are financial services orgs
+services organization complete one third-party third-party risk assessments in reducing the
+assessment (from launch to closure) likelihood of a third-party data breach?
+11%
+Less than
+24%
+30 Days
+10%
+34%
+1 to 3
+18%
+Months
+19%
+4 to 6
+25%
+Months
+36%
+1 - 12
+21%
+Months
+Not Somewhat Partially
+Effective Effective Effective
+More than
+12%
+12 Months
+Highly
+Effective
+Effective
+14
+How effective are financial services orgs
+third-party risk assessments in reducing the
+likelihood of a third-party data breach?
+11%
+10%
+34%
+19%
+36%
+Not Somewhat Partially
+Effective Effective Effective
+Highly
+Effective
+Effective
 
-### Key Finding 2 – Third-Party Breaches Per Month
-Organizations report experiencing an average of 12 third-party breaches or security incidents in the last year. 90% of organizations globally experienced at least one third-party breach in the past 12 months.
+| The State of Third-Party Risk Assessments |     |     |     | 2026 |
+| ----------------------------------------- | --- | --- | --- | ---- |
+KEY FINDING 4
+64%  of Large Organizations Report
+Assessments Take Longer Than
+Four Months
+Assessment Timelines
+Are Too Slow to Keep
+On average, how long does it take to complete one
+Pace with Risk
+third-party assessment (from launch to closure)
+A majority of organizations report that third-party risk  13% 13%
+assessments take several months to complete, with
+| large organizations especially likely to experience  |     | 21% |     |     |
+| ---------------------------------------------------- | --- | --- | --- | --- |
+26%
+timelines exceeding four months (120+ days).
+21%
+25%
+More than 4 Months
+What This Reveals About
+More than 4 Months
+| the Maturity Gap |     | 22% |     |     |
+| ---------------- | --- | --- | --- | --- |
+16%
+Extended assessment timelines create a
+| structural delay between identifying risk and  |     | 23% | 20% |     |
+| ---------------------------------------------- | --- | --- | --- | --- |
+acting on it. When reviews take months to
+|     | Less Than 10,000  |     | More Than 10,000  |     |
+| --- | ----------------- | --- | ----------------- | --- |
+complete, organizations are often forced to  Employees Employees
+onboard vendors before risk decisions are
+finalized. Over time, this lag undermines the  Less Than  1 to 3  4 to 6  7 to 12  More Than
+|     | 30 Days | Months Months | Months | 12 Months |
+| --- | ------- | ------------- | ------ | --------- |
+effectiveness of assessment programs and
+increases exposure.
+How long do vendors typically take to respond to your
+questionnaires? Please select one choice only.
+What the Data Shows
+|     |     | 21% | 20% |     |
+| --- | --- | --- | --- | --- |
+64% of large organizations and 55% of
+•
+16%
+| small organizations report assessment  |     | 19% |     |     |
+| -------------------------------------- | --- | --- | --- | --- |
+timelines exceeding four months.
+|     |     | 20% | 27% |     |
+| --- | --- | --- | --- | --- |
+40% of organizations report having an
+•
+More than 4 Months
+| active assessment backlog, with 64%    |     |     | More than 4 Months |     |
+| -------------------------------------- | --- | --- | ------------------ | --- |
+| citing vendor non-responsiveness as a  |     | 17% |                    |     |
+17%
+primary contributor.
+11%
+13%
+12%
+7%
+|     | Less Than 10,000  |                            | More Than 10,000  |            |
+| --- | ----------------- | -------------------------- | ----------------- | ---------- |
+|     |                   | Employees                  | Employees         |            |
+|     | Less Than         | 7 Days to  1 to 3  4 to 6  | 7 to 12           | More Than  |
+|     | 7 Days            | 1 Month Months Months      | Months            | 12 Months  |
+15
 
-### Key Finding 3 – Breaches & Financial Services
-Nearly all Financial Services organizations report experiencing at least one third-party breach in the past year, despite heavy pressure to meet regulatory standards. 58% of Financial Services organizations report third-party risk assessments take longer than four months.
+The State of Third-Party Risk Assessments 2026
+KEY FINDING 4 (CONT.)
+64%  of Large Organizations Report
+Assessments Take Longer Than
+Four Months
+KEY STAT
+40%
+of Companies Surveyed
+Have a Backlog of Third-Party
+Assessments.
+What are the primary causes of backlogs in your assessment
+process? (Please select all that apply)
+| 64% | 67% | 62% |     |
+| --- | --- | --- | --- |
+4%
+| Lack of  | Incomplete   | Limited Resources  | Other |
+| -------- | ------------ | ------------------ | ----- |
+| Vendor   | Information  | such as lack of    |       |
+| Response | from Vendor  | budget, tech, and  |       |
+in-house
+expertise
+16
 
-### Key Finding 4 – Assessment Timelines
-64% of large organizations and 55% of small organizations report assessment timelines exceeding four months. 40% of organizations report having an active assessment backlog, with 64% citing vendor non-responsiveness as a primary contributor.
+The State of Third-Party Risk Assessments 2026
+KEY FINDING 5
+of Assessments Require More
+63%
+Than of Team Effort
+40 Hours
+Third-Party Risk
+On average, how many hours of your
+Assessments Currently team’s time does one third-party
+assessment take? (Select only one choice)
+Require Significant
+Internal Resources More Than 40 Hours
+Most organizations report that completing
+a single third-party risk assessment requires
+more than 40 personnel-hours across the team,
+limiting scalability for large vendor populations.
+35%
+What This Reveals About
+28%
+the Maturity Gap
+27%
+Heavy manual effort signals that many
+programs rely on individual contributors rather
+10%
+than scalable systems. As vendor volumes
+increase, this approach strains resources and
+slows execution. The result is a maturity gap
+where assessments exist but cannot keep up 160+ 40 to 160 8 to 40 Less Than
+Hours Hours Hours 8 Hours
+with demand.
+What the Data Shows KEY STAT
+28% Of the
+• 63% of assessments require more than
+40 hours of team effort, including 28% Companies
+that require more than 160 hours to
+Surveyed
+complete.
+Reported Over
+• Effort levels are consistent across 160 Team
+organization size; spreadsheets are
+Hours to Complete One
+utilized by 64% of large organizations
+Assessment
+and 63% of small organizations.
+17
 
-### Key Finding 5 – Assessment Resourcing
-63% of assessments require more than 40 hours of team effort, including 28% that require more than 160 hours to complete. This heavy manual effort signals that many programs rely on individual contributors rather than scalable systems.
+The State of Third-Party Risk Assessments 2026
+KEY FINDING 6
+of Organizations Still Utilize
+Two-Thirds
+Spreadsheets in the Assessment Process
+Manual Tools Remain
+What tools or platforms do you currently
+Central to Assessment use to conduct third-party risk assessments?
+(Select all that apply)
+Execution
+Despite increased availability of purpose-built
+platforms, spreadsheets and homegrown tools
+continue to play a role in how organizations 67%
+64% 61%
+58%
+conduct and manage third-party risk
+45%
+assessments, limiting the ability for teams to
+work at true efficiency. 5%
+Methodology
+What This Reveals About
+the Maturity Gap Spreadsheets H IT o B m u e il g t t r o o o w l n s / G Pl R a C tfo rm
+Even partial reliance on spreadsheets reflects D TP e R d M ic a P t l e a d tf orm M S O e u a r t n v s i a o c g e u e / r c d e d Other
+assessment programs that have formalized
+their processes but not modernized execution.
+Spreadsheet-based workflows are slow and
+error-prone, rely heavily on email for distribution
+and follow-up, and introduce version-control
+challenges that make reviews difficult to
+manage and analyze at scale. Without real-time What the Data Shows
+visibility into whether third parties have started
+• 64% of organizations report using
+assessments or how complete responses are,
+spreadsheets, and 67% report using
+teams lose control over timelines and progress.
+homegrown tools, indicating widespread
+tool fragmentation.
+KEY STAT • 58% of organizations report
+ONLY using a dedicated Third-Party Risk
+of the
+Management platform.
+58%
+Companies
+• 61% of organizations report using
+Surveyed
+a dedicated Governance, Risk, and
+Utilize a Dedicated TPRM Compliance (GRC) platform.
+Platform in Their Third-Party
+Risk Program
+18
 
-### Key Finding 6 – Assessment Tooling
-64% of organizations report using spreadsheets, and 67% report using homegrown tools. Only 58% of organizations report using a dedicated Third-Party Risk Management platform.
+The State of Third-Party Risk Assessments 2026
+KEY FINDING 7
+of Organizations Wait Four Months or
+60%
+Longer for Vendor Responses to Assessments
+Vendor Responsiveness
+KEY STAT
+Is a Major Roadblock for
+ON AVERAGE
+of Third-Parties
+Effective Assessments
+27%
+Never Respond
+Delayed vendor responses and non-responses to an Assessment
+significantly extend assessment timelines,
+with many organizations reporting they wait
+months for questionnaire responses or receive
+no response at all from a meaningful portion of
+their vendor population.
+How long do vendors typically take to
+What This Reveals About
+respond to your questionnaires?
+the Maturity Gap
+Please select one choice only.
+Assessment timelines depend heavily on
+vendor responsiveness, so when organizations
+wait months to hear back from third parties, Less than
+10%
+7 days
+they lose control over their own risk processes.
+Delays and non-responses slow execution
+7 days to
+and force teams to make assumptions rather 1 months 12%
+than data-based risk decisions. This dynamic
+limits the ability to manage third-party risk 1 - 3
+17%
+Months
+consistently at scale.
+4 - 6
+23%
+Months
+7 - 12
+What the Data Shows 18%
+Months
+• Organizations surveyed reported that
+More than
+27% of their vendors do not respond 20%
+12 Months
+at all to assessment requests.
+19
 
-### Key Finding 7 – Vendor Response Timelines
-60% of organizations wait four months or longer for vendor responses to assessments. 27% of vendors do not respond at all to assessment requests.
+The State of Third-Party Risk Assessments 2026
+KEY FINDING 8
+Organizations Assess of Their
+Only 36%
+Third-Party Population, on Average
+Assessment Coverage
+What percent of your total third-party
+Remains Limited
+population do you assess?
+On average, organizations assess roughly
+one-third of their total third-party population,
+Less than 10% 23%
+leaving large portions of vendor ecosystems
+outside formal risk assessment processes.
+10% to 25% 29%
+What This Reveals About
+the Maturity Gap
+26% to 50% 15%
+Assessing only a portion of an organization’s large
+vendor population creates structural blind spots
+that are often the result of necessary prioritization. 51% to 75% 18%
+Faced with limited resources, organizations tend
+to focus assessments on vendors deemed highest
+risk, leaving mid- and lower-risk relationships 76% to 100% 15%
+largely unassessed. While this approach may
+be practical in the short term, and give the
+appearance that programs are effective, it allows
+risk in less-scrutinized vendors to go unchecked,
+creating gaps in coverage that undermine
+confidence in the program’s overall effectiveness.
+How many third parties are in your portfolio?
+(Average)
+What the Data Shows
+• The gap between intended and actual
+coverage persists across both large
+NORTH AMERICA APAC EMEA
+and small organizations, indicating the
+3,810 2,178 1,943
+execution issue happens with third-party
+portfolios of all sizes.
+• Only 15% of organizations report
+assessing 76–100% of vendors.
+20
 
-### Key Finding 8 – Vendor Ecosystem & Assessments
-On average, organizations assess roughly one-third (36%) of their total third-party population. Only 15% of organizations report assessing 76–100% of vendors.
+What percent of your total third-party
+population do you assess?
+| Less than 10%                                       |            | 23% |     |     |     |      |
+| --------------------------------------------------- | ---------- | --- | --- | --- | --- | ---- |
+|                                                     | 10% to 25% |     | 29% |     |     |      |
+|                                                     | 26% to 50% | 15% |     |     |     |      |
+| The State of Th5ird1-%Par ttyo R 7isk5 A%ssessments |            | 18% |     |     |     | 2026 |
+KEY FINDING 8 (CONT.)
+| 76% to 100%           |     | 15%      |     |            |     |     |
+| --------------------- | --- | -------- | --- | ---------- | --- | --- |
+| Organizations Assess  |     | Only 36% |     |  of Their  |     |     |
+Third-Party Population, on Average
+How many third parties are in your portfolio?
+(Average)
+| NORTH AMERICA |       |     | APAC     |     | EMEA  |     |
+| ------------- | ----- | --- | -------- | --- | ----- | --- |
+|               | 3,810 |     | 2,178    |     | 1,943 |     |
+| KEY STAT      |       |     | KEY STAT |     |       |     |
+| ONLY          |       |     | 951      |     |       |     |
+of Global  is the Average
+15%
+Companies Assess  Number of
+76 to 100 Percent  Vendors Assessed
+VENDORS
+of Their Vendors in an Ecosystem
+21
 
-### Key Finding 9 – Onboarding & Remediation
-Only 16% of organizations complete 90–100% of remediation activities before onboarding. 66% of companies surveyed do not complete remediation before onboarding due to resource constraints.
+The State of Third-Party Risk Assessments 2026
+KEY FINDING 9
+Only of Organizations Complete
+16% 90–100%
+Before Onboarding
+of Remediation
+Organizations Prioritize
+On average, what percentage of
+remediation activities are completed
+Onboarding Speed
+prior to onboarding?
+Without Completing
+Remediation, Introducing
+No remediation
+activities are completed 18%
+Risk to Their Business prior to onboarding
+1% to 25% of remediation
+activities are completed 22%
+Only a small percentage of organizations prior to onboarding
+complete most remediation activities before
+onboarding vendors, resulting in vendors with 26% to 50% of remediation
+activities are completed 22%
+potentially unresolved control gaps being prior to onboarding
+accepted into their environment.
+51% to 90% of remediation
+activities are completed 22%
+prior to onboarding
+What This Reveals About
+90% to 100% of remediation
+the Maturity Gap activities are completed 16%
+prior to onboarding
+When remediation is deferred, known risks are
+effectively accepted into the environment by
+default. In many cases, vendors are onboarded
+and contracts are finalized before remediation
+is complete, making it impractical to introduce
+What the Data Shows
+new controls, SLAs, or contractual protections
+after the fact. Once the agreement is signed If only 50 percent or less of remediation activities are
+• 18% of organizations report not
+and the relationship is active, organizations completed, what were the reasons that prevented the
+completing any remediation activities
+have limited leverage to enforce remediation. combpefloerteio onnb oofa rrdeimnge vdeniadtoiorsn. before onboarding?
+Over time, these unresolved issues
+(Select all that apply)
+accumulate, reinforcing the gap between • 66% of organizations cite resource
+identifying risk and reducing it. constraints, and 46% cite immediate
+business need for the vendor as reasons
+remediation is deferred.
+66%
+59%
+56%
+48%
+46%
+30% 29%
+22
+4%
 
-### Key Finding 10 – Assessing Fourth-Party Risk
-Fewer than one-third of organizations assess fourth-party (subcontractor) risk as part of their TPRM program. 58% do not assess fourth-party risk at all.
+On average, what percentage of
+remediation activities are completed
+prior to onboarding?
+The State of Third-Party Risk Assessments 2026
+No remediation
+activities are completed 18%
+KEY FINDING 9 (CONT.)prior to onboarding
+Only of Organizations Complete
+16% 1% to 25% of remediation 90–100%
+activities are completed 22%
+prior to onboarding
+Before Onboarding
+of Remediation
+26% to 50% of remediation
+activities are completed 22%
+prior to onboarding
+51% to 90% of remediation
+activities are completed 22%
+prior to onboarding
+KEY STAT
+90% to 100% of remediation
+66% activities are completed 16%
+prior to onboarding
+of Companies Surveyed Do Not Complete
+Remediation before Onboarding due to
+Resource Constraints
+If only 50 percent or less of remediation activities are
+completed, what were the reasons that prevented the
+completion of remediation before onboarding?
+(Select all that apply)
+66%
+59%
+56%
+48%
+46%
+30% 29%
+4%
+23
 
----
+| The State of Third-Party Risk Assessments |     |     |     |     |     |     |     |     | 2026 |
+| ----------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | ---- |
+KEY FINDING 10
+ of OrganDoi yzoua atssieoss fnousrth -party (subcontractor)
+Fewer Than  One-Third
+risk as part of your TPRM program?
+Assess Fourth-Party Risk
+More than
+|     |     |     | 10,000  |     | 59% |     | 13% | 28% |     |
+| --- | --- | --- | ------- | --- | --- | --- | --- | --- | --- |
+Employees
+Less than
+10,000
+Key Finding: Fourth-Party  D o you asse5s7s %fourth-party (s2u5b%contra1ct8o%r)
+Employees
+risk as part of your TPRM program?
+Risk Remains Largely
+| Unaddressed by All  |     | More than  |     |     | No  | Only for Critical  |     | Yes |     |
+| ------------------- | --- | ---------- | --- | --- | --- | ------------------ | --- | --- | --- |
+Suppliers
+|     |     | 10,000  |     |     | 59% |     | 13% | 28% |     |
+| --- | --- | ------- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+Organizations
+Most organizations do not assess fourth-party
+Less than
+| risk, and confidence in visibility beyond direct  |     | 10,000  |     |     |     |     |     |     |     |
+| ------------------------------------------------- | --- | ------- | --- | --- | --- | --- | --- | --- | --- |
+|                                                   |     |         |     |     | 57% |     | 25% |     | 18% |
+Employees
+vendors drops sharply once risk extends into
+subcontractor and downstream relationships.
+|     |     |     |     |     | No  | Only for Critical  |     | Yes |     |
+| --- | --- | --- | --- | --- | --- | ------------------ | --- | --- | --- |
+Suppliers
+What This Reveals About
+the Maturity Gap
+Do you feel confident that you have visibility into
+the fourth parties that could impact your company?
+Fourth-party risk management is challenging,
+(Select one choice only)
+time-consuming, and oftentimes too much for
+teams to manage with their current processes.
+| Limited attention to fourth-party risk shows how  |     |     | 20% |     |     |     |     |     |     |
+| ------------------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|                                                   |     |     |     |     | 27% |     |     | 29% |     |
+|                                                   |     |     |     |     |     | 30% | 34% |     | 31% |
+| quickly visibility drops beyond direct vendors.   |     |     |     | 36% |     |     |     |     |     |
+16%
+As ecosystems become more interconnected,
+this lack of insight increases the likelihood
+|                                           |     |     | 12% |     |     | 22% |     | 21% |     |
+| ----------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|                                           |     |     |     |     | 29% |     | 17% |     | 22% |
+| of cascading incidents. The maturity gap  |     |     |     | 20% |     |     |     |     |     |
+Do you feel confident that you have visibility into
+widens when programs leave their extended  the fou 1 r 6 t % h parties that could9 i%mpac1t4 y%our c1o4%mpan1y0?%
+11%
+13%
+| ecosystem unmonitored. |     |     |     | (Select one choice only) |     | 16% |     |     |     |
+| ---------------------- | --- | --- | --- | ------------------------ | --- | --- | --- | --- | --- |
+|                        |     |     |     |                          |     |     | 14% | 15% | 17% |
+12%
+20%
+36%
+|     |     |     |     |     |     | 23% | 21% | 21% |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     |     |     | 20% |     | 19% |     |     |     | 20% |
+|     |     |     |     | 13% | 27% |     |     | 29% |     |
+|     |     |     |     | 36% |     | 30% | 34% |     | 31% |
+16%
+What the Data Shows
+|     |                                          |     | 12% |     |     | 22% |     | 21% |     |
+| --- | ---------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     | Only 23% of organizations assess fourth- |     |     |     | 29% |     | 17% |     | 22% |
+|     | •                                        |     |     | 20% |     |     |     |     |     |
+party risk consistently, while 58% do not
+|     |     |     | 16% |     |     | 9%  | 14% | 14% | 10% |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+11%
+|     | assess fourth-party risk at all. |     |     |     | 13% |     |     |     |     |
+| --- | -------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- |
+16%
+|     |     |     |     |     |     |     | 14% | 15% | 17% |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+1C2o%nfidence Level
+|     | 38% of organizations report no  |     |                 | 20% |                     |     |     |                       |     |
+| --- | ------------------------------- | --- | --------------- | --- | ------------------- | --- | --- | --------------------- | --- |
+|     | •                               |     | 36%             |     |                     |     |     |                       |     |
+|     |                                 |     | Not confident,  |     | Slight confidence,  |     |     | Moderatly confident,  |     |
+confidence or slight confidence in their  no trust 1m9i%nimal as2su3r%ance 21%somew2h1at% assured20%
+|     |     |     | Confident, on1ly 3% |     | Highly confident,  |     |     |     |     |
+| --- | --- | --- | ------------------- | --- | ------------------ | --- | --- | --- | --- |
+visibility into fourth-party risk. minor reservations complete visibility
+24
+Confidence Level
+|     |     |     | Not confident,     |     | Slight confidence,  |     | Moderatly confident,  |     |     |
+| --- | --- | --- | ------------------ | --- | ------------------- | --- | --------------------- | --- | --- |
+|     |     |     | no trust           |     | minimal assurance   |     | somewhat assured      |     |     |
+|     |     |     | Confident, only    |     | Highly confident,   |     |                       |     |     |
+|     |     |     | minor reservations |     | complete visibility |     |                       |     |     |
 
-## Part 3: Additional Survey Insights
-Beyond the headline findings, the survey revealed that responsibility for third-party risk assessments is distributed across multiple functions (InfoSec 30%, IT 22%, TPRM team 20%), often without clear ownership. Furthermore, only 37% of organizations report having a dedicated budget for third-party risk assessments.
+The State of Third-Party Risk Assessments 2026
+PART 3
+Additional Survey Insights
+Beyond the headline findings, the survey revealed a deeper set of signals that
+further illustrate the day-to-day realities facing third-party risk teams. These
+additional insights surface how assessment programs are staffed, funded, and
+operated in practice, and where operational complexity, resource constraints, and
+emerging risks continue to challenge even well-established TPRM efforts.
+25
 
----
+The State of Third-Party Risk Assessments 2026
+| Program  |     |     |     |     |     | •  InfoSec or cybersecurity teams most commonly  |     |     |     |     |     |
+| -------- | --- | --- | --- | --- | --- | ------------------------------------------------ | --- | --- | --- | --- | --- |
+own third-party risk assessments (30%), followed by
+information technology (22%), and TPRM team (20%)
+Ownership,
+|     |     |     |     |     |     | •  Only 49% of organizations measure the effectiveness  |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | ------------------------------------------------------- | --- | --- | --- | --- | --- |
+Staffing, and  of their third-party risk assessment program
+Accountability •  Large organizations are significantly more likely than
+small organizations to measure program effectiveness
+(61% vs. 38%)
+Survey results show that responsibility for
+third-party risk assessments is distributed  •  About one-fifth of organizations do not track
+across multiple functions, often without  remediation completion or escalation effectiveness as
+clear ownership. a measure of program success
+Which function is most responsible for third-party risk assessments
+in your organization? (Please select one choice only)
+30%
+22%
+20%
+14%
+12%
+2%
+26
+Does your organization budget allocate funds to support its
+third-party cybersecurity risk assessment program?
+More than
+|     | 10,000  |     | 42% |     |     |     |     | 55% |     |     | 3%  |
+| --- | ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+Less than
+|     | 10,000  |     | 33% |     |     |     |     | 64% |     |     | 3%  |
+| --- | ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+|     | Overall |     | 37% |     |     |        |     | 60% |     |     | 3%  |
+| --- | ------- | --- | --- | --- | --- | ------ | --- | --- | --- | --- | --- |
+|     |         |     | Yes |     | No  | Unsure |     |     |     |     |     |
+How often do you receive updates on changes in vendor risk
+posture (continuous monitoring)? Please select one choice only.
+27%
+18%
+|     |     |     |     |     | 17% |     |     |     |     | 18% |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+11%
+9%
+|     | Nightly |     | Weekly | Monthly |     | Quarterly |     | Yearly |     | Never |     |
+| --- | ------- | --- | ------ | ------- | --- | --------- | --- | ------ | --- | ----- | --- |
+How many third parties are in your portfolio?
+|     | 29% |     | 28% |     |     |     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+23%
+15%
+5%
+|     | Less than  |     | 501 to  |     | 1,001 to  |     |     | 5,000 to  |     | More than  |     |
+| --- | ---------- | --- | ------- | --- | --------- | --- | --- | --------- | --- | ---------- | --- |
+|     | 500        |     | 1,000   |     | 5,000     |     |     | 10,000    |     | 10,000     |     |
+Has your organization adopted AI tools as part of its third-party
+risk management program? Please select one choice only
+More than
+| 10,000  |     | 20% |     |     | 28% |     | 21% |     | 14% |     | 17% |
+| ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+Less than
+| 10,000  |     | 19% |     | 21% |     | 25% |     |     | 13% |     | 22% |
+| ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+Will adopt in the
+|     |     |     | Yes, fully |     | Yes, partially |     |     |     |     |     |     |
+| --- | --- | --- | ---------- | --- | -------------- | --- | --- | --- | --- | --- | --- |
+next 12 months
+Will adopt -
+No plans
+no timeline
 
-## Part 4: Implications for Third Party Risk Leaders
-Closing the TPRM maturity gap requires a shift in how organizations define success. True program maturity depends on the ability to:
-- Move faster without sacrificing rigor.
-- Scale assessments intelligently across the vendor population.
-- Reduce reliance on manual effort.
-- Evaluate effectiveness through measurable outcomes rather than process completion.
+Which function is most responsible for third-party risk assessments
+in your organization? (Please select one choice only)
+30%
+22%
+20%
+The State of Th1ird4-P%arty Risk Assessments 2026
+12%
+2%
+Budget,
+|     |     |     |     |     |     | •  Only 37% of organizations report having a  |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --------------------------------------------- | --- | --- | --- | --- | --- |
+Investment,
+dedicated budget for third-party risk assessments
+and Resource
+|     |     |     |     |     |     | •  Large organizations are more likely than small  |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | -------------------------------------------------- | --- | --- | --- | --- | --- |
+organizations to allocate a dedicated TPRM
+Allocation
+budget (42% vs. 33%)
+|     |     |     |     |     |     | •  Among organizations with a dedicated budget,  |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | ------------------------------------------------ | --- | --- | --- | --- | --- |
+Investment in third-party risk assessments
+two-thirds reported spending $500,000 or more
+remains inconsistent and is often
+annually on Third-Party Risk Management
+misaligned with program scope.
+Does your organization budget allocate funds to support its
+third-party cybersecurity risk assessment program?
+More than
+|     | 10,000  |     | 42% |     |     |     |     | 55% |     |     | 3%  |
+| --- | ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+Less than
+|     | 10,000  |     | 33% |     |     |     |     | 64% |     |     | 3%  |
+| --- | ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+|     | Overall |     | 37% |     |     |        |     | 60% |     |     | 3%  |
+| --- | ------- | --- | --- | --- | --- | ------ | --- | --- | --- | --- | --- |
+|     |         |     | Yes |     | No  | Unsure |     |     |     |     |     |
+How often do you receive updates on changes in vendor risk
+posture (continuous monitoring)? Please select one choice only.
+27
+27%
+18%
+|     |     |     |     |     | 17% |     |     |     |     | 18% |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+11%
+9%
+|     | Nightly |     | Weekly | Monthly |     | Quarterly |     | Yearly |     | Never |     |
+| --- | ------- | --- | ------ | ------- | --- | --------- | --- | ------ | --- | ----- | --- |
+How many third parties are in your portfolio?
+29%
+28%
+23%
+15%
+5%
+|     | Less than  |     | 501 to  |     | 1,001 to  |     |     | 5,000 to  |     | More than  |     |
+| --- | ---------- | --- | ------- | --- | --------- | --- | --- | --------- | --- | ---------- | --- |
+|     | 500        |     | 1,000   |     | 5,000     |     |     | 10,000    |     | 10,000     |     |
+Has your organization adopted AI tools as part of its third-party
+risk management program? Please select one choice only
+More than
+| 10,000  |     | 20% |     |     | 28% |     | 21% |     | 14% |     | 17% |
+| ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+Less than
+| 10,000  |     | 19% |     | 21% |     | 25% |     |     | 13% |     | 22% |
+| ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+Will adopt in the
+|     |     |     | Yes, fully |     | Yes, partially |     |     |     |     |     |     |
+| --- | --- | --- | ---------- | --- | -------------- | --- | --- | --- | --- | --- | --- |
+next 12 months
+Will adopt -
+No plans
+no timeline
 
----
-
-## APPENDIX: Survey Data
-- **Appendix 1 – Company Location**: Data regarding regional distribution of respondents.
-- **Appendix 2 – Company Size**: Data regarding organizational scale (Large: >10,000 employees; Small: ≤10,000 employees).
-- **Appendix 3 – Industry**: Data regarding industry-specific risk profiles.
-
-© ProcessUnity 2026
-
----
-
-|     | Never |     |
+Which function is most responsible for third-party risk assessments
+in your organization? (Please select one choice only)
+30%
+22%
+20%
+14%
+12%
+2%
+Does your organization budget allocate funds to support its
+third-party cybersecurity risk assessment program?
+More than
+|     | 10,000  |     | 42% |     |     |     |     | 55% |     |     | 3%  |
+| --- | ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Employees
+The State of Third-Party Risk Assessments 2026
+Less than
+Assessment  •  58% of organizations do not assess fourth-party
+|           | 10,000  |     | 33% |     |     |      |     | 64% |     |     | 3%  |
+| --------- | ------- | --- | --- | --- | --- | ---- | --- | --- | --- | --- | --- |
+| Employees |         |     |     |     |     | risk |     |     |     |     |     |
+Cadence and
+|     |     |     |     |     |     | •  About a third of respondents expressed minimal  |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | -------------------------------------------------- | --- | --- | --- | --- | --- |
+confidence in their visibility into fourth parties that
+Monitoring
+could impact their organization
+|     | Overall |     | 37% |     |     |     |     | 60% |     |     | 3%  |
+| --- | ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+Practices •  27% of organizations only receive annual updates
+on their vendor's risk posture (continuous
+monitoring)
+Assessment frequency and monitoring
+|     |     |     | Yes |     | No  | Unsure |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | ------ | --- | --- | --- | --- | --- |
+practices vary widely, limiting ongoing  •  18% of organizations do not utilize continuous
+visibility into vendor and fourth-party risk. monitoring to supplement point-in-time
+assessments
+How often do you receive updates on changes in vendor risk
+posture (continuous monitoring)? Please select one choice only.
+27%
+18%
+|     |     |     |     |     | 17% |     |     |     |     | 18% |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+11%
+9%
+|     | Nightly |     | Weekly | Monthly |     | Quarterly |     | Yearly |     | Never |     |
 | --- | ------- | --- | ------ | ------- | --- | --------- | --- | ------ | --- | ----- | --- |
 How many third parties are in your portfolio?
 28
@@ -2416,4 +3733,4 @@ Extends ability to assess
 The State of Third-Party Risk Assessments 2026
 260126
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-08", "model": "gemini-3.1-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-24", "model": "gemini-3.5-flash-lite"} -->
