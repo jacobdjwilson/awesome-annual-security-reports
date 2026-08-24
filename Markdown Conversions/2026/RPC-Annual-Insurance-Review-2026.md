@@ -1,452 +1,1046 @@
-# Annual Insurance Review 2026
+Annual Insurance Review
+2026
 
-## Table of Contents
-- [Introduction](#introduction)
-- [International | Global Access](#international--global-access)
-- [Asia](#asia)
-- [Australia](#australia)
-- [Canada](#canada)
-- [France](#france)
-- [Netherlands](#netherlands)
-- [Latin America](#latin-america)
-- [USA](#usa)
-- [Middle East and Africa](#middle-east-and-africa)
-- [Business line updates](#business-line-updates)
-- [Art and specie](#art-and-specie)
-- [Aviation](#aviation)
-- [Brokers](#brokers)
-- [Class actions and collective](#class-actions-and-collective)
-- [Climate and biodiversity risk](#climate-and-biodiversity-risk)
-- [Construction](#construction)
-- [Contingency](#contingency)
-- [Cyber](#cyber)
-- [D&O](#d&o)
-- [Energy and power](#energy-and-power)
-- [Financial institutions](#financial-institutions)
-- [Financial professionals](#financial-professionals)
-- [General liability](#general-liability)
-- [Health and safety](#health-and-safety)
-- [Intellectual property](#intellectual-property)
-- [International arbitration](#international-arbitration)
-- [Legal practices](#legal-practices)
-- [Life sciences](#life-sciences)
-- [Marine](#marine)
-- [Media](#media)
-- [Medical malpractice](#medical-malpractice)
-- [Pensions](#pensions)
-- [Political risk and trade credit](#political-risk-and-trade-credit)
-- [Political violence and terrorism](#political-violence-and-terrorism)
-- [Procedure, damages and costs](#procedure-damages-and-costs)
-- [Product liability](#product-liability)
-- [Property](#property)
-- [Surveyors](#surveyors)
-- [Technology](#technology)
-- [Toxic tort and legacy exposure](#toxic-tort-and-legacy-exposure)
-- [Warranty and indemnity (W&I)](#warranty-and-indemnity-wi)
-- [Contacts](#contacts)
+2 2026
+Contents
+Introduction 4
+International | Global Access 6
+Asia 8
+Australia 10
+Canada 12
+France 14
+Netherlands 16
+Latin America 18
+USA 20
+Middle East and Africa 26
+Business line updates 28
+Art and specie 31
+Aviation 32
+Brokers 34
+Class actions and collective 36
+Climate and biodiversity risk 37
+Construction 39
+Contingency 40
+Cyber 41
+D&O 42
+Energy and power 44
+Financial institutions 46
+Financial professionals 47
+General liability 48
+Health and safety 50
 
----
+ANNUAL INSURANCE REVIEW 3
+Intellectual property 52
+International arbitration 53
+Legal practices 54
+Life sciences 55
+Marine 56
+Media 58
+Medical malpractice 60
+Pensions 63
+Political risk and trade credit 64
+Political violence and terrorism 66
+Procedure, damages and costs 67
+Product liability 68
+Property 70
+Surveyors 72
+Technology 74
+Toxic tort and legacy exposure 76
+Warranty and indemnity (W&I) 77
+Contacts 78
 
-## Introduction
-
-Welcome to RPC’s Annual Insurance Review 2026 – a summary of the key events from 2025 that impacted the global insurance market and an assessment of the issues most likely to keep you busy during 2026.
-
-The Review is structured by reference to international regions and to business lines, allowing you to quickly find the topics most relevant to you. However, reading the Review as a whole allows common themes and cross jurisdiction/sector risks to be identified.
-
-In the introduction to last year’s Review we identified AI, extreme weather events, global economic challenges and ESG as some of the areas of common focus. This year, common themes include: issues relating to the private credit (or “shadow banking”) market and concerns as to whether an economic downturn might have ripple effects across the wider banking sector; continuing growth in PFAS (perfluoroalkyl and polyfluoroalkyl substances) related claims, which are now being compared to asbestosis claims; and, of course, the continued growth in use of AI, being both a claims risk and a considerable underwriting opportunity.
-
-The clearest thread running through this year’s articles is the underlying impact of increased state self-protectionism and rising geopolitical conflict. The level and duration of armed conflict worldwide remains worryingly high as measured against the previous few decades. Furthermore, assessing whether a given political dispute (whether inter or intra state) will develop into economic or armed conflict has become increasingly unpredictable. Even during the time it has taken to finalise this introduction, whilst the US continues to seek to broker peace in the now nearly four-year-long war resulting from Russia’s invasion of Ukraine, it has itself just forcibly deposed and arrested the president of another state; a state which it says it now intends to run. The US has also seized a Russian flagged oil tanker in European waters, with UK assistance, and continues to press for the “acquisition of” Greenland – seemingly considering doing so by force.
-
-The wildly unpredictable nature of so many of the world’s governments (including, and especially, those of the US, Russia and China), and their apparent willingness to flagrantly disregard rules of international law, means that, more than ever, it’s impossible to predict what the next 12 months will bring. Only one thing seems certain – we can no longer sensibly predict how states will manage their relationships with each other. This means there is likely to be yet more conflict and considerable volatility in both a geopolitical and economic sense. As a market we should be ready for the existing “rules” (of international law, of trade, of regulation, of… any kind) to change at the drop of a hat.
-
-Strap in for 2026 – we look forward to joining you on the ride!
-
-**Simon Laird**
-Partner, Insurance Sector Lead
-+44 20 3060 6622
-simon.laird@rpclegal.com
-
-**Robert Morris**
-Partner
-+44 20 3060 6921
-robert.morris@rpclegal.com
-
-**Toby Higginson**
-Partner, Co-head of Clients and Markets (Insurance)
-+44 20 3060 6581
+4 2026
+Introduction
+Welcome to RPC’s Annual Insurance Review 2026 – a summary of the
+key events from 2025 that impacted the global insurance market and an
+assessment of the issues most likely to keep you busy during 2026.
+The Review is structured by reference to Yet the biggest issue we highlighted in last to run. The US has also seized a Russian
+international regions and to business lines, year’s Review was that physical and political flagged oil tanker in European waters, with
+allowing you to quickly find the topics conflict arising from state polarisation/ UK assistance, and continues to press for
+most relevant to you. However, reading isolationism and increasing geopolitical the “acquisition of” Greenland – seemingly
+the Review as a whole allows common tensions seemed set to continue, if not considering doing so by force.
+themes and cross jurisdiction/sector risks intensify, in 2025. Sadly, that prediction has
+The wildly unpredictable nature of
+to be identified. very much proved to be true.
+so many of the world’s governments
+In the introduction to last year’s Review The clearest thread running through this (including, and especially, those of the
+we identified AI, extreme weather events, year’s articles is the underlying impact of US, Russia and China), and their apparent
+global economic challenges and ESG increased state self-protectionism and willingness to flagrantly disregard rules
+as some of the areas of common focus. rising geopolitical conflict. The level and of international law, means that, more
+This year, common themes include: duration of armed conflict worldwide than ever, it’s impossible to predict what
+issues relating to the private credit remains worryingly high as measured the next 12 months will bring. Only one
+(or “shadow banking”) market and against the previous few decades. thing seems certain – we can no longer
+concerns as to whether an economic Furthermore, assessing whether a sensibly predict how states will manage
+downturn might have ripple effects across given political dispute (whether inter or their relationships with each other.
+the wider banking sector; continuing intra state) will develop into economic or This means there is likely to be yet more
+growth in PFAS (perfluoroalkyl and armed conflict has become increasingly conflict and considerable volatility in both
+polyfluoroalkyl substances) related unpredictable. Even during the time it a geopolitical and economic sense. As a
+claims, which are now being compared has taken to finalise this introduction, market we should be ready for the existing
+to asbestosis claims; and, of course, whilst the US continues to seek to broker “rules” (of international law, of trade, of
+the continued growth in use of AI, being peace in the now nearly four-year-long regulation, of… any kind) to change at the
+both a claims risk and a considerable war resulting from Russia’s invasion of drop of a hat.
+underwriting opportunity. Ukraine, it has itself just forcibly deposed
+Strap in for 2026 – we look forward to
+and arrested the president of another
+joining you on the ride!
+state; a state which it says it now intends
+Simon Laird Robert Morris Toby Higginson
+Partner, Partner Partner,
+Insurance Sector Lead +44 20 3060 6921 Co-head of Clients and
++44 20 3060 6622 robert.morris@rpclegal.com Markets (Insurance)
+simon.laird@rpclegal.com +44 20 3060 6581
 toby.higginson@rpclegal.com
-
-![Map of global offices and regions]
-
----
-
-## Asia
-
-**RPC**
-*Rebecca Wong | Partner*
-*Macca Anderson-Brown | Associate*
-
-### Key developments in 2025
-
-**A challenging macroeconomic environment**
-From the Trump Administration’s protectionist tilt to geopolitical conflicts in major trade corridors such as Europe and the Middle East, Asia has been forced to adjust to a rapidly shifting macroeconomic landscape. These global pressures translated into a complex storm of softer trade demand, subdued economic growth, persistent inflation and heightened market volatility, all of which created a more difficult operating backdrop for insurers across the region.
-
-Asia’s position as a global manufacturing hub meant it felt the effect of supply chain strain more acutely, with disruptions in cross-border production networks feeding directly into corporate balance sheet pressure across key markets. As regional growth softened and financing costs climbed, more Asian businesses struggled with cash flow stress and insolvency risk, a trend that did not go unnoticed by trade credit insurers, many of whom reported rising late payment activity and an uptick in claims across trade exposed sectors.
-
-Taken together, 2025 was a year in which macroeconomic and geopolitical volatility materially shaped insurer behaviour across Asia, influencing pricing, capacity decisions and overall risk appetite.
-
-**Increased regulatory enforcement in emerging areas**
-2025 saw a marked escalation in regulatory enforcement across Asia, with regulators sharpening their focus on key areas such as financial services, cybersecurity, data and privacy, climate and ESG, and general corporate governance. Coverage for regulatory costs and insurable fines continue to feature, particularly across financial lines insurance offerings.
-
-In Hong Kong, the introduction of HKEX’s mandatory climate-related disclosures, signalled a decisive shift towards stricter sustainability governance and board-level accountability. Furthermore, the SFC has also ramped up enforcement activity, targeting fund-manager misconduct, instances of the misuse of client assets, and disclosure failures in market communications. The horrific fire on 26 November 2025 at Wang Fuk Court in Tai Po, caused mass casualties and property damage estimated at US$334m. The incident has shone a spotlight on the Hong Kong construction industry, with experts calling for stricter rules around oversight of building material safety, site management and inspections. The ICAC has since launched an investigation into suspected corruption for the renovation project at the premises and a judge-led committee into the cause of the incident has been announced.
-
-Singapore has followed a similar trajectory, with the PDPC, its regulator responsible for enforcing Singapore’s data protection and privacy laws, significantly stepping up enforcement in 2025, issuing a financial penalty against a SaaS provider following a major ransomware related breach and maintaining a firm stance generally on organisations that fail to meet required security and accountability standards under the PDPA. Separately, the MAS has continued to mount a strong display against financial services firms, prioritising enforcement action centred on governance failures, weak AML/CFT controls and deficiencies in technology and operational-risk management.
-
-Lastly, amid the rapid rise of AI-generated content and increasingly sophisticated deepfakes, China has expanded its cybersecurity and data-governance framework by introducing a comprehensive regulatory regime for generative AI. The new rules, which came into effect in September, require AI-generated text, images, audio and video to be clearly labelled as such, and sit alongside existing obligations requiring providers of large scale or publicly facing AI models to file underlying algorithms with the CAC prior to deployment.
-
-As the world evolves, bringing with it new frontiers of risk, regulators across Asia remain as determined and vigilante as ever to ensure adequate protections are in place to safeguard markets.
-
-**Climate change and catastrophe insurance**
-Climate change driven weather events continue to place pressure on the industry. Asia remains the global epicentre of climate-related catastrophe risk, with an estimated 40% of the world’s natural disasters striking the region, yet it continues to suffer from one of the widest protection gaps globally, with an estimated 82.8% of losses remaining uninsured.
-
-This year, property damage as a result of the region’s natural catastrophe events remained relatively manageable with an outlier being the 7.7 magnitude earthquake that hit Myanmar in March, the effects of which extended into Thailand. Early assessments placed insured losses in Thailand at around US$1.5bn, with around 150,000 claims filed.
-
-What is also becoming clearer is that the role of insurers is no longer confined to absorbing the financial fallout of natural catastrophes; rather, there is now a growing expectation across Asia that insurers will take proactive steps towards bridging the protection gap, both indirectly by integrating ESG frameworks into underwriting to influence real world behaviours (for example, offering more favourable policy terms for buildings with stronger flood defences, renewable-energy infrastructure, or climate resilient construction) and directly, through the development of more accessible catastrophe products such as parametric covers and community-based microinsurance. While microinsurance has historically played a limited role in insurers’ portfolios due to low premium volumes and high administrative costs, it is poised for significant growth across Asia as governments and individuals become increasingly cognisant of its role in bridging the protection gap for lower-income demographics, who disproportionately feel the effects of climate related losses.
-
-**Rising demand for AI liability insurance**
-While AI-driven losses may be silently covered under existing policies (for example, professional indemnity and cyber insurance policies), the industry is wising up. We are seeing insurers excluding exposure to such risks under existing policies, with a new focus on developing coverages that respond to the unique risks created by AI adoption such as AI failures/limitations, including hallucinations, biased outputs and autonomous decision-making errors. For example, Munich Re, AXA XL, Armilla AI, Chaucer, and PICC are reportedly developing specialised, standalone AI liability products and/or adding AI-specific endorsements to existing technology, cyber or professional lines policies.
-
-Insurance for digital asset service providers is also expected to be a growth area, with regulators in the region recognising the significance of its role from a consumer protection standpoint. The Hong Kong SFC, for example, requires licensed virtual asset service platforms to maintain insurance covering client assets held in both hot and cold wallets. This requirement has been subject to industry feedback regarding the difficulties in compliance given, among others, the lack of capacity provided by insurers in the region to cover such risks. The SFC is, therefore, considering modifications to the same – while local capacity for such insurance is gradually increasing.
-
-Insurance for AI liability is a promising growth area for insurers and indeed, Deloitte has estimated that by 2032, AI liability premiums globally will be upward of USD$4bn. Underwriting AI liability will no doubt be challenging for insurers given the lack of (if any) tested wordings in the market and the fast pace at which AI (and, therefore, its associated risks and regulations) are evolving.
-
-Going forward, trends in this area are worth monitoring, as regulatory scrutiny intensifies, particularly around responsible AI governance. It is therefore not inconceivable that AI liability insurance could become an expectation, or even a mandated requirement, for businesses operating at scale with AI systems sometime in the future.
-
-### What to look out for in 2026
-
-**Emerging growth in Asia as a whole**
-Despite facing significant economic headwinds, Asia has emerged as a rare engine of expansion throughout 2025, a trend that is expected to carry into 2026. An indicator of the region’s resilience has been the sharp rebound in M&A activity, with deal volume and value rising across key markets despite a challenging macroeconomic backdrop.
-
-Among others, this presents a meaningful opportunity to capitalise on the growing demand for transactional risk solutions. On this, we note that 2025 has already seen a noticeable uptick in W&I placements across Asia, underscoring both the rebound in deal activity across the region but also the growing adoption of W&I insurance as an effective way to transfer risks in transactions.
-
-**CONTACTS**
-*Carmel Green, Partner | +852 2216 7112 | carmel.green@rpclegal.com*
-*Antony Sassi, Managing Partner | +44 7860 629 508 | antony.sassi@rpclegal.com*
-*Rebecca Wong, Partner | +852 2216 7168 | rebecca.wong@rpclegal.com*
-
----
-
-## Australia
-
-**COLIN BIGGERS & PAISLEY**
-*Jonathan Newby | Partner*
-
-### Key developments in 2025
-
-The Australian market faces challenges and emerging risks similar to other jurisdictions. While the overall economy is relatively strong, inflation sensitive sectors such as construction, hospitality, and retail remain vulnerable, as evidenced by record-level insolvencies in the SME space, and the ongoing economic, social and political turbulence on a global scale still casts a shadow on our sunburnt country.
-
-Cyber risk and privacy remain top of mind for companies, their leaders and insurers, with a survey by CrowdStrike showing the Australia/New Zealand region as the third most targeted globally, with 78% of respondents experiencing at least one ransomware attack in the past year. There have been changes in cyber law include the mandatory reporting of ransomware payments, and minimum-security standards for smart device security. From 10 December 2025 age-restricted social media platforms must take reasonable steps to prevent Australians under 16s from having accounts. ASIC continues its focus on failures by companies to have adequate cyber security with prosecutions commenced against FIIG Securities and Fortnum Private Wealth.
-
-There have also been significant developments in Australian privacy law this year, with a statutory tort for a serious intrusion into privacy commencing on 10 June 2025. This adds additional risk for companies and opens up the potential for class actions arising from any breach. The first civil penalty for the breach of privacy saw pathology provider Australian Clinical Labs ordered to pay $5.8m.
-
-In the construction space, New South Wales has substantially unwound reforms enacted in 2004 which displaced joint and several liability. The proportionate liability regime is, in practical terms, at an end for construction professionals marking a return to the routine filing of contribution claims. This outcome increases the costs of managing disputes for builders, subcontractors, and professionals lacking delegation protection.
-
-As to Victoria, the Building and Plumbing Commission has been established, combining the functions of various bodies that had regulated domestic building insurance, practitioner registration and dispute settlement divisions. The enabling legislation contemplates that this body will have certain powers to direct rectification works on buildings from 1 July 2026.
-
-For institutional liability risks, the issues of vicarious liability, non-delegable duties of care, permanent stays in claims where the passage of time means witnesses are unavailable and evidence lost, and decisions to set aside prior deeds of settlement, continue to work their way through the courts and bring an element of uncertainty. While the High Court ruled on the issue of vicarious liability in the case of *DP v Bird* in late 2024, finding that there was not an employment relationship between the Diocese and the priest in question, the High Court is now considering a second matter in *Diocese of Maitland-Newcastle v AA*. The outcome is being closely watched, as the change in the interpretation of vicarious liability, together with legislative change foreshadowed in a number of States and Territories in 2026, will have wider implications than just historical abuse claims.
-
-Scrutiny of the accountancy profession continues to increase, with rare regulatory moves now being made against top tier firms, including the notable successful action by the Tax Practitioners Board against PWC’s former Australian Managing Partner. ASIC has also stepped up its prosecution of tax promotion scheme advisors.
-
-Australian D&O insurance and class action landscape is in a state of flux, with directors and officers continuing to face increasing levels of risks and regulation. Corporate regulatory scrutiny and intervention also remains high, with the Australian Securities & Investments Commission and the Australian Competition & Consumer Commission actively pursuing enforcement in the areas of ESG, greenwashing, cyber readiness and in general instances of general wrongdoing across the board.
-
-Shareholder class action filings have slowed substantially due to landmark victories for defendants and ongoing legal uncertainty. However, this current holding pattern may prove to be temporary with appeals in *Zonia Holdings Pty Ltd v Commonwealth Bank of Australia (CBA)* and *Crowley v Worley Ltd (Worley)* on foot in the and plaintiffs are actively planning alternative paths to success. Meanwhile, filings in other class action areas – especially consumer and employment claims – are rising sharply, driven by plaintiff and funders shifting focus.
-
-Private credit exposures continue to increase, highlighted by recent failures, industry warnings and ASIC intervention. These traditional FI and PI risks present real challenges for directors and officers.
-
-### What to look out for in 2026
-
-While many of the risks that have been on the agenda in 2025 remain top of mind, risks continuing to emerge further in 2026 including climate reporting, AI and privacy, modern slavery, forever chemicals and workplace matters, to name just a few issues of note.
-
-The second tranche of the changes to Privacy Act is still awaited, which is anticipated to include the removal of small business exemption and employee records exemption. The introduction of requirements for disclosure of automated decision making in privacy policies will become effective on 10 December 2026. The rules for minimum security standards for the “Internet of Things” comes into effect on 4 March 2026.
-
-AI presents both significant opportunities and risks for businesses and insurers. While adoption can drive efficiency, recent incidents highlight the dangers of misaligned AI-generated material, which have resulted in regulatory admonishment and reputational harm. Organisations should ensure that AI outputs meet government, regulatory, and social expectations to avoid professional negligence and potential class actions. Added to these risks is enhanced regulatory scrutiny, particularly where companies overstate their AI preparedness or capability – a practice increasingly referred to as “AI-washing.”
-
-Mandatory climate reporting ramps up in 2026, as the second phase of the roll out makes a larger number of companies eligible. With directors being required to sign off on sustainability reports, this opens up another potential avenue of risk for this cohort and for the professional services firms who assist in the data that goes into the reports where misleading or overstated claims are detected. While ASIC are for now taking a pragmatic and proportional approach, this grace period will expire.
-
-Consumer protection will continue to be a focus for the ACCC. The proceedings against Mercer and Vanguard for greenwashing signal a continued focus on consumer protection, including within financial services, retail, aviation and essential services. These sits alongside the ACCC implementing a new mandatory merger regime from 2026.
-
-Crypto regulation has advanced, with ASIC issuing detailed guidance on digital assets and custody obligations, supported by a sector-wide transition period to mid-2026.
-
-The construction industry is facing major legislative and regulatory reforms in NSW and Victoria in 2026. Building Bill 2024, currently before the NSW State Parliament proposes the largest overhaul of building and construction industry regulation in 40 years, by consolidating nine pieces of legislation into one, and implementing better controls and safeguards across a number of areas from licencing to regulatory powers. The Bill is at the final review stage and, to date, has not been introduced to the Parliament of New South Wales.
-
-In Victoria, the Building and Plumbing Commission is consolidating the Victorian Building Authority, Domestic Building Dispute Resolution Victoria and the statutory domestic building insurance scheme, to provide greater a more streamlined service for building practitioners and greater protections for consumers.
-
-Those active in the D&O and class action space is eagerly anticipating appeals and other developments in this space in 2026 which will shape what happens next. In CBA, following the Full Federal Court’s part overturning of the trial judge’s findings, but denying damages due to failure to prove causation and loss, the High Court will hear the applicant’s Special Leave application on 12 February 2026. In Worley, the appeal focused on causation and quantification of loss following the trial court’s dismissal of claims. A decision is expected to clarify whether market-based causation theories will gain traction, which could reshape the viability of future shareholder actions.
-
-With these complex issues on the table, plaintiffs and funders are now considering split trials, separating liability from quantum, to overcome issues associated with establishing loss. This approach has advantages for all parties, including reduction of up-front costs, the ability to test questions of liability and provide a better understanding of exposure once liability has been determined, and has even had support from the bench, with Justice Lee of the Federal Court describing a split trial as maybe “desirable and efficient”.
-
-With the stalling of the shareholder class action market, there is the potential for derivative actions to become the new class action. Derivative actions allow shareholders to bring proceedings on behalf of the company for wrongs done to the company itself, rather than seeking compensation for individual shareholder loss, overcoming some of the evidentiary and causation hurdles that are plaguing shareholder class actions. Derivative actions also align with broader governance trends, including heightened regulatory scrutiny of board conduct and ESG compliance. As ASIC and the courts continue to emphasise directors’ duties and corporate governance standards, we expect derivative actions to gain traction – particularly in cases involving systemic governance failures, cyber breaches and climate-related disclosure obligations.
-
-**CONTACTS**
-*Jonathan Newby, Partner | +61 2 8281 4406 | jonathan.newby@cbp.com.au*
-*Keith Bethlehem, Partner | +61 2 8281 4421 | keith.bethlehem@cbp.com.au*
-*Michael Russell, Partner | +61 2 8281 4612 | michael.russell@cbp.com.au*
-
----
-
-## Canada
-
-**MILLER THOMSON**
-*Sean McGarry | Partner*
-*Vanessa De Sousa | Associate*
-
-### Key developments in 2025
-
-2025 was a dynamic year in the world of insurance in Canada. In this chapter, we explore the economic uncertainty, fears of impending recession, and developments in the legal sector that underscored the year Canada had, as well as what is to come in 2026.
-
-**Economic uncertainty and recession**
-Canada faced significant financial difficulties in 2025, with experts noting that the country is still at risk of a recession within the next six months. The Bank of Canada’s Market Participants Survey for Q3 of 2025, released in early November, noted that market participants believed there was about a 35% chance that Canada is in a recession or will enter one in the next half-year. However, later that month, Statistics Canada published its Q3 results, noting that Canada narrowly avoided recession in the third quarter of 2025. It stated that Gross Domestic Product (GDP) climbed 0.6% from July to September, following the concerning second quarter results, which saw Canada’s GDP decline by 0.5% between April and June.
-
-Tariffs imposed by foreign governments caused significant strain on Canada’s economy in 2025. According to Budget Canada, new tariffs and shifting trade policies strained supply chains and raised costs for Canadian exporters, with high tariffs and significant trade actions now applying to auto, steel, aluminum, copper and wood. Nonetheless, Canada continued to benefit from favourable access to our largest export market, with 85% of Canada-US trade remaining tariff-free and the average US tariff rate on Canadian goods standing at 5.4%.
-
-**Appeal rulings appear more favourable on notice issues**
-The Ontario Court of Appeal (ONCA) recently issued two important insurance-related decisions, both addressing whether the insured had sufficiently complied with notice requirements in claims-made and reported policies such that relief from forfeiture could be granted. In a claims-made and reported policy, coverage is only triggered if the claim was made and reported during the policy period. In both cases, equitable relief was not available to the plaintiffs due to their specific late reporting. This is a break from the typical Canadian trend of flexible findings to excuse policy breaches.
-
-On 27 March 2025, the Supreme Court of Canada dismissed an insured’s leave to appeal the decision in *Furtado v Lloyd’s Underwriters*, 2024 ONCA 579 (Furtado). In Furtado, the ONCA held that the insured, was not entitled to relief from forfeiture after failing to disclose to his insurer an Ontario Security Commission (OSC) investigation and a subsequent receivership application and enforcement proceeding against the business.
-
-Furtado built on the earlier decision in *Kestenberg Siegal Lipkus LLP v Royal & Sun Alliance Insurance Company of Canada*, 2024 ONCA 607 (Kestenberg), whereby the ONCA held that where a condition precedent to triggering insurance coverage is not met, relief from forfeiture will not be available because this would constitute non-compliance rather than imperfect compliance. In Kestenberg, the Court rejected the insured’s argument that relief from forfeiture is available in all insurance cases unless the breach of condition is both substantial and prejudices the insurer. It also disagreed that a claims-made and reported requirement must be contained in the insuring agreement clause for it to be a condition precedent to coverage. Rather, courts must interpret a policy as a whole and ordinary principles of contractual interpretation apply.
-
-In Furtado, the policy included a suspension clause pausing notice requirements while the insured was legally prohibited by law enforcement or the OSC from making disclosures. When he was informed that new legislation now permitted disclosure to his insurer, the insured waited nearly a year to report a claim to the insurance company, at which time the policy had expired. The delay in giving notice constituted non-compliance with a condition precedent to coverage, for which no relief from forfeiture could be granted.
-
-**Backlog in the Canadian Court Systems**
-As of November 2025, there were 50 judicial vacancies across Canada, in addition to longstanding criticism of whether those openings are even sufficient given recent population growth. This has led to long judicial wait times and concerns with respect to access to justice. Yet, in 2025, the Federal Court of Appeal’s ruling in *Canada (Prime Minister) v Hameed*, 2025 FCA 118 overturned a controversial lower court decision requiring judicial vacancies to be filled within a “reasonable time”.
-
-The Federal Court (FC) backlog has been exacerbated by a surge in appeals of immigration decisions, resulting in delays of over a year to obtain final rulings. According to the Canadian Bar Association (CBA), immigration-related filings at the FC have quadrupled since 2020. Despite this, operational funding to expand judicial capacity has not been renewed since 2023. Without funding, the FC is projected to hear approximately 400 fewer immigration cases yearly, thus adding to further backlogs.
-
-Lastly, in 2025, the Government of Canada published its estimated budget for expenditures over the next three years, which would cut over $20m from support services for administrative tribunals. In response, the CBA created a submission to Finance Canada in August, which highlighted the persistent underfunding for the Courts Administration Service and called for relief for the structural deficit/funding gap of approximately $35m. The CBA noted that lack of financial backing for court systems strains core operations and, if left unaddressed, risks undermining the ability of the courts to discharge their mandate to interpret the laws enacted by Parliament effectively and independently.
-
-### What to look out for in 2026
-
-**Rule Reform in Ontario**
-The Civil Rules Review Working Group published its Phase 2 Consultation Paper on 1 April 2025, which proposed various changes to the way civil legal proceedings are conducted in Ontario. A revised version has been presented to members of the bar with recommendations that are expected to be imminently published by the Ministry of Attorney General, including:
-
-- new pre-litigation protocols for specific types of cases, which will mandate the early exchange of information and specific documents, and require parties to make a genuine effort to resolve their disputes before starting court proceedings
-- changes to examinations for discovery, including limiting the scope and time allowed for oral examinations and eliminating them in some instances
-- requiring up-front exchange of all evidence-in-chief once pleadings are completed
-- requiring mandatory case conferences after the exchange of evidence to set dates for a trial and mediation within two years
-- curbing motions practice by using judicial intervention to ensure that motions are addressed in a manner proportionate to the significance of the issues and the impact they have on the substantive dispute
-- streamlining expert evidence by encouraging joint experts and permitting a single expert per issue.
-
-In theory, these changes will reduce backlogs by streamlining litigation. However, the new system has been criticized by the bar for “front loading” litigation costs and prolonging contentious issues. The detailed presentation of a case early in litigation may help early assessments, but also risks the parties missing opportunity to settle given the significant early time investment required.
-
-Given that Ontario is Canada’s largest province, these proposed changes and the associated risks set a strong precedent for the rest of the country. Time will tell if other provinces and territories will follow suit, though at the moment, the proposed changes to the rules of civil procedure make Ontario an outlier amongst other Canadian jurisdictions.
-
-**Artificial Intelligence**
-Advancements in artificial intelligence are making their way into the traditionally conservative legal industry. Rule changes have already required lawyers to make attestations about the veracity of case law and evidence given the advent of AI hallucinations.
-
-AI presents a unique opportunity for firms and claims managers to streamline operations and reduce overall workload. AI is beginning to be considered as part of the standard of care in particular for large document cases, such as construction disputes, which have become increasingly unwieldly given the large e-discovery burden.
-
-Tools that rely on artificial intelligence also present significant challenges to claim assessments. Self-represented plaintiffs can use it as a tool to create a volume of legal submissions that increase costs on meritless claims. Savvy claims handlers should also be aware of the potential of faked or altered evidence given the prevalence of tools that allow for “deep fakes”.
-
-**CONTACTS**
-*Mark Frederick, Partner | +1 416 595 8175 | mfrederick@millerthomson.com*
-*Tom Whitby, Partner | +1 416 595 8561 | twhitby@millerthomson.com*
-
----
-
-## France
-
-**HMN PARTNERS**
-*Simon Ndiaye | Managing Partner*
-*Sarah Xerri-Hanote | Partner*
-*Romain Schulz | Of counsel*
-
-### Key developments in 2025
-
-We mentioned in previous reviews the issue of coverage for operating losses when there is no physical damage in the context of the Covid-19 pandemic, and the fact that litigation before various courts of first instance and courts of appeal in France left an impression of chaos.
-
-As in 2024, the Cour de cassation (French Supreme Court) continued to render decisions on this matter in 2025. It is no surprise that decisions are still being issued: the litigation concerns various insurance contracts with different wordings and different exclusion clauses. Moreover, the Cour de cassation must still impose its views on the lower courts.
-
-In four decisions (two rendered on 28 May 2025 and two on 18 September 2025), the Cour de cassation interpreted the condition of coverage requiring that access to the premises be prohibited. Lower courts construed this condition strictly as an absolute and general prohibition, but the Supreme Court decided that it is not necessary to demonstrate a total prohibition of access.
-
-Initially, the litigation concerned mainly restaurants, but there are now decisions regarding hotels. According to a decision rendered on 19 June 2025, hotels cannot benefit from coverage because they were not subject to the national prohibition on receiving the public. However, in a decision rendered on 13 March 2025, a hotel owner obtained coverage. The reason is that the hotel was located in an area of a French département in which the Préfet (the State’s local representative) issued an order extending to hotels the prohibition on receiving the public.
-
-On 18 September 2025, the Cour de cassation reminded that the limit of coverage in force at the date of termination of the policy applies to the entire extended reporting period. Consequently, as the extended reporting period is at least five years (and ten years in certain cases), the limit applies once and not five (or ten) times. This is a strict application of the statutory provisions of article L. 124-5 of the French Insurance Code regarding Professional Indemnity Insurance on a claims-made basis, but the reminder was apparently needed.
-
-The Cour de cassation also revisited the enforceability of the nullity of motor insurance contracts. Since the decision rendered on 20 July 2017 in the *Fidelidade* case by the Court of Justice of the European Union, the nullity of a motor insurance contract is not enforceable against third parties. The French Cour de cassation adopted this solution on 29 August 2019, but had to revisit two points in 2025.
-
-On 23 January 2025, the French Supreme Court decided that the nullity of the policy is not enforceable against an indirect victim. In this case, the indirect victim was also the policyholder who committed the intentional misrepresentation justifying the nullity. Nevertheless, the nullity is not enforceable.
-
-On 26 June 2025, the Cour de cassation decided that although the nullity is not enforceable against the victim, it is enforceable against the insurer of another vehicle involved. Consequently, the insurer whose policy is null has recourse against the other insurer whose policy is valid and can claim reimbursement of all sums paid to the victims.
-
-In previous reviews, we mentioned the monitoring carried out by the ACPR (Autorité de Contrôle Prudentiel et de Résolution, the French insurance supervisory authority) on the remote sale of insurance contracts, particularly by telephone. An Act of Parliament dated 30 June 2025 amended the French Consumer Code, requiring that the consumer’s consent be obtained beforehand. This will take effect on 11 August 2026 and will apply to all consumers, not only in relation to insurance.
-
-However, since 1 April 2022, the specific regulations governing the sale of insurance by telephone apply where the call has not been solicited, granting time to consider the insurance transaction. This will need to be reconciled with the broader consumer regulations.
-
-### What to look out for in 2026
-
-Corporate social responsibility is a risk factor, particularly for liability insurance such as PI or D&O. It represents not only a source of risk but also a means of mitigation.
-
-On 13 November 2025, the Directive on Corporate Sustainability Reporting and the Directive on Corporate Sustainability Due Diligence were heavily revised by the European Parliament. The thresholds for application have been increased with respect to both number of employees and turnover, with the consequence that many companies will no longer be subject to the regulation. Several important obligations have been removed. For example, the duty to develop a climate transition plan has been withdrawn. In addition, the mechanism of harmonised civil liability across the European Union has also been removed.
-
-The draft directives must now be discussed among the European Parliament, the European Council and the European Commission, with the aim of adopting a final text by the end of 2025.
-
-Another risk to monitor is PFAS (perfluoroalkyl and polyfluoroalkyl substances), also known as persistent pollutants. Legal actions against industrial companies are multiplying in France (as well as in other countries, for instance, the decision rendered on 26 June 2025 in Italy by the Corte di Assise di Vicenza). In March 2025, the Paris water company filed a criminal complaint against persons unknown for pollution of water and soil. In July 2025, citizens of Saint-Louis, in Alsace, filed a criminal complaint regarding pollution of the city’s water supply. PFAS have also been detected in the French départements of Ardennes and Meuse at levels never previously recorded (including in the “chemical valley” of the Rhône), leading to another complaint filed in July 2025.
-
-**CONTACTS**
-*Simon Ndiaye, Managing Partner | +33 1 53 57 50 41 | sndiaye@hmn-partners.com*
-*Nathalie Finklestein, Partner | + 33 1 53 57 76 94 | nfinkelstein@hmn-partners.com*
-*Sarah Xerri-Hanote, Partner | +33 1 53 57 50 20 | sxerri-hanote@hmn-partners.com*
-
----
-
-## Netherlands
-
-**KENNEDY VAN DER LAAN**
-*Marit van der Pool | Partner, Attorney at law*
-*Eunice Blokland | Student Assistant*
-
-### Key developments in 2025
-
-**PFAS**
-Last year, we already mentioned the PFAS developments in the Netherlands. This year, PFAS litigation has intensified. A collective action brought by eleven interest groups against the State alleges a breach of duty of care for failing to protect the residents from PFAS contamination. The case was heard on 2 December 2025 and a ruling is expected in February 2026.
-
-The court’s 2023 ruling of liability in the case brought by municipalities against Chemours remains an important precedent for future claims against industrial polluters. These developments reflect a broader trend in which PFAS is being compared to asbestos regarding its legal consequences, whilst the European Commission continues to work on a potential EU-level ban on PFAS.
-
-**AI**
-Globally, AI is impacting the way we work significantly. This phenomenon will logically also have a significant impact on insurance claims and insurance coverage. Silent AI has developed into a point of attention within the Dutch insurance market. As companies increasingly rely on AI-driven support tools, debate has intensified over whether errors made by AI tools as quasi-professional agents qualify as professional wrongful acts or not. We see similar discussions under product liability insurance. The AI Act, which has been in force since 2024, has also begun to influence the assessment of civil duties of care. Failure to comply with its requirements is expected to be treated as strong evidence of unlawful conduct in civil proceedings. We have also seen insurers adding specialized GenAI coverage under their cyber policies, making an early shift towards explicit AI insurance.
-
-**Product liability**
-Product liability changes in 2025 were dominated by the entry into force of the new EU Product Liability Directive (2024/2853), which significantly expands both the scope of products and the range of potentially liable parties. Software, AI systems and associated digital services now fall within the definition of a product, while importers, authorised representatives and fulfilment service providers may also face liability. The broadened concept of recoverable damage and eased evidentiary rules have raised concerns among insurers, who anticipate increased claims exposure and are revising policy wordings accordingly.
-
-**Class Actions**
-The WODC (a Scientific Research and Data Center of the Ministry of Justice) has evaluated the Dutch Collective Settlement of Mass Claims Act (WAMCA), noting 95 collective actions since 2020 with none fully resolved. The report identified lengthy admissibility phases and funding issues, recommending procedural improvements and a clear funding framework. Notably, the Vattenfal case was the first WAMCA case to reach substantive assessment, whilst the Mercedes Dieselgate action was declared admissible on appeal. These developments have fueled a growing claim culture in the Netherlands under the WAMCA framework.
-
-**Rotterdam Scale, relevant for personal injury claims**
-2025 saw the official introduction of the ‘Rotterdam Schaal’ (Rotterdam Scale), a standardized framework for assessing immaterial damages in personal injury cases in the Netherlands. This scale, developed by a legal research team from the Erasmus University Rotterdam, provides a structured approach to quantifying non-material damages, such as pain and suffering. The aim is to bring greater predictability and transparency to claims handling. As the use of the Rotterdam Schaal leads to higher amounts of compensation, this will have consequences for the amount of damages awarded. Although not legally binding, courts and practitioners increasingly reference the Rotterdam Scale. The Dutch Judiciary is currently discussing the use of the Rotterdam Scale and is expected to publish a guideline soon.
-
-**Unregulated advocates**
-Key issues in 2025 revealed growing concerns about claims by unregulated advocates in personal injury matters. Issues such as double billing, misleading advertising and insufficient expertise were increasingly reported, with up to a quarter of cases handled by unregulated advocates. Sector organizations urged the introduction of statutory quality standards, including amendments to article 6:96 Dutch Civil Code (this is the article that specifies what types of costs can be claimed as damages), whilst a WODC study concluded that broader regulation is necessary. Parliamentary debates show support for mandatory accreditation and professional protection, although concrete legislative steps remain pending.
-
-**Regulatory trends**
-Regulatory developments were marked by increased supervisory attention from The Dutch Bank (DNB) and the Dutch Authority for the Financial Markets (AFM), including closer scrutiny of governance frameworks, digital resilience under DORA and the use of AI systems. At EU level, the key changes concern the revision of the Solvency II Directive, the central supervisory framework for European insurers, and the introduction of the Insurance Recovery and Resolution Directive setting new recovery and resolution rules. These reforms will shape the EU’s oversight of insurers in the coming years.
-
-### What to look out for in 2026
-
-**PFAS**
-PFAS is projected to become an even bigger source of liability in 2026, especially as European regulations are expected to broaden PFAS restrictions under the REACH regulation (the Regulation of Registration, Evaluation, Authorisation and Restriction of Chemicals). At national level, a standalone PFAS ban remains under political consideration, but preparations for stricter standards on emissions, soil, and drinking water are being developed. As lawsuits begin to target not only manufacturers but also distributors and processors, insurers are likely to respond by adding specific PFAS exclusions, sublimits, or significantly raising premiums. Together, these developments suggest that 2026 will be a crucial year when tighter regulations and increased legal claims come together.
-
-**(Silent) AI**
-Looking ahead to 2026, AI-related claims are expected to increase significantly, pressuring insurers to clarify the scope of AI coverage. The revised Product Liability Directive and AI Act will create strict liability for software and AI systems, likely to raise claim volumes. Silent AI exposure continues due to outdated policies, but insurers are expected to introduce explicit AI-clauses in 2026 to prevent unintended coverage. Heightened exposure is expected in mobility, healthcare and HR, where AI systems and bias may trigger liability or discrimination claims. Litigation funders are also likely to engage more actively, partly due to developments of the WAMCA in the Netherlands.
-
-**Product liability**
-By 9 December 2026, EU countries must implement the new Product Liability Directive. The broadened scope covering software, AI systems and associated digital services is expected to drive an increase in claims, including WAMCA cases in the Netherlands. Insurers are likely to introduce AI- and digital-product clauses to manage silent exposures, while companies face heightened compliance and contract management demands. Litigation funders are also expected to become more active, particularly in the tech and medical sectors.
-
-**Unregulated advocates**
-Ongoing concerns about unregulated advocates are set to drive significant policy attention in 2026. Lawmakers are considering changes to article 6:96 DCC (see above) that would tie remuneration to the expertise of advocates, a change expected to lower insurers’ expenses. Political debate on introducing a licensing system or protected professional title is gaining momentum, with a government response expected soon to help guide future supervision and enforcement. Insurers are expected to tighten cost assessments, refine policy wording and promote the use of accredited representatives.
-
-**Regulatory trends**
-Regulatory priorities in 2026 will center on enhanced supervision by the AFM and DNB, including data-driven and risk-based oversight and further implementation of DORA. At EU level, 2026 will serve as a transition year for the Solvency II revision and the IRRD, requiring updates to governance and recovery planning. Insurers are advised to prepare for upcoming financial-markets legislation and rising expectations on ESG, AI and operational resilience.
-
-**Class Actions**
-Key policy actions are expected in 2026, including the government’s response to the WODC evaluation of the WAMCA and potential legislative measures to streamline procedures and improve funding transparency. Collective claims are likely to increase, particularly in the areas of ESG, AI and consumer protection, with litigation funders playing a growing role. Insurers should anticipate higher exposure under directors’ liability and professional policies and may need to revise policy terms whilst closely monitoring funding and opt-out risks.
-
-**CONTACTS**
-*Peter van den Broek, Partner, Attorney at law | +31 20 5506 669 | peter.van.den.broek@kvdl.com*
-*Marit van der Pool, Partner, Attorney at law | +31 20 5506 838 | marit.van.der.pool@kvdl.com*
-
----
-
-## Latin America
-
-**RPC**
-*Alex Almaguer | Partner, Head of Latin America*
-*Chris Burt | Senior Associate*
-*Martin Jimenez | Associate*
-
-### Key developments in 2025
-
-The Latin American insurance market experienced a challenging and dynamic 2025. This was fuelled by consistent growth, an expansion in digital distribution, and increasing product sophistication, alongside regulatory volatility and a notable rise in the frequency of complex loss events.
-
-The year was further defined by geopolitical shocks, particularly stemming from shifts in US trade policies. Given their heavy reliance on exports, many Latin American nations remained susceptible to supply chain disruptions and inflationary pressures. This translated into higher claims costs due to rising repair and replacement expenses.
-
-Furthermore, we noted a visible influx of new participants in the region. The use of Managing General Agents (MGAs) to provide capacity or facilitate the assumption of risks by foreign regional reinsurers continues to gain traction. This trend is expected to drive demand for Delegated Underwriting Authority Enterprises (DUAEs) with specialised expertise in the Latin American market.
-
-The region was also defined by significant legislative shifts, most notably the entry into force of the new Brazilian Insurance Contract Act (Law No. 15.040/2024) in December 2025. This Act introduces a modern legal framework that replaces the provisions of the Brazilian Civil Code, bringing substantial changes for all market participants, including reinsurers. The new Brazilian Insurance Act adopts a pro-policyholder approach across all insurance lines, including large commercial risks. Furthermore, it imposes stricter response deadlines and limits insurers’ ability to request additional information. The law also restricts the capacity to designate foreign law and jurisdiction for local disputes (see RPC’s analysis here[^1]).
-
-### What to look out for in 2026
-
-As we enter 2026, the Latin American reinsurance market is navigating a strategic “softening” phase within the broader hard market cycle. This shift is characterised by a significant influx of global capacity and a heightened risk appetite from new market entrants. While 2025 was defined by geopolitical trade shocks, 2026 is poised to prioritise underwriting innovation and technological maturity.
-
-Market participants should closely monitor the diverging economic trajectories of the region’s leading economies. While Brazil and Argentina show signs of business stabilisation and growth, Mexico faces a more complex outlook driven by ongoing trade tensions and fiscal reforms. Specifically, recent modifications to VAT rules may escalate premiums and claims costs for personal lines; furthermore, commercial lines may be adjusted as insurers seek to offset potential premium losses.
-
-The insurance market should maintain a close watch on the shifting political landscape between the US and Venezuela. A potential regime change could lead to the lifting of sanctions and the reopening of the Venezuelan oil market, home to the world’s largest proven reserves.
-
-Key themes for the year will include the rising dominance of Managing General Agents (MGAs), the integration of predictive AI, and the implementation of new regulatory frameworks such as the new Brazilian Insurance Act.
-
-We expect an increase in cyber risks as it is one of the fastest-growing claims areas globally, and Latin America is no exception. The market, while smaller and less mature than in the US and Europe, is experiencing the fastest growth in cyber insurance premiums.
-
-Political Risk and Violence remains a primary concern. Political instability in specific jurisdictions, exacerbated by social inequality, elevates the risk of severe claims arising from civil unrest, strikes, riots, and looting. Underwriters must remain vigilant as these localised events can lead to significant aggregate losses across commercial portfolios.
-
-Finally, in 2026, the Latin American market will also witness a sharp rise in Special Risks, particularly concerning the theft of high-value assets. Driven by a surge in organised crime and the escalating global value of commodities, losses involving gold bars, luxury watches, and fine art have become a primary concern for regional underwriters. As gold prices remain volatile and illicit mining persists in the Andean region, the ability to distinguish between legal and smuggled assets has become as much a matter of compliance as it is of risk management, leading to a higher demand for more “forensic” underwriting and specialised loss adjusters.
-
-[^1]: https://www.rpclegal.com/thinking/insurance-and-reinsurance/brazil-enacts-landmark-insurance-legislation/
-
-**CONTACTS**
-*Alex Almaguer, Partner, Head of Latin America | +44 20 3060 6371 | alex.almaguer@rpclegal.com*
-*Lucy Dyson, Partner | +44 20 3060 6308 | lucy.dyson@rpclegal.com*
-
----
-
-## USA
-
-**HINSHAW & CULBERTSON**
-*Scott M. Seaman | Co-Chair of Hinshaw’s Global Insurance Service Practice Group*
-*Pedro E. Hernandez | Co-Chair of Hinshaw’s Global Insurance Service Practice Group*
-
-In this chapter of our Annual Insurance Review 2026, we look at the significant developments in 2025 and expected issues in 2026 for the USA.
-
-### Key developments 2025
-
-**Impact of Trump 2.0**
-The most impactful development of 2025 relates to the vast departure of the policies under Trump 2.0 from those of the Biden administration. The impact on claim frequency and severity varies by insurance line, but on balance deregulation is expected to result in an overall decrease in enforcement actions by federal agencies. The One, Big, Beautiful Bill – which permanently increases the maximum deduction for certain business property, allows full expensing of domestic research and experimentation expenditures, and makes permanent most of the 2017 tax cuts – generally affords more favourable treatment to insurers and other companies than pre-existing law. Tariffs have injected some uncertainty as well as additional revenues, but many of the concerns expressed by some economists have not materialized to the extent feared so far and economic inflation has declined to under 3%. Credit, trade, and political risks historically have not presented significant losses domestically, but in recent years they are seen as presenting greater risks along with social unrest.
-
-**Environmental, Social, and Governmental considerations/sustainability (ESG) is down but not out**
-There has been a substantial regulatory rollback of ESG from the “all of government” approach of the Biden administration. Trump 2.0 has adopted a responsible “drill baby drill” approach that is more friendly to fossil fuels in an effort to decrease energy costs and increase supplies needed to quench the energy demands of artificial intelligence data centers. Automobile emissions standards are likely to be reduced and the push for electric vehicles will be decelerated under Trump 2.0 and due to practical considerations such as costs and technological limitations. Even before Trump 2.0, the Biden administration failed to push a final, enforceable climate disclosure rule across the finish line. The U.S. Supreme Court limited somewhat the unbridled authority of administrative agencies during the past couple of terms generally and specifically in the areas of ESG and DEI. ESG backlash became a well-developed resistance movement. The Trump administration – through tabling climate disclosure rules, executive orders, regulatory retraction, and budgetary priorities – has taken much of the bite out of ESG at least for now. Several states led by California have picked up the ESG baton, but in November the U.S. Court of Appeals for the Ninth Circuit granted an injunction staying the enforcement of California law that requires companies to publish climate risk reports in January 2026 identifying their financial risks associated with climate change and their efforts to mitigate these risks. The court did not stay another law, requiring companies to disclose their Scope 1 and Scope 2 greenhouse gas emissions by an unspecified date in 2026. Though California is taking the lead, pro-ESG measures and legislation have been enacted in other states including Colorado, Florida, Illinois, Maine, Maryland, New Hampshire, Oregon, and Utah, demonstrating that Newton’s Third Law of Motion is bipartisan. Companies must comply with traditional environmental laws and environmental liabilities remain large.
-
-**An end to “illegal” Diversity, Equity, and Inclusion (DEI)**
-The Biden administration also applied its “all of government” approach to advance its DEI initiatives throughout the U.S. government and sought to impose DEI on private companies and actors. Trump 2.0 has targeted “illegal DEI.” On inauguration day, President Trump issued Executive Order 14151 “Ending Radical and Wasteful Government DEI Programs and Preferencing.” The next day, Executive Order 14173 was issued “Ending Illegal Discrimination and Restoring Merit-Based Opportunity.” The U.S. Department of Justice (DOJ) issued a final rule removing regulations issued under Title VI of the Civil Rights Act of 1964 that precluded recipients of federal funding from engaging in disparate impact discrimination based on race, colour, or national origin.
-
-**Social inflation continues to rage**
-Social inflation continues largely unabated, with nuclear and thermonuclear verdicts raining down. Tort costs have increased in recent years at an annual increase of 7.1%, more than twice the inflation rate with nuclear verdicts rising by 52%, thermonuclear verdicts increasing 81%, and defence firm rates up over 12% in the last two years. A 2025 behavioural social inflation study by Swiss Re confirms that juror sentiment has shifted decisively toward plaintiffs, adversely impacting insurers and companies. Support for punitive damages appears strong and punishment has improperly bled into compensatory damage awards. Insurers and corporate policyholders are being outspent substantially by the plaintiffs’ bar, which has averaged about $1.5bn a year in advertising and has outmessaged the defence side. Better messaging and addressing damages and counter-anchoring by defendants is essential. Tort reform legislation in states such as Florida, Georgia, and Louisiana has shown early signs of effectiveness. Third-party litigation funding continues to be a driver of social inflation.
-
-**Cyber & cybersecurity**
-Underlying cyber claim frequency remained stable while severity dropped by 50% year-over-year, reflecting the improved incident response, widespread adoption of multi-factor authentication, and better cyber hygiene. However, AI is being used to foster identity fraud and to bypass security systems. AI-washing claims and AI-related securities class action litigation are on the rise. Insurers are including AI exclusions, sub-limits, and endorsements to control AI-related risks in a variety of policy types and also are providing affirmative AI coverages.
-
-**Privacy claims**
-In 2025, state-level activity surged with over 800 consumer privacy bills introduced and new laws enacted in Delaware, Iowa, Nebraska, New Hampshire, New Jersey, Tennessee, Minnesota, and Maryland. At the federal level, the Trump administration has reduced oversight and enforcement by the Federal Trade Commission (FTC) and the Consumer Financial Protection Bureau. In Illinois, insurers continue to grapple with “silent cyber” claims under traditional liability, property, and crime/fraud policies.
-
----
-
-## Middle East and Africa
-
-*(Content omitted in source)*
-
----
-
-## Business line updates
-
-*(Content omitted in source)*
-
----
-
-## Contacts
-
-*(Content omitted in source)*
-
----
-
-have prevailed in
+Download this year’s
+Annual insurance
+review here
+
+WORKING TOGETHER
+Working together with shared strategic objectives and
+values and the collective purpose of providing clients with
+Global Access to the best insurance law advice and client
+service wherever in the world they might need it.
+We are more than a network.
+43 OFFICES
+WORLDWIDE.
+OVER 2000
+LAWYERS.
+
+M E RI C
+A
+page 18 | MIDDLE
+E A S T
+USA page 20
+A A
+N N
+A
+TI D
+A
+L F
+8
+e
+|
+g p
+R
+I A C
+a a
+p g
+A
+IS 6 2
+e
+A
+CANADA page 12 NETHERLANDS page
+16
+AUSTRALIA page
+10
+FRANCE page
+14
+
+8 2026
+ASIA
+RPC
+Rebecca Wong | Partner
+Macca Anderson-Brown | Associate
+Key developments in 2025 corporate governance. Coverage for Lastly, amid the rapid rise of AI-generated
+regulatory costs and insurable fines content and increasingly sophisticated
+A challenging macroeconomic continue to feature, particularly across deepfakes, China has expanded its
+environment financial lines insurance offerings. cybersecurity and data-governance
+From the Trump Administration’s framework by introducing a
+protectionist tilt to geopolitical conflicts In Hong Kong, the introduction of HKEX’s comprehensive regulatory regime for
+in major trade corridors such as Europe mandatory climate-related disclosures, generative AI. The new rules, which
+and the Middle East, Asia has been signalled a decisive shift towards stricter came into effect in September, require
+forced to adjust to a rapidly shifting sustainability governance and board-level AI-generated text, images, audio and
+macroeconomic landscape. accountability. Furthermore, the SFC has video to be clearly labelled as such, and sit
+also ramped up enforcement activity,
+alongside existing obligations requiring
+These global pressures translated into a targeting fund-manager misconduct,
+providers of large scale or publicly facing AI
+complex storm of softer trade demand, instances of the misuse of client assets,
+models to file underlying algorithms with
+subdued economic growth, persistent and disclosure failures in market
+the CAC prior to deployment.
+inflation and heightened market volatility, communications. The horrific fire on
+all of which created a more difficult 26 November 2025 at Wang Fuk Court As the world evolves, bringing with it new
+operating backdrop for insurers across in Tai Po, caused mass casualties and frontiers of risk, regulators across Asia
+the region. property damage estimated at US$334m. remain as determined and vigilante as
+The incident has shone a spotlight on the ever to ensure adequate protections are in
+Asia’s position as a global manufacturing
+Hong Kong construction industry, with place to safeguard markets.
+hub meant it felt the effect of supply chain
+experts calling for stricter rules around
+strain more acutely, with disruptions in
+oversight of building material safety, site Climate change and catastrophe insurance
+cross-border production networks feeding
+management and inspections. The ICAC Climate change driven weather events
+directly into corporate balance sheet
+has since launched an investigation into continue to place pressure on the industry.
+pressure across key markets. As regional
+suspected corruption for the renovation
+growth softened and financing costs Asia remains the global epicentre of
+project at the premises and a judge-led
+climbed, more Asian businesses struggled climate-related catastrophe risk, with
+committee into the cause of the incident
+with cash flow stress and insolvency risk, an estimated 40% of the world’s natural
+has been announced.
+a trend that did not go unnoticed by trade disasters striking the region, yet it
+credit insurers, many of whom reported Singapore has followed a similar trajectory, continues to suffer from one of the widest
+rising late payment activity and an uptick in with the PDPC, its regulator responsible protection gaps globally, with an estimated
+claims across trade exposed sectors. for enforcing Singapore’s data protection 82.8% of losses remaining uninsured.
+and privacy laws, significantly stepping
+Taken together, 2025 was a year in which This year, property damage as a result of
+up enforcement in 2025, issuing a
+macroeconomic and geopolitical volatility the region’s natural catastrophe events
+financial penalty against a SaaS provider
+materially shaped insurer behaviour across remained relatively manageable with an
+following a major ransomware related
+Asia, influencing pricing, capacity decisions outlier being the 7.7 magnitude earthquake
+breach and maintaining a firm stance
+and overall risk appetite. that hit Myanmar in March, the effects
+generally on organisations that fail to
+of which extended into Thailand.
+meet required security and accountability
+Increased regulatory enforcement in Early assessments placed insured losses in
+standards under the PDPA. Separately,
+emerging areas Thailand at around US$1.5bn, with around
+the MAS has continued to mount a strong
+2025 saw a marked escalation in regulatory 150,000 claims filed.
+display against financial services firms,
+enforcement across Asia, with regulators
+prioritising enforcement action centred
+sharpening their focus on key areas such What is also becoming clearer is that the
+on governance failures, weak AML/CFT
+as financial services, cybersecurity, data role of insurers is no longer confined
+controls and deficiencies in technology
+and privacy, climate and ESG, and general to absorbing the financial fallout of
+and operational-risk management.
+
+ANNUAL INSURANCE REVIEW 9
+natural catastrophes; rather, there is across key markets despite a challenging wising up. We are seeing insurers excluding
+now a growing expectation across macroeconomic backdrop. exposure to such risks under existing
+Asia that insurers will take proactive policies, with a new focus on developing
+Among others, this presents a meaningful
+steps towards bridging the protection coverages that respond to the unique risks
+opportunity to capitalise on the growing
+gap, both indirectly by integrating ESG created by AI adoption such as AI failures/
+demand for transactional risk solutions.
+frameworks into underwriting to influence limitations, including hallucinations,
+On this, we note that 2025 has already seen
+real world behaviours (for example, biased outputs and autonomous
+a noticeable uptick in W&I placements
+offering more favourable policy terms for decision-making errors. For example,
+across Asia, underscoring both the
+buildings with stronger flood defences, Munich Re, AXA XL, Armilla AI, Chaucer,
+rebound in deal activity across the region
+renewable-energy infrastructure, or and PICC are reportedly developing
+but also the growing adoption of W&I
+climate resilient construction) and directly, specialised, standalone AI liability products
+insurance as an effective way to transfer
+through the development of more and/or adding AI-specific endorsements to
+risks in transactions.
+accessible catastrophe products such as existing technology, cyber or professional
+parametric covers and community-based lines policies.
+Insurance for digital asset service
+microinsurance. While microinsurance
+providers is also expected to be a growth
+Insurance for AI liability is a promising
+has historically played a limited role in
+area, with regulators in the region
+growth area for insurers and indeed,
+insurers’ portfolios due to low premium
+recognising the significance of its role
+Deloitte has estimated that by 2032,
+volumes and high administrative costs,
+from a consumer protection standpoint.
+AI liability premiums globally will be
+it is poised for significant growth across
+The Hong Kong SFC, for example, requires
+upward of USD$4bn. Underwriting AI
+Asia as governments and individuals
+licensed virtual asset service platforms
+liability will no doubt be challenging for
+become increasingly cognisant of its
+to maintain insurance covering client
+insurers given the lack of (if any) tested
+role in bridging the protection gap
+assets held in both hot and cold wallets.
+wordings in the market and the fast pace
+for lower-income demographics, who
+This requirement has been subject to
+at which AI (and, therefore, its associated
+disproportionately feel the effects of
+industry feedback regarding the difficulties
+risks and regulations) are evolving.
+climate related losses.
+in compliance given, among others,
+the lack of capacity provided by insurers in Going forward, trends in this area are
+What to look out for in 2026
+the region to cover such risks. The SFC is, worth monitoring, as regulatory scrutiny
+therefore, considering modifications to intensifies, particularly around responsible
+Emerging growth in Asia as a whole
+the same – while local capacity for such AI governance. It is therefore not
+Despite facing significant economic
+insurance is gradually increasing. inconceivable that AI liability insurance
+headwinds, Asia has emerged as a rare
+could become an expectation, or even a
+engine of expansion throughout 2025,
+Rising demand for AI liability insurance mandated requirement, for businesses
+a trend that is expected to carry into 2026.
+While AI-driven losses may be silently operating at scale with AI systems
+An indicator of the region’s resilience
+covered under existing policies sometime in the future.
+has been the sharp rebound in M&A
+(for example, professional indemnity and
+activity, with deal volume and value rising
+cyber insurance policies), the industry is
+CONTACTS
+Carmel Green Antony Sassi Rebecca Wong
+Partner Managing Partner Partner
++852 2216 7112 +44 7860 629 508 +852 2216 7168
+carmel.green@rpclegal.com antony.sassi@rpclegal.com rebecca.wong@rpclegal.com
+
+10 2026
+AUSTRALIA
+COLIN BIGGERS & PAISLEY
+Jonathan Newby | Partner
+Key developments in 2025 In the construction space, New South Scrutiny of the accountancy profession
+Wales has substantially unwound reforms continues to increase, with rare regulatory
+The Australian market faces challenges
+enacted in 2004 which displaced joint moves now being made against top tier
+and emerging risks similar to other
+and several liability. The proportionate firms, including the notable successful
+jurisdictions. While the overall economy is
+liability regime is, in practical action by the Tax Practitioners Board
+relatively strong, inflation sensitive sectors
+terms, at an end for construction against PWC’s former Australian
+such as construction, hospitality, and
+professionals marking a return to the Managing Partner. ASIC has also stepped
+retail remain vulnerable, as evidenced by
+routine filing of contribution claims. up its prosecution of tax promotion
+record-level insolvencies in the SME space,
+This outcome increases the costs scheme advisors.
+and the ongoing economic, social and
+of managing disputes for builders,
+political turbulence on a global scale still Australian D&O insurance and class action
+subcontractors, and professionals lacking
+casts a shadow on our sunburnt country. landscape is in a state of flux, with directors
+delegation protection.
+and officers continuing to face increasing
+Cyber risk and privacy remain top of mind
+As to Victoria, the Building and Plumbing levels of risks and regulation.
+for companies, their leaders and insurers,
+Commission has been established,
+with a survey by CrowdStrike showing Corporate regulatory scrutiny and
+combining the functions of various bodies
+the Australia/New Zealand region as the intervention also remains high, with
+that had regulated domestic building
+third most targeted globally, with 78% of the Australian Securities & Investments
+insurance, practitioner registration and
+respondents experiencing at least one Commission and the Australian
+dispute settlement divisions. The enabling
+ransomware attack in the past year. Competition & Consumer Commission
+legislation contemplates that this body will
+actively pursuing enforcement in the areas
+have certain powers to direct rectification
+There have been changes in cyber
+of ESG, greenwashing, cyber readiness and
+works on buildings from 1 July 2026.
+law include the mandatory reporting
+in general instances of general wrongdoing
+of ransomware payments, and
+For institutional liability risks, the issues across the board.
+minimum-security standards for smart
+of vicarious liability, non-delegable duties
+device security. From 10 December 2025 Shareholder class action filings have slowed
+of care, permanent stays in claims where
+age-restricted social media platforms substantially due to landmark victories for
+the passage of time means witnesses
+must take reasonable steps to defendants and ongoing legal uncertainty.
+are unavailable and evidence lost, and
+prevent Australians under 16s from However, this current holding pattern may
+decisions to set aside prior deeds of
+having accounts. prove to be temporary with appeals in
+settlement, continue to work their way
+Zonia Holdings Pty Ltd v Commonwealth
+through the courts and bring an element
+ASIC continues its focus on failures by
+Bank of Australia (CBA) and Crowley v
+of uncertainty. While the High Court
+companies to have adequate cyber security
+Worley Ltd (Worley) on foot in the and
+ruled on the issue of vicarious liability in
+with prosecutions commenced against FIIG
+plaintiffs are actively planning alternative
+the case of DP v Bird in late 2024, finding
+Securities and Fortnum Private Wealth.
+paths to success. Meanwhile, filings in
+that there was not an employment
+other class action areas – especially
+There have also been significant relationship between the Diocese and the
+consumer and employment claims –
+developments in Australian privacy law priest in question, the High Court is now
+are rising sharply, driven by plaintiff and
+this year, with a statutory tort for a serious considering a second matter in Diocese of
+funders shifting focus.
+intrusion into privacy commencing on Maitland-Newcastle v AA. The outcome is
+10 June 2025. This adds additional risk for being closely watched, as the change in the
+Private credit exposures continue to
+companies and opens up the potential interpretation of vicarious liability, together
+increase, highlighted by recent failures,
+for class actions arising from any breach. with legislative change foreshadowed
+industry warnings and ASIC intervention.
+The first civil penalty for the breach of in a number of States and Territories in
+These traditional FI and PI risks present real
+privacy saw pathology provider Australian 2026, will have wider implications than just
+challenges for directors and officers.
+Clinical Labs ordered to pay $5.8m. historical abuse claims.
+
+ANNUAL INSURANCE REVIEW 11
+What to look out for in 2026 are detected. While ASIC are for now part overturning of the trial judge’s
+taking a pragmatic and proportional findings, but denying damages due to
+While many of the risks that have been on
+approach, this grace period will expire. failure to prove causation and loss, the
+the agenda in 2025 remain top of mind,
+High Court will hear the applicant’s Special
+risks continuing to emerge further in 2026 Consumer protection will continue to be
+Leave application on 12 February 2026.
+including climate reporting, AI and privacy, a focus for the ACCC. The proceedings
+In Worley, the appeal focused on causation
+modern slavery, forever chemicals and against Mercer and Vanguard for
+and quantification of loss following the trial
+workplace matters, to name just a few greenwashing signal a continued focus
+court’s dismissal of claims. A decision is
+issues of note. on consumer protection, including
+expected to clarify whether market-based
+within financial services, retail, aviation
+causation theories will gain traction,
+The second tranche of the changes
+and essential services. These sits
+which could reshape the viability of future
+to Privacy Act is still awaited, which is
+alongside the ACCC implementing a new
+shareholder actions.
+anticipated to include the removal of
+mandatory merger regime from 2026.
+small business exemption and employee
+Crypto regulation has advanced, with ASIC With these complex issues on the table,
+records exemption. The introduction of
+issuing detailed guidance on digital assets plaintiffs and funders are now considering
+requirements for disclosure of automated
+and custody obligations, supported by a split trials, separating liability from
+decision making in privacy policies will
+sector-wide transition period to mid-2026. quantum, to overcome issues associated
+become effective on 10 December 2026.
+with establishing loss. This approach
+The rules for minimum security standards The construction industry is facing major
+has advantages for all parties, including
+for the “Internet of Things” comes into legislative and regulatory reforms in NSW
+reduction of up-front costs, the ability to
+effect on 4 March 2026. and Victoria in 2026. Building Bill 2024,
+test questions of liability and provide a
+currently before the NSW State Parliament
+better understanding of exposure once
+AI presents both significant opportunities
+proposes the largest overhaul of building
+liability has been determined, and has even
+and risks for businesses and insurers.
+and construction industry regulation in
+had support from the bench, with Justice
+While adoption can drive efficiency,
+40 years, by consolidating nine pieces of
+Lee of the Federal Court describing a split
+recent incidents highlight the dangers
+legislation into one, and implementing
+trial as maybe “desirable and efficient”.
+of misaligned AI-generated material,
+better controls and safeguards across
+which have resulted in regulatory
+a number of areas from licencing to With the stalling of the shareholder class
+admonishment and reputational harm.
+regulatory powers. The Bill is at the action market, there is the potential for
+Organisations should ensure that AI
+final review stage and, to date, has not derivative actions to become the new
+outputs meet government, regulatory, and
+been introduced to the Parliament of class action. Derivative actions allow
+social expectations to avoid professional
+New South Wales. shareholders to bring proceedings
+negligence and potential class actions.
+on behalf of the company for wrongs
+Added to these risks is enhanced In Victoria, the Building and Plumbing
+done to the company itself, rather than
+regulatory scrutiny, particularly where Commission is consolidating the Victorian
+seeking compensation for individual
+companies overstate their AI preparedness Building Authority, Domestic Building
+shareholder loss, overcoming some of
+or capability – a practice increasingly Dispute Resolution Victoria and the
+the evidentiary and causation hurdles that
+referred to as “AI-washing.” statutory domestic building insurance
+are plaguing shareholder class actions.
+scheme, to provide greater a more
+Derivative actions also align with broader
+Mandatory climate reporting ramps
+streamlined service for building
+governance trends, including heightened
+up in 2026, as the second phase of
+practitioners and greater protections
+regulatory scrutiny of board conduct and
+the roll out makes a larger number of
+for consumers.
+ESG compliance. As ASIC and the courts
+companies eligible. With directors being
+continue to emphasise directors’ duties
+required to sign off on sustainability Those active in the D&O and class action
+and corporate governance standards, we
+reports, this opens up another potential space is eagerly anticipating appeals and
+expect derivative actions to gain traction
+avenue of risk for this cohort and for the other developments in this space in 2026
+– particularly in cases involving systemic
+professional services firms who assist which will shape what happens next.
+governance failures, cyber breaches and
+in the data that goes into the reports In CBA, following the Full Federal Court’s
+climate-related disclosure obligations.
+where misleading or overstated claims
+CONTACTS
+Jonathan Newby Keith Bethlehem Michael Russell
+Partner Partner Partner
++61 2 8281 4406 +61 2 8281 4421 +61 2 8281 4612
+jonathan.newby@cbp.com.au keith.bethlehem@cbp.com.au michael.russell@cbp.com.au
+
+12 2026
+CANADA
+MILLER THOMSON
+Sean McGarry | Partner
+Vanessa De Sousa | Associate
+Key developments in 2025 Appeal rulings appear more favourable on be a condition precedent to coverage.
+notice issues Rather, courts must interpret a policy as a
+2025 was a dynamic year in the world
+The Ontario Court of Appeal (ONCA) whole and ordinary principles of contractual
+of insurance in Canada. In this chapter,
+recently issued two important interpretation apply.
+we explore the economic uncertainty,
+insurance-related decisions,
+fears of impending recession, In Furtado, the policy included a suspension
+both addressing whether the insured
+and developments in the legal sector that clause pausing notice requirements
+had sufficiently complied with notice
+underscored the year Canada had, as well as while the insured was legally prohibited
+requirements in claims-made and reported
+what is to come in 2026. by law enforcement or the OSC from
+policies such that relief from forfeiture could
+making disclosures. When he was informed
+be granted. In a claims-made and reported
+Economic uncertainty and recession that new legislation now permitted
+policy, coverage is only triggered if the
+Canada faced significant financial difficulties disclosure to his insurer, the insured
+claim was made and reported during the
+in 2025, with experts noting that the country waited nearly a year to report a claim to
+policy period. In both cases, equitable relief
+is still at risk of a recession within the next the insurance company, at which time the
+was not available to the plaintiffs due to
+six months. The Bank of Canada’s Market policy had expired. The delay in giving
+their specific late reporting. This is a break
+Participants Survey for Q3 of 2025, released notice constituted non-compliance with a
+from the typical Canadian trend of flexible
+in early November, noted that market condition precedent to coverage, for which
+findings to excuse policy breaches.
+participants believed there was about a no relief from forfeiture could be granted.
+35% chance that Canada is in a recession On 27 March 2025, the Supreme Court of
+or will enter one in the next half-year. Canada dismissed an insured’s leave to Backlog in the Canadian Court Systems
+However, later that month, Statistics appeal the decision in Furtado v Lloyd’s As of November 2025, there were 50 judicial
+Canada published its Q3 results, noting Underwriters, 2024 ONCA 579 (Furtado). vacancies across Canada, in addition to
+that Canada narrowly avoided recession In Furtado, the ONCA held that the insured, longstanding criticism of whether those
+in the third quarter of 2025. It stated that was not entitled to relief from forfeiture openings are even sufficient given recent
+Gross Domestic Product (GDP) climbed after failing to disclose to his insurer an population growth. This has led to long
+0.6% from July to September, following the Ontario Security Commission (OSC) judicial wait times and concerns with
+concerning second quarter results, which investigation and a subsequent receivership respect to access to justice. Yet, in 2025,
+saw Canada’s GDP decline by 0.5% between application and enforcement proceeding the Federal Court of Appeal’s ruling in
+April and June. against the business. Canada (Prime Minister) v Hameed, 2025
+FCA 118 overturned a controversial lower
+Tariffs imposed by foreign governments Furtado built on the earlier decision in court decision requiring judicial vacancies to
+caused significant strain on Canada’s Kestenberg Siegal Lipkus LLP v Royal & Sun be filled within a “reasonable time”.
+economy in 2025. According to Budget Alliance Insurance Company of Canada,
+Canada, new tariffs and shifting trade 2024 ONCA 607 (Kestenberg), whereby The Federal Court (FC) backlog has been
+policies strained supply chains and raised the ONCA held that where a condition exacerbated by a surge in appeals of
+costs for Canadian exporters, with high precedent to triggering insurance coverage immigration decisions, resulting in delays
+tariffs and significant trade actions now is not met, relief from forfeiture will not of over a year to obtain final rulings.
+applying to auto, steel, aluminum, copper be available because this would constitute According to the Canadian Bar Association
+and wood. Nonetheless, Canada continued non-compliance rather than imperfect (CBA), immigration-related filings at the FC
+to benefit from favourable access to compliance. In Kestenberg, the Court have quadrupled since 2020. Despite this,
+our largest export market, with 85% of rejected the insured’s argument that relief operational funding to expand judicial
+Canada-US trade remaining tariff-free and from forfeiture is available in all insurance capacity has not been renewed since 2023.
+the average US tariff rate on Canadian goods cases unless the breach of condition is Without funding, the FC is projected to hear
+standing at 5.4%. both substantial and prejudices the insurer. approximately 400 fewer immigration cases
+It also disagreed that a claims-made and yearly, thus adding to further backlogs.
+reported requirement must be contained
+in the insuring agreement clause for it to
+
+ANNUAL INSURANCE REVIEW 13
+Lastly, in 2025, the Government of Canada • changes to examinations for discovery, Given that Ontario is Canada’s largest
+published its estimated budget for including limiting the scope and time province, these proposed changes and
+expenditures over the next three years, allowed for oral examinations and the associated risks set a strong precedent
+which would cut over $20m from support eliminating them in some instances for the rest of the country. Time will tell if
+services for administrative tribunals. • requiring up-front exchange of all other provinces and territories will follow
+In response, the CBA created a submission evidence-in-chief once pleadings suit, though at the moment, the proposed
+to Finance Canada in August, which are completed changes to the rules of civil procedure
+highlighted the persistent underfunding • requiring mandatory case conferences make Ontario an outlier amongst other
+for the Courts Administration Service and after the exchange of evidence to set Canadian jurisdictions.
+called for relief for the structural deficit/ dates for a trial and mediation within
+funding gap of approximately $35m. two years Artificial Intelligence
+The CBA noted that lack of financial backing • curbing motions practice by using Advancements in artificial intelligence
+for court systems strains core operations judicial intervention to ensure that are making their way into the traditionally
+and, if left unaddressed, risks undermining motions are addressed in a manner conservative legal industry. Rule changes
+the ability of the courts to discharge their proportionate to the significance of the have already required lawyers to make
+mandate to interpret the laws enacted by issues and the impact they have on the attestations about the veracity of case
+Parliament effectively and independently. substantive dispute law and evidence given the advent of
+• streamlining expert evidence by AI hallucinations.
+What to look out for in 2026 encouraging joint experts and
+AI presents a unique opportunity for
+permitting a single expert per issue.
+Rule Reform in Ontario firms and claims managers to streamline
+The Civil Rules Review Working Group In theory, these changes will reduce operations and reduce overall workload.
+published its Phase 2 Consultation Paper backlogs by streamlining litigation.
+AI is beginning to be considered as part
+on 1 April 2025, which proposed various However, the new system has been
+of the standard of care in particular
+changes to the way civil legal proceedings criticized by the bar for “front loading”
+for large document cases, such as
+are conducted in Ontario. A revised version litigation costs and prolonging
+construction disputes, which have become
+has been presented to members of the bar contentious issues. The detailed
+increasingly unwieldly given the large
+with recommendations that are expected to presentation of a case early in litigation
+e-discovery burden.
+be imminently published by the Ministry of may help early assessments, but also
+Attorney General, including: risks the parties missing opportunity to Tools that rely on artificial intelligence also
+settle given the significant early time
+present significant challenges to claim
+• new pre-litigation protocols for specific
+investment required.
+assessments. Self-represented plaintiffs can
+types of cases, which will mandate
+use it as a tool to create a volume of legal
+the early exchange of information
+submissions that increase costs on meritless
+and specific documents, and require
+claims. Savvy claims handlers should also be
+parties to make a genuine effort to
+aware of the potential of faked or altered
+resolve their disputes before starting
+evidence given the prevalence of tools that
+court proceedings
+allow for “deep fakes”.
+CONTACTS
+Mark Frederick Tom Whitby
+Partner Partner
++1 416 595 8175 +1 416 595 8561
+mfrederick@millerthomson.com twhitby@millerthomson.com
+
+14 2026
+FRANCE
+HMN PARTNERS
+Simon Ndiaye | Managing Partner
+Sarah Xerri-Hanote | Partner
+Romain Schulz | Of counsel
+Key developments in 2025 condition strictly as an absolute and general extended reporting period is at least five
+prohibition, but the Supreme Court decided years (and ten years in certain cases),
+We mentioned in previous reviews the
+that it is not necessary to demonstrate a the limit applies once and not five
+issue of coverage for operating losses when
+total prohibition of access. (or ten) times. This is a strict application of
+there is no physical damage in the context
+the statutory provisions of article L. 124-5
+of the Covid-19 pandemic, and the fact Initially, the litigation concerned mainly
+of the French Insurance Code regarding
+that litigation before various courts of first restaurants, but there are now decisions
+Professional Indemnity Insurance on a
+instance and courts of appeal in France left regarding hotels. According to a decision
+claims-made basis, but the reminder was
+an impression of chaos. rendered on 19 June 2025, hotels cannot
+apparently needed.
+benefit from coverage because they were
+As in 2024, the Cour de cassation (French
+not subject to the national prohibition The Cour de cassation also revisited the
+Supreme Court) continued to render
+on receiving the public. However, in a enforceability of the nullity of motor
+decisions on this matter in 2025. It is no
+decision rendered on 13 March 2025, a hotel insurance contracts. Since the decision
+surprise that decisions are still being issued:
+owner obtained coverage. The reason is rendered on 20 July 2017 in the Fidelidade
+the litigation concerns various insurance
+that the hotel was located in an area of a case by the Court of Justice of the European
+contracts with different wordings and
+French département in which the Préfet Union, the nullity of a motor insurance
+different exclusion clauses. Moreover, the
+(the State’s local representative) issued an contract is not enforceable against
+Cour de cassation must still impose its views
+order extending to hotels the prohibition on third parties. The French Cour de cassation
+on the lower courts.
+receiving the public. adopted this solution on 29 August 2019,
+but had to revisit two points in 2025.
+In four decisions (two rendered
+On 18 September 2025, the Cour de
+on 28 May 2025 and two on
+cassation reminded that the limit of On 23 January 2025, the French Supreme
+18 September 2025), the Cour de cassation
+coverage in force at the date of termination Court decided that the nullity of the policy
+interpreted the condition of coverage
+of the policy applies to the entire extended is not enforceable against an indirect victim.
+requiring that access to the premises
+reporting period. Consequently, as the In this case, the indirect victim was also
+be prohibited. Lower courts construed this
+
+ANNUAL INSURANCE REVIEW 15
+the policyholder who committed the However, since 1 April 2022, the specific The draft directives must now be discussed
+intentional misrepresentation justifying regulations governing the sale of insurance among the European Parliament, the
+the nullity. Nevertheless, the nullity is by telephone apply where the call has not European Council and the European
+not enforceable. been solicited, granting time to consider Commission, with the aim of adopting a
+the insurance transaction. This will final text by the end of 2025.
+On 26 June 2025, the Cour de cassation
+need to be reconciled with the broader
+decided that although the nullity is Another risk to monitor is PFAS
+consumer regulations.
+not enforceable against the victim, it is (perfluoroalkyl and polyfluoroalkyl
+enforceable against the insurer of another What to look out for in 2026: risks substances), also known as
+vehicle involved. Consequently, the insurer persistent pollutants.
+whose policy is null has recourse against Corporate social responsibility is a risk
+the other insurer whose policy is valid and factor, particularly for liability insurance such Legal actions against industrial companies
+can claim reimbursement of all sums paid to as PI or D&O. It represents not only a source are multiplying in France (as well as in
+the victims. of risk but also a means of mitigation. other countries, for instance, the decision
+rendered on 26 June 2025 in Italy by the
+In previous reviews, we mentioned the On 13 November 2025, the Directive on Corte di Assise di Vicenza). In March 2025,
+monitoring carried out by the ACPR Corporate Sustainability Reporting and the Paris water company filed a criminal
+(Autorité de Contrôle Prudentiel et the Directive on Corporate Sustainability complaint against persons unknown for
+de Résolution, the French insurance Due Diligence were heavily revised by pollution of water and soil. In July 2025,
+supervisory authority) on the remote the European Parliament. The thresholds citizens of Saint-Louis, in Alsace, filed a
+sale of insurance contracts, particularly for application have been increased with criminal complaint regarding pollution
+by telephone. respect to both number of employees and of the city’s water supply. PFAS have also
+turnover, with the consequence that many been detected in the French départements
+An Act of Parliament dated 30 June 2025 companies will no longer be subject to the of Ardennes and Meuse at levels never
+amended the French Consumer Code, regulation. Several important obligations previously recorded (including in the
+requiring that the consumer’s consent have been removed. For example, the “chemical valley” of the Rhône), leading to
+be obtained beforehand. This will take duty to develop a climate transition plan another complaint filed in July 2025.
+effect on 11 August 2026 and will apply has been withdrawn. In addition, the
+to all consumers, not only in relation mechanism of harmonised civil liability
+to insurance. across the European Union has also
+been removed.
+CONTACTS
+Simon Ndiaye Nathalie Finklestein Sarah Xerri-Hanote
+Managing Partner Partner Partner
++33 1 53 57 50 41 + 33 1 53 57 76 94 +33 1 53 57 50 20
+sndiaye@hmn-partners.com nfinkelstein@hmn-partners.com sxerri-hanote@hmn-partners.com
+
+16 2026
+NETHERLANDS
+KENNEDY VAN DER LAAN
+Marit van der Pool | Partner, Attorney at law
+Eunice Blokland | Student Assistant
+Key developments in 2025 We have also seen insurers adding Rotterdam Scale, relevant for personal
+specialized GenAI coverage under their injury claims
+PFAS cyber policies, making an early shift towards 2025 saw the official introduction of the
+Last year, we already mentioned the PFAS explicit AI insurance. ‘Rotterdamse Schaal’ (Rotterdam Scale),
+developments in the Netherlands. This year, a standardized framework for assessing
+PFAS litigation has intensified. A collective Product liability immaterial damages in personal injury cases
+action brought by eleven interest groups Product liability changes in 2025 were in the Netherlands. This scale, developed
+against the State alleges a breach of duty of dominated by the entry into force of by a legal research team from the Erasmus
+care for failing to protect the residents from the new EU Product Liability Directive University Rotterdam, provides a structured
+PFAS contamination. The case was heard on (2024/2853), which significantly expands approach to quantifying non-material
+2 December 2025 and a ruling is expected in both the scope of products and the damages, such as pain and suffering.
+February 2026. range of potentially liable parties. The aim is to bring greater predictability
+Software, AI systems and associated and transparency to claims handling. As the
+The court’s 2023 ruling of liability in the
+digital services now fall within the use of the Rotterdam Schaal leads to higher
+case brought by municipalities against
+definition of a product, while importers, amounts of compensation, this will have
+Chemours remains an important precedent
+authorised representatives and fulfilment consequences for the amount of damages
+for future claims against industrial polluters.
+service providers may also face liability. awarded. Although not legally binding,
+These developments reflect a broader trend
+The broadened concept of recoverable courts and practitioners increasingly
+in which PFAS is being compared to asbestos
+damage and eased evidentiary rules have reference the Rotterdam Scale. The Dutch
+regarding its legal consequences, whilst the
+raised concerns among insurers, who Judiciary is currently discussing the use of
+European Commission continues to work
+anticipate increased claims exposure and the Rotterdam Scale and is expected to
+on a potential EU-level ban on PFAS.
+are revising policy wordings accordingly. publish a guideline soon.
+AI
+Class Actions Unregulated advocates
+Globally, AI is impacting the way we work
+The WODC (a Scientific Research and Key issues in 2025 revealed growing
+significantly. This phenomenon will logically
+Data Center of the Ministry of Justice) has concerns about claims by unregulated
+also have a significant impact on insurance
+evaluated the Dutch Collective Settlement advocates in personal injury matters.
+claims and insurance coverage.
+of Mass Claims Act (WAMCA), noting 95 Issues such as double billing, misleading
+Silent AI has developed into a collective actions since 2020 with none advertising and insufficient expertise were
+point of attention within the Dutch fully resolved. The report identified lengthy increasingly reported, with up to a quarter
+insurance market. As companies admissibility phases and funding issues, of cases handled by unregulated advocates.
+recommending procedural improvements
+increasingly rely on AI-driven support tools,
+and a clear funding framework. Sector organizations urged the introduction
+debate has intensified over whether errors
+of statutory quality standards, including
+made by AI tools as quasi-professional
+Notably, the Vattenfal case was the amendments to article 6:96 Dutch Civil
+agents qualify as professional wrongful acts
+first WAMCA case to reach substantive Code (this is the article that specifies
+or not. We see similar discussions under
+assessment, whilst the Mercedes Dieselgate what types of costs can be claimed as
+product liability insurance.
+action was declared admissible on appeal. damages), whilst a WODC study concluded
+The AI Act, which has been in force since These developments have fueled a growing that broader regulation is necessary.
+2024, has also begun to influence the claim culture in the Netherlands under the Parliamentary debates show support for
+assessment of civil duties of care. Failure to WAMCA framework. mandatory accreditation and professional
+comply with its requirements is expected to protection, although concrete legislative
+be treated as strong evidence of unlawful steps remain pending.
+conduct in civil proceedings.
+
+ANNUAL INSURANCE REVIEW 17
+Regulatory trends Directive and AI Act will create strict liability policy wording and promote the use of
+Regulatory developments were marked for software and AI systems, likely to raise accredited representatives.
+by increased supervisory attention from claim volumes. Silent AI exposure continues
+The Dutch Bank (DNB) and the Dutch due to outdated policies, but insurers are Regulatory trends
+Authority for the Financial Markets (AFM), expected to introduce explicit AI-clauses in Regulatory priorities in 2026 will center
+including closer scrutiny of governance 2026 to prevent unintended coverage. on enhanced supervision by the AFM and
+frameworks, digital resilience under DORA DNB, including data-driven and risk-based
+and the use of AI systems. At EU level, the Heightened exposure is expected in oversight and further implementation
+key changes concern the revision of the mobility, healthcare and HR, where AI of DORA. At EU level, 2026 will serve
+Solvency II Directive, the central supervisory systems and bias may trigger liability or as a transition year for the Solvency II
+framework for European insurers, and the discrimination claims. Litigation funders are revision and the IRRD, requiring updates
+introduction of the Insurance Recovery and also likely to engage more actively, partly to governance and recovery planning.
+Resolution Directive setting new recovery due to developments of the WAMCA in Insurers are advised to prepare for
+and resolution rules. These reforms will the Netherlands. upcoming financial-markets legislation
+shape the EU’s oversight of insurers in the and rising expectations on ESG, AI and
+Product liability
+coming years. operational resilience.
+By 9 December 2026, EU countries must
+What to look out for in 2026 implement the new Product Liability Class Actions
+Directive. The broadened scope covering Key policy actions are expected in 2026,
+PFAS software, AI systems and associated digital including the government’s response
+PFAS is projected to become an even services is expected to drive an increase to the WODC evaluation of the WAMCA
+bigger source of liability in 2026, especially in claims, including WAMCA cases in the and potential legislative measures to
+as European regulations are expected to Netherlands. Insurers are likely to introduce streamline procedures and improve funding
+broaden PFAS restrictions under the REACH AI- and digital-product clauses to manage transparency. Collective claims are likely
+regulation (the Regulation of Registration, silent exposures, while companies face to increase, particularly in the areas of
+Evaluation, Authorisation and Restriction of heightened compliance and contract ESG, AI and consumer protection, with
+Chemicals). At national level, a standalone management demands. Litigation funders litigation funders playing a growing role.
+PFAS ban remains under political are also expected to become more active, Insurers should anticipate higher exposure
+consideration, but preparations for stricter particularly in the tech and medical sectors. under directors’ liability and professional
+standards on emissions, soil, and drinking policies and may need to revise policy
+water are being developed. Unregulated advocates terms whilst closely monitoring funding and
+Ongoing concerns about unregulated
+opt-out risks.
+As lawsuits begin to target not only advocates are set to drive significant
+manufacturers but also distributors and policy attention in 2026. Lawmakers are
+processors, insurers are likely to respond considering changes to article 6:96 DCC CONTACTS
+by adding specific PFAS exclusions, (see above) that would tie remuneration
+Peter van den Broek
+sublimits, or significantly raising premiums. to the expertise of advocates, a change
+Partner, Attorney at law
+Together, these developments suggest expected to lower insurers’ expenses.
+that 2026 will be a crucial year when tighter +31 20 5506 669
+regulations and increased legal claims Political debate on introducing a licensing peter.van.den.broek@kvdl.com
+come together. system or protected professional
+title is gaining momentum, with a
+Marit van der Pool
+(Silent) AI government response expected soon Partner, Attorney at law
+Looking ahead to 2026, AI-related claims to help guide future supervision and +31 20 5506 838
+are expected to increase significantly, enforcement. Insurers are expected
+marit.van.der.pool@kvdl.com
+pressuring insurers to clarify the scope of to tighten cost assessments, refine
+AI coverage. The revised Product Liability
+
+18 2026
+LATIN AMERICA
+RPC
+Alex Almaguer | Partner, Head of Latin America
+Chris Burt | Senior Associate
+Martin Jimenez | Associate
+Key developments in 2025 This trend is expected to drive demand What to look out for in 2026
+for Delegated Underwriting Authority
+The Latin American insurance market As we enter 2026, the Latin American
+Enterprises (DUAEs) with specialised
+experienced a challenging and reinsurance market is navigating a strategic
+expertise in the Latin American market.
+dynamic 2025. This was fuelled by “softening” phase within the broader hard
+consistent growth, an expansion in digital The region was also defined by significant market cycle. This shift is characterised
+distribution, and increasing product legislative shifts, most notably the entry by a significant influx of global capacity
+sophistication, alongside regulatory into force of the new Brazilian Insurance and a heightened risk appetite from new
+volatility and a notable rise in the frequency Contract Act (Law No. 15.040/2024) market entrants. While 2025 was defined
+of complex loss events. in December 2025. This Act introduces by geopolitical trade shocks, 2026 is poised
+a modern legal framework that replaces to prioritise underwriting innovation and
+The year was further defined by
+the provisions of the Brazilian Civil Code, technological maturity.
+geopolitical shocks, particularly stemming
+bringing substantial changes for all market
+from shifts in US trade policies. Given their Market participants should closely monitor
+participants, including reinsurers.
+heavy reliance on exports, many Latin the diverging economic trajectories of the
+American nations remained susceptible to The new Brazilian Insurance Act adopts region’s leading economies. While Brazil
+supply chain disruptions and inflationary a pro-policyholder approach across and Argentina show signs of business
+pressures. This translated into higher all insurance lines, including large stabilisation and growth, Mexico faces
+claims costs due to rising repair and commercial risks. Furthermore, it a more complex outlook driven by
+replacement expenses. imposes stricter response deadlines ongoing trade tensions and fiscal reforms.
+and limits insurers’ ability to request Specifically, recent modifications to VAT
+Furthermore, we noted a visible influx of
+additional information. The law also rules may escalate premiums and claims
+new participants in the region. The use
+restricts the capacity to designate foreign costs for personal lines; furthermore,
+of Managing General Agents (MGAs)
+law and jurisdiction for local disputes commercial lines may be adjusted
+to provide capacity or facilitate the
+(see RPC’s analysis here1). as insurers seek to offset potential
+assumption of risks by foreign regional
+premium losses.
+reinsurers continues to gain traction.
+
+ANNUAL INSURANCE REVIEW 19
+The insurance market should maintain no exception. The market, while smaller of high-value assets. Driven by a surge in
+a close watch on the shifting political and less mature than in the US and Europe, organised crime and the escalating global
+landscape between the US and Venezuela. is experiencing the fastest growth in cyber value of commodities, losses involving
+A potential regime change could lead to insurance premiums. gold bars, luxury watches, and fine art have
+the lifting of sanctions and the reopening become a primary concern for regional
+Political Risk and Violence remains a
+of the Venezuelan oil market, home to the underwriters. As gold prices remain volatile
+primary concern. Political instability in
+world’s largest proven reserves. and illicit mining persists in the Andean
+specific jurisdictions, exacerbated by social
+region, the ability to distinguish between
+Key themes for the year will include the inequality, elevates the risk of severe claims
+legal and smuggled assets has become as
+rising dominance of Managing General arising from civil unrest, strikes, riots,
+much a matter of compliance as it is of risk
+Agents (MGAs), the integration of and looting. Underwriters must remain
+management, leading to a higher demand
+predictive AI, and the implementation of vigilant as these localised events can lead
+for more “forensic” underwriting and
+new regulatory frameworks such as the to significant aggregate losses across
+specialised loss adjusters.
+new Brazilian Insurance Act. commercial portfolios.
+We expect an increase in cyber risks as Finally, in 2026, the Latin American market
+1. https://www.rpclegal.com/thinking/
+it is one of the fastest-growing claims will also witness a sharp rise in Special insurance-and-reinsurance/brazil-enacts-
+areas globally, and Latin America is Risks, particularly concerning the theft landmark-insurance-legislation/
+CONTACTS
+Alex Almaguer Lucy Dyson
+Partner, Partner
+Head of Latin America +44 20 3060 6308
++44 20 3060 6371 lucy.dyson@rpclegal.com
+alex.almaguer@rpclegal.com
+
+20 2026
+USA
+HINSHAW & CULBERTSON
+Scott M. Seaman | Co-Chair of Hinshaw’s Global Insurance Service Practice Group
+Pedro E. Hernandez | Co-Chair of Hinshaw’s Global Insurance Service Practice Group
+In this chapter of our Annual a responsible “drill baby drill” approach demonstrating that Newton’s Third Law
+Insurance Review 2026, we look at that is more friendly to fossil fuels in of Motion is bipartisan. Companies must
+the significant developments in an effort to decrease energy costs and comply with traditional environmental laws
+increase supplies needed to quench the and environmental liabilities remain large.
+2025 and expected issues in 2026
+energy demands of artificial intelligence
+for the USA. An end to “illegal” Diversity, Equity, and
+data centers. Automobile emissions
+Inclusion (DEI)
+standards are likely to be reduced and
+Key developments 2025 The Biden administration also applied
+the push for electric vehicles will be
+its “all of government” approach to
+decelerated under Trump 2.0 and due to
+Impact of Trump 2.0
+advance its DEI initiatives throughout the
+practical considerations such as costs and
+The most impactful development of
+U.S. government and sought to impose
+technological limitations. Even before
+2025 relates to the vast departure of the
+DEI on private companies and actors.
+Trump 2.0, the Biden administration
+policies under Trump 2.0 from those of
+Trump 2.0 has targeted “illegal DEI.”
+failed to push a final, enforceable climate
+the Biden administration. The impact on
+On inauguration day, President Trump
+disclosure rule across the finish line.
+claim frequency and severity varies by
+issued Executive Order 14151 “Ending
+The U.S. Supreme Court limited somewhat
+insurance line, but on balance deregulation
+Radical and Wasteful Government DEI
+the unbridled authority of administrative
+is expected to result in an overall decrease
+Programs and Preferencing.” The next day,
+agencies during the past couple of terms
+in enforcement actions by federal agencies.
+Executive Order 14173 was issued “Ending
+generally and specifically in the areas
+The One, Big, Beautiful Bill – which
+Illegal Discrimination and Restoring
+of ESG and DEI. ESG backlash became a
+permanently increases the maximum
+Merit-Based Opportunity.” The U.S.
+well-developed resistance movement.
+deduction for certain business property,
+Department of Justice (DOJ) issued a
+The Trump administration – through
+allows full expensing of domestic research
+final rule removing regulations issued
+tabling climate disclosure rules, executive
+and experimentation expenditures,
+under Title VI of the Civil Rights Act of
+orders, regulatory retraction, and
+and makes permanent most of the 2017
+1964 that precluded recipients of federal
+budgetary priorities – has taken much of
+tax cuts – generally affords more favourable
+funding from engaging in disparate impact
+the bite out of ESG at least for now.
+treatment to insurers and other companies
+discrimination based on race, colour, or
+than pre-existing law. Tariffs have injected Several states led by California have picked national origin.
+some uncertainty as well as additional up the ESG baton, but in November
+revenues, but many of the concerns the U.S. Court of Appeals for the Ninth Social inflation continues to rage
+expressed by some economists have not Circuit granted an injunction staying Social inflation continues largely unabated,
+materialized to the extent feared so far the enforcement of California law that with nuclear and thermonuclear verdicts
+and economic inflation has declined to requires companies to publish climate raining down. Tort costs have increased
+under 3%. Credit, trade, and political risks risk reports in January 2026 identifying in recent years at an annual increase
+historically have not presented significant their financial risks associated with climate of 7.1%, more than twice the inflation
+losses domestically, but in recent years they change and their efforts to mitigate rate with nuclear verdicts rising by 52%,
+are seen as presenting greater risks along these risks. The court did not stay another thermonuclear verdicts increasing 81%,
+with social unrest. law, requiring companies to disclose their and defence firm rates up over 12% in the
+Scope 1 and Scope 2 greenhouse gas last two years. A 2025 behavioural social
+Environmental, Social, and Governmental
+emissions by an unspecified date in 2026. inflation study by Swiss Re confirms that
+considerations/sustainability (ESG) is
+Though California is taking the lead, juror sentiment has shifted decisively
+down but not out
+pro-ESG measures and legislation have toward plaintiffs, adversely impacting
+There has been a substantial regulatory
+been enacted in other states including insurers and companies. Support for
+rollback of ESG from the “all of
+Colorado, Florida, Illinois, Maine, Maryland, punitive damages appears strong and
+government” approach of the Biden
+New Hampshire, Oregon, and Utah,
+administration. Trump 2.0 has adopted
+
+ANNUAL INSURANCE REVIEW 21
+punishment has improperly bled into to foster identity fraud and to bypass as courts continue to grapple with “silent
+compensatory damage awards. security systems. cyber” claims under traditional liability,
+property, and crime/fraud policies.
+Insurers and corporate policyholders AI-washing claims and AI-related securities
+are being outspent substantially by class action litigation are on the rise. Privacy claims
+the plaintiffs’ bar, which has averaged Insurers are including AI exclusions, In 2025, state-level activity surged
+about $1.5bn a year in advertising and sub-limits, and endorsements to control with over 800 consumer privacy bills
+has outmessaged the defence side. AI-related risks in a variety of policy introduced and new laws enacted
+Better messaging and addressing damages types and also are providing affirmative in Delaware, Iowa, Nebraska,
+and counter-anchoring by defendants AI coverages. New Hampshire, New Jersey, Tennessee,
+is essential. Tort reform legislation in states Minnesota, and Maryland. At the federal
+such as Florida, Georgia, and Louisiana Cyber & cybersecurity level, the Trump administration has
+has shown early signs of effectiveness. Underlying cyber claim frequency reduced oversight and enforcement by
+Third-party litigation funding continues to remained stable while severity dropped the Federal Trade Commission (FTC) and
+be a driver of social inflation. by 50% year-over-year, reflecting the Consumer Financial Protection Bureau.
+improved incident response, widespread In Illinois, insurers have prevailed in
 Artificial Intelligence
 adoption of multi-factor authentication, several appellate rulings holding “violation
 Regulators in New York, Colorado,
@@ -3354,4 +3948,4 @@ Listen here.
 rpclegal.com
 © 2026 Reynolds Porter Chamberlain LLP 304095_/A242P0B1_2A6IR_2026_CONTACTS_SPREAD_d1/
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-05", "model": "gemini-3.1-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-21", "model": "gemini-3.5-flash-lite"} -->
