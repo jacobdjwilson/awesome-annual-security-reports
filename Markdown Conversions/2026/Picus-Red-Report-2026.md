@@ -1,92 +1,1453 @@
-# Red-Report 2026
+● Introduction
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Data Set Overview: Key Figures](#data-set-overview-key-figures)
-- [Top 10 MITRE ATT&CK Techniques](#top-10-mitre-attck-techniques)
-- [Executive Summary](#executive-summary)
-- [Key Findings](#key-findings)
-- [Adopters in Threat Groups & Malware](#adopters-in-threat-groups--malware)
-- [Recommendations for Security Teams](#recommendations-for-security-teams)
-- [The Anatomy of the Digital Parasite](#the-anatomy-of-the-digital-parasite)
-- [The MITRE ATT&CK Framework](#the-mitre-attck-framework)
-- [Methodology](#methodology)
-- [T1055 Process Injection](#t1055-process-injection)
-- [Sub-techniques of Process Injection](#sub-techniques-of-process-injection)
-- [References](#references)
+● Data Set Overview: Key Figures
 
----
+● Top 10 MITRE ATT&CK Techniques
 
-## Introduction
-The Red Report™ 2026, now in its sixth year, analyzes over 1.1 million malicious files and 15.5 million actions to map global adversary tradecraft to the MITRE ATT&CK® framework. This data-driven approach provides organizations with high-fidelity intelligence to counter the specific techniques used to bypass modern defenses.
+● Executive Summary
 
-## Data Set Overview: Key Figures
-![Infographic showing key statistics of the 2026 dataset]
+● Key Findings
 
-## Top 10 MITRE ATT&CK Techniques
-1. **T1055** Process Injection
-2. **T1059** Command and Scripting Interpreter
-3. **T1555** Credentials from Password Stores
-4. **T1497** Virtualization/Sandbox Evasion
-5. **T1071** Application Layer Protocol
-6. **T1036** Masquerading
-7. **T1547** Boot or Logon Autostart Execution
-8. **T1562** Impair Defenses
-9. **T1219** Remote Access Software
-10. **T1486** Data Encrypted for Impact
+● Adopters in Threat Groups & Malware
 
-## Executive Summary
-The 2026 findings reveal a decisive strategic pivot: 80% of the top ten techniques are now dedicated to evasion and persistence. Adversaries have abandoned "smash-and-grab" tactics for the behavior of a "Digital Parasite." The goal is no longer merely to breach the perimeter, but to inhabit the host, feed on its identity, and weaponize its infrastructure while remaining undetected.
+● Recommendations for Security Teams
 
-## Key Findings
-- **Static Defenses Are Being Outpaced**: Automated detections and sandbox pipelines are increasingly contested. Virtualization and Sandbox Evasion (T1497) rose to Rank #4.
-- **Identity Is the Failure Point**: With Credentials from Password Stores (T1555) and Command and Scripting Interpreter (T1059) in the Top 10, attackers are weaponizing identity systems.
-- **The New Risk Profile**: We observed a 38% decline in Data Encrypted for Impact (T1486), replaced by a massive surge in techniques designed for invisibility and espionage.
+● The Anatomy of the Digital Parasite
 
-## Adopters in Threat Groups & Malware
-| ATT&CK Technique | APT Group | Malware |
-| :--- | :--- | :--- |
-| T1055 Process Injection | NoisyBear, APT37 | Tinky Winkey, Raven Stealer |
-| T1059 Command and Scripting Interpreter | Mocha Manakin, Mustang Panda | DragonForce, CABINETRAT |
+● The MITRE ATT&CK Framework
 
-## Recommendations for Security Teams
-1. **Adopt "Continuous Validation" Against New TTPs**: Regularly simulate the specific techniques in this report.
-2. **Combat "Living off the Land"**: Enforce strict scripting policies and deploy advanced memory scanning.
-3. **Harden Cloud Identities**: Monitor non-human identities and implement CIEM.
-4. **Operationalize Anti-Evasion**: Move away from software-based sandboxes to hardware-assisted analysis.
+● Methodology
 
-## The Anatomy of the Digital Parasite
-The era of the "smash-and-grab" predator is ending. In its place, a new organism has emerged: the Digital Parasite. These entities do not seek to destroy the host immediately but to inhabit it, feed on it, and turn its own defenses into camouflage.
+● Top 10 MITRE ATT&CK Techniques
 
-## The MITRE ATT&CK Framework
-The MITRE ATT&CK framework is a globally accessible knowledge base of adversary tactics and techniques derived from real-world observations. It helps organizations in comprehending and mitigating the tactics, techniques, and procedures (TTPs) employed in cyberattacks.
+● #1 T1055  Process Injection
 
-## Methodology
-Between January 2025 and December 2025, Picus Labs analyzed a dataset of 1,153,683 unique files, of which 1,084,718 (94.02%) were classified as malicious. Analysts detected 15,544,909 specific malicious actions, averaging approximately 14 actions per malware sample.
+● #2 T1059 Command and Scripting Interpreter
 
-## T1055 Process Injection
-Process injection is a technique employed by threat actors to enhance their ability to remain undetected, persist within a victim's system, and potentially access higher levels of privileges. This method involves the insertion of malicious code into a legitimate process, thereby enabling the attacker to run their code in the context of that process.
+● #3 T1555 Credentials from Password Stores
 
-## Sub-techniques of Process Injection
-There are 12 sub-techniques under the Process Injection technique in ATT&CK v18:
-- T1055.001: Dynamic-link Library Injection
-- T1055.002: Portable Executable Injection
-- T1055.003: Thread Execution Hijacking
-- ... (and others)
+● #4 T1497 Virtualization/Sandbox Evasion
 
-## References
-[^1]: MITRE ATT&CK Matrix for Enterprise v18.1.
-[^2]: RedLine Stealer analysis, 2025.
-[^3]: NtCreateThreadEx/RtlCreateUserThread API documentation.
-[^4]: Tinky Winkey keylogger report, August 2025.
-[^5]: Raven Stealer analysis, July 2025.
-[^6]: Shadow Vector malware report.
-[^7]: SmashJacker browser hijacker report.
-[^8]: ClickFix malware analysis, November 2025.
+● #5 T1071 Application Layer Protocol
 
----
+● #6 T1036 Masquerading
 
-g the
+● #7 T1547 Boot or Logon Autostart Execution
+
+● #8 T1562 Impair Defenses
+
+● #9 T1219 Remote Access Software
+
+● #10 T1486 Data Encrypted for Impact
+
+● Limitations
+
+● About Picus
+
+● References
+
+2
+
+The Red Report™ 2026, now in its sixth year, analyzes over
+1.1 million malicious files and 15.5 million actions to map
+global adversary tradecraft to the MITRE ATT&CK® framework.
+
+This data-driven approach provides organizations with high-fidelity
+intelligence to counter the specific techniques used to bypass modern
+defenses.
+
+The 2026 findings reveal a decisive strategic pivot: 80% of the top ten
+techniques are now dedicated to evasion and persistence.
+
+Adversaries have abandoned "smash-and-grab" tactics for the behavior
+of a "Digital Parasite". The goal is no longer merely to breach the
+perimeter, but to inhabit the host, feed on its identity, and weaponize its
+infrastructure while remaining undetected. Static defenses are no longer
+sufficient against these adaptive threats.
+
+The Red Report 2026 equips security teams to
+shift from "hunting files" to "hunting behavior",
+emphasizing that true resilience requires proactive,
+continuous security validation against the reality of
+an adversary that is already inside.
+
+3
+
+DATA SET OVERVIEW:
+KEY FIGURES
+
+4
+
+Top 10 MOST PREVALENT
+
+5
+
+Static Defenses Are Being Outpaced
+
+Automated detections and sandbox pipelines are increasingly contested.
+Virtualization and Sandbox Evasion T1497 rose to Rank #4 as context-aware
+malware learns to detect analysis environments (e.g., sandboxes) through artifact
+checks, timing, and user interaction patterns. Many samples refuse to execute
+when watched. Files can pass automated gateways and only activate in production,
+creating a dangerous false sense of safety.
+
+Trusted Services and the Physical Layer Are Now in Scope
+
+Living off the land has become living off the cloud. Adversaries are pushing
+command and control through high-reputation services, including OpenAI and
+AWS, to blend with normal business traffic and evade blocklists. In parallel,
+state-aligned actors are using remote access hardware such as IPKVMs to bypass
+endpoint agents altogether. This reduces EDR visibility and forces defenders to rely
+on identity, network, and workload telemetry.
+
+Identity Is the Failure Point
+
+With Credentials from Password Stores T1555 and Command and Scripting
+Interpreter T1059 in the Top 10, attackers are weaponizing identity systems and
+administrative tooling. About 80% of the top techniques in 2026 are dedicated to
+evasion and persistence. Once a valid credential is obtained, the priority is to
+entrench, move silently, and exfiltrate data over time while avoiding detection and
+containment.
+
+Picus Labs analyzed over 1.1 million malicious files and mapped more than
+15.5 million adversarial actions throughout 2025 to provide security
+leaders with a data-driven assessment of global cyber risk. The findings of
+The Red Report 2026 confirm a critical evolution in the threat landscape:
+the adversary has fundamentally shifted their business model from
+immediate disruption to long-lived access.
+
+The New Risk Profile: Silence Over Noise
+
+Strategic Imperative: Validating Defense Readiness
+
+For the past decade, the primary concern for CISOs was business interruption
+caused by ransomware. In 2026, the risk profile has inverted. We observed a 38%
+decline in Data Encrypted for Impact T1486, replaced by a massive surge in
+techniques designed for invisibility and espionage. The dominance of Process
+Injection T1055 signals that attackers are prioritizing dwell time over destruction.
+The goal is no longer to crash your systems, but to inhabit them unnoticed.
+
+The data is clear: static security controls are failing to detect dynamic, behavioral
+threats. To close the visibility gap, security leaders must pivot from a posture of
+"assuming protection" to "validating resilience". Investments must shift toward
+Continuous Security Validation to test defenses against these specific evasive
+behaviors, ensuring that your security stack can detect the quiet signals of a
+compromise before the adversary establishes long-term residency.
+
+6
+
+The Rise of the Digital Parasite:
+From Predators to Persistent Infections
+
+Ransomware Encryption Loses Center Stage:
+Encryption Prevalence Drops by 38% in Just One Year
+
+Adversaries have fundamentally shifted their operational philosophy from
+"predatory" smash-and-grab attacks to more "parasitic" long-term infections.
+The Red Report 2026 confirms that attackers are prioritizing techniques that
+allow them to burrow into legitimate processes and hide from the organization's
+"immune system." For the third consecutive year, Process Injection T1055
+holds the #1 spot on the list. This dominance signals that blending in is now
+more critical to attackers than breaking in.
+
+AI Hype vs. Reality:  Evolution, Not Revolution
+
+Despite widespread speculation about AI transforming the malware landscape,
+our research shows no notable uptick yet in the use of AI-driven malware
+techniques. The dominance of 1990s-era techniques like Command and
+Scripting Interpreter (#2) and Process Injection (#1) proves that adversaries
+don't need AI to beat modern defenses. While malware like LameHug uses LLM
+APIs, it is merely to fetch hardcoded commands, a technique classified as
+"superficial" rather than functionally justified AI use. AI enhances productivity,
+but it has not yet redefined the mechanics of the "Digital Parasite."
+
+The data shows a massive statistical decline in the deployment of ransomware
+payloads. In 2025, Data Encrypted for Impact T1486 appeared in 21.00% of
+samples; in 2026, it plummeted to 12.94%. This represents a 38% relative
+decrease. This sharp drop-off provides concrete evidence that threat actors are
+shifting their business model away from "locking data" Encryption) toward
+"stealing data" Extortion) to keep the host alive for long-term exploitation.
+
+The Rise of "Self-Aware" Malware:
+Malware Now Does Math to Prove You Are Human
+
+Virtualization/Sandbox Evasion T1497 saw the year's most explosive growth,
+surging to #4. Modern malware doesn't just check for files; it analyzes human
+behavior using geometry. For example, LummaC2 now calculates the
+Euclidean distance and angles of mouse movements. If the mouse moves in a
+straight line (typical of sandboxes) rather than a human-like curve (calculated
+via trigonometry), the malware refuses to detonate. If the threat detects it is
+being watched, it simply plays dead.
+
+7
+
+The "Physical" Insider Threat:
+State-Sponsored Laptop Farms
+
+The "Identity" Crisis:
+Credential Theft Targets 1 in 4 Organizations
+
+For the first time, Remote Access Tools T1219 have gone physical. The
+2026 report exposes how North Korean DPRK) operatives are using
+Remote Access Hardware T1219.003, specifically IPKVM devices like
+PiKVM, to control massive laptop farms.
+
+The "Digital Parasite" does not need to break down the door; it simply logs
+in. While "noisy" credential dumping T1003 has statistically vanished from
+the Top 10, Credentials from Password Stores T1555 remains stubbornly
+high, appearing in 23.49% of samples in the 2026 report.
+
+By connecting directly to HDMI and USB ports, attackers gain BIOS-level
+control that sits completely below the operating system, rendering EDRs
+and traditional security software totally blind to the intrusion.
+
+The "Living Off the Cloud" Phenomenon:
+Adversaries Are Turning Cloud APIs into C2 Channels
+
+The 2026 report reveals a disturbing evolution in how attackers
+communicate: they are "living off the cloud." A prime example is the
+SesameOp backdoor, which routed all traffic through OpenAI's
+Assistants API, masking C2 communications as legitimate AI
+development work to evade firewalls.
+
+Similarly, threat groups like Storm-0501 were observed directly querying
+cloud secrets stores (e.g., AWS Secrets Manager) via API to harvest
+credentials, avoiding endpoint detection entirely.
+
+This means that nearly 1 in 4 attacks involves an adversary attempting to
+silently extract saved passwords from browsers or managers. The data
+suggests that identity theft is no longer a preliminary step but a primary
+objective, with prevalence rates that now double those of data encryption.
+
+The Stealth Epidemic:
+80% of Top Techniques are Now Dedicated to Evasion &
+Persistence
+
+The 2026 Top 10 list reveals a staggering imbalance: the vast majority of
+attacker tradecraft is now focused primarily on staying hidden.
+
+By categorizing the 2026 Top 10 techniques, we found that 8 out of 10 are
+specifically designed for Defense Evasion, Persistence, or stealthy
+Command & Control T1055, T1555, T1497, T1071, T1036, T1547, T1562,
+T1219. This 80% dominance of stealth tradecraft marks the highest
+concentration of evasion tactics we have ever recorded, proving that the
+modern adversary's primary metric for success is now dwell time, not
+immediate destruction.
+
+8
+
+Blinding the Immune System:
+Why Killing Defenses is the First Move
+
+Persistence Ensures Immortality:
+Surviving the Reboot
+
+Before a parasite can safely feed, it must neutralize the host's defenses. Impair
+Defenses T1562 remains a core technique at Rank #8 14.18%, used to
+disable antivirus, delete logs, and kill EDR agents.
+
+The consistency of this technique across recent years, ranking #3 in 2024 and
+#5 in 2025, proves that "blinding the target" is not an optional step but a
+fundamental prerequisite for modern intrusions. The parasite ensures the host
+is defenseless before it begins its primary operations.
+
+Hiding in Plain Sight:  The Art of Masquerading
+
+To survive within the host without triggering an immune response, adversaries
+are mastering the art of camouflage. Masquerading T1036 has entered the
+top tier at Rank #6, utilized in 16.59% of attacks.
+
+By renaming malicious files to look like legitimate system processes (e.g.,
+svchost.exe or update.exe), attackers ensure that even if a defender looks
+directly at the infection, they often see nothing but "normal" system activity,
+effectively hiding in plain sight.
+
+A parasite cannot afford to be flushed out by a simple system restart. Boot or
+Logon Autostart Execution T1547 has risen from at or near the bottom of the
+list in previous years to Rank #7 in the 2026 report. This upward trajectory
+indicates that longevity is the new priority. Attackers are modifying the host's
+DNA (registry keys) to ensure they are resurrected every time the machine
+reboots.
+
+The Convergence of Crime and Espionage:
+Ransomware Groups Have Adopted APT Tradecraft
+
+The historical dividing line between "smash-and-grab" cybercriminal gangs and
+"low-and-slow" nation-state APT) actors has effectively vanished. The data
+shows that financially motivated ransomware groups have adopted the stealth,
+evasion, and living-off-the-land techniques previously reserved for
+sophisticated espionage operations.
+
+9
+
+ATT&CK Technique
+T1055  Process Injection
+
+APT Group
+NoisyBear 9, APT37 18
+
+T1059 Command and Scripting Interpreter Mocha Manakin 24, Mustang Panda 26,
+
+MuddyWater 28, APT36 aka Transparent Tribe)
+45, UNC3886 47, UNC3944 51
+
+T1555 Credentials from Password Stores
+
+Earth Ammit 54, UNC3944 51, Storm-0501 56
+
+Malware
+Tinky Winkey 4, Raven Stealer 5, Shadow Vector 6, SmashJacker 7, ClickFix
+8, XLoader 12, SadBridge loader 13, CANONSTAGER malware 14, GhostCrypt
+15, PureRAT 15, ASyncRAT malware 16, GhostPulse 19, LummaStealer 20,
+IDAT Loader 20, CherryLoader 21
+
+DragonForce ransomware 22, CABINETRAT 23, NodeInitRAT 24, ToolShell 25,
+Interlock ransomware 27, Atomic Stealer 29, Koske malware 30, RansomHub
+31, HellCat ransomware 32, ValleyRAT 33, Chihuahua Stealer 34, Crypto24
+40, Anubis ransomware 41, swcbc, TINYSHELL 47, SesameOp 48
+
+BeaverTail malware 52, SantaStealer malware 53, Meduza Stealer 55, Makop
+ransomware, Shai-Hulud 2.0 malware 57
+
+T1497 Virtualization/Sandbox Evasion
+
+Blitz 58, LummaC2 v4.0 59
+
+T1071 Application Layer Protocol
+
+Cyber Av3ngers 65
+
+T1036 Masquerading
+
+Mustang Panda 66, Ferocious Kitten 67,
+Storm-2460 68, Warp Panda 69, Deep#Drive 72,
+UNC6384 14, Gold Melody 74, Lazarus 76,
+
+HazyBeacon backdoor 61, LameHug 62, MalTerminal 62, DarkCloud Stealer
+63, Project AK47 64, IOCONTROL 65
+
+Paklog 66, Corklog 66, BRICKSTORM 69, Junction 69, Auto-Color backdoor
+70, STATICPLUGIN 14, BPFDoor 73, updf 74, BPFDoor 75,
+
+T1547 Boot or Logon Autostart Execution
+
+SLOW TEMPEST 78, ToyBraker 79, XDSpy
+
+CABINETRAT 23, AdaptixC2 77, EtherRAT 83,
+
+T1562 Impair Defenses
+
+Mustang Panda 66
+
+Deadlock ransomware 85, Null-AMSI 86, AsyncRAT 86, SplatCloak 66,
+Crypto24 ransomware 87, Mimic ransomware 88, Remcos RAT 89, Plague Linux
+backdoor 90, XMRig cryptominer 91, PlusDaemon 94, Medusa ransomware 95,
+PureRAT 96, Ransomhub ransomware 98, SkidMap 102, LockBit 103
+
+T1219 Remote Access Tools
+
+Chaos ransomware 105, Akira ransomware 106, DeadLock ransomware 85,
+
+T1486 Data Encrypted for Impact
+
+Sandworm 113, Earth Alux APT 117
+
+Qilin 109, Medusa 110, RansomHub 31, DragonForce 22, LockBit 3.0 111, Lynx
+112, Anubis 41, ZEROLOT 113, Sting wiper 113, PathWiper 114, BlueSky 115,
+Nefilim 116
+
+Top 10 ATT&CK Tactics:
+Adopters in Threat Groups &Malware
+
+10
+
+Recommendations For Security Teams
+
+To effectively counter the 'Digital Parasite' and build resilience against the
+stealthy, self-aware, and cloud-native techniques identified in the Red
+Report 2026, Picus Labs suggests security teams implement the following
+set of actions:
+
+1. Adopt "Continuous Validation" Against New TTPs
+
+The rapid evolution of techniques (e.g., from WMI to Cloud APIs) proves that static
+defenses fail.
+
+a. Test Against the 2026 Top Ten: Regularly simulate the specific techniques in
+
+this report (e.g., Process Injection, VS Code Tunneling, Sandbox Evasion) to
+validate that your controls are actually triggering alerts.
+
+b. Threat Hunting for "Silent" Failures: Proactively hunt for devices that have
+
+stopped sending logs or have had security agents "blinded" T1562 Impair
+Defenses). A silent sensor is often the first sign of a sophisticated infection.
+
+c. Validate Backup Integrity: Even with the decline of encryption, backups remain
+
+critical for recovery from destructive wiper attacks. Ensure backups are
+immutable and isolated from the main network.
+
+2. Combat "Living off the Land" and Process Injection
+
+With Process Injection T1055 and Command and Scripting Interpreter T1059
+retaining the top two spots, adversaries are mastering the art of using your own
+tools against you. Defense must focus on distinguishing legitimate admin activity
+from malicious abuse.
+
+a. Enforce Strict Scripting Policies: Implement Constrained Language Mode for
+
+PowerShell and restrict the execution of other native interpreters Bash, Python)
+to signed, trusted scripts only.
+
+b. Deploy Advanced Memory Scanning: Ensure your Endpoint Detection and
+
+Response EDR) solution includes capabilities to scan volatile memory for
+injected code, specifically looking for "threadless" injection and memory
+unmapping techniques.
+
+c. Minimize the Attack Surface: Use Attack Surface Reduction ASR rules to
+block Office applications from creating child processes and to prevent
+legitimate processes (like rundll32.exe) from making unauthorized network
+connections.
+
+d. Update Incident Response Playbooks: Revise IR plans to include procedures
+for Cloud Identity Compromise and Physical Insider Threats, ensuring teams
+know how to revoke cloud tokens and handle potential hardware implants.
+
+d. Monitor "Dual-Use" Tooling: Create specific alerts for the abnormal usage of
+
+administrative tools (e.g., whoami, net group, dsquery) which are now standard
+in the discovery phase of an intrusion.
+
+11
+
+3. Harden Cloud Identities and API Surfaces
+
+4. Operationalize Anti-Evasion Defenses
+
+As adversaries shift to "Living off the Cloud" (routing C2 through
+OpenAI/AWS APIs and stealing secrets directly from cloud vaults), the
+perimeter has moved from the firewall to the identity provider.
+
+With Virtualization/Sandbox Evasion T1497 surging to the top 5, malware
+is now "self-aware" and will "play dead" if it detects analysis. Security teams
+must assume that automated sandboxes may yield false negatives.
+
+a. Monitor Non-Human Identities: Aggressively monitor service accounts
+
+a. Use Hardware-Assisted Analysis: Move away from easily detectable
+
+and API keys. Implement Cloud Infrastructure Entitlement Management
+CIEM to detect when a machine identity is querying secrets AWS
+Secrets Manager/Azure Key Vault) outside of its normal behavior pattern.
+
+software-based sandboxes. Utilize bare-metal detonation
+environments or hardware-assisted virtualization that is harder for
+malware to fingerprint.
+
+b.
+
+Inspect "Trusted" Web Traffic: Traditional firewalls allow traffic to
+api.openai.com or lambda-url.aws. Implement TLS/SSL inspection and
+behavioral analysis on this traffic to detect C2 channels masquerading as
+legitimate API calls.
+
+b. Assume Breach if "Nothing" Happens: If a suspicious file executes but
+shows no activity, treat it as potential evasion. Investigate processes that
+perform "trigonometry" checks (mouse movement calculations) or query
+system uptime immediately upon launch.
+
+c. Enforce Least Privilege for APIs: Ensure that cloud credentials found on
+endpoints (e.g., developer workstations) have restricted scopes. A
+compromised API key should not grant broad read access to cloud
+storage or secrets vaults.
+
+d. Shorten Session Lifetimes: Enforce short-lived credentials for cloud
+
+access to limit the window of opportunity for stolen session tokens.
+
+c.
+
+Implement "Time-Warp" Countermeasures: Configure analysis
+environments to accelerate system time realistically to counter malware
+that sleeps for long periods Time-Based Evasion).
+
+d. Hunt for "Unhooking": Deploy tools that can detect when malware
+
+attempts to "unhook" or patch EDR sensors in memory Reflective DLL
+Loading) to blind your security tools.
+
+12
+
+5. Shift from "Anti-Encryption" to "Anti-Extortion"
+
+6. Secure the Physical and Hardware Layer
+
+With Data Encrypted for Impact T1486 dropping significantly, the primary
+threat is now silent data theft (extortion) rather than noisy encryption.
+
+a. Egress Filtering & Traffic Shaping: Implement strict egress filtering.
+
+Monitor for large outbound data transfers, particularly over encrypted
+protocols SFTP, HTTPS) to unknown or ephemeral IP addresses.
+
+b. Deploy "Canary" Tokens: Place decoy files (canaries) in sensitive data
+
+repositories. Any access or attempted exfiltration of these files should
+trigger an immediate high-priority alert.
+
+c. Focus on Data Loss Prevention DLP Tune DLP rules to detect the
+
+"staging" of data (e.g., mass copying of files to a temporary folder or
+compression of large datasets) which precedes exfiltration.
+
+d. Audit Cloud Storage Access: Monitor for unusual read-volume spikes in
+cloud storage buckets S3, Blob Storage), which often indicate a "smash
+and grab" theft operation.
+
+The emergence of Remote Access Hardware IPKVMs) used by
+state-sponsored actors (like DPRK IT workers) means software agents alone
+are no longer sufficient visibility.
+
+a. Monitor Physical Connections: Use endpoint management tools to alert
+on the connection of unrecognized USB devices, specifically those
+enumerating as keyboards or video capture devices HDMI/USB
+bridges).
+
+b. Visual & Physical Audits: For high-value remote employees or critical
+infrastructure, mandate periodic physical inspections or video-verified
+audits of workstation setups to identify unauthorized "dongles" or KVM
+switches.
+
+c. BIOS/UEFI Password Protection: Enforce BIOS/UEFI passwords and
+
+Secure Boot to prevent attackers with physical access from booting into
+unauthorized operating systems or modifying boot orders.
+
+d. Network Access Control NAC Implement 802.1x authentication to
+
+ensure that only authorized hardware can communicate on the corporate
+network, regardless of physical connection.
+
+13
+
+7. Govern Remote Access Software
+
+8. Modernize Identity Defense
+
+With Remote Access Software T1219 returning to the top 10, attackers are
+weaponizing legitimate tools AnyDesk, VS Code Tunnels) to maintain
+persistence.
+
+a. Audit "Shadow IT" Remote Tools: actively scan for and block
+
+unauthorized remote desktop software AnyDesk, TeamViewer,
+Splashtop) at both the endpoint and network firewall level.
+
+b. Monitor Developer Tunnels: Specifically monitor for the use of Visual
+Studio Code Remote Tunnels (code.exe tunnel). Correlate this
+activity with authorized developer accounts; unauthorized tunnels
+should be blocked immediately.
+
+c. Application Allowlisting: Use application control policies to prevent the
+execution of portable remote access executables that do not require
+installation (a common tactic for "Bring Your Own RAT").
+
+d. Restrict RDP Exposure: Ensure Remote Desktop Protocol RDP) is never
+exposed directly to the internet. Require VPN or Zero Trust Network
+Access ZTNA) with MFA for any remote management.
+
+With Credentials from Password Stores T1555 remaining a top threat, the
+"Digital Parasite" relies on logging in, not breaking in.
+
+a. Eliminate Browser Password Storage: Enforce group policies that
+
+disable the "Save Password" feature in web browsers. Browsers are the
+#1 target for InfoStealers.
+
+b. Transition to FIDO2/WebAuthn: Move beyond SMS or push-based MFA,
+
+which are easily phished. Implement hardware security keys or
+FIDO2-bound passkeys for privileged access.
+
+c. Detect Session Hijacking: Implement conditional access policies that
+
+trigger re-authentication if a user's session token moves to a new IP
+address or device fingerprint (mitigating "Pass-the-Cookie" attacks).
+
+d. Audit Local Admin Rights: Aggressively reduce the number of users
+
+with local administrator privileges to prevent attackers from accessing
+the LSASS process or SAM database to dump credentials.
+
+14
+
+The Anatomy of the Digital Parasite:
+Ten Stories of Survival,
+Evasion, and Assimilation
+
+In this year's Red Report, we move beyond simple technical analysis. The data
+reveals a fundamental shift in the nature of the adversary: An evolution.
+
+The era of the "smash-and-grab" predator is ending. In its place, a new organism
+has emerged, one that does not seek to destroy the host immediately but to inhabit
+it, feed on it, and turn its own defenses into camouflage. We call this entity the
+Digital Parasite.
+
+The following section details the Ten Core Behaviors that define this new threat
+and its attendant threat landscape. These are not hypothetical scenarios; they are
+narrative reconstructions based on the most significant malware campaigns and
+tradecraft observed in 2026.
+
+From the Self-Aware instincts of malware using trigonometry to detect humans,
+to the Hardware Insiders plugging KVMs into corporate laptops, these stories map
+the lifecycle of the modern intrusion.
+
+They tell a singular, chilling story:
+
+The adversary is no longer at the gate.
+They are already logged in.
+
+15
+
+Adaptation &
+Awareness:
+How the threat senses danger
+(T1497) and blinds the immune
+system (T1562).
+
+The Hardware Layer:
+The shift from software exploits
+to physical control (T1219).
+
+Inﬁltration &
+Camouﬂage:
+How the parasite enters
+(T1055, T1036) and
+disguises itself as the host.
+
+Symbiosis:
+How it turns the host's own
+tools (T1059) and cloud
+infrastructure (T1071) into
+weapons.
+
+The Endgame:
+The evolution from
+destruction to the hybrid
+lock (T1486).
+
+16
+16
+
+T1055 Process Injection: The Digital Parasite
+
+In 2026, malware no longer breaks down the door; it walks in wearing a
+uniform. Process Injection remains the number one technique because it
+allows adversaries to turn legitimate, trusted applications into "zombie"
+hosts for malicious code.
+
+This year, the Tinky Winkey keylogger demonstrated the lethal efficiency of
+this method. Instead of running as a suspicious background process, Tinky
+Winkey injected its payload directly into legitimate Windows processes,
+allowing it to record keystrokes and steal data while completely hidden from
+the task manager.
+
+By living inside the host's own memory, the "Digital Parasite" feeds on
+system resources and evades detection, proving that the most dangerous
+threat is the one you trust.
+
+T1059 Command and Scripting Interpreter: Living Off the Land 2.0
+
+Why bring a weapon when the victim provides the arsenal? Adversaries
+continue to dominate by weaponizing the very tools administrators use to
+manage networks.
+
+In May 2025, the DragonForce ransomware group utilized PowerShell
+one-liners to download and execute payloads directly in memory, leaving no file
+artifacts on the disk for antivirus tools to scan. Similarly, on macOS, the Atomic
+Stealer AMOS abused AppleScript to trick users into handing over passwords
+via fake system prompts. This technique turns the operating system against
+itself, making every terminal and script engine a potential liability.
+
+T1555 Credentials from Password Stores: The Identity Crisis
+
+The modern perimeter is identity, and adversaries have realized it is easier to
+log in than to hack in. In 2026, the SantaStealer malware shocked the
+industry by bypassing Chrome's AppBound encryption, not by breaking the
+cryptography, but by abusing legitimate browser APIs to request the
+decrypted passwords just as the browser itself would.
+
+T1497 Virtualization/Sandbox Evasion: Self-Aware Malware
+
+Malware has evolved a survival instinct. It no longer blindly detonates; it first
+looks around to ensure it isn't being watched. The most striking example of
+this is LummaC2, which uses trigonometry to calculate the "humanity" of
+mouse movements.
+
+By analyzing the Euclidean distance and angles of cursor paths, the malware
+can distinguish between the erratic movement of a human user and the
+sterile, straight lines of an automated sandbox. If it detects a simulation, it
+"plays dead," remaining dormant to fool security analysts and sandboxes.
+
+17
+
+T1071 Application Layer Protocol: Hiding in the Cloud
+
+The era of suspicious command-and-control C2) servers is ending. Attackers
+are now "living off the cloud," routing their malicious traffic through the world's
+most trusted APIs. The LameHug malware and SesameOp backdoor rewrote
+the rules by using OpenAI's API and AWS Lambda as covert C2 channels.
+
+By embedding commands inside what looked like legitimate AI prompts or
+cloud function calls, they rendered traditional firewall blocklists useless.
+Security teams are now faced with the impossible task of distinguishing
+between a developer using ChatGPT and a backdoor receiving instructions.
+
+T1036 Masquerading: The Art of Deception
+
+Camouflage is the key to persistence. Adversaries are mastering the art of
+looking boring, disguising malicious binaries as harmless system files to fool
+both users and sensors.
+
+In late 2025, the Ferocious Kitten campaign used the "Right-to-Left Override"
+RTLO) character to flip the extension of executable files, making a malicious
+.exe appear as a benign .pdf or image file to the victim. Simultaneously, groups
+like Mustang Panda deployed malware with invalid or expired digital signatures
+that still fooled superficial checks, proving that visual trust is a vulnerability.
+
+T1547 Boot or Logon Autostart Execution: The Immortal Threat
+
+A fleeting infection is a failed infection. Adversaries are obsessed with
+survival, ensuring their code resurrects every time a computer reboots. The
+EtherRAT malware on Linux demonstrated this by creating hidden .desktop
+files in XDG autostart directories, ensuring it launched silently with every
+user login.
+
+On Windows, CABINETRAT utilized the classic "Run" registry key to
+maintain a permanent foothold. This technique transforms a single breach
+into a chronic condition, allowing attackers to maintain long-term access for
+espionage or data theft.
+
+18
+
+T1562 Impair Defenses: Blinding the Watchman
+
+Before stealing the jewels, a thief will cut the alarm. Similarly, modern
+adversaries have made "blinding" security tools a standard first step in
+their attack chains.
+
+The Deadlock ransomware exemplified this by abusing the legitimate
+SystemSettingsAdminFlows.exe utility to quietly disable Windows
+Defender's real-time protection and cloud reporting. More aggressively,
+RealBlindingEDR tools were used to surgically remove kernel callbacks,
+effectively putting EDR sensors into a coma without crashing the system.
+By leaving the agent running but blind, attackers operate in a ghost world,
+invisible to the very tools meant to stop them.
+
+T1219 Remote Access Software: The Hardware Insider
+
+The most alarming development of 2025 was the shift from software to
+hardware. While software tools like AnyDesk and VS Code Tunnels remain
+popular for persistence, the game changed with the discovery of North
+Korean DPRK) laptop farms.
+
+Operatives utilized IPKVM devices (like PiKVM) plugged directly into
+HDMI and USB ports to control corporate laptops at the BIOS level. This
+hardware-based access operates completely below the operating system,
+rendering traditional endpoint security software blind to the intrusion and
+redefining the term "Insider Threat."
+
+T1486 Data Encrypted for Impact: The Hybrid Lock
+
+Ransomware has not disappeared; it has become subtler, and more
+professional. The "smash and grab" has evolved into a high-tech hostage
+situation using Hybrid Encryption. Groups like Qilin and RansomHub now
+combine the speed of symmetric encryption (like AES or ChaCha20) to lock
+files instantly with the security of asymmetric encryption RSA or ECC) to
+protect the keys.
+
+19
+
+The MITRE ATT&CK Adversarial Tactics, Techniques, and Common Knowledge) framework
+is a globally accessible knowledge base of adversary tactics and techniques derived from
+real-world observations. This resource helps organizations in comprehending and mitigating
+the tactics, techniques, and procedures TTPs employed in cyberattacks.
+
+In the MITRE ATT&CK framework, a "tactic" refers to a high-level objective that an adversary
+is trying to achieve, such as "Lateral Movement" across a network. A "technique" is a
+specific method used by an adversary to achieve a tactic, such as the "Remote Services"
+technique for Lateral Movement. "Sub-techniques," like T1021.001 for Remote Desktop
+Protocol, are precise implementations of a technique. The MITRE ATT&CK Matrix for
+Enterprise v18.1 consists of 14 tactics, 216 techniques, and 475 sub-techniques 1.
+
+The framework also chronicles threat "groups" involved in intrusions and
+the "software" they deploy, encompassing malware and various tools.
+Currently, ATT&CK contains 172 groups and 784 pieces of software.
+
+With 44 "mitigations", ATT&CK advises on solutions to prevent
+technique execution. Detection is supported by 106 "data components",
+pinpointing data sources critical to identifying techniques.
+
+ATT&CK's "campaign" structure catalogs intrusion activity over time with
+shared objectives, currently featuring 52 campaigns.
+
+The figure on the left illustrates the relationships
+among ATT&CK's core components. It shows how
+adversaries carry out Tactics using specific
+Techniques, and how adversary tools are
+categorized as Software within the framework.
+
+ATT&CK serves as a comprehensive knowledge
+base that documents each technique along with
+associated Mitigations and, following the October
+2025 (v18) update, Detection Strategies and
+Analytics that guide defenders on how techniques
+can be identified and monitored, replacing the
+earlier reliance on Data Sources.
+
+20
+
+The insights presented in the Red Report 2026 are derived from a rigorous,
+large-scale analysis of real-world threat data collected throughout 2025.
+Picus Labs employed a data-driven approach to map adversary behaviors
+directly to the MITRE ATT&CK® framework, ensuring that the findings
+reflect the actual tactical landscape facing organizations today.
+
+Data Collection
+
+Between January 2025 and December 2025, Picus Labs analyzed a dataset of
+1,153,683 unique files, of which 1,084,718 94.02% were classified as malicious.
+To ensure a robust dataset, files were sourced from a diverse ecosystem including
+commercial and open-source threat intelligence, security vendors, malware
+sandboxes, and underground forums.
+
+Analysis & Mapping
+
+From the identified malicious files, analysts detected 15,544,909 specific malicious
+actions, averaging approximately 14 actions per malware sample. These actions
+were systematically mapped to the MITRE ATT&CK framework, yielding a total of
+13,321,128 identified ATT&CK techniques. On average, each malware sample
+exhibited 12 distinct techniques, providing a granular view of how adversaries
+combine different methods to achieve their objectives.
+
+Ranking Criteria
+
+To determine the Red Report 2026 Top Ten, researchers ranked techniques based
+on their absolute prevalence across the dataset. For each technique, Picus Labs
+calculated the number of unique malicious files employing it and expressed this as
+a percentage of the total malicious files analyzed.
+
+Example Calculation: The T1055 Process Injection technique was identified in
+326,165 separate malware samples. This represents 30.07% of the 1,084,718
+malicious files in the dataset.
+
+This methodology ensures that the Top Ten list highlights the techniques most
+widely used by attackers in the wild, enabling organizations to prioritize their
+defenses against the highest-probability threats.
+
+21
+
+T1055
+Process Injection
+
+Tactics
+Defense Evasion,
+Privilege Escalation
+
+Prevalence
+30%
+
+Malware Samples
+326,165
+
+Process injection is a technique employed by threat actors to enhance their ability to
+remain undetected, persist within a victim's system, and potentially access higher
+levels of privileges.
+
+This method involves the insertion of malicious code into a legitimate process, thereby
+enabling the attacker to run their code in the context of that process. The strategy
+effectively masks the malicious activity, helping it to evade basic detection mechanisms.
+
+In the Red Report 2026, this technique has remained as the most prevalent MITRE
+ATT&CK Technique due to its extensive array of advantages for adversaries.
+
+22
+
+Adversary Use of
+Process Injection
+
+Adversaries may use Process Injection for various purposes, including evading
+detection, maintaining presence within a system, and accessing process resources
+such as memory and network.
+
+It is a typical security practice to list all the processes running on a system and
+identify the malicious processes among the legitimate ones that are part of the
+operating system or installed software with recognizable names and file paths.
+Security mechanisms scan for processes that exhibit unusual characteristics, such
+as non-standard file paths or abnormal behavior, which may indicate a potential
+threat. Such processes are swiftly flagged as suspicious and can be killed to protect
+the system.
+
+However, when adversaries embed their malicious code into an existing, trusted
+process, they create a challenge for detection efforts. This stealth tactic, known as
+Process Injection, allows the intrusive code to run unnoticed within the memory
+space of another process, making it particularly difficult for security defenses to
+detect and neutralize the threat.
+
+Process injection provides two significant benefits for adversaries:
+
+1.Privilege Escalation
+
+If the target process has elevated privileges, the injected code will also have access
+to those privileges, allowing the adversary to gain greater control over the system
+and potentially escalate their privileges even further. For instance, if a target
+process has access to network resources, then the malicious code encapsulated
+within this process may allow an adversary to communicate over the Internet or with
+other computers on the same network. This privilege can enable the adversary to
+carry out various malicious activities, such as downloading next-stage payloads or
+tools, exfiltrating sensitive data, spreading malware to other systems, or launching
+attacks against the network.
+
+2.Defense Evasion
+
+An adversary can evade security controls designed to detect and block known
+threats by executing their malicious code under the privileges of a  legitimate
+process. As the malicious code is hidden within the legitimate process, which is
+typically allow-listed, the target process acts as a camouflage for the malicious
+code, allowing the malicious code to evade detection and run without being noticed.
+Since the code is typically run directly in the memory of the legitimate process, it is
+difficult for disk forensics tools to detect the code, as it is not written to the disk.
+
+23
+
+Legitimate Processes Used for Process Injection
+
+Security controls may quickly detect custom processes with unfamiliar names.
+Therefore, attackers use common native built-in Windows processes, such as:
+
+● wmiprvse.exe – WMI Provider Host
+● wscntfy.exe – Windows Security Center Notification App
+● wuauclt.exe – Windows Update AutoUpdate Client
+
+● AppLaunch.exe – Application Launcher
+● arp.exe – Address Resolution Protocol Utility
+● cmd.exe – Command Prompt
+● conhost.exe – Console Window Host
+● control.exe – Control Panel Applet
+● csrss.exe – Client/Server Runtime Subsystem
+● ctfmon.exe – CTF Loader
+● dllhost.exe – COM Surrogate
+● dwm.exe – Desktop Window Manager
+● explorer.exe – Windows Explorer
+● lsass.exe – Local Security Authority Subsystem Service
+● msbuild.exe – Microsoft Build Engine
+● mshta.exe – Microsoft HTML Application Host
+● msiexec.exe – Windows Installer
+● PowerShell.exe – Windows PowerShell
+● rundll32.exe/rundll64.exe – Run a DLL as an App
+● schtasks.exe – Task Scheduler
+● services.exe – Services Control Manager
+● smss.exe – Session Manager Subsystem
+● spoolsv.exe – Print Spooler Service
+● svchost.exe – Service Host
+● taskhost.exe – Host Process for Windows Tasks
+● taskmgr.exe – Task Manager
+● wininit.exe – Windows Start-Up Application
+● winlogon.exe – Windows Logon Process
+● wmiexec.exe – WMI Execution Process
+
+Attackers also use processes of commonly used software, such as browsers,
+antiviruses, office tools, and utilities. Examples:
+
+● acrobat.exe – Adobe Acrobat
+● adobearm.exe – Adobe Acrobat Reader Updater
+● chrome.exe – Google Chrome
+● discord.exe – Discord
+● dropbox.exe – Dropbox
+● dropboxsync.exe – Dropbox Sync
+● excel.exe – Microsoft Excel
+● firefox.exe – Mozilla Firefox
+● googleupdate.exe – Google Updater
+● java.exe – Java Runtime Environment
+● jucheck.exe – Java Update Checker
+● notepad.exe – Notepad
+● onedrive.exe – OneDrive
+● opera.exe – Opera Browser
+● outlook.exe – Microsoft Outlook
+● photoshop.exe – Adobe Photoshop
+● slack.exe – Slack
+● steam.exe – Steam
+● teams.exe – Microsoft Teams
+● vmwaretray.exe – VMware Tray
+● winword.exe – Microsoft Word
+● wordpad.exe – Wordpad
+● zoom.exe – Zoom
+
+24
+
+Methods of Target Process Selection
+
+Adversaries use the following methods when picking their target process for
+malicious code injection:
+
+1.Hardcoded Targeting
+
+In the first scenario, an adversary can hardcode a particular target process in the
+malicious code, and only this process is used to host the injected code. explorer.exe
+and rundll32.exe are the two most commonly leveraged processes for this type of
+attack. For instance, RedLine Stealer malware is known to target the Visual Basic
+Compiler used with the .NET Framework. The malware injects its payload into the
+vbc.exe to evade detection 2.
+
+An attacker can also define a list of target processes in the code, and the injected
+code is executed in the first process on the list that is found to be running on the
+system. These lists typically include native Windows and browser processes.
+
+2.Dynamic Targeting
+
+In this attack scenario, an adversary does not define the target process beforehand
+and instead locates a suitable host process at runtime. It is common for adversaries
+to use Windows API functions to enumerate the list of all currently active processes
+and to get a handle on each target process in attack campaigns. The specific API
+functions that are used will depend on the goals of the attack and the capabilities of
+the adversary, but some common examples include EnumProcesses(),
+EnumProcessModules(), CreateToolhelp32Snapshot(), and OpenProcess().
+
+25
+
+Sub-techniques of
+Process Injection
+
+There are 12 sub-techniques under the Process Injection technique in ATT&CK v18
+
+ID
+
+Name
+
+T1055.001
+
+Dynamic-link Library Injection
+
+T1055.002
+
+Portable Executable Injection
+
+T1055.003
+
+Thread Execution Hijacking
+
+T1055.004
+
+Asynchronous Procedure Call
+
+T1055.005
+
+Thread Local Storage
+
+T1055.008
+
+Ptrace System Calls
+
+T1055.009
+
+Proc Memory
+
+T1055.011
+
+T1055.012
+
+T1055.013
+
+T1055.014
+
+T1055.015
+
+Extra Window Memory Injection
+
+Process Hollowing
+
+Process Doppelgänging
+
+VDSO Hijacking
+
+ListPlanting
+
+Each of these sub-techniques will be explained in the next sections.
+
+26
+
+#1.1. T1055.001
+Dynamic-link Library Injection
+
+The DLL injection technique allows adversaries to execute malicious commands by
+injecting their DLL into a legitimate, often trusted, target process. This technique is
+particularly dangerous as attackers leverage it to bypass security controls, elevate
+privileges, and stealthily manipulate the target system.
+
+Dynamic-link libraries DLLs are a fundamental concept in the Windows
+operating system. DLLs are files that contain compiled code and data used by
+multiple programs and processes on a computer. When a process calls a function
+in a DLL, the operating system loads the DLL into memory and jumps to the
+function in the DLL. DLLs save users' time and effort by allowing them to use the
+same code in multiple programs without recompiling all of the code every time any
+change is made.
+
+DLLs promote modular architecture by allowing software developers to
+compartmentalize functionalities into different DLL files. This feature also makes
+adding new functionalities and maintaining existing ones easier. When developers
+want to use a DLL in their program, they typically include a header file that declares
+the functions in the DLL and links their program to the DLL at runtime. The #include
+directive in C and C, and the import statement in Python and Java, are common
+examples of declaring DLLs in programs.
+
+Adversary Use of DLL Injection
+
+The main feature of DLLs can be a security risk in the wrong hands, as they allow
+programs to use code from other programs. If a DLL contains malicious code, it can
+execute it when loaded into memory, which can compromise the security of your
+program.
+
+Adversaries can manipulate DLLs in different ways to execute malicious actions on
+the target system. The most common method is to inject malicious code into a DLL
+that is already loaded in memory. This technique is called DLL injection, and it allows
+adversaries to execute their malicious code in the context of the program that is
+using the DLL, effectively masquerading the malicious activities as legitimate
+operations of the host application.
+
+Once the adversary has successfully injected a malicious DLL into a process, they
+can perform a variety of actions depending on the nature of the injected code. For
+example, if the application has access to credentials, the malicious DLL may be able
+to capture and transmit these credentials. A typical DLL injection attack follows
+these steps:
+
+1 Identifying the target process: DLL injection starts with identifying the process to
+inject the malicious DLL. Adversaries search for processes on the system using
+various APIs:
+
+● CreateToolhelp32Snapshot - provides a snapshot of all running processes,
+
+threads, loaded modules, and heaps associated with processes.
+
+● Process32First - provides a way to access information about the first process
+encountered in the snapshot of all active processes on the system. Since a
+snapshot of all processes is a complex set of data, the Process32First is a
+useful function to retrieve information about each individual process.
+
+● Process32Next - helps in iterating through the list of processes, one by one,
+
+after the initial process has been accessed using Process32First.
+
+These APIs allow adversaries to enumerate the list of processes currently running
+on the system and gather information about each process, such as its name, ID, and
+path.
+
+27
+
+2 Attaching to the process: After identifying the target process, adversaries use
+the OpenProcess function to obtain the target process's handle. This handle can
+then be used to perform various operations on the process, such as reading from or
+writing to its memory or querying for information.
+
+3 Allocating memory within the process: Adversaries then call the VirtualAllocEx
+function with the target process's handle and allocate memory in the virtual address
+space of the process. The output of VirtualAllocEx is a pointer to the start of a block
+of memory allocated in another process's virtual address space. This pointer is a
+crucial handle for further operations on the allocated memory, enabling processes to
+interact with and manipulate memory in other processes within the security and
+operational confines set by the Windows operating system.
+
+4 Copying the DLL or the DLL path into process memory: To write into the
+allocated memory, adversaries use the WriteProcessMemory function and write the
+path to their malicious DLL. Adversaries also use the LoadLibraryA function in the
+kernel32.dll library to load a DLL at runtime. LoadLibraryA allows adversaries to
+write the DLL path or determine an offset for writing a full DLL. It accepts a filename
+as a parameter and returns a handle to the loaded module.
+
+5 Executing the injected DLL Instead of managing threads within the target
+process, adversaries often create their own threads using the CreateRemoteThread
+function. Additionally, the NtCreateThreadEx or RtlCreateUserThread API functions
+can be utilized to execute code in another process' memory. The method usually
+consists of passing the LoadLibrary address to one of these two APIs, which
+requires a remote process to execute the DLL on the malware's behalf 3.
+
+Since the LoadLibrary function registers the loaded DLL with the program, security
+controls can detect malicious activity, presenting a challenge for adversaries. To
+avoid being detected, some adversaries load the entire DLL into memory and
+determine the offset to the DLL's entry point. This action may allow adversaries to
+inject the DLL into a process without registering it and remain hidden on the target
+system.
+
+DLL injection is commonly employed by adversaries in the wild. In August 2025,
+Tinky Winkey keylogger was reported to execute its payload inside legitimate
+Windows processes using DLL injection 4. After initial delivery through malicious
+installers and trojanized applications, the malware dropped a malicious DLL onto the
+system and identified a suitable running process for injection. TinkyWinkey then
+obtained a handle to the target process, allocated memory within its address space,
+and wrote the path of the malicious DLL using standard Windows APIs. By invoking
+CreateRemoteThread to call LoadLibrary, the malware forced the target process to
+load the attacker-controlled DLL, enabling credential logging and surveillance
+activities to run under the context of a trusted process.
+
+//Allocate memory in the target process
+LPVOID remoteMem = VirtualAllocEx(hProcess, NULL, dllPathSize, MEM_COMMIT
+| MEM_RESERVE, PAGE_READWRITE);
+
+//Write the DLL path to the allocated memory
+WriteProcessMemory(hProcess, remoteMem, (LPVOID)dllPath, dllPathSize,
+NULL)
+
+//Create a remote thread in the target process to load the DLL
+HANDLE hThread = CreateRemoteThread(hProcess, NULL, 0,
+(LPTHREAD_START_ROUTINE)LoadLibraryW, remoteMem, 0, NULL);
+
+//Wait for the remote thread to finish and clean up
+write_logs("DLL injected successfully.\n", fd);
+CloseHandle(fd); // Close the Log file handle before creating a remote
+thread
+WaitForSingleObject(hThread, INFINITE);
+CLoseHandle (hThread);
+CloseHandle(hProcess);
+return 0;
+
+28
+
+Besides standard DLL injection, adversaries exploit various DLL injection
+techniques, leveraging different methods to load a DLL into a target process.
+
+The Reflective DLL Injection is an alternative technique that allows adversaries to
+inject DLLs into processes. Instead of using standard Windows API functions like
+LoadLibrary() and GetProcAddress(), the DLL loads and executes itself within the
+target process using techniques like parsing the Export Address Table EAT) to
+locate the addresses of key API functions like LoadLibraryA and
+GetProcAddress(). With the Reflective DLL Injection technique, adversaries inject
+DLLs into the process without the need to call these functions directly.
+
+In July 2025, Raven Stealer was reported to use reflective DLL injection. The
+malware decrypts its DLL payload directly in memory and injects it into a target
+process without ever writing the DLL to disk. It uses a reflective loader inside the
+DLL to self-load and execute, avoiding standard APIs like LoadLibrary that EDR tools
+commonly monitor 5.
+
+Hooking Injection leverages the Windows hooking mechanism to inject malicious
+DLLs into processes. Instead of directly loading a DLL, adversaries use functions
+like SetWindowsHookEx to attach a malicious DLL containing a hook procedure to
+a target thread or process. When the specified hook event (e.g., a keyboard or
+mouse event) occurs, the operating system loads the malicious DLL into the target
+process, allowing the attacker to execute their code.
+
+Hooking injection is a common DLL injection technique among keyloggers. Shadow
+Vector malware sets a Windows input hook using SetWindowsHookEx to capture
+keystrokes and monitor user activity while remaining hidden through in-memory
+execution 6.
+
+//Code snippet from Shadow Vector
+private static IntPtr SetHook(LimeLogger.LowLevelKeyboardProc proc)
+{
+
+IntPtr result;
+using(Process currentProcess = Process.GetCurrentProcess())
+{
+
+result = LimeLogger.SetWindowsHookEx(Lime.Logger.WHKEYBOARDLL, proc,
+
+LimeLogger.GetModuleHandle(currentProcess.ProcessName), 0U);
+
+{
+return result;
+
+}
+
+AppInit_DLL technique leverages the AppInit_DLLs registry value, which specifies
+DLLs that the system should load when initializing a process using User32.dll.
+Adversaries typically use the command below to exploit this injection technique,
+forcing the operating system to load a malicious DLL into processes.
+
+reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Windows" /v
+AppInit_DLLs /t REG_SZ /d "C:\tmp\malicious.dll" /f
+reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Windows" /v
+LoadAppInit_DLLs /t REG_DWORD /d 1 /f
+
+Although disabled when Secure Boot is enforced, AppInit_DLLs injection remains an
+active but low-frequency persistence and execution vector. In a recent incident, a
+browser search engine hijacker called SmashJacker was reported to use the
+App_Init DLL technique to establish persistence in the compromised systems 7.
+
+29
+
+#1.2. T1055.002
+Portable Executable Injection
+
+Portable Executable PE) is a file format for executables, object code, and DLLs in
+Windows operating systems. PE provides a standardized way for the operating
+system to manage and execute applications, including handling the various aspects
+of code and data involved in complex software programs. PE injection involves the
+injection of a Portable Executable PE) file, such as an EXE or DLL, into the memory
+space of another process running on a Windows operating system to execute
+arbitrary code within the context of the target process. Adversaries typically inject a
+small piece of malicious shellcode or call the CreateRemoteThread function to create
+a new thread.
+
+The Portable Executable PE file format is designed to encapsulate the necessary
+information for the Windows loader to manage and execute the code contained
+within it. This structure includes various headers and sections, each serving a
+distinct purpose in the organization and execution of the file.
+
+The PE file format is an important part of the Windows OS architecture and is
+designed to support the execution and management of applications.
+
+Adversary Use of Portable Executable Injection
+
+PE injection attacks follow a path similar to DLL injection. The difference lies in the
+use of the WriteProcessMemory function. Instead of writing the path to the
+malicious DLL within the allocated memory of the target process, adversaries write
+their malicious code in that memory.
+
+Although it seems stealthy, PE injection has an inherent challenge. When
+adversaries inject their PE into the target process's memory, the injected code
+acquires an unpredictable new base address. To overcome this problem,
+adversaries design their malware to locate the host process's relocation table
+address and resolve the cloned image's absolute addresses via a loop over its
+relocation descriptors.
+
+Below is the general attack lifecycle of PE Injection:
+
+1. Process Handle Acquisition: Attackers obtain a handle to the target process
+using the OpenProcess Windows API with appropriate access rights, allowing
+them to perform operations such as memory manipulation within the target
+process.
+
+2. Selecting and Preparing the PE File: The appropriate PE file to be injected is
+
+selected. Attackers determine the PE's preferred image base address, which is
+the address where the code expects to be loaded in memory. The size of the
+PE, necessary for its operation in memory, is acquired.
+
+3. Local Memory Allocation and PE Copy: A block of memory is allocated within
+the attacker's local process, copying the selected PE image here. This action
+allows attackers to modify the PE image if needed before injection, including
+accommodating new base addresses or resolving addresses of imported
+functions.
+
+4. Allocating Memory in Target Process: Using VirtualAllocEx, attackers allocate
+memory in the target process's address space, creating space for the injected
+PE file. This space must be sufficient to hold the entire PE file and have
+execute-read-write permissions. The base address of this memory block is
+referred to as target_address.
+
+30
+
+5. Calculating Delta and Patching PE The delta between the local copy's address
+(local_address) and the target allocation (target_address) is calculated to aid
+any necessary relocations within the PE file to match the target address space.
+The PE file is then patched or adjusted based on the delta to ensure it will
+execute correctly when loaded at the target_address instead of its preferred
+base address.
+
+6.
+
+Injecting the PE into the Target Process: The patched PE file is transferred
+from the attacker's local process to the allocated memory block in the target
+process using WriteProcessMemory. This ensures the entire image is correctly
+positioned in memory, where it can be executed.
+
+7. Executing Injected PE A remote thread is created within the target process
+using CreateRemoteThread, with its entry point set to the InjectionEntryPoint
+function of the now-injected PE file. This triggers the execution of the injected
+PE, effectively starting the malicious code in the context of the target process.
+
+Throughout this lifecycle, attackers must carefully handle the PE file and the target
+process to ensure successful injection and execution. This includes dealing with
+potential hurdles like Address Space Layout Randomization ASLR, which can
+change base addresses, and ensuring that any dependencies (like specific DLLs or
+system resources) are correctly resolved.
+
+Portable Executable PE) injection attack is commonly leveraged in the wild. In
+November 2025, ClickFix was reported to use PE injection to execute its final
+malware payload entirely in memory, avoiding the need to drop a detectable EXE on
+disk. This technique allowed the adversaries to hide malicious activity inside a
+trusted process and evade AV/EDR behavioral and file-based detections 8.
+
+public static void Pdlysc(string path, byte[] bytes)
+{
+
+STARTUPINFO si = new STARTUPINFO();
+si.cb = (uint)Marshal.SizeOf(typeof(STARTUPINFO));
+PROCESS_INFORMATION pi;
+
+if (!CreateProcessA(null, path, IntPtr.Zero, IntPtr.Zero, false, 0x4,
+IntPtr.Zero, null, ref si, out pi) || pi.hProcess == IntPtr.Zero) return;
+
+IntPtr addr = VirtualAllocEx(pi.hProcess, IntPtr.Zero,
+(uint)bytes.Length, 0x3000, 0x40);
+if (addr == IntPtr.Zero) { CloseHandles(pi); return; }
+
+if (!WriteProcessMemory(pi.hProcess, addr, bytes, (uint)bytes.Length, out
+IntPtr written) || written == IntPtr.Zero) { CloseHandles(pi); return; }
+
+IntPtr thread = CreateRemoteThread(pi.hProcess, IntPtr.Zero, 0, addr,
+IntPtr.Zero, 0, out _);
+if (thread == IntPtr.Zero) { CloseHandles(pi); return; }
+
+WaitForSingleObject(thread, 0xFFFFFFFF);
+TerminateProcess(pi.hProcess, 0);
+CloseHandle(thread);
+CloseHandles(pi);
+
+31
+
+#1.3. T1055.003
+Thread Execution Hijacking
+
+Thread Execution Hijacking is a technique that allows an attacker to execute arbitrary
+code in the context of a separate process on a computer. It involves injecting code
+into a process that is already running on the system and then redirecting the
+execution of one of the threads in that process to the injected code.
+
+1. Process Handle Acquisition: The attacker acquires a handle to the target
+
+process that they want to inject code into. This involves using the OpenProcess
+API with appropriate access rights, such as PROCESS_VM_OPERATION,
+PROCESS_VM_WRITE, and PROCESS_VM_READ.
+
+Adversary Use of Thread Execution Hijacking
+
+Thread execution hijacking is a technique that allows an attacker to execute arbitrary
+code in the context of a separate process on a computer. It involves injecting code
+into a process that is already running on the system and then redirecting the
+execution of one of the threads in that process to the injected code.
+
+To perform this technique, an attacker would first need to find a suitable process to
+hijack. This could be a process that is running with high privileges or a process that is
+trusted by other programs on the system. Once found, malware suspends the target
+process, unmaps/hollows its memory, and then injects malicious shellcode or DLL into
+the process. Finally, they would need to redirect the execution of a thread in the
+process to the injected code.
+
+This technique is similar to the process hollowing technique, but instead of creating a
+new process in a suspended state, it aims to find an already existing process on the
+target system.
+
+Below is the general attack lifecycle typically followed by adversaries performing
+Thread Execution Hijacking attacks:
+
+2. Thread Suspension: Once the handle to the process is obtained, the attacker
+
+identifies a thread within that process to hijack. The OpenThread API is then
+used to get a handle on this thread, which is suspended using SuspendThread
+to prevent it from executing any more instructions while the attack is carried
+out.
+
+3. Memory Allocation: After successfully suspending the thread, the attacker
+allocates memory in the virtual address space of the target process. This is
+typically done with VirtualAllocEx, specifying MEM_COMMIT and
+PAGE_EXECUTE_READWRITE as the desired memory state and protection. This
+ensures that the allocated memory is both executable and writable.
+
+4. Writing Shellcode: With the memory allocated, the attacker writes their
+
+malicious payload (shellcode) to the allocated space using the
 WriteProcessMemory function, which copies data from the attacker's buffer to
 the allocated memory in the target's process space.
 
@@ -8313,4 +9674,4 @@ https://www.trendmicro.com/ru_ru/research/25/c/the-espionage-toolkit-of-earth-al
 
 © 2026 Picus Security. All Rights Reserved.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-14", "model": "gemini-3.1-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-24", "model": "gemini-3.5-flash-lite"} -->

@@ -1,29 +1,23 @@
-# Cybersecurity Report 2026
+CYBER SECURITY
+REPORT 2026
+14th
+ANNUAL
+EDITION
 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Cyber Security Trends](#cyber-security-trends)
   - [Beyond Email: Multi-Channel Social Engineering](#beyond-email-multi-channel-social-engineering)
-  - [ClickFix: Social Engineering That Shifts Execution to the User](#clickfix-social-engineering-that-shifts-execution-to-the-user)
-  - [Voice-Based Social Engineering – The Weapon of Choice for Major Attacks](#voice-based-social-engineering--the-weapon-of-choice-for-major-attacks)
-  - [Victim-Initiated Social Engineering](#victim-initiated-social-engineering)
-  - [Social Engineering Activity on Business Communication Platforms](#social-engineering-activity-on-business-communication-platforms)
-- [The 2025 Ransomware Ecosystem](#the-2025-ransomware-ecosystem)
-  - [Mid-Year RaaS Disruption and Affiliate Realignment](#mid-year-raas-disruption-and-affiliate-realignment)
-  - [Proliferation of Independent Double-Extortion Groups](#proliferation-of-independent-double-extortion-groups)
-  - [Large RaaS Operators Continue to Drive Volume](#large-raas-operators-continue-to-drive-volume)
-  - [Qilin – The Emerging Dominant RaaS Group](#qilin--the-emerging-dominant-raas-group)
-  - [Cl0p – A Zero-Day Outlier](#cl0p--a-zero-day-outlier)
-  - [The Return of LockBit](#the-return-of-lockbit)
-  - [Constraining Incentives: Payment Restrictions and Compulsory Reporting](#constraining-incentives-payment-restrictions-and-compulsory-reporting)
-  - [The Check Point Incident Response Team: Inside a Qilin Ransomware Attack](#the-check-point-incident-response-team-inside-a-qilin-ransomware-attack)
-- [From Recon to Narrative Control: Cyber’s Operational Impact in 2025 Conflicts](#from-recon-to-narrative-control-cybers-operational-impact-in-2025-conflicts)
-  - [Positioning and Conditioning Activity](#positioning-and-conditioning-activity)
-  - [Operational Support Activity](#operational-support-activity)
+- [AI Landscape in Cyber Security](#ai-landscape-in-cyber-security)
+- [Global Analysis](#global-analysis)
+- [High Profile Vulnerabilities](#high-profile-vulnerabilities)
+- [2026 Predictions](#2026-predictions)
+- [Recommendations](#recommendations)
+- [An Exposure Management Perspective](#an-exposure-management-perspective)
 
 ---
 
-# 01 INTRODUCTION
+## INTRODUCTION
 
 In 2025, the threat landscape evolved rapidly, becoming more interconnected and challenging to manage. Our analysis of global telemetry and incidents reveals a fundamental shift, marked by the emergence of new attack surfaces and techniques. Attackers are integrating AI, identity abuse, exposure exploitation, and ransomware into their campaigns.
 
@@ -35,105 +29,174 @@ Our report is structured around attacker behavior and real-world data. The subse
 
 I invite you to explore the data and findings presented in this report.
 
-**Lotem Finkelstein**, VP Research
+Lotem Finkelstein, VP Research
+
+LOTEM FINKELSTEIN
+VP Research
 
 ---
 
-# 02 CYBER SECURITY TRENDS
+## CYBER SECURITY TRENDS
 
-## Beyond Email: Multi-Channel Social Engineering
+### BEYOND EMAIL: MULTI-CHANNEL SOCIAL ENGINEERING
 
 Which attack surface is the easiest to exploit across all organizations? For attackers in 2025, the answer was the human component. In social engineering attacks, threat actors attempt to do just that: achieve compromise by manipulating human victims into providing the initial access for them. In such attacks, threat actors target employees, outsourced personnel, and third-party service providers to gain access to the organization’s systems or sensitive information. Although these attacks are perceived to be less serious than those exploiting software or hardware vulnerabilities, they can be just as damaging as compromises achieved through other means.
 
-For years, phishing emails served as the primary social engineering vector, and organizations became increasingly aware of these threats. However, by 2025, social engineering expanded beyond traditional email-based campaigns, adopting multi-platform, cross-channel, and highly targeted approaches that leverage phone calls, messaging applications, and real-time impersonation.
+For years, phishing emails served as the primary social engineering vector, and organizations became increasingly aware of these threats. However, by 2025, social engineering expanded beyond traditional email-based campaigns, adopting multi-platform, cross-channel, and highly targeted approaches that leverage phone calls, messaging applications, and real-time impersonation. At the same time, attackers have evolved how email and browser-based social engineering attacks are executed, shifting toward interaction-driven techniques such as ClickFix and its variants. These methods guide users through seemingly legitimate workflows designed to bypass security controls and inadvertently execute malware.
 
-## ClickFix: Social Engineering That Shifts Execution to the User
+These approaches have resulted in millions of compromise attempts worldwide and contributed to several high-impact business breaches, resulting in significant financial losses for enterprises globally.
 
-ClickFix emerged as one of the most significant social engineering techniques in 2025. First observed in 2024, ClickFix is an initial access method in which attackers manipulate users into executing malicious actions by presenting them with fraudulent instructions.
+#### ClickFix: Social Engineering That Shifts Execution to the User
 
-![Flowchart of a ClickFix attack]
+ClickFix emerged as one of the most significant social engineering techniques in 2025. First observed in 2024, ClickFix is an initial access method in which attackers manipulate users into executing malicious actions by presenting them with fraudulent instructions. These instructions, typically delivered through compromised or attacker-controlled websites, malvertising, or brand-impersonation emails, are crafted to resemble routine verification steps such as CAPTCHAs, validation checks, or error fixes. By appearing as legitimate steps required to continue normal activity, users are manipulated into running attacker-controlled content that ultimately delivers malware.
+
+![Flowchart of a ClickFix attack showing the process from attacker placing lure on a compromised website to SEO poisoning, spam comments, victim visiting the ClickFix website, following technical instructions, running malicious content, and malware payloads leading to compromise.]
+
+Figure 1: Flowchart of a ClickFix attack
+
+CHAPTER 02 CHECK POINT SOFTWARE | THE STATE OF CYBER SECURITY 2026 7
 
 ![Example of a ClickFix website with a fake CAPTCHA prompt]
 
-This technique succeeds by exploiting user trust and the tendency to follow technical instructions. In 2025, ClickFix activity increased by approximately 500% compared to the previous year and was observed in nearly half of all documented malware campaigns.
+Figure 2: Example of a ClickFix website with a fake CAPTCHA prompt
 
-## Voice-Based Social Engineering – The Weapon of Choice for Major Attacks
+This technique succeeds by exploiting user trust and the tendency to follow technical instructions. It has proven highly effective due to its simplicity, scalability, and ability to bypass certain security controls, as malicious actions are executed manually by the user rather than delivered through traditional file-based infection chains. As a result, its adoption has accelerated rapidly. In 2025, ClickFix activity increased by approximately 500% compared to the previous year and was observed in nearly half of all documented malware campaigns.
 
-Voice phishing and impersonation gained significant traction in 2025, proving to be a highly effective means to exploit user trust. In these attacks, threat actors pose as trusted or authoritative figures and, following targeted reconnaissance, use rehearsed scripts to pressure victims to take actions such as resetting credentials, changing MFA codes, or granting network access.
+IN 2025, CLICKFIX ACTIVITY INCREASED BY APPROXIMATELY 500% COMPARED TO THE PREVIOUS YEAR AND WAS OBSERVED IN NEARLY HALF OF ALL DOCUMENTED MALWARE CAMPAIGNS.
 
-Historically associated with low-complexity consumer fraud, phone-based impersonation has evolved into an enterprise-focused intrusion technique used to gain an initial foothold in large organizations.
+The technique has been widely adopted across the threat landscape, including by established cyber criminal groups behind major infostealer operations, such as RedLine and Lumma, and in attacks that delivered payloads leading to Interlock ransomware infections. At the same time, emerging malware families have increasingly used ClickFix as their initial attack vector. Recent examples include the MonsterV2 infostealer campaign targeting United States residents and a PureHVNC RAT campaign analyzed by Check Point Research. Beyond financially motivated crime, multiple nation-state-sponsored APT groups have also adopted ClickFix as a preferred delivery mechanism, in lieu of their more traditional initial access techniques.
 
-![Scattered Spider’s breach of Marks & Spencer]
+ClickFix’s success has led to the emergence of additional techniques that use the same social engineering approach. In mid-2025, threat actors began adopting FileFix, a ClickFix-derived technique that abuses legitimate operating system workflows to achieve initial access to the victim’s device. FileFix relies on malicious or compromised websites to trigger a standard Windows Explorer window in which users are instructed to paste what appears to be a required file path. This action causes attacker-controlled content to be executed, resulting in compromise without the use of traditional malware delivery methods. Originally introduced as a proof of concept, FileFix was weaponized by threat actors within weeks. Since then, multiple active campaigns have leveraged the technique to deliver malware payloads, including Interlock RAT and StealC infostealer, demonstrating how quickly successful social engineering methods transition from research to operational use.
 
-## Victim-Initiated Social Engineering
+In parallel, attackers have extended ClickFix’s approach past code execution to account compromise. ConsentFix, which emerged toward the end of 2025, applies similar social engineering principles to cloud environments. It tricks users into completing a legitimate Microsoft/Azure OAuth login flow. It then instructs them to copy and paste a localhost URL that contains an OAuth authorization code into an attacker-controlled page. The stolen code is used to obtain tokens and gain access to the user’s Microsoft account without capturing a password and completing multi-factor authentication (MFA).
+
+The popularity of ClickFix and its variants in 2025 has spread beyond Windows environments. Threat actors developed campaigns specifically targeting macOS users, as well as advanced threats that use ClickFix techniques to target Linux systems. As we saw with phishing kits, ClickFix began to commoditize by creating kits such as the IUAM ClickFix Generator, which enables attackers to create highly customizable, cross-platform ClickFix campaigns and rapidly adopt the technique at scale.
+
+Coercing victims to initiate malicious activity on their own systems reflects a broader shift in attackers’ social engineering strategies, which abuse user trust in legitimate processes across endpoints, browsers, and cloud identity platforms.
+
+CHAPTER 02 CHECK POINT SOFTWARE | THE STATE OF CYBER SECURITY 2026 8
+
+#### Voice-Based Social Engineering – The Weapon of Choice for Major Attacks
+
+Voice phishing and impersonation gained significant traction in 2025, proving to be a highly effective means to exploit user trust. In these attacks, threat actors pose as trusted or authoritative figures and, following targeted reconnaissance, use rehearsed scripts to pressure victims to take actions such as resetting credentials, changing MFA codes, or granting network access. Historically associated with low-complexity consumer fraud, phone-based impersonation has evolved into an enterprise-focused intrusion technique used to gain an initial foothold in large organizations.
+
+In 2025, voice-based impersonation became a preferred technique among highly sophisticated threat groups targeting major brands. These actors conducted in-depth reconnaissance, leveraged multiple communication platforms to engage victims, and executed complex, multi-stage social engineering scripts to achieve their goals. In several cases, voice-driven campaigns enabled attackers to gain initial access for some of the year’s most damaging high-impact enterprise intrusions.
+
+HISTORICALLY ASSOCIATED WITH LOW-COMPLEXITY CONSUMER FRAUD, PHONE-BASED IMPERSONATION HAS EVOLVED INTO AN ENTERPRISE-FOCUSED INTRUSION TECHNIQUE USED TO GAIN AN INITIAL FOOTHOLD IN LARGE ORGANIZATIONS.
+
+Most notably, this activity was associated with financially motivated threat actors such as Scattered Spider and the cluster commonly referred to as Scattered LAPSUS$ Hunters (SLH). Scattered Spider (also tracked as UNC3944 / Octo Tempest) is a highly effective, intrusion-focused cluster known for identity-centric initial access techniques, including help desk and IT vendor impersonation, MFA fatigue, and SIM-swap account takeover. SLH is a joint effort carried out by operators, tooling, and tactics associated with Scattered Spider, LAPSUS$, and ShinyHunters. These three groups have a track record of high-profile enterprise breaches and extortion. Notable past attacks include Shiny Hunters’ breach of US telecom giant AT&T in 2024, for which the group received more than $350,000 in ransom payments; Scattered Spider’s hack of MGM Resorts in 2023; and Lapsus$’s compromise of the identity authentication firm Okta via a breached third-party support provider back in 2022.
+
+#### High-Impact Enterprise Incidents
+
+SLH was linked to several high-impact incidents in 2025, where voice-driven social engineering served as the primary initial access vector against major enterprises, enabling data theft and extortion. In April 2025, Scattered Spider compromised British retailer Marks & Spencer’s network through a targeted social engineering operation supported by extensive reconnaissance. The attackers gathered detailed information about the company’s employees and internal processes, enabling them to convincingly impersonate a legitimate staff member when contacting a third-party help desk provider supporting Marks & Spencer. The attackers
+
+CHAPTER 02 CHECK POINT SOFTWARE | THE STATE OF CYBER SECURITY 2026 10
+
+![Flowchart of Scattered Spider's breach of Marks & Spencer]
+
+Figure 3: Scattered Spider’s breach of Marks & Spencer
+
+In another case, the British auto manufacturer Jaguar Land Rover (JLR) was targeted by SLH in August 2025. The attackers gained access to internal systems, exfiltrated customer data, and forced shutdowns across IT and manufacturing environments, resulting in disrupted production for several weeks. Although no technical assessment was published, reporting indicates that the intrusion likely involved social engineering techniques used against IT support teams, consistent with prior SLH activity. Estimated damages from the incident reached approximately £1.9 billion.
+
+CHAPTER 02 CHECK POINT SOFTWARE | THE STATE OF CYBER SECURITY 2026 11
+
+Earlier in 2025, ShinyHunters (also tracked as UNC6040), a threat actor known for sophisticated voice-phishing operations, conducted targeted campaigns against organizations’ Salesforce environments to achieve large-scale data theft and extortion. The attackers focused on employees in English-speaking branches of multinational enterprises. They impersonated internal IT support staff to coerce victims into granting access or disclosing sensitive credentials, ultimately enabling data exfiltration from Salesforce instances. The threat actors later claimed the campaign affected approximately 40 organizations, including major global brands, and resulted in the exfiltration of nearly one billion records. These claims remain unverified.
+
+![Flowchart of Salesforce attacks attributed to ShinyHunters]
+
+Figure 4: SalesForce attacks attributed to ShinyHunters
+
+CHAPTER 02 CHECK POINT SOFTWARE | THE STATE OF CYBER SECURITY 2026 12
+
+Available reporting indicates that in multiple cases, individuals affiliated with the SLH ecosystem are of Western origin. Public arrest records and indictments name individuals with United States, United Kingdom, and European citizenship. This may explain why these operators possess the linguistic fluency and cultural familiarity that enabled voice-based impersonation attacks against European and North American organizations.
+
+Voice impersonation remains a significant fraud vector beyond enterprise intrusions, particularly in financially motivated scams targeting private citizens. In these cases, attackers commonly impersonate financial institutions or cryptocurrency platforms to pressure the victims into transferring funds or disclosing credentials that enable account takeovers. According to FBI reporting, the voice-enabled fraud and account takeover incidents in 2025 resulted in losses exceeding $250 million.
+
+#### Voice Impersonation as a Defining Trend
+
+The growing success of voice-based social engineering is driving increased demand for skilled impersonation operators within criminal ecosystems, as well as the emergence of a market for AI-driven voice impersonation tools and services. Overall, the expanded use of voice impersonation to target both individuals and high-profile enterprises is one of the defining social engineering trends of 2025, with several high-impact campaigns causing substantial financial and operational damage to affected organizations.
+
+THE EXPANDED USE OF VOICE IMPERSONATION TO TARGET BOTH INDIVIDUALS AND HIGH-PROFILE ENTERPRISES IS ONE OF THE DEFINING SOCIAL ENGINEERING TRENDS OF 2025, WITH SEVERAL HIGH-IMPACT CAMPAIGNS CAUSING SUBSTANTIAL FINANCIAL AND OPERATIONAL DAMAGE TO AFFECTED ORGANIZATIONS.
+
+#### Victim-Initiated Social Engineering
 
 In 2025, we observed a growing trend of victim-initiated (inbound) social engineering, where attackers deliberately steer targets into initiating contact, thereby increasing the perceived legitimacy of the interaction.
 
-## Social Engineering Activity on Business Communication Platforms
+One campaign, identified as ZipLine by Check Point Research, involves attackers abusing organizations’ public “Contact Us” pages to pose as legitimate business inquiries. This approach prompts employees, acting within their normal job responsibilities, to initiate follow-up correspondence with the attackers. The attackers then engage victims in weeks-long email exchanges before delivering a malicious ZIP attachment that deploys MixShell malware. The campaign has primarily been observed against manufacturing organizations.
 
-Threat actors are increasingly expanding social engineering activity beyond email to messaging on social media platforms and messaging apps where user expectations and security controls are often weaker.
+CHAPTER 02 CHECK POINT SOFTWARE | THE STATE OF CYBER SECURITY 2026 13
 
----
+HIGH-TRUST COMMUNICATION PLATFORMS ARE EMERGING SOCIAL ENGINEERING VECTORS
 
-# THE 2025 RANSOMWARE ECOSYSTEM
+A similar victim-initiated pattern was observed in campaigns attributed to UNC6229, which targeted individuals in the marketing and digital advertising sectors to hijack corporate advertising and social media accounts. The actor created fake job postings on both legitimate platforms and attacker-controlled websites, relying on victims to initiate contact by applying for advertised roles. Initial communications were benign and personalized, building trust before shifting to malicious payload delivery or credential theft via phishing links.
 
-The number of ransomware victims reached record highs in 2025 as the criminal ecosystem underwent rapid reconfigurations. The year began with a large-scale mass-exploitation by Cl0p, a cyber crime group, followed by the sudden disappearance of several major RaaS (Ransomware-as-a-Service) groups, which created opportunities for emerging actors.
+While attacker-initiated phishing emails often have low success rates, reversing the interaction flow by engineering scenarios in which victims initiate or sustain communication significantly increases attacker's credibility and the likelihood of compromise.
 
-![Published ransomware victims per month]
+#### Social Engineering Activity on Business Communication Platforms
 
-## Mid-Year RaaS Disruption and Affiliate Realignment
+Threat actors are increasingly expanding social engineering activity beyond email to messaging on social media platforms and messaging apps where user expectations and security controls are often weaker. These interactions typically mirror traditional phishing objectives such as coercing victims into executing malicious files or disclosing credentials, while benefiting from reduced user skepticism and a lack of dedicated security controls.
 
-In Q2, several high-profile RaaS programs abruptly disappeared, while victim count remained well above 2024 baselines. 8Base and Phobos were disrupted by coordinated international law enforcement operations.
+By operating through third-party messaging platforms, attackers can engage targets in more informal contexts, making it easier to build trust. This shift reflects a broader trend toward exploiting communication channels that fall outside traditional corporate security monitoring.
 
-## Proliferation of Independent Double-Extortion Groups
+An example includes activity attributed to the Iranian APT group Nimbus Manticore, which was observed impersonating business professionals on LinkedIn to engage employees. Another Iranian APT group, Educated Manticore, leveraged messaging platforms such as WhatsApp for years as part of its social engineering methodology. This approach remains effective in 2025, as attackers build trust with their victims through informal communication channels while operating largely outside traditional enterprise security visibility and controls.
 
-2025 also saw an unprecedented proliferation of small, independent, double-extortion groups. At the end of 2024, approximately 90 identifiable brands were publishing victims on data-leak sites (DLS), while 2025 recorded 140 distinct groups, an increase of more than 50 percent.
+Lastly, threat actors are increasingly turning to enterprise collaboration platforms such as Microsoft Teams and Slack for social engineering channels. When organizational configurations allow external users to initiate chats or calls, these platforms provide attackers with a highly trusted environment in which to impersonate internal IT staff or service providers and engage employees directly via text, voice, or video.
 
-## Large RaaS Operators Continue to Drive Volume
+Multiple campaigns observed over the past year leveraged Microsoft Teams as the initial access vector, with attackers messaging or calling employees from adversary-controlled Microsoft 365 tenants while posing as internal IT support. Victims are typically encouraged to install remote support tools, granting attackers full interactive access to their systems. This access is then abused to deploy next-stage malware, such as the Matanbuchus loader, and eventually achieve network-wide compromise, which may also involve ransomware. These campaigns highlight how collaboration platforms, designed to streamline business communication, are
 
-A review of the most active ransomware groups in 2025 shows that the ecosystem remains anchored by long running RaaS operations, despite the influx of new brands.
+CHAPTER 02 CHECK POINT SOFTWARE | THE STATE OF CYBER SECURITY 2026 14
 
-## Qilin – The Emerging Dominant RaaS Group
+increasingly being abused as high-trust attack surfaces, enabling attackers to bypass standard email defenses and exploit human weaknesses to achieve rapid compromise.
 
-Qilin emerged as the dominant RaaS group of 2025, publishing the identities of over 1,000 victims on its DLS after they refused to pay a ransom.
+#### Navigating the Rapid Evolution of Social Engineering Threats
 
-![Qilin’s promotion of new extortion tools in a Dark Web forum]
+In 2025, social engineering took center stage as the dominant attack vector across the threat landscape, from scams and opportunistic malware campaigns to the most damaging enterprise compromises. Threat actors expanded their techniques, increasingly leveraging multiple platforms, diverse psychological tactics, and creative technical approaches. Tactics such as ClickFix and voice impersonation proved especially effective, becoming the primary tools for leading malware and intrusion groups.
 
-## Cl0p – A Zero-Day Outlier
+As noted earlier, the human element remains the weakest link in organizational security. In 2026, social engineering activity is expected to intensify further. Generative AI is lowering the barrier to highly convincing attacks, while the rapid adoption of new tools and solutions provides threat actors with an expanding set of trusted workflows to exploit. As a result, social engineering represents a growing, adaptive threat that organizations must treat as a central security challenge.
 
-Cl0p shaped both the beginning and end of the 2025 ransomware timeline. Unlike traditional RaaS actors, Cl0p consistently relied on highly strategic zero-day exploits of widely used enterprise software.
+> Social engineering expanded beyond traditional email-based campaigns, enabling multi-platform, cross-channel, and highly targeted approaches that leverage phone calls, messaging applications, and real-time impersonation.
+> 
+> SERGEY SHYKEVICH  
+> Group Manager  
+> Threat Intelligence
 
-## The Return of LockBit
-
-In September 2025, LockBit officially relaunched as LockBit 5.0, with an updated encryptor, enhanced evasion capabilities, and a redesigned affiliate interface.
-
-![A ransom note from a LockBit 5.0 attack in mid-September 2025]
-
-## Constraining Incentives: Payment Restrictions and Compulsory Reporting
-
-In 2025, the United Kingdom advanced comprehensive proposals, including a potential ban on ransom payments by public sector institutions and mandatory reporting.
-
-## The Check Point Incident Response Team: Inside a Qilin Ransomware Attack
-
-Qilin was the most prolific RaaS group of 2025. The following case study examines a significant attack against a Western European electric power company.
-
-![Timeline of the Qilin attack]
+CHAPTER 02 CHECK POINT SOFTWARE | THE STATE OF CYBER SECURITY 2026 15
 
 ---
 
-# FROM RECON TO NARRATIVE CONTROL: CYBER’S OPERATIONAL IMPACT IN 2025 CONFLICTS
+## AI LANDSCAPE IN CYBER SECURITY
 
-In 2025, cyber operations functioned as an integrated part of warfare along with air power, artillery, and special operations. The impact of cyber operations was realized through sustained interaction with military, political, and informational processes, instead of isolated technical effects.
+*(Content for AI Landscape in Cyber Security goes here based on document structure.)*
 
-![Components of major cyber functions in a military conflict]
+---
 
-## Positioning and Conditioning Activity
+## GLOBAL ANALYSIS
 
-Positioning and Conditioning activities played an essential role in most of the 2025 conflicts, shaping the technical and informational environment without producing immediate, visible effects.
+*(Content for Global Analysis goes here based on document structure.)*
 
-## Operational Support Activity
+---
 
-In 2025, operational support became more prominent as cyber operations were increasingly part of ongoing physical events instead of being conducted in isolation. These typically time-sensitive actions enabled, amplified, or synchronized activity in other domains and were closely aligned with unfolding military or political developments.
+## HIGH PROFILE VULNERABILITIES
+
+*(Content for High Profile Vulnerabilities goes here based on document structure.)*
+
+---
+
+## 2026 PREDICTIONS
+
+*(Content for 2026 Predictions goes here based on document structure.)*
+
+---
+
+## RECOMMENDATIONS
+
+*(Content for Recommendations goes here based on document structure.)*
+
+---
+
+## AN EXPOSURE MANAGEMENT PERSPECTIVE
+
+*(Content for An Exposure Management Perspective goes here based on document structure.)*
 
 ---
 
@@ -2457,4 +2520,4 @@ CHECK POINT SOFTWARE | THE STATE OF CYBER SECURITY 2026 94
 
 © 2026 Check Point Software Technologies Ltd. All rights reserved.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-16", "model": "gemini-3.1-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-24", "model": "gemini-3.5-flash-lite"} -->

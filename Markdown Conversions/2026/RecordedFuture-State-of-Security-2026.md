@@ -1,476 +1,1034 @@
-n definitive proof of this link.
-
-The conflict also saw a surge in activity from Iranian-aligned hacktivist groups, such as
-Handala and Cyber Toufan. These groups targeted Israeli critical infrastructure, government
-agencies, and private companies, often leaking stolen data to amplify the impact of their
-intrusions. These operations were frequently accompanied by coordinated social media
-campaigns designed to spread disinformation and undermine public confidence in Israeli
-security.
-
-The synchronization of these activities suggests a shift toward a more integrated approach
-to cyber warfare, where state-sponsored operations, hacktivist activity, and influence
-campaigns are used in concert to achieve strategic objectives. This convergence increases the
-complexity of the threat landscape, as organizations must contend with both sophisticated
-state-sponsored intrusions and the disruptive, often unpredictable, actions of hacktivist groups.
-
-Influence Operations Amplify Hacker Claims in India–Pakistan Conflict
-
-The India–Pakistan conflict in 2025 also saw a significant increase in hacktivist and
-influence operations. Following the Pahalgam attack and the subsequent kinetic escalation,
-hacktivist groups from both sides engaged in a series of cyberattacks and disinformation
-campaigns.
-
-Indian hacktivist groups, such as the Indian Cyber Force, targeted Pakistani government
-websites and infrastructure, while Pakistani hacktivist groups, such as the Pakistan Cyber
-Attackers, targeted Indian entities. These attacks were often accompanied by claims of
-successful data exfiltration or system disruption, which were then amplified by influence
-networks on social media.
-
-The use of influence operations to amplify hacker claims is a key feature of modern
-conflict. By creating a feedback loop between cyberattacks and disinformation, these groups
-can magnify the perceived impact of their actions, shape public opinion, and exert pressure
-on their adversaries. This strategy is particularly effective in the context of long-standing
-geopolitical tensions, where both sides are eager to portray themselves as the victim and their
-adversary as the aggressor.
-
-Hacktivists Fuel Tensions Between Thailand and Cambodia
-
-The border crisis between Thailand and Cambodia also saw a significant increase in
-hacktivist activity. As the conflict escalated, hacktivist groups from both countries engaged
-in a series of cyberattacks and disinformation campaigns, targeting government websites,
-media outlets, and private companies.
-
-These attacks were often accompanied by nationalist rhetoric and calls for action,
-further fueling tensions between the two countries. The use of hacktivism in this context
-demonstrates how localized conflicts can be amplified by online activity, making it more
-difficult to de-escalate and resolve the underlying issues.
-
-The role of hacktivists in the Thai-Cambodian conflict highlights the importance of
-monitoring online activity in the context of regional disputes. By tracking the activities of
-hacktivist groups, organizations can gain insights into the evolving threat landscape and
-better prepare for potential disruptions.
-
-Russian Hacktivists Target NATO in Asymmetric Campaigns
-
-Russian hacktivist groups, such as Killnet and Anonymous Sudan, continued to target
-NATO member states in 2025, conducting a series of DDoS attacks and website defacements.
-These operations were often coordinated with Russian state-sponsored influence campaigns,
-aimed at undermining NATO cohesion and promoting pro-Russian narratives.
-
-The use of hacktivism by Russian-aligned groups is a key component of Russia’s hybrid
-warfare strategy. By leveraging the activities of hacktivist groups, Russia can project power,
-exert pressure on NATO member states, and shape public opinion, all while maintaining a
-degree of deniability.
-
-The persistence of these campaigns underscores the need for NATO member states to
-invest in cyber resilience and to develop effective strategies for countering hacktivist and
-influence operations.
-
-Looking Ahead
-
-Looking ahead to 2026, hacktivism and influence operations are likely to remain a key
-feature of the global threat landscape. As geopolitical tensions continue to rise, we can
-expect to see an increase in the synchronization of state-sponsored cyber, hacktivist, and
-influence operations.
-
-Organizations should be prepared for a more complex and unpredictable threat
-environment, where the lines between state-sponsored activity, hacktivism, and criminal
-behavior are increasingly blurred. Effective risk management will require a holistic approach
-that integrates threat intelligence, cyber defense, and influence operations monitoring.
-
-How Recorded Future Can Help
-Hacktivism and Influence Operations
-
-To counter hacktivism and influence operations, organizations need visibility into the
-evolving tactics, techniques, and procedures (TTPs) of threat actors and the ability to
-connect these activities to their own risk profile.
-
-•  Threat Intelligence tracks hacktivist groups and influence networks in real time,
-surfacing their targeting patterns, TTPs, and infrastructure. (Take a tour.)
-
-•  Brand Intelligence monitors for mentions of your organization in the context of
-hacktivist and influence campaigns, helping you to identify and respond to potential
-threats. (Take a tour.)
-
-•  Geopolitical Intelligence provides context on the geopolitical drivers of hacktivist
-and influence operations, helping you to anticipate and prepare for potential
-disruptions. (See video.)
-
- Section IV: Cybercrime in Transition
-
-Figure 17: Summary of 2025 cybercrime trends (Source: Recorded Future)
-
-In 2025, the cybercriminal landscape underwent a significant transformation, driven by
-sustained law enforcement pressure, increased competition, and the adoption of new
-technologies. The result is a more decentralized, modular, and resilient criminal ecosystem,
-where large-scale criminal enterprises have been replaced by a network of smaller, more
-specialized groups.
+CYBER
 
-English-Speaking Cybercriminals: Stealing the Spotlight through High-Profile
-Breaches
-
-English-speaking cybercriminals continued to dominate the headlines in 2025, with a
-series of high-profile breaches targeting major corporations and government agencies. These
-groups, often operating as part of a loose network of affiliates, have demonstrated a high
-level of sophistication and a willingness to target high-value assets.
-
-The focus on high-profile breaches is a strategic choice, designed to maximize the
-financial impact of their operations and to generate publicity for their activities. By targeting
-well-known organizations, these groups can exert pressure on their victims, increase the
-likelihood of ransom payments, and enhance their reputation within the criminal community.
+THREAT
 
-New Hacking Collectives, Same Hacking Tactics
-
-While the names of hacking collectives may change, the tactics they use remain largely
-the same. In 2025, we continued to see a reliance on phishing, social engineering, and the
-exploitation of known vulnerabilities to gain initial access to target networks.
-
-The persistence of these tactics is a testament to their effectiveness. Despite the
-widespread adoption of security best practices, organizations continue to be vulnerable to
-these relatively simple, yet highly effective, attack vectors.
-
-Telegram and Private Infrastructure
-
-Telegram has become a key platform for cybercriminals, providing a secure and
-anonymous environment for communication, coordination, and the sale of stolen data and
-malware. The use of Telegram has enabled criminal groups to operate more efficiently and
-to reach a wider audience, further complicating the efforts of law enforcement.
-
-In addition to Telegram, we have seen an increase in the use of private infrastructure,
-such as encrypted messaging apps and decentralized networks, to support criminal
-operations. This shift toward private infrastructure is a direct response to law enforcement
-pressure and is likely to continue in the coming years.
-
-Increased Competition Accelerates Innovation in Ransomware-as-a-Service
+ANALYSIS
 
-The ransomware-as-a-service (RaaS) model continued to evolve in 2025, driven by
-increased competition among criminal groups. This competition has led to a more
-sophisticated and efficient RaaS ecosystem, where affiliates can access a wide range of
-tools, services, and support.
+February 12, 2026
 
-The innovation in the RaaS model is not limited to the technical aspects of the
-ransomware itself. We have also seen an increase in the use of professional marketing,
-customer support, and negotiation services, all designed to maximize the profitability of
-ransomware operations.
+2026 State of Security
+How Global Fragmentation Is Redefining
+Conflict Across Cyber, Crime, and Influence
 
-Organized Crime in Southeast Asia Industrializes Fraud
+ Foreword
 
-In Southeast Asia, organized crime groups have industrialized fraud, creating a
-large-scale, highly efficient criminal ecosystem. These groups, often operating from
-specialized facilities, use a combination of social engineering, phishing, and malware to
-target individuals and businesses worldwide.
+Uncertainty is not a phase or a trope. It is the operating
 
-The industrialization of fraud in Southeast Asia is a significant development,
-demonstrating the potential for criminal groups to scale their operations and to generate
-significant revenue. This trend is likely to continue, as these groups continue to refine
-their tactics and to expand their reach.
+environment. And this year, fragmentation is driving it.
 
-Infostealers: The Hidden Threat Enabling Ransomware and Extortion
+As long-established norms unwind, fragmentation is paradoxically enabling
 
-Infostealers, a type of malware designed to steal sensitive information, have become a
-key enabler of ransomware and extortion operations. By stealing credentials, financial
-information, and other sensitive data, infostealers provide criminal groups with the
-information they need to launch targeted attacks and to exert pressure on their victims.
+greater interoperability across domains that were once distinct. As modern
+power struggles threaten institutions (such as international law), risk is moving
+across domains where there have historically been clearer boundaries (such as in
+cybercrime). State objectives, criminal capability, and private-sector technology
+increasingly reinforce one another in an interconnected environment. That
+convergence creates uncertainty, compresses warning time, and expands plausible
+deniability.
 
-The prevalence of infostealers is a significant concern, as they provide a low-cost,
-high-impact tool for criminal groups. The use of infostealers is likely to continue to grow,
-as they become an increasingly important part of the cybercriminal toolkit.
+We saw this trend gain momentum in 2025. Kinetic conflict in Ukraine continued
 
-Criminals Experiment with AI to Support Social Engineering, Malware
-Development
+to generate digital spillover, influence activity, and criminal-enabling behavior that
+moved well beyond the battlefield. Regional escalation involving Israel and Iran
+showed how cyber operations, influence campaigns, and commercial surveillance
+tools can operate alongside military force. In Venezuela, state action blurred legal,
+political, and cyber boundaries, challenging assumptions about sovereignty and
+accountability.
 
-In 2025, we saw an increase in the use of AI by cybercriminals to support their
-operations. From the use of AI-powered chatbots to automate social engineering to the
-use of AI to generate and test new malware variants, the adoption of AI is enabling
-criminal groups to operate more efficiently and to scale their operations.
+In the digital domain, risk is moving to the edges. Insikt Group’s reporting on
 
-The use of AI by cybercriminals is a significant development, and one that is likely to
-have a profound impact on the threat landscape in the coming years. Organizations
-should be prepared for a more sophisticated and automated threat environment, where
-AI-powered attacks become the norm.
+RedMike highlighted disciplined pre-positioning in telecommunications infrastructure:
+access built selectively and held quietly for intelligence value by threat actors ready
+to pivot quickly when timing and pressure align. Cybercrime groups and mercenary
+spyware also aligned with national strategic objectives, with mercenary spyware
+pursuing the same persistent-access goals by embedding itself where oversight was
+weakest and adapting under pressure.
 
-Law Enforcement Takes a Multifaceted Approach to Cybercrime
+2025 was not a breakout year for AI-driven cyber operations. To separate hype
+from signal, we developed AIM3, our framework for assessing AI malware maturity.
+It shows that most observed use remains at an early stage of development. The
+immediate risk is not autonomous attacks, but verification failure at scale, where
+deception becomes faster, cheaper, and more convincing as AI is embedded into
+decision workflows.
 
-In 2025, law enforcement agencies worldwide continued to take a multifaceted
-approach to cybercrime, combining traditional law enforcement techniques with
-innovative, technology-driven strategies. From the takedown of criminal infrastructure
-to the arrest of key figures in the cybercriminal underworld, these efforts have had a
-significant impact on the threat landscape.
+Looking ahead to 2026, diplomatic friction, selective enforcement of norms, and
+accelerating technology adoption will continue to widen the gap between how risk is
+assumed to behave and how it actually behaves.
 
-The success of these efforts is a testament to the importance of international
-cooperation and the need for a coordinated, global response to cybercrime. However,
-as the cybercriminal ecosystem continues to evolve, law enforcement agencies will need
-to continue to adapt their strategies and to invest in new capabilities.
+Intelligence does not eliminate uncertainty. It makes uncertainty manageable.
+This State of Security is our assessment of the year behind us and the threats ahead,
+written to help leaders reduce surprise, prioritize effectively, and act with confidence.
 
-Crossover Focus: State-Sponsored Ransomware
-
-In 2025, we saw an increase in the crossover between state-sponsored cyber
-operations and ransomware. Some state-sponsored groups have begun to use
-ransomware as a tool for espionage, disruption, and revenue generation, further
-blurring the lines between state-sponsored activity and cybercrime.
+Levi Gundert
 
-The use of ransomware by state-sponsored groups is a significant development,
-increasing the complexity of the threat landscape and the difficulty of attribution.
-Organizations should be prepared for a more sophisticated and unpredictable threat
-environment, where the distinction between state-sponsored activity and
-cybercrime is increasingly blurred.
+Chief Security & Intelligence Officer
 
-Looking Ahead
-
-Looking ahead to 2026, the cybercriminal landscape is likely to remain highly
-dynamic and competitive. We can expect to see continued innovation in the RaaS
-model, the further industrialization of fraud, and the increased use of AI by
-criminal groups.
-
-Organizations should be prepared for a more sophisticated and automated threat
-environment, where the distinction between state-sponsored activity and
-cybercrime is increasingly blurred. Effective risk management will require a
-holistic approach that integrates threat intelligence, cyber defense, and
-collaboration with law enforcement.
-
-How Recorded Future Can Help
-Cybercrime
-
-To counter cybercrime, organizations need visibility into the evolving tactics,
-techniques, and procedures (TTPs) of criminal groups and the ability to connect
-these activities to their own risk profile.
-
-•  Threat Intelligence tracks criminal groups and their operations in real time,
-surfacing their targeting patterns, TTPs, and infrastructure. (Take a tour.)
-
-•  Identity Intelligence monitors for compromised credentials and other sensitive
-information, helping you to identify and respond to potential threats. (Take a tour.)
-
-•  Attack Surface Intelligence identifies which network devices and VPN appliances
-are internet-facing, helping organizations remediate high-impact exposures before
-they are exploited. (Take a tour.)
-
- Section V: AI Developments in 2025
-
-Figure 18: Summary of AI developments in 2025 (Source: Recorded Future)
-
-In 2025, the development and adoption of AI continued to accelerate, with
-significant implications for the threat landscape. From the use of AI by threat
-actors to the development of new, AI-powered defensive capabilities, the impact
-of AI on cybersecurity is profound and far-reaching.
-
-Offensive Uses of AI
-
-Threat actors continued to experiment with the use of AI to support their
-operations. From the use of AI-powered chatbots to automate social engineering
-to the use of AI to generate and test new malware variants, the adoption of AI is
-enabling criminal groups to operate more efficiently and to scale their operations.
-
-The use of AI by threat actors is a significant development, and one that is
-likely to have a profound impact on the threat landscape in the coming years.
-Organizations should be prepared for a more sophisticated and automated threat
-environment, where AI-powered attacks become the norm.
-
-Threat Actors Are Hacking LLMs
-
-In 2025, we saw an increase in the use of AI by threat actors to hack large
-language models (LLMs). By exploiting vulnerabilities in the training data,
-model architecture, or deployment environment, threat actors can manipulate
-the output of LLMs, leading to the generation of malicious content, the
-exfiltration of sensitive information, or the disruption of services.
-
-The hacking of LLMs is a significant concern, as it provides a new, and
-potentially highly effective, attack vector for threat actors. Organizations
-should be prepared for a more sophisticated and automated threat environment,
-where AI-powered attacks become the norm.
-
-AI-Powered Malware Is Still Largely Experimental
-
-While the use of AI by threat actors is a significant concern, the development
-of AI-powered malware is still largely experimental. Most of the AI-powered
-malware observed in 2025 was at an early stage of development, with limited
-functionality and a high degree of complexity.
-
-However, as the technology continues to mature, we can expect to see more
-sophisticated and effective AI-powered malware. Organizations should be
-prepared for a more sophisticated and automated threat environment, where
-AI-powered attacks become the norm.
-
-Deepfakes and Synthetic Identity Fraud Rising
-
-In 2025, we saw an increase in the use of deepfakes and synthetic identity
-fraud. By using AI to generate realistic, yet fake, audio, video, and images,
-threat actors can create highly convincing, yet fraudulent, identities, leading
-to a significant increase in identity theft and fraud.
-
-The rise of deepfakes and synthetic identity fraud is a significant concern,
-as it provides a new, and potentially highly effective, attack vector for
-threat actors. Organizations should be prepared for a more sophisticated
-and automated threat environment, where AI-powered attacks become the
-norm.
-
-The US–China AI Gap
-
-In 2025, the competition between the US and China for AI dominance continued
-to intensify. Both countries are investing heavily in the development of
-advanced AI models, with significant implications for the global security
-landscape.
-
-The US–China AI gap is a significant concern, as it could lead to a more
-fragmented and less stable global security environment. Organizations
-should be prepared for a more sophisticated and automated threat
-environment, where AI-powered attacks become the norm.
-
-Looking Ahead
-
-Looking ahead to 2026, the development and adoption of AI is likely to
-continue to accelerate, with significant implications for the threat
-landscape. We can expect to see continued innovation in the use of AI by
-threat actors, the further development of AI-powered defensive
-capabilities, and the increased use of AI by organizations to support
-their cybersecurity operations.
-
-Organizations should be prepared for a more sophisticated and automated
-threat environment, where AI-powered attacks become the norm. Effective
-risk management will require a holistic approach that integrates threat
-intelligence, cyber defense, and collaboration with law enforcement.
-
-How Recorded Future Can Help
-AI Developments
-
-To counter the threats posed by AI, organizations need visibility into the
-evolving tactics, techniques, and procedures (TTPs) of threat actors and
-the ability to connect these activities to their own risk profile.
-
-•  Threat Intelligence tracks the use of AI by threat actors in real time,
-surfacing their targeting patterns, TTPs, and infrastructure. (Take a tour.)
-
-•  Identity Intelligence monitors for compromised credentials and other
-sensitive information, helping you to identify and respond to potential
-threats. (Take a tour.)
-
-•  Attack Surface Intelligence identifies which network devices and VPN
-appliances are internet-facing, helping organizations remediate high-impact
-exposures before they are exploited. (Take a tour.)
-
- Section VI: Lessons from 2025 and Outlook for 2026
-
-Figure 19: Summary of lessons from 2025 and outlook for 2026 (Source: Recorded Future)
-
-The year 2025 was a period of significant change and uncertainty, with
-geopolitical fragmentation, the rise of new technologies, and the
-evolution of the threat landscape all contributing to a more complex
-and challenging security environment.
-
-Lessons from 2025
-
-The key lessons from 2025 are:
-
-1.  Geopolitical fragmentation is a key driver of the threat landscape.
-2.  State-sponsored cyber operations are increasingly focused on
-    persistent access and strategic positioning.
-3.  Hacktivism and influence operations are increasingly used to
-    amplify the impact of cyberattacks.
-4.  The cybercriminal ecosystem is becoming more decentralized,
-    modular, and resilient.
-5.  The adoption of AI by threat actors is enabling more sophisticated
-    and automated attacks.
-
-Threat Outlook for 2026
-
-Looking ahead to 2026, the threat landscape is likely to remain highly
-dynamic and competitive. We can expect to see:
-
-1.  Geopolitical fragmentation increasing the likelihood of
-    simultaneous regional crises.
-2.  State-sponsored threat actors using connectivity disruptions as a
-    primary tool of coercion.
-3.  Ransomware becoming increasingly fragmented, commercialized,
-    and harder to disrupt.
-4.  The synthetic identity crisis deepening.
-5.  AI becoming the next great attack surface.
-6.  Quantum readiness moving from planning to spending.
-7.  Robots and space systems becoming contested cyber-physical
-    terrain.
-
-Geopolitical Fragmentation Increases the Likelihood of Simultaneous
-Regional Crises
-
-The fragmentation of the international order is likely to continue in 2026,
-increasing the likelihood of simultaneous regional crises. As states
-become more willing to use force to advance their objectives, the risk of
-miscalculation and escalation will continue to rise.
-
-State-Sponsored Threat Actors Use Connectivity Disruptions as a
-Primary Tool of Coercion
-
-In 2026, we can expect to see state-sponsored threat actors using
-connectivity disruptions as a primary tool of coercion. By targeting
-critical infrastructure, such as telecommunications and power grids,
-these actors can exert pressure on their adversaries, disrupt their
-operations, and shape the strategic environment.
-
-Ransomware Becomes Increasingly Fragmented, Commercialized, and
-Harder to Disrupt
-
-The ransomware ecosystem is likely to continue to evolve in 2026, becoming
-more fragmented, commercialized, and harder to disrupt. As criminal groups
-continue to refine their tactics and to expand their reach, the threat
-posed by ransomware will continue to grow.
-
-The Synthetic Identity Crisis Deepens
-
-The synthetic identity crisis is likely to deepen in 2026, as threat actors
-continue to use AI to generate realistic, yet fake, identities. This will
-lead to a significant increase in identity theft and fraud, further
-complicating the efforts of organizations to protect their systems and
-data.
-
-AI Becomes the Next Great Attack Surface
-
-In 2026, AI is likely to become the next great attack surface. As
-organizations continue to adopt AI-powered technologies, they will
-become increasingly vulnerable to attacks that exploit the
-vulnerabilities in these systems.
-
-Quantum Readiness Moves from Planning to Spending
-
-In 2026, quantum readiness is likely to move from planning to spending.
-As organizations begin to realize the potential impact of quantum
-computing on their security, they will begin to invest in the
-development of quantum-resistant technologies.
-
-Robots and Space Systems Become Contested Cyber-Physical Terrain
-
-In 2026, robots and space systems are likely to become contested
-cyber-physical terrain. As these technologies become increasingly
-integrated into our daily lives and critical infrastructure, they will
-become a key target for threat actors, leading to a new, and
-potentially highly effective, attack vector.
-
-Conclusion
-
-The year 2025 was a period of significant change and uncertainty, with
-geopolitical fragmentation, the rise of new technologies, and the
-evolution of the threat landscape all contributing to a more complex
-and challenging security environment.
-
-Looking ahead to 2026, the threat landscape is likely to remain highly
-dynamic and competitive. Organizations should be prepared for a more
-sophisticated and automated threat environment, where the distinction
-between state-sponsored activity and cybercrime is increasingly
-blurred.
-
-Effective risk management will require a holistic approach that
-integrates threat intelligence, cyber defense, and collaboration with
-law enforcement. By staying informed, proactive, and resilient,
-organizations can better protect themselves and their stakeholders
-in an increasingly volatile global environment.
-
-![Recorded Future logo]
+2
 
 Recorded Future® | www.recordedfuture.com
 
+ CTA-2026-0212CYBER THREAT ANALYSIS Executive Summary
+
+Fragmentation defined the global threat landscape in 2025, as selective enforcement of
+diplomatic norms and greater risk tolerance contributed to a volatile international environment.
+
+Geopolitical fracturing was most evident in the conduct of major powers. The United States
+
+(US) adopted a more transactional approach to power, prioritizing dominance in the West
+over multilateral cohesion and further eroding long-standing security frameworks. This shift
+strained transatlantic relations and limited coordinated responses to crises, including support
+for Ukraine. In the Middle East, decisive US and Israeli military operations disrupted Iran’s
+military capabilities and regional proxy network, while domestic unrest exposed the regime to
+an existential threat. Across other regions, renewed interstate violence illustrated how loss of
+confidence in diplomatic mechanisms can increase states’ willingness to use force to settle
+long-standing disputes.
+
+These geopolitical dynamics directly shaped state behavior in cyberspace. In 2025, Insikt
+Group tracked how cyber activity shifted from a primary focus on espionage toward increased
+use of cyber capabilities for signaling, coercion, and disruption in both kinetic conflicts and
+gray-zone scenarios. Securing access to identity systems, cloud environments, and edge
+infrastructure emerged as a central feature of interstate competition, reflecting the growing
+strategic value of persistent digital access and pre-positioning.
+
+Disruption was equally visible in the information environment. Insikt Group observed
+hacktivist groups, patriotic volunteers, and influence networks playing a growing role in
+conflicts involving Israel–Iran, India–Pakistan, Thailand–Cambodia, and Russia–Ukraine. These
+threat actors operated with varying degrees of state alignment, but consistently contributed
+to a threat landscape in which genuine intrusions, exaggerated claims, and disinformation
+reinforced one another.
+
+In the cybercriminal realm, sustained law enforcement pressure fractured large criminal
+enterprises without eliminating them, resulting in a more decentralized, modular, and resilient
+criminal environment. At the same time, large-scale scam operations in Southeast Asia
+demonstrated how geopolitical fragmentation and weak governance can create permissive
+environments for industrialized cybercrime.
+
+Technological change further shaped the risk landscape, as advances in artificial
+
+intelligence accelerated automation and lowered barriers to entry for both state and criminal
+threat actors, while expanding attack surfaces related to identity, data integrity, and human–
+machine interaction. At a strategic level, increasing competition to develop advanced models
+is setting the scene for future fragmentation as the US and China race for AI dominance in
+military technology and international market share.
+
+Looking ahead, the trends observed in 2025 point to a 2026 threat environment in which
+
+simultaneous regional crises are likely to become the norm, and cyber pre-positioning and
+decentralized criminal ecosystems will drive activity that deepens identity abuse and increases
+systemic risk from both emerging and legacy technologies. Effective risk management in the
+year ahead will depend on resilience, adaptability, and the ability to operate amid persistent
+uncertainty.
+
+www.recordedfuture.com | Recorded Future ®
+
+1
+
+ CTA-2026-0212CYBER THREAT ANALYSIS Key Findings
+
+•  The fragmentation of the international order contributed to the escalation of conflict.
+Weakening international institutions and alliances led states to take riskier actions — up
+to kinetic strikes — to advance their objectives against geopolitical rivals. Supporting
+activity played out in cyberspace as states expanded espionage targeting and
+established persistence in critical infrastructure networks.
+
+•  Russian APT targeting of the US and Canada increased compared to 2024. While
+
+activity continued targeting Ukraine, the Baltics, and non-NATO Eastern Europe, Russia
+expanded operations into the Western hemisphere. From a tradecraft perspective,
+Russian threat actors shifted to techniques optimized for stealth, deniability, and
+durability.
+
+•
+
+•
+
+Influence operators and hacktivists created feedback loops amplifying favorable
+conflict narratives. As military conflicts escalated, hacktivists claimed credit for
+disruptive attacks against adversary nations. These claims were amplified by influence
+operations, alongside other narratives promoting their side’s version of the conflict.
+
+Insikt Group identified 289 new ransomware variants this year, a 33% increase from
+the previous year. The majority of these new variants originated from leaked source code
+and builders for existing ransomware families. Despite the increase in variants, overall
+ransomware payments declined.
+
+•  Threat actors introduced three new malicious large language models tailored for cyber
+
+operations. While the newer models reflect operational maturity in presentation and
+usability, they improve efficiency and accessibility of existing techniques rather than
+introduce novel AI-driven tradecraft.
+
+2
+
+Recorded Future® | www.recordedfuture.com
+
+ CTA-2026-0212CYBER THREAT ANALYSISTable of Contents
+
+Section I: Geopolitical Fragmentation and the Emerging Global Disorder .............................................. 5
+
+Ongoing Conflicts: Protracted Wars and Escalation Management .................................................... 6
+
+Russia Holds Strategic Advantage in War with Ukraine, Despite Battlefield Struggles .................... 6
+
+Preventive  Strikes  and  the  Israel–Iran  Power  Shift  ........................................................................  6
+
+Emerging and Reignited Conflicts .................................................................................................... 7
+
+Geopolitical Tensions Boil Over in South Asia ................................................................................ 7
+
+Thai-Cambodian Border Crisis Drives Violence, Threatens Regional Stability ................................. 8
+
+Strategic Realignment Beyond Conflict Zones .................................................................................. 9
+
+America Reasserts Dominance in the Western Hemisphere .......................................................... 9
+
+Looking Ahead ................................................................................................................................ 11
+
+Section II: State-Sponsored Cyber Operations amid Geopolitical Fragmentation .................................. 12
+
+China .............................................................................................................................................. 13
+
+Russia ............................................................................................................................................. 15
+
+Iran ................................................................................................................................................. 16
+
+North Korea .................................................................................................................................... 18
+
+Commercial Spyware ...................................................................................................................... 19
+
+Looking Ahead ................................................................................................................................ 21
+
+How Recorded Future Can Help ....................................................................................................... 22
+
+Section III: Hacktivism and Influence Operations in Modern Conflict.................................................. 22
+
+Israel–Iran Cyber Warfare Expands Beyond the Twelve-Day War ..................................................... 23
+
+Influence Operations Amplify Hacker Claims in India–Pakistan Conflict .......................................... 24
+
+Hacktivists Fuel Tensions Between Thailand and Cambodia .......................................................... 25
+
+Russian Hacktivists Target NATO in Asymmetric Campaigns ........................................................ 26
+
+Looking Ahead ................................................................................................................................ 27
+
+How Recorded Future Can Help ....................................................................................................... 27
+
+Section IV: Cybercrime in Transition ................................................................................................... 28
+
+English-Speaking Cybercriminals: Stealing the Spotlight through High-Profile Breaches ............. 28
+
+New Hacking Collectives, Same Hacking Tactics ......................................................................... 29
+
+Telegram and Private Infrastructure ............................................................................................. 29
+
+Increased Competition Accelerates Innovation in Ransomware-as-a-Service ............................... 30
+
+Organized Crime in Southeast Asia Industrializes Fraud ............................................................... 32
+
+Infostealers: The Hidden Threat Enabling Ransomware and Extortion ........................................... 33
+
+Criminals Experiment with AI to Support Social Engineering, Malware Development ....................... 33
+
+Law Enforcement Takes a Multifaceted Approach to Cybercrime .................................................. 34
+
+Crossover Focus: State-Sponsored Ransomware ........................................................................... 36
+
+Looking Ahead ............................................................................................................................... 36
+
+How Recorded Future Can Help ...................................................................................................... 36
+
+www.recordedfuture.com | Recorded Future ®
+
+3
+
+ CTA-2026-0212CYBER THREAT ANALYSISSection V: AI Developments in 2025 .................................................................................................... 37
+
+Offensive Uses of AI ....................................................................................................................... 37
+
+Threat Actors Are Hacking LLMs ..................................................................................................... 38
+
+AI-Powered Malware Is Still Largely Experimental ....................................................................... 38
+
+Deepfakes and Synthetic Identity Fraud Rising  ............................................................................ 39
+
+The US–China AI Gap ..................................................................................................................... 39
+
+Looking Ahead ............................................................................................................................... 40
+
+How Recorded Future Can Help ...................................................................................................... 40
+
+Section VI: Lessons from 2025 and Outlook for 2026 ......................................................................... 41
+
+Lessons from 2025 ......................................................................................................................... 42
+
+Threat Outlook for 2026 ................................................................................................................ 45
+
+Geopolitical Fragmentation Increases the Likelihood of Simultaneous Regional Crises .............. 45
+
+State-Sponsored  Threat  Actors  Use  Connectivity  Disruptions  as  a  Primary  Tool  of  Coercion  ...  46
+
+Ransomware Becomes Increasingly Fragmented, Commercialized, and Harder to Disrupt ......... 47
+
+The Synthetic Identity Crisis Deepens ......................................................................................... 47
+
+AI  Becomes  the  Next  Great  Attack  Surface  .................................................................................  48
+
+Quantum Readiness Moves from Planning to Spending ............................................................... 49
+
+Robots and Space Systems Become Contested Cyber-Physical Terrain ....................................... 49
+
+Conclusion ........................................................................................................................................... 51
+
+4
+
+Recorded Future® | www.recordedfuture.com
+
+ CTA-2026-0212CYBER THREAT ANALYSIS  Section I: Geopolitical Fragmentation and the Emerging Global Disorder
+
+Figure 1: 2025 redefined international relations (Source: Recorded Future)
+
+The international geopolitical order fragmented in 2025, as hard-power competition,
+transactional diplomacy, and more frequent testing of geopolitical red lines became defining
+features of state behavior. Protracted conflicts such as Russia’s war in Ukraine and the Israel–
+Iran confrontation underscore how sustained hostilities are increasingly being used to manage
+escalation, enable hybrid activity, and shape long-term strategic positioning. Renewed crises
+also demonstrated an increased willingness to exploit perceived gaps in US regional crisis
+management.
+
+Across these flashpoints, cyber operations increasingly became an integral part of
+kinetic conflict. States deployed cyber capabilities to collect intelligence ahead of military
+action, pressure political leadership, intimidate civilian populations, and shape how events
+were interpreted by domestic and international audiences. Cyber reconnaissance and
+pre-positioning activity increasingly blurred the line between preparation and attack,
+increasing the risk of miscalculation during crises.
+
+As a result, 2025 marked a structural shift away from deterrence-based stability toward
+
+an international system in which preemptive action, hybrid coercion, and escalation below
+the threshold of war became normalized. This shift increases the likelihood that geopolitical
+crises will spill over into corporate networks, supply chains, regulatory environments, and
+digital infrastructure with limited warning. Organizations that anticipate this risk and invest
+in operational resilience against short-notice disruption, degraded connectivity, and third-
+party failure will be better positioned to sustain operations in an increasingly volatile global
+environment.
+
+www.recordedfuture.com | Recorded Future ®
+
+5
+
+ CTA-2026-0212CYBER THREAT ANALYSISOngoing Conflicts: Protracted Wars and Escalation Management
+
+Russia Holds Strategic Advantage in War with Ukraine, Despite Battlefield
+Struggles
+
+In 2025, Russia entered the fourth year of its full-scale war against Ukraine, with Moscow
+likely maintaining a strategic advantage despite minimal territorial gains. The Institute for the
+Study of War (ISW) assesses that Russian forces only seized about 4,669 square kilometers
+(just over 1,800 square miles) over the year. The Kremlin appears confident that holding
+occupied territory and sustaining active hostilities effectively blocks Ukraine’s path to NATO
+accession. Moscow’s maximalist negotiating terms repeatedly stalled peace talks, almost
+certainly reflecting a strategy of using prolonged pressure to weaken Ukraine while testing
+Western unity and alliance resolve over time.
+
+Russia continued to rely on long-range strike campaigns, with drone attacks central to
+sustaining pressure across Ukrainian cities and logistics hubs. These strikes often coincided
+with high-level diplomatic engagements, such as the London Summit on Ukraine in March,
+and direct talks between Ukrainian and Russian officials in July as part of the US-facilitated
+negotiations, very likely intended to signal that Moscow retains control of the battlefield.
+
+In parallel, Russian state-sponsored cyber threat actors maintained persistent pressure
+on Ukrainian and NATO-aligned critical infrastructure, particularly in the energy, logistics, and
+communications sectors, to collect intelligence, map networks, and position themselves for
+potential disruptive action. This approach allowed Russia to impose costs well beyond the
+physical front line, extending the conflict’s pressure into civilian life, allied infrastructure, and
+European security planning.
+
+Russia is likely to remain focused on consolidating control over Ukraine, especially
+
+the remaining parts of the Donbas. However, Russia’s limited territorial gains suggest its
+forces likely lack the capability to seize and hold significantly more ground in the near term.
+As a result, Moscow will likely intensify coercive measures short of decisive battlefield
+breakthroughs, including disruptive cyber operations against Ukrainian critical infrastructure,
+drone strikes on its civilian centers, and efforts to stoke unrest, to pressure Kyiv and extend
+influence deeper into western Ukraine. Russia is also highly likely to step up its hybrid warfare
+activities across Europe, reinforcing its ability to impose costs well beyond the physical front
+line while managing escalation risk.
+
+Preventive Strikes and the Israel–Iran Power Shift
+
+While Russia’s war in Ukraine illustrates how prolonged conflict is used to impose sustained
+
+pressure without decisive escalation, events in the Middle East in 2025 revealed a contrasting
+trend: the increasing normalization of preventive military action to manage long-term strategic
+risk.
+
+Hostilities between Israel and Iran ramped up significantly in June, culminating in a
+
+twelve-day conflict that altered regional security dynamics and upended strategic deterrence
+calculations for the rest of the year. The escalation followed the International Atomic Energy
+Agency’s determination on June 12 that Iran was non-compliant with its nuclear obligations,
+after which Tehran announced new enrichment activities. Israel’s Operation Rising Lion,
+launched on the following day, reflected long-standing efforts to constrain Iran’s future military
+and nuclear capabilities through the use of force under deteriorating diplomatic conditions.
+The campaign, supported by US airstrikes on facilities at Fordow, Natanz, and Isfahan, killed
+Islamic Revolutionary Guard Corps (IRGC) commander Hossein Salami and several other senior
+
+6
+
+Recorded Future® | www.recordedfuture.com
+
+ CTA-2026-0212CYBER THREAT ANALYSISofficers and nuclear scientists. It also damaged key elements of Iran’s nuclear infrastructure,
+air defenses, and missile forces, likely delaying program timelines while complicating Tehran’s
+ability to coordinate military or proxy operations in the short term.
+
+The incident marked the first direct US attack on Iranian territory and the first US strike
+against another state’s nuclear program. While Iran’s long-term nuclear ambitions likely remain
+unchanged, the attacks reinforced a shift toward decisive force to forestall future threats.
+Additionally, the lack of a kinetic response from Iran’s regional proxies, with the exception of
+the Houthis, underscored the deeply weakened position of Iran’s proxy networks and a key
+pillar of its asymmetric warfare doctrine. Tehran’s decision to fire at the US’s Al-Udeid Air Base
+in Qatar, the largest American base in the region, reflected the widening regional implications
+for the deeply entrenched Iran–Israel hostilities.
+
+Figure 2: Recorded Future Intelligence Operations Platform timeline showing key events leading up to Operation Rising
+Lion, including notable cyberattacks that Insikt Group tracked and reported on (Source: Recorded Future)
+
+Iran is now seeking to address exposed vulnerabilities by acquiring new air defense
+systems and reorganizing elements of its security apparatus, though recovery will likely be
+slowed by renewed snapback sanctions and international isolation.
+
+Domestic instability is further constraining Iran’s recovery. On December 28, 2025, mass
+
+protests erupted amid a deepening economic crisis and growing dissatisfaction with the
+regime, marking its most serious internal challenge since 2022–2023. Anger is increasingly
+directed at Supreme Leader Ali Khamenei, whose regional influence and alliance network
+have eroded. Even if the regime reasserts control, setbacks to Iran’s nuclear program and the
+fragmentation of its proxy network — aligned non-state actors Tehran uses to project power —
+have shifted the regional balance of power away from Iran, increasing uncertainty as emerging
+powers compete for influence and the US selectively projects force.
+
+Emerging and Reignited Conflicts
+
+Geopolitical Tensions Boil Over in South Asia
+
+Tensions between India and Pakistan reignited in May 2025 following the killing of 26
+
+tourists near Pahalgam in Indian-controlled Kashmir, amid a broader rise in violence by
+Pakistan-backed insurgents. The attack triggered a sharper escalation than the 2019 Pulwama
+incident and reflected a growing willingness on both sides to act preventively based on
+perceived intent rather than imminent threat, increasing escalation risk between two nuclear-
+armed states.
+
+www.recordedfuture.com | Recorded Future ®
+
+7
+
+ CTA-2026-0212CYBER THREAT ANALYSISOn May 7, India launched Operation Sindoor, striking what it described as terrorist
+infrastructure across Pakistan, including sites in Punjab Province. Pakistan responded with
+drone and missile strikes the next day, escalating rapidly over 48 hours to include Pakistani
+ballistic missile launches against Indian military sites and Indian strikes on multiple Pakistani air
+bases, including one near Islamabad.
+
+Pakistan’s decision on May 10 to convene its National Command Authority, a clear nuclear
+
+signal, helped prompt intensified diplomacy and a subsequent US-brokered ceasefire.
+Inconsistent public messaging from Washington during the early stages of the crisis likely
+contributed to miscalculation and later strained US–India relations.
+
+Cyber operations expanded alongside kinetic escalation. Following the Pahalgam
+attack, Pakistan-linked APT36 (Transparent Tribe) conducted sustained espionage against
+Indian government and defense personnel, likely as preparatory activity to collect sensitive
+information and establish access during heightened tensions. Concurrently, the India-linked
+SideWinder group conducted targeted espionage across South Asia, focusing on government,
+defense, and financial institutions in Pakistan, Sri Lanka, and Bangladesh, with activity
+observed throughout the first half of 2025 and notable spikes in January, February, and April.
+Based on the timing and scope of both campaigns, Insikt Group assesses that cyber operations
+were likely embedded as preparatory and enabling mechanisms alongside the emerging
+conflict.
+
+Thai-Cambodian Border Crisis Drives Violence, Threatens Regional Stability
+
+Tensions between Thailand and Cambodia rose sharply in mid-2025 as long-standing
+border disputes flared into open conflict, reflecting a broader shift toward coercive, preventive
+action over dispute resolution. A fatal clash near Chong Bok on May 28 derailed bilateral talks
+and contributed to the political collapse of Thai Prime Minister Paetongtarn Shinawatra. On
+July 24, both militaries exchanged fire at multiple points along the border, triggering the most
+intense fighting in nearly fifteen years. The brief conflict left at least 48 dead and displaced
+hundreds of thousands before a ceasefire took hold on July 28. Subsequent incidents in
+November, including a reported mine explosion that injured a Thai soldier, exposed the fragility
+of the truce and reinforced incentives on both sides to maintain forward-deployed forces as a
+deterrent.
+
+Hostilities resumed in early December with expanded scope and intensity, driving further
+
+civilian casualties and displacement. A second ceasefire on December 27 halted military
+operations and froze troop movements. However, confidence-building measures, including
+Thailand’s release of eighteen Cambodian soldiers captured during the July fighting, failed to
+address the underlying territorial dispute, leaving the crisis unresolved as the year ended.
+
+8
+
+Recorded Future® | www.recordedfuture.com
+
+ CTA-2026-0212CYBER THREAT ANALYSISFigures 3 and 4: Border clash flashpoints between Thailand and Cambodia in December 2025 (left) (Source: Reuters)
+Comparisons between Thai and Cambodian armed forces (right) (Source: BBC)
+
+Both Thailand and Cambodia signaled intent to abandon the Joint Boundary Commission,
+
+the main dispute resolution mechanism since 2000, raising the likelihood that future crises will
+be managed through force, economic pressure, and signaling rather than negotiation.
+
+The economic fallout, particularly for Cambodia, was severe. Thailand’s closure of border
+
+checkpoints caused Cambodia’s cross-border trade to collapse by 99%, falling from 92.1 billion
+baht ($2.83 billion USD) in the first seven months of 2025 to just 10 million baht ($319,000
+USD) in August. Cambodia, which relies heavily on Thai tourism and remittances from its
+workers in Thailand, faced deepening financial strain as an estimated 800,000 Cambodian
+laborers returned home. The crisis demonstrated how localized conflicts in a fragmenting
+regional order can rapidly generate humanitarian, trade, and cyber risk, particularly to border
+management systems, financial institutions, and critical infrastructure.
+
+Strategic Realignment Beyond Conflict Zones
+
+America Reasserts Dominance in the Western Hemisphere
+
+Throughout 2025, the US adopted a more primacy-focused approach toward the Western
+Hemisphere, prioritizing territorial control, resource security, and unilateral enforcement over
+alliance coordination and consensus. President Trump repeatedly framed the annexation of
+Greenland, a Danish territory, as a strategic priority, explicitly declining to rule out the use of
+force. This rhetoric was reinforced by a March visit by Vice President JD Vance to a US military
+base in Greenland, a trip cut short amid protests from Greenlandic and Danish officials. Similar
+assertions directed at Canadian territory, combined with coercive US trade policy, drove
+relations with Ottawa to historic lows. While these disputes remained mostly rhetorical, the
+assertion of territorial claims over NATO allies marked an unprecedented departure from post-
+WWII alliance norms and signaled a willingness to pressure partners to advance US strategic
+objectives.
+
+US policy toward Latin America has been even more dynamic. In August, the president
+signed a classified order designating major drug cartels as foreign terrorist organizations,
+expanding the legal basis for direct military action beyond traditional law-enforcement
+frameworks. Since then, US forces have conducted more than two dozen kinetic strikes against
+
+www.recordedfuture.com | Recorded Future ®
+
+9
+
+ CTA-2026-0212CYBER THREAT ANALYSISsuspected drug-trafficking vessels in the Caribbean and Eastern Pacific, resulting in over
+100 fatalities. Legal ambiguity surrounding these operations prompted several US partners,
+including the United Kingdom (UK), to restrict intelligence sharing to avoid potential complicity,
+straining long-established security relationships.
+
+The US also escalated pressure on Venezuela through aggressive sanctions enforcement,
+
+including the seizure of multiple oil tankers accused of sanctions evasion, and President Trump
+made multiple comments threatening military action in Venezuela due to the Maduro regime’s
+alleged role in supporting drug traffickers, culminating in the operation in January 2026 to
+capture and extract Venezuelan President Nicolás Maduro to face drug trafficking charges
+in court. Together, these actions demonstrated a readiness to deploy unprecedented US
+military operations in pursuit of hemispheric dominance, even at the expense of diplomatic and
+intelligence cooperation.
+
+Figure 5: Timeline showing Insikt Group reporting on key events in 2025, leading up to the capture of Venezuelan
+President Nicolás Maduro (Source: Recorded Future)
+
+Collectively, US actions in 2025 placed the greatest strain to date on the post-WWII
+alliance system among Western democracies. This shift was codified in the US National
+Security Strategy, which explicitly reframed US security priorities around hemispheric control
+while omitting prior emphasis on democracy promotion. The combination of coercive trade
+policy, unilateral military action, and reduced reliance on multilateral mechanisms increased
+geopolitical volatility across the hemisphere and elevated second-order risks, including
+diminished intelligence-sharing, legal uncertainty for partners, and increased exposure to
+cyber operations targeting energy infrastructure, maritime trade, sanctions enforcement
+systems, and migration networks.
+
+10
+
+Recorded Future® | www.recordedfuture.com
+
+ CTA-2026-0212CYBER THREAT ANALYSISLooking Ahead
+
+Figure 6: Summary of emerging global disorder focused on spheres of influence (Source: Recorded Future)
+
+Looking ahead, the geopolitical dynamics observed in 2025 point toward a more
+
+fragmented and risk-tolerant international system defined by competing spheres of influence,
+declining restraint, and fewer effective guardrails.
+
+The US 2025 National Security Strategy formalized a shift toward hemispheric priorities
+
+and narrower strategic objectives, reducing the predictability of security guarantees and
+weakening the stabilizing role of alliances and multilateral institutions.
+
+Other powers have adjusted accordingly. China increasingly relies on coercion short of
+
+war, combining cyber espionage, economic leverage, legal claims, and gray-zone military
+activity to advance interests while managing escalation risk, simultaneously framing this
+approach as that of a stabilizing, responsible power in an increasingly fragmented world.
+Russia continues to pursue protracted conflict and hybrid warfare to impose sustained costs
+beyond the battlefield. Regionally, states such as Israel, India, and Pakistan have demonstrated
+a greater willingness to act preventively, reflecting declining confidence in diplomacy and crisis
+mediation.
+
+This diffusion of power has increased systemic complexity. Risk is now driven less by
+coordinated expansion from a small number of threat actors and more by simultaneous, often
+uncoordinated actions across multiple regions. Parallel militarization trends in Europe, Canada,
+Japan, and South Korea further crowd the security environment, increasing the likelihood of
+miscalculation, spillover, and unintended escalation.
+
+Across these dynamics, cyber operations and economic instruments, sanctions, tariffs,
+trade disruption, and asset seizures have become routine tools of geopolitical competition.
+This dynamic is already visible in regions such as Central Asia, where Russian and Chinese
+interests are beginning to collide. At the same time, the US, China, and Russia are accelerating
+their presence in the Arctic and Antarctica, regions rich in critical minerals and strategically
+important shipping channels essential to emerging technologies and global trade. The
+cumulative effect is an international system with higher tolerance for risk and fewer constraints
+on escalation. For governments and businesses alike, resilience rather than stability is now the
+baseline operating assumption.
+
+www.recordedfuture.com | Recorded Future ®
+
+11
+
+ CTA-2026-0212CYBER THREAT ANALYSIS Secti o n II: State-Sponsored Cyber Operations amid Geopolitical
+Fragmentation
+
+Figure 7: Summary of 2025 state-sponsored cyber activity (Source: Recorded Future)
+
+While kinetic conflicts dominated headlines in 2025, some of the year’s most consequential
+
+state-sponsored activity unfolded in digital environments. Rather than relying on destructive
+attacks, the four most capable and consistently active hostile state cyber threat actors tracked
+by Insikt Group — China, Russia, Iran, and North Korea — focused on the covert accumulation
+of access to identities, networks, and edge infrastructure. This allowed them to blend into
+normal operations while preserving options for sustained intelligence collection and rapid
+disruption should geopolitical tensions escalate.
+
+State-sponsored cyber risk was not confined to these major powers, however. The
+continued proliferation of commercial spyware further lowered barriers to entry, enabling
+states with less mature cyber programs to conduct sophisticated surveillance and intelligence
+operations targeting end-user devices rather than enterprise networks.
+
+This activity occurred amid the accelerating geopolitical fragmentation described in the
+previous section. As international norms weakened, alliances strained, and red lines became
+less clear, incentives for restraint in cyberspace continued to erode. For organizations, the
+primary risk is no longer a single, large-scale cyber incident, but sustained pre-positioning that
+enables persistent espionage in peacetime and creates latent capacity for disruption during
+periods of crisis. The sections that follow examine how individual state-sponsored threat
+actors operationalized this approach over the past year.
+
+12
+
+Recorded Future® | www.recordedfuture.com
+
+ CTA-2026-0212CYBER THREAT ANALYSISChina
+
+Figure 8: Data from Recorded Future’s Network Intelligence showing countries targeted by China in 2025
+(Source: Recorded Future)
+
+In 2025, Chinese state-sponsored cyber activity continued to prioritize long-term access
+
+and strategic positioning over immediate disruption. Chinese threat actors consistently
+targeted infrastructure that provides durable vantage points, particularly telecommunications
+networks and public-facing perimeter systems.
+
+Recorded Future data indicates that network devices and VPN appliances, including those
+from Fortinet, Ivanti, Cisco, Citrix, and Palo Alto, have become primary targets for exploitation,
+reflecting a broader shift toward edge infrastructure as organizations harden their endpoints
+and migrate workloads to the cloud.
+
+In early 2025, Insikt Group identified a campaign exploiting unpatched Cisco IOS XE
+
+devices linked to telecommunications providers worldwide. Tracked as RedMike (also publicly
+reported as Salt Typhoon), the campaign targeted more than 1,000 devices across more than
+100 countries. However, this represented only about 8% of exposed Cisco devices, indicating
+deliberate targeting of high-value assets rather than indiscriminate scanning.
+
+www.recordedfuture.com | Recorded Future ®
+
+13
+
+ CTA-2026-0212CYBER THREAT ANALYSISFigure 9: Geographical spread of Cisco devices targeted by RedMike, as identified by Insikt Group in December 2024 and
+January 2025 (Source: Recorded Future)
+
+Poorly monitored and slow-to-update perimeter systems continue to provide reliable
+entry points for attackers. Chinese operators consistently focus on identifying and exploiting
+vulnerabilities in network gateways and access infrastructure, with new edge-device flaws
+often exposed after their likely use in China-linked campaigns. Gaining control of network
+gateways and access infrastructure allows Chinese operators to maintain hidden access, limit
+an organization’s visibility into its own networks, and retain the ability to collect intelligence or
+disrupt operations if geopolitical tensions escalate. This strategy reflects a deliberate effort by
+Beijing to quietly position itself inside critical infrastructure while reducing the risk of detection
+and avoiding overt activity that could trigger political or military escalation.
+
+In 2025, targeting patterns increasingly mirrored national policy priorities. Manufacturing
+and semiconductor companies were targeted more frequently, aligning with China’s drive for
+technological self-sufficiency and its efforts to counter US-led export controls. Government
+agencies and departments — especially those with links to economic development and foreign
+policy — as well as think tanks and independent research organizations, remained familiar
+targets, and law firms and financial institutions were also in focus, indicating an interest in
+regulatory, legal, and policy insight that can be leveraged to shape economic strategy and
+strengthen China’s position in international negotiations.
+
+Taken together, Chinese cyber activity in 2025 reflected a strategy focused on the quiet
+
+accumulation of strategic advantage across critical sectors and infrastructure, a posture
+designed for long-term competition rather than short-term impact.
+
+14
+
+Recorded Future® | www.recordedfuture.com
+
+ CTA-2026-0212CYBER THREAT ANALYSISRussia
+
+Figure 10: Data from Recorded Future’s Network Intelligence showing countries targeted by Russia in 2025
+(Source: Recorded Future)
+
+In 2025, Russian state-sponsored cyber activity followed an access-first approach similar
+
+to that of other major powers, but with a stronger emphasis on maintaining readiness for
+disruption. Email and collaboration platforms, including Roundcube, Zimbra, and Microsoft
+Exchange, remained dominant targets due to their access to sensitive communications and
+credentials. At the same time, exploitation of network perimeter devices (such as Fortinet,
+Citrix, and Cisco) and enterprise middleware (including JetBrains TeamCity, ConnectWise, and
+Openfire) expanded, signaling a broader strategy aimed at initial access, lateral movement, and
+long-term persistence.
+
+GRU-linked clusters, including BlueDelta and Sandworm, intensified operations against
+critical national infrastructure (CNI) in Ukraine and NATO member states, reflecting a strategy
+that prioritizes future operational flexibility over immediate impact.
+
+•  BlueDelta sustained large-scale credential harvesting against governments, defense
+institutions, energy researchers, and IT providers, enabling continuous intelligence
+collection.
+
+•  Sandworm maintained its focus on operational technology (OT), targeting energy, water,
+and heating providers in Ukraine and allied states, while expanding into supply-chain and
+logistics-linked sectors.
+
+By stealing credentials and maintaining persistent access to cloud, email, enterprise, and
+
+critical infrastructure networks, Russian threat actors have positioned themselves to shift
+quickly from intelligence-gathering to operational disruption with little additional effort. This
+approach is also comparatively low-cost and agile, relying on disposable credential-harvesting
+infrastructure rather than bespoke malware that is expensive to develop, short-lived, and more
+
+www.recordedfuture.com | Recorded Future ®
+
+15
+
  CTA-2026-0212CYBER THREAT ANALYSIS
+easily attributed once deployed. As a result, warning timelines are significantly shortened,
+attribution and response are complicated, and cyber operations become a more effective
+coercive tool, particularly amid the war in Ukraine and elevated tensions with NATO.
 
----
+Beyond these core clusters, Insikt Group recorded eleven distinct groups, such as
 
-n definitive
+BlueAlpha and BlueEcho, that actively target North America, Ukraine, Central Asia, the Baltics,
+Europe, Japan, and Australia. Victimology spanned governments, CNI, NGOs, local authorities,
+and higher education and IT sectors, reflecting a broader effort to undermine NATO and
+European Union (EU) cohesion. Compared to 2024, Russian activity increased against North
+America, with heightened focus on the US and Canada, alongside sustained targeting of
+Ukraine, the Baltics, and non-NATO Eastern Europe.
+
+From a tradecraft perspective, Russian threat actors optimized for stealth, deniability,
+and durability while retaining familiar access and execution techniques. Recorded Future data
+showed an approximately 70% year-over-year increase in the use of application layer protocol
+and web protocols, indicating a growing reliance on encrypted, web-native command-and-
+control channels. Core techniques such as phishing and social engineering remained stable,
+while abuse of command and scripting interpreters increased by roughly 27%, reflecting
+continued reliance on scripting for post-compromise automation and persistence.
+
+Taken together, Russian cyber activity in 2025 reflects a shift from isolated, high-profile
+
+attacks to persistent, low-visibility access. In a more fragmented and crisis-prone security
+environment, this approach likely reduces warning time for potential disruptive operations
+against critical national infrastructure and could complicate containment by enabling rapid
+activation from pre-positioned access and increasing the risk of cascading effects across
+interconnected systems.
+
+Iran
+
+Figure 11: Data from Recorded Future’s Network Intelligence showing countries targeted by Iran in 2025
+(Source: Recorded Future)
+
+16
+
+Recorded Future® | www.recordedfuture.com
+
+ CTA-2026-0212CYBER THREAT ANALYSISIn 2025, Iranian state-linked operations also focused on stealth, identity-driven access,
+
+and low-visibility tradecraft, but remained firmly shaped by Tehran’s regional priorities.
+Israel was the central focus, although Iranian threat actors also targeted governments,
+telecommunications providers, and policy organizations across Europe, North America, and
+parts of Africa and Asia.
+
+Iran relied on a combination of state-sponsored cyber groups, proxy groups, and semi-
+
+autonomous hacktivist fronts to conduct espionage, hack-and-leak operations, intimidation,
+and influence campaigns. Iran-aligned fronts such as Handala and Cyber Toufan publicly
+claimed data thefts and system compromises against Israeli entities, pairing selective
+disclosures with coordinated media campaigns to maximize psychological and reputational
+impact while maintaining a plausible distance from the Iranian state (see Section III for more
+detail).
+
+Activity targeting Israel combined disruption and influence operations with recurring claims
+
+of CNI compromise. IRGC-affiliated Cyber Av3ngers repeatedly asserted access to Israeli
+industrial control systems (ICS) and programmable logic controllers (PLCs), often citing Israeli-
+made or Modbus-exposed assets. These claims coincided with seasonal #OpIsrael campaigns,
+sustained distributed denial-of-service (DDoS) activity, and website defacements, reinforcing a
+continuous pressure environment below the threshold of open conflict.
+
+This ecosystem was reinforced by lesser-known hacktivist brands such as UNIT 1948,
+which circulated claims of attacks against industrial and fuel-monitoring systems via social
+media. These narratives often relied on imagery generated during scanning or probing activity
+using publicly available tools, creating the appearance of operational impact without confirmed
+compromise. Although several referenced technologies had known vulnerabilities, independent
+corroboration of exploitation remained limited as of late 2025. Observers should therefore
+distinguish between high-volume, low-impact public claims and verifiable, material intrusions
+when assessing Iranian cyber operations.
+
+Iranian cyber operations shifted away from broad reconnaissance and the reuse of stolen
+
+credentials toward more targeted, web-based intrusions. These operations relied on link-based
+lures, web-native payloads, and lightweight scripting to establish access and control, enabling
+faster execution with less infrastructure and lower visibility. The result is a more efficient
+operating model that sustains tempo while reducing cost, exposure, and the risk of attribution.
+
+www.recordedfuture.com | Recorded Future ®
+
+17
+
+ CTA-2026-0212CYBER THREAT ANALYSISNorth Korea
+
+Figure 12: Data from Recorded Future’s Network Intelligence showing countries targeted by North Korea in 2025
+(Source: Recorded Future)
+
+In 2025, North Korea’s cyber activity remained focused on revenue generation while
+
+increasingly integrating espionage objectives. Recorded Future identified six active North
+Korean threat groups conducting global operations, primarily targeting South Korea, Japan,
+Pakistan, India, the US, and Europe.
+
+Cryptocurrency theft remained the most consistent activity, with eighteen recorded
+incidents, almost certainly intended to offset the economic constraints imposed by prolonged
+international sanctions. At the same time, intrusions against government, defense, and IT
+providers expanded compared to 2024, indicating that financially motivated operations
+increasingly operated alongside traditional espionage.
+
+This convergence was reflected in the targeting of manufacturing, energy, and
+
+telecommunications organizations in Japan, Taiwan, and the US, signaling growing interest in
+industrial and strategic intelligence beyond immediate monetary gain.
+
+Espionage activity remained closely aligned with geopolitical priorities, including the
+sustained targeting of diplomatic missions, government agencies, and policy stakeholders in
+South Korea, as well as expanded operations in Central Asia, particularly in Uzbekistan.
+
+A defining feature of North Korea’s activity was its continued reliance on fraudulent
+
+remote IT worker schemes. Operatives obtained employment at foreign companies under false
+identities, turning hiring and contractor processes into an access vector. Once embedded,
+threat actors used stolen credentials, often harvested from password stores, to maintain
+persistence, exfiltrate data, generate revenue, and conduct espionage. Campaigns such as
+“Contagious Interview,” attributed to the PurpleBravo cluster, exemplified this model, using
+
+18
+
+Recorded Future® | www.recordedfuture.com
+
+ CTA-2026-0212CYBER THREAT ANALYSISsocial engineering, fake job offers, and trojanized development tools to deploy malware across
+Windows, macOS, and Linux environments. This approach reduced reliance on conventional
+intrusion pathways while complicating detection and attribution.
+
+Overall, North Korea’s cyber program remains uniquely resilient because it treats access
+
+as both an intelligence asset and a revenue stream. This dual-use model enables the DPRK to
+sustain operations despite sanctions, law enforcement pressure, and infrastructure disruptions.
+
+Commercial Spyware
+
+Consistent with the access-first model discussed above, governments are increasingly
+augmenting their cyber capabilities with commercial spyware, with as many as 80 governments
+worldwide having reportedly purchased such tools. While these products are marketed for
+legitimate law enforcement and national security purposes, their use outside those frameworks
+is broadly viewed as illegitimate and has persisted despite sanctions, export controls, and
+public scrutiny. In response to law enforcement pressure, established vendors adapted their
+business models, while new providers entered the market, contributing to a more fragmented
+and less regulated commercial spyware ecosystem, suggesting that the potential for abuse of
+sophisticated commercial spyware tools is likely to persist.
+
+Figure 13: Summary of spyware lifecycle (Source: Recorded Future)
+
+Following high-profile disclosures and US sanctions against the Intellexa consortium,
+activity linked to its Predator spyware initially declined, suggesting short-term disruption.
+However, Predator did not disappear. By mid-2025, Insikt Group observed renewed activity,
+including a newly identified government client in Mozambique, marking the first Predator-linked
+deployment associated with that country. Similarly, Israel-based Candiru, the developer of the
+DevilsTongue malware, maintained an active operational footprint despite being added to the
+US Commerce Department’s Entity List. Insikt Group identified a significant number of Candiru-
+linked infrastructure clusters, many of which are likely still active across multiple regions.
+
+Spyware vendors relied on techniques observed in 2024, designing their technical
+
+architectures to evade detection and takedown. Predator deployments, for example, continued
+to route command-and-control traffic through content delivery networks such as Cloudflare,
+masking origin infrastructure and complicating attribution and network-based blocking.
+DevilsTongue similarly employed layered infrastructure, including intermediary servers and
+region-specific routing paths, to obscure operator locations and reduce forensic traceability.
+
+www.recordedfuture.com | Recorded Future ®
+
+19
+
+ CTA-2026-0212CYBER THREAT ANALYSISNew vendors entered the market, filling gaps left by sanctioned providers. Israeli firm
+Paragon Solutions emerged as a notable competitor, with researchers confirming the first
+forensic cases of its Graphite spyware being used in the wild in April 2025. Paragon’s
+emergence reinforced the notion that sanctions and exposure reshaped the market, but did not
+reduce demand; instead, they accelerated fragmentation and vendor churn.
+
+Despite vendor claims of lawful use, abuse remained widespread. Graphite’s use was
+confirmed in attacks against European journalists, including cases tied to zero-click iMessage
+exploit attempts. Amnesty International documented continued misuse of Pegasus spyware
+against journalists and activists in Serbia, marking the third known instance of such abuse.
+Predator activity was likewise linked to political surveillance across Europe, Africa, and the
+Middle East, while Candiru-linked infrastructure appeared to support campaigns targeting
+dissidents in Saudi Arabia and Azerbaijan.
+
+International efforts to restrain abuse intensified but produced uneven results. The Pall
+Mall Code of Practice (CoP), launched by the UK and France in 2024, emerged as the primary
+multilateral effort to establish norms regarding the use of spyware. By September 2025, 26
+countries had signed on, committing to transparency, oversight, and human rights safeguards.
+The framework remains non-binding and excludes many of the states most implicated in
+spyware abuse, limiting its immediate effect and sustaining a parallel market beyond regulatory
+reach. Notably, in late 2025, the US Department of the Treasury (USDT) removed sanctions
+on three executives previously targeted for their roles in Intellexa-related spyware activities, a
+reversal that may influence future enforcement.
+
+Figure 14: The commercial offensive cyber capability industry will likely split to serve either Pall Mall signatories (in dark
+blue) or markets at high risk of abusing commercial surveillance tools (in red) (Source: Recorded Future)
+
+Technical and platform-level defenses showed some promise, particularly for high-risk
+users. Features such as Apple’s Lockdown Mode demonstrated that hardened configurations
+can disrupt certain spyware vectors, including zero-click exploits. However, these protections
+require opt-in adoption and impose usability trade-offs, limiting their impact at scale.
+
+20
+
+Recorded Future® | www.recordedfuture.com
+
+ CTA-2026-0212CYBER THREAT ANALYSISOverall, the 2025 commercial spyware landscape highlighted both the impact and limits of
+global countermeasures. Sanctions and scrutiny forced vendors to adapt rather than exit, while
+new entrants sustained demand for offensive surveillance capabilities.
+
+Looking Ahead
+
+ Looking ahead to 2026, state-sponsored cyber activity is likely to further consolidate
+around access-first, low-visibility operations designed to shape the strategic environment well
+in advance of overt conflict. Rather than prioritizing disruptive attacks, leading threat actors
+will continue to focus on persistent access, influence, and optionality.
+
+Chinese state-sponsored threat actors are expected to expand beyond data exfiltration
+into AI-enabled narrative flooding aimed at shaping digital information environments. Beijing
+has advanced doctrines centered on AI-driven psychographic targeting, designed to erode
+adversary resolve through emotionally tailored influence operations that complement ongoing
+infrastructure-focused intrusions.
+
+Russian state-sponsored threat actors are likely to continue moving away from malware-
+
+heavy campaigns in favor of credential-based intrusions and the abuse of legitimate services,
+particularly identity and single sign-on (SSO) platforms. This approach enables rapid escalation
+from espionage to disruption while preserving deniability and complicating detection.
+
+Iranian cyber activity is expected to remain regionally focused and influence-centric,
+
+relying on hacktivist proxies to amplify messaging and apply sustained pressure below the
+threshold of armed conflict. While more disruptive operations cannot be ruled out, especially in
+the context of regional escalation, there is limited evidence to suggest a near-term expansion
+into widespread, high-impact operations outside the Middle East.
+
+North Korean cyber operations are likely to further integrate workforce infiltration and
+supply-chain manipulation, using fraudulent hires, shell companies, and insider access to
+manipulate codebases, suppress patches, exfiltrate data, and generate revenue across SaaS,
+DevOps, and software supply-chain environments. The scale and aggressiveness of this
+activity will continue to be shaped by sanctions pressure and access to foreign technology.
+
+Beyond the activity of these “Big Four” threat actors, commercial spyware will remain a
+key enabler of state-sponsored cyber risk. In the absence of binding international controls,
+misuse against journalists, activists, and political opponents is likely to persist, with the market
+continuing to fragment as vendors reposition to serve customers operating outside emerging
+regulatory frameworks.
+
+www.recordedfuture.com | Recorded Future ®
+
+21
+
+ CTA-2026-0212CYBER THREAT ANALYSISHow Recorded Future Can Help
+State-Sponsored Threats
+
+To counter state-sponsored targeting, organizations need continuous visibility into evolving state-nexus
+
+campaigns and the ability to connect threat actor behavior to defensive priorities.
+
+•  Geopolitical Intelligence provides country and facility risk monitoring through risk scoring across
+
+five categories and automated alerts when risk events occur near monitored facilities. (See video.)
+
+•  Threat Intelligence tracks state-sponsored APT groups in real time, surfacing targeting patterns,
+
+TTPs, and infrastructure for proactive threat anticipation. (Take a tour.)
+
+•  Malicious Traffic Analysis detects communication between your infrastructure and known
+
+command-and-control (C2) IPs. (Take a tour.)
+
+•  Attack Surface Intelligence identifies which network devices and VPN appliances are internet-
+
+facing, helping organizations remediate high-impact exposures before they are exploited. (Take a
+
+tour.)
+
+ Section III:  H acktivism and Influence Operations in Modern Conflict
+
+Figure 15: Summary of hacktivism and influence operations (Source: Recorded Future)
+
+Amid the geopolitical fragmentation described in Section I, hacktivists and influence
+
+campaigns played an active role in amplifying discord. The outbreak of conflict was frequently
+accompanied by supporting (and in some cases, very likely coordinated) online campaigns.
+The level of state involvement in these campaigns likely varies, even within the same conflict.
+Some “hacktivist” groups are highly sophisticated and likely operate in coordination with the
+state. Other groups advance their countries’ interests over their adversaries, but are neither
+coordinated nor sophisticated, and are likely to have closer links to other hacktivist or criminal
+groups than to the government.
+
+22
+
+Recorded Future® | www.recordedfuture.com
+
+ CTA-2026-0212CYBER THREAT ANALYSISWhile hacktivist and influence operations rarely have a significant impact on conflict
+outcomes, these strategies still provide advantages to the state they are supporting. First,
+hacktivists can carry out more aggressive hacking operations on a state’s behalf, such as
+stealing sensitive data or launching disruptive attacks. Hacktivists provide deniability to the
+state, potentially limiting both retaliation and constraints under the law of armed conflict.
+Second, hacktivists and influence operations increase the perception of grassroots public
+support, helping one cause portray itself as more popular than the other. Finally, relying on
+patriotic volunteers is a relatively low-cost and resource-effective approach.
+
+Figure 16: 2025 map of global conflicts with overlapping hacktivism and influence operations (Source: Recorded Future)
+
+Israel–Iran Cyber Warfare Expands Beyond the Twelve-Day War
+
+The Israel–Iran conflict illustrated the growing synchronization of state-sponsored cyber,
+hacktivist, and influence operations to project strength, undermine the adversary, and shape
+perceptions beyond the battlefield. Predatory Sparrow, a cyber threat group aligned with Israeli
+government national security objectives, conducted cyber operations targeting the Iranian
+financial sector in an effort to disrupt funding for the IRGC. These attacks occurred during the
+June 2025 conflict between Israel and Iran alongside an escalation in hacktivist activity on
+both sides. Predatory Sparrow has been linked to other disruptive attacks in Iran in the past,
+often in retaliation for Iranian cyberattacks or proxy threat activity. The group is suspected
+to operate under the direction of the Israeli government, though there has not been definitive
 proof of the connection.
 
 The hack-and-leak arm of Iran’s hybrid cyber operations front has been highly active
@@ -1775,4 +2333,4 @@ Recorded Future® | www.recordedfuture.com
 
  CTA-2026-0212CYBER THREAT ANALYSIS
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-30", "model": "gemini-3.1-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-24", "model": "gemini-3.5-flash-lite"} -->
