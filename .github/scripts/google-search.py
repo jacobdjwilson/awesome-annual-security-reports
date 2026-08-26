@@ -193,8 +193,12 @@ class GoogleSearchClient:
         If site_domain is provided, prepend site:<domain> to the query.
         """
         q = template_str
+        
+        # Clean title by replacing hyphens and underscores with spaces to avoid exact-match failures
+        clean_title = query_record.get("title", "").replace("-", " ").replace("_", " ")
+        
         q = q.replace("{organization}", query_record.get("organization", ""))
-        q = q.replace("{title}",        query_record.get("title",        ""))
+        q = q.replace("{title}",        clean_title)
         q = q.replace("{year}",         str(query_record.get("year",     "")))
         q = q.replace("{query}",        query_record.get("query",        ""))
         q = q.strip()
@@ -628,7 +632,10 @@ def main() -> int:
 
     print(f"✓ Config loaded")
     print(f"  Mode           : {args.mode}")
-    print(f"  Query template : {config.query_template}")
+    if getattr(config, 'query_templates', None):
+        print(f"  Query templates: {len(config.query_templates)}")
+    else:
+        print(f"  Query template : {getattr(config, 'query_template', '')}")
     print(f"  Results per q  : {config.num_results}")
     print(f"  Skip domains   : {len(config.skip_domains)}")
     print(f"  Min accept     : {config.score_min_accept}")

@@ -61,6 +61,14 @@ jobs:
         run: |
           python .github/scripts/check-pr-cap.py
 
+      - name: Collect PDFs already covered by open PR branches
+        id: pending-prs
+        if: steps.check-pr.outputs.pr_exists != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python .github/scripts/collect-pending-prs.py
+
       - name: Find stale files
         id: check-files
         if: steps.check-pr.outputs.pr_exists != 'true'

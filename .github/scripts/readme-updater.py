@@ -604,6 +604,40 @@ class ReadmeUpdater:
         known_org_url = self.parser.find_org_url(analysis["organization"])
         existing_url_for_search = analysis.get("organization_url") or known_org_url or ""
         
+        # Predictive URL Fallback: if we have an existing URL for a previous year, try swapping the year.
+        if existing_url_for_search:
+            current_year_str = str(analysis.get("year", ""))
+            match = re.search(r'(20\d{2})', existing_url_for_search)
+            if match and match.group(1) != current_year_str:
+                predicted_url = existing_url_for_search.replace(match.group(1), current_year_str)
+                try:
+                    import requests
+                    print(f"    🔍 Predictive check: Testing {predicted_url}")
+                    # Use GET with stream=True to fetch only the first chunk to check for soft 404s in the head/title
+                    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+                    r = requests.get(predicted_url, headers=headers, allow_redirects=True, timeout=7, stream=True)
+                    if r.status_code == 200:
+                        content = next(r.iter_content(chunk_size=8192), b"").decode('utf-8', errors='ignore').lower()
+                        title_match = re.search(r'<title[^>]*>(.*?)</title>', content, re.DOTALL)
+                        page_title = title_match.group(1).strip() if title_match else ""
+                        
+                        is_soft_404 = False
+                        if "404" in page_title or "not found" in page_title:
+                            is_soft_404 = True
+                        elif "404" in content[:2000] and "not found" in content[:2000]:
+                            is_soft_404 = True
+                            
+                        if is_soft_404:
+                            print(f"    ⊘ Predictive check failed (Soft 404 detected)")
+                        else:
+                            print(f"    ✓ Predictive match found: {predicted_url}")
+                            analysis["organization_url"] = predicted_url
+                            return
+                    else:
+                        print(f"    ⊘ Predictive check failed (HTTP {r.status_code})")
+                except Exception as e:
+                    print(f"    ⚠ Predictive check failed: {str(e)[:100]}")
+        
         if self.google_search_module is not None:
             try:
                 searched = self.google_search_module.search_one(

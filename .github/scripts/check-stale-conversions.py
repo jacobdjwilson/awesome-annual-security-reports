@@ -21,6 +21,13 @@ def main():
 
     threshold_timestamp = time.time() - (days_old * 86400)
     candidates = []
+    
+    pending_pdfs = set()
+    if os.path.exists("pending_pdf_paths.txt"):
+        with open("pending_pdf_paths.txt", "r", encoding="utf-8") as f:
+            for line in f:
+                if line.strip():
+                    pending_pdfs.add(line.strip())
 
     for root, _, files in os.walk(pdf_source):
         for file in files:
@@ -28,6 +35,11 @@ def main():
                 continue
             
             pdf_path = Path(root) / file
+            
+            # Convert to POSIX string for comparison with pending paths
+            if pdf_path.as_posix() in pending_pdfs:
+                continue
+
             rel_path = pdf_path.relative_to(pdf_source)
             md_path = Path(md_folder) / rel_path.with_suffix(".md")
             
