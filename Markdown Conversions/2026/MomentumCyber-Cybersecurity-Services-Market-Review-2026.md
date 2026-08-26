@@ -1,103 +1,1116 @@
-# Cybersecurity Services Market Update: 2026
+255, 255, 255
+53, 196, 222
+0, 176, 240
+Cybersecurity Services
+36, 68, 120
+Market Update
+217, 217, 217
+89, 89, 89
+64, 64, 64 An Analysis of the Current
+0, 0, 0 Cyber Services M&A Market
+It’s Still a Human -Led World and the Bots Are
+Living in it – Cyber Services Remains the Most
+Active & Durable Segment in Cybersecurity M&A
+June 2026
+MERGERS & ACQUISITIONS | CAPITAL ADVISORY | MARKET INTELLIGENCE
+0
 
-## Table of Contents
-- [Executive Summary](#i-executive-summary)
-- [Cyber Services M&A Insights](#ii-cyber-services-ma-insights)
-- [Cyber Services M&A Activity](#iii-cyber-services-ma-activity)
-- [Company Spotlights](#iv-company-spotlights)
-- [About Momentum Cyber](#v-about-momentum-cyber)
+255, 255, 255
+53, 196, 222 Table of Contents
+0, 176, 240
+36, 68, 120
+I. Executive Summary 2
+217, 217, 217
+89, 89, 89
+64, 64, 64
+II. Cyber Services M&A Insights 9
+0, 0, 0
+III. Cyber Services M&A Activity 18
+IV. Company Spotlights 24
+V. About Momentum Cyber 47
+1
 
----
+255, 255, 255
+53, 196, 222
+0, 176, 240
+36, 68, 120
+217, 217, 217
+89, 89, 89
+64, 64, 64
+0, 0, 0
+I.
+Executive Summary
+2
 
-## I. Executive Summary
+255, 255, 255
+|     | In This Report… |     |     |     |     |     |     | Did You  | Know… |     |     |     |
+| --- | --------------- | --- | --- | --- | --- | --- | --- | -------- | ----- | --- | --- | --- |
+53, 196, 222
+0, 176, 240
+Executive summary on why AI is  M&A analysis across Security Consulting,  ❑ Cyber Services reached  45 M&A deals in Q1
+| 36, 68, 120 | accelerating human | -led services |     | MSSPs, and Advanced MSS & MDR |     |     |     |                                              |     |     |     |     |
+| ----------- | ------------------ | ------------- | --- | ----------------------------- | --- | --- | --- | -------------------------------------------- | --- | --- | --- | --- |
+|             |                    |               |     |                               |     |     |     | 2026  – the highest deal count ever recorded |     |     |     |     |
+217, 217, 217
+|     | Annual Cyber Services M&A deal count  |     |     | Cyber Services financing trends by  |     |     |     |     |     |     |     |     |
+| --- | ------------------------------------- | --- | --- | ----------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- |
+and volume since 2019 volume, count, deal type, & region ❑ Deal count has grown at a  15% 7 -year CAGR
+89, 89, 89
+|     |                                    |     |     |                                   |     |     |     | and is projected to reach  |     |     | 170 deals |  in 2026 |
+| --- | ---------------------------------- | --- | --- | --------------------------------- | --- | --- | --- | -------------------------- | --- | --- | --------- | -------- |
+|     | Quarterly Cyber Services M&A deal  |     |     | Notable recent M&A and financing  |     |     |     |                            |     |     |           |          |
+64, 64, 64
+|         | count and volume since 2019                |         |     | transactions across Cyber Services  |             |             |     |                                                  |         |     |     |     |
+| ------- | ------------------------------------------ | ------- | --- | ----------------------------------- | ----------- | ----------- | --- | ------------------------------------------------ | ------- | --- | --- | --- |
+| 0, 0, 0 |                                            |         |     |                                     |             |             |     | ❑ 2026 Cyber Services M&A activity is projected  |         |     |     |     |
+|         | M&A transaction volume by Cyber            |         |     | Current cyber                       | -centric PE | -backed buy | -   |                                                  |         |     |     |     |
+|         | Services sub                               | -sector |     | and-build strategies                |             |             |     | to grow                                          | 34% YoY |     |     |     |
+|         | PE vs. Strategic buyer activity including  |         |     | Company spotlights for the leading  |             |             |     |                                                  |         |     |     |     |
+|         |                                            |         |     |                                     |             |             |     | ❑ 52%  of all Cyber Services M&A deals are       |         |     |     |     |
+|         | investor target criteria                   |         |     | Cyber Services firms                |             |             |     |                                                  |         |     |     |     |
+completed by PE firms
+|     | The Authors… |     |     |     |     |     |     | ❑ Enterprises are  |     | projected to spend 2x |     |  on  |
+| --- | ------------ | --- | --- | --- | --- | --- | --- | ------------------ | --- | --------------------- | --- | ---- |
+Cyber Services vs. Cyber Products in 2026
+|     |               |     |                 |     |                  |     |     | ❑ Security Consulting leads all sub |                                |     | -sectors with   |     |
+| --- | ------------- | --- | --------------- | --- | ---------------- | --- | --- | ----------------------------------- | ------------------------------ | --- | --------------- | --- |
+|     |               |     |                 |     |                  |     |     | 174 tracked M&A deals               |                                |     |  since 2024     |     |
+|     |               |     |                 |     |                  |     |     | ❑ Cyber Services represents         |                                |     | 39% of all M&A  |     |
+|     |               |     |                 |     |                  |     |     | activity                            |  in the Cybersecurity industry |     |                 |     |
+|     | Eric McAlpine |     | Vilyam Yegikyan |     | Jake Pollock     |     |     |                                     |                                |     |                 |     |
+|     | Founder & CEO |     | Chief of Staff  |     | Head of Research |     |     |                                     |                                |     |                 |     |
+33
 
-### It’s Still a Human-Led World and the Bots Are Living in it
-Cyber Services remains the most active and durable segment in Cybersecurity M&A. Despite headlines suggesting AI might hollow out the sector, the market is proving the opposite—Q1 2026 was the most active quarter ever tracked. AI is not replacing human-led defense; it is accelerating demand for it.
+255, 255, 255
+Cybersecurity Services M&A
+By The Numbers…
+53, 196, 222
+Cybersecurity Services M&A has entered a historic acceleration phase
+0, 176, 240
+45 15% 52%
+AI is not replacing Cybersecurity Services – it is accelerating it
+36, 68, 120
+In line with the broader tech market, AI consistently continues to dominate the cybersecurity Cyber Services deals 7-year deal count Of Cyber Services
+217, 217, 217
+narrative. Despite what headlines may claim, AI is not reducing the importance of in Q1 ’26 (most ever) CAGR deals completed by PE
+89, 89, 89 Cybersecurity Services. Rather, AI is accelerating demand for them. As threat actors
+increasingly leverage AI to automate attacks, scale phishing campaigns, and weaponize
+170 2:1 174
+64, 64, 64 code generation, organizations are responding by increasing reliance on human -led Security
+Consulting, MSSPs, and MDR providers to monitor and defend increasingly complex attacks.
+0, 0, 0 Projected 2026 Enterprise spend on Security Consulting
+Importantly, AI is augmenting Cyber Services businesses rather than displacing them.
+Cyber Services deals Services vs. Product deals since 2024
+Leading firms are embedding AI into threat detection, SOC automation, incident response
+workflows, offensive security testing, and more.
+105% 48% 39%
+Momentum Cyber is seeing this dynamic materialize directly in the market through
+unprecedented levels of M&A activity across Cybersecurity Services. Cyber Services deal
+volume reached an all -time high in Q1 2026 and is projected to accelerate further through Projected YoY M&A North American Cyber Services share
+the remainder of the year. The market remains highly fragmented, with a large population of growth for Advanced share of global of Total Cyber M&A
+bootstrapped and regionally focused providers creating an attractive consolidation MSS & MDR firms Cyber Services M&A in 2026
+opportunity for both PEs and Strategics.
+“
+The durability of the sector is also supported by underlying enterprise spending dynamics.
+Cybersecurity Services has quietly become the most durable engine
+Enterprises continue to spend roughly twice as much on Cybersecurity Services as they do
+in Cybersecurity M&A. Enterprises spend two dollars on services for
+on products, creating a larger revenue base and deeper acquisition universe than other
+every dollar on products , the supplier base is deeply fragmented,
+cybersecurity segments. Combined with recurring revenue models and strong EBITDA and Private Equity now drives more than half of all deals. That's a roll -
+profiles, Cyber Services is and will continue to be one of the most attractive roll -up up machine built to run for a decade.
+opportunities across the broader cybersecurity market.
+Everyone keeps predicting AI will hollow out Cybersecurity services.
+As AI reshapes the cybersecurity landscape, Momentum Cyber believes Cyber Services firms The market is saying the opposite — Q1 2026 was the most active
+that successfully combine human expertise with AI -enabled operational leverage will emerge quarter we've ever tracked. AI isn't replacing human -led defense; it's
+“
+accelerating demand for it .
+as some of the most valuable and durable platforms in cybersecurity over the next decade.
+Eric McAlpine
+Founder & CEO
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+44
 
-### In This Report…
-- Executive summary on why AI is accelerating human-led services.
-- M&A analysis across Security Consulting, MSSPs, and Advanced MSS & MDR.
-- Annual Cyber Services M&A deal count and volume since 2019.
-- Quarterly Cyber Services M&A deal count and volume since 2019.
-- M&A transaction volume by Cyber Services sub-sector.
-- PE vs. Strategic buyer activity including investor target criteria.
-- Cyber Services financing trends by volume, count, deal type, & region.
-- Notable recent M&A and financing transactions across Cyber Services.
-- Current cyber-centric PE-backed buy-and-build strategies.
-- Company spotlights for the leading Cyber Services firms.
+255, 255, 255
+M&A Activity In Cyber Services Summary
+53, 196, 222
+Consistent, increasing deal activity amid evolving service models
+0, 176, 240
+Cyber Services 2024  – 2026 YTD M&A Activity By Sub -Sector Cyber Services M&A Volume 2019  – 2026 ($M)
+36, 68, 120
+$4,877
+217, 217, 217
+|     |     |     |     |     | $4,269 |     | $4,096 |     |     |
+| --- | --- | --- | --- | --- | ------ | --- | ------ | --- | --- |
+SecSuercituyr iCtyo nCsounlstiunlgting 174
+$3,430
+89, 89, 89
+$2,303 $2,274
+TradTitriaodniatilo MnaSlS MPSSP
+|     | 69  |     | $1,286 | $1,231 |     |     |     |     |     |
+| --- | --- | --- | ------ | ------ | --- | --- | --- | --- | --- |
+64, 64, 64
+AAddvvaanncceedd M MSSSS & & M MDDRR 53
+0, 0, 0
+|     |     |     | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 2026 Ann. |
+| --- | --- | --- | ---- | ---- | ---- | ---- | ---- | ---- | -------------- |
+Notable Recent Cyber Services M&A Deals Cyber Services vs. Total Cyber M&A  2019  – 2026
+Cyber Services M&A Deal Count 39%
+31%
+All Cyber M&A Deal Count
+| Acquired by | Acquired by | Acquired by |     |     |     |     |     |     |     |
+| ----------- | ----------- | ----------- | --- | --- | --- | --- | --- | --- | --- |
+30%
+Services % of Total
+33% 170
+|     |     |     |     |     |     | 31% | 37% |     | 127 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+100
+| Feb 2026 | Feb 2026 | Feb 2026 |     |     |     |     |     |     |     |
+| -------- | -------- | -------- | --- | --- | --- | --- | --- | --- | --- |
+|          |          |          | 33% |     | 95  |     |     |     |     |
+86
+|     |     |     |     | 23% |     |     | 101 |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     |     |     | 63  | 41  |     |     |     |     |     |
+277
+270
+| Acquired by | Acquired by | Acquired by |     |     |     |     |     | 230 |     |
+| ----------- | ----------- | ----------- | --- | --- | --- | --- | --- | --- | --- |
+197
+|          |          |          |      |      |      | 191  | 175  |      |                |
+| -------- | -------- | -------- | ---- | ---- | ---- | ---- | ---- | ---- | -------------- |
+|          |          |          | 130  | 136  |      |      |      |      |                |
+| Jan 2026 | Oct 2025 | Aug 2025 |      |      |      |      |      |      |                |
+|          |          |          | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 2026 Ann. |
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+5
 
-### Did You Know…
-- Cyber Services reached 45 M&A deals in Q1 2026 – the highest deal count ever recorded.
-- Deal count has grown at a 15% 7-year CAGR and is projected to reach 170 deals in 2026.
-- 2026 Cyber Services M&A activity is projected to grow 34% YoY.
-- 52% of all Cyber Services M&A deals are completed by PE firms.
-- Enterprises are projected to spend 2x on Cyber Services vs. Cyber Products in 2026.
-- Security Consulting leads all sub-sectors with 174 tracked M&A deals since 2024.
-- Cyber Services represents 39% of all M&A activity in the Cybersecurity industry.
+255, 255, 255
+M&A Activity In Cyber Services Summary (Cont.)
+53, 196, 222
+Private equity is powering the next stage of Cyber Services M&A activity
+0, 176, 240
+Cyber Services Private Equity vs. Strategic M&A Count 2024  – 2026 YTD Cyber Services M&A Deal Count 2019  – 2026
+36, 68, 120
+170
+217, 217, 217
+127
+|                              |     |     |     |     |     |     |     |     | 101 | 100 |     |     |
+| ---------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| PPrrivivaattee E Eqquuitityy |     |     |     | 159 |     |     | 95  |     |     |     |     |     |
+89, 89, 89 86
+63
+41
+64, 64, 64
+| StraStetrgaitcegic |     |     | 137 |     |     |     |     |     |     |     |     |     |
+| ------------------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+0, 0, 0
+|     |     |     |     |     | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 Ann. |
+| --- | --- | --- | --- | --- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | --------- |
+Cyber Services Quarterly M&A Deal Count 2024  – 2026 YTD Cyber Services M&A Count By Region Since 2019
+All-Time High
+Branch 1
+3%
+(21)
+37%
+|     |     |     |     |     |     | 48% |     |     |     |     |     | SA  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+(245)
+|     |     |     |     | 45  |     |     |     |     |     |     |     | 2%  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+(319)
+|     |     |       | 37  |     |     |     |     |     |     |     |     | (15) |
+| --- | --- | ----- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---- |
+|     |     | 35 34 |     |     |     |     |     |     |     |     |     |      |
+30
+| 29  |     |     |     |     |     |     |     |     |     |     |     | AP- |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     | 24  |     |     |     |     |     |     |     |     |     |     | AC  |
+21
+17
+Europe
+2%
+|     |     |     |     |     |               |     |     |     |     | 7%  |     | (10) |
+| --- | --- | --- | --- | --- | ------------- | --- | --- | --- | --- | --- | --- | ---- |
+|     |     |     |     |     | North America |     |     | ANZ |     |     |     | ME   |
+(45)
+| Q1 2024 Q2 2024 | Q3 2024 Q4 2024 | Q1 2025 Q2 2025 | Q3 2025 Q4 2025 | Q1 2026 |     |     |     |     |     |     |     |     |
+| --------------- | --------------- | --------------- | --------------- | ------- | --- | --- | --- | --- | --- | --- | --- | --- |
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+6
 
----
+255, 255, 255
+Financing Activity In Cyber Services Summary
+53, 196, 222
+AI SecOps leads Cyber Services financing as large rounds push 2026 toward a record year
+0, 176, 240
+Cyber Services 2024  – 2026 YTD Financing Activity By Sub -Sector Cyber Services Financing Volume 2019  – 2026 ($M)
+36, 68, 120
+$2,756
+217, 217, 217
+AI SecOpsAI SecOps 77
+$1,472
+89, 89, 89
+|     | SecurSietyc uCroitnys uClotninsgulting |     |     | 64  |     |     |     | $1,130 |     |     | $1,241 |
+| --- | -------------------------------------- | --- | --- | --- | --- | --- | --- | ------ | --- | --- | ------ |
+$924
+$766
+$656
+$438
+| 64, 64, 64 | AdvAadnvcaendc eMdS MS &SS M &D MRDR |     |     | 54  |      |      |      |      |      |      |                |
+| ---------- | ------------------------------------ | --- | --- | --- | ---- | ---- | ---- | ---- | ---- | ---- | -------------- |
+| 0, 0, 0    | TraditiTornaadli tMioSnSaPl MSSP     |     | 18  |     |      |      |      |      |      |      |                |
+|            |                                      |     |     |     | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 2026 Ann. |
+Notable Recent Cyber Services Financing Deals Cyber Services vs. Total Cyber Financing  2019  – 2026
+Cyber Services Financing Deal Count
+All Cyber Financing Deal Count
+|     | $70M | Seed & Series A |     | $250M | Series B | $190M | Series A |                     |     |     |     |     |     |     |
+| --- | ---------------------- | --- | ---------------- | ---------------- | ------------------- | --- | --- | --- | --- | --- | --- |
+|     |                        |     |                  |                  | Services % of Total |     | 8%  |     |     |     |     |
+7%
+9%
+87
+80
+|     |     |          |          |          |     |     |     |     | 8%  | 91  |     |
+| --- | --- | -------- | -------- | -------- | --- | --- | --- | --- | --- | --- | --- |
+|     |     | Apr 2026 | Mar 2026 | Mar 2026 |     |     |     |     |     |     |     |
+9%
+81
+|     |     |     |     |     | 4%  | 5%  |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+15%
+81
+1,046
+1,006 111
+965
+|     |     | $140M | Series D | $130M | Series A | $10M | Early-Stage |     |     |     |     | 872 |     |     |
+| --- | --- | ---------------- | ---------------- | ------------------ | --- | --- | --- | --- | --- | --- | --- |
+|     |     |                  |                  |                    | 772 |     |     |     |     |     | 781 |
+760
+653
+|     |     | Jan 2026 | Dec 2025 | Jul 2025 |      |      |      |      |      |      |                |
+| --- | --- | -------- | -------- | -------- | ---- | ---- | ---- | ---- | ---- | ---- | -------------- |
+|     |     |          |          |          | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 2026 Ann. |
+Source: Pitchbook, Momentum Cyber proprietary transaction database.
+7
 
-## II. Cyber Services M&A Insights
+255, 255, 255
+Financing Activity In Cyber Services Summary (Cont.)
+53, 196, 222
+Early-stage activity is leading the market, signaling a deepening pipeline of AI -enabled Cyber Services platforms
+0, 176, 240
+Cyber Services Financing Deal Type by Count 2024  – 2026 YTD Cyber Services Financing Deal Count 2019  – 2026
+36, 68, 120
+111
+217, 217, 217
+|     | EarElya rSlyta Sgteage |     |     |     | 113 |     |     |     |     |     |     |     |     |
+| --- | ---------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     |                        |     |     |     |     |     |     | 87  |     |     | 91  |     |     |
+|     |                        |     |     |     |     |     |     |     | 80  | 81  |     | 81  |     |
+89, 89, 89
+|     | SerieSse Aries A | 30  |     |     |     |     |     |     |     |     |     |     |     |
+| --- | ---------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+42
+32
+| 64, 64, 64 | SerieSes rBie+s B+ |     | 38  |     |     |      |      |      |      |      |      |      |           |
+| ---------- | ------------------ | --- | --- | --- | --- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | --------- |
+| 0, 0, 0    | PE PGEro Gwrothwth | 27  |     |     |     |      |      |      |      |      |      |      |           |
+|            |                    |     |     |     |     | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 Ann. |
+Cyber Services Quarterly Financing Deal Count 2024  – 2026 YTD Cyber Services Financing Count By Region Since 2019
+Branch 1
+21%
+5%
+(111)
+|     |     |     |     |     |     |     |     | 62% |     |     |     |     | (29) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---- |
+34
+(332)
+|     |     |     |     | 26  | 27  |     |     |     |     |     | Europe |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------ | --- | --- |
+23
+|     |     |     | 20 21 |     |     |     |     |     |     |     |     |     | ME  |
+| --- | --- | --- | ----- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+18
+16
+14
+10%
+SA
+(53)
+|     |                 |                 |                 |                 |         | North America |     |     |     |     | APAC |     | ANZ |
+| --- | --------------- | --------------- | --------------- | --------------- | ------- | ------------- | --- | --- | --- | --- | ---- | --- | --- |
+|     | Q1 2024 Q2 2024 | Q3 2024 Q4 2024 | Q1 2025 Q2 2025 | Q3 2025 Q4 2025 | Q1 2026 |               |     |     |     |     |      |     |     |
+Source: Pitchbook, Momentum Cyber proprietary transaction database.
+8
 
-### Cybersecurity Services M&A By The Numbers…
-Cybersecurity Services M&A has entered a historic acceleration phase.
-- **45**: Cyber Services deals in Q1 ’26 (most ever).
-- **15%**: 7-year deal count CAGR.
-- **52%**: Of Cyber Services deals completed by PE.
-- **170**: Projected 2026 Cyber Services deals.
-- **2:1**: Services vs. Product deals since 2024.
-- **174**: Projected 2026 Enterprise spend on Security Consulting.
+255, 255, 255
+53, 196, 222
+0, 176, 240
+36, 68, 120
+217, 217, 217
+89, 89, 89
+64, 64, 64
+0, 0, 0
+II.
+Cyber Services M&A Insights
+9
 
-### The Durability of the Sector
-"Cybersecurity Services has quietly become the most durable engine in Cybersecurity M&A. Enterprises spend two dollars on services for every dollar on products, the supplier base is deeply fragmented, and Private Equity now drives more than half of all deals. That's a roll-up machine built to run for a decade."
-— *Eric McAlpine, Founder & CEO*
+255, 255, 255
+Cyber Services M&A Volume & Count
+53, 196, 222
+Deal count for human -led Cybersecurity Services companies continues to increase each year
+0, 176, 240
+Key Takeaways Cyber Services M&A Deal Volume & Count 2019 – 2026 Ann.
+36, 68, 120
+217, 217, 217 Cyber Services M&A Deal Count
+Cyber Services has been the most active segment in Cybersecurity M&A over
+$4,877
+the past two years, and that momentum is on track to continue through 2026. Cyber Services M&A Deal Volume ($M)
+89, 89, 89
+Enterprises spend roughly twice as much on Cyber Services as they do on
+$4,269
+64, 64, 64 security products, creating a larger revenue base and a deeper pool of
+$4,096
+$3,430
+acquisition targets. The market remains one of the most fragmented, with
+0, 0, 0
+many bootstrapped and regionally focused Cyber Services companies
+available for consolidation.
+$2,303 $2,274
+$1,286
+170
+PE continues to favor this segment due to predictable recurring revenue,
+$1,231
+EBITDA, and straightforward integration dynamics. While AI is improving
+margins and operating efficiency, it has not materially reduced demand for
+127
+human-led services in 2026. Given the 2:1 spending mix, fragmented supply,
+and durable roll -up economics, services are positioned to remain the most
+101 100
+95
+active sector in Cybersecurity M&A through 2026.
+86
+63
+41
+15% 34% 45
+Deal Count 7 -year YoY Projected M&A Deals in Q1,
+CAGR Growth (1) Most Ever Recorded
+2019 2020 2021 2022 2023 2024 2025 2026 Ann.
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+(1) Based on 2026 Annualized deal count.
+10
 
----
+255, 255, 255
+Cyber Services M&A by Sub -Sector
+53, 196, 222
+Security Consulting has seen the highest number of transactions over every period tracked
+0, 176, 240
+|     | Key Takeaways |     | Buyer Type by Sub |     | -Sector, 2025  | – 2026 YTD |     |     |     |
+| --- | ------------- | --- | ----------------- | --- | -------------- | ---------- | --- | --- | --- |
+36, 68, 120
+| 217, 217, 217 |     |     | Private Equity |     | Strategic |     |     |     |     |
+| ------------- | --- | --- | -------------- | --- | --------- | --- | --- | --- | --- |
+Security Consulting continues to lead deal activity, driven by its role as the
+primary entry point for platform build strategies
+89, 89, 89 Security Consulting Traditional MSSP Advanced MSS & MDR
+Traditional MSSP activity remains steady, supported by cash flow and
+64, 64, 64
+consolidation opportunities in the lower -middle market
+| 0, 0, 0 |     |     |     | 45% |     |     |     |     | 48% |
+| ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|         |     |     |     |     |     | 50% | 50% |     |     |
+Advanced MSS & MDR is gaining momentum as buyers prioritize scaled  55% 52%
+detection and response capabilities in line with the rise of AI -native threats
+Cyber Services M&A by Sub -Sector and Buyer Type, 2025  – 2026 YTD Cyber Services M&A by Sub -Sector, 2019  – 2026 YTD
+Advanced MSS & MDR Deal Count 37
+62 PE Deals (55%)
+Security Consulting
+|     |     | 51 Strategic Deals (45%) | Traditional MSSP Deal Count    |     |     |     |     |     |     |
+| --- | --- | ------------------------ | ------------------------------ | --- | --- | --- | --- | --- | --- |
+|     |     |                          | Security Consulting Deal Count |     |     |     |     |     | 18  |
+42
+|     |     |     |     |     |     |     | 14  | 20  | 33  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+17
+25 PE Deals (50%)
+|     | Traditional MSSP |     |     |     |     | 17  |     |     |     |
+| --- | ---------------- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     |                  |     |     |     |     |     | 30  | 19  |     |
+25 Strategic Deals (50%)
+30
+33
+31 91
+76
+61
+|     |     |     |     | 13  |     |     | 57  |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+48
+36
+29
+|     | Advanced MSS & MDR | 17 PE Deals (52%) |     | 20  |     |     |     |     |     |
+| --- | ------------------ | ----------------- | --- | --- | --- | --- | --- | --- | --- |
+16 Strategic Deals (48%)
+|     |     |     | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 2026 Ann. |
+| --- | --- | --- | ---- | ---- | ---- | ---- | ---- | ---- | -------------- |
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+11
 
-## III. Cyber Services M&A Activity
+255, 255, 255
+What Buyers Are Targeting
+53, 196, 222
+Buyers are deploying capital across the full spectrum of Cybersecurity Services
+0, 176, 240
+Three Sub -Sectors of Cybersecurity Services Key Metrics For Each Sub -Sector
+36, 68, 120
+217, 217, 217
+Security Consulting: Scale & Roll -Up Platform
+174 20%
+89, 89, 89 59%
+Expert -led, project -based advisory & implementation
+▪ Human-driven
+64, 64, 64
+M&A Deals Completed Projected YoY Growth in Of Security Services
+▪ Point-in-time engagements deal count
+Since 2024 2026
+▪ Deliverables include reports, designs, implementations
+0, 0, 0
+▪ Customer retains ongoing operations
+Traditional MSSP: Cash Flow & Consolidation
+69 27%
+Outsourced security monitoring & tool management 23%
+▪ Ongoing services, often bundled with IT/MSP, can be SMB -heavy
+M&A Deals Completed Projected YoY Growth in Of Security Services
+▪ Tool-driven with SIEM, AV, firewalls, etc. deal count
+Since 2024 2026
+▪ Monitoring + alerting, limited investigation depth
+▪ Shared responsibility model
+Advanced MSS & MDR: Higher Growth & Platform Build
+53 105%
+18%
+Outsourced SOC with active detection & response
+▪ 24/7 SOC with analysts
+M&A Deals Completed Projected YoY Growth in Of Security Services
+▪ Detection, investigation, and response deal count
+Since 2024 2026
+▪ Deep integration like EDR/XDR, identity, cloud, etc.
+▪ Includes threat hunting & incident response
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+12
 
-### Consistent, Increasing Deal Activity Amid Evolving Service Models
-The market shows a clear trend of increasing deal activity. Notable recent transactions include:
-- **Defy Security** acquired by Booz Allen (Feb 2026)
-- **Alphabit Cybersecurity** acquired by Softweb (Feb 2026)
-- **Security Risk Advisors** acquired by Recognize Partners (Feb 2026)
-- **WithSecure** acquired by CVC Capital Partners (Jan 2026)
-- **AUCyber** acquired by 5G Networks (Oct 2025)
-- **SysteCom** acquired by Quality & Reliability (Aug 2025)
+255, 255, 255
+Private Equity vs. Strategic Buyers
+53, 196, 222
+PE continues to drive the majority of deal activity as software transactions are pushed out
+0, 176, 240
+Key Takeaways What Private Equity Buyers Look For in Cyber Services Assets
+36, 68, 120
+217, 217, 217
+| Private equity represents the                  | majority  of Cyber Services M&A deal activity  |                         |     |     |       |          |      |     |            |      |          |     |
+| ---------------------------------------------- | ---------------------------------------------- | ----------------------- | --- | --- | ----- | -------- | ---- | --- | ---------- | ---- | -------- | --- |
+|                                                |                                                |                         |     |     | >$15M | Revenue  | >80% |     | Recurring  | >15% | Revenue  |     |
+| because of the highly fragmented market & roll |                                                | -up driven growth model |     |     |       |          |      |     |            |      |          |     |
+|                                                |                                                |                         |     |     |       | Scale    |      |     | Revenue    |      | Growth   |     |
+89, 89, 89
+| Strategic buyers are still active, particularly in  |       | specialized consulting |     |     |     |     |     |     |     |     |     |     |
+| --------------------------------------------------- | ----- | ---------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| capabilities to enable cross                        | -sell |                        |     |     |     |     |     |     |     |     |     |     |
+64, 64, 64
+Customer
+|     |     |     |     |     |     | EBITDA  |     |     | Customer  |     |     |     |
+| --- | --- | --- | --- | --- | --- | ------- | --- | --- | --------- | --- | --- | --- |
+Advanced MSS & MDR providers are coming to market as AI -driven threat  >20% >95% <50%
+0, 0, 0 Concentration
+|     |     |     |     |     |     | Margins |     |     | Retention |     |     |     |
+| --- | --- | --- | --- | --- | --- | ------- | --- | --- | --------- | --- | --- | --- |
+detection increases  demand for human -led response capabilities (Top 5)
+Buyer Mix by Sub -Sector (2025  – 2026 YTD) Cyber Services M&A Deal Count by Buyer Type (2019  – 2026 Ann.)
+Strategic
+Advanced MSS &
+| Security Consulting | Traditional MSSP |     |     |     |     |     |     |     |     |     |     |     |
+| ------------------- | ---------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+MDR
+Private Equity
+74
+61
+|     |     |     |     |     |     |     |     |     | 47  | 45  |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 62  | 25  |     | 17  |     |     |     | 44  |     |     |     |     |     |
+41
+| PE Deals | PE Deals |     | PE Deals |     |     |     |     |     |     |     |     | 96  |
+| -------- | -------- | --- | -------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+38
+65
+| 51  | 25  |     | 16  |     |     | 30  |     |     | 54  | 55  |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     |     |     |     |     |     |     | 51  | 45  |     |     |     |     |
+25
+11
+| Strategic Deals | Strategic Deals |     | Strategic Deals |     |      |      |      |      |      |      |      |           |
+| --------------- | --------------- | --- | --------------- | --- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | --------- |
+|                 |                 |     |                 |     | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 Ann. |
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+13
 
-### Private Equity vs. Strategic Buyers
-Private equity continues to power the next stage of Cyber Services M&A. PE firms look for:
-- **Scale**: >$15M Revenue
-- **Recurring Revenue**: >80%
-- **Revenue Growth**: >15%
-- **EBITDA Margins**: >20%
-- **Customer Retention**: >95%
-- **Customer Concentration**: <50% (Top 5)
+255, 255, 255
+The Future of Managed Detection & Response
+53, 196, 222
+The next generation of MDR will move beyond alert triage to become the control plane for cyber operations and risk reduction
+0, 176, 240
+Key Takeaways Raffael Marty’s MDR Evolution Framework
+36, 68, 120
+217, 217, 217 MDR Becomes the Control Plane – Category Evolution
+89, 89, 89 Future MDR will own the loop from asset visibility and exposure to detection,
+response, and proof that risk went down.
+64, 64, 64
+Visibility and Exposure Are Now Core – Required Context
+0, 0, 0 Telemetry quality, asset inventory, agent coverage, exposure management, and
+identity posture become essential to effective MDR.
+Response Must Prove Risk Reduction – Measurable Outcomes
+Winning MDR providers will not just investigate alerts. They will validate, contain,
+remediate, and show measurable improvement.
+MDR is becoming the cyber operations control plane
+Visibility, telemetry, and exposure context are now core
+Winners will prove remediation and risk reduction
+Advisor Perspective
+“
+The MDR of the future is not just a better alert triage desk. It is the “control
+plane for cybersecurity operations and cyber risk reduction
+– Raffael Marty, Senior Advisor, Momentum Cyber
+14
 
----
+255, 255, 255
+Cyber -Centric PE -Backed Buy & Build Strategies
+53, 196, 222
+Illustrative list of current PE buy & build strategies and add -on Cyber Services deals
+0, 176, 240
+36, 68, 120
+y
+n
+a
+p
+m
+217, 217, 217
+o
+C
+89, 89, 89
+re
+64, 64, 64 k c
+a
+B
+0, 0, 0
+s
+n
+o
+itis
+iu Venzo
+q
+c
+A
+y
+n
+a
+p
+m
+o
+C
+re
+k
+c
+a
+B
+s
+n
+o
+itis
+iu
+q
+c
+A
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+15
 
-## IV. Company Spotlights
+255, 255, 255
+Momentum Cyber Advises on $250 Million Series B Funding
+53, 196, 222
+TENEX.AI secures $250M Series B to bring elite cyber defense to every organization
+0, 176, 240
+36, 68, 120 “ Press Release Highlights
+TENEX has reimagined the managed security services industry and built something
+March 2026
+differentiated: an AI -native platform with elite human expertise to protect enterprises at scale.
+217, 217, 217
+The company stops threats with the speed needed to defend “an AI -enabled adversary and is
+delivering that value with an excellent financial model. #1 On the 2026
+89, 89, 89 Cyber 150
+– Greg Clark, Managing Partner, Crosspoint Capital Partners
+64, 64, 64
+has raised $250M of
+Series B funding led by
+0, 0, 0 “ 250+
+Everyone in this industry is talking about AI. Everyone else is bolting AI onto the same New hires
+services and platforms that have been failing enterprises for years. We started over – the only
+AI SOC company led by operators who’ve done this before, with founding engineers fr“om the
+hyperscalers and the leading AI labs. Not bolted on. Not borrowed. Native.
+– Eric Foster, Founder & CEO, TENEX.AI
+318%
+YoY Growth
+“
+Most of the MDR market is still trying to bolt AI onto architectures that were never designed
+Served as exclusive financial and strategic advisor to TENEX for it. TENEX went back to first principles and built natively — and the growth shows what
+that difference means in the market. Enterprises are vo“ting with their budgets, and we’re $10M Revenue in
+< 6 months
+proud to back the team that’s earning that trust.
+Transaction Overview
+– Zach Sivertson, Managing Director, Crosspoint Capital Partners
+On March 31st, 2026, TENEX.AI raised $250 million in Series B funding
+led by Crosspoint Capital Partners . The new capital will accelerate
+$25M Generated
+TENEX’s global expansion and significantly scale the human expertise
+behind its AI -native managed detection and response (MDR) service, “ in TCV
+expanding the elite team of defenders and engineers delivering Enterprise security teams are being asked to do more with the same resources against threats
+cybersecurity outcomes that no product -only approach can match. that grow more sophisticated every quarter. That equation doesn’t work without AI. TENEX
+“
+has built the platform that changes that equation – combining AI -native detection with
+With Participation From experienced human judgment at a scale I haven’t seen elsewhere. That’s why I’m here.
+F500+ Enterprise
+– Bashar Abouseido, President, TENEX.AI customers
+16
 
-### TENEX.AI
-TENEX.AI is an AI-Native Managed Detection and Response (MDR) provider.
-- **Platform**: 100% Alert Coverage, 98% False Positives Eliminated, <1 Min Triage Time.
-- **Core Features**: Managed Detection & Response, Threat Management, Security Automation.
+255, 255, 255
+Fishtech Group Merges With Herjavec Group Via Apax Funds
+53, 196, 222
+Momentum Cyber served as exclusive financial & strategic advisor to Fishtech Group
+0, 176, 240
+36, 68, 120
+Transaction Overview
+217, 217, 217 On December 30th, 2021, Fishtech Group (“Fishtech”) and Herjavec Group (“Herjavec”) announced their merger, backed by funds a dvised
+by Apax Partners LLP (the “Apax Funds”). The two innovative companies will operate as a single entity under a new brand to be
+89, 89, 89 announced in early 2022. The Apax Funds will hold a majority stake in the new company while Robert Herjavec, Founder & CEO of
+Herjavec and star of ABC’s Emmy award winning ratings giant “Shark Tank”, and Gary Fish, Founder and CEO of Fishtech, will ea ch
+maintain significant equity in the new business
+64, 64, 64 has merged with
+“We’re exceptionally proud of our results to date and even more excited about the growth to come. We’re honored that so many organizations
+0, 0, 0 trust Fishtech to be their managed solutions provider. With complementary offerings from Herjavec, we will transform the secu rity industry
+globally.” – Gary Fish, CEO of Fishtech Group
+“We could not be more thrilled to join forces with industry pioneer Gary Fish, whom I have known for decades. We are very imp ressed by Fishtech’s
+MDR offerings and its proprietary platform built on Google Chronicle, which we consider highly differentiated.”
+a portfolio company of
+– Robert Herjavec, CEO of Herjavec Group
+“By putting together two best -in-class organizations, we are confident that the combined platform will become an undisputed lead er in
+Cybersecurity services in the enterprise segment and have an opportunity to redefine the market category.” – Rohan Haldea , Partner at Apax
+Transaction Significance
+Momentum Cyber served as exclusive
+financial and strategic advisor to
+The deal brings together the complementary strengths of both organizations, resulting in an industry powerhouse with a broad, holistic suite of
+Fishtech Group best-in-class managed detection and response capabilities (MDR), professional services, and identity offerings with a global per spective to address
+enterprise customers’ increasingly complex information security needs
+Joining the forces of Herjavec, a market leader in cloud and tech -enabled co -managed SIEM, with Fishtech, a market leader in ent erprise MDR, will
+allow the new company to provide customers with unparalleled security and cloud expertise, driving security maturity as a com petitive differentiator
+via advanced technology and services across the industry landscape
+Momentum Cyber’s Role
+December 2021 Momentum Cyber acted as exclusive financial & strategic advisor to Fishtech Group
+Momentum Cyber previously advised Herjavec Group on its February 2021 acquisition by Apax Funds
+17
 
-### Trail of Bits
-A cybersecurity research and consulting firm helping organizations secure critical software.
-- **Focus Areas**: AI/ML Sec, AppSec, Blockchain, Cryptography.
-- **Core Features**: Manual Code Review, Custom Security Tooling, Root Cause Analysis.
+255, 255, 255
+53, 196, 222
+0, 176, 240
+36, 68, 120
+217, 217, 217
+89, 89, 89
+64, 64, 64
+0, 0, 0
+III.
+Cyber Services M&A Activity
+18
 
----
+255, 255, 255
+Quarterly Cyber Services M&A Activity ($M)
+53, 196, 222
+Q1 2026 saw the highest number of Cyber Services transactions ever recorded
+0, 176, 240
+36, 68, 120 M&A Deal Value ($M) Number of Deals 45
+37
+35
+34
+217, 217, 217
+32
+30
+29
+89, 89, 89 27 24
+24 24
+20 21 21 21 24
+64, 64, 64 $3,275
+17
+18
+0, 0, 0
+$2,380
+$1,331
+$1,230
+$957
+$882 $867
+$770 $742
+$627
+$517 $501 $515
+$409
+$170 $215 $218
+$25
+Q1 2022 Q2 2022 Q3 2022 Q4 2022 Q1 2023 Q2 2023 Q3 2023 Q4 2023 Q1 2024 Q2 2024 Q3 2024 Q4 2024 Q1 2025 Q2 2025 Q3 2025 Q4 2025 Q1 2026 Q2 2026
+M&A Value YoY Growth (%)
+(63%) (3%) (97%) 119% 170% (73%) 774% 73% (91%) 205% 999% (35%) 339% 43% (62%) (42%) (57%) (31%)
+Number of M&A Deals YoY Growth (%)
+(53%) (10%) 25% 91% 33% (11%) 5% 52% (29%) 21% 14% (6%) 106% 17% (13%) 23% 29% (29%)
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+19
 
-## V. About Momentum Cyber
-![Momentum Cyber Logo/Description]
+255, 255, 255
+MSSP, Security Consulting, & Services M&A Deals & Valuations
+53, 196, 222
+Advanced MSS & MDRs, Traditional MSSPs, and Security Consulting companies trade at a median EBITDA multiple of ~15x
+0, 176, 240
+36, 68, 120 Target Acquirer Date Type EV ($M) Rev ($M) EBITDA ($M) EV / Rev EV / EBITDA
+217, 217, 217
+Defy Security Booz Allen Feb-26 Security Consulting Conf. ND Conf. ND Conf.
+89, 89, 89
+Alphabit Cybersecurity Softweb Jan-26 Security Consulting $2.4 $0.9 $0.2 2.7x 10.7x
+64, 64, 64
+Security Risk Advisors Recognize Partners Oct-25 Security Consulting Conf. Conf. Conf. Conf. Conf.
+0, 0, 0
+WithSecure CVC Capital Partners Aug-25 MSSP $264.4 $136.3 $17.0 1.9x 15.6x
+AUCyber 5G Networks Feb-25 MSSP $23.9 $8.9 ($14.6) 2.7x NM
+SysteCom Quality & Reliability Jan-25 Security Consulting $1.5 $3.3 $0.4 0.5x 4.2x
+SecureWorks Sophos Oct-24 MSSP $824.6 $346.4 ($24.7) 2.4x NM
+Clayton, Dubilier & Rice,
+Exclusive Networks Jul-24 Security Consulting $3,198.7 $1,629.4 $164.5 2.0x 19.5x
+Permira
+I-Tracing Oakley Capital, Eurazeo Jun-24 Security Consulting $517.3 $121.8 $14.4 4.2x 35.9x
+Tesserent Thales Jun-23 Security Consulting $151.4 $88.9 $10.2 1.7x 14.8x
+ICY Security Columbus Apr-23 Security Consulting $18.3 $9.6 $0.7 1.9x 27.7x
+Daisy Corporate
+ECSC Group Mar-23 MSSP $8.3 $7.3 ($0.9) 1.1x NM
+Services Trading
+SK Shieldus EQT Partners Mar-23 MSSP $2,231.5 $1,422.1 $329.4 1.6x 6.8x
+Nixu DNV Feb-23 Security Consulting $106.7 $64.3 $2.6 1.7x 41.5x
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+20
 
-*Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.*
+255, 255, 255
+MSSP, Security Consulting, & Services M&A Deals & Valuations
+53, 196, 222
+Advanced MSS & MDRs, Traditional MSSPs, and Security Consulting companies trade at a median EBITDA multiple of ~15x
+0, 176, 240
+36, 68, 120 Target Acquirer Date Type EV ($M) Rev ($M) EBITDA ($M) EV / Rev EV / EBITDA
+217, 217, 217 Netbull Information
+ADACOM Apr-22 MSSP $6.8 $5.7 $1.2 1.2x 5.7x
+Services
+89, 89, 89 Truststream Security
+SysGroup Apr-22 MSSP $6.3 $4.3 $1.1 1.5x 5.8x
+Solutions
+64, 64, 64 Converge Technology
+Creative Breakthroughs Apr-22 MSSP $64.0 $88.1 $7.2 0.7x 8.9x
+Solutions
+0, 0, 0
+7 Elements Redcentric Mar-22 Security Consulting $2.5 $1.3 $0.4 1.9x 6.3x
+Apax Partners, The
+Fishtech Group Dec-21 MSSP Conf. Conf. Conf. Conf. Conf.
+Herjavec Group
+Loop Secure Tesserent Aug-21 MSSP $9.8 $13.6 $1.7 0.7x 5.8x
+VirtualArmour Evergreen Services
+Jun-21 MSSP $14.0 $10.4 $0.4 1.3x 35.5x
+International Group
+AdEPT Technology
+Datrix Apr-21 MSSP $22.1 $14.8 $2.1 1.5x 10.7x
+Group
+Converge Technology
+Dasher Technologies Apr-21 Security Consulting $48.5 $175.0 $10.0 0.3x 4.8x
+Solutions
+The Herjavec Group Apax Partners Feb-21 MSSP Conf. Conf. Conf. Conf. Conf.
+Data Storage
+Flagship Solutions Feb-21 Security Consulting $10.5 ND $1.0 ND 10.5x
+Corporation
+Spirit Technology
+Intalock Dec-20 Security Consulting $11.0 $18.0 $1.8 0.6x 6.3x
+Solutions
+Airloom Tesserent Aug-20 Security Consulting $10.0 $18.5 $1.9 0.5x 5.4x
+Nasstar GCI Network Solutions Dec-19 Security Consulting $102.7 $32.4 $6.5 3.2x 15.8x
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+21
 
----
+255, 255, 255
+MSSP, Security Consulting, & Services M&A Deals & Valuations
+53, 196, 222
+Advanced MSS & MDRs, Traditional MSSPs, and Security Consulting companies trade at a median EBITDA multiple of ~15x
+0, 176, 240
+36, 68, 120 Target Acquirer Date Type EV ($M) Rev ($M) EBITDA ($M) EV / Rev EV / EBITDA
+217, 217, 217
+| Novosco | Cancom | Nov-19 | MSSP | $89.7 | $53.7 | $7.9 | 1.7x | 11.4x |
+| ------- | ------ | ------ | ---- | ----- | ----- | ---- | ---- | ----- |
+89, 89, 89
+| Lighthouse Computer  Converge Technology  |           |        |                     |       |       |      |      |      |
+| ----------------------------------------- | --------- | ------ | ------------------- | ----- | ----- | ---- | ---- | ---- |
+|                                           |           | Dec-18 | Security Consulting | $23.2 | $82.0 | $4.7 | 0.3x | 4.9x |
+| Services                                  | Solutions |        |                     |       |       |      |      |      |
+64, 64, 64
+Mnemonic Ferd Sep-18 Security Consulting $95.4 $58.8 $7.0 1.6x 13.6x
+0, 0, 0
+Brookcourt Solutions Shearwater Group Aug-18 Security Consulting $41.6 $28.7 $2.7 1.4x 15.2x
+Red Sky Solutions Presidio May-18 Security Consulting $40.8 $70.0 $5.5 0.6x 7.4x
+Advantio Limited Cognosec Apr-18 Security Consulting $14.7 $3.4 $0.6 4.4x 24.6x
+First Base Technologies Falanx Group Mar-18 Security Consulting $4.5 $2.5 $0.8 1.8x 5.3x
+Open Systems EQT Partners Apr-17 MSSP $120.0 $39.7 $7.8 3.0x 15.4x
+| CynergisTek | Auxillio | Jan-17 | MSSP | $34.2    | $15.0  | $5.0   | 2.3x | 6.8x  |
+| ----------- | -------- | ------ | ---- | -------- | ------ | ------ | ---- | ----- |
+| Optiv       | KKR      | Dec-16 | MSSP | $2,417.9 | $942.6 | $122.6 | 2.6x | 19.7x |
+Payment Software
+NCC Group Sep-16 Security Consulting $15.0 $9.5 $1.6 1.6x 9.4x
+Company
+Investcorp Strategic
+| SecureLink |     | Dec-15 | MSSP | $163.9 | $39.4 | $6.6 | 4.2x | 24.8x |
+| ---------- | --- | ------ | ---- | ------ | ----- | ---- | ---- | ----- |
+Capital Group
+Starcom Technologies K3 Business Technology  Apr-15 MSSP $2.6 $4.2 $0.6 0.6x 4.3x
+Group
+| TrustWave | SingTel | Apr-15 | MSSP | $850.0 | $216.0 | $13.0 | 3.9x | 65.6x |
+| --------- | ------- | ------ | ---- | ------ | ------ | ----- | ---- | ----- |
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+22
 
-s |     |
+255, 255, 255
+MSSP, Security Consulting, & Services M&A Deals & Valuations
+53, 196, 222
+Advanced MSS & MDRs, Traditional MSSPs, and Security Consulting companies trade at a median EBITDA multiple of ~15x
+0, 176, 240
+36, 68, 120 Target Acquirer Date Type EV ($M) Rev ($M) EBITDA ($M) EV / Rev EV / EBITDA
+217, 217, 217
+Accumuli NCC Group Mar-15 Security Consulting $82.2 $31.2 $2.5 2.6x 32.9x
+89, 89, 89
+Global Telecom &
+| MegaPath | Feb-15 | MSSP | $152.3 | $124.0 | $20.0 | 1.2x | 7.6x |
+| -------- | ------ | ---- | ------ | ------ | ----- | ---- | ---- |
+Technology Americas
+64, 64, 64
+FishNet Security Accuvant Nov-14 MSSP $378.0 $382.4 $31.7 1.0x 11.9x
+0, 0, 0
+Mandiant FireEye Jan-14 Security Consulting $989.4 $102.0 ($4.7) 9.7x NM
+|     |     | Mean | $375.5 | $180.7 | $33.2 | 2.3x | 15.3x |
+| --- | --- | ---- | ------ | ------ | ----- | ---- | ----- |
+MSSP
+|     |     | Median | $104.8 | $39.6  | $7.5  | 1.6x | 11.0x |
+| --- | --- | ------ | ------ | ------ | ----- | ---- | ----- |
+|     |     | Mean   | $258.7 | $118.7 | $12.3 | 2.4x | 15.2x |
+Security
+Consulting
+|     |     | Median | $41.2  | $31.8  | $2.6  | 1.7x | 12.5x |
+| --- | --- | ------ | ------ | ------ | ----- | ---- | ----- |
+|     |     | Mean   | $314.6 | $149.7 | $21.4 | 2.3x | 15.3x |
+Blended
+|     |     | Median | $56.3 | $37.2 | $5.0 | 1.7x | 11.4x |
+| --- | --- | ------ | ----- | ----- | ---- | ---- | ----- |
+Source: Pitchbook, 451 Research, Momentum Cyber proprietary transaction database.
+23
+
+255, 255, 255
+53, 196, 222
+0, 176, 240
+36, 68, 120
+217, 217, 217
+89, 89, 89
+64, 64, 64
+0, 0, 0
+IV.
+Company Spotlights
+24
+
+255, 255, 255
+Cyber Services Leaders Driving the Next Era of Security
+53, 196, 222
+These companies represent the shift toward AI -enabled ops, deep technical expertise, and outcome -driven security services
+0, 176, 240
+36, 68, 120
+217, 217, 217
+HQ: Sarasota, FL HQ: New York, NY HQ: New York, NY HQ: Palo Alto, CA HQ: Atlanta, GA
+Employees: 100 Employees: 95 Employees: 143 Employees: 71 Employees: 38
+89, 89, 89
+Founder: Eric Foster CEO: Dan Guido CEO: Nazar Tymoshyk Founder: Kevin Mandia Founder: Tony UcedaVélez
+Category: AI SOC Category: Consulting Category: AI SOC Category: Offensive Security Category: Consulting
+64, 64, 64
+0, 0, 0
+HQ: San Diego, CA HQ: Austin, TX HQ: McLean, VA HQ: Washington, D.C. HQ: Jacksonville, FL
+Employees: 177 Employees: 133 Employees: 800+ Employees: 150 Employees: 73
+CEO: Lewie Dunsworth CEO: Nathan Sportsman CEO: Ira Goldstein Founder: Paul Inella CEO: Chris Freedman
+Category: Consulting Category: Consulting Category: Advanced MSS Category: Perf. Mgmt. Category: Consulting
+HQ: Dallas, TX HQ: Washington, D.C. HQ: London, UK HQ: London, UK HQ: Chicago, IL
+Employees: 68 Employees: 192 Employees: 596 Employees: 353 Employees: 64
+Founder: Yasir Khalid CEO: G. Drew Conway Founder: Richard Fleischman Founder: Joshua Beaman CEO: Mark Carney
+Category: AI SOC Category: Consulting Category: Traditional MSSP Category: Cyber Training Category: Consulting
+HQ: Edinburgh, UK HQ: Linthicum Heights, MD HQ: Dublin, IR HQ: Annapolis, MD HQ: Kansas City, MO
+Employees: 311 Employees: 219 Employees: 455 Employees: 174 Employees: 936
+CEO: Federico Charosky CEO: Brian Ahern CEO: Ian Brown CEO: Ryan Morris CEO: Chris Schueler
+Category: Advanced MSS Category: Advanced MSS Category: Advanced MSS Category: Consulting Category: Advanced MSS
+Source for employee count from LinkedIn.
+25
+
+255, 255, 255
+Perspectives From Industry Leaders
+53, 196, 222
+Insights from some of the leading cybersecurity service providers on what is shaping the future of the market
+0, 176, 240
+36, 68, 120
+217, 217, 217 “ “
+89, 89, 89 The AI shift is changing cybersecurity more rapidly than any transition in Everyone in this industry is talking about AI. Everyone else is bolting AI
+history. In a world of machine -speed attacks, defense must become onto the same services and platforms that have been failing enterprises
+64, 64, 64 autonomous. You cannot have a human in the loop for every defense for years. We started over – the only AI SOC company led by operators
+decision and expect to win. We are building the most formidable who’ve done this before, with founding engineers from the hyperscalers
+0, 0, 0
+offense to give organizations the greatest defense. It’s important to and the leading AI labs. Not bolted on. Not borrowed. Native. “
+“
+national security.
+Eric Foster
+Kevin Mandia
+Founder & CEO
+Founder & CEO
+“ “
+Our industry is changing fast. Technology Providers want to secure their
+AI adversaries are operating faster than traditional security programs
+base, and Customers are under enormous pressure to get safeguards
+can adapt. As attackers increasingly leverage AI and automation,
+deployed. Interest in closing the Demo -to-Delivery gap has never been
+organizations must move from point -in-time assessments to continuous
+so profound and partner programs are evolving to provide proper
+security validation. The future of cyber defense lies in combining AI -
+incentives. As the industry pushes into an Accountability era, legacy
+powered intelligence, automation, and elite offensive operators to “
+“ resellers will be forced to expand their role and become full blown
+uncover hidden risk, eliminate attack paths, and outpace AI -enabled
+Technology Brokers.
+adversaries.
+Ryan Morris
+Chris Freedman
+President
+Co-Founder & CEO
+26
+
+255, 255, 255
+Perspectives From Industry Leaders
+53, 196, 222
+Insights from some of the leading cybersecurity service providers on what is shaping the future of the market
+0, 176, 240
+36, 68, 120
+“
+217, 217, 217 “
+The cybersecurity services market is moving from activity to accountability. AI is accelerating
+threats and exposing what many leaders already know: more tools, more spending, and more In the era of AI -driven innovation, Agentic AI is rapidly becoming table
+89, 89, 89 compliance activity don’t automatically produce better outcomes. The firms that win will help stakes for security operations. Hyperscalers, cybersecurity vendors, and
+customers measure what matters, reduce risk, and prove cyber performance in terms executives,
+boards, and mission leaders can actually u“se. MDR providers are embedding AI agents into their platforms, accelerating
+64, 64, 64
+the shift from AI -assisted to autonomous security operations. AI is
+Paul Innella becoming a foundational component of SecOps, Threat Intelligence, and
+0, 0, 0
+CEO Incident Response. Organizations that effectively adopt and operationa“lize
+AI will gain a significant advantage in efficiency, resilience, and
+cybersecurity outcomes.
+“ Srikanth Parepally
+Co-Founder, Board of Directors, Advisor
+In a post -Mythos era, vulnerability volume explodes. Human ingenuity blended with AI
+enables prioritization grounded in business context. Continuously emulating hyper
+attacks to determine what’s reachable, exploitable, and consequential to your
+business. That is the new standard.
+“
+Mark Carney
+“
+Chief Executive Officer
+AI is going to erode multiple costly paradigms that have misled boards and security programs
+with tool-based approaches. Drowned by security noise, meaningful and well -trained AI
+implementations usher in a new era for contextualized security signal at speed within the
+“ wrapper of product threat models that are "living" and not point in time. Cybersecurity will
+ultimately fold into AI SecOps to better align how software gets securely designed, built, and
+The shift for MDR will be around “augmented intelligence” - highly trained SOC teams
+implemented. AI provides the catalyst for this, and the winners are those global consulting
+blending AI with human ingenuity. AI can bring depth of insight and speed of
+leaders that have a proven record for understanding evolving adversarial TTPs, along with
+investigation, while humans can bring critical thinking and ethical assessment.
+poignant mitigations that are not just "control" language, but implementable, testable, and
+Combined, businesses get the benefit “ of a highly efficient MDR program that maintainable countermeasures by agentic solutions using loops. Things are evolving and teams
+consistently delivers the best that are adaptable, end up being the m “ ost relevant and meaningful to helping global MNCs
+security outcomes. Brian M. Ahern grow securely and responsibly. Tony UcedaVélez
+CEO Founder & CEO
+27
+
+255, 255, 255
+TENEX AI
+53, 196, 222
+The leading AI -Native, human -led SOC that triages every alert, investigates every threat, and frees your team for strategic work
+0, 176, 240
+|     | Company Overview |     |     |     |     | Platform Overview |     |     |     |     |     |
+| --- | ---------------- | --- | --- | --- | --- | ----------------- | --- | --- | --- | --- | --- |
+36, 68, 120
+217, 217, 217
+|            | TENEX.AI                         |  is an AI -Native Managed Detection and Response  |     |                                    |     |                |                            |     |                  |                  |                     |
+| ---------- | -------------------------------- | ------------------------------------------------- | --- | ---------------------------------- | --- | -------------- | -------------------------- | --- | ---------------- | ---------------- | ------------------- |
+|            |                                  |                                                   |     |                                    |     | 100%           | 98%                        |     | <1               | 10x              | 24/7                |
+| 89, 89, 89 | (MDR) provider delivering a Next |                                                   |     | -Generation Security Operations    |     |                |                            |     |                  |                  |                     |
+|            | Center (SOC) powered by domain   |                                                   |     | -specific artificial intelligence  |     |                |                            |     |                  |                  |                     |
+|            |                                  |                                                   |     |                                    |     | Alert Coverage | False Positives Eliminated |     | Min. Triage Time | Faster Detection | Human + AI Coverage |
+64, 64, 64
+and elite human expertise.
+0, 0, 0
+|     | Built from the ground up around AI,  |                           |     | TENEX.AI |  combines              |                          |                         |     |                        |     |                      |
+| --- | ------------------------------------ | ------------------------- | --- | -------- | ---------------------- | ------------------------ | ----------------------- | --- | ---------------------- | --- | -------------------- |
+|     |                                      |                           |     |          |                        | 1. Triage                | 2. Investigate          |     | 3. Respond             |     | 4. Adapt             |
+|     | cybersecurity                        | -trained language models  |     |          | — purpose -trained on  |                          |                         |     |                        |     |                      |
+|     |                                      |                           |     |          |                        | AI scores & ranks every  | Autonomous correlation  |     | Automated remediation  |     | Models improve with  |
+threat intel and attacker tactics  — with world-class analysts to  alert in <1 min across full stack & expert guidance every analyst loop
+eliminate noise, surface real threats, and guide every decision.
+|     | Founders & Management |     |     |     |                  | Core Platform Features       |             |                                  |     |                                         |     |
+| --- | --------------------- | --- | --- | --- | ---------------- | ---------------------------- | ----------- | -------------------------------- | --- | --------------------------------------- | --- |
+|     | Eric Foster           |     |     |     | Venkata Koppaka  |                              |             |                                  |     |                                         |     |
+|     | Founder & CEO         |     |     |     | Co-Founder & CTO |                              |             |                                  |     |                                         |     |
+|     |                       |     |     |     |                  | Managed Detection            |             | Threat                           |     | Security                                |     |
+|     |                       |     |     |     |                  | & Response                   |             | Management                       |     | Automation                              |     |
+|     | Ryan Shreve           |     |     |     | Bashar Abouseido |                              |             |                                  |     |                                         |     |
+|     |                       |     |     |     |                  | 100% alert coverage with sub | -10-minute  | Autonomous threat investigation  |     | 300+ tool orchestration for consistent  |     |
+Co-Founder & CFO/COO President triage across all environments, 24/7 correlating data across security stack detection, response, and mitigation
+|     | Jan Grzymala |     | -Busse |     | Edwin Solis |     |     |     |     |     |     |
+| --- | ------------ | --- | ------ | --- | ----------- | --- | --- | --- | --- | --- | --- |
+CISO & Head of SecOps Co-Founder & CRO Incident  Domain -Specific  Hyperscaler
+|     |     |     |     |     |     | Response |     | AI Models |     | Native |     |
+| --- | --- | --- | --- | --- | --- | -------- | --- | --------- | --- | ------ | --- |
+Paul Edmonds Real-time expert guidance, automated  Cybersecurity -trained LLMs that  Deep native integration with Google,
+|     |     |     |     |     |     | remediation, and clear containment steps |     | understand attacker behavior |     | Microsoft, and AWS security ecosystems |     |
+| --- | --- | --- | --- | --- | --- | ---------------------------------------- | --- | ---------------------------- | --- | -------------------------------------- | --- |
+Chief of Staff
+28
+
+255, 255, 255
+Trail of Bits
+53, 196, 222
+Helping secure the world's most targeted organizations and products
+0, 176, 240
+| Company Overview |     |     | Platform Overview |     |     |     |     |
+| ---------------- | --- | --- | ----------------- | --- | --- | --- | --- |
+36, 68, 120
+217, 217, 217
+Trail of Bits  is a cybersecurity research and consulting firm that
+89, 89, 89 helps organizations secure critical software, systems, and
+emerging technologies through deep technical assessments and
+64, 64, 64
+expert security engineering.
+0, 0, 0
+| Built around a world | -class team of researchers and engineers,  | Trail  |              |           |               |     |                 |
+| -------------------- | ------------------------------------------ | ------ | ------------ | --------- | ------------- | --- | --------------- |
+|                      |                                            |        | 1. AI/ML Sec | 2. AppSec | 3. Blockchain |     | 4. Cryptography |
+of Bits  combines code review, vuln research, custom tooling, and
+|     |     |     | End-to-end review of AI  | Deep code, cloud &  | Security reviews across  |     | Protocol analysis by expert  |
+| --- | --- | --- | ------------------------ | ------------------- | ------------------------ | --- | ---------------------------- |
+applied R&D to uncover complex security issues, strengthen  systems architecture review blockchain systems cryptographers
+software assurance, and help clients build more secure products.
+| Founders & Management |     |     | Core Platform Features |                 |     |            |     |
+| --------------------- | --- | --- | ---------------------- | --------------- | --- | ---------- | --- |
+|                       |     |     | Manual Code            | Custom Security |     | Root Cause |     |
+|                       |     |     | Review                 | Tooling         |     | Analysis   |     |
+Dan Guido Expert analysis of critical software flaws  Purpose-built tools for deeper vulnerability  Findings tied to design and code changes
+|     |     |     | and remediation techniques | discovery and fixes |     | that retire bug classes |     |
 | --- | --- | --- | -------------------------- | ------------------- | --- | ----------------------- | --- |
 CEO
 |     |     |     | Applied  | Security    |     | Open -Source |     |
@@ -1182,4 +2195,4 @@ actual results may be materially different. This document does not constitute a 
 or an offer to sell or issue securities of any kind. To learn more about the companies that are
 the subject of this document, contact us at Jake@momentumcyber.com . 56
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-20", "model": "gemini-3.1-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-26", "model": "gemini-3.5-flash-lite"} -->
