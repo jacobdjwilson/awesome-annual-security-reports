@@ -2,12 +2,12 @@
   "schema_version": "2.0",
   "last_updated": null,
   "last_learner_run": null,
-  "total_feedback_events": 1,
+  "total_feedback_events": 2,
   "outcome_counts": {
     "true_positive": 0,
     "false_positive": 1,
     "duplicate": 0,
-    "mismatch": 0
+    "mismatch": 1
   },
   "triage_log": [],
   "url_fingerprints": {
@@ -62,6 +62,16 @@
       "org": "PaloAlto",
       "url": "https://ijsra.net/sites/default/files/fulltext_pdf/IJSRA-2026-1164.pdf",
       "outcome": "false_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-08-27T14:18:51.657124Z",
+      "issue_number": 1719,
+      "issue_title": "[Report Discovery] Censys 2026 \u2014 State of the Internet",
+      "org": "Censys",
+      "url": "https://censys.com/resources/hub/",
+      "outcome": "mismatch",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
