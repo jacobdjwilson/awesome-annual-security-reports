@@ -2,32 +2,26 @@
   "schema_version": "2.0",
   "last_updated": null,
   "last_learner_run": null,
-  "total_feedback_events": 0,
-
+  "total_feedback_events": 1,
   "outcome_counts": {
     "true_positive": 0,
-    "false_positive": 0,
+    "false_positive": 1,
     "duplicate": 0,
     "mismatch": 0
   },
-
   "triage_log": [],
-
   "url_fingerprints": {
     "seen": {},
     "blocked": []
   },
-
   "query_history": {
     "seen_queries": [],
     "last_pruned": null
   },
-
   "content_index": {
     "existing_report_keys": [],
     "last_rebuilt": null
   },
-
   "learned": {
     "signal_weight_deltas": {
       "positive": {},
@@ -52,7 +46,6 @@
     "summary": "",
     "last_gemini_analysis": null
   },
-
   "overrides": {
     "domain_blocklist": [],
     "domain_trustlist": [],
@@ -60,5 +53,17 @@
     "hard_reject_urls": {
       "urls": []
     }
-  }
+  },
+  "feedback_events": [
+    {
+      "timestamp": "2026-08-27T13:26:13.913499Z",
+      "issue_number": 1721,
+      "issue_title": "[Report Discovery] PaloAlto 2026 \u2014 Unit 42 IoT Threat Report",
+      "org": "PaloAlto",
+      "url": "https://ijsra.net/sites/default/files/fulltext_pdf/IJSRA-2026-1164.pdf",
+      "outcome": "false_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    }
+  ]
 }
