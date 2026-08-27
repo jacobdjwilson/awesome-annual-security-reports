@@ -2,11 +2,11 @@
   "schema_version": "2.0",
   "last_updated": null,
   "last_learner_run": null,
-  "total_feedback_events": 2,
+  "total_feedback_events": 3,
   "outcome_counts": {
     "true_positive": 0,
     "false_positive": 1,
-    "duplicate": 0,
+    "duplicate": 1,
     "mismatch": 1
   },
   "triage_log": [],
@@ -72,6 +72,16 @@
       "org": "Censys",
       "url": "https://censys.com/resources/hub/",
       "outcome": "mismatch",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-08-27T14:24:14.870111Z",
+      "issue_number": 1714,
+      "issue_title": "[Report Discovery] Sophos 2026 \u2014 Threat Report",
+      "org": "Sophos",
+      "url": "https://www.interpol.int/Media/Documents/Publications/Cybercrime/African-Cyberthreat-Assessment-Report-2026",
+      "outcome": "duplicate",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
