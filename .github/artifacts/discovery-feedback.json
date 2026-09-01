@@ -2,12 +2,12 @@
   "schema_version": "2.0",
   "last_updated": null,
   "last_learner_run": null,
-  "total_feedback_events": 4,
+  "total_feedback_events": 5,
   "outcome_counts": {
     "true_positive": 1,
     "false_positive": 1,
     "duplicate": 1,
-    "mismatch": 1
+    "mismatch": 2
   },
   "triage_log": [],
   "url_fingerprints": {
@@ -92,6 +92,16 @@
       "org": "Visa",
       "url": "https://www.helpnetsecurity.com/2026/05/22/visa-consumer-payment-fraud-report/",
       "outcome": "true_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-09-01T16:34:15.323755Z",
+      "issue_number": 1728,
+      "issue_title": "[Report Discovery] BioCatch 2026 \u2014 Digital Banking Fraud Trends in the United States",
+      "org": "BioCatch",
+      "url": "https://www.biocatch.com/resources",
+      "outcome": "mismatch",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
