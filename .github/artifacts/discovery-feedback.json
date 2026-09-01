@@ -2,9 +2,9 @@
   "schema_version": "2.0",
   "last_updated": null,
   "last_learner_run": null,
-  "total_feedback_events": 5,
+  "total_feedback_events": 6,
   "outcome_counts": {
-    "true_positive": 1,
+    "true_positive": 2,
     "false_positive": 1,
     "duplicate": 1,
     "mismatch": 2
@@ -102,6 +102,16 @@
       "org": "BioCatch",
       "url": "https://www.biocatch.com/resources",
       "outcome": "mismatch",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-09-01T16:42:12.926618Z",
+      "issue_number": 1726,
+      "issue_title": "[Report Discovery] Accenture 2026 \u2014 Cyber Threat Intelligence Report",
+      "org": "Accenture",
+      "url": "https://falconfeeds.io/reports/eu-cyber-threat-intel-report-july-2026/",
+      "outcome": "true_positive",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
