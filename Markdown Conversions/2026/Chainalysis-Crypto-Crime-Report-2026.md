@@ -1,126 +1,741 @@
-# The 2026 Crypto Crime Report
+The 2026 Crypto
+Crime Report
+The rising role of cryptocurrency in all forms of crime and how
+its transparency is creating unique opportunities for investigation
+1
 
-The rising role of cryptocurrency in all forms of crime and how its transparency is creating unique opportunities for investigation
+Table of Contents
 
-## Table of Contents
-- [Preface](#preface)
-- [Introduction](#introduction)
-- [Money Laundering](#money-laundering)
-- [Scams](#scams)
-- [Human Trafficking](#human-trafficking)
-- [Drugs & Darknet Markets](#drugs--darknet-markets)
-- [Ransomware](#ransomware)
-- [Sanctions & Terrorist Financing](#sanctions--terrorist-financing)
+| Preface                            |                |     |          |     |     | 1   |
+| ---------------------------------- | -------------- | --- | -------- | --- | --- | --- |
+| Introduction                       |                |     |          |     |     | 2   |
+| Money Laundering                   |                |     |          |     |     | 7   |
+| Scams                              |                |     |          |     |     | 23  |
+| Human Trafficking                  |                |     |          |     |     | 39  |
+| Drugs & Darknet Markets            |                |     |          |     |     | 49  |
+| Ransomware                         |                |     |          |     |     | 60  |
+| Sanctions & Terrorist Financing    |                |     |          |     |     | 73  |
 
----
+Preface
+Why We Publish This Research:
+Facts, Not Fear, About Crypto Crime
+In 2026, financial institutions can no longer ignore crypto – the growth of stablecoins alone demonstrates
+the demand for 24/7, instantaneous, cross-border, cheap, and easy value transfer. But the defining feature
+of this financial era is not simply growth — it is transparency. Public blockchains represent the first global
+financial infrastructure where transactions are recorded on an immutable, time-stamped ledger visible to
+anyone willing to look. That permanence and openness fundamentally reshape how markets can be
+understood. For financial institutions, this is not a marginal improvement over legacy rails; it is a structural
+paradigm shift. The ability to trace value flows across borders in near real time, to analyze counterparties
+with precision, and to observe systemic patterns at scale is something that has never been possible in
+conventional finance, where data is fragmented across institutions, jurisdictions, and proprietary systems.
+Blockchain technology, by design, creates a single source of truth.
+Our purpose in publishing this report is not to sensationalize illicit activity or amplify fear. Quite the
+opposite. The blockchain’s transparency empowers us to measure risk with clarity rather than conjecture.
+Where traditional financial crime often remains obscured behind opaque banking relationships and siloed
+reporting regimes, on-chain activity leaves immutable evidence. That visibility enables rigorous analysis,
+informed policy discussions, and smarter compliance frameworks. It allows institutions to contextualize
+illicit activity within the overwhelmingly broader growth of legitimate adoption and to distinguish between
+perception and measurable reality. In other words, the same openness that makes digital assets innovative
+also makes them uniquely measurable — and measurable systems are ultimately more governable.
+At the same time, as we make clear throughout our report, transparency does not eliminate threats.
+Rather, it illuminates them. Our latest findings show that on-chain illicit activity is increasingly interwoven
+with sophisticated, state-aligned ecosystems that exploit crypto’s global reach. In particular, the Chinese
+cybercrime ecosystem has emerged as a central node in large-scale scam operations, human trafficking,
+underground banking networks, and laundering infrastructure that service threat actors across
+jurisdictions. The convergence of criminal enterprise and geopolitics underscores why transparent financial
+infrastructure matters: it allows the private and public sectors alike to see these patterns as they form in
+real time. As adoption accelerates across both retail and institutional markets, the ability to interpret that
+transparency responsibly — and collaboratively — will define the next generation of global finance.
 
-## Preface
-### Why We Publish This Research: Facts, Not Fear, About Crypto Crime
+Introduction
+Crypto Crime Reaches Record High in
+2025 as Nation‑State Sanctions Evasion
+Moves On‑Chain at Scale
+In 2025, we tracked a notable rise in nation-state activity in crypto, marking the latest phase in the
+maturation of the illicit on-chain ecosystem. Over the past few years, the crypto crime landscape has
+become increasingly professionalized; illicit organizations now operate large-scale on-chain infrastructure
+to help transnational criminal networks procure goods and services and launder their ill-gotten crypto.
+Against that backdrop, we have seen nation-states moving into this space, both by tapping into these
+same professionalized service providers and by standing up their own bespoke infrastructure to evade
+sanctions at scale. As nation-states plug into the illicit crypto supply chains originally built for
+cybercriminals and organized crime groups, government agencies and compliance and security teams
+now face significantly higher stakes on both the consumer protection and national security fronts.
+Introduction 2
 
-In 2026, financial institutions can no longer ignore crypto – the growth of stablecoins alone demonstrates the demand for 24/7, instantaneous, cross-border, cheap, and easy value transfer. But the defining feature of this financial era is not simply growth — it is transparency. Public blockchains represent the first global financial infrastructure where transactions are recorded on an immutable, time-stamped ledger visible to anyone willing to look. That permanence and openness fundamentally reshape how markets can be understood. For financial institutions, this is not a marginal improvement over legacy rails; it is a structural paradigm shift. The ability to trace value flows across borders in near real time, to analyze counterparties with precision, and to observe systemic patterns at scale is something that has never been possible in conventional finance, where data is fragmented across institutions, jurisdictions, and proprietary systems. Blockchain technology, by design, creates a single source of truth.
+How are these and other developments manifesting on-chain? Let's examine the data and
+high-level trends.
+According to our data, illicit cryptocurrency addresses received at least $154 billion in 2025. This
+represents a 162% increase year-over-year (YoY), primarily driven by a dramatic 694% increase in the
+value received by sanctioned entities. But even if the value received by sanctioned entities were flat YoY,
+2025 would still mark a record year for crypto crime, as activity increased across most illicit categories. As
+always, we must caveat that this figure represents a lower-bound estimate based on illicit addresses
+we've identified to date.1
+These illicit volumes are still dwarfed by the broader crypto economy, which largely consists of legitimate
+transaction volumes. Our estimate for the illicit share of all attributed crypto transaction volume increased
+slightly from 2024 but remains below 1%.2
+1 A year from now, these totals will be higher as we continue to identify more illicit addresses and incorporate their historical activity
+into our estimates. For perspective, when we published last year's Crypto Crime Report, we reported $40.9 billion for 2024. One year
+later, our updated estimate for 2024 is substantially higher at $57.2 billion, with much of that growth coming from various types of illicit
+actor organizations providing on-chain infrastructure and laundering services for high-risk and illicit actors. In general, our totals
+exclude revenue from non-crypto-native crime, such as traditional drug trafficking and other crimes in which crypto may be used as a
+means of payment or laundering. Such transactions are virtually indistinguishable from licit transactions in on-chain data, although law
+enforcement with off-chain information can still investigate these crimes using Chainalysis solutions. In cases where we're able to
+confirm such information, we count the transactions as illicit in our data.
+2 To calculate the illicit share of attributed transaction volumes, we determine the denominator by calculating all inflows to known
+services across all the assets that we track, excluding internal transfers within services. We then divide the illicit value received by the
+total value received by all services.
+Introduction 3
 
-Our purpose in publishing this report is not to sensationalize illicit activity or amplify fear. Quite the opposite. The blockchain’s transparency empowers us to measure risk with clarity rather than conjecture. Where traditional financial crime often remains obscured behind opaque banking relationships and siloed reporting regimes, on-chain activity leaves immutable evidence. That visibility enables rigorous analysis, informed policy discussions, and smarter compliance frameworks. It allows institutions to contextualize illicit activity within the overwhelmingly broader growth of legitimate adoption and to distinguish between perception and measurable reality. In other words, the same openness that makes digital assets innovative also makes them uniquely measurable — and measurable systems are ultimately more governable.
+We are also observing a continued shift in the types of assets involved in crypto crime, as shown in the
+chart below.
+For the past few years, stablecoins have come to dominate the landscape of illicit transactions, and now
+account for 84% of all illicit transaction volume. This mirrors broader ecosystem trends where stablecoins
+occupy a sizable and growing percentage of all crypto activity due to their practical benefits: easy
+cross-border transferability, lower volatility, and broader utility.
+Below, we'll take a closer look at four key trends that defined crypto crime in 2025 and will be important to
+watch going forward.
+Nation-state threats drive record volumes: North Korea steals
+more than ever, and Russia's A7A5 token facilitates large-scale
+sanctions evasion
+Stolen funds remained a major threat to the ecosystem in 2025, with DPRK‑linked hackers alone stealing
+$2 billion. Devastating mega-hacks drive that total, most notably the February Bybit exploit, the largest
+digital heist in crypto history, at nearly $1.5 billion. Although North Korean hackers have long been a fixture
+of the threat landscape, the past year has been their most destructive yet, both in value stolen and in the
+sophistication of their intrusion and laundering tactics.
+Introduction 4
 
-At the same time, as we make clear throughout our report, transparency does not eliminate threats. Rather, it illuminates them. Our latest findings show that on-chain illicit activity is increasingly interwoven with sophisticated, state-aligned ecosystems that exploit crypto’s global reach. In particular, the Chinese cybercrime ecosystem has emerged as a central node in large-scale scam operations, human trafficking, underground banking networks, and laundering infrastructure that service threat actors across jurisdictions. The convergence of criminal enterprise and geopolitics underscores why transparent financial infrastructure matters: it allows the private and public sectors alike to see these patterns as they form in real time. As adoption accelerates across both retail and institutional markets, the ability to interpret that transparency responsibly — and collaboratively — will define the next generation of global finance.
+Perhaps most significantly, 2025 saw unprecedented volumes associated with nation-states’ on-chain
+behavior. While Russia introduced legislation in 2024 to facilitate sanctions evasion via crypto, these
+efforts came to fruition in February 2025, when the country launched its ruble-backed A7A5 token,
+transacting over $93.3 billion in less than one year.
+Meanwhile, over the past several years Iran's proxy networks have continued to facilitate money
+laundering, illicit oil sales, and procurement of arms and commodities on-chain to the tune of $2+ billion
+through confirmed wallets identified in sanctions designations. Iran-aligned terrorist organizations,
+including Lebanese Hezbollah, Hamas, and the Houthis, are using cryptocurrency at scales never before
+observed, in spite of various military setbacks.
+Chinese money laundering networks dominate the landscape
+2025 has seen the emergence of Chinese money laundering networks (CMLNs) as a dominant force in the
+illicit on-chain ecosystem. These sophisticated operations have dramatically expanded the trend of crypto
+crime’s diversification and professionalization, offering a wide variety of specialized services including
+laundering-as-a-service and other criminal infrastructure. Building on the framework established by
+operations like Huione Guarantee, these networks have created full-service criminal enterprises that
+support everything from fraud and scams to North Korean hack proceeds, sanctions evasion, and terrorist
+financing.
+Full-stack illicit infrastructure providers facilitate malicious
+cyber activity
+While nation‑state use of crypto is rising, more “traditional” cybercrime remains very much alive:
+ransomware operators, CSAM platforms, malware distributors, scammers, and illicit marketplaces still
+depend on a dense layer of enablers to stay effective. Illicit actors and nation‑states alike are increasingly
+reliant on infrastructure providers that offer a full stack of services and are themselves visible on‑chain,
+including domain registrars, bulletproof hosting services, and other technical infrastructure that can be
+leveraged for malicious cyber activity.
+These infrastructure providers have evolved from niche hosting resellers into integrated infrastructure
+platforms designed to withstand takedowns, abuse complaints, and sanctions enforcement. As these
+offerings continue to scale, they are likely to play a key role in supporting financially motivated criminals
+and state-aligned actors alike to amplify the reach of malicious cyber activity.
+The rising intersection of crypto and violent crime
+Many people still picture crypto crime as something purely virtual — faceless bad actors behind keyboards
+rather than threats that manifest in the physical world. In reality, we’re seeing growing connections
+between on-chain activity and violent crime. Human trafficking operations have increasingly leveraged
+cryptocurrency, while there has also been a particularly disturbing rise in physical coercion attacks, in
+which criminals use violence to force victims to transfer assets, often timing these assaults to coincide with
+cryptocurrency price peaks.
+Introduction 5
 
----
+As we move forward, cooperation among law enforcement, regulatory bodies, and crypto businesses will
+be crucial in combating these evolving and converging threats. While the overall percentage of illicit
+activity remains small relative to legitimate crypto usage, the stakes have never been higher for
+maintaining the integrity and security of the cryptocurrency ecosystem.
+Introduction 6
 
-## Introduction
-### Crypto Crime Reaches Record High in 2025 as Nation‑State Sanctions Evasion Moves On‑Chain at Scale
+Money Laundering
+Chinese Language Money Laundering
+Networks Emerge as Major Facilitators
+of the Illicit Crypto Economy, Now Driving
+20% of Laundering Activity
+The on-chain money laundering ecosystem — a portion of the overall illicit crypto ecosystem that reflects
+the laundering of funds rather than the underlying inflows associated with illicit activity — has grown
+dramatically in recent years, increasing from $10 billion in 2020 to over $82 billion in 2025.3 This
+substantial topline growth reflects the growing accessibility and liquidity of cryptocurrencies, as well as a
+fundamental shift in how this laundering activity occurs and by whom.
+As shown in the chart below, Chinese-language money laundering networks (CMLNs) have increased their
+share of known illicit laundering activity to approximately 20% in 2025. This regional connection is further
+evidenced by the off-ramping patterns we observe. To take one example, as we highlighted in the scams
+chapter of this report, CLMNs have grown to now consistently launder over 10% of funds stolen in pig
+butchering scams, coinciding with a steady decline in the use of centralized exchanges, potentially because
+exchanges can freeze funds.
+Compared to other laundering endpoints, since 2020, inflows to identified CMLNs grew 7,325 times faster
+than those to centralized exchanges, 1,810 times faster than those to decentralized finance (DeFi), and
+2,190 times faster than intra-illicit on-chain flows. While CMLNs are by no means the only facilitator of
+on-chain laundering, Chinese-language Telegram-based services now account for a disproportionate
+share of the attributed global on-chain money laundering landscape. In doing so, they process funds from
+a wide range of on- and off-chain criminal activity.
+3 This is a lower bound estimate based on CMLN activities; it only reflects services attributed by Chainalysis and does not include
+Guarantee Services.
+Money Laundering 7
 
-In 2025, we tracked a notable rise in nation-state activity in crypto, marking the latest phase in the maturation of the illicit on-chain ecosystem. Over the past few years, the crypto crime landscape has become increasingly professionalized; illicit organizations now operate large-scale on-chain infrastructure to help transnational criminal networks procure goods and services and launder their ill-gotten crypto. Against that backdrop, we have seen nation-states moving into this space, both by tapping into these same professionalized service providers and by standing up their own bespoke infrastructure to evade sanctions at scale. As nation-states plug into the illicit crypto supply chains originally built for cybercriminals and organized crime groups, government agencies and compliance and security teams now face significantly higher stakes on both the consumer protection and national security fronts.
+Recent enforcement actions against money laundering facilitation networks, including sanctions
+designations and advisories, have shined a light on the national security threat impacting victims
+worldwide. These actions include the designation of the Prince Group by the U.S. Treasury Department’s
+Office of Foreign Assets Control (OFAC) and the Office of Financial Sanctions Implementation (OFSI) by HM
+Treasury in the UK, the Financial Crimes Enforcement Network (FinCEN)'s Final Rule designating Huione
+Group as a primary money laundering concern, and FinCEN’s advisory on Chinese money laundering
+networks.
+While these major facilitators have rightfully been attracting more attention in recent months, this chapter
+for the first time takes a deeper look at how these extensive underground laundering networks use
+cryptocurrency and analyzes the scale of these ecosystems. These money laundering networks operate
+openly across various platforms and demonstrate complex, multi-layered operations characterized by
+industrial-scale processing capacity, operational resilience, and technical sophistication.
+Money Laundering 8
 
-According to our data, illicit cryptocurrency addresses received at least $154 billion in 2025. This represents a 162% increase year-over-year (YoY), primarily driven by a dramatic 694% increase in the value received by sanctioned entities. But even if the value received by sanctioned entities were flat YoY, 2025 would still mark a record year for crypto crime, as activity increased across most illicit categories. As always, we must caveat that this figure represents a lower-bound estimate based on illicit addresses we've identified to date.[^1]
+The $16.1 billion scope and scale of CMLNs
+We have identified six discrete service types that make up the CMLN ecosystem, which we will examine in
+the sections ahead. Together, these services processed $16.1 billion in inflows in 2025. The number of
+active entities that comprise these networks has risen from a small handful only a few years ago to over
+1,799 active on-chain wallets in 2025.
+The speed to scale of these operations is equally concerning. The time it takes for each service type to
+process $1 billion since the first known address of its category receives funds reveals both a remarkably
+rapid time-to-scale and striking differences between service types. Black U services reached this milestone
+in just 236 days, while running point brokers required 843 days and OTC services 1,136 days. Money mules
+(1,277 days) and money movement services (1,790 days) operate more slowly, while gambling insider
+services have yet to reach the billion-dollar threshold. Overall, the CMLN ecosystem in 2025 is processing
+almost $44 million per day.
+Money Laundering 9
 
-These illicit volumes are still dwarfed by the broader crypto economy, which largely consists of legitimate transaction volumes. Our estimate for the illicit share of all attributed crypto transaction volume increased slightly from 2024 but remains below 1%.[^2]
+These networks’ rapid time-to-scale suggests they are tightly interwoven with off-chain criminal networks,
+as growth of this magnitude would be hard to achieve without significant capital pools put into play. It also
+reveals a sophisticated on-chain and off-chain operational infrastructure. At the center of this ecosystem
+sit guarantee platforms — centralized marketplaces that have become the anchor for CMLN operations.
+As Tom Keatinge, Director at Centre for Finance & Security (CFS) at RUSI, told us, “Very rapidly, these
+networks have developed into multi-billion dollar cross-border operations offering efficient,
+value-for-money laundering services that suit the needs of transnational organized crime groups across
+Europe and North America. As to why these networks have developed so fast, the short answer is that
+they are an unforeseen consequence of the imposition of capital controls in China. Wealthy individuals
+seeking to move money out of China and evade these controls provide the impetus and liquidity pool
+needed to service organized crime groups based in the West. The professional enablers of this capital flight
+provide the services necessary to match these two independent yet mutually beneficial needs.”
+Money Laundering 10
 
-![Chart showing the shift in types of assets involved in crypto crime]
+Similarly, Chris Urben, Managing Director at Nardello & Co explained to us that “the biggest change in
+Chinese money laundering networks in recent years is a rapid transition to crypto from reliance on informal
+value transfer systems like the traditional Black Market Peso or Fei Qian approaches to underground
+banking. Crypto offers an efficient way to discreetly move funds across borders without having to rely on
+the complex manual network of informal ledgers in various countries that used to be the norm.”
+Guarantee platforms: the anchor of the CMLN ecosystem
+Guarantee services function primarily as marketing venues and escrow infrastructure for CMLNs. While
+they provide trust mechanisms for vendors, they don't control the underlying laundering activity and aren’t
+included in our total metric. Huione and Xinbi have dominated the market for the past few years, and many
+other guarantee services continue to operate freely.
+While Huione’s guarantee operations were disrupted after Telegram removed some of their accounts,
+vendors using Huione have continued to use or advertise on alternative platforms, their operations
+uninterrupted. While these hubs continue to connect vendors and buyers, most vendors promote
+advertisements across platforms and are not reliant on any specific service. As with legitimate
+e-commerce platforms, service ratings and reviews create accountability within the illicit ecosystem, and
+vendors often cultivate their market reputation through public attestations of their reliability and service
+quality, as shown in the screenshot below.
+Screenshot showing vendor’s service quality claims, with conspicuous display of cash
+likely as proof of liquidity and reserves (machine translated from original Mandarin text).
+Money Laundering 11
 
-For the past few years, stablecoins have come to dominate the landscape of illicit transactions, and now account for 84% of all illicit transaction volume.
+CMLNs advertising on these guarantee services offer a range of money laundering techniques with the
+primary goal of integrating illicit funds into the legitimate financial system. Some leverage vast networks of
+money mules for access to mainstream crypto exchange laundering, while others operate their own
+on-chain laundering infrastructure. These laundering methodologies represent distinct approaches to
+achieving the same goal: cleaning dirty money.
+The six CMLN typologies
+CMLNs offer a wide variety of laundering-as-a-service businesses. Our analysis of Chinese-language
+vendor posts reveals that these services deploy six primary money movement techniques: running point
+brokers, money mules, OTCs, Black U services, gambling platforms, and money movement services that
+offer mixing and swapping of crypto assets. These operations involve thousands of vendors processing
+tens of billions of dollars. Understanding how these entities operate and form a comprehensive laundering
+network provides crucial insights into potential disruption opportunities. Below, we examine these service
+categories in detail.
+1. Running point brokers: the initial entry channel
+In the money laundering process, "running points" (跑分) serve as the critical entry channel for illicit fund
+transfers. Individuals are recruited, typically through vendor advertisements, to rent out their financial
+identities, providing bank accounts, digital wallets, or deposit addresses at mainstream exchanges to
+receive and forward fraudulent proceeds.
+Advertisements explicitly warn participants that they bear all legal consequences and economic losses
+when authorities intervene, leaving no doubt that the activity is illicit.
+Money Laundering 12
 
-#### Nation-state threats drive record volumes
-Stolen funds remained a major threat to the ecosystem in 2025, with DPRK‑linked hackers alone stealing $2 billion. Devastating mega-hacks drive that total, most notably the February Bybit exploit, the largest digital heist in crypto history, at nearly $1.5 billion. 
+Originally concentrated in online gambling operations, running points’ services have expanded to facilitate
+the full spectrum of illicit activities that leverage crypto for laundering, including romance scams, exchange
+heists, and Telegram-based human trafficking operations. This broad adoption reflects their fundamental
+utility: they provide the crucial bridge between legitimate financial systems and the criminal underground.
+As illustrated in the Chainalysis Reactor graph below, running point brokers function as routing
+mechanisms for various illicit sources, ultimately sending funds to accounts — likely under a mule’s name
+— at mainstream exchanges. Notable destinations include other laundering services, mainstream
+exchanges to convert to fiat, and platforms associated with the Huione Group ecosystem.
+2. Money mule motorcades: the laundering intermediaries
+While “running points” serve as access points to exchanges, money mules, or “motorcades,” (车队)
+orchestrate the complex layering phase of money laundering. These specialized operators form networks
+of accounts and wallets to obscure fund origins through multiple transactions.
+Money mule operations use a number of methods to convert between fiat and crypto, and vice-versa. This
+includes offline services where dealers meet customers in person; ATM cash withdrawals converted to
+crypto; digital wallet transfers through third-party payment platforms, and card-based schemes using
+credit cards and gift cards in exchange for crypto. Vendors openly advertise accepted financial institutions,
+crypto exchanges, and payment methods, although the actual arrangements with card merchants and
+intermediaries occur privately outside public Telegram channels.
+Although we are unable to ascertain the nationality of the money mule motorcades based on Telegram
+posts alone, these posts are almost exclusively in Mandarin and often allude to bank accounts and
+locations in Mainland China, suggesting these money laundering vendors are likely primarily serving
+Chinese-speaking clientele. Recent research from the Royal United Service Institute (RUSI) has pointed to
+the growing involvement of Chinese organized crime. These networks, as well as legitimate crypto use,
+have continued to thrive in spite of China’s sweeping crypto ban. Chinese authorities have focused on
+selective crackdowns and AML enforcement – tacitly allowing or ignoring some forms of crypto activity
+while aggressively targeting anything that threatens the country’s capital controls or financial stability.
+Beyond domestic operations, these networks readily offer specialized services for cross-border funds
+transfers through global payment methods and foreign currencies. Vendor operations boast their
+significant geographical reach. In Telegram posts, certain vendors claim to be able to coordinate “fleets”
+(likely referring to collections of motorcades and money mules) across Africa, suggesting the global reach
+of CMLN operations is growing well beyond China and East Asia. “CMLOs rightly view crypto as having
+less Know Your Customer compliance than traditional banks and crypto transactions, which decrease the
+risk and increase the speed of the laundering process,” notes Urben. “Finally, crypto makes it far easier to
+physically move large holdings across borders: you can carry billions of BTC in a cold wallet stored on a
+hard drive stuffed into your pocket.”
+Money Laundering 13
 
-Perhaps most significantly, 2025 saw unprecedented volumes associated with nation-states’ on-chain behavior. While Russia introduced legislation in 2024 to facilitate sanctions evasion via crypto, these efforts came to fruition in February 2025, when the country launched its ruble-backed A7A5 token, transacting over $93.3 billion in less than one year.
+Typical advertisement by a motorcade recruiter, which mentions a “ponzi scheme” and the types of cards
+and entities they work with, such as UnionPay, AliPay, WeChat, and API.
+Vendor Telegram post advertising money movement in five African countries, suggesting cross-border
+funds movement has reached well beyond Asia (machine translation on right).
+.
+Money Laundering 14
 
-#### Chinese money laundering networks dominate the landscape
-2025 has seen the emergence of Chinese money laundering networks (CMLNs) as a dominant force in the illicit on-chain ecosystem. These sophisticated operations have dramatically expanded the trend of crypto crime’s diversification and professionalization, offering a wide variety of specialized services including laundering-as-a-service and other criminal infrastructure.
+A recurring theme across advertisements offering money movement services is the pronounced emphasis
+on urgency, discretion, and speed. Vendors often stress the need to transfer funds rapidly to prevent fund
+freezes, while offering cursory guidance to their customers on navigating complications arising from funds
+and accounts that have already been restricted by financial institutions and crypto exchanges.
+Within guarantee platforms, the movement of funds orchestrated by running point brokers and money
+mules constitute a large portion of the advertised offerings. The striking similarities in how advertisements
+are worded and structured suggest that these operators likely function either within larger umbrella
+organizations or maintain strategic collaborative relationships with one another. Collectively, these money
+movement services form the backbone of the money laundering infrastructure within the underground
+banking ecosystem.
+The United Nations Office on Drugs and Crime (UNODC) provides the most apt description of this
+relationship: motorcades function as extensions of running point syndicates, offering sophisticated layering
+schemes by routing illicit funds through multiple bank accounts in exchange for a cut of the total
+transferred funds. The UNODC’s 2024 report on casinos, money laundering, and transnational organized
+crime in East and Southeast Asia also highlights the use of third-party and fourth-party payment
+providers. These networks often indicate high levels of connectivity, suggesting layers of payment services
+may be operating as fronts by the same groups to facilitate laundering.
+3. Informal over-the-counter (OTC) and peer-to-peer (P2P) services:
+Circumventing controls
+Informal OTC trade desks offer another critical laundering pathway. Unlike their legitimate counterparts,
+these services operate without regulatory oversight or jurisdictional affiliation and deliberately circumvent
+capital controls required in highly controlled markets, such as China. By processing fund transfers without
+Know Your Customer (KYC) verification, they present an attractive option for users seeking to move assets,
+especially those of suspicious origins.
+Many OTC vendors explicitly advertise "clean funds" or "White U." Exchange rates displayed transparently
+in vendor posts often exceed market rates, reflecting the premium charged for regulatory evasion. These
+services process both domestic and cross-border transfers, expanding the geographic reach of illicit fund
+flows.
+However, on-chain analysis contradicts "clean fund" claims. These supposedly legitimate OTC services
+maintain extensive connections with Huione and other guarantee platforms, revealing their deep
+integration within the broader CMLN ecosystem. The same vendors advertising "White U" regularly
+interact with confirmed money laundering services, demonstrating that informal OTC desks can function as
+critical bridges for illicit cryptocurrency.
+Money Laundering 15
 
-#### Full-stack illicit infrastructure providers facilitate malicious cyber activity
-Illicit actors and nation‑states alike are increasingly reliant on infrastructure providers that offer a full stack of services and are themselves visible on‑chain, including domain registrars, bulletproof hosting services, and other technical infrastructure.
+4. Black U services: Discounted rates for tainted assets
+Operating primarily outside guarantee platforms, "Black U" services occupy a unique niche in the CMLN
+ecosystem, and are the inverse of the informal “White U” OTCs. These vendors specialize in cryptocurrency
+derived from illicit sources, such as hacking campaigns, exploit attacks, scams, and wallet theft — and
+openly state this in their advertisements. Their business model involves selling illicit cryptocurrency at a
+discounted rate.
+Buyers purchase illicitly sourced funds, sometimes 10-20% lower than standard rates in exchange for
+accepting assets with criminal provenance. This compensates buyers for assuming potential legal
+exposure and the risk of fund seizure.
+The operational structure of Black U services reveals sophisticated coordination. Across different vendors,
+the front-end websites of Black U services often display nearly identical layouts with only superficial
+variations in domain names and branding. Telegram channels exhibit the same pattern. These
+infrastructural commonalities point to two possibilities: either these seemingly independent operations
+function as compartmentalized units within a single organization, or they represent a coordinated network
+maintaining operational consistency.
+Money Laundering 16
 
-#### The rising intersection of crypto and violent crime
-We’re seeing growing connections between on-chain activity and violent crime. Human trafficking operations have increasingly leveraged cryptocurrency, while there has also been a particularly disturbing rise in physical coercion attacks.
+5. Gambling services: Traditional laundering goes digital
+While not inherently illicit in many jurisdictions, gambling services have been used for both traditional and
+crypto-based laundering due to their high cash volumes, frequent transactions, and built-in mechanisms
+for converting funds. Both casinos and online betting platforms offer users an effective way to place, layer,
+and integrate proceeds into the legitimate financial system, especially because they provide plausible
+explanations for sudden wealth.
+Many of these gambling services accept crypto and do not require KYC details. Third-party payment
+providers facilitate account top-ups using both fiat and crypto, with some processors handling recharges
+across multiple gambling sites, allowing for cross-platform fund movement. Additionally, some Telegram
+vendors offer insider tips suggesting predicted or rigged outcomes, with advertisements guaranteeing
+compensation if customers' "winning numbers" are not selected. This further suggests that some gambling
+services are not just a conduit for laundering, but taking an active role in facilitating fixed outcomes.
+Post stipulating the service operations of a gambling service vendor offering rigged outcomes
+for lottery-type betting. It includes compensation details if the winning numbers are not picked.
+The Reactor graph below illustrates how gambling services can be used by insiders, where the insider
+extracts the fixed outcome proceeds from the gambling platform, then continues the laundering process by
+sending onward through additional money laundering services, such as Black U services and money mules.
+On-chain activity indicates the gambling insider operators send funds back into the gambling platforms
+as well.
+Money Laundering 17
 
----
+6. Money movement services: mixing and swapping-as-a-service
+Fund mixing to obfuscate transaction origins is well-established in sophisticated cyber heists. Professional
+mixing services, including Tornado Cash and Blender.io, earned international notoriety when they were
+sanctioned by the US government for their role in laundering stolen funds, with Tornado Cash later being
+de-listed by OFAC.
+Within Southeast Asia’s underground banking ecosystem, specialized vendors across guarantee service
+platforms offer swapping-as-a-service to enable clients to convert their crypto into multiple assets. These
+swap services have found regional footing, especially among illicit actors active in Southeast Asia, China,
+and even North Korea, providing a laundering mechanism for those seeking to keep funds on-chain.
+Money Laundering 18
 
-## Money Laundering
-### Chinese Language Money Laundering Networks Emerge as Major Facilitators of the Illicit Crypto Economy, Now Driving 20% of Laundering Activity
+On-chain data reveals CMLN financial flows resemble
+traditional money laundering phases
+Analysis of transaction flows through CMLN services exposes industrial-scale deployment of traditional
+money laundering methodologies. The following chart tracks how different services fragment and
+consolidate illicit funds, revealing clear patterns of "structuring" (smurfing) and "aggregation" as funds
+move through the laundering cycle.
+This quantitative framework can help identify services and their roles within the broader money laundering
+ecosystem, potentially even when an entity's true operating mechanism is not yet known.
+Black U services epitomize aggressive structuring behavior, with small (<$100) and medium ($100-$1000)
+transactions increasing by 467% and 180% respectively from inflow to outflow. These services also
+consistently fragment funds across more wallets, with very large transfers (>$10K) reaching 51% more
+destination wallets than source wallets. Money mules and money movement services, to a lesser but still
+significant degree, act likewise. In these cases, the shift toward smaller transactions and more
+counterparties represents textbook smurfing: breaking down large criminal proceeds to evade detection
+thresholds.
+Money Laundering 19
 
-The on-chain money laundering ecosystem has grown dramatically in recent years, increasing from $10 billion in 2020 to over $82 billion in 2025.[^3]
+Gambling insiders, running point brokers, and OTC services operate as the ecosystem's primary
+aggregators. For these services, incoming transfers across almost all denominations exceed outgoing
+transactions, suggesting these services pool funds from multiple points and send them out in bulk batches
+to fewer counterparty wallets on-chain. For the OTC services in particular, this consolidation pattern
+reflects their role in the integration phase — collecting numerous small deposits into wholesale amounts
+suitable for reintroduction into legitimate financial systems.
+CMLNs prioritize VIP customers; most illicit funds are
+moved in minutes
+The speed at which funds move through the different laundering services also reveal distinct patterns. In
+the charts below, we see that regardless of the laundering typology, high value transfers are prioritized.
+However, the services that build automated laundering mechanisms tend to become more efficient across
+any transfer value amount with time. Those that rely on manual mechanisms still tend to prioritize higher
+value transfers, but are less efficient at moving smaller transfers.
+Black U services show the highest efficiency when it comes to processing funds, with very large
+transactions cleared on average in 1.6 mins in Q4 2025. The operational imperative to move illicit funds
+rapidly is likely a major contributing factor shaping the technical infrastructure of Black U services. In
+several of these services, self-service swapping mechanisms are also available. Customers simply provide
+Money Laundering 20
 
-As shown in the chart below, Chinese-language money laundering networks (CMLNs) have increased their share of known illicit laundering activity to approximately 20% in 2025. 
+their desired exchange amount and destination address, and the system executes the swap automatically.
+This automation serves a dual purpose: accelerating the laundering process while minimizing operational
+overhead and reducing the digital footprint that manual processing creates.
+Similarly, gambling operations use integrated payment solutions to process substantial daily transaction
+volumes. These automated systems enable these platforms to handle large-scale financial flows efficiently,
+with funds deposited and cleared rapidly.
+In contrast, money mules and running points exhibit far less consistency in transaction clearing patterns.
+These networks remain predominantly manual, requiring recruited individuals to actively process
+transactions in real-time using their personal bank accounts or digital wallets. This human element
+introduces variability into the laundering process, creating timing variations that differ from the consistent
+processing signatures of automated services.
+Screenshot showing a post from a money movement vendor. Note the fleet operator’s conditions: same-day or last minute requests are
+subject to availability of money mules or personnel. For long-distance trips, the operator also stipulates a surcharge of RMB 30,000
+(roughly equivalent to USD 4,220).
+Money Laundering 21
 
-![Chart showing CMLN growth compared to other laundering endpoints]
+Combating crypto-integrated laundering networks through
+public-private collaboration
+Chinese-language guarantee platforms, money movement services, and associated financial crime
+networks reveal a complex and resilient ecosystem that continues to adapt despite enforcement efforts. As
+with other genres of illicit on-chain activity, actions against guarantee services can be disruptive, but the
+core networks persist and migrate to alternative channels when challenged.
+The scale and integration of these operations present significant challenges for financial crime compliance,
+intelligence, and law enforcement efforts. Effective disruption requires targeting the illicit operators and
+vendors themselves, in addition to their advertising venues. These networks form the critical infrastructure
+enabling the conversion of illicit proceeds from fraud, scams, and other criminal activities into seemingly
+legitimate assets at scale.
+More importantly, while CMLNs play an outsized role in crypto-enabled money laundering, they are not the
+only laundering networks to have adapted technologically. In December 2024, the United Kingdom’s
+National Crime Agency (NCA) disrupted a multi-billion dollar Russian-language money laundering network
+which provided services to a wide range of illicit actors, including Russian and international elites,
+cybercriminals, and drug gangs. As Keatinge noted, “There is a chasm in most countries between the
+capabilities of criminals and law enforcement when it comes to crypto use. A combination of
+nationally-based laws, barriers created by borders, poor information sharing, and limited crypto tracing
+and asset recovery capabilities mean that crypto offers criminals a low risk/high reward method of
+benefiting from their criminality. Whilst blockchain tracing companies have provided welcome assistance in
+some cases, this capacity building is just the tip of the iceberg. A systemic global effort to upskill the crypto
+capabilities of law enforcement around the world and create better information sharing mechanisms is
+urgently needed.”
+Addressing the challenge of crypto-integrated laundering networks demands coordinated public-private
+partnership and a paradigm shift from reactive enforcement against individual platforms toward proactive
+disruption of underlying networks. Urben emphasized that “the most effective investigative strategy is to
+match your investigative tools against the operational approach of the CMLOs. To detect these money
+laundering networks, you need to rely on open source and human source intelligence combined with
+blockchain analysis. Only when these tools work together, and develop leads that feed into each other, will
+you be able to match the players to the currency movements and map the networks.”
+By combining law enforcement's legal authorities with the private sector's technical capabilities and
+blockchain analytics expertise, the industry can more effectively identify and dismantle these services
+operating across multiple platforms, jurisdictions, and communication channels. On-chain transparency
+provides unprecedented visibility into these operations — when paired with cross-platform intelligence
+sharing and coordinated enforcement actions, these tools enable stakeholders to increase the cost and risk
+of operating large-scale money laundering services. Future intervention strategies must prioritize this
+collaborative approach to achieve meaningful, lasting disruption of crypto-integrated laundering networks,
+including CMLN operations.
+Money Laundering 22
 
-#### The $16.1 billion scope and scale of CMLNs
-We have identified six discrete service types that make up the CMLN ecosystem. Together, these services processed $16.1 billion in inflows in 2025. The number of active entities that comprise these networks has risen to over 1,799 active on-chain wallets in 2025.
+Scams
+Record $17 Billion Estimated Stolen in
+Crypto Scams and Fraud in 2025 as
+Impersonation Tactics and
+AI Enablement Surge
+In 2025, cryptocurrency scams received at least $14 billion on-chain, a significant increase from the $9.9
+billion we first reported in 2024, which reached $12 billion at our recalculation as of this writing – a number
+that was broadly in line with our projected $12.4B for the year. Based on historical trends, in which our
+annual estimates grow by an average of 24% between reporting periods, we project that the 2025 figure
+could exceed $17 billion as we identify more illicit wallet addresses in the coming months.
+Scams 23
 
-#### Guarantee platforms: the anchor of the CMLN ecosystem
-Guarantee services function primarily as marketing venues and escrow infrastructure for CMLNs. 
+This year's data show scammers continuing to adapt and innovate, with the average scam payment
+increasing from $782 in 2024 to $2,764 in 2025, a growth of 253% YoY. Overall scam inflows have also
+surged, particularly through impersonation tactics that saw a staggering 1400% year-over-year (YoY)
+growth. While high-yield investment programs (HYIP) and pig butchering remain dominant categories by
+volume, we're seeing increasing convergence across scam types as fraudsters leverage AI, sophisticated
+SMS phishing services, and complex money laundering networks to target victims more effectively than
+ever before.
+Traditional scam categorizations are becoming less distinct as fraudsters incorporate multiple tactics into
+their operations. For example, many pig butchering and investment scams incorporate elements of
+impersonation, social engineering, and even technical- or wallet-focused scams.
+Impersonation scams see explosive growth
+Impersonation scams have emerged as a particularly concerning trend, growing more than 1400%
+compared to 2024, with the average severity (i.e., amount) of payments made to these clusters increasing
+by over 600%. These scams involve fraudsters posing as legitimate organizations or authority figures to
+manipulate victims into transferring funds.
+Government impersonation: The E-ZPass scam network
+Government impersonation has become an effective tactic, with scammers leveraging the inherent trust
+people place in official communications. One of the most prolific examples was the widespread "E-ZPass"
+phishing campaign that targeted millions of Americans using the E-ZPass electronic road toll collection
+system in 2025.
+Image of Fake E-ZPass text, Source: Cisco Talos
+Scams 24
 
-![Screenshot showing vendor’s service quality claims, with conspicuous display of cash]
+This operation was attributed to a Chinese-speaking cybercriminal group known as "Darcula" also known
+as the “Smishing Triad.” This China-based cybercrime network used phishing-as-a-service tools to
+distribute SMS messages impersonating toll collection agencies, particularly targeting E-ZPass users
+across at least eight states. This group specializes in these tactics and has also impersonated the U.S.
+Postal Service.
+According to Google's lawsuit, filed in November 2025, Smishing Triad leveraged software from
+“Lighthouse,” a Chinese-language vendor that offers cybercriminals "phishing for dummies," with hundreds
+of templates for fake websites, domain setup tools, and features designed to evade detection.
+The group created fraudulent websites mimicking government agencies, including the New York City
+government official website (nyc.gov) and New York E-ZPass (e-zpassny.com), designed to be
+indistinguishable from the legitimate websites they impersonated.
+Source: Google Phishing Lawsuit Complaint
+In addition to illustrating how cybercriminals leverage infrastructure purchased with cryptocurrency to
+carry out criminal activity, this case shows how the on-chain footprints left by cybercriminals generate
+actionable disruption opportunities. As depicted in the graph below, various Chinese criminal underground
+entities, such as the Taihe Gong scamming group, have purchased Lighthouse phishing kits and received
+payments from several Chinese-language money laundering networks (CMLNs) and fraud shops. Taihe
+Gong comprises Chinese-speaking operators suspected of engaging in fraudulent cybercriminal activities,
+including the sale of phishing kits. Its operational structure suggests established distribution channels for
+malicious tools designed to facilitate illicit activity, such as online scams and credential theft.
+Scams 25
 
-#### The six CMLN typologies
-1. **Running point brokers**: The initial entry channel.
-2. **Money mule motorcades**: The laundering intermediaries.
-3. **Informal over-the-counter (OTC) and peer-to-peer (P2P) services**: Circumventing controls.
-4. **Black U services**: Discounted rates for tainted assets.
-5. **Gambling services**: Traditional laundering goes digital.
-6. **Money movement services**: Mixing and swapping-as-a-service.
+Taihe Gong and other Chinese criminal underground entities have purchased Lighthouse phishing kits and
+received payments from several Chinese-language money laundering networks (CMLNs) and fraud shops.
+This includes Black U services, which offer facilitation of laundering of stolen/illicitly obtained U.S.
+denominated stablecoins (i.e., Black U).
+The E-ZPass case demonstrates how cheap the scamming infrastructure is, with some phishing kits likely
+purchased for under $500. But a relatively inexpensive scam at scale can still have a massive impact: the
+E-ZPass scheme allegedly reached 330,000 texts in a single day as part of a separate toll fee scam
+campaign, amassing $1 billion over three years and duping over 1 million people in at least 121 countries,
+according to Google’s lawsuit. According to Cisco Talos, the phishing kits had different pricing tiers,
+including $50 in cryptocurrency for a “full-feature development,” $30 for proxy development, and $20 for
+version updates and support. Lighthouse received over 7,000 deposits and amassed over $1.5 million in
+cryptocurrency in three years.
+Scams 26
 
-![Screenshot of a motorcade recruiter advertisement]
-![Screenshot of a vendor Telegram post advertising money movement in five African countries]
+Unfortunately, Lighthouse is not the only vendor. Gary Warner, Director of Intelligence at DarkTower, is
+tracking eight major Chinese-language "Crime-as-a-Service" groups on Telegram, each of which has
+multiple vendors offering iMessage and RCS phishing services. The goal of these phish, according to
+Warner, is to load credit cards onto mobile wallets, then deploy to a network of shoppers around the world
+who facilitate trade-based money laundering by purchasing luxury goods and electronics for resale, often
+using "remote Tap-to-Pay" services. Everything from phishing design, hosting, and spamming, to
+shopping, cash-pickup, and goods purchasing is available in these Chinese criminal Telegram groups, some
+of which have more than 300,000 members. All buying, selling, and advertising are done using stablecoins
+as the currency of choice. Warner adds that much of the overseas money laundering also aims to convert
+goods or cash into stablecoins for easy transmission back overseas.
+Private sector impersonation: Coinbase impersonation campaign
+In December 2025, the Brooklyn District Attorney's office indicted Ronald Spektor, a 23-year-old Brooklyn
+resident, for orchestrating a sophisticated cryptocurrency scam that defrauded victims of nearly $16
+million. Spektor and his conspirators impersonated Coinbase customer service representatives, contacting
+users – whose information they had stolen in a bribery scheme – with alarming claims about unauthorized
+access to their accounts and convincing them to transfer their cryptocurrency to "secure" wallets controlled
+by the scammers. The recent arrest in India of a former Coinbase customer service agent who allegedly
+accepted $250,000 in bribes as part of this scam underscores how human trust remains among the most
+exploitable vulnerabilities in security infrastructures, as this insider breach compromised nearly 70,000
+customers' data and enabled credible impersonation attacks despite robust technical safeguards.
+The scheme specifically targeted cryptocurrency exchange users by exploiting their trust in what appeared
+to be legitimate customer service communications, demonstrating how impersonation scams have evolved
+to leverage users' anxieties about account security. This case exemplifies the growing sophistication of
+exchange impersonation tactics and their devastating impact on victims who believed they were protecting
+their digital assets. As Brooklyn District Attorney Gonzalez said, “My office…will continue to root out every
+instance of cryptocurrency fraud, which is a serious problem that’s been exploding throughout the country.
+We will investigate offenders using the latest technology, freeze their assets whenever possible, and assist
+the victims.”
+Following funds from impersonation scams demonstrates evolving DeFi
+laundering tactics
+Impersonation scams also have distinctive laundering patterns that rely heavily on the DeFi ecosystem.
+This trend contrasts sharply with other scams, which continue to rely heavily on centralized exchanges
+to launder funds (a trend we will refer to later when discussing pig butchering scams). Interestingly,
+impersonation scams seem to have moved in distinctive waves when leveraging DeFi to layer funds. In
+2024, these scams saw spikes associated with laundering via smart contracts and token smart contracts.
+In 2025, these pronounced volumes subsided in lieu of alternating waves associated with bridge use
+(early-to-mid 2025) and DEX use (second half of 2025). These patterns show the constantly adapting
+nature of scam operations, which vary in terms of primary laundering points and the types of
+services used.
+Scams 27
 
----
+AI and advanced tools are supercharging scam effectiveness
+We are moving toward a future in which virtually all scams will incorporate AI into their operations to some
+degree. While many scammers buy AI tools through traditional payment channels, a subset buys these
+tools on-chain, making their transactions visible. Exploring the differences between scams with visible
+on-chain associations to Chinese AI vendors lets us estimate the scale and efficiency of AI.
+As depicted below, 76% of AI-enabled scams are in the time-weighted high-value/high-volume quadrant.
+This means that a large majority of scams with demonstrable on-chain links to often Telegram-based
+Chinese AI vendors selling face-swap software, deepfake technologies, and LLMs tend to (1) scale more
+quickly (i.e., higher incoming transfer rates) and (2) be more severe (i.e., higher daily USD volumes) than
+scams without these clear on-chain links to AI vendors.
+Scams 28
 
-## Scams
-### Record $17 Billion Estimated Stolen in Crypto Scams and Fraud in 2025 as Impersonation Tactics and AI Enablement Surge
+AI-enabled scams extract 4.5 times more money
+According to a report published by J.P. Morgan in July 2025, scammers are increasingly leveraging
+deepfake technology and AI-generated content to create convincing impersonations in romance and
+investment scams. Our analysis reveals that, on average, scams with on-chain links to AI vendors extract
+$3.2 million per operation compared to $719,000 for those without an on-chain link — 4.5 times more
+revenue per scam. These AI-related operations also demonstrate significantly greater time-weighed
+efficiency:
+● Higher daily revenue: $4,838 vs $518 median daily revenue
+● Increased transaction volume: 35.1 vs 3.89 average transfers per day (9x more transaction
+activity)
+These metrics suggest both higher operational efficiency and potentially broader victim reach. The
+increased transaction volume indicates that AI is enabling scammers to reach and manage more victims
+simultaneously, a trend consistent with the industrialization of fraud we've been tracking. In contrast, the
+increased scam volume suggests that AI is likewise making scams more persuasive.
+Scams 29
 
-In 2025, cryptocurrency scams received at least $14 billion on-chain. Based on historical trends, we project that the 2025 figure could exceed $17 billion.
+According to Will Lyne, Head of Economic & Cybercrime at the Metropolitan Police, “Fraud linked to
+cryptocurrency continues to grow in scale and sophistication, with organised crime groups increasingly
+using impersonation tactics, online infrastructure, and AI-enabled tools to target victims at pace and scale.
+However, we are also seeing a step change in law enforcement’s ability to respond. Through specialist
+capabilities, international cooperation, and the effective use of financial and digital intelligence, we are
+better equipped to identify criminal networks, seize illicit assets, and disrupt activity that causes harm in
+our communities.”
+The industrialization of fraud
+The Lighthouse case exemplifies another key trend: the professionalization and commercialization of the
+tools needed by scammers to execute sophisticated, industrial-scale scams. The Lighthouse Enterprise
+operated a complex business model where different actors specialized in distinct parts of the scams
+and fraud supply chain:
+● Developer Group: Supplied phishing software and templates
+● Data Broker Group: Provided targeted lists of potential victims
+● Spammer Group: Offered tools to send fraudulent text messages at scale
+● Theft Group: Specialized in monetizing stolen sensitive information
+● Administrative Group: Ran online recruitment and collaboration forums
+A Chinese language platform offering accounts for GMail, Tinder, and other services for scammers
+to target pig butchering victims. The platform also offers scammers customer service
+via a Telegram channel, a common practice.
+Scams 30
 
-#### Impersonation scams see explosive growth
-Impersonation scams have emerged as a particularly concerning trend, growing more than 1400% compared to 2024.
+This modular, service-based approach is a force multiplier and allows even technically unsophisticated
+criminals to execute sophisticated phishing campaigns, substantially lowering the barrier to entry for
+cryptocurrency fraud. Many of these campaigns have a social media angle, given that such platforms
+provide access to millions of users, and are thus prime targets for sending automated messages. In such
+cases, scammers may buy bulk social media profiles and use SMS and phishing kits to communicate.
+The material impact of this large-scale industrialization cannot be understated. Scams leveraging these
+phishing kits are 688 times more effective in dollar terms and four times more effective in average
+transaction size than regular scams. Scams that buy bulk social media accounts are likewise 238 times
+more effective in dollar terms and two times more effective in average transaction value compared to
+regular scams.
+The UNODC has previously warned about scam campaigns’ use of malware, a phenomenon we are
+increasingly seeing on-chain. Chinese scammers, in particular, regularly lace scams with Stealer Malware
+or Remote Access Trojans (RATs) that can drain accounts without interacting with victims. The bar for
+success is then much more achievable for scammers, who only need one click from a victim rather than
+developing a relationship with them.
+Scams 31
 
-![Image of Fake E-ZPass text]
+Chainalysis Reactor graph showing transactions between known scam-related entities,
+stealer malware, and remote access trojan
+Law enforcement on the offensive, with record seizures targeting
+scam operations
+The growing scale and sophistication of scam activity prompted unprecedented law enforcement action in
+2025, culminating in two of the largest-ever crypto-related law enforcement actions directly connected to
+scam operations.
+Jian Wen and Yadi Zhang
+In November 2025, the UK's Metropolitan Police secured convictions in a landmark crypto money
+laundering case that led to the world’s largest confirmed cryptocurrency seizure, recovering over 61,000
+Bitcoin — currently valued at around £5 billion — from Chinese national Zhimin Qian (also known as Yadi
+Zhang), who orchestrated a multibillion-pound investment fraud in China that victimized more than
+128,000 people between 2014 and 2017. Qian was sentenced to 11 years and eight months’
+imprisonment for possessing and transferring criminal property, while her accomplice Seng Hok Ling
+received a nearly five-year term for his role in laundering the cryptocurrency. This case not only
+underscores the scale and sophistication of crypto-linked money laundering networks spanning
+jurisdictions, but also highlights the persistent threat posed by criminals attempting to convert illicit crypto
+proceeds into real-world assets through complex international schemes.
+“This was a long, complex, and unprecedented investigation into the laundering of criminal proceeds
+through cryptocurrency. Over a number of years, significant efforts were made to move and disguise the
+Scams 32
 
-#### AI and advanced tools are supercharging scam effectiveness
-We are moving toward a future in which virtually all scams will incorporate AI into their operations to some degree. Our analysis reveals that, on average, scams with on-chain links to AI vendors extract $3.2 million per operation compared to $719,000 for those without an on-chain link — 4.5 times more revenue per scam.
+funds and convert them into assets in the UK,” said Detective Sergeant Isabella Grotto, the lead
+investigating officer on the case. “By working closely with partners in the UK and overseas, with support
+from Chainalysis, we were able to trace the movement of the cryptocurrency, identify assets linked to the
+offending, and ultimately recover more than 61,000 bitcoin. That work was central to building the case and
+securing this outcome.”
+The investigation, built on information dating back to 2018, revealed that Qian had fled to the UK under a
+false identity after amassing illicit funds and had attempted to launder them via luxury property purchases
+and other high-value assets, a pattern seen in many large-scale fraud operations. The record-setting
+seizure and subsequent prison sentences demonstrate law enforcement’s growing capability to trace and
+disrupt sophisticated fraud-to-crypto money laundering globally, reinforcing the value of blockchain
+transparency in dismantling even deeply entrenched criminal networks.
+The Prince Group
+In a major disruption of the global scam ecosystem, the U.S. Department of Justice (DOJ) unsealed charges
+against Prince Group chairman Chen Zhi for allegedly overseeing Cambodian forced-labor scam
+compounds that powered large-scale cryptocurrency fraud targeting victims worldwide. According to
+prosecutors, these compounds operated as vertically integrated fraud factories: trafficked individuals were
+coerced into running pig butchering investment scams and romance fraud schemes, laundering proceeds
+through cryptocurrency to obscure attribution and scale operations globally. The case underscores how
+modern scam networks have professionalized, integrating human trafficking, money laundering, and
+crypto-enabled fraud into a single, industrialized business model.
+Critically, U.S. authorities paired these indictments with large-scale financial disruption, including arrests
+across transnational money laundering networks and actions to seize and forfeit more than $15 billion in
+illicit proceeds linked to scam activity. In October, working in close coordination with the UK’s Foreign
+Commonwealth and Development Office (FCDO), the U.S. Department of the Treasury’s Office of Foreign
+Assets Control (OFAC) jointly designated 146 targets within the Prince Group Transnational Criminal
+Organisation. The designation cited a “laundry list of transnational crimes, including the construction,
+operation, and management of scam compounds reliant on human trafficking and modern-day slavery
+where industrial-scale cyberfraud operations target victims around the world, including U.S. citizens.” In a
+development that demonstrates the complex geopolitical dimensions of prosecuting transnational crypto
+crime, Chen was arrested in Cambodia in January 2026 after his Cambodian citizenship was revoked in
+December, and was subsequently extradited to China for investigation rather than to the United States
+where he faces indictment, highlighting the jurisdictional challenges in dismantling global scam networks.
+These actions mark a shift from reactive victim recovery to systematic dismantling, targeting not just
+front-line scammers, but also the executives, infrastructure, shell companies, and financial rails that sustain
+them. Together, the Prince Group case and related DOJ, OFAC, and FCDO actions illustrate a new, more
+integrated phase in scam enforcement: one focused on breaking the economic backbone of crypto-enabled
+fraud at scale and across borders, rather than treating scams as local, isolated, or purely digital crimes.
+Scams 33
 
-#### The industrialization of fraud
-The Lighthouse Enterprise operated a complex business model where different actors specialized in distinct parts of the scams and fraud supply chain:
-- Developer Group
-- Data Broker Group
-- Spammer Group
-- Theft Group
-- Administrative Group
-
-![Screenshot of a Chinese language platform offering accounts for GMail, Tinder, and other services]
-
-#### Law enforcement on the offensive
-The growing scale and sophistication of scam activity prompted unprecedented law enforcement action in 2025, including the record-breaking seizure of 61,000 Bitcoin from Zhimin Qian and the designation of 146 targets within the Prince Group Transnational Criminal Organisation.
-
-![Chainalysis Reactor graph showing transactions between known scam-related entities]
-
----
-
-[^1]: A year from now, these totals will be higher as we continue to identify more illicit addresses and incorporate their historical activity into our estimates.
-[^2]: To calculate the illicit share of attributed transaction volumes, we determine the denominator by calculating all inflows to known services across all the assets that we track, excluding internal transfers within services.
-[^3]: This is a lower bound estimate based on CMLN activities; it only reflects services attributed by Chainalysis and does not include Guarantee Services.
-
----
-
-nd dismantle complex criminal enterprises. However, the
+Tickmilleas
+The U.S. government is pursuing a forfeiture of tickmilleas[dot]com, a scam domain that served as core
+infrastructure for a transnational crypto investment fraud network operating out of the Tai Chang scam
+compound along the Myanmar-Thailand border. Registered in November 2025 via a Singapore-based
+registrar, the site impersonated a legitimate financial services firm to deceive primarily U.S.-based victims
+into sending BTC, ETH, USDT, and USDC to crypto wallets controlled by overseas scammers. Blockchain
+analysis shows victims were funnelled through U.S. crypto exchanges before funds were rapidly moved
+through multiple wallets and consolidation addresses – hallmark tactics of professional on-chain money
+laundering – explicitly linking the domain to cross-border professional money laundering. Tickmilleas’s
+operators are tied to Chinese organized crime syndicates embedded in Southeast Asia’s scam compound
+ecosystem, with on-the-ground protection from the DKBA, an armed group sanctioned by OFAC for
+supporting cyber scam centers.
+These cases demonstrate the scale of modern cryptocurrency scam operations and their increasing
+integration with traditional organized crime. They also reveal the human cost of these schemes, which
+exploit both financial victims and the trafficked individuals forced to operate them, itself an unspeakable
+crime. These prosecutions’ success also underscores the growing capability of international law
+enforcement to trace cryptocurrency flows and dismantle complex criminal enterprises. However, the
 industrial scale of global scam operations suggests the challenge remains considerable.
 Strong regional nexus to East and Southeast Asia persists
 Our on-chain analysis continues to show persistent connections between cryptocurrency scams and
@@ -1181,4 +1796,4 @@ Chainalysis does not guarantee or warrant the accuracy, completeness, timeliness
 in this report and will not be responsible for any claim attributable to errors, omissions, or other inaccuracies of any part of
 such material.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-13", "model": "gemini-3.1-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-31", "model": "gemini-3.5-flash-lite"} -->
