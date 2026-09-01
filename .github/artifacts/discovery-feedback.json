@@ -2,12 +2,12 @@
   "schema_version": "2.0",
   "last_updated": null,
   "last_learner_run": null,
-  "total_feedback_events": 3,
+  "total_feedback_events": 6,
   "outcome_counts": {
-    "true_positive": 0,
+    "true_positive": 2,
     "false_positive": 1,
     "duplicate": 1,
-    "mismatch": 1
+    "mismatch": 2
   },
   "triage_log": [],
   "url_fingerprints": {
@@ -82,6 +82,36 @@
       "org": "Sophos",
       "url": "https://www.interpol.int/Media/Documents/Publications/Cybercrime/African-Cyberthreat-Assessment-Report-2026",
       "outcome": "duplicate",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-09-01T16:25:44.683922Z",
+      "issue_number": 1745,
+      "issue_title": "[Report Discovery] Visa 2026 \u2014 Biannual Threats Report",
+      "org": "Visa",
+      "url": "https://www.helpnetsecurity.com/2026/05/22/visa-consumer-payment-fraud-report/",
+      "outcome": "true_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-09-01T16:34:15.323755Z",
+      "issue_number": 1728,
+      "issue_title": "[Report Discovery] BioCatch 2026 \u2014 Digital Banking Fraud Trends in the United States",
+      "org": "BioCatch",
+      "url": "https://www.biocatch.com/resources",
+      "outcome": "mismatch",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-09-01T16:42:12.926618Z",
+      "issue_number": 1726,
+      "issue_title": "[Report Discovery] Accenture 2026 \u2014 Cyber Threat Intelligence Report",
+      "org": "Accenture",
+      "url": "https://falconfeeds.io/reports/eu-cyber-threat-intel-report-july-2026/",
+      "outcome": "true_positive",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
