@@ -1,4 +1,10 @@
-# The Identity Security Reckoning: 2025 Lessons, 2026 Predictions
+REPORT
+
+THE IDENTITY
+SECURITY
+RECKONING:
+2025 LESSONS,
+2026 PREDICTIONS
 
 A retrospective on identity threat trends from 2025 and projections for the year ahead
 
@@ -15,11 +21,6 @@ A retrospective on identity threat trends from 2025 and projections for the year
 - [Distractions Like Megabreaches and Combolists Will Keep Popping Up](#distractions-like-megabreaches-and-combolists-will-keep-popping-up)
 - [Defenders, Teams, and Workflows Will Morph – and Unite](#defenders-teams-and-workflows-will-morph--and-unite)
 - [Keep an Eye on the Horizon](#keep-an-eye-on-the-horizon)
-- [Learn About SpyCloud’s Identity Threat Protection Solutions](#learn-about-spyclouds-identity-threat-protection-solutions)
-  - [ENTERPRISE PROTECTION](#enterprise-protection)
-  - [CONSUMER RISK PROTECTION](#consumer-risk-protection)
-  - [INVESTIGATIONS](#investigations)
-- [About](#about)
 
 ---
 
@@ -35,6 +36,8 @@ Teams will need to stretch and grow in new ways, sure. There’s also wisdom in 
 
 Without further ado, these are the trends and cyber-phenomena the SpyCloud team will be keeping a close eye on in 2026.
 
+---
+
 ## The Industrialization of Cybercrime Will Further Commoditize Plug-and-Play Identity Attacks
 
 Cybercrime is a booming industry worldwide, and attack methods are being commercialized by and for threat actors much like corporate software models for traditional businesses (i.e. subscription models, multi-language support, etc.).
@@ -45,7 +48,9 @@ Popular infostealer malware like LummaC2 and its collaboration with the GhostSoc
 
 The scope and complexity of this dark industry may reach new heights in 2026, with competition breeding accelerated feature development and more affordable options for an even lower barrier to entry for sophisticated attacks. We will likely see an abundance of new offerings coming out of the woodwork, with increased segmentation into defined “roles” in the cybercrime economy – such as infrastructure providers, tool developers, access brokers, and even support services.
 
-![Image of a diagram showing criminal crypto account, malware distribution, residential proxy, and credit card check, illustrating the interconnectedness of cybercrime services.]
+![CRIMINAL CRYPTO ACCOUNT #434984, Malware Distribution, Residential Proxy, Credit Card Check diagrams]
+
+---
 
 ## The Threat Actor Community Will Keep Splitting and Shifting Due to Youth Involvement, Platform Migrations, and Global Threat Expansion
 
@@ -60,6 +65,8 @@ Along with that, and the commoditized availability of attack tools, we expect to
 - Regionally, China was a high-pressure system of threat activity in 2025, marking a shift from the historic concentration of focus on Western groups, and is poised to remain plenty relevant. Additionally we’ll see threat actor activity swelling in many other areas of the globe, including Latin America where fraud activity seems to be coalescing.
 - Geopolitics and world conflict will continue fueling hacktivist groups and pretenders. While the war in Ukraine rages on, other conflicts are starting up seemingly monthly between world powers which sets the stage for heightened cyberactivity and grassroots-type activism. Handala and CyberToufan are recent examples of groups like this.
 
+---
+
 ## Identity (And Non-Human Identity) Sprawl Will Be Tough to Wrangle In
 
 The dark web in 2025 proved truly vast, littered with stolen information that has, can, and will be exploited for cyberattacks. The most striking observation we’ve made in our research is that, on average, corporate users have 12 times more exposed identity data – so 146 exposed data records tied to their digital identity – than previous tracking methods reported. This creates a trove of user data that can be used for targeted identity-based attacks like account takeover, session hijacking, ransomware, and fraud.
@@ -68,9 +75,13 @@ The identity sprawl of more accounts and more devices, paired with uneven securi
 
 The challenge is further complicated by the fast-rising number of non-human identities (NHIs), such as API tokens, OAuth keys, and service accounts. These are an added (and dangerous) thorn all their own, with privileged access to company systems minus the usual security controls of human users. As the explosive year-over-year growth in NHIs continues in 2026 – driven by cloud-native architecture adoption, DevOps acceleration, and AI/ML – security teams will need to ramp up privacy compliance and deletion protocols for every user’s associated NHIs.
 
-> “In recent attacks, we’ve seen there be some kind of non-human identity stolen – like OAuth keys or GitHub personal access tokens – that then allows actors to pivot into those environments. Non-human identifiers and secrets typically involve two computers or services talking to one another, without the need for a human. And by and large, enterprise protections like MFA are only in place on the more human-focused credentials. Businesses with engineering environments should prioritize strong vetting for any vendor they will allow to auth to their environments to make sure all their security controls are up to snuff.”
+> “In recent attacks, we’ve seen there be some kind of non-human identity stolen – like OAuth keys or GitHub personal access tokens – that then allows actors to pivot into those environments.
 >
-> Trevor Hilligoss | Head of Security Research and SVP of SpyCloud Labs
+> Non-human identifiers and secrets typically involve two computers or services talking to one another, without the need for a human. And by and large, enterprise protections like MFA are only in place on the more human-focused credentials. Businesses with engineering environments should prioritize strong vetting for any vendor they will allow to auth to their environments to make sure all their security controls are up to snuff.”
+> 
+> **Trevor Hilligoss** | Head of Security Research and SVP of SpyCloud Labs
+
+---
 
 ## Insider Threats Will Become Mainstream
 
@@ -85,18 +96,30 @@ Things to watch out for?
 SpyCloud research found that **56%** of organizations experienced an insider threat incident sometime in the past year.
 
 > “Malicious insiders are only getting better and more sophisticated at employment fraud schemes. And the tools that they’re using are getting better, including artificial intelligence that allows them to leverage deepfakes and alter resumes in a way that’s very convincing.”
->
-> Aurora Johnson | Manager of Security Research Partnerships at SpyCloud
+> 
+> **Aurora Johnson** | Manager of Security Research Partnerships at SpyCloud
+
+---
 
 ## AI-Enabled Cybercrime & The AI Arms Race Will Play Out – For Bad or Good
 
 AI talk was exhaustive in 2025, but its impact and implications certainly have some force behind them. So far, AI seems to mostly be exacerbating existing threats, but even as some promises of AI are overblown, its potential is still unrealized – including how it will be used in cybercrime.
 
-![Image showing a diagram titled 'AI-ENABLED CYBERCRIME' with anticipated actions: INFOSTEALERS (but with AI), PROMPT INJECTION (Target: your email provider), AI MALWARE (Polymorphic, anyone?), AI PHISHING (Spear phishing at scale), PAIR CODING (Your AI rubber ducky). Below it states: 'While some of these have not yet been observed in the wild at the time of this report, this is SpyCloud analysts’ hypothesis for AI use cases in cybercrime in 2026.']
+| AI-ENABLED CYBERCRIME | ANTICIPATED ACTION |
+| :--- | :--- |
+| INFOSTEALERS | ...but with AI |
+| PROMPT INJECTION | Target: your email provider |
+| AI MALWARE | Polymorphic, anyone? |
+| AI PHISHING | Spear phishing at scale |
+| PAIR CODING | Your AI rubber ducky |
 
-> “Some threat areas AI is enhancing include phishing kits and social engineering. One of AI’s more proven strengths so far is interpreting and recommending language trained on human communication, so it’s likely to be used for optimizing convincing copy on fraudulent emails and websites to mimic real brands or people in order to deceive individuals into taking actions or giving sensitive information. It also helps threat actors bridge language barriers. Security teams should continually update their policies and training to help employees spot suspicious communications as they grow more advanced and believable.”
+*While some of these have not yet been observed in the wild at the time of this report, this is SpyCloud analysts’ hypothesis for AI use cases in cybercrime in 2026.*
+
+> “Some threat areas AI is enhancing include phishing kits and social engineering.
 >
-> Aurora Johnson | Manager of Security Research Partnerships at SpyCloud
+> One of AI’s more proven strengths so far is interpreting and recommending language trained on human communication, so it’s likely to be used for optimizing convincing copy on fraudulent emails and websites to mimic real brands or people in order to deceive individuals into taking actions or giving sensitive information. It also helps threat actors bridge language barriers. Security teams should continually update their policies and training to help employees spot suspicious communications as they grow more advanced and believable.”
+> 
+> **Aurora Johnson** | Manager of Security Research Partnerships at SpyCloud
 
 Security concerns around AI usage are a major story this year and heading into next. Around 92% of organizations feel that AI-powered cybercrime creates intensified risk. Security teams will need to stay up-to-date with the topic, as the nebula is a bit murky on the new ways it will be used and how effective they will be, but it will inevitably make headlines. AI-specific security roles will also likely become more common at the enterprise level, and 31% of teams surveyed by SpyCloud say that investing in AI-powered security tools is a top priority over the next 12-18 months.
 
@@ -105,6 +128,8 @@ AI usage in day-to-day work has also created a unique new vulnerability that wil
 In our 2025 Annual Identity Exposure Report, SpyCloud observed about **900,000** stolen credential records obtained from enterprise AI tools.
 
 As business teams not only adopt AI usage in workflows, but allow employees to use AI tools, added layers of security are now essential and will be increasingly so in 2026.
+
+---
 
 ## Attackers Will Continue to Innovate to Bypass Defenses
 
@@ -118,13 +143,15 @@ There are several other trending methods for bypassing MFA and other session def
 - Adversary-in-the-Middle (AitM) attacks used to phish credentials and steal valid cookies
 - Malware crypting services used to evade antivirus software (ex. Asgard Protector)
 
-An analysis of SpyCloud’s recaptured database this year showed that **66%** of malware infections bypassed endpoint detection and response (EDR) or antivirus (AV) solutions.
+> An analysis of SpyCloud’s recaptured database this year showed that **66% of malware infections bypassed endpoint detection and response (EDR) or antivirus (AV) solutions.**
 
 > “When a malware infection goes undetected, or a valid session cookie ends up in criminal hands, the consequences can be catastrophic. We are in an arms race at the endpoint, where attackers are constantly evolving their tactics to skirt detection.”
->
-> Damon Fleury | SpyCloud’s Chief Product Officer
+> 
+> **Damon Fleury** | SpyCloud’s Chief Product Officer
 
 In short, organizations cannot put their faith completely in these defense mechanisms no matter how many access management layers they’re enforcing, and this will only become more apparent in 2026. Detection and remediation needs increased priority no matter the organization or perceived security strength, because attackers can and will find ways around every defense to carry out follow-on attacks.
+
+---
 
 ## Pathways to Supply Chain Compromise Will Multiply
 
@@ -142,8 +169,10 @@ We see that placement continuing in 2026, and other industries can take notes wi
 - Joint incident response plans
 
 > “Contractors are often the way that larger organizations are breached. Businesses should apply the same internal security controls and policies to remote vendors they hire. For example, does your new overseas contractor for sure change their passwords at least once a year? Small details like this too often lead to the entire org getting compromised, so consistency for every type of worker is key.”
->
-> Joe Roosen | Director of Security Research at SpyCloud
+> 
+> **Joe Roosen** | Director of Security Research at SpyCloud
+
+---
 
 ## Synthetic Identity Fraud Will Gain More Momentum Using Stolen Data and AI
 
@@ -151,9 +180,13 @@ Another trend we are tracking is the increasing sophistication of the “synthet
 
 In 2026, teams will need to add some jet fuel to their verification and attribution abilities, and consider enhanced fraud prevention measures to help correlate new users with any exposures and flag suspicious accounts for additional investigation.
 
-> “Often when stolen credentials and PII end up on the darknet – including dates of birth, social security numbers, and sensitive data like that – that data can then be assembled to create other synthetic identities. In security intelligence, it’s helpful to work with long histories of data collections like ours, so when you see that a credential was leaked at some point, it can help you detect if that user info is more likely to be enabled for fraud or synthetic use in some way. By analyzing historic exposure data, you can try and predict the validity of individual users and detect fraud before it occurs.”
+> “Often when stolen credentials and PII end up on the darknet – including dates of birth, social security numbers, and sensitive data like that – that data can then be assembled to create other synthetic identities.
 >
-> Joe Roosen | Director of Security Research at SpyCloud
+> In security intelligence, it’s helpful to work with long histories of data collections like ours, so when you see that a credential was leaked at some point, it can help you detect if that user info is more likely to be enabled for fraud or synthetic use in some way. By analyzing historic exposure data, you can try and predict the validity of individual users and detect fraud before it occurs.”
+> 
+> **Joe Roosen** | Director of Security Research at SpyCloud
+
+---
 
 ## Distractions Like Megabreaches and Combolists Will Keep Popping Up
 
@@ -162,12 +195,14 @@ Sensationalized events like megabreaches and combolists were headline-grabbers t
 Stories like megabreaches are a black hole for the attention and energy of organization leadership and security heads. They can also generate fatigue for teams when told to worry about something that they’ve already addressed, sometimes several times over.
 
 > “That’s the one thing that gets lost with the news buzz. What gets called a ‘new breach’ might actually just be a combolist containing data exposed from over the last decade, and now it’s being recirculated. In most cases I’ve seen, the data usually dates back over at least five years. And it creates a headache for defenders who have already remediated the exposures.”
->
-> Joe Roosen | Director of Security Research at SpyCloud
+> 
+> **Joe Roosen** | Director of Security Research at SpyCloud
 
 Paired with the speed of social media dialogue that hits people over the head with hype stories and conversations, it’s essential for businesses to – *ahem* – rely on continuous, proactive monitoring to avoid playing catch-up, and stay smart about what’s a distraction and what their real security priorities should be.
 
 As we head into 2026, these trending topics and inevitably others will be a constant obstacle that require a sharp eye to stay focused where it matters, in some cases ignoring repeat news alerts or communicating with vendors, customers, and employees about the legitimacy of stories like this when they come up and how the business is or isn’t affected.
+
+---
 
 ## Defenders, Teams, and Workflows Will Morph – and Unite
 
@@ -177,50 +212,46 @@ With identity as a unanimous focus as this year turns into next, we predict orga
 
 Shared responsibilities across SOC, identity, and threat intel teams will be a key theme, along with the incorporation of automation and AI for security workflows, ticketing and coordination with HR, background checks, detection, remediation, and more. To help them do their jobs – and keep the company, employees, and customers safe – the identity and access management (IAM) stack is likely to be extended at many organizations to include more security tools and features. And along with consolidating some internal processes, vendor consolidation is also likely to continue increasing as a way to strengthen security posture.
 
-![Image showing a diagram with three interconnected circles labeled SECURITY, IDENTITY, and THREAT INTEL, with arrows pointing to NEW AUTOMATED WORKFLOWS and CROSS-FUNCTIONAL COLLABORATION, illustrating the unification of security teams and processes.]
+![Diagram showing Security, Identity, Threat Intel converging into New Automated Workflows and Cross-Functional Collaboration]
+
+---
 
 ## Keep an Eye on the Horizon
 
 There’s never a dull moment in cybersecurity, and we’re sure to see one story after another next year that keeps us all on our toes and moving quickly to stay safe and minimize fallout where we can. We’re banking on these stories as some of the major threads to follow and be proactive about where possible for business leaders and IT decision-makers. And when the newest threats emerge or security trends develop, we’ll keep our customers informed and continue innovating to protect businesses and their customers.
 
-> “With the speed that technology moves, cybercrime evolves in lockstep and it is equal parts fascinating to watch and challenging to keep up with. The commoditization and influence of the dark web will continue to complicate things, and will no doubt make 2026 another nonstop year for defenders. But can bet we’ll be following along at every beat and working closely with our customers and partners to stay one step ahead, using identity misuse as our North Star for better protection and attack prevention.”
+> “With the speed that technology moves, cybercrime evolves in lockstep and it is equal parts fascinating to watch and challenging to keep up with.
 >
-> Trevor Hilligoss | Head of Security Research and SVP of SpyCloud Labs
+> The commoditization and influence of the dark web will continue to complicate things, and will no doubt make 2026 another nonstop year for defenders. But can bet we’ll be following along at every beat and working closely with our customers and partners to stay one step ahead, using identity misuse as our North Star for better protection and attack prevention.”
+> 
+> **Trevor Hilligoss** | Head of Security Research and SVP of SpyCloud Labs
 
-Continue reading about the recent threat landscape in our [2025 Identity Exposure Report](URL_TO_2025_IDENTITY_EXPOSURE_REPORT) and [Identity Threat Report](URL_TO_IDENTITY_THREAT_REPORT), and then [Check Your Exposure](URL_TO_CHECK_YOUR_EXPOSURE) to help identify any current threats your business may be facing from past infections, exposures, and breaches.
+Continue reading about the recent threat landscape in our 2025 Identity Exposure Report and Identity Threat Report, and then Check Your Exposure to help identify any current threats your business may be facing from past infections, exposures, and breaches.
 
-You can also stay up to date on security threats and prevention strategies on the [SpyCloud blog](URL_TO_SPYCLOUD_BLOG) and via the [SpyCloud Labs research team](URL_TO_SPYCLOUD_LABS_RESEARCH_TEAM).
+You can also stay up to date on security threats and prevention strategies on the SpyCloud blog and via the SpyCloud Labs research team.
 
-## Learn About SpyCloud’s Identity Threat Protection Solutions
+---
 
-### ENTERPRISE PROTECTION
+### Learn About SpyCloud’s Identity Threat Protection Solutions
 
-Every user connected to your business – from employees to contractors to third parties – represents an entry point for cybercriminals.
+**ENTERPRISE PROTECTION**
+Every user connected to your business – from employees to contractors to third parties – represents an entry point for cybercriminals. SpyCloud Enterprise Protection closes identity exposure gaps before attackers can exploit them in ATO, session hijacking, and ransomware attacks.  
+[SEE MORE >]
 
-SpyCloud Enterprise Protection closes identity exposure gaps before attackers can exploit them in ATO, session hijacking, and ransomware attacks.
+**CONSUMER RISK PROTECTION**
+Cybercriminals exploit more than just passwords – they weaponize session cookies, stolen credentials, and PII from malware and breaches. SpyCloud Consumer Risk Protection delivers deep, proactive intelligence to detect and stop identity threats before they lead to account takeover, fraud, or churn.  
+[SEE MORE >]
 
-[SEE MORE >](URL_TO_ENTERPRISE_PROTECTION)
+**INVESTIGATIONS**
+SpyCloud Investigations is the ultimate force multiplier for cybercrime and identity threat investigations. Powered by dark web identity intelligence, analysts and investigators can surface hidden risks, uncover new investigative angles, and connect the dots for rapid response before cyber threats escalate.  
+[SEE MORE >]
 
-### CONSUMER RISK PROTECTION
+### About
 
-Cybercriminals exploit more than just passwords – they weaponize session cookies, stolen credentials, and PII from malware and breaches.
+SpyCloud protects businesses from the stolen identity data criminals are using to target them now. Its automated identity threat protection solutions leverage advanced analytics and AI to proactively prevent ransomware and account takeover, detect insider threats, safeguard employee and consumer identities, and accelerate cybercrime investigations.
 
-SpyCloud Consumer Risk Protection delivers deep, proactive intelligence to detect and stop identity threats before they lead to account takeover, fraud, or churn.
+To learn more about its holistic identity approach and see your company’s exposed identity data, visit [spycloud.com](https://spycloud.com).
 
-[SEE MORE >](URL_TO_CONSUMER_RISK_PROTECTION)
+[GET A DEMO OR REQUEST MORE INFO]
 
-### INVESTIGATIONS
-
-SpyCloud Investigations is the ultimate force multiplier for cybercrime and identity threat investigations.
-
-Powered by dark web identity intelligence, analysts and investigators can surface hidden risks, uncover new investigative angles, and connect the dots for rapid response before cyber threats escalate.
-
-[SEE MORE >](URL_TO_INVESTIGATIONS)
-
-## About
-
-SpyCloud protects businesses from the stolen identity data criminals are using to target them now. Its automated identity threat protection solutions leverage advanced analytics and AI to proactively prevent ransomware and account takeover, detect insider threats, safeguard employee and consumer identities, and accelerate cybercrime investigations. To learn more about its holistic identity approach and see your company’s exposed identity data, visit [spycloud.com](https://spycloud.com).
-
-[GET A DEMO OR REQUEST MORE INFO](URL_TO_DEMO_REQUEST)
-
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-04-19", "model": "gemini-3.1-flash-lite-preview"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-08-31", "model": "gemini-3.5-flash-lite"} -->
