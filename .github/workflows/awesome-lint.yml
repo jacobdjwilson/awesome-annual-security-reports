@@ -40,6 +40,10 @@ jobs:
 
           python .github/scripts/parse-awesome-lint.py
 
+      - name: Check for direct PDF links
+        run: |
+          python .github/scripts/check-pdf-links.py
+
       - name: Check for lint ignore directives
         run: |
           if grep -q "lint ignore" README.md; then
