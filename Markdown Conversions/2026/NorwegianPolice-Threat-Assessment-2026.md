@@ -1,156 +1,746 @@
-# POLICE THREAT ASSESSMENT 2026 NORWAY
+POLICE
+THREAT ASSESSMENT
+2026
+NORWAY
 
-## Table of Contents
-- [Preface](#preface)
-- [Introduction](#introduction)
-  - [1.1 Background and purpose](#11-background-and-purpose)
-  - [1.2 Crimes that pose a threat to society – some characteristics](#12-crimes-that-pose-a-threat-to-society--some-characteristics)
-  - [1.3 Drivers of crime](#13-drivers-of-crime)
-- [Crime in the Past Year](#crime-in-the-past-year)
-  - [2.1 Types of crime reported](#21-types-of-crime-reported)
-  - [2.2 Geographical variations](#22-geographical-variations)
-- [Crime Likely to Pose a Threat to Society in the Year to Come](#crime-likely-to-pose-a-threat-to-society-in-the-year-to-come)
-  - [3.1 A significant, persistent threat from criminal networks](#31-a-significant-persistent-threat-from-criminal-networks)
-  - [3.2 Criminals make a profit from society's shared assets and values](#32-criminals-make-a-profit-from-societys-shared-assets-and-values)
-  - [3.3 Cybercrime and online-based criminal communities](#33-cybercrime-and-online-based-criminal-communities)
+PREFACE
+The police’s mission is to protect life, health and the
+shared assets and values of society. It is our job to
+enforce the law and maintain public safety in all parts
+of the country. The police must prevent, detect and
+investigate offences and defend due process of law. In
+order to succeed, we rely on public trust. The police must
+both tackle everyday crime against individuals and meet
+the largest crime threats with sufficient force.
+And the organised criminals who represent the
+largest threats to society are becoming increasingly
+professionalised. Criminal networks specialise in various
+types of crime and purchase services from one another
+to shield themselves and improve operational efficiency.
+In their national threat assessment, the Norwegian Police
+Security Service explain how foreign governments e ngage
+the services of organised criminal actors, and how criminal
+networks can be used as proxies for state actors.
+In 2025 the police uncovered a number of cases of
+violence-as-a-service, often referred to as VaaS. B eyond
+the obvious threat to public safety, it is a great concern
+that criminals exploit youngsters to commit violence. These National Police Commissioner
+developments make it harder to identify the instigators Håkon Skulstad
+of serious crime, placing high demands on international
+police cooperation, police methods and prioritisations. This
+is significant, both for public safety and national security.
+The police must adapt to a complex crime picture and a
+demanding geopolitical situation. If we are to succeed, we
+must collaborate closely with other government agencies,
+local authorities, businesses, civil s ociety and i nternational
+partners. With this Police Threat A ssessment, we aim to
+share our understanding of the current situation and the
+challenges we are faced with in the near future. By sharing
+knowledge we can s trengthen our joint ability to prevent,
+detect and fight threats to society.
+2 3
 
----
+CONTENTS
+| 01  | INTRODUCTION | 6   |
+| --- | ------------ | --- |
+Background and purpose 8
+1.1
+|     | 1.2 Crimes that pose a threat to society – some characteristics | 9   |
+| --- | --------------------------------------------------------------- | --- |
+|     | 1.3 Drivers of crime                                            | 10  |
+| 02  | CRIME IN THE PAST YEAR                                          | 14  |
+|     | 2.1 Types of crime reported                                     | 16  |
+|     | 2.2 Geographical variations                                     | 23  |
+| 03  | CRIME LIKELY TO POSE A THREAT TO SOCIETY IN THE                 | 26  |
+YEAR TO COME
+|     | 3.1 A significant, persistent threat from criminal networks | 28  |
+| --- | ----------------------------------------------------------- | --- |
+|     | 3.2 Criminals make a profit from society's shared           | 34  |
+assets and values
+|     | 3.3 Cybercrime and online-based criminal communities | 40  |
+| --- | ---------------------------------------------------- | --- |
+REFERENCES
+48
+4 5
 
-## Preface
-The police’s mission is to protect life, health and the shared assets and values of society. It is our job to enforce the law and maintain public safety in all parts of the country. The police must prevent, detect and investigate offences and defend due process of law. In order to succeed, we rely on public trust. The police must both tackle everyday crime against individuals and meet the largest crime threats with sufficient force.
+Police Threat Assessment 2026 – Norway Section 03 Contents Police Threat Assessment 2026 – Norway Section 01 Contents
+INTRODUCTION
+01
+1.1 Background and purpose
+1.2 Crimes that pose a threat to society – some characteristics
+1.3 Drivers of crime
+6 7
+Photo: the police
 
-And the organised criminals who represent the largest threats to society are becoming increasingly professionalised. Criminal networks specialise in various types of crime and purchase services from one another to shield themselves and improve operational efficiency. In their national threat assessment, the Norwegian Police Security Service explain how foreign governments engage the services of organised criminal actors, and how criminal networks can be used as proxies for state actors.
+Police Threat Assessment 2026 – Norway Section 01 Contents Police Threat Assessment 2026 – Norway Section 01 Contents
+1.1 1.2
+BACKGROUND AND PURPOSE CRIMES THAT POSE A THREAT TO
+SOCIETY – SOME CHARACTERISTICS
+The Police Threat Assessment is an annual public As set out in section 1 of the Norwegian Police Act, The Police Threat Assessment focuses specifically
+report providing comprehensive, up-to-date insight into fighting and preventing crime is at the heart of the on crime that is considered a threat to society. To be
+the crime challenges facing society. The report is an police's mission. To succeed with this mission, the police included in section 3 of the report, the crimes must
+important part of the police’s aspiration for transparency. rely on the support of the general public and actors in the present a threat to society as a whole. Specifically this
+public and private sectors. The Police Threat Assessment includes threats to public safety, economic assets,
+The report comprises three sections. The first section may consequently also be a tool for others as part of our fundamental structures of society and infrastructure and
+introduces the purpose and methods of the report and joint effort to prevent crime and protect the assets and functions critical to society.
+describes some of the key drivers expected to impact crime values of our society.
+in the year to come. Section 2 provides an insight into the Threats to public safety are crime threats impacting the
+breadth of the crime picture in the past year. S ection 3 The police work non-stop to obtain information about inhabitants’ movements in public places, their activities in
+describes what the police consider to be the key challenges and gain insight into current crime trends. The report is cyberspace or their participation in public debate.
+likely to pose a threat to society this c oming year. based on information obtained from Norwegian police
+districts, specialist agencies and international partner Threats to economic assets are crime threats that cause
+organisations, including Europol, as well as various other considerable damage or financial loss. This includes
+public sources. Where sources are in the public domain, macroeconomic loss, for example through crime causing
+these are referenced in the report. In some cases, the distortion of competition in the business sector or loss of
+THE NORWEGIAN
+only references included are statements from the police public sector income.
+POLICE ACT made to media outlets. Please note, however, that such
+statements were not the only sources used in these Threats to fundamental structures of society are crime
+cases. Some of the sources are not included in the threats undermining the foundations of society, such as
+references due to confidentiality obligations. the labour market, justice system or basic democratic
+“The State shall provide the police service
+principles and institutions. Photo: the police
+needed by the community. Police duties shall be
+performed by the police and lensman services.
+Threats to critical infrastructure and functions can
+include water and electricity supplies, banking services,
+The police shall through preventive, enforcing
+health services and other vital services that society relies
+and helping activities contribute to society's
+on from day to day.
+overall effort to promote and consolidate the
+citizens’ security under the law, safety and
+welfare in general.”
+Section 1 of the Norwegian Act Relating to the
+Police (Police Act)
+8 9
 
-In 2025 the police uncovered a number of cases of violence-as-a-service, often referred to as VaaS. Beyond the obvious threat to public safety, it is a great concern that criminals exploit youngsters to commit violence. These developments make it harder to identify the instigators of serious crime, placing high demands on international police cooperation, police methods and prioritisations. This is significant, both for public safety and national security.
+Police Threat Assessment 2026 – Norway Section 01 Contents Police Threat Assessment 2026 – Norway Section 01 Contents
+1.3
+DRIVERS OF CRIME
+Trends of the Norwegian economy, labour
+market and welfare schemes
+WHAT IS A
+According to a recent forecast report from the M inistry of
+PROXY ACTOR? Finance, prospects are good for the Norwegian e conomy in
+the coming years.8 Despite a proportion of the p opulation
+Norwegian intelligence and security services being outside the labour market, the une mployment rate
+define proxy actors as persons or o rganisations is low for healthy individuals of working age. The Ministry
+with no formal ties to intelligence and s ecurity of Finance is satisfied that, unless the global economy is
+services or other public agencies, who, k nowingly hit by major unforeseen events, unemployment rates, the
+or not, carry out activities on behalf or in support financial situation of families and the welfare system will
+Crime arises in a complex interplay of factors that of state actors. The a ctivities can be p olitically, remain stable. Start-up rates and bankruptcies will also
+influence individuals and society. A number of drivers ideologically or f inancially m otivated. The remain roughly unchanged, providing a high e mployment
+A PERIOD OF UPHEAVAL
+impact the crime picture, and most of them evolve slowly. Norwegian intelligence and s ecurity s ervices rate and labour-market stability.9 The new budget
+Human factors make up the motive for or functions as have pointed out that proxy actors are put to presented by the Government provides for the continuation
+a catalyst for most types of crime. Such factors are, for “Ours is a time of geopolitical upheaval with active use in activities s panning from t raditional of nearly all existing welfare and benefit schemes.
+example, mental ill-health, boredom, willingness to take fast-paced change and much insecurity. espionage to sabotage, violent attacks and
+risk, desire for money, sex drive, opportunism and the From the strengthening of democratic values information warfare targeting the West.3 Although the general state of the Norwegian e conomy
+desire to belong to a social group. and multi-lateral cooperation of the 1990s, is good, the real estate market is still under great strain,
+the situation has changed fundamentally. particularly in the big cities. Almost NOK 100 billion (around
+The crime picture has remained relatively stable over Globalisation has ground to a halt, whilst EUR 9 b illion) worth of real estate transactions are c onducted
+time in Norway, and changes tend to happen gradually. polarisation and rivalry between super- in Norway each year without the a uthorities being able to
+However, whether or not a threat has changed cannot powers are increasing. Authoritarian political When crimes are committed across national borders the track ownership in real-time.10 The real e state market can
+alone be taken as an indication of its seriousness. This movements gain momentum, including in need for international police cooperation increases, both therefore function as a driver of crime as it combines vast
+section of the report will focus on the drivers, some allied countries that we identify with. The within Europe and with the rest of the world. Norway economic assets and complex transactions, often conducted
+stable, others changing, behind the crime trends. rule-based world order, which has served has signed a number of agreements on international anonymously and with a varying degree of supervision.
+Norway well, is under pressure.” police cooperation with other states.4,5,6 For example,
+in 2025 our National Police Commissioner signed It is uncertain how trade wars and new customs tariffs will
+Statement from the Ministry of Foreign Affairs, an important memorandum of understanding with impact the Norwegian economy in the coming year. Norway
+Geopolitical rivalry Parliamentary White Paper no. 20 (2025)1 Morocco setting the framework for a closer cooperation has a special status in the European cooperation, and with
+Geopolitical rivalry is a key word for much of the between national police forces.7 Although fighting crime a small, internationally exposed economy, the country is
+interaction between states today. In recent years, the has long been a c ommon cause for the international vulnerable to cyclical variations. The value of the N orwegian
+international system has evolved towards a so-called community, the climate for cooperation is changing kroner has fallen in the past few years.11 Whilst this has
+multipolar power structure, where countries fight for In their public threat assessments, the Norwegian Police due to geo political rivalry. Criminal actors operate from brought some positive consequences for the N orwegian
+their place as global or regional superpowers. Amongst Security Service (PSS) and the Norwegian Intelligence states where Norwegian police have limited possibility economy, it has also reduced the buying power and
+subject-matter experts, there is a wide consensus that Service (NIS), both emphasise the threat from organised to prosecute them. This is particularly challenging in increased the expenses of consumers and b usinesses.
+such multipolarity tends to increase competition, mistrust criminals acting on behalf of state actors, so-called relation to drug crime, fraud and cyber-dependent crime.
+and instability. This situation can impact the crime picture proxy-actors.2 According to the PSS, the lines are blurring Such operational leeway for criminals can constitute a What’s more, the impact of inflation is both demo-
+in Europe and Norway. between state actors, terrorism and organised crime. The significant driver to commit crime, both in terms of scope graphically and geographically lopsided. Inflation has
+police share their concern for a trend whereby criminal and nature of the crimes. a greater impact on low-income families who spend a
+networks can be exploited by foreign governments to larger portion of their income on, for example, food and
+carry out operations. electricity. Families who are already in dire financial straits
+are consequently impacted more negatively by inflation
+than families and individuals who are better off.
+10 11
 
-The police must adapt to a complex crime picture and a demanding geopolitical situation. If we are to succeed, we must collaborate closely with other government agencies, local authorities, businesses, civil society and international partners. With this Police Threat Assessment, we aim to share our understanding of the current situation and the challenges we are faced with in the near future. By sharing knowledge we can strengthen our joint ability to prevent, detect and fight threats to society.
+Police Threat Assessment 2026 – Norway Section 01 Contents Police Threat Assessment 2026 – Norway Section 01 Contents
+Electronic devices have become part and parcel of To many, social media have become an integral part of
+everyday life. They are an important part of how we work, everyday life. Whilst it is often hotly debated in r elation to
+obtain information and communicate with each other. children and teenagers, this concerns p eople in all age
+Whilst the focus of the technology debate is often on groups. Lines between the digital and p hysical e nvironment
+children and youngsters, it is just as relevant for adults. are blurring. For example, digital c ommunication b etween
+A great many of the services we rely on in our daily lives classmates can be just as important to the school
+are digital. This includes services used to communicate environment as what happens in the physical school yard.
+with government authorities, banking services, digital Experience from police cases has also shown how contact
+market places for exchange of goods and services, food initiated on digital platforms is taken offline to physical
+delivery and transport services, and has become a fixture spaces, sometimes with dire consequences. One example
+of the legal as well as the illegal economy. At the same of this is online sexual crimes, which may ultimately open
+time, many people lack the skills and capabilities needed the door to hands-on sexual abuse.14,15
+to take part in an increasingly digital lifestyle and are
+The value of the Norwegian kroner has fallen in the past few years. Photo: the police excluded from the digital community. This can make them Cryptocurrencies and their associated protocols give
+more vulnerable to certain types of crime committed on criminals increased scope to conduct their activities.
+or with the help of digital platforms, such as fraud. End-to-end encryption of transactions is used to
+anonymise senders and receivers. The legal framework is
+Artificial intelligence (AI) is by far the most significant and evolving, the control mechanisms of the banking sector
+Technological developments talked-about technological development in the past few are strengthened and obliged entities in the finance
+Technological developments are shaping almost every “VIPPS ROBBERIES”: A NEW years, and can become a driver of new types of crime industry are becoming more vigilant. This makes it harder
+aspect of our lives, including the crime picture. However, and cause a surge in some existing crime challenges. The to include cryptocurrency as part of traditional financial
+PHENOMENON OR A CHANGE
+it is not just technology, with its new tools and services, fast-paced development of AI and technology in general services. Increased regulation has resulted in specialised
+that evolves. Society’s relationship with technology and OF MO? increases demand for regulatory measures to prevent crime. actors offering money-laundering services to circumvent
+how we use it in our everyday lives is changing. control mechanisms.
+The technological developments have given private
+When criminal actors adopt new technologies and In 2025 robberies committed using the companies, particularly in the technology sector, an important
+change their modi operandi, known crime threats can Norwegian mobile payment app Vipps, referred role in new sectors of society.13 One example is social media,
+change form and increase drastically in scope. Other to in the media as “Vipps robberies”, became the which have become an important arena for free speech, but
+crime challenges are entirely new and emerge as a result object of much attention.12 Although sometimes also for crime. The extended status of tech companies gives
+of technological developments. presented as a new phenomenon, robberies and them a key role in preventing and fighting crime.
+theft from individuals is n othing new. However,
+the use of digital payment s olutions, with Vipps
+being the most widely used in Norway, has
+Lines between the digital
+paved the way for a new method.
+and physical environment are
+blurring. For example, digital
+communication between classmates
+can be just as important to the
+school environment as what happens
+in the physical school yard.
+12 13
 
-**National Police Commissioner Håkon Skulstad**
+Police Threat Assessment 2026 – Norway Section 02 Contents Police Threat Assessment 2026 – Norway Section 02 Contents
+CRIME IN THE
+02
+PAST YEAR
+In addition to focusing on the crimes that are likely to pose a
+threat to society in the coming year, we must also d evelop
+an understanding of the breadth of crime challenges f acing
+society. Recorded complaints alone do not paint a clear
+picture of the extent of crime nor of the changes in crime
+over time. They can, however, be included as one of many
+indicators in an assessment of the crime situation. The
+2.1 Types of crime reported
+following chapter provides a brief overview of the crimes
+reported to the police in Norway during the past year.
+2.2 Geographical variations
+14 15
+Photo: the police
 
----
+Police Threat Assessment 2026 – Norway Section 02 Contents Police Threat Assessment 2026 – Norway Section 02 Contents
+2.1
+TYPES OF CRIME REPORTED
+INCREASED AWARENESS AND IMPOSITION OF VISIT AND CONTACT BANS
+Visit and contact bans is one of the tools the police have at their disposal to prevent violence and threats.
+This implies that a person is banned from being in the vicinity of a given person, pursuing, visiting or in
+any other way contacting them. Under certain circumstances such bans may also include electronic
+monitoring, known as “GPS tagging”.19 This makes the police better able to respond quickly and avert
+potential threats and violent crimes.
+To what extent the number of reported crimes matches Violent crime Over the past few years, the police have imposed an increasing number of such bans, including in
+combination with GPS tagging.20,21
+that of the actual number of incidents largely depends on Violence or threats of violence not only harm the involved
+the type of crime. Only for crimes that are highly likely to be parties, they also have a detrimental effect on the perceived
+detected or reported, there is a fairly good match b etween safety of people in the surrounding community. Violence and
+the number of police reports and actual incidents. threats made up slightly over 10% of all crimes reported in
+2025. Most reports concerned lesser violent offences (70%),
+A great many incidents that are or may be interpreted whereas the most serious violent crimesii constituted less The number of homicides recorded in Norway in 2025 between criminal networks. Almost all of the victims knew
+as crimes, are never brought to the police's attention than 2% of the total case volume. At a national level, the was unusually low.22 19 people were murdered, the lowest or were acquainted with their murderer, and in around half
+and, thus, not recorded as criminal cases. Reversely, no incident rate has remained relatively stable over the past ten number on record since 1990. It is, however, important of the cases, the victim and offender were close.23
+criminal offence was detected for some of the reported years. Following a steep decline during lockdown in 2020– not to attach too much weight to this, as the dataset is
+incidents. This can be due to both individual and societal 2022, incidents have returned to and stabilised at a level small, and any changes cannot be interpreted in isolation The number of attempted homicides recorded (52) was
+factors. As a consequence, fluctuations in the number marginally higher than in the pre-Covid years. but should be seen in the context of a period spanning also somewhat lower than in the two previous years.iii
+of criminal cases from one year to another must not be several years. The number of homicides has been stable The a verage age of the perpetrator was lower in c ases
+overinterpreted. Despite this, crime statistics can still The number of criminal investigations into domestic violence since 1990, with an average of 28 cases per year. concerning attempted homicide than in cases of
+provide a useful indication of what the crime picture looks has risen in recent years and represents a considerable homicide. Here, men were hugely overrepresented amongst
+like during a given period. societal challenge. A proportion of the increase may be In homicides, there is a clear over-representation of male perpetrators (87%) as well as victims (73%). C onflicts
+explained by a revision of police guidelines for launching offenders (78%) and an over-representation of female between criminal n etworks are more f requently cited as a
+investigations18 and changed procedures in partner agencies victims (58%). Establishing the motives for murder can be motive for a ttempted homicide than for h omicide.24
+and bodies such as child welfare services and schools. difficult, but hardly any of the cases are linked to conflicts
+INVESTIGATIVE CAPACITY OF THE POLICE
+The investigative capacity of the police is limited, and many less serious cases fall outside the annual All victims knew or were
+priorities set by the Director of Public Prosecutions.16 acquainted with the p erpetrator,
+and in around half of the
+According to the 2024 annual prosecution report, very serious criminal casesi constituted slightly over 2%
+homicides, the victim and
+of the total caseload of the police. Despite the low number, these cases demanded more than 34% of the
+police’s investigative resources. The least serious criminal cases, on the other hand, constituted 84% of the offender were close.
+police’s caseload in 2024, and 33% of the police’s investigative resources were tied up in these cases.17
+iii 2024 (58) and 2023 (61).
+i Cases comprising homicide, sexual crimes committed against children under the age of 16, aggravated narcotic drug and doping offences, rape and domestic abuse.
+ii Crimes such as aggravated bodily harm, attempted homicide and homicide.
+16 17
 
-## Introduction
+Police Threat Assessment 2026 – Norway Section 02 Contents Police Threat Assessment 2026 – Norway Section 02 Contents
+Sexual offences
+The number of sexual offences reported to the police NEW LEGAL PROVISION
+The police keep statistics of narcotic drugs seizures, including seizures by the Customs service. In 2025,
+has fallen slightly in the past two years. Around 2% of all
+ON SEXUAL CONSENT: there were 16,632 such cases. Excessively large quantities of hashish and marijuana were seized in 2025.
+reported offences in 2025 were sexual offences. Around a
+Only once before, in 1995, has more cannabis been seized in a single year. Cocaine was up from 2024, both in
+third of the complaints for sexual offences concerned rape. ONLY “YES” MEANS “YES”
+terms of the number of seizures and volume. The number of heroin seizures also increased slightly although
+the seized quantity was at its lowest since 2007, and the average potency of the drug is at a historic low.29
+Sexual offences against children constitute almost half The new legal provision on sexual consent, some-
+of the reported sexual offences, with the largest sub- times referred to as the “consent law”, came into
+category by far being sexualised imagery of children. force on 1 July 2025. The new provision introduces 5433
+This sub-category makes up in excess of 40% of the the requirement for active consent.25
+complaints of sexual offences against children. The
+circumstances in which an offender may come into Section 291 of the Norwegian Penal Code now
+possession of or share sexualised imagery of children reads as follows:
+are legion. Although many cases involve adult offenders, “A penalty of imprisonment for a term not
+there are also examples of children and teenagers being exceeding 6 years shall be applied to any
+reported to the police for being in possession of or person who engages in sexual activity with a
+sharing sexualised images or videos of other minors. person who, neither in words nor in actions,
+has consented thereto.” 470 403
+9 72
+In recent years, there has also been an increase in
+cases involving sexual extortion, so-called sextortion. A It is too soon to say whether this amendment
+Cannabis (kg) Amphetamine (kg) Cocaine (kg) Heroin (kg) GHB (litres)
+common characteristic of these cases is that the victims will have an impact on the number of reports
+face threats of publication of sexualised imagery.26 and convictions of rape. This is part of a wider
+This may be imagery originally shared by the victims trend whereby a number of other countries
+themselves, imagery which has come into the wrong have adopted similar legislative amendments.
+hands or AI-generated imagery. The National Criminal
+Investigation Service has previously described how some Drug crime
+children and teenagers generate sexualised material that Violations of narcotic drugs and doping legislation make
+they offer for sale to adults. In some cases, this may lead up around 5% of the total number of criminal cases. These
+GRADUAL ROLL-OUT OF
+to hands-on sexual abuse.27 offences are detected and prosecuted almost entirely
+AN ONLINE SOLUTION FOR based on the efforts of the police, customs service,
+postal services and other authorities.
+CRIMINAL COMPLAINTS
+Acquisitive crime
+There are many incentives for victims to report acquisitive The number of criminal cases was down by 8% from 2024
+crimes, for example to be able make a claim on their The police’s adoption of new digital solutions to 2025, but was almost the same as in 2023. However,
+insurance. Acquisitive crime amounts to as much as has lowered the bar for private individuals and when considered in a ten-year-p erspective, the number of
+35% of all criminal complaints. The victims can be private businesses to report crimes. The police’s online criminal cases concerning drug crime has fallen sharply,
+individuals or businesses, such as shops. The total solution for criminal complaints has been rolled reaching a low in 2022. The fall can a lmost exclusively be
+financial loss from acquisitive crime is not known, but it is out gradually since 2019. In its early stages, the explained by the reduction in cases c oncerning drugs for
+estimated at billions of Norwegian kroner. solution was only available to private individuals, personal use, as opposed to more serious drug trafficking
+but from 2025 businesses have also been able to or distribution cases. This should be seen in the context of
+The number of police reports of acquisitive crime has been report certain types of offences, such as shop- the shift in the police's a ttention over time towards distrib-
+relatively stable in the past years. The police r ecorded an lifting, online. Certain parts of the processing of utors of drugs rather than i ndividual users.28 The number of
+increase in reports of shoplifting in 2025, but this may be criminal complaints have also been automated. cases concerning use of illegal doping substances fell by
+due to the introduction of digital solutions for the reception 15% from 2024 to 2025.
+and processing of complaints. These solutions have made This implies a slight change in how cases are
+it easier for businesses to report shoplifting offences and recorded, and crime report figures may be
+reduced processing time for complaints. impacted during a transition period. Added to this Photo: the police
+is a possible increase in complaints due to the
+ease of use of the new solution. However, it must
+be noted that the solution only includes certain
+offences, and that many criminal complaints
+must still be made in person to the police.
+1818 19
 
-### 1.1 Background and purpose
-The Police Threat Assessment is an annual public report providing comprehensive, up-to-date insight into the crime challenges facing society. The report is an important part of the police’s aspiration for transparency.
+Police Threat Assessment 2026 – Norway Section 02 Contents Police Threat Assessment 2026 – Norway Section 02 Contents
+Cyber-dependent crime
+In a global perspective, there has been a clear increase CYBERCRIME
+in all types of crimes targeting computer systems over
+the past few years. The main causes is the increased
+Although the term covers an array of crimes
+availability of artificial intelligence (AI) as a supporting tool
+ranging from minor to serious, cybercrime
+and the commercialisation of cybercrime services.34
+can be defined as illegal activities in which
+advanced technology either constitutes
+At the same time, results from a survey carried out by the
+a target in itself or is utilised to facilitate
+Norwegian Business and Industry Security Council in 202435
+crime. The distinction is often made between
+showed that as little as 24% of organisations victims of data
+cyber-dependent and cyber-enabled crime.
+intrusions or data theft had reported the offences to the
+police. The police are well-aware that d enial-of-service (DoS)
+An example of cyber-dependent crime is the
+attacks and computer intrusions are rarely reported to the
+intrusion into a company's computer systems.
+police. Incident management is often outsourced to private
+Cyber-enabled crime, on the other hand, can
+actors whose focus is to c ontain damage in the organisation
+for example be the use of common encrypted
+targeted by the attackers.
+messaging services and forums or artificial
+intelligence to manipulate potential victims of
+Ransomware attacks and other forms of extortion in the wake
+Photo: the police fraud or sexual abuse.
+of computer intrusions constitutes a high proportion of the
+cases. In 2025, at least 17 different ransomware applications
+Economic crime against private individuals is a particular challenge as the were used in cyber-attacks against small and medium-sized
+Despite its covert nature, economic crime impacts large victims are often amongst society's most vulnerable, and the businesses in Norway. The police are not aware of any large
+numbers of people by draining the government, b usinesses losses tend not to be covered by insurance. enterprises being targeted in the same period.37
+DENIAL-OF-SERVICE ATTACKS
+and private individuals of vast financial resources. In a
+survey, nearly 20% of local authorities and 7% of other Fraud against businesses can in some cases amount to In 2025, the police recorded 349 criminal cases of
+businesses and organisations, claimed to have suffered several hundred million Norwegian kroner (tens of millions computer intrusion. In many of them, the victims were The purpose of a denial-of-service attackiv is
+losses as a consequence of financial crime.30 In 2024, the of euros). According to an estimate by the Norwegian private individuals. The number of such cases recorded in to deny, disrupt or disturb access to a server,
+direct loss was estimated at between NOK 43 and 64 billion National Authority for Investigation and Prosecution of 2025 had trebled compared to 2023. service or network. This can for example be
+(EUR 3.8–5.7 bn).31 These are funds that could have been Economic and Environmental Crime (Økokrim), Norwegian done by deliberately overloading the target’s
+spent to finance education, public transport, elderly care private individuals and businesses were defrauded of NOK data traffic capacity.36
+and other political priorities. Criminal cases categorised as 2.1 billion (around EUR 190 million) in 2024.32
+economic crime made up 10% of reported crimes in 2025.
+Tax fraud and false accounting still make up an important
+As much as 85% of reported economic crime is fraud, i.e. category, and since 2024, there has been a marked rise
+matters where someone, through manipulation or lies, in the number of such criminal cases. Corruption remains
+deceives others into transferring assets to themselves. a limited phenomenon in Norway compared to other
+Assets defrauded from individual citizens span from a few countries33 with only a few dozen criminal cases opened
+hundred Norwegian kroner (for example where the fraudster in 2025. Cases categorised under the umbrella of identity
+receives payment through a digital market place but fails to theft and identity fraud constitute a bigger challenge
+ship the goods to the buyer as agreed) to several hundred in terms of volume as this is a key component in many
+thousands (for example in the case of travelling builders types of crime. Nevertheless, in 2025 this category of
+defrauding vulnerable elderly people of their money). Fraud crime fell by around a third on the previous year.
+iv Shortened to DoS.
+20 21
 
-The report comprises three sections. The first section introduces the purpose and methods of the report and describes some of the key drivers expected to impact crime in the year to come. Section 2 provides an insight into the breadth of the crime picture in the past year. Section 3 describes what the police consider to be the key challenges likely to pose a threat to society this coming year.
+Police Threat Assessment 2026 – Norway Section 02 Contents Police Threat Assessment 2026 – Norway Section 02 Contents
+2.2
+GEOGRAPHICAL VARIATIONS
+Photo: the police
+Human trafficking to be women from other countries who are staying in Few European countries are more geographically diverse example, in city centres and areas around public transport
+Human trafficking is when someone uses violence or Norway for short periods of time.43 Recently the question than Norway. Its inhabitants live in areas spanning from hubs there tends to be a higher occurrence of crime likely to
+threats, exploits a vulnerable situation or uses other kinds has also been raised whether cases involving minors the continuous urban belt of the south-east, via the negatively impact perceived public safety.
+of improper behaviour to force, exploit or deceive another who have been recruited to commit violence, should be sparsely populated inland areas in central Norway to
+person into, for example, prostitution, forced labour or prosecuted as human trafficking. small rural municipalities along the coast, where life in
+forced services, or into committing crime. Although the the local community typically revolves around a handful
+number of criminal complaints filed for human trafficking of cornerstone businesses.
+in Norway remains low, the number of unreported cases is
+A NEW NATIONAL STRATEGY
+assumed to be high. The diverse climate also shapes how crime is committed.
+AGAINST HUMAN TRAFFICKING The contrast is striking from the relatively mild climate
+In a global perspective, the UN considers human of the south to the Arctic cold and changing daylight
+trafficking as one of the world’s biggest criminal conditions of the North. Demographics are varied too:
+In June 2025, with a view to bolster the
+industries alongside drugs and arms trafficking.38,39,40 Most cities have a young population with a sizeable
+country’s efforts to fight human trafficking, the
+Through international conventions, Norway is committed migrant contingent, whereas the rural population is older,
+Norwegian Government presented a national
+to preventing human trafficking, prosecuting perpetrators more homogeneous and male-dominated.
+strategy against human trafficking for the years
+and identifying and protecting presumed victims.v,41
+2025–2030.42 The strategy comprises four
+This creates different contexts in which crime is c ommitted.
+key areas, namely coherent and coordinated
+People who have been trafficked, rarely identify as v ictims. The profile of perpetrators and victims differ widely d epending
+efforts; prevention; assistance and protection;
+They are therefore unlikely to contact the a uthorities or on were the crimes are committed. Specific features of
+and prosecution. The strategy's chapter on
+seek help from organisations. Emotional, financial and an area may impact the type and frequency of crime. For
+prosecution prescribes extensive measures to
+social dependence on networks or family are vulnerabilities
+strengthen the police's proactive efforts against Photo: Shutterstock
+that can be exploited. Such factors contribute to keeping
+human trafficking. To expose human trafficking,
+the reporting rate low compared to other crimes.
+it is crucial that police and other authorities
+have the knowledge required to recognise the
+Foreign nationals are especially vulnerable to exploitation.
+signs that someone is being trafficked. It's because that’s where the people are.
+Construction, transport, hospitality and catering, vehicle
+It's easy to get to. Regardless of where
+repairs, car valeting, cleaning services and agriculture are
+some of the industries that are overrepresented in cases they are in the municipality, everyone can
+involving forced labour. Victims linked to prostitution tend get to the city centre.
+Experienced police officer
+v These include e.g. the Palermo Protocol and the Council of Europe Convention on Action against Trafficking in Human Beings.
+22 23
 
-The police work non-stop to obtain information about and gain insight into current crime trends. The report is based on information obtained from Norwegian police districts, specialist agencies and international partner organisations, including Europol, as well as various other public sources. Where sources are in the public domain, these are referenced in the report. In some cases, the only references included are statements from the police made to media outlets. Please note, however, that such statements were not the only sources used in these cases. Some of the sources are not included in the references due to confidentiality obligations.
+PPoolliiccee TThhrreeaatt AAsssseessssmmeenntt 22002266 –– NNoorrwwaayy SSeeccttiioonn 0022 CCoonntteennttss Police Threat Assessment 2026 – Norway Section 02 Contents
+Violent
+crime
+Finnmark Police District
+All Oslo Police District is the district with the highest number Although physical acquisitive crime is largely an urban
+offences
+of criminal cases in the country. This is hardly surprising phenomenon with a higher incidence in the bigger cities of
+as the police district covers the country’s capital, which the South-East, Agder and Trøndelag also have a high number
+Acquisitive
+is also its biggest city.vi Although it is the smallest in of cases. If we only look at aggravated acquisitive crime, the
+crime Troms Police District
+terms of area, it is the Norwegian police district with the picture is somewhat evened out, but the big cities remain
+All highest number of inhabitants. Also setting Oslo PD apart over-represented. Northern Norway and the rural coastline
+offences
+is the number of criminal cases per 1000 inhabitants, has a low overall rate of this type of crime, regardless of
+which is far higher than in all other police districts. seriousness. For fraud, which is often digital, the regional
+Sexual Another interesting detail is that a lot of people who do differences are much less marked. Even so, the central South-
+Nordland Police District
+crime not live there, stay in or travel through Oslo every day. East is somewhat over-represented in the statistics.
+All
+offences
+As many as half of the country's reported crimes are Although sexual abuse happens in all parts of the
+Above national
+committed in Oslo, Øst and Sør-Øst, which are the three police country, the trend has been clear over a number of years:
+average
+districts with the highest number of reported crimes. 44% of the northernmost half of the country is over-represented
+Below national
+the country's inhabitants live in the area covered by these in terms of reported sexual offences per 1000 inhabitants.
+average
+three police districts. The considerable overlap between some Some other sparsely populated districts are also over-
+of the crime challenges and the criminal networks based represented in the statistics, whereas the central South-
+in the central south-eastern part of Norway means that the East is below the national average. This trend is opposite
+three districts should be treated as a whole. to that of many other types of crime.
+Trøndelag Police District
+Agder and Finnmark are two other police districts with a high
+All
+Møre og Romsdal offences number of reported crimes per 1000 inhabitants. At the other
+Police District end of the scale are Møre og Romsdal, Vest, Innlandet and
+Nordland police districts. Finnmark has the lowest number
+All
+offences of inhabitants but is the second largest district in terms of
+Innlandet Police District
+geographical area. However, as it is the police district with
+All
+fewest reported crimes in absolute figures, a small variation
+offences
+Vest Police District in the number of criminal cases will produce a dramatic shift
+in the crime rate per 1000 inhabitants.
+All
+offences
+Oslo Police District
+Much of the serious crime takes place in the big cities. Even
+All when adjusted for population size, reports of violent crime
+offences
+Sør-Vest Police District in Oslo police district are far above the national average. This
+becomes especially evident in some of the most serious,
+All
+offences non-domestic cases of violence such as aggravated bodily
+Øst Police District
+harm, attempted homicide and h omicide. In greater-Oslo, the
+All violent crime trend is stable. Other police districts with a high
+offences
+incidence of violent crime in relation to population size are
+Agder, Troms and Finnmark.
+Agder Police District Sør-Øst Police District
+All All
+offences offences
+vi Oslo PD includes the municipalities of Asker and Bærum.
+24 25
 
-### 1.2 Crimes that pose a threat to society – some characteristics
-As set out in section 1 of the Norwegian Police Act, fighting and preventing crime is at the heart of the police's mission. To succeed with this mission, the police rely on the support of the general public and actors in the public and private sectors. The Police Threat Assessment may consequently also be a tool for others as part of our joint effort to prevent crime and protect the assets and values of our society.
+Police Threat Assessment 2026 – Norway Section 03 Contents Police Threat Assessment 2026 – Norway Section 03 Contents
+CRIME LIKELY TO POSE
+03
+A THREAT TO SOCIETY
+IN THE YEAR TO COME
+This chapter presents a selection of threats that the police
+must target specifically in the future. It focuses on the
+drivers of crime and the evolution of crime in the past year.
+The crime is referred to as a threat to society as it has a
+3.1 A significant, persistent threat from criminal networks
+potential to harm or weaken shared assets and values of
+our society (see chapter 1.2).
+3.2 Criminals make a profit from society's shared assets and values
+3.3 Cybercrime and online-based criminal communities
+26 27
+Photo: the police
 
-The Police Threat Assessment focuses specifically on crime that is considered a threat to society. To be included in section 3 of the report, the crimes must present a threat to society as a whole. Specifically this includes threats to public safety, economic assets, fundamental structures of society and infrastructure and functions critical to society.
+Police Threat Assessment 2026 – Norway Section 03 Contents Police Threat Assessment 2026 – Norway Section 03 Contents
+3.1
+A SIGNIFICANT, P ERSISTENT
+Criminal drug networks are particularly Many drug sales networks in Norway are local outfits. Their
+prominent activities are primarily carried out within a limited geographical
+THREAT FROM CRIMINAL All police districts have criminal networks who operate locally area. There is increased concern that networks actively recruit
+or in a handful of police districts. Many of them have their minors into criminal activities. The networks attract minors by
+main operations in Norway but partner up with actors in other showcasing a lifestyle of status, loyalty, firearms and m oney.
+countries. The criminal networks are m otivated by profits and Many of those who hold leading positions in the criminal
+NETWORKS
+exploit vulnerabilities in legislation and control mechanisms networks today, started their criminal career as errand boys
+implemented by authorities or private organisations. Conflict for established criminal actors.
+levels are lower in Norway than in some of our neighbouring
+countries. Despite this, there are latent conflicts between Several key drug-trafficking networks are run by kingpins
+Norwegian society faces a considerable, persistent threat year, criminal networks have increasingly recruited and some of the networks. in other countries. These kingpins often hold dual
+from criminal networks. The networks are adaptable, exploited minors to commit serious violence-as-a-s ervice citizenships, making it possible for them to stay abroad.
+and continue to cooperate dynamically across national (VaaS) in Norway. This affects the overall safety and Some types of crime offer profit opportunities setting Some have had dual citizenship from birth, others have
+borders and continents. The fight against these networks is security of the population in public and digital spaces. them apart from others. This is particularly true for obtained a second citizenship later in life, for example
+demanding in terms of time and resources, for the police as drug crime, where the high demand for narcotic drugs through citizenship-by- investment programmes (CBI).
+well as for their partner agencies and organisations. Recruitment to VaaS assignments on digital platforms is constitutes an important driver.45 Another frequent CBI programmes are schemes whereby certain countries
+only one of the ways criminal networks utilise technology feature of drug crime is the use of violence in public grant citizenship to foreign investors. Dual citizenship
+According to Europol, organised crime is one of the to facilitate crime. The networks often use technology places.46 Many of the actors with ties to drugs networks complicates the extradition of criminals to Norway. This,
+greatest security threats facing Europe today. It is evolving that has been developed for legal commercial purposes. have been involved in serious violent incidents, and some in turn, provides increased operational leeway for criminal
+at an unprecedented pace, changing rapidly and adapting Encrypted messing services and eSIM cards are used to have access to firearms. Over the past year, there have actors, and the police must cooperate with foreign
+to a world in flux.44 This crime undermines fundamental conceal communication, social media are still used as also been a number of drug-related violent incidents in authorities to have them prosecuted abroad.
+societal structures and economic assets through violence, market places for drugs, and cryptocurrency is utilised as Norway initiated by international criminal networks.
+corruption and handling of proceeds of crime. In the past a money-laundering tool.
+Drug-trafficking is the primary activity of many of the most
+CRIMINAL CULTURES
+prominent criminal networks in Norway. This comprises illegal
+importation, distribution and sale. The networks also commit
+Certain substrata of society are marked by a
+other types of crime, such as fraud, money laundering and
+criminal culture in which internal codes and values
+violent crime to facilitate drug trafficking.
+weigh heavily. Actions showing loyalty, strength
+and bravery tend to be brought to the fore. Some
+The degree of organisation and complexity of the n etworks
+young people seeking a sense of belonging, safety
+varies greatly, but a common denominator is a clear-cut
+and mastery are drawn to this. Certain criminal
+hierarchical structure and loose collaborations between
+actors also exploit the lifestyle of criminal sub-
+actors. Some networks consist of a central core of actors
+cultures to control and recruit young people.
+and a peripheral circle of more loosely a ssociated actors.
+Many networks show great resilience in that they manage
+Youngsters can join a criminal sub-culture in an
+to keep the drug-trafficking a ctivities going despite the
+attempt to find an alternative path to success,
+arrest of key actors. Either the jailed a ctors are replaced by
+status, resources and protection. The behaviour,
+others, or they continue their criminal activities from prison,
+knowledge and skills obtained through criminal
+for example using a mobile phone.
+cultures are seldom transferable to other areas of
+society. This can in turn make it difficult to break
+Photo: Shutterstock away from criminal activities and circles.
+28 29
 
-- **Threats to public safety** are crime threats impacting the inhabitants’ movements in public places, their activities in cyberspace or their participation in public debate.
-- **Threats to economic assets** are crime threats that cause considerable damage or financial loss. This includes macroeconomic loss, for example through crime causing distortion of competition in the business sector or loss of public sector income.
-- **Threats to fundamental structures of society** are crime threats undermining the foundations of society, such as the labour market, justice system or basic democratic principles and institutions.
-- **Threats to critical infrastructure and functions** can include water and electricity supplies, banking services, health services and other vital services that society relies on from day to day.
+Police Threat Assessment 2026 – Norway Section 03 Contents Police Threat Assessment 2026 – Norway Section 03 Contents
+Police regularly monitor the price level of various types
+of drugs at different levels of the supply chain. This has
+PROFIT MARGINS
+shown that drug retail prices have remained relatively
+stable in the last decade. Prices paid by sales networks to
+secure drug consignments from distribution and import
+networks have, however, fluctuated more. A comparison
+x2.5
+Cannabis
+of these prices shows that the sales networks’ profit
+margins are extremely high. The illustration shows the
+profit margins for some common recreational drugs.
+Cocaine x2
+There are also regional differences, and drug prices tend to be
+somewhat higher in other parts of the country than in Oslo.
+Amphetamine x 6
+This is probably due to the better functioning market in
+the central parts of south-eastern Norway: the sheer size
+Photo: the police
+of the market means that there are more competitors Heroin x8
+and possible synergies within a restricted geographical
+Some drug networks operate opportunistically in Digital platforms and social media make it easy to buy area. The fact that drug prices in Norway are amongst
+project-based structures to procure drugs. Certain sales drugs for personal use without having to know or seek the highest in Europe, contributes to make the market MDMA x11
+networks have regular networks and actors who secure out the dealer in person. Criminal networks and actors use attractive to transnational criminal networks.
+the supply of drugs. Others purchase parts of larger emojis and nicknames as codes for the drugs on offer.
+consignments from other actors who have smuggled Norwegian and foreign authorities seize large quantities
+The illustration shows the profit margins
+them into Norway. This makes drugs readily available There are big geographical variations, and urban areas of drugs at different stages of the production and
+achieved by supply networks for various types
+to networks with sufficient financial means. Further, it have a higher proportion of users than rural areas. Overall, distribution chain. Although the seizures appear large,
+of drugs in 2025.
+contributes to keeping the illegal drugs market going in the proportion of users of illegal substances is higher this is only a fraction of the drugs intended for the
+the event that key actors are arrested. in the greater Oslo area than in the rest of the country.48 Norwegian market. An extensive research project
+Over the past few years, there has been a particular commissioned by the EU Commission has shown that
+Other actors and networks step up whenever there is increase in the use of cocaine and cannabis, and the efforts by European police against criminal networks
+a gap in the supply chain, and the networks cooperate Norwegian police have also noted an increase in ketamine involved in the distribution of cocaine have not had the
+to continue operations regardless of conflicts and use, like in many other European countries. Whilst only desired effect, neither on retail prices nor on availability.52 Norway as a destination and transit
+loyalties. The networks cooperate opportunistically in a small proportion of users drop out from education country for cocaine
+sales operations with actors in other parts of the country. or employment, a considerable number will develop Cocaine is produced in South America and mainly
+Support services such as laundering proceeds of crime, dependency or mental health issues, fall victim to crime smuggled to Europe by sea, either directly or via ports
+collection and transport of drugs are often purchased or experience difficulty with interpersonal relations.49 DRUG-INDUCED DEATHS of transit. Several major European ports have tightened
+from other criminal actors offering such services. Although the fall in fatal overdoses has been significant control measures. Meanwhile, demand for cocaine is high.
+over time, drug use is still fatal to some.50 This means that an increasing number of ports is used for
+In 2024, 342 drug-induced deaths were
+smuggling.53 Moreover, Norwegian ports could i ncreasingly
+recorded in Norway, relatively evenly spread
+The drug market decides the scale of be used as ports of transit for cocaine destined for the
+across the country. Accidental poisoning was
+activity of criminal networks European market.
+CRIME-AS-A-SERVICE recorded as cause of death in the vast majority
+Surveys based on self-reporting show that the proportion
+of these cases. A clear majority of drug-i nduced
+of the population who use illegal substances, both Europol expects violent crime committed by criminal
+The term crime-as-a-servicevii describes how deaths were linked to opioids. By c ontrast to
+teenagers and adults, has risen sharply in recent years.47 networks to spread to more countries and regions as
+illegal services are being bought and sold. The previous years, heroin was not in the top three
+The total number of users is high, and a significant an increasing number of ports are used for cocaine
+services offered span from computer intru- of the drugs causing the deaths.51
+proportion of them are young. The size of the criminal smuggling. In Europe such violence has been widespread
+sion to money laundering and violence, just
+networks is largely determined by the supply and demand in the vicinity of some major smuggling ports and other
+to mention a few. When violence is sold and
+generated by these consumers. areas central to the drug trade.54
+bought by criminals, this is referred to as vio-
+lence-as-a-serviceviii.
+vii Shortened to CaaS.
+viii Shortened to VaaS.
+30 31
 
-### 1.3 Drivers of crime
-Crime arises in a complex interplay of factors that influence individuals and society. A number of drivers impact the crime picture, and most of them evolve slowly. Human factors make up the motive for or functions as a catalyst for most types of crime. Such factors are, for example, mental ill-health, boredom, willingness to take risk, desire for money, sex drive, opportunism and the desire to belong to a social group.
+Police Threat Assessment 2026 – Norway Section 03 Contents PPoolliiccee TThhrreeaatt AAsssseessssmmeenntt 22002266 –– NNoorrwwaayy SSeeccttiioonn 0033 CCoonntteennttss
+Minors exploited by criminals to carry Young perpetrators in the VaaS chain (see illustration) are
+out VaaS often asked to send photos of their identity documents, Recruitment of youngsters Minors are recruited into
+2025 saw an increase in the recruitment and exploitation such as passports, and confirm their identity in to carry out violent offences VaaS on digital platforms
+of minors to carry out violence-as-a-service in Norway. video calls. The police have seen that some potential
+The upward trend started in spring but rose sharply in perpetrators who have withdrawn from the assignment
+autumn with incidents which included the use of hand mid-process, have become victims of threats. The Youngsters can be recruited into VaaS Criminal networks publish content
+grenades and firearms in public places. criminal networks exploit the youngsters’ forwarded in a number of different ways, but the targeting youngsters on social media
+personal details. This method is also known from process tends to follow a pattern such as Instagram, TikTok and Snapchat.
+involving a fixed set of roles. Here, the networks place ads and recruit
+Violence-as-a-service means that criminal actors and Sweden. The police are concerned that young people
+young people to commit VaaS. Algorithms
+networks both supply and commission violent services, who are recruited to commit VaaS may become victims
+help spread the content far and wide. The
+which are offered against payment. Many perpetrators are of pressure, coercion and threats from criminal networks
+recruiters use memes and gaming
+minors. The exploitation of minors evidence a high degree both prior to, during and after the assignments.58 terminology to downplay serious violence.
+INSTIGATOR
+of cynicism in criminal networks. VaaS assignments are
+STEP 1
+offered through digital platforms functioning as market- VaaS committed in Norway is generally linked to Swedish The person who orders and finances the
+places for the commission, coordination and facilitation of criminal networks. In the past, criminal networks relied on crime. Often based abroad and part of
+violence. As well as commercialising violence and making resources from Sweden. Now, the perpetrators are often an established criminal network.
+it more accessible, this has helped secure a high degree locally sourced minors.59 S wedish criminal actors have
+of anonymity.55 used VaaS to strengthen their own position and capacity
+for violence in the N orwegian drug market, which to them is
+RECRUITER
+The use of social media and encrypted messaging an attractive market.
+services is key to facilitate VaaS. What’s more, their use Functions as an intermediary. Places
+bring instigators and perpetrators of VaaS together across VaaS is mainly used against other criminal actors. VaaS “job ads” in online groups or other Recruiters get minors to join them on more
+vast geographical distances.56 The instigators are part of However, with minors armed with weapons such as hand channels to recruit perpetrators. secure apps where they can communicate
+established criminal networks and protected by stringent grenades committing the attacks, the risk of confusing in closed groups. In the groups, recruiters
+publish generic descriptions of the VaaS
+security measures. Some operate from abroad, particularly targets or harming innocent persons is high.
+to be carried out. The same jobs are
+from countries without an extradition treaty with Norway.
+ENABLER published on several forums to be sure to
+find potential candidates.
+In many cases, perpetrators do not learn the motive Someone who enables the crime by
+behind the assignment or the identity of the victim procuring weapons, facilitating transport STEP 2
+until they have accepted it. VaaS assignments have and finding places to stay. More than one
+enabler can be involved in the same crime.
+increasingly been advertised, planned and carried out
+within a short space of time, sometimes as little as hours
+or days. This makes VaaS an international problem which
+is difficult to prevent and combat. PERPETRATOR
+The police averted dozens of VaaS assignments in 2025. The person who physically commits the
+commissioned violence. Generally For the planning and coordination phase,
+The averted assignments involved minors from all parts
+youngsters with no links to the criminal security is tightened further and
+of the country.57 Some were below, others above the age
+network who neither know the victim nor the communication is moved to end-to-end
+of criminal liability. Some were known to the police, others
+area where the crime is to be committed. encrypted apps such as Signal. The details
+were not. Norwegian minors have also been recruited of the VaaS to be carried out can now be
+to carry out VaaS in other countries. Young perpetrators shared directly with the perpetrator.
+are lured with promises of money and status, but the
+STEP 3
+promises are rarely kept. In many cases the young
+perpetrators are not paid, and many have been arrested
+following the assignments.
+32 33
 
-#### Geopolitical rivalry
-Geopolitical rivalry is a key word for much of the interaction between states today. In recent years, the international system has evolved towards a so-called multipolar power structure, where countries fight for their place as global or regional superpowers. Amongst subject-matter experts, there is a wide consensus that such multipolarity tends to increase competition, mistrust and instability. This situation can impact the crime picture in Europe and Norway.
-
-In their public threat assessments, the Norwegian Police Security Service (PSS) and the Norwegian Intelligence Service (NIS), both emphasise the threat from organised criminals acting on behalf of state actors, so-called proxy-actors.[^2] According to the PSS, the lines are blurring between state actors, terrorism and organised crime. The police share their concern for a trend whereby criminal networks can be exploited by foreign governments to carry out operations.
-
-> **WHAT IS A PROXY ACTOR?**
-> Norwegian intelligence and security services define proxy actors as persons or organisations with no formal ties to intelligence and security services or other public agencies, who, knowingly or not, carry out activities on behalf or in support of state actors. The activities can be politically, ideologically or financially motivated. The Norwegian intelligence and security services have pointed out that proxy actors are put to active use in activities spanning from traditional espionage to sabotage, violent attacks and information warfare targeting the West.[^3]
-
-#### Trends of the Norwegian economy, labour market and welfare schemes
-According to a recent forecast report from the Ministry of Finance, prospects are good for the Norwegian economy in the coming years.[^8] Despite a proportion of the population being outside the labour market, the unemployment rate is low for healthy individuals of working age. The Ministry of Finance is satisfied that, unless the global economy is hit by major unforeseen events, unemployment rates, the financial situation of families and the welfare system will remain stable.
-
-#### Technological developments
-Technological developments are shaping almost every aspect of our lives, including the crime picture. However, it is not just technology, with its new tools and services, that evolves. Society’s relationship with technology and how we use it in our everyday lives is changing.
-
-> **“VIPPS ROBBERIES”: A NEW PHENOMENON OR A CHANGE OF MO?**
-> In 2025 robberies committed using the Norwegian mobile payment app Vipps, referred to in the media as “Vipps robberies”, became the object of much attention.[^12] Although sometimes presented as a new phenomenon, robberies and theft from individuals is nothing new. However, the use of digital payment solutions, with Vipps being the most widely used in Norway, has paved the way for a new method.
-
----
-
-## Crime in the Past Year
-
-### 2.1 Types of crime reported
-To what extent the number of reported crimes matches that of the actual number of incidents largely depends on the type of crime. Only for crimes that are highly likely to be detected or reported, there is a fairly good match between the number of police reports and actual incidents.
-
-#### Violent crime
-Violence or threats of violence not only harm the involved parties, they also have a detrimental effect on the perceived safety of people in the surrounding community. Violence and threats made up slightly over 10% of all crimes reported in 2025. Most reports concerned lesser violent offences (70%), whereas the most serious violent crimes constituted less than 2% of the total case volume.
-
-#### Sexual offences
-The number of sexual offences reported to the police has fallen slightly in the past two years. Around 2% of all reported offences in 2025 were sexual offences. Around a third of the complaints for sexual offences concerned rape.
-
-> **NEW LEGAL PROVISION ON SEXUAL CONSENT: ONLY “YES” MEANS “YES”**
-> The new legal provision on sexual consent, sometimes referred to as the “consent law”, came into force on 1 July 2025. The new provision introduces the requirement for active consent.[^25]
-
-#### Drug crime
-Violations of narcotic drugs and doping legislation make up around 5% of the total number of criminal cases. These offences are detected and prosecuted almost entirely based on the efforts of the police, customs service, postal services and other authorities.
-
-#### Cyber-dependent crime
-In a global perspective, there has been a clear increase in all types of crimes targeting computer systems over the past few years. The main causes is the increased availability of artificial intelligence (AI) as a supporting tool and the commercialisation of cybercrime services.[^34]
-
-### 2.2 Geographical variations
-Few European countries are more geographically diverse than Norway. Its inhabitants live in areas spanning from the continuous urban belt of the south-east, via the sparsely populated inland areas in central Norway to small rural municipalities along the coast.
-
-![Map of Norway showing police districts and crime statistics]
-
----
-
-## Crime Likely to Pose a Threat to Society in the Year to Come
-
-### 3.1 A significant, persistent threat from criminal networks
-Norwegian society faces a considerable, persistent threat from criminal networks. The networks are adaptable, and continue to cooperate dynamically across national borders and continents. The fight against these networks is demanding in terms of time and resources, for the police as well as for their partner agencies and organisations.
-
-#### Minors exploited by criminals to carry out VaaS
-2025 saw an increase in the recruitment and exploitation of minors to carry out violence-as-a-service in Norway. The upward trend started in spring but rose sharply in autumn with incidents which included the use of hand grenades and firearms in public places.
-
-![Illustration of the VaaS recruitment chain]
-
-### 3.2 Criminals make a profit from society's shared assets and values
-The criminal economy in Norway has previously been estimated at around three per cent of the country's mainland GDP.[^60] Illegal economic activity causes a massive loss of tax revenue for the public sector. To the extent that organised criminals succeed with their crimes at the expense of society, this can, in the longer run, erode trust in the system and undermine the welfare state.
-
-### 3.3 Cybercrime and online-based criminal communities
-Although the term covers an array of crimes ranging from minor to serious, cybercrime can be defined as illegal activities in which advanced technology either constitutes a target in itself or is utilised to facilitate crime. The distinction is often made between cyber-dependent and cyber-enabled crime.
-
----
-
-## References
-[^1]: Statement from the Ministry of Foreign Affairs, Parliamentary White Paper no. 20 (2025)
-[^2]: Norwegian Police Security Service (PSS) and Norwegian Intelligence Service (NIS) public threat assessments.
-[^3]: PSS/NIS reports on proxy actors.
-[^4-7]: International police cooperation agreements (e.g., Morocco MoU 2025).
-[^8-9]: Ministry of Finance forecast reports.
-[^10]: Real estate transaction data.
-[^11]: Currency valuation reports.
-[^12]: Media reports on "Vipps robberies".
-[^13]: Tech sector role in society reports.
-[^14-15]: Online sexual crime case studies.
-[^16-17]: 2024 Annual Prosecution Report.
-[^18]: Police guidelines for investigations.
-[^19-21]: Data on visit/contact bans and GPS tagging.
-[^22-24]: Homicide and attempted homicide statistics 2025.
-[^25]: Section 291 of the Norwegian Penal Code (Sexual Consent).
-[^26-27]: National Criminal Investigation Service reports on sextortion and AI-generated imagery.
-[^28-29]: Drug seizure and prosecution statistics.
-[^30-32]: Economic crime surveys and Økokrim estimates.
-[^33]: Corruption statistics.
-[^34]: Global cybercrime trends.
-[^35]: Norwegian Business and Industry Security Council survey 2024.
-[^36-37]: Denial-of-service and ransomware statistics.
-[^38-41]: UN and international conventions on human trafficking.
-[^42-43]: National strategy against human trafficking 2025–2030.
-[^44]: Europol organised crime assessments.
-[^45-52]: Drug market analysis, profit margins, and overdose statistics.
-[^53-54]: Cocaine smuggling and port security reports.
-[^55-59]: Violence-as-a-service (VaaS) and minor exploitation reports.
-[^60]: Criminal economy GDP estimates.
-[^62]: Fraud loss estimates.
-[^66-68]: Digital ID fraud and AI-related crime reports.
-
----
-
-arallel financial underworld for criminal actors. The higher.63 Profits from fraud can help finance new fraud Norwegian institutions to gather card details from private
+Police Threat Assessment 2026 – Norway Section 03 Contents Police Threat Assessment 2026 – Norway Section 03 Contents
+3.2
+CRIMINALS MAKE A PROFIT In 2025 frauds estimated at over NOK
+2 billion (around EUR 180 million)
+were reported to Norwegian police.
+FROM SOCIETY'S SHARED ASSETS
+AND VALUES
+The criminal economy in Norway has previously been strives to become more user-friendly and transparent Digital IDs misused to commit fraud Criminals can gain control over other people's digital IDs,
+estimated at around three per cent of the country's with new digital solutions at the public’s disposal. This Every year public organisations, private businesses and for example through purchase, theft, extortion or threats
+mainland GDP.60 Illegal economic activity causes a m assive increases availability but can also facilitate crime. private individuals fall victim to different kinds of fraud. In as a means to make victims carry out certain actions using
+loss of tax revenue for the public sector. To the extent 2025 frauds estimated at over NOK 2 billion (around EUR their own digital ID.66 Foreign employees who are v ictims
+that organised criminals succeed with their crimes at the Proceeds of crime are increasingly handled by 180 million) were reported to Norwegian police. By way of of work-related crime in Norway also risk b ecoming victims
+expense of society, this can, in the longer run, erode trust professionals. Actors specialising in money laundering comparison, the estimated loss from fraud in the Nordic of digital ID fraud.67 Another method involves the use of
+in the system and undermine the welfare state. have developed a range of unregulated financial services countries in 2023 was estimated at EUR 828 million or artificial intelligence.68 International actors have d eveloped
+outside the traditional finance sector, paving the way around NOK 10 billion.62 The actual loss is probably much applications that pose as well-known and trusted
+The lines between traditional economic crime and other for a parallel financial underworld for criminal actors. The higher.63 Profits from fraud can help finance new fraud Norwegian institutions to gather card details from private
 profit-motivated crime continue to blur as organised proceeds remain in the hands of the criminals and are schemes, but also enable other criminal activities.64 individuals. This way, they have obtained the card details of
 criminals are increasingly involved in economic crime. reinvested in the criminal economy. thousands of Norwegian citizens.69
 There is a lot of money to be made on fraud against
@@ -655,4 +1245,4 @@ Published by: National Criminal Investigation Service
 politiet.no/trusselvurdering
 Published on 25 February 2026
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-06-10", "model": "gemini-3.1-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-02", "model": "gemini-3.5-flash-lite"} -->

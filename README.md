@@ -14,7 +14,7 @@
 
 <!-- BADGES_START -->
 **Annual Report Counts:** \
-![Total](https://img.shields.io/badge/Total_Reports-1092-blue?style=flat-square)
+![Total](https://img.shields.io/badge/Total_Reports-1097-blue?style=flat-square)
 ![2008](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2008?type=file&style=flat-square&label=2008)
 ![2009](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2009?type=file&style=flat-square&label=2009)
 ![2010](https://img.shields.io/github/directory-file-count/jacobdjwilson/awesome-annual-security-reports/Annual%20Security%20Reports%2F2010?type=file&style=flat-square&label=2010)
