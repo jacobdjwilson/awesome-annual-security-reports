@@ -180,7 +180,10 @@
       "org_domain_match_bonus": 25,
       "org_domain_mismatch_pdf_penalty": -20,
       "wrong_year_in_url_penalty": -30,
-      "self_reference_domains": [],
+      "self_reference_domains": [
+        "github.com/jacobdjwilson",
+        "raw.githubusercontent.com/jacobdjwilson"
+      ],
       "self_reference_domains_comment": "Add your repo's GitHub paths here. Matching URLs are hard-rejected to prevent the CSE surfacing the repo itself.",
 
       "url_reject_patterns": [
