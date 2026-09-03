@@ -83,6 +83,8 @@ class ConfigLoader:
         self.score_existing_subdomain_match_bonus: int = scoring.get("existing_subdomain_match_bonus", 0)
         # Minimum score a result must reach to be accepted (0 = disabled)
         self.score_min_accept: int = scoring.get("min_accept_score", 0)
+        # Reject PDF setting (True by default for report_url mode)
+        self.reject_pdf: bool = mode_cfg.get("reject_pdf", mode == "report_url")
 
     def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
         path = self.artifacts_dir / filename
@@ -103,6 +105,27 @@ class ConfigLoader:
 # ==========================
 # URL UTILITIES
 # ==========================
+def is_direct_pdf_url(url: str, item: Optional[Dict[str, Any]] = None) -> bool:
+    """
+    Return True if the URL points directly to a PDF file or if item metadata indicates PDF.
+    """
+    if not url:
+        return False
+    try:
+        parsed = urllib.parse.urlparse(url)
+        path = parsed.path.lower()
+        if path.endswith(".pdf") or ".pdf/" in path or path.endswith(".pdf.gz"):
+            return True
+    except Exception:
+        pass
+    if item:
+        file_format = str(item.get("fileFormat", "")).upper()
+        mime = str(item.get("mime", "")).lower()
+        if file_format == "PDF" or mime == "application/pdf":
+            return True
+    return False
+
+
 def _extract_registered_domain(url: str) -> str:
     """
     Return the registered domain (last two labels) from a URL, lowercased.
@@ -236,6 +259,9 @@ class GoogleSearchClient:
         year_str  = str(query_record.get("year", ""))
 
         # ── Hard disqualifiers ────────────────────────────────────────────
+        if cfg.reject_pdf and is_direct_pdf_url(item.get("link", ""), item):
+            return -1
+
         for domain in cfg.skip_domains:
             if domain.lower() in link:
                 return -1
@@ -402,10 +428,18 @@ class GoogleSearchClient:
         existing_host       = _extract_full_host(existing_url)       if existing_url else ""
         existing_reg_domain = _extract_registered_domain(existing_url) if existing_url else ""
 
+        # Avoid scoping Phase 1 to file CDN / storage subdomains or direct PDF URLs
+        site_domain = existing_host
+        if site_domain:
+            cdn_prefixes = ("services.", "mkto.", "content.", "assets.", "files.", "media.", "docs.", "static.")
+            if is_direct_pdf_url(existing_url) or any(site_domain.startswith(p) for p in cdn_prefixes):
+                if existing_reg_domain:
+                    site_domain = existing_reg_domain
+
         # ── Phase 1: site-scoped search (only when existing_url is available) ──
-        if existing_host:
+        if site_domain:
             for template_str in self.config.query_templates:
-                site_query = self.build_query(query_record, template_str, site_domain=existing_host)
+                site_query = self.build_query(query_record, template_str, site_domain=site_domain)
                 base_result["query"] = site_query
                 print(f"  Phase 1 (site-scoped): {site_query[:90]}...")
     
@@ -416,7 +450,9 @@ class GoogleSearchClient:
                     )
                     if best_item is not None and self._is_acceptable(best_score):
                         result_url = best_item.get("link", "")
-                        if not _is_toplevel_domain(result_url):
+                        if cfg.reject_pdf and is_direct_pdf_url(result_url, best_item):
+                            print(f"  ⊘ Phase 1 result is direct PDF — trying next template or falling through")
+                        elif not _is_toplevel_domain(result_url):
                             print(f"  ✓ Phase 1 hit (score={best_score}): {result_url}")
                             return {
                                 "id":      query_id,
@@ -474,7 +510,9 @@ class GoogleSearchClient:
                 
                 # Check acceptance conditions immediately
                 if self._is_acceptable(best_score):
-                    if not (_is_toplevel_domain(result_url) and existing_url and not _is_toplevel_domain(existing_url)):
+                    if cfg.reject_pdf and is_direct_pdf_url(result_url, best_item):
+                        print(f"  ⊘ Result is direct PDF — skipping")
+                    elif not (_is_toplevel_domain(result_url) and existing_url and not _is_toplevel_domain(existing_url)):
                         print(f"  ✓ Phase 2 hit (score={best_score}): {result_url}")
                         return {
                             "id":      query_id,
@@ -497,6 +535,12 @@ class GoogleSearchClient:
             return base_result
             
         result_url = best_overall_item.get("link", "")
+        if cfg.reject_pdf and is_direct_pdf_url(result_url, best_overall_item):
+            print(f"  ⊘ Broad search best result is direct PDF — rejected by policy")
+            base_result["status"] = "no_results"
+            base_result["reason"] = "Best result was direct PDF; rejected by reject_pdf policy"
+            return base_result
+
         if _is_toplevel_domain(result_url) and existing_url and not _is_toplevel_domain(existing_url):
             print(f"  ⊘ Broad search best result is bare homepage — keeping existing URL")
             base_result["status"] = "no_results"
@@ -581,7 +625,8 @@ def search_one(
         }
         result = client.search(record)
         if result["status"] == "success" and result["url"]:
-            return result["url"]
+            if not (config.reject_pdf and is_direct_pdf_url(result["url"])):
+                return result["url"]
     except Exception as e:
         print(f"  ⚠ search_one failed: {str(e)[:100]}")
     return None

@@ -14,13 +14,14 @@
     "modes": {
       "report_url": {
         "description": "Finds the specific landing page URL for a named security report. Uses two-phase search: Phase 1 is site-scoped to the existing domain (when existing_url is supplied), Phase 2 is a broad fallback.",
+        "reject_pdf": true,
         "query_templates": [
-          "{organization} \"{title}\" {year}",
-          "{organization} \"{title}\" {year} security report",
-          "{organization} {title} {year} report",
-          "{organization} {title} report",
-          "{organization} security {title} {year} report",
-          "{organization} {title}"
+          "{organization} \"{title}\" {year} -filetype:pdf",
+          "{organization} \"{title}\" {year} security report -filetype:pdf",
+          "{organization} {title} {year} report -filetype:pdf",
+          "{organization} {title} report -filetype:pdf",
+          "{organization} security {title} {year} report -filetype:pdf",
+          "{organization} {title} -filetype:pdf"
         ],
         "num_results": 10,
         "scoring": {
@@ -180,7 +181,10 @@
       "org_domain_match_bonus": 25,
       "org_domain_mismatch_pdf_penalty": -20,
       "wrong_year_in_url_penalty": -30,
-      "self_reference_domains": [],
+      "self_reference_domains": [
+        "github.com/jacobdjwilson",
+        "raw.githubusercontent.com/jacobdjwilson"
+      ],
       "self_reference_domains_comment": "Add your repo's GitHub paths here. Matching URLs are hard-rejected to prevent the CSE surfacing the repo itself.",
 
       "url_reject_patterns": [

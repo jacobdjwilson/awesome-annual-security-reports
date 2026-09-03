@@ -35,6 +35,31 @@ def _load_google_search_module() -> Optional[Any]:
 
 
 # ==========================
+# URL UTILITIES
+# ==========================
+def _is_pdf_url(url: str) -> bool:
+    """True if URL points directly to a PDF file."""
+    if not url:
+        return False
+    try:
+        parsed = urllib.parse.urlparse(url)
+        path = parsed.path.lower()
+        return path.endswith(".pdf") or ".pdf/" in path or path.endswith(".pdf.gz")
+    except Exception:
+        return url.lower().endswith(".pdf")
+
+
+def _extract_domain_from_url(url: str) -> str:
+    """Return the registered domain from a URL, or full host if unparseable."""
+    try:
+        host = urllib.parse.urlparse(url).netloc.lower().lstrip("www.")
+        parts = host.split(".")
+        return ".".join(parts[-2:]) if len(parts) >= 2 else host
+    except Exception:
+        return ""
+
+
+# ==========================
 # CONFIGURATION LOADER
 # ==========================
 class ConfigLoader:
@@ -605,38 +630,40 @@ class ReadmeUpdater:
         existing_url_for_search = analysis.get("organization_url") or known_org_url or ""
         
         # Predictive URL Fallback: if we have an existing URL for a previous year, try swapping the year.
-        if existing_url_for_search:
+        # NEVER use predictive URL fallback if the existing URL is a direct PDF link.
+        if existing_url_for_search and not _is_pdf_url(existing_url_for_search):
             current_year_str = str(analysis.get("year", ""))
             match = re.search(r'(20\d{2})', existing_url_for_search)
             if match and match.group(1) != current_year_str:
                 predicted_url = existing_url_for_search.replace(match.group(1), current_year_str)
-                try:
-                    import requests
-                    print(f"    🔍 Predictive check: Testing {predicted_url}")
-                    # Use GET with stream=True to fetch only the first chunk to check for soft 404s in the head/title
-                    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-                    r = requests.get(predicted_url, headers=headers, allow_redirects=True, timeout=7, stream=True)
-                    if r.status_code == 200:
-                        content = next(r.iter_content(chunk_size=8192), b"").decode('utf-8', errors='ignore').lower()
-                        title_match = re.search(r'<title[^>]*>(.*?)</title>', content, re.DOTALL)
-                        page_title = title_match.group(1).strip() if title_match else ""
-                        
-                        is_soft_404 = False
-                        if "404" in page_title or "not found" in page_title:
-                            is_soft_404 = True
-                        elif "404" in content[:2000] and "not found" in content[:2000]:
-                            is_soft_404 = True
+                if not _is_pdf_url(predicted_url):
+                    try:
+                        import requests
+                        print(f"    🔍 Predictive check: Testing {predicted_url}")
+                        # Use GET with stream=True to fetch only the first chunk to check for soft 404s in the head/title
+                        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+                        r = requests.get(predicted_url, headers=headers, allow_redirects=True, timeout=7, stream=True)
+                        if r.status_code == 200:
+                            content = next(r.iter_content(chunk_size=8192), b"").decode('utf-8', errors='ignore').lower()
+                            title_match = re.search(r'<title[^>]*>(.*?)</title>', content, re.DOTALL)
+                            page_title = title_match.group(1).strip() if title_match else ""
                             
-                        if is_soft_404:
-                            print(f"    ⊘ Predictive check failed (Soft 404 detected)")
+                            is_soft_404 = False
+                            if "404" in page_title or "not found" in page_title:
+                                is_soft_404 = True
+                            elif "404" in content[:2000] and "not found" in content[:2000]:
+                                is_soft_404 = True
+                                
+                            if is_soft_404:
+                                print(f"    ⊘ Predictive check failed (Soft 404 detected)")
+                            else:
+                                print(f"    ✓ Predictive match found: {predicted_url}")
+                                analysis["organization_url"] = predicted_url
+                                return
                         else:
-                            print(f"    ✓ Predictive match found: {predicted_url}")
-                            analysis["organization_url"] = predicted_url
-                            return
-                    else:
-                        print(f"    ⊘ Predictive check failed (HTTP {r.status_code})")
-                except Exception as e:
-                    print(f"    ⚠ Predictive check failed: {str(e)[:100]}")
+                            print(f"    ⊘ Predictive check failed (HTTP {r.status_code})")
+                    except Exception as e:
+                        print(f"    ⚠ Predictive check failed: {str(e)[:100]}")
         
         if self.google_search_module is not None:
             try:
@@ -648,25 +675,36 @@ class ReadmeUpdater:
                     mode          = self.config.search_mode,
                     existing_url  = existing_url_for_search,
                 )
-                if searched and "google.com/search" not in searched:
+                if searched and not _is_pdf_url(searched) and "google.com/search" not in searched:
                     print(f"    ✓ Report URL from search: {searched}")
                     analysis["organization_url"] = searched
                     return
             except Exception as e:
                 print(f"    ⚠ google-search.py search_one() failed: {str(e)[:100]}")
 
-        # google-search.py unavailable or returned nothing — keep existing URL if real
+        # google-search.py unavailable or returned nothing — keep existing URL only if real and not a PDF
         org_url = analysis.get("organization_url") or known_org_url or ""
-        if org_url and "google.com/search" not in org_url:
+        if org_url and not _is_pdf_url(org_url) and "google.com/search" not in org_url:
             print(f"    ⚠ Search unavailable; keeping existing URL: {org_url}")
             analysis["organization_url"] = org_url
             return
 
+        # If existing org_url was a PDF, extract the author's root website instead of keeping the PDF
+        if org_url and _is_pdf_url(org_url):
+            try:
+                domain = _extract_domain_from_url(org_url)
+                if domain:
+                    analysis["organization_url"] = f"https://www.{domain}"
+                    print(f"    ⚠ Existing URL was PDF; extracted author domain: {analysis['organization_url']}")
+                    return
+            except Exception:
+                pass
+
         # Last-resort fallback: construct a plausible homepage only if we really have nothing
-        if not analysis.get("organization_url"):
+        if not analysis.get("organization_url") or _is_pdf_url(analysis["organization_url"]):
             slug = re.sub(r"[^a-z0-9]", "", analysis["organization"].lower())
             analysis["organization_url"] = f"https://www.{slug}.com"
-            print(f"    ⚠ No URL found; using fallback: {analysis['organization_url']}")
+            print(f"    ⚠ No non-PDF URL found; using fallback: {analysis['organization_url']}")
 
     def _build_report_url(self, analysis: Dict[str, Any]) -> str:
         """pdf_path is already repo-relative; just percent-encode spaces."""
