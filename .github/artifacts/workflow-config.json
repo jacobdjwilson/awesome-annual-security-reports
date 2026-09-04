@@ -168,6 +168,15 @@
       "python_packages": [
         "requests"
       ]
+    },
+    "lint": {
+      "output_file": "lint_output.txt",
+      "target_file": "README.md",
+      "ignored_rules": [
+        "double-link",
+        "remark-lint:double-link"
+      ],
+      "comment": "Configuration for awesome-lint parsing, suppressions, and quality gating. Ignored rules prevent false-positive failures when multiple reports legitimately share an organization landing page."
     }
   }
 }

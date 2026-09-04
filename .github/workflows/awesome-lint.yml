@@ -4,7 +4,8 @@ on:
   push:
     paths:
       - 'README.md'
-  pull_request:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
     paths:
       - 'README.md'
   workflow_dispatch:
@@ -24,6 +25,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Prepare lint target
+        env:
+          GITHUB_EVENT_NAME: "${{ github.event_name }}"
+          PR_HEAD_SHA: "${{ github.event.pull_request.head.sha }}"
+        run: python .github/scripts/prepare-lint-target.py
+
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
@@ -33,33 +40,11 @@ jobs:
         run: npm install --global awesome-lint
 
       - name: Run awesome-lint
-        id: lint_check
-        run: |
-          awesome-lint > lint_output.txt || true
-          cat lint_output.txt
+        run: awesome-lint > lint_output.txt 2>&1 || true
 
-          python .github/scripts/parse-awesome-lint.py
-
-      - name: Check for lint ignore directives
-        run: |
-          if grep -q "lint ignore" README.md; then
-            echo "ℹ️ README.md contains lint ignore directives — this is expected for some entries."
-          fi
-
-      - name: Determine workflow status
+      - name: Validate lint results
         id: status_check
-        run: |
-          if grep -q "✖" lint_output.txt; then
-            echo "lint_status=failed" >> $GITHUB_OUTPUT
-            ERROR_COUNT=$(grep -c "✖" lint_output.txt || echo "0")
-            echo "error_count=$ERROR_COUNT" >> $GITHUB_OUTPUT
-            echo "::error::Linting failed with $ERROR_COUNT error(s). See annotations above."
-            exit 1
-          else
-            echo "lint_status=succeeded" >> $GITHUB_OUTPUT
-            echo "error_count=0" >> $GITHUB_OUTPUT
-            echo "✅ Linting succeeded!"
-          fi
+        run: python .github/scripts/parse-awesome-lint.py
 
       - name: Generate step summary
         if: always()
@@ -69,5 +54,4 @@ jobs:
           ERROR_COUNT: "${{ steps.status_check.outputs.error_count }}"
           REF_NAME: "${{ github.ref_name }}"
           EVENT_NAME: "${{ github.event_name }}"
-        run: |
-          python .github/scripts/generate-workflow-summary.py --workflow lint
+        run: python .github/scripts/generate-workflow-summary.py --workflow lint

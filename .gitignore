@@ -1,2 +1,4 @@
 .agents/
 /*.json
+__pycache__/
+*.pyc
