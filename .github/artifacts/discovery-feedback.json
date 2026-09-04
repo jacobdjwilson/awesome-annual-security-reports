@@ -2,11 +2,11 @@
   "schema_version": "2.0",
   "last_updated": null,
   "last_learner_run": null,
-  "total_feedback_events": 7,
+  "total_feedback_events": 8,
   "outcome_counts": {
     "true_positive": 2,
     "false_positive": 1,
-    "duplicate": 1,
+    "duplicate": 2,
     "mismatch": 3
   },
   "triage_log": [],
@@ -122,6 +122,16 @@
       "org": "DomainTools",
       "url": "https://www.cybersecurity-insiders.com/research-library/",
       "outcome": "mismatch",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-09-04T06:53:22.124535Z",
+      "issue_number": 1762,
+      "issue_title": "[Report Discovery] Gurucul 2026 \u2014 Insider Threat Report",
+      "org": "Gurucul",
+      "url": "https://cogility.com/wp-content/uploads/2026/03/Insider_Risk_Decay_IEEE_pre_publication_Greitzer.pdf",
+      "outcome": "duplicate",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
