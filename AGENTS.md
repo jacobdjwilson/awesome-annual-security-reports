@@ -5,6 +5,7 @@ When working on this repository, you must adhere to the following strict guideli
 ## 1. Workflow Architecture and Script Coding Standards
 - **Do not embed scripts in workflows.** All GitHub Actions workflows must reference external scripts (e.g., in `.github/scripts/`) rather than embedding inline script logic. This ensures extensibility, reusability, testability, and automated linting.
 - **Single Responsibility.** Each script in `.github/scripts/` must fulfill a focused operational step in the CI/CD pipeline.
+- **Prevent Over-Fragmentation & Script Sprawl.** Modularity must not degrade into excessive micro-scripts. Common operational utilities (such as rendering step summaries via `generate-workflow-summary.py` or discovering files across operational modes via `find-files.py`) must be unified into cohesive, domain-scoped modules with clear CLI interfaces (`--workflow`, `--step`, `--all`) rather than duplicating near-identical one-off scripts.
 - **Standardized Script Architecture.** All Python scripts in `.github/scripts/` must adhere to a consistent, modular structural approach:
   1. **Header & Docstring**: Declare the following 4 structured sections in every script:
      - `Operational Purpose:` Concise description of the operational task and CI/CD context.
@@ -47,14 +48,27 @@ When working on this repository, you must adhere to the following strict guideli
 - **Fallback Chains.** Scripts making AI calls must support fallback ladders (`primary` -> `secondary` -> `tertiary`) loaded from `ai-models.json`.
 - **Quota Error Handling.** Quota exhaustion (HTTP 429 / `RESOURCE_EXHAUSTED`) must be differentiated from transient errors. Scripts must respect API-supplied retry delays when provided, and otherwise apply `quota_retry_policy` backoff curves from `ai-models.json`.
 
-## 5. Automation Safeguards and Concurrency Gating
+## 5. Automation Safeguards, Concurrency, and Release Gating
+- **Branch Topology & Release Gating.** The repository maintains two core branches:
+  - `development`: Active integration and staging branch for new features, script refactorings, and report ingest testing.
+  - `main`: Production and canonical release branch.
+- **Automated CI Validation Gating.** To prevent slow and resource-intensive validation on local developer workstations, all pull requests and pushes targeting `main` or `development` must execute and pass the automated CI release gate ([`.github/workflows/ci-validation.yml`](.github/workflows/ci-validation.yml) calling `.github/scripts/verify-code-integrity.py`). This gate verifies script syntax compilation, AGENTS.md docstrings, JSON schema validity, and AI prompt formatting in under 1 minute.
+- **Branch-Aware PR Creation.** Automated workflows creating Pull Requests (e.g., `security-reports-pipeline.yml`) must explicitly target `base: ${{ github.base_ref || github.ref_name }}` so that runs on `development` generate PRs targeting `development`, and runs on `main` generate PRs targeting `main`.
+- **Resilient Branch Synchronization.** Synchronization workflows (e.g., `sync-dev.yml`) must check out the source branch (`main`) so runner scripts are guaranteed present on disk before checking out and merging into `development`.
 - **Enforce Operational Caps.** Automated workflows must query and enforce pipeline caps before initiating processing:
   - `max_open_automated_prs` from `workflow-config.json` prevents automated PR accumulation.
   - `max_open_automated_issues` from `workflow-config.json` limits open discovery triage suggestions.
 - **PR Branch Deduplication.** Workflows that generate conversions or updates must check existing open PR branches before processing files to prevent duplicate PR creation and git merge conflicts.
 - **Gating Between Pipelines.** Dependent pipelines must verify the status of prerequisite workflow runs (checking `workflow.gating` configuration) before modifying shared assets.
 
-## 6. Repository Data Integrity and Formatting Standards
+## 6. Repository Data Integrity, Validation Domains, and Formatting Standards
+- **Integrity Validation Issue Domains.** Repository integrity is monitored and tracked across 4 explicit domains in `workflow-config.json`:
+  1. `Links`: Dead external links, missing README entries within the active reporting window.
+  2. `Integrity`: Corrupted or invalid PDFs/Markdowns, oversized files, duplicate PDFs, duplicate Markdown similarity.
+  3. `Structure`: Orphaned PDFs, orphaned Markdowns, naming convention violations, year mismatches.
+  4. `Linting`: Awesome list formatting and style specification errors and warnings.
+- **Awesome Lint Lifecycle.** On canonical branch pushes (`main` and `development`), `awesome-lint` results must be synchronized to the `Repository Integrity Validation: Linting` GitHub issue with embedded fingerprint deduplication. When all issues are resolved, the issue must be closed automatically. Pull request runs must emit annotations only to prevent polluting repository-level issues.
+- **No Conversion Error Stubs.** Conversion scripts (e.g. `pdf-converter.py`) must never generate or commit corrupt stub markdown files containing `Conversion error: ...` on failure. If conversion fails, any partial output file must be deleted from disk; if an existing valid conversion existed previously, it must be restored.
 - **README Entry Format.** All entries added to `README.md` must adhere strictly to:
   `- [Organization](WebsiteURL) - [Title](PDFPath) (Year) - Summary`
   - `WebsiteURL` must be the organization's landing page or full report landing page, never truncated to a bare top-level domain.
