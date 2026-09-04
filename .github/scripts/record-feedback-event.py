@@ -1,3 +1,23 @@
+"""
+Operational Purpose:
+    Appends maintainer issue triage outcomes (accepted, false-positive, duplicate, mismatch)
+    to the discovery feedback event log in discovery-feedback.json for machine learning.
+
+Required Environment Variables:
+    ISSUE: Issue number being triaged.
+    ISSUE_TITLE: Issue title string.
+    OUTCOME: Triage verdict (e.g. accepted, false-positive, duplicate).
+    REASON: Optional rationale notes.
+    AUTHOR: Username of triage reviewer.
+
+Outputs:
+    .github/artifacts/discovery-feedback.json: Updated event log.
+
+JSON Artifact Dependencies:
+    .github/artifacts/workflow-config.json (workflow.issue_triage.feedback_artifact_path)
+    .github/artifacts/discovery-feedback.json
+"""
+
 import json
 import os
 import datetime

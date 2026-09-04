@@ -1,3 +1,20 @@
+"""
+Operational Purpose:
+    Parses key-value telemetry metrics emitted in discovery_output.log and exports
+    them to $GITHUB_OUTPUT for downstream workflow reporting.
+
+Required Environment Variables:
+    GITHUB_OUTPUT (optional): Path to export discovery metrics.
+    EXIT_CODE (optional): Exit code of the discovery execution.
+
+Outputs:
+    tasks, created, suppressed, skipped, pdf_finds, landing_finds, tier_current,
+    tier_stale, tier_old, vt_clean, vt_suspicious, vt_malicious, exit_code.
+
+JSON Artifact Dependencies:
+    None.
+"""
+
 import os
 
 def write_output(key, value):

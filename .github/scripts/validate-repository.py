@@ -1,3 +1,20 @@
+"""
+Operational Purpose:
+    Performs comprehensive repository validation across structure, file integrity,
+    PDF-Markdown parity, naming conventions, external link health, and duplicate detection.
+
+Required Environment Variables:
+    GITHUB_OUTPUT (optional): Path to export error_count, warning_count, and has_findings.
+
+Outputs:
+    validation_findings.json: Detailed structured report of detected errors and warnings.
+
+JSON Artifact Dependencies:
+    .github/artifacts/workflow-config.json
+    .github/artifacts/report-categories.json
+    .github/artifacts/readme-updater-config.json
+"""
+
 import os
 import sys
 import re

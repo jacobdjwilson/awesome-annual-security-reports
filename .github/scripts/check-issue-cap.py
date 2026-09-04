@@ -1,3 +1,21 @@
+"""
+Operational Purpose:
+    Enforces operational cap on open automated triage suggestion issues to prevent
+    backlog saturation. Emits cap status flags to GITHUB_OUTPUT.
+
+Required Environment Variables:
+    GITHUB_OUTPUT (optional): Path to export cap_reached, open_count, and max_issues.
+    GH_TOKEN (optional): GitHub API authentication token for gh CLI.
+
+Outputs:
+    cap_reached (bool): 'true' if open issues meet or exceed limit, 'false' otherwise.
+    open_count (int): Current number of open automated issues.
+    max_issues (int): Maximum allowed open automated issues.
+
+JSON Artifact Dependencies:
+    .github/artifacts/workflow-config.json (workflow.discovery.max_open_automated_issues, workflow.pull_request.labels)
+"""
+
 import os
 import sys
 import subprocess

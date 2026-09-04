@@ -1,3 +1,22 @@
+"""
+Operational Purpose:
+    Scans converted Markdown reports to detect stale conversions that were generated
+    using older AI models, exceed age thresholds, or fall below minimum length requirements.
+
+Required Environment Variables:
+    PDF_SOURCE (optional): Directory containing PDF source reports.
+    MD_FOLDER (optional): Directory containing Markdown conversions.
+    LIMIT (optional): Batch size limit for stale file queue.
+    DAYS_OLD (optional): Maximum age in days before a conversion is deemed stale.
+
+Outputs:
+    files_to_process.txt: List of PDF file paths queued for reconversion.
+
+JSON Artifact Dependencies:
+    .github/artifacts/ai-models.json (task_models.conversion.primary, models.primary)
+    .github/artifacts/workflow-config.json (workflow.conversion, workflow.folders)
+"""
+
 import os
 import json
 import time

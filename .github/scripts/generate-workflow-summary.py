@@ -1,3 +1,21 @@
+"""
+Operational Purpose:
+    Renders discovery execution statistics, VirusTotal verdicts, and learning feedback telemetry
+    to $GITHUB_STEP_SUMMARY for the report discovery workflow.
+
+Required Environment Variables:
+    GITHUB_STEP_SUMMARY: Path to GitHub Actions step summary file.
+    GITHUB_REPO (optional): Repository identifier.
+    GITHUB_RUN_ID (optional): Workflow run identifier.
+    GITHUB_EVENT_NAME (optional): Triggering event name.
+
+Outputs:
+    Appends discovery and feedback summary tables to $GITHUB_STEP_SUMMARY.
+
+JSON Artifact Dependencies:
+    None.
+"""
+
 import os
 import sys
 import json

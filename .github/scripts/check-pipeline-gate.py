@@ -1,3 +1,26 @@
+"""
+Operational Purpose:
+    Evaluates concurrency gating between pipelines to ensure dependent validation workflows
+    only execute when prerequisite workflows have completed successfully on shared assets.
+
+Required Environment Variables:
+    GITHUB_EVENT_NAME: Event that triggered the run (e.g. workflow_dispatch, workflow_run).
+    GITHUB_REPOSITORY: Repository identifier (owner/repo).
+    GITHUB_SHA (optional): Commit SHA for manual/scheduled runs.
+    WORKFLOW_RUN_HEAD_SHA (optional): Commit SHA of triggering workflow run.
+    WORKFLOW_RUN_CONCLUSION (optional): Conclusion of triggering workflow (success, failure).
+    WORKFLOW_RUN_NAME (optional): Name of triggering workflow.
+    GITHUB_OUTPUT (optional): Path to export proceed, skip_reason, and trigger_sha.
+
+Outputs:
+    proceed (bool): 'true' if gating passes and downstream processing should run, 'false' otherwise.
+    skip_reason (str): Diagnostic reason when execution is deferred or skipped.
+    trigger_sha (str): Target commit SHA.
+
+JSON Artifact Dependencies:
+    .github/artifacts/workflow-config.json (workflow.gating.monitored_workflows, workflow.gating.monitored_statuses)
+"""
+
 import os
 import sys
 import subprocess

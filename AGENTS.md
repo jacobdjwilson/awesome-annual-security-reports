@@ -6,7 +6,11 @@ When working on this repository, you must adhere to the following strict guideli
 - **Do not embed scripts in workflows.** All GitHub Actions workflows must reference external scripts (e.g., in `.github/scripts/`) rather than embedding inline script logic. This ensures extensibility, reusability, testability, and automated linting.
 - **Single Responsibility.** Each script in `.github/scripts/` must fulfill a focused operational step in the CI/CD pipeline.
 - **Standardized Script Architecture.** All Python scripts in `.github/scripts/` must adhere to a consistent, modular structural approach:
-  1. **Header & Docstring**: Declare the operational purpose, required environment variables, outputs, and JSON artifact dependencies.
+  1. **Header & Docstring**: Declare the following 4 structured sections in every script:
+     - `Operational Purpose:` Concise description of the operational task and CI/CD context.
+     - `Required Environment Variables:` Explicit list of consumed environment variables or `None.`
+     - `Outputs:` Explicit list of generated file artifacts, exported environment variables, or `$GITHUB_OUTPUT` keys.
+     - `JSON Artifact Dependencies:` Specific configuration artifacts consumed from `.github/artifacts/` or `None.`
   2. **Imports**: Group imports cleanly: Standard Library -> Third-party -> Typing.
   3. **Configuration Loader**: Encapsulate configuration retrieval within a dedicated loader (`ConfigLoader` class or `load_config()` function) that strictly loads from `.github/artifacts/` with fail-fast validation.
   4. **Domain Logic**: Implement testable, modular functions and classes with type hints and comprehensive error handling.

@@ -1,3 +1,27 @@
+"""
+Operational Purpose:
+    Orchestrates web discovery of new annual security reports using Google Custom Search,
+    VirusTotal hash inspection, multi-tier heuristic ranking, and Gemini validation.
+
+Required Environment Variables:
+    GOOGLE_SEARCH_API_KEY: Google Custom Search API key.
+    GOOGLE_CSE_ID: Google Custom Search Engine ID.
+    VIRUS_TOTAL_API_KEY (optional): VirusTotal v3 API key.
+    GEMINI_API_KEY (optional): Gemini API key for AI-assisted candidate evaluation.
+    GH_TOKEN (optional): GitHub API token for issue creation and cap checks.
+
+Outputs:
+    Automated triage suggestion issues created in GitHub repository.
+    discovery_output.log: Execution telemetry log.
+
+JSON Artifact Dependencies:
+    .github/artifacts/workflow-config.json
+    .github/artifacts/ai-models.json
+    .github/artifacts/report-categories.json
+    .github/artifacts/discovery-feedback.json
+    .github/artifacts/google-search-config.json
+"""
+
 import os
 import sys
 import json

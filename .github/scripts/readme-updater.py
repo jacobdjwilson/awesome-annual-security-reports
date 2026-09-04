@@ -1,3 +1,23 @@
+"""
+Operational Purpose:
+    Updates README.md with newly analyzed security reports, enforcing formatting rules
+    (50-80 word active verb summaries with metrics), categorizing entries, and validating TOC.
+
+Required Environment Variables:
+    GOOGLE_SEARCH_API_KEY (optional): Google Custom Search API key for URL discovery.
+    GOOGLE_CSE_ID (optional): Google Custom Search Engine ID.
+    GITHUB_OUTPUT (optional): Path to write readme_updated flag.
+
+Outputs:
+    README.md: Updated repository landing page.
+    skip_log.json: Audit trail of updated, inserted, or skipped reports.
+
+JSON Artifact Dependencies:
+    .github/artifacts/report-categories.json
+    .github/artifacts/readme-updater-config.json
+    .github/artifacts/workflow-config.json
+"""
+
 import os
 import sys
 import json

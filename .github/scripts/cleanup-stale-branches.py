@@ -1,3 +1,21 @@
+"""
+Operational Purpose:
+    Scans and deletes abandoned remote git branches corresponding to closed,
+    unmerged pull requests while safeguarding protected repository branches.
+
+Required Environment Variables:
+    GITHUB_REPOSITORY: Target GitHub repository (owner/repo).
+    GITHUB_OUTPUT (optional): Path to export deleted_count and skipped_count.
+    GH_TOKEN (optional): GitHub API token for gh CLI commands.
+
+Outputs:
+    deleted_count (int): Number of stale remote branches deleted.
+    skipped_count (int): Number of protected or active branches skipped.
+
+JSON Artifact Dependencies:
+    .github/artifacts/workflow-config.json (workflow.pull_request.protected_branches)
+"""
+
 import os
 import sys
 import subprocess

@@ -1,3 +1,23 @@
+"""
+Operational Purpose:
+    Analyzes converted Markdown security reports using Gemini models to infer report
+    categories, validate summary guidelines, and produce structured analysis outputs.
+
+Required Environment Variables:
+    GEMINI_API_KEY: Gemini API key for report analysis and categorization.
+    GITHUB_OUTPUT (optional): Path to write step output variables.
+
+Outputs:
+    analysis.json: Structured analysis records for successfully processed reports.
+    analysis_errors.json: Diagnostic error records for failed analyses.
+
+JSON Artifact Dependencies:
+    .github/artifacts/ai-models.json
+    .github/artifacts/report-categories.json
+    .github/artifacts/workflow-config.json
+    .github/artifacts/readme-updater-config.json
+"""
+
 import os
 import sys
 import json

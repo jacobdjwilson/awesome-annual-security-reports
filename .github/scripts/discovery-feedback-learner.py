@@ -1,18 +1,20 @@
 """
-discovery-feedback-learner.py
+Operational Purpose:
+    Analyzes community triage feedback events from discovery-feedback.json using Gemini,
+    derives updated negative keyword and domain penalties, and persists learned adjustments.
 
-Reads .github/artifacts/discovery-feedback.json, analyses triage outcomes
-with Gemini, and writes improved scoring adjustments back to the same file
-under the `learned` key.
+Required Environment Variables:
+    GEMINI_API_KEY: Gemini API key for feedback analysis.
+    MIN_EVENTS (optional): Minimum feedback events required before triggering learning.
+    DRY_RUN (optional): If 'true', runs analysis without modifying artifacts.
 
-The updated file is then committed by the calling workflow.  All config
-(model names, retry policy) comes from ai-models.json and workflow-config.json.
+Outputs:
+    .github/artifacts/discovery-feedback.json: Updated feedback artifact with learned rules.
 
-Usage:
-    python .github/scripts/discovery-feedback-learner.py \
-        [--artifacts-dir .github/artifacts] \
-        [--min-events 5] \
-        [--dry-run]
+JSON Artifact Dependencies:
+    .github/artifacts/discovery-feedback.json
+    .github/artifacts/ai-models.json
+    .github/artifacts/workflow-config.json
 """
 
 import argparse

@@ -1,3 +1,24 @@
+"""
+Operational Purpose:
+    Renders repository integrity validation telemetry and detected issue tables
+    to $GITHUB_STEP_SUMMARY for repository health monitoring.
+
+Required Environment Variables:
+    GITHUB_STEP_SUMMARY: Path to GitHub Actions step summary file.
+    GITHUB_RUN_ID (optional): Workflow run identifier.
+    GITHUB_REPO (optional): Repository identifier.
+    GITHUB_EVENT_NAME (optional): Triggering event name.
+    TRIGGER_SHA (optional): Target commit SHA.
+    ERROR_COUNT (optional): Count of detected validation errors.
+    WARNING_COUNT (optional): Count of detected validation warnings.
+
+Outputs:
+    Appends validation summary markdown to $GITHUB_STEP_SUMMARY.
+
+JSON Artifact Dependencies:
+    None.
+"""
+
 import os
 import sys
 

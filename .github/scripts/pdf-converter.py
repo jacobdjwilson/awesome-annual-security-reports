@@ -1,3 +1,21 @@
+"""
+Operational Purpose:
+    Converts PDF security reports into clean Markdown documents utilizing MarkItDown
+    and Gemini model polishing with fallback extraction, layout structuring, and metadata embedding.
+
+Required Environment Variables:
+    GEMINI_API_KEY (optional): API key for Gemini AI polisher and direct fallback extraction.
+    GITHUB_OUTPUT (optional): Path to write step output variables.
+
+Outputs:
+    Markdown Conversions/<year>/<filename>.md: Converted Markdown report files.
+    conversions.json: Structured record of conversion statuses and telemetry.
+
+JSON Artifact Dependencies:
+    .github/artifacts/workflow-config.json
+    .github/artifacts/ai-models.json
+"""
+
 import os
 import sys
 import re
@@ -8,6 +26,37 @@ import time
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 from datetime import datetime
+
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+
+def is_quota_error(error_str: str) -> bool:
+    """True when the error is a 429 / RESOURCE_EXHAUSTED quota error."""
+    s = str(error_str).lower()
+    return "429" in s or "resource_exhausted" in s or "quota" in s
+
+
+def extract_retry_delay(error_str: str) -> Optional[int]:
+    """
+    Parse the retry_delay seconds from a Gemini quota error, if present.
+    Gemini embeds retryDelay in 429 error details (e.g. "retryDelay": "60s").
+    Returns None when no explicit delay is found.
+    """
+    m = re.search(r'"retryDelay"\s*:\s*"(\d+)s"', str(error_str))
+    if m:
+        return int(m.group(1))
+    m = re.search(r'retry_delay\s*\{\s*seconds\s*:\s*(\d+)', str(error_str))
+    if m:
+        return int(m.group(1))
+    return None
+
+
+EXIT_QUOTA_EXHAUSTED = 2
 
 # ==========================
 # DEPENDENCY CHECKS
@@ -580,6 +629,19 @@ class PDFConverter:
             elif not self.polisher:
                 print(f"  ⚠ No AI polisher — saving raw markitdown output")
 
+            if is_stub:
+                if existing_content and len(existing_content) >= self.config.min_markdown_chars:
+                    print(f"  ! New conversion is a stub, restoring previous known good conversion")
+                    md_path.write_text(existing_content, encoding="utf-8")
+                    return True, str(md_path), "recovered from previous"
+                # Do NOT write a stub file to disk when no previous conversion exists
+                if md_path.exists():
+                    try:
+                        md_path.unlink()
+                    except Exception:
+                        pass
+                return False, "", "failed (stub)"
+
             model_used = self.polisher._active_model if self.polisher and getattr(self.polisher, '_active_model', None) else "unknown"
             from datetime import datetime
             import json
@@ -592,12 +654,6 @@ class PDFConverter:
             md_path.write_text(markdown_text, encoding="utf-8")
 
             print(f"  ✓ Saved: {md_path}")
-            if is_stub:
-                if existing_content and len(existing_content) >= self.config.min_markdown_chars:
-                    print(f"  ! New conversion is a stub, restoring previous known good conversion")
-                    md_path.write_text(existing_content, encoding="utf-8")
-                    return True, str(md_path), "recovered from previous"
-                return False, str(md_path), "failed (stub)"
             return True, str(md_path), "success"
 
         except Exception as e:
@@ -609,17 +665,13 @@ class PDFConverter:
                 md_path.write_text(existing_content, encoding="utf-8")
                 return True, str(md_path), f"recovered from previous ({error_msg[:80]})"
 
-            # Save a minimal stub so downstream steps can still run
-            try:
-                stub = (
-                    f"# {org_name} - {report_title} ({year})\n\n"
-                    f"Conversion error: {error_msg}\n"
-                )
-                md_path.write_text(stub, encoding="utf-8")
-                print(f"  ! Saved minimal stub to {md_path}")
-                return False, str(md_path), f"partial ({error_msg[:80]})"
-            except Exception:
-                return False, "", f"Failed: {error_msg}"
+            # Do NOT create corrupt stub markdown files in the repository. Clean up any partial output.
+            if md_path.exists():
+                try:
+                    md_path.unlink()
+                except Exception:
+                    pass
+            return False, "", f"Failed: {error_msg}"
 
     def _parse_filename(self, filename: str) -> Tuple[str, str, str]:
         """Extract (org, title, year) from a filename like Org-Title-Words-YYYY.pdf"""
@@ -730,6 +782,8 @@ def main():
 
         try:
             success, md_path, message = converter.convert(pdf_path)
+            if not success and is_quota_error(message):
+                quota_exhausted_flag = True
         except RuntimeError as e:
             if is_quota_error(str(e)):
                 quota_exhausted_flag = True
@@ -750,7 +804,7 @@ def main():
             method = "reconverted+ai" if polisher else "reconverted"
         else:
             method = "markitdown+ai" if polisher else "markitdown"
-        model_used = (polisher._active_model if polisher and polisher._active_model else None)
+        model_used = (polisher._active_model if polisher and polisher._active_model else None) if success else None
 
         # Count output chars for visibility
         output_chars: Optional[int] = None
@@ -762,7 +816,7 @@ def main():
 
         results.append({
             "pdf_path":          pdf_path,
-            "output_path":       md_path,
+            "output_path":       md_path if success else "",
             "status":            "success" if success else "failed",
             "message":           message,
             "organization_name": org_name,

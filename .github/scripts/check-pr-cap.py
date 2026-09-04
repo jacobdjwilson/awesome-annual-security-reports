@@ -1,3 +1,22 @@
+"""
+Operational Purpose:
+    Queries open pull requests via gh CLI and enforces the max_open_automated_prs cap
+    from workflow-config.json to prevent automated PR accumulation.
+
+Required Environment Variables:
+    GITHUB_OUTPUT: Path to write step outputs.
+    MAX_OPEN_PRS (optional): Override for PR cap threshold.
+    WORKFLOW_TYPE (optional): 'general' or 'refresh' determining cap scope.
+    GH_TOKEN (optional): GitHub API token.
+
+Outputs:
+    cap_reached (bool): 'true' if open automated PRs reach or exceed cap, 'false' otherwise.
+    open_count (int): Total count of open automated PRs.
+
+JSON Artifact Dependencies:
+    .github/artifacts/workflow-config.json (workflow.pull_request.max_open_automated_prs, workflow.pull_request.labels)
+"""
+
 import os
 import subprocess
 import sys

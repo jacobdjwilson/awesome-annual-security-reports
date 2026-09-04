@@ -1,3 +1,19 @@
+"""
+Operational Purpose:
+    Loads core workflow configuration thresholds from workflow-config.json and exports
+    them as step outputs to $GITHUB_OUTPUT for downstream workflow orchestration.
+
+Required Environment Variables:
+    GITHUB_OUTPUT (optional): Path to write step output variables.
+
+Outputs:
+    max_size_mb, default_limit, pdf_magic, pdf_source, md_folder, max_age_days,
+    push_mode, push_batch_limit, max_open_prs exported to $GITHUB_OUTPUT.
+
+JSON Artifact Dependencies:
+    .github/artifacts/workflow-config.json (workflow.discovery, workflow.folders, workflow.conversion, workflow.pull_request)
+"""
+
 import json
 import os
 import sys

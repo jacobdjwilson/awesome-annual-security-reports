@@ -1,3 +1,22 @@
+"""
+Operational Purpose:
+    Renders structured Markdown summary tables to $GITHUB_STEP_SUMMARY for each stage
+    of the security reports processing pipeline (discovery, virustotal, conversion, analysis, readme).
+
+Required Environment Variables:
+    GITHUB_STEP_SUMMARY: Path to GitHub Actions step summary file.
+    GITHUB_EVENT_NAME (optional): Event triggering the pipeline.
+    SCAN_MODE (optional): Discovery scan mode.
+    GITHUB_REPO (optional): Repository identifier.
+    GITHUB_RUN_ID (optional): Workflow run ID.
+
+Outputs:
+    Appends rich telemetry Markdown tables directly to $GITHUB_STEP_SUMMARY.
+
+JSON Artifact Dependencies:
+    None.
+"""
+
 import os
 import json
 import sys
