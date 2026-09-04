@@ -2,12 +2,12 @@
   "schema_version": "2.0",
   "last_updated": null,
   "last_learner_run": null,
-  "total_feedback_events": 6,
+  "total_feedback_events": 7,
   "outcome_counts": {
     "true_positive": 2,
     "false_positive": 1,
     "duplicate": 1,
-    "mismatch": 2
+    "mismatch": 3
   },
   "triage_log": [],
   "url_fingerprints": {
@@ -112,6 +112,16 @@
       "org": "Accenture",
       "url": "https://falconfeeds.io/reports/eu-cyber-threat-intel-report-july-2026/",
       "outcome": "true_positive",
+      "reason": "Triaged via issue checkbox",
+      "author": "jacobdjwilson"
+    },
+    {
+      "timestamp": "2026-09-04T05:47:02.865356Z",
+      "issue_number": 1754,
+      "issue_title": "[Report Discovery] DomainTools 2026 \u2014 Threat Hunting Report",
+      "org": "DomainTools",
+      "url": "https://www.cybersecurity-insiders.com/research-library/",
+      "outcome": "mismatch",
       "reason": "Triaged via issue checkbox",
       "author": "jacobdjwilson"
     }
