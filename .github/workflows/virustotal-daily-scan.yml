@@ -26,9 +26,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: |
-          PY_PACKAGES=$(jq -r '.workflow.virustotal.python_packages | join(" ")' .github/artifacts/workflow-config.json)
-          pip install --break-system-packages $PY_PACKAGES
+        run: python .github/scripts/install-task-dependencies.py --task virustotal
 
       - name: Cache VirusTotal Tracking
         uses: actions/cache@v4
@@ -39,8 +37,7 @@ jobs:
             vt-scanned-
 
       - name: Find all PDFs
-        run: |
-          python .github/scripts/find-all-pdfs.py
+        run: python .github/scripts/find-all-pdfs.py
 
       - name: Run Daily Scan
         id: vt-scan
@@ -52,16 +49,10 @@ jobs:
             --daily-mode \
             --artifacts-dir .github/artifacts
 
-
-
       - name: Open Issue on Malicious Finding
         if: failure()
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: "🚨 Malicious File Detected in Repository",
-              body: "The daily VirusTotal background scanner detected a Malicious file.\n\nPlease check the Action run logs for details and remove the file immediately."
-            })
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: python .github/scripts/notify-malicious-finding.py

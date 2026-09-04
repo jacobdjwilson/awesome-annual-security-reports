@@ -1,117 +1,181 @@
+"""
+Operational Purpose:
+    Parses community report ingestion issue forms and issue comments to extract
+    structured metadata (organization name, report title, year, PDF URL, category).
+    Validates commenter permissions against trusted roles configured in workflow-config.json.
+
+Required Environment Variables:
+    ISSUE_NUMBER: GitHub issue number to inspect.
+    GITHUB_OUTPUT (optional): Path to export parsed fields for downstream workflow steps.
+
+Outputs:
+    organization_name: Extracted organization name.
+    report_title: Extracted report title.
+    report_year: Extracted report publication year.
+    report_url: Extracted direct PDF URL or user attachment link.
+    report_category: Extracted report category.
+
+JSON Artifact Dependencies:
+    .github/artifacts/workflow-config.json (workflow.ingest)
+"""
+
 import os
 import sys
 import json
 import re
 import subprocess
+from pathlib import Path
+from typing import Dict, Any, List, Optional
 
-def run_cmd(cmd):
+if hasattr(sys.stdout, "reconfigure"):
     try:
-        result = subprocess.run(cmd, shell=True, check=True, capture_output=True, text=True, encoding='utf-8')
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+
+class IssueFormConfigLoader:
+    """Loads ingestion and form parsing configuration with fail-fast validation."""
+
+    def __init__(self, artifacts_dir: str = ".github/artifacts") -> None:
+        self.config_path = Path(artifacts_dir) / "workflow-config.json"
+        self.config = self._load()
+
+    def _load(self) -> Dict[str, Any]:
+        if not self.config_path.exists():
+            raise FileNotFoundError(f"Missing required artifact: '{self.config_path}'.")
+        try:
+            with open(self.config_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception as e:
+            raise ValueError(f"Failed to parse JSON artifact '{self.config_path}': {e}") from e
+
+        workflow = data.get("workflow", {})
+        ingest_cfg = workflow.get("ingest")
+        if not ingest_cfg or not isinstance(ingest_cfg, dict):
+            raise KeyError(f"Missing 'workflow.ingest' configuration in '{self.config_path}'.")
+
+        required_keys = ["trusted_roles", "form_fields", "table_fields"]
+        for key in required_keys:
+            if key not in ingest_cfg:
+                raise KeyError(f"Missing required key '{key}' in 'workflow.ingest' of '{self.config_path}'.")
+
+        return ingest_cfg
+
+    @property
+    def trusted_roles(self) -> List[str]:
+        return list(self.config["trusted_roles"])
+
+    @property
+    def form_fields(self) -> Dict[str, str]:
+        return dict(self.config["form_fields"])
+
+    @property
+    def table_fields(self) -> Dict[str, str]:
+        return dict(self.config["table_fields"])
+
+
+def run_cmd(cmd: str) -> str:
+    """Runs a shell command safely, returning stripped stdout."""
+    try:
+        result = subprocess.run(
+            cmd,
+            shell=True,
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        )
         if result.stdout:
             return result.stdout.strip()
         return ""
     except subprocess.CalledProcessError as e:
-        print(f"Error running command {cmd}: {e}")
+        print(f"Command '{cmd}' failed with code {e.returncode}: {e.stderr}", file=sys.stderr)
         return ""
 
-def write_output(key, value):
+
+def write_output(key: str, value: str) -> None:
+    """Exports key/value pair to GITHUB_OUTPUT using EOF delimiter."""
     output_file = os.environ.get("GITHUB_OUTPUT")
     if output_file:
         with open(output_file, "a", encoding="utf-8") as f:
             f.write(f"{key}<<__EOF__\n{value}\n__EOF__\n")
 
-def get_config():
-    config_path = ".github/artifacts/workflow-config.json"
-    try:
-        with open(config_path, "r", encoding="utf-8") as f:
-            return json.load(f).get("workflow", {}).get("ingest", {})
-    except Exception as e:
-        print(f"Error loading config: {e}")
-        return {}
 
-def extract_pdf_attachment(body):
-    """Scan the issue body for GitHub PDF attachment links."""
-    # Look for [some name.pdf](https://github.com/user-attachments/assets/...)
-    # or just raw https://github.com/user-attachments/assets/...pdf links
-    attachments = re.findall(r'(https://github\.com/(?:[^/]+/[^/]+/)?user-attachments/(?:assets|files)/[^)]+\.pdf)', body, re.IGNORECASE)
+def extract_pdf_attachment(body: str) -> Optional[str]:
+    """Scans text for GitHub user attachment PDF links."""
+    attachments = re.findall(
+        r"(https://github\.com/(?:[^/]+/[^/]+/)?user-attachments/(?:assets|files)/[^)]+\.pdf)",
+        body,
+        re.IGNORECASE,
+    )
     if attachments:
         return attachments[0]
     return None
 
-def main():
+
+def parse_field(body: str, form_heading: str, table_heading: str) -> str:
+    """Extracts field value from either a Markdown table or an Issue Form header."""
+    table_pattern = rf"\|\s*\*\*{re.escape(table_heading)}\*\*\s*\|\s*([^|]+?)\s*\|"
+    table_match = re.search(table_pattern, body, re.IGNORECASE)
+    if table_match:
+        return table_match.group(1).strip()
+
+    lines = body.split("\n")
+    found = False
+    for line in lines:
+        if line.strip().lower() == f"### {form_heading}".lower():
+            found = True
+            continue
+        if found:
+            if not line.strip():
+                continue
+            return line.strip()
+    return ""
+
+
+def main() -> int:
     issue_number = os.environ.get("ISSUE_NUMBER")
     if not issue_number:
-        print("ISSUE_NUMBER environment variable is required")
-        sys.exit(1)
+        print("ISSUE_NUMBER environment variable is required", file=sys.stderr)
+        return 1
+
+    config_loader = IssueFormConfigLoader()
+    trusted_roles = config_loader.trusted_roles
+    form_fields = config_loader.form_fields
+    table_fields = config_loader.table_fields
 
     body = run_cmd(f"gh issue view {issue_number} --json body -q .body")
     if not body:
-        print("Could not retrieve issue body.")
-        sys.exit(1)
+        print(f"Could not retrieve issue #{issue_number} body.", file=sys.stderr)
+        return 1
 
-    # We want to check comments too, but ONLY from trusted authors.
     comments_json = run_cmd(f"gh issue view {issue_number} --json comments -q .comments")
-    comments = []
+    comments: List[str] = []
     if comments_json:
         try:
-            ingest_cfg = get_config()
-            trusted_roles = ingest_cfg.get("trusted_roles", ["OWNER", "COLLABORATOR", "MEMBER"])
-            for c in comments_data:
-                author_assoc = c.get("authorAssociation", "")
-                if author_assoc in trusted_roles:
-                    comments.append(c.get("body", ""))
-                else:
-                    print(f"Ignoring comment from untrusted author with association: {author_assoc}")
+            comments_data = json.loads(comments_json)
+            if isinstance(comments_data, list):
+                for c in comments_data:
+                    author_assoc = c.get("authorAssociation", "")
+                    if author_assoc in trusted_roles:
+                        comments.append(c.get("body", ""))
+                    else:
+                        print(f"Ignoring comment from untrusted author with association: {author_assoc}")
         except Exception as e:
-            print(f"Error parsing comments: {e}")
+            print(f"Error parsing comments: {e}", file=sys.stderr)
 
-    config = get_config()
-    form_fields = config.get("form_fields", {
-        "org": "Organization Name",
-        "title": "Report Title",
-        "year": "Report Year",
-        "url": "Direct PDF URL",
-        "category": "Category"
-    })
-    table_fields = config.get("table_fields", {
-        "org": "Organization",
-        "title": "Report",
-        "year": "Year",
-        "url": "URL",
-        "category": "Category"
-    })
+    org = parse_field(body, form_fields["org"], table_fields["org"])
+    title = parse_field(body, form_fields["title"], table_fields["title"])
+    year = parse_field(body, form_fields["year"], table_fields["year"])
+    url = parse_field(body, form_fields["url"], table_fields["url"])
+    category = parse_field(body, form_fields["category"], table_fields["category"])
 
-    def parse_field(form_heading, table_heading):
-        # 1. Try to find it in a Markdown table: | **Heading** | Value |
-        table_pattern = rf"\|\s*\*\*{re.escape(table_heading)}\*\*\s*\|\s*([^|]+?)\s*\|"
-        table_match = re.search(table_pattern, body, re.IGNORECASE)
-        if table_match:
-            return table_match.group(1).strip()
-
-        # 2. Try to find it in Issue Forms format: ### Heading \n Value
-        lines = body.split("\n")
-        found = False
-        for line in lines:
-            if line.strip().lower() == f"### {form_heading}".lower():
-                found = True
-                continue
-            if found:
-                if not line.strip():
-                    continue
-                return line.strip()
-        return ""
-
-    org = parse_field(form_fields["org"], table_fields["org"])
-    title = parse_field(form_fields["title"], table_fields["title"])
-    year = parse_field(form_fields["year"], table_fields["year"])
-    url = parse_field(form_fields["url"], table_fields["url"])
-    category = parse_field(form_fields["category"], table_fields["category"])
-
-    # Overwrite the URL if we find a GitHub PDF attachment in the body or comments
     all_text = body + "\n" + "\n".join(comments)
     attachment_url = extract_pdf_attachment(all_text)
     if attachment_url:
-        print(f"Found GitHub attachment PDF link! Overriding original URL.")
+        print("Found GitHub attachment PDF link! Overriding original URL.")
         url = attachment_url
 
     print("Parsed fields:")
@@ -127,5 +191,8 @@ def main():
     write_output("report_url", url)
     write_output("report_category", category)
 
+    return 0
+
+
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

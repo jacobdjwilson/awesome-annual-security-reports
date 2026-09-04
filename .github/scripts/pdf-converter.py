@@ -659,6 +659,7 @@ def main():
     parser.add_argument("--artifacts-dir",   default=".github/artifacts")
     parser.add_argument("--force-reconvert", action="store_true", help="Bypass cache and force reconversion of all PDFs")
     parser.add_argument("--smart-reconvert", action="store_true", help="Reconvert only if a newer AI model is available or current Markdown is bad")
+    parser.add_argument("--exit-zero-on-quota", action="store_true", help="Exit 0 when quota is exhausted to prevent workflow step failure while signaling retry")
     
     args = parser.parse_args()
 
@@ -787,8 +788,17 @@ def main():
     print(f"✓ Results saved to: {args.output_json}")
     print(f"{'='*70}\n")
 
+    gh_output = os.environ.get("GITHUB_OUTPUT")
+    if gh_output:
+        with open(gh_output, "a", encoding="utf-8") as f:
+            f.write(f"successful_count={successful}\n")
+            f.write(f"failed_count={failed}\n")
+            f.write(f"quota_exhausted={'true' if quota_exhausted_flag else 'false'}\n")
+
     if successful == 0 and quota_exhausted_flag:
         print("QUOTA_EXHAUSTED=true")
+        if args.exit_zero_on_quota:
+            return 0
         return EXIT_QUOTA_EXHAUSTED
     return 0 if successful > 0 else 1
 

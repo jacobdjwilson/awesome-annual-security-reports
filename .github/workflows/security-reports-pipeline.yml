@@ -72,9 +72,9 @@ jobs:
   discover-and-scan:
     runs-on: ubuntu-latest
     outputs:
-      has_files: ${{ steps.consolidate-outputs.outputs.has_files }}
-      scan_mode: ${{ steps.consolidate-outputs.outputs.scan_mode }}
-      file_count: ${{ steps.consolidate-outputs.outputs.file_count }}
+      has_files: ${{ steps.find-files.outputs.has_files }}
+      scan_mode: ${{ steps.find-files.outputs.scan_mode }}
+      file_count: ${{ steps.find-files.outputs.file_count }}
 
     steps:
       - name: Checkout repository
@@ -84,8 +84,7 @@ jobs:
 
       - name: Load workflow configuration
         id: load_config
-        run: |
-          python .github/scripts/load-pipeline-config.py
+        run: python .github/scripts/load-pipeline-config.py
 
       - name: Check automated PR cap
         id: pr-cap
@@ -93,64 +92,29 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MAX_OPEN_PRS: ${{ steps.load_config.outputs.max_open_prs }}
           WORKFLOW_TYPE: general
-        run: |
-          python .github/scripts/check-pr-cap.py
+        run: python .github/scripts/check-pr-cap.py
 
       - name: Collect PDFs already covered by open PR branches
         id: pending-prs
         if: steps.pr-cap.outputs.cap_reached != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python .github/scripts/collect-pending-prs.py
-
-      - name: Set default outputs when find-files is skipped
-        if: steps.pr-cap.outputs.cap_reached == 'true'
-        run: |
-          echo "has_files=false"  >> $GITHUB_OUTPUT
-          echo "file_count=0"     >> $GITHUB_OUTPUT
-          echo "scan_mode=skipped" >> $GITHUB_OUTPUT
-        id: find-files-defaults
+        run: python .github/scripts/collect-pending-prs.py
 
       - name: Find and validate PDF files
         id: find-files
-        if: steps.pr-cap.outputs.cap_reached != 'true'
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
+          CAP_REACHED: ${{ steps.pr-cap.outputs.cap_reached }}
           LIMIT_COUNT: ${{ github.event.inputs.limit_count }}
           YEAR_FILTER: ${{ github.event.inputs.year_filter }}
           CATEGORY_FILTER: ${{ github.event.inputs.category_filter }}
           ORG_FILTER: ${{ github.event.inputs.organization_filter }}
           SKIP_EXISTING: ${{ github.event.inputs.skip_existing_conversions }}
-        run: |
-          python .github/scripts/find-files.py
-
-      - name: Consolidate outputs
-        id: consolidate-outputs
-        if: always()
-        run: |
-          # Coalesce: find-files outputs take precedence when the step ran;
-          # fall back to the defaults step values when find-files was skipped.
-          HAS_FILES="${{ steps.find-files.outputs.has_files }}"
-          SCAN_MODE="${{ steps.find-files.outputs.scan_mode }}"
-          FILE_COUNT="${{ steps.find-files.outputs.file_count }}"
-
-          # Apply fallbacks for skipped/empty cases
-          HAS_FILES="${HAS_FILES:-false}"
-          SCAN_MODE="${SCAN_MODE:-skipped}"
-          FILE_COUNT="${FILE_COUNT:-0}"
-
-          # Sanitize FILE_COUNT to a pure integer (guard against any whitespace)
-          FILE_COUNT=$(echo "$FILE_COUNT" | tr -d '[:space:]')
-          FILE_COUNT="${FILE_COUNT:-0}"
-
-          echo "has_files=$HAS_FILES"   >> $GITHUB_OUTPUT
-          echo "scan_mode=$SCAN_MODE"   >> $GITHUB_OUTPUT
-          echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
-          echo "✓ Consolidated: has_files=$HAS_FILES scan_mode=$SCAN_MODE file_count=$FILE_COUNT"
+        run: python .github/scripts/find-files.py
 
       - name: Upload file lists
-        if: steps.consolidate-outputs.outputs.has_files == 'true'
+        if: steps.find-files.outputs.has_files == 'true'
         uses: actions/upload-artifact@v6
         with:
           name: file-lists
@@ -162,16 +126,15 @@ jobs:
         if: always()
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
-          SCAN_MODE: ${{ steps.consolidate-outputs.outputs.scan_mode }}
-          FILE_COUNT: ${{ steps.consolidate-outputs.outputs.file_count }}
+          SCAN_MODE: ${{ steps.find-files.outputs.scan_mode }}
+          FILE_COUNT: ${{ steps.find-files.outputs.file_count }}
           PUSH_MODE: ${{ steps.load_config.outputs.push_mode }}
           PUSH_BATCH_LIMIT: ${{ steps.load_config.outputs.push_batch_limit }}
           CAP_REACHED: ${{ steps.pr-cap.outputs.cap_reached }}
           OPEN_COUNT: ${{ steps.pr-cap.outputs.open_count }}
           MAX_OPEN_PRS: ${{ steps.load_config.outputs.max_open_prs }}
           PENDING_COUNT: ${{ steps.pending-prs.outputs.pending_count }}
-        run: |
-          python .github/scripts/generate-pipeline-summary.py --step discovery
+        run: python .github/scripts/generate-pipeline-summary.py --step discovery
 
   virus-total-scan:
     runs-on: ubuntu-latest
@@ -196,41 +159,14 @@ jobs:
           name: file-lists
 
       - name: Install dependencies
-        run: |
-          PY_PACKAGES=$(jq -r '.workflow.virustotal.python_packages | join(" ")' .github/artifacts/workflow-config.json)
-          pip install --break-system-packages $PY_PACKAGES
+        run: python .github/scripts/install-task-dependencies.py --task virustotal
 
       - name: Run VirusTotal scan
         id: vt-scan
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
           SKIP_VIRUS_SCAN: ${{ github.event.inputs.skip_virus_scan }}
-        run: |
-          MANUAL_SKIP_FLAG=""
-          if [ "$SKIP_VIRUS_SCAN" == "true" ]; then
-            MANUAL_SKIP_FLAG="--manual-skip"
-          fi
-
-          python .github/scripts/virus-total-scan.py \
-            files_to_process.txt \
-            --scan-mode "${{ needs.discover-and-scan.outputs.scan_mode }}" \
-            --output-json scan_results.json \
-            --artifacts-dir .github/artifacts \
-            $MANUAL_SKIP_FLAG
-
-          EXIT_CODE=$?
-
-          # Determine outputs from the results file written by the script
-          SKIPPED=$(jq 'length == 0' scan_results.json)
-          MALICIOUS=$(jq '[.[] | select(.verdict == "Malicious")] | length' scan_results.json)
-
-          echo "scan_skipped=$SKIPPED" >> $GITHUB_OUTPUT
-
-          if [ $EXIT_CODE -ne 0 ] || [ "${MALICIOUS:-0}" -gt 0 ]; then
-            echo "scan_passed=false" >> $GITHUB_OUTPUT
-          else
-            echo "scan_passed=true" >> $GITHUB_OUTPUT
-          fi
+        run: python .github/scripts/virus-total-scan.py files_to_process.txt --scan-mode "${{ needs.discover-and-scan.outputs.scan_mode }}"
 
       - name: Upload scan results
         if: always()
@@ -246,8 +182,7 @@ jobs:
           VT_SKIPPED: ${{ steps.vt-scan.outputs.scan_skipped }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_RUN_ID: ${{ github.run_id }}
-        run: |
-          python .github/scripts/generate-pipeline-summary.py --step virustotal
+        run: python .github/scripts/generate-pipeline-summary.py --step virustotal
 
   convert-pdf-to-markdown:
     runs-on: ubuntu-latest
@@ -275,61 +210,24 @@ jobs:
           name: file-lists
 
       - name: Load configuration and install dependencies
-        run: |
-          SYS_PACKAGES=$(jq -r '.workflow.conversion.system_packages | join(" ")' .github/artifacts/workflow-config.json)
-          PY_PACKAGES=$(jq -r '.workflow.conversion.python_packages | join(" ")' .github/artifacts/workflow-config.json)
-
-          echo "Installing system packages: $SYS_PACKAGES"
-          sudo apt-get update
-          sudo apt-get install -y $SYS_PACKAGES
-
-          echo "Installing Python packages: $PY_PACKAGES"
-          pip install --break-system-packages $PY_PACKAGES
+        run: python .github/scripts/install-task-dependencies.py --task conversion --system
 
       - name: Run PDF converter
         id: converter
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          MD_FOLDER=$(jq -r '.workflow.folders.markdown_conversions' .github/artifacts/workflow-config.json)
-
-          set +e
-          python .github/scripts/pdf-converter.py \
-            --file-list files_to_process.txt \
-            --output-json conversions.json \
-            --artifacts-dir .github/artifacts
-          CONV_EXIT=$?
-          set -e
-
-          QUOTA_SIGNAL=$(grep "^QUOTA_EXHAUSTED=true" conversions.json 2>/dev/null || \
-                         grep "^QUOTA_EXHAUSTED=true" /dev/stdin < <(cat) 2>/dev/null || true)
-          # The script prints QUOTA_EXHAUSTED=true to stdout; capture via log
-          echo "conv_exit_code=$CONV_EXIT" >> $GITHUB_OUTPUT
-
-          SUCCESSFUL=$(jq '[.[] | select(.status == "success")] | length' conversions.json 2>/dev/null || echo 0)
-          FAILED=$(jq '[.[] | select(.status != "success")] | length' conversions.json 2>/dev/null || echo 0)
-
-          echo "successful_count=$SUCCESSFUL" >> $GITHUB_OUTPUT
-          echo "failed_count=$FAILED" >> $GITHUB_OUTPUT
-
-          if [ "$CONV_EXIT" -eq 2 ]; then
-            echo "quota_exhausted=true" >> $GITHUB_OUTPUT
-          else
-            echo "quota_exhausted=false" >> $GITHUB_OUTPUT
-          fi
-
-          # Non-quota failures are still errors
-          if [ "$CONV_EXIT" -ne 0 ] && [ "$CONV_EXIT" -ne 2 ]; then
-            exit $CONV_EXIT
-          fi
+        run: python .github/scripts/pdf-converter.py --file-list files_to_process.txt --exit-zero-on-quota
 
       - name: Upload conversions
+        if: always()
         uses: actions/upload-artifact@v6
         with:
           name: conversion-results
           path: conversions.json
+          if-no-files-found: ignore
 
       - name: Upload markdown files
+        if: always()
         uses: actions/upload-artifact@v6
         with:
           name: markdown-conversions
@@ -343,8 +241,7 @@ jobs:
           FAILED: ${{ steps.converter.outputs.failed_count }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_RUN_ID: ${{ github.run_id }}
-        run: |
-          python .github/scripts/generate-pipeline-summary.py --step conversion
+        run: python .github/scripts/generate-pipeline-summary.py --step conversion
 
   analyze-reports:
     runs-on: ubuntu-latest
@@ -355,6 +252,7 @@ jobs:
       analysis_count: ${{ steps.report-analysis.outputs.analysis_count }}
       error_count: ${{ steps.report-analysis.outputs.error_count }}
       quota_exhausted: ${{ steps.report-analysis.outputs.quota_exhausted }}
+      errors_file: ${{ steps.report-analysis.outputs.errors_file }}
 
     steps:
       - name: Checkout repository
@@ -378,40 +276,11 @@ jobs:
 
       - name: Pre-analysis verification
         id: verify
-        run: |
-          MIN_SIZE=$(jq -r '.workflow.validation.min_json_size_bytes' .github/artifacts/workflow-config.json)
-
-          if [ ! -f conversions.json ]; then
-            echo "❌ conversions.json not found"
-            exit 1
-          fi
-
-          FILE_SIZE=$(stat -c%s conversions.json)
-          if [ "$FILE_SIZE" -lt "$MIN_SIZE" ]; then
-            echo "❌ conversions.json too small ($FILE_SIZE < $MIN_SIZE bytes)"
-            exit 1
-          fi
-
-          if ! jq empty conversions.json 2>/dev/null; then
-            echo "❌ Invalid JSON in conversions.json"
-            exit 1
-          fi
-
-          SUCCESSFUL=$(jq '[.[] | select(.status == "success")] | length' conversions.json)
-          if [ "$SUCCESSFUL" -eq 0 ]; then
-            echo "has_successful=false" >> $GITHUB_OUTPUT
-            echo "⊘ No successful conversions to analyze"
-            exit 0
-          fi
-
-          echo "has_successful=true" >> $GITHUB_OUTPUT
-          echo "✓ Verification passed — $SUCCESSFUL conversions ready for analysis"
+        run: python .github/scripts/verify-conversions-json.py
 
       - name: Install dependencies
         if: steps.verify.outputs.has_successful == 'true'
-        run: |
-          PY_PACKAGES=$(jq -r '.workflow.analysis.python_packages | join(" ")' .github/artifacts/workflow-config.json)
-          pip install --break-system-packages $PY_PACKAGES
+        run: python .github/scripts/install-task-dependencies.py --task analysis
 
       - name: Cache AI Analysis
         uses: actions/cache@v4
@@ -427,69 +296,7 @@ jobs:
         if: steps.verify.outputs.has_successful == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          ERRORS_FILE=$(jq -r '.workflow.analysis.errors_output_file // "analysis_errors.json"' .github/artifacts/workflow-config.json)
-          echo "errors_file=$ERRORS_FILE" >> $GITHUB_OUTPUT
-
-          # Disable exit-on-error so python's non-zero exit does NOT abort the bash
-          # script before we can capture outputs and write the step summary.
-          # Without this, `set -e` (GitHub Actions default) kills the script the
-          # moment python exits 1, meaning EXIT_CODE/$GITHUB_OUTPUT are never written
-          # and the summary step sees empty outputs and falls to "No error detail file".
-          set +e
-          python .github/scripts/report-analyzer.py \
-            conversions.json \
-            --output-json analysis.json \
-            --artifacts-dir .github/artifacts
-          EXIT_CODE=$?
-          set -e
-
-          # Read counts from output files (written by python even on failure)
-          ANALYSIS_COUNT=0
-          ERROR_COUNT=0
-
-          if [ -f analysis.json ] && jq empty analysis.json 2>/dev/null; then
-            ANALYSIS_COUNT=$(jq 'length' analysis.json)
-          fi
-          if [ -f "$ERRORS_FILE" ] && jq empty "$ERRORS_FILE" 2>/dev/null; then
-            ERROR_COUNT=$(jq 'length' "$ERRORS_FILE")
-          fi
-
-          echo "analysis_count=$ANALYSIS_COUNT" >> $GITHUB_OUTPUT
-          echo "error_count=$ERROR_COUNT" >> $GITHUB_OUTPUT
-
-          # Exit code 2 = all failures were quota errors; signal for retry-dispatch job
-          if [ "$EXIT_CODE" -eq 2 ]; then
-            echo "quota_exhausted=true"   >> $GITHUB_OUTPUT
-            echo "⚠ Quota exhausted (exit 2) — saving successful analyses and signaling retry"
-          else
-            echo "quota_exhausted=false" >> $GITHUB_OUTPUT
-          fi
-
-          if [ "$ANALYSIS_COUNT" -gt 0 ]; then
-            echo "analysis_success=true" >> $GITHUB_OUTPUT
-            echo "✓ $ANALYSIS_COUNT report(s) analyzed successfully"
-            if [ "$ERROR_COUNT" -gt 0 ]; then
-              echo "⚠ $ERROR_COUNT report(s) failed — check analysis summary for details"
-            fi
-            if [ "$EXIT_CODE" -eq 2 ]; then
-              exit 0
-            fi
-          else
-            echo "analysis_success=false" >> $GITHUB_OUTPUT
-            if [ "$EXIT_CODE" -eq 2 ]; then
-              echo "❌ All reports failed analysis due to quota exhaustion."
-              exit 0
-            else
-              echo "❌ All reports failed analysis — see $ERRORS_FILE for details"
-              if [ -f "$ERRORS_FILE" ] && [ "$ERROR_COUNT" -gt 0 ]; then
-                echo ""
-                echo "Error breakdown:"
-                jq -r '.[] | "  [\(.error_type)] \(.organization) (\(.year)): \(.error[:150])"' "$ERRORS_FILE"
-              fi
-              exit 1
-            fi
-          fi
+        run: python .github/scripts/report-analyzer.py conversions.json --exit-zero-on-quota
 
       - name: Upload analysis artifacts
         if: steps.verify.outputs.has_successful == 'true' && always()
@@ -511,8 +318,7 @@ jobs:
           ANALYSIS_SUCCESS: ${{ steps.report-analysis.outputs.analysis_success }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_RUN_ID: ${{ github.run_id }}
-        run: |
-          python .github/scripts/generate-pipeline-summary.py --step analysis
+        run: python .github/scripts/generate-pipeline-summary.py --step analysis
 
   update-readme:
     permissions:
@@ -554,103 +360,24 @@ jobs:
           path: "Markdown Conversions/"
 
       - name: Install dependencies
-        run: |
-          PY_PACKAGES=$(jq -r '.workflow.google_search.python_packages | join(" ")' .github/artifacts/workflow-config.json)
-          echo "Installing Python packages: $PY_PACKAGES"
-          pip install --break-system-packages $PY_PACKAGES
+        run: python .github/scripts/install-task-dependencies.py --task google_search
 
       - name: Update README
         id: readme_update
         env:
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
-        run: |
-          VALIDATE_TOC=$(jq -r '.workflow.validation.validate_toc' .github/artifacts/workflow-config.json)
-
-          if [ "$VALIDATE_TOC" == "true" ]; then
-            python .github/scripts/readme-updater.py \
-              analysis.json \
-              --readme-path README.md \
-              --artifacts-dir .github/artifacts \
-              --validate-toc
-          else
-            python .github/scripts/readme-updater.py \
-              analysis.json \
-              --readme-path README.md \
-              --artifacts-dir .github/artifacts
-          fi
-
-          if [ -z "$(git status --porcelain README.md "Markdown Conversions/")" ]; then
-            echo "readme_updated=false" >> $GITHUB_OUTPUT
-            echo "⊘ No changes to commit"
-          else
-            echo "readme_updated=true" >> $GITHUB_OUTPUT
-            echo "✓ Changes detected"
-          fi
+        run: python .github/scripts/readme-updater.py analysis.json
 
       - name: Generate PR content
         id: generate_pr
         if: steps.readme_update.outputs.readme_updated == 'true'
-        run: |
-          BRANCH_PREFIX=$(jq -r '.workflow.pull_request.branch_prefix' .github/artifacts/workflow-config.json)
-          SINGLE_TEMPLATE=$(jq -r '.workflow.pull_request.single_report_title_template' .github/artifacts/workflow-config.json)
-          MULTI_TEMPLATE=$(jq -r '.workflow.pull_request.multiple_report_title_template' .github/artifacts/workflow-config.json)
-          LABELS=$(jq -r '.workflow.pull_request.labels | join("\n")' .github/artifacts/workflow-config.json)
-
-          REPORT_COUNT=$(jq 'length' analysis.json)
-
-          if [ "$REPORT_COUNT" -eq 1 ]; then
-            ORG=$(jq -r '.[0].organization' analysis.json)
-            TITLE=$(jq -r '.[0].title' analysis.json)
-            YEAR=$(jq -r '.[0].year' analysis.json)
-            PR_TITLE=$(echo "$SINGLE_TEMPLATE" | sed "s/{organization}/$ORG/" | sed "s/{title}/$TITLE/" | sed "s/{year}/$YEAR/")
-          else
-            PR_TITLE=$(echo "$MULTI_TEMPLATE" | sed "s/{count}/$REPORT_COUNT/")
-          fi
-
-          echo "pr_title=$PR_TITLE" >> $GITHUB_OUTPUT
-          echo "branch_name=${BRANCH_PREFIX}${{ github.run_id }}" >> $GITHUB_OUTPUT
-          echo "labels<<EOF" >> $GITHUB_OUTPUT
-          echo "$LABELS" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
-          # Generate PR body
-          SCAN_MODE="${{ needs.discover-and-scan.outputs.scan_mode }}"
-          CONV_OK="${{ needs.convert-pdf-to-markdown.outputs.successful_count }}"
-          CONV_FAIL="${{ needs.convert-pdf-to-markdown.outputs.failed_count }}"
-          VT_SKIPPED="${{ needs.virus-total-scan.outputs.scan_skipped }}"
-
-          {
-            echo "## 📊 Security Reports Update"
-            echo ""
-            echo "**Mode:** \`$SCAN_MODE\`  **Reports:** $REPORT_COUNT"
-            echo ""
-
-            echo "### 📄 Reports"
-            echo ""
-            jq -r '.[] | "#### \(.organization) — \(.title) (\(.year))\n\n**Category:** \(.category)  **Type:** \(.type // "—")\n\n**Summary:** \(.summary)\n\n---\n"' analysis.json
-            echo ""
-
-            echo "### 🛡️ VirusTotal"
-            echo ""
-            if [ "$VT_SKIPPED" == "true" ]; then
-              echo "Scan skipped for this run mode."
-            elif [ -f scan_results.json ] && [ "$(jq 'length' scan_results.json)" -gt 0 ]; then
-              echo "| File | Verdict | Detections | Report |"
-              echo "|------|---------|------------|--------|"
-              jq -r '.[] | select(.status == "success") | "| \(.file) | \(.verdict) | \(.malicious_count + .suspicious_count)/\(.total_engines) | [View](\(.report_url)) |"' scan_results.json
-            else
-              echo "No scan results."
-            fi
-            echo ""
-
-            echo "### 📈 Conversions"
-            echo ""
-            echo "- Successful: $CONV_OK  Failed: $CONV_FAIL"
-            echo ""
-            echo "---"
-            echo "*Auto-generated by Security Reports Pipeline · [Run #${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})*"
-          } > pr_body.md
+        run: >-
+          python .github/scripts/generate-pr-content.py
+          --scan-mode "${{ needs.discover-and-scan.outputs.scan_mode }}"
+          --conv-ok "${{ needs.convert-pdf-to-markdown.outputs.successful_count }}"
+          --conv-fail "${{ needs.convert-pdf-to-markdown.outputs.failed_count }}"
+          --vt-skipped "${{ needs.virus-total-scan.outputs.scan_skipped }}"
 
       - name: Create Pull Request
         id: create_pr
@@ -688,23 +415,12 @@ jobs:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_RUN_ID: ${{ github.run_id }}
-        run: |
-          python .github/scripts/generate-pipeline-summary.py --step readme
-
+        run: python .github/scripts/generate-pipeline-summary.py --step readme
 
   # ============================================================
   # QUOTA RETRY JOB
-  # When conversion or analysis exits with code 2 (all failures
-  # were Gemini 429 quota errors), this job waits and re-dispatches
-  # the pipeline as a new workflow_dispatch run.
-  #
-  # Retry schedule:
-  #   attempt 1 (RETRY_ATTEMPT unset / "1"): wait 4 hours
-  #   attempt 2 (RETRY_ATTEMPT == "2"):      wait 8 hours
-  #   attempt 3+: log and give up (daily quota likely exhausted)
-  #
-  # The re-dispatch passes the same file-list scope (manual filters
-  # are not carried over — the new run uses missing_conversion mode).
+  # When conversion or analysis signals quota exhaustion, this job
+  # waits and re-dispatches the pipeline as a new workflow run.
   # ============================================================
   retry-on-quota:
     runs-on: ubuntu-latest
@@ -720,39 +436,18 @@ jobs:
       actions: write
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
       - name: Schedule retry dispatch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RETRY_ATTEMPT: ${{ github.event.inputs.quota_retry_attempt }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_REF_NAME: ${{ github.ref_name }}
-        run: |
-          ATTEMPT="$RETRY_ATTEMPT"
-          ATTEMPT="${ATTEMPT:-1}"
-
-          if [ "$ATTEMPT" -ge 3 ]; then
-            echo "⊘ Quota retry attempt $ATTEMPT — giving up. Daily quota likely exhausted."
-            echo "  Check https://aistudio.google.com/ for quota reset time."
-            exit 0
-          fi
-
-          # Attempt 1 waits 4 h; attempt 2 waits 8 h
-          if [ "$ATTEMPT" -eq 1 ]; then
-            WAIT_SECONDS=14400   # 4 hours
-            NEXT_ATTEMPT=2
-          else
-            WAIT_SECONDS=28800   # 8 hours
-            NEXT_ATTEMPT=3
-          fi
-
-          WAIT_MIN=$(( WAIT_SECONDS / 60 ))
-          echo "⏳ Quota exhausted — sleeping ${WAIT_MIN}m before retry attempt ${NEXT_ATTEMPT}..."
-          sleep "$WAIT_SECONDS"
-
-          echo "🔄 Dispatching retry run (attempt ${NEXT_ATTEMPT})..."
-          gh workflow run security-reports-pipeline.yml \
-            --repo "$GITHUB_REPO" \
-            --ref "$GITHUB_REF_NAME" \
-            --field quota_retry_attempt="$NEXT_ATTEMPT"
-
-          echo "✓ Retry dispatched"
+        run: python .github/scripts/dispatch-quota-retry.py

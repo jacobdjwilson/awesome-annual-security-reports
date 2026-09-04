@@ -59,7 +59,13 @@ class LintConfigLoader:
 
     @property
     def target_file(self) -> str:
-        return str(self.config.get("target_file", "README.md"))
+        val = self.config.get("target_file")
+        if not val:
+            raise KeyError(
+                "Missing required key 'target_file' in 'workflow.lint' section of "
+                f"'{self.config_path}'. Ensure the artifact is properly configured."
+            )
+        return str(val)
 
 
 def run_cmd(cmd: List[str]) -> Tuple[int, str, str]:

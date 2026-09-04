@@ -550,11 +550,15 @@ class FeedbackWriter:
 # ══════════════════════════════════════════════════════════════════════════════
 
 def main() -> int:
+    env_min = os.environ.get("MIN_EVENTS")
+    default_min = int(env_min) if env_min and env_min.strip() else 5
+    env_dry_run = os.environ.get("DRY_RUN", "false").lower() == "true"
+
     ap = argparse.ArgumentParser(description="Discovery Feedback Learner")
     ap.add_argument("--artifacts-dir", default=".github/artifacts")
-    ap.add_argument("--min-events", type=int, default=5,
-                    help="Minimum triage events before running Gemini analysis (default: 5)")
-    ap.add_argument("--dry-run", action="store_true",
+    ap.add_argument("--min-events", type=int, default=default_min,
+                    help="Minimum triage events before running Gemini analysis")
+    ap.add_argument("--dry-run", action="store_true", default=env_dry_run,
                     help="Analyse and print suggestions without writing to disk")
     args = ap.parse_args()
 

@@ -1,38 +1,87 @@
+"""
+Operational Purpose:
+    Scans PDF files against the VirusTotal v3 API (via file upload or opportunistic SHA-256 hash lookup),
+    evaluating detection stats and enforcing repository security safeguards.
+
+Required Environment Variables:
+    VIRUS_TOTAL_API_KEY (optional): VirusTotal v3 API key.
+    SKIP_VIRUS_SCAN (optional): If 'true', skips scanning.
+    GITHUB_OUTPUT (optional): Path to write step outputs.
+
+Outputs:
+    scan_skipped (bool): 'true' if scan was bypassed, 'false' otherwise.
+    scan_passed (bool): 'true' if no files were flagged malicious and scan completed.
+
+JSON Artifact Dependencies:
+    .github/artifacts/workflow-config.json (workflow.virustotal)
+"""
+
 import os
 import sys
 import time
-import requests
 import json
 import hashlib
 import argparse
 from pathlib import Path
 from typing import Dict, Any, Optional
 
+import requests
+
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+
 class ConfigLoader:
+    """Loads VirusTotal configuration strictly from workflow-config.json with fail-fast validation."""
+
     def __init__(self, artifacts_dir: str = ".github/artifacts"):
         cfg_path = Path(artifacts_dir) / "workflow-config.json"
         if not cfg_path.exists():
             raise FileNotFoundError(f"workflow-config.json not found at {cfg_path}")
-        with open(cfg_path, "r", encoding="utf-8") as f:
-            cfg = json.load(f)
+        try:
+            with open(cfg_path, "r", encoding="utf-8") as f:
+                cfg = json.load(f)
+        except Exception as e:
+            raise ValueError(f"Failed to parse JSON artifact '{cfg_path}': {e}") from e
 
-        vt = cfg.get("workflow", {}).get("virustotal", {})
-        self.api_base_url:              str  = vt.get("api_base_url", "https://www.virustotal.com/api/v3")
-        self.user_agent:                str  = vt.get("user_agent", "VirusTotal GitHub Action")
-        self.large_file_threshold_mb:   int  = vt.get("large_file_threshold_mb", 32)
-        self.poll_attempts:             int  = vt.get("poll_attempts", 20)
-        self.poll_backoff_base_seconds: int  = vt.get("poll_backoff_base_seconds", 3)
-        self.rate_limit_sleep_seconds:  int  = vt.get("rate_limit_sleep_seconds", 60)
-        self.skip_on_schedule:          bool = vt.get("skip_on_schedule", False)
-        self.skip_on_push:              bool = vt.get("skip_on_push", False)
+        vt = cfg.get("workflow", {}).get("virustotal")
+        if not vt or not isinstance(vt, dict):
+            raise KeyError(f"Missing 'workflow.virustotal' section in '{cfg_path}'.")
+
+        required_keys = [
+            "api_base_url",
+            "user_agent",
+            "large_file_threshold_mb",
+            "poll_attempts",
+            "poll_backoff_base_seconds",
+            "rate_limit_sleep_seconds",
+            "skip_on_schedule",
+            "skip_on_push",
+        ]
+        for key in required_keys:
+            if key not in vt:
+                raise KeyError(f"Missing required key '{key}' in 'workflow.virustotal' of '{cfg_path}'.")
+
+        self.api_base_url:              str  = str(vt["api_base_url"])
+        self.user_agent:                str  = str(vt["user_agent"])
+        self.large_file_threshold_mb:   int  = int(vt["large_file_threshold_mb"])
+        self.poll_attempts:             int  = int(vt["poll_attempts"])
+        self.poll_backoff_base_seconds: int  = int(vt["poll_backoff_base_seconds"])
+        self.rate_limit_sleep_seconds:  int  = int(vt["rate_limit_sleep_seconds"])
+        self.skip_on_schedule:          bool = bool(vt["skip_on_schedule"])
+        self.skip_on_push:              bool = bool(vt["skip_on_push"])
 
     def should_skip(self, scan_mode: str, manual_skip: bool) -> Optional[str]:
         if manual_skip:
             return "manual override via workflow input"
         if scan_mode == "scheduled" and self.skip_on_schedule:
-            return f"skip_on_schedule=true in workflow-config.json"
+            return "skip_on_schedule=true in workflow-config.json"
         if scan_mode.startswith("push") and self.skip_on_push:
-            return f"skip_on_push=true in workflow-config.json"
+            return "skip_on_push=true in workflow-config.json"
         return None
 
 def calculate_file_hash(file_path: str) -> str:
@@ -226,10 +275,16 @@ def main() -> int:
     with open(args.files_list, "r") as f:
         files_to_scan = [ln.strip() for ln in f if ln.strip()]
 
+    gh_output = os.environ.get("GITHUB_OUTPUT")
+
     if not files_to_scan:
         print("⊘ No files to scan")
         with open(args.output_json, "w") as f:
             json.dump([], f)
+        if gh_output:
+            with open(gh_output, "a", encoding="utf-8") as f:
+                f.write("scan_skipped=true\n")
+                f.write("scan_passed=true\n")
         return 0
 
     if args.daily_mode:
@@ -238,11 +293,16 @@ def main() -> int:
             return 1
         return daily_scan_mode(files_to_scan, api_key, cfg, args.artifacts_dir)
 
-    skip_reason = cfg.should_skip(args.scan_mode, args.manual_skip)
+    is_manual_skip = args.manual_skip or (os.environ.get("SKIP_VIRUS_SCAN", "false").lower() == "true")
+    skip_reason = cfg.should_skip(args.scan_mode, is_manual_skip)
     if skip_reason:
         print(f"⊘ Scan skipped: {skip_reason}")
         with open(args.output_json, "w") as f:
             json.dump([], f)
+        if gh_output:
+            with open(gh_output, "a", encoding="utf-8") as f:
+                f.write("scan_skipped=true\n")
+                f.write("scan_passed=true\n")
         return 0
 
     print(f"✓ {len(files_to_scan)} file(s) to scan (Opportunistic Mode)\n")
@@ -274,11 +334,17 @@ def main() -> int:
     print(f"\n{'='*70}")
     print(f"Scanned: {success_count}/{len(results)} successful | Fallbacks: {fallback_count} | Malicious: {malicious}")
 
+    if gh_output:
+        with open(gh_output, "a", encoding="utf-8") as f:
+            f.write("scan_skipped=false\n")
+            f.write(f"scan_passed={'false' if malicious > 0 else 'true'}\n")
+
     if malicious > 0:
         print(f"\n❌ {malicious} file(s) flagged as Malicious — exiting with code 1")
         return 1
 
     return 0
+
 
 if __name__ == "__main__":
     sys.exit(main())

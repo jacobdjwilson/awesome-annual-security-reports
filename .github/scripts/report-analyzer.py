@@ -742,6 +742,7 @@ def process_reports(
     output_json: str,
     errors_json: str,
     config: ConfigLoader,
+    exit_zero_on_quota: bool = False,
 ) -> int:
     """
     Load conversions.json, run AI analysis on each report, write analysis.json.
@@ -900,11 +901,23 @@ def process_reports(
             print(f"  - {rec['organization']} ({rec['year']}): [{rec['error_type']}] {rec['error'][:100]}")
 
     print(f"{'='*70}\n")
-    if not results and error_records:
-        all_quota = all(r["error_type"] == "quota_exceeded" for r in error_records)
-        if all_quota:
-            print("QUOTA_EXHAUSTED=true")
-            return EXIT_QUOTA_EXHAUSTED
+
+    all_quota = bool(not results and error_records and all(r["error_type"] == "quota_exceeded" for r in error_records))
+
+    gh_output = os.environ.get("GITHUB_OUTPUT")
+    if gh_output:
+        with open(gh_output, "a", encoding="utf-8") as f:
+            f.write(f"analysis_count={len(results)}\n")
+            f.write(f"error_count={len(error_records)}\n")
+            f.write(f"analysis_success={'true' if results else 'false'}\n")
+            f.write(f"quota_exhausted={'true' if all_quota else 'false'}\n")
+            f.write(f"errors_file={errors_json}\n")
+
+    if all_quota:
+        print("QUOTA_EXHAUSTED=true")
+        if exit_zero_on_quota:
+            return 0
+        return EXIT_QUOTA_EXHAUSTED
     return 0 if results else 1
 
 
@@ -957,6 +970,7 @@ def main():
     parser.add_argument("conversions_json",  help="Path to conversions.json")
     parser.add_argument("--output-json",     default="analysis.json")
     parser.add_argument("--artifacts-dir",   default=".github/artifacts")
+    parser.add_argument("--exit-zero-on-quota", action="store_true", help="Exit 0 when quota is exhausted to prevent workflow step failure while signaling retry")
     args = parser.parse_args()
 
     print(f"\n{'='*70}")
@@ -980,6 +994,7 @@ def main():
             args.output_json,
             config.errors_output_file,
             config,
+            exit_zero_on_quota=args.exit_zero_on_quota,
         )
     except Exception as e:
         print(f"\nFATAL ERROR: {e}")

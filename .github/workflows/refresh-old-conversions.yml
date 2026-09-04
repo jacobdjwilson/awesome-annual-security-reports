@@ -44,13 +44,7 @@ jobs:
 
       - name: Load workflow configuration
         id: load_config
-        run: |
-          DEFAULT_LIMIT=$(jq -r '.workflow.discovery.default_limit' .github/artifacts/workflow-config.json)
-          MAX_OPEN_PRS=$(jq -r '.workflow.pull_request.max_open_automated_prs // 5' .github/artifacts/workflow-config.json)
-          echo "default_limit=$DEFAULT_LIMIT" >> $GITHUB_OUTPUT
-          echo "max_open_prs=$MAX_OPEN_PRS" >> $GITHUB_OUTPUT
-          echo "✓ Default limit: $DEFAULT_LIMIT"
-          echo "✓ Max open PRs : $MAX_OPEN_PRS"
+        run: python .github/scripts/load-pipeline-config.py
 
       - name: Check existing refresh PR and PR cap
         id: check-pr
@@ -58,16 +52,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MAX_OPEN_PRS: ${{ steps.load_config.outputs.max_open_prs }}
           WORKFLOW_TYPE: refresh
-        run: |
-          python .github/scripts/check-pr-cap.py
+        run: python .github/scripts/check-pr-cap.py
 
       - name: Collect PDFs already covered by open PR branches
         id: pending-prs
         if: steps.check-pr.outputs.pr_exists != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python .github/scripts/collect-pending-prs.py
+        run: python .github/scripts/collect-pending-prs.py
 
       - name: Find stale files
         id: check-files
@@ -75,8 +67,7 @@ jobs:
         env:
           LIMIT: ${{ github.event.inputs.limit || steps.load_config.outputs.default_limit }}
           DAYS_OLD: ${{ github.event.inputs.days_old || '90' }}
-        run: |
-          python .github/scripts/check-stale-conversions.py
+        run: python .github/scripts/check-stale-conversions.py
 
       - name: Upload file list
         if: |
@@ -99,48 +90,9 @@ jobs:
           PR_EXISTS: ${{ steps.check-pr.outputs.pr_exists }}
           SKIP_REASON: ${{ steps.check-pr.outputs.skip_reason }}
           OPEN_COUNT: ${{ steps.check-pr.outputs.open_count }}
-          MAX_OPEN_PRS: ${{ steps.load_config.outputs.max_open_prs }}
           HAS_FILES: ${{ steps.check-files.outputs.has_files }}
           COUNT: ${{ steps.check-files.outputs.file_count }}
-          DEFAULT_LIMIT: ${{ steps.load_config.outputs.default_limit }}
-        run: |
-          RUN_URL="https://github.com/$GITHUB_REPO/actions/runs/$GITHUB_RUN_ID"
-          PR_EXISTS="$PR_EXISTS"
-          SKIP_REASON="$SKIP_REASON"
-          OPEN_COUNT="$OPEN_COUNT"
-          MAX_OPEN_PRS="$MAX_OPEN_PRS"
-          HAS_FILES="$HAS_FILES"
-          COUNT="$COUNT"
-          DEFAULT_LIMIT="$DEFAULT_LIMIT"
-          
-          FINAL_LIMIT="${INPUT_LIMIT:-$DEFAULT_LIMIT}"
-          FINAL_DAYS="${INPUT_DAYS_OLD:-90}"
-
-          echo "## ♻️ Refresh Old Conversions — Discovery" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Detail | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Trigger | \`${GITHUB_EVENT_NAME}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Limit | \`${FINAL_LIMIT}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Min Age (days) | \`${FINAL_DAYS}\` |" >> $GITHUB_STEP_SUMMARY
-          echo "| Open Automated PRs | ${OPEN_COUNT:-?} / ${MAX_OPEN_PRS:-5} |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
-          if [ "$PR_EXISTS" == "true" ]; then
-            if [ "$SKIP_REASON" == "pr_cap_reached" ]; then
-              echo "### ⏸️ PR Cap Reached" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-              echo "**${OPEN_COUNT} open automated PRs** — at or above the cap of **${MAX_OPEN_PRS}**." >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-              echo "Review and merge or close open automated PRs to unblock future refresh runs." >> $GITHUB_STEP_SUMMARY
-            else
-              echo "⊘ **Skipped** — An open refresh PR already exists." >> $GITHUB_STEP_SUMMARY
-            fi
-          elif [ "$HAS_FILES" == "true" ]; then
-            echo "✅ Found **${COUNT}** file(s) to refresh. Processing job will follow." >> $GITHUB_STEP_SUMMARY
-          else
-            echo "✅ No stale or missing conversions found — repository is up to date." >> $GITHUB_STEP_SUMMARY
-          fi
+        run: python .github/scripts/generate-refresh-summary.py --step discovery
 
   process-stale-reports:
     permissions:
@@ -160,16 +112,7 @@ jobs:
           python-version: '3.12'
 
       - name: Load configuration and install dependencies
-        run: |
-          SYS_PACKAGES=$(jq -r '.workflow.conversion.system_packages | join(" ")' .github/artifacts/workflow-config.json)
-          PY_PACKAGES=$(jq -r '.workflow.conversion.python_packages | join(" ")' .github/artifacts/workflow-config.json)
-
-          echo "Installing system packages: $SYS_PACKAGES"
-          sudo apt-get update
-          sudo apt-get install -y $SYS_PACKAGES
-
-          echo "Installing Python packages: $PY_PACKAGES"
-          pip install --break-system-packages $PY_PACKAGES
+        run: python .github/scripts/install-task-dependencies.py --task conversion --system
 
       - name: Download file list
         uses: actions/download-artifact@v7
@@ -192,31 +135,11 @@ jobs:
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
           GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
         run: |
-          # --smart-reconvert bypasses the conversion cache only if a newer AI model is available
-          # or the current markdown is structurally invalid, ensuring API tokens are not wasted.
-          set +e
           python .github/scripts/pdf-converter.py \
             --file-list files_to_process.txt \
             --output-json conversions.json \
             --artifacts-dir .github/artifacts \
             --smart-reconvert
-          CONV_EXIT=$?
-          set -e
-
-          SUCCESSFUL=$(jq '[.[] | select(.status == "success")] | length' conversions.json 2>/dev/null || echo 0)
-          FAILED=$(jq '[.[] | select(.status != "success")] | length' conversions.json 2>/dev/null || echo 0)
-
-          echo "successful_count=$SUCCESSFUL" >> $GITHUB_OUTPUT
-          echo "failed_count=$FAILED" >> $GITHUB_OUTPUT
-
-          if [ "$CONV_EXIT" -eq 2 ]; then
-            echo "quota_exhausted=true" >> $GITHUB_OUTPUT
-            echo "⚠ Quota exhausted (exit 2) — gracefully stopping. Will retry tomorrow."
-            exit 0
-          elif [ "$CONV_EXIT" -ne 0 ]; then
-            exit $CONV_EXIT
-          fi
-
 
       - name: Run report analyzer
         id: analyzer
@@ -224,81 +147,19 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          ERRORS_FILE=$(jq -r '.workflow.analysis.errors_output_file // "analysis_errors.json"' .github/artifacts/workflow-config.json)
-          echo "errors_file=$ERRORS_FILE" >> $GITHUB_OUTPUT
-
-          if [ -f conversions.json ]; then
-            # set +e: prevent python's exit code 1 from killing the bash script
-            # before outputs are written (same fix as in security-reports-pipeline.yml)
-            set +e
-            python .github/scripts/report-analyzer.py \
-              conversions.json \
-              --output-json analysis.json \
-              --artifacts-dir .github/artifacts
-            ANALYZER_EXIT=$?
-            set -e
-
-            ANALYSIS_COUNT=0
-            ERROR_COUNT=0
-            if [ -f analysis.json ] && jq empty analysis.json 2>/dev/null; then
-              ANALYSIS_COUNT=$(jq 'length' analysis.json)
-            fi
-            if [ -f "$ERRORS_FILE" ] && jq empty "$ERRORS_FILE" 2>/dev/null; then
-              ERROR_COUNT=$(jq 'length' "$ERRORS_FILE")
-            fi
-
-            echo "analysis_count=$ANALYSIS_COUNT" >> $GITHUB_OUTPUT
-            echo "error_count=$ERROR_COUNT" >> $GITHUB_OUTPUT
-
-            if [ "$ANALYZER_EXIT" -eq 2 ]; then
-              echo "analysis_success=false" >> $GITHUB_OUTPUT
-              echo "quota_exhausted=true" >> $GITHUB_OUTPUT
-              echo "⚠ Quota exhausted (exit 2) — gracefully stopping. Will retry tomorrow."
-              exit 0
-            fi
-
-            if [ "$ANALYSIS_COUNT" -gt 0 ]; then
-              echo "analysis_success=true" >> $GITHUB_OUTPUT
-              echo "✓ $ANALYSIS_COUNT report(s) analyzed successfully"
-            else
-              echo "analysis_success=false" >> $GITHUB_OUTPUT
-              echo "❌ Analysis failed — $ERROR_COUNT report(s) could not be analyzed"
-              if [ -f "$ERRORS_FILE" ] && [ "$ERROR_COUNT" -gt 0 ]; then
-                echo "Error breakdown:"
-                jq -r '.[] | "  [\(.error_type)] \(.organization) (\(.year)): \(.error[:120])"' "$ERRORS_FILE"
-              fi
-              exit 1
-            fi
-          fi
+          python .github/scripts/report-analyzer.py \
+            conversions.json \
+            --output-json analysis.json \
+            --artifacts-dir .github/artifacts
 
       - name: Update README
         id: readme_update
         if: success()
         run: |
-          if [ -f analysis.json ]; then
-            VALIDATE_TOC=$(jq -r '.workflow.validation.validate_toc' .github/artifacts/workflow-config.json)
-
-            if [ "$VALIDATE_TOC" == "true" ]; then
-              python .github/scripts/readme-updater.py \
-                analysis.json \
-                --readme-path README.md \
-                --artifacts-dir .github/artifacts \
-                --validate-toc
-            else
-              python .github/scripts/readme-updater.py \
-                analysis.json \
-                --readme-path README.md \
-                --artifacts-dir .github/artifacts
-            fi
-
-            if git diff --quiet HEAD -- README.md "Markdown Conversions/"; then
-              echo "changes_detected=false" >> $GITHUB_OUTPUT
-              echo "⊘ No changes to commit"
-            else
-              echo "changes_detected=true" >> $GITHUB_OUTPUT
-              echo "✓ Changes detected"
-            fi
-          fi
+          python .github/scripts/generate-refresh-pr.py \
+            --analysis-file analysis.json \
+            --file-count "${{ needs.identify-stale-files.outputs.file_count }}" \
+            --days-old "${{ github.event.inputs.days_old || '90' }}"
 
       - name: Create PR
         id: create_pr
@@ -306,23 +167,10 @@ jobs:
         uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "♻️ Refresh ${{ needs.identify-stale-files.outputs.file_count }} stale conversions"
-          title: "♻️ Refresh ${{ needs.identify-stale-files.outputs.file_count }} Security Reports"
-          body: |
-            ## Automated Report Refresh
-
-            Refreshed ${{ needs.identify-stale-files.outputs.file_count }} reports that were either:
-            - Missing markdown conversions
-            - Older than ${{ github.event.inputs.days_old || '90' }} days
-
-            Markdown files were regenerated from scratch using the full
-            markitdown + AI polish pipeline (identical to newly-added reports).
-
-            **Run:** [#${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-
-            ---
-            *Auto-generated by Refresh Old Conversions workflow*
-          branch: refresh-reports-${{ github.run_id }}
+          commit-message: "${{ steps.readme_update.outputs.commit_message }}"
+          title: "${{ steps.readme_update.outputs.pr_title }}"
+          body-path: refresh_pr_body.md
+          branch: ${{ steps.readme_update.outputs.branch_name }}
           delete-branch: true
           add-paths: |
             README.md
@@ -357,5 +205,4 @@ jobs:
           ANALYSIS_COUNT: ${{ steps.analyzer.outputs.analysis_count }}
           ANALYSIS_ERROR_COUNT: ${{ steps.analyzer.outputs.error_count }}
           ERRORS_FILE: ${{ steps.analyzer.outputs.errors_file }}
-        run: |
-          python .github/scripts/generate-refresh-summary.py
+        run: python .github/scripts/generate-refresh-summary.py --step processing

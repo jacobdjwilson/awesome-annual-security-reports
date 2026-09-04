@@ -88,8 +88,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: |
-          pip install --break-system-packages "pypdf[crypto]"
+        run: python .github/scripts/install-task-dependencies.py --task validation
 
       - name: Run validation
         id: validator
@@ -105,43 +104,13 @@ jobs:
       - name: Manage GitHub issues
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python .github/scripts/manage-validation-issues.py
+        run: python .github/scripts/manage-validation-issues.py
+
       - name: Auto-dispatch pipeline for orphaned PDFs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-
-          if [ ! -f "validation_findings.json" ]; then
-            exit 0
-          fi
-          
-          HAS_ORPHANS=$(jq '[.findings[] | select(.category == "orphaned_pdf" or .category == "stub_markdown")] | length' validation_findings.json)
-          
-          if [ "$HAS_ORPHANS" -eq 0 ]; then
-            echo "⊘ No orphaned PDFs or stubs found — skipping auto-dispatch"
-            exit 0
-          fi
-
-          # Check for an already-running or queued pipeline run
-          ACTIVE=$(gh run list \
-            --workflow security-reports-pipeline.yml \
-            --repo "${{ github.repository }}" \
-            --json status \
-            --jq '[.[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting")] | length')
-
-          if [ "${ACTIVE:-0}" -gt 0 ]; then
-            echo "⊘ Pipeline already active ($ACTIVE run(s)) — skipping auto-dispatch"
-            exit 0
-          fi
-
-          echo "🔄 Dispatching pipeline to convert orphaned/stub PDF(s)..."
-          gh workflow run security-reports-pipeline.yml \
-            --repo "${{ github.repository }}" \
-            --ref main
-
-          echo "✓ Pipeline dispatched — orphaned PDFs will be converted on next run"
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python .github/scripts/dispatch-orphaned-pipeline.py
 
       - name: Generate step summary
         if: always()

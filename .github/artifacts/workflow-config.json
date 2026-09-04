@@ -18,7 +18,13 @@
         "old": 30
       },
       "validation_prompt_path": ".github/ai-prompts/report-discovery-validation-prompt.md",
-      "feedback_learner_prompt_path": ".github/ai-prompts/discovery-feedback-learner-prompt.md"
+      "feedback_learner_prompt_path": ".github/ai-prompts/discovery-feedback-learner-prompt.md",
+      "python_packages": [
+        "requests",
+        "google-genai",
+        "google-generativeai",
+        "google-ai-generativelanguage"
+      ]
     },
     "issue_triage": {
       "labels": {
@@ -73,7 +79,12 @@
       "max_fallback_pdf_size_mb": 20,
       "prompt_path": ".github/ai-prompts/pdf-to-markdown-prompt.md",
       "fallback_extraction_prompt_path": ".github/ai-prompts/pdf-fallback-extraction-prompt.md",
-      "refresh_batch_limit": 10
+      "refresh_batch_limit": 10,
+      "quota_retry_delays_seconds": {
+        "1": 14400,
+        "2": 28800
+      },
+      "max_quota_retry_attempts": 3
     },
     "pull_request": {
       "branch_prefix": "security-reports-update-",
@@ -92,6 +103,9 @@
       "_max_open_automated_prs_comment": "Hard cap on total open automated PRs across all pipelines (security-reports-pipeline + refresh-old-conversions + ingest-suggestion). When this limit is reached, new pipeline runs skip PR creation and exit cleanly. Review and merge/close existing PRs to unblock automation."
     },
     "validation": {
+      "python_packages": [
+        "pypdf[crypto]"
+      ],
       "min_json_size_bytes": 10,
       "min_markdown_chars": 200,
       "validate_toc": true,
@@ -168,6 +182,28 @@
       "python_packages": [
         "requests"
       ]
+    },
+    "ingest": {
+      "trusted_roles": [
+        "OWNER",
+        "COLLABORATOR",
+        "MEMBER"
+      ],
+      "form_fields": {
+        "org": "Organization Name",
+        "title": "Report Title",
+        "year": "Report Year",
+        "url": "Direct PDF URL",
+        "category": "Category"
+      },
+      "table_fields": {
+        "org": "Organization",
+        "title": "Report",
+        "year": "Year",
+        "url": "URL",
+        "category": "Category"
+      },
+      "comment": "Configuration for automated community report ingest form parsing and permission controls."
     },
     "lint": {
       "output_file": "lint_output.txt",

@@ -37,53 +37,12 @@ jobs:
 
       - name: Parse triage checkbox
         id: parse
-        run: |
-          # Fetch the raw issue body via the API (handles encoding properly)
-          BODY=$(gh issue view "$ISSUE_NUMBER" --json body -q '.body')
-          
-          if echo "$BODY" | grep -qi '\[x\] \*\*Accept\*\*'; then
-            OUTCOME="true_positive"
-            LABEL="accepted"
-            CLOSE="false"
-          elif echo "$BODY" | grep -qi '\[x\] \*\*Duplicate\*\*'; then
-            OUTCOME="duplicate"
-            LABEL="duplicate"
-            CLOSE="true"
-          elif echo "$BODY" | grep -qi '\[x\] \*\*False Positive\*\*'; then
-            OUTCOME="false_positive"
-            LABEL="false-positive"
-            CLOSE="true"
-          elif echo "$BODY" | grep -qi '\[x\] \*\*Mismatch\*\*'; then
-            OUTCOME="mismatch"
-            LABEL="mismatch"
-            CLOSE="true"
-          else
-            echo "valid=false" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          
-          echo "valid=true" >> $GITHUB_OUTPUT
-          echo "outcome=$OUTCOME" >> $GITHUB_OUTPUT
-          echo "label=$LABEL" >> $GITHUB_OUTPUT
-          echo "close=$CLOSE" >> $GITHUB_OUTPUT
-          echo "author=$ISSUE_AUTHOR" >> $GITHUB_OUTPUT
-          echo "issue=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
-          DELIM=$(uuidgen)
-          {
-            echo "title<<$DELIM"
-            echo "$ISSUE_TITLE"
-            echo "$DELIM"
-          } >> "$GITHUB_OUTPUT"
-          echo "reason=Triaged via issue checkbox" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_AUTHOR: ${{ github.actor }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
-
-      - name: Ignore unknown edits
-        if: steps.parse.outputs.valid == 'false'
-        run: echo "No triage checkboxes checked. Ignoring edit."
+        run: python .github/scripts/parse-triage-checkbox.py
 
       - name: Apply triage label
         if: steps.parse.outputs.valid == 'true'
@@ -91,41 +50,17 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LABEL: ${{ steps.parse.outputs.label }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: |
-          python .github/scripts/apply-triage-label.py
+        run: python .github/scripts/apply-triage-label.py
 
-      - name: Post triage acknowledgement
+      - name: Post triage acknowledgement and close
         if: steps.parse.outputs.valid == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           OUTCOME: ${{ steps.parse.outputs.outcome }}
-          REASON: ${{ steps.parse.outputs.reason }}
           AUTHOR: ${{ steps.parse.outputs.author }}
-        run: |
-
-          ICON=$(case $OUTCOME in
-            true_positive)  echo "✅";;
-            false_positive) echo "🚫";;
-            duplicate)      echo "🔁";;
-            mismatch)       echo "⚠️";;
-          esac)
-
-          MSG="$ICON **Triaged as \`$OUTCOME\`** by @$AUTHOR via checkbox."
-          MSG="$MSG\n\n_This outcome will be incorporated into the next discovery feedback learner run to improve future searches._"
-
-          gh issue comment "$ISSUE_NUMBER" --body "$(printf '%b' "$MSG")"
-
-      - name: Close issue (negative outcomes)
-        if: steps.parse.outputs.valid == 'true' && steps.parse.outputs.close == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: |
-          gh issue close "$ISSUE_NUMBER" \
-            --reason "not planned" \
-            --comment "" 2>/dev/null || \
-          gh issue close "$ISSUE_NUMBER"
+          CLOSE: ${{ steps.parse.outputs.close }}
+        run: python .github/scripts/post-triage-acknowledgement.py
 
       - name: Record feedback event in artifact
         if: steps.parse.outputs.valid == 'true'
@@ -137,15 +72,8 @@ jobs:
           AUTHOR: ${{ steps.parse.outputs.author }}
           ISSUE: ${{ steps.parse.outputs.issue }}
           ISSUE_TITLE: ${{ steps.parse.outputs.title }}
-        run: |
-          python .github/scripts/record-feedback-event.py
+        run: python .github/scripts/record-feedback-event.py
 
       - name: Commit updated artifact
         if: steps.parse.outputs.valid == 'true'
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .github/artifacts/discovery-feedback.json
-          git diff --cached --quiet || \
-            git commit -m "chore: record triage feedback for #${{ steps.parse.outputs.issue }}"
-          git push || echo "Push failed (expected if another workflow committed concurrently)"
+        run: python .github/scripts/commit-feedback-artifact.py --issue "${{ steps.parse.outputs.issue }}"

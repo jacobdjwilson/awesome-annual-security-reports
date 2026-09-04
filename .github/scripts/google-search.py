@@ -1,3 +1,20 @@
+"""
+Operational Purpose:
+    Queries Google Custom Search API to resolve authoritative organization landing pages,
+    report discovery PDF links, and security report metadata. Implements dual-phase domain
+    affinity matching, URL scoring heuristics, and exponential backoff retry policies.
+
+Required Environment Variables:
+    GOOGLE_SEARCH_API_KEY: Google Custom Search API key.
+    GOOGLE_CSE_ID: Google Custom Search Engine ID.
+
+Outputs:
+    Structured search results containing URL, title, snippet, and score matching.
+
+JSON Artifact Dependencies:
+    .github/artifacts/google-search-config.json (google_search)
+"""
+
 import os
 import sys
 import json
@@ -8,13 +25,20 @@ import urllib.parse
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 # ==========================
 # DEPENDENCY CHECK
 # ==========================
 try:
     import requests
 except ImportError:
-    print("ERROR: requests required. Install: pip install requests")
+    print("ERROR: requests required. Install: pip install requests", file=sys.stderr)
     sys.exit(1)
 
 
@@ -25,7 +49,7 @@ class ConfigLoader:
     """
     Loads all Google Search settings from .github/artifacts/google-search-config.json.
     Nothing is hardcoded — credentials, endpoints, retry policy, per-mode scoring
-    weights, and skip-domain lists are all sourced from the config file.
+    weights, and skip-domain lists are all sourced from the config file with fail-fast validation.
     """
 
     CONFIG_FILE = "google-search-config.json"
@@ -35,27 +59,39 @@ class ConfigLoader:
         self.mode          = mode
 
         raw = self._load_json(self.CONFIG_FILE)
-        if not raw:
-            raise ValueError(f"{self.CONFIG_FILE} is required but could not be loaded")
+        cfg = raw.get("google_search")
+        if not cfg or not isinstance(cfg, dict):
+            raise KeyError(f"Missing 'google_search' section in '{self.CONFIG_FILE}'.")
 
-        cfg = raw.get("google_search", {})
+        required_keys = [
+            "base_url",
+            "env_api_key",
+            "env_cse_id",
+            "request_timeout_seconds",
+            "rate_limit_sleep_seconds",
+            "retry_policy",
+            "modes",
+        ]
+        for key in required_keys:
+            if key not in cfg:
+                raise KeyError(f"Missing required key '{key}' in 'google_search' of '{self.CONFIG_FILE}'.")
 
         # ── API connection ────────────────────────────────────────────────
-        self.base_url:         str = cfg.get("base_url", "https://www.googleapis.com/customsearch/v1")
-        self.env_api_key:      str = cfg.get("env_api_key", "GOOGLE_SEARCH_API_KEY")
-        self.env_cse_id:       str = cfg.get("env_cse_id",  "GOOGLE_CSE_ID")
-        self.request_timeout:  int = cfg.get("request_timeout_seconds", 10)
-        self.rate_limit_sleep: float = cfg.get("rate_limit_sleep_seconds", 1)
+        self.base_url:         str   = str(cfg["base_url"])
+        self.env_api_key:      str   = str(cfg["env_api_key"])
+        self.env_cse_id:       str   = str(cfg["env_cse_id"])
+        self.request_timeout:  int   = int(cfg["request_timeout_seconds"])
+        self.rate_limit_sleep: float = float(cfg["rate_limit_sleep_seconds"])
 
         # ── Retry policy ──────────────────────────────────────────────────
-        retry = cfg.get("retry_policy", {})
-        self.max_retries:   int   = retry.get("max_attempts",          3)
-        self.initial_delay: float = retry.get("initial_delay_seconds", 2)
-        self.backoff_mult:  float = retry.get("backoff_multiplier",    2)
-        self.max_delay:     float = retry.get("max_delay_seconds",    15)
+        retry = cfg["retry_policy"]
+        self.max_retries:   int   = int(retry["max_attempts"])
+        self.initial_delay: float = float(retry["initial_delay_seconds"])
+        self.backoff_mult:  float = float(retry["backoff_multiplier"])
+        self.max_delay:     float = float(retry["max_delay_seconds"])
 
         # ── Mode-specific settings ────────────────────────────────────────
-        modes = cfg.get("modes", {})
+        modes = cfg["modes"]
         if mode not in modes:
             available = ", ".join(modes.keys())
             raise ValueError(
@@ -63,41 +99,43 @@ class ConfigLoader:
             )
 
         mode_cfg = modes[mode]
-        self.query_templates: List[str] = mode_cfg.get("query_templates", [mode_cfg.get("query_template", "{query}")])
-        self.num_results:    int       = mode_cfg.get("num_results", 5)
-        self.skip_domains:   List[str] = mode_cfg.get("skip_domains",   [])
-        self.exclude_terms:  List[str] = mode_cfg.get("exclude_terms",  [])
-        self.financial_terms:List[str] = mode_cfg.get("financial_terms",[])
+        if "query_templates" in mode_cfg:
+            self.query_templates = list(mode_cfg["query_templates"])
+        elif "query_template" in mode_cfg:
+            self.query_templates = [str(mode_cfg["query_template"])]
+        else:
+            raise KeyError(f"Missing 'query_templates' or 'query_template' in mode '{mode}'.")
 
-        # Scoring weights (all default 0 so generic mode works with empty block)
+        self.num_results:    int       = int(mode_cfg["num_results"])
+        self.skip_domains:   List[str] = list(mode_cfg.get("skip_domains", []))
+        self.exclude_terms:  List[str] = list(mode_cfg.get("exclude_terms", []))
+        self.financial_terms:List[str] = list(mode_cfg.get("financial_terms", []))
+
+        # Scoring weights
         scoring = mode_cfg.get("scoring", {})
-        self.score_org_in_link:      int = scoring.get("org_in_link",         0)
-        self.score_year_in_link:     int = scoring.get("year_in_link",        0)
-        self.score_report_in_link:   int = scoring.get("report_in_link",      0)
-        self.score_year_in_title:    int = scoring.get("year_in_title",       0)
-        self.score_org_in_title:     int = scoring.get("org_in_title",        0)
-        self.score_short_path_penalty: int = scoring.get("short_path_penalty", 0)
-        self.score_short_path_threshold: int = scoring.get("short_path_threshold", 3)
-        self.score_toplevel_domain_penalty: int = scoring.get("toplevel_domain_penalty", 0)
-        self.score_existing_domain_match_bonus: int = scoring.get("existing_domain_match_bonus", 0)
-        self.score_existing_subdomain_match_bonus: int = scoring.get("existing_subdomain_match_bonus", 0)
-        # Minimum score a result must reach to be accepted (0 = disabled)
-        self.score_min_accept: int = scoring.get("min_accept_score", 0)
+        self.score_org_in_link:              int = int(scoring.get("org_in_link", 0))
+        self.score_year_in_link:             int = int(scoring.get("year_in_link", 0))
+        self.score_report_in_link:           int = int(scoring.get("report_in_link", 0))
+        self.score_year_in_title:            int = int(scoring.get("year_in_title", 0))
+        self.score_org_in_title:             int = int(scoring.get("org_in_title", 0))
+        self.score_short_path_penalty:       int = int(scoring.get("short_path_penalty", 0))
+        self.score_short_path_threshold:     int = int(scoring.get("short_path_threshold", 3))
+        self.score_toplevel_domain_penalty:  int = int(scoring.get("toplevel_domain_penalty", 0))
+        self.score_existing_domain_match_bonus: int = int(scoring.get("existing_domain_match_bonus", 0))
+        self.score_existing_subdomain_match_bonus: int = int(scoring.get("existing_subdomain_match_bonus", 0))
+        self.score_min_accept:               int = int(scoring.get("min_accept_score", 0))
 
-    def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
+    def _load_json(self, filename: str) -> Dict[str, Any]:
         path = self.artifacts_dir / filename
         if not path.exists():
-            print(f"ERROR: {filename} not found at {path}")
-            return None
+            raise FileNotFoundError(f"Required artifact '{filename}' not found at '{path}'.")
         try:
             with open(path, "r", encoding="utf-8") as f:
                 return json.load(f)
         except json.JSONDecodeError as e:
-            print(f"ERROR: Invalid JSON in {filename}: {e}")
-            return None
+            raise ValueError(f"Invalid JSON in artifact '{path}': {e}") from e
         except Exception as e:
-            print(f"ERROR: Could not read {filename}: {e}")
-            return None
+            raise ValueError(f"Could not read artifact '{path}': {e}") from e
 
 
 # ==========================

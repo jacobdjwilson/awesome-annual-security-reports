@@ -26,8 +26,4 @@ jobs:
           fetch-depth: 0
 
       - name: Merge main into development
-        run: |
-          git config user.name "GitHub Action"
-          git config user.email "action@github.com"
-          git merge origin/main
-          git push
+        run: python .github/scripts/sync-branch.py

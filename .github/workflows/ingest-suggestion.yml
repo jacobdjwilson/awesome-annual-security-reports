@@ -64,51 +64,9 @@ jobs:
           URL: ${{ steps.parse.outputs.report_url }}
           YEAR: ${{ steps.parse.outputs.report_year }}
           ORG: ${{ steps.parse.outputs.organization_name }}
-        run: |
-
-          VALID=true
-          ERRORS=""
-
-          if [ -z "$URL" ]; then
-            VALID=false
-            ERRORS="$ERRORS\n- Report URL is empty"
-          fi
-
-          if [ -z "$YEAR" ] || ! echo "$YEAR" | grep -qE '^[0-9]{4}$'; then
-            VALID=false
-            ERRORS="$ERRORS\n- Report year is missing or not a 4-digit number"
-          fi
-
-          if [ -z "$ORG" ]; then
-            VALID=false
-            ERRORS="$ERRORS\n- Organization name is empty"
-          fi
-
-          if [ "$VALID" != "true" ]; then
-            echo "Validation failed:$ERRORS"
-            echo "valid=false" >> $GITHUB_OUTPUT
-            echo "errors=$ERRORS" >> $GITHUB_OUTPUT
-          else
-            echo "✓ Fields validated"
-            echo "valid=true" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Comment on validation failure
-        if: steps.validate.outputs.valid == 'false'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: |
-          gh issue comment "$ISSUE_NUMBER" --body "$(cat << 'BODY'
-          ❌ **Could not process this suggestion** — one or more required fields are missing or invalid.
-
-          Please edit the issue and ensure the following fields are correctly filled in:
-          ${{ steps.validate.outputs.errors }}
-
-          Once corrected, remove and re-add the `report-suggestion` label to re-trigger processing.
-          BODY
-          )"
-          exit 1
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/validate-ingest-fields.py
 
       - name: Download and organize PDF
         id: download
@@ -117,90 +75,12 @@ jobs:
           YEAR: ${{ steps.parse.outputs.report_year }}
           ORG: ${{ steps.parse.outputs.organization_name }}
           TITLE: ${{ steps.parse.outputs.report_title }}
-        run: |
-
-          DEST_DIR="Annual Security Reports/$YEAR"
-          mkdir -p "$DEST_DIR"
-
-          # Try to derive a clean filename.
-          # Priority: URL basename → Content-Disposition header → sanitized Org+Title+Year
-          RAW_NAME=$(basename "$URL" | cut -d'?' -f1 | cut -d'#' -f1)
-
-          # Check if the URL basename looks like a real PDF filename
-          if echo "$RAW_NAME" | grep -qiE '\.pdf$'; then
-            FILENAME="$RAW_NAME"
-          else
-            # Construct a canonical filename from the parsed fields
-            SAFE_ORG=$(echo "$ORG"   | tr ' ' '-' | tr -cd 'A-Za-z0-9\-')
-            SAFE_TITLE=$(echo "$TITLE" | tr ' ' '-' | tr -cd 'A-Za-z0-9\-')
-            FILENAME="${SAFE_ORG}-${SAFE_TITLE}-${YEAR}.pdf"
-          fi
-
-          DEST_PATH="$DEST_DIR/$FILENAME"
-
-          echo "Target: $DEST_PATH"
-
-          # Download with retry (follow redirects, fail on HTTP errors)
-          SUCCESS=false
-          for i in {1..3}; do
-            if curl -L -f --max-time 120 \
-                -H "User-Agent: Mozilla/5.0 (compatible; awesome-annual-security-reports/1.0)" \
-                "$URL" -o "$DEST_PATH"; then
-              echo "✓ Downloaded on attempt $i: $FILENAME"
-              SUCCESS=true
-              break
-            else
-              echo "! Attempt $i failed, retrying in 5s..."
-              sleep 5
-            fi
-          done
-
-          if [ "$SUCCESS" != "true" ]; then
-            echo "❌ Download failed after 3 attempts"
-            exit 1
-          fi
-
-          # Verify the downloaded file looks like a PDF
-          MAGIC=$(head -c 4 "$DEST_PATH" 2>/dev/null || true)
-          if [ "$MAGIC" != "%PDF" ]; then
-            echo "❌ Downloaded file is not a valid PDF (magic: '$MAGIC')"
-            echo "   This may be a login page or redirect to a non-PDF resource."
-            rm -f "$DEST_PATH"
-            exit 1
-          fi
-
-          FILE_SIZE=$(stat -c%s "$DEST_PATH")
-          echo "✓ PDF verified — ${FILE_SIZE} bytes"
-
-          echo "file_path=$DEST_PATH" >> $GITHUB_OUTPUT
-          echo "file_name=$FILENAME"  >> $GITHUB_OUTPUT
-          echo "file_size=$FILE_SIZE" >> $GITHUB_OUTPUT
-
-      - name: Comment on download failure
-        if: failure() && steps.download.conclusion == 'failure'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: |
-          gh issue comment "$ISSUE_NUMBER" --body "$(cat << 'BODY'
-          ❌ **Download failed** — the PDF could not be retrieved from the provided URL.
-
-          Common causes:
-          - The URL requires a login or redirects to a landing page
-          - The link has expired or the file has moved
-          - The server blocked the automated download request
-
-          Please verify the URL is a **direct, public link to the PDF** and update the issue.
-          Remove and re-add the `report-suggestion` label to retry.
-          BODY
-          )"
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/download-report-pdf.py
 
       - name: Configure git for large file pushes
-        run: |
-          git config --global http.postBuffer 524288000
-          git config --global http.lowSpeedLimit 0
-          git config --global http.lowSpeedTime 300
-          echo "✓ Git HTTP buffers configured"
+        run: python .github/scripts/configure-git-buffers.py
 
       - name: Create ingestion PR
         id: create_pr
@@ -241,27 +121,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: |
-          PR_NUM="${{ steps.create_pr.outputs.pull-request-number }}"
-          PR_URL="https://github.com/${{ github.repository }}/pull/$PR_NUM"
-          FILE="${{ steps.download.outputs.file_name }}"
-
-          gh issue comment "$ISSUE_NUMBER" --body "$(cat << BODY
-          ✅ **Report successfully ingested!**
-
-          | Detail | Value |
-          |--------|-------|
-          | **File** | \`$FILE\` |
-          | **Pull Request** | [PR #$PR_NUM]($PR_URL) |
-
-          Once the PR is reviewed and merged, the Security Reports Processing Pipeline will automatically:
-          1. Convert the PDF to Markdown
-          2. Analyze and categorize the report using AI
-          3. Add it to the README
-
-          Thank you for the suggestion! 🙌
-          BODY
-          )"
+          PR_NUMBER: ${{ steps.create_pr.outputs.pull-request-number }}
+          FILE_NAME: ${{ steps.download.outputs.file_name }}
+        run: python .github/scripts/post-ingest-comment.py
 
       - name: Generate step summary
         if: always()

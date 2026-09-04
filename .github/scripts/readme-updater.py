@@ -849,11 +849,21 @@ def main() -> int:
 
     if changed:
         updater.save()
-        if args.validate_toc:
+        should_validate_toc = args.validate_toc or (
+            hasattr(config, "workflow_config")
+            and isinstance(config.workflow_config, dict)
+            and config.workflow_config.get("workflow", {}).get("validation", {}).get("validate_toc", False)
+        )
+        if should_validate_toc:
             print("\nValidating Table of Contents…")
             validate_table_of_contents(args.readme_path)
     else:
         print("\n⊘ No changes — README is already up to date")
+
+    gh_output = os.environ.get("GITHUB_OUTPUT")
+    if gh_output:
+        with open(gh_output, "a", encoding="utf-8") as f:
+            f.write(f"readme_updated={'true' if changed else 'false'}\n")
 
     return 0
 

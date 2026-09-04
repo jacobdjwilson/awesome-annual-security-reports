@@ -46,14 +46,13 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install --break-system-packages requests google-genai google-generativeai google-ai-generativelanguage
+        run: python .github/scripts/install-task-dependencies.py --task discovery
 
       - name: Check automated issue cap
         id: issue-cap
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python .github/scripts/check-issue-cap.py
+        run: python .github/scripts/check-issue-cap.py
 
       - name: Run discovery
         id: discovery
@@ -67,27 +66,7 @@ jobs:
           GEMINI_API_KEY:        ${{ secrets.GEMINI_API_KEY }}
           MAX_DISCOVERIES:       ${{ github.event.inputs.max_discoveries }}
           OVERRIDE_DATE:         ${{ github.event.inputs.override_date }}
-        run: |
-          ARGS="--artifacts-dir .github/artifacts"
-
-          if [ -n "$MAX_DISCOVERIES" ]; then
-            ARGS="$ARGS --max-discoveries $MAX_DISCOVERIES"
-          fi
-          if [ -n "$OVERRIDE_DATE" ]; then
-            ARGS="$ARGS --date $OVERRIDE_DATE"
-          fi
-
-          set +e
-          python .github/scripts/report-discovery.py $ARGS > discovery_output.log 2>&1
-          EXIT_CODE=$?
-          set -e
-
-          cat discovery_output.log
-
-          export EXIT_CODE
-          python .github/scripts/parse-discovery-output.py
-          
-          exit $EXIT_CODE
+        run: python .github/scripts/run-discovery.py
       - name: Upload discovery log
         if: always()
         uses: actions/upload-artifact@v6
