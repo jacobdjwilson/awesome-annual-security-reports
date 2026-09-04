@@ -5,27 +5,21 @@ import subprocess
 from datetime import datetime
 from typing import Dict, List, Any
 
-# Group categories into separate tickets to prevent issue fatigue
-ISSUE_DOMAINS = {
-    "Links": ["dead_link", "missing_readme"],
-    "Integrity": ["invalid_pdf", "invalid_md", "oversized_file", "duplicate_pdf", "duplicate_md"],
-    "Structure": ["orphaned_pdf", "orphaned_md", "stub_markdown", "year_mismatch", "naming_convention"]
-}
+from pathlib import Path
 
-CATEGORY_LABELS = {
-    "orphaned_pdf":  "🔴 Orphaned PDFs (no Markdown conversion)",
-    "orphaned_md":   "🔴 Orphaned Markdowns (no PDF)",
-    "stub_markdown":       "🔴 Stub / Failed Conversions",
-    "invalid_pdf":   "🔴 Invalid or Unreadable PDFs",
-    "year_mismatch": "🔴 Year Inconsistencies",
-    "dead_link":     "🔴 Dead External Links",
-    "missing_readme":"🔴 Missing README Entries (Active Window)",
-    "duplicate_pdf": "🔴 Exact PDF Duplicates (Hash Match)",
-    "duplicate_md":  "🟡 Potential Content Duplicates (Markdown Similarity)",
-    "invalid_md":    "🟡 Invalid or Short Markdown Files",
-    "naming_convention":        "🟡 Filename Convention Violations",
-    "oversized_file":     "🟡 Oversized Files",
-}
+wf_config_path = Path(".github/artifacts/workflow-config.json")
+if not wf_config_path.exists():
+    raise FileNotFoundError(f"Missing required artifact: {wf_config_path}")
+
+with open(wf_config_path, "r", encoding="utf-8") as f:
+    wf_config = json.load(f).get("workflow", {})
+
+validation_cfg = wf_config.get("validation", {})
+ISSUE_DOMAINS = validation_cfg.get("issue_domains")
+CATEGORY_LABELS = validation_cfg.get("category_labels")
+
+if not ISSUE_DOMAINS or not CATEGORY_LABELS:
+    raise ValueError("Missing 'validation.issue_domains' or 'validation.category_labels' in workflow-config.json")
 
 def run_gh(command: List[str]) -> str:
     try:

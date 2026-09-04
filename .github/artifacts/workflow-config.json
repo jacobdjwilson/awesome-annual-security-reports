@@ -65,7 +65,9 @@
       "max_pdf_chars": 500000,
       "max_polish_input_chars": 60000,
       "max_fallback_pdf_size_mb": 20,
-      "prompt_path": ".github/ai-prompts/pdf-to-markdown-prompt.md"
+      "prompt_path": ".github/ai-prompts/pdf-to-markdown-prompt.md",
+      "fallback_extraction_prompt_path": ".github/ai-prompts/pdf-fallback-extraction-prompt.md",
+      "refresh_batch_limit": 10
     },
     "pull_request": {
       "branch_prefix": "security-reports-update-",
@@ -90,6 +92,25 @@
       },
       "link_checker": {
         "max_concurrent_workers": 10
+      },
+      "issue_domains": {
+        "Links": ["dead_link", "missing_readme"],
+        "Integrity": ["invalid_pdf", "invalid_md", "oversized_file", "duplicate_pdf", "duplicate_md"],
+        "Structure": ["orphaned_pdf", "orphaned_md", "stub_markdown", "year_mismatch", "naming_convention"]
+      },
+      "category_labels": {
+        "orphaned_pdf": "🔴 Orphaned PDFs (no Markdown conversion)",
+        "orphaned_md": "🔴 Orphaned Markdowns (no PDF)",
+        "stub_markdown": "🔴 Stub / Failed Conversions",
+        "invalid_pdf": "🔴 Invalid or Unreadable PDFs",
+        "year_mismatch": "🔴 Year Inconsistencies",
+        "dead_link": "🔴 Dead External Links",
+        "missing_readme": "🔴 Missing README Entries (Active Window)",
+        "duplicate_pdf": "🔴 Exact PDF Duplicates (Hash Match)",
+        "duplicate_md": "🟡 Potential Content Duplicates (Markdown Similarity)",
+        "invalid_md": "🟡 Invalid or Short Markdown Files",
+        "naming_convention": "🟡 Filename Convention Violations",
+        "oversized_file": "🟡 Oversized Files"
       }
     },
     "analysis": {
@@ -101,8 +122,20 @@
       "markdown_max_chars_for_analysis": 12000,
       "errors_output_file": "analysis_errors.json",
       "summary_prompt_path": ".github/ai-prompts/markdown-summarization-prompt.md",
+      "summary_retry_prompt_path": ".github/ai-prompts/markdown-summarization-retry-guidance.md",
       "categorization_prompt_path": ".github/ai-prompts/report-categorization-prompt.md",
       "comment": "markdown_lines_for_analysis and markdown_max_chars_for_analysis both apply — the larger resulting slice is used, capped at markdown_max_chars_for_analysis. This ensures enough context is passed even when early lines are sparse (e.g. heavy TOC). errors_output_file names the structured per-report error log emitted when analysis fails."
+    },
+    "gating": {
+      "monitored_workflows": [
+        "security-reports-pipeline.yml",
+        "refresh-old-conversions.yml"
+      ],
+      "monitored_statuses": [
+        "in_progress",
+        "queued",
+        "waiting"
+      ]
     },
     "google_search": {
       "python_packages": [

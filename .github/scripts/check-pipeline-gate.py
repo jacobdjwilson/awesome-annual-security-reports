@@ -44,13 +44,26 @@ def main():
         print("⊘ Triggering workflow did not succeed — skipping")
         sys.exit(0)
 
-    monitored_workflows = ["security-reports-pipeline.yml", "refresh-old-conversions.yml"]
+    from pathlib import Path
+    config_path = Path(".github/artifacts/workflow-config.json")
+    if not config_path.exists():
+        raise FileNotFoundError(f"Missing required artifact: {config_path}")
+
+    with open(config_path, "r", encoding="utf-8") as f:
+        config = json.load(f).get("workflow", {})
+
+    gating_cfg = config.get("gating", {})
+    monitored_workflows = gating_cfg.get("monitored_workflows")
+    if not monitored_workflows:
+        raise ValueError("Missing 'gating.monitored_workflows' in workflow-config.json")
+
+    monitored_statuses = gating_cfg.get("monitored_statuses", ["in_progress", "queued", "waiting"])
     busy = False
 
     for wf_name in monitored_workflows:
         print(f"Checking: {wf_name}")
         encoded = urllib.parse.quote(wf_name)
-        for status in ["in_progress", "queued", "waiting"]:
+        for status in monitored_statuses:
             count_str = run_cmd(f"gh api 'repos/{repo}/actions/workflows/{encoded}/runs?head_sha={trigger_sha}&status={status}' --jq '.total_count'")
             count = int(count_str) if count_str.isdigit() else 0
             print(f"  {status}: {count}")

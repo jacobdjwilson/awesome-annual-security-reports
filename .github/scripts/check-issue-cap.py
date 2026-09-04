@@ -17,18 +17,24 @@ def write_output(key, value):
         with open(output_file, "a") as f:
             f.write(f"{key}={value}\n")
 
-def main():
-    config_path = ".github/artifacts/workflow-config.json"
-    max_issues = 20
-    if os.path.exists(config_path):
-        with open(config_path, "r") as f:
-            try:
-                config = json.load(f)
-                max_issues = config.get("workflow", {}).get("discovery", {}).get("max_open_automated_issues", 20)
-            except Exception:
-                pass
+from pathlib import Path
 
-    open_count_str = run_cmd('gh issue list --state open --label "automated" --json number -q length')
+def main():
+    config_path = Path(".github/artifacts/workflow-config.json")
+    if not config_path.exists():
+        raise FileNotFoundError(f"Missing required artifact: {config_path}")
+
+    with open(config_path, "r", encoding="utf-8") as f:
+        config = json.load(f).get("workflow", {})
+
+    max_issues = config.get("discovery", {}).get("max_open_automated_issues")
+    if max_issues is None:
+        raise ValueError("Missing 'discovery.max_open_automated_issues' in workflow-config.json")
+
+    labels = config.get("pull_request", {}).get("labels", [])
+    auto_label = labels[0] if labels else "automated"
+
+    open_count_str = run_cmd(f'gh issue list --state open --label "{auto_label}" --json number -q length')
     open_count = int(open_count_str) if open_count_str.isdigit() else 0
 
     print(f"Open automated issues: {open_count} / {max_issues}")

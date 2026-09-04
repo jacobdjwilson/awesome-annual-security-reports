@@ -7,17 +7,45 @@ from datetime import datetime
 import sys
 
 def main():
-    limit = int(os.environ.get("LIMIT", "10"))
-    days_old = int(os.environ.get("DAYS_OLD", "90"))
-    pdf_source = os.environ.get("PDF_SOURCE", "Annual Security Reports")
-    md_folder = os.environ.get("MD_FOLDER", "Markdown Conversions")
+    models_json_path = Path(".github/artifacts/ai-models.json")
+    wf_config_path = Path(".github/artifacts/workflow-config.json")
 
-    models_json_path = ".github/artifacts/ai-models.json"
+    if not models_json_path.exists():
+        raise FileNotFoundError(f"Missing required artifact: {models_json_path}")
+    if not wf_config_path.exists():
+        raise FileNotFoundError(f"Missing required artifact: {wf_config_path}")
+
+    with open(models_json_path, "r", encoding="utf-8") as f:
+        models_data = json.load(f)
     
-    primary_model = "gemini-3.5-flash-lite"
-    if os.path.exists(models_json_path):
-        with open(models_json_path) as f:
-            primary_model = json.load(f).get("models", {}).get("primary", primary_model)
+    conversion_task_models = models_data.get("task_models", {}).get("conversion", {})
+    primary_model = (
+        conversion_task_models.get("primary")
+        or models_data.get("models", {}).get("primary")
+    )
+    if not primary_model:
+        raise ValueError("Missing 'task_models.conversion.primary' or 'models.primary' in ai-models.json")
+
+    with open(wf_config_path, "r", encoding="utf-8") as f:
+        wf_data = json.load(f).get("workflow", {})
+
+    conversion_cfg = wf_data.get("conversion", {})
+    folders_cfg = wf_data.get("folders", {})
+
+    pdf_source = os.environ.get("PDF_SOURCE") or folders_cfg.get("pdf_source")
+    md_folder = os.environ.get("MD_FOLDER") or folders_cfg.get("markdown_conversions")
+    if not pdf_source or not md_folder:
+        raise ValueError("Missing 'folders.pdf_source' or 'folders.markdown_conversions' in workflow-config.json")
+
+    env_limit = os.environ.get("LIMIT")
+    limit = int(env_limit) if env_limit else conversion_cfg.get("refresh_batch_limit")
+    if limit is None:
+        raise ValueError("Missing 'conversion.refresh_batch_limit' in workflow-config.json")
+
+    env_days_old = os.environ.get("DAYS_OLD")
+    days_old = int(env_days_old) if env_days_old else conversion_cfg.get("max_age_days")
+    if days_old is None:
+        raise ValueError("Missing 'conversion.max_age_days' in workflow-config.json")
 
     threshold_timestamp = time.time() - (days_old * 86400)
     candidates = []

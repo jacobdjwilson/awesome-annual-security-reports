@@ -1494,7 +1494,8 @@ class GeminiValidator:
         model_name = None
         try:
             aim = json.loads((artifacts_dir / "ai-models.json").read_text())
-            model_name = aim.get("models", {}).get("primary")
+            task_models = aim.get("task_models", {}).get("discovery", {})
+            model_name = task_models.get("primary") or aim.get("models", {}).get("primary")
         except Exception:
             pass
         if not model_name:

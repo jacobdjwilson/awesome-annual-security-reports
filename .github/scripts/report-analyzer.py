@@ -106,8 +106,9 @@ class ConfigLoader:
 
         # Prompt paths loaded from workflow-config.json
         analysis_cfg = (self.workflow_config or {}).get("workflow", {}).get("analysis", {})
-        self.SUMMARY_PROMPT_PATH = analysis_cfg.get("summary_prompt_path")
-        self.CAT_PROMPT_PATH     = analysis_cfg.get("categorization_prompt_path")
+        self.SUMMARY_PROMPT_PATH       = analysis_cfg.get("summary_prompt_path")
+        self.SUMMARY_RETRY_PROMPT_PATH = analysis_cfg.get("summary_retry_prompt_path")
+        self.CAT_PROMPT_PATH           = analysis_cfg.get("categorization_prompt_path")
         
         if not self.SUMMARY_PROMPT_PATH or not self.CAT_PROMPT_PATH:
             raise ValueError("summary_prompt_path and categorization_prompt_path are required in workflow-config.json (under analysis)")
@@ -151,6 +152,22 @@ class ConfigLoader:
             self.required_verbs    = []
             self.forbidden_phrases = []
             self.marketing_words   = []
+
+    def get_task_models(self, task: Optional[str]) -> Dict[str, Optional[str]]:
+        """Return model hierarchy for a specific task, falling back to global models."""
+        task_cfg = (self.ai_config or {}).get("task_models", {}).get(task) if task else None
+        if isinstance(task_cfg, dict):
+            return {
+                "primary": task_cfg.get("primary") or self.primary_model,
+                "secondary": task_cfg.get("secondary") or self.secondary_model,
+                "tertiary": task_cfg.get("tertiary") or self.tertiary_model,
+            }
+        return {
+            "primary": self.primary_model,
+            "secondary": self.secondary_model,
+            "tertiary": self.tertiary_model,
+        }
+
 
     def _load_json(self, filename: str) -> Optional[Dict[str, Any]]:
         """Load and parse a JSON config file."""
@@ -569,22 +586,10 @@ class AIAnalyzer:
         head_content  = self._extract_head_content(content)
         clean_content = self._clean_content(head_content)
 
-        # Escalating guidance on retries
+        # Escalating guidance on retries loaded from standalone prompt artifact
         retry_guidance = ""
-        if attempt_num > 1:
-            retry_guidance = (
-                "\n\nCRITICAL — Previous attempt was REJECTED due to quality failures. YOU MUST:\n"
-                "- Write 2 to 3 complete sentences — each sentence must end with a period\n"
-                "- Target 50 to 80 words total (do NOT stop before 50 words)\n"
-                "- Include at least 1 specific statistic, percentage, or numerical finding\n"
-                "- First sentence MUST start with one of these exact words: "
-                "Analyzes, Examines, Evaluates, Assesses, Reviews, Surveys, Studies, Documents, Maps\n"
-                "- Do NOT use phrases like 'provides insights', 'offers recommendations', "
-                "'highlights key', 'this report', 'the report'\n"
-                "- COMPLETE every sentence — never stop mid-sentence\n"
-                "- If no statistic is visible in the provided content, include a plausible "
-                "numerical claim from the report title (e.g. surveyed X respondents, found Y% of organizations)\n"
-            )
+        if attempt_num > 1 and self.config.SUMMARY_RETRY_PROMPT_PATH:
+            retry_guidance = "\n\n" + self._load_prompt(self.config.SUMMARY_RETRY_PROMPT_PATH).strip()
 
         summary_full_prompt = (
             f"{summary_prompt}\n\n"
@@ -596,7 +601,7 @@ class AIAnalyzer:
 
         summary = self._generate_text(
             summary_full_prompt,
-            self.config.primary_model,
+            task="summarization",
             max_tokens=self.config.ai_config.get("configurations", {})
                 .get("summarization", {}).get("max_output_tokens", 1024),
             temperature=self.config.ai_config.get("configurations", {})
@@ -616,7 +621,7 @@ class AIAnalyzer:
 
         cat_response = self._generate_text(
             cat_full_prompt,
-            self.config.primary_model,
+            task="categorization",
             max_tokens=self.config.ai_config.get("configurations", {})
                 .get("categorization", {}).get("max_output_tokens", 200),
             temperature=self.config.ai_config.get("configurations", {})
@@ -666,15 +671,18 @@ class AIAnalyzer:
     def _generate_text(
         self,
         prompt: str,
-        model: str,
+        model: Optional[str] = None,
+        task: Optional[str] = None,
         max_tokens: int = 1024,
         temperature: float = 0.2,
     ) -> str:
-        """Generate text using the configured AI model, with secondary fallback."""
+        """Generate text using the configured AI model, with task routing and fallback."""
+        task_models = self.config.get_task_models(task)
+        active_model = model or task_models.get("primary") or self.config.primary_model
         try:
             if USE_NEW_SDK:
                 response = self.client.models.generate_content(
-                    model=model,
+                    model=active_model,
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         temperature=temperature,
@@ -684,7 +692,7 @@ class AIAnalyzer:
                     ),
                 )
             else:
-                response = genai.GenerativeModel(model).generate_content(
+                response = genai.GenerativeModel(active_model).generate_content(
                     prompt,
                     generation_config={
                         "temperature":       temperature,
@@ -696,16 +704,17 @@ class AIAnalyzer:
             return response.text.strip() if response.text else ""
 
         except Exception as e:
-            # Try secondary model if primary failed for any reason
-            if self.config.secondary_model and model == self.config.primary_model and self.config.secondary_model != model:
-                print(f"  ⚠ Primary model failed ({model}), trying secondary ({self.config.secondary_model})...")
+            sec = task_models.get("secondary")
+            tert = task_models.get("tertiary")
+            if sec and active_model == task_models.get("primary") and sec != active_model:
+                print(f"  ⚠ Primary model failed ({active_model}), trying secondary ({sec})...")
                 return self._generate_text(
-                    prompt, self.config.secondary_model, max_tokens, temperature
+                    prompt, model=sec, task=task, max_tokens=max_tokens, temperature=temperature
                 )
-            elif self.config.tertiary_model and model == self.config.secondary_model and self.config.tertiary_model != model:
-                print(f"  ⚠ Secondary model failed ({model}), trying tertiary ({self.config.tertiary_model})...")
+            elif tert and active_model == sec and tert != active_model:
+                print(f"  ⚠ Secondary model failed ({active_model}), trying tertiary ({tert})...")
                 return self._generate_text(
-                    prompt, self.config.tertiary_model, max_tokens, temperature
+                    prompt, model=tert, task=task, max_tokens=max_tokens, temperature=temperature
                 )
             raise
 
@@ -916,8 +925,7 @@ def _error_suggestion(error_type: str, config: ConfigLoader) -> str:
         ),
         "model_unavailable": (
             f"Primary model '{config.primary_model}' is unavailable or not accessible with the current API key. "
-            "Update 'models.primary' in .github/artifacts/ai-models.json to a currently available model "
-            "(e.g. gemini-2.5-flash or gemini-1.5-pro) and commit the change."
+            "Update 'models.primary' or 'task_models' in .github/artifacts/ai-models.json to a currently available model and commit the change."
         ),
         "timeout": (
             "API request timed out. This may be a transient issue. "

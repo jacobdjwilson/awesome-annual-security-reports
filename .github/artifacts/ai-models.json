@@ -1,10 +1,36 @@
 {
   "models": {
     "primary": "gemini-3.5-flash-lite",
-    "secondary": "gemini-3.6-flash",
-    "tertiary": "gemini-3.7-flash",
+    "secondary": "gemini-3.7-flash",
+    "tertiary": "gemini-3.8-flash",
     "embedding": "text-embedding-2",
-    "comment": "Last updated July 21 2026"
+    "comment": "Last updated September 4 2026"
+  },
+  "task_models": {
+    "conversion": {
+      "primary": "gemini-3.8-flash",
+      "secondary": "gemini-3.7-flash",
+      "tertiary": "gemini-3.5-flash-lite",
+      "comment": "Top-tier Flash model for complex PDF layout parsing, multi-column tables, and long-context Markdown reformatting"
+    },
+    "summarization": {
+      "primary": "gemini-3.7-flash",
+      "secondary": "gemini-3.8-flash",
+      "tertiary": "gemini-3.5-flash-lite",
+      "comment": "Balanced reasoning for rigorous numerical finding extraction, concise synthesis, and validation constraints"
+    },
+    "categorization": {
+      "primary": "gemini-3.5-flash-lite",
+      "secondary": "gemini-3.7-flash",
+      "tertiary": "gemini-3.8-flash",
+      "comment": "Fast, high-throughput, low-cost classification into category taxonomy"
+    },
+    "discovery": {
+      "primary": "gemini-3.5-flash-lite",
+      "secondary": "gemini-3.7-flash",
+      "tertiary": "gemini-3.8-flash",
+      "comment": "High RPM, quota-efficient model for filtering large batches of web discovery candidates"
+    }
   },
   "configurations": {
     "default": {

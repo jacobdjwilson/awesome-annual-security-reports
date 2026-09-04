@@ -65,7 +65,8 @@ class Config:
         self.prompt_path_str = discovery_cfg.get("feedback_learner_prompt_path")
         
         # AI model
-        models = aim.get("models", {})
+        task_models = aim.get("task_models", {}).get("discovery")
+        models = task_models if isinstance(task_models, dict) else aim.get("models", {})
         self.primary_model   = models.get("primary")
         self.secondary_model = models.get("secondary")
         self.tertiary_model  = models.get("tertiary")

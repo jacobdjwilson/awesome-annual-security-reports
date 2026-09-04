@@ -2,6 +2,9 @@ import os
 import subprocess
 import sys
 
+from pathlib import Path
+import json
+
 def run_gh_query(args):
     result = subprocess.run(
         ["gh", "pr", "list", "--json", "number", "-q", "length"] + args,
@@ -13,7 +16,24 @@ def run_gh_query(args):
     return int(result.stdout.strip() or "0")
 
 def main():
-    max_open_prs = int(os.environ.get("MAX_OPEN_PRS", "5"))
+    wf_config_path = Path(".github/artifacts/workflow-config.json")
+    if not wf_config_path.exists():
+        raise FileNotFoundError(f"Missing required artifact: {wf_config_path}")
+
+    with open(wf_config_path, "r", encoding="utf-8") as f:
+        config = json.load(f).get("workflow", {})
+
+    pr_cfg = config.get("pull_request", {})
+    env_max = os.environ.get("MAX_OPEN_PRS")
+    max_open_prs = int(env_max) if env_max else pr_cfg.get("max_open_automated_prs")
+    if max_open_prs is None:
+        raise ValueError("Missing 'pull_request.max_open_automated_prs' in workflow-config.json")
+
+    labels = pr_cfg.get("labels", [])
+    if not labels:
+        raise ValueError("Missing 'pull_request.labels' in workflow-config.json")
+    auto_label = labels[0]
+
     workflow = os.environ.get("WORKFLOW_TYPE", "general")
     
     github_output = os.environ.get("GITHUB_OUTPUT")
@@ -31,7 +51,7 @@ def main():
                 f.write("cap_reached=true\n")
                 return
 
-        open_count = run_gh_query(["--state", "open", "--label", "automated"])
+        open_count = run_gh_query(["--state", "open", "--label", auto_label])
         print(f"Open automated PRs: {open_count} / {max_open_prs}")
         
         f.write(f"open_count={open_count}\n")

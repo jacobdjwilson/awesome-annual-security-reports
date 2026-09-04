@@ -58,7 +58,8 @@ class ConfigLoader:
             raise ValueError("workflow-config.json is required")
 
         # ── AI model names ────────────────────────────────────────────────
-        models = self.ai_config.get("models", {})
+        task_models = self.ai_config.get("task_models", {}).get("conversion")
+        models = task_models if isinstance(task_models, dict) else self.ai_config.get("models", {})
         self.primary_model:   str = models.get("primary")
         self.secondary_model: str = models.get("secondary")
         self.tertiary_model:  str = models.get("tertiary")
@@ -86,6 +87,9 @@ class ConfigLoader:
         self.max_fallback_pdf_size_mb: int = conv.get("max_fallback_pdf_size_mb", 20)
         self.conversion_prompt_path: str = conv.get(
             "prompt_path", self.DEFAULT_CONVERSION_PROMPT_PATH
+        )
+        self.fallback_prompt_path: str = conv.get(
+            "fallback_extraction_prompt_path", ".github/ai-prompts/pdf-fallback-extraction-prompt.md"
         )
 
         # ── Folder names ──────────────────────────────────────────────────
@@ -339,7 +343,8 @@ class MarkdownPolisher:
             print(f"  ! PDF too large for fallback ({file_size_mb:.1f}MB > {self.config.max_fallback_pdf_size_mb}MB)")
             return None
 
-        prompt = self._build_prompt(org, title, year, "Please extract the full content of this PDF to Markdown.")
+        fallback_prompt = self._load_prompt(self.config.fallback_prompt_path).strip()
+        prompt = f"{fallback_prompt}\n\nOrganization: {org}\nReport Title: {title}\nYear: {year}\n"
         
         for model_name in filter(None, [self.config.primary_model, self.config.secondary_model, self.config.tertiary_model]):
             print(f"  → Uploading PDF to Gemini API ({model_name})...")
