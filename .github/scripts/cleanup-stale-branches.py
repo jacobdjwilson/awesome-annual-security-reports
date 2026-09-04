@@ -25,7 +25,10 @@ def write_output(key, value):
 
 def main():
     repo = os.environ.get("GITHUB_REPOSITORY", "")
-    protected_branches = ["main", "development"]
+    config_path = ".github/artifacts/workflow-config.json"
+    with open(config_path, "r", encoding="utf-8") as f:
+        config = json.load(f)
+    protected_branches = config.get("workflow", {}).get("pull_request", {}).get("protected_branches", ["main", "development"])
 
     deleted = []
     skipped = []

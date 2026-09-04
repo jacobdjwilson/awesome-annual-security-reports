@@ -27,14 +27,16 @@ def main():
         print(f"Error loading config: {e}")
         sys.exit(1)
 
-    labels_config = config.get("workflow", {}).get("issue_triage", {}).get("labels", {})
+    triage_cfg = config.get("workflow", {}).get("issue_triage", {})
+    labels_config = triage_cfg.get("labels", {})
+    default_color = triage_cfg.get("default_label_color", "e4e669")
     
     if label not in labels_config:
-        print(f"Warning: label '{label}' not found in workflow-config.json. Proceeding with defaults.")
-        color = "e4e669"
+        print(f"Warning: label '{label}' not found in workflow-config.json. Proceeding with configured default color.")
+        color = default_color
         description = ""
     else:
-        color = labels_config[label].get("color", "e4e669")
+        color = labels_config[label].get("color", default_color)
         description = labels_config[label].get("description", "")
 
     # Create label if it doesn't exist

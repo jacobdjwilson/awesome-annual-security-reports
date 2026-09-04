@@ -27,9 +27,15 @@
         "mismatch": { "color": "d93f0b", "description": "Correct org but wrong year/edition/category" },
         "accepted": { "color": "0e8a16", "description": "Valid discovery — ready for ingestion" }
       },
+      "default_label_color": "e4e669",
       "feedback_artifact_path": ".github/artifacts/discovery-feedback.json"
     },
     "ingest": {
+      "trusted_roles": [
+        "OWNER",
+        "COLLABORATOR",
+        "MEMBER"
+      ],
       "form_fields": {
         "org": "Organization Name",
         "title": "Report Title",
@@ -74,6 +80,10 @@
       "labels": [
         "automated",
         "security-reports"
+      ],
+      "protected_branches": [
+        "main",
+        "development"
       ],
       "delete_branch": true,
       "single_report_title_template": "Add {organization} {title} ({year})",

@@ -54,8 +54,8 @@ def main():
     comments = []
     if comments_json:
         try:
-            comments_data = json.loads(comments_json)
-            trusted_roles = ["OWNER", "COLLABORATOR", "MEMBER"]
+            ingest_cfg = get_config()
+            trusted_roles = ingest_cfg.get("trusted_roles", ["OWNER", "COLLABORATOR", "MEMBER"])
             for c in comments_data:
                 author_assoc = c.get("authorAssociation", "")
                 if author_assoc in trusted_roles:

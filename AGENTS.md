@@ -2,13 +2,27 @@
 
 When working on this repository, you must adhere to the following strict guidelines:
 
-## 1. Workflow Architecture
-- **Do not embed scripts in workflows.** All GitHub Actions workflows must reference external scripts (e.g., in `.github/scripts/`) rather than embedding inline script logic. This ensures extensibility, reusability, and automated linting/testing.
-- **Single Responsibility.** Each script in `.github/scripts/` must fulfill a focused operational step in the CI/CD pipeline and exit cleanly with standard process exit codes (0 for success, non-zero for unexpected failure, or documented specialized error codes).
+## 1. Workflow Architecture and Script Coding Standards
+- **Do not embed scripts in workflows.** All GitHub Actions workflows must reference external scripts (e.g., in `.github/scripts/`) rather than embedding inline script logic. This ensures extensibility, reusability, testability, and automated linting.
+- **Single Responsibility.** Each script in `.github/scripts/` must fulfill a focused operational step in the CI/CD pipeline.
+- **Standardized Script Architecture.** All Python scripts in `.github/scripts/` must adhere to a consistent, modular structural approach:
+  1. **Header & Docstring**: Declare the operational purpose, required environment variables, outputs, and JSON artifact dependencies.
+  2. **Imports**: Group imports cleanly: Standard Library -> Third-party -> Typing.
+  3. **Configuration Loader**: Encapsulate configuration retrieval within a dedicated loader (`ConfigLoader` class or `load_config()` function) that strictly loads from `.github/artifacts/` with fail-fast validation.
+  4. **Domain Logic**: Implement testable, modular functions and classes with type hints and comprehensive error handling.
+  5. **Standardized Process Entrypoint**: Execute under `if __name__ == "__main__":` and exit cleanly using standard exit codes:
+     - `0`: Success.
+     - `1`: General or operational failure with actionable diagnostic logs.
+     - Documented specialized codes (e.g., `EXIT_QUOTA_EXHAUSTED = 2` for pipeline retry control).
 
-## 2. Configuration and Hardcoding
-- **No hardcoded values.** Scripts must never hardcode configuration values, thresholds, retry counts, time delays, model names, prompt paths, or operational settings.
+## 2. Configuration and Artifact Standards
+- **No Hardcoded Values.** Scripts must never hardcode configuration values, thresholds, retry counts, time delays, model names, prompt paths, label names, or operational settings.
 - **Use JSON Artifacts.** All configuration must be loaded from JSON artifacts located in `.github/artifacts/` (e.g., `workflow-config.json`, `ai-models.json`, `report-categories.json`, `discovery-feedback.json`, `readme-updater-config.json`, `google-search-config.json`).
+- **Standardized Artifact Architecture.** All JSON artifacts in `.github/artifacts/` must adhere to uniform structural principles:
+  1. **Self-Documenting Schema**: Include `_comment` or `comment` attributes on complex sections or thresholds explaining operational rationale.
+  2. **Semantic Hierarchy**: Organize settings into logical sub-objects by pipeline task or domain (e.g., `workflow.discovery`, `workflow.conversion`, `configurations.<task>`, `task_models.<task>`).
+  3. **Explicit Numeric Units**: Encode time, sizes, and counts explicitly in key names (e.g., `_seconds`, `_mb`, `_days`, `_bytes`, `_multiplier`, `_limit`).
+  4. **POSIX Path Conventions**: All file and prompt paths referenced within artifacts must use forward slashes (e.g. `.github/ai-prompts/foo.md`) for seamless cross-platform execution.
 - **Fail Fast on Missing Config.** If a required JSON artifact or configuration key is missing or invalid, scripts must raise an explicit exception (`ValueError`, `FileNotFoundError`, or `KeyError`) with descriptive remediation advice. Never fall back to unversioned, hardcoded default literals in script source code.
 
 ## 3. AI Prompts and Instruction Sets
