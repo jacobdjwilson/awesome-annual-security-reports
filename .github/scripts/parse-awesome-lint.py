@@ -11,6 +11,7 @@ Required Environment Variables:
 Outputs:
     lint_status: 'succeeded' or 'failed'
     error_count: Number of unhandled/fatal lint errors detected.
+    awesome_lint_findings.json: Structured findings JSON for GitHub issue management.
 
 JSON Artifact Dependencies:
     .github/artifacts/workflow-config.json (workflow.lint configuration)
@@ -96,7 +97,7 @@ def parse_lint_output(
     warnings: List[Tuple[str, str, str, str, str]] = []
     ignored_count = 0
 
-    issue_pattern = re.compile(r'^\s*([✖⚠])\s+(\d+):(\d+)\s+(.*?)\s{2,}([\w\-:]+)\s*$')
+    issue_pattern = re.compile(r'^\s*([✖⚠])\s+(\d+):(\d+)\s+(.*?)\s{2,}([\w\-:/]+)\s*$')
     file_pattern = re.compile(r'^\s*([a-zA-Z0-9_\-./\\]+\.md)(?::(\d+):(\d+))?\s*$')
 
     current_file = default_file
@@ -133,19 +134,23 @@ def parse_lint_output(
             continue
 
         # Fallback for alternative single-line or colon-separated formats
-        if "✖" in clean_line:
+        if "✖" in clean_line or "⚠" in clean_line:
+            is_error = "✖" in clean_line
+            sep = '✖' if is_error else '⚠'
             if any(ignored in clean_line.lower() for ignored in ignored_rules):
                 ignored_count += 1
                 continue
-            parts = re.split(r'[:✖]', clean_line)
+            parts = re.split(f'[:{sep}]', clean_line)
             if len(parts) >= 5:
                 fn = parts[0].strip() or current_file
                 ln = parts[1].strip()
                 col = parts[2].strip()
                 msg = ":".join(parts[3:]).strip()
-                errors.append((fn, ln, col, msg, "general-error"))
+                target_list = errors if is_error else warnings
+                target_list.append((fn, ln, col, msg, "general-error" if is_error else "general-warning"))
             else:
-                errors.append((current_file, "1", "1", clean_line.strip(), "general-error"))
+                target_list = errors if is_error else warnings
+                target_list.append((current_file, "1", "1", clean_line.strip(), "general-error" if is_error else "general-warning"))
 
     return errors, warnings, ignored_count
 
@@ -162,14 +167,25 @@ def write_github_output(status: str, error_count: int) -> None:
 
 
 def main() -> int:
+    import argparse
+    parser = argparse.ArgumentParser(description="Parse awesome-lint output and emit annotations / findings.")
+    parser.add_argument("--findings-output", default="awesome_lint_findings.json", help="Path to write structured JSON findings.")
+    args = parser.parse_args()
+
     config_loader = LintConfigLoader()
     output_file_path = Path(config_loader.output_file)
     ignored_rules = config_loader.ignored_rules
     target_file = config_loader.target_file
+    findings_out_path = Path(args.findings_output)
 
     if not output_file_path.exists():
         print(f"Lint output file '{output_file_path}' not found. Assuming clean run.", file=sys.stderr)
         write_github_output("succeeded", 0)
+        try:
+            with open(findings_out_path, "w", encoding="utf-8") as f:
+                json.dump({"findings": []}, f, indent=2)
+        except Exception as e:
+            print(f"Warning: Failed to write empty findings: {e}", file=sys.stderr)
         return 0
 
     with open(output_file_path, "r", encoding="utf-8", errors="replace") as f:
@@ -185,6 +201,30 @@ def main() -> int:
 
     for fn, ln, col, msg, rule in errors:
         print(f"::error file={fn},line={ln},col={col}::{msg} ({rule})")
+
+    # Construct structured findings for GitHub Issue synchronization
+    findings = []
+    for fn, ln, col, msg, rule in errors:
+        findings.append({
+            "category": "awesome_lint_error",
+            "severity": "error",
+            "file": f"{fn} (Line {ln}:{col})",
+            "message": f"{msg} (`{rule}`)"
+        })
+    for fn, ln, col, msg, rule in warnings:
+        findings.append({
+            "category": "awesome_lint_warning",
+            "severity": "warning",
+            "file": f"{fn} (Line {ln}:{col})",
+            "message": f"{msg} (`{rule}`)"
+        })
+
+    try:
+        with open(findings_out_path, "w", encoding="utf-8") as f:
+            json.dump({"findings": findings}, f, indent=2)
+        print(f"Structured lint findings saved to '{findings_out_path}'.")
+    except Exception as e:
+        print(f"Warning: Failed to write findings to '{findings_out_path}': {e}", file=sys.stderr)
 
     error_count = len(errors)
     status = "succeeded" if error_count == 0 else "failed"

@@ -131,7 +131,31 @@ def run_cmd(cmd: List[str]) -> List[str]:
 
 
 def main() -> int:
+    import argparse
+    parser = argparse.ArgumentParser(description="Discover and batch PDF files for processing.")
+    parser.add_argument("--all", action="store_true", help="Discover all PDF files in the repository.")
+    args, _ = parser.parse_known_args()
+
     gh_output = os.environ.get("GITHUB_OUTPUT")
+    loader = FileFinderConfigLoader()
+    pdf_source = loader.pdf_source
+
+    if args.all:
+        print(f"Mode: Discover all PDFs in '{pdf_source}'")
+        source_dir = Path(pdf_source)
+        if not source_dir.exists():
+            raise FileNotFoundError(f"PDF source directory '{source_dir}' does not exist.")
+        all_pdfs = [p.as_posix() for p in sorted(source_dir.rglob("*.pdf"))]
+        with open("files_to_process.txt", "w", encoding="utf-8") as f:
+            for pf in all_pdfs:
+                f.write(pf + "\n")
+        print(f"✓ Discovered {len(all_pdfs)} PDF file(s) in '{pdf_source}'. Saved to 'files_to_process.txt'.")
+        if gh_output:
+            with open(gh_output, "a", encoding="utf-8") as f:
+                f.write(f"has_files={'true' if all_pdfs else 'false'}\n")
+                f.write(f"file_count={len(all_pdfs)}\n")
+                f.write("scan_mode=all\n")
+        return 0
 
     # If automated PR cap is reached, skip immediately and emit safe outputs
     if os.environ.get("CAP_REACHED", "").lower() == "true":
@@ -144,14 +168,12 @@ def main() -> int:
         return 0
 
     github_event_name = os.environ.get("GITHUB_EVENT_NAME", "")
-    loader = FileFinderConfigLoader()
 
     max_size_mb = loader.max_size_mb
     default_limit = loader.default_limit
     pdf_magic = loader.pdf_magic
     push_mode = loader.push_mode
     push_batch_limit = loader.push_batch_limit
-    pdf_source = loader.pdf_source
     md_folder = loader.md_folder
     max_age_days = loader.max_age_days
 
@@ -248,9 +270,10 @@ def main() -> int:
 
     else:
         print("Mode: Pull request")
-        scan_mode = "pr"
-        added = run_cmd(["git", "diff", "--name-only", "--diff-filter=A", "origin/main...HEAD"])
-        deleted = run_cmd(["git", "diff", "--name-only", "--diff-filter=D", "origin/main...HEAD"])
+        base_ref = os.environ.get("GITHUB_BASE_REF") or "main"
+        target_ref = f"origin/{base_ref}...HEAD" if not base_ref.startswith("origin/") else f"{base_ref}...HEAD"
+        added = run_cmd(["git", "diff", "--name-only", "--diff-filter=A", target_ref])
+        deleted = run_cmd(["git", "diff", "--name-only", "--diff-filter=D", target_ref])
         added = [f for f in added if f.startswith(pdf_source) and f.endswith(".pdf")]
         deleted = [f for f in deleted if f.startswith(pdf_source) and f.endswith(".pdf")]
 

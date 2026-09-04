@@ -19,11 +19,10 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout development
+      - name: Checkout repository
         uses: actions/checkout@v6
         with:
-          ref: development
           fetch-depth: 0
 
       - name: Merge main into development
-        run: python .github/scripts/sync-branch.py
+        run: python .github/scripts/sync-branch.py --source origin/main --target development

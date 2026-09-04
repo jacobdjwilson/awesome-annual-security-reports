@@ -134,12 +134,19 @@ def generate_markdown(
 
 
 def main() -> int:
-    findings_path = Path("validation_findings.json")
+    import argparse
+    parser = argparse.ArgumentParser(description="Synchronize repository validation findings with GitHub Issues.")
+    parser.add_argument("--findings-file", default="validation_findings.json", help="Path to findings JSON file.")
+    parser.add_argument("--domain", default=None, help="Filter to a specific issue domain (e.g. Linting, Integrity).")
+    parser.add_argument("--artifacts-dir", default=".github/artifacts", help="Path to JSON artifacts directory.")
+    args = parser.parse_args()
+
+    findings_path = Path(args.findings_file)
     if not findings_path.exists():
         print(f"'{findings_path}' not found — nothing to process.")
         return 0
 
-    loader = ValidationIssuesConfigLoader()
+    loader = ValidationIssuesConfigLoader(args.artifacts_dir)
     issue_domains = loader.issue_domains
     category_labels = loader.category_labels
 
@@ -152,7 +159,19 @@ def main() -> int:
 
     all_findings = data.get("findings", [])
 
-    for domain, categories in issue_domains.items():
+    if args.domain:
+        if args.domain not in issue_domains:
+            raise KeyError(f"Domain '{args.domain}' not found in configured issue_domains: {list(issue_domains.keys())}")
+        target_domains = {args.domain: issue_domains[args.domain]}
+    else:
+        all_categories_in_findings = {f.get("category") for f in all_findings}
+        target_domains = {}
+        for dom, cats in issue_domains.items():
+            if dom == "Linting" and not any(c in all_categories_in_findings for c in cats):
+                continue
+            target_domains[dom] = cats
+
+    for domain, categories in target_domains.items():
         domain_findings = [f for f in all_findings if f.get("category") in categories]
         title = f"Repository Integrity Validation: {domain}"
         print(f"Processing domain: {domain} ({len(domain_findings)} findings)")

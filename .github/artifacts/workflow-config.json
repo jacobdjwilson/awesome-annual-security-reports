@@ -120,7 +120,8 @@
       "issue_domains": {
         "Links": ["dead_link", "missing_readme"],
         "Integrity": ["invalid_pdf", "invalid_md", "oversized_file", "duplicate_pdf", "duplicate_md"],
-        "Structure": ["orphaned_pdf", "orphaned_md", "stub_markdown", "year_mismatch", "naming_convention"]
+        "Structure": ["orphaned_pdf", "orphaned_md", "stub_markdown", "year_mismatch", "naming_convention"],
+        "Linting": ["awesome_lint_error", "awesome_lint_warning"]
       },
       "category_labels": {
         "orphaned_pdf": "🔴 Orphaned PDFs (no Markdown conversion)",
@@ -134,7 +135,9 @@
         "duplicate_md": "🟡 Potential Content Duplicates (Markdown Similarity)",
         "invalid_md": "🟡 Invalid or Short Markdown Files",
         "naming_convention": "🟡 Filename Convention Violations",
-        "oversized_file": "🟡 Oversized Files"
+        "oversized_file": "🟡 Oversized Files",
+        "awesome_lint_error": "🔴 Awesome Lint Specification Errors",
+        "awesome_lint_warning": "🟡 Awesome Lint Warnings"
       }
     },
     "analysis": {

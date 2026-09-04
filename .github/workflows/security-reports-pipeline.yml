@@ -134,7 +134,7 @@ jobs:
           OPEN_COUNT: ${{ steps.pr-cap.outputs.open_count }}
           MAX_OPEN_PRS: ${{ steps.load_config.outputs.max_open_prs }}
           PENDING_COUNT: ${{ steps.pending-prs.outputs.pending_count }}
-        run: python .github/scripts/generate-pipeline-summary.py --step discovery
+        run: python .github/scripts/generate-workflow-summary.py --workflow pipeline --step discovery
 
   virus-total-scan:
     runs-on: ubuntu-latest
@@ -182,7 +182,7 @@ jobs:
           VT_SKIPPED: ${{ steps.vt-scan.outputs.scan_skipped }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_RUN_ID: ${{ github.run_id }}
-        run: python .github/scripts/generate-pipeline-summary.py --step virustotal
+        run: python .github/scripts/generate-workflow-summary.py --workflow pipeline --step virustotal
 
   convert-pdf-to-markdown:
     runs-on: ubuntu-latest
@@ -241,7 +241,7 @@ jobs:
           FAILED: ${{ steps.converter.outputs.failed_count }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_RUN_ID: ${{ github.run_id }}
-        run: python .github/scripts/generate-pipeline-summary.py --step conversion
+        run: python .github/scripts/generate-workflow-summary.py --workflow pipeline --step conversion
 
   analyze-reports:
     runs-on: ubuntu-latest
@@ -318,7 +318,7 @@ jobs:
           ANALYSIS_SUCCESS: ${{ steps.report-analysis.outputs.analysis_success }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_RUN_ID: ${{ github.run_id }}
-        run: python .github/scripts/generate-pipeline-summary.py --step analysis
+        run: python .github/scripts/generate-workflow-summary.py --workflow pipeline --step analysis
 
   update-readme:
     permissions:
@@ -389,6 +389,7 @@ jobs:
           title: "${{ steps.generate_pr.outputs.pr_title }}"
           body-path: pr_body.md
           branch: ${{ steps.generate_pr.outputs.branch_name }}
+          base: ${{ github.base_ref || github.ref_name }}
           delete-branch: true
           labels: ${{ steps.generate_pr.outputs.labels }}
           add-paths: |
@@ -415,7 +416,7 @@ jobs:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_RUN_ID: ${{ github.run_id }}
-        run: python .github/scripts/generate-pipeline-summary.py --step readme
+        run: python .github/scripts/generate-workflow-summary.py --workflow pipeline --step readme
 
   # ============================================================
   # QUOTA RETRY JOB

@@ -18,6 +18,9 @@ env:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
 
     steps:
       - name: Checkout repository
@@ -45,6 +48,12 @@ jobs:
       - name: Validate lint results
         id: status_check
         run: python .github/scripts/parse-awesome-lint.py
+
+      - name: Manage lint GitHub issue
+        if: always() && github.event_name != 'pull_request_target'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/manage-validation-issues.py --findings-file awesome_lint_findings.json --domain Linting
 
       - name: Generate step summary
         if: always()

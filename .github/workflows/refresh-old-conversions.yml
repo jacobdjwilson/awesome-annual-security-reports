@@ -92,7 +92,7 @@ jobs:
           OPEN_COUNT: ${{ steps.check-pr.outputs.open_count }}
           HAS_FILES: ${{ steps.check-files.outputs.has_files }}
           COUNT: ${{ steps.check-files.outputs.file_count }}
-        run: python .github/scripts/generate-refresh-summary.py --step discovery
+        run: python .github/scripts/generate-workflow-summary.py --workflow refresh --step discovery
 
   process-stale-reports:
     permissions:
@@ -205,4 +205,4 @@ jobs:
           ANALYSIS_COUNT: ${{ steps.analyzer.outputs.analysis_count }}
           ANALYSIS_ERROR_COUNT: ${{ steps.analyzer.outputs.error_count }}
           ERRORS_FILE: ${{ steps.analyzer.outputs.errors_file }}
-        run: python .github/scripts/generate-refresh-summary.py --step processing
+        run: python .github/scripts/generate-workflow-summary.py --workflow refresh --step processing

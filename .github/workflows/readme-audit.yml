@@ -39,4 +39,4 @@ jobs:
           
       - name: Generate Step Summary
         if: always()
-        run: python .github/scripts/generate-readme-audit-summary.py
+        run: python .github/scripts/generate-workflow-summary.py --workflow readme_audit

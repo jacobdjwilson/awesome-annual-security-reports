@@ -37,7 +37,7 @@ jobs:
             vt-scanned-
 
       - name: Find all PDFs
-        run: python .github/scripts/find-all-pdfs.py
+        run: python .github/scripts/find-files.py --all
 
       - name: Run Daily Scan
         id: vt-scan

@@ -126,7 +126,7 @@ jobs:
           UNCHANGED_ISSUE: ${{ steps.issue_mgmt.outputs.unchanged_issue }}
           TRIGGER_SHA: ${{ needs.gate.outputs.trigger_sha }}
         run: |
-          python .github/scripts/generate-validator-summary.py --step validate
+          python .github/scripts/generate-workflow-summary.py --workflow validator --step validate
 
   # ============================================================
   # CLEANUP JOB
@@ -163,7 +163,7 @@ jobs:
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_RUN_ID: ${{ github.run_id }}
         run: |
-          python .github/scripts/generate-validator-summary.py --step cleanup
+          python .github/scripts/generate-workflow-summary.py --workflow validator --step cleanup
 
   # ============================================================
   # SKIPPED SUMMARY JOB
@@ -187,4 +187,4 @@ jobs:
           TRIGGER_SHA: ${{ needs.gate.outputs.trigger_sha }}
           REASON: ${{ needs.gate.outputs.skip_reason }}
         run: |
-          python .github/scripts/generate-validator-summary.py --step skipped
+          python .github/scripts/generate-workflow-summary.py --workflow validator --step skipped

@@ -1,0 +1,56 @@
+name: CI Code & Configuration Gate
+
+on:
+  push:
+    branches:
+      - main
+      - development
+    paths:
+      - '.github/**'
+      - '*.md'
+      - '*.json'
+  pull_request:
+    branches:
+      - main
+      - development
+    paths:
+      - '.github/**'
+      - '*.md'
+      - '*.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  validate-code-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Verify code, prompt, and artifact integrity
+        id: gate_check
+        run: python .github/scripts/verify-code-integrity.py
+
+      - name: Generate step summary
+        if: always()
+        env:
+          CHECKS_PASSED: ${{ steps.gate_check.outputs.checks_passed }}
+          ERROR_COUNT: ${{ steps.gate_check.outputs.error_count }}
+          SCRIPT_COUNT: ${{ steps.gate_check.outputs.script_count }}
+          ARTIFACT_COUNT: ${{ steps.gate_check.outputs.artifact_count }}
+          PROMPT_COUNT: ${{ steps.gate_check.outputs.prompt_count }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+        run: python .github/scripts/generate-workflow-summary.py --workflow ci_gate

@@ -1,8 +1,8 @@
 """
 Operational Purpose:
     Executes the report-discovery.py pipeline runner while streaming logs to stdout and
-    teeing to discovery_output.log. Invokes parse-discovery-output.py to export step
-    telemetry to $GITHUB_OUTPUT and preserves the discovery process exit code.
+    teeing to discovery_output.log. Parses emitted telemetry metrics directly to $GITHUB_OUTPUT
+    and preserves the discovery process exit code.
     Replaces inline bash orchestration in report-discovery.yml.
 
 Required Environment Variables:
@@ -67,10 +67,37 @@ def main() -> int:
         proc.wait()
         exit_code = proc.returncode
 
-    # Export outputs via parse-discovery-output.py
-    parse_env = dict(os.environ)
-    parse_env["EXIT_CODE"] = str(exit_code)
-    subprocess.run([sys.executable, ".github/scripts/parse-discovery-output.py"], env=parse_env)
+    # Export discovery telemetry metrics directly to $GITHUB_OUTPUT
+    output_path = os.environ.get("GITHUB_OUTPUT")
+    if output_path and log_path.exists():
+        data = {}
+        with open(log_path, "r", encoding="utf-8", errors="replace") as f:
+            for line in f:
+                if "=" in line:
+                    parts = line.strip().split("=", 1)
+                    if parts[0].startswith("DISCOVERY_"):
+                        data[parts[0]] = parts[1]
+
+        def parse(key: str) -> str:
+            return data.get(key, "0")
+
+        try:
+            with open(output_path, "a", encoding="utf-8") as f:
+                f.write(f"tasks={parse('DISCOVERY_TASKS')}\n")
+                f.write(f"created={parse('DISCOVERY_CREATED')}\n")
+                f.write(f"suppressed={parse('DISCOVERY_SUPPRESSED')}\n")
+                f.write(f"skipped={parse('DISCOVERY_SKIPPED')}\n")
+                f.write(f"pdf_finds={parse('DISCOVERY_PDF_FINDS')}\n")
+                f.write(f"landing_finds={parse('DISCOVERY_LANDING_FINDS')}\n")
+                f.write(f"tier_current={parse('DISCOVERY_TIER_CURRENT')}\n")
+                f.write(f"tier_stale={parse('DISCOVERY_TIER_STALE')}\n")
+                f.write(f"tier_old={parse('DISCOVERY_TIER_OLD')}\n")
+                f.write(f"vt_clean={parse('DISCOVERY_VT_CLEAN')}\n")
+                f.write(f"vt_suspicious={parse('DISCOVERY_VT_SUSPICIOUS')}\n")
+                f.write(f"vt_malicious={parse('DISCOVERY_VT_MALICIOUS')}\n")
+                f.write(f"exit_code={exit_code}\n")
+        except Exception as e:
+            print(f"Warning: Failed to export discovery metrics to GITHUB_OUTPUT: {e}", file=sys.stderr)
 
     return exit_code
 

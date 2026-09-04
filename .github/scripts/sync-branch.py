@@ -36,6 +36,7 @@ def run_git(args: List[str]) -> Tuple[int, str, str]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Merge source branch into target branch.")
     parser.add_argument("--source", default="origin/main", help="Source branch to merge (default: origin/main)")
+    parser.add_argument("--target", default="development", help="Target branch to merge into (default: development)")
     parser.add_argument("--author-name", default="GitHub Action", help="Git commit author name")
     parser.add_argument("--author-email", default="action@github.com", help="Git commit author email")
     args = parser.parse_args()
@@ -43,21 +44,35 @@ def main() -> int:
     run_git(["config", "user.name", args.author_name])
     run_git(["config", "user.email", args.author_email])
 
-    print(f"Merging {args.source} into current branch...")
-    ret, out, err = run_git(["merge", args.source])
+    # Fetch latest remote references
+    print("Fetching remote references...")
+    run_git(["fetch", "origin"])
+
+    # Ensure target branch is checked out
+    print(f"Checking out target branch '{args.target}'...")
+    ret, out, err = run_git(["checkout", args.target])
+    if ret != 0:
+        # Try checking out tracking branch from origin
+        ret, out, err = run_git(["checkout", "-b", args.target, f"origin/{args.target}"])
+        if ret != 0:
+            print(f"Failed to check out target branch '{args.target}': {err}\n{out}", file=sys.stderr)
+            return 1
+
+    print(f"Merging {args.source} into {args.target}...")
+    ret, out, err = run_git(["merge", args.source, "-m", f"Merge {args.source} into {args.target}"])
     if ret != 0:
         print(f"Git merge failed: {err}\n{out}", file=sys.stderr)
         return 1
     print(out)
 
-    print("Pushing merged branch to remote...")
-    ret, out, err = run_git(["push"])
+    print(f"Pushing merged branch '{args.target}' to origin...")
+    ret, out, err = run_git(["push", "origin", args.target])
     if ret != 0:
         print(f"Git push failed: {err}\n{out}", file=sys.stderr)
         return 1
     print(out)
 
-    print("Branch synchronization completed successfully.")
+    print(f"Branch synchronization of '{args.target}' completed successfully.")
     return 0
 
 
