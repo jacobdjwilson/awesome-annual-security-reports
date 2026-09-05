@@ -518,15 +518,28 @@ class AIAnalyzer:
         last_result: Optional[Dict[str, Any]] = None
         attempt_num  = 0
 
+        # Build fallback ladder for summarization: primary -> secondary -> tertiary
+        task_models = self.config.get_task_models("summarization")
+        ladder: List[str] = []
+        for key in ["primary", "secondary", "tertiary"]:
+            m = task_models.get(key)
+            if m and m not in ladder:
+                ladder.append(m)
+        if not ladder:
+            ladder = [self.config.primary_model]
+
         for attempt in range(self.config.max_retries):
             attempt_num = attempt + 1
+            model_for_attempt = ladder[min(attempt, len(ladder) - 1)]
             try:
-                result = self._analyze_once(content, org, title, year, attempt_num)
+                result = self._analyze_once(
+                    content, org, title, year, attempt_num, model_override=model_for_attempt
+                )
                 is_valid, errors = self.validator.validate(result["summary"], org)
 
                 if is_valid:
                     word_count = len(result["summary"].split())
-                    print(f"  ✓ Summary valid ({word_count} words)")
+                    print(f"  ✓ Summary valid ({word_count} words) [model: {model_for_attempt}]")
                     print(f"  ✓ Type: {result['type']} | Category: {result['category']}")
                     print(f"  ✓ Section: {result['parent_section']}")
                     self.cache.set(content, org, year, result)
@@ -534,12 +547,13 @@ class AIAnalyzer:
 
                 last_errors = errors
                 last_result = result
-                print(f"  ⚠ Attempt {attempt_num}/{self.config.max_retries} validation failed:")
+                print(f"  ⚠ Attempt {attempt_num}/{self.config.max_retries} validation failed (model: {model_for_attempt}):")
                 for error in errors:
                     print(f"    - {error}")
 
                 if attempt < self.config.max_retries - 1:
-                    print(f"  → Retrying in {delay:.0f}s with stricter guidance...")
+                    next_model = ladder[min(attempt + 1, len(ladder) - 1)]
+                    print(f"  → Retrying in {delay:.0f}s with stricter guidance (switching to {next_model})...")
                     time.sleep(delay)
                     delay = min(delay * self.config.backoff_mult, self.config.max_delay)
 
@@ -598,34 +612,33 @@ class AIAnalyzer:
         title: str,
         year: str,
         attempt_num: int,
+        model_override: Optional[str] = None,
     ) -> Dict[str, Any]:
         """Single analysis attempt: generates summary then classification."""
-        summary_prompt = self._load_prompt(self.config.SUMMARY_PROMPT_PATH)
-        cat_prompt     = self._load_prompt(self.config.CAT_PROMPT_PATH)
+        if attempt_num > 1 and self.config.SUMMARY_RETRY_PROMPT_PATH:
+            summary_prompt = self._load_prompt(self.config.SUMMARY_RETRY_PROMPT_PATH)
+        else:
+            summary_prompt = self._load_prompt(self.config.SUMMARY_PROMPT_PATH)
+
+        cat_prompt = self._load_prompt(self.config.CAT_PROMPT_PATH)
 
         head_content  = self._extract_head_content(content)
         clean_content = self._clean_content(head_content)
 
-        # Escalating guidance on retries loaded from standalone prompt artifact
-        retry_guidance = ""
-        if attempt_num > 1 and self.config.SUMMARY_RETRY_PROMPT_PATH:
-            retry_guidance = "\n\n" + self._load_prompt(self.config.SUMMARY_RETRY_PROMPT_PATH).strip()
-
         summary_full_prompt = (
             f"{summary_prompt}\n\n"
-            f"Organization: {org}\nReport Title: {title}\nYear: {year}"
-            f"{retry_guidance}\n\n"
+            f"Organization: {org}\nReport Title: {title}\nYear: {year}\n\n"
             f"Report Content (leading ~{self.config.markdown_lines_for_analysis} lines):\n"
             f"{clean_content}"
         )
 
+        sum_cfg = (self.config.ai_config or {}).get("configurations", {}).get("summarization", {})
         summary = self._generate_text(
             summary_full_prompt,
+            model=model_override,
             task="summarization",
-            max_tokens=self.config.ai_config.get("configurations", {})
-                .get("summarization", {}).get("max_output_tokens", 1024),
-            temperature=self.config.ai_config.get("configurations", {})
-                .get("summarization", {}).get("temperature", 0.2),
+            max_tokens=sum_cfg.get("max_output_tokens", 2048),
+            temperature=sum_cfg.get("temperature", 0.2),
         )
         summary = self.validator.sanitize(summary)
 
@@ -639,13 +652,12 @@ class AIAnalyzer:
             f"{clean_content}"
         )
 
+        cat_cfg = (self.config.ai_config or {}).get("configurations", {}).get("categorization", {})
         cat_response = self._generate_text(
             cat_full_prompt,
             task="categorization",
-            max_tokens=self.config.ai_config.get("configurations", {})
-                .get("categorization", {}).get("max_output_tokens", 200),
-            temperature=self.config.ai_config.get("configurations", {})
-                .get("categorization", {}).get("temperature", 0.1),
+            max_tokens=cat_cfg.get("max_output_tokens", 200),
+            temperature=cat_cfg.get("temperature", 0.1),
         )
 
         report_type, category = self._parse_classification(cat_response, clean_content, title)
@@ -699,43 +711,51 @@ class AIAnalyzer:
         """Generate text using the configured AI model, with task routing and fallback."""
         task_models = self.config.get_task_models(task)
         active_model = model or task_models.get("primary") or self.config.primary_model
+        task_cfg = (self.config.ai_config or {}).get("configurations", {}).get(task, {}) if task else {}
+        thinking_budget = task_cfg.get("thinking_budget")
+
         try:
             if USE_NEW_SDK:
+                gen_config_kwargs: Dict[str, Any] = {
+                    "temperature": temperature,
+                    "top_p": task_cfg.get("top_p", self.config.gen_config.get("top_p", 0.95)),
+                    "top_k": task_cfg.get("top_k", self.config.gen_config.get("top_k", 40)),
+                    "max_output_tokens": max_tokens,
+                }
+                if thinking_budget is not None:
+                    gen_config_kwargs["thinking_config"] = types.ThinkingConfig(thinking_budget=thinking_budget)
+
                 response = self.client.models.generate_content(
                     model=active_model,
                     contents=prompt,
-                    config=types.GenerateContentConfig(
-                        temperature=temperature,
-                        top_p=self.config.gen_config.get("top_p", 0.95),
-                        top_k=self.config.gen_config.get("top_k", 40),
-                        max_output_tokens=max_tokens,
-                    ),
+                    config=types.GenerateContentConfig(**gen_config_kwargs),
                 )
             else:
                 response = genai.GenerativeModel(active_model).generate_content(
                     prompt,
                     generation_config={
                         "temperature":       temperature,
-                        "top_p":             self.config.gen_config.get("top_p", 0.95),
-                        "top_k":             self.config.gen_config.get("top_k", 40),
+                        "top_p":             task_cfg.get("top_p", self.config.gen_config.get("top_p", 0.95)),
+                        "top_k":             task_cfg.get("top_k", self.config.gen_config.get("top_k", 40)),
                         "max_output_tokens": max_tokens,
                     },
                 )
             return response.text.strip() if response.text else ""
 
         except Exception as e:
-            sec = task_models.get("secondary")
-            tert = task_models.get("tertiary")
-            if sec and active_model == task_models.get("primary") and sec != active_model:
-                print(f"  ⚠ Primary model failed ({active_model}), trying secondary ({sec})...")
-                return self._generate_text(
-                    prompt, model=sec, task=task, max_tokens=max_tokens, temperature=temperature
-                )
-            elif tert and active_model == sec and tert != active_model:
-                print(f"  ⚠ Secondary model failed ({active_model}), trying tertiary ({tert})...")
-                return self._generate_text(
-                    prompt, model=tert, task=task, max_tokens=max_tokens, temperature=temperature
-                )
+            ladder: List[str] = []
+            for k in ["primary", "secondary", "tertiary"]:
+                m = task_models.get(k)
+                if m and m not in ladder:
+                    ladder.append(m)
+            if active_model in ladder:
+                curr_idx = ladder.index(active_model)
+                if curr_idx + 1 < len(ladder):
+                    next_model = ladder[curr_idx + 1]
+                    print(f"  ⚠ Model {active_model} failed ({e.__class__.__name__}), trying next tier ({next_model})...")
+                    return self._generate_text(
+                        prompt, model=next_model, task=task, max_tokens=max_tokens, temperature=temperature
+                    )
             raise
 
     def _load_prompt(self, prompt_path: str) -> str:

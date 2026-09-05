@@ -34,4 +34,4 @@ Provide strict corrective guidance to the AI model during retry attempts after a
 4. **Quantitative Metric**: At least one percentage or numerical statistic is explicitly stated.
 5. **Clean Tone**: Professional, data-driven cybersecurity analysis without marketing fluff.
 ---
-# Corrected Report Summary Below
+# Report Content Below

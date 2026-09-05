@@ -43,15 +43,17 @@
       "temperature": 0.2,
       "top_p": 0.9,
       "top_k": 40,
-      "max_output_tokens": 1024,
-      "comment": "Low temperature for focused, data-driven summaries"
+      "max_output_tokens": 2048,
+      "thinking_budget": 0,
+      "comment": "Low temperature for focused, data-driven summaries; thinking_budget 0 prevents internal reasoning tokens from exhausting output allocation"
     },
     "categorization": {
       "temperature": 0.1,
       "top_p": 0.85,
       "top_k": 20,
       "max_output_tokens": 200,
-      "comment": "Very low temperature for consistent classification"
+      "thinking_budget": 0,
+      "comment": "Very low temperature for consistent classification; thinking_budget 0 ensures deterministic taxonomy mapping"
     },
     "conversion": {
       "temperature": 0.1,
