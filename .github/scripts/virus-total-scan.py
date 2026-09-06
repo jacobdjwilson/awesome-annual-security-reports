@@ -105,6 +105,11 @@ def scan_file_opportunistic(file_path: str, api_key: str, cfg: ConfigLoader) -> 
             raise ValueError("No API key provided")
             
         resp = requests.get(f"{base_url}/files/{file_hash}", headers=headers, timeout=30)
+        if resp.status_code == 429:
+            print(f"  ⚠ Rate limited (HTTP 429), waiting {cfg.rate_limit_sleep_seconds}s before single retry...")
+            time.sleep(cfg.rate_limit_sleep_seconds)
+            resp = requests.get(f"{base_url}/files/{file_hash}", headers=headers, timeout=30)
+
         if resp.status_code == 200:
             scan_data = resp.json()
             attrs = scan_data.get("data", {}).get("attributes", {})
@@ -125,10 +130,11 @@ def scan_file_opportunistic(file_path: str, api_key: str, cfg: ConfigLoader) -> 
                 "sha256": file_hash
             }
         else:
+            reason_text = "Rate limited (HTTP 429)" if resp.status_code == 429 else f"API HTTP {resp.status_code}"
             return {
                 "status": "fallback",
                 "file": os.path.basename(file_path),
-                "reason": f"API HTTP {resp.status_code}",
+                "reason": reason_text,
                 "report_url": report_url,
                 "sha256": file_hash
             }
@@ -325,6 +331,9 @@ def main() -> int:
             print(f"  ⊘ Passive Fallback: {result['reason']} — {result['report_url']}")
         else:
             print(f"  ✗ Failed: {result.get('reason')}")
+
+        if api_key and i < len(files_to_scan) - 1:
+            time.sleep(cfg.rate_limit_sleep_seconds)
 
     with open(args.output_json, "w") as f:
         json.dump(results, f, indent=2)

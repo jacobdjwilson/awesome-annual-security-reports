@@ -722,14 +722,26 @@ class AIAnalyzer:
                     "top_k": task_cfg.get("top_k", self.config.gen_config.get("top_k", 40)),
                     "max_output_tokens": max_tokens,
                 }
-                if thinking_budget is not None:
+                if thinking_budget is not None and "flash-lite" not in active_model.lower():
                     gen_config_kwargs["thinking_config"] = types.ThinkingConfig(thinking_budget=thinking_budget)
 
-                response = self.client.models.generate_content(
-                    model=active_model,
-                    contents=prompt,
-                    config=types.GenerateContentConfig(**gen_config_kwargs),
-                )
+                try:
+                    response = self.client.models.generate_content(
+                        model=active_model,
+                        contents=prompt,
+                        config=types.GenerateContentConfig(**gen_config_kwargs),
+                    )
+                except Exception as call_err:
+                    if "thinking_config" in gen_config_kwargs and ("invalid_argument" in str(call_err).lower() or "400" in str(call_err)):
+                        print(f"  ⚠ Model {active_model} rejected thinking_config, retrying without it...")
+                        gen_config_kwargs.pop("thinking_config", None)
+                        response = self.client.models.generate_content(
+                            model=active_model,
+                            contents=prompt,
+                            config=types.GenerateContentConfig(**gen_config_kwargs),
+                        )
+                    else:
+                        raise
             else:
                 response = genai.GenerativeModel(active_model).generate_content(
                     prompt,

@@ -129,12 +129,20 @@ def build_pr_body(
         lines.append("| File | Verdict | Detections | Report |")
         lines.append("|------|---------|------------|--------|")
         for s in scan_results:
-            if s.get("status") == "success":
-                f_name = s.get("file", "")
+            f_name = s.get("file", "")
+            status = s.get("status", "")
+            url = s.get("report_url") or s.get("permalink") or "#"
+            link_str = f"[View]({url})" if url != "#" else "—"
+            if status == "success":
                 verdict = s.get("verdict", "")
                 detections = f"{s.get('malicious_count', 0) + s.get('suspicious_count', 0)}/{s.get('total_engines', 0)}"
-                url = s.get("report_url", "#")
-                lines.append(f"| {f_name} | {verdict} | {detections} | [View]({url}) |")
+                lines.append(f"| {f_name} | {verdict} | {detections} | {link_str} |")
+            elif status == "fallback":
+                reason = s.get("reason") or "Passive lookup fallback"
+                lines.append(f"| {f_name} | Fallback ({reason}) | — | {link_str} |")
+            else:
+                err = s.get("reason") or s.get("message") or "Scan error"
+                lines.append(f"| {f_name} | Error ({err}) | — | {link_str} |")
         lines.append("\n")
     else:
         lines.append("No scan results.\n")

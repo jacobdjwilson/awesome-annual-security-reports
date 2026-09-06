@@ -109,16 +109,23 @@ def write_pipeline_virustotal(f):
     
     malicious = 0
     for r in results:
-        if r.get("status") == "success":
+        report_url = r.get("report_url") or r.get("permalink")
+        link = f"[VirusTotal]({report_url})" if report_url else "—"
+        status = r.get("status")
+        if status == "success":
             verdict = r.get("verdict", "")
             icon = "❌ Malicious" if verdict == "Malicious" else "⚠️ Suspicious" if verdict == "Suspicious" else "✅ Clean"
-            if verdict != "Clean": malicious += 1
+            if verdict != "Clean":
+                malicious += 1
             dets = r.get("malicious_count", 0) + r.get("suspicious_count", 0)
             engines = r.get("total_engines", 0)
-            link = f"[VirusTotal]({r.get('permalink')})" if r.get("permalink") else "—"
             f.write(f"| `{r.get('file')}` | {icon} | {dets} | {engines} | {link} |\n")
+        elif status == "fallback":
+            reason = r.get("reason") or r.get("message") or "Passive hash lookup fallback"
+            f.write(f"| `{r.get('file')}` | ⊘ Passive Fallback | — | — | {link} ({reason}) |\n")
         else:
-            f.write(f"| `{r.get('file')}` | ⚠️ Error | — | — | {r.get('message', 'Unknown error')} |\n")
+            err = r.get("reason") or r.get("message") or "Unknown error"
+            f.write(f"| `{r.get('file')}` | ⚠️ Error | — | — | {link} ({err}) |\n")
     f.write("\n")
 
     if malicious > 0:
@@ -128,8 +135,6 @@ def write_pipeline_virustotal(f):
 
 
 def write_pipeline_conversion(f):
-    ok = get_env("CONV_OK", "0")
-    fail = get_env("CONV_FAIL", "0")
     quota = get_env("QUOTA_EXHAUSTED") == "true"
     quota_code = get_env("QUOTA_CODE") == "true"
     delay = get_env("RETRY_DELAY", "0")
@@ -150,6 +155,16 @@ def write_pipeline_conversion(f):
         f.write("No conversions performed.\n")
         return
 
+    # Derive counts from conversions.json if available, or fall back to env vars
+    json_ok = sum(1 for c in conversions if c.get("status") == "success") if isinstance(conversions, list) else None
+    json_fail = sum(1 for c in conversions if c.get("status") != "success") if isinstance(conversions, list) else None
+
+    env_ok = get_env("CONV_OK") or get_env("SUCCESSFUL")
+    env_fail = get_env("CONV_FAIL") or get_env("FAILED")
+
+    ok = str(json_ok) if json_ok is not None else (env_ok if env_ok else "0")
+    fail = str(json_fail) if json_fail is not None else (env_fail if env_fail else "0")
+
     f.write(f"| Status | Count |\n|--------|-------|\n| ✅ Succeeded | {ok} |\n| ❌ Failed | {fail} |\n\n")
     f.write("| PDF | Output | Model | Characters | Status |\n")
     f.write("|-----|--------|-------|------------|--------|\n")
@@ -162,8 +177,6 @@ def write_pipeline_conversion(f):
 
 
 def write_pipeline_analysis(f):
-    analyzed = get_env("ANALYZED", "0")
-    failed = get_env("FAILED", "0")
     quota = get_env("QUOTA_EXHAUSTED") == "true"
     delay = get_env("RETRY_DELAY", "0")
     attempt = get_env("RETRY_ATTEMPT", "1")
@@ -179,18 +192,42 @@ def write_pipeline_analysis(f):
         return
 
     analysis = parse_json_file("analysis.json")
-    if not analysis:
+    errors_file = get_env("ERRORS_FILE", "analysis_errors.json")
+    errors = parse_json_file(errors_file) if errors_file else []
+
+    if not analysis and not errors:
         f.write("No reports analyzed.\n")
         return
 
+    # Derive counts from analysis.json / errors_file if available, or fall back to env vars
+    json_analyzed = len(analysis) if isinstance(analysis, list) else None
+    json_failed = len(errors) if isinstance(errors, list) else None
+
+    env_analyzed = get_env("ANALYZED") or get_env("ANALYSIS_COUNT") or get_env("COUNT")
+    env_failed = get_env("FAILED") or get_env("ANALYSIS_ERROR_COUNT") or get_env("ERROR_COUNT")
+
+    analyzed = str(json_analyzed) if json_analyzed is not None else (env_analyzed if env_analyzed else "0")
+    failed = str(json_failed) if json_failed is not None else (env_failed if env_failed else "0")
+
     f.write(f"| Status | Count |\n|--------|-------|\n| ✅ Analyzed | {analyzed} |\n| ❌ Failed | {failed} |\n\n")
-    f.write("| Organization | Title | Year | Category | Summary Preview |\n")
-    f.write("|--------------|-------|------|----------|-----------------|\n")
-    for a in analysis:
-        summary = a.get("summary", "")
-        preview = (summary[:80] + "...") if len(summary) > 80 else summary
-        f.write(f"| {a.get('organization')} | {a.get('title')} | {a.get('year')} | `{a.get('category')}` | {preview} |\n")
-    f.write("\n")
+    if analysis:
+        f.write("| Organization | Title | Year | Category | Summary Preview |\n")
+        f.write("|--------------|-------|------|----------|-----------------|\n")
+        for a in analysis:
+            summary = a.get("summary", "")
+            preview = (summary[:80] + "...") if len(summary) > 80 else summary
+            f.write(f"| {a.get('organization')} | {a.get('title')} | {a.get('year')} | `{a.get('category')}` | {preview} |\n")
+        f.write("\n")
+
+    if errors:
+        f.write("### ❌ Analysis Errors\n\n")
+        f.write("| Organization | Title | Year | Error Type | Details |\n")
+        f.write("|--------------|-------|------|------------|---------|\n")
+        for e in errors:
+            err_msg = e.get("error", "Analysis failed")
+            preview = (err_msg[:90] + "...") if len(err_msg) > 90 else err_msg
+            f.write(f"| {e.get('organization')} | {e.get('title')} | {e.get('year')} | `{e.get('error_type', 'unknown')}` | {preview} |\n")
+        f.write("\n")
 
 
 def write_pipeline_readme(f):

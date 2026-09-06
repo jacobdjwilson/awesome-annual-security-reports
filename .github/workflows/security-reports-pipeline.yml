@@ -237,6 +237,8 @@ jobs:
       - name: Generate conversion summary
         if: always()
         env:
+          CONV_OK: ${{ steps.converter.outputs.successful_count }}
+          CONV_FAIL: ${{ steps.converter.outputs.failed_count }}
           SUCCESSFUL: ${{ steps.converter.outputs.successful_count }}
           FAILED: ${{ steps.converter.outputs.failed_count }}
           GITHUB_REPO: ${{ github.repository }}
@@ -313,6 +315,10 @@ jobs:
         env:
           COUNT: ${{ steps.report-analysis.outputs.analysis_count }}
           ERROR_COUNT: ${{ steps.report-analysis.outputs.error_count }}
+          ANALYSIS_COUNT: ${{ steps.report-analysis.outputs.analysis_count }}
+          ANALYSIS_ERROR_COUNT: ${{ steps.report-analysis.outputs.error_count }}
+          ANALYZED: ${{ steps.report-analysis.outputs.analysis_count }}
+          FAILED: ${{ steps.report-analysis.outputs.error_count }}
           ERRORS_FILE: ${{ steps.report-analysis.outputs.errors_file }}
           HAS_SUCCESSFUL: ${{ steps.verify.outputs.has_successful }}
           ANALYSIS_SUCCESS: ${{ steps.report-analysis.outputs.analysis_success }}
