@@ -1,152 +1,978 @@
+VGhhbmsgeW91IGZvciBwYXJ0aWNpcGF0aW5nIGluIHRoZSAyMDEyIFZlcml6b24gREJJUiBDb3Zl
+ciBDaGFsbGVuZ2UuCldlIGhvcGUgeW91IGVuam95IHRoaXMgY2hhbGxlbmdlIGFzIG11Y2ggYXMg
+d2UgaGF2ZSBlbmpveWVkIGNyZWF0aW5nIGl0LiAgCgoKVGhlcmUgb25jZSB3YXMgYSBsYWR5IGZy
+b20gTmFudHVja2V0LApXaXRoIHRleHQgc28gd2lkZSB3ZSBjb3VsZCBncm9rIGl0Lgp3ZSBjaG9w
+cGVkIGFuZCBzbGljZWQgaXQgYWxsIGRheSBsb25nLApPbmx5IHRvIGZpbmQgc2hlIHdhc27igJl0
+IGFsbCB3cm9uZy4KCldpdGggc2tpbGwgYW5kIGVhc2Ugd2UgYmF0dGxlZCB0aGlzIGZpZ2h0LApF
+eGNlcHQgc2hlIHdhcyBub3QgdG90YWxseSByaWdodC4KVHdpc3RpbmcgYW5kIHR1cm5pbmcgd2Ug
+a2VwdCBvbiBzdHJvbmcsCldlIHNob3VsZCBoYXZlIGJlZW4gc2luZ2luZyBhbGwgYWxvbmc6CgpN
+YXJ5IGhhZCBhIGxpdHRsZSBsYW1iLApsaXR0bGUgbGFtYiwgbGl0dGxlIGxhbWIsCk1hcnkgaGFk
+IGEgbGl0dGxlIGxhbWIsCndob3NlIGZsZWVjZSB3YXMgd2hpdGUgYXMgc25vdy4KCkFuZCBldmVy
+eXdoZXJlIHRoYXQgTWFyeSB3ZW50LApNYXJ5IHdlbnQsIE1hcnkgd2VudCwKYW5kIGV2ZXJ5d2hl
+cmUgdGhhdCBNYXJ5IHdlbnQsCnRoZSBsYW1iIHdhcyBzdXJlIHRvIGdvLgoKSXQgZm9sbG93ZWQg
+aGVyIHRvIHNjaG9vbCBvbmUgZGF5CnNjaG9vbCBvbmUgZGF5LCBzY2hvb2wgb25lIGRheSwKSXQg
+Zm9sbG93ZWQgaGVyIHRvIHNjaG9vbCBvbmUgZGF5LAp3aGljaCB3YXMgYWdhaW5zdCB0aGUgcnVs
+ZXMuCgpJdCBtYWRlIHRoZSBjaGlsZHJlbiBsYXVnaCBhbmQgcGxheSwKbGF1Z2ggYW5kIHBsYXks
+IGxhdWdoIGFuZCBwbGF5LAppdCBtYWRlIHRoZSBjaGlsZHJlbiBsYXVnaCBhbmQgcGxheQp0byBz
+ZWUgYSBsYW1iIGF0IHNjaG9vbC4KCkFuZCBzbyB0aGUgdGVhY2hlciB0dXJuZWQgaXQgb3V0LAp0
+dXJuZWQgaXQgb3V0LCB0dXJuZWQgaXQgb3V0LApBbmQgc28gdGhlIHRlYWNoZXIgdHVybmVkIGl0
+IG91dCwKYnV0IHN0aWxsIGl0IGxpbmdlcmVkIG5lYXIsCgpBbmQgd2FpdGVkIHBhdGllbnRseSBh
+Ym91dCwKcGF0aWVudGx5IGFib3V0LCBwYXRpZW50bHkgYWJvdXQsCkFuZCB3OGVkIHBhdGllbnRs
+eSBhYm91dAp0aWxsIE1hcnkgZGlkIGFwcGVhci4KCiJXaHkgZG9lcyB0aGUgbGFtYiBsb3ZlIE1h
+cnkgc28/IgpMb3ZlIE1hcnkgc28/IExvdmUgTWFyeSBzbz8KIldoeSBkb2VzIHRoZSBsYW1iIGxv
+dmUgTWFyeSBzbywiCnRoZSBlYWdlciBjaGlsZHJlbiBjcnkuCgoiV2h5LCBNYXJ5IGxvdmVzIHRo
+ZSBsYW1iLCB5b3Uga25vdy4iClRoZSBsYW1iLCB5b3Uga25vdywgdGhlIGxhbWIsIHlvdSBrbm93
+LAoiV2h5LCBNYXJ5IGxvdmVzIHRoZSBsYW1iLCB5b3Uga25vdywiCnRoZSB0ZWFjaGVyIGRpZCBy
+ZXBseS4KJHAK
+
 2012 DATA BREACH INVESTIGATIONS REPORT
 A study conducted by the Verizon RISK Team with cooperation from the Australian Federal Police,
 Dutch National High Tech Crime Unit, Irish Reporting and Information Security Service,
 Police Central e-Crime Unit, and United States Secret Service.
 
-## Table of Contents
-- [Executive Summary](#executive-summary)
-- [Methodology](#methodology)
-- [2011 DBIR: Threat Event Overview](#2011-dbir-threat-event-overview)
-- [Threat Agents](#threat-agents)
+2012 DATA BREACH INVESTIGATIONS REPORT
+TABLE OF CONTENTS
+Executive Summary .................................................................................................2
+Methodology ........................................................................................................5
+Classifying Incidents Using VERIS ...............................................................................6
+A Word on Sample Bias ...........................................................................................8
+Results and Analysis.................................................................................................9
+Demographics ...................................................................................................10
+2011 DBIR: Threat Event Overview .............................................................................13
+Threat Agents ...................................................................................................16
+Breach Size by Threat Agents...............................................................................18
+External Agents (98% of breaches, 99+% of records) .....................................................19
+Internal Agents (4% of breaches, <1% of records) .........................................................21
+Partner Agents (<1% of breaches, <1% of records) ........................................................22
+Threat Actions...................................................................................................23
+Malware (69% of breaches, 95% of records) ..............................................................26
+Hacking (81% of breaches, 99% of records) ...............................................................30
+Social (7% of breaches, 37% of records)...................................................................33
+Misuse (5% of breaches, <1% of records) ..................................................................35
+Physical (10% of breaches, <1% of records) ...............................................................36
+Error (<1% of breaches, <1% of records) ...................................................................37
+Environmental (0% of breaches, 0% of records)...........................................................38
+Compromised Assets............................................................................................38
+Compromised Data ..............................................................................................41
+Attack Difficulty.................................................................................................45
+Attack Targeting.................................................................................................47
+Timespan of Events..............................................................................................48
+Breach Discovery Methods......................................................................................51
+Anti-Forensics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .55
+PCI DSS ..........................................................................................................56
+The Impact of Data Breaches....................................................................................58
+2012 DBIR: Conclusions and Recommendations...................................................................61
+Appendix A: Examining relationships among threat actions.......................................................67
+Appendix B: A USSS case study of large-scale “industrialized” cybercrime.......................................72
+About the 2012 DBIR Contributors ................................................................................74
+Verizon RISK Team...............................................................................................74
+Australian Federal Police........................................................................................74
+Dutch National High Tech Crime Unit............................................................................74
+Irish Reporting & Information Security Service.................................................................75
+Police Central e-Crime Unit......................................................................................75
+United States Secret Service ...................................................................................76
+For additional updates and commentary, please visit verizon.com/enterprise/securityblog
 
-## Executive Summary
+EXECUTIVE SUMMARY
 2011 will almost certainly go down as a year of civil and cultural uprising. Citizens revolted, challenged, and even
 overthrew their governments in a domino effect that has since been coined the “Arab Spring,” though it stretched
 beyond a single season. Those disgruntled by what they perceived as the wealth-mongering “1%” occupied Wall
 Street along with other cities and venues across the globe. There is no shortage of other examples.
-
 This unrest that so typified 2011 was not, however, constrained to the physical world. The online world was rife
 with the clashing of ideals, taking the form of activism, protests, retaliation, and pranks. While these activities
-encompassed more than data breaches (e.g., DDoS attacks), the theft of corporate and personal information was
+encompassed more than data breaches (e.g., DDoS attacks),
+This re-imagined and re-invigorated
+the theft of corporate and personal information was
 certainly a core tactic. This re-imagined and re-invigorated specter of “hacktivism” rose to haunt
-organizations around the world. Many, troubled by the shadowy nature of its origins and proclivity to embarrass victims, found this trend more frightening than other threats, whether real or imagined. Doubly concerning for many organizations and executives was that target selection by these groups didn’t follow the logical lines of who has money and/or valuable information. Enemies are even scarier when you can’t predict their behavior.
-
+specter of “hacktivism” rose to haunt organizations around
+organizations around the world.
+the world. Many, troubled by the shadowy nature of its
+origins and proclivity to embarrass victims, found this trend more frightening than other threats, whether real or
+imagined. Doubly concerning for many organizations and executives was that target selection by these groups
+didn’t follow the logical lines of who has money and/or valuable information. Enemies are even scarier when you
+can’t predict their behavior.
 It wasn’t all protest and lulz, however. Mainline cybercriminals continued to automate and streamline their method
 du jour of high-volume, low-risk attacks against weaker targets. Much less frequent, but arguably more damaging,
 were continued attacks targeting trade secrets, classified information, and other intellectual property. We
 certainly encountered many faces, varied tactics, and diverse motives in the past year, and in many ways, the 2012
 Data Breach Investigations Report (DBIR) is a recounting of the many facets of corporate data theft.
-
-**855 incidents, 174 million compromised records.**
-
+855 incidents, 174 million compromised records.
 This year our DBIR includes more incidents, derived from more contributors, and represents a broader and more
 diverse geographical scope. The number of compromised records across these incidents skyrocketed back up to
 174 million after reaching an all-time low (or high, depending on your point of view) in last year’s report of four
 million. In fact, 2011 boasts the second-highest data loss total since we started keeping track in 2004.
-
 Once again, we are proud to announce that the United States Secret Service (USSS) and the Dutch National High
-Tech Crime Unit (NHTCU) have joined us for this year’s report. We also welcome the Australian Federal Police (AFP), the Irish Reporting & Information Security Service (IRISSCERT), and the Police Central e-Crime Unit (PCeU) of the London Metropolitan Police. These
-organizations have broadened the scope of the DBIR tremendously with regard to data breaches around the globe. We heartily thank them all for their spirit of cooperation, and sincerely hope this report serves to increase awareness of cybercrime, as well as our collective ability to fight it.
+Tech Crime Unit (NHTCU) have joined us for this year’s report. We also
+It wasn’t all protest and
+welcome the Australian Federal Police (AFP), the Irish Reporting &
+lulz, however. Mainline Information Security Service (IRISSCERT), and the Police Central
+e-Crime Unit (PCeU) of the London Metropolitan Police. These
+cybercriminals continued to
+organizations have broadened the scope of the DBIR tremendously
+automate and streamline their
+with regard to data breaches around the globe. We heartily thank
+method du jour of high-volume, them all for their spirit of cooperation, and sincerely hope this report
+serves to increase awareness of cybercrime, as well as our collective
+low-risk attacks against
+ability to fight it.
+weaker targets.
+With the addition of Verizon’s 2011 caseload and data contributed
+from the organizations listed above, the DBIR series now spans eight years, well over 2000 breaches, and greater
+than one billion compromised records. It’s been a fascinating and informative journey, and we are grateful that
+many of you have chosen to come along for the ride. As always, our goal is that the data and analysis presented in
+this report prove helpful to the planning and security efforts of our readers. We begin with a few highlights below.
+2
 
-With the addition of Verizon’s 2011 caseload and data contributed from the organizations listed above, the DBIR series now spans eight years, well over 2000 breaches, and greater than one billion compromised records. It’s been a fascinating and informative journey, and we are grateful that many of you have chosen to come along for the ride. As always, our goal is that the data and analysis presented in this report prove helpful to the planning and security efforts of our readers. We begin with a few highlights below.
+WHO IS BEHIND DATA BREACHES?
+No big surprise here; outsiders are still dominating the scene
+98%
+stemmed from external agents (+6%) of corporate data theft. Organized criminals were up to their
+typical misdeeds and were behind the majority of breaches in
+2011. Activist groups created their fair share of misery and
+4%
+implicated internal employees (-13%)
+mayhem last year as well—and they stole more data than any
+other group. Their entrance onto the stage also served to
+change the landscape somewhat with regard to the
+motivations behind breaches. While good old-fashioned
+<1% committed by business partners (<>) greed and avarice were still the prime movers, ideological
+dissent and schadenfreude took a more prominent role
+across the caseload. As one might expect with such a rise in
+58%
+of all data theft tied to activist groups
+external attackers, the proportion of insider incidents
+declined yet again this year to a comparatively scant 4%.
+HOW DO BREACHES OCCUR?
+Incidents involving hacking and malware were both up
+considerably last year, with hacking linked to almost all
+81%
+utilized some form of hacking (+31%)
+compromised records. This makes sense, as these threat
+actions remain the favored tools of external agents, who, as
+69%
+incorporated malware (+20%)
+described above, were behind most breaches. Many attacks
+continue to thwart or circumvent authentication by combining
+stolen or guessed credentials (to gain access) with backdoors 10%
+involved physical attacks (-19%)
+(to retain access). Fewer ATM and gas pump skimming cases
+this year served to lower the ratio of physical attacks in this
+report. Given the drop in internal agents, the misuse category 7%
+employed social tactics (-4%)
+had no choice but to go down as well. Social tactics fell a little,
+but were responsible for a large amount of data loss.
+5%
+resulted from privilege misuse (-12%)
+WHAT COMMONALITIES EXIST?
+Findings from the past year continue to show that target
+79%
+of victims were targets of opportunity (-4%) selection is based more on opportunity than on choice. Most
+victims fell prey because they were found to possess an
+(often easily) exploitable weakness rather than because they
+96%
+of attacks were not highly difficult (+4%)
+were pre-identified for attack.
+Whether targeted or not, the great majority of victims
+94% of all data compromised involved servers (+18%) succumbed to attacks that cannot be described as highly
+difficult. Those that were on the more sophisticated side
+usually exhibited this trait in later stages of the attack after
+85% of breaches took weeks or more to discover (+6%) initial access was gained.
+Given this, it’s not surprising that most breaches were
+avoidable (at least in hindsight) without difficult or expensive
+92%
+of incidents were discovered by a third party (+6%) countermeasures. Low levels of PCI DSS adherence highlight a
+plethora of issues across the board for related organizations.
+97%of breaches were avoidable through simple or While at least some evidence of breaches often exists,
+intermediate controls (+1%) victims don’t usually discover their own incidents. Third
+parties usually clue them in, and, unfortunately, that typically
+happens weeks or months down the road.
+96%of victims subject to PCI DSS had not achieved
+compliance (+7%) Did you notice how most of these got worse in 2011?
+3
 
-### WHO IS BEHIND DATA BREACHES?
-- **98%** stemmed from external agents (+6%)
-- **4%** implicated internal employees (-13%)
-- **<1%** committed by business partners (<)
-- **58%** of all data theft tied to activist groups
-
-### HOW DO BREACHES OCCUR?
-- **81%** utilized some form of hacking (+31%)
-- **69%** incorporated malware (+20%)
-- **10%** involved physical attacks (-19%)
-- **7%** employed social tactics (-4%)
-- **5%** resulted from privilege misuse (-12%)
-
-### WHAT COMMONALITIES EXIST?
-- **79%** of victims were targets of opportunity (-4%)
-- **96%** of attacks were not highly difficult (+4%)
-- **94%** of all data compromised involved servers (+18%)
-- **85%** of breaches took weeks or more to discover (+6%)
-- **92%** of incidents were discovered by a third party (+6%)
-- **97%** of breaches were avoidable through simple or intermediate controls (+1%)
-- **96%** of victims subject to PCI DSS had not achieved compliance (+7%)
-
-### WHERE SHOULD MITIGATION EFFORTS BE FOCUSED?
-Once again, this study reminds us that our profession has the necessary tools to get the job done. The challenge for the good guys lies in selecting the right tools for the job at hand and then not letting them get dull and rusty over time. Evidence shows when that happens, the bad guys are quick to take advantage of it.
-
-As you’ll soon see, we contrast findings for smaller and larger organizations throughout this report. You will get a sense for how very different (and in some cases how very similar) their problems tend to be. Because of this, it makes sense that the solutions to these problems are different as well. Thus, most of the recommendations given at the end of this report relate to larger organizations. It’s not that we’re ignoring the smaller guys—it’s just that while modern cybercrime is a plague upon their house, the antidote is fairly simple and almost universal.
-
-Larger organizations exhibit a more diverse set of issues that must be addressed through an equally diverse set of corrective actions. We hope the findings in this report help to prioritize those efforts, but truly tailoring a treatment strategy to your needs requires an informed and introspective assessment of your unique threat landscape. Refer to the conclusion of this report for indicators and mitigators for the most common threats.
-
+WHERE SHOULD MITIGATION EFFORTS
+BE FOCUSED?
+Once again, this study reminds us that our profession has
+Smaller organizations
+the necessary tools to get the job done. The challenge for
+the good guys lies in selecting the right tools for the job at Implement a firewall or ACL on remote access services
+hand and then not letting them get dull and rusty over time.
+Evidence shows when that happens, the bad guys are quick Change default credentials of POS systems and
+to take advantage of it. other Internet-facing devices
+As you’ll soon see, we contrast findings for smaller and larger If a third party vendor is handling the two items
+organizations throughout this report. You will get a sense for above, make sure they’ve actually done them
+how very different (and in some cases how very similar) their
+problems tend to be. Because of this, it makes sense that the
+Larger organizations
+solutions to these problems are different as well. Thus, most
+of the recommendations given at the end of this report relate Eliminate unnecessary data; keep tabs on what’s left
+to larger organizations. It’s not that we’re ignoring the smaller
+guys—it’s just that while modern cybercrime is a plague upon Ensure essential controls are met; regularly check
+their house, the antidote is fairly simple and almost universal. that they remain so
+Larger organizations exhibit a more diverse set of issues that Monitor and mine event logs
+must be addressed through an equally diverse set of
+corrective actions. We hope the findings in this report help to Evaluate your threat landscape to prioritize your
+prioritize those efforts, but truly tailoring a treatment treatment strategy
+strategy to your needs requires an informed and introspective
+assessment of your unique threat landscape. Refer to the conclusion of this report for indicators
+and mitigators for the most common threats
 Got a question or a comment about the DBIR?
 Drop us a line at dbir@verizon.com, find us on Facebook,
 or post to Twitter with the hashtag #dbir.
+4
 
----
+METHODOLOGY
+Based on the feedback we receive about this report, one of the things readers value most is the level of rigor and
+honesty we employ when collecting, analyzing, and presenting data. That’s important to us, and we appreciate your
+appreciation. Putting this report together is, quite frankly, no walk in the park (855 incidents to examine isn’t exactly
+a light load). If nobody knew or cared, we might be tempted to shave off some
+The underlying
+time and effort by cutting some corners, but the fact that you do know and do
+methodology used
+care helps keep us honest. And that’s what this section is all about.
+by Verizon remains
+Verizon Data Collection Methodology
+relatively unchanged
+The underlying methodology used by Verizon remains relatively unchanged
+from previous years. All
+from previous years. All results are based on first-hand evidence collected
+during paid external forensic investigations conducted by Verizon from 2004 results are based on first-
+to 2011. The 2011 caseload is the primary analytical focus of the report, but
+hand evidence collected
+the entire range of data is referenced extensively throughout. Though the
+RISK team works a variety of engagements (over 250 last year), only those during paid external
+involving confirmed data compromise are represented in this report. There forensic investigations.
+were 90 of these in 2011 that were completed within the timeframe of this
+report. To help ensure reliable and consistent input, we use the Verizon Enterprise Risk and Incident Sharing
+(VERIS) framework to record case data and other relevant details (fuller explanation of this to follow). VERIS data
+points are collected by analysts throughout the investigation lifecycle and completed after the case closes. Input
+is then reviewed and validated by other members of the RISK team. During the aggregation process, information
+regarding the identity of breach victims is removed from the repository of case data.
+Data Collection Methodology for other contributors
+The USSS, NHTCU, AFP, IRISSCERT, and PCeU differed in precisely how they collected data contributed for this
+report, but they shared the same basic approach. All leveraged VERIS as the common denominator but used varying
+mechanisms for data entry. For instance, agents of the USSS used a VERIS-based internal application to record
+pertinent case details. For the AFP, we interviewed lead agents on each case, recorded the required data points,
+and requested follow-up information as necessary. The particular mechanism of data collection is less important
+than understanding that all data is based on real incidents and, most importantly, real facts about those incidents.
+These organizations used investigative notes, reports provided by the victim or other forensic firms, and their own
+experience gained in handling the case. The collected data was purged of any information that might identify
+organizations or individuals involved and then provided to Verizon’s RISK Team for aggregation and analysis.
+From the numerous investigations worked by these organizations in 2011, in alignment with the focus of the DBIR,
+the scope was narrowed to only those involving confirmed organizational data breaches.1 The scope was further
+narrowed to include only cases for which Verizon did not conduct the forensic investigation.2 All in all, these
+agencies contributed a combined 765 breaches for this report. Some may raise an eyebrow at the fact that Verizon’s
+caseload represents a relatively small proportion of the overall dataset discussed in this report, but we couldn’t be
+happier with this outcome. We firmly believe that more information creates a more complete and accurate
+understanding of the problem we all collectively face. If that means our data takes a backseat in a Verizon-authored
+publication, so be it; we’ll trade share of voice for shared data any day of the week.
+1 “Organizational data breach” refers to incidents involving the compromise (unauthorized access, theft, disclosure, etc.) of non-public information while it was stored, processed, used, or transmitted
+by an organization.
+2 We often work, in one manner or another, with these agencies during an investigation. To eliminate redundancy, Verizon-contributed data were used when both Verizon and another agency worked the
+same case.
+5
 
-## Methodology
-Based on the feedback we receive about this report, one of the things readers value most is the level of rigor and honesty we employ when collecting, analyzing, and presenting data. That’s important to us, and we appreciate your appreciation. Putting this report together is, quite frankly, no walk in the park (855 incidents to examine isn’t exactly a light load). If nobody knew or cared, we might be tempted to shave off some time and effort by cutting some corners, but the fact that you do know and do care helps keep us honest. And that’s what this section is all about.
+While we’re on that topic, if your organization investigates or handles data breaches and might be interested in
+contributing to future DBIRs, let us know. The DBIR family continues to grow, and we welcome new members.
+A BRIEF PRIMER ON VERIS
+VERIS is a framework designed to provide a common language for describing security incidents in a structured and
+repeatable manner. It takes the narrative of “who did what to what (or whom) with what result” and translates it into
+the kind of data you see presented in this report. Because many readers asked about the methodology behind the
+DBIR and because we hope to facilitate more information sharing on security incidents, we have released VERIS for
+free public use. A brief overview of VERIS is available on our website3 and the complete framework can be obtained
+from the VERIS community wiki.4 Both are good companion references to this report for understanding
+terminology and context.
+Classifying Incidents Using VERIS
+The Incident Classification section of the VERIS Framework translates the incident narrative of “who did what to
+what (or whom) with what result” into a form more suitable for trending and analysis. To accomplish this, VERIS
+employs the A4 Threat Model developed by Verizon’s RISK team. In the A4 model, a security incident is viewed as a
+series of events that adversely affects the information assets of an organization. Every event is comprised of the
+following elements (the four A’s):
+(cid:113)(cid:1) Agent: Whose actions affected the asset
+(cid:113)(cid:1) Action: What actions affected the asset
+(cid:113)(cid:1) Asset: Which assets were affected
+(cid:113)(cid:1) Attribute: How the asset was affected
+It is our position that the four A’s represent the minimum information necessary to adequately describe any incident
+or threat scenario. Furthermore, this structure provides an optimal framework within which to measure frequency,
+associate controls, link impact, and many other concepts required for risk management.
+If we calculate all the combinations of the A4 model’s highest-level elements, (three Agents, seven Actions, five
+Assets, and three Attributes), 3155 distinct threat events emerge. The grid in Figure 1 graphically represents these
+and designates a Threat Event Number (hereafter referenced by TE#)
+It is our position that the four
+to each. TE1, for instance, coincides with External Malware that affects
+A’s represent the minimum the Confidentiality of a Server. Note that not all 315 A4 combinations
+are feasible. For instance, malware does not, insofar as we know, infect
+information necessary to
+people…though it does make for intriguing sci-fi plots.
+adequately describe any
+incident or threat scenario. Turning the Incident Narrative into Metrics
+As stated above, incidents often involve multiple threat events.
+Identifying which are in play, and using them to reconstruct the chain of events is how we model an incident to
+generate the statistics in this report. By way of example, we describe below a simplified hypothetical incident
+where a “spear phishing” attack is used to exfiltrate sensitive data and intellectual property (IP) from an organization.
+The flowchart representing the incident includes four primary threat events and one conditional event.6 A brief
+description of each event is given along with the corresponding TE#s and A4 categories from the matrix exhibited earlier.
+3 http://www.verizonbusiness.com/resources/whitepapers/wp_verizon-incident-sharing-metrics-framework_en_xg.pdf
+4 https://verisframework.wiki.zoho.com/
+5 Some will remember that this grid showed 630 intersections as presented in the 2011 DBIR. The difference is a result of the number of security attributes depicted. While we still recognize the six
+attributes of the “Parkerian Hexad,” we (with input from others) have decided to use and present them in paired format (e.g., “confidentiality and possession losses”). Thus, the notions of
+confidentiality versus possession are preserved, but data analysis and visualization is simplified (a common request from VERIS users). More discussion around this change can be found on the
+Attributes section of the VERIS wiki.
+6 See the Error section under Threat Actions for an explanation of conditional events.
+6
 
-### Verizon Data Collection Methodology
-The underlying methodology used by Verizon remains relatively unchanged from previous years. All results are based on first-hand evidence collected during paid external forensic investigations conducted by Verizon from 2004 to 2011. The 2011 caseload is the primary analytical focus of the report, but the entire range of data is referenced extensively throughout. Though the RISK team works a variety of engagements (over 250 last year), only those involving confirmed data compromise are represented in this report. There were 90 of these in 2011 that were completed within the timeframe of this report. To help ensure reliable and consistent input, we use the Verizon Enterprise Risk and Incident Sharing (VERIS) framework to record case data and other relevant details (fuller explanation of this to follow). VERIS data points are collected by analysts throughout the investigation lifecycle and completed after the case closes. Input is then reviewed and validated by other members of the RISK team. During the aggregation process, information regarding the identity of breach victims is removed from the repository of case data.
+Malware Hacking Social Misuse Physical Error Environmental
+Ext Int Prt Ext Int Prt Ext Int Prt Ext Int Prt Ext Int Prt Ext Int Prt Ext Int Prt
+Once the construction of the main event chain is complete, additional classification can add more specificity
+around the elements comprising each event (i.e., the particular type of External agent or exact Social tactics used,
+etc.). The incident is now “VERIS-ized” and useful metrics are available for reporting and further analysis.
+One final note before we conclude this sub-section. The process described above has value beyond just describing
+the incident itself; it also helps identify what might have been done (or not done) to prevent it. The goal is
+straightforward: break the chain of events and you stop the incident from proceeding. For instance, security
+awareness training and e-mail filtering could help keep E1 from occurring. If not, anti-virus and a least-privilege
+implementation on the laptop might prevent E2. Stopping progression between E2 and E3 may be accomplished
+through egress filtering or netflow analysis to detect and prevent backdoor access. Training and change control
+procedures could help avoid the administrator’s misconfiguration described in the conditional event and preclude
+the compromise of intellectual property in E4. These are just a few examples of potential controls for each event,
+but the ability to visualize a layered approach to deterring, preventing, and detecting the incident should be apparent.
+7
+srevreS
+Confidentiality
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21
+& Possession
+Integrity &
+22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42
+Authenticity
+Availability
+43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+& Utility
+skrowteN
+Confidentiality
+64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84
+& Possession
+Integrity &
+85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105
+Authenticity
+Availability
+106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126
+& Utility
+seciveD
+resU
+Confidentiality
+127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147
+& Possession
+Integrity &
+148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168
+Authenticity
+Availability
+169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189
+& Utility
+ataD
+eniflfO
+Confidentiality
+190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210
+& Possession
+Integrity &
+211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231
+Authenticity
+Availability
+232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252
+& Utility
+elpoeP
+Figure 1. VERIS A4 Grid depicting the 315 high-level threat events
+Confidentiality
+253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273
+& Possession
+Integrity &
+274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294
+Authenticity
+Availability
+295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315
+& Utility
+The process described above has value beyond just describing the
+incident itself; it also helps identify what might have been done (or
+not done) to prevent it. The goal is straightforward: break the chain
+of events and you stop the incident from proceeding.
 
-### Data Collection Methodology for other contributors
-The USSS, NHTCU, AFP, IRISSCERT, and PCeU differed in precisely how they collected data contributed for this report, but they shared the same basic approach. All leveraged VERIS as the common denominator but used varying mechanisms for data entry. For instance, agents of the USSS used a VERIS-based internal application to record pertinent case details. For the AFP, we interviewed lead agents on each case, recorded the required data points, and requested follow-up information as necessary. The particular mechanism of data collection is less important than understanding that all data is based on real incidents and, most importantly, real facts about those incidents. These organizations used investigative notes, reports provided by the victim or other forensic firms, and their own experience gained in handling the case. The collected data was purged of any information that might identify organizations or individuals involved and then provided to Verizon’s RISK Team for aggregation and analysis.
+Figure 2. Sample VERIS incident scenario
+E1 E2 E3 CE1 E4
+External agent sends External agent accesses External agent accesses
+System administrator
+a phishing e-mail that Malware infects the the exec’s laptop via a mapped file server
+misconfigures access
+successfully lures an exec’s laptop, creating the backdoor, viewing from the exec’s laptop
+controls when building
+executive to open a backdoor. e-mail and other and steals intellectual
+a new file server.
+the attachment. sensitive data. property.
+TE#280 TE#148 TE#130 TE# 38 TE#4
+External External External Internal External
+Social Malware Hacking Error Hacking
+People User Devices User Devices Servers Servers
+Integrity Integrity Confidentiality Integrity Confidentiality
+A Word on Sample Bias
+Allow us to reiterate: we make no claim that the findings of this report are representative of all data breaches in all
+organizations at all times. Even though the merged dataset (presumably) more closely reflect reality than they
+might in isolation, it is still a sample. Although we believe many of the findings presented in this report to be
+appropriate for generalization (and our confidence in this grows as we gather more data and compare it to that of
+others), bias undoubtedly exists. Unfortunately, we cannot measure exactly how much bias exists (i.e., in order to
+give a precise margin of error). We have no way of knowing what proportion of all data breaches are represented
+because we have no way of knowing the total number of data breaches across all organizations in 2011. Many
+breaches go unreported (though our sample does contain many of those). Many more are as yet unknown by the
+victim (and thereby unknown to us). What we do know is that our knowledge grows along with what we are able to
+study and that grew more than ever in 2011. At the end of the day, all we as researchers can do is pass our findings
+on to you to evaluate and use as you see fit.
+Got a question or a comment about the DBIR?
+Drop us a line at dbir@verizon.com, find us on Facebook,
+or post to Twitter with the hashtag #dbir.
+8
 
-From the numerous investigations worked by these organizations in 2011, in alignment with the focus of the DBIR, the scope was narrowed to only those involving confirmed organizational data breaches.[^1] The scope was further narrowed to include only cases for which Verizon did not conduct the forensic investigation.[^2] All in all, these agencies contributed a combined 765 breaches for this report. Some may raise an eyebrow at the fact that Verizon’s caseload represents a relatively small proportion of the overall dataset discussed in this report, but we couldn’t be happier with this outcome. We firmly believe that more information creates a more complete and accurate understanding of the problem we all collectively face. If that means our data takes a backseat in a Verizon-authored publication, so be it; we’ll trade share of voice for shared data any day of the week.
+RESULTS AND ANALYSIS Table 1. Key for translating percents to
+numbers for the 2012 DBIR dataset
+The 2011 combined dataset represents the largest we have ever
+855 BREACHES
+covered in any single year, spanning 855 incidents and over 174 million
+% #
+compromised records (the second-highest total, if you’re keeping
+1% 9
+track). These next few paragraphs should help make some sense of it all.
+5% 43
+In several places throughout the text, we present and discuss the 10% 86
+entire range of data from 2004 to 2011. As you study these findings,
+25% 214
+keep in mind that the sample dataset is anything but static. The
+33% 282
+number, nature, and sources of cases change dramatically over time.
+50% 428
+Given this, you might be surprised at how stable many of the trends
+appear (a fact that we think strengthens their validity). On the other
+hand, certain trends are almost certainly more related to turmoil in the
+Values shown in dark gray pertain to
+sample than significant changes in the external threat environment. As
+breaches while values in red pertain
+in previous reports, the chosen approach is to present the combined
+to data records. The “breach” is the
+dataset intact and highlight interesting differences (or similarities)
+incident under investigation in a case
+within the text where appropriate. There are, however, certain data and “records” refer to the amount of
+points that were only collected for Verizon cases; these are identified data units (files, card numbers, etc.)
+in the text and figures. compromised in the breach. In some
+figures, we do not provide a specific
+The figures in this report utilize a consistent format. Values shown in
+number of records, but use a red “#”
+dark gray pertain to breaches while values in red pertain to data to denote a high proportion of data
+records. The “breach” is the incident under investigation in a case and loss. If one of these values
+“records” refer to the amount of data units (files, card numbers, etc.) represents a substantial change from
+prior years, this is marked with an
+compromised in the breach. In some figures, we do not provide a
+orange “+” or “–” symbol (denoting an
+specific number of records, but use a red “#” to denote a high proportion
+increase or decrease).
+of data loss. If one of these values represents a substantial change
+from prior years, this is marked with an orange “+” or “–” symbol
+(denoting an increase or decrease). Many figures and tables in this report add up to over 100%; this is not an error.
+It simply stems from the fact that items presented in a list are not always mutually exclusive, and, thus, several can
+apply to any given incident.
+Because the number of breaches in this report is so high, the use of percentages is a bit deceiving in some places
+(5 percent may not seem like much, but it represents over 40 incidents). Where appropriate, we show the raw number of
+breaches instead of or in addition to the percentages. A handy percent-to-number conversion table is shown in Table 1.
+Not all figures and tables contain all possible options but only those having a value greater than zero (and some truncate
+more than that). To see all options for any particular figure, refer to the VERIS framework.
+Some constructive criticism we received about the 2011 report suggested the dataset was so rife with small
+breach victims that it didn’t apply as strongly to larger organizations as it had in years past. (The nerve—can you
+believe those people?)
+We’re kidding, of course; this critique is both understandable and helpful. One of the problems with looking at a large
+amount of data for a diverse range of organizations is that averages across the whole are just so…average. Because the
+numbers speak for all organizations, they don’t really speak to any particular organization or demographic. This is
+unavoidable. We’ve made the conscious decision to study all types of data breaches as they affect all types of
+organizations, and if small businesses are dropping like flies, we’re not going to exclude them because they infest our data.
+What we can do, however, is to present the results in such a way that they are more readily applicable to certain groups.
+9
 
-While we’re on that topic, if your organization investigates or handles data breaches and might be interested in contributing to future DBIRs, let us know. The DBIR family continues to grow, and we welcome new members.
+We could split the dataset a myriad of ways, but we’ve chosen
+(partially due to the initial criticism mentioned above) to highlight
+differences (and similarities) between smaller and larger
+organizations (the latter having at least 1000 employees).
+We could split the dataset a myriad of ways, but we’ve chosen (partially due to the initial criticism mentioned above)
+to highlight differences (and similarities) between smaller and larger organizations (the latter having at least 1000
+employees). We hope this alleviates these concerns and makes the findings in this report both generally informative
+and particularly useful.
+Oh—and though we don’t exactly condone schadenfreude, we do hope you’ll find it enjoyable.
+Demographics
+Every year we begin with the demographics from the previous years’ breach victims because it sets the context for the rest
+of the information presented in the report. Establishing how the breaches break down across industries, company size,
+and geographic location should help you put some perspective around all the juicy bits presented in the following sections.
+This year we altered how we collect some of the demographic data. We decided to stop using our own list of
+industries and adopt the North American Industry Classification System (which is cross-referenced to other
+common classifications). As a result, some of the trending and comparisons from the industry breakdown in
+previous years lose some consistency, but for the most part the classifications map closely enough that
+comparisons are not without value.
+As Figure 3 shows, the top three spots carry over from our last report. The most-afflicted industry, once again, is
+Accommodation and Food Services, consisting of restaurants
+“The North American Industry (around 95%) and hotels (about 5%). The Financial and Insurance
+Classification System (NAICS) is the industry dropped from 22% in 2010 to approximately 10% last year.
+standard used by Federal statistical
+While we derived a range of plausible (and not-so-plausible)
+agencies in classifying business
+explanations for the widening gap between Financial and Food
+establishments for the purpose of
+Services, we will reserve most of those for more applicable sections
+collecting, analyzing, and publishing
+statistical data related to the U.S. in the report. Suffice it to say that it appears the cybercrime
+business economy. “industrialization” trend that so heavily influenced findings in our last
+NAICS was developed under the auspices report (and has been echoed by other reports in the industry7), is still
+of the Office of Management and Budget in full swing.
+(OMB), and adopted in 1997 to replace the
+When looking at the breakdown of records lost per industry in Figure
+Standard Industrial Classification (SIC)
+4, however, we find a very different result. The chart is overwhelmed
+system. It was developed jointly by the U.S.
+Economic Classification Policy Committee by two industries that barely make a showing in
+(ECPC), Statistics Canada , and Mexico’s Figure 3 and have not previously contributed to a large share of data
+Instituto Nacional de Estadistica y loss—Information and Manufacturing. We’ll touch more on this
+Geografia , to allow for a high level of
+throughout the report, but this surprising shift is mainly the result of
+comparability in business statistics among
+a few very large breaches that hit organizations in these industries in
+the North American countries.”
+2011. We suspect the attacks affecting these organizations were
+Source:
+directed against their brand and for their data rather than towards
+http://www.census.gov/eos/www/naics/
+their industry.
+7 For instance, see Trustwave’s 2012 Global Security Report discussing growing attacks against franchises.
+10
 
-### A BRIEF PRIMER ON VERIS
-VERIS is a framework designed to provide a common language for describing security incidents in a structured and repeatable manner. It takes the narrative of “who did what to what (or whom) with what result” and translates it into the kind of data you see presented in this report. Because many readers asked about the methodology behind the DBIR and because we hope to facilitate more information sharing on security incidents, we have released VERIS for free public use. A brief overview of VERIS is available on our website[^3] and the complete framework can be obtained from the VERIS community wiki.[^4] Both are good companion references to this report for understanding terminology and context.
+Figure 3. Industry groups represented by percent of breaches
+Accommodation and Food Services 54%
+Retail Trade 20%
+Finance and Insurance 10%–
+Health Care and Social Assistance 7%+
+Information 3%
+Other 6%
+Redrawing Figure 5 with these outliers removed reveals what is perhaps a more representative or typical account
+of compromised records across industries. Figure 4 is a bit more in line with historical data and also bears some
+resemblance to Figure 3 above.
+Once again, organizations of all sizes are
+Figure 4. Compromised Figure 5: Compromised records
+included among the 855 incidents in our
+records by industry group by industry group with breaches
+>1M records removed dataset. Smaller organizations represent the
+3% All Others majority of these victims, as they did in the last
+6% Other
+7% Information DBIR. Like some of the industry patterns, this
+Accommodation relates to the breed of “industrialized” attacks
+9%
+and Food Services
+mentioned above; they can be carried out
+45%+ Manufacturing Administrative and
+10%
+Support Services against large numbers in a surprisingly short
+timeframe with little to no resistance (from
+the victim, that is; law enforcement is watching
+28% Retail Trade
+and resisting. See the ”Discovery Methods”
+section as well as Appendix B.). Smaller
+businesses are the ideal target for such raids,
+52%+ Information and money-driven, risk-averse cybercriminals
+Finance and understand this very well. Thus, the number of
+40%
+Insurance
+victims in this category continues to swell.
+The rather large number of breaches tied to
+organizations of “unknown” size requires a
+quick clarification. While we ask DBIR
+contributors for demographic data, sometimes this information is not known or not relayed to us. There are valid
+situations where one can know details about attack methods and other
+characteristics, but little about victim demographics. This isn’t ideal, but Table 2. Organizational size by number
+it happens. Rather than brushing these aside as useless data, we’re using of breaches (number of employees)
+what can be validated and simply labeling what can’t as “unknown.” (See 1 to 10 42
+Table 2.) 11 to 100 570
+As mentioned in the Methodology section, we will be breaking out findings 101 to 1,000 48
+where appropriate for larger organizations. By “larger” we’re referring to 1,001 to 10,000 27
+those in our sample with at least 1000 employees. Remember that as you 10,001 to 100,000 23
+read this report. So that you have a better idea of the makeup of this Over 100,000 10
+subset, Figure 6 shows the industries of the 60 organizations meeting Unknown 135
+this criterion.
+11
 
-#### Classifying Incidents Using VERIS
-The Incident Classification section of the VERIS Framework translates the incident narrative of “who did what to what (or whom) with what result” into a form more suitable for trending and analysis. To accomplish this, VERIS employs the A4 Threat Model developed by Verizon’s RISK team. In the A4 model, a security incident is viewed as a series of events that adversely affects the information assets of an organization. Every event is comprised of the following elements (the four A’s):
-- Agent: Whose actions affected the asset
-- Action: What actions affected the asset
-- Asset: Which assets were affected
-- Attribute: How the asset was affected
+Figure 6. Industry groups represented by percent of breaches – LARGER ORGS
+Finance and Insurance 28%
+|               | Information  |     |     | 22% |
+| ------------- | ------------ | --- | --- | --- |
+|               | Retail Trade |     | 12% |     |
+| Manufacturing |              | 8%  |     |     |
+Public Administration 7%
+| Transportation and Warehousing |     | 5%  |     |     |
+| ------------------------------ | --- | --- | --- | --- |
+Other 18%
+As usual, it’s hard to pull meaning from where victims base their operations, since most breaches do not require the
+attacker to be physically present in order to claim their prize. We set a high mark in 2010 with 22 countries
+represented, but smashed that record in 2011 with a whopping 36 countries hosting organizations that fell victim
+to a data compromise. This is an area where the contributions of our global law enforcement partners really
+highlight the fact that data breaches are not an isolated regional problem.
 
-It is our position that the four A’s represent the minimum information necessary to adequately describe any incident or threat scenario. Furthermore, this structure provides an optimal framework within which to measure frequency, associate controls, link impact, and many other concepts required for risk management.
+Figure 7. Countries represented in combined caseload
+Countries in which a breach was confirmed
+| Australia | France  | Jordan      | Poland             | United Arab Emirates |
+| --------- | ------- | ----------- | ------------------ | -------------------- |
+| Austria   | Germany | Kuwait      | Romania            | Ukraine              |
+| Bahamas   | Ghana   | Lebanon     | Russian Federation | United Kingdom       |
+| Belgium   | Greece  | Luxembourg  | South Africa       | United States        |
+| Brazil    | India   | Mexico      | Spain              |                      |
+| Bulgaria  | Ireland | Netherlands | Taiwan             |                      |
+| Canada    | Israel  | New Zealand | Thailand           |                      |
+| Denmark   | Japan   | Philippines | Turkey             |                      |
+We set a high mark in 2010 with 22 countries represented, but
+smashed that record in 2011 with a whopping 36 countries hosting
+organizations that fell victim to a data compromise.
+12
 
-If we calculate all the combinations of the A4 model’s highest-level elements, (three Agents, seven Actions, five Assets, and three Attributes), 315 distinct threat events emerge. ![VERIS A4 Grid depicting the 315 high-level threat events]
+2011 DBIR: Threat Event Overview
+In last year’s DBIR, we presented the VERIS threat event grid populated with frequency counts for the first time.
+Other than new data sharing partners, it was one of the most well received features of the report. The statistics
+throughout this report provide separate analysis of the Agents, Actions, Assets, and Attributes observed, but the
+grid presented here ties it all together to show intersections between the four A’s. It gives a single big-picture view
+of the threat events associated with data breaches in 2011. Figure 8 (overall dataset) and Figure 9 (larger orgs) use
+the structure of Figure 1 from the Methodology section, but replace TE#s with the total number of breaches in
+which each threat event was part of the incident scenario.8 This is our most consolidated view of the 855 data
+breaches analyzed this year, and there are several things worth noting.
+Malware Hacking Social Misuse Physical Error Environmental
+Ext Int Prt Ext Int Prt Ext Int Prt Ext Int Prt Ext Int Prt Ext Int Prt Ext Int Prt
+When we observe the overall dataset from a threat management perspective, only 40 of the 315 possible threat
+events have values greater than zero (13%). Before going further, we need to restate that not all intersections in
+the grid are feasible. Readers should also remember that this report focuses solely on data breaches. During
+engagements where we have worked with organizations to “VERIS-ize” all their security incidents over the course
+of a year, it’s quite interesting to see how different these grids look when compared to DBIR datasets. As one might
+theorize, Error and Misuse as well as Availability losses prove much more common.
+8 In other words, 381 of the 855 breaches in 2011 involved external malware that affected the confidentiality of a server (the top left threat event).
+13
+srevreS
+Confidentiality
+381 518 1 9 8 1 2 1
+& Possession
+Integrity &
+397 422 1 6 1 1
+Authenticity
+Availability
+2 6 5
+& Utility
+skrowteN
+Confidentiality
+1
+& Possession
+Integrity &
+1 1
+Authenticity
+Availability
+1 1 1
+& Utility
+seciveD
+resU
+Confidentiality
+356 419 1 86
+& Possession
+Integrity &
+355 355 1 1 86
+Authenticity
+Availability
+1 3
+& Utility
+ataD
+eniflfO
+Confidentiality
+23 1
+& Possession
+Integrity &
+Authenticity
+Availability
+& Utility
+elpoeP
+Figure 8. VERIS A4 Grid depicting the frequency of high-level threat events
+Confidentiality
+30 1
+& Possession
+Integrity &
+59 2
+Authenticity
+Availability
+& Utility
 
-#### Turning the Incident Narrative into Metrics
-As stated above, incidents often involve multiple threat events. Identifying which are in play, and using them to reconstruct the chain of events is how we model an incident to generate the statistics in this report. By way of example, we describe below a simplified hypothetical incident where a “spear phishing” attack is used to exfiltrate sensitive data and intellectual property (IP) from an organization. ![Sample VERIS incident scenario]
+Malware Hacking Social Misuse Physical Error Environmental
+Ext Int Prt Ext Int Prt Ext Int Prt Ext Int Prt Ext Int Prt Ext Int Prt Ext Int Prt
+14
+srevreS
+Confidentiality
+7 33 3 2 1
+& Possession
+Integrity &
+10 18 1
+Authenticity
+Availability
+1
+& Utility
+skrowteN
+Confidentiality
+& Possession
+Integrity &
+Authenticity
+Availability
+1 1
+& Utility
+seciveD
+resU
+Confidentiality
+3 6 10
+& Possession
+Integrity &
+4 2 10
+Authenticity
+Availability
+1
+& Utility
+ataD
+eniflfO
+Confidentiality
+1 1
+& Possession
+Integrity &
+Authenticity
+Availability
+& Utility
+elpoeP
+Figure 9. VERIS A4 Grid depicting the frequency of high-level threat events – LARGER ORGS
+Confidentiality
+7
+& Possession
+Integrity &
+11
+Authenticity
+Availability
+& Utility
+USING VERIS FOR EVIDENCE-BASED RISK MANAGEMENT
+This may sound like an advertisement, but it’s not—you measure the effectiveness of your prescriptions to
+can do this using VERIS (which is free!). Imagine, as a risk track whether incidents and losses decrease after these
+manager, having access to all security incidents within treatments are administered. Thus, you achieve a state
+your organization classified using VERIS (if you really where better measurement enables better management.
+want to let your imagination run wild, think about also Colleagues start referring to you as the “Risk Doctor”
+having similar data from other organizations like your and suddenly your opinion matters in security spending
+own). Over time, a historical dataset is created, giving discussions. This could be you.
+you detailed information on what’s happened, how often
+Obviously, this is meant to be tongue in cheek, but we
+it’s happened, and what hasn’t happened within your
+truly do believe in the merit of an approach like this. We
+organization. Unknowns and uncertainties begin to
+like to refer to this approach as “Evidence-Based Risk
+recede. You give it to your data visualization guy who
+Management” (EBRM), borrowing from the concept of
+cranks out a grid for your various business groups
+evidence-based medicine. Essentially, EBRM aims to
+similar to Figure 9. Hotspots on the grid focus your
+apply the best available evidence gained from empirical
+attention on critical problem areas and help to properly
+research to measure and manage information risk.
+diagnose underlying ailments. From there, treatment
+Security incidents, whether large or small, are a huge
+strategies to deter, prevent, detect, or help recover from
+part of that “best available evidence.” This is why we
+recurring (or damaging) threat events can be identified
+assert that meticulously analyzing them is a highly
+and prioritized. But you don’t stop there; you actually
+beneficial practice.
 
-### A Word on Sample Bias
-Allow us to reiterate: we make no claim that the findings of this report are representative of all data breaches in all organizations at all times. Even though the merged dataset (presumably) more closely reflect reality than they might in isolation, it is still a sample. Although we believe many of the findings presented in this report to be appropriate for generalization (and our confidence in this grows as we gather more data and compare it to that of others), bias undoubtedly exists. Unfortunately, we cannot measure exactly how much bias exists (i.e., in order to give a precise margin of error). We have no way of knowing what proportion of all data breaches are represented because we have no way of knowing the total number of data breaches across all organizations in 2011. Many breaches go unreported (though our sample does contain many of those). Many more are as yet unknown by the victim (and thereby unknown to us). What we do know is that our knowledge grows along with what we are able to study and that grew more than ever in 2011. At the end of the day, all we as researchers can do is pass our findings on to you to evaluate and use as you see fit.
+Now back to the grids, where the results for the overall dataset share many similarities with our last report. The
+biggest changes are that hotspots in the Misuse and Physical areas are a little cooler, while Malware and Hacking
+against Servers and User Devices are burning brighter than ever. Similarly, the list of top threat events in Table 3
+feels eerily familiar.
+The results for the overall dataset share many similarities with our last
+report. The biggest changes are that hotspots in the Misuse and Physical
+areas are a little cooler, while Malware and Hacking against Servers and
+User Devices are burning brighter than ever.
+Separating the threat events for larger
+Table 3. Top 10 VERIS threat events organizations in Figure 9 yields a few
+additional talking points. Some might be
+Threat
+Threat Event Event # Counts surprised that this version of the grid is less
+1 External.Hacking.Server.Confidentiality 4 518 “covered” than Figure 8 (22 of the 315
+2 External.Hacking.Server.Integrity 28 422 events—7%—were seen at least once). One
+would expect that the bigger attack surface
+3 External.Hacking.UserDevice.Confidentiality 130 419
+and stronger controls associated with larger
+4 External.Malware.Server.Integrity 22 397
+organizations would spread attacks over a
+5 External.Malware.Server.Confidentiality 1 381
+greater portion of the grid. This may be true,
+6 External.Malware.UserDevice.Confidentiality 127 356
+and our results shouldn’t be used to contradict
+7 External.Malware.UserDevice.Integrity 148 355
+that point. We believe the lower density of
+8 External.Hacking.UserDevice.Integrity 151 355
+Figure 9 compared to Figure 8 is mostly a
+9 External.Physical.UserDevice.Confidentiality 139 86
+result of size differences in the datasets (855
+10 External.Physical.UserDevice.Integrity 160 86
+versus 60 breaches). With respect to threat
+diversity, it’s interesting that the grid for
+larger organizations shows a comparatively
+Table 4. Top 10 VERIS threat events – LARGER ORGS
+more even distribution across in-scope threat
+Threat events (i.e., less extreme clumping around
+Threat Event Counts
+Event #
+Malware and Hacking). Related to this, Social
+1 External.Hacking.Server.Confidentiality 4 33
+and Physical events make the top 10 list in
+2 External.Hacking.Server.Integrity 28 18
+Table 4. Based on descriptions in the press of
+3 External.Social.People.Integrity 280 11
+prominent attacks leveraging forms of social
+4 External.Malware.Server.Integrity 22 10
+engineering, this isn’t a shocker.
+5 External.Physical.UserDevice.Confidentiality 139 10
+Naturally, we’ll expound on all of this
+6 External.Physical.UserDevice.Integrity 160 10
+throughout the following sections.
+7 External.Malware.Server.Confidentiality 1 7
+8 External.Social.People.Confidentiality 259 7
+9 External.Hacking.UserDevice.Confidentiality 130 6
+10 External.Malware.UserDevice.Integrity 148 4
+15
 
----
+Threat Agents VERIS Classification Note: If the
+Entities that cause or contribute to an incident are known as threat agent’s role in the breach is limited
+to a contributory error, the agent
+agents. There can, of course, be more than one agent involved in any
+would not be included here. For
+particular incident. Actions performed by them can be malicious or non-
+example, if an insider’s unintentional
+malicious, intentional or unintentional, causal or contributory, and stem
+misconfiguration of an application
+from a variety of motives (all of which will be discussed in subsequent left it vulnerable to attack, the
+agent-specific sections). Identification of the agents associated with an insider would not be considered a
+incident is critical to taking specific corrective actions as well as informing threat agent if the application were
+successfully breached by another
+decisions regarding future defensive strategies. VERIS specifies three
+agent. An insider who deliberately
+primary categories of threat agents—External, Internal, and Partner.
+steals data or whose inappropriate
+(cid:113)(cid:1) External: External threats originate from sources outside of the behavior (e.g., policy violations)
+facilitated the breach would be
+organization and its network of partners. Examples include former
+considered a threat agent in
+employees, lone hackers, organized criminal groups, and
+the breach.
+government entities. External agents also include environmental
+events such as floods, earthquakes, and power disruptions.
+Typically, no trust or privilege is implied for external entities.
+(cid:113)(cid:1) Internal: Internal threats are those originating from within the organization. This encompasses company
+executives, employees, independent contractors, interns, etc., as well as internal infrastructure. Insiders are
+trusted and privileged (some more than others).
+(cid:113)(cid:1) Partners: Partners include any third party sharing a business relationship with the organization. This
+includes suppliers, vendors, hosting providers, outsourced IT support, etc. Some level of trust and privilege
+is usually implied between business partners.
+Figure 10 displays the distribution of threat agents by percentage of breaches in this year’s dataset, along with all
+previous years of this study. It’s important to keep in mind that we’re not looking at a consistent sample. The first
+few years were based only on Verizon cases, then the USSS (2007-2011), NHTCU (2006-2011), AFP (2011),
+IRISSCERT (2011), and PCeU (2011) joined at various points in the years that followed. Thus, trends are the
+combination of changes in the threat environment and changes within the sample dataset.
+Figure 10. Threat agents over time by percent of breaches
+98%
+86%
+78%
+72%
+70%
+48%
+39%
+33%
+11% 6% 6% 12% 2% 4% <1%
+‘04–’07 2008 2009 2010 2011
+External Internal Partner
+16
 
-## 2011 DBIR: Threat Event Overview
-In last year’s DBIR, we presented the VERIS threat event grid populated with frequency counts for the first time. Other than new data sharing partners, it was one of the most well received features of the report. The statistics throughout this report provide separate analysis of the Agents, Actions, Assets, and Attributes observed, but the grid presented here ties it all together to show intersections between the four A’s. It gives a single big-picture view of the threat events associated with data breaches in 2011. ![VERIS A4 Grid depicting the frequency of high-level threat events] (overall dataset) and ![VERIS A4 Grid depicting the frequency of high-level threat events – LARGER ORGS] (larger orgs) use the structure of the Methodology section, but replace TE#s with the total number of breaches in which each threat event was part of the incident scenario.[^5] This is our most consolidated view of the 855 data breaches analyzed this year, and there are several things worth noting.
+2011 continued the shift towards external agents’ involvement in a high percentage of data breaches. Though we
+have always seen an external majority, never before has any year been so one-sided. 2009 was the closest to an
+exception to that rule, but the rise in internal agents was mostly the by-product of incorporating the insider-heavy
+USSS caseload (see the 2010 DBIR9 for more detail). Since then, it’s been primarily outsiders in the caseloads
+we’ve examined.
+2011 continued the
+Apart from yearly sample variations, there are several factors contributing to
+the escalating percentage of external agents vs. insiders and partners in this shift towards external
+report. The primary factor, which was addressed at length in the 2011 DBIR10, is agents’ involvement in
+the continued effect of “industrialized” attacks on these ratios. Organized
+a high percentage of
+criminal groups targeting payment card information from Internet-facing POS
+systems or physically-exposed ATMs and gas pumps can launch a sting against data breaches. Though
+hundreds of victims during the same operation. From a percentage standpoint,
+we have always seen
+the resulting effect that these commoditized yet highly-scalable attacks have
+an external majority,
+on threat agent trends makes perfect sense. Insiders, by definition, have a
+smaller number of potential targets. never before has any
+Another contributor to the continued rise of external agents in 2011 was the year been so one-sided.
+reinvigorated conducts of activist groups. Commonly known as “hacktivism,”
+these attacks are inherently external in nature. They are not nearly as frequent (one might even say “constant”) as
+mainline cybercrime, but as will be seen below, they can be quite damaging.
+We would be remiss if we did not point out that in 2011, there were several investigations involving internal agents
+that did not meet the definition of a data breach. When insiders misuse access or information provided for their job
+duties, but did not disclose information to an unauthorized party, then no loss of confidentiality has occurred.11
+Such incidents are not included in this report.
+Another interesting observation about 2011 is the much lower percentage of multi-agent breaches. Back in 2009,
+over one-quarter of all incidents was the work of more than one category of threat agent. Such incidents sometimes
+involve overt collusion, but more often outsiders solicit insiders to participate in some aspect of the crime. In 2011,
+that figure was just 2%. The decline here can also be attributed to the “industrialization” trend discussed above.
+Partner threat agents have realized a steady decrease over the last few years, and this dataset is no exception.12
+With less than 1% of breaches caused by a partner, it will be hard to go anywhere but up in the next report. Similar
+to insiders, the dramatic increase in external agents helps to explain this decline, but there are other factors as
+well. Notice that the downward trend began in 2008, which precedes the major shift towards highly-scalable
+attacks by outsiders. We have given several hypotheses in past reports, including increased awareness, regulation,
+and technology advancements. More significant is how we define causal and contributory agents. Partners that did
+not have a causal role in the incident are not included in these percentages. More discussion on such scenarios can
+be found in the Partner and Error sections of this report.
+It is also entirely possible that malicious insiders and/or partners are flying under the radar and thus avoiding
+discovery. We have lamented in previous reports (and will lament in later sections) that a high percentage of breaches
+are identified by fraud detection. However, compromises of non-financial data do not have these mechanisms to
+trigger awareness, and are therefore more difficult to discover. Our data consistently shows that trusted parties are
+9 http://www.verizonbusiness.com/resources/reports/rp_2010-data-breach-report_en_xg.pdf
+10 http://www.verizonbusiness.com/go/2011dbir/us/
+11 A frequent example of this is a bank employee who uses system privileges to make an unauthorized withdrawal or transfer of funds. This is certainly a security violation, but it is not a data breach.
+12 Some may rightly remember that the percentage tied to partners was substantially higher in prior reports. Keep in mind that those reports showed Verizon data separately, whereas this is the
+combined data from all participating organizations “retrofitted” to historical data. It definitely changes the results.
+17
 
-When we observe the overall dataset from a threat management perspective, only 40 of the 315 possible threat events have values greater than zero (13%). Before going further, we need to restate that not all intersections in the grid are feasible. Readers should also remember that this report focuses solely on data breaches. During engagements where we have worked with organizations to “VERIS-ize” all their security incidents over the course of a year, it’s quite interesting to see how different these grids look when compared to DBIR datasets. As one might theorize, Error and Misuse as well as Availability losses prove much more common.
-
-### USING VERIS FOR EVIDENCE-BASED RISK MANAGEMENT
-This may sound like an advertisement, but it’s not—you can do this using VERIS (which is free!). Imagine, as a risk manager, having access to all security incidents within your organization classified using VERIS (if you really want to let your imagination run wild, think about also having similar data from other organizations like your own). Over time, a historical dataset is created, giving you detailed information on what’s happened, how often it’s happened, and what hasn’t happened within your organization. Unknowns and uncertainties begin to recede. You give it to your data visualization guy who cranks out a grid for your various business groups similar to Figure 9. Hotspots on the grid focus your attention on critical problem areas and help to properly diagnose underlying ailments. From there, treatment strategies to deter, prevent, detect, or help recover from recurring (or damaging) threat events can be identified and prioritized. But you don’t stop there; you actually measure the effectiveness of your prescriptions to track whether incidents and losses decrease after these treatments are administered. Thus, you achieve a state where better measurement enables better management. Colleagues start referring to you as the “Risk Doctor” and suddenly your opinion matters in security spending discussions. This could be you.
-
-Obviously, this is meant to be tongue in cheek, but we truly do believe in the merit of an approach like this. We like to refer to this approach as “Evidence-Based Risk Management” (EBRM), borrowing from the concept of evidence-based medicine. Essentially, EBRM aims to apply the best available evidence gained from empirical research to measure and manage information risk. Security incidents, whether large or small, are a huge part of that “best available evidence.” This is why we assert that meticulously analyzing them is a highly beneficial practice.
-
-Now back to the grids, where the results for the overall dataset share many similarities with our last report. The biggest changes are that hotspots in the Misuse and Physical areas are a little cooler, while Malware and Hacking against Servers and User Devices are burning brighter than ever. Similarly, the list of top threat events in Table 3 feels eerily familiar.
-
-Separating the threat events for larger organizations yields a few additional talking points. Some might be surprised that this version of the grid is less “covered” than the overall grid (22 of the 315 events—7%—were seen at least once). One would expect that the bigger attack surface and stronger controls associated with larger organizations would spread attacks over a greater portion of the grid. This may be true, and our results shouldn’t be used to contradict that point. We believe the lower density compared to the overall grid is mostly a result of size differences in the datasets (855 versus 60 breaches). With respect to threat diversity, it’s interesting that the grid for larger organizations shows a comparatively more even distribution across in-scope threat events (i.e., less extreme clumping around Malware and Hacking). Related to this, Social and Physical events make the top 10 list. Based on descriptions in the press of prominent attacks leveraging forms of social engineering, this isn’t a shocker.
-
----
-
-## Threat Agents
-Entities that cause or contribute to an incident are known as threat agents. There can, of course, be more than one agent involved in any particular incident. Actions performed by them can be malicious or non-malicious, intentional or unintentional, causal or contributory, and stem from a variety of motives (all of which will be discussed in subsequent agent-specific sections). Identification of the agents associated with an incident is critical to taking specific corrective actions as well as informing decisions regarding future defensive strategies. VERIS specifies three primary categories of threat agents—External, Internal, and Partner.
-- **External**: External threats originate from sources outside of the organization and its network of partners. Examples include former employees, lone hackers, organized criminal groups, and government entities. External agents also include environmental events such as floods, earthquakes, and power disruptions. Typically, no trust or privilege is implied for external entities.
-- **Internal**: Internal threats are those originating from within the organization. This encompasses company executives, employees, independent contractors, interns, etc., as well as internal infrastructure. Insiders are trusted and privileged (some more than others).
-- **Partners**: Partners include any third party sharing a business relationship with the organization. This includes suppliers, vendors, hosting providers, outsourced IT support, etc. Some level of trust and privilege is usually implied between business partners.
-
-> **VERIS Classification Note**: If the threat agent’s role in the breach is limited to a contributory error, the agent would not be included here. For example, if an insider’s unintentional misconfiguration of an application left it vulnerable to attack, the insider would not be considered a threat agent if the application were successfully breached by another agent. An insider who deliberately steals data or whose inappropriate behavior (e.g., policy violations) facilitated the breach would be considered a threat agent in the breach.
-
-2011 continued the shift towards external agents’ involvement in a high percentage of data breaches. Though we have always seen an external majority, never before has any year been so one-sided. 2009 was the closest to an exception to that rule, but the rise in internal agents was mostly the by-product of incorporating the insider-heavy USSS caseload (see the 2010 DBIR for more detail). Since then, it’s been primarily outsiders in the caseloads we’ve examined.
-
----
-
-[^1]: “Organizational data breach” refers to incidents involving the compromise (unauthorized access, theft, disclosure, etc.) of non-public information while it was stored, processed, used, or transmitted by an organization.
-[^2]: We often work, in one manner or another, with these agencies during an investigation. To eliminate redundancy, Verizon-contributed data were used when both Verizon and another agency worked the same case.
-[^3]: http://www.verizonbusiness.com/resources/whitepapers/wp_verizon-incident-sharing-metrics-framework_en_xg.pdf
-[^4]: https://verisframework.wiki.zoho.com/
-[^5]: In other words, 381 of the 855 breaches in 2011 involved external malware that affected the confidentiality of a server (the top left threat event).
-
----
-
-virtually all of it. When compared
+considerably more likely to steal intellectual property
+Figure 11. Threat agents (exclusive) by percent of breaches
+and other sensitive (non-financial) data, and there’s a
+95%+ 2% <1% 2% good chance these activities would never be detected.
+This is not included to “apologize” for bias or to spread
+FUD, but to raise a valid point that insiders and partners
+are probably under-represented in Figure 10 (though, in
+External only Internal only Partner only Multiple the grand scheme of things, we still don’t think they’re
+agents
+anywhere close to outsiders).
+In keeping with our promise to give findings specific to
+larger organizations, we present Figure 12. Those hoping to see
+Figure 12. Threat agents by percent of breaches
+– LARGER ORGS a significantly different result here are bound for disappointment.
+(Don’t you hate it when data gets in the way of a good theory?)
+87%
+We had an incredibly insightful and rational explanation ready to
+explain why insiders and partners were more likely to attack
+larger organizations, but alas, it’s gone to waste.
+Breach Size by Threat Agents
+Data compromise, as measured by number of records lost, is
+not indicative of the full impact of the breach, but is a useful
+and measurable indicator of it. We agree that it would be
+optimal to include more information on losses associated with
+5% 5%
+3%
+response, brand damage, business disruption, legal penalties,
+External Internal Partner Unknown etc. As a small step in this direction, we have added a short
+section to this report discussing some of these consequences.
+Here, we focus exclusively on the amount of data loss.
+Figure 13 shows the distribution among threat agents of the approximately 174 million records compromised
+across the merged 2011 dataset. No, we didn’t forget
+to include bubbles for insiders and partners; it’s just Figure 13. Compromised records by threat agent, 2011
+that outsiders stole virtually all of it. When compared
 173,874,419 55,493 153,002 403
 to the entire dataset encompassing all years of this
 study (Figure 14), the effect isn’t much different (but
@@ -2965,4 +3791,4 @@ verizon.com/enterprise
 © 2012 Verizon. All Rights Reserved. MC15244 03/12. The Verizon and Verizon Business names and logos and all other names, logos, and slogans identifying Verizon’s products and services are trademarks and service marks
 or registered trademarks and service marks of Verizon Trademark Services LLC or its affiliates in the United States and/or other countries. All other trademarks and service marks are the property of their respective owners.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-06", "model": "gemini-3.7-flash"} -->
