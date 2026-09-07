@@ -3,9 +3,21 @@ name: VirusTotal Daily Background Scan
 on:
   schedule:
     - cron: '0 0 * * *' # Every day at midnight UTC
-  workflow_dispatch: # Allow manual trigger
-
-
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Scan Mode'
+        required: true
+        default: 'daily_scan'
+        type: choice
+        options:
+          - daily_scan
+          - audit_unseen
+      batch_limit:
+        description: 'Batch limit for audit mode (Free tier daily quota is 500)'
+        required: false
+        default: '450'
+        type: string
 
 permissions:
   contents: read
@@ -39,15 +51,26 @@ jobs:
       - name: Find all PDFs
         run: python .github/scripts/find-files.py --all
 
-      - name: Run Daily Scan
+      - name: Run Scan
         id: vt-scan
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
+          VT_MODE: ${{ inputs.mode || 'daily_scan' }}
+          VT_BATCH_LIMIT: ${{ inputs.batch_limit || '450' }}
         run: |
           python .github/scripts/virus-total-scan.py \
             files_to_process.txt \
-            --daily-mode \
             --artifacts-dir .github/artifacts
+
+      - name: Upload Unseen PDFs Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unseen-pdfs-to-submit
+          path: |
+            unseen_pdfs_to_submit.txt
+            unseen_pdfs_to_submit.json
+          if-no-files-found: ignore
 
       - name: Open Issue on Malicious Finding
         if: failure()
