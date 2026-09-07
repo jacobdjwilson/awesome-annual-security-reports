@@ -180,6 +180,8 @@
       "poll_attempts": 5,
       "poll_backoff_base_seconds": 10,
       "rate_limit_sleep_seconds": 15,
+      "default_audit_batch_limit": 450,
+      "unseen_output_file": "unseen_pdfs_to_submit.txt",
       "skip_on_schedule": false,
       "skip_on_push": false,
       "python_packages": [
