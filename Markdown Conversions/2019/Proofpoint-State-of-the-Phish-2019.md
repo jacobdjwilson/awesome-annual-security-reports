@@ -1123,4 +1123,4 @@ of any network is a requirement nowadays, and we are pleased to provide the most
 can help protect your business from cyber-attacks, contact us any time.
 Security Awareness Training
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-06", "model": "gemini-3.7-flash"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-07", "model": "gemini-3.7-flash"} -->

@@ -1,399 +1,1091 @@
-# 2019 Data Breach Investigations Report
-
-## Table of Contents
-- [Introduction](#introduction)
-- [Summary of findings](#summary-of-findings)
-- [Results and analysis](#results-and-analysis)
-  - [Defining the threats](#defining-the-threats)
-  - [Threat action varieties](#threat-action-varieties)
-  - [Hacking](#hacking)
-  - [Malware](#malware)
-  - [Phishing](#phishing)
-  - [Misuse](#misuse)
-  - [Error](#error)
-  - [Affected assets](#affected-assets)
-  - [Compromised data](#compromised-data)
-  - [Breach timeline](#breach-timeline)
-- [Unbroken chains](#unbroken-chains)
-  - [Attack Paths and Mitigations](#attack-paths-and-mitigations)
-- [Incident classification patterns and subsets](#incident-classification-patterns-and-subsets)
-  - [Patterns within patterns](#patterns-within-patterns)
-- [Data breaches: extended version](#data-breaches-extended-version)
-
----
-
-2019 Data Breach Investigations Report
+2019 Data Breach
+Investigations
+Report
 4e 6f 20 63 6f 76 65 72 20 63 68 61 6c 6c 65 6e 67 65 20 74 68 69 73 20 79 65 61 72
 business ready
 
-## A couple of tidbits
-Before we formally introduce you to the 2019 Data Breach Investigations Report (DBIR), let us get some clarifications out of the way first to reduce potential ambiguity around terms, labels, and figures that you will find throughout this study.
-
-### VERIS resources
-The terms “threat actions,” “threat actors,” “varieties,” and “vectors” will be referenced a lot. These are part of the Vocabulary for Event Recording and Incident Sharing (VERIS), a framework designed to allow for a consistent, unequivocal collection of security incident details. Here are some select definitions followed by links with more information on the framework and on the enumerations.
-
-**Threat actor:**
-Who is behind the event? This could be the external “bad guy” that launches a phishing campaign, or an employee who leaves sensitive documents in their seat back pocket.
-
-**Threat action:**
-What tactics (actions) were used to affect an asset? VERIS uses seven primary categories of threat actions: Malware, Hacking, Social, Misuse, Physical, Error, and Environmental. Examples at a high level are hacking a server, installing malware, and influencing human behavior.
-
-**Variety:**
-More specific enumerations of higher level categories - e.g., classifying the external “bad guy” as an organized criminal group, or recording a hacking action as SQL injection or brute force.
-
-Learn more here:
-- github.com/vz-risk/dbir/tree/gh-pages/2019 – DBIR figures and figure data.
-- veriscommunity.net features information on the framework with examples and enumeration listings.
-- github.com/vz-risk/veris features the full VERIS schema.
-- github.com/vz-risk/vcdb provides access to our database on publicly disclosed breaches, the VERIS Community Database.
-- http://veriscommunity.net/veris_webapp_min.html allows you to record your own incidents and breaches. Don’t fret, it saves any data locally and you only share what you want.
-
-### Incident vs. breaches
-We talk a lot about incidents and breaches and we use the following definitions:
-
-**Incident:**
-A security event that compromises the integrity, confidentiality or availability of an information asset.
-
-**Breach:**
-An incident that results in the confirmed disclosure—not just potential exposure—of data to an unauthorized party.
-
-### Industry labels
-We align with the North American Industry Classification System (NAICS) standard to categorize the victim organizations in our corpus. The standard uses 2 to 6 digit codes to classify businesses and organizations. Our analysis is typically done at the 2-digit level and we will specify NAICS codes along with an industry label. For example, a chart with a label of Financial (52) is not indicative of 52 as a value. 52 is the NAICS code for the Finance and Insurance sector. The overall label of “Financial” is used for brevity within the figures. Detailed information on the codes and classification system is available here:  
+2
+A couple of tidbits
+Before we formally introduce you to the 2019 Data Breach Investigations Report (DBIR),
+let us get some clarifications out of the way first to reduce potential ambiguity around terms,
+labels, and figures that you will find throughout this study.
+VERIS resources Industry labels
+The terms “threat actions,” “threat actors,” “varieties,” and “vectors” We align with the North American Industry Classification
+will be referenced a lot. These are part of the Vocabulary for Event System (NAICS) standard to categorize the victim organizations
+Recording and Incident Sharing (VERIS), a framework designed to in our corpus. The standard uses 2 to 6 digit codes to classify
+allow for a consistent, unequivocal collection of security incident businesses and organizations. Our analysis is typically done at
+details. Here are some select definitions followed by links with the 2-digit level and we will specify NAICS codes along with an
+more information on the framework and on the enumerations. industry label. For example, a chart with a label of Financial (52)
+is not indicative of 52 as a value. 52 is the NAICS code for the
+Threat actor: Finance and Insurance sector. The overall label of “Financial” is
+Who is behind the event? This could be the external “bad guy” used for brevity within the figures. Detailed information on the
+codes and classification system is available here:
+that launches a phishing campaign, or an employee who leaves
+sensitive documents in their seat back pocket.
 https://www.census.gov/cgi-bin/sssd/naics/naicsrch?chart=2017
-
-### New chart, who dis?
-You may notice that the bar chart shown may not be as, well, bar-ish as what you may be used to. Last year we talked a bit in the Methodology section about confidence. When we say a number is X, it’s really X +/- a small amount.
-
-![Server (All breaches, n=1,881) and Server (Just large organization breaches, n=335) confidence interval chart]
-
-This year we’re putting it in the bar charts. The black dot is the value, but the slope gives you an idea of where the real value could be between. In this sample figure we’ve added a few red bars to highlight it, but in 19 bars out of 20 (95%),[^1] the real number will be between the two red lines on the bar chart. Notice that as the sample size (n) goes down, the bars get farther apart. If the lower bound of the range on the top bar overlaps with the higher bound of the bar beneath it, they are statistically similar and thus statements that x is more than y will not be proclaimed.
-
-Questions? Comments? Brilliant ideas? We want to hear them. Drop us a line at dbir@verizon.com, find us on LinkedIn, tweet @VZEnterprise with the #dbir.  
-Got a data question? Tweet @VZDBIR!
-
-[^1] https://en.wikipedia.org/wiki/Confidence_interval
-
----
-
-## Introduction
-> “The wound is the place where the light enters you.”  
-> — Rumi
-
-Welcome! Pull up a chair with the 2019 Verizon Data Breach Investigations Report (DBIR). The statements you will read in the pages that follow are data-driven, either by the incident corpus that is the foundation of this publication, or by non-incident data sets contributed by several security vendors.
-
-This report is built upon analysis of 41,686 security incidents, of which 2,013 were confirmed data breaches. We will take a look at how results are changing (or not) over the years as well as digging into the overall threat landscape and the actors, actions, and assets that are present in breaches. Windows into the most common pairs of threat actions and affected assets also are provided. This affords the reader with yet another means to analyze breaches and to find commonalities above and beyond the incident classification patterns that you may already be acquainted with.
-
-Fear not, however. The nine incident classification patterns are still around, and we continue to focus on how they correlate to industry. In addition to the nine primary patterns, we have created a subset of data to pull out financially-motivated social engineering (FMSE) attacks that do not have a goal of malware installation. Instead, they are more focused on credential theft and duping people into transferring money into adversary-controlled accounts. In addition to comparing industry threat profiles to each other, individual industry sections are once again front and center.
-
-Joining forces with the ever-growing incident/breach corpus, several areas of research using non-incident data sets such as malware blocks, results of phishing training, and vulnerability scanning are also utilized. Leveraging, and sometimes combining, disparate data sources (like honeypots and internet scan research) allows for additional data-driven context.
-
-It is our charge to present information on the common tactics used by attackers against organizations in your industry. The purpose of this study is not to rub salt in the wounds of information security, but to contribute to the “light” that raises awareness and provides the ability to learn from the past. Use it as another arrow in your quiver to win hearts, minds, and security budget. We often hear that this is “required reading” and strive to deliver actionable information in a manner that does not cause drowsiness, fatigue, or any other adverse side effects.
-
-We continue to be encouraged and energized by the coordinated data sharing by our 73 data sources, 66 of which are organizations external to Verizon. This community of data contributors represents an international group of public and private entities willing to support this annual publication. We again thank them for their support, time, and, of course, DATA.
-
-We all have wounds, none of us knows everything, let’s learn from each other.
-
-Excelsior![^2]
-
-[^2] If you didn’t expect a Stan Lee reference in this report, then you are certainly a first-time reader. Welcome to the party pal!
-
----
-
-## Summary of findings
-- 69% perpetrated by outsiders
-- 34% involved Internal actors
-- 2% involved Partners
-- 5% featured Multiple parties
-- Organized criminal groups were behind 39% of breaches
-- Actors identified as nation-state or state-affiliated were involved in 23% of breaches
-- 43% of breaches involved small business victims
-- 16% were breaches of Public sector entities
-- 15% were breaches involving Healthcare organizations
-- 10% were breaches of the Financial industry
-
-![Figure 2. Who are the victims? / Figure 4. Who's behind the breaches?]
-
-- 52% of breaches featured Hacking
-- 33% included Social attacks
-- 28% involved Malware
-- Errors were causal events in 21% of breaches
-- 15% were Misuse by authorized users
-- Physical actions were present in 4% of breaches
-- 71% of breaches were financially motivated
-- 25% of breaches were motivated by the gain of strategic advantage (espionage)
-- 32% of breaches involved phishing
-- 29% of breaches involved use of stolen credentials
-- 56% of breaches took months or longer to discover
-
-![Figure 3. What tactics are utilized? / Figure 5. What are other commonalities?]
-
----
-
-## Results and analysis
-The results found in this and subsequent sections within the report are based on a data set collected from a variety of sources such as publicly-disclosed security incidents, cases provided by the Verizon Threat Research Advisory Center (VTRAC) investigators, and by our external collaborators. The year-to-year data set(s) will have new sources of incident and breach data as we strive to locate and engage with organizations that are willing to share information to improve the diversity and coverage of real-world events. This is a convenience sample, and changes in contributors, both additions and those who were not able to participate this year, will influence the data set. Moreover, potential changes in their areas of focus can stir the pot o’ breaches when we trend over time. All of this means we are not always researching and analyzing the same fish in the same barrel. Still other potential factors that may affect these results are changes in how we subset data and large-scale events that can sometimes influence metrics for a given year. These are all taken into consideration, and acknowledged where necessary, within the text to provide appropriate context to the reader.
-
-With those cards on the table, a year-to-year view of the actors (and their motives),[^3] followed by changes in threat actions and affected assets over time is once again provided. A deeper dive into the overall results for this year’s data set with an old-school focus on threat action categories follows. Within the threat action results, relevant non-incident data is included to add more awareness regarding the tactics that are in the adversaries’ arsenal.
-
-[^3] And we show the whole deck in Appendix B: Methodology.
-
-### Defining the threats
-Threat actor is the terminology used to describe who was pulling the strings of the breach (or if an error, tripping on them). Actors are broken out into three high-level categories of External, Internal, and Partner. External actors have long been the primary culprits behind confirmed data breaches and this year the trend continues. There are some subsets of data that are removed from the general corpus, notably over 50,000 botnet related breaches. These would have been attributed to external groups and, had they been included, would have further increased the gap between the External and Internal threat.
-
-![Figure 6. Threat actors in breaches over time / Figure 7. Threat actor motives in breaches over time]
-
-![Figure 8. Select threat actors in breaches over time]
-
-Financial gain is still the most common motive behind data breaches where a motive is known or applicable (errors are not categorized with any motive). This continued positioning of personal or financial gain at the top is not unexpected. In addition to the botnet breaches that were filtered out, there are other scalable breach types that allow for opportunistic criminals to attack and compromise numerous victims.[^4] Breaches with a strategic advantage as the end goal are well-represented, with one-quarter of the breaches associated with espionage. The ebb and flow of the financial and espionage motives are indicative of changes in the data contributions and the multi-victim sprees.
-
-This year there was a continued reduction in card-present breaches involving point of sale environments and card skimming operations. Similar percentage changes in organized criminal groups and state-affiliated operations are shown in Figure 8 above. Another notable finding (since we are already walking down memory lane) is the bump in Activists, who were somewhat of a one-hit wonder in the 2012 DBIR with regard to confirmed data breaches. We also don’t see much of Cashier (which also encompasses food servers and bank tellers) anymore. System administrators are creeping up while the rogue admin planting logic bombs and other mayhem makes for a good story, the presence of insiders is most often in the form of errors. These are either by misconfiguring servers to allow for unwanted access or publishing data to a server that should not have been accessible by all site viewers. Please, close those buckets!
-
-[^4] In Appendix C: “Watching the Watchers”, we refer to these as zero-marginal cost attacks.
-
-### Threat action varieties
-![Figure 9. Threat actions in data breaches over time / Figure 10. Asset categories in data breaches over time]
-
-Figures 9 and 10 show changes in threat actions and affected assets from 2013 to 2018.[^5], [^6] No, we don’t have some odd affinity for seven-year time frames (as far as you know). Prior years were heavily influenced by payment card breaches featuring automated attacks on POS devices with default credentials, so 2013 was a better representative starting point. The rise in social engineering is evident in both charts, with the action category Social and the related human asset both increasing.
-
-When we delve a bit deeper and examine threat actions at the variety level, the proverbial question of “What are the bad guys doing?” starts to become clearer. Figure 11 shows Denial of Service attacks are again at the top of action varieties associated with security incidents, but it is still very rare for DoS to feature in a confirmed data breach. Similarly, Loss, which is short for Lost or misplaced assets, incidents are not labeled as a data breach if the asset lost is a laptop or phone, as there is no feasible way to determine if data was accessed. We allow ourselves to infer data disclosure if the asset involved was printed documents.
-
-Switching over to breaches in Figure 12, phishing and the hacking action variety of use of stolen credentials are prominent fixtures. The next group of three involves the installation and subsequent use of backdoor or Command and Control (C2) malware. These tactics have historically been common facets of data breaches and based on our data, there is still much success to be had there.
-
-[^5] Credit where it’s due. These dumbbell charts are based on the design at http://www.pewglobal.org/2016/02/22/social-networking-very-popular-among-adult-internet-users-in-emerging-and-developing-nations/ and code at https://rud.is/b/2016/04/17/ggplot2-exercising-with-ggalt-dumbbells/
-[^6] Note these are incident years, not DBIR years. All of the 2018 will be represented in this year’s data, but a 2012 breach not discovered until 2013 would be part of the 2014 DBIR.
-
-![Figure 11. Top threat action varieties in incidents / Figure 12. Top threat action varieties in breaches]
-
-### Hacking
-![Figure 13. Top hacking action varieties in breaches / Figure 14. Top hacking action vectors in breaches]
-
-A quick glance at the figures below uncovers two prominent hacking variety and vector combinations. The more obvious scenario is using a backdoor or C2 via the backdoor or C2 channel, and the less obvious, but more interesting, use of stolen credentials. Utilizing valid credentials to pop web applications is not exactly avant garde.
-
-The reason it becomes noteworthy is that 60% of the time, the compromised web application vector was the front-end to cloud based email servers.
-
-Even though stolen credentials are not directly associated with patch currency, it is still a necessary and noble undertaking. At most, six percent of breaches in our data set this year involved exploiting vulnerabilities. Remember that time your network was scanned for vulnerabilities and there were zero findings? You slept soundly that night only to be jolted from your drowsy utopia by your alarm radio blaring “I Got You Babe.” Vulnerability scanning always yields findings (even benign informational ones) and it is up to the administrators to determine which are accepted, and which are addressed.
-
-![Figure 15. Time to patch]
-
-Figure 15 shows the patching behavior of hundreds of organizations from multiple vulnerability scanning contributors. Based on scan history, we determine that organizations will typically have a big push to remediate findings after they are initially discovered and after that there is a steady increase in percentage of findings fixed until it levels out. Not unlike the amount of romance and mutual regard that occurs while dating vs. once married. You get the idea.
-
-The area under the curve (AUC) is how protected you are while you are actively patching. Quick remediation will result in a higher AUC. The percentage completed-on-time (COT) is the amount of vulnerabilities patched at a pre-determined cut-off time; we used 90 days. Your COT metric could be different, and it would make sense to have different COTs for Internet-facing devices or browser vulnerabilities, and certainly for vulnerabilities with active exploitation in the wild.
-
-It is important to acknowledge that there will always be findings. The key is to prioritize the important ones and have a plan for the remaining actionable vulnerabilities; and to be able to defend acceptance of unaddressed findings.
-
-### Malware
-![Figure 16. Top malware action varieties in incidents / Figure 17. Top malware action varieties in breaches]
-
-Malware can be leveraged in numerous ways to establish or advance attacks. Command and Control (C2) and backdoors are found in both security incidents and breaches. Ransomware is still a major issue for organizations and is not forced to rely on data theft in order to be lucrative.
-
-We were at a hipster coffee shop and it was packed with people talking about cryptomining malware as the next big thing. The numbers in this year’s data set do not support the hype, however, as this malware functionality does not even appear in the top 10 varieties. In previous versions of VERIS, cryptominers were lumped in with click-fraud, but they received their own stand-alone enumeration this year. Combining both the new and legacy enumerations for this year, the total was 39—more than zero, but still far fewer than the almost 500 ransomware cases this year.
-
-![Figure 18. Top malware action vectors in incidents / Figure 19. Malware types and delivery methods]
-
-Figure 18 displays that when the method of malware installation was known, email was the most common point of entry. This finding is supported in Figure 19, which presents data received from millions of malware detonations, and illustrates that the median company received over 90% of their detected malware by email. Direct install is indicative of a device that is already compromised and the malware is installed after access is established. It is possible for malware to be introduced via email, and once the foothold is gained, additional malware is downloaded, encoded to bypass detection and installed directly. Like most enumerations, these are not mutually exclusive.
-
-### Phishing
-![Figure 20. Top social action varieties in breaches / Figure 21. Click rates over time in phishing exercises]
-
-While hacking and malicious code may be the words that resonate most with people when the term “data breach” is used, there are other threat action categories that have been around much longer and are still ubiquitous. Social engineering, along with Misuse, Error, and Physical, do not rely on the existence of “cyberstuff” and are definitely worth discussing. We will talk about these “OGs” now, beginning with the manipulation of human behavior.
-
-There is some cause for hope in regard to phishing, as click rates from the combined results of multiple security awareness vendors are going down. As you can see in Figure 21, click rates are at 3%.
-
-With regard to the event chain for these attacks, if the device on which the communication was read and/or interacted with does not have malicious code installed as part of the phish, it may not be recorded as an affected asset. For example, if a user is tricked into visiting a phony site and he/she then enters credentials, the human asset is recorded as well as the asset that the credentials are used to access. To that end, those moments when the users thoughts are adrift provide an excellent opportunity for criminals to phish via SMS or emails to mobile devices. This is supported by the 18% of clicks from the sanctioned phishing data that were attributed to mobile. Below is a window into mobile devices and how the way humans use them can contribute to successful phishing attacks provided by researcher Arun Vishwanath, Chief Technologist, Avant Research Group, LLC.
-
-Research points to users being significantly more susceptible to social attacks they receive on mobile devices. This is the case for email-based spear phishing, spoofing attacks that attempt to mimic legitimate webpages, as well as attacks via social media.[^7], [^8], [^9]
-
-The reasons for this stem from the design of mobile and how users interact with these devices. In hardware terms, mobile devices have relatively limited screen sizes that restrict what can be accessed and viewed clearly. Most smartphones also limit the ability to view multiple pages side-by-side, and navigating pages and apps necessitates toggling between them—all of which make it tedious for users to check the veracity of emails and requests.
-
-Mobile OS and apps also restrict the availability of information often necessary for verifying whether an email or webpage is fraudulent. For instance, many mobile browsers limit users’ ability to assess the quality of a website’s SSL certificate. Likewise, many mobile email apps also limit what aspects of the email header are visible and whether the email-source information is even accessible.
-
-Mobile software also enhances the prominence of GUI elements that foster action—accept, reply, send, like, and such— which make it easier for users to respond to a request. Thus, on the one hand, the hardware and software on mobile devices restrict the quality of information that is available, while on the other they make it easier for users to make snap decisions.
-
-The final nail is driven in by how people use mobile devices. Users often interact with their mobile devices while walking, talking, driving, and doing all manner of other activities that interfere with their ability to pay careful attention to incoming information. While already cognitively constrained, on screen notifications that allow users to respond to incoming requests, often without even having to navigate back to the application from which the request emanates, further enhance the likelihood of reactively responding to requests.
-
-Thus, the confluence of design and how users interact with mobile devices make it easier for users to make snap, often uninformed decisions—which significantly increases their susceptibility to social attacks on mobile devices.
-
-[^7] Vishwanath, A. (2016). Mobile device affordance: Explicating how smartphones influence the outcome of phishing attacks. Computers in Human Behavior, 63, 198-207.
-[^8] Vishwanath, A. (2017). Getting phished on social media. Decision Support Systems, 103, 70-81.
-[^9] Vishwanath, A., Harrison, B., & Ng, Y. J. (2018). Suspicion, cognition, and automaticity model of phishing susceptibility. Communication Research, 45(8), 1146-1166.
-
-### Misuse
-![Figure 22. Top misuse varieties in breaches / Figure 23. Actor motives in misuse breaches]
-
-Misuse is the malicious or inappropriate use of existing privileges. Often it cannot be further defined beyond that point in this document due to a lack of granularity provided; this fact is reflected in the more generic label of Privilege abuse as the top variety in Figure 22. The motives are predominantly financial in nature, but employees taking sensitive data on the way out to provide themselves with an illegal advantage in their next endeavor are also common.
-
-### Error
-![Figure 24. Top error varieties in breaches over time]
-
-As we see in Figure 24, the top two error varieties are consistent with prior publications, with Misconfiguration increasing at the expense of Loss and Disposal Errors. Sending data to the incorrect recipients (either via email or by mailed documents) is still an issue. Similarly, exposing data on a public website (publishing error) or misconfiguring an asset to allow for unwanted guests also remain prevalent.
-
-### Affected assets
-![Figure 25. Top asset varieties in breaches]
-
-Workstations, web applications, and surprisingly, mail servers are in the top group of assets affected in data breaches. There is a great deal to be learned about how threat actions associate with assets within the event chains of breaches. We get down to business in Table 1 to pull out some of the more interesting stories the 2019 DBIR data has to tell us.
-
-| Action | Asset | Count |
-| :--- | :--- | :--- |
-| Hacking - Use of stolen creds | Server - Mail | 340 |
-| Social - Phishing | Server - Mail | 270 |
-| Social - Phishing | User Dev - Desktop | 251 |
-| Malware - Backdoor | User Dev - Desktop | 229 |
-| Malware - C2 | User Dev - Desktop | 210 |
-| Hacking - Use of backdoor or C2 | User Dev - Desktop | 208 |
-| Malware - Spyware/Keylogger | User Dev - Desktop | 103 |
-| Malware - Adminware | User Dev - Desktop | 91 |
-| Misuse - Privilege abuse | Server - Database | 90 |
-| Malware - Capture app data | Server - Web application | 83 |
-
-**Table 1**  
+Threat action:
+What tactics (actions) were used to affect an asset? VERIS uses
+seven primary categories of threat actions: Malware, Hacking,
+Social, Misuse, Physical, Error, and Environmental. Examples at a New chart, who dis?
+high level are hacking a server, installing malware, and influencing
+human behavior. You may notice that the bar chart shown may not be as, well, bar-
+ish as what you may be used to. Last year we talked a bit in the
+Variety: Methodology section about confidence. When we say a number is
+More specific enumerations of higher level categories - e.g., X, it’s really X +/- a small amount.
+classifying the external “bad guy” as an organized criminal group,
+or recording a hacking action as SQL injection or brute force. Server (Just large organization breaches, n=335)
+Learn more here:
+• github.com/vz-risk/dbir/tree/gh-pages/2019 – DBIR figures and
+figure data.
+• v eriscommunity.net features information on the framework with
+Server (All breaches, n=1,881)
+examples and enumeration listings.
+• github.com/vz-risk/veris features the full VERIS schema.
+• github.com/vz-risk/vcdb provides access to our database on
+publicly disclosed breaches, the VERIS Community Database.
+• http://veriscommunity.net/veris_webapp_min.html
+0% 20% 40% 60% 80% 100%
+allows you to record your own incidents and breaches. Don’t fret,
+Breaches
+it saves any data locally and you only share what you want.
+FFiigguurree 11.. T Toopp a sasseste vta rviaetryie inty b rinea bcrheeasches
+This year we’re putting it in the bar charts. The black dot is the
+value, but the slope gives you an idea of where the real value could
+Incident vs. breaches be between. In this sample figure we’ve added a few red bars to
+highlight it, but in 19 bars out of 20 (95%),1 the real number will
+We talk a lot about incidents and breaches and we use the be between the two red lines on the bar chart. Notice that as the
+following definitions: sample size (n) goes down, the bars get farther apart. If the lower
+bound of the range on the top bar overlaps with the higher bound of
+Incident: the bar beneath it, they are treated as statistically similar and thus
+A security event that compromises the integrity, confidentiality statements that x is more than y will not be proclaimed.
+or availability of an information asset.
+Questions? Comments? Brilliant ideas?
+Breach: We want to hear them. Drop us a line at dbir@verizon.com,
+An incident that results in the confirmed disclosure—not just find us on LinkedIn, tweet @VZEnterprise with the #dbir.
+potential exposure—of data to an unauthorized party. Got a data question? Tweet @VZDBIR!
+1https://en.wikipedia.org/wiki/Confidence_interval
+
+3
+Table of contents
+Introduction 4
+Summary of findings 5
+Results and analysis 6
+Unbroken chains 20
+Incident classification patterns and subsets 24
+Data breaches: extended version 27
+Victim demographics and industry analysis 30
+Accommodation and Food Services 35
+Educational Services 38
+Financial and Insurance 41
+Healthcare 44
+Information 46
+Manufacturing 49
+Professional, Technical and Scientific Services 52
+Public Administration 55
+Retail 58
+Wrap up 61
+Year in review 62
+Appendix A: Transnational hacker debriefs 65
+Appendix B: Methodology 68
+Appendix C: Watching the watchers 71
+Appendix D: Contributing organizations 75
+
+4
+Introduction
+“The wound is the place where the light enters you.”
+— Rumi
+Welcome! Pull up a chair with the 2019 Verizon It is our charge to present information on the common
+Data Breach Investigations Report (DBIR). tactics used by attackers against organizations in
+The statements you will read in the pages that follow your industry. The purpose of this study is not to
+are data-driven, either by the incident corpus that rub salt in the wounds of information security, but to
+is the foundation of this publication, or by non-incident contribute to the “light” that raises awareness and
+data sets contributed by several security vendors. provides the ability to learn from the past. Use it as
+another arrow in your quiver to win hearts, minds, and
+This report is built upon analysis of 41,686 security security budget. We often hear that this is “required
+incidents, of which 2,013 were confirmed data reading” and strive to deliver actionable information in
+breaches. We will take a look at how results are a manner that does not cause drowsiness, fatigue,
+changing (or not) over the years as well as digging or any other adverse side effects.
+into the overall threat landscape and the actors,
+actions, and assets that are present in breaches. We continue to be encouraged and energized by
+Windows into the most common pairs of threat the coordinated data sharing by our 73 data sources,
+actions and affected assets also are provided. 66 of which are organizations external to Verizon.
+This affords the reader with yet another means to This community of data contributors represents an
+analyze breaches and to find commonalities above international group of public and private entities willing
+and beyond the incident classification patterns that to support this annual publication. We again thank
+you may already be acquainted with. them for their support, time, and, of course, DATA.
+Fear not, however. The nine incident classification We all have wounds, none of us knows everything,
+patterns are still around, and we continue to focus on let’s learn from each other.
+how they correlate to industry. In addition to the nine
+primary patterns, we have created a subset of data to Excelsior!2
+pull out financially-motivated social engineering (FMSE)
+attacks that do not have a goal of malware installation.
+Instead, they are more focused on credential theft and
+duping people into transferring money into adversary-
+controlled accounts. In addition to comparing industry
+threat profiles to each other, individual industry
+sections are once again front and center.
+Joining forces with the ever-growing incident/breach
+corpus, several areas of research using non-incident
+data sets such as malware blocks, results of phishing
+training, and vulnerability scanning are also utilized.
+Leveraging, and sometimes combining, disparate data
+sources (like honeypots and internet scan research)
+allows for additional data-driven context.
+2If you didn’t expect a Stan Lee reference in this report, then you are certainly a first-time reader. Welcome to the party pal!
+
+5
+| Summary   |     |     | 69% perpetrated by outsiders |     |     |
+| --------- | --- | --- | ---------------------------- | --- | --- |
+of findings
+34% involved Internal actors
+2% involved Partners
+16% were breaches of Public sector entities
+5% featured Multiple parties
+15% were breaches involving Healthcare organizations
+Organized criminal groups
+were behind 39% of breaches
+10% were breaches of the Financial industry
+Actors identified as nation-state or state-
+43% of breaches involved small business victims affiliated were involved in 23% of breaches
+| 0%  20%  |  40%  60% |  80%   100% | 0%  20%  |  40%  60% |  80%   100% |
+| -------- | --------- | ----------- | -------- | --------- | ----------- |
+| Breaches |           |             | Breaches |           |             |
+Figure 2. Who are the victims? Figure 4. Who's behind the breaches?
+52% of breaches featured Hacking
+71% of breaches were financially motivated
+33% included Social attacks
+25% of breaches were motivated by the gain
+| 28% involved Malware |     |     | of strategic advantage (espionage) |     |     |
+| -------------------- | --- | --- | ---------------------------------- | --- | --- |
+Errors were causal events in 21% of breaches 32% of breaches involved phishing
+15% were Misuse by authorized users 29% of breaches involved use of stolen credentials
+Physical actions were present in 4% of breaches 56% of breaches took months or longer to discover
+| 0%  20%  |  40%  60% |  80%   100% | 0%  20%  |  40%  60% |  80%   100% |
+| -------- | --------- | ----------- | -------- | --------- | ----------- |
+| Breaches |           |             | Breaches |           |             |
+Figure 3. What tactics are utilized? Figure 5. What are other commonalities?
+
+6
+The results found in this and subsequent sections year the trend continues. There are some subsets
+within the report are based on a data set collected of data that are removed from the general corpus,
+from a variety of sources such as publicly-disclosed notably over 50,000 botnet related breaches. These
+security incidents, cases provided by the Verizon would have been attributed to external groups and,
+Threat Research Advisory Center (VTRAC) had they been included, would have further increased
+investigators, and by our external collaborators. The the gap between the External and Internal threat.
+year-to-year data set(s) will have new sources of
+incident and breach data as we strive to locate and
+engage with organizations that are willing to share
+information to improve the diversity and coverage
+of real-world events. This is a convenience sample,
+and changes in contributors, both additions and
+those who were not able to participate this year, will
+influence the data set. Moreover, potential changes
+in their areas of focus can stir the pot o’ breaches
+when we trend over time. All of this means we are not
+always researching and analyzing the same fish in
+the same barrel. Still other potential factors that may
+affect these results are changes in how we subset
+data and large-scale events that can sometimes
+influence metrics for a given year. These are all
+taken into consideration, and acknowledged where
+necessary, within the text to provide appropriate
+context to the reader.
+With those cards on the table, a year-to-year view of
+the actors (and their motives),3 followed by changes
+in threat actions and affected assets over time is
+once again provided. A deeper dive into the overall
+results for this year’s data set with an old-school
+focus on threat action categories follows. Within
+the threat action results, relevant non-incident data Financial
+is included to add more awareness regarding the 75%
+tactics that are in the adversaries’ arsenal.
+50%
+Defining the threats
+Espionage
+Threat actor is the terminology used to describe
+25%
+who was pulling the strings of the breach (or if an
+error, tripping on them). Actors are broken out into
+Other
+three high-level categories of External, Internal, and
+0%
+Partner. External actors have long been the primary
+culprits behind confirmed data breaches and this
+sehcaerB
+80%
+External
+60%
+40%
+Internal
+20%
+Partner
+0%
+2011 2013 2015 2017
+Figure 7. Threat actor motives in breaches over time
+sehcaerB
+Results and analysis
+2011 2013 2015 2017
+Figure 6. Threat actors in breaches over time
+3And we show the whole deck in Appendix B: Methodology.
+
+7
+80%
+60%
+Organized crime
+40%
+State-affiliated
+20%
+Activist
+Cashier
+System Admin
+0%
+2011 2013 2015 2017
+sehcaerB
+Figure 8. Select threat actors in breaches over time
+Financial gain is still the most common motive behind environments and card skimming operations.
+data breaches where a motive is known or applicable Similar percentage changes in organized criminal
+(errors are not categorized with any motive). This groups and state-affiliated operations are shown in
+continued positioning of personal or financial gain at Figure 8 above. Another notable finding (since we
+the top is not unexpected. In addition to the botnet are already walking down memory lane) is the bump
+breaches that were filtered out, there are other in Activists, who were somewhat of a one-hit wonder
+scalable breach types that allow for opportunistic in the 2012 DBIR with regard to confirmed data
+criminals to attack and compromise numerous breaches. We also don’t see much of Cashier (which
+victims.4 Breaches with a strategic advantage as the also encompasses food servers and bank tellers)
+end goal are well-represented, with one-quarter of anymore. System administrators are creeping up
+the breaches associated with espionage. The ebb and while the rogue admin planting logic bombs and
+and flow of the financial and espionage motives are other mayhem makes for a good story, the presence
+indicative of changes in the data contributions and of insiders is most often in the form of errors. These
+the multi-victim sprees. are either by misconfiguring servers to allow for
+unwanted access or publishing data to a server that
+This year there was a continued reduction in should not have been accessible by all site viewers.
+card-present breaches involving point of sale Please, close those buckets!
+4In Appendix C: “Watching the Watchers”, we refer to these as zero-marginal cost attacks.
+
+8
+|         | 2018 2013 | DIFF |          | 2018 2013 | DIFF |
+| ------- | --------- | ---- | -------- | --------- | ---- |
+| Hacking |           |      | Server   |           |      |
+|         |           | -3   |          |           | -2   |
+|         | 53% 56%   |      |          | 63% 65%   |      |
+| Malware |           | -1   |          |           |      |
+|         | 29 30     |      | User Dev |           | +2   |
+28 30
+| Social |     | +18 |     |     |     |
+| ------ | --- | --- | --- | --- | --- |
+17 35
+|     |     |     | Person |     | +20 |
+| --- | --- | --- | ------ | --- | --- |
+19 39
+| Error |     | +5  |     |     |     |
+| ----- | --- | --- | --- | --- | --- |
+17 21
+|     |     |     | Media |     | -8  |
+| --- | --- | --- | ----- | --- | --- |
+917
+| Misuse |     | -2  |     |     |     |
+| ------ | --- | --- | --- | --- | --- |
+14 16
+|          |     |     | Kiosk/Term |     | -5  |
+| -------- | --- | --- | ---------- | --- | --- |
+| Physical |     | -6  |            |     |     |
+1 7
+4 10
+| Environmental |     | 0   | Network |     | +1  |
+| ------------- | --- | --- | ------- | --- | --- |
+00 01
+Breaches Breaches
+Figure 9. Threat acFtioignusr ien  9d.a Ttah rberaeta cahcetiso nosve inr  tdimatea   breaches over Figure 10. AssetF cigautergeo 1r0ie.s A isns deatt caa btreegaocrhieess  ionv dear ttaim ber e aches over
+n=2,501 (2013), n=1t,6im38e  n(2=021,85)01 (2013), n=1638 (2018) n=2,294 (2013), tnim=1e,5 n13= 2(2,209148 )(2013), n=1,513 (2018)
+Figures 9 and 10 show changes in threat actions and  of action varieties associated with security incidents,
+affected assets from 2013 to 2018.5,6 No, we don’t have  but it is still very rare for DoS to feature in a confirmed
+some odd affinity for seven-year time frames (as far  data breach. Similarly, Loss, which is short for Lost or
+as you know). Prior years were heavily influenced by  misplaced assets, incidents are not labeled as a data
+payment card breaches featuring automated attacks  breach if the asset lost is a laptop or phone, as there
+on POS devices with default credentials, so 2013  is no feasible way to determine if data was accessed.
+was a better representative starting point. The rise in  We allow ourselves to infer data disclosure if the asset
+social engineering is evident in both charts, with the  involved was printed documents.
+action category Social and the related human asset
+both increasing.  Switching over to breaches in Figure 12, phishing and
+the hacking action variety of use of stolen credentials
+Threat action varieties are prominent fixtures. The next group of three
+involves the installation and subsequent use of back-
+When we delve a bit deeper and examine threat actions  door or Command and Control (C2) malware. These
+at the variety level, the proverbial question of “What are  tactics have historically been common facets of data
+the bad guys doing?” starts to become clearer. Figure 11   breaches and based on our data, there is still much
+shows Denial of Service attacks are again at the top  success to be had there.
+5 Credit where it’s due.  These dumbbell charts are based on the design at http://www.pewglobal.org/2016/02/22/social-networking-very-popular-among-adult-internet-users-in-emerging-and-developing-nations/ and code at
+https://rud.is/b/2016/04/17/ggplot2-exercising-with-ggalt-dumbbells/
+6Note these are incident years, not DBIR years. All of the 2018 will be represented in this year’s data, but a 2012 breach not discovered until 2013 would be part of the 2014 DBIR.
+
+9
+| DoS                   |           |             | Phishing              |           |             |
+| --------------------- | --------- | ----------- | --------------------- | --------- | ----------- |
+| Loss                  |           |             | Use of stolen creds   |           |             |
+| C2                    |           |             | Backdoor              |           |             |
+| Misdelivery           |           |             | C2                    |           |             |
+| Phishing              |           |             | Use of backdoor or C2 |           |             |
+| Use of stolen creds   |           |             | Privilege abuse       |           |             |
+| Ransomware            |           |             | Spyware/Keylogger     |           |             |
+| Privilege abuse       |           |             | Misdelivery           |           |             |
+| Backdoor              |           |             | Capture app data      |           |             |
+| Use of backdoor or C2 |           |             | Data mishandling      |           |             |
+| Spyware/Keylogger     |           |             | Adminware             |           |             |
+| Pretexting            |           |             | Publishing error      |           |             |
+| Data mishandling      |           |             | Pretexting            |           |             |
+| Adminware             |           |             | Exploit vuln          |           |             |
+| Adware                |           |             | Misconfiguration      |           |             |
+| 0%  20%               |  40%  60% |  80%   100% | 0%  20%               |  40%  60% |  80%   100% |
+| Incidents             |           |             | Breaches              |           |             |
+Figure 11. Top threat action varieties in incidents, (n=17,310) Figure 12. Top threat action varieties in breaches (n=1,774)
+
+10
+Hacking Web application
+A quick glance at the figures below uncovers two
+prominent hacking variety and vector combinations. Backdoor or C2
+The more obvious scenario is using a backdoor or
+C2 via the backdoor or C2 channel, and the less
+obvious, but more interesting, use of stolen
+Desktop sharing
+credentials. Utilizing valid credentials to pop web
+applications is not exactly avant garde.
+Desktop sharing software
+The reason it becomes noteworthy is that 60%
+of the time, the compromised web application vector
+was the front-end to cloud based email servers.
+Other
+Use of stolen creds
+VPN
+Use of backdoor or C2
+Partner
+Exploit vuln
+Command shell
+Brute force
+3rd party desktop
+Buffer overflow
+Physical access
+Abuse of functionality
+0% 20% 40% 60% 80% 100%
+Breaches
+Figure 14. Top hacking action vectors in breaches (n=862)
+RFI
+Even though stolen credentials are not directly
+SQLi
+associated with patch currency, it is still a necessary
+and noble undertaking. At most, six percent of
+breaches in our data set this year involved exploiting
+Other
+vulnerabilities. Remember that time your network
+was scanned for vulnerabilities and there were zero
+findings? You slept soundly that night only to be
+0% 20% 40% 60% 80% 100%
+jolted from your drowsy utopia by your alarm radio
+Breaches
+blaring “I Got You Babe.” Vulnerability scanning always
+Figure 13. Top hacking action varieties in breaches (n=755)
+yields findings (even benign informational ones) and
+it is up to the administrators to determine which are
+accepted, and which are addressed.
+
+11
+C2
+Ransomware
+Backdoor
+Spyware/keylogger
+Adminware
+100%
+75%
+AUC: 32.4% Adware
+COT: 43.8%
+50%
+25% Capture app data
+0%
+7 30 60 90
+Spam
+Days taken to patch
+Downloader
+Capture stored data
+0% 20% 40% 60% 80% 100%
+Incidents
+Figure 16. Top malware action varieties in incidents (n=2,103)
+dexfi
+sgnidniF
+Figure 15 shows the patching behavior of hundreds Malware
+of organizations from multiple vulnerability scanning
+contributors. Based on scan history, we determine Malware can be leveraged in numerous ways to
+that organizations will typically have a big push to establish or advance attacks. Command and Control
+remediate findings after they are initially discovered (C2) and backdoors are found in both security
+and after that there is a steady increase in percentage incidents and breaches. Ransomware is still a major
+of findings fixed until it levels out. Not unlike the issue for organizations and is not forced to rely on
+amount of romance and mutual regard that occurs data theft in order to be lucrative.
+while dating vs. once married. You get the idea.
+The area under the curve (AUC) is how protected
+you are while you are actively patching. Quick
+remediation will result in a higher AUC. The
+percentage completed-on-time (COT) is the amount
+of vulnerabilities patched at a pre-determined
+cut-off time; we used 90 days. Your COT metric
+could be different, and it would make sense to have
+different COTs for Internet-facing devices or browser
+vulnerabilities, and certainly for vulnerabilities with
+active exploitation in the wild.
+It is important to acknowledge that there will always
+be findings. The key is to prioritize the important
+ones and have a plan for the remaining actionable
+vulnerabilities; and to be able to defend acceptance of
+unaddressed findings.
+Figure 15. Time to patch
+
+12
+We were at a hipster coffee shop and it was packed  cryptominers were lumped in with click-fraud, but
+with people talking about cryptomining malware as   they received their own stand-alone enumeration
+the next big thing. The numbers in this year’s   this year. Combining both the new and legacy
+data set do not support the hype, however, as this  enumerations for this year, the total was 39—more
+malware functionality does not even appear in the  than zero, but still far fewer than the almost 500
+top 10 varieties. In previous versions of VERIS,   ransomware cases this year.
+| Backdoor            |           |             | Email attachment    |           |             |
+| ------------------- | --------- | ----------- | ------------------- | --------- | ----------- |
+| C2                  |           |             | Direct install      |           |             |
+| Spyware/keylogger   |           |             | Email unknown       |           |             |
+| Capture app data    |           |             | Web drive-by        |           |             |
+| Adminware           |           |             | Download by malware |           |             |
+| Downloader          |           |             | Remote injection    |           |             |
+| Capture stored data |           |             | Email link          |           |             |
+| Password dumper     |           |             | Network propagation |           |             |
+| Ram scraper         |           |             | Other               |           |             |
+| Ransomware          |           |             | Web download        |           |             |
+| 0%  20%             |  40%  60% |  80%   100% | 0%  20%             |  40%  60% |  80%   100% |
+| Breaches            |           |             | Incidents           |           |             |
+Figure 17. Top malware action varieties in breaches (n=500) Figure 18. Top malware action vectors in incidents (n=795)
+
+13
+Delivery Method File Type
+100%
+75%
+94% 23% 0% 45% 26% 22% 50%
+25%
+0%
+email web other Office doc Windows app other
+Figure 19. Malware types and delivery methods
+Figure 18 displays that when the method of malware Phishing
+installation was known, email was the most common
+point of entry. This finding is supported in Figure 19,
+which presents data received from millions of
+Pretexting
+malware detonations, and illustrates that the median
+company received over 90% of their detected
+malware by email. Direct install is indicative of a
+Bribery
+device that is already compromised and the malware
+is installed after access is established. It is possible
+for malware to be introduced via email, and once the
+foothold is gained, additional malware is downloaded, Extortion
+encoded to bypass detection and installed directly. Like
+most enumerations, these are not mutually exclusive.
+Forgery
+Social
+While hacking and malicious code may be the words
+Influence
+that resonate most with people when the term “data
+breach” is used, there are other threat action catego-
+ries that have been around much longer and are still
+Other
+ubiquitous. Social engineering, along with Misuse,
+Error, and Physical, do not rely on the existence of
+“cyberstuff” and are definitely worth discussing. We
+Scam
+will talk about these “OGs” now, beginning with the
+manipulation of human behavior.
+0% 20% 40% 60% 80% 100%
+There is some cause for hope in regard to phishing,
+Breaches
+as click rates from the combined results of multiple
+security awareness vendors are going down. As you Figure 20. Top social action varieties in breaches (n=670)
+can see in Figure 21, click rates are at 3%.
+
+14
+25%
+20%
+15%
+10%
+5%
+2.99%
+0%
+2012 2014 2016 2018
+dekcilC
+With regard to the event chain for these attacks, if the
+device on which the communication was read and/or
+interacted with does not have malicious code installed
+as part of the phish, it may not be recorded as an
+affected asset. For example, if a user is tricked into
+visiting a phony site and he/she then enters credentials,
+the human asset is recorded as well as the asset that
+the credentials are used to access. To that end, those
+moments when the users thoughts are adrift provide
+an excellent opportunity for criminals to phish via SMS
+or emails to mobile devices. This is supported by the
+18% of clicks from the sanctioned phishing data that
+were attributed to mobile. Below is a window into
+mobile devices and how the way humans use them can
+contribute to successful phishing attacks provided by
+researcher Arun Vishwanath, Chief Technologist, Avant
+Research Group, LLC. Figure 21F. Cigluicrke r 2at1e. s C olivcekr rtaimtees i no vsearn tcimtioen iend s pahnicsthiionnge edxercises
+phishing exercises
+Research points to users being significantly Mobile software also enhances the prominence
+more susceptible to social attacks they of GUI elements that foster action—accept,
+receive on mobile devices. This is the case for reply, send, like, and such— which make it easier
+email-based spear phishing, spoofing attacks for users to respond to a request. Thus, on the
+that attempt to mimic legitimate webpages, as one hand, the hardware and software on mobile
+well as attacks via social media.7, 8, 9 devices restrict the quality of information that
+is available, while on the other they make it
+The reasons for this stem from the design easier for users to make snap decisions.
+of mobile and how users interact with these
+devices. In hardware terms, mobile devices The final nail is driven in by how people use
+have relatively limited screen sizes that restrict mobile devices. Users often interact with
+what can be accessed and viewed clearly. their mobile devices while walking, talking,
+Most smartphones also limit the ability to driving, and doing all manner of other activities
+view multiple pages side-by-side, and navi- that interfere with their ability to pay careful
+gating pages and apps necessitates toggling attention to incoming information. While
+between them—all of which make it tedious already cognitively constrained, on screen
+for users to check the veracity of emails and notifications that allow users to respond to
+requests while on mobile. incoming requests, often without even having
+to navigate back to the application from which
+Mobile OS and apps also restrict the the request emanates, further enhance the
+availability of information often necessary likelihood of reactively responding to requests.
+for verifying whether an email or webpage is
+fraudulent. For instance, many mobile browsers Thus, the confluence of design and how
+limit users’ ability to assess the quality of a users interact with mobile devices make it
+website’s SSL certificate. Likewise, many easier for users to make snap, often
+mobile email apps also limit what aspects of uninformed decisions—which significantly
+the email header are visible and whether the increases their susceptibility to social
+email-source information is even accessible. attacks on mobile devices.
+7 Vishwanath, A. (2016). Mobile device affordance: Explicating how smartphones influence the outcome of phishing attacks. Computers in Human Behavior, 63, 198-207.
+8Vishwanath, A. (2017). Getting phished on social media. Decision Support Systems, 103, 70-81.
+9 Vishwanath, A., Harrison, B., & Ng, Y. J. (2018). Suspicion, cognition, and automaticity model of phishing susceptibility. Communication Research, 45(8), 1146-1166.
+
+15
+Misuse
+
+Misuse is the malicious or inappropriate use of  top variety in Figure 22. The motives are
+existing privileges. Often it cannot be further defined  predominantly financial in nature, but employees
+beyond that point in this document due to a lack   taking sensitive data on the way out to provide
+of granularity provided; this fact is reflected in the  themselves with an illegal advantage in their next
+more generic label of Privilege abuse as the   endeavor are also common.
+Privilege abuse
+| Data mishandling |     |     | Financial |     |     |
+| ---------------- | --- | --- | --------- | --- | --- |
+Unapproved workaround
+Espionage
+| Knowledge abuse     |           |             | Fun         |           |             |
+| ------------------- | --------- | ----------- | ----------- | --------- | ----------- |
+| Email misuse        |           |             | Grudge      |           |             |
+| Possession abuse    |           |             | Other       |           |             |
+| Unapproved hardware |           |             | Convenience |           |             |
+| Unapproved software |           |             | Ideology    |           |             |
+| Net misuse          |           |             | Fear        |           |             |
+| Illicit content     |           |             | Secondary   |           |             |
+| 0%  20%             |  40%  60% |  80%   100% | 0%  20%     |  40%  60% |  80%   100% |
+| Breaches            |           |             | Breaches    |           |             |
+Figure 22. Top misuse varieties in breaches (n=292) Figure 23. Actor motives in misuse breaches (n=245)
+
+16
+Error Affected assets
+As we see in Figure 24, the top two error varieties Workstations, web applications, and surprisingly,
+are consistent with prior publications, with mail servers are in the top group of assets affected
+Misconfiguration increasing at the expense of Loss in data breaches. There is a great deal to be
+and Disposal Errors. Sending data to the incorrect learned about how threat actions associate with
+recipients (either via email or by mailed documents) assets within the event chains of breaches. We
+is still an issue. Similarly, exposing data on a public get down to business in Table 1 to pull out some of
+website (publishing error) or misconfiguring an asset the more interesting stories the 2019 DBIR data
+to allow for unwanted guests also remain prevalent. has to tell us.
+Server - Mail
+2010 2018 DIFF
+Misdelivery +5
+32% 37%
+User Dev - Desktop
+Publishing
++5
+error
+16 21 Server - Web application
+Misconfiguration +21 Server - Database
+0 21
+Media - Documents
+Loss -24
+7 31
+Person - End-user
+Programming
++5
+error
+0 5
+User Dev - Laptop
+Disposal
+-9
+error
+5 14 Server - POS controller
+Omission +2 User Dev - POS terminal
+2 4
+Person - Finance
+Gaffe -4
+0 4
+0% 20% 40% 60% 80% 100%
+Breaches Breaches
+Figure 24. Top error vaFriigetuieres i2n4 b.r Teoapch eersr oorv vear rtiiemteie s in breaches Figure 25. Top asset varieties in breaches (n=1,699)
+n=100 (2010), n=347 (2o0ve18r )time n=100 (2010), n=347 (2018)
+
+17
+|  Action                           | Asset                     | Count      |
+| --------------------------------- | ------------------------- | ---------- |
+|  Hacking - Use of stolen creds    | Server - Mail             | 340        |
+|  Social - Phishing                | Server - Mail             | 270        |
+|  Social - Phishing                | User Dev - Desktop        | 251        |
+|  Malware - Backdoor               | User Dev - Desktop        | 229        |
+|  Malware - C2                     | User Dev - Desktop        | 210        |
+|  Hacking - Use of backdoor or C2  | User Dev - Desktop        | 208        |
+|  Malware - Spyware/Keylogger      | User Dev - Desktop        | 103        |
+|  Malware - Adminware              | User Dev - Desktop        | 91         |
+|  Misuse - Privilege abuse         | Server - Database         | 90         |
+|  Malware - Capture app data       | Server - Web application  | 83         |
+Table 1
 Top action and asset variety combinations within breaches, (n= 2,013)
+The table above does exclude assets where a   the account, or if the account owner has a certain
+particular variety was not known. In the majority of  degree of clout, send more targeted and elaborate
+phishing breaches, we are not privy to the exact   emails to employees who are authorized to pay
+role of the influenced user and thus, Person -   bogus invoices.
+Unknown would have been present. We can deduce
+that phishing of Those Who Cannot Be Named   There were also numerous cases where an
+leads to malware installed on desktops or tricking  organization’s email accounts were compromised
+users into providing their credentials.  and the adversary inserted themselves into
+conversations that centered around payments. At
+Most often, those compromised credentials were to  this point, the actors are appropriately positioned
+cloud-based mail servers. There was an uptick   to add forwarding rules in order to shut out the
+in actors seeking these credentials to compromise a  real account owner from the conversation. Then
+user’s email account. It turns out there are   they simply inform the other recipients that
+several ways to leverage this newly found access.  they need to wire money to a different account on
+Actors can launch large phishing campaigns from  this occasion because…reasons.
 
-The table above does exclude assets where a particular variety was not known. In the majority of phishing breaches, we are not privy to the exact role of the influenced user and thus, Person - Unknown would have been present. We can deduce that phishing of Those Who Cannot Be Named leads to malware installed on desktops or tricking users into providing their credentials.
+18
+Another trend in this year’s data set is a marked shift Compromised data
+away from going after payment cards via ATM/gas
+pump skimming or Point of Sale systems and towards Figure 27 details the varieties of data that were
+e-commerce applications. The 83 breaches with disclosed as a result of the data breaches
+the association of web application and the action of that occurred this year. Personal information is
+type capture application data is one indicator of this once again prevalent. Credentials and Internal
+change. Figure 26 below illustrates how breaches are statistically even, and are often both found in
+with compromised payment cards are becoming the same breach. The previously mentioned
+increasingly about web servers – additional details credential theft leading to the access of corporate
+can be found in the Retail industry section. email is a very common example.
+Internal
+75% Not Webapp
+Server
+Credentials
+50%
+Webapp
+25% Server Personal
+2015 2016 2017 2018
+Medical
+Figure 26. Webapp Server vs. Not Webapp Server
+assets in payment data breaches over time
+Payment
+Secrets
+Bank
+System
+Classified
+Other
+0% 20% 40% 60% 80% 100%
+Breaches
+Figure 27. Top data varieties compromised in breaches (n=1,285)
 
-Most often, those compromised credentials were to cloud-based mail servers. There was an uptick in actors seeking these credentials to compromise a user’s email account. It turns out there are several ways to leverage this newly found access. Actors can launch large phishing campaigns from the account, or if the account owner has a certain degree of clout, send more targeted and elaborate emails to employees who are authorized to pay bogus invoices.
+19
+Breach timeline discovered much more quickly because it is relatively
+obvious when someone has broken the glass out of
+As we have mentioned in previous reports, when your car door and taken your computer.
+breaches are successful, the time to compromise
+is typically quite short. Obviously, we have no way Finally, it goes without saying that not being
+of knowing how many resources were expended compromised in the first place is the most desirable
+in activities such as intelligence gathering and scenario in which to find oneself. Therefore, a focus
+other preparations.10 However, the time from the on understanding what data types you possess
+attacker’s first action in an event chain to the initial that are likely to be targeted, along with the correct
+compromise of an asset is typically measured in application of controls to make that data more difficult
+minutes. Conversely, the time to discovery is more (even with an initial device compromise) to access and
+likely to be months. Discovery time is very dependent exfiltrate is vital. Unfortunately, we do not have a lot
+on the type of attack in question. With payment card of data around time to exfiltration, but improvements
+compromises, for instance, discovery is usually based within your own organization in relation to both that
+upon the fraudulent use of the stolen data (typically metric along with time to discovery can result in the
+weeks or months), while a stolen laptop will usually be prevention of a high-impact confirmed data breach.
+Compromise, (n=140)
+60%
+40%
+20%
+0%
+Exfiltration, (n=87)
+60%
+40%
+20%
+0%
+Discovery, (n=390)
+60%
+40%
+20%
+0%
+Containment, (n=127)
+60%
+40%
+20%
+0%
+Seconds Minutes Hours Days Weeks Months Years
+sehcaerB
+Figure 28. Breach timelines
+10Though we are starting to look before and after the breach in the Data Breaches, Extended Version section
 
-There were also numerous cases where an organization’s email accounts were compromised and the adversary inserted themselves into conversations that centered around payments. At this point, the actors are appropriately positioned to add forwarding rules in order to shut out the real account owner from the conversation. Then they simply inform the other recipients that they need to wire money to a different account on this occasion because…reasons.
+20
+Unbroken chains
+While it is our belief that this section can be of interest and benefit to our readers, there are a couple
+of caveats that should be made clear from the beginning. First of all, we have only recently updated
+the VERIS schema to allow for collection of event chain data. Secondly, not all incident and breach
+records offer enough details to attempt to map out the path traveled by the threat actor.
+We collect an action, actor, asset, and attribute at each step. However, each may be “Unknown” or
+omitted completely if it did not occur in that particular step of the attack. To create a single path from
+these factors, we begin by placing the actor at the first step at the beginning of the path. It’s followed
+by the action and then attribute present in the step. For the remaining steps it proceeds from action
+to attribute to action of the next step, simply skipping over any omitted.
+This calls for the old Billy Baroo. absolutely have to? Just place your ball right there on
+the green and tap it in for a birdie or a double eagle,
+Last year we pointed out how a golfer navigating a golf as the case may be. And while your normal genteel
+course is a lot like an adversary attacking your network.11 golfer will abide (to a greater or lesser degree) by the
+The course creator builds sand traps and water course rules on the off chance that there is a Marshall
+hazards along the way to make life difficult. Additional watching and start on hole 1, threat actors will invari-
+steps, such as the length of grass in the rough and ably take the shotgun start approach. They will begin
+even the pin placement on the green can raise the their round on the hole they are shooting for, whether
+stroke average for a given hole. In our world, you’ve put it’s confidentiality, integrity, or availability.
+defenses and mitigations in place to deter, detect, and
+defend. And just like on the golf course, the attackers
+reach into their bag, pull out their iron, in the form of
+300
+a threat action, and do everything they can to land on
+the attribute they want in the soft grass of the fairway.
+200
+The first thing to know is that unlike a golfer who
+graciously paces all the way back to the tees to take
+100
+his or her first shot, your attackers won’t be anywhere
+near as courteous. In Figure 29 we see that attack
+0
+paths are much more likely to be short than long. And
+0 5 10 15
+why not, if you’re not following the rules (and which
+Number of steps
+attackers do?) why hit from the tees unless you
+“My golf security is so delicate, so
+tenuously wired together with silent
+inward prayers, exhortations and unstable
+Figure 30 provides a look at the three holes on our
+visualizations, that the sheer pressure InfoSec golf course. It displays the number of events
+of an additional pair of eyes crumbles the and threat actions in the attack chains, by last attri-
+whole rickety structure into rubble.” bute affected. There is a lot to take in, and we do want
+—John Updike, with the sympathy of some CISOs. to point a few things out.
+11We are not saying hackers have early 90’s John Daly mullets. We don’t have data to support that. We just imagine that they do, and that this is why they all wear hoodies in clip art.
+sehcaerB
+Figure 29. Number of steps per incident (n=1,285)
+Short attack paths are much more common than long
+attack paths.
 
-### Compromised data
-![Figure 26. Webapp Server vs. Not Webapp Server assets in payment data breaches over time / Figure 27. Top data varieties compromised in breaches]
+21
+Availability
+Confidentiality
+Integrity
+Availability
+Confidentiality
+Integrity
+Availability
+Confidentiality
+Integrity
+First, starting with Confidentiality, take a look at just Malware as it compromises the Confidentiality and
+how many short paths result from Misuse and Error, Integrity of the target.
+and to a lesser extent from Physical actions. On the
+other hand, we can see Hacking actions bounding Obviously, there’s a lot going on in Figure 30. An
+back and forth between attributes for several steps. easier way of looking at it is what actions start
+In Integrity we see an especially long chain beginning (Figure 31), continue (Figure 32), and end (Figure 33)
+with Hacking and going to and fro between that and incidents.
+Integrity
+Confidentiality
+Availability
+Availability
+Confidentiality
+Integrity
+Availability
+Confidentiality
+Integrity
+Availability
+Confidentiality
+Integrity
+14 12 10 8 6 4 2 0
+Steps
+Action Error Malware Physical Unknown Hacking Misuse Social
+Figure 30. Attack chain by final attribute compromised¹² (n=941)
+Integrity
+Confidentiality
+Availability
+Availability
+Confidentiality
+Integrity
+Availability
+Confidentiality
+Integrity
+Availability 14 12 10 8 6 4 2 0
+Confidentiality Steps
+Integrity
+Action Error Malware Physical Unknown Hacking Misuse Social
+Figure 30. Attack chain by final attribute compromised¹² (n=941)
+Integrity
+Confidentiality
+Availability
+14 12 10 8 6 4 2 0
+Steps
+Action Error Malware Physical Unknown Hacking Misuse Social
+Figure 30. Attack chain by final attribute compromised¹² (n=941)
+12There’s a lot going on in this figure. Take your time and explore it. For example, notice the differences between short and long attacks.
 
-Another trend in this year’s data set is a marked shift away from going after payment cards via ATM/gas pump skimming or Point of Sale systems and towards e-commerce applications. The 83 breaches with the association of web application and the action of type capture application data is one indicator of this change. Figure 26 below illustrates how breaches with compromised payment cards are becoming increasingly about web servers – additional details can be found in the Retail industry section.
+22
+We see that the while Hacking  Moving on to Figure 32, Malware  And finally, we get a chance
+is a little farther ahead, the  makes its grand entrance. It   to see where attacks end in
+first action in an incident could  may not be the opening shot, but  Figure 33. The most significant
+be almost anything. The most  it is the trusty 7-iron (or 3 wood,  part is how Social is now at the
+interesting part is that Malware  pick your analogy according to  bottom. While social attacks
+is at the end of the chart, even  your skills), that is your go-to club  are significant for starting and
+behind Physical, which requires  for those middle action shots.  continuing attacks as seen in
+the attacker to be, well, physically  Interestingly, there are almost  Figures 31, they’re rarely the
+present during the attack.   no Misuse and Physical middle  three-foot putt followed by
+Malware is usually not the  actions and no Error in our data  the tip of the visor to the
+driver you use to get off the tee;  set. That’s primarily because  sunburned gallery.
+| remember that most is delivered  |     |     | these are short attack paths   |     |     |     |     |     |
+| -------------------------------- | --- | --- | ------------------------------ | --- | --- | --- | --- | --- |
+via social or hacking actions.  and to be in the middle you have
+to have at least three events in
+the chain.
+| Hacking |     |     |     |     |     | Hacking |     |     |
+| ------- | --- | --- | --- | --- | --- | ------- | --- | --- |
+Error
+|          |     |     | Malware  |     |     | Malware  |     |     |
+| -------- | --- | --- | -------- | --- | --- | -------- | --- | --- |
+| Social   |     |     | Hacking  |     |     | Error    |     |     |
+| Misuse   |     |     | Social   |     |     | Misuse   |     |     |
+| Physical |     |     | Misuse   |     |     | Physical |     |     |
+| Malware  |     |     | Physical |     |     |          |     |     |
+Social
+| 0% 20% 40% | 60% 80% | 100% | 0% 20% 40% | 60% 80% | 100% |            |         |      |
+| ---------- | ------- | ---- | ---------- | ------- | ---- | ---------- | ------- | ---- |
+|            |         |      |            |         |      | 0% 20% 40% | 60% 80% | 100% |
+| Incidents  |         |      | Incidents  |         |      | Incidents  |         |      |
+Figure 31. Actions in first step of Figure 32. Actions in middle steps of Figure 33. Actions in last step of
+incidents (n=909). An additional  incidents (n=302) incidents (n=942)
+32 incidents, (3.40% of all paths),
+started with an unknown action.
 
-Figure 27 details the varieties of data that were disclosed as a result of the data breaches that occurred this year. Personal information is once again prevalent. Credentials and Internal are statistically even, and are often both found in the same breach. The previously mentioned credential theft leading to the access of corporate email is a very common example.
+23
+75%
+50%
+25%
+0%
+0 5 10 15
+Number of steps
+sseccus
+kcattA
+At this point, you may be wondering if your sand traps
+are sandy enough. Figure 34 comes from breach
+simulation data. It shows that in testing, defenders fail
+to stop short paths substantially more often than long
+paths. So, just in case you were looking on your systems
+and thinking “it’s the other guys that let the attackers
+start on the putting green,” short attacks work.
+Figure 34. Attack success by chain length in
+simulated incidents (n=87)
+Attack Paths and Mitigations the preceding and proceeding events. Wheth-
+er we realize it or not, such interpretations
+Our friends at the Center for Internet Security impact how we plan our defenses. Defending
+contributed some thoughts on mitigating against malware takes a different approach if
+attack paths: the malware is dropped via social engineering,
+a drive-by download, or brought in by an
+Much of security has been founded on cat- insider via a USB device.
+alogues of controls, vague vendor promises,
+laborious legislation, and tomes of things to In addition, while being faced with what seems
+do to keep your organization safe. Within this like an endless list of potential attacks, limiting
+sea of options, we also have to justify our ourselves to snapshots also hinders our ability
+budgets, staff, and meet the business needs to find commonalities between these attacks.
+of the organization. Leveraging an attack path Such commonalities may be key dependencies
+model is not only an important step towards in an attacker’s process which represent
+formalizing our understanding of attacks, but opportunities for us to disrupt. The more
+also a means to understanding our defense. we can understand the sequence of events
+Previously, when looking at attack summary happening in an attack, the more we as a
+data we were presented with a snapshot of an community can make it harder for adversaries
+attacker’s process which requires us to infer to reuse the same process.
 
-### Breach timeline
-![Figure 28. Breach timelines]
+24
+Incident classification
+patterns and subsets
+Beginning with the 2014 report, we have utilized   patterns six years ago we reported that 92 percent
+nine basic patterns to categorize security incidents  of the incidents in our corpus going back 10 years
+and data breaches that share several similar   could be categorized into one of the nine patterns.
+characteristics. This was done in an effort to   Fast-forwarding to today with over 375,000 incidents
+communicate that the majority of incidents/breaches,  and over 17,000 data breaches, the numbers reveal
+even targeted, sophisticated attacks, generally   that 98.5% of security incidents and 88% of data
+share enough commonalities to categorize them, and  breaches continue to find a home within one of the
+study how often each pattern is found in a particular   original nine patterns. So, it would appear that, as with
+industry’s data set. When we first identified the  humans, the “I can change” mantra is false here as well.
+| Privilege Misuse       |           |             | Web Applications       |           |             |
+| ---------------------- | --------- | ----------- | ---------------------- | --------- | ----------- |
+| Denial of Service      |           |             | Miscellaneous Errors   |           |             |
+| Crimeware              |           |             | Privilege Misuse       |           |             |
+| Lost and Stolen Assets |           |             | Cyber-Espionage        |           |             |
+| Web Applications       |           |             | Everything Else        |           |             |
+| Miscellaneous Errors   |           |             | Crimeware              |           |             |
+| Everything Else        |           |             | Lost and Stolen Assets |           |             |
+| Cyber-Espionage        |           |             | Point of Sale          |           |             |
+| Point of Sale          |           |             | Payment Card Skimmers  |           |             |
+| Payment Card Skimmers  |           |             | Denial of Service      |           |             |
+| 0%  20%                |  40%  60% |  80%   100% | 0%  20%                |  40%  60% |  80%   100% |
+| Incidents              |           |             | Breaches               |           |             |
+Figure 35. Incidents per pattern (n=41,686) Figure 36. Breaches per pattern (n=2,013)
 
-As we have mentioned in previous reports, when breaches are successful, the time to compromise is typically quite short. Obviously, we have no way of knowing how many resources were expended in activities such as intelligence gathering and other preparations.[^10] However, the time from the attacker’s first action in an event chain to the initial compromise of an asset is typically measured in minutes. Conversely, the time to discovery is more likely to be months. Discovery time is very dependent on the type of attack in question. With payment card compromises, for instance, discovery is usually based upon the fraudulent use of the stolen data (typically weeks or months), while a stolen laptop will usually be discovered much more quickly because it is relatively obvious when someone has broken the glass out of your car door and taken your computer.
+25
+The patterns will be referenced more in the Miscellaneous Errors:
+industry sections, but to get acquainted or rekindle Incidents in which unintentional actions directly
+a relationship, they are defined below: compromised a security attribute of an asset.
+Notable findings: Misdelivery of sensitive data,
+publishing data to unintended audiences, and
+Crimeware: misconfigured servers account for 85% of this pattern.
+All instances involving malware that did not fit into a
+more specific pattern. The majority of incidents that Payment Card Skimmers:
+comprise this pattern are opportunistic in nature and All incidents in which a skimming device was
+are financially motivated. physically implanted (tampering) on an asset that
+reads magnetic stripe data from a payment card.
+Notable findings: Command and control (C2) is
+the most common functionality (47%) in incidents, Notable findings: Physical tampering of ATMs and
+followed by Ransomware (28%). gas pumps has decreased from last year. This may
+be attributable to EMV and disruption of card-present
+Cyber-Espionage: fraud capabilities.
+Incidents in this pattern include unauthorized
+network or system access linked to state-affiliated Point of Sale Intrusions:
+actors and/or exhibiting the motive of espionage. Remote attacks against the environments where
+card-present retail transactions are conducted. POS
+Notable findings: Threat actors attributed to state- terminals and POS controllers are the targeted assets.
+affiliated groups or nation-states combine to make up Physical tampering of PIN entry device (PED) pads or
+96% of breaches, with former employees, competitors, swapping out devices is covered in the Payment Card
+and organized criminal groups representing the rest. Skimmers section.
+Phishing was present in 78% of Cyber-Espionage
+incidents and the installation and use of backdoors Notable findings: The Accommodation industry is still
+and/or C2 malware was found in over 87% of incidents. the most common victim within this pattern, although
+Breaches involving internal actors are categorized in breaches were less common this year.
+the Insider and Privilege Misuse pattern.
+Physical Theft and Loss:
+Denial of Service: Any incident where an information asset went missing,
+Any attack intended to compromise the availability whether through misplacement or malice.
+of networks and systems. This includes both network
+and application attacks designed to overwhelm Notable findings: The top two assets found in Physical
+systems, resulting in performance degradation or Theft and Loss breaches are paper documents,
+interruption of service. and laptops. When recorded, the most common
+location of theft was at the victim work area, or from
+Notable findings: This pattern is based on the specific employee-owned vehicles.
+hacking action variety of DoS. The victims in our data
+set are large organizations over 99 percent of the time. Web Application Attacks:
+Any incident in which a web application was the
+Insider and Privilege Misuse: vector of attack. This includes exploits of code-level
+All incidents tagged with the action category vulnerabilities in the application as well as thwarting
+of Misuse—any unapproved or malicious use of authentication mechanisms.
+organizational resources—fall within this pattern.
+Notable findings: Over one-half of breaches in this
+Notable findings: This is mainly insider misuse, but pattern are associated with unauthorized access of
+former and collusive employees as well as partners cloud-based email servers.
+are present in the data set.
 
-Finally, it goes without saying that not being compromised in the first place is the most desirable scenario in which to find oneself. Therefore, a focus on understanding what data types you possess that are likely to be targeted, along with the correct application of controls to make that data more difficult (even with an initial device compromise) to access and exfiltrate is vital. Unfortunately, we do not have a lot of data around time to exfiltration, but improvements within your own organization in relation to both that metric along with time to discovery can result in the prevention of a high-impact confirmed data breach.
+26
+Everything Else: Analysis shows 6x fewer Human Resources personnel
+Any incident or breach that was not categorized into being impacted in breaches this year. This finding, as
+one of the nine aforementioned patterns. correlated with the W-2 scams, almost disappearing
+from our dataset. While this may be due to improved
+Notable findings: Of the 241 breaches that fell into awareness within organizations, our data doesn’t offer
+the Everything Else pattern, 28% are part of the any definitive answers as to what has caused the drop.
+Financially-Motivated Social Engineering attacks
+subset discussed later in this section. Botnet Subset:
+Comprised of over 50,000 instances of customers as
+victims of banking Trojans or other credential-stealing
+malware. These are generally low on details and
+Patterns within patterns
+analyzed separately to avoid eclipsing the rest of the
+main analysis data set.
+There are two subsets of incidents that will be called
+out when looking at industry breakouts. The increase
+Notable findings: 84% of the victims were in Finance
+in mail server (and email account) compromise and
+and Insurance (52), 10% in Information (51), and 5% in
+the significant dollar losses from social attacks leading
+Professional, Scientific, and Technical Services (54).
+to fraudulent payments provided an opportunity to
+180 countries and territories are represented in these
+create a Financially-Motivated Social Engineering
+breaches. Botnets are truly a low-effort attack that
+(FMSE) subset that Includes incidents and breaches
+knows no boundaries and brings attackers either direct
+that would fall into Web Application Attacks or
+revenue through financial account compromise or
+Everything Else. These incidents are included in the
+infrastructure to work from.
+main corpus, but we will look at them independently
+as well. The incidents that comprise the botnet
+Secondary Subset:
+subset, are not part of the main data set, due
+Comprised of 6,527 incidents of web applications
+to the sheer volume. These incidents could fall into
+used for secondary attacks such as DDoS sources or
+Crimeware if modeled from the perspective of
+malware hosting. These are legitimate incidents, but
+the malware recipient, or Web applications if the
+low on details and analyzed separately from the main
+botnet steals credentials from one victim and is used
+analysis data set.
+against another organizations’ application. Our
+data is from the latter, organizations whose systems
+Notable findings: Many times, these are light on
+are logged on via stolen user credentials.
+specifics, but we do know that 39% of the time they
+involved a malware action, with 70% of those
+being DDoS, and 30% exploiting a vulnerability and
+downloading additional malware. Attackers need
+Financially-Motivated Social Engineering Subset: infrastructure too and just like with the botnet subset,
+Financially motivated incidents that resulted in either when an attacker takes over your web application,
+a data breach or fraudulent transaction that featured your infrastructure just got converted to multi-tenant.
+a Social action but did not involve malware installation
+or employee misuse. Financial pretexting and phishing
+attacks (e.g., Business Email Compromise, W-2
+phishing) are included in this subset.
+Notable findings: 370 incidents, 248 of which are
+confirmed data breaches, populate this subset. The
+incidents are split almost evenly between parent
+patterns of Everything Else and Web applications.
+The breaches are closer to a 3:1 Web Application to
+Everything Else ratio.
 
-[^10] Though we are starting to look before and after the breach in the Data Breaches, Extended Version section
-
----
-
-## Unbroken chains
-While it is our belief that this section can be of interest and benefit to our readers, there are a couple of caveats that should be made clear from the beginning. First of all, we have only recently updated the VERIS schema to allow for collection of event chain data. Secondly, not all incident and breach records offer enough details to attempt to map out the path traveled by the threat actor.
-
-We collect an action, actor, asset, and attribute at each step. However, each may be “Unknown” or omitted completely if it did not occur in that particular step of the attack. To create a single path from these factors, we begin by placing the actor at the first step at the beginning of the path. It’s followed by the action and then attribute present in the step. For the remaining steps it proceeds from action to attribute to action of the next step, simply skipping over any omitted.
-
-This calls for the old Billy Baroo.
-
-Last year we pointed out how a golfer navigating a golf course is a lot like an adversary attacking your network.[^11] The course creator builds sand traps and water hazards along the way to make life difficult. Additional steps, such as the length of grass in the rough and even the pin placement on the green can raise the stroke average for a given hole. In our world, you’ve defenses and mitigations in place to deter, detect, and defend. And just like on the golf course, the attackers reach into their bag, pull out their iron, in the form of a threat action, and do everything they can to land on the attribute they want in the soft grass of the fairway.
-
-The first thing to know is that unlike a golfer who graciously paces all the way back to the tees to take his or her first shot, your attackers won’t be anywhere near as courteous. In Figure 29 we see that attack paths are much more likely to be short than long. And why not, if you’re not following the rules (and which attackers do?) why hit from the tees unless you absolutely have to? Just place your ball right there on the green and tap it in for a birdie or a double eagle, as the case may be. And while your normal genteel golfer will abide (to a greater or lesser degree) by the course rules on the off chance that there is a Marshall watching and start on hole 1, threat actors will invariably take the shotgun start approach. They will begin their round on the hole they are shooting for, whether it’s confidentiality, integrity, or availability.
-
-> “My golf security is so delicate, so tenuously wired together with silent inward prayers, exhortations and unstable visualizations, that the sheer pressure of an additional pair of eyes crumbles the whole rickety structure into rubble.”  
-> —John Updike, with the sympathy of some CISOs.
-
-![Figure 29. Number of steps per incident]
-
-Figure 30 provides a look at the three holes on our golf course. It displays the number of events and threat actions in the attack chains, by last attribute affected. There is a lot to take in, and we do want to point a few things out.
-
-First, starting with Confidentiality, take a look at just how many short paths result from Misuse and Error, and to a lesser extent from Physical actions. On the other hand, we can see Hacking actions bounding back and forth between attributes for several steps. In Integrity we see an especially long chain beginning with Hacking and going to and fro between that and Malware as it compromises the Confidentiality and Integrity of the target.
-
-Obviously, there’s a lot going on in Figure 30. An easier way of looking at it is what actions start (Figure 31), continue (Figure 32), and end (Figure 33) incidents.
-
-![Figure 30. Attack chain by final attribute compromised]
-
-[^11] We are not saying hackers have early 90’s John Daly mullets. We don’t have data to support that. We just imagine that they do, and that this is why they all wear hoodies in clip art.
-
-We see that the while Hacking is a little farther ahead, the first action in an incident could be almost anything. The most interesting part is that Malware is at the end of the chart, even behind Physical, which requires the attacker to be, well, physically present during the attack. Malware is usually not the driver you use to get off the tee; remember that most is delivered via social or hacking actions.
-
-Moving on to Figure 32, Malware makes its grand entrance. It may not be the opening shot, but it is the trusty 7-iron (or 3 wood, pick your analogy according to your skills), that is your go-to club for those middle action shots. Interestingly, there are almost no Misuse and Physical middle actions and no Error in our data set. That’s primarily because these are short attack paths and to be in the middle you have to have at least three events in the chain.
-
-And finally, we get a chance to see where attacks end in Figure 33. The most significant part is how Social is now at the bottom. While social attacks are significant for starting and continuing attacks as seen in Figures 31, they’re rarely the three-foot putt followed by the tip of the visor to the sunburned gallery.
-
-![Figure 31. Actions in first step of incidents / Figure 32. Actions in middle steps of incidents / Figure 33. Actions in last step of incidents]
-
-![Figure 34. Attack success by chain length in simulated incidents]
-
-At this point, you may be wondering if your sand traps are sandy enough. Figure 34 comes from breach simulation data. It shows that in testing, defenders fail to stop short paths substantially more often than long paths. So, just in case you were looking on your systems and thinking “it’s the other guys that let the attackers start on the putting green,” short attacks work.
-
-### Attack Paths and Mitigations
-Our friends at the Center for Internet Security contributed some thoughts on mitigating against attack paths:
-
-Much of security has been founded on catalogues of controls, vague vendor promises, laborious legislation, and tomes of things to do to keep your organization safe. Within this sea of options, we also have to justify our budgets, staff, and meet the business needs of the organization. Leveraging an attack path model is not only an important step towards formalizing our understanding of attacks, but also a means to understanding our defense.
-
-Previously, when looking at attack summary data we were presented with a snapshot of an attacker’s process which requires us to infer the preceding and proceeding events. Whether we realize it or not, such interpretations impact how we plan our defenses. Defending against malware takes a different approach if the malware is dropped via social engineering, a drive-by download, or brought in by an insider via a USB device.
-
-In addition, while being faced with what seems like an endless list of potential attacks, limiting ourselves to snapshots also hinders our ability to find commonalities between these attacks. Such commonalities may be key dependencies in an attacker’s process which represent opportunities for us to disrupt. The more we can understand the sequence of events happening in an attack, the more we as a community can make it harder for adversaries to reuse the same process.
-
----
-
-## Incident classification patterns and subsets
-Beginning with the 2014 report, we have utilized nine basic patterns to categorize security incidents and data breaches that share several similar characteristics. This was done in an effort to communicate that the majority of incidents/breaches, even targeted, sophisticated attacks, generally share enough commonalities to categorize them, and study how often each pattern is found in a particular industry’s data set. When we first identified the patterns six years ago we reported that 92 percent of the incidents in our corpus going back 10 years could be categorized into one of the nine patterns. Fast-forwarding to today with over 375,000 incidents and over 17,000 data breaches, the numbers reveal that 98.5% of security incidents and 88% of data breaches continue to find a home within one of the original nine patterns. So, it would appear that, as with humans, the “I can change” mantra is false here as well.
-
-![Figure 35. Incidents per pattern / Figure 36. Breaches per pattern]
-
-The patterns will be referenced more in the industry sections, but to get acquainted or rekindle a relationship, they are defined below:
-
-**Crimeware:**  
-All instances involving malware that did not fit into a more specific pattern. The majority of incidents that comprise this pattern are opportunistic in nature and are financially motivated.  
-*Notable findings:* Command and control (C2) is the most common functionality (47%) in incidents, followed by Ransomware (28%).
-
-**Cyber-Espionage:**  
-Incidents in this pattern include unauthorized network or system access linked to state-affiliated actors and/or exhibiting the motive of espionage.  
-*Notable findings:* Threat actors attributed to state-affiliated groups or nation-states combine to make up 96% of breaches, with former employees, competitors, and organized criminal groups representing the rest. Phishing was present in 78% of Cyber-Espionage incidents and the installation and use of backdoors and/or C2 malware was found in over 87% of incidents. Breaches involving internal actors are categorized in the Insider and Privilege Misuse pattern.
-
-**Denial of Service:**  
-Any attack intended to compromise the availability of networks and systems. This includes both network and application attacks designed to overwhelm systems, resulting in performance degradation or interruption of service.  
-*Notable findings:* This pattern is based on the specific hacking action variety of DoS. The victims in our data set are large organizations over 99 percent of the time.
-
-**Insider and Privilege Misuse:**  
-All incidents tagged with the action category of Misuse—any unapproved or malicious use of organizational resources—fall within this pattern.  
-*Notable findings:* This is mainly insider misuse, but former and collusive employees as well as partners are present in the data set.
-
-**Miscellaneous Errors:**  
-Incidents in which unintentional actions directly compromised a security attribute of an asset.  
-*Notable findings:* Misdelivery of sensitive data, publishing data to unintended audiences, and misconfigured servers account for 85% of this pattern.
-
-**Payment Card Skimmers:**  
-All incidents in which a skimming device was physically implanted (tampering) on an asset that reads magnetic stripe data from a payment card.  
-*Notable findings:* Physical tampering of ATMs and gas pumps has decreased from last year. This may be attributable to EMV and disruption of card-present fraud capabilities.
-
-**Point of Sale Intrusions:**  
-Remote attacks against the environments where card-present retail transactions are conducted. POS terminals and POS controllers are the targeted assets. Physical tampering of PIN entry device (PED) pads or swapping out devices is covered in the Payment Card Skimmers section.  
-*Notable findings:* The Accommodation industry is still the most common victim within this pattern, although breaches were less common this year.
-
-**Physical Theft and Loss:**  
-Any incident where an information asset went missing, whether through misplacement or malice.  
-*Notable findings:* The top two assets found in Physical Theft and Loss breaches are paper documents, and laptops. When recorded, the most common location of theft was at the victim work area, or from employee-owned vehicles.
-
-**Web Application Attacks:**  
-Any incident in which a web application was the vector of attack. This includes exploits of code-level vulnerabilities in the application as well as thwarting authentication mechanisms.  
-*Notable findings:* Over one-half of breaches in this pattern are associated with unauthorized access of cloud-based email servers.
-
-**Everything Else:**  
-Any incident or breach that was not categorized into one of the nine aforementioned patterns.  
-*Notable findings:* Of the 241 breaches that fell into the Everything Else pattern, 28% are part of the Financially-Motivated Social Engineering attacks subset discussed later in this section.
-
-### Patterns within patterns
-There are two subsets of incidents that will be called out when looking at industry breakouts. The increase in mail server (and email account) compromise and the significant dollar losses from social attacks leading to fraudulent payments provided an opportunity to create a Financially-Motivated Social Engineering (FMSE) subset that Includes incidents and breaches that would fall into Web Application Attacks or Everything Else. These incidents are included in the main corpus, but we will look at them independently as well. The incidents that comprise the botnet subset, are not part of the main data set, due to the sheer volume. These incidents could fall into Crimeware if modeled from the perspective of the malware recipient, or Web applications if the botnet steals credentials from one victim and is used against another organizations’ application. Our data is from the latter, organizations whose systems are logged on via stolen user credentials.
-
-**Financially-Motivated Social Engineering Subset:**  
-Financially motivated incidents that resulted in either a data breach or fraudulent transaction that featured a Social action but did not involve malware installation or employee misuse. Financial pretexting and phishing attacks (e.g., Business Email Compromise, W-2 phishing) are included in this subset.  
-*Notable findings:* 370 incidents, 248 of which are confirmed data breaches, populate this subset. The incidents are split almost evenly between parent patterns of Everything Else and Web applications. The breaches are closer to a 3:1 Web Application to Everything Else ratio.  
-Analysis shows 6x fewer Human Resources personnel being impacted in breaches this year. This finding, as correlated with the W-2 scams, almost disappearing from our dataset. While this may be due to improved awareness within organizations, our data doesn’t offer any definitive answers as to what has caused the drop.
-
-**Botnet Subset:**  
-Comprised of over 50,000 instances of customers as victims of banking Trojans or other credential-stealing malware. These are generally low on details and analyzed separately to avoid eclipsing the rest of the main analysis data set.  
-*Notable findings:* 84% of the victims were in Finance and Insurance (52), 10% in Information (51), and 5% in Professional, Scientific, and Technical Services (54). 180 countries and territories are represented in these breaches. Botnets are truly a low-effort attack that knows no boundaries and brings attackers either direct revenue through financial account compromise or infrastructure to work from.
-
-**Secondary Subset:**  
-Comprised of 6,527 incidents of web applications used for secondary attacks such as DDoS sources or malware hosting. These are legitimate incidents, but low on details and analyzed separately from the main analysis data set.  
-*Notable findings:* Many times, these are light on specifics, but we do know that 39% of the time they involved a malware action, with 70% of those being DDoS, and 30% exploiting a vulnerability and downloading additional malware. Attackers need infrastructure too and just like with the botnet subset, when an attacker takes over your web application, your infrastructure just got converted to multi-tenant.
-
----
-
-## Data breaches: extended version
-There’s definitely a feeling in InfoSec that the attackers are outpacing us. They’ve got all the creds, the vulns, and the shells, not to mention the possibility of huge monetary incentives. We, on the other hand, have a four-year project just to replace the servers on end-of-life operating systems. However, when contemplating this unfair advantage it’s sometimes easy for us to overlook the bigger picture. While it is true that attacks typically happen quickly (hours or less) when they are well aimed, and it also is true that when our organizations are successfully breached it often takes us months or more to learn of it, there is still room for optimism. In the paths section we examined the route that attackers take to get from point A to point B. In this section we take a look at those events that take place prior to the attack, and those required after the attack has ended in order for the attacker to realize their profit.
-
-### Just ask the axis
-Let’s look at what’s being stolen. In Figure 37 we illustrate the analysis of the amount lost to attackers in two types of breaches: business email compromises and computer data breaches. This loss impact data comes courtesy of the Federal Bureau of Investigation Internet Crime Complaint Center (FBI IC3) who have offered some helpful hints in the breakout at the end of this section. When looking at the visualized distribution, the first thing to notice is the spike at zero. Not all incidents and breaches result in a loss. The second piece of good news is that the median loss for a business email compromise is approximately the same as the average cost of a used car. The bad news is that the dollar axis isn’t linear. There are about as many breaches resulting in the loss of between zero and the median as there are between the median and $100 million. We are no longer talking about used-car money at this point, unless you
-
----
-
-happen to be Jay Leno.
+27
+Data breaches: extended version
+There’s definitely a feeling in InfoSec that the attackers Just ask the axis
+are outpacing us. They’ve got all the creds, the
+vulns, and the shells, not to mention the possibility Let’s look at what’s being stolen. In Figure 37
+of huge monetary incentives. We, on the other hand, we illustrate the analysis of the amount lost to
+have a four-year project just to replace the servers attackers in two types of breaches: business email
+on end-of-life operating systems. However, when compromises and computer data breaches. This
+contemplating this unfair advantage it’s sometimes loss impact data comes courtesy of the Federal
+easy for us to overlook the bigger picture. While it is Bureau of Investigation Internet Crime Complaint
+true that attacks typically happen quickly (hours or Center (FBI IC3) who have offered some helpful
+less) when they are well aimed, and it also is true that hints in the breakout at the end of this section.
+when our organizations are successfully breached When looking at the visualized distribution, the first
+it often takes us months or more to learn of it, there thing to notice is the spike at zero. Not all incidents
+is still room for optimism. In the paths section we and breaches result in a loss. The second piece of
+examined the route that attackers take to get from good news is that the median loss for a business email
+point A to point B. In this section we take a look at compromise is approximately the same as the average
+those events that take place prior to the attack, and cost of a used car. The bad news is that the dollar
+those required after the attack has ended in order for axis isn’t linear. There are about as many breaches
+the attacker to realize their profit. resulting in the loss of between zero and the median
+as there are between the median and $100 million. We
+are no longer talking about used-car money at this
+point, unless you happen to be Jay Leno.
 “Give me a place to stand and a lever long
 enough and I will move the world.”
 As mentioned above, there’s a great deal that has to
@@ -2422,4 +3114,4 @@ Investigations Report
 service marks or registered trademarks and service marks of Verizon Trademark Services LLC or its affiliates in the United States and/or other countries. All other trademarks
 and service marks are the property of their respective owners. 05/19
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-07", "model": "gemini-3.7-flash"} -->
