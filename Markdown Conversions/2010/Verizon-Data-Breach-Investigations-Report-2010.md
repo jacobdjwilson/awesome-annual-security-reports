@@ -1,451 +1,915 @@
-# Data Breach Investigations Report 2010
-
-## Table of Contents
-- [Executive Summary](#executive-summary)
-- [Methodology](#methodology)
-- [Verizon Data Collection Methodology](#verizon-data-collection-methodology)
-- [USSS Data Collection Methodology](#usss-data-collection-methodology)
-- [Cybercrime Year in Review, 2009](#cybercrime-year-in-review-2009)
-- [Results and Analysis](#results-and-analysis)
-- [Demographics](#demographics)
-- [Threat Agents](#threat-agents)
-- [External Agents](#external-agents-70-of-breaches-98-of-records)
-- [Internal Agents](#internal-agents-48-of-breaches-3-of-records)
-- [Partner Agents](#partner-agents-11-of-breaches-1-of-records)
-- [Threat Actions](#threat-actions)
-
-Organization: Verizon  
-Report Title: Data-Breach-Investigations-Report  
-Year: 2010  
-
-Raw Extracted Content:
-SOURCE: EXTERNAL  
-TYPE: ORGANIZED CRIMINAL GROUP  
-ORIGIN: EASTERN EUROPE  
-AGENT  
-CATEGORY: HACKING  
-TYPE: SQL INJECTION; USE OF STOLEN CREDENTIALS  
-PATH: WEB APPLICATION  
-ACTION  
-CATEGORY: MALWARE  
-TYPE: PACKET SNIFFER; BACKDOOR  
-PATH: INSTALLED/INJECTED BY REMOTE ATTACKER  
-ASSET  
-TYPE: DATABASE SERVER  
-DATA: PAYMENT CARD DATA; INTELLECTUAL PROPERTY  
-TYPE: INTEGRITY; CONFIDENTIALITY  
-ATTRIBUTE  
-
-2010 DATA BREACH INVESTIGATIONS REPORT  
+SOURCE: EXTERNAL
+TYPE: ORGANIZED CRIMINAL GROUP
+ORIGIN: EASTERN EUROPE
+AGENT
+CATEGORY: HACKING
+TYPE: SQL INJECTION; USE
+OF STOLEN CREDENTIALS
+PATH: WEB APPLICATION
+ACTION
+CATEGORY: MALWARE
+TYPE: PACKET SNIFFER; BACKDOOR
+PATH: INSTALLED/INJECTED BY
+REMOTE ATTACKER
+ASSET
+TYPE: DATABASE SERVER
+DATA: PAYMENT CARD DATA;
+INTELLECTUAL PROPERTY
+TYPE: INTEGRITY;
+CONFIDENTIALITY
+ATTRIBUTE
+2 0 10 D ATA B R E A C H
+I N V E S T I G AT I O N S R E P O R T
 A study conducted by the Verizon RISK Team in cooperation with the United States Secret Service.
 
-2010 Data Breach Investigations Report  
-AUTHORS:  
-Wade Baker  
-Mark Goudie  
-Alexander Hutton  
-C. David Hylender  
-Jelle Niemantsverdriet  
-Christopher Novak  
-David Ostertag  
-Christopher Porter  
-Mike Rosen  
-Bryan Sartin  
-Peter Tippett, M.D., Ph.D  
-Men and women of the United States Secret Service  
+2010 Data Breach Investigations Report
+AUTHORS: TABLE OF CONTENTS
+Wade Baker Executive Summary ...............................................................2
+Mark Goudie Methodology .....................................................................4
+Alexander Hutton Verizon Data Collection Methodology...........................................4
+C. David Hylender USSS Data Collection Methodology .............................................5
+Jelle Niemantsverdriet Cybercrime Year in Review, 2009 ...................................................6
+Christopher Novak Results and Analysis ...............................................................7
+David Ostertag Demographics .................................................................8
+Christopher Porter Threat Agents .................................................................11
+Mike Rosen Breach Size by Threat Agents..............................................14
+Bryan Sartin External Agents...........................................................15
+Peter Tippett, M.D., Ph.D Internal Agents ...........................................................17
+Men and women of the Partner Agents ...........................................................19
+United States Secret Service
+Threat Actions.................................................................20
+Malware .................................................................22
+CONTRIBUTORS:
+Hacking ..................................................................27
+Social ....................................................................31
+Thijs Bosschert
+Misuse ...................................................................33
+Eric Brohm
+Physical ..................................................................35
+Calvin Chang
+Error .....................................................................36
+Michael Dahn
+Environmental............................................................37
+Ron Dormido
+Compromised Assets ..........................................................37
+Ben van Erck
+Compromised Data............................................................39
+Kylee Evans
+Attack Difficulty ...............................................................42
+Eric Gentry
+Attack Targeting...............................................................43
+John Grim
+Unknown Unknowns ..........................................................44
+Clarence Hill
+Timespan of Breach Events.....................................................46
+Adam Kunsemiller
+Breach Discovery Methods.....................................................48
+Kenny Lee
+Anti-Forensics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .52
+Wayne Lee
+PCI DSS Compliance . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .53
+Kevin Long
+Conclusions and Recommendations ..............................................56
+Raphael Perelstein
+Appendices from the United States Secret Service.................................58
+Enrico Telemaque
+Appendix A: Online Criminal Communities .....................................58
+Denson Todd
+Appendix B: Prosecuting Cybercrime—The Albert Gonzalez story...............62
+Yuichi Uzawa
+About Verizon Investigative Response.............................................63
+J. Andrew Valentine
+About the United States Secret Service............................................63
+Nicolas Villatte
+Matthijs van der Wel
+Paul Wright For additional updates and commentary, please visit
+http://securityblog.verizonbusiness.com.
+SPECIAL THANKS TO:
+For inquiries directed to the United States Secret Service, contact
+databreachstudy@usss.dhs.gov.
+Tracey Beeferman
+Carl Dismukes
+Paul Goulding
+Carole Neal
 
-CONTRIBUTORS:  
-Thijs Bosschert  
-Eric Brohm  
-Calvin Chang  
-Michael Dahn  
-Ron Dormido  
-Ben van Erck  
-Kylee Evans  
-Eric Gentry  
-John Grim  
-Clarence Hill  
-Adam Kunsemiller  
-Kenny Lee  
-Wayne Lee  
-Kevin Long  
-Raphael Perelstein  
-Enrico Telemaque  
-Denson Todd  
-Yuichi Uzawa  
-J. Andrew Valentine  
-Nicolas Villatte  
-Matthijs van der Wel  
-Paul Wright  
+2010 Data Breach Investigations Report
+A study conducted by the Verizon Business RISK team
+in cooperation with the United States Secret Service.
+Executive Summary
+In some ways, data breaches have a lot in common with fingerprints. Each is unique and we learn a great deal by analyzing the
+various patterns, lines, and contours that comprise each one. The main value of fingerprints, however, lies in their ability to identify
+a particular individual in particular circumstances. In this sense, studying them in bulk offers little additional benefit. On the other
+hand, the analysis of breaches in aggregate can be of great benefit; the more we study, the more prepared we are to stop them.
+Not surprisingly, the United States Secret Service (USSS) is also interested in studying and stopping data breaches. This was a
+driving force in their decision to join us in this 2010 Data Breach Investigations Report. They’ve increased the scope of what
+we’re able to study dramatically by including a few hundred of their own cases to the mix. Also included are two appendices
+from the USSS. One delves into online criminal communities and the other focuses on prosecuting cybercrime. We’re grateful
+for their contributions and believe organizations and individuals around the world will benefit from their efforts.
+With the addition of Verizon’s 2009 caseload and data contributed from the USSS, the DBIR series now spans six years, 900+
+breaches, and over 900 million compromised records. We’ve learned a great deal from this journey and we’re glad to have the
+opportunity to share these findings with you. As always, our goal is that the data and analysis presented in this report proves
+helpful to the planning and security efforts of our readers. We begin with a few highlights below.
+WHO IS BEHIND DATA BREACHES?
+70% Including the USSS cases in this year’s report shook things up a
+resulted from external agents (-9%)
+bit but didn’t shake our worldview. Driven largely by organized
+groups, the majority of breaches and almost all data stolen
+48%
+were caused by insiders (+26%) (98%) in 2009 was still the work of criminals outside the victim
+organization. Insiders, however, were more common in cases
+11%
+implicated business partners (-23%) worked by the USSS, which boosted this figure in the joint
+dataset considerably. This year’s study has by far improved our
+27% visibility into internal crime over any other year. Breaches
+involved multiple parties (-12%)
+linked to business partners continued the decline observed
+in our last report and reached the lowest level since 2004.
+HOW DO BREACHES OCCUR?
+48%
+Related to the larger proportion of insiders, Misuse sits atop the involved privilege misuse (+26%)
+list of threat actions leading to breaches in 2009. That’s not to say
+that Hacking and Malware have gone the way of the dinosaurs; 40% resulted from hacking (-24%)
+they ranked #2 and #3 and were responsible for over 95% of all
+data comprised. Weak or stolen credentials, SQL injection, and 38%
+utilized malware (<>)
+data-capturing, customized malware continue to plague
+organizations trying to protect information assets. Cases
+28%
+involving the use of social tactics more than doubled and employed social tactics (+16%)
+physical attacks like theft, tampering, and surveillance ticked up
+several notches. 15%
+comprised physical attacks (+6%)
+2
 
-SPECIAL THANKS TO:  
-Tracey Beeferman  
-Carl Dismukes  
-Paul Goulding  
-Carole Neal  
+WHAT COMMONALITIES EXIST?
+98%
+of all data breached came from servers (-1%) As in previous years, nearly all data were breached from servers
+and applications. This continues to be a defining characteristic
+85% between data-at-risk incidents and those involving actual
+of attacks were not considered highly difficult (+2%)
+compromise. The proportion of breaches stemming from
+highly sophisticated attacks remained rather low yet once
+61% were discovered by a third party (-8%) again accounted for roughly nine out of ten records lost. In
+keeping with this finding, we assessed that most breaches
+86% could have been avoided without difficult or expensive
+of victims had evidence of the breach in their log files
+controls. Yes, hindsight is 20/20 but the lesson holds true; the
+criminals are not hopelessly ahead in this game. The more we
+96% know, the better we can prepare. Speaking of being prepared,
+of breaches were avoidable through simple or
+organizations remain sluggish in detecting and responding to
+intermediate controls (+9%)
+incidents. Most breaches are discovered by external parties and
+79% only then after a considerable amount of time.
+of victims subject to PCI DSS had not achieved
+compliance
+WHERE SHOULD MITIGATION EFFORTS BE FOCUSED?
+While we’ve added some new suggestions to the Conclusions
+and Recommendations section of this report, what you see to
+the right is similar to the message we’ve been preaching from
+the beginning. That’s not because we don’t feel like writing
+another sermon; it’s simply that, based on the data before us,
+all the points in this one still apply.
+This study always reminds us that our profession has the (cid:68)
+necessary tools to get the job done. The challenge for us lies Eliminate unnecessary data; keep tabs on what’s left
+in selecting the right tools for the job at hand and then not
+(cid:68)
+letting them get dull and rusty over time. Evidence shows Ensure essential controls are met
+when that happens, our adversaries are quick to take
+(cid:68)
+advantage of it. Check the above again
+The amount of breaches that exploit authentication in (cid:68)
+some manner is a problem. In our last report it was default Test and review web applications
+credentials; this year it’s stolen and/or weak credentials.
+(cid:68)
+Perhaps this is because attackers know most users are Audit user accounts and monitor privileged activity
+over-privileged. Perhaps it’s because they know we don’t
+(cid:68)
+monitor user activity very well. Perhaps it’s just the easiest Filter outbound traffic
+way in the door. Whatever the reason, we have some work to
+do here. It doesn’t matter how hardened our defenses are if (cid:68)
+Monitor and mine event logs
+we can’t distinguish the good guys from the bad guys.
+Malware gets increasingly difficult to detect and prevent
+(especially once the attacker owns the system). Therefore,
+protect against the damage malware does after infection,
+much of which can be mitigated if outbound traffic is restricted.
+Finally, the value of monitoring (perhaps we should say
+“mining”) logs cannot be overstated. The signs are there; we
+just need to get better at recognizing them.
+3
 
-For additional updates and commentary, please visit [http://securityblog.verizonbusiness.com](http://securityblog.verizonbusiness.com).  
+Methodology
+It is often said that the role of science is to explain the “how” of things in the natural world. We find it a fitting description and
+applaud all who study the intricacies of our field in pursuit of greater understanding. In that vein, the 2010 Data Breach
+Investigations Report (DBIR) marks the third installment (fifth if you count supplemental reports) in our continuing effort to
+shed light on the “how” of things in the world of computer crime.
+The collection of data through rigorous observation is, of course, one of the cornerstones of any scientific endeavor. While
+we like to think our methodology has been rigorous, it cannot be said that it has been entirely consistent. The 2008 DBIR was
+a retrospective covering four years (2004-2007) of Verizon’s caseload in one massive data collection effort. The scope was
+large but the level of analysis was somewhat limited due to the passage of time. The shift from historic to ongoing collection
+for the 2009 DBIR opened the door to more active
+observation, greater detail, and new areas of study. This Not only does this increase the size of the
+approach certainly would have worked again for this year’s
+window of visibility we have into the world
+report and would have maintained a state of consistency,
+of data breaches but also grants a new
+which is a good trait to have in a methodology. Our ultimate
+goal, however, is not a state of consistency; our ultimate perspective into that world. As will be seen,
+goal is a state of knowledge. It is to understand and explain
+our caseloads share many similarities, but
+the “how.”
+there are some key differences as well.
+For this reason, we are shaking things up again by including
+a completely foreign and very different (yet still very reliable)
+dataset in the 2010 DBIR. We’re thrilled to welcome the contributions (in data and expertise) of the United States Secret
+Service (USSS) to this year’s report. Not only does this increase the size of the window of visibility we have into the world of
+data breaches but also grants a new perspective into that world. As will be seen, our caseloads share many similarities, but
+there are some key differences as well. Both are instructive and we firmly believe this joint effort will lead us closer to the goal
+described above.
+Pulling the two datasets together was quite an undertaking for both parties and the rest of this section will explain how it
+was accomplished.
+Verizon Data Collection Methodology
+The underlying methodology used by Verizon remains unchanged from that of previous years. All results are based on
+firsthand evidence collected during paid forensic investigations conducted by Verizon from 2004 to 2009. The 2009 caseload
+is the primary analytical focus of the report, but the entire range of data is referenced extensively throughout. Though the
+Investigative Response (IR) team works a variety of engagements, only those involving a confirmed breach are included in
+this data set. To help ensure reliable and consistent input, all investigators use the Verizon Enterprise Risk and Incident Sharing
+(VERIS) framework to record case data and other relevant details. The information collected using VERIS is then submitted to
+members of the RISK Intelligence team for further validation and analysis. The aggregate repository of case data is sanitized
+and contains no information that would enable one to ascertain a client’s identity.
+4
 
-For inquiries directed to the United States Secret Service, contact databreachstudy@usss.dhs.gov.
+USSS Data Collection Methodology
+With all the talk of “shaking things up” above, one might conclude that consistency was tossed out the window in this year’s
+report. This is not the case. In terms of data collection, the USSS methodology differs little from that of Verizon. For the
+purposes of this study, the USSS created an internal application based on the VERIS framework. From the thousands of cases
+worked by the USSS during 2008 and 20091, the scope was narrowed to only those involving confirmed organizational data
+breaches2 in alignment with the focus of the DBIR. The scope was further narrowed to include only cases for which Verizon
+did not conduct the forensic investigation3. Of these cases, a sample was taken and requests to input data were sent to USSS
+agents who worked each case. In doing so, these agents utilized investigative notes, reports provided by the victim or other
+forensic firms, and their own experience gained in handling the case. This yielded 257 qualifying cases for which data were
+collected within the time frame set for this report. The resulting dataset was purged of any information that might identify
+organizations or individuals involved in the case and then provided to Verizon’s RISK Intelligence team for analysis.
+In conclusion, we would like to reiterate that we make no claim that the findings of this report are representative of all data
+breaches in all organizations at all times. Even though the merged Verizon-USSS dataset (presumably) more closely reflects
+reality than either in isolation, it is still a sample. Although we believe many of the findings presented in this report to be
+appropriate for generalization (and our confidence in this grows over time), bias undoubtedly exists. Even so, there is a wealth
+of information here and no shortage of valid and clear takeaways. As with any study, readers will ultimately decide which
+findings are applicable within their organization.
+A BRIEF PRIMER ON VERIS
+VERIS is a framework designed to provide a common language for describing security incidents in a structured and
+repeatable manner. It takes the narrative of “who did what to what or whom with what result” and translates it into the
+kind of data you see presented in this report. Because many readers asked about the methodology behind the DBIR
+and because we hope to facilitate more information sharing on security incidents, we released VERIS earlier this year for
+free public use. A brief overview of VERIS is available on our website4 and the complete framework can be obtained from the
+VERIS community wiki5. Both are good companion references to this report for understanding terminology and context.
+1 The scope of data collection for the USSS was 2008 and 2009. However, over 70 cases worked in 2008 pertained to breaches that occurred in 2007. Because this is a large
+enough sample and allows for three-year trend analysis, we show them separate from 2008 breaches.
+2 The USSS works many cases related to theft and fraud that are not included in this report. For instance, crimes committed against consumers that do not involve an organization
+or its assets are not included. Criminal activities that occur after data are stolen (i.e., “white plastic fraud” and identity theft) are also not within the scope of this study.
+3 The USSS is often involved in one manner or another with cases worked by Verizon (especially the larger ones). To eliminate redundancy, these cases were removed from the
+USSS sample. Where both Verizon and the USSS worked a case, Verizon-contributed data were used.
+4 http://www.verizonbusiness.com/resources/whitepapers/wp_verizon-incident-sharing-metrics-framework_en_xg.pdf
+5 https://verisframework.wiki.zoho.com/
+5
 
-***
+Cybercrime Year in Review, 2009
+2009 was, in many ways, a transformational year in the trenches. As attackers and defenders vied for advantage, there were
+numerous developments on many fronts around the world. It’s difficult to measure who’s winning with any certainty but
+there are, at least, some measurements available. One of them, public breach disclosures, fell noticeably in 2009. Organizations
+that track disclosed breaches like DataLossDB6 and the Identity Theft Resource Center7 reported figures that were well off
+2008 totals. Private presentations and hallway conversations with many in the know suggested similar findings. Our own
+caseload reveals this as well. In a report dedicated to the analysis of annual breach trends, it seems wholly appropriate to
+reflect on why. It also provides a fitting backdrop for discussing some key 2009 milestones.
+In our last report, we observed that massive exposures of payment card data in recent years have effectively flooded the
+market and driven down the prices criminals can get for their stolen wares. 2009, then, may simply be the trough in a natural
+supply and demand cycle. If supply has outpaced demand, why release more product?
+Perhaps Perhaps cybercriminals are directing their resources elsewhere until market conditions
+improve. It is also possible that breaches are occurring at the same rate but the criminals are
+cybercriminals
+sitting on stolen data until demand picks up. Because fraud alerts are the leading method of
+are directing their
+discovering breaches, it stands to reason that many breaches could occur without anyone
+resources elsewhere being the wiser if the criminal decided it was in his best interest to be patient.
+until market Another possible reason for this decline is law enforcement’s effectiveness in capturing the
+criminals. The prosecution of Albert Gonzalez was a major event in 2009. He and his
+conditions improve.
+accomplices were responsible for some of the largest data breaches ever reported. Taking
+It is also possible them off the streets, so to speak, may have caused a temporary (but we can hope for
+that breaches are permanent) dip in breaches. It is also possible that their prosecution made other
+cybercriminals take some time off to reevaluate their priorities in life.
+occurring at the
+2009 witnessed much discussion and consideration around the world about breach
+same rate but the
+disclosure laws. As seen in the U.S., the creation of these laws can have a huge effect on
+criminals are sitting breach statistics. So can the administration of them. Depending on how the legal
+environment evolves in this area, it could have a significant impact on the number of
+on stolen data until
+known breaches worldwide.
+demand picks up.
+While it’s highly unlikely that cloud computing or virtualization had anything to do with breach
+disclosure rates, they were no doubt hot topics in 2009. We continue to search for a link between
+data breaches and cloud-based or virtualized infrastructure but continue to find none.
+Finally, we would be remiss if we did not touch on the subject of the hour, Advanced Persistent Threats (APTs). Yes, APTs are
+real but they are not new. Although the hype has grown exponentially, the post-2010 threat of APTs to your organization is
+more or less the same as pre-2010 levels. While we do appreciate the business, we would like to save you some expense and
+heartache: APTs are not the source of all malware infections and suspicious traffic on your network. Don’t get caught up in
+the hype. Manage your defenses based on reality, not on publicity. We hope this report helps with that.
+6 http://datalossdb.org/
+7 http://www.idtheftcenter.org/index.html
+6
 
-2010 Data Breach Investigations Report  
-A study conducted by the Verizon Business RISK team in cooperation with the United States Secret Service.
-
-## Executive Summary
-
-In some ways, data breaches have a lot in common with fingerprints. Each is unique and we learn a great deal by analyzing the various patterns, lines, and contours that comprise each one. The main value of fingerprints, however, lies in their ability to identify a particular individual in particular circumstances. In this sense, studying them in bulk offers little additional benefit. On the other hand, the analysis of breaches in aggregate can be of great benefit; the more we study, the more prepared we are to stop them.
-
-Not surprisingly, the United States Secret Service (USSS) is also interested in studying and stopping data breaches. This was a driving force in their decision to join us in this 2010 Data Breach Investigations Report. They’ve increased the scope of what we’re able to study dramatically by including a few hundred of their own cases to the mix. Also included are two appendices from the USSS. One delves into online criminal communities and the other focuses on prosecuting cybercrime. We’re grateful for their contributions and believe organizations and individuals around the world will benefit from their efforts.
-
-With the addition of Verizon’s 2009 caseload and data contributed from the USSS, the DBIR series now spans six years, 900+ breaches, and over 900 million compromised records. We’ve learned a great deal from this journey and we’re glad to have the opportunity to share these findings with you. As always, our goal is that the data and analysis presented in this report proves helpful to the planning and security efforts of our readers. We begin with a few highlights below.
-
-### WHO IS BEHIND DATA BREACHES?
-- **70%** resulted from external agents (-9%)
-- **48%** were caused by insiders (+26%)
-- **11%** implicated business partners (-23%)
-- **27%** involved multiple parties (-12%)
-
-Including the USSS cases in this year’s report shook things up a bit but didn’t shake our worldview. Driven largely by organized groups, the majority of breaches and almost all data stolen (98%) in 2009 was still the work of criminals outside the victim organization. Insiders, however, were more common in cases worked by the USSS, which boosted this figure in the joint dataset considerably. This year’s study has by far improved our visibility into internal crime over any other year. Breaches linked to business partners continued the decline observed in our last report and reached the lowest level since 2004.
-
-### HOW DO BREACHES OCCUR?
-- **48%** involved privilege misuse (+26%)
-- **40%** resulted from hacking (-24%)
-- **38%** utilized malware (`<>`)
-- **28%** employed social tactics (+16%)
-- **15%** comprised physical attacks (+6%)
-
-Related to the larger proportion of insiders, Misuse sits atop the list of threat actions leading to breaches in 2009. That’s not to say that Hacking and Malware have gone the way of the dinosaurs; they ranked #2 and #3 and were responsible for over 95% of all data comprised. Weak or stolen credentials, SQL injection, and data-capturing, customized malware continue to plague organizations trying to protect information assets. Cases involving the use of social tactics more than doubled and employed physical attacks like theft, tampering, and surveillance ticked up several notches.
-
-### WHAT COMMONALITIES EXIST?
-- **98%** of all data breached came from servers (-1%)
-- **85%** of attacks were not considered highly difficult (+2%)
-- **61%** were discovered by a third party (-8%)
-- **86%** of victims had evidence of the breach in their log files
-- **96%** of breaches were avoidable through simple or intermediate controls (+9%)
-- **79%** of victims subject to PCI DSS had not achieved compliance
-
-As in previous years, nearly all data were breached from servers and applications. This continues to be a defining characteristic between data-at-risk incidents and those involving actual compromise. The proportion of breaches stemming from highly sophisticated attacks remained rather low yet once again accounted for roughly nine out of ten records lost. In keeping with this finding, we assessed that most breaches could have been avoided without difficult or expensive controls. Yes, hindsight is 20/20 but the lesson holds true; the criminals are not hopelessly ahead in this game. The more we know, the better we can prepare. Speaking of being prepared, organizations remain sluggish in detecting and responding to incidents. Most breaches are discovered by external parties and only then after a considerable amount of time.
-
-### WHERE SHOULD MITIGATION EFFORTS BE FOCUSED?
-While we’ve added some new suggestions to the Conclusions and Recommendations section of this report, what you see to the right is similar to the message we’ve been preaching from the beginning. That’s not because we don’t feel like writing another sermon; it’s simply that, based on the data before us, all the points in this one still apply.
-
-This study always reminds us that our profession has the necessary tools to get the job done. The challenge for us lies in selecting the right tools for the job at hand and then not letting them get dull and rusty over time. Evidence shows when that happens, our adversaries are quick to take advantage of it.
-
-The amount of breaches that exploit authentication in some manner is a problem. In our last report it was default credentials; this year it’s stolen and/or weak credentials. Perhaps this is because attackers know most users are over-privileged. Perhaps it’s because they know we don’t monitor user activity very well. Perhaps it’s just the easiest way in the door. Whatever the reason, we have some work to do here. It doesn’t matter how hardened our defenses are if we can’t distinguish the good guys from the bad guys.
-
-Malware gets increasingly difficult to detect and prevent (especially once the attacker owns the system). Therefore, protect against the damage malware does after infection, much of which can be mitigated if outbound traffic is restricted. Finally, the value of monitoring (perhaps we should say “mining”) logs cannot be overstated. The signs are there; we just need to get better at recognizing them.
-
-- Eliminate unnecessary data; keep tabs on what’s left
-- Ensure essential controls are met
-- Check the above again
-- Test and review web applications
-- Audit user accounts and monitor privileged activity
-- Filter outbound traffic
-- Monitor and mine event logs
-
-***
-
-## Methodology
-
-It is often said that the role of science is to explain the “how” of things in the natural world. We find it a fitting description and applaud all who study the intricacies of our field in pursuit of greater understanding. In that vein, the 2010 Data Breach Investigations Report (DBIR) marks the third installment (fifth if you count supplemental reports) in our continuing effort to shed light on the “how” of things in the world of computer crime.
-
-The collection of data through rigorous observation is, of course, one of the cornerstones of any scientific endeavor. While we like to think our methodology has been rigorous, it cannot be said that it has been entirely consistent. The 2008 DBIR was a retrospective covering four years (2004-2007) of Verizon’s caseload in one massive data collection effort. The scope was large but the level of analysis was somewhat limited due to the passage of time. The shift from historic to ongoing collection for the 2009 DBIR opened the door to more active observation, greater detail, and new areas of study. This approach certainly would have worked again for this year’s report and would have maintained a state of consistency, which is a good trait to have in a methodology. Our ultimate goal, however, is not a state of consistency; our ultimate goal is a state of knowledge. It is to understand and explain the “how.”
-
-For this reason, we are shaking things up again by including a completely foreign and very different (yet still very reliable) dataset in the 2010 DBIR. We’re thrilled to welcome the contributions (in data and expertise) of the United States Secret Service (USSS) to this year’s report. Not only does this increase the size of the window of visibility we have into the world of data breaches but also grants a new perspective into that world. As will be seen, our caseloads share many similarities, but there are some key differences as well. Both are instructive and we firmly believe this joint effort will lead us closer to the goal described above.
-
-Pulling the two datasets together was quite an undertaking for both parties and the rest of this section will explain how it was accomplished.
-
-## Verizon Data Collection Methodology
-
-The underlying methodology used by Verizon remains unchanged from that of previous years. All results are based on firsthand evidence collected during paid forensic investigations conducted by Verizon from 2004 to 2009. The 2009 caseload is the primary analytical focus of the report, but the entire range of data is referenced extensively throughout. Though the Investigative Response (IR) team works a variety of engagements, only those involving a confirmed breach are included in this data set. To help ensure reliable and consistent input, all investigators use the Verizon Enterprise Risk and Incident Sharing (VERIS) framework to record case data and other relevant details. The information collected using VERIS is then submitted to members of the RISK Intelligence team for further validation and analysis. The aggregate repository of case data is sanitized and contains no information that would enable one to ascertain a client’s identity.
-
-## USSS Data Collection Methodology
-
-With all the talk of “shaking things up” above, one might conclude that consistency was tossed out the window in this year’s report. This is not the case. In terms of data collection, the USSS methodology differs little from that of Verizon. For the purposes of this study, the USSS created an internal application based on the VERIS framework. From the thousands of cases worked by the USSS during 2008 and 2009[^1], the scope was narrowed to only those involving confirmed organizational data breaches[^2] in alignment with the focus of the DBIR. The scope was further narrowed to include only cases for which Verizon did not conduct the forensic investigation[^3]. Of these cases, a sample was taken and requests to input data were sent to USSS agents who worked each case. In doing so, these agents utilized investigative notes, reports provided by the victim or other forensic firms, and their own experience gained in handling the case. This yielded 257 qualifying cases for which data were collected within the time frame set for this report. The resulting dataset was purged of any information that might identify organizations or individuals involved in the case and then provided to Verizon’s RISK Intelligence team for analysis.
-
-In conclusion, we would like to reiterate that we make no claim that the findings of this report are representative of all data breaches in all organizations at all times. Even though the merged Verizon-USSS dataset (presumably) more closely reflects reality than either in isolation, it is still a sample. Although we believe many of the findings presented in this report to be appropriate for generalization (and our confidence in this grows over time), bias undoubtedly exists. Even so, there is a wealth of information here and no shortage of valid and clear takeaways. As with any study, readers will ultimately decide which findings are applicable within their organization.
-
-### A BRIEF PRIMER ON VERIS
-VERIS is a framework designed to provide a common language for describing security incidents in a structured and repeatable manner. It takes the narrative of “who did what to what or whom with what result” and translates it into the kind of data you see presented in this report. Because many readers asked about the methodology behind the DBIR and because we hope to facilitate more information sharing on security incidents, we released VERIS earlier this year for free public use. A brief overview of VERIS is available on our website[^4] and the complete framework can be obtained from the VERIS community wiki[^5]. Both are good companion references to this report for understanding terminology and context.
-
-[^1]: The scope of data collection for the USSS was 2008 and 2009. However, over 70 cases worked in 2008 pertained to breaches that occurred in 2007. Because this is a large enough sample and allows for three-year trend analysis, we show them separate from 2008 breaches.
-[^2]: The USSS works many cases related to theft and fraud that are not included in this report. For instance, crimes committed against consumers that do not involve an organization or its assets are not included. Criminal activities that occur after data are stolen (i.e., “white plastic fraud” and identity theft) are also not within the scope of this study.
-[^3]: The USSS is often involved in one manner or another with cases worked by Verizon (especially the larger ones). To eliminate redundancy, these cases were removed from the USSS sample. Where both Verizon and the USSS worked a case, Verizon-contributed data were used.
-[^4]: [http://www.verizonbusiness.com/resources/whitepapers/wp_verizon-incident-sharing-metrics-framework_en_xg.pdf](http://www.verizonbusiness.com/resources/whitepapers/wp_verizon-incident-sharing-metrics-framework_en_xg.pdf)
-[^5]: [https://verisframework.wiki.zoho.com/](https://verisframework.wiki.zoho.com/)
-
-***
-
-## Cybercrime Year in Review, 2009
-
-2009 was, in many ways, a transformational year in the trenches. As attackers and defenders vied for advantage, there were numerous developments on many fronts around the world. It’s difficult to measure who’s winning with any certainty but there are, at least, some measurements available. One of them, public breach disclosures, fell noticeably in 2009. Organizations that track disclosed breaches like DataLossDB[^6] and the Identity Theft Resource Center[^7] reported figures that were well off 2008 totals. Private presentations and hallway conversations with many in the know suggested similar findings. Our own caseload reveals this as well. In a report dedicated to the analysis of annual breach trends, it seems wholly appropriate to reflect on why. It also provides a fitting backdrop for discussing some key 2009 milestones.
-
-In our last report, we observed that massive exposures of payment card data in recent years have effectively flooded the market and driven down the prices criminals can get for their stolen wares. 2009, then, may simply be the trough in a natural supply and demand cycle. If supply has outpaced demand, why release more product?
-
-> Perhaps cybercriminals are directing their resources elsewhere until market conditions improve. It is also possible that breaches are occurring at the same rate but the criminals are sitting on stolen data until demand picks up.
-
-Because fraud alerts are the leading method of discovering breaches, it stands to reason that many breaches could occur without anyone being the wiser if the criminal decided it was in his best interest to be patient. Another possible reason for this decline is law enforcement’s effectiveness in capturing the criminals. The prosecution of Albert Gonzalez was a major event in 2009. He and his accomplices were responsible for some of the largest data breaches ever reported. Taking them off the streets, so to speak, may have caused a temporary (but we can hope for permanent) dip in breaches. It is also possible that their prosecution made other cybercriminals take some time off to reevaluate their priorities in life.
-
-2009 witnessed much discussion and consideration around the world about breach disclosure laws. As seen in the U.S., the creation of these laws can have a huge effect on breach statistics. So can the administration of them. Depending on how the legal environment evolves in this area, it could have a significant impact on the number of known breaches worldwide.
-
-While it’s highly unlikely that cloud computing or virtualization had anything to do with breach disclosure rates, they were no doubt hot topics in 2009. We continue to search for a link between data breaches and cloud-based or virtualized infrastructure but continue to find none.
-
-Finally, we would be remiss if we did not touch on the subject of the hour, Advanced Persistent Threats (APTs). Yes, APTs are real but they are not new. Although the hype has grown exponentially, the post-2010 threat of APTs to your organization is more or less the same as pre-2010 levels. While we do appreciate the business, we would like to save you some expense and heartache: APTs are not the source of all malware infections and suspicious traffic on your network. Don’t get caught up in the hype. Manage your defenses based on reality, not on publicity. We hope this report helps with that.
-
-[^6]: [http://datalossdb.org/](http://datalossdb.org/)
-[^7]: [http://www.idtheftcenter.org/index.html](http://www.idtheftcenter.org/index.html)
-
-***
-
-## Results and Analysis
-
-The Verizon IR team worked over 100 cases in 2009; 57 of them were confirmed breaches. While lower than typical for our caseload, many of these breaches were quite large and complex, often involving numerous parties, interrelated incidents, multiple countries, and many affected assets. The 257 qualified cases in the USSS dataset[^8] included 84 cases from 2009, 102 from 2008, and 71 from 2007.
-
-The primary dataset analyzed in this report contains the 141 (57 + 84) confirmed breach cases worked by Verizon and the USSS in 2009. The total number of data records compromised across these cases exceeds 143 million. In several places throughout the text, we show and discuss the entire range of data for both organizations (2004-2009 for Verizon, 2007-2009 for the USSS). No small amount of internal discussion took place regarding how best to present statistics on the combined Verizon-USSS dataset. In the end, we decided that its most compelling feature was not simply the ability to compare and contrast Verizon’s cases with those of the USSS but rather the opportunity to study a more representative sample. Therefore, the chosen approach is to present the combined dataset intact and highlight interesting differences (or similarities) within the text where appropriate. There are, however, certain data points that were collected by Verizon but not the USSS; these are identified in the text/figures.
-
-As was the case in our last report, about two-thirds of the breaches covered herein have either not yet been disclosed or never will be. Many were related in some manner (i.e., same perpetrators or source IP). So far, almost 15% of Verizon’s 2009 cases led to known arrests while 66% of USSS cases resulted in the arrest of a suspect. Even more impressive is that most of those ended in a conviction.
-
-With the addition of Verizon’s 2009 caseload and data contributed from the USSS, the DBIR series now spans six years, 900+ breaches, and over 900 million compromised records.
-
-The figures in this report utilize a consistent format. Values shown in dark gray pertain to breaches while values in red pertain to data records. The “breach” is the incident under investigation in a case and “records” refer to the amount of data units (files, card numbers, etc.) compromised in the breach. Figures and tables do not always contain all possible options but only those having a value greater than 0. If you are interested in seeing all options for any particular figure, these can be found in the VERIS framework.
-
+Results and Analysis
+The Verizon IR team worked over 100 cases in 2009; 57 of them were confirmed breaches. While lower than typical for our
+caseload, many of these breaches were quite large and complex, often involving numerous parties, interrelated incidents,
+multiple countries, and many affected assets. The 257 qualified cases in the USSS dataset8 included 84 cases from 2009, 102
+from 2008, and 71 from 2007.
+The primary dataset analyzed in this report contains the 141 (57 + 84) confirmed breach cases worked by Verizon and the
+USSS in 2009. The total number of data records compromised across these cases exceeds 143 million. In several places
+throughout the text, we show and discuss the entire range of data for both organizations (2004-2009 for Verizon, 2007-2009
+for the USSS). No small amount of internal discussion took place regarding how best to present statistics on the combined
+Verizon-USSS dataset. In the end, we decided that its most compelling feature was not simply the ability to compare and
+contrast Verizon’s cases with those of the USSS but rather the opportunity to study a more representative sample. Therefore,
+the chosen approach is to present the combined dataset intact and highlight interesting differences (or similarities) within
+the text where appropriate. There are, however, certain data points that were collected by Verizon but not the USSS; these are
+identified in the text/figures.
+As was the case in our last report, about two-thirds of the breaches covered herein have either not yet been disclosed or
+never will be. Many were related in some manner (i.e., same perpetrators or source IP). So far, almost 15% of Verizon’s 2009
+cases led to known arrests while 66% of USSS cases resulted in the arrest of a suspect. Even more impressive is that most of
+those ended in a conviction.
+With the addition of Verizon’s 2009 caseload and data
+contributed from the USSS, the DBIR series now spans six years,
+900+ breaches, and over 900 million compromised records.
+The figures in this report utilize a consistent format. Values shown in dark gray pertain to breaches while values in red pertain
+to data records. The “breach” is the incident under investigation in a case and “records” refer to the amount of data units (files,
+card numbers, etc.) compromised in the breach. Figures and tables do not always contain all possible options but only those
+having a value greater than 0. If you are interested in seeing all options for any particular figure, these can be found in the
+VERIS framework.
 Without further delay, we present the investigative findings and analysis of Verizon and the USSS.
+8 Refer to the Methodology section for an explanation of the qualification process.
+7
 
-[^8]: Refer to the Methodology section for an explanation of the qualification process.
+Demographics
+Of all sections in this report, demographics always present the greatest challenge for drawing out deeper meaning behind
+the numbers. While attack trends, incident response metrics, and other results are certainly dependent upon a given year’s
+caseload, demographic data seem particularly so. Does the fact that we have more/less of a particular industry or region
+mean it is under increased attack? Is it more vulnerable? Did laws or other environmental factors change? Sheer coincidence?
+Obviously, it’s difficult to know for certain. Demographic information is helpful, though, in establishing the context for other
+results. Thus, in this section we will relay the statistics, infer what we can, and let you do the rest.
+Figure 1. Industry groups represented by percent of breaches
+33% 23% 15% 6% 5% 4% 4% 4% 3% 4%
+Financial Hospitality Retail Manufacturing Tech Services Business Government Media Healthcare Other
+Services Services
+Data breaches continue to occur (in our caseload and elsewhere) within all types of organizations. These are categorized as
+they have been in previous reports according to the industry groups represented in Figure 19. Financial Services, Hospitality,
+and Retail still comprise the “Big Three” of industries affected (33%, 23%, and 15% respectively) in the merged Verizon-USSS
+dataset, though Tech Services edged out Retail in Verizon’s caseload. That this is consistently true of both the Verizon and
+USSS caseloads does seem to carry some significance.
+The targeting of financial organizations is hardly shocking; stealing digital money from information systems rather than
+vaults is basically just a less primitive form of bank robbery. It represents the nearest approximation to actual cash for the
+criminal. Also, and perhaps more importantly, financial firms hold large volumes of sensitive consumer data for long periods
+of time. For this reason (and others), they fall under more stringent regulation and reporting requirements. This, in turn,
+increases the likelihood that breaches will require criminal and/or forensic investigation. In short, where other industries
+might be able to “sweep it under the rug,” financial institutions are finding it increasingly difficult to do so. Regardless of the
+root cause(s), a growing percentage of cases and an astounding 94% of all compromised records in 2009 were attributed to
+Financial Services.
+9 There are some changes in the way we categorize industries in this report. Most notably, “Food and Beverage” has been folded into the “Hospitality” group as this seems to be
+standard convention. A complete list of industries can be found in the VERIS framework.
+8
 
-***
+The Hospitality and Retail industries exhibit similar trends when it comes to data Figure 2. Compromised records
+by industry group
+breaches, which has a lot to do with their acceptance of payment cards and use
+6% Other Industries
+of Point of Sale (POS) systems. This tends to draw a certain breed of criminal who
+favors certain ways and means of attack. There were quite a few public breach
+disclosures within the Hospitality industry in the last year or so and this spilled
+over into investigations conducted by Verizon and the USSS. Not surprisingly,
+restaurants and hotels comprise the bulk of cases in this industry group. Retail,
+which ranked first in total breaches in our last two reports, has fallen to third place
+94%
+and now accounts for less than half of its former glory (31% in ‘08 down to 14% in
+Financial Services
+‘09). This is not simply a by-product of incorporating USSS data (our own
+percentage for Retail was an even lower 9%) but we find it hard to attribute much
+more to these numbers than their face value.
+For regional trends, it’s worth making a distinction between the USSS and Verizon
+datasets. The USSS caseload, as one might suspect, is comprised of nearly all breaches that occurred in the United States
+(though investigating and prosecuting these crimes takes them all around the world). On the other hand, over half of the
+breaches investigated by Verizon in 2009 occurred outside the U.S. (the “North America” region includes cases from Canada
+and the Dominican Republic). Countries in which Verizon investigated confirmed and suspected breaches are highlighted in
+Figure 3. Over the past two years our caseload has consistently grown in Asia-Pacific and Western European countries. It is
+unclear as to whether our expanded international IR team or changes in global incident trends are most responsible for this
+but other sources suggest growth in these regions as well.
+The apparent disparity between the number of known
+The targeting of financial organizations
+data breaches in the United States and other parts of the
+is hardly shocking; stealing digital money globe has led some to conclude that other parts of the
+world are safer environments for electronic business. We
+from information systems rather than
+do not believe this to be the case. The same basic
+vaults is basically just a less primitive form
+information and communication technologies are present
+of bank robbery. It represents the nearest in homes, businesses, and governments all around the
+world. Admittedly, there are some differences that have an
+approximation to actual cash for the criminal.
+impact on cybercrime (the Chip and PIN payment
+infrastructure is a good example) but these differences are
+not enough to explain the disparity. The primary reason we hear more about data breaches in the U.S. (and in the report)
+stems from mandatory disclosure laws. Outside the U.S., breach disclosure differs significantly. Some countries are silent on
+the matter, others encourage it but don’t require, and some even discourage disclosure.
+9
 
-## Demographics
+Figure 3. Countries represented
+Countries in which a
+breach was confirmed
+Australia Greece
+Austria Japan
+Belgium Luxembourg
+Canada Netherlands
+China (mainland Poland
+and Hong Kong) Spain
+Dominican
+Switzerland
+Republic
+United Kingdom
+France
+United States
+Germany
+Countries in which a breach was
+investigated but not confirmed
+Bulgaria Singapore
+Egypt Sweden
+Italy
+The bottom line is that where disclosures occur, they often require investigations, which sometimes require external
+investigators, which, in turn, means breaches are more likely to show up in this study. As in previous years, the majority of
+cases investigated by Verizon in 2009 have not yet been disclosed and may never be. Only a handful of breaches outside the
+U.S. were publicly reported. Of those, two did so because they were regional facilities of U.S.-based organizations.
+Figure 4 shows that, once again, a breakdown of organizational size follows a rather normal-looking distribution. It’s quite
+possible (and perhaps logical) that an organization’s size matters little in terms of its chances of suffering a data breach. One
+might speculate that smaller budgets mean less security spending but it probably also means fewer assets to protect and a
+lower profile. Thieves are more likely to select targets based on the perceived value of the data and cost of attack than victim
+characteristics such as size.
+Over half of the breaches investigated by Verizon in
+2009 occurred outside the U.S.
+10
 
-Of all sections in this report, demographics always present the greatest challenge for drawing out deeper meaning behind the numbers. While attack trends, incident response metrics, and other results are certainly dependent upon a given year’s caseload, demographic data seem particularly so. Does the fact that we have more/less of a particular industry or region mean it is under increased attack? Is it more vulnerable? Did laws or other environmental factors change? Sheer coincidence? Obviously, it’s difficult to know for certain. Demographic information is helpful, though, in establishing the context for other results. Thus, in this section we will relay the statistics, infer what we can, and let you do the rest.
+Figure 4. Organizational size by percent of breaches (number of employees)
+Over 100,000 2%
+10,001 to 100,000 20%
+1,001 to 10,000 20% 26%
+101 to 1,000 23%
+11 to 100 18%
+1 to 10 9%
+Many of our customers express concern about the security ramifications of mergers, acquisitions, and other major
+organizational changes (perhaps even more so than normal given economic conditions in recent years). This is understandable
+as these changes bring together not only the people and products of separate organizations but their technology
+environments as well. Seamless integration of technology, process, and mind-set certainly has its fair share of challenges. Last
+year, we reported that 13% of our caseload involved organizations that had recently been involved in a merger or acquisition.
+In 2009 that figure was 9% and another 9% had restructured in some significant way. While nothing can be claimed or
+inferred directly from these findings, we believe it is well worth watching this metric over time.
+Threat Agents
+VERIS Classification Note: If the
+agent’s role in the breach is limited to
+Threat agents refer to entities that cause or contribute to an incident. There can be more than a contributory error (see note in the
+one agent involved in any incident and their involvement can be malicious or non-malicious, Threat Actions section under Error),
+they would not be included here. For
+intentional or accidental, direct or indirect. Identifying those responsible for a breach is critical example, if an insider’s unintentional
+misconfiguration of an application
+to any forensic investigation, not only for purposes of response and containment, but also for
+left it vulnerable to attack, the insider
+creating current and future defensive strategies. Verizon recognizes three primary categories would not be considered an agent if
+the application were successfully
+of threat agents—External, Internal, and Partner. breached by another agent. An
+insider who deliberately steals data
+External: External threats originate from sources outside the organization and its or whose inappropriate behavior
+(i.e., policy violations) facilitated the
+network of partners. Examples include hackers, organized crime groups, and government breach would be considered an
+agent in the breach.
+entities, as well as environmental events such as weather and earthquakes. Typically, no
+trust or privilege is implied for external entities.
+Internal: Internal threats are those originating from within the organization. This encompasses company executives,
+employees, independent contractors (i.e., 1099 staff), and interns, etc., as well as internal infrastructure. Insiders are trusted
+and privileged (some more than others).
+Partners: Partners include any third party sharing a business relationship with the organization. This includes suppliers, vendors,
+hosting providers, outsourced IT support, etc. Some level of trust and privilege is usually implied between business partners.
+11
 
-![Figure 1. Industry groups represented by percent of breaches: Financial Services (33%), Hospitality Services (23%), Retail (15%), Manufacturing (6%), Tech Services (5%), Business (4%), Government (4%), Media (4%), Healthcare (3%), Other (4%)]
-
-Data breaches continue to occur (in our caseload and elsewhere) within all types of organizations. These are categorized as they have been in previous reports according to the industry groups represented in Figure 1[^9]. Financial Services, Hospitality, and Retail still comprise the “Big Three” of industries affected (33%, 23%, and 15% respectively) in the merged Verizon-USSS dataset, though Tech Services edged out Retail in Verizon’s caseload. That this is consistently true of both the Verizon and USSS caseloads does seem to carry some significance.
-
-The targeting of financial organizations is hardly shocking; stealing digital money from information systems rather than vaults is basically just a less primitive form of bank robbery. It represents the nearest approximation to actual cash for the criminal. Also, and perhaps more importantly, financial firms hold large volumes of sensitive consumer data for long periods of time. For this reason (and others), they fall under more stringent regulation and reporting requirements. This, in turn, increases the likelihood that breaches will require criminal and/or forensic investigation. In short, where other industries might be able to “sweep it under the rug,” financial institutions are finding it increasingly difficult to do so. Regardless of the root cause(s), a growing percentage of cases and an astounding 94% of all compromised records in 2009 were attributed to Financial Services.
-
-[^9]: There are some changes in the way we categorize industries in this report. Most notably, “Food and Beverage” has been folded into the “Hospitality” group as this seems to be standard convention. A complete list of industries can be found in the VERIS framework.
-
-![Figure 2. Compromised records by industry group: Financial Services (94%), Other Industries (6%)]
-
-The Hospitality and Retail industries exhibit similar trends when it comes to data breaches, which has a lot to do with their acceptance of payment cards and use of Point of Sale (POS) systems. This tends to draw a certain breed of criminal who favors certain ways and means of attack. There were quite a few public breach disclosures within the Hospitality industry in the last year or so and this spilled over into investigations conducted by Verizon and the USSS. Not surprisingly, restaurants and hotels comprise the bulk of cases in this industry group. Retail, which ranked first in total breaches in our last two reports, has fallen to third place and now accounts for less than half of its former glory (31% in ‘08 down to 14% in ‘09). This is not simply a by-product of incorporating USSS data (our own percentage for Retail was an even lower 9%) but we find it hard to attribute much more to these numbers than their face value.
-
-For regional trends, it’s worth making a distinction between the USSS and Verizon datasets. The USSS caseload, as one might suspect, is comprised of nearly all breaches that occurred in the United States (though investigating and prosecuting these crimes takes them all around the world). On the other hand, over half of the breaches investigated by Verizon in 2009 occurred outside the U.S. (the “North America” region includes cases from Canada and the Dominican Republic). Countries in which Verizon investigated confirmed and suspected breaches are highlighted in Figure 3. Over the past two years our caseload has consistently grown in Asia-Pacific and Western European countries. It is unclear as to whether our expanded international IR team or changes in global incident trends are most responsible for this but other sources suggest growth in these regions as well.
-
-> The targeting of financial organizations is hardly shocking; stealing digital money from information systems rather than vaults is basically just a less primitive form of bank robbery. It represents the nearest approximation to actual cash for the criminal.
-
-The apparent disparity between the number of known data breaches in the United States and other parts of the globe has led some to conclude that other parts of the world are safer environments for electronic business. We do not believe this to be the case. The same basic information and communication technologies are present in homes, businesses, and governments all around the world. Admittedly, there are some differences that have an impact on cybercrime (the Chip and PIN payment infrastructure is a good example) but these differences are not enough to explain the disparity. The primary reason we hear more about data breaches in the U.S. (and in the report) stems from mandatory disclosure laws. Outside the U.S., breach disclosure differs significantly. Some countries are silent on the matter, others encourage it but don’t require, and some even discourage disclosure.
-
-### Figure 3. Countries represented
-**Countries in which a breach was confirmed:**
-- Australia
-- Austria
-- Belgium
-- Canada
-- China (mainland and Hong Kong)
-- Dominican Republic
-- France
-- Germany
-- Greece
-- Japan
-- Luxembourg
-- Netherlands
-- Poland
-- Spain
-- Switzerland
-- United Kingdom
-- United States
-
-**Countries in which a breach was investigated but not confirmed:**
-- Bulgaria
-- Egypt
-- Italy
-- Singapore
-- Sweden
-
-The bottom line is that where disclosures occur, they often require investigations, which sometimes require external investigators, which, in turn, means breaches are more likely to show up in this study. As in previous years, the majority of cases investigated by Verizon in 2009 have not yet been disclosed and may never be. Only a handful of breaches outside the U.S. were publicly reported. Of those, two did so because they were regional facilities of U.S.-based organizations.
-
-Figure 4 shows that, once again, a breakdown of organizational size follows a rather normal-looking distribution. It’s quite possible (and perhaps logical) that an organization’s size matters little in terms of its chances of suffering a data breach. One might speculate that smaller budgets mean less security spending but it probably also means fewer assets to protect and a lower profile. Thieves are more likely to select targets based on the perceived value of the data and cost of attack than victim characteristics such as size.
-
-> Over half of the breaches investigated by Verizon in 2009 occurred outside the U.S.
-
-![Figure 4. Organizational size by percent of breaches (number of employees): 1 to 10 (9%), 11 to 100 (18%), 101 to 1,000 (23%), 1,001 to 10,000 (20%), 10,001 to 100,000 (20%), Over 100,000 (2%)]
-
-Many of our customers express concern about the security ramifications of mergers, acquisitions, and other major organizational changes (perhaps even more so than normal given economic conditions in recent years). This is understandable as these changes bring together not only the people and products of separate organizations but their technology environments as well. Seamless integration of technology, process, and mind-set certainly has its fair share of challenges. Last year, we reported that 13% of our caseload involved organizations that had recently been involved in a merger or acquisition. In 2009 that figure was 9% and another 9% had restructured in some significant way. While nothing can be claimed or inferred directly from these findings, we believe it is well worth watching this metric over time.
-
-***
-
-## Threat Agents
-
-> **VERIS Classification Note**: If the agent’s role in the breach is limited to a contributory error (see note in the Threat Actions section under Error), they would not be included here. For example, if an insider’s unintentional misconfiguration of an application left it vulnerable to attack, the insider would not be considered an agent if the application were successfully breached by another agent. An insider who deliberately steals data or whose inappropriate behavior (i.e., policy violations) facilitated the breach would be considered an agent in the breach.
-
-Threat agents refer to entities that cause or contribute to an incident. There can be more than one agent involved in any incident and their involvement can be malicious or non-malicious, intentional or accidental, direct or indirect. Identifying those responsible for a breach is critical to any forensic investigation, not only for purposes of response and containment, but also for creating current and future defensive strategies. Verizon recognizes three primary categories of threat agents—External, Internal, and Partner.
-
-- **External**: External threats originate from sources outside the organization and its network of partners. Examples include hackers, organized crime groups, and government entities, as well as environmental events such as weather and earthquakes. Typically, no trust or privilege is implied for external entities.
-- **Internal**: Internal threats are those originating from within the organization. This encompasses company executives, employees, independent contractors (i.e., 1099 staff), and interns, etc., as well as internal infrastructure. Insiders are trusted and privileged (some more than others).
-- **Partners**: Partners include any third party sharing a business relationship with the organization. This includes suppliers, vendors, hosting providers, outsourced IT support, etc. Some level of trust and privilege is usually implied between business partners.
-
-![Figure 5. Threat agents (inclusive) by percent of breaches: External (70%), Internal (48%), Partner (11%), Suspected (10%)]
-
-Figure 5 records the distribution of threat agents among breach cases worked by Verizon and the USSS in 2009. Immediately noticeable is a substantial change in the composition of threat agents from previous DBIRs. While these results don’t go so far as to justify the “80% Myth”[^10] they certainly don’t fall in line with the 80/20 external vs. internal ratio that has been a staple of Verizon’s caseload. The percentage of breaches attributed to external agents slid 9% (though 70% is not an historical outlier), insiders more than doubled, and partners represent a mere third of their 2008 level. That’s a lot of change to digest but this section is dedicated to sorting it all out.
-
-Essentially, there are three possible explanations for these results:
-1. They reflect changes in Verizon’s caseload
+Figure 5. Threat agents (inclusive) by percent of breaches Figure 5 records the distribution of threat agents among breach
+cases worked by Verizon and the USSS in 2009. Immediately
+70%
+noticeable is a substantial change in the composition of threat
+agents from previous DBIRs. While these results don’t go so far
+62%
+as to justify the “80% Myth10” they certainly don’t fall in line with
+48%
+the 80/20 external vs. internal ratio that has been a staple of
+Verizon’s caseload. The percentage of breaches attributed to
+46%
+external agents slid 9% (though 70% is not an historical outlier),
+insiders more than doubled, and partners represent a mere
+third of their 2008 level. That’s a lot of change to digest but this
+11% section is dedicated to sorting it all out.
+10% Essentially, there are three possible explanations for these results:
+External Internal Partner 1. They reflect changes in Verizon’s caseload
 2. They reflect the addition of USSS caseload
+Suspected
 3. They are a product of both 1 & 2
+We will start with option 1. Figure 6 shows the distribution of
+threat agents for breaches worked by Verizon over the last five years. From this, it is clear that the lower proportion of
+external agents is not due to Verizon’s caseload, as this statistic hit its highest mark ever in 2009. Neither can it explain
+the rise for insiders in the merged dataset. The percent of breaches involving partners, however, did drop substantially
+and for the second year in a row. It is unclear whether this is due to increased awareness of third-party security threats,
+regulatory guidance focusing on vendor management, a shift in criminal strategy, a change in Verizon’s IR clients, all of
+the above, or none of the above. Whatever the reason(s), we view it as a positive outcome and hope this problem is
+being reigned in.
+The changes evident for threat agents in 2009 stem partially
+from a drop in partners within Verizon’s caseload but mostly
+from the addition of a materially different USSS dataset.
+10 http://taosecurity.blogspot.com/2009/05/insider-threat-myth-documentation.html
+12
 
-We will start with option 1. Figure 6 shows the distribution of threat agents for breaches worked by Verizon over the last five years. From this, it is clear that the lower proportion of external agents is not due to Verizon’s caseload, as this statistic hit its highest mark ever in 2009. Neither can it explain the rise for insiders in the merged dataset. The percent of breaches involving partners, however, did drop substantially and for the second year in a row. It is unclear whether this is due to increased awareness of third-party security threats, regulatory guidance focusing on vendor management, a shift in criminal strategy, a change in Verizon’s IR clients, all of the above, or none of the above. Whatever the reason(s), we view it as a positive outcome and hope this problem is being reigned in.
+Figure 6. Threat agents over time by percent of breaches
+100%
+90%
+80%
+70%
+60%
+VZ External
+50%
+VZ Internal
+40%
+VZ Partner
+30%
+USSS External
+20%
+USSS Internal
+10%
+0% USSS Partner
+2005 2006 2007 2008 2009
+Figure 6 also shows the same information discussed in the preceding paragraph for USSS cases (see dashed lines). Undoubtedly,
+the changes in Figure 5 are largely due to the inclusion of the USSS caseload, as their results show a strong representation of
+internal threat agents, comparatively fewer outsiders, and a very low percentage of partner-related breaches. As a law
+enforcement agency, it would follow that the USSS would have a different perspective on the broader security incident
+population. For example, an organization suffering a data breach due to the actions of an insider (especially if that insider is part
+of an easily-identified list of suspects or used simple methods to perpetrate the crime) is more likely to call law enforcement
+directly. If true, this would reinforce the assertions and findings of some, especially law enforcement agencies, that insiders are a
+more frequent source of incidents than stats released by external parties like Verizon often show. In addition, it’s also important
+to consider the impact of disclosure laws on the proportions represented in the various datasets.
+So, if #1 has some truth to it and #2 is wholly true, then #3 must be the best option. The changes evident for threat agents in
+2009 stem partially from a drop in partners within Verizon’s caseload but mostly from the addition of a materially different USSS
+dataset. As stated in the beginning of this report, our motivation in studying a larger sample is to better understand the biases
+of our own and to gain a more complete and accurate representation of the entire population of breaches. These results are
+clearly the product of that larger perspective.
+13
 
-> The changes evident for threat agents in 2009 stem partially from a drop in partners within Verizon’s caseload but mostly from the addition of a materially different USSS dataset.
+Figure 7. Threat agents (exclusive) by percent of breaches Following this discussion, there are a few observations to
+note regarding Figure 7 which contrasts single and multi-
+| 45% | 27% | 1%  | 27% |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+agent breaches. The 27% of cases involving more than
+one agent is well below the 2008 level of 39%. Though not
+apparent from the figure itself, most multi-agent breaches
+|               |               |              |                 | worked        | by  Verizon  | exhibit  an          | external-partner  |
+| ------------- | ------------- | ------------ | --------------- | ------------- | ------------ | -------------------- | ----------------- |
+| External only | Internal only | Partner only | Multiple agents |               |              |                      |                   |
+|               |               |              |                 | combination.  | In  most     | of  these,  partner  | assets  are       |
+compromised by an external agent and used to attack the
+victim. On the other hand, external-internal is far more common in USSS cases. As will be discussed later in this report, this
+scenario often involves an outsider soliciting or bribing an employee to embezzle or skim data and/or funds. Partner-internal
+pairings are rare within both caseloads.
+| Breach Size by Threat Agents |     |     |     |     |     |     |     |
+| ---------------------------- | --- | --- | --- | --- | --- | --- | --- |
+Figure 8. Compromised records by threat agent, 2009
+Though we do not assert that the full impact of a breach
+is limited to the number of records compromised, it is a  138,566,355 2,640,240 130 2,436,297
+measurable indicator of it. Analysis around financial losses
+incurred by breach victims is probably the most requested
+| addition  to  | the  DBIR.  For  | various  reasons11,  | forensic  |     |     |     |     |
+| ------------- | ---------------- | -------------------- | --------- | --- | --- | --- | --- |
+investigators do not have nearly as much visibility into  External only Internal only Partner only Multiple agents
+this as they have into the immediate details surrounding
+a breach. We do, however, include metrics for collecting
+| impact data within VERIS and refer interested readers  |     |     |     |     |     |     |     |
+| ------------------------------------------------------ | --- | --- | --- | --- | --- | --- | --- |
+Figure 9. Compromised records by threat agent, 2004-2009
+there for more information.
+|     |     |     |     | 800,720,651 | 28,853,827 | 43,744,573 | 46,451,904 |
+| --- | --- | --- | --- | ----------- | ---------- | ---------- | ---------- |
+Figure 8 records the distribution of the 143+ million
+records compromised across the merged 2009 dataset
+among threat agents. It looks a great deal like it did in our
+last DBIR. There is not a linear relationship between
+|     |     |     |     | External only | Internal only | Partner only | Multiple agents |
+| --- | --- | --- | --- | ------------- | ------------- | ------------ | --------------- |
+frequency and impact; harm done by external agents far
+outweighs that done by insiders and partners. This is true
+for Verizon and for the USSS and true for this year and in
+years past. To illustrate this point, we present Figure 9 showing the distribution of the over 900 million compromised records
+in the merged dataset between 2004 and 2009.
+We could provide commentary to Figure 9, but what could it possibly add? If a chart in this report speaks with more clarity
+and finality we aren’t sure what it is.
+We could provide commentary to Figure 9, but what could it possibly add? If a
+chart in this report speaks with more clarity and finality we aren’t sure what it is.
+11 http://securityblog.verizonbusiness.com/2009/04/16/to-dbir-show-me-the-money/
+14
 
-[^10]: [http://taosecurity.blogspot.com/2009/05/insider-threat-myth-documentation.html](http://taosecurity.blogspot.com/2009/05/insider-threat-myth-documentation.html)
+External Agents (70% of breaches, 98% of records) Table 1. Types of external agents by percent
+of breaches within External
+Table 1 presents a comparison of the various types of external threat
+agents identified during 2009 by Verizon and the USSS. The merged Organized criminal group 24%
+results continue to show that external breaches are largely the work of
+organized criminals. Banding together allows them to pool resources, Unaffiliated person(s) 21%
+specialize skills, and distribute the work effort, among other advantages.
+External system(s) or site 3%
+Figure 10 demonstrates the effectiveness of this approach. Crime has
+been a business for a very long time. This is just the same old story played Activist group 2%
+out on a different (digital) stage. We refer readers to Appendix A for more
+Former employee
+information on organized criminal communities. 2%
+(no longer had access)
+The large proportion of “unknown” in Table 1 is the result of several factors. Another organization 1%
+(not partner or competitor)
+Sometimes the particular type of agent cannot be determined.
+Sometimes the victim does not wish to spend time or money toward Competitor 1%
+making this determination. The USSS contains far fewer “unknown” agents
+Customer 1%
+due to their role in identifying and prosecuting suspects. (B2C)
+In terms of the role external agents played in 2009 breaches, 84% Unknown 45%
+participated directly in the attack. The rest solicited another agent to
+perpetrate the attack or supported it in some other manner. Scenarios of
+this are discussed elsewhere in this report.
+Figure 10. Percent of compromised
+records attributed to organized crime
+Banding together allows criminal groups to pool
+15%
+resources, specialize skills, and distribute the work
+Other
+agents effort, among other advantages. Crime has been a
+business for a very long time. This is just the same
+85%
+old story played out on a different (digital) stage.
+Organized
+criminal groups
+15
 
-![Figure 6. Threat agents over time by percent of breaches (Line graph showing Verizon External, Internal, Partner and USSS External, Internal, Partner from 2005 to 2009)]
+Figure 11. Origin of external agents by percent of breaches within External Pinpointing the geographic origin of these
+attacks can be problematic, especially when it
+Europe-East 21% hinges mainly on source IP addresses.
+(incl. Russia)
+Fortunately, forensic investigators—and
+Americas-North 19%
+especially law enforcement agencies—often
+Asia-East 18%
+have much more to go on than that. Even if we
+Europe-West
+10%
+(incl. Northern and Southern) accept that the IP address that shows up in log
+Middle East 5%
+files does not belong to the actual machine of
+Africa 2% the actual threat agent (i.e., it is a bot controlled
+Asia-South/Southeast 2% by the agent), it is still informative and
+Oceania 2% potentially useful for defensive purposes.
+(Australia, New Zealand, etc.)
+Unknown 31% Figure 11 shows the regional origin of relevant
+external attacks.
+Once again, more breaches originate from East
+Europe than any other region (although North
+America and East Asia remain a close #2 and #3). Comparing “type” and “origin” reveals some interesting findings. For instance,
+most organized criminal groups hail from East Europe, while unidentified and unaffiliated persons often come from East Asia.
+Finally, it is worthy of mention that within Verizon’s caseload, East Asia rose to the top spot for the first time in 2009.
+THERE MUST BE SOME MISTAKE—WHERE’S APT?
+Despite the huge amount of buzz around Advanced Persistent Threats (APT) this year, neither the term nor the
+concept is new. Due to this attention, we imagine more than one pair of eyes scanned the list of external agent types
+in search of “APT.” One of the difficulties with APT is that, though it may have an official definition, its use in everyday
+practice varies widely. By it, some refer strictly to nation-states, some to any highly skilled attacker, some to
+particularly difficult methods of attacks or their unrelenting nature. We’re not interested in arguing about the
+definition. We simply want to explain why it is not listed in any figure or table in this report. Rather than identifying an
+“APT attack,” VERIS classifies threat agents and their actions in a descriptive manner. If interested, you can see glimpses
+of “APT-ish elements” throughout this report. Look at the types and origins of external agents (note the absence of the
+“government” category that is an available option in VERIS), examine the types and vectors of threat actions, read our
+assessments of attack difficulty, notice the length of time that passes from compromise to discovery, and check out
+the anti-forensics section. These areas might not be stamped with the acronym “APT” but we do believe them to
+“apt-ly” describe breaches investigated by Verizon and the USSS in 2009.
+16
 
-Figure 6 also shows the same information discussed in the preceding paragraph for USSS cases (see dashed lines). Undoubtedly, the changes in Figure 5 are largely due to the inclusion of the USSS caseload, as their results show a strong representation of internal threat agents, comparatively fewer outsiders, and a very low percentage of partner-related breaches. As a law enforcement agency, it would follow that the USSS would have a different perspective on the broader security incident population. For example, an organization suffering a data breach due to the actions of an insider (especially if that insider is part of an easily-identified list of suspects or used simple methods to perpetrate the crime) is more likely to call law enforcement directly. If true, this would reinforce the assertions and findings of some, especially law enforcement agencies, that insiders are a more frequent source of incidents than stats released by external parties like Verizon often show. In addition, it’s also important to consider the impact of disclosure laws on the proportions represented in the various datasets.
+Internal Agents (48% of breaches, 3% of records) Figure 12. Role of internal
+agents by percent of breaches
+Of cases involving internal threat agents in 2009, investigators determined 90% were within Internal
+the result of deliberate and malicious activity. This finding does not mean that insiders 4% Unintentional
+never unintentionally contribute to breaches; they very often do. As discussed earlier, 6% Inappropriate
+our method of classification does not consider insiders to be an active part of the
+event chain if their role is limited to contributory error. Inappropriate actions include
+policy violations and other questionable behavior that, while not overtly malicious,
+can still result in harm to information assets. Not only can inappropriate behavior
+contribute directly to a breach, but it may also be an ill omen of what’s to come. Over
+time investigators have noticed that employees who commit data theft were often
+cited in the past for other “minor” forms of misuse (or evidence of it was found and
+90% Deliberate
+brought to light during the investigation).
+Recently, many have hypothesized that insider crime would rise due to financial strain
+imposed by global economic conditions. Hard times breed hard crimes as they say. It
+is entirely possible that this is occurring, but neither the Verizon nor USSS caseload
+show evidence of it. As seen back in Figure 6, Verizon shows a flat trend for insiders
+and the USSS shows a downward trend over the last three years. Nevertheless, it is a
+logical hypothesis and worthy of further study.
+Analyzing the types of insiders behind breaches yields a great deal of practical
+information. Each of the types listed in Table 2 represent a certain inherent mix of
+skills, duties, privileges, etc., all of
+Recently, many have
+which speak to the capabilities and
+hypothesized that insider crime resources of that agent and the safeguards most relevant to them.
+Traditionally, we have seen a large and fairly even proportion of system/
+would rise due to financial
+network administrators to regular users with a few other types mixed in
+strain imposed by global
+occasionally. 2009 results are substantially different and, no surprise, this is
+economic conditions. Hard largely due to USSS data. Specifically, it is related to the types of internal
+crime investigated by the USSS (see the Misuse section under Threat
+times breed hard crimes as they
+Actions for a more detailed discussion). As a result, regular employees
+say. It is entirely possible that were responsible for a much larger share (51%) of breaches. These cases
+this is occurring, but neither typically involved bank tellers, retail cashiers, and other similar personnel
+taking advantage of their everyday job duties to skim, embezzle, or
+the Verizon nor USSS caseload
+otherwise steal data from their employers.
+show evidence of it.
+17
 
-So, if #1 has some truth to it and #2 is wholly true, then #3 must be the best option. The changes evident for threat agents in 2009 stem partially from a drop in partners within Verizon’s caseload but mostly from the addition of a materially different USSS dataset. As stated in the beginning of this report, our motivation in studying a larger sample is to better understand the biases of our own and to gain a more complete and accurate representation of the entire population of breaches. These results are clearly the product of that larger perspective.
+Finance and accounting staff are similar to regular employees in terms Table 2. Types of internal agents by percent
+of breaches within Internal
+of IT privileges but we differentiate them due to the higher privileges
+of another sort. Their oversight and management of accounts, records,
+Regular employee/end-user 51%
+and finances affords them great propensity for harm. Executives are in
+a similar position. Though outside the scope of this study, devious acts Finance/accounting staff 12%
+committed by such employees have caused far more damage to
+System/network administrator 12%
+businesses than IT-related incidents.
+While it is clear that pulling off an inside job doesn’t require elevated Executive/upper management 7%
+privileges, evidence consistently supports that they do facilitate the
+Helpdesk staff 4%
+bigger ones. Overall, insiders were not responsible for a large share of
+compromised records but system and network administrators nabbed
+Software developer 3%
+most of those that were. This finding is not surprising since higher
+privileges offer greater opportunity for abuse. In general, we find that Auditor 1%
+employees are granted more privileges than they need to perform
+their job duties and the activities of those that do require higher Unknown 9%
+privileges are usually not monitored in any real way.
+It is worth noting that while executives and upper management were
+not responsible for many breaches, IP and other sensitive corporate information was usually the intended target when they
+were. These acts were often committed after their resignation or termination.
+Speaking of that, across all types of internal agents and crimes, we found that 24% was perpetrated by employees who
+recently underwent some kind of job change. Half of those had been fired, some had resigned, some were newly hired, and
+a few changed roles within the organization. With respect to breaches caused by recently terminated employees, we
+observed the same scenarios we have in the past: 1) the employee’s accounts were not disabled in a timely manner, and
+2) the employee was allowed to “finish the day” as usual after being notified of termination. This obviously speaks to the need
+for termination plans that are timely and encompass all areas of access (decommissioning accounts, disabling privileges,
+escorting terminated employees, forensic analysis of systems, etc.).
+THE SLIPPERY SLOPE OF INSIDER MISCONDUCT
+Verizon investigated a case in which a recently terminated system administrator stole sensitive data from his former
+employer as well as personal information belonging to its customers. He then attempted to blackmail the organization
+and threatened to go public with the information if they did not meet his demands. Obviously, not a good situation but
+what makes it worse is that it might have been avoided with a few changes in policy and practice. On several occasions in
+the past, this employee had been cited for IT policy violations and inappropriate behavior. There were harassment
+complaints against him filed by other employees. Finally, when he stole a co-worker’s password for a popular social
+networking site and modified it with slanderous content, he was let go. Unfortunately, his generic administrative account
+was given to his successor with a minor password change (i.e., “Password2” instead of “Password1”) and we’ve already
+covered what happened after that.
+18
 
-![Figure 7. Threat agents (exclusive) by percent of breaches: External only (45%), Internal only (27%), Partner only (1%), Multiple agents (27%)]
+Partner Agents (11% of breaches, 1% of records) Figure 13. Role of partner
+agents by percent of breaches
+As discussed already, partner-related breaches are down in comparison to previous years. within Partner
+When partners are a factor, the Verizon and USSS cases have differing perspectives as to
+1 Unintentional
+their role. Verizon’s findings continue to show that the majority of breaches involving
+partners are the result of third-party information assets and accounts being “hijacked” by
+another agent and then used to attack victims. This frequently involves a remote access
+connection into the victim’s systems. If compromised, the malicious agent’s actions
+6 Deliberate
+would appear to come from a trusted source and therefore be even more difficult to
+detect and prevent. Poor partner security practices usually allow or worsen these attacks.
+Organizations that outsource their IT management
+and support also outsource a great deal of trust to
+these partners. In the end, what we said last year
+remains true; poor governance, lax security, and too 8 Another agent
+via partner
+much trust is often the rule of the day. Outsourcing
+should not mean “Out of sight, out of mind.”
+The USSS caseload, on the other
+hand, shows most partner
+Table 3. Types of partner agents by percent
+of breaches within Partner breaches stem from the
+deliberate and malicious actions of that partner. An example of this
+Remote IT management/support 7
+might be a third-party system administrator who maliciously misuses
+her access to steal data from the victim. We believe that the merged
+Data processing and analysis 1
+data set balances these two extremes to arrive at the ratio shown here.
+Hosting provider 1
+The types of partners in each dataset parallel the differences described
+above. Partners that manage systems are by far the most common
+Onsite IT management/support 1
+offenders, whether their role is accidental or deliberate. Assets often
+Security services/consulting 1 involved in these breaches are point-of-sale systems within the hospitality
+and retail industries. Organizations that outsource their IT management
+Shipping/logistics provider 1
+and support also outsource a great deal of trust to these partners. In the
+end, what we said last year remains true; poor governance, lax security,
+Unknown 3
+and too much trust is often the rule of the day. Outsourcing should not
+mean “Out of sight, out of mind.”
+19
 
-Following this discussion, there are a few observations to note regarding Figure 7 which contrasts single and multi-agent breaches. The 27% of cases involving more than one agent is well below the 2008 level of 39%. Though not apparent from the figure itself, most multi-agent breaches worked by Verizon exhibit an external-partner combination. In most of these, partner assets are compromised by an external agent and used to attack the victim. On the other hand, external-internal is far more common in USSS cases. As will be discussed later in this report, this scenario often involves an outsider soliciting or bribing an employee to embezzle or skim data and/or funds. Partner-internal pairings are rare within both caseloads.
+Threat Actions
+Threat actions describe what the threat agent did to cause or contribute to the breach. There are usually multiple actions
+across multiple categories during a breach scenario. Verizon uses seven primary categories of threat actions, which are
+depicted in Figure 14 along with the percent of breaches and compromised records associated with each.
+Figure 14. Threat action categories by percent of breaches and records
+Malware 38% / 94%
+Hacking 40% / 96%
+Social 28% / 3%
+Misuse 48% / 3%
+Physical 15% / 1%
+Error 2% / 0%
+Environmental 0% / 0%
+As with the findings for threat agents, we imagine Figure 14 raises some eyebrows among those familiar with previous
+versions of this report. Before going any further, we’d like to direct attention to Figure 15 to see if we can turn some of those
+raised eyebrows into head nods and an “ah-ha” or two. In the 2008 Supplemental DBIR, we presented all the same basic
+statistics as in the original report except sliced up by industry. Figure 15 shows the prevalence of threat actions in Financial
+Services from that report. Though by no means a mirror image of Figure 14, it does demonstrate that a dataset containing a
+large proportion of financial organizations will exhibit a more “balanced” mix of threat actions and higher values in the Misuse
+and Social categories. On the other hand, the Retail and Hospitality industries are very lopsided toward Hacking and Malware.
+Therefore, Figure 14 is not a new trend or sudden change in the threat environment. It aligns perfectly well with what we
+would expect of a merged Verizon-USSS dataset that contains a higher-than-normal proportion of financial organizations.
+This is quite a sobering statistic but one that adds yet another chapter to
+a story we already know: In the big breaches, the attacker hacks into the
+victim’s network (usually by exploiting some mistake or weakness) and
+installs malware on systems to collect (lots of) data. That the USSS cases
+tell the same story certainly makes it more compelling though.
+20
 
-### Breach Size by Threat Agents
+Figure 15. Flashback: Threat action categories by percent of breaches in Financial Services as shown in the 2008 Supplemental DBIR
+Malware 23%
+Hacking 26%
+2008 Supplemental DBIR
+Social 42%
+Misuse 32%
+Physical 16%
+Error 6%
+Environmental 0%
+Though less prevalent than in previous reports, Hacking and Malware are even more dominant than normal with respect
+to compromised records. This is quite a sobering statistic but one that adds yet another chapter to a story we already
+know: In the big breaches, the attacker hacks into the victim’s network (usually by exploiting some mistake or weakness)
+and installs malware on systems to collect (lots of) data. That the USSS cases tell the same story certainly makes it more
+compelling though.
+Figure 16. Threat action categories over time by percent of breaches (Verizon cases)
+80%
+70%
+Malware
+60%
+Hacking
+50%
+Social
+40%
+Misuse
+30%
+Physical
+20%
+Error
+10%
+0% Environmental
+2005 2006 2007 2008 2009
+21
 
-![Figure 8. Compromised records by threat agent, 2009: External only (138,566,355), Internal only (2,640,240), Partner only (130), Multiple agents (2,436,297)]
-
-Though we do not assert that the full impact of a breach is limited to the number of records compromised, it is a measurable indicator of it. Analysis around financial losses incurred by breach victims is probably the most requested addition to the DBIR. For various reasons[^11], forensic investigators do not have nearly as much visibility into this as they have into the immediate details surrounding a breach. We do, however, include metrics for collecting impact data within VERIS and refer interested readers there for more information.
-
-![Figure 9. Compromised records by threat agent, 2004-2009: External only (800,720,651), Internal only (28,853,827), Partner only (43,744,573), Multiple agents (46,451,904)]
-
-Figure 8 records the distribution of the 143+ million records compromised across the merged 2009 dataset among threat agents. It looks a great deal like it did in our last DBIR. There is not a linear relationship between frequency and impact; harm done by external agents far outweighs that done by insiders and partners. This is true for Verizon and for the USSS and true for this year and in years past. To illustrate this point, we present Figure 9 showing the distribution of the over 900 million compromised records in the merged dataset between 2004 and 2009.
-
-> We could provide commentary to Figure 9, but what could it possibly add? If a chart in this report speaks with more clarity and finality we aren’t sure what it is.
-
-[^11]: [http://securityblog.verizonbusiness.com/2009/04/16/to-dbir-show-me-the-money/](http://securityblog.verizonbusiness.com/2009/04/16/to-dbir-show-me-the-money/)
-
-***
-
-## External Agents (70% of breaches, 98% of records)
-
-Table 1 presents a comparison of the various types of external threat agents identified during 2009 by Verizon and the USSS. The merged results continue to show that external breaches are largely the work of organized criminals. Banding together allows them to pool resources, specialize skills, and distribute the work effort, among other advantages. 
-
-Figure 10 demonstrates the effectiveness of this approach. Crime has been a business for a very long time. This is just the same old story played out on a different (digital) stage. We refer readers to Appendix A for more information on organized criminal communities.
-
-The large proportion of “unknown” in Table 1 is the result of several factors. Sometimes the particular type of agent cannot be determined. Sometimes the victim does not wish to spend time or money toward making this determination. The USSS contains far fewer “unknown” agents due to their role in identifying and prosecuting suspects.
-
-In terms of the role external agents played in 2009 breaches, 84% participated directly in the attack. The rest solicited another agent to perpetrate the attack or supported it in some other manner. Scenarios of this are discussed elsewhere in this report.
-
-### Table 1. Types of external agents by percent of breaches within External
-- Organized criminal group: 24%
-- Unaffiliated person(s): 21%
-- External system(s) or site: 3%
-- Activist group: 2%
-- Former employee (no longer had access): 2%
-- Another organization (not partner or competitor): 1%
-- Competitor: 1%
-- Customer (B2C): 1%
-- Unknown: 45%
-
-![Figure 10. Percent of compromised records attributed to organized crime: Other agents (15%), Organized criminal groups (85%)]
-
-> Banding together allows criminal groups to pool resources, specialize skills, and distribute the work effort, among other advantages. Crime has been a business for a very long time. This is just the same old story played out on a different (digital) stage.
-
-![Figure 11. Origin of external agents by percent of breaches within External: Europe-East incl. Russia (21%), Americas-North (19%), Asia-East (18%), Europe-West incl. Northern and Southern (10%), Middle East (5%), Africa (2%), Asia-South/Southeast (2%), Oceania Australia, New Zealand, etc. (2%), Unknown (31%)]
-
-Pinpointing the geographic origin of these attacks can be problematic, especially when it hinges mainly on source IP addresses. Fortunately, forensic investigators—and especially law enforcement agencies—often have much more to go on than that. Even if we accept that the IP address that shows up in log files does not belong to the actual machine of the actual threat agent (i.e., it is a bot controlled by the agent), it is still informative and potentially useful for defensive purposes. Figure 11 shows the regional origin of relevant external attacks.
-
-Once again, more breaches originate from East Europe than any other region (although North America and East Asia remain a close #2 and #3). Comparing “type” and “origin” reveals some interesting findings. For instance, most organized criminal groups hail from East Europe, while unidentified and unaffiliated persons often come from East Asia. Finally, it is worthy of mention that within Verizon’s caseload, East Asia rose to the top spot for the first time in 2009.
-
-### THERE MUST BE SOME MISTAKE—WHERE’S APT?
-Despite the huge amount of buzz around Advanced Persistent Threats (APT) this year, neither the term nor the concept is new. Due to this attention, we imagine more than one pair of eyes scanned the list of external agent types in search of “APT.” One of the difficulties with APT is that, though it may have an official definition, its use in everyday practice varies widely. By it, some refer strictly to nation-states, some to any highly skilled attacker, some to particularly difficult methods of attacks or their unrelenting nature. We’re not interested in arguing about the definition. We simply want to explain why it is not listed in any figure or table in this report. Rather than identifying an “APT attack,” VERIS classifies threat agents and their actions in a descriptive manner. If interested, you can see glimpses of “APT-ish elements” throughout this report. Look at the types and origins of external agents (note the absence of the “government” category that is an available option in VERIS), examine the types and vectors of threat actions, read our assessments of attack difficulty, notice the length of time that passes from compromise to discovery, and check out the anti-forensics section. These areas might not be stamped with the acronym “APT” but we do believe them to “apt-ly” describe breaches investigated by Verizon and the USSS in 2009.
-
-***
-
-## Internal Agents (48% of breaches, 3% of records)
-
-![Figure 12. Role of internal agents by percent of breaches within Internal: Unintentional (4%), Inappropriate (6%), Deliberate (90%)]
-
-Of cases involving internal threat agents in 2009, investigators determined 90% were the result of deliberate and malicious activity. This finding does not mean that insiders never unintentionally contribute to breaches; they very often do. As discussed earlier, our method of classification does not consider insiders to be an active part of the event chain if their role is limited to contributory error. Inappropriate actions include policy violations and other questionable behavior that, while not overtly malicious, can still result in harm to information assets. Not only can inappropriate behavior contribute directly to a breach, but it may also be an ill omen of what’s to come. Over time investigators have noticed that employees who commit data theft were often cited in the past for other “minor” forms of misuse (or evidence of it was found and brought to light during the investigation).
-
-Recently, many have hypothesized that insider crime would rise due to financial strain imposed by global economic conditions. Hard times breed hard crimes as they say. It is entirely possible that this is occurring, but neither the Verizon nor USSS caseload show evidence of it. As seen back in Figure 6, Verizon shows a flat trend for insiders and the USSS shows a downward trend over the last three years. Nevertheless, it is a logical hypothesis and worthy of further study.
-
-Analyzing the types of insiders behind breaches yields a great deal of practical information. Each of the types listed in Table 2 represent a certain inherent mix of skills, duties, privileges, etc., all of which speak to the capabilities and resources of that agent and the safeguards most relevant to them. Traditionally, we have seen a large and fairly even proportion of system/network administrators to regular users with a few other types mixed in occasionally. 2009 results are substantially different and, no surprise, this is largely due to USSS data. Specifically, it is related to the types of internal crime investigated by the USSS (see the Misuse section under Threat Actions for a more detailed discussion). As a result, regular employees were responsible for a much larger share (51%) of breaches. These cases typically involved bank tellers, retail cashiers, and other similar personnel taking advantage of their everyday job duties to skim, embezzle, or otherwise steal data from their employers.
-
-> Recently, many have hypothesized that insider crime would rise due to financial strain imposed by global economic conditions. Hard times breed hard crimes as they say. It is entirely possible that this is occurring, but neither the Verizon nor USSS caseload show evidence of it.
-
-### Table 2. Types of internal agents by percent of breaches within Internal
-- Regular employee/end-user: 51%
-- Finance/accounting staff: 12%
-- System/network administrator: 12%
-- Executive/upper management: 7%
-- Helpdesk staff: 4%
-- Software developer: 3%
-- Auditor: 1%
-- Unknown: 9%
-
-Finance and accounting staff are similar to regular employees in terms of IT privileges but we differentiate them due to the higher privileges of another sort. Their oversight and management of accounts, records, and finances affords them great propensity for harm. Executives are in a similar position. Though outside the scope of this study, devious acts committed by such employees have caused far more damage to businesses than IT-related incidents.
-
-While it is clear that pulling off an inside job doesn’t require elevated privileges, evidence consistently supports that they do facilitate the bigger ones. Overall, insiders were not responsible for a large share of compromised records but system and network administrators nabbed most of those that were. This finding is not surprising since higher privileges offer greater opportunity for abuse. In general, we find that employees are granted more privileges than they need to perform their job duties and the activities of those that do require higher privileges are usually not monitored in any real way.
-
-It is worth noting that while executives and upper management were not responsible for many breaches, IP and other sensitive corporate information was usually the intended target when they were. These acts were often committed after their resignation or termination.
-
-Speaking of that, across all types of internal agents and crimes, we found that 24% was perpetrated by employees who recently underwent some kind of job change. Half of those had been fired, some had resigned, some were newly hired, and a few changed roles within the organization. With respect to breaches caused by recently terminated employees, we observed the same scenarios we have in the past: 1) the employee’s accounts were not disabled in a timely manner, and 2) the employee was allowed to “finish the day” as usual after being notified of termination. This obviously speaks to the need for termination plans that are timely and encompass all areas of access (decommissioning accounts, disabling privileges, escorting terminated employees, forensic analysis of systems, etc.).
-
-### THE SLIPPERY SLOPE OF INSIDER MISCONDUCT
-Verizon investigated a case in which a recently terminated system administrator stole sensitive data from his former employer as well as personal information belonging to its customers. He then attempted to blackmail the organization and threatened to go public with the information if they did not meet his demands. Obviously, not a good situation but what makes it worse is that it might have been avoided with a few changes in policy and practice. On several occasions in the past, this employee had been cited for IT policy violations and inappropriate behavior. There were harassment complaints against him filed by other employees. Finally, when he stole a co-worker’s password for a popular social networking site and modified it with slanderous content, he was let go. Unfortunately, his generic administrative account was given to his successor with a minor password change (i.e., “Password2” instead of “Password1”) and we’ve already covered what happened after that.
-
-***
-
-## Partner Agents (11% of breaches, 1% of records)
-
-![Figure 13. Role of partner agents by percent of breaches within Partner: Unintentional (1%), Deliberate (6%), Another agent via partner (8%)]
-
-As discussed already, partner-related breaches are down in comparison to previous years. When partners are a factor, the Verizon and USSS cases have differing perspectives as to their role. Verizon’s findings continue to show that the majority of breaches involving partners are the result of third-party information assets and accounts being “hijacked” by another agent and then used to attack victims. This frequently involves a remote access connection into the victim’s systems. If compromised, the malicious agent’s actions would appear to come from a trusted source and therefore be even more difficult to detect and prevent. Poor partner security practices usually allow or worsen these attacks. 
-
-> Organizations that outsource their IT management and support also outsource a great deal of trust to these partners. In the end, what we said last year remains true; poor governance, lax security, and too much trust is often the rule of the day. Outsourcing should not mean “Out of sight, out of mind.”
-
-The USSS caseload, on the other hand, shows most partner breaches stem from the deliberate and malicious actions of that partner. An example of this might be a third-party system administrator who maliciously misuses her access to steal data from the victim. We believe that the merged data set balances these two extremes to arrive at the ratio shown here.
-
-### Table 3. Types of partner agents by percent of breaches within Partner
-- Remote IT management/support: 7%
-- Data processing and analysis: 1%
-- Hosting provider: 1%
-- Onsite IT management/support: 1%
-- Security services/consulting: 1%
-- Shipping/logistics provider: 1%
-- Unknown: 3%
-
-The types of partners in each dataset parallel the differences described above. Partners that manage systems are by far the most common offenders, whether their role is accidental or deliberate. Assets often involved in these breaches are point-of-sale systems within the hospitality and retail industries. Organizations that outsource their IT management and support also outsource a great deal of trust to these partners. In the end, what we said last year remains true; poor governance, lax security, and too much trust is often the rule of the day. Outsourcing should not mean “Out of sight, out of mind.”
-
-***
-
-## Threat Actions
-
-Threat actions describe what the threat agent did to cause or contribute to the breach. There are usually multiple actions across multiple categories during a breach scenario. Verizon uses seven primary categories of threat actions, which are depicted in Figure 14 along with the percent of breaches and compromised records associated with each.
-
-![Figure 14. Threat action categories by percent of breaches and records: Malware (38% / 94%), Hacking (40% / 96%), Social (28% / 3%), Misuse (48% / 3%), Physical (15% / 1%), Error (2% / 0%), Environmental (0% / 0%)]
-
-As with the findings for threat agents, we imagine Figure 14 raises some eyebrows among those familiar with previous versions of this report. Before going any further, we’d like to direct attention to Figure 15 to see if we can turn some of those raised eyebrows into head nods and an “ah-ha” or two. In the 2008 Supplemental DBIR, we presented all the same basic statistics as in the original report except sliced up by industry. Figure 15 shows the prevalence of threat actions in Financial Services from that report. Though by no means a mirror image of Figure 14, it does demonstrate that a dataset containing a large proportion of financial organizations will exhibit a more “balanced” mix of threat actions and higher values in the Misuse and Social categories. On the other hand, the Retail and Hospitality industries are very lopsided toward Hacking and Malware. Therefore, Figure 14 is not a new trend or sudden change in the threat environment. It aligns perfectly well with what we would expect of a merged Verizon-USSS dataset that contains a higher-than-normal proportion of financial organizations.
-
-> This is quite a sobering statistic but one that adds yet another chapter to a story we already know: In the big breaches, the attacker hacks into the victim’s network (usually by exploiting some mistake or weakness) and installs malware on systems to collect (lots of) data. That the USSS cases tell the same story certainly makes it more compelling though.
-
-![Figure 15. Flashback: Threat action categories by percent of breaches in Financial Services as shown in the 2008 Supplemental DBIR: Malware (23%), Hacking (26%), Social (42%), Misuse (32%), Physical (16%), Error (6%), Environmental (0%)]
-
-Though less prevalent than in previous reports, Hacking and Malware are even more dominant than normal with respect to compromised records. This is quite a sobering statistic but one that adds yet another chapter to a story we already know: In the big breaches, the attacker hacks into the victim’s network (usually by exploiting some mistake or weakness) and installs malware on systems to collect (lots of) data. That the USSS cases tell the same story certainly makes it more compelling though.
-
-![Figure 16. Threat action categories over time by percent of breaches (Verizon cases) (Line graph showing Malware, Hacking, Social, Misuse, Physical, Error, Environmental from 2005 to 2009)]
-
-![Figure 17. Threat actions over time by percent of breaches (USSS cases) (Line graph showing Malware, Hacking, Social, Misuse over available years)]
-
-Those wishing to compare 2009 results to previous years for Verizon’s caseload can do so in Figure 16. Another version of the same chart is provided for the three years for which we have data from the USSS (Figure 17). The most noticeable change in 2009 among breaches worked by Verizon was a substantial upswing in malware. For the most part, USSS trends held steady, with Social and Misuse...
-
----
-
-| ------------------ | ------- | --- | --- | --- |
+Those  wishing  to  compare  2009  Figure 17. Threat actions over time by percent of breaches (USSS cases)
+| results  | to  previous  | years  for  |     |     |     |
+| -------- | ------------- | ----------- | --- | --- | --- |
+100%
+| Verizon’s                             | caseload  can  | do  so  in  |     |     |     |
+| ------------------------------------- | -------------- | ----------- | --- | --- | --- |
+| Figure 16. Another version of the     |                |             | 90% |     |     |
+| same chart is provided for the three  |                |             | 80% |     |     |
+years for which we have data from
+70% Malware
+| the  USSS  | (Figure  17).  | The  most  |     |     |     |
+| ---------- | -------------- | ---------- | --- | --- | --- |
+60%
+noticeable change in 2009 among  Hacking
+| breaches worked by Verizon was a  |     |     | 50% |     |     |
+| --------------------------------- | --- | --- | --- | --- | --- |
+Social
+| substantial upswing in malware. For  |     |     | 40% |     |     |
+| ------------------------------------ | --- | --- | --- | --- | --- |
+Misuse
+| the most  | part,  USSS  | trends  held  |     |     |     |
+| --------- | ------------ | ------------- | --- | --- | --- |
+30%
+| steady,  | with  Social  and  | Misuse  |     |     |     |
+| -------- | ------------------ | ------- | --- | --- | --- |
 Physical
 20%
 | showing  | some  growth  | while  |     |     |     |
@@ -2188,4 +2652,4 @@ verizonbusiness.com/socialmedia verizonbusiness.com/thinkforward
 © 2010 Verizon. All Rights Reserved. MC14510 07/10. The Verizon and Verizon Business names and logos and all other names, logos, and slogans identifying Verizon’s products and services are trademarks and service marks
 or registered trademarks and service marks of Verizon Trademark Services LLC or its affiliates in the United States and/or other countries. All other trademarks and service marks are the property of their respective owners.
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-06", "model": "gemini-3.7-flash"} -->

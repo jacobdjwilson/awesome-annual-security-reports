@@ -1,568 +1,1026 @@
-# ANNUAL REPORT
-## Security Awareness Training
-# STATE OF THE PHISH 2019 REPORT
+ANNUAL REPORT
+Security Awareness Training
+STATE OF THE
+PHISH
+2019 REPORT
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Section 1: The Extent of End-User Risk](#section-1-the-extent-of-end-user-risk)
-- [Section 2: What Infosec Pros Are Experiencing](#section-2-what-infosec-pros-are-experiencing)
-- [Section 3: Security Awareness Training: Outcomes and Opportunities](#section-3-security-awareness-training-outcomes-and-opportunities)
+STATE OF THE PHISH | 2019 2
+INTRODUCTION
+What did the phishing landscape look like in 2018? Is general end-user Our fifth annual State of the Phish Report answers all of these
+awareness of phishing and other social engineering attacks improving? questions — and more. In this report, our focus mirrors that of cyber
+What are organizations doing to combat the phishing threat — and how attackers: your people. You will see data related to the following:
+successful are their efforts?
+16
+Tens of millions of simulated 16 Nearly 15,000 survey responses 7,000+ technology
+phishing emails industries from infosec professionals user insights
+We compiled and analyzed data We compare and contrast activities We sent quarterly surveys to Our third-party survey of more than
+from tens of millions of simulated and results from organizations our global database of infosec 7,000 working adults — 1,000 each
+phishing emails sent to end users and their employees across professionals (customers and in the US, UK, France, Germany, Italy,
+around the world in organizations 16 industries, including finance, non-customers) throughout 2018. Australia, and Japan — focused on
+of all sizes. Findings are based on healthcare, and manufacturing. Their responses reveal the common social engineering terms
+phishing tests administered via our challenges they are facing, their and attack vectors. Results provide a
+cloud-based Security Education views of the threat landscape, global perspective on the awareness
+Platform between October 2017 and the actions they’re taking levels of the average end user.
+and September 2018. to fend off phishing attacks.
+SECTION 3:
+SECTION 1: SECTION 2:
+IINNTTRROODDUUCCTTIIOONN THREE PILLARS OF CONTENT SECURITY AWARENESS TRAINING:
+THE EXTENT OF END-USER RISK WHAT INFOSEC PROS ARE EXPERIENCING
+OUTCOMES AND OPPORTUNITIES
 
----
+STATE OF THE PHISH | 2019 3
+THREE PILLARS OF CONTENT Security Awareness Training: Outcomes and Opportunities
+We close this year’s report with an in-depth look at the data gleaned from
+our Security Education Platform. This SaaS-based learning management
+FOR THIS YEAR’S REPORT, WE FOCUS ON THREE KEY AREAS OF DATA
+system (LMS) allows our customers to plan and execute phishing awareness
+AND ANALYSIS:
+training programs, as well as to gather business intelligence about these
+The Extent of End-User Risk
+activities. You’ll find the following results and analysis:
+Proofpoint threat intelligence continues to demonstrate attackers’ focus on • Average failure rates across different phishing campaign types
+end users, and it validates the need to take a people-centric approach to
+• The simulated phishing templates and themes favored by
+cybersecurity. But what if organizations aren’t following that model?
+program administrators
+In this section of the report, you’ll find the results of our five-question, • Average failure rates by industry and department
+seven-country survey, which was designed to gauge the fundamental • How personalization and program maturity influence failure rates
+cybersecurity knowledge of working adults around the world. We include • Visibility into frequently attacked targets across multiple industries
+global averages and country-by-country breakdowns for responses to each • Phishing templates that most frequently fool end users
+question. We also feature analysis by age groups, which examines how
+• Insights into end-user reported emails
+millennials — a key demographic for organizations worldwide — compare to
+baby boomers and others in terms of cybersecurity awareness.
+USER RISK REPORT
+What Infosec Pros Are Experiencing
+Find out more about the cybersecurity knowledge levels of
+This section of the report reveals the results of our quarterly surveys
+working adults around the world in our 2018 User Risk Report.
+of infosec professionals. We cover a number of key topics, including
+the following:
+• The different types of social engineering attacks organizations
+are experiencing
+• The frequency of phishing and spear phishing attacks
+• How phishing is impacting organizations
+• How organizations are using security awareness training tools
+to manage end-user risk
+• Application of consequence models and escalation paths
+We also take a high-level, regional look at the survey data, highlighting DOWNLOAD THE REPORT
+interesting variations among respondents who reside in one of three key
+business regions: North America, EMEA, and APAC.
+SECTION 3:
+SECTION 1: SECTION 2:
+INTRODUCTION TTHHRREEEE PPIILLLLAARRSS OOFF CCOONNTTEENNTT SECURITY AWARENESS TRAINING:
+THE EXTENT OF END-USER RISK WHAT INFOSEC PROS ARE EXPERIENCING
+OUTCOMES AND OPPORTUNITIES
 
-## Introduction
-
-What did the phishing landscape look like in 2018? Is general end-user awareness of phishing and other social engineering attacks improving? What are organizations doing to combat the phishing threat — and how successful are their efforts?
-
-Our fifth annual State of the Phish Report answers all of these questions — and more. In this report, our focus mirrors that of cyber attackers: your people. You will see data related to the following:
-
-- **Tens of millions of simulated phishing emails**: We compiled and analyzed data from tens of millions of simulated phishing emails sent to end users around the world in organizations of all sizes. Findings are based on phishing tests administered via our cloud-based Security Education Platform between October 2017 and September 2018.
-- **Nearly 15,000 survey responses from infosec professionals**: We compare and contrast activities and results from organizations and their employees across 16 industries, including finance, healthcare, and manufacturing. Their responses reveal the challenges they are facing, their views of the threat landscape, and the actions they’re taking to fend off phishing attacks.
-- **7,000+ technology user insights**: We sent quarterly surveys to our global database of infosec professionals (customers and non-customers) throughout 2018. Our third-party survey of more than 7,000 working adults — 1,000 each in the US, UK, France, Germany, Italy, Australia, and Japan — focused on common social engineering terms and attack vectors. Results provide a global perspective on the awareness levels of the average end user.
-
-### Three Pillars of Content
-- **SECTION 1: THE EXTENT OF END-USER RISK**
-- **SECTION 2: WHAT INFOSEC PROS ARE EXPERIENCING**
-- **SECTION 3: SECURITY AWARENESS TRAINING: OUTCOMES AND OPPORTUNITIES**
-
----
-
-### For this year’s report, we focus on three key areas of data and analysis:
-
-#### The Extent of End-User Risk
-Proofpoint threat intelligence continues to demonstrate attackers’ focus on end users, and it validates the need to take a people-centric approach to cybersecurity. But what if organizations aren’t following that model?
-
-In this section of the report, you’ll find the results of our five-question, seven-country survey, which was designed to gauge the fundamental cybersecurity knowledge of working adults around the world. We include global averages and country-by-country breakdowns for responses to each question. We also feature analysis by age groups, which examines how millennials — a key demographic for organizations worldwide — compare to baby boomers and others in terms of cybersecurity awareness.
-
-> **USER RISK REPORT**  
-> Find out more about the cybersecurity knowledge levels of working adults around the world in our 2018 User Risk Report.  
-> ![Download the report](Download the report icon/graphic)
-
-#### What Infosec Pros Are Experiencing
-This section of the report reveals the results of our quarterly surveys of infosec professionals. We cover a number of key topics, including the following:
-- The different types of social engineering attacks organizations are experiencing
-- The frequency of phishing and spear phishing attacks
-- How phishing is impacting organizations
-- How organizations are using security awareness training tools to manage end-user risk
-- Application of consequence models and escalation paths
-
-We also take a high-level, regional look at the survey data, highlighting interesting variations among respondents who reside in one of three key business regions: North America, EMEA, and APAC.
-
-#### Security Awareness Training: Outcomes and Opportunities
-We close this year’s report with an in-depth look at the data gleaned from our Security Education Platform. This SaaS-based learning management system (LMS) allows our customers to plan and execute phishing awareness training programs, as well as to gather business intelligence about these activities. You’ll find the following results and analysis:
-- Average failure rates across different phishing campaign types
-- The simulated phishing templates and themes favored by program administrators
-- Average failure rates by industry and department
-- How personalization and program maturity influence failure rates
-- Visibility into frequently attacked targets across multiple industries
-- Phishing templates that most frequently fool end users
-- Insights into end-user reported emails
-
----
-
-## Section 1: The Extent of End-User Risk
-
-### The Human Factor
-_The Human Factor 2018_, a Proofpoint report based on threat intelligence gathered from analysis of more than one billion emails per day, makes one thing abundantly clear: Cyber attackers are increasingly focusing their attention on people, not technical defenses. As the report states, “Attackers are adept at exploiting our natural curiosity, desire to be helpful, love of a good bargain, and even our time constraints to persuade us to click.”
-
+STATE OF THE PHISH | 2019 4
+THE EXTENT OF
+To make this connection, we commissioned a third-party survey of working adults from
+SECTION 1
+around the world. Participants were representative of workers who are currently employed
+END-USER RISK
+by global organizations of all sizes: technology users who may or may not have a solid
+grasp of cybersecurity best practices.
+We asked five relatively simple, multiple-choice questions of 7,000 end users across
+The Human Factor 2018, a Proofpoint report based on threat intelligence gathered from
+seven countries (the US, UK, France, Germany, Italy, Australia, and Japan). All questions
+analysis of more than one billion emails per day, makes one thing abundantly clear:
+focused on fundamental cybersecurity concepts, including high-profile topics (like
+Cyber attackers are increasingly focusing their attention on people, not technical
+phishing and ransomware), and lesser-known but frequently experienced attacks like
+defenses. As the report states, “Attackers are adept at exploiting our natural curiosity,
+smishing (SMS/text message phishing) and vishing (voice phishing).
+desire to be helpful, love of a good bargain, and even our time constraints to persuade
+us to click.”
+We found that, in general, end users are not familiar with commonly used infosecurity
+terms. In addition — and of particular concern — many are relying on IT teams to
 Proofpoint researchers reported the following:
-- **Email is the top attack vector**, with threat actors using macro- and micro-level campaigns to target employees across organizational levels and job functions.
-- **The brand equity of large enterprises is under attack**, with suspiciously registered domains outpacing defensive brand-registered domains at a ratio of 20 to 1.
-- **Millions of users are facing malvertising campaigns** that feature fake browser and plugin updates laden with dangerous software and exploit kits.
-- **Cybercriminals are leveraging the lure of pirated content** in their social media-based attacks. Approximately 35% of these scams tempted users with video streaming and movie downloads.
-
-Knowing the landscape, we wanted to connect the dots to end-user knowledge levels and explore the potential vulnerabilities for organizations that are not running measurable security awareness training programs — meaning, they don’t have the tools in place to know which employees are actively engaging with training and progressively learning over time.
-
-To make this connection, we commissioned a third-party survey of working adults from around the world. Participants were representative of workers who are currently employed by global organizations of all sizes: technology users who may or may not have a solid grasp of cybersecurity best practices.
-
-We asked five relatively simple, multiple-choice questions of 7,000 end users across seven countries (the US, UK, France, Germany, Italy, Australia, and Japan). All questions focused on fundamental cybersecurity concepts, including high-profile topics (like phishing and ransomware), and lesser-known but frequently experienced attacks like smishing (SMS/text message phishing) and vishing (voice phishing).
-
-We found that, in general, end users are not familiar with commonly used infosecurity terms. In addition — and of particular concern — many are relying on IT teams to automatically discover and fix accidental downloads of malicious software. The lack of clarity with regard to the role of IT in attack prevention could be giving users a false sense of security and unnecessarily taxing infosec resources.
-
-> **HUMAN FACTOR REPORT**  
-> Learn more about how cybercriminals are exploiting human nature by attacking people rather than technology.  
-> ![Download the report](Download the report icon/graphic)
-
----
-
-### Five Questions
-
-When it comes to the language that infosec teams are using when communicating to end users, it’s important to recognize that there might be a fundamental disconnect. If the terminology isn’t recognizable to users at a basic level, they are likely to tune out and think the information doesn’t apply to them. If employees don’t understand what you’re asking of them, they will not progress in terms of cyber hygiene.
-
-Following, you will see global averages for each question we asked, as well as country-by-country response comparisons. Multinational organizations in particular should note the strengths and weaknesses of particular regions, as this information can help guide assessment and training choices in global locations.
-
-#### What Is Phishing?
-- **Global Averages**: 
-  - Correct: 66%
-  - Incorrect: 17%
-  - I Don’t Know: 17%
-- ![Chart showing country-by-country breakdown for "What Is Phishing?"](Bar chart comparing US, UK, France, Germany, Italy, Australia, and Japan response percentages for "What Is Phishing?")
-
-#### What Is Ransomware?
-- **Global Averages**: 
-  - Correct: 45%
-  - Incorrect: 22%
-  - I Don’t Know: 33%
-- ![Chart showing country-by-country breakdown for "What Is Ransomware?"](Bar chart comparing US, UK, France, Germany, Italy, Australia, and Japan response percentages for "What Is Ransomware?")
-
-#### What Is Smishing?
-- **Global Averages**: 
-  - Correct: 23%
-  - Incorrect: 22%
-  - I Don’t Know: 55%
-- ![Chart showing country-by-country breakdown for "What Is Smishing?"](Bar chart comparing US, UK, France, Germany, Italy, Australia, and Japan response percentages for "What Is Smishing?")
-
-#### What Is Vishing?
-- **Global Averages**: 
-  - Correct: 18%
-  - Incorrect: 19%
-  - I Don’t Know: 63%
-- ![Chart showing country-by-country breakdown for "What Is Vishing?"](Bar chart comparing US, UK, France, Germany, Italy, Australia, and Japan response percentages for "What Is Vishing?")
-
-#### True or False?
-> If you accidentally install a virus or malicious software on your computer, your IT team will be notified by their monitoring tools so you can fix it.
-- **Global Averages**: 
-  - True: 32%
-  - False: 34%
-  - I Don’t Know: 34%
-- ![Chart showing country-by-country breakdown for True/False IT monitoring question](Bar chart comparing US, UK, France, Germany, Italy, Australia, and Japan response percentages for the IT monitoring question)
-
----
-
-### Year-over-Year Comparisons
-
-Last year, we surveyed just 3,000 technology users across three countries: the US, UK, and Germany. Year-over-year comparisons between these countries’ respondents show some bright spots: Ransomware awareness increased significantly in the US and the UK (with Germany holding steady), and average understanding of smishing improved among these users. But the news on phishing is mixed: The US gained some ground and the UK remained relatively steady, but German technology users took a significant step back.
-
-#### What Is Phishing? (Percentage of correct answers)
-- **US**: 2018: 65% | 2017: 61%
-- **UK**: 2018: 72% | 2017: 73%
-- **Germany**: 2018: 64% | 2017: 71%
-
-#### What Is Ransomware? (Percentage of correct answers)
-- **US**: 2018: 56% | 2017: 46%
-- **UK**: 2018: 60% | 2017: 55%
-- **Germany**: 2018: 31% | 2017: 31%
-
-#### What Is Smishing? (Average across US, UK, and Germany)
-- **2018**: 20%
-- **2017**: 16%
-
-> **EXECUTIVE RECOMMENDED: SPEAK THE RIGHT LANGUAGE, AND SPEAK IT FREQUENTLY**  
-> Infosec teams should make it a point to educate employees at a fundamental level. Terminology that is commonly used in some circles is not necessarily recognizable across all job functions ... even if those terms have a vital link to overall security postures.  
-> Organizations must also recognize that workforce knowledge is not a constant, particularly when it comes to learning new skills. This is because education isn’t a one-and-done proposition; new concepts introduced via cybersecurity training must be reinforced regularly over time in order for awareness to transition to understanding and, ultimately, behavior change.
-
----
-
-### The Millennial Question: Are ‘Digital Natives’ More Cyber Secure?
-
-Much has been made of the millennial generation and its impact on the global workforce. Though much of the discussion has trended to philosophical differences between preceding generations of workers, it’s worth considering the technological impact this device-heavy, data-generating population will have on employer networks and systems.
-
-Clearly, these digital natives, as a collective, are far more cyber-savvy than their predecessors. Having been raised on smart devices and applications, there is little about technology that intimidates them. Unfortunately, it appears that a high degree of cyber comfort doesn’t necessarily lead to a clear understanding of cybersecurity.
-
-As you will note in the charts, millennials fall significantly behind at least one other age group on all questions, and baby boomers — arguably the least cyber-savvy demographic from our survey — outperform all others in fundamental understanding of phishing and ransomware.
-
-- **What Is Phishing? (Breakdown by Age)**:
-  - Age 18–21: Correct 58% | Incorrect 16% | I Don’t Know 26%
-  - Age 22–37: Correct 68% | Incorrect 16% | I Don’t Know 16%
-  - Age 38–53: Correct 71% | Incorrect 13% | I Don’t Know 16%
-  - Age 54+: Correct 73% | Incorrect 14% | I Don’t Know 13%
-- **What Is Ransomware? (Breakdown by Age)**:
-  - Age 18–21: Correct 34% | Incorrect 26% | I Don’t Know 40%
-  - Age 22–37: Correct 35% | Incorrect 25% | I Don’t Know 40%
-  - Age 38–53: Correct 33% | Incorrect 22% | I Don’t Know 45%
-  - Age 54+: Correct 52% | Incorrect 18% | I Don’t Know 30%
-- **What Is Smishing? (Breakdown by Age)**:
-  - Age 18–21: Correct 33% | Incorrect 30% | I Don’t Know 37%
-  - Age 22–37: Correct 25% | Incorrect 26% | I Don’t Know 49%
-  - Age 38–53: Correct 22% | Incorrect 21% | I Don’t Know 57%
-  - Age 54+: Correct 15% | Incorrect 21% | I Don’t Know 64%
-- **What Is Vishing? (Breakdown by Age)**:
-  - Age 18–21: Correct 27% | Incorrect 26% | I Don’t Know 47%
-  - Age 22–37: Correct 20% | Incorrect 24% | I Don’t Know 56%
-  - Age 38–53: Correct 16% | Incorrect 21% | I Don’t Know 63%
-  - Age 54+: Correct 13% | Incorrect 18% | I Don’t Know 69%
-
-_Note: According to Pew Research, millennials fell into the 22–37 age bracket and baby boomers were 54 and older in 2018._
-
-#### Some Thoughts on the Age Gaps ...
-- Baby boomers and Gen X respondents (ages 38–53) exhibit much stronger recognition of phishing and ransomware, which we feel is likely due to longer-term exposure to security awareness training about these topics.
-- Millennials and their younger counterparts are strongest in recognition of smishing and vishing, two more recent threat vectors — though less than a third of each group responded correctly, so not a great showing overall.
-- The bottom line is that organizations should not assume that younger workers have an innate understanding of cybersecurity threats and/or best practices simply because they are more cyber-savvy. Clearly, security awareness training is needed across all age groups.
-
----
-
-## Section 2: What Infosec Pros Are Experiencing
-
-Each year, we survey our extensive database of infosec professionals — both customers and non-customers — to find out what they’re experiencing, how phishing and other social engineering attacks are impacting their organizations, and the tools they’re using to manage end-user risk. This year, we received nearly 15,000 responses to our quarterly surveys of security specialists from around the world. You will find the global averages for each set of responses, along with key highlights for three of the world’s largest business regions: North America, EMEA, and APAC.
-
-### How Often Are Organizations Experiencing Social Engineering Attacks?
-
-Across the board, infosec professionals identified a more active social engineering landscape in 2018. The vast majority — 96% — said the rate of phishing attacks either increased or stayed consistent throughout the year, and more respondents said they experienced attacks during 2018 than in 2017. Phishing and spear phishing saw the biggest increases, but all types of attacks happened more frequently than in 2017.
-
-- **83%** of survey respondents experienced phishing attacks in 2018 _(An increase from 76% in 2017)_
-- **49%** told us they faced vishing (voice phishing) and/or smishing (SMS/text phishing) in 2018 _(An increase from 45% in 2017)_
-- **4%** experienced USB-based social engineering attacks via infected thumb drives _(An increase from 3% in 2017)_
-- **64%** of infosec professionals experienced spear phishing in 2018 _(An increase from 53% in 2017)_
-- **58%** of APAC infosec pros said phishing attacks increased in 2018, compared to 50% in North America and just 33% in EMEA.
-
-### Social Engineering Beyond Email
-Of the 49% of respondents who said they experienced vishing and smishing, 50% dealt only with vishing attacks, 12% saw just smishing, and 38% experienced both types of attacks. In addition, these attacks happened with regularity; following are the number of attacks organizations experienced each quarter, on average.
-- **1–5**: 66%
-- **6–15**: 19%
-- **16–25**: 7%
-- **26+**: 8%
-
-> _APAC residents were five times more likely than those in EMEA to experience 26+ smishing and vishing attacks per quarter._
-
-### Frequency of Spear Phishing Attacks per Quarter
-Not only did more infosec professionals experience spear phishing in 2018, but the frequency of attacks also increased. Below, we compare the 2018 and 2017 average numbers of attacks per quarter.
-
-- **1–5**: 2018: 21% | 2017: 27%
-- **6–15**: 2018: 59% | 2017: 67%
-- **16–25**: 2018: 10% | 2017: 4%
-- **26+**: 2018: 10% | 2017: 4%
-
-> From a regional perspective, respondents in North America were most likely (67%) to say they experienced spear phishing in 2018, but they were least likely to face the highest rate of attacks per quarter. APAC respondents were about twice as likely as their North American counterparts to say they faced 26+ quarterly spear phishing attempts.
-
-> _APAC respondents were most likely to experience account compromise and data loss, while EMEA respondents were most likely to experience malware infections._
-
----
-
-### What Impact Is Phishing Having on Organizations?
-
-Since attackers use different phishing techniques and have different goals, organizations experience varying impacts from phishing attacks. Below, we compare responses to the question about phishing impacts from the last three years of our survey.
-
-As you’ll note, credential compromise increased by more than 70% since 2017, leapfrogging malware infections to become the most commonly experienced impact in 2018. This is of particular concern given that multiple services often sit behind a single password. In addition, reports of data loss have more than tripled since 2016. We believe the significant increases across all three categories since 2016 not only speak to the growing phishing threat, but also to organizations’ heightened awareness of — and attention to — the effect these attacks have on businesses.
-
-#### Phishing Impacts Experienced*
-- **Compromised Accounts**: 2018: 70% | 2017: 49% | 2016: 38%
-- **Malware Infections**: 2018: 60% | 2017: 63% | 2016: 65%
-- **Loss of Data**: 2018: 27% | 2017: 17% | 2016: 7%
-_\* Multiple responses permitted_
-
-We also asked our infosec contacts how they gauge the cost of phishing within their organizations. A positive trend from last year: 80% of 2018 respondents said they measure phishing costs, up from 77% in 2017.
-
-#### How Infosec Teams Measure the Cost of Phishing*
-- **Lost Productivity for Employees**: 67%
-- **Business Impacts through Loss of Proprietary Information**: 54%
-- **Damage to Business Reputation**: 50%
-- **Not Applicable**: 20%
-_\* Multiple responses permitted_
-
-We also gave our respondents the option to comment about other phishing impacts they experienced in 2018. Though some responses triggered our curiosity (for example, one respondent was “not able to say” what was experienced, but said the impact was “significant”), most were fairly straightforward. The most common write-in responses about phishing impacts included the following:
-- Financial losses, including fraudulent wire transfers, legal fees, and fines
-- Compliance issues
-- Greater burden on IT teams
-- Damage to the reputation of infosec teams
-- Investments in new technology, including multi-factor authentication (MFA)
-- Frustration from customers and employees following a data breach
-
----
-
-### What Are Organizations Doing to Combat the Phishing Threat?
-
-Naturally, infosec teams employ a wide range of technical tools — including email/spam filters, URL rewriting, advanced malware analysis, and threat monitoring platforms — in their defense-in-depth architectures. But they are also shifting to a more people-centric model by proactively identifying phishing susceptibility, measuring end-user risk, and delivering regular security awareness training. We’ve seen a much greater focus on measurement and business intelligence over the past few years, and the good news is that most infosec professionals say they can see their efforts paying off.
-
-- **95%** of respondents said they train end users to identify and avoid phishing attacks.
-- **80%** of organizations measure their susceptibility to phishing attacks. _(A 31% increase since we first asked this question in 2014)_
-- **83%** of respondents prefer computer-based online training as a training tool (with 75% preferring simulated phishing attacks).
-- **65%** of organizations evaluate the risk individual end users pose to overall security postures.
-- **57%** of infosec professionals said they have been able to quantify a reduction in phishing susceptibility based on their training activities. _(A 6% increase from 2017)_
-
-The most common ways respondents gauge risk are via security awareness training performance (75%), business risk assessments (72%), technical policy violations (45%), and administrative policy violations (42%).
-
----
-
-### What about Ransomware?
-
-This is the first time we asked our database about ransomware attacks … just in time to confirm what we’ve all been hearing: that ransomware took a back seat to other types of attacks in 2018.
-
-- **10%** of global respondents said they experienced a ransomware attack in 2018.
-- _By a wide margin, EMEA respondents were most likely (21%) to say they experienced a ransomware attack in 2018._
-
----
-
-### Security Awareness Training Tools: Frequency of Use
-- **Monthly**: 41%
-- **Quarterly**: 34%
-- **Biweekly**: 22%
-- **Yearly**: 3%
-
-#### Balancing Quality and Quantity
-We’ve long spoken about the need for regular cybersecurity education; once-a-year programs simply will not drive knowledge retention or change end-user behaviors. Many regulatory boards agree as well, which is why it’s good to see that the vast majority of those we surveyed opt for monthly or quarterly training (though we’d love to see that 22% in the pie chart trickle down to single digits).
-
-> APAC organizations are most likely to rely on yearly training, and they most commonly employ education methods that offer fewer opportunities for users to “learn by doing” — like cybersecurity videos and in-person training sessions. As such, it’s not surprising to see that these respondents were the least likely to say they’ve been able to quantify a reduction in their end users’ phishing susceptibility.
-
-That said, more isn’t always more. It’s important to strike the right balance between quality and quantity, and be thoughtful about how you structure your program. Repetition and reinforcement are key components of learning, but peppering users with too many messages can lead to confusion and frustration. This can contribute to training fatigue and leave employees feeling like cybersecurity education is a waste of their time.
-
----
-
-### Consequence Models: Carrot vs. Stick
-
-The “carrot vs. stick” debate has become more heated over the past few years, with organizations seeking every available opportunity to make end users take cybersecurity seriously. There are impassioned supporters on both sides: Some firmly believe in positive reinforcement, while others think the threat of punishment yields the best results.
-
-We first asked our infosec contacts about consequence models for last year’s State of the Phish Report. This year’s responses show an overall decrease in the use of negative reinforcement techniques, as well as a move away from monetary penalties for repeat offenders.
-
-- **54%** of respondents said there are ramifications for users who continue to click on simulated phishing attacks. _(A 7% decrease year over year)_
-
-#### Types of Consequences Enforced within Organizations*
-- **Counseling from Manager**: 2018: 80% | 2017: 76%
-- **Additional Training\*\***: 2018: 74% | 2017: N/A
-- **Removal of Access to Systems**: 2018: 26% | 2017: 25%
-- **Termination**: 2018: 12% | 2017: 11%
-- **Monetary Penalty**: 2018: 2% | 2017: 5%
-_\* Multiple permitted, \*\* New response option for 2018_
-
-#### Are Consequences Effective?
-- **Yes, the consequences have made a difference**: 39%
-- **No, they haven’t made a difference**: 7%
-- **Not sure, we haven’t measured it**: 42%
-
-Here are our thoughts about implementing a consequence model: It’s not a decision to be taken lightly, and it should be a collaborative process that includes management, HR, and legal teams (and the latter two should take the lead if termination and/or monetary penalties are on the table). As well, we highly recommend identifying ways to gauge effectiveness to ensure that any ramifications tied to poor cybersecurity performance — which can breed negative feelings among end users — are generating the positive outcome that’s desired.
-
----
-
-## Section 3: Security Awareness Training: Outcomes and Opportunities
-
-Our customers sent tens of millions of simulated phishing emails between October 2017 and September 2018 via our Security Education Platform. The data gathered from this SaaS-based LMS allows us to share valuable insights into the security awareness training tactics organizations are using and the progress they are making, both as a global population and by industry segment.
-
-As you peruse the statistics and analysis, consider how the awareness of end users in these environments — which are actively embracing the use of phishing tests and training content — is likely to compare to the 7,000 average working adults we surveyed. We also encourage you to think about how taking a more people-centric approach to cybersecurity can help to change behaviors, build a culture of security, and enable a stronger last line of defense against phishing attacks throughout your organization.
-
-- **9%** average failure rate across all phishing campaigns and all industries. _(No change from 2017)_
-
-### Preferred Phishing Template Styles
-We observed a 9% average failure rate across all simulated phishing campaign styles and all industries during our measurement period. This held steady from 2017, a good sign that end users continue to apply learned skills and remain alert to different phishing lures and traps.
-
-Within our platform, administrators can choose from link-based, attachment-based, and data entry-based templates, the latter of which ultimately request login credentials or other sensitive information from recipients. Used in 69% of campaigns, link-based templates were the overwhelming favorite in 2018.
-
-- **Link**: 69%
-- **Data Entry**: 17%
-- **Attachment**: 14%
-
-> **EXECUTIVE RECOMMENDED: A GREATER FOCUS ON CREDENTIAL COMPROMISE**  
-> According to Proofpoint research, instances of credential phishing quadrupled between Q2 and Q3 2018 — a dangerous trend given the serious ramifications of a successful credential compromise attack.[^1]  
-> The average click rate of our customers’ data entry campaigns trended higher than the 9% average failure rate, though only about 5% of tested users ultimately submitted credentials or other requested data. That said, any disclosure of credentials provides an open pathway for cybercriminals. Given this mix of opportunity and vulnerability, we recommend more frequent use of data entry-based phishing campaigns to test users’ susceptibility to these types of attacks.
-
-- **11%** of end users clicked links to take them to data entry forms.
-- **4%** ultimately submitted the data requested in the phishing test.
-
----
-
-### Preferred Phishing Template Themes
-Administrators can choose from (and customize) several hundred different templates within our ThreatSim® Phishing Simulations library. However, as in years past, nearly all of our customers’ phishing campaigns reflected one of four overarching template themes: Corporate, Consumer, Commercial, and Cloud.
-
-- **Corporate Emails**: These types of emails look like official corporate communications. Examples include full mailbox notifications, spam quarantines, benefits enrollment messages, invoices, and confidential HR documents.
-- **Consumer Emails**: These emails mimic messages seen by the general public on a daily basis. Examples include emails about frequent flyer accounts, bonus miles, photo tagging, frozen accounts, big-box store memberships, social networking, gift card notifications, and more.
-- **Commercial Emails**: These are business-related emails that are not organization-specific. Sample topics include shipping confirmations, invoice payments, and wire transfer requests.
-- **Cloud Emails**: Examples of these business-related emails include messages about downloading documents from cloud storage services, or directives to visit an online file sharing service to create or edit a document.
-
-#### Phishing Template Themes: Frequency of Use in 2018
-- **Corporate**: 44%
-- **Consumer**: 45%
-- **Commercial**: 8%
-- **Cloud**: 3%
-
-#### Phishing Template Themes: Average Failure Rates
-- **Corporate**: 2018: 20% | 2017: 15% | 2016: 15%
-- **Consumer**: 2018: 10% | 2017: 12% | 2016: 11%
-- **Commercial**: 2018: 10% | 2017: 9% | 2016: 8%
-- **Cloud**: 2018: 6% | 2017: 8% | 2016: 8%
-
-Usage frequency of these four template themes stayed relatively consistent compared to last year (though Corporate template themes regained pole position over Consumer themes). Failure rates also remained relatively consistent, with some minor year-over-year fluctuations. The good news: The majority of gains made by our customers since 2016 are holding steady.
-
-> **RECOMMENDED: MORE FREQUENT USE OF COMMERCIAL- AND CLOUD-THEMED CAMPAIGNS**  
-> Point of fact: fluctuating failure rates aren’t necessarily a bad thing. Over time, you should challenge your end users as they become more adept at recognizing and avoiding “easier” simulated phishing attacks — and these activities are likely to result in higher failure rates (at least initially, following the introduction of more difficult phishing tests).  
-> It’s also a great idea to use a variety of template styles and themes when testing users. Cybercriminals are agile, and the threat landscape doesn’t stand still. In fact, Proofpoint researchers recently identified that attackers targeted different job functions in Q3 2018 than they did in Q2.[^2]  
-> Users are likely to see an assortment of real-world phishing emails, which means that organizations should regularly test employees (ideally on a monthly basis). Attackers often use commercial- and cloud-based lures to trap unsuspecting users, so it’s concerning to see so many organizations shying away from using these themes, particularly given the steep rise of business email compromise (BEC) attacks across all industries.
-
----
-
-### What Are the Most ‘Successful’ Phishing Campaigns?
-As we all know, some phishing tests are trickier than others. Here are some of the subject lines that garnered the highest failure rates among end users for campaigns that were sent to a minimum of 1,500 recipients:
-- Toll Violation Notification
-- [EXTERNAL]: Your Unclaimed Property
-- Updated Building Evacuation Plan _(also among the highest failure rates in 2017)_
-- Invoice Payment Required
-- February 2018 – Updated Org Chart
-- Urgent Attention _(a notification requesting an email password change)_
-
----
-
-### Failure Rate Comparisons across Industries and Departments
-
-#### Industry Data
-Customers and non-customers alike want to know the same thing: How do their organizations compare with others in their industry? In this section, you’ll find data about 16 different industries; we reveal average failure rates across all simulated attacks, as well as failure rates specific to the three campaign styles (link-, attachment-, and data entry-based) and the four campaign themes (Corporate, Consumer, Commercial, and Cloud) noted prior.[^3]
-
-As you take note of the highs and lows in each category, it’s important to remember that, for the most part, organizations primarily tested their users via link-based templates that reflected Corporate or Consumer themes. With many of the highest failure rates coming in the lesser-used categories, organizations should consider incorporating some variety in their simulated phishing campaigns if they aren’t already doing so.
-
-#### Average Failure Rates by Industry
-- **Entertainment**: 16%
-- **Consumer Goods**: 11%
-- **Education**: 11%
-- **Manufacturing**: 11%
-- **Professional Services**: 11%
-- **Retail**: 11%
-- **Telecommunications**: 11%
-- **Defense Industrial Base**: 10%
-- **Government**: 10%
-- **Technology**: 10%
-- **Energy**: 9%
-- **Finance**: 8%
-- **Healthcare**: 8%
-- **Insurance**: 8%
-- **Transportation**: 7%
-- **Hospitality**: 6%
-
-#### Failure Rates by Template Style & Theme
-
-| Industry | Style: Link | Style: Attachment | Style: Data Entry (Click / Submit)* | Theme: Corporate | Theme: Consumer | Theme: Commercial | Theme: Cloud |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Consumer Goods** | 10% | 3% | 14% / 4% | 13% | 10% | 8% | 3% |
-| **Defense Industrial Base** | 13% | 2% | 8% / 4% | 10% | 30% | N/A* | N/A |
-| **Education** | 13% | 4% | 10% / 4% | 12% | 9% | 19% | 11% |
-| **Energy** | 9% | 7% | 10% / 3% | 13% | 6% | 15% | 7% |
-| **Entertainment** | 14% | 45% | 6% / 2% | 10% | 10% | 32% | 10% |
-| **Finance** | 9% | 1% | 9% / 3% | 9% | 6% | 9% | 5% |
-| **Government** | 10% | 6% | 10% / 3% | 11% | 10% | 11% | 11% |
-| **Healthcare** | 8% | 1% | 13% / 6% | 10% | 7% | 12% | 8% |
-| **Hospitality** | 9% | 1% | 11% / 3% | 8% | 6% | 3% | N/A |
-| **Insurance** | 9% | 1% | 10% / 3% | 8% | 8% | 10% | 5% |
-| **Manufacturing** | 11% | 6% | 11% / 4% | 11% | 10% | 13% | 9% |
-| **Professional Services** | 9% | 14% | 16% / 4% | 12% | 10% | 9% | 7% |
-| **Retail** | 12% | 6% | 11% / 3% | 13% | 9% | 13% | 4% |
-| **Technology** | 10% | 1% | 15% / 5% | 15% | 7% | 9% | 4% |
-| **Telecommunications** | 11% | 6% | 11% / 3% | 9% | 13% | 9% | 10% |
-| **Transportation** | 9% | <1% | 13% / 5% | 10% | 4% | 16% | 6% |
-
-_\*For data entry campaigns, the click rate indicates the percentage of users who clicked the link within the phishing test, and the submit rate is the percentage of users who ultimately submitted the requested data. “N/A” entries indicate that customers in this industry did not send any campaigns of this type._
-
----
-
-#### Department Data
-New this year, we examined departmental failure rates by isolating on our customers’ most commonly used department classifications.[^4] All failure rates are based on a minimum of 2,500 emails sent (though some departments received upwards of 100,000 emails).
-
-#### Average Failure Rates by Department
-- **Commercial**: 19%
-- **Purchasing**: 14%
-- **Communication**: 13%
-- **Marketing/PR**: 13%
-- **Sales**: 13%
-- **Maintenance**: 12%
-- **Security**: 12%
-- **Executive**: 11%
-- **Legal**: 11%
-- **Marketing**: 11%
-- **Procurement**: 11%
-- **Treasury**: 11%
-- **Information Technology**: 10%
-- **Operations**: 10%
-- **Tax**: 10%
-- **Accounting**: 9%
-- **Facilities**: 9%
-- **Finance**: 9%
-- **Human Resources**: 9%
-- **Business Development**: 8%
-- **Internal Audit**: 8%
-- **Compliance**: 7%
-- **Customer Service**: 7%
-- **Engineering**: 7%
-
-It’s concerning that some of the highest failure rates were seen within departments and roles that are likely to have access to some of the most sensitive organizational and customer data, as well as those that are responsible for many of an organization’s most essential business activities. And the complexity of the story only deepens when we compare these average failure rates to the most highly targeted departments identified by Proofpoint in its _Autumn 2018 Protecting People_ report.
-
-#### Highly Targeted Departments (Source: Proofpoint, _Protecting People_)
-- Production/Operations
-- Management
-- Sales
-- HR
-- R&D/Engineering
-- Accounting/Finance
-- Facilities/Internal Support
-- Legal
-- Sourcing/Purchasing
-- Customer Service
-- Administrator/Assistant
-- Distribution
-
-> **RECOMMENDED: KNOW YOUR ROLES**  
-> In examining these different pieces of data — knowing that the landscape shifts from organization to organization — it becomes clear that it’s to infosec teams’ advantage to be able to detect which of their people/departments are being attacked, and how cybercriminals are targeting specific job functions. When organizations can identify their “Very Attacked People (VAPs),” they can then test specific departments and individuals, isolate potential vulnerabilities, and deliver targeted security awareness training assignments to improve knowledge and reduce risk.  
-> _(See more about how VAPs vary by industry on the following page.)_
-
----
-
-### Identifying (And Remediating) Vulnerable Human Targets
-
-Proofpoint threat analysis allows organizations to identify the inboxes that face the largest number of attacks from outsiders, as well as the ways cybercriminals are attempting to breach defenses. Infosec teams can identify the people and places that are within attackers’ crosshairs, and how many attacks are getting through. This offers a unique opportunity to move away from assumptions about vulnerabilities, and shift focus to areas that could be most prone to falling for attacks that slip past perimeter defenses.
-
-A VAP chart is an eye-opener for many organizations … but it also provides an advantage from a resource allocation standpoint. Infosec teams can use this information to quickly deliver the right training to the right people at the right time, helping to close potential knowledge gaps that could leave specific individuals open to compromise.
-
-> **RECOMMENDED: GET TO KNOW YOUR VAPS**  
-> As we noted on page 19, cybercriminals target different roles and responsibilities within different organizations and different industries. This means that VAPs (Very Attacked People) will vary from industry to industry and organization to organization.  
-> The two sample VAP charts below reflect anonymized data pulled from Proofpoint’s proprietary threat analysis technology, which helps to detect, mitigate, and block advanced threats that target people through email. The charts show the top 20 most-attacked inboxes within a healthcare service provider and a manufacturer over a three-month span. The variances between the two clearly illustrate attackers’ preparedness, agility, and tenacity.  
-> It’s important to note the number of email aliases that are regularly targeted by attackers, and the varying job functions cybercriminals seek to exploit. Third parties — those with inroads to systems and data — also frequently find their way into the top tiers of VAP charts.
-
-#### Example of a Healthcare VAP Chart
-- Nurse Practitioner
-- Rehabilitation Clinic Staff Member
-- VP of Strategy and Innovation
-- Senior Financial Analyst
-- Managing Director of Global Partnerships
-- Communications Director
-- Clinical Resource Nurse
-- Admissions Officer for an Affiliated Health College
-- CEO of Third-Party Healthcare Staffing Agency
-- President and CEO
-- Payroll Systems Analyst
-- Head of Learning and Development
-- Regional Director
-- Registered Nurse in Specialty Field
-- General HR Inbox
-- Financial Analyst
-- Registered Nurse in Specialty Field
-- Central Office Staff Member
-- Recruiting Manager
-- _Note that the only ransomware attacks targeted the HR inbox, which is likely to regularly receive legitimate attachments._
-
-#### Example of a Manufacturing VAP Chart
-- General "Info" Inbox
-- Third-Party Distributor's General "Sales" Inbox
-- Branch Manager of a Company Division
-- CFO
-- Sales Inbox for Regional Service Center
-- Regional Sales Inbox for a Company Division
-- Sales Inbox for a Regional Service Center
-- Regional Sales Inbox for a Company Division
-- Regional Sales Inbox for a Company Division
-- Inside Sales Rep for a Company Division
-- Board Member
-- Specialty Product Manager
-- General "Sales" Inbox
-- Sales Manager for a Company Division
-- Branch Manager
-- Regional Sales Processing Inbox
-- Sales Inbox for a Regional Service Center
-- Corporate Regional Credit Manager
-- Inside Sales Rep for a Company Division
-- Regional Sales Inbox
-- _Note that attackers sent a wide variety of malicious content to this general inbox, hoping to catch recipients off guard._
-
-*(Malware, Credential Phishing, Keylogger, Corporate Credential Phishing, Consumer Credential Phishing, Downloader, Stealer, RAT, Banking, Unknown, Ransomware)*
-
----
-
-### Getting Personal with Phishing Tests
-
-We did note a point of concern in our analysis of maturity data: Organizations tend...
-
----
-
-[^1]: Proofpoint, _Protecting People: A Quarterly Analysis of Highly Targeted Cyber Attacks_, Autumn 2018.
-[^2]: Proofpoint, _Protecting People: A Quarterly Analysis of Highly Targeted Cyber Attacks_, Autumn 2018.
-[^3]: These 16 industries are representative of the majority of our customers, but not all. Some organizations self-identify as being a part of other less-common industry designations.
-[^4]: This represents a subset of our full data set, as not all program administrators group their end users by department, and many organizations use proprietary terminology for department classifications.
-
----
-
-to send
+automatically discover and fix accidental downloads of malicious software. The lack of
+• Email is the top attack vector, with threat actors using macro- and micro-level clarity with regard to the role of IT in attack prevention could be giving users a false sense
+campaigns to target employees across organizational levels and job functions. of security and unnecessarily taxing infosec resources.
+• The brand equity of large enterprises is under attack, with suspiciously registered
+domains outpacing defensive brand-registered domains at a ratio of 20 to 1.
+• Millions of users are facing malvertising campaigns that feature fake browser and
+HUMAN FACTOR REPORT
+plugin updates laden with dangerous software and exploit kits.
+• Cybercriminals are leveraging the lure of pirated content in their social media-based Learn more about how cybercriminals are exploiting human
+attacks. Approximately 35% of these scams tempted users with video streaming and nature by attacking people rather than technology.
+movie downloads.
+Knowing the landscape, we wanted to connect the dots to end-user knowledge levels
+and explore the potential vulnerabilities for organizations that are not running measurable
+security awareness training programs — meaning, they don’t have the tools in place to
+know which employees are actively engaging with training and progressively learning
+over time.
+DOWNLOAD THE REPORT
+SECTION 3:
+SSEECCTTIIOONN 11:: SECTION 2:
+INTRODUCTION THREE PILLARS OF CONTENT SECURITY AWARENESS TRAINING:
+TTHHEE EEXXTTEENNTT OOFF EENNDD--UUSSEERR RRIISSKK WHAT INFOSEC PROS ARE EXPERIENCING
+OUTCOMES AND OPPORTUNITIES
+
+STATE OF THE PHISH  |  2019   5
+Five Questions
+What Is Ransomware?
+When it comes to the language that infosec teams are using when communicating to end
+Global Averages
+users, it’s important to recognize that there might be a fundamental disconnect. If the  CORRECT
+terminology isn’t recognizable to users at a basic level, they are likely to tune out and think  45% 22% 33% INCORRECT
+the information doesn’t apply to them. If employees don’t understand what you’re asking
+I DON’T KNOW
+| of them, they will not progress in terms of cyber hygiene.  |     |     |     |     |     |     |     | 70% |     |     |     |     |     |     |
+| ----------------------------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+60%
+%06
+Following, you will see global averages for each question we asked, as well as country- %85
+%65
+50%
+by-country response comparisons. Multinational organizations in particular should note
+%84
+|     |     |     |     |     |     |     |     | 40% |     |     |     |     |     | %44 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+the strengths and weaknesses of particular regions, as this information can help guide  %04
+%93
+assessment and training choices in global locations. %73 %63 %63
+30%
+%13
+|                   |     |                 |     |     |     |     |     | 20% | %42 |     | %32 |     | %52 %32 |     |
+| ----------------- | --- | --------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------- | --- |
+|                   |     |                 |     |     |     |     |     |     | %02 | %22 |     | %12 |         | %02 |
+|                   |     |                 |     |     |     |     |     |     |     | %81 |     |     | %91     |     |
+| What Is Phishing? |     |                 |     |     |     |     |     | 10% |     |     |     |     |         |     |
+|                   |     | Global Averages |     |     |     |     |     | 0%  |     |     |     |     |         |     |
+CORRECT
+|     |     |     |     |     |     |            |     |     | US  | UK  | France | Germany | Italy Australia | Japan |
+| --- | --- | --- | --- | --- | --- | ---------- | --- | --- | --- | --- | ------ | ------- | --------------- | ----- |
+|     |     | 66% | 17% | 17% |     | INCORRECT  |     |     |     |     |        |         |                 |       |
+I DON’T KNOW
+80%
+| 70% |     |     |     |     |     |     |     | What Is Smishing? |     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | ----------------- | --- | --- | --- | --- | --- | --- |
+|     |     | %27 |     |     | %07 |     |     |                   |     |     |     |     |     |     |
+Global Averages
+|     | %56 |     | %56 | %46 |     | %46 |     |     |     |     |     |     |              |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------------ | --- |
+| 60% |     |     |     |     |     |     | %26 |     |     |     |     |     | CORRECT      |     |
+| 50% |     |     |     |     |     |     |     |     |     |     |     |     | INCORRECT    |     |
+|     |     |     |     |     |     |     |     |     |     | 23% | 22% | 55% |              |     |
+| 40% |     |     |     |     |     |     |     | 70% |     |     |     |     | I DON’T KNOW |     |
+| 30% |     |     |     |     |     |     |     |     |     |     |     |     |              | %76 |
+60%
+%95
+| 20% | %22 |     |         |     |     |     |         | 50% | %35 | %35 |     | %55 |     |     |
+| --- | --- | --- | ------- | --- | --- | --- | ------- | --- | --- | --- | --- | --- | --- | --- |
+|     |     |     |         | %91 |     |     | %12 %12 |     |     |     | %05 |     | %05 |     |
+|     |     | %71 | %81 %71 | %71 |     | %81 | %71     |     |     |     |     |     |     |     |
+| 10% | %31 |     |         |     |     | %51 |         |     |     |     |     |     |     |     |
+|     |     |     | %11     |     | %21 |     |         | 40% |     |     |     |     |     |     |
+%93
+| 0%  |     |     |     |     |     |     |     | 30% |     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+%03
+|     | US  | UK  | France | Germany | Italy | Australia | Japan |     |     | %92 |     |     | %82 |     |
+| --- | --- | --- | ------ | ------- | ----- | --------- | ----- | --- | --- | --- | --- | --- | --- | --- |
+%62
+|     |     |     |     |     |     |     |     | 20% |     |     |     |     | %22 %42 |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------- | --- |
+%91
+|     |     |     |     |     |     |     |     |     | %71 | %81 |     |     | %71 | %81 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     |     |     |     |     |     |     |     | 10% |     |     |     |     |     | %51 |
+%11
+0%
+|     |     |     |     |     |     |     |     |     | US  | UK  | France | Germany | Italy Australia | Japan |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------ | ------- | --------------- | ----- |
+SECTION 3:
+SSEECCTTIIOONN  11::     SECTION 2:
+INTRODUCTION THREE PILLARS OF CONTENT SECURITY AWARENESS TRAINING:
+|     |     |     |     |     |     |     | TTHHEE  EEXXTTEENNTT  OOFF  EENNDD--UUSSEERR  RRIISSKK |     | WHAT INFOSEC PROS ARE EXPERIENCING |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | ------------------------------------------------------ | --- | ---------------------------------- | --- | --- | --- | --- | --- |
+OUTCOMES AND OPPORTUNITIES
+
+| STATE OF THE PHISH  |  2019  |     |     |     |     |     |     |     |                |     |     |     |     |     |     |     |  6  |
+| ---------------------------- | --- | --- | --- | --- | --- | --- | --- | -------------- | --- | --- | --- | --- | --- | --- | --- | --- |
+| What Is Vishing?             |     |     |     |     |     |     |     | True or False? |     |     |     |     |     |     |     |     |
+Global Averages If you accidentally install a virus or malicious software on your computer, your IT team will be
+notified by their monitoring tools so you can fix it.
+CORRECT
+Global Averages
+|     |     | 18% | 19% | 63% |     | INCORRECT    |     |     |     |     |     |     |     | TRUE  |     |     |
+| --- | --- | --- | --- | --- | --- | ------------ | --- | --- | --- | --- | --- | --- | --- | ----- | --- | --- |
+|     |     |     |     |     |     | I DON’T KNOW |     |     |     | 32% | 34% | 34% |     | FALSE |     |     |
+80%
+I DON’T KNOW
+| 70% |     |     |     |     |     |     | %27 | 60% |     |     |     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 60% |     |     | %66 |     |     | %66 |     |     |     |     |     |     |     |     |     |     |
+|     |     | %26 |     | %26 |     |     |     | 50% |     |     |     |     |     |     |     |     |
+%95
+| 50% |     |     |     |     |     | %45 |     | 40% |     | %34 |     |     |     |     |     | %44 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+%04
+%73
+| 40% |     |     |     |     |     |     |     | 30% | %53 %73 | %23 | %53 | %73 |     | %53 %53 | %73 |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | ------- | --- | --- | --- | --- | ------- | --- | --- |
+|     |     |     |     |     |     |     |     |     |         |     |     | %23 | %13 |         |     |     |
+|     |     |     |     |     |     |     |     |     |         | %82 |     |     | %03 | %13     | %92 |     |
+%82
+| 30% |     |     |     |     |     |     |     | 20% |     | %52 |     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+%91
+| 20% |     |         |     | %52 | %42 |     |     | 10% |     |     |        |         |     |       |           |       |
+| --- | --- | ------- | --- | --- | --- | --- | --- | --- | --- | --- | ------ | ------- | --- | ----- | --------- | ----- |
+|     | %12 |         |     |     | %22 |     |     |     |     |     |        |         |     |       |           |       |
+|     | %02 | %81 %02 | %91 |     |     | %02 |     |     |     |     |        |         |     |       |           |       |
+|     |     |         | %51 | %31 |     |     | %61 |     |     |     |        |         |     |       |           |       |
+| 10% |     |         |     |     |     | %41 | %21 | 0%  |     |     |        |         |     |       |           |       |
+|     |     |         |     |     |     |     |     |     | US  | UK  | France | Germany |     | Italy | Australia | Japan |
+0%
+|     | US  | UK  | France | Germany | Italy | Australia | Japan |     |     |     |     |     |     |     |     |     |
+| --- | --- | --- | ------ | ------- | ----- | --------- | ----- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+SECTION 3:
+SSEECCTTIIOONN  11::     SECTION 2:
+INTRODUCTION THREE PILLARS OF CONTENT SECURITY AWARENESS TRAINING:
+|     |     |     |     |     |     |     | TTHHEE  EEXXTTEENNTT  OOFF  EENNDD--UUSSEERR  RRIISSKK |     | WHAT INFOSEC PROS ARE EXPERIENCING |     |     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | ------------------------------------------------------ | --- | ---------------------------------- | --- | --- | --- | --- | --- | --- | --- |
+OUTCOMES AND OPPORTUNITIES
+
+STATE OF THE PHISH  |  2019   7
+Year-over-Year Comparisons
+What Is Smishing?
+Last year, we surveyed just 3,000 technology users across three countries: the US, UK,  Average across US, UK, and Germany
+and Germany. Year-over-year comparisons between these countries’ respondents show  2018 2017
+some bright spots: Ransomware awareness increased significantly in the US and the
+UK (with Germany holding steady), and average understanding of smishing improved
+among these users. But the news on phishing is mixed: The US gained some ground
+and the UK remained relatively steady, but German technology users took a significant
+20% 16%
+5.2%
+step back.
+CORRECT  CORRECT
+EXECUTIVE
+What Is Phishing?
+Percentage of correct answers
+RECOMMENDED: SPEAK THE RIGHT LANGUAGE, AND SPEAK IT FREQUENTLY
+| 2018 |     | 65% |     |
+| ---- | --- | --- | --- |
+Infosec teams should make it a point to educate employees at a fundamental level.
+US
+| 2017 |     | 61% |     |
+| ---- | --- | --- | --- |
+Terminology that is commonly used in some circles is not necessarily recognizable across
+2018 72% all job functions ... even if those terms have a vital link to overall security postures.
+UK
+| 2017 |     |     | 73% |
+| ---- | --- | --- | --- |
+Organizations must also recognize that workforce knowledge is not a constant,
+2018 64% particularly when it comes to learning new skills. This is because education isn’t a one-and-
+Germany
+2017 71% done proposition; new concepts introduced via cybersecurity training must be reinforced
+regularly over time in order for awareness to transition to understanding and, ultimately,
+| 0%  | 25% | 50% | 75% |
+| --- | --- | --- | --- |
+behavior change.
+What Is Ransomware?
+Percentage of correct answers
+| 2018 |     | 56% |     |
+| ---- | --- | --- | --- |
+US
+| 2017 | 46% |     |     |
+| ---- | --- | --- | --- |
+| 2018 |     | 60% |     |
+UK
+| 2017 |     | 55% |     |
+| ---- | --- | --- | --- |
+31%
+2018
+Germany
+| 2017 | 31% |     |     |
+| ---- | --- | --- | --- |
+| 0%   | 25% | 50% | 75% |
+SECTION 3:
+SSEECCTTIIOONN  11::     SECTION 2:
+INTRODUCTION THREE PILLARS OF CONTENT SECURITY AWARENESS TRAINING:
+TTHHEE  EEXXTTEENNTT  OOFF  EENNDD--UUSSEERR  RRIISSKK WHAT INFOSEC PROS ARE EXPERIENCING
+OUTCOMES AND OPPORTUNITIES
+
+STATE OF THE PHISH  |  2019   8
+The Millennial Question: Are ‘Digital Natives’ More Cyber Secure?  As you will note in the charts, millennials fall significantly behind at least one other
+age group on all questions, and baby boomers — arguably the least cyber-savvy
+Much has been made of the millennial generation and its impact on the global workforce.
+demographic from our survey — outperform all others in fundamental understanding
+Though much of the discussion has trended to philosophical differences between
+of phishing and ransomware.
+preceding generations of workers, it’s worth considering the technological impact this
+device-heavy, data-generating population will have on employer networks and systems.
+What Is Ransomware?
+Clearly, these digital natives, as a collective, are far more cyber-savvy than their
+predecessors. Having been raised on smart devices and applications, there is little about
+technology that intimidates them. Unfortunately, it appears that a high degree of cyber
+|     |     |     |     | 34% | 35% | 33% |
+| --- | --- | --- | --- | --- | --- | --- |
+comfort doesn’t necessarily lead to a clear understanding of cybersecurity.
+40% 40% 45%
+|                   |     |     |     | 26%       |           | 22%       |
+| ----------------- | --- | --- | --- | --------- | --------- | --------- |
+| What Is Phishing? |     |     |     |           | 25%       |           |
+|                   |     |     |     | Age 18-21 | Age 22-37 | Age 38-53 |
+|                   | 20% | 16% |     |           |           |           |
+28%
+47%
+|     | 58% | 16% | 68% |     |         |     |
+| --- | --- | --- | --- | --- | ------- | --- |
+|     | 22% |     |     |     | CORRECT |     |
+30%
+25%
+52% INCORRECT
+I DON’T KNOW
+| Age 18-21 | Age 22-37 | Age 38-53 |     | 18%     |     |     |
+| --------- | --------- | --------- | --- | ------- | --- | --- |
+| 14%       |           |           |     | Age 54+ |     |     |
+CORRECT
+13%
+INCORRECT
+73%
+I DON’T KNOW
+Age 54+
+Note: According to Pew Research, millennials fell into the 22-37 age bracket and baby boomers
+were 54 and older in 2018.
+SECTION 3:
+|     |     |     | SSEECCTTIIOONN  11::     | SECTION 2:   |     |     |
+| --- | --- | --- | ------------------------ | ------------ | --- | --- |
+INTRODUCTION THREE PILLARS OF CONTENT SECURITY AWARENESS TRAINING:
+|     |     |     | TTHHEE  EEXXTTEENNTT  OOFF  EENNDD--UUSSEERR  RRIISSKK | WHAT INFOSEC PROS ARE EXPERIENCING |     |     |
+| --- | --- | --- | ------------------------------------------------------ | ---------------------------------- | --- | --- |
+OUTCOMES AND OPPORTUNITIES
+
+STATE OF THE PHISH  |  2019   9
+| What Is Smishing? |     |     | What Is Vishing? |     |     |     |     |
+| ----------------- | --- | --- | ---------------- | --- | --- | --- | --- |
+16%
+21%
+| 33% | 25% | 22% |     | 27% |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+37%
+|     | 49% | 57% | 47% |     | 56% | 64% | 20% |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+23%
+26% 21%
+| 30%       |           |           |           | 26% |           |           |     |
+| --------- | --------- | --------- | --------- | --- | --------- | --------- | --- |
+| Age 18-21 | Age 22-37 | Age 38-53 | Age 18-21 |     | Age 22-37 | Age 38-53 |     |
+15%
+| 21% | CORRECT   |     |     |     | CORRECT   |     |     |
+| --- | --------- | --- | --- | --- | --------- | --- | --- |
+|     | INCORRECT |     |     | 16% | INCORRECT |     |     |
+| 61% |           |     | 69% |     |           |     |     |
+18%
+|         | I DON’T KNOW |     |         |     | I DON’T KNOW |     |     |
+| ------- | ------------ | --- | ------- | --- | ------------ | --- | --- |
+| Age 54+ |              |     | Age 54+ |     |              |     |     |
+Some Thoughts on the Age Gaps ...
+Baby boomers and Gen X respondents (ages 38-53) exhibit much stronger
+• • The bottom line is that organizations should not assume that younger workers
+recognition of phishing and ransomware, which we feel is likely due to longer-term
+have an innate understanding of cybersecurity threats and/or best practices simply
+exposure to security awareness training about these topics. because they are more cyber-savvy. Clearly, security awareness training is needed
+Millennials and their younger counterparts are strongest in recognition of smishing across all age groups.
+•
+and vishing, two more recent threat vectors — though less than a third of each group
+responded correctly, so not a great showing overall.
+SECTION 3:
+SSEECCTTIIOONN  11::     SECTION 2:
+INTRODUCTION THREE PILLARS OF CONTENT SECURITY AWARENESS TRAINING:
+TTHHEE  EEXXTTEENNTT  OOFF  EENNDD--UUSSEERR  RRIISSKK WHAT INFOSEC PROS ARE EXPERIENCING
+OUTCOMES AND OPPORTUNITIES
+
+STATE OF THE PHISH | 2019 10
+WHAT INFOSEC PROS
+SECTION 2
+Social Engineering Beyond Email
+ARE EXPERIENCING Of the 49% of respondents who said they experienced vishing and smishing, 50% dealt only with
+vishing attacks, 12% saw just smishing, and 38% experienced both types of attacks. In addition,
+these attacks happened with regularity; following are the number of attacks organizations
+experienced each quarter, on average.
+Each year, we survey our extensive database of infosec professionals — both customers 1-5 66%
+and non-customers — to find out what they’re experiencing, how phishing and other
+6-15 19%
+social engineering attacks are impacting their organizations, and the tools they’re using to
+16-25 7%
+manage end-user risk. This year, we received nearly 15,000 responses to our quarterly
+26+ 8%
+surveys of security specialists from around the world. You will find the global averages for
+each set of responses, along with key highlights for three of the world’s largest business 0% 20% 40% 60% 80%
+regions: North America, EMEA, and APAC.
+How Often Are Organizations Experiencing
+Social Engineering Attacks? APAC residents were five times more likely than those in EMEA
+to experience 26+ smishing and vishing attacks per quarter.
+Across the board, infosec professionals identified a more active social engineering
+landscape in 2018. The vast majority — 96% — said the rate of phishing attacks either
+increased or stayed consistent throughout the year, and more respondents said they
+experienced attacks during 2018 than in 2017. Phishing and spear phishing saw the
+biggest increases, but all types of attacks happened more frequently than in 2017.
+83% 49% 4% 64% 58%
+of survey respondents said they experienced vishing (voice phishing) told us they faced USB-based social of infosec professionals experienced of APAC infosec pros said phishing attacks increased in 2018,
+experienced phishing attacks and/or smishing (SMS/text phishing) engineering attacks via infected spear phishing in 2018. compared to 50% in North America and just 33% in EMEA.
+in 2018. in 2018. thumb drives.
+An increase from An increase from An increase from An increase from
+76% in 2017 45% in 2017 3% in 2017 53% in 2017
+SECTION 3:
+SECTION 1: SSEECCTTIIOONN 22::
+INTRODUCTION THREE PILLARS OF CONTENT SECURITY AWARENESS TRAINING:
+THE EXTENT OF END-USER RISK WWHHAATT IINNFFOOSSEECC PPRROOSS AARREE EEXXPPEERRIIEENNCCIINNGG
+OUTCOMES AND OPPORTUNITIES
+
+STATE OF THE PHISH | 2019 11
+FREQUENCY OF SPEAR PHISHING ATTACKS PER QUARTER What Impact Is Phishing Having on Organizations?
+Not only did more infosec professionals experience spear phishing in 2018, but the
+Since attackers use different phishing techniques and have different goals, organizations
+frequency of attacks also increased. Below, we compare the 2018 and 2017 average
+experience varying impacts from phishing attacks. Below, we compare responses to the
+numbers of attacks per quarter.
+question about phishing impacts from the last three years of our survey.
+As you’ll note, credential compromise increased by more than 70% since 2017,
+Number of Spear Phishing Attacks per Quarter
+leapfrogging malware infections to become the most commonly experienced impact in
+70%
+2018. This is of particular concern given that multiple services often sit behind a single
+60% 67% 2018 password. In addition, reports of data loss have more than tripled since 2016. We
+59%
+50% 2017 believe the significant increases across all three categories since 2016 not only
+speak to the growing phishing threat, but also to organizations’ heightened awareness of
+40%
+— and attention to — the effect these attacks have on businesses.
+30%
+20% 27%
+21% Phishing Impacts Experienced*
+10%
+4% 4% 10% 8% 70% 19%
+0%
+1-5 6-15 16-25 26+ 60% 65% 2018
+63% 18%
+50% 2017
+49% 49%
+40% 2016
+From a regional perspective, respondents in North America
+38%
+30%
+were most likely (67%) to say they experienced spear
+phishing in 2018, but they were least likely to face the highest 20% 27% 24%
+rate of attacks per quarter. APAC respondents were about 10% 17%
+13%
+twice as likely as their North American counterparts to say 7%
+0%
+they faced 26+ quarterly spear phishing attempts.
+Compromised Malware Loss
+Accounts Infections of Data
+* Multiple responses permitted
+APAC respondents were most likely to experience account
+compromise and data loss, while EMEA respondents were
+most likely to experience malware infections.
+SECTION 3:
+SECTION 1: SSEECCTTIIOONN 22::
+INTRODUCTION THREE PILLARS OF CONTENT SECURITY AWARENESS TRAINING:
+THE EXTENT OF END-USER RISK WWHHAATT IINNFFOOSSEECC PPRROOSS AARREE EEXXPPEERRIIEENNCCIINNGG
+OUTCOMES AND OPPORTUNITIES
+
+STATE OF THE PHISH | 2019 12
+We also asked our infosec contacts how they gauge the cost of phishing within their What Are Organizations Doing to Combat the Phishing Threat?
+organizations. A positive trend from last year: 80% of 2018 respondents said they
+Naturally, infosec teams employ a wide range of technical tools — including email/spam
+measure phishing costs, up from 77% in 2017.
+filters, URL rewriting, advanced malware analysis, and threat monitoring platforms — in
+their defense-in-depth architectures. But they are also shifting to a more people-centric
+How Infosec Teams Measure the Cost of Phishing*
+model by proactively identifying phishing susceptibility, measuring end-user risk, and
+delivering regular security awareness training. We’ve seen a much greater focus on
+Lost Productivity for Employees 67%
+Business Impacts through Loss measurement and business intelligence over the past few years, and the good news is that
+54%
+of Proprietary Information most infosec professionals say they can see their efforts paying off.
+Damage to Business Reputation 50%
+Not Applicable 20%
+95% of respondents said they
+0% 20% 40% 60% 80%
+train end users to identify
+* Multiple responses permitted and avoid phishing attacks.
+80%
+We also gave our respondents the option to comment about other phishing impacts
+they experienced in 2018. Though some responses triggered our curiosity (for example,
+of organizations measure their
+one respondent was “not able to say” what was experienced, but said the impact was
+susceptibility to phishing attacks.
+“significant”), most were fairly straightforward. The most common write-in responses
+By a wide margin, computer-based online
+about phishing impacts included the following:
+A 31% increase since we first training (83%) and simulated phishing attacks
+asked this question in 2014 (75%) are respondents’ preferred security
+• Financial losses, including fraudulent wire transfers, legal fees, and fines awareness training tools.
+• Compliance issues
+• Greater burden on IT teams
+of organizations evaluate
+• Damage to the reputation of infosec teams 65%
+the risk individual end
+• Investments in new technology, including multi-factor authentication (MFA) users pose to overall
+• Frustration from customers and employees following a data breach security postures.
+57%
+of infosec professionals said they have been able
+to quantify a reduction in phishing susceptibility
+The most common ways respondents gauge
+risk are via security awareness training based on their training activities.
+performance (75%), business risk assessments
+(72%), technical policy violations (45%), and A 6% increase from 2017
+administrative policy violations (42%).
+SECTION 3:
+SECTION 1: SSEECCTTIIOONN 22::
+INTRODUCTION THREE PILLARS OF CONTENT SECURITY AWARENESS TRAINING:
+THE EXTENT OF END-USER RISK WWHHAATT IINNFFOOSSEECC PPRROOSS AARREE EEXXPPEERRIIEENNCCIINNGG
+OUTCOMES AND OPPORTUNITIES
+
+STATE OF THE PHISH | 2019 13
+What about Ransomware?
+Security Awareness Training Tools: Frequency of Use
+This is the first time we asked our database about ransomware attacks … just in time to
+3%
+confirm what we’ve all been hearing: that ransomware took a back seat to other types of
+attacks in 2018.
+Biweekly
+Monthly
+22%
+10% of global respondents said they experienced Quarterly
+a ransomware attack in 2018. 34% Yearly
+By a wide margin, EMEA respondents were most likely
+(21%) to say they experienced a ransomware attack in 2018.
+41%
+Balancing Quality and Quantity
+We’ve long spoken about the need for regular cybersecurity education; once-a-year
+programs simply will not drive knowledge retention or change end-user behaviors. Many
+regulatory boards agree as well, which is why it’s good to see that the vast majority of
+those we surveyed opt for monthly or quarterly training (though we’d love to see that
+22% in the pie chart trickle down to single digits).
+APAC organizations are most likely to rely on yearly training,
+and they most commonly employ education methods that
+That said, more isn’t always more. It’s important to strike the right balance between
+offer fewer opportunities for users to “learn by doing” — like
+quality and quantity, and be thoughtful about how you structure your program. Repetition
+cybersecurity videos and in-person training sessions. As such,
+and reinforcement are key components of learning, but peppering users with too many
+it’s not surprising to see that these respondents were the least
+messages can lead to confusion and frustration. This can contribute to training fatigue and
+likely to say they’ve been able to quantify a reduction in their
+leave employees feeling like cybersecurity education is a waste of their time.
+end users’ phishing susceptibility.
+SECTION 3:
+SECTION 1: SSEECCTTIIOONN 22::
+INTRODUCTION THREE PILLARS OF CONTENT SECURITY AWARENESS TRAINING:
+THE EXTENT OF END-USER RISK WWHHAATT IINNFFOOSSEECC PPRROOSS AARREE EEXXPPEERRIIEENNCCIINNGG
+OUTCOMES AND OPPORTUNITIES
+
+STATE OF THE PHISH | 2019 14
+Consequence Models: Carrot vs. Stick ARE CONSEQUENCES EFFECTIVE?
+This year, we asked an additional follow-up question to those infosec professionals who
+The “carrot vs. stick” debate has become more heated over the past few years, with
+said they’re using a consequence model: Do the punishments make a difference?
+organizations seeking every available opportunity to make end users take cybersecurity
+seriously. There are impassioned supporters on both sides: Some firmly believe in positive 39% 7%
+reinforcement, while others think the threat of punishment yields the best results.
+Yes, the consequences No, they haven’t
+We first asked our infosec contacts about consequence models for last year’s State
+have made a difference. made a difference.
+of the Phish Report. This year’s responses show an overall decrease in the use of
+negative reinforcement techniques, as well as a move away from monetary penalties
+for repeat offenders.
+54%
+of respondents said there are ramifications ?
+42%
+Not sure, we
+for users who continue to click on simulated
+76%
+74%
+haven’t measured it.
+phishing attacks. A 7% decrease year over year
+66%
+Here are our thoughts about implementing a consequence model: It’s not a decision to
+Types of Consequences Enforced within Organizations* be taken lightly, and it should be a collaborative process that includes management, HR,
+19% and legal teams (and the latter two should take the lead if termination and/or monetary
+80%
+penalties are on the table). As well, we highly recommend identifying ways to gauge
+76%
+70% 74% 2018
+effectiveness to ensure that any ramifications tied to poor cybersecurity performance
+60% 66% 2017 — which can breed negative feelings among end users — are generating the positive
+outcome that’s desired.
+50%
+40%
+30%
+20% 26% 25%
+10% 12% 11% 5%
+2%
+N/A
+0%
+Counseling Additional Removal of Termination Monetary
+from Manager Training** Access to Systems Penalty
+* Multiple responses permitted ** New response option for 2018
+SECTION 3:
+SECTION 1: SSEECCTTIIOONN 22::
+INTRODUCTION THREE PILLARS OF CONTENT SECURITY AWARENESS TRAINING:
+THE EXTENT OF END-USER RISK WWHHAATT IINNFFOOSSEECC PPRROOSS AARREE EEXXPPEERRIIEENNCCIINNGG
+OUTCOMES AND OPPORTUNITIES
+
+STATE OF THE PHISH | 2019 15
+SECURITY AWARENESS
+SECTION 3 Phishing Template Styles: Frequency of Use
+TRAINING: OUTCOMES
+LINK DATA ENTRY ATTACHMENT
+AND OPPORTUNITIES
+Our customers sent tens of millions of simulated phishing emails between October 69% 17% 14%
+5.2%
+2017 and September 2018 via our Security Education Platform. The data gathered from
+this SaaS-based LMS allows us to share valuable insights into the security awEaXreEnCeUsTsI VE
+training tactics organizations are using and the progress they are making, both as a global RECOMMENDED: A GREATER FOCUS ON CREDENTIAL COMPROMISE
+population and by industry segment. According to Proofpoint research, instances of credential phishing quadrupled between
+Q2 and Q3 2018 — a dangerous trend given the serious ramifications of a successful
+As you peruse the statistics and analysis, consider how the awareness of end users in
+credential compromise attack.1
+these environments — which are actively embracing the use of phishing tests and training
+content — is likely to compare to the 7,000 average working adults we surveyed. We also The average click rate of our customers’ data entry campaigns trended higher than the
+encourage you to think about how taking a more people-centric approach to cybersecurity 9% average failure rate, though only about 5% of tested users ultimately submitted
+can help to change behaviors, build a culture of security, and enable a stronger last line of credentials or other requested data. That said, any disclosure of credentials provides
+defense against phishing attacks throughout your organization. an open pathway for cybercriminals. Given this mix of opportunity and vulnerability, we
+recommend more frequent use of data entry-based phishing campaigns to test users’
+susceptibility to these types of attacks.
+9% average failure rate across all phishing
+campaigns and all industries. No change from 2017 11% 4%
+of end users clicked ultimately submitted
+Preferred Phishing Template Styles
+links to take them to the data requested in
+We observed a 9% average failure rate across all simulated phishing campaign styles data entry forms. the phishing test.
+and all industries during our measurement period. This held steady from 2017, a good sign
+that end users continue to apply learned skills and remain alert to different phishing lures
+and traps.
+Within our platform, administrators can choose from link-based, attachment-based, and
+data entry-based templates, the latter of which ultimately request login credentials or other
+sensitive information from recipients. Used in 69% of campaigns, link-based templates
+1 Proofpoint, Protecting People: A Quarterly Analysis of Highly Targeted Cyber Attacks, Autumn 2018
+were the overwhelming favorite in 2018.
+SSEECCTTIIOONN 33::
+SECTION 1: SECTION 2:
+INTRODUCTION THREE PILLARS OF CONTENT SSEECCUURRIITTYY AAWWAARREENNEESSSS TTRRAAIINNIINNGG::
+THE EXTENT OF END-USER RISK WHAT INFOSEC PROS ARE EXPERIENCING
+OOUUTTCCOOMMEESS AANNDD OOPPPPOORRTTUUNNIITTIIEESS
+
+| STATE OF THE PHISH  |  2019  |     |     |     |     |     |     |     |  16 |
+| ---------------------------- | --- | --- | --- | --- | --- | --- | --- | --- |
+Preferred Phishing Template Themes  Usage frequency of these four template themes stayed relatively consistent compared
+to last year (though Corporate template themes regained pole position over Consumer
+Administrators can choose from (and customize) several hundred different templates
+themes). Failure rates also remained relatively consistent, with some minor year-over-year
+within our ThreatSim® Phishing Simulations library. However, as in years past, nearly all of
+fluctuations. The good news: The majority of gains made by our customers since 2016
+our customers’ phishing campaigns reflected one of four overarching template themes:
+are holding steady.
+Corporate, Consumer, Commercial, and Cloud.
+Phishing Template Themes: Average Failure Rates
+These types of emails look like official corporate communications. Examples include full
+CORPORATE
+mailbox notifications, spam quarantines, benefits enrollment messages, invoices, and  20% 2018
+EMAILS
+19%
+|            | confidential HR documents.                                                                 |     |     | 15%     |     |     |     | 2017 |
+| ---------- | ------------------------------------------------------------------------------------------ | --- | --- | ------- | --- | --- | --- | ---- |
+|            |                                                                                            |     |     |         | 15% | 15% |     | 2016 |
+|            |                                                                                            |     |     | 10%     |     | 12% |     |      |
+|            |                                                                                            |     |     | 11%     |     | 11% |     |      |
+|            | These emails mimic messages seen by the general public on a daily basis. Examples include  |     |     | 10% 10% | 9%  |     |     |      |
+| CONSUMER   |                                                                                            |     |     | 5%      | 8%  |     | 8%  |      |
+6%
+emails about frequent flyer accounts, bonus miles, photo tagging, frozen accounts, big-box
+EMAILS
+0%
+store memberships, social networking, gift card notifications, and more.
+|     |     |     |     | Corporate | Consumer | Commercial | Cloud |     |
+| --- | --- | --- | --- | --------- | -------- | ---------- | ----- | --- |
+COMMERCIAL
+These are business-related emails that are not organization-specific. Sample topics include
+RECOMMENDED: MORE FREQUENT USE OF COMMERCIAL- AND
+| EMAILS | shipping confirmations, invoice payments, and wire transfer requests. |     |     |     |     |     |     |     |
+| ------ | --------------------------------------------------------------------- | --- | --- | --- | --- | --- | --- | --- |
+CLOUD-THEMED CAMPAIGNS
+Point of fact: fluctuating failure rates aren’t necessarily a bad thing. Over time, you
+Examples of these business-related emails include messages about downloading   should challenge your end users as they become more adept at recognizing and avoiding
+CLOUD
+documents from cloud storage services, or directives to visit an online file sharing service   “easier” simulated phishing attacks — and these activities are likely to result in higher
+EMAILS
+|     | to create or edit a document. |     |     | failure rates   |     |     |     |     |
+| --- | ----------------------------- | --- | --- | --------------- | --- | --- | --- | --- |
+(at least initially, following the introduction of more difficult phishing tests).
+It’s also a great idea to use a variety of template styles and themes when testing users.
+Phishing Template Themes: Frequency of Use in 2018
+Cybercriminals are agile, and the threat landscape doesn’t stand still. In fact, Proofpoint
+50% researchers recently identified that attackers targeted different job functions in Q3 2018
+than they did in Q2.2
+| 40% | 45% 44% |     |     |     |     |     |     |     |
+| --- | ------- | --- | --- | --- | --- | --- | --- | --- |
+30%
+Users are likely to see an assortment of real-world phishing emails, which means that
+20% organizations should regularly test employees (ideally on a monthly basis). Attackers often
+10% 8% use commercial- and cloud-based lures to trap unsuspecting users, so it’s concerning to
+3% see so many organizations shying away from using these themes, particularly given the
+0%
+steep rise of business email compromise (BEC) attacks across all industries.
+|     | Corporate Consumer | Commercial | Cloud |     |     |     |     |     |
+| --- | ------------------ | ---------- | ----- | --- | --- | --- | --- | --- |
+2 Proofpoint, Protecting People: A Quarterly Analysis of Highly Targeted Cyber Attacks, Autumn 2018
+SSEECCTTIIOONN  33::
+|     |     |     | SECTION 1:   |     | SECTION 2:   |     |     |     |
+| --- | --- | --- | ------------ | --- | ------------ | --- | --- | --- |
+INTRODUCTION THREE PILLARS OF CONTENT SSEECCUURRIITTYY  AAWWAARREENNEESSSS  TTRRAAIINNIINNGG::
+THE EXTENT OF END-USER RISK WHAT INFOSEC PROS ARE EXPERIENCING
+OOUUTTCCOOMMEESS  AANNDD  OOPPPPOORRTTUUNNIITTIIEESS
+
+STATE OF THE PHISH  |  2019   17
+Average Failure Rates by Industry
+WHAT ARE THE MOST ‘SUCCESSFUL’ PHISHING CAMPAIGNS?
+As we all know, some phishing tests are trickier than others. Here are some of
+16%
+Entertainment
+the subject lines that garnered the highest failure rates among end users for
+|     |     | Consumer Goods | 11% |
+| --- | --- | -------------- | --- |
+campaigns that were sent to a minimum of 1,500 recipients:
+|     |     | Education | 11% |
+| --- | --- | --------- | --- |
+Toll Violation Notification
+•
+|     |     | Manufacturing | 11% |
+| --- | --- | ------------- | --- |
+[EXTERNAL]: Your Unclaimed Property
+•
+|     | Professional Services |     | 11% |
+| --- | --------------------- | --- | --- |
+Updated Building Evacuation Plan
+•
+|     |     | Retail | 11% |
+| --- | --- | ------ | --- |
+(also among the highest
+|     |     | Telecommunications | 11% |
+| --- | --- | ------------------ | --- |
+failure rates in 2017)
+|     | Defense Industrial Base |     | 10% |
+| --- | ----------------------- | --- | --- |
+Invoice Payment Required
+•
+10%
+|     | February 2018 – Updated Org Chart | Government |     |
+| --- | --------------------------------- | ---------- | --- |
+•
+|     | Urgent Attention (a notification requesting | Technology | 10% |
+| --- | ------------------------------------------- | ---------- | --- |
+•
+|     | an email password change) | Energy     | 9%  |
+| --- | ------------------------- | ---------- | --- |
+|     |                           | Finance    | 8%  |
+|     |                           | Healthcare | 8%  |
+Failure Rate Comparisons across Industries and Departments
+|                |     | Insurance      | 8%  |
+| -------------- | --- | -------------- | --- |
+| INDUSTRY DATA  |     | Transportation | 7%  |
+Customers and non-customers alike want to know the same thing: How do their  Hospitality 6%
+organizations compare with others in their industry? In this section, you’ll find data about  0% 5% 10% 15% 20%
+16 different industries; we reveal average failure rates across all simulated attacks, as
+well as failure rates specific to the three campaign styles (link-, attachment-, and data
+entry-based) and the four campaign themes (Corporate, Consumer, Commercial, and
+Cloud) noted prior.3
+As you take note of the highs and lows in each category, it’s important to remember that,
+for the most part, organizations primarily tested their users via link-based templates
+that reflected Corporate or Consumer themes. With many of the highest failure rates
+coming in the lesser-used categories, organizations should consider incorporating some
+variety in their simulated phishing campaigns if they aren’t already doing so.
+3  These 16 industries are representative of the majority of our customers, but not all. Some
+  organizations self-identify as being a part of other less-common industry designations.
+SSEECCTTIIOONN  33::
+SECTION 1:   SECTION 2:
+INTRODUCTION THREE PILLARS OF CONTENT SSEECCUURRIITTYY  AAWWAARREENNEESSSS  TTRRAAIINNIINNGG::
+THE EXTENT OF END-USER RISK WHAT INFOSEC PROS ARE EXPERIENCING
+OOUUTTCCOOMMEESS  AANNDD  OOPPPPOORRTTUUNNIITTIIEESS
+
+| STATE OF THE PHISH  |  2019  |     |     |     |     |     |     |  18 |
+| ---------------------------- | --- | --- | --- | --- | --- | --- | --- |
+Failure Rates by Template Style Failure Rates by Template Theme
+Link Attachment Data Entry* Corporate Consumer Commercial Cloud
+Click rate: 14%
+| Consumer Goods | 10% | 3%  | Consumer Goods | 13% | 10% | 8%  | 3%  |
+| -------------- | --- | --- | -------------- | --- | --- | --- | --- |
+Submit rate: 4%
+Click rate: 8%
+Defense Industrial Base 13% 2% Defense Industrial Base 10% 30% N/A* N/A
+Submit rate: 4%
+Click rate: 10%
+| Education | 13% | 4%  | Education | 12% | 9%  | 19% | 11% |
+| --------- | --- | --- | --------- | --- | --- | --- | --- |
+Submit rate: 4%
+Click rate: 10%
+| Energy | 9%  | 7%  | Energy | 13% | 6%  | 15% | 7%  |
+| ------ | --- | --- | ------ | --- | --- | --- | --- |
+Submit rate: 3%
+Click rate: 6%
+| Entertainment | 14% | 45% | Entertainment | 10% | 10% | 32% | 10% |
+| ------------- | --- | --- | ------------- | --- | --- | --- | --- |
+Submit rate: 2%
+Click rate: 9%
+| Finance | 9%  | 1%  | Finance | 9%  | 6%  | 9%  | 5%  |
+| ------- | --- | --- | ------- | --- | --- | --- | --- |
+Submit rate: 3%
+Click rate: 10%
+| Government | 10% | 6%  | Government | 11% | 10% | 11% | 11% |
+| ---------- | --- | --- | ---------- | --- | --- | --- | --- |
+Submit rate: 3%
+Click rate: 13%
+| Healthcare | 8%  | 1%  | Healthcare | 10% | 7%  | 12% | 8%  |
+| ---------- | --- | --- | ---------- | --- | --- | --- | --- |
+Submit rate: 6%
+Click rate: 11%
+| Hospitality | 9%  | 1%  | Hospitality | 8%  | 6%  | 3%  | N/A |
+| ----------- | --- | --- | ----------- | --- | --- | --- | --- |
+Submit rate: 3%
+Click rate: 10%
+| Insurance | 9%  | 1%  | Insurance | 8%  | 8%  | 10% | 5%  |
+| --------- | --- | --- | --------- | --- | --- | --- | --- |
+Submit rate: 3%
+Click rate: 11%
+| Manufacturing | 11% | 6%  | Manufacturing | 11% | 10% | 13% | 9%  |
+| ------------- | --- | --- | ------------- | --- | --- | --- | --- |
+Submit rate: 4%
+Click rate: 16%
+Professional Services 9% 14% Professional Services 12% 10% 9% 7%
+Submit rate: 4%
+Click rate: 11%
+| Retail | 12% | 6%  | Retail | 13% | 9%  | 13% | 4%  |
+| ------ | --- | --- | ------ | --- | --- | --- | --- |
+Submit rate: 3%
+Click rate: 15%
+| Technology | 10% | 1%  | Technology | 15% | 7%  | 9%  | 4%  |
+| ---------- | --- | --- | ---------- | --- | --- | --- | --- |
+Submit rate: 5%
+Click rate: 11%
+| Telecommunications | 11% | 6%  | Telecommunications | 9%  | 13% | 9%  | 10% |
+| ------------------ | --- | --- | ------------------ | --- | --- | --- | --- |
+Submit rate: 3%
+Click rate: 13%
+| Transportation | 9%  | <1% | Transportation | 10% | 4%  | 16% | 6%  |
+| -------------- | --- | --- | -------------- | --- | --- | --- | --- |
+Submit rate: 5%
+*For data entry campaigns, the click rate indicates the percentage of users who clicked the link *“N/A” entries indicate that customers in this industry did not send any campaigns of this type.
+within the phishing test, and the submit rate is the percentage of users who ultimately submitted
+the requested data.
+SSEECCTTIIOONN  33::
+SECTION 1:   SECTION 2:
+INTRODUCTION THREE PILLARS OF CONTENT SSEECCUURRIITTYY  AAWWAARREENNEESSSS  TTRRAAIINNIINNGG::
+THE EXTENT OF END-USER RISK WHAT INFOSEC PROS ARE EXPERIENCING
+OOUUTTCCOOMMEESS  AANNDD  OOPPPPOORRTTUUNNIITTIIEESS
+
+STATE OF THE PHISH  |  2019   19
+DEPARTMENT DATA  It’s concerning that some of the highest failure rates were seen within departments and
+New this year, we examined departmental failure rates by isolating on our customers’ most  roles that are likely to have access to some of the most sensitive organizational
+commonly used department classifications.4 All failure rates are based on a minimum of  and customer data, as well as those that are responsible for many of an organization’s
+2,500 emails sent (though some departments received upwards of 100,000 emails).  most essential business activities. And the complexity of the story only deepens when we
+compare these average failure rates to the most highly targeted departments identified by
+Average Failure Rates by Department
+Proofpoint in its Autumn 2018 Protecting People report.
+| Commercial | 19% |     |     |     |     |     |
+| ---------- | --- | --- | --- | --- | --- | --- |
+Highly Targeted Departments
+| Purchasing | 14% |     |                       |     |     |     |
+| ---------- | --- | --- | --------------------- | --- | --- | --- |
+|            | 13% |     | Production/Operations |     |     |     |
+Communication
+Marketing/PR
+| Sales | 13% |     |     |     |     |     |
+| ----- | --- | --- | --- | --- | --- | --- |
+Management
+| Maintenance | 12% |     |     |     |     |     |
+| ----------- | --- | --- | --- | --- | --- | --- |
+Sales
+| Security | 12% |     |     |     |     |     |
+| -------- | --- | --- | --- | --- | --- | --- |
+HR
+| Executive   | 11% |     |                             |       |     |     |
+| ----------- | --- | --- | --------------------------- | ----- | --- | --- |
+| Legal       | 11% |     | R&D/Engineering             |       |     |     |
+| Marketing   | 11% |     | Accounting/Finance          |       |     |     |
+| Procurement | 11% |     | Facilities/Internal Support |       |     |     |
+|             | 11% |     |                             | Legal |     |     |
+Treasury
+Sourcing/Purchasing
+| Information Technology | 10% |     |     |     |     |     |
+| ---------------------- | --- | --- | --- | --- | --- | --- |
+Customer Service
+| Operations | 10% |     |     |     |     |     |
+| ---------- | --- | --- | --- | --- | --- | --- |
+Administrator/Assistant
+| Tax | 10% |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- |
+Distribution
+| Accounting | 9%  |     |     |       |         |         |
+| ---------- | --- | --- | --- | ----- | ------- | ------- |
+|            |     |     |     | 0% 5% | 10% 15% | 20% 25% |
+| Facilities | 9%  |     |     |       |         |         |
+Source: Proofpoint, Protecting People: A Quarterly Analysis of Highly Targeted Cyber Attacks, Autumn 2018
+| Finance         | 9%  |     |     |     |     |     |
+| --------------- | --- | --- | --- | --- | --- | --- |
+| Human Resources | 9%  |     |     |     |     |     |
+RECOMMENDED: KNOW YOUR ROLES
+8%
+Business Development In examining these different pieces of data — knowing that the landscape shifts from
+Internal Audit 8% organization to organization — it becomes clear that it’s to infosec teams’ advantage
+to be able to detect which of their people/departments are being attacked, and how
+| Compliance 7% |     |     |     |     |     |     |
+| ------------- | --- | --- | --- | --- | --- | --- |
+cybercriminals are targeting specific job functions. When organizations can identify their
+| Customer Service 7% |     |     |     |     |     |     |
+| ------------------- | --- | --- | --- | --- | --- | --- |
+“Very Attacked People (VAPs),” they can then test specific departments and individuals,
+| Engineering 7% |     |     |     |     |     |     |
+| -------------- | --- | --- | --- | --- | --- | --- |
+isolate potential vulnerabilities, and deliver targeted security awareness training
+| 0% 5% | 10% 15% | 20% |     |     |     |     |
+| ----- | ------- | --- | --- | --- | --- | --- |
+assignments to improve knowledge and reduce risk.
+4  This represents a subset of our full data set, as not all program administrators group their end users by
+(See more about how VAPs vary by industry on the following page.)
+department, and many organizations use proprietary terminology for department classifications.
+SSEECCTTIIOONN  33::
+|     |     | SECTION 1:   |     | SECTION 2:   |     |     |
+| --- | --- | ------------ | --- | ------------ | --- | --- |
+INTRODUCTION THREE PILLARS OF CONTENT SSEECCUURRIITTYY  AAWWAARREENNEESSSS  TTRRAAIINNIINNGG::
+|     |     | THE EXTENT OF END-USER RISK |     | WHAT INFOSEC PROS ARE EXPERIENCING |     |     |
+| --- | --- | --------------------------- | --- | ---------------------------------- | --- | --- |
+OOUUTTCCOOMMEESS  AANNDD  OOPPPPOORRTTUUNNIITTIIEESS
+
+STATE OF THE PHISH | 2019 20
+IDENTIFYING (AND REMEDIATING) VULNERABLE HUMAN TARGETS RECOMMENDED: GET TO KNOW YOUR VAPS
+Proofpoint threat analysis allows organizations to identify the inboxes that face the largest
+As we noted on page 19, cybercriminals target different roles and responsibilities within
+number of attacks from outsiders, as well as the ways cybercriminals are attempting
+different organizations and different industries. This means that VAPs (Very Attacked People)
+to breach defenses. Infosec teams can identify the people and places that are within
+will vary from industry to industry and organization to organization.
+attackers’ crosshairs, and how many attacks are getting through. This offers a unique
+opportunity to move away from assumptions about vulnerabilities, and shift focus to areas
+The two sample VAP charts below reflect anonymized data pulled from Proofpoint’s
+that could be most prone to falling for attacks that slip past perimeter defenses.
+proprietary threat analysis technology, which helps to detect, mitigate, and block advanced
+threats that target people through email. The charts show the top 20 most-attacked inboxes
+A VAP chart is an eye-opener for many organizations … but it also provides an advantage
+within a healthcare service provider and a manufacturer over a three-month span. The
+from a resource allocation standpoint. Infosec teams can use this information to quickly
+variances between the two clearly illustrate attackers’ preparedness, agility, and tenacity.
+deliver the right training to the right people at the right time, helping to close potential
+knowledge gaps that could leave specific individuals open to compromise.
+It’s important to note the number of email aliases that are regularly targeted by attackers,
+and the varying job functions cybercriminals seek to exploit. Third parties — those with
+Example of a Manufacturing VAP Chart
+inroads to systems and data — also frequently find their way into the top tiers of VAP charts.
+General "Info" Inbox
+Example of a Healthcare VAP Chart Third-Party Distributor's General "Sales" Inbox
+Branch Manager of a Company Division
+CFO
+Nurse Practitioner Sales Inbox for Regional Service Center
+General "Communications" Inbox Regional Sales Inbox for a Company Division
+Rehabilitation Clinic Staff Member Sales Inbox for a Regional Service Center
+VP of Strategy and Innovation Regional Sales Inbox for a Company Division
+Senior Financial Analyst Regional Sales Inbox for a Company Division Note that attackers
+Managing Director of Global Partnerships Inside Sales Rep for a Company Division
+Communications Director Board Member sent a wide variety
+Clinical Resource Nurse Specialty Product Manager of malicious content
+Admissions Officer for an Affiliated Health College General "Sales" Inbox to this general inbox,
+CEO of Third-Party Healthcare Staffing Agency Sales Manager for a Company Division hoping to catch
+President and CEO Note that the only Corporate Branch Manager recipients off guard.
+Payroll Systems Analyst Regional Sales Processing Inbox
+Head of Learning and Development ransomware attacks Sales Inbox for a Regional Service Center
+Regional Director targeted the HR Corporate Regional Credit Manager
+Registered Nurse in Specialty Field inbox, which is likely Inside Sales Rep for a Company Division
+General HR Inbox to regularly receive Corporate Regional Sales Inbox
+Financial Analyst
+legitimate attachments.
+Registered Nurse in Specialty Field 0 1k 2k 3k 4k 5k 6k 7k
+Central Office Staff Member
+Recruiting Manager
+Malware Credential Phishing Keylogger Corporate Credential Phishing
+0 1k 2k 3k 4k 5k 6k 7k
+Consumer Credential Phishing Downloader Stealer RAT
+Malware Credential Phishing Keylogger Corporate Credential Phishing RAT Banking Unknown Credential Phishing
+Downloader Consumer Credential Phishing Banking Stealer Ransomware * Please note that each targeted entity had a unique email address. The organization supports
+multiple countries and regions.
+SSEECCTTIIOONN 33::
+SECTION 1: SECTION 2:
+INTRODUCTION THREE PILLARS OF CONTENT SSEECCUURRIITTYY AAWWAARREENNEESSSS TTRRAAIINNIINNGG::
+THE EXTENT OF END-USER RISK WHAT INFOSEC PROS ARE EXPERIENCING
+OOUUTTCCOOMMEESS AANNDD OOPPPPOORRTTUUNNIITTIIEESS
+
+STATE OF THE PHISH | 2019 21
+Getting Personal with Phishing Tests RECOMMENDED: MAINTAIN CADENCE, EVEN AS PROGRAMS MATURE
+We did note a point of concern in our analysis of maturity data: Organizations tend to send
 As noted earlier in this report, our customers have the flexibility to utilize different campaign
 fewer phishing tests once they reach the two-year mark of their program. We saw a fairly
 styles, themes, and messages in their simulated phishing attacks. They also have the option
@@ -665,4 +1123,4 @@ of any network is a requirement nowadays, and we are pleased to provide the most
 can help protect your business from cyber-attacks, contact us any time.
 Security Awareness Training
 
-<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-07-25", "model": "gemini-3.5-flash-lite"} -->
+<!-- CONVERSION_METADATA: {"source": "https://github.com/jacobdjwilson/awesome-annual-security-reports", "date": "2026-09-06", "model": "gemini-3.7-flash"} -->
