@@ -120,6 +120,16 @@ def write_pipeline_virustotal(f):
             dets = r.get("malicious_count", 0) + r.get("suspicious_count", 0)
             engines = r.get("total_engines", 0)
             f.write(f"| `{r.get('file')}` | {icon} | {dets} | {engines} | {link} |\n")
+        elif status == "cached":
+            verdict = r.get("verdict", "")
+            icon = "❌ Malicious (Cached)" if verdict == "Malicious" else "⚠️ Suspicious (Cached)" if verdict == "Suspicious" else "✅ Clean (Cached < 24h)"
+            if verdict == "Malicious":
+                malicious += 1
+            dets = r.get("malicious_count", 0) + r.get("suspicious_count", 0)
+            engines = r.get("total_engines", 0)
+            dets_str = str(dets) if engines else "—"
+            eng_str = str(engines) if engines else "—"
+            f.write(f"| `{r.get('file')}` | {icon} | {dets_str} | {eng_str} | {link} |\n")
         elif status == "fallback":
             reason = r.get("reason") or r.get("message") or "Passive hash lookup fallback"
             f.write(f"| `{r.get('file')}` | ⊘ Passive Fallback | — | — | {link} ({reason}) |\n")

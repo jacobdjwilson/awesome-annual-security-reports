@@ -161,12 +161,24 @@ jobs:
       - name: Install dependencies
         run: python .github/scripts/install-task-dependencies.py --task virustotal
 
+      - name: Cache VirusTotal Tracking
+        uses: actions/cache@v4
+        with:
+          path: .github/artifacts/vt-scanned.json
+          key: vt-scanned-${{ github.run_id }}
+          restore-keys: |
+            vt-scanned-
+
       - name: Run VirusTotal scan
         id: vt-scan
         env:
           VIRUS_TOTAL_API_KEY: ${{ secrets.VIRUS_TOTAL_API_KEY }}
           SKIP_VIRUS_SCAN: ${{ github.event.inputs.skip_virus_scan }}
-        run: python .github/scripts/virus-total-scan.py files_to_process.txt --scan-mode "${{ needs.discover-and-scan.outputs.scan_mode }}"
+        run: |
+          python .github/scripts/virus-total-scan.py \
+            files_to_process.txt \
+            --scan-mode "${{ needs.discover-and-scan.outputs.scan_mode }}" \
+            --artifacts-dir .github/artifacts
 
       - name: Upload scan results
         if: always()
@@ -174,6 +186,15 @@ jobs:
         with:
           name: scan-results
           path: scan_results.json
+
+      - name: Upload VirusTotal Tracking Cache Artifact
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: vt-tracking-cache
+          path: .github/artifacts/vt-scanned.json
+          if-no-files-found: ignore
+          retention-days: 30
 
       - name: Generate VirusTotal summary
         if: always()
