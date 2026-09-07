@@ -49,6 +49,26 @@ jobs:
             --daily-mode \
             --artifacts-dir .github/artifacts
 
+      - name: Upload Unseen Reports Artifact
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: unseen-pdfs-to-submit
+          path: |
+            unseen_pdfs_to_submit.txt
+            unseen_pdfs_to_submit.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Upload VirusTotal Tracking Cache Artifact
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: vt-tracking-cache
+          path: .github/artifacts/vt-scanned.json
+          if-no-files-found: ignore
+          retention-days: 30
+
       - name: Open Issue on Malicious Finding
         if: failure()
         env:

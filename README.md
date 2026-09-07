@@ -8,7 +8,9 @@
 
 **Limitations:** This repository focuses strictly on recurring annual data. It does not include project-specific documents, one-off technical specifications, or standards. We do include annual, segment-specific industry white papers and security industry funding reports. While all user-submitted uploads or report requests are welcome, we should draw a box around this _awesome_ list. 
 
-**Accessibility:** When possible, all reports will be sourced from their original authors and uploaded to [Virus Total](https://virustotal.com/) via GitHub action to provide an added level of confidence. The resulting analysis link will be included in the PDF commit notes. Additionally, all PDF reports will be converted to Markdown using AI, based on the [AI Prompts](/.github/ai-prompts) defined in this repository. Conversion metadata is appended as the last line of each markdown file to track and ensure up-to-date AI accuracy.
+**Accessibility:** When possible, all reports are sourced directly from their original authors and maintained in dual formats: the authoritative vendor document in [Annual Security Reports](Annual%20Security%20Reports/) and a high-fidelity plain-text version in [Markdown Conversions](Markdown%20Conversions/). All PDFs are converted to Markdown using AI based on version-controlled [AI Prompts](.github/ai-prompts/) to enable full-text command-line searching, cross-year Git diffing, screen-reader accessibility, and local LLM ingestion without downloading multi-megabyte binaries. Provenance and conversion metadata are appended to the trailing line of each markdown file to facilitate automated staleness detection and periodic 90-day model refreshes.
+
+**Security Safeguards:** To protect researchers and organizations referencing these materials, every report undergoes automated hash validation and pre-screening against [Virus Total](https://virustotal.com/) prior to ingestion. A scheduled daily background workflow continuously audits repository assets against VirusTotal, enforcing a 24-hour cache TTL policy and submitting unseen documents. If a security issue or detection is ever identified, automated safeguards immediately trigger an urgent incident triage issue for maintainer review.
 
 **Acknowledgement:** I would like to give recognition for other works that inspired this collection. [Dr. Wade Baker](https://www.linkedin.com/in/drwadebaker/) and the team at the [Cyentia Institute](https://www.cyentia.com/) deserve special mention for their pioneering, data-driven cybersecurity research and studies that continuously elevate industry analysis. Additionally, [Rick Howard](https://www.linkedin.com/in/rickhoward/)'s [Cyber Cannon](https://cybercanon.org/) list of must-read books is a timeless resource of curated wisdom, catering to both leadership and practitioner levels within the field. Finally, [Richard Stiennon](https://www.linkedin.com/in/stiennon) produces an annual comprehensive cybersecurity industry analysis at [IT Harvest](https://dashboard.it-harvest.com/) that deserves attention of those in the industry
 
@@ -85,6 +87,8 @@ The most recent versions of reports are listed below. Older editions are preserv
 
 Reports are organized by their primary focus. Although many reports span multiple topics, this classification provides a clearer structure. Within each topic, reports are listed alphabetically.
 
+Each report is accompanied by a plain-text Markdown conversion in its yearly folder (dating back to 2008), making the archive easy to search, diff, and read without downloading large PDFs. Summaries highlight key takeaways and concrete metrics, while automated workflows help discover new annual releases and verify link health.
+
 ## How to Contribute
 
 The easiest way to contribute is to suggest a report. If you've found a valuable annual security report that isn't on our list, please let us know!
@@ -92,6 +96,8 @@ The easiest way to contribute is to suggest a report. If you've found a valuable
 <a href="https://github.com/jacobdjwilson/awesome-annual-security-reports/issues/new?template=report-suggestion.yml" target="_blank">
   <img src="https://img.shields.io/badge/Suggest%20a%20New%20Report-brightgreen?style=for-the-badge&logo=github" alt="Suggest a New Report" />
 </a>
+
+**Submissions:** Reports should be recurring annual publications or annual industry studies that are publicly accessible without a paywall and sourced directly from primary authors or publishers. Submitting a report suggestion automatically triggers our workflow to screen the file with VirusTotal, generate a Markdown conversion, and open a Pull Request. Direct Pull Requests are also welcome!
 
 <!--lint disable double-link-->
 

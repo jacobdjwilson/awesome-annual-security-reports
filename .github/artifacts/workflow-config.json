@@ -182,6 +182,12 @@
       "rate_limit_sleep_seconds": 15,
       "skip_on_schedule": false,
       "skip_on_push": false,
+      "cache_ttl_hours": 24,
+      "daily_scan_max_lookups": 25,
+      "tracking_cache_file": "vt-scanned.json",
+      "unseen_output_file": "unseen_pdfs_to_submit.txt",
+      "unseen_output_json": "unseen_pdfs_to_submit.json",
+      "comment": "VirusTotal configuration with 24-hour cache TTL policy, rate limiting, and daily upload limits.",
       "python_packages": [
         "requests"
       ]
