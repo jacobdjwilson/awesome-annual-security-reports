@@ -872,8 +872,7 @@ def process_reports(
         try:
             analysis = analyzer.analyze(content, org, title, year)
 
-            org_slug = re.sub(r"[^a-z0-9]", "", org.lower())
-            org_url  = conv.get("organization_url") or f"https://www.{org_slug}.com"
+            org_url  = conv.get("organization_url", "")
 
             results.append({
                 "organization":     org,

@@ -23,22 +23,72 @@
           "{organization} {title}"
         ],
         "num_results": 10,
+        "landing_page_indicators": [
+          "/content/",
+          "/resources/",
+          "/resource/",
+          "/report/",
+          "/reports/",
+          "/research/",
+          "/whitepaper/",
+          "/whitepapers/",
+          "/insights/",
+          "/library/",
+          "/knowledge/",
+          "/get/",
+          "/access/",
+          "/register/",
+          "/landing/",
+          "/lp/",
+          "/publications/"
+        ],
+        "press_release_indicators": [
+          "/press/",
+          "/press-release/",
+          "/press-releases/",
+          "/news/",
+          "/newsroom/",
+          "/media/",
+          "/pr/",
+          "/wire/",
+          "/news-releases/"
+        ],
+        "blog_indicators": [
+          "/blog/",
+          "/blogs/",
+          "/post/",
+          "/posts/",
+          "/article/",
+          "/articles/"
+        ],
         "scoring": {
           "org_in_link": 3,
           "year_in_link": 3,
           "report_in_link": 2,
           "year_in_title": 2,
           "org_in_title": 1,
+          "landing_indicator_bonus": 15,
+          "press_release_penalty": -25,
+          "blog_penalty": -10,
+          "org_domain_match_bonus": 20,
+          "off_domain_penalty": -20,
+          "title_word_overlap_bonus": 10,
           "short_path_penalty": -8,
           "short_path_threshold": 3,
           "toplevel_domain_penalty": -30,
           "existing_domain_match_bonus": 20,
           "existing_subdomain_match_bonus": 10,
-          "min_accept_score": 3
+          "min_accept_score": 3,
+          "_comment": "Scoring weights prioritize official on-domain report landing pages (/content/, /resources/, /reports/) and heavily penalize press releases (-25), bare top-level domains (-30), and off-domain syndication aggregators (-20)."
         },
         "skip_domains": [
           "google.com", "linkedin.com", "twitter.com", "x.com",
-          "facebook.com", "youtube.com", "reddit.com", "wikipedia.org"
+          "facebook.com", "youtube.com", "reddit.com", "wikipedia.org",
+          "prnewswire.com", "businesswire.com", "globenewswire.com",
+          "accesswire.com", "newsfilecorp.com", "marketwatch.com",
+          "finance.yahoo.com", "seekingalpha.com", "benzinga.com",
+          "lokmattimes.com", "amazon.com", "slideshare.net", "scribd.com",
+          "issuu.com"
         ]
       },
       "report_discovery_pdf": {
