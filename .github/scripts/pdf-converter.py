@@ -2,6 +2,7 @@
 Operational Purpose:
     Converts PDF security reports into clean Markdown documents utilizing MarkItDown
     and Gemini model polishing with fallback extraction, layout structuring, and metadata embedding.
+    Enforces model upgrade invariance to prevent downgrading or redundant reconversions.
 
 Required Environment Variables:
     GEMINI_API_KEY (optional): API key for Gemini AI polisher and direct fallback extraction.
@@ -113,6 +114,15 @@ class ConfigLoader:
         self.secondary_model: str = models.get("secondary")
         self.tertiary_model:  str = models.get("tertiary")
 
+        # ── Model hierarchy ───────────────────────────────────────────────
+        self.model_hierarchy: List[str] = self.ai_config.get("model_hierarchy", [
+            "gemini-3.1-flash-lite-preview",
+            "gemini-3.1-flash-lite",
+            "gemini-3.5-flash-lite",
+            "gemini-3.7-flash",
+            "gemini-3.8-flash",
+        ])
+
         # ── Generation configs (keyed by task) ────────────────────────────
         configs = self.ai_config.get("configurations", {})
         self.default_gen_config:    Dict[str, Any] = configs.get("default",    {})
@@ -165,6 +175,28 @@ class ConfigLoader:
         except Exception as e:
             print(f"ERROR: Could not read {filename}: {e}")
             return None
+
+    def get_model_rank(self, model_name: Optional[str]) -> int:
+        """
+        Returns integer rank for model comparison based on canonical hierarchy.
+        Higher values indicate newer or higher capability models.
+        """
+        if not model_name:
+            return -1
+        if model_name in self.model_hierarchy:
+            return self.model_hierarchy.index(model_name)
+
+        # Version-based heuristic fallback if model name contains decimal version
+        m = re.search(r"(\d+(?:\.\d+)?)", model_name)
+        if m:
+            try:
+                val = int(float(m.group(1)) * 100)
+                if "preview" in model_name.lower():
+                    val -= 1
+                return val
+            except ValueError:
+                pass
+        return -1
 
 
 
@@ -319,16 +351,23 @@ class MarkdownPolisher:
 
     # ── Public API ────────────────────────────────────────────────────────
 
-    def polish(self, raw_markdown: str, org: str, title: str, year: str) -> str:
+    def polish(self, raw_markdown: str, org: str, title: str, year: str, min_rank: int = -1) -> Tuple[str, Optional[str]]:
         """
         Reformat raw_markdown using Gemini with retry logic and primary/secondary
-        model fallback.  Returns the raw text unchanged if AI is unavailable.
+        model fallback. Returns (polished_markdown, model_name) or (raw_markdown, None)
+        if AI is unavailable or no eligible model strictly exceeds min_rank.
 
         Large documents are chunked: the first max_polish_input_chars characters
         are reformatted by the AI; any overflow is appended as-is after a separator.
         """
         if not raw_markdown or not raw_markdown.strip():
-            return raw_markdown
+            return raw_markdown, None
+
+        ladder = [self.config.primary_model, self.config.secondary_model, self.config.tertiary_model]
+        eligible_models = [m for m in filter(None, ladder) if self.config.get_model_rank(m) > min_rank]
+        if not eligible_models:
+            print(f"  ⊘ No AI models in fallback ladder exceed required minimum rank {min_rank}")
+            return raw_markdown, None
 
         max_in = self.config.max_polish_input_chars
         if len(raw_markdown) > max_in:
@@ -341,14 +380,16 @@ class MarkdownPolisher:
         prompt = self._build_prompt(org, title, year, first_chunk)
 
         polished: Optional[str] = None
+        used_model: Optional[str] = None
         delay = self.config.initial_delay
 
         quota_exhausted = False
         for attempt in range(self.config.max_retries):
             try:
-                for model_name in filter(None, [self.config.primary_model, self.config.secondary_model, self.config.tertiary_model]):
+                for model_name in eligible_models:
                     polished = self._call_model(model_name, prompt)
                     if polished:
+                        used_model = model_name
                         self._active_model = model_name
                         break
             except Exception as e:
@@ -376,26 +417,32 @@ class MarkdownPolisher:
         if quota_exhausted:
             raise RuntimeError("quota_exhausted: Gemini 429 after all retries in polish()")
 
-        if not polished:
+        if not polished or not used_model:
             print("  ! AI polish unavailable — returning raw markitdown output")
-            return raw_markdown
+            return raw_markdown, None
 
         if remainder:
             polished = polished + "\n\n---\n\n" + remainder.strip()
 
-        return polished
+        return polished, used_model
 
-    def extract_pdf_with_gemini(self, pdf_path: str, org: str, title: str, year: str) -> Optional[str]:
+    def extract_pdf_with_gemini(self, pdf_path: str, org: str, title: str, year: str, min_rank: int = -1) -> Tuple[Optional[str], Optional[str]]:
         """Uploads the PDF directly to Gemini and extracts text as a fallback."""
         file_size_mb = Path(pdf_path).stat().st_size / (1024 * 1024)
         if file_size_mb > self.config.max_fallback_pdf_size_mb:
             print(f"  ! PDF too large for fallback ({file_size_mb:.1f}MB > {self.config.max_fallback_pdf_size_mb}MB)")
-            return None
+            return None, None
+
+        ladder = [self.config.primary_model, self.config.secondary_model, self.config.tertiary_model]
+        eligible_models = [m for m in filter(None, ladder) if self.config.get_model_rank(m) > min_rank]
+        if not eligible_models:
+            print(f"  ⊘ No AI models in fallback ladder exceed required minimum rank {min_rank} for direct extraction")
+            return None, None
 
         fallback_prompt = self._load_prompt(self.config.fallback_prompt_path).strip()
         prompt = f"{fallback_prompt}\n\nOrganization: {org}\nReport Title: {title}\nYear: {year}\n"
         
-        for model_name in filter(None, [self.config.primary_model, self.config.secondary_model, self.config.tertiary_model]):
+        for model_name in eligible_models:
             print(f"  → Uploading PDF to Gemini API ({model_name})...")
             try:
                 if USE_NEW_SDK:
@@ -458,7 +505,7 @@ class MarkdownPolisher:
                     text = text[:-3].rstrip()
                 
                 self._active_model = model_name
-                return text.strip()
+                return text.strip(), model_name
 
             except Exception as e:
                 print(f"  ! Model {model_name} extraction error: {str(e)[:120]}")
@@ -472,7 +519,7 @@ class MarkdownPolisher:
                     pass
                 continue
 
-        return None
+        return None, None
 
 
 # ====================
@@ -518,20 +565,23 @@ class PDFConverter:
 
     def convert(self, pdf_path: str) -> Tuple[bool, str, str]:
         """
-        Convert a single PDF to Markdown.
+        Convert a single PDF to Markdown with strict model upgrade invariance.
         Returns: (success, md_output_path, status_message)
         """
         pdf_path_obj = Path(pdf_path)
         if not pdf_path_obj.exists():
             return False, "", "File not found"
 
-        # Check if the output file exists and has up-to-date metadata
+        # Check if output file exists and inspect cached metadata
         existing_md = self._get_markdown_path(pdf_path_obj)
         existing_meta = self._get_existing_metadata(existing_md)
-        
+        cached_model = existing_meta.get("model") if existing_meta else None
+        cached_rank = self.config.get_model_rank(cached_model) if cached_model else -1
+        primary_rank = self.config.get_model_rank(self.config.primary_model)
+
         needs_reconvert = False
         reconvert_reason = ""
-        
+
         if self.force_reconvert:
             needs_reconvert = True
             reconvert_reason = "force-reconvert requested"
@@ -543,11 +593,10 @@ class PDFConverter:
                 needs_reconvert = True
                 reconvert_reason = "missing metadata tag"
             else:
-                cached_model = existing_meta.get("model", "unknown")
-                current_model = self.config.primary_model
-                if cached_model != current_model:
+                # Upgrade invariance: only reconvert if primary model is strictly higher than cached model
+                if primary_rank > cached_rank:
                     needs_reconvert = True
-                    reconvert_reason = f"model changed ({cached_model} -> {current_model})"
+                    reconvert_reason = f"higher model available ({cached_model or 'unknown'} -> {self.config.primary_model})"
                 else:
                     md_text = existing_md.read_text(encoding="utf-8", errors="ignore")
                     if len(md_text) < self.config.min_markdown_chars:
@@ -556,7 +605,7 @@ class PDFConverter:
         elif not existing_md.exists():
             needs_reconvert = True
             reconvert_reason = "missing from disk"
-            
+
         existing_content = None
         if not needs_reconvert:
             print(f"  ✓ Cached: {existing_md}")
@@ -570,6 +619,15 @@ class PDFConverter:
                 print(f"  ♻ Reconvert ({reconvert_reason}): {existing_md.name}")
             else:
                 print(f"  ♻ Convert: {reconvert_reason}")
+
+        # Model upgrade invariance: if a valid conversion exists with a known model,
+        # only accept newly generated conversions using a strictly higher model tier.
+        has_valid_existing = bool(
+            existing_content
+            and len(existing_content) >= self.config.min_markdown_chars
+            and cached_rank >= 0
+        )
+        required_min_rank = cached_rank if has_valid_existing else -1
 
         org_name, report_title, year = self._parse_filename(pdf_path_obj.name)
         md_path = self._get_markdown_path(pdf_path_obj)
@@ -608,24 +666,34 @@ class PDFConverter:
                 print(f"  ! Truncated raw text to {self.config.max_pdf_chars:,} chars")
 
             # ── Step 2: AI polish — structure, TOC, clean paragraphs ──────
+            direct_ai_extraction_used = False
+            model_used: Optional[str] = None
+
             if is_stub and self.polisher:
                 print(f"  ! markitdown extraction failed/short. Falling back to Gemini File API extraction...")
-                fallback_text = self.polisher.extract_pdf_with_gemini(str(pdf_path_obj), org_name, report_title, year)
-                if fallback_text:
+                fallback_text, fallback_model = self.polisher.extract_pdf_with_gemini(
+                    str(pdf_path_obj), org_name, report_title, year, min_rank=required_min_rank
+                )
+                if fallback_text and fallback_model:
                     markdown_text = fallback_text
                     is_stub = False
-                    model_used = self.polisher._active_model or "unknown"
+                    direct_ai_extraction_used = True
+                    model_used = fallback_model
                     print(f"  ✓ Direct PDF extraction successful via {model_used} ({len(markdown_text):,} chars)")
                 else:
                     print(f"  ! Gemini File API extraction also failed or was skipped. Saving minimal placeholder.")
 
-            if self.polisher and not is_stub and not (hasattr(self.polisher, '_active_model') and self.polisher._active_model):
+            if self.polisher and not is_stub and not direct_ai_extraction_used:
                 print(f"  → Polishing with AI ({self.config.primary_model})...")
-                markdown_text = self.polisher.polish(
-                    markdown_text, org_name, report_title, year
+                polished_text, polish_model = self.polisher.polish(
+                    markdown_text, org_name, report_title, year, min_rank=required_min_rank
                 )
-                model_used = self.polisher._active_model or "unknown"
-                print(f"  ✓ Polished via {model_used} ({len(markdown_text):,} chars)")
+                if polish_model:
+                    markdown_text = polished_text
+                    model_used = polish_model
+                    print(f"  ✓ Polished via {model_used} ({len(markdown_text):,} chars)")
+                else:
+                    print(f"  ! AI polish could not achieve a higher tier model than {cached_model or 'none'}")
             elif not self.polisher:
                 print(f"  ⚠ No AI polisher — saving raw markitdown output")
 
@@ -642,13 +710,21 @@ class PDFConverter:
                         pass
                 return False, "", "failed (stub)"
 
-            model_used = self.polisher._active_model if self.polisher and getattr(self.polisher, '_active_model', None) else "unknown"
-            from datetime import datetime
-            import json
+            # Enforce Model Upgrade Invariance:
+            # If a valid existing conversion existed, we MUST NOT save if the newly achieved model
+            # is not strictly higher than the cached model.
+            if has_valid_existing:
+                achieved_rank = self.config.get_model_rank(model_used)
+                if achieved_rank <= required_min_rank:
+                    print(f"  ✓ Preserving existing conversion ({cached_model}): No higher model achieved ({model_used or 'none'} <= {cached_model})")
+                    if existing_content:
+                        md_path.write_text(existing_content, encoding="utf-8")
+                    return True, str(md_path), f"preserved (no model > {cached_model} available)"
+
             meta = {
                 "source": "https://github.com/jacobdjwilson/awesome-annual-security-reports",
                 "date": datetime.now().strftime("%Y-%m-%d"),
-                "model": model_used
+                "model": model_used or "unknown"
             }
             markdown_text += f"\n\n<!-- CONVERSION_METADATA: {json.dumps(meta)} -->\n"
             md_path.write_text(markdown_text, encoding="utf-8")
@@ -798,13 +874,18 @@ def main():
         org_name, report_title, year = converter._parse_filename(Path(pdf_path).name)
 
         # Determine method and model used
-        if message == "cached":
+        if message == "cached" or message.startswith("preserved"):
             method = "cached"
         elif args.force_reconvert or args.smart_reconvert:
             method = "reconverted+ai" if polisher else "reconverted"
         else:
             method = "markitdown+ai" if polisher else "markitdown"
-        model_used = (polisher._active_model if polisher and polisher._active_model else None) if success else None
+
+        # Model is read directly from file metadata on disk to guarantee accurate telemetry
+        model_used: Optional[str] = None
+        if success and md_path and Path(md_path).exists():
+            meta = converter._get_existing_metadata(Path(md_path))
+            model_used = meta.get("model")
 
         # Count output chars for visibility
         output_chars: Optional[int] = None
