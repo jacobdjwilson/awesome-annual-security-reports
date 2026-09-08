@@ -97,7 +97,9 @@ The easiest way to contribute is to suggest a report. If you've found a valuable
   <img src="https://img.shields.io/badge/Suggest%20a%20New%20Report-brightgreen?style=for-the-badge&logo=github" alt="Suggest a New Report" />
 </a>
 
-**Submissions:** Reports should be recurring annual publications or annual industry studies that are publicly accessible without a paywall and sourced directly from primary authors or publishers. Submitting a report suggestion automatically triggers our workflow to screen the file with VirusTotal, generate a Markdown conversion, and open a Pull Request. Direct Pull Requests are also welcome!
+**Criteria for Inclusion:** Submissions must be recurring annual publications or annual segment-specific industry studies. Project-specific whitepapers, one-off vendor marketing collateral, and product datasheets are out of scope. Content must be vendor-neutral, publicly accessible without requiring a paywall or login, and sourced directly from primary authors.
+
+**Automated Ingestion:** Submitting a suggestion via the issue form above automatically triggers our pipeline to screen the PDF with VirusTotal, convert it to Markdown, synthesize a metric-driven summary, and stage a Pull Request. Direct Pull Requests are also welcome and should format entries as `[Organization](WebsiteURL) - [Title](PDFPath) (Year) - Summary` with an active leading verb and numerical data.
 
 <!--lint disable double-link-->
 
